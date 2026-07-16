@@ -1,6 +1,6 @@
 # Legacy PyQt6 GUI Removal — Spec
 
-**Status:** DRAFT — awaiting tj sign-off on Phase 0 decisions
+**Status:** EXECUTED 2026-07-16 — D1=(a) delete Docker stack, D2/D3 closed, D4=keep key, D5=no users (tj sign-off same day)
 **Written:** 2026-07-16
 **Ledger:** assign next free TODO-NNN via `tools/ledger.py` when scheduled
 **Goal:** Delete the frozen legacy PyQt6 GUI (`gui/`) and every piece of code, packaging,
@@ -150,9 +150,9 @@ they are records, not live docs.
 
 ## 6. Resume state
 
-- [ ] Phase 0 — decisions D1–D5 signed off
-- [ ] Phase 1 — migrations committed + map verified
-- [ ] Phase 2 — deletion committed
-- [ ] Phase 3 — deps/packaging committed
-- [ ] Phase 4 — docs/ledger committed
-- [ ] Phase 5 — final sweep green → move spec to `instructions/complete/`
+- [x] Phase 0 — decisions D1–D5 signed off (D1=delete Docker; D5=no users)
+- [x] Phase 1 — migrations committed (a4326e47) + map routes verified (200s); tj visual check pending
+- [x] Phase 2 — deletion committed (674249bb); also caught tools/losslessbob.iss + build_windows.bat (BUG-106's real target)
+- [x] Phase 3 — deps/packaging committed (88676070); .dockerignore included
+- [x] Phase 4 — docs/ledger committed (BUG-106 + BUG-249 closed)
+- [x] Phase 5 — final sweep green → spec moved to `instructions/complete/`

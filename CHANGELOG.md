@@ -1,3 +1,25 @@
+[2026-07-16] — chore(gui): legacy PyQt6 GUI removed — gui_next is the sole frontend
+Context: spec'd and executed same-session (instructions/complete/LEGACY_GUI_REMOVAL_SPEC.md);
+  tj signed off D1=delete Docker stack, D5=no frozen-build users. 4 commits (a4326e47,
+  674249bb, 88676070 + docs), net ~49k lines removed.
+Removed: gui/ (19 modules, 18.5k LOC, Qt locales/resources), main.py, run_next.py (dead
+  pre-Electron launcher), losslessbob.spec + losslessbob_linux.spec, tools/losslessbob.iss +
+  build_windows.bat, scripts/translate_ts.py, /i18n-update skill, Dockerfile +
+  docker-compose.yml + docker/ (noVNC stack), .dockerignore, PyQt6/PyQt6-WebEngine pins
+  (+ pytest-qt uninstalled from .venv).
+Changed: backend/resources/ now hosts map.html + leaflet/ (moved from gui/resources/;
+  /map + /leaflet routes repointed; QWebChannel bridge and Search-tab buttons stripped from
+  map.html — postMessage filter path for gui_next's ScreenMap iframe kept). New
+  backend/platform_utils.py hosts open_in_vlc (was gui.platform_utils). Qt test classes
+  dropped from tests/test_lb_master.py.
+Fixed: BUG-249 closed (resolved-by-removal: crashing qtbot test deleted); BUG-106 closed
+  (obsolete: legacy Windows installer channel deleted).
+Docs: PROJECT.md (tech stack, file tree, GUI sections replaced with removal note, legacy
+  conventions cut), .claude/CLAUDE.md, BEST_PRACTICES.md, wiki (GUI/Architecture/
+  Dev-Workflow/Home).
+Verified: 799 tests pass without Qt; backend restart clean; /map + /leaflet serve 200 from
+  new location. tj to eyeball ScreenMap visuals.
+
 [2026-07-16] — chore(db): TODO-240 complete — venue gazetteer fully resolved, all entry locations geocoded
 Context: overnight completion of the geo chain started 2026-07-15 (TODO-239 backfill → resolve → geocode).
 Changed: venue_geocoded (data): resolve finished 4,071/4,071 — final mix 2,125 bounded_venue,

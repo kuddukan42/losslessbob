@@ -10,10 +10,8 @@ Grep for the exact `## ` header to jump to a section:
 Tech Stack · File Structure · Database Schema ·
 Backend: Flask API / Database Layer / Geocoder / Checksum Utilities / Importer /
 Scraper / Scheduler / Site Crawler ·
-GUI (legacy tabs): Scraper / Main Window / Lookup / Verify / lbdir / Search /
-Bootlegs / Setup / Attachments / Rename / DB Editor / Theme ·
 GUI (Next): Electron/React Frontend ·
-Key Data Flows · Checksum Format Reference · Legacy GUI Conventions (frozen) ·
+Key Data Flows · Checksum Format Reference ·
 GUI (Next) Conventions · Notable Implementation Details · Change Log
 
 ---
@@ -22,9 +20,7 @@ GUI (Next) Conventions · Notable Implementation Details · Change Log
 
 | Layer | Technology | Version |
 |-------|------------|---------|
-| GUI (primary) | Electron + React + TypeScript | electron-vite |
-| GUI (legacy) | PyQt6 | 6.7.1 — **frozen**, no new features |
-| Web view (attachments) | PyQt6-WebEngine | 6.7.0 — used by legacy GUI only |
+| GUI | Electron + React + TypeScript | electron-vite |
 | REST backend | Flask + Flask-CORS | 3.0.3 / 4.0.1 |
 | WSGI server (optional) | Waitress | 3.0.0 |
 | Database | SQLite3 | (stdlib) |
@@ -39,9 +35,9 @@ GUI (Next) Conventions · Notable Implementation Details · Change Log
 | Signal processing | scipy | 1.17.1 |
 | Language | Python | 3.11+ |
 
-**Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. `gui_next` (Electron/React) is the active development target; Flask is launched as a child process from the Electron main process. The legacy `gui/` (PyQt6) starts Flask in a daemon thread and is frozen at its current state — no new features will be added there.
+**Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. `gui_next` (Electron/React) is the sole GUI; Flask is launched as a child process from the Electron main process (or standalone via `run_backend.py`).
 
-**GUI strategy (as of 2026-05-29):** All new screens, features, and bug fixes target `gui_next`. The PyQt6 GUI (`gui/`) is locked in place as a fallback reference; it receives no further changes.
+**GUI strategy:** All screens, features, and bug fixes target `gui_next`. The legacy PyQt6 GUI (`gui/`) was removed 2026-07-16 (see instructions/complete/LEGACY_GUI_REMOVAL_SPEC.md); its map page lives on at `backend/resources/map.html`.
 
 ---
 
@@ -49,13 +45,16 @@ GUI (Next) Conventions · Notable Implementation Details · Change Log
 
 ```
 losslessbob/
-├── main.py                   # Legacy entrypoint: starts Flask thread, then PyQt6 app (frozen)
 ├── cli.py                    # Headless CLI: lookup / search / stats / import / serve
 ├── run_backend.py            # Headless entrypoint: Flask only, no GUI (phone/LAN use)
 ├── requirements.txt
 ├── PROJECT.md                # This file
 ├── backend/
 │   ├── app.py                # Flask REST API — all routes
+│   ├── platform_utils.py     # Cross-platform process helpers (open_in_vlc)
+│   ├── resources/
+│   │   ├── map.html          # Leaflet map page served at GET /map; fetches /api/map/data
+│   │   └── leaflet/          # Bundled Leaflet 1.9.4 + markercluster 1.5.3 + leaflet.heat 0.2.0 assets
 │   ├── admin.html            # Mobile-friendly admin control panel (served at /admin)
 │   ├── db.py                 # SQLite layer, checksum parsing, search
 │   ├── db_queue.py           # DB-09: DatabaseWriteQueue — single writer thread, serialises all writes
@@ -118,32 +117,7 @@ losslessbob/
 │       ├── repo.py           # USER-table persistence (quality_scans / *_metrics / *_scores)
 │       ├── source_type.py    # SBD/AUD/FM/UNKNOWN derivation (reuses backend.db classifier)
 │       └── commentary.py     # Mine entries.description → calibrate.LABEL_KEYWORDS (validation oracle)
-├── gui/                      # FROZEN — PyQt6 legacy GUI; no new features or bug fixes
-│   ├── main_window.py        # Main window, tab container, menu, status bar
-│   ├── lookup_tab.py         # Core feature: paste/load checksums, view results
-│   ├── verify_tab.py         # Verify local checksum files (.ffp/.md5/.st5) against audio
-│   ├── lbdir_tab.py          # Verify official lbdir*.txt files against audio on disk
-│   ├── search_tab.py         # Full-text search across entries
-│   ├── bootlegs_tab.py       # Bootleg-CD catalog browser (LBBCD)
-│   ├── scraper_tab.py        # Scraper tab: site crawler, entry scraper, bootleg catalog, session history
-│   ├── setup_tab.py          # Import, DB management, credentials, SoX status
-│   ├── attachments_tab.py    # Browse and preview cached attachment files
-│   ├── rename_tab.py         # Propose and execute folder renames based on LB match
-│   ├── spectrogram_tab.py    # Generate and view per-file SoX spectrograms
-│   ├── dbedit_tab.py         # DB Editor: browse/edit/delete rows, export CSV
-│   ├── theme_tab.py          # Color theme picker and custom color editor
-│   ├── map_tab.py            # Map tab: "Open in Browser" button + URL filter builder + curator geocoding panel
-│   ├── i18n.py               # Translation loader: load_language(), supported_languages(); reads gui/locales/*.qm
-│   ├── styles.py             # Generates Qt stylesheets from color dict
-│   ├── locales/              # Qt Linguist translation files (.ts source + .qm compiled binary per language)
-│   ├── resources/
-│   │   ├── map.html          # Leaflet map page served at GET /map; fetches /api/map/data
-│   │   └── leaflet/          # Bundled Leaflet 1.9.4 + markercluster 1.5.3 + leaflet.heat 0.2.0 assets
-│   └── widgets/
-│       ├── state_store.py       # GuiStateStore: column widths + window geometry → data/gui_state.json
-│       ├── sort_keys.py         # SortableTableItem + sort_key_for() for typed client-side sort
-│       └── reconcile_dialog.py  # AudioReconcileDialog: shared preview dialog for audio file renames
-├── gui_next/                 # PRIMARY GUI — Electron + React + TypeScript (electron-vite)
+├── gui_next/                 # THE GUI — Electron + React + TypeScript (electron-vite)
 │   ├── package.json / electron.vite.config.ts / tsconfig*.json
 │   ├── resources/            # icon.png, installer.nsh, losslessbob-next.desktop
 │   └── src/
@@ -159,7 +133,7 @@ losslessbob/
 │           └── locales/      # en/de/fr/es/it/nl.json (i18next)
 ├── conftest.py               # pytest: autouse fixture resets DatabaseWriteQueue singleton + thread-local connections between tests
 ├── tests/
-│   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard, GUI presence
+│   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard
 │   ├── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
 │   ├── test_scraper_crawler.py # scrape_sessions + site_inventory table write functions
 │   ├── test_scraper.py       # backend/scraper.py: entry metadata parsing, scrape_entry/scrape_range, download_pages_range
@@ -194,14 +168,8 @@ losslessbob/
 │   ├── test_tapematch_routes.py # LISTENING §1 read routes in backend/app.py
 │   ├── test_tapematch_sync.py # backend/tapematch_sync.py
 │   └── test_batch_verify.py  # tools/batch_verify.py helper functions
-├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only (no PyQt6); bundled inside Electron AppImage
-├── losslessbob_linux.spec    # LEGACY — old PyInstaller full-app spec (PyQt6 GUI); superseded by losslessbob_backend.spec + electron-builder
-├── Dockerfile                # Docker image: python:3.11-slim + Xvfb + x11vnc + noVNC + Qt6 runtime
-├── docker-compose.yml        # Compose: port 6080 (noVNC), named data volume, music-folder mount examples
-├── .dockerignore             # Excludes .git, .venv, data/, dist/ from build context
-├── docker/
-│   └── entrypoint.sh         # Container startup: Xvfb → x11vnc → websockify/noVNC → app
-├── secrets/                  # Docker secret files (git-ignored *.txt; safe *.example templates)
+├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only; bundled inside Electron AppImage
+├── secrets/                  # Container secret file templates (git-ignored *.txt; safe *.example templates)
 │   ├── qbt_username.txt      # qBittorrent username (empty = unused)
 │   ├── qbt_password.txt      # qBittorrent password
 │   ├── qbt_apikey_user.txt   # qBittorrent API key label
@@ -215,10 +183,8 @@ losslessbob/
 │   ├── attribute_tapers.py   # CLI wrapper: backend.taper_attribution recompute → taper_attributions (--dry-run, --calibrate-fingerprints)
 │   ├── compute_show_picks.py # CLI wrapper: concert_ranker.picks recompute → show_picks (--dry-run)
 │   ├── compute_song_performances.py # CLI wrapper: backend.song_index recompute → song_performances (--dry-run)
-│   ├── losslessbob.iss       # Inno Setup 6 script — builds LosslessBob_Setup_<ver>.exe from dist/LosslessBob/
-│   ├── build_windows.bat     # Local helper: pyinstaller + iscc in sequence (Windows only)
-│   ├── shntool.exe           # Windows shntool binary (GPL-2); bundled into PyInstaller dist via losslessbob.spec
-│   ├── flac.exe              # Windows flac 1.5.0 Win64 binary (GPL-2); bundled via losslessbob.spec (TODO-146)
+│   ├── shntool.exe           # Windows shntool binary (GPL-2); bundled via losslessbob_backend.spec
+│   ├── flac.exe              # Windows flac 1.5.0 Win64 binary (GPL-2); bundled via losslessbob_backend.spec (TODO-146)
 │   ├── libFLAC.dll           # Required by tools/flac.exe (LGPL-2.1); bundled alongside it
 │   ├── check_project_refs.py # CLI: drift checker — routes/tables/screens/backend modules on disk vs PROJECT.md (used by /session-close and pre-commit review; TODO-244)
 │   ├── debug_forum_post.py   # CLI: dumps/replays a single WTRF forum post render for debugging
@@ -1214,7 +1180,7 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 ### Site-Data Packaging & Onboarding (FABLE_ONBOARDING_SYNC §3–§4, P1+P2)
 | Method | Route | Description |
 |--------|-------|-------------|
-| POST | `/api/package/scrape_data` | Bundles `data/site/` into a dated zip in `data/exports/` + `.manifest.json` sidecar (`type`, `created_at`, `file_count`, `total_bytes`, `sha256`). Query `part=core` (all but `files/`, `type: sitedata_core`), `part=files` (`files/` only, `type: sitedata_files`); omitted = legacy whole-tree zip (`type: scrape_data`, backward compatible with ScreenSetup / gui/setup_tab.py). Returns `{ok, path, manifest_path, manifest}`; 400 `invalid_part` / `no_site_data`. |
+| POST | `/api/package/scrape_data` | Bundles `data/site/` into a dated zip in `data/exports/` + `.manifest.json` sidecar (`type`, `created_at`, `file_count`, `total_bytes`, `sha256`). Query `part=core` (all but `files/`, `type: sitedata_core`), `part=files` (`files/` only, `type: sitedata_files`); omitted = legacy whole-tree zip (`type: scrape_data`, backward compatible with ScreenSetup). Returns `{ok, path, manifest_path, manifest}`; 400 `invalid_part` / `no_site_data`. |
 | POST | `/api/sitedata/github_release` | **Curator-only** (403 otherwise). `text/event-stream`. Builds core+files zips + manifests, creates GitHub release `sitedata-YYYY-MM-DD[.N]` on `kuddukan42/losslessbob`, uploads 4 assets (2 zips + 2 manifest sidecars) with progress. Same event shapes as the master release flow. First release published 2026-07-10 (`sitedata-2026-07-10`). |
 | GET | `/api/sitedata/github_check` | Latest `sitedata-*` release on `kuddukan42/losslessbob`. Matches part zips by `_core_`/`_files_` substring (collision-suffix tolerant) + `.manifest.json` sidecar pairing; parts missing their sidecar are omitted. Returns `{available, tag, release_url, published_at, parts: {core?, files?: {asset_name, asset_size, manifest}}}` or `{available: false, message}`. |
 | POST | `/api/sitedata/github_install` | `text/event-stream`, same event shapes as master install. Body `{parts: ["core"\|"files", …]}` (default `["core"]`, 400 `invalid_part`). Per part: downloads zip to `data/imports/`, verifies SHA256 vs manifest **before** extraction (mismatch deletes zip, errors, site dir untouched), extracts into `data/site/` (overwrite semantics), writes `.sitedata_<part>_manifest.json` marker in `data/site/`. |
@@ -1582,8 +1548,8 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 ### Map
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/map` | Serve `gui/resources/map.html` — Leaflet map page (OpenStreetMap tiles, OSM attribution). |
-| GET | `/leaflet/<filename>` | Serve bundled Leaflet JS/CSS from `gui/resources/leaflet/`. |
+| GET | `/map` | Serve `backend/resources/map.html` — Leaflet map page (OpenStreetMap tiles, OSM attribution); embedded by gui_next's ScreenMap iframe. |
+| GET | `/leaflet/<filename>` | Serve bundled Leaflet JS/CSS from `backend/resources/leaflet/`. |
 | GET | `/api/map/data` | Marker data with optional query filters (`year`, `owned`, `lb_status`). Returns `[{lb_number, lat, lon, date_str, location, display_name, owned, city_level}]`. |
 | GET | `/api/entries/by_lb_list` | Fetch search-compatible entry dicts for `?lbs=1,2,3` (comma-separated LB numbers, max 500). Used by Map → List in Search. |
 
@@ -1865,307 +1831,17 @@ Full-domain BFS spider that produces a complete offline mirror of `losslessbob.w
 
 ---
 
-## GUI: Scraper Tab (`gui/scraper_tab.py`)
+## GUI (legacy) — removed
 
-Dedicated tab containing all scraping functions. Replaces the scraper controls previously in the Setup tab.
-
-**Panel 1 — Site Mirror Crawler:**
-- Scope selector (`incremental` / `full`), Force re-fetch checkbox
-- Delay (ms) and Daily cap spinboxes (saved to DB settings)
-- Start Crawl / Stop buttons
-- Live URL status label + counts label (Fetched / 304 / Not found / Skipped / Failed / Queue)
-- Progress bar (indeterminate while running)
-
-**Panel 2 — Crawler Session History:**
-- `QTableWidget` showing the 20 most recent `scrape_sessions` rows (Started, Finished, Scope, Status, Fetched, 304, Failed)
-- Color-coded by status (green=done, yellow=stopped, red=error)
-- Refresh button
-
-**Panel 3 — Site Inventory:**
-- Paginated `QTableWidget` showing `site_inventory` rows with Status and Path-prefix filters
-- Columns: URL, Status, Size, HTTP, Last Fetched, Last Modified
-- 100 rows per page with Prev/Next pagination
-
-**Panel 4 — Entry Pages & Metadata Scraper:**
-- Options: Auto-scrape after import, Download attachments, Force re-scrape, Use local pages, Delay (ms)
-- Actions: Scrape All Missing, Scrape Range, Single Entry, Re-scrape Private LBs, Download Missing Pages
-- Progress bar + stop button (shared `_scrape_state` from `scraper.py`)
-- Embedded scraper log (read-only `QPlainTextEdit`, 500 lines)
-
-**Panel 5 — Bootleg-CD Catalog (LBBCD):**
-- Scrape Bootleg Catalog button + Force checkbox + status label
-- History table (5 columns: Scraped at, Status, Total, Added, Changed)
-
-**Background threads:** `_CrawlerStatusThread` (polls `/api/crawler/status` every 1s), `_ScrapeStatusThread` (polls `/api/scrape/status` every 1s), `_SingleScrapeThread` (one-shot single-entry scrape).
+The PyQt6 GUI (`gui/`, 14 tabs) was removed on 2026-07-16 — gui_next is the sole
+frontend. Historical per-tab documentation lives in git history
+(`git show 674249bb^:PROJECT.md`) and the Change Log below.
 
 ---
 
-## GUI: Main Window (`gui/main_window.py`)
+## GUI (Next): Electron/React Frontend (`gui_next/`)
 
-Fourteen tabs in order: **Lookup**(0) · **Rename Folders**(1) · **Verify**(2) · **lbdir**(3) · **Search**(4) · **Bootlegs**(5) · **My Collection**(6) · **Attachments**(7) · **Spectrograms**(8) · **DB Editor**(9) · **Scraper**(10) · **Setup**(11) · **Themes**(12) · **Map**(13, graceful-fallback if PyQt6-WebEngine absent)
-
-**Menu bar:**
-- File → Exit
-- Database → Check for Update / Select Database / Open DB Folder (all navigate to Setup via `tabs.indexOf(setup_tab)`)
-- Help → Help / About
-
-**Status bar:** Refreshes every 10 seconds with latest DB stats (most recent LB, checksum count, last import date).
-
-**Settings persistence:** Window geometry saved/restored via `QSettings`.
-
-**Tab index policy:** All `setCurrentIndex()` calls use `self.tabs.indexOf(self.whichever_tab)` rather than hardcoded integers so the order can change without breaking navigation.
-
----
-
-## GUI: Lookup Tab (`gui/lookup_tab.py`)
-
-The primary user-facing feature.
-
-**Left panel:** File list (drag-and-drop). Buttons: Lookup Clipboard, Lookup Listbox, Add Files, Add Folders, Clear List, Generate Checksums. Toggle to filter `_mychecksums` files.
-
-**Right panel — Summary table** (per-LB aggregate):
-- Columns: LB Number, Source, Given, Matched, Not Found, Missing, Dups, Xrefs, Status
-
-**Right panel — Detail table** (per-checksum):
-- Columns: Checksum, Filename, Type, LB Number, Xref, Status, Source
-
-**Color coding:**
-| Color | Meaning |
-|-------|---------|
-| Green | MATCHED (complete set) |
-| Orange | NOT FOUND |
-| Pink/rose | MATCHED INCOMPLETE (missing files) |
-| Yellow | DUPLICATE (in multiple LBs) |
-| Light blue | XREF (cross-reference entry) |
-
-**Checksum generation:** Posts to `POST /api/verify/generate` with the selected folder path(s). The backend (`backend/checksum_utils.py`) computes FFP (FLAC STREAM_INFO bytes 18–34) and MD5 hashes and writes `<foldername>_mychecksums.ffp` and `<foldername>_mychecksums.md5`, incrementing the suffix (`_mychecksums_2`, etc.) if files already exist. Generated file paths and any errors are shown in the status area below the file list.
-
-**Double-click summary row:** Opens the LosslessBob detail page in the system browser.
-
-**Signal to Rename tab:** After each lookup, emits results so the Rename tab can auto-populate folder rename proposals.
-
-**Threading:** `_LookupWorker` (QThread) performs API calls without blocking the UI.
-
----
-
-## GUI: Verify Tab (`gui/verify_tab.py`)
-
-Verifies audio files against **locally-generated** checksum files (`.ffp`, `.md5`, `.st5`) — distinct from lbdir_tab which checks the official archive record.
-
-**Left panel:** Folder list (drag-drop, dirs only). Buttons: Add Folders, Add Root Folder (recursive audio scan), Remove Selected, Clear List, Verify Folders, Generate Checksums, Retrieve from LB.
-
-**Summary table** (one row per folder):
-Columns: Folder | Mode | FFP | MD5 | Shntool | Total | Pass | Mismatch | Missing | Extra | Status
-
-**Detail table** (one row per audio file in selected folder):
-Columns: Filename | MD5 | FFP/Shntool | ST5 | On Disk | Overall
-Default: problem rows only. Toggle: "Show all files" checkbox.
-
-**Row colors:**
-| Color | Meaning |
-|-------|---------|
-| Green | PASS |
-| Red | FAIL (mismatch) |
-| Orange | MISSING FILES (files not on disk) |
-| Yellow | INCOMPLETE (missing checksum type) |
-
-**Workers:**
-- `_VerifyWorker` → `POST /api/verify`
-- `_GenerateWorker` → `POST /api/verify/generate`, then auto-triggers verify
-- `_RetrieveWorker` → `POST /api/lbdir/retrieve`, then auto-triggers verify
-
-shntool missing → yellow row + status label install hint.
-
----
-
-## GUI: lbdir Tab (`gui/lbdir_tab.py`)
-
-Verifies the **official lbdir*.txt** file for each folder against actual files on disk. The lbdir file is the archive's authoritative checksum record scraped from losslessbob.com.
-
-**Left panel:** Folder list (drag-drop, dirs only). Buttons: Add Folders, Add Root Folder, Remove Selected, Clear List, Check lbdir Files (all folders), Retrieve lbdir (selected or all → auto-triggers check).
-
-**Summary table** (one row per folder):
-Columns: Folder | LB# | lbdir File | Mode | Total | Pass | Mismatch | Missing | Status
-
-**Row colors:**
-| Color | Meaning |
-|-------|---------|
-| Green | PASS |
-| Red | FAIL, MISSING FILES, SHNTOOL MISSING, PARSE ERROR |
-| Yellow | NO LBDIR (lbdir absent but LB# known, retrievable) |
-| Grey | NO LB# (cannot retrieve, entry unknown) |
-
-**Double-click summary row:** Opens `http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html`.
-
-**Detail table** (one row per file listed in lbdir):
-Columns: Filename | MD5 Exp. | MD5 Act. | MD5 | FFP/Shn Exp. | FFP/Shn Act. | FFP/Shn | On Disk | Overall
-Hash columns truncated to 12 chars with full hash in tooltip. Column-0 `UserRole` stores the original file index so the "Show all files" toggle correctly maps visible rows to file data.
-
-**Info panel** (right of detail table): Displays shntool_len data for the selected detail row — Length, Expanded Size, CDR, WAVE Problems, Format, Ratio. Populated from `/api/lbdir/check` per-file fields; blank for non-audio files or when no shntool_len data is available.
-
-**Retrieve lbdir button:** Uses selected listbox items if any, otherwise all folders. Status messages distinguish `copied` (local cache), `scraped_and_copied` (fresh scrape), `not_found`, and `no_lb_number` (folder not in My Collection).
-
-**Workers:**
-- `_LbdirCheckWorker` → `POST /api/lbdir/check`
-- `_LbdirRetrieveWorker` → `POST /api/lbdir/retrieve`, then auto-triggers check
-
----
-
-## GUI: Search Tab (`gui/search_tab.py`)
-
-Search field + field selector (All / Location / Date / Description) + year dropdown. All matching entries are fetched from the API and paginated client-side. Columns: LB Number, Date, Location, Rating, Description, Owned.
-
-**Pagination:** Prev/Next buttons and a "Page X of Y (N results)" label appear between the search bar and table whenever results exceed the configured page size. Page size defaults to 50 and is set in the Setup tab. `set_page_size(n)` resets to page 1 and re-renders.
-
-**Client-side filters (checkboxes, all AND-combined):**
-- **Missing only** — show only rows with `status == "missing"` (yellow highlighted)
-- **Owned only** — show only rows whose LB number is in My Collection
-- **Not owned** — show only rows NOT in My Collection
-- Combining "Missing only" + "Owned" = missing entries that are owned; combining "Owned only" + "Not owned" = empty result (contradictory)
-
-**Owned data** is fetched from `GET /api/collection/lb_numbers` after each search result arrives. If an owned filter is active when data loads, the page is re-rendered automatically.
-
-**Double-click col 0:** Switches to Lookup tab. **Double-click any other column:** Opens `LB-{lb:05d}.html` on losslessbob.com (5-digit zero-padded).
-
-**🎵 Bootleg badge:** LB Number cells show a `🎵 N` suffix when that LB has entries in `bootleg_titles`. The badge set is pushed from `BootlegsTab.bootleg_lbs_loaded` on startup and after each scrape.
-
----
-
-## GUI: Bootlegs Tab (`gui/bootlegs_tab.py`)
-
-Browse the LosslessBob Bootleg-CD catalog (LBBCD index page). Backed by `bootleg_titles` + `bootleg_scrapes` tables (MASTER data, ships in curator releases).
-
-**Filter bar:** Free-text search (title + location, debounced 300 ms), year range (two spinboxes), CDs combobox (All / 0 / 1 / 2 / 3+), Status filter (public/private/missing), Owned filter (All/Owned/Not owned), LBBCD filter (All/Has link/No link), Clear button.
-
-**Table columns:** LB Number, Title, Date, Year, Location, CDs, LBBCD (e.g. `LBBCD-275`), Status (lb_master colour), Owned (✓).
-
-**Pagination:** Prev/Next with "Page X of Y · N results" label. Default page size 200.
-
-**Detail pane (right):** Title, date, location, CD count, lb_master status, LBBCD identifier. Two buttons: "Open in Search Tab" (emits `open_lb_in_search` → MainWindow switches to Search and pre-fills the LB number); "Open LBBCD Page" (opens browser). "Other bootleg titles for this LB" sub-panel lists sibling rows.
-
-**Signals:**
-- `open_lb_in_search(int)` — connected by MainWindow to `_on_bootleg_open_lb`
-- `bootleg_lbs_loaded(set)` — connected by MainWindow to `search_tab.set_bootleg_lbs`
-
-**Double-click row:** Opens the LB detail page on losslessbob.com.
-
----
-
-## GUI: Setup Tab (`gui/setup_tab.py`)
-
-**Database section:** Stats display, Import Database File button, Check for Update, Open DB Folder, destructive Reset button.
-
-**Search section:** "Results per page" spinner (range 10–500, step 10, default 50). Saved to meta as `search_page_size`. Emits `search_page_size_changed(int)` signal picked up by the Search tab.
-
-**Scraper section:**
-- Checkboxes: Auto-scrape after import, Download attachment files, Force re-scrape (ignore already-complete entries), **Use local pages for metadata (data/pages/)**
-- Delay spinner (500–10000 ms, default 1500 ms)
-- Scrape All / Stop buttons
-- Single-entry scrape (enter one LB number)
-- Range scrape (start, end, optional Fill Gaps mode)
-- Progress bar + scrolling log (max 500 lines)
-
-**Force re-scrape checkbox:** When checked, passes `force=True` to all three scrape modes (single, range, all), bypassing the skip-if-already-complete logic. Persisted in `meta` as `force_scrape`.
-
-**Skip LB numbers with no checksum data:** For LB numbers in the range not present in the checksum DB, inserts a `status='missing'` placeholder entry (renamed from "Mark sequential gaps as MISSING").
-
-**Scraper log:** Shows "Scraped LB-X [local]" / "Scraped LB-X [web]", "Skipped LB-X — already complete", or "Error scraping LB-X" per entry. Uses `last_lb` (the just-completed entry) paired with `last_source`/`last_action` from the status poll so the source tag always matches the logged LB number. Completion message includes skipped and error counts.
-
-**Scraper log file:** Every log line is appended to `data/scraper.log`. The Scraper Log group shows the current file size, an "Open Log File" button, and a "Purge Log" button that truncates the file and clears the in-app widget.
-
-**Background threads:**
-- `_ImportThread` — calls `/api/db/import`
-- `_ResetThread` — calls `/api/db/reset`
-- `_SingleScrapeThread(flask_port, lb_number, force)` — calls `/api/entry/<lb>/scrape`
-- `_ScrapeStatusThread` — polls `/api/scrape/status` every 1 second; updates progress bar and log
-
----
-
-## GUI: Attachments Tab (`gui/attachments_tab.py`)
-
-**Left panel:** Tree of entries that have locally cached files, with file count. Only entries with at least one downloaded file appear.
-
-**Right panel (stacked widget):**
-- Text viewer for `.txt`, `.ffp`, `.md5`, `.st5`
-- Web viewer (PyQt6-WebEngine) for `.html`
-- Generic panel with Open Externally button for other types
-
-**Re-download button:** Forces a fresh scrape of the selected entry.
-
-**Manual file placement:** Files dropped directly into `data/attachments/LB-XXXXX/` (matching the zero-padded naming convention) are displayed in the tree after clicking Refresh — no DB write required. The "Refresh / Re-download" button will overwrite manually placed files, so avoid using it on manually populated entries.
-
----
-
-## GUI: Rename Tab (`gui/rename_tab.py`)
-
-Populated automatically after each lookup. Shows folders from the input file list alongside proposed new names. Constructor takes `flask_port` (default 5174) for backend resolution calls.
-
-**Row states and colors:**
-| State | Color | Meaning |
-|-------|-------|---------|
-| `has_lb` / `renamed` | Green `#C8E6C9` | Correct LB already in name / just renamed |
-| `needs_rename` | Orange `#FFE0B2` | Match found, rename to `{folder}-LB-{N}` |
-| `wrong_lb` | Purple `#E1BEE7` | Folder has a *different* LB number — needs strip + rename |
-| `multiple_ids` | Cyan `#B2EBF2` | Multiple LBs found, unresolved |
-| `no_match` | Red `#FFCDD2` | No match |
-
-**Disambiguation resolution order** (applied per folder during `populate_from_lookup`):
-1. `folder_lb_link` lookup — if an exact path match exists in the DB, use that LB directly. LB Found cell shows `🔗 LB-XXXXX` prefix.
-2. `lb_alias` collapse — call `GET /api/lb_alias/resolve`. If all candidates collapse to one canonical, use it automatically. After resolution, all known aliases for that canonical are fetched via `GET /api/lb_alias?canonical_lb=<lb>` and included in the proposed folder name.
-3. Fall back to `multiple_ids` state (cyan) for manual resolution.
-
-**Multi-LB folder naming convention** (alias-resolved folders):
-- Format: `{original_name}-{canonical}-{alias1}-{alias2}` where each LB token is `LB-NNNNN` (no zero-padding on the number itself, e.g. `LB-12345`).
-- Order: canonical first, then aliases in ascending numeric order.
-- Example: a folder resolved to canonical LB-12345 with alias LB-67890 gets suffix `LB-12345-LB-67890`.
-- The LB Found display column shows all LBs separated by ` + ` (e.g. `LB-12345 + LB-67890`) to distinguish from unresolved multiple IDs (which use `, `).
-- `_lb_in_name` / `_has_wrong_lb` / `_row_state` all operate on the canonical LB only, so state detection remains correct.
-
-**Right-click context menu (multiple_ids rows):**
-- **Resolve — Apply…** submenu — pick a specific candidate LB to resolve the row (session-only, not persisted)
-- **Link this folder to specific LB…** — prompts for an LB number, saves via `PUT /api/folder_link`, updates row to resolved state with `🔗` indicator
-- **Save as master alias…** *(curator-only)* — opens `_AliasDialog` to create a `lb_alias` mapping; re-runs resolution for the row after save
-
-**Right-click context menu (linked rows, indicated by `🔗`):**
-- **Unlink this folder** — calls `DELETE /api/folder_link`, resets row to non-linked state
-
-**Wrong-LB workflow:** When a folder already contains an LB number that doesn't match the correct one, the row shows "Wrong LB in name" (purple). Use **Select Wrong LB** to batch-select all such rows, then **Strip Wrong LB from Selected** to rewrite proposed names from `OldFolder-LB-old-LB-new` → `OldFolder-LB-new`. Then click **Rename Selected** to apply.
-
-**Select All** checks only actionable rows (`needs_rename` + `wrong_lb`); green/red rows are left unchecked.
-
-**Execute:** Rename Selected → moves folders into a `0. Processed/` subdirectory alongside the source.
-
----
-
-## GUI: DB Editor Tab (`gui/dbedit_tab.py`)
-
-Paginated browse, inline-edit, and delete for every SQLite table. Left sidebar has a table list (with row counts), a **DB Integrity** panel, and an **LB Aliases** panel.
-
-**DB Integrity sub-panel:**
-- Live stats label: Public / Private / Missing / Nonexistent / Max LB / Overrides / Needs review / Public-no-checksums counts (from `GET /api/lb_master/stats`).
-- **Reconcile All** — recomputes lb_master status for every LB. Backs up DB first.
-- **Show Needs Review** — filters the lb_master table to rows with `needs_review=1`.
-- **Export Overrides** — calls `GET /api/lb_master/overrides/export`, saves JSON file.
-- **Import Overrides** — loads a JSON file, calls `POST /api/lb_master/overrides/import`. Curator-gated.
-- **Backup DB Now** — manual snapshot (`POST /api/db/backup`).
-
-**LB Aliases panel:**
-- `QTableWidget` with columns: Alias LB | → | Canonical LB | Relationship | Note
-- Auto-loaded on `load_tables()`. Add/Delete buttons curator-only. Non-curators read-only.
-
-**Right panel:** Editable data table. Supports: Load Records, per-LB filter, column search, pagination, sort (header click), inline cell edit, Save Changes, Delete Selected, Export CSV.
-
----
-
-## GUI: Theme Tab (`gui/theme_tab.py`)
-
-Fourteen preset themes (Light, Dark, Black, Dracula, Blue, Purple, Red, Nord, Gruvbox, Monokai, Tokyo Night, Solarized, Everforest, Catppuccin) plus custom color picker. Color changes apply immediately via `styles.py` which generates Qt QSS from a color dictionary. Theme name and per-color overrides persist in `QSettings`.
-
----
-
-## GUI (Next): Electron/React Frontend (`gui_next/`) — PRIMARY GUI
-
-Second-generation GUI (primary, merged into main 2026-05-29) built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes a typed `window.api` surface: `flaskPort`, `flaskBase`, `platform` (plain values, not IPC calls) plus IPC handlers `pickFolders`, `pickDir`, `pickFile`, `openPath`, `saveFile`, `pickAndReadFile`, `pickAndReadFiles` — `pickFiles` (plural, no read-back) no longer exists under that name; use `pickAndReadFiles`. All screens are registered in `App.tsx` and routed via a sidebar nav. **All future development happens here.** The legacy `gui/` PyQt6 frontend is frozen — it receives no new features or bug fixes.
+Second-generation GUI (primary, merged into main 2026-05-29) built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes a typed `window.api` surface: `flaskPort`, `flaskBase`, `platform` (plain values, not IPC calls) plus IPC handlers `pickFolders`, `pickDir`, `pickFile`, `openPath`, `saveFile`, `pickAndReadFile`, `pickAndReadFiles` — `pickFiles` (plural, no read-back) no longer exists under that name; use `pickAndReadFiles`. All screens are registered in `App.tsx` and routed via a sidebar nav. **All development happens here** — the legacy PyQt6 frontend was removed 2026-07-16.
 
 ### Screens (24 files in `screens/`, drop-in registered via `App.tsx` routes)
 
@@ -2273,40 +1949,6 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 ---
 
-## Legacy GUI Conventions (frozen)
-
-*The `gui/` PyQt6 frontend is frozen — this section documents its historical conventions for
-reference only. New work follows the "GUI (Next) Conventions" section below instead.*
-
-- **Table column resizing:** All `QTableView` instances use `QHeaderView.ResizeMode.Interactive` for the horizontal header so the user can drag column borders freely. After data loads, call `view.resizeColumnsToContents()` once to set sensible initial widths. Never use `ResizeToContents` or `Stretch` as the persistent resize mode.
-
-- **Qt style base:** `QApplication.setStyle("Fusion")` is set in `main.py` before any QSS is applied. Fusion renders consistently cross-platform and is required for QSS overrides (especially rounded corners and flat buttons) to work correctly.
-
-- **Stylesheet generation:** All QSS is generated in `gui/styles.py` → `build_stylesheet(theme_dict)`. The stylesheet is applied to the main window and regenerated whenever the user changes themes. Key QSS rules:
-  - `QPushButton`: `border-radius 6px`, `padding 5px 14px`; accent-colored background with hover/pressed/disabled states; no 3D border.
-  - `QLineEdit`, `QComboBox`, `QSpinBox`: `border-radius 4px`, `padding 2px 6px`.
-  - `QTabBar::tab`: `border: none`, `border-radius 4px 4px 0 0`; selected tab gets a `border-bottom: 2px solid accent` underline indicator instead of a raised appearance.
-  - `QGroupBox`: `border-radius 6px`, `margin-top 1.5em`, `padding-top 6px`; title via `subcontrol-position: top left`.
-  - `QProgressBar`: `border: none`, 6 px fixed height, `border-radius 3px`; chunk also rounded. No text overlay.
-  - `font-weight`: always 700 — never 500 (inconsistent cross-platform).
-
-- **Drop shadows:** `styles.apply_panel_shadow(widget)` attaches a `QGraphicsDropShadowEffect` (blurRadius 12, offset 0,2, color rgba 0,0,0,60) to a widget. Applied in `main_window.py → _apply_shadows()` to the 1–2 main result panels per tab:
-  - Lookup: `summary_container`, `detail_container`
-  - Rename: `view`
-  - Verify: `summary_container`, `detail_container`
-  - lbdir: `summary_container`, `detail_container`
-  - Search: `view`
-  - Collection: `coll_view`, `miss_view`
-  Do **not** apply globally or to the window frame.
-
-- **QTableWidget vs QTableView:** The Lookup and Rename tabs use `QTableView` + custom `QAbstractTableModel`. The Verify and lbdir tabs use `QTableWidget` (no model class) since their data is repopulated wholesale on each run and per-cell color/tooltip control is simpler with `QTableWidgetItem`. Both use `QHeaderView.ResizeMode.Interactive` and `resizeColumnsToContents()` after load.
-
-- **Worker pattern:** All background operations use `QThread` subclasses with `finished(dict)` and `error(str)` signals, matching `_LookupWorker`. Workers that auto-chain (generate→verify, retrieve→check) call the next `_start_*` method from the `finished` handler in the main thread.
-
-- **Folder index in detail tables:** When the Verify or lbdir detail table filters rows (show-problems-only mode), column-0 of each visible row stores the original index into the full file list via `item.setData(Qt.ItemDataRole.UserRole, file_idx)`. This allows the info panel click handler to correctly retrieve shntool_len data regardless of which rows are hidden.
-
----
-
 ## GUI (Next) Conventions
 
 - **State: zustand stores, not Context/Redux.** `store.ts` holds app-wide settings (`useSettingsStore`, persisted to localStorage via `zustand/middleware`'s `persist`). Screen-scoped shared state (folder queues, job progress, viewer state) lives in one small store per concern under `lib/` (`folderQueueStore.ts`, `verifyStore.ts`, `lbdirStore.ts`, `spectrogramStore.ts`, `attachmentsStore.ts`, `scraperLogStore.ts`, `lookupStore.ts`) — never one giant store. Data fetched from the backend is NOT put in zustand; it goes through `@tanstack/react-query` instead.
@@ -2329,9 +1971,8 @@ reference only. New work follows the "GUI (Next) Conventions" section below inst
   - `backend/app.py` (fallback when run as `__main__`)
   - `gui_next/src/main/index.ts` (`FLASK_PORT`, Electron main process)
   - `gui_next/src/preload/index.ts:7` (`FLASK_PORT`, exposed to renderer as `window.api.flaskPort`/`flaskBase`)
-  - `run_backend.py:40` (`--port` default) and `main.py:15` (`FLASK_PORT`, legacy entrypoint)
+  - `run_backend.py:40` (`--port` default)
   - `cli.py` (`--port` default, `serve`/interactive subcommands)
-  - `gui/map_tab.py` (`_FLASK_PORT`) and `gui/rename_tab.py` (`flask_port` default) — frozen legacy GUI
 - **File access restriction:** `.claude/settings.json` restricts Claude Code to read/write only within this project directory and `~/.claude/` (memory). Bash commands are not path-restricted.
 
 ---

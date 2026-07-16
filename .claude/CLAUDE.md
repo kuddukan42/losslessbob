@@ -57,14 +57,13 @@ Every session that changes code ends with the repo's bookkeeping: CHANGELOG.md
 entry, BUGS/BUGS_DONE and TODO/TODO_DONE moves. Run `/session-close` — entry
 formats and numbering rules live in that skill.
 
-User-facing feature changes also require locale updates: `/gui-next-i18n`
-(gui_next) or `/i18n-update` (legacy gui/).
+User-facing feature changes also require locale updates: `/gui-next-i18n`.
 
 CHANGELOG.md holds a rolling ~2-month window; when a month rotates out, move its
 entries to the top of CHANGELOG_ARCHIVE.md (keep newest-first order).
 
-Subdirectory rules live in `gui/CLAUDE.md` and `tools/tapematch/CLAUDE.md` —
-they load automatically when working there; don't duplicate them here.
+Subdirectory rules live in `tools/tapematch/CLAUDE.md` — they load
+automatically when working there; don't duplicate them here.
 
 ---
 

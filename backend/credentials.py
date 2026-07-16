@@ -4,8 +4,8 @@ Credentials are never written to SQLite or any file on disk.
 When no keyring backend is available the app continues normally,
 keeping credentials in the in-process session cache only.
 
-Docker: credentials can be pre-loaded via secrets mounted at /run/secrets/.
-See docker-compose.yml and secrets/ for the expected filenames.
+Container deployments can pre-load credentials via secret files mounted at
+/run/secrets/ (see _SECRET_MAP for the expected filenames).
 """
 import logging
 from dataclasses import dataclass
@@ -23,7 +23,7 @@ _session: dict[str, tuple[str, str]] = {}
 
 _keyring_ok: bool | None = None  # cached after first probe
 
-# Docker secrets — files mounted at /run/secrets/ by docker-compose
+# Container secrets — files mounted at /run/secrets/ by the container runtime
 _SECRETS_DIR = Path("/run/secrets")
 _SECRET_MAP: dict[str, tuple[str, str]] = {
     SERVICE_QBT:     ("qbt_username",    "qbt_password"),

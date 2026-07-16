@@ -236,8 +236,8 @@ DB_PATH = "/home/user/.local/share/losslessbob/lb.db"
 
 ## 9. Threading
 
-- All GUI↔backend calls happen over HTTP (port 5174). Never import PyQt6 in backend
-  modules.
+- All GUI↔backend calls happen over HTTP (port 5174). The backend must stay
+  importable headless — no GUI-toolkit imports in backend modules.
 - Backend is multi-threaded (Flask + Waitress). Assume any function may be called
   concurrently; do not use module-level mutable state without a lock.
 - Use `threading.local()` for per-thread state (connection pool pattern in `db.py`).
