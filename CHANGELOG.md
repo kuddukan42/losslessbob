@@ -1,3 +1,59 @@
+[2026-07-16] — chore(db): TODO-240 complete — venue gazetteer fully resolved, all entry locations geocoded
+Context: overnight completion of the geo chain started 2026-07-15 (TODO-239 backfill → resolve → geocode).
+Changed: venue_geocoded (data): resolve finished 4,071/4,071 — final mix 2,125 bounded_venue,
+  1,388 setlistfm_city, 419 wikidata, 124 city_geocode, 15 failed. Pre-backfill city_geocode
+  pins were reset + re-laddered (587/726 upgraded to venue-precision/zero-cost sources); old
+  pins snapshotted in _city_geocode_backup_20260715 (drop the table once satisfied).
+Changed: location_geocoded (data): geocoder run_batch processed all 6,584 remaining
+  entries.location values — 6,008 via free gazetteer inheritance (4,003 venue + 2,005 city),
+  531 skipped_not_concert, 9 live Nominatim calls. 0 un-geocoded remain.
+Verified: db.get_map_data() spot-check — 11,090 markers, city_level 4,506 (40.6%).
+
+[2026-07-15] — fix(db): BUG-118 degenerate-checksum lookup fix + geo backfill (TODO-239) + backlog burn-down (TODO-156/236/242, BUG-251)
+Context: autonomous backlog session (xref items TODO-246/249 explicitly parked by tj).
+Fixed: backend/db.py: BUG-118 phantom lookup conflicts — new _DEGENERATE_CHECKSUMS /
+  _is_degenerate_checksum(); lookup_checksums treats empty-file MD5/SHA-1 and all-zero ffp
+  as non-evidence in both directions (no match evidence, never counted missing; detail rows
+  kept with ignored=True). Phantom quartet 04994/03029/06748/11900 shared the empty-file MD5.
+  Verified: functional test vs real DB + 240 tests green (db_lookup/db_writes/setlistfm/geocoder).
+Added: backend/importer.py: de-dup guard — incremental imports (≤500 new LBs) log checksums
+  already present under other LB numbers (surfaces future BUG-118-class duplicates at import time).
+Added: shared_checksums_report.md (repo root): BUG-118 item-1 report — 5,261 shared
+  (checksum,chk_type) groups across 223 LB-sets; top cluster 16054/16101/16440/16511/16621
+  shares 718 hashes (likely one recording under six entries; needs curator review).
+Changed: lb_problems table (data, TODO-156): 32 rows added covering BUG-118 conflict pairs,
+  the six-way 16000-series cluster, BUG-120 verify mismatches, BUG-252 reconcile entries.
+Added: docs/wiki/Taper-Attribution-Flow.md (TODO-236): attribution pipeline flowcharts
+  (Layer 0/1, disabled Layer 2, curator loop, conflict-queue split) + wiki Home index row.
+Changed: data (TODO-239): setlist.fm force re-scrape backfilled city coords — 4,147/4,149
+  setlistfm_shows rows now carry city_lat/lon (was 0). venue_gazetteer resolve re-launched
+  for the 2,361-seeded remainder (07-14 batch had died at 1,710/4,071); setlistfm_city pins
+  confirmed working. Geocoder run_batch still pending → TODO-240 In Progress.
+Changed: BUG-251 closed without re-run: contamination scan of all 2,280 tapematch run dirs
+  found only the known 20260602_205451 report; clean sibling 20260602_205500 (regenerated 9s
+  later) supersedes it — SUPERSEDED.md marker dropped in the dir.
+Changed: TODO.md: TODO-242 investigated → decision-ready (propagation works, both LBs carry
+  ltf; asymmetry is the spec'd confirmed-only pill policy; "Needs review" = tapematch family
+  review_flag with tooltip already wired — decision + optional reason-backfill remain).
+
+[2026-07-15] — chore(docs): TODO-248 ledger ID integrity — open/done collisions fixed, archive frozen (option 1)
+Context: 20 duplicate BUG ids in BUGS_DONE.md, 17 duplicate TODO ids across TODO files, and
+  2 ids (BUG-175, BUG-200) that named an open bug and an unrelated fixed bug simultaneously,
+  making ledger.py bug-close ambiguous. tj decided option 1 ("do 1 thats it"): leave archive
+  duplicates frozen as historical noise; renumber only the 2 open bugs that collide.
+Changed: BUGS.md: open BUG-200 (tapematch report.md cross-contamination) renumbered to
+  BUG-251; open BUG-175 (LBDIR reconcile MD5 mismatch) renumbered to BUG-252; each entry
+  carries a "Renumbered:" alias note so pre-2026-07-15 references stay traceable. The fixed
+  BUG-175/BUG-200 in BUGS_DONE.md keep their numbers.
+Changed: TODO.md: consistency check found 3 open/done TODO collisions of the same class
+  (missed by the original TODO-248 census) — open TODO-155 "Improve xref handling" -> TODO-249,
+  open TODO-107 "Disk Scanner" -> TODO-250, open TODO-106 "Trading multi-friend batch compare"
+  -> TODO-251, each with a "Renumbered:" alias note; the done copies keep their numbers.
+  TODO-172 cross-reference updated (BUG-175 -> BUG-252). Historical CHANGELOG/PROJECT.md
+  references intentionally untouched. tools/ledger_dedup.py assessed: report-only, no rewrite
+  path — hand edit was correct.
+Closed: TODO-248 -> TODO_DONE.md (within-archive duplicates remain by decision).
+
 [2026-07-15] — feat(gui): TODO-247 visual-verification driver — bite 4 + spec CLOSED (3b won't-do)
 Context: instructions/complete/FABLE_VISUAL_VERIFICATION.md §8. tj chose bite 4 over bite 3b
   when the two were put to him as independent next steps, then killed 3b outright: "not
