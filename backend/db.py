@@ -94,6 +94,8 @@ USER_TABLES = (
     "song_canonical",
     "song_performances",
     "setlist_fingerprint_suggestions",
+    "xref_ingest_filesets",
+    "xref_ingest_rows",
 )
 
 # Guard against f-string injection if a table name is ever mis-typed (#10)
@@ -422,6 +424,33 @@ CREATE TABLE IF NOT EXISTS flat_file_changelog (
 );
 CREATE INDEX IF NOT EXISTS idx_flat_changelog_release ON flat_file_changelog(release_id);
 CREATE INDEX IF NOT EXISTS idx_flat_changelog_lb      ON flat_file_changelog(lb_number);
+
+-- Site-mirror xref checksum ingest staging (TODO-252 / B8): audit trail /
+-- provenance only, never a checksums schema change. See backend/xref_ingest.py.
+CREATE TABLE IF NOT EXISTS xref_ingest_filesets (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number    INTEGER NOT NULL,
+    xref         INTEGER NOT NULL,
+    source_file  TEXT NOT NULL,
+    row_count    INTEGER NOT NULL,
+    new_count    INTEGER NOT NULL,
+    status       TEXT NOT NULL DEFAULT 'staged',
+    staged_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    decided_at   TIMESTAMP,
+    UNIQUE(lb_number, xref)
+);
+CREATE INDEX IF NOT EXISTS idx_xref_ingest_filesets_status
+    ON xref_ingest_filesets(status);
+
+CREATE TABLE IF NOT EXISTS xref_ingest_rows (
+    fileset_id INTEGER NOT NULL,
+    checksum   TEXT NOT NULL,
+    filename   TEXT NOT NULL,
+    chk_type   TEXT NOT NULL,
+    is_new     INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS idx_xref_ingest_rows_fileset
+    ON xref_ingest_rows(fileset_id);
 
 CREATE TABLE IF NOT EXISTS lb_alias (
     alias_lb       INTEGER PRIMARY KEY,
