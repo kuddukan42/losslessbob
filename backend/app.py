@@ -238,12 +238,12 @@ def _submit_lbdir_prefetch(lb_number: int) -> bool:
     return True
 
 
-# ── Restart callback (set by main.py so only the Flask server restarts) ───────
+# ── Restart callback (set by run_backend.py so only the Flask server restarts) ─
 _restart_callback = None
 
 
 def set_restart_callback(cb) -> None:
-    """Register a function that main.py calls to restart the Flask server in-process.
+    """Register a function the backend launcher calls to restart the Flask server in-process.
 
     When set, admin_restart invokes this instead of os.execv so the GUI is not affected.
     If not set (standalone/Windows), os.execv restarts the whole process as before.

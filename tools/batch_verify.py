@@ -3,8 +3,7 @@
 
 Talks to the Flask backend exclusively via HTTP (default port 5174).
 The backend must be running before invocation:
-    python run_backend.py          # headless
-    python main.py                 # with legacy GUI
+    python run_backend.py          # headless (Electron gui_next spawns this itself)
 
 Ground truth: the lbdir*.txt file is the canonical record for each folder.
 Existing FFP/MD5/ST5 files are used only for LB-number identification (Phase 0).
