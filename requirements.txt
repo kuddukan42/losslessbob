@@ -8,10 +8,6 @@ lxml==6.1.0
 torf==4.3.1
 keyring==25.7.0
 
-# GUI
-PyQt6==6.7.1
-PyQt6-WebEngine==6.7.0
-
 # File watching
 watchdog==4.0.1
 
