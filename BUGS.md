@@ -1,4 +1,12 @@
 
+BUG-253: pytest suite leaks lb_*_test_* temp dirs and tmp*.wav files into /tmp
+Status: Open
+File(s): tests/,conftest.py
+Reported: 2026-07-16
+Description: Discovered 2026-07-16 during the legacy GUI removal: ~2,900 leaked lb_<name>_test_* dirs (plus orphan 67-74MB tmp*.wav from ab_clips-style tests, pytest-of-tjenkins, /tmp/__pycache__) had accumulated in /tmp until the 2.7G partition hit 100%, causing intermittent ENOSPC test failures (test_venue_gazetteer 3F/4E mid-suite, green in isolation) and broken tool output capture. Tests create tempfile.mkdtemp(prefix='lb_..._test_') without cleanup/addfinalizer. Fix: route through pytest tmp_path/tmp_path_factory or add teardown; check every test module that calls tempfile directly. One-off cleanup already performed 2026-07-16.
+Root cause: Unknown
+Fix: —
+
 BUG-210: backend/lossless_bob.db keeps reappearing in repo root (untracked, empty)
 Status: Open
 File(s): backend/lossless_bob.db (unknown origin)

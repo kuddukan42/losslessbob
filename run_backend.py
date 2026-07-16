@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Standalone Flask backend launcher — no GUI required.
 
-Use this for LAN/phone access when you don't need the PyQt6 GUI.
+Use this for LAN/phone access or standalone backend runs; the Electron
+GUI (gui_next) spawns this itself in packaged builds.
 The Restart Server button on the admin page will restart only the
 Flask server; this process stays alive between restarts.
 

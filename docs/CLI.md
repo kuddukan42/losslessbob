@@ -1,6 +1,6 @@
 # LosslessBob CLI Reference
 
-`cli.py` is a headless CLI that runs LosslessBob without launching the PyQt6 GUI.
+`cli.py` is a headless CLI that runs LosslessBob without launching the GUI.
 It starts an embedded Flask server on a background thread, issues API requests against it,
 and prints results to stdout.
 

@@ -1909,15 +1909,10 @@ def create_app() -> Flask:
         import sys
 
         from backend.version import VERSION as _VER
-        try:
-            from PyQt6.QtCore import QT_VERSION_STR
-        except Exception:
-            QT_VERSION_STR = "n/a"
         return jsonify({
             "version": _VER,
             "python": sys.version.split()[0],
             "platform": f"{platform.system()} {platform.release()}",
-            "qt": QT_VERSION_STR,
         })
 
     @app.route("/api/update/check", methods=["GET"])
