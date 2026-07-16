@@ -1276,7 +1276,9 @@ def create_app() -> Flask:
     def collection_add() -> Response:
         """Add an LB entry to the user's collection.
 
-        Body: {lb_number, folder_name, disk_path, notes?}
+        Body: {lb_number, folder_name, disk_path, notes?, xref?}
+        ``xref`` (default 0) is the copy-level fileset id this folder matches
+        (0 = canonical fileset — FABLE_XREF_INCORPORATION.md D3).
         Returns:
             JSON {ok, added} or 400 if required fields are missing.
         """
@@ -1286,9 +1288,12 @@ def create_app() -> Flask:
             folder_name = data.get("folder_name", "")
             disk_path = data.get("disk_path", "")
             notes = data.get("notes")
+            xref = data.get("xref") or 0
             if not lb or not folder_name or not disk_path:
                 return jsonify({"error": "lb_number, folder_name, disk_path required"}), 400
-            added = database.add_to_collection(int(lb), folder_name, disk_path, notes)
+            added = database.add_to_collection(
+                int(lb), folder_name, disk_path, notes, xref=int(xref),
+            )
             return jsonify({"ok": True, "added": added > 0})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -6820,6 +6825,10 @@ def create_app() -> Flask:
         year-routed mount (see the Collect mount picker). Returns {ok, error?,
         error_code?} immediately — poll /api/pipeline/file/status for progress
         and the final result.
+
+        ``xref`` (optional, default 0) is the copy-level fileset id the
+        pipeline's lookup step resolved (row.file.xref) — persisted to
+        my_collection.xref (FABLE_XREF_INCORPORATION.md D3).
         """
         try:
             from backend.filer import start_file_job
@@ -6831,6 +6840,7 @@ def create_app() -> Flask:
             path = item.get("path", "")
             lb = item.get("lb_number")
             mount_id = item.get("mount_id")
+            xref = item.get("xref")
             if not path or not lb:
                 return jsonify({
                     "ok": False,
@@ -6841,6 +6851,7 @@ def create_app() -> Flask:
             result = start_file_job(
                 int(lb), path, file_mode=file_mode,
                 mount_id_override=int(mount_id) if mount_id is not None else None,
+                xref=int(xref) if xref is not None else 0,
             )
             return jsonify(result)
         except Exception as e:
@@ -6911,6 +6922,8 @@ def create_app() -> Flask:
         """
         from backend.folder_naming import (
             apply_nft_suffix,
+            lb_tag,
+            strip_lb_tag,
             strip_nft_suffix,
         )
         from backend.folder_naming import (
@@ -6963,6 +6976,15 @@ def create_app() -> Flask:
 
         lb_number: int | None = None
         lb_numbers: list[int] = []
+        # Copy-level xref (FABLE_XREF_INCORPORATION.md D1/D2/D3): per-LB
+        # matched_xref from the lookup summary, populated in Step 2. Read via
+        # _xref_for() in the rename/file steps so a re-lookup that resolves a
+        # different fileset (e.g. after a DB update) always re-derives it
+        # fresh rather than reusing a stale value from an earlier run.
+        _lb_xref_map: dict[int, int] = {}
+
+        def _xref_for(lb: int | None) -> int:
+            return _lb_xref_map.get(lb, 0) if lb is not None else 0
 
         # ── Step 1: Verify ────────────────────────────────────────────────────
         if "verify" in steps and cache_valid and "verify" in state["steps"]:
@@ -7010,6 +7032,10 @@ def create_app() -> Flask:
                     row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None}
                 else:
                     summary, detail = database.lookup_checksums(parsed)
+                    _lb_xref_map = {
+                        s["lb_number"]: s.get("matched_xref", 0)
+                        for s in summary.get("lb_summary", [])
+                    }
                     alias_map = {
                         r["alias_lb"]: r["canonical_lb"]
                         for r in database.get_lb_aliases()
@@ -7058,6 +7084,7 @@ def create_app() -> Flask:
                                 database.set_folder_link(
                                     folder_path, _lb,
                                     "Auto-linked (multi-LB perfect match)",
+                                    xref=_xref_for(_lb),
                                 )
 
                     # For the single-pin incomplete-match guard below.
@@ -7247,32 +7274,42 @@ def create_app() -> Flask:
                         ).fetchone()
                     if show and show["location"]:
                         location = show["location"].strip()
+                # Copy-level xref (D2): each LB tag carries the fileset id this
+                # folder's checksums matched, re-derived fresh every run so a
+                # changed matched_xref (e.g. after a master re-import) always
+                # produces a new proposal — see _xref_for() above.
+                matched_xrefs = [_xref_for(lb) for lb in lb_numbers]
                 if len(lb_numbers) > 1:
-                    proposed = _build_multi_name(lb_numbers, date_str, location, lb_status)
+                    proposed = _build_multi_name(
+                        lb_numbers, date_str, location, lb_status, matched_xrefs,
+                    )
                     if not date_str or not location:
                         base = strip_nft_suffix(folder_name)
-                        multi_tag = "(" + "+".join(f"LB-{lb:05d}" for lb in lb_numbers) + ")"
+                        multi_tag = "(" + "+".join(
+                            lb_tag(lb, xr)
+                            for lb, xr in zip(lb_numbers, matched_xrefs, strict=True)
+                        ) + ")"
                         if not base.rstrip().upper().endswith(multi_tag.upper()):
-                            untagged = re.sub(
-                                r"\s*\(LB-[\d+LB-]+\)\s*$", "", base, flags=re.IGNORECASE
-                            ).rstrip()
+                            untagged = strip_lb_tag(base)
                             proposed = apply_nft_suffix(f"{untagged} {multi_tag}", lb_status)
                 else:
-                    proposed = _build_name(lb_number, date_str, location, lb_status)
+                    matched_xref = _xref_for(lb_number)
+                    proposed = _build_name(lb_number, date_str, location, lb_status, matched_xref)
                 # BUG-119: when DB has no date/location the standard name falls
                 # back to bare LB-NNNNN[-NFT], which would silently strip any
                 # date/location already in the folder name.  Use the current
                 # folder name as the base and only adjust the NFT suffix and
-                # (LB-NNNNN) tag — never touch the date/location portion.
+                # (LB-NNNNN[-xrefYYYYY]) tag — never touch the date/location portion.
                 if len(lb_numbers) <= 1 and (not date_str or not location):
                     base = strip_nft_suffix(folder_name)
-                    correct_tag = f"(LB-{lb_number:05d})"
+                    correct_tag = f"({lb_tag(lb_number, _xref_for(lb_number))})"
                     if base.rstrip().lower().endswith(correct_tag.lower()):
                         proposed = apply_nft_suffix(base, lb_status)
                     else:
                         # BUG-176: folder is missing (or has a stale) LB# tag —
-                        # strip any existing tag and append the correct one.
-                        untagged = re.sub(r"\s*\(LB-\d+\)\s*$", "", base, flags=re.IGNORECASE).rstrip()
+                        # strip any existing tag (incl. a stale/wild xref suffix)
+                        # and append the correct one.
+                        untagged = strip_lb_tag(base)
                         proposed = apply_nft_suffix(f"{untagged} {correct_tag}", lb_status)
                 if folder_name == proposed:
                     row["rename"] = {"status": "ok", "label": "Correct", "proposed": None}
@@ -7319,6 +7356,10 @@ def create_app() -> Flask:
                         "owned": owned_row is not None,
                         "existing_disk_path": owned_row["disk_path"] if owned_row else None,
                         "lbdir_verified_at": owned_row["lbdir_verified_at"] if owned_row else None,
+                        # Copy-level xref (D3): carried by the GUI into
+                        # /api/pipeline/file/start so filing persists it to
+                        # my_collection.xref.
+                        "xref": _xref_for(lb_number),
                     }
                 else:
                     row["file"] = {

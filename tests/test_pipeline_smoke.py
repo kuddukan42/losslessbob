@@ -12,9 +12,12 @@ Output:
 """
 
 import argparse
+import os
 import random
+import shutil
 import sqlite3
 import sys
+import tempfile
 import traceback
 from pathlib import Path
 
@@ -22,6 +25,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+import backend.paths as _paths  # noqa: E402
 from backend import checksum_utils  # noqa: E402
 from backend import db as database  # noqa: E402
 from backend.folder_naming import build_standard_name  # noqa: E402
@@ -372,6 +376,178 @@ def main() -> None:
 
     print(f"\nDetail report → {detail_path}")
     print(f"Bug report    → {bugs_path}")
+
+
+# ---------------------------------------------------------------------------
+# B2 (FABLE_XREF_INCORPORATION.md): _pipeline_process_folder threads
+# matched_xref from the lookup summary into the rename proposal and
+# folder_lb_link writes. Drives the REAL pipeline via a Flask test client
+# against an isolated temp DB (following tests/test_tapematch_routes.py's
+# _AppClient pattern) rather than the hand-mirrored run_pipeline() above, so
+# there is no drift between what's tested and what production runs.
+# ---------------------------------------------------------------------------
+
+class _AppClient:
+    """Context manager wiring backend.app's create_app() to a temp DB path."""
+
+    def __init__(self, db_path):
+        self.db_path = db_path
+
+    def __enter__(self):
+        self._orig_paths_db_path = _paths.DB_PATH
+        self._orig_module_db_path = database.DB_PATH
+        _paths.DB_PATH = self.db_path
+        database.DB_PATH = self.db_path
+        from backend.app import create_app
+        app = create_app()
+        return app.test_client()
+
+    def __exit__(self, *exc):
+        _paths.DB_PATH = self._orig_paths_db_path
+        database.DB_PATH = self._orig_module_db_path
+
+
+def _make_xref_pipeline_db(lb_numbers: dict) -> tuple[str, str]:
+    """Create a temp DB with entries/lb_master rows plus checksums for each
+    (lb_number -> [(xref_id, [(checksum, filename), ...]), ...]) mapping.
+
+    Args:
+        lb_numbers: {lb_number: [(xref_id, [(checksum, filename), ...])]}.
+
+    Returns:
+        (db_path, tmp_dir).
+    """
+    tmp_dir = tempfile.mkdtemp(prefix="lb_pipeline_xref_test_")
+    db_path = os.path.join(tmp_dir, "test.db")
+    _paths.DATA_DIR = type(_paths.DATA_DIR)(tmp_dir)
+    database.init_db(db_path)
+    conn = database.get_connection(db_path)
+    for lb in lb_numbers:
+        conn.execute(
+            "INSERT INTO entries(lb_number, date_str, location, status) VALUES (?,?,?,?)",
+            (lb, "7/8/78", "Nashville, TN", "ok"),
+        )
+        conn.execute(
+            "INSERT INTO lb_master(lb_number, lb_status) VALUES (?, 'public')", (lb,)
+        )
+        for xref_id, checksum_rows in lb_numbers[lb]:
+            for chk, fname in checksum_rows:
+                conn.execute(
+                    "INSERT INTO checksums(checksum, filename, chk_type, lb_number, xref)"
+                    " VALUES(?,?,?,?,?)",
+                    (chk, fname, "m", lb, xref_id),
+                )
+    conn.commit()
+    return db_path, tmp_dir
+
+
+def _write_md5_folder(rows: list[tuple[str, str]]) -> str:
+    """Create a temp folder containing one .md5 file with the given
+    (checksum, filename) rows. Returns the folder path."""
+    folder = tempfile.mkdtemp(prefix="lb_pipeline_xref_folder_")
+    md5_lines = "\n".join(f"{chk} *{fname}" for chk, fname in rows)
+    (Path(folder) / "checks.md5").write_text(md5_lines + "\n")
+    return folder
+
+
+class TestPipelineXrefWiring:
+    """A folder whose checksums fully match an xref fileset group proposes
+    the LB-XXXXX-xrefYYYYY rename and (for a multi-LB perfect match) persists
+    folder_lb_link.xref; a canonical-fileset folder is unaffected."""
+
+    LB = 500
+    XREF_ID = 777
+    CANONICAL_ROWS = [("1" * 32, "track01.flac"), ("2" * 32, "track02.flac")]
+    XREF_ROWS = [("3" * 32, "track01.flac"), ("4" * 32, "track02.flac")]
+
+    def test_xref_group_match_proposes_xref_suffixed_name(self):
+        db_path, tmp = _make_xref_pipeline_db(
+            {self.LB: [(0, self.CANONICAL_ROWS), (self.XREF_ID, self.XREF_ROWS)]}
+        )
+        folder = _write_md5_folder(self.XREF_ROWS)
+        try:
+            with _AppClient(db_path) as client:
+                resp = client.post(
+                    "/api/pipeline/run",
+                    json={"folders": [folder], "steps": ["lookup", "rename"]},
+                )
+                assert resp.status_code == 200
+                row = resp.get_json()["results"][0]
+                assert row["lookup"]["status"] == "ok"
+                assert row["lookup"]["lb_number"] == self.LB
+                lb_summary = next(
+                    s for s in row["lookup"]["summary"]["lb_summary"]
+                    if s["lb_number"] == self.LB
+                )
+                assert lb_summary["matched_xref"] == self.XREF_ID
+
+                expected_tag = f"(LB-{self.LB:05d}-xref{self.XREF_ID:05d})"
+                assert row["rename"]["status"] == "warn"
+                assert row["rename"]["proposed"] is not None
+                assert row["rename"]["proposed"].endswith(expected_tag)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+            shutil.rmtree(folder, ignore_errors=True)
+
+    def test_canonical_match_proposes_unsuffixed_name(self):
+        """Canonical folders behave exactly as before B2 — no xref suffix."""
+        db_path, tmp = _make_xref_pipeline_db(
+            {self.LB: [(0, self.CANONICAL_ROWS), (self.XREF_ID, self.XREF_ROWS)]}
+        )
+        folder = _write_md5_folder(self.CANONICAL_ROWS)
+        try:
+            with _AppClient(db_path) as client:
+                resp = client.post(
+                    "/api/pipeline/run",
+                    json={"folders": [folder], "steps": ["lookup", "rename"]},
+                )
+                assert resp.status_code == 200
+                row = resp.get_json()["results"][0]
+                assert row["lookup"]["status"] == "ok"
+                lb_summary = next(
+                    s for s in row["lookup"]["summary"]["lb_summary"]
+                    if s["lb_number"] == self.LB
+                )
+                assert lb_summary["matched_xref"] == 0
+
+                expected_tag = f"(LB-{self.LB:05d})"
+                assert "xref" not in row["rename"]["proposed"].lower()
+                assert row["rename"]["proposed"].endswith(expected_tag)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+            shutil.rmtree(folder, ignore_errors=True)
+
+    def test_multi_lb_perfect_match_persists_folder_lb_link_xref(self):
+        """When the same checksums fully match a canonical fileset of one LB
+        and an xref fileset of another (the "recording archived under both
+        entries" case), the auto-link write must carry each LB's own
+        matched_xref into folder_lb_link.xref."""
+        lb_a, lb_b, xref_b = 500, 501, 888
+        shared_rows = [("5" * 32, "track01.flac"), ("6" * 32, "track02.flac")]
+        db_path, tmp = _make_xref_pipeline_db({
+            lb_a: [(0, shared_rows)],
+            lb_b: [(xref_b, shared_rows)],
+        })
+        folder = _write_md5_folder(shared_rows)
+        try:
+            with _AppClient(db_path) as client:
+                resp = client.post(
+                    "/api/pipeline/run",
+                    json={"folders": [folder], "steps": ["lookup"]},
+                )
+                assert resp.status_code == 200
+                row = resp.get_json()["results"][0]
+                assert row["lookup"]["status"] == "ok"
+                assert sorted(row["lookup"]["lb_numbers"]) == [lb_a, lb_b]
+
+            links = {
+                link["lb_number"]: link["xref"]
+                for link in database.get_folder_links(folder, db_path=db_path)
+            }
+            assert links == {lb_a: 0, lb_b: xref_b}
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+            shutil.rmtree(folder, ignore_errors=True)
 
 
 if __name__ == "__main__":

@@ -552,6 +552,7 @@ def start_file_job(
     folder_path: str,
     file_mode: str = "move",
     mount_id_override: int | None = None,
+    xref: int = 0,
     db_path=None,
 ) -> dict:
     """Resolve destination and start a background move/copy with progress tracking.
@@ -573,6 +574,8 @@ def start_file_job(
         file_mode:   "move" (default) or "copy".
         mount_id_override: If given, file under this mount instead of the
             year-routed default (see resolve_destination_for_lb).
+        xref: Copy-level xref fileset id this folder matched (0 = canonical),
+            carried into my_collection.xref (FABLE_XREF_INCORPORATION.md D3).
         db_path:     Optional SQLite path override.
     """
     with _FILE_JOB_LOCK:
@@ -726,13 +729,18 @@ def start_file_job(
                 ).fetchone()
             if existing_row:
                 existing_disk_path = existing_row["disk_path"]
-                database.update_collection(lb_number, {"folder_name": folder.name, "disk_path": str(dest)})
+                database.update_collection(
+                    lb_number,
+                    {"folder_name": folder.name, "disk_path": str(dest), "xref": xref},
+                )
                 logger.info(
                     "start_file_job: LB-%05d already in collection at %s — updated path to %s",
                     lb_number, existing_disk_path, dest,
                 )
             else:
-                database.add_to_collection(lb_number, folder.name, str(dest), notes=None, db_path=db_path)
+                database.add_to_collection(
+                    lb_number, folder.name, str(dest), notes=None, xref=xref, db_path=db_path,
+                )
         except Exception as exc:
             logger.error(
                 "start_file_job: filesystem %s succeeded but my_collection write failed "
