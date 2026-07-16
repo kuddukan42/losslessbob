@@ -44,9 +44,6 @@ Thumbs.db
 # Claude Code agent worktrees (internal harness artifacts)
 .claude/worktrees/
 
-# Docker secrets — never commit real credential files
-secrets/*.txt
- 
 .claude/settings.local.json
 .claude/state/
 
