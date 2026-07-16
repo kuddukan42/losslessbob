@@ -6158,6 +6158,26 @@ def get_pending_urls(db_path=None) -> list[dict]:
     return [dict(r) for r in rows]
 
 
+def get_missing_attachment_urls(db_path=None) -> list[str]:
+    """Return ``entry_files`` URLs not yet mirrored (``downloaded=0``).
+
+    Used by the site crawler to seed attachment URLs (xref attachments
+    included) that no crawled HTML page links to, so the mirror converges
+    on every attachment the scraper knows about.
+
+    Args:
+        db_path: Override DB path (tests).
+
+    Returns:
+        Attachment URLs ordered by URL.
+    """
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT file_url FROM entry_files WHERE downloaded=0 ORDER BY file_url"
+        ).fetchall()
+    return [r["file_url"] for r in rows]
+
+
 def get_downloaded_urls(db_path=None) -> set[str]:
     """Return the set of URLs already downloaded or confirmed not found."""
     with get_connection(db_path) as conn:

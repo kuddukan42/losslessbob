@@ -1,3 +1,17 @@
+[2026-07-16] — fix(scraper): site mirror now downloads all known attachment links, xref included
+Context: tj directive — mirror must cover every link incl. xref attachments. The crawler was
+  purely BFS link-discovery, so entry_files URLs not linked from any re-fetched page were
+  never queued: 4,357 attachments absent from disk (109 xref: -text.txt/-lbdir.txt/
+  -DigiFlawFinder.html), only 9 known to site_inventory.
+Added: backend/db.py get_missing_attachment_urls() — entry_files rows with downloaded=0.
+Changed: backend/site_crawler.py crawl() seeds those URLs (discovered_by='entry_files',
+  same-domain + skip-ext guards) after the index seeds, so the mirror converges on every
+  attachment the scraper knows about; existing /files/ handling marks entry_files.downloaded=1
+  on fetch. This is mirror-side only — no checksums ingest (B8/D-2 unchanged).
+Added: tests/test_scraper_crawler.py::test_get_missing_attachment_urls_returns_undownloaded_only.
+Verified: crawler test file 61 passed; backend restarted; incremental crawl session 33 started
+  with queue_size 4,348 (the seeded set) — ~1.8 h at the 1.5 s delay.
+
 [2026-07-16] — feat: xref incorporation shipped end to end — copy-level filesets (TODO-246, B1–B7)
 Context: instructions/complete/FABLE_XREF_INCORPORATION.md; xref = fileset id (0 = canonical),
   copy-level (this copy IS xref-N) vs entry-level (entry HAS alt filesets) per
