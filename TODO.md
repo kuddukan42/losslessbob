@@ -5,25 +5,6 @@ Status: Open
 Added: 2026-07-15
 Description: 62 of the 92 site_inventory not_found URLs are /detail/LB-XXXXX.html pages (verified 2026-07-15: e.g. LB-00000, LB-09075, LB-09599, LB-10723, LB-14093, LB-08893/94) — "private" entries: Jeff assigned the numbers and wrote full metadata but deliberately never published them (friends-only, not for public www). They currently sit as blank rows; entries has 1,446 status='missing' rows (private + never-assigned holes; lb_missing has only 36 confirmed non-existent). tj holds copies of SOME private-entry metadata. Work: (1) inventory tj's holdings and map to the 62 numbers; (2) import into entries/checksums/entry_files with a provenance marker (came from private material, not scrape); (3) MANDATORY privacy flag so private metadata is excluded from every public surface (public repo derivatives, docs/schema.html Cloudflare deploy, archive.org uploads, any future published mirror) — friends-only channels decided per-channel; (4) reconcile the three absent populations (private / lb_missing / numbering holes) so the DB distinguishes them. Respect Jeff's intent: local + friends only, never on a public URL. Full context: instructions/FABLE_PLATFORM_ROADMAP.md §1. Related: [TODO-246].
 
-TODO-242: Clarify taper propagation and "Needs review" flags in library view
-Priority: Medium
-Status: In Progress (investigated 2026-07-15 — decision-ready, both questions answered; see Findings)
-Added: 2026-07-14
-Findings (2026-07-15): (1) Propagation WORKS — taper_attributions has ltf on BOTH LBs:
-  LB-10678 confidence='confirmed' (series_code) and LB-14922 confidence='propagated'
-  (evidence same_as LB-10678, computed 2026-07-14 17:57). _propagate_strong does traverse
-  same_as (taper_attribution.py:473). The asymmetry seen in the library is the SPEC'D
-  confirmed-only pill policy: ScreenLibrary.tsx:103-106 gives a taper pill only to
-  confidence='confirmed' rows; propagated rows are surfaced via the 'taperReview' filter
-  instead. Decision needed: keep confirmed-only pills, or add a visually-distinct
-  (e.g. outline) pill for propagated tier. (2) "Needs review" is NOT attribution conflict —
-  it is tapematch_family_meta.review_flag (family-level, set from tapematch analysis
-  verdicts), and the pill ALREADY shows the specific review_reason as a hover tooltip
-  (ScreenLibrary.tsx:2485, falls back to generic text). Residual gap: 17 flagged families
-  have NULL review_reason → generic tooltip only. Optional follow-ups: backfill those 17
-  reasons from their runs' analysis.md, and/or a legend entry.
-Description: Two UI clarity issues discovered in library view (1996 filtered): (1) Taper propagation across families — LB-14922 is tagged "ltf" but links to same_as LB-10678; the library view doesn't clarify whether these should show matching tapers or if the propagation failed. Check recording_families flood-fill logic (backend/taper_attribution.py _propagate_strong) — does it traverse same_as links? If yes, why isn't LB-10678 also showing "ltf"? If no, should it? (2) "Needs review" badge visibility — multiple recordings (LB-07911, LB-16158, Family A, LB-13789, LB-03987, LB-18258, LB-14779, LB-13159) display "Needs review" without clear signal what triggered it. Is it: attribution conflict? quality concern? incomplete metadata (missing venue/tour/notes)? The backend must set this flag somewhere — trace it (likely taper_attributions.conflict=1 or a quality_flag column, or missing venue gazetteer entry). Add a tooltip or legend in the library UI to explain. Related: [TODO-241] (taper curation), [TODO-236] (attribution flowchart), [TODO-234] (series-vs-series conflicts).
-
 TODO-235: Persist per-segment staircase lag curves in tapematch runs (unblocks TODO-233 pt2 A/B)
 Priority: Medium
 Status: Open

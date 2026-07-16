@@ -1,3 +1,22 @@
+[2026-07-16] — feat(gui): propagated-taper outline pills in Library (TODO-242 decision)
+Context: tj decision — propagated attributions get a pill too, visually distinct
+  ("outline or fuzzy"). Outline uses Pill's existing non-soft mode (transparent bg, toned
+  border) — zero component changes. Conflict rows stay pill-less (review filter only).
+Changed: db.py _load_taper_attributions now carries the taper name for conflict-free
+  confidence='propagated' rows ("propagated" key); get_pick_badges + get_performances emit it
+  as taperPropagated (docstrings updated).
+Changed: ScreenLibrary.tsx — taperPropagated in RecordingRow + both merge paths; all three
+  pill sites (recording lens row, perf single-recording, family member row) render an outline
+  info Pill with a "propagated from linked recording" tooltip when no confirmed attr exists.
+  Solid-confirmed > outline-propagated > mute free-text pill precedence unchanged otherwise.
+Added: en.json library.picks.taperPropagatedTitle + DeepL sync de/fr/es/it/nl (4,492 chars;
+  residual gaps are the benign SKIP_KEYS/identical-in-target class).
+Verified: taper_attribution 26 tests green; gui-check PASS (node+renderer types, build);
+  live /api/library/badges: 2,657 taperConfirmed + 4,023 taperPropagated (4,045 review minus
+  22 conflicts); tj's original pair resolves — LB-10678 solid 'ltf', LB-14922 outline 'ltf'.
+Not done (optional Q2 leftovers, revive on request): backfill 17 NULL
+  tapematch_family_meta.review_reason rows; pill legend entry.
+
 [2026-07-16] — feat(backend): taper alias curation conduit — add/remove known-taper handles without code edits (TODO-241)
 Context: TODO-222 (tj's pick) turned out already shipped+closed 2026-07-14 (stale work-package
   row); substituted the nearest well-specified open item per tj's "next autonomous win" intent.
