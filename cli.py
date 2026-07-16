@@ -1659,7 +1659,7 @@ def _print_diff(data: dict, *, base_url: str) -> None:
         st = item.get("status", "")
         if lb is None or st == "NOT FOUND":
             not_found.append(item)
-        elif st != "XREF":
+        else:
             by_lb.setdefault(lb, []).append(item)
             seen_per_lb.setdefault(lb, set()).add(item.get("checksum"))
 
@@ -1690,9 +1690,10 @@ def _print_diff(data: dict, *, base_url: str) -> None:
                 entry_data  = _req.get(f"{base_url}/api/entry/{lb_num}", timeout=5).json()
                 db_chks     = entry_data.get("checksums", [])
                 seen_chks   = seen_per_lb.get(lb_num, set())
+                m_xref      = lb_sum.get("matched_xref", 0)
                 missing_fns = [c["filename"] for c in db_chks
                                if c.get("checksum") not in seen_chks
-                               and not c.get("xref")]
+                               and (c.get("xref") or 0) == m_xref]
             except Exception:
                 pass
             if missing_fns:
