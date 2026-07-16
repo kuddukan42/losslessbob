@@ -439,6 +439,69 @@ function Setlist({ date }: { date: string }) {
   )
 }
 
+// ── ChecksumsZone — the entry's documented checksums grouped by fileset
+// (FABLE_XREF_INCORPORATION.md D5): canonical block first, then one block per
+// xref id, mirroring the site's own per-fileset breakdown. This is catalog
+// data about the entry (checksums.xref), never a statement about which
+// fileset this row's own copy is — that's the copy-level pill above. ────────
+
+interface EntryChecksumRow { filename: string; xref: number | null }
+
+function ChecksumsZone({ lbNumber }: { lbNumber: number }) {
+  const { t } = useTranslation()
+  const { data, isLoading } = useQuery({
+    queryKey: ['library-entry-checksums', lbNumber],
+    queryFn: () => fetch(`${BASE}/api/entry/${lbNumber}`).then(r => (r.status === 404 ? null : r.json())),
+    staleTime: 300_000,
+  })
+
+  const checksums: EntryChecksumRow[] = Array.isArray(data?.checksums) ? data.checksums : []
+  if (isLoading || checksums.length === 0) return null
+
+  const groups = new Map<number, string[]>()
+  for (const c of checksums) {
+    const key = c.xref ?? 0
+    const arr = groups.get(key)
+    if (arr) { if (!arr.includes(c.filename)) arr.push(c.filename) }
+    else groups.set(key, [c.filename])
+  }
+  const sortedKeys = [...groups.keys()].sort((a, b) => a - b) // canonical (0) first
+
+  return (
+    <div style={{ marginTop: 14 }}>
+      <ZoneLabel>{t('library.panel.checksumsLabel')}</ZoneLabel>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {sortedKeys.map(key => {
+          const files = groups.get(key)!
+          return (
+            <div key={key} style={{ border: '1px solid var(--lbb-border)', borderRadius: 6, overflow: 'hidden' }}>
+              <div style={{
+                padding: '5px 10px', fontSize: 'var(--t-micro)', fontWeight: 'var(--w-bold)',
+                letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--lbb-fg3)',
+                background: 'var(--lbb-surface2)', borderBottom: '1px solid var(--lbb-border)',
+              }}>
+                {key === 0
+                  ? t('library.panel.checksumsCanonical', { count: files.length })
+                  : t('library.panel.checksumsXrefGroup', { id: String(key).padStart(5, '0'), count: files.length })}
+              </div>
+              <div style={{ padding: '3px 0' }}>
+                {files.map(f => (
+                  <div key={f} title={f} style={{
+                    padding: '2.5px 10px', fontSize: 'var(--t-mono-sm)', fontFamily: 'var(--lbb-mono)',
+                    color: 'var(--lbb-fg2)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                  }}>
+                    {f}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 // ── ActionBar — one primary + Reveal inline; everything else lives in the
 // "More" overflow, which renders the identical grouped list as the right-click
 // menu (same `openMenu` the context menu already uses). ───────────────────────
@@ -1449,7 +1512,10 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
           <Pill tone={statusTone(row.status)} soft>{row.status}</Pill>
           {row.wish && <Pill tone="warn" soft>{t('library.panel.wishlist')}</Pill>}
           {row.dup && <Pill tone="mute" soft>{t('library.panel.dup')}</Pill>}
-          {row.xref && <Pill tone="mute" soft>{t('library.panel.xref')}</Pill>}
+          {/* Entry-level (A15/D4): this LB has alternate filesets documented —
+              distinct from a copy-level "your copy is xref-N" statement, which
+              this screen never makes. */}
+          {row.xref && <Pill tone="mute" soft>{t('library.panel.altFilesets')}</Pill>}
           {row.pickRank === 1 && (
             <Pill tone="ok" soft title={t('library.picks.recommendedTitle')}>★ {t('library.picks.recommended')}</Pill>
           )}
@@ -1518,6 +1584,10 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
                 {t('library.panel.catalogNote')}
               </div>
             )}
+
+            {/* D5: checksums grouped by fileset — catalog data, shown for
+                owned and unowned rows alike. */}
+            <ChecksumsZone lbNumber={row.lbNumber} />
           </>
         )}
 

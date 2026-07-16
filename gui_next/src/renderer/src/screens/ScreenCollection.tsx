@@ -133,7 +133,12 @@ interface CollectionRow {
   wishlistNotes: string
   wishlistAddedAt: string
   isDuplicate: boolean
-  isXref: boolean
+  // Copy-level (FABLE_XREF_INCORPORATION.md D3/D4): my_collection.xref for this
+  // copy — the fileset id it matches, 0 = canonical. Drives the row-level pill.
+  xref: number
+  // Entry-level: this LB entry has alternate filesets documented at all
+  // (xref_lb_numbers) — a property of the catalog entry, not this copy.
+  hasAltFilesets: boolean
   linkedLbs: number[]
   historyTorrents: HistoryItem[]
   historyForum: HistoryItem[]
@@ -157,7 +162,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     diskPath: '/media/dylan/archive/LB-00018 1981-06-29 Earls Court London',
     notes: '', confirmed: '2024-03-15', title: "Earl's Court Night 1",
     discs: 2, size: '1.4 GB', rating: 'A', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
-    isDuplicate: false, isXref: false, linkedLbs: [],
+    isDuplicate: false, xref: 0, hasAltFilesets: false, linkedLbs: [],
     historyTorrents: [{ date: '2024-01-10', filename: 'LB-00018.torrent', kind: 'In qBt' }],
     historyForum: [{ date: '2024-01-12', filename: 'Post #8821', kind: 'Local' }],
     category: 'concert',
@@ -169,7 +174,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     diskPath: '/media/dylan/archive/LB-00042 1966-05-26 Royal Albert Hall London',
     notes: '', confirmed: '2024-02-01', title: 'Royal Albert Hall 1966',
     discs: 2, size: '890 MB', rating: 'A+', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
-    isDuplicate: false, isXref: true, linkedLbs: [],
+    isDuplicate: false, xref: 961, hasAltFilesets: true, linkedLbs: [],
     historyTorrents: [{ date: '2023-12-01', filename: 'LB-00042.torrent', kind: 'Local' }],
     historyForum: [], category: 'concert',
   },
@@ -180,7 +185,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     diskPath: '/media/dylan/imports/LB-01001 1970-08-31 Isle of Wight',
     notes: '', confirmed: '', title: 'Isle of Wight 1970',
     discs: 1, size: '620 MB', rating: 'B+', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
-    isDuplicate: false, isXref: false, linkedLbs: [],
+    isDuplicate: false, xref: 0, hasAltFilesets: false, linkedLbs: [],
     historyTorrents: [], historyForum: [], category: 'concert',
   },
   {
@@ -190,7 +195,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     diskPath: '/media/dylan/archive/LB-05421 1974-01-30 Madison Square Garden',
     notes: '', confirmed: '2024-01-05', title: 'Before The Flood Night 1',
     discs: 2, size: '1.8 GB', rating: 'A', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
-    isDuplicate: true, isXref: false, linkedLbs: [],
+    isDuplicate: true, xref: 0, hasAltFilesets: false, linkedLbs: [],
     historyTorrents: [{ date: '2024-01-05', filename: 'LB-05421.torrent', kind: 'In qBt' }],
     historyForum: [{ date: '2024-01-06', filename: 'Post #4521', kind: 'Local' }],
     category: 'concert',
@@ -200,7 +205,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     location: 'Forum, Los Angeles, CA', folder: '', diskPath: '', notes: '', confirmed: '',
     title: 'Before The Flood Night 2',
     discs: 2, size: '', rating: '', wishlist: true, wishlistPriority: 3, wishlistNotes: '', wishlistAddedAt: '2024-01-01',
-    isDuplicate: false, isXref: false, linkedLbs: [],
+    isDuplicate: false, xref: 0, hasAltFilesets: false, linkedLbs: [],
     historyTorrents: [], historyForum: [], category: null,
   },
 ]
@@ -1425,7 +1430,12 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
           <Pill tone="ok" soft dot>{t('collection.detail.owned')}</Pill>
           <Pill tone={edge} soft>{row.status}</Pill>
-          {row.isXref && <Pill tone="info" soft>{t('collection.detail.xref')}</Pill>}
+          {/* Copy-level (D4): this copy IS the xref-N fileset, from my_collection.xref */}
+          {row.xref > 0 && (
+            <Pill tone="info" soft>
+              {t('collection.detail.xrefCopy', { id: String(row.xref).padStart(5, '0') })}
+            </Pill>
+          )}
           {row.linkedLbs.length > 0 && (
             <Pill tone="warn" soft
               title={`Linked LB${row.linkedLbs.length > 1 ? 's' : ''}: ${row.linkedLbs.map(n => `LB-${String(n).padStart(5, '0')}`).join(', ')}`}>
@@ -1441,6 +1451,16 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
             </Pill>
           )}
         </div>
+
+        {/* Entry-level marker (D4) — a property of the catalog entry, not this
+            copy: kept out of the primary pill row above so it never reads as
+            "your copy is an xref fileset". */}
+        {row.hasAltFilesets && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>
+            <Icon name="info" size={11} style={{ flexShrink: 0 }} />
+            {t('collection.detail.altFilesetsNote')}
+          </div>
+        )}
 
         {/* 2. ID + title block */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
@@ -1994,7 +2014,11 @@ export function ScreenCollection(): React.JSX.Element {
   const [years, setYears]             = useState<number[]>([])
   const [yearFilter, setYearFilter]   = useState<string | null>(null)
   const [yearsOpen, setYearsOpen]     = useState(false)
-  const [xrefOnly, setXrefOnly]       = useState(false)
+  // A14: two independent filters — copy-level (my_collection.xref > 0) and
+  // entry-level (this LB has alternate filesets documented at all). Never
+  // conflated — see docs/XREF_SEMANTICS.md.
+  const [xrefCopiesOnly, setXrefCopiesOnly]     = useState(false)
+  const [altFilesetsOnly, setAltFilesetsOnly]   = useState(false)
   const [toast, setToast]             = useState<{ msg: string; tone: ToastTone } | null>(null)
   const [confirm, setConfirm]         = useState<{ title: string; body: string; onConfirm: () => void } | null>(null)
   const [addModal, setAddModal]       = useState<{ paths: string[] } | null>(null)
@@ -2150,7 +2174,8 @@ export function ScreenCollection(): React.JSX.Element {
         wishlistNotes:    wishlistMap.get(lb)?.notes ?? '',
         wishlistAddedAt:  wishlistMap.get(lb)?.added_at ?? '',
         isDuplicate: dupSet.has(lb),
-        isXref:      xrefSetLocal.has(lb),
+        xref:            typeof c.xref === 'number' ? c.xref : 0,
+        hasAltFilesets:  xrefSetLocal.has(lb),
         linkedLbs:   Array.isArray(c.linked_lbs) ? (c.linked_lbs as number[]) : [],
         category:    (c.lb_category as string | null) ?? null,
         historyTorrents: (torrentByLb[lb] ?? []).map((t: any) => ({
@@ -2244,7 +2269,8 @@ export function ScreenCollection(): React.JSX.Element {
       const y = extractYear(r.date)
       if (y === null || String(y) !== yearFilter) return false
     }
-    if (xrefOnly && !r.isXref) return false
+    if (xrefCopiesOnly  && !(r.xref > 0)) return false
+    if (altFilesetsOnly && !r.hasAltFilesets) return false
     if (categoryFilter.size > 0 && !categoryFilter.has(r.category ?? '')) return false
     if (search) {
       const q = search.toLowerCase()
@@ -2943,10 +2969,23 @@ export function ScreenCollection(): React.JSX.Element {
           <input
             type="checkbox"
             style={{ margin: 0 }}
-            checked={xrefOnly}
-            onChange={e => setXrefOnly(e.target.checked)}
+            checked={xrefCopiesOnly}
+            onChange={e => setXrefCopiesOnly(e.target.checked)}
           />
-          Xref only
+          {t('collection.filters.xrefCopies')}
+        </label>
+
+        <label style={{
+          fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
+          display: 'inline-flex', alignItems: 'center', gap: 4, cursor: 'pointer',
+        }}>
+          <input
+            type="checkbox"
+            style={{ margin: 0 }}
+            checked={altFilesetsOnly}
+            onChange={e => setAltFilesetsOnly(e.target.checked)}
+          />
+          {t('collection.filters.altFilesets')}
         </label>
 
         {/* Columns picker */}
