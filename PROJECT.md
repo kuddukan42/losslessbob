@@ -64,6 +64,7 @@ losslessbob/
 │   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
 │   ├── credentials.py        # OS keyring credential storage (SERVICE_QBT, SERVICE_WTRF)
 │   ├── flat_file.py          # Flat-file update pipeline: discover/download/diff/apply + audit tables
+│   ├── xref_ingest.py        # Site-mirror xref ingest: scan/stage/approve reviewed import path (TODO-252)
 │   ├── importer.py           # Flat-file import logic (legacy: imports from local file path)
 │   ├── folder_naming.py      # Shared helpers: apply_nft_suffix, strip_nft_suffix, nft_discrepancy, build_standard_name
 │   ├── filer.py              # Pipeline step 5: file a folder into the collection (mounts/routing)
@@ -1016,6 +1017,27 @@ Index: `idx_flat_releases_status ON flat_file_releases(status, detected_at DESC)
 
 Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_number)`.
 
+### `xref_ingest_filesets` / `xref_ingest_rows` — Site-mirror xref ingest staging (USER tables)
+Reviewed import path for mirror xref checksum files (TODO-252 / xref B8; `backend/xref_ingest.py`,
+flat_file.py pattern). Staging rows are the audit/provenance record for every site-mirror-ingested
+checksum; never exported. Approve inserts only `is_new=1` rows into `checksums`.
+
+`xref_ingest_filesets`:
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER NOT NULL | LB entry the fileset belongs to |
+| xref | INTEGER NOT NULL | Fileset id (see docs/XREF_SEMANTICS.md); UNIQUE with lb_number |
+| source_file | TEXT NOT NULL | Mirror path of the parsed `LBF-*-xref-*-text.txt` |
+| row_count | INTEGER NOT NULL | Parsed checksum rows in the file |
+| new_count | INTEGER NOT NULL | Rows absent from `checksums` at scan time |
+| status | TEXT | `staged` / `approved` / `rejected` |
+| staged_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| decided_at | TIMESTAMP | Set on approve/reject |
+
+`xref_ingest_rows`: `fileset_id` (FK), `checksum`, `filename`, `chk_type`, `is_new` (0/1).
+Indexes: `idx_xref_ingest_filesets_status(status)`, `idx_xref_ingest_rows_fileset(fileset_id)`.
+
 ### `friend_collections` / `friend_collection_entries` — Collection trading data (USER tables)
 Never exported in the master snapshot. Populated by `POST /api/trading/friends` from an imported
 `.lbcollection` JSON blob (see `/api/trading/export`); compared against the user's own collection
@@ -1164,6 +1186,14 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | POST | `/api/flat_file/defer/<id>` | Defer prompting. Body: `{days: int}` or `{until_next: true}`. |
 | GET | `/api/flat_file/releases` | List all `flat_file_releases` rows, newest first. |
 | GET | `/api/flat_file/changelog/<id>` | Paginated `flat_file_changelog` for a release. Query params: `limit` (default 100), `offset` (default 0). |
+
+### Site-Mirror Xref Ingest (reviewed import path, TODO-252)
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/xref_ingest/scan` | Parse mirror `LBF-*-xref-*-text.txt` files, stage filesets with rows absent from `checksums`. Idempotent; never touches approved/rejected filesets. Returns scan summary counts. |
+| GET | `/api/xref_ingest/filesets` | List staging rows. Query: `status` (optional: `staged`/`approved`/`rejected`). |
+| POST | `/api/xref_ingest/approve` | Approve staged filesets: insert their `is_new` rows into `checksums` (`INSERT OR IGNORE`). Body: `{ids:[...]}`. Non-staged ids refused. |
+| POST | `/api/xref_ingest/reject` | Mark staged filesets rejected without touching `checksums`. Body: `{ids:[...]}`. |
 
 ### Master Data (publish / subscribe)
 | Method | Route | Description |

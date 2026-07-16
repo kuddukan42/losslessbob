@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-252: Site-mirror xref ingest as reviewed import path (B8 promoted per tj D-2 decision 2026-07-16)
+Priority: High
+Status: Done
+Added: 2026-07-16
+Closed: 2026-07-16
+Description: tj promoted B8 (instructions/complete/FABLE_XREF_INCORPORATION.md) from report-only to a reviewed import path. Pattern: backend/flat_file.py (staging table + review + audited apply). Scope: parse data/site/files/LBF-*-xref-*-text.txt, stage filesets absent/partial in checksums (staging table = audit trail/provenance; no checksums schema change — master import is additive INSERT OR IGNORE so ingested rows survive), API scan/report/approve/reject, GUI review card. Approvals are tj's — never auto-approve. Bites: P1 backend module+API+tests, P2 GUI card+i18n, P3 scan run + tj review (after crawl session 33 lands the 109 missing xref attachments).
+Shipped same day as opened. P1 backend (commit 2d3ace65): backend/xref_ingest.py scan/approve/reject + staging tables xref_ingest_filesets/xref_ingest_rows (audit/provenance, USER tables) + 4 /api/xref_ingest/* routes + 9 tests (suite 836 green). P3 executed with tj's explicit one-go bulk directive: scan parsed all 2,087 mirror xref text files (0 unparseable) — 1,801 already covered by master flat-file import, 286 filesets staged, all 286 approved → +6,632 rows into checksums (705,352 → 711,984); verified end-to-end via /api/lookup (xref-1143 compilation resolves fully, zero NOT FOUND). Private-linkage check per tj: none of the staged LBs are among the 62 private detail pages, entries.status='missing', or lb_missing. P2 GUI review card DROPPED per tj's bulk-import directive — API path suffices for future scans (rerun POST /api/xref_ingest/scan after crawls).
+
 TODO-246: Xref audit — document semantics, fix badge usage and pipeline wiring
 Priority: High
 Status: Done
