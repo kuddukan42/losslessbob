@@ -2887,7 +2887,7 @@ def create_app() -> Flask:
             paths = (request.get_json(silent=True) or {}).get("paths", [])
             if not paths:
                 return jsonify({"ok": False, "error": "No paths provided"}), 400
-            from gui.platform_utils import open_in_vlc
+            from backend.platform_utils import open_in_vlc
             ok, err = open_in_vlc(paths)
             return jsonify({"ok": ok, "error": err if not ok else None})
         except Exception as exc:
@@ -6210,14 +6210,14 @@ def create_app() -> Flask:
 
     @app.route("/map")
     def serve_map():
-        """Serve gui/resources/map.html for both QWebEngineView and system browser."""
-        resources_dir = (Path(__file__).parent.parent / "gui" / "resources").resolve()
+        """Serve backend/resources/map.html for the gui_next map iframe and system browser."""
+        resources_dir = (Path(__file__).parent / "resources").resolve()
         return send_from_directory(str(resources_dir), "map.html")
 
     @app.route("/leaflet/<path:filename>")
     def serve_leaflet(filename: str):
-        """Serve bundled Leaflet JS/CSS assets from gui/resources/leaflet/."""
-        leaflet_dir = (Path(__file__).parent.parent / "gui" / "resources" / "leaflet").resolve()
+        """Serve bundled Leaflet JS/CSS assets from backend/resources/leaflet/."""
+        leaflet_dir = (Path(__file__).parent / "resources" / "leaflet").resolve()
         return send_from_directory(str(leaflet_dir), filename)
 
     @app.route("/api/entries/by_lb_list")
@@ -7963,7 +7963,7 @@ def create_app() -> Flask:
 
         Query param ``part`` selects the subset to package:
           - omitted (default): the whole ``data/site/`` tree in one zip —
-            backward-compatible with existing callers (ScreenSetup, gui/setup_tab.py).
+            backward-compatible with existing callers (ScreenSetup).
           - ``core``: everything except ``data/site/files/`` (detail pages,
             artwork, lbbcd/bynumber indexes). Recommended for all users.
           - ``files``: only ``data/site/files/`` (checksum/fingerprint text

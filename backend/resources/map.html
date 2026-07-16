@@ -109,10 +109,6 @@
             background: #e74c3c;
         }
 
-        #listInSearchBtn {
-            display: none;
-        }
-
         .filter-sep {
             width: 1px;
             height: 20px;
@@ -153,22 +149,6 @@
             font-weight: 700;
             font-size: 15px;
             text-transform: capitalize;
-        }
-
-        .lb-popup .popup-search-btn {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 6px 14px;
-            background: #1f4e79;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .lb-popup .popup-search-btn:hover {
-            background: #2e6fa3;
         }
 
         /* ---- Owned ring indicator in legend ---- */
@@ -250,7 +230,6 @@
         <div class="filter-sep"></div>
 
         <button id="viewportToggle" onclick="toggleViewportFilter()" title="Show only markers in the current map view">Viewport Filter</button>
-        <button id="listInSearchBtn" onclick="listViewportInSearch()" title="Load visible LBs in the Search tab">List in Search</button>
     </div>
 
     <!-- Map -->
@@ -279,19 +258,6 @@
         missing: '#FF6D00',   // vivid deep-orange (more visible than gray)
     };
     const DEFAULT_COLOR = '#E040FB'; // vivid purple — unknown status
-
-    // ---------------------------------------------------------------------------
-    // QWebChannel bridge — wires JS to Python when running inside QWebEngineView
-    // ---------------------------------------------------------------------------
-
-    let _bridge = null;  // set once QWebChannel initialises
-
-    function _initBridge() {
-        if (typeof qt === 'undefined' || !qt.webChannelTransport) return;
-        new QWebChannel(qt.webChannelTransport, function(channel) {
-            _bridge = channel.objects.bridge;
-        });
-    }
 
     // ---------------------------------------------------------------------------
     // Map initialisation
@@ -463,11 +429,6 @@
                 popupHtml += ' &nbsp;<span style="color:#FFD600; font-size:15px;">★ owned</span>';
             }
 
-            const lbNum = m.lb_number;
-            popupHtml +=
-                '<br><button class="popup-search-btn" onclick="openInSearch(' + lbNum + ')">' +
-                'Open in Search</button>';
-
             popupHtml += '</div>';
 
             circle.bindPopup(popupHtml);
@@ -561,19 +522,16 @@
 
     function toggleViewportFilter() {
         viewportFilterOn = !viewportFilterOn;
-        const btn     = document.getElementById('viewportToggle');
-        const listBtn = document.getElementById('listInSearchBtn');
+        const btn = document.getElementById('viewportToggle');
 
         if (viewportFilterOn) {
             btn.textContent = 'All Markers';
             btn.classList.add('active-toggle');
-            listBtn.style.display = 'inline-block';
             applyViewportFilter();
             map.on('moveend zoomend', applyViewportFilter);
         } else {
             btn.textContent = 'Viewport Filter';
             btn.classList.remove('active-toggle');
-            listBtn.style.display = 'none';
             map.off('moveend zoomend', applyViewportFilter);
             _buildLayers(_allMarkerData);
             const statsEl = document.getElementById('statsBar');
@@ -591,32 +549,6 @@
         });
         _buildLayers(visible);
         updateStats({}, visible.length);
-    }
-
-    // ---------------------------------------------------------------------------
-    // openInSearch — bridge to Python (single LB)
-    // ---------------------------------------------------------------------------
-
-    function openInSearch(lbNumber) {
-        if (_bridge) {
-            _bridge.openInSearch(String(lbNumber));
-        }
-        // No fallback needed when running in a plain browser — button is informational.
-    }
-
-    // ---------------------------------------------------------------------------
-    // listViewportInSearch — send all visible LBs to the Search tab
-    // ---------------------------------------------------------------------------
-
-    function listViewportInSearch() {
-        if (!_bridge) return;
-        const bounds = map.getBounds();
-        const visible = _allMarkerData.filter(function(m) {
-            return m.lat != null && m.lon != null && bounds.contains([m.lat, m.lon]);
-        });
-        if (visible.length === 0) return;
-        const csv = visible.map(function(m) { return m.lb_number; }).join(',');
-        _bridge.listInSearch(csv);
     }
 
     // ---------------------------------------------------------------------------
@@ -661,7 +593,6 @@
             const bar = document.getElementById('filterBar');
             if (bar) bar.style.display = 'none';
         }
-        _initBridge();
         loadMarkers({});
     });
 </script>
