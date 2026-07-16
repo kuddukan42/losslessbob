@@ -205,6 +205,7 @@ CREATE TABLE IF NOT EXISTS my_collection (
     disk_path    TEXT NOT NULL,
     confirmed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     notes        TEXT,
+    xref         INTEGER NOT NULL DEFAULT 0,
     FOREIGN KEY (lb_number) REFERENCES entries(lb_number)
 );
 
@@ -437,6 +438,7 @@ CREATE TABLE IF NOT EXISTS folder_lb_link (
     lb_number      INTEGER NOT NULL,
     linked_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     note           TEXT,
+    xref           INTEGER NOT NULL DEFAULT 0,
     PRIMARY KEY (folder_path, lb_number)
 );
 CREATE INDEX IF NOT EXISTS idx_folder_link_lb ON folder_lb_link(lb_number);
@@ -2196,6 +2198,17 @@ def init_db(db_path=None):
                 PRAGMA foreign_keys = ON;
             """)
 
+        # Migration: add xref to folder_lb_link and my_collection
+        # (FABLE_XREF_INCORPORATION.md D3). Copy-level xref: 0 = canonical
+        # fileset, N = the alternate xref-N fileset this folder/copy matches.
+        # Placed after the folder_lb_link PK migration above so the ALTER
+        # below always targets the table's final (composite-PK) shape.
+        _fll_cols = [r[1] for r in conn.execute("PRAGMA table_info(folder_lb_link)").fetchall()]
+        if "xref" not in _fll_cols:
+            conn.execute("ALTER TABLE folder_lb_link ADD COLUMN xref INTEGER NOT NULL DEFAULT 0")
+        if "xref" not in _mc_cols:
+            conn.execute("ALTER TABLE my_collection ADD COLUMN xref INTEGER NOT NULL DEFAULT 0")
+
         # Migration: add concert_date_iso to show_picks (LISTENING spec §9 —
         # "this night in Dylan history"). Populated by concert_ranker/picks.py
         # at recompute time; NULL until the next recompute runs.
@@ -3620,7 +3633,7 @@ def get_collection(db_path=None):
     with get_connection(db_path) as conn:
         rows = conn.execute("""
             SELECT c.id, c.lb_number, c.folder_name, c.disk_path, c.confirmed_at, c.notes,
-                   c.lbdir_verified_at,
+                   c.lbdir_verified_at, c.xref,
                    e.date_str, e.location, e.description, e.rating, e.cdr, e.lb_category,
                    e.source_type, lm.lb_status
             FROM my_collection c
@@ -3647,14 +3660,28 @@ def get_collection(db_path=None):
     return result
 
 
-def add_to_collection(lb_number, folder_name, disk_path, notes=None, db_path=None):
-    _lb, _fn, _dp, _n = lb_number, folder_name, disk_path, notes
+def add_to_collection(lb_number, folder_name, disk_path, notes=None, xref: int = 0, db_path=None):
+    """Insert a new my_collection row (ignored if lb_number already exists).
+
+    Args:
+        lb_number: LB entry number.
+        folder_name: Folder name at filing time.
+        disk_path: Absolute destination path.
+        notes: Optional user note.
+        xref: Xref fileset id this copy matches (0 = canonical), carried in
+            from the pipeline's ``matched_xref`` (FABLE_XREF_INCORPORATION.md D3).
+        db_path: Optional path to the SQLite database file.
+
+    Returns:
+        Number of rows inserted (0 or 1).
+    """
+    _lb, _fn, _dp, _n, _xref = lb_number, folder_name, disk_path, notes, xref
 
     def _run(c):
         c.execute(
-            "INSERT OR IGNORE INTO my_collection(lb_number, folder_name, disk_path, notes)"
-            " VALUES(?,?,?,?)",
-            (_lb, _fn, _dp, _n)
+            "INSERT OR IGNORE INTO my_collection(lb_number, folder_name, disk_path, notes, xref)"
+            " VALUES(?,?,?,?,?)",
+            (_lb, _fn, _dp, _n, _xref)
         )
         return c.execute("SELECT changes()").fetchone()[0]
 
@@ -3662,7 +3689,7 @@ def add_to_collection(lb_number, folder_name, disk_path, notes=None, db_path=Non
 
 
 def update_collection(lb_number, fields, db_path=None):
-    allowed = {"folder_name", "disk_path", "notes"}
+    allowed = {"folder_name", "disk_path", "notes", "xref"}
     updates = {k: v for k, v in fields.items() if k in allowed}
     if not updates:
         return
@@ -5661,26 +5688,37 @@ def get_folder_link(folder_path: str, db_path=None) -> dict | None:
     return rows[0] if rows else None
 
 
-def set_folder_link(folder_path: str, lb_number: int, note: str = "", db_path=None) -> None:
-    """Add a folder→LB link (ignored if the pair already exists).
+def set_folder_link(
+    folder_path: str, lb_number: int, note: str = "", xref: int = 0, db_path=None,
+) -> None:
+    """Add a folder→LB link, or refresh its xref if the pair already exists.
+
+    The note and linked_at timestamp are only set on first insert (never
+    overwritten on a re-run); ``xref`` is always kept current so a folder
+    whose matched fileset changes on a later lookup (e.g. after a DB update)
+    is reflected here too (FABLE_XREF_INCORPORATION.md D3).
 
     Args:
         folder_path: Absolute path of the folder.
         lb_number: LB number to link this folder to.
-        note: Optional user note.
+        note: Optional user note (first-insert only).
+        xref: Xref fileset id this folder matches (0 = canonical).
         db_path: Optional path to the SQLite database file.
     """
-    _fp, _lb, _note = folder_path, lb_number, note
+    _fp, _lb, _note, _xref = folder_path, lb_number, note, xref
     get_write_queue().execute(
         lambda c: c.execute(
-            "INSERT OR IGNORE INTO folder_lb_link (folder_path, lb_number, note, linked_at) "
-            "VALUES (?,?,?,CURRENT_TIMESTAMP)",
-            (_fp, _lb, _note),
+            "INSERT INTO folder_lb_link (folder_path, lb_number, note, xref, linked_at) "
+            "VALUES (?,?,?,?,CURRENT_TIMESTAMP) "
+            "ON CONFLICT(folder_path, lb_number) DO UPDATE SET xref=excluded.xref",
+            (_fp, _lb, _note, _xref),
         )
     )
 
 
-def replace_folder_link(folder_path: str, lb_number: int, note: str = "", db_path=None) -> None:
+def replace_folder_link(
+    folder_path: str, lb_number: int, note: str = "", xref: int = 0, db_path=None,
+) -> None:
     """Replace all links for a folder with a single folder→LB link.
 
     Used by the user "Pin & continue" flow: a re-pin must supersede any
@@ -5691,16 +5729,17 @@ def replace_folder_link(folder_path: str, lb_number: int, note: str = "", db_pat
         folder_path: Absolute path of the folder.
         lb_number: LB number the folder should be pinned to.
         note: Optional user note.
+        xref: Xref fileset id this folder matches (0 = canonical).
         db_path: Optional path to the SQLite database file.
     """
-    _fp, _lb, _note = folder_path, lb_number, note
+    _fp, _lb, _note, _xref = folder_path, lb_number, note, xref
 
     def _run(c):
         c.execute("DELETE FROM folder_lb_link WHERE folder_path=?", (_fp,))
         c.execute(
-            "INSERT INTO folder_lb_link (folder_path, lb_number, note, linked_at) "
-            "VALUES (?,?,?,CURRENT_TIMESTAMP)",
-            (_fp, _lb, _note),
+            "INSERT INTO folder_lb_link (folder_path, lb_number, note, xref, linked_at) "
+            "VALUES (?,?,?,?,CURRENT_TIMESTAMP)",
+            (_fp, _lb, _note, _xref),
         )
 
     get_write_queue().execute(_run)
