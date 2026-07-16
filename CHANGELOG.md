@@ -1,3 +1,21 @@
+[2026-07-16] — feat(backend): xref B8 promoted — site-mirror xref ingest shipped + 6,632 checksums imported (TODO-252)
+Context: tj D-2 decision — promote B8 from report-only to a reviewed import path, then
+  directed bulk import ("all these xref should get added, one go"). flat_file.py pattern.
+Added: backend/xref_ingest.py — scan_mirror (parse LBF-*-xref-*-text.txt via
+  _read_checksum_text + parse_checksum_text; "new" = no (checksum, lb_number) row; idempotent
+  rescan, approved/rejected never touched), approve_filesets (INSERT OR IGNORE of is_new rows
+  only, refuses non-staged ids), reject_filesets, get_filesets.
+Added: db.py xref_ingest_filesets + xref_ingest_rows staging tables (USER tables — audit/
+  provenance record, never exported; checksums schema untouched); 4 /api/xref_ingest/* routes;
+  tests/test_xref_ingest.py (9 tests; full suite 836 green).
+Changed: checksums 705,352 → 711,984 (+6,632). Scan: 2,087 mirror xref text files parsed,
+  0 unparseable, 1,801 fully covered by master import already, 286 filesets staged (269 LBs,
+  xref ids 9–2149) and all approved per tj. Private-linkage check (tj flagged): zero staged
+  LBs among the 62 private pages / entries 'missing' / lb_missing.
+Verified: lookup of ingested xref-1143 (LB-01124, 332 rows) resolves with zero NOT FOUND —
+  46 matched to LB-01124 (matched_xref 1143) + six member filesets attributed to their
+  canonical LBs. GUI review card (P2) dropped per bulk directive; rerun scans via API.
+
 [2026-07-16] — fix(scraper): site mirror now downloads all known attachment links, xref included
 Context: tj directive — mirror must cover every link incl. xref attachments. The crawler was
   purely BFS link-discovery, so entry_files URLs not linked from any re-fetched page were
