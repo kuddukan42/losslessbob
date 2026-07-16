@@ -217,6 +217,7 @@ losslessbob/
 │   ├── wiki/                 # Agentic wiki: Home.md + 8 topic pages (Architecture, Backend-API, Database, Data-Flows, GUI, Concert-Ranker, TapeMatch, Dev-Workflow), refreshed via /wiki-update
 │   └── screenshots/          # Screenshot placeholders (replace with real app screenshots)
 │       └── README.md         # Guide for which screenshots to capture
+├── attic/                    # Holding pen for deletion candidates (see attic/README.md); review + purge
 └── data/
     ├── losslessbob.db        # SQLite database
     ├── *_flat_file.txt       # Tab-delimited flat-file (user-provided)
