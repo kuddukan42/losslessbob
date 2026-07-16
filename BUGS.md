@@ -24,29 +24,13 @@ Fix: TBD — pending repro. Stray file deleted from working tree each time it's 
   never been committed (untracked since it doesn't match any .gitignore rule, but also isn't
   staged/added).
 
-BUG-200: tapematch — report.md for 1999-02-25 Portland, Maine contains another session's tapematch output verbatim
-Status: Open
-File(s): data/tapematch/runs/20260602_205451_1999-02-25/report.md
-Reported: 2026-06-17
-Root cause: Unknown — found incidentally while scanning tapematch run dirs for BUG-199. The
-  Coverage table and LB page commentary in this report.md are correctly for 1999-02-25
-  Portland, Maine (LB-04452, LB-05683, LB-09627, LB-12715), but the entire `## tapematch
-  output` fenced block (INGEST/TRIM through DIAGNOSTICS) is verbatim output from an unrelated
-  2018-08-26 Auckland, New Zealand session (LB-13696, LB-13704, LB-13729) — none of the
-  Portland LB numbers appear in that block and none of the Auckland LB numbers appear in the
-  Coverage table. Looks like the wrong cached tapematch stdout was attached when this
-  report.md was generated. Already flagged by a prior session in this run's own analysis.md
-  but never logged as a tracked bug until now.
-Fix: TBD — re-run tapematch for the 1999-02-25 Portland, Maine session to regenerate a
-  correct report.md before any source-identity verdict can be drawn for LB-04452/LB-05683/
-  LB-09627/LB-12715. Also worth checking the run/report-generation pipeline for how a
-  different session's stdout could get attached, in case other run dirs are silently
-  affected without an obvious Coverage-table/tapematch-output mismatch to notice it by.
-
-BUG-175: LBDIR reconcile leaves self-referencing/regenerated entries permanently "MD5 mismatch" — BUG-174 fix may not be the final answer
+BUG-252: LBDIR reconcile leaves self-referencing/regenerated entries permanently "MD5 mismatch" — BUG-174 fix may not be the final answer
 Status: Open
 File(s): backend/checksum_utils.py:find_site_recoverable_files, backend/checksum_utils.py:find_reconcilable_files
 Reported: 2026-06-13
+Renumbered: from BUG-175 on 2026-07-15 (TODO-248 — id collided with the unrelated fixed
+  BUG-175 "Windows fonts render badly" in BUGS_DONE.md; pre-2026-07-15 references to BUG-175
+  for the LBDIR reconcile MD5-mismatch issue mean this bug)
 Root cause: Investigated by reproducing against the real LB-16216 pipeline folder
   (/mnt/MEDIA1/1-DYLAN/Bob Dylan  Bayfront Amphitheater Pensacola FL 1992-09-12
   Dolphinsmile Archive), whose 24-entry lbdir (LBF-16216-lbdir-bd92-09-12-PDub-
@@ -103,36 +87,6 @@ Reproduce: run tests/test_pipeline_smoke.py --seed 2 --n 500. Look for V:✗ ent
   • /mnt/DYLAN2/Concerts/1978/1978-06-20 London, England (LB-06548) — verify fail, lookup OK
   • /mnt/DYLAN2/PRIVATE LB/Official Releases.../The Bootlegseries Volume 12 The Cutting Edge [24-96] LB 12181
     No Torrent No trade — verify fail AND lookup not found (760 entries parsed)
-
-BUG-118: Pipeline lookup conflict — 11 folders whose checksums match 2–5 LB entries
-Status: Open
-File(s): backend/db.py:lookup_checksums, backend/app.py:4610
-Reported: 2026-05-31
-Root cause: The database has duplicate checksum entries — identical file hashes stored under multiple LB
-  records. lookup_checksums finds all matches and returns a "Conflict", leaving rename and lbdir steps muted
-  with no resolution path in the GUI. A systemic sub-pattern: LBs 04994/03029/06748/11900 appear as
-  "phantom" matches in two unrelated folders (Osaka 2010 and Bonn 2004) suggesting these entries contain
-  a very common file hash (possibly a silence/blank track) that matches recordings they don't belong to.
-  Rate from 500-folder sample: 2.2% of collection (extrapolates to ~350 entries affected).
-Fix: (1) SQL query to find all checksum hashes shared across 2+ lb_numbers and report them. (2) Investigate
-  the phantom LBs 04994/03029/06748/11900 for a common/generic track that should be excluded from lookup
-  indexing. (3) Add a de-dup guard in importer so checksums already present under a different LB are flagged.
-Note (2026-06-10): The "no resolution path in the GUI" symptom is now mitigated — the pipeline Lookup
-  panel's Conflict state shows a "Which show is this?" picker with per-LB "Pin {lb} & continue", which
-  writes a folder_lb_link row that wins over the raw multi-match set on the next lookup run. The
-  underlying duplicate-checksum data issue (fix items 1-3 above) is still open.
-Reproduce: run tests/test_pipeline_smoke.py --seed 2 --n 500. All 11 conflicts found:
-  • LB-07160 vs LB-04653 (1993-04-21 Monroe, LA)
-  • LB-06195 vs LB-06198 (2008-06-16 Bergamo — same show, two LB entries)
-  • LB-13944 vs LB-11702 (1978-06-07 Los Angeles)
-  • LB-08497 vs [04994, 03029, 06748, 11900] (2010-03-15 Osaka — 5-way conflict)
-  • LB-00355 vs LB-02722 (1981-07-12 Copenhagen)
-  • LB-00074 vs LB-07741 (1978-11-23 Norman OK)
-  • LB-01901 vs [04994, 03029, 06748, 11900] (2004-06-29 Bonn — same phantom 4)
-  • LB-01992 vs LB-01993 (1997-04-27 Boalsburg PA — consecutive LBs, same show)
-  • LB-06198 vs LB-06195 (2008-06-16 Bergamo — mirror of above)
-  • LB-11862 vs LB-11381 (2014 Tokyo)
-  • LB-04332 vs LB-04946
 
 BUG-106: Windows installer does not place app in Program Files
 Status: Open

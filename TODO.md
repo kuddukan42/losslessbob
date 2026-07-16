@@ -1,10 +1,4 @@
 
-TODO-248: Ledger ID integrity: 20 duplicate BUG numbers, 17 duplicate TODO numbers, 2 IDs both open and fixed
-Priority: Medium
-Status: Open
-Added: 2026-07-15
-Description: Pre-existing (NOT introduced 2026-07-15; no session touched BUGS.md in the range). Found by /session-close step 7. Distinct bugs share a number: BUG-107 names 5 different bugs in BUGS_DONE.md. Worse, BUG-175 and BUG-200 each exist in BOTH BUGS.md (Open) and BUGS_DONE.md (Fixed) as entirely different bugs — BUG-175 is both 'LBDIR reconcile MD5 mismatch' (open) and 'Windows fonts render badly' (fixed); BUG-200 is both 'tapematch report.md cross-contamination' (open) and 'Verify tab no checksums' (fixed). Consequence: 'tools/ledger.py bug-close 175' is ambiguous, and any BUG-<N> reference in CHANGELOG/commits may resolve to the wrong bug. New IDs are safe (next-id takes max: BUG-251/TODO-248). Counts: 20 dup BUG ids within BUGS_DONE.md, 17 dup TODO ids across TODO.md/TODO_DONE.md, 0 dups within open BUGS.md. tools/ledger_dedup.py exists and may already cover part of this — assess it first. Renumbering rewrites archive history and breaks existing cross-references, so decide the policy (renumber-with-alias vs leave-archive-frozen and only fix the 2 open/done collisions) BEFORE editing. Repro: grep -hoE '^BUG-[0-9]+' BUGS.md BUGS_DONE.md | sort | uniq -d
-
 TODO-246: Xref audit — document semantics, fix badge usage and pipeline wiring
 Priority: High
 Status: Open
@@ -19,8 +13,21 @@ Description: 62 of the 92 site_inventory not_found URLs are /detail/LB-XXXXX.htm
 
 TODO-242: Clarify taper propagation and "Needs review" flags in library view
 Priority: Medium
-Status: Open
+Status: In Progress (investigated 2026-07-15 — decision-ready, both questions answered; see Findings)
 Added: 2026-07-14
+Findings (2026-07-15): (1) Propagation WORKS — taper_attributions has ltf on BOTH LBs:
+  LB-10678 confidence='confirmed' (series_code) and LB-14922 confidence='propagated'
+  (evidence same_as LB-10678, computed 2026-07-14 17:57). _propagate_strong does traverse
+  same_as (taper_attribution.py:473). The asymmetry seen in the library is the SPEC'D
+  confirmed-only pill policy: ScreenLibrary.tsx:103-106 gives a taper pill only to
+  confidence='confirmed' rows; propagated rows are surfaced via the 'taperReview' filter
+  instead. Decision needed: keep confirmed-only pills, or add a visually-distinct
+  (e.g. outline) pill for propagated tier. (2) "Needs review" is NOT attribution conflict —
+  it is tapematch_family_meta.review_flag (family-level, set from tapematch analysis
+  verdicts), and the pill ALREADY shows the specific review_reason as a hover tooltip
+  (ScreenLibrary.tsx:2485, falls back to generic text). Residual gap: 17 flagged families
+  have NULL review_reason → generic tooltip only. Optional follow-ups: backfill those 17
+  reasons from their runs' analysis.md, and/or a legend entry.
 Description: Two UI clarity issues discovered in library view (1996 filtered): (1) Taper propagation across families — LB-14922 is tagged "ltf" but links to same_as LB-10678; the library view doesn't clarify whether these should show matching tapers or if the propagation failed. Check recording_families flood-fill logic (backend/taper_attribution.py _propagate_strong) — does it traverse same_as links? If yes, why isn't LB-10678 also showing "ltf"? If no, should it? (2) "Needs review" badge visibility — multiple recordings (LB-07911, LB-16158, Family A, LB-13789, LB-03987, LB-18258, LB-14779, LB-13159) display "Needs review" without clear signal what triggered it. Is it: attribution conflict? quality concern? incomplete metadata (missing venue/tour/notes)? The backend must set this flag somewhere — trace it (likely taper_attributions.conflict=1 or a quality_flag column, or missing venue gazetteer entry). Add a tooltip or legend in the library UI to explain. Related: [TODO-241] (taper curation), [TODO-236] (attribution flowchart), [TODO-234] (series-vs-series conflicts).
 
 TODO-241: Build UI/CLI conduit for taper curation — add/remove from known list without code changes
@@ -28,24 +35,6 @@ Priority: Medium
 Status: Open
 Added: 2026-07-14
 Description: Discovered while reviewing library/recording views: several legitimate tapers (cartoonist, 10kat, greeney55, nak300, markp) appear in recording descriptions but do NOT badge as taper attributions because they're missing from backend/db.py _KNOWN_TAPER_ALIASES. Current workflow requires manual code edits to backend/db.py + re-deploy. Build a low-friction curation path: (1) add a /taper-admin page (or extend /taper-review) with controls to add/remove handles from the known list, (2) persist to a .db table (e.g., user_taper_aliases) with approval_flag, (3) export the merged list on backend startup, (4) add a button/endpoint to trigger taper_attribution.recompute() after updates (or schedule overnight). This unblocks rapid taper onboarding (TODO-213 taper curation was manual mention-downgrade; this is handle discovery). Bonus: compare learned handles vs FABLE_TAPER_ATTRIBUTION.md mention-tier rules to flag borderline cases. Related: [TODO-236] (attribution flowchart), [TODO-213] (conflict curation).
-
-TODO-240: Trigger geocoder run_batch once the 2026-07-14 venue resolve batch completes
-Priority: Medium
-Status: Open
-Added: 2026-07-14
-Description: Operational follow-up to TODO-223 (closed): a full 'python -m backend.venue_gazetteer resolve' batch was still running at session close 2026-07-14 (652/4071 resolved; per-venue commits, durable, detached). When it finishes, trigger geocoder run_batch (POST /api/geocode/run or CLI) so the ~6,584 un-geocoded entries.location values inherit venue_geocoded pins — mostly zero Nominatim calls via the TODO-223 bite-3 inheritance. Then spot-check /api/map/data marker counts and city_level flags. If the resolve batch died early, re-run it (idempotent: processes source='seeded' remainder only).
-
-TODO-239: Backfill setlist.fm city coords (force re-scrape) to upgrade venue gazetteer anchors
-Priority: Medium
-Status: Open
-Added: 2026-07-14
-Description: Discovered during TODO-223 bite 2: setlistfm_shows.city_lat/city_lon/city_state are entirely NULL (0/4131 rows) — the TODO-222 step-1 columns exist but were never populated because the force re-scrape that stores venue.city.coords at scrape time has not run. Consequence: the venue_gazetteer resolution ladder (backend/venue_gazetteer.py) cannot anchor on a stored city coord, so it falls back to a per-city Nominatim geocode (source='city_geocode') and can never use the zero-cost 'setlistfm_city' pin. Action: run POST /api/setlistfm/update {force:true} to backfill, then re-run 'python -m backend.venue_gazetteer resolve --retry-failed' so city-level pins get a chance to upgrade to bounded_venue precision. No code change expected — operational. Verifies TODO-222's backfill claim.
-
-TODO-236: Build a flowchart of the taper attribution process
-Priority: Low
-Status: Open
-Added: 2026-07-14
-Description: Document the end-to-end taper attribution pipeline as a flowchart — the path from raw source metadata to a confirmed/inferred taper credit. Cover the layered evidence tiers (Layer 0 mentions, series_code/explicit strong signals, Layer 2 token-profile inferred tier — see TODO-214), the _NOT_TAPER / _KNOWN_TAPER_ALIASES filtering in backend/db.py, the mention-downgrade and strong-wins propagation rules in taper_attribution._propagate_strong, family flood-fill via recording_families, and the conflict-queue outcomes (mention-vs-mention hand-curation vs series-vs-series family over-merge — see TODO-234). Sources: FABLE_TAPER_ATTRIBUTION.md (spec), backend/taper_attribution.py, backend/db.py, and the /taper-review page. Likely a Mermaid diagram in docs/ (consider docs/wiki/ so /wiki-update keeps it fresh). Related: [TODO-213], [TODO-214], [TODO-234].
 
 TODO-235: Persist per-segment staircase lag curves in tapematch runs (unblocks TODO-233 pt2 A/B)
 Priority: Medium
@@ -334,21 +323,12 @@ Description: Curator mode currently exposes itself to every user: AppShell.tsx:4
   combo, hidden settings entry, or build-time flag) so normal users have no visible
   indication curator mode exists at all.
 
-TODO-156: Populate all the LB problem entries
+TODO-249: Improve xref handling
 Priority: Medium
 Status: Open
 Added: 2026-06-22
-Description: The lb_problems table (backend/db.py:497-503, CRUD in db.py:4803-4894, API at
-  app.py:3827+) exists but is not populated for all known problem LB numbers. Need to go
-  through known problem cases (e.g. lookup conflicts in BUG-118, verify mismatches in
-  BUG-120, reconcile issues in BUG-175) and add corresponding lb_problems rows so they
-  surface consistently via get_lb_problem_count()/the lb_problems UI instead of only living
-  in BUGS.md.
-
-TODO-155: Improve xref handling
-Priority: Medium
-Status: Open
-Added: 2026-06-22
+Renumbered: from TODO-155 on 2026-07-15 (TODO-248 — id collided with the unrelated done
+  TODO-155 "Pipeline stage icons" in TODO_DONE.md)
 Description: xref handling needs improvement. Current xref logic lives in the `checksums`
   table (backend/db.py:114, idx_lb_xref0 partial index at :121-122), importer.py:65-164,
   and flat_file.py:362-530 (sync/diff logic comparing xref values between incoming and
@@ -381,10 +361,12 @@ the existing `forum_posts` table (or a parallel `scraped_posts` table) so the GU
 Should be runnable on-demand (e.g. "Sync from WTRF" button) and optionally on startup.
 Credentials already managed by credentials.py; HTTP session logic already in forum_poster.py.
 
-TODO-107: Disk Scanner — find audio folders on disk for bulk collection add
+TODO-250: Disk Scanner — find audio folders on disk for bulk collection add
 Priority: Medium
 Status: Open
 Added: 2026-06-03
+Renumbered: from TODO-107 on 2026-07-15 (TODO-248 — id collided with the unrelated done
+  TODO-107 "Master publish upload progress" in TODO_DONE.md)
 Description: Add a Disk Scanner screen that walks user-defined root paths (e.g. /mnt/nas,
   /home/user/music) using os.scandir() with early pruning, finds all directories containing
   lossless audio files (FLAC, WAV, APE, ALAC, AIFF), and presents them as candidates to
@@ -409,10 +391,12 @@ Description: Add a Disk Scanner screen that walks user-defined root paths (e.g. 
 
 ---
 
-TODO-106: Trading — multi-friend batch compare
+TODO-251: Trading — multi-friend batch compare
 Priority: Low
 Status: Open
 Added: 2026-05-30
+Renumbered: from TODO-106 on 2026-07-15 (TODO-248 — id collided with the unrelated done
+  TODO-106 "Audio fingerprint matching" in TODO_DONE.md)
 Description: Extend the Trading screen to compare your collection against multiple friends at
   once — show a matrix view (friends × shows) so you can find the best candidate to trade
   any given recording with. Also: add a GET /api/trading/friends/<id>/entries route so the

@@ -1,6 +1,57 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-240: Trigger geocoder run_batch once the 2026-07-14 venue resolve batch completes
+Priority: Medium
+Status: Done
+Added: 2026-07-14
+Progress (2026-07-15): the 07-14 resolve batch had died early (1,710/4,071 resolved).
+  Re-run sequenced AFTER the TODO-239 setlist.fm coord backfill (done first, deliberately,
+  so the remaining 2,361 venues can anchor on zero-cost setlistfm_city pins instead of
+  Nominatim) — resolve re-launched 2026-07-15, running detached (~10 venues/min;
+  setlistfm_city pins confirmed appearing). Still to do when it finishes: resolve
+  --retry-failed pass, then geocoder run_batch + /api/map/data spot-check as described.
+Closed: 2026-07-16
+Description: Operational follow-up to TODO-223 (closed): a full 'python -m backend.venue_gazetteer resolve' batch was still running at session close 2026-07-14 (652/4071 resolved; per-venue commits, durable, detached). When it finishes, trigger geocoder run_batch (POST /api/geocode/run or CLI) so the ~6,584 un-geocoded entries.location values inherit venue_geocoded pins — mostly zero Nominatim calls via the TODO-223 bite-3 inheritance. Then spot-check /api/map/data marker counts and city_level flags. If the resolve batch died early, re-run it (idempotent: processes source='seeded' remainder only).
+Done 2026-07-16 (chained from TODO-239 backfill): 07-14 resolve batch had died at 1,710/4,071 — re-run completed 4,071/4,071 (final gazetteer: 2,125 bounded_venue, 1,388 setlistfm_city, 419 wikidata, 124 city_geocode, 15 failed; pre-backfill city_geocode pins reset+upgraded — 587/726 improved, old pins snapshotted in _city_geocode_backup_20260715, drop when satisfied). geocoder run_batch then geocoded all 6,584 remaining entries.location values: 6,008 via free gazetteer inheritance (4,003 venue + 2,005 city), 531 skipped_not_concert, only 9 live Nominatim calls. Spot-check via db.get_map_data(): 11,090 markers, 0 ungeocoded, city_level 4,506/11,090 (40.6%).
+
+TODO-236: Build a flowchart of the taper attribution process
+Priority: Low
+Status: Done
+Added: 2026-07-14
+Closed: 2026-07-15
+Description: Document the end-to-end taper attribution pipeline as a flowchart — the path from raw source metadata to a confirmed/inferred taper credit. Cover the layered evidence tiers (Layer 0 mentions, series_code/explicit strong signals, Layer 2 token-profile inferred tier — see TODO-214), the _NOT_TAPER / _KNOWN_TAPER_ALIASES filtering in backend/db.py, the mention-downgrade and strong-wins propagation rules in taper_attribution._propagate_strong, family flood-fill via recording_families, and the conflict-queue outcomes (mention-vs-mention hand-curation vs series-vs-series family over-merge — see TODO-234). Sources: FABLE_TAPER_ATTRIBUTION.md (spec), backend/taper_attribution.py, backend/db.py, and the /taper-review page. Likely a Mermaid diagram in docs/ (consider docs/wiki/ so /wiki-update keeps it fresh). Related: [TODO-213], [TODO-214], [TODO-234].
+Done 2026-07-15: docs/wiki/Taper-Attribution-Flow.md — two Mermaid flowcharts (full pipeline Layer 0→1→disabled Layer 2→curator loop; conflict-queue split mention-vs-mention vs series-vs-series→TODO-234) + wordlist filtering and key-rules prose. Indexed in wiki Home; /wiki-update keeps it fresh.
+
+TODO-156: Populate all the LB problem entries
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-15
+Description: The lb_problems table (backend/db.py:497-503, CRUD in db.py:4803-4894, API at
+  app.py:3827+) exists but is not populated for all known problem LB numbers. Need to go
+  through known problem cases (e.g. lookup conflicts in BUG-118, verify mismatches in
+  BUG-120, reconcile issues in BUG-252) and add corresponding lb_problems rows so they
+  surface consistently via get_lb_problem_count()/the lb_problems UI instead of only living
+  in BUGS.md.
+Done 2026-07-15: 32 lb_problems rows added covering all BUG-118 conflict pairs (incl. phantom quartet 04994/03029/06748/11900 and the 16054/16101/16440/16511/16547/16621 six-way cluster from the shared-hash report), BUG-120 verify mismatches (06548, 12181), and BUG-252 reconcile entries (16216, 13333). Surfaces via get_lb_problem_count()/lb_problems UI.
+
+TODO-239: Backfill setlist.fm city coords (force re-scrape) to upgrade venue gazetteer anchors
+Priority: Medium
+Status: Done
+Added: 2026-07-14
+Closed: 2026-07-15
+Description: Discovered during TODO-223 bite 2: setlistfm_shows.city_lat/city_lon/city_state are entirely NULL (0/4131 rows) — the TODO-222 step-1 columns exist but were never populated because the force re-scrape that stores venue.city.coords at scrape time has not run. Consequence: the venue_gazetteer resolution ladder (backend/venue_gazetteer.py) cannot anchor on a stored city coord, so it falls back to a per-city Nominatim geocode (source='city_geocode') and can never use the zero-cost 'setlistfm_city' pin. Action: run POST /api/setlistfm/update {force:true} to backfill, then re-run 'python -m backend.venue_gazetteer resolve --retry-failed' so city-level pins get a chance to upgrade to bounded_venue precision. No code change expected — operational. Verifies TODO-222's backfill claim.
+Done 2026-07-15: run_update(force=True) standalone walked all 208 pages — 4,147/4,149 setlistfm_shows rows now carry city_lat/city_lon (was 0/4131). venue_gazetteer resolve re-run kicked off immediately after; setlistfm_city pins confirmed appearing (zero-cost anchor path working).
+
+TODO-248: Ledger ID integrity: 20 duplicate BUG numbers, 17 duplicate TODO numbers, 2 IDs both open and fixed
+Priority: Medium
+Status: Done
+Added: 2026-07-15
+Closed: 2026-07-15
+Description: Pre-existing (NOT introduced 2026-07-15; no session touched BUGS.md in the range). Found by /session-close step 7. Distinct bugs share a number: BUG-107 names 5 different bugs in BUGS_DONE.md. Worse, BUG-175 and BUG-200 each exist in BOTH BUGS.md (Open) and BUGS_DONE.md (Fixed) as entirely different bugs — BUG-175 is both 'LBDIR reconcile MD5 mismatch' (open) and 'Windows fonts render badly' (fixed); BUG-200 is both 'tapematch report.md cross-contamination' (open) and 'Verify tab no checksums' (fixed). Consequence: 'tools/ledger.py bug-close 175' is ambiguous, and any BUG-<N> reference in CHANGELOG/commits may resolve to the wrong bug. New IDs are safe (next-id takes max: BUG-251/TODO-248). Counts: 20 dup BUG ids within BUGS_DONE.md, 17 dup TODO ids across TODO.md/TODO_DONE.md, 0 dups within open BUGS.md. tools/ledger_dedup.py exists and may already cover part of this — assess it first. Renumbering rewrites archive history and breaks existing cross-references, so decide the policy (renumber-with-alias vs leave-archive-frozen and only fix the 2 open/done collisions) BEFORE editing. Repro: grep -hoE '^BUG-[0-9]+' BUGS.md BUGS_DONE.md | sort | uniq -d
+Option 1 (tj sign-off 2026-07-15): archive duplicates left frozen as historical; only open/done collisions fixed. Bugs: open BUG-200 (tapematch report contamination) -> BUG-251, open BUG-175 (LBDIR reconcile MD5 mismatch) -> BUG-252. TODOs (3 collisions of the same class found during the closing consistency check, missed by the original census): open TODO-155 (Improve xref handling) -> TODO-249, open TODO-107 (Disk Scanner) -> TODO-250, open TODO-106 (Trading multi-friend batch compare) -> TODO-251. Every renumbered entry carries a 'Renumbered:' alias note for traceability; the done copies keep their numbers. Live cross-ref in TODO-172 updated (BUG-175 -> BUG-252); CHANGELOG/PROJECT.md historical references intentionally untouched. Within-archive duplicates (20 BUG ids in BUGS_DONE.md, 14 TODO ids) remain by decision. ledger.py next-id unaffected (max-based). NOTE: next-id scans ALL id mentions in the ledger text, not just headers — never write a not-yet-assigned id in ledger prose or it gets skipped.
+
 TODO-247: Electron visual-verification driver (Tier B) — bite 3b (progress fixture) only
 Priority: Medium
 Status: Done

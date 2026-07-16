@@ -1,6 +1,25 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-251: tapematch — report.md for 1999-02-25 Portland, Maine contains another session's tapematch output verbatim
+Status: Fixed
+File(s): data/tapematch/runs/20260602_205451_1999-02-25/report.md
+Reported: 2026-06-17
+Renumbered: from BUG-200 on 2026-07-15 (TODO-248 — id collided with the unrelated fixed
+  BUG-200 "Verify tab no checksums" in BUGS_DONE.md; pre-2026-07-15 references to BUG-200
+  for the tapematch report contamination mean this bug)
+Fixed: 2026-07-15
+Root cause: One-off stale-stdout attach on 2026-06-02: report generation at 20:54:51 grabbed cached tapematch stdout from the earlier 2018-08-26 Auckland session; a corrected regeneration of the same session followed 9 seconds later (20260602_205500). Not a systemic generator fault — full-corpus scan 2026-07-15 (fenced tapematch-output LBs vs rest-of-report LBs across 2,280 run dirs) found this single contaminated report.
+Fix: No re-run needed: clean sibling runs 20260602_205500 (the immediate regeneration) and 20260602_204033 both carry correct Portland output for LB-04452/LB-05683/LB-09627/LB-12715 — verdicts drawable from them. Contaminated dir marked with SUPERSEDED.md pointing at the clean runs (non-destructive; deleting the dir is at tj's discretion).
+
+BUG-118: Pipeline lookup conflict — 11 folders whose checksums match 2–5 LB entries
+Status: Fixed
+File(s): backend/db.py:lookup_checksums, backend/app.py:4610
+Reported: 2026-05-31
+Fixed: 2026-07-15
+Root cause: Two distinct causes: (1) degenerate hashes — the empty-file MD5 (d41d8cd9…) and SHA-1, and the all-zero FLAC ffp written when STREAMINFO carries no MD5 — are shared by unrelated LB entries (phantom quartet 04994/03029/06748/11900 share the empty-file MD5), so any folder containing a zero-byte/no-MD5 file matched them all; (2) genuine duplicate data — 5,261 (checksum,chk_type) groups appear under 2+ LB numbers (same show under consecutive LB entries, one recording under multiple entries — worst: 16054/16101/16440/16511/16621 sharing 718 hashes).
+Fix: backend/db.py: _is_degenerate_checksum() + _DEGENERATE_CHECKSUMS; lookup_checksums now treats degenerate hashes as non-evidence in both directions (excluded from matching AND from missing-from-set counts; still listed in detail with ignored=True, status NOT FOUND). backend/importer.py: de-dup guard after incremental merges (<=500 new LBs) logs hashes already present under other LB numbers. Full report: shared_checksums_report.md (repo root). 32 lb_problems rows added for the conflict pairs/clusters (also TODO-156). Genuine same-show duplicates remain data facts — pin-picker mitigation from 2026-06-10 still the resolution path; per-entry curation tracked in lb_problems. Verified: functional test (degenerate+real mix resolves to single LB, counts exclude ignored rows) + 240 tests pass (test_db_lookup/test_db_writes/test_setlistfm/test_geocoder).
+
 BUG-250: Checksum-lookup detail_url built without zero-padding — LB-42.html style 404 links
 Status: Fixed
 File(s): backend/db.py:2512
