@@ -155,6 +155,7 @@ losslessbob/
 │   ├── test_p8_blocked_severity.py # TODO-205 Phase 6 (P8): "blocked" collect severity split
 │   ├── test_sitedata_packaging.py # ONBOARDING spec Phases P1+P2 (backend/app.py)
 │   ├── test_lineage.py       # entry_lineage: extract_lb_references, parse_confidence, taper_normalised
+│   ├── test_taper_aliases.py # user_taper_aliases merge/reload semantics + /api/tapers/aliases routes (TODO-241)
 │   ├── test_taper_attribution.py # backend/taper_attribution.py: Layer 0 seeding, Layer 1 propagation
 │   ├── test_taper_fingerprints.py # backend/taper_fingerprints.py: Layer 2 vocabulary fingerprints (TODO-214)
 │   ├── test_setlist_fingerprint.py # backend/setlist_fingerprint.py: candidate-entry matching (TODO-225)
@@ -192,6 +193,7 @@ losslessbob/
 │   ├── refit_aud_model.py    # CLI: refit/recalibrate the AUD quality model against new labels
 │   ├── gui_next_locale_parity.py # CLI: check gui_next locales/*.json for missing/extra keys vs en.json
 │   ├── ledger_dedup.py       # CLI: de-duplicate BUG/TODO ledger entries (tools/ledger.py helper)
+│   ├── taper_aliases.py      # CLI: list/add/remove known-taper alias overrides (user_taper_aliases, TODO-241); --recompute reruns attribution
 │   ├── test_site_headers.py  # CLI: probe losslessbob.com HTTP headers (Last-Modified/ETag support check)
 │   ├── browser_driver.mjs    # Visual-verification driver, Tier A: Playwright Chromium vs the Vite build; PNGs → .debug/ (used by /verify)
 │   ├── electron_driver.mjs   # Visual-verification driver, Tier B: Playwright _electron vs the REAL built app on Xvfb; adds resize/size-matrix/scale-matrix/watch/main-eval; PNGs → .debug/electron/ (used by /verify --electron; TODO-247)
@@ -1038,6 +1040,23 @@ checksum; never exported. Approve inserts only `is_new=1` rows into `checksums`.
 `xref_ingest_rows`: `fileset_id` (FK), `checksum`, `filename`, `chk_type`, `is_new` (0/1).
 Indexes: `idx_xref_ingest_filesets_status(status)`, `idx_xref_ingest_rows_fileset(fileset_id)`.
 
+### `user_taper_aliases` — Known-taper alias overrides (USER table, TODO-241)
+Install-local add/remove overrides on top of the code-only `db._BUILTIN_TAPER_ALIASES` dict;
+never exported. `reload_taper_aliases()` merges these into the live `_KNOWN_TAPER_ALIASES` /
+`_TAPER_UNIVERSE` globals at backend startup, after every alias API write, and on every
+`list_taper_aliases()` call (so out-of-band `tools/taper_aliases.py` edits converge).
+
+| Column | Type | Notes |
+|--------|------|-------|
+| alias_norm | TEXT PK | Normalised alias key (`_normalise_alias_key`) |
+| canonical | TEXT NOT NULL | Canonical taper name (lowercase) |
+| action | TEXT NOT NULL | `add` (add/override mapping) or `remove` (suppress builtin key); CHECK-constrained |
+| approved | INTEGER NOT NULL | Default 1; only approved rows merge |
+| note | TEXT | Optional provenance note |
+| created_at / updated_at | TEXT | CURRENT_TIMESTAMP defaults |
+
+Index: `idx_user_taper_aliases_action(action, approved)`.
+
 ### `friend_collections` / `friend_collection_entries` — Collection trading data (USER tables)
 Never exported in the master snapshot. Populated by `POST /api/trading/friends` from an imported
 `.lbcollection` JSON blob (see `/api/trading/export`); compared against the user's own collection
@@ -1300,6 +1319,9 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | POST | `/api/tapers/attributions/<lb>/confirm` | Curator-only. Body `{taper?}` (else sourced from the existing attribution row; 400 if neither). Upserts a sticky `taper_confirmations` 'confirm' row (MASTER, F2) and immediately upserts `taper_attributions` to `confidence='confirmed'` — recompute-equivalent, so a later `/api/derived/recompute` is a no-op for this lb. Taper must be in the known-taper universe. |
 | POST | `/api/tapers/attributions/<lb>/reject` | Curator-only. Body `{taper?}`. Upserts a sticky 'reject' row and deletes the matching `taper_attributions` row (same pair-match rule as recompute's `_apply_rejects`); future recomputes stay suppressed via `taper_confirmations`. |
 | POST | `/api/tapers/attributions/<lb>/unresolved` | Curator-only. No body. "Can't determine" verdict for a genuine historical conflict (same recording documented with two different tapers, no ground truth): upserts a sticky `taper_confirmations` 'unresolved' row and deletes the `taper_attributions` row so the entry shows no pill and leaves the review queue. Suppressed across recomputes via `_apply_unresolved` (drops every taper for the lb, not just one). Reversible — a later confirm/reject overwrites the row. |
+| GET | `/api/tapers/aliases` | Merged known-taper alias table (TODO-241): `{entries: [{alias, canonical, origin: builtin\|user}], suppressed: [alias_norm], counts}`. Reloads from `user_taper_aliases` first, so it always reflects the DB. Open (no curator gate). |
+| POST | `/api/tapers/aliases` | Curator-only. Body `{alias, canonical, note?}`. Upserts an 'add' override, reloads the merged tables + `taper_attribution`'s alias index. 400 on missing/blank fields. |
+| DELETE | `/api/tapers/aliases/<alias>` | Curator-only. Deletes a user 'add' row outright, or upserts a 'remove' row to suppress a builtin key (`result: deleted\|suppressed`); 404 if neither. Existing attributions are only re-scored by a later `/api/derived/recompute` (button on `/taper-review`). |
 
 ### Curated Lists
 | Method | Route | Description |

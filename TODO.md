@@ -24,12 +24,6 @@ Findings (2026-07-15): (1) Propagation WORKS — taper_attributions has ltf on B
   reasons from their runs' analysis.md, and/or a legend entry.
 Description: Two UI clarity issues discovered in library view (1996 filtered): (1) Taper propagation across families — LB-14922 is tagged "ltf" but links to same_as LB-10678; the library view doesn't clarify whether these should show matching tapers or if the propagation failed. Check recording_families flood-fill logic (backend/taper_attribution.py _propagate_strong) — does it traverse same_as links? If yes, why isn't LB-10678 also showing "ltf"? If no, should it? (2) "Needs review" badge visibility — multiple recordings (LB-07911, LB-16158, Family A, LB-13789, LB-03987, LB-18258, LB-14779, LB-13159) display "Needs review" without clear signal what triggered it. Is it: attribution conflict? quality concern? incomplete metadata (missing venue/tour/notes)? The backend must set this flag somewhere — trace it (likely taper_attributions.conflict=1 or a quality_flag column, or missing venue gazetteer entry). Add a tooltip or legend in the library UI to explain. Related: [TODO-241] (taper curation), [TODO-236] (attribution flowchart), [TODO-234] (series-vs-series conflicts).
 
-TODO-241: Build UI/CLI conduit for taper curation — add/remove from known list without code changes
-Priority: Medium
-Status: Open
-Added: 2026-07-14
-Description: Discovered while reviewing library/recording views: several legitimate tapers (cartoonist, 10kat, greeney55, nak300, markp) appear in recording descriptions but do NOT badge as taper attributions because they're missing from backend/db.py _KNOWN_TAPER_ALIASES. Current workflow requires manual code edits to backend/db.py + re-deploy. Build a low-friction curation path: (1) add a /taper-admin page (or extend /taper-review) with controls to add/remove handles from the known list, (2) persist to a .db table (e.g., user_taper_aliases) with approval_flag, (3) export the merged list on backend startup, (4) add a button/endpoint to trigger taper_attribution.recompute() after updates (or schedule overnight). This unblocks rapid taper onboarding (TODO-213 taper curation was manual mention-downgrade; this is handle discovery). Bonus: compare learned handles vs FABLE_TAPER_ATTRIBUTION.md mention-tier rules to flag borderline cases. Related: [TODO-236] (attribution flowchart), [TODO-213] (conflict curation).
-
 TODO-235: Persist per-segment staircase lag curves in tapematch runs (unblocks TODO-233 pt2 A/B)
 Priority: Medium
 Status: Open

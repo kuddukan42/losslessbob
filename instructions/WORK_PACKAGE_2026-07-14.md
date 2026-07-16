@@ -83,7 +83,7 @@ Closed by tj's decision (see Standing preempt above): the taper badge state is
 trustworthy enough, the ~22 remaining conflicts are series-vs-series (TODO-234),
 and the weight-tuning pass is not worth doing. Not a blocker on anything below.
 
-## Session 3 — TODO-222: setlist.fm city coords + bounded venue search
+## Session 3 — ~~TODO-222: setlist.fm city coords + bounded venue search~~ STALE — already shipped+closed 2026-07-14 (see TODO_DONE.md); row never struck
 
 Cheapest well-specified win in the geocoder chain: store the city coords the
 API already returns (column adds w/ PRAGMA guards), then the bounded Nominatim

@@ -1,3 +1,32 @@
+[2026-07-16] — feat(backend): taper alias curation conduit — add/remove known-taper handles without code edits (TODO-241)
+Context: TODO-222 (tj's pick) turned out already shipped+closed 2026-07-14 (stale work-package
+  row); substituted the nearest well-specified open item per tj's "next autonomous win" intent.
+  Design Fable, implementation sonnet subagent, review+fix Fable.
+Added: db.py user_taper_aliases table (USER-tier, in USER_TABLES, never exported): alias_norm PK,
+  canonical, action add|remove (CHECK), approved, note, timestamps. 'add' rows add/override an
+  alias; 'remove' rows suppress a builtin key.
+Changed: db.py — builtin literal renamed _BUILTIN_TAPER_ALIASES; _KNOWN_TAPER_ALIASES is now the
+  merged dict, rebuilt IN PLACE by reload_taper_aliases() (preserves dict identity for importers;
+  derived _TAPER_UNIVERSE/_KNOWN_TAPER_KEYS_SORTED/_KNOWN_TAPER_RE reassigned). _normalise_alias_key()
+  extracted from _normalise_taper + two inline duplicates. add/remove/list_taper_aliases() with
+  BUG-246-style write-queue guard. list_taper_aliases() reloads first so a running backend converges
+  on out-of-band CLI edits (gap caught in live smoke: merged count was stale cross-process).
+Changed: taper_attribution.py — _ALIAS_KEYS_BY_CANONICAL build extracted to _rebuild_alias_index()
+  (called at import + top of recompute()); _TAPER_UNIVERSE now read via db module attribute
+  (frozenset reassigned on reload; direct import would go stale) + PEP 562 __getattr__ forwarder.
+Added: app.py — reload_taper_aliases() at startup after init_db; GET/POST /api/tapers/aliases +
+  DELETE /api/tapers/aliases/<alias> (writes curator-gated, matching adjacent taper routes).
+Added: taper_review.html "Taper aliases" collapsible admin section (list w/ builtin|user badges,
+  add form, remove/suppress buttons, recompute button); tools/taper_aliases.py CLI (list/add/remove,
+  --recompute); tests/test_taper_aliases.py (14 tests).
+Verified: 58 targeted (aliases+attribution+fingerprints) + full suite 850 green; backend restarted;
+  live smoke: API add/remove, CLI out-of-band add visible to running backend (286→287→286 merged).
+Ops (same session): mirror crawl session 33 (seeded 07-16 12:41) confirmed done — 4,269 fetched,
+  0 failed; entry_files downloaded=0 4,357→88 (long-tail mangled/double-encoded URLs, 1 xref-named
+  but not a checksum fileset). Backend was stale (predated xref_ingest routes) — restarted.
+  POST /api/xref_ingest/scan rerun per TODO-252 note: staged 0 new (all 108 missing xref text
+  files had landed before the 13:16 scan; TODO-252 import was complete as shipped).
+
 [2026-07-16] — feat(backend): xref B8 promoted — site-mirror xref ingest shipped + 6,632 checksums imported (TODO-252)
 Context: tj D-2 decision — promote B8 from report-only to a reviewed import path, then
   directed bulk import ("all these xref should get added, one go"). flat_file.py pattern.

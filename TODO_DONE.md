@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-241: Build UI/CLI conduit for taper curation — add/remove from known list without code changes
+Priority: Medium
+Status: Done
+Added: 2026-07-14
+Closed: 2026-07-16
+Description: Discovered while reviewing library/recording views: several legitimate tapers (cartoonist, 10kat, greeney55, nak300, markp) appear in recording descriptions but do NOT badge as taper attributions because they're missing from backend/db.py _KNOWN_TAPER_ALIASES. Current workflow requires manual code edits to backend/db.py + re-deploy. Build a low-friction curation path: (1) add a /taper-admin page (or extend /taper-review) with controls to add/remove handles from the known list, (2) persist to a .db table (e.g., user_taper_aliases) with approval_flag, (3) export the merged list on backend startup, (4) add a button/endpoint to trigger taper_attribution.recompute() after updates (or schedule overnight). This unblocks rapid taper onboarding (TODO-213 taper curation was manual mention-downgrade; this is handle discovery). Bonus: compare learned handles vs FABLE_TAPER_ATTRIBUTION.md mention-tier rules to flag borderline cases. Related: [TODO-236] (attribution flowchart), [TODO-213] (conflict curation).
+Shipped 2026-07-16: user_taper_aliases USER-tier table + reload_taper_aliases() in-place merge (db.py); GET/POST/DELETE /api/tapers/aliases (writes curator-gated); 'Taper aliases' admin section on /taper-review; tools/taper_aliases.py CLI (list/add/remove, --recompute). Recompute stays the existing POST /api/derived/recompute. 14 new tests; full suite 850 green; live-smoked incl. out-of-band CLI edit convergence. Bonus alias-vs-mention-tier comparison not done (fold into TODO-242/234 curation if wanted).
+
 TODO-252: Site-mirror xref ingest as reviewed import path (B8 promoted per tj D-2 decision 2026-07-16)
 Priority: High
 Status: Done
