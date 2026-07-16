@@ -195,9 +195,9 @@
       "matched": "Matched",
       "incomplete": "Incomplete",
       "notfound": "Not found",
-      "duplicate": "Duplicate",
-      "xref": "XRef"
+      "duplicate": "Duplicate"
     },
+    "xrefPill": "Xref fileset · {{id}}",
     "owned": {
       "verifiedBanner": "{{count}} already in collection · lbdir-verified",
       "verifiedNote": "no action needed",
@@ -732,6 +732,8 @@
     "detail": {
       "owned": "Owned",
       "xref": "Xref",
+      "xrefCopy": "Xref fileset · xref-{{id}}",
+      "altFilesetsNote": "Alt filesets documented for this entry",
       "folder": "Folder",
       "diskPath": "Disk path",
       "size": "Size",
@@ -767,6 +769,10 @@
       "noTorrents": "No torrent records.",
       "noForumHistory": "No forum history.",
       "forumLoadError": "Failed to load forum history."
+    },
+    "filters": {
+      "xrefCopies": "My xref copies",
+      "altFilesets": "Entries with alt filesets"
     },
     "confirmDelete": {
       "torrentTitle": "Delete .torrent file",
@@ -1330,6 +1336,7 @@
       "lb": "LB#",
       "status": "Status"
     },
+    "xrefPill": "Xref fileset · {{id}}",
     "toast": {
       "failed": "Lookup failed",
       "clipboardEmpty": "Clipboard is empty",
@@ -1535,10 +1542,16 @@
       "wishlist": "Wishlist",
       "dup": "dup",
       "xref": "xref",
+      "altFilesets": "Alt filesets",
       "folder": "Folder",
       "confirmed": "Confirmed",
       "rating": "Rating",
       "catalogNote": "Catalog metadata shown from the master DB.",
+      "checksumsLabel": "Checksums",
+      "checksumsCanonical_one": "Canonical ({{count}} file)",
+      "checksumsCanonical_other": "Canonical ({{count}} files)",
+      "checksumsXrefGroup_one": "xref-{{id}} ({{count}} file)",
+      "checksumsXrefGroup_other": "xref-{{id}} ({{count}} files)",
       "unconfirmed": "Unconfirmed",
       "needsReview": "Needs review",
       "releasedAs": "Released as “{{title}}”",
