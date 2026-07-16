@@ -3392,11 +3392,13 @@ def _load_latest_abs_grades(conn: sqlite3.Connection) -> dict[int, str]:
 
 
 def _load_taper_attributions(conn: sqlite3.Connection) -> dict[int, dict]:
-    """Return ``{lb_number: {"confirmed": str|None, "review": bool}}``.
+    """Return ``{lb_number: {"confirmed"?: str, "propagated"?: str, "review": bool}}``.
 
-    Per `instructions/complete/FABLE_TAPER_ATTRIBUTION.md` §5, only `confidence='confirmed'`
-    rows ever render a taper pill; `propagated`/`inferred`/`conflict` rows feed the
-    Library's "taper: needs review" filter instead. Feature-detected like
+    `confidence='confirmed'` rows render the solid taper pill (spec §5).
+    Conflict-free `propagated` rows also carry the taper name since 2026-07-16
+    (TODO-242 decision): they render a visually-distinct outline pill in the
+    Library. `inferred`/`conflict` rows (and propagated ones too) still feed
+    the "taper: needs review" filter via `review`. Feature-detected like
     `_load_latest_abs_grades` since `taper_attributions` may not exist yet on an
     older DB that hasn't run `tools/attribute_tapers.py`.
     """
@@ -3416,6 +3418,8 @@ def _load_taper_attributions(conn: sqlite3.Connection) -> dict[int, dict]:
         entry: dict = {}
         if r["confidence"] == "confirmed":
             entry["confirmed"] = r["taper_normalised"]
+        elif r["confidence"] == "propagated" and not r["conflict"]:
+            entry["propagated"] = r["taper_normalised"]
         if r["confidence"] in ("propagated", "inferred") or r["conflict"]:
             entry["review"] = True
         if entry:
@@ -3445,7 +3449,8 @@ def get_pick_badges(db_path=None) -> dict[int, dict]:
 
     Returns:
         ``{lb_number: {"pickRank"?, "absGrade"?, "curated"?, "taperConfirmed"?,
-        "taperReview"?}}`` — empty on a fresh install before recompute.
+        "taperPropagated"?, "taperReview"?}}`` — empty on a fresh install
+        before recompute.
     """
     conn = get_connection(db_path)
     pick_ranks = _load_pick_ranks(conn)
@@ -3465,6 +3470,8 @@ def get_pick_badges(db_path=None) -> dict[int, dict]:
     for lb, attr in taper_attrs.items():
         if "confirmed" in attr:
             out.setdefault(lb, {})["taperConfirmed"] = attr["confirmed"]
+        if "propagated" in attr:
+            out.setdefault(lb, {})["taperPropagated"] = attr["propagated"]
         if attr.get("review"):
             out.setdefault(lb, {})["taperReview"] = True
     return out
@@ -3520,8 +3527,10 @@ def get_performances(db_path=None) -> list[dict]:
 
     Per `instructions/complete/FABLE_TAPER_ATTRIBUTION.md` §5 (TAPER phase 2), each
     recording also carries flat, optional `taperConfirmed` (canonical taper
-    name, only when `taper_attributions.confidence='confirmed'` — never for
-    propagated/inferred) and `taperReview` (`true` when confidence is
+    name, only when `taper_attributions.confidence='confirmed'`),
+    `taperPropagated` (canonical taper name for conflict-free
+    `confidence='propagated'` rows — outline pill in the Library, TODO-242
+    decision 2026-07-16), and `taperReview` (`true` when confidence is
     `propagated`/`inferred` or the row is flagged `conflict`), following the
     same F4 payload-extension pattern.
 
@@ -3653,6 +3662,8 @@ def get_performances(db_path=None) -> list[dict]:
         if taper_attr:
             if "confirmed" in taper_attr:
                 rec_out["taperConfirmed"] = taper_attr["confirmed"]
+            if "propagated" in taper_attr:
+                rec_out["taperPropagated"] = taper_attr["propagated"]
             if taper_attr.get("review"):
                 rec_out["taperReview"] = True
         g["recordings"].append(rec_out)

@@ -1663,7 +1663,8 @@
       "gradeBadge": "Note {{grade}}",
       "curatedBadge": "Die Auswahl von {{curator}}",
       "notComputedNote": "Noch nicht berechnet – führen Sie im Setup den Befehl „Abgeleitete Daten neu berechnen“ aus.",
-      "taperBadge": "{{taper}}"
+      "taperBadge": "{{taper}}",
+      "taperPropagatedTitle": "Die Kopie wurde von einer verknüpften Aufnahme desselben Bandes abgeleitet (nicht direkt bestätigt)"
     },
     "taper": {
       "label": "Taper-Quellenangabe",

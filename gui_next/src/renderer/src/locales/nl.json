@@ -1663,7 +1663,8 @@
       "gradeBadge": "Cijfer {{grade}}",
       "curatedBadge": "De keuze van {{curator}}",
       "notComputedNote": "Nog niet berekend — voer „Afgeleide gegevens opnieuw berekenen“ uit in de instellingen.",
-      "taperBadge": "{{taper}}"
+      "taperBadge": "{{taper}}",
+      "taperPropagatedTitle": "De opname is afkomstig van een gekoppelde opname van dezelfde band (niet rechtstreeks bevestigd)"
     },
     "taper": {
       "label": "Taper-vermelding",
