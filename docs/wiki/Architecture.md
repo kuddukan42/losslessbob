@@ -11,10 +11,9 @@ ranking (Concert Ranker).
 
 ```
 ┌─────────────────────┐     HTTP :5174      ┌──────────────────────┐
-│ gui_next (PRIMARY)   │◄───────────────────►│ Flask backend         │
+│ gui_next             │◄───────────────────►│ Flask backend         │
 │ Electron + React     │                     │ backend/app.py        │
-├─────────────────────┤                     ├──────────────────────┤
-│ gui/ (legacy PyQt6)  │◄───────────────────►│ SQLite (single DB)    │
+│                      │                     │ SQLite (single DB)    │
 └─────────────────────┘                     │ backend/db.py         │
                                             └──────────┬───────────┘
         tools/tapematch/  ──── family sync ────────────┘
@@ -27,11 +26,9 @@ ranking (Concert Ranker).
   `db.py` (schema + queries), `checksum_utils.py`, `importer.py`, `scraper.py`,
   `site_crawler.py`, `wtrf_scraper.py` (forum torrent fetcher), `scheduler.py`,
   `geocoder.py`.
-- **`gui_next/`** — Electron + React + TypeScript. The primary GUI. i18n via locale
-  JSON (en/de/fr/es/it/nl). Verified with `/gui-check` (typecheck + build), never
-  screenshots.
-- **`gui/`** — legacy PyQt6 tabs (lookup, verify, scraper, rename, dbedit, …).
-  Own rules in `gui/CLAUDE.md`; Qt `.ts/.qm` i18n via `/i18n-update`.
+- **`gui_next/`** — Electron + React + TypeScript. The sole GUI (legacy PyQt6
+  `gui/` removed 2026-07-16). i18n via locale JSON (en/de/fr/es/it/nl). Verified
+  with `/gui-check` (typecheck + build), never screenshots.
 - **`tools/tapematch/`** — standalone audio-matching pipeline (see [TapeMatch](TapeMatch.md)).
   Run artifacts live in `data/tapematch/runs/`.
 - **`concert_ranker/`** — quality-scan / ranking logic (see [Concert-Ranker](Concert-Ranker.md)).

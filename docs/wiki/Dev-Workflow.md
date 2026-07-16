@@ -20,13 +20,12 @@
 | gui_next | `/gui-check` (typecheck + prod build) — no screenshots |
 | Python file | `.venv/bin/python3 -m py_compile <file>` |
 | User-facing gui_next feature | `/gui-next-i18n` locale update |
-| Legacy gui/ feature | `/i18n-update` |
 
 ## Key commands & skills
 
 `/backend-restart` · `/gui-check` · `/session-open` · `/session-close` ·
 `/tapematch-batch` · `/analyze-runs` · `/find-bugs` · `/gui-next-i18n` ·
-`/i18n-update` · `/verify` (explicit-only visual check) · `/wiki-update` (this wiki).
+`/verify` (explicit-only visual check) · `/wiki-update` (this wiki).
 
 ## Working conventions
 

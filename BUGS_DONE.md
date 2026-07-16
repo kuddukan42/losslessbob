@@ -1,6 +1,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-106: Windows installer does not place app in Program Files
+Status: Fixed
+File(s): installer/losslessbob.iss (or equivalent Inno Setup script)
+Reported: 2026-05-22
+Fixed: 2026-07-16
+Root cause: Inno Setup script (tools/losslessbob.iss) targeted the legacy PyQt6 desktop build; DefaultDirName never fixed.
+Fix: Obsolete by removal: the legacy desktop distribution channel (PyInstaller specs + Inno Setup script) was deleted in the legacy GUI removal 2026-07-16; gui_next Electron packaging replaces it.
+
+BUG-249: pytest full-suite intermittent native crash in test_lb_master.py::test_status_combobox_exists
+Status: Fixed
+File(s): tests/test_lb_master.py:373
+Reported: 2026-07-11
+Fixed: 2026-07-16
+Root cause: Native Qt/pytest-qt widget-teardown interaction in the legacy GUI test classes — never root-caused at the Qt level.
+Fix: Resolved by removal: the legacy PyQt6 GUI and its qtbot test classes were deleted (legacy GUI removal, 2026-07-16); pytest-qt uninstalled. The crashing test no longer exists.
+
 BUG-251: tapematch — report.md for 1999-02-25 Portland, Maine contains another session's tapematch output verbatim
 Status: Fixed
 File(s): data/tapematch/runs/20260602_205451_1999-02-25/report.md

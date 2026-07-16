@@ -1,12 +1,4 @@
 
-BUG-249: pytest full-suite intermittent native crash in test_lb_master.py::test_status_combobox_exists
-Status: Open
-File(s): tests/test_lb_master.py:373
-Reported: 2026-07-11
-Description: Intermittent native crash (not a Python exception/traceback — process dies) in test_status_combobox_exists when run as part of the full pytest suite. Not reproduced in isolation. Observed during TODO-231 session (2026-07-11) while running the full suite for unrelated backend/ab_clips.py work; predates today's changes and is unrelated to them. Likely a native Qt/PyQt6 widget-teardown or event-loop interaction under pytest-qt when combined with other GUI tests earlier in the same suite run (ordering/state leakage), rather than a logic bug in the test itself. Root cause not yet investigated. Needs repro: re-run full suite a few times, note whether it always follows the same preceding test(s), and whether isolating the class or module avoids it.
-Root cause: Unknown
-Fix: —
-
 BUG-210: backend/lossless_bob.db keeps reappearing in repo root (untracked, empty)
 Status: Open
 File(s): backend/lossless_bob.db (unknown origin)
@@ -87,11 +79,3 @@ Reproduce: run tests/test_pipeline_smoke.py --seed 2 --n 500. Look for V:✗ ent
   • /mnt/DYLAN2/Concerts/1978/1978-06-20 London, England (LB-06548) — verify fail, lookup OK
   • /mnt/DYLAN2/PRIVATE LB/Official Releases.../The Bootlegseries Volume 12 The Cutting Edge [24-96] LB 12181
     No Torrent No trade — verify fail AND lookup not found (760 entries parsed)
-
-BUG-106: Windows installer does not place app in Program Files
-Status: Open
-File(s): installer/losslessbob.iss (or equivalent Inno Setup script)
-Reported: 2026-05-22
-Description: The Windows installer does not install the application to the standard Program Files directory (e.g. C:\Program Files\LosslessBob). Install destination is incorrect or defaults to an unexpected location. May be a misconfigured DefaultDirName or missing {pf} / {autopf} constant in the Inno Setup script.
-Root cause: Unknown
-Fix: —
