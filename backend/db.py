@@ -124,6 +124,30 @@ USER_META_KEYS = frozenset({
     "setlistfm_api_key",
 })
 
+# Degenerate checksums identify no recording: hashes of zero-byte input, plus
+# the all-zero FLAC fingerprint written when STREAMINFO carries no audio MD5.
+# The same value appears under many unrelated LB entries (BUG-118 "phantom"
+# conflicts: LBs 04994/03029/06748/11900 share the empty-file MD5), so lookup
+# treats them as non-evidence in both directions — they neither support a
+# match nor count as missing from a set.
+_DEGENERATE_CHECKSUMS = frozenset({
+    "d41d8cd98f00b204e9800998ecf8427e",           # MD5 of zero-byte input
+    "da39a3ee5e6b4b0d3255bfef95601890afd8709d",   # SHA-1 of zero-byte input
+})
+
+
+def _is_degenerate_checksum(checksum: str) -> bool:
+    """Return True if this checksum value cannot identify a recording.
+
+    Args:
+        checksum: Hex checksum string as stored/parsed (any case).
+
+    Returns:
+        True for hashes of empty input and all-zero fingerprints.
+    """
+    c = (checksum or "").strip().lower()
+    return c in _DEGENERATE_CHECKSUMS or (len(c) >= 16 and set(c) == {"0"})
+
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS checksums (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -2450,6 +2474,12 @@ def lookup_checksums(parsed_entries, db_path=None):
     if not parsed_entries:
         return {}, []
 
+    # Degenerate hashes (empty-file MD5/SHA-1, all-zero ffp) are non-evidence:
+    # excluded from matching AND from the given/matched/unmatched counts, but
+    # still listed in detail (ignored=True) so the user sees the file was read.
+    degenerate_entries = [e for e in parsed_entries if _is_degenerate_checksum(e[0])]
+    parsed_entries = [e for e in parsed_entries if not _is_degenerate_checksum(e[0])]
+
     # Bloom pre-filter: separate definite misses from candidates (DB-07).
     # Only use the bloom if it was built for this exact db_path; a filter built
     # from a different DB (common in tests with multiple temp DBs) would give
@@ -2533,6 +2563,16 @@ def lookup_checksums(parsed_entries, db_path=None):
             "is_duplicate": False, "missing_from_set": [], "detail_url": None,
         })
 
+    # Degenerate entries: visible in detail but flagged ignored so the summary
+    # loop below leaves them out of unmatched/missing_from_db counts.
+    for chk, fname, chk_type in degenerate_entries:
+        detail.append({
+            "checksum": chk, "filename": fname, "db_filename": None, "type": chk_type,
+            "lb_number": None, "xref": 0, "status": "NOT FOUND",
+            "is_duplicate": False, "missing_from_set": [], "detail_url": None,
+            "ignored": True,
+        })
+
     # Reverse lookup: check completeness per (lb_number, xref_value) group.
     # Evaluating per xref group means a recording that fully matches an xref variant
     # is shown as MATCHED (green) rather than INCOMPLETE — because it IS complete for
@@ -2566,6 +2606,10 @@ def lookup_checksums(parsed_entries, db_path=None):
         for row in all_rows:
             chk = row["checksum"]
             if chk in matched_set:
+                continue
+            # A degenerate DB row (empty-file hash, zero ffp) can never be
+            # verified against disk — it must not count as missing either.
+            if _is_degenerate_checksum(chk):
                 continue
             base = _norm_track_base(row["filename"])
             if not (base_to_chks[base] & matched_set):
@@ -2613,6 +2657,8 @@ def lookup_checksums(parsed_entries, db_path=None):
     lb_summary = {}
     unmatched_count = 0
     for item in detail:
+        if item.get("ignored"):
+            continue
         lb = item["lb_number"]
         if lb is None:
             unmatched_count += 1

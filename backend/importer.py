@@ -171,6 +171,34 @@ def run_import(source_path, progress_callback=None, db_path=None):
 
     get_write_queue().execute(_do_merge, timeout=300.0)
 
+    # De-dup guard (BUG-118): flag hashes from this import that also exist
+    # under a different LB number — the source of phantom lookup conflicts.
+    # Skip on huge (initial) imports: the IN clause would exceed SQLite's
+    # parameter limit and a wall of warnings on first import isn't actionable.
+    new_lb_list = sorted(temp_lbs)
+    if new_lb_list and len(new_lb_list) <= 500:
+        with get_connection(db_path) as conn:
+            dup_rows = conn.execute(
+                """SELECT c.checksum, c.lb_number,
+                          GROUP_CONCAT(DISTINCT o.lb_number) AS other_lbs
+                   FROM checksums c
+                   JOIN checksums o ON o.checksum = c.checksum
+                                   AND o.lb_number <> c.lb_number
+                   WHERE c.lb_number IN ({})
+                   GROUP BY c.checksum, c.lb_number
+                   LIMIT 200""".format(",".join("?" * len(new_lb_list))),
+                new_lb_list,
+            ).fetchall()
+        if dup_rows:
+            _log.warning(
+                "import de-dup guard: %d%s checksum(s) from this import already "
+                "exist under other LB numbers (will surface as lookup DUPLICATE)",
+                len(dup_rows), "+" if len(dup_rows) == 200 else "",
+            )
+            for r in dup_rows[:10]:
+                _log.warning("  shared hash %.16s… LB-%05d also in LBs: %s",
+                             r["checksum"], r["lb_number"], r["other_lbs"])
+
     _set_state(stage="optimizing", message="Updating statistics…")
     if progress_callback:
         progress_callback(f"Import complete. {len(new_lbs)} new LB numbers.")
