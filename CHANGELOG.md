@@ -1,3 +1,28 @@
+[2026-07-17] — feat(scraper): tapematch staircase corroboration gate live + lag-segment
+  persistence (TODO-234 sweep signed off, TODO-235 engine half)
+Context: two-part tapematch package (work done 2026-07-16, signed off + landed 2026-07-17).
+  Part 1: the 2026-07-11 staircase over-merge hazard (1997-11-11 LB-01126, fp .410/win 0/
+  hiss 0 crossing the relaxed 0.40 bar) — mitigations (a)/(b)/(c) measured against the
+  frozen set + TODO-234 family replay; tj signed off (a): corroboration gate. Part 2:
+  TODO-235 prerequisite — per-segment staircase lag curves were render-only (analysis.md
+  text), now persisted numerically for backend ab_clips piecewise maps (TODO-233 pt2).
+Added: tapematch/align.py: fit_lag_segments() — piecewise-linear lag model per splice
+  segment (offset_sec/rate_ppm/r2, same step detection as locate_splice_points);
+  tapematch/verdict.py: fingerprint.staircase_scope (source|pair) + staircase_corroboration
+  gate (absent-key = historical behaviour, verified byte-identical tp=684 fp=9);
+  tests/test_lag_segments.py + tests/test_staircase_gating.py (17 tests).
+Changed: tapematch/cli.py: results.json sources rows now carry lag_ref/lag_segments/
+  lag_curve (raw anchor rows kept for re-derivation); tapematch_session.py: observations.db
+  sources + lag_ref_lb/lag_segments_json columns (idempotent ALTER); config.yaml:
+  fingerprint.staircase_corroboration ENABLED (min_windowed_frac/min_hiss_frac 0.05) —
+  new committed frozen baseline tp=671 fp=9 (was 684/9; −13 tp are all fp-only
+  zero-corroboration pairs, 0 new FP — verified via regression.py score --cached);
+  CALIBRATION_PROGRESS.md: sweep table + decision recorded.
+Added: instructions/TODO-234_FAMILY_CONFLICT_REVIEW.md — evidence review of all 11
+  conflict components; action A (3 curator rejects) applied, queue 22 → 18; actions B
+  (same_as edge fixes) + C (lineage parser tie-break bug) ON HOLD pending tj; post-rescore
+  validation checklist. TODO-234/235 stay Open: corpus rescore + validation remain.
+
 [2026-07-16] — refactor(gui): Advanced-tools screens removed; Pipeline absorbed the gaps
 Context: tj found the Advanced sidebar section (Verify/Lookup/Rename/LBDIR standalone
   screens) confusing next to the Pipeline, which already runs the same steps per-row via
