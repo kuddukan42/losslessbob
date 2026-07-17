@@ -217,6 +217,63 @@ def test_export_excludes_user_tables_and_keys():
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+def test_export_strips_private_metadata_on_public_channel():
+    """TODO-253: public-channel exports blank private-entry metadata; the
+    'full' channel keeps it. Both stamp the channel into the manifest."""
+    db_path, conn, tmp = _make_db()
+    try:
+        _seed_master_and_user_data(conn, db_path)
+        conn.execute(
+            "INSERT INTO entries(lb_number, status, location, date_str, "
+            "description, setlist, rating, taper_name, metadata_source) "
+            "VALUES(?,?,?,?,?,?,?,?,?)",
+            (4, "private", "Supper Club, NY", "11/16/93",
+             "LTE lineage -- private notes -- same as LB-2606",
+             "1 Ragged And Dirty, 2 Lay Lady Lay", "A", "LTE",
+             "private_import"),
+        )
+        conn.commit()
+        import backend.db as db
+
+        out_pub, man_pub = db.export_master_db(reason="striptest", db_path=db_path)
+        assert man_pub["channel"] == "public"
+        assert man_pub["private_rows_stripped"] == 1
+        snap = sqlite3.connect(str(out_pub))
+        try:
+            row = snap.execute(
+                "SELECT status, location, description, setlist, taper_name, "
+                "metadata_source FROM entries WHERE lb_number=4"
+            ).fetchone()
+            assert row[0] == "private"          # number-level flag survives
+            assert row[1] == "" and row[2] == "" and row[3] == ""
+            assert row[4] is None and row[5] is None
+            # FTS side rebuilt — stripped text must be unsearchable
+            assert snap.execute(
+                "SELECT COUNT(*) FROM entries_fts WHERE entries_fts MATCH 'Supper'"
+            ).fetchone()[0] == 0
+            # Public rows untouched
+            assert snap.execute(
+                "SELECT location FROM entries WHERE lb_number=1"
+            ).fetchone()[0] == "Forest Hills, NY"
+        finally:
+            snap.close()
+
+        out_full, man_full = db.export_master_db(
+            reason="striptest_full", db_path=db_path, include_private=True)
+        assert man_full["channel"] == "full"
+        assert man_full["private_rows_stripped"] == 0
+        snap = sqlite3.connect(str(out_full))
+        try:
+            assert snap.execute(
+                "SELECT description FROM entries WHERE lb_number=4"
+            ).fetchone()[0].startswith("LTE lineage")
+        finally:
+            snap.close()
+    finally:
+        conn.close()
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 def test_export_sha256_matches_file_contents():
     import hashlib
     db_path, conn, tmp = _make_db()

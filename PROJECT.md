@@ -186,6 +186,7 @@ losslessbob/
 │   ├── batch_verify.py       # CLI: batch-verify checksums across many folders at once
 │   ├── batch_lbdir_copy.py   # CLI: batch-copy lbdir*.txt into many folders at once
 │   ├── scan_collection_folders.py # CLI: scan disk for candidate collection folders not yet in my_collection
+│   ├── import_private_metadata.py # CLI: TODO-245 private-LB metadata import (data/private docs + collection folder txts; fill-blank-only)
 │   ├── parse_dff_reports.py  # CLI: parse DigiFlawFinder reports attached to entries
 │   ├── parse_lineage.py      # CLI wrapper: backend.taper_attribution / entry_lineage batch parse (see backend/db.py extract_lb_references)
 │   ├── wtrf_fetch_missing.py # CLI: batch WTRF torrent fetch for missing items (wraps /api/wtrf/fetch_torrent logic)
@@ -273,12 +274,13 @@ Unique index on `(checksum, lb_number)`.
 | timing | TEXT | Recording length |
 | description | TEXT | Full text description |
 | setlist | TEXT | Setlist text |
-| status | TEXT | `'ok'`, `'missing'` |
+| status | TEXT | `'ok'`, `'missing'`, `'private'` (private = Jeff assigned the number but never published the page; TODO-245) |
 | scraped_at | TIMESTAMP | When row was last scraped |
 | taper_name | TEXT | Parsed taper handle/name (via `extract_taper_and_source`) |
 | source_chain | TEXT | Parsed recording equipment chain (via `extract_taper_and_source`) |
 | lb_category | TEXT | Entry category: `'concert'`, `'interview'`, `'studio'`, `'compilation'`, `'tv'`, `'radio'`, `'rehearsal'`, `'soundcheck'`, `'other'`, `'unknown'`. Populated via `classify_entry_categories()`. |
 | source_type | TEXT | Curator-edited source type: `'Soundboard'`, `'Audience'`, `'FM/Pre-FM'`, `'Master'`, `'Mixed'` (SBD/AUD/FM/MST/MTX badge in the Library screen). NULL until a curator sets it — never heuristically parsed or backfilled. |
+| metadata_source | TEXT | Provenance of the row's metadata (TODO-245). NULL = scraped from the public site; `'private_import'` = filled from tj's private-entry material via `tools/import_private_metadata.py`. A later successful scrape resets it to NULL (scraper INSERT OR REPLACE) so public data supersedes. `status='private'` marks private LBs at the entries level (mirrors `lb_master.lb_status`). |
 
 ### `entry_files` — Attachment files per entry
 | Column | Type | Notes |
@@ -1220,7 +1222,8 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET  | `/api/curator` | Returns `{is_curator: bool}` (reads `meta.is_curator`). |
 | POST | `/api/curator` | Body `{enabled: bool}`. Toggles the curator flag (local-only, never shipped). |
 | GET  | `/api/master/status` | Current master snapshot version and publish timestamp. |
-| POST | `/api/master/export` | **Curator-only** (returns 403 `curator_required` otherwise). Builds a master-only snapshot in `data/exports/`: VACUUM INTO → drops every `USER_TABLES` table → filters `meta` to `MASTER_META_KEYS` → stamps `master_version` / `master_published_at` / `master_schema_version` → verifies (no user data leaked) → SHA256 → writes `.manifest.json` sidecar. Returns `{ok, path, manifest_path, manifest}`. |
+| POST | `/api/master/export` | **Curator-only** (returns 403 `curator_required` otherwise). Body (optional) `{reason, channel}`; `channel` defaults `'public'` — blanks all private-entry metadata (TODO-253; `entries.status='private'` flag survives, checksums retained) — `'full'` keeps it for friends-only distribution. Builds a master-only snapshot in `data/exports/`: VACUUM INTO → drops every `USER_TABLES` table → filters `meta` to `MASTER_META_KEYS` → stamps `master_version` / `master_published_at` / `master_schema_version` → strips private metadata (public channel) + FTS rebuild → verifies (no user data, no residual private metadata) → SHA256 → writes `.manifest.json` sidecar (incl. `channel`, `private_rows_stripped`). Returns `{ok, path, manifest_path, manifest}`. |
+| POST | `/api/master/github_release` | **Curator-only**, `text/event-stream`. Uploads a snapshot `.db` + manifest as a GitHub release (`master-YYYY-MM-DD[.N]` tag) on the public repo via the REST API (token from `gh auth token`), 1 MB chunks with byte-accurate progress. **Refuses (400 `private_data`) any manifest whose `channel` is not `'public'`** — incl. legacy manifests without the field (TODO-253 guard). Body `{db_path, manifest_path, version, prev_published_at?}`. |
 | POST | `/api/master/import` | Body `{path}`. Validates manifest SHA256, refuses schema versions newer than this client (400 `schema_too_new`), takes a `pre_master_import` backup, ATTACHes the snapshot, copies only `MASTER_TABLES` rows, replaces only `MASTER_META_KEYS` rows in `meta`, rebuilds `entries_fts`. Returns the import summary (row counts, pre/post status distribution, backup path). Errors: 400 `sha256_mismatch`, 404 `not_found`. |
 | GET  | `/api/master/github_check` | Queries `kuddukan42/losslessbob`'s latest GitHub release, downloads its `.manifest.json` sidecar, and compares `master_version` against the local `meta` table. Returns `{available, tag, remote_version, remote_published_at, local_version, local_published_at, asset_name, asset_size, release_url}`, or `{available: false, message}` if no usable release exists. |
 | POST | `/api/master/github_install` | `text/event-stream`. Downloads the latest master `.db` + `.manifest.json` from GitHub Releases into `data/imports/`, verifies SHA256, and applies via `import_master_db()`. Events: `progress` (`label`, `pct`), `done` (`summary`), `error` (`error`, `message`) — same shape as `/api/master/github_release`. |

@@ -37,7 +37,7 @@ _bloom_lock = threading.Lock()
 # USER tables stay local to each install and never appear in an export.
 # See instructions/CC_LB_INTEGRITY.md §Data Ownership Model.
 
-MASTER_SCHEMA_VERSION = 10  # bumped: curated_lists/curated_list_entries added
+MASTER_SCHEMA_VERSION = 11  # bumped: entries.metadata_source added (TODO-245)
 
 MASTER_TABLES = (
     "lb_missing",
@@ -184,7 +184,8 @@ CREATE TABLE IF NOT EXISTS entries (
     taper_name TEXT,
     source_chain TEXT,
     lb_category TEXT,
-    source_type TEXT
+    source_type TEXT,
+    metadata_source TEXT
 );
 
 CREATE TABLE IF NOT EXISTS entry_files (
@@ -2294,6 +2295,14 @@ def init_db(db_path=None):
             # taper_name/source_chain/lb_category this is never heuristically
             # backfilled from description text; it stays NULL until a curator sets it.
             conn.execute("ALTER TABLE entries ADD COLUMN source_type TEXT")
+            conn.commit()
+
+        if "metadata_source" not in cols:
+            # Provenance of the row's metadata. NULL = scraped from the public
+            # site; 'private_import' = filled from tj's private-entry material
+            # (TODO-245). A later successful scrape resets it to NULL via the
+            # scraper's INSERT OR REPLACE, so public data always supersedes.
+            conn.execute("ALTER TABLE entries ADD COLUMN metadata_source TEXT")
             conn.commit()
 
         # Populate FTS index if empty (first run after adding FTS)
@@ -5485,7 +5494,8 @@ def set_curator(enabled: bool, db_path=None) -> None:
 
 # ── Master data export / import ───────────────────────────────────────────────
 
-def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict]":
+def export_master_db(reason: str = "publish", db_path=None,
+                     include_private: bool = False) -> "tuple[Path, dict]":
     """Produce a master-only snapshot of the DB plus a manifest sidecar.
 
     Pipeline:
@@ -5494,16 +5504,32 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
       3. Delete every ``meta`` row whose key is not in :data:`MASTER_META_KEYS`.
       4. Stamp ``master_version`` (UTC timestamp), ``master_published_at`` (now),
          and ``master_schema_version`` (current code constant).
-      5. ``VACUUM`` to reclaim freed space.
-      6. **Verify** the snapshot contains no USER_TABLES and no non-master meta.
-      7. Compute SHA256 of the final snapshot file.
-      8. Write ``<snapshot>.manifest.json`` sidecar with counts + SHA + version.
+      5. Unless ``include_private``, blank all private-entry metadata
+         (TODO-245/253): rows with ``entries.status='private'`` or
+         ``metadata_source='private_import'`` keep only the number-level flag
+         (``status='private'``, same information as ``lb_master``); every
+         metadata field is emptied and the FTS index rebuilt. Checksums are
+         deliberately retained — clients derive 'private' status from them
+         and they predate the metadata import (see TODO-253).
+      6. ``VACUUM`` to reclaim freed space.
+      7. **Verify** the snapshot contains no USER_TABLES, no non-master meta,
+         and (public channel) no residual private metadata.
+      8. Compute SHA256 of the final snapshot file.
+      9. Write ``<snapshot>.manifest.json`` sidecar with counts + SHA +
+         version + ``channel`` ('public' stripped / 'full' friends-only).
+
+    Args:
+        reason: Free-text tag embedded in the filename and manifest.
+        db_path: Source database path (default: live DB).
+        include_private: True produces a 'full' snapshot for friends-only
+            distribution; it must never be uploaded to a public URL.
 
     Returns:
         (snapshot_path, manifest_dict)
 
     Raises:
-        RuntimeError: If the verification step finds residual user data.
+        RuntimeError: If the verification step finds residual user data or
+            (public channel) residual private metadata.
     """
     import hashlib
     import json
@@ -5525,7 +5551,7 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
     src.execute("VACUUM INTO ?", (str(out_path),))
     logger.info("Master export snapshot created at %s", out_path)
 
-    # Steps 2-5: clean the snapshot in-place (separate connection on the file)
+    # Steps 2-6: clean the snapshot in-place (separate connection on the file)
     snap = sqlite3.connect(str(out_path))
     snap.row_factory = sqlite3.Row
     try:
@@ -5551,11 +5577,24 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
                 "ON CONFLICT(key) DO UPDATE SET value=excluded.value",
                 (k, v),
             )
+
+        # Step 5: strip private-entry metadata for the public channel
+        stripped = 0
+        if not include_private:
+            cur = snap.execute(
+                """UPDATE entries SET date_str='', location='', cdr='',
+                       rating='', timing='', description='', setlist='',
+                       taper_name=NULL, source_chain=NULL, lb_category=NULL,
+                       source_type=NULL, metadata_source=NULL
+                   WHERE status='private' OR metadata_source='private_import'"""
+            )
+            stripped = cur.rowcount
+            snap.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
         snap.commit()
         snap.execute("VACUUM")
 
-        # Step 6: VERIFY
-        # 6a. No user tables present
+        # Step 7: VERIFY
+        # 7a. No user tables present
         present = {r[0] for r in snap.execute(
             "SELECT name FROM sqlite_master WHERE type='table'"
         ).fetchall()}
@@ -5565,7 +5604,7 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
                 f"Master export verification failed: user tables present in "
                 f"snapshot: {sorted(leaked)}"
             )
-        # 6b. No non-master meta keys
+        # 7b. No non-master meta keys
         non_master = [r[0] for r in snap.execute(
             f"SELECT key FROM meta WHERE key NOT IN ({placeholders})",
             tuple(MASTER_META_KEYS),
@@ -5575,7 +5614,25 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
                 f"Master export verification failed: non-master meta keys "
                 f"present in snapshot: {sorted(non_master)}"
             )
-        # 6c. Sanity: lb_master populated (otherwise this isn't a useful release)
+        # 7c. Public channel: no residual private metadata (field or FTS side)
+        if not include_private:
+            residual = snap.execute(
+                """SELECT COUNT(*) FROM entries
+                   WHERE (status='private' OR metadata_source IS NOT NULL)
+                     AND (COALESCE(date_str,'')!='' OR COALESCE(location,'')!=''
+                          OR COALESCE(cdr,'')!='' OR COALESCE(rating,'')!=''
+                          OR COALESCE(timing,'')!='' OR COALESCE(description,'')!=''
+                          OR COALESCE(setlist,'')!='' OR taper_name IS NOT NULL
+                          OR source_chain IS NOT NULL
+                          OR metadata_source IS NOT NULL)"""
+            ).fetchone()[0]
+            if residual:
+                raise RuntimeError(
+                    f"Master export verification failed: {residual} private "
+                    f"entries rows still carry metadata in a public-channel "
+                    f"snapshot"
+                )
+        # 7d. Sanity: lb_master populated (otherwise this isn't a useful release)
         lb_count = snap.execute("SELECT COUNT(*) FROM lb_master").fetchone()[0]
         ck_count = snap.execute("SELECT COUNT(*) FROM checksums").fetchone()[0]
         en_count = snap.execute("SELECT COUNT(*) FROM entries").fetchone()[0]
@@ -5589,7 +5646,7 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
     finally:
         snap.close()
 
-    # Step 7: SHA256 of the final file
+    # Step 8: SHA256 of the final file
     sha = hashlib.sha256()
     with open(out_path, "rb") as f:
         for chunk in iter(lambda: f.read(1 << 20), b""):
@@ -5597,7 +5654,7 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
     sha256 = sha.hexdigest()
     size_bytes = out_path.stat().st_size
 
-    # Step 8: manifest sidecar
+    # Step 9: manifest sidecar
     manifest = {
         "filename": out_path.name,
         "size_bytes": size_bytes,
@@ -5613,6 +5670,8 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
         "lb_status_counts": status_counts,
         "manual_override_count": override_count,
         "reason": reason,
+        "channel": "full" if include_private else "public",
+        "private_rows_stripped": stripped,
     }
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)

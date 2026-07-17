@@ -19,6 +19,55 @@ Dropped (deliberate, not ported): bulk verify-all (/api/verify), lookup extra so
   rename plan export — backend endpoints left in place. Verified: typecheck + prod build
   clean; every t() key cross-checked against all 6 locales (zero dangling).
 
+[2026-07-16] — feat(db): private LB metadata import — TODO-245 shipped (docs + folder txts)
+Context: tj supplied data/private/lb_summary_all_private.html (Jeff's cp1252 summary sheet,
+  2,213 LBs: date/loc/lineage/notes/rating) and 'No Torrent -LB number overview.xlsx'
+  (2,355 LBs: title/xref/date/taper), plus 1,372 private collection folders with info txts.
+  tj rules: the docs are OLD snapshots (1,035 of their numbers are public today) — fill blank
+  fields only, never overwrite scraped metadata; private LBs flagged 'private', not 'missing'.
+Added: tools/import_private_metadata.py — document pass + --folders pass. Targets only
+  CURRENT lb_master lb_status='private'; per-field blank-only fill. Field mapping verified
+  against 1,032 now-public LBs present in both the HTML and scraped entries (Date→date_str,
+  loc→location, qual→description, rat→rating). Jeff's private comparison-notes column
+  appended inside description under a '-- private notes --' marker (1,240 rows). Folder pass
+  extracts setlists from numbered track lines validated as a sequential 1,2,3… chain (disc
+  restarts allowed; prose starting with a number is dropped) + lineage lines for doc-less rows.
+Changed: backend/db.py — entries.metadata_source column (NULL=scraped, 'private_import'=from
+  private material; idempotent ALTER). MASTER_SCHEMA_VERSION 10→11 (entries is a MASTER table;
+  snapshots carry the new column). backend/scraper.py — live scrapes re-check status='private'
+  rows like 'missing'; a successful scrape's INSERT OR REPLACE supersedes the private import
+  (status→'ok', metadata_source→NULL), so publication always wins.
+Data: 1,405 entries.status missing→private; 1,361 rows metadata-filled (date 1,361,
+  location 1,243, description 1,243+117 folder-lineage, rating 1,158, taper 1,121,
+  source_chain 904, lb_category 1,357); 1,210 setlists (was 1). Checksums deliberately not
+  imported — already covered 1,403/1,405 (that coverage is what derived 'private' status).
+Verified: 0 public rows carry metadata_source='private_import'; spot-checks (LB-14614 public
+  untouched; LB-2606 Supper Club filled incl. setlist); FTS trigger-synced; importer dry-run
+  == apply counts. Residual: 36 private LBs fully blank, 54 folders without info txt.
+Privacy: data/ is git-ignored (docs can't reach the public repo); schema.html carries no row
+  data. Master-export channel decision split to TODO-253 (snapshots now carry private rows —
+  friends-only OK, public publication would need export-time stripping).
+Closed: TODO-245. Opened: TODO-253.
+Follow-up same session (tj: "does that publish to github from our app?" → "do it") — TODO-253
+  escalated and shipped: /api/master/github_release uploads snapshots to the PUBLIC repo
+  kuddukan42/losslessbob (channel active, master-2026-07-14), so the next release would have
+  leaked the imported private metadata. No leak occurred — existing releases predate the import.
+Changed: db.py export_master_db(include_private=False) — public channel (default) blanks all
+  private-entry metadata (status='private' OR metadata_source='private_import'): fields
+  emptied, entries_fts rebuilt, number-level status='private' kept (same info as lb_master);
+  checksums retained deliberately (clients derive 'private' from them; pre-existing exposure).
+  New verify step 7c: RuntimeError if a public snapshot still carries private metadata.
+  Manifest gains channel ('public'/'full') + private_rows_stripped.
+Changed: app.py /api/master/export accepts {channel: 'public'(default)|'full'};
+  /api/master/github_release refuses (400 private_data) any manifest whose channel is not
+  'public' — including legacy manifests without the field. GUI flow unchanged → safe by default;
+  friends-only full export via API channel='full' (never uploadable).
+Verified: tests/test_master_data.py 14/14 (new test_export_strips_private_metadata_on_public_channel);
+  live API export on real DB: channel=public, private_rows_stripped=1405, snapshot has 0 private
+  metadata rows, 0 FTS hits for the notes marker, public rows byte-identical; guard returns 400
+  for full-channel and legacy manifests; artifacts cleaned up.
+Closed: TODO-253.
+
 [2026-07-16] — feat(gui): propagated-taper outline pills in Library (TODO-242 decision)
 Context: tj decision — propagated attributions get a pill too, visually distinct
   ("outline or fuzzy"). Outline uses Pill's existing non-soft mode (transparent bg, toned

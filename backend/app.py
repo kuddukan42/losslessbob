@@ -4682,8 +4682,10 @@ def create_app() -> Flask:
     def master_export() -> Response:
         """Build a master-data snapshot + manifest. Curator-only.
 
-        Body (optional): {reason}. Returns:
-        {ok, path, manifest_path, manifest: {...}}.
+        Body (optional): {reason, channel}. channel defaults to 'public'
+        (private-entry metadata stripped, TODO-253); 'full' keeps it for
+        friends-only distribution and is refused by /api/master/github_release.
+        Returns: {ok, path, manifest_path, manifest: {...}}.
         """
         try:
             if not database.is_curator():
@@ -4694,7 +4696,12 @@ def create_app() -> Flask:
                 }), 403
             body = request.get_json(silent=True) or {}
             reason = str(body.get("reason", "publish"))[:200]  # #8
-            path, manifest = database.export_master_db(reason=reason)
+            channel = str(body.get("channel", "public"))
+            if channel not in ("public", "full"):
+                return jsonify({"error": "bad_channel",
+                                "message": "channel must be 'public' or 'full'"}), 400
+            path, manifest = database.export_master_db(
+                reason=reason, include_private=(channel == "full"))
             return jsonify({
                 "ok": True,
                 "path": str(path),
@@ -4738,6 +4745,23 @@ def create_app() -> Flask:
 
         if not db_path_str or not manifest_path_str:
             return jsonify({"error": "db_path and manifest_path are required"}), 400
+
+        # TODO-253 guard: the release lands on a PUBLIC repo — only snapshots
+        # whose manifest proves the private-metadata strip ran may be uploaded.
+        # Manifests without a channel field predate the strip and are refused.
+        try:
+            with open(manifest_path_str, encoding="utf-8") as _mf:
+                _manifest = _json.load(_mf)
+        except (OSError, ValueError):
+            return jsonify({"error": "manifest_unreadable",
+                            "message": "Could not read manifest sidecar."}), 400
+        if _manifest.get("channel") != "public":
+            return jsonify({
+                "error": "private_data",
+                "message": "This snapshot was not exported on the public channel "
+                           "(private-entry metadata not stripped). Re-export with "
+                           "channel='public' before publishing to GitHub.",
+            }), 400
 
         _REPO = "kuddukan42/losslessbob"
         _GH_API = "https://api.github.com"

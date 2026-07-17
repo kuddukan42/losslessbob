@@ -1,6 +1,30 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-253: Decide master-export handling of private-entry metadata (per-channel privacy call)
+Priority: High
+Status: Done
+Added: 2026-07-16
+Escalated (2026-07-16): NOT a hypothetical — /api/master/github_release uploads master
+  snapshots to the PUBLIC repo kuddukan42/losslessbob (hardcoded _REPO, app.py; repo public
+  since 2026-05-19) and the channel is active (master-2026-07-14 is two days old). The next
+  master release from the app would put Jeff's private metadata (lineages, setlists, his
+  '-- private notes --' comparisons) on a public URL. DO NOT publish a master release until
+  export-time stripping ships. Note: existing public master releases already carry the
+  checksums table incl. the 1,403 private LBs' filenames+md5s (pre-dates TODO-245; separate,
+  milder exposure tj may want to assess).
+Closed: 2026-07-16
+Description: TODO-245 filled entries rows for 1,405 private LBs (metadata_source='private_import', entries.status='private'). export_master_db() snapshots the whole DB minus USER_TABLES, so master snapshots now carry Jeff's private metadata. Fine while snapshots go only to friends (Jeff's intent: local + friends), but TODO-245 mandates a per-channel decision: if a master snapshot is ever published to a public URL (repo release, archive.org, shared mirror), private rows must be stripped or blanked at export time (filter: entries.status='private' OR metadata_source='private_import'; also lb_master rows are harmless — numbers only). Options: (a) status quo + documented friends-only rule; (b) --public flag on export_master_db that blanks private metadata; (c) always two artifacts (friends/full + public/stripped). Related: [TODO-245] (TODO_DONE), FABLE_PLATFORM_ROADMAP.md §1.
+Shipped same day (option b, tj sign-off 'do it'). export_master_db(include_private=False): public channel (default) blanks private-entry metadata + rebuilds entries_fts + verify step fails the export if residue remains; manifest carries channel + private_rows_stripped. /api/master/export takes channel ('public' default / 'full' friends-only); /api/master/github_release refuses non-public manifests (400 private_data), legacy channel-less manifests included. GUI publish flow unchanged and safe by default. Checksums retained by design (clients derive 'private' status from them; pre-existing, milder exposure — filenames+md5s were already in every published master release, tj can revisit). No actual leak occurred: all existing GitHub master releases predate the TODO-245 import. Verified: 14/14 tests incl. new strip test; live export stripped 1,405 rows, 0 residual metadata/FTS hits; guard tested against full + legacy manifests.
+
+TODO-245: Import private LB entry metadata (Jeff's unpublished numbers)
+Priority: High
+Status: Done
+Added: 2026-07-15
+Closed: 2026-07-16
+Description: 62 of the 92 site_inventory not_found URLs are /detail/LB-XXXXX.html pages (verified 2026-07-15: e.g. LB-00000, LB-09075, LB-09599, LB-10723, LB-14093, LB-08893/94) — "private" entries: Jeff assigned the numbers and wrote full metadata but deliberately never published them (friends-only, not for public www). They currently sit as blank rows; entries has 1,446 status='missing' rows (private + never-assigned holes; lb_missing has only 36 confirmed non-existent). tj holds copies of SOME private-entry metadata. Work: (1) inventory tj's holdings and map to the 62 numbers; (2) import into entries/checksums/entry_files with a provenance marker (came from private material, not scrape); (3) MANDATORY privacy flag so private metadata is excluded from every public surface (public repo derivatives, docs/schema.html Cloudflare deploy, archive.org uploads, any future published mirror) — friends-only channels decided per-channel; (4) reconcile the three absent populations (private / lb_missing / numbering holes) so the DB distinguishes them. Respect Jeff's intent: local + friends only, never on a public URL. Full context: instructions/FABLE_PLATFORM_ROADMAP.md §1. Related: [TODO-246].
+Shipped 2026-07-16. Document pass: tools/import_private_metadata.py parses data/private/lb_summary_all_private.html (2,213 LBs, cp1252) + 'No Torrent -LB number overview.xlsx' (2,355 LBs); targets only CURRENT lb_master lb_status='private' rows, fill-blank-only (public/scraped metadata never overwritten — the docs are old snapshots and 1,035 of their numbers are public today, verified untouched). 1,405 entries.status flipped missing->private; 1,361 rows filled (date/location/description/rating/taper/source_chain/lb_category); Jeff's comparison notes appended under '-- private notes --' marker (1,240 rows). Folder pass (--folders): 1,372 private collection folders' info txts -> 1,210 setlists (sequential-chain-validated) + 117 lineage descriptions. Provenance: new entries.metadata_source='private_import' (1,368 rows), NULL=scraped; scraper re-checks 'private' like 'missing' on live scrapes so later publication supersedes via INSERT OR REPLACE. MASTER_SCHEMA_VERSION 10->11. Checksums NOT imported (already covered 1,403/1,405 — the source of 'private' status). Residual: 36 private LBs fully blank (no doc row, no parseable txt; mostly LB-15355+), 54 folders without info txt. Population reconciliation was already satisfied by lb_master statuses (private/missing/nonexistent). Public-surface check: data/ git-ignored, schema.html carries no row data; master-export channel decision split to follow-up TODO.
+
 TODO-242: Clarify taper propagation and "Needs review" flags in library view
 Priority: Medium
 Status: Done
