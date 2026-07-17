@@ -37,6 +37,7 @@ from backend import (
     site_crawler,
 )
 from backend import db as database
+from backend import gap_analysis as _gap_analysis
 from backend import setlist_fingerprint as _setlist_fingerprint
 from backend import setlistfm as setlistfm_mod
 from backend import song_index as _song_index
@@ -6057,6 +6058,37 @@ def create_app() -> Flask:
             return jsonify({"error": "bad_request", "message": str(exc)}), 400
         except Exception as e:
             _log.exception("songs_alias failed")
+            return jsonify({"error": str(e)}), 500
+
+    # ── Gaps view (TODO-256, instructions/FABLE_GAPS_VIEW.md) ──────────────────
+    # Read-only: no writes, no derived table. All three routes degrade to an
+    # empty/available:false response when olof_events is absent.
+
+    @app.route("/api/gaps/summary", methods=["GET"])
+    def gaps_summary() -> Response:
+        """Year-by-year coverage summary (totals + per-year counts) for the Gaps grid."""
+        try:
+            return jsonify(_gap_analysis.get_summary())
+        except Exception as e:
+            _log.exception("gaps_summary failed")
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/gaps/year/<int:year>", methods=["GET"])
+    def gaps_year(year: int) -> Response:
+        """Per-date coverage breakdown for one year."""
+        try:
+            return jsonify(_gap_analysis.get_year_detail(year))
+        except Exception as e:
+            _log.exception("gaps_year failed for year=%r", year)
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/gaps/date/<date_iso>", methods=["GET"])
+    def gaps_date(date_iso: str) -> Response:
+        """Drill-down: olof event rows, entries, and family data for one date."""
+        try:
+            return jsonify(_gap_analysis.get_date_detail(date_iso))
+        except Exception as e:
+            _log.exception("gaps_date failed for date_iso=%r", date_iso)
             return jsonify({"error": str(e)}), 500
 
     def _find_master_release(_req):
