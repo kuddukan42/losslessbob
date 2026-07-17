@@ -792,3 +792,47 @@ real-world instance from an adhoc run (1997-11-11 Lisle IL, 7 audience sources, 
   merge — fingerprint is confirmatory-only per WORKFLOW; (b) gate the 0.40 bar to the
   staircase *pair* rather than either source globally; (c) raise `cluster_threshold_staircase`
   toward the 0.47 same-show ceiling. Left for the post-7/12 rescore.
+
+## POST-7/12 STAIRCASE GATING SWEEP (2026-07-16) — mitigations (a)/(b)/(c) measured
+
+Context: the three candidate mitigations parked in the 2026-07-11 edge-case note,
+measured cached against the frozen set (2,965 pairs; committed-config candidate
+baseline tp=684 fp=9) plus a family-level replay of the TODO-234 over-merge dates
+(latest run rows, curator lineage loaded). Engine support added 2026-07-16:
+`fingerprint.staircase_scope` (source|pair) and `fingerprint.staircase_corroboration`
+(enabled/min_windowed_frac/min_hiss_frac) in verdict.py — both absent-key = historical
+behaviour (verified byte-identical: tp=684 fp=9 re-run post-edit; tests/test_staircase_gating.py).
+
+| Variant | Frozen tp (Δ) | fp | Notes |
+|---|---|---|---|
+| committed (stair thr 0.40, source scope, no gate) | 684 | 9 | baseline |
+| (b) pair scope | 668 (−16) | 9 | REJECTED: genuine re-tracked pairs have ONE side flagged — over-splits the 1990-08-12 LTM transfer family |
+| (a) corroboration gate 0.05/0.05 | 671 (−13) | 9 | victims are exclusively fp-only zero-corroboration pairs (fp .40–.47, win 0, hiss 0) — the exact 1997-11-11 FP signature |
+| (a)+(b) | 665 (−19) | 9 | inherits (b)'s over-split |
+| (c) stair thr 0.47 | 666 (−18) | 9 | blunt: also kills corroborated TPs (1992-06-30 hiss .15–.33, 1995-03-12 hiss ~.47, 1990-11-13 hiss .685) |
+| (a)+(c) | 664 (−20) | 9 | max protection, max cost |
+
+Family replay on the TODO-234 dates (see instructions/TODO-234_FAMILY_CONFLICT_REVIEW.md):
+- 1995-12-09: every variant produces the evidence-correct split ({534,5710} | {6083} | {6104,15211}).
+- 1995-05-26: every variant splits correctly; (c) additionally isolates 14741 (emb .43–.61 says distinct).
+- 1990-08-12: frozen positives label all 5 same-source (LTM transfer set) — every variant
+  fragments it to some degree; base keeps it whole. Cost is hypothetical unless the date is re-run.
+- 1995-07-04 / 1997-08-17: only (c) splits the conflicting source (5879 / 5761) — (a) passes
+  them on hiss corroboration .11 / .19 via single-linkage.
+- 1996-07-07 / 1996-05-16 / 1997-04-05 / 1993-02-07: cached rows lack fp (pre-column runs);
+  replay not authoritative — need live re-runs.
+
+Key structural finding: fp Dice 0.40–0.47 with zero windowed/hiss corroboration is an
+irreducible ambiguity band — real same-source families live there (1987-09-12 5445-set,
+1990-08-12, 1993-04-19) with the same signature as the 1997-11-11 false merge. No
+threshold separates them; only corroborating signal (windowed/hiss, curator lineage at
+0.43, or future emb) can.
+
+The frozen "no new FP" line is uninformative here (the hazard date is adhoc, not frozen);
+both (a) and (c) block the reproduced 1997-11-11 LB-01126 merge (fp .410, win 0, hiss 0).
+
+DECISION (tj sign-off 2026-07-17): **(a) alone** — corroboration gate 0.05/0.05 enabled in
+committed config (`fingerprint.staircase_corroboration`); scope stays source, staircase thr
+stays 0.40. New committed-config frozen baseline: tp=671 fp=9 (was tp=684 fp=9). Rationale:
+surgical variant, directly enforces "fingerprint is confirmatory-only" in the relaxed band;
+victims are exclusively fp-only zero-corroboration pairs.

@@ -118,14 +118,53 @@ METRIC_KEYS = (
 )
 
 
-def _is_staircase(pair: Mapping) -> bool:
-    """True if either side carries the staircase flag (``speed_kind`` == 'staircase/splice').
+def _is_staircase(pair: Mapping, fp_cfg: Mapping | None = None) -> bool:
+    """True if the pair qualifies for the staircase fingerprint relaxation.
 
     The substring test matches the historical token 'staircase/splice' and any
     future 'staircase*' variant, mirroring the spec's ``"staircase" in kind``.
+
+    ``fingerprint.staircase_scope`` (2026-07-16, TODO-234/235 mitigation (b) —
+    see CALIBRATION_PROGRESS.md "EDGE CASE OBSERVED IN THE WILD 2026-07-11"):
+
+      * ``"source"`` (default, historical) — either side staircase-flagged.
+        Hazard: one staircase pair inside a family lowers the fp bar for that
+        family's edges to every unrelated source on the date.
+      * ``"pair"`` — BOTH sides must carry the flag, so the relaxation stays
+        scoped to the re-tracked pair itself.
     """
-    return "staircase" in (pair.get("speed_kind_a") or "") or \
-           "staircase" in (pair.get("speed_kind_b") or "")
+    a = "staircase" in (pair.get("speed_kind_a") or "")
+    b = "staircase" in (pair.get("speed_kind_b") or "")
+    scope = (fp_cfg or {}).get("staircase_scope", "source")
+    if scope == "pair":
+        return a and b
+    return a or b
+
+
+def _staircase_corroborated(pair: Mapping, fp_cfg: Mapping) -> bool:
+    """Mitigation (a) for the staircase-relaxed fp false-merge hazard.
+
+    A merge that exists ONLY because the staircase relaxation lowered the
+    fingerprint bar must be corroborated by a non-fingerprint signal
+    (fingerprint is confirmatory-only per WORKFLOW.md): ``windowed_frac`` or
+    ``hiss_frac`` at/above its configured floor. ``None`` (signal never
+    computed) counts as no corroboration — precision-safe by construction.
+
+    Gate off (``fingerprint.staircase_corroboration.enabled`` absent/false)
+    returns True, preserving historical behaviour.
+    """
+    sc = fp_cfg.get("staircase_corroboration") or {}
+    if not sc.get("enabled"):
+        return True
+    min_wf = sc.get("min_windowed_frac")
+    min_hf = sc.get("min_hiss_frac")
+    wf = pair.get("windowed_frac")
+    hf = pair.get("hiss_frac")
+    if min_wf is not None and wf is not None and wf >= min_wf:
+        return True
+    if min_hf is not None and hf is not None and hf >= min_hf:
+        return True
+    return False
 
 
 def _lineage_key(pair: Mapping) -> tuple[int, int] | None:
@@ -136,22 +175,28 @@ def _lineage_key(pair: Mapping) -> tuple[int, int] | None:
 
 
 def fp_threshold(pair: Mapping, cfg: Mapping,
-                 lineage: Iterable[tuple[int, int]] | None = None) -> float:
+                 lineage: Iterable[tuple[int, int]] | None = None, *,
+                 staircase: bool = True) -> float:
     """Return the fingerprint Dice threshold that applies to this pair.
 
     Base = ``fingerprint.cluster_threshold``. Lowered when:
-      * either side is staircase-flagged -> ``cluster_threshold_staircase`` (Task 3.2)
+      * the pair qualifies under ``staircase_scope`` ->
+        ``cluster_threshold_staircase`` (Task 3.2; scope per :func:`_is_staircase`)
       * the pair is claimed same-source by curator lineage text ->
         ``min(applicable, cluster_threshold_curator)`` (Task 4.1)
 
     Both overrides default to the base threshold when their config key is
     absent, so an un-augmented ``config.yaml`` yields the historical single
     scalar for every pair.
+
+    ``staircase=False`` skips the staircase relaxation — used by
+    :func:`pair_links` to detect whether a merge *relies* on it (mitigation
+    (a): such merges must be corroborated by a non-fingerprint signal).
     """
     fp_cfg = cfg.get("fingerprint", {}) or {}
     base = fp_cfg.get("cluster_threshold", 0.0)
     thr = base
-    if _is_staircase(pair):
+    if staircase and _is_staircase(pair, fp_cfg):
         thr = fp_cfg.get("cluster_threshold_staircase", base)
     # Curator lineage claim is a prior, not a label: it only *lowers* the bar,
     # audio must still cross it (a text claim with fp_score 0.10 stays different).
@@ -328,7 +373,16 @@ def pair_links(pair: Mapping, cfg: Mapping,
     fp_thr = fp_threshold(pair, cfg, lineage)
     fp = pair.get("fp_score")
     if fp_thr and fp_thr > 0.0 and fp is not None and fp >= fp_thr:
-        return True
+        # Corroboration gate (mitigation (a), 2026-07-16): if the merge clears
+        # only the staircase-RELAXED bar (it would fail without the staircase
+        # relaxation), a non-fingerprint signal must corroborate — fingerprint
+        # is confirmatory-only per WORKFLOW.md, and the ~0.40 same-show musical
+        # floor sits exactly at the relaxed bar. A blocked fp leg falls through
+        # to the remaining OR-paths rather than returning False.
+        if fp >= fp_threshold(pair, cfg, lineage, staircase=False):
+            return True
+        if _staircase_corroborated(pair, cfg.get("fingerprint", {}) or {}):
+            return True
 
     # Ratio-invariant triplet fingerprint (Task 7). An OR-path with its own
     # threshold, applied to ALL pairs but especially the sole surviving signal for
