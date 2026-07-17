@@ -54,7 +54,8 @@
       "sharing": "Teilen",
       "tapematch": "TapeMatch",
       "songs": "Songs",
-      "fingerprint": "Fingerabdruck"
+      "fingerprint": "Fingerabdruck",
+      "gaps": "Lücken"
     },
     "statusBar": {
       "db": "DB:",
@@ -1776,6 +1777,34 @@
       "matched": "Abgestimmt ({{count}})",
       "missing": "Nicht auf dieser Kassette ({{count}})",
       "completeMatch": "Jeder Titel in der Setlist wird berücksichtigt."
+    }
+  },
+  "gaps": {
+    "title": "Lücken",
+    "subtitle": "Alle bekannten Dylan-Konzerttermine, farblich gekennzeichnet danach, ob eine Aufnahme im Umlauf ist.",
+    "unavailable": "Die Ansicht „Gaps“ benötigt die Konzertchronologie von Olof Bjorner, die bei dieser Installation nicht geladen ist.",
+    "credit": "Konzertliste aus Olof Bjorners DSN-Chronologie, in Anlehnung an Les Kokays Liste unveröffentlichter Konzerte.",
+    "header": {
+      "totalShows": "{{count}} zeigt",
+      "totalGaps": "{{count}} Lücken"
+    },
+    "decades": {
+      "all": "Alle"
+    },
+    "grid": {
+      "loading": "…",
+      "yearGap": "{{count}} Lücken"
+    },
+    "detail": {
+      "noSelection": "Wählen Sie ein Datum aus, um zu sehen, was darüber bekannt ist.",
+      "tabEvent": "Ereignisse und Quellen",
+      "eventsHeading": "Veranstaltung",
+      "entriesHeading": "Zirkulierende Einträge",
+      "partialEntriesHeading": "Mögliche Treffer (Teilübereinstimmung)",
+      "familiesHeading": "TapeMatch-Familien",
+      "unknownVenue": "Unbekannter Veranstaltungsort",
+      "recording": "{{kind}}, {{mins}} min",
+      "none": "Keine"
     }
   }
 }

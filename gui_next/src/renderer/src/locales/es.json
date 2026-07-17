@@ -54,7 +54,8 @@
       "sharing": "Compartir",
       "tapematch": "TapeMatch",
       "songs": "Canciones",
-      "fingerprint": "Huella digital"
+      "fingerprint": "Huella digital",
+      "gaps": "Lagunas"
     },
     "statusBar": {
       "db": "BD:",
@@ -1776,6 +1777,34 @@
       "matched": "Coincidente ({{count}})",
       "missing": "No está en esta cinta ({{count}})",
       "completeMatch": "Se tienen en cuenta todas las canciones de la lista de reproducción."
+    }
+  },
+  "gaps": {
+    "title": "Lagunas",
+    "subtitle": "Todas las fechas conocidas de conciertos de Dylan, clasificadas por colores según si existe alguna grabación disponible.",
+    "unavailable": "La vista «Gaps» necesita la cronología de conciertos de Olof Bjorner, que no está cargada en esta instalación.",
+    "credit": "Lista de conciertos extraída de la cronología DSN de Olof Bjorner, siguiendo la tradición de la lista de conciertos inéditos de Les Kokay.",
+    "header": {
+      "totalShows": "{{count}} muestra",
+      "totalGaps": "{{count}} lagunas"
+    },
+    "decades": {
+      "all": "Todo"
+    },
+    "grid": {
+      "loading": "…",
+      "yearGap": "{{count}} lagunas"
+    },
+    "detail": {
+      "noSelection": "Selecciona una fecha para ver qué se sabe sobre ella.",
+      "tabEvent": "Eventos y fuentes",
+      "eventsHeading": "Evento",
+      "entriesHeading": "Entradas en circulación",
+      "partialEntriesHeading": "Posibles coincidencias (fecha parcial)",
+      "familiesHeading": "Familias de TapeMatch",
+      "unknownVenue": "Lugar desconocido",
+      "recording": "{{kind}}, {{mins}} min",
+      "none": "Ninguna"
     }
   }
 }

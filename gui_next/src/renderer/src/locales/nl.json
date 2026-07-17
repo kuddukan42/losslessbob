@@ -54,7 +54,8 @@
       "sharing": "Delen",
       "tapematch": "TapeMatch",
       "songs": "Nummers",
-      "fingerprint": "Vingerafdruk"
+      "fingerprint": "Vingerafdruk",
+      "gaps": "Hiaten"
     },
     "statusBar": {
       "db": "DB:",
@@ -1776,6 +1777,34 @@
       "matched": "Aangepast ({{count}})",
       "missing": "Niet op deze tape ({{count}})",
       "completeMatch": "Elk nummer in de setlist is opgenomen."
+    }
+  },
+  "gaps": {
+    "title": "Hiaten",
+    "subtitle": "Alle bekende concertdata van Dylan, gekleurd op basis van het feit of er een opname in omloop is.",
+    "unavailable": "De weergave ‘Gaps’ heeft de concertchronologie van Olof Bjorner nodig, die bij deze installatie niet is geladen.",
+    "credit": "Concertlijst uit de DSN-chronologie van Olof Bjorner, in de traditie van Les Kokay's lijst met niet-uitgebrachte optredens.",
+    "header": {
+      "totalShows": "{{count}} toont",
+      "totalGaps": "{{count}} hiaten"
+    },
+    "decades": {
+      "all": "Alles"
+    },
+    "grid": {
+      "loading": "…",
+      "yearGap": "{{count}} hiaten"
+    },
+    "detail": {
+      "noSelection": "Selecteer een datum om te zien wat erover bekend is.",
+      "tabEvent": "Gebeurtenissen en bronnen",
+      "eventsHeading": "Evenement",
+      "entriesHeading": "Terugkerende items",
+      "partialEntriesHeading": "Mogelijke overeenkomsten (gedeeltelijke datum)",
+      "familiesHeading": "TapeMatch-families",
+      "unknownVenue": "Onbekende locatie",
+      "recording": "{{kind}}, {{mins}} min",
+      "none": "Geen"
     }
   }
 }
