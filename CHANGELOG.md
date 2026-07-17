@@ -1,3 +1,17 @@
+[2026-07-17] — feat(gui,backend): Gaps view — "the living Kokay list" ships (TODO-256)
+Context: instructions/complete/FABLE_GAPS_VIEW.md (written 2026-07-17, PLATFORM_ROADMAP
+  §3) built and shipped same day, bites B1-B4. Read-only end to end: every olof_events
+  concert date classified covered/partial/gap/future against entries coverage, computed
+  live with no derived table.
+Added: backend/gap_analysis.py — classify_date() pure classifier + get_summary/
+  get_year_detail/get_date_detail; three GET routes (/api/gaps/summary, /api/gaps/year/
+  <year>, /api/gaps/date/<iso>) in backend/app.py, all feature-detecting olof_events.
+  gui_next/src/renderer/src/screens/ScreenGaps.tsx — new /gaps screen (Library nav group):
+  decade-chip strip, year rows of coverage cells, right-hand tab-group detail pane with
+  LB deep-links into Library. tests/test_gap_analysis.py (16 tests).
+Changed: backend/geocoder.py — _entry_date_to_iso promoted to public entry_date_to_iso
+  (alias kept) + new entry_date_month_key() for xx-partial date matching.
+
 [2026-07-17] — feat(scraper): tapematch staircase corroboration gate live + lag-segment
   persistence (TODO-234 sweep signed off, TODO-235 engine half)
 Context: two-part tapematch package (work done 2026-07-16, signed off + landed 2026-07-17).
