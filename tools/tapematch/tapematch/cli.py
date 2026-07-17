@@ -312,6 +312,9 @@ def main(argv=None):
     dbg.log("LAG_CURVES_START")
     ppm_thr = cfg["align"]["ratio_flag_ppm"]
     speed_info: dict[str, dict] = {ref_name: {"kind": "reference", "ppm": 0.0, "ratio": 1.0}}
+    # TODO-235: keep each source's anchor lag curve instead of discarding it, so
+    # the run output can persist per-segment offset/rate (backend piecewise maps).
+    lag_rows_pass1: dict[str, list[dict]] = {}
     for name, (s0, s1, _) in trim_bounds.items():
         if name == ref_name:
             continue
@@ -320,6 +323,7 @@ def main(argv=None):
         ratio, ratio_conf = match.estimate_ratio_v2(ref_mono, other_mono, sr, cfg, prior=prior)
         ppm = (ratio - 1.0) * 1e6
         rows = align.lag_curve(ref_mono, other_mono, sr, anchors, cfg)
+        lag_rows_pass1[name] = rows
         d = align.interpret_curve(rows, cfg)
         kind = d["kind"]
         if abs(ppm) > ppm_thr:
@@ -543,6 +547,7 @@ def main(argv=None):
 
     # Second lag-curve pass vs the central ref (only if different from ref_name).
     speed_info_central: dict[str, dict] = {}
+    lag_rows_central: dict[str, list[dict]] = {}
     central_mono = ref_mono
     anchors_central = anchors
     if central_name != ref_name:
@@ -557,6 +562,7 @@ def main(argv=None):
             ratio, ratio_conf = match.estimate_ratio_v2(central_mono, other_mono, sr, cfg, prior=prior)
             ppm = (ratio - 1.0) * 1e6
             rows = align.lag_curve(central_mono, other_mono, sr, anchors_central, cfg)
+            lag_rows_central[name] = rows
             d = align.interpret_curve(rows, cfg)
             kind = d["kind"]
             if abs(ppm) > ppm_thr:
@@ -853,6 +859,9 @@ def main(argv=None):
         ref_mono = central_mono
         anchors = anchors_central
         ref_name = central_name
+        lag_rows_final = lag_rows_central
+    else:
+        lag_rows_final = lag_rows_pass1
 
     print("\n=== CLUSTERS ===")
     m_thr = cfg["match"]["cluster_threshold"]
@@ -1166,6 +1175,16 @@ def main(argv=None):
             for nm in g:
                 source_family[nm] = gi
 
+        # TODO-235: per-source piecewise lag model vs the final reference, so a
+        # staircase source's perf->source time map survives the run (backend
+        # ab_clips, TODO-233 pt2). The reference source itself has no curve —
+        # it IS the clock (lag identically 0).
+        step_thr = cfg["align"]["step_flag_sec"]
+        lag_segments_out = {
+            nm: align.fit_lag_segments(lag_rows_final.get(nm, []), step_thr)
+            for nm in names
+        }
+
         results = {
             "sources": {
                 nm: {
@@ -1182,6 +1201,17 @@ def main(argv=None):
                     "speed_kind": speed_info[nm]["kind"],
                     "speed_confidence": speed_info[nm].get("ratio_confidence"),
                     "family_id": source_family[nm],
+                    # TODO-235: piecewise lag model vs lag_ref (final reference
+                    # source). Empty for the reference itself and for sources
+                    # with <2 valid anchors. Raw anchor rows kept alongside so
+                    # consumers can re-derive with different step thresholds.
+                    "lag_ref": ref_name,
+                    "lag_segments": lag_segments_out[nm],
+                    "lag_curve": [
+                        {"center_sec": r["center_sec"], "lag_sec": r["lag_sec"],
+                         "peak": r["peak"]}
+                        for r in lag_rows_final.get(nm, [])
+                    ],
                     # Shared-flaw event fingerprint (Task 2.1): per-source count +
                     # serialized timeline. Variable-length -> run JSON only, not
                     # the DB (pairs.flaw_n_events_a/b carries the scalar counts).

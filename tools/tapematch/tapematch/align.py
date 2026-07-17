@@ -227,6 +227,74 @@ def locate_splice_points(rows: list[dict], step_flag_sec: float) -> list[float]:
     return splices
 
 
+def fit_lag_segments(rows: list[dict], step_flag_sec: float) -> list[dict]:
+    """Fit a piecewise-linear per-segment model to a lag curve (TODO-235).
+
+    Splits the anchor lag curve at splice points (same step detection as
+    `locate_splice_points`) and fits lag(t) = offset + rate*t per segment, so a
+    staircase/splice source's perf->source time mapping can be reconstructed
+    downstream (backend ab_clips piecewise map, TODO-233 pt2) instead of being
+    discarded when the run ends.
+
+    Args:
+        rows: output of `lag_curve` — list of {center_sec, lag_sec, peak} dicts.
+        step_flag_sec: minimum absolute lag jump between consecutive valid
+            anchors to open a new segment (usually `cfg["align"]["step_flag_sec"]`).
+
+    Returns:
+        List of segment dicts, ordered by time:
+            t_start / t_end   — segment span (sec, in the REFERENCE clock;
+                                first segment starts at 0.0, last ends at the
+                                final valid anchor — consumers clamp/extend),
+            offset_sec        — fitted lag at t=0 of the reference clock,
+            rate_ppm          — fitted lag slope * 1e6 (residual speed),
+            n_anchors         — valid anchors in the segment,
+            r2                — fit quality (1.0 for <=2-anchor segments).
+        Empty list if fewer than 2 valid anchors.
+    """
+    valid = [r for r in rows if r["lag_sec"] is not None]
+    if len(valid) < 2:
+        return []
+    # Split indices: a segment boundary sits between anchors i and i+1 when
+    # the lag jump exceeds the step threshold.
+    y = np.array([r["lag_sec"] for r in valid])
+    cut_after = set(np.where(np.abs(np.diff(y)) > step_flag_sec)[0])
+    segments: list[dict] = []
+    start = 0
+    boundaries = sorted(cut_after) + [len(valid) - 1]
+    prev_edge = 0.0
+    for last in boundaries:
+        seg = valid[start:last + 1]
+        t = np.array([r["center_sec"] for r in seg])
+        lag = np.array([r["lag_sec"] for r in seg])
+        if len(seg) >= 2:
+            slope, intercept = np.polyfit(t, lag, 1)
+            pred = slope * t + intercept
+            ss_res = float(((lag - pred) ** 2).sum())
+            ss_tot = float(((lag - lag.mean()) ** 2).sum()) + 1e-12
+            r2 = 1.0 - ss_res / ss_tot if len(seg) > 2 else 1.0
+        else:
+            slope, intercept, r2 = 0.0, float(lag[0]), 1.0
+        # Segment edges: midpoint to the next segment's first anchor (the same
+        # placement locate_splice_points uses), extended to 0.0 on the left of
+        # the first segment.
+        if last < len(valid) - 1:
+            edge = (valid[last]["center_sec"] + valid[last + 1]["center_sec"]) / 2.0
+        else:
+            edge = float(valid[-1]["center_sec"])
+        segments.append({
+            "t_start": float(prev_edge),
+            "t_end": float(edge),
+            "offset_sec": float(intercept),
+            "rate_ppm": float(slope * 1e6),
+            "n_anchors": len(seg),
+            "r2": float(r2),
+        })
+        prev_edge = edge
+        start = last + 1
+    return segments
+
+
 def union_staircase_sources(*speed_infos: dict[str, dict]) -> set[str]:
     """Sources classified "staircase/splice" in ANY of the given speed_info dicts.
 
