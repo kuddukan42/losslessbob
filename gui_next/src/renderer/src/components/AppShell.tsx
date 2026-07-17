@@ -8,7 +8,7 @@ import { useSettingsStore } from '../store'
 
 type NavId =
   | 'home' | 'pipeline' | 'quicklookup'
-  | 'library' | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs' | 'tapematch' | 'songs'
+  | 'library' | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs' | 'tapematch' | 'songs' | 'gaps'
   | 'attachments' | 'spectrograms' | 'map'
   | 'scraper' | 'fingerprint' | 'setup' | 'mounts' | 'themes' | 'dbeditor'
 
@@ -58,6 +58,7 @@ const NAV_GROUPS: NavGroup[] = [
       { id: 'bootlegs',   label: 'Bootlegs',      icon: 'bootlegs' },
       { id: 'tapematch',  label: 'TapeMatch',     icon: 'tapematch' },
       { id: 'songs',      label: 'Songs',         icon: 'songs' },
+      { id: 'gaps',       label: 'Gaps',          icon: 'gaps' },
     ],
   },
   {

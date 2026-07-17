@@ -30,6 +30,7 @@ import { ScreenQuickLookup } from './screens/ScreenQuickLookup'
 import { ScreenLibrary } from './screens/ScreenLibrary'
 import { ScreenTapeMatch } from './screens/ScreenTapeMatch'
 import { ScreenSongs } from './screens/ScreenSongs'
+import { ScreenGaps } from './screens/ScreenGaps'
 import { ScreenFingerprint } from './screens/ScreenFingerprint'
 
 // ── React Query client — prefetch collection data immediately at module load ──
@@ -263,6 +264,7 @@ export default function App(): React.JSX.Element {
           <Route path="/library"     element={<ScreenLibrary />} />
           <Route path="/tapematch"   element={<ScreenTapeMatch />} />
           <Route path="/songs"       element={<ScreenSongs />} />
+          <Route path="/gaps"        element={<ScreenGaps />} />
           <Route path="/collection"  element={<ScreenCollection />} />
           <Route path="/trading"     element={<ScreenTrading />} />
           <Route path="/sharing"     element={<ScreenSharing />} />
