@@ -40,6 +40,7 @@
       "bootlegs": "Bootlegs",
       "tapematch": "TapeMatch",
       "songs": "Songs",
+      "gaps": "Gaps",
       "assets": "Assets",
       "attachments": "Attachments",
       "spectrograms": "Spectrograms",
@@ -1685,6 +1686,34 @@
       "pick": "pick",
       "openInLibrary": "Open in Library",
       "empty": "No performances found for this song."
+    }
+  },
+  "gaps": {
+    "title": "Gaps",
+    "subtitle": "Every known Dylan concert date, colored by whether a recording circulates.",
+    "unavailable": "The Gaps view needs the Olof Bjorner concert chronology, which isn't loaded on this install.",
+    "credit": "Concert list from Olof Bjorner's DSN chronology, in the tradition of Les Kokay's uncirculated-shows list.",
+    "header": {
+      "totalShows": "{{count}} shows",
+      "totalGaps": "{{count}} gaps"
+    },
+    "decades": {
+      "all": "All"
+    },
+    "grid": {
+      "loading": "…",
+      "yearGap": "{{count}} gaps"
+    },
+    "detail": {
+      "noSelection": "Select a date to see what's known about it.",
+      "tabEvent": "Event & sources",
+      "eventsHeading": "Event",
+      "entriesHeading": "Circulating entries",
+      "partialEntriesHeading": "Possible matches (partial date)",
+      "familiesHeading": "TapeMatch families",
+      "unknownVenue": "Unknown venue",
+      "recording": "{{kind}}, {{mins}} min",
+      "none": "None"
     }
   },
   "fingerprint": {
