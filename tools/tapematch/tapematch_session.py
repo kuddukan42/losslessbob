@@ -223,6 +223,17 @@ def open_obs_db() -> sqlite3.Connection:
             conn.execute(f"ALTER TABLE pairs ADD COLUMN {col} {decl}")
         except sqlite3.OperationalError:
             pass  # column already exists
+    # TODO-235: per-source piecewise lag model (segment breakpoints +
+    # offset/rate vs the run's final reference source), so backend ab_clips
+    # can build staircase perf->source time maps without re-running audio.
+    for col, decl in (
+        ("lag_ref_lb", "INTEGER"),
+        ("lag_segments_json", "TEXT"),
+    ):
+        try:
+            conn.execute(f"ALTER TABLE sources ADD COLUMN {col} {decl}")
+        except sqlite3.OperationalError:
+            pass  # column already exists
     conn.commit()
     return conn
 
@@ -663,21 +674,28 @@ def insert_sources(conn: sqlite3.Connection, run_id: str, date_iso: str,
         dom_ext = _dominant_ext(root_dir / folder_name)
         hdr = extract_lb_header(lb_num) if lb_num else {}
         commentary = extract_lb_commentary(lb_num) if lb_num else ""
+        # TODO-235: absent on results.json written by pre-2026-07-16 engines.
+        lag_ref_lb = _lb_num_from_folder(s["lag_ref"], name_to_lb) \
+            if s.get("lag_ref") else None
+        lag_segments = json.dumps(s["lag_segments"]) \
+            if s.get("lag_segments") else None
         conn.execute(
             """INSERT INTO sources
                (run_id, concert_date, lb_number, folder_name, family_id,
                 track_count, total_dur_sec, perf_dur_sec, trim_head_sec, trim_tail_sec,
                 hf_ceiling_hz, noise_floor_db, dc_asymmetry, nyquist_capped,
                 speed_ppm, speed_kind, dominant_ext,
-                lb_rating, lb_timing, lb_source_text)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                lb_rating, lb_timing, lb_source_text,
+                lag_ref_lb, lag_segments_json)
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (run_id, date_iso, lb_num, folder_name, s["family_id"],
              s["track_count"], s["total_dur_sec"], s["perf_dur_sec"],
              s["trim_head_sec"], s["trim_tail_sec"],
              s["hf_ceiling_hz"], s["noise_floor_db"], s["dc_asymmetry"],
              int(s["nyquist_capped"]),
              s["speed_ppm"], s["speed_kind"], dom_ext,
-             hdr.get("rating", ""), hdr.get("timing", ""), commentary),
+             hdr.get("rating", ""), hdr.get("timing", ""), commentary,
+             lag_ref_lb, lag_segments),
         )
 
 
