@@ -1,3 +1,24 @@
+[2026-07-16] — refactor(gui): Advanced-tools screens removed; Pipeline absorbed the gaps
+Context: tj found the Advanced sidebar section (Verify/Lookup/Rename/LBDIR standalone
+  screens) confusing next to the Pipeline, which already runs the same steps per-row via
+  the shared stores/detail components. Decision: delete the four screens, port only the
+  genuine capability losses into Pipeline, repoint entry points. Net −3,085 lines.
+Changed: gui_next screens/ScreenVerify|ScreenLookup|ScreenRename|ScreenLBDIR.tsx deleted;
+  App.tsx routes + AppShell.tsx Advanced-tools nav block removed. Entry-point repoints:
+  Library "reconfirm" + Collection "Send to →" → Pipeline queue; Collection missing-LB
+  dblclick + "LosslessBob" button → Quick Lookup with router-state seed (auto-runs once).
+  lookupStore/verifyStore/lbdirStore stripped to shared types (zustand stores dead).
+  Locales: 133 dead keys removed, 11 added (en+de/fr/es/it/nl — hand-translated, not DeepL).
+Added: ScreenPipeline.tsx — lbdir stage Re-scan button (re-runs POST /api/lbdir/check
+  anytime, replaces the "Full screen" link into the deleted screen); rename stage
+  multi-LB disambiguation panel ported from ScreenRename ("Choose LB" → /api/folder_link
+  + /api/lb_alias/resolve, Pin re-runs lookup+rename, Standardize feeds the proposal via
+  overrideProposed, Unpin/Skip). ScreenQuickLookup.tsx seed handling.
+Dropped (deliberate, not ported): bulk verify-all (/api/verify), lookup extra sources
+  (clipboard/listbox/file), CSV export, wishlist-from-lookup, shallow-scan toggle,
+  rename plan export — backend endpoints left in place. Verified: typecheck + prod build
+  clean; every t() key cross-checked against all 6 locales (zero dangling).
+
 [2026-07-16] — feat(gui): propagated-taper outline pills in Library (TODO-242 decision)
 Context: tj decision — propagated attributions get a pill too, visually distinct
   ("outline or fuzzy"). Outline uses Pill's existing non-soft mode (transparent bg, toned

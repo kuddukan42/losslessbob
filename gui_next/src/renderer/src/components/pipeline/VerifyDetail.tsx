@@ -24,8 +24,9 @@ export interface VerifyDetailProps {
 }
 
 /**
- * Files chip-bar + per-file table, shared between ScreenVerify and the pipeline
- * Verify stage panel. Source of truth for both — see design doc 14 §1.
+ * Files chip-bar + per-file table, used by the pipeline Verify stage panel.
+ * (Formerly also shared with the standalone Verify screen, removed — see
+ * design doc 14 §1.)
  */
 export function VerifyDetail({
   files, showAll, onShowAllChange, onCopyReport, onOpenFinder, onGenerateMissing, generateBusy, compact,

@@ -315,8 +315,9 @@ export interface LbdirDetailProps {
 }
 
 /**
- * File table + reconcile section, shared between ScreenLBDIR and the pipeline
- * LBDIR stage panel. See design doc 14 §1 / §2.4.
+ * File table + reconcile section, used by the pipeline LBDIR stage panel.
+ * (Formerly also shared with the standalone LBDIR screen, removed — see
+ * design doc 14 §1 / §2.4.)
  */
 export function LbdirDetail({
   checkResult, reconResult, reconSelected, setReconSelected, siteSelected, setSiteSelected,

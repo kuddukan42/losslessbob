@@ -716,7 +716,7 @@ export function ScreenLibrary(): React.JSX.Element {
     onReconfirm: (row) => {
       if (!row.path) return
       addToFolderQueue([row.path])
-      navigate('/verify')
+      navigate('/pipeline')
     },
     onRelocate: async (rows) => {
       if (!rows.length) return

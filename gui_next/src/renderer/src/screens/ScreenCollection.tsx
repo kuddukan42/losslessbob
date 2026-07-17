@@ -6,7 +6,6 @@ import { useVirtualizer } from '@tanstack/react-virtual'
 import { Icon } from '../components/Icon'
 import { Button, Chip, IconButton, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
-import { useLookupStore } from '../lib/lookupStore'
 import { useSpectrogramStore } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { lbDetailUrl } from '../lib/lbUrl'
@@ -2055,7 +2054,6 @@ export function ScreenCollection(): React.JSX.Element {
   const colsDropRef    = useRef<HTMLDivElement>(null)
 
   const navigate                    = useNavigate()
-  const { clearSources, addSource } = useLookupStore()
   const addPendingSpectro            = useSpectrogramStore(s => s.addPending)
   const addToFolderQueue             = useFolderQueueStore(s => s.addFolders)
   const queryClient = useQueryClient()
@@ -2842,10 +2840,8 @@ export function ScreenCollection(): React.JSX.Element {
 
   const handleMissingRowDblClick = useCallback((row: MissingLbRow) => {
     const lb = `LB-${String(row.lb_number).padStart(5, '0')}`
-    clearSources()
-    addSource({ kind: 'clipboard', name: lb, content: lb, active: true })
-    navigate('/lookup')
-  }, [clearSources, addSource, navigate])
+    navigate('/quicklookup', { state: { seed: lb } })
+  }, [navigate])
 
   // ── Render ─────────────────────────────────────────────────────────────────
 
@@ -3367,7 +3363,7 @@ export function ScreenCollection(): React.JSX.Element {
                             <TD>
                               <div style={{ display: 'flex', gap: 4 }}>
                                 <Button variant="ghost" size="sm" onClick={() => {
-                                  clearSources(); addSource({ kind: 'clipboard', name: lbStr, content: lbStr, active: true }); navigate('/lookup')
+                                  navigate('/quicklookup', { state: { seed: lbStr } })
                                 }}>
                                   LosslessBob
                                 </Button>
@@ -3653,8 +3649,6 @@ export function ScreenCollection(): React.JSX.Element {
                 : !ctxMenu.row.diskPath,
               children: [
                 { label: 'Pipeline', action: () => handleCtxSendTo(ctxMenu.row, '/pipeline') },
-                { label: 'Verify',   action: () => handleCtxSendTo(ctxMenu.row, '/verify') },
-                { label: 'LBDIR',    action: () => handleCtxSendTo(ctxMenu.row, '/lbdir') },
                 { label: 'Spectrograms', action: () => handleCtxSendTo(ctxMenu.row, '/spectrograms') },
               ],
             },

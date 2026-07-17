@@ -33,11 +33,7 @@
       "home": "Home",
       "ingest": "Inlezen",
       "pipeline": "Pipeline",
-      "verify": "Controleer",
-      "lookup": "Opzoeken",
       "quicklookup": "Snel opzoeken",
-      "rename": "Hernoem",
-      "lbdir": "LBDIR",
       "library": "Bibliotheek",
       "collection": "Mijn verzameling",
       "search": "Zoek op",
@@ -54,7 +50,6 @@
       "setup": "Installatie",
       "mounts": "Opslag",
       "themes": "Thema's",
-      "advancedTools": "Geavanceerde tools",
       "trading": "Handel",
       "sharing": "Delen",
       "tapematch": "TapeMatch",
@@ -141,36 +136,7 @@
     }
   },
   "lookup": {
-    "title": "Opzoeken",
-    "subtitle": "controlesommen → master DB",
-    "desc": "Identificeert LB-nummers voor een willekeurige set controlesommen. Per-LB samenvatting + per-checksum detail.",
-    "countLabel": "{{count}} controlesommen - {{lbs}} LB's",
-    "sources": {
-      "label": "Bronnen",
-      "clipboard": "Klembord",
-      "listbox": "Lijstvak...",
-      "files": "Bestanden...",
-      "folders": "Mappen...",
-      "filterMy": "Verberg _mychecksums bestanden",
-      "noSources": "Nog geen bronnen",
-      "lookupAll": "Alle bronnen opzoeken",
-      "lookingUp": "Omhoog kijkend...",
-      "generate": "Ontbrekende gegevens genereren",
-      "clearSources": "Duidelijke bronnen"
-    },
-    "listbox": {
-      "title": "Controlesom tekst plakken",
-      "placeholder": "Plak hier .ffp / .md5 / .st5 regels...",
-      "lookup": "Opzoeken"
-    },
     "status": {
-      "running": "Opzoeken uitvoeren...",
-      "addSourcesFirst": "Bronnen toevoegen en klik vervolgens op Alle bronnen opzoeken",
-      "matchSummary": "Samenvatting wedstrijd",
-      "matchSummarySub": "per LB-nummer - dubbelklik om te openen op LB.com",
-      "copySummary": "Samenvatting kopiëren",
-      "exportCsv": "CSV exporteren…",
-      "checksumDetail": "Details checksum",
       "rows": "{{count}} rijen"
     },
     "table": {
@@ -198,59 +164,19 @@
       "duplicate": "Dubbele"
     },
     "notFoundHint": "Of dit is een nieuw item waar de master DB nog niets van weet, of de checksums komen niet overeen met wat er in het bestand staat.",
-    "footer": {
-      "autoPopulate": "Resultaten vullen automatisch het tabblad Hernoemen",
-      "goToRename": "Ga naar Naam wijzigen →",
-      "relookupAll": "Alles opnieuw opzoeken"
-    },
-    "toast": {
-      "clipboardEmpty": "Klembord is leeg",
-      "clipboardFailed": "Kan klembord niet lezen",
-      "noChecksumsInFolder": "Geen checksum-bestanden gevonden in {{name}}",
-      "folderScanFailed": "Map scannen mislukt",
-      "addSourcesFirst": "Eerst bronnen toevoegen",
-      "noTextContent": "Geen tekstinhoud in bronnen - probeer bestanden te kiezen of tekst te plakken",
-      "useVerify": "Gebruik het scherm Verifiëren om controlesommen voor mappen te genereren",
-      "summaryCopied": "Samenvatting gekopieerd",
-      "copyFailed": "Kopiëren mislukt",
-      "lookupFailed": "Opzoeken mislukt",
-      "addedToWishlist": "LB-{{lb}} toegevoegd aan verlanglijstje",
-      "wishlistFailed": "Wensenlijst toevoegen mislukt"
-    },
     "owned": {
-      "verifiedBanner": "{{count}} al in de collectie · lbdir-geverifieerd",
-      "unverifiedBanner": "{{count}} bevindt zich al in de collectie",
-      "verifiedNote": "geen actie nodig",
-      "unverifiedNote": "nog niet door lbdir geverifieerd",
       "badgeOwned": "In collectie",
       "badgeVerified": "In collectie · geverifieerd"
     },
     "xrefPill": "Xref-bestandsset · {{id}}"
   },
   "verify": {
-    "title": "Controleer",
-    "subtitle": "lokale controlesommen - _mychecksums",
-    "desc": "FFP - MD5 - ST5 tegen audio op schijf. Gebruik LBDIR voor het officiële archief.",
-    "addFolders": "Mappen toevoegen...",
-    "rail": {
-      "foldersLabel": "Mappen",
-      "filterPlaceholder": "Mappen filteren...",
-      "noFolders": "Geen mappen toegevoegd",
-      "noMatches": "Geen overeenkomsten",
-      "verifyAll": "Controleer alle mappen",
-      "running": "Rennen...",
-      "generate": "Controlesommen genereren",
-      "retrieve": "Ophalen bij LB",
-      "addRoot": "Hoofdmap toevoegen..."
-    },
     "stats": {
       "total": "Totaal",
       "pass": "Pas",
       "mismatch": "Afwijking",
       "missing": "Ontbreekt",
-      "extra": "Extra",
-      "ffp": "FFP",
-      "md5": "MD5"
+      "extra": "Extra"
     },
     "toolbar": {
       "files": "Bestanden",
@@ -259,14 +185,6 @@
       "openFinder": "Openen in Finder",
       "copyReport": "Kopieer rapport",
       "generateMissing": "Ontbrekend FFP genereren"
-    },
-    "states": {
-      "pass": "Pas",
-      "mismatch": "Afwijking",
-      "fail": "Mislukt - ontbrekende bestanden",
-      "incomplete": "Onvolledig",
-      "shntool": "shntool ontbreekt",
-      "noChecksums": "Geen checksum-bestanden"
     },
     "fileStates": {
       "pass": "Pas",
@@ -278,11 +196,6 @@
       "title": "Alle bestanden zijn in orde",
       "desc": "Alle {{count}} bestanden komen overeen met hun FFP- en MD5-controlesommen. Hier is niets te repareren."
     },
-    "shntoolWarning": "shntool is niet geïnstalleerd",
-    "shntoolDesc": "Deze map bevat SHN-bestanden. FFP/MD5 kan worden geverifieerd zonder shntool, maar voor lengtecontroles per schijf is het nodig.",
-    "verifyWithoutShntool": "Controleren zonder shntool",
-    "emptyFolders": "Voeg mappen toe en klik vervolgens op Alle mappen controleren",
-    "clickToRun": "Klik op Alle mappen controleren om uit te voeren",
     "showingProblems": "{{count}} probleembestanden tonen -",
     "showAllCount": "alle {{count}} weergeven",
     "table": {
@@ -298,81 +211,8 @@
       "overall": "Algemeen"
     },
     "toast": {
-      "foundFolders": "Gevonden {{count}} mappen",
-      "noAudioFolders": "Geen audiomappen gevonden",
-      "scanFailed": "Scannen mislukt",
-      "addFoldersFirst": "Eerst mappen toevoegen",
-      "verifyFailed": "Verifiëren mislukt",
-      "checksumsGenerated": "Checksums gegenereerd - opnieuw verifiëren...",
-      "generateFailed": "Genereer mislukt",
-      "retrieved": "Opgehaalde {{count}} lbdir bestanden - opnieuw verifiëren...",
-      "nothingRetrieved": "Niets opgehaald",
-      "retrieveFailed": "Ophalen mislukt",
       "reportCopied": "Verslag gekopieerd",
       "copyFailed": "Kopiëren mislukt"
-    }
-  },
-  "rename": {
-    "title": "Hernoem",
-    "subtitle": "{{count}} mappen - automatisch ingevuld vanuit Lookup",
-    "desc": "Voegt (LB-XXXXX) toe aan geverifieerde mappen. Terug te draaien vanuit Recente activiteit gedurende 30 dagen.",
-    "goToLookup": "Ga naar Lookup",
-    "noResults": "Nog geen opzoekresultaten",
-    "noResultsDesc": "Voer eerst een lookup uit - resultaten worden hier automatisch ingevuld",
-    "filterAll": "Alle",
-    "states": {
-      "has_lb": "LB# al in naam",
-      "renamed": "Hernoemd tot",
-      "needs_rename": "Zal hernoemen",
-      "wrong_lb": "Verkeerde LB - strippen + hernoemen",
-      "multiple_ids": "Meerdere LB's - beoordeling",
-      "no_match": "Geen match"
-    },
-    "hints": {
-      "has_lb": "LB# al in mapnaam",
-      "needs_rename": "Enkele volledige match in master DB",
-      "multiple_ids": "{{count}} kandidaat-LB's - hieronder oplossen"
-    },
-    "bulk": {
-      "selectedOf": "{{selected}} of {{total}} geselecteerd",
-      "selectAllConfident": "Selecteer alle vertrouwen",
-      "apply": "{{count}} hernoemt",
-      "applying": "Solliciteren..."
-    },
-    "table": {
-      "currentName": "Huidige naam",
-      "proposedName": "Voorgestelde naam",
-      "lb": "LB#",
-      "state": "Staat"
-    },
-    "disambiguate": {
-      "title": "Ondubbelzinnig - kies er een",
-      "desc": "Er komen meerdere LB-nummers overeen. Selecteer de juiste en klik vervolgens op \"Pin selection\".",
-      "skip": "Voorlopig overslaan",
-      "pinned": "Vastgemaakt aan {{lb}}",
-      "pin": "Selectie vastzetten",
-      "unpin": "Koppeling verwijderen",
-      "loading": "Bezig met oplossen…",
-      "standardize": "Naam standaardiseren"
-    },
-    "dryrun": {
-      "title": "Voorbeschouwing op de generale repetitie",
-      "desc": "Er wordt niets hernoemd totdat u op Pas toe selecteerde klikt. Hernoemingen worden weggeschreven naar rename_history en verschijnen in Recente activiteit.",
-      "copyDiff": "Kopieer diff...",
-      "exportPlan": "Exportplan..."
-    },
-    "toast": {
-      "noValidRenames": "Geen geldige hernoemingen geselecteerd",
-      "applied": "{{count}} hernoemt{{errors}}",
-      "applyFailed": "Solliciteer mislukt",
-      "diffCopied": "Verschil gekopieerd",
-      "copyFailed": "Kopiëren mislukt",
-      "pinned": "Vastgemaakt {{lb}}",
-      "unpinned": "Niet gekoppeld",
-      "pinFailed": "Vastzetten mislukt",
-      "unpinFailed": "Ontkoppelen mislukt",
-      "standardized": "Gestandaardiseerde naam",
-      "standardizeFailed": "Standaardisatie mislukt"
     }
   },
   "pipeline": {
@@ -598,7 +438,18 @@
       "copyToClipboard": "Kopiëren naar klembord",
       "copyDiff": "Verschillen vergelijken",
       "loggedOnly": "Geregistreerd in rename_history.",
-      "apply": "Naam wijzigen"
+      "apply": "Naam wijzigen",
+      "disambiguate": {
+        "title": "Ondubbelzinnig - kies er een",
+        "desc": "Er komen meerdere LB-nummers overeen. Selecteer de juiste en klik vervolgens op \"Pin selection\".",
+        "skip": "Voorlopig overslaan",
+        "pinned": "Vastgemaakt aan {{lb}}",
+        "pin": "Selectie vastzetten",
+        "unpin": "Koppeling verwijderen",
+        "loading": "Bezig met oplossen…",
+        "standardize": "Naam standaardiseren",
+        "choose": "Kies LB…"
+      }
     },
     "stepStates": {
       "pass": "Pass",
@@ -646,14 +497,13 @@
       "runsAfterBody": "Zodra de zoekopdracht een LB# heeft opgelost, halen we lbdir*.txt op uit de archiefcache en vergelijken we dit met de bestanden op de schijf. Je kunt het desgewenst al eerder ophalen.",
       "loading": "Bezig met laden…",
       "openFile": "Open lbdir.txt",
-      "fullScreen": "Volledig LBDIR-scherm →",
       "stats": {
         "total": "Totaal",
         "pass": "Pass",
         "missing": "Ontbreekt",
         "mismatch": "Afwijking"
       },
-      "noLbdirFound": "Geen lbdir*.txt gevonden. Probeer de invoer uit het LBDIR-scherm te kopiëren.",
+      "noLbdirFound": "Geen lbdir*.txt gevonden. Probeer de invoer op te halen en scan opnieuw.",
       "archiveCleanTitle": "Archiefschoon",
       "archiveCleanBody": "Elk bestand waarnaar in de officiële sidecar wordt verwezen, is aanwezig en komt overeen. Deze map is volledig gesynchroniseerd.",
       "status": {
@@ -669,8 +519,10 @@
         "reconcileFailed": "Scan afstemmen mislukt",
         "applied": "Toegepast",
         "applyFailed": "Toepassen mislukt",
-        "retrieveFailed": "Ophalen mislukt"
-      }
+        "retrieveFailed": "Ophalen mislukt",
+        "rescanFailed": "Opnieuw scannen mislukt"
+      },
+      "rescan": "Opnieuw scannen"
     },
     "autoCollect": "Automatisch verzamelen",
     "autoCollectHint": "Wanneer deze functie is ingeschakeld, worden mappen die volledig groen zijn (verificatie, opzoeken, LB-map en hernoemen zijn allemaal geslaagd) automatisch in de collectie opgeslagen — je hoeft niet op ‘Bestand’ te klikken",

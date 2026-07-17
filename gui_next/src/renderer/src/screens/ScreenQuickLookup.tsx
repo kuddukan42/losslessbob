@@ -1,4 +1,5 @@
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Pill } from '../components'
@@ -43,6 +44,8 @@ function toRowStatus(status: string): RowStatus {
 
 export function ScreenQuickLookup(): React.JSX.Element {
   const { t } = useTranslation()
+  const location = useLocation()
+  const seed = (location.state as { seed?: string } | null)?.seed
   const [text, setText]       = useState('')
   const [rows, setRows]       = useState<DetailRow[]>([])
   // Copy-level xref (D4): lb_number → winning fileset id, populated from summary.lb_summary
@@ -81,6 +84,14 @@ export function ScreenQuickLookup(): React.JSX.Element {
       setBusy(false)
     }
   }, [showToast, t])
+
+  // Seeded from another screen (e.g. Collection "LosslessBob"/missing-LB row) via
+  // navigate('/quicklookup', { state: { seed } }) — run once on arrival.
+  useEffect(() => {
+    if (!seed) return
+    setText(seed)
+    runLookup(seed)
+  }, [seed]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleClipboard = useCallback(async () => {
     try {

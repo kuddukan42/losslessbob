@@ -33,11 +33,7 @@
       "home": "Home",
       "ingest": "Ingest",
       "pipeline": "Pipeline",
-      "verify": "Verify",
-      "lookup": "Lookup",
       "quicklookup": "Quick Lookup",
-      "rename": "Rename",
-      "lbdir": "LBDIR",
       "library": "Library",
       "collection": "My Collection",
       "search": "Search",
@@ -58,8 +54,7 @@
       "mounts": "Mounts",
       "themes": "Themes",
       "trading": "Trading",
-      "sharing": "Sharing",
-      "advancedTools": "Advanced tools"
+      "sharing": "Sharing"
     },
     "statusBar": {
       "db": "DB:",
@@ -141,36 +136,7 @@
     }
   },
   "lookup": {
-    "title": "Lookup",
-    "subtitle": "checksums → master DB",
-    "desc": "Identifies LB numbers for any set of checksums. Per-LB summary + per-checksum detail.",
-    "countLabel": "{{count}} checksums · {{lbs}} LBs",
-    "sources": {
-      "label": "Sources",
-      "clipboard": "Clipboard",
-      "listbox": "Listbox…",
-      "files": "Files…",
-      "folders": "Folders…",
-      "filterMy": "Hide _mychecksums files",
-      "noSources": "No sources yet",
-      "lookupAll": "Lookup all sources",
-      "lookingUp": "Looking up…",
-      "generate": "Generate missing",
-      "clearSources": "Clear sources"
-    },
-    "listbox": {
-      "title": "Paste checksum text",
-      "placeholder": "Paste .ffp / .md5 / .st5 lines here…",
-      "lookup": "Lookup"
-    },
     "status": {
-      "running": "Running lookup…",
-      "addSourcesFirst": "Add sources, then click Lookup all sources",
-      "matchSummary": "Match summary",
-      "matchSummarySub": "per LB number · double-click to open on LB.com",
-      "copySummary": "Copy summary",
-      "exportCsv": "Export CSV…",
-      "checksumDetail": "Checksum detail",
       "rows": "{{count}} rows"
     },
     "table": {
@@ -199,58 +165,18 @@
     },
     "xrefPill": "Xref fileset · {{id}}",
     "owned": {
-      "verifiedBanner": "{{count}} already in collection · lbdir-verified",
-      "verifiedNote": "no action needed",
-      "unverifiedBanner": "{{count}} already in collection",
-      "unverifiedNote": "not yet lbdir-verified",
       "badgeOwned": "In collection",
       "badgeVerified": "In collection · verified"
     },
-    "notFoundHint": "Either this is a new entry the master DB doesn't know about yet, or the checksums don't match what's on file.",
-    "footer": {
-      "autoPopulate": "Results auto-populate the Rename tab",
-      "goToRename": "Go to Rename →",
-      "relookupAll": "Re-lookup all"
-    },
-    "toast": {
-      "clipboardEmpty": "Clipboard is empty",
-      "clipboardFailed": "Could not read clipboard",
-      "noChecksumsInFolder": "No checksum files found in {{name}}",
-      "folderScanFailed": "Folder scan failed",
-      "addSourcesFirst": "Add sources first",
-      "noTextContent": "No text content in sources — try picking files or pasting text",
-      "useVerify": "Use the Verify screen to generate checksums for folders",
-      "summaryCopied": "Summary copied",
-      "copyFailed": "Copy failed",
-      "lookupFailed": "Lookup failed",
-      "addedToWishlist": "Added LB-{{lb}} to wishlist",
-      "wishlistFailed": "Wishlist add failed"
-    }
+    "notFoundHint": "Either this is a new entry the master DB doesn't know about yet, or the checksums don't match what's on file."
   },
   "verify": {
-    "title": "Verify",
-    "subtitle": "local checksums · _mychecksums",
-    "desc": "FFP · MD5 · ST5 against audio on disk. Use LBDIR for the official archive sidecar.",
-    "addFolders": "Add folders…",
-    "rail": {
-      "foldersLabel": "Folders",
-      "filterPlaceholder": "Filter folders…",
-      "noFolders": "No folders added",
-      "noMatches": "No matches",
-      "verifyAll": "Verify all folders",
-      "running": "Running…",
-      "generate": "Generate checksums",
-      "retrieve": "Retrieve from LB",
-      "addRoot": "Add root folder…"
-    },
     "stats": {
       "total": "Total",
       "pass": "Pass",
       "mismatch": "Mismatch",
       "missing": "Missing",
-      "extra": "Extra",
-      "ffp": "FFP",
-      "md5": "MD5"
+      "extra": "Extra"
     },
     "toolbar": {
       "files": "Files",
@@ -259,14 +185,6 @@
       "openFinder": "Open in Finder",
       "copyReport": "Copy report",
       "generateMissing": "Generate missing FFP"
-    },
-    "states": {
-      "pass": "Pass",
-      "mismatch": "Mismatch",
-      "fail": "Fail · missing files",
-      "incomplete": "Incomplete",
-      "shntool": "shntool missing",
-      "noChecksums": "No checksum files"
     },
     "fileStates": {
       "pass": "Pass",
@@ -278,11 +196,6 @@
       "title": "Every file checks out",
       "desc": "All {{count}} files match their FFP + MD5 checksums. Nothing to fix here."
     },
-    "shntoolWarning": "shntool is not installed",
-    "shntoolDesc": "This folder contains SHN files. FFP/MD5 can be verified without shntool, but per-disc length checks require it.",
-    "verifyWithoutShntool": "Verify without shntool",
-    "emptyFolders": "Add folders, then click Verify all folders",
-    "clickToRun": "Click Verify all folders to run",
     "showingProblems": "Showing {{count}} problem files ·",
     "showAllCount": "show all {{count}}",
     "table": {
@@ -298,81 +211,8 @@
       "overall": "Overall"
     },
     "toast": {
-      "foundFolders": "Found {{count}} folders",
-      "noAudioFolders": "No audio folders found",
-      "scanFailed": "Scan failed",
-      "addFoldersFirst": "Add folders first",
-      "verifyFailed": "Verify failed",
-      "checksumsGenerated": "Checksums generated — re-verifying…",
-      "generateFailed": "Generate failed",
-      "retrieved": "Retrieved {{count}} lbdir files — re-verifying…",
-      "nothingRetrieved": "Nothing retrieved",
-      "retrieveFailed": "Retrieve failed",
       "reportCopied": "Report copied",
       "copyFailed": "Copy failed"
-    }
-  },
-  "rename": {
-    "title": "Rename",
-    "subtitle": "{{count}} folders · auto-populated from Lookup",
-    "desc": "Append (LB-XXXXX) to verified folders. Reversible from Recent activity for 30 days.",
-    "goToLookup": "Go to Lookup",
-    "noResults": "No lookup results yet",
-    "noResultsDesc": "Run a lookup first — results populate here automatically",
-    "filterAll": "All",
-    "states": {
-      "has_lb": "LB# already in name",
-      "renamed": "Renamed",
-      "needs_rename": "Will rename",
-      "wrong_lb": "Wrong LB · strip + rename",
-      "multiple_ids": "Multiple LBs · review",
-      "no_match": "No match"
-    },
-    "hints": {
-      "has_lb": "LB# already in folder name",
-      "needs_rename": "Single complete match in master DB",
-      "multiple_ids": "{{count}} candidate LBs · resolve below"
-    },
-    "bulk": {
-      "selectedOf": "{{selected}} of {{total}} selected",
-      "selectAllConfident": "Select all confident",
-      "apply": "Apply {{count}} renames",
-      "applying": "Applying…"
-    },
-    "table": {
-      "currentName": "Current name",
-      "proposedName": "Proposed name",
-      "lb": "LB#",
-      "state": "State"
-    },
-    "disambiguate": {
-      "title": "Disambiguate · pick one",
-      "desc": "Multiple LB numbers matched. Select the correct one, then click \"Pin selection\".",
-      "skip": "Skip for now",
-      "pin": "Pin selection",
-      "unpin": "Unlink",
-      "loading": "Resolving…",
-      "pinned": "Pinned to {{lb}}",
-      "standardize": "Standardize name"
-    },
-    "dryrun": {
-      "title": "Dry-run preview",
-      "desc": "nothing is renamed until you click Apply selected. Renames write to rename_history and appear in Recent activity.",
-      "copyDiff": "Copy diff…",
-      "exportPlan": "Export plan…"
-    },
-    "toast": {
-      "noValidRenames": "No valid renames selected",
-      "applied": "Applied {{count}} renames{{errors}}",
-      "applyFailed": "Apply failed",
-      "diffCopied": "Diff copied",
-      "copyFailed": "Copy failed",
-      "pinned": "Pinned {{lb}}",
-      "unpinned": "Unlinked",
-      "pinFailed": "Pin failed",
-      "unpinFailed": "Unlink failed",
-      "standardized": "Standardized name",
-      "standardizeFailed": "Standardize failed"
     }
   },
   "pipeline": {
@@ -443,7 +283,18 @@
       "copyToClipboard": "Copy to clipboard",
       "copyDiff": "Copy diff",
       "loggedOnly": "Logged to rename_history.",
-      "apply": "Apply rename"
+      "apply": "Apply rename",
+      "disambiguate": {
+        "title": "Disambiguate · pick one",
+        "desc": "Multiple LB numbers matched. Select the correct one, then click \"Pin selection\".",
+        "skip": "Skip for now",
+        "pin": "Pin selection",
+        "unpin": "Unlink",
+        "loading": "Resolving…",
+        "pinned": "Pinned to {{lb}}",
+        "standardize": "Standardize name",
+        "choose": "Choose LB…"
+      }
     },
     "stepStates": {
       "pass": "Pass",
@@ -583,14 +434,13 @@
       "runsAfterBody": "Once lookup resolves an LB#, we retrieve lbdir*.txt from the archive cache and reconcile it against the files on disk. You can pull it early if you like.",
       "loading": "Loading…",
       "openFile": "Open lbdir.txt",
-      "fullScreen": "Full LBDIR screen →",
       "stats": {
         "total": "Total",
         "pass": "Pass",
         "missing": "Missing",
         "mismatch": "Mismatch"
       },
-      "noLbdirFound": "No lbdir*.txt found. Try scraping the entry from the LBDIR screen.",
+      "noLbdirFound": "No lbdir*.txt found. Try scraping the entry, then re-scan.",
       "archiveCleanTitle": "Archive-clean",
       "archiveCleanBody": "Every file referenced in the official sidecar is present and matches. This folder is fully reconciled.",
       "status": {
@@ -606,8 +456,10 @@
         "reconcileFailed": "Reconcile scan failed",
         "applied": "Applied",
         "applyFailed": "Apply failed",
-        "retrieveFailed": "Retrieve failed"
-      }
+        "retrieveFailed": "Retrieve failed",
+        "rescanFailed": "Re-scan failed"
+      },
+      "rescan": "Re-scan"
     },
     "file": {
       "action": "File",
