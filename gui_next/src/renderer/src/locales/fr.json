@@ -33,11 +33,7 @@
       "home": "Accueil",
       "ingest": "Ingérer",
       "pipeline": "Pipeline",
-      "verify": "Vérifier",
-      "lookup": "Recherche",
       "quicklookup": "Recherche rapide",
-      "rename": "Renommer",
-      "lbdir": "LBDIR",
       "library": "Bibliothèque",
       "collection": "Ma collection",
       "search": "Recherche",
@@ -54,7 +50,6 @@
       "setup": "Mise en place",
       "mounts": "Volumes",
       "themes": "Thèmes",
-      "advancedTools": "Outils avancés",
       "trading": "Trading",
       "sharing": "Partage",
       "tapematch": "TapeMatch",
@@ -141,36 +136,7 @@
     }
   },
   "lookup": {
-    "title": "Recherche",
-    "subtitle": "Sommes de contrôle → BD maître",
-    "desc": "Identifie les numéros de LB pour n'importe quel ensemble de sommes de contrôle. Résumé par LB + détail par somme de contrôle.",
-    "countLabel": "Sommes de contrôle {{count}} - {{lbs}} LBs",
-    "sources": {
-      "label": "Sources d'information",
-      "clipboard": "Presse-papiers",
-      "listbox": "Boîte de liste...",
-      "files": "Fichiers...",
-      "folders": "Dossiers...",
-      "filterMy": "Cacher les fichiers _mychecksums",
-      "noSources": "Pas encore de sources",
-      "lookupAll": "Consulter toutes les sources",
-      "lookingUp": "En regardant vers le haut...",
-      "generate": "Générer les manquants",
-      "clearSources": "Sources claires"
-    },
-    "listbox": {
-      "title": "Coller le texte de la somme de contrôle",
-      "placeholder": "Collez les lignes .ffp / .md5 / .st5 ici...",
-      "lookup": "Recherche"
-    },
     "status": {
-      "running": "Recherche en cours...",
-      "addSourcesFirst": "Ajouter des sources, puis cliquer sur Rechercher toutes les sources",
-      "matchSummary": "Résumé du match",
-      "matchSummarySub": "par numéro LB - double-cliquez pour ouvrir sur LB.com",
-      "copySummary": "Résumé de la copie",
-      "exportCsv": "Exporter CSV…",
-      "checksumDetail": "Détail de la somme de contrôle",
       "rows": "{{count}} rangs"
     },
     "table": {
@@ -198,59 +164,19 @@
       "duplicate": "Duplicata"
     },
     "notFoundHint": "Soit il s'agit d'une nouvelle entrée dont la base de données principale n'a pas encore connaissance, soit les sommes de contrôle ne correspondent pas à ce qui se trouve dans le fichier.",
-    "footer": {
-      "autoPopulate": "Les résultats remplissent automatiquement l'onglet Renommer",
-      "goToRename": "Aller dans Renommer →",
-      "relookupAll": "Relancer la recherche pour tout"
-    },
-    "toast": {
-      "clipboardEmpty": "Le presse-papiers est vide",
-      "clipboardFailed": "Impossible de lire le presse-papiers",
-      "noChecksumsInFolder": "Aucun fichier de contrôle n'a été trouvé dans {{name}}",
-      "folderScanFailed": "Échec de l'analyse des dossiers",
-      "addSourcesFirst": "Ajouter d'abord les sources",
-      "noTextContent": "Pas de texte dans les sources - essayez de sélectionner des fichiers ou de coller du texte",
-      "useVerify": "L'écran Vérifier permet de générer des sommes de contrôle pour les dossiers.",
-      "summaryCopied": "Résumé copié",
-      "copyFailed": "Échec de la copie",
-      "lookupFailed": "La recherche a échoué",
-      "addedToWishlist": "Ajouté LB-{{lb}} à la liste de souhaits",
-      "wishlistFailed": "L'ajout à la liste de souhaits a échoué"
-    },
     "owned": {
-      "verifiedBanner": "{{count}} déjà présent dans la collection · lbdir-verified",
-      "unverifiedBanner": "{{count}} déjà présent dans la collection",
-      "verifiedNote": "Aucune action requise",
-      "unverifiedNote": "pas encore vérifié par lbdir",
       "badgeOwned": "Dans la collection",
       "badgeVerified": "Dans la collection · vérifié"
     },
     "xrefPill": "Ensemble de fichiers Xref · {{id}}"
   },
   "verify": {
-    "title": "Vérifier",
-    "subtitle": "Sommes de contrôle locales - _mychecksums",
-    "desc": "FFP - MD5 - ST5 contre l'audio sur le disque. Utilisez LBDIR pour l'archive officielle.",
-    "addFolders": "Ajouter des dossiers...",
-    "rail": {
-      "foldersLabel": "Dossiers",
-      "filterPlaceholder": "Filtrer les dossiers...",
-      "noFolders": "Aucun dossier n'a été ajouté",
-      "noMatches": "Pas de correspondance",
-      "verifyAll": "Vérifier tous les dossiers",
-      "running": "Courir...",
-      "generate": "Générer des sommes de contrôle",
-      "retrieve": "Récupérer du LB",
-      "addRoot": "Ajouter le dossier racine..."
-    },
     "stats": {
       "total": "Total",
       "pass": "Passez",
       "mismatch": "Inadéquation",
       "missing": "Manquant",
-      "extra": "Supplément",
-      "ffp": "FFP",
-      "md5": "MD5"
+      "extra": "Supplément"
     },
     "toolbar": {
       "files": "Dossiers",
@@ -259,14 +185,6 @@
       "openFinder": "Ouvrir dans le Finder",
       "copyReport": "Rapport de copie",
       "generateMissing": "Générer le FFP manquant"
-    },
-    "states": {
-      "pass": "Passez",
-      "mismatch": "Inadéquation",
-      "fail": "Échec - fichiers manquants",
-      "incomplete": "Incomplet",
-      "shntool": "shntool manquant",
-      "noChecksums": "Pas de fichiers de contrôle"
     },
     "fileStates": {
       "pass": "Passez",
@@ -278,11 +196,6 @@
       "title": "Tous les fichiers sont conformes",
       "desc": "Les {{count}} fichiers correspondent à leurs sommes de contrôle FFP et MD5. Rien à corriger ici."
     },
-    "shntoolWarning": "shntool n'est pas installé",
-    "shntoolDesc": "Ce dossier contient les fichiers SHN. FFP/MD5 peut être vérifié sans shntool, mais les vérifications de longueur par disque le nécessitent.",
-    "verifyWithoutShntool": "Vérifier sans shntool",
-    "emptyFolders": "Ajouter des dossiers, puis cliquer sur Vérifier tous les dossiers",
-    "clickToRun": "Cliquez sur Vérifier tous les dossiers pour lancer",
     "showingProblems": "Afficher les fichiers problèmes de {{count}} -",
     "showAllCount": "afficher tous les {{count}}",
     "table": {
@@ -298,81 +211,8 @@
       "overall": "Dans l'ensemble"
     },
     "toast": {
-      "foundFolders": "Dossiers {{count}} trouvés",
-      "noAudioFolders": "Aucun dossier audio n'a été trouvé",
-      "scanFailed": "Échec du balayage",
-      "addFoldersFirst": "Ajouter d'abord les dossiers",
-      "verifyFailed": "Échec de la vérification",
-      "checksumsGenerated": "Sommes de contrôle générées - revérification...",
-      "generateFailed": "Échec de la génération",
-      "retrieved": "Fichiers {{count}} lbdir récupérés - revérification...",
-      "nothingRetrieved": "Rien n'a été récupéré",
-      "retrieveFailed": "L'extraction a échoué",
       "reportCopied": "Rapport copié",
       "copyFailed": "Échec de la copie"
-    }
-  },
-  "rename": {
-    "title": "Renommer",
-    "subtitle": "Dossiers {{count}} - auto-remplissage à partir de la liste de contrôle",
-    "desc": "Ajouter (LB-XXXXX) aux dossiers vérifiés. Réversible à partir de l'activité récente pendant 30 jours.",
-    "goToLookup": "Aller à la recherche",
-    "noResults": "Pas encore de résultats de recherche",
-    "noResultsDesc": "Lancez d'abord une recherche - les résultats s'affichent ici automatiquement.",
-    "filterAll": "Tous",
-    "states": {
-      "has_lb": "LB# déjà dans le nom",
-      "renamed": "Renommé",
-      "needs_rename": "Renommera",
-      "wrong_lb": "Mauvaise LB - dépouiller + renommer",
-      "multiple_ids": "LB multiples - examen",
-      "no_match": "Pas de correspondance"
-    },
-    "hints": {
-      "has_lb": "LB# déjà dans le nom du dossier",
-      "needs_rename": "Une seule correspondance complète dans la base de données principale",
-      "multiple_ids": "{{count}} candidats LB - résoudre ci-dessous"
-    },
-    "bulk": {
-      "selectedOf": "{{selected}} de {{total}} sélectionné",
-      "selectAllConfident": "Sélectionner tous les confiants",
-      "apply": "Appliquer les renommages {{count}}",
-      "applying": "Postuler..."
-    },
-    "table": {
-      "currentName": "Nom actuel",
-      "proposedName": "Nom proposé",
-      "lb": "LB#",
-      "state": "État"
-    },
-    "disambiguate": {
-      "title": "Désambiguïser - choisir",
-      "desc": "Plusieurs numéros de LB correspondent. Sélectionnez le bon numéro, puis cliquez sur \"Sélection de l'épingle\".",
-      "skip": "Sauter pour l'instant",
-      "pinned": "Épinglé à {{lb}}",
-      "pin": "Sélection d'épingles",
-      "unpin": "Désassocier",
-      "loading": "Résolution en cours…",
-      "standardize": "Normaliser les noms"
-    },
-    "dryrun": {
-      "title": "Aperçu de la course à vide",
-      "desc": "rien n'est renommé tant que vous n'avez pas cliqué sur Appliquer la sélection. Les renommages s'inscrivent dans rename_history et apparaissent dans l'activité récente.",
-      "copyDiff": "Copier la diff...",
-      "exportPlan": "Plan d'exportation..."
-    },
-    "toast": {
-      "noValidRenames": "Aucun renommage valide n'a été sélectionné",
-      "applied": "Appliqué {{count}} renommé{{errors}}",
-      "applyFailed": "Appliquer échoué",
-      "diffCopied": "Copie de la différence",
-      "copyFailed": "Échec de la copie",
-      "pinned": "Épinglé {{lb}}",
-      "unpinned": "Non lié",
-      "pinFailed": "Échec de l'épinglage",
-      "unpinFailed": "Échec de la suppression du lien",
-      "standardized": "Nom normalisé",
-      "standardizeFailed": "Normalisation échouée"
     }
   },
   "pipeline": {
@@ -598,7 +438,18 @@
       "copyToClipboard": "Copier dans le presse-papiers",
       "copyDiff": "Différence entre les versions",
       "loggedOnly": "Enregistré dans l'historique des renommages.",
-      "apply": "Appliquer le changement de nom"
+      "apply": "Appliquer le changement de nom",
+      "disambiguate": {
+        "title": "Désambiguïser - choisir",
+        "desc": "Plusieurs numéros de LB correspondent. Sélectionnez le bon numéro, puis cliquez sur \"Sélection de l'épingle\".",
+        "skip": "Sauter pour l'instant",
+        "pinned": "Épinglé à {{lb}}",
+        "pin": "Sélection d'épingles",
+        "unpin": "Désassocier",
+        "loading": "Résolution en cours…",
+        "standardize": "Normaliser les noms",
+        "choose": "Choisir un LB…"
+      }
     },
     "stepStates": {
       "pass": "Pass",
@@ -646,14 +497,13 @@
       "runsAfterBody": "Une fois qu'une recherche a permis d'identifier un numéro LB#, nous récupérons le fichier lbdir*.txt dans le cache d'archivage et le comparons aux fichiers présents sur le disque. Vous pouvez le récupérer plus tôt si vous le souhaitez.",
       "loading": "Chargement en cours…",
       "openFile": "Ouvrir lbdir.txt",
-      "fullScreen": "Écran complet de LBDIR →",
       "stats": {
         "total": "Total",
         "pass": "Pass",
         "missing": "Manquant",
         "mismatch": "Incohérence"
       },
-      "noLbdirFound": "Aucun fichier lbdir*.txt n'a été trouvé. Essayez de récupérer l'entrée depuis l'écran LBDIR.",
+      "noLbdirFound": "Aucun fichier lbdir*.txt n'a été trouvé. Essayez de récupérer l'entrée, puis relancez l'analyse.",
       "archiveCleanTitle": "Archive-clean",
       "archiveCleanBody": "Tous les fichiers référencés dans le fichier sidecar officiel sont présents et correspondent. Ce dossier est entièrement synchronisé.",
       "status": {
@@ -669,8 +519,10 @@
         "reconcileFailed": "Échec de la réconciliation de l'analyse",
         "applied": "Appliqué",
         "applyFailed": "Échec de l'application",
-        "retrieveFailed": "Récupération échouée"
-      }
+        "retrieveFailed": "Récupération échouée",
+        "rescanFailed": "Échec de la nouvelle analyse"
+      },
+      "rescan": "Rescanner"
     },
     "autoCollect": "Collecte automatique",
     "autoCollectHint": "Lorsqu’elle est activée, les dossiers entièrement verts (vérification, recherche, répertoire LB et renommage réussis) sont automatiquement classés dans la collection — aucun clic sur « Fichier » n’est nécessaire.",

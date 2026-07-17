@@ -33,11 +33,7 @@
       "home": "Inicio",
       "ingest": "Ingerir",
       "pipeline": "Pipeline",
-      "verify": "Verifique",
-      "lookup": "Búsqueda",
       "quicklookup": "Búsqueda rápida",
-      "rename": "Cambie el nombre de",
-      "lbdir": "LBDIR",
       "library": "Biblioteca",
       "collection": "Mi colección",
       "search": "Buscar en",
@@ -54,7 +50,6 @@
       "setup": "Configurar",
       "mounts": "Unidades",
       "themes": "Temas",
-      "advancedTools": "Herramientas avanzadas",
       "trading": "Comercio",
       "sharing": "Compartir",
       "tapematch": "TapeMatch",
@@ -141,36 +136,7 @@
     }
   },
   "lookup": {
-    "title": "Búsqueda",
-    "subtitle": "sumas de comprobación → BD maestra",
-    "desc": "Identifica los números de LB para cualquier conjunto de sumas de comprobación. Resumen por LB + detalle por suma de comprobación.",
-    "countLabel": "{{count}} sumas de comprobación - {{lbs}} LBs",
-    "sources": {
-      "label": "Fuentes",
-      "clipboard": "Portapapeles",
-      "listbox": "Lista...",
-      "files": "Archivos...",
-      "folders": "Carpetas...",
-      "filterMy": "Ocultar archivos _mychecksums",
-      "noSources": "Aún no hay fuentes",
-      "lookupAll": "Buscar todas las fuentes",
-      "lookingUp": "Mirando hacia arriba...",
-      "generate": "Generar falta",
-      "clearSources": "Fuentes claras"
-    },
-    "listbox": {
-      "title": "Pegar texto de suma de comprobación",
-      "placeholder": "Pegue las líneas .ffp / .md5 / .st5 aquí...",
-      "lookup": "Búsqueda"
-    },
     "status": {
-      "running": "Ejecutando búsqueda...",
-      "addSourcesFirst": "Añadir fuentes y, a continuación, haga clic en Buscar todas las fuentes",
-      "matchSummary": "Resumen del partido",
-      "matchSummarySub": "por número LB - doble clic para abrir en LB.com",
-      "copySummary": "Copiar resumen",
-      "exportCsv": "Exportar CSV…",
-      "checksumDetail": "Detalle de la suma de control",
       "rows": "{{count}} filas"
     },
     "table": {
@@ -198,59 +164,19 @@
       "duplicate": "Duplicar"
     },
     "notFoundHint": "O bien se trata de una nueva entrada que la base de datos principal aún no conoce, o bien las sumas de comprobación no coinciden con lo que hay en el archivo.",
-    "footer": {
-      "autoPopulate": "Los resultados rellenan automáticamente la pestaña Renombrar",
-      "goToRename": "Ir a Cambiar nombre →",
-      "relookupAll": "Volver a buscar todo"
-    },
-    "toast": {
-      "clipboardEmpty": "El portapapeles está vacío",
-      "clipboardFailed": "No se ha podido leer el portapapeles",
-      "noChecksumsInFolder": "No se han encontrado archivos de suma de comprobación en {{name}}",
-      "folderScanFailed": "Error en la exploración de carpetas",
-      "addSourcesFirst": "Añada primero las fuentes",
-      "noTextContent": "No hay contenido de texto en las fuentes - intente seleccionar archivos o pegar texto",
-      "useVerify": "Utilice la pantalla Verificar para generar sumas de comprobación para las carpetas",
-      "summaryCopied": "Resumen copiado",
-      "copyFailed": "Error de copia",
-      "lookupFailed": "Búsqueda fallida",
-      "addedToWishlist": "Añadido LB-{{lb}} a la lista de deseos",
-      "wishlistFailed": "Error al añadir lista de deseos"
-    },
     "owned": {
-      "verifiedBanner": "{{count}} ya está en la colección · verificado por lbdir",
-      "unverifiedBanner": "{{count}} ya está en la colección",
-      "verifiedNote": "No es necesario realizar ninguna acción",
-      "unverifiedNote": "Aún no verificado por lbdir",
       "badgeOwned": "En la colección",
       "badgeVerified": "En la colección · verificado"
     },
     "xrefPill": "Conjunto de archivos de referencia cruzada · {{id}}"
   },
   "verify": {
-    "title": "Verifique",
-    "subtitle": "sumas de comprobación locales - _mychecksums",
-    "desc": "FFP - MD5 - ST5 contra audio en disco. Utilice LBDIR para el archivo sidecar oficial.",
-    "addFolders": "Añadir carpetas...",
-    "rail": {
-      "foldersLabel": "Carpetas",
-      "filterPlaceholder": "Filtrar carpetas...",
-      "noFolders": "No se han añadido carpetas",
-      "noMatches": "No hay coincidencias",
-      "verifyAll": "Verificar todas las carpetas",
-      "running": "Corriendo...",
-      "generate": "Generar sumas de comprobación",
-      "retrieve": "Recuperar de LB",
-      "addRoot": "Añadir carpeta raíz..."
-    },
     "stats": {
       "total": "Total",
       "pass": "Pase",
       "mismatch": "Desajuste",
       "missing": "Faltante",
-      "extra": "Más información en",
-      "ffp": "PFC",
-      "md5": "MD5"
+      "extra": "Más información en"
     },
     "toolbar": {
       "files": "Archivos",
@@ -259,14 +185,6 @@
       "openFinder": "Abrir en el Finder",
       "copyReport": "Copiar informe",
       "generateMissing": "Generar FFP que faltan"
-    },
-    "states": {
-      "pass": "Pase",
-      "mismatch": "Desajuste",
-      "fail": "Fallo: faltan archivos",
-      "incomplete": "Incompleto",
-      "shntool": "falta shntool",
-      "noChecksums": "No hay archivos de suma de comprobación"
     },
     "fileStates": {
       "pass": "Pase",
@@ -278,11 +196,6 @@
       "title": "Todos los archivos son correctos",
       "desc": "Los {{count}} archivos coinciden con sus sumas de verificación FFP y MD5. No hay nada que corregir aquí."
     },
-    "shntoolWarning": "shntool no está instalado",
-    "shntoolDesc": "Esta carpeta contiene archivos SHN. FFP/MD5 puede verificarse sin shntool, pero las comprobaciones de longitud por disco lo requieren.",
-    "verifyWithoutShntool": "Verificar sin shntool",
-    "emptyFolders": "Añadir carpetas y, a continuación, haga clic en Verificar todas las carpetas",
-    "clickToRun": "Haga clic en Verificar todas las carpetas para ejecutar",
     "showingProblems": "Mostrando archivos con problemas {{count}} -",
     "showAllCount": "mostrar todo {{count}}",
     "table": {
@@ -298,81 +211,8 @@
       "overall": "En general"
     },
     "toast": {
-      "foundFolders": "Carpetas {{count}} encontradas",
-      "noAudioFolders": "No se han encontrado carpetas de audio",
-      "scanFailed": "Error de escaneado",
-      "addFoldersFirst": "Añadir carpetas primero",
-      "verifyFailed": "Verificación fallida",
-      "checksumsGenerated": "Sumas de comprobación generadas...",
-      "generateFailed": "Generación fallida",
-      "retrieved": "Archivos lbdir {{count}} recuperados - verificando de nuevo...",
-      "nothingRetrieved": "Nada recuperado",
-      "retrieveFailed": "Recuperación fallida",
       "reportCopied": "Informe copiado",
       "copyFailed": "Error de copia"
-    }
-  },
-  "rename": {
-    "title": "Cambie el nombre de",
-    "subtitle": "Carpetas {{count}} - autocompletadas desde Lookup",
-    "desc": "Añadir (LB-XXXXX) a las carpetas verificadas. Reversible desde Actividad reciente durante 30 días.",
-    "goToLookup": "Ir a la búsqueda",
-    "noResults": "Aún no hay resultados",
-    "noResultsDesc": "Realice primero una búsqueda - los resultados se rellenan aquí automáticamente",
-    "filterAll": "Todos",
-    "states": {
-      "has_lb": "LB# ya está en el nombre",
-      "renamed": "Renombrado",
-      "needs_rename": "Cambiará el nombre",
-      "wrong_lb": "LB incorrecto - eliminar + renombrar",
-      "multiple_ids": "LBs múltiples - revisión",
-      "no_match": "No coincide"
-    },
-    "hints": {
-      "has_lb": "LB# ya está en el nombre de la carpeta",
-      "needs_rename": "Una coincidencia completa en la base de datos principal",
-      "multiple_ids": "{{count}} candidatos LBs - resolver a continuación"
-    },
-    "bulk": {
-      "selectedOf": "{{selected}} de {{total}} seleccionado",
-      "selectAllConfident": "Seleccionar todos los seguros",
-      "apply": "Aplicar {{count}} renombra",
-      "applying": "Aplicando..."
-    },
-    "table": {
-      "currentName": "Nombre actual",
-      "proposedName": "Nombre propuesto",
-      "lb": "LB#",
-      "state": "Estado"
-    },
-    "disambiguate": {
-      "title": "Desambiguar - elija uno",
-      "desc": "Múltiples números LB coinciden. Seleccione el correcto y, a continuación, haga clic en \"Pin selection\".",
-      "skip": "Saltar por ahora",
-      "pinned": "Anclado a {{lb}}",
-      "pin": "Selección de pines",
-      "unpin": "Desvincular",
-      "loading": "Resolviéndose…",
-      "standardize": "Estandarizar el nombre"
-    },
-    "dryrun": {
-      "title": "Avance de la carrera en seco",
-      "desc": "no se renombra nada hasta que se pulsa Aplicar seleccionado. Los cambios de nombre se escriben en rename_history y aparecen en Actividad reciente.",
-      "copyDiff": "Copiar dif...",
-      "exportPlan": "Plan de exportación..."
-    },
-    "toast": {
-      "noValidRenames": "No se ha seleccionado ningún cambio de nombre válido",
-      "applied": "Aplicado {{count}} renombra{{errors}}",
-      "applyFailed": "Solicitud fallida",
-      "diffCopied": "Diff copiado",
-      "copyFailed": "Error de copia",
-      "pinned": "Anclado {{lb}}",
-      "unpinned": "Sin vincular",
-      "pinFailed": "No se ha podido fijar",
-      "unpinFailed": "Error al desvincular",
-      "standardized": "Nombre estandarizado",
-      "standardizeFailed": "Estandarización fallida"
     }
   },
   "pipeline": {
@@ -598,7 +438,18 @@
       "copyToClipboard": "Copiar al portapapeles",
       "copyDiff": "Comparar diferencias",
       "loggedOnly": "Registrado en «rename_history».",
-      "apply": "Aplicar cambio de nombre"
+      "apply": "Aplicar cambio de nombre",
+      "disambiguate": {
+        "title": "Desambiguar - elija uno",
+        "desc": "Múltiples números LB coinciden. Seleccione el correcto y, a continuación, haga clic en \"Pin selection\".",
+        "skip": "Saltar por ahora",
+        "pinned": "Anclado a {{lb}}",
+        "pin": "Selección de pines",
+        "unpin": "Desvincular",
+        "loading": "Resolviéndose…",
+        "standardize": "Estandarizar el nombre",
+        "choose": "Elegir LB…"
+      }
     },
     "stepStates": {
       "pass": "Aceptar",
@@ -646,14 +497,13 @@
       "runsAfterBody": "Una vez que la búsqueda resuelve un número LB#, recuperamos el archivo lbdir*.txt de la caché del archivo y lo comparamos con los archivos del disco. Puedes descargarlo antes si lo deseas.",
       "loading": "Cargando…",
       "openFile": "Abrir lbdir.txt",
-      "fullScreen": "Pantalla completa de LBDIR →",
       "stats": {
         "total": "Total",
         "pass": "Aceptar",
         "missing": "Falta",
         "mismatch": "Incoherencia"
       },
-      "noLbdirFound": "No se ha encontrado ningún archivo lbdir*.txt. Intenta extraer la entrada de la pantalla LBDIR.",
+      "noLbdirFound": "No se ha encontrado ningún archivo lbdir*.txt. Intenta extraer la entrada y vuelve a escanear.",
       "archiveCleanTitle": "Archivo limpio",
       "archiveCleanBody": "Todos los archivos a los que se hace referencia en el sidecar oficial están presentes y coinciden. Esta carpeta está totalmente sincronizada.",
       "status": {
@@ -669,8 +519,10 @@
         "reconcileFailed": "Error al conciliar el escaneo",
         "applied": "Aplicado",
         "applyFailed": "Aplicación fallida",
-        "retrieveFailed": "Recuperar lo que ha fallado"
-      }
+        "retrieveFailed": "Recuperar lo que ha fallado",
+        "rescanFailed": "Error al reescanear"
+      },
+      "rescan": "Reescanear"
     },
     "autoCollect": "Recopilación automática",
     "autoCollectHint": "Cuando está activada, las carpetas que aparecen completamente en verde (verificación, búsqueda, directorio LB y cambio de nombre superados) se archivan automáticamente en la colección, sin necesidad de hacer clic en «Archivo».",

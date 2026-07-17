@@ -1,6 +1,8 @@
-import { create } from 'zustand'
+// Verify-step shared types. The standalone Verify screen (and its zustand
+// store) was removed — verify now runs only as a Pipeline stage — but these
+// types are still shared between the Pipeline stage content and the
+// VerifyDetail table component.
 
-export type FolderState = 'pass' | 'mismatch' | 'fail' | 'incomplete' | 'shntool' | 'no_checksums'
 export type CheckStatus = 'pass' | 'fail' | 'miss' | 'na'
 
 export interface FileRow {
@@ -16,38 +18,3 @@ export interface FileRow {
   on_disk:        boolean
   overall:        'pass' | 'fail' | 'missing' | 'extra'
 }
-
-export interface VerifyFolder {
-  folder:        string
-  mode:          string
-  status:        FolderState
-  total:         number
-  pass:          number
-  mismatch:      number
-  missing:       number
-  extra:         number
-  missing_types: string[]
-  files:         FileRow[]
-}
-
-interface VerifyStore {
-  results:      VerifyFolder[]
-  activeIdx:    number
-  showAll:      boolean
-  filter:       string
-  setResults:   (results: VerifyFolder[]) => void
-  setActiveIdx: (idx: number) => void
-  setShowAll:   (v: boolean) => void
-  setFilter:    (v: string) => void
-}
-
-export const useVerifyStore = create<VerifyStore>(set => ({
-  results:    [],
-  activeIdx:  0,
-  showAll:    false,
-  filter:     '',
-  setResults:   (results) => set({ results }),
-  setActiveIdx: (activeIdx) => set({ activeIdx }),
-  setShowAll:   (showAll) => set({ showAll }),
-  setFilter:    (filter) => set({ filter }),
-}))

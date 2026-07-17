@@ -1899,7 +1899,7 @@ frontend. Historical per-tab documentation lives in git history
 
 Second-generation GUI (primary, merged into main 2026-05-29) built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes a typed `window.api` surface: `flaskPort`, `flaskBase`, `platform` (plain values, not IPC calls) plus IPC handlers `pickFolders`, `pickDir`, `pickFile`, `openPath`, `saveFile`, `pickAndReadFile`, `pickAndReadFiles` — `pickFiles` (plural, no read-back) no longer exists under that name; use `pickAndReadFiles`. All screens are registered in `App.tsx` and routed via a sidebar nav. **All development happens here** — the legacy PyQt6 frontend was removed 2026-07-16.
 
-### Screens (24 files in `screens/`, drop-in registered via `App.tsx` routes)
+### Screens (20 files in `screens/`, drop-in registered via `App.tsx` routes)
 
 | Screen | File | Status |
 |--------|------|--------|
@@ -1914,12 +1914,8 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | ScreenSongs | `screens/ScreenSongs.tsx` | Song-centric browser at `/songs` (Library nav group; 2026-07-11, TODO-230). Debounced song search rail (`/api/songs?q=`), per-song performance table (`/api/songs/performances`): date, venue/city, event-type pill, take status, encore marker, recordings as LB deep-link buttons (pick pill for `pick_rank===1`, abs_grade letter). Sort: date (default) or best-first (rank-1 recording's grade). Curator-gated canonical-rename → `POST /api/songs/alias` (hidden for non-curators via `useSettingsStore.curatorMode`). |
 | ScreenFingerprint | `screens/ScreenFingerprint.tsx` | Setlist-fingerprinting curator review queue at `/fingerprint` (Curator nav group, gated; 2026-07-13, TODO-225). "Scan for matches" button runs `POST /api/fingerprint/scan`; expandable-row table (`GET /api/fingerprint/suggestions`) lists each suggestion's LB, raw entry date/location, matched show (date/venue/type pill), score %, matched/total song count, and an expand toggle revealing matched vs. missing song lists. Status filter chips (pending/dismissed/all). Curator-only Dismiss button → `POST /api/fingerprint/suggestions/dismiss`. Suggestions are never auto-applied — the curator hand-edits the entry's date via DB Editor after reviewing a match. |
 | ScreenThemes | `screens/ScreenThemes.tsx` | Done — mode/density/accent, frame theme (palette) + card style (framed/flat), typeface/font-size, custom color tokens |
-| ScreenPipeline | `screens/ScreenPipeline.tsx` | Done — folder queue, 5-step workflow (verify/lookup/lbdir/rename/collect), bulk-actions menu, Auto-run + Auto-rename toggles |
-| ScreenQuickLookup | `screens/ScreenQuickLookup.tsx` | Done — paste/clipboard/drop zone, per-row checksum results table |
-| ScreenLookup | `screens/ScreenLookup.tsx` | Done — 4-source input, summary + detail tables |
-| ScreenVerify | `screens/ScreenVerify.tsx` | Done — folder verify/generate/retrieve workflow |
-| ScreenRename | `screens/ScreenRename.tsx` | Done — consumes lookup results, applies bulk renames |
-| ScreenLBDIR | `screens/ScreenLBDIR.tsx` | Done — 4-pane check/retrieve/reconcile/extras |
+| ScreenPipeline | `screens/ScreenPipeline.tsx` | Done — folder queue, 5-step workflow (verify/lookup/lbdir/rename/collect), bulk-actions menu, Auto-run + Auto-rename toggles. 2026-07-16: absorbed the four standalone "Advanced tools" screens (ScreenVerify/ScreenLookup/ScreenRename/ScreenLBDIR deleted): lbdir stage gained a Re-scan button (`POST /api/lbdir/check` re-run anytime); rename stage gained the multi-LB disambiguation panel ("Choose LB" → `/api/folder_link` + `/api/lb_alias/resolve`, Pin/Standardize/Unpin) |
+| ScreenQuickLookup | `screens/ScreenQuickLookup.tsx` | Done — paste/clipboard/drop zone, per-row checksum results table; accepts a router-state `seed` (from Collection missing-LB flows) and auto-runs it on arrival |
 | ScreenAttachments | `screens/ScreenAttachments.tsx` | Done — LB rail, file list, text/HTML/image/binary viewer |
 | ScreenSpectrograms | `screens/ScreenSpectrograms.tsx` | Done — tool dots, batch generate, PNG viewer |
 | ScreenMap | `screens/ScreenMap.tsx` | Done — filter rail + browser map launcher |
@@ -1932,10 +1928,10 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 
 | Store | Purpose |
 |-------|---------|
-| `folderQueueStore.ts` | Canonical folder list shared across Pipeline, Verify, LBDIR, Spectrograms |
-| `lookupStore.ts` | Lookup results passed to Rename |
-| `verifyStore.ts` | Verify job state |
-| `lbdirStore.ts` | LBDIR job state |
+| `folderQueueStore.ts` | Canonical folder list shared across Pipeline, Library, Collection, Spectrograms |
+| `lookupStore.ts` | Lookup-step shared types only (store stripped 2026-07-16 with the standalone screens) |
+| `verifyStore.ts` | Verify-step shared types only (store stripped 2026-07-16) |
+| `lbdirStore.ts` | LBDIR-step shared types only (store stripped 2026-07-16) |
 | `spectrogramStore.ts` | Spectrogram job state |
 | `attachmentsStore.ts` | Attachments viewer state |
 | `scraperLogStore.ts` | Scraper screen per-tab live log lines (module-level, survives tab navigation) |

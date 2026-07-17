@@ -1,4 +1,9 @@
-import { create } from 'zustand'
+// Lookup-step shared types. The standalone Lookup and Rename screens (and
+// the zustand store that fed them — sources, folderList, filter, etc.) were
+// removed — lookup now runs only as a Pipeline stage, and quick one-off
+// lookups go through Quick Lookup — but these types are still shared
+// between the Pipeline stage content, the LookupDetail table component, and
+// Quick Lookup.
 
 export interface LookupDetail {
   checksum:       string
@@ -50,56 +55,3 @@ export interface LookupSummary {
   given:            number
   lb_numbers_found: number[]
 }
-
-export interface LookupSource {
-  kind:    'folder' | 'file' | 'listbox' | 'clipboard'
-  name:    string
-  content: string
-  active:  boolean
-  path?:   string  // full filesystem path, set for folder/file sources
-}
-
-export type LookupFilterState = 'matched' | 'incomplete' | 'notfound' | 'duplicate' | 'xref'
-
-interface LookupStoreState {
-  sources:      LookupSource[]
-  summary:      LookupSummary | null
-  detail:       LookupDetail[]
-  folderList:   string[]
-  filter:       LookupFilterState | 'all'
-  filterMy:     boolean
-  activeSource: number | null
-  setResult:     (summary: LookupSummary, detail: LookupDetail[]) => void
-  addSource:     (src: LookupSource) => void
-  removeSource:  (idx: number) => void
-  clearSources:  () => void
-  setFolderList: (folders: string[]) => void
-  setFilter:     (v: LookupFilterState | 'all') => void
-  setFilterMy:   (v: boolean) => void
-  setActiveSource: (idx: number | null) => void
-}
-
-export const useLookupStore = create<LookupStoreState>(set => ({
-  sources:      [],
-  summary:      null,
-  detail:       [],
-  folderList:   [],
-  filter:       'all',
-  filterMy:     true,
-  activeSource: null,
-  setResult:    (summary, detail) => set({ summary, detail }),
-  addSource:    src => set(state => ({
-    sources: [...state.sources, src],
-  })),
-  removeSource: idx => set(state => ({
-    sources: state.sources.filter((_, i) => i !== idx),
-    activeSource: state.activeSource === idx ? null
-      : state.activeSource !== null && state.activeSource > idx ? state.activeSource - 1
-      : state.activeSource,
-  })),
-  clearSources: () => set({ sources: [], summary: null, detail: [], folderList: [] }),
-  setFolderList: folders => set({ folderList: folders }),
-  setFilter:     (filter) => set({ filter }),
-  setFilterMy:   (filterMy) => set({ filterMy }),
-  setActiveSource: (activeSource) => set({ activeSource }),
-}))

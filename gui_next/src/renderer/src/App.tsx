@@ -21,10 +21,6 @@ import { ScreenBootlegs } from './screens/ScreenBootlegs'
 import { ScreenThemes } from './screens/ScreenThemes'
 import { ScreenMap } from './screens/ScreenMap'
 import { ScreenAttachments } from './screens/ScreenAttachments'
-import { ScreenVerify } from './screens/ScreenVerify'
-import { ScreenRename } from './screens/ScreenRename'
-import { ScreenLookup } from './screens/ScreenLookup'
-import { ScreenLBDIR } from './screens/ScreenLBDIR'
 import { ScreenSpectrograms } from './screens/ScreenSpectrograms'
 import { ScreenDbEditor } from './screens/ScreenDbEditor'
 import { ScreenScraper } from './screens/ScreenScraper'
@@ -263,14 +259,10 @@ export default function App(): React.JSX.Element {
         <KeepAlivePipeline />
         <Routes>
           <Route path="/"            element={<ScreenHome />} />
-          <Route path="/verify"      element={<ScreenVerify />} />
-          <Route path="/lookup"       element={<ScreenLookup />} />
           <Route path="/quicklookup" element={<ScreenQuickLookup />} />
           <Route path="/library"     element={<ScreenLibrary />} />
           <Route path="/tapematch"   element={<ScreenTapeMatch />} />
           <Route path="/songs"       element={<ScreenSongs />} />
-          <Route path="/rename"      element={<ScreenRename />} />
-          <Route path="/lbdir"       element={<ScreenLBDIR />} />
           <Route path="/collection"  element={<ScreenCollection />} />
           <Route path="/trading"     element={<ScreenTrading />} />
           <Route path="/sharing"     element={<ScreenSharing />} />

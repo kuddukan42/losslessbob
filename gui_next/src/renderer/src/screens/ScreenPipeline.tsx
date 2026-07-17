@@ -347,7 +347,6 @@ function LbdirStageContent({ row, onRowRefresh }: {
   onRowRefresh: (id: string) => void
 }): React.JSX.Element {
   const { t } = useTranslation()
-  const navigate = useNavigate()
   const [checkResult, setCheckResult]   = useState<CheckResult | null>(null)
   const [reconResult, setReconResult]   = useState<ReconcileResult | null>(null)
   const [reconSel,    setReconSel]      = useState<Set<string>>(new Set())
@@ -443,6 +442,23 @@ function LbdirStageContent({ row, onRowRefresh }: {
     finally { setBusy(false) }
   }, [row.folderPath, row.id, row.steps.lookup.lb_number, post, onRowRefresh, t])
 
+  // Re-scan: re-run the lbdir check for this folder without going through
+  // retrieve — usable even after the stage already completed, to pick up
+  // changes made on disk since the last check.
+  const handleRescan = useCallback(async () => {
+    setBusy(true)
+    try {
+      const lbHint = row.steps.lookup.lb_number ?? null
+      const d = await post('/api/lbdir/check', {
+        folders: [row.folderPath],
+        ...(lbHint !== null ? { lb_number_hint: lbHint } : {}),
+      }) as { results: CheckResult[] }
+      if (d.results?.[0]) setCheckResult(d.results[0])
+      onRowRefresh(row.id)
+    } catch { showToast(t('pipeline.lbdir.toast.rescanFailed'), false) }
+    finally { setBusy(false) }
+  }, [row.folderPath, row.id, row.steps.lookup.lb_number, post, onRowRefresh, t])
+
   if (row.steps.lbdir.status === 'mute') {
     return (
       <Banner tone="info" icon="info" title={t('pipeline.lbdir.runsAfterTitle')}
@@ -488,8 +504,8 @@ function LbdirStageContent({ row, onRowRefresh }: {
                 {t('pipeline.lbdir.openFile')}
               </Button>
             )}
-            <Button variant="ghost" size="sm" onClick={() => navigate('/lbdir')}>
-              {t('pipeline.lbdir.fullScreen')}
+            <Button variant="ghost" size="sm" icon="refresh" disabled={busy} onClick={handleRescan}>
+              {t('pipeline.lbdir.rescan')}
             </Button>
           </div>
 
@@ -871,6 +887,12 @@ function highlightLb(name: string, lb: string, strike?: boolean): React.JSX.Elem
   )
 }
 
+interface RenameDisambigState {
+  loading:   boolean
+  pinnedLb:  number | null
+  canonical: number[]
+}
+
 function RenameStageContent({ step, row, onRun, onRename }: {
   step: StepResult
   row: PipelineRow
@@ -880,12 +902,80 @@ function RenameStageContent({ step, row, onRun, onRename }: {
   const { t } = useTranslation()
   const [editing, setEditing] = useState(false)
   const [editValue, setEditValue] = useState('')
+  const [disambigOpen, setDisambigOpen]   = useState(false)
+  const [disambig,     setDisambig]       = useState<RenameDisambigState | null>(null)
+  const [disambigLbSel, setDisambigLbSel] = useState<number | null>(null)
+  const [disambigBusy,  setDisambigBusy]  = useState(false)
+  const [overrideProposed, setOverrideProposed] = useState<string | null>(null)
 
   const lb = row.steps.lookup.lb_number
   const lbTag = lb ? `LB-${String(lb).padStart(5, '0')}` : null
   const folderLbMatch = row.folderName.match(/LB-(\d+)/i)
   const folderLb = folderLbMatch ? `LB-${String(parseInt(folderLbMatch[1], 10)).padStart(5, '0')}` : null
   const hasWrongLb = !!(lbTag && folderLb && folderLb !== lbTag)
+  const candidates = row.steps.lookup.lb_numbers ?? []
+  const isMultiLb = candidates.length > 1
+
+  const handleToggleDisambig = useCallback(() => {
+    if (disambigOpen) { setDisambigOpen(false); return }
+    setDisambigOpen(true)
+    if (disambig) return
+    setDisambig({ loading: true, pinnedLb: null, canonical: candidates })
+    Promise.all([
+      fetch(`${BASE}/api/folder_link?path=${encodeURIComponent(row.folderPath)}`).then(r => r.json()),
+      fetch(`${BASE}/api/lb_alias/resolve?lbs=${candidates.join(',')}`).then(r => r.json()),
+    ]).then(([linkData, aliasData]: [any, any]) => {
+      const pinnedLb: number | null = typeof linkData.lb_number === 'number' ? linkData.lb_number : null
+      const canonical: number[] = Array.isArray(aliasData.canonical) && aliasData.canonical.length
+        ? aliasData.canonical : candidates
+      setDisambig({ loading: false, pinnedLb, canonical })
+      if (pinnedLb) setDisambigLbSel(pinnedLb)
+    }).catch(() => {
+      setDisambig({ loading: false, pinnedLb: null, canonical: candidates })
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [disambigOpen, disambig, candidates, row.folderPath])
+
+  const handlePin = useCallback(async (pickedLb: number) => {
+    setDisambigBusy(true)
+    try {
+      const resp = await fetch(`${BASE}/api/folder_link`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ folder_path: row.folderPath, lb_number: pickedLb, note: 'Pinned from pipeline rename' }),
+      })
+      const data = await resp.json() as { ok?: boolean; error?: string }
+      if (!data.ok) throw new Error(data.error)
+      setDisambig(prev => prev ? { ...prev, pinnedLb: pickedLb } : prev)
+      setDisambigOpen(false)
+      setOverrideProposed(null)
+      onRun(['lookup', 'rename'])
+    } catch { /* silent — disambig panel stays open for retry */ }
+    finally { setDisambigBusy(false) }
+  }, [row.folderPath, onRun])
+
+  const handleUnpin = useCallback(async () => {
+    setDisambigBusy(true)
+    try {
+      await fetch(`${BASE}/api/folder_link?path=${encodeURIComponent(row.folderPath)}`, { method: 'DELETE' })
+      setDisambig(prev => prev ? { ...prev, pinnedLb: null } : prev)
+      setDisambigLbSel(null)
+      onRun(['lookup', 'rename'])
+    } catch { /* silent */ }
+    finally { setDisambigBusy(false) }
+  }, [row.folderPath, onRun])
+
+  const handleStandardize = useCallback(async (pickedLb: number) => {
+    setDisambigBusy(true)
+    try {
+      const resp = await fetch(`${BASE}/api/folder_naming/standard/${pickedLb}`)
+      const data = await resp.json() as { standard_name?: string; error?: string }
+      if (!data.standard_name) throw new Error(data.error)
+      setOverrideProposed(data.standard_name)
+      setDisambigOpen(false)
+    } catch { /* silent */ }
+    finally { setDisambigBusy(false) }
+  }, [])
 
   if (step.status === 'mute') {
     return (
@@ -920,7 +1010,86 @@ function RenameStageContent({ step, row, onRun, onRename }: {
     )
   }
 
+  // Disambiguation panel — shown when the folder's checksums matched more than
+  // one LB entry with no single confident pick. Ported from the (now removed)
+  // standalone Rename screen's "multiple_ids" disambiguate flow.
+  const disambigPanel = disambigOpen && (
+    <div style={{
+      padding: '12px 14px', borderRadius: 8,
+      background: 'var(--lbb-info-bg)', border: '1px solid var(--lbb-info-bar)',
+    }}>
+      <div style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-info-fg)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
+        {t('pipeline.rename.disambiguate.title')}
+      </div>
+      {(!disambig || disambig.loading) ? (
+        <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>
+          {t('pipeline.rename.disambiguate.loading')}
+        </div>
+      ) : (
+        <>
+          {disambig.pinnedLb && (
+            <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-ok-fg)', marginBottom: 8 }}>
+              {t('pipeline.rename.disambiguate.pinned', { lb: `LB-${String(disambig.pinnedLb).padStart(5, '0')}` })}
+            </div>
+          )}
+          <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginBottom: 10 }}>
+            {t('pipeline.rename.disambiguate.desc')}
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 10 }}>
+            {disambig.canonical.map(cand => (
+              <button key={cand} onClick={() => setDisambigLbSel(cand)} style={{
+                padding: '4px 12px', borderRadius: 6, cursor: 'pointer', fontFamily: 'var(--lbb-mono)',
+                fontSize: 'var(--lbb-fs-12)', fontWeight: disambigLbSel === cand ? 700 : 500,
+                border: `1px solid ${disambigLbSel === cand ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)'}`,
+                background: disambigLbSel === cand ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
+                color: disambigLbSel === cand ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
+              }}>
+                {`LB-${String(cand).padStart(5, '0')}`}
+              </button>
+            ))}
+          </div>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+            <Button size="sm" variant="primary" disabled={disambigBusy || !disambigLbSel} onClick={() => disambigLbSel && handlePin(disambigLbSel)}>
+              {t('pipeline.rename.disambiguate.pin')}
+            </Button>
+            <Button size="sm" variant="secondary" disabled={disambigBusy || !disambigLbSel} onClick={() => disambigLbSel && handleStandardize(disambigLbSel)}>
+              {t('pipeline.rename.disambiguate.standardize')}
+            </Button>
+            {disambig.pinnedLb && (
+              <Button size="sm" variant="ghost" disabled={disambigBusy} onClick={handleUnpin}>
+                {t('pipeline.rename.disambiguate.unpin')}
+              </Button>
+            )}
+            <Button size="sm" variant="ghost" onClick={() => setDisambigOpen(false)}>
+              {t('pipeline.rename.disambiguate.skip')}
+            </Button>
+          </div>
+        </>
+      )}
+    </div>
+  )
+
   if (step.status === 'ok' || !step.proposed) {
+    if (isMultiLb && step.status !== 'ok') {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <StatusTag state="action" />
+            <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700, flex: 1 }}>{t('pipeline.rename.disambiguate.title')}</span>
+            <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup', 'rename'])}>{t('pipeline.rename.recheck')}</Button>
+          </div>
+          <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)' }}>
+            {t('pipeline.rename.disambiguate.desc')}
+          </div>
+          {!disambigOpen && (
+            <Button variant="secondary" size="sm" icon="search" onClick={handleToggleDisambig}>
+              {t('pipeline.rename.disambiguate.choose')}
+            </Button>
+          )}
+          {disambigPanel}
+        </div>
+      )
+    }
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--lbb-ok-fg)',
@@ -939,9 +1108,10 @@ function RenameStageContent({ step, row, onRun, onRename }: {
   }
 
   const title = hasWrongLb ? t('pipeline.rename.fixWrongLb') : t('pipeline.rename.reviewProposed')
+  const displayProposed = overrideProposed ?? step.proposed!
 
   const copyDiff = () => {
-    const target = editing ? editValue : step.proposed!
+    const target = editing ? editValue : displayProposed
     navigator.clipboard.writeText(`Current:  ${row.folderName}\nProposed: ${target}`)
   }
 
@@ -952,12 +1122,19 @@ function RenameStageContent({ step, row, onRun, onRename }: {
         <StatusTag state="action" style={{ flexShrink: 0 }} />
         <span style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', flex: 1, minWidth: 0 }}>{title}</span>
         {lbTag && <Pill tone="ok" soft dot style={{ flexShrink: 0, fontFamily: 'var(--lbb-mono)' }}>{lbTag}</Pill>}
+        {isMultiLb && (
+          <Button variant="ghost" size="sm" icon="search" onClick={handleToggleDisambig} style={{ flexShrink: 0 }}>
+            {t('pipeline.rename.disambiguate.choose')}
+          </Button>
+        )}
         {editing ? (
           <Button variant="ghost" size="sm" onClick={() => setEditing(false)} style={{ flexShrink: 0 }}>{t('pipeline.rename.cancel')}</Button>
         ) : (
-          <Button variant="ghost" size="sm" icon="rename" onClick={() => { setEditValue(step.proposed!); setEditing(true) }} style={{ flexShrink: 0 }}>{t('pipeline.rename.editName')}</Button>
+          <Button variant="ghost" size="sm" icon="rename" onClick={() => { setEditValue(displayProposed); setEditing(true) }} style={{ flexShrink: 0 }}>{t('pipeline.rename.editName')}</Button>
         )}
       </div>
+
+      {disambigPanel}
 
       {/* 2. Wrong-LB banner */}
       {hasWrongLb && (
@@ -999,7 +1176,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
           ) : (
             <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg)',
               fontWeight: 600, flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-              {lbTag ? highlightLb(step.proposed!, lbTag) : step.proposed}
+              {lbTag ? highlightLb(displayProposed, lbTag) : displayProposed}
             </span>
           )}
           <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-ok-fg)',
@@ -1025,7 +1202,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
       {/* Action buttons */}
       <div style={{ display: 'flex', gap: 8 }}>
         <Button variant="primary" size="sm" icon="check"
-          onClick={() => onRename(editing ? editValue : undefined)}>{t('pipeline.rename.apply')}</Button>
+          onClick={() => onRename(editing ? editValue : (overrideProposed ?? undefined))}>{t('pipeline.rename.apply')}</Button>
         <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup', 'rename'])}>{t('pipeline.rename.recheck')}</Button>
       </div>
     </div>
