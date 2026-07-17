@@ -89,6 +89,53 @@ class TestEntryDateToIso:
         from backend.geocoder import _entry_date_to_iso
         assert _entry_date_to_iso("not/a/date") is None
 
+    def test_public_alias_matches_private(self):
+        from backend.geocoder import _entry_date_to_iso, entry_date_to_iso
+        assert entry_date_to_iso is _entry_date_to_iso
+        assert entry_date_to_iso("7/28/00") == "2000-07-28"
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 1b. entry_date_month_key()
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestEntryDateMonthKey:
+    def test_full_date_2000s(self):
+        from backend.geocoder import entry_date_month_key
+        assert entry_date_month_key("7/28/00") == "2000-07"
+
+    def test_full_date_4digit_year(self):
+        from backend.geocoder import entry_date_month_key
+        assert entry_date_month_key("1/2/1978") == "1978-01"
+
+    def test_year_pivot_49_is_1900s(self):
+        from backend.geocoder import entry_date_month_key
+        assert entry_date_month_key("1/2/49") == "1949-01"
+
+    def test_year_pivot_48_is_2000s(self):
+        from backend.geocoder import entry_date_month_key
+        assert entry_date_month_key("1/2/48") == "2048-01"
+
+    def test_xx_day_partial_still_resolves_month(self):
+        from backend.geocoder import entry_date_month_key
+        assert entry_date_month_key("5/xx/87") == "1987-05"
+
+    def test_empty_string_returns_none(self):
+        from backend.geocoder import entry_date_month_key
+        assert entry_date_month_key("") is None
+
+    def test_wrong_part_count_returns_none(self):
+        from backend.geocoder import entry_date_month_key
+        assert entry_date_month_key("1/2") is None
+
+    def test_unparseable_returns_none(self):
+        from backend.geocoder import entry_date_month_key
+        assert entry_date_month_key("not/a/date") is None
+
+    def test_out_of_range_month_returns_none(self):
+        from backend.geocoder import entry_date_month_key
+        assert entry_date_month_key("13/1/87") is None
+
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # 2. _get_performance_location_string()
