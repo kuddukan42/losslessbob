@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-256: Gaps view — living Kokay list of uncirculated shows
+Priority: Medium
+Status: Done
+Added: 2026-07-17
+Closed: 2026-07-17
+Description: Read-only /gaps screen (year-by-year grid, colored by coverage) per instructions/FABLE_GAPS_VIEW.md. Bites: B1 date helpers, B2 gap_analysis.py + API, B3 ScreenGaps GUI, B4 docs/i18n. No new tables, no writes.
+Shipped B1-B4 same day (2026-07-17): backend/gap_analysis.py + 3 read-only routes (feature-detect olof_events), ScreenGaps at /gaps, i18n synced, docs updated. Live-DB check: 4,131 concert dates (matches spec's verified count), 3,797 covered / 34 partial / 287 gap / 13 future. See instructions/FABLE_GAPS_VIEW.md.
+
 TODO-253: Decide master-export handling of private-entry metadata (per-channel privacy call)
 Priority: High
 Status: Done

@@ -1,9 +1,15 @@
 
-TODO-256: Gaps view — living Kokay list of uncirculated shows
-Priority: Medium
+TODO-255: Staircase corroboration gate: consider hiss_median floor (boundary pass observed)
+Priority: Low
 Status: Open
 Added: 2026-07-17
-Description: Read-only /gaps screen (year-by-year grid, colored by coverage) per instructions/FABLE_GAPS_VIEW.md. Bites: B1 date helpers, B2 gap_analysis.py + API, B3 ScreenGaps GUI, B4 docs/i18n. No new tables, no writes.
+Description: 1995-12-09 rescore: 6083-6104 passed the corroboration gate at exactly hiss_frac 0.05 == min_hiss_frac with hiss_median .05 (noise level) — the frac floor has no median requirement, so noise-level hiss corroborates a staircase-relaxed fp merge. Candidate sweep: add a small hiss_median floor to the gate or raise min_hiss_frac. Requires calibration sweep vs frozen set + tj sign-off per CALIBRATION_PROGRESS protocol. Evidence in TODO-234 review doc. Related: [TODO-234].
+
+TODO-254: Corpus rescore batch in flight — run completion runbook when it drains
+Priority: High
+Status: Open
+Added: 2026-07-17
+Description: 561-date targeted rescore (rescore_queue_20260717.txt) launched 2026-07-17, detached setsid batch, ETA ~2026-07-20. When 561/561 done: follow RESCORE COMPLETION RUNBOOK at tail of tools/tapematch/CALIBRATION_PROGRESS.md (sync via -m backend.tapematch_sync, taper_attribution.recompute(), spot-checks, then close TODO-235 if lag_segments_json populated). If batch died, resume: cd tools/tapematch && ../../.venv/bin/python3 tapematch_session.py --batch rescore_queue_20260717.txt (detached; # done lines skip). Never run other live tapematch sessions concurrently. Related: [TODO-234] [TODO-235].
 
 TODO-235: Persist per-segment staircase lag curves in tapematch runs (unblocks TODO-233 pt2 A/B)
 Priority: Medium

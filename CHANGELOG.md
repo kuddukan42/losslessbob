@@ -22,6 +22,21 @@ Added: instructions/TODO-234_FAMILY_CONFLICT_REVIEW.md — evidence review of al
   conflict components; action A (3 curator rejects) applied, queue 22 → 18; actions B
   (same_as edge fixes) + C (lineage parser tie-break bug) ON HOLD pending tj; post-rescore
   validation checklist. TODO-234/235 stay Open: corpus rescore + validation remain.
+Session 2 (same day) — CORPUS RESCORE LAUNCHED + priority-date validation:
+Added: tools/tapematch/rescore_queue_20260717.txt — targeted 561-date rescore queue
+  (8 priority + 200 flip-signature + 353 stale pre-fp-column staircase dates; scope
+  rationale in CALIBRATION_PROGRESS.md); batch running detached (setsid), ETA ~07-20,
+  resumable via # done markers.
+Changed: tools/tapematch/CALIBRATION_PROGRESS.md — rescore launch note, priority-date
+  results, and a RESCORE COMPLETION RUNBOOK at the file tail (session briefing surfaces
+  it) for the next session to finish sync/recompute/spot-checks/bookkeeping;
+  instructions/TODO-234_FAMILY_CONFLICT_REVIEW.md — post-rescore validation DONE on live
+  re-runs: corroboration gate validated in the wild (1997-11-11 LB-01126 isolated), but
+  most expected splits did NOT happen (live evidence: windowed .95 on 1996-07-07, hiss
+  .62/.727 on 1993-02-07, plain-bar fp .50+ bridges) — dispositions await tj. Boundary
+  artifact logged: 1995-12-09 6083–6104 passed the gate at exactly hiss_frac 0.05.
+  Mid-batch tapematch_sync (2,032 dates / 5,811 families / 0 errors) +
+  taper_attribution.recompute() run; both must re-run after the queue drains.
 
 [2026-07-16] — refactor(gui): Advanced-tools screens removed; Pipeline absorbed the gaps
 Context: tj found the Advanced sidebar section (Verify/Lookup/Rename/LBDIR standalone
