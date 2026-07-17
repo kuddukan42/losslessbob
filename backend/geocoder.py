@@ -156,7 +156,7 @@ def _rate_limit_sleep() -> None:
 # Performances-table helpers
 # ---------------------------------------------------------------------------
 
-def _entry_date_to_iso(date_str: str) -> str | None:
+def entry_date_to_iso(date_str: str) -> str | None:
     """Convert an entries.date_str (M/D/YY) to YYYY-MM-DD for performances lookup.
 
     Returns None for partial dates containing 'xx' or for unparseable strings,
@@ -178,6 +178,40 @@ def _entry_date_to_iso(date_str: str) -> str | None:
         if year < 100:
             year = 1900 + year if year >= 49 else 2000 + year
         return f"{year:04d}-{month:02d}-{day:02d}"
+    except ValueError:
+        return None
+
+
+# Private alias — kept so existing geocoder-internal callers are untouched.
+_entry_date_to_iso = entry_date_to_iso
+
+
+def entry_date_month_key(date_str: str) -> str | None:
+    """Convert an entries.date_str (M/D/YY, possibly 'xx'-partial) to a 'YYYY-MM' key.
+
+    Used to match partial dates (e.g. ``'5/xx/87'``) against olof concert dates
+    within the same month, since the day is unknown. Full dates also convert
+    cleanly (they just carry more precision than the key uses).
+
+    Args:
+        date_str: LosslessBob date string, e.g. ``'5/xx/87'`` or ``'7/28/00'``.
+
+    Returns:
+        Month key string ``'YYYY-MM'``, or ``None`` if unparseable.
+    """
+    if not date_str:
+        return None
+    parts = date_str.split("/")
+    if len(parts) != 3:
+        return None
+    month_part, _day_part, year_part = parts
+    try:
+        month, year = int(month_part), int(year_part)
+        if year < 100:
+            year = 1900 + year if year >= 49 else 2000 + year
+        if not 1 <= month <= 12:
+            return None
+        return f"{year:04d}-{month:02d}"
     except ValueError:
         return None
 

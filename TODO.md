@@ -1,4 +1,10 @@
 
+TODO-256: Gaps view — living Kokay list of uncirculated shows
+Priority: Medium
+Status: Open
+Added: 2026-07-17
+Description: Read-only /gaps screen (year-by-year grid, colored by coverage) per instructions/FABLE_GAPS_VIEW.md. Bites: B1 date helpers, B2 gap_analysis.py + API, B3 ScreenGaps GUI, B4 docs/i18n. No new tables, no writes.
+
 TODO-235: Persist per-segment staircase lag curves in tapematch runs (unblocks TODO-233 pt2 A/B)
 Priority: Medium
 Status: Open
