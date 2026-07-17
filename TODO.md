@@ -1,10 +1,4 @@
 
-TODO-245: Import private LB entry metadata (Jeff's unpublished numbers)
-Priority: High
-Status: Open
-Added: 2026-07-15
-Description: 62 of the 92 site_inventory not_found URLs are /detail/LB-XXXXX.html pages (verified 2026-07-15: e.g. LB-00000, LB-09075, LB-09599, LB-10723, LB-14093, LB-08893/94) — "private" entries: Jeff assigned the numbers and wrote full metadata but deliberately never published them (friends-only, not for public www). They currently sit as blank rows; entries has 1,446 status='missing' rows (private + never-assigned holes; lb_missing has only 36 confirmed non-existent). tj holds copies of SOME private-entry metadata. Work: (1) inventory tj's holdings and map to the 62 numbers; (2) import into entries/checksums/entry_files with a provenance marker (came from private material, not scrape); (3) MANDATORY privacy flag so private metadata is excluded from every public surface (public repo derivatives, docs/schema.html Cloudflare deploy, archive.org uploads, any future published mirror) — friends-only channels decided per-channel; (4) reconcile the three absent populations (private / lb_missing / numbering holes) so the DB distinguishes them. Respect Jeff's intent: local + friends only, never on a public URL. Full context: instructions/FABLE_PLATFORM_ROADMAP.md §1. Related: [TODO-246].
-
 TODO-235: Persist per-segment staircase lag curves in tapematch runs (unblocks TODO-233 pt2 A/B)
 Priority: Medium
 Status: Open

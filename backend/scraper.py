@@ -239,9 +239,12 @@ def scrape_entry(
             "SELECT status FROM entries WHERE lb_number=?", (lb_number,)
         ).fetchone()
         if row is not None:
-            if row["status"] == "missing":
+            if row["status"] in ("missing", "private"):
                 # For live scrapes: always re-check — the page may have been added
-                # to the site since the entry was first marked missing.
+                # to the site since the entry was first marked missing, and
+                # formerly-private entries do get published later (TODO-245);
+                # a successful scrape's INSERT OR REPLACE then supersedes the
+                # private import (status→'ok', metadata_source→NULL).
                 # For local-page mode: skip only if no local file exists to read.
                 if use_local_pages and not local_page.exists():
                     return {"skipped": True}
