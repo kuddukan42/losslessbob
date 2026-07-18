@@ -1,3 +1,47 @@
+[2026-07-18] — feat(gui): Known Tapers curation widget on DB Editor (TODO-258)
+Added: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx — new "Known Tapers"
+  collapsible sidebar SideSection (losslessbob DB only, collapsed by default since
+  the builtin alias list is long). TaperPanel component: filterable/scrollable table
+  of the merged known-taper aliases with builtin/user origin tags (GET /api/tapers/
+  aliases), curator-gated inline add (alias -> canonical, POST) and remove-selected
+  (DELETE, with builtin-suppression), and a "Recompute derived data" button that
+  streams the chained POST /api/derived/recompute SSE (lineage -> attribution ->
+  picks -> song index) with per-step status dots. Local readSSE helper mirrors
+  OnboardingWizard's. Backend routes/curator gating all pre-existed (TODO-241) — this
+  is GUI-only. i18n: new dbeditor.tapers.* block (27 keys) in en.json, synced to
+  de/fr/es/it/nl via DeepL (same run also filled pre-existing locale gaps from
+  earlier features). node+renderer typecheck and production build PASS.
+Changed: PROJECT.md — ScreenDbEditor GUI-screens row now lists the Known Tapers panel.
+
+[2026-07-17] — feat(gui,backend): Show dossier / liner-notes export ships (TODO-257)
+Context: instructions/FABLE_SHOW_DOSSIER.md (FABLE_IDEAS §5, HIGH PRIORITY per tj
+  2026-07-13) written and shipped same day, bites B1/B2/B3/B5 (B4 = this entry). One
+  command renders everything the app knows about a date: rarity-flagged setlist,
+  sources grouped by TapeMatch family with taper credit/pick ranking/quality verdicts,
+  historical context, provenance footer. Verified against real data (1987-07-04
+  Dylan & The Dead show) — 17 source buckets, correct pick evidence and a correct
+  "live debut" rarity flag matching the olof_events notes text.
+Added: backend/dossier.py — build_dossier() assembly (feature-detected end to end;
+  fresh install degrades to a smaller valid dossier, never errors) + filter_dossier_
+  sections()/render_bbcode() presentation layer. Three routes in backend/app.py:
+  GET /api/dossier (JSON), /api/dossier/html (self-contained print-first Jinja render,
+  backend/templates/dossier.html — first template in the repo), /api/dossier/bbcode
+  (forum digest, shares the HTML route's filtered view so they can't drift).
+  channel='public' (default) reduces any private entries.status source to
+  {lb, private: true} only; channel='full' keeps everything; disk paths/collection/
+  friend data are never touched. gui_next: Library performance-lens row action +
+  DetailPanel ActionBar "Export dossier..." (components/library/actions.tsx registry),
+  new DossierExportModal.tsx (channel/section/format options, remembered via
+  useSettingsStore), Electron main-process dossier:printPdf IPC (hidden BrowserWindow
+  + webContents.printToPDF, HTML-download fallback outside Electron). i18n in all 6
+  locales. tests/test_dossier.py (11 tests).
+Fixed: backend/dossier.py — ambiguous-date detection was originally keyed off
+  entries.location (free text scraped per-recording, e.g. 9 different spellings of
+  the 1987-07-04 Sullivan Stadium show), which false-positived on nearly every
+  well-documented date; redesigned to key off the clean olof_events.venue field
+  instead, matching get_performances()'s existing trust in that source. Caught during
+  B1 verification against the real production DB, not by the unit tests.
+
 [2026-07-17] — feat(gui,backend): Gaps view — "the living Kokay list" ships (TODO-256)
 Context: instructions/complete/FABLE_GAPS_VIEW.md (written 2026-07-17, PLATFORM_ROADMAP
   §3) built and shipped same day, bites B1-B4. Read-only end to end: every olof_events

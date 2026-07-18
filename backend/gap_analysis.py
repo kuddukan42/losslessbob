@@ -25,7 +25,14 @@ log = logging.getLogger(__name__)
 
 # olof_events emits compound labels for festival-slot concerts (e.g.
 # "concert - outlaw music festival") — match both plain and compound.
-_CONCERT_TYPE_FILTER = "(event_type = 'concert' OR event_type LIKE 'concert - %')"
+# Some private rehearsal sessions (Rundown/NBC Studios, 1978-1980) are
+# mistyped event_type='concert' upstream because they logged a numbered
+# setlist; tour_name still says "... Rehearsals" for every event in those
+# segments, so exclude on that instead of trusting event_type alone.
+_CONCERT_TYPE_FILTER = (
+    "((event_type = 'concert' OR event_type LIKE 'concert - %') "
+    "AND tour_name NOT LIKE '%ehearsal%')"
+)
 
 
 def _table_exists(conn: sqlite3.Connection, table_name: str) -> bool:

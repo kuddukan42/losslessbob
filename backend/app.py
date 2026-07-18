@@ -17,6 +17,7 @@ from flask import (
     Response,
     abort,
     jsonify,
+    render_template,
     request,
     send_file,
     send_from_directory,
@@ -37,6 +38,7 @@ from backend import (
     site_crawler,
 )
 from backend import db as database
+from backend import dossier as _dossier
 from backend import gap_analysis as _gap_analysis
 from backend import setlist_fingerprint as _setlist_fingerprint
 from backend import setlistfm as setlistfm_mod
@@ -6089,6 +6091,95 @@ def create_app() -> Flask:
             return jsonify(_gap_analysis.get_date_detail(date_iso))
         except Exception as e:
             _log.exception("gaps_date failed for date_iso=%r", date_iso)
+            return jsonify({"error": str(e)}), 500
+
+    # ── Show dossier (TODO-257, instructions/FABLE_SHOW_DOSSIER.md) ────────────
+
+    @app.route("/api/dossier", methods=["GET"])
+    def dossier_json() -> Response:
+        """Assemble the show dossier for one date (spec D1).
+
+        Query params: date (required, YYYY-MM-DD), location (disambiguates a
+        multi-show date), channel ('public' default / 'full').
+        Returns the dossier JSON, or HTTP 300 with {ambiguous, candidates}
+        when location is required but not given.
+        """
+        try:
+            date_iso = request.args.get("date", "")
+            location = request.args.get("location") or None
+            channel = request.args.get("channel", "public")
+            result = _dossier.build_dossier(date_iso, location=location, channel=channel)
+            if result.get("ambiguous"):
+                return jsonify(result), 300
+            return jsonify(result)
+        except Exception as e:
+            _log.exception("dossier_json failed for date=%r", request.args.get("date"))
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/dossier/html", methods=["GET"])
+    def dossier_html() -> Response:
+        """Render the dossier as a self-contained, print-first HTML document (spec D3).
+
+        Query params: date, location?, channel? (as /api/dossier), plus
+        sections= (comma list of 'context'/'setlist' to include, default both)
+        and local_analysis= ('0' hides pick/quality/curated/family-confidence
+        and the recommendation, default shown).
+        Returns an HTML attachment, or HTTP 300 JSON when location is required.
+        """
+        try:
+            date_iso = request.args.get("date", "")
+            location = request.args.get("location") or None
+            channel = request.args.get("channel", "public")
+            result = _dossier.build_dossier(date_iso, location=location, channel=channel)
+            if result.get("ambiguous"):
+                return jsonify(result), 300
+
+            sections_param = request.args.get("sections")
+            sections = (
+                {s.strip() for s in sections_param.split(",") if s.strip()}
+                if sections_param else None
+            )
+            local_analysis_on = request.args.get("local_analysis", "1") not in ("0", "false", "False")
+            view = _dossier.filter_dossier_sections(
+                result, sections=sections, local_analysis=local_analysis_on
+            )
+            html = render_template("dossier.html", d=view)
+            return Response(
+                html,
+                mimetype="text/html",
+                headers={"Content-Disposition": f"attachment; filename=dossier-{date_iso}.html"},
+            )
+        except Exception as e:
+            _log.exception("dossier_html failed for date=%r", request.args.get("date"))
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/dossier/bbcode", methods=["GET"])
+    def dossier_bbcode() -> Response:
+        """Compact BBcode digest of the dossier for forum posts (spec D5).
+
+        Same query params as /api/dossier/html. Returns {text} — shares B1's
+        JSON via the same filtered view, so it can't drift from the HTML twin.
+        """
+        try:
+            date_iso = request.args.get("date", "")
+            location = request.args.get("location") or None
+            channel = request.args.get("channel", "public")
+            result = _dossier.build_dossier(date_iso, location=location, channel=channel)
+            if result.get("ambiguous"):
+                return jsonify(result), 300
+
+            sections_param = request.args.get("sections")
+            sections = (
+                {s.strip() for s in sections_param.split(",") if s.strip()}
+                if sections_param else None
+            )
+            local_analysis_on = request.args.get("local_analysis", "1") not in ("0", "false", "False")
+            view = _dossier.filter_dossier_sections(
+                result, sections=sections, local_analysis=local_analysis_on
+            )
+            return jsonify({"text": _dossier.render_bbcode(view)})
+        except Exception as e:
+            _log.exception("dossier_bbcode failed for date=%r", request.args.get("date"))
             return jsonify({"error": str(e)}), 500
 
     def _find_master_release(_req):

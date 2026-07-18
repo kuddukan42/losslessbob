@@ -78,6 +78,13 @@ catalog). `checksums.xref` = cross-reference entry (not primary). Current touchp
 
 ## 3. Gaps view — "the living Kokay list"
 
+> ✅ **SHIPPED** (2026-07-17, TODO-256) — B1-B4 all landed (date helpers,
+> `backend/gap_analysis.py` + 3 read-only routes, `ScreenGaps` at `/gaps`, docs/i18n).
+> Live-DB check at ship time: 4,131 concert dates, 3,797 covered / 34 partial / 287 gap /
+> 13 future (gap count lower than the 07-15 estimate below — the TODO-245 private-LB
+> import landed in between and now covers some former-gap dates). Spec in
+> `FABLE_GAPS_VIEW.md` for the bite-level detail; §4/§6 hooks noted there remain open.
+
 **Idea.** Les Kokay's uncirculated-shows list, as a self-updating view instead of a
 document nobody has received in years. Absence made visible.
 
@@ -127,6 +134,8 @@ expected <5% of the pile.
 ---
 
 ## 5. Preservation stack — the Jeff-continuity problem
+
+> 📋 **SPEC WRITTEN** (2026-07-17) — expanded into `FABLE_PRESERVATION_STACK.md`; execute from there.
 
 **Context.** losslessbob.com has had ≥2 extended outages with scarce updates; Jeff is
 tired (fewer ratings/comments); he wrote his own site tooling and is presumably the

@@ -1113,6 +1113,32 @@
       "noResults": "La requête n’a retourné aucune ligne.",
       "truncated": "(limité à 500 lignes)",
       "error": "Erreur : {{msg}}"
+    },
+    "tapers": {
+      "title": "Enregistreurs connus",
+      "aliasCol": "Alias",
+      "canonicalCol": "Canonical",
+      "originBuiltin": "intégré",
+      "originUser": "utilisateur",
+      "empty": "Aucun pseudonyme de « taper » ne correspond.",
+      "filterPlaceholder": "Alias de filtres…",
+      "count": "{{merged}} alias · {{user}} ajoutés par l'utilisateur",
+      "readOnly": " (en lecture seule — intervention d'un conservateur requise)",
+      "aliasPlaceholder": "identifiant / alias",
+      "canonicalPlaceholder": "taper canonique",
+      "add": "Ajouter",
+      "addHint": "Ajouter un alias d'enregistreur connu (réservé aux conservateurs). Associe un identifiant brut à un enregistreur canonique.",
+      "remove": "Supprimer",
+      "removeHint": "Supprimer l'alias sélectionné ou masquer un alias intégré (réservé aux conservateurs).",
+      "reload": "Actualiser",
+      "saved": "Ajout de {{alias}} → {{canonical}}.",
+      "removed": "Suppression de l'alias {{alias}}.",
+      "removeConfirm": "Faut-il supprimer l'alias « {{alias}} » ?",
+      "recompute": "Recalculer les données dérivées",
+      "recomputeHint": "Réévalue chaque entrée par rapport à la liste actuelle des enregistreurs (filière → attribution → sélections → index des morceaux). Fonctionne uniquement sur vos tables dérivées locales.",
+      "recomputing": "Recalcul en cours…",
+      "recomputeDone": "Recalcul terminé.",
+      "recomputeError": "Échec du recalcul : {{msg}}"
     }
   },
   "quickLookup": {
@@ -1228,7 +1254,8 @@
       "qbtAddOwned": "Ajouter « owned » à qBittorrent",
       "createTorrent": "Créer un torrent…",
       "wishlistGaps_one": "Source manquante dans la liste de souhaits",
-      "wishlistGaps_other": "Sources manquantes dans la liste de souhaits"
+      "wishlistGaps_other": "Sources manquantes dans la liste de souhaits",
+      "dossier": "Exporter le dossier…"
     },
     "groups": {
       "acquire": "Acquire",
@@ -1568,6 +1595,24 @@
       "needsReview": "TapeMatch a signalé ce regroupement — survolez le badge pour connaître la raison précise",
       "familyBest": "Version la mieux notée de la gamme TapeMatch",
       "curated": "Figurant dans la liste des coups de cœur de ce curateur"
+    },
+    "dossier": {
+      "title": "Exporter le dossier de présentation",
+      "channel": "Chaîne",
+      "channelPublic": "Public",
+      "channelFull": "Accès complet (réservé aux amis)",
+      "sections": "Inclure",
+      "sectionContext": "Contexte historique",
+      "sectionSetlist": "Setlist",
+      "sectionLocalAnalysis": "Analyse locale (sélection, qualité, confiance de la famille)",
+      "format": "Format",
+      "cancel": "Annuler",
+      "export": "Exporter",
+      "exporting": "Exportation en cours…",
+      "toastExported": "Dossier exporté",
+      "toastPdfFallback": "PDF indisponible en dehors de l'application — téléchargement au format HTML à la place",
+      "toastAmbiguous": "Cette date comporte plusieurs concerts — ouvrez-la depuis la Bibliothèque pour lever toute ambiguïté",
+      "toastFailed": "Échec de l'exportation du dossier"
     }
   },
   "tapematch": {

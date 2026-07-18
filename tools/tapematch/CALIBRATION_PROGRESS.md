@@ -836,3 +836,73 @@ committed config (`fingerprint.staircase_corroboration`); scope stays source, st
 stays 0.40. New committed-config frozen baseline: tp=671 fp=9 (was tp=684 fp=9). Rationale:
 surgical variant, directly enforces "fingerprint is confirmatory-only" in the relaxed band;
 victims are exclusively fp-only zero-corroboration pairs.
+
+## CORPUS RESCORE LAUNCHED (2026-07-17) — TODO-234/235 targeted rescore
+
+Scope decision: NOT all 2,136 crawled dates — the corroboration gate can only change
+verdicts on staircase-relaxed pairs, and lag-segment persistence (TODO-235) only matters
+for staircase-flagged sources. Rescore population derived from observations.db latest_pairs:
+
+- **8 priority dates**: the 7 TODO-234 validation dates + the 1997-11-11 hazard date.
+- **200 flip-signature dates** (558 pairs): same_family carried solely by relaxed fp
+  (fp .40–.50, corr<.05, windowed<.05, hiss<.05, staircase-flagged side) — the exact
+  population the gate blocks.
+- **353 stale dates**: staircase same_family pairs with fp_score NULL (pre-fp-column
+  runs) — unassessable cached, need live re-runs for authoritative verdicts + lag curves.
+
+Queue: `rescore_queue_20260717.txt` (561 dates, resumable `# done` markers), running via
+`tapematch_session.py --batch`, log `logs/rescore_20260717.log`. ~5–13 min/date ⇒ ~3 days
+wall. Post-run: tapematch_sync + taper_attribution.recompute() + TODO-234 validation
+checklist (instructions/TODO-234_FAMILY_CONFLICT_REVIEW.md).
+
+Priority-date results (2026-07-17, first 8 runs; full detail in the TODO-234 doc):
+- **Gate validated in the wild**: 1997-11-11 LB-01126 no longer merges (isolated family).
+- Most TODO-234 expected splits did NOT occur — live runs surfaced corroborating evidence
+  the cached replay lacked (windowed .95 on 1996-07-07; hiss merges .62/.727 on
+  1993-02-07; plain-bar fp .50–.54 bridges on 1996-05-16 / 1997-04-05). Several
+  dispositions likely flip from over-merge to label review — tj call.
+- **Gate boundary observation**: 1995-12-09 6083–6104 passed corroboration at exactly
+  hiss_frac 0.05 == min_hiss_frac floor with hiss_median .05 (noise-level). The floor has
+  no median requirement — candidate future sweep: pair the frac floor with a small median
+  floor, or raise min_hiss_frac slightly. NOT changed (needs a calibration sweep).
+- tapematch_sync (2,032 dates / 5,811 families / 0 errors) + recompute run mid-batch.
+  Re-run both after the full 561-date queue drains.
+
+## RESCORE COMPLETION RUNBOOK (for the next session — batch ETA ~2026-07-20)
+
+All commands from repo root; Python is ALWAYS `.venv/bin/python3`. Never start any other
+live tapematch run (session, crawl, /tapematch-batch) while the batch is running.
+
+1. **Is the batch still running?**
+   `pgrep -af "tapematch_session.py --batch"` and
+   `grep -c "# done" tools/tapematch/rescore_queue_20260717.txt` (target 561).
+   Log: `tools/tapematch/logs/rescore_20260717.log`.
+2. **If it died early** (machine reboot etc.): resume with the SAME queue file — done
+   lines are skipped automatically:
+   `cd tools/tapematch && ../../.venv/bin/python3 tapematch_session.py --batch rescore_queue_20260717.txt`
+   (detach it: nohup/background). Dates exiting rc=2/3 (sources missing on disk) are
+   marked done and skipped — that is normal, not a failure.
+3. **When the queue is drained** (561/561 done):
+   a. `.venv/bin/python3 -m backend.tapematch_sync`  (NOT `python backend/tapematch_sync.py`
+      — direct-path invocation fails on imports). Expect 0 errors; families_written ~5.8k.
+   b. `.venv/bin/python3 -c "from backend.taper_attribution import recompute; import json; print(json.dumps(recompute(), indent=2, default=str))"`
+   c. Check the conflict queue: `SELECT COUNT(*) FROM taper_attributions WHERE conflict=1`
+      on data/losslessbob.db. NOTE: this counts ALL conflicts (~48 pre-drain); the
+      TODO-234 series-vs-series subset was 18. It will NOT reach 0 — that expectation
+      died with the priority-date validation (families held on real evidence; see the
+      TODO-234 doc). Don't chase 0; report the number.
+   d. Spot-check ~3 flip-signature dates (grep `flip-sig` in the queue): confirm their
+      zero-corroboration fp-only merges split, and no new merge appears with
+      fp .40–.47 / windowed<.05 / hiss<.05 (that signature must now be blocked).
+4. **Bookkeeping** (/session-close): CHANGELOG entry for the completed rescore;
+   TODO-235 → DONE if lag_segments_json is populated for rescored staircase dates
+   (`SELECT COUNT(*) FROM sources WHERE lag_segments_json IS NOT NULL` in
+   tools/tapematch/observations.db — was 0 pre-rescore) — that unblocks TODO-233 pt2.
+   TODO-234 stays OPEN: it now needs tj decisions, not compute.
+5. **Waiting on tj (do NOT do these unprompted)**: (i) dispositions for the surviving
+   TODO-234 families — hand-split vs flip to label review (evidence table in
+   instructions/TODO-234_FAMILY_CONFLICT_REVIEW.md); (ii) gate-floor tweak
+   (min_hiss_frac has no median requirement — needs a calibration sweep + sign-off);
+   (iii) held actions B (same_as edge fixes) and C (lineage parser tie-break).
+6. The rescored runs add to the missing-analysis backlog — a later
+   `triage_analysis.py --apply` + `/tapematch-batch` pass is expected, batch size 5.

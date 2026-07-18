@@ -55,6 +55,8 @@ losslessbob/
 │   ├── resources/
 │   │   ├── map.html          # Leaflet map page served at GET /map; fetches /api/map/data
 │   │   └── leaflet/          # Bundled Leaflet 1.9.4 + markercluster 1.5.3 + leaflet.heat 0.2.0 assets
+│   ├── templates/            # Flask's default Jinja template dir — first template in the repo (TODO-257)
+│   │   └── dossier.html      # Show dossier: self-contained, print-first HTML render (spec D3)
 │   ├── admin.html            # Mobile-friendly admin control panel (served at /admin)
 │   ├── db.py                 # SQLite layer, checksum parsing, search
 │   ├── db_queue.py           # DB-09: DatabaseWriteQueue — single writer thread, serialises all writes
@@ -88,6 +90,7 @@ losslessbob/
 │   ├── taper_fingerprints.py # Layer 2 vocabulary fingerprints (TODO-214): log-odds profiles + 3-gate infer; LAYER2_ENABLED=False pending precision sign-off
 │   ├── song_index.py         # Song-centric index: song_canonical seeding + song_performances recompute (TODO-230)
 │   ├── gap_analysis.py       # Gaps view (TODO-256): live coverage classifier, no derived table — olof_events vs entries
+│   ├── dossier.py            # Show dossier (TODO-257): build_dossier() assembly + filter_dossier_sections/render_bbcode presentation layer
 │   ├── setlist_fingerprint.py # Setlist fingerprinting: score entries.setlist vs olof_songs, curator suggestion queue (TODO-225)
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
@@ -128,7 +131,7 @@ losslessbob/
 │       └── renderer/src/
 │           ├── App.tsx, main.tsx, store.ts, i18n.ts, index.css
 │           ├── components/   # AppShell, EvidenceList, OnboardingWizard, table.tsx, primitives.tsx, etc.
-│           │   ├── library/  # actions.tsx, DetailPanel.tsx (Library screen shared pieces)
+│           │   ├── library/  # actions.tsx, DetailPanel.tsx, DossierExportModal.tsx (Library screen shared pieces)
 │           │   └── pipeline/ # PipelineParts, LookupDetail, VerifyDetail, LbdirDetail, CollectDetail, ConfirmDialog
 │           ├── screens/      # 24 ScreenXxx.tsx components — see GUI (Next) screens table
 │           ├── lib/          # zustand stores + shared helpers — see GUI (Next) shared stores table
@@ -162,6 +165,7 @@ losslessbob/
 │   ├── test_setlist_fingerprint.py # backend/setlist_fingerprint.py: candidate-entry matching (TODO-225)
 │   ├── test_song_index.py    # backend/song_index.py: song-centric index (LISTENING §3, TODO-230)
 │   ├── test_gap_analysis.py  # backend/gap_analysis.py: classify_date + summary/year/date routes (TODO-256)
+│   ├── test_dossier.py       # backend/dossier.py: fresh-install degrade, channel gating, rarity flags, ambiguous-date, family grouping, bbcode digest (TODO-257)
 │   ├── test_show_picks.py    # concert_ranker.picks: one date fixture per §4 scoring term
 │   ├── test_picks_tonight.py # LISTENING §9 "this night in Dylan history"
 │   ├── test_library_picks_api.py # FABLE_UNIFIED_RANKING phases 3-4: Library payload extension
@@ -1319,6 +1323,13 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET | `/api/gaps/summary` | Year-by-year coverage summary, computed live (no derived table — `backend/gap_analysis.py`). Every `olof_events` concert date classified `covered`/`partial`/`gap`/`future` against `entries` resolved via `geocoder.entry_date_to_iso`/`entry_date_month_key`; nonexistent-status `lb_master` rows never count as coverage, private/missing do. Returns `{available, generated_at, totals, years: [{year, shows, covered, partial, gap, future}]}`; `available: false` (HTTP 200) when `olof_events` is absent. |
 | GET | `/api/gaps/year/<year>` | Per-date breakdown for one year: `{dates: [{date_iso, coverage, events, lb_numbers, partial_lb_numbers}]}` — same-date events grouped (two-show days = one cell). |
 | GET | `/api/gaps/date/<iso>` | Drill-down for one date: full `olof_events` rows, exact-date `entries` (lb_number/rating/status/taper_name), month-partial candidate entries, `recording_families` on that date if the table exists. |
+
+### Show Dossier (TODO-257, `instructions/FABLE_SHOW_DOSSIER.md`)
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/dossier?date=&location?=&channel?=` | `backend.dossier.build_dossier()` — everything the app knows about one date: show identity, historical context (`olof_chronicle`/bobtalk/notes/lineup), rarity-flagged setlist (`song_performances` all-time counts; `only`/`first`/`last`/`rare` at ≤10 performances), sources grouped by `recording_families`/`tapematch_family_meta` with taper credit (`taper_attributions`, conflicted rows skipped), lineage notes (`entry_lineage`), pick ranking + evidence (`show_picks`), quality verdicts (`quality_recording_scores`), curated-list endorsements, alt-fileset counts (`checksums` xref), and a rank-1 `recommendation`. Every section is feature-detected and omitted (never null-faked) when its source table is absent or empty — a fresh install still returns a valid, smaller dossier. Ambiguity is detected via distinct `olof_events.venue` values for the date (not `entries.location`, which is noisy free text with many spellings of the same real venue) — HTTP 300 with `{ambiguous, date_iso, candidates}` when more than one exists and `location` wasn't given. `channel='public'` (default) reduces any `entries.status='private'` source to `{lb, private: true}` only; `channel='full'` includes everything. Disk paths, collection ownership, friend data and wishlists are never touched. |
+| GET | `/api/dossier/html` | Same params as `/api/dossier` plus `sections?=` and `local_analysis?=`. Self-contained, print-first HTML render (`backend/templates/dossier.html`, Flask's built-in Jinja — first template in the repo) via `backend.dossier.filter_dossier_sections()`. `sections=context,setlist` toggles those two sections; `local_analysis=0` strips pick/quality/curated/family-confidence and the recommendation, leaving outward-facing facts only. Returned as an HTML attachment (`dossier-<date>.html`); zero external URLs, `@media print` rules for clean pagination. |
+| GET | `/api/dossier/bbcode` | Same params as `/api/dossier/html`. Compact BBcode digest (`backend.dossier.render_bbcode()`) for forum posts — shares the same filtered view as the HTML route so the two can never disagree. Returns `{text}`. |
 | GET | `/api/picks/for/<lb>` | One LB's `show_picks` row: `{concert_date, lb_number, pick_score, pick_rank, evidence, computed_at}` with `evidence` parsed from `evidence_json` (F3 record shape). 204 when no row (pre-recompute, or entry has no usable date). Feeds DetailPanel's Picks tab / `EvidenceList`. |
 | GET | `/api/picks?date=` | All `show_picks` rows for one ISO date (`YYYY-MM-DD`, matched on `concert_date_iso`), rank-ordered, evidence parsed (LISTENING §9). |
 | GET | `/api/picks/tonight` | Rank-1 picks whose `concert_date_iso` falls on today's month-day across all years (`?mmdd=MM-DD` override for testing), best `pick_score` first. Returns `{mmdd, candidates: [{lb_number, year, concert_date_iso, location, rating, pick_score, description}]}`; empty candidates is a normal 200. Feeds the Home "Tonight in Dylan history" card. |
@@ -1932,7 +1943,7 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | ScreenAttachments | `screens/ScreenAttachments.tsx` | Done — LB rail, file list, text/HTML/image/binary viewer |
 | ScreenSpectrograms | `screens/ScreenSpectrograms.tsx` | Done — tool dots, batch generate, PNG viewer |
 | ScreenMap | `screens/ScreenMap.tsx` | Done — filter rail + browser map launcher |
-| ScreenDbEditor | `screens/ScreenDbEditor.tsx` | Done — multi-DB (`losslessbob`/`batchverify`/`tapematch`) table browser, query console, curator-gated edit/delete/export at `/dbeditor` |
+| ScreenDbEditor | `screens/ScreenDbEditor.tsx` | Done — multi-DB (`losslessbob`/`batchverify`/`tapematch`) table browser, query console, curator-gated edit/delete/export at `/dbeditor`. Sidebar side-panels (losslessbob DB only): DB Integrity, LB Aliases, and **Known Tapers** (TODO-258) — a filterable list of merged known-taper aliases with builtin/user origin tags (`/api/tapers/aliases`), curator-gated inline add + remove, and a "Recompute derived data" button that streams the chained `/api/derived/recompute` SSE with per-step status dots. |
 | ScreenScraper | `screens/ScreenScraper.tsx` | Done — curator-gated (`CuratorRoute`) at `/scraper`: site crawler, entry scraper, bootleg catalog, per-tab live log (`scraperLogStore`) |
 | ScreenSharing | `screens/ScreenSharing.tsx` | Done — Cloudflare Tunnel file-sharing at `/sharing`: create/list/revoke shares, copy share URL |
 | ScreenTrading | `screens/ScreenTrading.tsx` | Done — collection trading at `/trading`: export `.lbcollection`, import/manage friend collections, compare diffs |

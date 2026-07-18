@@ -1113,6 +1113,32 @@
       "noResults": "La query non ha restituito righe.",
       "truncated": "(limitato a 500 righe)",
       "error": "Errore: {{msg}}"
+    },
+    "tapers": {
+      "title": "Taper noti",
+      "aliasCol": "Alias",
+      "canonicalCol": "Canonical",
+      "originBuiltin": "integrato",
+      "originUser": "utente",
+      "empty": "Non sono stati trovati alias corrispondenti.",
+      "filterPlaceholder": "Alias dei filtri…",
+      "count": "Alias {{merged}} · {{user}} aggiunti dall'utente",
+      "readOnly": " (sola lettura — è richiesta la presenza di un curatore)",
+      "aliasPlaceholder": "handle / alias",
+      "canonicalPlaceholder": "taper canonico",
+      "add": "Aggiungi",
+      "addHint": "Aggiungi un alias di taper noto (solo per i curatori). Associa un identificatore grezzo a un taper canonico.",
+      "remove": "Rimuovi",
+      "removeHint": "Rimuovi l'alias selezionato oppure nascondi uno di quelli predefiniti (solo per i curatori).",
+      "reload": "Aggiorna",
+      "saved": "Aggiunto {{alias}} → {{canonical}}.",
+      "removed": "Rimosso l'alias {{alias}}.",
+      "removeConfirm": "Rimuovere l'alias del taper «{{alias}}»?",
+      "recompute": "Ricalcolo dei dati derivati",
+      "recomputeHint": "Rivaluta ogni voce in base all'elenco attuale dei taper (lineaggio → attribuzione → brani selezionati → indice dei brani). Funziona solo sulle tabelle derivate locali.",
+      "recomputing": "Ricalcolo in corso…",
+      "recomputeDone": "Ricalcolo completato.",
+      "recomputeError": "Errore di ricalcolo: {{msg}}"
     }
   },
   "quickLookup": {
@@ -1228,7 +1254,8 @@
       "qbtAddOwned": "Aggiungi \"di proprietà\" a qBittorrent",
       "createTorrent": "Crea torrent…",
       "wishlistGaps_one": "Fonte mancante nella lista dei desideri",
-      "wishlistGaps_other": "Fonti mancanti nella lista dei desideri"
+      "wishlistGaps_other": "Fonti mancanti nella lista dei desideri",
+      "dossier": "Esporta dossier…"
     },
     "groups": {
       "acquire": "Acquire",
@@ -1568,6 +1595,24 @@
       "needsReview": "TapeMatch ha segnalato questo raggruppamento: passa il mouse sul badge per visualizzare il motivo specifico",
       "familyBest": "La versione più apprezzata della famiglia TapeMatch",
       "curated": "Presente nell'elenco delle scelte del curatore"
+    },
+    "dossier": {
+      "title": "Esporta il dossier della presentazione",
+      "channel": "Canale",
+      "channelPublic": "Pubblico",
+      "channelFull": "Completa (solo per gli amici)",
+      "sections": "Includi",
+      "sectionContext": "Contesto storico",
+      "sectionSetlist": "Setlist",
+      "sectionLocalAnalysis": "Analisi locale (selezioni, qualità, affidabilità della famiglia)",
+      "format": "Formato",
+      "cancel": "Annulla",
+      "export": "Esporta",
+      "exporting": "Esportazione in corso…",
+      "toastExported": "Dossier esportato",
+      "toastPdfFallback": "PDF non disponibile al di fuori dell’app — scaricato invece in formato HTML",
+      "toastAmbiguous": "Questa data presenta più di un evento: aprila dalla Libreria per chiarire quale sia quello corretto",
+      "toastFailed": "Esportazione del dossier non riuscita"
     }
   },
   "tapematch": {

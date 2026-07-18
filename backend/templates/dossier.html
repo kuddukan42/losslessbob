@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ d.show.date_disp | default(d.show.date_iso) }}{% if d.show.venue %} — {{ d.show.venue }}{% endif %} — LosslessBob dossier</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --rule: #ddd;
+    --paper: #ffffff;
+    --accent: #7a3b12;
+    --tint: #f6f3ee;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2.5rem 1.5rem 4rem;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.5;
+  }
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  header.masthead {
+    border-bottom: 3px double var(--ink);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  header.masthead .kicker {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+  }
+  h1 {
+    margin: 0 0 0.15rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+  }
+  .show-meta {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .show-meta .sep { margin: 0 0.4em; }
+  section { margin: 1.75rem 0; page-break-inside: avoid; }
+  h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.3rem;
+    margin: 0 0 0.75rem;
+  }
+  .context-block { font-size: 0.95rem; }
+  .context-block p { margin: 0 0 0.75rem; white-space: pre-line; }
+  .context-block .label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+  .bobtalk {
+    border-left: 3px solid var(--accent);
+    padding: 0.15rem 0 0.15rem 1rem;
+    font-style: italic;
+  }
+  ol.setlist { list-style: none; margin: 0; padding: 0; counter-reset: song; }
+  ol.setlist li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.95rem;
+    page-break-inside: avoid;
+  }
+  ol.setlist li .pos {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--muted);
+    font-size: 0.8rem;
+    min-width: 1.6em;
+    text-align: right;
+  }
+  ol.setlist li .song-title { flex: 1; }
+  ol.setlist li .song-sub {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    display: block;
+  }
+  .rarity-badge {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 3px;
+    padding: 0.08em 0.45em;
+    white-space: nowrap;
+  }
+  .encore-tag {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.68rem;
+    color: var(--muted);
+  }
+  .family {
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 0.9rem 1rem;
+    margin-bottom: 1rem;
+    page-break-inside: avoid;
+  }
+  .family-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .family-head .flag {
+    color: #a33;
+    font-weight: 600;
+  }
+  .source {
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .source:first-child { border-top: none; padding-top: 0; }
+  .source-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .source-head .lb {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+  }
+  .badge {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.72rem;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.05em 0.4em;
+  }
+  .taper-pill {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.72rem;
+    border-radius: 3px;
+    padding: 0.05em 0.5em;
+  }
+  .taper-pill.confirmed { background: var(--accent); color: #fff; }
+  .taper-pill.propagated { border: 1px solid var(--accent); color: var(--accent); }
+  .taper-pill.inferred { border: 1px dashed var(--muted); color: var(--muted); }
+  .source-detail {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+  .evidence-list {
+    margin: 0.35rem 0 0;
+    padding: 0;
+    list-style: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.78rem;
+  }
+  .evidence-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.12rem 0;
+    color: var(--muted);
+  }
+  .evidence-list .points { white-space: nowrap; }
+  .quality-verdict, .lineage-notes, .curated-list {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+  .private-note {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .recommendation {
+    background: var(--tint);
+    border-radius: 6px;
+    padding: 1rem 1.1rem;
+    page-break-inside: avoid;
+  }
+  .recommendation .rec-lb {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  footer.provenance {
+    margin-top: 2.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rule);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.72rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+  }
+  .local-analysis-tag {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.05em 0.4em;
+  }
+  @media print {
+    body { padding: 0; }
+    .page { max-width: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="kicker">LosslessBob show dossier</div>
+    <h1>{{ d.show.title | default(d.show.venue) | default(d.show.date_disp) | default(d.show.date_iso) }}</h1>
+    <div class="show-meta">
+      {{ d.show.date_disp | default(d.show.date_iso) }}{% if d.show.dow %} ({{ d.show.dow }}){% endif %}
+      {%- if d.show.venue %}<span class="sep">·</span>{{ d.show.venue }}{% endif %}
+      {%- if d.show.city %}<span class="sep">·</span>{{ d.show.city }}{% endif %}
+      {%- if d.show.tour %}<span class="sep">·</span>{{ d.show.tour }}{% endif %}
+      {%- if d.show.event_type and d.show.event_type != 'concert' %}<span class="sep">·</span>{{ d.show.event_type }}{% endif %}
+      {%- if d.show.net_number %}<span class="sep">·</span>NET #{{ d.show.net_number }}{% endif %}
+      {%- if d.show.year_concert_number %}<span class="sep">·</span>{{ d.show.date_iso[:4] }} concert #{{ d.show.year_concert_number }}{% endif %}
+    </div>
+  </header>
+
+  {% if d.context %}
+  <section class="context-block">
+    <h2>Context</h2>
+    {% if d.context.chronicle %}
+    <p><span class="label">Chronicle</span>{{ d.context.chronicle }}</p>
+    {% endif %}
+    {% if d.context.bobtalk %}
+    <p class="bobtalk"><span class="label">Bobtalk</span>{{ d.context.bobtalk }}</p>
+    {% endif %}
+    {% if d.context.lineup %}
+    <p><span class="label">Lineup</span>{{ d.context.lineup }}</p>
+    {% endif %}
+    {% if d.context.notes %}
+    <p><span class="label">Notes</span>{{ d.context.notes }}</p>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  {% if d.setlist %}
+  <section>
+    <h2>Setlist</h2>
+    <ol class="setlist">
+      {% for song in d.setlist %}
+      <li>
+        <span class="pos">{{ song.position }}.</span>
+        <span class="song-title">
+          {{ song.title }}{% if song.credits %} <span class="song-sub">({{ song.credits }})</span>{% endif %}
+          {%- if song.annotations %}<span class="song-sub">{{ song.annotations }}</span>{% endif %}
+          {%- if song.is_encore %}<span class="encore-tag">encore</span>{% endif %}
+        </span>
+        {% if song.rarity and song.rarity.flag %}
+        <span class="rarity-badge">
+          {%- if song.rarity.flag == 'only' -%}only performance
+          {%- elif song.rarity.flag == 'first' -%}live debut
+          {%- elif song.rarity.flag == 'last' -%}last performance
+          {%- elif song.rarity.flag == 'rare' -%}rare ({{ song.rarity.n_performances }}x)
+          {%- endif -%}
+        </span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  {% if d.sources %}
+  <section>
+    <h2>Sources</h2>
+    {% for bucket in d.sources %}
+    <div class="family">
+      {% if bucket.fam_label or bucket.fam_id %}
+      <div class="family-head">
+        <span>{{ bucket.fam_label | default('Family') }}{% if bucket.fam_conf %} · {{ (bucket.fam_conf * 100) | round | int }}% confidence{% endif %}</span>
+        {% if bucket.fam_needs_review %}<span class="flag">needs review</span>{% endif %}
+      </div>
+      {% endif %}
+      {% for m in bucket.members %}
+      <div class="source">
+        {% if m.private %}
+        <div class="source-head"><span class="lb">{{ m.lb }}</span></div>
+        <div class="private-note">Private entry — details withheld.</div>
+        {% else %}
+        <div class="source-head">
+          <span class="lb">{{ m.lb }}</span>
+          {% if m.source_type %}<span class="badge">{{ m.source_type }}</span>{% endif %}
+          {% if m.rating %}<span class="badge">rating {{ m.rating }}</span>{% endif %}
+          {% if m.timing %}<span class="badge">{{ m.timing }}</span>{% endif %}
+          {% if m.alt_filesets %}<span class="badge">+{{ m.alt_filesets }} alt fileset{{ 's' if m.alt_filesets != 1 else '' }}</span>{% endif %}
+          {% if m.taper %}
+          <span class="taper-pill {{ m.taper.tier }}">{{ m.taper.name }}{% if m.taper.tier != 'confirmed' %} ({{ m.taper.tier }}){% endif %}</span>
+          {% endif %}
+          {% if m.pick %}<span class="badge">pick #{{ m.pick.rank }}</span>{% endif %}
+          {% if m.quality %}<span class="badge">AI grade {{ m.quality.grade }}</span>{% endif %}
+        </div>
+        {% if m.source_chain %}<div class="source-detail">{{ m.source_chain }}</div>{% endif %}
+        {% if m.lineage_notes %}
+        <div class="lineage-notes">{{ m.lineage_notes | join('; ') }}</div>
+        {% endif %}
+        {% if m.quality and m.quality.verdict %}
+        <div class="quality-verdict">{{ m.quality.verdict }}</div>
+        {% endif %}
+        {% if m.curated %}
+        <div class="curated-list">Curated: {{ m.curated | map(attribute='list_label') | join(', ') }}</div>
+        {% endif %}
+        {% if m.pick and m.pick.evidence %}
+        <ul class="evidence-list">
+          {% for ev in m.pick.evidence %}
+          <li><span>{{ ev.detail }}</span><span class="points">{{ '%+.1f' | format(ev.points) if ev.points is defined else '' }}</span></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if d.recommendation %}
+  <section>
+    <h2>Recommended copy</h2>
+    <div class="recommendation">
+      <div class="rec-lb">{{ d.recommendation.lb }}</div>
+      {% if d.recommendation.evidence %}
+      <ul class="evidence-list">
+        {% for ev in d.recommendation.evidence %}
+        <li><span>{{ ev.detail }}</span><span class="points">{{ '%+.1f' | format(ev.points) if ev.points is defined else '' }}</span></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <footer class="provenance">
+    <span>Generated {{ d.provenance.generated_at }}</span>
+    {% if d.provenance.master_version %}<span>Master {{ d.provenance.master_version }}</span>{% endif %}
+    <span>Channel: {{ d.provenance.channel }}</span>
+    {% if d.provenance.local_analysis %}<span class="local-analysis-tag">Includes local analysis (this install)</span>{% endif %}
+  </footer>
+
+</div>
+</body>
+</html>

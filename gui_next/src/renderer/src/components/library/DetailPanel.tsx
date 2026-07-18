@@ -1670,7 +1670,7 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
     )
   }
 
-  const actions = buildPerformanceActions(recordings, canonical, actionHandlers, t)
+  const actions = buildPerformanceActions(recordings, canonical, actionHandlers, t, perf.id)
   const owned = recordings.filter(r => r.owned)
   const ownedFams = families.filter(f => f.owned)
   const coverage = recordings.length === 0 ? 'Undocumented'

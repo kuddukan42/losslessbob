@@ -1103,6 +1103,32 @@
       "saved": "Alias LB-{{alias}} → LB-{{canon}} saved{{suffix}}.",
       "chainRewritten": " (chain rewritten)"
     },
+    "tapers": {
+      "title": "Known Tapers",
+      "aliasCol": "Alias",
+      "canonicalCol": "Canonical",
+      "originBuiltin": "built-in",
+      "originUser": "user",
+      "empty": "No taper aliases match.",
+      "filterPlaceholder": "Filter aliases…",
+      "count": "{{merged}} aliases · {{user}} user-added",
+      "readOnly": " (read-only — curator required)",
+      "aliasPlaceholder": "handle / alias",
+      "canonicalPlaceholder": "canonical taper",
+      "add": "Add",
+      "addHint": "Add a known-taper alias (curator only). Maps a raw handle to a canonical taper.",
+      "remove": "Remove",
+      "removeHint": "Remove the selected alias, or suppress a built-in one (curator only).",
+      "reload": "Reload",
+      "saved": "Added {{alias}} → {{canonical}}.",
+      "removed": "Removed alias {{alias}}.",
+      "removeConfirm": "Remove taper alias '{{alias}}'?",
+      "recompute": "Recompute derived data",
+      "recomputeHint": "Re-score every entry against the current taper list (lineage → attribution → picks → song index). Runs on your local derived tables only.",
+      "recomputing": "Recomputing…",
+      "recomputeDone": "Recompute complete.",
+      "recomputeError": "Recompute failed: {{msg}}"
+    },
     "query": {
       "toggle": "SQL Query…",
       "placeholder": "SELECT * FROM entries LIMIT 10…",
@@ -1228,7 +1254,8 @@
       "qbtAddOwned": "Add owned to qBittorrent",
       "createTorrent": "Create torrent…",
       "wishlistGaps_one": "Wishlist missing source",
-      "wishlistGaps_other": "Wishlist missing sources"
+      "wishlistGaps_other": "Wishlist missing sources",
+      "dossier": "Export dossier…"
     },
     "groups": {
       "acquire": "Acquire",
@@ -1369,6 +1396,24 @@
       "confirmForumBody": "Post {{count}} entries to the forum? Each will be posted using its auto-generated subject and body.",
       "confirmRemoveBody_one": "Remove {{count}} item from your collection? Files on disk will not be deleted.",
       "confirmRemoveBody_other": "Remove {{count}} items from your collection? Files on disk will not be deleted."
+    },
+    "dossier": {
+      "title": "Export show dossier",
+      "channel": "Channel",
+      "channelPublic": "Public",
+      "channelFull": "Full (friends-only)",
+      "sections": "Include",
+      "sectionContext": "Historical context",
+      "sectionSetlist": "Setlist",
+      "sectionLocalAnalysis": "Local analysis (picks, quality, family confidence)",
+      "format": "Format",
+      "cancel": "Cancel",
+      "export": "Export",
+      "exporting": "Exporting…",
+      "toastExported": "Dossier exported",
+      "toastPdfFallback": "PDF unavailable outside the app — downloaded HTML instead",
+      "toastAmbiguous": "This date has more than one show — open it from the Library to disambiguate",
+      "toastFailed": "Dossier export failed"
     },
     "panel": {
       "details": "Details",

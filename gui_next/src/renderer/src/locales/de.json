@@ -1113,6 +1113,32 @@
       "noResults": "Abfrage hat keine Zeilen zurückgegeben.",
       "truncated": "(auf 500 Zeilen begrenzt)",
       "error": "Fehler: {{msg}}"
+    },
+    "tapers": {
+      "title": "Bekannte Taper",
+      "aliasCol": "Alias",
+      "canonicalCol": "Canonical",
+      "originBuiltin": "integriert",
+      "originUser": "Benutzer",
+      "empty": "Es wurden keine passenden Aliase gefunden.",
+      "filterPlaceholder": "Filter-Aliase…",
+      "count": "{{merged}} Aliase · {{user}} vom Benutzer hinzugefügt",
+      "readOnly": " (nur lesbar – Kurator erforderlich)",
+      "aliasPlaceholder": "Handle / Alias",
+      "canonicalPlaceholder": "kanonische Taper-Kurve",
+      "add": "Hinzufügen",
+      "addHint": "Einen Alias für einen bekannten Taper hinzufügen (nur für Kuratoren). Ordnet einen Raw-Handle einem kanonischen Taper zu.",
+      "remove": "Entfernen",
+      "removeHint": "Den ausgewählten Alias entfernen oder einen integrierten Alias unterdrücken (nur für Kuratoren).",
+      "reload": "Neu laden",
+      "saved": "{{alias}} → {{canonical}} hinzugefügt.",
+      "removed": "Der Alias „{{alias}}“ wurde entfernt.",
+      "removeConfirm": "Soll der Taper-Alias „{{alias}}“ entfernt werden?",
+      "recompute": "Abgeleitete Daten neu berechnen",
+      "recomputeHint": "Jeden Eintrag anhand der aktuellen Taper-Liste neu bewerten (Herkunft → Zuordnung → Auswahl → Songindex). Läuft ausschließlich auf Ihren lokal abgeleiteten Tabellen.",
+      "recomputing": "Wird neu berechnet…",
+      "recomputeDone": "Neuberechnung abgeschlossen.",
+      "recomputeError": "Neuberechnung fehlgeschlagen: {{msg}}"
     }
   },
   "quickLookup": {
@@ -1228,7 +1254,8 @@
       "qbtAddOwned": "Zu „qBittorrent“ hinzufügen",
       "createTorrent": "Torrent erstellen…",
       "wishlistGaps_one": "Wunschliste: Quelle fehlt",
-      "wishlistGaps_other": "Fehlende Quellen auf der Wunschliste"
+      "wishlistGaps_other": "Fehlende Quellen auf der Wunschliste",
+      "dossier": "Dossier exportieren…"
     },
     "groups": {
       "acquire": "Erfassen",
@@ -1568,6 +1595,24 @@
       "needsReview": "TapeMatch hat diese Gruppierung markiert – fahre mit der Maus über das Symbol, um den genauen Grund anzuzeigen",
       "familyBest": "Bestbewertete Version innerhalb der TapeMatch-Produktfamilie",
       "curated": "Erscheint auf der Liste der Kuratorenempfehlungen"
+    },
+    "dossier": {
+      "title": "Exportieren Sie die Präsentation",
+      "channel": "Kanal",
+      "channelPublic": "Öffentlich",
+      "channelFull": "Vollversion (nur für Freunde)",
+      "sections": "Enthalten",
+      "sectionContext": "Historischer Kontext",
+      "sectionSetlist": "Setlist",
+      "sectionLocalAnalysis": "Lokale Analyse (Auswahl, Qualität, Familienzuordnung)",
+      "format": "Format",
+      "cancel": "Abbrechen",
+      "export": "Exportieren",
+      "exporting": "Wird exportiert…",
+      "toastExported": "Dossier exportiert",
+      "toastPdfFallback": "PDF außerhalb der App nicht verfügbar – stattdessen HTML heruntergeladen",
+      "toastAmbiguous": "Für dieses Datum gibt es mehrere Sendungen – öffnen Sie den Eintrag in der Bibliothek, um die Unklarheit zu beseitigen",
+      "toastFailed": "Der Export des Dossiers ist fehlgeschlagen"
     }
   },
   "tapematch": {

@@ -55,7 +55,12 @@ export interface ActionHandlers {
   onRemove: (rows: ActionRow[]) => void
   onWishlistToggle: (row: ActionRow) => void
   onWishlistAddMany: (rows: ActionRow[]) => void
+  onDossier: (showId: string) => void
 }
+
+// entries.date_str resolves to this on olof-covered dates; only those are
+// dossier-exportable (backend/dossier.py requires 'YYYY-MM-DD').
+const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/
 
 const GROUP_ORDER: LibActionGroup[] = ['open', 'listen', 'acquire', 'share', 'assets', 'maintain']
 // i18n key per group (null = no header rendered for that group).
@@ -109,7 +114,7 @@ export function buildRecordingActions(row: ActionRow, batch: ActionRow[], h: Act
 // ── Performance (show) action registry ──────────────────────────────────────
 // `canonical` is the show's best-rated recording (any owned/unowned tie-break
 // already resolved by the caller — ScreenLibrary's bestOf()/rollupOf()).
-export function buildPerformanceActions(recordings: ActionRow[], canonical: ActionRow | null, h: ActionHandlers, t: TFunction): LibAction[] {
+export function buildPerformanceActions(recordings: ActionRow[], canonical: ActionRow | null, h: ActionHandlers, t: TFunction, showId?: string): LibAction[] {
   const owned = recordings.filter(r => r.owned)
   const gaps = recordings.filter(r => !r.owned && !r.wish)
   const A: LibAction[] = [
@@ -124,6 +129,12 @@ export function buildPerformanceActions(recordings: ActionRow[], canonical: Acti
       { id: 'torrent', label: t('library.actions.createTorrent'), icon: 'copy',   group: 'share', disabled: !canonical.path, run: () => h.onTorrent([canonical]) },
       { id: 'forum',   label: t('library.actions.forumPost', { count: 1 }), icon: 'globe',  group: 'share', run: () => h.onForum([canonical]) },
     )
+  }
+  if (showId !== undefined) {
+    A.push({
+      id: 'dossier', label: t('library.actions.dossier'), icon: 'lbdir', group: 'share',
+      disabled: !ISO_DATE_RE.test(showId), run: () => h.onDossier(showId),
+    })
   }
   if (gaps.length > 0) {
     A.push({ id: 'wishlistGaps', label: t('library.actions.wishlistGaps', { count: gaps.length }), icon: 'star', group: 'acquire', run: () => h.onWishlistAddMany(gaps) })

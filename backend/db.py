@@ -1331,7 +1331,60 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
             taper_name   = taper_name   or t2
             source_chain = source_chain or s2
 
-    # ── 12. Short handle / taper code at start ────────────────────────────
+    # ── 12. taped by <name> ────────────────────────────────────────────────
+    # Checked before the leading-token heuristic (below) on purpose: an
+    # explicit "Taped ... by <Name>" credit is unambiguous evidence, while the
+    # leading token on the line is often equipment (e.g. "akg568ebs, ...") or
+    # a second person's handle mentioned in the same breath (e.g. "merman
+    # dolphinsmile 48k, Taped by Merman, ... Produced by Dolphinsmile") — if
+    # the weak heuristic runs first it claims taper_name and this strong
+    # signal never gets checked. The `[\w\s,]{0,40}?` gap allows compound
+    # phrasing like "Taped, Transfered and uploaded by Tony Suraci" while
+    # still requiring "taped" itself, so a bare "uploaded by <uploader>" (not
+    # a taper credit) doesn't match.
+    if not taper_name:
+        # The capture stops at the first clause boundary — comma/period/
+        # newline, or a connector word ("with", "on", "using", "and", "who")
+        # — so an equipment/description clause tacked on right after the name
+        # ("Taped by BP with Denon portable...") doesn't get swept into the
+        # match. "dolphinsmile" is also a stop word: several descriptions
+        # literally start "taped by <handle> dolphinsmile, taped by <handle>
+        # with ..." (dolphinsmile is the uploader, credited in the same
+        # breath), and without the stop the uploader's name gets appended to
+        # the taper's.
+        m = re.search(
+            r"\b(?i:taped)\b[\w\s,]{0,40}?\b(?i:by)\s+(.+?)"
+            r"(?:[,.\n>]|\b(?:with|on|using|and|who|dolphinsmile|live|wit)\b|$)",
+            fl,
+        )
+        if m:
+            cand = m.group(1).strip()
+            # Drop a stray unmatched paren left by the boundary cut (e.g.
+            # "...taped by MT)." captures "MT)" since ')' isn't a boundary
+            # char — only "(name)" pairs are meant to survive intact).
+            if cand.count('(') < cand.count(')'):
+                cand = cand.rstrip(')').rstrip()
+            elif cand.count(')') < cand.count('('):
+                cand = cand.rstrip('(').rstrip()
+            words = cand.split()
+            # Reject descriptive filler ("a friend of mine", "that team of 3
+            # germans", "a friend who lived in Portland") rather than treat
+            # it as a name — these are common in this corpus for anonymised
+            # tapers and are strictly worse than falling through to the
+            # short-handle heuristic below.
+            _TAPED_BY_STOPWORDS = {
+                'a', 'an', 'the', 'some', 'someone', 'something', 'who', 'that',
+                'which', 'with', 'from', 'friend', 'friends', 'buddy', 'dude',
+                'guy', 'local', 'team', 'member', 'members', 'teams', 'non',
+                'taper', 'tapers', 'dylanist', 'dylanologist', 'crew',
+                'recordist', 'mine', 'of', 'on', 'using', 'him', 'her', 'his',
+                'my', 'me', 'i', 'think', 'now', 'is', 'was',
+            }
+            if (cand and cand[0].isalpha() and 0 < len(words) <= 4
+                    and not any(w.lower().strip("'.,") in _TAPED_BY_STOPWORDS for w in words)):
+                taper_name = cand[:60]
+
+    # ── 13. Short handle / taper code at start ────────────────────────────
     if not taper_name:
         # Allow 1-char second token (e.g. "sbd f", "lta"), semicolon separators
         handle_re = re.compile(
@@ -1358,15 +1411,6 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
                 if len(_tok) > 1 and any(re.search(r'\d', t) for t in _tok[:-1]):
                     _tok = [_tok[-1]]
                 taper_name = ' '.join(_tok)[:60]
-
-    # ── 13. taped by <name> ───────────────────────────────────────────────
-    if not taper_name:
-        m = re.search(
-            r'\btaped\s+by\s+([A-Za-z][A-Za-z0-9\s_\-]{1,30}?)(?:[,.\n]|$)',
-            fl, re.IGNORECASE,
-        )
-        if m:
-            taper_name = m.group(1).strip()[:60]
 
     # ── 14. from <X> master/vine/collection ──────────────────────────────
     if not taper_name:
@@ -1506,7 +1550,9 @@ _DIFF_RE = re.compile(
     re.IGNORECASE,
 )
 _LB_REF_RE = re.compile(r'\bLB-0*(\d+)\b', re.IGNORECASE)
-_EXPLICIT_TAPER_LABEL_RE = re.compile(r'\bTaper\s*:', re.IGNORECASE)
+_EXPLICIT_TAPER_LABEL_RE = re.compile(
+    r'\bTaper\s*:|\btaped\b[\w\s,]{0,40}?\bby\b', re.IGNORECASE,
+)
 _SEMI_EXPLICIT_TAPER_RE = re.compile(
     r'\btaped\s+by\b|\bSeeded\b|\bBOOTLEG\s*:|'
     r'\blegendary\s+taper\b|\bnet\s*taper\b',
@@ -2508,23 +2554,30 @@ def init_db(db_path=None):
             )
 
         # Migration: folder_lb_link composite PK to support multi-LB folder links.
-        _fll_row = conn.execute(
-            "SELECT sql FROM sqlite_master WHERE type='table' AND name='folder_lb_link'"
-        ).fetchone()
-        _fll_sql = _fll_row[0] if _fll_row else ""
-        if "folder_path TEXT PRIMARY KEY" in _fll_sql:
-            conn.executescript("""
+        # Detected via PRAGMA table_info's pk flag rather than a raw SQL-text
+        # match — sqlite_master.sql includes the original column-alignment
+        # whitespace, which previously made a plain substring check silently
+        # never match and left old databases stuck on the single-column PK.
+        _fll_info = conn.execute("PRAGMA table_info(folder_lb_link)").fetchall()
+        _fll_pk_cols = [r[1] for r in _fll_info if r[5]]
+        if _fll_pk_cols == ["folder_path"]:
+            _fll_has_xref = any(r[1] == "xref" for r in _fll_info)
+            _fll_cols_sql = "folder_path, lb_number, linked_at, note" + (
+                ", xref" if _fll_has_xref else ""
+            )
+            conn.executescript(f"""
                 PRAGMA foreign_keys = OFF;
                 CREATE TABLE folder_lb_link_new (
                     folder_path    TEXT NOT NULL,
                     lb_number      INTEGER NOT NULL,
                     linked_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     note           TEXT,
+                    xref           INTEGER NOT NULL DEFAULT 0,
                     PRIMARY KEY (folder_path, lb_number)
                 );
                 INSERT OR IGNORE INTO folder_lb_link_new
-                    (folder_path, lb_number, linked_at, note)
-                    SELECT folder_path, lb_number, linked_at, note
+                    ({_fll_cols_sql})
+                    SELECT {_fll_cols_sql}
                     FROM folder_lb_link;
                 DROP TABLE folder_lb_link;
                 ALTER TABLE folder_lb_link_new RENAME TO folder_lb_link;
