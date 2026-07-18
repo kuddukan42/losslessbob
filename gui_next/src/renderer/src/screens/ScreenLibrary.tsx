@@ -15,6 +15,7 @@ import {
 import type { ActionRow, ActionHandlers, LibAction } from '../components/library/actions'
 import { RecordingDetailPanel, PerformanceDetailPanel } from '../components/library/DetailPanel'
 import type { RowHistory } from '../components/library/DetailPanel'
+import { DossierExportModal } from '../components/library/DossierExportModal'
 import { useAttachmentsStore } from '../lib/attachmentsStore'
 import { useSpectrogramStore } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
@@ -587,6 +588,7 @@ export function ScreenLibrary(): React.JSX.Element {
   const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
   const [confirm, setConfirm] = useState<{ title: string; body: string; onConfirm: () => void } | null>(null)
   const [actionBusy, setActionBusy] = useState(false)
+  const [dossierShowId, setDossierShowId] = useState<string | null>(null)
   const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
   const refreshCollection = useCallback(() => {
     queryClient.invalidateQueries({ queryKey: ['library-catalog'] })
@@ -699,6 +701,7 @@ export function ScreenLibrary(): React.JSX.Element {
         blobDownload(blob, 'show.m3u')
       } catch { showToast(t('library.toast.m3uFailed'), 'bad') }
     },
+    onDossier: (showId) => setDossierShowId(showId),
     onAttach: (row) => { setActiveAttachLb(row.lbNumber); navigate('/attachments') },
     onSpectro: async (row) => {
       if (!row.path) return
@@ -1136,6 +1139,14 @@ export function ScreenLibrary(): React.JSX.Element {
           body={confirm.body}
           onConfirm={confirm.onConfirm}
           onCancel={() => setConfirm(null)}
+        />
+      )}
+      {dossierShowId && (
+        <DossierExportModal
+          showId={dossierShowId}
+          base={BASE}
+          onClose={() => setDossierShowId(null)}
+          showToast={showToast}
         />
       )}
     </>
@@ -2416,7 +2427,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                             }}
                             onContextMenu={e => openCtxMenu(
                               e, p.disp,
-                              buildPerformanceActions(p.recordings.map(toRecAction), canonical ? toRecAction(canonical) : null, actionHandlers, t),
+                              buildPerformanceActions(p.recordings.map(toRecAction), canonical ? toRecAction(canonical) : null, actionHandlers, t, p.id),
                             )}
                             style={{ height: vItem.size }}
                           >

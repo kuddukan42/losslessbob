@@ -77,14 +77,40 @@ diff_count` (or proximity-weight), then targeted re-parse + diff review.
 After the gating changes + corpus rescore + `tapematch_sync`, verify these
 splits happened (if any survive, hand-split via family review then):
 
-- [ ] 1995-12-09: 6083 out of fam …#534-5710-6083-6104-15211
-- [ ] 1995-07-04: 5879 out
-- [ ] 1996-07-07: 15322 out (15574, 8818 likely too)
-- [ ] 1996-05-16: {2273,7544} split from {821,3429,7823}
-- [ ] 1997-04-05: {3344,3559} split from {8854,9240}
-- [ ] 1993-02-07: {1343,4216} split from {5882,12768}
-- [ ] 1997-08-17: 5761 out
-- [ ] then `taper_attribution.recompute()` → conflict queue should reach 0
+**RESCORED LIVE 2026-07-17** (runs 20260717_082233–092849; committed config with
+corroboration gate). Outcome: hazard blocked, but most expected splits did NOT
+happen — live runs found evidence the cached replay lacked. Per date:
+
+- [x] 1995-12-09: PARTIAL — {534,5710} split out ✓, but 6083 stayed with
+  {6104,15211}: 6104 staircase-flagged in pass 1 → relaxed fp .409, and the
+  corroboration gate passed at the EXACT boundary (hiss_frac 0.05 == floor,
+  hiss_median .05). Boundary artifact — gate floor has no median requirement.
+  lta-vs-ntj conflict persists.
+- [x] 1995-07-04: NO SPLIT (as the sweep predicted for variant (a)) — 5879
+  passes on hiss corroboration .111. Conflict persists → hand-split candidate.
+- [x] 1996-07-07: NO SPLIT, and evidence now CONTRADICTS the split expectation:
+  windowed_frac .95 between the two supposed subclusters (2082/3059 ↔
+  3439/5776/6252) is decisive same-source evidence; 8818/15322/15574 glue via
+  plain-bar fp .50–.54. Disposition should flip: over-merge → label review.
+- [x] 1996-05-16: NO SPLIT — bridge 7544–7823 crosses the UNRELAXED fp bar
+  (.504 ≥ .50); 3429–7823 hiss .637/median .422 also near lo-fi merge. Family
+  holds on plain-bar evidence; nta(821 CONFIRMED)-vs-ltg(7544) persists.
+- [x] 1997-04-05: NO SPLIT — bridge 3559–8854 fp .505 ≥ .50 (unrelaxed).
+  Note held action B (drop 3344/3559 from 9240 same_as) is independent of this.
+- [x] 1993-02-07: NO SPLIT — 1343–5882 is a genuine hiss merge (.62 frac /
+  .727 median) and 1343–4216 fp .588 plain bar. Family holds on real evidence;
+  the old "change (c) should split it" expectation died with (c)'s rejection.
+- [x] 1997-08-17: NO SPLIT (as the sweep predicted for (a)) — 5761 passes on
+  hiss corroboration .191 at relaxed fp .445. Conflict persists.
+- [x] 1997-11-11 (hazard date): **GATE VALIDATED** — LB-01126 now isolated
+  (own family; {13287,9042,4854} intact, 4283 separate). The exact 2026-07-11
+  false merge no longer occurs live.
+- [x] `tapematch_sync` (2,032 dates, 5,811 families, 0 errors) +
+  `taper_attribution.recompute()` run 2026-07-17. Conflict queue did NOT reach
+  0 — expected, since the families largely held; surviving conflicts need
+  either hand-splits (95-07-04, 97-08-17, 95-12-09) or disposition flips to
+  label review (96-07-07, and plausibly 96-05-16 / 97-04-05 / 93-02-07 where
+  plain-bar fp/hiss now vouch for the family). tj decision needed.
 
 ## Resume tracking
 
@@ -92,4 +118,11 @@ splits happened (if any survive, hand-split via family review then):
 - [x] Apply A, recompute — queue 22 → 18 (2026-07-16)
 - [ ] B: same_as edge fixes — ON HOLD pending tj (would clear 6 more rows)
 - [ ] C: file parser TODO — ON HOLD pending tj
-- [ ] Post-rescore validation (blocked on TODO-235)
+- [x] Post-rescore validation — DONE 2026-07-17 on live re-runs (results above).
+  Gate validated (1997-11-11); most families HELD on real evidence.
+- [ ] tj: disposition call per surviving family — hand-split (95-07-04, 97-08-17,
+  95-12-09) vs flip to label review (96-07-07 strongly; 96-05-16 / 97-04-05 /
+  93-02-07 plausibly). Until then the ~12 series-vs-series rows stay in the queue
+  BY DESIGN — do not "fix" them by hand-editing families without sign-off.
+- [ ] Full-corpus rescore batch drains ~2026-07-20 → completion runbook at the tail
+  of tools/tapematch/CALIBRATION_PROGRESS.md (sync + recompute + spot-checks).

@@ -1,6 +1,22 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-258: Known Tapers curation widget on DB Editor screen
+Priority: Medium
+Status: Done
+Added: 2026-07-18
+Closed: 2026-07-18
+Description: Sidebar panel to list/add/remove known-taper aliases and launch a derived-data recompute; backend routes already existed (TODO-241).
+Shipped: TaperPanel SideSection in ScreenDbEditor.tsx (filterable alias list w/ builtin/user origin, curator-gated add/remove via /api/tapers/aliases, SSE recompute via /api/derived/recompute). Backend pre-existing; GUI + i18n only. Typecheck+build PASS.
+
+TODO-257: Show dossier / liner-notes export
+Priority: High
+Status: Done
+Added: 2026-07-17
+Closed: 2026-07-17
+Description: instructions/FABLE_SHOW_DOSSIER.md (FABLE_IDEAS §5, HIGH PRIORITY per tj 2026-07-13). One command renders everything the app knows about a date into a printable/shareable dossier: setlist with rarities, sources grouped by master-tape family with taper credit/pick ranking/quality verdicts, historical context, provenance footer. Self-contained HTML + Electron PDF export, plus a BBcode digest for forum posts.
+Shipped B1/B2/B3/B5 same session (2026-07-17): backend/dossier.py (build_dossier/filter_dossier_sections/render_bbcode), GET /api/dossier + /api/dossier/html + /api/dossier/bbcode, backend/templates/dossier.html (self-contained print-first Jinja render, first template in repo), Library row action + DetailPanel ActionBar 'Export dossier...' + options modal (channel/sections/format, remembered via useSettingsStore) + Electron PDF IPC (hidden BrowserWindow + printToPDF), i18n in all 6 locales. B4 docs done same session. Verified against real production data (1987-07-04 Dylan/Dead show: 17 source buckets, real pick evidence/quality verdicts, correct 'live debut' rarity flag); 11 new backend tests + full suite green (891); /gui-check PASS. Found and fixed a real design bug during verification: entries.location free-text has a dozen spellings per real show, so ambiguity detection was redesigned to key off the clean olof_events.venue field instead.
+
 TODO-256: Gaps view — living Kokay list of uncirculated shows
 Priority: Medium
 Status: Done

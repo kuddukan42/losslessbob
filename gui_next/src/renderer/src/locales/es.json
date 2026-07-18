@@ -1113,6 +1113,32 @@
       "noResults": "La consulta no devolvió filas.",
       "truncated": "(limitado a 500 filas)",
       "error": "Error: {{msg}}"
+    },
+    "tapers": {
+      "title": "Grabadores conocidos",
+      "aliasCol": "Alias",
+      "canonicalCol": "Canonical",
+      "originBuiltin": "integrado",
+      "originUser": "usuario",
+      "empty": "No se ha encontrado ningún alias de «taper» que coincida.",
+      "filterPlaceholder": "Alias de filtro…",
+      "count": "Alias de {{merged}} · {{user}} añadidos por el usuario",
+      "readOnly": " (solo lectura — se requiere un curador)",
+      "aliasPlaceholder": "identificador / alias",
+      "canonicalPlaceholder": "grabación canónica",
+      "add": "Añadir",
+      "addHint": "Añadir un alias de grabador conocido (solo para curadores). Asigna un identificador sin procesar a un grabador canónico.",
+      "remove": "Eliminar",
+      "removeHint": "Eliminar el alias seleccionado u ocultar uno integrado (solo para curadores).",
+      "reload": "Actualizar",
+      "saved": "Se ha añadido {{alias}} → {{canonical}}.",
+      "removed": "Se ha eliminado el alias {{alias}}.",
+      "removeConfirm": "¿Se elimina el alias de grabador «{{alias}}»?",
+      "recompute": "Volver a calcular los datos derivados",
+      "recomputeHint": "Vuelve a evaluar cada entrada según la lista actual de grabadores (linaje → atribución → selecciones → índice de canciones). Se ejecuta únicamente en tus tablas derivadas locales.",
+      "recomputing": "Recalculando…",
+      "recomputeDone": "Recálculo completado.",
+      "recomputeError": "Error al volver a calcular: {{msg}}"
     }
   },
   "quickLookup": {
@@ -1228,7 +1254,8 @@
       "qbtAddOwned": "Añadir «propio» a qBittorrent",
       "createTorrent": "Crear torrent…",
       "wishlistGaps_one": "Falta la fuente en la lista de deseos",
-      "wishlistGaps_other": "Fuentes que faltan en la lista de deseos"
+      "wishlistGaps_other": "Fuentes que faltan en la lista de deseos",
+      "dossier": "Exportar dossier…"
     },
     "groups": {
       "acquire": "Adquirir",
@@ -1568,6 +1595,24 @@
       "needsReview": "TapeMatch ha marcado esta agrupación; pasa el cursor por encima de la insignia para ver el motivo concreto.",
       "familyBest": "La versión mejor valorada de la familia TapeMatch",
       "curated": "Aparece en la lista de selecciones de este curador"
+    },
+    "dossier": {
+      "title": "Exportar dossier de la exposición",
+      "channel": "Canal",
+      "channelPublic": "Público",
+      "channelFull": "Completo (solo para amigos)",
+      "sections": "Incluir",
+      "sectionContext": "Contexto histórico",
+      "sectionSetlist": "Setlist",
+      "sectionLocalAnalysis": "Análisis local (selecciones, calidad, confianza en la familia)",
+      "format": "Formato",
+      "cancel": "Cancelar",
+      "export": "Exportar",
+      "exporting": "Exportando…",
+      "toastExported": "Exportación del dossier",
+      "toastPdfFallback": "El PDF no está disponible fuera de la aplicación; en su lugar, se descarga el HTML.",
+      "toastAmbiguous": "Esta fecha tiene más de un evento: ábrela desde la Biblioteca para aclarar la ambigüedad.",
+      "toastFailed": "Error al exportar el expediente"
     }
   },
   "tapematch": {

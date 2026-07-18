@@ -1113,6 +1113,32 @@
       "noResults": "De query leverde geen rijen op.",
       "truncated": "(beperkt tot 500 rijen)",
       "error": "Fout: {{msg}}"
+    },
+    "tapers": {
+      "title": "Bekende opnamemakers",
+      "aliasCol": "Alias",
+      "canonicalCol": "Canonical",
+      "originBuiltin": "ingebouwd",
+      "originUser": "gebruiker",
+      "empty": "Er zijn geen overeenkomende aliasen voor 'taper'.",
+      "filterPlaceholder": "Filteraliassen…",
+      "count": "{{merged}} aliassen · {{user}} door de gebruiker toegevoegd",
+      "readOnly": " (alleen-lezen — curator vereist)",
+      "aliasPlaceholder": "handle / alias",
+      "canonicalPlaceholder": "canonische taper",
+      "add": "Toevoegen",
+      "addHint": "Een alias voor een bekende taper toevoegen (alleen voor curatoren). Koppelt een onbewerkte handle aan een canonieke taper.",
+      "remove": "Verwijderen",
+      "removeHint": "Verwijder de geselecteerde alias of onderdruk een ingebouwde alias (alleen voor curatoren).",
+      "reload": "Opnieuw laden",
+      "saved": "{{alias}} toegevoegd → {{canonical}}.",
+      "removed": "Alias {{alias}} verwijderd.",
+      "removeConfirm": "De alias '{{alias}}' van de taper verwijderen?",
+      "recompute": "Afgeleide gegevens opnieuw berekenen",
+      "recomputeHint": "Beoordeel elk item opnieuw aan de hand van de huidige taperlijst (afstamming → bronvermelding → selecties → nummerindex). Werkt uitsluitend op uw lokale afgeleide tabellen.",
+      "recomputing": "Opnieuw aan het berekenen…",
+      "recomputeDone": "Herberekening voltooid.",
+      "recomputeError": "Herberekening mislukt: {{msg}}"
     }
   },
   "quickLookup": {
@@ -1228,7 +1254,8 @@
       "qbtAddOwned": "'In bezit' toevoegen aan qBittorrent",
       "createTorrent": "Torrent aanmaken…",
       "wishlistGaps_one": "Bron ontbreekt in verlanglijst",
-      "wishlistGaps_other": "Ontbrekende bronnen op de verlanglijst"
+      "wishlistGaps_other": "Ontbrekende bronnen op de verlanglijst",
+      "dossier": "Dossier exporteren…"
     },
     "groups": {
       "acquire": "Acquire",
@@ -1568,6 +1595,24 @@
       "needsReview": "TapeMatch heeft deze groep gemarkeerd — beweeg de muis over het pictogram voor de specifieke reden",
       "familyBest": "Best beoordeelde versie binnen de TapeMatch-familie",
       "curated": "Verschijnt op de lijst met aanbevelingen van deze curator"
+    },
+    "dossier": {
+      "title": "Exporteer presentatiedossier",
+      "channel": "Kanaal",
+      "channelPublic": "Openbaar",
+      "channelFull": "Volledig (alleen voor vrienden)",
+      "sections": "Opnemen",
+      "sectionContext": "Historische context",
+      "sectionSetlist": "Setlist",
+      "sectionLocalAnalysis": "Lokale analyse (selecties, kwaliteit, betrouwbaarheid van de familie)",
+      "format": "Formaat",
+      "cancel": "Annuleren",
+      "export": "Exporteren",
+      "exporting": "Bezig met exporteren…",
+      "toastExported": "Dossier geëxporteerd",
+      "toastPdfFallback": "PDF niet beschikbaar buiten de app — in plaats daarvan HTML gedownload",
+      "toastAmbiguous": "Op deze datum zijn er meerdere optredens — open het vanuit de bibliotheek om duidelijkheid te krijgen",
+      "toastFailed": "Het exporteren van het dossier is mislukt"
     }
   },
   "tapematch": {

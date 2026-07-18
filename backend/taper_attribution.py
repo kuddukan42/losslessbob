@@ -301,10 +301,12 @@ def _layer0_seed(rows: list[sqlite3.Row], universe: frozenset[str]) -> dict[int,
     """Seed attributions from entry_lineage.taper_normalised (spec §4.0).
 
     - Series code (lta-ltz, nta-ntz) → confirmed, kind='series_code'.
-    - Explicit "Taper:" label in the description → confirmed, kind='explicit'.
+    - Explicit "Taper:" label or a "taped by <name>" credit in the
+      description → confirmed, kind='explicit' — both are an unambiguous,
+      named credit, not a guess.
     - Otherwise (a known handle appears somewhere in the text via a weaker
       extraction path) → propagated, kind='mention' (mentions are weaker
-      evidence than an explicit label — "thanks to spot" != "taped by spot").
+      evidence than an explicit credit — "thanks to spot" != "taped by spot").
     """
     attrs: dict[int, dict] = {}
     for row in rows:
@@ -320,7 +322,7 @@ def _layer0_seed(rows: list[sqlite3.Row], universe: frozenset[str]) -> dict[int,
             continue
 
         if _EXPLICIT_TAPER_LABEL_RE.search(description[:600]):
-            detail = f"explicit 'Taper:' label (parsed as {row['taper_name']!r})"
+            detail = f"explicit 'Taper:'/'taped by' credit (parsed as {row['taper_name']!r})"
             attrs[lb] = _row(taper_norm, "confirmed", [_evidence("explicit", detail)])
             continue
 

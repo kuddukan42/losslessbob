@@ -13,6 +13,7 @@ interface Window {
     pickFile:        (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }) => Promise<string | null>
     openPath:        (path: string) => Promise<string>
     saveFile:        (content: string, filename: string) => Promise<boolean>
+    printDossierPdf: (url: string, filename: string) => Promise<boolean>
     pickAndReadFile:  (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }) => Promise<string | null>
     pickAndReadFiles: (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }) => Promise<{ path: string; content: string }[]>
   }

@@ -193,6 +193,29 @@ ipcMain.handle('dialog:saveFile', async (_event, content: string, defaultFilenam
   return true
 })
 
+// Show dossier PDF export (FABLE_SHOW_DOSSIER.md D4): a hidden BrowserWindow
+// loads the backend's own /api/dossier/html render and prints it — no Python
+// PDF dependency, and the PDF can never drift from the HTML twin since it's
+// the exact same served document.
+ipcMain.handle('dossier:printPdf', async (_event, url: string, defaultFilename: string) => {
+  const { canceled, filePath } = await dialog.showSaveDialog({
+    title: 'Save dossier PDF',
+    defaultPath: defaultFilename,
+    filters: [{ name: 'PDF', extensions: ['pdf'] }],
+  })
+  if (canceled || !filePath) return false
+
+  const printWin = new BrowserWindow({ show: false, webPreferences: { sandbox: false } })
+  try {
+    await printWin.loadURL(url)
+    const pdfBuffer = await printWin.webContents.printToPDF({})
+    await writeFile(filePath, pdfBuffer)
+    return true
+  } finally {
+    printWin.destroy()
+  }
+})
+
 ipcMain.handle('dialog:pickAndReadFile', async (_event, opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }) => {
   const { canceled, filePaths } = await dialog.showOpenDialog({
     title: opts?.title ?? 'Select file',

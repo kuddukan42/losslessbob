@@ -37,6 +37,49 @@ interface LbAlias {
   note: string | null
 }
 
+interface TaperAlias {
+  alias: string
+  canonical: string
+  origin: 'builtin' | 'user'
+}
+
+interface TaperAliasList {
+  entries: TaperAlias[]
+  suppressed: string[]
+  counts: { builtin: number; user_add: number; user_remove: number; merged: number }
+}
+
+type RecomputeStepStatus = 'running' | 'done' | 'skipped' | 'error'
+
+interface RecomputeEvent {
+  event: 'start' | 'done' | 'skipped' | 'error' | 'chain_done'
+  step?: string
+  message?: string
+}
+
+// Minimal SSE frame reader (mirrors OnboardingWizard's helper) for the chained
+// /api/derived/recompute stream.
+async function readSSE<T>(resp: Response, onEvent: (ev: T) => void): Promise<void> {
+  if (!resp.body) return
+  const reader = resp.body.getReader()
+  const decoder = new TextDecoder()
+  let buf = ''
+  for (;;) {
+    const { done, value } = await reader.read()
+    if (done) break
+    buf += decoder.decode(value, { stream: true })
+    let nl: number
+    while ((nl = buf.indexOf('\n\n')) >= 0) {
+      const frame = buf.slice(0, nl)
+      buf = buf.slice(nl + 2)
+      if (!frame.startsWith('data: ')) continue
+      try {
+        onEvent(JSON.parse(frame.slice(6)) as T)
+      } catch { /* ignore malformed frame */ }
+    }
+  }
+}
+
 // ── Toast ─────────────────────────────────────────────────────────────────────
 
 type ToastTone = 'ok' | 'bad' | 'info'
@@ -401,6 +444,204 @@ function AliasPanel({
   )
 }
 
+// ── TaperPanel ────────────────────────────────────────────────────────────────
+
+function TaperPanel({
+  data,
+  isCurator,
+  status: taperStatus,
+  recomputeSteps,
+  recomputeRunning,
+  onAdd,
+  onRemove,
+  onReload,
+  onRecompute,
+}: {
+  data: TaperAliasList | null
+  isCurator: boolean
+  status: string
+  recomputeSteps: Record<string, RecomputeStepStatus>
+  recomputeRunning: boolean
+  onAdd: (alias: string, canonical: string) => void
+  onRemove: (alias: string) => void
+  onReload: () => void
+  onRecompute: () => void
+}) {
+  const { t } = useTranslation()
+  const [selected, setSelected] = useState<string | null>(null)
+  const [filter, setFilter] = useState('')
+  const [newAlias, setNewAlias] = useState('')
+  const [newCanon, setNewCanon] = useState('')
+
+  const entries = data?.entries ?? []
+  const q = filter.trim().toLowerCase()
+  const shown = q
+    ? entries.filter((e) => e.alias.toLowerCase().includes(q) || e.canonical.toLowerCase().includes(q))
+    : entries
+
+  const canAdd = isCurator && newAlias.trim() !== '' && newCanon.trim() !== ''
+
+  const inputStyle: React.CSSProperties = {
+    flex: 1, minWidth: 0, padding: '4px 6px', borderRadius: 5, fontSize: 'var(--lbb-fs-11)',
+    background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+    color: 'var(--lbb-fg)', fontFamily: 'inherit',
+  }
+  const btnStyle = (enabled: boolean): React.CSSProperties => ({
+    padding: '4px 6px', borderRadius: 5, fontSize: 'var(--lbb-fs-11)',
+    background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+    color: enabled ? 'var(--lbb-fg)' : 'var(--lbb-fg3)',
+    cursor: enabled ? 'pointer' : 'not-allowed', fontFamily: 'inherit',
+  })
+
+  const stepNames = Object.keys(recomputeSteps)
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={filter}
+        onChange={(e) => setFilter(e.target.value)}
+        placeholder={t('dbeditor.tapers.filterPlaceholder')}
+        style={{ ...inputStyle, width: '100%', marginBottom: 6 }}
+      />
+
+      <div style={{ maxHeight: 220, overflowY: 'auto', overflowX: 'auto', marginBottom: 6 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--lbb-fs-11)' }}>
+          <thead>
+            <tr>
+              {[t('dbeditor.tapers.aliasCol'), t('dbeditor.tapers.canonicalCol'), ''].map((h, i) => (
+                <th key={i} style={{
+                  padding: '3px 5px', textAlign: 'left', fontWeight: 700,
+                  color: 'var(--lbb-fg3)', borderBottom: '1px solid var(--lbb-border)',
+                  whiteSpace: 'nowrap', position: 'sticky', top: 0, background: 'var(--lbb-surface)',
+                }}>
+                  {h}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {shown.map((e) => (
+              <tr
+                key={e.alias}
+                onClick={() => setSelected(selected === e.alias ? null : e.alias)}
+                style={{
+                  cursor: 'pointer',
+                  background: selected === e.alias ? 'var(--lbb-accent-soft)' : 'transparent',
+                }}
+              >
+                <td style={{ padding: '3px 5px', color: 'var(--lbb-fg)', fontFamily: 'var(--lbb-mono)', wordBreak: 'break-all' }}>
+                  {e.alias}
+                </td>
+                <td style={{ padding: '3px 5px', color: 'var(--lbb-fg2)', wordBreak: 'break-all' }}>
+                  {e.canonical}
+                </td>
+                <td style={{ padding: '3px 5px', textAlign: 'right' }}>
+                  <span style={{
+                    fontSize: 'var(--lbb-fs-9)', fontWeight: 700, letterSpacing: 0.04,
+                    textTransform: 'uppercase',
+                    color: e.origin === 'user' ? 'var(--lbb-accent)' : 'var(--lbb-fg3)',
+                  }}>
+                    {e.origin === 'user' ? t('dbeditor.tapers.originUser') : t('dbeditor.tapers.originBuiltin')}
+                  </span>
+                </td>
+              </tr>
+            ))}
+            {shown.length === 0 && (
+              <tr>
+                <td colSpan={3} style={{ padding: '6px 5px', color: 'var(--lbb-fg3)', fontStyle: 'italic', fontSize: 'var(--lbb-fs-11)' }}>
+                  {t('dbeditor.tapers.empty')}
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Add form */}
+      <div style={{ display: 'flex', gap: 4, marginBottom: 4 }}>
+        <input
+          type="text"
+          value={newAlias}
+          onChange={(e) => setNewAlias(e.target.value)}
+          disabled={!isCurator}
+          placeholder={t('dbeditor.tapers.aliasPlaceholder')}
+          style={inputStyle}
+        />
+        <input
+          type="text"
+          value={newCanon}
+          onChange={(e) => setNewCanon(e.target.value)}
+          disabled={!isCurator}
+          placeholder={t('dbeditor.tapers.canonicalPlaceholder')}
+          style={inputStyle}
+        />
+      </div>
+
+      <div style={{ display: 'flex', gap: 4, marginBottom: 4 }}>
+        <button
+          type="button"
+          onClick={() => { onAdd(newAlias.trim(), newCanon.trim()); setNewAlias(''); setNewCanon('') }}
+          disabled={!canAdd}
+          title={t('dbeditor.tapers.addHint')}
+          style={{ ...btnStyle(canAdd), flex: 1 }}
+        >
+          {t('dbeditor.tapers.add')}
+        </button>
+        <button
+          type="button"
+          onClick={() => { if (selected !== null) { onRemove(selected); setSelected(null) } }}
+          disabled={!isCurator || selected === null}
+          title={t('dbeditor.tapers.removeHint')}
+          style={{ ...btnStyle(isCurator && selected !== null), flex: 1 }}
+        >
+          {t('dbeditor.tapers.remove')}
+        </button>
+        <button
+          type="button"
+          onClick={onReload}
+          style={{ ...btnStyle(true), flex: 1 }}
+        >
+          {t('dbeditor.tapers.reload')}
+        </button>
+      </div>
+
+      {taperStatus && (
+        <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 2, marginBottom: 6 }}>{taperStatus}</div>
+      )}
+
+      {/* Recompute */}
+      <button
+        type="button"
+        onClick={onRecompute}
+        disabled={recomputeRunning}
+        title={t('dbeditor.tapers.recomputeHint')}
+        style={{ ...btnStyle(!recomputeRunning), width: '100%', marginTop: 2 }}
+      >
+        {recomputeRunning ? t('dbeditor.tapers.recomputing') : t('dbeditor.tapers.recompute')}
+      </button>
+
+      {stepNames.length > 0 && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 3, marginTop: 6 }}>
+          {stepNames.map((s) => (
+            <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-10-5)' }}>
+              <span style={{
+                width: 6, height: 6, borderRadius: '50%', flexShrink: 0,
+                background:
+                  recomputeSteps[s] === 'done' ? 'var(--lbb-ok-bar)'
+                    : recomputeSteps[s] === 'error' ? 'var(--lbb-bad-fg)'
+                      : recomputeSteps[s] === 'skipped' ? 'var(--lbb-fg3)'
+                        : 'var(--lbb-accent)',
+              }} />
+              <span style={{ color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>{s}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ── AddOverrideModal ──────────────────────────────────────────────────────────
 
 function AddOverrideModal({
@@ -746,6 +987,13 @@ export function ScreenDbEditor() {
   const [aliasStatus, setAliasStatus] = useState('')
   const [aliasCollapsed, setAliasCollapsed] = useState(false)
 
+  // Known-taper panel
+  const [taperData, setTaperData] = useState<TaperAliasList | null>(null)
+  const [taperStatus, setTaperStatus] = useState('')
+  const [taperCollapsed, setTaperCollapsed] = useState(true)
+  const [recomputeSteps, setRecomputeSteps] = useState<Record<string, RecomputeStepStatus>>({})
+  const [recomputeRunning, setRecomputeRunning] = useState(false)
+
   // SQL query panel
   const [sqlPanelOpen, setSqlPanelOpen] = useState(false)
 
@@ -765,6 +1013,7 @@ export function ScreenDbEditor() {
     loadIntegrityStats()
     checkCurator()
     loadAliases()
+    loadTaperAliases()
   }, [])
 
   function loadTables(db = activeDb) {
@@ -1237,6 +1486,88 @@ export function ScreenDbEditor() {
       .catch((e) => setAliasStatus(`Error: ${e}`))
   }
 
+  // ── Known-taper aliases ─────────────────────────────────────────────────────
+
+  function loadTaperAliases() {
+    fetch(`${BASE}/api/tapers/aliases`)
+      .then((r) => r.json())
+      .then((data: TaperAliasList) => {
+        if (data && Array.isArray(data.entries)) {
+          setTaperData(data)
+          setTaperStatus(
+            t('dbeditor.tapers.count', {
+              merged: data.counts.merged,
+              user: data.counts.user_add,
+            }) + (isCurator ? '' : t('dbeditor.tapers.readOnly'))
+          )
+        }
+      })
+      .catch((e) => setTaperStatus(`Error: ${e}`))
+  }
+
+  function addTaperAlias(alias: string, canonical: string) {
+    if (!alias || !canonical) return
+    fetch(`${BASE}/api/tapers/aliases`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ alias, canonical }),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.error) {
+          setTaperStatus(`Error: ${data.message || data.error}`)
+        } else {
+          setTaperStatus(t('dbeditor.tapers.saved', { alias, canonical }))
+          loadTaperAliases()
+        }
+      })
+      .catch((e) => setTaperStatus(`Error: ${e}`))
+  }
+
+  function removeTaperAlias(alias: string) {
+    if (!window.confirm(t('dbeditor.tapers.removeConfirm', { alias }))) return
+    fetch(`${BASE}/api/tapers/aliases/${encodeURIComponent(alias)}`, { method: 'DELETE' })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.error) {
+          setTaperStatus(`Error: ${data.message || data.error}`)
+        } else {
+          setTaperStatus(t('dbeditor.tapers.removed', { alias }))
+          loadTaperAliases()
+        }
+      })
+      .catch((e) => setTaperStatus(`Error: ${e}`))
+  }
+
+  async function runRecompute() {
+    if (recomputeRunning) return
+    setRecomputeRunning(true)
+    setRecomputeSteps({})
+    try {
+      const r = await fetch(`${BASE}/api/derived/recompute`, { method: 'POST' })
+      if (!r.ok || !r.body) {
+        const errBody = await r.json().catch(() => ({})) as { message?: string; error?: string }
+        setTaperStatus(t('dbeditor.tapers.recomputeError', { msg: errBody.message ?? errBody.error ?? r.statusText }))
+        return
+      }
+      await readSSE<RecomputeEvent>(r, (ev) => {
+        if (ev.event === 'chain_done') { setTaperStatus(t('dbeditor.tapers.recomputeDone')); return }
+        if (!ev.step) return
+        if (ev.event === 'start') setRecomputeSteps((s) => ({ ...s, [ev.step as string]: 'running' }))
+        else if (ev.event === 'done') setRecomputeSteps((s) => ({ ...s, [ev.step as string]: 'done' }))
+        else if (ev.event === 'skipped') setRecomputeSteps((s) => ({ ...s, [ev.step as string]: 'skipped' }))
+        else if (ev.event === 'error') {
+          setRecomputeSteps((s) => ({ ...s, [ev.step as string]: 'error' }))
+          setTaperStatus(t('dbeditor.tapers.recomputeError', { msg: ev.message ?? 'unknown' }))
+        }
+      })
+    } catch (e) {
+      setTaperStatus(t('dbeditor.tapers.recomputeError', { msg: (e as Error).message }))
+    } finally {
+      setRecomputeRunning(false)
+    }
+  }
+
   // ── Derived ───────────────────────────────────────────────────────────────
 
   const pages      = Math.max(1, Math.ceil(total / limit))
@@ -1350,7 +1681,7 @@ export function ScreenDbEditor() {
           </div>
           <button
             type="button"
-            onClick={() => { loadTables(); if (activeDb === 'losslessbob') { loadIntegrityStats(); loadAliases() } }}
+            onClick={() => { loadTables(); if (activeDb === 'losslessbob') { loadIntegrityStats(); loadAliases(); loadTaperAliases() } }}
             style={{
               width: '100%', padding: '4px 8px', borderRadius: 5, fontSize: 'var(--lbb-fs-11)',
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
@@ -1394,6 +1725,25 @@ export function ScreenDbEditor() {
                 onAdd={() => setShowAddAlias(true)}
                 onDelete={deleteAlias}
                 onReload={loadAliases}
+              />
+            </SideSection>
+
+            {/* Known Tapers */}
+            <SideSection
+              title={t('dbeditor.tapers.title')}
+              collapsed={taperCollapsed}
+              onToggle={() => setTaperCollapsed((v) => !v)}
+            >
+              <TaperPanel
+                data={taperData}
+                isCurator={isCurator}
+                status={taperStatus}
+                recomputeSteps={recomputeSteps}
+                recomputeRunning={recomputeRunning}
+                onAdd={addTaperAlias}
+                onRemove={removeTaperAlias}
+                onReload={loadTaperAliases}
+                onRecompute={runRecompute}
               />
             </SideSection>
           </>

@@ -1,6 +1,8 @@
 # TapeMatch "Simulated Listening" Signals — Idea Spec Pack
 
 Spec author: Fable 5, 2026-07-06 (ideation session; user wants ALL sections eventually).
+Status 2026-07-17: un-parked; §1 handoff prompt drafted + approved (see §1 HANDOFF
+below) — awaiting launch.
 Execution target: Opus/Sonnet sessions, one section at a time. Like
 FABLE_LISTENING_INSIGHT_IDEAS.md these are *seeds*: the executing session expands its
 section into a short plan before coding, and reads `tools/tapematch/CLAUDE.md` +
@@ -169,6 +171,56 @@ to cleanly-aligned pairs, same as A/B listening).
 **Deps:** none for v1; torch-family optional later. **Size:** medium.
 **Dependencies:** benefits from §1 (synthesized degradations give known "worse" copies
 to validate the ranking direction).
+
+---
+
+## §1 HANDOFF (drafted 2026-07-17 by Fable — approved for sonnet, NOT yet executed)
+
+Launch as a sonnet implementation session with exactly this prompt (minimal-context
+format: task + paths + constraints; the docs it points at carry the rest):
+
+```text
+Implement §1 (synthetic lineage simulator) of
+instructions/FABLE_TAPEMATCH_LISTENING_SIGNALS.md. Per that spec's header: expand
+§0 + §1 into a short written plan BEFORE coding, and read tools/tapematch/CLAUDE.md
+and the tail of tools/tapematch/CALIBRATION_PROGRESS.md first.
+
+Context deltas since the spec was written (2026-07-06):
+- A corpus rescore batch is in flight until ~2026-07-20 (TODO-254). Standing rule:
+  never run concurrently with a live tapematch session. This session: BUILD + unit
+  tests only — do not run --synth-regress or any pipeline invocation over audio.
+  Note the first real harness run as a follow-up in the TODO.
+- Per-segment staircase lag curves are now persisted by the engine (TODO-235,
+  commits d29dd39b + 3194b90f). Synthesize staircase degradations so expected
+  values are checkable against that persisted format — read the TODO-235 work
+  before designing the staircase op's manifest fields.
+- Calibration moved since the 07-09 freeze: staircase corr floor 0.40 and the
+  corroboration gate shipped (TODO-234). TODO-255 (hiss_median floor for the gate)
+  is open — design the harness so a ROC sweep over synthesized hiss levels can
+  answer it; name this as a target use case in your plan.
+
+Deliverables (from spec §1):
+- tapematch/simulate.py: composable degradation ops, each a pure function on
+  float32 PCM, chained per recipe (op list is in the spec).
+- tools/tapematch/make_synth_pairs.py CLI; per-pair manifest JSON (recipe,
+  expected verdict, expected speed_ppm/kind).
+- --synth-regress harness mode (implemented, NOT executed this session).
+- Hard negatives: same-song adjacent-tour-date candidates from setlist data.
+- Unit tests for the ops (pure-PCM level, no pipeline run needed).
+
+Constraints:
+- Synthetic results must never pollute real observations — spec prefers a separate
+  observations_synth.db; commit to the isolation choice in your plan.
+- Seed all randomness (reproducible corpora).
+- No new Python deps (ffmpeg already available). No threshold/weight/config.yaml
+  verdict changes — this section is measurement infrastructure only.
+- Repo rules apply: .venv/bin/python3, type hints + docstrings, logging not print,
+  100-char lines. Open a TODO entry at session start; end with /session-close.
+```
+
+Model routing: sonnet. §2 (ENF) is next after §1 but its DSP is intricate — route
+to opus, or sonnet with plan review. §4 stays coupled to §2; do not hand it off
+standalone.
 
 ---
 
