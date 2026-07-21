@@ -24,12 +24,17 @@ ownership, friend data and wishlists are never touched by this module at all.
 from __future__ import annotations
 
 import datetime
+import functools
 import json
 import logging
+import math
+import os
 import sqlite3
+import urllib.parse
 
 from backend.db import get_connection
 from backend.geocoder import entry_date_to_iso
+from backend.paths import SITE_BASE_URL, detail_url
 
 log = logging.getLogger(__name__)
 
@@ -43,6 +48,268 @@ _CONCERT_TYPE_FILTER = (
     "((event_type = 'concert' OR event_type LIKE 'concert - %') "
     "AND tour_name NOT LIKE '%ehearsal%')"
 )
+
+# D-Bite2: country -> {focus (world-atlas country name), scale (mercator zoom)}
+# for the dossier locator map. world-atlas (countries-110m.json) spellings
+# matter — notably the US/UK long forms. Loosely tuned locator zooms, not
+# precise cartography. Lookup is normalized (stripped, case-insensitive) with
+# aliases folded to a canonical key below.
+_COUNTRY_MAP_META: dict[str, dict] = {
+    "united states of america": {"focus": "United States of America", "scale": 680},
+    "united kingdom": {"focus": "United Kingdom", "scale": 1400},
+    "australia": {"focus": "Australia", "scale": 640},
+    "canada": {"focus": "Canada", "scale": 420},
+    "germany": {"focus": "Germany", "scale": 1200},
+    "france": {"focus": "France", "scale": 1500},
+    "italy": {"focus": "Italy", "scale": 1400},
+    "spain": {"focus": "Spain", "scale": 1300},
+    "netherlands": {"focus": "Netherlands", "scale": 2200},
+    "sweden": {"focus": "Sweden", "scale": 900},
+    "norway": {"focus": "Norway", "scale": 900},
+    "denmark": {"focus": "Denmark", "scale": 2000},
+    "japan": {"focus": "Japan", "scale": 1000},
+    "new zealand": {"focus": "New Zealand", "scale": 900},
+    "ireland": {"focus": "Ireland", "scale": 1800},
+    "switzerland": {"focus": "Switzerland", "scale": 2600},
+    "austria": {"focus": "Austria", "scale": 2000},
+    "belgium": {"focus": "Belgium", "scale": 3000},
+}
+
+# Aliases -> canonical key in _COUNTRY_MAP_META.
+_COUNTRY_ALIASES: dict[str, str] = {
+    "usa": "united states of america",
+    "us": "united states of america",
+    "u.s.a.": "united states of america",
+    "u.s.": "united states of america",
+    "united states": "united states of america",
+    "uk": "united kingdom",
+    "u.k.": "united kingdom",
+    "england": "united kingdom",
+    "scotland": "united kingdom",
+    "wales": "united kingdom",
+    "northern ireland": "united kingdom",
+    "great britain": "united kingdom",
+}
+
+
+def _country_map_meta(country: str | None) -> dict | None:
+    """``{"focus", "scale"}`` for *country*, or ``None`` when unrecognised.
+
+    Normalizes case/whitespace and folds common US/UK aliases before the
+    :data:`_COUNTRY_MAP_META` lookup. Unknown country -> ``None`` (the map
+    still renders, centered on lat/lng, just without a host-country fill).
+    """
+    if not country:
+        return None
+    key = country.strip().lower()
+    key = _COUNTRY_ALIASES.get(key, key)
+    return _COUNTRY_MAP_META.get(key)
+
+
+# --- Locator map (server-side pre-render) --------------------------------
+# The dossier is delivered as a downloadable, self-contained HTML file, so the
+# map is pre-rendered to a static inline SVG here rather than drawn client-side
+# with d3 — no network fetch, no JS, and it prints reliably. The projection
+# replicates ``d3.geoMercator().center([lng,lat]).scale(k).translate([w/2,h/2])``
+# so the geometry lines up with the design prototypes (which used d3 directly).
+_WORLD_GEOJSON_PATH = os.path.join(
+    os.path.dirname(__file__), "assets", "world_countries_110m.json"
+)
+_DEFAULT_MAP_SCALE = 400
+_MAP_W = 300
+_MAP_H = 210
+# d3.geoMercator clips latitude to this value (map becomes square); clamp to it
+# so near-polar geometry doesn't blow up the log-tangent.
+_MERCATOR_LAT_CLAMP = 85.05112878
+
+
+@functools.lru_cache(maxsize=1)
+def _world_features() -> list[dict]:
+    """Load the bundled world-countries GeoJSON (177 features), cached.
+
+    Returns:
+        The FeatureCollection's ``features`` list, or ``[]`` if the asset is
+        missing/unreadable (the dossier then renders without a map).
+    """
+    try:
+        with open(_WORLD_GEOJSON_PATH, encoding="utf-8") as fh:
+            return json.load(fh).get("features", [])
+    except (OSError, ValueError) as exc:  # missing file or malformed JSON
+        log.warning("locator map asset unavailable (%s): %s", _WORLD_GEOJSON_PATH, exc)
+        return []
+
+
+def _merc_y(deg: float) -> float:
+    """Mercator y (in radians of projected latitude) for *deg*, pole-clamped."""
+    d = max(-_MERCATOR_LAT_CLAMP, min(_MERCATOR_LAT_CLAMP, deg))
+    return math.log(math.tan(math.pi / 4.0 + math.radians(d) / 2.0))
+
+
+def _ring_area(ring: list) -> float:
+    """Absolute shoelace area of a lng/lat ring, for size comparison only."""
+    area = 0.0
+    n = len(ring)
+    for i in range(n):
+        lo0, la0 = ring[i]
+        lo1, la1 = ring[(i + 1) % n]
+        area += lo0 * la1 - lo1 * la0
+    return abs(area) / 2.0
+
+
+def _mainland_bbox(feature: dict) -> tuple[float, float, float, float] | None:
+    """lng/lat bbox of *feature*'s single largest polygon (its main landmass).
+
+    Picking the largest-area polygon drops outlying members of a MultiPolygon
+    (Alaska/Hawaii, overseas territories, small islands) so the recognizable
+    mainland frames the locator instead of being shrunk to fit distant land.
+
+    Returns:
+        ``(min_lng, min_lat, max_lng, max_lat)`` or ``None`` if the geometry
+        has no usable polygon.
+    """
+    geom = feature.get("geometry") or {}
+    gtype = geom.get("type")
+    if gtype == "Polygon":
+        polys = [geom["coordinates"]]
+    elif gtype == "MultiPolygon":
+        polys = geom["coordinates"]
+    else:
+        return None
+    best_ring = None
+    best_area = -1.0
+    for rings in polys:
+        if not rings:
+            continue
+        a = _ring_area(rings[0])
+        if a > best_area:
+            best_area, best_ring = a, rings[0]
+    if not best_ring:
+        return None
+    los = [p[0] for p in best_ring]
+    las = [p[1] for p in best_ring]
+    return (min(los), min(las), max(los), max(las))
+
+
+def _render_locator_svg(lat: float, lng: float, focus: str | None, scale: float,
+                        width: int = _MAP_W, height: int = _MAP_H) -> str | None:
+    """Pre-render a country-locator map framing the host country, as inline SVG.
+
+    When *focus* resolves to a bundled country feature, the map auto-fits that
+    country's main landmass into the viewport and drops the pin on the venue —
+    so interior venues (e.g. Denver) show the recognizable country outline
+    rather than a featureless fill. With no host match, it falls back to a
+    venue-centered view at *scale*.
+
+    Args:
+        lat: Geocoded venue latitude (degrees).
+        lng: Geocoded venue longitude (degrees).
+        focus: Host country's world-atlas name, filled with the ``map-host``
+            class and used to auto-fit the frame; ``None`` to draw no host
+            highlight and center on the venue.
+        scale: d3 Mercator scale (zoom) for the no-host fallback only.
+        width: SVG viewbox width in px.
+        height: SVG viewbox height in px.
+
+    Returns:
+        An ``<svg class="loc-map">`` string whose fills are driven by the
+        template's CSS custom properties (so it recolors for dark/print), or
+        ``None`` if the geometry asset is unavailable.
+    """
+    features = _world_features()
+    if not features:
+        return None
+
+    half_w, half_h = width / 2.0, height / 2.0
+
+    # Auto-fit the host country's mainland when we can identify it; otherwise
+    # fall back to the venue-centered fixed-scale view.
+    fit_bbox = None
+    if focus is not None:
+        host_feat = next(
+            (f for f in features if (f.get("properties") or {}).get("name") == focus),
+            None,
+        )
+        if host_feat is not None:
+            fit_bbox = _mainland_bbox(host_feat)
+
+    if fit_bbox is not None:
+        min_lo, min_la, max_lo, max_la = fit_bbox
+        # Keep the venue pin inside the frame even if it sits off the mainland.
+        min_lo, max_lo = min(min_lo, lng), max(max_lo, lng)
+        min_la, max_la = min(min_la, lat), max(max_la, lat)
+        center_lng = (min_lo + max_lo) / 2.0
+        center_lat = (min_la + max_la) / 2.0
+        pad = 14.0
+        span_x = math.radians(max_lo - min_lo) or 1e-6
+        span_y = (_merc_y(max_la) - _merc_y(min_la)) or 1e-6
+        k = max(1.0, min((width - 2 * pad) / span_x, (height - 2 * pad) / span_y))
+    else:
+        center_lng, center_lat = lng, lat
+        k = float(scale)
+
+    lam_c = math.radians(center_lng)
+    y_c = _merc_y(center_lat)
+
+    def _project(lo: float, la: float) -> tuple[float, float]:
+        return half_w + k * (math.radians(lo) - lam_c), half_h - k * (_merc_y(la) - y_c)
+
+    margin = 4.0
+
+    def _poly_path(rings: list) -> str | None:
+        parts: list[str] = []
+        min_x = min_y = float("inf")
+        max_x = max_y = float("-inf")
+        for ring in rings:
+            pts: list[str] = []
+            for lo, la in ring:
+                px, py = _project(lo, la)
+                min_x, max_x = min(min_x, px), max(max_x, px)
+                min_y, max_y = min(min_y, py), max(max_y, py)
+                pts.append(f"{px:.1f},{py:.1f}")
+            if pts:
+                parts.append("M" + "L".join(pts) + "Z")
+        if not parts:
+            return None
+        # Drop polygons whose bbox falls entirely outside the viewport.
+        if (max_x < -margin or min_x > width + margin
+                or max_y < -margin or min_y > height + margin):
+            return None
+        return "".join(parts)
+
+    land: list[str] = []
+    host: list[str] = []
+    for feat in features:
+        name = (feat.get("properties") or {}).get("name")
+        geom = feat.get("geometry") or {}
+        gtype = geom.get("type")
+        if gtype == "Polygon":
+            polys = [geom["coordinates"]]
+        elif gtype == "MultiPolygon":
+            polys = geom["coordinates"]
+        else:
+            continue
+        is_host = focus is not None and name == focus
+        for rings in polys:
+            path_d = _poly_path(rings)
+            if path_d:
+                (host if is_host else land).append(path_d)
+
+    pin_x, pin_y = _project(lng, lat)
+    out = [
+        f'<svg class="loc-map" viewBox="0 0 {width} {height}" '
+        f'preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">',
+        f'<rect class="map-ocean" x="0" y="0" width="{width}" height="{height}"/>',
+    ]
+    out += [f'<path class="map-land" d="{d}"/>' for d in land]
+    # Host drawn after land so neighbours don't overpaint it; keeps map-land
+    # stroke, map-host fill wins by later CSS source order.
+    out += [f'<path class="map-land map-host" d="{d}"/>' for d in host]
+    out += [
+        f'<circle class="pin-halo" cx="{pin_x:.1f}" cy="{pin_y:.1f}" r="13"/>',
+        f'<circle class="pin-dot" cx="{pin_x:.1f}" cy="{pin_y:.1f}" r="4.5"/>',
+        "</svg>",
+    ]
+    return "".join(out)
 
 
 def _table_exists(conn: sqlite3.Connection, table_name: str) -> bool:
@@ -173,6 +440,66 @@ def _build_show(conn: sqlite3.Connection, date_iso: str, location: str | None,
         ).fetchone()
         if title_row:
             show["title"] = title_row["title"]
+
+    # Bite 2: locator-map coordinates + country/city_line. All optional — a
+    # missing or column-short table just leaves the map off (spec §1: never
+    # error, always degrade cleanly).
+    country: str | None = None
+    region: str | None = None
+    if _table_exists(conn, "setlistfm_shows"):
+        sf_cols = {r[1] for r in conn.execute("PRAGMA table_info(setlistfm_shows)")}
+        needed = {"city_lat", "city_lon", "country", "city_state"}
+        if needed <= sf_cols:
+            sf_loc = conn.execute(
+                "SELECT city_lat, city_lon, country, city_state FROM setlistfm_shows "
+                "WHERE date_str = ? LIMIT 1",
+                (date_iso,),
+            ).fetchone()
+            if sf_loc is not None:
+                if sf_loc["city_lat"] is not None and sf_loc["city_lon"] is not None:
+                    show["lat"] = sf_loc["city_lat"]
+                    show["lng"] = sf_loc["city_lon"]
+                if sf_loc["country"]:
+                    country = sf_loc["country"]
+                if sf_loc["city_state"]:
+                    region = sf_loc["city_state"]
+
+    if not country and _table_exists(conn, "dylan_performances"):
+        dp_cols = {r[1] for r in conn.execute("PRAGMA table_info(dylan_performances)")}
+        if "country" in dp_cols:
+            dp_country = conn.execute(
+                "SELECT country FROM dylan_performances WHERE date_str = ? "
+                "AND country IS NOT NULL AND country != '' LIMIT 1",
+                (date_iso,),
+            ).fetchone()
+            if dp_country:
+                country = dp_country["country"]
+
+    if not country and event is not None and event["country"]:
+        country = event["country"]
+
+    if country:
+        show["country"] = country
+
+    city_group = ", ".join(p for p in (city, region) if p)
+    city_line = " · ".join(p for p in (city_group, country) if p)
+    if city_line:
+        show["city_line"] = city_line
+
+    focus = None
+    scale = _DEFAULT_MAP_SCALE
+    if country:
+        meta = _country_map_meta(country)
+        if meta:
+            focus = meta["focus"]
+            scale = meta["scale"]
+            show["map_focus"] = focus
+            show["map_scale"] = scale
+
+    if "lat" in show and "lng" in show:
+        svg = _render_locator_svg(show["lat"], show["lng"], focus, scale)
+        if svg:
+            show["map_svg"] = svg
 
     return show
 
@@ -369,13 +696,15 @@ def _load_quality(conn: sqlite3.Connection, lb_numbers: list[int]) -> dict[int, 
     cols = {r[1] for r in conn.execute("PRAGMA table_info(quality_recording_scores)")}
     if "abs_grade" not in cols:
         return {}
+    has_score = "abs_score" in cols
     scan_row = conn.execute("SELECT MAX(scan_id) AS m FROM quality_recording_scores").fetchone()
     scan_id = scan_row["m"] if scan_row else None
     if scan_id is None:
         return {}
     placeholders = ",".join("?" * len(lb_numbers))
+    score_col = ", abs_score" if has_score else ""
     rows = conn.execute(
-        f"SELECT lb_number, abs_grade, verdict_text FROM quality_recording_scores "
+        f"SELECT lb_number, abs_grade{score_col}, verdict_text FROM quality_recording_scores "
         f"WHERE scan_id = ? AND lb_number IN ({placeholders}) "
         f"AND abs_grade IS NOT NULL AND vetoed = 0",
         [scan_id, *lb_numbers],
@@ -383,6 +712,8 @@ def _load_quality(conn: sqlite3.Connection, lb_numbers: list[int]) -> dict[int, 
     out: dict[int, dict] = {}
     for r in rows:
         entry = {"grade": r["abs_grade"]}
+        if has_score and r["abs_score"] is not None:
+            entry["score"] = r["abs_score"]
         if r["verdict_text"]:
             entry["verdict"] = r["verdict_text"]
         out[r["lb_number"]] = entry
@@ -460,7 +791,7 @@ def _build_sources(conn: sqlite3.Connection, date_iso: str, entries: list[sqlite
         if e["status"] == "private" and channel != "full":
             member = {"lb": f"LB-{lb:05d}", "private": True}
         else:
-            member = {"lb": f"LB-{lb:05d}"}
+            member = {"lb": f"LB-{lb:05d}", "url": detail_url(lb)}
             if e["rating"]:
                 member["rating"] = e["rating"]
             if e["timing"]:
@@ -499,6 +830,96 @@ def _build_sources(conn: sqlite3.Connection, date_iso: str, entries: list[sqlite
     return sources, local_analysis
 
 
+# Olof's Files are scraped from the bobserve mirror (olof_fetcher.BASE_URL) —
+# deep links go there so they always resolve to the exact page we ingested.
+_OLOF_MIRROR_BASE = "https://www.bobserve.com/olof/"
+_OLOF_HOME = "http://www.bjorner.com/still.htm"
+_BOBLINKS_HOME = "https://boblinks.com"
+_BOBSERVE_HOME = "https://bobserve.com"
+# Boblinks per-show pages (MMDDYYs.html) only exist from 1995 on.
+_BOBLINKS_FIRST_YEAR = 1995
+
+
+def _build_xref(date_iso: str, event: sqlite3.Row | None,
+                lb_number: int | None) -> list[dict]:
+    """Cross-reference cards with working deep links for one date.
+
+    Every card carries both ``site`` (the source's home page, used for
+    attribution links) and ``url`` (the deepest link we can build for this
+    show that is guaranteed to resolve: the LB detail page, the exact Olof
+    page the context/setlist were ingested from, the Boblinks per-date page
+    when one can exist, and the Bobserve year index).
+
+    Args:
+        date_iso: Concert date, ``'YYYY-MM-DD'``.
+        event: The primary ``olof_events`` row for the date, if any.
+        lb_number: LB number to deep-link on the LosslessBob card
+            (recommendation first, else first visible source).
+
+    Returns:
+        List of ``{key, name, desc, site, url, link_label}`` dicts.
+    """
+    try:
+        dt = datetime.datetime.strptime(date_iso, "%Y-%m-%d")
+    except ValueError:
+        dt = None
+    year = f"{dt.year}" if dt else None
+
+    lbb = {
+        "key": "losslessbob",
+        "name": "LosslessBob",
+        "desc": "Lossless recording catalog — the LB-number source for "
+                "transfers, lineage & ratings.",
+        "site": SITE_BASE_URL,
+        "url": SITE_BASE_URL,
+        "link_label": "catalog home",
+    }
+    if lb_number is not None:
+        lbb["url"] = detail_url(lb_number)
+        lbb["link_label"] = f"LB-{lb_number:05d} detail page"
+
+    olof = {
+        "key": "olof",
+        "name": "Olof's Files · Still on the Road",
+        "desc": "Olof Björner's chronicle — dates, personnel, bobtalk and "
+                "song-by-song session notes.",
+        "site": _OLOF_HOME,
+        "url": _OLOF_HOME,
+        "link_label": "chronicle index",
+    }
+    if event is not None and event["page_filename"]:
+        olof["url"] = _OLOF_MIRROR_BASE + urllib.parse.quote(event["page_filename"])
+        olof["link_label"] = event["page_filename"]
+
+    boblinks = {
+        "key": "boblinks",
+        "name": "Bob Links",
+        "desc": "Fan-contributed setlists, concert reviews and venue notes "
+                "by date.",
+        "site": _BOBLINKS_HOME,
+        "url": _BOBLINKS_HOME,
+        "link_label": "site home",
+    }
+    if dt and dt.year >= _BOBLINKS_FIRST_YEAR:
+        boblinks["url"] = f"{_BOBLINKS_HOME}/{dt.strftime('%m%d%y')}s.html"
+        boblinks["link_label"] = f"setlist page · {date_iso}"
+
+    bobserve = {
+        "key": "bobserve",
+        "name": "Bobserve",
+        "desc": "Setlist observations and performance statistics across the "
+                "touring history.",
+        "site": _BOBSERVE_HOME,
+        "url": _BOBSERVE_HOME,
+        "link_label": "site home",
+    }
+    if year:
+        bobserve["url"] = f"{_BOBSERVE_HOME}/eventsperiod?period={year}"
+        bobserve["link_label"] = f"events · {year}"
+
+    return [lbb, olof, boblinks, bobserve]
+
+
 def build_dossier(date_iso: str, location: str | None = None, channel: str = "public",
                    db_path: str | None = None) -> dict:
     """Assemble the show dossier for one date.
@@ -513,8 +934,10 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
         db_path: Optional database path override.
 
     Returns:
-        The D1 JSON shape, or ``{"ambiguous": True, "date_iso", "candidates"}``
-        when *location* is required but not given.
+        The D1 JSON shape (plus an additive ``xref`` list of external
+        deep-link cards, see :func:`_build_xref`), or
+        ``{"ambiguous": True, "date_iso", "candidates"}`` when *location*
+        is required but not given.
     """
     if channel not in ("public", "full"):
         channel = "public"
@@ -552,6 +975,10 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
     rank1_lb = next((lb for lb, p in picks.items() if p["rank"] == 1), None)
     if rank1_lb is not None and rank1_lb in visible_lbs:
         dossier["recommendation"] = {"lb": f"LB-{rank1_lb:05d}", "evidence": picks[rank1_lb]["evidence"]}
+
+    xref_lb = rank1_lb if rank1_lb is not None and rank1_lb in visible_lbs else (
+        visible_lbs[0] if visible_lbs else None)
+    dossier["xref"] = _build_xref(date_iso, event, xref_lb)
 
     provenance: dict = {"generated_at": _now_iso(), "channel": channel, "local_analysis": local_analysis}
     mv = conn.execute("SELECT value FROM meta WHERE key = 'master_version'").fetchone()

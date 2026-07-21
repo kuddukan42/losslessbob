@@ -1,370 +1,346 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ d.show.date_disp | default(d.show.date_iso) }}{% if d.show.venue %} — {{ d.show.venue }}{% endif %} — LosslessBob dossier</title>
 <style>
-  :root {
-    --ink: #1a1a1a;
-    --muted: #6b6b6b;
-    --rule: #ddd;
-    --paper: #ffffff;
-    --accent: #7a3b12;
-    --tint: #f6f3ee;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 2.5rem 1.5rem 4rem;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: Georgia, 'Times New Roman', serif;
-    line-height: 1.5;
-  }
-  .page {
-    max-width: 760px;
-    margin: 0 auto;
-  }
-  header.masthead {
-    border-bottom: 3px double var(--ink);
-    padding-bottom: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-  header.masthead .kicker {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.35rem;
-  }
-  h1 {
-    margin: 0 0 0.15rem;
-    font-size: 1.7rem;
-    font-weight: 700;
-  }
-  .show-meta {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-  .show-meta .sep { margin: 0 0.4em; }
-  section { margin: 1.75rem 0; page-break-inside: avoid; }
-  h2 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 0.3rem;
-    margin: 0 0 0.75rem;
-  }
-  .context-block { font-size: 0.95rem; }
-  .context-block p { margin: 0 0 0.75rem; white-space: pre-line; }
-  .context-block .label {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    display: block;
-    margin-bottom: 0.15rem;
-  }
-  .bobtalk {
-    border-left: 3px solid var(--accent);
-    padding: 0.15rem 0 0.15rem 1rem;
-    font-style: italic;
-  }
-  ol.setlist { list-style: none; margin: 0; padding: 0; counter-reset: song; }
-  ol.setlist li {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-    padding: 0.3rem 0;
-    border-bottom: 1px solid var(--rule);
-    font-size: 0.95rem;
-    page-break-inside: avoid;
-  }
-  ol.setlist li .pos {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: var(--muted);
-    font-size: 0.8rem;
-    min-width: 1.6em;
-    text-align: right;
-  }
-  ol.setlist li .song-title { flex: 1; }
-  ol.setlist li .song-sub {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.78rem;
-    color: var(--muted);
-    display: block;
-  }
-  .rarity-badge {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    border-radius: 3px;
-    padding: 0.08em 0.45em;
-    white-space: nowrap;
-  }
-  .encore-tag {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.68rem;
-    color: var(--muted);
-  }
-  .family {
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    padding: 0.9rem 1rem;
-    margin-bottom: 1rem;
-    page-break-inside: avoid;
-  }
-  .family-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    margin-bottom: 0.6rem;
-  }
-  .family-head .flag {
-    color: #a33;
-    font-weight: 600;
-  }
-  .source {
-    padding: 0.5rem 0;
-    border-top: 1px solid var(--rule);
-  }
-  .source:first-child { border-top: none; padding-top: 0; }
-  .source-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-  }
-  .source-head .lb {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 700;
-  }
-  .badge {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.72rem;
-    color: var(--muted);
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    padding: 0.05em 0.4em;
-  }
-  .taper-pill {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.72rem;
-    border-radius: 3px;
-    padding: 0.05em 0.5em;
-  }
-  .taper-pill.confirmed { background: var(--accent); color: #fff; }
-  .taper-pill.propagated { border: 1px solid var(--accent); color: var(--accent); }
-  .taper-pill.inferred { border: 1px dashed var(--muted); color: var(--muted); }
-  .source-detail {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.82rem;
-    color: var(--muted);
-    margin-top: 0.25rem;
-  }
-  .evidence-list {
-    margin: 0.35rem 0 0;
-    padding: 0;
-    list-style: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.78rem;
-  }
-  .evidence-list li {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.5rem;
-    padding: 0.12rem 0;
-    color: var(--muted);
-  }
-  .evidence-list .points { white-space: nowrap; }
-  .quality-verdict, .lineage-notes, .curated-list {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-top: 0.2rem;
-  }
-  .private-note {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-style: italic;
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
-  .recommendation {
-    background: var(--tint);
-    border-radius: 6px;
-    padding: 1rem 1.1rem;
-    page-break-inside: avoid;
-  }
-  .recommendation .rec-lb {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-  }
-  footer.provenance {
-    margin-top: 2.5rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--rule);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.72rem;
-    color: var(--muted);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 1rem;
-  }
-  .local-analysis-tag {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    padding: 0.05em 0.4em;
-  }
-  @media print {
-    body { padding: 0; }
-    .page { max-width: none; }
-    a { color: inherit; text-decoration: none; }
-  }
+/* Palette mirrors gui_next tokens.ts: "blue" frame + "indigo" accent (dark default). */
+:root{
+  --bg:#131c2e; --surface:#1e2a45; --surface2:#273457; --surface3:#324069;
+  --ink:#eef3fc; --muted:#aebcd6; --faint:#7384a2; --rule:#37466c; --rule2:#4c5c88;
+  --accent:#5b8df2; --accent-hi:#7aa3f7; --accent-soft:#1c2640; --on-accent:#0a0f1c;
+  --pos:#5db679; --neg:#e08070; --warn:#d4a35a; --info:#7eb4e8; --pin:#7aa3f7;
+  --map-land:#273553; --map-host:#33477a; --map-line:#3d4f7c; --map-ocean:#101828;
+  --shadow:0 1px 0 rgba(255,255,255,.04) inset,0 6px 18px rgba(0,0,0,.35);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"SF Mono",ui-monospace,"Roboto Mono",Menlo,Consolas,monospace;
+}
+html[data-theme="light"]{
+  --bg:#dde7f6; --surface:#f6f9fe; --surface2:#e3edfa; --surface3:#d2e1f4;
+  --ink:#13203a; --muted:#3f547a; --faint:#6f83a6; --rule:#c2d4ec; --rule2:#9bb9e0;
+  --accent:#2b5fd0; --accent-hi:#1f4baa; --accent-soft:#e3ebf8; --on-accent:#ffffff;
+  --pos:#1f7a3e; --neg:#b03f30; --warn:#9a6800; --info:#1f5b8f; --pin:#2b5fd0;
+  --map-land:#e6eefb; --map-host:#bcd2ee; --map-line:#9bb9e0; --map-ocean:#cfdff2;
+  --shadow:0 1px 3px rgba(19,32,58,.10);
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;padding:2.4rem 1.5rem 3rem;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;transition:background .2s,color .2s}
+.page{max-width:920px;margin:0 auto}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-hi);text-decoration:underline}
+.mono{font-family:var(--mono)}
+.eyebrow{font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+
+/* theme toggle */
+.theme-toggle{position:fixed;top:1rem;right:1rem;z-index:20;font-size:.72rem;font-weight:600;letter-spacing:.03em;display:inline-flex;align-items:center;gap:.4em;padding:.42em .8em;border-radius:999px;border:1px solid var(--rule2);background:var(--surface);color:var(--muted);cursor:pointer;box-shadow:var(--shadow);font-family:var(--sans)}
+.theme-toggle:hover{color:var(--ink);border-color:var(--accent)}
+
+/* masthead — centred, archival double rule */
+.masthead{text-align:center;padding-top:.4rem}
+.masthead .kicker{display:flex;justify-content:center;align-items:center;gap:.55em;margin-bottom:.7rem}
+.masthead .mark{width:22px;height:22px;border-radius:6px;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;color:var(--on-accent);font-family:var(--mono);font-weight:800;font-size:.7rem}
+h1{margin:.1rem 0 .45rem;font-size:2.3rem;font-weight:800;line-height:1.08;letter-spacing:-.02em}
+.show-meta{font-size:.84rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:center;gap:.35em .65em;align-items:center}
+.show-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--faint);display:inline-block}
+.netnum{font-family:var(--mono);font-weight:600;color:var(--accent-hi)}
+.mast-rules{margin-top:1rem;height:5px;border-top:2px solid var(--accent);border-bottom:1px solid var(--rule2)}
+
+/* at-a-glance strip */
+.glance{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden;margin:1.5rem 0}
+.glance .cell{background:var(--surface);padding:.7rem .6rem;text-align:center}
+.glance .k{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:.3rem}
+.glance .v{font-family:var(--mono);font-size:1.02rem;font-weight:600;color:var(--ink);line-height:1.2}
+.glance .v.accent{color:var(--accent-hi)}
+
+/* section headers with credit line */
+section{margin:2.1rem 0;page-break-inside:avoid}
+h2{font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-hi);display:flex;align-items:center;gap:.8em;margin:0 0 .9rem}
+h2 .line{flex:1;height:1px;background:var(--rule)}
+h2 .credit{font-weight:500;letter-spacing:.02em;text-transform:none;font-size:.7rem;color:var(--faint)}
+h2 .credit a{color:var(--muted);border-bottom:1px dotted var(--rule2)}
+h2 .credit a:hover{color:var(--accent-hi);text-decoration:none;border-bottom-color:var(--accent)}
+
+/* two-column top (Context + Location) */
+.split{display:grid;grid-template-columns:1fr 300px;gap:1.6rem;align-items:start}
+
+/* context — serif prose against the data sans */
+.context p{margin:0 0 .85rem;font-size:.98rem;font-family:var(--serif)}
+.context .label{font-family:var(--sans);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);display:block;margin-bottom:.15rem}
+.context .bobtalk{border-left:3px solid var(--accent);padding:.15rem 0 .15rem 1rem;font-style:italic}
+
+/* location card */
+.loc-card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+.loc-map{width:100%;height:210px;display:block;background:var(--map-ocean)}
+.loc-map .map-ocean{fill:var(--map-ocean)}
+.loc-map .map-land{fill:var(--map-land);stroke:var(--map-line);stroke-width:.4px}
+.loc-map .map-host{fill:var(--map-host)}
+.loc-map .pin-halo{fill:var(--pin);opacity:.2}
+.loc-map .pin-dot{fill:var(--pin);stroke:#131c2e;stroke-width:1.5px}
+html[data-theme="light"] .loc-map .pin-dot{stroke:#fff}
+.loc-meta{padding:.75rem .9rem;font-size:.78rem;color:var(--muted);border-top:1px solid var(--rule)}
+.loc-meta .venue{color:var(--ink);font-weight:600;font-size:.85rem;margin-bottom:.15rem}
+.loc-meta .coord{font-family:var(--mono);font-size:.72rem;color:var(--faint);margin-top:.3rem}
+
+/* recommendation hero */
+.rec{position:relative;display:grid;grid-template-columns:auto 1fr;gap:1.7rem;border:1px solid var(--rule2);border-radius:12px;padding:1.25rem 1.5rem;box-shadow:var(--shadow);background:radial-gradient(130% 170% at 16% -10%,color-mix(in oklab,var(--accent) 16%,transparent),transparent 58%),var(--surface)}
+.rec .headline{text-align:center;align-self:center;min-width:13rem}
+.rec .headline .eyebrow{margin-bottom:.4rem;color:var(--accent-hi)}
+.rec .headline .lb{font-family:var(--mono);font-weight:700;font-size:1.9rem;letter-spacing:.01em}
+.rec .headline .lb a{color:var(--ink)}
+.rec .headline .lb a:hover{color:var(--accent-hi);text-decoration:none}
+.rec .headline .total{font-family:var(--mono);font-size:.82rem;color:var(--accent-hi);font-weight:700;margin-top:.5rem}
+.rec .headline .visit{display:inline-block;margin-top:.6rem;font-size:.68rem;font-weight:600;letter-spacing:.04em;border:1px solid var(--rule2);border-radius:999px;padding:.3em .9em;color:var(--muted)}
+.rec .headline .visit:hover{border-color:var(--accent);color:var(--accent-hi);text-decoration:none}
+.ledger{list-style:none;margin:0;padding:0;font-size:.78rem;align-self:center}
+.ledger li{display:flex;justify-content:space-between;gap:1rem;padding:.26rem 0;border-bottom:1px dotted var(--rule2);color:var(--muted)}
+.ledger li:last-child{border-bottom:none}
+.ledger .pts{font-family:var(--mono);font-weight:600;white-space:nowrap}
+.ledger .pts.pos{color:var(--pos)}
+.ledger .pts.neg{color:var(--neg)}
+
+/* tables, shared — wide tables scroll inside their own container, never the page */
+table{width:100%;border-collapse:collapse}
+th.c,td.c{text-align:center}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-scroll .sources{min-width:640px}
+
+/* AI index grade seal */
+.grade{display:inline-flex;align-items:center;gap:.45em;border-radius:7px;padding:.2em .55em;border:1px solid transparent;white-space:nowrap}
+.grade b{font-size:1rem;font-weight:800;letter-spacing:.01em}
+.grade i{font-style:normal;font-family:var(--mono);font-size:.64rem;opacity:.9}
+.g-a{color:var(--pos);background:color-mix(in oklab,var(--pos) 15%,transparent);border-color:color-mix(in oklab,var(--pos) 42%,transparent)}
+.g-b{color:var(--info);background:color-mix(in oklab,var(--info) 15%,transparent);border-color:color-mix(in oklab,var(--info) 42%,transparent)}
+.g-c{color:var(--warn);background:color-mix(in oklab,var(--warn) 15%,transparent);border-color:color-mix(in oklab,var(--warn) 42%,transparent)}
+.g-d{color:var(--neg);background:color-mix(in oklab,var(--neg) 15%,transparent);border-color:color-mix(in oklab,var(--neg) 42%,transparent)}
+.glance .grade{padding:.12em .5em}
+.glance .grade b{font-size:.95rem}
+
+/* sources table */
+.sources{font-size:.9rem}
+.sources thead th{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);text-align:left;padding:0 .55rem .5rem;border-bottom:1px solid var(--rule2)}
+.sources td{padding:.55rem;border-bottom:1px solid var(--rule);vertical-align:top}
+.sources tbody tr.mrow:hover td{background:color-mix(in oklab,var(--surface2) 60%,transparent)}
+.sources .lb{font-family:var(--mono);font-weight:700;font-size:.92rem}
+.sources .lb a{color:var(--ink);border-bottom:1px dotted var(--rule2)}
+.sources .lb a:hover{color:var(--accent-hi);text-decoration:none;border-bottom-color:var(--accent)}
+.sources .chip{font-size:.68rem;color:var(--muted);border:1px solid var(--rule2);border-radius:4px;padding:.08em .45em;white-space:nowrap}
+.sources .rating{font-family:var(--mono);font-weight:600}
+.sources .score{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink)}
+.sources .subnote{font-size:.66rem;color:var(--faint);margin-top:.15rem}
+.sources .taper-pill{display:inline-block;font-size:.62rem;border-radius:4px;padding:.08em .5em;margin-top:.3rem}
+.sources .taper-pill.confirmed{background:var(--accent);color:var(--on-accent);font-weight:600}
+.sources .taper-pill.propagated{border:1px solid var(--accent);color:var(--accent-hi)}
+.sources .taper-pill.inferred{border:1px dashed var(--faint);color:var(--faint)}
+.sources .private-note{font-size:.82rem;color:var(--muted);font-style:italic}
+.pick-tag{display:inline-flex;align-items:center;gap:.3em;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--accent-hi)}
+.pick-tag .star{color:var(--accent-hi)}
+/* family grouping */
+.sources tr.fam-head td{background:var(--surface2);border-bottom:1px solid var(--rule2);border-left:3px solid var(--accent);padding:.5rem .6rem;border-radius:0}
+.fam-head .wrap{display:flex;align-items:center;gap:.65em;flex-wrap:wrap}
+.fam-reels{color:var(--accent-hi);flex:none;display:inline-flex}
+.fam-name{font-weight:700;font-size:.78rem;color:var(--ink)}
+.fam-sub{font-size:.64rem;color:var(--faint);text-transform:uppercase;letter-spacing:.07em}
+.fam-conf{display:inline-flex;align-items:center;gap:.5em;margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.fam-conf .bar{width:64px;height:5px;border-radius:99px;background:var(--surface3);overflow:hidden}
+.fam-conf .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-hi));border-radius:99px}
+.fam-review{font-size:.6rem;font-weight:600;border:1px solid var(--warn);color:var(--warn);border-radius:4px;padding:.08em .45em;text-transform:uppercase;letter-spacing:.05em}
+.sources tr.in-fam td:first-child{border-left:3px solid color-mix(in oklab,var(--accent) 40%,transparent)}
+/* recommended row */
+.sources tr.is-rec td{background:var(--accent-soft)}
+.sources tr.is-rec td:first-child{border-left:3px solid var(--accent)}
+.sources tr.verdict td{padding-top:0;border-bottom:1px solid var(--rule)}
+.sources .verdict .chain{font-size:.72rem;color:var(--faint);margin-bottom:.25rem}
+.sources .verdict .txt{font-size:.76rem;color:var(--muted);line-height:1.45}
+.sources .verdict .curated{font-size:.72rem;color:var(--faint);margin-top:.25rem}
+
+/* setlist table */
+.setlist{font-size:.95rem}
+.setlist thead th{font-size:.6rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);text-align:left;padding:0 .6rem .45rem;border-bottom:1px solid var(--rule2)}
+.setlist td{padding:.44rem .6rem;border-bottom:1px solid var(--rule);vertical-align:baseline}
+.setlist tbody tr:nth-child(even) td{background:color-mix(in oklab,var(--surface2) 55%,transparent)}
+.setlist .pos{font-family:var(--mono);font-size:.8rem;color:var(--faint);text-align:center;width:2.6em;white-space:nowrap}
+.setlist .song{font-weight:600}
+.setlist .sub{display:block;font-size:.74rem;font-weight:400;color:var(--muted);margin-top:.1rem}
+.setlist .tags{text-align:right;white-space:nowrap;width:1%}
+.badge-rare{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--accent-hi);border:1px solid var(--accent);border-radius:4px;padding:.1em .45em;white-space:nowrap;margin-left:.3em}
+.enc{font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);border:1px solid var(--rule2);border-radius:4px;padding:.1em .45em;margin-left:.3em}
+.setlist tr.encore-start td{border-top:2px solid var(--rule2)}
+
+/* cross-reference links */
+.xref{display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem}
+.xref a.card{display:block;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:.9rem 1.05rem;text-decoration:none;transition:border-color .15s,transform .15s;box-shadow:var(--shadow)}
+.xref a.card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.xref .name{display:flex;align-items:center;justify-content:space-between;gap:.5em;font-weight:700;font-size:.9rem;color:var(--ink)}
+.xref .name .arrow{color:var(--accent-hi);font-size:.9rem;flex:none}
+.xref .desc{font-size:.8rem;color:var(--muted);margin:.3rem 0 .55rem;line-height:1.4}
+.xref .url{font-family:var(--mono);font-size:.66rem;color:var(--faint);overflow-wrap:anywhere}
+.xref .url .deep{color:var(--accent-hi)}
+
+/* footer / credits */
+footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule);font-size:.7rem;color:var(--faint)}
+.prov .credits{margin:0 0 .55rem;line-height:1.7}
+.prov .credits a{color:var(--muted);border-bottom:1px dotted var(--rule2)}
+.prov .credits a:hover{color:var(--accent-hi);text-decoration:none;border-bottom-color:var(--accent)}
+.prov .meta{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;align-items:center}
+.prov .tag{text-transform:uppercase;letter-spacing:.05em;border:1px solid var(--rule2);border-radius:4px;padding:.1em .45em}
+
+@media(max-width:720px){
+  body{padding:3.2rem .9rem 2rem}
+  .split{grid-template-columns:1fr}
+  .glance{grid-template-columns:repeat(3,1fr)}
+  .xref{grid-template-columns:1fr}
+  .rec{grid-template-columns:1fr;gap:1rem}
+  h1{font-size:1.7rem}
+  .show-meta{font-size:.78rem}
+}
+
+@media print{
+  html[data-theme="dark"]{--bg:#fff;--surface:#fff;--surface2:#eef3fa;--surface3:#dfe8f4;--ink:#13203a;--muted:#3f547a;--faint:#6f83a6;--rule:#c2d4ec;--rule2:#9bb9e0;--accent:#2b5fd0;--accent-hi:#1f4baa;--accent-soft:#e3ebf8;--on-accent:#fff;--pos:#1f7a3e;--neg:#b03f30;--warn:#9a6800;--info:#1f5b8f;--pin:#2b5fd0;--map-land:#e6eefb;--map-host:#bcd2ee;--map-line:#9bb9e0;--map-ocean:#cfdff2;--shadow:none}
+  html,body{background:#fff}
+  body{padding:0;font-size:11pt}
+  .page{max-width:none}
+  .theme-toggle{display:none}
+  a{color:inherit;text-decoration:none}
+  section{margin:1.1rem 0}
+  .rec,.loc-card,.xref a.card{box-shadow:none}
+  @page{margin:14mm}
+}
 </style>
 </head>
 <body>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle light mode"><span id="themeIcon">☀</span> <span id="themeLabel">Light</span></button>
 <div class="page">
 
+{% set rec_lb = d.recommendation.lb if d.recommendation else none %}
+
+{# ── group + order sources: buckets by best pick rank, members by rank ── #}
+{% set buckets = [] %}
+{% for bucket in (d.sources or []) %}
+  {% set ranked = [] %}{% set unranked = [] %}
+  {% for m in bucket.members %}
+    {% if m.pick and m.pick.rank is defined %}{% set _ = ranked.append(m) %}
+    {% else %}{% set _ = unranked.append(m) %}{% endif %}
+  {% endfor %}
+  {% set members = (ranked | sort(attribute='pick.rank')) + unranked %}
+  {% set best = (ranked | map(attribute='pick.rank') | min) if ranked else 9999 %}
+  {% set _ = buckets.append({'members': members, 'best': best, 'fam': bucket,
+                             'is_family': bucket.fam_id is defined}) %}
+{% endfor %}
+{% set buckets = buckets | sort(attribute='best') %}
+
+{% set ns = namespace(rec_member=none, total_sources=0, fam_count=0, top_q=none) %}
+{% for b in buckets %}
+  {% set ns.total_sources = ns.total_sources + (b.members | length) %}
+  {% if b.is_family %}{% set ns.fam_count = ns.fam_count + 1 %}{% endif %}
+  {% for m in b.members %}
+    {% if rec_lb and m.lb == rec_lb %}{% set ns.rec_member = m %}{% endif %}
+    {% if ns.top_q is none and m.quality and m.quality.grade %}{% set ns.top_q = m.quality %}{% endif %}
+  {% endfor %}
+{% endfor %}
+{% if ns.rec_member and ns.rec_member.quality and ns.rec_member.quality.grade %}
+  {% set ns.top_q = ns.rec_member.quality %}
+{% endif %}
+
+{% set best_rating = none %}
+{% if ns.rec_member %}
+  {% if ns.rec_member.rating %}{% set best_rating = ns.rec_member.rating %}
+  {% elif ns.rec_member.quality and ns.rec_member.quality.grade %}{% set best_rating = ns.rec_member.quality.grade %}
+  {% endif %}
+{% endif %}
+
+{% set xref_by_key = {} %}
+{% for x in (d.xref or []) %}{% set _ = xref_by_key.update({x.key: x}) %}{% endfor %}
+{% set olof_x = xref_by_key.get('olof') %}
+{% set lbb_x = xref_by_key.get('losslessbob') %}
+
+{% macro grade_badge(q) -%}
+  {%- set gl = (q.grade[:1] | upper) if q.grade else '' -%}
+  {%- set cls = 'g-a' if gl == 'A' else ('g-b' if gl == 'B' else ('g-c' if gl == 'C' else 'g-d')) -%}
+  <span class="grade {{ cls }}" title="AI index grade"><b>{{ q.grade }}</b>{% if q.score is defined %}<i>{{ q.score | round | int }}/100</i>{% endif %}</span>
+{%- endmacro %}
+
+{% macro fam_reels() -%}
+  <span class="fam-reels" aria-hidden="true"><svg width="20" height="11" viewBox="0 0 20 11" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="4.5" cy="5.5" r="3.1"/><circle cx="15.5" cy="5.5" r="3.1"/><line x1="4.5" y1="1.6" x2="15.5" y2="1.6"/><circle cx="4.5" cy="5.5" r=".9" fill="currentColor" stroke="none"/><circle cx="15.5" cy="5.5" r=".9" fill="currentColor" stroke="none"/></svg></span>
+{%- endmacro %}
+
   <header class="masthead">
-    <div class="kicker">LosslessBob show dossier</div>
-    <h1>{{ d.show.title | default(d.show.venue) | default(d.show.date_disp) | default(d.show.date_iso) }}</h1>
+    <div class="kicker"><span class="mark">LB</span><span class="eyebrow">LosslessBob · Show Dossier</span></div>
+    <h1>{{ d.show.venue | default(d.show.title) | default(d.show.date_disp) | default(d.show.date_iso) }}</h1>
+    {% set date_txt = d.show.date_disp | default(d.show.date_iso) %}
+    {% if d.show.dow %}{% set date_txt = date_txt ~ ' (' ~ d.show.dow ~ ')' %}{% endif %}
+    {% set meta_items = [{'text': date_txt}] %}
+    {% if d.show.city %}{% set _ = meta_items.append({'text': d.show.city}) %}{% endif %}
+    {% if d.show.tour %}{% set _ = meta_items.append({'text': d.show.tour}) %}{% endif %}
+    {% if d.show.event_type and d.show.event_type != 'concert' %}{% set _ = meta_items.append({'text': d.show.event_type}) %}{% endif %}
+    {% if d.show.net_number %}{% set _ = meta_items.append({'text': 'NET #' ~ d.show.net_number, 'cls': 'netnum'}) %}{% endif %}
+    {% if d.show.year_concert_number %}{% set _ = meta_items.append({'text': (d.show.date_iso[:4] if d.show.date_iso else '') ~ ' concert #' ~ d.show.year_concert_number}) %}{% endif %}
     <div class="show-meta">
-      {{ d.show.date_disp | default(d.show.date_iso) }}{% if d.show.dow %} ({{ d.show.dow }}){% endif %}
-      {%- if d.show.venue %}<span class="sep">·</span>{{ d.show.venue }}{% endif %}
-      {%- if d.show.city %}<span class="sep">·</span>{{ d.show.city }}{% endif %}
-      {%- if d.show.tour %}<span class="sep">·</span>{{ d.show.tour }}{% endif %}
-      {%- if d.show.event_type and d.show.event_type != 'concert' %}<span class="sep">·</span>{{ d.show.event_type }}{% endif %}
-      {%- if d.show.net_number %}<span class="sep">·</span>NET #{{ d.show.net_number }}{% endif %}
-      {%- if d.show.year_concert_number %}<span class="sep">·</span>{{ d.show.date_iso[:4] }} concert #{{ d.show.year_concert_number }}{% endif %}
+      {% for item in meta_items %}{% if not loop.first %}<span class="dot"></span>{% endif %}<span{% if item.cls %} class="{{ item.cls }}"{% endif %}>{{ item.text }}</span>{% endfor %}
     </div>
+    <div class="mast-rules"></div>
   </header>
 
-  {% if d.context %}
-  <section class="context-block">
-    <h2>Context</h2>
-    {% if d.context.chronicle %}
-    <p><span class="label">Chronicle</span>{{ d.context.chronicle }}</p>
-    {% endif %}
-    {% if d.context.bobtalk %}
-    <p class="bobtalk"><span class="label">Bobtalk</span>{{ d.context.bobtalk }}</p>
-    {% endif %}
-    {% if d.context.lineup %}
-    <p><span class="label">Lineup</span>{{ d.context.lineup }}</p>
-    {% endif %}
-    {% if d.context.notes %}
-    <p><span class="label">Notes</span>{{ d.context.notes }}</p>
-    {% endif %}
-  </section>
-  {% endif %}
+  <div class="glance">
+    <div class="cell"><div class="k">Songs</div><div class="v">{{ d.setlist | length if d.setlist else '—' }}</div></div>
+    <div class="cell"><div class="k">Sources</div><div class="v">{{ ns.total_sources if ns.total_sources else '—' }}</div></div>
+    <div class="cell"><div class="k">Tape families</div><div class="v">{{ ns.fam_count if ns.fam_count else '—' }}</div></div>
+    <div class="cell"><div class="k">Recommended</div><div class="v{% if rec_lb %} accent{% endif %}">{{ rec_lb | default('—') }}</div></div>
+    <div class="cell"><div class="k">LB rating</div><div class="v">{{ best_rating | default('—') }}</div></div>
+    <div class="cell"><div class="k">AI grade</div><div class="v">{% if ns.top_q %}{{ grade_badge(ns.top_q) }}{% else %}—{% endif %}</div></div>
+  </div>
 
-  {% if d.setlist %}
-  <section>
-    <h2>Setlist</h2>
-    <ol class="setlist">
-      {% for song in d.setlist %}
-      <li>
-        <span class="pos">{{ song.position }}.</span>
-        <span class="song-title">
-          {{ song.title }}{% if song.credits %} <span class="song-sub">({{ song.credits }})</span>{% endif %}
-          {%- if song.annotations %}<span class="song-sub">{{ song.annotations }}</span>{% endif %}
-          {%- if song.is_encore %}<span class="encore-tag">encore</span>{% endif %}
-        </span>
-        {% if song.rarity and song.rarity.flag %}
-        <span class="rarity-badge">
-          {%- if song.rarity.flag == 'only' -%}only performance
-          {%- elif song.rarity.flag == 'first' -%}live debut
-          {%- elif song.rarity.flag == 'last' -%}last performance
-          {%- elif song.rarity.flag == 'rare' -%}rare ({{ song.rarity.n_performances }}x)
-          {%- endif -%}
-        </span>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ol>
-  </section>
-  {% endif %}
-
-  {% if d.sources %}
-  <section>
-    <h2>Sources</h2>
-    {% for bucket in d.sources %}
-    <div class="family">
-      {% if bucket.fam_label or bucket.fam_id %}
-      <div class="family-head">
-        <span>{{ bucket.fam_label | default('Family') }}{% if bucket.fam_conf %} · {{ (bucket.fam_conf * 100) | round | int }}% confidence{% endif %}</span>
-        {% if bucket.fam_needs_review %}<span class="flag">needs review</span>{% endif %}
-      </div>
-      {% endif %}
-      {% for m in bucket.members %}
-      <div class="source">
-        {% if m.private %}
-        <div class="source-head"><span class="lb">{{ m.lb }}</span></div>
-        <div class="private-note">Private entry — details withheld.</div>
-        {% else %}
-        <div class="source-head">
-          <span class="lb">{{ m.lb }}</span>
-          {% if m.source_type %}<span class="badge">{{ m.source_type }}</span>{% endif %}
-          {% if m.rating %}<span class="badge">rating {{ m.rating }}</span>{% endif %}
-          {% if m.timing %}<span class="badge">{{ m.timing }}</span>{% endif %}
-          {% if m.alt_filesets %}<span class="badge">+{{ m.alt_filesets }} alt fileset{{ 's' if m.alt_filesets != 1 else '' }}</span>{% endif %}
-          {% if m.taper %}
-          <span class="taper-pill {{ m.taper.tier }}">{{ m.taper.name }}{% if m.taper.tier != 'confirmed' %} ({{ m.taper.tier }}){% endif %}</span>
-          {% endif %}
-          {% if m.pick %}<span class="badge">pick #{{ m.pick.rank }}</span>{% endif %}
-          {% if m.quality %}<span class="badge">AI grade {{ m.quality.grade }}</span>{% endif %}
+  {% set has_map = d.show.lat is defined and d.show.lng is defined %}
+  {% if d.context or has_map %}
+  <div{% if has_map and d.context %} class="split"{% endif %}>
+    {% if d.context %}
+    <section class="context"{% if has_map %} style="margin-top:0"{% endif %}>
+      <h2><span>Context</span><span class="line"></span>{% if olof_x %}<span class="credit">source: <a href="{{ olof_x.url }}" target="_blank" rel="noopener">Olof Björner, <em>Still on the Road</em></a> ↗</span>{% endif %}</h2>
+      {% if d.context.chronicle %}<p><span class="label">Chronicle</span>{{ d.context.chronicle }}</p>{% endif %}
+      {% if d.context.bobtalk %}<p class="bobtalk"><span class="label">Bobtalk</span>{{ d.context.bobtalk }}</p>{% endif %}
+      {% if d.context.lineup %}<p><span class="label">Lineup</span>{{ d.context.lineup }}</p>{% endif %}
+      {% if d.context.notes %}<p><span class="label">Notes</span>{{ d.context.notes }}</p>{% endif %}
+    </section>
+    {% endif %}
+    {% if has_map %}
+    <section style="margin-top:0">
+      <h2><span>Location</span><span class="line"></span><span class="credit">coordinates: <a href="https://www.setlist.fm" target="_blank" rel="noopener">setlist.fm</a> ↗</span></h2>
+      <div class="loc-card">
+        {{ d.show.map_svg | safe }}
+        <div class="loc-meta">
+          {% if d.show.venue %}<div class="venue">{{ d.show.venue }}</div>{% endif %}
+          {% if d.show.city_line or d.show.city %}<div>{{ d.show.city_line | default(d.show.city) }}</div>{% endif %}
+          <div class="coord">{{ '%.4f'|format(d.show.lat) }}, {{ '%.4f'|format(d.show.lng) }}</div>
         </div>
-        {% if m.source_chain %}<div class="source-detail">{{ m.source_chain }}</div>{% endif %}
-        {% if m.lineage_notes %}
-        <div class="lineage-notes">{{ m.lineage_notes | join('; ') }}</div>
-        {% endif %}
-        {% if m.quality and m.quality.verdict %}
-        <div class="quality-verdict">{{ m.quality.verdict }}</div>
-        {% endif %}
-        {% if m.curated %}
-        <div class="curated-list">Curated: {{ m.curated | map(attribute='list_label') | join(', ') }}</div>
-        {% endif %}
-        {% if m.pick and m.pick.evidence %}
-        <ul class="evidence-list">
-          {% for ev in m.pick.evidence %}
-          <li><span>{{ ev.detail }}</span><span class="points">{{ '%+.1f' | format(ev.points) if ev.points is defined else '' }}</span></li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-        {% endif %}
       </div>
-      {% endfor %}
-    </div>
-    {% endfor %}
-  </section>
+    </section>
+    {% endif %}
+  </div>
   {% endif %}
 
   {% if d.recommendation %}
+  {% set total = ns.rec_member.pick.score if ns.rec_member and ns.rec_member.pick and ns.rec_member.pick.score is defined else none %}
+  {% if total is none and d.recommendation.evidence %}
+    {% set sumns = namespace(t=0) %}
+    {% for ev in d.recommendation.evidence %}{% set sumns.t = sumns.t + (ev.points if ev.points is defined else 0) %}{% endfor %}
+    {% set total = sumns.t %}
+  {% endif %}
   <section>
-    <h2>Recommended copy</h2>
-    <div class="recommendation">
-      <div class="rec-lb">{{ d.recommendation.lb }}</div>
+    <h2><span>Recommended copy</span><span class="line"></span><span class="credit">pick engine · local analysis</span></h2>
+    <div class="rec">
+      <div class="headline">
+        <div class="eyebrow">Best available transfer</div>
+        <div class="lb">{% if ns.rec_member and ns.rec_member.url %}<a href="{{ ns.rec_member.url }}" target="_blank" rel="noopener">{{ d.recommendation.lb }}</a>{% else %}{{ d.recommendation.lb }}{% endif %}</div>
+        {% if ns.rec_member and ns.rec_member.quality and ns.rec_member.quality.grade %}<div style="margin-top:.55rem">{{ grade_badge(ns.rec_member.quality) }}</div>{% endif %}
+        {% if total is not none %}<div class="total">Composite score {{ '%.1f' | format(total) }}</div>{% endif %}
+        {% if ns.rec_member and ns.rec_member.url %}<a class="visit" href="{{ ns.rec_member.url }}" target="_blank" rel="noopener">View on LosslessBob ↗</a>{% endif %}
+      </div>
       {% if d.recommendation.evidence %}
-      <ul class="evidence-list">
+      <ul class="ledger">
         {% for ev in d.recommendation.evidence %}
-        <li><span>{{ ev.detail }}</span><span class="points">{{ '%+.1f' | format(ev.points) if ev.points is defined else '' }}</span></li>
+        <li><span>{{ ev.detail }}</span><span class="pts {{ 'pos' if ev.points is defined and ev.points >= 0 else 'neg' }}">{{ '%+.1f' | format(ev.points) if ev.points is defined else '' }}</span></li>
         {% endfor %}
       </ul>
       {% endif %}
@@ -372,13 +348,147 @@
   </section>
   {% endif %}
 
-  <footer class="provenance">
-    <span>Generated {{ d.provenance.generated_at }}</span>
-    {% if d.provenance.master_version %}<span>Master {{ d.provenance.master_version }}</span>{% endif %}
-    <span>Channel: {{ d.provenance.channel }}</span>
-    {% if d.provenance.local_analysis %}<span class="local-analysis-tag">Includes local analysis (this install)</span>{% endif %}
+  {% if buckets %}
+  <section>
+    <h2><span>Circulating sources · {{ ns.total_sources }}</span><span class="line"></span>{% if lbb_x %}<span class="credit">catalog: <a href="{{ lbb_x.site }}" target="_blank" rel="noopener">LosslessBob</a> ↗</span>{% endif %}</h2>
+    <div class="tbl-scroll"><table class="sources">
+      <thead><tr><th>Source</th><th class="c">Type</th><th class="c">LB rating</th><th class="c">Length</th><th class="c">AI grade</th><th class="c">Score</th><th class="c">Pick</th></tr></thead>
+      <tbody>
+        {% for b in buckets %}
+        {% set fam = b.fam %}
+        {% if b.is_family %}
+        <tr class="fam-head">
+          <td colspan="7">
+            <div class="wrap">
+              {{ fam_reels() }}
+              <span class="fam-name">{{ fam.fam_label | default('Tape family') }}</span>
+              <span class="fam-sub">{{ b.members | length }} source{{ 's' if b.members | length != 1 }} · one master tape</span>
+              {% if fam.fam_needs_review %}<span class="fam-review">review</span>{% endif %}
+              {% if fam.fam_conf is defined and fam.fam_conf is not none %}
+              <span class="fam-conf"><span class="bar"><i style="width:{{ (fam.fam_conf * 100) | round | int }}%"></i></span>{{ (fam.fam_conf * 100) | round | int }}%</span>
+              {% endif %}
+            </div>
+          </td>
+        </tr>
+        {% endif %}
+        {% for m in b.members %}
+        {% set is_rec = (rec_lb and m.lb == rec_lb) or (not rec_lb and m.pick and m.pick.rank == 1) %}
+        {% if m.private %}
+        <tr class="mrow{% if is_rec %} is-rec{% endif %}{% if b.is_family %} in-fam{% endif %}">
+          <td><span class="lb">{{ m.lb }}</span></td>
+          <td colspan="6"><span class="private-note">Private entry — details withheld.</span></td>
+        </tr>
+        {% else %}
+        <tr class="mrow{% if is_rec %} is-rec{% endif %}{% if b.is_family %} in-fam{% endif %}">
+          <td>
+            <span class="lb">{% if m.url %}<a href="{{ m.url }}" target="_blank" rel="noopener" title="Open {{ m.lb }} on LosslessBob">{{ m.lb }}</a>{% else %}{{ m.lb }}{% endif %}</span>
+            {% if m.taper %}<div><span class="taper-pill {{ m.taper.tier }}">{{ m.taper.name }}{% if m.taper.tier and m.taper.tier != 'confirmed' %} ({{ m.taper.tier }}){% endif %}</span></div>{% endif %}
+          </td>
+          <td class="c">{% if m.source_type %}<span class="chip">{{ m.source_type }}</span>{% endif %}</td>
+          <td class="c">{% if m.rating %}<span class="rating">{{ m.rating }}</span>{% endif %}</td>
+          <td class="c mono">{{ m.timing | default('') }}{% if m.alt_filesets %}<div class="subnote">+{{ m.alt_filesets }} alt fileset{{ 's' if m.alt_filesets != 1 else '' }}</div>{% endif %}</td>
+          <td class="c">{% if m.quality and m.quality.grade %}{{ grade_badge(m.quality) }}{% endif %}</td>
+          <td class="c score">{{ '%.1f' | format(m.pick.score) if m.pick and m.pick.score is defined else '' }}</td>
+          <td class="c">{% if m.pick and m.pick.rank is defined %}<span class="pick-tag">{% if m.pick.rank == 1 %}<span class="star">★</span> {% endif %}#{{ m.pick.rank }}</span>{% endif %}</td>
+        </tr>
+        {% set curated_bits = [] %}
+        {% if m.curated %}{% set _ = curated_bits.append('Curated in: ' ~ (m.curated | map(attribute='list_label') | join(' · '))) %}{% endif %}
+        {% if m.lineage_notes %}{% set _ = curated_bits.append(m.lineage_notes | join('; ')) %}{% endif %}
+        {% if (m.quality and m.quality.verdict) or curated_bits or m.source_chain %}
+        <tr class="verdict{% if is_rec %} is-rec{% endif %}{% if b.is_family %} in-fam{% endif %}">
+          <td colspan="7">
+            {% if m.source_chain %}<div class="chain">{{ m.source_chain }}</div>{% endif %}
+            {% if m.quality and m.quality.verdict %}<span class="txt">{{ m.quality.verdict }}</span>{% endif %}
+            {% if curated_bits %}<div class="curated">{{ curated_bits | join('. ') }}</div>{% endif %}
+          </td>
+        </tr>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+      </tbody>
+    </table></div>
+  </section>
+  {% endif %}
+
+  {% if d.setlist %}
+  <section>
+    <h2><span>Setlist · {{ d.setlist | length }} songs</span><span class="line"></span>{% if olof_x %}<span class="credit">source: <a href="{{ olof_x.url }}" target="_blank" rel="noopener">Olof Björner, <em>Still on the Road</em></a> ↗</span>{% endif %}</h2>
+    <table class="setlist">
+      <thead><tr><th class="pos">#</th><th>Song</th><th class="tags"></th></tr></thead>
+      <tbody>
+        {% set enc_ns = namespace(seen=false) %}
+        {% for song in d.setlist %}
+        {% set is_start = song.is_encore and not enc_ns.seen %}
+        {% if song.is_encore %}{% set enc_ns.seen = true %}{% endif %}
+        <tr{% if is_start %} class="encore-start"{% endif %}>
+          <td class="pos">{{ song.position }}</td>
+          <td>
+            <span class="song">{{ song.title }}</span>
+            {%- if song.credits %}<span class="sub">{{ song.credits }}</span>{% endif -%}
+            {%- if song.annotations %}<span class="sub">{{ song.annotations }}</span>{% endif -%}
+          </td>
+          <td class="tags">
+            {%- if song.rarity and song.rarity.flag %}
+            <span class="badge-rare">
+              {%- if song.rarity.flag == 'only' -%}only performance
+              {%- elif song.rarity.flag == 'first' -%}live debut
+              {%- elif song.rarity.flag == 'last' -%}last performance
+              {%- elif song.rarity.flag == 'rare' -%}rare ({{ song.rarity.n_performances }}x)
+              {%- endif -%}
+            </span>
+            {%- endif -%}
+            {%- if song.is_encore %}<span class="enc">encore</span>{% endif -%}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  {% endif %}
+
+  {% if d.xref %}
+  <section>
+    <h2><span>Cross-reference · this show elsewhere</span><span class="line"></span></h2>
+    <div class="xref">
+      {% for x in d.xref %}
+      {% set host = (x.site | replace('https://', '') | replace('http://', '')).split('/')[0] | replace('www.', '') %}
+      <a class="card" href="{{ x.url }}" target="_blank" rel="noopener">
+        <div class="name">{{ x.name }} <span class="arrow">↗</span></div>
+        <div class="desc">{{ x.desc }}</div>
+        <div class="url">{{ host }} · <span class="deep">{{ x.link_label }}</span></div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <footer class="prov">
+    <p class="credits">
+      Setlist, chronicle, lineup &amp; bobtalk from <a href="{{ olof_x.url if olof_x else 'http://www.bjorner.com/still.htm' }}" target="_blank" rel="noopener">Olof Björner's <em>Still on the Road</em></a> (bjorner.com).
+      Recording catalog, ratings &amp; lineage from <a href="{{ lbb_x.site if lbb_x else 'https://www.losslessbob.com' }}" target="_blank" rel="noopener">LosslessBob</a>.
+      Venue coordinates &amp; tour names via <a href="https://www.setlist.fm" target="_blank" rel="noopener">setlist.fm</a>.
+      Performance statistics via <a href="https://bobserve.com" target="_blank" rel="noopener">Bobserve</a>.
+      AI index grades, tape-family grouping &amp; pick ranking are local analysis by this install.
+    </p>
+    <div class="meta">
+      <span>Generated {{ d.provenance.generated_at }}</span>
+      {% if d.provenance.master_version %}<span>Master {{ d.provenance.master_version }}</span>{% endif %}
+      <span>Channel: {{ d.provenance.channel }}</span>
+      {% if d.provenance.local_analysis %}<span class="tag">Includes local analysis (this install)</span>{% endif %}
+    </div>
   </footer>
 
 </div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('themeToggle');
+  var lbl=document.getElementById('themeLabel'),ic=document.getElementById('themeIcon');
+  function set(t){root.setAttribute('data-theme',t);try{localStorage.setItem('lb-dossier-theme',t)}catch(e){}
+    lbl.textContent=t==='dark'?'Light':'Dark';ic.textContent=t==='dark'?'☀':'◐';}
+  try{var s=localStorage.getItem('lb-dossier-theme');if(s)set(s);}catch(e){}
+  btn.addEventListener('click',function(){set(root.getAttribute('data-theme')==='dark'?'light':'dark')});
+})();
+</script>
 </body>
 </html>
