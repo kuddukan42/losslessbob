@@ -38,22 +38,6 @@ the 3 machine-provable negative flips went into regression_set_v2.json). Reviewi
 would re-base the honest recall denominator (~52% at current tp if all confirmed). Use
 calibration_audit.html for browsing; census output lists the pairs + evidence snippets.
 
-TODO-195: Backend pipeline step.label strings need i18n key+params, not rendered English
-Priority: Low
-Status: Open
-Added: 2026-07-01
-Description: BUG-201's frontend-generated Pipeline UI vocabulary (stage names, step states,
-  bucket labels) is now fully translated, but backend/app.py's pipeline step results
-  (verify/lookup/lbdir/rename/file `label` and `error`/`error_code` payload fields) still return
-  pre-rendered English strings — e.g. "Pass", "Missing 3", "Incomplete match", "Filed to
-  Vault_A" — which the frontend displays as-is (see ScreenPipeline.tsx step.label usages and the
-  no_checksums/shntool_missing/mismatch paths). Some are static enough for a frontend lookup map
-  (done for STATE_LABEL/ERROR_MSG, keyed by stable status/error_code enums), but others embed
-  dynamic data (counts, filenames, mount names) baked into the string server-side, which can't be
-  cleanly localized without the backend returning a translation key + params instead of a
-  finished sentence. Requires backend route changes (pipeline check/lookup/rename/file handlers
-  in app.py) plus a frontend mapping layer — deferred out of BUG-201's scope by user decision.
-
 TODO-194: WTRF scraper — improve match quality for remaining needs_review/ambiguous cases
 Priority: Medium
 Status: Open
@@ -254,17 +238,6 @@ Description: Note: column-header click-to-sort already exists (ScreenDbEditor.ts
   in the results grid, query history/favorites, pinned/frozen first column, and per-column
   type-aware cell formatting (dates, booleans, NULL styling) in the rows view.
 
-TODO-166: Collection screen — view/filter folders stored in nonstandard locations (not matching mount routing)
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: Add a view or filter on gui_next/src/renderer/src/screens/ScreenCollection.tsx
-  to surface my_collection folders whose disk_path doesn't match the expected mount/year
-  routing — i.e. _mount_for_path (backend/integrity_monitor.py:115) resolves to a mount
-  other than the one upsert_collection_routes (backend/db.py:5057) says that folder's year
-  should route to, or resolves to no configured mount at all. Lets the user spot folders
-  that drifted to a nonstandard location instead of finding them by accident.
-
 TODO-160: Revamp curator mode — consolidate options and hide existence from normal users
 Priority: Medium
 Status: Open
@@ -279,20 +252,6 @@ Description: Curator mode currently exposes itself to every user: AppShell.tsx:4
   (2) replace the always-visible hint/link with a hidden trigger (e.g. a secret key
   combo, hidden settings entry, or build-time flag) so normal users have no visible
   indication curator mode exists at all.
-
-TODO-249: Improve xref handling
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Renumbered: from TODO-155 on 2026-07-15 (TODO-248 — id collided with the unrelated done
-  TODO-155 "Pipeline stage icons" in TODO_DONE.md)
-Description: xref handling needs improvement. Current xref logic lives in the `checksums`
-  table (backend/db.py:114, idx_lb_xref0 partial index at :121-122), importer.py:65-164,
-  and flat_file.py:362-530 (sync/diff logic comparing xref values between incoming and
-  current rows). Lookup-side, the Pipeline Lookup UI surfaces an "Xref" status pill
-  (see BUG-201, LookupDetail.tsx STATE_TONE). Specific improvements not yet scoped —
-  needs follow-up on what's currently breaking/missing in xref handling before
-  implementation.
 
 TODO-136: Post editor form for existing WTRF posts
 Priority: Low
