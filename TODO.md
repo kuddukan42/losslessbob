@@ -1,10 +1,4 @@
 
-TODO-255: Staircase corroboration gate: consider hiss_median floor (boundary pass observed)
-Priority: Low
-Status: Open
-Added: 2026-07-17
-Description: 1995-12-09 rescore: 6083-6104 passed the corroboration gate at exactly hiss_frac 0.05 == min_hiss_frac with hiss_median .05 (noise level) — the frac floor has no median requirement, so noise-level hiss corroborates a staircase-relaxed fp merge. Candidate sweep: add a small hiss_median floor to the gate or raise min_hiss_frac. Requires calibration sweep vs frozen set + tj sign-off per CALIBRATION_PROGRESS protocol. Evidence in TODO-234 review doc. Related: [TODO-234].
-
 TODO-234: TapeMatch family over-merge review — 22 series-vs-series taper conflicts
 Priority: Medium
 Status: Open

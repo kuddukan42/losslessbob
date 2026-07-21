@@ -154,10 +154,16 @@ fingerprint:
   # in the relaxed band. Blocks the 1997-11-11 LB-01126 class of false merge
   # (fp .40–.47, win 0, hiss 0). Frozen-set cost −13 tp, 0 new fp.
   # Absent/disabled = historical behaviour (verified byte-identical).
+  # min_hiss_median (TODO-255, tj sign-off 2026-07-21): hiss_frac alone has no
+  # median requirement, so noise-level hiss (hiss_median ~0.05) at a frac on the
+  # floor corroborated the 1995-12-09 LB-06083/06104 relaxed-bar merge. Requiring
+  # the median to clear 0.05 too blocks that; frozen-set sweep: −2 fp, 0 tp cost
+  # (floors ≥0.08 sever a real same-cluster edge). Absent = frac-only history.
   staircase_corroboration:
     enabled: true
     min_windowed_frac: 0.05
     min_hiss_frac: 0.05
+    min_hiss_median: 0.05
   # Ratio-invariant triplet fingerprint (CC_TAPEMATCH_FIXES Task 7). Panako-style
   # hashes encode only RATIOS (Δt2/Δt1, f1/f0, f2/f0) so they survive speed change —
   # the sole surviving signal for Task 5.3 speed-unknown Cat-1 pairs. CALIBRATE the
