@@ -2623,8 +2623,10 @@ def init_db(db_path=None):
     threading.Thread(target=_rebuild_bloom_bg, args=(db_path,), daemon=True).start()
 
     # One-time backfill: populate lb_master if table is empty and checksums exist.
+    # wait=False (BUG-262): nothing waits on this thread's result, so don't
+    # block it against a write queue a fast-moving caller may be tearing down.
     threading.Thread(
-        target=lambda: migrate_lb_master(db_path), daemon=True
+        target=lambda: migrate_lb_master(db_path, wait=False), daemon=True
     ).start()
 
     # One-time backfill: create a synthetic applied_legacy row for pre-feature imports.
@@ -5026,12 +5028,26 @@ def _compute_lb_status(has_web: bool, has_chk: bool, has_att: bool) -> tuple[str
     return status, needs_review
 
 
-def migrate_lb_master(db_path=None) -> int:
+def migrate_lb_master(db_path=None, wait: bool = True) -> int:
     """Backfill lb_master for integers 1..MAX(lb_number) from existing data.
 
     Skipped when lb_master already contains rows (idempotent guard).
     Deletes entries.status='missing' tombstones after populating lb_master.
-    Returns number of rows inserted, or 0 if skipped.
+
+    Args:
+        db_path: Optional database path override.
+        wait: If False, submit the write via the queue's fire-and-forget
+            execute_async() instead of blocking on execute()'s up-to-30s
+            wait (BUG-262). init_db()'s background-thread caller sets this —
+            nothing waits on that thread's result, so blocking it against a
+            write queue a fast-moving caller (e.g. a test) may already be
+            tearing down just piles up threads for no benefit. Synchronous
+            callers (importer.py, flat_file.py) that need the write committed
+            before this function returns keep the default.
+
+    Returns:
+        Number of rows inserted, or 0 if skipped. When wait=False this counts
+        rows about to be submitted, not necessarily yet committed.
     """
     conn = get_connection(db_path)
 
@@ -5081,7 +5097,10 @@ def migrate_lb_master(db_path=None) -> int:
         # Remove tombstone rows — lb_master is now authoritative
         c.execute("DELETE FROM entries WHERE status='missing'")
 
-    get_write_queue().execute(_run)
+    if wait:
+        get_write_queue().execute(_run)
+    else:
+        get_write_queue().execute_async(_run)
 
     logger.info(
         "lb_master populated: %d rows (%d public, %d private, %d missing)",
