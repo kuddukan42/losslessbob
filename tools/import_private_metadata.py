@@ -171,7 +171,32 @@ def build_candidate(lb: int, html_rec: dict | None, xlsx_rec: dict | None,
 _NON_INFO_TXT = re.compile(r"\.(ffp|st5|md5|shnf|flacf)\.txt$", re.I)
 _TRACK_LINE = re.compile(r"^\s*(?:d\d+[t\-]?)?(\d{1,3})[-.)\s:]+\s*(\S.*)$")
 _TIME_TAIL = re.compile(r"[\s(\[]*\d{1,2}:\d{2}(?::\d{2})?[\s)\]]*$")
-_LINEAGE_LINE = re.compile(r"lineage|source\s*:|taper\s*:|\s->\s|\s>\s", re.I)
+# Section rule fencing the blocks of an LB-<num>.txt sidecar.
+_DASH_RULE = re.compile(r"^\s*-{5,}\s*$")
+# Boundary between two tracks in an inline comma-run setlist: a comma that
+# precedes the next track number and its separator (``, 5 Don't Think…``,
+# ``, 2- Things…``, ``, 3) …``). Commas inside a title (``It's Alright, Ma``)
+# are followed by a word, not a number, so they survive.
+_INLINE_BOUND = re.compile(r",\s*(?=\d{1,3}[-.)\s]\s*\D)")
+# Disc/date label a sidecar sometimes wedges inline after the last track of a
+# disc (``…, cd-2, November 16th, 1996 late show:``) — stripped off the title.
+_DISC_TAIL = re.compile(r",\s*cd[-\s]?\d+\b.*$", re.I)
+# Boilerplate footer that older sidecars run straight onto the last track with
+# no ``-----`` fence (``…Not Fade Away  Please retain this info file…``).
+_FOOTER_TAIL = re.compile(
+    r"\s+(?:please retain|and if you spread it|this link will only work|"
+    r"note:\s|https?://).*$", re.I)
+
+
+def _clean_title(title: str) -> str:
+    """Strip inline disc labels and run-on footer boilerplate from a title."""
+    return _FOOTER_TAIL.sub("", _DISC_TAIL.sub("", title)).strip()
+# A lineage/transfer chain is signalled by an explicit keyword, an ASCII
+# arrow (``->``), a Unicode arrow (``→``), or a ``>`` used as a chain
+# separator between two chain elements (``cd>EAC``, ``cd > EAC``). Bare
+# ``>`` requires word characters on both sides so it doesn't fire on prose.
+_LINEAGE_LINE = re.compile(
+    r"lineage|source\s*:|taper\s*:|->|→|\w\s*>\s*\w", re.I)
 
 
 def _read_text(path: str) -> str:
@@ -183,17 +208,23 @@ def _read_text(path: str) -> str:
 
 
 def info_txt_candidates(folder: str) -> list[str]:
-    """Return parseable info txt paths in folder (lbdir/checksum dumps excluded)."""
-    txts = glob.glob(os.path.join(folder, "*.txt")) + glob.glob(os.path.join(folder, "*.TXT"))
+    """Return parseable info txt paths in folder (lbdir/checksum dumps excluded).
+
+    ``folder`` is escaped before globbing: private folder names routinely
+    carry ``[LB-NNNNN]``/``[taper]`` brackets, which ``glob`` would otherwise
+    read as character classes and silently match nothing.
+    """
+    base = glob.escape(folder)
+    txts = glob.glob(os.path.join(base, "*.txt")) + glob.glob(os.path.join(base, "*.TXT"))
     return [t for t in txts
             if not os.path.basename(t).lower().startswith("lbdir-")
             and not _NON_INFO_TXT.search(t)]
 
 
-def extract_setlist(text: str) -> list[str]:
-    """Extract track titles from numbered lines, validated as a 1,2,3… chain.
+def _setlist_from_lines(text: str) -> list[str]:
+    """Core 1,2,3… chain validator over one-track-per-line text.
 
-    A candidate line must carry the next expected track number; a '1' mid-file
+    A candidate line must carry the next expected track number; a '1' mid-text
     starts a new disc segment. Stray numbers (prose like '21 year-old …',
     dates, catalogue codes) break no chain and are skipped.
     """
@@ -217,6 +248,40 @@ def extract_setlist(text: str) -> list[str]:
             tracks.append(title)  # disc restart
             expected = 2
     return tracks
+
+
+def _setlist_from_inline(text: str) -> list[str]:
+    """Parse an inline comma-run setlist from an LB-<num>.txt sidecar.
+
+    The canonical sidecars carry the whole setlist as one comma-separated run
+    (``1 intro, 2 Roving Gambler, 3 To Ramona, …``) that wraps across physical
+    lines mid-title, so line-based parsing fails. Sections are fenced by
+    ``-----`` rules; each block is de-wrapped, split only on ``, <number> ``
+    boundaries (leaving commas inside titles like ``It's Alright, Ma`` intact),
+    then run through the same chain validator.
+    """
+    best: list[str] = []
+    block: list[str] = []
+    for line in text.splitlines() + ["-----"]:  # sentinel flushes final block
+        if _DASH_RULE.match(line):
+            joined = " ".join(block).strip()
+            block = []
+            # A real inline setlist has several ``, <n> `` boundaries; the chain
+            # validator in _setlist_from_lines rejects blocks that don't resolve
+            # to a consecutive 1,2,3… run, so no start-anchor guard is needed.
+            if len(_INLINE_BOUND.findall(joined)) >= 4:
+                tracks = [_clean_title(t)
+                          for t in _setlist_from_lines(_INLINE_BOUND.sub("\n", joined))]
+                if len(tracks) > len(best):
+                    best = tracks
+        else:
+            block.append(line.strip())
+    return best
+
+
+def extract_setlist(text: str) -> list[str]:
+    """Extract a validated track list, trying line-based then inline formats."""
+    return max(_setlist_from_lines(text), _setlist_from_inline(text), key=len)
 
 
 def extract_lineage(text: str) -> str:
