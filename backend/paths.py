@@ -17,6 +17,9 @@ def _app_root() -> Path:
             localappdata = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
             return localappdata / "LosslessBob"
         return Path(sys.executable).parent
+    override = os.environ.get("LOSSLESSBOB_APP_ROOT")
+    if override:
+        return Path(override)
     return Path(__file__).parent.parent
 
 
