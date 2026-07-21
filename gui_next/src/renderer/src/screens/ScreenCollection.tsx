@@ -15,7 +15,10 @@ const BASE = window.api.flaskBase
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 type CollectionStatus = 'Public' | 'Private' | 'New' | 'Missing'
-type FilterKey = 'all' | 'public' | 'private' | 'missing' | 'wishlist' | 'duplicates' | 'forum' | 'torrent' | 'unconfirmed' | 'forum_global' | 'torrent_global'
+type FilterKey = 'all' | 'public' | 'private' | 'missing' | 'wishlist' | 'duplicates' | 'forum' | 'torrent' | 'unconfirmed' | 'misrouted' | 'forum_global' | 'torrent_global'
+// Route drift vs. the configured mount/year routing (TODO-166). 'wrong_mount'
+// and 'no_mount' are genuine drift; the rest just mean "can't evaluate".
+type RouteStatus = 'ok' | 'wrong_mount' | 'no_mount' | 'no_route' | 'no_date'
 type ColKey = 'status' | 'type' | 'date' | 'location' | 'folder' | 'diskPath' | 'notes' | 'confirmed'
 
 const ALL_COLS: ColKey[] = ['status', 'type', 'date', 'location', 'folder', 'diskPath', 'notes', 'confirmed']
@@ -142,6 +145,11 @@ interface CollectionRow {
   historyTorrents: HistoryItem[]
   historyForum: HistoryItem[]
   category: string | null
+  // Mount/year routing check (TODO-166): whether this folder's disk_path sits
+  // under the mount its show-year is configured to route to.
+  routeStatus: RouteStatus
+  routeActualMount: string | null
+  routeExpectedMount: string | null
 }
 
 interface DuplicateGroup {
@@ -149,6 +157,23 @@ interface DuplicateGroup {
   location: string
   owned: { lb_number: number; rating: string; description: string }[]
   unowned: { lb_number: number; rating: string; description: string }[]
+}
+
+// ── Route-drift helpers (TODO-166) ────────────────────────────────────────────
+// A folder is "misrouted" when its disk_path sits under a different mount than
+// its show-year is configured to route to, or under no configured mount at all.
+function isMisrouted(r: CollectionRow): boolean {
+  return r.routeStatus === 'wrong_mount' || r.routeStatus === 'no_mount'
+}
+
+function misroutedReason(r: CollectionRow): string {
+  if (r.routeStatus === 'wrong_mount') {
+    return `Filed under "${r.routeActualMount}" but this year routes to "${r.routeExpectedMount}"`
+  }
+  if (r.routeStatus === 'no_mount') {
+    return `Not under any configured mount (this year routes to "${r.routeExpectedMount}")`
+  }
+  return ''
 }
 
 // ── Sample data (fallback when backend returns nothing) ───────────────────────
@@ -165,6 +190,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     historyTorrents: [{ date: '2024-01-10', filename: 'LB-00018.torrent', kind: 'In qBt' }],
     historyForum: [{ date: '2024-01-12', filename: 'Post #8821', kind: 'Local' }],
     category: 'concert',
+    routeStatus: 'ok', routeActualMount: 'Archive', routeExpectedMount: 'Archive',
   },
   {
     lbNumber: 'LB-00042', lbNumberInt: 42, status: 'Public', date: '05/26/66',
@@ -176,6 +202,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     isDuplicate: false, xref: 961, hasAltFilesets: true, linkedLbs: [],
     historyTorrents: [{ date: '2023-12-01', filename: 'LB-00042.torrent', kind: 'Local' }],
     historyForum: [], category: 'concert',
+    routeStatus: 'ok', routeActualMount: 'Archive', routeExpectedMount: 'Archive',
   },
   {
     lbNumber: 'LB-01001', lbNumberInt: 1001, status: 'New', date: '08/31/70',
@@ -186,6 +213,8 @@ const SAMPLE_DATA: CollectionRow[] = [
     discs: 1, size: '620 MB', rating: 'B+', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
     isDuplicate: false, xref: 0, hasAltFilesets: false, linkedLbs: [],
     historyTorrents: [], historyForum: [], category: 'concert',
+    // Drifted: sits under 'Imports' but 1970 routes to 'Archive'.
+    routeStatus: 'wrong_mount', routeActualMount: 'Imports', routeExpectedMount: 'Archive',
   },
   {
     lbNumber: 'LB-05421', lbNumberInt: 5421, status: 'Public', date: '01/30/74',
@@ -198,6 +227,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     historyTorrents: [{ date: '2024-01-05', filename: 'LB-05421.torrent', kind: 'In qBt' }],
     historyForum: [{ date: '2024-01-06', filename: 'Post #4521', kind: 'Local' }],
     category: 'concert',
+    routeStatus: 'ok', routeActualMount: 'Archive', routeExpectedMount: 'Archive',
   },
   {
     lbNumber: 'LB-05422', lbNumberInt: 5422, status: 'Missing', date: '02/03/74',
@@ -206,6 +236,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     discs: 2, size: '', rating: '', wishlist: true, wishlistPriority: 3, wishlistNotes: '', wishlistAddedAt: '2024-01-01',
     isDuplicate: false, xref: 0, hasAltFilesets: false, linkedLbs: [],
     historyTorrents: [], historyForum: [], category: null,
+    routeStatus: 'no_date', routeActualMount: null, routeExpectedMount: null,
   },
 ]
 
@@ -2290,6 +2321,9 @@ export function ScreenCollection(): React.JSX.Element {
         hasAltFilesets:  xrefSetLocal.has(lb),
         linkedLbs:   Array.isArray(c.linked_lbs) ? (c.linked_lbs as number[]) : [],
         category:    (c.lb_category as string | null) ?? null,
+        routeStatus:        (c.route_status as RouteStatus) ?? 'no_route',
+        routeActualMount:   (c.route_actual_mount as string | null) ?? null,
+        routeExpectedMount: (c.route_expected_mount as string | null) ?? null,
         historyTorrents: (torrentByLb[lb] ?? []).map((t: any) => ({
           date:     (t.created_at ?? '').slice(0, 10),
           filename: t.torrent_path ? (t.torrent_path as string).split('/').pop() ?? '' : '',
@@ -2359,6 +2393,7 @@ export function ScreenCollection(): React.JSX.Element {
     forum:       rows.filter(r => r.historyForum.length > 0).length,
     torrent:     rows.filter(r => r.historyTorrents.length > 0).length,
     unconfirmed: rows.filter(r => !r.confirmed).length,
+    misrouted:   rows.filter(isMisrouted).length,
     not_owned:      filteredMissingRows.length,
     forum_global:   rawForumPosts.length,
     torrent_global: rawTorrentRecs.length,
@@ -2376,6 +2411,7 @@ export function ScreenCollection(): React.JSX.Element {
       case 'forum':       if (r.historyForum.length === 0) return false; break
       case 'torrent':     if (r.historyTorrents.length === 0) return false; break
       case 'unconfirmed': if (r.confirmed) return false; break
+      case 'misrouted':   if (!isMisrouted(r)) return false; break
     }
     if (yearFilter !== null) {
       const y = extractYear(r.date)
@@ -3007,6 +3043,9 @@ export function ScreenCollection(): React.JSX.Element {
         <Chip active={filter === 'missing'}    onClick={() => setFilter('missing')}    count={counts.missing}>Missing</Chip>
         <Chip active={filter === 'wishlist'}   onClick={() => setFilter('wishlist')}   count={counts.wishlist}>Wishlist</Chip>
         <Chip active={filter === 'duplicates'} onClick={() => setFilter('duplicates')} count={counts.duplicates}>Duplicates</Chip>
+        {counts.misrouted > 0 && (
+          <Chip active={filter === 'misrouted'} onClick={() => setFilter('misrouted')} count={counts.misrouted}>Misrouted</Chip>
+        )}
         {sep}
         <Chip active={filter === 'forum'}      onClick={() => setFilter('forum')}      count={counts.forum}>Forum history</Chip>
         <Chip active={filter === 'torrent'}    onClick={() => setFilter('torrent')}    count={counts.torrent}>Torrent history</Chip>
@@ -3596,7 +3635,15 @@ export function ScreenCollection(): React.JSX.Element {
                           {visibleCols.has('date')     && <TD mono>{r.date}</TD>}
                           {visibleCols.has('location') && <TD>{r.location}</TD>}
                           {visibleCols.has('folder')   && <TD mono>{r.folder || '—'}</TD>}
-                          {visibleCols.has('diskPath') && <TD mono dim>{r.diskPath || '—'}</TD>}
+                          {visibleCols.has('diskPath') && <TD mono dim>
+                            {isMisrouted(r) && (
+                              <span
+                                title={misroutedReason(r)}
+                                style={{ color: 'var(--lbb-warn-fg)', marginRight: 4, cursor: 'help' }}
+                              >⚠</span>
+                            )}
+                            {r.diskPath || '—'}
+                          </TD>}
                           {visibleCols.has('notes')    && <TD dim>{r.notes || '—'}</TD>}
                           {visibleCols.has('confirmed') && <TD mono dim>{r.confirmed || '—'}</TD>}
                         </TR>
