@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-263: init_db()'s 4 background threads leak file descriptors under fast test churn, segfaulting CI
+Status: Fixed
+File(s): backend/db.py:2620,backend/db.py:2263
+Reported: 2026-07-21
+Fixed: 2026-07-21
+Root cause: get_connection(db_path) caches connections per (thread, path) but nothing ever closes the connections opened by init_db()'s four fire-and-forget background threads (bloom rebuild, migrate_lb_master, _bootstrap_flat_file_legacy, import_dylan_performances) -- each opens 3 FDs in WAL mode and relies on GC (via thread teardown + Connection.__del__) to eventually reclaim them. Also, close_connection(db_path) itself didn't handle db_path=None, unlike get_connection()'s DB_PATH fallback.
+Fix: init_db() now wraps each of the four background-thread targets in a local _run_bg() helper that explicitly calls close_connection(db_path) in a finally block once the task finishes, evicting and closing that thread's cached connection immediately instead of waiting on GC. close_connection() now also falls back to DB_PATH when db_path is None/falsy, matching get_connection()'s existing behavior (needed since init_db(db_path=None) is a real call shape). Verified: reproduced the leak locally via 'ulimit -n 256' (12 real test failures, sqlite3.OperationalError 'unable to open database file'/'disk I/O error', concentrated at the same point in the suite CI crashed at); after the fix the full suite passes cleanly (905 passed) under the same constrained ulimit. Normal-ulimit full suite still 905 passed.
+
 BUG-262: init_db()'s migrate_lb_master background thread piles up under fast test churn, segfaulting CI
 Status: Fixed
 File(s): backend/db.py:2625,backend/db.py:5120
