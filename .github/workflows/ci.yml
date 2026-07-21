@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Compile check
+        run: python -m compileall -q backend tools concert_ranker
+
+      - name: Backend test suite
+        run: python -m pytest tests/ -q
+
+  backend-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Fixture-backed boot smoke
+        run: python tools/ci_smoke.py
+
+  gui-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: gui_next/package-lock.json
+
+      - name: Install dependencies
+        working-directory: gui_next
+        run: npm ci
+
+      - name: Typecheck
+        working-directory: gui_next
+        run: npm run typecheck
+
+      - name: Build
+        working-directory: gui_next
+        run: npm run build
+
+# tapematch-tests intentionally omitted (D-3/B4, TODO-261): the suite isn't
+# self-contained as originally assumed — test_batch_queue.py and
+# test_emb_live.py shell out to real tapematch_session.py / .venv-nmfp
+# embedding subprocesses, which is both unsafe to run against a live
+# tapematch session/crawl and not meaningful in CI (no real audio fixtures).
+# Revisit once that suite is made CI-safe.
