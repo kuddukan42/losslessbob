@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-261: checksum bloom filter races init_db()'s own caller, causing false NOT FOUNDs
+Status: Fixed
+File(s): backend/db.py:2278,backend/db.py:2874
+Reported: 2026-07-21
+Fixed: 2026-07-21
+Root cause: rebuild_bloom() (backend/db.py) stamps only _bloom_db_path, not a data version. init_db()'s background rebuild thread can finish (or a caller's earlier bloom build can still be live) before a caller's own subsequent checksums INSERTs land, since nothing signals the bloom is stale for writes made after it was snapshotted on the SAME db_path.
+Fix: Track the checksums row count the bloom was built from (_bloom_count). lookup_checksums() now compares it against a live COUNT(*) before trusting the bloom; a mismatch skips the bloom for that call (falls through to SQLite, always safe) and kicks off a fresh background rebuild so later calls regain the bloom's speed. Verified: 20/20 clean runs of tests/test_db_lookup.py (previously ~1/3 flaked); full suite 905 passed.
+
 BUG-260: verify_folder ingests extras/ sidecars + audio → reconciled folders wedge on 'incomplete'
 Status: Fixed
 File(s): backend/checksum_utils.py:629,backend/checksum_utils.py:642
