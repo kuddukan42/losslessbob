@@ -1,6 +1,46 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-260: verify_folder ingests extras/ sidecars + audio → reconciled folders wedge on 'incomplete'
+Status: Fixed
+File(s): backend/checksum_utils.py:629,backend/checksum_utils.py:642
+Reported: 2026-07-19
+Fixed: 2026-07-19
+Root cause: verify_folder()'s two rglob scans (disk-audio map + .ffp/.md5/.st5 sidecar gather) never got the _is_reconciled_extra() guard the BUG-257 lookup fix added, so a set-aside sidecar under extras/ contributed expected entries (qualified extras/<name>) — missing on disk in the BUG-257 folder shape → n_missing>0 → status 'incomplete' → pipeline Step-1 Verify stuck on warn for a folder lookup now passes. With extras audio present, the superseded fileset was silently re-verified and inflated total/extra counts.
+Fix: Skip _is_reconciled_extra() paths in both scans, keeping the extras/ subtree out of the verify universe entirely (mirrors lookup + verify_folder_lbdir semantics). Repro'd both shapes (extras-only sidecar → was incomplete/missing=1, now pass; full sidecar+audio extras → total drops to main fileset only). Regression tests in tests/test_checksum_extras.py; full suite 880+11 green.
+
+BUG-259: generate_checksums hashes audio under extras/ into fresh top-level sidecars — reopens BUG-257 via Generate button
+Status: Fixed
+File(s): backend/checksum_utils.py:1267
+Reported: 2026-07-19
+Fixed: 2026-07-19
+Root cause: The multi-disc recursion change (this branch) swapped iterdir() for folder.rglob('*') without excluding move_extras' set-aside dir, so "Generate FFP + MD5" hashed superseded/alternate audio under extras/ into a new top-level _mychecksums.ffp/.md5. Pipeline lookup only skips sidecars *located under* extras/, so it ingests the top-level sidecar — merging the other fileset's hashes back into the input and recreating the false multi-LB "perfect match" BUG-257 fixed.
+Fix: Filter _is_reconciled_extra() relative paths out of the audio rglob in generate_checksums(); disc-subfolder audio (CD1/…) still included. Repro'd before/after (extras/alt-t01.wav line present → absent); regression tests in tests/test_checksum_extras.py.
+
+BUG-258: Private metadata importer silently skipped bracketed folders and misread canonical LB-<num>.txt sidecars
+Status: Fixed
+File(s): tools/import_private_metadata.py:185,tools/import_private_metadata.py:204
+Reported: 2026-07-18
+Fixed: 2026-07-18
+Root cause: info_txt_candidates() globbed folder paths without escaping; private folders carry [LB-NNNNN]/[taper] brackets that glob treats as character classes, matching nothing. Separately the lineage regex required space-padded arrows, and the setlist extractor only handled one-track-per-line, missing the LB-<num>.txt sidecars' inline comma-run setlists (which wrap mid-title across lines, use 1-/101 variants, and run a footer onto the last track).
+Fix: glob.escape(folder) before globbing; broadened _LINEAGE_LINE to match unicode arrow, -> and word>word; added block-based _setlist_from_inline() that de-wraps -----fenced blocks, splits only on ', <n>' boundaries (commas inside titles survive), reuses the chain/disc-restart validator, and strips disc-label + 'Please retain...' tails. Result on the live DB: setlists 1210->1309 (+99), descriptions 1356->1362; no_info_txt 54->11.
+
+BUG-257: Pipeline lookup ingests extras/ sidecars → false multi-LB 'identical' match
+Status: Fixed
+File(s): backend/app.py:7287
+Reported: 2026-07-18
+Fixed: 2026-07-18
+Root cause: Step-2 Lookup gathered checksum sidecars with folder.rglob('*') and read every .ffp/.md5/.st5 including those under extras/ (move_extras' set-aside dir). extras/ held the alternate-transfer sidecars, so the parsed set covered both filesets → lookup_checksums reported both LBs MATCHED → the _all_perfect multi-LB auto-link fired and renamed the folder (LB-12226+LB-16533).
+Fix: (1) Skip files matched by checksum_utils._is_reconciled_extra() (extras/ subtree + rename_log.txt) when gathering lookup input in app.py. Verified on the real folder: LB-16533 drops MATCHED→DUPLICATE, so no false multi-LB auto-link. (2) Added a pipeline 'Override LB#' control (ScreenPipeline OverridePanel) to force a single LB via replace_folder_link when sidecars mislead the match. (3) Made a single explicit folder pin authoritative in the LBDIR LB# resolvers — _resolve_lb_number_for_folder + the inline resolvers in /api/lbdir/check, /retrieve, /reconcile previously ordered my_collection→name-regex→pin, so an override was ignored (LBDIR verified the wrong LB); new _pinned_lb_for_folder() helper puts a single pin first. Verified /api/lbdir/check returns 16533 (23/23 pass) even with lb_number_hint=12226.
+
+BUG-256: Pipeline lookup wedges duplicate-fileset folders in 'Incomplete match'
+Status: Fixed
+File(s): backend/app.py:7374
+Reported: 2026-07-18
+Fixed: 2026-07-18
+Root cause: full_match = summary['matched'] == summary['given'] compares the GLOBAL matched count, which double-counts checksums matched under duplicate LB entries (matched == given*N), so a genuinely-complete folder is misclassified as Incomplete match. The is_multi_lb escape hatch doesn't help once alias resolution collapses the duplicates to a single canonical LB.
+Fix: Test full_match on distinct unmatched checksums instead: full_match = summary.get('unmatched', 1) == 0. Duplicate-fileset folder now resolves ok to the canonical LB (with or without a pin); a genuine NOT-FOUND still blocks as Incomplete match. Verified against live DB (LB-16353 alias -> LB-16369 canonical).
+
 BUG-106: Windows installer does not place app in Program Files
 Status: Fixed
 File(s): installer/losslessbob.iss (or equivalent Inno Setup script)
