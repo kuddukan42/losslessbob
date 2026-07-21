@@ -37,6 +37,10 @@ Follow every session. No asking.
   is not permission to use it on your own initiative after a code change.
 - A PostToolUse hook (`.claude/hooks/py_compile_check.sh`) auto-runs
   `py_compile` on every `.py` edit — no manual syntax-check step needed.
+- CI (`.github/workflows/ci.yml`) runs the backend suite + gui-check on every
+  push; a session may cite a green run instead of re-running the full local
+  suite for unrelated code. Does NOT weaken the local rules above for code the
+  session actually changed — `/backend-restart` + targeted tests still apply.
 
 ---
 
