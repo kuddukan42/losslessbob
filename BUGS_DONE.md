@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-262: init_db()'s migrate_lb_master background thread piles up under fast test churn, segfaulting CI
+Status: Fixed
+File(s): backend/db.py:2625,backend/db.py:5120
+Reported: 2026-07-21
+Fixed: 2026-07-21
+Root cause: migrate_lb_master() always blocks on get_write_queue().execute() (default 30s timeout), including when spawned as a fire-and-forget background thread from init_db(). Nothing waits on that thread's result, but it still fully blocks for up to 30s if the write queue it grabbed a reference to gets torn down (e.g. by a test's per-test conftest fixture) before being serviced -- and a fast test suite creates/tears-down queues far faster than 30s, so many such threads can be alive concurrently at any moment, each holding a full thread stack.
+Fix: Added migrate_lb_master(db_path, wait=True) parameter. wait=False routes the write through the queue's existing execute_async() (fire-and-forget, no blocking wait) instead of execute(). init_db()'s background-thread spawn site now passes wait=False; all synchronous callers (importer.py, flat_file.py, and direct test calls) keep the default wait=True so their existing immediate-consistency assumptions are unchanged. Verified locally: full suite 905 passed (unhandled-thread-exception warning count dropped from ~61-68 to 47, consistent with these threads no longer blocking/timing out). The segfault itself only reproduces on GitHub Actions' more resource-constrained runner, not locally -- final confirmation is the next CI push going green on backend-tests.
+
 BUG-261: checksum bloom filter races init_db()'s own caller, causing false NOT FOUNDs
 Status: Fixed
 File(s): backend/db.py:2278,backend/db.py:2874
