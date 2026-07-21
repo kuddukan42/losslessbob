@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-255: Staircase corroboration gate: consider hiss_median floor (boundary pass observed)
+Priority: Low
+Status: Done
+Added: 2026-07-17
+Closed: 2026-07-21
+Description: 1995-12-09 rescore: 6083-6104 passed the corroboration gate at exactly hiss_frac 0.05 == min_hiss_frac with hiss_median .05 (noise level) — the frac floor has no median requirement, so noise-level hiss corroborates a staircase-relaxed fp merge. Candidate sweep: add a small hiss_median floor to the gate or raise min_hiss_frac. Requires calibration sweep vs frozen set + tj sign-off per CALIBRATION_PROGRESS protocol. Evidence in TODO-234 review doc. Related: [TODO-234].
+Added min_hiss_median floor (0.05) to the staircase corroboration gate; frozen-set sweep −2 fp / 0 tp cost, tj sign-off 2026-07-21. Blocks the 1995-12-09 LB-06083/06104 noise-hiss relaxed-bar merge. verdict.py + config.yaml + tests; evidence in CALIBRATION_PROGRESS.md.
+
 TODO-259: GUI to edit a collection folder — reassign LB, rename, or clarify override workflow
 Priority: Medium
 Status: Done

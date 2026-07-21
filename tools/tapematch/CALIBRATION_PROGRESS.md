@@ -947,3 +947,30 @@ Gap check over all 2,032 scored dates (latest run per date):
   same-source family grouping on those 8 dates.
 Decision: skip the 8-date remainder; let it ride along in a future crawl/rescore pass
 if family-grouping hygiene is ever wanted. Attribution coverage is complete.
+
+## TODO-255 — hiss_median floor on the corroboration gate — DONE 2026-07-21
+
+The staircase corroboration hiss branch required `hiss_frac >= 0.05` with **no
+median requirement**, so noise-level hiss corroborated a relaxed-bar fp merge
+(1995-12-09 LB-06083/06104: hiss_frac 0.0504, hiss_median 0.0496, corr ~0,
+windowed ~0, fp 0.409). Added `min_hiss_median` to the gate
+(`verdict._staircase_corroborated`): when set, the hiss branch also requires the
+median at/above the floor; a None median with the floor set does not corroborate.
+Absent key = historical frac-only behaviour (byte-identical).
+
+**Cached frozen-set sweep** (827 dates / 2,965 labeled pairs; read-only snapshot,
+crawl untouched; tightening the gate can only remove same_family verdicts, so
+precision cannot drop — cost is TP-only):
+
+| floor | Δtp | Δfp | note |
+|-------|-----|-----|------|
+| shipped (none) | — | — | tp 700, fp 18 |
+| **0.05** | **0** | **−2** | removes 2 noise-hiss false merges, 0 TP cost |
+| 0.08–0.15 | −1 | −5 | severs a real same-cluster edge (min real hiss median ~0.085) |
+| 0.20+ | −3 | −5 | |
+
+Shipped **min_hiss_median: 0.05** (symmetric to min_hiss_frac; tj sign-off
+2026-07-21) — strict precision gain, zero recall cost, blocks the flagged
+boundary case. The two removed frozen FPs: LB-10165/10241 (median 0.017),
+LB-04535/05649 (median 0.048), both staircase relaxed-bar merges corroborated
+only by noise-level hiss. Tests in `tests/test_staircase_gating.py`. TODO-255 CLOSED.

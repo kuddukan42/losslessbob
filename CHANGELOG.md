@@ -1,3 +1,19 @@
+[2026-07-21] — fix(scraper): hiss_median floor on the staircase corroboration gate (TODO-255)
+Fixed: tools/tapematch/tapematch/verdict.py — _staircase_corroborated: the hiss
+  corroboration branch required hiss_frac >= 0.05 with no median requirement, so
+  noise-level hiss (hiss_median ~0.05) corroborated a staircase-relaxed fp merge
+  (1995-12-09 LB-06083/06104: hiss_frac 0.0504, hiss_median 0.0496, corr ~0). Added
+  an optional min_hiss_median floor: when set, the hiss branch also requires the
+  median at/above the floor; None median with the floor set does not corroborate.
+  Absent key = historical frac-only behaviour (byte-identical).
+Changed: tools/tapematch/config.yaml — fingerprint.staircase_corroboration.min_hiss_median: 0.05
+  (symmetric to min_hiss_frac; tj sign-off 2026-07-21). Cached frozen-set sweep
+  (827 dates / 2,965 labeled pairs): −2 fp, 0 tp cost — strict precision gain, blocks
+  the boundary case. Floors >=0.08 sever a real same-cluster edge (min real hiss
+  median ~0.085). Evidence table in CALIBRATION_PROGRESS.md.
+Added: tools/tapematch/tests/test_staircase_gating.py — 4 tests for the median floor
+  (blocks noise, passes real hiss, None median blocks, windowed branch unaffected).
+
 [2026-07-21] — feat(gui): collection-view right-click to reassign a folder's LB or rename it (TODO-259)
 Added: backend/db.py — reassign_collection(old_lb, new_lb): atomically moves a
   my_collection row (folder_name/disk_path/notes/xref) to a different LB and carries

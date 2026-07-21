@@ -76,6 +76,36 @@ def test_gate_passes_on_either_floor():
         _pair(windowed_frac=0.0, hiss_frac=0.06), _gate_cfg()) is True
 
 
+def _gate_cfg_med():
+    return {"staircase_corroboration":
+            {"enabled": True, "min_windowed_frac": 0.05,
+             "min_hiss_frac": 0.05, "min_hiss_median": 0.05}}
+
+
+def test_gate_hiss_median_floor_blocks_noise():
+    # TODO-255: hiss_frac on the floor but noise-level median (the 1995-12-09
+    # LB-06083/06104 signature) must not corroborate when the floor is set.
+    p = _pair(windowed_frac=0.0, hiss_frac=0.0504, hiss_median=0.0496)
+    assert verdict._staircase_corroborated(p, _gate_cfg_med()) is False
+
+
+def test_gate_hiss_median_floor_passes_real_hiss():
+    p = _pair(windowed_frac=0.0, hiss_frac=0.06, hiss_median=0.06)
+    assert verdict._staircase_corroborated(p, _gate_cfg_med()) is True
+
+
+def test_gate_hiss_median_none_blocks():
+    # median floor set but the signal was never computed -> no corroboration.
+    p = _pair(windowed_frac=0.0, hiss_frac=0.06, hiss_median=None)
+    assert verdict._staircase_corroborated(p, _gate_cfg_med()) is False
+
+
+def test_gate_hiss_median_floor_leaves_windowed_branch():
+    # The windowed branch corroborates independently of the hiss median floor.
+    p = _pair(windowed_frac=0.06, hiss_frac=0.0, hiss_median=0.0)
+    assert verdict._staircase_corroborated(p, _gate_cfg_med()) is True
+
+
 # ── pair_links wiring ──────────────────────────────────────────────────────────
 
 def _stair_pair(fp, wf=0.0, hf=0.0):

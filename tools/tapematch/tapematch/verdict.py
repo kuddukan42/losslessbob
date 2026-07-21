@@ -150,6 +150,13 @@ def _staircase_corroborated(pair: Mapping, fp_cfg: Mapping) -> bool:
     ``hiss_frac`` at/above its configured floor. ``None`` (signal never
     computed) counts as no corroboration — precision-safe by construction.
 
+    ``min_hiss_median`` (TODO-255) optionally guards the hiss branch: ``hiss_frac``
+    alone has no median requirement, so noise-level hiss (``hiss_median`` ~0.05)
+    at a frac exactly on the floor corroborated the 1995-12-09 6083-6104
+    relaxed-bar merge. When set, the hiss branch also requires ``hiss_median`` at/
+    above the floor; a ``None`` median with the floor set does not corroborate.
+    Absent = historical frac-only behaviour.
+
     Gate off (``fingerprint.staircase_corroboration.enabled`` absent/false)
     returns True, preserving historical behaviour.
     """
@@ -158,12 +165,17 @@ def _staircase_corroborated(pair: Mapping, fp_cfg: Mapping) -> bool:
         return True
     min_wf = sc.get("min_windowed_frac")
     min_hf = sc.get("min_hiss_frac")
+    min_hmed = sc.get("min_hiss_median")
     wf = pair.get("windowed_frac")
     hf = pair.get("hiss_frac")
+    hmed = pair.get("hiss_median")
     if min_wf is not None and wf is not None and wf >= min_wf:
         return True
     if min_hf is not None and hf is not None and hf >= min_hf:
-        return True
+        if min_hmed is None:
+            return True
+        if hmed is not None and hmed >= min_hmed:
+            return True
     return False
 
 
