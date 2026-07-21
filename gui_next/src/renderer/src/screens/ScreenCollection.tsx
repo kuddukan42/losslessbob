@@ -532,6 +532,119 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
   )
 }
 
+// ── FolderEditModal ─────────────────────────────────────────────────────────
+// Reassign a filed folder to a different LB, or rename it on disk (TODO-259).
+function FolderEditModal({ mode, row, onClose, onDone }: {
+  mode: 'reassign' | 'rename'
+  row: CollectionRow
+  onClose: () => void
+  onDone: (msg: string) => void
+}) {
+  const { t } = useTranslation()
+  const [value, setValue] = useState(mode === 'rename' ? row.folder : '')
+  const [busy,  setBusy]  = useState(false)
+  const [err,   setErr]   = useState('')
+
+  const submit = async () => {
+    setErr('')
+    if (mode === 'reassign') {
+      const n = parseInt(value, 10)
+      if (value.trim() === '' || !Number.isFinite(n) || n <= 0) {
+        setErr(t('collection.folderEdit.badLb')); return
+      }
+      setBusy(true)
+      try {
+        const resp = await fetch(`${BASE}/api/collection/reassign`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ old_lb: row.lbNumberInt, new_lb: n }),
+        })
+        const data = await resp.json()
+        if (data.ok) {
+          onDone(t('collection.folderEdit.reassigned', {
+            from: row.lbNumber, to: `LB-${String(n).padStart(5, '0')}`,
+          }))
+          onClose()
+        } else { setErr(data.error || t('collection.folderEdit.failed')); setBusy(false) }
+      } catch { setErr(t('collection.folderEdit.failed')); setBusy(false) }
+    } else {
+      const name = value.trim()
+      if (!name || name === row.folder) { onClose(); return }
+      setBusy(true)
+      try {
+        const resp = await fetch(`${BASE}/api/folder/rename`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ folder: row.diskPath, new_name: name }),
+        })
+        const data = await resp.json()
+        if (data.ok) { onDone(t('collection.folderEdit.renamed', { name })); onClose() }
+        else { setErr(data.error || t('collection.folderEdit.failed')); setBusy(false) }
+      } catch { setErr(t('collection.folderEdit.failed')); setBusy(false) }
+    }
+  }
+
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 1000,
+      background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    }}>
+      <div style={{
+        background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+        borderRadius: 10, padding: 24, minWidth: 360, maxWidth: 460,
+        boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+      }}>
+        <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 6 }}>
+          {mode === 'reassign'
+            ? t('collection.folderEdit.reassignTitle', { lb: row.lbNumber })
+            : t('collection.folderEdit.renameTitle', { lb: row.lbNumber })}
+        </div>
+        <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', marginBottom: 16 }}>
+          {mode === 'reassign'
+            ? t('collection.folderEdit.reassignInfo')
+            : t('collection.folderEdit.renameInfo')}
+        </div>
+
+        <div style={{ marginBottom: err ? 8 : 20 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg2)', marginBottom: 6 }}>
+            {mode === 'reassign' ? t('collection.folderEdit.newLb') : t('collection.folderEdit.newName')}
+          </div>
+          <input
+            type={mode === 'reassign' ? 'number' : 'text'}
+            value={value}
+            autoFocus
+            onChange={e => setValue(e.target.value)}
+            onKeyDown={e => { if (e.key === 'Enter' && !busy) submit() }}
+            placeholder={mode === 'reassign' ? t('collection.folderEdit.newLbPlaceholder') : row.folder}
+            style={{
+              width: '100%', boxSizing: 'border-box',
+              padding: '7px 10px', fontSize: 'var(--lbb-fs-13)',
+              background: 'var(--lbb-surface2)',
+              border: '1px solid var(--lbb-border)',
+              borderRadius: 6, color: 'var(--lbb-fg)', outline: 'none',
+            }}
+          />
+        </div>
+
+        {err && (
+          <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-danger)', marginBottom: 16 }}>
+            {err}
+          </div>
+        )}
+
+        <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
+          <Button variant="ghost" size="sm" onClick={onClose}>{t('common.cancel')}</Button>
+          <Button variant="primary" size="sm" disabled={busy} onClick={submit}>
+            {busy
+              ? t('collection.personalInfo.saving')
+              : (mode === 'reassign' ? t('collection.folderEdit.reassignApply') : t('collection.folderEdit.renameApply'))}
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // ── ColumnPickerModal ──────────────────────────────────────────────────────────
 
 function ColumnPickerModal({ initial, onClose, onExport }: {
@@ -2027,6 +2140,7 @@ export function ScreenCollection(): React.JSX.Element {
   const [torrentProgress, setTorrentProgress] = useState<{ done: number; total: number; label: string } | null>(null)
   const [ctxMenu, setCtxMenu]               = useState<CtxMenuState | null>(null)
   const [personalModal, setPersonalModal]   = useState<{ lb: string; lbNumber: number } | null>(null)
+  const [folderEdit, setFolderEdit]         = useState<{ mode: 'reassign' | 'rename'; row: CollectionRow } | null>(null)
   const [columnPickerOpen, setColumnPickerOpen] = useState(false)
   const [exportExtraCols, setExportExtraCols] = useState<Set<ExportExtraCol>>(new Set())
   const [personalSaveVer, setPersonalSaveVer] = useState(0)
@@ -3654,6 +3768,16 @@ export function ScreenCollection(): React.JSX.Element {
             },
             'sep',
             {
+              label: 'Reassign LB…',
+              disabled: !ctxMenu.row.diskPath,
+              action: () => setFolderEdit({ mode: 'reassign', row: ctxMenu.row }),
+            },
+            {
+              label: 'Rename Folder…',
+              disabled: !ctxMenu.row.diskPath,
+              action: () => setFolderEdit({ mode: 'rename', row: ctxMenu.row }),
+            },
+            {
               label: 'Edit Personal Info…',
               action: () => setPersonalModal({ lb: ctxMenu.row.lbNumber, lbNumber: ctxMenu.row.lbNumberInt }),
             },
@@ -3667,6 +3791,15 @@ export function ScreenCollection(): React.JSX.Element {
           lbNumber={personalModal.lbNumber}
           onClose={() => setPersonalModal(null)}
           onSaved={msg => { showToast(msg, 'ok'); setPersonalSaveVer(v => v + 1) }}
+        />
+      )}
+
+      {folderEdit && (
+        <FolderEditModal
+          mode={folderEdit.mode}
+          row={folderEdit.row}
+          onClose={() => setFolderEdit(null)}
+          onDone={msg => { showToast(msg, 'ok'); refetch() }}
         />
       )}
 

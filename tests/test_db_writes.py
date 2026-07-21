@@ -2110,3 +2110,83 @@ class TestConcurrentWrites:
             assert count == 20
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
+
+
+class TestReassignCollection:
+    def test_move_repoints_row(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 100)
+            _seed_entry(conn, 200)
+            db.add_to_collection(100, "f100", "/music/100", notes="n", db_path=db_path)
+            db.reassign_collection(100, 200, db_path=db_path)
+            assert conn.execute(
+                "SELECT COUNT(*) FROM my_collection WHERE lb_number=100"
+            ).fetchone()[0] == 0
+            row = conn.execute(
+                "SELECT folder_name, disk_path, notes FROM my_collection WHERE lb_number=200"
+            ).fetchone()
+            assert tuple(row) == ("f100", "/music/100", "n")
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_migrates_personal_meta(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 101)
+            _seed_entry(conn, 201)
+            db.add_to_collection(101, "f101", "/music/101", db_path=db_path)
+            db.set_collection_meta(101, {"personal_rating": 5, "tags": "fave"}, db_path=db_path)
+            db.reassign_collection(101, 201, db_path=db_path)
+            assert db.get_collection_meta(201, db_path=db_path).get("personal_rating") == 5
+            # old meta row is physically gone with the old collection row
+            assert conn.execute(
+                "SELECT COUNT(*) FROM collection_meta WHERE lb_number=101"
+            ).fetchone()[0] == 0
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_target_must_exist_in_catalog(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 102)
+            db.add_to_collection(102, "f102", "/music/102", db_path=db_path)
+            with pytest.raises(ValueError):
+                db.reassign_collection(102, 999, db_path=db_path)  # 999 not in entries
+            # source untouched on failure
+            assert conn.execute(
+                "SELECT COUNT(*) FROM my_collection WHERE lb_number=102"
+            ).fetchone()[0] == 1
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_target_already_owned_rejected(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 103)
+            _seed_entry(conn, 203)
+            db.add_to_collection(103, "f103", "/music/103", db_path=db_path)
+            db.add_to_collection(203, "f203", "/music/203", db_path=db_path)
+            with pytest.raises(ValueError):
+                db.reassign_collection(103, 203, db_path=db_path)
+            # target keeps its own folder
+            assert conn.execute(
+                "SELECT folder_name FROM my_collection WHERE lb_number=203"
+            ).fetchone()[0] == "f203"
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_same_lb_rejected(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 104)
+            db.add_to_collection(104, "f104", "/music/104", db_path=db_path)
+            with pytest.raises(ValueError):
+                db.reassign_collection(104, 104, db_path=db_path)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
