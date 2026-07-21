@@ -1,3 +1,12 @@
+[2026-07-21] — ci: skip full suite on pure-bookkeeping (**.md-only) pushes
+Changed: .github/workflows/ci.yml — added paths-ignore: ['**.md'] to the push
+  trigger. The bookkeeping discipline structurally produces .md-only commits
+  (CHANGELOG/BUGS_DONE/TODO ledger moves) after every code commit; each was
+  re-running the full backend-tests + backend-smoke + gui-check matrix that the
+  preceding code commit already ran (5 of the last 8 runs were pure bookkeeping).
+  paths-ignore skips a push only when EVERY changed file matches, so mixed
+  code+docs commits still run; PR-to-main stays the unconditional gate.
+
 [2026-07-21] — fix(db): writer thread owns its connection's close, not shutdown()'s caller (BUG-264)
 Fixed: backend/db_queue.py — DatabaseWriteQueue.shutdown() closed self._conn from
   the caller thread after join(timeout). When a write outlived conftest's 2s join
