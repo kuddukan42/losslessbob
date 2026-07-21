@@ -29,6 +29,7 @@ _write_lock = threading.RLock()
 # --- Bloom filter for fast NOT-FOUND short-circuit (DB-07) ---
 _bloom: _SBF | None = None
 _bloom_db_path: str | None = None  # path the filter was built from (BUG-187)
+_bloom_count: int | None = None  # checksums row count the filter was built from (BUG-261)
 _bloom_lock = threading.Lock()
 
 
@@ -2277,14 +2278,17 @@ def close_connection(db_path) -> None:
 
 def rebuild_bloom(db_path=None):
     """Load all checksums into an in-process bloom filter. Call after import/init."""
-    global _bloom, _bloom_db_path
+    global _bloom, _bloom_db_path, _bloom_count
     bf = _SBF(mode=_SBF.LARGE_SET_GROWTH, error_rate=0.01)
     conn = get_connection(db_path)
+    count = 0
     for row in conn.execute("SELECT checksum FROM checksums"):
         bf.add(row[0])
+        count += 1
     with _bloom_lock:
         _bloom = bf
         _bloom_db_path = str(db_path or DB_PATH)
+        _bloom_count = count
 
 
 def _rebuild_bloom_bg(db_path=None) -> None:
@@ -2881,13 +2885,28 @@ def lookup_checksums(parsed_entries, db_path=None):
     degenerate_entries = [e for e in parsed_entries if _is_degenerate_checksum(e[0])]
     parsed_entries = [e for e in parsed_entries if not _is_degenerate_checksum(e[0])]
 
+    conn = get_connection(db_path)
+
     # Bloom pre-filter: separate definite misses from candidates (DB-07).
-    # Only use the bloom if it was built for this exact db_path; a filter built
-    # from a different DB (common in tests with multiple temp DBs) would give
-    # false negatives, silently dropping valid checksums (BUG-187).
+    # Only use the bloom if it was built for this exact db_path (a filter built
+    # from a different DB would give false negatives — BUG-187) AND its stamped
+    # row count still matches the live table. init_db() rebuilds the bloom in a
+    # background thread that can race ahead of a caller's own checksum inserts
+    # made right after init_db() returns (same db_path, so BUG-187's guard alone
+    # doesn't catch it) — an empty/partial bloom built too early would otherwise
+    # report freshly-inserted checksums as false NOT FOUNDs for the rest of the
+    # session (BUG-261). A live COUNT(*) mismatch means the bloom is stale: skip
+    # it for this call (falls through to SQLite, always safe) and kick off a
+    # fresh background rebuild so later calls get the bloom's speed back.
     active_path = str(db_path or DB_PATH)
     with _bloom_lock:
         _active_bloom = _bloom if _bloom_db_path == active_path else None
+        _active_bloom_count = _bloom_count
+    if _active_bloom is not None:
+        live_count = conn.execute("SELECT COUNT(*) FROM checksums").fetchone()[0]
+        if live_count != _active_bloom_count:
+            _active_bloom = None
+            threading.Thread(target=_rebuild_bloom_bg, args=(db_path,), daemon=True).start()
     if _active_bloom is not None:
         candidates = [e for e in parsed_entries if e[0] in _active_bloom]
         definite_misses = [e for e in parsed_entries if e[0] not in _active_bloom]
@@ -2897,7 +2916,6 @@ def lookup_checksums(parsed_entries, db_path=None):
     checksums = [e[0] for e in candidates]
 
     # Temp-table bulk lookup — avoids dynamic IN clause and the 999-param limit (DB-04)
-    conn = get_connection(db_path)
     conn.execute("CREATE TEMP TABLE IF NOT EXISTS _lookup_input (checksum TEXT PRIMARY KEY)")
     conn.execute("DELETE FROM _lookup_input")
     if checksums:
