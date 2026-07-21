@@ -1,3 +1,9 @@
+[2026-07-21] — chore(docs): /session-close now commits + pushes automatically
+Changed: .claude/commands/session-close.md — added Step 8 (commit + push without
+  confirmation) so bookkeeping always lands on the remote at session end; split
+  the old Step 7 into consistency-check (7) + report (9). No more per-step
+  "want me to commit/push?" prompts.
+
 [2026-07-21] — ci: skip full suite on pure-bookkeeping (**.md-only) pushes
 Changed: .github/workflows/ci.yml — added paths-ignore: ['**.md'] to the push
   trigger. The bookkeeping discipline structurally produces .md-only commits
