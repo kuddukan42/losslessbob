@@ -233,6 +233,8 @@
       "generating": "Generating…",
       "generate": "Generate FFP + MD5",
       "generateInfo": "Writes _mychecksums.ffp and .md5 into the folder. Non-destructive — your audio files aren't touched.",
+      "generateFailed": "Couldn't generate checksums — see the backend log.",
+      "generateNothing": "No checksums were generated — no supported audio files were found.",
       "stats": {
         "total": "Total",
         "pass": "Pass",
@@ -261,7 +263,12 @@
       "partialMatchInfo": "{{lb}} was identified, but not every checksum in this folder matches the archive record — some files on disk may differ from the official copy. LBDIR, rename, and file are blocked until you confirm this is the right show. If you're sure, pin it to proceed.",
       "pinConfirms": "Pinning confirms this folder belongs to {{lb}} and unlocks all downstream steps.",
       "noMatches": "No matches found",
-      "noMatchesInfo": "None of these checksums match any archive entry. This may be a new or unknown source."
+      "noMatchesInfo": "None of these checksums match any archive entry. This may be a new or unknown source.",
+      "override": "Override LB#",
+      "overrideInfo": "Wrong match? Force this folder to a specific LB# — it re-runs LBDIR and verify against that entry's checksums.",
+      "overrideUse": "Use {{lb}}",
+      "overrideManual": "LB number",
+      "overrideApply": "Force"
     },
     "rename": {
       "unlocksAfter": "Rename unlocks after lookup resolves an LB#.",

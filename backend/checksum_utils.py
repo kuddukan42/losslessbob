@@ -619,9 +619,14 @@ def verify_folder(folder_path):
     # Build relative-posix-path→Path map recursively so files in subfolders are found.
     # Keys are posix-style relative paths ("subdir/file.flac") to match checksum entries
     # that store Windows backslash paths (normalised below when parsing checksums).
+    # The extras/ subtree (move_extras' set-aside dir) is a superseded/alternate
+    # fileset and stays out of the verify universe entirely — its sidecars would
+    # otherwise report the other fileset's entries as missing (BUG-257 shape) and
+    # its audio would show up as endless 'extra' rows.
     disk_audio_map: dict[str, Path] = {}
     for f in folder.rglob('*'):
-        if f.is_file() and f.suffix.lower() in AUDIO_EXTS:
+        if (f.is_file() and f.suffix.lower() in AUDIO_EXTS
+                and not _is_reconciled_extra(f.relative_to(folder).as_posix())):
             disk_audio_map[_norm_fname(f.relative_to(folder).as_posix())] = f
     disk_audio = set(disk_audio_map.keys())
 
@@ -633,6 +638,8 @@ def verify_folder(folder_path):
             continue
         ext = cf.suffix.lower()
         if ext not in ('.ffp', '.md5', '.st5'):
+            continue
+        if _is_reconciled_extra(cf.relative_to(folder).as_posix()):
             continue
         # When the checksum file lives in a subdirectory (e.g. disc1/),
         # bare filenames in its entries need to be qualified so they match
@@ -1240,7 +1247,26 @@ def generate_checksums(folder_path):
     generated = []
     errors = []
 
-    audio_files = sorted(f for f in folder.iterdir() if f.suffix.lower() in AUDIO_EXTS)
+    # Scan recursively so multi-disc releases (audio under disc/CD subfolders) are
+    # covered — detect_folder_mode() and verify_folder() both use rglob, so a
+    # top-level-only iterdir() here would silently generate nothing for them.
+    # Entry names are folder-relative posix paths ("CD1/t01.flac"); verify_folder()
+    # normalises and qualifies these the same way, so a single top-level sidecar
+    # covers every disc. For flat single-disc folders the relative path is just the
+    # bare filename, keeping existing output byte-identical.
+    # Audio under extras/ (move_extras' set-aside dir) is a superseded/alternate
+    # fileset — hashing it into a fresh top-level sidecar would feed the other
+    # fileset's checksums back into lookup and recreate the false multi-LB match
+    # (BUG-257 via a new door).
+    def _rel(f: Path) -> str:
+        return f.relative_to(folder).as_posix()
+
+    audio_files = sorted(
+        (f for f in folder.rglob('*')
+         if f.is_file() and f.suffix.lower() in AUDIO_EXTS
+         and not _is_reconciled_extra(_rel(f))),
+        key=_rel,
+    )
 
     if mode in ('flac', 'mixed'):
         flac_files = [f for f in audio_files if f.suffix.lower() == '.flac']
@@ -1249,9 +1275,9 @@ def generate_checksums(folder_path):
             for f in flac_files:
                 h = compute_ffp(str(f))
                 if h:
-                    ffp_lines.append(f'{f.name}:{h}')
+                    ffp_lines.append(f'{_rel(f)}:{h}')
                 else:
-                    errors.append(f'FFP failed: {f.name}')
+                    errors.append(f'FFP failed: {_rel(f)}')
             if ffp_lines:
                 out = _mychecksums_path(folder, basename, 'ffp')
                 try:
@@ -1264,9 +1290,9 @@ def generate_checksums(folder_path):
         for f in audio_files:
             h = compute_md5(str(f))
             if h:
-                md5_lines.append(f'{h}  {f.name}')
+                md5_lines.append(f'{h}  {_rel(f)}')
             else:
-                errors.append(f'MD5 failed: {f.name}')
+                errors.append(f'MD5 failed: {_rel(f)}')
         if md5_lines:
             out = _mychecksums_path(folder, basename, 'md5')
             try:
@@ -1285,9 +1311,9 @@ def generate_checksums(folder_path):
             for f in shn_files:
                 h = compute_md5(str(f))
                 if h:
-                    md5_lines.append(f'{h}  {f.name}')
+                    md5_lines.append(f'{h}  {_rel(f)}')
                 else:
-                    errors.append(f'MD5 failed: {f.name}')
+                    errors.append(f'MD5 failed: {_rel(f)}')
 
             # Shntool audio hash; falls back to ffmpeg decode when shorten is absent
             if _get_shntool_cmd() is None:
@@ -1297,9 +1323,10 @@ def generate_checksums(folder_path):
                     try:
                         h = compute_shntool(str(f))
                         if h:
-                            shn_lines.append(f'{h}  [shntool]  {f.stem}.wav')
+                            rel_wav = f.relative_to(folder).with_suffix('.wav').as_posix()
+                            shn_lines.append(f'{h}  [shntool]  {rel_wav}')
                         else:
-                            errors.append(f'shntool failed: {f.name}')
+                            errors.append(f'shntool failed: {_rel(f)}')
                     except ShntoolNotFoundError:
                         errors.append('shntool not found')
                         break
