@@ -40,6 +40,12 @@ interface LbdirCheckSummary {
 interface StepResult {
   status: StepStatus
   label: string
+  // TODO-195: stable label_key enum + dynamic params alongside the rendered
+  // English `label` fallback, so the frontend can localize step labels
+  // (see PIPELINE_LABEL / stepLabelText below). Missing/unmapped falls back
+  // to the raw `label` string.
+  label_key?: string | null
+  label_params?: Record<string, unknown> | null
   lb_number?: number | null
   lb_numbers?: number[] | null
   proposed?: string | null
@@ -104,7 +110,54 @@ interface PipelineRow {
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
-const MUTE: StepResult = { status: 'mute', label: '—' }
+const MUTE: StepResult = { status: 'mute', label: '—', label_key: 'mute', label_params: {} }
+
+// TODO-195: pipeline step.label i18n. Backend step dicts (verify/lookup/lbdir/
+// rename/file) carry a stable label_key enum + label_params alongside the
+// pre-rendered English `label` fallback; a few labels are still synthesized
+// client-side after a rename/file action completes (see applyRename/applyFile
+// below) and set label_key themselves for the same treatment. This map
+// mirrors STATE_LABEL/ERROR_MSG's key -> i18n-key convention.
+const PIPELINE_LABEL: Record<string, string> = {
+  mute:             'pipeline.stepLabels.mute',
+  pass:             'pipeline.stepLabels.pass',
+  error:            'pipeline.stepLabels.error',
+  incomplete:       'pipeline.stepLabels.incomplete',
+  no_shntool:       'pipeline.stepLabels.noShntool',
+  mismatch:         'pipeline.stepLabels.mismatch',
+  missing_folder:   'pipeline.stepLabels.missingFolder',
+  no_checksums:     'pipeline.stepLabels.noChecksums',
+  not_found:        'pipeline.stepLabels.notFound',
+  conflict:         'pipeline.stepLabels.conflict',
+  incomplete_match: 'pipeline.stepLabels.incompleteMatch',
+  correct:          'pipeline.stepLabels.correct',
+  proposed:         'pipeline.stepLabels.proposed',
+  renamed:          'pipeline.stepLabels.renamed',
+  ready_to_file:    'pipeline.stepLabels.readyToFile',
+  mount_offline:    'pipeline.stepLabels.mountOffline',
+  no_date:          'pipeline.stepLabels.noDate',
+  no_route:         'pipeline.stepLabels.noRoute',
+  dest_exists:      'pipeline.stepLabels.destExists',
+  db_error:         'pipeline.stepLabels.dbError',
+  blocked:          'pipeline.stepLabels.blocked',
+  filed:            'pipeline.stepLabels.filed',
+  failed:           'pipeline.stepLabels.failed',
+  fetching:         'pipeline.stepLabels.fetching',
+  missing:          'pipeline.stepLabels.missing',
+  extra:            'pipeline.stepLabels.extra',
+  fail:             'pipeline.stepLabels.fail',
+  fail_n:           'pipeline.stepLabels.failN',
+  no_lbdir:         'pipeline.stepLabels.noLbdir',
+}
+
+/** Resolve a step's display label: translated via label_key when mapped, else the raw fallback. */
+function stepLabelText(
+  step: { label: string; label_key?: string | null; label_params?: Record<string, unknown> | null },
+  t: TFunction,
+): string {
+  const key = step.label_key ? PIPELINE_LABEL[step.label_key] : undefined
+  return key ? t(key as any, (step.label_params ?? {}) as any) : step.label
+}
 
 // P3 LBDIR prefetch (TODO-205 Phase 5): poll cadence + attempt cap for rows
 // parked on a background prefetch (lbdir status "mute" + pending_fetch marker).
@@ -200,6 +253,8 @@ function normalizeFileStep(raw: unknown): StepResult {
   return {
     status,
     label:            (r.label            as string)  ?? '—',
+    label_key:        (r.label_key         as string)  ?? null,
+    label_params:     (r.label_params      as Record<string, unknown>) ?? null,
     dest:             (r.dest             as string)  ?? null,
     dest_parent:      (r.dest_parent      as string)  ?? null,
     mount_label:      (r.mount_label      as string)  ?? null,
@@ -315,8 +370,8 @@ function deriveFolderStatus(r: PipelineRow, t: TFunction): StatusInfo {
   }
   for (const key of ['verify', 'lookup', 'lbdir', 'rename', 'file'] as const) {
     const s = r.steps[key]
-    if (s.status === 'bad')  return { state: 'blocked', label: t('pipeline.stepStates.blocked'), reason: s.label }
-    if (s.status === 'warn') return { state: 'action',  label: t('pipeline.buckets.needs'),      reason: s.label }
+    if (s.status === 'bad')  return { state: 'blocked', label: t('pipeline.stepStates.blocked'), reason: stepLabelText(s, t) }
+    if (s.status === 'warn') return { state: 'action',  label: t('pipeline.buckets.needs'),      reason: stepLabelText(s, t) }
     if (s.status === 'mute') return { state: 'mute',    label: t('pipeline.stepStates.mute'),    reason: '' }
   }
   return { state: 'mute', label: t('pipeline.stepStates.mute'), reason: '' }
@@ -684,7 +739,7 @@ function VerifyStageContent({ step, row, onRun }: {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <StatusTag state={STATUS_TO_STATE[step.status]}>{step.label}</StatusTag>
+        <StatusTag state={STATUS_TO_STATE[step.status]}>{stepLabelText(step, t)}</StatusTag>
         <div style={{ flex: 1 }} />
         <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')}
           onClick={() => onRun(['verify'])}>{t('pipeline.verify.rerun')}</Button>
@@ -895,7 +950,7 @@ function LookupStageContent({ step, row, onRun }: {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <StatusTag state="action">{step.label}</StatusTag>
+          <StatusTag state="action">{stepLabelText(step, t)}</StatusTag>
           <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>{t('pipeline.lookup.whichShow')}</span>
           <div style={{ flex: 1 }} />
           <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup'])}>{t('pipeline.lookup.rerun')}</Button>
@@ -915,7 +970,7 @@ function LookupStageContent({ step, row, onRun }: {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <StatusTag state="action">{step.label}</StatusTag>
+          <StatusTag state="action">{stepLabelText(step, t)}</StatusTag>
           <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>{lbStr}</span>
           {step.summary && (
             <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
@@ -941,7 +996,7 @@ function LookupStageContent({ step, row, onRun }: {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <StatusTag state={STATUS_TO_STATE[step.status]}>{step.label}</StatusTag>
+        <StatusTag state={STATUS_TO_STATE[step.status]}>{stepLabelText(step, t)}</StatusTag>
         <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>{t('pipeline.lookup.noMatches')}</span>
         <div style={{ flex: 1 }} />
         <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup'])}>{t('pipeline.lookup.rerun')}</Button>
@@ -1070,7 +1125,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
     )
   }
 
-  if (step.status === 'ok' && step.label === 'Renamed') {
+  if (step.status === 'ok' && step.label_key === 'renamed') {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px',
@@ -1515,7 +1570,7 @@ function StageContent({ step, stageKey, row, onRun, onRename, onFile }: {
   if (stageKey === 'file')    return <CollectStageContent step={step} row={row} onRun={onRun} onFile={onFile} />
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-      <StatusTag state={STATUS_TO_STATE[step.status]}>{step.label}</StatusTag>
+      <StatusTag state={STATUS_TO_STATE[step.status]}>{stepLabelText(step, t)}</StatusTag>
       <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup', stageKey])}>{t('pipeline.rerunGeneric')}</Button>
     </div>
   )
@@ -2065,7 +2120,7 @@ export function ScreenPipeline(): React.JSX.Element {
             // rename on a folder whose file step is still mute being promoted to
             // a false "In collection".
             bucket: (r.steps.file.status === 'ok' ? 'done' : 'shelf') as Bucket,
-            steps: { ...r.steps, rename: { status: 'ok' as const, label: 'Renamed' } },
+            steps: { ...r.steps, rename: { status: 'ok' as const, label: 'Renamed', label_key: 'renamed', label_params: {} } },
           }
           _pipelineCache.delete(row.id)
           _pipelineCache.set(data.new_path!, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
@@ -2207,7 +2262,15 @@ export function ScreenPipeline(): React.JSX.Element {
             ...r,
             running: false,
             fileProgress: null,
-            steps: { ...r.steps, file: { ...r.steps.file, status: 'bad', label: (started.error ?? 'Failed').slice(0, 24), error: started.error ?? null, error_code: started.error_code ?? null } },
+            steps: { ...r.steps, file: {
+              ...r.steps.file, status: 'bad',
+              label: (started.error ?? 'Failed').slice(0, 24),
+              // Only the static "Failed" fallback has a stable label_key — an
+              // actual backend error string is arbitrary free text and can't be
+              // cleanly keyed, so it falls back to the raw label as-is.
+              label_key: started.error ? null : 'failed', label_params: {},
+              error: started.error ?? null, error_code: started.error_code ?? null,
+            } },
           } : r
         ))
         return
@@ -2243,7 +2306,10 @@ export function ScreenPipeline(): React.JSX.Element {
       }
 
       if (result.ok) {
-        const filedStep = { status: 'ok' as const, label: 'Filed', dest: result!.dest ?? null, mount_label: result!.filed_to ?? null, error: null, error_code: null }
+        const filedStep = {
+          status: 'ok' as const, label: 'Filed', label_key: 'filed', label_params: {},
+          dest: result!.dest ?? null, mount_label: result!.filed_to ?? null, error: null, error_code: null,
+        }
         // The folder physically moved to result.dest — update folderPath/id (and
         // clear selection) so the detail panel's Open button and bulk-select
         // state don't reference the pre-move location.
@@ -2280,7 +2346,12 @@ export function ScreenPipeline(): React.JSX.Element {
             ...r,
             running: false,
             fileProgress: null,
-            steps: { ...r.steps, file: { ...r.steps.file, status: 'bad', label: (result!.error ?? 'Failed').slice(0, 24), error: result!.error ?? null } },
+            steps: { ...r.steps, file: {
+              ...r.steps.file, status: 'bad',
+              label: (result!.error ?? 'Failed').slice(0, 24),
+              label_key: result!.error ? null : 'failed', label_params: {},
+              error: result!.error ?? null,
+            } },
           } : r
         ))
       }

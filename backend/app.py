@@ -7226,14 +7226,23 @@ def create_app() -> Flask:
 
     # ── Pipeline ─────────────────────────────────────────────────────────────
 
+    # TODO-195: stable label_key enums for every pipeline step's `label` text.
+    # `_FILE_BLOCKED_LABELS` doubles as the error_code -> (label, label_key) map
+    # for the file step's "blocked" branch, since those error codes are already
+    # stable enums.
+    _FILE_BLOCKED_LABELS: dict[str, str] = {
+        "no_date":       "No date",
+        "no_route":      "No route",
+        "mount_offline": "Mount offline",
+        "dest_exists":   "Already exists",
+        "db_error":      "DB error",
+    }
+
     def _file_blocked_label(error_code: str | None) -> str:
-        return {
-            "no_date":       "No date",
-            "no_route":      "No route",
-            "mount_offline": "Mount offline",
-            "dest_exists":   "Already exists",
-            "db_error":      "DB error",
-        }.get(error_code or "", "Blocked")
+        return _FILE_BLOCKED_LABELS.get(error_code or "", "Blocked")
+
+    def _file_blocked_label_key(error_code: str | None) -> str:
+        return error_code if error_code in _FILE_BLOCKED_LABELS else "blocked"
 
     def _pipeline_process_folder(folder_path: str, steps: set, force: bool = False) -> dict:
         """Run one or more pipeline steps on a single folder and return a PipelineRow dict.
@@ -7264,21 +7273,25 @@ def create_app() -> Flask:
         if steps & {"rename", "lbdir", "file"}:
             steps = steps | {"lookup"}
 
+        _mute = {"label_key": "mute", "label_params": {}}
         row: dict = {
             "folder": folder_path,
             "folderName": folder_name,
-            "verify":  {"status": "mute", "label": "—"},
-            "lookup":  {"status": "mute", "label": "—", "lb_number": None},
-            "rename":  {"status": "mute", "label": "—", "proposed": None},
-            "lbdir":   {"status": "mute", "label": "—"},
-            "file":    {"status": "mute", "label": "—", "error": None, "error_code": None},
+            "verify":  {"status": "mute", "label": "—", **_mute},
+            "lookup":  {"status": "mute", "label": "—", "lb_number": None, **_mute},
+            "rename":  {"status": "mute", "label": "—", "proposed": None, **_mute},
+            "lbdir":   {"status": "mute", "label": "—", **_mute},
+            "file":    {"status": "mute", "label": "—", "error": None, "error_code": None, **_mute},
             "severity": "attn",
             "errors": [],
         }
 
         if not folder.exists() or not folder.is_dir():
             row["errors"].append({"step": "verify", "message": "Folder not found"})
-            row["verify"] = {"status": "bad", "label": "Missing"}
+            row["verify"] = {
+                "status": "bad", "label": "Missing",
+                "label_key": "missing_folder", "label_params": {},
+            }
             return row
 
         # ── P7 folder-state cache read (design §2b, §3) ──────────────────────
@@ -7323,16 +7336,31 @@ def create_app() -> Flask:
                 "files":        vr.get("files", []),
             }
             if vr.get("error"):
-                row["verify"] = {"status": "bad", "label": "Error", **_vcounts}
+                row["verify"] = {
+                    "status": "bad", "label": "Error",
+                    "label_key": "error", "label_params": {}, **_vcounts,
+                }
                 row["errors"].append({"step": "verify", "message": vr["error"]})
             elif vr["status"] == "pass":
-                row["verify"] = {"status": "ok", "label": "Pass", **_vcounts}
+                row["verify"] = {
+                    "status": "ok", "label": "Pass",
+                    "label_key": "pass", "label_params": {}, **_vcounts,
+                }
             elif vr["status"] in ("incomplete", "no_checksums"):
-                row["verify"] = {"status": "warn", "label": "Incomplete", **_vcounts}
+                row["verify"] = {
+                    "status": "warn", "label": "Incomplete",
+                    "label_key": "incomplete", "label_params": {}, **_vcounts,
+                }
             elif vr["status"] == "shntool_missing":
-                row["verify"] = {"status": "warn", "label": "No shntool", "shntool_missing": True, **_vcounts}
+                row["verify"] = {
+                    "status": "warn", "label": "No shntool", "shntool_missing": True,
+                    "label_key": "no_shntool", "label_params": {}, **_vcounts,
+                }
             else:
-                row["verify"] = {"status": "bad", "label": "Mismatch", **_vcounts}
+                row["verify"] = {
+                    "status": "bad", "label": "Mismatch",
+                    "label_key": "mismatch", "label_params": {}, **_vcounts,
+                }
 
         # ── Step 2: Lookup ────────────────────────────────────────────────────
         if "lookup" in steps:
@@ -7356,12 +7384,18 @@ def create_app() -> Flask:
                     pass
 
             if not chk_parts:
-                row["lookup"] = {"status": "warn", "label": "No checksums", "lb_number": None}
+                row["lookup"] = {
+                    "status": "warn", "label": "No checksums", "lb_number": None,
+                    "label_key": "no_checksums", "label_params": {},
+                }
             else:
                 chk_text = "\n".join(chk_parts)
                 parsed = database.parse_checksum_text(chk_text)
                 if not parsed:
-                    row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None}
+                    row["lookup"] = {
+                        "status": "bad", "label": "Not found", "lb_number": None,
+                        "label_key": "not_found", "label_params": {},
+                    }
                 else:
                     summary, detail = database.lookup_checksums(parsed)
                     _lb_xref_map = {
@@ -7451,6 +7485,11 @@ def create_app() -> Flask:
                         row["lookup"] = {
                             "status": "ok",
                             "label": label,
+                            # The matched LB tag(s) are locale-invariant data, not a
+                            # translatable sentence — no label_key means the frontend
+                            # falls back to this raw label unchanged.
+                            "label_key": None,
+                            "label_params": {},
                             "lb_number": lb_number,
                             "lb_numbers": lb_numbers,
                             "alias_resolved_from": alias_resolved_from or None,
@@ -7461,6 +7500,8 @@ def create_app() -> Flask:
                         row["lookup"] = {
                             "status": "warn",
                             "label": "Incomplete match",
+                            "label_key": "incomplete_match",
+                            "label_params": {},
                             "lb_number": lb_number,
                             "lb_numbers": lb_numbers,
                             "alias_resolved_from": alias_resolved_from or None,
@@ -7483,12 +7524,14 @@ def create_app() -> Flask:
                             lb_number = None
                     elif len(lb_list) > 1:
                         row["lookup"] = {"status": "warn", "label": "Conflict",
+                                         "label_key": "conflict", "label_params": {},
                                          "lb_number": None, "lb_numbers": [],
                                          "alias_resolved_from": None,
                                          "summary": summary, "detail": detail}
                         row["errors"].append({"step": "lookup", "message": f"Multiple LBs: {lb_list}"})
                     else:
                         row["lookup"] = {"status": "bad", "label": "Not found",
+                                         "label_key": "not_found", "label_params": {},
                                          "lb_number": None, "lb_numbers": [],
                                          "alias_resolved_from": None,
                                          "summary": summary, "detail": detail}
@@ -7563,6 +7606,7 @@ def create_app() -> Flask:
                     # closed union; the pending_fetch marker carries the "fetching,
                     # don't escalate" semantics for severity + auto-complete.
                     row["lbdir"] = {"status": "mute", "label": "Fetching LBDIR…",
+                                    "label_key": "fetching", "label_params": {},
                                     "pending_fetch": True, "check": None}
                 elif lbdir_file:
                     check = checksum_utils.verify_folder_lbdir(str(folder), lbdir_file)
@@ -7576,22 +7620,30 @@ def create_app() -> Flask:
                                "pass": n_pass, "missing": n_miss, "mismatch": n_mm,
                                "extra": n_extra}
                     if chk_status == "pass":
-                        row["lbdir"] = {"status": "ok",   "label": "Pass",              "check": detail}
+                        row["lbdir"] = {"status": "ok",   "label": "Pass",              "check": detail,
+                                         "label_key": "pass", "label_params": {}}
                         # If this folder is already an owned collection item (re-check
                         # of an in-place folder), stamp lbdir_verified_at so the Collect
                         # stage's "Confirmed" date reflects this pass. No-op otherwise.
                         database.set_lbdir_verified(str(folder))
                     elif chk_status == "missing_files":
-                        row["lbdir"] = {"status": "warn", "label": f"Missing {n_miss}", "check": detail}
+                        row["lbdir"] = {"status": "warn", "label": f"Missing {n_miss}", "check": detail,
+                                         "label_key": "missing", "label_params": {"n": n_miss}}
                     elif chk_status == "extra_files":
-                        row["lbdir"] = {"status": "warn", "label": f"Extra {n_extra}",  "check": detail}
+                        row["lbdir"] = {"status": "warn", "label": f"Extra {n_extra}",  "check": detail,
+                                         "label_key": "extra", "label_params": {"n": n_extra}}
                     elif chk_status == "shntool_missing":
-                        row["lbdir"] = {"status": "warn", "label": "No shntool",         "check": detail}
+                        row["lbdir"] = {"status": "warn", "label": "No shntool",         "check": detail,
+                                         "label_key": "no_shntool", "label_params": {}}
                     else:
                         label = f"Fail {n_mm}" if n_mm else "Fail"
-                        row["lbdir"] = {"status": "bad",  "label": label,               "check": detail}
+                        label_key = "fail_n" if n_mm else "fail"
+                        label_params = {"n": n_mm} if n_mm else {}
+                        row["lbdir"] = {"status": "bad",  "label": label,               "check": detail,
+                                         "label_key": label_key, "label_params": label_params}
                 else:
-                    row["lbdir"] = {"status": "warn", "label": "No LBDIR", "check": None}
+                    row["lbdir"] = {"status": "warn", "label": "No LBDIR", "check": None,
+                                     "label_key": "no_lbdir", "label_params": {}}
             # else: stays mute
 
         # ── Step 4: Rename proposal ───────────────────────────────────────────
@@ -7652,9 +7704,15 @@ def create_app() -> Flask:
                         untagged = strip_lb_tag(base)
                         proposed = apply_nft_suffix(f"{untagged} {correct_tag}", lb_status)
                 if folder_name == proposed:
-                    row["rename"] = {"status": "ok", "label": "Correct", "proposed": None}
+                    row["rename"] = {
+                        "status": "ok", "label": "Correct", "proposed": None,
+                        "label_key": "correct", "label_params": {},
+                    }
                 else:
-                    row["rename"] = {"status": "warn", "label": "Proposed", "proposed": proposed}
+                    row["rename"] = {
+                        "status": "warn", "label": "Proposed", "proposed": proposed,
+                        "label_key": "proposed", "label_params": {},
+                    }
             # else: stays mute — lookup hasn't resolved an LB#
 
         # ── Step 5: File (resolve only — no filesystem action here) ─────────
@@ -7682,6 +7740,8 @@ def create_app() -> Flask:
                     row["file"] = {
                         "status": "ready",
                         "label": "Ready to file",
+                        "label_key": "ready_to_file",
+                        "label_params": {},
                         "dest_parent": resolution["dest_parent"],
                         "dest": resolution["dest"],
                         "mount_label": resolution["mount_label"],
@@ -7705,6 +7765,8 @@ def create_app() -> Flask:
                     row["file"] = {
                         "status": "blocked",
                         "label": "Mount offline",
+                        "label_key": "mount_offline",
+                        "label_params": {},
                         "dest_parent": "",
                         "dest": "",
                         "mount_label": resolution["mount_label"],
@@ -7716,6 +7778,8 @@ def create_app() -> Flask:
                 row["file"] = {
                     "status": "blocked",
                     "label": _file_blocked_label(resolution["error_code"]),
+                    "label_key": _file_blocked_label_key(resolution["error_code"]),
+                    "label_params": {},
                     "dest_parent": "",
                     "dest": "",
                     "mount_label": "",
@@ -7724,7 +7788,10 @@ def create_app() -> Flask:
                     "error_code": resolution["error_code"],
                 }
         else:
-            row["file"] = {"status": "mute", "label": "—", "error": None, "error_code": None}
+            row["file"] = {
+                "status": "mute", "label": "—", "error": None, "error_code": None,
+                "label_key": "mute", "label_params": {},
+            }
 
         # ── Severity (pure fn extracted for testability/warm-start, TODO-211) ──
         # On a partial run the steps that weren't requested stay "mute" in `row`.
