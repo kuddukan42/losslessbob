@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-264: DatabaseWriteQueue.shutdown() closes the writer's connection from the caller thread, segfaulting CI
+Status: Fixed
+File(s): backend/db_queue.py:52,backend/db_queue.py:132
+Reported: 2026-07-21
+Fixed: 2026-07-21
+Root cause: shutdown() did self._queue.put(None); self._thread.join(timeout); then self._conn.close() from the *caller* thread. conftest's reset_write_queue fixture calls shutdown(timeout=2). Under CI's slower/contended disk a write could still be in flight in the writer thread when the 2s join lapsed; join() then returns anyway and the caller closes self._conn out from under the running writer, which touches the freed sqlite3.Connection — a cross-thread use-after-free in SQLite's C layer that segfaults the interpreter (exit 139) at test teardown. The crash's current-thread frame was exactly db_queue.py's self._conn.close() line. Distinct from BUG-261/262/263 (init_db background threads); this one flakily recurred whenever a runner landed on the losing side of the race — the first push to actually re-run the suite after those fixes hit it twice in a row.
+Fix: the writer thread (_run) now closes its own connection once it drains the shutdown sentinel and sets self._conn = None; shutdown() only signals + joins and never touches self._conn. A writer that outlives the join timeout briefly leaks its connection, then closes it itself when the in-flight write finishes — safe; a segfault is not. Added TestWriteQueueShutdown (2 regression tests: normal shutdown is writer-owned; a write held past the join timeout is not freed by the caller and shutdown does not raise). Verified: full suite 905 passed locally; CI validation pending on the push.
+
 BUG-263: init_db()'s 4 background threads leak file descriptors under fast test churn, segfaulting CI
 Status: Fixed
 File(s): backend/db.py:2620,backend/db.py:2263
