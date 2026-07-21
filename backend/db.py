@@ -4105,6 +4105,67 @@ def delete_from_collection(lb_number, db_path=None):
     )
 
 
+def reassign_collection(old_lb, new_lb, db_path=None):
+    """Move a filed folder from one LB entry to another.
+
+    Repoints the ``my_collection`` row (folder_name/disk_path/notes/xref) from
+    ``old_lb`` to ``new_lb`` and carries any ``collection_meta`` (personal
+    rating, listen count, tags) across so it survives the move. The folder on
+    disk is untouched — use folder rename for that (TODO-259).
+
+    Args:
+        old_lb: LB number the folder is currently filed under.
+        new_lb: LB number to move it to.
+        db_path: Optional path to the SQLite database file.
+
+    Raises:
+        ValueError: If ``old_lb`` is not owned, ``new_lb`` is absent from the
+            catalog, ``new_lb`` is already owned, or the two are equal.
+    """
+    _old, _new = int(old_lb), int(new_lb)
+    if _old == _new:
+        raise ValueError("Source and target LB are the same")
+
+    def _run(c):
+        row = c.execute(
+            "SELECT folder_name, disk_path, notes, xref FROM my_collection"
+            " WHERE lb_number=?",
+            (_old,),
+        ).fetchone()
+        if row is None:
+            raise ValueError(f"LB-{_old:05d} is not in your collection")
+        if c.execute("SELECT 1 FROM entries WHERE lb_number=?", (_new,)).fetchone() is None:
+            raise ValueError(f"LB-{_new:05d} does not exist in the catalog")
+        if c.execute(
+            "SELECT 1 FROM my_collection WHERE lb_number=?", (_new,)
+        ).fetchone() is not None:
+            raise ValueError(f"LB-{_new:05d} is already in your collection")
+        folder_name, disk_path, notes, xref = row
+        meta = c.execute(
+            "SELECT personal_rating, listen_count, last_listened, tags"
+            " FROM collection_meta WHERE lb_number=?",
+            (_old,),
+        ).fetchone()
+        c.execute(
+            "INSERT INTO my_collection(lb_number, folder_name, disk_path, notes, xref)"
+            " VALUES(?,?,?,?,?)",
+            (_new, folder_name, disk_path, notes, xref),
+        )
+        if meta is not None:
+            c.execute(
+                "INSERT OR REPLACE INTO collection_meta"
+                "(lb_number, personal_rating, listen_count, last_listened, tags)"
+                " VALUES(?,?,?,?,?)",
+                (_new, *meta),
+            )
+        # Explicit old-meta delete keeps this correct regardless of whether the
+        # ON DELETE CASCADE fires (PRAGMA foreign_keys may be off).
+        c.execute("DELETE FROM collection_meta WHERE lb_number=?", (_old,))
+        c.execute("DELETE FROM my_collection WHERE lb_number=?", (_old,))
+
+    get_write_queue().execute(_run)
+
+
 def set_lbdir_verified(disk_path: str, db_path=None) -> bool:
     """Stamp lbdir_verified_at = now for the my_collection row with the given disk_path.
 

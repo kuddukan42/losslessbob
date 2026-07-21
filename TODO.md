@@ -1,10 +1,4 @@
 
-TODO-259: GUI to edit a collection folder — reassign LB, rename, or clarify override workflow
-Priority: Medium
-Status: Open
-Added: 2026-07-18
-Description: Add a GUI interface to edit a collection folder's LB assignment. Needs: (1) reassign a folder to a different LB number (correcting a wrong/ambiguous auto-assignment), (2) rename the folder, and (3) manually override the LB assignment. Either build an inline edit affordance on the folder/collection view or document/clarify the existing override workflow so users can correct mis-assigned folders. Scope TBD: confirm whether an override path already exists in backend/app.py + ScreenPipeline before building new UI.
-
 TODO-255: Staircase corroboration gate: consider hiss_median floor (boundary pass observed)
 Priority: Low
 Status: Open

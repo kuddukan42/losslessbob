@@ -398,7 +398,9 @@
       "missingFiles_one": "El archivo {{count}} de la lista de sumas de comprobación no se encuentra en el disco. Recupera los archivos que faltan y vuelve a verificar.",
       "missingFiles_other": "Los archivos {{count}} de la lista de sumas de comprobación no se encuentran en el disco. Restaura los archivos que faltan y, a continuación, vuelve a verificar.",
       "mismatchedFiles_one": "El archivo {{count}} tiene una suma de comprobación que no coincide: es posible que el audio esté dañado o haya sido modificado.",
-      "mismatchedFiles_other": "Los archivos {{count}} tienen sumas de comprobación que no coinciden: es posible que el audio esté dañado o haya sido modificado."
+      "mismatchedFiles_other": "Los archivos {{count}} tienen sumas de comprobación que no coinciden: es posible que el audio esté dañado o haya sido modificado.",
+      "generateFailed": "No se han podido generar las sumas de comprobación; consulta el registro del backend.",
+      "generateNothing": "No se han generado sumas de comprobación: no se han encontrado archivos de audio compatibles."
     },
     "lookup": {
       "runsAuto": "La búsqueda se ejecuta automáticamente una vez superada la verificación.",
@@ -416,7 +418,12 @@
       "partialMatchInfo": "Se ha identificado {{lb}}, pero no todas las sumas de comprobación de esta carpeta coinciden con el registro del archivo; algunos archivos del disco pueden diferir de la copia oficial. LBDIR, «renombrar» y «archivo» están bloqueados hasta que confirmes que se trata del programa correcto. Si estás seguro, fíjalo para continuar.",
       "pinConfirms": "Al fijarla, se confirma que esta carpeta pertenece a {{lb}} y se desbloquean todos los pasos posteriores.",
       "noMatches": "No se han encontrado resultados",
-      "noMatchesInfo": "Ninguna de estas sumas de comprobación coincide con ninguna entrada del archivo. Puede tratarse de una fuente nueva o desconocida."
+      "noMatchesInfo": "Ninguna de estas sumas de comprobación coincide con ninguna entrada del archivo. Puede tratarse de una fuente nueva o desconocida.",
+      "override": "Anular LB#",
+      "overrideInfo": "¿Coincidencia incorrecta? Asigna a esta carpeta un número de LB específico: se volverá a ejecutar LBDIR y se verificará con las sumas de comprobación de esa entrada.",
+      "overrideUse": "Utilizar {{lb}}",
+      "overrideManual": "Número de LB",
+      "overrideApply": "Forzar"
     },
     "rename": {
       "unlocksAfter": "El cambio de nombre se desbloquea una vez que la búsqueda resuelve un número de LB.",
@@ -701,6 +708,21 @@
     "filters": {
       "xrefCopies": "Mis copias de referencias cruzadas",
       "altFilesets": "Entradas con conjuntos de archivos alternativos"
+    },
+    "folderEdit": {
+      "reassignTitle": "Reasignar {{lb}}",
+      "reassignInfo": "Mueve esta carpeta a un número de LB diferente. Corrige una asignación automática errónea o ambigua: la carpeta del disco no se renombra ni se mueve, solo su registro de catálogo. Tu valoración personal y tus etiquetas se conservan.",
+      "renameTitle": "Renombrar carpeta — {{lb}}",
+      "renameInfo": "Cambia el nombre de esta carpeta en el disco dentro del mismo directorio principal. Un torrent ya añadido seguirá compartiéndose con el nuevo nombre.",
+      "newLb": "Nuevo número de LB",
+      "newLbPlaceholder": "p. ej., 12345",
+      "newName": "Nombre de la nueva carpeta",
+      "reassignApply": "Reasignar",
+      "renameApply": "Renombrar",
+      "badLb": "Introduce un número LB válido.",
+      "reassigned": "Reasignado de {{from}} a {{to}}.",
+      "renamed": "Renombrado como {{name}}.",
+      "failed": "No se ha podido completar; consulta el registro del backend."
     }
   },
   "map": {

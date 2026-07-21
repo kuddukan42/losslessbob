@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-259: GUI to edit a collection folder — reassign LB, rename, or clarify override workflow
+Priority: Medium
+Status: Done
+Added: 2026-07-18
+Closed: 2026-07-21
+Description: Add a GUI interface to edit a collection folder's LB assignment. Needs: (1) reassign a folder to a different LB number (correcting a wrong/ambiguous auto-assignment), (2) rename the folder, and (3) manually override the LB assignment. Either build an inline edit affordance on the folder/collection view or document/clarify the existing override workflow so users can correct mis-assigned folders. Scope TBD: confirm whether an override path already exists in backend/app.py + ScreenPipeline before building new UI.
+Added collection-view right-click Reassign LB… (new /api/collection/reassign + reassign_collection) and Rename Folder… (existing /api/folder/rename). Pre-filing override already shipped via pipeline OverridePanel (BUG-257).
+
 TODO-235: Persist per-segment staircase lag curves in tapematch runs (unblocks TODO-233 pt2 A/B)
 Priority: Medium
 Status: Done

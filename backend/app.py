@@ -1406,6 +1406,31 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/collection/reassign", methods=["POST"])
+    def collection_reassign() -> Response:
+        """Move a filed folder from one LB entry to another (TODO-259).
+
+        Repoints the my_collection row and its personal metadata; the folder on
+        disk is untouched. Validation (target exists, not already owned) happens
+        in the DB layer and surfaces as a 400.
+
+        Body: {old_lb: int, new_lb: int}
+        Returns:
+            JSON {ok: true}, or {error} with 400 on a validation failure.
+        """
+        data = request.get_json() or {}
+        old_lb = data.get("old_lb")
+        new_lb = data.get("new_lb")
+        if old_lb is None or new_lb is None:
+            return jsonify({"error": "old_lb and new_lb required"}), 400
+        try:
+            database.reassign_collection(int(old_lb), int(new_lb))
+            return jsonify({"ok": True})
+        except (ValueError, TypeError) as e:
+            return jsonify({"error": str(e)}), 400
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     @app.route("/api/collection/missing", methods=["GET"])
     def collection_missing() -> Response:
         """Return collection entries whose disk_path no longer exists on disk.

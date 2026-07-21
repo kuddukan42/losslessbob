@@ -398,7 +398,9 @@
       "missingFiles_one": "Le fichier {{count}} figurant dans la liste des sommes de contrôle n'est pas présent sur le disque. Restaurez les fichiers manquants, puis vérifiez à nouveau.",
       "missingFiles_other": "Les fichiers {{count}} figurant dans la liste des sommes de contrôle ne se trouvent pas sur le disque. Restaurez les fichiers manquants, puis vérifiez à nouveau.",
       "mismatchedFiles_one": "Le fichier {{count}} présente une somme de contrôle incorrecte — le fichier audio est peut-être corrompu ou a été modifié.",
-      "mismatchedFiles_other": "Les fichiers {{count}} présentent des sommes de contrôle non concordantes — les fichiers audio sont peut-être corrompus ou ont été modifiés."
+      "mismatchedFiles_other": "Les fichiers {{count}} présentent des sommes de contrôle non concordantes — les fichiers audio sont peut-être corrompus ou ont été modifiés.",
+      "generateFailed": "Impossible de générer les sommes de contrôle — voir le journal du backend.",
+      "generateNothing": "Aucune somme de contrôle n'a été générée — aucun fichier audio pris en charge n'a été trouvé."
     },
     "lookup": {
       "runsAuto": "La recherche s'exécute automatiquement une fois la vérification réussie.",
@@ -416,7 +418,12 @@
       "partialMatchInfo": "{{lb}} a été identifié, mais toutes les sommes de contrôle de ce dossier ne correspondent pas à l'enregistrement de l'archive — certains fichiers sur le disque peuvent différer de la copie officielle. LBDIR, renommer et fichier sont bloqués jusqu'à ce que vous confirmiez qu'il s'agit bien de la bonne émission. Si vous en êtes sûr, épinglez-la pour continuer.",
       "pinConfirms": "L'épinglage confirme que ce dossier appartient à {{lb}} et débloque toutes les étapes suivantes.",
       "noMatches": "Aucun résultat trouvé",
-      "noMatchesInfo": "Aucune de ces sommes de contrôle ne correspond à une entrée de l'archive. Il s'agit peut-être d'une source nouvelle ou inconnue."
+      "noMatchesInfo": "Aucune de ces sommes de contrôle ne correspond à une entrée de l'archive. Il s'agit peut-être d'une source nouvelle ou inconnue.",
+      "override": "Remplacer LB#",
+      "overrideInfo": "Correspondance incorrecte ? Attribuer de force un numéro de liste (LB#) spécifique à ce dossier — cela relance LBDIR et vérifie la correspondance par rapport aux sommes de contrôle de cette entrée.",
+      "overrideUse": "Utiliser {{lb}}",
+      "overrideManual": "Numéro LB",
+      "overrideApply": "Force"
     },
     "rename": {
       "unlocksAfter": "Le renommage est débloqué une fois que la recherche a résolu un numéro de bibliothèque (LB#).",
@@ -701,6 +708,21 @@
     "filters": {
       "xrefCopies": "Mes copies de références croisées",
       "altFilesets": "Entrées avec des jeux de fichiers alternatifs"
+    },
+    "folderEdit": {
+      "reassignTitle": "Réattribuer {{lb}}",
+      "reassignInfo": "Déplacer ce dossier vers un autre numéro LB. Corrige une attribution automatique erronée ou ambiguë — le dossier sur le disque n'est ni renommé ni déplacé, seule son entrée de catalogue est modifiée. Vos notes personnelles et vos balises sont conservées.",
+      "renameTitle": "Renommer un dossier — {{lb}}",
+      "renameInfo": "Renommez ce dossier sur le disque, dans le même répertoire parent. Un torrent déjà ajouté continue à être partagé sous son nouveau nom.",
+      "newLb": "Nouveau numéro LB",
+      "newLbPlaceholder": "par ex. 12345",
+      "newName": "Nom du nouveau dossier",
+      "reassignApply": "Réattribuer",
+      "renameApply": "Renommer",
+      "badLb": "Saisissez un numéro LB valide.",
+      "reassigned": "Réaffectation de {{from}} → {{to}}.",
+      "renamed": "Renommé {{name}}.",
+      "failed": "Impossible de terminer — voir le journal du backend."
     }
   },
   "map": {

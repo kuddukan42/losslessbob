@@ -398,7 +398,9 @@
       "missingFiles_one": "Die Datei „{{count}}“ aus der Prüfsummenliste ist nicht auf der Festplatte vorhanden. Stellen Sie die fehlenden Dateien wieder her und führen Sie anschließend eine erneute Überprüfung durch.",
       "missingFiles_other": "Die {{count}}-Dateien in der Prüfsummenliste befinden sich nicht auf der Festplatte. Stellen Sie die fehlenden Dateien wieder her und führen Sie anschließend eine erneute Überprüfung durch.",
       "mismatchedFiles_one": "Die Datei „{{count}}“ weist eine nicht übereinstimmende Prüfsumme auf – die Audiodatei ist möglicherweise beschädigt oder wurde verändert.",
-      "mismatchedFiles_other": "{{count}}-Dateien weisen nicht übereinstimmende Prüfsummen auf – die Audiodaten sind möglicherweise beschädigt oder verändert."
+      "mismatchedFiles_other": "{{count}}-Dateien weisen nicht übereinstimmende Prüfsummen auf – die Audiodaten sind möglicherweise beschädigt oder verändert.",
+      "generateFailed": "Prüfsummen konnten nicht generiert werden – siehe Backend-Protokoll.",
+      "generateNothing": "Es wurden keine Prüfsummen generiert – es wurden keine unterstützten Audiodateien gefunden."
     },
     "lookup": {
       "runsAuto": "Die Suche wird automatisch ausgeführt, nachdem die Überprüfung erfolgreich abgeschlossen wurde.",
@@ -416,7 +418,12 @@
       "partialMatchInfo": "{{lb}} wurde identifiziert, aber nicht jede Prüfsumme in diesem Ordner stimmt mit dem Archivdatensatz überein – einige Dateien auf der Festplatte weichen möglicherweise von der offiziellen Kopie ab. LBDIR, Umbenennen und Datei sind gesperrt, bis Sie bestätigen, dass es sich um die richtige Sendung handelt. Wenn Sie sicher sind, heften Sie sie an, um fortzufahren.",
       "pinConfirms": "Durch das Anheften wird bestätigt, dass dieser Ordner zu {{lb}} gehört, und alle nachfolgenden Schritte werden freigegeben.",
       "noMatches": "Keine Treffer gefunden",
-      "noMatchesInfo": "Keine dieser Prüfsummen stimmt mit einem Eintrag im Archiv überein. Es könnte sich um eine neue oder unbekannte Quelle handeln."
+      "noMatchesInfo": "Keine dieser Prüfsummen stimmt mit einem Eintrag im Archiv überein. Es könnte sich um eine neue oder unbekannte Quelle handeln.",
+      "override": "LB# überschreiben",
+      "overrideInfo": "Falsche Übereinstimmung? Weisen Sie diesem Ordner eine bestimmte LB-Nummer zu – dadurch wird LBDIR erneut ausgeführt und anhand der Prüfsummen dieses Eintrags überprüft.",
+      "overrideUse": "Verwenden Sie {{lb}}",
+      "overrideManual": "LB-Nummer",
+      "overrideApply": "Force"
     },
     "rename": {
       "unlocksAfter": "Die Umbenennung wird freigeschaltet, nachdem die Suche eine LB-Nummer aufgelöst hat.",
@@ -701,6 +708,21 @@
     "filters": {
       "xrefCopies": "Meine XRef-Kopien",
       "altFilesets": "Einträge mit alternativen Dateisätzen"
+    },
+    "folderEdit": {
+      "reassignTitle": "{{lb}} neu zuweisen",
+      "reassignInfo": "Verschieben Sie diesen Ordner auf eine andere LB-Nummer. Korrigiert eine falsche oder mehrdeutige automatische Zuordnung – der Ordner auf der Festplatte wird nicht umbenannt oder verschoben, sondern nur sein Katalogdatensatz. Ihre persönlichen Bewertungen und Tags bleiben dabei erhalten.",
+      "renameTitle": "Ordner umbenennen — {{lb}}",
+      "renameInfo": "Benennen Sie diesen Ordner auf der Festplatte innerhalb desselben übergeordneten Verzeichnisses um. Ein bereits hinzugefügter Torrent wird unter dem neuen Namen weiterhin weitergeteilt.",
+      "newLb": "Neue LB-Nummer",
+      "newLbPlaceholder": "z. B. 12345",
+      "newName": "Name des neuen Ordners",
+      "reassignApply": "Neu zuweisen",
+      "renameApply": "Umbenennen",
+      "badLb": "Geben Sie eine gültige LB-Nummer ein.",
+      "reassigned": "Umbenannt von {{from}} → {{to}}.",
+      "renamed": "Umbenannt in {{name}}.",
+      "failed": "Konnte nicht abgeschlossen werden – siehe Backend-Protokoll."
     }
   },
   "map": {

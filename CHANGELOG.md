@@ -1,3 +1,25 @@
+[2026-07-21] — feat(gui): collection-view right-click to reassign a folder's LB or rename it (TODO-259)
+Added: backend/db.py — reassign_collection(old_lb, new_lb): atomically moves a
+  my_collection row (folder_name/disk_path/notes/xref) to a different LB and carries
+  its collection_meta (personal rating/tags/listen count) across so nothing is lost.
+  Guards: target must exist in entries, must not already be owned, and can't equal the
+  source — all raise ValueError. The folder on disk is untouched (that's what rename is
+  for). Scope note: TODO-259's other two needs were already shipped — folder rename via
+  /api/folder/rename and the pre-filing LB# override via the pipeline OverridePanel
+  (BUG-257) — so this session only added the missing collection-view reassign lever.
+Added: backend/app.py — POST /api/collection/reassign {old_lb, new_lb}; validation
+  failures surface as 400.
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx — two new row
+  context-menu entries, "Reassign LB…" and "Rename Folder…" (both disabled on unfiled
+  rows), backed by a shared FolderEditModal. Rename reuses the existing
+  /api/folder/rename (qBittorrent-sync aware); reassign hits the new endpoint and
+  refetches the collection on success.
+Changed: gui_next/.../locales/{en,de,fr,es,it,nl}.json — new collection.folderEdit.*
+  strings (DeepL-synced; folderEdit fully covered in all five locales).
+Added: tests/test_db_writes.py — TestReassignCollection (5 tests: move, meta migration,
+  target-missing, already-owned, same-LB). Full suite green; backend restarted and the
+  route live-verified (400s on bad/unknown input).
+
 [2026-07-20] — chore(scraper): corpus rescore batch drained (561/561) — corroboration gate validated, staircase lag curves persisted (TODO-254, TODO-235)
 Changed: tools/tapematch/CALIBRATION_PROGRESS.md — the 561-date targeted rescore
   (rescore_queue_20260717.txt, launched 07-17) completed 07-20T07:45. Ran the

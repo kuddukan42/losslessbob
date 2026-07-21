@@ -398,7 +398,9 @@
       "missingFiles_one": "Il file {{count}} presente nell'elenco dei checksum non è presente sul disco. Ripristinare i file mancanti, quindi ripetere la verifica.",
       "missingFiles_other": "I file {{count}} presenti nell'elenco dei checksum non sono presenti sul disco. Ripristinare i file mancanti, quindi ripetere la verifica.",
       "mismatchedFiles_one": "Il file {{count}} presenta un checksum non corrispondente: il file audio potrebbe essere danneggiato o modificato.",
-      "mismatchedFiles_other": "I file {{count}} presentano checksum non corrispondenti: l'audio potrebbe essere danneggiato o modificato."
+      "mismatchedFiles_other": "I file {{count}} presentano checksum non corrispondenti: l'audio potrebbe essere danneggiato o modificato.",
+      "generateFailed": "Impossibile generare i checksum — consultare il log del backend.",
+      "generateNothing": "Non sono stati generati checksum: non sono stati trovati file audio supportati."
     },
     "lookup": {
       "runsAuto": "La ricerca viene eseguita automaticamente al superamento della verifica.",
@@ -416,7 +418,12 @@
       "partialMatchInfo": "È stato identificato {{lb}}, ma non tutti i checksum presenti in questa cartella corrispondono al record dell'archivio: alcuni file sul disco potrebbero differire dalla copia ufficiale. LBDIR, rinomina e file sono bloccati finché non confermi che si tratta dello spettacolo corretto. Se sei sicuro, aggiungilo ai preferiti per procedere.",
       "pinConfirms": "L'aggiunta ai preferiti conferma che questa cartella appartiene a {{lb}} e sblocca tutte le fasi successive.",
       "noMatches": "Nessun risultato trovato",
-      "noMatchesInfo": "Nessuno di questi checksum corrisponde a una voce dell'archivio. Potrebbe trattarsi di una fonte nuova o sconosciuta."
+      "noMatchesInfo": "Nessuno di questi checksum corrisponde a una voce dell'archivio. Potrebbe trattarsi di una fonte nuova o sconosciuta.",
+      "override": "Sovrascrivi LB#",
+      "overrideInfo": "Corrispondenza errata? Assegna forzatamente a questa cartella un numero di LB specifico: il programma riesegue LBDIR e verifica i checksum di quella voce.",
+      "overrideUse": "Utilizzare {{lb}}",
+      "overrideManual": "Numero LB",
+      "overrideApply": "Force"
     },
     "rename": {
       "unlocksAfter": "La rinominazione sblocca dopo che la ricerca ha risolto un numero di libretto (LB#).",
@@ -701,6 +708,21 @@
     "filters": {
       "xrefCopies": "Le mie copie di riferimenti incrociati",
       "altFilesets": "Voci con set di file alt"
+    },
+    "folderEdit": {
+      "reassignTitle": "Riassegnare {{lb}}",
+      "reassignInfo": "Sposta questa cartella in un numero LB diverso. Corregge un'assegnazione automatica errata o ambigua: la cartella sul disco non viene rinominata né spostata, ma solo il relativo record di catalogo. La tua valutazione personale e i tag vengono mantenuti.",
+      "renameTitle": "Rinomina cartella — {{lb}}",
+      "renameInfo": "Rinomina questa cartella sul disco all'interno della stessa directory principale. Un torrent già aggiunto continua a essere condiviso con il nuovo nome.",
+      "newLb": "Nuovo numero LB",
+      "newLbPlaceholder": "ad es. 12345",
+      "newName": "Nome della nuova cartella",
+      "reassignApply": "Riassegnare",
+      "renameApply": "Rinomina",
+      "badLb": "Inserisci un numero LB valido.",
+      "reassigned": "Riassegnazione da {{from}} a {{to}}.",
+      "renamed": "Rinominato in {{name}}.",
+      "failed": "Impossibile completare l'operazione — consultare il log del backend."
     }
   },
   "map": {

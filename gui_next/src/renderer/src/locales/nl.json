@@ -398,7 +398,9 @@
       "missingFiles_one": "Het bestand {{count}} in de checksumlijst staat niet op de schijf. Herstel de ontbrekende bestanden en controleer vervolgens opnieuw.",
       "missingFiles_other": "De {{count}}-bestanden in de checksumlijst staan niet op de schijf. Herstel de ontbrekende bestanden en controleer vervolgens opnieuw.",
       "mismatchedFiles_one": "Het bestand {{count}} heeft een afwijkende checksum — de audio is mogelijk beschadigd of gewijzigd.",
-      "mismatchedFiles_other": "{{count}}-bestanden hebben niet-overeenkomende checksums — de audio kan beschadigd of gewijzigd zijn."
+      "mismatchedFiles_other": "{{count}}-bestanden hebben niet-overeenkomende checksums — de audio kan beschadigd of gewijzigd zijn.",
+      "generateFailed": "Er konden geen checksums worden gegenereerd — zie het backend-logboek.",
+      "generateNothing": "Er zijn geen checksums gegenereerd — er zijn geen ondersteunde audiobestanden gevonden."
     },
     "lookup": {
       "runsAuto": "De zoekopdracht wordt automatisch uitgevoerd nadat de verificatie is geslaagd.",
@@ -416,7 +418,12 @@
       "partialMatchInfo": "{{lb}} is geïdentificeerd, maar niet elke checksum in deze map komt overeen met het archiefrecord — sommige bestanden op de schijf kunnen afwijken van de officiële kopie. LBDIR, hernoemen en bestand zijn geblokkeerd totdat u bevestigt dat dit de juiste show is. Als u zeker bent, klik dan op ‘Vastzetten’ om door te gaan.",
       "pinConfirms": "Door deze map vast te zetten, wordt bevestigd dat deze bij {{lb}} hoort en worden alle volgende stappen ontgrendeld.",
       "noMatches": "Geen resultaten gevonden",
-      "noMatchesInfo": "Geen van deze checksums komt overeen met een archiefitem. Dit kan een nieuwe of onbekende bron zijn."
+      "noMatchesInfo": "Geen van deze checksums komt overeen met een archiefitem. Dit kan een nieuwe of onbekende bron zijn.",
+      "override": "LB# overschrijven",
+      "overrideInfo": "Verkeerde match? Wijs deze map toe aan een specifiek LB-nummer — hierdoor wordt LBDIR opnieuw uitgevoerd en wordt de match gecontroleerd aan de hand van de checksums van dat item.",
+      "overrideUse": "Gebruik {{lb}}",
+      "overrideManual": "LB-nummer",
+      "overrideApply": "Force"
     },
     "rename": {
       "unlocksAfter": "Hernoemen wordt ontgrendeld nadat het opzoeken een LB# heeft opgelost.",
@@ -701,6 +708,21 @@
     "filters": {
       "xrefCopies": "Mijn xref-kopieën",
       "altFilesets": "Items met alt-bestandsets"
+    },
+    "folderEdit": {
+      "reassignTitle": "{{lb}} opnieuw toewijzen",
+      "reassignInfo": "Verplaats deze map naar een ander LB-nummer. Hiermee wordt een onjuiste of dubbelzinnige automatische toewijzing gecorrigeerd — de map op de schijf wordt niet hernoemd of verplaatst, alleen het bijbehorende catalogusrecord. Uw persoonlijke beoordeling en tags blijven behouden.",
+      "renameTitle": "Map hernoemen — {{lb}}",
+      "renameInfo": "Hernoem deze map op de schijf binnen dezelfde bovenliggende map. Een reeds toegevoegde torrent blijft onder de nieuwe naam seeden.",
+      "newLb": "Nieuw LB-nummer",
+      "newLbPlaceholder": "bijv. 12345",
+      "newName": "Naam van nieuwe map",
+      "reassignApply": "Opnieuw toewijzen",
+      "renameApply": "Hernoemen",
+      "badLb": "Voer een geldig LB-nummer in.",
+      "reassigned": "Hernoemd van {{from}} naar {{to}}.",
+      "renamed": "Hernoemd naar {{name}}.",
+      "failed": "Kon niet worden voltooid — zie het backend-logboek."
     }
   },
   "map": {

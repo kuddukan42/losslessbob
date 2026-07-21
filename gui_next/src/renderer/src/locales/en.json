@@ -549,6 +549,21 @@
       "tagsPlaceholder": "e.g. favourite, soundboard",
       "saving": "Saving…"
     },
+    "folderEdit": {
+      "reassignTitle": "Reassign {{lb}}",
+      "reassignInfo": "Move this folder to a different LB number. Corrects a wrong or ambiguous auto-assignment — the folder on disk isn't renamed or moved, only its catalog record. Your personal rating and tags come along.",
+      "renameTitle": "Rename folder — {{lb}}",
+      "renameInfo": "Rename this folder on disk within the same parent directory. An already-added torrent keeps seeding under the new name.",
+      "newLb": "New LB number",
+      "newLbPlaceholder": "e.g. 12345",
+      "newName": "New folder name",
+      "reassignApply": "Reassign",
+      "renameApply": "Rename",
+      "badLb": "Enter a valid LB number.",
+      "reassigned": "Reassigned {{from}} → {{to}}.",
+      "renamed": "Renamed to {{name}}.",
+      "failed": "Couldn't complete — see the backend log."
+    },
     "columnPicker": {
       "button": "Columns…",
       "title": "Export Columns",

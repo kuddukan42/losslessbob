@@ -1470,6 +1470,7 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | POST | `/api/collection` | Add an LB entry to the user's collection. Body accepts optional `xref` (default 0). |
 | PATCH | `/api/collection/<lb>` | Update fields on an existing collection entry. |
 | DELETE | `/api/collection/<lb>` | Remove an LB entry from the user's collection. |
+| POST | `/api/collection/reassign` | Move a filed folder to a different LB (TODO-259). Body `{old_lb, new_lb}` → `db.reassign_collection()`; repoints the `my_collection` row and migrates its `collection_meta`. Validation failures (target absent/already-owned/same-LB) → 400. Surfaced from the Collection screen's right-click "Reassign LB…". |
 | GET | `/api/collection/missing` | Collection entries whose `disk_path` no longer exists on disk. |
 | GET | `/api/collection/search` | Search the user's collection by keyword. |
 | GET | `/api/collection/lb_numbers` | All LB numbers currently in the user's collection. |
