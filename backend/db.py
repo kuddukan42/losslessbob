@@ -4074,6 +4074,33 @@ def get_distinct_years(db_path=None):
     return sorted(years, reverse=True)
 
 
+def _mount_label_for_path(disk_path: str, mounts: list[dict]) -> "str | None":
+    """Return the label of the mount whose root_path best (longest) matches disk_path.
+
+    Pure prefix match on normalised (forward-slash) paths. Mirrors
+    integrity_monitor._mount_for_path but returns the mount label and uses
+    _norm_folder instead of filer.normalise_path, so it stays inside backend.db
+    without the backend.db ↔ backend.filer / integrity_monitor import cycle.
+
+    Args:
+        disk_path: A my_collection.disk_path value.
+        mounts: Rows from get_collection_mounts() (need id/label/root_path).
+
+    Returns:
+        The matching mount label, or None if disk_path sits under no mount root.
+    """
+    norm_path = _norm_folder(disk_path)
+    best_label = None
+    best_len = -1
+    for m in mounts:
+        norm_root = _norm_folder(m["root_path"]).rstrip("/")
+        if norm_path == norm_root or norm_path.startswith(norm_root + "/"):
+            if len(norm_root) > best_len:
+                best_len = len(norm_root)
+                best_label = m["label"]
+    return best_label
+
+
 def get_collection(db_path=None):
     with get_connection(db_path) as conn:
         rows = conn.execute("""
@@ -4089,6 +4116,17 @@ def get_collection(db_path=None):
         alias_rows = conn.execute(
             "SELECT alias_lb, canonical_lb FROM lb_alias"
         ).fetchall()
+        mounts = [dict(m) for m in conn.execute(
+            "SELECT id, label, root_path FROM collection_mounts"
+        ).fetchall()]
+        # year -> expected mount label, from the configured routing table.
+        routes_by_year = {
+            rr["year"]: rr["mount_label"]
+            for rr in conn.execute(
+                "SELECT r.year, m.label AS mount_label FROM collection_routes r "
+                "JOIN collection_mounts m ON m.id = r.mount_id"
+            ).fetchall()
+        }
 
     # Build bidirectional map: lb -> [all linked lbs in either direction]
     linked: dict[int, list[int]] = {}
@@ -4101,8 +4139,61 @@ def get_collection(db_path=None):
     for r in rows:
         d = dict(r)
         d["linked_lbs"] = sorted(linked.get(d["lb_number"], []))
+        d.update(_route_status(d["disk_path"], d.get("date_str"), mounts, routes_by_year))
         result.append(d)
     return result
+
+
+def _route_status(
+    disk_path: str,
+    date_str: "str | None",
+    mounts: list[dict],
+    routes_by_year: dict[int, str],
+) -> dict:
+    """Classify a folder's disk_path against its year's expected mount routing (TODO-166).
+
+    Compares where the folder actually lives (the mount whose root_path is a
+    prefix of disk_path) against where its show-year is configured to route
+    (collection_routes). Surfaces folders that drifted to a nonstandard location.
+
+    Args:
+        disk_path: Absolute folder path from my_collection.
+        date_str: The entry's date_str, used to derive the show year.
+        mounts: collection_mounts rows (id/label/root_path).
+        routes_by_year: year -> expected mount label, from collection_routes.
+
+    Returns:
+        Dict with:
+            route_status: one of
+                "ok"          — folder is under the year's routed mount;
+                "wrong_mount" — folder is under a different mount than the route;
+                "no_mount"    — a route exists but the folder is under no mount;
+                "no_route"    — no route configured for this year (can't evaluate);
+                "no_date"     — no parseable year (can't evaluate).
+                Only "wrong_mount"/"no_mount" are genuine drift.
+            route_actual_mount: label the disk_path resolves to (or None).
+            route_expected_mount: label the year should route to (or None).
+            route_year: the derived show year (or None).
+    """
+    year = _year_from_date_str(date_str or "")
+    actual = _mount_label_for_path(disk_path, mounts) if disk_path else None
+    expected = routes_by_year.get(year)
+    if not year:
+        status = "no_date"
+    elif expected is None:
+        status = "no_route"
+    elif actual is None:
+        status = "no_mount"
+    elif actual != expected:
+        status = "wrong_mount"
+    else:
+        status = "ok"
+    return {
+        "route_status": status,
+        "route_actual_mount": actual,
+        "route_expected_mount": expected,
+        "route_year": year or None,
+    }
 
 
 def add_to_collection(lb_number, folder_name, disk_path, notes=None, xref: int = 0, db_path=None):
