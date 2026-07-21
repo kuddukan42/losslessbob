@@ -87,13 +87,27 @@ that PROJECT.md fails to mention and must exit 0 before finishing.
   moved to a TODO), `git mv` it to `instructions/complete/` and update
   `instructions/README.md`.
 
-## Step 7 — Consistency check + report
+## Step 7 — Consistency check
 
-Verify before finishing:
+Verify before committing:
 - No BUG/TODO number used twice across the four files.
 - Every `Fixed`/`Done` item this session appears in a `*_DONE.md`, not the
   open file.
 - All dates are today's actual date.
 
-Report as a single table: `File | Action taken` (or "no change needed"), plus
-the BUG/TODO numbers assigned this session.
+## Step 8 — Commit + push (automatic, no confirmation)
+
+Close the loop without asking — this is the standing default, not a prompt point:
+
+- Stage and commit the bookkeeping changes (and any still-uncommitted code from
+  this session that belongs with them). Use the repo commit convention
+  (`<type>(<scope>): …`, `chore(bookkeeping)` for pure ledger/CHANGELOG moves).
+- `git push` to the current work branch.
+- Do NOT stop to ask "want me to commit/push?" — just do it. Only hold for
+  genuinely irreversible actions (force-push, history rewrite, deletions) or if
+  the user has said to batch/wait this session.
+
+## Step 9 — Report
+
+Report as a single table: `File | Action taken` (or "no change needed"), the
+BUG/TODO numbers assigned this session, and the commit SHA(s) pushed.
