@@ -1,3 +1,13 @@
+[2026-07-21] — fix(db): writer thread owns its connection's close, not shutdown()'s caller (BUG-264)
+Fixed: backend/db_queue.py — DatabaseWriteQueue.shutdown() closed self._conn from
+  the caller thread after join(timeout). When a write outlived conftest's 2s join
+  under CI's contended disk, the caller freed the connection out from under the
+  still-running writer thread — a cross-thread SQLite use-after-free that
+  segfaulted the backend-tests job at teardown (exit 139, flaky). The writer
+  thread now closes its own connection when it drains the shutdown sentinel;
+  shutdown() only signals + joins. Distinct from the BUG-261/262/263 init_db
+  thread leaks. Added TestWriteQueueShutdown regression tests; full suite 905
+  passed locally.
 [2026-07-21] — feat(backend): CI on GitHub Actions + synthetic fixture DB generator (TODO-261)
 Added: backend/paths.py — LOSSLESSBOB_APP_ROOT env override (unfrozen branch
   only) so CI/cloud agents/tests can point the whole backend at a throwaway
