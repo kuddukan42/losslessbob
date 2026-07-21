@@ -56,7 +56,9 @@ losslessbob/
 │   │   ├── map.html          # Leaflet map page served at GET /map; fetches /api/map/data
 │   │   └── leaflet/          # Bundled Leaflet 1.9.4 + markercluster 1.5.3 + leaflet.heat 0.2.0 assets
 │   ├── templates/            # Flask's default Jinja template dir — first template in the repo (TODO-257)
-│   │   └── dossier.html      # Show dossier: self-contained, print-first HTML render (spec D3)
+│   │   └── dossier.html      # Show dossier: self-contained, print-first HTML render; sepia redesign + inline SVG map (spec D3, TODO-260)
+│   ├── assets/               # Bundled render-time data assets
+│   │   └── world_countries_110m.json  # 168KB GeoJSON (177 countries, Natural Earth names) for the dossier locator map; decoded from world-atlas@2.0.2 (TODO-260)
 │   ├── admin.html            # Mobile-friendly admin control panel (served at /admin)
 │   ├── db.py                 # SQLite layer, checksum parsing, search
 │   ├── db_queue.py           # DB-09: DatabaseWriteQueue — single writer thread, serialises all writes
@@ -90,7 +92,7 @@ losslessbob/
 │   ├── taper_fingerprints.py # Layer 2 vocabulary fingerprints (TODO-214): log-odds profiles + 3-gate infer; LAYER2_ENABLED=False pending precision sign-off
 │   ├── song_index.py         # Song-centric index: song_canonical seeding + song_performances recompute (TODO-230)
 │   ├── gap_analysis.py       # Gaps view (TODO-256): live coverage classifier, no derived table — olof_events vs entries
-│   ├── dossier.py            # Show dossier (TODO-257): build_dossier() assembly + filter_dossier_sections/render_bbcode presentation layer
+│   ├── dossier.py            # Show dossier (TODO-257/260): build_dossier() assembly + filter_dossier_sections/render_bbcode presentation layer; _render_locator_svg() server-side Mercator map
 │   ├── setlist_fingerprint.py # Setlist fingerprinting: score entries.setlist vs olof_songs, curator suggestion queue (TODO-225)
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration

@@ -1,3 +1,157 @@
+[2026-07-20] — chore(scraper): corpus rescore batch drained (561/561) — corroboration gate validated, staircase lag curves persisted (TODO-254, TODO-235)
+Changed: tools/tapematch/CALIBRATION_PROGRESS.md — the 561-date targeted rescore
+  (rescore_queue_20260717.txt, launched 07-17) completed 07-20T07:45. Ran the
+  completion runbook: tapematch_sync (2,032 dates / 6,112 families / 0 errors) +
+  taper_attribution.recompute() (8,159 total; 130 conflict — expected, families held
+  on real evidence, not chased to 0). lag_segments_json now populated for 2,272 sources
+  (was 0) → unblocks TODO-233 pt2 staircase A/B. Corroboration gate validated across all
+  205 flip-sig dates: 749 staircase pairs in the relaxed fp band [0.40,0.50), 515
+  uncorroborated correctly split to different_family (gate fired), no bare fp-only leaks
+  (11 residual same_family all carry non-fp evidence). Completion record appended to the
+  state file. TODO-234 dispositions + TODO-255 gate-floor sweep remain open (tj decisions).
+Changed: instructions/TODO-234_FAMILY_CONFLICT_REVIEW.md — refreshed the conflict evidence
+  table against the post-drain data (series-vs-series subset 18 → 14; 1990-11-08 / 1990-08-12
+  / 1995-05-26 cleared). Fresh evidence flips most dispositions from hand-split to flip-to-
+  label-review (families held on windowed/hiss/emb, not bare fp): 5 flips, 1 hand-split
+  (1995-12-09, a TODO-255 gate-floor artifact), 1 ambiguous (1997-04-05), 1 edge-fix
+  (1988-07-17). Recorded only — no DB changes; the 14 rows stay in the queue by design
+  pending tj's per-family taper picks.
+
+[2026-07-19] — fix(backend): keep the extras/ set-aside subtree out of checksum generate + verify (BUG-259, BUG-260)
+Fixed: backend/checksum_utils.py — final-pass review of the in-flight BUG-257 work
+  found two holes in the same extras/ contract the lookup fix established:
+  (1) BUG-259: generate_checksums()'s new multi-disc recursion (rglob) also hashed
+  audio under extras/ into a fresh top-level _mychecksums sidecar. Lookup only skips
+  sidecars *under* extras/, so one press of "Generate FFP + MD5" on a reconciled
+  folder fed the superseded fileset's hashes straight back into lookup — recreating
+  the false multi-LB match BUG-257 had just fixed. Audio rglob now filters
+  _is_reconciled_extra(); disc subfolders (CD1/…) still covered.
+  (2) BUG-260: verify_folder() still parsed sidecars under extras/ (and counted
+  extras audio), so a folder in the BUG-257 shape (extras/ holds only the alternate
+  transfer's sidecar) wedged Step-1 Verify on 'incomplete' with phantom missing
+  files. Both verify scans now skip the extras/ subtree, matching lookup and
+  verify_folder_lbdir semantics.
+  Both bugs repro'd before fixing; regression tests added
+  (tests/test_checksum_extras.py, 4 tests); full suite green (880 + 11 dossier);
+  backend restarted and freshness-verified.
+
+[2026-07-19] — feat(backend): Show Dossier polish pass — app-blue dark theme, family grouping, attribution + working deep links
+Changed: backend/templates/dossier.html — retheme from the sepia palette to the app's
+  own look (gui_next tokens.ts "blue" frame + "indigo" accent; dark is now the default,
+  light kept as toggle/print). Reordered sections: recommendation hero + circulating
+  sources now sit above the setlist. Tape families are visually grouped (reel-icon header
+  row per family with member count, confidence meter bar, review flag, and an accent
+  spine down member rows) and buckets/members are ordered by pick rank. AI index grades
+  render as colored grade seals (A=green/B=blue/C=amber/D=red, score /100 inline) in the
+  sources table, glance strip, and recommendation hero. Tables centered + hover states,
+  centered masthead with accent double rule. Per-section attribution credit lines
+  (Olof Björner "Still on the Road" for context/setlist, setlist.fm for coordinates,
+  LosslessBob for the catalog) and a full footer credits paragraph.
+Added: backend/dossier.py — _build_xref(): the cross-reference cards are now built
+  server-side with working deep links per show: LB detail page (paths.detail_url on the
+  recommended/first source), the exact Olof page the show was ingested from (bobserve
+  mirror, page_filename URL-quoted), Boblinks per-date setlist page (MMDDYYs.html,
+  1995+ only; site home otherwise — pages are best-effort on their end), and the
+  Bobserve year index (eventsperiod?period=YYYY). Each sources-table LB number also
+  links to its LosslessBob detail page (member.url). Additive to the D1 JSON shape
+  (dossier.xref); render_bbcode untouched. All link patterns verified live (HTTP 200),
+  11 dossier tests green, template renders verified for 1966/1987/2002 dates.
+  Mobile follow-up: the 7-column sources table now scrolls inside its own
+  .tbl-scroll container (min-width 640px) instead of forcing page-level horizontal
+  scroll; tightened <=720px padding/typography; overflow-wrap on xref URLs.
+
+[2026-07-18] — fix(importer): private-metadata fill skipped bracketed folders + misread LB-<num>.txt sidecars (BUG-258)
+Fixed: tools/import_private_metadata.py — the private-metadata fill appeared to
+  stop before completing. Three defects, all in the folder pass:
+  (1) info_txt_candidates() called glob.glob() on the raw folder path, and
+  private folders carry [LB-NNNNN]/[taper] brackets that glob reads as character
+  classes — so 43 folders whose .txt files were right there on disk were
+  silently reported as no_info_txt. Fixed with glob.escape(folder).
+  (2) _LINEAGE_LINE only matched space-padded ' -> '/' > ', missing unicode
+  arrow (→), bare -> and no-space chains like cd>EAC>TLH>flac. Broadened to
+  match →, -> and word>word.
+  (3) extract_setlist() only read one-track-per-line, so the canonical
+  LB-<num>.txt sidecars' inline comma-run setlists ('1 intro, 2 Roving Gambler…')
+  never parsed — they wrap across physical lines mid-title, use 1-/1./101
+  separators, and run the 'Please retain…' footer onto the last track. Added a
+  block-based _setlist_from_inline(): de-wraps -----fenced blocks, splits only on
+  ', <n>' boundaries (commas inside titles like "It's Alright, Ma" survive),
+  reuses the existing 1,2,3…/disc-restart chain validator, and _clean_title()
+  strips inline disc labels (', cd-2, November 16th…') and footer boilerplate.
+  Applied to the live DB: setlists 1210 → 1309 (+99), descriptions 1356 → 1362,
+  no_info_txt 54 → 11. Remaining gaps (63 setlist-less) are genuinely
+  source-less — no sidecar, or metadata-only tab formats with no tracklist.
+
+[2026-07-18] — feat(backend): Show Dossier high-fidelity redesign — sepia template + pre-rendered locator map (TODO-260)
+Changed: backend/templates/dossier.html — full rebuild to the design-handoff sepia
+  light/dark token system: fixed theme toggle (localStorage-persisted, print-hidden),
+  masthead with LB mark, at-a-glance strip, table setlist with encore separator + rare
+  badges, sources comparison table (pick-rank ordered, is-rec highlight, taper pill +
+  source chain retained), recommended callout with signed scoring ledger, cross-reference
+  grid, and print CSS that forces the light palette. All source flattening and glance/xref
+  derivation happen in-template — the JSON API and render_bbcode are untouched.
+Added: backend/dossier.py — _load_quality surfaces abs_score (numeric AI grade nn/100);
+  _build_show adds lat/lng/country/city_line + _COUNTRY_MAP_META (world-atlas country name
+  + Mercator scale, US/UK aliasing) sourced from setlistfm_shows-by-date; _render_locator_svg()
+  pre-renders the country locator to self-contained inline SVG (replicates
+  d3.geoMercator center/scale/translate, polar clamp, viewport clipping) so the downloadable
+  dossier needs no CDN/JS/network and prints reliably offline (~28KB doc vs ~390KB if d3 were
+  inlined).
+Added: backend/assets/world_countries_110m.json — bundled 168KB GeoJSON (177 countries,
+  Natural Earth names), decoded once from world-atlas@2.0.2 countries-110m.json; loaded and
+  cached at render time. No new pip dependency (stdlib math/os/functools/json only).
+Fixed: backend/templates/dossier.html — two Jinja Undefined hazards found during the redesign:
+  the fam_conf guard crashed on a family with a label but no confidence (now bucket.get() so a
+  missing key is real None), and the locator card was nested under d.context so a show with
+  coordinates but no chronicle silently lost its map (now gated on coordinates independently).
+
+[2026-07-18] — fix(backend)+feat(gui): lookup ignores extras/ sidecars; pipeline LB# override (BUG-257)
+Fixed: backend/app.py — the pipeline Lookup stage gathered checksum sidecars with
+  folder.rglob('*') and read every .ffp/.md5/.st5, INCLUDING those under extras/
+  (the move_extras set-aside dir). When extras/ held a different transfer's
+  sidecars, the merged input covered two distinct filesets, so lookup_checksums
+  reported BOTH LBs as MATCHED and the _all_perfect guard auto-linked + renamed
+  the folder "(LB-A+LB-B)" as if identical. Seen on 1975-07-03 The Other End,
+  N.Y.: LB-12226 vs LB-16533 share Set I (tracks 01-11) but differ on Set II
+  (12-19) — genuinely two transfers, falsely merged. Fix: skip paths matched by
+  checksum_utils._is_reconciled_extra() (extras/ subtree + rename_log.txt) when
+  building the lookup input. Verified on the live folder: LB-16533 drops
+  MATCHED -> DUPLICATE, so the false multi-LB auto-link no longer fires.
+Fixed (2): backend/app.py — an explicit folder pin was ignored by the LBDIR
+  resolvers. _resolve_lb_number_for_folder + the three inline resolvers in
+  /api/lbdir/check, /api/lbdir/retrieve and /api/lbdir/reconcile all resolved
+  LB# as my_collection.disk_path -> folder-name regex -> hint/pin, with the pin
+  DEAD LAST. So after a user overrode a folder to LB-16533, the LBDIR screen
+  still verified against LB-12226 (this folder's stale my_collection row + its
+  "(LB-12226+LB-16533)" name both point at 12226). New helper
+  _pinned_lb_for_folder() makes a *single* explicit folder_lb_link authoritative
+  ahead of the heuristics (multiple links stay ambiguous -> heuristics apply).
+  Verified: /api/lbdir/check now returns 16533 and verifies the GOODY-FIXES
+  manifest (23/23 pass) even when the GUI passes lb_number_hint=12226.
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx — OverridePanel, an
+  "Override LB#" control on the Lookup stage (matched branch). Surfaces one button
+  per matched candidate LB plus a manual LB# entry; each force-pins a single LB via
+  the existing PUT /api/folder_link (replace_folder_link), which supersedes any
+  auto-written multi-LB links and re-runs LBDIR/verify against that entry. Lets a
+  user correct a wrong/merged auto-match (e.g. this folder -> pin LB-16533). i18n:
+  new pipeline.lookup.override* keys (5) in en.json (de/fr/es/it/nl sync pending).
+  node+renderer typecheck and production build PASS.
+Note: 5 collection folders carry a "+LB-" merged name and 33 folders were
+  auto-linked "multi-LB perfect match" pre-fix — worth an audit; the override
+  control repairs them one at a time.
+
+[2026-07-18] — fix(backend): pipeline lookup no longer wedges duplicate-fileset folders (BUG-256)
+Fixed: backend/app.py — the pipeline Lookup stage's "complete match" guard used
+  full_match = summary["matched"] == summary["given"], but summary["matched"] is
+  the GLOBAL match count and double-counts checksums archived under >1 LB entry
+  (matched == given*N). A show whose identical fileset lives under a duplicate LB
+  (e.g. LB-16353 alias -> LB-16369 canonical) therefore stayed in "Incomplete
+  match" forever — and pinning either LB couldn't clear it, since the guard read
+  the inflated global count rather than the pinned LB's own totals. Now tested on
+  distinct unmatched checksums instead: full_match = summary.get("unmatched", 1)
+  == 0. Duplicate-fileset folder resolves ok to the canonical LB (with or without
+  a pin); a genuine NOT-FOUND file still blocks. Verified against the live DB.
+
 [2026-07-18] — feat(gui): Known Tapers curation widget on DB Editor (TODO-258)
 Added: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx — new "Known Tapers"
   collapsible sidebar SideSection (losslessbob DB only, collapsed by default since

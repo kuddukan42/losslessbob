@@ -1,21 +1,15 @@
 
+TODO-259: GUI to edit a collection folder — reassign LB, rename, or clarify override workflow
+Priority: Medium
+Status: Open
+Added: 2026-07-18
+Description: Add a GUI interface to edit a collection folder's LB assignment. Needs: (1) reassign a folder to a different LB number (correcting a wrong/ambiguous auto-assignment), (2) rename the folder, and (3) manually override the LB assignment. Either build an inline edit affordance on the folder/collection view or document/clarify the existing override workflow so users can correct mis-assigned folders. Scope TBD: confirm whether an override path already exists in backend/app.py + ScreenPipeline before building new UI.
+
 TODO-255: Staircase corroboration gate: consider hiss_median floor (boundary pass observed)
 Priority: Low
 Status: Open
 Added: 2026-07-17
 Description: 1995-12-09 rescore: 6083-6104 passed the corroboration gate at exactly hiss_frac 0.05 == min_hiss_frac with hiss_median .05 (noise level) — the frac floor has no median requirement, so noise-level hiss corroborates a staircase-relaxed fp merge. Candidate sweep: add a small hiss_median floor to the gate or raise min_hiss_frac. Requires calibration sweep vs frozen set + tj sign-off per CALIBRATION_PROGRESS protocol. Evidence in TODO-234 review doc. Related: [TODO-234].
-
-TODO-254: Corpus rescore batch in flight — run completion runbook when it drains
-Priority: High
-Status: Open
-Added: 2026-07-17
-Description: 561-date targeted rescore (rescore_queue_20260717.txt) launched 2026-07-17, detached setsid batch, ETA ~2026-07-20. When 561/561 done: follow RESCORE COMPLETION RUNBOOK at tail of tools/tapematch/CALIBRATION_PROGRESS.md (sync via -m backend.tapematch_sync, taper_attribution.recompute(), spot-checks, then close TODO-235 if lag_segments_json populated). If batch died, resume: cd tools/tapematch && ../../.venv/bin/python3 tapematch_session.py --batch rescore_queue_20260717.txt (detached; # done lines skip). Never run other live tapematch sessions concurrently. Related: [TODO-234] [TODO-235].
-
-TODO-235: Persist per-segment staircase lag curves in tapematch runs (unblocks TODO-233 pt2 A/B)
-Priority: Medium
-Status: Open
-Added: 2026-07-14
-Description: Prerequisite for TODO-233 part 2 (staircase/splice A/B listening). Investigated 2026-07-14: the staircase per-segment lag curve is computed transiently during a tapematch run and only RENDERED AS TEXT into analysis.md (gen_analysis.py '### <lb> — staircase lag curve'); it is NOT persisted numerically anywhere the backend can read. results.json sources rows carry only summary fields (trim_head_sec, speed_ppm, speed_kind); observations.db sources likewise. anchors_sec in results.json is run-level, not per-source segment offsets. So backend/ab_clips.py cannot build the piecewise perf->source time map staircase A/B needs (unlike constant-speed-offset, which was fully derivable from speed_ppm+trim_head — see TODO-233 pt1, shipped 2026-07-14). Work: (1) in the tapematch engine (tools/tapematch/), persist the per-source staircase lag curve — segment breakpoints + per-segment offset/rate — to results.json and/or a new observations.db sources column (idempotent CREATE/ALTER per CLAUDE.md); this re-runs the frozen calibration pipeline so coordinate with CALIBRATION_PROGRESS.md and re-score the corpus. (2) Then TODO-233 pt2: ab_clips builds a piecewise map, and clip extraction handles a window that straddles a segment boundary (discontinuity) — resample each segment span independently before concat. Note the A/B window is short (~20s) so most picks land inside one segment; the boundary-straddle case is the tricky part. speed-unknown (TODO-233 pt3) remains out of scope (no time mapping exists).
 
 TODO-234: TapeMatch family over-merge review — 22 series-vs-series taper conflicts
 Priority: Medium

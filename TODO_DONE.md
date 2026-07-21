@@ -1,6 +1,30 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-235: Persist per-segment staircase lag curves in tapematch runs (unblocks TODO-233 pt2 A/B)
+Priority: Medium
+Status: Done
+Added: 2026-07-14
+Closed: 2026-07-20
+Description: Prerequisite for TODO-233 part 2 (staircase/splice A/B listening). Investigated 2026-07-14: the staircase per-segment lag curve is computed transiently during a tapematch run and only RENDERED AS TEXT into analysis.md (gen_analysis.py '### <lb> — staircase lag curve'); it is NOT persisted numerically anywhere the backend can read. results.json sources rows carry only summary fields (trim_head_sec, speed_ppm, speed_kind); observations.db sources likewise. anchors_sec in results.json is run-level, not per-source segment offsets. So backend/ab_clips.py cannot build the piecewise perf->source time map staircase A/B needs (unlike constant-speed-offset, which was fully derivable from speed_ppm+trim_head — see TODO-233 pt1, shipped 2026-07-14). Work: (1) in the tapematch engine (tools/tapematch/), persist the per-source staircase lag curve — segment breakpoints + per-segment offset/rate — to results.json and/or a new observations.db sources column (idempotent CREATE/ALTER per CLAUDE.md); this re-runs the frozen calibration pipeline so coordinate with CALIBRATION_PROGRESS.md and re-score the corpus. (2) Then TODO-233 pt2: ab_clips builds a piecewise map, and clip extraction handles a window that straddles a segment boundary (discontinuity) — resample each segment span independently before concat. Note the A/B window is short (~20s) so most picks land inside one segment; the boundary-straddle case is the tricky part. speed-unknown (TODO-233 pt3) remains out of scope (no time mapping exists).
+Rescore persisted per-segment staircase lag curves: observations.db sources.lag_segments_json populated for 2,272 sources (was 0). Unblocks TODO-233 pt2 (staircase/splice A/B piecewise time map).
+
+TODO-254: Corpus rescore batch in flight — run completion runbook when it drains
+Priority: High
+Status: Done
+Added: 2026-07-17
+Closed: 2026-07-20
+Description: 561-date targeted rescore (rescore_queue_20260717.txt) launched 2026-07-17, detached setsid batch, ETA ~2026-07-20. When 561/561 done: follow RESCORE COMPLETION RUNBOOK at tail of tools/tapematch/CALIBRATION_PROGRESS.md (sync via -m backend.tapematch_sync, taper_attribution.recompute(), spot-checks, then close TODO-235 if lag_segments_json populated). If batch died, resume: cd tools/tapematch && ../../.venv/bin/python3 tapematch_session.py --batch rescore_queue_20260717.txt (detached; # done lines skip). Never run other live tapematch sessions concurrently. Related: [TODO-234] [TODO-235].
+Batch drained 561/561 (2026-07-20T07:45); completion runbook executed — sync (6,112 families, 0 errors) + recompute (8,159 total, 130 conflict) + gate validated across 205 flip-sig dates (515 uncorroborated relaxed-fp pairs correctly split, no fp-only leaks). See CALIBRATION_PROGRESS.md completion record.
+
+TODO-260: Show Dossier high-fidelity redesign (design handoff LosslessBob 3.zip)
+Priority: Medium
+Status: Done
+Added: 2026-07-18
+Closed: 2026-07-18
+Description: Recreate the sepia design-handoff dossier in the production template + backend. Bite 1: template restyle on existing data (theme toggle, glance strip, table setlist, sources comparison table, ledger, xref grid, print CSS). Bite 2: backend map/AI-grade fields (lat/lng/country/city_line/_COUNTRY_MAP_META, abs_score /100). Bite 3: server-side pre-rendered inline SVG locator map (bundled world-atlas GeoJSON) so the downloadable dossier is self-contained/offline/print-safe.
+Shipped bites 1-3 same session. Template fully rebuilt to the sepia system; backend surfaces map coords + numeric AI grade; locator map pre-rendered to self-contained inline SVG (no CDN/JS/network). Deferred (no data / marginal): band-ordinal label, venue-level coord precision. Optional future hardening noted: none outstanding.
+
 TODO-258: Known Tapers curation widget on DB Editor screen
 Priority: Medium
 Status: Done
