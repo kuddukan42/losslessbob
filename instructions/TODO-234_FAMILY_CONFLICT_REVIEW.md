@@ -112,10 +112,42 @@ happen — live runs found evidence the cached replay lacked. Per date:
   label review (96-07-07, and plausibly 96-05-16 / 97-04-05 / 93-02-07 where
   plain-bar fp/hiss now vouch for the family). tj decision needed.
 
+## REFRESHED EVIDENCE 2026-07-20 (post full-corpus drain)
+
+Full corpus rescore drained 561/561 (2026-07-20). `tapematch_sync` + `recompute()`
+re-run: **the TODO-234 series-vs-series subset dropped 18 → 14 conflict rows.**
+Cleared since 07-16: **1990-11-08** (ltd/ltf), **1990-08-12** (ltm), **1995-05-26**
+(ntd) — the curator rejects (A) held and the ltd/ltf families now separate cleanly.
+
+The priority dates carry their 2026-07-17 live re-run scores (they were not in the
+07-20 batch, which covered the remaining ~553 dates). Fresh cross-taper bridge
+evidence for the 14 surviving rows, with a refreshed disposition — **most flip from
+"hand-split" to "flip to label review": the families held on real (non-fp) evidence,
+so the conflict is a labeling problem, not a false merge.**
+
+| Component (date) | Surviving conflict rows | Fresh cross-taper bridge evidence (latest run) | Refreshed disposition |
+| --- | --- | --- | --- |
+| 1996-07-07 | 2082, 3439, 15574 (nta) | windowed_frac **.95** across nta↔nti clusters, emb .94–.97, hard corr 3439~5776 **.977** / 3439~6252 **.908** / 2082~3059 **.929** — decisive same-source | **FLIP → label review** (strongest; one recording, 3 labels) |
+| 1993-02-07 | 4216 (lta) | 1343~5882 genuine hiss merge **.620/.727** + emb **.946**; 1343~4216 plain-bar fp **.588** | **FLIP → label review** (ltb=lta, same tape) |
+| 1996-05-16 | 7823 (lowgen) | 821~7823 genuine hiss merge **.767/.895**; 7544~7823 plain-bar fp **.504**; emb .90+ (821~2273/7544) | **FLIP → label review** (nta/ltg/lowgen = same tape) |
+| 1995-07-04 | 1899 (ntf) | 1899~5681 plain-bar fp **.650** + win .253 + emb .527 (strong, cross ntf/nti) | **FLIP → label review**; 5879 weakly glued (fp .413 relaxed, win .001) → secondary split candidate |
+| 1997-08-17 | 13290 (ltf) | core 2129~13290 emb **.962** / 2129~12866 emb **.940**, plain-bar fp .504–.510 — genuine | **FLIP → label review** (13290 ties ntm/mb core); 5761 weak (fp .445 relaxed, hiss .191) → secondary split |
+| 1997-04-05 | 3559 (nta) | 3559~8854 plain-bar fp **.505** (barely over .50 bar); win 0, hiss 0, corr .12, emb .52 — no independent corroboration | **AMBIGUOUS — lean hand-split** (fp-only, marginal) |
+| 1995-12-09 | 6104 (lta) | 6083~{6104,15211} fp .407–.409 (relaxed) + boundary hiss **.050/.050** (== gate floor) + emb .29 — no real corroboration | **HAND-SPLIT** (6083 out). This is the TODO-255 gate-floor artifact — the merge only survives because min_hiss_frac has no median requirement |
+| 1988-07-17 | 7126, 7541, 7554, 10754, 14671 (ltc) | not an audio merge — parser `same_as`/`derived_from` over-claims toward 1297/7126 | **Edge-fix B** (held action — clear the lineage over-claims; tj sign-off pending) |
+
+Net: **5 of 8 components flip to label review** (families are genuine same-source with
+conflicting taper labels), **1 hand-split** (1995-12-09, a gate-floor artifact →
+TODO-255), **1 ambiguous** (1997-04-05, fp-only marginal), **1 edge-fix** (1988-07-17,
+held action B). Two flip components (1995-07-04, 1997-08-17) also carry a weakly-glued
+anchor (5879, 5761) that is a candidate secondary hand-split.
+
 ## Resume tracking
 
 - [x] Evidence review (all 11 components) — 2026-07-16
 - [x] Apply A, recompute — queue 22 → 18 (2026-07-16)
+- [x] Full-corpus rescore drained 561/561 + evidence table refreshed — 2026-07-20
+  (subset 18 → 14; dispositions above)
 - [ ] B: same_as edge fixes — ON HOLD pending tj (would clear 6 more rows)
 - [ ] C: file parser TODO — ON HOLD pending tj
 - [x] Post-rescore validation — DONE 2026-07-17 on live re-runs (results above).

@@ -906,3 +906,44 @@ live tapematch run (session, crawl, /tapematch-batch) while the batch is running
    (iii) held actions B (same_as edge fixes) and C (lineage parser tie-break).
 6. The rescored runs add to the missing-analysis backlog — a later
    `triage_analysis.py --apply` + `/tapematch-batch` pass is expected, batch size 5.
+
+## RESCORE COMPLETION — DONE 2026-07-20
+
+Batch drained **561/561** (last date 2026-07-20T07:45). Runbook executed:
+- `tapematch_sync`: 2,032 dates / 6,112 families / 0 errors / 15,680 pairs synced.
+- `taper_attribution.recompute()`: 8,159 total (3,527 confirmed, 4,632 propagated,
+  **130 conflict**). Did NOT reach 0 — expected (families held on real evidence).
+- `lag_segments_json` populated: **2,272** (was 0 pre-rescore) → TODO-235 closable,
+  unblocks TODO-233 pt2.
+
+**Corroboration gate validated (full flip-sig sweep, not just 3 spot-checks).** Real
+config band re-confirmed: fp base 0.50, staircase-relaxed [0.40, 0.50), staircase
+scope="source" (either side `speed_kind` contains "staircase"). Across 205 flip-sig
+dates, latest run each: 749 staircase pairs in the relaxed band; **515 uncorroborated
+→ different_family (gate fired correctly)**; 146 corroborated → same_family (allowed);
+88 uncorroborated → same_family via other genuine paths. Only 11 residual same_family
+pairs were unexplained by a simplified corr/fp≥0.50/windowed/hiss edge model — all
+carry non-fp evidence (embeddings up to 0.60, Rule A/B/C combination merges), i.e. NOT
+bare fp-only leaks. No gate regression; the ~0.40-floor false-merge hazard is contained.
+
+Closed: TODO-254 (runbook drained), TODO-235 (lag curves persisted). TODO-234 stays
+OPEN (needs tj dispositions). TODO-255 (gate hiss_median-floor sweep) still open — the
+1995-12-09 boundary case is unchanged by the rescore; needs a sweep + sign-off.
+
+### Coverage audit 2026-07-20 — do NOT re-investigate: no full re-score needed
+Question raised: does the 07-16 corroboration gate require re-scoring the whole
+already-completed corpus? **No.** The gate is inert on any pair without a
+staircase/splice side (non-staircase pairs use the base fp bar 0.50 and never reach
+the gate), so non-staircase dates score byte-identically old vs new — which is why the
+561-date queue was scoped to staircase-affected dates only.
+Gap check over all 2,032 scored dates (latest run per date):
+- 355 dates have a staircase relaxed-band [0.40,0.50) pair;
+- 33 of those have a PRE-gate latest run (< 2026-07-17), i.e. missed by the queue;
+- only **8** of those carry an uncorroborated same_family pair the gate would flip
+  (1995-06-02, 1997-12-13, 1999-01-30, 2004-11-02, 2007-08-13, 2009-10-23,
+  2010-06-13, 2010-11-22);
+- and **0 of the 8 cross a taper boundary** — every blocked pair is same-taper or
+  unattributed, so a rescore changes NO taper attribution/conflict, only cosmetic
+  same-source family grouping on those 8 dates.
+Decision: skip the 8-date remainder; let it ride along in a future crawl/rescore pass
+if family-grouping hygiene is ever wanted. Attribution coverage is complete.
