@@ -48,6 +48,10 @@ losslessbob/
 ├── cli.py                    # Headless CLI: lookup / search / stats / import / serve
 ├── run_backend.py            # Headless entrypoint: Flask only, no GUI (phone/LAN use)
 ├── requirements.txt
+├── requirements-dev.txt      # Dev-only tools: ruff, pre-commit, pytest (CI installs this; not bundled in builds)
+├── .github/workflows/
+│   ├── ci.yml                 # Push/PR CI: backend-tests (compileall+pytest), backend-smoke (fixture-backed boot), gui-check (typecheck+build) — TODO-261
+│   └── release.yml            # Tag-triggered release build (Windows/Linux/Docker) — unchanged by TODO-261
 ├── PROJECT.md                # This file
 ├── backend/
 │   ├── app.py                # Flask REST API — all routes
@@ -62,7 +66,7 @@ losslessbob/
 │   ├── admin.html            # Mobile-friendly admin control panel (served at /admin)
 │   ├── db.py                 # SQLite layer, checksum parsing, search
 │   ├── db_queue.py           # DB-09: DatabaseWriteQueue — single writer thread, serialises all writes
-│   ├── paths.py              # Central path resolver: normal / PyInstaller-frozen / portable-ZIP builds; SITE_* dirs
+│   ├── paths.py              # Central path resolver: normal / PyInstaller-frozen / portable-ZIP builds; SITE_* dirs. `LOSSLESSBOB_APP_ROOT` env var overrides APP_ROOT in the unfrozen branch (CI/cloud-agent/fixture use, TODO-261) — unset behavior unchanged
 │   ├── version.py            # App VERSION string, read from the VERSION file at APP_ROOT
 │   ├── updater.py            # restart_application(): relaunch the app after an in-place update
 │   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
@@ -181,6 +185,8 @@ losslessbob/
 ├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only; bundled inside Electron AppImage
 ├── tools/
 │   ├── ledger.py              # CLI: BUG/TODO ledger ops (next-id, bug-open/close, todo-open/close, --dry-run); used by /session-close
+│   ├── make_fixture_db.py    # CLI: builds a deterministic synthetic install (~101 entries) for CI/onboarding tests, no real data required (TODO-261)
+│   ├── ci_smoke.py           # CLI: builds a fixture DB, boots the real backend against it, curls 4 boot-smoke routes — used by ci.yml's backend-smoke job (TODO-261)
 │   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
 │   ├── import_curated_lists.py # CLI: import curator "best of" picks (TODO-181) — carbonbit's FLglist.xlsx + 10haaf's dylan_boots.zip/years.zip → curated_lists/curated_list_entries
 │   ├── attribute_tapers.py   # CLI wrapper: backend.taper_attribution recompute → taper_attributions (--dry-run, --calibrate-fingerprints)
