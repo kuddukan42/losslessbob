@@ -2265,8 +2265,12 @@ def close_connection(db_path) -> None:
 
     Call this after deleting a temporary database file so the stale handle is
     not returned by the next get_connection() call on the same thread.
+
+    Args:
+        db_path: Database path, or None/falsy to resolve to the default
+            DB_PATH (matching get_connection()'s own fallback).
     """
-    path = str(to_long_path(Path(db_path)))
+    path = str(to_long_path(Path(db_path or DB_PATH)))
     cache = getattr(_local, "connections", None)
     if cache and path in cache:
         try:
@@ -2617,26 +2621,48 @@ def init_db(db_path=None):
         # holding a RESERVED lock that blocks the write queue's first transaction.
         conn.commit()
 
+    def _run_bg(fn) -> None:
+        """Run a one-shot init_db() background task, then close its connection.
+
+        These threads are fire-and-forget — nothing joins them or reuses their
+        thread-local get_connection(db_path) cache afterward, so leaving the
+        connection open for GC to eventually reclaim just holds 3 file
+        descriptors (db+wal+shm in WAL mode) open indefinitely per thread.
+        Harmless for a long-lived real install (one init_db() call per
+        process), but a test suite calling init_db() on a fresh db_path
+        hundreds of times in quick succession can exhaust the FD limit before
+        GC catches up (BUG-263).
+        """
+        try:
+            fn()
+        finally:
+            close_connection(db_path)
+
     # Build bloom filter in background so startup is not blocked.
     # checksum_in_bloom() returns True while _bloom is None, so all lookups
     # fall through to SQLite until the filter is ready.
-    threading.Thread(target=_rebuild_bloom_bg, args=(db_path,), daemon=True).start()
+    threading.Thread(
+        target=lambda: _run_bg(lambda: _rebuild_bloom_bg(db_path)), daemon=True
+    ).start()
 
     # One-time backfill: populate lb_master if table is empty and checksums exist.
     # wait=False (BUG-262): nothing waits on this thread's result, so don't
     # block it against a write queue a fast-moving caller may be tearing down.
     threading.Thread(
-        target=lambda: migrate_lb_master(db_path, wait=False), daemon=True
+        target=lambda: _run_bg(lambda: migrate_lb_master(db_path, wait=False)),
+        daemon=True,
     ).start()
 
     # One-time backfill: create a synthetic applied_legacy row for pre-feature imports.
     threading.Thread(
-        target=lambda: _bootstrap_flat_file_legacy(db_path), daemon=True
+        target=lambda: _run_bg(lambda: _bootstrap_flat_file_legacy(db_path)),
+        daemon=True,
     ).start()
 
     # One-time import: load Dylan performance data from ODS if not yet imported.
     threading.Thread(
-        target=lambda: import_dylan_performances(db_path), daemon=True
+        target=lambda: _run_bg(lambda: import_dylan_performances(db_path)),
+        daemon=True,
     ).start()
 
 
