@@ -1,5 +1,12 @@
 # Unified "Best of Show" Ranking — Design Spec
 
+> **✅ CLOSED — 2026-07-09. DO NOT treat as open work.** All 4 phases shipped:
+> `7a304abf` (phase 2 — `show_picks` scoring module + CLI + chained recompute),
+> `04a3b0c7` (phases 3–4 — picks/curated_lists API, Library badges/filters, Picks
+> tab, EvidenceList). Live table: `show_picks`; live routes: `/api/picks/for/<lb>`,
+> `/api/curated_lists` (GET/POST/DELETE), `/api/derived/recompute`. TODO-181/182/
+> 183/186/187 all closed. Nothing open here.
+
 Spec author: Fable 5, 2026-07-06. Execution target: Sonnet session(s).
 Consolidates TODO-181 (curated lists — remaining API/UI), TODO-182 (community pick —
 decision recorded below), TODO-183 (Concert Ranker — done, consumed here), TODO-186

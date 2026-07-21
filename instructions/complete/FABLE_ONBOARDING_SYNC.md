@@ -1,5 +1,13 @@
 # New-User Onboarding & Data Sync — Design Spec
 
+> **✅ CLOSED — 2026-07-10. DO NOT treat as open work.** Phases P1–P4 shipped
+> 2026-07-10 (`55501726` P1 site-data core/files split + GitHub release,
+> `a9759209` P2 github_check/install + onboarding/status, `824140c6` P3 first-run
+> wizard + Home checklist, `5cf6c1c7` P4 README rewrite). TODO-216/217/218 closed.
+> Riders spun off and tracked separately: TODO-224/225 (geocoder/fingerprinting,
+> DONE), TODO-226 (BobTalk/Olof surfacing, DONE), TODO-228 (2013+ PDF chronicles).
+> Nothing open here.
+
 Spec author: Fable 5, 2026-07-06. Execution target: Sonnet session(s).
 New work (no existing TODOs consolidated); allocate TODO IDs at session close.
 Companion reading: PROJECT.md §Master Data (export/import, GitHub release flow),

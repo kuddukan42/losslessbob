@@ -5,6 +5,20 @@ spec. Audience: **sonnet implementation sessions** — every bite states exact c
 and accept criteria; when reality diverges from a stated fact below, stop and re-verify
 before improvising.
 
+> **✅ CLOSED — 2026-07-21, same day as locked. DO NOT treat as open work.**
+> B1–B6 all shipped (TODO-261). `.github/workflows/ci.yml` live, green on real
+> GitHub Actions HEAD. One deviation from D-3: the `tapematch-tests` job was
+> dropped, not shipped — validating it locally revealed the suite shells out
+> to live `tapematch_session.py`/`.venv-nmfp` subprocesses (test_batch_queue.py,
+> test_emb_live.py), unsafe to run against a live tapematch session/crawl and
+> not meaningful in a CI runner with no real audio fixtures; tj chose to drop
+> the job per D-3's own "drop only if it proves flaky" fallback. B5 triage
+> found + fixed 3 real pre-existing bugs the suite had never been run against
+> in a genuinely clean environment before: BUG-261 (bloom filter race),
+> BUG-262 (migrate_lb_master background-thread blocking pileup), BUG-263 (the
+> actual segfault cause — init_db()'s four background threads leaking file
+> descriptors under fast test churn).
+
 Two pieces that reinforce each other:
 1. a **synthetic fixture dataset generator** — a data-shaped miniature of the real
    install (~100 entries) that anything (CI, cloud agents, onboarding tests) can build
@@ -133,15 +147,13 @@ session actually changed — `/backend-restart` + targeted tests still apply.)
 
 ---
 
-## 3. Decisions for tj (defaults apply if unaddressed)
+## 3. Decisions for tj — LOCKED 2026-07-21 (all defaults confirmed)
 
-- **D-1 committed fixture DB** — default: generator-only (D2). Alternative: also
-  commit a pre-built `fixture.db` for instant cloud-agent boots.
-- **D-2 trigger scope** — default: every push on every branch. Alternative:
-  `main` + PRs only (halves Actions minutes; pushes on work/* branches lose the net).
-- **D-3 tapematch job** — default: include (deps are light). Drop if flaky on CI.
-- **D-4 README badge** — default: add the standard Actions status badge to README.md
-  (public repo, quiet advertising). Skip if you'd rather not surface build state.
+- **D-1 committed fixture DB** → **generator-only (D2).** No prebuilt binary in git.
+- **D-2 trigger scope** → **every push on every branch + PRs to main.** Actions are
+  free on the public repo, so max safety net at zero cost.
+- **D-3 tapematch job** → **include** (light deps). Drop only if it proves flaky (B5).
+- **D-4 README badge** → **add** the standard Actions status badge to README.md.
 
 ---
 

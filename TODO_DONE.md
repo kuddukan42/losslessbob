@@ -1,6 +1,61 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-261: CI on GitHub Actions + synthetic fixture DB generator (FABLE_CI_FIXTURE.md)
+Priority: High
+Status: Done
+Added: 2026-07-21
+Closed: 2026-07-21
+Description: Spec: instructions/FABLE_CI_FIXTURE.md (D-1..D-4 locked 2026-07-21). Bites B1-B6: LOSSLESSBOB_APP_ROOT env override, tools/make_fixture_db.py (deterministic ~101-entry synthetic install), tools/ci_smoke.py (fixture-backed boot smoke), .github/workflows/ci.yml (backend-tests/backend-smoke/gui-check on every push+PR), triage of real CI failures, docs contract (CLAUDE.md/PROJECT.md/README badge).
+Shipped B1-B6. .github/workflows/ci.yml live with 3 jobs (backend-tests, backend-smoke, gui-check) — all green on real GitHub Actions HEAD (kuddukan42/losslessbob, run 29869608572). tapematch-tests job dropped per tj's D-3 call: its suite shells out to live tapematch_session.py/.venv-nmfp subprocesses, unsafe to run locally against a live crawl and not meaningful in CI (no real audio fixtures). Along the way found + fixed 3 real pre-existing bugs surfaced by running the suite in a genuinely clean environment for the first time: BUG-261 (bloom filter race), BUG-262 (migrate_lb_master background-thread blocking pileup), BUG-263 (init_db() background-thread FD leak, the actual segfault cause). Docs contract done: CLAUDE.md CI-citation rule, PROJECT.md file-structure entries, README Actions badge.
+
+TODO-166: Collection screen — view/filter folders stored in nonstandard locations (not matching mount routing)
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-21
+Description: Add a view or filter on gui_next/src/renderer/src/screens/ScreenCollection.tsx
+  to surface my_collection folders whose disk_path doesn't match the expected mount/year
+  routing — i.e. _mount_for_path (backend/integrity_monitor.py:115) resolves to a mount
+  other than the one upsert_collection_routes (backend/db.py:5057) says that folder's year
+  should route to, or resolves to no configured mount at all. Lets the user spot folders
+  that drifted to a nonstandard location instead of finding them by accident.
+Added a 'Misrouted' filter to the Collection screen: backend _route_status() annotates each folder with its mount/year routing verdict (wrong_mount/no_mount/etc.); frontend surfaces a conditional filter chip + ⚠ Disk Path marker with an expected-vs-actual tooltip.
+
+TODO-249: Improve xref handling
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Renumbered: from TODO-155 on 2026-07-15 (TODO-248 — id collided with the unrelated done
+  TODO-155 "Pipeline stage icons" in TODO_DONE.md)
+Closed: 2026-07-21
+Description: xref handling needs improvement. Current xref logic lives in the `checksums`
+  table (backend/db.py:114, idx_lb_xref0 partial index at :121-122), importer.py:65-164,
+  and flat_file.py:362-530 (sync/diff logic comparing xref values between incoming and
+  current rows). Lookup-side, the Pipeline Lookup UI surfaces an "Xref" status pill
+  (see BUG-201, LookupDetail.tsx STATE_TONE). Specific improvements not yet scoped —
+  needs follow-up on what's currently breaking/missing in xref handling before
+  implementation.
+Superseded — xref improvements already complete; specific scope never materialized and current xref handling (checksums table, importer/flat_file sync, Lookup Xref pill) covers the need.
+
+TODO-195: Backend pipeline step.label strings need i18n key+params, not rendered English
+Priority: Low
+Status: Done
+Added: 2026-07-01
+Closed: 2026-07-21
+Description: BUG-201's frontend-generated Pipeline UI vocabulary (stage names, step states,
+  bucket labels) is now fully translated, but backend/app.py's pipeline step results
+  (verify/lookup/lbdir/rename/file `label` and `error`/`error_code` payload fields) still return
+  pre-rendered English strings — e.g. "Pass", "Missing 3", "Incomplete match", "Filed to
+  Vault_A" — which the frontend displays as-is (see ScreenPipeline.tsx step.label usages and the
+  no_checksums/shntool_missing/mismatch paths). Some are static enough for a frontend lookup map
+  (done for STATE_LABEL/ERROR_MSG, keyed by stable status/error_code enums), but others embed
+  dynamic data (counts, filenames, mount names) baked into the string server-side, which can't be
+  cleanly localized without the backend returning a translation key + params instead of a
+  finished sentence. Requires backend route changes (pipeline check/lookup/rename/file handlers
+  in app.py) plus a frontend mapping layer — deferred out of BUG-201's scope by user decision.
+Backend pipeline steps now emit label_key + label_params (app.py _pipeline_process_folder); frontend PIPELINE_LABEL map + stepLabelText() render via t(key, params) with raw-label fallback (ScreenPipeline.tsx); 29 en.json pipeline.stepLabels.* keys added. Additive/backward-compatible; other locales are a follow-up /gui-next-i18n pass. typecheck+build clean.
+
 TODO-255: Staircase corroboration gate: consider hiss_median floor (boundary pass observed)
 Priority: Low
 Status: Done

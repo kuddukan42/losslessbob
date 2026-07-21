@@ -1,5 +1,14 @@
 # Taper Attribution Engine — Design Spec
 
+> **✅ CLOSED — 2026-07-15. DO NOT treat as open work.** Phases 1–2 shipped
+> 2026-07-09 (`7a304abf` schema/L0/L1/CLI, `947845bd` confirm-reject API + Library
+> pill + DetailPanel). Phase 3 (Layer-2 fingerprints, TODO-214) built + calibrated
+> but **gated OFF** by decision — `backend/taper_fingerprints.py:72 LAYER2_ENABLED=False`
+> (precision didn't transfer past era/format confounds); revisit paths in
+> WORK_PACKAGE_2026-07-14.md Session 6. Live tables: `taper_attributions`,
+> `taper_confirmations`. Only residual work is TODO-234 (curator conflict-review
+> queue this engine generates) — a curator decision, not a build task.
+
 Spec author: Fable 5, 2026-07-06. Execution target: Sonnet session(s).
 Consolidates and extends TODO-173 (confirmed taper tag). Feeds FABLE_UNIFIED_RANKING.md.
 

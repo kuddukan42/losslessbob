@@ -1,9 +1,17 @@
 # Spec Pack Integration Notes
 
+> **✅ CLOSED — the whole pack shipped; this is a historical cross-review, NOT a
+> live plan.** All four specs are implemented and live in `instructions/complete/`:
+> UNIFIED_RANKING (closed 2026-07-09), TAPER_ATTRIBUTION (2026-07-15, Layer-2 gated
+> off), ONBOARDING_SYNC (2026-07-10), LISTENING_INSIGHT_IDEAS. The F1 chained
+> `/api/derived/recompute` endpoint and the §2 ordering below were executed as
+> written. Retained only as a record of the amendments (F1–F6) baked into the code.
+> **Do not re-implement from §2.**
+
 Author: Fable 5, 2026-07-06. Cross-review of the four specs in `instructions/`
 (FABLE_TAPER_ATTRIBUTION, FABLE_UNIFIED_RANKING, FABLE_LISTENING_INSIGHT_IDEAS,
-FABLE_ONBOARDING_SYNC). **Read this before implementing any of them.** Each finding
-says which spec(s) it amends; the specs themselves are unchanged.
+FABLE_ONBOARDING_SYNC). Each finding says which spec(s) it amended; the specs
+themselves are unchanged.
 
 ---
 

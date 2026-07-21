@@ -1,3 +1,73 @@
+[2026-07-21] — feat(backend): CI on GitHub Actions + synthetic fixture DB generator (TODO-261)
+Added: backend/paths.py — LOSSLESSBOB_APP_ROOT env override (unfrozen branch
+  only) so CI/cloud agents/tests can point the whole backend at a throwaway
+  data dir without touching real data/.
+Added: tools/make_fixture_db.py — deterministic synthetic install generator
+  (~101 entries/29 dates): multi-source dates, a two-show date, an xx-date,
+  a private entry + lb_master row, an xref fileset group, 2 tapematch
+  families, lineage-bearing descriptions, a curated list, olof song/event
+  rarity shapes, bobdylan/setlistfm cross-refs, entry_files, my_collection
+  rows. Runs the real derived recompute chain in-process; fixture tapers
+  registered via the existing user_taper_aliases mechanism (TODO-241) so
+  Layer 0 taper attribution produces real rows without fake names in the
+  real known-taper list.
+Added: tools/ci_smoke.py — builds the fixture, boots the real backend
+  against it, curls the 4 cheap boot-smoke routes with a sanity check each.
+Added: .github/workflows/ci.yml — backend-tests (compileall + full pytest
+  suite), backend-smoke (ci_smoke.py), gui-check (typecheck+build) on every
+  push (all branches) + PRs to main. tapematch-tests dropped per tj: its
+  suite shells out to live tapematch_session.py/.venv-nmfp subprocesses,
+  unsafe against a live crawl and not meaningful without real audio
+  fixtures in CI. release.yml unchanged. Verified green on real GitHub
+  Actions HEAD (kuddukan42/losslessbob run 29869608572).
+Fixed: backend/db.py (BUG-261) — checksum bloom filter could race init_db()'s
+  own caller: a background rebuild thread could snapshot the checksums table
+  before the caller's own inserts landed (same db_path, so BUG-187's cross-DB
+  guard didn't catch it), silently reporting freshly-inserted checksums as
+  NOT FOUND for the rest of the session. rebuild_bloom() now stamps the row
+  count it was built from; a live-count mismatch skips the bloom for that
+  call and kicks off a fresh rebuild.
+Fixed: backend/db.py (BUG-262) — migrate_lb_master()'s init_db()-spawned
+  background thread could block up to 30s against a write queue a fast test
+  suite was already tearing down. Added a wait=False fire-and-forget path
+  for that one caller; synchronous callers (importer.py, flat_file.py)
+  unaffected.
+Fixed: backend/db.py (BUG-263) — the real segfault cause: init_db()'s four
+  background threads each open a sqlite3 connection that was never
+  explicitly closed (left for GC), leaking 3 FDs (WAL mode) per thread under
+  fast test churn until GitHub Actions' runner ran out and crashed the
+  interpreter outright. Each background task now explicitly closes its
+  connection when done.
+Changed: .claude/CLAUDE.md, PROJECT.md, README.md — CI citation rule, new
+  files in the file-structure tree, Actions status badge.
+[2026-07-21] — feat(gui): Collection "Misrouted" filter — surface folders in nonstandard mount locations (TODO-166)
+Added: backend/db.py — _route_status() classifies each my_collection folder's
+  disk_path against its show-year's configured routing: compares the mount the
+  path actually sits under (_mount_label_for_path, longest-prefix match) with the
+  mount collection_routes says that year should route to. Returns route_status
+  (ok / wrong_mount / no_mount / no_route / no_date) + actual/expected mount
+  labels + year on every get_collection() row. Pure string matching, no disk I/O.
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx — a conditional
+  "Misrouted" filter chip (shown only when drift exists) surfacing wrong_mount +
+  no_mount rows, a ⚠ marker in the Disk Path cell with an expected-vs-actual
+  tooltip, and RouteStatus typing on CollectionRow. Chip label is hardcoded
+  English, consistent with the sibling filter chips (no new i18n keys).
+Closed: TODO-249 (Improve xref handling) — superseded/already-covered, per tj.
+[2026-07-21] — feat(backend): pipeline step labels return i18n key+params, not rendered English (TODO-195)
+Changed: backend/app.py — _pipeline_process_folder now emits label_key (stable
+  snake_case enum) + label_params (dynamic values) on every pipeline step dict
+  (verify/lookup/lbdir/rename/file), alongside the existing English `label` field
+  which is retained as a fallback. Added _file_blocked_label_key() helper. Additive
+  and backward-compatible — no field removed.
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx — added PIPELINE_LABEL
+  (label_key → i18n key) map + stepLabelText() helper mirroring the STATE_LABEL/
+  ERROR_MSG convention; all 5 raw {step.label} render sites and the deriveFolderStatus
+  reason sites now translate via t(key, params) with raw-label fallback; the 4
+  frontend-synthesized labels (Renamed/Filed/2×Failed) set label_key/label_params;
+  the 'Renamed' text guard now checks label_key === 'renamed'. Locale-invariant data
+  labels (matched LB-numbers, arbitrary error strings) deliberately keep label_key null.
+Added: gui_next/src/renderer/src/locales/en.json — pipeline.stepLabels.* (29 keys).
+  Other locales (de/fr/es/it/nl) fall back to English until a follow-up /gui-next-i18n pass.
 [2026-07-21] — fix(scraper): hiss_median floor on the staircase corroboration gate (TODO-255)
 Fixed: tools/tapematch/tapematch/verdict.py — _staircase_corroborated: the hiss
   corroboration branch required hiss_frac >= 0.05 with no median requirement, so
