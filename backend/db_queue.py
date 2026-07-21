@@ -89,6 +89,20 @@ class DatabaseWriteQueue:
                 if result_event is not None:
                     result_event.set()
 
+        # Close the connection from the thread that opened it (BUG-264).  The
+        # writer owns self._conn; shutdown() only signals + joins and never
+        # touches it.  If shutdown() closed self._conn from the caller thread
+        # while join() had timed out with a write still in flight here, that
+        # write would touch a freed connection — a cross-thread SQLite
+        # use-after-free that segfaults the interpreter (flaky under CI's
+        # slower/contended disk, where a 2 s conftest join can lapse).
+        if self._conn is not None:
+            try:
+                self._conn.close()
+            except Exception:
+                pass
+            self._conn = None
+
     @property
     def db_path(self) -> str:
         """Absolute path of the database this queue's writer connection is bound to."""
@@ -137,11 +151,12 @@ class DatabaseWriteQueue:
         """
         self._queue.put(None)
         self._thread.join(timeout)
-        if self._conn:
-            try:
-                self._conn.close()
-            except Exception:
-                pass
+        # Deliberately does NOT close self._conn: the writer thread closes its
+        # own connection when it drains the sentinel (BUG-264).  If join() above
+        # timed out with a write still in flight, closing from this thread would
+        # be a use-after-free → SIGSEGV.  A timed-out writer briefly leaks its
+        # connection, then closes it itself once the in-flight write finishes —
+        # safe; a segfault is not.
 
 
 _write_queue: DatabaseWriteQueue | None = None

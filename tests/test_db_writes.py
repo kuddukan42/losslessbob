@@ -2190,3 +2190,61 @@ class TestReassignCollection:
                 db.reassign_collection(104, 104, db_path=db_path)
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
+
+
+class TestWriteQueueShutdown:
+    """BUG-264: the writer thread must own its own connection's lifecycle.
+
+    shutdown() closing self._conn from the caller thread was a cross-thread
+    SQLite use-after-free: when join() timed out with a write still in flight,
+    the caller freed the connection out from under the running writer →
+    SIGSEGV (flaky under CI's slower disk). The writer now closes its own
+    connection when it drains the sentinel; shutdown() only signals + joins.
+    """
+
+    def test_shutdown_lets_writer_close_its_own_connection(self):
+        from backend.db_queue import DatabaseWriteQueue
+
+        tmp = tempfile.mkdtemp(prefix="lbwrite_test_")
+        try:
+            wq = DatabaseWriteQueue(os.path.join(tmp, "wq.db"))
+            wq.execute(lambda c: c.execute(
+                "CREATE TABLE t(x INTEGER)"
+            ))
+            wq.shutdown(timeout=5.0)
+            # Writer thread exited and closed its own connection — the caller
+            # never touched self._conn.
+            assert not wq._thread.is_alive()
+            assert wq._conn is None
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_shutdown_does_not_close_connection_from_caller_on_timeout(self):
+        """A write still in flight past the join timeout must not be freed by
+        the caller — shutdown() returns cleanly and the writer closes later."""
+        from backend.db_queue import DatabaseWriteQueue
+
+        tmp = tempfile.mkdtemp(prefix="lbwrite_test_")
+        try:
+            wq = DatabaseWriteQueue(os.path.join(tmp, "wq.db"))
+            started = threading.Event()
+            release = threading.Event()
+
+            def _slow(c):
+                started.set()
+                release.wait(5.0)  # hold the writer past shutdown's join timeout
+
+            wq.execute_async(_slow)
+            assert started.wait(5.0)
+            # join() times out while _slow still holds the connection; shutdown
+            # must NOT close it from here (that was the segfault) and must not
+            # raise.
+            wq.shutdown(timeout=0.1)
+            # Now let the writer finish; it drains the sentinel and closes its
+            # own connection.
+            release.set()
+            wq._thread.join(5.0)
+            assert not wq._thread.is_alive()
+            assert wq._conn is None
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
