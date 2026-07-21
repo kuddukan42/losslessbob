@@ -2,6 +2,12 @@ name: CI
 
 on:
   push:
+    # Pure-bookkeeping commits (CHANGELOG/BUGS_DONE/TODO ledger moves, docs)
+    # shouldn't re-run the whole suite — the code commit they follow already
+    # did. paths-ignore only skips when EVERY changed file matches, so a mixed
+    # code+docs commit still runs. PR-to-main below stays the unconditional gate.
+    paths-ignore:
+      - '**.md'
   pull_request:
     branches: [main]
 
