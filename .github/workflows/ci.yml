@@ -29,6 +29,16 @@ jobs:
       - name: Compile check
         run: python -m compileall -q backend tools concert_ranker
 
+      - name: Ensure data/ exists
+        # A handful of modules (scheduler.py's file watcher, importer.py's
+        # temp-import path) bind DATA_DIR at import time via `from
+        # backend.paths import DATA_DIR`, so a test's `_paths.DATA_DIR =
+        # tmp_path` monkeypatch doesn't reach them — they always resolve to
+        # the real repo-root data/. Every dev checkout has this directory
+        # (gitignored, created once by ensure_data_dirs() on first real run);
+        # a fresh CI checkout doesn't, so recreate the same invariant here.
+        run: mkdir -p data
+
       - name: Backend test suite
         run: python -m pytest tests/ -q
 
