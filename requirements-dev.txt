@@ -4,3 +4,4 @@
 
 ruff==0.15.16
 pre-commit==4.6.0
+pytest==9.0.3
