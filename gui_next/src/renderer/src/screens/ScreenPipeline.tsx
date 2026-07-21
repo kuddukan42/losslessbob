@@ -589,15 +589,30 @@ function VerifyStageContent({ step, row, onRun }: {
   const handleGenerate = useCallback(async () => {
     setGenerating(true)
     try {
-      await fetch(`${BASE}/api/verify/generate`, {
+      const resp = await fetch(`${BASE}/api/verify/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ folders: [row.folderPath] }),
       })
+      const data = await resp.json().catch(() => ({}))
+      const result = data?.results?.[0]
+      const errors: string[] = result?.errors ?? []
+      const generated: string[] = result?.generated ?? []
+      if (!resp.ok || data?.error) {
+        setToast({ msg: data?.error ?? t('pipeline.verify.generateFailed'), tone: 'bad' })
+      } else if (errors.length) {
+        setToast({ msg: errors[0], tone: 'bad' })
+      } else if (generated.length === 0) {
+        // Nothing was written and no error reported — surface it rather than
+        // silently re-running verify into the same "no checksums" state.
+        setToast({ msg: t('pipeline.verify.generateNothing'), tone: 'bad' })
+      }
       onRun(['verify'])
-    } catch { /* silent */ }
+    } catch {
+      setToast({ msg: t('pipeline.verify.generateFailed'), tone: 'bad' })
+    }
     finally { setGenerating(false) }
-  }, [row.folderPath, onRun])
+  }, [row.folderPath, onRun, t])
 
   if (step.status === 'mute' && row.running) {
     return (
@@ -722,6 +737,57 @@ function VerifyStageContent({ step, row, onRun }: {
   )
 }
 
+/**
+ * Force this folder to a specific LB#, overriding the checksum auto-match.
+ *
+ * Needed when the sidecars mislead the lookup — e.g. a stale or alternate
+ * checksum file under extras/ makes a single transfer resolve to the wrong LB
+ * or to a false multi-LB "match". Each candidate button (and the manual entry)
+ * pins one LB via PUT /api/folder_link (replace_folder_link), which supersedes
+ * any auto-written multi-LB links and re-runs LBDIR/verify against that entry.
+ */
+function OverridePanel({ candidates, pinBusyLb, manualLb, setManualLb, onPin }: {
+  candidates: number[]
+  pinBusyLb: number | null
+  manualLb: string
+  setManualLb: (v: string) => void
+  onPin: (lb: number) => void
+}): React.JSX.Element {
+  const { t } = useTranslation()
+  const busy = pinBusyLb !== null
+  const manualN = parseInt(manualLb, 10)
+  const manualValid = manualLb !== '' && Number.isFinite(manualN) && manualN > 0
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, padding: '10px 12px',
+      borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)' }}>
+      <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+        {t('pipeline.lookup.overrideInfo')}
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, alignItems: 'center' }}>
+        {candidates.map(n => (
+          <Button key={n} variant="secondary" size="sm" disabled={busy}
+            onClick={() => onPin(n)}>
+            {t('pipeline.lookup.overrideUse', { lb: `LB-${String(n).padStart(5, '0')}` })}
+          </Button>
+        ))}
+        <input
+          value={manualLb}
+          onChange={e => setManualLb(e.target.value.replace(/[^0-9]/g, ''))}
+          onKeyDown={e => { if (e.key === 'Enter' && manualValid && !busy) onPin(manualN) }}
+          placeholder={t('pipeline.lookup.overrideManual')}
+          style={{ width: 110, fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)',
+            background: 'transparent', outline: '1px solid var(--lbb-border)', border: 'none',
+            borderRadius: 4, padding: '3px 7px', color: 'var(--lbb-fg)' }}
+        />
+        <Button variant="primary" size="sm" disabled={!manualValid || busy}
+          onClick={() => onPin(manualN)}>
+          {t('pipeline.lookup.overrideApply')}
+        </Button>
+      </div>
+    </div>
+  )
+}
+
 function LookupStageContent({ step, row, onRun }: {
   step: StepResult
   row: PipelineRow
@@ -729,6 +795,8 @@ function LookupStageContent({ step, row, onRun }: {
 }): React.JSX.Element {
   const { t } = useTranslation()
   const [pinBusyLb, setPinBusyLb] = useState<number | null>(null)
+  const [showOverride, setShowOverride] = useState(false)
+  const [manualLb, setManualLb] = useState('')
 
   const handlePin = useCallback(async (lb: number) => {
     setPinBusyLb(lb)
@@ -802,7 +870,21 @@ function LookupStageContent({ step, row, onRun }: {
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
           {isMultiLb ? t('pipeline.lookup.multiLbMsg') : t('pipeline.lookup.flowsAuto')}
         </div>
-        <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup'])}>{t('pipeline.lookup.rerun')}</Button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup'])}>{t('pipeline.lookup.rerun')}</Button>
+          {!showOverride && (
+            <Button variant="ghost" size="sm" icon="edit" onClick={() => setShowOverride(true)}>{t('pipeline.lookup.override')}</Button>
+          )}
+        </div>
+        {showOverride && (
+          <OverridePanel
+            candidates={step.lb_numbers ?? (step.lb_number != null ? [step.lb_number] : [])}
+            pinBusyLb={pinBusyLb}
+            manualLb={manualLb}
+            setManualLb={setManualLb}
+            onPin={handlePin}
+          />
+        )}
       </div>
     )
   }

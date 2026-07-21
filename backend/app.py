@@ -326,13 +326,31 @@ def _find_lbdir_in_folder(folder: Path) -> "Path | None":
     return None
 
 
+def _pinned_lb_for_folder(folder: Path) -> int | None:
+    """LB# of a *single* explicit folder→LB pin, or None.
+
+    A pin (folder_lb_link, written by "Pin & continue" / the pipeline "Override
+    LB#" control) is the user's explicit override and must win over the
+    my_collection/name-regex heuristics: otherwise a folder whose stale
+    my_collection row or ambiguous "(LB-A+LB-B)" name disagrees with the pin
+    keeps resolving to the wrong LB even after the user overrides it (BUG-257).
+    Multiple links (a legacy multi-LB auto-link) are ambiguous, so this returns
+    None and the caller's existing order applies until the user re-pins one.
+    """
+    links = database.get_folder_links(str(folder))
+    return links[0]["lb_number"] if len(links) == 1 else None
+
+
 def _resolve_lb_number_for_folder(folder: Path) -> int | None:
-    """Best-effort LB# for a folder: my_collection row, else name regex, else pin.
+    """Best-effort LB# for a folder: single pin, then my_collection row, then name regex.
 
     Used by the LBDIR reconcile/extras endpoints to know which lb_number's
     qBittorrent tracking (if any) needs a file-path sync after files move
     within folder.
     """
+    pinned = _pinned_lb_for_folder(folder)
+    if pinned is not None:
+        return pinned
     with database.get_connection() as conn:
         row = conn.execute(
             "SELECT lb_number FROM my_collection WHERE disk_path=?", (str(folder),)
@@ -2526,14 +2544,17 @@ def create_app() -> Flask:
             for folder_path in folders:
                 folder = Path(folder_path)
 
-                # Look up LB number: try my_collection first, then parse folder name,
-                # then fall back to the caller-supplied hint (pipeline lookup result).
-                with database.get_connection() as conn:
-                    row = conn.execute(
-                        "SELECT lb_number FROM my_collection WHERE disk_path=?",
-                        (str(folder),)
-                    ).fetchone()
-                lb_number = row["lb_number"] if row else None
+                # LB number: a single explicit pin (Override LB# / Pin & continue)
+                # wins over the heuristics (BUG-257); else my_collection, then the
+                # folder name, then the caller-supplied hint (pipeline lookup result).
+                lb_number = _pinned_lb_for_folder(folder)
+                if lb_number is None:
+                    with database.get_connection() as conn:
+                        row = conn.execute(
+                            "SELECT lb_number FROM my_collection WHERE disk_path=?",
+                            (str(folder),)
+                        ).fetchone()
+                    lb_number = row["lb_number"] if row else None
 
                 if lb_number is None:
                     m = re.search(r'LB-(\d+)', folder.name, re.IGNORECASE)
@@ -2610,15 +2631,17 @@ def create_app() -> Flask:
             for folder_path in folders:
                 folder = Path(folder_path)
 
-                # Look up LB number: try my_collection first, then parse folder name,
-                # then fall back to the caller-supplied hint (pipeline lookup result).
-                with database.get_connection() as conn:
-                    row = conn.execute(
-                        "SELECT lb_number FROM my_collection WHERE disk_path=?",
-                        (str(folder),)
-                    ).fetchone()
-
-                lb_number = row["lb_number"] if row else None
+                # LB number: a single explicit pin (Override LB# / Pin & continue)
+                # wins over the heuristics (BUG-257); else my_collection, then the
+                # folder name, then the caller-supplied hint (pipeline lookup result).
+                lb_number = _pinned_lb_for_folder(folder)
+                if lb_number is None:
+                    with database.get_connection() as conn:
+                        row = conn.execute(
+                            "SELECT lb_number FROM my_collection WHERE disk_path=?",
+                            (str(folder),)
+                        ).fetchone()
+                    lb_number = row["lb_number"] if row else None
 
                 if lb_number is None:
                     m = re.search(r'LB-(\d+)', folder.name, re.IGNORECASE)
@@ -2728,12 +2751,15 @@ def create_app() -> Flask:
                 result = checksum_utils.find_reconcilable_files(folder, lbdir_path)
                 result["folder"] = str(folder)
 
-                # Look up lb_number to scan site/files for still-missing entries
-                with database.get_connection() as conn:
-                    row = conn.execute(
-                        "SELECT lb_number FROM my_collection WHERE disk_path=?", (str(folder),)
-                    ).fetchone()
-                lb_number = row["lb_number"] if row else None
+                # Look up lb_number to scan site/files for still-missing entries.
+                # A single explicit pin wins over the heuristics (BUG-257).
+                lb_number = _pinned_lb_for_folder(folder)
+                if lb_number is None:
+                    with database.get_connection() as conn:
+                        row = conn.execute(
+                            "SELECT lb_number FROM my_collection WHERE disk_path=?", (str(folder),)
+                        ).fetchone()
+                    lb_number = row["lb_number"] if row else None
                 if lb_number is None:
                     m = re.search(r'LB-(\d+)', folder.name, re.IGNORECASE)
                     if m:
@@ -7285,14 +7311,24 @@ def create_app() -> Flask:
 
         # ── Step 2: Lookup ────────────────────────────────────────────────────
         if "lookup" in steps:
+            from backend.checksum_utils import _is_reconciled_extra
             chk_parts: list[str] = []
             _chk_exts = {".ffp", ".md5", ".st5"}
             for f in sorted(folder.rglob("*")):
-                if f.is_file() and f.suffix.lower() in _chk_exts:
-                    try:
-                        chk_parts.append(f.read_text(errors="ignore"))
-                    except OSError:
-                        pass
+                if not (f.is_file() and f.suffix.lower() in _chk_exts):
+                    continue
+                # Never ingest sidecars that were deliberately set aside under
+                # extras/ (move_extras). Those are superseded or alternate-version
+                # checksums; parsing them merges a *different* fileset's hashes
+                # into the input and makes the lookup falsely report a multi-LB
+                # "perfect match" (e.g. a folder holding one transfer whose extras/
+                # still carries the other transfer's .ffp/.md5). See BUG-257.
+                if _is_reconciled_extra(f.relative_to(folder).as_posix()):
+                    continue
+                try:
+                    chk_parts.append(f.read_text(errors="ignore"))
+                except OSError:
+                    pass
 
             if not chk_parts:
                 row["lookup"] = {"status": "warn", "label": "No checksums", "lb_number": None}
@@ -7369,9 +7405,17 @@ def create_app() -> Flask:
                     # doesn't) means the files on disk diverge from the
                     # archived copy and needs human review, even though the
                     # LB# itself is correctly identified.
-                    # For multi-LB matches matched == given * N (one row per LB)
-                    # so skip the ratio check and treat it as ok.
-                    full_match = summary.get("matched") == summary.get("given")
+                    #
+                    # Test on *distinct unmatched* checksums, not
+                    # summary["matched"]: when the identical fileset is archived
+                    # under more than one LB (duplicate entries — even when they
+                    # collapse to one canonical after alias resolution), every
+                    # checksum matches N times so summary["matched"] == given*N.
+                    # A naive matched==given check then never holds and wedges a
+                    # genuinely-complete folder in "Incomplete match" forever —
+                    # pinning either LB can't clear it because the guard sees the
+                    # inflated global count, not the pinned LB's own totals.
+                    full_match = summary.get("unmatched", 1) == 0
                     is_multi_lb = len(lb_numbers) > 1
 
                     if lb_number is not None and (full_match or is_multi_lb):
