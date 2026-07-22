@@ -88,6 +88,34 @@ _data_dl_state = {
 }
 _data_dl_lock = threading.Lock()
 
+
+def get_update_status() -> dict:
+    """Return a snapshot of the current app-update progress state.
+
+    Module-level helper (TODO-262) so ``backend/activity.py`` can read this
+    worker's status without app.py depending on it — mirrors the
+    ``/api/update/status`` route body.
+
+    Returns:
+        Dict copy of ``_update_state``.
+    """
+    with _update_lock:
+        return dict(_update_state)
+
+
+def get_data_dl_status() -> dict:
+    """Return a snapshot of the current data-ZIP download/extract state.
+
+    Module-level helper (TODO-262) for ``backend/activity.py`` — mirrors the
+    ``/api/data/download/status`` route body.
+
+    Returns:
+        Dict copy of ``_data_dl_state``.
+    """
+    with _data_dl_lock:
+        return dict(_data_dl_state)
+
+
 # ── Async pipeline job (TODO-205 Phase 2 / P2) ─────────────────────────────────
 _PIPELINE_JOB_LOCK = threading.Lock()
 _PIPELINE_JOB: dict = {
@@ -102,6 +130,24 @@ _PIPELINE_JOB: dict = {
     "cancelled": False,
 }
 _PIPELINE_CANCEL_EVENT = threading.Event()
+
+
+def get_pipeline_run_status() -> dict:
+    """Return a snapshot of the async pipeline job status.
+
+    Module-level helper (TODO-262) for ``backend/activity.py`` — mirrors the
+    ``/api/pipeline/run/status`` route body.
+
+    Returns:
+        Dict copy of ``_PIPELINE_JOB`` with its nested containers copied too.
+    """
+    with _PIPELINE_JOB_LOCK:
+        snapshot = dict(_PIPELINE_JOB)
+        snapshot["results"] = dict(_PIPELINE_JOB["results"])
+        snapshot["in_progress"] = list(_PIPELINE_JOB["in_progress"])
+        snapshot["errors"] = list(_PIPELINE_JOB["errors"])
+    return snapshot
+
 
 # Blocked file-step codes that need human configuration (a missing recording
 # date or an unroutable year) — these escalate a folder to "attn". Every other
@@ -316,6 +362,19 @@ _spectro_state = {
 _spectro_lock = __import__("threading").Lock()
 
 
+def get_spectrogram_status() -> dict:
+    """Return a snapshot of the spectrogram batch generation worker state.
+
+    Module-level helper (TODO-262) for ``backend/activity.py`` — mirrors the
+    ``/api/spectrogram/status`` route body.
+
+    Returns:
+        Dict copy of ``_spectro_state``.
+    """
+    with _spectro_lock:
+        return dict(_spectro_state)
+
+
 def _find_lbdir_in_folder(folder: Path) -> "Path | None":
     """Return the first lbdir*.txt (or LBF-*-lbdir.txt) found in folder, or None."""
     if not folder.exists():
@@ -422,6 +481,68 @@ def _quality_metrics_for(conn: sqlite3.Connection, scan_id: int, lb_number: int)
         "harsh_label": band("harsh_ratio_db"),
         "source_flags": source_flags,
     }
+
+
+def get_tapematch_crawl_status() -> dict:
+    """Read-only status for the detached TapeMatch library crawl.
+
+    Module-level helper (TODO-262) so ``backend/activity.py`` can read this
+    worker's status without app.py depending on it — mirrors the
+    ``/api/tapematch/crawl/status`` route body. Replicates
+    ``tools/tapematch/crawl_status.sh``: is run_crawl.sh running (via pgrep,
+    no shell=True), how many run dirs exist on disk / how many distinct
+    dates they cover, and the crawl log's last 5 lines. No start/stop here —
+    this is observation only.
+
+    Returns:
+        Dict with keys: running (bool), pid (int|None), runs_on_disk (int),
+        distinct_dates (int), log_tail (list[str]). On failure, a dict with
+        an "error" key instead (the route maps that to a 500).
+    """
+    import subprocess
+
+    try:
+        pid = None
+        try:
+            proc = subprocess.run(
+                ["pgrep", "-o", "-f", "run_crawl.sh"],
+                capture_output=True, text=True, timeout=5,
+            )
+            if proc.returncode == 0 and proc.stdout.strip():
+                pid = int(proc.stdout.strip())
+        except (FileNotFoundError, subprocess.TimeoutExpired, ValueError):
+            pid = None
+
+        runs_dir = TAPEMATCH_RUNS_DIR
+        dir_names = (
+            [d.name for d in runs_dir.iterdir() if d.is_dir()]
+            if runs_dir.exists() else []
+        )
+        runs_on_disk = len(dir_names)
+        date_re = re.compile(r"(\d{4}-\d{2}-\d{2})$")
+        distinct_dates = len(
+            {m.group(1) for name in dir_names if (m := date_re.search(name))}
+        )
+
+        log_path = runs_dir.parent / "crawl.log"
+        log_tail: list = []
+        if log_path.exists():
+            try:
+                lines = log_path.read_text(encoding="utf-8", errors="replace").splitlines()
+                log_tail = lines[-5:]
+            except OSError:
+                log_tail = []
+
+        return {
+            "running": pid is not None,
+            "pid": pid,
+            "runs_on_disk": runs_on_disk,
+            "distinct_dates": distinct_dates,
+            "log_tail": log_tail,
+        }
+    except Exception as exc:
+        _log.exception("tapematch_crawl_status failed")
+        return {"error": "internal_error", "message": str(exc)}
 
 
 def create_app() -> Flask:
@@ -634,47 +755,34 @@ def create_app() -> Flask:
     def activity_busy() -> Response:
         """Report whether any background worker is currently running.
 
-        Polls the in-memory status of all background workers.
+        Re-implemented on top of ``backend.activity``'s adapter table
+        (TODO-262) — response shape is byte-compatible with the pre-TODO-262
+        endpoint (AppShell's ``StatusBar`` is its only consumer).
 
         Returns:
             JSON {busy: bool, activity: str|None}. ``activity`` is a short
             machine-readable key identifying the first running job found,
             or None if every worker is idle.
         """
-        import backend.geocoder as _geocoder
-        from backend import integrity_monitor
-        from backend.filer import get_file_job_status
+        from backend import activity
 
-        # Workers that expose {"running": bool, ...}
-        running_checks = [
-            (importer.get_import_status(), "importing"),
-            (scraper.get_scrape_status(), "scraping"),
-            (bootleg_scraper.get_scrape_status(), "scraping_bootlegs"),
-            (integrity_monitor.get_scan_status(), "scanning"),
-            (get_file_job_status(), "filing"),
-            (site_crawler.get_crawler_status(), "crawling"),
-            (_geocoder.get_progress(), "geocoding"),
-        ]
-        for status, activity in running_checks:
-            if status.get("running"):
-                return jsonify({"busy": True, "activity": activity})
+        return jsonify(activity.busy_snapshot())
 
-        # Workers that expose {"status": "idle|running|...", ...}
-        status_checks = [
-            (bobdylan_scraper.get_status(), "bobdylan_scraping"),
-            (setlistfm_mod.get_status(), "setlistfm_syncing"),
-        ]
-        for status, activity in status_checks:
-            if status.get("status") == "running":
-                return jsonify({"busy": True, "activity": activity})
+    @app.route("/api/activity/jobs", methods=["GET"])
+    def activity_jobs() -> Response:
+        """Return every worker's normalized activity, plus recent history.
 
-        with _update_lock:
-            if _update_state.get("status", "idle") != "idle":
-                return jsonify({"busy": True, "activity": "updating_app"})
-        with _data_dl_lock:
-            if _data_dl_state.get("status", "idle") != "idle":
-                return jsonify({"busy": True, "activity": "downloading_data"})
-        return jsonify({"busy": False, "activity": None})
+        TODO-262 / FABLE_ACTIVITY_CENTER.md §2 A1. One poll, no server-side
+        polling loop — every adapter's status_getter is a synchronous
+        in-memory read, same as ``/api/activity/busy``.
+
+        Returns:
+            JSON {busy: bool, jobs: [...]}. See ``backend/activity.py``'s
+            module docstring for the per-job record shape.
+        """
+        from backend import activity
+
+        return jsonify(activity.snapshot())
 
     @app.route("/api/activity/log", methods=["GET"])
     def activity_log() -> Response:
@@ -2072,8 +2180,7 @@ def create_app() -> Flask:
     @app.route("/api/update/status", methods=["GET"])
     def update_status() -> Response:
         """Return current update download/apply progress."""
-        with _update_lock:
-            return jsonify(dict(_update_state))
+        return jsonify(get_update_status())
 
     @app.route("/api/update/apply", methods=["POST"])
     def update_apply() -> Response:
@@ -2120,8 +2227,7 @@ def create_app() -> Flask:
     @app.route("/api/data/download/status", methods=["GET"])
     def data_download_status() -> Response:
         """Return current data ZIP download/extract progress."""
-        with _data_dl_lock:
-            return jsonify(dict(_data_dl_state))
+        return jsonify(get_data_dl_status())
 
     # ── FEAT-09: Collection Folder Integrity ──────────────────────────────────
 
@@ -3068,8 +3174,7 @@ def create_app() -> Flask:
         Returns:
             JSON copy of the _spectro_state dict.
         """
-        with _spectro_lock:
-            return jsonify(dict(_spectro_state))
+        return jsonify(get_spectrogram_status())
 
     @app.route("/api/spectrogram/stop", methods=["POST"])
     def spectrogram_stop() -> Response:
@@ -5810,52 +5915,10 @@ def create_app() -> Flask:
         many distinct dates they cover, and the crawl log's last 5 lines.
         No start/stop controls here — this is observation only.
         """
-        import subprocess
-
-        try:
-            pid = None
-            try:
-                proc = subprocess.run(
-                    ["pgrep", "-o", "-f", "run_crawl.sh"],
-                    capture_output=True, text=True, timeout=5,
-                )
-                if proc.returncode == 0 and proc.stdout.strip():
-                    pid = int(proc.stdout.strip())
-            except (FileNotFoundError, subprocess.TimeoutExpired, ValueError):
-                pid = None
-
-            runs_dir = TAPEMATCH_RUNS_DIR
-            dir_names = (
-                [d.name for d in runs_dir.iterdir() if d.is_dir()]
-                if runs_dir.exists() else []
-            )
-            runs_on_disk = len(dir_names)
-            date_re = re.compile(r"(\d{4}-\d{2}-\d{2})$")
-            distinct_dates = len(
-                {m.group(1) for name in dir_names if (m := date_re.search(name))}
-            )
-
-            log_path = runs_dir.parent / "crawl.log"
-            log_tail: list = []
-            if log_path.exists():
-                try:
-                    lines = log_path.read_text(encoding="utf-8", errors="replace").splitlines()
-                    log_tail = lines[-5:]
-                except OSError:
-                    log_tail = []
-
-            return jsonify(
-                {
-                    "running": pid is not None,
-                    "pid": pid,
-                    "runs_on_disk": runs_on_disk,
-                    "distinct_dates": distinct_dates,
-                    "log_tail": log_tail,
-                }
-            )
-        except Exception as exc:
-            _log.exception("tapematch_crawl_status failed")
-            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+        result = get_tapematch_crawl_status()
+        if "error" in result:
+            return jsonify(result), 500
+        return jsonify(result)
 
     @app.route("/api/tapematch/crawl/start", methods=["POST"])
     def tapematch_crawl_start() -> Response:
@@ -8017,12 +8080,7 @@ def create_app() -> Flask:
     @app.route("/api/pipeline/run/status", methods=["GET"])
     def pipeline_run_status() -> Response:
         """Poll progress of the async pipeline job started via /api/pipeline/run/start."""
-        with _PIPELINE_JOB_LOCK:
-            snapshot = dict(_PIPELINE_JOB)
-            snapshot["results"] = dict(_PIPELINE_JOB["results"])
-            snapshot["in_progress"] = list(_PIPELINE_JOB["in_progress"])
-            snapshot["errors"] = list(_PIPELINE_JOB["errors"])
-        return jsonify(snapshot)
+        return jsonify(get_pipeline_run_status())
 
     @app.route("/api/pipeline/run/cancel", methods=["POST"])
     def pipeline_run_cancel() -> Response:
