@@ -1,3 +1,15 @@
+[2026-07-22] — docs: wiki build-out — 5 new pages, all 15 topic pages fresh
+Added: docs/wiki/Setlist-Sources.md, Show-Dossier.md, Master-Data-Sync.md,
+  Collection-Pipeline.md, Integrations.md — coverage for the setlist corpora,
+  dossier, master-data distribution, filing pipeline, and outbound
+  integrations subsystems (previously undocumented in the wiki).
+Changed: docs/wiki/ — all 10 pre-existing topic pages regenerated from current
+  sources (schema v11, export channels, derived-data recompute chain,
+  staircase/frozen-set calibration state, /verify sanctioning, 20-screen GUI
+  list, TODO-234 rescore counts); Home.md index updated. PROJECT.md file
+  structure line for docs/wiki/ updated (8 → 15 topic pages).
+Commits: d21b7f2b, 9198df7d, 33030811, c466fde5.
+
 [2026-07-22] — refactor: single screenshot engine — browser_driver.mjs retired into electron_driver.mjs --renderer-only
 Removed: tools/browser_driver.mjs — the older Tier A driver (tj's call: one
   engine, keep a fast flag).
