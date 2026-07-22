@@ -38,6 +38,9 @@ export interface ReconcileProposal {
   disk_rel:  string
   lbdir_rel: string
   md5:       string
+  /** What this folder's lbdir requires — differs from md5 on name matches (BUG-252). */
+  expected_md5?: string
+  matched_by?:   'md5' | 'name'
 }
 
 export interface SiteProposal {

@@ -1,6 +1,25 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-120: Pipeline verify mismatch — 2 folders where audio no longer matches stored checksums
+Status: Fixed
+File(s): backend/checksum_utils.py:verify_folder, backend/app.py:4576
+Reported: 2026-05-31
+Fixed: 2026-07-22
+Root cause: Forensics completed 2026-07-22. LB-06548: 9/10 tracks match both checksum sources bit-perfectly (files renamed vs lbdir names, audio identical); track 09 'Don't Think Twice' is not a FLAC at all — high-entropy garbage from byte 0, mtime identical to siblings (2012), i.e. silent storage-level corruption. LB-12181: site has no checksums for this entry (0 DB rows, 0 attachments — self-generated mychecksums 2015), so lookup-not-found is expected-by-data; 379/381 files pass; d18 7 is a retagged container with bit-perfect audio (embedded PCM MD5 matches ffp); d18 2 is not a FLAC — and shares an identical 420KB prefix with LB-06548's corrupt track 09 despite 9-years-apart mtimes on the same DYLAN2 disk: cross-linked clusters / filesystem damage, not per-file corruption
+Fix: No code change (pipeline surfaced both correctly as V:fail). Follow-up actions moved to TODO-258: re-source the two corrupt files, fsck/chkdsk the DYLAN2 disk, optionally regenerate LB-12181's md5 for the retagged d18 7.
+
+BUG-252: LBDIR reconcile leaves self-referencing/regenerated entries permanently "MD5 mismatch" — BUG-174 fix may not be the final answer
+Status: Fixed
+File(s): backend/checksum_utils.py:find_site_recoverable_files, backend/checksum_utils.py:find_reconcilable_files
+Reported: 2026-06-13
+Renumbered: from BUG-175 on 2026-07-15 (TODO-248 — id collided with the unrelated fixed
+  BUG-175 "Windows fonts render badly" in BUGS_DONE.md; pre-2026-07-15 references to BUG-175
+  for the LBDIR reconcile MD5-mismatch issue mean this bug)
+Fixed: 2026-07-22
+Root cause: Confirmed: self-referencing lbdir manifest entries are circular by construction and DigiFlawFinder reports are regenerated server-side (content differs per download under an unchanged Last-Modified) — no obtainable copy can ever satisfy their recorded MD5s, so BUG-174's name-fallback proposals for them were permanent band-aids, and find_reconcilable_files' MD5-only disk scan additionally presented the same bytes as both an unmatched-disk file and a site proposal
+Fix: Both halves of the discussed fix implemented: (1) find_reconcilable_files gained the BUG-174-style name-based fallback (LBF-prefix-stripped, apostrophe/case-normalised) — on-disk near-duplicates like extras/LBF-16216-lbdir-*.txt now surface as matched_by:'name' rename proposals with expected_md5 + MD5-mismatch pill in the GUI (LbdirDetail.tsx, lbdirStore.ts). (2) Unreconcilable entries (self-manifests via _LBDIR_MANIFEST_RE, regenerated reports via new _REGEN_REPORT_RE / _is_unreconcilable_entry) are excluded from missing counts and proposals everywhere: verify_folder_lbdir counts them pass whether missing or on-disk-mismatched (detail statuses stay visible), and find_reconcilable_files/find_site_recoverable_files drop them from the missing set. Tests: tests/test_checksum_utils_site_recovery.py (5 cases).
+
 BUG-255: site mirror: 88 entry_files URLs permanently undownloadable (mangled/double-encoded)
 Status: Fixed
 File(s): backend/site_crawler.py
