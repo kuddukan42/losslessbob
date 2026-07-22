@@ -1,4 +1,5 @@
 [
+  { "action": "navigate", "route": "/" },
   { "action": "screenshot", "file": "00-home.png" },
 
   { "action": "navigate", "route": "/pipeline" },

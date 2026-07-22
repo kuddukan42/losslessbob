@@ -1,6 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { HashRouter, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
+import { QueryClient } from '@tanstack/react-query'
+import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client'
+import type { PersistedClient, Persister } from '@tanstack/react-query-persist-client'
+import { get as idbGet, set as idbSet, del as idbDel } from 'idb-keyval'
 import { applyTheme, loadTheme, saveTheme, getSystemMode } from './lib/tokens'
 import type { ThemeOptions, Mode, Accent, Density } from './lib/tokens'
 import { AppShell, SplashOverlay, AboutDialog } from './components'
@@ -33,31 +36,87 @@ import { ScreenSongs } from './screens/ScreenSongs'
 import { ScreenGaps } from './screens/ScreenGaps'
 import { ScreenFingerprint } from './screens/ScreenFingerprint'
 
-// ── React Query client — prefetch collection data immediately at module load ──
+// ── React Query client — persisted to IndexedDB (BUG-271) ────────────────────
+// The bulk datasets (collection prefetch, library catalog/performances/badges)
+// are written to IndexedDB and restored on launch, so Library/Collection render
+// instantly from last session's data while a background refetch reconciles.
+// localStorage is not an option — the payloads are 20-36 MB each.
 
-const queryClient = new QueryClient()
-queryClient.prefetchQuery({
-  queryKey: ['collection-prefetch'],
-  queryFn: () =>
-    fetch(`${window.api.flaskBase}/api/collection/prefetch`).then(r => r.json()),
-  staleTime: Infinity,
+const PERSIST_MAX_AGE = 7 * 24 * 60 * 60 * 1000  // 7 days
+
+const queryClient = new QueryClient({
+  // gcTime must outlive maxAge, or restored-but-unmounted queries get
+  // garbage-collected out of the next persisted snapshot.
+  defaultOptions: { queries: { gcTime: PERSIST_MAX_AGE } },
 })
-// Warm the Library screen's big queries too, staggered so their JSON.parse
-// doesn't contend with the Home screen's first paint. Same query keys as
-// ScreenLibrary.tsx — first navigation there then hits a warm cache.
-setTimeout(() => {
-  for (const [key, path] of [
-    ['library-catalog', '/api/search'],
-    ['library-performances', '/api/library/performances'],
-    ['library-badges', '/api/library/badges'],
-  ] as const) {
+
+// idb-keyval persister — stores the dehydrated client via structured clone
+// (no JSON.stringify of a ~60 MB string on the main thread).
+const IDB_CACHE_KEY = 'lbb-query-cache'
+const idbPersister: Persister = {
+  persistClient: (client: PersistedClient) => idbSet(IDB_CACHE_KEY, client),
+  restoreClient: () => idbGet<PersistedClient>(IDB_CACHE_KEY),
+  removeClient: () => idbDel(IDB_CACHE_KEY),
+}
+
+// Only the bulk datasets are worth the disk round-trip; everything else
+// refetches in well under a second.
+const PERSISTED_KEYS = new Set([
+  'collection-prefetch', 'library-catalog', 'library-performances', 'library-badges',
+])
+
+const BULK_QUERIES = [
+  ['collection-prefetch',   '/api/collection/prefetch'],
+  ['library-catalog',       '/api/search'],
+  ['library-performances',  '/api/library/performances'],
+  ['library-badges',        '/api/library/badges'],
+] as const
+
+const appStartedAt = Date.now()
+
+// Runs once the IndexedDB restore has finished (PersistQueryClientProvider
+// onSuccess). First run / empty cache: prefetch fills it (no-op when restored
+// data is present, staleTime Infinity). Then, staggered off the first paint,
+// background-refetch anything that came from a previous session's snapshot.
+function warmBulkQueries(): void {
+  for (const [key, path] of BULK_QUERIES) {
     queryClient.prefetchQuery({
       queryKey: [key],
       queryFn: () => fetch(`${window.api.flaskBase}${path}`).then(r => r.json()),
       staleTime: Infinity,
     })
   }
-}, 3000)
+  setTimeout(() => {
+    for (const [key] of BULK_QUERIES) {
+      const state = queryClient.getQueryState([key])
+      if (state && state.fetchStatus === 'idle' && state.dataUpdatedAt < appStartedAt) {
+        queryClient.invalidateQueries({ queryKey: [key], refetchType: 'all' })
+      }
+    }
+  }, 3000)
+}
+
+// ── Last-route restore — reopen the app on the screen it was closed on ───────
+
+const LAST_ROUTE_KEY = 'lbb-last-route'
+// Captured at module load, before RouteRestorer's save-effect can overwrite it.
+const savedRoute = localStorage.getItem(LAST_ROUTE_KEY)
+
+function RouteRestorer(): null {
+  const location = useLocation()
+  const navigate = useNavigate()
+  useEffect(() => {
+    localStorage.setItem(LAST_ROUTE_KEY, location.pathname)
+  }, [location.pathname])
+  useEffect(() => {
+    if (savedRoute && savedRoute !== '/' && location.pathname === '/') {
+      navigate(savedRoute, { replace: true })
+    }
+    // mount-only: restoring once at launch, not on later navigations
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  return null
+}
 
 // ── Curator-only route guard ──────────────────────────────────────────────────
 
@@ -268,8 +327,21 @@ export default function App(): React.JSX.Element {
   const [showAbout, setShowAbout] = useState(false)
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <PersistQueryClientProvider
+      client={queryClient}
+      persistOptions={{
+        persister: idbPersister,
+        maxAge: PERSIST_MAX_AGE,
+        buster: 'lbb-cache-v1',
+        dehydrateOptions: {
+          shouldDehydrateQuery: (q) =>
+            q.state.status === 'success' && PERSISTED_KEYS.has(String(q.queryKey[0])),
+        },
+      }}
+      onSuccess={warmBulkQueries}
+    >
     <HashRouter>
+      <RouteRestorer />
       {!splashDone && <SplashOverlay onDone={() => setSplashDone(true)} />}
       {showAbout && <AboutDialog onClose={() => setShowAbout(false)} />}
       <AppShell onAbout={() => setShowAbout(true)}>
@@ -298,6 +370,6 @@ export default function App(): React.JSX.Element {
         </Routes>
       </AppShell>
     </HashRouter>
-    </QueryClientProvider>
+    </PersistQueryClientProvider>
   )
 }
