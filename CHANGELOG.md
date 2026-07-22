@@ -1,3 +1,21 @@
+[2026-07-21] — feat: unified activity center — status-bar job tray (TODO-262)
+Added: backend/activity.py — declarative JOB_ADAPTERS table (15 workers) +
+  snapshot() normalizing every polled worker into one shape (spec §2 A1),
+  50-entry in-memory finished-job history, and an SSE tee registry (track())
+  giving the 6 text/event-stream routes presence while streaming. New route
+  GET /api/activity/jobs. Implements instructions/FABLE_ACTIVITY_CENTER.md.
+Changed: backend/app.py — /api/activity/busy re-based on the same adapter table
+  (response byte-compatible), which also closes its blind spots: spectrogram,
+  tapematch-crawl, pipeline-run, and archive.org jobs are now visible (spec D-3);
+  extracted 5 module-level status getters (zero behavior change); wrapped all 6
+  streamed generators in activity.track() (payloads byte-identical).
+Added: gui_next lib/activityStore.ts — single ref-counted poller (adaptive 5s
+  idle → 2s running) feeding a status-bar activity tray in AppShell.tsx (running
+  jobs with progress + elapsed, Stop via cancel_route, click-through to owning
+  screen, error badge; §3 defaults D-1/D-2/D-4). 17 new locale keys across
+  de/fr/es/it/nl. Old inline activity/busy poller removed.
+Tests: tests/test_activity.py (8) + tests/test_activity_sse.py (4). gui-check PASS.
+
 [2026-07-21] — chore(docs): /session-close now commits + pushes automatically
 Changed: .claude/commands/session-close.md — added Step 8 (commit + push without
   confirmation) so bookkeeping always lands on the remote at session end; split

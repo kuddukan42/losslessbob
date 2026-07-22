@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-262: Implement FABLE activity center (unified job tray)
+Priority: Medium
+Status: Done
+Added: 2026-07-21
+Closed: 2026-07-21
+Description: Execute instructions/FABLE_ACTIVITY_CENTER.md. Bites B1 (backend/activity.py aggregator + /api/activity/jobs + busy re-base + tests) -> B2 (SSE tee registry) -> B3 (GUI tray + store + i18n) -> B4 (docs). Bites tracked in-spec. Started 2026-07-21.
+Shipped all 4 bites B1–B4 (commits 1a0e3f0c/5541871c/6de2260d/a5521fe3). backend/activity.py aggregator + /api/activity/jobs + busy re-base + SSE tee registry; gui_next status-bar activity tray + adaptive-poll store + i18n. Verified: 12 backend tests, gui-check PASS, live crawl surfaces in tray.
+
 TODO-261: CI on GitHub Actions + synthetic fixture DB generator (FABLE_CI_FIXTURE.md)
 Priority: High
 Status: Done
