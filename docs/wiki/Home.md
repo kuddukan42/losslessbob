@@ -14,7 +14,8 @@ authoritative source**, this wiki is the readable overview layer on top.
 | [TapeMatch](TapeMatch.md) | Recording-family matching pipeline, calibration workflow | seeded | 2026-07-06 |
 | [Concert-Ranker](Concert-Ranker.md) | Quality scans, recording scores, ranking pipeline | seeded | 2026-07-06 |
 | [Data-Flows](Data-Flows.md) | Key end-to-end flows, checksum format, publish/subscribe | seeded | 2026-07-06 |
-| [Dev-Workflow](Dev-Workflow.md) | Sessions, bookkeeping, skills/commands, verification rules | seeded | 2026-07-06 |
+| [Dev-Workflow](Dev-Workflow.md) | Sessions, bookkeeping, skills/commands, verification rules | stale | 2026-07-06 |
+| [Visual-Verification](Visual-Verification.md) | Screenshot engine: electron_driver two modes, tour file, /verify workflow | fresh | 2026-07-22 |
 | [Taper-Attribution-Flow](Taper-Attribution-Flow.md) | Taper attribution pipeline: Layer 0/1/2, conflict queue, filtering | seeded | 2026-07-15 |
 
 **Statuses:** `seeded` = initial pass from existing docs, may lack depth ·
