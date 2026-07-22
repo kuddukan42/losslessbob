@@ -304,7 +304,7 @@ Unique index on `(checksum, lb_number)`.
 | filename | TEXT | Remote filename (`LBF-N-name.ext`) |
 | clean_name | TEXT | Display name (prefix stripped) |
 | file_url | TEXT | Full remote URL |
-| downloaded | INTEGER | 1 = cached locally in `data/site/files/` |
+| downloaded | INTEGER | 0 = missing, 1 = cached locally in `data/site/files/`, 2 = dead (URL 404s permanently — stale seed or source-mangled href, BUG-255; excluded from crawler seeding) |
 
 PK: `(lb_number, filename)`.
 

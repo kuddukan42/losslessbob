@@ -439,6 +439,23 @@ def crawl(
             counts["not_found"] += 1
             upsert_inventory(url, db_path, status="not_found",
                              http_status=404, session_id=session_id)
+            # A 404'd attachment URL is permanently dead (stale seed from an
+            # older page version, or a source-mangled href — BUG-255): mark the
+            # entry_files row downloaded=2 (dead) so it stops being re-seeded
+            # and the missing-attachments count converges to 0.
+            if urlparse(url).path.startswith("/files/"):
+                try:
+                    get_write_queue().execute(
+                        lambda c, _u=url: c.execute(
+                            "UPDATE entry_files SET downloaded=2"
+                            " WHERE file_url=? AND downloaded=0",
+                            (_u,),
+                        )
+                    )
+                except Exception:
+                    logger.exception(
+                        "Failed to mark entry_files row dead for %s", url
+                    )
             _set(not_found=counts["not_found"])
             continue
 

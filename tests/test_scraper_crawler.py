@@ -364,6 +364,13 @@ class TestDbCrawlerTables:
                 (2, "LBF-00002-text.txt", "text.txt",
                  "http://ex.com/files/LBF-00002-text.txt", 1),
             )
+            # Dead row (downloaded=2, BUG-255): permanently-404 URL, never re-seeded
+            conn.execute(
+                "INSERT INTO entry_files (lb_number, filename, clean_name, file_url, downloaded) "
+                "VALUES (?, ?, ?, ?, ?)",
+                (3, "LBF-00003-dead.txt", "dead.txt",
+                 "http://ex.com/files/LBF-00003-dead.txt", 2),
+            )
             conn.commit()
             urls = db.get_missing_attachment_urls(db_path)
             assert urls == ["http://ex.com/files/LBF-00329-xref-02017-text.txt"]
@@ -623,6 +630,60 @@ class TestCrawlSkipsFilesOnDisk:
                 "SELECT status FROM site_inventory WHERE url=?", (files_url,)
             ).fetchone()
             assert inv is not None and inv["status"] == "downloaded"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 4c. crawl() — a 404'd /files/ URL marks its entry_files row dead (BUG-255)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestCrawl404MarksAttachmentDead:
+    def test_404_files_url_sets_downloaded_2(self, monkeypatch):
+        """A /files/ attachment URL that 404s is permanently dead (stale seed or
+        source-mangled href): its entry_files row must flip to downloaded=2 so
+        get_missing_attachment_urls() stops re-seeding it every session.
+        """
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            import backend.site_crawler as _crawler
+
+            site_dir = Path(tmp_dir) / "site"
+            site_dir.mkdir(parents=True, exist_ok=True)
+            monkeypatch.setattr(_crawler, "SITE_DIR", site_dir)
+
+            filename = "LBF-00042-stale-old-name.txt"
+            conn.execute(
+                """INSERT INTO entries(lb_number, date_str, location, cdr, rating, timing,
+                       description, setlist, status)
+                   VALUES (42, '1/1/01', 'Somewhere', '', '', '', '', '', 'ok')"""
+            )
+            files_url = _crawler.BASE_URL + "/files/" + filename
+            conn.execute(
+                "INSERT INTO entry_files(lb_number, filename, clean_name, file_url, downloaded) "
+                "VALUES (42, ?, 'stale-old-name.txt', ?, 0)",
+                (filename, files_url),
+            )
+            conn.commit()
+
+            with patch.object(_crawler, "_load_robots"), \
+                 patch.object(_crawler, "_fetch_page", return_value=(404, None, None)):
+                _crawler.crawl(start_url=files_url, db_path=db_path, delay_ms=0)
+
+            row = conn.execute(
+                "SELECT downloaded FROM entry_files WHERE lb_number=42 AND filename=?",
+                (filename,),
+            ).fetchone()
+            assert row["downloaded"] == 2
+
+            inv = conn.execute(
+                "SELECT status FROM site_inventory WHERE url=?", (files_url,)
+            ).fetchone()
+            assert inv is not None and inv["status"] == "not_found"
+
+            # And the dead row must no longer be seeded as missing.
+            import backend.db as db
+            assert files_url not in db.get_missing_attachment_urls(db_path)
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 

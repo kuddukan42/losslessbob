@@ -6,7 +6,34 @@ its own fresh queue pointing at its own temp database.  Without this, the
 module-level _write_queue singleton initialised by the first test would
 persist and route all subsequent writes to the wrong database file.
 """
+import os
+import tempfile
+
 import pytest
+
+
+@pytest.fixture(scope="session", autouse=True)
+def _contain_tempfiles(tmp_path_factory):
+    """Route all tempfile.* output into pytest's self-pruning basetemp (BUG-253).
+
+    Many test modules call tempfile.mkdtemp()/NamedTemporaryFile directly and
+    only clean up on the success path, leaking lb_*_test_* dirs and large
+    tmp*.wav files into /tmp until the partition fills.  Instead of chasing
+    every call site, point tempfile's default directory (and TMPDIR, for any
+    subprocesses) at pytest's basetemp, which pytest automatically prunes to
+    the last few runs.  Leaks become bounded and self-cleaning.
+    """
+    basetemp = str(tmp_path_factory.getbasetemp())
+    old_tempdir = tempfile.tempdir
+    old_env = os.environ.get("TMPDIR")
+    tempfile.tempdir = basetemp
+    os.environ["TMPDIR"] = basetemp
+    yield
+    tempfile.tempdir = old_tempdir
+    if old_env is None:
+        os.environ.pop("TMPDIR", None)
+    else:
+        os.environ["TMPDIR"] = old_env
 
 
 @pytest.fixture(autouse=True)
