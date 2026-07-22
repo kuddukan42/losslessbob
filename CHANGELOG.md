@@ -1,3 +1,21 @@
+[2026-07-22] — refactor: single screenshot engine — browser_driver.mjs retired into electron_driver.mjs --renderer-only
+Removed: tools/browser_driver.mjs — the older Tier A driver (tj's call: one
+  engine, keep a fast flag).
+Changed: tools/electron_driver.mjs: new --renderer-only mode absorbs Tier A —
+  headless Chromium vs the Vite server (dev 5173 / --preview 4173,
+  --no-server supported), window.api shim, PNGs → .debug/; Electron mode
+  unchanged (PNGs → .debug/electron/). scale-matrix guarded Electron-only;
+  main-eval fails cleanly per-step in renderer mode via driver_core caps.
+  Build policy: Electron mode builds unless --no-build; renderer dev mode
+  never builds; --preview builds unless --no-build.
+Changed: tools/driver_core.mjs header, PROJECT.md tools section,
+  .claude/skills/verify/SKILL.md (tier table + commands now
+  --renderer-only), .claude/settings.json (dropped browser_driver allow
+  rule).
+Verified: renderer-only full 20-screen tour 47/47 ok; Electron-mode
+  navigate+screenshot ok; scale-matrix correctly rejected under
+  --renderer-only.
+
 [2026-07-22] — fix: Home screen responsive layout + activity-table column alignment (BUG-265, BUG-266); screenshot engine sanctioned
 Fixed: gui_next .../index.css + ScreenHome.tsx: bottom row (Recent activity |
   Tonight/Tips) moved from inline '1.45fr 1fr' grid to .lbb-home-grid-bottom —

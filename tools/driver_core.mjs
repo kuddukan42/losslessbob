@@ -1,9 +1,10 @@
 /**
- * LosslessBob driver action-runner — shared between tools/browser_driver.mjs
- * (Playwright Chromium vs the Vite renderer) and tools/electron_driver.mjs
- * (Playwright `_electron.launch()` vs the real Electron app).
+ * LosslessBob driver action-runner — shared between the two modes of
+ * tools/electron_driver.mjs: --renderer-only (Playwright Chromium vs the
+ * Vite server) and the default Electron mode (Playwright
+ * `_electron.launch()` vs the real Electron app).
  *
- * Both drivers hand this module a live Playwright `Page` plus a parsed
+ * Both modes hand this module a live Playwright `Page` plus a parsed
  * session-JSON action array; the action semantics (screenshot/navigate/
  * click/fill/type/clear/wait/wait-for/hover/scroll-to/select/eval/resize/
  * size-matrix/watch/main-eval) must be identical regardless of which tier
