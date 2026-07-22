@@ -60,7 +60,7 @@ FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3.)
 
 **4. Unified activity center.** The app runs many long jobs — scrapes, scans, master installs, tapematch syncs, future recompute chains — each with its own per-screen SSE progress today. One persistent tray (bottom corner) listing running/queued/finished jobs with progress, elapsed time, and a click-through to the owning screen. Kill the "did that scan finish?" screen-hopping, and every future spec's SSE endpoint plugs into it for free.
 
-> 📋 **SPEC WRITTEN** (2026-07-17) — expanded into `FABLE_ACTIVITY_CENTER.md`; execute from there.
+> ✅ **SHIPPED** (2026-07-21, TODO-262) — spec `complete/FABLE_ACTIVITY_CENTER.md`; B1–B4 all landed (backend/activity.py aggregator + SSE tee registry, busy re-base, status-bar tray).
 
 **5. Saved smart views.** Let the user save any Library filter+sort combination as a named view pinned to the sidebar with a live count badge — "Unrated 1978 AUDs (34)", "Superseded copies I still hold (112)". The specs keep adding filter dimensions (picks, tapers, grades, gaps); saved views are how a real person composes them into recurring workflows instead of rebuilding filters every session. Counts that tick down as you work double as a progress tracker.
 

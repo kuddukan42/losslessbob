@@ -1,10 +1,4 @@
 
-TODO-262: Implement FABLE activity center (unified job tray)
-Priority: Medium
-Status: Open
-Added: 2026-07-21
-Description: Execute instructions/FABLE_ACTIVITY_CENTER.md. Bites B1 (backend/activity.py aggregator + /api/activity/jobs + busy re-base + tests) -> B2 (SSE tee registry) -> B3 (GUI tray + store + i18n) -> B4 (docs). Bites tracked in-spec. Started 2026-07-21.
-
 TODO-234: TapeMatch family over-merge review — 22 series-vs-series taper conflicts
 Priority: Medium
 Status: Open
