@@ -19,6 +19,9 @@ authoritative source**, this wiki is the readable overview layer on top.
 | [Taper-Attribution-Flow](Taper-Attribution-Flow.md) | Taper attribution pipeline: Layer 0/1/2, conflict queue, filtering | fresh | 2026-07-22 |
 | [Setlist-Sources](Setlist-Sources.md) | Olof/bobserve/setlist.fm corpora, song spine, fingerprinting, gaps view | seeded | 2026-07-22 |
 | [Show-Dossier](Show-Dossier.md) | Dossier assembly, HTML/BBcode exports, channels, ambiguity handling | seeded | 2026-07-22 |
+| [Master-Data-Sync](Master-Data-Sync.md) | lb_master integrity, export channels, flat-file/GitHub distribution, onboarding | seeded | 2026-07-22 |
+| [Collection-Pipeline](Collection-Pipeline.md) | Pipeline steps, hash/state caches, filing + routing, integrity monitor | seeded | 2026-07-22 |
+| [Integrations](Integrations.md) | Torrents, qBittorrent, WTRF forum, archive.org, trading, Cloudflare sharing | seeded | 2026-07-22 |
 
 **Statuses:** `seeded` = initial pass from existing docs, may lack depth ·
 `fresh` = regenerated from source by `/wiki-update` · `stale` = sources changed since last update.
