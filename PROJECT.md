@@ -209,6 +209,7 @@ losslessbob/
 │   ├── refit_aud_model.py    # CLI: refit/recalibrate the AUD quality model against new labels
 │   ├── gui_next_locale_parity.py # CLI: check gui_next locales/*.json for missing/extra keys vs en.json
 │   ├── ledger_dedup.py       # CLI: de-duplicate BUG/TODO ledger entries (tools/ledger.py helper)
+│   ├── wiki_staleness.py     # CLI: flag docs/wiki/ pages whose `> Sources:` paths have commits newer than their Status date; feeds the [wiki] session-briefing line + /wiki-update page picking
 │   ├── taper_aliases.py      # CLI: list/add/remove known-taper alias overrides (user_taper_aliases, TODO-241); --recompute reruns attribution
 │   ├── test_site_headers.py  # CLI: probe losslessbob.com HTTP headers (Last-Modified/ETag support check)
 │   ├── electron_driver.mjs   # Visual-verification driver (single engine since 2026-07-22): default mode = Playwright _electron vs the REAL built app on Xvfb (PNGs → .debug/electron/; scale-matrix/main-eval; /verify --electron; TODO-247); --renderer-only = headless Chromium vs the Vite server (PNGs → .debug/; fast /verify default; absorbed the retired browser_driver.mjs)

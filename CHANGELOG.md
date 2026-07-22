@@ -11,6 +11,14 @@ Changed: docs/wiki/ — all 10 pre-existing topic pages regenerated from current
 Changed: .claude/CLAUDE.md: Context Discipline now directs sessions (and
   subagent prompts) to the matching docs/wiki/ page for subsystem orientation
   before grepping PROJECT.md — wires the wiki into the standard workflow.
+Added: tools/wiki_staleness.py — compares each wiki page's `> Sources:` paths
+  (globs supported) against git commits newer than its `Status:` date; wired
+  into .claude/hooks/session_brief.sh as a `[wiki]` briefing line (+0.03s) and
+  into /wiki-update step 1, so staleness is detected automatically instead of
+  by hand-maintained status flags. Caught its first error on first run:
+  Collection-Pipeline cited instructions/PIPELINE_STRUCTURAL_TIER_DESIGN.md,
+  which had been retired to instructions/complete/ — header fixed, plus
+  Integrations/Master-Data-Sync headers tightened to full repo paths.
 Commits: d21b7f2b, 9198df7d, 33030811, c466fde5.
 
 [2026-07-22] — refactor: single screenshot engine — browser_driver.mjs retired into electron_driver.mjs --renderer-only

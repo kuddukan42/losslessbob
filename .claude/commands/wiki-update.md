@@ -9,9 +9,10 @@ Regenerate **one** page of `docs/wiki/` per invocation (token budget discipline)
 ## Procedure
 
 1. Read `docs/wiki/Home.md` (small). If `$ARGUMENTS` names a page, pick it.
-   Otherwise pick the stalest page: oldest "Last updated" date, preferring pages
-   whose sources have commits newer than that date
-   (`git log --since=<date> --oneline -- <source paths>`).
+   Otherwise run `.venv/bin/python3 tools/wiki_staleness.py --verbose` — it
+   compares each page's `> Sources:` paths against git commits newer than its
+   `Status:` date (also surfaced as the `[wiki]` briefing line). Pick the
+   flagged page with the most/oldest source drift.
 2. Read the current page (small). Its `> Sources:` header lists authoritative
    sources. Gather updates **grep-first**: `grep -n` the source files for the
    relevant sections, then targeted Read with offset/limit. Never full-read
@@ -30,5 +31,7 @@ Regenerate **one** page of `docs/wiki/` per invocation (token budget discipline)
 
 - One page per run unless the user explicitly asks for more.
 - Facts must come from current sources, not memory — verify file paths exist.
+- `> Sources:` must list real repo paths (globs like `backend/olof_*.py` OK) —
+  the staleness checker only tracks declared paths, so keep them accurate.
 - This is a docs change: it still goes through `/session-close` bookkeeping
   if part of a code session, but a wiki-only refresh needs no CHANGELOG entry.

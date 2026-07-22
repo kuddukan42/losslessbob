@@ -6,8 +6,9 @@
 ## Session lifecycle
 
 - **Open**: a SessionStart hook (`hooks/session_brief.sh`) auto-injects a briefing
-  (branch, uncommitted count, last CHANGELOG entry, top TODOs, calibration tail).
-  `/session-open` re-runs it mid-session.
+  (branch, uncommitted count, last CHANGELOG entry, top TODOs, calibration tail,
+  wiki staleness via `tools/wiki_staleness.py`). `/session-open` re-runs it
+  mid-session.
 - **Close**: `/session-close` does the mandatory bookkeeping — CHANGELOG.md entry,
   BUGS→BUGS_DONE / TODO→TODO_DONE moves via `tools/ledger.py`, PROJECT.md
   reference updates. CHANGELOG keeps a rolling ~2-month window; older months
