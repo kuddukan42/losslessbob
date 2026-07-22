@@ -1,51 +1,60 @@
 [
   { "action": "screenshot", "file": "00-home.png" },
 
-  { "action": "navigate", "route": "/lookup" },
-  { "action": "screenshot", "file": "01-lookup.png" },
+  { "action": "navigate", "route": "/pipeline" },
+  { "action": "screenshot", "file": "01-pipeline.png" },
 
-  { "action": "navigate", "route": "/verify" },
-  { "action": "screenshot", "file": "02-verify.png" },
-
-  { "action": "navigate", "route": "/rename" },
-  { "action": "screenshot", "file": "03-rename.png" },
-
-  { "action": "navigate", "route": "/lbdir" },
-  { "action": "screenshot", "file": "04-lbdir.png" },
+  { "action": "navigate", "route": "/library" },
+  { "action": "screenshot", "file": "02-library.png" },
 
   { "action": "navigate", "route": "/collection" },
-  { "action": "screenshot", "file": "05-collection.png" },
+  { "action": "screenshot", "file": "03-collection.png" },
 
   { "action": "navigate", "route": "/trading" },
-  { "action": "screenshot", "file": "06-trading.png" },
+  { "action": "screenshot", "file": "04-trading.png" },
 
   { "action": "navigate", "route": "/sharing" },
-  { "action": "screenshot", "file": "07-sharing.png" },
+  { "action": "screenshot", "file": "05-sharing.png" },
 
   { "action": "navigate", "route": "/search" },
-  { "action": "screenshot", "file": "08-search.png" },
+  { "action": "screenshot", "file": "06-search.png" },
 
   { "action": "navigate", "route": "/bootlegs" },
-  { "action": "screenshot", "file": "09-bootlegs.png" },
+  { "action": "screenshot", "file": "07-bootlegs.png" },
+
+  { "action": "navigate", "route": "/tapematch" },
+  { "action": "screenshot", "file": "08-tapematch.png" },
+
+  { "action": "navigate", "route": "/songs" },
+  { "action": "screenshot", "file": "09-songs.png" },
+
+  { "action": "navigate", "route": "/gaps" },
+  { "action": "screenshot", "file": "10-gaps.png" },
 
   { "action": "navigate", "route": "/attachments" },
-  { "action": "screenshot", "file": "10-attachments.png" },
+  { "action": "screenshot", "file": "11-attachments.png" },
 
   { "action": "navigate", "route": "/spectrograms" },
-  { "action": "screenshot", "file": "11-spectrograms.png" },
-
-  { "action": "navigate", "route": "/fingerprint" },
-  { "action": "screenshot", "file": "12-fingerprint.png" },
+  { "action": "screenshot", "file": "12-spectrograms.png" },
 
   { "action": "navigate", "route": "/map" },
   { "action": "screenshot", "file": "13-map.png" },
 
-  { "action": "navigate", "route": "/dbeditor" },
-  { "action": "screenshot", "file": "14-dbeditor.png" },
+  { "action": "navigate", "route": "/scraper" },
+  { "action": "screenshot", "file": "14-scraper.png" },
+
+  { "action": "navigate", "route": "/fingerprint" },
+  { "action": "screenshot", "file": "15-fingerprint.png" },
 
   { "action": "navigate", "route": "/setup" },
-  { "action": "screenshot", "file": "15-setup.png" },
+  { "action": "screenshot", "file": "16-setup.png" },
+
+  { "action": "navigate", "route": "/mounts" },
+  { "action": "screenshot", "file": "17-mounts.png" },
 
   { "action": "navigate", "route": "/themes" },
-  { "action": "screenshot", "file": "16-themes.png" }
+  { "action": "screenshot", "file": "18-themes.png" },
+
+  { "action": "navigate", "route": "/dbeditor" },
+  { "action": "screenshot", "file": "19-dbeditor.png" }
 ]

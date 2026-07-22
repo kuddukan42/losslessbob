@@ -1819,7 +1819,8 @@
     },
     "grid": {
       "loading": "…",
-      "yearGap": "{{count}} gaps"
+      "yearGap_one": "{{count}} gap",
+      "yearGap_other": "{{count}} gaps"
     },
     "detail": {
       "noSelection": "Select a date to see what's known about it.",

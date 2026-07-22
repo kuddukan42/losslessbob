@@ -1910,7 +1910,8 @@
     },
     "grid": {
       "loading": "…",
-      "yearGap": "{{count}} lacune"
+      "yearGap_one": "{{count}} lacuna",
+      "yearGap_other": "{{count}} lacune"
     },
     "detail": {
       "noSelection": "Seleziona una data per vedere cosa si sa al riguardo.",

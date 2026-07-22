@@ -1910,7 +1910,8 @@
     },
     "grid": {
       "loading": "…",
-      "yearGap": "{{count}} Lücken"
+      "yearGap_one": "{{count}} Lücke",
+      "yearGap_other": "{{count}} Lücken"
     },
     "detail": {
       "noSelection": "Wählen Sie ein Datum aus, um zu sehen, was darüber bekannt ist.",

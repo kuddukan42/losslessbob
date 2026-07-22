@@ -1910,7 +1910,8 @@
     },
     "grid": {
       "loading": "…",
-      "yearGap": "{{count}} hiaten"
+      "yearGap_one": "{{count}} hiaat",
+      "yearGap_other": "{{count}} hiaten"
     },
     "detail": {
       "noSelection": "Selecteer een datum om te zien wat erover bekend is.",
