@@ -78,7 +78,26 @@
         "setlistfm_syncing": "setlist.fm synchroniseren…",
         "geocoding": "Geocoderen…",
         "updating_app": "App bijwerken…",
-        "downloading_data": "Gegevens downloaden…"
+        "downloading_data": "Gegevens downloaden…",
+        "spectrogram_generating": "Spectrogrammen genereren…",
+        "tapematch_crawling": "TapeMatch wordt doorzocht…",
+        "pipeline_running": "Pijplijn wordt uitgevoerd…",
+        "archive_uploading": "Bezig met uploaden naar Archive.org…",
+        "wtrf_crawl": "WTRF wordt doorzocht…",
+        "master_publish": "Master wordt gepubliceerd…",
+        "master_install": "Master wordt geïnstalleerd…",
+        "sitedata_publish": "Gegevens van de publicatiesite worden geladen…",
+        "sitedata_install": "Sitegegevens worden geïnstalleerd…",
+        "derived_recompute": "Afgeleide gegevens worden opnieuw berekend…"
+      },
+      "tray": {
+        "title": "Activiteit",
+        "jobsCount": "{{count}}-taken…",
+        "stop": "Stop",
+        "justNow": "zojuist",
+        "empty": "Er draait niets",
+        "running": "Actief",
+        "recent": "Recent"
       }
     },
     "noWtrfAccount": "Geen WTRF-account"
@@ -535,7 +554,38 @@
     "autoCollect": "Automatisch verzamelen",
     "autoCollectHint": "Wanneer deze functie is ingeschakeld, worden mappen die volledig groen zijn (verificatie, opzoeken, LB-map en hernoemen zijn allemaal geslaagd) automatisch in de collectie opgeslagen — je hoeft niet op ‘Bestand’ te klikken",
     "retryBlockedCollects_one": "Opnieuw proberen: {{count}} geblokkeerde verzameling",
-    "retryBlockedCollects_other": "{{count}} geblokkeerde verzamelingen opnieuw proberen"
+    "retryBlockedCollects_other": "{{count}} geblokkeerde verzamelingen opnieuw proberen",
+    "stepLabels": {
+      "mute": "—",
+      "pass": "Pass",
+      "error": "Fout",
+      "incomplete": "Onvolledig",
+      "noShntool": "Geen shntool",
+      "mismatch": "Afwijking",
+      "missingFolder": "Ontbreekt",
+      "noChecksums": "Geen checksums",
+      "notFound": "Niet gevonden",
+      "conflict": "Conflict",
+      "incompleteMatch": "Onvolledige overeenkomst",
+      "correct": "Correct",
+      "proposed": "Voorgesteld",
+      "renamed": "Hernoemd",
+      "readyToFile": "Klaar om in te dienen",
+      "mountOffline": "Offline koppelen",
+      "noDate": "Geen datum",
+      "noRoute": "Geen route",
+      "destExists": "Bestaat al",
+      "dbError": "Databasefout",
+      "blocked": "Geblokkeerd",
+      "filed": "Gearchiveerd",
+      "failed": "Mislukt",
+      "fetching": "LBDIR wordt opgehaald…",
+      "missing": "Ontbreekt {{n}}",
+      "extra": "Extra {{n}}",
+      "fail": "Mislukt",
+      "failN": "Fout {{n}}",
+      "noLbdir": "Geen LBDIR"
+    }
   },
   "collection": {
     "confirmDialog": {

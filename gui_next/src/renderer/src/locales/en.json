@@ -78,7 +78,26 @@
         "setlistfm_syncing": "Syncing setlist.fm…",
         "geocoding": "Geocoding…",
         "updating_app": "Updating app…",
-        "downloading_data": "Downloading data…"
+        "downloading_data": "Downloading data…",
+        "spectrogram_generating": "Generating spectrograms…",
+        "tapematch_crawling": "Crawling TapeMatch…",
+        "pipeline_running": "Running pipeline…",
+        "archive_uploading": "Uploading to Archive.org…",
+        "wtrf_crawl": "Crawling WTRF…",
+        "master_publish": "Publishing master…",
+        "master_install": "Installing master…",
+        "sitedata_publish": "Publishing site data…",
+        "sitedata_install": "Installing site data…",
+        "derived_recompute": "Recomputing derived data…"
+      },
+      "tray": {
+        "title": "Activity",
+        "jobsCount": "{{count}} jobs…",
+        "stop": "Stop",
+        "justNow": "just now",
+        "empty": "Nothing running",
+        "running": "Running",
+        "recent": "Recent"
       }
     },
     "noWtrfAccount": "No WTRF account"
