@@ -1,4 +1,4 @@
-"""Unified activity aggregator (TODO-262, FABLE_ACTIVITY_CENTER.md §B1).
+"""Unified activity aggregator (TODO-262, FABLE_ACTIVITY_CENTER.md §B1/§B2).
 
 The activity center *observes* jobs — it never owns them (spec's "one rule").
 Every worker below keeps its own start/stop/status routes exactly as they
@@ -6,7 +6,10 @@ were; this module only reads their in-memory status dicts and normalizes
 them into one shape (spec §2 A1). ``GET /api/activity/jobs`` reads
 :func:`snapshot`; the legacy ``GET /api/activity/busy`` (AppShell's only
 consumer, byte-compatible response shape) is re-based on the same table via
-:func:`busy_snapshot` so the two views can never drift.
+:func:`busy_snapshot` so the two views can never drift. Request-scoped SSE
+streams (spec §1b/§A2, no status route of their own) get presence via the
+:func:`track` tee registry instead of a ``JOB_ADAPTERS`` row — see item 2
+below.
 
 Adding a new job (spec §5 item 4):
 
@@ -20,8 +23,12 @@ Adding a new job (spec §5 item 4):
    ``pct``/``label``, add a ``kind: {...}`` entry to ``_PROGRESS_FIELDS``
    mapping the normalized output keys to the worker's raw dict keys — omit
    any pair the worker doesn't expose, never invent one.
-2. Request-scoped SSE stream (no status route): that's spec §A2/B2 — the
-   ``track()``/``update()`` registry isn't implemented yet in this bite.
+2. Request-scoped SSE stream (no status route): wrap the route's existing
+   generator in ``with track(kind, screen=...) as job:`` (spec §A2/B2) and
+   call ``job.update({...})`` for each yielded progress event — best-effort,
+   same ``{current?, total?, pct?, label?}`` shape as ``_PROGRESS_FIELDS``
+   above. Never alter what the generator yields to its caller (the tee, not
+   redirect, rule).
 3. Pick a ``kind`` that reads naturally as an i18n key suffix under
    ``appShell.statusBar.activity.<kind>`` — the original 11 workers reuse
    their existing locale keys; anything new needs a locale entry (later bite).
@@ -29,11 +36,12 @@ Adding a new job (spec §5 item 4):
 
 from __future__ import annotations
 
+import contextlib
 import logging
 import threading
 import time
 from collections import deque
-from collections.abc import Callable
+from collections.abc import Callable, Iterator
 from typing import NamedTuple
 
 from backend import archive_org as _archive_org
@@ -318,6 +326,111 @@ _observed_started_at: dict[str, float] = {}
 _state_lock = threading.Lock()
 
 
+# ── SSE tee registry: presence for request-scoped jobs (spec §2 A2, §B2) ────
+# Request-scoped SSE streams (§1b) have no status route of their own — the
+# generator's progress exists only inside the open HTTP response. `track()`
+# gives one of these presence in `snapshot()` for as long as its `with`
+# block is entered; `_sse_lock` guards the live-registry dict so multiple
+# concurrent streams (e.g. two curators publishing at once) never race each
+# other. `_history` (finished-job ring buffer, defined above) is shared with
+# the polled adapters; mutating it always goes through `_state_lock`, same as
+# `snapshot()` does, so the two producers can never interleave a torn append.
+_tracked_jobs: dict[str, _TrackedJob] = {}
+_sse_lock = threading.Lock()
+
+
+class _TrackedJob:
+    """Live handle for one in-flight, request-scoped SSE job (spec §2 A2).
+
+    Yielded by :func:`track`. The wrapped route calls :meth:`update` for each
+    SSE event its generator yields, to keep this job's ``progress`` fresh
+    while ``/api/activity/jobs`` is polled mid-stream. The route decides what
+    belongs in *progress* — this class never fabricates a field.
+
+    Attributes:
+        id: Registry key, ``f"{kind}-{int(started_at)}"`` (spec §A2 example:
+            ``master_install-1721224512``).
+        kind: i18n key suffix / job identity, matches the wrapped route.
+        screen: gui_next router path that owns this job's own UI.
+        started_at: Unix timestamp the job was registered.
+    """
+
+    def __init__(self, kind: str, screen: str, started_at: float) -> None:
+        self.id = f"{kind}-{int(started_at)}"
+        self.kind = kind
+        self.screen = screen
+        self.started_at = started_at
+        self._progress: dict | None = None
+
+    def update(self, progress: dict) -> None:
+        """Refresh this job's progress snapshot. Best-effort, thread-safe.
+
+        Args:
+            progress: A ``{current?, total?, pct?, label?}`` dict holding
+                only the keys the wrapped route actually has for this SSE
+                event. ``None``-valued keys are dropped, never fabricated.
+        """
+        clean = {k: v for k, v in progress.items() if v is not None}
+        with _sse_lock:
+            self._progress = clean or None
+
+    def _record(self, *, state: str, finished_at: float | None = None) -> dict:
+        """Build a §2 A1-shaped record from this handle's current state."""
+        record: dict = {
+            "id": self.id, "kind": self.kind, "state": state, "screen": self.screen,
+            "started_at": self.started_at,
+        }
+        if finished_at is not None:
+            record["finished_at"] = finished_at
+        with _sse_lock:
+            progress = self._progress
+        if progress:
+            record["progress"] = progress
+        return record
+
+
+@contextlib.contextmanager
+def track(kind: str, label: str | None = None, *, screen: str = "") -> Iterator[_TrackedJob]:
+    """Register a request-scoped SSE job for the duration of the ``with`` block.
+
+    Spec §2 A2. Registers *kind* as a running job the instant the block is
+    entered (id ``f"{kind}-{int(start_ts)}"``, no ``cancel_route`` — these
+    jobs have no stop button). On normal exit the job moves into
+    :data:`_history` as ``state='done'``; on exception it moves in as
+    ``state='error'`` and the exception re-raises unchanged, so callers keep
+    their own error handling exactly as before (the tee, not redirect, rule
+    — this never swallows or alters route behavior). Thread-safe: multiple
+    concurrent SSE streams may each hold their own tracked job.
+
+    Args:
+        kind: i18n key suffix / job identity, e.g. ``'master_install'``.
+        label: Optional human label. Unused by the current §2 A1 shape;
+            accepted for forward compatibility with future GUI bites.
+        screen: gui_next router path that owns the wrapped route's own UI.
+
+    Yields:
+        A :class:`_TrackedJob` handle — call ``.update(progress)`` on it for
+        each SSE event the wrapped generator yields.
+    """
+    del label  # reserved, not part of the §2 A1 record shape yet
+    job = _TrackedJob(kind, screen, time.time())
+    with _sse_lock:
+        _tracked_jobs[job.id] = job
+    try:
+        yield job
+    except BaseException:
+        with _sse_lock:
+            _tracked_jobs.pop(job.id, None)
+        with _state_lock:
+            _history.appendleft(job._record(state="error", finished_at=time.time()))
+        raise
+    else:
+        with _sse_lock:
+            _tracked_jobs.pop(job.id, None)
+        with _state_lock:
+            _history.appendleft(job._record(state="done", finished_at=time.time()))
+
+
 def _build_record(
     kind: str, raw: dict, adapter: JobAdapter, *, state: str, finished_at: float | None = None,
 ) -> dict:
@@ -346,11 +459,19 @@ def snapshot() -> dict:
     finished-job history ring buffer.
 
     Returns:
-        ``{busy: bool, jobs: [...]}`` — currently running jobs first (adapter
-        table order), then finished/error/cancelled jobs newest-first.
+        ``{busy: bool, jobs: [...]}`` — currently running jobs first (live
+        SSE-tracked jobs, spec §A2, then polled adapters in table order),
+        then finished/error/cancelled jobs newest-first.
     """
+    # Live SSE-tracked jobs (spec §A2/B2) — snapshot the handle list under
+    # `_sse_lock` first, then build records outside it so a slow
+    # `_record()` call never blocks a route's `track()`/`update()`.
+    with _sse_lock:
+        live_handles = list(_tracked_jobs.values())
+    tracked_jobs = [handle._record(state="running") for handle in live_handles]
+
     running_jobs: list[dict] = []
-    busy = False
+    busy = bool(tracked_jobs)
 
     with _state_lock:
         for adapter in JOB_ADAPTERS:
@@ -383,7 +504,7 @@ def snapshot() -> dict:
 
         history_jobs = list(_history)
 
-    return {"busy": busy, "jobs": running_jobs + history_jobs}
+    return {"busy": busy, "jobs": tracked_jobs + running_jobs + history_jobs}
 
 
 def busy_snapshot() -> dict:
