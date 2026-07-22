@@ -3,7 +3,7 @@
 > Sources: `instructions/complete/FABLE_TAPER_ATTRIBUTION.md` (design spec) ·
 > `backend/taper_attribution.py` · `backend/taper_fingerprints.py` ·
 > `backend/db.py` (`_KNOWN_TAPER_ALIASES`, `_NOT_TAPER`, `_TAPER_UNIVERSE`) ·
-> Status: seeded 2026-07-15
+> Status: fresh 2026-07-22
 
 End-to-end pipeline that turns raw entry text into a per-LB taper credit with
 an auditable confidence tier. Entry point: `backend.taper_attribution.recompute()`
@@ -120,7 +120,9 @@ flowchart LR
   `mention` (real hand-curation queue) from `series` (series-vs-series —
   both candidates are legitimate formal tapers on one over-merged
   `recording_families` family; the fix is a TapeMatch family split, tracked
-  as TODO-234, not a curator confirm/reject decision).
+  as TODO-234, not a curator confirm/reject decision). The 2026-07-20 corpus
+  rescore refreshed the TODO-234 table 18→14 conflicts, most flipping to
+  label-review; final picks await tj.
 
 ## Related
 
