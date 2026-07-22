@@ -211,8 +211,7 @@ losslessbob/
 │   ├── ledger_dedup.py       # CLI: de-duplicate BUG/TODO ledger entries (tools/ledger.py helper)
 │   ├── taper_aliases.py      # CLI: list/add/remove known-taper alias overrides (user_taper_aliases, TODO-241); --recompute reruns attribution
 │   ├── test_site_headers.py  # CLI: probe losslessbob.com HTTP headers (Last-Modified/ETag support check)
-│   ├── browser_driver.mjs    # Visual-verification driver, Tier A: Playwright Chromium vs the Vite build; PNGs → .debug/ (used by /verify)
-│   ├── electron_driver.mjs   # Visual-verification driver, Tier B: Playwright _electron vs the REAL built app on Xvfb; adds resize/size-matrix/scale-matrix/watch/main-eval; PNGs → .debug/electron/ (used by /verify --electron; TODO-247)
+│   ├── electron_driver.mjs   # Visual-verification driver (single engine since 2026-07-22): default mode = Playwright _electron vs the REAL built app on Xvfb (PNGs → .debug/electron/; scale-matrix/main-eval; /verify --electron; TODO-247); --renderer-only = headless Chromium vs the Vite server (PNGs → .debug/; fast /verify default; absorbed the retired browser_driver.mjs)
 │   ├── driver_core.mjs       # Shared session-JSON action runner for both drivers (screenshot/navigate/click/fill/wait/eval/resize/...)
 │   ├── electron_preflight.mjs # CLI: display-backend probe matrix (Wayland/XWayland/Xvfb/ozone-headless); writes + preserves the `selected` decision
 │   ├── electron_display.mjs  # Shared X11/Wayland socket discovery + Xvfb lifecycle helpers (preflight + electron_driver)

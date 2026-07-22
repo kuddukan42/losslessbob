@@ -1,47 +1,65 @@
 #!/usr/bin/env node
 /**
- * LosslessBob Electron Driver (Tier B) — Playwright `_electron.launch()`
- * against the REAL built app (gui_next/out/main/index.js), on the display
- * backend tools/electron_preflight.mjs already selected (Xvfb, recorded in
- * tools/electron_driver.config.json `.selected`). Same session-JSON action
- * format as tools/browser_driver.mjs (Tier A, Chromium vs the Vite build) —
- * see instructions/complete/FABLE_VISUAL_VERIFICATION.md §3, §6 (Bite 2).
+ * LosslessBob Visual-Verification Driver — the single screenshot engine.
  *
- * This driver does NOT re-probe display backends — it reads the committed
+ * Two modes, one session-JSON action format (tools/debug_screens.json):
+ *
+ *   Electron mode (default) — Playwright `_electron.launch()` against the
+ *   REAL built app (gui_next/out/main/index.js), on the display backend
+ *   tools/electron_preflight.mjs already selected (Xvfb, recorded in
+ *   tools/electron_driver.config.json `.selected`). Real window, real
+ *   `window.api` preload bridge. PNGs → .debug/electron/.
+ *   See instructions/complete/FABLE_VISUAL_VERIFICATION.md §3, §6.
+ *
+ *   --renderer-only — headless Playwright Chromium against the Vite server
+ *   (no Electron, no Xvfb; `window.api` stubbed). Seconds instead of an
+ *   app boot; the fast path for renderer-content checks (absorbed from the
+ *   retired tools/browser_driver.mjs, 2026-07-22). PNGs → .debug/.
+ *
+ * Electron mode does NOT re-probe display backends — it reads the committed
  * config and reuses the Xvfb lifecycle + socket-discovery helpers from
  * ./electron_display.mjs (shared with electron_preflight.mjs) and the
- * action-runner from ./driver_core.mjs (shared with browser_driver.mjs).
+ * action-runner from ./driver_core.mjs.
  *
  * Usage:
- *   node tools/electron_driver.mjs [--no-build] [--keep] <action> [args...]
+ *   node tools/electron_driver.mjs [--renderer-only] [--no-build] [--keep]
+ *                                  [--preview] [--no-server] <action> [args...]
  *
  * Actions:
- *   screenshot [file]              Save screenshot to .debug/electron/<file>
+ *   screenshot [file]              Save screenshot to the mode's debug dir
  *                                  (default: shot.png; absolute paths win)
  *   navigate <route> [file]        Navigate to hash route, then screenshot
  *   click <selector>               Click an element (CSS selector)
  *   fill <selector> <value>        Fill an input field
  *   eval <js>                      Evaluate JS expression, print result
- *   resize <w> <h> [file]          Resize the real window, optional screenshot
+ *   resize <w> <h> [file]          Resize the real window (renderer-only:
+ *                                  the viewport), optional screenshot
  *   size-matrix [prefix]           Screenshot at 1280x768/1440x900/1920x1080/2560x1440
  *   scale-matrix [prefix] [route]  Relaunch at --force-device-scale-factor
- *                                  1/1.25/1.5/2, screenshot each (see §6)
+ *                                  1/1.25/1.5/2, screenshot each (Electron
+ *                                  mode only — needs a real app relaunch)
  *   watch <interval_ms> <max_ms> <prefix> [until-selector]
  *                                  Screenshot every interval_ms until the
  *                                  selector appears or max_ms elapses
- *   main-eval <js>                 Evaluate JS in the MAIN process, print result
+ *   main-eval <js>                 Evaluate JS in the MAIN process (Electron
+ *                                  mode only), print result
  *   session <json|path>            Run a JSON action sequence (array or {actions:[...]})
  *
  * Flags:
- *   --no-build    Skip 'npm run build' in gui_next/ (assumes out/ is current)
- *   --keep        Keep the app (and Xvfb) open after actions complete
+ *   --renderer-only  Fast path: headless Chromium vs the Vite server (see above)
+ *   --no-build       Skip 'npm run build' in gui_next/ (assumes out/ is current)
+ *   --keep           Keep the app/browser (and Xvfb) open after actions complete
+ *   --preview        renderer-only: 'npm run preview' (port 4173, needs build)
+ *                    instead of 'npm run dev' (port 5173, serves source)
+ *   --no-server      renderer-only: assume a Vite server is already running
  *
  * Session action types: screenshot, navigate, click, fill, type, clear,
  *   wait, wait-for, eval, hover, scroll-to, select, resize, size-matrix,
  *   watch, main-eval (see tools/driver_core.mjs). `scale-matrix` is CLI-only
  *   here — it needs a fresh app launch per scale, not a single session.
  *
- * Hard constraints honored here (do not relax without updating the spec):
+ * Hard constraints honored in Electron mode (do not relax without updating
+ * the spec):
  *   - LB_NO_BACKEND_SPAWN=1 is always set — the manually-started Flask
  *     backend on :5174 must survive a full driver session.
  *   - --disable-gpu and --no-sandbox always (from the selected config).
@@ -54,8 +72,8 @@
  *     paths — never left running behind a driver invocation.
  */
 
-import { _electron } from 'playwright'
-import { spawnSync } from 'child_process'
+import { _electron, chromium } from 'playwright'
+import { spawnSync, spawn } from 'child_process'
 import { existsSync, readFileSync } from 'fs'
 import { resolve, dirname, join } from 'path'
 import { fileURLToPath } from 'url'
@@ -66,18 +84,39 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname  = dirname(__filename)
 const ROOT       = resolve(__dirname, '..')
 const GUI_DIR    = join(ROOT, 'gui_next')
-// Tier B gets its own output dir so a shared, tier-agnostic session file
-// (tools/debug_screens.json) can't have Electron PNGs silently overwrite the
-// Chromium ones — Tier A keeps writing straight to .debug/ (see
-// tools/browser_driver.mjs; /verify depends on those paths). Covered by the
-// existing `.debug/` .gitignore rule.
+// Electron mode gets its own output dir so a shared, mode-agnostic session
+// file (tools/debug_screens.json) can't have Electron PNGs silently overwrite
+// the Chromium ones — renderer-only keeps writing straight to .debug/
+// (/verify depends on those paths). Covered by the existing `.debug/`
+// .gitignore rule.
 const DEBUG_DIR  = join(ROOT, '.debug', 'electron')
+const RENDERER_DEBUG_DIR = join(ROOT, '.debug')
 const MAIN_ENTRY = join(GUI_DIR, 'out/main/index.js')
 const ELECTRON_BIN = join(GUI_DIR, 'node_modules/electron/dist/electron')
 const CONFIG_PATH  = join(ROOT, 'tools/electron_driver.config.json')
 
 const BACKEND_URL     = 'http://127.0.0.1:5174/api/status'
 const LAUNCH_TIMEOUT_MS = 45000
+
+// renderer-only mode: Vite server ports.
+const DEV_PORT     = 5173
+const PREVIEW_PORT = 4173
+
+// renderer-only mode: stub for window.api (the Electron preload bridge) —
+// see gui_next/src/renderer/src/env.d.ts for the real shape.
+const API_SHIM = `
+  window.api = {
+    flaskPort: 5174,
+    flaskBase: 'http://127.0.0.1:5174',
+    pickFolders: async () => [],
+    pickDir: async () => null,
+    pickFile: async () => null,
+    openPath: async () => '',
+    saveFile: async () => false,
+    pickAndReadFile: async () => null,
+    pickAndReadFiles: async () => [],
+  }
+`
 
 // Logical (DIP) content box every scale-matrix row is pinned to before its
 // screenshot, so each PNG lands at exactly SCALE_BASELINE * scale. Together
@@ -127,7 +166,83 @@ function loadSelectedConfig() {
   return config.selected
 }
 
-// ── Launch + session ────────────────────────────────────────────────────────
+// ── renderer-only session (headless Chromium vs the Vite server) ────────────
+
+async function waitForServer(url, maxMs = 15000, intervalMs = 200) {
+  const deadline = Date.now() + maxMs
+  while (Date.now() < deadline) {
+    try {
+      const res = await fetch(url, { signal: AbortSignal.timeout(intervalMs) })
+      if (res.ok || res.status < 500) return true
+    } catch { /* not ready yet */ }
+    await new Promise(r => setTimeout(r, intervalMs))
+  }
+  return false
+}
+
+function startViteServer(preview) {
+  const script = preview ? 'preview' : 'dev'
+  log(`Starting 'npm run ${script}'...`)
+  const proc = spawn('npm', ['run', script], { cwd: GUI_DIR, stdio: 'pipe' })
+  proc.stdout?.on('data', (d) => process.stderr.write(`[${script}] ${d}`))
+  proc.stderr?.on('data', (d) => process.stderr.write(`[${script}] ${d}`))
+  return proc
+}
+
+async function runRendererSession(actions, opts) {
+  const { preview, noServer, keepOpen } = opts
+  const port    = preview ? PREVIEW_PORT : DEV_PORT
+  const baseUrl = `http://localhost:${port}`
+
+  let serverProc = null
+  if (!noServer) serverProc = startViteServer(preview)
+
+  log(`Waiting for server at ${baseUrl}...`)
+  const ready = await waitForServer(baseUrl)
+  if (!ready) {
+    serverProc?.kill('SIGTERM')
+    throw new Error(`Server did not respond at ${baseUrl} within timeout.`)
+  }
+
+  log('Launching headless Chromium...')
+  const browser = await chromium.launch({ headless: true })
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } })
+  await context.addInitScript({ content: API_SHIM })
+  const page = await context.newPage()
+
+  log(`Navigating to ${baseUrl}...`)
+  await page.goto(baseUrl)
+  await page.waitForLoadState('domcontentloaded')
+
+  log('Waiting for splash to clear...')
+  try {
+    await page.waitForSelector('[data-testid="splash-overlay"]', { state: 'detached', timeout: 10000 })
+  } catch (err) {
+    log(`splash overlay did not clear: ${err.message} — continuing anyway`)
+  }
+
+  // renderer-only capability set: resize maps to a Playwright viewport
+  // resize (no real OS window here). No `mainEval` — there is no Electron
+  // main process, so that action fails cleanly per-step in driver_core.
+  const caps = {
+    resize: async (w, h) => {
+      await page.setViewportSize({ width: w, height: h })
+    },
+  }
+
+  const results = await runActions(page, actions, { debugDir: RENDERER_DEBUG_DIR, log, caps })
+
+  if (keepOpen) {
+    log('--keep: browser left open. Ctrl+C to exit.')
+    await new Promise(() => {}) // block forever
+  }
+
+  await browser.close()
+  if (serverProc) serverProc.kill('SIGTERM')
+  return results
+}
+
+// ── Electron launch + session ───────────────────────────────────────────────
 
 async function runSession(actions, opts) {
   const { keepOpen, extraFlags = [] } = opts
@@ -256,40 +371,57 @@ async function runSession(actions, opts) {
 
 // ── CLI ────────────────────────────────────────────────────────────────────
 
-const argv     = process.argv.slice(2)
-const noBuild  = argv.includes('--no-build')
-const keep     = argv.includes('--keep')
-const args     = argv.filter(a => !a.startsWith('--'))
-const cmd      = args[0]
+const argv         = process.argv.slice(2)
+const noBuild      = argv.includes('--no-build')
+const keep         = argv.includes('--keep')
+const rendererOnly = argv.includes('--renderer-only')
+const preview      = argv.includes('--preview')
+const noServer     = argv.includes('--no-server')
+const args         = argv.filter(a => !a.startsWith('--'))
+const cmd          = args[0]
 
 async function main() {
   if (!cmd) {
     process.stderr.write([
-      'Usage: node tools/electron_driver.mjs [--no-build] [--keep] <action> [args]',
+      'Usage: node tools/electron_driver.mjs [--renderer-only] [--no-build] [--keep]',
+      '                                      [--preview] [--no-server] <action> [args]',
       '',
       'Actions:',
-      '  screenshot [file]           Take screenshot (.debug/electron/<file>, default shot.png)',
+      '  screenshot [file]           Take screenshot (.debug/electron/<file>;',
+      '                              --renderer-only: .debug/<file>)',
       '  navigate <route> [file]     Navigate to route + screenshot',
       '  click <selector>            Click element',
       '  fill <selector> <value>     Fill input',
       '  eval <js>                   Evaluate JS expression',
-      '  resize <w> <h> [file]       Resize window, optional screenshot',
+      '  resize <w> <h> [file]       Resize window (renderer-only: viewport)',
       '  size-matrix [prefix]        Screenshot at 1280x768/1440x900/1920x1080/2560x1440',
       '  scale-matrix [prefix] [route]',
       '                              Relaunch at scale 1/1.25/1.5/2, screenshot each',
+      '                              (Electron mode only)',
       '  watch <interval_ms> <max_ms> <prefix> [until-selector]',
       '                              Screenshot every interval until selector/timeout',
-      '  main-eval <js>              Evaluate JS in the main process',
+      '  main-eval <js>              Evaluate JS in the main process (Electron mode only)',
       '  session <json|path>        Run a JSON action sequence',
       '',
       'Flags:',
-      '  --no-build    Skip npm run build (assumes gui_next/out is current)',
-      '  --keep        Leave the app (and Xvfb) open after actions',
+      '  --renderer-only  Fast path: headless Chromium vs the Vite server (no Electron/Xvfb)',
+      '  --no-build       Skip npm run build (assumes gui_next/out is current)',
+      '  --keep           Leave the app/browser (and Xvfb) open after actions',
+      '  --preview        renderer-only: npm run preview (4173) instead of npm run dev (5173)',
+      '  --no-server      renderer-only: assume a Vite server is already running',
     ].join('\n') + '\n')
     process.exit(1)
   }
 
-  if (!noBuild) build()
+  if (rendererOnly && cmd === 'scale-matrix') {
+    console.error('scale-matrix needs a real Electron relaunch per scale — not available with --renderer-only')
+    process.exit(1)
+  }
+
+  // Electron mode runs the built app, so it builds unless told not to.
+  // renderer-only dev mode serves source (no build needed); preview mode
+  // serves the build, so it builds unless --no-build.
+  if (rendererOnly ? (preview && !noBuild) : !noBuild) build()
 
   // scale-matrix needs a fresh app launch per scale (--force-device-scale-factor
   // is a launch flag, not something app.evaluate() can flip at runtime — see
@@ -410,7 +542,9 @@ async function main() {
   }
 
   try {
-    const results = await runSession(actions, { keepOpen: keep })
+    const results = rendererOnly
+      ? await runRendererSession(actions, { preview, noServer, keepOpen: keep })
+      : await runSession(actions, { keepOpen: keep })
     console.log(JSON.stringify(results, null, 2))
     const failed = results.filter(r => !r.ok)
     if (failed.length) {
