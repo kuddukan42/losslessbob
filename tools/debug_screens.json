@@ -5,6 +5,7 @@
   { "action": "screenshot", "file": "01-pipeline.png" },
 
   { "action": "navigate", "route": "/library" },
+  { "action": "wait-for", "selector": "text=Loading", "state": "detached", "timeout": 20000 },
   { "action": "screenshot", "file": "02-library.png" },
 
   { "action": "navigate", "route": "/collection" },
@@ -17,27 +18,34 @@
   { "action": "screenshot", "file": "05-sharing.png" },
 
   { "action": "navigate", "route": "/search" },
+  { "action": "wait-for", "selector": "text=Loading", "state": "detached", "timeout": 20000 },
   { "action": "screenshot", "file": "06-search.png" },
 
   { "action": "navigate", "route": "/bootlegs" },
+  { "action": "wait-for", "selector": "text=Loading", "state": "detached", "timeout": 20000 },
   { "action": "screenshot", "file": "07-bootlegs.png" },
 
   { "action": "navigate", "route": "/tapematch" },
+  { "action": "wait-for", "selector": "text=Loading", "state": "detached", "timeout": 20000 },
   { "action": "screenshot", "file": "08-tapematch.png" },
 
   { "action": "navigate", "route": "/songs" },
+  { "action": "wait-for", "selector": "text=Loading", "state": "detached", "timeout": 20000 },
   { "action": "screenshot", "file": "09-songs.png" },
 
   { "action": "navigate", "route": "/gaps" },
+  { "action": "wait-for", "selector": "button[title^='195']", "timeout": 15000 },
   { "action": "screenshot", "file": "10-gaps.png" },
 
   { "action": "navigate", "route": "/attachments" },
+  { "action": "wait-for", "selector": "text=Loading", "state": "detached", "timeout": 20000 },
   { "action": "screenshot", "file": "11-attachments.png" },
 
   { "action": "navigate", "route": "/spectrograms" },
   { "action": "screenshot", "file": "12-spectrograms.png" },
 
   { "action": "navigate", "route": "/map" },
+  { "action": "wait-for", "selector": "text=Loading", "state": "detached", "timeout": 20000 },
   { "action": "screenshot", "file": "13-map.png" },
 
   { "action": "navigate", "route": "/scraper" },

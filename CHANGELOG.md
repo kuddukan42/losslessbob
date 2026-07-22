@@ -26,8 +26,16 @@ Fixed: gui_next locales en/de/fr/es/it/nl: gaps.grid.yearGap split into
   "1 gaps". (BUG-267)
 Verified: full Tier A /verify tour (20 screens) — all render, no blank
   screens, no raw i18n keys; scraper/fingerprint redirect Home as designed
-  (curator mode off); library/search/tapematch/songs/attachments captured in
-  transient "Loading…" states (Tier A shot timing, not defects).
+  (curator mode off).
+Changed: tools/driver_core.mjs: wait-for action now passes through a `state`
+  option ('visible'|'attached'|'detached'|'hidden') so sessions can wait for
+  loading placeholders to disappear, not just for elements to appear.
+Changed: tools/debug_screens.json: settle waits added — text=Loading detached
+  (20 s) on library/search/bootlegs/tapematch/songs/attachments/map, first
+  date-cell button on gaps — so the tour captures loaded screens instead of
+  transient "Loading…" states; a timed-out wait degrades to the old behavior
+  (step fails ok:false, tour continues). Re-run: 47/47 steps ok, all
+  previously mid-load screens now capture settled data.
 
 [2026-07-21] — feat: command palette (Ctrl+K) — global fuzzy navigation (TODO-263)
 Added: gui_next .../lib/navigation.ts — NAV_GROUPS + nav types extracted from

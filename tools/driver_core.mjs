@@ -119,7 +119,13 @@ export async function runActions(page, actions, { debugDir, log, caps = {} }) {
         }
 
         case 'wait-for': {
-          await page.waitForSelector(step.selector, { timeout: step.timeout ?? 12000 })
+          // `state` passthrough ('visible' | 'attached' | 'detached' | 'hidden')
+          // lets sessions wait for loading placeholders to DISAPPEAR
+          // (state: 'detached'), not just for elements to appear.
+          await page.waitForSelector(step.selector, {
+            timeout: step.timeout ?? 12000,
+            state: step.state ?? 'visible',
+          })
           break
         }
 
