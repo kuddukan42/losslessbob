@@ -4318,75 +4318,79 @@ def create_app() -> Flask:
             pending = pending[:limit]
 
         def _stream():
+            from backend import activity as _activity
+
             nonlocal _wtrf_crawl_running
             _wtrf_crawl_running = True
             counts = {"attempted": 0, "downloaded": 0, "qbt_added": 0,
                       "skipped": 0, "failed": 0}
-            try:
-                for lb_number in pending:
-                    counts["attempted"] += 1
-                    _prog = _json.dumps({
-                        "event": "progress", "lb_number": lb_number,
-                        "attempted": counts["attempted"], "total": len(pending),
-                    })
-                    yield f"data: {_prog}\n\n"
+            with _activity.track("wtrf_crawl", screen="/scraper") as _job:
+                try:
+                    for lb_number in pending:
+                        counts["attempted"] += 1
+                        _prog = _json.dumps({
+                            "event": "progress", "lb_number": lb_number,
+                            "attempted": counts["attempted"], "total": len(pending),
+                        })
+                        _job.update({"current": counts["attempted"], "total": len(pending)})
+                        yield f"data: {_prog}\n\n"
 
-                    result = find_torrent_for_lb(
-                        lb_number=lb_number,
-                        board_id=board_id,
-                        dest_dir=save_path,
-                        delay=delay,
-                    )
-                    status = "downloaded" if result["ok"] else (
-                        "skipped" if result.get("confidence") in
-                        ("needs_review", "ambiguous", "not_found") else "failed"
-                    )
-                    dl_id = database.add_wtrf_download(
-                        lb_number=lb_number,
-                        topic_url=result.get("topic_url"),
-                        torrent_path=result.get("torrent_path"),
-                        confidence=result.get("confidence", "not_found"),
-                        signals_json=_json.dumps(result.get("signals", {})),
-                        status=status,
-                        error=result.get("error"),
-                    )
-                    counts[status if status in counts else "failed"] += 1
-
-                    if result["ok"] and add_to_qbt:
-                        from datetime import UTC, datetime
-
-                        from backend.credentials import (
-                            SERVICE_QBT,
-                            SERVICE_QBT_KEY,
-                            get_credentials,
+                        result = find_torrent_for_lb(
+                            lb_number=lb_number,
+                            board_id=board_id,
+                            dest_dir=save_path,
+                            delay=delay,
                         )
-                        from backend.qbittorrent import add_torrent_for_download
-                        host     = database.get_meta("qbt_host") or "localhost"
-                        port     = int(database.get_meta("qbt_port") or 8080)
-                        category = database.get_meta("qbt_category") or ""
-                        tags     = database.get_meta("qbt_tags") or ""
-                        qbt_user, qbt_pass = get_credentials(SERVICE_QBT)
-                        _, qbt_key         = get_credentials(SERVICE_QBT_KEY)
-                        qbt_r = add_torrent_for_download(
-                            torrent_path=result["torrent_path"],
-                            save_path=save_path,
-                            host=host, port=port,
-                            username=qbt_user, password=qbt_pass,
-                            category=category, tags=tags, api_key=qbt_key,
+                        status = "downloaded" if result["ok"] else (
+                            "skipped" if result.get("confidence") in
+                            ("needs_review", "ambiguous", "not_found") else "failed"
                         )
-                        if qbt_r.get("ok"):
+                        dl_id = database.add_wtrf_download(
+                            lb_number=lb_number,
+                            topic_url=result.get("topic_url"),
+                            torrent_path=result.get("torrent_path"),
+                            confidence=result.get("confidence", "not_found"),
+                            signals_json=_json.dumps(result.get("signals", {})),
+                            status=status,
+                            error=result.get("error"),
+                        )
+                        counts[status if status in counts else "failed"] += 1
+
+                        if result["ok"] and add_to_qbt:
                             from datetime import UTC, datetime
-                            database.update_wtrf_download(
-                                dl_id, {"status": "qbt_added",
-                                        "qbt_added_at": datetime.now(UTC).isoformat()}
-                            )
-                            counts["qbt_added"] += 1
 
-                yield f"data: {_json.dumps({'event': 'done', **counts})}\n\n"
-            except Exception as exc:
-                yield f"data: {_json.dumps({'event': 'error', 'error': str(exc)})}\n\n"
-            finally:
-                _wtrf_crawl_running = False
+                            from backend.credentials import (
+                                SERVICE_QBT,
+                                SERVICE_QBT_KEY,
+                                get_credentials,
+                            )
+                            from backend.qbittorrent import add_torrent_for_download
+                            host     = database.get_meta("qbt_host") or "localhost"
+                            port     = int(database.get_meta("qbt_port") or 8080)
+                            category = database.get_meta("qbt_category") or ""
+                            tags     = database.get_meta("qbt_tags") or ""
+                            qbt_user, qbt_pass = get_credentials(SERVICE_QBT)
+                            _, qbt_key         = get_credentials(SERVICE_QBT_KEY)
+                            qbt_r = add_torrent_for_download(
+                                torrent_path=result["torrent_path"],
+                                save_path=save_path,
+                                host=host, port=port,
+                                username=qbt_user, password=qbt_pass,
+                                category=category, tags=tags, api_key=qbt_key,
+                            )
+                            if qbt_r.get("ok"):
+                                from datetime import UTC, datetime
+                                database.update_wtrf_download(
+                                    dl_id, {"status": "qbt_added",
+                                            "qbt_added_at": datetime.now(UTC).isoformat()}
+                                )
+                                counts["qbt_added"] += 1
+
+                    yield f"data: {_json.dumps({'event': 'done', **counts})}\n\n"
+                except Exception as exc:
+                    yield f"data: {_json.dumps({'event': 'error', 'error': str(exc)})}\n\n"
+                finally:
+                    _wtrf_crawl_running = False
 
         return Response(
             _stream(),
@@ -5079,15 +5083,20 @@ def create_app() -> Flask:
         threading.Thread(target=_work, daemon=True).start()
 
         def _stream():
-            while True:
-                try:
-                    ev = ev_q.get(timeout=680)
-                except queue.Empty:
-                    ev = {"type": "error", "error": "timeout",
-                          "message": "Upload timed out after 680 s."}
-                yield f"data: {_json.dumps(ev)}\n\n"
-                if ev.get("type") in ("done", "error"):
-                    break
+            from backend import activity as _activity
+
+            with _activity.track("master_publish", screen="/setup") as _job:
+                while True:
+                    try:
+                        ev = ev_q.get(timeout=680)
+                    except queue.Empty:
+                        ev = {"type": "error", "error": "timeout",
+                              "message": "Upload timed out after 680 s."}
+                    if ev.get("type") == "progress":
+                        _job.update({"pct": ev.get("pct"), "label": ev.get("label")})
+                    yield f"data: {_json.dumps(ev)}\n\n"
+                    if ev.get("type") in ("done", "error"):
+                        break
 
         return Response(
             stream_with_context(_stream()),
@@ -5193,28 +5202,32 @@ def create_app() -> Flask:
         )
 
         def _stream():
-            for name, module_name, func_name in steps:
-                yield f"data: {json.dumps({'event': 'start', 'step': name})}\n\n"
-                try:
-                    module = importlib.import_module(module_name)
-                    func = getattr(module, func_name)
-                except (ImportError, AttributeError):
-                    yield f"data: {json.dumps({'event': 'skipped', 'step': name})}\n\n"
-                    continue
-                try:
-                    result = func()
-                    payload = {"event": "done", "step": name}
-                    if isinstance(result, dict):
-                        payload["stats"] = result
-                    yield f"data: {json.dumps(payload)}\n\n"
-                except Exception as exc:
-                    _log.exception("derived/recompute: step %s failed", name)
-                    yield (
-                        f"data: {json.dumps({'event': 'error', 'step': name, 'message': str(exc)})}"
-                        "\n\n"
-                    )
-                    return
-            yield f"data: {json.dumps({'event': 'chain_done'})}\n\n"
+            from backend import activity as _activity
+
+            with _activity.track("derived_recompute", screen="/dbeditor") as _job:
+                for name, module_name, func_name in steps:
+                    _job.update({"label": name})
+                    yield f"data: {json.dumps({'event': 'start', 'step': name})}\n\n"
+                    try:
+                        module = importlib.import_module(module_name)
+                        func = getattr(module, func_name)
+                    except (ImportError, AttributeError):
+                        yield f"data: {json.dumps({'event': 'skipped', 'step': name})}\n\n"
+                        continue
+                    try:
+                        result = func()
+                        payload = {"event": "done", "step": name}
+                        if isinstance(result, dict):
+                            payload["stats"] = result
+                        yield f"data: {json.dumps(payload)}\n\n"
+                    except Exception as exc:
+                        _log.exception("derived/recompute: step %s failed", name)
+                        err = json.dumps(
+                            {"event": "error", "step": name, "message": str(exc)}
+                        )
+                        yield f"data: {err}\n\n"
+                        return
+                yield f"data: {json.dumps({'event': 'chain_done'})}\n\n"
 
         return Response(
             stream_with_context(_stream()),
@@ -6466,14 +6479,22 @@ def create_app() -> Flask:
         threading.Thread(target=_work, daemon=True).start()
 
         def _stream():
-            while True:
-                try:
-                    ev = ev_q.get(timeout=680)
-                except queue.Empty:
-                    ev = {"type": "error", "error": "timeout", "message": "Update timed out after 680 s."}
-                yield f"data: {_json.dumps(ev)}\n\n"
-                if ev.get("type") in ("done", "error"):
-                    break
+            from backend import activity as _activity
+
+            with _activity.track("master_install", screen="/setup") as _job:
+                while True:
+                    try:
+                        ev = ev_q.get(timeout=680)
+                    except queue.Empty:
+                        ev = {
+                            "type": "error", "error": "timeout",
+                            "message": "Update timed out after 680 s.",
+                        }
+                    if ev.get("type") == "progress":
+                        _job.update({"pct": ev.get("pct"), "label": ev.get("label")})
+                    yield f"data: {_json.dumps(ev)}\n\n"
+                    if ev.get("type") in ("done", "error"):
+                        break
 
         return Response(
             stream_with_context(_stream()),
@@ -8806,15 +8827,20 @@ def create_app() -> Flask:
         threading.Thread(target=_work, daemon=True).start()
 
         def _stream():
-            while True:
-                try:
-                    ev = ev_q.get(timeout=680)
-                except queue.Empty:
-                    ev = {"type": "error", "error": "timeout",
-                          "message": "Upload timed out after 680 s."}
-                yield f"data: {_json.dumps(ev)}\n\n"
-                if ev.get("type") in ("done", "error"):
-                    break
+            from backend import activity as _activity
+
+            with _activity.track("sitedata_publish", screen="/setup") as _job:
+                while True:
+                    try:
+                        ev = ev_q.get(timeout=680)
+                    except queue.Empty:
+                        ev = {"type": "error", "error": "timeout",
+                              "message": "Upload timed out after 680 s."}
+                    if ev.get("type") == "progress":
+                        _job.update({"pct": ev.get("pct"), "label": ev.get("label")})
+                    yield f"data: {_json.dumps(ev)}\n\n"
+                    if ev.get("type") in ("done", "error"):
+                        break
 
         return Response(
             stream_with_context(_stream()),
@@ -9073,15 +9099,20 @@ def create_app() -> Flask:
         threading.Thread(target=_work, daemon=True).start()
 
         def _stream():
-            while True:
-                try:
-                    ev = ev_q.get(timeout=680)
-                except queue.Empty:
-                    ev = {"type": "error", "error": "timeout",
-                          "message": "Install timed out after 680 s."}
-                yield f"data: {_json.dumps(ev)}\n\n"
-                if ev.get("type") in ("done", "error"):
-                    break
+            from backend import activity as _activity
+
+            with _activity.track("sitedata_install", screen="/setup") as _job:
+                while True:
+                    try:
+                        ev = ev_q.get(timeout=680)
+                    except queue.Empty:
+                        ev = {"type": "error", "error": "timeout",
+                              "message": "Install timed out after 680 s."}
+                    if ev.get("type") == "progress":
+                        _job.update({"pct": ev.get("pct"), "label": ev.get("label")})
+                    yield f"data: {_json.dumps(ev)}\n\n"
+                    if ev.get("type") in ("done", "error"):
+                        break
 
         return Response(
             stream_with_context(_stream()),
