@@ -1,15 +1,19 @@
-# Screenshot placeholders
+# Website & docs screenshots
 
-Replace each file with a real screenshot of the app.
-The website (`docs/index.html`) references these paths.
+Real app screenshots captured with the sanctioned screenshot engine
+(`tools/electron_driver.mjs`, Tier A renderer mode). Referenced by the
+website (`docs/index.html`), `README.md`, and `docs/wiki/` pages.
 
-| File | Screenshot to take |
-|------|--------------------|
-| `hero.png` | Main window — Lookup tab showing a match result |
-| `lookup.png` | Lookup tab — checksum pasted, full match result table |
-| `map.png` | Map tab — clustered markers visible on the world map |
-| `search.png` | Search tab — query entered, results table visible |
-| `spectrogram.png` | Spectrogram tab — a spectrogram image rendered |
+| File | Shows |
+|------|-------|
+| `home.png` | Home screen — collection overview, at-a-glance stats, recent activity |
+| `quicklookup.png` | Quick Lookup — pasted FFP checksums matched to an LB entry |
+| `library.png` | Library — timeline of shows, recording formats, detail panel |
+| `search.png` | Search — facet filters beside the virtualized results table |
+| `map.png` | Concert map — clustered markers, decade colors, venue detail panel |
+| `gaps.png` | Gaps — per-year grid of concert dates colored by circulation |
 
-After adding images, edit `docs/index.html` — each placeholder block
-has an HTML comment showing the `<img>` tag to swap in.
+To refresh: start the backend, then run the tour
+(`node tools/electron_driver.mjs --renderer-only session tools/debug_screens.json`)
+and copy the wanted PNGs from `.debug/` here under the same names.
+Keep each under ~300 KB (the website loads them all on one page).

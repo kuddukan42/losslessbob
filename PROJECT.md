@@ -234,8 +234,8 @@ losslessbob/
 │   ├── schema.html           # Auto-deployed DB schema browser (Cloudflare Pages, losslessbob-schema.pages.dev)
 │   ├── lb_missing_vs_missing_status.md # Explains lb_missing table vs lb_master 'missing' status distinction
 │   ├── wiki/                 # Agentic wiki: Home.md + 15 topic pages (Architecture, Backend-API, Database, Data-Flows, GUI, Concert-Ranker, TapeMatch, Dev-Workflow, Visual-Verification, Taper-Attribution-Flow, Setlist-Sources, Show-Dossier, Master-Data-Sync, Collection-Pipeline, Integrations), refreshed via /wiki-update
-│   └── screenshots/          # Screenshot placeholders (replace with real app screenshots)
-│       └── README.md         # Guide for which screenshots to capture
+│   └── screenshots/          # Real app screenshots (Tier A driver captures) used by index.html, README.md, wiki
+│       └── README.md         # Inventory + refresh recipe for the screenshot set
 ├── attic/                    # Holding pen for deletion candidates (see attic/README.md); review + purge
 └── data/
     ├── losslessbob.db        # SQLite database

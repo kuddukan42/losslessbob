@@ -29,7 +29,8 @@ Yearly Chronicles are still parsed for **calendar/diary + new-tapes** data
   `setlist_fingerprint_suggestions` (curator review queue).
 - **Gaps view** (TODO-256) — `gap_analysis.py` classifies every `olof_events`
   concert date covered/partial/gap/future against `entries`, computed live
-  (no derived table). GUI: `ScreenGaps` at `/gaps`.
+  (no derived table). GUI: `ScreenGaps` at `/gaps` —
+  [screenshot](../screenshots/gaps.png).
 
 ## Consumers
 
