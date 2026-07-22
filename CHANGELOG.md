@@ -1,4 +1,20 @@
-[2026-07-22] — fix: open-bug sweep — test temp-file containment (BUG-253/254), dead mirror URLs (BUG-255)
+[2026-07-22] — fix: open-bug sweep — test temp-file containment (BUG-253/254), dead mirror URLs (BUG-255), lbdir unreconcilable entries (BUG-252), BUG-120 forensics
+Fixed: backend/checksum_utils.py: BUG-252 — unreconcilable lbdir entries
+  (self-referencing manifests, server-regenerated DigiFlawFinder reports; new
+  _REGEN_REPORT_RE + _is_unreconcilable_entry) no longer count as missing or
+  fail in verify_folder_lbdir (detail statuses stay visible) and are excluded
+  from find_reconcilable_files / find_site_recoverable_files proposals.
+  find_reconcilable_files also gained BUG-174's name-based fallback: on-disk
+  near-duplicates (LBF-prefix-stripped basename match) surface as
+  matched_by:'name' rename proposals with expected_md5.
+Changed: gui_next LbdirDetail.tsx + lbdirStore.ts: rename-proposal rows render
+  name matches with warn edge + "MD5 mismatch" pill (same treatment as site
+  proposals); ReconcileProposal type gains optional expected_md5/matched_by.
+Changed: BUGS: BUG-120 closed after full forensics — LB-06548 track 09 and
+  LB-12181 d18-2 are non-FLAC corrupt files sharing an identical 420KB prefix
+  (cross-linked clusters on DYLAN2 → TODO-264 disk check + re-source);
+  LB-12181 d18-7 audio is bit-perfect (PCM md5 matches ffp), container-only
+  change; LB-12181 lookup-not-found is expected (site has no checksums for it).
 Fixed: conftest.py: BUG-253 — session-scoped autouse fixture routes
   tempfile.tempdir + TMPDIR into pytest's self-pruning basetemp; leaked
   lb_*_test_* dirs / tmp*.wav no longer accumulate in /tmp (verified: two full

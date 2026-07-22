@@ -115,6 +115,29 @@ def _is_lbdir_manifest_name(fname: str) -> bool:
     basename = re.split(r'[/\\]', fname)[-1]
     return bool(_LBDIR_MANIFEST_RE.match(basename))
 
+
+# DigiFlawFinder report pages are regenerated server-side on every download (the
+# content varies even under an unchanged Last-Modified header), so no obtainable
+# copy can ever match the MD5 recorded in an lbdir — BUG-252.
+_REGEN_REPORT_RE = re.compile(r'digiflawfinder.*\.html?$', re.IGNORECASE)
+
+
+def _is_regenerated_report_name(fname: str) -> bool:
+    """Whether ``fname`` is a server-regenerated report (DigiFlawFinder html)."""
+    basename = re.split(r'[/\\]', fname)[-1]
+    return bool(_REGEN_REPORT_RE.match(basename))
+
+
+def _is_unreconcilable_entry(fname: str) -> bool:
+    """Whether an lbdir entry can never pass MD5 verification from any source.
+
+    Covers self-referencing manifests (circular by construction) and
+    server-regenerated reports (content not stable). These are excluded from
+    missing counts, integrity status, and reconcile/site-recovery proposals
+    (BUG-252).
+    """
+    return _is_lbdir_manifest_name(fname) or _is_regenerated_report_name(fname)
+
 # Typographic apostrophes that differ between checksum files (e.g. EAC) and disk filenames.
 _APOSTROPHE_TRANS = str.maketrans({
     '\u2018': "'",  # LEFT SINGLE QUOTATION MARK
@@ -916,9 +939,10 @@ def verify_folder_lbdir(folder_path, lbdir_path):
         ffp_st = _cmp(ffp_exp, ffp_actual, on_disk)
         shn_st = _cmp(shn_exp, shn_actual, on_disk)
 
-        if not on_disk and _is_lbdir_manifest_name(fname):
-            # Self-referencing manifest: its recorded checksum can never match the
-            # finished file, so it can't be reconciled. Treat as pass, not missing.
+        if not on_disk and _is_unreconcilable_entry(fname):
+            # Self-referencing manifest (circular checksum) or regenerated report
+            # (unstable content): can never be reconciled from any source, so a
+            # missing copy is a pass, not missing (BUG-252).
             overall = 'pass'
             n_pass += 1
         elif not on_disk:
@@ -943,6 +967,12 @@ def verify_folder_lbdir(folder_path, lbdir_path):
                     checks.append(shn_st)
 
             overall = _file_verdict(checks)
+            if overall == 'fail' and _is_unreconcilable_entry(fname):
+                # An on-disk copy of an unreconcilable entry (self-referencing
+                # manifest / regenerated report) mismatching its recorded MD5 is
+                # expected by construction — don't fail the folder over it. The
+                # per-check statuses stay visible in the detail row (BUG-252).
+                overall = 'pass'
             if overall == 'pass':
                 n_pass += 1
             elif overall == 'fail':
@@ -1028,7 +1058,12 @@ def find_reconcilable_files(
     Identify disk files that match lbdir checksums but are at wrong paths.
 
     Scans all files recursively under folder_path, computes MD5, and matches
-    against lbdir entries whose expected path does not exist on disk.
+    against lbdir entries whose expected path does not exist on disk. Entries
+    with no MD5 match fall back to a filename match (LBF-NNNNN- prefix
+    stripped, apostrophe/case-normalised) flagged ``matched_by='name'`` with
+    the actual and expected MD5s exposed — the disk copy is a different
+    revision of the same file (BUG-252). Unreconcilable entries
+    (self-referencing manifests, regenerated reports) are excluded outright.
 
     Args:
         folder_path: Root folder to scan.
@@ -1036,6 +1071,8 @@ def find_reconcilable_files(
 
     Returns:
         dict with keys 'proposals', 'unmatched_lbdir', 'unmatched_disk', 'warnings'.
+        Each proposal carries 'disk_rel', 'lbdir_rel', 'md5' (disk copy's hash),
+        'expected_md5', and 'matched_by' ('md5' | 'name').
         On parse failure, returns {'error': '...'}.
     """
     folder = Path(folder_path)
@@ -1049,15 +1086,20 @@ def find_reconcilable_files(
     if not md5_map:
         return {"error": "No MD5 section found in lbdir file"}
 
+    # Unreconcilable entries (self-referencing manifests, regenerated reports)
+    # can never match by MD5 from any source — leave them out of the missing
+    # set entirely so they generate neither proposals nor unmatched noise
+    # (BUG-252).
     missing_entries: dict[str, str] = {
         rel: md5 for rel, md5 in md5_map.items()
-        if not (folder / rel).exists()
+        if not (folder / rel).exists() and not _is_unreconcilable_entry(rel)
     }
 
     correct_rels: set[str] = set(md5_map.keys()) - set(missing_entries.keys())
 
     lbdir_rel_self = lbdir.relative_to(folder).as_posix()
     disk_md5_to_rel: dict[str, str] = {}
+    disk_rel_to_md5: dict[str, str] = {}
     warnings: list[str] = []
     all_disk_rels: set[str] = set()
 
@@ -1078,6 +1120,7 @@ def find_reconcilable_files(
             )
         else:
             disk_md5_to_rel[md5] = rel
+        disk_rel_to_md5[rel] = md5
         all_disk_rels.add(rel)
 
     proposals: list[dict] = []
@@ -1091,10 +1134,39 @@ def find_reconcilable_files(
                 "disk_rel": disk_rel,
                 "lbdir_rel": lbdir_rel,
                 "md5": expected_md5,
+                "expected_md5": expected_md5,
+                "matched_by": "md5",
             })
             matched_disk_rels.add(disk_rel)
         else:
             unmatched_lbdir.append(lbdir_rel)
+
+    # Name-based fallback (BUG-252, mirrors BUG-174's site-recovery fallback):
+    # a still-missing entry whose basename matches an unmatched disk file
+    # (LBF-NNNNN- prefix stripped, apostrophe-normalised, case-insensitive) is
+    # a near-duplicate revision at the wrong path — surface it as a rename
+    # proposal flagged matched_by='name' with the MD5 mismatch visible, instead
+    # of listing the same bytes as both "unmatched disk" and a site proposal.
+    still_unmatched = [r for r in unmatched_lbdir]
+    if still_unmatched:
+        disk_by_name: dict[str, str] = {}
+        for rel in sorted(all_disk_rels - matched_disk_rels):
+            base = re.sub(r"^LBF-\d{4,6}-", "", Path(rel).name)
+            disk_by_name.setdefault(_norm_fname(base).lower(), rel)
+        unmatched_lbdir = []
+        for lbdir_rel in still_unmatched:
+            disk_rel = disk_by_name.get(_norm_fname(Path(lbdir_rel).name).lower())
+            if disk_rel and disk_rel not in matched_disk_rels:
+                proposals.append({
+                    "disk_rel": disk_rel,
+                    "lbdir_rel": lbdir_rel,
+                    "md5": disk_rel_to_md5.get(disk_rel, ""),
+                    "expected_md5": missing_entries[lbdir_rel],
+                    "matched_by": "name",
+                })
+                matched_disk_rels.add(disk_rel)
+            else:
+                unmatched_lbdir.append(lbdir_rel)
 
     unmatched_disk = sorted(all_disk_rels - matched_disk_rels)
 
@@ -1114,11 +1186,13 @@ def find_site_recoverable_files(
 ) -> dict:
     """Find files in SITE_FILES_DIR that can recover entries still missing from folder.
 
-    Tries an MD5 match first. Self-referencing entries (the lbdir manifest itself)
-    and regenerated reports (e.g. DigiFlawFinder html) can never match by MD5 across
-    lbdir revisions, so entries with no MD5 match fall back to a filename match:
-    the site file's `LBF-{lb_number:05d}-` prefix is stripped and the remainder is
-    compared (case/apostrophe-normalised) against the missing entry's basename.
+    Tries an MD5 match first; entries with no MD5 match fall back to a filename
+    match: the site file's `LBF-{lb_number:05d}-` prefix is stripped and the
+    remainder is compared (case/apostrophe-normalised) against the missing
+    entry's basename. Unreconcilable entries — self-referencing manifests and
+    regenerated reports (e.g. DigiFlawFinder html), which can never match by
+    MD5 from any source — are excluded from the missing set entirely rather
+    than offered as permanent MD5-mismatch proposals (BUG-252).
 
     Args:
         folder_path: Root folder to check against.
@@ -1143,7 +1217,7 @@ def find_site_recoverable_files(
     md5_map: dict[str, str] = dict(parsed.get("md5", []))
     missing_entries: dict[str, str] = {
         rel: md5 for rel, md5 in md5_map.items()
-        if not (folder / rel).exists()
+        if not (folder / rel).exists() and not _is_unreconcilable_entry(rel)
     }
 
     if not missing_entries or not site_dir.exists():

@@ -1,4 +1,10 @@
 
+TODO-264: DYLAN2 disk health + re-source 2 corrupt files found in BUG-120 forensics
+Priority: High
+Status: Open
+Added: 2026-07-22
+Description: BUG-120 forensics (2026-07-22) found two non-FLAC corrupt files sharing an identical 420KB high-entropy prefix despite mtimes 9 years apart — evidence of cross-linked clusters / filesystem damage on the DYLAN2 disk, not per-file corruption. Actions for tj: (1) fsck/chkdsk /mnt/DYLAN2 and assess disk health (SMART); (2) re-source '/mnt/DYLAN2/Concerts/1978/1978-06-20 London, England (LB-06548)/09 Don't Think Twice.flac' (expected md5 21116b8f97590bb15f8da8dbdcbbca23) and 'd18 2 - bd65-cutting-edge - More and More (Mono, Live).flac' in the Cutting Edge [24-96] LB 12181 folder (expected md5 per bd65-Cutting-Edge.md5); (3) optional: regenerate LB-12181's md5 entry for 'd18 7 - Young but Daily Growing' — audio is bit-perfect (PCM fingerprint matches ffp), only the container/tags were rewritten during the 2021 disc-18 recopy.
+
 TODO-234: TapeMatch family over-merge review — 22 series-vs-series taper conflicts
 Priority: Medium
 Status: Open
