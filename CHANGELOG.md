@@ -1,3 +1,20 @@
+[2026-07-22] — fix: open-bug sweep — test temp-file containment (BUG-253/254), dead mirror URLs (BUG-255)
+Fixed: conftest.py: BUG-253 — session-scoped autouse fixture routes
+  tempfile.tempdir + TMPDIR into pytest's self-pruning basetemp; leaked
+  lb_*_test_* dirs / tmp*.wav no longer accumulate in /tmp (verified: two full
+  919-test runs, zero leaks; 1,545 stale dirs cleaned up). BUG-254 (flaky
+  test_mixed_shn_and_wav_checksums_still_matched) closed as shared root cause —
+  its single 2026-07-16 failure matches the ENOSPC casualties BUG-253 documents.
+Fixed: backend/site_crawler.py: BUG-255 — entry_files.downloaded is now
+  tri-state (0 missing / 1 mirrored / 2 dead): the 404 branch marks the
+  matching row downloaded=2 so permanently-dead attachment URLs (stale seeds
+  from regenerated pages + source-mangled hrefs, all confirmed not_found/404
+  in site_inventory) stop being re-seeded. One-time backfill marked all 88
+  residual rows dead — missing-attachments count converged 88 -> 0, with no
+  content loss (every affected LB already has corrected-name siblings
+  mirrored). Docstring (backend/db.py get_missing_attachment_urls), PROJECT.md
+  entry_files schema note, tests in tests/test_scraper_crawler.py.
+
 [2026-07-22] — fix: Collection/Library first-launch load time (BUG-270)
 Fixed: backend/db.py: get_collection_duplicates N+1 — one query per duplicate
   group (3,220 full scans, entries had no date_str/location index) cost 3.5 s

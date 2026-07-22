@@ -1,6 +1,30 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-255: site mirror: 88 entry_files URLs permanently undownloadable (mangled/double-encoded)
+Status: Fixed
+File(s): backend/site_crawler.py
+Reported: 2026-07-16
+Fixed: 2026-07-22
+Root cause: The 88 residual downloaded=0 rows were all in site_inventory as not_found/404 — genuinely dead URLs, not skipped: stale seeds from older page versions the site later regenerated with corrected filenames (e.g. LBF-11610-checksum.html -> .st5, LB-07837 long truncated names -> short Pre-Columbia names), plus a few source-mangled hrefs still on the live pages (LB-01314 U+FFFD from a raw cp1252 byte). Session 33 reported 0 'failed' because 404s count as not_found. Every affected LB already has its corrected-name siblings mirrored — no content loss
+Fix: entry_files.downloaded is now tri-state (0 missing / 1 mirrored / 2 dead): site_crawler.py 404 branch marks the matching entry_files row downloaded=2 so it stops being re-seeded; one-time backfill marked all 88 rows dead (downloaded=0 count now 0, mirror converged). Docstring + PROJECT.md schema updated; tests in tests/test_scraper_crawler.py (TestCrawl404MarksAttachmentDead + dead-row seeding exclusion).
+
+BUG-254: Flaky test: test_mixed_shn_and_wav_checksums_still_matched fails in full-suite run, passes solo
+Status: Fixed
+File(s): tests/test_db_lookup.py
+Reported: 2026-07-16
+Fixed: 2026-07-22
+Root cause: Shared root cause with BUG-253: the single observed failure (2026-07-16) occurred the same day /tmp hit 100% from leaked test temp dirs; BUG-253's entry documents other tests failing mid-suite but green in isolation from ENOSPC. lookup_checksums' completeness logic is deterministic given DB content, and the bloom filter's db_path + live-COUNT guards hold for unique mkdtemp paths — no fixture-order mechanism found
+Fix: No separate fix — resolved by BUG-253's temp-file containment. Two clean full-suite runs (919 passed each) post-fix, flaky test included. Reopen with failure output if it ever recurs on a non-full /tmp.
+
+BUG-253: pytest suite leaks lb_*_test_* temp dirs and tmp*.wav files into /tmp
+Status: Fixed
+File(s): tests/,conftest.py
+Reported: 2026-07-16
+Fixed: 2026-07-22
+Root cause: Test modules call tempfile.mkdtemp()/NamedTemporaryFile directly with cleanup only on the success path (or none); leaked lb_*_test_* dirs and 67-74MB tmp*.wav files accumulated in /tmp until the 2.7G partition filled
+Fix: conftest.py: session-scoped autouse fixture routes tempfile.tempdir + TMPDIR into pytest's tmp_path_factory basetemp, which pytest self-prunes to the last few runs — leaks are now bounded and self-cleaning. Verified: two full-suite runs (919 tests), zero files leaked to /tmp root. One-off cleanup of 1,545 re-accumulated stale dirs performed 2026-07-22.
+
 BUG-270: Collection/Library first-launch load slow — 4.1s prefetch endpoint, 75MB uncompressed JSON
 Status: Fixed
 File(s): backend/db.py:4506,backend/app.py:1832

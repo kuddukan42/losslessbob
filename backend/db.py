@@ -6852,6 +6852,10 @@ def get_missing_attachment_urls(db_path=None) -> list[str]:
     included) that no crawled HTML page links to, so the mirror converges
     on every attachment the scraper knows about.
 
+    ``downloaded`` is tri-state: 0 = missing (returned here), 1 = mirrored,
+    2 = dead (URL 404s permanently — stale seed from an older page version
+    or source-mangled href, BUG-255 — excluded from seeding).
+
     Args:
         db_path: Override DB path (tests).
 

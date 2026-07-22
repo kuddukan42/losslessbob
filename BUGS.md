@@ -1,28 +1,4 @@
 
-BUG-255: site mirror: 88 entry_files URLs permanently undownloadable (mangled/double-encoded)
-Status: Open
-File(s): backend/site_crawler.py
-Reported: 2026-07-16
-Description: Found 2026-07-16 after crawl session 33 converged the mirror (4,357 -> 88 undownloaded). The 88 residual entry_files rows have defective file_url values: double-encoded UTF-8 (%c3%83%c2%a9 for e-acute), names truncated mid-URL (no extension, e.g. LBF-11127 discs), and .md5.html suffix variants. Session 33 reported 0 fetch failures, so these are skipped/mis-seeded, not 404s. Only one is xref-named (LBF-12229 track artwork, not a checksum fileset) — no xref ingest impact (rescan staged 0 new). Fix direction: repair file_url at scrape/parse time (encoding + truncation), or mark rows dead so downloaded=0 converges to 0.
-Root cause: Unknown
-Fix: —
-
-BUG-254: Flaky test: test_mixed_shn_and_wav_checksums_still_matched fails in full-suite run, passes solo
-Status: Open
-File(s): tests/test_db_lookup.py
-Reported: 2026-07-16
-Description: Failed once in a full 'pytest tests/' run (2026-07-16), passed in isolation and on full-suite re-run — order-dependent state pollution (likely shared temp DB fixture). Not caused by the xref session (no backend changes that day).
-Root cause: Unknown
-Fix: —
-
-BUG-253: pytest suite leaks lb_*_test_* temp dirs and tmp*.wav files into /tmp
-Status: Open
-File(s): tests/,conftest.py
-Reported: 2026-07-16
-Description: Discovered 2026-07-16 during the legacy GUI removal: ~2,900 leaked lb_<name>_test_* dirs (plus orphan 67-74MB tmp*.wav from ab_clips-style tests, pytest-of-tjenkins, /tmp/__pycache__) had accumulated in /tmp until the 2.7G partition hit 100%, causing intermittent ENOSPC test failures (test_venue_gazetteer 3F/4E mid-suite, green in isolation) and broken tool output capture. Tests create tempfile.mkdtemp(prefix='lb_..._test_') without cleanup/addfinalizer. Fix: route through pytest tmp_path/tmp_path_factory or add teardown; check every test module that calls tempfile directly. One-off cleanup already performed 2026-07-16.
-Root cause: Unknown
-Fix: —
-
 BUG-210: backend/lossless_bob.db keeps reappearing in repo root (untracked, empty)
 Status: Open
 File(s): backend/lossless_bob.db (unknown origin)
