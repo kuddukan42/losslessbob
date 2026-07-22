@@ -1,3 +1,23 @@
+[2026-07-22] — fix: Home screen responsive layout + activity-table column alignment (BUG-265, BUG-266); screenshot engine sanctioned
+Fixed: gui_next .../index.css + ScreenHome.tsx: bottom row (Recent activity |
+  Tonight/Tips) moved from inline '1.45fr 1fr' grid to .lbb-home-grid-bottom —
+  minmax(0, …) columns so content can shrink, stacking to one column below
+  1400px. Previously the activity widget was invisible at 1280x768 (the app
+  minimum) and a ~40px sliver at 1440x900, with the right column overflowing
+  off-screen. Top row likewise → .lbb-home-grid-top. (BUG-265)
+Fixed: gui_next .../ScreenHome.tsx: both activity tables (main + full-log
+  modal) declared 5-col colgroups against 6-cell body rows (TR auto-injects
+  the edge-bar td + manual type-dot TD) — every value rendered one column
+  right of its header and WHEN timestamps truncated at all sizes. Added an
+  18px dot col + empty TH, widened WHEN to 140px, realigned empty-state rows.
+  (BUG-266)
+Changed: .claude/CLAUDE.md, .claude/skills/verify/SKILL.md,
+  .claude/commands/gui-check.md: screenshot engine (browser/electron drivers)
+  sanctioned for use on Claude's own initiative for visual gui_next changes —
+  tj cleared it 2026-07-22; /gui-check remains the required baseline.
+Verified: electron_driver size-matrix at 1280/1440/1920/2560 + full-log modal
+  session; tsc node/web + production build all pass.
+
 [2026-07-21] — feat: command palette (Ctrl+K) — global fuzzy navigation (TODO-263)
 Added: gui_next .../lib/navigation.ts — NAV_GROUPS + nav types extracted from
   AppShell.tsx so the sidebar and palette share one screen registry (curator

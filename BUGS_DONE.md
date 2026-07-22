@@ -1,6 +1,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-266: Home activity tables: body rows have 6 cells vs 5-col colgroup — columns shift, WHEN truncates
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenHome.tsx:424
+Reported: 2026-07-22
+Fixed: 2026-07-22
+Root cause: TR injects the 3px edge-bar td automatically; both activity tables also render a manual type-dot TD but their colgroup/thead only declared 5 columns, so fixed-layout column sizing assigned each body cell the next column's width.
+Fix: Added an 18px dot <col> + empty TH to both tables (main + full-log modal), widened WHEN to 140px, realigned empty-state rows to the 6-cell structure. Verified via electron_driver: headers align, timestamps render in full at all sizes.
+
+BUG-265: Home screen: Recent-activity widget hidden/crushed below ~1900px window width
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenHome.tsx:405,gui_next/src/renderer/src/index.css
+Reported: 2026-07-22
+Fixed: 2026-07-22
+Root cause: Grid columns default to min-width:auto; the fixed '1.45fr 1fr' template had no minmax(0,) floor and no breakpoint, so intrinsic content width (nowrap description text, fixed table cols) forced the bottom row wider than the viewport at small window sizes.
+Fix: index.css: new .lbb-home-grid-top/.lbb-home-grid-bottom classes with minmax(0, …) columns; bottom row stacks to one column below 1400px. ScreenHome.tsx rows switched from inline grid styles to the classes. Verified via electron_driver size-matrix at 1280/1440/1920/2560.
+
 BUG-264: DatabaseWriteQueue.shutdown() closes the writer's connection from the caller thread, segfaulting CI
 Status: Fixed
 File(s): backend/db_queue.py:52,backend/db_queue.py:132

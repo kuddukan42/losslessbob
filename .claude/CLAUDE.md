@@ -29,12 +29,13 @@ Follow every session. No asking.
 
 - Backend changes: restart before verifying (`/backend-restart`) — stale processes
   cause false "fix didn't work" confusion.
-- gui_next changes: `/gui-check` (typecheck + production build). **No screenshots
-  or browser/UI automation** — the user verifies visuals themselves.
-  The one exception is `/verify`, and only when the user invokes it by name:
-  Tier A screenshots the renderer, `/verify --electron` drives the real Electron
-  app on Xvfb (resize, display scale, real `window.api`). Having the capability
-  is not permission to use it on your own initiative after a code change.
+- gui_next changes: `/gui-check` (typecheck + production build) is always
+  required. The screenshot engine is **sanctioned** (fixed & cleared by tj
+  2026-07-22): when a change affects layout or visuals, also verify it with
+  `/verify` — Tier A screenshots the renderer; `/verify --electron` drives the
+  real Electron app on Xvfb (resize, display scale, real `window.api`). Claude
+  may run it on its own initiative; pick the cheapest tier that answers the
+  question.
 - A PostToolUse hook (`.claude/hooks/py_compile_check.sh`) auto-runs
   `py_compile` on every `.py` edit — no manual syntax-check step needed.
 - CI (`.github/workflows/ci.yml`) runs the backend suite + gui-check on every

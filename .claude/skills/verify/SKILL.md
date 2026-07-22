@@ -1,6 +1,6 @@
 ---
 name: verify
-description: Visual verification of the gui_next GUI — screenshot all major screens, review for defects, PASS/FAIL verdict. Default Tier A (Chromium vs the Vite build); `--electron` drives the real Electron app. Only runs when the user explicitly invokes it.
+description: Visual verification of the gui_next GUI — screenshot all major screens, review for defects, PASS/FAIL verdict. Default Tier A (Chromium vs the Vite build); `--electron` drives the real Electron app. Sanctioned for use on Claude's own initiative (2026-07-22).
 ---
 
 # Visual Verification
@@ -8,9 +8,10 @@ description: Visual verification of the gui_next GUI — screenshot all major sc
 Capture every major gui_next screen, review each screenshot, and give a
 PASS/FAIL verdict.
 
-This skill is the **explicit, user-invoked exception** to the repo rule
-"no screenshots to verify GUI changes". Never run it on your own initiative
-after a code change — only when the user invokes `/verify`.
+The screenshot engine is sanctioned for use on Claude's own initiative
+(fixed & cleared by tj 2026-07-22 — it was previously restricted to explicit
+user invocation). Run it whenever a gui_next change affects layout or visuals;
+`/gui-check` remains the required non-visual baseline.
 
 ## Two tiers
 

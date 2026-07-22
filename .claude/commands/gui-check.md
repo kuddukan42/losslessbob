@@ -1,12 +1,13 @@
 ---
-description: Non-visual verification for gui_next changes — typecheck main + renderer, then production build. The sanctioned alternative to screenshots.
+description: Non-visual verification for gui_next changes — typecheck main + renderer, then production build. Baseline check; pair with /verify screenshots for visual changes.
 ---
 
 # gui-check — Typecheck + build gui_next
 
-Runs the code checks that stand in for visual verification (per the repo rule:
-no screenshots/UI automation after GUI changes — the user verifies visuals).
-Run after any change under `gui_next/src/`.
+Runs the non-visual code checks for gui_next. Run after any change under
+`gui_next/src/`. For changes that affect layout or visuals, follow up with
+`/verify` — the screenshot engine is sanctioned for use on Claude's own
+initiative (2026-07-22).
 
 ## Steps
 
@@ -43,5 +44,5 @@ session.
 
 - There is no lint script in `gui_next/package.json` — typecheck + build is
   the full check suite.
-- Do not launch the app, take screenshots, or run `tools/browser_driver.mjs`
-  here; that is `/verify`, which only the user invokes.
+- Screenshots/UI automation are not part of this skill — that is `/verify`,
+  which may be run separately (on Claude's initiative for visual changes).

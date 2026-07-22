@@ -286,3 +286,25 @@ table tbody tr:hover td {
 .pipe-queue-table th:not(:first-child):not(:last-child) {
   border-right: 1px solid color-mix(in oklab, var(--lbb-border) 60%, transparent);
 }
+
+/* Home screen rows — minmax(0, …) lets columns shrink below their content's
+   intrinsic width (grid items default to min-width:auto, which otherwise
+   forces the row wider than the viewport at small window sizes). The bottom
+   row stacks to a single column below 1400px so the Recent-activity table and
+   the Tonight/Tips cards each get full width instead of crushing each other. */
+.lbb-home-grid-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.lbb-home-grid-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 18px;
+}
+@media (max-width: 1399px) {
+  .lbb-home-grid-bottom {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
