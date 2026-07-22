@@ -1923,5 +1923,27 @@
       "recording": "{{kind}}, {{mins}} min",
       "none": "Aucun"
     }
+  },
+  "palette": {
+    "placeholder": "Accédez directement à un écran, un numéro de LB, une date ou un lieu…",
+    "hint": "Ctrl+K",
+    "empty": "Aucun résultat trouvé",
+    "goToLb": "Accéder à LB-{{n}}",
+    "sections": {
+      "top": "Résultats les plus populaires",
+      "screens": "Écrans",
+      "actions": "Actions",
+      "entries": "Entrées"
+    },
+    "action": {
+      "checkUpdate": "Vérifier la mise à jour du fichier plat"
+    },
+    "update": {
+      "checking": "Recherche de mises à jour…",
+      "upToDate": "Vous êtes à jour.",
+      "available": "Mise à jour disponible : {{name}}",
+      "availableGeneric": "Une nouvelle version du fichier plat est disponible.",
+      "error": "Échec de la vérification des mises à jour : {{error}}"
+    }
   }
 }

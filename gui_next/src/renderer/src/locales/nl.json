@@ -1923,5 +1923,27 @@
       "recording": "{{kind}}, {{mins}} min",
       "none": "Geen"
     }
+  },
+  "palette": {
+    "placeholder": "Ga naar een scherm, LB-nummer, datum of locatie…",
+    "hint": "Ctrl+K",
+    "empty": "Geen resultaten",
+    "goToLb": "Ga naar LB-{{n}}",
+    "sections": {
+      "top": "Tophit",
+      "screens": "Schermpagina's",
+      "actions": "Acties",
+      "entries": "Vermeldingen"
+    },
+    "action": {
+      "checkUpdate": "Controleer op updates van platte bestanden"
+    },
+    "update": {
+      "checking": "Controleren op updates…",
+      "upToDate": "Je bent helemaal bij.",
+      "available": "Update beschikbaar: {{name}}",
+      "availableGeneric": "Er is een nieuwe release in platte bestandsvorm beschikbaar.",
+      "error": "Controle op updates mislukt: {{error}}"
+    }
   }
 }

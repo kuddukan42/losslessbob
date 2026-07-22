@@ -1923,5 +1923,27 @@
       "skippedLabel": "Skipped",
       "stoppingBadge": "stopping"
     }
+  },
+  "palette": {
+    "placeholder": "Jump to a screen, LB number, date, or venue…",
+    "hint": "Ctrl+K",
+    "empty": "No matches",
+    "goToLb": "Go to LB-{{n}}",
+    "sections": {
+      "top": "Top hit",
+      "screens": "Screens",
+      "actions": "Actions",
+      "entries": "Entries"
+    },
+    "action": {
+      "checkUpdate": "Check for flat-file update"
+    },
+    "update": {
+      "checking": "Checking for updates…",
+      "upToDate": "You're up to date.",
+      "available": "Update available: {{name}}",
+      "availableGeneric": "A new flat-file release is available.",
+      "error": "Update check failed: {{error}}"
+    }
   }
 }

@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-263: Command palette (Ctrl+K) — FABLE_COMMAND_PALETTE.md
+Priority: Medium
+Status: Done
+Added: 2026-07-21
+Closed: 2026-07-21
+Description: Ctrl+K fuzzy palette: shared nav registry, LB/date/venue jumps, checkUpdate action, registerCommands extension contract for future specs.
+Shipped B1-B5 same day: lib/navigation.ts (shared screen registry), lib/commandRegistry.ts (extension contract), lib/fuzzyMatch.ts (scorer), components/CommandPalette.tsx; i18n across 6 locales; gui-check green. SSE-backed actions deferred to activity center per spec D4.
+
 TODO-262: Implement FABLE activity center (unified job tray)
 Priority: Medium
 Status: Done

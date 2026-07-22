@@ -1923,5 +1923,27 @@
       "recording": "{{kind}}, {{mins}} min",
       "none": "Keine"
     }
+  },
+  "palette": {
+    "placeholder": "Springe zu einem Bildschirm, einer LB-Nummer, einem Datum oder einem Veranstaltungsort…",
+    "hint": "Strg+K",
+    "empty": "Keine Treffer",
+    "goToLb": "Weiter zu LB-{{n}}",
+    "sections": {
+      "top": "Top-Treffer",
+      "screens": "Bildschirme",
+      "actions": "Aktionen",
+      "entries": "Einträge"
+    },
+    "action": {
+      "checkUpdate": "Auf Aktualisierungen der Flat-Datei prüfen"
+    },
+    "update": {
+      "checking": "Wird nach Updates gesucht…",
+      "upToDate": "Sie sind auf dem neuesten Stand.",
+      "available": "Update verfügbar: {{name}}",
+      "availableGeneric": "Eine neue Version der Flat-File-Datei ist verfügbar.",
+      "error": "Aktualitätsprüfung fehlgeschlagen: {{error}}"
+    }
   }
 }

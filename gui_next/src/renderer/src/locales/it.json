@@ -1923,5 +1923,27 @@
       "recording": "{{kind}}, {{mins}} min",
       "none": "Nessuna"
     }
+  },
+  "palette": {
+    "placeholder": "Vai a una schermata, a un numero di LB, a una data o a una sede…",
+    "hint": "Ctrl+K",
+    "empty": "Nessun risultato trovato",
+    "goToLb": "Vai a LB-{{n}}",
+    "sections": {
+      "top": "Risultato più popolare",
+      "screens": "Schermate",
+      "actions": "Azioni",
+      "entries": "Voci"
+    },
+    "action": {
+      "checkUpdate": "Verifica della presenza di aggiornamenti nei file flat"
+    },
+    "update": {
+      "checking": "Verifica aggiornamenti in corso…",
+      "upToDate": "Sei aggiornato.",
+      "available": "Aggiornamento disponibile: {{name}}",
+      "availableGeneric": "È disponibile una nuova versione del file flat.",
+      "error": "Verifica aggiornamenti non riuscita: {{error}}"
+    }
   }
 }
