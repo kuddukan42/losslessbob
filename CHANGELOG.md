@@ -17,6 +17,17 @@ Changed: .claude/CLAUDE.md, .claude/skills/verify/SKILL.md,
   tj cleared it 2026-07-22; /gui-check remains the required baseline.
 Verified: electron_driver size-matrix at 1280/1440/1920/2560 + full-log modal
   session; tsc node/web + production build all pass.
+Fixed: tools/debug_screens.json: /verify tour file was stale — still navigated
+  pre-refactor routes (/lookup, /verify, /rename, /lbdir → blank screens) and
+  missed 7 current screens; rewritten to the 20-screen registry from
+  lib/navigation.ts. (BUG-268)
+Fixed: gui_next locales en/de/fr/es/it/nl: gaps.grid.yearGap split into
+  yearGap_one/yearGap_other so year rows with one gap no longer read
+  "1 gaps". (BUG-267)
+Verified: full Tier A /verify tour (20 screens) — all render, no blank
+  screens, no raw i18n keys; scraper/fingerprint redirect Home as designed
+  (curator mode off); library/search/tapematch/songs/attachments captured in
+  transient "Loading…" states (Tier A shot timing, not defects).
 
 [2026-07-21] — feat: command palette (Ctrl+K) — global fuzzy navigation (TODO-263)
 Added: gui_next .../lib/navigation.ts — NAV_GROUPS + nav types extracted from

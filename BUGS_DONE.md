@@ -1,6 +1,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-268: tools/debug_screens.json stale — /verify tour shot blank screens, missed 7 current screens
+Status: Fixed
+File(s): tools/debug_screens.json
+Reported: 2026-07-22
+Fixed: 2026-07-22
+Root cause: Screen registry moved to lib/navigation.ts across GUI refactors but the driver tour session file was never updated to match.
+Fix: Rewrote tools/debug_screens.json to the current 20-screen registry (home, pipeline, library, collection, trading, sharing, search, bootlegs, tapematch, songs, gaps, attachments, spectrograms, map, scraper, fingerprint, setup, mounts, themes, dbeditor). Full Tier A tour re-run: all screens render.
+
+BUG-267: Gaps screen: singular count renders as '1 gaps'
+Status: Fixed
+File(s): gui_next/src/renderer/src/locales/en.json:1822
+Reported: 2026-07-22
+Fixed: 2026-07-22
+Root cause: Locale key gaps.grid.yearGap had only one form; i18next needs _one/_other suffixed keys to pluralize by count.
+Fix: Replaced yearGap with yearGap_one/yearGap_other in all six locales (en/de/fr/es/it/nl) with correct singular forms. Verified '1 gap' renders via browser_driver /gaps screenshot; tsc both configs pass.
+
 BUG-266: Home activity tables: body rows have 6 cells vs 5-col colgroup — columns shift, WHEN truncates
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenHome.tsx:424

@@ -1910,7 +1910,8 @@
     },
     "grid": {
       "loading": "…",
-      "yearGap": "{{count}} lagunas"
+      "yearGap_one": "{{count}} laguna",
+      "yearGap_other": "{{count}} lagunas"
     },
     "detail": {
       "noSelection": "Selecciona una fecha para ver qué se sabe sobre ella.",
