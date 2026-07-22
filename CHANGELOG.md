@@ -1,3 +1,23 @@
+[2026-07-21] — feat: command palette (Ctrl+K) — global fuzzy navigation (TODO-263)
+Added: gui_next .../lib/navigation.ts — NAV_GROUPS + nav types extracted from
+  AppShell.tsx so the sidebar and palette share one screen registry (curator
+  gating applies to both); AppShell now imports it.
+Added: gui_next .../lib/commandRegistry.ts — framework-free command registry
+  (registerCommands/getCommands) as the palette's extension point for future
+  specs (activity center, dossier, gaps); v1 built-ins = one nav command per
+  screen + action.checkUpdate (GET /api/flat_file/discover, footer outcome).
+Added: gui_next .../lib/fuzzyMatch.ts — standalone subsequence scorer (weights
+  consecutive runs, word-start hits, match position).
+Added: gui_next .../components/CommandPalette.tsx — Ctrl/Cmd+K overlay mounted
+  once in AppShell. Ranked query interpretation: LB pattern → "Go to LB-N"
+  (/library?lb=N), fuzzy commands, then debounced /api/search entries (≥2 chars,
+  stale-response guard, silent degradation). Escape/arrows/Enter/click wired,
+  scroll lock + focus restore. SSE-backed actions deferred to the activity
+  center per spec D4.
+Added: en.json + de/fr/es/it/nl — top-level `palette` locale namespace.
+Docs: PROJECT.md (command-palette architecture bullet); instructions spec moved
+  to complete/, FABLE_IDEAS UI §1 marked shipped, README index updated.
+
 [2026-07-21] — feat: unified activity center — status-bar job tray (TODO-262)
 Added: backend/activity.py — declarative JOB_ADAPTERS table (15 workers) +
   snapshot() normalizing every polled worker into one shape (spec §2 A1),

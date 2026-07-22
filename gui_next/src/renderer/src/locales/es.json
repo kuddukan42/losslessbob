@@ -1923,5 +1923,27 @@
       "recording": "{{kind}}, {{mins}} min",
       "none": "Ninguna"
     }
+  },
+  "palette": {
+    "placeholder": "Ir a una pantalla, un número de LB, una fecha o un recinto…",
+    "hint": "Ctrl+K",
+    "empty": "No se han encontrado resultados",
+    "goToLb": "Ir a LB-{{n}}",
+    "sections": {
+      "top": "Éxito más destacado",
+      "screens": "Pantallas",
+      "actions": "Acciones",
+      "entries": "Entradas"
+    },
+    "action": {
+      "checkUpdate": "Comprobar si hay actualizaciones en el archivo plano"
+    },
+    "update": {
+      "checking": "Buscando actualizaciones…",
+      "upToDate": "Ya estás al día.",
+      "available": "Actualización disponible: {{name}}",
+      "availableGeneric": "Ya está disponible una nueva versión del archivo plano.",
+      "error": "Error al comprobar actualizaciones: {{error}}"
+    }
   }
 }

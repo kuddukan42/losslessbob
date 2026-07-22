@@ -4,90 +4,12 @@ import { useTranslation } from 'react-i18next'
 import { Icon } from './Icon'
 import { useSettingsStore } from '../store'
 import { useActivityStore, startActivityPolling, type ActivityJob } from '../lib/activityStore'
+import { NAV_GROUPS, NAV_GROUP_KEYS, navPathForId } from '../lib/navigation'
+import { CommandPalette } from './CommandPalette'
 
 // ── Nav structure ────────────────────────────────────────────────────────────
-
-type NavId =
-  | 'home' | 'pipeline' | 'quicklookup'
-  | 'library' | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs' | 'tapematch' | 'songs' | 'gaps'
-  | 'attachments' | 'spectrograms' | 'map'
-  | 'scraper' | 'fingerprint' | 'setup' | 'mounts' | 'themes' | 'dbeditor'
-
-type NavGroupLabel = 'Ingest' | 'Library' | 'Assets' | 'Curator' | 'Settings'
-
-const NAV_GROUP_KEYS: Record<NavGroupLabel, `appShell.nav.${Lowercase<NavGroupLabel>}`> = {
-  Ingest:   'appShell.nav.ingest',
-  Library:  'appShell.nav.library',
-  Assets:   'appShell.nav.assets',
-  Curator:  'appShell.nav.curator',
-  Settings: 'appShell.nav.settings',
-}
-
-interface NavItem {
-  id: NavId
-  label: string
-  icon: string
-  featured?: boolean
-  count?: number
-}
-
-interface NavGroup {
-  label: NavGroupLabel | null
-  gatedGroup?: boolean
-  items: NavItem[]
-}
-
-const NAV_GROUPS: NavGroup[] = [
-  {
-    label: null,
-    items: [{ id: 'home', label: 'Home', icon: 'home' }],
-  },
-  {
-    label: 'Ingest',
-    items: [
-      { id: 'pipeline', label: 'Pipeline', icon: 'pipeline' },
-    ],
-  },
-  {
-    label: 'Library',
-    items: [
-      { id: 'library',    label: 'Library',       icon: 'library', featured: true },
-      { id: 'collection', label: 'My Collection', icon: 'collection' },
-      { id: 'trading',    label: 'Trading',       icon: 'trading' },
-      { id: 'sharing',    label: 'Sharing',       icon: 'share' },
-      { id: 'search',     label: 'Search',        icon: 'search' },
-      { id: 'bootlegs',   label: 'Bootlegs',      icon: 'bootlegs' },
-      { id: 'tapematch',  label: 'TapeMatch',     icon: 'tapematch' },
-      { id: 'songs',      label: 'Songs',         icon: 'songs' },
-      { id: 'gaps',       label: 'Gaps',          icon: 'gaps' },
-    ],
-  },
-  {
-    label: 'Assets',
-    items: [
-      { id: 'attachments',  label: 'Attachments',  icon: 'attachments' },
-      { id: 'spectrograms', label: 'Spectrograms', icon: 'spectro' },
-      { id: 'map',          label: 'Map',          icon: 'map' },
-    ],
-  },
-  {
-    label: 'Curator',
-    gatedGroup: true,
-    items: [
-      { id: 'scraper',     label: 'Scraper',     icon: 'scraper' },
-      { id: 'fingerprint', label: 'Fingerprint', icon: 'fingerprint' },
-    ],
-  },
-  {
-    label: 'Settings',
-    items: [
-      { id: 'setup',    label: 'Setup',     icon: 'setup' },
-      { id: 'mounts',   label: 'Mounts',    icon: 'mounts' },
-      { id: 'themes',   label: 'Themes',    icon: 'themes' },
-      { id: 'dbeditor', label: 'DB Editor', icon: 'dbeditor' },
-    ],
-  },
-]
+// NAV_GROUPS + its types now live in ../lib/navigation.ts so the command palette
+// can share the same screen registry (see that module).
 
 // Derive breadcrumb trail from active screen id.
 function deriveCrumbs(active: string): string[] {
@@ -1082,7 +1004,7 @@ export function AppShell({
     location.pathname === '/' ? 'home' : location.pathname.slice(1)
 
   function onNav(id: string) {
-    navigate(id === 'home' ? '/' : `/${id}`)
+    navigate(navPathForId(id))
   }
 
   const resolvedCrumbs = crumbs ?? deriveCrumbs(active)
@@ -1116,6 +1038,7 @@ export function AppShell({
         </main>
       </div>
       <StatusBar extra={statusExtra} />
+      <CommandPalette />
     </div>
   )
 }

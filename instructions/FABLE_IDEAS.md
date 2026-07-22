@@ -50,7 +50,10 @@ FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3.)
 
 **1. Command palette (Ctrl+K).** One fuzzy-search box that does everything: type an LB number, a date, a venue, a screen name, or an action ("recompute picks", "check master updates") and jump straight there. For an app whose users think in LB numbers and dates, this collapses most navigation to two keystrokes. It's also the cheapest way to make every future feature reachable without new menu real estate — each spec just registers palette actions.
 
-> 📋 **SPEC WRITTEN** (2026-07-17) — expanded into `FABLE_COMMAND_PALETTE.md`; execute from there.
+> ✅ **SHIPPED** (2026-07-21, TODO-263) — spec `complete/FABLE_COMMAND_PALETTE.md`; B1–B5
+> all landed. `lib/navigation.ts` shared screen registry (sidebar + palette), `lib/commandRegistry.ts`
+> extension contract, `lib/fuzzyMatch.ts` scorer, `components/CommandPalette.tsx` (Ctrl+K,
+> LB/date/venue jumps, `checkUpdate` action). SSE-backed actions deferred to the activity center per D4.
 
 **2. Timeline as a first-class navigator.** The archive is fundamentally temporal, but browsing is list-shaped. A zoomable horizontal timeline strip (decades → tours → individual nights), with density/color encoding what you hold and how good it is — dark gap for no circulating tape, warm color for high grades. Click to zoom, land in the Library pre-filtered. It doubles as the natural home for the gap list and tonight-in-history features, and it's the first screen that would make a visitor say "whoa."
 
