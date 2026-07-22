@@ -331,7 +331,7 @@ export function ScreenHome(): React.JSX.Element {
       )}
 
       {/* ── At a glance + Jump to ───────────────────────────────────────────── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18, marginBottom: 18 }}>
+      <div className="lbb-home-grid-top">
         <Card title={t('home.atAGlance')} subtitle={t('home.atAGlanceSub')} pad={16}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
             <Stat value={d(stats?.collection_count, '…')} label={t('home.inMyCollection')} />
@@ -402,7 +402,7 @@ export function ScreenHome(): React.JSX.Element {
       </div>
 
       {/* ── Bottom row ─────────────────────────────────────────────────────── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1.45fr 1fr', gap: 18 }}>
+      <div className="lbb-home-grid-bottom">
 
         {/* Recent activity */}
         <Card
@@ -422,9 +422,12 @@ export function ScreenHome(): React.JSX.Element {
           pad={0}
         >
           <TableShell stickyHeader={false}>
+            {/* TR injects the 3px edge-bar <td> itself, so body rows have six
+                cells — the colgroup/thead must match or every column shifts. */}
             <colgroup>
               <col style={{ width: 3 }} />
-              <col style={{ width: 130 }} />
+              <col style={{ width: 18 }} />
+              <col style={{ width: 140 }} />
               <col style={{ width: 120 }} />
               <col />
               <col style={{ width: 180 }} />
@@ -432,6 +435,7 @@ export function ScreenHome(): React.JSX.Element {
             <thead>
               <tr>
                 <TH style={{ background: 'var(--lbb-surface)' }}>{' '}</TH>
+                <TH>{' '}</TH>
                 <TH>{t('home.colWhen')}</TH>
                 <TH>{t('home.colAction')}</TH>
                 <TH>{t('home.colTarget')}</TH>
@@ -441,11 +445,11 @@ export function ScreenHome(): React.JSX.Element {
             <tbody>
               {activity.length === 0 ? (
                 <TR edge="mute">
+                  <TD />
                   <TD mono dim>—</TD>
                   <TD colSpan={3} style={{ color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>
                     {t('home.noActivity')}
                   </TD>
-                  <TD />
                 </TR>
               ) : activity.map((row, i) => (
                 <TR key={i} edge={undefined}>
@@ -558,8 +562,11 @@ export function ScreenHome(): React.JSX.Element {
             </div>
             <div style={{ overflow: 'auto', flex: 1 }}>
               <TableShell stickyHeader>
+                {/* Same six-cell body-row structure as the main table above —
+                    TR injects the edge bar, the second col is the type dot. */}
                 <colgroup>
                   <col style={{ width: 3 }} />
+                  <col style={{ width: 18 }} />
                   <col style={{ width: 145 }} />
                   <col style={{ width: 120 }} />
                   <col />
@@ -567,6 +574,7 @@ export function ScreenHome(): React.JSX.Element {
                 </colgroup>
                 <thead>
                   <tr>
+                    <TH>{' '}</TH>
                     <TH>{' '}</TH>
                     <TH>{t('home.colWhen')}</TH>
                     <TH>{t('home.colAction')}</TH>
@@ -577,15 +585,15 @@ export function ScreenHome(): React.JSX.Element {
                 <tbody>
                   {activityAll === null ? (
                     <TR edge="mute">
+                      <TD />
                       <TD mono dim>—</TD>
                       <TD colSpan={3} style={{ color: 'var(--lbb-fg3)' }}>{t('common.loading')}</TD>
-                      <TD />
                     </TR>
                   ) : activityAll.length === 0 ? (
                     <TR edge="mute">
+                      <TD />
                       <TD mono dim>—</TD>
                       <TD colSpan={3} style={{ color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>{t('home.noActivity')}</TD>
-                      <TD />
                     </TR>
                   ) : activityAll.map((row, i) => (
                     <TR key={i} edge={undefined}>
