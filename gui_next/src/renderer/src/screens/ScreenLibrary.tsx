@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { create } from 'zustand'
+import { persist, createJSONStorage } from 'zustand/middleware'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
@@ -450,15 +451,33 @@ function ActiveFilter({ label, onRemove }: { label: string; onRemove: () => void
 // react-router unmounts ScreenLibrary on route change, so plain useState for
 // the recording-lens (this screen) and performance-lens (PerformanceLensView)
 // filters reset to defaults every time the user navigates away and back. A
-// module-scope zustand store (no persist middleware — survives route changes
-// within a session, not app restarts, matching the other ephemeral UI stores
-// in lib/*Store.ts) keeps it alive. Setters mirror React's SetStateAction
-// signature so existing toggleSet()/setX(new Set()) call sites need no change.
+// module-scope zustand store keeps it alive; since 2026-07-22 it is persisted
+// to localStorage so the whole view (lens, filters, sort, grouping, collapsed
+// years) survives app restarts too — reopen the app, see the same table.
+// Setters mirror React's SetStateAction signature so existing
+// toggleSet()/setX(new Set()) call sites need no change.
 function withUpdater<T>(current: T, updater: React.SetStateAction<T>): T {
   return typeof updater === 'function' ? (updater as (prev: T) => T)(current) : updater
 }
 
+// Set-aware JSON round-trip for the persist storage below — the store keeps
+// filter selections as Set objects, which JSON.stringify would silently
+// flatten to {}.
+const SET_TAG = '__lbbSet'
+function setReplacer(_key: string, value: unknown): unknown {
+  return value instanceof Set ? { [SET_TAG]: Array.from(value) } : value
+}
+function setReviver(_key: string, value: unknown): unknown {
+  if (value && typeof value === 'object' && SET_TAG in (value as object)) {
+    return new Set((value as Record<string, unknown[]>)[SET_TAG])
+  }
+  return value
+}
+
 interface LibraryFilterStore {
+  lens: 'performance' | 'recording'
+  setLens: React.Dispatch<React.SetStateAction<'performance' | 'recording'>>
+
   recScope: Scope
   setRecScope: React.Dispatch<React.SetStateAction<Scope>>
   recQuery: string
@@ -473,6 +492,16 @@ interface LibraryFilterStore {
   setRecActiveSource: React.Dispatch<React.SetStateAction<Set<string>>>
   recActiveHealth: Set<HealthFlag>
   setRecActiveHealth: React.Dispatch<React.SetStateAction<Set<HealthFlag>>>
+  recGroupByYear: boolean
+  setRecGroupByYear: React.Dispatch<React.SetStateAction<boolean>>
+  recCollapsedYears: Set<string>
+  setRecCollapsedYears: React.Dispatch<React.SetStateAction<Set<string>>>
+  recDetailPanelOpen: boolean
+  setRecDetailPanelOpen: React.Dispatch<React.SetStateAction<boolean>>
+  recSortKey: SortKey
+  setRecSortKey: React.Dispatch<React.SetStateAction<SortKey>>
+  recSortDir: SortDir
+  setRecSortDir: React.Dispatch<React.SetStateAction<SortDir>>
 
   perfQuery: string
   setPerfQuery: React.Dispatch<React.SetStateAction<string>>
@@ -488,9 +517,22 @@ interface LibraryFilterStore {
   setPerfActiveRating: React.Dispatch<React.SetStateAction<Set<RatingGrade>>>
   perfView: PerfView
   setPerfView: React.Dispatch<React.SetStateAction<PerfView>>
+  perfGroupByYear: boolean
+  setPerfGroupByYear: React.Dispatch<React.SetStateAction<boolean>>
+  perfCollapsedYears: Set<string>
+  setPerfCollapsedYears: React.Dispatch<React.SetStateAction<Set<string>>>
+  perfExpandedShows: Set<string>
+  setPerfExpandedShows: React.Dispatch<React.SetStateAction<Set<string>>>
+  perfCollapsedFams: Set<string>
+  setPerfCollapsedFams: React.Dispatch<React.SetStateAction<Set<string>>>
+  perfDetailPanelOpen: boolean
+  setPerfDetailPanelOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const useLibraryFilterStore = create<LibraryFilterStore>((set, get) => ({
+const useLibraryFilterStore = create<LibraryFilterStore>()(persist((set, get) => ({
+  lens: 'performance' as const,
+  setLens: (u) => set({ lens: withUpdater(get().lens, u) }),
+
   recScope: 'all',
   setRecScope: (u) => set({ recScope: withUpdater(get().recScope, u) }),
   recQuery: '',
@@ -505,6 +547,16 @@ const useLibraryFilterStore = create<LibraryFilterStore>((set, get) => ({
   setRecActiveSource: (u) => set({ recActiveSource: withUpdater(get().recActiveSource, u) }),
   recActiveHealth: new Set(),
   setRecActiveHealth: (u) => set({ recActiveHealth: withUpdater(get().recActiveHealth, u) }),
+  recGroupByYear: true,
+  setRecGroupByYear: (u) => set({ recGroupByYear: withUpdater(get().recGroupByYear, u) }),
+  recCollapsedYears: new Set(),
+  setRecCollapsedYears: (u) => set({ recCollapsedYears: withUpdater(get().recCollapsedYears, u) }),
+  recDetailPanelOpen: true,
+  setRecDetailPanelOpen: (u) => set({ recDetailPanelOpen: withUpdater(get().recDetailPanelOpen, u) }),
+  recSortKey: 'lb' as const,
+  setRecSortKey: (u) => set({ recSortKey: withUpdater(get().recSortKey, u) }),
+  recSortDir: 'asc' as const,
+  setRecSortDir: (u) => set({ recSortDir: withUpdater(get().recSortDir, u) }),
 
   perfQuery: '',
   setPerfQuery: (u) => set({ perfQuery: withUpdater(get().perfQuery, u) }),
@@ -520,6 +572,19 @@ const useLibraryFilterStore = create<LibraryFilterStore>((set, get) => ({
   setPerfActiveRating: (u) => set({ perfActiveRating: withUpdater(get().perfActiveRating, u) }),
   perfView: 'all',
   setPerfView: (u) => set({ perfView: withUpdater(get().perfView, u) }),
+  perfGroupByYear: true,
+  setPerfGroupByYear: (u) => set({ perfGroupByYear: withUpdater(get().perfGroupByYear, u) }),
+  perfCollapsedYears: new Set(),
+  setPerfCollapsedYears: (u) => set({ perfCollapsedYears: withUpdater(get().perfCollapsedYears, u) }),
+  perfExpandedShows: new Set(),
+  setPerfExpandedShows: (u) => set({ perfExpandedShows: withUpdater(get().perfExpandedShows, u) }),
+  perfCollapsedFams: new Set(),
+  setPerfCollapsedFams: (u) => set({ perfCollapsedFams: withUpdater(get().perfCollapsedFams, u) }),
+  perfDetailPanelOpen: true,
+  setPerfDetailPanelOpen: (u) => set({ perfDetailPanelOpen: withUpdater(get().perfDetailPanelOpen, u) }),
+}), {
+  name: 'lbb-library-filters',
+  storage: createJSONStorage(() => localStorage, { replacer: setReplacer, reviver: setReviver }),
 }))
 
 // ── Screen ───────────────────────────────────────────────────────────────────
@@ -539,7 +604,8 @@ export function ScreenLibrary(): React.JSX.Element {
   // (00-overview.md "One catalogue, two lenses"); "By recording" is this
   // screen's original step-4 flat table. Both read the same merged `rows`.
   const { t } = useTranslation()
-  const [lens, setLens] = useState<'performance' | 'recording'>('performance')
+  const lens    = useLibraryFilterStore(s => s.lens)
+  const setLens = useLibraryFilterStore(s => s.setLens)
 
   // BUG-219: query/scope/active* filters below live in useLibraryFilterStore
   // (module scope) instead of useState, so they survive this screen unmounting
@@ -548,13 +614,18 @@ export function ScreenLibrary(): React.JSX.Element {
   const setScope = useLibraryFilterStore(s => s.setRecScope)
   const query    = useLibraryFilterStore(s => s.recQuery)
   const setQuery = useLibraryFilterStore(s => s.setRecQuery)
-  const [groupByYear, setGroupByYear] = useState(true)
-  const [collapsedYears, setCollapsedYears] = useState<Set<string>>(new Set())
+  const groupByYear       = useLibraryFilterStore(s => s.recGroupByYear)
+  const setGroupByYear    = useLibraryFilterStore(s => s.setRecGroupByYear)
+  const collapsedYears    = useLibraryFilterStore(s => s.recCollapsedYears)
+  const setCollapsedYears = useLibraryFilterStore(s => s.setRecCollapsedYears)
   const [selectedLb, setSelectedLb] = useState<number | null>(null)
-  const [detailPanelOpen, setDetailPanelOpen] = useState(true)
+  const detailPanelOpen    = useLibraryFilterStore(s => s.recDetailPanelOpen)
+  const setDetailPanelOpen = useLibraryFilterStore(s => s.setRecDetailPanelOpen)
   const { width: detailWidth, startResize: startDetailResize } = useResizableWidth('lbb_library_rec_detail_width', 380)
-  const [sortKey, setSortKey] = useState<SortKey>('lb')
-  const [sortDir, setSortDir] = useState<SortDir>('asc')
+  const sortKey    = useLibraryFilterStore(s => s.recSortKey)
+  const setSortKey = useLibraryFilterStore(s => s.setRecSortKey)
+  const sortDir    = useLibraryFilterStore(s => s.recSortDir)
+  const setSortDir = useLibraryFilterStore(s => s.setRecSortDir)
   // TODO-150 step 7: checkbox multi-select for the recording lens's bulk bar.
   const [checkedIds, setCheckedIds] = useState<Set<number>>(new Set())
 
@@ -1806,13 +1877,18 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   // on navigation and remounting when the user comes back.
   const query    = useLibraryFilterStore(s => s.perfQuery)
   const setQuery = useLibraryFilterStore(s => s.setPerfQuery)
-  const [groupByYear, setGroupByYear] = useState(true)
-  const [collapsedYears, setCollapsedYears] = useState<Set<string>>(new Set())
-  const [expandedShows, setExpandedShows] = useState<Set<string>>(new Set())
-  const [collapsedFams, setCollapsedFams] = useState<Set<string>>(new Set())
+  const groupByYear       = useLibraryFilterStore(s => s.perfGroupByYear)
+  const setGroupByYear    = useLibraryFilterStore(s => s.setPerfGroupByYear)
+  const collapsedYears    = useLibraryFilterStore(s => s.perfCollapsedYears)
+  const setCollapsedYears = useLibraryFilterStore(s => s.setPerfCollapsedYears)
+  const expandedShows     = useLibraryFilterStore(s => s.perfExpandedShows)
+  const setExpandedShows  = useLibraryFilterStore(s => s.setPerfExpandedShows)
+  const collapsedFams     = useLibraryFilterStore(s => s.perfCollapsedFams)
+  const setCollapsedFams  = useLibraryFilterStore(s => s.setPerfCollapsedFams)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [selectedMemberLb, setSelectedMemberLb] = useState<number | null>(null)
-  const [detailPanelOpen, setDetailPanelOpen] = useState(true)
+  const detailPanelOpen    = useLibraryFilterStore(s => s.perfDetailPanelOpen)
+  const setDetailPanelOpen = useLibraryFilterStore(s => s.setPerfDetailPanelOpen)
   const { width: detailWidth, startResize: startDetailResize } = useResizableWidth('lbb_library_perf_detail_width', 400)
   const autoExpandedRef = useRef(false)
   // TODO-226 Part A remainder: BobTalk search result click navigates here —
@@ -1927,9 +2003,10 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
 
   // Auto-expand the first multi-recording show when data loads — mirrors the
   // prototype which starts with one show pre-expanded so family groups are
-  // visible on first render without needing a click.
+  // visible on first render without needing a click. Skipped when a persisted
+  // expandedShows set was restored, so a relaunch shows exactly the saved view.
   useEffect(() => {
-    if (autoExpandedRef.current || performances.length === 0) return
+    if (autoExpandedRef.current || performances.length === 0 || expandedShows.size > 0) return
     const first = performances.find(p => p.recordings.length > 1)
     if (first) {
       setExpandedShows(new Set([first.id]))

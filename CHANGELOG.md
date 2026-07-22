@@ -1,3 +1,34 @@
+[2026-07-22] — feat: persisted Library view + instant relaunch (BUG-271)
+Fixed: gui_next App.tsx: BUG-271 — first click on Library/Collection after a
+  cold launch still took 12-15 s / 5 s (BUG-270's fix was warm-path only: cold
+  954 MB DB page-ins + 3 bulk fetches staggered 3 s after launch + 22 MB JSON
+  parse, worsened by library-crawl I/O contention). React-query cache for the
+  four bulk keys (collection-prefetch, library-catalog/-performances/-badges)
+  is now persisted to IndexedDB (PersistQueryClientProvider + idb-keyval,
+  structured clone — no 60 MB JSON.stringify, 7-day maxAge, buster
+  lbb-cache-v1); on relaunch the tables render instantly from last session's
+  snapshot while a staggered background refetch (skips queries already fetched
+  this session) reconciles. gcTime raised to maxAge so restored queries
+  survive until re-persisted.
+Added: gui_next App.tsx: last-route persistence — the app reopens on the
+  screen it was closed on (localStorage lbb-last-route, RouteRestorer inside
+  HashRouter; curator-gated routes still redirect via CuratorRoute).
+Added: gui_next ScreenLibrary.tsx: useLibraryFilterStore now persisted
+  (zustand persist → localStorage lbb-library-filters, Set-aware
+  replacer/reviver) and extended with the remaining view state: lens,
+  rec/perf groupByYear, collapsedYears, sort key/dir, detail-panel open,
+  perf expandedShows/collapsedFams. Closing and reopening the app restores
+  the exact filtered view (e.g. Year: 1999). Perf-lens auto-expand of the
+  first show is skipped when a persisted expandedShows set was restored.
+Changed: gui_next package.json: + @tanstack/react-query-persist-client
+  (hoists react-query to 5.101.4 within ^5.80.5) and idb-keyval 6.3.0.
+Changed: tools/debug_screens.json: tour now navigates to "/" first — app
+  launch no longer lands on Home by default (route restore), so the first
+  screenshot must pin its screen. Verified: /gui-check green; Tier B Electron
+  two-phase persistence test (set Year:1999, quit, relaunch → Library
+  restored, filtered, rendered ~4 s after process start) + full 20-screen
+  tour PASS.
+
 [2026-07-22] — fix: open-bug sweep — test temp-file containment (BUG-253/254), dead mirror URLs (BUG-255), lbdir unreconcilable entries (BUG-252), BUG-120 forensics
 Fixed: backend/checksum_utils.py: BUG-252 — unreconcilable lbdir entries
   (self-referencing manifests, server-regenerated DigiFlawFinder reports; new

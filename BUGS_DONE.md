@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-271: Library/Collection first click still slow cold — BUG-270 fix only covered warm path
+Status: Fixed
+File(s): gui_next/src/renderer/src/App.tsx,gui_next/src/renderer/src/screens/ScreenLibrary.tsx
+Reported: 2026-07-22
+Fixed: 2026-07-22
+Root cause: BUG-270 was validated warm-only; a cold launch pays backend boot + cold DB reads + bulk fetch + parse interactively on the first click, with nothing cached across app sessions.
+Fix: gui_next: react-query cache persisted to IndexedDB via PersistQueryClientProvider + idb-keyval (bulk keys only, 7d maxAge, structured clone, no JSON.stringify); Library/Collection now render instantly from last session's data with a staggered background refetch reconciling stale snapshots. Library filter store persisted to localStorage (Set-aware serialization) incl. lens/sort/grouping/collapsed-years; last route persisted and restored at launch. Verified with two-phase Electron driver test: relaunch lands on Library with Year:1999 filter, table rendered ~4s after process start.
+
 BUG-120: Pipeline verify mismatch — 2 folders where audio no longer matches stored checksums
 Status: Fixed
 File(s): backend/checksum_utils.py:verify_folder, backend/app.py:4576
