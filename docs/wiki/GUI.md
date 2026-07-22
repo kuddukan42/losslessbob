@@ -36,6 +36,14 @@ both when curator mode is off.
   `locales/{en,de,fr,es,it,nl}.json`; `_one`/`_other` plurals. en.json is
   source of truth — translate with `/gui-next-i18n` (DeepL) before merging.
 
+## Screenshots
+
+Real captures in `docs/screenshots/` (also used by the website + README):
+[home](../screenshots/home.png) · [library](../screenshots/library.png) ·
+[search](../screenshots/search.png) · [map](../screenshots/map.png) ·
+[gaps](../screenshots/gaps.png) · [quicklookup](../screenshots/quicklookup.png) ·
+[pipeline](../screenshots/pipeline.png). Refresh recipe: `docs/screenshots/README.md`.
+
 ## Verification
 
 - `/gui-check` (typecheck main + renderer, production build) — always required.

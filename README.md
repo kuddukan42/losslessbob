@@ -4,6 +4,10 @@
 
 Cross-platform desktop app for the [LosslessBob](http://www.losslessbob.wonderingwhattochoose.com/) Bob Dylan lossless recording archive: checksum lookup, collection tracking, verification, and browsing — Electron/React frontend over a local Flask backend.
 
+**Website:** [kuddukan42.github.io/losslessbob](https://kuddukan42.github.io/losslessbob/) · **Docs wiki:** [docs/wiki](docs/wiki/Home.md) · **DB schema:** [losslessbob-schema.pages.dev](https://losslessbob-schema.pages.dev/)
+
+![LosslessBob Desktop — home screen](docs/screenshots/home.png)
+
 ## Quickstart
 
 1. Download the installer for your platform from the latest `v*` release on the [Releases page](https://github.com/kuddukan42/losslessbob/releases) — `LosslessBob-<version>-linux-x86_64.AppImage` or `LosslessBob-<version>-windows-Setup.exe` (a portable `.exe` is also available).

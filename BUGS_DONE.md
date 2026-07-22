@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-269: GitHub Pages site clobbered — docs/index.html overwritten by schema page copy
+Status: Fixed
+File(s): docs/index.html
+Reported: 2026-07-22
+Fixed: 2026-07-22
+Root cause: Commit 7a9548c5 bundled many unrelated files and pasted the schema browser HTML over docs/index.html; nothing referenced the marketing page from code, so no build/test caught it.
+Fix: Restored the marketing page from a32a853d, refreshed all content to the current Electron/React app (features grid, install cards for AppImage/Setup.exe installers, first-run wizard copy), and replaced all screenshot placeholders with real Tier A driver captures in docs/screenshots/.
+
 BUG-268: tools/debug_screens.json stale — /verify tour shot blank screens, missed 7 current screens
 Status: Fixed
 File(s): tools/debug_screens.json

@@ -7,7 +7,8 @@
 
 The path a new folder takes from "dropped in the queue" to "filed, verified,
 and monitored in the collection". GUI: ScreenPipeline (+ shared
-`folderQueueStore` across Pipeline/Library/Collection/Spectrograms).
+`folderQueueStore` across Pipeline/Library/Collection/Spectrograms) —
+[screenshot](../screenshots/pipeline.png).
 
 ## Pipeline steps
 

@@ -28,3 +28,8 @@ authoritative source**, this wiki is the readable overview layer on top.
 
 To refresh: run `/wiki-update` (one page per invocation, stalest first) or
 `/wiki-update <Page>` for a specific page.
+
+**Related user-facing surfaces:** the marketing site `docs/index.html`
+([kuddukan42.github.io/losslessbob](https://kuddukan42.github.io/losslessbob/)),
+app screenshots in `docs/screenshots/`, and the interactive DB schema at
+[losslessbob-schema.pages.dev](https://losslessbob-schema.pages.dev/).

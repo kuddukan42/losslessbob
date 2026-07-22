@@ -1,3 +1,20 @@
+[2026-07-22] — docs: user-facing docs pass — website restored + real screenshots (BUG-269)
+Fixed: docs/index.html: BUG-269 — the GitHub Pages marketing site had been
+  clobbered by a copy of the schema page in 7a9548c5 (2026-06-30); restored
+  from a32a853d and refreshed for the current app (Electron/React copy,
+  12-card feature grid incl. Library/Pipeline/Gaps/TapeMatch/Trading,
+  installer-based install cards, first-run wizard notes).
+Added: docs/screenshots/: 7 real app captures (home, quicklookup, library,
+  search, map, gaps, pipeline) taken with the sanctioned Tier A screenshot
+  engine against live data; wired into index.html hero + 5-item showcase.
+  QuickLookup shot uses real LB-08287 ffp lines; map retaken with settle wait
+  so tiles render. screenshots/README.md rewritten as inventory + refresh
+  recipe (was placeholder guide).
+Changed: README.md: website/wiki/schema links + hero screenshot added.
+Changed: docs/wiki/: GUI.md Screenshots section; Collection-Pipeline.md,
+  Setlist-Sources.md screenshot links; Home.md pointer to user-facing
+  surfaces. PROJECT.md docs/screenshots/ description updated.
+
 [2026-07-22] — docs: wiki build-out — 5 new pages, all 15 topic pages fresh
 Added: docs/wiki/Setlist-Sources.md, Show-Dossier.md, Master-Data-Sync.md,
   Collection-Pipeline.md, Integrations.md — coverage for the setlist corpora,
