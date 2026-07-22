@@ -55,6 +55,7 @@ losslessbob/
 ├── PROJECT.md                # This file
 ├── backend/
 │   ├── app.py                # Flask REST API — all routes
+│   ├── activity.py           # TODO-262: unified activity aggregator — JOB_ADAPTERS table + snapshot() (/api/activity/jobs), busy_snapshot() (busy dot re-base), SSE tee registry track()
 │   ├── platform_utils.py     # Cross-platform process helpers (open_in_vlc)
 │   ├── resources/
 │   │   ├── map.html          # Leaflet map page served at GET /map; fetches /api/map/data
@@ -1185,7 +1186,8 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET | `/api/app/version` | Current app version and runtime info. |
 | GET | `/api/db/stats` | Row counts, latest LB number, last import date |
 | GET | `/api/home/stats` | `{collection_count, wishlist_count, missing_count, bootleg_count, checksum_count, latest_lb, last_import, collection_size}` — single-query counts for the Home dashboard and AppShell footer. `collection_size` is `{bytes, human, folders, computed_at, computing}` — total on-disk bytes across all `my_collection` folders, cached in `meta` (`collection_size_bytes`/`_folders`/`_computed_at`) and refreshed via a background thread (`backend/filer.py: get_collection_size_stats()`) when older than 24h rather than walked per request. |
-| GET | `/api/activity/busy` | `{busy, activity}` — polls import/scrape/bootleg-scrape/integrity-scan/file-job workers plus app-update/data-download state. `activity` is one of `importing`, `scraping`, `scraping_bootlegs`, `scanning`, `filing`, `updating_app`, `downloading_data`, or `null` when idle. Used by the AppShell footer busy indicator. |
+| GET | `/api/activity/busy` | `{busy, activity}` — re-based on `backend/activity.py`'s `JOB_ADAPTERS` table (TODO-262) so it shares one source of truth with `/api/activity/jobs`. Response shape unchanged; `activity` is the `kind` of the first running worker in table order (also `crawling`, `geocoding`, `bobdylan_scraping`, `setlistfm_syncing`, plus the previously-invisible `spectrogram_generating`/`tapematch_crawling`/`pipeline_running`/`archive_uploading` gap workers), or `null` when idle. Used by the AppShell footer busy indicator. |
+| GET | `/api/activity/jobs` | `{busy, jobs:[{id, kind, state, progress?:{current?,total?,pct?,label?}, started_at?, finished_at?, cancel_route?, screen}]}` (TODO-262). Normalized snapshot of every polled worker (15 adapters) plus live SSE-tracked request-scoped jobs (`master/sitedata` publish+install, `derived/recompute`, `wtrf/crawl_missing`, registered via `activity.track()`); `state` ∈ `running`/`done`/`error`/`cancelled`; 50-entry in-memory finished-job history. Drives the AppShell status-bar activity tray. |
 | GET | `/api/activity/log` | Unified activity log merging DB imports, renames, and forum posts. Query param: `limit` (default 20; 0 = unlimited). Returns `[{when, action, target, result, type}]`. |
 | GET | `/api/system/uptime` | `{uptime_seconds}` since the Flask process started (About screen uptime clock) |
 | GET | `/api/db/missing_lb_numbers` | List of integers in 1..max_lb absent from checksums table |
