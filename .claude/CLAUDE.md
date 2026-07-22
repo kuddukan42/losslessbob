@@ -10,6 +10,10 @@ Follow every session. No asking.
   calibration tail) is auto-injected at session start by a SessionStart hook — trust
   it instead of re-deriving that state; `/session-open` re-runs it mid-session.
 
+- For **subsystem orientation**, read the matching `docs/wiki/` page first (each
+  ≤~60 lines, lists its authoritative PROJECT.md sections) — then grep PROJECT.md
+  only for the specific detail needed. Same rule for subagent prompts: point them
+  at the wiki page, don't restate the subsystem. Index: `docs/wiki/Home.md`.
 - Do **not** read PROJECT.md, BUGS.md, or TODO.md in full (3,000+ lines combined).
   `grep -n` for the relevant section/ID first, then Read with `offset`/`limit`:
   - File structure, DB schema, Flask routes, GUI screens → matching PROJECT.md section.

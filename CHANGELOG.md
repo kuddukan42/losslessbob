@@ -8,6 +8,9 @@ Changed: docs/wiki/ — all 10 pre-existing topic pages regenerated from current
   staircase/frozen-set calibration state, /verify sanctioning, 20-screen GUI
   list, TODO-234 rescore counts); Home.md index updated. PROJECT.md file
   structure line for docs/wiki/ updated (8 → 15 topic pages).
+Changed: .claude/CLAUDE.md: Context Discipline now directs sessions (and
+  subagent prompts) to the matching docs/wiki/ page for subsystem orientation
+  before grepping PROJECT.md — wires the wiki into the standard workflow.
 Commits: d21b7f2b, 9198df7d, 33030811, c466fde5.
 
 [2026-07-22] — refactor: single screenshot engine — browser_driver.mjs retired into electron_driver.mjs --renderer-only
