@@ -189,6 +189,8 @@ CREATE TABLE IF NOT EXISTS entries (
     metadata_source TEXT
 );
 
+CREATE INDEX IF NOT EXISTS idx_entries_date_location ON entries(date_str, location);
+
 CREATE TABLE IF NOT EXISTS entry_files (
     lb_number INTEGER NOT NULL,
     filename TEXT NOT NULL,
@@ -4521,21 +4523,42 @@ def get_collection_duplicates(db_path=None) -> list:
             ORDER BY e.date_str
         """).fetchall()
 
+        # One pass over all members of every duplicate group (instead of a
+        # per-group query — that N+1 made this call take ~3.5 s on 3,200 groups).
+        members = conn.execute("""
+            SELECT e.date_str, e.location, e.lb_number, e.rating, e.description,
+                   (CASE WHEN c.lb_number IS NOT NULL THEN 1 ELSE 0 END) as owned
+            FROM entries e
+            LEFT JOIN my_collection c ON c.lb_number = e.lb_number
+            WHERE (e.date_str, e.location) IN (
+                SELECT e2.date_str, e2.location
+                FROM entries e2
+                JOIN my_collection c2 ON c2.lb_number = e2.lb_number
+                WHERE e2.date_str IS NOT NULL AND e2.date_str != ''
+                  AND e2.location IS NOT NULL AND e2.location != ''
+                GROUP BY e2.date_str, e2.location
+                HAVING COUNT(*) > 1
+            )
+            ORDER BY owned DESC, e.lb_number
+        """).fetchall()
+
+        by_group: dict[tuple, dict] = {}
+        for r in members:
+            key = (r["date_str"], r["location"])
+            grp = by_group.setdefault(key, {"owned": [], "unowned": []})
+            entry = {"lb_number": r["lb_number"], "rating": r["rating"],
+                     "description": r["description"]}
+            grp["owned" if r["owned"] else "unowned"].append(entry)
+
         results = []
         for row in dupes:
-            all_lbs = conn.execute("""
-                SELECT e.lb_number, e.rating, e.description,
-                       (CASE WHEN c.lb_number IS NOT NULL THEN 1 ELSE 0 END) as owned
-                FROM entries e
-                LEFT JOIN my_collection c ON c.lb_number = e.lb_number
-                WHERE e.date_str=? AND e.location=?
-                ORDER BY owned DESC, e.lb_number
-            """, (row["date_str"], row["location"])).fetchall()
+            grp = by_group.get((row["date_str"], row["location"]),
+                               {"owned": [], "unowned": []})
             results.append({
                 "date_str": row["date_str"],
                 "location": row["location"],
-                "owned": [dict(r) for r in all_lbs if r["owned"]],
-                "unowned": [dict(r) for r in all_lbs if not r["owned"]],
+                "owned": grp["owned"],
+                "unowned": grp["unowned"],
             })
     return results
 

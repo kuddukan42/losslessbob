@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-270: Collection/Library first-launch load slow — 4.1s prefetch endpoint, 75MB uncompressed JSON
+Status: Fixed
+File(s): backend/db.py:4506,backend/app.py:1832
+Reported: 2026-07-22
+Fixed: 2026-07-22
+Root cause: N+1 query in get_collection_duplicates (per-group scan, no index on entries(date_str, location)) plus uncompressed multi-MB JSON payloads over werkzeug loopback (~12 MB/s).
+Fix: Rewrote get_collection_duplicates as a single grouped-members query; added idx_entries_date_location; added global after_request gzip (level 1, >=256KB JSON) in app.py; App.tsx now warm-prefetches library-catalog/performances/badges 3s after launch. /api/collection/prefetch warm: 4.1s -> 0.80s; /api/search wire 22.5MB -> 6.3MB.
+
 BUG-269: GitHub Pages site clobbered — docs/index.html overwritten by schema page copy
 Status: Fixed
 File(s): docs/index.html

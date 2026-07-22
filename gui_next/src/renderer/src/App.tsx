@@ -42,6 +42,22 @@ queryClient.prefetchQuery({
     fetch(`${window.api.flaskBase}/api/collection/prefetch`).then(r => r.json()),
   staleTime: Infinity,
 })
+// Warm the Library screen's big queries too, staggered so their JSON.parse
+// doesn't contend with the Home screen's first paint. Same query keys as
+// ScreenLibrary.tsx — first navigation there then hits a warm cache.
+setTimeout(() => {
+  for (const [key, path] of [
+    ['library-catalog', '/api/search'],
+    ['library-performances', '/api/library/performances'],
+    ['library-badges', '/api/library/badges'],
+  ] as const) {
+    queryClient.prefetchQuery({
+      queryKey: [key],
+      queryFn: () => fetch(`${window.api.flaskBase}${path}`).then(r => r.json()),
+      staleTime: Infinity,
+    })
+  }
+}, 3000)
 
 // ── Curator-only route guard ──────────────────────────────────────────────────
 
