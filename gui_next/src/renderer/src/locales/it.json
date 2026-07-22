@@ -78,7 +78,26 @@
         "setlistfm_syncing": "Sincronizzazione setlist.fm…",
         "geocoding": "Geocodifica…",
         "updating_app": "Aggiornamento dell'app…",
-        "downloading_data": "Download dei dati…"
+        "downloading_data": "Download dei dati…",
+        "spectrogram_generating": "Generazione di spettrogrammi…",
+        "tapematch_crawling": "In esecuzione di TapeMatch…",
+        "pipeline_running": "Esecuzione della pipeline…",
+        "archive_uploading": "Caricamento su Archive.org in corso…",
+        "wtrf_crawl": "Scansione di WTRF…",
+        "master_publish": "Pubblicazione in corso…",
+        "master_install": "Installazione del master in corso…",
+        "sitedata_publish": "Pubblicazione dei dati del sito…",
+        "sitedata_install": "Installazione dei dati del sito…",
+        "derived_recompute": "Ricalcolo dei dati derivati…"
+      },
+      "tray": {
+        "title": "Attività",
+        "jobsCount": "Lavori {{count}}…",
+        "stop": "Stop",
+        "justNow": "proprio ora",
+        "empty": "Nessun processo in esecuzione",
+        "running": "In esecuzione",
+        "recent": "Recenti"
       }
     },
     "noWtrfAccount": "Nessun account WTRF"
@@ -535,7 +554,38 @@
     "autoCollect": "Raccolta automatica",
     "autoCollectHint": "Quando questa opzione è attiva, le cartelle che risultano completamente verdi (verifica, ricerca, directory LB e rinomina superate) vengono archiviate automaticamente nella raccolta — non è necessario fare clic su “File”.",
     "retryBlockedCollects_one": "Riprova {{count}} raccolta bloccata",
-    "retryBlockedCollects_other": "Riprova a raccogliere i file bloccati {{count}}"
+    "retryBlockedCollects_other": "Riprova a raccogliere i file bloccati {{count}}",
+    "stepLabels": {
+      "mute": "—",
+      "pass": "Pass",
+      "error": "Errore",
+      "incomplete": "Incompleto",
+      "noShntool": "No shntool",
+      "mismatch": "Mismatch",
+      "missingFolder": "Mancante",
+      "noChecksums": "Nessun checksum",
+      "notFound": "Non trovato",
+      "conflict": "Conflitto",
+      "incompleteMatch": "Corrispondenza incompleta",
+      "correct": "Corretto",
+      "proposed": "Proposto",
+      "renamed": "Rinominato",
+      "readyToFile": "Pronto per l'archiviazione",
+      "mountOffline": "Monta offline",
+      "noDate": "Senza data",
+      "noRoute": "Nessun percorso",
+      "destExists": "Già esistente",
+      "dbError": "Errore del database",
+      "blocked": "Bloccato",
+      "filed": "Archiviato",
+      "failed": "Non riuscito",
+      "fetching": "Recupero di LBDIR…",
+      "missing": "Manca {{n}}",
+      "extra": "Extra {{n}}",
+      "fail": "Errore",
+      "failN": "Fallito {{n}}",
+      "noLbdir": "Nessun LBDIR"
+    }
   },
   "collection": {
     "confirmDialog": {

@@ -78,7 +78,26 @@
         "setlistfm_syncing": "Sincronizando setlist.fm…",
         "geocoding": "Geocodificando…",
         "updating_app": "Actualizando la aplicación…",
-        "downloading_data": "Descargando datos…"
+        "downloading_data": "Descargando datos…",
+        "spectrogram_generating": "Generando espectrogramas…",
+        "tapematch_crawling": "Analizando TapeMatch…",
+        "pipeline_running": "Ejecutando el proceso…",
+        "archive_uploading": "Subiendo a Archive.org…",
+        "wtrf_crawl": "Rastreando WTRF…",
+        "master_publish": "Publicando el archivo maestro…",
+        "master_install": "Instalando la versión maestra…",
+        "sitedata_publish": "Publicando datos del sitio…",
+        "sitedata_install": "Instalando los datos del sitio…",
+        "derived_recompute": "Recalculando datos derivados…"
+      },
+      "tray": {
+        "title": "Actividad",
+        "jobsCount": "{{count}} trabajos…",
+        "stop": "Detener",
+        "justNow": "hace un momento",
+        "empty": "No hay nada en ejecución",
+        "running": "En ejecución",
+        "recent": "Recientes"
       }
     },
     "noWtrfAccount": "No tengo cuenta en WTRF"
@@ -535,7 +554,38 @@
     "autoCollect": "Recopilación automática",
     "autoCollectHint": "Cuando está activada, las carpetas que aparecen completamente en verde (verificación, búsqueda, directorio LB y cambio de nombre superados) se archivan automáticamente en la colección, sin necesidad de hacer clic en «Archivo».",
     "retryBlockedCollects_one": "Reintentar la recopilación bloqueada {{count}}",
-    "retryBlockedCollects_other": "Reintentar la recopilación bloqueada {{count}}"
+    "retryBlockedCollects_other": "Reintentar la recopilación bloqueada {{count}}",
+    "stepLabels": {
+      "mute": "—",
+      "pass": "Aceptar",
+      "error": "Error",
+      "incomplete": "Incompleto",
+      "noShntool": "Sin shntool",
+      "mismatch": "Discrepancia",
+      "missingFolder": "Falta",
+      "noChecksums": "Sin sumas de comprobación",
+      "notFound": "No encontrado",
+      "conflict": "Conflicto",
+      "incompleteMatch": "Coincidencia incompleta",
+      "correct": "Correcto",
+      "proposed": "Propuesta",
+      "renamed": "Renombrado",
+      "readyToFile": "Listo para archivar",
+      "mountOffline": "Montar sin conexión",
+      "noDate": "Sin fecha",
+      "noRoute": "Sin ruta",
+      "destExists": "Ya existe",
+      "dbError": "Error de base de datos",
+      "blocked": "Bloqueado",
+      "filed": "Archivado",
+      "failed": "Fallido",
+      "fetching": "Recuperando LBDIR…",
+      "missing": "Falta {{n}}",
+      "extra": "Extra {{n}}",
+      "fail": "Fallo",
+      "failN": "Fallo {{n}}",
+      "noLbdir": "Sin LBDIR"
+    }
   },
   "collection": {
     "confirmDialog": {

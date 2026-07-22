@@ -78,7 +78,26 @@
         "setlistfm_syncing": "Synchronisation setlist.fm…",
         "geocoding": "Géocodage…",
         "updating_app": "Mise à jour de l'application…",
-        "downloading_data": "Téléchargement des données…"
+        "downloading_data": "Téléchargement des données…",
+        "spectrogram_generating": "Génération de spectrogrammes…",
+        "tapematch_crawling": "Recherche en cours dans TapeMatch…",
+        "pipeline_running": "Exécution du pipeline…",
+        "archive_uploading": "Téléchargement vers Archive.org…",
+        "wtrf_crawl": "Exploration de WTRF…",
+        "master_publish": "Maître de publication…",
+        "master_install": "Installation de la version principale…",
+        "sitedata_publish": "Publication des données du site…",
+        "sitedata_install": "Installation des données du site…",
+        "derived_recompute": "Recalcul des données dérivées…"
+      },
+      "tray": {
+        "title": "Activité",
+        "jobsCount": "Tâches {{count}}…",
+        "stop": "Arrêter",
+        "justNow": "il y a quelques instants",
+        "empty": "Aucune application en cours d'exécution",
+        "running": "En cours d'exécution",
+        "recent": "Récents"
       }
     },
     "noWtrfAccount": "Pas de compte WTRF"
@@ -535,7 +554,38 @@
     "autoCollect": "Collecte automatique",
     "autoCollectHint": "Lorsqu’elle est activée, les dossiers entièrement verts (vérification, recherche, répertoire LB et renommage réussis) sont automatiquement classés dans la collection — aucun clic sur « Fichier » n’est nécessaire.",
     "retryBlockedCollects_one": "Réessayer la collecte bloquée {{count}}",
-    "retryBlockedCollects_other": "Réessayer les collectes bloquées {{count}}"
+    "retryBlockedCollects_other": "Réessayer les collectes bloquées {{count}}",
+    "stepLabels": {
+      "mute": "—",
+      "pass": "Pass",
+      "error": "Erreur",
+      "incomplete": "Incomplet",
+      "noShntool": "Pas de shntool",
+      "mismatch": "Incohérence",
+      "missingFolder": "Manquant",
+      "noChecksums": "Pas de sommes de contrôle",
+      "notFound": "Introuvable",
+      "conflict": "Conflit",
+      "incompleteMatch": "Correspondance incomplète",
+      "correct": "Correct",
+      "proposed": "Proposition",
+      "renamed": "Renommé",
+      "readyToFile": "Prêt à l'emploi",
+      "mountOffline": "Monter hors ligne",
+      "noDate": "Sans date",
+      "noRoute": "Aucun itinéraire",
+      "destExists": "Déjà existant",
+      "dbError": "Erreur de base de données",
+      "blocked": "Bloqué",
+      "filed": "Classé",
+      "failed": "Échec",
+      "fetching": "Récupération de LBDIR…",
+      "missing": "{{n}} manquant",
+      "extra": "Supplément {{n}}",
+      "fail": "Échec",
+      "failN": "Échec {{n}}",
+      "noLbdir": "Pas de LBDIR"
+    }
   },
   "collection": {
     "confirmDialog": {

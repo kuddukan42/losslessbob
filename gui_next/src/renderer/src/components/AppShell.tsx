@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from './Icon'
 import { useSettingsStore } from '../store'
+import { useActivityStore, startActivityPolling, type ActivityJob } from '../lib/activityStore'
 
 // ── Nav structure ────────────────────────────────────────────────────────────
 
@@ -658,18 +659,139 @@ interface MasterSyncStatus {
   available: boolean
 }
 
-interface BusyStatus {
-  busy: boolean
-  activity: string | null
+// Elapsed time since `startedAt` (unix seconds), for running-job rows in the
+// activity tray. Sub-5s reads as "just now" rather than a flickering "0:00".
+function fmtElapsed(startedAt: number, justNowLabel: string): string {
+  const secs = Math.max(0, Math.floor(Date.now() / 1000 - startedAt))
+  if (secs < 5) return justNowLabel
+  const h = Math.floor(secs / 3600)
+  const m = Math.floor((secs % 3600) / 60)
+  const s = secs % 60
+  const pad = (n: number) => String(n).padStart(2, '0')
+  return h > 0 ? `${h}:${pad(m)}:${pad(s)}` : `${m}:${pad(s)}`
 }
 
-const BUSY_POLL_MS = 5000
+// Running rows get a glow dot (matches the collapsed trigger + ScreenScraper
+// convention); terminal rows get a state icon per spec §A3 ("dimmed, with a
+// state icon").
+const JOB_TERMINAL_ICON: Record<'done' | 'error' | 'cancelled', { icon: string; tone: string }> = {
+  done:      { icon: 'check', tone: 'ok' },
+  error:     { icon: 'alert', tone: 'bad' },
+  cancelled: { icon: 'x',     tone: 'mute' },
+}
+
+// ── Activity tray popover ───────────────────────────────────────────────────
+
+function JobProgressBar({ progress }: { progress?: ActivityJob['progress'] }) {
+  let pct: number | null = null
+  if (progress) {
+    if (typeof progress.pct === 'number') pct = Math.max(0, Math.min(100, progress.pct))
+    else if (typeof progress.current === 'number' && typeof progress.total === 'number' && progress.total > 0) {
+      pct = Math.max(0, Math.min(100, (progress.current / progress.total) * 100))
+    }
+  }
+  const indeterminate = pct === null
+  return (
+    <div style={{ height: 4, borderRadius: 2, background: 'var(--lbb-border2)', overflow: 'hidden', marginTop: 5 }}>
+      <div style={{
+        height: '100%', borderRadius: 2,
+        background: 'var(--lbb-accent-mid)',
+        width: indeterminate ? '40%' : `${pct}%`,
+        transition: indeterminate ? 'none' : 'width 0.3s',
+        animation: indeterminate ? 'lbb-indeterminate 1.4s ease-in-out infinite' : 'none',
+      }} />
+    </div>
+  )
+}
+
+function ActivityJobRow({
+  job, dimmed, onStop, onOpenScreen,
+}: {
+  job: ActivityJob
+  dimmed: boolean
+  onStop: (route: string) => void
+  onOpenScreen: (screen: string) => void
+}) {
+  const { t } = useTranslation()
+  const label = t(`appShell.statusBar.activity.${job.kind}` as any)
+  return (
+    <div
+      onClick={() => onOpenScreen(job.screen)}
+      style={{
+        padding: '7px 12px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        cursor: 'pointer',
+        opacity: dimmed ? 0.6 : 1,
+        borderRadius: 6,
+      }}
+      onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--lbb-surface2)' }}
+      onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent' }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+        {job.state === 'running' ? (
+          <span style={{
+            width: 6, height: 6, borderRadius: '50%', flexShrink: 0,
+            background: 'var(--lbb-info-bar)',
+            boxShadow: '0 0 5px var(--lbb-info-bar)',
+          }} />
+        ) : (
+          <Icon
+            name={JOB_TERMINAL_ICON[job.state].icon}
+            size={12}
+            style={{ color: `var(--lbb-${JOB_TERMINAL_ICON[job.state].tone}-bar)`, flexShrink: 0 }}
+          />
+        )}
+        <span style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg)', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {label}
+        </span>
+        {job.state === 'running' && job.started_at !== undefined && (
+          <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
+            {fmtElapsed(job.started_at, t('appShell.statusBar.tray.justNow'))}
+          </span>
+        )}
+        {job.state === 'running' && job.cancel_route && (
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); onStop(job.cancel_route as string) }}
+            style={{
+              fontSize: 'var(--lbb-fs-10)', fontWeight: 600,
+              padding: '2px 7px', borderRadius: 4,
+              border: '1px solid var(--lbb-border2)',
+              background: 'var(--lbb-surface)',
+              color: 'var(--lbb-fg2)',
+              cursor: 'pointer',
+              flexShrink: 0,
+            }}
+          >
+            {t('appShell.statusBar.tray.stop')}
+          </button>
+        )}
+      </div>
+      {job.state === 'running' && job.progress?.label && (
+        <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', paddingLeft: 19, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {job.progress.label}
+        </span>
+      )}
+      {job.state === 'running' && <JobProgressBar progress={job.progress} />}
+    </div>
+  )
+}
 
 function StatusBar({ extra }: { extra?: React.ReactNode }) {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const [stats, setStats] = useState<FooterStats | null>(null)
   const [masterSync, setMasterSync] = useState<MasterSyncStatus | null>(null)
-  const [activity, setActivity] = useState<BusyStatus | null>(null)
+  const [activityOpen, setActivityOpen] = useState(false)
+  const activityRef = useRef<HTMLDivElement>(null)
+
+  const jobs = useActivityStore((s) => s.jobs)
+  const busy = useActivityStore((s) => s.busy)
+  const runningCount = useActivityStore((s) => s.runningCount)
+  const hasError = useActivityStore((s) => s.hasError)
+  const clearError = useActivityStore((s) => s.clearError)
 
   useEffect(() => {
     fetch(`${window.api.flaskBase}/api/home/stats`)
@@ -687,21 +809,43 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
       .catch(() => { /* masterSync stays null, footer falls back to "Synced" */ })
   }, [])
 
+  // StatusBar is the app's single activity poller (spec §A3) — it starts the
+  // shared store's interval on mount and tears it down on unmount.
+  useEffect(() => startActivityPolling(), [])
+
   useEffect(() => {
-    let cancelled = false
-    function poll() {
-      fetch(`${window.api.flaskBase}/api/activity/busy`)
-        .then((r) => (r.ok ? r.json() : Promise.reject()))
-        .then((d: BusyStatus) => { if (!cancelled) setActivity(d) })
-        .catch(() => { /* activity stays as last-known value */ })
+    if (!activityOpen) return
+    function onClickOut(e: MouseEvent) {
+      if (activityRef.current && !activityRef.current.contains(e.target as Node)) setActivityOpen(false)
     }
-    poll()
-    const id = setInterval(poll, BUSY_POLL_MS)
-    return () => {
-      cancelled = true
-      clearInterval(id)
-    }
-  }, [])
+    document.addEventListener('mousedown', onClickOut)
+    return () => document.removeEventListener('mousedown', onClickOut)
+  }, [activityOpen])
+
+  function toggleActivity() {
+    setActivityOpen((o) => {
+      const next = !o
+      if (next) clearError()
+      return next
+    })
+  }
+
+  function stopJob(route: string) {
+    // No optimistic state change (D-2/A3 default) — the next poll reflects
+    // the real outcome.
+    fetch(`${window.api.flaskBase}${route}`, { method: 'POST' }).catch(() => {})
+  }
+
+  function openJobScreen(screen: string) {
+    setActivityOpen(false)
+    navigate(screen)
+  }
+
+  const runningJobs = jobs.filter((j) => j.state === 'running')
+  const historyJobs = jobs.filter((j) => j.state !== 'running').slice(0, 12)
+  const firstRunningLabel = runningJobs.length > 0
+    ? t(`appShell.statusBar.activity.${runningJobs[0].kind}` as any)
+    : null
 
   const sep = (
     <span style={{ color: 'var(--lbb-border2)', margin: '0 2px' }}>·</span>
@@ -797,28 +941,118 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
         )}
       </span>
       {sep}
-      <span
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 6,
-          color: 'var(--lbb-fg3)',
-        }}
-      >
-        {activity?.busy && (
-          <span
+      <div ref={activityRef} style={{ position: 'relative' }}>
+        <button
+          type="button"
+          onClick={toggleActivity}
+          title={t('appShell.statusBar.tray.title')}
+          style={{
+            position: 'relative',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 6,
+            padding: '2px 4px',
+            margin: '-2px -4px',
+            borderRadius: 4,
+            border: 'none',
+            background: activityOpen ? 'var(--lbb-surface2)' : 'transparent',
+            color: 'var(--lbb-fg3)',
+            cursor: 'pointer',
+            fontFamily: 'inherit',
+            fontSize: 'var(--lbb-fs-11)',
+          }}
+        >
+          {busy && (
+            <span
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: '50%',
+                background: 'var(--lbb-info-bar)',
+              }}
+            />
+          )}
+          {busy && firstRunningLabel ? firstRunningLabel : t('appShell.statusBar.idle')}
+          {runningCount > 1 && (
+            <span style={{ color: 'var(--lbb-fg3)' }}>
+              {t('appShell.statusBar.tray.jobsCount', { count: runningCount })}
+            </span>
+          )}
+          {hasError && (
+            <span
+              style={{
+                position: 'absolute',
+                top: -1,
+                right: -3,
+                width: 6,
+                height: 6,
+                borderRadius: '50%',
+                background: 'var(--lbb-bad-bar)',
+              }}
+            />
+          )}
+        </button>
+        {activityOpen && (
+          <div
             style={{
-              width: 6,
-              height: 6,
-              borderRadius: '50%',
-              background: 'var(--lbb-info-bar)',
+              position: 'absolute',
+              bottom: '100%',
+              right: 0,
+              marginBottom: 4,
+              width: 320,
+              maxHeight: 380,
+              display: 'flex',
+              flexDirection: 'column',
+              background: 'var(--lbb-surface)',
+              border: '1px solid var(--lbb-border2)',
+              borderRadius: 8,
+              boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
+              zIndex: 200,
+              fontFamily: 'var(--lbb-font)',
             }}
-          />
+          >
+            <div
+              style={{
+                padding: '8px 12px',
+                borderBottom: '1px solid var(--lbb-border)',
+                fontSize: 'var(--lbb-fs-11)',
+                fontWeight: 700,
+                color: 'var(--lbb-fg2)',
+                flexShrink: 0,
+              }}
+            >
+              {t('appShell.statusBar.tray.title')}
+            </div>
+            <div style={{ overflowY: 'auto', padding: '4px 4px' }}>
+              {runningJobs.length === 0 && historyJobs.length === 0 && (
+                <div style={{ padding: '14px 12px', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', textAlign: 'center' }}>
+                  {t('appShell.statusBar.tray.empty')}
+                </div>
+              )}
+              {runningJobs.length > 0 && (
+                <>
+                  <div style={{ padding: '5px 8px 2px', fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, letterSpacing: 0.08, textTransform: 'uppercase', color: 'var(--lbb-fg3)' }}>
+                    {t('appShell.statusBar.tray.running')}
+                  </div>
+                  {runningJobs.map((job) => (
+                    <ActivityJobRow key={job.id} job={job} dimmed={false} onStop={stopJob} onOpenScreen={openJobScreen} />
+                  ))}
+                </>
+              )}
+              {historyJobs.length > 0 && (
+                <>
+                  <div style={{ padding: '7px 8px 2px', fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, letterSpacing: 0.08, textTransform: 'uppercase', color: 'var(--lbb-fg3)' }}>
+                    {t('appShell.statusBar.tray.recent')}
+                  </div>
+                  {historyJobs.map((job) => (
+                    <ActivityJobRow key={job.id} job={job} dimmed onStop={stopJob} onOpenScreen={openJobScreen} />
+                  ))}
+                </>
+              )}
+            </div>
+          </div>
         )}
-        {activity?.busy && activity.activity
-          ? t(`appShell.statusBar.activity.${activity.activity}` as any)
-          : t('appShell.statusBar.idle')}
-      </span>
+      </div>
     </footer>
   )
 }
