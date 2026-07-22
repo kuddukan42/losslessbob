@@ -1,8 +1,9 @@
 # Integrations
 
 > Sources: `PROJECT.md` §Torrent/qBittorrent/Credentials/Forum/WTRF/Archive.org/
-> Trading/Sharing routes (~lines 1556–1631) · `backend/forum_poster.py`,
-> `sharing.py`, `qbittorrent.py`, `archive_org.py`, `wtrf_scraper.py` ·
+> Trading/Sharing routes (~lines 1556–1631) · `backend/forum_poster.py` ·
+> `backend/sharing.py` · `backend/qbittorrent.py` · `backend/archive_org.py` ·
+> `backend/wtrf_scraper.py` ·
 > Status: seeded 2026-07-22
 
 Outbound surfaces: getting recordings *out* of the collection — torrents,

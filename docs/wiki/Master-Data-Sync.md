@@ -2,6 +2,7 @@
 
 > Sources: `PROJECT.md` §lb_master (~line 391), §Flat File / Xref Ingest / Master
 > Data / Onboarding routes (~1215–1277) · `docs/data_ownership.md` ·
+> `backend/db.py` · `backend/flat_file.py` ·
 > Status: seeded 2026-07-22
 
 How curator-authored data reaches every installation, and how per-LB status is

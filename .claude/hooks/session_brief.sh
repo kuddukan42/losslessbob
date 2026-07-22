@@ -23,6 +23,8 @@ grep -m 3 '^TODO-' TODO.md 2>/dev/null | cut -c1-120
 echo "[tapematch] CALIBRATION_PROGRESS.md tail:"
 grep -v '^[[:space:]]*$' tools/tapematch/CALIBRATION_PROGRESS.md 2>/dev/null | tail -n 4 | cut -c1-120
 
+echo "[wiki] $(.venv/bin/python3 tools/wiki_staleness.py 2>/dev/null | head -3 | paste -sd'; ' - || echo 'staleness check unavailable')"
+
 echo "[specs] FABLE_* spec pack in instructions/ — read SPEC_INTEGRATION_NOTES.md before implementing any spec"
 echo "=== END BRIEFING ==="
 exit 0

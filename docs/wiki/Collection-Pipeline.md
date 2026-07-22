@@ -2,7 +2,7 @@
 
 > Sources: `PROJECT.md` §Routing & Pipeline Filing (~line 1511), §Integrity
 > Monitor (~1532), §pipeline tables (~490) ·
-> `instructions/PIPELINE_STRUCTURAL_TIER_DESIGN.md` · `backend/filer.py` ·
+> `instructions/complete/PIPELINE_STRUCTURAL_TIER_DESIGN.md` · `backend/filer.py` ·
 > Status: seeded 2026-07-22
 
 The path a new folder takes from "dropped in the queue" to "filed, verified,
