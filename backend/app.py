@@ -1,4 +1,5 @@
 import base64
+import gzip as gzip_module
 import importlib
 import json
 import logging
@@ -563,6 +564,30 @@ def create_app() -> Flask:
     # Process start time, used by /api/system/uptime and /api/admin/status to
     # show how long the backend has been running (TODO-112).
     _process_start_time = time.monotonic()
+
+    # ── Gzip large JSON responses ─────────────────────────────────────────────
+    # The bulk endpoints (/api/collection/prefetch ~36 MB, /api/search ~23 MB,
+    # /api/attachments/cached ~13 MB) are dominated by werkzeug wire time
+    # (~12 MB/s over loopback). Level-1 gzip cuts them ~4x for ~0.2 s of CPU;
+    # Chromium's fetch() decompresses transparently, so the GUI needs no change.
+    _GZIP_MIN_BYTES = 256 * 1024
+
+    @app.after_request
+    def _gzip_large_json(resp: Response) -> Response:
+        if (
+            resp.direct_passthrough
+            or resp.status_code != 200
+            or resp.mimetype != "application/json"
+            or "gzip" not in request.headers.get("Accept-Encoding", "").lower()
+            or resp.headers.get("Content-Encoding")
+            or (resp.content_length or 0) < _GZIP_MIN_BYTES
+        ):
+            return resp
+        resp.set_data(gzip_module.compress(resp.get_data(), compresslevel=1))
+        resp.headers["Content-Encoding"] = "gzip"
+        resp.headers["Content-Length"] = str(len(resp.get_data()))
+        resp.headers.add("Vary", "Accept-Encoding")
+        return resp
 
     # ── Web GUI basic-auth (TODO-064) ─────────────────────────────────────────
     # Protects /web/* and /frontend/* when meta key web_password is set.

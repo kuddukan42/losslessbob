@@ -1,3 +1,20 @@
+[2026-07-22] — fix: Collection/Library first-launch load time (BUG-270)
+Fixed: backend/db.py: get_collection_duplicates N+1 — one query per duplicate
+  group (3,220 full scans, entries had no date_str/location index) cost 3.5 s
+  of the 4.1 s /api/collection/prefetch response. Rewritten as a single
+  grouped-members query + new idx_entries_date_location. Output is identical
+  except the redundant per-entry "owned" flag (unread by the GUI) is dropped.
+  Warm endpoint: 4.1 s -> 0.80 s.
+Added: backend/app.py: global after_request gzip for JSON responses >= 256 KB
+  when the client advertises gzip (level 1, ~0.2 s CPU). Cuts the bulk
+  endpoints ~4x on the wire (prefetch 35.8 MB -> 9.9 MB, /api/search
+  22.5 MB -> 6.3 MB); Chromium fetch() decompresses transparently, streaming
+  (direct_passthrough) responses are skipped.
+Changed: gui_next/src/renderer/src/App.tsx: warm-prefetch library-catalog,
+  library-performances, and library-badges 3 s after launch (staggered so
+  JSON.parse doesn't fight Home's first paint) — first Library visit now hits
+  a warm react-query cache, same keys/staleTime as ScreenLibrary.
+
 [2026-07-22] — docs: user-facing docs pass — website restored + real screenshots (BUG-269)
 Fixed: docs/index.html: BUG-269 — the GitHub Pages marketing site had been
   clobbered by a copy of the schema page in 7a9548c5 (2026-06-30); restored
