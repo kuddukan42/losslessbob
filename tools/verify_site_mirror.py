@@ -33,6 +33,7 @@ import logging
 import sqlite3
 import sys
 import time
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -55,6 +56,10 @@ HASH_CHUNK_BYTES = 1024 * 1024
 WRITE_CHUNK_ROWS = 1000
 PROGRESS_EVERY = 10000
 BUSY_TIMEOUT_MS = 30000
+
+# How often the optional ``progress_cb`` fires. Far tighter than PROGRESS_EVERY
+# (which drives log lines) because a GUI progress bar needs frequent updates.
+CALLBACK_EVERY = 250
 
 # Issue kinds
 KIND_MISSING = "missing"
@@ -100,6 +105,8 @@ class Result:
         unbaselined: Rows still without a usable baseline after the run.
         issues: Every problem found, in discovery order.
         seconds: Wall-clock duration.
+        cancelled: True if a ``should_stop`` callback ended the run early, in
+            which case every other field describes the partial run only.
     """
 
     mode: str
@@ -110,6 +117,7 @@ class Result:
     unbaselined: int = 0
     issues: list[Issue] = field(default_factory=list)
     seconds: float = 0.0
+    cancelled: bool = False
 
     def count(self, kind: str) -> int:
         """Return the number of issues of *kind*."""
@@ -138,6 +146,8 @@ class Result:
             f"unbaselined {self.unbaselined}",
             f"{self.seconds:.1f}s",
         ]
+        if self.cancelled:
+            parts.append("CANCELLED")
         return " | ".join(parts)
 
 
@@ -257,7 +267,9 @@ def find_orphans(conn: sqlite3.Connection, site_dir: Path) -> list[Issue]:
 
 
 def baseline(db_path: Path | str | None = None, site_dir: Path | None = None,
-             limit: int | None = None) -> Result:
+             limit: int | None = None,
+             progress_cb: Callable[[int, int], None] | None = None,
+             should_stop: Callable[[], bool] | None = None) -> Result:
     """Record an on-disk ``local_sha256`` for downloaded rows that lack one.
 
     This TRUSTS the current mirror state — for already-rewritten HTML nothing
@@ -270,9 +282,16 @@ def baseline(db_path: Path | str | None = None, site_dir: Path | None = None,
         db_path: Database path; defaults to the app DB.
         site_dir: Mirror root; defaults to ``data/site/``.
         limit: Optional cap on rows processed, for partial runs.
+        progress_cb: Optional ``(done, total)`` callback fired every
+            ``CALLBACK_EVERY`` rows, for GUI progress reporting.
+        should_stop: Optional predicate polled every ``CALLBACK_EVERY`` rows;
+            returning True ends the run early. Rows hashed before the stop are
+            still baselined — a partial baseline is sound, since each row's
+            hash stands alone.
 
     Returns:
-        A :class:`Result` in ``"baseline"`` mode.
+        A :class:`Result` in ``"baseline"`` mode, with ``cancelled`` set if
+        *should_stop* ended the run.
     """
     db_path = Path(db_path or DB_PATH)
     site_dir = Path(site_dir or SITE_DIR)
@@ -287,6 +306,13 @@ def baseline(db_path: Path | str | None = None, site_dir: Path | None = None,
         for idx, row in enumerate(rows, 1):
             if idx % PROGRESS_EVERY == 0:
                 log.info("baseline: %d/%d rows hashed…", idx, res.rows)
+            if idx % CALLBACK_EVERY == 0:
+                if progress_cb is not None:
+                    progress_cb(idx, res.rows)
+                if should_stop is not None and should_stop():
+                    res.cancelled = True
+                    log.warning("baseline cancelled after %d/%d rows", idx, res.rows)
+                    break
             path = _resolve(site_dir, row)
             if path is None:
                 res.issues.append(Issue(KIND_MISSING, row["url"], "no relative_path recorded"))
@@ -307,6 +333,8 @@ def baseline(db_path: Path | str | None = None, site_dir: Path | None = None,
                 ))
                 continue
             updates.append((actual, row["url"]))
+        if progress_cb is not None:
+            progress_cb(res.rows, res.rows)
         _apply_baseline(db_path, updates)
         res.baselined = len(updates)
         res.unbaselined = _count_unbaselined(conn)
@@ -317,7 +345,9 @@ def baseline(db_path: Path | str | None = None, site_dir: Path | None = None,
     return res
 
 
-def verify(db_path: Path | str | None = None, site_dir: Path | None = None) -> Result:
+def verify(db_path: Path | str | None = None, site_dir: Path | None = None,
+           progress_cb: Callable[[int, int], None] | None = None,
+           should_stop: Callable[[], bool] | None = None) -> Result:
     """Re-hash the mirror and report missing files, drift and orphans.
 
     Read-only. Each downloaded row is compared against ``local_sha256``; rows
@@ -329,9 +359,16 @@ def verify(db_path: Path | str | None = None, site_dir: Path | None = None) -> R
     Args:
         db_path: Database path; defaults to the app DB.
         site_dir: Mirror root; defaults to ``data/site/``.
+        progress_cb: Optional ``(done, total)`` callback fired every
+            ``CALLBACK_EVERY`` rows, for GUI progress reporting.
+        should_stop: Optional predicate polled every ``CALLBACK_EVERY`` rows;
+            returning True ends the run early. A cancelled verify skips the
+            orphan sweep, since a partial file list would report every
+            unvisited file as an orphan.
 
     Returns:
-        A :class:`Result` in ``"verify"`` mode.
+        A :class:`Result` in ``"verify"`` mode, with ``cancelled`` set if
+        *should_stop* ended the run.
     """
     db_path = Path(db_path or DB_PATH)
     site_dir = Path(site_dir or SITE_DIR)
@@ -345,6 +382,13 @@ def verify(db_path: Path | str | None = None, site_dir: Path | None = None) -> R
         for idx, row in enumerate(rows, 1):
             if idx % PROGRESS_EVERY == 0:
                 log.info("verify: %d/%d rows checked…", idx, res.rows)
+            if idx % CALLBACK_EVERY == 0:
+                if progress_cb is not None:
+                    progress_cb(idx, res.rows)
+                if should_stop is not None and should_stop():
+                    res.cancelled = True
+                    log.warning("verify cancelled after %d/%d rows", idx, res.rows)
+                    break
             path = _resolve(site_dir, row)
             if path is None:
                 res.issues.append(Issue(KIND_MISSING, row["url"], "no relative_path recorded"))
@@ -374,7 +418,10 @@ def verify(db_path: Path | str | None = None, site_dir: Path | None = None) -> R
                     KIND_DRIFT, row["url"],
                     f"{source} {expected[:12]} != disk {actual[:12]} ({row['relative_path']})",
                 ))
-        res.issues.extend(find_orphans(conn, site_dir))
+        if not res.cancelled:
+            if progress_cb is not None:
+                progress_cb(res.rows, res.rows)
+            res.issues.extend(find_orphans(conn, site_dir))
     finally:
         conn.close()
 
