@@ -30,13 +30,13 @@ overrides that, loudly.
 from __future__ import annotations
 
 import argparse
-import hashlib
 import logging
 import os
 import shutil
 import sys
 import tarfile
 import time
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -217,6 +217,8 @@ class SnapshotResult:
         tar_path: Path of the tarball, if ``--tar`` was used.
         seconds: Wall-clock duration.
         verify: The pre-build mirror verification result, if one ran.
+        cancelled: True if a ``should_stop`` callback ended the build early. No
+            snapshot exists in that case — the partial directory is deleted.
     """
 
     path: Path
@@ -229,9 +231,12 @@ class SnapshotResult:
     seconds: float = 0.0
     verify: vsm.Result | None = None
     counts: dict[str, int] = field(default_factory=dict)
+    cancelled: bool = False
 
     def summary(self) -> str:
         """Return the single-line summary for the CLI."""
+        if self.cancelled:
+            return f"snapshot: CANCELLED after {self.seconds:.1f}s — no snapshot written"
         parts = [
             f"snapshot: {self.path.name}",
             f"{self.files} files",
@@ -430,7 +435,9 @@ def make_tarball(snap_dir: Path) -> Path:
 def make_snapshot(root: Path | None = None, payload: list[tuple[Path, str]] | None = None,
                   db_path: Path | str | None = None, site_dir: Path | None = None,
                   with_db: bool = True, verify_first: bool = True,
-                  tar: bool = False, today: str | None = None) -> SnapshotResult:
+                  tar: bool = False, today: str | None = None,
+                  progress_cb: Callable[[str], None] | None = None,
+                  should_stop: Callable[[], bool] | None = None) -> SnapshotResult:
     """Build a sealed snapshot directory.
 
     Args:
@@ -443,9 +450,16 @@ def make_snapshot(root: Path | None = None, payload: list[tuple[Path, str]] | No
         verify_first: Refuse to build if the mirror has missing files or drift.
         tar: Also produce a ``.tar.gz`` and its ``.sha256`` sidecar.
         today: Date stamp override for the directory name.
+        progress_cb: Optional callback receiving a short stage name as each
+            build phase begins, for GUI progress reporting.
+        should_stop: Optional predicate polled between stages. A snapshot is
+            only meaningful once sealed, so cancelling **deletes** the partial
+            directory rather than leaving an unsealed tree that could be
+            mistaken for a real snapshot.
 
     Returns:
-        A :class:`SnapshotResult`.
+        A :class:`SnapshotResult`, with ``cancelled`` set (and ``path`` pointing
+        at the now-deleted directory) if *should_stop* ended the run.
 
     Raises:
         RuntimeError: If the pre-build mirror verification failed.
@@ -460,9 +474,21 @@ def make_snapshot(root: Path | None = None, payload: list[tuple[Path, str]] | No
             (OLOF_BOBSERVE_DIR, "olof/bobserve_pages"),
         ]
 
+    def _stage(name: str) -> None:
+        """Announce a build stage to the optional progress callback."""
+        if progress_cb is not None:
+            progress_cb(name)
+
     verify_result = None
     if verify_first:
-        verify_result = vsm.verify(db_path, site_dir)
+        _stage("verify")
+        verify_result = vsm.verify(db_path, site_dir, should_stop=should_stop)
+        if verify_result.cancelled:
+            res = SnapshotResult(path=root, verify=verify_result)
+            res.cancelled = True
+            res.seconds = time.time() - started
+            log.warning("snapshot cancelled during pre-build verification")
+            return res
         log.info("pre-build %s", verify_result.summary())
         if verify_result.failed:
             raise RuntimeError(
@@ -479,7 +505,18 @@ def make_snapshot(root: Path | None = None, payload: list[tuple[Path, str]] | No
     snap_dir.mkdir(parents=True)
     res = SnapshotResult(path=snap_dir, verify=verify_result)
 
+    def _abandon() -> SnapshotResult:
+        """Delete the half-built snapshot and return a cancelled result."""
+        shutil.rmtree(snap_dir, ignore_errors=True)
+        res.cancelled = True
+        res.seconds = time.time() - started
+        log.warning("snapshot cancelled — removed partial directory %s", snap_dir)
+        return res
+
     for src, sub in payload:
+        if should_stop is not None and should_stop():
+            return _abandon()
+        _stage(f"stage:{sub}")
         linked, copied = stage_tree(src, snap_dir / sub)
         res.linked += linked
         res.copied += copied
@@ -487,19 +524,29 @@ def make_snapshot(root: Path | None = None, payload: list[tuple[Path, str]] | No
         log.info("staged %s: %d files", sub, linked + copied)
 
     if with_db:
+        if should_stop is not None and should_stop():
+            return _abandon()
+        _stage("db-export")
         stage_db_export(snap_dir, db_path)
 
+    if should_stop is not None and should_stop():
+        return _abandon()
+
+    _stage("manifest")
     write_verifier(snap_dir)
     entries = build_manifest(snap_dir)
     res.files = len(entries)
     res.size_bytes = sum(size for _, size, _ in entries)
     write_readme(snap_dir, res, with_db)
     manifest_path = write_manifest(snap_dir, entries)
+    _stage("seal")
     res.seal = write_seal(snap_dir, manifest_path)
 
     if tar:
+        _stage("tar")
         res.tar_path = make_tarball(snap_dir)
 
+    _stage("done")
     res.seconds = time.time() - started
     return res
 

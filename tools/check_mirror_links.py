@@ -33,6 +33,7 @@ import os
 import random
 import sys
 import time
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -116,6 +117,8 @@ class LinkResult:
         seed_pages_checked: How many seed pages were present and parsed.
         missing_seeds: Seed pages absent from the mirror entirely.
         seconds: Wall-clock duration.
+        cancelled: True if a ``should_stop`` callback ended the run early, in
+            which case every other field describes the partial run only.
     """
 
     pages: int = 0
@@ -125,6 +128,7 @@ class LinkResult:
     seed_pages_checked: int = 0
     missing_seeds: list[str] = field(default_factory=list)
     seconds: float = 0.0
+    cancelled: bool = False
 
     @property
     def seed_broken(self) -> list[BrokenLink]:
@@ -146,7 +150,7 @@ class LinkResult:
 
     def summary(self) -> str:
         """Return the single-line summary for the CLI and report file."""
-        return " | ".join([
+        parts = [
             f"links: {self.pages} pages",
             f"checked {self.links}",
             f"skipped {self.skipped}",
@@ -154,7 +158,10 @@ class LinkResult:
             f"seed-broken {len(self.seed_broken)}",
             f"seeds {self.seed_pages_checked}/{len(SEED_PAGES)}",
             f"{self.seconds:.1f}s",
-        ])
+        ]
+        if self.cancelled:
+            parts.append("CANCELLED")
+        return " | ".join(parts)
 
 
 # ── Link extraction ───────────────────────────────────────────────────────────
@@ -280,16 +287,23 @@ def select_pages(site_dir: Path, full: bool = False,
 # ── Core pass ─────────────────────────────────────────────────────────────────
 
 def check_links(site_dir: Path | None = None, full: bool = False,
-                sample_size: int = SAMPLE_SIZE) -> LinkResult:
+                sample_size: int = SAMPLE_SIZE,
+                progress_cb: Callable[[int, int], None] | None = None,
+                should_stop: Callable[[], bool] | None = None) -> LinkResult:
     """Walk mirrored pages and report internal links that do not resolve.
 
     Args:
         site_dir: Mirror root; defaults to ``data/site/``.
         full: Check every page rather than the seeded sample.
         sample_size: Size of the non-seed sample.
+        progress_cb: Optional ``(done, total)`` callback fired once per page,
+            for GUI progress reporting.
+        should_stop: Optional predicate polled once per page; returning True
+            ends the run early.
 
     Returns:
-        A :class:`LinkResult`.
+        A :class:`LinkResult`, with ``cancelled`` set if *should_stop* ended
+        the run.
     """
     site_dir = Path(site_dir or SITE_DIR)
     started = time.time()
@@ -300,7 +314,15 @@ def check_links(site_dir: Path | None = None, full: bool = False,
         log.warning("seed page missing from mirror: %s", seed)
 
     seeds = set(SEED_PAGES)
-    for page_rel in select_pages(site_dir, full=full, sample_size=sample_size):
+    pages = select_pages(site_dir, full=full, sample_size=sample_size)
+    total = len(pages)
+    for done, page_rel in enumerate(pages, 1):
+        if progress_cb is not None:
+            progress_cb(done, total)
+        if should_stop is not None and should_stop():
+            res.cancelled = True
+            log.warning("link check cancelled after %d/%d pages", done, total)
+            break
         path = site_dir / page_rel
         try:
             html = path.read_text(encoding="utf-8", errors="replace")
