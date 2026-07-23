@@ -148,6 +148,7 @@ losslessbob/
 │   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard
 │   ├── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
 │   ├── test_scraper_crawler.py # scrape_sessions + site_inventory table write functions
+│   ├── test_site_mirror_verify.py # tools/verify_site_mirror.py: baseline/verify, HTML hash-provenance trap, drift/missing/orphan, CLI exit codes (TODO-265 B1)
 │   ├── test_scraper.py       # backend/scraper.py: entry metadata parsing, scrape_entry/scrape_range, download_pages_range
 │   ├── test_bootleg_scraper.py # backend/bootleg_scraper.py: date/row parsing, diff/apply, scrape_bootlegs (mocked HTTP)
 │   ├── test_bobdylan_scraper.py # backend/bobdylan_scraper.py: sitemap + show-page parsing, run_discover/run_scrape/run_update (mocked HTTP)
@@ -212,6 +213,7 @@ losslessbob/
 │   ├── wiki_staleness.py     # CLI: flag docs/wiki/ pages whose `> Sources:` paths have commits newer than their Status date; feeds the [wiki] session-briefing line + /wiki-update page picking
 │   ├── taper_aliases.py      # CLI: list/add/remove known-taper alias overrides (user_taper_aliases, TODO-241); --recompute reruns attribution
 │   ├── test_site_headers.py  # CLI: probe losslessbob.com HTTP headers (Last-Modified/ETag support check)
+│   ├── verify_site_mirror.py # CLI: site-mirror integrity check — --baseline records site_inventory.local_sha256, default mode re-hashes and reports missing/drift/orphans (TODO-265 B1); --report → data/exports/
 │   ├── electron_driver.mjs   # Visual-verification driver (single engine since 2026-07-22): default mode = Playwright _electron vs the REAL built app on Xvfb (PNGs → .debug/electron/; scale-matrix/main-eval; /verify --electron; TODO-247); --renderer-only = headless Chromium vs the Vite server (PNGs → .debug/; fast /verify default; absorbed the retired browser_driver.mjs)
 │   ├── driver_core.mjs       # Shared session-JSON action runner for both drivers (screenshot/navigate/click/fill/wait/eval/resize/...)
 │   ├── electron_preflight.mjs # CLI: display-backend probe matrix (Wayland/XWayland/Xvfb/ozone-headless); writes + preserves the `selected` decision
@@ -904,7 +906,8 @@ One row per unique URL discovered or fetched by the site crawler.
 | last_fetched_at | TIMESTAMP | When the body was last saved |
 | last_checked_at | TIMESTAMP | When the URL was last checked (including 304 hits) |
 | last_modified | TEXT | `Last-Modified` header from last fetch |
-| body_sha256 | TEXT | SHA-256 of the saved body |
+| body_sha256 | TEXT | SHA-256 of the **raw HTTP body**. HTML is saved link-rewritten, so this never matches the file on disk for HTML; it does for verbatim (non-HTML) files |
+| local_sha256 | TEXT | SHA-256 of the file **as saved on disk** — the mirror-integrity baseline used by `tools/verify_site_mirror.py` (TODO-265 B1) |
 | discovered_by | TEXT | URL of the page that linked here, or `'start'` |
 | session_id | INTEGER | FK → `scrape_sessions.id` of last session that touched this row |
 

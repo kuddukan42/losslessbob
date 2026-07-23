@@ -1,3 +1,32 @@
+[2026-07-23] — feat: site-mirror self-verification (TODO-265 bite B1)
+Added: tools/verify_site_mirror.py: preservation-stack B1 — re-hashes the site
+  mirror and reports missing files, hash drift, orphans and unbaselined rows.
+  `--baseline` records the on-disk hash for rows that lack one; default mode is
+  read-only verification; `--report` writes a dated file to data/exports/.
+  Non-zero exit on missing/drift. Safe to run while the app is up.
+Added: backend/db.py: site_inventory.local_sha256 (idempotent PRAGMA-guarded
+  migration + DDL). body_sha256 is the hash of the RAW HTTP body, but HTML is
+  saved link-rewritten, so it can never match the file on disk — re-hashing
+  against it would have reported ~115k false drift errors. local_sha256 records
+  the bytes as saved and is the only sound baseline for HTML.
+Changed: backend/site_crawler.py: _save() now returns (path, sha256-of-written-
+  bytes) and the crawl loop stores it as local_sha256, so every future fetch
+  records both hashes. New public is_rewritten_html() is the single source of
+  truth for that HTML-vs-verbatim distinction (previously duplicated inline in
+  _save and the content_type expression). HTML is written via write_bytes rather
+  than write_text so saved bytes are not newline-translated on Windows.
+Added: tests/test_site_mirror_verify.py: 14 tests — baseline populates both
+  file kinds, a verbatim file disagreeing with body_sha256 is flagged and
+  deliberately NOT baselined (rot must keep surfacing), rewritten HTML never
+  false-drifts, tamper/delete/stray → drift/missing/orphan, CLI exit codes.
+Note: first real run baselined 114,915 files (26.9 s) and verified clean —
+  0 missing, 0 drift, 0 verbatim-hash mismatches, zero false HTML drift. It
+  also found 171 orphans (140 files/LBF-*, 31 detail/LB-*.html) — files the
+  entry scraper downloaded into the mirror without a site_inventory row, since
+  it writes entry_files instead (see site_crawler.py:415-419). Benign and
+  self-healing on the next full crawl; noted so B2 stages the directory tree
+  rather than building its manifest from the inventory table.
+
 [2026-07-23] — fix: library crawl wedged by read-only example folder (BUG-272)
 Fixed: tools/tapematch/tapematch_session.py: BUG-272 — the detached library
   crawl died 2026-07-22 20:06 with "10 consecutive failures overall" and sat

@@ -521,7 +521,9 @@ CREATE TABLE IF NOT EXISTS site_inventory (
     last_fetched_at TIMESTAMP,
     last_checked_at TIMESTAMP,  -- last If-Modified-Since check (may be 304)
     last_modified   TEXT,       -- HTTP Last-Modified stored for next check
-    body_sha256     TEXT,
+    body_sha256     TEXT,       -- sha256 of the RAW HTTP body (HTML is rewritten on save,
+                                -- so this does NOT match the file on disk for HTML)
+    local_sha256    TEXT,       -- sha256 of the file AS SAVED — the mirror-integrity baseline
     size_bytes      INTEGER,
     http_status     INTEGER,
     session_id      INTEGER REFERENCES scrape_sessions(id)
@@ -2414,6 +2416,13 @@ def init_db(db_path=None):
                 "ALTER TABLE tapematch_family_meta ADD COLUMN review_flag INTEGER NOT NULL DEFAULT 0"
             )
             conn.execute("ALTER TABLE tapematch_family_meta ADD COLUMN review_reason TEXT")
+        # Migration: add local_sha256 to site_inventory (preservation stack B1) —
+        # body_sha256 is the hash of the raw HTTP body, but HTML is saved
+        # link-rewritten, so it can never match the file on disk.  local_sha256
+        # records the on-disk bytes, giving the mirror a verifiable baseline.
+        _si_cols = [r[1] for r in conn.execute("PRAGMA table_info(site_inventory)").fetchall()]
+        if "local_sha256" not in _si_cols:
+            conn.execute("ALTER TABLE site_inventory ADD COLUMN local_sha256 TEXT")
         # Migration: collection_mounts / collection_routes tables (pipeline step 5)
         if not conn.execute(
             "SELECT name FROM sqlite_master WHERE type='table' AND name='collection_mounts'"

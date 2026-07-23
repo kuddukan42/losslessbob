@@ -266,18 +266,46 @@ def _fetch_page(
 
 # ── Save page ─────────────────────────────────────────────────────────────────
 
-def _save(url: str, content: bytes) -> Path:
-    """Write *content* to the mirror path for *url*, rewriting links if HTML."""
+def is_rewritten_html(url: str) -> bool:
+    """Return True if *url* is saved as link-rewritten HTML rather than verbatim bytes.
+
+    This is the single source of truth for the mirror's hash provenance: rewritten
+    files are re-encoded on save, so their on-disk bytes can never match the
+    ``body_sha256`` of the raw HTTP body.  Verbatim files always match.
+
+    Args:
+        url: Absolute or site-relative URL.
+
+    Returns:
+        True for HTML (``.html`` or extension-less directory index), else False.
+    """
+    return _ext(url) in (".html", "")
+
+
+def _save(url: str, content: bytes) -> tuple[Path, str]:
+    """Write *content* to the mirror path for *url*, rewriting links if HTML.
+
+    Args:
+        url: URL being saved; determines the local path and whether links are rewritten.
+        content: Raw HTTP response body.
+
+    Returns:
+        Tuple of (path written, sha256 hex digest of the bytes actually written).
+        The digest differs from the raw body's for HTML, which is rewritten here.
+    """
     local = _url_to_local(url)
     local.parent.mkdir(parents=True, exist_ok=True)
-    ext = _ext(url)
-    if ext == ".html" or ext == "" or not ext:
+    if is_rewritten_html(url):
         html = content.decode("utf-8", errors="replace")
         html = rewrite_links(html, url, BASE_DOMAIN)
-        local.write_text(html, encoding="utf-8")
+        # write_bytes, not write_text: text mode would translate newlines on
+        # Windows, making the saved bytes platform-dependent and unhashable here.
+        written = html.encode("utf-8")
+        local.write_bytes(written)
     else:
-        local.write_bytes(content)
-    return local
+        written = content
+        local.write_bytes(written)
+    return local, hashlib.sha256(written).hexdigest()
 
 
 # ── Main crawl loop ───────────────────────────────────────────────────────────
@@ -468,7 +496,7 @@ def crawl(
 
         # Save to disk
         sha = hashlib.sha256(body).hexdigest()
-        saved_path = _save(url, body)
+        saved_path, local_sha = _save(url, body)
         visited.add(url)
         counts["fetched"] += 1
 
@@ -476,11 +504,12 @@ def crawl(
             url, db_path,
             status="downloaded",
             relative_path=str(saved_path.relative_to(SITE_DIR)),
-            content_type="text/html" if _ext(url) in (".html", "") else "application/octet-stream",
+            content_type="text/html" if is_rewritten_html(url) else "application/octet-stream",
             last_fetched_at="CURRENT_TIMESTAMP",
             last_checked_at="CURRENT_TIMESTAMP",
             last_modified=new_lm,
             body_sha256=sha,
+            local_sha256=local_sha,
             size_bytes=len(body),
             http_status=status,
             session_id=session_id,
