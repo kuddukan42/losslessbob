@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-265: Preservation stack — mirror verification, sealed snapshots, restore test (FABLE_PRESERVATION_STACK.md)
+Priority: High
+Status: Done
+Added: 2026-07-23
+Closed: 2026-07-23
+Description: Spec: instructions/FABLE_PRESERVATION_STACK.md (roadmap §5). Goal: the losslessbob.com data cannot be lost. Four bites. B1 DONE 2026-07-23: site_inventory.local_sha256 column + crawler records it + tools/verify_site_mirror.py (baseline/verify, missing/drift/orphan/unbaselined, --report); real mirror baselined 114,915 files, verify clean with zero false HTML drift. REMAINING: B2 sealed snapshot builder (tools/make_site_snapshot.py + embedded stdlib verify_snapshot.py, BagIt-style manifest+seal, master export channel='full' in-process, hardlink staging, --tar); B3 restore test (tools/check_mirror_links.py, internal link resolution over a seeded 500-page sample, --full); B4 docs (PROJECT.md, roadmap status line, instructions/README.md row). Order: B2/B3 either order, then B4. Constraint: zero upload paths anywhere — distribution is a manual human act, mirror stays local/friends-only.
+All four bites shipped 2026-07-23. B1: site_inventory.local_sha256 + crawler write + tools/verify_site_mirror.py — 114,915 files baselined, verify clean (0 missing/drift/verbatim-mismatch, zero false HTML drift). B2: tools/make_site_snapshot.py — real snapshot of 116,150 files (2.9GB apparent, 359MB real via hardlinks) built in 39.8s, confirmed by its own embedded verifier run under /usr/bin/python3 with no repo and no venv. B3: tools/check_mirror_links.py — all 4 seed pages resolve; 2 dead links found in the 500-page sample (detail/LB-00718.html -> LB-00000.html; lbbcd/LBBCD-song-1096.html -> LBBCD-tuit94-319.html), left as findings per spec. B4: PROJECT.md preservation section + roadmap/README status; spec moved to instructions/complete/. 27 new tests, suite 964 green. Open findings for tj: 171 files in data/site/ have no site_inventory row (entry scraper writes entry_files instead) — benign, snapshots stage the filesystem so they are included anyway.
+
 TODO-263: Command palette (Ctrl+K) — FABLE_COMMAND_PALETTE.md
 Priority: Medium
 Status: Done
