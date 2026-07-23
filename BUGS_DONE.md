@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-272: Library crawl wedged by read-only example folder (copytree preserves mode 0o555)
+Status: Fixed
+File(s): tools/tapematch/tapematch_session.py:520,tools/tapematch/tapematch_session.py:538
+Reported: 2026-07-23
+Fixed: 2026-07-23
+Root cause: Some source folders on the archive volumes are mode 0o555 (read-only). shutil.copytree in copy_folders() preserves that mode on the copy it writes into EXAMPLES_DIR. A read-only directory's entries cannot be unlinked, so clean_examples()' shutil.rmtree raised PermissionError on that one leftover folder at the start of every subsequent date's run — failing before any work, which made run_crawl.sh treat each fresh date as failing 3x, skip-list it, and finally abort as a systemic problem.
+Fix: Added _make_writable(root) — restores the owner write bit on a directory and every directory beneath it. clean_examples() calls it before rmtree; copy_folders() calls it on each dest right after copytree, so a read-only source mode never survives into EXAMPLES_DIR. Unblocked the stuck folder with chmod -R u+w, cleared the six collateral entries from crawl_skip.txt, and restarted the crawl (verified: 1974-01-31 examples copied, step [3] now passes). Regression tests in tools/tapematch/tests/test_make_writable.py.
+
 BUG-271: Library/Collection first click still slow cold — BUG-270 fix only covered warm path
 Status: Fixed
 File(s): gui_next/src/renderer/src/App.tsx,gui_next/src/renderer/src/screens/ScreenLibrary.tsx

@@ -517,9 +517,31 @@ def extract_lb_relationship(lb_a: int, lb_b: int) -> tuple[int | None, str]:
 
 # ── file ops ───────────────────────────────────────────────────────────────────
 
+def _make_writable(root: Path) -> None:
+    """Add owner write permission to `root` and every directory beneath it.
+
+    Some source folders on the archive volumes are read-only (mode 0o555), and
+    `shutil.copytree` preserves that mode on the copy. Entries of a read-only
+    directory cannot be unlinked, so a single such folder left in EXAMPLES_DIR
+    makes every later `clean_examples()` die with PermissionError and wedges the
+    whole crawl (BUG-272).
+
+    Args:
+        root: Directory to make writable, recursively. Missing paths are ignored.
+    """
+    if not root.is_dir():
+        return
+    for d in (root, *(p for p in root.rglob("*") if p.is_dir())):
+        try:
+            d.chmod(d.stat().st_mode | 0o700)
+        except OSError as exc:  # noqa: PERF203 - best effort, rmtree reports the real failure
+            print(f"  Warning: could not make {d} writable: {exc}")
+
+
 def clean_examples() -> None:
     for item in EXAMPLES_DIR.iterdir():
         if item.is_dir():
+            _make_writable(item)
             shutil.rmtree(item)
         else:
             item.unlink(missing_ok=True)
@@ -536,6 +558,9 @@ def copy_folders(folders: dict[int, Path]) -> None:
         dest = EXAMPLES_DIR / src.name
         print(f"  Copying {_lb_tag(lb_num)}: {src.name} …")
         shutil.copytree(str(src), str(dest))
+        # copytree preserves a read-only source mode; strip it now so the next
+        # clean_examples() can always remove this copy (BUG-272).
+        _make_writable(dest)
         copied.add(src)
 
 

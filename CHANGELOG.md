@@ -1,3 +1,21 @@
+[2026-07-23] — fix: library crawl wedged by read-only example folder (BUG-272)
+Fixed: tools/tapematch/tapematch_session.py: BUG-272 — the detached library
+  crawl died 2026-07-22 20:06 with "10 consecutive failures overall" and sat
+  idle ~17 h with 436 dates outstanding. Root cause: some source folders on the
+  archive volumes are mode 0o555 and shutil.copytree preserves that mode on the
+  copy it leaves in EXAMPLES_DIR; a read-only directory's entries cannot be
+  unlinked, so clean_examples()' rmtree raised PermissionError at step [3] of
+  every subsequent date — before any work — on one leftover folder
+  ("1974-01-30 … (LB-03652)"). New _make_writable() restores the owner write
+  bit across a tree; clean_examples() calls it before rmtree and copy_folders()
+  strips the read-only mode right after each copytree, so a read-only source can
+  no longer wedge the crawl.
+Changed: data/tapematch/crawl_skip.txt: cleared six innocent dates (1974-01-31,
+  02-02, 02-03, 02-04, 02-06, 02-09) that run_crawl.sh skip-listed only because
+  each hit the shared PermissionError three times; they are back in the queue.
+Added: tools/tapematch/tests/test_make_writable.py: regression tests — a 0o555
+  tree blocks rmtree, _make_writable un-blocks it, missing paths are a no-op.
+
 [2026-07-22] — feat: persisted Library view + instant relaunch (BUG-271)
 Fixed: gui_next App.tsx: BUG-271 — first click on Library/Collection after a
   cold launch still took 12-15 s / 5 s (BUG-270's fix was warm-path only: cold
