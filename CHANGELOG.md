@@ -1,3 +1,43 @@
+[2026-07-23] — feat: sealed snapshots + restore test — preservation stack complete (TODO-265 B2/B3/B4)
+Added: tools/make_site_snapshot.py: builds data/exports/snapshots/lbsnap-YYYY-MM-DD[.N]/
+  — site mirror + both olof mirrors + a full-channel DB export (export_master_db
+  called in-process, never over HTTP), staged with os.link hardlinks so a 2.9 GB
+  snapshot costs only the DB export in real disk. Writes manifest.txt
+  (sha256␠␠size␠␠relpath, sorted for reproducibility), seal.txt (one hash over
+  the manifest), a recipient-facing README.txt and a standalone stdlib
+  verify_snapshot.py. Runs the B1 verify first and refuses to seal a mirror with
+  missing files or drift (--no-verify overrides, logged loudly). --tar adds a
+  .tar.gz + .sha256 sidecar; --no-db skips the export. No upload path anywhere,
+  by design — distribution is a manual human act.
+Added: tools/check_mirror_links.py: restore test — resolves internal
+  href/src/action links against files on disk across 4 seed pages (home, LBM
+  by-number index, year index, bootleg index) plus a seeded 500-page sample;
+  --full walks everything. Seed-page breaks fail the run, sample findings are
+  report-only unless --max-broken is given. Read-only; --report → data/exports/.
+Added: tests/test_site_snapshot.py (15) + tests/test_mirror_links.py (12) —
+  hardlink staging, embedded verifier pass/tamper/deletion, forged-manifest
+  seal detection, build determinism, refusal to seal a drifted mirror, an AST
+  check that the snapshot tool imports no network module; link resolution for
+  relative/absolute/encoded/directory targets, seed gating, deterministic
+  sampling, read-only behaviour.
+Changed: PROJECT.md: new "Preservation stack" section under Site Crawler — the
+  hash-provenance rule, the three tools, the restore one-liner
+  (`python3 -m http.server -d data/site 8080`) and the no-upload constraint.
+  instructions/README.md + FABLE_PLATFORM_ROADMAP.md §5 marked shipped; spec
+  moved to instructions/complete/ (B4).
+Note: real runs — snapshot of 116,150 files (2.9 GB apparent, 359 MB real)
+  built in 39.8 s and verified by its own embedded verifier under
+  /usr/bin/python3 with no repo and no venv: "116150 file(s) verified, 0
+  problem(s)". Link check: all 4 seed pages resolve fully; 2 dead links in the
+  500-page sample are findings for tj, not auto-fixed —
+  detail/LB-00718.html → LB-00000.html and
+  lbbcd/LBBCD-song-1096.html → LBBCD-tuit94-319.html (both look like authoring
+  typos on the live site rather than mirror gaps).
+Note: the checker ignores Word's <link rel="File-List"/themeData/
+  colorSchemeMapping> export scaffolding. Much of the site was authored in Word,
+  which emits those on every page; counting them failed all four seed pages over
+  files no browser ever fetches.
+
 [2026-07-23] — feat: site-mirror self-verification (TODO-265 bite B1)
 Added: tools/verify_site_mirror.py: preservation-stack B1 — re-hashes the site
   mirror and reports missing files, hash drift, orphans and unbaselined rows.

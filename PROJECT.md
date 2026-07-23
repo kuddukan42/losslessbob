@@ -149,6 +149,8 @@ losslessbob/
 │   ├── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
 │   ├── test_scraper_crawler.py # scrape_sessions + site_inventory table write functions
 │   ├── test_site_mirror_verify.py # tools/verify_site_mirror.py: baseline/verify, HTML hash-provenance trap, drift/missing/orphan, CLI exit codes (TODO-265 B1)
+│   ├── test_site_snapshot.py # tools/make_site_snapshot.py: hardlink staging, manifest/seal, embedded verifier pass+tamper, build determinism, refusal to seal a drifted mirror (TODO-265 B2)
+│   ├── test_mirror_links.py  # tools/check_mirror_links.py: link extraction/resolution, Word-scaffolding skip, seed-page gating, deterministic sampling (TODO-265 B3)
 │   ├── test_scraper.py       # backend/scraper.py: entry metadata parsing, scrape_entry/scrape_range, download_pages_range
 │   ├── test_bootleg_scraper.py # backend/bootleg_scraper.py: date/row parsing, diff/apply, scrape_bootlegs (mocked HTTP)
 │   ├── test_bobdylan_scraper.py # backend/bobdylan_scraper.py: sitemap + show-page parsing, run_discover/run_scrape/run_update (mocked HTTP)
@@ -214,6 +216,8 @@ losslessbob/
 │   ├── taper_aliases.py      # CLI: list/add/remove known-taper alias overrides (user_taper_aliases, TODO-241); --recompute reruns attribution
 │   ├── test_site_headers.py  # CLI: probe losslessbob.com HTTP headers (Last-Modified/ETag support check)
 │   ├── verify_site_mirror.py # CLI: site-mirror integrity check — --baseline records site_inventory.local_sha256, default mode re-hashes and reports missing/drift/orphans (TODO-265 B1); --report → data/exports/
+│   ├── make_site_snapshot.py # CLI: sealed BagIt-style archive snapshot → data/exports/snapshots/lbsnap-YYYY-MM-DD/ (site + olof mirrors + full-channel DB export, hardlinked; manifest.txt + seal.txt + embedded stdlib verify_snapshot.py; --tar, --no-db, --no-verify) (TODO-265 B2). Friends-only, no upload path
+│   ├── check_mirror_links.py # CLI: mirror restore test — resolves internal href/src/action links against disk over 4 seed pages + a seeded 500-page sample (--full for all); serve the mirror with `python3 -m http.server -d data/site 8080` (TODO-265 B3)
 │   ├── electron_driver.mjs   # Visual-verification driver (single engine since 2026-07-22): default mode = Playwright _electron vs the REAL built app on Xvfb (PNGs → .debug/electron/; scale-matrix/main-eval; /verify --electron; TODO-247); --renderer-only = headless Chromium vs the Vite server (PNGs → .debug/; fast /verify default; absorbed the retired browser_driver.mjs)
 │   ├── driver_core.mjs       # Shared session-JSON action runner for both drivers (screenshot/navigate/click/fill/wait/eval/resize/...)
 │   ├── electron_preflight.mjs # CLI: display-backend probe matrix (Wayland/XWayland/Xvfb/ozone-headless); writes + preserves the `selected` decision
@@ -1921,6 +1925,26 @@ Full-domain BFS spider that produces a complete offline mirror of `losslessbob.w
 **Rate limiting:** 1500ms base delay ±20% jitter. On HTTP 429: honor `Retry-After` header (default 60s). On connection error: exponential backoff 5s → 15s → 45s. Configurable daily request cap (default 5,000). Always sequential (no concurrency). `robots.txt` read once per session.
 
 **State:** Separate `_crawler_state` dict and `_crawler_lock` (no shared state with `scraper.py`). Fields: `running`, `stage`, `current_url`, `fetched`, `not_modified`, `skipped`, `failed`, `not_found`, `queue_size`, `session_id`, `message`, `stop_requested`.
+
+### Preservation stack (TODO-265, spec `instructions/complete/FABLE_PRESERVATION_STACK.md`)
+
+Three CLI tools keep the mirror archival-grade. All are read-only against the live DB except the one baseline column write, and safe to run while the app is up.
+
+**Hash provenance — the trap.** `site_inventory.body_sha256` is the sha256 of the **raw HTTP body**, but HTML is saved link-rewritten and re-encoded, so its on-disk bytes can never match it; non-HTML is written verbatim and does match. `local_sha256` records the bytes **as saved** and is the only sound baseline for HTML. `site_crawler.is_rewritten_html(url)` is the single source of truth for that distinction — use it, don't re-derive the rule.
+
+| Tool | Purpose |
+|------|---------|
+| `tools/verify_site_mirror.py` | `--baseline` records `local_sha256` for rows lacking one (a verbatim file disagreeing with `body_sha256` is flagged and deliberately *not* baselined — rot must keep surfacing). Default mode re-hashes and reports missing / drift / orphans / unbaselined; non-zero exit on real problems. |
+| `tools/make_site_snapshot.py` | Builds `data/exports/snapshots/lbsnap-YYYY-MM-DD[.N]/` — site + olof mirrors + full-channel DB export, hardlinked (a 2.9 GB snapshot costs only the DB export in real disk). Writes `manifest.txt` (`sha256␠␠size␠␠relpath`, sorted), `seal.txt` (one hash over the manifest), `README.txt` and a standalone stdlib `verify_snapshot.py`. Refuses to seal a mirror that fails verification (`--no-verify` overrides, loudly). |
+| `tools/check_mirror_links.py` | Restore test: resolves internal links against disk over 4 seed pages + a seeded 500-page sample (`--full` for all). Seed breaks fail the run; sample findings are report-only. |
+
+**Restoring the mirror** is just serving the directory — its links are already relative:
+
+```bash
+python3 -m http.server -d data/site 8080
+```
+
+**Distribution is a manual human act.** Snapshots carry full-channel data (private-entry metadata, friends-only tier). `make_site_snapshot.py` has no upload path and must never gain one; `POST /api/master/github_release` already refuses any non-public channel. A private dark archive is preservation — publishing the mirror is a separate decision needing Jeff's blessing.
 
 ---
 

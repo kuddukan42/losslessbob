@@ -135,7 +135,10 @@ expected <5% of the pile.
 
 ## 5. Preservation stack — the Jeff-continuity problem
 
-> 📋 **SPEC WRITTEN** (2026-07-17) — expanded into `FABLE_PRESERVATION_STACK.md`; execute from there.
+> ✅ **SHIPPED** (2026-07-23, TODO-265) — spec at `instructions/complete/FABLE_PRESERVATION_STACK.md`.
+> All three gaps closed: `tools/verify_site_mirror.py` (B1), `tools/make_site_snapshot.py`
+> (B2), `tools/check_mirror_links.py` (B3). Mirror baselined + verified clean; a real
+> 116,150-file snapshot builds in 40 s and self-verifies under stock python.
 
 **Context.** losslessbob.com has had ≥2 extended outages with scarce updates; Jeff is
 tired (fewer ratings/comments); he wrote his own site tooling and is presumably the
