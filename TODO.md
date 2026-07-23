@@ -1,4 +1,10 @@
 
+TODO-265: Preservation stack — mirror verification, sealed snapshots, restore test (FABLE_PRESERVATION_STACK.md)
+Priority: High
+Status: Open
+Added: 2026-07-23
+Description: Spec: instructions/FABLE_PRESERVATION_STACK.md (roadmap §5). Goal: the losslessbob.com data cannot be lost. Four bites. B1 DONE 2026-07-23: site_inventory.local_sha256 column + crawler records it + tools/verify_site_mirror.py (baseline/verify, missing/drift/orphan/unbaselined, --report); real mirror baselined 114,915 files, verify clean with zero false HTML drift. REMAINING: B2 sealed snapshot builder (tools/make_site_snapshot.py + embedded stdlib verify_snapshot.py, BagIt-style manifest+seal, master export channel='full' in-process, hardlink staging, --tar); B3 restore test (tools/check_mirror_links.py, internal link resolution over a seeded 500-page sample, --full); B4 docs (PROJECT.md, roadmap status line, instructions/README.md row). Order: B2/B3 either order, then B4. Constraint: zero upload paths anywhere — distribution is a manual human act, mirror stays local/friends-only.
+
 TODO-264: DYLAN2 disk health + re-source 2 corrupt files found in BUG-120 forensics
 Priority: High
 Status: Open
