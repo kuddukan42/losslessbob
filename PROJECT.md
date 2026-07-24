@@ -25,6 +25,7 @@ GUI (Next) Conventions · Notable Implementation Details · Change Log
 | WSGI server (optional) | Waitress | 3.0.0 |
 | Database | SQLite3 | (stdlib) |
 | Bloom filter | pybloom-live | 4.0.0 |
+| Fast hashing | xxhash | 3.7.0 |
 | Web scraping | BeautifulSoup4 + lxml | 4.12.3 / 6.1.0 |
 | HTTP client | Requests | 2.32.3 |
 | File watching | Watchdog | 4.0.1 |
@@ -91,6 +92,7 @@ losslessbob/
 │   ├── bobserve_parser.py    # bobserve setlist parser: olof_pages(corpus=bobserve) → olof_events + olof_songs, source='bobserve' (TODO-228)
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-111: lbdir-based collection integrity scan engine
+│   ├── file_integrity.py     # TODO-267: per-file xxh3+sha256 bit-rot inventory (index/verify/rolling)
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
 │   ├── startup_log.py        # Startup timing logger → data/logs/startup.log
 │   ├── taper_attribution.py  # Taper attribution engine: evidence harvest → confirmed/propagated/inferred designations
@@ -1174,6 +1176,44 @@ Index: `idx_ciscans_mount ON collection_integrity_scans(mount_id, started_at DES
 `meta` key `integrity_scan_interval_hours` (default `"0"` = disabled) controls the
 scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 
+### `file_inventory` — TODO-267: per-file bit-rot hash inventory (USER table)
+Durable per-file hash of **every** file on a mount — not a stat-keyed cache like
+`pipeline_file_hash` (rot never touches mtime, so a cache can't see it) and not
+manifest-scoped like `collection_integrity_status`.
+| Column | Type | Notes |
+|--------|------|-------|
+| mount_id | INTEGER NOT NULL | FK → `collection_mounts(id)` ON DELETE CASCADE |
+| rel_path | TEXT NOT NULL | Posix, relative to `mounts.root_path`; PK is `(mount_id, rel_path)` |
+| lb_number | INTEGER | Owning LB folder when resolvable |
+| size / mtime | INTEGER / REAL | Validation columns; both-unchanged + hash-changed ⇒ rot |
+| xxh3 | TEXT NOT NULL | xxh3_128 hex — primary rot detector |
+| sha256 | TEXT | Interop digest (cross-check vs checksums / lbdir / site_inventory) |
+| status | TEXT NOT NULL | `ok \| rot \| changed \| missing \| unreadable` |
+| first_seen / last_hashed | TIMESTAMP | last_hashed = content last read |
+| last_verified | TIMESTAMP | Last deep-verify that MATCHED; NULL sorts first, driving the rolling verify |
+
+Indexes: `idx_finv_verify(mount_id, last_verified)` (rolling order),
+`idx_finv_status` (partial, `status != 'ok'`), `idx_finv_lb`, `idx_finv_sha`.
+On `rot` the stored hash is deliberately kept as the known-good baseline (restore
+confirmation); only an operator `rebaseline` replaces it.
+
+### `file_integrity_scans` — TODO-267: file-scan run history
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| mount_id | INTEGER | FK → `collection_mounts(id)` ON DELETE CASCADE |
+| mode | TEXT NOT NULL | `index` (stat-skip) \| `verify` (full re-read) |
+| status | TEXT NOT NULL | `running \| done \| partial \| cancelled \| error` (only `done` trusts the missing sweep) |
+| started_at / finished_at | TIMESTAMP | |
+| files_seen / files_hashed / files_new / files_ok / files_rot / files_changed / files_missing / files_unreadable / bytes_hashed | INTEGER | Aggregate counts |
+| error | TEXT | Message if status=error |
+
+Index: `idx_fiscans_mount(mount_id, started_at DESC)`. `meta` keys
+`file_verify_enabled` (opt-in), `file_verify_interval_hours`,
+`file_verify_budget_seconds`, `file_verify_files_per_mount` drive the nightly
+rolling deep verify (`scheduler._file_verify_worker`, hourly-checked). The interval
+clock reads `verify` runs only, so a manual index scan cannot defer it.
+
 ---
 
 ## Backend: Flask API (`backend/app.py`)
@@ -1558,6 +1598,18 @@ Backed by `backend/preservation.py` — one job at a time, process-wide. See "Pr
 | GET | `/api/collection/integrity/scan/history` | Recent scan history. Query param: `mount_id` (optional; omit = whole-collection scans). Returns `{history:[...]}` rows from `collection_integrity_scans`. |
 | GET | `/api/collection/integrity/summary` | Per-mount status counts for GUI badges. Returns `{<mount_id>: {pass, content_issue, tag_issue, missing_files, no_lbdir, error}, ...}` (mount_id `"0"` = unmatched). |
 | GET | `/api/collection/integrity/status` | Per-LB integrity rows. Query params: `mount_id`, `status` (both optional). Returns `{status:[...]}` rows from `collection_integrity_status`. |
+
+#### File-level integrity / bit-rot inventory (TODO-267)
+Per-**file** across a whole mount (distinct from the per-LB, lbdir-driven routes above). Backed by `backend/file_integrity.py` — one scan per mount, different mounts concurrent.
+| Method | Route | Purpose |
+|--------|-------|---------|
+| POST | `/api/file-integrity/scan` | Start a scan. Body: `{mount_id, mode}` — `index`\|`verify`\|`rolling` — plus optional `max_seconds`, `limit`. 409 if that mount is already scanning, 400 on bad args/offline mount. |
+| POST | `/api/file-integrity/scan/cancel` | Body: `{mount_id}`. Signal the running scan to stop. |
+| GET | `/api/file-integrity/status` | Live progress. Query `mount_id` (optional; omit = all mounts). |
+| GET | `/api/file-integrity/summary` | Per-mount file counts by status + bytes, for GUI badges. |
+| GET | `/api/file-integrity/problems` | Files flagged non-ok, rot-first. Query `limit` (default 200), `status`. |
+| GET | `/api/file-integrity/history` | Recent scan runs. Query `mount_id`, `limit`. |
+| POST | `/api/file-integrity/rebaseline` | Body: `{mount_id, rel_paths:[...]}`. Accept current content as the new baseline — the only path that clears a sticky `rot` flag. |
 
 ### DB Editor
 All routes below accept `?db=` (or body `db` on `/api/dbedit/query`): omitted/unknown →
@@ -1981,6 +2033,7 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | ScreenHome | `screens/ScreenHome.tsx` | Done — dashboard, live stats, activity log, flat-file update; first-run onboarding (TODO-217): auto-opens `components/OnboardingWizard.tsx` (4-step modal: master install → sitedata install → mounts/pipeline nav → done + `/api/derived/recompute`) once per launch when `entries_count == 0`, plus a setup-checklist card while `/api/onboarding/status` `complete == false` |
 | ScreenSetup | `screens/ScreenSetup.tsx` | Done — all 16 handlers: credentials, purge, import/export, master, data packages |
 | ScreenMounts | `screens/ScreenMounts.tsx` | Done — storage mounts, year routing, filing mode, preview tester (split out of ScreenSetup) |
+| ScreenFileIntegrity | `screens/ScreenFileIntegrity.tsx` | Done (2026-07-24, TODO-267) — `/fileintegrity`, Settings group, shield icon. Per-file bit-rot inventory over `/api/file-integrity/*`: collection roll-up (files/bytes/corrupt/missing), per-mount cards with Index / Deep Verify + live progress bar + Stop, nightly rolling-verify toggle (`file_verify_enabled`), rot-first problems list with per-file Re-baseline, recent-scans strip. Health badge says "clean" (no problems), not "verified" — index baselines, it does not deep-verify. |
 | ScreenCollection | `screens/ScreenCollection.tsx` | Done — sortable columns, wishlist, forum, torrents, duplicates, batch actions |
 | ScreenSearch | `screens/ScreenSearch.tsx` | Done — virtual table, sort, group-by-year, CSV export, column picker, saved views |
 | ScreenLibrary | `screens/ScreenLibrary.tsx`, `components/library/actions.tsx`, `components/library/DetailPanel.tsx` | In progress (TODO-150) — "By performance \| By recording" lens toggle (defaults to performance). Both lenses share the same merged `RecordingRow[]` (from `/api/search` + `/api/collection/prefetch` + `/api/library/badges` — the last merged by `lb_number` for pick/curated/taper badges, TODO-212); the performance lens additionally fetches `/api/library/performances` + `/api/tapematch/families` and groups recordings by show → TapeMatch family → member. The recording lens renders ★ recommended / curated / `absGrade` / confirmed-taper (upgrading the raw taper pill) badges inline; the performance lens's view menu includes a combined "Any curated pick" (`curatedAny`) filter alongside the per-curator ones. Each lens has its own facet rail and virtual year-grouped table. Right-click context menu and a checkbox bulk-select bar (recording lens: Create torrent/Add to qBittorrent/Update location/Remove) are wired in via `actions.tsx`'s shared registry. Selecting a row opens a zoned detail panel (`DetailPanel.tsx`: ActionBar/ShareSeed/AssetStrip/Setlist, step 8; recording lens also has a Quality tab showing LB Rating + Concert Ranker AI Quality Index side by side, a Picks tab (show-pick rank/score + `EvidenceList`, lazy `/api/picks/for/<lb>`), and a Taper tab (attribution tier/conflict + `EvidenceList`, lazy `/api/tapers/attributions/<lb>`, confirm/reject buttons in curator mode) as a third column on either lens; TODO-162 P5b added an Olof tab on both lenses (Still On The Road setlist with encore/credits/annotations/take status, NET + year concert #s, recording info, notes, BobTalk quote, chronicle diary entries, circulation provenance, and a per-copy setlist comparison via `POST /api/olof/compare`) — gated on `/api/olof/status` `events > 0` (react-query `staleTime: Infinity`), so it never renders on installs without local Olof data. Live at `/library`, sidebar nav item "Library" (featured, top of the Library group, above My Collection) — step 9. Performance lens show rows and the detail panel render an "Unconfirmed" pill for degraded (`confirmed: false`) shows recovered from the `lb_category='unknown'` bucket (TODO-151). `m3u` (Export show as M3U) is wired for performance rows. `sources`/`notify` row actions and the TapeMatch family `note` field remain unexposed (no backend/UI to wire to). i18n pass (step 10) **done** — all in-screen strings extracted to the `library` namespace in `locales/*.json` and the three files converted to `t()` (the shared action registry takes a `TFunction` param since the builders are plain functions; counts pluralised via `_one`/`_other` keys); the 5 non-English locales filled via DeepL. |

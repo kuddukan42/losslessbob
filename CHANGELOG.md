@@ -1,3 +1,43 @@
+[2026-07-24] — feat: file-level collection integrity — per-file bit-rot inventory (TODO-267)
+Added: backend/file_integrity.py: durable per-file hash inventory over every file on
+  every mount, to catch bit rot / silent corruption. The two existing hash stores
+  structurally can't: pipeline_file_hash is a (size, mtime) cache and rot never touches
+  mtime; collection_integrity_status only checks lbdir-manifest files and decodes FLAC
+  for ffp (the slow part). Two modes from one read pass — index (stat-skip, fast) keeps
+  the inventory current; verify (full re-read) detects rot — plus verify_batch, the
+  rolling nightly slice that draws oldest-last_verified first so successive runs advance
+  through the collection instead of re-checking the head of the walk. Triage: hash
+  differs + stat unchanged => rot (baseline hash deliberately KEPT for restore
+  confirmation); hash differs + stat moved => legitimate edit, re-baselined; unreadable
+  => I/O error; inventoried-but-absent => missing (complete pass only, so a budgeted or
+  cancelled run can't mass-flag). One worker per mount — parallel across spindles, serial
+  within one (HDD seek thrash). rebaseline() is the only path that clears a sticky rot
+  flag, operator-driven so rot can't launder itself into a new baseline.
+Added: db.py: file_inventory (mount_id, rel_path -> xxh3_128 + sha256 + size/mtime +
+  status + last_verified) and file_integrity_scans run history, indexed on
+  (mount_id, last_verified) to drive the rolling verify; batched upsert/verify/flag/
+  rebaseline helpers, per-mount summary, problems (rot-first), history (with mode filter).
+Added: backend/app.py: /api/file-integrity/{scan,scan/cancel,status,summary,problems,
+  history,rebaseline}. One scan per mount (409 on collision); different mounts scan
+  concurrently. file_verify_* meta keys added to the settings allowlist.
+Added: backend/scheduler.py: opt-in rolling deep-verify scheduler (file_verify_enabled).
+  A full verify reads every byte (~15 h/mount at the ~125 MB/s a real walk sustains here),
+  so instead of one blocking run it fires a budgeted slice per mount per night — whole
+  collection covered in ~a month. Interval clock reads verify runs only, so a manual index
+  scan can't defer it; _meta_float tolerates garbage meta rather than crashing the worker.
+Added: gui_next ScreenFileIntegrity.tsx (/fileintegrity, Settings group, shield icon):
+  collection roll-up, per-mount cards with Index / Deep Verify + live progress + Stop,
+  rolling-verify toggle, rot-first problems list with per-file Re-baseline, recent-scans
+  strip. Health badge says "clean" (no problems), not "verified" — an indexed mount is
+  baselined, not deep-verified.
+Fixed: ScreenFileIntegrity.tsx: render crash (mounts.map) — the /api/collection/mounts
+  endpoint returns {mounts:[…]}, not a bare array; caught via /verify --electron before
+  it shipped.
+Changed: requirements.txt: pin xxhash==3.7.0 (was transitive-only via pybloom_live);
+  hash choice is not the speed lever — every candidate outruns the disk, so both digests
+  come from one read pass and sha256 is kept for cross-checking against checksums /
+  lbdir manifests / site_inventory.local_sha256.
+
 [2026-07-23] — feat: GUI for the preservation stack — Preservation tab + service layer (TODO-266)
 Added: backend/preservation.py: single-instance background job runner for the four
   preservation operations (verify / baseline / linkcheck / snapshot). Jobs run on a
