@@ -55,7 +55,8 @@
       "tapematch": "TapeMatch",
       "songs": "Canciones",
       "fingerprint": "Huella digital",
-      "gaps": "Lagunas"
+      "gaps": "Lagunas",
+      "fileintegrity": "Integridad de los archivos"
     },
     "statusBar": {
       "db": "BD:",

@@ -55,7 +55,8 @@
       "tapematch": "TapeMatch",
       "songs": "Nummers",
       "fingerprint": "Vingerafdruk",
-      "gaps": "Hiaten"
+      "gaps": "Hiaten",
+      "fileintegrity": "Bestandsintegriteit"
     },
     "statusBar": {
       "db": "DB:",

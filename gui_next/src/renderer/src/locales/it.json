@@ -55,7 +55,8 @@
       "tapematch": "TapeMatch",
       "songs": "Brani",
       "fingerprint": "Impronta digitale",
-      "gaps": "Lacune"
+      "gaps": "Lacune",
+      "fileintegrity": "Integrità dei file"
     },
     "statusBar": {
       "db": "DB:",
