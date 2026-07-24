@@ -31,7 +31,11 @@ instructions/ show the expected shape). None of these overlap the six existing s
 
 **5. Show dossier / liner notes export.** ⭐ **HIGH PRIORITY** (2026-07-13, per user). One command renders everything the app knows about a date into a beautiful printable page: setlist with rarities flagged, all circulating sources with family tree and pick ranking, taper credit, quality verdict with artifact snippets, historical context from the scraped data. Export as PDF/HTML for archive folders, trades, or forum posts — every dossier shared on WTRF is quiet advertising for the project.
 
-> 📋 **SPEC WRITTEN** (2026-07-17) — expanded into `FABLE_SHOW_DOSSIER.md`; execute from there.
+> ✅ **SHIPPED** (2026-07-17, TODO-257) — spec `complete/FABLE_SHOW_DOSSIER.md`; B1/B2/B3/B5
+> all landed same session. `backend/dossier.py` (build/filter/render_bbcode),
+> `GET /api/dossier` + `/api/dossier/html` + `/api/dossier/bbcode`, self-contained print-first
+> HTML template, Library row action + DetailPanel export modal (channel/sections/format),
+> Electron PDF export, i18n in all 6 locales.
 
 ---
 
@@ -57,6 +61,19 @@ FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3.)
 
 **2. Timeline as a first-class navigator.** The archive is fundamentally temporal, but browsing is list-shaped. A zoomable horizontal timeline strip (decades → tours → individual nights), with density/color encoding what you hold and how good it is — dark gap for no circulating tape, warm color for high grades. Click to zoom, land in the Library pre-filtered. It doubles as the natural home for the gap list and tonight-in-history features, and it's the first screen that would make a visitor say "whoa."
 
+> ✅ **SHIPPED** (2026-07-24, TODO-268) — spec `complete/FABLE_TIMELINE.md`; B1–B5 all landed
+> same session. `backend/timeline.py` (get_summary/get_decade_detail/get_tour_detail,
+> live-computed like gap_analysis, no derived table), `GET /api/timeline/summary` +
+> `/decade/<int>` + `/tour?name=&decade=`, `ScreenTimeline.tsx` (zoomable
+> Decade→Tour→Night grid + breadcrumb), a sequential `--lbb-seq-*` grade ramp
+> (dataviz-validated, light+dark), and an in-app dossier iframe viewer. Scope held
+> to the interview: no ScreenGaps absorption, no tonight-in-history, drill-down
+> opens the dossier not Library. Two build-time corrections beyond the spec: a
+> three-state model (graded / circulating-ungraded / no-tape) so ungraded-but-held
+> nights — most of the 2020s — stay clickable to their dossier; and an `inline=1`
+> opt-out on `/api/dossier/html` (its `attachment` disposition rendered blank in an
+> iframe, contradicting the spec's "needs nothing new").
+
 **3. Side-by-side entry comparison.** Curators constantly compare two LBs — checksums, lineage, ratings, family membership, quality metrics. A "compare" mode (select two rows → split view with differences highlighted, like a diff) turns that from tab-juggling into one glance. Later it becomes the natural shell around the A/B listening player and the pairwise-similarity score.
 
 > 🟡 **FOUNDATION SHIPPED** (TODO-231, 2026-07-12) — the A/B listening player this idea says it would "later become the natural shell around" is live in ScreenTapeMatch. The metadata compare/diff view itself is not built.
@@ -80,7 +97,11 @@ screen today; 2 is the showpiece.
 
 **2. CI on GitHub Actions, backed by a checked-in fixture dataset.** The repo is public but nothing verifies it between sessions. Two pieces that reinforce each other: a tiny golden fixture DB (~100 entries, synthetic checksums, a few families) checked into the repo, and an Actions workflow running `py_compile`, backend unit tests against the fixture, and the `/gui-check` pair (tsc + vite build) on every push. Payoffs beyond safety: Claude sessions can trust CI instead of re-running builds locally, cloud agents (ultrareview, remote workers) can actually exercise the backend without your 2.4 GB of data, and the fixture doubles as the onboarding spec's "new person test" environment.
 
-> 📋 **SPEC WRITTEN** (2026-07-17) — expanded into `FABLE_CI_FIXTURE.md`; execute from there.
+> ✅ **SHIPPED** (2026-07-21, TODO-261) — spec `complete/FABLE_CI_FIXTURE.md`; B1–B6
+> all landed. `tools/make_fixture_db.py` (deterministic ~101-entry synthetic install),
+> `tools/ci_smoke.py`, `.github/workflows/ci.yml` (backend-tests/backend-smoke/gui-check
+> on every push+PR, all green), README Actions badge. Found and fixed 3 pre-existing bugs
+> (BUG-261/262/263) surfaced by running the suite in a clean environment for the first time.
 
 **3. Verification hooks instead of verification steps.** CLAUDE.md tells every session to remember to run `py_compile` and `/gui-check`. Move the cheap half into PostToolUse hooks (the Cloudflare deploy hook is the pattern): any Edit/Write to `*.py` auto-runs `py_compile` on that file; edits under `gui_next/src` set a flag that `/session-close` checks ("gui changed but gui-check never ran"). Rules that enforce themselves don't consume instruction-following attention — which is exactly what's scarce in cheaper models.
 

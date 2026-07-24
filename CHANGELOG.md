@@ -1,3 +1,25 @@
+[2026-07-24] — feat: Timeline navigator — zoomable Decade→Tour→Night grid (TODO-268)
+Added: backend/timeline.py: live-computed timeline rollup (get_summary /
+  get_decade_detail / get_tour_detail), mirroring gap_analysis.py — concert-only
+  olof events joined to entries by resolved ISO date, best letter-grade per night
+  via a new Python GRADE_RANK, no derived table. Feature-detects olof_events
+  absence (available:false). 21 tests in tests/test_timeline.py.
+Added: backend/app.py: GET /api/timeline/summary, /decade/<int:decade>,
+  /tour?name=&decade= (read-only, gaps-route error convention).
+Added: gui_next ScreenTimeline.tsx (route /timeline, Library nav group + palette,
+  new timeline Icon glyph): Decade→Tour→Night zoom with breadcrumb back-out; cells
+  colored by best grade on a new sequential --lbb-seq-* ramp in tokens.ts
+  (single info-blue hue, dataviz-validated light+dark, its own applyTheme emission
+  loop). In-app dossier iframe viewer with an "Open full export…" hand-off to the
+  existing DossierExportModal. i18n across all 6 locales.
+Changed: enforced a three-state model (graded / circulating-ungraded / no-tape)
+  across all three tiers so ungraded-but-held nights — most of the 2020s — stay
+  clickable to their dossier instead of reading as "no tape"; get_tour_detail
+  gained a per-night circulating flag and get_decade_detail a circulating_count.
+Fixed: backend/app.py: /api/dossier/html now honors inline=1 to drop the
+  Content-Disposition: attachment header — the attachment disposition made the
+  new iframe viewer render blank; the export/download flow (default) is unchanged.
+
 [2026-07-24] — feat: filtered + "Not in collection" HTML export for My Collection
 Added: backend/app.py: /api/collection/export/html/missing — exports the "Not in
   collection" LB list (database.get_missing_from_collection()) through the same

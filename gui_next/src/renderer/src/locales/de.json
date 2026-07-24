@@ -56,7 +56,8 @@
       "songs": "Songs",
       "fingerprint": "Fingerabdruck",
       "gaps": "Lücken",
-      "fileintegrity": "Dateiintegrität"
+      "fileintegrity": "Dateiintegrität",
+      "timeline": "Zeitleiste"
     },
     "statusBar": {
       "db": "DB:",
@@ -2023,6 +2024,46 @@
       "available": "Update verfügbar: {{name}}",
       "availableGeneric": "Eine neue Version der Flat-File-Datei ist verfügbar.",
       "error": "Aktualitätsprüfung fehlgeschlagen: {{error}}"
+    }
+  },
+  "timeline": {
+    "title": "Zeitleiste",
+    "subtitle": "Jahrzehnt → Tour → Abend, farblich gekennzeichnet nach der besten Bewertung der jeweiligen Show.",
+    "unavailable": "Die Zeitachsenansicht benötigt die Konzertchronologie von Olof Bjorner, die bei dieser Installation nicht geladen ist.",
+    "breadcrumb": {
+      "root": "Jahrzehnte"
+    },
+    "grade": {
+      "best": "Am besten: {{grade}}",
+      "circulatingUngraded": "Im Umlauf, noch nicht benotet",
+      "noTape": "Keine Bandlaufspur"
+    },
+    "decade": {
+      "nights_one": "{{count}} Nacht",
+      "nights_other": "{{count}} Nächte",
+      "circulating_one": "{{count}} im Umlauf",
+      "circulating_other": "{{count}} im Umlauf"
+    },
+    "tour": {
+      "nights_one": "{{count}} Nacht",
+      "nights_other": "{{count}} Nächte",
+      "circulating_one": "{{count}} im Umlauf",
+      "circulating_other": "{{count}} im Umlauf"
+    },
+    "night": {
+      "unknownVenue": "Unbekannter Veranstaltungsort",
+      "tooltipGraded": "{{date}} – {{venue}} – {{grade}}",
+      "tooltipCirculating": "{{date}} – {{venue}} – im Umlauf, noch nicht bewertet",
+      "tooltipNoTape": "{{date}} – {{venue}} – keine Bandkassette im Umlauf"
+    },
+    "viewer": {
+      "title": "Dossier — {{date}}",
+      "close": "Schließen",
+      "openExport": "Vollständigen Export öffnen…"
+    },
+    "empty": {
+      "tours": "Für dieses Jahrzehnt wurden keine Touren gefunden.",
+      "nights": "Für diese Tour wurden keine Termine gefunden."
     }
   }
 }

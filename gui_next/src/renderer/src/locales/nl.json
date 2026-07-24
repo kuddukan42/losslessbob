@@ -56,7 +56,8 @@
       "songs": "Nummers",
       "fingerprint": "Vingerafdruk",
       "gaps": "Hiaten",
-      "fileintegrity": "Bestandsintegriteit"
+      "fileintegrity": "Bestandsintegriteit",
+      "timeline": "Tijdlijn"
     },
     "statusBar": {
       "db": "DB:",
@@ -2023,6 +2024,46 @@
       "available": "Update beschikbaar: {{name}}",
       "availableGeneric": "Er is een nieuwe release in platte bestandsvorm beschikbaar.",
       "error": "Controle op updates mislukt: {{error}}"
+    }
+  },
+  "timeline": {
+    "title": "Tijdlijn",
+    "subtitle": "Decennium → tour → avond, gekleurd op basis van de hoogste beoordeling voor elke show.",
+    "unavailable": "De tijdlijnweergave heeft de concertchronologie van Olof Bjorner nodig, die bij deze installatie niet is geladen.",
+    "breadcrumb": {
+      "root": "Decennia"
+    },
+    "grade": {
+      "best": "Beste: {{grade}}",
+      "circulatingUngraded": "In omloop, nog niet beoordeeld",
+      "noTape": "Geen doorlopende band"
+    },
+    "decade": {
+      "nights_one": "{{count}} nacht",
+      "nights_other": "{{count}} nachten",
+      "circulating_one": "{{count}} in omloop",
+      "circulating_other": "{{count}} in omloop"
+    },
+    "tour": {
+      "nights_one": "{{count}} nacht",
+      "nights_other": "{{count}} nachten",
+      "circulating_one": "{{count}} in omloop",
+      "circulating_other": "{{count}} in omloop"
+    },
+    "night": {
+      "unknownVenue": "Onbekende locatie",
+      "tooltipGraded": "{{date}} — {{venue}} — {{grade}}",
+      "tooltipCirculating": "{{date}} — {{venue}} — in omloop, nog niet beoordeeld",
+      "tooltipNoTape": "{{date}} — {{venue}} — geen uitleenbare cassette"
+    },
+    "viewer": {
+      "title": "Dossier — {{date}}",
+      "close": "Sluiten",
+      "openExport": "Volledige export openen…"
+    },
+    "empty": {
+      "tours": "Er zijn geen rondleidingen gevonden voor dit decennium.",
+      "nights": "Er zijn geen avonden gevonden voor deze tour."
     }
   }
 }
