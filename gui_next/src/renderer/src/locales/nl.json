@@ -1816,6 +1816,83 @@
     "geocoder": {
       "skippedLabel": "Overgeslagen",
       "stoppingBadge": "stoppen"
+    },
+    "preservation": {
+      "jobLabel": "Opdracht",
+      "optionsLabel": "Opties",
+      "resultLabel": "Resultaat",
+      "mirrorLabel": "Spiegel",
+      "restoreLabel": "De mirror herstellen",
+      "run": "Uitvoeren",
+      "stop": "Stop",
+      "startFailed": "De taak kon niet worden gestart.",
+      "problemsFound": "Tijdens deze test zijn er problemen geconstateerd — zie het rapport.",
+      "wasCancelled": "Vroegtijdig gestopt; de cijfers hebben alleen betrekking op het gedeeltelijke verloop.",
+      "noVerifyWarning": "Als je de verificatie overslaat, wordt de mirror verzegeld zonder dat deze wordt gecontroleerd — een beschadigd bestand zou dan als goed worden gecertificeerd.",
+      "fullWalk": "Controleer elke pagina (traag)",
+      "sampleSize": "Steekproefomvang",
+      "withDb": "Inclusief database-export",
+      "verifyFirst": "Controleer de mirror voordat je deze verzegelt",
+      "tar": "Bouw ook .tar.gz",
+      "openReport": "Rapport openen",
+      "sealLabel": "Zegel",
+      "sealed": "verzegeld",
+      "unsealed": "niet verzegeld",
+      "snapshotsTitle": "Snapshots op schijf",
+      "noSnapshots": "Nog geen screenshots",
+      "snapshotCount_one": "{{count}}-snapshot",
+      "snapshotCount_other": "{{count}}-snapshots",
+      "job": {
+        "verify": "Controleer",
+        "baseline": "Uitgangspunt",
+        "linkcheck": "Linkcontrole",
+        "snapshot": "Overzicht"
+      },
+      "jobHelp": {
+        "verify": "Vergelijk elk gespiegeld bestand opnieuw met de geregistreerde basislijn en rapporteer ontbrekende bestanden, afwijkingen en 'weesbestanden'. Alleen-lezen.",
+        "baseline": "Sla een hash op schijf op voor gespiegelde bestanden die er nog geen hebben. Bestanden waarvan de bytes al afwijken van de crawl worden gemarkeerd, niet goedgekeurd.",
+        "linkcheck": "Interne links koppelen aan bestanden op de schijf — bewijst dat de mirror nog steeds werkt wanneer deze offline wordt aangeboden.",
+        "snapshot": "Maak een afgesloten, hardgelinkte momentopname van de mirrors plus een database-export. De distributie blijft een handmatige beslissing."
+      },
+      "stage": {
+        "idle": "Inactief",
+        "running": "Actief",
+        "done": "Klaar",
+        "cancelled": "Gestopt",
+        "error": "Fout"
+      },
+      "stat": {
+        "rows": "Rijen",
+        "hashed": "Met hash",
+        "ok": "Gevonden",
+        "missing": "Ontbreekt",
+        "drift": "Drift",
+        "orphans": "Wezen",
+        "unbaselined": "Nog niet vastgelegd",
+        "baselined": "Vastgelegd",
+        "prehash": "Afwijking vóór hashing",
+        "pages": "Pagina's",
+        "links": "Links",
+        "broken": "Defekt",
+        "seedBroken": "Werkt niet op seed-pagina's",
+        "seeds": "Startpagina's",
+        "files": "Bestanden",
+        "size": "Grootte",
+        "linked": "Hardlinked",
+        "copied": "Gekopieerd",
+        "snapshots": "Snapshots",
+        "latest": "Laatste versie",
+        "seconds": "Duur"
+      },
+      "col": {
+        "name": "Overzicht",
+        "created": "Gemaakt",
+        "files": "Bestanden",
+        "size": "Grootte",
+        "sealed": "Status",
+        "seal": "Zegel",
+        "open": "Openen"
+      }
     }
   },
   "songs": {

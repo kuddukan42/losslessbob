@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 
-export type ScraperTabId = 'crawler' | 'entry' | 'bootlegs' | 'bobdylan' | 'setlistfm' | 'geocoder'
+export type ScraperTabId =
+  | 'crawler' | 'entry' | 'bootlegs' | 'bobdylan' | 'setlistfm' | 'geocoder' | 'preservation'
 
 export interface ScraperLogLine { ts: string; text: string; tone?: 'ok' | 'bad' | 'warn' | 'mute' }
 
@@ -17,7 +18,10 @@ interface ScraperLogStore {
 // TODO-148. Intentionally not persisted to localStorage: this is a run-session
 // buffer, not durable state.
 export const useScraperLogStore = create<ScraperLogStore>()((set) => ({
-  logs: { crawler: [], entry: [], bootlegs: [], bobdylan: [], setlistfm: [], geocoder: [] },
+  logs: {
+    crawler: [], entry: [], bootlegs: [], bobdylan: [],
+    setlistfm: [], geocoder: [], preservation: [],
+  },
   pushLog: (tab, text, tone) => set(state => ({
     logs: { ...state.logs, [tab]: [...state.logs[tab], { ts: new Date().toTimeString().slice(0, 8), text, tone }].slice(-MAX_LINES) },
   })),

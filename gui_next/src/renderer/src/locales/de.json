@@ -1816,6 +1816,83 @@
     "geocoder": {
       "skippedLabel": "Übersprungen",
       "stoppingBadge": "Beenden"
+    },
+    "preservation": {
+      "jobLabel": "Auftrag",
+      "optionsLabel": "Optionen",
+      "resultLabel": "Ergebnis",
+      "mirrorLabel": "Spiegel",
+      "restoreLabel": "Spiegel wiederherstellen",
+      "run": "Ausführen",
+      "stop": "Stopp",
+      "startFailed": "Der Auftrag konnte nicht gestartet werden.",
+      "problemsFound": "Bei diesem Durchlauf wurden Probleme festgestellt – siehe den Bericht.",
+      "wasCancelled": "Vorzeitig abgebrochen; die Zahlen beziehen sich nur auf den teilweisen Durchlauf.",
+      "noVerifyWarning": "Das Überspringen der Überprüfung schließt den Spiegel, ohne ihn zu prüfen – eine beschädigte Datei würde als fehlerfrei zertifiziert werden.",
+      "fullWalk": "Jede Seite überprüfen (langsam)",
+      "sampleSize": "Beispielgröße",
+      "withDb": "Datenbank-Export einbeziehen",
+      "verifyFirst": "Spiegel vor dem Versiegeln überprüfen",
+      "tar": "Außerdem .tar.gz erstellen",
+      "openReport": "Bericht öffnen",
+      "sealLabel": "Siegel",
+      "sealed": "versiegelt",
+      "unsealed": "unversiegelt",
+      "snapshotsTitle": "Snapshots auf der Festplatte",
+      "noSnapshots": "Noch keine Screenshots",
+      "snapshotCount_one": "{{count}}-Snapshot",
+      "snapshotCount_other": "{{count}}-Snapshots",
+      "job": {
+        "verify": "Überprüfen",
+        "baseline": "Ausgangsbasis",
+        "linkcheck": "Link-Prüfung",
+        "snapshot": "Momentaufnahme"
+      },
+      "jobHelp": {
+        "verify": "Jede gespiegelte Datei wird mit ihrer gespeicherten Baseline abgeglichen und fehlende Dateien, Abweichungen sowie verwaiste Dateien werden gemeldet. Schreibgeschützt.",
+        "baseline": "Erstellen Sie einen Hash auf der Festplatte für gespiegelte Dateien, für die noch kein Hash vorhanden ist. Dateien, deren Byte-Daten bereits von den Crawl-Ergebnissen abweichen, werden markiert, nicht als korrekt bestätigt.",
+        "linkcheck": "Interne Links zu Dateien auf der Festplatte auflösen – stellt sicher, dass der Mirror auch im Offline-Betrieb weiterhin funktioniert.",
+        "snapshot": "Erstellen Sie einen versiegelten, hartverknüpften Snapshot der Spiegel sowie einen Datenbankexport. Die Verteilung bleibt eine manuelle Entscheidung."
+      },
+      "stage": {
+        "idle": "Leerlauf",
+        "running": "Wird ausgeführt",
+        "done": "Erledigt",
+        "cancelled": "Beendet",
+        "error": "Fehler"
+      },
+      "stat": {
+        "rows": "Zeilen",
+        "hashed": "Hash-wert",
+        "ok": "Abgestimmt",
+        "missing": "Fehlt",
+        "drift": "Drift",
+        "orphans": "Waisenkinder",
+        "unbaselined": "Nicht in der Basisversion enthalten",
+        "baselined": "Als Basis festgelegt",
+        "prehash": "Abweichung vor dem Hash",
+        "pages": "Seiten",
+        "links": "Links",
+        "broken": "Defekt",
+        "seedBroken": "Funktioniert auf den Startseiten nicht",
+        "seeds": "Startseiten",
+        "files": "Dateien",
+        "size": "Größe",
+        "linked": "Hardlinked",
+        "copied": "Kopiert",
+        "snapshots": "Screenshots",
+        "latest": "Aktuell",
+        "seconds": "Dauer"
+      },
+      "col": {
+        "name": "Momentaufnahme",
+        "created": "Erstellt",
+        "files": "Dateien",
+        "size": "Größe",
+        "sealed": "Zustand",
+        "seal": "Siegel",
+        "open": "Öffnen"
+      }
     }
   },
   "songs": {

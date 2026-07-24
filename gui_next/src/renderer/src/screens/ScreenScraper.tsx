@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import type { TFunction } from 'i18next'
 import { Button, Chip, Pill, Card, SectionHead, Toolbar, Input, Banner } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { Icon } from '../components/Icon'
@@ -101,8 +102,42 @@ interface BootlegScrape {
   id: number; scraped_at: string; status: string
   rows_total: number; rows_added: number; rows_changed: number; rows_removed: number
 }
+interface MirrorStats {
+  site_dir: string; site_dir_exists: boolean; snapshot_root: string
+  snapshots: number; latest_snapshot: string | null; latest_snapshot_at: string | null
+  serve_command: string
+}
+/** Union of every job's result payload — fields are job-specific, so all optional. */
+interface PreservationResult {
+  summary?: string; cancelled?: boolean; failed?: boolean; seconds?: number
+  // verify / baseline
+  rows?: number; checked?: number; ok?: number; baselined?: number; unbaselined?: number
+  missing?: number; drift?: number; prehash_mismatch?: number; orphans?: number
+  issues?: string[]; issue_total?: number
+  // linkcheck
+  pages?: number; links?: number; skipped?: number; broken?: number; seed_broken?: number
+  seed_pages_checked?: number; seed_pages_total?: number; missing_seeds?: string[]
+  // snapshot
+  name?: string; path?: string; files?: number; size_bytes?: number
+  linked?: number; copied?: number; seal?: string; tar_path?: string | null
+  verify_summary?: string | null
+}
+interface PreservationStatus {
+  running: boolean; job: PreservationJob | null; stage: string; message: string
+  done: number; total: number
+  started_at: string | null; finished_at: string | null
+  result: PreservationResult | null; error: string | null; report: string | null
+  mirror?: MirrorStats
+}
+interface SnapshotRow {
+  name: string; path: string; created: string | null; files: number
+  size_bytes: number; seal: string; sealed: boolean
+  has_tar: boolean; tar_path: string | null
+}
 
-type TabId = 'crawler' | 'entry' | 'bootlegs' | 'bobdylan' | 'setlistfm' | 'geocoder'
+type PreservationJob = 'verify' | 'baseline' | 'linkcheck' | 'snapshot'
+
+type TabId = 'crawler' | 'entry' | 'bootlegs' | 'bobdylan' | 'setlistfm' | 'geocoder' | 'preservation'
 
 interface LogLine { ts: string; text: string; tone?: 'ok' | 'bad' | 'warn' | 'mute' }
 
@@ -119,6 +154,15 @@ function statusTone(s: string): 'ok' | 'bad' | 'warn' | 'mute' | 'info' {
   if (s === 'error') return 'bad'
   if (s === 'stopped') return 'warn'
   return 'mute'
+}
+
+function fmtBytes(n: number): string {
+  if (!n) return '0 B'
+  const units = ['B', 'KB', 'MB', 'GB', 'TB']
+  let v = n
+  let i = 0
+  while (v >= 1024 && i < units.length - 1) { v /= 1024; i++ }
+  return `${v >= 10 || i === 0 ? Math.round(v) : v.toFixed(1)} ${units[i]}`
 }
 
 function dotColor(running: boolean, status: string): string {
@@ -360,8 +404,8 @@ function CrawlerTab({ status, logs, onClearLog }: {
         {histOpen && (
           <div style={{ maxHeight: 180, overflowY: 'auto' }}>
             <TableShell stickyHeader>
-              <colgroup><col style={{ width: 160 }} /><col style={{ width: 160 }} /><col style={{ width: 100 }} /><col style={{ width: 100 }} /><col style={{ width: 80 }} /><col style={{ width: 80 }} /><col style={{ width: 70 }} /></colgroup>
-              <thead><tr><TH>Started</TH><TH>Finished</TH><TH>Scope</TH><TH>Status</TH><TH align="right">Fetched</TH><TH align="right">304</TH><TH align="right">Failed</TH></tr></thead>
+              <colgroup><col style={{ width: 3 }} /><col style={{ width: 160 }} /><col style={{ width: 160 }} /><col style={{ width: 100 }} /><col style={{ width: 100 }} /><col style={{ width: 80 }} /><col style={{ width: 80 }} /><col style={{ width: 70 }} /></colgroup>
+              <thead><tr><TH /><TH>Started</TH><TH>Finished</TH><TH>Scope</TH><TH>Status</TH><TH align="right">Fetched</TH><TH align="right">304</TH><TH align="right">Failed</TH></tr></thead>
               <tbody>
                 {sessions.map(s => (
                   <TR key={s.id}>
@@ -374,7 +418,7 @@ function CrawlerTab({ status, logs, onClearLog }: {
                     <TD align="right" mono>{s.pages_failed.toLocaleString()}</TD>
                   </TR>
                 ))}
-                {sessions.length === 0 && <TR><TD colSpan={7} style={{ textAlign: 'center', color: 'var(--lbb-fg3)' }}>No sessions yet</TD></TR>}
+                {sessions.length === 0 && <TR><TD colSpan={8} style={{ textAlign: 'center', color: 'var(--lbb-fg3)' }}>No sessions yet</TD></TR>}
               </tbody>
             </TableShell>
           </div>
@@ -568,8 +612,8 @@ function BootlegTab({ status, logs, onClearLog }: {
         </Toolbar>
         <div style={{ maxHeight: 180, overflowY: 'auto' }}>
           <TableShell stickyHeader>
-            <colgroup><col style={{ width: 160 }} /><col style={{ width: 110 }} /><col style={{ width: 80 }} /><col style={{ width: 80 }} /><col style={{ width: 80 }} /><col style={{ width: 80 }} /></colgroup>
-            <thead><tr><TH>Scraped at</TH><TH>Status</TH><TH align="right">Total</TH><TH align="right">Added</TH><TH align="right">Changed</TH><TH align="right">Removed</TH></tr></thead>
+            <colgroup><col style={{ width: 3 }} /><col style={{ width: 160 }} /><col style={{ width: 110 }} /><col style={{ width: 80 }} /><col style={{ width: 80 }} /><col style={{ width: 80 }} /><col style={{ width: 80 }} /></colgroup>
+            <thead><tr><TH /><TH>Scraped at</TH><TH>Status</TH><TH align="right">Total</TH><TH align="right">Added</TH><TH align="right">Changed</TH><TH align="right">Removed</TH></tr></thead>
             <tbody>
               {history.map(h => (
                 <TR key={h.id}>
@@ -581,7 +625,7 @@ function BootlegTab({ status, logs, onClearLog }: {
                   <TD align="right" mono>{h.rows_removed.toLocaleString()}</TD>
                 </TR>
               ))}
-              {history.length === 0 && <TR><TD colSpan={6} style={{ textAlign: 'center', color: 'var(--lbb-fg3)' }}>No history yet</TD></TR>}
+              {history.length === 0 && <TR><TD colSpan={7} style={{ textAlign: 'center', color: 'var(--lbb-fg3)' }}>No history yet</TD></TR>}
             </tbody>
           </TableShell>
         </div>
@@ -882,6 +926,336 @@ function GeocoderTab({ status, geoStats, logs, onClearLog }: {
   )
 }
 
+// ── Tab: Preservation stack ───────────────────────────────────────────────────
+
+// Locale keys are a strict literal union, so dynamic `scraper.preservation.x.${v}`
+// lookups have to go through these maps rather than template strings.
+const PRES_JOB_KEY = {
+  verify: 'scraper.preservation.job.verify',
+  baseline: 'scraper.preservation.job.baseline',
+  linkcheck: 'scraper.preservation.job.linkcheck',
+  snapshot: 'scraper.preservation.job.snapshot',
+} as const
+
+const PRES_JOB_HELP_KEY = {
+  verify: 'scraper.preservation.jobHelp.verify',
+  baseline: 'scraper.preservation.jobHelp.baseline',
+  linkcheck: 'scraper.preservation.jobHelp.linkcheck',
+  snapshot: 'scraper.preservation.jobHelp.snapshot',
+} as const
+
+const PRES_STAGE_KEY = {
+  idle: 'scraper.preservation.stage.idle',
+  running: 'scraper.preservation.stage.running',
+  done: 'scraper.preservation.stage.done',
+  cancelled: 'scraper.preservation.stage.cancelled',
+  error: 'scraper.preservation.stage.error',
+} as const
+
+/** Per-job result rows for the StatGrid, so the panel stays declarative. */
+function preservationStats(job: PreservationJob, r: PreservationResult,
+                           t: TFunction): [string, string | number][] {
+  if (job === 'verify') return [
+    [t('scraper.preservation.stat.rows'), r.rows ?? 0],
+    [t('scraper.preservation.stat.hashed'), r.checked ?? 0],
+    [t('scraper.preservation.stat.ok'), r.ok ?? 0],
+    [t('scraper.preservation.stat.missing'), r.missing ?? 0],
+    [t('scraper.preservation.stat.drift'), r.drift ?? 0],
+    [t('scraper.preservation.stat.orphans'), r.orphans ?? 0],
+    [t('scraper.preservation.stat.unbaselined'), r.unbaselined ?? 0],
+    [t('scraper.preservation.stat.seconds'), `${r.seconds ?? 0}s`],
+  ]
+  if (job === 'baseline') return [
+    [t('scraper.preservation.stat.rows'), r.rows ?? 0],
+    [t('scraper.preservation.stat.hashed'), r.checked ?? 0],
+    [t('scraper.preservation.stat.baselined'), r.baselined ?? 0],
+    [t('scraper.preservation.stat.prehash'), r.prehash_mismatch ?? 0],
+    [t('scraper.preservation.stat.unbaselined'), r.unbaselined ?? 0],
+    [t('scraper.preservation.stat.seconds'), `${r.seconds ?? 0}s`],
+  ]
+  if (job === 'linkcheck') return [
+    [t('scraper.preservation.stat.pages'), r.pages ?? 0],
+    [t('scraper.preservation.stat.links'), r.links ?? 0],
+    [t('scraper.preservation.stat.broken'), r.broken ?? 0],
+    [t('scraper.preservation.stat.seedBroken'), r.seed_broken ?? 0],
+    [t('scraper.preservation.stat.seeds'), `${r.seed_pages_checked ?? 0} / ${r.seed_pages_total ?? 0}`],
+    [t('scraper.preservation.stat.seconds'), `${r.seconds ?? 0}s`],
+  ]
+  return [
+    [t('scraper.preservation.stat.files'), r.files ?? 0],
+    [t('scraper.preservation.stat.size'), fmtBytes(r.size_bytes ?? 0)],
+    [t('scraper.preservation.stat.linked'), r.linked ?? 0],
+    [t('scraper.preservation.stat.copied'), r.copied ?? 0],
+    [t('scraper.preservation.stat.seconds'), `${r.seconds ?? 0}s`],
+  ]
+}
+
+function PreservationTab({ status, logs, onClearLog }: {
+  status: PreservationStatus | null; logs: LogLine[]; onClearLog: () => void
+}) {
+  const { t } = useTranslation()
+  const [job, setJob] = useState<PreservationJob>('verify')
+  const [full, setFull] = useState(false)
+  const [sampleSize, setSampleSize] = useState('500')
+  const [withDb, setWithDb] = useState(true)
+  const [verifyFirst, setVerifyFirst] = useState(true)
+  const [tar, setTar] = useState(false)
+  const [snapshots, setSnapshots] = useState<SnapshotRow[]>([])
+  const [histOpen, setHistOpen] = useState(true)
+  const [startErr, setStartErr] = useState('')
+
+  const running = status?.running ?? false
+  const mirror = status?.mirror
+  const result = status?.result ?? null
+  // A finished run's result belongs to status.job, not the currently selected job.
+  const resultJob = status?.job ?? null
+
+  useEffect(() => {
+    fetch(`${BASE}/api/preservation/snapshots`)
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(setSnapshots)
+      .catch(() => {})
+  }, [running])
+
+  const start = async () => {
+    setStartErr('')
+    const body: Record<string, unknown> = { job }
+    if (job === 'linkcheck') {
+      body.full = full
+      const n = parseInt(sampleSize)
+      if (!full && Number.isFinite(n)) body.sample_size = n
+    } else if (job === 'snapshot') {
+      body.with_db = withDb
+      body.verify_first = verifyFirst
+      body.tar = tar
+    }
+    const res = await fetch(`${BASE}/api/preservation/start`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    })
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}))
+      setStartErr(data.error ?? t('scraper.preservation.startFailed'))
+    }
+  }
+  const stop = () => fetch(`${BASE}/api/preservation/stop`, { method: 'POST' })
+
+  const stageTone = (s: string): 'ok' | 'warn' | 'bad' | 'info' | 'mute' =>
+    s === 'running' ? 'info' : s === 'done' ? 'ok'
+      : s === 'cancelled' ? 'warn' : s === 'error' ? 'bad' : 'mute'
+
+  return (
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+      <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
+        {/* Controls */}
+        <div style={{ width: 300, flexShrink: 0, padding: '14px 16px', borderRight: '1px solid var(--lbb-border)', overflowY: 'auto' }}>
+          <CtrlLabel>{t('scraper.preservation.jobLabel')}</CtrlLabel>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+            {(['verify', 'baseline', 'linkcheck', 'snapshot'] as PreservationJob[]).map(j => (
+              <Chip key={j} size="sm" active={job === j} onClick={() => setJob(j)}>
+                {t(PRES_JOB_KEY[j])}
+              </Chip>
+            ))}
+          </div>
+          <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 6, lineHeight: 1.4 }}>
+            {t(PRES_JOB_HELP_KEY[job])}
+          </div>
+
+          {job === 'linkcheck' && (
+            <>
+              <CtrlLabel>{t('scraper.preservation.optionsLabel')}</CtrlLabel>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
+                <input type="checkbox" checked={full} onChange={e => setFull(e.target.checked)} />
+                {t('scraper.preservation.fullWalk')}
+              </label>
+              {!full && (
+                <>
+                  <CtrlLabel>{t('scraper.preservation.sampleSize')}</CtrlLabel>
+                  <Input value={sampleSize} onChange={e => setSampleSize(e.target.value)} size="sm" width={100} />
+                </>
+              )}
+            </>
+          )}
+
+          {job === 'snapshot' && (
+            <>
+              <CtrlLabel>{t('scraper.preservation.optionsLabel')}</CtrlLabel>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
+                <input type="checkbox" checked={withDb} onChange={e => setWithDb(e.target.checked)} />
+                {t('scraper.preservation.withDb')}
+              </label>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', cursor: 'pointer', marginTop: 4 }}>
+                <input type="checkbox" checked={verifyFirst} onChange={e => setVerifyFirst(e.target.checked)} />
+                {t('scraper.preservation.verifyFirst')}
+              </label>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', cursor: 'pointer', marginTop: 4 }}>
+                <input type="checkbox" checked={tar} onChange={e => setTar(e.target.checked)} />
+                {t('scraper.preservation.tar')}
+              </label>
+              {!verifyFirst && (
+                <div style={{ marginTop: 8 }}>
+                  <Banner tone="warn" icon="warn">{t('scraper.preservation.noVerifyWarning')}</Banner>
+                </div>
+              )}
+            </>
+          )}
+
+          <div style={{ display: 'flex', gap: 8, marginTop: 16 }}>
+            <Button variant="primary" size="sm" icon="play" onClick={start} disabled={running}>
+              {t('scraper.preservation.run')}
+            </Button>
+            <Button variant="danger" size="sm" icon="stop" onClick={stop} disabled={!running}>
+              {t('scraper.preservation.stop')}
+            </Button>
+          </div>
+          {startErr && (
+            <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-bad-fg)', marginTop: 6 }}>
+              {startErr}
+            </div>
+          )}
+
+          {status && status.stage !== 'idle' && (
+            <>
+              <div style={{ marginTop: 12, display: 'flex', alignItems: 'center', gap: 6 }}>
+                <Pill tone={stageTone(status.stage)} soft dot>
+                  {t(PRES_STAGE_KEY[status.stage as keyof typeof PRES_STAGE_KEY]
+                    ?? PRES_STAGE_KEY.idle)}
+                </Pill>
+                {status.job && (
+                  <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>
+                    {t(PRES_JOB_KEY[status.job])}
+                  </span>
+                )}
+              </div>
+              {running && (
+                <div style={{ marginTop: 8 }}>
+                  <ProgressBar value={status.done} total={status.total} indeterminate={status.total === 0} />
+                  <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 4, fontFamily: 'var(--lbb-mono)', wordBreak: 'break-all' }}>
+                    {status.message}
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+
+          {status?.error && (
+            <div style={{ marginTop: 10 }}>
+              <Banner tone="bad" icon="warn">{status.error}</Banner>
+            </div>
+          )}
+
+          {!running && result && resultJob && (
+            <>
+              <CtrlLabel>{t('scraper.preservation.resultLabel')}</CtrlLabel>
+              {result.failed && (
+                <Banner tone="bad" icon="warn">{t('scraper.preservation.problemsFound')}</Banner>
+              )}
+              {result.cancelled && (
+                <Banner tone="warn" icon="info">{t('scraper.preservation.wasCancelled')}</Banner>
+              )}
+              <StatGrid rows={preservationStats(resultJob, result, t)} />
+              {resultJob === 'snapshot' && result.seal && (
+                <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 8, fontFamily: 'var(--lbb-mono)', wordBreak: 'break-all' }}>
+                  {t('scraper.preservation.sealLabel')}: {result.seal.slice(0, 24)}…
+                </div>
+              )}
+              {status?.report && (
+                <div style={{ marginTop: 8 }}>
+                  <Button variant="secondary" size="sm" icon="folder"
+                    onClick={() => window.api.openPath(status.report as string)}>
+                    {t('scraper.preservation.openReport')}
+                  </Button>
+                </div>
+              )}
+            </>
+          )}
+
+          {mirror && (
+            <>
+              <CtrlLabel>{t('scraper.preservation.mirrorLabel')}</CtrlLabel>
+              <StatGrid rows={[[t('scraper.preservation.stat.snapshots'), mirror.snapshots]]} />
+              {/* Snapshot names are too long for StatGrid's two-column row — own line. */}
+              {mirror.latest_snapshot && (
+                <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 4 }}>
+                  {t('scraper.preservation.stat.latest')}:{' '}
+                  <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)', wordBreak: 'break-all' }}>
+                    {mirror.latest_snapshot}
+                  </span>
+                </div>
+              )}
+              <CtrlLabel>{t('scraper.preservation.restoreLabel')}</CtrlLabel>
+              <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', wordBreak: 'break-all', lineHeight: 1.5 }}>
+                {mirror.serve_command}
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Log */}
+        <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+          <LogPanel lines={logs} onClear={onClearLog} />
+        </div>
+      </div>
+
+      {/* Snapshots on disk */}
+      <div style={{ borderTop: '1px solid var(--lbb-border)', flexShrink: 0 }}>
+        <Toolbar pad="6px 14px">
+          <SectionHead title={t('scraper.preservation.snapshotsTitle')} style={{ flex: 1, marginBottom: 0 }} />
+          <button type="button" onClick={() => setHistOpen(o => !o)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>
+            {histOpen ? '▾' : '▸'}
+          </button>
+        </Toolbar>
+        {histOpen && (
+          <div style={{ maxHeight: 180, overflowY: 'auto' }}>
+            <TableShell stickyHeader>
+              {/* Leading 3px col + TH pair for TR's injected edge-bar cell. */}
+              <colgroup><col style={{ width: 3 }} /><col style={{ width: 190 }} /><col style={{ width: 150 }} /><col style={{ width: 90 }} /><col style={{ width: 90 }} /><col style={{ width: 90 }} /><col style={{ width: 180 }} /><col style={{ width: 70 }} /></colgroup>
+              <thead><tr>
+                <TH />
+                <TH>{t('scraper.preservation.col.name')}</TH>
+                <TH>{t('scraper.preservation.col.created')}</TH>
+                <TH align="right">{t('scraper.preservation.col.files')}</TH>
+                <TH align="right">{t('scraper.preservation.col.size')}</TH>
+                <TH>{t('scraper.preservation.col.sealed')}</TH>
+                <TH>{t('scraper.preservation.col.seal')}</TH>
+                <TH>{t('scraper.preservation.col.open')}</TH>
+              </tr></thead>
+              <tbody>
+                {snapshots.map(s => (
+                  <TR key={s.path}>
+                    <TD mono>{s.name}</TD>
+                    <TD mono dim>{fmtTs(s.created)}</TD>
+                    <TD align="right" mono>{s.files.toLocaleString()}</TD>
+                    <TD align="right" mono>{fmtBytes(s.size_bytes)}</TD>
+                    <TD>
+                      <Pill tone={s.sealed ? 'ok' : 'warn'} soft dot>
+                        {s.sealed ? t('scraper.preservation.sealed') : t('scraper.preservation.unsealed')}
+                      </Pill>
+                    </TD>
+                    <TD mono dim>{s.seal ? `${s.seal.slice(0, 16)}…` : '—'}</TD>
+                    <TD>
+                      <button type="button" onClick={() => window.api.openPath(s.path)}
+                        title={s.path}
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--lbb-accent-mid)', fontSize: 'var(--lbb-fs-11)', padding: 0 }}>
+                        <Icon name="folder" size={13} />
+                      </button>
+                    </TD>
+                  </TR>
+                ))}
+                {snapshots.length === 0 && (
+                  <TR><TD colSpan={8} style={{ textAlign: 'center', color: 'var(--lbb-fg3)' }}>
+                    {t('scraper.preservation.noSnapshots')}
+                  </TD></TR>
+                )}
+              </tbody>
+            </TableShell>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
 // ── Main Screen ───────────────────────────────────────────────────────────────
 
 const TABS: { id: TabId; label: string }[] = [
@@ -891,6 +1265,7 @@ const TABS: { id: TabId; label: string }[] = [
   { id: 'bobdylan',  label: 'Dylan.com' },
   { id: 'setlistfm', label: 'Setlist.fm' },
   { id: 'geocoder',  label: 'Geocoder' },
+  { id: 'preservation', label: 'Preservation' },
 ]
 
 function ScreenScraperInner() {
@@ -904,6 +1279,7 @@ function ScreenScraperInner() {
   const [bobdylanStatus,  setBobdylanStatus]   = useState<BobDylanStatus | null>(null)
   const [setlistFmStatus, setSetlistFmStatus]  = useState<SetlistFmStatus | null>(null)
   const [geocoderStatus,  setGeocoderStatus]   = useState<GeocoderStatus | null>(null)
+  const [preservStatus,   setPreservStatus]    = useState<PreservationStatus | null>(null)
 
   // Strip stats
   const [crawlerStats,   setCrawlerStats]   = useState<{ last: string; fetched: number } | null>(null)
@@ -929,12 +1305,14 @@ function ScreenScraperInner() {
     bootlegMsg: string; bdUrl: string | null; bdMsg: string
     sfPage: number; sfMsg: string
     geoLoc: string; geoStage: string
+    presMsg: string; presStage: string; presStarted: string | null; presSeen: boolean
   }>({
     crawlerUrl: null, crawlerFetched: 0,
     scrapeLb: null, scrapeAction: null,
     bootlegMsg: '', bdUrl: null, bdMsg: '',
     sfPage: 0, sfMsg: '',
     geoLoc: '', geoStage: '',
+    presMsg: '', presStage: '', presStarted: null, presSeen: false,
   })
 
   const pushLog = useCallback((tab: TabId, text: string, tone?: LogLine['tone']) => {
@@ -955,6 +1333,7 @@ function ScreenScraperInner() {
       fetch(`${BASE}/api/setlistfm/status`).then(r => r.ok ? r.json() : null),
       fetch(`${BASE}/api/geocode/status`).then(r => r.ok ? r.json() : null),
       fetch(`${BASE}/api/geocode/stats`).then(r => r.ok ? r.json() : null),
+      fetch(`${BASE}/api/preservation/status`).then(r => r.ok ? r.json() : null),
       // Strip extras
       fetch(`${BASE}/api/crawler/sessions?limit=1`).then(r => r.ok ? r.json() : null),
       fetch(`${BASE}/api/bootlegs/stats`).then(r => r.ok ? r.json() : null),
@@ -965,7 +1344,8 @@ function ScreenScraperInner() {
     ])
 
     const v = results.map(r => r.status === 'fulfilled' ? r.value : null)
-    const [crawler, scrape, bootleg, bd, slFm, geo, geoSt, crawlerSess, bootlegSt, bdSt, slFmSt, dbSt, invSt] = v
+    const [crawler, scrape, bootleg, bd, slFm, geo, geoSt, pres,
+           crawlerSess, bootlegSt, bdSt, slFmSt, dbSt, invSt] = v
 
     const p = prevRef.current
 
@@ -1053,6 +1433,40 @@ function ScreenScraperInner() {
     }
     if (geoSt && !geoSt.error) setGeoStats(geoSt)
 
+    if (pres) {
+      setPreservStatus(pres)
+      // The first poll of a session must only seed the refs: the backend keeps
+      // the last finished run's status, and replaying it would log a stale run
+      // as if it had just started.
+      if (!p.presSeen) {
+        p.presSeen = true
+        p.presStarted = pres.started_at
+        p.presStage = pres.stage
+        p.presMsg = pres.message
+      } else {
+        // A new run announces itself once; progress messages log as they
+        // change; the terminal stage logs the tool's own one-line summary.
+        if (pres.started_at && pres.started_at !== p.presStarted) {
+          pushLog('preservation', `start    ${pres.job ?? ''}`.trimEnd())
+          p.presStarted = pres.started_at
+          p.presStage = ''
+          p.presMsg = ''
+        }
+        if (pres.running && pres.message && pres.message !== p.presMsg) {
+          pushLog('preservation', `${(pres.job ?? 'job').padEnd(9)} ${pres.message}`, 'mute')
+          p.presMsg = pres.message
+        }
+        if (!pres.running && pres.stage !== p.presStage && pres.stage !== 'idle') {
+          const tone: LogLine['tone'] =
+            pres.stage === 'error' ? 'bad'
+              : pres.stage === 'cancelled' ? 'warn'
+                : pres.result?.failed ? 'bad' : 'ok'
+          pushLog('preservation', pres.error ?? pres.result?.summary ?? pres.stage, tone)
+          p.presStage = pres.stage
+        }
+      }
+    }
+
     if (dbSt) {
       setEntryDbStats({ ok: dbSt.ok_entries ?? 0 })
     }
@@ -1116,6 +1530,20 @@ function ScreenScraperInner() {
         ? t('scraper.geocoder.stoppingBadge')
         : undefined,
     },
+    {
+      id: 'preservation', label: 'Preservation',
+      running: preservStatus?.running ?? false,
+      status: preservStatus?.stage ?? 'idle',
+      stat: preservStatus?.running && preservStatus.total > 0
+        ? `${preservStatus.done.toLocaleString()} / ${preservStatus.total.toLocaleString()}`
+        : preservStatus?.mirror
+          ? t('scraper.preservation.snapshotCount', { count: preservStatus.mirror.snapshots })
+          : '—',
+      lastDate: preservStatus?.mirror?.latest_snapshot_at
+        ? fmtTs(preservStatus.mirror.latest_snapshot_at)
+        : '—',
+      badge: preservStatus?.running ? (preservStatus.job ?? undefined) : undefined,
+    },
   ]
 
   return (
@@ -1147,6 +1575,7 @@ function ScreenScraperInner() {
           {activeTab === 'bobdylan'  && <BobDylanTab   status={bobdylanStatus}  logs={logs.bobdylan}  onClearLog={() => clearLog('bobdylan')} />}
           {activeTab === 'setlistfm' && <SetlistFmTab  status={setlistFmStatus} logs={logs.setlistfm} onClearLog={() => clearLog('setlistfm')} />}
           {activeTab === 'geocoder'  && <GeocoderTab   status={geocoderStatus}  geoStats={geoStats}  logs={logs.geocoder}  onClearLog={() => clearLog('geocoder')} />}
+          {activeTab === 'preservation' && <PreservationTab status={preservStatus} logs={logs.preservation} onClearLog={() => clearLog('preservation')} />}
         </div>
       </div>
     </>
