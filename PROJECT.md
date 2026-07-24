@@ -1458,6 +1458,18 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET | `/api/crawler/inventory` | Paginated `site_inventory` rows. Query: `status`, `path_prefix`, `limit` (max 1000), `offset`. Returns `{rows, total}`. |
 | GET | `/api/crawler/inventory/stats` | Aggregate counts from `site_inventory` grouped by status. |
 
+### Preservation stack
+Backed by `backend/preservation.py` — one job at a time, process-wide. See "Preservation stack" under Site Crawler for what each job does.
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/preservation/start` | Start a job in a background thread. Body: `{job}` — `verify`\|`baseline`\|`linkcheck`\|`snapshot` — plus per-job options: `limit` (baseline), `full`/`sample_size` (linkcheck), `with_db`/`verify_first`/`tar` (snapshot). 409 if a job is running, 400 on an unknown job name. |
+| GET | `/api/preservation/status` | Poll job state: `{running, job, stage, message, done, total, started_at, finished_at, result, error, report, mirror}`. `stage` is `idle`\|`running`\|`done`\|`cancelled`\|`error`; `result` is the job-specific summary payload; `mirror` carries snapshot counts and the restore command. |
+| POST | `/api/preservation/stop` | Ask the running job to stop at its next checkpoint. Returns `{ok, stopping}`. |
+| GET | `/api/preservation/snapshots` | Sealed snapshots on disk, newest first: name, path, created, files, size_bytes, seal, sealed, has_tar. |
+| GET | `/api/preservation/reports` | Recent preservation report files. Query: `limit` (max 50, default 10). |
+| GET | `/api/preservation/report` | Text of one report. Query: `path` — rejected with 400 if it resolves outside `data/exports/`. |
+
 ### Entry Metadata Scraper
 | Method | Route | Description |
 |--------|-------|-------------|
@@ -1938,6 +1950,8 @@ Three CLI tools keep the mirror archival-grade. All are read-only against the li
 | `tools/make_site_snapshot.py` | Builds `data/exports/snapshots/lbsnap-YYYY-MM-DD[.N]/` — site + olof mirrors + full-channel DB export, hardlinked (a 2.9 GB snapshot costs only the DB export in real disk). Writes `manifest.txt` (`sha256␠␠size␠␠relpath`, sorted), `seal.txt` (one hash over the manifest), `README.txt` and a standalone stdlib `verify_snapshot.py`. Refuses to seal a mirror that fails verification (`--no-verify` overrides, loudly). |
 | `tools/check_mirror_links.py` | Restore test: resolves internal links against disk over 4 seed pages + a seeded 500-page sample (`--full` for all). Seed breaks fail the run; sample findings are report-only. |
 
+**Driving it from the GUI (TODO-266).** `backend/preservation.py` wraps the same functions for the Preservation tab on `/scraper` — one job at a time process-wide, on a daemon thread, with a pollable status (`/api/preservation/*`). The tools take optional `progress_cb`/`should_stop` hooks for this; the defaults leave every CLI call unchanged. Cancellation is cooperative — verify/baseline stop between rows, the link check between pages, a snapshot between build stages. **A cancelled snapshot deletes its partial directory**, because an unsealed tree could be mistaken for a real snapshot; a cancelled verify skips the orphan sweep, since a partial file list would report every unvisited file as an orphan.
+
 **Restoring the mirror** is just serving the directory — its links are already relative:
 
 ```bash
@@ -1982,7 +1996,7 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | ScreenSpectrograms | `screens/ScreenSpectrograms.tsx` | Done — tool dots, batch generate, PNG viewer |
 | ScreenMap | `screens/ScreenMap.tsx` | Done — filter rail + browser map launcher |
 | ScreenDbEditor | `screens/ScreenDbEditor.tsx` | Done — multi-DB (`losslessbob`/`batchverify`/`tapematch`) table browser, query console, curator-gated edit/delete/export at `/dbeditor`. Sidebar side-panels (losslessbob DB only): DB Integrity, LB Aliases, and **Known Tapers** (TODO-258) — a filterable list of merged known-taper aliases with builtin/user origin tags (`/api/tapers/aliases`), curator-gated inline add + remove, and a "Recompute derived data" button that streams the chained `/api/derived/recompute` SSE with per-step status dots. |
-| ScreenScraper | `screens/ScreenScraper.tsx` | Done — curator-gated (`CuratorRoute`) at `/scraper`: site crawler, entry scraper, bootleg catalog, per-tab live log (`scraperLogStore`) |
+| ScreenScraper | `screens/ScreenScraper.tsx` | Done — curator-gated (`CuratorRoute`) at `/scraper`: site crawler, entry scraper, bootleg catalog, bobdylan.com, setlist.fm, geocoder, per-tab live log (`scraperLogStore`). **Preservation** tab (2026-07-23, TODO-266) drives the preservation stack via `/api/preservation/*`: job chips (verify/baseline/linkcheck/snapshot) with per-job options, Run/Stop, a 2 s poll feeding progress bar + stage pill + diffed log lines, a per-job result StatGrid with failed/cancelled banners and an Open report button, the mirror restore one-liner, and a "Snapshots on disk" table (files, size, seal, sealed state, folder-open). Note the screen's table convention: `TR` injects a 3px edge-bar `<td>`, so every colgroup needs a leading `<col width=3>` and every thead a leading `<TH />` (BUG-273). |
 | ScreenSharing | `screens/ScreenSharing.tsx` | Done — Cloudflare Tunnel file-sharing at `/sharing`: create/list/revoke shares, copy share URL |
 | ScreenTrading | `screens/ScreenTrading.tsx` | Done — collection trading at `/trading`: export `.lbcollection`, import/manage friend collections, compare diffs |
 
