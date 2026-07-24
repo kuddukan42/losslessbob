@@ -2065,5 +2065,21 @@
       "tours": "Nessun tour trovato per questo decennio.",
       "nights": "Non sono state trovate date per questo tour."
     }
+  },
+  "savedViews": {
+    "title": "Viste salvate",
+    "save": "Salva vista",
+    "saveTooltip": "Salva i filtri correnti come vista con nome nella barra laterale",
+    "saved": "Vista salvata “{{name}}”",
+    "defaultName": "Il mio punto di vista",
+    "modalTitle": "Salva questa visualizzazione",
+    "modalHint_one": "Aggiungi questi filtri {{count}} alla barra laterale con un conteggio in tempo reale.",
+    "modalHint_other": "Aggiungi questi filtri {{count}} alla barra laterale con un conteggio in tempo reale.",
+    "namePlaceholder": "Nome della vista",
+    "rename": "Rinomina",
+    "delete": "Elimina",
+    "confirmDelete": "Elimina questa vista",
+    "scopeOwned": "Nella raccolta",
+    "scopeUnowned": "Non di proprietà"
   }
 }

@@ -26,6 +26,10 @@ instructions/ show the expected shape). None of these overlap the six existing s
 **3. Listening journal + coverage map.** The app knows the archive but not what you've actually *heard*. Log plays (from the A/B player and any future player affordance), then render coverage: "you've heard 340 of 1,850 circulating shows — 90% of 1966, 4% of the gospel years," with a "next unheard, best-graded show from your weakest era" suggestion. It also quietly produces a personal-taste signal that could someday become another weight in `show_picks`.
 
 > 🟡 **FOUNDATION SHIPPED** (TODO-231, 2026-07-12) — the A/B player this idea names as its play source now exists in ScreenTapeMatch (synced HTML5 audio, `POST /api/ab_clip`). No play-logging, journal, or coverage map yet.
+>
+> ⏸ **DEFERRED** (2026-07-24, per user) — tabled this session; the shipped A/B-player
+> foundation stays, but no play-logging / journal / coverage-map work is planned until
+> tj un-parks it.
 
 **4. Ask the Archive (semantic search).** Descriptions, lineage notes, and (post-ASR-spec) transcripts are a text corpus nobody can currently query except by keyword. Embed it and answer questions like "soundboards from 1981 with complete In the Garden" or "which Supper Club show does carbonbit call the keeper?" — results are LB entries with evidence snippets, never generated prose without a citation. Local embedding model, fully offline, fits the app's philosophy.
 
@@ -83,6 +87,14 @@ FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3.)
 > ✅ **SHIPPED** (2026-07-21, TODO-262) — spec `complete/FABLE_ACTIVITY_CENTER.md`; B1–B4 all landed (backend/activity.py aggregator + SSE tee registry, busy re-base, status-bar tray).
 
 **5. Saved smart views.** Let the user save any Library filter+sort combination as a named view pinned to the sidebar with a live count badge — "Unrated 1978 AUDs (34)", "Superseded copies I still hold (112)". The specs keep adding filter dimensions (picks, tapers, grades, gaps); saved views are how a real person composes them into recurring workflows instead of rebuilding filters every session. Counts that tick down as you work double as a progress tracker.
+
+> ✅ **SHIPPED** (2026-07-24, TODO-269) — built directly, no separate spec. Sidebar
+> "Saved Views" section under the Library group (`components/SavedViews.tsx`) with
+> live count badges, apply/rename/delete; created from ScreenLibrary's ⭐ "Save view"
+> toolbar button. Filter set + counting logic now shared between screen and sidebar
+> via `lib/libraryRows.ts` / `lib/libraryFilterStore.ts`, persisted in
+> `lib/savedViewsStore.ts`. Sort is captured in the snapshot; per-view sort UI and
+> the picks/taper/gap filter dimensions arrive with those specs.
 
 Fable's rank: 4 and 1 are the quality-of-life multipliers that pay off on every existing
 screen today; 2 is the showpiece.

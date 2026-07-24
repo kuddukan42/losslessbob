@@ -2065,5 +2065,21 @@
       "tours": "Aucune tournée n'a été trouvée pour cette décennie.",
       "nights": "Aucune date n’a été trouvée pour cette tournée."
     }
+  },
+  "savedViews": {
+    "title": "Vues enregistrées",
+    "save": "Enregistrer la vue",
+    "saveTooltip": "Enregistrer les filtres actuels sous forme de vue nommée dans la barre latérale",
+    "saved": "Vue enregistrée « {{name}} »",
+    "defaultName": "Mon point de vue",
+    "modalTitle": "Enregistrer cette vue",
+    "modalHint_one": "Épinglez ces filtres {{count}} dans la barre latérale avec un compteur en temps réel.",
+    "modalHint_other": "Épinglez ces filtres {{count}} dans la barre latérale avec un compteur en temps réel.",
+    "namePlaceholder": "Nom de la vue",
+    "rename": "Renommer",
+    "delete": "Supprimer",
+    "confirmDelete": "Supprimer cette vue",
+    "scopeOwned": "Dans la collection",
+    "scopeUnowned": "Non détenu"
   }
 }

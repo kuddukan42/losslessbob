@@ -2065,5 +2065,21 @@
       "tours": "No se han encontrado giras para esta década.",
       "nights": "No se han encontrado fechas para esta gira."
     }
+  },
+  "savedViews": {
+    "title": "Vistas guardadas",
+    "save": "Vista «Guardar»",
+    "saveTooltip": "Guardar los filtros actuales como una vista con nombre en la barra lateral",
+    "saved": "Vista guardada «{{name}}»",
+    "defaultName": "Mi opinión",
+    "modalTitle": "Guardar esta vista",
+    "modalHint_one": "Fija estos filtros {{count}} en la barra lateral con un recuento en tiempo real.",
+    "modalHint_other": "Fija estos filtros {{count}} en la barra lateral con un recuento en tiempo real.",
+    "namePlaceholder": "Ver nombre",
+    "rename": "Renombrar",
+    "delete": "Eliminar",
+    "confirmDelete": "Eliminar esta vista",
+    "scopeOwned": "En la colección",
+    "scopeUnowned": "No es de mi propiedad"
   }
 }

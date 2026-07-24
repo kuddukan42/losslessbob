@@ -6,6 +6,7 @@ import { useSettingsStore } from '../store'
 import { useActivityStore, startActivityPolling, type ActivityJob } from '../lib/activityStore'
 import { NAV_GROUPS, NAV_GROUP_KEYS, navPathForId } from '../lib/navigation'
 import { CommandPalette } from './CommandPalette'
+import { SavedViews } from './SavedViews'
 
 // ── Nav structure ────────────────────────────────────────────────────────────
 // NAV_GROUPS + its types now live in ../lib/navigation.ts so the command palette
@@ -258,6 +259,10 @@ function Sidebar({
                   </button>
                 )
               })}
+              {/* Saved smart views belong to the Library lens, so they pin
+                  directly under that group — appended after all groups they
+                  land below the fold of the scrollable nav (UI5). */}
+              {group.label === 'Library' && <SavedViews onNav={onNav} />}
             </div>
           )
         })}

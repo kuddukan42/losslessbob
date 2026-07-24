@@ -2065,5 +2065,21 @@
       "tours": "Für dieses Jahrzehnt wurden keine Touren gefunden.",
       "nights": "Für diese Tour wurden keine Termine gefunden."
     }
+  },
+  "savedViews": {
+    "title": "Gespeicherte Ansichten",
+    "save": "Ansicht speichern",
+    "saveTooltip": "Die aktuellen Filter als benannte Ansicht in der Seitenleiste speichern",
+    "saved": "Gespeicherte Ansicht „{{name}}“",
+    "defaultName": "Meine Ansicht",
+    "modalTitle": "Diese Ansicht speichern",
+    "modalHint_one": "Heften Sie diese {{count}}-Filter mit einer Live-Anzeige an die Seitenleiste.",
+    "modalHint_other": "Heften Sie diese {{count}}-Filter mit einer Live-Anzeige an die Seitenleiste an.",
+    "namePlaceholder": "Ansichtsname",
+    "rename": "Umbenennen",
+    "delete": "Löschen",
+    "confirmDelete": "Diese Ansicht löschen",
+    "scopeOwned": "In der Sammlung",
+    "scopeUnowned": "Nicht in meinem Besitz"
   }
 }

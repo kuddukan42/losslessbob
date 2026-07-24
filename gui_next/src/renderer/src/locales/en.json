@@ -2065,5 +2065,21 @@
       "availableGeneric": "A new flat-file release is available.",
       "error": "Update check failed: {{error}}"
     }
+  },
+  "savedViews": {
+    "title": "Saved Views",
+    "save": "Save view",
+    "saveTooltip": "Save the current filters as a named view in the sidebar",
+    "saved": "Saved view “{{name}}”",
+    "defaultName": "My view",
+    "modalTitle": "Save this view",
+    "modalHint_one": "Pin these {{count}} filters to the sidebar with a live count.",
+    "modalHint_other": "Pin these {{count}} filters to the sidebar with a live count.",
+    "namePlaceholder": "View name",
+    "rename": "Rename",
+    "delete": "Delete",
+    "confirmDelete": "Delete this view",
+    "scopeOwned": "In collection",
+    "scopeUnowned": "Not owned"
   }
 }

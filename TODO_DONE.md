@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-269: Saved smart views — named Library filter sets pinned to the sidebar (UI5)
+Priority: Medium
+Status: Done
+Added: 2026-07-24
+Closed: 2026-07-24
+Description: FABLE_IDEAS UI#5. Save the Library recording-lens filter set as a named view in the sidebar with a live count badge; apply/rename/delete from the sidebar, create from the Library toolbar.
+Shipped 2026-07-24: lib/libraryRows.ts (shared RecordingRow data layer extracted from ScreenLibrary), lib/libraryFilterStore.ts (persisted filter store + snapshot/apply helpers), lib/savedViewsStore.ts (persisted views), components/SavedViews.tsx (sidebar section with live counts, rename, delete), ScreenLibrary 'Save view' toolbar button + naming modal. Verified via Tier A driver: create -> sidebar entry, survives reload, click restores filters, badge count matches the table (204).
+
 TODO-268: Timeline navigator (FABLE_IDEAS UI-2) — zoomable Decade→Tour→Night grid colored by best grade, drill-down opens the dossier
 Priority: Medium
 Status: Done

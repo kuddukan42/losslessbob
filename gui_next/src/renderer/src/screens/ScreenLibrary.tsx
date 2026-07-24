@@ -1,6 +1,4 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { create } from 'zustand'
-import { persist, createJSONStorage } from 'zustand/middleware'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
@@ -22,6 +20,16 @@ import { useSpectrogramStore } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { lbDetailUrl } from '../lib/lbUrl'
 import { useResizableColumns, useResizableWidth } from '../lib/useResizableColumns'
+import {
+  type LibStatus, type RatingGrade, type Scope, type SortKey, type SortDir,
+  type HealthFlag, type RecordingRow,
+  VALID_RATINGS, RATING_RANK, extractYear, decadeOf, HEALTH_CHECK,
+  buildRecordingRows, filterRecordingRows,
+} from '../lib/libraryRows'
+import {
+  useLibraryFilterStore, snapshotRecordingFilters, hasRecordingFilters,
+} from '../lib/libraryFilterStore'
+import { useSavedViewsStore } from '../lib/savedViewsStore'
 
 // ── TODO-150 step (4): Recording lens / no-families fallback ──────────────────
 // Flat, LB#-keyed table over the full catalog. Per the design contract
@@ -47,13 +55,11 @@ function blobDownload(blob: Blob, filename: string): void {
 }
 
 // ── Types ─────────────────────────────────────────────────────────────────────
+// RecordingRow + its filter primitives (LibStatus/RatingGrade/Scope/SortKey/
+// SortDir/HealthFlag) and the row-builder/filter predicate now live in
+// ../lib/libraryRows so the sidebar's Saved Views can reuse the exact same
+// filtering — see the import block above.
 
-type LibStatus  = 'Public' | 'Private' | 'Missing'
-type RatingGrade = 'A+' | 'A' | 'A-' | 'B+' | 'B' | 'B-' | 'C+' | 'C' | 'C-' | 'D+' | 'D' | 'D-' | 'F' | '—'
-type Scope       = 'all' | 'owned' | 'unowned'
-type SortKey     = 'lb' | 'date' | 'rating'
-type SortDir     = 'asc' | 'desc'
-type HealthFlag  = 'Wishlist' | 'Duplicates' | 'Unconfirmed'
 // FABLE_UNIFIED_RANKING phase 4 (TODO-186): 'recommended'/'superseded' read
 // pickRank against ownership (own the #1 pick vs. own a lower-ranked copy —
 // the latter "doubles as a collection-pruning view" per the spec); 'carbonbit'
@@ -65,57 +71,9 @@ type PerfView = 'all' | 'owned' | 'gaps' | 'wishlist' | 'duplicates'
   | 'recommended' | 'superseded' | 'carbonbit' | 'tenhaaf' | 'curatedAny'
   | 'taperConfirmed' | 'taperReview'
 
-interface RecordingRow {
-  lb: string
-  lbNumber: number
-  year: number
-  decade: string
-  date: string
-  loc: string
-  desc: string
-  rating: RatingGrade
-  src: string | null
-  taper: string
-  taperKnown: boolean
-  status: LibStatus
-  owned: boolean
-  wish: boolean
-  dup: boolean
-  xref: boolean
-  unconf: boolean
-  folder: string
-  path: string
-  conf: string
-  // TapeMatch family fields (performance lens only — merged in from
-  // /api/tapematch/families, never set by the recording lens's adapter).
-  fam?: string
-  famLabel?: string
-  famConf?: number | null
-  famBy?: 'lb' | 'ai' | 'ai+lb'
-  famNeedsReview?: boolean
-  famReviewReason?: string | null
-  // FABLE_UNIFIED_RANKING phase 3 (F4 Library payload pattern) — merged in
-  // from /api/library/performances, same as the TapeMatch fields above:
-  // never set by the recording lens's /api/search-sourced adapter.
-  pickRank?: number
-  absGrade?: string
-  curated?: string[]
-  // FABLE_TAPER_ATTRIBUTION phase 2 (F4 Library payload pattern, §5) — merged
-  // in from /api/library/performances alongside the ranking fields above.
-  // taperConfirmed only exists for confidence='confirmed' rows (solid pill);
-  // taperPropagated for conflict-free 'propagated' rows (outline pill,
-  // TODO-242 decision 2026-07-16); taperReview flags propagated/inferred/
-  // conflict rows for the review filter.
-  taperConfirmed?: string
-  taperPropagated?: string
-  taperReview?: boolean
-}
-
 type FlatItem =
   | { kind: 'group'; year: string; count: number }
   | { kind: 'row'; row: RecordingRow }
-
-const VALID_RATINGS = new Set(['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'])
 
 const SRC_ABBR: Record<string, string> = {
   Soundboard: 'SBD', Audience: 'AUD', 'FM/Pre-FM': 'FM', Master: 'MST', Mixed: 'MTX', ALD: 'ALD',
@@ -142,26 +100,7 @@ function taperBadgeLabel(taper: string): string | null {
   return v
 }
 
-const RATING_RANK: Record<string, number> = {
-  'A+': 13, A: 12, 'A-': 11, 'B+': 10, B: 9, 'B-': 8, 'C+': 7, C: 6, 'C-': 5, 'D+': 4, D: 3, 'D-': 2, F: 1, '—': 0,
-}
-
 // ── Helpers ───────────────────────────────────────────────────────────────────
-
-function extractYear(dateStr: string): number {
-  if (!dateStr) return 0
-  const parts = dateStr.split('/')
-  if (parts.length < 3) return 0
-  const n = parseInt(parts[parts.length - 1].trim(), 10)
-  if (isNaN(n)) return 0
-  if (n < 100) return n >= 49 ? 1900 + n : 2000 + n
-  return n
-}
-
-function decadeOf(year: number): string {
-  if (!year) return 'Unknown'
-  return `${Math.floor((year % 100) / 10) * 10}s`
-}
 
 function statusTone(s: LibStatus): 'ok' | 'warn' | 'mute' {
   if (s === 'Public')  return 'ok'
@@ -211,11 +150,6 @@ function toggleSet<T>(setFn: React.Dispatch<React.SetStateAction<Set<T>>>, val: 
   })
 }
 
-const HEALTH_CHECK: Record<HealthFlag, (r: RecordingRow) => boolean> = {
-  Wishlist:     r => r.wish,
-  Duplicates:   r => r.dup,
-  Unconfirmed:  r => r.owned && r.unconf,
-}
 
 // ── FilterMenu — dropdown button + popover ────────────────────────────────────
 
@@ -447,145 +381,10 @@ function ActiveFilter({ label, onRemove }: { label: string; onRemove: () => void
   )
 }
 
-// ── BUG-219: search/filter state, kept alive across navigation ───────────────
-// react-router unmounts ScreenLibrary on route change, so plain useState for
-// the recording-lens (this screen) and performance-lens (PerformanceLensView)
-// filters reset to defaults every time the user navigates away and back. A
-// module-scope zustand store keeps it alive; since 2026-07-22 it is persisted
-// to localStorage so the whole view (lens, filters, sort, grouping, collapsed
-// years) survives app restarts too — reopen the app, see the same table.
-// Setters mirror React's SetStateAction signature so existing
-// toggleSet()/setX(new Set()) call sites need no change.
-function withUpdater<T>(current: T, updater: React.SetStateAction<T>): T {
-  return typeof updater === 'function' ? (updater as (prev: T) => T)(current) : updater
-}
-
-// Set-aware JSON round-trip for the persist storage below — the store keeps
-// filter selections as Set objects, which JSON.stringify would silently
-// flatten to {}.
-const SET_TAG = '__lbbSet'
-function setReplacer(_key: string, value: unknown): unknown {
-  return value instanceof Set ? { [SET_TAG]: Array.from(value) } : value
-}
-function setReviver(_key: string, value: unknown): unknown {
-  if (value && typeof value === 'object' && SET_TAG in (value as object)) {
-    return new Set((value as Record<string, unknown[]>)[SET_TAG])
-  }
-  return value
-}
-
-interface LibraryFilterStore {
-  lens: 'performance' | 'recording'
-  setLens: React.Dispatch<React.SetStateAction<'performance' | 'recording'>>
-
-  recScope: Scope
-  setRecScope: React.Dispatch<React.SetStateAction<Scope>>
-  recQuery: string
-  setRecQuery: React.Dispatch<React.SetStateAction<string>>
-  recActiveDecade: Set<string>
-  setRecActiveDecade: React.Dispatch<React.SetStateAction<Set<string>>>
-  recActiveStatus: Set<LibStatus>
-  setRecActiveStatus: React.Dispatch<React.SetStateAction<Set<LibStatus>>>
-  recActiveRating: Set<RatingGrade>
-  setRecActiveRating: React.Dispatch<React.SetStateAction<Set<RatingGrade>>>
-  recActiveSource: Set<string>
-  setRecActiveSource: React.Dispatch<React.SetStateAction<Set<string>>>
-  recActiveHealth: Set<HealthFlag>
-  setRecActiveHealth: React.Dispatch<React.SetStateAction<Set<HealthFlag>>>
-  recGroupByYear: boolean
-  setRecGroupByYear: React.Dispatch<React.SetStateAction<boolean>>
-  recCollapsedYears: Set<string>
-  setRecCollapsedYears: React.Dispatch<React.SetStateAction<Set<string>>>
-  recDetailPanelOpen: boolean
-  setRecDetailPanelOpen: React.Dispatch<React.SetStateAction<boolean>>
-  recSortKey: SortKey
-  setRecSortKey: React.Dispatch<React.SetStateAction<SortKey>>
-  recSortDir: SortDir
-  setRecSortDir: React.Dispatch<React.SetStateAction<SortDir>>
-
-  perfQuery: string
-  setPerfQuery: React.Dispatch<React.SetStateAction<string>>
-  perfActiveDecade: Set<string>
-  setPerfActiveDecade: React.Dispatch<React.SetStateAction<Set<string>>>
-  perfActiveYear: Set<number>
-  setPerfActiveYear: React.Dispatch<React.SetStateAction<Set<number>>>
-  perfActiveCoverage: Set<Coverage>
-  setPerfActiveCoverage: React.Dispatch<React.SetStateAction<Set<Coverage>>>
-  perfActiveSource: Set<string>
-  setPerfActiveSource: React.Dispatch<React.SetStateAction<Set<string>>>
-  perfActiveRating: Set<RatingGrade>
-  setPerfActiveRating: React.Dispatch<React.SetStateAction<Set<RatingGrade>>>
-  perfView: PerfView
-  setPerfView: React.Dispatch<React.SetStateAction<PerfView>>
-  perfGroupByYear: boolean
-  setPerfGroupByYear: React.Dispatch<React.SetStateAction<boolean>>
-  perfCollapsedYears: Set<string>
-  setPerfCollapsedYears: React.Dispatch<React.SetStateAction<Set<string>>>
-  perfExpandedShows: Set<string>
-  setPerfExpandedShows: React.Dispatch<React.SetStateAction<Set<string>>>
-  perfCollapsedFams: Set<string>
-  setPerfCollapsedFams: React.Dispatch<React.SetStateAction<Set<string>>>
-  perfDetailPanelOpen: boolean
-  setPerfDetailPanelOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
-
-const useLibraryFilterStore = create<LibraryFilterStore>()(persist((set, get) => ({
-  lens: 'performance' as const,
-  setLens: (u) => set({ lens: withUpdater(get().lens, u) }),
-
-  recScope: 'all',
-  setRecScope: (u) => set({ recScope: withUpdater(get().recScope, u) }),
-  recQuery: '',
-  setRecQuery: (u) => set({ recQuery: withUpdater(get().recQuery, u) }),
-  recActiveDecade: new Set(),
-  setRecActiveDecade: (u) => set({ recActiveDecade: withUpdater(get().recActiveDecade, u) }),
-  recActiveStatus: new Set(),
-  setRecActiveStatus: (u) => set({ recActiveStatus: withUpdater(get().recActiveStatus, u) }),
-  recActiveRating: new Set(),
-  setRecActiveRating: (u) => set({ recActiveRating: withUpdater(get().recActiveRating, u) }),
-  recActiveSource: new Set(),
-  setRecActiveSource: (u) => set({ recActiveSource: withUpdater(get().recActiveSource, u) }),
-  recActiveHealth: new Set(),
-  setRecActiveHealth: (u) => set({ recActiveHealth: withUpdater(get().recActiveHealth, u) }),
-  recGroupByYear: true,
-  setRecGroupByYear: (u) => set({ recGroupByYear: withUpdater(get().recGroupByYear, u) }),
-  recCollapsedYears: new Set(),
-  setRecCollapsedYears: (u) => set({ recCollapsedYears: withUpdater(get().recCollapsedYears, u) }),
-  recDetailPanelOpen: true,
-  setRecDetailPanelOpen: (u) => set({ recDetailPanelOpen: withUpdater(get().recDetailPanelOpen, u) }),
-  recSortKey: 'lb' as const,
-  setRecSortKey: (u) => set({ recSortKey: withUpdater(get().recSortKey, u) }),
-  recSortDir: 'asc' as const,
-  setRecSortDir: (u) => set({ recSortDir: withUpdater(get().recSortDir, u) }),
-
-  perfQuery: '',
-  setPerfQuery: (u) => set({ perfQuery: withUpdater(get().perfQuery, u) }),
-  perfActiveDecade: new Set(),
-  setPerfActiveDecade: (u) => set({ perfActiveDecade: withUpdater(get().perfActiveDecade, u) }),
-  perfActiveYear: new Set(),
-  setPerfActiveYear: (u) => set({ perfActiveYear: withUpdater(get().perfActiveYear, u) }),
-  perfActiveCoverage: new Set(),
-  setPerfActiveCoverage: (u) => set({ perfActiveCoverage: withUpdater(get().perfActiveCoverage, u) }),
-  perfActiveSource: new Set(),
-  setPerfActiveSource: (u) => set({ perfActiveSource: withUpdater(get().perfActiveSource, u) }),
-  perfActiveRating: new Set(),
-  setPerfActiveRating: (u) => set({ perfActiveRating: withUpdater(get().perfActiveRating, u) }),
-  perfView: 'all',
-  setPerfView: (u) => set({ perfView: withUpdater(get().perfView, u) }),
-  perfGroupByYear: true,
-  setPerfGroupByYear: (u) => set({ perfGroupByYear: withUpdater(get().perfGroupByYear, u) }),
-  perfCollapsedYears: new Set(),
-  setPerfCollapsedYears: (u) => set({ perfCollapsedYears: withUpdater(get().perfCollapsedYears, u) }),
-  perfExpandedShows: new Set(),
-  setPerfExpandedShows: (u) => set({ perfExpandedShows: withUpdater(get().perfExpandedShows, u) }),
-  perfCollapsedFams: new Set(),
-  setPerfCollapsedFams: (u) => set({ perfCollapsedFams: withUpdater(get().perfCollapsedFams, u) }),
-  perfDetailPanelOpen: true,
-  setPerfDetailPanelOpen: (u) => set({ perfDetailPanelOpen: withUpdater(get().perfDetailPanelOpen, u) }),
-}), {
-  name: 'lbb-library-filters',
-  storage: createJSONStorage(() => localStorage, { replacer: setReplacer, reviver: setReviver }),
-}))
+// ── Filter/view state (BUG-219) ─────────────────────────────────────────────
+// The persisted, module-scope Library filter store now lives in
+// ../lib/libraryFilterStore (moved 2026-07-24, UI5 Saved Views) so the sidebar
+// can apply a saved view by writing it directly. Imported at the top of this file.
 
 // ── Screen ───────────────────────────────────────────────────────────────────
 
@@ -952,81 +751,13 @@ export function ScreenLibrary(): React.JSX.Element {
     return m
   }, [attachData])
 
-  const rows = useMemo<RecordingRow[]>(() => {
-    if (!Array.isArray(catalog)) return []
-
-    const ownedMap = new Map<number, { folder: string; path: string; conf: string }>()
-    if (prefetch && Array.isArray(prefetch.collection)) {
-      for (const c of prefetch.collection) {
-        ownedMap.set(c.lb_number, {
-          folder: c.folder_name ?? '',
-          path:   c.disk_path ?? '',
-          conf:   c.confirmed_at ?? '',
-        })
-      }
-    }
-    const wishSet = new Set<number>(
-      prefetch && Array.isArray(prefetch.wishlist) ? prefetch.wishlist.map((w: any) => w.lb_number) : []
-    )
-    const dupSet = new Set<number>()
-    if (prefetch && Array.isArray(prefetch.duplicates)) {
-      for (const group of prefetch.duplicates) {
-        if (Array.isArray(group.owned) && group.owned.length > 1) {
-          for (const o of group.owned) dupSet.add(o.lb_number as number)
-        }
-      }
-    }
-    const xrefSet = new Set<number>(
-      prefetch && Array.isArray(prefetch.xref_lb_numbers) ? prefetch.xref_lb_numbers : []
-    )
-
-    const badges = (badgeData ?? {}) as Record<string, {
-      pickRank?: number; absGrade?: string; curated?: string[]
-      taperConfirmed?: string; taperPropagated?: string; taperReview?: boolean
-    }>
-
-    return (catalog as any[]).map((d): RecordingRow => {
-      const lbNumber = d.lb_number as number
-      const owned = ownedMap.has(lbNumber)
-      const own = ownedMap.get(lbNumber)
-      const year = extractYear(d.date_str ?? '')
-      const raw = d.rating ?? ''
-      const row: RecordingRow = {
-        lb:       `LB-${String(lbNumber).padStart(5, '0')}`,
-        lbNumber,
-        year,
-        decade:   decadeOf(year),
-        date:     d.date_str ?? '',
-        loc:      d.location ?? '',
-        desc:     d.description ?? '',
-        rating:   (VALID_RATINGS.has(raw) ? raw : '—') as RatingGrade,
-        src:      (d.source_type as string | null) ?? null,
-        taper:    (d.taper_name as string | null) ?? '',
-        taperKnown: Boolean(d.taper_known),
-        status:   ({ public: 'Public', private: 'Private', missing: 'Missing' }[d.lb_status as string] ?? 'Missing') as LibStatus,
-        owned,
-        wish:     wishSet.has(lbNumber),
-        dup:      dupSet.has(lbNumber),
-        xref:     xrefSet.has(lbNumber),
-        unconf:   owned && !own?.conf,
-        folder:   own?.folder ?? '',
-        path:     own?.path ?? '',
-        conf:     own?.conf ?? '',
-      }
-      // Merge pick/curated/taper badges (F4 pattern), same as the performance
-      // lens does from its own payload — absent keys just stay undefined.
-      const b = badges[lbNumber]
-      if (b) {
-        if (b.pickRank != null) row.pickRank = b.pickRank
-        if (b.absGrade) row.absGrade = b.absGrade
-        if (b.curated) row.curated = b.curated
-        if (b.taperConfirmed) row.taperConfirmed = b.taperConfirmed
-        if (b.taperPropagated) row.taperPropagated = b.taperPropagated
-        if (b.taperReview) row.taperReview = b.taperReview
-      }
-      return row
-    })
-  }, [catalog, prefetch, badgeData])
+  // Merged recording-lens rows. The builder lives in ../lib/libraryRows so the
+  // sidebar's Saved Views count against the exact same row set (shared
+  // react-query cache; see useLibraryRows there).
+  const rows = useMemo<RecordingRow[]>(
+    () => buildRecordingRows(catalog, prefetch, badgeData),
+    [catalog, prefetch, badgeData],
+  )
 
   // TODO-215 sub-feature 3: consume a one-shot `?lb=<n>` deep-link (from
   // TapeMatch) once `rows` is populated, then clear the param so it can't
@@ -1070,26 +801,17 @@ export function ScreenLibrary(): React.JSX.Element {
 
   // ── Filtering ────────────────────────────────────────────────────────────
 
-  const filteredRows = useMemo(() => {
-    const q = query.trim().toLowerCase()
-    return rows.filter(r => {
-      if (scope === 'owned'   && !r.owned) return false
-      if (scope === 'unowned' &&  r.owned) return false
-      if (q && !`${r.lb} ${r.loc} ${r.desc}`.toLowerCase().includes(q)) return false
-      if (activeDecade.size > 0 && !activeDecade.has(r.decade)) return false
-      // Default view hides Private/Missing entries; an explicit Status chip
-      // (including selecting Private or Missing themselves) overrides this.
-      if (activeStatus.size > 0) {
-        if (!activeStatus.has(r.status)) return false
-      } else if (r.status === 'Private' || r.status === 'Missing') {
-        return false
-      }
-      if (activeRating.size > 0 && !activeRating.has(r.rating)) return false
-      if (activeSource.size > 0 && !activeSource.has(r.src ?? 'Unset')) return false
-      if (activeHealth.size > 0 && ![...activeHealth].some(h => HEALTH_CHECK[h](r))) return false
-      return true
-    })
-  }, [rows, scope, query, activeDecade, activeStatus, activeRating, activeSource, activeHealth])
+  // Shared predicate (../lib/libraryRows) so a Saved View's sidebar count always
+  // matches what this table shows for the same filter set. The store's Set-based
+  // selections pass straight through — no per-render conversion on this hot path.
+  const filteredRows = useMemo(
+    () => filterRecordingRows(rows, {
+      scope, query,
+      decade: activeDecade, status: activeStatus, rating: activeRating,
+      source: activeSource, health: activeHealth,
+    }),
+    [rows, scope, query, activeDecade, activeStatus, activeRating, activeSource, activeHealth],
+  )
 
   // ── Sorting ──────────────────────────────────────────────────────────────
 
@@ -1187,6 +909,36 @@ export function ScreenLibrary(): React.JSX.Element {
     setActiveSource(new Set()); setActiveHealth(new Set()); setScope('all'); setQuery('')
   }
 
+  // ── UI5: Saved smart views ─────────────────────────────────────────────────
+  // Snapshot the current recording-lens filter set as a named view pinned to the
+  // sidebar (lib/savedViewsStore). Restore + live count badge live in the sidebar
+  // (components/SavedViews); this screen only creates them.
+  const addSavedView = useSavedViewsStore(s => s.addView)
+  const [savingView, setSavingView] = useState(false)
+  const [viewName, setViewName] = useState('')
+
+  const suggestViewName = useCallback((): string => {
+    const parts: string[] = []
+    if (scope === 'owned') parts.push(t('savedViews.scopeOwned'))
+    else if (scope === 'unowned') parts.push(t('savedViews.scopeUnowned'))
+    parts.push(...[...activeRating])
+    parts.push(...[...activeSource].map(s => SRC_ABBR[s] ?? s))
+    parts.push(...[...activeStatus].map(s => t(STATUS_LABEL_KEY[s])))
+    parts.push(...[...activeHealth])
+    parts.push(...[...activeDecade])
+    const name = parts.join(' ').trim()
+    return name || t('savedViews.defaultName')
+  }, [scope, activeRating, activeSource, activeStatus, activeHealth, activeDecade, t])
+
+  const openSaveView = () => { setViewName(suggestViewName()); setSavingView(true) }
+  const commitSaveView = () => {
+    const name = viewName.trim()
+    if (!name) return
+    addSavedView(name, snapshotRecordingFilters())
+    setSavingView(false)
+    showToast(t('savedViews.saved', { name }), 'ok')
+  }
+
   const filterChips: Array<{ label: string; onRemove: () => void }> = [
     ...[...activeDecade].map(d => ({ label: `${t('library.facets.decade')}: ${d}`, onRemove: () => toggleSet(setActiveDecade, d) })),
     ...[...activeStatus].map(s => ({ label: `${t('library.facets.status')}: ${t(STATUS_LABEL_KEY[s])}`, onRemove: () => toggleSet(setActiveStatus, s) })),
@@ -1219,6 +971,53 @@ export function ScreenLibrary(): React.JSX.Element {
           onClose={() => setDossierShowId(null)}
           showToast={showToast}
         />
+      )}
+      {savingView && (
+        <div
+          onClick={() => setSavingView(false)}
+          style={{
+            position: 'fixed', inset: 0, zIndex: 60,
+            background: 'rgba(0,0,0,0.35)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}
+        >
+          <div
+            onClick={e => e.stopPropagation()}
+            style={{
+              width: 360, maxWidth: '90vw', padding: 18,
+              background: 'var(--lbb-surface)', borderRadius: 10,
+              border: '1px solid var(--lbb-border)',
+              boxShadow: '0 12px 40px rgba(0,0,0,0.28)',
+            }}
+          >
+            <div style={{ fontSize: 'var(--lbb-fs-13-5)', fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 4 }}>
+              {t('savedViews.modalTitle')}
+            </div>
+            <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginBottom: 12 }}>
+              {t('savedViews.modalHint', { count: recActiveCount })}
+            </div>
+            <input
+              autoFocus
+              value={viewName}
+              onChange={e => setViewName(e.target.value)}
+              onKeyDown={e => {
+                if (e.key === 'Enter') commitSaveView()
+                if (e.key === 'Escape') setSavingView(false)
+              }}
+              placeholder={t('savedViews.namePlaceholder')}
+              style={{
+                width: '100%', padding: '8px 10px', boxSizing: 'border-box',
+                border: '1px solid var(--lbb-border2)', borderRadius: 6,
+                background: 'var(--lbb-surface2)', color: 'var(--lbb-fg)',
+                fontSize: 'var(--lbb-fs-12-5)', fontFamily: 'inherit', outline: 'none',
+              }}
+            />
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8, marginTop: 14 }}>
+              <Button variant="ghost" onClick={() => setSavingView(false)}>{t('common.cancel')}</Button>
+              <Button variant="primary" onClick={commitSaveView} disabled={!viewName.trim()}>{t('savedViews.save')}</Button>
+            </div>
+          </div>
+        </div>
       )}
     </>
   )
@@ -1310,6 +1109,16 @@ export function ScreenLibrary(): React.JSX.Element {
         )}
         <div style={{ flex: 1 }} />
         <LegendMenu />
+        {recActiveCount > 0 && (
+          <button type="button" onClick={openSaveView} title={t('savedViews.saveTooltip')} style={{
+            display: 'inline-flex', alignItems: 'center', gap: 5,
+            background: 'none', border: 'none', cursor: 'pointer', padding: '0 6px',
+            fontSize: 'var(--t-meta)', color: 'var(--lbb-accent-mid)', fontFamily: 'inherit', fontWeight: 'var(--w-med)',
+          }}>
+            <Icon name="star" size={13} />
+            {t('savedViews.save')}
+          </button>
+        )}
         {recActiveCount > 0 && (
           <button type="button" onClick={clearAll} style={{
             background: 'none', border: 'none', cursor: 'pointer', padding: '0 6px',

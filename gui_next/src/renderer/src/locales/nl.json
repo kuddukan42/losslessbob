@@ -2065,5 +2065,21 @@
       "tours": "Er zijn geen rondleidingen gevonden voor dit decennium.",
       "nights": "Er zijn geen avonden gevonden voor deze tour."
     }
+  },
+  "savedViews": {
+    "title": "Opgeslagen weergaven",
+    "save": "Weergave opslaan",
+    "saveTooltip": "Sla de huidige filters op als een benoemde weergave in de zijbalk",
+    "saved": "Opgeslagen weergave „{{name}}“",
+    "defaultName": "Mijn mening",
+    "modalTitle": "Deze weergave opslaan",
+    "modalHint_one": "Zet deze {{count}}-filters vast in de zijbalk met een realtime telling.",
+    "modalHint_other": "Zet deze {{count}}-filters vast in de zijbalk met een live telling.",
+    "namePlaceholder": "Weergavenaam",
+    "rename": "Hernoemen",
+    "delete": "Verwijderen",
+    "confirmDelete": "Deze weergave verwijderen",
+    "scopeOwned": "In collectie",
+    "scopeUnowned": "Geen eigendom"
   }
 }
