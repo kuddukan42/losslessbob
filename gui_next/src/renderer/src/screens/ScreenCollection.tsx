@@ -2528,7 +2528,10 @@ export function ScreenCollection(): React.JSX.Element {
   const handleExportHtml = async (extraCols: ExportExtraCol[] = []) => {
     try {
       const cols = [...EXPORT_BASE_COLS, ...extraCols].join(',')
-      const resp = await fetch(`${BASE}/api/collection/export/html?cols=${cols}`)
+      const lbParam = filteredRows.length < rows.length
+        ? `&lb_numbers=${filteredRows.map(r => r.lbNumberInt).join(',')}`
+        : ''
+      const resp = await fetch(`${BASE}/api/collection/export/html?cols=${cols}${lbParam}`)
       const blob = await resp.blob()
       blobDownload(blob, 'collection.html')
     } catch { showToast('HTML export failed', 'bad') }
@@ -2988,6 +2991,17 @@ export function ScreenCollection(): React.JSX.Element {
     URL.revokeObjectURL(url)
   }, [filteredMissingRows])
 
+  const handleMissingExportHtml = useCallback(async () => {
+    try {
+      const lbParam = filteredMissingRows.length < missingLbRows.length
+        ? `?lb_numbers=${filteredMissingRows.map(r => r.lb_number).join(',')}`
+        : ''
+      const resp = await fetch(`${BASE}/api/collection/export/html/missing${lbParam}`)
+      const blob = await resp.blob()
+      blobDownload(blob, 'missing_lbs.html')
+    } catch { showToast('HTML export failed', 'bad') }
+  }, [filteredMissingRows, missingLbRows])
+
   const handleMissingRowDblClick = useCallback((row: MissingLbRow) => {
     const lb = `LB-${String(row.lb_number).padStart(5, '0')}`
     navigate('/quicklookup', { state: { seed: lb } })
@@ -3017,7 +3031,10 @@ export function ScreenCollection(): React.JSX.Element {
         </div>
         <div style={{ flex: 1 }} />
         {notOwned ? (
-          <Button variant="ghost" size="sm" icon="download" onClick={handleMissingExportCsv}>Export CSV</Button>
+          <>
+            <Button variant="ghost" size="sm" icon="download" onClick={handleMissingExportHtml}>Export HTML</Button>
+            <Button variant="ghost" size="sm" icon="download" onClick={handleMissingExportCsv}>Export CSV</Button>
+          </>
         ) : (
           <>
             <Button variant="ghost"     size="sm" icon="download" onClick={() => handleExportHtml([...exportExtraCols])}>Export HTML</Button>
