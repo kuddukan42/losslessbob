@@ -41,6 +41,11 @@ _HEX_DIGEST_RE = re.compile(r"^[0-9a-fA-F]{16,40}[ *]")
 _SHNTOOL_ROW_RE = re.compile(r"^\s*\d+:\d+\.\d+\s+\d+\s*B")
 _SHNTOOL_HEADER_RE = re.compile(r"^\s*length\s+expanded size\b")
 _TOOL_COMMENT_RE = re.compile(r"^\s*;")
+# "some\path\Track 01.flac:d0768cdb27099fc..." — per-track checksum manifest
+# lines (.ffp/.flacf/lbdir dumps). These start with a filename/path, not a
+# bare hex digest, so _HEX_DIGEST_RE never catches them; site-wide these are
+# ~499k lines, always ".flac"/".FLAC", never carrying lineage prose.
+_CHECKSUM_MANIFEST_RE = re.compile(r"\.flac\s*:\s*[0-9a-fA-F]{16,40}\s*$", re.IGNORECASE)
 _MIN_PROSE_CHARS = 40
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
@@ -85,6 +90,7 @@ def strip_checksum_noise(text: str) -> str:
             or _SHNTOOL_ROW_RE.match(line)
             or _SHNTOOL_HEADER_RE.match(line)
             or _TOOL_COMMENT_RE.match(line)
+            or _CHECKSUM_MANIFEST_RE.search(line)
         )
     ]
     return "\n".join(kept).strip()
