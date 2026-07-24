@@ -1816,6 +1816,83 @@
     "geocoder": {
       "skippedLabel": "Ignoré",
       "stoppingBadge": "arrêt"
+    },
+    "preservation": {
+      "jobLabel": "Offre d'emploi",
+      "optionsLabel": "Options",
+      "resultLabel": "Résultat",
+      "mirrorLabel": "Miroir",
+      "restoreLabel": "Restaurer le miroir",
+      "run": "Exécuter",
+      "stop": "Arrêter",
+      "startFailed": "Impossible de lancer la tâche.",
+      "problemsFound": "Cette exécution a détecté des problèmes — voir le rapport.",
+      "wasCancelled": "Projet interrompu prématurément ; les chiffres ne concernent que la partie du projet qui a été réalisée.",
+      "noVerifyWarning": "Le fait de ne pas effectuer la vérification valide le miroir sans le contrôler — un fichier endommagé serait alors certifié comme étant en bon état.",
+      "fullWalk": "Vérifier chaque page (lent)",
+      "sampleSize": "Taille de l'échantillon",
+      "withDb": "Inclure l'exportation vers une base de données",
+      "verifyFirst": "Vérifier le miroir avant de le sceller",
+      "tar": "Créer également un fichier .tar.gz",
+      "openReport": "Ouvrir le rapport",
+      "sealLabel": "Sceau",
+      "sealed": "scellé",
+      "unsealed": "non scellé",
+      "snapshotsTitle": "Instantanés sur le disque",
+      "noSnapshots": "Pas encore de captures d'écran",
+      "snapshotCount_one": "Instantané {{count}}",
+      "snapshotCount_other": "Instantanés {{count}}",
+      "job": {
+        "verify": "Vérifier",
+        "baseline": "Référence",
+        "linkcheck": "Vérification des liens",
+        "snapshot": "Aperçu"
+      },
+      "jobHelp": {
+        "verify": "Comparer chaque fichier mis en miroir à sa référence enregistrée et signaler les fichiers manquants, les écarts et les fichiers orphelins. En lecture seule.",
+        "baseline": "Enregistrer un hachage sur le disque pour les fichiers en miroir qui n'en possèdent pas encore. Les fichiers dont les octets ne correspondent pas à ceux de l'analyse sont signalés, et non validés.",
+        "linkcheck": "Vérification des liens internes par rapport aux fichiers présents sur le disque — cela permet de s'assurer que le miroir fonctionne toujours lorsqu'il est accessible hors ligne.",
+        "snapshot": "Créer un instantané figé et lié en dur des miroirs, ainsi qu'une exportation de la base de données. La distribution reste une décision manuelle."
+      },
+      "stage": {
+        "idle": "Inactif",
+        "running": "En cours d'exécution",
+        "done": "Terminé",
+        "cancelled": "Arrêté",
+        "error": "Erreur"
+      },
+      "stat": {
+        "rows": "Lignes",
+        "hashed": "Haché",
+        "ok": "Correspondance",
+        "missing": "Manquant",
+        "drift": "Drift",
+        "orphans": "Orphelins",
+        "unbaselined": "Non validées",
+        "baselined": "Version de référence",
+        "prehash": "Incohérence avant hachage",
+        "pages": "Pages",
+        "links": "Liens",
+        "broken": "Cassé",
+        "seedBroken": "Ne fonctionne pas sur les pages d'amorçage",
+        "seeds": "Pages de démarrage",
+        "files": "Fichiers",
+        "size": "Taille",
+        "linked": "Liens physiques",
+        "copied": "Copié",
+        "snapshots": "Instantanés",
+        "latest": "Dernière mise à jour",
+        "seconds": "Durée"
+      },
+      "col": {
+        "name": "Aperçu",
+        "created": "Créé",
+        "files": "Fichiers",
+        "size": "Taille",
+        "sealed": "État",
+        "seal": "Sceau",
+        "open": "Ouvrir"
+      }
     }
   },
   "songs": {

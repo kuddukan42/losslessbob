@@ -1816,6 +1816,83 @@
     "geocoder": {
       "skippedLabel": "Omitido",
       "stoppingBadge": "detener"
+    },
+    "preservation": {
+      "jobLabel": "Puesto",
+      "optionsLabel": "Opciones",
+      "resultLabel": "Resultado",
+      "mirrorLabel": "Espejo",
+      "restoreLabel": "Restaurar el espejo",
+      "run": "Ejecutar",
+      "stop": "Detener",
+      "startFailed": "No se ha podido iniciar la tarea.",
+      "problemsFound": "En esta ejecución se han detectado problemas; consulta el informe.",
+      "wasCancelled": "Se detuvo antes de tiempo; las cifras solo abarcan la ejecución parcial.",
+      "noVerifyWarning": "Si se omite la verificación, se sella el espejo sin comprobarlo; un archivo dañado se certificaría como válido.",
+      "fullWalk": "Revisa todas las páginas (lento)",
+      "sampleSize": "Tamaño de la muestra",
+      "withDb": "Incluir exportación a base de datos",
+      "verifyFirst": "Verificar la copia de seguridad antes de sellarla",
+      "tar": "También se genera un archivo .tar.gz",
+      "openReport": "Abrir informe",
+      "sealLabel": "Sello",
+      "sealed": "sellado",
+      "unsealed": "sin sellar",
+      "snapshotsTitle": "Instantáneas en el disco",
+      "noSnapshots": "Aún no hay capturas de pantalla.",
+      "snapshotCount_one": "Instantánea {{count}}",
+      "snapshotCount_other": "Instantáneas de {{count}}",
+      "job": {
+        "verify": "Verificar",
+        "baseline": "Referencia",
+        "linkcheck": "Comprobación de enlaces",
+        "snapshot": "Instantánea"
+      },
+      "jobHelp": {
+        "verify": "Compara cada archivo duplicado con su referencia de referencia registrada e informa de los archivos que faltan, las desviaciones y los archivos huérfanos. Solo lectura.",
+        "baseline": "Registra un hash en el disco para los archivos duplicados que aún no lo tengan. Los archivos cuyos bytes ya no coincidan con el rastreo se marcan, no se aprueban.",
+        "linkcheck": "Resolver los enlaces internos con los archivos del disco: demuestra que el espejo sigue funcionando cuando se ofrece sin conexión.",
+        "snapshot": "Crear una instantánea sellada con enlaces duros de los servidores espejo, además de una exportación de la base de datos. La distribución sigue siendo una decisión manual."
+      },
+      "stage": {
+        "idle": "Inactivo",
+        "running": "En ejecución",
+        "done": "Hecho",
+        "cancelled": "Suspendido",
+        "error": "Error"
+      },
+      "stat": {
+        "rows": "Filas",
+        "hashed": "Con hash",
+        "ok": "Coincide",
+        "missing": "Falta",
+        "drift": "Drift",
+        "orphans": "Huérfanos",
+        "unbaselined": "Sin línea de base",
+        "baselined": "Versión de referencia",
+        "prehash": "Discrepancia en el hash previo",
+        "pages": "Páginas",
+        "links": "Enlaces",
+        "broken": "Roto",
+        "seedBroken": "No funciona en las páginas iniciales",
+        "seeds": "Páginas de inicio",
+        "files": "Archivos",
+        "size": "Tamaño",
+        "linked": "Enlaces duros",
+        "copied": "Copiado",
+        "snapshots": "Instantáneas",
+        "latest": "Última versión",
+        "seconds": "Duración"
+      },
+      "col": {
+        "name": "Instantánea",
+        "created": "Creado",
+        "files": "Archivos",
+        "size": "Tamaño",
+        "sealed": "Estado",
+        "seal": "Sello",
+        "open": "Abrir"
+      }
     }
   },
   "songs": {

@@ -1816,6 +1816,83 @@
     "geocoder": {
       "skippedLabel": "Saltato",
       "stoppingBadge": "interruzione"
+    },
+    "preservation": {
+      "jobLabel": "Lavoro",
+      "optionsLabel": "Opzioni",
+      "resultLabel": "Risultato",
+      "mirrorLabel": "Mirror",
+      "restoreLabel": "Ripristina il mirror",
+      "run": "Esegui",
+      "stop": "Stop",
+      "startFailed": "Impossibile avviare il processo.",
+      "problemsFound": "In questa esecuzione sono stati rilevati dei problemi — consultare il rapporto.",
+      "wasCancelled": "Il progetto è stato interrotto prematuramente; le figure riportano solo i risultati parziali.",
+      "noVerifyWarning": "Saltando la verifica, il mirror viene sigillato senza essere controllato: un file danneggiato verrebbe certificato come integro.",
+      "fullWalk": "Controlla ogni pagina (lento)",
+      "sampleSize": "Dimensione del campione",
+      "withDb": "Includere l'esportazione del database",
+      "verifyFirst": "Verifica il mirror prima della chiusura",
+      "tar": "Creare anche file .tar.gz",
+      "openReport": "Apri report",
+      "sealLabel": "Sigillo",
+      "sealed": "sigillato",
+      "unsealed": "non sigillato",
+      "snapshotsTitle": "Istantanee su disco",
+      "noSnapshots": "Non ci sono ancora schermate",
+      "snapshotCount_one": "{{count}} snapshot",
+      "snapshotCount_other": "Istantanee {{count}}",
+      "job": {
+        "verify": "Verifica",
+        "baseline": "Linea di base",
+        "linkcheck": "Verifica dei link",
+        "snapshot": "Istantanea"
+      },
+      "jobHelp": {
+        "verify": "Confronta ogni file duplicato con la sua versione di riferimento registrata e segnala i file mancanti, le discrepanze e i file orfani. Solo lettura.",
+        "baseline": "Registra un hash su disco per i file duplicati che non ne possiedono ancora uno. I file i cui byte non corrispondono già al risultato della scansione vengono contrassegnati, non approvati.",
+        "linkcheck": "Verifica dei collegamenti interni rispetto ai file presenti sul disco — dimostra che il mirror funziona ancora quando viene servito offline.",
+        "snapshot": "Creare un’istantanea sigillata con collegamenti fisici dei mirror, oltre a un’esportazione del database. La distribuzione rimane una decisione manuale."
+      },
+      "stage": {
+        "idle": "Inattivo",
+        "running": "In esecuzione",
+        "done": "Fatto",
+        "cancelled": "Interrotto",
+        "error": "Errore"
+      },
+      "stat": {
+        "rows": "Righe",
+        "hashed": "Con hash",
+        "ok": "Corrispondenti",
+        "missing": "Mancante",
+        "drift": "Drift",
+        "orphans": "Orfani",
+        "unbaselined": "Non ancora inserite nella baseline",
+        "baselined": "Versione di riferimento",
+        "prehash": "Discrepanza pre-hash",
+        "pages": "Pagine",
+        "links": "Link",
+        "broken": "Non funzionante",
+        "seedBroken": "Non funzionante nelle pagine seed",
+        "seeds": "Pagine iniziali",
+        "files": "File",
+        "size": "Dimensioni",
+        "linked": "Collegamenti fissi",
+        "copied": "Copiato",
+        "snapshots": "Istantanee",
+        "latest": "Ultima versione",
+        "seconds": "Durata"
+      },
+      "col": {
+        "name": "Istantanea",
+        "created": "Creato",
+        "files": "File",
+        "size": "Dimensioni",
+        "sealed": "Stato",
+        "seal": "Sigillo",
+        "open": "Apri"
+      }
     }
   },
   "songs": {

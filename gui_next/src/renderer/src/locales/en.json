@@ -1923,6 +1923,83 @@
     "geocoder": {
       "skippedLabel": "Skipped",
       "stoppingBadge": "stopping"
+    },
+    "preservation": {
+      "jobLabel": "Job",
+      "optionsLabel": "Options",
+      "resultLabel": "Result",
+      "mirrorLabel": "Mirror",
+      "restoreLabel": "Restore the mirror",
+      "run": "Run",
+      "stop": "Stop",
+      "startFailed": "Could not start the job.",
+      "problemsFound": "This run found problems — see the report.",
+      "wasCancelled": "Stopped early; the figures cover the partial run only.",
+      "noVerifyWarning": "Skipping verification seals the mirror without checking it — a damaged file would be certified as good.",
+      "fullWalk": "Check every page (slow)",
+      "sampleSize": "Sample size",
+      "withDb": "Include database export",
+      "verifyFirst": "Verify mirror before sealing",
+      "tar": "Also build .tar.gz",
+      "openReport": "Open report",
+      "sealLabel": "Seal",
+      "sealed": "sealed",
+      "unsealed": "unsealed",
+      "snapshotsTitle": "Snapshots on disk",
+      "noSnapshots": "No snapshots yet",
+      "snapshotCount_one": "{{count}} snapshot",
+      "snapshotCount_other": "{{count}} snapshots",
+      "job": {
+        "verify": "Verify",
+        "baseline": "Baseline",
+        "linkcheck": "Link check",
+        "snapshot": "Snapshot"
+      },
+      "jobHelp": {
+        "verify": "Re-hash every mirrored file against its recorded baseline and report missing files, drift and orphans. Read-only.",
+        "baseline": "Record an on-disk hash for mirrored files that have none yet. Files whose bytes already disagree with the crawl are flagged, not blessed.",
+        "linkcheck": "Resolve internal links against files on disk — proves the mirror still works when served offline.",
+        "snapshot": "Build a sealed, hardlinked snapshot of the mirrors plus a database export. Distribution stays a manual decision."
+      },
+      "stage": {
+        "idle": "Idle",
+        "running": "Running",
+        "done": "Done",
+        "cancelled": "Stopped",
+        "error": "Error"
+      },
+      "stat": {
+        "rows": "Rows",
+        "hashed": "Hashed",
+        "ok": "Matched",
+        "missing": "Missing",
+        "drift": "Drift",
+        "orphans": "Orphans",
+        "unbaselined": "Unbaselined",
+        "baselined": "Baselined",
+        "prehash": "Pre-hash mismatch",
+        "pages": "Pages",
+        "links": "Links",
+        "broken": "Broken",
+        "seedBroken": "Broken on seed pages",
+        "seeds": "Seed pages",
+        "files": "Files",
+        "size": "Size",
+        "linked": "Hardlinked",
+        "copied": "Copied",
+        "snapshots": "Snapshots",
+        "latest": "Latest",
+        "seconds": "Duration"
+      },
+      "col": {
+        "name": "Snapshot",
+        "created": "Created",
+        "files": "Files",
+        "size": "Size",
+        "sealed": "State",
+        "seal": "Seal",
+        "open": "Open"
+      }
     }
   },
   "palette": {
