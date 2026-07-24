@@ -2037,6 +2037,9 @@ def create_app() -> Flask:
                   _EXPORT_COLUMN_DEFS). Unknown keys are dropped; falls back
                   to _EXPORT_DEFAULT_COLS if empty/all-unknown. "lb" is
                   always included since it anchors the detail-page link.
+            lb_numbers: optional comma-separated LB numbers to restrict the
+                  export to (e.g. the GUI's currently filtered/searched
+                  rows). Omit for the full collection.
 
         Returns:
             HTML file attachment (collection.html), fully self-contained.
@@ -2051,6 +2054,10 @@ def create_app() -> Flask:
                 cols = ["lb"] + cols
 
             rows = database.get_collection()
+            lb_numbers_param = request.args.get("lb_numbers", "")
+            if lb_numbers_param:
+                wanted = {int(x) for x in lb_numbers_param.split(",") if x.strip().isdigit()}
+                rows = [r for r in rows if r.get("lb_number") in wanted]
             entries = []
             for r in rows:
                 lb = r.get("lb_number", 0) or 0
@@ -2094,6 +2101,71 @@ def create_app() -> Flask:
                 html,
                 mimetype="text/html",
                 headers={"Content-Disposition": "attachment; filename=collection.html"},
+            )
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/export/html/missing", methods=["GET"])
+    def collection_export_html_missing() -> Response:
+        """Export the "Not in collection" LB list as the same interactive HTML report.
+
+        Reuses _COLLECTION_HTML_TEMPLATE with a column set suited to entries
+        never added to my_collection (no disk path / folder / confirmed date).
+
+        Query params:
+            lb_numbers: optional comma-separated LB numbers to restrict the
+                  export to (e.g. the GUI's public/private toggle within the
+                  "Not in collection" tab). Omit for the full missing list.
+
+        Returns:
+            HTML file attachment (missing_lbs.html), fully self-contained.
+        """
+        try:
+            import json as _json
+            from datetime import UTC, datetime
+
+            rows = database.get_missing_from_collection()
+            lb_numbers_param = request.args.get("lb_numbers", "")
+            if lb_numbers_param:
+                wanted = {int(x) for x in lb_numbers_param.split(",") if x.strip().isdigit()}
+                rows = [r for r in rows if r.get("lb_number") in wanted]
+
+            cols = list(_EXPORT_MISSING_DEFAULT_COLS)
+            entries = []
+            for r in rows:
+                lb = r.get("lb_number", 0) or 0
+                date_str = r.get("date_str", "") or ""
+                year = date_str[:4] if len(date_str) >= 4 and date_str[:4].isdigit() else ""
+                entries.append({
+                    "lb": lb,
+                    "lb_str": f"LB-{lb:05d}",
+                    "url": detail_url(lb),
+                    "status": r.get("lb_status") or "unknown",
+                    "date": date_str,
+                    "year": year,
+                    "location": r.get("location", "") or "",
+                    "rating": r.get("rating") if r.get("rating") is not None else "",
+                    "description": r.get("description", "") or "",
+                })
+
+            data_json = _json.dumps(entries, ensure_ascii=False)
+            cols_json = _json.dumps(
+                [{"key": c, "label": _EXPORT_MISSING_COLUMN_DEFS[c]} for c in cols],
+                ensure_ascii=False,
+            )
+            generated_at = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
+
+            html = (
+                _COLLECTION_HTML_TEMPLATE
+                .replace("__DATA_JSON__", data_json)
+                .replace("__COLS_JSON__", cols_json)
+                .replace("__GENERATED_AT__", generated_at)
+                .replace("LosslessBob <em>Collection</em>", "LosslessBob <em>Not in Collection</em>")
+            )
+            return Response(
+                html,
+                mimetype="text/html",
+                headers={"Content-Disposition": "attachment; filename=missing_lbs.html"},
             )
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -10666,6 +10738,18 @@ _EXPORT_COLUMN_DEFS: dict[str, str] = {
     "rating":       "Rating",
 }
 _EXPORT_DEFAULT_COLS = ["lb", "status", "date", "location", "folder", "notes"]
+
+# Column set for the "Not in collection" HTML export — these entries were
+# never added to my_collection, so no disk_path/folder/confirmed_at exist.
+_EXPORT_MISSING_COLUMN_DEFS: dict[str, str] = {
+    "lb":          "LB #",
+    "status":      "Status",
+    "date":        "Date",
+    "location":    "Location",
+    "rating":      "Rating",
+    "description": "Description",
+}
+_EXPORT_MISSING_DEFAULT_COLS = ["lb", "status", "date", "location", "rating", "description"]
 
 
 # ── Collection HTML export template ─────────────────────────────────────────

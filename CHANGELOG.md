@@ -1,3 +1,20 @@
+[2026-07-24] — feat: filtered + "Not in collection" HTML export for My Collection
+Added: backend/app.py: /api/collection/export/html/missing — exports the "Not in
+  collection" LB list (database.get_missing_from_collection()) through the same
+  interactive single-file HTML report as the main collection export, with a
+  column set suited to never-owned entries (lb, status, date, location, rating,
+  description).
+Changed: backend/app.py: /api/collection/export/html now accepts an optional
+  lb_numbers param (comma-separated), matching the existing pattern on
+  /api/collection/export/m3u, so the export can be restricted to a subset
+  instead of always dumping the full collection.
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: the "Export
+  HTML" button now passes the currently filtered/searched rows' LB numbers to
+  the backend, so any active filter chip, search text, year, or copy-level
+  filter narrows the export instead of always exporting everything. Added an
+  "Export HTML" button next to "Export CSV" on the "Not in collection" tab,
+  respecting its public/private toggle the same way.
+
 [2026-07-24] — feat: file-level collection integrity — per-file bit-rot inventory (TODO-267)
 Added: backend/file_integrity.py: durable per-file hash inventory over every file on
   every mount, to catch bit rot / silent corruption. The two existing hash stores
