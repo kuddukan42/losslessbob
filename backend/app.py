@@ -46,6 +46,7 @@ from backend import setlist_fingerprint as _setlist_fingerprint
 from backend import setlistfm as setlistfm_mod
 from backend import song_index as _song_index
 from backend import taper_attribution as _taper_attribution
+from backend import timeline as _timeline
 from backend.paths import (
     BATCH_VERIFY_DB_PATH,
     DATA_DIR,
@@ -6431,6 +6432,46 @@ def create_app() -> Flask:
             _log.exception("gaps_date failed for date_iso=%r", date_iso)
             return jsonify({"error": str(e)}), 500
 
+    # ── Timeline navigator (instructions/FABLE_TIMELINE.md) ─────────────────────
+    # Read-only: no writes, no derived table. All three routes degrade to an
+    # empty/available:false response when olof_events is absent.
+
+    @app.route("/api/timeline/summary", methods=["GET"])
+    def timeline_summary() -> Response:
+        """Decade-by-decade summary (night/circulating counts, best grade)."""
+        try:
+            return jsonify(_timeline.get_summary())
+        except Exception as e:
+            _log.exception("timeline_summary failed")
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/timeline/decade/<int:decade>", methods=["GET"])
+    def timeline_decade(decade: int) -> Response:
+        """Tour-by-tour breakdown for one decade."""
+        try:
+            return jsonify(_timeline.get_decade_detail(decade))
+        except Exception as e:
+            _log.exception("timeline_decade failed for decade=%r", decade)
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/timeline/tour", methods=["GET"])
+    def timeline_tour() -> Response:
+        """Night-by-night breakdown for one tour, scoped by decade.
+
+        Query params: name (required, exact olof_events.tour_name), decade
+        (required, int -- the decade of the tour's earliest show).
+        """
+        try:
+            name = request.args.get("name", "")
+            decade = request.args.get("decade", type=int)
+            return jsonify(_timeline.get_tour_detail(name, decade))
+        except Exception as e:
+            _log.exception(
+                "timeline_tour failed for name=%r decade=%r",
+                request.args.get("name"), request.args.get("decade"),
+            )
+            return jsonify({"error": str(e)}), 500
+
     # ── Show dossier (TODO-257, instructions/FABLE_SHOW_DOSSIER.md) ────────────
 
     @app.route("/api/dossier", methods=["GET"])
@@ -6482,11 +6523,19 @@ def create_app() -> Flask:
                 result, sections=sections, local_analysis=local_analysis_on
             )
             html = render_template("dossier.html", d=view)
-            return Response(
-                html,
-                mimetype="text/html",
-                headers={"Content-Disposition": f"attachment; filename=dossier-{date_iso}.html"},
+            # Default: download as an attachment (the export flow). The in-app
+            # dossier viewer (timeline screen) embeds this route in an iframe,
+            # where an attachment disposition renders blank -- it passes
+            # inline=1 to be served inline instead. The HTML export flow reads
+            # the body via fetch()+blob and never depends on this header, so the
+            # opt-in is backward-compatible.
+            inline = request.args.get("inline") in ("1", "true", "True")
+            headers = (
+                {}
+                if inline
+                else {"Content-Disposition": f"attachment; filename=dossier-{date_iso}.html"}
             )
+            return Response(html, mimetype="text/html", headers=headers)
         except Exception as e:
             _log.exception("dossier_html failed for date=%r", request.args.get("date"))
             return jsonify({"error": str(e)}), 500

@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-268: Timeline navigator (FABLE_IDEAS UI-2) — zoomable Decade→Tour→Night grid colored by best grade, drill-down opens the dossier
+Priority: Medium
+Status: Done
+Added: 2026-07-24
+Closed: 2026-07-24
+Description: Execute FABLE_TIMELINE.md: backend/timeline.py live rollup + 3 routes, ScreenTimeline zoom UI, --lbb-seq-* grade ramp, in-app dossier viewer.
+Shipped 2026-07-24, B1-B5 same session. backend/timeline.py (get_summary/get_decade_detail/get_tour_detail, live-computed like gap_analysis, 21 tests) + GET /api/timeline/summary|/decade/<int>|/tour?name=&decade=; ScreenTimeline.tsx (Decade->Tour->Night zoom + breadcrumb); sequential --lbb-seq-* ramp in tokens.ts (dataviz-validated light+dark); in-app dossier iframe viewer with DossierExportModal hand-off. Two corrections beyond spec: three-state model (graded/circulating-ungraded/no-tape) keeps ungraded-but-held 2020s nights clickable to their dossier; inline=1 opt-out added to /api/dossier/html (attachment disposition rendered blank in iframe). gui-check + /verify (light+dark) PASS.
+
 TODO-267: File-level collection integrity — per-file bit-rot inventory
 Priority: Medium
 Status: Done

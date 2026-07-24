@@ -41,6 +41,7 @@
       "tapematch": "TapeMatch",
       "songs": "Songs",
       "gaps": "Gaps",
+      "timeline": "Timeline",
       "assets": "Assets",
       "attachments": "Attachments",
       "spectrograms": "Spectrograms",
@@ -1833,6 +1834,46 @@
       "unknownVenue": "Unknown venue",
       "recording": "{{kind}}, {{mins}} min",
       "none": "None"
+    }
+  },
+  "timeline": {
+    "title": "Timeline",
+    "subtitle": "Decade → tour → night, colored by the best grade held for each show.",
+    "unavailable": "The Timeline view needs the Olof Bjorner concert chronology, which isn't loaded on this install.",
+    "breadcrumb": {
+      "root": "Decades"
+    },
+    "grade": {
+      "best": "Best: {{grade}}",
+      "circulatingUngraded": "Circulating, ungraded",
+      "noTape": "No circulating tape"
+    },
+    "decade": {
+      "nights_one": "{{count}} night",
+      "nights_other": "{{count}} nights",
+      "circulating_one": "{{count}} circulating",
+      "circulating_other": "{{count}} circulating"
+    },
+    "tour": {
+      "nights_one": "{{count}} night",
+      "nights_other": "{{count}} nights",
+      "circulating_one": "{{count}} circulating",
+      "circulating_other": "{{count}} circulating"
+    },
+    "night": {
+      "unknownVenue": "Unknown venue",
+      "tooltipGraded": "{{date}} — {{venue}} — {{grade}}",
+      "tooltipCirculating": "{{date}} — {{venue}} — circulating, ungraded",
+      "tooltipNoTape": "{{date}} — {{venue}} — no circulating tape"
+    },
+    "viewer": {
+      "title": "Dossier — {{date}}",
+      "close": "Close",
+      "openExport": "Open full export…"
+    },
+    "empty": {
+      "tours": "No tours found for this decade.",
+      "nights": "No nights found for this tour."
     }
   },
   "fingerprint": {

@@ -35,6 +35,7 @@ import { ScreenLibrary } from './screens/ScreenLibrary'
 import { ScreenTapeMatch } from './screens/ScreenTapeMatch'
 import { ScreenSongs } from './screens/ScreenSongs'
 import { ScreenGaps } from './screens/ScreenGaps'
+import { ScreenTimeline } from './screens/ScreenTimeline'
 import { ScreenFingerprint } from './screens/ScreenFingerprint'
 
 // ── React Query client — persisted to IndexedDB (BUG-271) ────────────────────
@@ -354,6 +355,7 @@ export default function App(): React.JSX.Element {
           <Route path="/tapematch"   element={<ScreenTapeMatch />} />
           <Route path="/songs"       element={<ScreenSongs />} />
           <Route path="/gaps"        element={<ScreenGaps />} />
+          <Route path="/timeline"    element={<ScreenTimeline />} />
           <Route path="/collection"  element={<ScreenCollection />} />
           <Route path="/trading"     element={<ScreenTrading />} />
           <Route path="/sharing"     element={<ScreenSharing />} />

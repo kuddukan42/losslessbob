@@ -56,7 +56,8 @@
       "songs": "Chansons",
       "fingerprint": "Empreinte digitale",
       "gaps": "Lacunes",
-      "fileintegrity": "Intégrité des fichiers"
+      "fileintegrity": "Intégrité des fichiers",
+      "timeline": "Chronologie"
     },
     "statusBar": {
       "db": "DB :",
@@ -2023,6 +2024,46 @@
       "available": "Mise à jour disponible : {{name}}",
       "availableGeneric": "Une nouvelle version du fichier plat est disponible.",
       "error": "Échec de la vérification des mises à jour : {{error}}"
+    }
+  },
+  "timeline": {
+    "title": "Chronologie",
+    "subtitle": "Décennie → tournée → soirée, classées par couleur en fonction de la meilleure note attribuée à chaque concert.",
+    "unavailable": "La vue « Timeline » nécessite la chronologie des concerts d'Olof Bjorner, qui n'est pas chargée dans cette installation.",
+    "breadcrumb": {
+      "root": "Décennies"
+    },
+    "grade": {
+      "best": "Meilleure proposition : {{grade}}",
+      "circulatingUngraded": "En circulation, non noté",
+      "noTape": "Pas de bande en circulation"
+    },
+    "decade": {
+      "nights_one": "{{count}} nuit",
+      "nights_other": "{{count}} nuits",
+      "circulating_one": "{{count}} en circulation",
+      "circulating_other": "{{count}} en circulation"
+    },
+    "tour": {
+      "nights_one": "{{count}} nuit",
+      "nights_other": "{{count}} nuits",
+      "circulating_one": "{{count}} en circulation",
+      "circulating_other": "{{count}} en circulation"
+    },
+    "night": {
+      "unknownVenue": "Lieu inconnu",
+      "tooltipGraded": "{{date}} — {{venue}} — {{grade}}",
+      "tooltipCirculating": "{{date}} — {{venue}} — en circulation, non noté",
+      "tooltipNoTape": "{{date}} — {{venue}} — aucune cassette en circulation"
+    },
+    "viewer": {
+      "title": "Dossier — {{date}}",
+      "close": "Fermer",
+      "openExport": "Ouvrir l'exportation complète…"
+    },
+    "empty": {
+      "tours": "Aucune tournée n'a été trouvée pour cette décennie.",
+      "nights": "Aucune date n’a été trouvée pour cette tournée."
     }
   }
 }

@@ -81,6 +81,33 @@ const STATUS: Record<ConcreteMode, Record<string, StatusTone>> = {
   },
 };
 
+// Sequential single-hue ramp for magnitude-encoded data (timeline decade/tour/
+// night grade cells — spec §2 D5). One hue only, derived from STATUS.info's
+// blue (~209° hue) for visual consistency with the rest of the theme, not the
+// dataviz skill's generic reference blue. Lightest step = worst grade,
+// darkest = best. Deliberately separate from STATUS.mute: the no-tape state
+// reuses --lbb-mute-bg/-fg instead of ramp step 1, so "no data" never reads
+// as "a low grade." Validated with the dataviz skill's
+// scripts/validate_palette.js --ordinal (light & dark surfaces, both PASS).
+const SEQ: Record<ConcreteMode, Record<string, string>> = {
+  light: {
+    1: '#86b4df',
+    2: '#5c9bd6',
+    3: '#3082cf',
+    4: '#2468a8',
+    5: '#1a5389',
+    6: '#113f69',
+  },
+  dark: {
+    1: '#adcdeb',
+    2: '#86b4df',
+    3: '#619bd1',
+    4: '#4082bf',
+    5: '#366a9b',
+    6: '#2e557a',
+  },
+};
+
 const MODES: Record<ConcreteMode, ModePalette> = {
   light: {
     bg:        '#faf8f3',
@@ -192,6 +219,7 @@ export function applyTheme({ mode, accent, density, font, fontSize, customTokens
   };
   const a = (ACCENT_PALETTES[accent] ?? ACCENT_PALETTES.indigo)[resolved];
   const s = STATUS[resolved] ?? STATUS.light;
+  const seq = SEQ[resolved] ?? SEQ.light;
   const d = DENSITY[density] ?? DENSITY.default;
 
   (Object.entries(m) as [string, string][]).forEach(([k, v]) => root.style.setProperty(`--lbb-${k}`, v));
@@ -201,6 +229,7 @@ export function applyTheme({ mode, accent, density, font, fontSize, customTokens
     root.style.setProperty(`--lbb-${tone}-bg`,  v.bg);
     root.style.setProperty(`--lbb-${tone}-bar`, v.bar);
   });
+  Object.entries(seq).forEach(([step, v]) => root.style.setProperty(`--lbb-seq-${step}`, v));
   (Object.entries(d) as [string, number][]).forEach(([k, v]) =>
     root.style.setProperty(`--lbb-d-${k}`, `${v}px`)
   );

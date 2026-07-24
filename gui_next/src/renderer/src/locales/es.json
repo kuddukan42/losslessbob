@@ -56,7 +56,8 @@
       "songs": "Canciones",
       "fingerprint": "Huella digital",
       "gaps": "Lagunas",
-      "fileintegrity": "Integridad de los archivos"
+      "fileintegrity": "Integridad de los archivos",
+      "timeline": "Cronología"
     },
     "statusBar": {
       "db": "BD:",
@@ -2023,6 +2024,46 @@
       "available": "Actualización disponible: {{name}}",
       "availableGeneric": "Ya está disponible una nueva versión del archivo plano.",
       "error": "Error al comprobar actualizaciones: {{error}}"
+    }
+  },
+  "timeline": {
+    "title": "Cronología",
+    "subtitle": "Década → gira → noche, coloreadas según la mejor nota obtenida en cada concierto.",
+    "unavailable": "La vista «Línea de tiempo» necesita la cronología de conciertos de Olof Bjorner, que no está cargada en esta instalación.",
+    "breadcrumb": {
+      "root": "Décadas"
+    },
+    "grade": {
+      "best": "La mejor: {{grade}}",
+      "circulatingUngraded": "En circulación, sin calificar",
+      "noTape": "Sin cinta en circulación"
+    },
+    "decade": {
+      "nights_one": "{{count}} noche",
+      "nights_other": "{{count}} noches",
+      "circulating_one": "{{count}} en circulación",
+      "circulating_other": "{{count}} en circulación"
+    },
+    "tour": {
+      "nights_one": "{{count}} noche",
+      "nights_other": "{{count}} noches",
+      "circulating_one": "{{count}} en circulación",
+      "circulating_other": "{{count}} en circulación"
+    },
+    "night": {
+      "unknownVenue": "Lugar desconocido",
+      "tooltipGraded": "{{date}} — {{venue}} — {{grade}}",
+      "tooltipCirculating": "{{date}} — {{venue}} — en circulación, sin calificar",
+      "tooltipNoTape": "{{date}} — {{venue}} — cinta no disponible para préstamo"
+    },
+    "viewer": {
+      "title": "Dossier — {{date}}",
+      "close": "Cerrar",
+      "openExport": "Abrir exportación completa…"
+    },
+    "empty": {
+      "tours": "No se han encontrado giras para esta década.",
+      "nights": "No se han encontrado fechas para esta gira."
     }
   }
 }
