@@ -1,3 +1,51 @@
+[2026-07-23] — feat: GUI for the preservation stack — Preservation tab + service layer (TODO-266)
+Added: backend/preservation.py: single-instance background job runner for the four
+  preservation operations (verify / baseline / linkcheck / snapshot). Jobs run on a
+  daemon thread and expose a pollable status snapshot shaped like
+  site_crawler.get_crawler_status, so the Scraper screen's existing status-diffing
+  consumes it unchanged. Also serves the snapshot inventory (manifest stats + seal,
+  read without re-hashing) and the report list/reader — read_report resolves and
+  range-checks paths so a caller cannot walk out of data/exports/.
+Changed: tools/verify_site_mirror.py, tools/check_mirror_links.py,
+  tools/make_site_snapshot.py: optional progress_cb/should_stop hooks on verify(),
+  baseline(), check_links() and make_snapshot(); defaults keep every existing CLI
+  call byte-identical. verify/baseline stop between rows, the link check between
+  pages, a snapshot between build stages — and a cancelled snapshot DELETES its
+  partial directory, since only a sealed snapshot means anything. Results carry a
+  `cancelled` flag and append CANCELLED to their summary. A cancelled verify skips
+  the orphan sweep (a partial file list would report every unvisited file as an
+  orphan). Also drops a pre-existing unused `hashlib` import from
+  make_site_snapshot.py — the one real use lives inside the embedded-verifier string.
+Added: backend/app.py: /api/preservation/{start,status,stop,snapshots,reports,report}.
+  start 409s on a second concurrent job and 400s on an unknown job name. No upload
+  path anywhere — distribution stays a manual human act.
+Added: gui_next ScreenScraper.tsx: Preservation tab (curator-gated /scraper, which
+  already owns the mirror these tools operate on). Job chips each carry a one-line
+  explanation and their own options — sample size + full-walk for the link check,
+  with-db / verify-first / tar for snapshots, with an inline warning when
+  verify-first is cleared. Run/Stop, a 2 s poll driving progress + stage pill + log
+  lines, a per-job result StatGrid with failed/cancelled banners and an Open report
+  button, a mirror block with the restore one-liner, and a "Snapshots on disk" table
+  (files, size, seal, sealed state, folder-open action).
+Fixed: gui_next ScreenScraper.tsx (BUG-273): the Crawler and Bootleg history tables
+  misaligned every column — TR injects a 3px leading <td> edge bar, so colgroups need
+  a leading <col width=3> and theads a leading <TH>. Both omitted it; found by
+  measuring header vs cell bounding boxes while verifying the new tab, which had
+  inherited the same mistake. Header/cell left edges now match exactly.
+Fixed: gui_next ScreenScraper.tsx: the first poll of a session replayed the last
+  finished run as if it had just started (the backend keeps terminal status) — the
+  first observation now seeds the diff refs without logging. Progress lines also read
+  "linkcheckstarting…", since padEnd(9) on a 9-char job name emits no separator.
+Added: tests/test_preservation_service.py (19): job lifecycle, error surfacing,
+  single-instance guard, cooperative cancellation, progress reporting, snapshot and
+  report inventory, traversal refusal, and back-compat of the new tool kwargs.
+Note: verified against the live mirror — progress ticked to 87,250/115,115 rows and
+  a stop landed cleanly at 87,499 hashed with 0 drift; in Electron on Xvfb a
+  GUI-driven link check ran 504 pages / 3,595 links in 24.5 s with live progress and
+  a green summary. Full backend suite 983 passed; gui-check green. i18n: 65 new keys
+  under scraper.preservation filled for de/fr/es/it/nl via DeepL (10,408 chars);
+  "unsealed" came back untranslated in de/it and was set by hand.
+
 [2026-07-23] — feat: sealed snapshots + restore test — preservation stack complete (TODO-265 B2/B3/B4)
 Added: tools/make_site_snapshot.py: builds data/exports/snapshots/lbsnap-YYYY-MM-DD[.N]/
   — site mirror + both olof mirrors + a full-channel DB export (export_master_db

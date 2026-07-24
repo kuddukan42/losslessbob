@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-273: Scraper history tables misaligned — colgroup missing TR's leading edge-bar column
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenScraper.tsx:407,gui_next/src/renderer/src/screens/ScreenScraper.tsx:615
+Reported: 2026-07-23
+Fixed: 2026-07-23
+Root cause: components/table.tsx's TR always injects a 3px leading <td> edge bar, so a colgroup/thead that lists only the visible columns is one short; with tableLayout:fixed the body row is pushed a full column right of the header row.
+Fix: Added the leading <col style={{width:3}} /> + <TH /> pair to both tables and bumped their empty-state colSpan (7->8, 6->7). Verified by measuring bounding boxes in Electron: header/cell left edges now match exactly at every column (was SNAPSHOT 224 vs cell 414; now 228/228).
+
 BUG-272: Library crawl wedged by read-only example folder (copytree preserves mode 0o555)
 Status: Fixed
 File(s): tools/tapematch/tapematch_session.py:520,tools/tapematch/tapematch_session.py:538

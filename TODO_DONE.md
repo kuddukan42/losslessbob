@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-266: GUI for the preservation stack — Preservation tab + /api/preservation service layer
+Priority: Medium
+Status: Done
+Added: 2026-07-23
+Closed: 2026-07-23
+Description: TODO-265 shipped the preservation stack (mirror verify/baseline, sealed snapshots, restore link test) as three standalone CLI tools with no backend routes and no GUI. Add a service layer + API so the stack is driveable from the app: single-instance background job runner, progress + cooperative cancellation, snapshot/report inventory; and a Preservation tab in ScreenScraper (curator-gated /scraper, which already owns the mirror these tools operate on).
+Shipped 2026-07-23 in two commits. backend/preservation.py: single-instance job runner (verify/baseline/linkcheck/snapshot) on a daemon thread, crawler-shaped pollable status, snapshot inventory (manifest stats + seal, no re-hashing) and report list/reader with traversal-checked paths. The three tools gained optional progress_cb/should_stop hooks (back-compatible defaults); cancelling a snapshot deletes its partial directory. Routes /api/preservation/{start,status,stop,snapshots,reports,report}. GUI: Preservation tab in ScreenScraper with job chips + per-job options, Run/Stop, live progress, per-job result StatGrid, Open report, and a Snapshots-on-disk table. 19 new tests; full backend suite 983 passed; gui-check green; verified in Electron with a GUI-driven 504-page link check.
+
 TODO-265: Preservation stack — mirror verification, sealed snapshots, restore test (FABLE_PRESERVATION_STACK.md)
 Priority: High
 Status: Done
