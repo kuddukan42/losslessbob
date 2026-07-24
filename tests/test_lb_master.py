@@ -142,6 +142,12 @@ class TestMigrateLbMaster:
         _seed_checksums(conn, [1])
         _seed_entries(conn, [(1, "ok"), (99, "missing")])
         db.migrate_lb_master(db_path)
+        # init_db() fires a background migrate_lb_master(wait=False) that may win
+        # the race and populate lb_master first, making the synchronous call above
+        # short-circuit on its `existing > 0` guard and return before the async
+        # tombstone DELETE has drained. Flush the FIFO write queue so any pending
+        # DELETE is committed before we assert.
+        db.get_write_queue().execute(lambda c: None)
         missing_rows = conn.execute(
             "SELECT COUNT(*) FROM entries WHERE status='missing'"
         ).fetchone()[0]
