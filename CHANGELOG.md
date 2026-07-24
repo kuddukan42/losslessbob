@@ -1,3 +1,28 @@
+[2026-07-24] — feat: Saved smart views — named Library filter sets in the sidebar (TODO-269)
+Added: gui_next/.../lib/libraryRows.ts: shared Library recording data layer extracted
+  out of ScreenLibrary — RecordingRow + filter types/helpers (VALID_RATINGS,
+  RATING_RANK, extractYear, decadeOf, HEALTH_CHECK), buildRecordingRows(),
+  useLibraryRows(enabled), Set-based filterRecordingRows()/filtersToSets(), and
+  countForView() for the sidebar badges, so screen and sidebar count identically.
+Added: gui_next/.../lib/libraryFilterStore.ts: the persisted Library filter store
+  moved out of ScreenLibrary (so the sidebar can drive it) plus
+  snapshotRecordingFilters() / applyRecordingFilters() / hasRecordingFilters().
+Added: gui_next/.../lib/savedViewsStore.ts: persisted useSavedViewsStore
+  (localStorage key lbb-saved-views) — views[] with add/rename/remove.
+Added: gui_next/.../components/SavedViews.tsx: sidebar "Saved Views" section —
+  click applies the view's filters and jumps to the Library, hover reveals
+  rename/delete, badge shows a live recording count; hidden when no views exist.
+Added: gui_next/.../screens/ScreenLibrary.tsx: ⭐ "Save view" toolbar button
+  (recording lens, shown once a filter is active) + naming modal with a suggested
+  name built from the active filters; ~230 duplicated lines dropped in favour of
+  the shared modules above.
+Fixed: gui_next/.../components/AppShell.tsx: the SavedViews section rendered after
+  every nav group, which put it below the fold of the scrollable sidebar — it was
+  in the DOM but never visible. Now rendered inside the Library group, where the
+  views belong.
+Changed: gui_next/.../locales/*.json: new savedViews.* namespace (en) + de/fr/es/it/nl
+  via DeepL (6,232 chars this run).
+
 [2026-07-24] — fix: deterministic tombstone-migrate test (CI flake)
 Fixed: tests/test_lb_master.py: test_migrate_deletes_tombstones raced init_db()'s
   fire-and-forget migrate_lb_master(wait=False) backfill — when the background
