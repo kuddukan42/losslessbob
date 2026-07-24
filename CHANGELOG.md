@@ -1,3 +1,11 @@
+[2026-07-24] — fix: deterministic tombstone-migrate test (CI flake)
+Fixed: tests/test_lb_master.py: test_migrate_deletes_tombstones raced init_db()'s
+  fire-and-forget migrate_lb_master(wait=False) backfill — when the background
+  migrate populated lb_master first, the test's synchronous call short-circuited
+  on its existing>0 guard and returned before the async tombstone DELETE drained,
+  intermittently asserting 1==0 on loaded CI runners. Flush the FIFO write queue
+  before asserting.
+
 [2026-07-24] — feat: Timeline navigator — zoomable Decade→Tour→Night grid (TODO-268)
 Added: backend/timeline.py: live-computed timeline rollup (get_summary /
   get_decade_detail / get_tour_detail), mirroring gap_analysis.py — concert-only
