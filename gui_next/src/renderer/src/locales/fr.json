@@ -55,7 +55,8 @@
       "tapematch": "TapeMatch",
       "songs": "Chansons",
       "fingerprint": "Empreinte digitale",
-      "gaps": "Lacunes"
+      "gaps": "Lacunes",
+      "fileintegrity": "Intégrité des fichiers"
     },
     "statusBar": {
       "db": "DB :",

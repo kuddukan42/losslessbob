@@ -55,7 +55,8 @@
       "tapematch": "TapeMatch",
       "songs": "Songs",
       "fingerprint": "Fingerabdruck",
-      "gaps": "Lücken"
+      "gaps": "Lücken",
+      "fileintegrity": "Dateiintegrität"
     },
     "statusBar": {
       "db": "DB:",
