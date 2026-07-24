@@ -151,7 +151,7 @@ class _Sink:
         self._verified: list[tuple[int, str]] = []
         self._flagged: list[tuple[str, int, str]] = []
 
-    def _baseline(self, rel: str, lb_number: int | None, h: dict) -> None:
+    def baseline(self, rel: str, lb_number: int | None, h: dict) -> None:
         """Queue a full row write for a new or legitimately-changed file."""
         self._upserts.append({
             "mount_id": self.mount_id, "rel_path": rel, "lb_number": lb_number,
@@ -179,7 +179,7 @@ class _Sink:
 
         if row is None:
             self.counts["files_new"] += 1
-            self._baseline(rel, lb_number, h)
+            self.baseline(rel, lb_number, h)
         elif h["xxh3"] == row["xxh3"]:
             self.counts["files_ok"] += 1
             self._verified.append((self.mount_id, rel))
@@ -199,7 +199,7 @@ class _Sink:
         else:
             # Size or mtime moved too: a legitimate edit (retag, replace).
             self.counts["files_changed"] += 1
-            self._baseline(rel, lb_number, h)
+            self.baseline(rel, lb_number, h)
             database.log_integrity_event(
                 lb_number or 0, str(full), "file_changed",
                 f"file edited since baseline — re-hashed (xxh3 {h['xxh3']})",
@@ -633,6 +633,61 @@ def verify_batch(
 
     _log_result("verify(rolling)", mount_id, final_status, counts)
     return counts
+
+
+def rebaseline(mount_id: int, rel_paths: list[str]) -> dict[str, Any]:
+    """Re-hash specific files and accept their current content as the baseline.
+
+    A file flagged ``rot`` keeps reporting rot forever, because the stored hash
+    is deliberately left pointing at the known-good content so a restore can be
+    confirmed against it. This is the explicit "I have dealt with it" action —
+    after re-sourcing a file, or after deciding the change was intentional.
+
+    Deliberately manual: nothing in the scan path calls this, or rot would
+    silently launder itself into a new baseline.
+
+    Args:
+        mount_id: Mount the files belong to.
+        rel_paths: Inventory keys (paths relative to the mount root).
+
+    Returns:
+        Dict with ``rebaselined``, ``missing`` and ``unreadable`` counts and a
+        ``failed`` list of (rel_path, reason) pairs.
+
+    Raises:
+        ValueError: If the mount is unknown.
+        FileNotFoundError: If the mount root is not present (disk offline).
+    """
+    _mount, mount_root = _resolve_mount(mount_id)
+    known = database.get_file_inventory_rows(mount_id)
+    lb_index = _lb_index(mount_root)
+    sink = _Sink(mount_id)
+    failed: list[tuple[str, str]] = []
+    done = 0
+
+    for rel in rel_paths:
+        full = mount_root / rel
+        row = known.get(rel)
+        try:
+            h = hash_file(full)
+        except OSError as exc:
+            failed.append((rel, str(exc)))
+            continue
+        lb_number = (
+            row["lb_number"] if row and row["lb_number"] is not None
+            else _resolve_lb(full, mount_root, lb_index)
+        )
+        sink.baseline(rel, lb_number, h)
+        done += 1
+        database.log_integrity_event(
+            lb_number or 0, str(full), "file_rebaselined",
+            f"baseline accepted by operator — xxh3 {h['xxh3']}", mount_id,
+        )
+
+    sink.flush(force=True)
+    _log.info("file_integrity: re-baselined %s file(s) on mount %s (%s failed)",
+              done, mount_id, len(failed))
+    return {"rebaselined": done, "failed": failed}
 
 
 def start_scan(

@@ -630,6 +630,7 @@ def create_app() -> Flask:
     scheduler.start_file_watcher()
     scheduler.start_collection_watcher()
     scheduler.start_integrity_scan_scheduler()
+    scheduler.start_file_verify_scheduler()
     _slog.t("Flask: routes registering")
 
     # ── Checksum Lookup ──────────────────────────────────────────────────────
@@ -944,7 +945,9 @@ def create_app() -> Flask:
                         "force_scrape", "search_page_size", "github_repo", "data_zip_url",
                         "qbt_host", "qbt_port", "qbt_category", "qbt_tags",
                         "tracker_list", "wtrf_board_id", "ui_language",
-                        "pipeline_file_mode", "integrity_scan_interval_hours"]
+                        "pipeline_file_mode", "integrity_scan_interval_hours",
+                        "file_verify_enabled", "file_verify_interval_hours",
+                        "file_verify_budget_seconds", "file_verify_files_per_mount"]
                 result = {k: database.get_meta(k) for k in keys}
                 # Return "set" or "" for web_password — never expose the actual value
                 result["web_password"] = "set" if database.get_meta("web_password") else ""
@@ -7355,6 +7358,133 @@ def create_app() -> Flask:
                 status=status or None,
             )
             return jsonify({"status": rows})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── File-level integrity / bit-rot inventory (TODO-267) ───────────────────
+    # Distinct from /api/collection/integrity/* above: that one is per-LB and
+    # lbdir-manifest-driven, this one is per-file across every file on a mount.
+
+    @app.route("/api/file-integrity/scan", methods=["POST"])
+    def file_integrity_scan_start() -> Response:
+        """Start a background file-integrity scan on one mount.
+
+        Body: {mount_id: int, mode: "index"|"verify"|"rolling",
+               max_seconds?: number, limit?: int}
+
+        One scan per mount; different mounts may scan concurrently since they
+        are separate spindles. Returns 409 if that mount is already scanning.
+        """
+        try:
+            from backend import file_integrity
+            data = request.get_json(silent=True) or {}
+            mount_id = data.get("mount_id")
+            if mount_id is None:
+                return jsonify({"error": "mount_id is required"}), 400
+            mode = data.get("mode", "index")
+            if mode not in ("index", "verify", "rolling"):
+                return jsonify({"error": f"invalid mode {mode!r}"}), 400
+            max_seconds = data.get("max_seconds")
+            limit = data.get("limit")
+            started = file_integrity.start_scan(
+                int(mount_id), mode,
+                max_seconds=float(max_seconds) if max_seconds else None,
+                limit=int(limit) if limit else None,
+            )
+            if not started:
+                return jsonify({
+                    "ok": False, "error": "A scan is already running on this mount",
+                }), 409
+            return jsonify({"ok": True})
+        except (ValueError, FileNotFoundError) as e:
+            return jsonify({"error": str(e)}), 400
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/file-integrity/scan/cancel", methods=["POST"])
+    def file_integrity_scan_cancel() -> Response:
+        """Request cancellation of a running scan. Body: {mount_id: int}."""
+        try:
+            from backend import file_integrity
+            data = request.get_json(silent=True) or {}
+            mount_id = data.get("mount_id")
+            if mount_id is None:
+                return jsonify({"error": "mount_id is required"}), 400
+            return jsonify({"ok": file_integrity.cancel_scan(int(mount_id))})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/file-integrity/status", methods=["GET"])
+    def file_integrity_status() -> Response:
+        """Return live scan progress. Query param: mount_id (optional, else all)."""
+        try:
+            from backend import file_integrity
+            mount_id = request.args.get("mount_id")
+            return jsonify(file_integrity.get_status(
+                int(mount_id) if mount_id else None
+            ))
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/file-integrity/summary", methods=["GET"])
+    def file_integrity_summary() -> Response:
+        """Return per-mount file counts by status, for GUI badges."""
+        try:
+            return jsonify(database.get_file_integrity_summary())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/file-integrity/problems", methods=["GET"])
+    def file_integrity_problems() -> Response:
+        """Return files flagged as anything but ok, rot first.
+
+        Query params: limit (default 200), status (optional filter).
+        """
+        try:
+            limit = int(request.args.get("limit", 200))
+            status = request.args.get("status")
+            return jsonify({
+                "problems": database.get_file_integrity_problems(
+                    limit=limit, status=status or None
+                )
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/file-integrity/history", methods=["GET"])
+    def file_integrity_history() -> Response:
+        """Return recent scan runs. Query params: mount_id (optional), limit."""
+        try:
+            mount_id = request.args.get("mount_id")
+            limit = int(request.args.get("limit", 20))
+            return jsonify({
+                "history": database.get_file_scan_history(
+                    mount_id=int(mount_id) if mount_id else None, limit=limit
+                )
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/file-integrity/rebaseline", methods=["POST"])
+    def file_integrity_rebaseline() -> Response:
+        """Accept current content as the new baseline for specific files.
+
+        Body: {mount_id: int, rel_paths: [str]}
+
+        Only ever operator-driven: a rot flag is sticky precisely so it cannot
+        launder itself into a new baseline during a scan. Use after re-sourcing
+        a corrupt file, or when the change was known-good.
+        """
+        try:
+            from backend import file_integrity
+            data = request.get_json(silent=True) or {}
+            mount_id = data.get("mount_id")
+            rel_paths = data.get("rel_paths") or []
+            if mount_id is None or not rel_paths:
+                return jsonify({"error": "mount_id and rel_paths are required"}), 400
+            return jsonify(file_integrity.rebaseline(int(mount_id), list(rel_paths)))
+        except (ValueError, FileNotFoundError) as e:
+            return jsonify({"error": str(e)}), 400
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 

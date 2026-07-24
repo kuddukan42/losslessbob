@@ -5117,16 +5117,27 @@ def finish_file_scan(
 
 
 def get_file_scan_history(
-    mount_id: int | None = None, limit: int = 20, db_path=None
+    mount_id: int | None = None, limit: int = 20, mode: str | None = None,
+    db_path=None,
 ) -> list[dict]:
     """Return recent file_integrity_scans rows, newest first.
 
     Args:
         mount_id: If given, only scans for this mount.
         limit: Maximum rows.
+        mode: If given, only scans of this mode ('index' or 'verify'). The
+            rolling scheduler filters on this so a manual index scan does not
+            reset its "when did we last deep-verify" clock.
     """
-    clause = "WHERE mount_id=?" if mount_id is not None else ""
-    params: list = [mount_id] if mount_id is not None else []
+    where = []
+    params: list = []
+    if mount_id is not None:
+        where.append("mount_id=?")
+        params.append(mount_id)
+    if mode is not None:
+        where.append("mode=?")
+        params.append(mode)
+    clause = f"WHERE {' AND '.join(where)}" if where else ""
     with get_connection(db_path) as conn:
         rows = conn.execute(
             f"SELECT * FROM file_integrity_scans {clause} "
