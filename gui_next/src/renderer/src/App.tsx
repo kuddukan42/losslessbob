@@ -18,6 +18,7 @@ import { ScreenHome } from './screens/ScreenHome'
 import { ScreenPipeline } from './screens/ScreenPipeline'
 import { ScreenSetup } from './screens/ScreenSetup'
 import { ScreenMounts } from './screens/ScreenMounts'
+import { ScreenFileIntegrity } from './screens/ScreenFileIntegrity'
 import { ScreenCollection } from './screens/ScreenCollection'
 import { ScreenSearch } from './screens/ScreenSearch'
 import { ScreenBootlegs } from './screens/ScreenBootlegs'
@@ -366,6 +367,7 @@ export default function App(): React.JSX.Element {
           <Route path="/fingerprint" element={<CuratorRoute element={<ScreenFingerprint />} />} />
           <Route path="/setup"       element={<ScreenSetup />} />
           <Route path="/mounts"      element={<ScreenMounts />} />
+          <Route path="/fileintegrity" element={<ScreenFileIntegrity />} />
           <Route path="/themes"      element={<ScreenThemes />} />
         </Routes>
       </AppShell>
