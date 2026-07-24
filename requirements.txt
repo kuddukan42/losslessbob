@@ -11,6 +11,11 @@ keyring==25.7.0
 # File watching
 watchdog==4.0.1
 
+# Fast non-cryptographic hashing (file-level integrity / bit-rot scans, TODO-267).
+# Was previously present only as a transitive dep of pybloom_live — pinned
+# directly now that backend/file_integrity.py imports it.
+xxhash==3.7.0
+
 waitress==3.0.0
 
 # Audio processing (Concert Ranker)
