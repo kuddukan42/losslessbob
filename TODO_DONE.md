@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-267: File-level collection integrity — per-file bit-rot inventory
+Priority: Medium
+Status: Done
+Added: 2026-07-23
+Closed: 2026-07-23
+Description: Durable per-file xxh3_128 + sha256 inventory over every file on every mount, to detect bit rot / silent corruption that stat-keyed caches (pipeline_file_hash) and the lbdir-manifest monitor (collection_integrity_status) cannot see. Index mode (stat-skip) + Deep Verify mode (full re-read) + nightly rolling verify (oldest-last_verified first). Backend engine, API, scheduler, GUI screen.
+Shipped in 3 bites: (1) backend/file_integrity.py engine + file_inventory/file_integrity_scans tables + db helpers; (2) /api/file-integrity/* routes + opt-in rolling-verify scheduler (file_verify_* meta); (3) File Integrity GUI screen. 16 backend tests, gui-check + /verify --electron green. Measured ~125 MB/s on real mounts → deep verify ~15h/mount, hence the rolling nightly slice.
+
 TODO-266: GUI for the preservation stack — Preservation tab + /api/preservation service layer
 Priority: Medium
 Status: Done
