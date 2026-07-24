@@ -51,7 +51,8 @@ Follow every session. No asking.
 
 ## Code Rules
 
-- Python 3.11+, PEP 8, 4-space indent, max 100 chars/line.
+- Max 100 chars/line — ruff's E501 is suppressed in `pyproject.toml`, so this is
+  not mechanically enforced.
 - Type hints + Google-style docstrings on all new public functions/classes.
 - No `print()` — use `logging`. No hardcoded paths outside module constants.
 - SQLite changes: `CREATE TABLE IF NOT EXISTS` + `PRAGMA table_info` column-existence
@@ -80,8 +81,6 @@ automatically when working there; don't duplicate them here.
 
 - First question: "is the running process the latest code?" Restart or
   version-check before deep investigation.
-- Find root cause before fixing. State hypothesis, verify with logs/tests.
-- Multi-symptom bug? Look for one shared root cause.
 - "Still didn't work" → don't retry same fix. Re-read error, find different cause.
 - Encoding/filename bugs: check BOTH Unicode normalization (curly vs straight
   apostrophes) AND Windows-1252 bytes (`\x92` etc). Legacy md5/checksum files
