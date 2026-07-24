@@ -92,6 +92,8 @@ USER_TABLES = (
     "tapematch_pairs",
     "pipeline_file_hash",
     "pipeline_folder_state",
+    "file_inventory",
+    "file_integrity_scans",
     "song_canonical",
     "song_performances",
     "setlist_fingerprint_suggestions",
@@ -886,6 +888,57 @@ CREATE TABLE IF NOT EXISTS collection_integrity_scans (
     error                 TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_ciscans_mount ON collection_integrity_scans(mount_id, started_at DESC);
+
+-- ── File-level integrity inventory (TODO-267) ──────────────────────────────
+-- Durable per-file hash record for EVERY file under a collection mount — not a
+-- stat-keyed cache like pipeline_file_hash. Bit rot does not touch mtime, so a
+-- cache that skips on matching (size, mtime) can never detect it; this table
+-- keeps the hash so a later full re-read can be compared against it.
+-- Both hashes come from ONE read pass: xxh3_128 is the rot workhorse, sha256
+-- exists to cross-check findings against `checksums` / lbdir manifests /
+-- site_inventory.local_sha256. Reads are ~181 MB/s, both hashes >2 GB/s, so
+-- the second digest is free.
+CREATE TABLE IF NOT EXISTS file_inventory (
+    mount_id      INTEGER NOT NULL REFERENCES collection_mounts(id) ON DELETE CASCADE,
+    rel_path      TEXT NOT NULL,      -- posix-style, relative to mounts.root_path
+    lb_number     INTEGER,            -- owning LB folder, when resolvable
+    size          INTEGER NOT NULL,
+    mtime         REAL NOT NULL,
+    xxh3          TEXT NOT NULL,      -- xxh3_128 hex — primary rot detector
+    sha256        TEXT,               -- interop digest (nullable for old rows)
+    status        TEXT NOT NULL DEFAULT 'ok',  -- ok|rot|changed|missing|unreadable
+    first_seen    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_hashed   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- content last read
+    last_verified TIMESTAMP,          -- last deep verify that MATCHED (drives rolling)
+    PRIMARY KEY (mount_id, rel_path)
+);
+-- Rolling deep-verify picks the oldest last_verified first; NULLs sort first in
+-- SQLite ASC, so never-verified files are naturally at the head of the queue.
+CREATE INDEX IF NOT EXISTS idx_finv_verify ON file_inventory(mount_id, last_verified);
+CREATE INDEX IF NOT EXISTS idx_finv_status ON file_inventory(status) WHERE status != 'ok';
+CREATE INDEX IF NOT EXISTS idx_finv_lb ON file_inventory(lb_number);
+CREATE INDEX IF NOT EXISTS idx_finv_sha ON file_inventory(sha256);
+
+CREATE TABLE IF NOT EXISTS file_integrity_scans (
+    id               INTEGER PRIMARY KEY AUTOINCREMENT,
+    mount_id         INTEGER REFERENCES collection_mounts(id) ON DELETE CASCADE,
+    mode             TEXT NOT NULL,   -- index | verify
+    status           TEXT NOT NULL DEFAULT 'running',
+    started_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    finished_at      TIMESTAMP,
+    files_seen       INTEGER DEFAULT 0,
+    files_hashed     INTEGER DEFAULT 0,
+    files_new        INTEGER DEFAULT 0,
+    files_ok         INTEGER DEFAULT 0,
+    files_rot        INTEGER DEFAULT 0,
+    files_changed    INTEGER DEFAULT 0,
+    files_missing    INTEGER DEFAULT 0,
+    files_unreadable INTEGER DEFAULT 0,
+    bytes_hashed     INTEGER DEFAULT 0,
+    error            TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_fiscans_mount
+    ON file_integrity_scans(mount_id, started_at DESC);
 
 -- ── Concert Ranker (audio quality) — USER-tier derived data ──────────────────
 -- Quality data is the user's own analysis of their own copies. RAW aggregated
@@ -4838,6 +4891,248 @@ def get_integrity_scan_history(
                 "WHERE mount_id=? ORDER BY started_at DESC LIMIT ?",
                 (mount_id, limit),
             ).fetchall()
+    return [dict(r) for r in rows]
+
+
+# ── File-level integrity inventory (TODO-267) ────────────────────────────────
+
+def get_file_inventory_rows(mount_id: int, db_path=None) -> dict[str, dict]:
+    """Return every file_inventory row for a mount, keyed by rel_path.
+
+    Loaded once per scan so the walk can diff against it in memory — 16k folders
+    means hundreds of thousands of rows, and a per-file SELECT would dominate the
+    scan's runtime.
+
+    Args:
+        mount_id: collection_mounts.id to load.
+
+    Returns:
+        Mapping of rel_path -> row dict.
+    """
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT * FROM file_inventory WHERE mount_id=?", (mount_id,)
+        ).fetchall()
+    return {r["rel_path"]: dict(r) for r in rows}
+
+
+def upsert_file_inventory(records: list[dict], db_path=None) -> None:
+    """Insert or update a batch of file_inventory rows in one transaction.
+
+    Batched deliberately: a per-file write-queue round trip would make a
+    whole-collection index scan far slower than the disk reads it wraps.
+
+    ``first_seen`` is preserved across updates via COALESCE on the existing row.
+    ``last_verified`` is only advanced when the caller passes it — an index-mode
+    scan records content it has not compared, so it must not claim a verify.
+
+    Args:
+        records: Dicts with keys mount_id, rel_path, lb_number, size, mtime,
+            xxh3, sha256, status, and optionally last_verified (ISO string).
+    """
+    if not records:
+        return
+
+    def _run(c):
+        c.executemany(
+            "INSERT INTO file_inventory "
+            "(mount_id, rel_path, lb_number, size, mtime, xxh3, sha256, status, "
+            " first_seen, last_hashed, last_verified) "
+            "VALUES (:mount_id, :rel_path, :lb_number, :size, :mtime, :xxh3, :sha256, "
+            "        :status, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, :last_verified) "
+            "ON CONFLICT(mount_id, rel_path) DO UPDATE SET "
+            "  lb_number=excluded.lb_number, size=excluded.size, mtime=excluded.mtime, "
+            "  xxh3=excluded.xxh3, sha256=excluded.sha256, status=excluded.status, "
+            "  last_hashed=CURRENT_TIMESTAMP, "
+            "  last_verified=COALESCE(excluded.last_verified, file_inventory.last_verified)",
+            [{"last_verified": None, **r} for r in records],
+        )
+
+    get_write_queue().execute(_run)
+
+
+def touch_file_inventory_verified(keys: list[tuple[int, str]], db_path=None) -> None:
+    """Mark a batch of files as verified-now without rewriting their hashes.
+
+    The hot path of a deep verify: the file matched, so only last_verified moves.
+
+    Args:
+        keys: (mount_id, rel_path) pairs that verified clean.
+    """
+    if not keys:
+        return
+    get_write_queue().execute(
+        lambda c: c.executemany(
+            "UPDATE file_inventory SET last_verified=CURRENT_TIMESTAMP, status='ok' "
+            "WHERE mount_id=? AND rel_path=?",
+            keys,
+        )
+    )
+
+
+def mark_file_inventory_status(
+    updates: list[tuple[str, int, str]], db_path=None
+) -> None:
+    """Set the status column for a batch of files.
+
+    Args:
+        updates: (status, mount_id, rel_path) tuples.
+    """
+    if not updates:
+        return
+    get_write_queue().execute(
+        lambda c: c.executemany(
+            "UPDATE file_inventory SET status=? WHERE mount_id=? AND rel_path=?",
+            updates,
+        )
+    )
+
+
+def delete_file_inventory_rows(keys: list[tuple[int, str]], db_path=None) -> None:
+    """Remove file_inventory rows whose files are confirmed gone.
+
+    Only called when the caller has decided a disappearance is legitimate; the
+    default for an unexpectedly missing file is status='missing', not deletion.
+
+    Args:
+        keys: (mount_id, rel_path) pairs to delete.
+    """
+    if not keys:
+        return
+    get_write_queue().execute(
+        lambda c: c.executemany(
+            "DELETE FROM file_inventory WHERE mount_id=? AND rel_path=?", keys
+        )
+    )
+
+
+def get_rolling_verify_batch(
+    mount_id: int, limit: int, db_path=None
+) -> list[dict]:
+    """Return the files most overdue for a deep verify on one mount.
+
+    Never-verified rows (last_verified IS NULL) sort first under SQLite's ASC
+    NULL ordering, so a fresh baseline drains before anything is re-checked.
+
+    Args:
+        mount_id: Mount to draw from.
+        limit: Maximum rows to return.
+    """
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT * FROM file_inventory WHERE mount_id=? AND status != 'missing' "
+            "ORDER BY last_verified ASC LIMIT ?",
+            (mount_id, limit),
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_file_integrity_summary(db_path=None) -> dict[int, dict[str, int]]:
+    """Return per-mount file counts by status, for GUI badges.
+
+    Returns:
+        Mapping of mount_id -> {status: count}.
+    """
+    summary: dict[int, dict[str, int]] = {}
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT mount_id, status, COUNT(*) AS n, "
+            "       COALESCE(SUM(size), 0) AS bytes "
+            "FROM file_inventory GROUP BY mount_id, status"
+        ).fetchall()
+    for r in rows:
+        summary.setdefault(r["mount_id"], {})[r["status"]] = r["n"]
+        summary[r["mount_id"]]["bytes"] = summary[r["mount_id"]].get("bytes", 0) + r["bytes"]
+    return summary
+
+
+def get_file_integrity_problems(
+    limit: int = 200, status: str | None = None, db_path=None
+) -> list[dict]:
+    """Return files currently flagged as anything other than ok, worst first.
+
+    Args:
+        limit: Maximum rows.
+        status: If given, restrict to this one status.
+    """
+    clause = "status=?" if status else "status != 'ok'"
+    params: list = [status] if status else []
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            f"SELECT * FROM file_inventory WHERE {clause} "
+            "ORDER BY CASE status WHEN 'rot' THEN 0 WHEN 'unreadable' THEN 1 "
+            "         WHEN 'missing' THEN 2 ELSE 3 END, rel_path LIMIT ?",
+            (*params, limit),
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def record_file_scan_start(mount_id: int, mode: str, db_path=None) -> int:
+    """Insert a file_integrity_scans row in 'running' state.
+
+    Args:
+        mount_id: Mount being scanned.
+        mode: 'index' (stat-skip) or 'verify' (full re-read).
+
+    Returns:
+        The new scan row's id.
+    """
+    return get_write_queue().execute(
+        lambda c: c.execute(
+            "INSERT INTO file_integrity_scans(mount_id, mode, status) "
+            "VALUES(?,?,'running')",
+            (mount_id, mode),
+        ).lastrowid
+    )
+
+
+_FILE_SCAN_COUNTS = (
+    "files_seen", "files_hashed", "files_new", "files_ok", "files_rot",
+    "files_changed", "files_missing", "files_unreadable", "bytes_hashed",
+)
+
+
+def finish_file_scan(
+    scan_id: int, status: str, counts: dict[str, int], error: str | None = None,
+    db_path=None,
+) -> None:
+    """Mark a file_integrity_scans row finished and record its aggregate counts.
+
+    Args:
+        scan_id: Row id from record_file_scan_start.
+        status: Final status — done, partial (stopped by a budget), cancelled,
+            or error. Only 'done' means the pass was complete enough for
+            missing-file detection to be trustworthy.
+        counts: Keys from _FILE_SCAN_COUNTS; missing keys default to 0.
+        error: Message when status == 'error'.
+    """
+    assignments = ", ".join(f"{c}=?" for c in _FILE_SCAN_COUNTS)
+    get_write_queue().execute(
+        lambda c: c.execute(
+            f"UPDATE file_integrity_scans SET status=?, finished_at=datetime('now'), "
+            f"{assignments}, error=? WHERE id=?",
+            (status, *(counts.get(k, 0) for k in _FILE_SCAN_COUNTS), error, scan_id),
+        )
+    )
+
+
+def get_file_scan_history(
+    mount_id: int | None = None, limit: int = 20, db_path=None
+) -> list[dict]:
+    """Return recent file_integrity_scans rows, newest first.
+
+    Args:
+        mount_id: If given, only scans for this mount.
+        limit: Maximum rows.
+    """
+    clause = "WHERE mount_id=?" if mount_id is not None else ""
+    params: list = [mount_id] if mount_id is not None else []
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            f"SELECT * FROM file_integrity_scans {clause} "
+            "ORDER BY started_at DESC LIMIT ?",
+            (*params, limit),
+        ).fetchall()
     return [dict(r) for r in rows]
 
 
