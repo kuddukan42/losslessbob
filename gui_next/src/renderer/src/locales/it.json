@@ -90,7 +90,8 @@
         "master_install": "Installazione del master in corso…",
         "sitedata_publish": "Pubblicazione dei dati del sito…",
         "sitedata_install": "Installazione dei dati del sito…",
-        "derived_recompute": "Ricalcolo dei dati derivati…"
+        "derived_recompute": "Ricalcolo dei dati derivati…",
+        "file_integrity": "Verifica dell'integrità dei file…"
       },
       "tray": {
         "title": "Attività",

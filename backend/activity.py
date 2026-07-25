@@ -325,6 +325,19 @@ _last_running: dict[str, bool] = {}
 _observed_started_at: dict[str, float] = {}
 _state_lock = threading.Lock()
 
+# ── file_integrity: a multi-job source, not a single-job adapter ──────────────
+# Unlike every worker in JOB_ADAPTERS (one status dict -> one job), file
+# integrity runs one worker *per mount* and scans several mounts in parallel
+# (separate spindles). So it can't ride the one-job-per-kind adapter table; it
+# is expanded into one activity record per running mount by
+# `_file_integrity_jobs()`. These two maps are its equivalent of
+# `_last_running`/`_observed_started_at`, keyed by mount id instead of kind, and
+# are mutated only under `_state_lock` (same as the adapter bookkeeping).
+_FILE_INTEGRITY_KIND = "file_integrity"
+_FILE_INTEGRITY_SCREEN = "/fileintegrity"
+_fi_last_running: dict[int, bool] = {}
+_fi_started_at: dict[int, float] = {}
+
 
 # ── SSE tee registry: presence for request-scoped jobs (spec §2 A2, §B2) ────
 # Request-scoped SSE streams (§1b) have no status route of their own — the
@@ -449,6 +462,100 @@ def _build_record(
     return record
 
 
+def _fi_record(
+    mount_id: int, raw: dict, *, state: str, finished_at: float | None = None,
+) -> dict:
+    """Assemble one normalized job record for a single mount's scan.
+
+    Args:
+        mount_id: Mount whose scan this record describes.
+        raw: The mount's live progress dict from ``file_integrity.get_status()``.
+        state: Normalized job state (``running`` or a terminal state).
+        finished_at: Unix finish time for terminal records.
+
+    Returns:
+        A §2 A1-shaped record. ``id`` is per-mount so concurrent scans of
+        different mounts never collide; ``kind`` stays constant so the tray
+        keeps a single i18n label and the per-mount detail rides ``progress``.
+    """
+    mode = raw.get("mode") or "index"
+    mode_label = "Deep verify" if mode == "verify" else "Indexing"
+    mount_label = raw.get("label") or f"mount {mount_id}"
+    record: dict = {
+        "id": f"{_FILE_INTEGRITY_KIND}-{mount_id}",
+        "kind": _FILE_INTEGRITY_KIND,
+        "state": state,
+        "screen": _FILE_INTEGRITY_SCREEN,
+    }
+    started_at = _fi_started_at.get(mount_id)
+    if started_at is not None:
+        record["started_at"] = started_at
+    if finished_at is not None:
+        record["finished_at"] = finished_at
+
+    progress: dict = {"label": f"{mount_label} · {mode_label}"}
+    counts = raw.get("counts") or {}
+    seen = counts.get("files_seen")
+    if isinstance(seen, int):
+        progress["current"] = seen
+    total = raw.get("total")
+    if isinstance(total, int) and total > 0:
+        progress["total"] = total
+    record["progress"] = progress
+
+    if state == "running":
+        record["cancel_route"] = (
+            f"/api/file-integrity/scan/cancel?mount_id={mount_id}"
+        )
+    return record
+
+
+def _file_integrity_jobs() -> tuple[list[dict], list[dict]]:
+    """Expand per-mount file-integrity scans into activity records.
+
+    Reads ``file_integrity.get_status()`` (a ``{mount_id: progress}`` map) and
+    turns each mount into at most one record, detecting the running->finished
+    edge per mount so a just-completed scan lands in history exactly once —
+    the multi-job analogue of the per-kind edge detection in :func:`snapshot`.
+    Must be called while holding ``_state_lock``.
+
+    Returns:
+        ``(running_records, newly_finished_records)``.
+    """
+    try:
+        from backend import file_integrity
+        all_status = file_integrity.get_status()
+    except Exception:
+        _log.warning(
+            "activity: file_integrity.get_status() raised, skipping", exc_info=True,
+        )
+        return [], []
+
+    running: list[dict] = []
+    finished: list[dict] = []
+    now = time.time()
+    for mount_id, raw in all_status.items():
+        is_running = bool(raw.get("running"))
+        was_running = _fi_last_running.get(mount_id, False)
+        if is_running:
+            if not was_running:
+                _fi_started_at[mount_id] = now
+            running.append(_fi_record(mount_id, raw, state="running"))
+        elif was_running:
+            finished.append(_fi_record(
+                mount_id, raw, state=_terminal_state(raw), finished_at=now,
+            ))
+            _fi_started_at.pop(mount_id, None)
+        _fi_last_running[mount_id] = is_running
+
+    # Drop bookkeeping for mounts that dropped out of the status map entirely.
+    for mount_id in [m for m in _fi_last_running if m not in all_status]:
+        _fi_last_running.pop(mount_id, None)
+        _fi_started_at.pop(mount_id, None)
+
+    return running, finished
+
+
 def snapshot() -> dict:
     """Poll every adapter once and return the normalized §2 A1 shape.
 
@@ -501,6 +608,15 @@ def snapshot() -> dict:
                 _history.appendleft(record)
 
             _last_running[adapter.kind] = running
+
+        # file_integrity is a multi-job source (one worker per mount), so it is
+        # expanded separately rather than through the one-job-per-kind loop above.
+        fi_running, fi_finished = _file_integrity_jobs()
+        if fi_running:
+            busy = True
+            running_jobs.extend(fi_running)
+        for record in fi_finished:
+            _history.appendleft(record)
 
         history_jobs = list(_history)
 

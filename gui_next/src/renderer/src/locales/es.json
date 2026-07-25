@@ -90,7 +90,8 @@
         "master_install": "Instalando la versión maestra…",
         "sitedata_publish": "Publicando datos del sitio…",
         "sitedata_install": "Instalando los datos del sitio…",
-        "derived_recompute": "Recalculando datos derivados…"
+        "derived_recompute": "Recalculando datos derivados…",
+        "file_integrity": "Comprobando la integridad del archivo…"
       },
       "tray": {
         "title": "Actividad",
