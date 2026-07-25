@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-274: Gaps screen hangs on loading when a backend request fails
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenGaps.tsx
+Reported: 2026-07-24
+Fixed: 2026-07-24
+Root cause: fetch().then(r => r.json()) resolves for every HTTP status, so react-query never saw an error — isError stayed false and the components' loading branches rendered indefinitely.
+Fix: Added a fetchJson<T> helper in ScreenGaps.tsx that throws on !res.ok, and wired the three queries' isError/refetch into real error surfaces: GapsError (terminal, with retry, kept distinct from GapsUnavailable which means the chronology isn't installed), a per-date error + retry in the detail pane, and a 'Failed to load' marker on year rows. New gaps.error.* / gaps.grid.error / gaps.detail.error keys translated for de/fr/es/it/nl.
+
 BUG-273: Scraper history tables misaligned — colgroup missing TR's leading edge-bar column
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenScraper.tsx:407,gui_next/src/renderer/src/screens/ScreenScraper.tsx:615
