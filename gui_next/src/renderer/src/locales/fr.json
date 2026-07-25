@@ -550,7 +550,9 @@
         "applied": "Appliqué",
         "applyFailed": "Échec de l'application",
         "retrieveFailed": "Récupération échouée",
-        "rescanFailed": "Échec de la nouvelle analyse"
+        "rescanFailed": "Échec de la nouvelle analyse",
+        "autoReconciled": "Réconciliation automatique de {{folder}} — Le répertoire LB est désormais valide",
+        "autoReconcilePartial": "Le rapprochement automatique n'a pas pu être effectué pour {{folder}} — votre intervention est encore nécessaire"
       },
       "rescan": "Rescanner"
     },
@@ -588,7 +590,9 @@
       "fail": "Échec",
       "failN": "Échec {{n}}",
       "noLbdir": "Pas de LBDIR"
-    }
+    },
+    "autoReconcile": "Rapprochement automatique",
+    "autoReconcileHint": "Lorsque cette option est activée, un dossier dont le répertoire de référence (LB dir) présente des fichiers manquants ou supplémentaires est automatiquement réconcilié (fichiers dont la somme MD5 correspond uniquement) puis revérifié — il passe au vert si tout correspond, et reste jaune dans le cas contraire."
   },
   "collection": {
     "confirmDialog": {

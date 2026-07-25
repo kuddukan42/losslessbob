@@ -550,7 +550,9 @@
         "applied": "Applicato",
         "applyFailed": "Applicazione non riuscita",
         "retrieveFailed": "Recupero non riuscito",
-        "rescanFailed": "Nuova scansione non riuscita"
+        "rescanFailed": "Nuova scansione non riuscita",
+        "autoReconciled": "{{folder}} riconciliato automaticamente — la directory LB ora supera il controllo",
+        "autoReconcilePartial": "La riconciliazione automatica non è riuscita a completare {{folder}} — è ancora necessario il tuo intervento"
       },
       "rescan": "Ripeti scansione"
     },
@@ -588,7 +590,9 @@
       "fail": "Errore",
       "failN": "Fallito {{n}}",
       "noLbdir": "Nessun LBDIR"
-    }
+    },
+    "autoReconcile": "Riconciliazione automatica",
+    "autoReconcileHint": "Quando questa opzione è attiva, una cartella il cui elenco di file (LB dir) rileva la presenza di file mancanti o in eccesso viene automaticamente riconciliata (solo per i file con hash MD5 corrispondente) e ricontrollata: diventa verde se tutto corrisponde e rimane gialla in caso contrario."
   },
   "collection": {
     "confirmDialog": {

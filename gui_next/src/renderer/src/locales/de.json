@@ -550,7 +550,9 @@
         "applied": "Angewendet",
         "applyFailed": "Anwendung fehlgeschlagen",
         "retrieveFailed": "Abruf fehlgeschlagen",
-        "rescanFailed": "Erneuter Scan fehlgeschlagen"
+        "rescanFailed": "Erneuter Scan fehlgeschlagen",
+        "autoReconciled": "Automatisch abgeglichenes {{folder}} — Das Verzeichnis „LB“ ist nun gültig",
+        "autoReconcilePartial": "Die automatische Abgleichung von {{folder}} konnte nicht abgeschlossen werden – hier ist noch Ihre Hilfe gefragt"
       },
       "rescan": "Erneut scannen"
     },
@@ -588,7 +590,9 @@
       "fail": "Fehlgeschlagen",
       "failN": "Fehler {{n}}",
       "noLbdir": "Kein LBDIR"
-    }
+    },
+    "autoReconcile": "Automatischer Abgleich",
+    "autoReconcileHint": "Wenn diese Funktion aktiviert ist, wird ein Ordner, dessen LB-Verzeichnis bei fehlenden oder überzähligen Dateien stoppt, automatisch abgeglichen (nur bei Dateien mit übereinstimmendem MD5-Hash) und erneut überprüft – die Anzeige wird grün, wenn alles übereinstimmt, und bleibt gelb, wenn dies nicht der Fall ist."
   },
   "collection": {
     "confirmDialog": {

@@ -550,7 +550,9 @@
         "applied": "Aplicado",
         "applyFailed": "Aplicación fallida",
         "retrieveFailed": "Recuperar lo que ha fallado",
-        "rescanFailed": "Error al reescanear"
+        "rescanFailed": "Error al reescanear",
+        "autoReconciled": "{{folder}} reconciliado automáticamente — El directorio LB ahora pasa la comprobación",
+        "autoReconcilePartial": "La conciliación automática no ha podido completarse en {{folder}} — todavía necesitamos tu ayuda"
       },
       "rescan": "Reescanear"
     },
@@ -588,7 +590,9 @@
       "fail": "Fallo",
       "failN": "Fallo {{n}}",
       "noLbdir": "Sin LBDIR"
-    }
+    },
+    "autoReconcile": "Reconciliación automática",
+    "autoReconcileHint": "Cuando está activada, una carpeta cuyo directorio LB detecte archivos que faltan o sobrantes se reconcilia automáticamente (solo archivos con coincidencia MD5) y se vuelve a comprobar: se vuelve verde si todo cuadra y permanece amarilla si no es así."
   },
   "collection": {
     "confirmDialog": {

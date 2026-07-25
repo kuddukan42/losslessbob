@@ -408,6 +408,8 @@
     "autoRunHint": "When on, dropped folders verify + look up automatically",
     "autoRename": "Auto-rename",
     "autoRenameHint": "When on, a confident single-match rename is applied automatically and the folder advances to Collect",
+    "autoReconcile": "Auto-reconcile",
+    "autoReconcileHint": "When on, a folder whose LB dir stops on missing or extra files is reconciled automatically (MD5-matched files only) and re-checked — it turns green if everything lines up, and stays yellow if it doesn't",
     "autoCollect": "Auto-collect",
     "autoCollectHint": "When on, folders that are fully green (verify, lookup, LB dir and rename all pass) are filed into the collection automatically — no File click needed",
     "applyAllReady": "Apply all {{count}} ready",
@@ -518,7 +520,9 @@
         "applied": "Applied",
         "applyFailed": "Apply failed",
         "retrieveFailed": "Retrieve failed",
-        "rescanFailed": "Re-scan failed"
+        "rescanFailed": "Re-scan failed",
+        "autoReconciled": "Auto-reconciled {{folder}} — LB dir now passes",
+        "autoReconcilePartial": "Auto-reconcile couldn't complete {{folder}} — still needs you"
       },
       "rescan": "Re-scan"
     },

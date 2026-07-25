@@ -35,6 +35,7 @@ interface LbdirCheckSummary {
   pass: number
   missing: number
   mismatch: number
+  extra?: number
 }
 
 interface StepResult {
@@ -1667,6 +1668,7 @@ export function ScreenPipeline(): React.JSX.Element {
   const [filter, setFilter]                 = useState<Bucket>('all')
   const [autorun, setAutorun]               = useState(true)
   const [autoRename, setAutoRename]         = useState(false)
+  const [autoReconcile, setAutoReconcile]   = useState(false)
   const [autoCollect, setAutoCollect]       = useState(false)
   const [tableSearch, setTableSearch]       = useState('')
   const [queueSearch, setQueueSearch]       = useState('')
@@ -1767,6 +1769,8 @@ export function ScreenPipeline(): React.JSX.Element {
   const autocompleteStarted  = useRef<Set<string>>(new Set())
   const pendingFetchAttempts = useRef<Map<string, number>>(new Map())
   const autoRenamedRef       = useRef<Set<string>>(new Set())
+  const autoReconciledRef    = useRef<Set<string>>(new Set())
+  const reconcilingRef       = useRef(false)
   const autoCollectedRef     = useRef<Set<string>>(new Set())
   const filingRef            = useRef(false)
   const autoBlockedRecheckRef = useRef<Set<string>>(new Set())
@@ -2050,6 +2054,94 @@ export function ScreenPipeline(): React.JSX.Element {
       }
     } catch { /* silent */ }
   }, [rows, mergeServerRow])
+
+  // ── Auto-reconcile ──────────────────────────────────────────────────────────
+  // Run the LBDIR reconcile for one row unattended: preview → apply the safe
+  // subset → re-run the lbdir step. "Safe subset" is deliberately narrower than
+  // what the manual panel offers: only MD5-matched rename/site-copy proposals
+  // are applied. Name-only matches are a different revision of the file, so
+  // renaming one turns a `missing` into a `mismatch` — i.e. it would take a
+  // yellow row red. Those stay for a human. Extras are always moved to
+  // /extras/ (a move inside the folder, reversible).
+  //
+  // Returns true when the row's lbdir step came back green.
+  const reconcileRowAuto = useCallback(async (row: PipelineRow): Promise<boolean> => {
+    const lbHint = row.steps.lookup.lb_number ?? null
+    const post = async (endpoint: string, body: object): Promise<unknown> => {
+      const r = await fetch(`${BASE}${endpoint}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      })
+      if (!r.ok) throw new Error(`HTTP ${r.status}`)
+      return r.json()
+    }
+
+    const prev = await post('/api/lbdir/reconcile', {
+      folders: [row.folderPath],
+      ...(lbHint !== null ? { lb_number_hint: lbHint } : {}),
+    }) as { results: ReconcileResult[] }
+    const rec = prev.results?.[0]
+    if (!rec) return false
+
+    const renames = (rec.proposals ?? [])
+      .filter((p: ReconcileProposal) => p.matched_by !== 'name')
+      .map((p: ReconcileProposal) => ({ from: p.disk_rel, to: p.lbdir_rel }))
+    const siteCopies = (rec.site_proposals ?? [])
+      .filter((p: SiteProposal) => p.matched_by !== 'name')
+      .map((p: SiteProposal) => ({ site_path: p.site_path, lbdir_rel: p.lbdir_rel }))
+    const extras = rec.unmatched_disk ?? []
+
+    // Nothing safely actionable — leave the row yellow, untouched.
+    if (!renames.length && !siteCopies.length && !extras.length) return false
+
+    if (renames.length || siteCopies.length)
+      await post('/api/lbdir/apply_reconcile', { folder: row.folderPath, renames, site_copies: siteCopies })
+    if (extras.length)
+      await post('/api/lbdir/move_extras', { folder: row.folderPath, files: extras })
+
+    // Re-run the lbdir step so the row repaints from the backend's own verdict
+    // (green if everything now lines up, still yellow otherwise).
+    const data = await post('/api/pipeline/run', {
+      folders: [row.folderPath], steps: ['lbdir'],
+    }) as { results: Record<string, unknown>[] }
+    if (!data.results?.[0]) return false
+    const fresh = serverRowToPipeline(data.results[0])
+    mergeServerRow(row.id, fresh, new Set(['lbdir']))
+    return fresh.steps?.lbdir.status === 'ok'
+  }, [mergeServerRow])
+
+  // When the toggle is on, every row whose LBDIR step lands yellow on missing
+  // or extra files gets one unattended reconcile attempt. Serialized through
+  // reconcilingRef (reconcile hashes every file in the folder — one folder at a
+  // time), and autoReconciledRef guards against re-attempting the same row.
+  useEffect(() => {
+    if (!autoReconcile) return
+    if (reconcilingRef.current) return
+    const candidates = rows.filter(r =>
+      !r.running &&
+      r.steps.lbdir.status === 'warn' &&
+      (r.steps.lbdir.check?.status === 'missing_files' || r.steps.lbdir.check?.status === 'extra_files') &&
+      !autoReconciledRef.current.has(r.id)
+    )
+    if (!candidates.length) return
+    reconcilingRef.current = true
+    void (async () => {
+      try {
+        for (const r of candidates) {
+          autoReconciledRef.current.add(r.id)
+          try {
+            const ok = await reconcileRowAuto(r)
+            showToast(
+              ok ? t('pipeline.lbdir.toast.autoReconciled', { folder: r.folderName })
+                 : t('pipeline.lbdir.toast.autoReconcilePartial', { folder: r.folderName }),
+              ok,
+            )
+          } catch { showToast(t('pipeline.lbdir.toast.reconcileFailed'), false) }
+        }
+      } finally { reconcilingRef.current = false }
+    })()
+  }, [rows, autoReconcile, reconcileRowAuto, showToast, t])
 
   // P8 (TODO-205 Ph.6): auto re-resolve a transiently-blocked row's file step
   // once per detail-panel open. Re-running ['lookup', 'file'] picks up fresh
@@ -2630,6 +2722,35 @@ export function ScreenPipeline(): React.JSX.Element {
             }} />
           </span>
           {t('pipeline.autoRename')}
+        </button>
+
+        {/* Auto-reconcile toggle */}
+        <button
+          onClick={() => setAutoReconcile(a => !a)}
+          title={t('pipeline.autoReconcileHint')}
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            padding: '5px 10px', borderRadius: 8,
+            cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap',
+            background: autoReconcile ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
+            border: `1px solid ${autoReconcile ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)'}`,
+            color: autoReconcile ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
+            fontSize: 12, fontWeight: 600,
+          }}
+        >
+          <span style={{
+            width: 26, height: 15, borderRadius: 999,
+            background: autoReconcile ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)',
+            position: 'relative', transition: 'background 120ms',
+          }}>
+            <span style={{
+              position: 'absolute', top: 2,
+              left: autoReconcile ? 13 : 2,
+              width: 11, height: 11, borderRadius: '50%',
+              background: '#fff', transition: 'left 120ms',
+            }} />
+          </span>
+          {t('pipeline.autoReconcile')}
         </button>
 
         {/* Auto-collect toggle */}
