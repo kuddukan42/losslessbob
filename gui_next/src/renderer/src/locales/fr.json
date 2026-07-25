@@ -1990,7 +1990,8 @@
     "grid": {
       "loading": "…",
       "yearGap_one": "{{count}} lacune",
-      "yearGap_other": "{{count}} lacunes"
+      "yearGap_other": "{{count}} lacunes",
+      "error": "Échec du chargement"
     },
     "detail": {
       "noSelection": "Sélectionnez une date pour découvrir ce que l'on sait à son sujet.",
@@ -2001,7 +2002,13 @@
       "familiesHeading": "Familles TapeMatch",
       "unknownVenue": "Lieu inconnu",
       "recording": "{{kind}}, {{mins}} min",
-      "none": "Aucun"
+      "none": "Aucun",
+      "error": "Impossible de charger cette date."
+    },
+    "error": {
+      "title": "Impossible de charger les données Gaps.",
+      "detail": "Le serveur ne répond pas. Vérifiez qu'il est bien en cours d'exécution, puis réessayez.",
+      "retry": "Réessayer"
     }
   },
   "palette": {

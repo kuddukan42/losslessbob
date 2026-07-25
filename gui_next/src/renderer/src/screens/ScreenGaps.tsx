@@ -13,6 +13,24 @@ import { Chip, Pill } from '../components'
 
 const BASE = window.api.flaskBase
 
+/**
+ * Fetch JSON from the backend, failing loudly on non-2xx.
+ *
+ * `fetch().then(r => r.json())` swallows two distinct failures: a 5xx that
+ * returns an HTML error page (json() throws a parse error) and a 4xx that
+ * returns a JSON body (parsed as if it were data). Both must reject so the
+ * caller's error branch renders instead of an endless loading state.
+ *
+ * @param path Backend path, e.g. `/api/gaps/summary`.
+ * @returns Parsed JSON body typed as `T`.
+ * @throws Error when the response status is not ok.
+ */
+async function fetchJson<T>(path: string): Promise<T> {
+  const res = await fetch(`${BASE}${path}`)
+  if (!res.ok) throw new Error(`${path} → HTTP ${res.status}`)
+  return res.json() as Promise<T>
+}
+
 // ── Types (mirror backend/gap_analysis.py route shapes) ──────────────────────
 
 type Coverage = 'covered' | 'partial' | 'gap' | 'future'
@@ -192,9 +210,9 @@ function YearRow({
   onSelectDate: (dateIso: string) => void
 }) {
   const { t } = useTranslation()
-  const { data } = useQuery<YearDetailResponse>({
+  const { data, isError } = useQuery<YearDetailResponse>({
     queryKey: ['gaps-year', year],
-    queryFn: () => fetch(`${BASE}/api/gaps/year/${year}`).then(r => r.json()),
+    queryFn: () => fetchJson<YearDetailResponse>(`/api/gaps/year/${year}`),
     staleTime: 60_000,
   })
   const dates = data?.dates ?? []
@@ -212,8 +230,11 @@ function YearRow({
         flex: 1, minWidth: 0, display: 'flex', flexWrap: 'wrap', gap: 3,
       }}>
         {dates.length === 0 ? (
-          <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>
-            {t('gaps.grid.loading')}
+          <span style={{
+            fontSize: 'var(--lbb-fs-10-5)',
+            color: isError ? 'var(--lbb-warn-fg)' : 'var(--lbb-fg3)',
+          }}>
+            {t(isError ? 'gaps.grid.error' : 'gaps.grid.loading')}
           </span>
         ) : dates.map(cell => (
           <DateCellButton
@@ -275,9 +296,9 @@ function DetailPane({
   const { t } = useTranslation()
   const [tab, setTab] = useState<DetailTab>('event')
 
-  const { data, isLoading } = useQuery<DateDetailResponse>({
+  const { data, isLoading, isError, refetch } = useQuery<DateDetailResponse>({
     queryKey: ['gaps-date', dateIso],
-    queryFn: () => fetch(`${BASE}/api/gaps/date/${dateIso}`).then(r => r.json()),
+    queryFn: () => fetchJson<DateDetailResponse>(`/api/gaps/date/${dateIso}`),
     enabled: !!dateIso,
   })
 
@@ -320,7 +341,14 @@ function DetailPane({
               {fmtDateLong(dateIso)}
             </div>
 
-            {isLoading || !data ? (
+            {isError ? (
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 8 }}>
+                <span style={{ color: 'var(--lbb-warn-fg)', fontSize: 'var(--lbb-fs-11-5)' }}>
+                  {t('gaps.detail.error')}
+                </span>
+                <RetryButton onClick={() => { void refetch() }} />
+              </div>
+            ) : isLoading || !data ? (
               <span style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11-5)' }}>{t('common.loading')}</span>
             ) : (
               <>
@@ -415,6 +443,51 @@ function DetailPane({
 
 // ── Empty state (olof_events absent) ──────────────────────────────────────────
 
+function RetryButton({ onClick }: { onClick: () => void }) {
+  const { t } = useTranslation()
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      style={{
+        display: 'inline-flex', alignItems: 'center', gap: 6,
+        padding: '5px 12px', borderRadius: 6,
+        background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+        fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg)',
+        cursor: 'pointer', fontFamily: 'inherit',
+      }}
+    >
+      {t('gaps.error.retry')}
+    </button>
+  )
+}
+
+/**
+ * Terminal error state for the whole screen — the summary request failed, so
+ * there is no year list to render. Kept visually distinct from
+ * `GapsUnavailable`, which means the chronology genuinely isn't installed;
+ * conflating the two told users their data was missing when the backend was
+ * merely unreachable.
+ */
+function GapsError({ onRetry }: { onRetry: () => void }) {
+  const { t } = useTranslation()
+  return (
+    <div style={{
+      flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',
+      justifyContent: 'center', gap: 12, padding: 40, textAlign: 'center',
+    }}>
+      <Icon name="x" size={36} style={{ opacity: 0.2, color: 'var(--lbb-warn-fg)' }} />
+      <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 600, maxWidth: 420 }}>
+        {t('gaps.error.title')}
+      </span>
+      <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', maxWidth: 420 }}>
+        {t('gaps.error.detail')}
+      </span>
+      <RetryButton onClick={onRetry} />
+    </div>
+  )
+}
+
 function GapsUnavailable() {
   const { t } = useTranslation()
   return (
@@ -437,9 +510,9 @@ export function ScreenGaps(): React.JSX.Element {
   const [selectedDecade, setSelectedDecade] = useState<number | null>(null)
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
 
-  const { data: summary, isLoading } = useQuery<SummaryResponse>({
+  const { data: summary, isLoading, isError, refetch } = useQuery<SummaryResponse>({
     queryKey: ['gaps-summary'],
-    queryFn: () => fetch(`${BASE}/api/gaps/summary`).then(r => r.json()),
+    queryFn: () => fetchJson<SummaryResponse>('/api/gaps/summary'),
     staleTime: 60_000,
   })
   const years = summary?.years ?? []
@@ -484,6 +557,8 @@ export function ScreenGaps(): React.JSX.Element {
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--lbb-fg3)' }}>
           {t('common.loading')}
         </div>
+      ) : isError ? (
+        <GapsError onRetry={() => { void refetch() }} />
       ) : !summary?.available ? (
         <GapsUnavailable />
       ) : (

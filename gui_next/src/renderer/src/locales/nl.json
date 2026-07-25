@@ -1990,7 +1990,8 @@
     "grid": {
       "loading": "…",
       "yearGap_one": "{{count}} hiaat",
-      "yearGap_other": "{{count}} hiaten"
+      "yearGap_other": "{{count}} hiaten",
+      "error": "Kan niet worden geladen"
     },
     "detail": {
       "noSelection": "Selecteer een datum om te zien wat erover bekend is.",
@@ -2001,7 +2002,13 @@
       "familiesHeading": "TapeMatch-families",
       "unknownVenue": "Onbekende locatie",
       "recording": "{{kind}}, {{mins}} min",
-      "none": "Geen"
+      "none": "Geen",
+      "error": "Deze datum kon niet worden geladen."
+    },
+    "error": {
+      "title": "De Gaps-gegevens konden niet worden geladen.",
+      "detail": "De backend reageerde niet. Controleer of deze actief is en probeer het vervolgens opnieuw.",
+      "retry": "Opnieuw proberen"
     }
   },
   "palette": {

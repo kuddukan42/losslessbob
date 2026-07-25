@@ -1819,13 +1819,20 @@
     "decades": {
       "all": "All"
     },
+    "error": {
+      "title": "Couldn't load the Gaps data.",
+      "detail": "The backend didn't respond. Check that it's running, then retry.",
+      "retry": "Retry"
+    },
     "grid": {
       "loading": "…",
+      "error": "Failed to load",
       "yearGap_one": "{{count}} gap",
       "yearGap_other": "{{count}} gaps"
     },
     "detail": {
       "noSelection": "Select a date to see what's known about it.",
+      "error": "Couldn't load this date.",
       "tabEvent": "Event & sources",
       "eventsHeading": "Event",
       "entriesHeading": "Circulating entries",
