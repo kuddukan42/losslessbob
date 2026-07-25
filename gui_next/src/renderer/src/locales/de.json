@@ -90,7 +90,8 @@
         "master_install": "Master wird installiert…",
         "sitedata_publish": "Daten der Website werden veröffentlicht…",
         "sitedata_install": "Website-Daten werden geladen…",
-        "derived_recompute": "Abgeleitete Daten werden neu berechnet…"
+        "derived_recompute": "Abgeleitete Daten werden neu berechnet…",
+        "file_integrity": "Dateiintegrität wird überprüft…"
       },
       "tray": {
         "title": "Aktivität",

@@ -90,7 +90,8 @@
         "master_install": "Master wordt geïnstalleerd…",
         "sitedata_publish": "Gegevens van de publicatiesite worden geladen…",
         "sitedata_install": "Sitegegevens worden geïnstalleerd…",
-        "derived_recompute": "Afgeleide gegevens worden opnieuw berekend…"
+        "derived_recompute": "Afgeleide gegevens worden opnieuw berekend…",
+        "file_integrity": "Bestandsintegriteit wordt gecontroleerd…"
       },
       "tray": {
         "title": "Activiteit",

@@ -1,3 +1,14 @@
+[2026-07-25] — fix: File Integrity scans now appear in the activity tray (BUG-276)
+Fixed: backend/activity.py: the activity tray showed no file-integrity index/deep-verify runs.
+  Those scans live in the newer backend/file_integrity.py subsystem (per-mount, parallel workers),
+  not the older integrity_monitor the "scanning" adapter reads — so they were invisible to
+  /api/activity/jobs. Added a multi-job source (_file_integrity_jobs) that expands each running
+  mount scan into one activity record (per-mount id, stable "file_integrity" kind, indeterminate
+  bar for index mode, running->finished edge into history), wired into snapshot().
+Changed: backend/app.py: /api/file-integrity/scan/cancel now also reads mount_id from query args
+  so the tray's Stop button (POSTs no body) can cancel a specific mount's scan.
+Added: gui_next locales: appShell.statusBar.activity.file_integrity label (en + de/fr/es/it/nl).
+
 [2026-07-25] — feat: Gaps screen retired — coverage folded into the Library performance lens (TODO-270)
 Added: backend/gap_analysis.py: uncirculated_dates() — every olof_events concert date that
   classify_date() calls 'gap' or 'future', returned as {date_iso, coverage, venue, city, tour}

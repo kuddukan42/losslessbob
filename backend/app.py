@@ -7578,11 +7578,15 @@ def create_app() -> Flask:
 
     @app.route("/api/file-integrity/scan/cancel", methods=["POST"])
     def file_integrity_scan_cancel() -> Response:
-        """Request cancellation of a running scan. Body: {mount_id: int}."""
+        """Request cancellation of a running scan.
+
+        Accepts ``mount_id`` in the JSON body (the screen's Stop button) or as
+        a query param (the activity tray's Stop button, which POSTs no body).
+        """
         try:
             from backend import file_integrity
             data = request.get_json(silent=True) or {}
-            mount_id = data.get("mount_id")
+            mount_id = data.get("mount_id", request.args.get("mount_id"))
             if mount_id is None:
                 return jsonify({"error": "mount_id is required"}), 400
             return jsonify({"ok": file_integrity.cancel_scan(int(mount_id))})

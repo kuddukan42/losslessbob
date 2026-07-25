@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-276: File Integrity scans invisible in activity tray
+Status: Fixed
+File(s): backend/activity.py,backend/app.py
+Reported: 2026-07-25
+Fixed: 2026-07-25
+Root cause: File Integrity is a newer subsystem (backend/file_integrity.py, per-mount parallel scans) whose live progress is not read by the activity system; the 'scanning' JobAdapter reads the older integrity_monitor, and the one-job-per-kind adapter table can't represent parallel per-mount jobs anyway.
+Fix: Added _file_integrity_jobs() multi-job source in backend/activity.py expanding file_integrity.get_status() into one record per running mount (per-mount id, stable file_integrity kind, running->finished history edge), wired into snapshot(); scan-cancel route accepts mount_id from query args for the tray Stop button; added file_integrity activity i18n label across all six locales.
+
 BUG-275: Gaps screen loads incredibly slowly (~12s) — one request per year
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenGaps.tsx:213,backend/gap_analysis.py:211
