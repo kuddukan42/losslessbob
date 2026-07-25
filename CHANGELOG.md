@@ -1,3 +1,15 @@
+[2026-07-24] — fix: Gaps screen surfaces backend failures instead of hanging (BUG-274)
+Fixed: gui_next/.../screens/ScreenGaps.tsx: the summary, year and date queries all used
+  fetch().then(r => r.json()), which resolves for every HTTP status — react-query never
+  saw an error, so a failed summary left the screen on "Loading…" forever and failed year
+  requests left each row stuck on "…". New fetchJson<T> helper throws on !res.ok.
+Added: gui_next/.../screens/ScreenGaps.tsx: three error surfaces driven by isError —
+  GapsError (terminal, with a retry button; deliberately distinct from GapsUnavailable,
+  which means the chronology genuinely isn't installed), a per-date error + retry in the
+  detail pane, and a "Failed to load" marker on year rows.
+Changed: gui_next/.../locales/*.json: new gaps.error.* namespace plus gaps.grid.error /
+  gaps.detail.error (en) + de/fr/es/it/nl.
+
 [2026-07-24] — feat: Saved smart views — named Library filter sets in the sidebar (TODO-269)
 Added: gui_next/.../lib/libraryRows.ts: shared Library recording data layer extracted
   out of ScreenLibrary — RecordingRow + filter types/helpers (VALID_RATINGS,
