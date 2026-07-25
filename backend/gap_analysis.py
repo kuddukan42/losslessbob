@@ -1,18 +1,21 @@
-"""Gaps view — the living Kokay list (TODO-256, instructions/FABLE_GAPS_VIEW.md).
+"""Concert-date coverage classification (originally TODO-256's Gaps view;
+instructions/complete/FABLE_GAPS_VIEW.md). Every known Dylan concert date
+(``olof_events``) classified by whether a recording circulates (an
+``entries`` row resolves to that date). Read-only end to end: no derived
+table, no writes, no recompute-chain hook. Computed live per request —
+sub-second at this scale (~4-5k events, ~16k entries), so there's nothing to
+keep in sync or go stale (see spec §D1).
 
-Every known Dylan concert date (``olof_events``) classified by whether a
-recording circulates (an ``entries`` row resolves to that date). Read-only
-end to end: no derived table, no writes, no recompute-chain hook. Computed
-live per request — sub-second at this scale (~4-5k events, ~16k entries), so
-there's nothing to keep in sync or go stale (see spec §D1).
+The standalone Gaps screen was retired once its coverage grid became a
+Library performance-lens view: :func:`uncirculated_dates` feeds the
+recording-less ``uncirculated``/``upcoming`` rows `db.get_performances`
+unions into the Library, and :func:`get_date_detail` backs the Library
+DetailPanel's Olof tab for those rows via ``GET /api/shows/<iso>/olof``.
 
-Entry points: :func:`get_grid` (one-request payload — totals plus every
-year's date cells — used by the Gaps screen), :func:`get_summary`
-(year-by-year totals only, kept for API compat), :func:`get_year_detail`
-(per-date breakdown for one year, kept for API compat),
-:func:`get_date_detail` (drill-down: olof event rows, entries, family data
-for one date). :func:`classify_date` is the pure classifier, kept free of
-DB access so it's trivially unit-testable.
+Entry points: :func:`classify_date` (pure classifier, kept free of DB access
+so it's trivially unit-testable), :func:`uncirculated_dates` (gap/future
+dates the Library appends as recording-less rows), :func:`get_date_detail`
+(drill-down: olof event rows, entries, family data for one date).
 """
 from __future__ import annotations
 
@@ -170,22 +173,30 @@ def _group_by_date(rows: list[sqlite3.Row]) -> dict[str, list[sqlite3.Row]]:
     return by_date
 
 
-def get_summary(db_path: str | None = None) -> dict:
-    """Year-by-year coverage summary for the Gaps view top-level grid.
+def uncirculated_dates(db_path: str | None = None) -> list[dict]:
+    """Olof concert dates with no circulating recording (gap or future).
+
+    Used by the Library's performance lens to surface known Dylan concerts
+    that have zero ``entries`` coverage as recording-less rows, plus the
+    not-yet-happened future dates, so they're first-class Library rows —
+    this is what replaced the retired standalone Gaps screen.
 
     Args:
         db_path: Optional database path override.
 
     Returns:
-        ``{available, generated_at, totals, years}``. ``available`` is
-        False (still HTTP 200 at the route level) when olof_events is
-        absent or empty. ``totals`` and each ``years[]`` entry carry
-        ``shows, covered, partial, gap, future`` counts (one classification
-        per distinct concert date, not per event — two-show dates count once).
+        One dict per olof concert date classified ``'gap'`` or ``'future'``
+        by :func:`classify_date` — ``'covered'`` and ``'partial'`` dates are
+        skipped since those already have entries rows in the Library. Each
+        dict is ``{date_iso, coverage, venue, city, tour}`` where
+        ``coverage`` is ``'uncirculated'`` (was ``'gap'``) or ``'upcoming'``
+        (was ``'future'``); ``venue``/``city``/``tour`` come from the first
+        olof row on that date (``None`` for empty strings). Returns ``[]``
+        if olof_events is absent.
     """
     conn = get_connection(db_path)
     if not _table_exists(conn, "olof_events"):
-        return {"available": False, "generated_at": _now_iso(), "totals": {}, "years": []}
+        return []
 
     exact, partial = _entry_coverage_maps(conn)
     exact_dates = set(exact)
@@ -193,120 +204,30 @@ def get_summary(db_path: str | None = None) -> dict:
     today_iso = _today_iso()
 
     by_date = _group_by_date(_olof_concert_events(conn))
-    totals = {"shows": 0, "covered": 0, "partial": 0, "gap": 0, "future": 0}
-    year_stats: dict[int, dict] = {}
-    for date_iso in by_date:
-        year = int(date_iso[:4])
-        cls = classify_date(date_iso, today_iso, exact_dates, partial_month_keys)
-        stats = year_stats.setdefault(
-            year, {"year": year, "shows": 0, "covered": 0, "partial": 0, "gap": 0, "future": 0}
-        )
-        stats["shows"] += 1
-        stats[cls] += 1
-        totals["shows"] += 1
-        totals[cls] += 1
-
-    years = [year_stats[y] for y in sorted(year_stats)]
-    return {"available": True, "generated_at": _now_iso(), "totals": totals, "years": years}
-
-
-def get_grid(db_path: str | None = None) -> dict:
-    """Whole-grid payload: year totals plus every date cell, in one pass.
-
-    Combines what :func:`get_summary` and 65 (one per year) calls to
-    :func:`get_year_detail` used to do separately. The Gaps screen used to
-    mount one ``YearRow`` per year, each firing its own request against
-    ``/api/gaps/year/<year>`` — 65 requests, each re-running the full-corpus
-    ``_entry_coverage_maps`` scan and discarding all but one year's rows. This
-    computes the coverage maps and event grouping ONCE and emits every year's
-    cells in the same response.
-
-    Args:
-        db_path: Optional database path override.
-
-    Returns:
-        ``{available, generated_at, totals, years}``. ``available`` is False
-        when olof_events is absent or empty. ``totals`` carries the same
-        ``shows/covered/partial/gap/future`` counts as :func:`get_summary`.
-        Each ``years[]`` entry carries those same per-year counts plus a
-        ``dates`` list of slim cells (``date_iso, coverage, label``) in date
-        order — enough for the grid to render without a follow-up request.
-    """
-    conn = get_connection(db_path)
-    if not _table_exists(conn, "olof_events"):
-        return {"available": False, "generated_at": _now_iso(), "totals": {}, "years": []}
-
-    exact, partial = _entry_coverage_maps(conn)
-    exact_dates = set(exact)
-    partial_month_keys = set(partial)
-    today_iso = _today_iso()
-
-    by_date = _group_by_date(_olof_concert_events(conn))
-    totals = {"shows": 0, "covered": 0, "partial": 0, "gap": 0, "future": 0}
-    year_stats: dict[int, dict] = {}
-    for date_iso in sorted(by_date):
-        year = int(date_iso[:4])
-        cls = classify_date(date_iso, today_iso, exact_dates, partial_month_keys)
-        stats = year_stats.setdefault(
-            year,
-            {
-                "year": year, "shows": 0, "covered": 0, "partial": 0, "gap": 0,
-                "future": 0, "dates": [],
-            },
-        )
-        stats["shows"] += 1
-        stats[cls] += 1
-        totals["shows"] += 1
-        totals[cls] += 1
-
-        venues = (row["venue"] or row["city"] for row in by_date[date_iso])
-        label = " / ".join(v for v in venues if v)
-        stats["dates"].append({"date_iso": date_iso, "coverage": cls, "label": label})
-
-    years = [year_stats[y] for y in sorted(year_stats)]
-    return {"available": True, "generated_at": _now_iso(), "totals": totals, "years": years}
-
-
-def get_year_detail(year: int, db_path: str | None = None) -> dict:
-    """Per-date coverage breakdown for one year.
-
-    Args:
-        year: The year to break down.
-        db_path: Optional database path override.
-
-    Returns:
-        ``{dates: [{date_iso, coverage, events, lb_numbers,
-        partial_lb_numbers}]}`` — one element per distinct show date in date
-        order; ``events`` groups all same-date olof rows (two-show days have
-        ``len(events) == 2``). Empty ``dates`` if olof_events is absent.
-    """
-    conn = get_connection(db_path)
-    if not _table_exists(conn, "olof_events"):
-        return {"dates": []}
-
-    exact, partial = _entry_coverage_maps(conn)
-    exact_dates = set(exact)
-    partial_month_keys = set(partial)
-    today_iso = _today_iso()
-
-    by_date = _group_by_date(_olof_concert_events(conn, year=year))
-    dates = []
+    results = []
     for date_iso in sorted(by_date):
         cls = classify_date(date_iso, today_iso, exact_dates, partial_month_keys)
-        dates.append(
+        if cls not in ("gap", "future"):
+            continue
+        first = by_date[date_iso][0]
+        results.append(
             {
                 "date_iso": date_iso,
-                "coverage": cls,
-                "events": [dict(e) for e in by_date[date_iso]],
-                "lb_numbers": exact.get(date_iso, []),
-                "partial_lb_numbers": partial.get(date_iso[:7], []),
+                "coverage": "uncirculated" if cls == "gap" else "upcoming",
+                "venue": first["venue"] or None,
+                "city": first["city"] or None,
+                "tour": first["tour_name"] or None,
             }
         )
-    return {"dates": dates}
+    return results
 
 
 def get_date_detail(date_iso: str, db_path: str | None = None) -> dict:
     """Drill-down for one date: olof event rows, entries, and family data.
+
+    Backs ``GET /api/shows/<date_iso>/olof``, called by the Library
+    DetailPanel's Olof tab for uncirculated/upcoming (olof-only, no
+    recordings) performance rows — see ``gui_next``'s ``OlofShowZone``.
 
     Args:
         date_iso: The date to drill into, ``'YYYY-MM-DD'``.

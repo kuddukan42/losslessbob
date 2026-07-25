@@ -67,7 +67,7 @@ function blobDownload(blob: Blob, filename: string): void {
 // FABLE_TAPER_ATTRIBUTION phase 2 (TODO-192): 'taperConfirmed' filters shows with a
 // curator-confirmed taper pill; 'taperReview' surfaces propagated/inferred/conflict
 // rows per §5's "review queue = a Library filter" decision (no new screen).
-type PerfView = 'all' | 'owned' | 'gaps' | 'wishlist' | 'duplicates'
+type PerfView = 'all' | 'owned' | 'gaps' | 'uncirculated' | 'wishlist' | 'duplicates'
   | 'recommended' | 'superseded' | 'carbonbit' | 'tenhaaf' | 'curatedAny'
   | 'taperConfirmed' | 'taperReview'
 
@@ -113,21 +113,23 @@ const STATUS_LABEL_KEY = {
   Public: 'library.statusValue.public', Private: 'library.statusValue.private', Missing: 'library.statusValue.missing',
 } as const
 type ViewLabelKey = 'library.views.allPerformances' | 'library.views.myCollection'
-  | 'library.views.coverageGaps' | 'library.views.wishlist' | 'library.views.duplicates'
+  | 'library.views.coverageGaps' | 'library.views.uncirculated' | 'library.views.wishlist' | 'library.views.duplicates'
   | 'library.views.recommended' | 'library.views.superseded'
   | 'library.views.carbonbitPicks' | 'library.views.tenhaafPicks' | 'library.views.curatedAny'
   | 'library.views.taperConfirmed' | 'library.views.taperReview'
 const VIEW_LABEL_KEY: Record<string, ViewLabelKey> = {
   all: 'library.views.allPerformances', owned: 'library.views.myCollection', gaps: 'library.views.coverageGaps',
+  uncirculated: 'library.views.uncirculated',
   wishlist: 'library.views.wishlist', duplicates: 'library.views.duplicates',
   recommended: 'library.views.recommended', superseded: 'library.views.superseded',
   carbonbit: 'library.views.carbonbitPicks', tenhaaf: 'library.views.tenhaafPicks',
   curatedAny: 'library.views.curatedAny',
   taperConfirmed: 'library.views.taperConfirmed', taperReview: 'library.views.taperReview',
 }
-const COVERAGE_LABEL_KEY: Record<string, 'library.coverageValue.covered' | 'library.coverageValue.upgrade' | 'library.coverageValue.gap' | 'library.coverageValue.undocumented'> = {
+const COVERAGE_LABEL_KEY: Record<string, 'library.coverageValue.covered' | 'library.coverageValue.upgrade' | 'library.coverageValue.gap' | 'library.coverageValue.uncirculated' | 'library.coverageValue.upcoming'> = {
   Covered: 'library.coverageValue.covered', Upgrade: 'library.coverageValue.upgrade',
-  Gap: 'library.coverageValue.gap', Undocumented: 'library.coverageValue.undocumented',
+  Gap: 'library.coverageValue.gap', Uncirculated: 'library.coverageValue.uncirculated',
+  Upcoming: 'library.coverageValue.upcoming',
 }
 
 function ratingTone(r: RatingGrade): 'ok' | 'info' | 'warn' | 'mute' {
@@ -1421,6 +1423,12 @@ interface PerformanceRow {
   tracks?: number
   setlist?: string
   title?: string
+  // Present only on rows the backend appended from olof_events dates with
+  // zero entries coverage (backend.gap_analysis.uncirculated_dates) — a known
+  // Dylan concert with no circulating recording (`'uncirculated'`) or a
+  // not-yet-happened date (`'upcoming'`). Absent on ordinary entry-derived
+  // rows (see `get_performances` docstring).
+  coverage?: 'uncirculated' | 'upcoming'
   recordings: RecordingRow[]
 }
 
@@ -1441,7 +1449,7 @@ interface FamilyGroup {
   reviewReason: string | null
 }
 
-type Coverage = 'Covered' | 'Upgrade' | 'Gap' | 'Undocumented'
+type Coverage = 'Covered' | 'Upgrade' | 'Gap' | 'Uncirculated' | 'Upcoming'
 
 function bestOf(recs: RecordingRow[]): RecordingRow | null {
   return recs.reduce<RecordingRow | null>((b, r) =>
@@ -1485,12 +1493,18 @@ function familiesOf(recordings: RecordingRow[]): FamilyGroup[] {
   return out
 }
 
-function rollupOf(recordings: RecordingRow[]) {
+function rollupOf(p: PerformanceRow) {
+  const recordings = p.recordings
   const owned = recordings.filter(r => r.owned)
   const best = bestOf(recordings)
   const fams = familiesOf(recordings)
   let coverage: Coverage
-  if (recordings.length === 0) coverage = 'Undocumented'
+  // Branch on the backend's explicit marker first — it's authoritative for
+  // olof-only rows (no recordings to infer from). Ordinary entry-derived rows
+  // never carry `coverage`, so they fall through to the recording-count logic.
+  if (p.coverage === 'upcoming') coverage = 'Upcoming'
+  else if (p.coverage === 'uncirculated') coverage = 'Uncirculated'
+  else if (recordings.length === 0) coverage = 'Uncirculated'
   else if (owned.length === 0) coverage = 'Gap'
   else if (owned.length < recordings.length && best && !best.owned) coverage = 'Upgrade'
   else coverage = 'Covered'
@@ -1504,15 +1518,16 @@ function rollupOf(recordings: RecordingRow[]) {
 
 function coverageTone(c: Coverage): 'ok' | 'warn' | 'mute' {
   if (c === 'Covered') return 'ok'
-  if (c === 'Gap') return 'mute'
-  return 'warn'
+  if (c === 'Upgrade') return 'warn'
+  return 'mute'
 }
 
 function coverageLabel(c: Coverage, ownedCount: number, total: number, t: TFunction): string {
   if (c === 'Covered') return total > 1 ? t('library.coverage.ownedFull', { owned: ownedCount, total }) : t('library.coverage.owned')
   if (c === 'Upgrade') return t('library.coverage.upgrade', { owned: ownedCount, total })
   if (c === 'Gap') return t('library.coverage.gap')
-  return t('library.coverage.noSource')
+  if (c === 'Upcoming') return t('library.coverage.upcoming')
+  return t('library.coverage.uncirculated')
 }
 
 type PerfFlatItem =
@@ -1794,6 +1809,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
         status: (p.status ?? 'Missing') as LibStatus,
         confirmed: p.confirmed,
         tracks: p.tracks, setlist: p.setlist, title: p.title,
+        coverage: p.coverage,
         recordings,
       }
     })
@@ -1830,7 +1846,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
     const sourceC: Record<string, number> = {}
     const ratingC: Record<string, number> = {}
     for (const p of performances) {
-      const ru = rollupOf(p.recordings)
+      const ru = rollupOf(p)
       decadeC[p.decade] = (decadeC[p.decade] ?? 0) + 1
       if (p.year > 0) yearC[p.year] = (yearC[p.year] ?? 0) + 1
       coverageC[ru.coverage] = (coverageC[ru.coverage] ?? 0) + 1
@@ -1846,7 +1862,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   const filteredPerfs = useMemo(() => {
     const q = query.trim().toLowerCase()
     return performances.filter(p => {
-      const ru = rollupOf(p.recordings)
+      const ru = rollupOf(p)
       if (q) {
         const hay = `${p.disp} ${p.venue ?? ''} ${p.city ?? ''} ${p.tour ?? ''} ${p.title ?? ''} ${
           p.recordings.map(r => `${r.lb} ${r.desc}`).join(' ')}`.toLowerCase()
@@ -1859,6 +1875,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
       if (activeSource.size > 0 && !p.recordings.some(r => r.src && activeSource.has(r.src))) return false
       if (perfView === 'owned')     return ru.ownedCount > 0
       if (perfView === 'gaps')      return ru.coverage === 'Gap'
+      if (perfView === 'uncirculated') return ru.coverage === 'Uncirculated'
       if (perfView === 'wishlist')  return p.recordings.some(r => r.wish)
       if (perfView === 'duplicates') return p.recordings.some(r => r.dup)
       // TODO-186: "recommended" = you already own the date's #1 pick;
@@ -1964,12 +1981,13 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   }
 
   const totalRecs = useMemo(() => filteredPerfs.reduce((n, p) => n + p.recordings.length, 0), [filteredPerfs])
-  const totalFams = useMemo(() => filteredPerfs.reduce((n, p) => n + rollupOf(p.recordings).famTotal, 0), [filteredPerfs])
-  const gapsShown = useMemo(() => filteredPerfs.filter(p => rollupOf(p.recordings).coverage === 'Gap').length, [filteredPerfs])
+  const totalFams = useMemo(() => filteredPerfs.reduce((n, p) => n + rollupOf(p).famTotal, 0), [filteredPerfs])
+  const gapsShown = useMemo(() => filteredPerfs.filter(p => rollupOf(p).coverage === 'Gap').length, [filteredPerfs])
 
   const viewCounts = useMemo(() => ({
-    owned:     performances.filter(p => rollupOf(p.recordings).ownedCount > 0).length,
-    gaps:      performances.filter(p => rollupOf(p.recordings).coverage === 'Gap').length,
+    owned:     performances.filter(p => rollupOf(p).ownedCount > 0).length,
+    gaps:      performances.filter(p => rollupOf(p).coverage === 'Gap').length,
+    uncirculated: performances.filter(p => rollupOf(p).coverage === 'Uncirculated').length,
     wishlist:  performances.filter(p => p.recordings.some(r => r.wish)).length,
     duplicates: performances.filter(p => p.recordings.some(r => r.dup)).length,
     recommended: performances.filter(p => p.recordings.some(r => r.owned && r.pickRank === 1)).length,
@@ -2086,6 +2104,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
               <div style={{ height: 1, background: 'var(--lbb-border)', margin: '4px 0' }} />
               {opt('owned', t('library.views.myCollection'), viewCounts.owned)}
               {opt('gaps', t('library.views.coverageGaps'), viewCounts.gaps)}
+              {opt('uncirculated', t('library.views.uncirculated'), viewCounts.uncirculated)}
               {opt('wishlist', t('library.views.wishlist'), viewCounts.wishlist)}
               {opt('duplicates', t('library.views.duplicates'), viewCounts.duplicates)}
               <div style={{ height: 1, background: 'var(--lbb-border)', margin: '4px 0' }} />
@@ -2145,7 +2164,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
         <FilterMenu label={t('library.facets.coverageLabel')} count={activeCoverage.size}>
           <MenuLabel>{t('library.facets.coverageLabel')}</MenuLabel>
           <FacetList>
-            {(['Covered', 'Upgrade', 'Gap', 'Undocumented'] as Coverage[]).map(c => (
+            {(['Covered', 'Upgrade', 'Gap', 'Uncirculated', 'Upcoming'] as Coverage[]).map(c => (
               <FacetOption key={c} label={coverageName(c)} count={facetCounts.coverageC[c] ?? 0} active={activeCoverage.has(c)} onClick={() => toggleSet(setActiveCoverage, c)} />
             ))}
           </FacetList>
@@ -2294,7 +2313,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
 
                       if (item.kind === 'show') {
                         const p = item.perf
-                        const ru = rollupOf(p.recordings)
+                        const ru = rollupOf(p)
                         const multi = p.recordings.length > 1
                         const expandable = p.recordings.length > 0
                         const expanded = expandedShows.has(p.id)

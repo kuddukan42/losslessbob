@@ -55,7 +55,6 @@
       "tapematch": "TapeMatch",
       "songs": "Brani",
       "fingerprint": "Impronta digitale",
-      "gaps": "Lacune",
       "fileintegrity": "Integrità dei file",
       "timeline": "Cronologia",
       "scanner": "Scanner del disco"
@@ -1376,7 +1375,6 @@
     "views": {
       "allPerformances": "Tutte le esecuzioni",
       "myCollection": "La mia raccolta",
-      "coverageGaps": "Lacune nella copertura",
       "wishlist": "Lista dei desideri",
       "duplicates": "Duplicati",
       "recommended": "Consigliato, di proprietà",
@@ -1385,7 +1383,9 @@
       "tenhaafPicks": "Le scelte di 10haaf",
       "taperConfirmed": "Registratore confermato",
       "taperReview": "Taper: da rivedere",
-      "curatedAny": "Qualsiasi selezione curata"
+      "curatedAny": "Qualsiasi selezione curata",
+      "coverageGaps": "Non presente nella raccolta",
+      "uncirculated": "Non in circolazione"
     },
     "statusValue": {
       "public": "Pubblico",
@@ -1531,7 +1531,8 @@
       "owned": "Di proprietà",
       "upgrade": "Aggiornamento {{owned}}/{{total}}",
       "gap": "Gap",
-      "noSource": "Nessun codice sorgente"
+      "uncirculated": "Nessuna registrazione è in circolazione",
+      "upcoming": "Prossimo spettacolo"
     },
     "family": {
       "recording": "Registrazione",
@@ -1607,7 +1608,8 @@
       "covered": "Argomenti trattati",
       "upgrade": "Aggiornamento",
       "gap": "Gap",
-      "undocumented": "Non documentato"
+      "uncirculated": "Non in circolazione",
+      "upcoming": "Prossimamente"
     },
     "picks": {
       "label": "Selezioni in primo piano",
@@ -1974,42 +1976,6 @@
       "matched": "Abbinate ({{count}})",
       "missing": "Non presente in questo nastro ({{count}})",
       "completeMatch": "Ogni brano della scaletta è presente."
-    }
-  },
-  "gaps": {
-    "title": "Lacune",
-    "subtitle": "Tutte le date note dei concerti di Dylan, contrassegnate da un colore a seconda della disponibilità di una registrazione.",
-    "unavailable": "La vista «Gaps» richiede la cronologia dei concerti di Olof Bjorner, che non è caricata in questa installazione.",
-    "credit": "Elenco dei concerti tratto dalla cronologia DSN di Olof Bjorner, sulla scia dell’elenco degli spettacoli inediti di Les Kokay.",
-    "header": {
-      "totalShows": "{{count}} mostra",
-      "totalGaps": "{{count}} lacune"
-    },
-    "decades": {
-      "all": "Tutto"
-    },
-    "grid": {
-      "loading": "…",
-      "yearGap_one": "{{count}} lacuna",
-      "yearGap_other": "{{count}} lacune",
-      "error": "Impossibile caricare"
-    },
-    "detail": {
-      "noSelection": "Seleziona una data per vedere cosa si sa al riguardo.",
-      "tabEvent": "Eventi e fonti",
-      "eventsHeading": "Evento",
-      "entriesHeading": "Voci in circolazione",
-      "partialEntriesHeading": "Possibili corrispondenze (data parziale)",
-      "familiesHeading": "Famiglie TapeMatch",
-      "unknownVenue": "Luogo sconosciuto",
-      "recording": "{{kind}}, {{mins}} min",
-      "none": "Nessuna",
-      "error": "Impossibile caricare questa data."
-    },
-    "error": {
-      "title": "Impossibile caricare i dati Gaps.",
-      "detail": "Il backend non ha risposto. Verifica che sia in esecuzione, quindi riprova.",
-      "retry": "Riprova"
     }
   },
   "palette": {

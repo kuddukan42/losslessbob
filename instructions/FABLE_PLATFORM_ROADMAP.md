@@ -83,7 +83,14 @@ catalog). `checksums.xref` = cross-reference entry (not primary). Current touchp
 > Live-DB check at ship time: 4,131 concert dates, 3,797 covered / 34 partial / 287 gap /
 > 13 future (gap count lower than the 07-15 estimate below — the TODO-245 private-LB
 > import landed in between and now covers some former-gap dates). Spec in
-> `FABLE_GAPS_VIEW.md` for the bite-level detail; §4/§6 hooks noted there remain open.
+> `FABLE_GAPS_VIEW.md` for the bite-level detail; §4/§6 hooks noted there were never built.
+>
+> ♻️ **SUPERSEDED** (2026-07-25, TODO-270) — the standalone screen is gone. The same
+> coverage data now arrives as first-class Library rows: `gap_analysis.uncirculated_dates()`
+> feeds `db.get_performances`, which unions recording-less `uncirculated`/`upcoming` rows
+> into the performance lens (own view + Coverage facet states). The grid API
+> (`get_summary`/`get_grid`/`get_year_detail`, `/api/gaps/*`) is deleted; the per-date
+> drill-down survives as `GET /api/shows/<iso>/olof` behind the DetailPanel's Olof tab.
 
 **Idea.** Les Kokay's uncirculated-shows list, as a self-updating view instead of a
 document nobody has received in years. Absence made visible.

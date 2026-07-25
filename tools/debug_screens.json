@@ -34,10 +34,6 @@
   { "action": "wait-for", "selector": "text=Loading", "state": "detached", "timeout": 20000 },
   { "action": "screenshot", "file": "09-songs.png" },
 
-  { "action": "navigate", "route": "/gaps" },
-  { "action": "wait-for", "selector": "button[title^='195']", "timeout": 15000 },
-  { "action": "screenshot", "file": "10-gaps.png" },
-
   { "action": "navigate", "route": "/attachments" },
   { "action": "wait-for", "selector": "text=Loading", "state": "detached", "timeout": 20000 },
   { "action": "screenshot", "file": "11-attachments.png" },

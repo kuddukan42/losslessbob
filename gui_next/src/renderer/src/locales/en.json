@@ -41,7 +41,6 @@
       "bootlegs": "Bootlegs",
       "tapematch": "TapeMatch",
       "songs": "Songs",
-      "gaps": "Gaps",
       "timeline": "Timeline",
       "assets": "Assets",
       "attachments": "Attachments",
@@ -1376,7 +1375,8 @@
     "views": {
       "allPerformances": "All performances",
       "myCollection": "My collection",
-      "coverageGaps": "Coverage gaps",
+      "coverageGaps": "Not in collection",
+      "uncirculated": "Uncirculated",
       "wishlist": "Wishlist",
       "duplicates": "Duplicates",
       "recommended": "Recommended, owned",
@@ -1549,7 +1549,8 @@
       "owned": "Owned",
       "upgrade": "Upgrade {{owned}}/{{total}}",
       "gap": "Gap",
-      "noSource": "No source"
+      "uncirculated": "No recording circulates",
+      "upcoming": "Upcoming show"
     },
     "family": {
       "recording": "Recording",
@@ -1687,7 +1688,8 @@
       "covered": "Covered",
       "upgrade": "Upgrade",
       "gap": "Gap",
-      "undocumented": "Undocumented"
+      "uncirculated": "Uncirculated",
+      "upcoming": "Upcoming"
     }
   },
   "tapematch": {
@@ -1862,42 +1864,6 @@
       "title": "Nothing scanned yet.",
       "running": "Scanning…",
       "detail": "Choose one or more folders on the left, then Scan. Every folder holding lossless audio shows up here."
-    }
-  },
-  "gaps": {
-    "title": "Gaps",
-    "subtitle": "Every known Dylan concert date, colored by whether a recording circulates.",
-    "unavailable": "The Gaps view needs the Olof Bjorner concert chronology, which isn't loaded on this install.",
-    "credit": "Concert list from Olof Bjorner's DSN chronology, in the tradition of Les Kokay's uncirculated-shows list.",
-    "header": {
-      "totalShows": "{{count}} shows",
-      "totalGaps": "{{count}} gaps"
-    },
-    "decades": {
-      "all": "All"
-    },
-    "error": {
-      "title": "Couldn't load the Gaps data.",
-      "detail": "The backend didn't respond. Check that it's running, then retry.",
-      "retry": "Retry"
-    },
-    "grid": {
-      "loading": "…",
-      "error": "Failed to load",
-      "yearGap_one": "{{count}} gap",
-      "yearGap_other": "{{count}} gaps"
-    },
-    "detail": {
-      "noSelection": "Select a date to see what's known about it.",
-      "error": "Couldn't load this date.",
-      "tabEvent": "Event & sources",
-      "eventsHeading": "Event",
-      "entriesHeading": "Circulating entries",
-      "partialEntriesHeading": "Possible matches (partial date)",
-      "familiesHeading": "TapeMatch families",
-      "unknownVenue": "Unknown venue",
-      "recording": "{{kind}}, {{mins}} min",
-      "none": "None"
     }
   },
   "timeline": {

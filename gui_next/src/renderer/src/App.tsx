@@ -35,7 +35,6 @@ import { ScreenQuickLookup } from './screens/ScreenQuickLookup'
 import { ScreenLibrary } from './screens/ScreenLibrary'
 import { ScreenTapeMatch } from './screens/ScreenTapeMatch'
 import { ScreenSongs } from './screens/ScreenSongs'
-import { ScreenGaps } from './screens/ScreenGaps'
 import { ScreenTimeline } from './screens/ScreenTimeline'
 import { ScreenFingerprint } from './screens/ScreenFingerprint'
 
@@ -356,7 +355,6 @@ export default function App(): React.JSX.Element {
           <Route path="/library"     element={<ScreenLibrary />} />
           <Route path="/tapematch"   element={<ScreenTapeMatch />} />
           <Route path="/songs"       element={<ScreenSongs />} />
-          <Route path="/gaps"        element={<ScreenGaps />} />
           <Route path="/timeline"    element={<ScreenTimeline />} />
           <Route path="/collection"  element={<ScreenCollection />} />
           <Route path="/trading"     element={<ScreenTrading />} />

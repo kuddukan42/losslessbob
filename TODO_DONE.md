@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-270: Retire the standalone Gaps screen — fold coverage into the Library performance lens
+Priority: Medium
+Status: Done
+Added: 2026-07-25
+Closed: 2026-07-25
+Description: Every known Dylan concert date with no circulating recording should be a first-class Library row, not a separate screen. Backend: gap_analysis.uncirculated_dates() feeds db.get_performances, which unions recording-less rows carrying coverage='uncirculated'|'upcoming'; the four /api/gaps/* routes collapse to GET /api/shows/<iso>/olof for the DetailPanel drill-down. GUI: ScreenGaps.tsx deleted, nav/route/icon/palette entries removed, Library gains an Uncirculated view + Coverage facet states and an OlofShowZone fallback for recording-less rows.
+Shipped 2026-07-25. Backend: gap_analysis.py lost get_summary/get_grid/get_year_detail (the whole grid API) and gained uncirculated_dates(); db.get_performances unions 267 recording-less olof rows (259 uncirculated + 8 upcoming at ship time) keyed by date_iso, skipping dates that already have entry-derived rows. Routes: /api/gaps/summary|grid|year/<y>|date/<iso> all removed; the drill-down survives as GET /api/shows/<iso>/olof. GUI: ScreenGaps.tsx (586 lines) deleted along with its route, nav entry, 'gaps' NavId, gaps icon and command-palette note; ScreenLibrary gained an 'uncirculated' view + Uncirculated/Upcoming coverage facet states (rollupOf now branches on the backend's explicit coverage marker before recording-count inference), and DetailPanel gained OlofShowZone, which fetches the show drill-down for rows that have no lbNumber to key /api/olof/date or /api/olof/compare on. Dead library.coverage.noSource / coverageValue.undocumented keys dropped from all 6 locales; docs/index.html showcase tile + docs/screenshots/gaps.png removed. Verified: 1042 backend tests pass, tsc both configs + production build clean, Tier A /verify PASS (Library renders 4,104 shows, facet counts reconcile: 3,807 Covered / 7 Upgrade / 8 Gap / 275 Uncirculated / 7 Upcoming, detail panel 'No recording circulates' chip + Olof tab both render).
+
 TODO-250: Disk Scanner — find audio folders on disk for bulk collection add
 Priority: Medium
 Status: Done

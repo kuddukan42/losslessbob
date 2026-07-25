@@ -3706,6 +3706,13 @@ def get_performances(db_path=None) -> list[dict]:
     `propagated`/`inferred` or the row is flagged `conflict`), following the
     same F4 payload-extension pattern.
 
+    Uncirculated/upcoming olof dates (`backend.gap_analysis.uncirculated_dates`
+    — olof concert dates with zero entries coverage, i.e. the Gaps screen's
+    `'gap'`/`'future'` classifications) are appended as recording-less rows
+    (`recordings: []`, `status: "Missing"`) carrying an explicit `coverage`
+    field (`"uncirculated"` or `"upcoming"`) so the Library can render them
+    distinctly from ordinary entry-derived rows, which never carry `coverage`.
+
     Args:
         db_path: Optional path to the SQLite database file.
 
@@ -3718,7 +3725,9 @@ def get_performances(db_path=None) -> list[dict]:
         Each recording additionally omits `pickRank`/`absGrade`/`curated`/
         `taperConfirmed`/`taperReview` when that signal doesn't exist yet for
         its LB number (pre-recompute, never scanned, in no curated list, or
-        no taper attribution row).
+        no taper attribution row). `coverage` (`"uncirculated"` | `"upcoming"`)
+        is present only on appended recording-less olof-only rows; absent on
+        ordinary entry-derived rows.
     """
     from datetime import datetime as _dt
 
@@ -3884,6 +3893,31 @@ def get_performances(db_path=None) -> list[dict]:
                        if rec["lbNumber"] in titles), None)
         if title:
             perf["title"] = title
+        performances.append(perf)
+
+    from backend import gap_analysis
+
+    existing_ids = {p["id"] for p in performances}
+    uncirculated = [
+        u for u in gap_analysis.uncirculated_dates(db_path) if u["date_iso"] not in existing_ids
+    ]
+    for u in sorted(uncirculated, key=lambda x: x["date_iso"]):
+        date_iso = u["date_iso"]
+        dt = _dt.strptime(date_iso, "%Y-%m-%d")
+        perf = {
+            "id": date_iso,
+            "date": date_iso,
+            "disp": f"{dt.strftime('%b')} {dt.day}, {dt.year}",
+            "dow": dt.strftime("%a"),
+            "year": int(date_iso[:4]),
+            "venue": u["venue"],
+            "city": u["city"],
+            "status": "Missing",
+            "recordings": [],
+            "coverage": u["coverage"],
+        }
+        if u["tour"]:
+            perf["tour"] = u["tour"]
         performances.append(perf)
 
     return performances

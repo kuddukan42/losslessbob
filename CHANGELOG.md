@@ -1,3 +1,38 @@
+[2026-07-25] — feat: Gaps screen retired — coverage folded into the Library performance lens (TODO-270)
+Added: backend/gap_analysis.py: uncirculated_dates() — every olof_events concert date that
+  classify_date() calls 'gap' or 'future', returned as {date_iso, coverage, venue, city, tour}
+  with coverage renamed to the user-facing 'uncirculated'/'upcoming'. Covered/partial dates are
+  skipped: those already reach the Library as entry-derived rows.
+Added: backend/db.py: get_performances() unions those in as recording-less rows (recordings: [],
+  status "Missing", id = the olof date_iso), skipping any date an entry-derived row already
+  claims. Ordinary rows never carry `coverage`, so its presence IS the olof-only marker — 267
+  such rows at ship time (259 uncirculated + 8 upcoming) on top of 3,837 entry-derived, 4,104 total.
+Added: gui_next/.../components/library/DetailPanel.tsx: OlofShowZone — the Olof tab for
+  olof-only rows. They have no lbNumber to key /api/olof/date or /api/olof/compare on, and no
+  bobdylan_shows-backed perf.setlist either, so it falls back to perf.id (always the olof
+  date_iso for these) and fetches the show drill-down. OlofEventCard's `songs` is now optional
+  since that payload carries no song join.
+Changed: gui_next/.../screens/ScreenLibrary.tsx: rollupOf() takes the whole PerformanceRow and
+  branches on the backend's explicit coverage marker BEFORE the recording-count inference — an
+  olof-only row has zero recordings, so count-based logic alone can't tell "no tape exists" from
+  "we hold none of the tapes that do". New 'uncirculated' view in the Views menu; the Coverage
+  facet's 'Undocumented' state splits into 'Uncirculated' + 'Upcoming' (both mute-toned).
+Removed: gui_next/.../screens/ScreenGaps.tsx (586 lines) and its /gaps route, sidebar entry,
+  'gaps' NavId, gaps icon path, command-palette note, and screen-tour step. Also the
+  docs/index.html showcase tile and docs/screenshots/gaps.png, which advertised the dead screen.
+Removed: backend/gap_analysis.py: get_summary(), get_grid(), get_year_detail() and the
+  /api/gaps/summary|grid|year/<year>|date/<iso> routes — the grid they served has no consumer
+  now. The drill-down survives, renamed to GET /api/shows/<date_iso>/olof.
+Removed: library.coverage.noSource + library.coverageValue.undocumented from all six locales —
+  the states they labelled no longer exist. The new uncirculated/upcoming keys were translated
+  for de/fr/es/it/nl.
+Changed: tests/test_gap_analysis.py drops the grid/summary/year suites and covers
+  uncirculated_dates(); new tests/test_performances_uncirculated.py covers the get_performances
+  union (18 tests total, 1042 in the full suite, all passing).
+Note: classify_date() compares against today, so a show flips 'upcoming' → 'uncirculated' the
+  morning after it happens — visible now as a Library row reading "No recording circulates" for
+  a concert played last night. Pre-existing classifier semantics, carried over unchanged.
+
 [2026-07-24] — fix: Gaps screen loaded in ~12s — collapsed 66 requests into one (BUG-275)
 Fixed: gui_next/src/renderer/src/screens/ScreenGaps.tsx: the grid rendered one YearRow per
   year (65 of them) and every YearRow ran its own useQuery against /api/gaps/year/<year>, so

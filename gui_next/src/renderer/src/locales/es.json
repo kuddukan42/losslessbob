@@ -55,7 +55,6 @@
       "tapematch": "TapeMatch",
       "songs": "Canciones",
       "fingerprint": "Huella digital",
-      "gaps": "Lagunas",
       "fileintegrity": "Integridad de los archivos",
       "timeline": "Cronología",
       "scanner": "Escáner de disco"
@@ -1376,7 +1375,6 @@
     "views": {
       "allPerformances": "Todas las interpretaciones",
       "myCollection": "Mi colección",
-      "coverageGaps": "Lagunas en la cobertura",
       "wishlist": "Lista de deseos",
       "duplicates": "Duplicados",
       "recommended": "Recomendado, de mi propiedad",
@@ -1385,7 +1383,9 @@
       "tenhaafPicks": "Selección de 10haaf",
       "taperConfirmed": "Grabador confirmado",
       "taperReview": "Taper: necesita revisión",
-      "curatedAny": "Cualquier selección destacada"
+      "curatedAny": "Cualquier selección destacada",
+      "coverageGaps": "No está en la colección",
+      "uncirculated": "Sin circular"
     },
     "statusValue": {
       "public": "Público",
@@ -1531,7 +1531,8 @@
       "owned": "Propiedad",
       "upgrade": "Actualización {{owned}}/{{total}}",
       "gap": "Gap",
-      "noSource": "Sin código fuente"
+      "uncirculated": "No circula ninguna grabación",
+      "upcoming": "Próximo espectáculo"
     },
     "family": {
       "recording": "Grabación",
@@ -1607,7 +1608,8 @@
       "covered": "Temas tratados",
       "upgrade": "Actualización",
       "gap": "Gap",
-      "undocumented": "Sin documentar"
+      "uncirculated": "Sin circular",
+      "upcoming": "Próximamente"
     },
     "picks": {
       "label": "Mostrar selecciones",
@@ -1974,42 +1976,6 @@
       "matched": "Coincidente ({{count}})",
       "missing": "No está en esta cinta ({{count}})",
       "completeMatch": "Se tienen en cuenta todas las canciones de la lista de reproducción."
-    }
-  },
-  "gaps": {
-    "title": "Lagunas",
-    "subtitle": "Todas las fechas conocidas de conciertos de Dylan, clasificadas por colores según si existe alguna grabación disponible.",
-    "unavailable": "La vista «Gaps» necesita la cronología de conciertos de Olof Bjorner, que no está cargada en esta instalación.",
-    "credit": "Lista de conciertos extraída de la cronología DSN de Olof Bjorner, siguiendo la tradición de la lista de conciertos inéditos de Les Kokay.",
-    "header": {
-      "totalShows": "{{count}} muestra",
-      "totalGaps": "{{count}} lagunas"
-    },
-    "decades": {
-      "all": "Todo"
-    },
-    "grid": {
-      "loading": "…",
-      "yearGap_one": "{{count}} laguna",
-      "yearGap_other": "{{count}} lagunas",
-      "error": "No se ha podido cargar"
-    },
-    "detail": {
-      "noSelection": "Selecciona una fecha para ver qué se sabe sobre ella.",
-      "tabEvent": "Eventos y fuentes",
-      "eventsHeading": "Evento",
-      "entriesHeading": "Entradas en circulación",
-      "partialEntriesHeading": "Posibles coincidencias (fecha parcial)",
-      "familiesHeading": "Familias de TapeMatch",
-      "unknownVenue": "Lugar desconocido",
-      "recording": "{{kind}}, {{mins}} min",
-      "none": "Ninguna",
-      "error": "No se ha podido cargar esta fecha."
-    },
-    "error": {
-      "title": "No se han podido cargar los datos de Gaps.",
-      "detail": "El servidor no ha respondido. Comprueba que esté en funcionamiento y vuelve a intentarlo.",
-      "retry": "Reintentar"
     }
   },
   "palette": {

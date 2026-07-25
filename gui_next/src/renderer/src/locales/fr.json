@@ -55,7 +55,6 @@
       "tapematch": "TapeMatch",
       "songs": "Chansons",
       "fingerprint": "Empreinte digitale",
-      "gaps": "Lacunes",
       "fileintegrity": "Intégrité des fichiers",
       "timeline": "Chronologie",
       "scanner": "Analyseur de disque"
@@ -1376,7 +1375,6 @@
     "views": {
       "allPerformances": "Toutes les performances",
       "myCollection": "Ma collection",
-      "coverageGaps": "Lacunes dans la couverture",
       "wishlist": "Liste de souhaits",
       "duplicates": "Doublons",
       "recommended": "Recommandé, en ma possession",
@@ -1385,7 +1383,9 @@
       "tenhaafPicks": "Les coups de cœur de 10haaf",
       "taperConfirmed": "Enregistreur confirmé",
       "taperReview": "Taper : à vérifier",
-      "curatedAny": "Une sélection soignée"
+      "curatedAny": "Une sélection soignée",
+      "coverageGaps": "Ne figure pas dans la collection",
+      "uncirculated": "Non diffusé"
     },
     "statusValue": {
       "public": "Public",
@@ -1531,7 +1531,8 @@
       "owned": "Propriétaire",
       "upgrade": "Mise à jour {{owned}}/{{total}}",
       "gap": "Gap",
-      "noSource": "Pas de source"
+      "uncirculated": "Aucun enregistrement n'est en circulation",
+      "upcoming": "Prochain spectacle"
     },
     "family": {
       "recording": "Enregistrement",
@@ -1607,7 +1608,8 @@
       "covered": "Contenu couvert",
       "upgrade": "Mise à jour",
       "gap": "Gap",
-      "undocumented": "Non documenté"
+      "uncirculated": "Non diffusé",
+      "upcoming": "À venir"
     },
     "picks": {
       "label": "Sélectionner les favoris",
@@ -1974,42 +1976,6 @@
       "matched": "Correspondance ({{count}})",
       "missing": "Absent de cette cassette ({{count}})",
       "completeMatch": "Chaque morceau de la setlist est pris en compte."
-    }
-  },
-  "gaps": {
-    "title": "Lacunes",
-    "subtitle": "Toutes les dates de concerts connues de Dylan, classées par couleur selon qu'un enregistrement circule ou non.",
-    "unavailable": "La vue « Gaps » nécessite la chronologie des concerts d'Olof Bjorner, qui n'est pas chargée dans cette installation.",
-    "credit": "Liste des concerts tirée de la chronologie DSN d'Olof Bjorner, dans la lignée de la liste des concerts inédits de Les Kokay.",
-    "header": {
-      "totalShows": "{{count}} affiche",
-      "totalGaps": "{{count}} lacunes"
-    },
-    "decades": {
-      "all": "Tout"
-    },
-    "grid": {
-      "loading": "…",
-      "yearGap_one": "{{count}} lacune",
-      "yearGap_other": "{{count}} lacunes",
-      "error": "Échec du chargement"
-    },
-    "detail": {
-      "noSelection": "Sélectionnez une date pour découvrir ce que l'on sait à son sujet.",
-      "tabEvent": "Événements et sources",
-      "eventsHeading": "Événement",
-      "entriesHeading": "Entrées en circulation",
-      "partialEntriesHeading": "Résultats possibles (date partielle)",
-      "familiesHeading": "Familles TapeMatch",
-      "unknownVenue": "Lieu inconnu",
-      "recording": "{{kind}}, {{mins}} min",
-      "none": "Aucun",
-      "error": "Impossible de charger cette date."
-    },
-    "error": {
-      "title": "Impossible de charger les données Gaps.",
-      "detail": "Le serveur ne répond pas. Vérifiez qu'il est bien en cours d'exécution, puis réessayez.",
-      "retry": "Réessayer"
     }
   },
   "palette": {

@@ -11,10 +11,10 @@ import type {
   Scope, LibStatus, RatingGrade, HealthFlag, SortKey, SortDir, RecordingFilters,
 } from './libraryRows'
 
-type PerfView = 'all' | 'owned' | 'gaps' | 'wishlist' | 'duplicates'
+type PerfView = 'all' | 'owned' | 'gaps' | 'uncirculated' | 'wishlist' | 'duplicates'
   | 'recommended' | 'superseded' | 'carbonbit' | 'tenhaaf' | 'curatedAny'
   | 'taperConfirmed' | 'taperReview'
-type Coverage = 'Covered' | 'Upgrade' | 'Gap' | 'Undocumented'
+type Coverage = 'Covered' | 'Upgrade' | 'Gap' | 'Uncirculated' | 'Upcoming'
 
 // Setters mirror React's SetStateAction signature so existing
 // toggleSet()/setX(new Set()) call sites need no change.

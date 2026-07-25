@@ -55,7 +55,6 @@
       "tapematch": "TapeMatch",
       "songs": "Nummers",
       "fingerprint": "Vingerafdruk",
-      "gaps": "Hiaten",
       "fileintegrity": "Bestandsintegriteit",
       "timeline": "Tijdlijn",
       "scanner": "Schijfscanner"
@@ -1376,7 +1375,6 @@
     "views": {
       "allPerformances": "Alle uitvoeringen",
       "myCollection": "Mijn verzameling",
-      "coverageGaps": "Hiaten in de dekking",
       "wishlist": "Verlanglijstje",
       "duplicates": "Duplicaten",
       "recommended": "Aanbevolen, in bezit",
@@ -1385,7 +1383,9 @@
       "tenhaafPicks": "De selectie van 10haaf",
       "taperConfirmed": "Bevestigde taper",
       "taperReview": "Taper: moet worden gecontroleerd",
-      "curatedAny": "Een willekeurige selectie"
+      "curatedAny": "Een willekeurige selectie",
+      "coverageGaps": "Niet in de collectie",
+      "uncirculated": "Niet in omloop"
     },
     "statusValue": {
       "public": "Openbaar",
@@ -1531,7 +1531,8 @@
       "owned": "In bezit",
       "upgrade": "Upgrade {{owned}}/{{total}}",
       "gap": "Gap",
-      "noSource": "Geen bron"
+      "uncirculated": "Er is geen opname in omloop",
+      "upcoming": "Aankomende show"
     },
     "family": {
       "recording": "Opname",
@@ -1607,7 +1608,8 @@
       "covered": "Behandeld",
       "upgrade": "Upgrade",
       "gap": "Gap",
-      "undocumented": "Niet gedocumenteerd"
+      "uncirculated": "Niet in omloop",
+      "upcoming": "Binnenkort beschikbaar"
     },
     "picks": {
       "label": "Topkeuzes weergeven",
@@ -1974,42 +1976,6 @@
       "matched": "Aangepast ({{count}})",
       "missing": "Niet op deze tape ({{count}})",
       "completeMatch": "Elk nummer in de setlist is opgenomen."
-    }
-  },
-  "gaps": {
-    "title": "Hiaten",
-    "subtitle": "Alle bekende concertdata van Dylan, gekleurd op basis van het feit of er een opname in omloop is.",
-    "unavailable": "De weergave ‘Gaps’ heeft de concertchronologie van Olof Bjorner nodig, die bij deze installatie niet is geladen.",
-    "credit": "Concertlijst uit de DSN-chronologie van Olof Bjorner, in de traditie van Les Kokay's lijst met niet-uitgebrachte optredens.",
-    "header": {
-      "totalShows": "{{count}} toont",
-      "totalGaps": "{{count}} hiaten"
-    },
-    "decades": {
-      "all": "Alles"
-    },
-    "grid": {
-      "loading": "…",
-      "yearGap_one": "{{count}} hiaat",
-      "yearGap_other": "{{count}} hiaten",
-      "error": "Kan niet worden geladen"
-    },
-    "detail": {
-      "noSelection": "Selecteer een datum om te zien wat erover bekend is.",
-      "tabEvent": "Gebeurtenissen en bronnen",
-      "eventsHeading": "Evenement",
-      "entriesHeading": "Terugkerende items",
-      "partialEntriesHeading": "Mogelijke overeenkomsten (gedeeltelijke datum)",
-      "familiesHeading": "TapeMatch-families",
-      "unknownVenue": "Onbekende locatie",
-      "recording": "{{kind}}, {{mins}} min",
-      "none": "Geen",
-      "error": "Deze datum kon niet worden geladen."
-    },
-    "error": {
-      "title": "De Gaps-gegevens konden niet worden geladen.",
-      "detail": "De backend reageerde niet. Controleer of deze actief is en probeer het vervolgens opnieuw.",
-      "retry": "Opnieuw proberen"
     }
   },
   "palette": {
