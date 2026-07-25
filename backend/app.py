@@ -948,7 +948,8 @@ def create_app() -> Flask:
                         "tracker_list", "wtrf_board_id", "ui_language",
                         "pipeline_file_mode", "integrity_scan_interval_hours",
                         "file_verify_enabled", "file_verify_interval_hours",
-                        "file_verify_budget_seconds", "file_verify_files_per_mount"]
+                        "file_verify_budget_seconds", "file_verify_files_per_mount",
+                        "scanner_roots", "scanner_excludes"]
                 result = {k: database.get_meta(k) for k in keys}
                 # Return "set" or "" for web_password — never expose the actual value
                 result["web_password"] = "set" if database.get_meta("web_password") else ""
@@ -7479,6 +7480,73 @@ def create_app() -> Flask:
                 status=status or None,
             )
             return jsonify({"status": rows})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── Disk Scanner (TODO-250) ───────────────────────────────────────────────
+    # One-shot discovery of audio folders anywhere on disk — no index is kept.
+    # Unlike the integrity routes above, this looks *outside* the collection.
+
+    @app.route("/api/scanner/scan", methods=["POST"])
+    def scanner_scan_start() -> Response:
+        """Start a background disk scan.
+
+        Body: {roots: [str, ...], extensions?: [str, ...], excludes?: [str, ...]}
+        Returns:
+            JSON {ok: true}, 400 if roots is empty, or 409 if a scan is running.
+        """
+        try:
+            from backend import disk_scanner
+            data = request.get_json(silent=True) or {}
+            roots = [r for r in (data.get("roots") or []) if str(r).strip()]
+            if not roots:
+                return jsonify({"error": "roots required"}), 400
+            started = disk_scanner.start_scan_async(
+                roots, data.get("extensions"), data.get("excludes"),
+            )
+            if not started:
+                return jsonify({"ok": False, "error": "A scan is already running"}), 409
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/scanner/scan/cancel", methods=["POST"])
+    def scanner_scan_cancel() -> Response:
+        """Request cancellation of the running disk scan, if any."""
+        try:
+            from backend import disk_scanner
+            return jsonify({"ok": disk_scanner.cancel_scan()})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/scanner/scan/status", methods=["GET"])
+    def scanner_scan_status() -> Response:
+        """Return progress (and, once finished, results) of the disk scan."""
+        try:
+            from backend import disk_scanner
+            return jsonify(disk_scanner.get_scan_status())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/scanner/add", methods=["POST"])
+    def scanner_add_to_collection() -> Response:
+        """Add scanned folders to my_collection.
+
+        Body: {paths: [str, ...]}
+        Returns:
+            JSON {results: [{path, ok, lb_number, error}, ...], added: int}.
+        """
+        try:
+            from backend import disk_scanner
+            data = request.get_json(silent=True) or {}
+            paths = [p for p in (data.get("paths") or []) if str(p).strip()]
+            if not paths:
+                return jsonify({"error": "paths required"}), 400
+            results = disk_scanner.add_paths_to_collection(paths)
+            return jsonify({
+                "results": results,
+                "added": sum(1 for r in results if r["ok"]),
+            })
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 

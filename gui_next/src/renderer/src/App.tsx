@@ -16,6 +16,7 @@ import { useSettingsStore } from './store'
 import i18n from './i18n'
 import { ScreenHome } from './screens/ScreenHome'
 import { ScreenPipeline } from './screens/ScreenPipeline'
+import { ScreenScanner } from './screens/ScreenScanner'
 import { ScreenSetup } from './screens/ScreenSetup'
 import { ScreenMounts } from './screens/ScreenMounts'
 import { ScreenFileIntegrity } from './screens/ScreenFileIntegrity'
@@ -351,6 +352,7 @@ export default function App(): React.JSX.Element {
         <Routes>
           <Route path="/"            element={<ScreenHome />} />
           <Route path="/quicklookup" element={<ScreenQuickLookup />} />
+          <Route path="/scanner"     element={<ScreenScanner />} />
           <Route path="/library"     element={<ScreenLibrary />} />
           <Route path="/tapematch"   element={<ScreenTapeMatch />} />
           <Route path="/songs"       element={<ScreenSongs />} />

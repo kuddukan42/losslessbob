@@ -65,5 +65,8 @@
   { "action": "screenshot", "file": "18-themes.png" },
 
   { "action": "navigate", "route": "/dbeditor" },
-  { "action": "screenshot", "file": "19-dbeditor.png" }
+  { "action": "screenshot", "file": "19-dbeditor.png" },
+
+  { "action": "navigate", "route": "/scanner" },
+  { "action": "screenshot", "file": "20-scanner.png" }
 ]

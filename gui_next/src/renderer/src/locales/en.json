@@ -33,6 +33,7 @@
       "home": "Home",
       "ingest": "Ingest",
       "pipeline": "Pipeline",
+      "scanner": "Disk Scanner",
       "quicklookup": "Quick Lookup",
       "library": "Library",
       "collection": "My Collection",
@@ -1805,6 +1806,62 @@
       "pick": "pick",
       "openInLibrary": "Open in Library",
       "empty": "No performances found for this song."
+    }
+  },
+  "scanner": {
+    "title": "Disk Scanner",
+    "subtitle": "Find audio folders anywhere on disk and add them to your collection in bulk.",
+    "header": {
+      "found_one": "{{count}} folder",
+      "found_other": "{{count}} folders",
+      "addable_one": "{{count}} can be added",
+      "addable_other": "{{count}} can be added",
+      "known_one": "{{count}} already in your collection",
+      "known_other": "{{count}} already in your collection"
+    },
+    "roots": {
+      "heading": "Folders to scan",
+      "empty": "No folders chosen yet.",
+      "add": "Add folder…",
+      "remove": "Remove"
+    },
+    "excludes": {
+      "heading": "Skip folders named",
+      "placeholder": "backup, artwork",
+      "hint": "Comma-separated. Hidden folders and system paths are always skipped."
+    },
+    "actions": {
+      "scan": "Scan",
+      "cancel": "Cancel",
+      "add": "Add to collection",
+      "addSelected_one": "Add {{count}} to collection",
+      "addSelected_other": "Add {{count}} to collection"
+    },
+    "progress": {
+      "scanning": "Scanned {{dirs}} folders · found {{found}}",
+      "cancelled": "Scan cancelled — showing what was found so far."
+    },
+    "table": {
+      "selectAll": "Select all",
+      "folder": "Folder",
+      "files": "Files",
+      "size": "Size",
+      "formats": "Formats",
+      "lb": "LB #",
+      "status": "Status"
+    },
+    "status": {
+      "new": "New",
+      "inCollection": "In collection",
+      "noLb": "No LB #"
+    },
+    "added": {
+      "summary": "Added {{added}} · {{failed}} skipped"
+    },
+    "empty": {
+      "title": "Nothing scanned yet.",
+      "running": "Scanning…",
+      "detail": "Choose one or more folders on the left, then Scan. Every folder holding lossless audio shows up here."
     }
   },
   "gaps": {

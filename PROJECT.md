@@ -93,6 +93,7 @@ losslessbob/
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-111: lbdir-based collection integrity scan engine
 │   ├── file_integrity.py     # TODO-267: per-file xxh3+sha256 bit-rot inventory (index/verify/rolling)
+│   ├── disk_scanner.py       # TODO-250: os.scandir walk for audio folders outside the collection
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
 │   ├── startup_log.py        # Startup timing logger → data/logs/startup.log
 │   ├── taper_attribution.py  # Taper attribution engine: evidence harvest → confirmed/propagated/inferred designations
@@ -1617,6 +1618,22 @@ Per-**file** across a whole mount (distinct from the per-LB, lbdir-driven routes
 | GET | `/api/file-integrity/history` | Recent scan runs. Query `mount_id`, `limit`. |
 | POST | `/api/file-integrity/rebaseline` | Body: `{mount_id, rel_paths:[...]}`. Accept current content as the new baseline — the only path that clears a sticky `rot` flag. |
 
+### Disk Scanner (TODO-250)
+One-shot discovery of audio folders **outside** the collection, backed by `backend/disk_scanner.py`.
+No index is persisted — each scan walks the given roots fresh, with `os.scandir()` early pruning
+(hidden dirs, `DEFAULT_EXCLUDES`, symlinked dirs never followed). Roots/excludes persist as the
+`scanner_roots` (JSON array) / `scanner_excludes` (comma string) meta keys via `/api/db/settings`.
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/scanner/scan` | Start a background walk. Body: `{roots:[...], extensions?:[...], excludes?:[...]}`. 400 if `roots` is empty, 409 if a scan is already running. |
+| POST | `/api/scanner/scan/cancel` | Signal the running walk to stop; partial results are kept. Returns `{ok}` (false if none running). |
+| GET | `/api/scanner/scan/status` | Poll progress. Returns `{running, roots, dirs_scanned, found, current_dir, results, error, cancelled}`; `results` rows are `{path, name, file_count, extensions, size_bytes, in_collection, lb_number}`. |
+| POST | `/api/scanner/add` | Bulk-add scanned folders. Body: `{paths:[...]}`. Returns `{results:[{path, ok, lb_number, error}], added}` — `error` is `no_lb` when the folder can't be attributed, `already_in_collection` when its LB is already filed. |
+
+LB resolution per folder (`disk_scanner._resolve_lb`): an existing `my_collection` row for the path
+wins, then a single `folder_lb_link` pin, then the `LB-NNNNN` folder-name convention. Unattributable
+folders are still listed but can't be added — `my_collection` keys on `lb_number`.
+
 ### DB Editor
 All routes below accept `?db=` (or body `db` on `/api/dbedit/query`): omitted/unknown →
 `losslessbob.db`; `batchverify` → `batch_verify.db`; `tapematch` → `tools/tapematch/observations.db`.
@@ -2040,6 +2057,7 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | ScreenSetup | `screens/ScreenSetup.tsx` | Done — all 16 handlers: credentials, purge, import/export, master, data packages |
 | ScreenMounts | `screens/ScreenMounts.tsx` | Done — storage mounts, year routing, filing mode, preview tester (split out of ScreenSetup) |
 | ScreenFileIntegrity | `screens/ScreenFileIntegrity.tsx` | Done (2026-07-24, TODO-267) — `/fileintegrity`, Settings group, shield icon. Per-file bit-rot inventory over `/api/file-integrity/*`: collection roll-up (files/bytes/corrupt/missing), per-mount cards with Index / Deep Verify + live progress bar + Stop, nightly rolling-verify toggle (`file_verify_enabled`), rot-first problems list with per-file Re-baseline, recent-scans strip. Health badge says "clean" (no problems), not "verified" — index baselines, it does not deep-verify. |
+| ScreenScanner | `screens/ScreenScanner.tsx` | Done (2026-07-24, TODO-250) — `/scanner`, Ingest group, folderPlus icon. Left panel: root list (native folder picker) + comma-separated exclude names, both persisted to `scanner_roots`/`scanner_excludes`; Scan/Cancel with live `dirs_scanned`/`found` progress. Right panel: results table (folder, files, size, formats, LB #, status) with per-row checkboxes and bulk "Add to collection". Rows already in `my_collection` are greyed and unselectable; rows with no resolvable LB # show a warn pill and can't be added. |
 | ScreenCollection | `screens/ScreenCollection.tsx` | Done — sortable columns, wishlist, forum, torrents, duplicates, batch actions |
 | ScreenSearch | `screens/ScreenSearch.tsx` | Done — virtual table, sort, group-by-year, CSV export, column picker, saved views |
 | ScreenLibrary | `screens/ScreenLibrary.tsx`, `components/library/actions.tsx`, `components/library/DetailPanel.tsx` | In progress (TODO-150) — "By performance \| By recording" lens toggle (defaults to performance). Both lenses share the same merged `RecordingRow[]` (from `/api/search` + `/api/collection/prefetch` + `/api/library/badges` — the last merged by `lb_number` for pick/curated/taper badges, TODO-212); the performance lens additionally fetches `/api/library/performances` + `/api/tapematch/families` and groups recordings by show → TapeMatch family → member. The recording lens renders ★ recommended / curated / `absGrade` / confirmed-taper (upgrading the raw taper pill) badges inline; the performance lens's view menu includes a combined "Any curated pick" (`curatedAny`) filter alongside the per-curator ones. Each lens has its own facet rail and virtual year-grouped table. Right-click context menu and a checkbox bulk-select bar (recording lens: Create torrent/Add to qBittorrent/Update location/Remove) are wired in via `actions.tsx`'s shared registry. Selecting a row opens a zoned detail panel (`DetailPanel.tsx`: ActionBar/ShareSeed/AssetStrip/Setlist, step 8; recording lens also has a Quality tab showing LB Rating + Concert Ranker AI Quality Index side by side, a Picks tab (show-pick rank/score + `EvidenceList`, lazy `/api/picks/for/<lb>`), and a Taper tab (attribution tier/conflict + `EvidenceList`, lazy `/api/tapers/attributions/<lb>`, confirm/reject buttons in curator mode) as a third column on either lens; TODO-162 P5b added an Olof tab on both lenses (Still On The Road setlist with encore/credits/annotations/take status, NET + year concert #s, recording info, notes, BobTalk quote, chronicle diary entries, circulation provenance, and a per-copy setlist comparison via `POST /api/olof/compare`) — gated on `/api/olof/status` `events > 0` (react-query `staleTime: Infinity`), so it never renders on installs without local Olof data. Live at `/library`, sidebar nav item "Library" (featured, top of the Library group, above My Collection) — step 9. Performance lens show rows and the detail panel render an "Unconfirmed" pill for degraded (`confirmed: false`) shows recovered from the `lb_category='unknown'` bucket (TODO-151). `m3u` (Export show as M3U) is wired for performance rows. `sources`/`notify` row actions and the TapeMatch family `note` field remain unexposed (no backend/UI to wire to). i18n pass (step 10) **done** — all in-screen strings extracted to the `library` namespace in `locales/*.json` and the three files converted to `t()` (the shared action registry takes a `TFunction` param since the builders are plain functions; counts pluralised via `_one`/`_other` keys); the 5 non-English locales filled via DeepL. |

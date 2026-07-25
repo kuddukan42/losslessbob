@@ -57,7 +57,8 @@
       "fingerprint": "Vingerafdruk",
       "gaps": "Hiaten",
       "fileintegrity": "Bestandsintegriteit",
-      "timeline": "Tijdlijn"
+      "timeline": "Tijdlijn",
+      "scanner": "Schijfscanner"
     },
     "statusBar": {
       "db": "DB:",
@@ -2088,5 +2089,61 @@
     "confirmDelete": "Deze weergave verwijderen",
     "scopeOwned": "In collectie",
     "scopeUnowned": "Geen eigendom"
+  },
+  "scanner": {
+    "title": "Schijfscanner",
+    "subtitle": "Zoek audio-mappen overal op de schijf en voeg ze in één keer toe aan je verzameling.",
+    "header": {
+      "found_one": "Map {{count}}",
+      "found_other": "{{count}}-mappen",
+      "addable_one": "{{count}} kan worden toegevoegd",
+      "addable_other": "{{count}} kan worden toegevoegd",
+      "known_one": "{{count}} staat al in je collectie",
+      "known_other": "{{count}} staat al in je collectie"
+    },
+    "roots": {
+      "heading": "Te scannen mappen",
+      "empty": "Er zijn nog geen mappen geselecteerd.",
+      "add": "Map toevoegen…",
+      "remove": "Verwijderen"
+    },
+    "excludes": {
+      "heading": "Sla mappen met de naam",
+      "placeholder": "back-up, albumillustraties",
+      "hint": "Gescheiden door komma's. Verborgen mappen en systeempaden worden altijd overgeslagen."
+    },
+    "actions": {
+      "scan": "Scannen",
+      "cancel": "Annuleren",
+      "addSelected_one": "{{count}} aan collectie toevoegen",
+      "addSelected_other": "{{count}} aan collectie toevoegen",
+      "add": "Toevoegen aan verzameling"
+    },
+    "progress": {
+      "scanning": "{{dirs}}-mappen gescand · {{found}} gevonden",
+      "cancelled": "Scannen geannuleerd — toont wat er tot nu toe is gevonden."
+    },
+    "table": {
+      "selectAll": "Alles selecteren",
+      "folder": "Map",
+      "files": "Bestanden",
+      "size": "Grootte",
+      "formats": "Formaten",
+      "lb": "LB #",
+      "status": "Status"
+    },
+    "status": {
+      "new": "Nieuw",
+      "inCollection": "In collectie",
+      "noLb": "Geen LB-nummer"
+    },
+    "added": {
+      "summary": "{{added}} toegevoegd · {{failed}} overgeslagen"
+    },
+    "empty": {
+      "title": "Er is nog niets gescand.",
+      "running": "Bezig met scannen…",
+      "detail": "Selecteer een of meer mappen aan de linkerkant en klik vervolgens op ‘Scannen’. Elke map met lossless-audio wordt hier weergegeven."
+    }
   }
 }

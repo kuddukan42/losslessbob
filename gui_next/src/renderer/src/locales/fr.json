@@ -57,7 +57,8 @@
       "fingerprint": "Empreinte digitale",
       "gaps": "Lacunes",
       "fileintegrity": "Intégrité des fichiers",
-      "timeline": "Chronologie"
+      "timeline": "Chronologie",
+      "scanner": "Analyseur de disque"
     },
     "statusBar": {
       "db": "DB :",
@@ -2088,5 +2089,61 @@
     "confirmDelete": "Supprimer cette vue",
     "scopeOwned": "Dans la collection",
     "scopeUnowned": "Non détenu"
+  },
+  "scanner": {
+    "title": "Analyseur de disque",
+    "subtitle": "Recherchez des dossiers audio n'importe où sur le disque et ajoutez-les en masse à votre collection.",
+    "header": {
+      "found_one": "Dossier {{count}}",
+      "found_other": "Dossiers {{count}}",
+      "addable_one": "{{count}} peut être ajouté",
+      "addable_other": "{{count}} peut être ajouté",
+      "known_one": "{{count}} figure déjà dans votre collection",
+      "known_other": "{{count}} figure déjà dans votre collection"
+    },
+    "roots": {
+      "heading": "Dossiers à analyser",
+      "empty": "Aucun dossier n'a encore été sélectionné.",
+      "add": "Ajouter un dossier…",
+      "remove": "Supprimer"
+    },
+    "excludes": {
+      "heading": "Ignorer les dossiers nommés",
+      "placeholder": "sauvegarde, pochettes d'albums",
+      "hint": "Séparés par des virgules. Les dossiers masqués et les chemins d'accès système sont toujours ignorés."
+    },
+    "actions": {
+      "scan": "Analyser",
+      "cancel": "Annuler",
+      "addSelected_one": "Ajouter {{count}} à la collection",
+      "addSelected_other": "Ajouter {{count}} à la collection",
+      "add": "Ajouter à la collection"
+    },
+    "progress": {
+      "scanning": "Dossiers {{dirs}} analysés · {{found}} trouvés",
+      "cancelled": "Analyse annulée — affichage des éléments détectés jusqu'à présent."
+    },
+    "table": {
+      "selectAll": "Tout sélectionner",
+      "folder": "Dossier",
+      "files": "Fichiers",
+      "size": "Taille",
+      "formats": "Formats",
+      "lb": "LB #",
+      "status": "État"
+    },
+    "status": {
+      "new": "Nouveau",
+      "inCollection": "Dans la collection",
+      "noLb": "Pas de n° LB"
+    },
+    "added": {
+      "summary": "Ajout de {{added}} · {{failed}} ignoré"
+    },
+    "empty": {
+      "title": "Rien n'a encore été numérisé.",
+      "running": "Analyse en cours…",
+      "detail": "Sélectionnez un ou plusieurs dossiers à gauche, puis cliquez sur « Analyser ». Tous les dossiers contenant des fichiers audio sans perte s'affichent ici."
+    }
   }
 }

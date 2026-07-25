@@ -6,7 +6,7 @@
 // Curator-gated groups (gatedGroup) render/appear only when curatorMode is on.
 
 export type NavId =
-  | 'home' | 'pipeline' | 'quicklookup'
+  | 'home' | 'pipeline' | 'scanner' | 'quicklookup'
   | 'library' | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs' | 'tapematch' | 'songs' | 'gaps' | 'timeline'
   | 'attachments' | 'spectrograms' | 'map'
   | 'scraper' | 'fingerprint' | 'setup' | 'mounts' | 'fileintegrity' | 'themes' | 'dbeditor'
@@ -44,6 +44,7 @@ export const NAV_GROUPS: NavGroup[] = [
     label: 'Ingest',
     items: [
       { id: 'pipeline', label: 'Pipeline', icon: 'pipeline' },
+      { id: 'scanner',  label: 'Disk Scanner', icon: 'folderPlus' },
     ],
   },
   {
