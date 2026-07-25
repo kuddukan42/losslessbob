@@ -550,7 +550,9 @@
         "applied": "Toegepast",
         "applyFailed": "Toepassen mislukt",
         "retrieveFailed": "Ophalen mislukt",
-        "rescanFailed": "Opnieuw scannen mislukt"
+        "rescanFailed": "Opnieuw scannen mislukt",
+        "autoReconciled": "{{folder}} automatisch afgestemd — LB-map voldoet nu aan de eisen",
+        "autoReconcilePartial": "Automatische afstemming kon {{folder}} niet voltooien — je hulp is nog steeds nodig"
       },
       "rescan": "Opnieuw scannen"
     },
@@ -588,7 +590,9 @@
       "fail": "Mislukt",
       "failN": "Fout {{n}}",
       "noLbdir": "Geen LBDIR"
-    }
+    },
+    "autoReconcile": "Automatisch afstemmen",
+    "autoReconcileHint": "Wanneer deze functie is ingeschakeld, wordt een map waarvan de LB-directory stopt bij ontbrekende of extra bestanden automatisch gesynchroniseerd (alleen bestanden met een overeenkomende MD5-waarde) en opnieuw gecontroleerd — de status wordt groen als alles klopt, en blijft geel als dat niet het geval is"
   },
   "collection": {
     "confirmDialog": {

@@ -1,3 +1,18 @@
+[2026-07-25] — feat: Pipeline Auto-reconcile toggle for the LBDIR stage (TODO-271)
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: a fourth toolbar toggle,
+  Auto-reconcile (off by default), sitting between Auto-rename and Auto-collect. When on, any row
+  whose LBDIR step lands yellow on missing_files/extra_files gets one unattended reconcile attempt:
+  /api/lbdir/reconcile preview -> apply the safe subset -> re-run the lbdir pipeline step, so the
+  row repaints from the backend's own verdict (green if it now passes, still yellow if not).
+  The safe subset is deliberately narrower than the manual panel's: only MD5-matched rename and
+  site/files-copy proposals are applied, plus extras moved to /extras/. Name-only matches are
+  skipped — those are a different revision of the file, so renaming one converts a `missing` into
+  a `mismatch` and would take a yellow row red; they still wait for a human. Rows with nothing
+  safely actionable are left untouched. Serialized through reconcilingRef (reconcile hashes every
+  file in the folder — one folder at a time); autoReconciledRef caps it at one attempt per row.
+Added: gui_next locales: pipeline.autoReconcile / autoReconcileHint and the
+  pipeline.lbdir.toast.autoReconciled / autoReconcilePartial toasts (en + de/fr/es/it/nl).
+
 [2026-07-25] — fix: File Integrity scans now appear in the activity tray (BUG-276)
 Fixed: backend/activity.py: the activity tray showed no file-integrity index/deep-verify runs.
   Those scans live in the newer backend/file_integrity.py subsystem (per-mount, parallel workers),

@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-271: Pipeline: Auto-reconcile toggle for the LBDIR stage
+Priority: Medium
+Status: Done
+Added: 2026-07-25
+Closed: 2026-07-25
+Description: When on, a row whose LBDIR step lands yellow on missing/extra files is reconciled unattended (MD5-matched renames + site/files copies + extras moved to /extras/), then the lbdir step is re-run so the row flips green if it now passes and stays yellow if it does not. Name-only matches are excluded — applying one turns a missing into a mismatch and would take the row red.
+Shipped 2026-07-25 in gui_next/src/renderer/src/screens/ScreenPipeline.tsx: autoReconcile toggle + reconcileRowAuto driver, serialized one folder at a time, one attempt per row.
+
 TODO-270: Retire the standalone Gaps screen — fold coverage into the Library performance lens
 Priority: Medium
 Status: Done
