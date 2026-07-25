@@ -1990,7 +1990,8 @@
     "grid": {
       "loading": "…",
       "yearGap_one": "{{count}} lacuna",
-      "yearGap_other": "{{count}} lacune"
+      "yearGap_other": "{{count}} lacune",
+      "error": "Impossibile caricare"
     },
     "detail": {
       "noSelection": "Seleziona una data per vedere cosa si sa al riguardo.",
@@ -2001,7 +2002,13 @@
       "familiesHeading": "Famiglie TapeMatch",
       "unknownVenue": "Luogo sconosciuto",
       "recording": "{{kind}}, {{mins}} min",
-      "none": "Nessuna"
+      "none": "Nessuna",
+      "error": "Impossibile caricare questa data."
+    },
+    "error": {
+      "title": "Impossibile caricare i dati Gaps.",
+      "detail": "Il backend non ha risposto. Verifica che sia in esecuzione, quindi riprova.",
+      "retry": "Riprova"
     }
   },
   "palette": {

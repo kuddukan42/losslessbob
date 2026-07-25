@@ -1990,7 +1990,8 @@
     "grid": {
       "loading": "…",
       "yearGap_one": "{{count}} Lücke",
-      "yearGap_other": "{{count}} Lücken"
+      "yearGap_other": "{{count}} Lücken",
+      "error": "Laden fehlgeschlagen"
     },
     "detail": {
       "noSelection": "Wählen Sie ein Datum aus, um zu sehen, was darüber bekannt ist.",
@@ -2001,7 +2002,13 @@
       "familiesHeading": "TapeMatch-Familien",
       "unknownVenue": "Unbekannter Veranstaltungsort",
       "recording": "{{kind}}, {{mins}} min",
-      "none": "Keine"
+      "none": "Keine",
+      "error": "Dieses Datum konnte nicht geladen werden."
+    },
+    "error": {
+      "title": "Die Gaps-Daten konnten nicht geladen werden.",
+      "detail": "Das Backend hat nicht reagiert. Überprüfen Sie, ob es läuft, und versuchen Sie es dann erneut.",
+      "retry": "Erneut versuchen"
     }
   },
   "palette": {
