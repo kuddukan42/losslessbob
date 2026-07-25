@@ -94,6 +94,9 @@ export type PerfMeta = {
   setlist?: string
   title?: string
   confirmed?: boolean
+  // Present only on backend-appended olof-only rows (no circulating recording,
+  // or a not-yet-happened date) — see ScreenLibrary.tsx's PerformanceRow.
+  coverage?: 'uncirculated' | 'upcoming'
 }
 
 const SRC_ABBR: Record<string, string> = {
@@ -249,7 +252,8 @@ function CoverageChip({ coverage, ownedCount, total }: { coverage: string; owned
     Covered:      { tone: 'ok',   label: total > 1 ? t('library.coverage.ownedFull', { owned: ownedCount, total }) : t('library.coverage.owned'), icon: 'check' },
     Upgrade:      { tone: 'warn', label: t('library.coverage.upgrade', { owned: ownedCount, total }), icon: 'upload' },
     Gap:          { tone: 'mute', label: t('library.coverage.gap'), icon: 'x' },
-    Undocumented: { tone: 'warn', label: t('library.coverage.noSource'), icon: 'alert' },
+    Uncirculated: { tone: 'mute', label: t('library.coverage.uncirculated'), icon: 'alert' },
+    Upcoming:     { tone: 'mute', label: t('library.coverage.upcoming'), icon: 'alert' },
   }
   const m = map[coverage] ?? map.Gap
   return (
@@ -1134,7 +1138,9 @@ interface OlofEventRow {
   recording_mins: number | null
   notes: string | null
   bobtalk: string | null
-  songs: OlofSong[]
+  // Absent on the `GET /api/shows/<date>/olof` drill-down (raw olof_events
+  // row, no song join) — present (and always populated) on `/api/olof/date/<date>`.
+  songs?: OlofSong[]
 }
 
 interface OlofChronicleEntry { year: number; seq: number; date_str: string; date_raw: string; entry_text: string }
@@ -1222,6 +1228,7 @@ function OlofSongRow({ s, i, showTakes }: { s: OlofSong; i: number; showTakes: b
 function OlofEventCard({ ev }: { ev: OlofEventRow }) {
   const { t } = useTranslation()
   const isStudio = ev.event_type !== 'concert'
+  const songs = ev.songs ?? []
   const recLine = [
     ev.recording_kind || null,
     ev.recording_info || null,
@@ -1242,9 +1249,9 @@ function OlofEventCard({ ev }: { ev: OlofEventRow }) {
         </div>
       )}
 
-      {ev.songs.length > 0 && (
+      {songs.length > 0 && (
         <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 6, overflow: 'hidden', marginBottom: 10 }}>
-          {ev.songs.map((s, i) => (
+          {songs.map((s, i) => (
             <OlofSongRow key={`${ev.event_id}-${s.position}`} s={s} i={i} showTakes={isStudio} />
           ))}
         </div>
@@ -1374,6 +1381,51 @@ function OlofZone({ date, lbNumber, hideLabel }: { date: string; lbNumber?: numb
       {data!.events.map(ev => <OlofEventCard key={ev.event_id} ev={ev} />)}
       <OlofChronicleList entries={data!.chronicle} />
       <OlofNewTapesList entries={data!.new_tapes} />
+    </div>
+  )
+}
+
+// Olof-only shows (uncirculated/upcoming performance rows — no circulating
+// recording, so no lbNumber to key /api/olof/compare or /api/olof/date on).
+// backend.gap_analysis.get_date_detail via GET /api/shows/<date>/olof gives
+// the same olof_events rows (venue/tour already shown by the identity block;
+// this adds concert numbering, recording info, notes, BobTalk) without
+// needing a recording to compare against. Reuses OlofEventCard — `songs` is
+// simply absent from this payload (no song join), which OlofEventCard now
+// tolerates.
+interface ShowOlofResponse {
+  available: boolean
+  date_iso: string
+  events: OlofEventRow[]
+}
+
+function OlofShowZone({ date }: { date: string }) {
+  const { t } = useTranslation()
+  const { data, isLoading } = useQuery<ShowOlofResponse>({
+    queryKey: ['show-olof', date],
+    queryFn: () => fetch(`${BASE}/api/shows/${encodeURIComponent(date)}/olof`).then(r => r.json()),
+    staleTime: 60_000,
+    enabled: !!date,
+  })
+
+  if (isLoading) {
+    return <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)' }}>{t('library.empty.loading')}</div>
+  }
+  const hasContent = !!data && data.available && data.events.length > 0
+  if (!hasContent) {
+    return (
+      <div style={{
+        padding: '14px 12px', borderRadius: 6, textAlign: 'center',
+        border: '1px dashed var(--lbb-border2)', color: 'var(--lbb-fg3)', fontSize: 'var(--t-meta)',
+      }}>
+        {t('library.olof.emptyNote')}
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ flexShrink: 0 }}>
+      {data!.events.map(ev => <OlofEventCard key={ev.event_id} ev={ev} />)}
     </div>
   )
 }
@@ -1673,7 +1725,9 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
   const actions = buildPerformanceActions(recordings, canonical, actionHandlers, t, perf.id)
   const owned = recordings.filter(r => r.owned)
   const ownedFams = families.filter(f => f.owned)
-  const coverage = recordings.length === 0 ? 'Undocumented'
+  const coverage = perf.coverage === 'upcoming' ? 'Upcoming'
+    : perf.coverage === 'uncirculated' ? 'Uncirculated'
+    : recordings.length === 0 ? 'Uncirculated'
     : owned.length === 0 ? 'Gap'
     : owned.length < recordings.length && canonical && !canonical.owned ? 'Upgrade'
     : 'Covered'
@@ -1691,7 +1745,16 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
   // fetches against, rather than perf.date (which can fall back to raw,
   // non-ISO scraped text when there's no bobdylan_shows match).
   const olofDate = perf.setlist && OLOF_DATE_RE.test(perf.setlist) ? perf.setlist : null
-  const showOlof = (olofStatus?.events ?? 0) > 0 && !!olofDate
+  // Uncirculated/upcoming (olof-only) rows have zero recordings, so there's
+  // no lbNumber to key /api/olof/compare or /api/olof/date on, and no
+  // bobdylan_shows-backed perf.setlist either — the Library phase-1 union
+  // (backend.db.get_performances) never sets it for these. Fall back to
+  // perf.id, which IS the olof date_iso for every such row (backend.gap_
+  // analysis.uncirculated_dates), and fetch the GET /api/shows/<date>/olof
+  // drill-down instead so the pane isn't blank.
+  const isOlofOnly = perf.coverage === 'uncirculated' || perf.coverage === 'upcoming' || recordings.length === 0
+  const showOlofDate = isOlofOnly && OLOF_DATE_RE.test(perf.id) ? perf.id : null
+  const showOlof = (olofStatus?.events ?? 0) > 0 && !!(showOlofDate || olofDate)
 
   // Overview always; Recordings/Setlist/Seed & Share only when they have content
   // (spec §9). Each focus item is a peer tab, not a footer in a long scroll.
@@ -1855,9 +1918,14 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
           </div>
         )}
 
-        {/* Olof tab — Still On The Road / Yearly Chronicles for this date */}
-        {activeTab === 'olof' && olofDate && (
-          <OlofZone date={olofDate} lbNumber={canonical?.lbNumber} hideLabel />
+        {/* Olof tab — Still On The Road / Yearly Chronicles for this date.
+            Olof-only rows (no recording) use the show-detail drill-down;
+            ordinary rows use the recording-aware zone (setlist comparison,
+            chronicle, new-tapes provenance). */}
+        {activeTab === 'olof' && (
+          showOlofDate
+            ? <OlofShowZone date={showOlofDate} />
+            : olofDate && <OlofZone date={olofDate} lbNumber={canonical?.lbNumber} hideLabel />
         )}
 
         {/* Seed & Share tab — scoped to the best owned source */}

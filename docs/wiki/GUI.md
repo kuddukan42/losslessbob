@@ -8,12 +8,14 @@
 Electron + React + TypeScript; main process in `gui_next/src/main/`, renderer in
 `gui_next/src/renderer/src/`. Talks to the Flask backend on :5174.
 
-## Screens (20, drop-in registered via `App.tsx` routes)
+## Screens (19, drop-in registered via `App.tsx` routes)
 
 Home · Setup · Mounts · Collection · Search · **Library** (flagship: performance/
 recording lens toggle, zoned DetailPanel with Quality/Picks/Taper/Olof tabs,
-dossier export) · Bootlegs · TapeMatch · Songs · Gaps (living Kokay list) ·
-Fingerprint · Themes · Pipeline · QuickLookup · Attachments · Spectrograms ·
+dossier export; the performance lens absorbed the retired standalone Gaps
+screen — `uncirculated`/`upcoming` recording-less rows, Coverage facet) ·
+Bootlegs · TapeMatch · Songs · Timeline · Fingerprint · Themes · Pipeline ·
+QuickLookup · Attachments · Spectrograms ·
 Map (legacy Leaflet page in an iframe) · DbEditor · Scraper · Sharing · Trading.
 
 `lib/navigation.ts` is the **single source of truth for screens** — sidebar and
@@ -41,7 +43,7 @@ both when curator mode is off.
 Real captures in `docs/screenshots/` (also used by the website + README):
 [home](../screenshots/home.png) · [library](../screenshots/library.png) ·
 [search](../screenshots/search.png) · [map](../screenshots/map.png) ·
-[gaps](../screenshots/gaps.png) · [quicklookup](../screenshots/quicklookup.png) ·
+[quicklookup](../screenshots/quicklookup.png) ·
 [pipeline](../screenshots/pipeline.png). Refresh recipe: `docs/screenshots/README.md`.
 
 ## Verification

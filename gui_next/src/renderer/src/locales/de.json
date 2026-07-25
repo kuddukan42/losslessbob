@@ -55,7 +55,6 @@
       "tapematch": "TapeMatch",
       "songs": "Songs",
       "fingerprint": "Fingerabdruck",
-      "gaps": "Lücken",
       "fileintegrity": "Dateiintegrität",
       "timeline": "Zeitleiste",
       "scanner": "Festplattenscanner"
@@ -1376,7 +1375,6 @@
     "views": {
       "allPerformances": "Alle Darbietungen",
       "myCollection": "Meine Sammlung",
-      "coverageGaps": "Lücken in der Abdeckung",
       "wishlist": "Wunschliste",
       "duplicates": "Duplikate",
       "recommended": "Empfohlen, im Besitz",
@@ -1385,7 +1383,9 @@
       "tenhaafPicks": "10haafs Auswahl",
       "taperConfirmed": "Bestätigter Taper",
       "taperReview": "Taper: muss noch überprüft werden",
-      "curatedAny": "Eine beliebige kuratierte Auswahl"
+      "curatedAny": "Eine beliebige kuratierte Auswahl",
+      "coverageGaps": "Nicht in der Sammlung enthalten",
+      "uncirculated": "Nicht im Umlauf"
     },
     "statusValue": {
       "public": "Öffentlich",
@@ -1531,7 +1531,8 @@
       "owned": "Im Besitz",
       "upgrade": "Upgrade {{owned}}/{{total}}",
       "gap": "Lücke",
-      "noSource": "Keine Quelle"
+      "uncirculated": "Es ist keine Aufnahme im Umlauf",
+      "upcoming": "Bevorstehende Sendung"
     },
     "family": {
       "recording": "Aufnahme",
@@ -1607,7 +1608,8 @@
       "covered": "Behandelt",
       "upgrade": "Upgrade",
       "gap": "Lücke",
-      "undocumented": "Nicht dokumentiert"
+      "uncirculated": "Nicht im Umlauf",
+      "upcoming": "In Kürze"
     },
     "picks": {
       "label": "Empfehlungen anzeigen",
@@ -1974,42 +1976,6 @@
       "matched": "Abgestimmt ({{count}})",
       "missing": "Nicht auf dieser Kassette ({{count}})",
       "completeMatch": "Jeder Titel in der Setlist wird berücksichtigt."
-    }
-  },
-  "gaps": {
-    "title": "Lücken",
-    "subtitle": "Alle bekannten Dylan-Konzerttermine, farblich gekennzeichnet danach, ob eine Aufnahme im Umlauf ist.",
-    "unavailable": "Die Ansicht „Gaps“ benötigt die Konzertchronologie von Olof Bjorner, die bei dieser Installation nicht geladen ist.",
-    "credit": "Konzertliste aus Olof Bjorners DSN-Chronologie, in Anlehnung an Les Kokays Liste unveröffentlichter Konzerte.",
-    "header": {
-      "totalShows": "{{count}} zeigt",
-      "totalGaps": "{{count}} Lücken"
-    },
-    "decades": {
-      "all": "Alle"
-    },
-    "grid": {
-      "loading": "…",
-      "yearGap_one": "{{count}} Lücke",
-      "yearGap_other": "{{count}} Lücken",
-      "error": "Laden fehlgeschlagen"
-    },
-    "detail": {
-      "noSelection": "Wählen Sie ein Datum aus, um zu sehen, was darüber bekannt ist.",
-      "tabEvent": "Ereignisse und Quellen",
-      "eventsHeading": "Veranstaltung",
-      "entriesHeading": "Zirkulierende Einträge",
-      "partialEntriesHeading": "Mögliche Treffer (Teilübereinstimmung)",
-      "familiesHeading": "TapeMatch-Familien",
-      "unknownVenue": "Unbekannter Veranstaltungsort",
-      "recording": "{{kind}}, {{mins}} min",
-      "none": "Keine",
-      "error": "Dieses Datum konnte nicht geladen werden."
-    },
-    "error": {
-      "title": "Die Gaps-Daten konnten nicht geladen werden.",
-      "detail": "Das Backend hat nicht reagiert. Überprüfen Sie, ob es läuft, und versuchen Sie es dann erneut.",
-      "retry": "Erneut versuchen"
     }
   },
   "palette": {

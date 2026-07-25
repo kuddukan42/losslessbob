@@ -15,7 +15,8 @@ Search (FTS5) · Entry Listing/Detail/Reclassification · DB Editor · Admin · 
 Site-Data Packaging & Onboarding · LB Master Integrity · LB Missing · LB Alias ·
 LB Problems · Curated Lists · Site-Mirror Xref Ingest (reviewed import, TODO-252)
 **Setlists & shows**: Dylan Performances · bobdylan.com Scraper · Setlist.fm ·
-Olof Björner · Setlist Fingerprinting · Gaps View · Show Dossier ·
+Olof Björner · Setlist Fingerprinting · Show Detail (coverage classification,
+feeds the Library's uncirculated/upcoming rows) · Show Dossier ·
 Library performance/show grouping · Map · Geocoding
 **Derived data**: Derived-Data Recompute (SSE chain: lineage → tapers → picks →
 song index) · Taper Attribution · TapeMatch Family + Pairs Sync · Songs index
@@ -39,7 +40,7 @@ For a specific route: `grep -n <keyword> backend/app.py` — don't read the file
 | `importer.py` / `scraper.py` / `site_crawler.py` | Ingest: checksum files, entry metadata, full site mirror |
 | `olof_*`, `bobserve_*`, `setlistfm.py`, `bobdylan_scraper.py` | Setlist corpora ([Setlist-Sources](Setlist-Sources.md)) |
 | `taper_attribution.py` / `song_index.py` / `setlist_fingerprint.py` | Derived-data engines |
-| `gap_analysis.py` / `dossier.py` | Gaps view · [Show-Dossier](Show-Dossier.md) |
+| `gap_analysis.py` / `dossier.py` | Library performance-lens coverage (uncirculated/upcoming) · [Show-Dossier](Show-Dossier.md) |
 | `filer.py` / `integrity_monitor.py` / `folder_naming.py` | Collection pipeline & watchdog |
 | `sharing.py` / `forum_poster.py` / `qbittorrent.py` / `archive_org.py` | Outbound integrations |
 | `scheduler.py` / `db_queue.py` / `activity.py` | Background jobs, write queue, activity feed |

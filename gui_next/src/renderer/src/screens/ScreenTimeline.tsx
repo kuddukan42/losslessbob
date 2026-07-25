@@ -1,8 +1,11 @@
 // Timeline navigator (FABLE_IDEAS UI-2, instructions/FABLE_TIMELINE.md) — a
 // zoomable Decade → Tour → Night browser of the concert archive, colored by
 // the best grade held for each night. Read-only end to end; backend/timeline.py
-// computes everything live per request, same philosophy as ScreenGaps.tsx (no
-// shared code with that screen — see spec §3 "Relationship to ScreenGaps").
+// computes everything live per request from the same olof_events/entries
+// coverage data backend/gap_analysis.py classifies for the Library's
+// uncirculated/upcoming performance rows, but with no shared code (see spec
+// §3 "Relationship to the Gaps view" — the standalone Gaps screen it
+// originally compared against was retired once absorbed into the Library).
 
 import React, { useCallback, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'

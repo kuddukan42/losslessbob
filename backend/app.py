@@ -6402,44 +6402,21 @@ def create_app() -> Flask:
             _log.exception("songs_alias failed")
             return jsonify({"error": str(e)}), 500
 
-    # ── Gaps view (TODO-256, instructions/FABLE_GAPS_VIEW.md) ──────────────────
-    # Read-only: no writes, no derived table. All three routes degrade to an
-    # empty/available:false response when olof_events is absent.
+    # ── Show detail (Library performance lens — backend/gap_analysis.py) ───────
+    # Read-only: no writes, no derived table. Degrades to an empty/
+    # available:false response when olof_events is absent. This route is a
+    # rename/survivor of the standalone Gaps screen's four routes, retired
+    # once its coverage grid/detail became a Library performance-lens view
+    # (uncirculated/upcoming rows, Coverage facet) — this drill-down is what
+    # DetailPanel.tsx now calls for those rows.
 
-    @app.route("/api/gaps/summary", methods=["GET"])
-    def gaps_summary() -> Response:
-        """Year-by-year coverage summary (totals + per-year counts) for the Gaps grid."""
-        try:
-            return jsonify(_gap_analysis.get_summary())
-        except Exception as e:
-            _log.exception("gaps_summary failed")
-            return jsonify({"error": str(e)}), 500
-
-    @app.route("/api/gaps/grid", methods=["GET"])
-    def gaps_grid() -> Response:
-        """Whole-grid payload: year totals plus every date cell, in one request."""
-        try:
-            return jsonify(_gap_analysis.get_grid())
-        except Exception as e:
-            _log.exception("gaps_grid failed")
-            return jsonify({"error": str(e)}), 500
-
-    @app.route("/api/gaps/year/<int:year>", methods=["GET"])
-    def gaps_year(year: int) -> Response:
-        """Per-date coverage breakdown for one year."""
-        try:
-            return jsonify(_gap_analysis.get_year_detail(year))
-        except Exception as e:
-            _log.exception("gaps_year failed for year=%r", year)
-            return jsonify({"error": str(e)}), 500
-
-    @app.route("/api/gaps/date/<date_iso>", methods=["GET"])
-    def gaps_date(date_iso: str) -> Response:
+    @app.route("/api/shows/<date_iso>/olof", methods=["GET"])
+    def show_olof_detail(date_iso: str) -> Response:
         """Drill-down: olof event rows, entries, and family data for one date."""
         try:
             return jsonify(_gap_analysis.get_date_detail(date_iso))
         except Exception as e:
-            _log.exception("gaps_date failed for date_iso=%r", date_iso)
+            _log.exception("show_olof_detail failed for date_iso=%r", date_iso)
             return jsonify({"error": str(e)}), 500
 
     # ── Timeline navigator (instructions/FABLE_TIMELINE.md) ─────────────────────

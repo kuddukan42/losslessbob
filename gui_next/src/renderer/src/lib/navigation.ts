@@ -7,7 +7,7 @@
 
 export type NavId =
   | 'home' | 'pipeline' | 'scanner' | 'quicklookup'
-  | 'library' | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs' | 'tapematch' | 'songs' | 'gaps' | 'timeline'
+  | 'library' | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs' | 'tapematch' | 'songs' | 'timeline'
   | 'attachments' | 'spectrograms' | 'map'
   | 'scraper' | 'fingerprint' | 'setup' | 'mounts' | 'fileintegrity' | 'themes' | 'dbeditor'
 
@@ -58,7 +58,6 @@ export const NAV_GROUPS: NavGroup[] = [
       { id: 'bootlegs',   label: 'Bootlegs',      icon: 'bootlegs' },
       { id: 'tapematch',  label: 'TapeMatch',     icon: 'tapematch' },
       { id: 'songs',      label: 'Songs',         icon: 'songs' },
-      { id: 'gaps',       label: 'Gaps',          icon: 'gaps' },
       { id: 'timeline',   label: 'Timeline',      icon: 'timeline' },
     ],
   },

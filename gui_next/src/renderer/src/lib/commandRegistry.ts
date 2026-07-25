@@ -19,7 +19,6 @@
 // for their progress UI — see FABLE_ACTIVITY_CENTER.md D4):
 //   • activity center  — pause/clear jobs, jump to the tray
 //   • show dossier     — "export dossier for LB-N"
-//   • gaps view        — "open gaps for <year>"
 
 import type { NavigateFunction } from 'react-router-dom'
 import { NAV_GROUPS, navPathForId } from './navigation'

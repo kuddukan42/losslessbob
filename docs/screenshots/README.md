@@ -11,7 +11,6 @@ website (`docs/index.html`), `README.md`, and `docs/wiki/` pages.
 | `library.png` | Library — timeline of shows, recording formats, detail panel |
 | `search.png` | Search — facet filters beside the virtualized results table |
 | `map.png` | Concert map — clustered markers, decade colors, venue detail panel |
-| `gaps.png` | Gaps — per-year grid of concert dates colored by circulation |
 
 To refresh: start the backend, then run the tour
 (`node tools/electron_driver.mjs --renderer-only session tools/debug_screens.json`)

@@ -1,7 +1,7 @@
 # Setlist Sources
 
 > Sources: `PROJECT.md` §olof tables (~line 912), §bobdylan/setlistfm tables (~570–632),
-> §Olof routes (~1371), §gaps routes (~1332) · `backend/olof_*.py` · `backend/bobserve_*.py` ·
+> §Olof routes (~1371), §show-detail route (~1383) · `backend/olof_*.py` · `backend/bobserve_*.py` ·
 > Status: seeded 2026-07-22
 
 The app cross-references three external setlist corpora against `entries`.
@@ -27,10 +27,13 @@ Yearly Chronicles are still parsed for **calendar/diary + new-tapes** data
 - **Setlist fingerprinting** (TODO-225) — `setlist_fingerprint.py` scores
   `entries.setlist` free text against `olof_songs`, keeps top matches in
   `setlist_fingerprint_suggestions` (curator review queue).
-- **Gaps view** (TODO-256) — `gap_analysis.py` classifies every `olof_events`
-  concert date covered/partial/gap/future against `entries`, computed live
-  (no derived table). GUI: `ScreenGaps` at `/gaps` —
-  [screenshot](../screenshots/gaps.png).
+- **Coverage classification** (TODO-256, absorbed into the Library) —
+  `gap_analysis.py` classifies every `olof_events` concert date
+  covered/partial/gap/future against `entries`, computed live (no derived
+  table). Feeds the Library performance lens's `uncirculated`/`upcoming`
+  recording-less rows and their DetailPanel Olof tab
+  (`GET /api/shows/<iso>/olof`); the standalone Gaps screen this used to
+  power was retired.
 
 ## Consumers
 
