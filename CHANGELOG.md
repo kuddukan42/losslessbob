@@ -1,3 +1,21 @@
+[2026-07-24] — fix: Gaps screen loaded in ~12s — collapsed 66 requests into one (BUG-275)
+Fixed: gui_next/src/renderer/src/screens/ScreenGaps.tsx: the grid rendered one YearRow per
+  year (65 of them) and every YearRow ran its own useQuery against /api/gaps/year/<year>, so
+  mounting the screen fired 1 summary + 65 year requests. Each of those re-ran the
+  full-corpus coverage scan and threw away all but one year. Measured 11.8s to populate at
+  browser concurrency — and 6-way concurrency was *slower* than serial (11.8s vs 2.9s)
+  because the parallel requests contend on SQLite. ScreenGaps now issues a single
+  ['gaps-grid'] query and hands each year its cells as a prop; YearRow has no query at all.
+Added: backend/gap_analysis.py: get_grid() — one pass that computes the entry coverage maps
+  and olof event grouping ONCE and emits totals plus every year's date cells together.
+  Cells are slim ({date_iso, coverage, label}) because the grid only draws a 14px square
+  with a tooltip; the venue/city label is now joined server-side. Exposed as
+  GET /api/gaps/grid in backend/app.py. get_summary/get_year_detail/get_date_detail and
+  their routes are untouched and kept for API compat.
+Changed: tests/test_gap_analysis.py: TestGetGrid asserts get_grid()'s totals and per-year
+  counts match get_summary(), and that a year's date_iso order matches get_year_detail().
+  Warm endpoint timing after the change: 47ms for the whole 320KB grid.
+
 [2026-07-24] — feat: Disk Scanner — find audio folders on disk for bulk collection add (TODO-250)
 Added: backend/disk_scanner.py: os.scandir walk over user-defined roots, reporting every
   directory that *directly* holds lossless audio. Prunes hidden dirs, DEFAULT_EXCLUDES

@@ -6,8 +6,10 @@ end to end: no derived table, no writes, no recompute-chain hook. Computed
 live per request — sub-second at this scale (~4-5k events, ~16k entries), so
 there's nothing to keep in sync or go stale (see spec §D1).
 
-Entry points: :func:`get_summary` (year-by-year totals for the top-level
-grid), :func:`get_year_detail` (per-date breakdown for one year),
+Entry points: :func:`get_grid` (one-request payload — totals plus every
+year's date cells — used by the Gaps screen), :func:`get_summary`
+(year-by-year totals only, kept for API compat), :func:`get_year_detail`
+(per-date breakdown for one year, kept for API compat),
 :func:`get_date_detail` (drill-down: olof event rows, entries, family data
 for one date). :func:`classify_date` is the pure classifier, kept free of
 DB access so it's trivially unit-testable.
@@ -203,6 +205,63 @@ def get_summary(db_path: str | None = None) -> dict:
         stats[cls] += 1
         totals["shows"] += 1
         totals[cls] += 1
+
+    years = [year_stats[y] for y in sorted(year_stats)]
+    return {"available": True, "generated_at": _now_iso(), "totals": totals, "years": years}
+
+
+def get_grid(db_path: str | None = None) -> dict:
+    """Whole-grid payload: year totals plus every date cell, in one pass.
+
+    Combines what :func:`get_summary` and 65 (one per year) calls to
+    :func:`get_year_detail` used to do separately. The Gaps screen used to
+    mount one ``YearRow`` per year, each firing its own request against
+    ``/api/gaps/year/<year>`` — 65 requests, each re-running the full-corpus
+    ``_entry_coverage_maps`` scan and discarding all but one year's rows. This
+    computes the coverage maps and event grouping ONCE and emits every year's
+    cells in the same response.
+
+    Args:
+        db_path: Optional database path override.
+
+    Returns:
+        ``{available, generated_at, totals, years}``. ``available`` is False
+        when olof_events is absent or empty. ``totals`` carries the same
+        ``shows/covered/partial/gap/future`` counts as :func:`get_summary`.
+        Each ``years[]`` entry carries those same per-year counts plus a
+        ``dates`` list of slim cells (``date_iso, coverage, label``) in date
+        order — enough for the grid to render without a follow-up request.
+    """
+    conn = get_connection(db_path)
+    if not _table_exists(conn, "olof_events"):
+        return {"available": False, "generated_at": _now_iso(), "totals": {}, "years": []}
+
+    exact, partial = _entry_coverage_maps(conn)
+    exact_dates = set(exact)
+    partial_month_keys = set(partial)
+    today_iso = _today_iso()
+
+    by_date = _group_by_date(_olof_concert_events(conn))
+    totals = {"shows": 0, "covered": 0, "partial": 0, "gap": 0, "future": 0}
+    year_stats: dict[int, dict] = {}
+    for date_iso in sorted(by_date):
+        year = int(date_iso[:4])
+        cls = classify_date(date_iso, today_iso, exact_dates, partial_month_keys)
+        stats = year_stats.setdefault(
+            year,
+            {
+                "year": year, "shows": 0, "covered": 0, "partial": 0, "gap": 0,
+                "future": 0, "dates": [],
+            },
+        )
+        stats["shows"] += 1
+        stats[cls] += 1
+        totals["shows"] += 1
+        totals[cls] += 1
+
+        venues = (row["venue"] or row["city"] for row in by_date[date_iso])
+        label = " / ".join(v for v in venues if v)
+        stats["dates"].append({"date_iso": date_iso, "coverage": cls, "label": label})
 
     years = [year_stats[y] for y in sorted(year_stats)]
     return {"available": True, "generated_at": _now_iso(), "totals": totals, "years": years}

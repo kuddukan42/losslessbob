@@ -6,6 +6,7 @@ Covers:
   - get_summary()        — year-by-year totals, olof_events-absent degrade
   - get_year_detail()    — per-date breakdown, two-show-date grouping
   - get_date_detail()    — drill-down: events, entries, partial entries, families
+  - get_grid()           — one-request payload, must match get_summary/get_year_detail
 """
 from __future__ import annotations
 
@@ -294,6 +295,70 @@ class TestGetDateDetail:
             from backend.gap_analysis import get_date_detail
             result = get_date_detail("2000-07-28", db_path=db_path)
             assert result["available"] is False
+        finally:
+            import shutil
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 5. get_grid() — one-pass payload must match get_summary() + get_year_detail()
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestGetGrid:
+    def test_unavailable_when_olof_events_absent(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute("DROP TABLE olof_events")
+            conn.commit()
+            from backend.gap_analysis import get_grid
+            result = get_grid(db_path=db_path)
+            assert result["available"] is False
+            assert result["years"] == []
+        finally:
+            import shutil
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_matches_summary_and_year_detail(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            _insert_olof_event(conn, 1, "2000-07-28")   # covered
+            _insert_entry(conn, 101, "7/28/00")
+
+            _insert_olof_event(conn, 2, "1987-05-03")   # partial
+            _insert_entry(conn, 102, "5/xx/87")
+
+            _insert_olof_event(conn, 3, "1975-12-04")   # gap
+            _insert_olof_event(conn, 4, "1978-06-05", venue="Afternoon Hall")
+            _insert_olof_event(conn, 5, "1978-06-05", venue="Evening Hall")
+            _insert_olof_event(conn, 6, TOMORROW_ISO)   # future
+            conn.commit()
+
+            from backend.gap_analysis import get_grid, get_summary, get_year_detail
+
+            grid = get_grid(db_path=db_path)
+            summary = get_summary(db_path=db_path)
+
+            assert grid["available"] is True
+            assert grid["totals"] == summary["totals"]
+
+            grid_years_by_year = {y["year"]: y for y in grid["years"]}
+            summary_years_by_year = {y["year"]: y for y in summary["years"]}
+            assert set(grid_years_by_year) == set(summary_years_by_year)
+            for year, s_stats in summary_years_by_year.items():
+                g_stats = grid_years_by_year[year]
+                for key in ("shows", "covered", "partial", "gap", "future"):
+                    assert g_stats[key] == s_stats[key], f"{year}.{key}"
+
+            # Sample year with a two-show date: grid's date_iso order/contents
+            # must match get_year_detail's, just with the slim cell shape.
+            year_detail = get_year_detail(1978, db_path=db_path)
+            grid_1978_dates = [d["date_iso"] for d in grid_years_by_year[1978]["dates"]]
+            detail_1978_dates = [d["date_iso"] for d in year_detail["dates"]]
+            assert grid_1978_dates == detail_1978_dates == ["1978-06-05"]
+
+            grid_cell = grid_years_by_year[1978]["dates"][0]
+            assert grid_cell["coverage"] == year_detail["dates"][0]["coverage"] == "gap"
+            assert grid_cell["label"] == "Afternoon Hall / Evening Hall"
         finally:
             import shutil
             shutil.rmtree(tmp_dir, ignore_errors=True)
