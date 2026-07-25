@@ -63,16 +63,21 @@ interface OlofEventRow {
   recording_mins: number | null
 }
 
-interface DateCell {
+interface GridCell {
   date_iso: string
   coverage: Coverage
-  events: OlofEventRow[]
-  lb_numbers: number[]
-  partial_lb_numbers: number[]
+  label: string
 }
 
-interface YearDetailResponse {
-  dates: DateCell[]
+interface GridYear extends YearStats {
+  dates: GridCell[]
+}
+
+interface GridResponse {
+  available: boolean
+  generated_at: string
+  totals: SummaryResponse['totals']
+  years: GridYear[]
 }
 
 interface FullOlofEventRow extends OlofEventRow {
@@ -174,13 +179,13 @@ function DecadeStrip({
 function DateCellButton({
   cell, selected, onSelect,
 }: {
-  cell: DateCell
+  cell: GridCell
   selected: boolean
   onSelect: (dateIso: string) => void
 }) {
   const tone = COVERAGE_TONE[cell.coverage]
   const isFuture = cell.coverage === 'future'
-  const label = cell.events.map(e => e.venue || e.city).filter(Boolean).join(' / ')
+  const label = cell.label
   return (
     <button
       type="button"
@@ -202,20 +207,15 @@ function DateCellButton({
 // ── One year row ─────────────────────────────────────────────────────────────
 
 function YearRow({
-  year, stats, selectedDate, onSelectDate,
+  year, stats, dates, selectedDate, onSelectDate,
 }: {
   year: number
   stats: YearStats
+  dates: GridCell[]
   selectedDate: string | null
   onSelectDate: (dateIso: string) => void
 }) {
   const { t } = useTranslation()
-  const { data, isError } = useQuery<YearDetailResponse>({
-    queryKey: ['gaps-year', year],
-    queryFn: () => fetchJson<YearDetailResponse>(`/api/gaps/year/${year}`),
-    staleTime: 60_000,
-  })
-  const dates = data?.dates ?? []
 
   return (
     <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '5px 20px' }}>
@@ -229,14 +229,7 @@ function YearRow({
       <div style={{
         flex: 1, minWidth: 0, display: 'flex', flexWrap: 'wrap', gap: 3,
       }}>
-        {dates.length === 0 ? (
-          <span style={{
-            fontSize: 'var(--lbb-fs-10-5)',
-            color: isError ? 'var(--lbb-warn-fg)' : 'var(--lbb-fg3)',
-          }}>
-            {t(isError ? 'gaps.grid.error' : 'gaps.grid.loading')}
-          </span>
-        ) : dates.map(cell => (
+        {dates.map(cell => (
           <DateCellButton
             key={cell.date_iso}
             cell={cell}
@@ -510,9 +503,9 @@ export function ScreenGaps(): React.JSX.Element {
   const [selectedDecade, setSelectedDecade] = useState<number | null>(null)
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
 
-  const { data: summary, isLoading, isError, refetch } = useQuery<SummaryResponse>({
-    queryKey: ['gaps-summary'],
-    queryFn: () => fetchJson<SummaryResponse>('/api/gaps/summary'),
+  const { data: summary, isLoading, isError, refetch } = useQuery<GridResponse>({
+    queryKey: ['gaps-grid'],
+    queryFn: () => fetchJson<GridResponse>('/api/gaps/grid'),
     staleTime: 60_000,
   })
   const years = summary?.years ?? []
@@ -571,6 +564,7 @@ export function ScreenGaps(): React.JSX.Element {
                   key={y.year}
                   year={y.year}
                   stats={y}
+                  dates={y.dates}
                   selectedDate={selectedDate}
                   onSelectDate={setSelectedDate}
                 />

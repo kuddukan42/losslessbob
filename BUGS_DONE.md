@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-275: Gaps screen loads incredibly slowly (~12s) — one request per year
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenGaps.tsx:213,backend/gap_analysis.py:211
+Reported: 2026-07-24
+Fixed: 2026-07-24
+Root cause: N+1 request fan-out. Each YearRow owned its own useQuery, so the grid cost one HTTP round trip per year (65), and gap_analysis.get_year_detail recomputed the full-corpus coverage maps on every one of them — 65 full scans of entries+lb_master to render data that comes from a single pass.
+Fix: New gap_analysis.get_grid() computes the coverage maps and event grouping ONCE and returns totals plus every year's date cells in one payload, exposed as GET /api/gaps/grid. ScreenGaps now issues a single ['gaps-grid'] query and passes each year's cells down as a prop; YearRow lost its useQuery entirely. Cells are slimmed to {date_iso, coverage, label} since the grid only renders a 14px square with a tooltip. /api/gaps/summary and /api/gaps/year/<year> are unchanged and kept for API compat. Warm timing: 11.8s -> 47ms for one 320KB request.
+
 BUG-274: Gaps screen hangs on loading when a backend request fails
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenGaps.tsx

@@ -6415,6 +6415,15 @@ def create_app() -> Flask:
             _log.exception("gaps_summary failed")
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/gaps/grid", methods=["GET"])
+    def gaps_grid() -> Response:
+        """Whole-grid payload: year totals plus every date cell, in one request."""
+        try:
+            return jsonify(_gap_analysis.get_grid())
+        except Exception as e:
+            _log.exception("gaps_grid failed")
+            return jsonify({"error": str(e)}), 500
+
     @app.route("/api/gaps/year/<int:year>", methods=["GET"])
     def gaps_year(year: int) -> Response:
         """Per-date coverage breakdown for one year."""
