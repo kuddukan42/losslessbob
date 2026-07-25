@@ -1,3 +1,27 @@
+[2026-07-24] — feat: Disk Scanner — find audio folders on disk for bulk collection add (TODO-250)
+Added: backend/disk_scanner.py: os.scandir walk over user-defined roots, reporting every
+  directory that *directly* holds lossless audio. Prunes hidden dirs, DEFAULT_EXCLUDES
+  (node_modules/.git/system paths) plus caller-supplied names, and never follows symlinked
+  dirs (a symlink into an already-walked tree would loop or double-report). Background job
+  shape (module job dict + lock, start_scan_async/get_scan_status/cancel_scan) deliberately
+  mirrors integrity_monitor so the GUI polls both identically. Per-folder LB resolution:
+  existing my_collection row → single folder_lb_link pin → LB-NNNNN name convention;
+  unattributable folders are listed but not addable, since my_collection keys on lb_number.
+Added: backend/app.py: POST /api/scanner/scan (400 empty roots, 409 already running),
+  POST /api/scanner/scan/cancel, GET /api/scanner/scan/status, POST /api/scanner/add
+  (per-path {ok, lb_number, error} with no_lb / already_in_collection); scanner_roots +
+  scanner_excludes added to the /api/db/settings key list.
+Added: gui_next/.../screens/ScreenScanner.tsx: new /scanner screen in the Ingest nav group —
+  root list via the native folder picker + comma-separated excludes (both persisted), Scan /
+  Cancel with live dirs-scanned/found progress, and a results table with per-row checkboxes
+  and bulk add. In-collection rows are greyed and unselectable; no-LB rows show a warn pill.
+Added: tests/test_disk_scanner.py: 20 tests — pruning, extension filtering, cancel, repeated
+  roots, all three LB-resolution paths, and the add-result branches (insert stubbed, since
+  db.add_to_collection goes through the write queue that binds to the first DB in a process).
+Changed: tools/debug_screens.json: /scanner added to the screenshot tour.
+Changed: gui_next/.../locales/*.json: new scanner.* namespace + appShell.nav.scanner (en) +
+  de/fr/es/it/nl via DeepL (13,478 chars across two runs).
+
 [2026-07-24] — fix: Gaps screen surfaces backend failures instead of hanging (BUG-274)
 Fixed: gui_next/.../screens/ScreenGaps.tsx: the summary, year and date queries all used
   fetch().then(r => r.json()), which resolves for every HTTP status — react-query never

@@ -57,7 +57,8 @@
       "fingerprint": "Fingerabdruck",
       "gaps": "Lücken",
       "fileintegrity": "Dateiintegrität",
-      "timeline": "Zeitleiste"
+      "timeline": "Zeitleiste",
+      "scanner": "Festplattenscanner"
     },
     "statusBar": {
       "db": "DB:",
@@ -2088,5 +2089,61 @@
     "confirmDelete": "Diese Ansicht löschen",
     "scopeOwned": "In der Sammlung",
     "scopeUnowned": "Nicht in meinem Besitz"
+  },
+  "scanner": {
+    "title": "Festplattenscanner",
+    "subtitle": "Finden Sie Audioordner an beliebiger Stelle auf der Festplatte und fügen Sie sie in großen Mengen zu Ihrer Sammlung hinzu.",
+    "header": {
+      "found_one": "Ordner „{{count}}“",
+      "found_other": "{{count}}-Ordner",
+      "addable_one": "{{count}} kann hinzugefügt werden",
+      "addable_other": "{{count}} kann hinzugefügt werden",
+      "known_one": "{{count}} bereits in Ihrer Sammlung",
+      "known_other": "{{count}} bereits in Ihrer Sammlung"
+    },
+    "roots": {
+      "heading": "Zu durchsuchende Ordner",
+      "empty": "Es wurden noch keine Ordner ausgewählt.",
+      "add": "Ordner hinzufügen…",
+      "remove": "Entfernen"
+    },
+    "excludes": {
+      "heading": "Ordner mit dem Namen",
+      "placeholder": "Sicherung, Cover",
+      "hint": "Durch Kommas getrennt. Versteckte Ordner und Systempfade werden immer übersprungen."
+    },
+    "actions": {
+      "scan": "Scannen",
+      "cancel": "Abbrechen",
+      "addSelected_one": "{{count}} zur Sammlung hinzufügen",
+      "addSelected_other": "{{count}} zur Sammlung hinzufügen",
+      "add": "Zur Sammlung hinzufügen"
+    },
+    "progress": {
+      "scanning": "{{dirs}}-Ordner gescannt · {{found}} gefunden",
+      "cancelled": "Scan abgebrochen – Anzeige der bisher gefundenen Ergebnisse."
+    },
+    "table": {
+      "selectAll": "Alles auswählen",
+      "folder": "Ordner",
+      "files": "Dateien",
+      "size": "Größe",
+      "formats": "Formate",
+      "lb": "LB #",
+      "status": "Status"
+    },
+    "status": {
+      "new": "Neu",
+      "inCollection": "In der Sammlung",
+      "noLb": "Keine LB-Nr."
+    },
+    "added": {
+      "summary": "{{added}} hinzugefügt · {{failed}} übersprungen"
+    },
+    "empty": {
+      "title": "Es wurde noch nichts eingescannt.",
+      "running": "Wird gescannt…",
+      "detail": "Wählen Sie links einen oder mehrere Ordner aus und klicken Sie dann auf „Scannen“. Alle Ordner, die verlustfreie Audiodateien enthalten, werden hier angezeigt."
+    }
   }
 }

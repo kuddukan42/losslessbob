@@ -57,7 +57,8 @@
       "fingerprint": "Huella digital",
       "gaps": "Lagunas",
       "fileintegrity": "Integridad de los archivos",
-      "timeline": "Cronología"
+      "timeline": "Cronología",
+      "scanner": "Escáner de disco"
     },
     "statusBar": {
       "db": "BD:",
@@ -2088,5 +2089,61 @@
     "confirmDelete": "Eliminar esta vista",
     "scopeOwned": "En la colección",
     "scopeUnowned": "No es de mi propiedad"
+  },
+  "scanner": {
+    "title": "Escáner de disco",
+    "subtitle": "Busca carpetas de audio en cualquier lugar del disco y añádelas a tu colección de forma masiva.",
+    "header": {
+      "found_one": "Carpeta {{count}}",
+      "found_other": "Carpetas {{count}}",
+      "addable_one": "Se puede añadir {{count}}",
+      "addable_other": "Se puede añadir {{count}}",
+      "known_one": "{{count}} ya está en tu colección",
+      "known_other": "{{count}} ya está en tu colección"
+    },
+    "roots": {
+      "heading": "Carpetas que se van a escanear",
+      "empty": "Aún no se ha seleccionado ninguna carpeta.",
+      "add": "Añadir carpeta…",
+      "remove": "Eliminar"
+    },
+    "excludes": {
+      "heading": "Omitir carpetas con el nombre",
+      "placeholder": "copia de seguridad, carátulas",
+      "hint": "Separadas por comas. Las carpetas ocultas y las rutas del sistema siempre se omiten."
+    },
+    "actions": {
+      "scan": "Escanear",
+      "cancel": "Cancelar",
+      "addSelected_one": "Añadir {{count}} a la colección",
+      "addSelected_other": "Añadir {{count}} a la colección",
+      "add": "Añadir a la colección"
+    },
+    "progress": {
+      "scanning": "Carpetas {{dirs}} analizadas · {{found}} encontradas",
+      "cancelled": "Escaneo cancelado: muestra lo que se ha encontrado hasta el momento."
+    },
+    "table": {
+      "selectAll": "Seleccionar todo",
+      "folder": "Carpeta",
+      "files": "Archivos",
+      "size": "Tamaño",
+      "formats": "Formatos",
+      "lb": "LB #",
+      "status": "Estado"
+    },
+    "status": {
+      "new": "Nuevo",
+      "inCollection": "En la colección",
+      "noLb": "Sin n.º de LB"
+    },
+    "added": {
+      "summary": "Se ha añadido {{added}} · Se ha omitido {{failed}}"
+    },
+    "empty": {
+      "title": "Aún no se ha escaneado nada.",
+      "running": "Escaneando…",
+      "detail": "Selecciona una o varias carpetas a la izquierda y, a continuación, haz clic en «Escanear». Aquí aparecerán todas las carpetas que contengan audio sin pérdida de calidad."
+    }
   }
 }

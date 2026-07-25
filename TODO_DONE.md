@@ -1,6 +1,38 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-250: Disk Scanner — find audio folders on disk for bulk collection add
+Priority: Medium
+Status: Done
+Added: 2026-06-03
+Renumbered: from TODO-107 on 2026-07-15 (TODO-248 — id collided with the unrelated done
+  TODO-107 "Master publish upload progress" in TODO_DONE.md)
+Closed: 2026-07-24
+Description: Add a Disk Scanner screen that walks user-defined root paths (e.g. /mnt/nas,
+  /home/user/music) using os.scandir() with early pruning, finds all directories containing
+  lossless audio files (FLAC, WAV, APE, ALAC, AIFF), and presents them as candidates to
+  add to the collection DB.
+
+  Backend:
+  - POST /api/scanner/scan — accepts {"roots": [...], "extensions": [...]}; walks each root
+    with os.scandir(), skips hidden dirs and a configurable exclude list (system paths,
+    node_modules, .git, etc.); returns list of {path, file_count, extensions, in_collection}
+    where in_collection is True if the path already exists in lbdir.
+  - Scan runs in a background thread; streams progress via SSE or returns a job ID to poll.
+  - No persistent index — one-shot on demand. plocate can be used as an optional fast-path
+    if installed (locate -r '\.flac$' | dirname | sort -u).
+
+  GUI (new ScreenScanner.tsx):
+  - Left panel: editable list of root paths to scan + exclude patterns; Scan button.
+  - Right panel: results table — path, file count, extensions found, "In Collection" badge.
+  - Checkboxes for bulk selection; "Add Selected to Collection" button calls existing
+    LBDIR add logic.
+  - Progress bar / spinner during scan; cancel button to abort background job.
+  - Already-in-collection rows shown but greyed out so user can see full picture.
+
+---
+Shipped 2026-07-24. backend/disk_scanner.py (os.scandir walk with hidden/exclude/symlink pruning, background job mirroring integrity_monitor, LB resolution + bulk add), 4 /api/scanner/* routes, scanner_roots/scanner_excludes settings keys, ScreenScanner.tsx in the Ingest nav group, 20 tests in tests/test_disk_scanner.py.
+
 TODO-269: Saved smart views — named Library filter sets pinned to the sidebar (UI5)
 Priority: Medium
 Status: Done

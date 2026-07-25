@@ -57,7 +57,8 @@
       "fingerprint": "Impronta digitale",
       "gaps": "Lacune",
       "fileintegrity": "Integrità dei file",
-      "timeline": "Cronologia"
+      "timeline": "Cronologia",
+      "scanner": "Scanner del disco"
     },
     "statusBar": {
       "db": "DB:",
@@ -563,7 +564,7 @@
       "error": "Errore",
       "incomplete": "Incompleto",
       "noShntool": "No shntool",
-      "mismatch": "Mismatch",
+      "mismatch": "Incoerenza",
       "missingFolder": "Mancante",
       "noChecksums": "Nessun checksum",
       "notFound": "Non trovato",
@@ -2088,5 +2089,61 @@
     "confirmDelete": "Elimina questa vista",
     "scopeOwned": "Nella raccolta",
     "scopeUnowned": "Non di proprietà"
+  },
+  "scanner": {
+    "title": "Scanner del disco",
+    "subtitle": "Trova le cartelle audio in qualsiasi punto del disco e aggiungile alla tua raccolta in blocco.",
+    "header": {
+      "found_one": "Cartella {{count}}",
+      "found_other": "Cartelle {{count}}",
+      "addable_one": "È possibile aggiungere {{count}}",
+      "addable_other": "È possibile aggiungere {{count}}",
+      "known_one": "{{count}} è già presente nella tua collezione",
+      "known_other": "{{count}} è già presente nella tua collezione"
+    },
+    "roots": {
+      "heading": "Cartelle da scansionare",
+      "empty": "Non sono state ancora selezionate cartelle.",
+      "add": "Aggiungi cartella…",
+      "remove": "Rimuovi"
+    },
+    "excludes": {
+      "heading": "Ignora le cartelle denominate",
+      "placeholder": "backup, copertine",
+      "hint": "Separati da virgola. Le cartelle nascoste e i percorsi di sistema vengono sempre ignorati."
+    },
+    "actions": {
+      "scan": "Scansione",
+      "cancel": "Annulla",
+      "addSelected_one": "Aggiungi {{count}} alla raccolta",
+      "addSelected_other": "Aggiungi {{count}} alla raccolta",
+      "add": "Aggiungi alla raccolta"
+    },
+    "progress": {
+      "scanning": "Cartelle {{dirs}} scansionate · {{found}} trovate",
+      "cancelled": "Scansione annullata — visualizzazione dei risultati trovati fino a quel momento."
+    },
+    "table": {
+      "selectAll": "Seleziona tutto",
+      "folder": "Cartella",
+      "files": "File",
+      "size": "Dimensioni",
+      "formats": "Formati",
+      "lb": "LB #",
+      "status": "Stato"
+    },
+    "status": {
+      "new": "Novità",
+      "inCollection": "Nella raccolta",
+      "noLb": "Nessun numero di riga"
+    },
+    "added": {
+      "summary": "Aggiunto {{added}} · {{failed}} saltato"
+    },
+    "empty": {
+      "title": "Non è stato ancora scansionato nulla.",
+      "running": "Scansione in corso…",
+      "detail": "Selezionare una o più cartelle a sinistra, quindi fare clic su «Scansiona». Qui verranno visualizzate tutte le cartelle contenenti file audio senza perdita di dati."
+    }
   }
 }
