@@ -136,6 +136,34 @@ def rule_d_fires(row: dict[str, Any]) -> bool:
     )
 
 
+class _UnionFind:
+    """Path-compressing union-find over LB numbers, one instance per date.
+
+    Mirrors the connected-component logic in ``verdict.cluster_verdicts`` --
+    family membership is transitive, so the effect of a new link cannot be
+    read off individual rows.
+    """
+
+    def __init__(self) -> None:
+        self.parent: dict[int, int] = {}
+
+    def find(self, x: int) -> int:
+        """Representative of ``x``'s component, inserting ``x`` if unseen."""
+        self.parent.setdefault(x, x)
+        while self.parent[x] != x:
+            self.parent[x] = self.parent[self.parent[x]]
+            x = self.parent[x]
+        return x
+
+    def union(self, a: int, b: int) -> None:
+        """Merge the components containing ``a`` and ``b``."""
+        self.parent[self.find(a)] = self.find(b)
+
+    def same(self, a: int, b: int) -> bool:
+        """True iff ``a`` and ``b`` are currently in one component."""
+        return self.find(a) == self.find(b)
+
+
 def transitive_flips(conn: sqlite3.Connection) -> tuple[int, int, int]:
     """Corpus-wide effect of adding rule_d as a link, with transitive closure.
 
@@ -159,31 +187,20 @@ def transitive_flips(conn: sqlite3.Connection) -> tuple[int, int, int]:
     claimed = silent = 0
     dates: set[str] = set()
     for date, drows in by_date.items():
-        parent: dict[int, int] = {}
-
-        def find(x: int) -> int:
-            parent.setdefault(x, x)
-            while parent[x] != x:
-                parent[x] = parent[parent[x]]
-                x = parent[x]
-            return x
-
-        def union(a: int, b: int) -> None:
-            parent[find(a)] = find(b)
-
+        uf = _UnionFind()
         for r in drows:
             if r["tapematch_verdict"] == "same_family":
-                union(r["lb_a"], r["lb_b"])
+                uf.union(r["lb_a"], r["lb_b"])
         before = {
-            (min(r["lb_a"], r["lb_b"]), max(r["lb_a"], r["lb_b"])): find(r["lb_a"]) == find(r["lb_b"])
+            (min(r["lb_a"], r["lb_b"]), max(r["lb_a"], r["lb_b"])): uf.same(r["lb_a"], r["lb_b"])
             for r in drows
         }
         for r in drows:
             if rule_d_fires(r):
-                union(r["lb_a"], r["lb_b"])
+                uf.union(r["lb_a"], r["lb_b"])
         for r in drows:
             key = (min(r["lb_a"], r["lb_b"]), max(r["lb_a"], r["lb_b"]))
-            if not before[key] and find(r["lb_a"]) == find(r["lb_b"]):
+            if not before[key] and uf.same(r["lb_a"], r["lb_b"]):
                 dates.add(date)
                 if r["lb_says_same"] == 1:
                     claimed += 1
