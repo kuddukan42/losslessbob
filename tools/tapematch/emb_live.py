@@ -178,18 +178,93 @@ def _write_pair(conn: sqlite3.Connection, run_id: str, lb_lo: int, lb_hi: int,
         counts["updated"] += 1
 
 
+def rule_d_active(config_path: Path = CONFIG_PATH) -> bool:
+    """True iff ``addon_links.rule_d`` is both ``enabled`` and ``live_embed``.
+
+    Args:
+        config_path: ``config.yaml`` to read the ``rule_d`` flags from.
+
+    Returns:
+        False on any read/parse failure — treating an unreadable config as
+        "disabled" keeps every failure mode on the abstain side.
+    """
+    try:
+        cfg = yaml.safe_load(config_path.read_text()) or {}
+    except (OSError, yaml.YAMLError) as exc:
+        log.warning("emb_live: cannot read %s (%s); treating as disabled.", config_path, exc)
+        return False
+    rule_d = (cfg.get("addon_links", {}) or {}).get("rule_d", {}) or {}
+    return bool(rule_d.get("enabled") and rule_d.get("live_embed"))
+
+
+def score_session_pairs(
+    date_iso: str, sources: list[dict], *,
+    config_path: Path = CONFIG_PATH, cache_dir: Path = CACHE_DIR,
+) -> dict[tuple[int, int], tuple[float | None, float | None]]:
+    """Score every cross-source pair of one date, with no database involved.
+
+    The DB-free half of this module (BUG-278). ``tapematch.cli`` needs the emb
+    scores *before* it clusters, so that ``verdict._rule_d_emb_both`` has
+    something to read; the pre-existing :func:`populate_live_emb_scores` path
+    runs after clustering and can only persist them. Both share this function,
+    so a live verdict and the row later written to ``observations.db`` can never
+    disagree.
+
+    Ensures the per-source embedding cache first (invoking ``nmfp_embed.py``
+    under ``.venv-nmfp`` for misses), then scores each pair via
+    ``emb_score_pairs.score_pair``.
+
+    Args:
+        date_iso: Concert date ``YYYY-MM-DD`` (the ``embed_cache`` sub-directory).
+        sources: Per-source metadata list (see :func:`sources_from_results`).
+        config_path: ``config.yaml`` to read the ``rule_d`` flags from.
+        cache_dir: ``embed_cache`` directory root.
+
+    Returns:
+        ``{(lb_lo, lb_hi): (emb_tol2, emb_tol0)}`` for every cross-source pair,
+        keyed by normalized ``(min, max)`` LB numbers. Empty when rule_d is
+        inactive or fewer than two sources resolve — never raises, so any
+        failure degrades to Rule D abstaining rather than mis-merging.
+    """
+    if not rule_d_active(config_path):
+        return {}
+    lbs = sorted({int(s["lb"]) for s in sources if s.get("lb") is not None})
+    if len(lbs) < 2:
+        return {}
+
+    missing = _missing_sources(date_iso, sources, cache_dir)
+    if missing:
+        _extract_missing(date_iso, missing, cache_dir)
+
+    out: dict[tuple[int, int], tuple[float | None, float | None]] = {}
+    src_cache: dict[tuple[str, int], tuple | None] = {}
+    for lb_a, lb_b in combinations(lbs, 2):
+        lb_lo, lb_hi = min(lb_a, lb_b), max(lb_a, lb_b)
+        if lb_lo == lb_hi:  # self-pair: unmeasurable by this signal, never link
+            continue
+        try:
+            out[(lb_lo, lb_hi)] = ESP.score_pair(
+                date_iso, lb_lo, lb_hi, cache_dir, src_cache)
+        except Exception as exc:  # noqa: BLE001  (any failure -> NULL, safe)
+            log.warning("emb_live: score_pair(%s, %d, %d) failed (%s); pair stays NULL.",
+                        date_iso, lb_lo, lb_hi, exc)
+    return out
+
+
 def _score_and_write(conn: sqlite3.Connection, run_id: str, date_iso: str,
-                     sources: list[dict], cache_dir: Path) -> dict[str, int]:
+                     sources: list[dict], cache_dir: Path,
+                     config_path: Path = CONFIG_PATH) -> dict[str, int]:
     """Score every cross-source pair and write onto this session's rows."""
     counts = {"scored": 0, "updated": 0, "skipped_null": 0, "self_skipped": 0}
     lbs = sorted({int(s["lb"]) for s in sources if s.get("lb") is not None})
-    src_cache: dict[tuple[str, int], tuple | None] = {}
+    scores = score_session_pairs(date_iso, sources,
+                                 config_path=config_path, cache_dir=cache_dir)
     for lb_a, lb_b in combinations(lbs, 2):
         lb_lo, lb_hi = min(lb_a, lb_b), max(lb_a, lb_b)
         if lb_lo == lb_hi:  # self-pair: unmeasurable by this signal, never link
             counts["self_skipped"] += 1
             continue
-        tol2, tol0 = ESP.score_pair(date_iso, lb_lo, lb_hi, cache_dir, src_cache)
+        tol2, tol0 = scores.get((lb_lo, lb_hi), (None, None))
         counts["scored"] += 1
         _write_pair(conn, run_id, lb_lo, lb_hi, tol2, tol0, counts)
     return counts
@@ -223,23 +298,17 @@ def populate_live_emb_scores(
         ``"no_sources"`` / ``"ok"``) plus ``scored`` / ``updated`` /
         ``skipped_null`` / ``self_skipped`` when scoring ran.
     """
-    try:
-        cfg = yaml.safe_load(config_path.read_text()) or {}
-    except OSError as exc:
-        log.warning("emb_live: cannot read %s (%s); treating as disabled.", config_path, exc)
-        return {"status": "disabled"}
-    rule_d = (cfg.get("addon_links", {}) or {}).get("rule_d", {}) or {}
-    if not rule_d.get("enabled") or not rule_d.get("live_embed"):
+    if not rule_d_active(config_path):
         return {"status": "disabled"}
 
     if len([s for s in sources if s.get("lb") is not None]) < 2:
         return {"status": "no_sources"}
 
-    missing = _missing_sources(date_iso, sources, cache_dir)
-    if missing:
-        _extract_missing(date_iso, missing, cache_dir)
-
-    counts = _score_and_write(conn, run_id, date_iso, sources, cache_dir)
+    # Cache-ensure + scoring both live in score_session_pairs (shared with the
+    # pre-clustering path in tapematch.cli). By this point in a normal session
+    # cli.py has already populated the cache, so this is a cheap re-score off
+    # the same npz files rather than a second extraction.
+    counts = _score_and_write(conn, run_id, date_iso, sources, cache_dir, config_path)
     counts["status"] = "ok"
     log.info("emb_live %s: scored=%d updated=%d skipped_null=%d",
              date_iso, counts["scored"], counts["updated"], counts["skipped_null"])

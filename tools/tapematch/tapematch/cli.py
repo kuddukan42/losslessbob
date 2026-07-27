@@ -71,6 +71,11 @@ def main(argv=None):
                          "target set starts mid-recording)")
     ap.add_argument("--debug-log", default=None, metavar="PATH",
                     help="write per-pass timing and RSS to this file")
+    ap.add_argument("--concert-date", default=None, metavar="YYYY-MM-DD",
+                    help="concert date, used to key the nmfp embedding cache so "
+                         "addon_links.rule_d can be evaluated during clustering (BUG-278). "
+                         "Omitted -> emb scores stay None and Rule D abstains, which is "
+                         "the pre-BUG-278 behaviour; all other clustering unaffected")
     ap.add_argument("--lineage-db", default=None, metavar="PATH",
                     help="path to the LosslessBob main DB (entry_lineage table) used for "
                          "the curator-conditional fingerprint threshold (CC_TAPEMATCH_FIXES "
@@ -874,6 +879,53 @@ def main(argv=None):
     # display threshold but above any clustering threshold that would be useful.
     fp_thr = cfg.get("fingerprint", {}).get("match_threshold", 0.0) if fp_hashes else 0.0
     fp_cluster_thr = cfg.get("fingerprint", {}).get("cluster_threshold", 0.0) if fp_hashes else 0.0
+
+    # BUG-278: nmfp embedding scores, computed HERE -- before clustering -- so
+    # verdict._rule_d_emb_both has something to read. addon_links.rule_d shipped
+    # enabled 2026-07-04 but had never fired in a live session: _pair_metrics
+    # below simply never carried emb_score, so the rule hit its `is None` guard
+    # on every pair and abstained. emb_live.populate_live_emb_scores (TODO-200)
+    # does populate the DB columns, but from tapematch_session._log_to_obs_db(),
+    # one stage after the verdict has been decided and written.
+    #
+    # Requires --concert-date: the embedding cache is keyed by date and cli.py
+    # otherwise has no notion of one. Without it (or with rule_d disabled, or on
+    # any extraction failure) the scores stay None and Rule D abstains exactly as
+    # before -- the safe default this whole path is built around.
+    emb_scores: dict[tuple[int, int], tuple[float | None, float | None]] = {}
+    if args.concert_date:
+        # Imported lazily and defensively: emb_live lives one level up (the
+        # session dir, not this package) and pulls in the nmfp scoring stack. A
+        # failure here must not take the run down -- it just means no emb signal.
+        emb_live = None
+        try:
+            _session_dir = str(Path(__file__).resolve().parent.parent)
+            if _session_dir not in sys.path:
+                sys.path.insert(0, _session_dir)
+            import emb_live  # noqa: PLC0415  (deliberate lazy import)
+        except Exception as exc:  # noqa: BLE001  (any failure -> Rule D abstains)
+            print(f"  embedding: unavailable ({exc}); rule_d abstains")
+        emb_sources = [
+            {"lb": lb_numbers[nm], "folder": nm,
+             "trim_head_sec": trim_bounds[nm][0],
+             "perf_dur_sec": trim_bounds[nm][1] - trim_bounds[nm][0],
+             "total_dur_sec": trim_bounds[nm][2],
+             "speed_ppm": speed_info[nm]["ppm"]}
+            for nm in names if lb_numbers.get(nm) is not None
+        ]
+        if emb_live is not None:
+            try:
+                emb_scores = emb_live.score_session_pairs(args.concert_date, emb_sources)
+            except Exception as exc:  # noqa: BLE001  (any failure -> Rule D abstains)
+                print(f"  embedding: scoring failed ({exc}); rule_d abstains")
+        if emb_scores:
+            n_fire = sum(1 for v in emb_scores.values()
+                         if v[0] is not None and v[1] is not None
+                         and min(v) >= (cfg.get("addon_links", {}).get("rule_d", {})
+                                        .get("t_emb", 1.0)))
+            print(f"  embedding: scored {len(emb_scores)} pair(s), "
+                  f"{n_fire} at/above the rule_d bar")
+
     # Route the link decision through verdict.pair_links so the clustering logic
     # lives in exactly one place (Task 1.3). A None signal (no secondary pass, or
     # fingerprint disabled) is skipped by the predicate, reproducing the built-in
@@ -886,6 +938,13 @@ def main(argv=None):
     #   - lb_a/lb_b: curator conditional key (Task 4.1), regex-extracted from the
     #     staged folder name (_lb_num); paired with lineage_pairs loaded above via
     #     verdict.load_lineage_pairs, the same helper the harness uses.
+    def emb_pair(na: str, nb: str) -> tuple[float | None, float | None]:
+        """(emb_score, emb_score_global) for two source names, or (None, None)."""
+        lb_a, lb_b = lb_numbers.get(na), lb_numbers.get(nb)
+        if lb_a is None or lb_b is None:
+            return (None, None)
+        return emb_scores.get((min(lb_a, lb_b), max(lb_a, lb_b)), (None, None))
+
     def _pair_metrics(i, j):
         na, nb = names[i], names[j]
         return {
@@ -902,6 +961,10 @@ def main(argv=None):
             "nyquist_capped_b": lineage_results[nb]["nyquist_capped"],
             "lb_a": lb_numbers.get(na),
             "lb_b": lb_numbers.get(nb),
+            # BUG-278: the two keys whose absence kept rule_d dormant. Keyed by
+            # normalized (min, max) LB, matching emb_score_pairs' order convention.
+            "emb_score": emb_pair(na, nb)[0],
+            "emb_score_global": emb_pair(na, nb)[1],
         }
 
     groups = match.cluster(names, M, m_thr,

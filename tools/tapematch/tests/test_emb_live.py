@@ -173,3 +173,75 @@ def test_disabled_flags_are_no_op(tmp_path, monkeypatch):
             "SELECT emb_score, emb_score_global FROM pairs WHERE run_id=?",
             (RUN_ID,)).fetchone()
         assert row[0] is None and row[1] is None
+
+
+# ── BUG-278: the pre-clustering scoring path ──────────────────────────────────
+# addon_links.rule_d shipped enabled 2026-07-04 but never fired in a live
+# session: tapematch.cli's _pair_metrics() built the dict handed to
+# verdict.pair_links WITHOUT emb_score/emb_score_global, so _rule_d_emb_both hit
+# its `is None` guard on every pair. The scores existed only after clustering,
+# written by populate_live_emb_scores from _log_to_obs_db(). These tests pin the
+# DB-free half that lets cli.py score BEFORE it clusters.
+
+def test_score_session_pairs_returns_scores_without_a_db(tmp_path):
+    """score_session_pairs yields per-pair scores keyed by normalized LB."""
+    cache_dir = tmp_path / "embed_cache"
+    _write_cache(cache_dir, 100, seed=7)
+    _write_cache(cache_dir, 200, seed=7)
+    cfg = _write_config(tmp_path)
+
+    scores = emb_live.score_session_pairs(
+        DATE, _sources(200, 100), config_path=cfg, cache_dir=cache_dir)
+
+    assert set(scores) == {(100, 200)}, "keys must be normalized (min, max)"
+    tol2, tol0 = scores[(100, 200)]
+    assert tol2 == pytest.approx(1.0, abs=1e-4)
+    assert tol0 == pytest.approx(1.0, abs=1e-4)
+
+
+def test_score_session_pairs_gated_and_failure_safe(tmp_path, monkeypatch):
+    """Disabled flags, too few sources, and uncached sources all degrade safely."""
+    cache_dir = tmp_path / "embed_cache"
+    _write_cache(cache_dir, 100, seed=7)
+    _write_cache(cache_dir, 200, seed=7)
+
+    for enabled, live in ((False, True), (True, False), (False, False)):
+        cfg = _write_config(tmp_path, enabled=enabled, live_embed=live)
+        assert emb_live.score_session_pairs(
+            DATE, _sources(100, 200), config_path=cfg, cache_dir=cache_dir) == {}
+
+    cfg = _write_config(tmp_path)
+    # Fewer than two resolvable sources -> nothing to pair.
+    assert emb_live.score_session_pairs(
+        DATE, _sources(100), config_path=cfg, cache_dir=cache_dir) == {}
+    # Uncached source + no .venv-nmfp -> scores present but None, never a crash.
+    monkeypatch.setattr(emb_live, "VENV_NMFP_PY", tmp_path / "nope" / "python")
+    scores = emb_live.score_session_pairs(
+        DATE, _sources(100, 999), config_path=cfg, cache_dir=cache_dir)
+    assert scores[(100, 999)] == (None, None)
+
+
+def test_cli_shaped_metrics_reach_rule_d():
+    """A _pair_metrics-shaped dict must carry emb so rule_d can fire.
+
+    This is the regression proper: the SAME metrics link when emb is present and
+    abstain when it is absent, so a future edit that drops the keys from
+    _pair_metrics reproduces the bug and fails here.
+    """
+    from tapematch import verdict
+
+    cfg = {"match": {"cluster_threshold": 0.70},
+           "addon_links": {"rule_d": {"enabled": True, "t_emb": 0.75}}}
+    # corr far below the merge bar: rule_d is the only route to a link.
+    base = {"lb_a": 2737, "lb_b": 4289, "corr": 0.10}
+
+    with_emb = {**base, "emb_score": 0.872, "emb_score_global": 0.937}
+    without = {**base, "emb_score": None, "emb_score_global": None}
+
+    assert verdict.pair_links(with_emb, cfg) is True
+    assert verdict.pair_links(without, cfg) is False
+    # Missing keys entirely (the pre-fix _pair_metrics) must also abstain, not raise.
+    assert verdict.pair_links(dict(base), cfg) is False
+    # Both conventions are required -- one side alone must not link.
+    assert verdict.pair_links({**base, "emb_score": 0.99,
+                               "emb_score_global": 0.10}, cfg) is False
