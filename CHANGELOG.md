@@ -1,3 +1,29 @@
+[2026-07-27] — fix: BUG-278 (rule_d now fires live) + BUG-279 (test suite no longer spawns real
+  sessions)
+Fixed: BUG-278 — addon_links.rule_d fires during live clustering for the first time since it
+  shipped enabled on 2026-07-04. tapematch/cli.py's _pair_metrics() never carried emb_score /
+  emb_score_global, so verdict._rule_d_emb_both hit its None guard and abstained on every pair;
+  emb_live populated those columns from _log_to_obs_db(), one stage after the verdict was decided.
+  New emb_live.score_session_pairs() (DB-free) is shared by both paths so a live verdict and the
+  persisted row cannot disagree; cli.py gains --concert-date (the embedding cache is date-keyed)
+  and scores every pair before match.cluster; tapematch_session.py passes the date at both
+  run_tapematch call sites. Lazy defensive import — any failure leaves scores None and rule_d
+  abstains, exactly as before. VERIFIED on 1994-02-16: "embedding: scored 21 pair(s), 3 at/above
+  the rule_d bar", producing exactly the 3 predicted flips (LB-10872 joined the {5202, 14921,
+  15363} family via two direct links plus one transitive). Re-run of the other 79 affected dates
+  launched detached; queue tools/tapematch/rerun_bug278.txt, log data/tapematch/bug278_rerun.log.
+Fixed: BUG-279 — `pytest tests/` was launching real tapematch sessions: decoding audio from
+  /mnt/DATA0 and committing runs to the production observations.db (two landed on 1989-06-04
+  before it was caught; both reproduced the existing verdicts exactly, so no data damage).
+  run_batch/run_year/run_crawl have spawned a fresh interpreter per date since ac804108
+  (2026-06-18), but test_batch_queue.py still patched run_date, so its fakes were silent no-ops
+  for ~6 weeks. Added a _spawn() seam used by all three drivers, a tests/conftest.py autouse
+  fixture that replaces it with a raising stub (no test can spawn a real session), and rewrote the
+  batch tests to patch _spawn and assert on the spawned argv with synthetic year-2999 dates. Also
+  fixed the same staleness class in test_find_lb_folders_no_audio.py, which treated
+  find_lb_folders' (found, excluded) tuple as a dict. Suite: 314 passed / 0 failed in 26s, from
+  4 failed / 662s.
+
 [2026-07-27] — docs/analysis: TODO-273 item (c) — embedding second pass over the contradicted
   corpus; file BUG-278 (rule_d dead in live sessions)
 Added: tools/tapematch/emb_second_pass.py + CONTRADICTED_EMB_SECOND_PASS.md: second discriminator
