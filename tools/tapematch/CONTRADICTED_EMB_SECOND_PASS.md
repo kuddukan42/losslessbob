@@ -72,11 +72,41 @@ Corpus-wide effect of linking rule_d and re-closing each date transitively:
 - **80** pairs the curator is silent on would also flip (unvalidated — see below).
 - across **80** dates.
 
-The silent flips are the reason this is a bug report and not a patch. rule_d's
-zero-new-FP proof was measured on the 2,245-pair frozen regression sets; these
-merges are corpus-wide and outside that population, so they are uncalibrated.
-Fixing the wiring without first scoring those flips would push unvalidated
-merges into the family tables.
+### Validation of the flips (2026-07-27)
+
+rule_d's zero-new-FP proof covers the 2,245-pair frozen sets only, so the
+corpus-wide flips were scored separately against the curator's own stance.
+Splitting every pair by what the curator actually says — `lb_says_same=1`
+(claims same), `=0` (**explicit denial**), `NULL` (silent, no statement) — the
+rule discriminates sharply:
+
+| curator stance | rule_d fires | of n | rate |
+| --- | ---: | ---: | ---: |
+| claims same | 732 | 3,631 | 20.16% |
+| silent (no statement) | 721 | 17,293 | 4.17% |
+| **explicit denial** | **12** | **3,038** | **0.39%** |
+
+A **52x** gap between claims-same and explicit-denial. The rule is tracking
+source identity, not firing indiscriminately. Of the 12 denial hits, 10 already
+carry corr >= 0.83 — tapematch's primary signal merges them regardless, so they
+are curator label noise (the TODO-201 class), not rule_d errors.
+
+Of the 138 flips: 58 the curator claims as same-source,
+79 the curator is silent on, and **exactly 1** contradicts an explicit
+denial — 1999-11-09 LB-02737/LB-04289 (emb 0.872/0.937, corr 0.101), where the
+LB-4289 notes say "different recording than LB-1401, LB-2064, and LB-2737 based
+on different crowd at begin of d1t2". That single pair is the entire measured
+false-positive exposure of wiring rule_d live. **The gate passes.**
+
+Two watch items for the fix, neither blocking:
+
+- **1978-03-09** is the only date (>=4 sources) where rule_d links *every* pair,
+  collapsing the whole date into one family. Spot-check it before/after.
+- 156 of 793 rule_d-firing dates have a median emb >= 0.60 across all their
+  pairs. Elevated per-date baselines are the same-show/different-source confound
+  BASELINE.md Task 8 documented; the both-convention requirement appears to
+  handle it (those dates are not where the denial hits land), but a per-date
+  baseline is the natural guard if rule_d is ever loosened below 0.75.
 
 | date | pair | emb | emb_global | corr | census bucket |
 | --- | --- | ---: | ---: | ---: | --- |
