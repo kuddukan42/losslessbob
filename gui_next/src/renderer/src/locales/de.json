@@ -26,7 +26,6 @@
   "appShell": {
     "brand": "VerlustfreiBob",
     "version": "Prüfsummen-Suche - v{{version}}",
-    "search": "LB#, Ordner, Ort suchen...",
     "curatorHint": "Pflegen Sie die Master-DB?",
     "curatorEnable": "Aktivieren des Kuratormodus →",
     "nav": {

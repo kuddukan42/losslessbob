@@ -26,7 +26,6 @@
   "appShell": {
     "brand": "Sin pérdidasBob",
     "version": "Búsqueda de sumas de comprobación - v{{version}}",
-    "search": "Buscar LB#, carpeta, ubicación...",
     "curatorHint": "¿Mantenimiento de la BD maestra?",
     "curatorEnable": "Activar el modo Conservador →",
     "nav": {

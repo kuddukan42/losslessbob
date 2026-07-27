@@ -26,7 +26,6 @@
   "appShell": {
     "brand": "VerliesvrijBob",
     "version": "Checksum opzoeken - v{{version}}",
-    "search": "LB#, map, locatie zoeken...",
     "curatorHint": "De master-DB onderhouden?",
     "curatorEnable": "Curatormodus inschakelen →",
     "nav": {
