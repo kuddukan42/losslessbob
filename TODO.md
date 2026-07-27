@@ -1,4 +1,107 @@
 
+TODO-274: gui_next — Topbar retired (breadcrumbs + global search removed from AppShell)
+Priority: Low
+Status: Open
+Added: 2026-07-27
+Description: Reverses the TODO-179 won't-do (2026-07-14), whose closure note said to re-file if the vertical-space itch returned. It returned: the Topbar component was removed in a session that ended without bookkeeping, and this task records the change retroactively.
+
+Change as found in the working tree: gui_next/src/renderer/src/components/AppShell.tsx -145 lines, removing the Topbar component (52px header) and its deriveCrumbs() helper, i.e. the breadcrumb trail, the per-screen actions slot, and the global search field. The appShell.search locale key was removed from all six locale files (en/de/fr/es/it/nl), which remain at 1,725 keys each -- parity intact, and no /gui-next-i18n run is needed since this was a key removal, not an addition.
+
+Verified 2026-07-27 before committing: no dangling references to Topbar, deriveCrumbs, or appShell.search anywhere under gui_next/src; gui-check PASS (node types 0 errors, renderer types 0 errors, production build clean).
+
+OPEN QUESTION FOR TJ -- TODO-179 explicitly required 'a concrete decision on where breadcrumbs/per-screen actions move' BEFORE removal, and that decision is not recorded anywhere. The removal appears deliberate and is self-consistent, but two affordances are simply gone rather than relocated: (1) the breadcrumb trail, which was the only visible indicator of nesting depth for screens reached via drill-down; (2) the global search field ('Find LB#, folder, location...'), which had no other entry point in the shell. If either is meant to reappear inside individual screen headers, that work is not done. Close this task if the loss is intended; otherwise it is the tracking item for relocating them.
+
+Status left Open deliberately -- the code change is shipped, the design decision is not.
+
+TODO-273: tapematch — characterize the 1,822 curator-contradicted pairs (what class are they?)
+Priority: Medium
+Status: Open
+Added: 2026-07-27
+Rescoped: 2026-07-27 (same day) — the original scope was segment-level overlap rescue, which is
+  a DUPLICATE of TODO-185, cancelled 2026-06-25 after three falsify-first pilots. Do not rebuild
+  it. See TODO_DONE.md TODO-185 + BASELINE.md "Task 8 results" (line 388) for the full negative
+  result. In particular the exact approach this task originally proposed -- best contiguous run
+  over 60s residual_corr windows via secondary_corr_pair(return_raw=True) -- was already built
+  (calibrate_contig_run.py) and returned longest-run = 0 windows at EVERY threshold
+  (0.20/0.25/0.30/0.40) for positives AND the negative control, at both +-10s and +-120s lag
+  search. Approaches 2 and 3 (HF-band and 200-4kHz windowed landmark fingerprinting) also failed,
+  the latter dying in cross-validation when confirmed-distinct same-show pairs scored 0.235-0.301
+  against a claimed-positive range of 0.194-0.244. Root cause recorded there: a few seconds of
+  shared crowd noise cannot be separated from same-show musical content at 20s window granularity
+  without onset-aligned sub-second event matching or a fundamentally different signal.
+
+WHAT IS ACTUALLY STILL OPEN. TODO-185 characterized ONE date (1991-11-05 Madison) plus two
+cross-validation dates. The claim that the whole contradicted-claim corpus is that same
+patchwork/clapping-wav class was an inference from that single worked example -- it has never been
+measured. The population is 1,822 pairs across 939 dates:
+  SELECT concert_date, lb_a, lb_b FROM latest_pairs
+  WHERE lb_says_same=1 AND tapematch_verdict='different_family' AND lb_a != lb_b
+(tools/tapematch/observations.db). Earlier notes citing "~37 contradicted" described only the
+Jun-22 analysis batch, not the corpus.
+
+TASK: classify those 1,822 pairs into failure classes before proposing any new matcher. This is
+metadata + curator-text work, NOT an audio campaign -- cheap, and it decides whether anything
+further is worth building. Candidate classes to bucket into:
+  - LABEL NOISE: curator text asserts same-source but is wrong, or the "same as" phrasing was
+    mis-parsed into lb_says_same=1. TODO-201 already flags 265 pairs with objective label-noise
+    markers (explicit "different recording" text, speed-corrected duration ratio >15% off unity);
+    those markers should be run across all 1,822, not just the frozen set.
+  - LB-NUMBER COLLISION: BUG-277 -- a cross-referenced LB tag in a folder name shadows the
+    folder's own number, so pair rows can be attributed to the wrong entry entirely.
+  - SEGMENT/PATCHWORK: the TODO-185 class. Known unrescuable with current signals. Measure how
+    big it actually is; if it is a small minority, the corpus-scale framing was wrong.
+  - WHOLE-RECORDING ALIGNMENT FAILURE: staircase/heavy-drift pairs where the anchor/lag aligner
+    never locks. This is TODO-204's territory and is NOT falsified by TODO-185 (different failure
+    mode, and 204 confirms via residual corr -- the signal 185 showed remains trustworthy; it was
+    the Dice/fingerprint statistics that failed).
+Deliverable: a bucket census with counts + a handful of worked examples per bucket, written to
+tools/tapematch/ as a report. Only after that does a new matcher proposal make sense.
+
+CENSUS DONE 2026-07-27 — tools/tapematch/census_contradicted.py, report at
+tools/tapematch/CONTRADICTED_CENSUS.md (metadata only, no audio, cheap to re-run).
+Priority-ordered buckets over all 1,822 pairs / 939 dates:
+    alignment_failure   806 (44.2%)   [marker hits 1,269 = 69.6%]
+    unexplained         377 (20.7%)
+    duration_mismatch   316 (17.3%)   [marker 381 = 20.9%]
+    label_contradiction 308 (16.9%)   [marker 309 = 17.0%]
+    lb_collision         10 ( 0.5%)   [BUG-277]
+    segment_patchwork     5 ( 0.3%)   [marker 52 = 2.9%]
+FINDINGS:
+  1. The patchwork/segment class -- the thing TODO-185 was built for and this task was
+     originally scoped around -- is **~52 pairs (2.9%)**, not the corpus. TODO-185 was
+     cancelled correctly, and it killed something that was never the main problem. The
+     corpus-scale framing in the original TODO-273 description was wrong by ~35x.
+  2. ALIGNMENT FAILURE IS THE PLURALITY at 44-70% depending on exclusive-vs-marker
+     counting: at least one side is speed-unknown / staircase/splice, so the ratio
+     estimator never locked and the pair was routed to the fingerprint path. This is
+     TODO-204's failure mode, and it makes 204 substantially more interesting than its
+     own 11-pair band suggested. Whatever fixes ratio-lock on these sources is the
+     highest-leverage tapematch work available.
+  3. LABEL NOISE IS REAL AND MEASURABLE: 309 pairs assert same-source in text that ALSO
+     contains explicit "different recording"/"not the same" language, and 381 have
+     speed-corrected durations differing >15%. Both are TODO-201's markers, applied
+     corpus-wide here for the first time instead of to the 265-pair frozen set. Combined
+     exclusive share 624 pairs (34.2%) -- i.e. a third of the "contradictions" look like
+     the curator label being wrong or mis-parsed, not tapematch failing.
+  4. CURATOR EVIDENCE STANDARD (the unexpected one). Most same-source claims rest on one
+     stock formula: "same recording as LB-NNNN based on same clapping wavs at end of
+     dXtY" -- a single localised waveform comparison. It appears in 0.0% of pairs the
+     curator is silent on and 0.9% of explicit-different pairs, so it is purely a
+     same-claim justification; but it appears in 54.7% of contradicted claims vs 39.7% of
+     confirmed ones. Claims justified this way are confirmed 41.9% of the time (719/1,716)
+     vs 56.9% (1,090/1,915) for claims justified any other way. The heuristic is
+     measurably weaker but is NOT noise. Note this is also exactly the signal BASELINE.md
+     Task 8 approach 3 proved unusable machine-side (same-show different-source pairs
+     score 0.235-0.301 on clap-band fingerprinting, overlapping claimed positives) -- so
+     the curator is leaning hardest on the one cue tapematch provably cannot verify.
+  5. corr is <0.05 for 1,700 of 1,822 (93.3%) and never reaches 0.40. Whatever these
+     pairs are, no current signal puts them near a merge bar.
+NEXT: (a) the 624 label-noise-marked pairs are curator-review work, not matcher work --
+they belong with TODO-201, which should be widened from its 265-pair frozen set to this
+population; (b) the 806 alignment-failure pairs are the real matcher target and should
+drive the TODO-204 decision; (c) the 377 unexplained need a second pass with a different
+discriminator before anything is concluded about them.
+
 TODO-264: DYLAN2 disk health + re-source 2 corrupt files found in BUG-120 forensics
 Priority: High
 Status: Open
@@ -32,6 +135,31 @@ compute. UNBLOCKED 2026-07-05: TODO-202 densification done (12× REJECTED, 5×/0
 net +1 flip only at the plateau edge; see TIER_B_FULLSET_REPORT.md); the near-miss band
 stands, and embed_cache_12x/ + fullset_pairs_12x_scores.json are retained as a second
 measurement the probe can cross-check band pairs against.
+REMEASURED 2026-07-27 (while closing TODO-184; fullset_pairs_scores.json, both conventions
+in [0.55, 0.75)):
+  - CEILING HAS DROPPED. The band is now 50 pairs, not ~73: 39 frozen negatives (UNCHANGED,
+    exactly as described) + **11 low-corr FN, down from 34**. The negatives held still while
+    two thirds of the FN side was already rescued by other means -- presumably the 07-20
+    corpus rescore (TODO-254/235) and/or TODO-255 frozen-set gating. So the realistic ceiling
+    is ~+11 TP / ~+0.5 recall pts, not +34 / +1.6. The 12x scoring is smaller still (42 pairs:
+    36 neg + 6 fn_lowcorr), so the probe's own cross-check measurement is thinner too.
+  - THE BAND SEPARATES PERFECTLY BY CURATOR TESTIMONY. All 11 fn_lowcorr pairs are
+    curator-contradicted same-source claims (lb_says_same=1, verdict=different_family); all 39
+    negatives are not. Zero crossover. That makes the band an unusually clean 11-pair labeled
+    test set -- a true same-tape pair should flip under MrMsDTW confirmation and a negative
+    should not, with curator testimony as an independent label. 11 pairs is a cheap probe, and
+    that cheapness (not the recall number) is now the argument for running it.
+  - NOT A SUBSTITUTE FOR TODO-273. The band covers 11 of the 1,822 curator-contradicted pairs
+    (0.6%); against the 826 of those that are scored in the fullset at all, still only 1.3%.
+    Widening to EITHER convention in band gives 343 pairs / 117 contradicted, but that band is
+    not the calibrated one. Segment-level overlap (TODO-273) remains the corpus-scale lever;
+    this probe is a narrow, well-labeled experiment alongside it.
+  - The "calibration frozen for the 7/09-7/12 window" deferral above is expired, and TODO-202
+    already discharged the other blocker -- this is parked on inertia, not on a live constraint.
+  - The 11 pairs: (1988-09-03, 2588/14344) (1989-07-19, 2216/2448) (1989-08-05, 7993/12848)
+    (1991-06-06, 4089/12326) (1992-05-11, 5938/12553) (1992-06-30, 763/764) (1996-06-19,
+    1919/5498) (1996-11-23, 4155/7134) (1997-02-10, 3279/12897) (1998-01-20, 10583/11496)
+    (2001-03-13, 471/5370).
 
 TODO-201: Curator review of census-flagged frozen-set labels (265 pairs)
 Priority: Medium
@@ -159,57 +287,6 @@ Description: backend/wtrf_scraper.py + tools/wtrf_fetch_missing.py implement the
     throttled or returns unexpected results (walk board=16.0, board=16.20, …).
   Relates to: [[TODO-135]] (scrape WTRF for existing posts), [[TODO-194]] (match quality
     refinement — audit data from the 2026-06-30 batch runs).
-
-TODO-184: tapematch — rescue same-source false-negatives (channel-polarity inversion + partial overlap)
-Priority: Medium
-Status: In Progress
-Added: 2026-06-24
-Description: Across the Jun-22 analysis batch, tapematch repeatedly contradicts LB curator
-  "same recording" commentary with near-zero correlation (~37 contradicted vs 3 corroborated
-  among verdicts that cite an explicit same-source claim). Root-cause audit:
-    - SPEED OFFSET — ALREADY HANDLED. estimate_ratio search is ±30000 ppm, lag-slope
-      refine_speed_ratio (config refine.enabled) and the high_ppm secondary_corr_pair path
-      were committed 2026-06-21. The opus Winnipeg (1990-06-17) analysis that flagged speed
-      as the cause was written 2026-06-20, i.e. before that fix landed.
-    - CHANNEL-POLARITY INVERSION — NOT handled. Curator notes like "right channel inverted"
-      / "channels swapped and wavs inverted" (e.g. 1991-11-05 LB-10660) defeat correlation
-      because Pass 1 ingests MONO ONLY (cli.py:143 mono=True, a deliberate RAM optimisation),
-      so the L-R side signal needed to detect a one-channel polarity flip is discarded before
-      matching. residual_corr's abs() only catches a WHOLE-signal flip (both channels), not
-      one inverted channel, and a pure L<->R swap (no inversion) already survives the L+R
-      mixdown. So the unhandled subset is specifically single-channel polarity inversion.
-    - PARTIAL OVERLAP / PATCHWORK COMPOSITES — partially handled. secondary_corr_pair's
-      windowed-coverage fraction can link a partial match, but whole-recording median corr
-      still collapses and the verdict reports needs-review.
-  PLAN (staged):
-    1. [done] Config-gated polarity block + polarity-aware correlation helper + unit test
-       (synthetic inverted-channel pair must be rescued; independent pair must NOT merge).
-    2. [done] Wired stereo ingest behind the flag: Pass 1 (cli.py) now decodes stereo when
-       polarity.enabled and writes an L-R "side" memmap per stereo source (same trim bounds as
-       mid); the residual matrix loop re-scores a near-zero pair (med < rescue_corr_ceiling) via
-       match.polarity_rescue (mid-side / side-mid, each with its OWN per-anchor lag lock, speed-
-       corrected by the pair ratio), keeps the max, logs POLARITY_RESCUE. _mmap_side helper +
-       side_paths dict added; default path is flag-guarded and byte-identical. 6 polarity tests +
-       22-test matcher subset green.
-    3. [todo] Re-run the ~37 contradicted-claim dates with polarity: true on (validate the
-       Pass-1 stereo memory profile on real multi-source dates first); confirm rescues are
-       genuine (curator-claimed) and no spurious merges appear; then consider default-on.
-    DRY-RUN 2026-06-24 (1991-11-05 Madison, 5 sources, polarity:true via temp config, non-
-    destructive — staged symlinks, package CLI direct, no archive/DB write):
-      - PLUMBING VALIDATED: all 5 sources decoded stereo + got side memmaps; POLARITY_RESCUE
-        fired on 4 eligible pairs. Memory peaked RSS ~2.7 GB (vs ~1.1 GB mono estimate) — the
-        resample of BOTH mid and side for high-ppm pairs is the spike; acceptable but real.
-      - SAFETY VALIDATED: every off-diagonal stayed ~0.002-0.007 (max 0.0065); rescue nudged
-        only 0.002->0.003; n_families 5 == baseline 5. No false merge despite all pairs eligible.
-      - NO RESCUE WIN HERE: LB-10660's "channels swapped and wavs inverted" is NOT a whole-
-        recording single-channel inversion — the curator match is SEGMENT-level ("same clapping
-        wavs at end of d1t1/d1t8/d1t10") inside patchwork composites (LB-09174 is cassette+CD,
-        perf trimmed to 4934s). A whole-recording cross-term corr averages over mostly non-
-        matching material -> stays near-zero. This date is really the PARTIAL-OVERLAP class.
-      - IMPLICATION: partial-overlap/segment matching (clapping-wav level) looks like the bigger
-        remaining lever for the contradicted-claim dates than polarity. To demonstrate a polarity
-        WIN, pick a date whose curator note is a clean whole-recording "right channel inverted"
-        (not segment clapping-wav). Consider a new TODO for segment-level overlap rescue.
 
 TODO-178: Minimized left sidebar — new icon-only nav representation
 Priority: Low
