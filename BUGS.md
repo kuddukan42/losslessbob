@@ -1,4 +1,17 @@
 
+BUG-279: tapematch: `pytest tests/` launches REAL tapematch sessions against the production DB and live audio
+Status: Open
+File(s): tools/tapematch/tests/test_batch_queue.py:24,tools/tapematch/tapematch_session.py:1473
+Reported: 2026-07-27
+Description: Running the tapematch suite spawns full `tapematch_session.py <date>` subprocesses that decode real audio from /mnt/DATA0/examples/tapematch and COMMIT runs to tools/tapematch/observations.db. Observed 2026-07-27: two suite invocations wrote two complete runs for 1989-06-04 (run_ids 20260727_095955, 20260727_100316) to the production DB. Also the reason the suite takes 11 minutes (662s) instead of seconds.
+
+Root cause: the four tests in test_batch_queue.py do `monkeypatch.setattr(sess, "run_date", fake_run_date)`, but `run_batch()` has not called `run_date` since commit ac804108 (2026-06-18), which refactored it to spawn one subprocess per date -- `cmd = [str(VENV_PYTHON), script, date_iso]; subprocess.run(cmd)` (tapematch_session.py:1473) -- so that Python heap and page cache are released between dates. The test file was last touched by c1059dd5 (2026-06-14) and was never updated, so the monkeypatch has been a silent no-op for ~6 weeks. The queue fixtures contain real dates ("1989-06-04", "1990-01-12", "2001-10-30"), so each unpatched test runs those dates for real.
+
+Impact: (a) the production observations.db is mutated by anyone running the test suite -- benign so far only by luck (the 1989-06-04 runs reproduced the existing verdicts exactly: 15 pairs, 2 same_family, 0 changes vs the 2026-07-17 baseline), but a suite run during any other session would breach the project's "never run live tapematch sessions concurrently" rule and race on the shared caches and DB; (b) 2 of the 4 tests fail outright (`test_skips_blank_comment_and_done_lines`, `test_keyboard_interrupt_leaves_current_line_unmarked`) because the fake never records calls, so run_batch's queue/resume logic is currently UNTESTED; (c) 11-minute suite time discourages running it. Note the suite also has 2 unrelated pre-existing failures in test_find_lb_folders_no_audio.py (not investigated here).
+
+Fix direction: patch the actual seam -- `monkeypatch.setattr(sess.subprocess, "run", ...)` (or inject the runner) instead of `run_date` -- and assert on the spawned argv, which is what run_batch's contract actually is. Add a guard so a test can never invoke the real VENV_PYTHON session script: e.g. a module-level `_SPAWN` indirection defaulting to subprocess.run, and an autouse fixture in conftest.py that replaces it with a raising stub for the whole suite. Replace the real dates in the fixtures with obviously-synthetic ones. Recommend fixing this BEFORE the BUG-278 re-run work, since that involves repeated full-suite runs.
+Fix: TBD — see "Fix direction" above.
+
 BUG-278: tapematch: addon_links.rule_d can never fire in a live session (emb_score absent from the link metrics)
 Status: Open
 File(s): tools/tapematch/tapematch/cli.py:890,tools/tapematch/tapematch_session.py:1665,tools/tapematch/tapematch/verdict.py:311

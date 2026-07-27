@@ -624,8 +624,14 @@ def _clean_stale_tmp_dirs() -> None:
 
 
 def run_tapematch(json_out: Path, root_dir: Path = EXAMPLES_DIR,
-                  set_offset: str | None = None) -> tuple[str, float]:
-    """Run tapematch CLI, streaming output live. Returns (stdout_text, duration_sec)."""
+                  set_offset: str | None = None,
+                  concert_date: str | None = None) -> tuple[str, float]:
+    """Run tapematch CLI, streaming output live. Returns (stdout_text, duration_sec).
+
+    ``concert_date`` (BUG-278) keys the nmfp embedding cache so the CLI can score
+    pairs before clustering and ``addon_links.rule_d`` can actually fire. Omitted
+    -> the CLI leaves emb scores None and Rule D abstains, the prior behaviour.
+    """
     _clean_stale_tmp_dirs()
     debug_log = SESSION_DIR / "last_debug.log"
     cmd = [
@@ -637,6 +643,8 @@ def run_tapematch(json_out: Path, root_dir: Path = EXAMPLES_DIR,
     ]
     if set_offset:
         cmd += ["--set-offset", set_offset]
+    if concert_date:
+        cmd += ["--concert-date", concert_date]
     t0 = time.monotonic()
     # Popen + line-by-line streaming so progress and any errors appear immediately.
     # stderr merged into stdout so nothing is silently swallowed on crash.
@@ -1211,7 +1219,8 @@ def run_date(date_iso: str, dry_run: bool = False,
     else:
         print("\n[5] Running tapematch …")
         json_path.unlink(missing_ok=True)  # clear stale results from any prior run
-        log_text, duration = run_tapematch(json_path, set_offset=set_offset)
+        log_text, duration = run_tapematch(json_path, set_offset=set_offset,
+                                           concert_date=date_iso)
         LOG_PATH.write_text(log_text)
 
     # 6. Archive — load results first so build_report can include commentary audit
@@ -1534,7 +1543,8 @@ def run_manual(root_dir: Path, date_iso: str | None = None, location: str = "",
     json_path = SESSION_DIR / "last_results.json"
     json_path.unlink(missing_ok=True)
     print("\n[5] Running tapematch …")
-    log_text, duration = run_tapematch(json_path, root_dir=root_dir, set_offset=set_offset)
+    log_text, duration = run_tapematch(json_path, root_dir=root_dir, set_offset=set_offset,
+                                       concert_date=date_iso)
     LOG_PATH.write_text(log_text)
     print(log_text)
 
