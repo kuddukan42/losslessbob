@@ -250,6 +250,26 @@ def make_run_id() -> str:
     return datetime.now().strftime("%Y%m%d_%H%M%S")
 
 
+def _spawn(cmd: list[str]) -> int:
+    """Run one per-date session subprocess and return its exit code.
+
+    The single seam through which ``run_batch`` / ``run_year`` / ``run_crawl``
+    launch real work (BUG-279). Isolating it in one named function gives tests
+    something to patch: the suite's ``conftest.py`` replaces this with a stub
+    that raises, so no test can ever decode real audio or commit a run to the
+    production ``observations.db``. Patching ``run_date`` does NOT work -- these
+    drivers deliberately spawn a fresh interpreter per date so heap and page
+    cache are released between runs, and have done since 2026-06-18.
+
+    Args:
+        cmd: Full argv for the child session process.
+
+    Returns:
+        The child's exit code.
+    """
+    return subprocess.run(cmd, check=False).returncode
+
+
 # ── losslessbob DB queries ─────────────────────────────────────────────────────
 
 def query_db(date_iso: str) -> tuple[str, list[int]]:
@@ -1299,8 +1319,7 @@ def year_run(year: str, min_entries: int = 2, dry_run: bool = False,
         if allow_missing:
             cmd.append("--allow-missing")
         try:
-            result = subprocess.run(cmd, check=False)
-            rc = result.returncode
+            rc = _spawn(cmd)
             if rc == 2:
                 print(f"  [SKIP] {iso}: only 1 source folder on disk")
             elif rc == 3:
@@ -1371,8 +1390,7 @@ def crawl_run(min_entries: int = 2, dry_run: bool = False,
         if allow_missing:
             cmd.append("--allow-missing")
         try:
-            result = subprocess.run(cmd, check=False)
-            rc = result.returncode
+            rc = _spawn(cmd)
             if rc == 2:
                 print(f"  [SKIP] {iso}: only 1 source folder on disk")
             elif rc == 3:
@@ -1482,8 +1500,7 @@ def run_batch(queue_path: Path, dry_run: bool = False, no_tapematch: bool = Fals
         if allow_missing:
             cmd.append("--allow-missing")
         try:
-            result = subprocess.run(cmd, check=False)
-            rc = result.returncode
+            rc = _spawn(cmd)
         except KeyboardInterrupt:
             print(f"\nInterrupted at {date_iso} ({n}/{len(todo)}).")
             print(f"Resume:  tapematch_session.py --batch {queue_path}")
