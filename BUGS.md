@@ -1,4 +1,17 @@
 
+BUG-278: tapematch: addon_links.rule_d can never fire in a live session (emb_score absent from the link metrics)
+Status: Open
+File(s): tools/tapematch/tapematch/cli.py:890,tools/tapematch/tapematch_session.py:1665,tools/tapematch/tapematch/verdict.py:311
+Reported: 2026-07-27
+Description: `addon_links.rule_d` (emb_score AND emb_score_global both >= 0.75) was calibrated on the full frozen set 2026-07-04 at zero new FP and shipped `enabled: true`. It has never fired during an actual tapematch session. 46 curator-claimed pairs in observations.db clear its bar and are still stored `different_family`; run dates span 2026-06-02 to 2026-07-26, i.e. well past the enablement date.
+
+Root cause: cli.py's `_pair_metrics(i, j)` (the dict handed to `verdict.pair_links` via `match.cluster(link_fn=...)`) builds only corr / windowed_frac / hiss / fp_score / speed_kind / hf_ceiling / nyquist / lb_a / lb_b. It never sets `emb_score` or `emb_score_global`, so `verdict._rule_d_emb_both` hits its `if emb is None` guard and returns False on every pair. The columns DO get populated -- but by `emb_live.populate_live_emb_scores()` called from `tapematch_session.py::_log_to_obs_db()`, which runs after the analysis has already clustered and decided `same_family`. TODO-200 added the live embedding path intending exactly this rule to fire live; the values land in the DB one stage too late to affect the verdict that is written alongside them.
+
+Impact: the only production merge path for the embedding is dead in live runs. Offline it partly compensates -- regression.py::_passthrough_with_rule_d additively unions rule_d into the passthrough result -- so the harness and the shipped session disagree about what the configured system does, and CALIBRATION/regression numbers reflect a rule the pipeline is not actually applying. Measured effect of linking rule_d and re-closing each date transitively: 58 curator-claimed pairs and 80 curator-silent pairs flip to same_family across 80 dates.
+
+Fix direction: NOT a one-line addition of two dict keys. Making rule_d fire live requires emb scores to exist before clustering, which means hoisting the emb_live extraction ahead of `match.cluster` in the cli analyze path (it needs only source folder paths, not `results`, so this is feasible) and then adding the two keys to `_pair_metrics`. Gate the change on scoring the 80 curator-silent flips first: rule_d's zero-new-FP proof covers the 2,245-pair frozen sets only, and these merges are corpus-wide and outside that population. Evidence + per-pair tables: tools/tapematch/CONTRADICTED_EMB_SECOND_PASS.md (section 4), regenerate with tools/tapematch/emb_second_pass.py.
+Fix: TBD — see "Fix direction" above.
+
 BUG-277: tapematch: a cross-referenced LB tag in a folder name shadows the folder's own LB number
 Status: Open
 File(s): tools/tapematch/tapematch/cli.py:512,tools/tapematch/tapematch_session.py:697
