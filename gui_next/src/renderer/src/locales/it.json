@@ -26,7 +26,6 @@
   "appShell": {
     "brand": "LosslessBob",
     "version": "Ricerca Checksum - v{{version}}",
-    "search": "Trova LB#, cartella, posizione...",
     "curatorHint": "Mantenere il DB principale?",
     "curatorEnable": "Abilita la modalità Curatore →",
     "nav": {

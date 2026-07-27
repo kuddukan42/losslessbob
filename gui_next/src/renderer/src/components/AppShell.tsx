@@ -12,20 +12,6 @@ import { SavedViews } from './SavedViews'
 // NAV_GROUPS + its types now live in ../lib/navigation.ts so the command palette
 // can share the same screen registry (see that module).
 
-// Derive breadcrumb trail from active screen id.
-function deriveCrumbs(active: string): string[] {
-  if (active === 'home') return ['LosslessBob']
-  for (const group of NAV_GROUPS) {
-    const item = group.items.find((i) => i.id === active)
-    if (item) {
-      return group.label
-        ? ['LosslessBob', group.label, item.label]
-        : ['LosslessBob', item.label]
-    }
-  }
-  return ['LosslessBob']
-}
-
 const LANG_OPTIONS: { code: string; label: string }[] = [
   { code: 'en', label: 'English' },
   { code: 'de', label: 'Deutsch' },
@@ -427,130 +413,6 @@ function Sidebar({
         </button>
       </div>
     </aside>
-  )
-}
-
-// ── Topbar ───────────────────────────────────────────────────────────────────
-
-function Topbar({
-  crumbs,
-  actions,
-  hasNotification = true,
-}: {
-  crumbs: string[]
-  actions?: React.ReactNode
-  hasNotification?: boolean
-}) {
-  const { t } = useTranslation()
-  return (
-    <header
-      style={{
-        height: 52,
-        flex: '0 0 52px',
-        padding: '0 20px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: 16,
-        borderBottom: '1px solid var(--lbb-border)',
-        background: 'var(--lbb-surface)',
-      }}
-    >
-      {/* Breadcrumbs */}
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 8,
-          minWidth: 0,
-        }}
-      >
-        {crumbs.map((c, i) => (
-          <React.Fragment key={i}>
-            {i > 0 && (
-              <span style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>/</span>
-            )}
-            <span
-              style={{
-                fontSize: 'var(--lbb-fs-13)',
-                fontWeight: i === crumbs.length - 1 ? 600 : 500,
-                color:
-                  i === crumbs.length - 1
-                    ? 'var(--lbb-fg)'
-                    : 'var(--lbb-fg2)',
-                letterSpacing: -0.005,
-              }}
-            >
-              {c}
-            </span>
-          </React.Fragment>
-        ))}
-      </div>
-
-      {/* Spacer */}
-      <div style={{ flex: 1 }} />
-
-      {/* Per-screen actions */}
-      {actions}
-
-      {/* Global search */}
-      <button
-        type="button"
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 10,
-          height: 32,
-          padding: '0 10px 0 12px',
-          background: 'var(--lbb-surface2)',
-          border: '1px solid var(--lbb-border)',
-          borderRadius: 8,
-          color: 'var(--lbb-fg3)',
-          fontSize: 'var(--lbb-fs-12-5)',
-          cursor: 'pointer',
-          minWidth: 280,
-          fontFamily: 'inherit',
-        }}
-      >
-        <Icon name="search" size={14} />
-        <span style={{ flex: 1, textAlign: 'left' }}>
-          {t('appShell.search')}
-        </span>
-      </button>
-
-      {/* Bell */}
-      <button
-        type="button"
-        style={{
-          width: 34,
-          height: 34,
-          borderRadius: 8,
-          background: 'transparent',
-          border: '1px solid transparent',
-          color: 'var(--lbb-fg2)',
-          cursor: 'pointer',
-          position: 'relative',
-          display: 'inline-flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Icon name="bell" size={16} />
-        {hasNotification && (
-          <span
-            style={{
-              position: 'absolute',
-              top: 7,
-              right: 8,
-              width: 7,
-              height: 7,
-              borderRadius: '50%',
-              background: 'var(--lbb-bad-bar)',
-              border: '1.5px solid var(--lbb-surface)',
-            }}
-          />
-        )}
-      </button>
-    </header>
   )
 }
 
@@ -987,16 +849,12 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
 // ── AppShell ─────────────────────────────────────────────────────────────────
 
 export interface AppShellProps {
-  crumbs?: string[]
-  topActions?: React.ReactNode
   statusExtra?: React.ReactNode
   onAbout?: () => void
   children: React.ReactNode
 }
 
 export function AppShell({
-  crumbs,
-  topActions,
   statusExtra,
   onAbout,
   children,
@@ -1011,8 +869,6 @@ export function AppShell({
   function onNav(id: string) {
     navigate(navPathForId(id))
   }
-
-  const resolvedCrumbs = crumbs ?? deriveCrumbs(active)
 
   return (
     <div
@@ -1036,7 +892,6 @@ export function AppShell({
             minWidth: 0,
           }}
         >
-          <Topbar crumbs={resolvedCrumbs} actions={topActions} />
           <div style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
             {children}
           </div>

@@ -26,7 +26,6 @@
   "appShell": {
     "brand": "LosslessBob",
     "version": "Recherche de la somme de contrôle - v{{version}}",
-    "search": "Rechercher LB#, dossier, emplacement...",
     "curatorHint": "Maintenance de la base de données principale ?",
     "curatorEnable": "Activer le mode Curator →",
     "nav": {

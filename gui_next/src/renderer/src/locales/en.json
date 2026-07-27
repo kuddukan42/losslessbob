@@ -26,7 +26,6 @@
   "appShell": {
     "brand": "LosslessBob",
     "version": "Checksum Lookup · v{{version}}",
-    "search": "Find LB#, folder, location…",
     "curatorHint": "Maintaining the master DB?",
     "curatorEnable": "Enable Curator mode →",
     "nav": {
