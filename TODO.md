@@ -102,6 +102,48 @@ population; (b) the 806 alignment-failure pairs are the real matcher target and 
 drive the TODO-204 decision; (c) the 377 unexplained need a second pass with a different
 discriminator before anything is concluded about them.
 
+ITEM (c) DONE 2026-07-27 — tools/tapematch/emb_second_pass.py, report at
+tools/tapematch/CONTRADICTED_EMB_SECOND_PASS.md. Second discriminator = the nmfp
+embedding (emb_score / emb_score_global), the one persisted audio signal the census
+did not use and the only one with a calibrated production bar behind it
+(addon_links.rule_d, t_emb 0.75 both-convention). corr was unusable inside the corpus
+(<0.05 for 93.3%) and fp_score is NULL for 351 of the 377. Tiers, all 1,822 pairs:
+    A rule_d-qualifying    46 ( 2.5%)   clears the SHIPPED merge bar, stored different
+    B elevated             69 ( 3.8%)   above control p95 (0.649), below the bar
+    C control-like      1,655 (90.8%)
+    no_emb                 52 ( 2.9%)
+FINDINGS:
+  6. THE 377 UNEXPLAINED ARE NOT A HIDDEN FAILURE CLASS. 333 of 377 (88.3%) sit in
+     the curator-silent negative-control emb band. Combined with the census (clean on
+     every metadata axis: both sides speed-locked, duration ratio within 15%, no
+     disclaimer text, no LB-tag collision) the economical reading is curator label
+     noise with no textual marker -- the claim is wrong or was mis-parsed and the
+     recordings really are different. Caveat stated in the report: the embedding
+     recalls only 59% of confirmed pairs at that floor, so tier C is absence of
+     evidence, not proof of difference. What it does establish is that no persisted
+     signal puts them near a merge bar. No new matcher is justified by this
+     population; item (c) is answered, not deferred.
+  7. THE CONTRADICTED CORPUS TRACKS THE NEGATIVE CONTROL. emb quartiles for the 1,822
+     (p25 0.132 / med 0.212 / p75 0.362) are indistinguishable from the 15,310
+     curator-silent different pairs (0.128 / 0.220 / 0.325), against confirmed
+     same-source at 0.467 / 0.909 / 0.975. This reframes the whole corpus: on the one
+     audio signal with a calibrated bar, most "contradictions" look like the curator
+     being wrong, not tapematch failing. Consistent with census finding 3 (34.2%
+     carry objective label-noise markers) and finding 5.
+  8. BUG-278 FOUND -- rule_d has never fired in a live session. cli.py's
+     _pair_metrics() omits emb_score/emb_score_global from the dict passed to
+     verdict.pair_links, so _rule_d_emb_both abstains on every pair; emb_live only
+     populates the columns from _log_to_obs_db(), after clustering. So tier A is 46
+     STALE VERDICTS, not a matcher gap -- the rule that merges them shipped 2026-07-04.
+     Transitive corpus effect if wired: 58 curator-claimed + 80 curator-silent pairs
+     flip to same_family across 80 dates. The 80 silent flips are why this is filed as
+     a bug to be scoped rather than patched here -- rule_d's zero-new-FP proof covers
+     the 2,245-pair frozen sets only.
+REMAINING: (a) and (b) above are unchanged and belong to TODO-201 and TODO-204
+respectively. Note finding 8 lands on (b): 34 of the 46 tier-A pairs are in the
+alignment_failure bucket, so BUG-278 recovers a slice of TODO-204's target population
+for free, and TODO-204 should be re-scoped only after BUG-278 is decided.
+
 TODO-264: DYLAN2 disk health + re-source 2 corrupt files found in BUG-120 forensics
 Priority: High
 Status: Open

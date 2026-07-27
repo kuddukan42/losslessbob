@@ -1,3 +1,28 @@
+[2026-07-27] — docs/analysis: TODO-273 item (c) — embedding second pass over the contradicted
+  corpus; file BUG-278 (rule_d dead in live sessions)
+Added: tools/tapematch/emb_second_pass.py + CONTRADICTED_EMB_SECOND_PASS.md: second discriminator
+  over the 1,822 curator-contradicted pairs, using the nmfp embedding (emb_score /
+  emb_score_global) — the one persisted audio signal the metadata census did not use, and the only
+  one with a calibrated production bar (addon_links.rule_d, t_emb 0.75 both-convention). Metadata +
+  persisted-metric only: reads observations.db, decodes no audio, writes nothing back. Tiers over
+  all 1,822: A rule_d-qualifying 46, B elevated 69, C control-like 1,655, no_emb 52.
+Resolved: TODO-273 item (c) — the 377 `unexplained` pairs are NOT a hidden failure class. 333
+  (88.3%) sit in the curator-silent negative-control emb band; combined with the census (clean on
+  every metadata axis) the reading is curator label noise with no textual marker. Report states the
+  caveat explicitly: the embedding recalls only 59% of confirmed pairs at that floor, so tier C is
+  absence of evidence, not proof of difference. No new matcher is justified by this population.
+  Corpus-wide reframe: contradicted emb quartiles (0.132/0.212/0.362) are indistinguishable from
+  the 15,310 curator-silent different pairs (0.128/0.220/0.325) vs confirmed same-source at
+  0.467/0.909/0.975.
+Found: BUG-278 — addon_links.rule_d has never fired in a live tapematch session. cli.py's
+  _pair_metrics() omits emb_score/emb_score_global from the dict passed to verdict.pair_links, so
+  _rule_d_emb_both hits its None guard and abstains on every pair; emb_live.py populates the
+  columns from _log_to_obs_db(), one stage after clustering has decided the verdict. The rule
+  shipped enabled 2026-07-04 with a zero-new-FP calibration. Consequence: the 46 tier-A pairs are
+  stale verdicts, not a matcher gap. Transitive corpus effect if wired: 58 curator-claimed + 80
+  curator-silent pairs flip to same_family across 80 dates. Filed rather than patched — the 80
+  silent flips fall outside rule_d's 2,245-pair frozen-set proof and need scoring first.
+
 [2026-07-27] — fix/docs: close TODO-184 (polarity won't-ship), census the curator-contradicted
   corpus (TODO-273), file BUG-277
 Fixed: tools/tapematch/validate_polarity.py: two defects in the TODO-184 stage-3 harness. (1) The
