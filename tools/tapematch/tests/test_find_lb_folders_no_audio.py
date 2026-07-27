@@ -61,10 +61,11 @@ def test_no_audio_folder_excluded(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(sess, "DB_PATH", db_path)
     monkeypatch.setattr(sess, "SEARCH_ROOTS", [])
 
-    found = sess.find_lb_folders([1430, 5845], "1989")
+    found, excluded = sess.find_lb_folders([1430, 5845], "1989")
 
     assert 5845 in found
     assert 1430 not in found
+    assert 1430 in excluded
     assert "Excluded (no audio found): LB-01430" in capsys.readouterr().out
 
 
@@ -93,7 +94,8 @@ def test_all_audio_folders_kept(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(sess, "DB_PATH", db_path)
     monkeypatch.setattr(sess, "SEARCH_ROOTS", [])
 
-    found = sess.find_lb_folders([1, 2], "2026")
+    found, excluded = sess.find_lb_folders([1, 2], "2026")
 
     assert set(found) == {1, 2}
+    assert excluded == set()
     assert "Excluded (no audio found)" not in capsys.readouterr().out
