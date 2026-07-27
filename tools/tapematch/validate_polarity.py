@@ -45,8 +45,12 @@ OBS_DB_PATH = SESSION_DIR / "observations.db"
 SCRATCH_BASE = Path("/mnt/DATA0/tmp/validate_polarity")
 RESULTS_PATH = SESSION_DIR / "validate_polarity_results.jsonl"
 
+# cli.py emits: f"POLARITY_RESCUE  {name_a}/{name_b}  {pairing}  corr {a:.3f}->{b:.3f}"
+# Source names are folder names ("1994-10-23 Chicago (LB-12345)") and always
+# contain single spaces, so the fields are delimited by DOUBLE spaces — matching
+# the names with \S+ can never succeed on real data.
 POLARITY_RESCUE_RE = re.compile(
-    r"POLARITY_RESCUE\s+(\S+)/(\S+)\s+(\S+)\s+corr ([\d.]+)->([\d.]+)"
+    r"POLARITY_RESCUE\s{2}(.+?)/(.+?)\s{2}(\S+)\s{2}corr ([\d.]+)->([\d.]+)"
 )
 
 
@@ -171,6 +175,11 @@ def run_one(date_iso: str) -> dict:
     baseline = baseline_for_date(date_iso)
     rescued, regressed, new_merges = [], [], []
     for (lb_a, lb_b), base in baseline.items():
+        # latest_pairs holds a handful of lb_a == lb_b rows (two distinct source
+        # folders that parsed to the same LB number). Self-pairs correlate 1.0 by
+        # construction and would be scored as a spurious new merge.
+        if lb_a == lb_b:
+            continue
         na, nb = lb_to_name.get(lb_a), lb_to_name.get(lb_b)
         if na not in name_idx or nb not in name_idx:
             continue

@@ -1,3 +1,43 @@
+[2026-07-27] — fix/docs: close TODO-184 (polarity won't-ship), census the curator-contradicted
+  corpus (TODO-273), file BUG-277
+Fixed: tools/tapematch/validate_polarity.py: two defects in the TODO-184 stage-3 harness. (1) The
+  POLARITY_RESCUE_RE regex matched source names with (\S+)/(\S+), but cli.py:486 emits folder
+  names ("1994-10-23 Chicago (LB-12345)") which always contain spaces — so polarity_rescue_fired
+  was hardcoded-false by construction on all 4,033 pairs of an already-completed 64.5-hour run,
+  making it read as "the rescue never fired". Now matches on the double-space field delimiters,
+  verified against three real name formats. (2) Self-pairs (lb_a == lb_b) from latest_pairs were
+  scored as spurious new merges; now skipped. Underlying cause filed as BUG-277.
+Added: tools/tapematch/census_contradicted.py + CONTRADICTED_CENSUS.md: metadata-only census
+  (no audio decoded) classifying all 1,822 curator-contradicted pairs across 939 dates into
+  priority-ordered failure buckets — alignment_failure 806 (44.2%), unexplained 377,
+  duration_mismatch 316, label_contradiction 308, lb_collision 10, segment_patchwork 5. Headline:
+  the patchwork/segment class is ~52 pairs (2.9%), not the corpus, so the corpus-scale framing
+  that motivated TODO-273 was wrong by ~35x; alignment failure (ratio-lock never achieved) is the
+  plurality at 44–70%. Also measures the curator evidence standard: the stock "same clapping wavs
+  at end of dXtY" justification appears in 54.7% of contradicted claims vs 39.7% of confirmed
+  ones, and is the one cue BASELINE.md Task 8 proved machine-unverifiable.
+Changed: TODO.md/TODO_DONE.md/BUGS.md: TODO-184 closed won't-ship — the polarity strand is a dead
+  end (max corr improvement ~0.008 across 4,033 pairs; code retained flag-off). TODO-273 filed,
+  then rescoped the same day after discovering its original scope duplicated TODO-185, cancelled
+  2026-06-25; the exact spike proposed (contiguous-run over residual_corr windows) already existed
+  as calibrate_contig_run.py and returned zero. TODO-204 remeasured: band is 50 pairs not ~73 and
+  its FN side fell 34→11, so the ceiling is ~+11 TP not +34; the band separates perfectly by
+  curator testimony (11 fn_lowcorr all contradicted, 39 negatives none). BUG-210 repro confirmed
+  after 5 weeks open — this session created the stray file itself via a guessed DB path in an ad
+  hoc query; not an application bug.
+
+[2026-07-27] — refactor(gui): retire the AppShell Topbar (TODO-274, reverses TODO-179 won't-do)
+Changed: gui_next/src/renderer/src/components/AppShell.tsx: −145 lines removing the Topbar
+  component (52px header) and its deriveCrumbs() helper — breadcrumb trail, per-screen actions
+  slot, and global search field all gone, reclaiming vertical space for screen content. The
+  appShell.search key was removed from all six locale files; all remain at 1,725 keys (parity
+  intact, no /gui-next-i18n needed for a removal). Work was done in a prior session that ended
+  without bookkeeping; recorded here retroactively. Verified before commit: no dangling Topbar/
+  deriveCrumbs/appShell.search references under gui_next/src, gui-check PASS (node types 0,
+  renderer types 0, production build clean). TODO-274 left OPEN because TODO-179 required a
+  concrete decision on where breadcrumbs and global search relocate to, and that decision is not
+  recorded — both affordances are currently removed rather than moved.
+
 [2026-07-25] — feat: Pipeline Auto-reconcile toggle for the LBDIR stage (TODO-271)
 Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: a fourth toolbar toggle,
   Auto-reconcile (off by default), sitting between Auto-rename and Auto-collect. When on, any row

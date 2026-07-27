@@ -1,6 +1,67 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-184: tapematch — rescue same-source false-negatives (channel-polarity inversion + partial overlap)
+Priority: Medium
+Status: Done
+Added: 2026-06-24
+Closed: 2026-07-27
+Description: Across the Jun-22 analysis batch, tapematch repeatedly contradicts LB curator
+  "same recording" commentary with near-zero correlation (~37 contradicted vs 3 corroborated
+  among verdicts that cite an explicit same-source claim). Root-cause audit:
+    - SPEED OFFSET — ALREADY HANDLED. estimate_ratio search is ±30000 ppm, lag-slope
+      refine_speed_ratio (config refine.enabled) and the high_ppm secondary_corr_pair path
+      were committed 2026-06-21. The opus Winnipeg (1990-06-17) analysis that flagged speed
+      as the cause was written 2026-06-20, i.e. before that fix landed.
+    - CHANNEL-POLARITY INVERSION — NOT handled. Curator notes like "right channel inverted"
+      / "channels swapped and wavs inverted" (e.g. 1991-11-05 LB-10660) defeat correlation
+      because Pass 1 ingests MONO ONLY (cli.py:143 mono=True, a deliberate RAM optimisation),
+      so the L-R side signal needed to detect a one-channel polarity flip is discarded before
+      matching. residual_corr's abs() only catches a WHOLE-signal flip (both channels), not
+      one inverted channel, and a pure L<->R swap (no inversion) already survives the L+R
+      mixdown. So the unhandled subset is specifically single-channel polarity inversion.
+    - PARTIAL OVERLAP / PATCHWORK COMPOSITES — partially handled. secondary_corr_pair's
+      windowed-coverage fraction can link a partial match, but whole-recording median corr
+      still collapses and the verdict reports needs-review.
+  PLAN (staged):
+    1. [done] Config-gated polarity block + polarity-aware correlation helper + unit test
+       (synthetic inverted-channel pair must be rescued; independent pair must NOT merge).
+    2. [done] Wired stereo ingest behind the flag: Pass 1 (cli.py) now decodes stereo when
+       polarity.enabled and writes an L-R "side" memmap per stereo source (same trim bounds as
+       mid); the residual matrix loop re-scores a near-zero pair (med < rescue_corr_ceiling) via
+       match.polarity_rescue (mid-side / side-mid, each with its OWN per-anchor lag lock, speed-
+       corrected by the pair ratio), keeps the max, logs POLARITY_RESCUE. _mmap_side helper +
+       side_paths dict added; default path is flag-guarded and byte-identical. 6 polarity tests +
+       22-test matcher subset green.
+    3. [todo] Re-run the ~37 contradicted-claim dates with polarity: true on (validate the
+       Pass-1 stereo memory profile on real multi-source dates first); confirm rescues are
+       genuine (curator-claimed) and no spurious merges appear; then consider default-on.
+    DRY-RUN 2026-06-24 (1991-11-05 Madison, 5 sources, polarity:true via temp config, non-
+    destructive — staged symlinks, package CLI direct, no archive/DB write):
+      - PLUMBING VALIDATED: all 5 sources decoded stereo + got side memmaps; POLARITY_RESCUE
+        fired on 4 eligible pairs. Memory peaked RSS ~2.7 GB (vs ~1.1 GB mono estimate) — the
+        resample of BOTH mid and side for high-ppm pairs is the spike; acceptable but real.
+      - SAFETY VALIDATED: every off-diagonal stayed ~0.002-0.007 (max 0.0065); rescue nudged
+        only 0.002->0.003; n_families 5 == baseline 5. No false merge despite all pairs eligible.
+      - NO RESCUE WIN HERE: LB-10660's "channels swapped and wavs inverted" is NOT a whole-
+        recording single-channel inversion — the curator match is SEGMENT-level ("same clapping
+        wavs at end of d1t1/d1t8/d1t10") inside patchwork composites (LB-09174 is cassette+CD,
+        perf trimmed to 4934s). A whole-recording cross-term corr averages over mostly non-
+        matching material -> stays near-zero. This date is really the PARTIAL-OVERLAP class.
+      - IMPLICATION: partial-overlap/segment matching (clapping-wav level) looks like the bigger
+        remaining lever for the contradicted-claim dates than polarity. To demonstrate a polarity
+        WIN, pick a date whose curator note is a clean whole-recording "right channel inverted"
+        (not segment clapping-wav). Consider a new TODO for segment-level overlap rescue.
+WON'T SHIP the polarity strand (code retained, flag-off). Stages 1-2 (polarity-aware corr helper, stereo side-memmap ingest, 6 tests) shipped in 359eb3dc and stay in the tree behind polarity.enabled: false. Stage 3 validation turned out to have ALREADY BEEN RUN by an earlier session -- tools/tapematch/validate_polarity.py + validate_polarity_results.jsonl, 448 dates / 4,033 pairs / 64.5 h of compute -- but was never reported here.
+
+Verdict from that run: polarity rescue is a dead end for the contradicted-claim corpus. The largest correlation improvement across all 4,033 pairs is ~0.008 absolute (0.029 -> 0.037), and 5 of the 12 flagged 'rescues' have byte-identical old/new corr. A genuine single-channel inversion rescue would move a pair from ~0.00 to ~0.4; nothing remotely like that appears. cli.py:495 writes the rescued median straight into the correlation matrix the harness diffs, so these deltas are trustworthy. This confirms the 2026-06-24 1991-11-05 dry-run finding at 448x the scale: the contradicted-claim dates are the PARTIAL-OVERLAP class, not the polarity class.
+
+Two defects found and fixed in the validation harness while closing:
+- validate_polarity.py:48 POLARITY_RESCUE_RE used (\\S+)/(\\S+) for the source names, but cli.py:486 emits folder names ('1994-10-23 Chicago (LB-12345)') which always contain spaces -- so polarity_rescue_fired was hardcoded-false by construction on every row, which is why the results file reads as 'never fired'. Fixed to double-space-delimited non-greedy matching, verified against 3 real name formats. Note validate_polarity.py:153 deletes each debug log after parsing, so the 64.5 h cannot be re-scored retroactively for the fired flag -- the corr deltas above stand on their own and were sufficient.
+- Self-pairs (lb_a == lb_b) from latest_pairs were scored as spurious new merges; now skipped. Underlying cause filed as BUG-277.
+
+Successor work: TODO-273. NOTE — this was first filed as "segment-level overlap rescue", which is a DUPLICATE of TODO-185 (cancelled 2026-06-25; three falsify-first pilots, see BASELINE.md Task 8). Segment-level overlap must NOT be rebuilt. TODO-273 was rescoped the same day to the question that is genuinely open: classifying the 1,822 curator-contradicted pairs across 939 dates into failure classes (label noise / BUG-277 LB-number collision / TODO-185 patchwork / whole-recording alignment failure). The "~37" in this task's description was only the Jun-22 analysis batch, not the corpus figure.
+
 TODO-271: Pipeline: Auto-reconcile toggle for the LBDIR stage
 Priority: Medium
 Status: Done
