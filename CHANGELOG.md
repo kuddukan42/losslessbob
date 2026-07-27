@@ -20,8 +20,19 @@ Found: BUG-278 — addon_links.rule_d has never fired in a live tapematch sessio
   columns from _log_to_obs_db(), one stage after clustering has decided the verdict. The rule
   shipped enabled 2026-07-04 with a zero-new-FP calibration. Consequence: the 46 tier-A pairs are
   stale verdicts, not a matcher gap. Transitive corpus effect if wired: 58 curator-claimed + 80
-  curator-silent pairs flip to same_family across 80 dates. Filed rather than patched — the 80
-  silent flips fall outside rule_d's 2,245-pair frozen-set proof and need scoring first.
+  curator-silent pairs flip to same_family across 80 dates. Filed rather than patched — the
+  wiring fix needs emb scores computed before clustering, not just two extra dict keys.
+Validated: BUG-278's gate — the corpus-wide flips scored against the curator's own stance before
+  proposing the fix. Separating lb_says_same=0 (EXPLICIT denial) from NULL (silent) is what
+  resolves it: rule_d fires on 20.16% of claims-same (732/3,631), 4.17% of silent (721/17,293),
+  0.39% of explicit denials (12/3,038) — a 52x discrimination, and 10 of those 12 already carry
+  corr >= 0.83 so the primary signal merges them anyway (curator label noise, TODO-201's class).
+  Of the 138 flips: 58 claimed-same, 79 silent, and exactly ONE contradicts an explicit denial
+  (1999-11-09 LB-02737/LB-04289). That is the entire measured FP exposure — gate PASSED, fix
+  unblocked. The earlier "80 unvalidated silent merges" framing was wrong: curator silence is not
+  curator disagreement. Watch items recorded, neither blocking: 1978-03-09 is the only date where
+  rule_d links every pair (whole date collapses to one family), and 156 of 793 rule_d-firing dates
+  have median emb >= 0.60 (the BASELINE.md Task 8 same-show confound).
 
 [2026-07-27] — fix/docs: close TODO-184 (polarity won't-ship), census the curator-contradicted
   corpus (TODO-273), file BUG-277
