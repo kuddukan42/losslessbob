@@ -108,6 +108,34 @@ const SEQ: Record<ConcreteMode, Record<string, string>> = {
   },
 };
 
+// Family identity colors — TapeMatch curation matrix (design_handoff_
+// tapematch_curation README "Design Tokens" / WORK_PACKAGE D2). Fixed oklch
+// hues at (approximately) equal lightness/chroma so the heatmap stays
+// legible as a value-consistent ramp. Unlike STATUS/MODES these identify a
+// *family*, not a semantic state or light/dark preference, so they are the
+// same in both modes and are not indexed by ConcreteMode. First five are the
+// design's F1–F5 verbatim; F6–F10 continue the same hue rotation (+250, +145,
+// +65, +20, +20... i.e. 285/190/110/55/340) for dates with more than five
+// families, cycling through the same L/C pairs used by F1–F5.
+export const FAMILY_COLORS: string[] = [
+  'oklch(0.66 0.10 35)',  // F1
+  'oklch(0.62 0.09 240)', // F2
+  'oklch(0.64 0.10 145)', // F3
+  'oklch(0.68 0.10 75)',  // F4
+  'oklch(0.60 0.09 320)', // F5
+  'oklch(0.66 0.10 285)', // F6 (extended ramp)
+  'oklch(0.62 0.09 190)', // F7
+  'oklch(0.64 0.10 110)', // F8
+  'oklch(0.68 0.10 55)',  // F9
+  'oklch(0.60 0.09 340)', // F10
+];
+
+/** CSS var() reference for a 0-based family index, wrapping past F10. */
+export function familyColorVar(index: number): string {
+  const n = ((index % FAMILY_COLORS.length) + FAMILY_COLORS.length) % FAMILY_COLORS.length;
+  return `var(--lbb-fam-${n + 1})`;
+}
+
 const MODES: Record<ConcreteMode, ModePalette> = {
   light: {
     bg:        '#faf8f3',
@@ -230,6 +258,7 @@ export function applyTheme({ mode, accent, density, font, fontSize, customTokens
     root.style.setProperty(`--lbb-${tone}-bar`, v.bar);
   });
   Object.entries(seq).forEach(([step, v]) => root.style.setProperty(`--lbb-seq-${step}`, v));
+  FAMILY_COLORS.forEach((v, i) => root.style.setProperty(`--lbb-fam-${i + 1}`, v));
   (Object.entries(d) as [string, number][]).forEach(([k, v]) =>
     root.style.setProperty(`--lbb-d-${k}`, `${v}px`)
   );
