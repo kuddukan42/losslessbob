@@ -176,6 +176,14 @@ _PAIR_ENRICH_COLS = (
     "windowed_frac", "hiss_median",
 )
 
+# observations.db ``sources`` columns GET /api/tapematch/sources returns
+# alongside lb_number, for the curation screen's speed & lag strip (README §6).
+# Probed the same way as _PAIR_ENRICH_COLS: speed_ppm/speed_kind and the lag
+# columns all post-date the first sources schema.
+_SOURCE_SPEED_COLS = (
+    "speed_kind", "speed_ppm", "family_id", "folder_name", "lag_ref_lb",
+)
+
 
 def compute_pipeline_severity(
     verify: dict,
@@ -5827,6 +5835,85 @@ def create_app() -> Flask:
             return jsonify({"date": concert_date, "run_id": run_id, "pairs": pairs})
         except Exception as exc:
             _log.exception("tapematch_pairs_for_date failed for date=%s", concert_date)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapematch/sources", methods=["GET"])
+    def tapematch_sources_for_date() -> Response:
+        """Per-recording speed/lag facts for one concert date (README §6).
+
+        Query param: date=YYYY-MM-DD (required). The curation screen's speed &
+        lag strip plots every recording on a ppm axis, which is source-shaped
+        data (``observations.db``'s ``sources`` table) rather than the
+        pair-shaped data /api/tapematch/pairs returns — hence its own route.
+        It is also the only tapematch view that has something to show on a
+        single-recording date, where there are no pairs at all.
+
+        Rows come from the LATEST run that has sources for the date, matching
+        :func:`ab_clips.get_source_info`'s ``ORDER BY run_id DESC`` rather than
+        the (possibly stale) run_id synced into ``tapematch_pairs``: a rerun
+        can change a source's ``speed_kind``, and the strip should show what
+        the current analysis believes.
+
+        ``speed_ppm``/``speed_kind`` are probed with ``PRAGMA table_info`` —
+        an observations.db predating either column yields nulls for it instead
+        of failing the request. A missing/locked DB, or a date with no run,
+        returns ``sources: []`` with a null ``run_id``; an un-analysed date is
+        not an error.
+
+        Returns:
+            200 ``{date, run_id, sources: [{lb_number, speed_kind, speed_ppm,
+            family_id, folder_name, lag_ref_lb}]}``; 400 when date is missing;
+            500 on unexpected failure.
+        """
+        from backend import tapematch_sync as _tapematch_sync
+
+        concert_date = request.args.get("date")
+        if not concert_date:
+            return jsonify({"error": "missing_date"}), 400
+        try:
+            obs_path = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH
+            if not Path(obs_path).exists():
+                return jsonify({"date": concert_date, "run_id": None, "sources": []})
+            obs_conn = _tapematch_sync._open_observations_db(obs_path)
+            try:
+                cols = {c["name"] for c in obs_conn.execute("PRAGMA table_info(sources)")}
+                opt = [c for c in _SOURCE_SPEED_COLS if c in cols]
+                run_row = obs_conn.execute(
+                    "SELECT MAX(run_id) AS run_id FROM sources WHERE concert_date = ?",
+                    (concert_date,),
+                ).fetchone()
+                run_id = run_row["run_id"] if run_row else None
+                if not run_id:
+                    return jsonify(
+                        {"date": concert_date, "run_id": None, "sources": []}
+                    )
+                rows = obs_conn.execute(
+                    """
+                    SELECT lb_number{extra}
+                    FROM sources
+                    WHERE concert_date = ? AND run_id = ? AND lb_number IS NOT NULL
+                    ORDER BY lb_number
+                    """.format(extra="".join(f", {c}" for c in opt)),
+                    (concert_date, run_id),
+                ).fetchall()
+            finally:
+                obs_conn.close()
+            sources = [
+                {"lb_number": r["lb_number"]}
+                | {c: (r[c] if c in opt else None) for c in _SOURCE_SPEED_COLS}
+                for r in rows
+            ]
+            return jsonify({"date": concert_date, "run_id": run_id, "sources": sources})
+        except Exception as exc:
+            # A locked observations.db (mid-run) raises RuntimeError from
+            # _open_observations_db. The strip degrades to its empty state
+            # rather than breaking the whole curation screen.
+            _log.warning(
+                "tapematch_sources_for_date: could not read sources for date=%s",
+                concert_date, exc_info=True,
+            )
+            if isinstance(exc, RuntimeError):
+                return jsonify({"date": concert_date, "run_id": None, "sources": []})
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
     @app.route("/api/ab_clip", methods=["POST"])
