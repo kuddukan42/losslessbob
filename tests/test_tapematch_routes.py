@@ -287,6 +287,135 @@ def test_pairs_route_unknown_date_returns_empty_list_not_error():
         shutil.rmtree(tmp_dir, ignore_errors=True)
 
 
+def _make_sources_db(tmp_dir, concert_date, rows, runs=("20260101_000000",),
+                     speed_cols=True):
+    """Create an observations.db with a 'sources' table for the speed strip.
+
+    Args:
+        tmp_dir: Directory to create observations.db in.
+        concert_date: ISO concert date to seed the rows on.
+        rows: Iterable of (lb_number, speed_kind, speed_ppm) tuples, written
+            once per run_id in *runs* so multi-run dates can be exercised.
+        runs: Run ids to seed, in any order — the route must pick the max.
+        speed_cols: When False, omit speed_kind/speed_ppm entirely,
+            reproducing an observations.db written before they were added.
+
+    Returns:
+        Path to the created observations.db file.
+    """
+    obs_path = os.path.join(tmp_dir, "observations.db")
+    conn = sqlite3.connect(obs_path)
+    conn.execute(
+        "CREATE TABLE sources (concert_date TEXT, run_id TEXT, lb_number INTEGER, "
+        "family_id TEXT, folder_name TEXT, lag_ref_lb INTEGER"
+        + (", speed_kind TEXT, speed_ppm REAL)" if speed_cols else ")")
+    )
+    for run_id in runs:
+        for lb, kind, ppm in rows:
+            conn.execute(
+                "INSERT INTO sources (concert_date, run_id, lb_number, family_id, "
+                "folder_name, lag_ref_lb"
+                + (", speed_kind, speed_ppm) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+                   if speed_cols else ") VALUES (?, ?, ?, ?, ?, ?)"),
+                (concert_date, run_id, lb, "F1", f"lb{lb}", 10)
+                + ((kind, ppm) if speed_cols else ()),
+            )
+    conn.commit()
+    conn.close()
+    return obs_path
+
+
+def test_sources_route_returns_latest_runs_speed_rows(monkeypatch):
+    """The strip's data comes from the newest run, not the oldest one seeded."""
+    db_path, tmp_dir = _make_db()
+    try:
+        obs_path = _make_sources_db(
+            tmp_dir, "1991-01-01",
+            [(10, "reference", 0.0), (20, "constant-speed-offset", -1512.0)],
+            runs=("20260101_000000", "20260201_000000"),
+        )
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/sources?date=1991-01-01")
+            assert resp.status_code == 200
+            body = resp.get_json()
+            assert body["run_id"] == "20260201_000000"
+            # One row per LB — the older run's duplicate rows must not appear.
+            assert [s["lb_number"] for s in body["sources"]] == [10, 20]
+            assert body["sources"][1]["speed_kind"] == "constant-speed-offset"
+            assert body["sources"][1]["speed_ppm"] == -1512.0
+            assert body["sources"][0]["family_id"] == "F1"
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_sources_route_survives_missing_speed_columns(monkeypatch):
+    """A pre-speed_ppm observations.db nulls those fields, keeps the rest."""
+    db_path, tmp_dir = _make_db()
+    try:
+        obs_path = _make_sources_db(
+            tmp_dir, "1991-01-01", [(10, None, None)], speed_cols=False,
+        )
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/sources?date=1991-01-01")
+            assert resp.status_code == 200
+            source = resp.get_json()["sources"][0]
+            assert source["lb_number"] == 10
+            assert source["speed_kind"] is None
+            assert source["speed_ppm"] is None
+            assert source["folder_name"] == "lb10"
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_sources_route_unknown_date_is_empty_not_error(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        obs_path = _make_sources_db(tmp_dir, "1991-01-01", [(10, "reference", 0.0)])
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/sources?date=1900-01-01")
+            assert resp.status_code == 200
+            assert resp.get_json() == {
+                "date": "1900-01-01", "run_id": None, "sources": [],
+            }
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_sources_route_no_observations_db_is_empty(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        monkeypatch.setattr(
+            tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH",
+            os.path.join(tmp_dir, "absent.db"),
+        )
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/sources?date=1991-01-01")
+            assert resp.status_code == 200
+            assert resp.get_json()["sources"] == []
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_sources_route_missing_date_param_is_400():
+    db_path, tmp_dir = _make_db()
+    try:
+        with _AppClient(db_path) as client:
+            assert client.get("/api/tapematch/sources").status_code == 400
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
 def test_pairs_route_missing_date_param_is_400():
     db_path, tmp_dir = _make_db()
     try:

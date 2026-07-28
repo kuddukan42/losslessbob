@@ -16,9 +16,11 @@
 // Phase 2 added §5's similarity matrix; Phase 3 the §8 dossier — verdict
 // block, conflict callout, A/B player, evidence bars, LB-page claim and the
 // judgment control — in both its docked and drawer forms. The judgment
-// control is UI only: the POST is Phase 6, per WORK_PACKAGE D4. Speed strip
-// (§6), verdict cards (§7), report.md (§11) and run diff (§12) remain
-// placeholders.
+// control is UI only: the POST is Phase 6, per WORK_PACKAGE D4.
+//
+// Phase 4 added §6's speed & lag strip — signed-√ ppm axis, A4 glyph
+// vocabulary, greedy lane packing — on a new GET /api/tapematch/sources.
+// Verdict cards (§7), report.md (§11) and run diff (§12) remain placeholders.
 
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
@@ -1312,6 +1314,213 @@ function Matrix({
 
 // ── Screen ───────────────────────────────────────────────────────────────────
 
+// ── §6 Speed & lag strip ────────────────────────────────────────────────────
+// A one-dimensional plot of every recording's playback-speed offset against
+// the date's reference, on a signed square-root axis (ppm spans four orders of
+// magnitude, so a linear axis piles every dot on top of the origin).
+
+interface SourceRow {
+  lb_number: number
+  speed_kind: string | null
+  speed_ppm: number | null
+  family_id: number | string | null
+  folder_name: string | null
+  lag_ref_lb: number | null
+}
+
+interface SourcesResponse {
+  date: string
+  run_id: string | null
+  sources: SourceRow[]
+}
+
+// DESIGN_ANSWERS A4: ▤ survives the staircase/splice merge (observations.db
+// stores them as the single value `staircase/splice`), and `insufficient`
+// folds into speed-unknown's `?` rather than earning a sixth symbol for the
+// two rows in the corpus that have it.
+const SPEED_GLYPH: Record<string, string> = {
+  'reference': '◆',
+  'aligned': '●',
+  'constant-speed-offset': '●',
+  'staircase/splice': '▤',
+  'staircase': '▤',
+  'splice': '▤',
+  'speed-unknown': '?',
+  'insufficient': '?',
+}
+
+function speedGlyph(kind: string | null): string {
+  return (kind && SPEED_GLYPH[kind]) || '?'
+}
+
+function speedKindLabel(kind: string | null): string {
+  if (kind === 'insufficient') return 'speed-unknown (insufficient)' // A4
+  return kind ?? 'speed unmeasured'
+}
+
+/** Signed square-root: keeps sign, compresses magnitude (README §6 `sym`). */
+function symPpm(ppm: number): number {
+  return Math.sign(ppm) * Math.sqrt(Math.abs(ppm))
+}
+
+/** Tick/label form: 0 is the reference, others get a true minus + separators. */
+function formatPpm(ppm: number): string {
+  const n = Math.round(ppm)
+  if (n === 0) return '0'
+  const abs = Math.abs(n).toLocaleString('en-US')
+  return n < 0 ? `−${abs}` : `+${abs}`
+}
+
+// A `speed-unknown` row's ratio confidence fell below the 6.0 minimum, so its
+// stored ppm is an estimate the pipeline itself doesn't trust — but it is what
+// exists on disk, and the design plots every recording on the axis. Say so in
+// the tooltip rather than silently positioning a dot by an untrusted number.
+function speedTooltip(src: SourceRow): string {
+  const parts = [`LB-${shortId(src.lb_number)}`, speedKindLabel(src.speed_kind)]
+  if (src.speed_ppm == null) {
+    parts.push('no ppm recorded')
+  } else {
+    const untrusted = src.speed_kind === 'speed-unknown' || src.speed_kind === 'insufficient'
+    parts.push(`${formatPpm(src.speed_ppm)} ppm${untrusted ? ' (unconfident estimate)' : ''}`)
+  }
+  return parts.join(' · ')
+}
+
+const LABEL_WIDTH_PCT = 4.8 // README §6 lane packing — a short id's footprint
+const LANE_HEIGHT = 34
+const TICK_GUTTER = 22
+
+function SpeedLegend(): React.JSX.Element {
+  const entry: React.CSSProperties = { display: 'inline-flex', alignItems: 'center', gap: 5 }
+  return (
+    <div style={{
+      display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 8,
+      fontSize: 10, color: 'var(--lbb-fg3)', maxWidth: 760,
+    }}>
+      <span style={entry}>◆ reference</span>
+      <span style={entry}>● aligned / constant offset</span>
+      <span style={entry}>▤ lag steps — re-tracking or a splice</span>
+      <span style={{ ...entry, color: 'var(--lbb-warn-fg)' }}>
+        ? speed-unknown → fingerprint path only
+      </span>
+      <span style={{
+        marginLeft: 'auto', fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)',
+      }}>ppm vs reference · √ scale</span>
+    </div>
+  )
+}
+
+function SpeedStrip({
+  sources, colorOf, selected, pending, onDotClick,
+}: {
+  sources: SourceRow[]
+  colorOf: (lb: number) => string
+  selected: SelectedPair | null
+  pending: number | null
+  onDotClick: (lb: number) => void
+}): React.JSX.Element {
+  const { x, ticks, lanes, maxLane } = useMemo(() => {
+    const values = sources.map(s => symPpm(s.speed_ppm ?? 0))
+    const lo = Math.min(...values, 0)
+    const hi = Math.max(...values, 0)
+    const span = hi - lo
+    // The plot inhabits 4%–96% of the width, leaving room for the outermost
+    // labels. A degenerate domain (every recording at 0 ppm — common: a date
+    // whose sources are all reference/aligned) centres instead of dividing
+    // by zero.
+    const xOf = (ppm: number | null): number =>
+      span === 0 ? 50 : 4 + ((symPpm(ppm ?? 0) - lo) / span) * 92
+
+    const rawTicks = [Math.min(...sources.map(s => s.speed_ppm ?? 0), 0), 0,
+      Math.max(...sources.map(s => s.speed_ppm ?? 0), 0)]
+    const seen = new Set<number>()
+    const tickList = rawTicks
+      .map(t => Math.round(t))
+      .filter(t => (seen.has(t) ? false : (seen.add(t), true)))
+
+    // Greedy lane packing, in list order: lowest lane with no already-placed
+    // dot within a label width. The strip grows taller as needed rather than
+    // clipping (README §6).
+    const placed: { x: number; lane: number }[] = []
+    const laneOf = sources.map(s => {
+      const px = xOf(s.speed_ppm)
+      let lane = 0
+      while (placed.some(p => p.lane === lane && Math.abs(p.x - px) < LABEL_WIDTH_PCT)) lane++
+      placed.push({ x: px, lane })
+      return lane
+    })
+    return {
+      x: xOf, ticks: tickList, lanes: laneOf,
+      maxLane: laneOf.length ? Math.max(...laneOf) : 0,
+    }
+  }, [sources])
+
+  return (
+    <div style={{
+      border: '1px solid var(--lbb-border)', borderRadius: 8,
+      background: 'var(--lbb-surface)', padding: '12px 14px 10px', maxWidth: 760,
+    }}>
+      <div style={{ position: 'relative', height: (maxLane + 1) * LANE_HEIGHT + TICK_GUTTER }}>
+        {ticks.map(t => (
+          <div
+            key={`tick-${t}`}
+            style={{
+              position: 'absolute', top: 0, bottom: TICK_GUTTER - 6, left: `${x(t)}%`,
+            }}
+          >
+            <div style={{
+              position: 'absolute', top: 0, bottom: 0, width: 1,
+              background: 'var(--lbb-border2)', left: 0,
+            }} />
+            <div style={{
+              position: 'absolute', bottom: -15, left: 0, transform: 'translateX(-50%)',
+              font: '500 9.5px var(--lbb-mono)', color: 'var(--lbb-fg3)',
+              whiteSpace: 'nowrap',
+            }}>{t === 0 ? 'ref' : formatPpm(t)}</div>
+          </div>
+        ))}
+        {sources.map((s, i) => {
+          const inPair = !!selected
+            && (selected.lbA === s.lb_number || selected.lbB === s.lb_number)
+          const isPending = pending === s.lb_number
+          return (
+            <button
+              key={s.lb_number}
+              type="button"
+              title={speedTooltip(s)}
+              aria-pressed={inPair || isPending}
+              aria-label={speedTooltip(s)}
+              onClick={() => onDotClick(s.lb_number)}
+              style={{
+                position: 'absolute', left: `${x(s.speed_ppm)}%`, top: lanes[i] * LANE_HEIGHT + 4,
+                transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column',
+                alignItems: 'center', gap: 1, background: 'none', border: 'none',
+                padding: 0, cursor: 'pointer', zIndex: 1,
+              }}
+            >
+              <span style={{
+                width: 18, height: 18, borderRadius: '50%', background: colorOf(s.lb_number),
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                // The family colours are theme-independent mid-tones (tokens.ts),
+                // so the glyph's dark ink is too — it is not --lbb-fg.
+                font: '700 9px var(--lbb-font)', color: '#0b1020',
+                outline: inPair ? '2px solid var(--lbb-fg)'
+                  : isPending ? '2px dashed var(--lbb-accent-mid)' : 'none',
+                outlineOffset: 1,
+              }}>{speedGlyph(s.speed_kind)}</span>
+              <span style={{
+                font: '600 9px var(--lbb-mono)',
+                color: inPair || isPending ? 'var(--lbb-fg)' : 'var(--lbb-fg3)',
+              }}>{shortId(s.lb_number)}</span>
+            </button>
+          )
+        })}
+      </div>
+      <SpeedLegend />
+    </div>
+  )
+}
+
 export function ScreenTapeMatchCuration(): React.JSX.Element {
   const [searchParams, setSearchParams] = useSearchParams()
   const selectedDate = searchParams.get('date')
@@ -1401,11 +1610,44 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
     return map
   }, [pairsData])
 
+  // §6 speed strip data — source-shaped, so its own route rather than a field
+  // on /api/tapematch/pairs. Kept separate from `recordings` (which comes from
+  // the synced family assignment) because a date can have sources with no
+  // synced pairs at all.
+  const {
+    data: sourcesData, isLoading: sourcesLoading, isError: sourcesError,
+  } = useQuery({
+    queryKey: ['tapematch-curation-sources', selectedDate],
+    queryFn: () => fetch(`${BASE}/api/tapematch/sources?date=${encodeURIComponent(selectedDate as string)}`)
+      .then(r => r.json()),
+    enabled: !!selectedDate,
+    staleTime: 15_000,
+  })
+  const speedSources = (sourcesData as SourcesResponse | undefined)?.sources ?? []
+
   // Lifted here (not local to Matrix) because Phase 3's dossier will read it
   // too — the dossier rendering itself stays untouched (empty state only)
   // until that phase lands.
   const [selectedPair, setSelectedPair] = useState<SelectedPair | null>(null)
   useEffect(() => { setSelectedPair(null) }, [selectedDate])
+
+  // §6 dot interaction. The design calls its prototype's logic "blunt" and
+  // recommends the two-click form instead (click a dot to select a recording,
+  // click a second to form the pair and open its dossier) — built as
+  // recommended, minus the "highlight the whole matrix row/column" half, which
+  // would need a second highlight state threaded through Matrix on top of its
+  // existing selection dimming. WORK_PACKAGE D7.
+  const [pendingLb, setPendingLb] = useState<number | null>(null)
+  useEffect(() => { setPendingLb(null) }, [selectedDate])
+  const onSpeedDotClick = (lb: number) => {
+    if (pendingLb === lb) { setPendingLb(null); return }
+    if (pendingLb == null) { setPendingLb(lb); setSelectedPair(null); return }
+    setSelectedPair({ lbA: pendingLb, lbB: lb })
+    setPendingLb(null)
+  }
+  // A pair chosen anywhere else (matrix cell, drawer close) ends any half-made
+  // selection in the strip, so the dashed outline never outlives its meaning.
+  useEffect(() => { if (selectedPair) setPendingLb(null) }, [selectedPair])
 
   const selectedPairRow = selectedPair
     ? pairsByKey.get(pairKey(selectedPair.lbA, selectedPair.lbB)) ?? null
@@ -1501,9 +1743,29 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
               </CurationSection>
               <CurationSection
                 title="Speed & lag"
-                hint="why a pair's correlation looks the way it does"
+                hint="why a pair's correlation looks the way it does · click two dots to open their pair"
               >
-                <SectionPlaceholder label="Speed & lag strip — Phase 4" />
+                {!selectedRow ? (
+                  <SectionPlaceholder label="Select a date from the triage queue." />
+                ) : sourcesLoading ? (
+                  <SectionPlaceholder label="Loading speed measurements…" />
+                ) : sourcesError ? (
+                  <SectionPlaceholder label="Couldn't load this date's speed measurements." />
+                ) : speedSources.length === 0 ? (
+                  // No analysed run for the date (or observations.db locked
+                  // mid-run — the route degrades to an empty list either way).
+                  <SectionPlaceholder label={
+                    'No speed measurements for this date — nothing has been analysed yet.'
+                  } />
+                ) : (
+                  <SpeedStrip
+                    sources={speedSources}
+                    colorOf={colorOf}
+                    selected={selectedPair}
+                    pending={pendingLb}
+                    onDotClick={onSpeedDotClick}
+                  />
+                )}
               </CurationSection>
               <CurationSection
                 title="Analysis verdict"

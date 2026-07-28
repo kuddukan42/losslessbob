@@ -1,3 +1,39 @@
+[2026-07-28] — feat: TapeMatch Curation phase 4 (speed & lag strip §6)
+Added: backend/app.py — GET /api/tapematch/sources?date= returns one row per recording
+  ({lb_number, speed_kind, speed_ppm, family_id, folder_name, lag_ref_lb}) from observations.db's
+  sources table. Its own route rather than another field on /api/tapematch/pairs: the data is
+  source-shaped, and the speed strip is the one view that still has something to show on a
+  single-recording date, which has no pairs at all. Rows come from the LATEST run holding sources
+  for the date (the rule ab_clips.get_source_info already uses), not the possibly-stale run_id
+  synced into tapematch_pairs, so a rerun's new speed_kind shows immediately. Columns probed with
+  PRAGMA table_info; a missing or locked observations.db, or an unanalysed date, returns
+  sources: [] with a null run_id rather than failing the request.
+Added: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — the §6 speed & lag strip.
+  Signed square-root axis (sign(p)·√|p|) across 4–96% of the width, because ppm on the real corpus
+  spans four orders of magnitude and a linear axis piles every dot on the origin; ticks at domain
+  min / ref / max with a true minus sign and thousands separators; DESIGN_ANSWERS A4's four-glyph
+  vocabulary (◆ reference, ● aligned / constant offset, ▤ lag steps — re-tracking or a splice,
+  ? speed-unknown, which `insufficient` folds into); greedy lane packing at a 4.8% label width so
+  clustered dots stack downward and the container grows instead of clipping. Per DECISIONS Q3 the
+  tooltip carries no ratioConfidence: LB-xxxxx · kind · ±N ppm.
+Added: work-package D7 — dot clicks build a pair two at a time (click one dot to arm it, dashed
+  outline; click a second to open that pair's dossier), which is README §6's own recommended
+  production behaviour over its "blunt" prototype logic. The recommendation's other half —
+  highlighting the clicked recording's whole matrix row/column — is not built: a second highlight
+  state threaded through Matrix on top of its selection dimming is real risk for a hint the dot's
+  own outline already gives.
+Added: tests/test_tapematch_routes.py — five tests for the new route (latest-run selection over a
+  multi-run date, a pre-speed_ppm observations.db, unknown date, absent DB, missing param).
+  31 pass.
+Note: a speed-unknown row's ratio confidence fell below the 6.0 minimum, so its stored ppm is an
+  estimate the pipeline itself doesn't trust — and those are the extreme values that set the axis
+  domain (1989-06-04 spans −29,073 to +55,312 ppm on four such rows). The design plots every
+  recording on the axis and Q3 left no confidence field to key on, so they are positioned as
+  stored with "(unconfident estimate)" in the tooltip; the alternatives (an off-axis gutter,
+  clamping the domain to trusted kinds) are design questions, recorded in WORK_PACKAGE.md.
+  Verified with /gui-check + /verify --electron on 1989-06-04, 1991-07-20 (all four glyphs in one
+  strip) and 2001-10-30 (three lanes), in dark mode, across the pending → pair → restart clicks.
+
 [2026-07-28] — feat: TapeMatch Curation phase 3 (pair dossier §8)
 Added: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — the §8 pair dossier, in
   both its docked (>1520px) and drawer forms. Drawer overlays the work column on a scrim with a

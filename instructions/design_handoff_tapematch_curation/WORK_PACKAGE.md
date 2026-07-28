@@ -46,6 +46,16 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   §10.7's "flush pending judgments" is not built. Lower risk than converting a
   working write path to optimistic-save on an unanswered question.
 - **D5 — Q6/Q7/Q9 get defaults when their phase is reached**, recorded here.
+- **D7 — §6 dot clicks build a pair two at a time.** README §6 calls its own
+  prototype's click logic "blunt" and recommends the two-click form instead
+  (click a dot to select a recording, click a second to form the pair and open
+  its dossier), asking for design confirmation — which no longer exists as a
+  channel, so this is Claude's default under D5. Built as recommended, minus
+  the "highlight the whole matrix row/column" half: a second highlight state
+  threaded through `Matrix` on top of its existing selection dimming is real
+  risk for a hint that the dashed pending outline on the dot already gives.
+  Starting a new pending selection clears any selected pair, so the strip never
+  shows a solid and a dashed outline at once.
 - **D6 — the §5 conflict dot is served by extending the pairs route's existing
   live read, not by a schema change.** `tapematch_pairs` (app DB) has no LB-page
   claim, but `GET /api/tapematch/pairs` already opens `observations.db` live for
@@ -78,6 +88,17 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   but `Load` → playback was not exercised under Xvfb (no audio device). The
   code is carried over unchanged from `ScreenTapeMatch`'s shipped
   `AbPlayerPanel`.
+- **§6 plots `speed-unknown` dots by a ppm the pipeline doesn't trust.** A
+  `speed-unknown` row's ratio confidence fell below the 6.0 minimum, so its
+  stored `speed_ppm` is an estimate — and on the real corpus those are the
+  extreme values (1989-06-04: +55,312 / −29,073 / +33,667 / +31,236 ppm
+  against a reference at 0), so they set the axis domain that every trusted
+  dot is then squeezed into. The design plots every recording on the axis and
+  Q3 left no confidence field to key on, so the dots are positioned as stored
+  and the tooltip says `(unconfident estimate)`. If the strip reads as
+  overstating those positions in use, the alternatives are a separate
+  off-axis "unmeasured" gutter or domain clamping to trusted kinds only —
+  both design questions, not invented here.
 - **Tier A (`--renderer-only`) cannot verify this screen at all.** It stubs
   `window.api`, so `BASE` is dead and every panel renders empty. Use
   `/verify --electron`. This applies to every remaining phase.
@@ -100,8 +121,8 @@ Order follows README "Implementation Order", collapsed into committable bites.
 | 1 | Tokens + shell | family colours in `tokens.ts`; top bar §1, triage rail §2, date header §3 (incl. B3 verdict clamp), section wrapper §4, work grid + `min-height:0` chain, breakpoints | **done** `0ee5f804` |
 | 2 | Matrix §5 | three colour regimes, diagonal, `n/c` hatching, conflict dot, symmetric selection, cross-dimming, a11y grid nav | **done** (this session) |
 | 3 | Dossier §8 | evidence bars, conditional correlation note, demoted fingerprint bar + coincidence band, A/B player (D3 → superseded, see below), judgment control + notes | **done** (this session) |
-| 4 | Speed strip §6 | √ scale, ticks, lane packing; A4 merged glyph, Q3 tooltip without `ratioConfidence` | **next** |
-| 5 | Verdict cards §7 | B1 subject rule (ref / family / statement), B1.1 body structure, B2 tone table, A6/A8 | not started |
+| 4 | Speed strip §6 | √ scale, ticks, lane packing; A4 merged glyph, Q3 tooltip without `ratioConfidence` | **done** (this session) |
+| 5 | Verdict cards §7 | B1 subject rule (ref / family / statement), B1.1 body structure, B2 tone table, A6/A8 | **next** |
 | 6 | Write path | judgment save (D4), `Accept families` → DB + date `curated` (Q4) | not started |
 | 7 | report.md view §11 | backend route for report.md; A1 `===` sub-blocks, A2 rail, A3 coverage stats, A9; `react-markdown` pinned (Q5) | not started |
 | 8 | Run diff §12 | run-list route, run pickers (Q8), forward-only causes (Q2) | not started |
@@ -137,3 +158,15 @@ Order follows README "Implementation Order", collapsed into committable bites.
   confirmed at the default window width; note the scrim intercepts matrix
   clicks, so driver sessions must resize wide before clicking a second cell.
   **Resume at Phase 4 (speed & lag strip §6).**
+- 2026-07-28 — Phase 4 (speed & lag strip §6) landed. Backend: new
+  `GET /api/tapematch/sources?date=` (source-shaped data has no home on the
+  pair route, and the strip is the one view a single-recording date can still
+  fill); `tests/test_tapematch_routes.py` 31 pass (5 new — latest-run
+  selection, pre-`speed_ppm` DB, unknown date, absent DB, missing param).
+  Frontend: signed-√ axis at 4–96%, ticks at min/`ref`/max with U+2212 and
+  thousands separators, A4's four-glyph vocabulary, greedy lane packing at
+  4.8% label width, and D7's two-click pair building. `/gui-check` green;
+  `/verify --electron` on 1989-06-04 (6 recs, two lanes at ref, ±29k/+55k
+  ticks), 1991-07-20 (all four glyphs in one strip), 2001-10-30 (7 recs,
+  three lanes) plus dark mode and the pending → pair → restart click cycle.
+  **Resume at Phase 5 (verdict cards §7).**
