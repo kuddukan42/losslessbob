@@ -55,6 +55,44 @@ interface AnalysisResponse {
   analysis_md?: string | null
 }
 
+interface PairRow {
+  lb_a: number
+  lb_b: number
+  corr: number | null
+  emb_score: number | null
+  fp_score: number | null
+  same_family: boolean
+  similarity_pct: number | null
+  human_judgment: string | null
+  human_notes: string | null
+  ab_eligible: boolean | null
+  lb_says_same: boolean | null
+  lb_relation_text: string | null
+}
+
+interface PairsResponse {
+  date: string
+  run_id: string | null
+  pairs: PairRow[]
+}
+
+// A selected pair is identified by its two LB numbers (order-independent),
+// not by matrix row/column indices — Phase 3's dossier will key off the LB
+// numbers directly, and the numbers stay stable while the matrix's row/
+// column order does not (family sort can change as families get curated).
+interface SelectedPair {
+  lbA: number
+  lbB: number
+}
+
+function pairKey(a: number, b: number): string {
+  return a < b ? `${a}-${b}` : `${b}-${a}`
+}
+
+function shortId(lb: number): string {
+  return String(lb).padStart(5, '0')
+}
+
 // ── Status vocabulary (README §2) ───────────────────────────────────────────
 // The design's four-state vocabulary (conflict/review/clean/curated) doesn't
 // map 1:1 onto what /api/tapematch/dates exposes today — there is no
@@ -271,7 +309,12 @@ function TriageRail({
 
   return (
     <div style={{
-      flex: `0 0 ${narrow ? 224 : 272}px`, background: 'var(--lbb-surface)',
+      // minWidth/maxWidth pin the rail to its flex-basis: a flex item's default
+      // min-width:auto lets min-content win, and real location strings ("Seattle
+      // Center Key Area, 10/6/01, …") pushed the rail to ~745px, squeezing the
+      // matrix. The basis alone is not enough.
+      flex: `0 0 ${narrow ? 224 : 272}px`, minWidth: 0, maxWidth: narrow ? 224 : 272,
+      background: 'var(--lbb-surface)',
       borderRight: '1px solid var(--lbb-border)', display: 'flex', flexDirection: 'column',
       minHeight: 0,
     }}>
@@ -505,6 +548,265 @@ function DossierEmpty() {
   )
 }
 
+// ── §5 Similarity matrix ────────────────────────────────────────────────────
+// Ported from the design's tm-parts.jsx `Matrix` (README §5 + §10.6) — logic
+// only, not the raw hexes (WORK_PACKAGE D2): semantic colours come from the
+// `--lbb-*` token system so the heatmap survives light mode, family colours
+// come from `familyColorVar`.
+
+const COMPACT_THRESHOLD = 20 // README §10.6: "past ~20 recordings" fitting beats filling
+
+interface MatrixRecording {
+  lb: number
+  colorIndex: number
+}
+
+function cellVisual(
+  sim: number | null, sameFamily: boolean, familyColor: string,
+): { background: string; color: string; fontWeight: number } {
+  if (sim == null) {
+    return {
+      background: 'repeating-linear-gradient(45deg, var(--lbb-surface2), '
+        + 'var(--lbb-surface2) 4px, var(--lbb-surface) 4px, var(--lbb-surface) 8px)',
+      color: 'var(--lbb-fg3)', fontWeight: 500,
+    }
+  }
+  if (sameFamily) {
+    const pct = 30 + sim * 0.55
+    return {
+      background: `color-mix(in oklab, ${familyColor} ${pct}%, var(--lbb-surface))`,
+      color: 'var(--lbb-fg)', fontWeight: 700,
+    }
+  }
+  const t = Math.pow(sim / 100, 0.8) * 72
+  return {
+    background: `color-mix(in oklab, var(--lbb-accent-mid) ${t.toFixed(0)}%, var(--lbb-surface))`,
+    color: sim >= 45 ? 'var(--lbb-fg)' : 'var(--lbb-fg3)', fontWeight: 500,
+  }
+}
+
+function MatrixLegend({ densityNote }: { densityNote: string | null }): React.JSX.Element {
+  const swatch: React.CSSProperties = {
+    display: 'inline-block', width: 13, height: 11, borderRadius: 3,
+    border: '1px solid var(--lbb-border)', marginLeft: 8, verticalAlign: 'middle',
+  }
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'center', gap: 7, flexWrap: 'wrap',
+      marginTop: 10, fontSize: 10.5, color: 'var(--lbb-fg3)',
+    }}>
+      <span style={{
+        ...swatch, marginLeft: 0,
+        background: 'color-mix(in oklab, var(--lbb-accent-mid) 12%, var(--lbb-surface))',
+      }} /> unrelated 0–40
+      <span style={{
+        ...swatch,
+        background: 'color-mix(in oklab, var(--lbb-accent-mid) 55%, var(--lbb-surface))',
+      }} /> check 40–85
+      <span style={{ ...swatch, background: familyColorVar(0) }} /> same family 85–100 · tinted by family
+      <span style={{
+        ...swatch,
+        background: 'repeating-linear-gradient(45deg, var(--lbb-surface2), '
+          + 'var(--lbb-surface2) 3px, var(--lbb-surface) 3px, var(--lbb-surface) 6px)',
+      }} /> n/c not comparable
+      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, marginLeft: 8 }}>
+        <span style={{
+          width: 7, height: 7, borderRadius: '50%', background: 'var(--lbb-bad-bar)',
+          border: '1px solid var(--lbb-bg)', display: 'inline-block',
+        }} /> LB-page conflict
+      </span>
+      {densityNote && (
+        <span style={{
+          marginLeft: 'auto', fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)',
+        }}>{densityNote}</span>
+      )}
+    </div>
+  )
+}
+
+function Matrix({
+  recordings, pairsByKey, selected, onSelect, familyCount,
+}: {
+  recordings: MatrixRecording[]
+  pairsByKey: Map<string, PairRow>
+  selected: SelectedPair | null
+  onSelect: (pair: SelectedPair | null) => void
+  familyCount: number
+}): React.JSX.Element {
+  const n = recordings.length
+  const compact = n > COMPACT_THRESHOLD
+  const cellRefs = useRef<Map<string, HTMLButtonElement>>(new Map())
+  const [focusPos, setFocusPos] = useState<[number, number]>(() => [0, n > 1 ? 1 : 0])
+
+  // Keep the roving-tabindex position in range if the recording list changes
+  // (e.g. switching dates without unmounting the screen).
+  useEffect(() => {
+    setFocusPos(([i, j]) => [Math.min(i, n - 1), Math.min(j, n - 1)])
+  }, [n])
+
+  const move = (i: number, j: number, di: number, dj: number, e: React.KeyboardEvent) => {
+    e.preventDefault()
+    e.stopPropagation() // don't let the triage rail's j/k/arrow handler also fire
+    let ni = i, nj = j
+    for (let step = 0; step < n; step++) {
+      ni = (ni + di + n) % n
+      nj = (nj + dj + n) % n
+      if (ni !== nj) break
+    }
+    setFocusPos([ni, nj])
+    cellRefs.current.get(`${ni}-${nj}`)?.focus()
+  }
+
+  return (
+    // 760px cap on the normal wrap — §10.6 describes compact mode as the state
+    // that "drops the 760px cap", so the default carries it. Without it a
+    // 6-recording date stretches cells to ~118px and pushes the legend and the
+    // speed strip below the fold.
+    <div style={{ overflowX: compact ? 'auto' : 'visible', maxWidth: compact ? undefined : 760 }}>
+      <div
+        role="grid"
+        aria-label="Recording similarity matrix"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: compact
+            ? `46px repeat(${n}, 22px)`
+            : `52px repeat(${n}, minmax(0,1fr))`,
+          gap: compact ? 1 : 2,
+          width: compact ? 46 + n * 22 + (n + 1) : undefined,
+        }}
+      >
+        <div role="presentation" />
+        {recordings.map(r => (
+          <div
+            key={`h${r.lb}`}
+            role="columnheader"
+            title={`LB-${shortId(r.lb)}`}
+            style={compact ? {
+              display: 'flex', flexDirection: 'column', alignItems: 'center',
+              justifyContent: 'flex-end', gap: 2, paddingBottom: 3, minWidth: 0,
+              writingMode: 'vertical-rl', transform: 'rotate(180deg)',
+              font: '600 8.5px var(--lbb-mono)', color: 'var(--lbb-fg3)',
+              letterSpacing: '-0.02em',
+            } : {
+              display: 'flex', flexDirection: 'column', alignItems: 'center',
+              justifyContent: 'flex-end', gap: 2, paddingBottom: 3, minWidth: 0,
+              font: '600 10px var(--lbb-mono)', color: 'var(--lbb-fg3)',
+            }}
+          >
+            <span style={{
+              width: 8, height: 8, borderRadius: 2, background: familyColorVar(r.colorIndex),
+              flex: '0 0 auto',
+            }} />
+            <span>{shortId(r.lb)}</span>
+          </div>
+        ))}
+        {recordings.map((a, i) => (
+          <React.Fragment key={`r${a.lb}`}>
+            <div
+              role="rowheader"
+              title={`LB-${shortId(a.lb)}`}
+              style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'flex-end',
+                gap: compact ? 3 : 5, paddingRight: compact ? 3 : 5,
+                font: `600 ${compact ? '8.5px' : '10px'} var(--lbb-mono)`,
+                color: 'var(--lbb-fg3)', minWidth: 0,
+              }}
+            >
+              <span>{shortId(a.lb)}</span>
+              <span style={{
+                width: 8, height: 8, borderRadius: 2, background: familyColorVar(a.colorIndex),
+                flex: '0 0 auto',
+              }} />
+            </div>
+            {recordings.map((b, j) => {
+              if (i === j) {
+                return (
+                  <div
+                    key={`${a.lb}-${b.lb}`}
+                    role="gridcell"
+                    style={{
+                      background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+                      borderRadius: compact ? 2 : 4, aspectRatio: '1',
+                    }}
+                  />
+                )
+              }
+              const p = pairsByKey.get(pairKey(a.lb, b.lb)) ?? null
+              const sim = p?.similarity_pct ?? null
+              const sameFamily = a.colorIndex === b.colorIndex
+              const conflict = !!p && p.lb_says_same === true && p.same_family === false
+              const isSel = !!selected
+                && ((selected.lbA === a.lb && selected.lbB === b.lb)
+                  || (selected.lbA === b.lb && selected.lbB === a.lb))
+              const dim = !!selected && !isSel
+                && selected.lbA !== a.lb && selected.lbB !== a.lb
+                && selected.lbA !== b.lb && selected.lbB !== b.lb
+              const visual = cellVisual(sim, sameFamily, familyColorVar(a.colorIndex))
+              const isFocus = focusPos[0] === i && focusPos[1] === j
+              const simLabel = sim == null ? 'not comparable' : `${sim} percent similar`
+              const famLabel = sameFamily ? 'same family' : 'different family'
+              let title = `LB-${shortId(a.lb)} × LB-${shortId(b.lb)}`
+                + (sim == null ? ' — not comparable' : ` — ${sim}%`)
+              if (conflict && p?.lb_relation_text) title += ` · LB page: ${p.lb_relation_text}`
+              return (
+                <button
+                  key={`${a.lb}-${b.lb}`}
+                  ref={el => {
+                    const key = `${i}-${j}`
+                    if (el) cellRefs.current.set(key, el); else cellRefs.current.delete(key)
+                  }}
+                  type="button"
+                  role="gridcell"
+                  tabIndex={isFocus ? 0 : -1}
+                  aria-label={`LB-${shortId(a.lb)} by LB-${shortId(b.lb)}, ${simLabel}, ${famLabel}`
+                    + (conflict ? ', LB page conflict' : '')}
+                  aria-selected={isSel}
+                  title={title}
+                  onFocus={() => setFocusPos([i, j])}
+                  onKeyDown={e => {
+                    if (e.key === 'ArrowRight') move(i, j, 0, 1, e)
+                    else if (e.key === 'ArrowLeft') move(i, j, 0, -1, e)
+                    else if (e.key === 'ArrowDown') move(i, j, 1, 0, e)
+                    else if (e.key === 'ArrowUp') move(i, j, -1, 0, e)
+                  }}
+                  onClick={() => onSelect(isSel ? null : { lbA: a.lb, lbB: b.lb })}
+                  style={{
+                    position: 'relative', aspectRatio: '1', minWidth: 0, padding: 0,
+                    cursor: 'pointer', borderRadius: compact ? 2 : 4,
+                    border: isSel ? '2px solid var(--lbb-fg)' : '1px solid var(--lbb-border)',
+                    zIndex: isSel ? 1 : undefined,
+                    font: compact ? '500 0 var(--lbb-mono)'
+                      : '500 clamp(9px,1vw,11.5px) var(--lbb-mono)',
+                    transition: 'opacity .12s',
+                    opacity: dim ? 0.3 : 1,
+                    background: visual.background, color: visual.color, fontWeight: visual.fontWeight,
+                  }}
+                >
+                  {sim == null
+                    ? <span style={{ fontSize: compact ? 9 : '0.85em' }}>n/c</span>
+                    : sim}
+                  {conflict && (
+                    <span style={{
+                      position: 'absolute', top: 2, right: 2, width: 7, height: 7,
+                      borderRadius: '50%', background: 'var(--lbb-bad-bar)',
+                      border: '1px solid var(--lbb-bg)',
+                    }} />
+                  )}
+                </button>
+              )
+            })}
+          </React.Fragment>
+        ))}
+      </div>
+      <MatrixLegend densityNote={compact
+        ? `${n} recordings · ${familyCount} families · ${(n * (n - 1)) / 2} pairs`
+          + ' · values in tooltip below 28px'
+        : null}
+      />
+    </div>
+  )
+}
+
 // ── Screen ───────────────────────────────────────────────────────────────────
 
 export function ScreenTapeMatchCuration(): React.JSX.Element {
@@ -572,6 +874,36 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
       .map((f, i) => ({ ...f, colorIndex: i, lbs: f.lbs.sort((a, b) => a - b) }))
   }, [allFamilies, selectedDate])
 
+  // §5 matrix data. Family-ordered recording list is the existing
+  // `dateFamilies` memo, flattened — families are already sorted by famId
+  // with each family's lbs sorted ascending, so this preserves adjacency.
+  const recordings: MatrixRecording[] = useMemo(
+    () => dateFamilies.flatMap(f => f.lbs.map(lb => ({ lb, colorIndex: f.colorIndex }))),
+    [dateFamilies],
+  )
+
+  const {
+    data: pairsData, isLoading: pairsLoading, isError: pairsError,
+  } = useQuery({
+    queryKey: ['tapematch-curation-pairs', selectedDate],
+    queryFn: () => fetch(`${BASE}/api/tapematch/pairs?date=${encodeURIComponent(selectedDate as string)}`)
+      .then(r => r.json()),
+    enabled: !!selectedDate,
+    staleTime: 15_000,
+  })
+  const pairsByKey = useMemo(() => {
+    const map = new Map<string, PairRow>()
+    const pairs = (pairsData as PairsResponse | undefined)?.pairs ?? []
+    for (const p of pairs) map.set(pairKey(p.lb_a, p.lb_b), p)
+    return map
+  }, [pairsData])
+
+  // Lifted here (not local to Matrix) because Phase 3's dossier will read it
+  // too — the dossier rendering itself stays untouched (empty state only)
+  // until that phase lands.
+  const [selectedPair, setSelectedPair] = useState<SelectedPair | null>(null)
+  useEffect(() => { setSelectedPair(null) }, [selectedDate])
+
   const openDate = (date: string) => setSearchParams({ date })
 
   return (
@@ -601,7 +933,34 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
                 title="Similarity matrix"
                 hint="family-ordered · % is the banded corr+embedding blend · click a cell for the dossier"
               >
-                <SectionPlaceholder label="Similarity matrix — Phase 2" />
+                {!selectedRow ? (
+                  <SectionPlaceholder label="Select a date from the triage queue." />
+                ) : recordings.length === 0 ? (
+                  // README §10.4 — known date, nothing circulating; not an error.
+                  <SectionPlaceholder label={
+                    'No recordings for this date — nothing to compare yet.'
+                  } />
+                ) : recordings.length === 1 ? (
+                  // README §10.5 — one recording means zero pairs. The full
+                  // .tmSolo write-path card is Phase 6 scope; here we just
+                  // name the threshold so the state doesn't read as a bug.
+                  <SectionPlaceholder label={
+                    `Only one recording (LB-${shortId(recordings[0].lb)}) on this date — `
+                    + 'pair views only appear from two recordings up.'
+                  } />
+                ) : pairsLoading ? (
+                  <SectionPlaceholder label="Loading pairs…" />
+                ) : pairsError ? (
+                  <SectionPlaceholder label="Couldn't load this date's pairs." />
+                ) : (
+                  <Matrix
+                    recordings={recordings}
+                    pairsByKey={pairsByKey}
+                    selected={selectedPair}
+                    onSelect={setSelectedPair}
+                    familyCount={dateFamilies.length}
+                  />
+                )}
               </CurationSection>
               <CurationSection
                 title="Speed & lag"

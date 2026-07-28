@@ -5695,6 +5695,13 @@ def create_app() -> Flask:
         best-effort: if observations.db is missing, locked, or errors,
         every pair falls back to ``human_judgment``/``human_notes`` = null
         and ``ab_eligible`` = null rather than failing the whole request.
+
+        The same live read also carries ``lb_says_same``/``lb_relation_text``
+        (the LB page's own claim about the pair). These are not in the app
+        DB's ``tapematch_pairs`` — the curation matrix's conflict marker
+        (README §5) is ``lb_says_same and not same_family``, so it needs the
+        claim alongside the algorithm's verdict. Null on enrichment failure,
+        like the rest.
         """
         from backend import ab_clips as _ab_clips
         from backend import tapematch_sync as _tapematch_sync
@@ -5727,6 +5734,8 @@ def create_app() -> Flask:
                     "human_judgment": None,
                     "human_notes": None,
                     "ab_eligible": None,
+                    "lb_says_same": None,
+                    "lb_relation_text": None,
                 }
                 for r in rows
             ]
@@ -5739,7 +5748,8 @@ def create_app() -> Flask:
                         feedback: dict[tuple[int, int], tuple] = {}
                         for r in obs_conn.execute(
                             """
-                            SELECT lb_a, lb_b, human_judgment, human_notes
+                            SELECT lb_a, lb_b, human_judgment, human_notes,
+                                   lb_says_same, lb_relation_text
                             FROM pairs
                             WHERE concert_date = ? AND run_id = ?
                               AND lb_a IS NOT NULL AND lb_b IS NOT NULL
@@ -5747,7 +5757,12 @@ def create_app() -> Flask:
                             (concert_date, run_id),
                         ):
                             key = tuple(sorted((r["lb_a"], r["lb_b"])))
-                            feedback[key] = (r["human_judgment"], r["human_notes"])
+                            feedback[key] = (
+                                r["human_judgment"],
+                                r["human_notes"],
+                                None if r["lb_says_same"] is None else bool(r["lb_says_same"]),
+                                r["lb_relation_text"],
+                            )
                         # Per-pair, not a single global eligible_lb_set(): an LB's
                         # speed_kind can differ across tapematch runs (e.g. a
                         # staircase-relaxed rerun after the last synced run), and
@@ -5774,9 +5789,13 @@ def create_app() -> Flask:
                         obs_conn.close()
                     for pair in pairs:
                         key = tuple(sorted((pair["lb_a"], pair["lb_b"])))
-                        judgment, notes = feedback.get(key, (None, None))
+                        judgment, notes, lb_same, lb_text = feedback.get(
+                            key, (None, None, None, None)
+                        )
                         pair["human_judgment"] = judgment
                         pair["human_notes"] = notes
+                        pair["lb_says_same"] = lb_same
+                        pair["lb_relation_text"] = lb_text
                         pair["ab_eligible"] = ab_eligible.get(key, False)
             except Exception:
                 _log.warning(

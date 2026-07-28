@@ -43,6 +43,25 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   §10.7's "flush pending judgments" is not built. Lower risk than converting a
   working write path to optimistic-save on an unanswered question.
 - **D5 — Q6/Q7/Q9 get defaults when their phase is reached**, recorded here.
+- **D6 — the §5 conflict dot is served by extending the pairs route's existing
+  live read, not by a schema change.** `tapematch_pairs` (app DB) has no LB-page
+  claim, but `GET /api/tapematch/pairs` already opens `observations.db` live for
+  `human_judgment`/`ab_eligible`. That same SELECT now also carries
+  `lb_says_same` + `lb_relation_text`, so conflict = `lb_says_same &&
+  !same_family`, computed client-side. No sync, no migration, same best-effort
+  null fallback as the rest of the block.
+
+## Carried into later phases (found while building, not fixed here)
+
+- **§10.1 loading is a lie on the triage rail.** While `/api/tapematch/dates`
+  is in flight (slow — 3,195 dates) the rail renders its empty state,
+  "Nothing here.", instead of a skeleton; the old ScreenTapeMatch says
+  "Loading…". Phase 9 owns this. It also makes visual verification of this
+  screen require a `wait-for` settle on `text=Nothing here` being detached —
+  a bare `navigate` + `screenshot` photographs the pre-load state.
+- **Tier A (`--renderer-only`) cannot verify this screen at all.** It stubs
+  `window.api`, so `BASE` is dead and every panel renders empty. Use
+  `/verify --electron`. This applies to every remaining phase.
 
 ## Known backend gaps (become phases 7–8)
 
@@ -59,9 +78,9 @@ Order follows README "Implementation Order", collapsed into committable bites.
 
 | # | Phase | Covers | Status |
 |---|---|---|---|
-| 1 | Tokens + shell | family colours in `tokens.ts`; top bar §1, triage rail §2, date header §3 (incl. B3 verdict clamp), section wrapper §4, work grid + `min-height:0` chain, breakpoints | **in progress** |
-| 2 | Matrix §5 | three colour regimes, diagonal, `n/c` hatching, conflict dot, symmetric selection, cross-dimming, a11y grid nav | not started |
-| 3 | Dossier §8 | evidence bars, conditional correlation note, demoted fingerprint bar + coincidence band, A/B player (D3), judgment control + notes | not started |
+| 1 | Tokens + shell | family colours in `tokens.ts`; top bar §1, triage rail §2, date header §3 (incl. B3 verdict clamp), section wrapper §4, work grid + `min-height:0` chain, breakpoints | **done** `0ee5f804` |
+| 2 | Matrix §5 | three colour regimes, diagonal, `n/c` hatching, conflict dot, symmetric selection, cross-dimming, a11y grid nav | **done** (this session) |
+| 3 | Dossier §8 | evidence bars, conditional correlation note, demoted fingerprint bar + coincidence band, A/B player (D3), judgment control + notes | **next** — `selectedPair` state is already lifted into the screen and populated by the matrix; the dossier still renders its empty state |
 | 4 | Speed strip §6 | √ scale, ticks, lane packing; A4 merged glyph, Q3 tooltip without `ratioConfidence` | not started |
 | 5 | Verdict cards §7 | B1 subject rule (ref / family / statement), B1.1 body structure, B2 tone table, A6/A8 | not started |
 | 6 | Write path | judgment save (D4), `Accept families` → DB + date `curated` (Q4) | not started |
@@ -72,3 +91,16 @@ Order follows README "Implementation Order", collapsed into committable bites.
 ## Resume log
 
 - 2026-07-28 — work package written; Phase 1 delegated.
+- 2026-07-28 — Phase 1 landed `0ee5f804`.
+- 2026-07-28 — Phase 2 (matrix §5) landed. Backend: pairs route now carries
+  `lb_says_same`/`lb_relation_text` (D6), `tests/test_tapematch_routes.py`
+  25 pass incl. new live-enrichment coverage. Frontend: matrix + legend +
+  §10.6 compact mode + roving-tabindex grid nav; `/gui-check` green.
+  Verified with `/verify --electron` on 1989-06-04 (6 recs, 4 families,
+  conflict dots present) and 2001-10-30 (7 recs, family block on the
+  diagonal). Two layout bugs found and fixed in the same pass: the triage
+  rail grew to ~745px because `flex: 0 0 272px` leaves `min-width:auto`
+  (long venue strings won), and the matrix wrap was missing the design's
+  760px cap.
+  **Resume at Phase 3 (dossier §8).** Its five parked open questions are
+  unchanged — see `OPEN_QUESTIONS.md`; D3 fixes the A/B player's position.

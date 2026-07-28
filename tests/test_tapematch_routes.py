@@ -127,9 +127,99 @@ def test_pairs_route_returns_synced_rows_for_date(monkeypatch):
                     "lb_a": 10, "lb_b": 20, "corr": 0.9, "emb_score": 0.95,
                     "fp_score": 0.8, "same_family": True, "similarity_pct": 100,
                     "human_judgment": None, "human_notes": None,
+                    "lb_says_same": None, "lb_relation_text": None,
                     "ab_eligible": None,
                 }
             ]
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def _make_enriched_pairs_db(tmp_dir, run_id, concert_date, lb_a, lb_b):
+    """Create an observations.db whose enrichment block can fully succeed.
+
+    Seeds a 'pairs' row carrying human_judgment/lb_says_same/lb_relation_text
+    (the fields GET /api/tapematch/pairs copies onto each returned pair) and a
+    minimal 'sources' table with one row per LB on the same run_id, which is
+    what backend.ab_clips.get_pair_source_info needs to resolve without
+    raising — an exception there would make the whole enrichment block fall
+    back to nulls, hiding whatever this test is meant to prove.
+
+    Args:
+        tmp_dir: Directory to create observations.db in.
+        run_id: Run identifier shared by the pairs row and both sources rows.
+        concert_date: ISO concert date to seed on the rows.
+        lb_a: First LB number of the pair.
+        lb_b: Second LB number of the pair.
+
+    Returns:
+        Path to the created observations.db file.
+    """
+    obs_path = os.path.join(tmp_dir, "observations.db")
+    conn = sqlite3.connect(obs_path)
+    conn.execute(
+        "CREATE TABLE pairs (id INTEGER PRIMARY KEY AUTOINCREMENT, run_id TEXT NOT NULL, "
+        "concert_date TEXT NOT NULL, lb_a INTEGER, lb_b INTEGER, "
+        "human_judgment TEXT, human_notes TEXT, "
+        "lb_says_same INTEGER, lb_relation_text TEXT)"
+    )
+    conn.execute(
+        "INSERT INTO pairs (run_id, concert_date, lb_a, lb_b, human_judgment, "
+        "human_notes, lb_says_same, lb_relation_text) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+        (run_id, concert_date, lb_a, lb_b, "confirmed_same", "clean match", 1,
+         "LB page lists these as the same recording"),
+    )
+    conn.execute(
+        "CREATE TABLE sources (concert_date TEXT, run_id TEXT, lb_number INTEGER, "
+        "trim_head_sec REAL, speed_kind TEXT, speed_ppm REAL, "
+        "perf_dur_sec REAL, total_dur_sec REAL, folder_name TEXT)"
+    )
+    for lb in (lb_a, lb_b):
+        conn.execute(
+            "INSERT INTO sources (concert_date, run_id, lb_number, trim_head_sec, "
+            "speed_kind, speed_ppm, perf_dur_sec, total_dur_sec, folder_name) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (concert_date, run_id, lb, 0.0, "reference", 0.0, 100.0, 110.0,
+             f"lb{lb}"),
+        )
+    conn.commit()
+    conn.close()
+    return obs_path
+
+
+def test_pairs_route_live_enrichment_carries_lb_says_same(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        conn = db.get_connection(db_path)
+        conn.execute(
+            "INSERT INTO tapematch_pairs "
+            "(concert_date, lb_a, lb_b, corr, emb_score, fp_score, same_family, "
+            " similarity_pct, run_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            ("1991-01-01", 10, 20, 0.9, 0.95, 0.8, 1, 100, "20260101_000000"),
+        )
+        conn.commit()
+        obs_path = _make_enriched_pairs_db(
+            tmp_dir, "20260101_000000", "1991-01-01", 10, 20
+        )
+        monkeypatch.setattr(
+            tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path
+        )
+
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/pairs?date=1991-01-01")
+            assert resp.status_code == 200
+            body = resp.get_json()
+            pair = body["pairs"][0]
+            # human_judgment only gets set by the same live-read block that sets
+            # lb_says_same/lb_relation_text, so a populated value here proves the
+            # enrichment block actually ran rather than failing silently to null.
+            assert pair["human_judgment"] == "confirmed_same"
+            assert pair["lb_says_same"] is True
+            assert pair["lb_relation_text"] == (
+                "LB page lists these as the same recording"
+            )
     finally:
         db.close_connection(db_path)
         shutil.rmtree(tmp_dir, ignore_errors=True)

@@ -1,3 +1,32 @@
+[2026-07-28] — feat: TapeMatch Curation phases 1–2 (shell + similarity matrix)
+Added: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — new curation screen at
+  /tapematch/curation, built from instructions/design_handoff_tapematch_curation/. Phase 1 (commit
+  0ee5f804, unlogged at the time): family colour tokens in lib/tokens.ts, top bar §1, triage rail
+  §2, date header §3 with the B3 verdict clamp, section wrapper §4, work grid + breakpoints. Phase
+  2 (this session): the similarity matrix §5 — three colour regimes against --lbb-surface with the
+  ^0.8 gamma on the non-family ramp, n/c hatching, LB-page conflict dot, symmetric selection with
+  cross-dimming, legend, role="grid" with roving-tabindex arrow navigation, and §10.6 compact mode
+  (fixed 22px columns, rotated headers, values to tooltip) past 20 recordings. Per D1 the old
+  ScreenTapeMatch.tsx is untouched and keeps its nav entry until parity at Phase 6; the new screen
+  still has no nav entry.
+Added: backend/app.py — GET /api/tapematch/pairs now also returns lb_says_same and
+  lb_relation_text. The app DB's tapematch_pairs carries no LB-page claim, but the route already
+  opened observations.db live for human_judgment/ab_eligible enrichment, so the same SELECT now
+  carries the claim too (work package D6). The matrix's conflict marker is lb_says_same &&
+  !same_family — needing both the claim and the algorithm's verdict. Same best-effort null
+  fallback as the rest of the block; no schema change, no re-sync.
+Added: tests/test_tapematch_routes.py — coverage for that enrichment path, seeding a real
+  observations.db (pairs + sources) so the block actually runs, and asserting human_judgment is
+  populated too so the test cannot pass via the null fallback. 25 pass.
+Fixed: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — two layout defects found
+  by /verify --electron against live data, both invisible until the screen had real content. The
+  triage rail grew to ~745px and squeezed the matrix: flex: 0 0 272px leaves min-width:auto, so
+  long venue strings won on min-content; pinned with minWidth/maxWidth. The matrix wrap was also
+  missing the design's 760px cap (§10.6 describes compact mode as the state that drops it).
+Note: the rail renders its "Nothing here." empty state while /api/tapematch/dates is in flight
+  rather than a §10.1 skeleton — carried to phase 9, recorded in WORK_PACKAGE.md. Verifying this
+  screen requires /verify --electron; Tier A stubs window.api, so every panel renders empty.
+
 [2026-07-27] — fix: BUG-278 (rule_d now fires live) + BUG-279 (test suite no longer spawns real
   sessions)
 Fixed: BUG-278 — addon_links.rule_d fires during live clustering for the first time since it
