@@ -1,3 +1,42 @@
+[2026-07-28] — feat: TapeMatch Curation phase 3 (pair dossier §8)
+Added: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — the §8 pair dossier, in
+  both its docked (>1520px) and drawer forms. Drawer overlays the work column on a scrim with a
+  ✕ in the header; scrim-click and Esc clear the selection (slide-in transition and focus trap
+  stay Phase 9). Stack, top to bottom: header with family swatches, verdict block (similarity or
+  n/c + one of same family / same family · secondary link / not comparable / different family),
+  conflict callout, A/B listening, Primary evidence (residual correlation vs its 0.45 threshold
+  mark, with the conditional note that says why the algorithm did what it did), Secondary evidence
+  (windowed coverage vs 0.60, quiet-segment hiss, demoted fingerprint dice with its 0.15–0.50
+  coincidence band), the LB-page claim with an agrees/disagrees/no-claim pill, and the 2×2
+  judgment control with notes. The judgment control is UI only — draft state, toggle-off and
+  Cancel work, the POST is Phase 6 per work-package D4.
+Changed: work-package D3 superseded. It provisionally placed the A/B player just above the
+  judgment control on the reading that design had not answered Q10; design had answered in code —
+  tm-parts.jsx's Dossier renders ABPlayer directly after the conflict callout, above the evidence
+  bars, and DESIGN_ANSWERS A9 fixes its 96px reserved height plus the one-line "not
+  sample-alignable" reason for the common ineligible case. Built as designed. The player itself is
+  carried over from ScreenTapeMatch's AbPlayerPanel unchanged in mechanic (one aligned WAV per
+  source from POST /api/ab_clip, both <audio> elements started together, A/B toggle = mute swap).
+Added: backend/app.py — GET /api/tapematch/pairs now also carries windowed_frac and hiss_median,
+  the two secondary-evidence metrics evidence bars 2–3 draw. Like lb_says_same (D6) they live only
+  in observations.db, so they ride the same best-effort live read. Both columns were added to that
+  table after it first shipped, so their presence is probed with PRAGMA table_info — an older DB
+  yields null for those two fields instead of raising and collapsing the whole enrichment block
+  (judgments included) to nulls.
+Fixed: backend/app.py — that probe now covers all six enriched columns, not just the two new
+  ones, which repairs two tests red since phase 2: test_ab_clips.py's ab_eligible cases build a
+  fixture observations.db without lb_says_same/lb_relation_text, so phase 2's hard SELECT raised
+  and nulled ab_eligible along with everything else. Full suite 1044 pass.
+Added: tests/test_tapematch_routes.py — the enrichment test now asserts the two new fields, and a
+  new test drives the missing-columns path via a fixture DB built without them, proving
+  human_judgment/lb_says_same still survive. 27 pass.
+Note: §8's four bars have no slot for emb_score, and on the real corpus that is where many
+  same-family merges actually come from (1989-06-04 LB-02470 × LB-14054: 85% similar, corr 0.004,
+  windowed 0.0). Those pairs get labelled "secondary link" — directionally right, literally wrong
+  about which signal merged them. Either a fifth bar or a design answer; recorded in WORK_PACKAGE.md,
+  not invented here. Verified with /gui-check + /verify --electron on 1989-06-04 (same-family,
+  conflict and A/B-eligible pairs, docked and drawer).
+
 [2026-07-28] — feat: TapeMatch Curation phases 1–2 (shell + similarity matrix)
 Added: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — new curation screen at
   /tapematch/curation, built from instructions/design_handoff_tapematch_curation/. Phase 1 (commit

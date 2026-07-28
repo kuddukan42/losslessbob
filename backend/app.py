@@ -166,6 +166,16 @@ _TAPEMATCH_JUDGMENTS = frozenset(
     {"confirmed_same", "confirmed_different", "uncertain", "lb_wrong"}
 )
 
+# Columns GET /api/tapematch/pairs copies from observations.db's pairs table
+# onto each returned pair. Every one of them post-dates that table's first
+# schema, so the route probes for them with PRAGMA table_info and nulls only
+# the absent ones — a hard SELECT would raise on an older DB and collapse the
+# whole enrichment (judgments included) to nulls.
+_PAIR_ENRICH_COLS = (
+    "human_judgment", "human_notes", "lb_says_same", "lb_relation_text",
+    "windowed_frac", "hiss_median",
+)
+
 
 def compute_pipeline_severity(
     verify: dict,
@@ -5697,11 +5707,20 @@ def create_app() -> Flask:
         and ``ab_eligible`` = null rather than failing the whole request.
 
         The same live read also carries ``lb_says_same``/``lb_relation_text``
-        (the LB page's own claim about the pair). These are not in the app
-        DB's ``tapematch_pairs`` — the curation matrix's conflict marker
+        (the LB page's own claim about the pair) and the two secondary-evidence
+        metrics ``windowed_frac``/``hiss_median``. None of these are in the app
+        DB's ``tapematch_pairs``: the curation matrix's conflict marker
         (README §5) is ``lb_says_same and not same_family``, so it needs the
-        claim alongside the algorithm's verdict. Null on enrichment failure,
+        claim alongside the algorithm's verdict, and the curation dossier's
+        evidence bars (README §8d) show windowed coverage and quiet-segment
+        hiss correlation against their thresholds. Null on enrichment failure,
         like the rest.
+
+        Every enriched column post-dates observations.db's first schema, so
+        the whole set (``_PAIR_ENRICH_COLS``) is probed with ``PRAGMA
+        table_info`` — an older DB yields nulls for exactly the columns it
+        lacks, rather than throwing and collapsing the whole enrichment block
+        (``ab_eligible`` included) to nulls.
         """
         from backend import ab_clips as _ab_clips
         from backend import tapematch_sync as _tapematch_sync
@@ -5736,6 +5755,8 @@ def create_app() -> Flask:
                     "ab_eligible": None,
                     "lb_says_same": None,
                     "lb_relation_text": None,
+                    "windowed_frac": None,
+                    "hiss_median": None,
                 }
                 for r in rows
             ]
@@ -5745,24 +5766,27 @@ def create_app() -> Flask:
                 if pairs and Path(obs_path).exists():
                     obs_conn = _tapematch_sync._open_observations_db(obs_path)
                     try:
-                        feedback: dict[tuple[int, int], tuple] = {}
+                        obs_cols = {
+                            c["name"] for c in obs_conn.execute("PRAGMA table_info(pairs)")
+                        }
+                        opt_cols = [c for c in _PAIR_ENRICH_COLS if c in obs_cols]
+                        feedback: dict[tuple[int, int], dict] = {}
                         for r in obs_conn.execute(
                             """
-                            SELECT lb_a, lb_b, human_judgment, human_notes,
-                                   lb_says_same, lb_relation_text
+                            SELECT lb_a, lb_b{extra}
                             FROM pairs
                             WHERE concert_date = ? AND run_id = ?
                               AND lb_a IS NOT NULL AND lb_b IS NOT NULL
-                            """,
+                            """.format(
+                                extra="".join(f", {c}" for c in opt_cols)
+                            ),
                             (concert_date, run_id),
                         ):
                             key = tuple(sorted((r["lb_a"], r["lb_b"])))
-                            feedback[key] = (
-                                r["human_judgment"],
-                                r["human_notes"],
-                                None if r["lb_says_same"] is None else bool(r["lb_says_same"]),
-                                r["lb_relation_text"],
-                            )
+                            row = {c: r[c] for c in opt_cols}
+                            if row.get("lb_says_same") is not None:
+                                row["lb_says_same"] = bool(row["lb_says_same"])
+                            feedback[key] = row
                         # Per-pair, not a single global eligible_lb_set(): an LB's
                         # speed_kind can differ across tapematch runs (e.g. a
                         # staircase-relaxed rerun after the last synced run), and
@@ -5789,13 +5813,9 @@ def create_app() -> Flask:
                         obs_conn.close()
                     for pair in pairs:
                         key = tuple(sorted((pair["lb_a"], pair["lb_b"])))
-                        judgment, notes, lb_same, lb_text = feedback.get(
-                            key, (None, None, None, None)
-                        )
-                        pair["human_judgment"] = judgment
-                        pair["human_notes"] = notes
-                        pair["lb_says_same"] = lb_same
-                        pair["lb_relation_text"] = lb_text
+                        row = feedback.get(key, {})
+                        for col in _PAIR_ENRICH_COLS:
+                            pair[col] = row.get(col)
                         pair["ab_eligible"] = ab_eligible.get(key, False)
             except Exception:
                 _log.warning(
