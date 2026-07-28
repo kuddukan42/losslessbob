@@ -1,4 +1,4 @@
-// TapeMatch Curation screen — Phase 1 (shell only).
+// TapeMatch Curation screen — Phases 1–3.
 //
 // Built per instructions/design_handoff_tapematch_curation/{README,
 // WORK_PACKAGE,DESIGN_ANSWERS_B}.md. D1: new screen, old ScreenTapeMatch.tsx
@@ -11,15 +11,20 @@
 // wrapper, and the three-column work grid + its two breakpoints (rail
 // 272→224px at ≤1380px, dossier docked→collapsed at ≤1520px). The work
 // column renders labelled empty placeholders for the matrix / speed strip /
-// verdict cards (Phases 2, 4, 5); the dossier renders its empty state only
-// (Phase 3). No pair selection exists yet, so the dossier never becomes a
-// populated drawer in this phase — that arrives with the matrix in Phase 2.
+// verdict cards (Phases 2, 4, 5).
+//
+// Phase 2 added §5's similarity matrix; Phase 3 the §8 dossier — verdict
+// block, conflict callout, A/B player, evidence bars, LB-page claim and the
+// judgment control — in both its docked and drawer forms. The judgment
+// control is UI only: the POST is Phase 6, per WORK_PACKAGE D4. Speed strip
+// (§6), verdict cards (§7), report.md (§11) and run diff (§12) remain
+// placeholders.
 
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { Icon } from '../components/Icon'
-import { Pill, Button, Kbd } from '../components'
+import { Pill, Chip, Button, Kbd } from '../components'
 import { familyColorVar } from '../lib/tokens'
 
 const BASE = window.api.flaskBase
@@ -68,6 +73,11 @@ interface PairRow {
   ab_eligible: boolean | null
   lb_says_same: boolean | null
   lb_relation_text: string | null
+  // §8d secondary evidence — live-read from observations.db alongside
+  // lb_says_same (they are not in the app DB's tapematch_pairs), so null
+  // whenever that enrichment falls back.
+  windowed_frac: number | null
+  hiss_median: number | null
 }
 
 interface PairsResponse {
@@ -526,7 +536,19 @@ function DateHeader({
   )
 }
 
-// ── §8 Dossier — empty state only (Phase 1 has no pair selection) ──────────
+// ── §8 Dossier ──────────────────────────────────────────────────────────────
+// Vertical order follows the design's own tm-parts.jsx `Dossier`, which
+// (unlike AB_PLAYER_AND_NOTES.md's description of it) already carries an
+// ABPlayer: header → verdict → conflict callout → A/B player → evidence bars
+// → LB page says → judgment. That supersedes WORK_PACKAGE D3's provisional
+// "A/B sits just above the judgment control" — D3 said to revisit if design
+// answered, and the prototype answers by placement. DESIGN_ANSWERS A9 then
+// fixes the A/B block's min-height at 96px so switching between eligible and
+// ineligible pairs doesn't move the judgment buttons under the cursor.
+
+const CORR_THRESHOLD = 0.45 // README §8d bar 1 — the cluster threshold
+const WIN_THRESHOLD = 0.60 // bar 2 — secondary clustering gate
+const FP_BAND: [number, number] = [0.15, 0.50] // bar 4 — coincidence range
 
 function DossierEmpty() {
   return (
@@ -545,6 +567,487 @@ function DossierEmpty() {
         </div>
       </div>
     </div>
+  )
+}
+
+// §8d evidence bar. `value` is null-tolerant: a null renders `n/c` with an
+// empty track, which is the speed-unknown case, not a zero measurement.
+function EvidenceBar({
+  label, value, thresh, band, demote, note,
+}: {
+  label: string
+  value: number | null
+  thresh?: number
+  band?: [number, number]
+  demote?: boolean
+  note: string
+}): React.JSX.Element {
+  const pct = value == null ? 0 : Math.min(100, value * 100)
+  return (
+    <div style={{ marginBottom: 11, opacity: demote ? 0.72 : 1 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+        <span style={{ fontSize: 11.5, fontWeight: 600, color: 'var(--lbb-fg2)' }}>{label}</span>
+        <span style={{ font: '600 11.5px var(--lbb-mono)', color: 'var(--lbb-fg)' }}>
+          {value == null ? 'n/c' : value.toFixed(3)}
+        </span>
+      </div>
+      <div style={{
+        position: 'relative', height: 9, borderRadius: 999, marginTop: 4,
+        background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+        overflow: 'visible',
+      }}>
+        {band && (
+          <span style={{
+            position: 'absolute', top: 0, bottom: 0,
+            left: `${band[0] * 100}%`, width: `${(band[1] - band[0]) * 100}%`,
+            background: 'repeating-linear-gradient(45deg, transparent, transparent 3px, '
+              + 'var(--lbb-fg3) 3px, var(--lbb-fg3) 6px)',
+            opacity: 0.35,
+          }} />
+        )}
+        {value != null && (
+          <span style={{
+            position: 'absolute', top: 0, bottom: 0, left: 0, width: `${pct}%`,
+            borderRadius: 999,
+            background: demote ? 'var(--lbb-mute-bar)' : 'var(--lbb-accent-mid)',
+          }} />
+        )}
+        {thresh != null && (
+          <span style={{
+            position: 'absolute', top: -3, bottom: -3, left: `${thresh * 100}%`,
+            width: 2, borderRadius: 1, background: 'var(--lbb-warn-bar)',
+          }} />
+        )}
+      </div>
+      <div style={{
+        fontSize: 10, color: 'var(--lbb-fg3)', marginTop: 4, lineHeight: 1.4,
+        textWrap: 'pretty',
+      }}>{note}</div>
+    </div>
+  )
+}
+
+// §8d bar 1's note is the pedagogical heart of the panel — it says *why* the
+// algorithm did what it did, so it branches on how this pair was actually
+// clustered. "Secondary link" isn't a stored flag anywhere: a pair merged on
+// primary evidence has corr ≥ 0.45 by definition, so same-family with corr
+// below the threshold is exactly the population the secondary path merged.
+function isSecondaryLink(pair: PairRow | null): boolean {
+  if (!pair || !pair.same_family) return false
+  return pair.corr == null || pair.corr < CORR_THRESHOLD
+}
+
+function corrNote(pair: PairRow | null): string {
+  const corr = pair?.corr ?? null
+  if (corr == null) return 'not measured — speed-unknown source'
+  if (corr >= CORR_THRESHOLD) return '≥ 0.45 cluster threshold — merges on primary evidence'
+  if (isSecondaryLink(pair)) return "below threshold — that's why the secondary path ran"
+  return 'below the 0.45 cluster threshold'
+}
+
+// ── A/B listening (carried forward from ScreenTapeMatch's AbPlayerPanel) ────
+// Same mechanic: one performance-time-aligned WAV per source from POST
+// /api/ab_clip, both <audio> elements started together and kept aligned, so
+// the A/B switch is an instant mute swap rather than a reload/reseek.
+// Restyled to the design's tmAB block and given A9's reserved 96px height.
+
+const AB_NUMBER_INPUT_STYLE: React.CSSProperties = {
+  width: 62, padding: '4px 6px', borderRadius: 5,
+  background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
+  color: 'var(--lbb-fg)', font: '500 11.5px var(--lbb-mono)', outline: 'none',
+}
+
+const AB_FIELD_STYLE: React.CSSProperties = {
+  display: 'flex', flexDirection: 'column', gap: 3,
+  font: '500 9.5px var(--lbb-mono)', color: 'var(--lbb-fg3)',
+}
+
+interface AbClipResult {
+  clip_a: string
+  clip_b: string
+  t_sec: number
+  dur_sec: number
+}
+
+function AbPlayer({
+  lbA, lbB, eligible, date,
+}: { lbA: number; lbB: number; eligible: boolean; date: string }): React.JSX.Element {
+  const [tSec, setTSec] = useState('')
+  const [durSec, setDurSec] = useState('20')
+  const [clips, setClips] = useState<AbClipResult | null>(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [active, setActive] = useState<'a' | 'b'>('a')
+  const [playing, setPlaying] = useState(false)
+  const audioARef = useRef<HTMLAudioElement>(null)
+  const audioBRef = useRef<HTMLAudioElement>(null)
+
+  const applyMute = (next: 'a' | 'b') => {
+    if (audioARef.current) audioARef.current.muted = next !== 'a'
+    if (audioBRef.current) audioBRef.current.muted = next !== 'b'
+  }
+
+  const handleLoad = async () => {
+    setLoading(true)
+    setError(null)
+    setPlaying(false)
+    setClips(null)
+    try {
+      const trimmed = tSec.trim()
+      const resp = await fetch(`${BASE}/api/ab_clip`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          date, lb_a: lbA, lb_b: lbB,
+          ...(trimmed === '' ? {} : { t_sec: Number(trimmed) }),
+          dur_sec: Number(durSec) || 20,
+        }),
+      })
+      const body = await resp.json().catch(() => ({}))
+      if (!resp.ok) {
+        setError(
+          body?.error === 'not_eligible' ? 'These two sources are not sample-alignable.'
+            : body?.error === 't_out_of_range' ? 'That position is past the end of one of the sources.'
+            : body?.error === 'folder_missing' ? "Source folder not found — the disk may not be mounted."
+            : body?.error === 'locked' ? 'TapeMatch is writing right now — try again in a moment.'
+            : "Couldn't build the clips."
+        )
+        return
+      }
+      setClips(body)
+      if (typeof body?.t_sec === 'number') setTSec(String(Math.round(body.t_sec * 10) / 10))
+      setActive('a')
+    } catch {
+      setError("Couldn't build the clips.")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handlePlayPause = () => {
+    const a = audioARef.current
+    const b = audioBRef.current
+    if (!a || !b) return
+    if (playing) {
+      a.pause(); b.pause(); setPlaying(false)
+      return
+    }
+    a.currentTime = 0
+    b.currentTime = 0
+    applyMute(active)
+    Promise.all([a.play(), b.play()]).catch(() => setPlaying(false))
+    setPlaying(true)
+  }
+
+  const setSource = (next: 'a' | 'b') => {
+    setActive(next)
+    applyMute(next)
+  }
+
+  return (
+    <div style={{
+      marginTop: 12, padding: '12px 13px', borderRadius: 8, minHeight: 96,
+      background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+      display: 'flex', flexDirection: 'column', gap: 8,
+      justifyContent: 'flex-start', opacity: eligible ? 1 : 0.72,
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <span style={{
+          font: '700 11px var(--lbb-font)', letterSpacing: '0.04em',
+          textTransform: 'uppercase', color: 'var(--lbb-fg3)',
+        }}>A/B listening</span>
+        {!eligible && <Pill tone="mute" soft>not eligible</Pill>}
+      </div>
+      {!eligible ? (
+        // A9: one line saying *why*, inside the reserved box — "not eligible"
+        // alone sends the curator hunting for a control that isn't broken.
+        <div style={{
+          fontSize: 11, color: 'var(--lbb-fg3)', lineHeight: 1.45, textWrap: 'pretty',
+        }}>
+          Not sample-alignable — the speed offset between these two makes a synced
+          clip pair impossible.
+        </div>
+      ) : (
+        <>
+          <div style={{ display: 'flex', alignItems: 'flex-end', gap: 9, flexWrap: 'wrap' }}>
+            <label style={AB_FIELD_STYLE}>
+              Position (s)
+              <input
+                type="number" min={0} step={1} value={tSec} placeholder="auto"
+                onChange={e => setTSec(e.target.value)} style={AB_NUMBER_INPUT_STYLE}
+              />
+            </label>
+            <label style={AB_FIELD_STYLE}>
+              Duration (s)
+              <input
+                type="number" min={5} max={60} step={1} value={durSec}
+                onChange={e => setDurSec(e.target.value)} style={AB_NUMBER_INPUT_STYLE}
+              />
+            </label>
+            <Button variant="secondary" size="sm" disabled={loading} onClick={handleLoad}>
+              {loading ? 'Loading…' : 'Load'}
+            </Button>
+          </div>
+          <div style={{ fontSize: 10, color: 'var(--lbb-fg3)' }}>
+            Leave position blank to auto-pick a loud aligned moment.
+          </div>
+          {error && (
+            <div style={{ fontSize: 11, color: 'var(--lbb-bad-fg)', lineHeight: 1.45 }}>
+              {error}
+            </div>
+          )}
+          {clips && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
+              <Button variant="primary" size="sm" onClick={handlePlayPause}>
+                {playing ? 'Pause' : '▶ Play'}
+              </Button>
+              <Chip size="sm" active={active === 'a'} onClick={() => setSource('a')}>
+                {`A · LB-${shortId(lbA)}`}
+              </Chip>
+              <Chip size="sm" active={active === 'b'} onClick={() => setSource('b')}>
+                {`B · LB-${shortId(lbB)}`}
+              </Chip>
+              <audio
+                ref={audioARef} src={`${BASE}${clips.clip_a}`} preload="auto"
+                onEnded={() => setPlaying(false)} style={{ display: 'none' }}
+              />
+              <audio
+                ref={audioBRef} src={`${BASE}${clips.clip_b}`} preload="auto"
+                onEnded={() => setPlaying(false)} style={{ display: 'none' }}
+              />
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  )
+}
+
+// ── §8f Judgment control ────────────────────────────────────────────────────
+// UI only in this phase: the draft state, the toggle-off and the notes field
+// all work, but the POST is Phase 6 (WORK_PACKAGE D4 keeps the shipped
+// explicit Cancel/Save model, including the 409 `locked` inline error).
+
+const JUDGMENT_OPTIONS: { key: string; label: string; tone: 'ok' | 'info' | 'warn' | 'bad' }[] = [
+  { key: 'confirmed_same', label: 'Same source', tone: 'ok' },
+  { key: 'confirmed_different', label: 'Different', tone: 'info' },
+  { key: 'uncertain', label: 'Uncertain', tone: 'warn' },
+  { key: 'lb_wrong', label: 'LB wrong', tone: 'bad' },
+]
+
+function JudgmentControl({ pair }: { pair: PairRow | null }): React.JSX.Element {
+  const [judgment, setJudgment] = useState<string | null>(pair?.human_judgment ?? null)
+  const [notes, setNotes] = useState(pair?.human_notes ?? '')
+  const dirty = judgment !== (pair?.human_judgment ?? null)
+    || notes !== (pair?.human_notes ?? '')
+
+  return (
+    <>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6 }}>
+        {JUDGMENT_OPTIONS.map(o => {
+          const on = judgment === o.key
+          return (
+            <button
+              key={o.key}
+              type="button"
+              aria-pressed={on}
+              onClick={() => setJudgment(on ? null : o.key)}
+              style={{
+                padding: '8px 6px', borderRadius: 6, cursor: 'pointer',
+                font: '600 11.5px var(--lbb-font)',
+                background: on ? `var(--lbb-${o.tone}-bg)` : 'var(--lbb-surface2)',
+                border: `1px solid ${on ? `var(--lbb-${o.tone}-bar)` : 'var(--lbb-border2)'}`,
+                color: on ? `var(--lbb-${o.tone}-fg)` : 'var(--lbb-fg2)',
+              }}
+            >{o.label}</button>
+          )
+        })}
+      </div>
+      <textarea
+        value={notes}
+        onChange={e => setNotes(e.target.value)}
+        placeholder="notes…"
+        rows={3}
+        style={{
+          marginTop: 7, width: '100%', minHeight: 60, resize: 'vertical',
+          padding: '7px 9px', borderRadius: 6, background: 'var(--lbb-surface)',
+          border: '1px solid var(--lbb-border2)', color: 'var(--lbb-fg)',
+          font: '400 12px var(--lbb-font)', outline: 'none',
+        }}
+      />
+      <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', marginTop: 8 }}>
+        <Button
+          variant="ghost" size="sm" disabled={!dirty}
+          onClick={() => {
+            setJudgment(pair?.human_judgment ?? null)
+            setNotes(pair?.human_notes ?? '')
+          }}
+        >Cancel</Button>
+        <Button
+          variant="primary" size="sm" disabled
+          title="Judgment write path ships in Phase 6"
+        >Save</Button>
+      </div>
+      <div style={{ fontSize: 10, color: 'var(--lbb-fg3)', marginTop: 8, lineHeight: 1.4 }}>
+        Writes <span style={{ fontFamily: 'var(--lbb-mono)' }}>human_judgment</span> +{' '}
+        <span style={{ fontFamily: 'var(--lbb-mono)' }}>human_notes</span> to{' '}
+        <span style={{ fontFamily: 'var(--lbb-mono)' }}>observations.db · pairs</span> —
+        save wiring lands in Phase 6.
+      </div>
+    </>
+  )
+}
+
+function DossierSubhead({ children }: { children: React.ReactNode }): React.JSX.Element {
+  return (
+    <div style={{
+      fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+      color: 'var(--lbb-fg3)', margin: '16px 0 7px',
+    }}>{children}</div>
+  )
+}
+
+function Dossier({
+  selected, pair, date, colorOf, onClose, drawer,
+}: {
+  selected: SelectedPair
+  pair: PairRow | null
+  date: string
+  colorOf: (lb: number) => string
+  onClose: () => void
+  drawer: boolean
+}): React.JSX.Element {
+  const { lbA, lbB } = selected
+  const sim = pair?.similarity_pct ?? null
+  const conflict = !!pair && pair.lb_says_same === true && pair.same_family === false
+  const secondary = isSecondaryLink(pair)
+  const verdict: { text: string; tone: 'ok' | 'warn' | 'mute' | 'info' } =
+    pair?.same_family
+      ? (secondary
+        ? { text: 'same family · secondary link', tone: 'warn' }
+        : { text: 'same family', tone: 'ok' })
+      : sim == null
+        ? { text: 'not comparable', tone: 'mute' }
+        : { text: 'different family', tone: 'info' }
+  const claim = pair?.lb_relation_text ?? null
+  const hasClaim = !!claim && claim.trim() !== '' && claim.trim() !== '—'
+
+  const lbLabel = (lb: number) => (
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', gap: 6,
+      font: '700 13px var(--lbb-mono)', color: 'var(--lbb-fg)',
+    }}>
+      <span style={{
+        width: 8, height: 8, borderRadius: 2, background: colorOf(lb), flex: '0 0 8px',
+      }} />
+      LB-{shortId(lb)}
+    </span>
+  )
+
+  return (
+    <>
+      <div style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8,
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+          {lbLabel(lbA)}
+          <span style={{ color: 'var(--lbb-fg3)' }}>×</span>
+          {lbLabel(lbB)}
+        </div>
+        {drawer && (
+          <button
+            type="button" onClick={onClose} aria-label="Close dossier"
+            style={{
+              background: 'none', border: 'none', color: 'var(--lbb-fg3)',
+              cursor: 'pointer', fontSize: 14, padding: 4,
+            }}
+          >&#10005;</button>
+        )}
+      </div>
+
+      <div style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10,
+        marginTop: 12, padding: '10px 12px', borderRadius: 7,
+        background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+      }}>
+        <div>
+          <span style={{ font: '800 24px var(--lbb-mono)', lineHeight: 1, color: 'var(--lbb-fg)' }}>
+            {sim == null ? 'n/c' : `${sim}%`}
+          </span>
+          <span style={{
+            display: 'block', fontSize: 9.5, color: 'var(--lbb-fg3)', marginTop: 3, maxWidth: 170,
+          }}>
+            {sim == null
+              ? 'similarity — speed ratio unconfident, correlation not comparable'
+              : 'similarity · banded blend of corr + embedding'}
+          </span>
+        </div>
+        <Pill tone={verdict.tone}>{verdict.text}</Pill>
+      </div>
+
+      {conflict && (
+        <div style={{
+          marginTop: 10, padding: '9px 11px', borderRadius: 7,
+          background: 'var(--lbb-bad-bg)',
+          border: '1px solid color-mix(in oklab, var(--lbb-bad-bar) 50%, transparent)',
+          fontSize: 11.5, color: 'var(--lbb-bad-fg)', lineHeight: 1.45,
+        }}>
+          <strong>Conflict.</strong> LB page says same source; TapeMatch found no
+          acoustic link. This pair is why this date is in the queue.
+        </div>
+      )}
+
+      <AbPlayer lbA={lbA} lbB={lbB} eligible={pair?.ab_eligible === true} date={date} />
+
+      <DossierSubhead>Primary evidence</DossierSubhead>
+      <EvidenceBar
+        label="Residual correlation" value={pair?.corr ?? null}
+        thresh={CORR_THRESHOLD} note={corrNote(pair)}
+      />
+      <DossierSubhead>Secondary evidence</DossierSubhead>
+      <EvidenceBar
+        label="Windowed coverage" value={pair?.windowed_frac ?? null} thresh={WIN_THRESHOLD}
+        note="fraction of dense 60 s windows correlating — drives secondary clustering"
+      />
+      <EvidenceBar
+        label="Quiet-segment hiss corr" value={pair?.hiss_median ?? null}
+        note="tape hiss survives EQ/NR applied to the music"
+      />
+      <EvidenceBar
+        label="Fingerprint dice" value={pair?.fp_score ?? null} band={FP_BAND} demote
+        note={'confirmatory only — never groups. Shaded band = 0.15–0.50 coincidence '
+          + 'range for two tapers at the same show.'}
+      />
+
+      <DossierSubhead>LB page says</DossierSubhead>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 7, alignItems: 'flex-start' }}>
+        {hasClaim ? (
+          <>
+            <Pill tone={conflict ? 'bad' : pair?.lb_says_same ? 'ok' : 'mute'} soft>
+              {conflict ? 'disagrees' : pair?.lb_says_same ? 'agrees · same source' : 'no claim'}
+            </Pill>
+            <div style={{
+              fontSize: 11.5, color: 'var(--lbb-fg2)', lineHeight: 1.5, padding: '8px 11px',
+              borderLeft: '2px solid var(--lbb-border2)', background: 'var(--lbb-surface2)',
+              borderRadius: '0 6px 6px 0', textWrap: 'pretty',
+            }}>{claim}</div>
+          </>
+        ) : (
+          <div style={{
+            fontSize: 11.5, color: 'var(--lbb-fg3)', lineHeight: 1.5, padding: '8px 11px',
+            borderLeft: '2px solid var(--lbb-border)', background: 'var(--lbb-surface2)',
+            borderRadius: '0 6px 6px 0', textWrap: 'pretty',
+          }}>
+            No relation claim between these LB numbers on either page.
+          </div>
+        )}
+      </div>
+
+      <DossierSubhead>Your judgment</DossierSubhead>
+      {/* keyed by the pair so switching cells remounts with that pair's stored
+          judgment/notes instead of carrying over the previous draft */}
+      <JudgmentControl key={pairKey(lbA, lbB)} pair={pair} />
+    </>
   )
 }
 
@@ -904,6 +1407,40 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
   const [selectedPair, setSelectedPair] = useState<SelectedPair | null>(null)
   useEffect(() => { setSelectedPair(null) }, [selectedDate])
 
+  const selectedPairRow = selectedPair
+    ? pairsByKey.get(pairKey(selectedPair.lbA, selectedPair.lbB)) ?? null
+    : null
+
+  const colorByLb = useMemo(() => {
+    const m = new Map<number, number>()
+    for (const r of recordings) m.set(r.lb, r.colorIndex)
+    return m
+  }, [recordings])
+  const colorOf = (lb: number) => familyColorVar(colorByLb.get(lb) ?? 0)
+
+  // Esc closes the drawer. Only bound in drawer mode — docked, the dossier is
+  // part of the layout and Esc belongs to the triage rail. Focus-trap and
+  // focus-restore-to-cell are Phase 9 (README §8's production note).
+  useEffect(() => {
+    if (!narrowDossier || !selectedPair) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { e.stopPropagation(); setSelectedPair(null) }
+    }
+    window.addEventListener('keydown', onKey, true)
+    return () => window.removeEventListener('keydown', onKey, true)
+  }, [narrowDossier, selectedPair])
+
+  const dossierBody = selectedPair && selectedDate ? (
+    <Dossier
+      selected={selectedPair}
+      pair={selectedPairRow}
+      date={selectedDate}
+      colorOf={colorOf}
+      onClose={() => setSelectedPair(null)}
+      drawer={narrowDossier}
+    />
+  ) : <DossierEmpty />
+
   const openDate = (date: string) => setSearchParams({ date })
 
   return (
@@ -980,12 +1517,39 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
                 borderLeft: '1px solid var(--lbb-border)', background: 'var(--lbb-surface)',
                 padding: 16, overflowY: 'auto', minHeight: 0,
               }}>
-                <DossierEmpty />
+                {dossierBody}
               </div>
             )}
           </div>
         </div>
       </div>
+      {/* §8 drawer mode (≤1520px): the dossier leaves the grid and overlays
+          the work column on a scrim. Only mounted when a pair is selected —
+          an empty-state drawer would cover the matrix for nothing. The
+          slide-in transition and focus trap are Phase 9. */}
+      {narrowDossier && selectedPair && (
+        <>
+          <div
+            onClick={() => setSelectedPair(null)}
+            style={{
+              position: 'fixed', inset: 0, background: 'var(--lbb-scrim, rgba(5,8,14,.5))',
+              zIndex: 25,
+            }}
+          />
+          <div
+            role="dialog"
+            aria-label="Pair dossier"
+            style={{
+              position: 'fixed', top: 0, right: 0, bottom: 0, width: 'min(380px, 92vw)',
+              zIndex: 30, background: 'var(--lbb-surface)', padding: 16,
+              overflowY: 'auto', borderLeft: '1px solid var(--lbb-border2)',
+              boxShadow: '-18px 0 40px rgba(0,0,0,.45)',
+            }}
+          >
+            {dossierBody}
+          </div>
+        </>
+      )}
     </div>
   )
 }

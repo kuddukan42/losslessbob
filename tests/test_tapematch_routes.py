@@ -128,6 +128,7 @@ def test_pairs_route_returns_synced_rows_for_date(monkeypatch):
                     "fp_score": 0.8, "same_family": True, "similarity_pct": 100,
                     "human_judgment": None, "human_notes": None,
                     "lb_says_same": None, "lb_relation_text": None,
+                    "windowed_frac": None, "hiss_median": None,
                     "ab_eligible": None,
                 }
             ]
@@ -136,7 +137,9 @@ def test_pairs_route_returns_synced_rows_for_date(monkeypatch):
         shutil.rmtree(tmp_dir, ignore_errors=True)
 
 
-def _make_enriched_pairs_db(tmp_dir, run_id, concert_date, lb_a, lb_b):
+def _make_enriched_pairs_db(
+    tmp_dir, run_id, concert_date, lb_a, lb_b, secondary_cols=True
+):
     """Create an observations.db whose enrichment block can fully succeed.
 
     Seeds a 'pairs' row carrying human_judgment/lb_says_same/lb_relation_text
@@ -152,6 +155,9 @@ def _make_enriched_pairs_db(tmp_dir, run_id, concert_date, lb_a, lb_b):
         concert_date: ISO concert date to seed on the rows.
         lb_a: First LB number of the pair.
         lb_b: Second LB number of the pair.
+        secondary_cols: When False, omit the windowed_frac/hiss_median columns
+            entirely, reproducing an observations.db written before they were
+            added — the route probes for them with PRAGMA table_info.
 
     Returns:
         Path to the created observations.db file.
@@ -162,14 +168,17 @@ def _make_enriched_pairs_db(tmp_dir, run_id, concert_date, lb_a, lb_b):
         "CREATE TABLE pairs (id INTEGER PRIMARY KEY AUTOINCREMENT, run_id TEXT NOT NULL, "
         "concert_date TEXT NOT NULL, lb_a INTEGER, lb_b INTEGER, "
         "human_judgment TEXT, human_notes TEXT, "
-        "lb_says_same INTEGER, lb_relation_text TEXT)"
+        "lb_says_same INTEGER, lb_relation_text TEXT"
+        + (", windowed_frac REAL, hiss_median REAL)" if secondary_cols else ")")
     )
     conn.execute(
         "INSERT INTO pairs (run_id, concert_date, lb_a, lb_b, human_judgment, "
-        "human_notes, lb_says_same, lb_relation_text) "
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+        "human_notes, lb_says_same, lb_relation_text"
+        + (", windowed_frac, hiss_median) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+           if secondary_cols else ") VALUES (?, ?, ?, ?, ?, ?, ?, ?)"),
         (run_id, concert_date, lb_a, lb_b, "confirmed_same", "clean match", 1,
-         "LB page lists these as the same recording"),
+         "LB page lists these as the same recording")
+        + ((0.83, 0.71) if secondary_cols else ()),
     )
     conn.execute(
         "CREATE TABLE sources (concert_date TEXT, run_id TEXT, lb_number INTEGER, "
@@ -220,6 +229,46 @@ def test_pairs_route_live_enrichment_carries_lb_says_same(monkeypatch):
             assert pair["lb_relation_text"] == (
                 "LB page lists these as the same recording"
             )
+            # Secondary-evidence metrics ride the same live read (README §8d).
+            assert pair["windowed_frac"] == 0.83
+            assert pair["hiss_median"] == 0.71
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_pairs_route_enrichment_survives_missing_secondary_columns(monkeypatch):
+    """An observations.db predating windowed_frac/hiss_median still enriches.
+
+    The two metrics come back null, but the rest of the live read
+    (human_judgment, lb_says_same) must survive — a hard SELECT on the absent
+    columns would raise and collapse the whole block to nulls.
+    """
+    db_path, tmp_dir = _make_db()
+    try:
+        conn = db.get_connection(db_path)
+        conn.execute(
+            "INSERT INTO tapematch_pairs "
+            "(concert_date, lb_a, lb_b, corr, emb_score, fp_score, same_family, "
+            " similarity_pct, run_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            ("1991-01-01", 10, 20, 0.9, 0.95, 0.8, 1, 100, "20260101_000000"),
+        )
+        conn.commit()
+        obs_path = _make_enriched_pairs_db(
+            tmp_dir, "20260101_000000", "1991-01-01", 10, 20, secondary_cols=False
+        )
+        monkeypatch.setattr(
+            tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path
+        )
+
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/pairs?date=1991-01-01")
+            assert resp.status_code == 200
+            pair = resp.get_json()["pairs"][0]
+            assert pair["human_judgment"] == "confirmed_same"
+            assert pair["lb_says_same"] is True
+            assert pair["windowed_frac"] is None
+            assert pair["hiss_median"] is None
     finally:
         db.close_connection(db_path)
         shutil.rmtree(tmp_dir, ignore_errors=True)

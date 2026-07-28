@@ -34,10 +34,13 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   design's hexes would break light mode. Semantic colours therefore come from
   `--lbb-*`; the five family colours are **new** tokens added to `tokens.ts`.
   Spacing, radii, type scale and the mono/prose split follow the design exactly.
-- **D3 — Q10 (unanswered by design): A/B player sits between "LB page says" and
-  the judgment control.** It is evidence, so it belongs with the evidence, and
-  the judgment control stays last as §8 specifies. `human_notes` stays inside the
-  judgment control per `AB_PLAYER_AND_NOTES.md` §1. Revisit if design answers.
+- **D3 — SUPERSEDED at Phase 3.** D3 provisionally put the A/B player between
+  "LB page says" and the judgment control, "revisit if design answers." Design
+  had already answered in code: `tm-parts.jsx`'s `Dossier` renders `<ABPlayer>`
+  directly after the conflict callout and **above** the evidence bars, and
+  `DESIGN_ANSWERS.md` A9 specifies its reserved height and ineligible line.
+  Built as the design has it. `human_notes` stays inside the judgment control
+  per `AB_PLAYER_AND_NOTES.md` §1, which nothing contradicts.
 - **D4 — judgment save model: keep the shipped explicit Cancel/Save**, including
   the 409 `locked` inline error. `Accept families` has nothing to flush.
   §10.7's "flush pending judgments" is not built. Lower risk than converting a
@@ -59,6 +62,22 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   "Loading…". Phase 9 owns this. It also makes visual verification of this
   screen require a `wait-for` settle on `text=Nothing here` being detached —
   a bare `navigate` + `screenshot` photographs the pre-load state.
+- **§8's four evidence bars have no slot for the embedding score.** The design's
+  evidence model predates the embedding path: it assumes a same-family pair
+  either cleared corr ≥ 0.45 or was merged by windowed/hiss/fp. On the real
+  corpus that is often false — 1989-06-04's LB-02470 × LB-14054 is 85% similar
+  with corr 0.004, `windowed_frac` 0.0 and hiss 0.007, i.e. merged on
+  `emb_score`, which no bar shows. `isSecondaryLink` (same_family && corr <
+  0.45) therefore labels those pairs `same family · secondary link` and bar 1
+  reads "that's why the secondary path ran" — directionally right, literally
+  wrong about which secondary signal did it. Fixing it means either a fifth bar
+  for `emb_score` (already on the pairs route) or a design answer on how the
+  embedding blend should be explained. Not invented here.
+- **The A/B player's loaded state is unverified in Electron.** Eligibility,
+  the ineligible line and the empty-eligible controls all screenshot correctly,
+  but `Load` → playback was not exercised under Xvfb (no audio device). The
+  code is carried over unchanged from `ScreenTapeMatch`'s shipped
+  `AbPlayerPanel`.
 - **Tier A (`--renderer-only`) cannot verify this screen at all.** It stubs
   `window.api`, so `BASE` is dead and every panel renders empty. Use
   `/verify --electron`. This applies to every remaining phase.
@@ -80,8 +99,8 @@ Order follows README "Implementation Order", collapsed into committable bites.
 |---|---|---|---|
 | 1 | Tokens + shell | family colours in `tokens.ts`; top bar §1, triage rail §2, date header §3 (incl. B3 verdict clamp), section wrapper §4, work grid + `min-height:0` chain, breakpoints | **done** `0ee5f804` |
 | 2 | Matrix §5 | three colour regimes, diagonal, `n/c` hatching, conflict dot, symmetric selection, cross-dimming, a11y grid nav | **done** (this session) |
-| 3 | Dossier §8 | evidence bars, conditional correlation note, demoted fingerprint bar + coincidence band, A/B player (D3), judgment control + notes | **next** — `selectedPair` state is already lifted into the screen and populated by the matrix; the dossier still renders its empty state |
-| 4 | Speed strip §6 | √ scale, ticks, lane packing; A4 merged glyph, Q3 tooltip without `ratioConfidence` | not started |
+| 3 | Dossier §8 | evidence bars, conditional correlation note, demoted fingerprint bar + coincidence band, A/B player (D3 → superseded, see below), judgment control + notes | **done** (this session) |
+| 4 | Speed strip §6 | √ scale, ticks, lane packing; A4 merged glyph, Q3 tooltip without `ratioConfidence` | **next** |
 | 5 | Verdict cards §7 | B1 subject rule (ref / family / statement), B1.1 body structure, B2 tone table, A6/A8 | not started |
 | 6 | Write path | judgment save (D4), `Accept families` → DB + date `curated` (Q4) | not started |
 | 7 | report.md view §11 | backend route for report.md; A1 `===` sub-blocks, A2 rail, A3 coverage stats, A9; `react-markdown` pinned (Q5) | not started |
@@ -104,3 +123,17 @@ Order follows README "Implementation Order", collapsed into committable bites.
   760px cap.
   **Resume at Phase 3 (dossier §8).** Its five parked open questions are
   unchanged — see `OPEN_QUESTIONS.md`; D3 fixes the A/B player's position.
+- 2026-07-28 — Phase 3 (dossier §8) landed. Backend: the pairs route's live
+  read now also carries `windowed_frac`/`hiss_median` for evidence bars 2–3,
+  probed with `PRAGMA table_info` so a pre-metric observations.db degrades to
+  two nulls instead of losing the whole enrichment; `tests/
+  test_tapematch_routes.py` 27 pass (2 new). Frontend: full §8 stack in both
+  docked and drawer form, A/B player carried over from `ScreenTapeMatch` with
+  A9's 96px reservation, judgment control as UI-only (D4's Save wiring is
+  Phase 6). D3 superseded — see above. `/gui-check` green; verified with
+  `/verify --electron` on 1989-06-04 across a same-family pair (secondary
+  link, agrees), a conflict pair (callout + `disagrees`), and the date's one
+  A/B-eligible pair (corr 0.947 over the threshold mark). Drawer mode
+  confirmed at the default window width; note the scrim intercepts matrix
+  clicks, so driver sessions must resize wide before clicking a second cell.
+  **Resume at Phase 4 (speed & lag strip §6).**
