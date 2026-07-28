@@ -34,6 +34,7 @@ import { ScreenSharing } from './screens/ScreenSharing'
 import { ScreenQuickLookup } from './screens/ScreenQuickLookup'
 import { ScreenLibrary } from './screens/ScreenLibrary'
 import { ScreenTapeMatch } from './screens/ScreenTapeMatch'
+import { ScreenTapeMatchCuration } from './screens/ScreenTapeMatchCuration'
 import { ScreenSongs } from './screens/ScreenSongs'
 import { ScreenTimeline } from './screens/ScreenTimeline'
 import { ScreenFingerprint } from './screens/ScreenFingerprint'
@@ -354,6 +355,7 @@ export default function App(): React.JSX.Element {
           <Route path="/scanner"     element={<ScreenScanner />} />
           <Route path="/library"     element={<ScreenLibrary />} />
           <Route path="/tapematch"   element={<ScreenTapeMatch />} />
+          <Route path="/tapematch/curation" element={<ScreenTapeMatchCuration />} />
           <Route path="/songs"       element={<ScreenSongs />} />
           <Route path="/timeline"    element={<ScreenTimeline />} />
           <Route path="/collection"  element={<ScreenCollection />} />
