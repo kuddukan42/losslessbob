@@ -509,26 +509,23 @@ def main(argv=None):
     dbg.log(f"MATRIX_DONE  speed_unknown_count={speed_unknown_count}")
 
     def _label(name: str) -> str:
-        """Extract 'LB-NNNNN' from folder name, or fall back to first 8 chars."""
-        import re as _re
-        m = _re.search(r"LB-\d+", name)
-        return m.group(0) if m else name[:8]
+        """Return 'LB-NNNNN' for the folder's own number, or first 8 chars."""
+        num = ingest.extract_own_lb_number(name)
+        return f"LB-{num}" if num is not None else name[:8]
 
     def _lb_num(name: str) -> int | None:
-        """Extract the integer LB number from a staged folder name, or None.
+        """Extract the integer LB number that *name*'s folder itself belongs to.
 
         cli.py sees only the folder name staged on disk -- it has no access to
-        tapematch_session.py's DB-resolved name->LB mapping (which additionally
-        disambiguates folder names that embed a *different* cross-referenced LB
-        number, e.g. "... [fixed LB-2204]-LB-10437-v"). This is the same regex
-        fallback tapematch_session.py's own `_lb_num_from_folder` uses when its
-        DB lookup misses, so it agrees with the harness in the common case; a
-        folder whose own number is shadowed by an earlier cross-reference is a
-        known, rare gap (curator conditional simply won't key on it live).
+        tapematch_session.py's DB-resolved name->LB mapping. Delegates to
+        ingest.extract_own_lb_number(), which strips bracketed cross-reference
+        segments (e.g. "... [fixed LB-2204]-LB-10437-v") and takes the LAST
+        remaining LB-NNNNN match, so an embedded cross-reference no longer
+        shadows the folder's own trailing tag (BUG-277). This is the same
+        logic tapematch_session.py's own `_lb_num_from_folder` uses when its
+        DB lookup misses, so it agrees with the harness in the common case.
         """
-        import re as _re
-        m = _re.search(r"LB-(\d+)", name)
-        return int(m.group(1)) if m else None
+        return ingest.extract_own_lb_number(name)
 
     lb_numbers: dict[str, int | None] = {n: _lb_num(n) for n in names}
     labels = [_label(n) for n in names]

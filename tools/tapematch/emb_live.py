@@ -30,7 +30,6 @@ from __future__ import annotations
 
 import json
 import logging
-import re
 import sqlite3
 import subprocess
 import sys
@@ -44,6 +43,7 @@ _HERE = Path(__file__).resolve().parent
 if str(_HERE) not in sys.path:
     sys.path.insert(0, str(_HERE))
 import emb_score_pairs as ESP  # noqa: E402  (reuse the exact per-pair scoring)
+from tapematch.ingest import extract_own_lb_number  # noqa: E402
 
 CONFIG_PATH = _HERE / "config.yaml"
 CACHE_DIR = _HERE / "embed_cache"
@@ -56,8 +56,6 @@ NMFP_EMBED = _HERE / "nmfp_embed.py"
 EXTRACT_TIMEOUT_SEC = 3600
 
 log = logging.getLogger("emb_live")
-
-_LB_RE = re.compile(r"LB-(\d+)")
 
 
 def sources_from_results(results: dict, found_folders: dict[int, Path]) -> list[dict]:
@@ -85,8 +83,13 @@ def sources_from_results(results: dict, found_folders: dict[int, Path]) -> list[
     for folder_name, s in (results.get("sources") or {}).items():
         lb = name_to_lb.get(folder_name)
         if lb is None:
-            m = _LB_RE.search(folder_name)
-            lb = int(m.group(1)) if m else None
+            # BUG-277: don't let a first-match regex mistake an embedded
+            # cross-reference for the folder's own trailing LB tag.
+            log.warning(
+                "sources_from_results: %r not in the session's DB-resolved "
+                "name_to_lb map; falling back to folder-name regex", folder_name,
+            )
+            lb = extract_own_lb_number(folder_name)
         if lb is None:
             continue
         out.append({
