@@ -15,6 +15,7 @@ from pathlib import Path
 
 from backend.db import get_connection, init_db
 from backend.paths import TAPEMATCH_RUNS_DIR, TOOLS_DIR
+from backend.tapematch_autoflag import VERDICT_CLEAR, compute_triage
 
 log = logging.getLogger(__name__)
 
@@ -177,10 +178,15 @@ def sync_tapematch_families(
 
     try:
         best_run_by_date = _pick_best_run(obs_conn)
+        # Machine triage for every date, including the ones with no analysis.md
+        # to parse a human verdict out of.  Computed in bulk (one pass over
+        # sources/pairs) rather than per date inside the loop.
+        triage_by_date = compute_triage(obs_conn, best_run_by_date)
 
         for concert_date, run_id in best_run_by_date.items():
             try:
-                _sync_one_date(obs_conn, conn, concert_date, run_id, stats, abs_scores_by_lb)
+                _sync_one_date(obs_conn, conn, concert_date, run_id, stats,
+                               abs_scores_by_lb, triage_by_date)
                 stats["dates_processed"] += 1
             except Exception as e:  # noqa: BLE001 — one bad date shouldn't abort the rest
                 log.exception("tapematch sync failed for %s (run %s)", concert_date, run_id)
@@ -268,6 +274,7 @@ def _sync_one_date(
     run_id: str,
     stats: dict,
     abs_scores_by_lb: "dict[int, tuple[int, float, str]]",
+    triage_by_date: "dict[str, tuple[str, str]]",
 ) -> None:
     """Compute and upsert families for a single concert_date's chosen run."""
     sources = obs_conn.execute(
@@ -319,6 +326,11 @@ def _sync_one_date(
     run_dir = _resolve_run_dir(obs_conn, run_id, concert_date)
     review_flag, review_reason = _read_review_flag(run_dir)
 
+    # Machine triage — same uniform-per-date application as review_flag, and
+    # likewise independent of it: a date can be auto-'attention' while a human
+    # has already read it and judged it fine.
+    auto_triage, auto_reasons = triage_by_date.get(concert_date, (VERDICT_CLEAR, "[]"))
+
     fresh_fam_ids: set[str] = set()
     fresh_lb_numbers: set[int] = set()
     family_rows = []
@@ -342,7 +354,7 @@ def _sync_one_date(
         fresh_fam_ids.add(fam_id)
         family_rows.append(
             (fam_id, concert_date, label, by, conf, member_count, run_id,
-             review_flag, review_reason)
+             review_flag, review_reason, auto_triage, auto_reasons)
         )
         for lb_number in lb_numbers:
             fresh_lb_numbers.add(lb_number)
@@ -353,20 +365,20 @@ def _sync_one_date(
         fresh_fam_ids.add(fam_id)
         family_rows.append(
             (fam_id, concert_date, "Solo", "ai", None, 1, run_id,
-             review_flag, review_reason)
+             review_flag, review_reason, auto_triage, auto_reasons)
         )
         fresh_lb_numbers.add(lb_number)
         member_rows.append((lb_number, fam_id, concert_date, run_id))
 
     with conn:
         conn.execute("BEGIN IMMEDIATE")
-        for fam_id, c_date, label, by, conf, member_count, r_id, rev_flag, rev_reason in family_rows:
+        for row in family_rows:
             conn.execute(
                 """
                 INSERT INTO tapematch_family_meta
                     (fam_id, concert_date, label, by, conf, member_count, run_id,
-                     review_flag, review_reason)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                     review_flag, review_reason, auto_triage, auto_triage_reasons)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(fam_id) DO UPDATE SET
                     label=excluded.label,
                     by=excluded.by,
@@ -375,9 +387,11 @@ def _sync_one_date(
                     run_id=excluded.run_id,
                     review_flag=excluded.review_flag,
                     review_reason=excluded.review_reason,
+                    auto_triage=excluded.auto_triage,
+                    auto_triage_reasons=excluded.auto_triage_reasons,
                     imported_at=CURRENT_TIMESTAMP
                 """,
-                (fam_id, c_date, label, by, conf, member_count, r_id, rev_flag, rev_reason),
+                row,
             )
         for lb_number, fam_id, c_date, r_id in member_rows:
             conn.execute(

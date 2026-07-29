@@ -611,6 +611,8 @@ CREATE TABLE IF NOT EXISTS tapematch_family_meta (
     run_id          TEXT,
     review_flag     INTEGER NOT NULL DEFAULT 0,
     review_reason   TEXT,
+    auto_triage     TEXT,
+    auto_triage_reasons TEXT,
     imported_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -2492,6 +2494,16 @@ def init_db(db_path=None):
                 "ALTER TABLE tapematch_family_meta ADD COLUMN review_flag INTEGER NOT NULL DEFAULT 0"
             )
             conn.execute("ALTER TABLE tapematch_family_meta ADD COLUMN review_reason TEXT")
+        # Migration: add auto_triage/auto_triage_reasons to tapematch_family_meta —
+        # backend.tapematch_autoflag's machine-derived 'clear'/'attention' verdict,
+        # computed from observations.db for every date including the ~57% with no
+        # analysis.md.  Deliberately separate from review_flag/review_reason: those
+        # mean a human read the prose, this is a ~0.19-precision prioritisation hint.
+        if "auto_triage" not in _tmm_cols:
+            conn.execute("ALTER TABLE tapematch_family_meta ADD COLUMN auto_triage TEXT")
+            conn.execute(
+                "ALTER TABLE tapematch_family_meta ADD COLUMN auto_triage_reasons TEXT"
+            )
         # Migration: add local_sha256 to site_inventory (preservation stack B1) —
         # body_sha256 is the hash of the raw HTTP body, but HTML is saved
         # link-rewritten, so it can never match the file on disk.  local_sha256
