@@ -1,3 +1,30 @@
+[2026-07-28] — feat: TapeMatch Curation phase 5 (analysis verdict cards §7)
+Added: gui_next/src/renderer/src/lib/analysisMd.ts — parser for a run's analysis.md, for the
+  curation screen's §7 stack. No backend change: /api/tapematch/analysis already returns the whole
+  document (it has to, for §11's raw view), and these are rendering rules, so they live next to
+  the thing that renders them. Implements the design handoff's answers — B1's subject rule (the
+  text left of the first em-dash is a ref, a `Family n`, or neither; the first two are cards, the
+  third is a statement about the run), B1.1's body blocks (`label: value` becomes a key/value row
+  and a quoted value takes the quote treatment, which is what makes a headline-less card readable),
+  B1.2's statement blocks, B2's ordered tone table (MISS/contradiction → bad; INCOMPLETE, speed
+  offset, LOW CONFIDENCE, reliability caveats, coverage gaps → warn; else info) matched with
+  quoted spans stripped so scraped LB commentary can't set a card's severity, A5's trailing-emoji
+  strip and A8's HTML-entity decode. Checked against all six real_output/ documents first:
+  1993-06-27 → 20 cards (its eleven ref-only ones all info), 1996-07-13 → bad ref card + family
+  card + `Audit table` statement, 1998-06-14 → `Coverage gap` statement + two contradiction cards,
+  2018-08-26 → zero cards and the A6 clean sentence.
+Added: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — the §7 section itself:
+  tone-barred cards, dashed statement blocks with a tone-tinted key, A6's clean-date line (a dot
+  and the generator's own sentence — a clean date has no findings, and dressing that as a card
+  devalues the card), the not-on-disk and algorithm-note meta lines. A7's ref is quoted verbatim
+  from the document and clicks through the normalised lb_a < lb_b key into the dossier, but only
+  when it names exactly two LBs the date actually has a pair for (D9). The family chip's swatch is
+  tinted from analysis.md's own Family column, since the app DB's fam_id is member-derived and
+  carries no run family number; its click-to-select-members behaviour is deferred to phase 9 (D8).
+Changed: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — the dossier's LB-page
+  quote now clamps to 3 lines with Show more past ~240 characters and decodes HTML entities (A8).
+  Scrape debris stays visible deliberately; the clamp keeps it out of the default view.
+
 [2026-07-28] — feat: TapeMatch Curation phase 4 (speed & lag strip §6)
 Added: backend/app.py — GET /api/tapematch/sources?date= returns one row per recording
   ({lb_number, speed_kind, speed_ppm, family_id, folder_name, lag_ref_lb}) from observations.db's
