@@ -6096,6 +6096,137 @@ def create_app() -> Flask:
             )
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
+    @app.route("/api/tapematch/dates/accept", methods=["POST"])
+    def tapematch_accept_families() -> Response:
+        """Record a curator's acceptance of one date's TapeMatch families.
+
+        Curation screen §3 ``Accept families`` (design handoff Q4): the accept
+        record lands in tools/tapematch/observations.db alongside the existing
+        ``pairs.human_judgment`` writes, and flipping the date's status gives
+        the triage rail's fourth state (``curated``) its only path in.
+
+        The target is an **additive** table, ``curation_accepts`` — the
+        tapematch generator never reads or writes it, so this adds a curator
+        surface without touching the schema the pipeline owns. Created with
+        ``CREATE TABLE IF NOT EXISTS`` on every call, so a fresh observations.db
+        needs no migration step.
+
+        JSON body::
+
+            {"date": "YYYY-MM-DD", "run_id": str (optional),
+             "note": str | null (optional)}
+
+        ``n_judged`` is counted server-side from ``pairs.human_judgment`` for
+        the accepted run rather than taken from the client, so the stored
+        record reflects what is actually in the DB at accept time. Re-accepting
+        a date replaces its row (the run may have changed under it).
+
+        Returns:
+            200 ``{"ok": true, "date", "run_id", "accepted_at", "n_judged",
+            "n_families"}``; 400 ``missing_fields``; 404 ``no_run``; 409
+            ``locked`` if observations.db is write-locked by a running
+            tapematch session.
+        """
+        from backend import tapematch_sync as _tapematch_sync
+
+        body = request.get_json(force=True) or {}
+        concert_date = body.get("date")
+        run_id = body.get("run_id")
+        note = body.get("note")
+
+        if not concert_date:
+            return jsonify({"error": "missing_fields"}), 400
+
+        try:
+            obs_path = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH
+            if not Path(obs_path).exists():
+                return jsonify({"error": "no_run"}), 404
+            if not run_id:
+                obs_conn_ro = _tapematch_sync._open_observations_db(obs_path)
+                try:
+                    run_id = _tapematch_sync._pick_best_run(obs_conn_ro).get(concert_date)
+                finally:
+                    obs_conn_ro.close()
+                if run_id is None:
+                    return jsonify({"error": "no_run"}), 404
+
+            from datetime import datetime as _datetime
+
+            accepted_at = _datetime.now(UTC).isoformat(timespec="seconds")
+
+            conn = sqlite3.connect(str(TAPEMATCH_DB_PATH))
+            conn.execute("PRAGMA busy_timeout=3000")
+            try:
+                conn.execute(
+                    """
+                    CREATE TABLE IF NOT EXISTS curation_accepts (
+                        concert_date TEXT PRIMARY KEY,
+                        run_id       TEXT,
+                        accepted_at  TEXT NOT NULL,
+                        n_judged     INTEGER,
+                        n_families   INTEGER,
+                        note         TEXT
+                    )
+                    """
+                )
+                conn.execute("BEGIN IMMEDIATE")
+                n_judged = conn.execute(
+                    "SELECT COUNT(*) FROM pairs WHERE run_id = ? AND concert_date = ? "
+                    "AND human_judgment IS NOT NULL",
+                    (run_id, concert_date),
+                ).fetchone()[0]
+                # n_families is a convenience copy for the record; probe for the
+                # column rather than assuming it (same defensive shape as the
+                # pairs route's secondary-metric enrichment).
+                run_cols = {
+                    r[1] for r in conn.execute("PRAGMA table_info(runs)").fetchall()
+                }
+                n_families = None
+                if "n_families" in run_cols:
+                    fam_row = conn.execute(
+                        "SELECT n_families FROM runs WHERE run_id = ?", (run_id,)
+                    ).fetchone()
+                    n_families = fam_row[0] if fam_row else None
+                conn.execute(
+                    """
+                    INSERT INTO curation_accepts
+                        (concert_date, run_id, accepted_at, n_judged, n_families, note)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                    ON CONFLICT(concert_date) DO UPDATE SET
+                        run_id      = excluded.run_id,
+                        accepted_at = excluded.accepted_at,
+                        n_judged    = excluded.n_judged,
+                        n_families  = excluded.n_families,
+                        note        = excluded.note
+                    """,
+                    (concert_date, run_id, accepted_at, n_judged, n_families, note),
+                )
+                conn.commit()
+            except sqlite3.OperationalError as exc:
+                conn.rollback()
+                msg = str(exc)
+                if "locked" in msg.lower() or "busy" in msg.lower():
+                    return jsonify({"error": "locked", "message": msg}), 409
+                raise
+            finally:
+                conn.close()
+
+            return jsonify(
+                {
+                    "ok": True,
+                    "date": concert_date,
+                    "run_id": run_id,
+                    "accepted_at": accepted_at,
+                    "n_judged": n_judged,
+                    "n_families": n_families,
+                }
+            )
+        except RuntimeError as exc:
+            return jsonify({"error": "locked", "message": str(exc)}), 409
+        except Exception as exc:
+            _log.exception("tapematch_accept_families failed for date=%s", concert_date)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     @app.route("/api/tapematch/analysis", methods=["GET"])
     def tapematch_analysis_for_date() -> Response:
         """The chosen TapeMatch run's analysis.md verdict for one concert date.
@@ -6163,6 +6294,12 @@ def create_app() -> Flask:
         does its verdict flag review — via _resolve_run_dir/_parse_verdict).
         If observations.db is missing or locked, has_analysis/needs_review
         are null for every row rather than failing the endpoint.
+
+        Also carries curated/curated_at from observations.db's
+        ``curation_accepts`` table (written by POST /api/tapematch/dates/accept)
+        — the curation screen's fourth triage state. Both degrade to
+        false/null when the table doesn't exist yet or observations.db can't
+        be read, same best-effort shape as the analysis fields.
         """
         from backend import tapematch_sync as _tapematch_sync
 
@@ -6205,6 +6342,7 @@ def create_app() -> Flask:
             # One read-only observations.db pass to resolve each date's run
             # dir; one stat per date, file read only when parsing a verdict.
             analysis_by_date: dict[str, tuple] = {}
+            accepted_at_by_date: dict[str, str] = {}
             obs_ok = False
             obs_path = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH
             if Path(obs_path).exists():
@@ -6217,6 +6355,21 @@ def create_app() -> Flask:
                     )
                 else:
                     try:
+                        # Curation accepts (POST /api/tapematch/dates/accept).
+                        # The table only exists once something has been
+                        # accepted, so a missing table means "nothing curated
+                        # yet", not an error.
+                        try:
+                            accepted_at_by_date.update(
+                                {
+                                    r["concert_date"]: r["accepted_at"]
+                                    for r in obs_conn.execute(
+                                        "SELECT concert_date, accepted_at FROM curation_accepts"
+                                    )
+                                }
+                            )
+                        except sqlite3.OperationalError:
+                            pass
                         for date, agg in by_date.items():
                             run_dir = _tapematch_sync._resolve_run_dir(
                                 obs_conn, agg["run_id"], date
@@ -6251,6 +6404,8 @@ def create_app() -> Flask:
                         "has_analysis": has_analysis,
                         "needs_review": needs_review,
                         "location": locations.get(date),
+                        "curated_at": accepted_at_by_date.get(date),
+                        "curated": date in accepted_at_by_date,
                     }
                 )
             return jsonify({"dates": dates})

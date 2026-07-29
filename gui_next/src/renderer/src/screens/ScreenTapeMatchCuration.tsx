@@ -1,4 +1,4 @@
-// TapeMatch Curation screen — Phases 1–3.
+// TapeMatch Curation screen — Phases 1–6.
 //
 // Built per instructions/design_handoff_tapematch_curation/{README,
 // WORK_PACKAGE,DESIGN_ANSWERS_B}.md. D1: new screen, old ScreenTapeMatch.tsx
@@ -15,16 +15,22 @@
 //
 // Phase 2 added §5's similarity matrix; Phase 3 the §8 dossier — verdict
 // block, conflict callout, A/B player, evidence bars, LB-page claim and the
-// judgment control — in both its docked and drawer forms. The judgment
-// control is UI only: the POST is Phase 6, per WORK_PACKAGE D4.
+// judgment control — in both its docked and drawer forms.
 //
 // Phase 4 added §6's speed & lag strip — signed-√ ppm axis, A4 glyph
 // vocabulary, greedy lane packing — on a new GET /api/tapematch/sources.
-// Verdict cards (§7), report.md (§11) and run diff (§12) remain placeholders.
+// Phase 5 added §7's verdict cards, parsed client-side in lib/analysisMd.ts.
+//
+// Phase 6 wires the write path: the judgment control's Save (POST
+// /api/tapematch/pairs/judgment) with §10.7's save-status line, and §3's
+// `Accept families` (POST /api/tapematch/dates/accept), which records the
+// date in observations.db's additive `curation_accepts` table and gives the
+// triage rail's fourth state, `curated`, its only path in (Q4).
+// report.md (§11) and run diff (§12) remain placeholders.
 
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { Icon } from '../components/Icon'
 import { Pill, Chip, Button, Kbd } from '../components'
 import { familyColorVar } from '../lib/tokens'
@@ -46,6 +52,11 @@ interface DateRow {
   has_analysis: boolean | null
   needs_review: boolean | null
   location: string | null
+  // Phase 6 — observations.db `curation_accepts`, via POST
+  // /api/tapematch/dates/accept. Optional on the type because an older
+  // backend (or a locked observations.db) simply omits them.
+  curated?: boolean
+  curated_at?: string | null
 }
 
 interface FamilyRow {
@@ -117,10 +128,16 @@ function shortId(lb: number): string {
 // the best available approximation: needs_review true -> conflict (LB
 // commentary disagreement is the review trigger the endpoint tracks);
 // has_analysis false -> review (nothing parsed yet, needs a look); otherwise
-// clean. `curated` is reachable in the type but unpopulated until Phase 6.
+// clean.
+//
+// Phase 6 populates `curated`, and it wins over everything else: it is the
+// curator's own terminal verdict on the date, so a date that was accepted
+// while still flagged `needs_review` leaves the "needs you" queue — that is
+// exactly what accepting means.
 type TriageStatus = 'conflict' | 'review' | 'clean' | 'curated'
 
 function statusOf(row: DateRow): TriageStatus {
+  if (row.curated) return 'curated'
   if (row.needs_review === true) return 'conflict'
   if (row.has_analysis === false) return 'review'
   return 'clean'
@@ -208,7 +225,13 @@ function SectionPlaceholder({ label }: { label: string }) {
 
 // ── §1 Top bar ───────────────────────────────────────────────────────────────
 
-function TopBar({ crawl }: { crawl: CrawlStatus | undefined }) {
+function TopBar({
+  crawl, judgedCount, date,
+}: {
+  crawl: CrawlStatus | undefined
+  judgedCount: number
+  date: string | null
+}) {
   const dotColor = crawl?.running ? 'var(--lbb-warn-bar)' : 'var(--lbb-ok-bar)'
   const statusWord = crawl?.running ? 'running' : 'idle'
   return (
@@ -236,8 +259,15 @@ function TopBar({ crawl }: { crawl: CrawlStatus | undefined }) {
             {crawl.distinct_dates.toLocaleString()} dates
           </div>
         )}
-        {/* Queued-judgments pill — only appears once the Phase 6 write path
-            can actually queue something; nothing to count yet. */}
+        {/* §3's judgment pill. The design counts judgments *queued* locally;
+            D4's explicit Save means nothing is ever queued, so this counts
+            what is actually on disk for the open date — the same number
+            `Accept families · n judged` carries. */}
+        {date && judgedCount > 0 && (
+          <Pill tone="info" soft>
+            {judgedCount} judged
+          </Pill>
+        )}
       </div>
     </div>
   )
@@ -461,13 +491,24 @@ function VerdictClamp({ text }: { text: string }) {
   )
 }
 
+// §3 `Accept families` outcome, mirroring §10.7's save-status vocabulary.
+type AcceptState =
+  | { kind: 'idle' }
+  | { kind: 'saving' }
+  | { kind: 'accepted'; at: string }
+  | { kind: 'failed'; message: string }
+
 function DateHeader({
-  row, narrow, verdictText, families,
+  row, narrow, verdictText, families, judgedCount, soloDate, onAccept, accept,
 }: {
   row: DateRow | null
   narrow: boolean
   verdictText: string | null
   families: { famId: string; label: string; colorIndex: number; lbs: number[] }[]
+  judgedCount: number
+  soloDate: boolean
+  onAccept: () => void
+  accept: AcceptState
 }) {
   if (!row) {
     return (
@@ -529,13 +570,44 @@ function DateHeader({
             ))}
           </div>
         )}
-        <div style={{ display: 'flex', gap: 8 }}>
-          <Button variant="ghost" size="sm" disabled title="report.md view ships in Phase 7">
-            Open report.md
-          </Button>
-          <Button variant="primary" size="sm" disabled title="Judgment write path ships in Phase 6">
-            Accept families
-          </Button>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 5 }}>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <Button variant="ghost" size="sm" disabled title="report.md view ships in Phase 7">
+              Open report.md
+            </Button>
+            {/* §3: disabled until at least one pair judgment exists; §10.5
+                special-cases a single-recording date to enabled, because the
+                rule exists to stop rubber-stamping pair decisions and there
+                are no pair decisions to stamp. */}
+            <Button
+              variant="primary" size="sm"
+              disabled={(judgedCount === 0 && !soloDate) || accept.kind === 'saving'}
+              onClick={onAccept}
+              title={
+                judgedCount === 0 && !soloDate
+                  ? 'Judge at least one pair first'
+                  : `Records this date's families in observations.db · curation_accepts`
+              }
+            >
+              {judgedCount > 0 ? `Accept families · ${judgedCount} judged` : 'Accept families'}
+            </Button>
+          </div>
+          {accept.kind !== 'idle' && (
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: 6, fontSize: 10,
+              color: accept.kind === 'failed' ? 'var(--lbb-bad-fg)'
+                : accept.kind === 'accepted' ? 'var(--lbb-ok-fg)' : 'var(--lbb-fg3)',
+            }}>
+              <span style={{
+                width: 6, height: 6, borderRadius: '50%',
+                background: accept.kind === 'failed' ? 'var(--lbb-bad-bar)'
+                  : accept.kind === 'accepted' ? 'var(--lbb-ok-bar)' : 'var(--lbb-fg3)',
+              }} />
+              {accept.kind === 'saving' && 'Accepting…'}
+              {accept.kind === 'accepted' && `Accepted ${accept.at}`}
+              {accept.kind === 'failed' && accept.message}
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -830,9 +902,11 @@ function AbPlayer({
 }
 
 // ── §8f Judgment control ────────────────────────────────────────────────────
-// UI only in this phase: the draft state, the toggle-off and the notes field
-// all work, but the POST is Phase 6 (WORK_PACKAGE D4 keeps the shipped
-// explicit Cancel/Save model, including the 409 `locked` inline error).
+// Phase 6 wires the write path. WORK_PACKAGE D4 keeps the explicit
+// Cancel/Save model rather than §10.7's optimistic one — the draft is only
+// the curator's once they commit it, and the 409 `locked` case (a tapematch
+// run holding observations.db) is a real state an optimistic button would
+// have to lie about. §10.7's save-status line is built as specified.
 
 const JUDGMENT_OPTIONS: { key: string; label: string; tone: 'ok' | 'info' | 'warn' | 'bad' }[] = [
   { key: 'confirmed_same', label: 'Same source', tone: 'ok' },
@@ -841,11 +915,69 @@ const JUDGMENT_OPTIONS: { key: string; label: string; tone: 'ok' | 'info' | 'war
   { key: 'lb_wrong', label: 'LB wrong', tone: 'bad' },
 ]
 
-function JudgmentControl({ pair }: { pair: PairRow | null }): React.JSX.Element {
+type SaveState =
+  | { kind: 'idle' }
+  | { kind: 'saving' }
+  | { kind: 'saved'; at: string; label: string }
+  | { kind: 'failed'; message: string }
+
+function JudgmentControl({
+  pair, date, onSaved,
+}: {
+  pair: PairRow | null
+  date: string | null
+  onSaved: () => void
+}): React.JSX.Element {
   const [judgment, setJudgment] = useState<string | null>(pair?.human_judgment ?? null)
   const [notes, setNotes] = useState(pair?.human_notes ?? '')
+  const [save, setSave] = useState<SaveState>({ kind: 'idle' })
   const dirty = judgment !== (pair?.human_judgment ?? null)
     || notes !== (pair?.human_notes ?? '')
+
+  // §10.7 — `Saved` fades back to the idle explainer after a few seconds;
+  // failures persist until retried.
+  useEffect(() => {
+    if (save.kind !== 'saved') return
+    const t = window.setTimeout(() => setSave({ kind: 'idle' }), 4000)
+    return () => window.clearTimeout(t)
+  }, [save])
+
+  async function submit(): Promise<void> {
+    if (!pair || !date) return
+    setSave({ kind: 'saving' })
+    try {
+      const res = await fetch(`${BASE}/api/tapematch/pairs/judgment`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          date, lb_a: pair.lb_a, lb_b: pair.lb_b,
+          judgment,
+          notes: notes.trim() === '' ? null : notes,
+        }),
+      })
+      const body = await res.json().catch(() => null)
+      if (!res.ok) {
+        setSave({
+          kind: 'failed',
+          message: body?.error === 'locked'
+            ? "TapeMatch is writing right now — kept locally."
+            : body?.error === 'pair_not_found'
+              ? "That pair isn't in the current run — kept locally."
+              : "Couldn't save — kept locally.",
+        })
+        return
+      }
+      const chosen = JUDGMENT_OPTIONS.find(o => o.key === judgment)
+      setSave({
+        kind: 'saved',
+        at: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        label: chosen?.label ?? 'cleared',
+      })
+      onSaved()
+    } catch {
+      setSave({ kind: 'failed', message: "Couldn't save — kept locally." })
+    }
+  }
 
   return (
     <>
@@ -890,16 +1022,48 @@ function JudgmentControl({ pair }: { pair: PairRow | null }): React.JSX.Element 
           }}
         >Cancel</Button>
         <Button
-          variant="primary" size="sm" disabled
-          title="Judgment write path ships in Phase 6"
+          variant="primary" size="sm"
+          disabled={!dirty || save.kind === 'saving' || !pair || !date}
+          onClick={submit}
         >Save</Button>
       </div>
+      {/* §10.7 — the static explainer states the mechanism, the status line
+          below it reports the attempt. */}
       <div style={{ fontSize: 10, color: 'var(--lbb-fg3)', marginTop: 8, lineHeight: 1.4 }}>
         Writes <span style={{ fontFamily: 'var(--lbb-mono)' }}>human_judgment</span> +{' '}
         <span style={{ fontFamily: 'var(--lbb-mono)' }}>human_notes</span> to{' '}
-        <span style={{ fontFamily: 'var(--lbb-mono)' }}>observations.db · pairs</span> —
-        save wiring lands in Phase 6.
+        <span style={{ fontFamily: 'var(--lbb-mono)' }}>observations.db · pairs</span>.
       </div>
+      {save.kind !== 'idle' && (
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: 6, marginTop: 8, fontSize: 10,
+          color: save.kind === 'failed' ? 'var(--lbb-bad-fg)'
+            : save.kind === 'saved' ? 'var(--lbb-ok-fg)' : 'var(--lbb-fg3)',
+        }}>
+          <span style={{
+            width: 6, height: 6, borderRadius: '50%', flex: '0 0 auto',
+            background: save.kind === 'failed' ? 'var(--lbb-bad-bar)'
+              : save.kind === 'saved' ? 'var(--lbb-ok-bar)' : 'var(--lbb-fg3)',
+            opacity: save.kind === 'saving' ? 0.5 : 1,
+          }} />
+          {save.kind === 'saving' && 'Saving…'}
+          {save.kind === 'saved' && `Saved ${save.at} · ${save.label}`}
+          {save.kind === 'failed' && (
+            <>
+              {save.message}
+              <button
+                type="button"
+                onClick={submit}
+                style={{
+                  background: 'none', border: 'none', padding: 0, cursor: 'pointer',
+                  font: '600 10px var(--lbb-font)', color: 'var(--lbb-bad-fg)',
+                  textDecoration: 'underline',
+                }}
+              >Retry</button>
+            </>
+          )}
+        </div>
+      )}
     </>
   )
 }
@@ -951,7 +1115,7 @@ function DossierSubhead({ children }: { children: React.ReactNode }): React.JSX.
 }
 
 function Dossier({
-  selected, pair, date, colorOf, onClose, drawer,
+  selected, pair, date, colorOf, onClose, drawer, onJudgmentSaved,
 }: {
   selected: SelectedPair
   pair: PairRow | null
@@ -959,6 +1123,7 @@ function Dossier({
   colorOf: (lb: number) => string
   onClose: () => void
   drawer: boolean
+  onJudgmentSaved: () => void
 }): React.JSX.Element {
   const { lbA, lbB } = selected
   const sim = pair?.similarity_pct ?? null
@@ -1085,7 +1250,9 @@ function Dossier({
       <DossierSubhead>Your judgment</DossierSubhead>
       {/* keyed by the pair so switching cells remounts with that pair's stored
           judgment/notes instead of carrying over the previous draft */}
-      <JudgmentControl key={pairKey(lbA, lbB)} pair={pair} />
+      <JudgmentControl
+        key={pairKey(lbA, lbB)} pair={pair} date={date} onSaved={onJudgmentSaved}
+      />
     </>
   )
 }
@@ -1921,6 +2088,62 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
     return () => window.removeEventListener('keydown', onKey, true)
   }, [narrowDossier, selectedPair])
 
+  // ── Phase 6 write path ────────────────────────────────────────────────────
+  // Judged count is server truth (the pairs query), not a local queue: D4's
+  // explicit Save writes before the count can move, and refetching the pairs
+  // after a save is what keeps the dossier, the header count and the top-bar
+  // pill from drifting apart.
+  const judgedCount = useMemo(() => {
+    const pairs = (pairsData as PairsResponse | undefined)?.pairs ?? []
+    return pairs.filter(p => p.human_judgment != null).length
+  }, [pairsData])
+
+  const queryClient = useQueryClient()
+  const refetchPairs = () => {
+    queryClient.invalidateQueries({ queryKey: ['tapematch-curation-pairs', selectedDate] })
+  }
+
+  const [accept, setAccept] = useState<AcceptState>({ kind: 'idle' })
+  useEffect(() => { setAccept({ kind: 'idle' }) }, [selectedDate])
+  useEffect(() => {
+    if (accept.kind !== 'accepted') return
+    const t = window.setTimeout(() => setAccept({ kind: 'idle' }), 4000)
+    return () => window.clearTimeout(t)
+  }, [accept])
+
+  async function acceptFamilies(): Promise<void> {
+    if (!selectedDate) return
+    setAccept({ kind: 'saving' })
+    try {
+      const res = await fetch(`${BASE}/api/tapematch/dates/accept`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ date: selectedDate }),
+      })
+      const body = await res.json().catch(() => null)
+      if (!res.ok) {
+        setAccept({
+          kind: 'failed',
+          message: body?.error === 'locked'
+            ? 'TapeMatch is writing right now — try again in a moment.'
+            : body?.error === 'no_run'
+              ? "No analysed run for this date — nothing to accept."
+              : "Couldn't accept — nothing was recorded.",
+        })
+        return
+      }
+      setAccept({
+        kind: 'accepted',
+        at: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      })
+      // The rail's `curated` state comes from /api/tapematch/dates, so the
+      // status pill and the "Done" filter only move once that refetches.
+      queryClient.invalidateQueries({ queryKey: ['tapematch-dates'] })
+    } catch {
+      setAccept({ kind: 'failed', message: "Couldn't accept — nothing was recorded." })
+    }
+  }
+
   const dossierBody = selectedPair && selectedDate ? (
     <Dossier
       selected={selectedPair}
@@ -1929,6 +2152,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
       colorOf={colorOf}
       onClose={() => setSelectedPair(null)}
       drawer={narrowDossier}
+      onJudgmentSaved={refetchPairs}
     />
   ) : <DossierEmpty />
 
@@ -1936,7 +2160,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-      <TopBar crawl={crawl} />
+      <TopBar crawl={crawl} judgedCount={judgedCount} date={selectedDate} />
       <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
         <TriageRail
           rows={allDates}
@@ -1950,7 +2174,16 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
           flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column',
           minHeight: 0, overflowY: 'auto', position: 'relative',
         }}>
-          <DateHeader row={selectedRow} narrow={narrowRail} verdictText={verdictText} families={dateFamilies} />
+          <DateHeader
+            row={selectedRow}
+            narrow={narrowRail}
+            verdictText={verdictText}
+            families={dateFamilies}
+            judgedCount={judgedCount}
+            soloDate={recordings.length <= 1}
+            onAccept={acceptFamilies}
+            accept={accept}
+          />
           <div style={{
             display: 'grid',
             gridTemplateColumns: narrowDossier ? 'minmax(0,1fr)' : 'minmax(0,1fr) 350px',
