@@ -77,6 +77,24 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   two-ref case is additionally checked against the date's pair map, so a
   heading naming a pair the run didn't keep isn't clickable either.
 
+- **D14 — the matrix skeleton names the pair count but not a done count.**
+  §10.1 specifies `measuring 45 pairs · 31 done`. `n(n−1)/2` is knowable
+  up front and is shown; the done count is not — `/api/tapematch/pairs`
+  answers once with the whole set, so there is no partial progress to read.
+  A synthesised counter would be a fake progress bar, which is worse than
+  the honest total.
+- **D15 — §10.4's two ghost actions are not built.** `Open date page` has no
+  route to open (the app has no per-date page; the Library deep-link is
+  per-LB and there is no LB on a zero-recording date) and `Skip in queue`
+  duplicates pressing `j`. The state's value is its copy — cause plus
+  recovery — and that is built verbatim.
+- **D16 — loading is keyed on `isPending`, not `isLoading`.** In react-query
+  v5 `isLoading` is `isPending && isFetching`, and under
+  `PersistQueryClientProvider` a query's `fetchStatus` is `idle` until the
+  IndexedDB restore finishes — so `isLoading` is false while nothing at all
+  is known, which is exactly when the skeleton has to be up. Verified: with
+  `isLoading` the rail still flashed its empty state on a cold start.
+
 - **D12 — the stale banner ships without its `Regenerate` button.** §11's banner
   is specified with a ghost `Regenerate` on the right. Regenerating a run means
   invoking the generator, which the standing constraints forbid changing and no
@@ -193,7 +211,7 @@ Order follows README "Implementation Order", collapsed into committable bites.
 | 6 | Write path | judgment save (D4), `Accept families` → DB + date `curated` (Q4) | **done** (this session) |
 | 7 | report.md view §11 | backend route for report.md; A1 `===` sub-blocks, A2 rail, A3 coverage stats; `react-markdown` pinned (Q5) | **done** (this session) |
 | 8 | Run diff §12 | run-list route, run pickers (Q8), forward-only causes (Q2) | not started |
-| 9 | §10 states | loading skeletons (no reflow), fetch error, empty filter, zero/single-recording dates, large-N matrix, drawer transition + focus | not started |
+| 9 | §10 states | loading skeletons (no reflow), fetch error, empty filter, zero/single-recording dates, large-N matrix, drawer transition + focus | **done** (this session) |
 
 ## Resume log
 
@@ -326,3 +344,34 @@ Order follows README "Implementation Order", collapsed into committable bites.
     §11.1's print-only "nothing to print" notice for the *closed* state
     belongs to the screen, not to a component that only exists while the
     report is open. Both are Phase 9 candidates if printing matters.
+- 2026-07-28 — Phase 9 (§10 edge and transient states) landed. **No backend
+  change.** Frontend: §10.1's skeleton primitive (4.5% sweep, dropped under
+  `prefers-reduced-motion`) with a triage-rail skeleton — which fixes the
+  logged defect where the rail rendered "Nothing here." for the seconds
+  `/api/tapematch/dates` was in flight — and a matrix skeleton that renders
+  the *real* grid off the known recording count so nothing reflows when the
+  measurements land (D14 on the missing done-count); §10.2's fetch-error
+  block with the required "your judgments are safe" reassurance, the real
+  request/error/run/attempt detail and a Retry, plus the header's
+  `unavailable` pill, overridden verdict line and dropped run pill; §10.3's
+  per-filter empty copy with `Show all dates`; §10.4's `no recordings` state
+  (D15 on its two unbuildable ghost actions); §10.5's solo card, with the
+  section retitled `Recording`; and §8's drawer slide-in, focus trap and
+  focus-restore-to-opener. §10.6 was already built in phase 2 (compact
+  matrix + density note); its "recommended additions" (sticky headers,
+  family-boundary rule) stay unbuilt — README asks for design confirmation
+  and Q7 was never answered. §10.7 was built in phase 6 and stands: D4/D11
+  rejected the optimistic model.
+  D16 in the decisions list is the one real bug this phase found: every
+  loading flag was keyed on react-query's `isLoading`, which is false while
+  the persisted cache is still hydrating, so the skeletons never showed on a
+  cold start — they are keyed on `isPending` now.
+  `/gui-check` green; `/verify --electron` at 1920×1080 confirmed the
+  matrix skeleton (`measuring 21 pairs…` on 2001-10-30, real 7×7 grid), the
+  fetch-error block (pairs request rejected in-page), the solo card
+  (1991-07-20 stubbed to one family member — `Accept families` enabled with
+  zero judgments per §10.5) and the zero-recording state (families stubbed
+  empty). Those last two need a stub because **the corpus has no such date**:
+  `tapematch_pairs` only carries dates with at least one pair, so every
+  synced date has ≥2 recordings. Both remain defensive states.
+  **Resume at Phase 8 (run diff §12) — the last phase.**
