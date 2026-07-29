@@ -69,6 +69,7 @@ KNOWN_LABELS = (
     "Closed",
     "Description",
     "Progress",
+    "Formerly",
 )
 
 
@@ -545,6 +546,67 @@ def cmd_close(args: argparse.Namespace, kind: str) -> None:
 
 
 # --------------------------------------------------------------------------- #
+# Doctor: permanent duplicate-id / letter-suffix-id guard
+# --------------------------------------------------------------------------- #
+def _doctor_report() -> list[str]:
+    """Scan all four ledger files for duplicate or letter-suffixed ids.
+
+    Fast, regex-only pass over raw file text (no git grep, no block model) —
+    this deliberately does not use ``_split_file``/``_collect_ids`` internals so
+    it stays correct even if a header is embedded inside a malformed
+    surrounding block (the exact situation that produced letter-suffixed ids
+    like ``BUG-116b`` in the first place).
+
+    Returns:
+        List of human-readable problem descriptions (empty means healthy).
+    """
+    problems: list[str] = []
+    for kind in ("bug", "todo"):
+        id_prefix = FILES[kind]["prefix"]
+
+        # Duplicate numeric ids: same PREFIX-NNN header appears more than once
+        # across the open + done files.
+        header_re = re.compile(rf"^{id_prefix}-(\d+):", re.MULTILINE)
+        locations: dict[int, list[str]] = {}
+        for key in ("open", "done"):
+            path = FILES[kind][key]
+            text = _read(path)
+            for match in header_re.finditer(text):
+                num = int(match.group(1))
+                line = text.count("\n", 0, match.start()) + 1
+                locations.setdefault(num, []).append(f"{path.name}:{line}")
+        for num, locs in sorted(locations.items()):
+            if len(locs) > 1:
+                problems.append(f"duplicate {id_prefix}-{num}: {', '.join(locs)}")
+
+        # Letter-suffixed ids (e.g. BUG-116b): a hand-patched id that bypasses
+        # next-id's own collision protection.
+        letter_re = re.compile(rf"^({id_prefix}-\d+[A-Za-z]+):", re.MULTILINE)
+        for key in ("open", "done"):
+            path = FILES[kind][key]
+            text = _read(path)
+            for match in letter_re.finditer(text):
+                line = text.count("\n", 0, match.start()) + 1
+                problems.append(f"letter-suffixed id {match.group(1)} at {path.name}:{line}")
+    return problems
+
+
+def cmd_doctor(args: argparse.Namespace) -> None:
+    """Handle ``doctor``: exit non-zero with a listing if the ledger is unhealthy.
+
+    Args:
+        args: Parsed CLI arguments (unused, present for the standard signature).
+    """
+    problems = _doctor_report()
+    if problems:
+        logger.error("ledger doctor: %d problem(s) found:", len(problems))
+        for problem in problems:
+            logger.error("  - %s", problem)
+        raise SystemExit(1)
+    logger.info("ledger doctor: OK (no duplicate ids, no letter-suffixed ids)")
+
+
+# --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
 def build_parser() -> argparse.ArgumentParser:
@@ -595,6 +657,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_tc.add_argument("id")
     p_tc.add_argument("--resolution", help="Optional resolution/outcome text.")
     p_tc.set_defaults(func=lambda a: cmd_close(a, "todo"))
+
+    p_doc = sub.add_parser(
+        "doctor", help="Check for duplicate or letter-suffixed BUG/TODO ids (exit 0 = healthy)."
+    )
+    p_doc.set_defaults(func=cmd_doctor)
 
     return parser
 

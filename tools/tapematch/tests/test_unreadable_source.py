@@ -1,4 +1,4 @@
-"""Tests for BUG-176: tapematch must not abort the whole run when one source's
+"""Tests for BUG-301: tapematch must not abort the whole run when one source's
 track can't be decoded (e.g. a corrupt/truncated file or a non-FLAC file with
 a .flac extension).
 

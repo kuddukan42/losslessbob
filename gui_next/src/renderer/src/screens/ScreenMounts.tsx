@@ -25,7 +25,7 @@ interface CollectionRoute {
   root_path?: string
 }
 
-// ── Integrity Monitor types (TODO-111) ─────────────────────────────────────────
+// ── Integrity Monitor types (TODO-284) ─────────────────────────────────────────
 
 interface IntegritySummaryEntry {
   pass: number
@@ -416,7 +416,7 @@ function CollectionRoutingCard() {
   const [expanded, setExpanded] = useState<Set<number>>(new Set())
   const [toast, setToast] = useState<string | null>(null)
 
-  // Integrity monitor (TODO-111)
+  // Integrity monitor (TODO-284)
   const [integritySummary, setIntegritySummary] = useState<Record<string, IntegritySummaryEntry>>({})
   const [integrityStatus, setIntegrityStatus] = useState<IntegrityStatusRow[]>([])
   const [integrityEvents, setIntegrityEvents] = useState<IntegrityEvent[]>([])

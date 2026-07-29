@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""TODO-140 step 1 -- falsify-first pilot for low-band (250-2000 Hz) energy-envelope
+"""TODO-287 step 1 -- falsify-first pilot for low-band (250-2000 Hz) energy-envelope
 cross-correlation as a fallback for HF-dead / high-noise-floor sources.
 
 BASELINE.md Task 4 established that for 1989-06-04 (Dublin) and 1990-01-12 (New Haven),

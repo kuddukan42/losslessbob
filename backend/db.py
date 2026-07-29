@@ -860,7 +860,7 @@ CREATE TABLE IF NOT EXISTS collection_routes (
 );
 CREATE INDEX IF NOT EXISTS idx_routes_mount ON collection_routes(mount_id);
 
--- ── Collection Integrity Monitor (TODO-111) ────────────────────────────────
+-- ── Collection Integrity Monitor (TODO-284) ────────────────────────────────
 CREATE TABLE IF NOT EXISTS collection_integrity_status (
     lb_number      INTEGER PRIMARY KEY,
     mount_id       INTEGER REFERENCES collection_mounts(id) ON DELETE SET NULL,
@@ -2469,7 +2469,7 @@ def init_db(db_path=None):
         _mc_cols = [r[1] for r in conn.execute("PRAGMA table_info(my_collection)").fetchall()]
         if "lbdir_verified_at" not in _mc_cols:
             conn.execute("ALTER TABLE my_collection ADD COLUMN lbdir_verified_at TIMESTAMP")
-        # Migration: add mount_id to integrity_events (TODO-111)
+        # Migration: add mount_id to integrity_events (TODO-284)
         _ie_cols = [r[1] for r in conn.execute("PRAGMA table_info(integrity_events)").fetchall()]
         if "mount_id" not in _ie_cols:
             conn.execute("ALTER TABLE integrity_events ADD COLUMN mount_id INTEGER")
@@ -3796,7 +3796,7 @@ def get_performances(db_path=None) -> list[dict]:
         "SELECT date_str, tour_name FROM setlistfm_shows WHERE tour_name != ''"
     ).fetchall():
         tours.setdefault(r["date_str"], r["tour_name"])
-    # Tour-name fallback chain setlistfm -> olof (TODO-153, FABLE_OLOF_FILES.md
+    # Tour-name fallback chain setlistfm -> olof (TODO-290, FABLE_OLOF_FILES.md
     # §5.3): setlistfm's tour_name coverage is thin, olof_events carries the DSN
     # segment title (1956-2021) for nearly every dated event. setdefault() means
     # setlistfm always wins; this only fills dates setlistfm left blank. Ordered
@@ -4774,7 +4774,7 @@ def purge_integrity_events(db_path=None) -> None:
     get_write_queue().execute(lambda c: c.execute("DELETE FROM integrity_events"))
 
 
-# ── TODO-111: Collection Integrity Monitor ───────────────────────────────────
+# ── TODO-284: Collection Integrity Monitor ───────────────────────────────────
 
 def upsert_collection_integrity_status(
     lb_number: int,

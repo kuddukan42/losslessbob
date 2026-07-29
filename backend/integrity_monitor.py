@@ -1,4 +1,4 @@
-"""Collection integrity monitor (TODO-111).
+"""Collection integrity monitor (TODO-284).
 
 Reuses the existing lbdir batch-verify machinery (checksum_utils.verify_folder_lbdir)
 to detect, per collection folder:

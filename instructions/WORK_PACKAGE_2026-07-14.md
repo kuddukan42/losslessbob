@@ -11,7 +11,7 @@ TODO-230, TODO-231 all closed). Strike rows as they land.
 - **Uncommitted on main: today's entire 07-13 session** — TODO-225 setlist
   fingerprint review queue (`backend/setlist_fingerprint.py`, ScreenFingerprint,
   tests), TODO-158 batch forum posting, TODO-157 torrent auto-create, TODO-159
-  LBDIR verify gate, TODO-108 header fix, TODO-154 docs close, plus the
+  LBDIR verify gate, TODO-280 header fix, TODO-291 docs close, plus the
   instructions/ reorg (unified-library + library → `complete/`, SHARING_FEATURE
   → `future/`), instructions/README.md index fix, and BUG-248 closure.
   **First action of next session: review + commit this** (likely 2–3 commits by
@@ -37,7 +37,7 @@ Recent shipped work that only ears/eyes can sign off:
       carefully**: post one test LB (preview before submit); confirm the LBDIR
       verify gate blocks a failing entry; confirm the torrent is created and
       appears in qBittorrent; then try a small batch paste.
-- [ ] **Collection header (TODO-108)**: visual check, incl. German locale (long
+- [ ] **Collection header (TODO-280)**: visual check, incl. German locale (long
       strings were the trigger).
 - [ ] **About credits (TODO-226B)**: cards render, bobserve/setlist.fm/
       bobdylan.com links open.

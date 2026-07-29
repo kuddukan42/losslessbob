@@ -249,7 +249,7 @@ data point buys:
    set for a "100 minutes" show is flagged as partial; a folder labeled SBD
    for a date Olof knows only as audience recording is flagged for review.
    Also a direct prior for tapematch duration comparisons.
-3. **Tour names (TODO-153).** Every DSN event inherits its segment title;
+3. **Tour names (TODO-290).** Every DSN event inherits its segment title;
    coverage is complete 1956–2021 where setlist.fm's `tour_name` is largely
    empty. Fallback chain becomes setlistfm → olof.
 4. **Circulation provenance (`olof_new_tapes`).** When a tape first

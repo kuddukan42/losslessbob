@@ -42,7 +42,7 @@ bad copy and leaves the source untouched (`hash_mismatch`).
 
 - Renames audit to `rename_history`; sticky folder→LB links in
   `folder_lb_link`.
-- **Integrity monitor** (TODO-111): background per-mount or whole-collection
+- **Integrity monitor** (TODO-284): background per-mount or whole-collection
   scans → `collection_integrity_scans` (history) +
   `collection_integrity_status` (latest per-LB verdict:
   pass/content_issue/tag_issue/missing_files/no_lbdir/error) → per-mount GUI
