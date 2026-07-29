@@ -630,6 +630,137 @@ def test_report_route_unknown_date_and_absent_db_are_all_null(monkeypatch):
         shutil.rmtree(tmp_dir, ignore_errors=True)
 
 
+# ── GET /api/tapematch/runs + /api/tapematch/run_snapshot (§12) ─────────────
+
+
+def _make_obs_db_with_two_runs(tmp_dir):
+    """Two runs of one date: the head run merges the pair the base split."""
+    obs_path = os.path.join(tmp_dir, "observations.db")
+    conn = sqlite3.connect(obs_path)
+    conn.execute(
+        "CREATE TABLE runs (run_id TEXT PRIMARY KEY, concert_date TEXT NOT NULL, "
+        "n_sources_db INTEGER, n_sources_found INTEGER, n_sources_ran INTEGER, "
+        "n_families INTEGER, duration_sec REAL, run_at TEXT, archive_dir TEXT)"
+    )
+    conn.execute(
+        "CREATE TABLE sources (id INTEGER PRIMARY KEY, run_id TEXT, concert_date TEXT, "
+        "lb_number INTEGER, family_id INTEGER, folder_name TEXT, speed_kind TEXT, "
+        "speed_ppm REAL)"
+    )
+    conn.execute(
+        "CREATE TABLE pairs (id INTEGER PRIMARY KEY, run_id TEXT, concert_date TEXT, "
+        "lb_a INTEGER, lb_b INTEGER, corr REAL, emb_score REAL, windowed_frac REAL, "
+        "hiss_median REAL, fp_score REAL, family_id_a INTEGER, family_id_b INTEGER, "
+        "tapematch_verdict TEXT, human_judgment TEXT)"
+    )
+    for run_id, n_fam, fam_b, verdict, corr in (
+        ("20260101_000000", 2, 2, "different_family", 0.11),
+        ("20260202_000000", 1, 1, "same_family", 0.61),
+    ):
+        conn.execute(
+            "INSERT INTO runs (run_id, concert_date, n_sources_db, n_sources_found, "
+            "n_sources_ran, n_families, duration_sec, run_at) "
+            "VALUES (?, '1991-01-01', 2, 2, 2, ?, 12.5, '2026-01-01T00:00:00')",
+            (run_id, n_fam),
+        )
+        conn.execute(
+            "INSERT INTO sources (run_id, concert_date, lb_number, family_id, folder_name, "
+            "speed_kind, speed_ppm) VALUES (?, '1991-01-01', 101, 1, 'a', 'reference', 0)",
+            (run_id,),
+        )
+        conn.execute(
+            "INSERT INTO sources (run_id, concert_date, lb_number, family_id, folder_name, "
+            "speed_kind, speed_ppm) VALUES (?, '1991-01-01', 202, ?, 'b', 'aligned', 12)",
+            (run_id, fam_b),
+        )
+        conn.execute(
+            "INSERT INTO pairs (run_id, concert_date, lb_a, lb_b, corr, family_id_a, "
+            "family_id_b, tapematch_verdict, human_judgment) "
+            "VALUES (?, '1991-01-01', 101, 202, ?, 1, ?, ?, 'uncertain')",
+            (run_id, corr, fam_b, verdict),
+        )
+    conn.commit()
+    conn.close()
+    return obs_path
+
+
+def test_runs_route_lists_every_run_newest_first(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        obs_path = _make_obs_db_with_two_runs(tmp_dir)
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+        with _AppClient(db_path) as client:
+            body = client.get("/api/tapematch/runs?date=1991-01-01").get_json()
+            assert [r["run_id"] for r in body["runs"]] == [
+                "20260202_000000", "20260101_000000",
+            ]
+            assert body["runs"][0]["n_families"] == 1
+            assert body["runs"][1]["n_families"] == 2
+            assert body["runs"][0]["n_sources_ran"] == 2
+
+            # Unknown date is empty, not an error.
+            assert client.get("/api/tapematch/runs?date=1900-01-01").get_json() == {
+                "date": "1900-01-01", "runs": [],
+            }
+            assert client.get("/api/tapematch/runs").status_code == 400
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_run_snapshot_returns_that_run_only(monkeypatch):
+    """The snapshot must be the named run's own rows — the whole point of §12
+    is comparing two runs, which a latest-run query could never express."""
+    db_path, tmp_dir = _make_db()
+    try:
+        obs_path = _make_obs_db_with_two_runs(tmp_dir)
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+        with _AppClient(db_path) as client:
+            base = client.get(
+                "/api/tapematch/run_snapshot?date=1991-01-01&run_id=20260101_000000"
+            ).get_json()
+            head = client.get(
+                "/api/tapematch/run_snapshot?date=1991-01-01&run_id=20260202_000000"
+            ).get_json()
+
+            assert base["run"]["n_families"] == 2
+            assert head["run"]["n_families"] == 1
+            assert [s["lb_number"] for s in base["sources"]] == [101, 202]
+            assert base["sources"][1]["family_id"] == 2
+            assert head["sources"][1]["family_id"] == 1
+            assert len(base["pairs"]) == 1 and len(head["pairs"]) == 1
+            assert base["pairs"][0]["tapematch_verdict"] == "different_family"
+            assert head["pairs"][0]["tapematch_verdict"] == "same_family"
+            assert base["pairs"][0]["corr"] == 0.11
+            assert head["pairs"][0]["corr"] == 0.61
+            # The judgment rides along for §12.5's reconciliation.
+            assert head["pairs"][0]["human_judgment"] == "uncertain"
+            # Columns this observations.db doesn't have degrade to null.
+            assert head["pairs"][0]["windowed_frac"] is None
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_run_snapshot_unknown_run_and_missing_params(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        obs_path = _make_obs_db_with_two_runs(tmp_dir)
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+        with _AppClient(db_path) as client:
+            body = client.get(
+                "/api/tapematch/run_snapshot?date=1991-01-01&run_id=nope"
+            ).get_json()
+            assert body["run"] is None
+            assert body["sources"] == [] and body["pairs"] == []
+            assert client.get(
+                "/api/tapematch/run_snapshot?date=1991-01-01"
+            ).status_code == 400
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
 def test_report_route_missing_date_param_is_400():
     db_path, tmp_dir = _make_db()
     try:

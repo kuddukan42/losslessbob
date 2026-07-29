@@ -184,6 +184,26 @@ _SOURCE_SPEED_COLS = (
     "speed_kind", "speed_ppm", "family_id", "folder_name", "lag_ref_lb",
 )
 
+# observations.db ``runs`` columns GET /api/tapematch/runs returns per run, and
+# GET /api/tapematch/run_snapshot echoes for the run it snapshots (curation
+# §12's run pickers + run bar). Probed with PRAGMA table_info like the two sets
+# above — n_families and duration_sec post-date the first runs schema.
+_RUN_LIST_COLS = (
+    "run_at", "n_sources_db", "n_sources_found", "n_sources_ran", "n_families",
+    "duration_sec",
+)
+
+# The two per-run tables GET /api/tapematch/run_snapshot returns for the §12
+# diff. Deliberately narrower than the tables themselves: the diff reads
+# family membership, the three evidence values §12.3/§12.4 chart, the run's own
+# call, and the pair's human judgment — not the 20-odd lineage/format columns,
+# which no section of the diff renders.
+_SNAPSHOT_SOURCE_COLS = ("family_id", "folder_name", "speed_kind", "speed_ppm")
+_SNAPSHOT_PAIR_COLS = (
+    "corr", "emb_score", "windowed_frac", "hiss_median", "fp_score",
+    "family_id_a", "family_id_b", "tapematch_verdict", "human_judgment",
+)
+
 
 def compute_pipeline_severity(
     verify: dict,
@@ -5914,6 +5934,152 @@ def create_app() -> Flask:
             )
             if isinstance(exc, RuntimeError):
                 return jsonify({"date": concert_date, "run_id": None, "sources": []})
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapematch/runs", methods=["GET"])
+    def tapematch_runs_for_date() -> Response:
+        """Every TapeMatch run recorded for one concert date (curation §12).
+
+        Query param: date=YYYY-MM-DD (required). Newest first, straight off
+        ``observations.db``'s ``runs`` table — the run-diff view's two pickers
+        need the whole list (1989-06-04 has 17 runs), not just the best one
+        ``_pick_best_run`` would choose.
+
+        Returns:
+            200 ``{date, runs: [{run_id, run_at, n_sources_db, n_sources_found,
+            n_sources_ran, n_families, duration_sec}]}``; ``runs: []`` for an
+            unknown date or an absent/locked DB (not an error); 400 when date
+            is missing.
+        """
+        from backend import tapematch_sync as _tapematch_sync
+
+        concert_date = request.args.get("date")
+        if not concert_date:
+            return jsonify({"error": "missing_date"}), 400
+        try:
+            obs_path = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH
+            if not Path(obs_path).exists():
+                return jsonify({"date": concert_date, "runs": []})
+            obs_conn = _tapematch_sync._open_observations_db(obs_path)
+            try:
+                cols = {c["name"] for c in obs_conn.execute("PRAGMA table_info(runs)")}
+                opt = [c for c in _RUN_LIST_COLS if c in cols]
+                rows = obs_conn.execute(
+                    """
+                    SELECT run_id{extra}
+                    FROM runs
+                    WHERE concert_date = ?
+                    ORDER BY run_id DESC
+                    """.format(extra="".join(f", {c}" for c in opt)),
+                    (concert_date,),
+                ).fetchall()
+            finally:
+                obs_conn.close()
+            runs = [
+                {"run_id": r["run_id"]}
+                | {c: (r[c] if c in opt else None) for c in _RUN_LIST_COLS}
+                for r in rows
+            ]
+            return jsonify({"date": concert_date, "runs": runs})
+        except RuntimeError:
+            # Locked mid-run — the picker degrades to empty, same as §6's strip.
+            _log.warning("tapematch_runs_for_date: observations.db locked (date=%s)",
+                         concert_date)
+            return jsonify({"date": concert_date, "runs": []})
+        except Exception as exc:
+            _log.exception("tapematch_runs_for_date failed for date=%s", concert_date)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapematch/run_snapshot", methods=["GET"])
+    def tapematch_run_snapshot() -> Response:
+        """One run's own pairs + sources, for the §12 run diff.
+
+        Query params: date=YYYY-MM-DD and run_id (both required). The diff
+        itself is a pure function of two of these snapshots and is computed in
+        the renderer (README §12 "diffing is computed client-side; neither run
+        is mutated by viewing") — this route only reads.
+
+        ``human_judgment`` rides along on the pairs even though it belongs to
+        the pair rather than to the run: §12's last section reconciles the
+        curator's judgments against the two runs' calls, and it is the same
+        column /api/tapematch/pairs already returns.
+
+        Returns:
+            200 ``{date, run_id, run: {...}|null, sources: [...], pairs: [...]}``;
+            400 when a param is missing; ``run`` null with empty lists for an
+            unknown run or an absent/locked DB.
+        """
+        from backend import tapematch_sync as _tapematch_sync
+
+        concert_date = request.args.get("date")
+        run_id = request.args.get("run_id")
+        if not concert_date or not run_id:
+            return jsonify({"error": "missing_fields"}), 400
+        empty = {"date": concert_date, "run_id": run_id, "run": None,
+                 "sources": [], "pairs": []}
+        try:
+            obs_path = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH
+            if not Path(obs_path).exists():
+                return jsonify(empty)
+            obs_conn = _tapematch_sync._open_observations_db(obs_path)
+            try:
+                run_cols = {c["name"] for c in obs_conn.execute("PRAGMA table_info(runs)")}
+                run_opt = [c for c in _RUN_LIST_COLS if c in run_cols]
+                run_row = obs_conn.execute(
+                    "SELECT run_id{extra} FROM runs WHERE run_id = ? AND concert_date = ?"
+                    .format(extra="".join(f", {c}" for c in run_opt)),
+                    (run_id, concert_date),
+                ).fetchone()
+                if run_row is None:
+                    return jsonify(empty)
+                run = (
+                    {"run_id": run_row["run_id"]}
+                    | {c: (run_row[c] if c in run_opt else None) for c in _RUN_LIST_COLS}
+                )
+
+                src_cols = {c["name"] for c in obs_conn.execute("PRAGMA table_info(sources)")}
+                src_opt = [c for c in _SNAPSHOT_SOURCE_COLS if c in src_cols]
+                src_rows = obs_conn.execute(
+                    """
+                    SELECT lb_number{extra}
+                    FROM sources
+                    WHERE run_id = ? AND concert_date = ? AND lb_number IS NOT NULL
+                    ORDER BY lb_number
+                    """.format(extra="".join(f", {c}" for c in src_opt)),
+                    (run_id, concert_date),
+                ).fetchall()
+
+                pair_cols = {c["name"] for c in obs_conn.execute("PRAGMA table_info(pairs)")}
+                pair_opt = [c for c in _SNAPSHOT_PAIR_COLS if c in pair_cols]
+                pair_rows = obs_conn.execute(
+                    """
+                    SELECT lb_a, lb_b{extra}
+                    FROM pairs
+                    WHERE run_id = ? AND concert_date = ?
+                    ORDER BY lb_a, lb_b
+                    """.format(extra="".join(f", {c}" for c in pair_opt)),
+                    (run_id, concert_date),
+                ).fetchall()
+            finally:
+                obs_conn.close()
+
+            sources = [
+                {"lb_number": r["lb_number"]}
+                | {c: (r[c] if c in src_opt else None) for c in _SNAPSHOT_SOURCE_COLS}
+                for r in src_rows
+            ]
+            pairs = [
+                {"lb_a": r["lb_a"], "lb_b": r["lb_b"]}
+                | {c: (r[c] if c in pair_opt else None) for c in _SNAPSHOT_PAIR_COLS}
+                for r in pair_rows
+            ]
+            return jsonify({"date": concert_date, "run_id": run_id, "run": run,
+                            "sources": sources, "pairs": pairs})
+        except RuntimeError:
+            _log.warning("tapematch_run_snapshot: observations.db locked (run=%s)", run_id)
+            return jsonify(empty)
+        except Exception as exc:
+            _log.exception("tapematch_run_snapshot failed for run=%s", run_id)
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
     @app.route("/api/ab_clip", methods=["POST"])
