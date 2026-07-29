@@ -1,3 +1,31 @@
+[2026-07-28] — feat: TapeMatch Curation phase 9 — the §10 edge and transient states
+Fixed: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — every loading flag was
+  keyed on react-query v5's isLoading, which is isPending && isFetching; under
+  PersistQueryClientProvider a query's fetchStatus stays idle until the IndexedDB restore
+  finishes, so isLoading is false exactly while nothing is known and no skeleton ever showed on
+  a cold start. Keyed on isPending now. The visible symptom was the triage rail rendering its
+  empty state — "Nothing here." — for the seconds /api/tapematch/dates (3,195 dates) was in
+  flight, telling the curator the queue was empty.
+Added: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — the §10 states. §10.1
+  skeletons: a shared primitive whose sweep is deliberately faint (4.5% white, dropped under
+  prefers-reduced-motion) so it doesn't fight the matrix's own colour coding, rail skeleton
+  rows, and a matrix skeleton that renders the real grid — same template, same aspect-ratio
+  cells, same diagonal — off the recording count, which is known long before any pair
+  measurement, so nothing reflows when values arrive. §10.2 fetch error: the real request,
+  error, run id and attempt count in a mono detail block, a Retry, and the required
+  reassurance that saved judgments are safe; the date header keeps what it knows and overrides
+  the status pill to `unavailable`, drops the run pill and swaps the verdict line. §10.3 the
+  rail's empty state now states the outcome in the filter's own terms with a `Show all dates`
+  link. §10.4 zero-recording dates get a mute state naming both cause and recovery. §10.5
+  single-recording dates collapse to a solo card and the section retitles to Recording; Accept
+  families stays enabled there (nothing to rubber-stamp). §8's drawer gains its slide-in, a
+  focus trap and focus-restore to whatever opened it.
+Changed: instructions/design_handoff_tapematch_curation/WORK_PACKAGE.md — phase 9 marked done,
+  decisions D14 (skeleton names the pair count, not a fake done count), D15 (§10.4's two ghost
+  actions have nothing to open) and D16 (isPending, not isLoading) recorded. §10.6 was already
+  built in phase 2; its sticky-header/family-rule additions stay unbuilt pending the design
+  answer README itself asks for (Q7).
+
 [2026-07-28] — feat: TapeMatch Curation phase 7 — the report.md view (§11)
 Added: backend/app.py — GET /api/tapematch/report?date=. Same run resolution and read-only disk
   read as /api/tapematch/analysis (report.md is analysis.md's sibling in the run's archive dir),

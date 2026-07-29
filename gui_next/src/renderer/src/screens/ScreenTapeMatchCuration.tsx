@@ -181,6 +181,16 @@ const FILTERS: { key: FilterKey; label: string }[] = [
   { key: 'curated', label: 'Done' },
 ]
 
+// §10.3 — the rail's empty state states the outcome in the *filter's own
+// terms* rather than a bare "Nothing here.", because on three of the four
+// filters an empty list is good news, not a dead end.
+const EMPTY_FILTER_COPY: Record<FilterKey, [string, string]> = {
+  needs: ['Nothing needs you.', 'Every flagged date on this page is resolved.'],
+  conflict: ['No conflicts left.', 'Every disagreement on this page is resolved.'],
+  curated: ['Nothing accepted yet.', 'Dates you accept with `Accept families` collect here.'],
+  all: ['No dates yet.', 'TapeMatch has not synced any analysed dates into the app DB.'],
+}
+
 function matchesFilter(status: TriageStatus, filter: FilterKey): boolean {
   switch (filter) {
     case 'needs': return status === 'conflict' || status === 'review'
@@ -221,6 +231,190 @@ function CurationSection({
         <div style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>{hint}</div>
       </div>
       {children}
+    </div>
+  )
+}
+
+// ── §10 edge and transient states (Phase 9) ─────────────────────────────────
+// The skeleton primitive is §10.1's: a faint 4.5% sweep, deliberately dimmer
+// than a normal shimmer so it doesn't fight the matrix's own colour coding once
+// cells populate, and dropped entirely under prefers-reduced-motion.
+
+const SKELETON_CSS = `
+@keyframes lbbSkSweep { from { transform: translateX(-100%) } to { transform: translateX(100%) } }
+.lbbSk { position: relative; overflow: hidden; background: var(--lbb-surface2); border-radius: 4px; }
+.lbbSk::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.045) 45%, transparent);
+  animation: lbbSkSweep 1.25s cubic-bezier(.4,0,.2,1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lbbSk::after { animation: none; background: rgba(255,255,255,.02); }
+}
+@keyframes lbbDrawerIn { from { transform: translateX(14px); opacity: .4 } to { transform: none; opacity: 1 } }
+.lbbDrawer { animation: lbbDrawerIn 140ms cubic-bezier(.4,0,.2,1); }
+@media (prefers-reduced-motion: reduce) { .lbbDrawer { animation: none; } }
+`
+
+function Skeleton({
+  w, h, style,
+}: { w?: number | string; h: number; style?: React.CSSProperties }) {
+  return <div className="lbbSk" style={{ width: w ?? '100%', height: h, ...style }} />
+}
+
+/**
+ * §10.2 / §10.4 — the generic state block: one glyph, a head, a body that names
+ * both cause and recovery, an optional technical detail (this audience is
+ * technical; give them the real error) and optional actions.
+ */
+function CurationState({
+  glyph, tone, head, body, detail, actions,
+}: {
+  glyph: string
+  tone: 'bad' | 'mute'
+  head: string
+  body: string
+  detail?: string
+  actions?: React.ReactNode
+}) {
+  return (
+    <div style={{ maxWidth: 400, margin: '0 auto', paddingTop: 72, textAlign: 'center' }}>
+      <div style={{
+        fontSize: 26, color: tone === 'bad' ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)',
+      }}>{glyph}</div>
+      <div style={{ fontSize: 13.5, fontWeight: 700, marginTop: 8, color: 'var(--lbb-fg)' }}>
+        {head}
+      </div>
+      <div style={{ fontSize: 11.5, marginTop: 6, lineHeight: 1.6, color: 'var(--lbb-fg3)' }}>
+        {body}
+      </div>
+      {detail && (
+        <pre style={{
+          textAlign: 'left', margin: '11px 0 0', padding: '8px 11px', borderRadius: 6,
+          background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+          font: '500 10.5px/1.5 var(--lbb-mono)', color: 'var(--lbb-fg3)',
+          whiteSpace: 'pre-wrap',
+        }}>{detail}</pre>
+      )}
+      {actions && (
+        <div style={{ display: 'flex', gap: 8, justifyContent: 'center', marginTop: 13 }}>
+          {actions}
+        </div>
+      )}
+    </div>
+  )
+}
+
+/**
+ * §10.1 — the matrix skeleton renders the *real* grid, so nothing reflows when
+ * the measurements arrive: same template, same `aspect-ratio:1` cells, same
+ * diagonal treatment, N taken from the date's recording count (known from the
+ * families query long before any pair measurement is).
+ */
+function MatrixSkeleton({ recordings }: { recordings: MatrixRecording[] }) {
+  const n = recordings.length
+  const compact = n > COMPACT_THRESHOLD
+  const pairs = (n * (n - 1)) / 2
+  return (
+    <div style={{ overflowX: compact ? 'auto' : 'visible', maxWidth: compact ? undefined : 760 }}>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: compact ? `46px repeat(${n}, 22px)` : `52px repeat(${n}, minmax(0,1fr))`,
+        gap: compact ? 1 : 2,
+        width: compact ? 46 + n * 22 + (n + 1) : undefined,
+      }}>
+        <div />
+        {recordings.map(r => (
+          <div key={`hs${r.lb}`} style={{
+            display: 'flex', alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 3,
+          }}>
+            <Skeleton w={compact ? 8 : 34} h={8} />
+          </div>
+        ))}
+        {recordings.map((a, i) => (
+          <React.Fragment key={`rs${a.lb}`}>
+            <div style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'flex-end',
+              paddingRight: compact ? 3 : 5,
+            }}>
+              <Skeleton w={compact ? 34 : 34} h={8} />
+            </div>
+            {recordings.map((b, j) => (
+              i === j ? (
+                <div key={`s${a.lb}-${b.lb}`} style={{
+                  background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+                  borderRadius: compact ? 2 : 4, aspectRatio: '1',
+                }} />
+              ) : (
+                <div key={`s${a.lb}-${b.lb}`} className="lbbSk" style={{
+                  border: '1px solid var(--lbb-border)', borderRadius: compact ? 2 : 4,
+                  aspectRatio: '1',
+                }} />
+              )
+            ))}
+          </React.Fragment>
+        ))}
+      </div>
+      {/* §10.1 asks for `measuring 45 pairs · 31 done`. The pair count is
+          knowable up front (n(n−1)/2); the done count is not — the route
+          answers once with the whole set, so there is no partial progress to
+          report and inventing one would be a fake progress bar. */}
+      <div style={{
+        marginTop: 8, font: '500 10.5px var(--lbb-mono)', color: 'var(--lbb-fg3)',
+      }}>
+        measuring {pairs} pair{pairs === 1 ? '' : 's'}…
+      </div>
+    </div>
+  )
+}
+
+/**
+ * §10.5 — one recording means zero pairs, so the date collapses to a solo card
+ * rather than rendering three empty components. Rows the run didn't record are
+ * dropped rather than shown blank.
+ */
+function SoloCard({
+  lb, color, source,
+}: { lb: number; color: string; source: SourceRow | null }) {
+  const rows: [string, string][] = []
+  if (source?.folder_name) rows.push(['Folder', source.folder_name])
+  if (source?.speed_kind) {
+    rows.push(['Speed', source.speed_ppm != null && source.speed_kind !== 'speed-unknown'
+      ? `${source.speed_ppm > 0 ? '+' : ''}${source.speed_ppm.toLocaleString()} ppm · ${source.speed_kind}`
+      : source.speed_kind])
+  }
+  return (
+    <div style={{
+      maxWidth: 520, border: '1px solid var(--lbb-border)', borderRadius: 8,
+      background: 'var(--lbb-surface2)', padding: '13px 15px',
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+        <span style={{ width: 10, height: 10, borderRadius: 2, background: color }} />
+        <span style={{ font: '700 13px var(--lbb-mono)', color: 'var(--lbb-fg)' }}>
+          LB-{shortId(lb)}
+        </span>
+        <Pill tone="ok" soft>reference</Pill>
+      </div>
+      {rows.length > 0 && (
+        <div style={{
+          display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '4px 12px',
+          marginTop: 11, fontSize: 11,
+        }}>
+          {rows.map(([k, v]) => (
+            <React.Fragment key={k}>
+              <span style={{ color: 'var(--lbb-fg3)' }}>{k}</span>
+              <span style={{ color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>{v}</span>
+            </React.Fragment>
+          ))}
+        </div>
+      )}
+      <div style={{
+        borderTop: '1px solid var(--lbb-border)', paddingTop: 10, marginTop: 11,
+        fontSize: 11, lineHeight: 1.6, color: 'var(--lbb-fg3)',
+      }}>
+        Sole recording, so it becomes its own family with no evidence needed.
+        Accepting records the family without a human pair judgment.
+      </div>
     </div>
   )
 }
@@ -333,10 +527,12 @@ function TopBar({
 // ── §2 Triage queue rail ────────────────────────────────────────────────────
 
 function TriageRail({
-  rows, narrow, selectedDate, onOpen, cursorIndexRef, familyCountByDate,
+  rows, narrow, selectedDate, onOpen, cursorIndexRef, familyCountByDate, loading,
 }: {
   rows: DateRow[]
   narrow: boolean
+  /** §10.1 — /api/tapematch/dates is slow (3,195 dates); skeleton, don't lie. */
+  loading: boolean
   selectedDate: string | null
   onOpen: (date: string) => void
   cursorIndexRef: React.MutableRefObject<number>
@@ -449,9 +645,40 @@ function TriageRail({
       </div>
 
       <div ref={listRef} style={{ flex: 1, overflowY: 'auto', padding: 6, minHeight: 0 }}>
-        {filtered.length === 0 && (
-          <div style={{ padding: 20, textAlign: 'center', fontSize: 11.5, color: 'var(--lbb-fg3)' }}>
-            Nothing here.
+        {loading && rows.length === 0 && (
+          // §10.1 — the rail resolves first and is a cheap-looking query that
+          // isn't: rendering the empty state while it is in flight told the
+          // curator the queue was empty. Skeleton rows keep the shape.
+          <div aria-hidden style={{ padding: 4 }}>
+            {Array.from({ length: 9 }, (_, i) => (
+              <div key={i} style={{
+                display: 'flex', flexDirection: 'column', gap: 6,
+                padding: '9px 8px', borderBottom: '1px solid var(--lbb-border)',
+              }}>
+                <Skeleton w={92} h={9} />
+                <Skeleton w={narrow ? 130 : 168} h={8} />
+              </div>
+            ))}
+          </div>
+        )}
+        {!loading && filtered.length === 0 && (
+          <div style={{ padding: '20px 14px', textAlign: 'center' }}>
+            <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', fontWeight: 600 }}>
+              {EMPTY_FILTER_COPY[filter][0]}
+            </div>
+            <div style={{ fontSize: 10.5, marginTop: 6, lineHeight: 1.5, color: 'var(--lbb-fg3)' }}>
+              {EMPTY_FILTER_COPY[filter][1]}
+            </div>
+            {filter !== 'all' && (
+              <button
+                type="button"
+                onClick={() => setFilter('all')}
+                style={{
+                  marginTop: 9, background: 'transparent', border: 'none', padding: 0,
+                  font: '600 11px inherit', color: 'var(--lbb-accent-mid)', cursor: 'pointer',
+                }}
+              >Show all dates</button>
+            )}
           </div>
         )}
         {filtered.map((row, i) => {
@@ -557,8 +784,15 @@ type AcceptState =
 
 function DateHeader({
   row, narrow, verdictText, families, judgedCount, soloDate, onAccept, accept,
-  onOpenReport, reportButtonRef,
+  onOpenReport, reportButtonRef, dataState,
 }: {
+  /**
+   * §10.2 / §10.4 — the header keeps rendering what is known (date, venue) and
+   * overrides only the status pill and the verdict line: `unavailable` (bad)
+   * when the date's artifacts didn't come back, `no recordings` (mute) when the
+   * show is known but nothing is circulating.
+   */
+  dataState: 'ok' | 'error' | 'empty'
   row: DateRow | null
   narrow: boolean
   verdictText: string | null
@@ -582,6 +816,12 @@ function DateHeader({
     )
   }
   const status = statusOf(row)
+  const statusTone = dataState === 'error' ? 'bad' : dataState === 'empty' ? 'mute' : STATUS_TONE[status]
+  const statusLabel = dataState === 'error' ? 'unavailable'
+    : dataState === 'empty' ? 'no recordings' : STATUS_LABEL[status]
+  const verdictLine = dataState === 'error' ? "Couldn't load this date's analysis"
+    : dataState === 'empty' ? 'Known date · nothing circulating in the library'
+      : verdictText
   return (
     <div style={{
       display: 'flex', gap: 18, alignItems: 'flex-start', justifyContent: 'space-between',
@@ -596,13 +836,13 @@ function DateHeader({
           {row.location && (
             <span style={{ fontSize: 13, color: 'var(--lbb-fg2)' }}>{row.location}</span>
           )}
-          {row.run_id && <Pill tone="mute" soft>run {row.run_id}</Pill>}
+          {row.run_id && dataState === 'ok' && <Pill tone="mute" soft>run {row.run_id}</Pill>}
         </div>
         <div style={{ marginTop: 7, display: 'flex', alignItems: 'center', gap: 9, flexWrap: 'wrap' }}>
-          <Pill tone={STATUS_TONE[status]} soft>{STATUS_LABEL[status]}</Pill>
-          {verdictText && (
+          <Pill tone={statusTone} soft>{statusLabel}</Pill>
+          {verdictLine && (
             <span style={{ fontSize: 12, color: 'var(--lbb-fg2)' }}>
-              <VerdictClamp text={verdictText} />
+              <VerdictClamp text={verdictLine} />
             </span>
           )}
           {/* Provenance (model · run date) — dropped when unknown per README
@@ -2061,7 +2301,9 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
   const narrowRail = width <= 1380
   const narrowDossier = width <= 1520
 
-  const { data: datesData } = useQuery({
+  const {
+    data: datesData, isPending: datesPending, isError: datesError,
+  } = useQuery({
     queryKey: ['tapematch-dates'],
     queryFn: () => fetch(`${BASE}/api/tapematch/dates`).then(r => r.json()),
     staleTime: 30_000,
@@ -2091,7 +2333,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
   // rendering rules, so they belong next to the thing that renders them.
   const analysisDoc = useMemo(() => analysisMd ? parseAnalysisMd(analysisMd) : null, [analysisMd])
 
-  const { data: familiesData } = useQuery({
+  const { data: familiesData, isPending: familiesLoading } = useQuery({
     queryKey: ['tapematch-families-all'],
     queryFn: () => fetch(`${BASE}/api/tapematch/families`).then(r => r.json()),
     staleTime: 60_000,
@@ -2131,7 +2373,8 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
   )
 
   const {
-    data: pairsData, isLoading: pairsLoading, isError: pairsError,
+    data: pairsData, isPending: pairsLoading, isError: pairsError,
+    error: pairsErrorObj, failureCount: pairsFailureCount, refetch: refetchPairsQuery,
   } = useQuery({
     queryKey: ['tapematch-curation-pairs', selectedDate],
     queryFn: () => fetch(`${BASE}/api/tapematch/pairs?date=${encodeURIComponent(selectedDate as string)}`)
@@ -2151,7 +2394,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
   // the synced family assignment) because a date can have sources with no
   // synced pairs at all.
   const {
-    data: sourcesData, isLoading: sourcesLoading, isError: sourcesError,
+    data: sourcesData, isPending: sourcesLoading, isError: sourcesError,
   } = useQuery({
     queryKey: ['tapematch-curation-sources', selectedDate],
     queryFn: () => fetch(`${BASE}/api/tapematch/sources?date=${encodeURIComponent(selectedDate as string)}`)
@@ -2204,7 +2447,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
   useEffect(() => { setReportOpen(false) }, [selectedDate])
 
   const {
-    data: reportData, isLoading: reportLoading, isError: reportError,
+    data: reportData, isPending: reportLoading, isError: reportError,
   } = useQuery({
     queryKey: ['tapematch-report', selectedDate],
     queryFn: () => fetch(`${BASE}/api/tapematch/report?date=${encodeURIComponent(selectedDate as string)}`)
@@ -2213,6 +2456,17 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
     staleTime: 60_000,
   })
   const report = reportData as ReportResponse | undefined
+
+  // §8 production note — the drawer takes focus on open and hands it back to
+  // whatever opened it (a matrix cell or a speed dot) on close.
+  const drawerRef = useRef<HTMLDivElement>(null)
+  const drawerOpenerRef = useRef<HTMLElement | null>(null)
+  useEffect(() => {
+    if (!narrowDossier || !selectedPair) return
+    drawerOpenerRef.current = document.activeElement as HTMLElement | null
+    drawerRef.current?.focus()
+    return () => { drawerOpenerRef.current?.focus?.() }
+  }, [narrowDossier, selectedPair])
 
   const closeReport = () => {
     setReportOpen(false)
@@ -2312,10 +2566,14 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+      {/* §10.1's skeleton sweep and §8's drawer transition — keyframes can't be
+          expressed as inline styles, and this screen owns both. */}
+      <style>{SKELETON_CSS}</style>
       <TopBar crawl={crawl} judgedCount={judgedCount} date={selectedDate} />
       <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
         <TriageRail
           rows={allDates}
+          loading={datesPending && !datesError}
           narrow={narrowRail}
           selectedDate={selectedDate}
           onOpen={openDate}
@@ -2337,6 +2595,10 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
             accept={accept}
             onOpenReport={() => setReportOpen(true)}
             reportButtonRef={reportButtonRef}
+            dataState={
+              pairsError ? 'error'
+                : (!familiesLoading && !pairsLoading && recordings.length === 0) ? 'empty' : 'ok'
+            }
           />
           <div style={{
             display: 'grid',
@@ -2345,28 +2607,71 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
           }}>
             <div style={{ padding: narrowRail ? '6px 16px 22px' : '6px 22px 26px', minHeight: 0 }}>
               <CurationSection
-                title="Similarity matrix"
-                hint="family-ordered · % is the banded corr+embedding blend · click a cell for the dossier"
+                // §10.5 — on a solo date the section is a Recording, not a
+                // matrix, and the hint names the threshold so the state
+                // doesn't read as a bug.
+                title={recordings.length === 1 ? 'Recording' : 'Similarity matrix'}
+                hint={recordings.length === 1
+                  ? 'nothing to compare — pair views only appear from two recordings up'
+                  : 'family-ordered · % is the banded corr+embedding blend · click a cell for the dossier'}
               >
                 {!selectedRow ? (
                   <SectionPlaceholder label="Select a date from the triage queue." />
-                ) : recordings.length === 0 ? (
-                  // README §10.4 — known date, nothing circulating; not an error.
-                  <SectionPlaceholder label={
-                    'No recordings for this date — nothing to compare yet.'
-                  } />
-                ) : recordings.length === 1 ? (
-                  // README §10.5 — one recording means zero pairs. The full
-                  // .tmSolo write-path card is Phase 6 scope; here we just
-                  // name the threshold so the state doesn't read as a bug.
-                  <SectionPlaceholder label={
-                    `Only one recording (LB-${shortId(recordings[0].lb)}) on this date — `
-                    + 'pair views only appear from two recordings up.'
-                  } />
-                ) : pairsLoading ? (
-                  <SectionPlaceholder label="Loading pairs…" />
                 ) : pairsError ? (
-                  <SectionPlaceholder label="Couldn't load this date's pairs." />
+                  // §10.2 — the real error, not "something went wrong": this
+                  // audience is technical, and the reassurance about saved
+                  // judgments is required copy for a curator mid-session.
+                  <CurationState
+                    glyph="&#9888;"
+                    tone="bad"
+                    head="Couldn't load this date"
+                    body={
+                      "The run's artifacts didn't come back. Nothing has been changed — "
+                      + 'judgments you already saved are safe in observations.db.'
+                    }
+                    detail={
+                      `GET /api/tapematch/pairs?date=${selectedDate}\n`
+                      + `error   ${(pairsErrorObj as Error | null)?.message ?? 'request failed'}\n`
+                      + `run     ${selectedRow.run_id ?? '—'}\n`
+                      + `attempt ${pairsFailureCount}`
+                    }
+                    actions={
+                      <Button variant="primary" size="sm" onClick={() => { void refetchPairsQuery() }}>
+                        Retry
+                      </Button>
+                    }
+                  />
+                ) : familiesLoading || (pairsLoading && recordings.length === 0) ? (
+                  // §10.1 — N isn't known yet either, so this is the one
+                  // loading state that can't render the real grid.
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, maxWidth: 760 }}>
+                    <Skeleton w={220} h={10} />
+                    <Skeleton h={180} />
+                  </div>
+                ) : recordings.length === 0 ? (
+                  // §10.4 — a known show with nothing circulating. Mute, not
+                  // bad: nothing is wrong, and it re-enters the queue on its
+                  // own when a recording appears.
+                  <CurationState
+                    glyph="&#8709;"
+                    tone="mute"
+                    head="No recordings for this date"
+                    body={
+                      'The show is in the library but no audience recordings have been '
+                      + 'indexed, so TapeMatch has nothing to compare. It will re-enter the '
+                      + 'queue automatically when a recording appears.'
+                    }
+                  />
+                ) : recordings.length === 1 ? (
+                  // §10.5 — one recording means zero pairs, so the date
+                  // collapses to a solo card instead of three empty components.
+                  <SoloCard
+                    lb={recordings[0].lb}
+                    color={colorOf(recordings[0].lb)}
+                    source={speedSources.find(s => s.lb_number === recordings[0].lb) ?? null}
+                  />
+                ) : pairsLoading ? (
+                  <MatrixSkeleton recordings={recordings} />
                 ) : (
                   <Matrix
                     recordings={recordings}
@@ -2384,7 +2689,10 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
                 {!selectedRow ? (
                   <SectionPlaceholder label="Select a date from the triage queue." />
                 ) : sourcesLoading ? (
-                  <SectionPlaceholder label="Loading speed measurements…" />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, maxWidth: 760 }}>
+                    <Skeleton h={54} />
+                    <Skeleton w={280} h={9} />
+                  </div>
                 ) : sourcesError ? (
                   <SectionPlaceholder label="Couldn't load this date's speed measurements." />
                 ) : speedSources.length === 0 ? (
@@ -2456,7 +2764,25 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
           />
           <div
             role="dialog"
+            aria-modal="true"
             aria-label="Pair dossier"
+            className="lbbDrawer"
+            ref={drawerRef}
+            tabIndex={-1}
+            onKeyDown={e => {
+              if (e.key !== 'Tab') return
+              const root = e.currentTarget
+              const f = root.querySelectorAll<HTMLElement>(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+              )
+              if (!f.length) return
+              const first = f[0]
+              const last = f[f.length - 1]
+              if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus() }
+              if (e.shiftKey && (document.activeElement === first || document.activeElement === root)) {
+                e.preventDefault(); last.focus()
+              }
+            }}
             style={{
               position: 'fixed', top: 0, right: 0, bottom: 0, width: 'min(380px, 92vw)',
               zIndex: 30, background: 'var(--lbb-surface)', padding: 16,
