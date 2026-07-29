@@ -1,3 +1,35 @@
+[2026-07-29] — feat: TapeMatch Curation phase 8 — the §12 run diff; the build is complete
+Added: backend/app.py — GET /api/tapematch/runs?date= lists every run for a date, newest first
+  (the two pickers §12/Q8 asked for; 1989-06-04 has 15), and
+  GET /api/tapematch/run_snapshot?date=&run_id= returns that named run's own sources + pairs so
+  the renderer can diff two runs as a pure function. Both read-only, both probe their optional
+  columns, both degrade to empty on a locked observations.db. tests/test_tapematch_routes.py —
+  44 pass (3 new, incl. a two-run fixture proving the snapshot is the named run, not the latest).
+  Landed as commit f880d85f, unlogged until now.
+Added: gui_next/src/renderer/src/lib/runDiff.ts — the pure diff. §12.2's successor mapping (each
+  base family is inherited by the head family holding the plurality of its members, so a
+  carved-out family reports `split out of base F1` rather than "unchanged"), the sorted-pair-key
+  guard §12's implementation note demands, and §12.5's judgment reconciliation. Checked against
+  README §12.2's own fixture before wiring — base F1 `11201 11458 11340 11977` splitting into F1
+  (`11201 11458` + `13022`) and F3 (`11340 11977`) reproduces the design's reading exactly — then
+  against live runs of 1989-06-04 (5→4 families, one merge, one flipped call) and 1996-07-13.
+Added: gui_next/src/renderer/src/components/tapematch/RunDiffSheet.tsx — `Compare runs` in the
+  date header opens the sheet: run bar, four stat tiles, families with `+`/struck-through chips,
+  the §12.3 delta matrix (fill = magnitude, ring + `!` = the call flipped), the §12.4 pair table
+  and §12.5's judgment-impact rows. §12.1's pipeline-cause list is stated as underivable rather
+  than guessed — run artifacts record no threshold set (Q2 already made cause prose forward-only).
+Changed: gui_next/src/renderer/src/components/tapematch/ReportSheet.tsx — the portalled overlay
+  (scrim, sheet chrome, focus trap, Esc, scroll lock) extracted to
+  components/tapematch/SheetShell.tsx (D18) so §11 and §12 are the same object to the curator;
+  ReportSheet keeps only its own header controls and body. No behaviour change — 123 lines out.
+Changed: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — `Compare runs` button,
+  the two run/snapshot queries (fetched only once the sheet opens), and the default comparison:
+  previous run vs current, which is the pair that answers the question §12 exists for. Picks
+  reset on date change; a diff row can open that pair's dossier.
+Changed: instructions/design_handoff_tapematch_curation/ → instructions/complete/ (build closed,
+  all nine phases shipped); PROJECT.md + instructions/README.md updated for the new path.
+Changed: tools/tapematch/rerun_bug278.txt — BUG-278 rule_d re-run progress, 49 of 79 dates done.
+
 [2026-07-28] — feat: TapeMatch Curation phase 9 — the §10 edge and transient states
 Fixed: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — every loading flag was
   keyed on react-query v5's isLoading, which is isPending && isFetching; under

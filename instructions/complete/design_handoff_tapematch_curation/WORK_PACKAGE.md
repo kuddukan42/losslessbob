@@ -77,6 +77,25 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   two-ref case is additionally checked against the date's pair map, so a
   heading naming a pair the run didn't keep isn't clickable either.
 
+- **D17 — §12.1 ships as a stated absence, not a guess.** The cause list needs
+  each run to record its own threshold set; `runs.config_json` is 74 keys of
+  schema-growth noise and Q2 made the real thing forward-only. The section
+  therefore keeps its framing sentence and replaces the cause callout with one
+  info-toned paragraph saying the causes aren't derivable from these two runs
+  and that runs analysed from now on can carry them. Same for the run bar's
+  threshold line, which reads `thresholds not recorded by this run`. Inventing
+  a plausible cause from the deltas would be the one thing §12 must not do.
+- **D18 — the sheet chrome is now one component.** §12 says the diff "reuses
+  the report's sheet shell exactly", so `components/tapematch/SheetShell.tsx`
+  owns the overlay, scrim, sheet, header slots, optional rail and Esc/focus
+  trap, and both §11 and §12 render through it rather than keeping two copies
+  of a 60-line shell.
+- **D19 — the diff defaults to the two newest runs.** §12's question is "does
+  the new run invalidate what I decided?", so the pickers open on
+  `runs[1] → runs[0]`. Both are user-changeable selects (the design's own Q8
+  gap); picking the same run in both twice says so instead of rendering an
+  all-zero diff.
+
 - **D14 — the matrix skeleton names the pair count but not a done count.**
   §10.1 specifies `measuring 45 pairs · 31 done`. `n(n−1)/2` is knowable
   up front and is shown; the done count is not — `/api/tapematch/pairs`
@@ -210,7 +229,7 @@ Order follows README "Implementation Order", collapsed into committable bites.
 | 5 | Verdict cards §7 | B1 subject rule (ref / family / statement), B1.1 body structure, B2 tone table, A6/A8 | **done** (this session) |
 | 6 | Write path | judgment save (D4), `Accept families` → DB + date `curated` (Q4) | **done** (this session) |
 | 7 | report.md view §11 | backend route for report.md; A1 `===` sub-blocks, A2 rail, A3 coverage stats; `react-markdown` pinned (Q5) | **done** (this session) |
-| 8 | Run diff §12 | run-list route, run pickers (Q8), forward-only causes (Q2) | not started |
+| 8 | Run diff §12 | run-list route, run pickers (Q8), forward-only causes (Q2) | **done** (this session) |
 | 9 | §10 states | loading skeletons (no reflow), fetch error, empty filter, zero/single-recording dates, large-N matrix, drawer transition + focus | **done** (this session) |
 
 ## Resume log
@@ -375,3 +394,30 @@ Order follows README "Implementation Order", collapsed into committable bites.
   `tapematch_pairs` only carries dates with at least one pair, so every
   synced date has ≥2 recordings. Both remain defensive states.
   **Resume at Phase 8 (run diff §12) — the last phase.**
+- 2026-07-28 — Phase 8 (run diff §12) landed — **the last phase; the build is
+  complete.** Backend: `GET /api/tapematch/runs?date=` (every run, newest
+  first — the pickers Q8 asked for) and
+  `GET /api/tapematch/run_snapshot?date=&run_id=` (that named run's own
+  sources + pairs); `tests/test_tapematch_routes.py` 44 pass (3 new, incl. a
+  two-run fixture proving the snapshot is the named run and not the latest).
+  Frontend: `lib/runDiff.ts` — the pure diff, with §12.2's successor mapping
+  (each base family is inherited by the head family holding the plurality of
+  its members, so a carved-out family reports `split out of base F1` instead
+  of "unchanged"), the sorted-pair-key guard §12's implementation note demands,
+  and §12.5's judgment reconciliation; `components/tapematch/SheetShell.tsx`
+  (D18) and `components/tapematch/RunDiffSheet.tsx` — run bar, four stat
+  tiles, families with `+`/struck-through chips, the §12.3 delta matrix
+  (fill = magnitude, ring + `!` = the call flipped), the §12.4 table and
+  §12.5's impact rows. D17 records how §12.1 ships.
+  The diff was checked against README §12.2's own fixture before wiring — base
+  F1 `11201 11458 11340 11977` splitting into F1 (`11201 11458` + `13022`) and
+  F3 (`11340 11977`) reproduces the design's reading exactly (F1 regrouped,
+  +13022, −11340 −11977; F3 `split out of base F1` with no `+` chips) — and
+  then against live runs of 1989-06-04 (5→4 families, one merge, one flipped
+  call) and 1996-07-13.
+  `/gui-check` green; `/verify --electron` at 1920×1080 on 1989-06-04, both
+  for the default (two runs minutes apart, an honest all-zero diff) and after
+  driving the base picker to the oldest run: 4→4 families, the flipped
+  02470×14054 cell carrying its ring and `!`, `different → same` in the pair
+  table, the 13-pairs-unchanged line with `Show every pair`, and §12.5's empty
+  state.

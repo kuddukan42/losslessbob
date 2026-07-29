@@ -19,10 +19,10 @@
  */
 
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { createPortal } from 'react-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Button, Pill } from '../primitives'
+import { SheetShell } from './SheetShell'
 import { Icon } from '../Icon'
 import {
   lbsIn, outlineOf, panelDomId, parseReportMd,
@@ -439,7 +439,6 @@ export function ReportSheet(props: ReportSheetProps): React.JSX.Element {
   const [mode, setMode] = useState<'rendered' | 'raw'>('rendered')
   const [copied, setCopied] = useState(false)
   const docRef = useRef<HTMLDivElement>(null)
-  const sheetRef = useRef<HTMLDivElement>(null)
   const [activeId, setActiveId] = useState<string | null>(null)
 
   const doc: ReportDoc | null = useMemo(() => md ? parseReportMd(md) : null, [md])
@@ -458,18 +457,8 @@ export function ReportSheet(props: ReportSheetProps): React.JSX.Element {
     setOpenPanels(next)
   }, [doc])
 
-  // Esc closes the report. Capture phase with stopPropagation so it closes
-  // before the dossier drawer when both are open (§11 shell).
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { e.stopPropagation(); onClose() }
-    }
-    window.addEventListener('keydown', onKey, true)
-    return () => window.removeEventListener('keydown', onKey, true)
-  }, [onClose])
-
-  // Focus the sheet on open; the caller restores focus to `Open report.md`.
-  useEffect(() => { sheetRef.current?.focus() }, [])
+  // Esc, the focus trap and open-focus now live in SheetShell (D18); the
+  // caller still restores focus to `Open report.md` on close.
 
   // §11 — clicking an outline entry sets scrollTop by offset arithmetic, never
   // scrollIntoView (which would scroll the app shell behind the overlay too).
@@ -514,83 +503,42 @@ export function ReportSheet(props: ReportSheetProps): React.JSX.Element {
     return () => window.removeEventListener('beforeprint', onBeforePrint)
   }, [])
 
-  const body = (
-    <div
-      className="rpWrap"
-      style={{
-        position: 'fixed', inset: 0, zIndex: 40, display: 'flex',
-        alignItems: 'center', justifyContent: 'center', padding: 26,
-      }}
-    >
-      <div
-        onClick={onClose}
-        style={{ position: 'absolute', inset: 0, background: 'rgba(5,8,14,.62)' }}
-      />
-      <div
-        ref={sheetRef}
-        role="dialog"
-        aria-label={`report.md — ${date}`}
-        aria-modal="true"
-        tabIndex={-1}
-        className="rpSheet"
-        onKeyDown={trapFocus}
-        style={{
-          position: 'relative', width: 'min(1040px, 95vw)', height: 'min(880px, 94vh)',
-          background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
-          borderRadius: 10, boxShadow: '0 24px 70px rgba(0,0,0,.55)', overflow: 'hidden',
-          display: 'flex', flexDirection: 'column', minHeight: 0, outline: 'none',
-        }}
-      >
-        <div className="rpHead" style={{
-          display: 'flex', alignItems: 'center', gap: 12,
-          padding: '11px 14px', borderBottom: '1px solid var(--lbb-border)',
-          background: 'var(--lbb-surface2)', flex: '0 0 auto',
-        }}>
-          <div style={{ minWidth: 0 }}>
-            <div style={{ font: '700 13px var(--lbb-mono)', color: 'var(--lbb-fg)' }}>report.md</div>
-            <div
-              title={runDir ?? undefined}
-              style={{
-                font: '500 10.5px var(--lbb-mono)', color: 'var(--lbb-fg3)',
-                overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                maxWidth: 520, direction: 'rtl', textAlign: 'left',
-              }}
-            >{runDir ?? (runId ? `run ${runId}` : date)}</div>
-          </div>
-          <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 8 }}>
-            <div className="rpSeg" style={{
-              display: 'flex', background: 'var(--lbb-surface3)',
-              border: '1px solid var(--lbb-border)', borderRadius: 6, padding: 2,
-            }}>
-              {(['rendered', 'raw'] as const).map(m => (
-                <button
-                  key={m}
-                  type="button"
-                  onClick={() => setMode(m)}
-                  style={{
-                    border: 'none', borderRadius: 4, padding: '3px 10px', cursor: 'pointer',
-                    font: '600 11px var(--lbb-font)',
-                    background: mode === m ? 'var(--lbb-surface)' : 'transparent',
-                    color: mode === m ? 'var(--lbb-fg)' : 'var(--lbb-fg3)',
-                  }}
-                >{m === 'rendered' ? 'Rendered' : 'Raw'}</button>
-              ))}
-            </div>
-            <Button variant="ghost" size="sm" onClick={copy} disabled={!md}>
-              {copied ? 'Copied' : 'Copy'}
-            </Button>
-            <Button variant="ghost" size="sm" onClick={download} disabled={!md}>Download</Button>
-            <Button variant="ghost" size="sm" onClick={() => window.print()} disabled={!md}>
-              Print
-            </Button>
-            <Button variant="ghost" size="sm" onClick={onClose} aria-label="Close report">✕</Button>
-          </div>
-        </div>
+  const actions = (
+    <>
+      <div className="rpSeg" style={{
+        display: 'flex', background: 'var(--lbb-surface3)',
+        border: '1px solid var(--lbb-border)', borderRadius: 6, padding: 2,
+      }}>
+        {(['rendered', 'raw'] as const).map(m => (
+          <button
+            key={m}
+            type="button"
+            onClick={() => setMode(m)}
+            style={{
+              border: 'none', borderRadius: 4, padding: '3px 10px', cursor: 'pointer',
+              font: '600 11px var(--lbb-font)',
+              background: mode === m ? 'var(--lbb-surface)' : 'transparent',
+              color: mode === m ? 'var(--lbb-fg)' : 'var(--lbb-fg3)',
+            }}
+          >{m === 'rendered' ? 'Rendered' : 'Raw'}</button>
+        ))}
+      </div>
+      <Button variant="ghost" size="sm" onClick={copy} disabled={!md}>
+        {copied ? 'Copied' : 'Copy'}
+      </Button>
+      <Button variant="ghost" size="sm" onClick={download} disabled={!md}>Download</Button>
+      <Button variant="ghost" size="sm" onClick={() => window.print()} disabled={!md}>
+        Print
+      </Button>
+      <Button variant="ghost" size="sm" onClick={onClose} aria-label="Close report">✕</Button>
+    </>
+  )
 
-        {/* §11 stale banner — only when judgments exist. No `Regenerate`: the
-            standing constraint is no generator change, and a button that
-            can't regenerate is worse than the sentence alone. */}
-        {judgedCount > 0 && md && (
+  const banner = (
+    // §11 stale banner — only when judgments exist. No `Regenerate`: the
+    // standing constraint is no generator change, and a button that can't
+    // regenerate is worse than the sentence alone.
+    judgedCount > 0 && md ? (
           <div className="rpStale" style={{
             display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px',
             background: 'var(--lbb-warn-bg)', color: 'var(--lbb-warn-fg)',
@@ -600,15 +548,11 @@ export function ReportSheet(props: ReportSheetProps): React.JSX.Element {
             {judgedCount} human judgment{judgedCount === 1 ? '' : 's'} recorded since this report
             was generated — it doesn&rsquo;t reflect them yet.
           </div>
-        )}
+    ) : null
+  )
 
-        <div className="rpBody" style={{
-          display: 'grid', gridTemplateColumns: '196px minmax(0,1fr)', flex: 1, minHeight: 0,
-        }}>
-          <div className="rpOutline" style={{
-            background: 'var(--lbb-surface2)', borderRight: '1px solid var(--lbb-border)',
-            overflowY: 'auto', padding: '12px 8px', minHeight: 0,
-          }}>
+  const rail = (
+    <>
             <div style={{
               font: '700 9.5px var(--lbb-font)', textTransform: 'uppercase',
               letterSpacing: '.07em', color: 'var(--lbb-fg3)', padding: '0 7px 6px',
@@ -645,11 +589,11 @@ export function ReportSheet(props: ReportSheetProps): React.JSX.Element {
                 )}
               </button>
             ))}
-          </div>
+    </>
+  )
 
-          <div ref={docRef} className="rpDoc" style={{
-            overflowY: 'auto', padding: '22px 30px 60px', minHeight: 0, position: 'relative',
-          }}>
+  const body = (
+    <>
             {loading ? (
               <div style={{ color: 'var(--lbb-fg3)', fontSize: 12 }}>Loading report.md…</div>
             ) : error ? (
@@ -719,14 +663,22 @@ export function ReportSheet(props: ReportSheetProps): React.JSX.Element {
                 </div>
               </div>
             )}
-          </div>
-        </div>
-      </div>
-      <style>{PRINT_CSS}</style>
-    </div>
+    </>
   )
 
-  return createPortal(body, document.body)
+  return (
+    <SheetShell
+      name="report.md"
+      path={runDir ?? (runId ? `run ${runId}` : date)}
+      label={`report.md — ${date}`}
+      actions={actions}
+      banner={banner}
+      rail={rail}
+      css={PRINT_CSS}
+      docRef={docRef}
+      onClose={onClose}
+    >{body}</SheetShell>
+  )
 }
 
 function SectionBody({
@@ -906,22 +858,6 @@ function tintSource(line: string): React.ReactNode {
     ))
   }
   return line || ' '
-}
-
-/** Keep tab focus inside the sheet while it is open (§11 implementation note). */
-function trapFocus(e: React.KeyboardEvent<HTMLDivElement>): void {
-  if (e.key !== 'Tab') return
-  const root = e.currentTarget
-  const focusables = root.querySelectorAll<HTMLElement>(
-    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-  )
-  if (!focusables.length) return
-  const first = focusables[0]
-  const last = focusables[focusables.length - 1]
-  if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus() }
-  if (e.shiftKey && (document.activeElement === first || document.activeElement === root)) {
-    e.preventDefault(); last.focus()
-  }
 }
 
 /**
