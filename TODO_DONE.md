@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-294: tapematch — rule-based auto-triage flagger (autoflag.py)
+Priority: High
+Status: Done
+Added: 2026-07-31
+Closed: 2026-07-31
+Description: Implement instructions/TAPEMATCH_AUTOFLAG_SPEC.md: compute a machine-derived clear/attention verdict per date from observations.db (rules R1 contradiction, R3 duration outlier, R5 label_suspect, R7 all-zero-multi), store as new auto_triage/auto_triage_reasons columns on tapematch_family_meta (do NOT overload review_flag), populate in _sync_one_date, and reorder the /tapematch-batch queue by it. Calibrated on the 1,362 labelled dates: clear-bucket purity 97.4%, retires 783 of 1,640 un-analysed dates to low priority.
+Shipped 2026-07-31. backend/tapematch_autoflag.py (rules R1/R3/R5/R7; R2/R4 rejected as below-base-rate, R6 deferred pending real staircase detection), auto_triage/auto_triage_reasons columns on tapematch_family_meta, populated for all 3,037 dates by tapematch_sync, and tools/tapematch/next_batch.py reordering the /tapematch-batch queue. Calibration: clear-bucket purity 0.974, attention precision 0.19 / recall 0.84. review_flag verified unchanged (440 rows / 130 dates). 1,070 backend tests pass.
+
 TODO-184: tapematch — rescue same-source false-negatives (channel-polarity inversion + partial overlap)
 Priority: Medium
 Status: Done

@@ -115,6 +115,7 @@ losslessbob/
 │   ├── ab_clips.py           # Aligned A/B listening clip service (LISTENING §2, TODO-231/232/233)
 │   ├── archive_org.py        # Internet Archive (archive.org) S3-like upload integration
 │   ├── sharing.py            # File-sharing: ephemeral token-based share state, streaming, Cloudflare Tunnel
+│   ├── tapematch_autoflag.py # Rule-based clear/attention triage per date, from observations.db
 │   ├── tapematch_sync.py     # Syncs TapeMatch family clustering from tools/tapematch/observations.db
 │   ├── geocoder.py           # Nominatim geocoder: geocode_one, place_manual, run_batch, get_progress
 │   └── venue_gazetteer.py    # TODO-223: venue_geocoded seed + resolution ladder (bounded Nominatim → Wikidata P625 → city anchor)
@@ -677,6 +678,8 @@ different recording set. See `instructions/design_handoff_unified_library/07-tap
 | run_id | TEXT | |
 | review_flag | INTEGER NOT NULL DEFAULT 0 | Set when the run's `analysis.md` verdict line reads "needs review"; applies to every family on that `concert_date` (the verdict judges the whole show, not one family) |
 | review_reason | TEXT | Short reason text parsed from the verdict line, if present |
+| auto_triage | TEXT | `'clear'` / `'attention'` — `backend/tapematch_autoflag.py`'s machine verdict, computed from `observations.db` for **every** date including the ~54% with no `analysis.md`. Also per-`concert_date`. Deliberately separate from `review_flag`: that means a human read the prose, this is a ~0.19-precision prioritisation hint whose value is the inverse (97.4% of `'clear'` dates were human-judged clean) |
+| auto_triage_reasons | TEXT | JSON array of fired rule names (`[]` when clear) |
 | imported_at | TIMESTAMP | |
 
 Exposed flat (no clustering logic client-side) via `GET /api/tapematch/families` →

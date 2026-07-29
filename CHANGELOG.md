@@ -1,3 +1,34 @@
+[2026-07-31] — feat(tapematch): rule-based auto-triage for the analysis backlog
+Added: instructions/complete/TAPEMATCH_AUTOFLAG_SPEC.md — spec + calibration record. Only 1,397 of 3,037
+  dates with a completed TapeMatch run have an analysis.md, and tapematch_sync reads the human
+  "needs review" verdict out of that prose, so the other 1,640 carried no review signal at all
+  (~62 more nights of /tapematch-batch to close). Everything else already worked without the
+  prose — families/pairs cover 3,036 dates today.
+Added: backend/tapematch_autoflag.py — machine 'clear'/'attention' verdict per date computed from
+  observations.db alone. Four rules survived calibration against the 1,362 labelled dates
+  (130 human-flagged): R1 an info-file same-source claim contradicted by near-zero correlation
+  (prec 0.23 / rec 0.68), R3 duration outlier vs the date median (0.19/0.46), R7 4+ sources with
+  no pair correlating at all (0.18/0.22), R5 label_suspect (0.25/0.02). R2 (low-confidence merge,
+  0.07) and R4 (coverage gap, 0.05) were REJECTED — both fire below the 9.5% base rate, i.e.
+  they are anti-signals. R6 staircase is deferred: segment count is not discontinuity detection,
+  the real logic in cli.py was never surfaced to observations.db, so 0.00 measures a bad proxy.
+  `python -m backend.tapematch_autoflag` reprints the calibration table so the operating point
+  stays re-checkable as the labelled set grows ~25/night.
+  Read the result asymmetrically: as a flag it is weak (0.19 precision — the human reads lineage
+  prose the rules cannot see), as a CLEAR signal it is strong (802 no-fire dates, 97.4% of them
+  human-judged clean). That retires 783 un-analysed dates to the back of the queue at a measured
+  2.6% miss rate (accepted by tj) and concentrates prose work on 892.
+Changed: backend/db.py — tapematch_family_meta gains auto_triage / auto_triage_reasons, with the
+  usual PRAGMA table_info guard. Deliberately NOT folded into review_flag/review_reason: those
+  mean a human read the prose, and merging a 0.19-precision heuristic in would have silently
+  degraded a field dossier.py and taper_attribution.py already trust.
+Changed: backend/tapematch_sync.py — compute_triage() runs once per sync over all dates and
+  populates the new columns alongside the existing analysis.md verdict. Verified: 3,037/3,037
+  dates now non-NULL, review_flag unchanged at 440 rows / 130 dates.
+Added: tools/tapematch/next_batch.py + .claude/commands/tapematch-batch.md — the batch queue now
+  orders by triage (attention first, most rules first, then fewest entries) instead of directory
+  name. Note for whoever runs it: triage_analysis.py does NOT solve this problem — on the current
+  backlog it yields AUTO=0 / ESCALATE=2,344, since any merge escalates.
 [2026-07-30] — feat(tapematch): §3 banter/ASR transcript matching (built, dark-launched)
 Added: tools/tapematch/tapematch/asr.py — FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3. Every other
   TapeMatch signal measures the music; this one measures the words. Gap finder (low-energy
