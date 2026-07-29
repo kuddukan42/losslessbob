@@ -1,4 +1,12 @@
 
+BUG-280: tapematch dates 1961-1968 land in 2061-2068 (strptime %y century pivot)
+Status: Open
+File(s): tools/tapematch/tapematch_session.py:1021,tools/tapematch/tapematch_session.py:1069,tools/tapematch/tapematch_session.py:1103
+Reported: 2026-07-29
+Description: All three date parses in tapematch_session.py use datetime.strptime(date_str, '%m/%d/%y') on the entries table's M/D/YY date_str. Python's %y follows the POSIX pivot: 00-68 -> 2000-2068, 69-99 -> 1969-1999. Dylan's 1961-1968 material therefore resolves to 2061-2068, while 1969+ is correct - which is why the earliest apparently-valid tapematch concert_date is 1969-08-31. Impact: 41 distinct dates, 41 run dirs under data/tapematch/runs/ (e.g. 20260726_105115_2063-04-12) and 41 concert_date values in tapematch_pairs, all future-dated. They sort to the end of the TapeMatch triage queue and render as future shows in the curation screen; 2063-04-12 (the Town Hall show, 15 recordings) is the largest. The analysis itself is sound - the pairs, families and verdicts for each date are computed over the right recordings, only the date label is wrong. Fix: pass an explicit century pivot (e.g. parse %m/%d/%y then subtract 100 years when the result is in the future, or pre-expand the 2-digit year against a 1960 floor) at all three sites, then backfill tapematch_pairs.concert_date and rename the affected run dirs. No tapematch_date_curation rows are affected (0 of the 41 dates has been accepted), so no curation record needs remapping.
+Root cause: Unknown
+Fix: —
+
 BUG-279: tapematch: `pytest tests/` launches REAL tapematch sessions against the production DB and live audio
 Status: FIXED 2026-07-27
 File(s): tools/tapematch/tests/test_batch_queue.py:24,tools/tapematch/tapematch_session.py:1473
