@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import re
 import shutil
 import sqlite3
@@ -35,6 +36,9 @@ from itertools import combinations
 from pathlib import Path
 
 import emb_live  # TODO-200: live emb_score/emb_score_global for addon_links.rule_d
+from tapematch.ingest import extract_own_lb_number
+
+log = logging.getLogger("tapematch_session")
 
 try:
     from bs4 import BeautifulSoup
@@ -777,6 +781,35 @@ def insert_sources(conn: sqlite3.Connection, run_id: str, date_iso: str,
         )
 
 
+def _assert_no_self_pair(lb_a: int | None, lb_b: int | None, na: str, nb: str,
+                          run_id: str, date_iso: str) -> None:
+    """Raise if two distinct source folders resolved to the same LB number.
+
+    BUG-277: a folder-name collision (an embedded cross-reference shadowing
+    a folder's own trailing LB tag) makes two different recordings resolve
+    to one LB number. Such a self-pair correlates 1.0 by construction and
+    reads as a spurious same_family merge, so a run must fail loudly here
+    rather than write a corrupt pair row.
+
+    Args:
+        lb_a: Resolved LB number for the first folder, or None if unresolved.
+        lb_b: Resolved LB number for the second folder, or None if unresolved.
+        na: First folder's name (for the error message).
+        nb: Second folder's name (for the error message).
+        run_id: The current run's id (for the error message).
+        date_iso: The current run's concert date (for the error message).
+
+    Raises:
+        AssertionError: If lb_a and lb_b are both resolved and equal.
+    """
+    if lb_a is not None and lb_b is not None and lb_a == lb_b:
+        raise AssertionError(
+            f"BUG-277 guard: run {run_id} ({date_iso}) resolved both "
+            f"folders {na!r} and {nb!r} to the same LB-{lb_a} -- "
+            "refusing to insert a self-pair"
+        )
+
+
 def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
                  results: dict, found_folders: dict[int, Path], run_at: str,
                  root_dir: Path = EXAMPLES_DIR) -> None:
@@ -790,6 +823,7 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
         sa, sb = srcs[na], srcs[nb]
         lb_a = _lb_num_from_folder(na, name_to_lb)
         lb_b = _lb_num_from_folder(nb, name_to_lb)
+        _assert_no_self_pair(lb_a, lb_b, na, nb, run_id, date_iso)
 
         # Normalize pair-key ordering so (A, B) and (B, A) never coexist as
         # distinct rows (see migrate_observations.py, Task 2).
@@ -863,17 +897,25 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
 def _lb_num_from_folder(folder_name: str, name_to_lb: dict[str, int] | None = None) -> int | None:
     """Return the LB number that *folder_name* belongs to.
 
-    Prefers the entry's own DB-resolved LB number (via *name_to_lb*, built from
-    ``found_folders``) over a regex scan of the folder name. Some folder names
-    embed a cross-referenced LB number ahead of the entry's own (e.g.
-    "1989-07-16 Bristol, CT [fixed LB-2204]-LB-10437-v"), which a plain regex
-    scan would mistake for the folder's own number. Falls back to the regex
-    scan only when no DB-known number applies to this folder.
+    The session-level DB lookup (*name_to_lb*, built from ``found_folders``)
+    is authoritative whenever it is supplied: a caller that passes a
+    *name_to_lb* map is telling us every folder in this session is
+    DB-resolved, so a miss against it is logged rather than silently
+    papered over by the regex (BUG-277 -- the regex fallback used to agree
+    with a wrong DB miss instead of flagging it). Falls back to
+    ``extract_own_lb_number()`` -- which strips bracketed cross-reference
+    segments (e.g. "1989-07-16 Bristol, CT [fixed LB-2204]-LB-10437-v") and
+    takes the LAST remaining LB-NNNNN match -- only when no *name_to_lb* map
+    is available at all (e.g. run_manual's DB-free sessions).
     """
-    if name_to_lb is not None and folder_name in name_to_lb:
-        return name_to_lb[folder_name]
-    m = re.search(r"LB-(\d+)", folder_name)
-    return int(m.group(1)) if m else None
+    if name_to_lb is not None:
+        if folder_name in name_to_lb:
+            return name_to_lb[folder_name]
+        log.warning(
+            "_lb_num_from_folder: %r not in the session's DB-resolved name_to_lb "
+            "map; falling back to folder-name regex", folder_name,
+        )
+    return extract_own_lb_number(folder_name)
 
 
 # ── report writer ──────────────────────────────────────────────────────────────
