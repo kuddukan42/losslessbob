@@ -81,7 +81,32 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   !same_family`, computed client-side. No sync, no migration, same best-effort
   null fallback as the rest of the block.
 
+- **D10 — the accept record is an additive table in observations.db, not a
+  schema change and not the app DB.** Q4 puts the record "alongside the
+  existing `pairs.human_judgment` writes", which is observations.db; the
+  standing constraint forbids changing *that* schema. Both hold at once
+  because `curation_accepts` is a table the tapematch generator never reads
+  or writes: nothing in the pipeline's own schema moves, and no migration
+  step exists (`CREATE TABLE IF NOT EXISTS` runs on every accept). Keeping it
+  next to `human_judgment` matters — curator truth for a date and curator
+  truth for its pairs are read together, and the app DB's `tapematch_pairs`
+  is a synced copy that a re-sync would talk over.
+- **D11 — the judged count is server truth, not a local queue.** §3 counts
+  judgments *queued*; D4's explicit Save means nothing is ever queued, so
+  `Accept families · n judged`, the top-bar pill and `n_judged` in the accept
+  record all count the same thing: non-null `human_judgment` on the date's
+  pairs, refetched after each save. §10.7's optimistic model and its "flush
+  pending judgments on Accept" are therefore not built (D4 already said so);
+  what replaces them is one refetch that keeps three counters from drifting.
+
 ## Carried into later phases (found while building, not fixed here)
+
+- **The save-status line can sit one line below the fold.** In the docked
+  dossier at 1920×1080 on a 6-recording date, `Save` is the last visible
+  control and §10.7's `Saved 14:22 · LB wrong` line renders just under it.
+  A curator who scrolled to reach Save will see it; one who saved via a
+  taller window may not. Confirmed present by DOM text, not by pixels.
+  Phase 9 (§10 states) owns any sticky/scroll treatment.
 
 - **§10.1 loading is a lie on the triage rail.** While `/api/tapematch/dates`
   is in flight (slow — 3,195 dates) the rail renders its empty state,
@@ -140,7 +165,7 @@ Order follows README "Implementation Order", collapsed into committable bites.
 | 3 | Dossier §8 | evidence bars, conditional correlation note, demoted fingerprint bar + coincidence band, A/B player (D3 → superseded, see below), judgment control + notes | **done** (this session) |
 | 4 | Speed strip §6 | √ scale, ticks, lane packing; A4 merged glyph, Q3 tooltip without `ratioConfidence` | **done** (this session) |
 | 5 | Verdict cards §7 | B1 subject rule (ref / family / statement), B1.1 body structure, B2 tone table, A6/A8 | **done** (this session) |
-| 6 | Write path | judgment save (D4), `Accept families` → DB + date `curated` (Q4) | **next** |
+| 6 | Write path | judgment save (D4), `Accept families` → DB + date `curated` (Q4) | **done** (this session) |
 | 7 | report.md view §11 | backend route for report.md; A1 `===` sub-blocks, A2 rail, A3 coverage stats, A9; `react-markdown` pinned (Q5) | not started |
 | 8 | Run diff §12 | run-list route, run pickers (Q8), forward-only causes (Q2) | not started |
 | 9 | §10 states | loading skeletons (no reflow), fetch error, empty filter, zero/single-recording dates, large-N matrix, drawer transition + focus | not started |
@@ -206,3 +231,20 @@ Order follows README "Implementation Order", collapsed into committable bites.
   2018-08-26 (clean line + not-on-disk) and 2001-05-02 (the live corpus's
   ref-only kv shape — 1993-06-27's chosen run has no `analysis.md`).
   **Resume at Phase 6 (write path).**
+- 2026-07-28 — Phase 6 (write path) landed. Backend: new `POST
+  /api/tapematch/dates/accept`, and `curated`/`curated_at` on
+  `/api/tapematch/dates`; `tests/test_tapematch_routes.py` 37 pass (6 new).
+  Frontend: the judgment control's Save wired to the shipped judgment route
+  with §10.7's save-status line, `Accept families · n judged` with §10.5's
+  single-recording special case, and the top-bar judgment pill. New decisions
+  D10 (where the accept record lives) and D11 (server-truth judged count)
+  below. `/gui-check` green; verified with `/verify --electron` on 1989-06-04
+  at 1920×1080 — `curated` pill, `Accept families · 1 judged` enabled,
+  `Accepted 08:49 PM`, and both save-status variants (`Saved 08:51 PM ·
+  Uncertain` / `· cleared`) read out of the DOM. Live-data test writes were
+  reverted afterwards: the accepted row was deleted (`curation_accepts` is
+  back to empty) and the pair judgment cleared, so the only durable change to
+  observations.db is the new empty table. `Uncertain` was used deliberately
+  for the test write — `confirmed_same`/`confirmed_different` are calibration
+  truth for `regression.py`, and a stray one would have polluted it.
+  **Resume at Phase 7 (report.md view §11).**

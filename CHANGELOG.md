@@ -1,3 +1,43 @@
+[2026-07-28] — feat: TapeMatch Curation phase 6 (write path — judgment save + Accept families)
+Added: backend/app.py — POST /api/tapematch/dates/accept, the curation screen's §3
+  "Accept families". The design handoff's Q4 puts the accept record "alongside the existing
+  pairs.human_judgment writes", i.e. in tools/tapematch/observations.db, while the build's
+  standing constraint forbids changing that DB's schema. Both hold: the record goes into
+  curation_accepts, an ADDITIVE table (concert_date PK, run_id, accepted_at, n_judged,
+  n_families, note) that the tapematch generator never reads or writes, created with
+  CREATE TABLE IF NOT EXISTS on every call so no migration step exists. n_judged is counted
+  server-side from pairs.human_judgment rather than taken from the client, so the stored record
+  reflects the DB at accept time; re-accepting a date replaces its row, because a rerun can move
+  the run under it. n_families is probed with PRAGMA table_info like the pairs route's secondary
+  metrics. 400 missing_fields / 404 no_run / 409 locked, same shapes as the judgment route.
+Changed: backend/app.py — GET /api/tapematch/dates now also carries curated/curated_at, read
+  from curation_accepts inside the read-only observations.db pass it already makes. The table
+  only exists once something has been accepted, so a missing table means "nothing curated yet",
+  not an error; both fields degrade to false/null when the DB can't be read, matching the
+  has_analysis/needs_review fallback next to them.
+Changed: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — the judgment control's
+  Save is wired to the shipped POST /api/tapematch/pairs/judgment, keeping WORK_PACKAGE D4's
+  explicit Cancel/Save rather than §10.7's optimistic model (409 `locked` is a real state an
+  optimistic button would have to lie about), plus §10.7's save-status line: Saving… / Saved
+  14:22 · LB wrong (fading back to the explainer after 4 s) / a persistent failure line with a
+  Retry button. `Accept families` gains its §3 count suffix and §10.5's single-recording
+  special case (enabled at zero judgments, because the "judge something first" rule exists to
+  stop rubber-stamping pair decisions and a solo date has none). The judged count is server
+  truth refetched after each save, not a local queue — with an explicit Save nothing is ever
+  queued, so the button suffix, the new top-bar pill and the accept record's n_judged all count
+  the same non-null human_judgment rows and cannot drift apart. `curated` now populates the
+  triage rail's fourth status and wins over conflict/review: it is the curator's own terminal
+  verdict, so an accepted date leaves the "Needs you" queue.
+Changed: tests/test_tapematch_routes.py — 6 new tests (37 pass): accept records the row and
+  counts judgments server-side, resolves the run when omitted, upserts on re-accept, 400 on a
+  missing date, 404 with no observations.db, and dates reporting curated before/after an accept
+  (including the missing-table case). The two exact-dict dates assertions gained the new keys.
+Changed: PROJECT.md — Flask route table: the new accept route, and dates' curated/curated_at.
+Note: verified against live data with /verify --electron on 1989-06-04, then reverted — the
+  accepted row was deleted and the test pair judgment cleared, so the only durable change to
+  observations.db is the new (empty) curation_accepts table. The test write used `uncertain`
+  deliberately: confirmed_same/confirmed_different are calibration truth for regression.py.
+
 [2026-07-28] — feat: TapeMatch Curation phase 5 (analysis verdict cards §7)
 Added: gui_next/src/renderer/src/lib/analysisMd.ts — parser for a run's analysis.md, for the
   curation screen's §7 stack. No backend change: /api/tapematch/analysis already returns the whole

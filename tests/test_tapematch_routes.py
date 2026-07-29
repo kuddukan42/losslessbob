@@ -618,11 +618,13 @@ def test_dates_route_aggregates_pairs_locations_and_analysis(monkeypatch):
                 "date": "1991-01-01", "run_id": "20260101_000000",
                 "n_lbs": 3, "n_pairs": 3, "has_analysis": True,
                 "needs_review": True, "location": "Hamburg, Germany",
+                "curated": False, "curated_at": None,
             }
             assert d_feb == {
                 "date": "1991-02-02", "run_id": "20260102_000000",
                 "n_lbs": 2, "n_pairs": 1, "has_analysis": False,
                 "needs_review": None, "location": None,
+                "curated": False, "curated_at": None,
             }
     finally:
         db.close_connection(db_path)
@@ -648,6 +650,7 @@ def test_dates_route_missing_observations_db_nulls_analysis_fields(monkeypatch):
                     "date": "1991-01-01", "run_id": "20260101_000000",
                     "n_lbs": 2, "n_pairs": 1, "has_analysis": None,
                     "needs_review": None, "location": None,
+                    "curated": False, "curated_at": None,
                 }
             ]
     finally:
@@ -868,6 +871,213 @@ def test_judgment_route_pair_not_found_is_404(monkeypatch):
             )
             assert resp.status_code == 404
             assert resp.get_json() == {"error": "pair_not_found"}
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ── POST /api/tapematch/dates/accept ─────────────────────────────────────────
+
+
+def _make_accept_db(tmp_dir, run_id, concert_date, judgments):
+    """Create an observations.db with runs + pairs rows for accept-route tests.
+
+    Args:
+        tmp_dir: Directory to create observations.db in.
+        run_id: Run identifier seeded on both the run and its pairs.
+        concert_date: ISO concert date seeded on both.
+        judgments: One human_judgment value (or None) per seeded pair; pairs
+            are numbered LB 10/20, 10/30, 20/30… in order.
+
+    Returns:
+        Path to the created observations.db file.
+    """
+    obs_path = os.path.join(tmp_dir, "observations.db")
+    conn = sqlite3.connect(obs_path)
+    conn.execute(
+        "CREATE TABLE runs (run_id TEXT PRIMARY KEY, concert_date TEXT NOT NULL, "
+        "n_sources_ran INTEGER, n_families INTEGER, archive_dir TEXT)"
+    )
+    conn.execute(
+        "INSERT INTO runs (run_id, concert_date, n_sources_ran, n_families, archive_dir) "
+        "VALUES (?, ?, 3, 2, ?)",
+        (run_id, concert_date, os.path.join(tmp_dir, "run1")),
+    )
+    conn.execute(
+        "CREATE TABLE pairs (id INTEGER PRIMARY KEY AUTOINCREMENT, run_id TEXT NOT NULL, "
+        "concert_date TEXT NOT NULL, lb_a INTEGER, lb_b INTEGER, "
+        "human_judgment TEXT, human_notes TEXT)"
+    )
+    lbs = [(10, 20), (10, 30), (20, 30)]
+    for (lb_a, lb_b), judgment in zip(lbs, judgments):
+        conn.execute(
+            "INSERT INTO pairs (run_id, concert_date, lb_a, lb_b, human_judgment) "
+            "VALUES (?, ?, ?, ?, ?)",
+            (run_id, concert_date, lb_a, lb_b, judgment),
+        )
+    conn.commit()
+    conn.close()
+    return obs_path
+
+
+def test_accept_route_records_date_and_counts_judgments(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        obs_path = _make_accept_db(
+            tmp_dir, "20260101_000000", "1991-01-01",
+            ["confirmed_same", None, "lb_wrong"],
+        )
+        monkeypatch.setattr(app_module, "TAPEMATCH_DB_PATH", obs_path)
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+
+        with _AppClient(db_path) as client:
+            resp = client.post(
+                "/api/tapematch/dates/accept",
+                json={"date": "1991-01-01", "run_id": "20260101_000000"},
+            )
+            assert resp.status_code == 200
+            body = resp.get_json()
+            assert body["ok"] is True
+            assert body["date"] == "1991-01-01"
+            assert body["run_id"] == "20260101_000000"
+            # Counted server-side from pairs.human_judgment, not from the client.
+            assert body["n_judged"] == 2
+            assert body["n_families"] == 2
+            assert body["accepted_at"]
+
+            conn = sqlite3.connect(obs_path)
+            row = conn.execute(
+                "SELECT run_id, n_judged, n_families FROM curation_accepts "
+                "WHERE concert_date = '1991-01-01'"
+            ).fetchone()
+            conn.close()
+            assert row == ("20260101_000000", 2, 2)
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_accept_route_resolves_run_id_when_omitted(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        obs_path = _make_accept_db(
+            tmp_dir, "20260101_000000", "1991-01-01", [None, None, None],
+        )
+        monkeypatch.setattr(app_module, "TAPEMATCH_DB_PATH", obs_path)
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+
+        with _AppClient(db_path) as client:
+            resp = client.post("/api/tapematch/dates/accept", json={"date": "1991-01-01"})
+            assert resp.status_code == 200
+            body = resp.get_json()
+            assert body["run_id"] == "20260101_000000"
+            # §10.5: a date with nothing judged is still acceptable.
+            assert body["n_judged"] == 0
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_accept_route_reaccept_replaces_the_row(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        obs_path = _make_accept_db(
+            tmp_dir, "20260101_000000", "1991-01-01", [None, None, None],
+        )
+        monkeypatch.setattr(app_module, "TAPEMATCH_DB_PATH", obs_path)
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+
+        with _AppClient(db_path) as client:
+            first = client.post("/api/tapematch/dates/accept", json={"date": "1991-01-01"})
+            assert first.get_json()["n_judged"] == 0
+
+            conn = sqlite3.connect(obs_path)
+            conn.execute("UPDATE pairs SET human_judgment = 'uncertain' WHERE lb_a = 10")
+            conn.commit()
+            conn.close()
+
+            second = client.post(
+                "/api/tapematch/dates/accept",
+                json={"date": "1991-01-01", "note": "revisited"},
+            )
+            assert second.get_json()["n_judged"] == 2
+
+            conn = sqlite3.connect(obs_path)
+            rows = conn.execute(
+                "SELECT n_judged, note FROM curation_accepts WHERE concert_date = '1991-01-01'"
+            ).fetchall()
+            conn.close()
+            assert rows == [(2, "revisited")]
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_accept_route_missing_date_is_400():
+    db_path, tmp_dir = _make_db()
+    try:
+        with _AppClient(db_path) as client:
+            resp = client.post("/api/tapematch/dates/accept", json={})
+            assert resp.status_code == 400
+            assert resp.get_json() == {"error": "missing_fields"}
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_accept_route_no_observations_db_is_404(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        monkeypatch.setattr(
+            tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH",
+            os.path.join(tmp_dir, "does_not_exist.db"),
+        )
+        with _AppClient(db_path) as client:
+            resp = client.post("/api/tapematch/dates/accept", json={"date": "1991-01-01"})
+            assert resp.status_code == 404
+            assert resp.get_json() == {"error": "no_run"}
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_dates_route_reports_accepted_dates_as_curated(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_pairs(conn, [
+            ("1991-01-01", 10, 20, "20260101_000000"),
+            ("1991-02-02", 40, 50, "20260102_000000"),
+        ])
+        obs_path = _make_accept_db(
+            tmp_dir, "20260101_000000", "1991-01-01", ["confirmed_same", None, None],
+        )
+        obs_conn = sqlite3.connect(obs_path)
+        obs_conn.execute(
+            "INSERT INTO runs (run_id, concert_date, n_sources_ran, n_families, archive_dir) "
+            "VALUES (?, ?, 2, 1, ?)",
+            ("20260102_000000", "1991-02-02", os.path.join(tmp_dir, "run2")),
+        )
+        obs_conn.commit()
+        obs_conn.close()
+        monkeypatch.setattr(app_module, "TAPEMATCH_DB_PATH", obs_path)
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+
+        with _AppClient(db_path) as client:
+            # Before accepting, the table doesn't exist at all — not an error.
+            before = client.get("/api/tapematch/dates").get_json()["dates"]
+            assert all(d["curated"] is False for d in before)
+            assert all(d["curated_at"] is None for d in before)
+
+            client.post(
+                "/api/tapematch/dates/accept",
+                json={"date": "1991-01-01", "run_id": "20260101_000000"},
+            )
+
+            after = {d["date"]: d for d in client.get("/api/tapematch/dates").get_json()["dates"]}
+            assert after["1991-01-01"]["curated"] is True
+            assert after["1991-01-01"]["curated_at"]
+            assert after["1991-02-02"]["curated"] is False
     finally:
         db.close_connection(db_path)
         shutil.rmtree(tmp_dir, ignore_errors=True)
