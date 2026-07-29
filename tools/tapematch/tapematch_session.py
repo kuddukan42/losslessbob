@@ -246,6 +246,31 @@ def iso_to_db_date(iso: str) -> str:
     return f"{d.month}/{d.day}/{str(d.year)[2:]}"
 
 
+def parse_db_date(date_str: str) -> datetime:
+    """Parse an entries-table M/D/YY date string with a 1960 century floor.
+
+    ``datetime.strptime(date_str, "%m/%d/%y")`` follows the POSIX pivot
+    (00-68 -> 2000-2068, 69-99 -> 1969-1999), which sends Dylan's 1961-1968
+    material into 2061-2068 (BUG-280). This repo's corpus never has entries
+    before 1960, so any parse that lands in the future is re-anchored to the
+    prior century instead.
+
+    Args:
+        date_str: Date in ``M/D/YY`` or ``MM/DD/YY`` form (entries.date_str).
+
+    Returns:
+        The parsed ``datetime``, with the year corrected to the 1900s if the
+        POSIX pivot placed it in the future relative to a 1960 floor.
+
+    Raises:
+        ValueError: If date_str does not match ``%m/%d/%y``.
+    """
+    d = datetime.strptime(date_str, "%m/%d/%y")
+    if d.year > datetime.now().year:
+        d = d.replace(year=d.year - 100)
+    return d
+
+
 def make_run_id() -> str:
     return datetime.now().strftime("%Y%m%d_%H%M%S")
 
@@ -1018,7 +1043,7 @@ def suggest_dates(n: int = 20, min_entries: int = 3, max_entries: int = 5) -> No
         paged_lbs = [lb for lb in lbs if lb in paged]
         if min_entries <= len(paged_lbs) <= max_entries:
             try:
-                d = datetime.strptime(date_str, "%m/%d/%y")
+                d = parse_db_date(date_str)
                 iso = d.strftime("%Y-%m-%d")
             except ValueError:
                 continue
@@ -1066,7 +1091,7 @@ def get_year_dates(year: str, min_entries: int = 2) -> list[tuple[str, int, str,
     results = []
     for date_str, location, lbs_csv in rows:
         try:
-            d = datetime.strptime(date_str, "%m/%d/%y")
+            d = parse_db_date(date_str)
             iso = d.strftime("%Y-%m-%d")
         except ValueError:
             continue
@@ -1100,7 +1125,7 @@ def get_all_dates(min_entries: int = 2) -> list[tuple[str, int, str, list[int]]]
     results = []
     for date_str, location, lbs_csv in rows:
         try:
-            d = datetime.strptime(date_str, "%m/%d/%y")
+            d = parse_db_date(date_str)
             iso = d.strftime("%Y-%m-%d")
         except ValueError:
             continue
