@@ -6260,6 +6260,51 @@ def create_app() -> Flask:
             _log.exception("tapematch_analysis_for_date failed for date=%s", concert_date)
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
+    @app.route("/api/tapematch/report", methods=["GET"])
+    def tapematch_report_for_date() -> Response:
+        """The chosen TapeMatch run's report.md for one concert date (§11).
+
+        Query param: date=YYYY-MM-DD (required). Same run resolution and
+        read-only disk read as /api/tapematch/analysis — the two documents
+        are siblings in the run's archive dir — plus ``run_dir``, which §11's
+        sheet header prints so a curator can find the file on disk. 200 with
+        run_id/run_dir/report_md all null when the date has no run yet, and
+        report_md null (run_id/run_dir populated) when the run predates
+        report.md or never wrote one.
+        """
+        from backend import tapematch_sync as _tapematch_sync
+
+        concert_date = request.args.get("date")
+        if not concert_date:
+            return jsonify({"error": "missing_date"}), 400
+        empty = {"date": concert_date, "run_id": None, "run_dir": None, "report_md": None}
+        try:
+            obs_path = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH
+            if not Path(obs_path).exists():
+                return jsonify(empty)
+            obs_conn = _tapematch_sync._open_observations_db(obs_path)
+            try:
+                run_id = _tapematch_sync._pick_best_run(obs_conn).get(concert_date)
+                if run_id is None:
+                    return jsonify(empty)
+                run_dir = _tapematch_sync._resolve_run_dir(obs_conn, run_id, concert_date)
+            finally:
+                obs_conn.close()
+
+            report_path = run_dir / "report.md"
+            text = (
+                report_path.read_text(encoding="utf-8") if report_path.exists() else None
+            )
+            return jsonify(
+                {"date": concert_date, "run_id": run_id, "run_dir": str(run_dir),
+                 "report_md": text}
+            )
+        except RuntimeError as exc:
+            return jsonify({"error": "locked", "message": str(exc)}), 409
+        except Exception as exc:
+            _log.exception("tapematch_report_for_date failed for date=%s", concert_date)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     @app.route("/api/tapematch/dates", methods=["GET"])
     def tapematch_dates() -> Response:
         """Per-date summary of synced TapeMatch pairs, for the screen's left
