@@ -181,7 +181,7 @@ def stop_collection_watcher():
     _collection_poll_thread = None
 
 
-# ── Scheduled collection integrity scans (TODO-111) ────────────────────────────
+# ── Scheduled collection integrity scans (TODO-284) ────────────────────────────
 
 _integrity_scan_stop: threading.Event | None = None
 _integrity_scan_thread: threading.Thread | None = None

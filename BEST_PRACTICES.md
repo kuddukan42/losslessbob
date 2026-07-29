@@ -348,7 +348,7 @@ remain.
 ### Known temporary suppressions
 
 - **E501** (line-too-long) is configured in `pyproject.toml` but suppressed until the
-  TODO-109 code pass cleans up `app.py` (~53) and `db.py` (~22) pre-existing violations.
+  TODO-281 code pass cleans up `app.py` (~53) and `db.py` (~22) pre-existing violations.
   New code is still expected to respect the 100-char limit.
 
 ### Config files

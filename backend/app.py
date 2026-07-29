@@ -602,7 +602,7 @@ def create_app() -> Flask:
         return jsonify({"error": str(e)}), 500
 
     # Process start time, used by /api/system/uptime and /api/admin/status to
-    # show how long the backend has been running (TODO-112).
+    # show how long the backend has been running (TODO-285).
     _process_start_time = time.monotonic()
 
     # ── Gzip large JSON responses ─────────────────────────────────────────────
@@ -7863,7 +7863,7 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
-    # ── Collection Integrity Monitor (TODO-111) ──────────────────────────────
+    # ── Collection Integrity Monitor (TODO-284) ──────────────────────────────
 
     @app.route("/api/collection/integrity/scan", methods=["POST"])
     def collection_integrity_scan_start() -> Response:

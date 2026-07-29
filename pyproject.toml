@@ -21,7 +21,7 @@ select = [
 ignore = [
     # E501 (line-too-long) is documented in BEST_PRACTICES.md as a hard rule
     # but is temporarily suppressed here because app.py and db.py carry ~75
-    # pre-existing violations.  Re-enable after the TODO-109 code pass.
+    # pre-existing violations.  Re-enable after the TODO-281 code pass.
     "E501",
 ]
 

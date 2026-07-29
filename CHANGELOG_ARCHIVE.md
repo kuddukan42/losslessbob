@@ -294,10 +294,10 @@ Added: backend/app.py: POST /api/package/restore — detects package type, dry_r
 Added: gui/setup_tab.py: _PackageRestoreThread; "Restore from Zip…" button; dry-run + confirm dialog flow; _set_pkg_buttons_enabled helper
 Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: handleRestorePackage; ConfirmDialog conflict preview; "Restore from zip…" card in Data Packages SetupCard
 
-[2026-05-29] — feat(gui_next): ScreenSetup — Data Packages card with user data and scraped site data export (TODO-102, TODO-103)
+[2026-05-29] — feat(gui_next): ScreenSetup — Data Packages card with user data and scraped site data export (TODO-279, TODO-103)
 Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: pkgBusy/pkgUserResult/pkgScrapeResult state; handleExportUserData and handleExportScrapeData handlers; "Data Packages" SetupCard with per-type sub-cards, inline result display (path, file count, size), and clickable path link
 
-[2026-05-29] — feat(backend+gui+cli): data package export — user data and scraped site data (TODO-102, TODO-103)
+[2026-05-29] — feat(backend+gui+cli): data package export — user data and scraped site data (TODO-279, TODO-103)
 Added: backend/app.py: POST /api/package/user_data — zips losslessbob.db + settings.ini + gui_state.json into data/exports/losslessbob_userdata_YYYY-MM-DD.zip with JSON manifest
 Added: backend/app.py: POST /api/package/scrape_data — zips all of data/site/ into data/exports/losslessbob_sitedata_YYYY-MM-DD.zip with JSON manifest
 Added: gui/setup_tab.py: _PackageUserDataThread, _PackageScrapeDataThread worker classes; "Data Packages" QGroupBox with Export User Data and Export Scraped Site Data buttons and result dialog
@@ -321,11 +321,11 @@ Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: detail panel At
 Changed: gui_next/src/renderer/src/components/table.tsx: TH now accepts onClick + sorted prop with ▲▼⇅ sort indicators
 Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: removed hardcoded "FLAC · 16/44" placeholder pill from detail panel (TODO-127)
 
-[2026-05-29] — fix: resolve BUG-107, BUG-108, BUG-109
-Fixed: backend/app.py: POST /api/lookup/scan_folders endpoint added — recursively finds checksum sidecar files (.ffp, .md5, .st5, .sha1) under given folders (BUG-109)
-Fixed: backend/app.py: pipeline_scan_tree now checks root itself before rglob so flat folders with audio at the root level are included in results (BUG-108)
-Fixed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: handleFolders calls scan_folders endpoint to populate source content, so folder sources work with "Lookup all sources" (BUG-109)
-Fixed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: webUiTone converted to useState('ok') — badge now defaults to "connected" and reflects live test results instead of password config (BUG-107)
+[2026-05-29] — fix: resolve BUG-282, BUG-286, BUG-288
+Fixed: backend/app.py: POST /api/lookup/scan_folders endpoint added — recursively finds checksum sidecar files (.ffp, .md5, .st5, .sha1) under given folders (BUG-288)
+Fixed: backend/app.py: pipeline_scan_tree now checks root itself before rglob so flat folders with audio at the root level are included in results (BUG-286)
+Fixed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: handleFolders calls scan_folders endpoint to populate source content, so folder sources work with "Lookup all sources" (BUG-288)
+Fixed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: webUiTone converted to useState('ok') — badge now defaults to "connected" and reflects live test results instead of password config (BUG-282)
 
 [2026-05-28] — fix(gui_next): Pipeline screen no longer loses state when navigating away
 Fixed: gui_next/src/renderer/src/App.tsx: ScreenPipeline was unmounted by React Router on route change, wiping all useState (folders, queue, run status). Replaced the /pipeline Route with a KeepAlivePipeline wrapper that keeps the component permanently mounted and toggles visibility via display:none / display:contents.
@@ -735,7 +735,7 @@ Changed
 
 ---
 
-[2026-05-26] — feat(db): Dylan performances promoted to MASTER; lb_problems table added (TODO-086, TODO-090)
+[2026-05-26] — feat(db): Dylan performances promoted to MASTER; lb_problems table added (TODO-278, TODO-090)
 
 Added
 
@@ -821,7 +821,7 @@ Added
   tests/test_db_writes.py: TestLbMissing (8 tests) + TestPublicNoChecksums_Flag (6 tests).
     Total test count: 121 → 135.
 
-[2026-05-26] — fix(db): reconcile_all_lb_master bails early when checksums table is empty (BUG-116b)
+[2026-05-26] — fix(db): reconcile_all_lb_master bails early when checksums table is empty (BUG-298)
 
 Fixed
 

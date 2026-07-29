@@ -90,7 +90,8 @@ that PROJECT.md fails to mention and must exit 0 before finishing.
 ## Step 7 — Consistency check
 
 Verify before committing:
-- No BUG/TODO number used twice across the four files.
+- Run `.venv/bin/python3 tools/ledger.py doctor` and require exit 0 (it lists
+  every duplicate or letter-suffixed BUG/TODO id across the four files if not).
 - Every `Fixed`/`Done` item this session appears in a `*_DONE.md`, not the
   open file.
 - All dates are today's actual date.

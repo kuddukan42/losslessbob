@@ -1,3 +1,4 @@
+<!-- 2026-07-29: historical duplicate ids from the pre-ledger.py era were renumbered in this file; renumbered entries carry a `Formerly:` field. Ids referenced in git commit messages and in CHANGELOG entries predating 2026-07-29 may refer to the pre-renumber numbering. -->
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
@@ -662,7 +663,8 @@ Closed: 2026-07-14
 Description: Found while closing TODO-198 (2026-07-08): header-line grep (^TODO-N / ^BUG-N across the open+done pairs) turns up 17 duplicated TODO ids (024, 086, 102, 106-113, 140, 151, 153-155, 198) and 22 duplicated BUG ids (107-118ish, 167, 168, 175, 176, 193, 195, 200, 214-218). Almost all are low-numbered and predate tools/ledger.py (added 2026-07-07, TODO-205) — legacy manual-numbering debt from before next-id existed. TODO-198 was the one recent exception: its number was hand-set rather than assigned via next-id, bypassing the tool's own duplicate protection (_collect_ids scans both open+done files correctly, so the tool itself cannot produce a collision). Fix requires, per id: confirm which of the N entries is authoritative (check dates/content), grep every cross-reference (CHANGELOG.md mentions, [[TODO-NNN]]/[[BUG-NNN]] links in other entries, instructions/ docs) before renumbering the duplicate(s) via next-id, then verify no reference breaks. Do this as a batch script, not by hand — 39 ids is too many for manual edits to stay safe. Low priority: cosmetic/traceability issue, not a functional bug.
 Won't-fix (user decision 2026-07-14): all 39 duplicated ids sit in closed/archived entries, ledger.py next-id prevents new collisions, and the renumber needs hours of manual cross-ref attribution for zero functional gain. tools/ledger_dedup.py (report mode) remains available if it ever matters.
 
-TODO-109: Python best practices — BP document and code review
+TODO-281: Python best practices — BP document and code review
+Formerly: TODO-109 (duplicate, opened 2026-06-03)
 Priority: Low
 Status: Done
 Added: 2026-06-03
@@ -849,7 +851,8 @@ Description: Before calling post_lb_topic (backend/forum_poster.py), run an LBDI
   posted without at least a warning.
 Implemented: POST /api/entry/<lb>/post_forum (backend/app.py) now looks up the entry's my_collection.disk_path and runs checksum_utils.verify_folder() on it before contacting WTRF; blocks with 400 + mismatch/missing counts when status is fail or incomplete (the BUG-120 swapped/re-encoded-audio scenario). No gate when the LB isn't in my_collection (nothing to verify).
 
-TODO-108: Collection tab — fix header UI problems
+TODO-280: Collection tab — fix header UI problems
+Formerly: TODO-108 (duplicate, opened 2026-06-03)
 Priority: Medium
 Status: Done
 Added: 2026-06-03
@@ -861,7 +864,8 @@ Description: Investigate and fix UI problems with column headers on the Collecti
 ---
 Root bug: gui_next/src/renderer/src/components/table.tsx TH had whiteSpace:nowrap with no overflow/textOverflow, unlike TD — a resized-narrow column's header label spilled unclipped into the next column instead of ellipsizing. Wrapped header content in a clipped inner span (resize-handle hit target untouched). Also found 2 hardcoded English column headers (Type/Notes in ScreenCollection.tsx) skipping i18n; added collection.table.type/.notes keys, translated via DeepL to de/fr/es/it/nl.
 
-TODO-154: New DB field for r#### source info (e.g. r9453)
+TODO-291: New DB field for r#### source info (e.g. r9453)
+Formerly: TODO-154 (duplicate, opened 2026-06-22)
 Priority: Medium
 Status: Done
 Added: 2026-06-22
@@ -966,7 +970,8 @@ Description: User found LB-1594 and LB-5065 have identical quality ratings and a
   the 13 metric-identical ones (e.g. 3136/7538 7/8/78, 3147/7523 7/4/78) are prime curation bait.
 Implemented per 07-09 investigation: (a) family-sync conf bump +0.05 when a member pair shares scan_id with abs_score within 0.5 and same grade letter (corroboration only, feature-detected columns); (b) read-only duplicate-encode surfacing — duplicate_encode_candidates(), --dup-encodes CLI, GET /api/tapematch/dup_encodes (15 pairs live incl. LB-3136/7538, LB-3147/7523); never auto-merges. GUI surfacing deferred to TODO-215.
 
-TODO-153: Library/perf screen — backfill good tour names across all dates
+TODO-290: Library/perf screen — backfill good tour names across all dates
+Formerly: TODO-153 (duplicate, opened 2026-06-22)
 Priority: Medium
 Status: Done
 Added: 2026-06-22
@@ -989,7 +994,7 @@ Description: Add a new DB table for Olof's Files (Dylan tour/setlist archive) da
   on the existing setlistfm_shows table (backend/db.py:533-541), and a new scraper module
   (alongside backend/bobdylan_scraper.py and backend/site_crawler.py) to pull show and tour
   info from olofsfiles.com into it. This is a candidate secondary source for the tour-name
-  gaps tracked in TODO-153 — setlist.fm's tour_name field is empty for a large share of
+  gaps tracked in TODO-290 — setlist.fm's tour_name field is empty for a large share of
   dates, and Olof's Files may have better/more complete tour coverage.
 All 5 phases of FABLE_OLOF_FILES.md shipped 2026-07-10: P1 fetcher/mirror (471 pages) + P2 events (4,533) + P3 songs (61,708) + P4 chronicles (1,244 calendar + 79 new-tapes rows) + P5 surfacing (/api/olof/* endpoints, tour-name fallback, POST /api/olof/compare setlist matcher, gui_next Olof panel + About credit, i18n). olof_* stays local-only (not MASTER_TABLES) pending a redistribution decision. Follow-ups tracked separately: TODO-228 (2013+ PDF chronicles), TODO-226 Part A remainder (BobTalk search), TODO-224/225 (geocoder/fingerprinting riders).
 
@@ -1270,7 +1275,8 @@ Description: When a row's file step completes successfully and its bucket become
   selected rows they've already finished working with.
 Same applyFile success branch now sets selected: false when a row transitions to bucket 'done', so bulk-filed rows auto-clear their checkbox (ScreenPipeline.tsx).
 
-TODO-151: Pipeline — Open button uses stale path after rename/collect
+TODO-288: Pipeline — Open button uses stale path after rename/collect
+Formerly: TODO-151 (duplicate, opened 2026-06-18)
 Priority: Low
 Status: Done
 Added: 2026-06-18
@@ -1340,7 +1346,7 @@ Description: backend/geocoder.py (run_batch, _get_performance_location_string) c
   source='performances' in location_geocoded). It does not pull venue/city from
   setlistfm_shows (db.py:530-541, venue_name/city/country columns) or bobdylan_shows
   (db.py:508-518). Extend geocoding to cover these two tables as additional sources — likely
-  relevant to fixing the blank Map screen (BUG-215) since more complete location_geocoded
+  relevant to fixing the blank Map screen (BUG-305) since more complete location_geocoded
   coverage means more pins on the map.
 Added _get_bobdylan_shows_location_string() and _get_setlistfm_location_string() to backend/geocoder.py, wired into run_batch() via a priority-ordered _STRUCTURED_SOURCES list (bobdylan_shows -> setlistfm_shows -> dylan_performances -> raw text fallback). location_geocoded.source now records the matching table. 13 new tests in tests/test_geocoder.py; PROJECT.md updated.
 
@@ -1472,7 +1478,8 @@ Closed: 2026-07-08
 Description: pre-commit currently gates Python only (ruff); the dirty renderer typecheck baseline makes /gui-check's 'no new errors' comparison fuzzy. Known errors include IconButton disabled prop and shiftKey-on-ChangeEvent in ScreenPipeline.tsx. Fix the 14 baseline errors, then wire typecheck into pre-commit alongside ruff.
 Done with BUG-236: 14 baseline errors fixed, tsc -b + build clean, typecheck wired into pre-commit alongside ruff.
 
-TODO-198: TapeMatch recall recovery (CC_TAPEMATCH_FIXES) — remaining Tasks 2-7
+TODO-292: TapeMatch recall recovery (CC_TAPEMATCH_FIXES) — remaining Tasks 2-7
+Formerly: TODO-198 (duplicate, opened 2026-07-02)
 Priority: Medium
 Status: Done
 Added: 2026-07-02
@@ -1691,7 +1698,8 @@ Description: Parse 18 artifact/flaw vocabulary keys from entries.description usi
   Next step: calibration run to fit weights; expect txt_clipping/txt_digipop/txt_eac_match
   to carry strong negative weight; txt_talking/txt_singing moderate negative.
 
-TODO-140: tapematch — low-band/time-warp fallback for speed-offset misses
+TODO-287: tapematch — low-band/time-warp fallback for speed-offset misses
+Formerly: TODO-140 (duplicate, opened 2026-06-13)
 Priority: Low
 Status: Cancelled
 Added: 2026-06-13
@@ -1755,7 +1763,8 @@ Description: Three falsify-first pilots run against 1991-11-05 (the motivating e
   Calibration scripts: calibrate_contig_run.py, calibrate_fingerprint_localize.py,
   calibrate_fingerprint_baseline.py.
 
-TODO-151: Unified Library — visual refinement (typography roles + tabbed detail panels)
+TODO-289: Unified Library — visual refinement (typography roles + tabbed detail panels)
+Formerly: TODO-151 (duplicate, opened 2026-06-22)
 Priority: Medium
 Status: Done
 Added: 2026-06-22
@@ -2121,7 +2130,7 @@ pair, windowed/hiss correlation is ~100x below threshold at every lag, not just 
 zero-centered one, so search-range was never the limiting factor for these specific
 pairs. Full writeup in tools/tapematch/BASELINE.md "Task 4 results". Code kept (correct,
 tested, regression-free, useful for any future pair where drift-range *is* the issue).
-Follow-up tracked as TODO-140 (low-band/time-warp fallback, Task 4 spec step 5). Next:
+Follow-up tracked as TODO-287 (low-band/time-warp fallback, Task 4 spec step 5). Next:
 Task 5 (staircase short-window recalibration, 2001-10-30 / 2001-10-07 / 1996-07-21).
 Note (2026-06-13): Task 5 (staircase short-window recalibration) done. Added
 `align.union_staircase_sources` (union of both lag-curve passes' staircase
@@ -2177,7 +2186,7 @@ tools/tapematch/BASELINE.md "Task 7 results".
 Overall: TODO-139 (CC_TAPEMATCH_FIXES Tasks 2-7) is complete. Tasks 4/5's
 numeric accuracy targets were not met (root cause is recording signal
 content, not the alignment mechanism — documented in BASELINE.md); follow-ups
-tracked separately as TODO-140 (low-band/time-warp fallback) and TODO-144
+tracked separately as TODO-287 (low-band/time-warp fallback) and TODO-144
 (piecewise alignment for staircase pairs).
 
 TODO-145: Pipeline table — fix dead space before LB#/Apply/File columns
@@ -2245,12 +2254,12 @@ Implementation: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyFile 
   and applySelectedFileable now call applyFile(row, undefined, undefined, undefined, true).
   The single-row "File" button (line 2287) is unchanged and still confirms.
 
-TODO-140: Mounts screen — add drive stats to mount cards (TODO-110 follow-up)
+TODO-140: Mounts screen — add drive stats to mount cards (TODO-282 follow-up)
 Priority: Low
 Status: Done
 Added: 2026-06-12
 Closed: 2026-06-12
-Description: TODO-110 added free/total/used_pct mount stats only to the pipeline
+Description: TODO-282 added free/total/used_pct mount stats only to the pipeline
 Collect step's mount picker. Extend the same disk-usage display to the Mounts
 settings screen's mount cards.
 Implementation: backend/filer.py disk-usage calc extracted into
@@ -2260,7 +2269,8 @@ ScreenMounts.tsx CollectionMount gains free/total/used_pct; MountCard shows "fre
 total" with the same colour-coded usage bar (warn ≥75%, bad ≥90%). New locale keys
 mounts.freeOfTotal/mounts.usageTooltip added to all 6 locales.
 
-TODO-111: Collection integrity monitor — hash-based change detection for collection folders
+TODO-284: Collection integrity monitor — hash-based change detection for collection folders
+Formerly: TODO-111 (duplicate, opened 2026-06-09)
 Priority: Medium
 Status: Done
 Added: 2026-06-09
@@ -2283,7 +2293,8 @@ ScreenMounts.tsx MountCard severity badges + per-mount scan button, plus a new
 "4 · Integrity Monitor" section (scan controls/progress, findings table, change log
 with acknowledge).
 
-TODO-110: Pipeline — add free space and drive stats to mount cards
+TODO-282: Pipeline — add free space and drive stats to mount cards
+Formerly: TODO-110 (duplicate, opened 2026-06-09)
 Priority: Medium
 Status: Done
 Added: 2026-06-09
@@ -2296,7 +2307,8 @@ used_pct alongside free/span/online via shutil.disk_usage(). gui_next CollectDet
 MountPicker cards show "free of total" plus a colour-coded usage bar (warn >=75%, bad >=90%);
 reactively re-resolved by the existing pipeline polling.
 
-TODO-112: Backend uptime clock for debugging
+TODO-285: Backend uptime clock for debugging
+Formerly: TODO-112 (duplicate, opened 2026-06-10)
 Priority: Low
 Status: Done
 Added: 2026-06-10
@@ -2308,7 +2320,8 @@ GET /api/system/uptime endpoint (uptime_seconds); /api/admin/status now shares t
 same start-time reference. GUI displays it on the About screen's About tab, next to
 version/build info, as a live HH:MM:SS clock.
 
-TODO-113: Make app version numbering consistent
+TODO-286: Make app version numbering consistent
+Formerly: TODO-113 (duplicate, opened 2026-06-10)
 Priority: Low
 Status: Done
 Added: 2026-06-10
@@ -2366,7 +2379,8 @@ Added: 2026-06-09
 Closed: 2026-06-09
 Description: Added killPortProcess() in gui_next/src/main/index.ts. After the existing killStalePid() call, it uses lsof (Linux/Mac) or netstat+taskkill (Windows) to find and SIGTERM any process on port 5174, then waits 400ms before spawning a fresh backend. Guarantees a clean slate even when the previous backend was started outside Electron or the PID file was missing.
 
-TODO-110: Pipeline — handling for duplicate and linked LBs
+TODO-283: Pipeline — handling for duplicate and linked LBs
+Formerly: TODO-110 (duplicate, opened 2026-06-03)
 Priority: Medium
 Status: Done
 Added: 2026-06-03
@@ -2476,7 +2490,6 @@ Description: Add react-i18next to gui_next. Install i18next + react-i18next, cre
   selector to ScreenSetup Preferences card, wrap all hardcoded UI strings with t()
   in AppShell + all 10 translatable screen files, add TypeScript key-safety declaration.
 
-
 TODO-116: gui_next — identify and wire ScreenPipeline remaining 5% stub
 Priority: Low
 Status: Done
@@ -2494,7 +2507,7 @@ Priority: Medium
 Status: Done
 Added: 2026-05-27
 Closed: 2026-05-29
-Description: Restore flow accepting a zip archive produced by the export routes (TODO-102/103).
+Description: Restore flow accepting a zip archive produced by the export routes (TODO-279/103).
   Implemented:
     • POST /api/package/restore (backend/app.py) — detects type from manifest.json or file names;
       dry_run mode returns conflicts without writing; user_data restores db/settings/gui_state;
@@ -2516,7 +2529,8 @@ Description: Bundle all scraped data (data/site/ HTML pages and attachment files
 
 ---
 
-TODO-102: Data package — user data export
+TODO-279: Data package — user data export
+Formerly: TODO-102 (duplicate, opened 2026-05-27)
 Priority: Medium
 Status: Done
 Added: 2026-05-27
@@ -2817,7 +2831,6 @@ Description: Cancelled — tab restructure not desired.
 
 ---
 
-
 TODO-088: Master update — pull lb_master from GitHub repo instead of local file
 Priority: High
 Status: Done
@@ -2831,7 +2844,6 @@ Description: Added _GitHubMasterThread that fetches the latest release from
 
 ---
 
-
 TODO-099: Add lb_number column to location_overrides table
 Priority: Low
 Status: Done
@@ -2843,7 +2855,6 @@ Description: Added lb_number TEXT column to location_geocoded (the "location_ove
   location string). GUI Location Overrides table now shows LB# column.
 
 ---
-
 
 TODO-095: Detect webpage exists but no checksum in DB
 Priority: Medium
@@ -2866,7 +2877,8 @@ Description: New MASTER table lb_problems (id, lb_number FK→lb_master, notes, 
   CRUD API: GET/POST /api/lb_problems + PUT/DELETE /api/lb_problems/<id> (curator-only writes).
   Management via DB Editor (automatic). GUI indicator deferred.
 
-TODO-086: Add Dylan performance table to lb_master data
+TODO-278: Add Dylan performance table to lb_master data
+Formerly: TODO-086 (duplicate, opened 2026-05-23)
 Priority: Medium
 Status: Done
 Added: 2026-05-23
@@ -3751,7 +3763,8 @@ Description: Display a count of HTML files present in `data/pages/` next to the 
 
 ---
 
-TODO-024: Map tab — interactive map of concert locations
+TODO-277: Map tab — interactive map of concert locations
+Formerly: TODO-024 (duplicate, opened 2026-05-18)
 Priority: Low
 Status: Done
 Added: 2026-05-18

@@ -107,7 +107,7 @@ const LINKS: Link[] = [
 // Warm-white at alpha — for the double-frame strokes (works on dark surface).
 const w = (a: number) => `rgba(241,236,223,${a})`
 
-// Format a duration in seconds as HH:MM:SS (TODO-112: backend uptime clock).
+// Format a duration in seconds as HH:MM:SS (TODO-285: backend uptime clock).
 function formatUptime(totalSeconds: number): string {
   const pad = (n: number): string => String(n).padStart(2, '0')
   const h = Math.floor(totalSeconds / 3600)
@@ -118,7 +118,7 @@ function formatUptime(totalSeconds: number): string {
 
 // Fetches backend process uptime once, then ticks it locally every second.
 // Lets the user confirm whether a backend restart actually happened after a
-// code change (TODO-112).
+// code change (TODO-285).
 function useBackendUptime(): string | null {
   const [display, setDisplay] = useState<string | null>(null)
 

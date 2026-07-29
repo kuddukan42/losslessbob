@@ -1,3 +1,4 @@
+<!-- 2026-07-29: historical duplicate ids from the pre-ledger.py era were renumbered in this file; renumbered entries carry a `Formerly:` field. Ids referenced in git commit messages and in CHANGELOG entries predating 2026-07-29 may refer to the pre-renumber numbering. -->
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
@@ -329,7 +330,8 @@ Fixed: 2026-07-08
 Root cause: Content-Disposition filename regex matched the RFC 5987 filename*= form and captured the charset token 'UTF-8'; in batch runs every torrent shared that name and overwrote the previous one (data loss). Core regex fix was already committed in c3257c02 but the ledger was never updated.
 Fix: Parsing extracted into _filename_from_content_disposition(): plain filename= preferred; filename*= handled per RFC 5987 (strip charset''lang'', percent-decode with the declared charset); attach-id/LB fallback when neither usable. 11 new unit tests in tests/test_wtrf_scraper.py, all passing.
 
-BUG-217: Incremental crawler does not pick up new LB website pages when posted
+BUG-307: Incremental crawler does not pick up new LB website pages when posted
+Formerly: BUG-217 (duplicate, opened 2026-06-22)
 Status: Fixed
 File(s): backend/site_crawler.py, backend/db.py
 Reported: 2026-06-22
@@ -454,7 +456,8 @@ Root cause: QueueRow in PipelineParts always used BUCKET[folder.bucket].label; s
 Fix: QueueRow now checks if any step has state 'blocked' and overrides tone+label to bad/Blocked.
   File button condition extended to exclude rows where any of verify/lookup/lbdir/rename is bad.
 
-BUG-195: Pipeline — incomplete-match folders (FFP-only) show yellow LBDIR/rename/file and allow action
+BUG-303: Pipeline — incomplete-match folders (FFP-only) show yellow LBDIR/rename/file and allow action
+Formerly: BUG-195 (duplicate, opened 2026-06-17)
 Status: Fixed
 File(s): backend/app.py:5535-5556, gui_next/src/renderer/src/screens/ScreenPipeline.tsx:688,761-785
 Reported: 2026-06-17
@@ -470,13 +473,12 @@ Fix: Backend clears lb_number for downstream steps after an incomplete-match loo
   handlePin now runs all downstream steps (lookup/lbdir/rename/file) after pinning, not
   just re-lookup.
 
-BUG-193: Scraper — new shows not discovered; hardcoded sitemap list misses dynamic sitemaps
+BUG-302: Scraper — new shows not discovered; hardcoded sitemap list misses dynamic sitemaps
+Formerly: BUG-193 (duplicate, opened 2026-06-15)
 Status: Fixed
 File(s): backend/bobdylan_scraper.py:32-36, 123-149
 Reported: 2026-06-15
 Fixed: 2026-06-15
-NOTE: duplicate id — an older, unrelated BUG-193 (importer ProgrammingError) also exists in
-  this file; renumbering is pending the TODO-209 dedup pass.
 Root cause: _SITEMAP_URLS was hardcoded to 3 URLs. WordPress generates date sitemaps
   dynamically; as the site grows past 2000 entries a new numbered file appears. Sitemaps 2
   and 3 returned 404 (silent in _fetch), so only sitemap 1 was used. New shows landing in
@@ -676,7 +678,8 @@ Fix: Added a cross-recording guard: any candidate whose body MD5/SHA1 checksums 
   already proves ownership). Turns the false "ambiguous" into a correct "not_found" for the
   fallback path and prevents downloading the wrong taper's torrent.
 
-BUG-218: Performance screen — column widths wrong/misaligned
+BUG-308: Performance screen — column widths wrong/misaligned
+Formerly: BUG-218 (duplicate, opened 2026-06-22)
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:1849-2126 (performance-view table)
 Reported: 2026-06-22
@@ -725,7 +728,8 @@ Fix: Converted STATE/BUCKET (PipelineParts.tsx), STATE_TONE (lookupState.ts), ST
   mount names server-side) intentionally left in English per user decision — tracked as TODO-195
   for a future backend i18n-plumbing pass.
 
-BUG-215: Map screen renders white/blank — no map shown in app
+BUG-305: Map screen renders white/blank — no map shown in app
+Formerly: BUG-215 (duplicate, opened 2026-06-22)
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenMap.tsx:63, gui_next/src/renderer/src/locales/*.json
 Reported: 2026-06-22
@@ -981,26 +985,8 @@ Fix: Removed all ⌘K references. App.tsx dev-card Kbd combo and "Global search"
   All 6 locale files: tip1 (⌘K) deleted, tip2→tip1, tip3→tip2. Unused Kbd import
   removed from App.tsx.
 
-BUG-217: Incremental crawler does not pick up new LB website pages when posted
-Status: Fixed
-File(s): backend/site_crawler.py, backend/db.py
-Reported: 2026-06-22
-Fixed: 2026-06-26
-Root cause: crawl() pre-populated `visited` from get_downloaded_urls() — all URLs with
-  status 'downloaded'/'not_found'/'skipped'. _seed() skips URLs already in `visited`,
-  so SEED_URLS (including /bynumber/LBMbynumber.html, the master LB index) were never
-  re-queued after their initial download. The If-Modified-Since logic was present but
-  dead for already-downloaded pages; the queue only ever contained status='pending'/'failed'
-  URLs, which are empty after a successful full crawl. Result: no index page was ever
-  re-fetched incrementally, so newly posted LB detail pages linked from the index were
-  never discovered.
-Fix: Before queuing, temporarily remove SEED_URLS + start_url from `visited` so _seed()
-  re-queues them every run. Load their stored last_modified from site_inventory into
-  lm_map so If-Modified-Since is sent — a 304 means nothing changed (cheap), a 200 means
-  the index changed and new links are extracted and queued. Added get_inventory_last_modified()
-  to backend/db.py to support the targeted last_modified lookup.
-
-BUG-216: Spectrograms no longer generate via the UI
+BUG-306: Spectrograms no longer generate via the UI
+Formerly: BUG-216 (duplicate, opened 2026-06-22)
 Status: Fixed
 File(s): gui_next/src/renderer/src/lib/spectrogramStore.ts,
          gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx
@@ -1108,7 +1094,8 @@ Fix: Added database.rekey_folder_link(old_path, new_path) — UPDATE OR IGNORE m
   tests/test_db_writes.py::TestFolderLink cover single-link, multi-LB, conflict, and no-op
   cases.
 
-BUG-214: Performance lens — clicking an ungrouped (non-family) recording row does not update DetailPanel
+BUG-304: Performance lens — clicking an ungrouped (non-family) recording row does not update DetailPanel
+Formerly: BUG-214 (duplicate, opened 2026-06-19)
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:1823-1837 (fam row onClick)
 Reported: 2026-06-19
@@ -1364,7 +1351,8 @@ Fix: Extracted _find_master_release() helper (backend/app.py) that paginates /re
   5 pages × 20) and returns the first release containing both a .db asset and its .manifest.json
   sidecar. Both github_check and github_install now use this helper.
 
-BUG-167: Windows — clicking "Scraper" menu item shows blank screen, requires app restart
+BUG-299: Windows — clicking "Scraper" menu item shows blank screen, requires app restart
+Formerly: BUG-167 (duplicate, opened 2026-06-12)
 Status: Fixed
 File(s): backend/app.py:api_geocode_stats, gui_next/src/renderer/src/screens/ScreenScraper.tsx
 Reported: 2026-06-12
@@ -1396,7 +1384,8 @@ Fix: (1) backend/filer.py — use Path(raw).as_posix() directly; WindowsPath.as_
   joining, used in BulkFill preview, PreviewTester, routes table header, and per-row
   destination columns.
 
-BUG-168: "Check for update" does not prompt to install new DB from LB website
+BUG-300: "Check for update" does not prompt to install new DB from LB website
+Formerly: BUG-168 (duplicate, opened 2026-06-12)
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenHome.tsx:122-138,
   gui_next/src/renderer/src/screens/ScreenSetup.tsx:634-697,1749-1788,
@@ -1454,7 +1443,8 @@ Fix: StatusBar now fetches GET /api/home/stats on mount (same endpoint already u
   Sidebar and ScreenHome) and renders latest_lb, checksum_count, last_import, and
   bootleg_count via new fmtLb/fmtNum/fmtLastImport helpers, showing '…' while loading.
 
-BUG-176: tapematch run aborts entirely when one source file can't be decoded
+BUG-301: tapematch run aborts entirely when one source file can't be decoded
+Formerly: BUG-176 (duplicate, opened 2026-06-14)
 Status: Fixed
 File(s): tools/tapematch/tapematch/audio.py, tools/tapematch/tapematch/ingest.py,
   tools/tapematch/tapematch/cli.py
@@ -1852,7 +1842,7 @@ Root cause: BUG-167 switched the GUI's "Scan tree…" to `shallow: true`, which 
 Fix: Added `_has_audio_anywhere(d)` (uses `d.rglob("*")`) and used it for the shallow
   immediate-children check, so a top-level folder is added if it contains audio anywhere
   beneath it, while only the top-level folder path itself (not its nested subfolders) is
-  returned. Root's own direct-audio check (BUG-108) is unchanged.
+  returned. Root's own direct-audio check (BUG-286) is unchanged.
 
 BUG-169: Publish Master Update does not update "Master version" / "Last published" in GUI
 Status: Fixed
@@ -1941,6 +1931,7 @@ Fix: One-time data correction. Updated entries.location for LB-9546, 10083,
   Renamed/cleaned the corresponding location_geocoded cache rows so geocoding
   isn't re-run unnecessarily. entries_fts picked up the change automatically via
   the existing AFTER UPDATE trigger.
+
 BUG-163: NameError on /api/admin/restart — stray `_time.sleep` undefined name
 Status: Fixed
 File(s): backend/app.py:_do_restart (admin restart endpoint)
@@ -2349,7 +2340,8 @@ Fixed: 2026-06-09
 Root cause: loadTree() fires automatically on mount. If the cache is empty, busy clears and entries.length === 0 shows "Click Refresh tree to load" — implying the user needs to act when the data is genuinely absent.
 Fix: Added hasLoaded state (false until loadTree's finally block runs). Empty-state message now shows "Loading…" until hasLoaded is true, then "No attachments cached yet" when entries is empty, and "No matches" when a filter reduces a non-empty list to zero.
 
-BUG-111: Forum post description shows checksum file contents instead of entry description
+BUG-291: Forum post description shows checksum file contents instead of entry description
+Formerly: BUG-111 (duplicate, opened 2026-05-31)
 Status: Fixed
 File(s): backend/forum_poster.py:268-279
 Reported: 2026-05-31
@@ -2357,7 +2349,8 @@ Fixed: 2026-05-31
 Root cause: _read_lb_txt picked the first .txt file alphabetically. Entries with .ffp.txt fingerprint files (e.g. LBF-12220-Bob-Dylan-May-1960.ffp.txt) sorted before the actual info txt file, so checksum hashes landed in the forum post description section. Additionally, when multiple plain .txt files exist, the main info file (which contains LB-NNNNN in its name) sorted after short filenames like Note.txt.
 Fix: Changed suffix filter to f.suffixes == ['.txt'] to exclude double-extension files (.ffp.txt, .md5.txt etc). Added a preference step: if any candidate contains LB-{lb_number} in its name, use that file first; otherwise fall back to the alphabetically first candidate.
 
-BUG-110: TOCTOU race in background-task start routes allows double workers
+BUG-289: TOCTOU race in background-task start routes allows double workers
+Formerly: BUG-110 (duplicate, opened 2026-05-29)
 Status: Fixed
 File(s): backend/app.py:2033,4000,4099,4156
 Reported: 2026-05-29
@@ -2365,15 +2358,17 @@ Fixed: 2026-05-29
 Root cause: The "already running" guard for spectrogram generate, fingerprint build, dup scan, and identify-folder all checked status inside the lock but released the lock before starting the thread. Two concurrent POST requests could both see "idle", both pass the guard, and both start worker threads simultaneously. Additionally, the guard checked only status=="running", missing the "scanning" state emitted by build_fingerprint_db during its folder-discovery phase.
 Fix: Inside the lock, immediately after the guard, set status="running" to claim the slot atomically. Changed guard to `status not in ("idle", "done", "error")` to block all non-terminal states.
 
-BUG-109: Crashed background workers leave status permanently stuck at "running"
+BUG-287: Crashed background workers leave status permanently stuck at "running"
+Formerly: BUG-109 (duplicate, opened 2026-05-29)
 Status: Fixed
 File(s): backend/app.py:_do_fp_build,_do_fp_dup_scan,_do_fp_identify_folder,_do_spectro_batch
 Reported: 2026-05-29
 Fixed: 2026-05-29
-Root cause: None of the four background worker functions had a top-level exception handler. A crash (e.g., import error, unexpected exception) would leave the state dict at status="running" forever, preventing any future invocation from passing the guard. This was a latent issue; BUG-110's fix (pre-marking status inside the lock) made it immediately observable.
+Root cause: None of the four background worker functions had a top-level exception handler. A crash (e.g., import error, unexpected exception) would leave the state dict at status="running" forever, preventing any future invocation from passing the guard. This was a latent issue; BUG-289's fix (pre-marking status inside the lock) made it immediately observable.
 Fix: Wrapped each worker body in try/except; on exception, sets status="error" with the exception message via the per-worker _set helper.
 
-BUG-108: All attachment entries shown as stale regardless of download state
+BUG-285: All attachment entries shown as stale regardless of download state
+Formerly: BUG-108 (duplicate, opened 2026-05-29)
 Status: Fixed
 File(s): backend/app.py:626
 Reported: 2026-05-29
@@ -2381,7 +2376,8 @@ Fixed: 2026-05-29
 Root cause: attachments_cached response omitted the "downloaded" field from each file object. Frontend stale check (f.downloaded === 1) always saw undefined, so every entry with files evaluated to "stale".
 Fix: Added "downloaded": r["downloaded"] to the file dict in attachments_cached.
 
-BUG-107: Attachment viewer always shows 404 for text/html/image files
+BUG-281: Attachment viewer always shows 404 for text/html/image files
+Formerly: BUG-107 (duplicate, opened 2026-05-29)
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenAttachments.tsx:134,198
 Reported: 2026-05-29
@@ -2413,7 +2409,8 @@ Fixed: 2026-06-01
 Root cause: The pipeline lookup step used folder.iterdir() (top-level only) to find .ffp/.md5/.st5 files, while verify_folder uses rglob for audio. When checksum files sit in a subfolder, verify finds the audio but the lookup step misses the checksum entirely, producing V:~ L:~ (Incomplete / No checksums) instead of a proper match.
 Fix: Changed iterdir() to folder.rglob("*") with an is_file() + suffix check so checksums in subfolders are included.
 
-BUG-111: LBDIR check inflates track count (16 instead of 7) for SHN recordings
+BUG-292: LBDIR check inflates track count (16 instead of 7) for SHN recordings
+Formerly: BUG-111 (duplicate, opened 2026-05-31)
 Status: Fixed
 File(s): backend/checksum_utils.py:615-632
 Reported: 2026-05-31
@@ -2421,7 +2418,8 @@ Fixed: 2026-05-31
 Root cause: shntool section filenames use underscores (shntool converts spaces→underscores), md5 section uses actual disk filenames with spaces. Union of both maps created duplicate entries per file.
 Fix: verify_folder_lbdir() normalizes shntool-section keys by replacing underscores with spaces when a matching md5/ffp key exists, then remaps len_map the same way.
 
-BUG-115: LBDIR check shows 0 total / spurious Pass for flat-format lbdir files (*.flacf.md5.txt)
+BUG-297: LBDIR check shows 0 total / spurious Pass for flat-format lbdir files (*.flacf.md5.txt)
+Formerly: BUG-115 (duplicate, opened 2026-05-31)
 Status: Fixed
 File(s): backend/checksum_utils.py:200-204
 Reported: 2026-05-31
@@ -2429,7 +2427,8 @@ Fixed: 2026-05-31
 Root cause: parse_lbdir_file only collects entries inside known section blocks (=== MD5 for: / === FFP for:). Flat-format lbdir files (*.flacf.md5.txt, *.wavf.md5.txt) have no section headers — plain HASH  filename lines. The main pass left current_section=None throughout; all lines were skipped; md5/ffp/shntool all came back empty → all_files=set() → total=0 → status='pass' (false positive).
 Fix: Added flat-format fallback after the section-based pass: if all three lists are still empty, re-scan the file treating each line directly as a MD5 or FFP entry (same logic as parse_checksum_file). Mode detection (shn/flac/mixed) is applied afterwards to the combined result.
 
-BUG-114: LBDIR "Check all folders" crashes when any folder has missing files or no lbdir
+BUG-296: LBDIR "Check all folders" crashes when any folder has missing files or no lbdir
+Formerly: BUG-114 (duplicate, opened 2026-05-31)
 Status: Fixed
 File(s): backend/checksum_utils.py:576-582,676; backend/app.py:1999-2010; gui_next/src/renderer/src/lib/lbdirStore.ts:3; gui_next/src/renderer/src/screens/ScreenLBDIR.tsx:17-24
 Reported: 2026-05-31
@@ -2438,13 +2437,14 @@ Root cause: Three mismatch paths between backend status strings and the frontend
   1. backend emitted `status='incomplete'` (n_missing>0); frontend STATE_LABEL has no 'incomplete' key → `STATE_LABEL['incomplete'].tone` throws TypeError.
   2. backend emitted `status='shntool_missing'`; same missing-key crash.
   3. when no lbdir*.txt found, backend returned {folder, lb_number, error} with no mode/status/files fields; frontend's `checkResult.mode.toUpperCase()` threw on undefined.
-Fix:
+Fix: 
   - checksum_utils.py: 'incomplete' → 'missing_files'; parse-error early-return now returns full schema shape with status='no_lbdir'.
   - app.py: no-lbdir branch now returns complete schema with status='no_lbdir', mode='unknown', files=[].
   - lbdirStore.ts: added 'shntool_missing' to LbdirState union.
   - ScreenLBDIR.tsx: added shntool_missing entry to STATE_LABEL.
 
-BUG-113: Pipeline scan-tree misses folders containing only SHN audio files
+BUG-295: Pipeline scan-tree misses folders containing only SHN audio files
+Formerly: BUG-113 (duplicate, opened 2026-05-31)
 Status: Fixed
 File(s): backend/app.py:4702
 Reported: 2026-05-31
@@ -2452,7 +2452,8 @@ Fixed: 2026-05-31
 Root cause: The _AUDIO extension set in pipeline_scan_tree() omitted '.shn', so folders containing only SHN files matched no extension and were silently excluded from the returned folder list.
 Fix: Added '.shn' to the _AUDIO set on line 4702.
 
-BUG-112: Detail panel shows "No forum history" when Forum posts count > 0
+BUG-294: Detail panel shows "No forum history" when Forum posts count > 0
+Formerly: BUG-112 (duplicate, opened 2026-05-31)
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenCollection.tsx:946-1342
 Reported: 2026-05-31
@@ -2460,15 +2461,17 @@ Fixed: 2026-05-31
 Root cause: forumBusy initialized to false so first render shows "No forum history" before fetch; fetch errors swallowed silently by .catch(()=>{}) leaving forumRecords=[] while row.historyForum (from prefetch) has count>0; copy-paste bug used loadingTorrents key in forum tab loading state
 Fix: initialize forumBusy=true; add forumError state set in .catch and when API returns non-array; show error message instead of "No forum history" on failure; fix i18n key to loadingForum
 
-BUG-111: Attachments screen blank-white crash — `total.toLocaleString()` on undefined
+BUG-293: Attachments screen blank-white crash — `total.toLocaleString()` on undefined
+Formerly: BUG-111 (duplicate, opened 2026-05-30)
 Status: Fixed
 File(s): backend/app.py:641, gui_next/src/renderer/src/screens/ScreenAttachments.tsx:99
 Reported: 2026-05-30
 Fixed: 2026-05-30
-Root cause: BUG-108 fix added r["downloaded"] to the file dict in attachments_cached but forgot to add ef.downloaded to the SELECT. The IndexError caused the route to return a 500 error response; the frontend then called setTotal(undefined), and total.toLocaleString() threw during render with no ErrorBoundary — blank white screen.
+Root cause: BUG-285 fix added r["downloaded"] to the file dict in attachments_cached but forgot to add ef.downloaded to the SELECT. The IndexError caused the route to return a 500 error response; the frontend then called setTotal(undefined), and total.toLocaleString() threw during render with no ErrorBoundary — blank white screen.
 Fix: Added ef.downloaded to the SELECT in attachments_cached; added ?? 0 fallback to setTotal(d.total ?? 0) as defence against future backend errors.
 
-BUG-110: bobdylan.com scraper stuck at 2000 — pending rows have swapped columns
+BUG-290: bobdylan.com scraper stuck at 2000 — pending rows have swapped columns
+Formerly: BUG-110 (duplicate, opened 2026-05-30)
 Status: Fixed
 File(s): data/losslessbob.db (bobdylan_shows table)
 Reported: 2026-05-30
@@ -2476,7 +2479,8 @@ Fixed: 2026-05-30
 Root cause: Older version of run_discover passed (date_str, url) instead of (url, date_str) to executemany INSERT; INSERT OR IGNORE then prevented correction on subsequent runs.
 Fix: One-time UPDATE swapped bobdylan_url and date_str for all 2046 rows where scraped_at IS NULL AND bobdylan_url NOT LIKE 'http%'.
 
-BUG-109: Lookup tab — "Add Folders" does not include checksum files, nothing is looked up
+BUG-288: Lookup tab — "Add Folders" does not include checksum files, nothing is looked up
+Formerly: BUG-109 (duplicate, opened 2026-05-28)
 Status: Fixed
 File(s): backend/app.py, gui_next/src/renderer/src/screens/ScreenLookup.tsx
 Reported: 2026-05-28
@@ -2490,7 +2494,8 @@ Fix: Added POST /api/lookup/scan_folders backend endpoint that recursively finds
 
 ---
 
-BUG-108: LB directory — adding root folder fails with "no audio found"
+BUG-286: LB directory — adding root folder fails with "no audio found"
+Formerly: BUG-108 (duplicate, opened 2026-05-28)
 Status: Fixed
 File(s): backend/app.py
 Reported: 2026-05-28
@@ -2503,7 +2508,8 @@ Fix: Added an explicit check of root before the rglob loop so root is included i
 
 ---
 
-BUG-107: Admin web UI status badge shows "disabled" after successful connection test
+BUG-282: Admin web UI status badge shows "disabled" after successful connection test
+Formerly: BUG-107 (duplicate, opened 2026-05-28)
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenSetup.tsx
 Reported: 2026-05-28
@@ -2515,7 +2521,8 @@ Root cause: webUiTone was a derived constant driven solely by settings.web_passw
 Fix: Converted webUiTone to a useState variable initialised to 'ok' (always running).
   handleWebUiTest now calls setWebUiTone('ok') on success or 'warn' on failure.
 
-BUG-107: Master update publish fails — 'sqlite3.Row' object has no attribute 'get'
+BUG-283: Master update publish fails — 'sqlite3.Row' object has no attribute 'get'
+Formerly: BUG-107 (duplicate, opened 2026-05-27)
 Status: Fixed
 File(s): backend/db.py:2533
 Reported: 2026-05-27
@@ -2638,7 +2645,8 @@ Fix: Added _is_soft_404() in scraper.py to detect the error text in HTML before 
 
 ---
 
-BUG-116b: Public-page LB with no checksums misclassified as 'missing' in reconcile_all_lb_master
+BUG-298: Public-page LB with no checksums misclassified as 'missing' in reconcile_all_lb_master
+Formerly: BUG-116b (duplicate, opened 2026-05-25)
 Status: Fixed
 File(s): backend/db.py:reconcile_all_lb_master
 Reported: 2026-05-25
@@ -2731,7 +2739,8 @@ Description: On the Windows release build, clicking Yes on the "Install Master U
 Root cause: Three stacked issues: (1) master_import route had an is_curator() guard blocking non-curator end users. (2) path_not_allowed check required snapshot to be in data/exports/ or data/imports/, blocking selection from USB drive or Downloads. (3) sqlite3.Error was not caught explicitly — any SQLite failure fell through to the generic handler returning bare "internal_error" with no message.
 Fix: Removed is_curator() guard (export stays curator-only; import open to all). Removed directory containment check (kept .db suffix check). Added sqlite3.Error to caught exceptions with descriptive message. Added "message" field to generic internal_error response. Added import sqlite3 to app.py.
 
-BUG-107: sqlite3.OperationalError: database is locked during crawler upsert_inventory
+BUG-284: sqlite3.OperationalError: database is locked during crawler upsert_inventory
+Formerly: BUG-107 (duplicate, opened 2026-05-22)
 Status: Fixed
 File(s): backend/db.py, backend/site_crawler.py
 Reported: 2026-05-22

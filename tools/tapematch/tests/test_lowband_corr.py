@@ -1,4 +1,4 @@
-"""Tests for match.lowband_envelope_corr (TODO-140).
+"""Tests for match.lowband_envelope_corr (TODO-287).
 
 lowband_envelope_corr bandpass-filters two mono arrays to a low-frequency band
 (default 250-2000 Hz), computes log-RMS energy envelopes, and cross-correlates

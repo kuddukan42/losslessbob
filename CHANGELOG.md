@@ -1,3 +1,41 @@
+[2026-07-29] — chore(docs): renumber 44 historical duplicate BUG/TODO ids; add ledger.py doctor
+Changed: BUGS_DONE.md, TODO_DONE.md — 33 ids were reused across the four ledger files, all from the
+  hand-numbered era before tools/ledger.py landed (2026-07-07); the newest collision dated 2026-07-01,
+  so the allocator itself was never at fault (next_id() takes max() across open+done). BUG-107 alone
+  named five different bugs. For each group the tools/ledger_dedup.py _pick_authoritative() winner
+  keeps the id; the other 44 entries were reassigned to BUG-281..308 / TODO-277..292 and each gained a
+  `Formerly: <OLD-ID> (duplicate, opened <date>)` field so references in immutable git commit messages
+  stay decodable. Both *_DONE.md files gained a dated header note stating that ids in commit messages
+  and in CHANGELOG entries predating 2026-07-29 may use the pre-renumber numbering.
+Fixed: BUGS_DONE.md — the BUG-217 block at line 984 was a byte-identical copy of the one at line 332
+  (diffed to zero output before deleting), not a numbering collision; deleted rather than renumbered.
+  BUG-116b, a hand-patched letter-suffix id that had started a second competing convention, was
+  normalised into the numeric allocation. The now-obsolete "renumbering is pending the TODO-209 dedup
+  pass" NOTE inside the former BUG-193 (now BUG-302) was removed — the `Formerly:` field supersedes it.
+Changed: 18 cross-reference files rewritten at ~110 sites — CHANGELOG.md, CHANGELOG_ARCHIVE.md,
+  PROJECT.md, BEST_PRACTICES.md, pyproject.toml, backend/{app,db,integrity_monitor,scheduler}.py,
+  docs/wiki/Collection-Pipeline.md, gui_next AboutDialog.tsx + ScreenMounts.tsx, three instructions/
+  files, tools/tapematch/{BASELINE.md,calibrate_lowband.py} + two of its tests. Every edit is a
+  comment, docstring, or prose token; no executable code changed. Sites were assigned by date window
+  for dated docs and by subject match for undated code refs.
+  11 sites were deliberately left unchanged: CHANGELOG_ARCHIVE.md:779/798 are dated 2026-05-26, when
+  only one BUG-107/110/111/115 existed each — and those are the keep-winners, so no edit is the
+  correct result, not merely the safe one. CHANGELOG.md:3160/3161/3175/3179 and TODO_DONE.md:405/662
+  are prose *about* the duplication problem; renumbering ids inside them would make the sentences
+  self-contradicting. (CHANGELOG.md:3175 had flagged this exact work on 2026-07-08 and deferred it.)
+Added: tools/ledger.py — `doctor` subcommand, the permanent guard: exits non-zero listing any id whose
+  header appears twice across the four ledger files, or any letter-suffixed id. Exits 0 today.
+  tests/test_ledger_doctor.py covers clean / duplicate / letter-suffix for both kinds (8 tests).
+Changed: tools/ledger_dedup.py — cross-reference search widened from a fixed CROSS_REF_ROOTS allowlist
+  (which missed PROJECT.md, backend/, gui_next/, tests/, pyproject.toml) to `git grep` over the whole
+  tracked repo; gained an idempotent `--apply` mode (a second run is a no-op).
+Changed: .claude/commands/session-close.md — Step 7's manual "no BUG/TODO number used twice" bullet,
+  which could never pass against the historical data and so resurfaced every session, replaced by
+  running `ledger.py doctor` and requiring exit 0.
+Verified: doctor exit 0; 0 duplicate headers; 0 letter-suffix ids; 44 `Formerly:` fields (28 BUG +
+  16 TODO); next-id → BUG-309 / TODO-293; check_project_refs.py exit 0; tests 1070 passed;
+  gui-check node types 0 / renderer types 0 / build PASS.
+
 [2026-07-29] — fix: BUG-280 (1961–68 dates land in 2061–68) and BUG-277 (shadowed LB tag)
 Fixed: tools/tapematch/tapematch_session.py — BUG-280. All three date-parse sites used
   datetime.strptime(date_str, "%m/%d/%y"), inheriting Python's POSIX %y pivot (00–68 → 2000–2068),
@@ -1981,7 +2019,7 @@ Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: library picks now 
 Added: instructions/FABLE_VISUAL_VERIFICATION.md (Electron visual-verification driver spec,
   attempt 3) + README.md index row, status "ready — not started" (in-flight from 07-13, 1d110c99).
 Closed (no code change): TODO-233 by rescope (pt1 shipped 07-14, pt2 continues as TODO-235,
-  pt3 out of scope); TODO-109 done — the 36 listed ruff violations no longer exist (ruff check
+  pt3 out of scope); TODO-281 done — the 36 listed ruff violations no longer exist (ruff check
   clean across backend/, pytest 752 passed / 5 skipped; pre-commit auto-fix + feature commits since
   06-09 eliminated them), retroactive polish pass declined; TODO-209 won't-fix (cosmetic legacy
   ids, all in closed/archived entries, ledger.py prevents new collisions); TODO-179 won't-do
@@ -2326,7 +2364,7 @@ Added: backend/app.py post_forum — before contacting WTRF, resolves the entry'
   audio no longer matches its stored checksums (BUG-120) can't be posted undetected. No-op when
   the LB isn't in my_collection.
 
-[2026-07-13] — fix(gui): TODO-108 Collection tab header text overflow + missing i18n
+[2026-07-13] — fix(gui): TODO-280 Collection tab header text overflow + missing i18n
 Fixed: gui_next/src/renderer/src/components/table.tsx TH — headers had whiteSpace:nowrap but no
   overflow/textOverflow (unlike TD), so a header label wider than its resized column spilled
   unclipped into the next column instead of ellipsizing. Wrapped header content in a clipped
@@ -2335,7 +2373,7 @@ Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx — "Type"/"Note
   were hardcoded English, skipping i18n; now use t('collection.table.type'/'notes').
 i18n: de/fr/es/it/nl synced via DeepL for the two new collection.table keys.
 
-[2026-07-13] — docs: TODO-154 closed — r#### filename suffix is not per-recording source info
+[2026-07-13] — docs: TODO-291 closed — r#### filename suffix is not per-recording source info
 Investigated: grepped data/site/files/ archive-wide — only 57/7371 *.info.txt attachments carry
   a ".r####." filename suffix, and all 57 share the identical value r9453 across dates 1978-2004
   with no date/taper correlation; the 57 LB numbers cluster tightly in LB-04856..05215 (one
@@ -2557,7 +2595,7 @@ Changed: tools/tapematch/tapematch_session.py: next_run() honors crawl_skip.txt 
 Changed: tests/test_tapematch_sync.py + tests/test_tapematch_routes.py: 26 new tests (bump
   apply/degrade/clamp, dup-encode grouping, route). Suite 607 passed / 5 skipped.
 
-[2026-07-10] — feat(backend+gui): Olof P5 — surfacing: endpoints, tour-name fallback, setlist compare, GUI panel (FABLE_OLOF_FILES §5–§6; closes TODO-162 + TODO-153; Olof spec complete)
+[2026-07-10] — feat(backend+gui): Olof P5 — surfacing: endpoints, tour-name fallback, setlist compare, GUI panel (FABLE_OLOF_FILES §5–§6; closes TODO-162 + TODO-290; Olof spec complete)
 Added: backend/db.py: get_olof_date/get_olof_event/get_olof_chronicle_year/get_olof_status
   readers (all degrade to empty — olof_* stays local-only, NOT in MASTER_TABLES; export tier
   deliberately deferred as a redistribution-rights question); normalize_title_for_match (reuses
@@ -2567,7 +2605,7 @@ Added: backend/db.py: get_olof_date/get_olof_event/get_olof_chronicle_year/get_o
 Added: backend/app.py: GET /api/olof/date/<date>, /api/olof/event/<id>, /api/olof/chronicle/<year>,
   /api/olof/status; POST /api/olof/compare ({date_str, titles[] | lb_number}).
 Changed: backend/db.py get_performances(): tour-name fallback chain setlistfm → olof_events
-  (TODO-153) — setdefault so setlistfm wins, concert rows preferred; dated shows with a tour
+  (TODO-290) — setdefault so setlistfm wins, concert rows preferred; dated shows with a tour
   name 3,783 → 4,540 (+757; e.g. 1974-01-03 "Tour '74").
 Added: gui_next DetailPanel.tsx: Olof tab on both library lenses — setlist (encore pills, cover
   credits, annotations, take status), NET/year concert #s, recording info, notes, BobTalk quote,
@@ -2889,10 +2927,10 @@ Changed: gui_next/src/renderer/src/locales/{de,fr,es,it,nl}.json: synced via Dee
   new collection.columnPicker.* keys plus a pre-existing backlog of stale strings per locale
   unrelated to this session (nav labels, table headers) that DeepL picked up on this run.
 
-[2026-07-09] — feat(gui): TODO-151 + TODO-152 + TODO-161 + TODO-148 + TODO-163 + TODO-164 — Pipeline/Scraper/Library polish batch
+[2026-07-09] — feat(gui): TODO-288 + TODO-152 + TODO-161 + TODO-148 + TODO-163 + TODO-164 — Pipeline/Scraper/Library polish batch
 Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyFile's success branch now
   updates the row's folderPath/id to the post-move result.dest (previously only rename did this),
-  so the detail panel's Open button no longer resolves the pre-collect path (TODO-151). Same
+  so the detail panel's Open button no longer resolves the pre-collect path (TODO-288). Same
   branch now clears the row's selected flag on transition to bucket 'done', so bulk-filing no
   longer leaves finished rows checked (TODO-152).
 Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: the row action column always
@@ -3162,8 +3200,8 @@ Changed: BUGS.md housekeeping — 11 entries that were marked Fixed but never ar
   already in the archive) noted inline pending the TODO-209 dedup pass.
 Tests: full suite 458 passed / 5 skipped; gui_next typecheck + production build clean.
 
-[2026-07-08] — docs: close stale TODO-198 (TapeMatch recall recovery) — work completed 2026-07-02, ledger never updated
-Changed: TODO.md/TODO_DONE.md: TODO-198 (CC_TAPEMATCH_FIXES Tasks 2-7) closed via
+[2026-07-08] — docs: close stale TODO-292 (TapeMatch recall recovery) — work completed 2026-07-02, ledger never updated
+Changed: TODO.md/TODO_DONE.md: TODO-292 (CC_TAPEMATCH_FIXES Tasks 2-7) closed via
   `tools/ledger.py todo-close` — text was frozen at a mid-day 2026-07-02 snapshot ("Tasks 2-7
   remaining, curator-lineage/hf_ceiling NOT wired into live cli.py") but later 2026-07-02
   CHANGELOG entries show all of it landed same-day: Task 2 rerun_cat3.py executed (0/6 Cat-3
@@ -3983,8 +4021,8 @@ Added: gui_next/resources/losslessbob-next.desktop: dev-helper .desktop template
   are ignored on native Wayland). The packaged AppImage gets its own generated .desktop from
   electron-builder and is unaffected.
 
-[2026-07-01] — docs: close BUG-218, already fixed (BUG-218)
-Fixed: BUGS.md/BUGS_DONE.md: BUG-218 (performance screen column widths) moved to BUGS_DONE.md as
+[2026-07-01] — docs: close BUG-308, already fixed (BUG-308)
+Fixed: BUGS.md/BUGS_DONE.md: BUG-308 (performance screen column widths) moved to BUGS_DONE.md as
   Fixed — no code change needed, user confirmed the performance-view table columns are already
   correct. On review, ScreenLibrary.tsx's performance table column model (~1849-2126) is
   internally consistent with the current 10-column layout.
@@ -4028,7 +4066,7 @@ Changed: gui_next/src/renderer/src/locales/{de,fr,es,it,nl}.json: ran deepl_tran
   in 4/5 languages (pipeline.buckets.shelf, pipeline.contextMenu.shelve/unshelve) for consistency
   with sibling `pipeline.filter.shelf` wording.
 
-[2026-07-01] — fix(gui): Map screen renders blank — CSP frame-src/origin mismatch (BUG-215)
+[2026-07-01] — fix(gui): Map screen renders blank — CSP frame-src/origin mismatch (BUG-305)
 Fixed: gui_next/src/renderer/src/screens/ScreenMap.tsx:63: MAP_URL hardcoded
   `http://localhost:5174/map` for the live-map iframe src, but index.html's CSP
   frame-src/connect-src/img-src directives only allowlist `http://127.0.0.1:5174`
@@ -4279,7 +4317,7 @@ Fixed: gui_next/src/renderer/src/screens/ScreenHome.tsx: dropped cmd/⌘K tip fr
 Fixed: gui_next/src/renderer/src/App.tsx: removed Kbd demo + "Global search" label from dev card; dropped unused Kbd import
 Fixed: gui_next/src/renderer/src/locales/{en,fr,es,de,nl,it}.json: deleted tip1 (⌘K), promoted tip2→tip1, tip3→tip2
 
-[2026-06-26] — fix(backend): incremental site crawler misses newly posted LB pages (BUG-217)
+[2026-06-26] — fix(backend): incremental site crawler misses newly posted LB pages (BUG-307)
 Fixed: backend/site_crawler.py: SEED_URLS and start_url are now always removed from
   `visited` before queuing, so index pages are re-fetched on every incremental run;
   their stored Last-Modified is loaded into lm_map so If-Modified-Since is used (304 =
@@ -4289,7 +4327,7 @@ Added: backend/site_crawler.py: flat-file download page added to SEED_URLS
 Added: backend/db.py: get_inventory_last_modified() — targeted last_modified lookup for
   a list of URLs from site_inventory
 
-[2026-06-26] — fix(gui+backend): spectrograms blank screen + no output (BUG-216)
+[2026-06-26] — fix(gui+backend): spectrograms blank screen + no output (BUG-306)
 Fixed: gui_next/src/renderer/src/lib/spectrogramStore.ts: dynRange default '-120' → '120'
 Fixed: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: dyn_range sent negative to
   SoX -z (requires positive int); now Math.abs(); label corrected to "dB range"
@@ -4412,7 +4450,7 @@ Added: tools/tapematch/calibrate_fingerprint_localize.py, calibrate_fingerprint_
   calibrate_piecewise.py, calibrate_lowband.py — falsify-first pilot scripts (read-only, no cli.py wire).
 Changed: tools/tapematch/BASELINE.md: Task 8 (TODO-185 — 3 approaches: contig-run audit, HF-band
   fingerprint, 200-4kHz fingerprint; all falsified); Task 9 (TODO-144 — piecewise pilot, per-seg p50
-  same-source 0.004 < different-source 0.005); Task 10 (TODO-140 — 250-2000 Hz envelope pilot,
+  same-source 0.004 < different-source 0.005); Task 10 (TODO-287 — 250-2000 Hz envelope pilot,
   confirmed-distinct LB-02470/LB-02478 +0.357 > all missed-pairs max +0.201).
 Added: tools/tapematch/validate_polarity.py — batch polarity-rescue dry run across ~474 contradicted-claim
   dates; JSONL checkpoint output; batch in progress (TODO-184 Checkpoint 1 pending).
@@ -4902,7 +4940,7 @@ Changed: data/losslessbob.db: entries.source_type was added at schema v8 as a cu
 Changed: data/losslessbob.db: per tape-trading convention (audience is the unstated default for live recordings; soundboard/FM/mixed get called out explicitly because they're notable) — second pass defaults source_type='Audience' for the remaining still-NULL rows where lb_category IN ('concert','unknown') AND description is non-empty (10,972 rows). Deliberately excludes the 408 non-concert rows (studio/tv/interview/compilation/rehearsal/radio/soundcheck — audience-default doesn't fit a TV/radio broadcast or studio session) and the 1,445 rows with a completely empty description (zero text to default from). entries.source_type is now populated for 14,777/16,630 rows (88.8%); 1,853 remain NULL.
 Added: data/backups/losslessbob_2026-06-19_194959_780578_source_type_backfill.db and data/backups/losslessbob_2026-06-19_195814_210904_source_type_audience_default.db: pre-write snapshots via backup_database() for both bulk passes, in case either needs to be reverted.
 
-[2026-06-19] — fix(gui): BUG-214 ungrouped recording rows in performance lens now select into DetailPanel
+[2026-06-19] — fix(gui): BUG-304 ungrouped recording rows in performance lens now select into DetailPanel
 Fixed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: fam row onClick called setSelectedId
   (the parent performance) for every family row, including single-member (non-TapeMatch-grouped)
   rows; only true multi-member "member" sub-rows had a click handler that selected the recording
@@ -5262,7 +5300,7 @@ Added: tools/tapematch/ANALYSIS_WRITER_PROMPT.md: fixed spec for writing analysi
 Added: .claude/commands/tapematch-batch.md: /tapematch-batch slash command — processes the next N missing analysis.md write-ups directly in-session (subagents hit a hard Write-tool block on .md files and cost about the same per file, so direct in-session writing is the reliable path)
 Added: 98 of 438 missing data/tapematch/runs/*/analysis.md write-ups generated; caught several real bugs along the way — a report.md with another session's tapematch stdout spliced in (1999-02-25 Portland run), a tapematch ingest crash on a malformed duration read, and a likely date-mis-tagged LB-06939 (its own info file says 1/17/98 New London CT, catalogued under 1998-06-17 Brussels)
 
-[2026-06-17] — fix(backend+gui): BUG-195, incomplete-match folders block downstream pipeline steps
+[2026-06-17] — fix(backend+gui): BUG-303, incomplete-match folders block downstream pipeline steps
 Fixed: backend/app.py: after an incomplete checksum match (e.g. FFP matches but MD5 does not), clear lb_number so lbdir/rename/file steps stay mute unless the folder was explicitly pinned by the user
 Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: warn+lb_number branch now shows pin option with explanation; handlePin now re-runs all downstream steps after pinning
 
@@ -5321,7 +5359,7 @@ Fixed: backend/app.py: /api/activity/busy was missing site_crawler, bobdylan_scr
 Fixed: backend/bobdylan_scraper.py: replaced hardcoded 3-sitemap list with dynamic index
   fetch (_get_date_sitemap_urls) that reads wp-sitemap.xml and discovers all posts-date
   sitemaps; fallback to _SITEMAP_URLS_FALLBACK if index unavailable. Added 404 WARNING log
-  to _fetch so silent failures are visible. Fixes BUG-193.
+  to _fetch so silent failures are visible. Fixes BUG-302.
 
 [2026-06-15] — fix(backend): importer empty-file error, dbedit DoS guard, datetime.utcnow deprecations
 Fixed: backend/importer.py:run_import: moved close_connection(temp_db_path) and unlink() outside
@@ -5371,7 +5409,7 @@ Fixed: gui_next/src/renderer/src/screens/ScreenMounts.tsx: added joinRoute() hel
   strips backslashes (legacy data) and trailing slashes from root_path before joining with
   sub_path, preventing double-slash or mixed-slash display in all four path display sites.
 
-[2026-06-15] — fix(gui+backend): BUG-167 — Scraper shows blank screen on Windows
+[2026-06-15] — fix(gui+backend): BUG-299 — Scraper shows blank screen on Windows
 Fixed: backend/app.py: SQLite SUM() returns NULL on an empty table; wrapped geocoded/
   failed/manual columns in COALESCE(..., 0) so /api/geocode/stats always returns integers
   even when location_geocoded is empty.
@@ -5413,7 +5451,7 @@ Fixed: BUGS.md: documented BUG-187 (new, Open) — a pre-existing test-isolation
   state across test DBs, intermittently breaking tests/test_db_lookup.py in full-suite
   runs. Reproduced on main without the new test files; not caused by this change.
 
-[2026-06-15] — fix: BUG-168 — "Check for update" always reported "already up to date"; add download/apply flow
+[2026-06-15] — fix: BUG-300 — "Check for update" always reported "already up to date"; add download/apply flow
 Fixed: gui_next/src/renderer/src/screens/ScreenHome.tsx: handleCheckUpdate read
   non-existent `data.new_release` / top-level `data.zip_filename` fields from the
   GET /api/flat_file/discover response (which actually returns `available` and
@@ -5465,7 +5503,7 @@ Fixed: tools/tapematch/tapematch_session.py: _lb_num_from_folder now accepts an 
   ahead of their own (e.g. "...[fixed LB-2204]-LB-10437-v"). insert_sources and
   insert_pairs now build and pass this map; insert_pairs gained a found_folders param.
 Fixed: tools/tapematch/tapematch/audio.py, ingest.py, cli.py: a single undecodable source
-  track no longer aborts the whole tapematch run (BUG-176). duration_sec() now raises
+  track no longer aborts the whole tapematch run (BUG-301). duration_sec() now raises
   UnreadableAudioError on decode failure; ingest.source_report() wraps this into
   UnreadableSourceError(source_dir, track); cli.py main() now drops any source that
   raises this error up front, prints "[SKIP] source excluded: unreadable file <path>",
@@ -5721,7 +5759,7 @@ Added: tools/tapematch/tests/test_predicted_lag.py: 3 tests covering
 Note: validated on 1989-06-04, 1990-01-12 (targets) and 3 control dates incl.
   1988-07-28 (high-ppm) — zero regressions, activates as specified, but does not
   reduce misses on either target date (root cause is not search-range for these
-  pairs; see tools/tapematch/BASELINE.md "Task 4 results" and TODO-140).
+  pairs; see tools/tapematch/BASELINE.md "Task 4 results" and TODO-287).
 
 [2026-06-12] — fix(backend+gui): LBDIR reconcile now recovers self-referencing/regenerated files from site/files (BUG-174)
 Fixed: backend/checksum_utils.py: find_site_recoverable_files() only matched
@@ -5878,7 +5916,7 @@ Fixed: (validation only, no further code change needed) — audited dtype/rate h
   matrix, and speed-ppm values are bit-identical to the 2026-06-07 run — float32
   pipeline is deterministic and unchanged.
 
-[2026-06-12] — feat(backend+gui): TODO-110 follow-up — drive stats on Mounts settings screen
+[2026-06-12] — feat(backend+gui): TODO-282 follow-up — drive stats on Mounts settings screen
 Changed: backend/filer.py: disk-usage calculation extracted into new
   get_disk_usage_stats(root_path, online) helper (free/total/used_pct), reused by
   get_mounts_with_stats() and the /api/collection/mounts endpoint.
@@ -5953,7 +5991,7 @@ Fixed: data/losslessbob.db: entries.location for LB-9546, 10083, 12969, 16298,
   existing ASCII convention. Cleaned up matching location_geocoded cache rows
   (renamed two, removed two now-duplicate rows); entries_fts updated via the
   existing AFTER UPDATE trigger.
-[2026-06-12] — feat(backend+gui): TODO-111 — collection integrity monitor (lbdir-based)
+[2026-06-12] — feat(backend+gui): TODO-284 — collection integrity monitor (lbdir-based)
 Added: backend/integrity_monitor.py: new scan engine. scan_collection() iterates
   my_collection, locates each folder's lbdir manifest (folder-local or attached),
   and reuses checksum_utils.verify_folder_lbdir() to classify results — ffp_status
@@ -6000,7 +6038,7 @@ Added: gui_next/src/renderer/src/components/Icon.tsx: new "mounts" (hard-drive)
 Added: gui_next locales (en/de/es/fr/it/nl): appShell.nav.mounts and new
   mounts.title/mounts.subtitle keys.
 
-[2026-06-12] — feat(backend+gui): TODO-110 — drive stats on pipeline mount cards
+[2026-06-12] — feat(backend+gui): TODO-282 — drive stats on pipeline mount cards
 Changed: backend/filer.py: get_mounts_with_stats() now also returns total
   capacity (total) and used percentage (used_pct), via shutil.disk_usage(),
   alongside the existing free space and span fields.
@@ -6011,7 +6049,7 @@ Changed: gui_next/src/renderer/src/components/pipeline/CollectDetail.tsx: Mount
 Changed: gui_next locales (en/de/es/fr/it/nl): replaced collect.freeAmount with
   collect.freeOfTotal and added total/used % to collect.mountTooltip.
 
-[2026-06-12] — feat(backend+gui): TODO-112 — backend uptime clock on About screen
+[2026-06-12] — feat(backend+gui): TODO-285 — backend uptime clock on About screen
 Added: backend/app.py: new GET /api/system/uptime endpoint returning
   uptime_seconds since the Flask process started.
 Changed: backend/app.py: /api/admin/status now shares the same process-start
@@ -6020,7 +6058,7 @@ Changed: gui_next/src/renderer/src/components/AboutDialog.tsx: About tab now
   shows a live "uptime" field (HH:MM:SS) fetched from /api/system/uptime and
   ticked locally, to help confirm whether a backend restart actually happened.
 
-[2026-06-12] — fix(backend+gui): TODO-113 — consolidate app version numbering
+[2026-06-12] — fix(backend+gui): TODO-286 — consolidate app version numbering
 Changed: VERSION: bumped 1.3.0 -> 1.4.0 to match gui_next/package.json (now the
   source of truth, mirrored here for the Python backend/CLI).
 Changed: backend/paths.py: removed stale duplicate APP_VERSION constant (1.2.0).

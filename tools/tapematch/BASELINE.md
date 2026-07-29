@@ -163,7 +163,7 @@ Task 4's premise (accumulated drift pushes the true lag outside `±local_lag_sec
 does not explain these misses: there is no lag at which HF-residual or hiss
 correlation rises above noise. The spec's own fallback (low-band 250-2000 Hz
 envelope comparison with time-warped *features*, Task 4 step 5) is the relevant
-path for these pairs and is tracked as a follow-up (TODO-140), not part of Task 4.
+path for these pairs and is tracked as a follow-up (TODO-287), not part of Task 4.
 
 **Decision:** keep the predicted-lag code — it is correct, tested, and will help
 any pair where the miss *is* a search-range problem (none of the two validation
@@ -339,7 +339,7 @@ instead of crashing or silently skipping `<2`-source dates. All 7 no-verdict
 dates resolved (6 already valid, 1 marked as calibration artifact via
 `SKIP_REASON`). This completes the TODO-139 / CC_TAPEMATCH_FIXES.md task
 sequence (Tasks 2-7); see TODO.md for the final summary and follow-ups
-(TODO-140, TODO-144).
+(TODO-287, TODO-144).
 
 ## Speed-offset false-distinct fix — lag-slope ratio refinement (2026-06-21)
 
@@ -503,7 +503,7 @@ future use, but is not wired into `cli.py`. TODO-144 cancelled.
 
 ## Task 10 results — low-band (250–2000 Hz) envelope fallback (2026-06-25)
 
-**Motivation (TODO-140).** BASELINE.md Task 4 established that for 1989-06-04 (Dublin)
+**Motivation (TODO-287).** BASELINE.md Task 4 established that for 1989-06-04 (Dublin)
 and 1990-01-12 (New Haven), several curator-claimed same-source pairs have near-zero
 primary `residual_corr` even after the Task 4 predicted-lag fix — the HF fine-structure
 is absent. CC_TAPEMATCH_FIXES.md step 5 proposed a 250–2000 Hz energy-envelope
@@ -540,4 +540,4 @@ The negative correlations (−0.11 to −0.13) for the LB-14054 pairs suggest th
 recordings may genuinely be different sources despite the curator claims, or may have
 polarity inversion; either way, there is no recoverable signal.
 `match.lowband_envelope_corr` is retained in the codebase with unit tests for potential
-future use but is not wired into `cli.py`. TODO-140 cancelled.
+future use but is not wired into `cli.py`. TODO-287 cancelled.
