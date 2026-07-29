@@ -1,6 +1,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-277: tapematch: a cross-referenced LB tag in a folder name shadows the folder's own LB number
+Status: Fixed
+File(s): tools/tapematch/tapematch/cli.py:512,tools/tapematch/tapematch_session.py:697
+Reported: 2026-07-27
+Fixed: 2026-07-29
+Root cause: cli.py:512 _lb_num() extracted the LB number with re.search(r'LB-(\d+)', name) and took the FIRST match, so a folder name embedding a cross-referenced LB tag ahead of its own (e.g. '... [fixed LB-2204]-LB-10437-v') resolved to the cross-reference. tapematch_session.py:697 _lb_num_from_folder() fell back to the same regex on a DB-map miss, so the harness silently agreed with the wrong answer instead of flagging it. emb_live.py sources_from_results() carried an identical first-match regex (found while auditing other folder-name readers, not in the original report).
+Fix: commit 89ca6e39. New tapematch.ingest.extract_own_lb_number() strips bracketed '[...]' segments (the convention for cross-reference annotations) then takes the LAST remaining LB-NNNNN match, since a folder's own tag is conventionally trailing; falls back to the unstripped name if stripping leaves no match. Shared by cli.py:_lb_num(), the tapematch_session.py regex fallback, and emb_live.py:sources_from_results(). The session-level DB lookup (name_to_lb) is now authoritative: a miss logs a warning rather than silently trusting the regex. New _assert_no_self_pair() is called per pair in insert_pairs() and raises before writing, so a run fails loudly instead of emitting a lb_a == lb_b row; verified no commit() occurs inside the insert_pairs loop, so an abort cannot leave partial pair rows. Verified against the 7 live collisions: 6 now resolve to distinct LB numbers from the folder name alone. The 7th (1993-06-19, LB-1929/LB-2072) is genuinely unresolvable by filename -- both numbers appear ambiguously positioned -- and now depends entirely on the DB-authoritative path, with the assertion as the backstop; documented as a known limitation in tools/tapematch/tests/test_lb_num_extraction.py. Data repair of the 7 affected dates is TODO-276 (needs a live re-run, deferred to avoid colliding with the nightly cron).
+
+BUG-280: tapematch dates 1961-1968 land in 2061-2068 (strptime %y century pivot)
+Status: Fixed
+File(s): tools/tapematch/tapematch_session.py:1021,tools/tapematch/tapematch_session.py:1069,tools/tapematch/tapematch_session.py:1103
+Reported: 2026-07-29
+Fixed: 2026-07-29
+Root cause: datetime.strptime(date_str, '%m/%d/%y') at tapematch_session.py:1021/1069/1103 inherits Python's POSIX %y century pivot (00-68 -> 2000-2068), so Dylan's 1961-1968 material resolved to 2061-2068. 1969+ was unaffected, which is why the earliest apparently-valid tapematch concert_date was 1969-08-31.
+Fix: commit c4e9b1e2. New parse_db_date() helper in tapematch_session.py re-anchors any parse landing in the future (vs datetime.now().year) back to the prior century; used at all three call sites. Backfill: 41 run dirs under data/tapematch/runs/ renamed 20xx->19xx; concert_date corrected in observations.db (runs/sources/pairs + runs.archive_dir) and data/losslessbob.db (tapematch_pairs, tapematch_family_meta, and recording_families -- the last not listed in the original report but equally affected). Verified 0 tapematch_date_curation rows existed for the 41 dates before mutating, as the report predicted. Post-fix: 0 future-dated run dirs or rows remain; 565 tapematch_pairs rows now carry 196x dates. Regression tests in tools/tapematch/tests/test_parse_db_date.py pin 1961-1968 plus the unaffected 1969+/2000s ranges.
+
 BUG-276: File Integrity scans invisible in activity tray
 Status: Fixed
 File(s): backend/activity.py,backend/app.py

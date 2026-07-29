@@ -1,3 +1,30 @@
+[2026-07-29] — fix: BUG-280 (1961–68 dates land in 2061–68) and BUG-277 (shadowed LB tag)
+Fixed: tools/tapematch/tapematch_session.py — BUG-280. All three date-parse sites used
+  datetime.strptime(date_str, "%m/%d/%y"), inheriting Python's POSIX %y pivot (00–68 → 2000–2068),
+  so Dylan's 1961–1968 material resolved to 2061–2068 and sorted to the end of the TapeMatch triage
+  queue as future shows. New parse_db_date() helper re-anchors any parse landing in the future back
+  to the prior century, used at all three sites. Backfill: 41 run dirs under data/tapematch/runs/
+  renamed 20xx→19xx; concert_date corrected in observations.db (runs/sources/pairs +
+  runs.archive_dir) and data/losslessbob.db (tapematch_pairs, tapematch_family_meta, and
+  recording_families — the last not named in the original report but equally affected). Verified 0
+  tapematch_date_curation rows existed for the 41 dates before mutating. Post-fix: 0 future-dated
+  dirs or rows remain, 565 tapematch_pairs rows now carry 196x dates. The analyses themselves were
+  always sound — only the date label was wrong. Regression tests in tests/test_parse_db_date.py.
+Fixed: tools/tapematch/tapematch/ingest.py, tapematch/cli.py, tapematch_session.py, emb_live.py —
+  BUG-277. _lb_num() took the FIRST LB-\d+ match in a staged folder name, so an embedded
+  cross-reference ("… [fixed LB-2204]-LB-10437-v") shadowed the folder's own trailing tag,
+  producing self-pairs (lb_a == lb_b) that correlate 1.0 by construction and read as spurious
+  same_family merges. New ingest.extract_own_lb_number() strips bracketed segments then takes the
+  LAST remaining match; shared by cli.py, the session's regex fallback, and emb_live.py's
+  sources_from_results(), which carried the identical bug (found while auditing other folder-name
+  readers). name_to_lb is now authoritative — a miss logs a warning instead of silently trusting
+  the regex — and new _assert_no_self_pair() raises before insert rather than writing a corrupt
+  row. 6 of the 7 live collisions now resolve from the folder name alone; 1993-06-19
+  (LB-1929/LB-2072) is unresolvable by filename and depends on the DB path, with the assertion as
+  backstop. Tests in tests/test_lb_num_extraction.py. Data repair of the 7 dates is TODO-276.
+Added: TODO-276 — re-run the 7 BUG-277 dates to clear stale wrong-LB pair/family rows; needs a
+  live session, deferred so it does not collide with the nightly cron.
+
 [2026-07-29] — docs: close §10.6/Q7 won't-do on evidence; file BUG-280 (1961–68 dates)
 Changed: instructions/complete/design_handoff_tapematch_curation/WORK_PACKAGE.md — D19 records the
   recordings-per-date measurement that closes the handoff's last open design question. §10.6 is
