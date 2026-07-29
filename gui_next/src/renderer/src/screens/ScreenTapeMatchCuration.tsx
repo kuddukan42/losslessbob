@@ -1,6 +1,6 @@
 // TapeMatch Curation screen — Phases 1–6.
 //
-// Built per instructions/design_handoff_tapematch_curation/{README,
+// Built per instructions/complete/design_handoff_tapematch_curation/{README,
 // WORK_PACKAGE,DESIGN_ANSWERS_B}.md. D1 is complete as of 2026-07-28: this
 // screen reached parity at Phase 6 and replaced the read-only
 // ScreenTapeMatch.tsx (deleted) at /tapematch, taking over its nav entry;
@@ -46,6 +46,8 @@ import {
   type AnalysisDoc, type CardBlock, type VerdictCard as ParsedCard,
 } from '../lib/analysisMd'
 import { ReportSheet } from '../components/tapematch/ReportSheet'
+import { RunDiffSheet } from '../components/tapematch/RunDiffSheet'
+import type { RunMeta, RunSnapshot } from '../lib/runDiff'
 
 const BASE = window.api.flaskBase
 
@@ -784,7 +786,7 @@ type AcceptState =
 
 function DateHeader({
   row, narrow, verdictText, families, judgedCount, soloDate, onAccept, accept,
-  onOpenReport, reportButtonRef, dataState,
+  onOpenReport, onOpenDiff, reportButtonRef, dataState,
 }: {
   /**
    * §10.2 / §10.4 — the header keeps rendering what is known (date, venue) and
@@ -802,6 +804,7 @@ function DateHeader({
   onAccept: () => void
   accept: AcceptState
   onOpenReport: () => void
+  onOpenDiff: () => void
   /** Wraps the `Open report.md` button so §11 can restore focus on close. */
   reportButtonRef: React.RefObject<HTMLSpanElement>
 }) {
@@ -873,6 +876,13 @@ function DateHeader({
         )}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 5 }}>
           <div style={{ display: 'flex', gap: 8 }}>
+            {/* §12 — reached from `Compare runs` in the date header. */}
+            <Button
+              variant="ghost" size="sm" onClick={onOpenDiff}
+              title="Compare two analysis runs of this date"
+            >
+              Compare runs
+            </Button>
             <span ref={reportButtonRef}>
               <Button
                 variant="ghost" size="sm" onClick={onOpenReport}
@@ -2468,6 +2478,40 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
     return () => { drawerOpenerRef.current?.focus?.() }
   }, [narrowDossier, selectedPair])
 
+  // ── §12 run diff (Phase 8) ────────────────────────────────────────────────
+  const [diffOpen, setDiffOpen] = useState(false)
+  const [basePick, setBasePick] = useState<string | null>(null)
+  const [headPick, setHeadPick] = useState<string | null>(null)
+  useEffect(() => {
+    setDiffOpen(false); setBasePick(null); setHeadPick(null)
+  }, [selectedDate])
+
+  const { data: runsData } = useQuery({
+    queryKey: ['tapematch-runs', selectedDate],
+    queryFn: () => fetch(`${BASE}/api/tapematch/runs?date=${encodeURIComponent(selectedDate as string)}`)
+      .then(r => r.json()),
+    enabled: diffOpen && !!selectedDate,
+    staleTime: 60_000,
+  })
+  const runList: RunMeta[] = (runsData as { runs?: RunMeta[] } | undefined)?.runs ?? []
+  // Default comparison: the run before the current one against the current
+  // one — "does the newest run invalidate what I decided?" is the question
+  // §12 exists for, and that is the pair that answers it.
+  const headId = headPick ?? runList[0]?.run_id ?? null
+  const baseId = basePick ?? runList[1]?.run_id ?? null
+
+  const snapshotQuery = (runId: string | null) => ({
+    queryKey: ['tapematch-run-snapshot', selectedDate, runId],
+    queryFn: () => fetch(
+      `${BASE}/api/tapematch/run_snapshot?date=${encodeURIComponent(selectedDate as string)}`
+      + `&run_id=${encodeURIComponent(runId as string)}`,
+    ).then(r => r.json()),
+    enabled: diffOpen && !!selectedDate && !!runId,
+    staleTime: 60_000,
+  })
+  const { data: baseSnap, isFetching: baseFetching } = useQuery(snapshotQuery(baseId))
+  const { data: headSnap, isFetching: headFetching } = useQuery(snapshotQuery(headId))
+
   const closeReport = () => {
     setReportOpen(false)
     // §11 — focus returns to `Open report.md`. The Button primitive doesn't
@@ -2594,6 +2638,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
             onAccept={acceptFamilies}
             accept={accept}
             onOpenReport={() => setReportOpen(true)}
+            onOpenDiff={() => setDiffOpen(true)}
             reportButtonRef={reportButtonRef}
             dataState={
               pairsError ? 'error'
@@ -2812,6 +2857,22 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
           onClose={closeReport}
           onOpenPair={(a, b) => { setSelectedPair({ lbA: a, lbB: b }); closeReport() }}
           onSelectLb={lb => { setPendingLb(lb); setSelectedPair(null); closeReport() }}
+        />
+      )}
+      {diffOpen && selectedDate && (
+        <RunDiffSheet
+          date={selectedDate}
+          venue={selectedRow?.location ?? null}
+          runs={runList}
+          baseId={baseId}
+          headId={headId}
+          onPickBase={setBasePick}
+          onPickHead={setHeadPick}
+          baseSnapshot={(baseSnap as RunSnapshot | undefined) ?? null}
+          headSnapshot={(headSnap as RunSnapshot | undefined) ?? null}
+          loading={baseFetching || headFetching}
+          onClose={() => setDiffOpen(false)}
+          onOpenPair={(a, b) => { setSelectedPair({ lbA: a, lbB: b }); setDiffOpen(false) }}
         />
       )}
     </div>
