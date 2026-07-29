@@ -1,12 +1,4 @@
 
-BUG-280: tapematch dates 1961-1968 land in 2061-2068 (strptime %y century pivot)
-Status: Open
-File(s): tools/tapematch/tapematch_session.py:1021,tools/tapematch/tapematch_session.py:1069,tools/tapematch/tapematch_session.py:1103
-Reported: 2026-07-29
-Description: All three date parses in tapematch_session.py use datetime.strptime(date_str, '%m/%d/%y') on the entries table's M/D/YY date_str. Python's %y follows the POSIX pivot: 00-68 -> 2000-2068, 69-99 -> 1969-1999. Dylan's 1961-1968 material therefore resolves to 2061-2068, while 1969+ is correct - which is why the earliest apparently-valid tapematch concert_date is 1969-08-31. Impact: 41 distinct dates, 41 run dirs under data/tapematch/runs/ (e.g. 20260726_105115_2063-04-12) and 41 concert_date values in tapematch_pairs, all future-dated. They sort to the end of the TapeMatch triage queue and render as future shows in the curation screen; 2063-04-12 (the Town Hall show, 15 recordings) is the largest. The analysis itself is sound - the pairs, families and verdicts for each date are computed over the right recordings, only the date label is wrong. Fix: pass an explicit century pivot (e.g. parse %m/%d/%y then subtract 100 years when the result is in the future, or pre-expand the 2-digit year against a 1960 floor) at all three sites, then backfill tapematch_pairs.concert_date and rename the affected run dirs. No tapematch_date_curation rows are affected (0 of the 41 dates has been accepted), so no curation record needs remapping.
-Root cause: Unknown
-Fix: —
-
 BUG-279: tapematch: `pytest tests/` launches REAL tapematch sessions against the production DB and live audio
 Status: FIXED 2026-07-27
 File(s): tools/tapematch/tests/test_batch_queue.py:24,tools/tapematch/tapematch_session.py:1473
@@ -36,19 +28,6 @@ Fix direction: NOT a one-line addition of two dict keys. Making rule_d fire live
 Fix (commit a27594cb): (1) emb_live.score_session_pairs() -- DB-free scoring shared by the pre-clustering path and the existing post-clustering persist path, so a live verdict and the row later written to observations.db cannot disagree. (2) tapematch/cli.py: new `--concert-date` (the embedding cache is date-keyed and the CLI had no notion of a date); scores every pair before `match.cluster` and feeds emb_score/emb_score_global into `_pair_metrics`. Lazy, defensive import -- any failure leaves the scores None and rule_d abstains exactly as before. (3) tapematch_session.py: passes the date at both run_tapematch call sites.
 VERIFIED end-to-end 2026-07-27 on 1994-02-16 (a tier-A date): the run logged "embedding: scored 21 pair(s), 3 at/above the rule_d bar" -- the first time rule_d has ever fired in a live session -- and produced exactly the 3 predicted flips. LB-10872 joined the {5202, 14921, 15363} family via two direct links (5202/10872 emb 0.978, 10872/15363 emb 0.954) plus 10872/14921 transitively. Regression test test_cli_shaped_metrics_reach_rule_d pins the behaviour: the same metrics dict links with emb present and abstains without, so dropping the keys again fails the suite.
 Remaining: re-run the other 79 affected dates + re-sync families to the app DB.
-
-BUG-277: tapematch: a cross-referenced LB tag in a folder name shadows the folder's own LB number
-Status: Open
-File(s): tools/tapematch/tapematch/cli.py:512,tools/tapematch/tapematch_session.py:697
-Reported: 2026-07-27
-Description: Two distinct source folders on the same date can resolve to the SAME LB number, producing self-pairs (lb_a == lb_b) in observations.db latest_pairs. 7 such rows exist today: 1989-07-16/2204, 1988-06-07/2564, 1988-06-25/6295, 1988-07-20/1475, 1988-09-11/2585, 1988-09-23/3164, 1993-06-19/1929.
-
-Root cause: cli.py:512 _lb_num() extracts the LB number by regexing the staged folder name (re.search(r'LB-(\\d+)', name)) and takes the FIRST match. Folder names that embed a cross-referenced LB tag before their own -- the docstring's own example is '... [fixed LB-2204]-LB-10437-v' -- therefore return 2204 instead of 10437. tapematch_session.py:697 _lb_num_from_folder() falls back to the same regex when its DB lookup misses, so the harness agrees with the wrong answer rather than catching it. The cli.py docstring already calls this 'a known, rare gap'; LB-2204 is one of the 7 live collisions, so it is firing in production, not hypothetical.
-
-Impact: (a) a self-pair correlates 1.0 by construction and reads as a same_family merge -- it produced a spurious 'new merge' in the TODO-184 polarity validation on 1988-09-23; (b) more seriously, wherever the shadowing fires the pair/family rows are attributed to the WRONG LB entry, so recording_families membership for those sources is incorrect; (c) two of the 7 have corr ~0.003, confirming they are genuinely different recordings collapsed onto one LB number, not duplicate folders.
-
-Fix direction: prefer the trailing/own LB tag over an embedded cross-reference (e.g. take the LAST LB-NNNNN match, or strip bracketed '[... LB-N ...]' segments before matching), and make the session-level DB lookup authoritative instead of silently falling back. Add a post-run assertion that no run emits lb_a == lb_b. Backfill: re-run the 7 affected dates after the fix. Guard already added in tools/tapematch/validate_polarity.py (skips lb_a == lb_b) so the validation harness no longer scores them.
-Fix: TBD — see "Fix direction" above.
 
 BUG-210: backend/lossless_bob.db keeps reappearing in repo root (untracked, empty)
 Status: Open
