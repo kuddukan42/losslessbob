@@ -77,6 +77,21 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   two-ref case is additionally checked against the date's pair map, so a
   heading naming a pair the run didn't keep isn't clickable either.
 
+- **D12 — the stale banner ships without its `Regenerate` button.** §11's banner
+  is specified with a ghost `Regenerate` on the right. Regenerating a run means
+  invoking the generator, which the standing constraints forbid changing and no
+  route exposes; a button that cannot regenerate is worse than the sentence
+  alone, which already tells the curator the file is a snapshot. The banner's
+  count and copy are built verbatim.
+- **D13 — an LB chip and an audit row both close the sheet.** §11 says a chip
+  click "selects that recording in the matrix" and a row click opens its
+  dossier, without saying what happens to the overlay. Both targets live
+  *behind* the sheet, so leaving it open would make the click look inert. A
+  chip therefore starts D7's two-click pair selection (pending outline) and
+  closes; a row selects the pair and closes. Only a two-LB row whose pair the
+  run actually kept is clickable — the same resolution rule D9 set for §7's
+  ref chips.
+
 - **D6 — the §5 conflict dot is served by extending the pairs route's existing
   live read, not by a schema change.** `tapematch_pairs` (app DB) has no LB-page
   claim, but `GET /api/tapematch/pairs` already opens `observations.db` live for
@@ -154,9 +169,10 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   `window.api`, so `BASE` is dead and every panel renders empty. Use
   `/verify --electron`. This applies to every remaining phase.
 
-## Known backend gaps (become phases 7–8)
+## Known backend gaps (phase 8)
 
-- No route serves `report.md` (only `/api/tapematch/analysis` → analysis.md).
+- ~~No route serves `report.md`~~ — `GET /api/tapematch/report?date=` landed in
+  phase 7.
 - No route lists the runs for a date (§12 run pickers, Q8; 1989-06-04 has 15).
 - Run artifacts carry no pipeline/threshold metadata → §12 blocked (Q2 says
   forward-only, so §12 is last regardless).
@@ -175,7 +191,7 @@ Order follows README "Implementation Order", collapsed into committable bites.
 | 4 | Speed strip §6 | √ scale, ticks, lane packing; A4 merged glyph, Q3 tooltip without `ratioConfidence` | **done** (this session) |
 | 5 | Verdict cards §7 | B1 subject rule (ref / family / statement), B1.1 body structure, B2 tone table, A6/A8 | **done** (this session) |
 | 6 | Write path | judgment save (D4), `Accept families` → DB + date `curated` (Q4) | **done** (this session) |
-| 7 | report.md view §11 | backend route for report.md; A1 `===` sub-blocks, A2 rail, A3 coverage stats, A9; `react-markdown` pinned (Q5) | not started |
+| 7 | report.md view §11 | backend route for report.md; A1 `===` sub-blocks, A2 rail, A3 coverage stats; `react-markdown` pinned (Q5) | **done** (this session) |
 | 8 | Run diff §12 | run-list route, run pickers (Q8), forward-only causes (Q2) | not started |
 | 9 | §10 states | loading skeletons (no reflow), fetch error, empty filter, zero/single-recording dates, large-N matrix, drawer transition + focus | not started |
 
@@ -269,3 +285,44 @@ Order follows README "Implementation Order", collapsed into committable bites.
   `#/tapematch?date=2001-10-30`, the crawl buttons, both LB link targets and
   the raw-document disclosure opening on 1998-06-14. Backend 1055 pass.
   TODO-275 opened for the missing i18n.
+- 2026-07-28 — Phase 7 (report.md view §11) landed. Backend: new
+  `GET /api/tapematch/report?date=` — the analysis route's run resolution and
+  read-only disk read, plus `run_dir` for the sheet header;
+  `tests/test_tapematch_routes.py` 41 pass (4 new: text + run_dir, a run with
+  no report.md, unknown date / absent DB, missing param). Frontend: new
+  `lib/reportMd.ts` (A1 panel split, A2 outline with the duplicate-label rule,
+  A3 coverage figures, commentary/audit table rows) checked against all six
+  `real_output/` documents before wiring — 1987-09-26's `DIAGNOSTICS` is the
+  one-line inline case, 2018-08-26 and 1993-06-27 are the duplicate
+  `LAG CURVES / SPEED` case — and `components/tapematch/ReportSheet.tsx` for
+  the sheet itself. `react-markdown` 10.1.0 + `remark-gfm` 4.0.1 added
+  `--save-exact` per Q5; they carry the prose blocks, and the LB chips inside
+  them are injected by walking the rendered children (react-markdown's
+  `components` map covers element nodes only, so the design's "post-process the
+  output" route applies to React children, not HTML). New decisions D12 (no
+  `Regenerate` button) and D13 (chip/row clicks close the sheet) above.
+  `/gui-check` green; `/verify --electron` on 1998-06-14 at 1920×1080 covered
+  the rendered document (coverage stat row + two warn-barred not-on-disk rows,
+  nine collapsed panels with `N lines · N cols`, CLUSTERS/DIAGNOSTICS open,
+  `[DISTINCT SOURCE]` tinted in place, the audit table and the footer line),
+  the outline rail's jump + active state, the raw view's gutter and tinting,
+  a row click closing the sheet onto the LB-02261 × LB-10954 dossier, the
+  stale banner and a dashed `YOUR JUDGMENT` annotation, and dark mode. The
+  test judgment (`uncertain`, the same non-calibration value phase 6 used) was
+  cleared afterwards — `/api/tapematch/pairs` shows no judgments on the date.
+  **Resume at Phase 8 (run diff §12).**
+
+  Carried forward from this phase:
+  - **The `differs` (red) judgment annotation is logic-only.** Showing it needs
+    a `confirmed_same`/`confirmed_different` judgment, which is calibration
+    truth for `regression.py`; phase 6 set the precedent of never writing one
+    for a screenshot. The tone/copy branch is exercised by the same code path
+    as the verified one.
+  - **Print (§11.1) is styled but unprinted.** The `@media print` block is
+    written against the portalled sheet (`body > *:not(.rpWrap)` hidden) and
+    `beforeprint` expands every panel per A1, but no PDF was produced under
+    Xvfb. `<meta name="omelette-owns-print">` was deliberately not carried
+    over — Q5 already flagged that Electron's host export doesn't read it — and
+    §11.1's print-only "nothing to print" notice for the *closed* state
+    belongs to the screen, not to a component that only exists while the
+    report is open. Both are Phase 9 candidates if printing matters.

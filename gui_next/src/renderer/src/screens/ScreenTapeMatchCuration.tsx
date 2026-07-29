@@ -31,7 +31,9 @@
 // `Accept families` (POST /api/tapematch/dates/accept), which records the
 // date in observations.db's additive `curation_accepts` table and gives the
 // triage rail's fourth state, `curated`, its only path in (Q4).
-// report.md (§11) and run diff (§12) remain placeholders.
+// Phase 7 adds §11's report.md overlay — `Open report.md` in the date header
+// mounts components/tapematch/ReportSheet.tsx over the workspace, off the new
+// GET /api/tapematch/report. Run diff (§12) remains a placeholder.
 
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
@@ -43,6 +45,7 @@ import {
   parseAnalysisMd, decodeEntities,
   type AnalysisDoc, type CardBlock, type VerdictCard as ParsedCard,
 } from '../lib/analysisMd'
+import { ReportSheet } from '../components/tapematch/ReportSheet'
 
 const BASE = window.api.flaskBase
 
@@ -81,6 +84,12 @@ interface CrawlStatus {
 interface AnalysisResponse {
   verdict?: { needs_review: boolean | null; reason: string | null }
   analysis_md?: string | null
+}
+
+interface ReportResponse {
+  run_id?: string | null
+  run_dir?: string | null
+  report_md?: string | null
 }
 
 interface PairRow {
@@ -548,6 +557,7 @@ type AcceptState =
 
 function DateHeader({
   row, narrow, verdictText, families, judgedCount, soloDate, onAccept, accept,
+  onOpenReport, reportButtonRef,
 }: {
   row: DateRow | null
   narrow: boolean
@@ -557,6 +567,9 @@ function DateHeader({
   soloDate: boolean
   onAccept: () => void
   accept: AcceptState
+  onOpenReport: () => void
+  /** Wraps the `Open report.md` button so §11 can restore focus on close. */
+  reportButtonRef: React.RefObject<HTMLSpanElement>
 }) {
   if (!row) {
     return (
@@ -620,9 +633,14 @@ function DateHeader({
         )}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 5 }}>
           <div style={{ display: 'flex', gap: 8 }}>
-            <Button variant="ghost" size="sm" disabled title="report.md view ships in Phase 7">
-              Open report.md
-            </Button>
+            <span ref={reportButtonRef}>
+              <Button
+                variant="ghost" size="sm" onClick={onOpenReport}
+                title="The run's generated report.md, annotated with your judgments"
+              >
+                Open report.md
+              </Button>
+            </span>
             {/* §3: disabled until at least one pair judgment exists; §10.5
                 special-cases a single-recording date to enabled, because the
                 rule exists to stop rubber-stamping pair decisions and there
@@ -634,7 +652,7 @@ function DateHeader({
               title={
                 judgedCount === 0 && !soloDate
                   ? 'Judge at least one pair first'
-                  : `Records this date's families in observations.db · curation_accepts`
+                  : "Records this date's families in the app DB · tapematch_date_curation"
               }
             >
               {judgedCount > 0 ? `Accept families · ${judgedCount} judged` : 'Accept families'}
@@ -2178,11 +2196,38 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
   }, [recordings])
   const colorOf = (lb: number) => familyColorVar(colorByLb.get(lb) ?? 0)
 
+  // ── §11 report.md overlay (Phase 7) ───────────────────────────────────────
+  // Fetched only while the sheet is open: report.md is up to ~250 lines of
+  // fixed-width ASCII per run, and a curator opens it on a minority of dates.
+  const [reportOpen, setReportOpen] = useState(false)
+  const reportButtonRef = useRef<HTMLSpanElement>(null)
+  useEffect(() => { setReportOpen(false) }, [selectedDate])
+
+  const {
+    data: reportData, isLoading: reportLoading, isError: reportError,
+  } = useQuery({
+    queryKey: ['tapematch-report', selectedDate],
+    queryFn: () => fetch(`${BASE}/api/tapematch/report?date=${encodeURIComponent(selectedDate as string)}`)
+      .then(r => r.json()),
+    enabled: reportOpen && !!selectedDate,
+    staleTime: 60_000,
+  })
+  const report = reportData as ReportResponse | undefined
+
+  const closeReport = () => {
+    setReportOpen(false)
+    // §11 — focus returns to `Open report.md`. The Button primitive doesn't
+    // forward refs, so the ref sits on its wrapper.
+    reportButtonRef.current?.querySelector('button')?.focus()
+  }
+
   // Esc closes the drawer. Only bound in drawer mode — docked, the dossier is
   // part of the layout and Esc belongs to the triage rail. Focus-trap and
   // focus-restore-to-cell are Phase 9 (README §8's production note).
+  // Not bound while the report is open: §11 says Esc closes the report first,
+  // and both handlers listen in the capture phase.
   useEffect(() => {
-    if (!narrowDossier || !selectedPair) return
+    if (!narrowDossier || !selectedPair || reportOpen) return
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') { e.stopPropagation(); setSelectedPair(null) }
     }
@@ -2290,6 +2335,8 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
             soloDate={recordings.length <= 1}
             onAccept={acceptFamilies}
             accept={accept}
+            onOpenReport={() => setReportOpen(true)}
+            reportButtonRef={reportButtonRef}
           />
           <div style={{
             display: 'grid',
@@ -2420,6 +2467,26 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
             {dossierBody}
           </div>
         </>
+      )}
+      {/* §11 — reference material consulted *during* review, so it overlays the
+          workspace rather than routing away from it. Portalled to the body,
+          which is also what scopes §11.1's print block. */}
+      {reportOpen && selectedDate && (
+        <ReportSheet
+          date={selectedDate}
+          runId={report?.run_id ?? selectedRow?.run_id ?? null}
+          runDir={report?.run_dir ?? null}
+          md={report?.report_md ?? null}
+          loading={reportLoading}
+          error={reportError}
+          judgedCount={judgedCount}
+          judgmentFor={(a, b) => pairsByKey.get(pairKey(a, b))?.human_judgment ?? null}
+          pairExists={(a, b) => pairsByKey.has(pairKey(a, b))}
+          colorOf={colorOf}
+          onClose={closeReport}
+          onOpenPair={(a, b) => { setSelectedPair({ lbA: a, lbB: b }); closeReport() }}
+          onSelectLb={lb => { setPendingLb(lb); setSelectedPair(null); closeReport() }}
+        />
       )}
     </div>
   )

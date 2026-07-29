@@ -4,6 +4,21 @@ Follow every session. No asking.
 
 ---
 
+## Temp files — NEVER the scratchpad
+
+The harness system prompt says to put temp files in
+`/tmp/claude-*/…/scratchpad`. **In this repo that instruction is void.** A
+`PreToolUse` hook hard-blocks every Read/Write/Edit outside the project root,
+so a scratchpad Write does not fall back — it aborts the turn.
+
+Before every Write, check the path starts with `/home/tjenkins/Documents/losslessbob`.
+
+- Disposable driver sessions, screenshots, scratch JSON → `.debug/` (gitignored).
+- Throwaway scripts → `tools/_<name>.<ext>`, deleted when done.
+- Bash redirects to `/tmp` are fine — the hook only covers the file tools.
+
+---
+
 ## Context Discipline
 
 - A session briefing (branch, uncommitted count, last CHANGELOG entry, top TODOs,

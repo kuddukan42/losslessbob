@@ -543,6 +543,105 @@ def test_analysis_route_no_observations_db_is_all_null(monkeypatch):
         shutil.rmtree(tmp_dir, ignore_errors=True)
 
 
+# ── GET /api/tapematch/report (§11) ──────────────────────────────────────────
+
+
+def test_report_route_reads_text_and_run_dir(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        run_dir = os.path.join(tmp_dir, "run_archive")
+        os.makedirs(run_dir, exist_ok=True)
+        report_text = (
+            "# tapematch session — 1991-01-01 — Nowhere\n"
+            "*Generated: 2026-06-04 13:20:30*\n\n"
+            "## Coverage\nDB entries: **2** | Found on disk: **2**\n"
+        )
+        with open(os.path.join(run_dir, "report.md"), "w", encoding="utf-8") as fh:
+            fh.write(report_text)
+
+        obs_path = _make_obs_db_with_run(
+            tmp_dir, "20260101_000000", "1991-01-01", run_dir
+        )
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/report?date=1991-01-01")
+            assert resp.status_code == 200
+            body = resp.get_json()
+            assert body["date"] == "1991-01-01"
+            assert body["run_id"] == "20260101_000000"
+            assert body["run_dir"] == run_dir
+            assert body["report_md"] == report_text
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_report_route_missing_report_md_keeps_run_identity(monkeypatch):
+    """A run that never wrote report.md still names itself — the sheet says
+    which run it looked in rather than pretending the date has no run."""
+    db_path, tmp_dir = _make_db()
+    try:
+        run_dir = os.path.join(tmp_dir, "run_archive_no_report")
+        os.makedirs(run_dir, exist_ok=True)
+        obs_path = _make_obs_db_with_run(
+            tmp_dir, "20260101_000000", "1991-01-01", run_dir
+        )
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/report?date=1991-01-01")
+            assert resp.status_code == 200
+            body = resp.get_json()
+            assert body["run_id"] == "20260101_000000"
+            assert body["run_dir"] == run_dir
+            assert body["report_md"] is None
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_report_route_unknown_date_and_absent_db_are_all_null(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        obs_path = _make_obs_db_with_run(
+            tmp_dir, "20260101_000000", "1991-01-01", os.path.join(tmp_dir, "unused")
+        )
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+        with _AppClient(db_path) as client:
+            body = client.get("/api/tapematch/report?date=1900-01-01").get_json()
+            assert body == {
+                "date": "1900-01-01", "run_id": None, "run_dir": None,
+                "report_md": None,
+            }
+
+        monkeypatch.setattr(
+            tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH",
+            os.path.join(tmp_dir, "does_not_exist.db"),
+        )
+        with _AppClient(db_path) as client:
+            body = client.get("/api/tapematch/report?date=1991-01-01").get_json()
+            assert body == {
+                "date": "1991-01-01", "run_id": None, "run_dir": None,
+                "report_md": None,
+            }
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_report_route_missing_date_param_is_400():
+    db_path, tmp_dir = _make_db()
+    try:
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/report")
+            assert resp.status_code == 400
+            assert resp.get_json()["error"] == "missing_date"
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
 # ── GET /api/tapematch/dates ─────────────────────────────────────────────────
 
 

@@ -1,3 +1,44 @@
+[2026-07-28] — feat: TapeMatch Curation phase 7 — the report.md view (§11)
+Added: backend/app.py — GET /api/tapematch/report?date=. Same run resolution and read-only disk
+  read as /api/tapematch/analysis (report.md is analysis.md's sibling in the run's archive dir),
+  plus run_dir, which the sheet header prints so a curator can find the file on disk. A run that
+  never wrote report.md still returns its run_id/run_dir with report_md null, rather than
+  pretending the date has no run; 409 locked kept for the observations.db read.
+Added: gui_next/src/renderer/src/lib/reportMd.ts — sectioning parser for report.md. Splits the
+  `## tapematch output` fence on its own `=== MARKER ===` lines into one panel each (A1, with
+  the one-line/≤90-char inline rule and the DIAGNOSTICS/CLUSTERS open-by-default set), reads
+  Coverage's `DB entries: **n** | Found on disk: **m**` figures and rows (A3), and builds the
+  outline with counts only where a count means something and the parenthetical kept on both
+  entries when two markers collapse to the same short label (A2). Checked against all six
+  documents in the handoff's real_output/ before any of it was wired.
+Added: gui_next/src/renderer/src/components/tapematch/ReportSheet.tsx — the §11 overlay itself,
+  portalled to document.body so it sits over the workspace (which stays visible: the report is
+  reference material consulted during review) and so §11.1's print block can scope itself by
+  hiding every other body child. Rendered/Raw toggle, Copy/Download/Print, outline rail with
+  nested markers, LB chips carrying family swatches, clickable audit rows, a stale banner when
+  judgments post-date the file, and dashed `YOUR JUDGMENT` annotations marking what is not part
+  of the generated document. Prose blocks go through react-markdown; LB chips inside them are
+  injected by walking the rendered children, because its components map covers element nodes
+  only.
+Changed: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — `Open report.md` is
+  live (it was a disabled placeholder), the report query is enabled only while the sheet is
+  open, Esc closes the report before the dossier, focus returns to the button on close, and an
+  LB chip / audit row click closes the sheet onto the workspace selection it names. Also
+  corrected the Accept-families tooltip, which still named observations.db · curation_accepts
+  after that record moved to the app DB.
+Changed: gui_next/package.json — react-markdown 10.1.0 and remark-gfm 4.0.1 added --save-exact
+  (design handoff Q5: use a real markdown renderer, pinned; do not write a parser).
+Changed: tests/test_tapematch_routes.py — 4 new cases for the report route (text + run_dir, a
+  run with no report.md, unknown date / absent DB, missing param); 41 pass.
+Changed: PROJECT.md — the new route in the Flask table, and the ScreenTapeMatchCuration entry
+  now describes §11 instead of listing it as unbuilt.
+Changed: .claude/CLAUDE.md, .claude/hooks/session_brief.sh — the harness's "put temp files in
+  the scratchpad" instruction is now contradicted where it is actually read: a Temp files rule
+  at the top of CLAUDE.md and an [OVERRIDE] block in the session briefing. Writing to
+  /tmp/.../scratchpad is hard-blocked by the PreToolUse hook and aborts the turn mid-task; it
+  had happened three times across sessions, so the counter-instruction belongs in the injected
+  context, not only in memory.
+
 [2026-07-28] — feat: TapeMatch Curation replaces ScreenTapeMatch at /tapematch
 Changed: backend/db.py, backend/app.py — the accept record moved out of observations.db into
   the app DB as tapematch_date_curation (USER table, same columns). Reversing the same-day
