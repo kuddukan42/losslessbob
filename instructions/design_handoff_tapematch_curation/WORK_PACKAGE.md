@@ -56,6 +56,23 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   risk for a hint that the dashed pending outline on the dot already gives.
   Starting a new pending selection clears any selected pair, so the strip never
   shows a solid and a dashed outline at once.
+- **D8 — the family chip does not click, and its swatch is tinted from the
+  document's own table.** README §7.1 has `Family n` "click selects the
+  family's members", which needs a multi-recording highlight state the matrix
+  doesn't have — the same second-highlight-state cost that D7 declined, for a
+  hint with no dossier behind it. Deferred to Phase 9 with the rest of the
+  §10 state work. The swatch *is* coloured, but from `analysis.md`'s own
+  `Family` column (LB → n), not from `fam_id`: the app DB's family ids are
+  member-derived (`1996-07-13#5812-6362-6368`) and carry no run family number,
+  so `Family 2` is only resolvable through the document that wrote it.
+- **D9 — a ref chip is a click target only when it resolves to a real pair.**
+  A7 makes the ref navigate through the normalised `lb_a < lb_b` key; a
+  single-recording heading (`### LB-00776 — INCOMPLETE recording`) has no pair
+  to open and a three-way heading has no one pair to mean, so both render as
+  plain mono text rather than a button that would resolve to nothing. The
+  two-ref case is additionally checked against the date's pair map, so a
+  heading naming a pair the run didn't keep isn't clickable either.
+
 - **D6 — the §5 conflict dot is served by extending the pairs route's existing
   live read, not by a schema change.** `tapematch_pairs` (app DB) has no LB-page
   claim, but `GET /api/tapematch/pairs` already opens `observations.db` live for
@@ -122,8 +139,8 @@ Order follows README "Implementation Order", collapsed into committable bites.
 | 2 | Matrix §5 | three colour regimes, diagonal, `n/c` hatching, conflict dot, symmetric selection, cross-dimming, a11y grid nav | **done** (this session) |
 | 3 | Dossier §8 | evidence bars, conditional correlation note, demoted fingerprint bar + coincidence band, A/B player (D3 → superseded, see below), judgment control + notes | **done** (this session) |
 | 4 | Speed strip §6 | √ scale, ticks, lane packing; A4 merged glyph, Q3 tooltip without `ratioConfidence` | **done** (this session) |
-| 5 | Verdict cards §7 | B1 subject rule (ref / family / statement), B1.1 body structure, B2 tone table, A6/A8 | **next** |
-| 6 | Write path | judgment save (D4), `Accept families` → DB + date `curated` (Q4) | not started |
+| 5 | Verdict cards §7 | B1 subject rule (ref / family / statement), B1.1 body structure, B2 tone table, A6/A8 | **done** (this session) |
+| 6 | Write path | judgment save (D4), `Accept families` → DB + date `curated` (Q4) | **next** |
 | 7 | report.md view §11 | backend route for report.md; A1 `===` sub-blocks, A2 rail, A3 coverage stats, A9; `react-markdown` pinned (Q5) | not started |
 | 8 | Run diff §12 | run-list route, run pickers (Q8), forward-only causes (Q2) | not started |
 | 9 | §10 states | loading skeletons (no reflow), fetch error, empty filter, zero/single-recording dates, large-N matrix, drawer transition + focus | not started |
@@ -170,3 +187,22 @@ Order follows README "Implementation Order", collapsed into committable bites.
   ticks), 1991-07-20 (all four glyphs in one strip), 2001-10-30 (7 recs,
   three lanes) plus dark mode and the pending → pair → restart click cycle.
   **Resume at Phase 5 (verdict cards §7).**
+- 2026-07-28 — Phase 5 (verdict cards §7) landed. **No backend change** —
+  `/api/tapematch/analysis` already serves the whole `analysis_md`, so the
+  parse is client-side in a new `renderer/src/lib/analysisMd.ts` (B1 subject
+  rule, B1.1 body blocks, B1.2 statements, B2 tone table with quoted spans
+  stripped, A5 emoji strip, A8 entity decode). Checked against all six
+  `real_output/` documents before wiring: 1993-06-27 → 20 cards, the eleven
+  ref-only ones all `info`; 1996-07-13 → bad ref card + family card + `Audit
+  table` statement; 1998-06-14 → `Coverage gap` statement + two `bad`
+  contradiction cards; 2018-08-26 → zero cards, A6 clean line.
+  Frontend: the §7 stack, A6's clean line / not-on-disk / algorithm-note meta,
+  and A8's 3-line clamp on the dossier's LB-page quote (A8's surface is the
+  commentary body, not the card body — the design's own `CardBody` doesn't
+  clamp). New decisions D8 (family chip) and D9 (ref click resolution) above.
+  `/gui-check` green; `/verify --electron` on 1996-07-13 (family card + audit
+  statement, light and dark), 1998-06-14 (coverage gap + ref click →
+  LB-02261 × LB-10954 dossier + `Show more` on its 240+ char claim),
+  2018-08-26 (clean line + not-on-disk) and 2001-05-02 (the live corpus's
+  ref-only kv shape — 1993-06-27's chosen run has no `analysis.md`).
+  **Resume at Phase 6 (write path).**
