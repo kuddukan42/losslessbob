@@ -39,6 +39,22 @@ Before every Write, check the path starts with `/home/tjenkins/Documents/lossles
 
 ---
 
+## Response Brevity — hard rule
+
+Chat output is TOO VERBOSE by default. Cut it hard. Asked for repeatedly
+(2026-07-27, 2026-07-29).
+
+- Default response: a few lines, or a tight `Area | Change` table. Not paragraphs.
+- Report only: decisions, blockers, final results. No narration of intermediate
+  steps, no restating context the user already gave, no "next I'll…" preambles,
+  no recap of what a tool just did when the result speaks for itself.
+- No explaining reasoning unless asked or unless it changes what the user does.
+- Corrections: one line, no post-mortem.
+- Keep: the "files I plan to change" statement above, and explicit warnings.
+- Terse ≠ cryptic — still answer the actual question, just without the padding.
+
+---
+
 ## Environment
 
 - Python is `.venv/bin/python3` — bare `python`/`python3` is not on PATH.
