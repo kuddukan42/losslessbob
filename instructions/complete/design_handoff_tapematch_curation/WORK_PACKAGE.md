@@ -421,3 +421,57 @@ Order follows README "Implementation Order", collapsed into committable bites.
   02470×14054 cell carrying its ring and `!`, `different → same` in the pair
   table, the 13-pairs-unchanged line with `Show every pair`, and §12.5's empty
   state.
+- 2026-07-29 — Phase 8's frontend was found **uncommitted and non-compiling**:
+  `ReportSheet.tsx` had its inline sheet chrome deleted but `SheetShell` was
+  never wired in, leaving unbalanced JSX and a `return createPortal(body, …)`
+  with no `body` (6 `tsc` errors). The entry above claiming `/gui-check` green
+  did not hold for the working tree. Finished the refactor (closed the
+  `rail`/`body` fragments, wired the `SheetShell` return, dropped the duplicated
+  `trapFocus`/Esc/`sheetRef`/`createPortal` that D18 moved into the shell),
+  re-verified and shipped as `0e6bd37a`. **Lesson for any resume: trust `tsc`,
+  not this log.**
+
+- **D19 — §10.6's "recommended additions" are WON'T-DO, on evidence; Q7 is
+  closed.** README §10.6 designs for "34 recordings / 561 pairs — the practical
+  worst case in the library" and asks design to confirm sticky row/column
+  headers and the `.tmFamRule` family-boundary rule before enabling them.
+  Q7 was never answered, so the additions were parked through phase 9. Measured
+  against the real corpus (all 3,037 synced dates, `/api/tapematch/dates`):
+
+  | recordings | dates |
+  |---|---|
+  | ≥30 | **0** |
+  | ≥25 | 1 — 1974-01-31 MSG, 26 recs / 325 pairs |
+  | ≥20 | 2 |
+  | ≥15 | 9 |
+  | ≥10 | 62 |
+  | 2–5 | 2,517 (83%) |
+
+  The designed worst case does not exist: the true maximum is 26 recordings /
+  325 pairs, 8 recordings and 236 pairs short of the frame §10.6 was drawn at.
+  Verified the real worst case in Electron at 1920×1080 (1974-01-31): compact
+  mode engages as built in phase 2 — rotated 8.5px headers, numerals dropped to
+  the tooltip, 26×26 grid fitting the work column with no horizontal scroll,
+  family blocks reading as tinted squares on the diagonal.
+  - The **family-boundary rule** is actively wrong here: the date resolves to 15
+    families of which 11 are solos, so the rule would draw ~15 lines through a
+    grid whose diagonal already reads cleanly. §10.6 assumed 9 fat families.
+  - **Sticky headers** retain marginal merit — 26 rows exceed the viewport, so
+    column headers scroll away — but the date header's family chips already name
+    every family and its LBs, and this is one date in 3,037.
+
+  Also note the compact threshold (past 20 recordings) fires on exactly **2**
+  dates corpus-wide; phase 2's compact mode is near-dead code that now has a
+  screenshot proving it works.
+
+  This closes the last open design question from the handoff. Not "pending
+  design" — declined against measurement.
+
+- 2026-07-29 — the recordings-per-date sweep also surfaced **BUG-280**: all
+  three `strptime(date_str, "%m/%d/%y")` sites in
+  `tools/tapematch/tapematch_session.py` inherit Python's POSIX `%y` pivot
+  (00–68 → 20xx), so every 1961–1968 date lands in 2061–2068. 41 dates, 41 run
+  dirs and 41 `tapematch_pairs.concert_date` values are future-dated and sort to
+  the end of the triage queue. The analyses themselves are sound — only the date
+  label is wrong — and no `tapematch_date_curation` row is affected. Not a
+  curation-screen defect; filed against the session tool.

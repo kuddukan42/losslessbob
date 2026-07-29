@@ -1,3 +1,22 @@
+[2026-07-29] — docs: close §10.6/Q7 won't-do on evidence; file BUG-280 (1961–68 dates)
+Changed: instructions/complete/design_handoff_tapematch_curation/WORK_PACKAGE.md — D19 records the
+  recordings-per-date measurement that closes the handoff's last open design question. §10.6 is
+  drawn at "34 recordings / 561 pairs — the practical worst case in the library"; across all 3,037
+  synced dates the true maximum is 26 recordings / 325 pairs (1974-01-31, MSG) and nothing reaches
+  30. Its parked "recommended additions" (sticky row/column headers, the .tmFamRule family-boundary
+  rule) are therefore won't-do rather than pending-design: the rule would draw ~15 lines through a
+  date whose 15 families are 11 solos, and sticky headers serve one date in 3,037. Verified the real
+  worst case in Electron at 1920×1080 — compact mode fits the 26×26 grid with no horizontal scroll.
+  The compact threshold (past 20 recordings) fires on exactly 2 dates corpus-wide. Also logs the
+  phase-8 repair: ReportSheet.tsx was left mid-refactor and non-compiling under a resume-log entry
+  claiming gui-check green.
+Added: BUGS.md BUG-280 — all three strptime(date_str, "%m/%d/%y") sites in
+  tools/tapematch/tapematch_session.py inherit Python's POSIX %y century pivot (00–68 → 20xx), so
+  Dylan's 1961–1968 shows resolve to 2061–2068 while 1969+ is correct. 41 dates, 41 run dirs under
+  data/tapematch/runs/ and 41 tapematch_pairs.concert_date values are future-dated and sort to the
+  end of the TapeMatch triage queue. The analyses are sound — only the date label is wrong — and no
+  tapematch_date_curation row is affected, so no curation record needs remapping.
+
 [2026-07-29] — feat: TapeMatch Curation phase 8 — the §12 run diff; the build is complete
 Added: backend/app.py — GET /api/tapematch/runs?date= lists every run for a date, newest first
   (the two pickers §12/Q8 asked for; 1989-06-04 has 15), and
