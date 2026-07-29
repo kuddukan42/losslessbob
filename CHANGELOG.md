@@ -1,3 +1,12 @@
+[2026-07-29] — chore(docs): bump actions/setup-node v4 → v5 (Node 20 runtime deprecation)
+Changed: .github/workflows/ci.yml, .github/workflows/release.yml — all three actions/setup-node@v4
+  uses bumped to @v5. v4 declares `runs-using: node20` for its own wrapper, which GitHub has
+  deprecated, so runners were force-running it on Node 24 and emitting a warning annotation on every
+  CI run. v5 declares node24 natively. This concerns only the action's own JavaScript shim — the
+  project still builds on Node 22 (`node-version: '22'`, unchanged at all three call sites).
+  release.yml was included because the same annotation would otherwise resurface on the next release.
+  No other action was affected: checkout is already @v5 and setup-python @v6.
+
 [2026-07-29] — chore(docs): renumber 44 historical duplicate BUG/TODO ids; add ledger.py doctor
 Changed: BUGS_DONE.md, TODO_DONE.md — 33 ids were reused across the four ledger files, all from the
   hand-numbered era before tools/ledger.py landed (2026-07-07); the newest collision dated 2026-07-01,
