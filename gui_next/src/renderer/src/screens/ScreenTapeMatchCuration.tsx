@@ -28,6 +28,10 @@ import { useQuery } from '@tanstack/react-query'
 import { Icon } from '../components/Icon'
 import { Pill, Chip, Button, Kbd } from '../components'
 import { familyColorVar } from '../lib/tokens'
+import {
+  parseAnalysisMd, decodeEntities,
+  type AnalysisDoc, type CardBlock, type VerdictCard as ParsedCard,
+} from '../lib/analysisMd'
 
 const BASE = window.api.flaskBase
 
@@ -900,6 +904,43 @@ function JudgmentControl({ pair }: { pair: PairRow | null }): React.JSX.Element 
   )
 }
 
+/**
+ * A8 — the LB page's own words clamp to three lines with a Show more control,
+ * appearing only past ~240 characters. Scrape debris (swept-up navigation,
+ * track listings that ran into a file manifest) deliberately stays visible:
+ * it is the only place a curator will ever notice the scrape needs fixing.
+ * The one thing that is cleaned is HTML entities — nobody wrote `&amp;`.
+ */
+function ClaimText({ text }: { text: string }): React.JSX.Element {
+  const [expanded, setExpanded] = useState(false)
+  const decoded = decodeEntities(text)
+  const needsToggle = decoded.length > 240
+  return (
+    <div style={{
+      fontSize: 11.5, color: 'var(--lbb-fg2)', lineHeight: 1.5, padding: '8px 11px',
+      borderLeft: '2px solid var(--lbb-border2)', background: 'var(--lbb-surface2)',
+      borderRadius: '0 6px 6px 0', textWrap: 'pretty',
+    }}>
+      <div style={{
+        display: needsToggle && !expanded ? '-webkit-box' : 'block',
+        WebkitBoxOrient: 'vertical' as React.CSSProperties['WebkitBoxOrient'],
+        WebkitLineClamp: needsToggle && !expanded ? 3 : undefined,
+        overflow: needsToggle && !expanded ? 'hidden' : 'visible',
+      }}>{decoded}</div>
+      {needsToggle && (
+        <button
+          type="button"
+          onClick={() => setExpanded(v => !v)}
+          style={{
+            marginTop: 4, background: 'transparent', border: 'none', padding: 0,
+            cursor: 'pointer', color: 'var(--lbb-accent-mid)', font: '600 11px inherit',
+          }}
+        >{expanded ? 'Show less' : 'Show more'}</button>
+      )}
+    </div>
+  )
+}
+
 function DossierSubhead({ children }: { children: React.ReactNode }): React.JSX.Element {
   return (
     <div style={{
@@ -1028,11 +1069,7 @@ function Dossier({
             <Pill tone={conflict ? 'bad' : pair?.lb_says_same ? 'ok' : 'mute'} soft>
               {conflict ? 'disagrees' : pair?.lb_says_same ? 'agrees · same source' : 'no claim'}
             </Pill>
-            <div style={{
-              fontSize: 11.5, color: 'var(--lbb-fg2)', lineHeight: 1.5, padding: '8px 11px',
-              borderLeft: '2px solid var(--lbb-border2)', background: 'var(--lbb-surface2)',
-              borderRadius: '0 6px 6px 0', textWrap: 'pretty',
-            }}>{claim}</div>
+            <ClaimText text={claim as string} />
           </>
         ) : (
           <div style={{
@@ -1521,6 +1558,213 @@ function SpeedStrip({
   )
 }
 
+// ── §7 Analysis verdict cards ───────────────────────────────────────────────
+// Parsing lives in `lib/analysisMd.ts` (B1/B1.1/B1.2/B2 rules); this is the
+// rendering only. Ported from the design's `tm-parts.jsx` VerdictCards +
+// `tm.css` .tmNote* block, with the raw hexes mapped onto `--lbb-*` (D2).
+
+function CardBody({ blocks }: { blocks: CardBlock[] }): React.JSX.Element | null {
+  if (!blocks.length) return null
+  return (
+    <div style={{
+      fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', lineHeight: 1.5,
+      display: 'flex', flexDirection: 'column', gap: 5, textWrap: 'pretty',
+    }}>
+      {blocks.map((b, i) => b.kind === 'ul' ? (
+        <ul key={i} style={{ margin: 0, paddingLeft: 16, display: 'grid', gap: 3 }}>
+          {b.items.map((it, j) => <li key={j}>{it}</li>)}
+        </ul>
+      ) : b.kind === 'kv' ? (
+        // B1.1 — `label: value` becomes a two-column row. Every card's keys are
+        // identical, so in an eleven-card stack the eye lands on what differs.
+        <div key={i} style={{
+          display: 'grid', gridTemplateColumns: '104px minmax(0,1fr)', gap: 9,
+          alignItems: 'baseline',
+        }}>
+          <span style={{
+            fontSize: 9.5, fontWeight: 700, letterSpacing: '0.06em',
+            textTransform: 'uppercase', color: 'var(--lbb-fg3)', paddingTop: 1,
+          }}>{b.k}</span>
+          {b.quote ? (
+            <span style={{
+              display: 'block', minWidth: 0, color: 'var(--lbb-fg2)',
+              borderLeft: '2px solid var(--lbb-border2)', background: 'var(--lbb-surface2)',
+              borderRadius: '0 5px 5px 0', padding: '4px 9px', textWrap: 'pretty',
+            }}>{b.v}</span>
+          ) : (
+            <span style={{ minWidth: 0, color: 'var(--lbb-fg2)' }}>{b.v}</span>
+          )}
+        </div>
+      ) : (
+        <p key={i} style={{ margin: 0 }}>{b.text}</p>
+      ))}
+    </div>
+  )
+}
+
+function VerdictCard({
+  card, famColor, onOpenRef,
+}: {
+  card: ParsedCard
+  famColor: string | null
+  onOpenRef: ((refs: number[]) => void) | null
+}): React.JSX.Element {
+  // B1.2 — a heading with no subject is a statement about the run, not a
+  // finding about a recording, so it takes A6's dashed treatment: no chip, no
+  // tone bar, and only its key is tinted. It never competes with a card.
+  if (card.kind === 'statement') {
+    return (
+      <div style={{
+        padding: '9px 12px', borderRadius: 7, border: '1px dashed var(--lbb-border2)',
+        background: 'var(--lbb-surface)',
+      }}>
+        <div style={{
+          fontSize: 9.5, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase',
+          color: `var(--lbb-${card.tone}-fg)`, marginBottom: 4,
+        }}>{card.title}</div>
+        {card.lead && (
+          <div style={{
+            fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4,
+            textWrap: 'pretty',
+          }}>{card.lead}</div>
+        )}
+        <CardBody blocks={card.blocks} />
+      </div>
+    )
+  }
+  return (
+    <div style={{
+      display: 'flex', gap: 10, padding: '10px 12px', borderRadius: 7,
+      background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+    }}>
+      <span style={{
+        width: 3, flex: '0 0 3px', borderRadius: 2, background: `var(--lbb-${card.tone}-bar)`,
+      }} />
+      <div style={{ minWidth: 0, flex: 1, display: 'flex', flexDirection: 'column', gap: 3 }}>
+        <div style={{
+          fontSize: 12, fontWeight: 600, display: 'flex', alignItems: 'baseline',
+          gap: 6, flexWrap: 'wrap',
+        }}>
+          {card.kind === 'family' ? (
+            // The swatch is tinted from the document's own table (LB → Family
+            // column), because `fam_id` in the app DB is member-derived
+            // (`1996-07-13#5812-6362-6368`) and carries no run family number.
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: 5,
+              font: '700 11px var(--lbb-mono)', color: 'var(--lbb-fg)',
+            }}>
+              <span style={{
+                width: 8, height: 8, borderRadius: 2, flex: '0 0 8px',
+                background: famColor ?? 'var(--lbb-mute-bar)',
+              }} />
+              {card.ref}
+            </span>
+          ) : onOpenRef ? (
+            // A7 — display follows the document (slash, its own ordering);
+            // navigation normalises through the lb_a < lb_b pair key.
+            <button
+              type="button"
+              onClick={() => onOpenRef(card.refs)}
+              title={`Open ${card.ref}`}
+              style={{
+                background: 'none', border: 'none', padding: 0, cursor: 'pointer',
+                font: '700 11px var(--lbb-mono)', color: 'var(--lbb-fg)',
+                borderBottom: '1px dashed var(--lbb-border2)',
+              }}
+            >{card.ref}</button>
+          ) : (
+            <span style={{ font: '700 11px var(--lbb-mono)', color: 'var(--lbb-fg)' }}>
+              {card.ref}
+            </span>
+          )}
+          {/* B1.1 — no headline in the document means no headline here, and no
+              dangling em-dash. Nothing is promoted into the empty slot. */}
+          {card.head && (
+            <>
+              <span style={{ color: 'var(--lbb-fg3)' }}>—</span>
+              <span style={{ color: `var(--lbb-${card.tone}-fg)` }}>{card.head}</span>
+            </>
+          )}
+        </div>
+        <CardBody blocks={card.blocks} />
+      </div>
+    </div>
+  )
+}
+
+function VerdictCards({
+  doc, colorOf, pairsByKey, onOpenPair,
+}: {
+  doc: AnalysisDoc
+  colorOf: (lb: number) => string
+  pairsByKey: Map<string, PairRow>
+  onOpenPair: (lbA: number, lbB: number) => void
+}): React.JSX.Element {
+  // A6 — a clean date keeps the section and states the absence in one line.
+  // A card means "here is a finding to review"; dressing the absence of
+  // findings as a card devalues the card after fifty clean dates.
+  const clean = doc.cards.length === 0 ? doc.epilogue.join(' ') : ''
+  const famColor = (fam: number | null): string | null => {
+    if (fam == null) return null
+    for (const [lb, n] of doc.famByLb) if (n === fam) return colorOf(lb)
+    return null
+  }
+  // A ref is a click target only when it resolves to a pair this date actually
+  // has — a single-recording card (`LB-00776`) has no dossier to open, and a
+  // three-way heading has no one pair to mean.
+  const openerFor = (refs: number[]): ((refs: number[]) => void) | null => {
+    if (refs.length !== 2) return null
+    if (!pairsByKey.has(pairKey(refs[0], refs[1]))) return null
+    return r => onOpenPair(r[0], r[1])
+  }
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 7, maxWidth: 760 }}>
+      {clean && (
+        <div style={{
+          display: 'flex', alignItems: 'flex-start', gap: 9, fontSize: 12,
+          color: 'var(--lbb-fg2)', lineHeight: 1.5, padding: '2px 0', textWrap: 'pretty',
+        }}>
+          <span style={{
+            width: 7, height: 7, flex: '0 0 7px', borderRadius: '50%',
+            background: 'var(--lbb-ok-bar)', marginTop: 6,
+          }} />
+          <span>{clean}</span>
+        </div>
+      )}
+      {doc.cards.map((card, i) => (
+        <VerdictCard
+          key={i}
+          card={card}
+          famColor={famColor(card.fam)}
+          onOpenRef={openerFor(card.refs)}
+        />
+      ))}
+      {doc.notOnDisk.length > 0 && (
+        <div style={{
+          fontSize: 11, color: 'var(--lbb-fg3)', lineHeight: 1.5, paddingTop: 2,
+        }}>
+          Not on disk:{' '}
+          <span style={{ fontFamily: 'var(--lbb-mono)' }}>{doc.notOnDisk.join(', ')}</span>
+          {' '}— known to the DB, no audio found by the crawl.
+        </div>
+      )}
+      {doc.algoNote && (
+        <div style={{
+          marginTop: 4, padding: '8px 11px', borderRadius: 6,
+          border: '1px dashed var(--lbb-border2)', background: 'var(--lbb-surface)',
+          fontSize: 11, color: 'var(--lbb-fg3)', lineHeight: 1.5,
+        }}>
+          <span style={{
+            display: 'block', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.07em',
+            textTransform: 'uppercase', marginBottom: 3,
+          }}>Algorithm note</span>
+          {doc.algoNote}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export function ScreenTapeMatchCuration(): React.JSX.Element {
   const [searchParams, setSearchParams] = useSearchParams()
   const selectedDate = searchParams.get('date')
@@ -1554,6 +1798,11 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
     staleTime: 30_000,
   })
   const verdictText: string | null = (analysisData as AnalysisResponse | undefined)?.verdict?.reason ?? null
+  const analysisMd: string | null = (analysisData as AnalysisResponse | undefined)?.analysis_md ?? null
+  // §7 — parsed client-side rather than server-side: the route already serves
+  // the whole document (it has to, for §11's raw view), and the parse rules are
+  // rendering rules, so they belong next to the thing that renders them.
+  const analysisDoc = useMemo(() => analysisMd ? parseAnalysisMd(analysisMd) : null, [analysisMd])
 
   const { data: familiesData } = useQuery({
     queryKey: ['tapematch-families-all'],
@@ -1771,7 +2020,24 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
                 title="Analysis verdict"
                 hint="parsed from analysis.md — the human/AI review layer"
               >
-                <SectionPlaceholder label="Analysis verdict cards — Phase 5" />
+                {!selectedRow ? (
+                  <SectionPlaceholder label="Select a date from the triage queue." />
+                ) : !analysisDoc ? (
+                  // The run exists but has no analysis.md yet (or the date has
+                  // no run at all) — the route returns analysis_md null for
+                  // both, and neither is an error worth alarming about.
+                  <SectionPlaceholder label={
+                    'No analysis.md for this date yet — the review layer runs after the '
+                    + 'match pass.'
+                  } />
+                ) : (
+                  <VerdictCards
+                    doc={analysisDoc}
+                    colorOf={colorOf}
+                    pairsByKey={pairsByKey}
+                    onOpenPair={(lbA, lbB) => setSelectedPair({ lbA, lbB })}
+                  />
+                )}
               </CurationSection>
             </div>
             {!narrowDossier && (
