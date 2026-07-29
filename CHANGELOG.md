@@ -1,20 +1,49 @@
+[2026-07-28] — feat: TapeMatch Curation replaces ScreenTapeMatch at /tapematch
+Changed: backend/db.py, backend/app.py — the accept record moved out of observations.db into
+  the app DB as tapematch_date_curation (USER table, same columns). Reversing the same-day
+  decision below on tj's call to pick the best schema: nothing in the tapematch pipeline reads
+  an accept, and observations.db is write-locked for hours by the nightly analysis runs, so
+  storing it there meant an accept could 409 purely because a batch was mid-flight. In the app
+  DB it is also covered by the master export's USER_TABLES exclusion (it stays local, survives a
+  master import) and created by the normal init_db schema pass instead of an ad-hoc CREATE TABLE
+  on every write. The route still reads observations.db read-only to resolve the run and take
+  n_judged/n_families, so the 409 path remains for that read alone. GET /api/tapematch/dates
+  reads curated/curated_at from the app DB, which means the triage rail keeps showing curated
+  state even while a run holds observations.db. The interim curation_accepts table was dropped
+  from observations.db, which is now byte-for-byte back to its pipeline-owned schema.
+Removed: gui_next/src/renderer/src/screens/ScreenTapeMatch.tsx — the read-only v1–v4 TapeMatch
+  screen (TODO-170/215/231/232), replaced by ScreenTapeMatchCuration now that the phase-6 write
+  path put it at parity. /tapematch serves the curation screen and the existing nav entry needs
+  no change; /tapematch/curation redirects there with its query string intact, so links made
+  while it was being built still work.
+Changed: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — ported the three things
+  the old screen had that the new one didn't, so retiring it costs nothing: crawl start/stop
+  buttons in the §1 top bar (this was the app's only control for the library crawl; the shell
+  scripts remain the single-instance authority, 409 = already running), the LB deep-link into
+  the Library detail panel (`/library?lb=`, TODO-215 sub-feature 3) on the dossier's two LB
+  headings, and the raw analysis.md behind a disclosure under the §7 cards (§7 is a *reading* of
+  that document, and when a card looks wrong the next question is what the file actually says —
+  §11's overlay is report.md, a different file).
+Changed: tests/test_tapematch_routes.py — accept tests assert the row lands in the app DB and
+  that observations.db's table list is untouched; 37 pass. Full suite 1055 pass.
+Changed: PROJECT.md — tapematch_date_curation schema section, accept/dates route entries
+  rewritten, the ScreenTapeMatch row removed and ScreenTapeMatchCuration's rewritten as the
+  shipped screen.
+Note: the curation screen is NOT internationalised — it is hardcoded English, so the TapeMatch
+  screen has lost its de/fr/es/it/nl translations until TODO-275 (opened for it). The retired
+  screen's tapematch.* locale keys are deliberately left in locales/*.json to seed that pass.
+
 [2026-07-28] — feat: TapeMatch Curation phase 6 (write path — judgment save + Accept families)
 Added: backend/app.py — POST /api/tapematch/dates/accept, the curation screen's §3
-  "Accept families". The design handoff's Q4 puts the accept record "alongside the existing
-  pairs.human_judgment writes", i.e. in tools/tapematch/observations.db, while the build's
-  standing constraint forbids changing that DB's schema. Both hold: the record goes into
-  curation_accepts, an ADDITIVE table (concert_date PK, run_id, accepted_at, n_judged,
-  n_families, note) that the tapematch generator never reads or writes, created with
-  CREATE TABLE IF NOT EXISTS on every call so no migration step exists. n_judged is counted
+  "Accept families". [SUPERSEDED the same day by the entry above: the record was first written
+  to observations.db as an additive curation_accepts table, and now lives in the app DB's
+  tapematch_date_curation. The column set and semantics below are unchanged.] n_judged is counted
   server-side from pairs.human_judgment rather than taken from the client, so the stored record
   reflects the DB at accept time; re-accepting a date replaces its row, because a rerun can move
   the run under it. n_families is probed with PRAGMA table_info like the pairs route's secondary
   metrics. 400 missing_fields / 404 no_run / 409 locked, same shapes as the judgment route.
-Changed: backend/app.py — GET /api/tapematch/dates now also carries curated/curated_at, read
-  from curation_accepts inside the read-only observations.db pass it already makes. The table
-  only exists once something has been accepted, so a missing table means "nothing curated yet",
-  not an error; both fields degrade to false/null when the DB can't be read, matching the
-  has_analysis/needs_review fallback next to them.
+Changed: backend/app.py — GET /api/tapematch/dates now also carries curated/curated_at (see the
+  superseding entry above for where they are read from).
 Changed: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx — the judgment control's
   Save is wired to the shipped POST /api/tapematch/pairs/judgment, keeping WORK_PACKAGE D4's
   explicit Cancel/Save rather than §10.7's optimistic model (409 `locked` is a real state an

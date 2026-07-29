@@ -927,7 +927,6 @@ def test_accept_route_records_date_and_counts_judgments(monkeypatch):
             tmp_dir, "20260101_000000", "1991-01-01",
             ["confirmed_same", None, "lb_wrong"],
         )
-        monkeypatch.setattr(app_module, "TAPEMATCH_DB_PATH", obs_path)
         monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
 
         with _AppClient(db_path) as client:
@@ -945,13 +944,20 @@ def test_accept_route_records_date_and_counts_judgments(monkeypatch):
             assert body["n_families"] == 2
             assert body["accepted_at"]
 
-            conn = sqlite3.connect(obs_path)
-            row = conn.execute(
-                "SELECT run_id, n_judged, n_families FROM curation_accepts "
+            # The record lands in the APP DB, not observations.db — nothing in
+            # the tapematch pipeline reads it and a running batch must not be
+            # able to block an accept.
+            row = db.get_connection(db_path).execute(
+                "SELECT run_id, n_judged, n_families FROM tapematch_date_curation "
                 "WHERE concert_date = '1991-01-01'"
             ).fetchone()
-            conn.close()
-            assert row == ("20260101_000000", 2, 2)
+            assert tuple(row) == ("20260101_000000", 2, 2)
+
+            obs = sqlite3.connect(obs_path)
+            names = {r[0] for r in obs.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+            obs.close()
+            assert names - {"sqlite_sequence"} == {"runs", "pairs"}, \
+                "observations.db schema must be untouched"
     finally:
         db.close_connection(db_path)
         shutil.rmtree(tmp_dir, ignore_errors=True)
@@ -963,7 +969,6 @@ def test_accept_route_resolves_run_id_when_omitted(monkeypatch):
         obs_path = _make_accept_db(
             tmp_dir, "20260101_000000", "1991-01-01", [None, None, None],
         )
-        monkeypatch.setattr(app_module, "TAPEMATCH_DB_PATH", obs_path)
         monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
 
         with _AppClient(db_path) as client:
@@ -984,17 +989,16 @@ def test_accept_route_reaccept_replaces_the_row(monkeypatch):
         obs_path = _make_accept_db(
             tmp_dir, "20260101_000000", "1991-01-01", [None, None, None],
         )
-        monkeypatch.setattr(app_module, "TAPEMATCH_DB_PATH", obs_path)
         monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
 
         with _AppClient(db_path) as client:
             first = client.post("/api/tapematch/dates/accept", json={"date": "1991-01-01"})
             assert first.get_json()["n_judged"] == 0
 
-            conn = sqlite3.connect(obs_path)
-            conn.execute("UPDATE pairs SET human_judgment = 'uncertain' WHERE lb_a = 10")
-            conn.commit()
-            conn.close()
+            obs = sqlite3.connect(obs_path)
+            obs.execute("UPDATE pairs SET human_judgment = 'uncertain' WHERE lb_a = 10")
+            obs.commit()
+            obs.close()
 
             second = client.post(
                 "/api/tapematch/dates/accept",
@@ -1002,12 +1006,11 @@ def test_accept_route_reaccept_replaces_the_row(monkeypatch):
             )
             assert second.get_json()["n_judged"] == 2
 
-            conn = sqlite3.connect(obs_path)
-            rows = conn.execute(
-                "SELECT n_judged, note FROM curation_accepts WHERE concert_date = '1991-01-01'"
+            rows = db.get_connection(db_path).execute(
+                "SELECT n_judged, note FROM tapematch_date_curation "
+                "WHERE concert_date = '1991-01-01'"
             ).fetchall()
-            conn.close()
-            assert rows == [(2, "revisited")]
+            assert [tuple(r) for r in rows] == [(2, "revisited")]
     finally:
         db.close_connection(db_path)
         shutil.rmtree(tmp_dir, ignore_errors=True)
@@ -1060,11 +1063,10 @@ def test_dates_route_reports_accepted_dates_as_curated(monkeypatch):
         )
         obs_conn.commit()
         obs_conn.close()
-        monkeypatch.setattr(app_module, "TAPEMATCH_DB_PATH", obs_path)
         monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
 
         with _AppClient(db_path) as client:
-            # Before accepting, the table doesn't exist at all — not an error.
+            # Before accepting, tapematch_date_curation is empty — not an error.
             before = client.get("/api/tapematch/dates").get_json()["dates"]
             assert all(d["curated"] is False for d in before)
             assert all(d["curated_at"] is None for d in before)

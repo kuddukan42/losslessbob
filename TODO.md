@@ -1,4 +1,10 @@
 
+TODO-275: gui_next — internationalise ScreenTapeMatchCuration (tapematch.* keys)
+Priority: Medium
+Status: Open
+Added: 2026-07-28
+Description: The curation screen replaced ScreenTapeMatch at /tapematch on 2026-07-28 with all strings hardcoded English, so the TapeMatch screen is no longer translated in de/fr/es/it/nl. The retired screen's tapematch.* keys are still in locales/*.json and cover part of the surface (crawl strip, rail, judgment vocabulary, analysis section); the new surface (triage filters, matrix legend, evidence bars, speed-strip glyph legend, verdict cards, save/accept status lines) needs new keys. Extract to t() in the tapematch namespace, then run /gui-next-i18n to fill the five locales via DeepL.
+
 TODO-274: gui_next — Topbar retired (breadcrumbs + global search removed from AppShell)
 Priority: Low
 Status: Open

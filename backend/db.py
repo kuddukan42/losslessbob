@@ -90,6 +90,7 @@ USER_TABLES = (
     "taper_attributions",
     "show_picks",
     "tapematch_pairs",
+    "tapematch_date_curation",
     "pipeline_file_hash",
     "pipeline_folder_state",
     "file_inventory",
@@ -1120,6 +1121,28 @@ CREATE TABLE IF NOT EXISTS tapematch_pairs (
     PRIMARY KEY (concert_date, lb_a, lb_b)
 );
 CREATE INDEX IF NOT EXISTS idx_tapematch_pairs_date ON tapematch_pairs(concert_date);
+
+-- ── TapeMatch date curation (USER — the curator accepted a date's families) ───
+-- Written by POST /api/tapematch/dates/accept, the curation screen's §3
+-- `Accept families`; read back as the `curated` state on GET
+-- /api/tapematch/dates. One row per date, replaced on re-accept.
+--
+-- Deliberately in the app DB rather than tools/tapematch/observations.db, even
+-- though the pair-level `human_judgment` it summarises lives there: this is the
+-- curator's own verdict, nothing in the tapematch pipeline reads it, and
+-- observations.db is write-locked for hours by the nightly analysis runs — an
+-- accept must never fail because a batch is mid-flight. `n_judged` is a
+-- snapshot of how many of the date's pairs were judged at accept time (counted
+-- server-side from observations.db), kept for provenance; the live count is
+-- always recomputed from the pairs themselves.
+CREATE TABLE IF NOT EXISTS tapematch_date_curation (
+    concert_date TEXT PRIMARY KEY,
+    run_id       TEXT,                 -- run accepted (a rerun can move it)
+    accepted_at  TEXT NOT NULL,        -- ISO-8601 UTC
+    n_judged     INTEGER,              -- pairs with a human_judgment at accept time
+    n_families   INTEGER,              -- runs.n_families for the accepted run
+    note         TEXT
+);
 
 -- ── WTRF Torrent Downloads (USER — fetch attempts for missing items) ──────────
 CREATE TABLE IF NOT EXISTS wtrf_downloads (

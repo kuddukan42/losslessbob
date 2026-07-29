@@ -33,7 +33,6 @@ import { ScreenTrading } from './screens/ScreenTrading'
 import { ScreenSharing } from './screens/ScreenSharing'
 import { ScreenQuickLookup } from './screens/ScreenQuickLookup'
 import { ScreenLibrary } from './screens/ScreenLibrary'
-import { ScreenTapeMatch } from './screens/ScreenTapeMatch'
 import { ScreenTapeMatchCuration } from './screens/ScreenTapeMatchCuration'
 import { ScreenSongs } from './screens/ScreenSongs'
 import { ScreenTimeline } from './screens/ScreenTimeline'
@@ -126,6 +125,14 @@ function RouteRestorer(): null {
 function CuratorRoute({ element }: { element: React.ReactNode }) {
   const curatorMode = useSettingsStore((s) => s.curatorMode)
   return curatorMode ? <>{element}</> : <Navigate to="/" replace />
+}
+
+// The curation screen reached parity with the old read-only ScreenTapeMatch at
+// Phase 6 (the write path) and took over /tapematch. This keeps links made
+// while it was being built working, `?date=` and all.
+function RedirectToTapeMatch(): React.JSX.Element {
+  const { search } = useLocation()
+  return <Navigate to={{ pathname: '/tapematch', search }} replace />
 }
 
 // ── Placeholder screen ────────────────────────────────────────────────────────
@@ -354,8 +361,12 @@ export default function App(): React.JSX.Element {
           <Route path="/quicklookup" element={<ScreenQuickLookup />} />
           <Route path="/scanner"     element={<ScreenScanner />} />
           <Route path="/library"     element={<ScreenLibrary />} />
-          <Route path="/tapematch"   element={<ScreenTapeMatch />} />
-          <Route path="/tapematch/curation" element={<ScreenTapeMatchCuration />} />
+          <Route path="/tapematch"   element={<ScreenTapeMatchCuration />} />
+          {/* The curation screen reached parity with the old read-only
+              ScreenTapeMatch at Phase 6 (write path) and replaced it at
+              /tapematch. This alias keeps links made while it was being
+              built — including the ?date= ones — working. */}
+          <Route path="/tapematch/curation" element={<RedirectToTapeMatch />} />
           <Route path="/songs"       element={<ScreenSongs />} />
           <Route path="/timeline"    element={<ScreenTimeline />} />
           <Route path="/collection"  element={<ScreenCollection />} />

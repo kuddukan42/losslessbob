@@ -23,11 +23,15 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
 
 ## Build decisions taken by this session (not from design)
 
-- **D1 — new screen, old one stays.** Built as
-  `screens/ScreenTapeMatchCuration.tsx` at route `/tapematch/curation`.
-  `ScreenTapeMatch.tsx` keeps working and keeps its nav entry until the new
-  screen reaches parity (matrix + dossier + A/B player + judgment write path,
-  i.e. end of Phase 6). Retiring it is a separate, explicit step.
+- **D1 — DONE 2026-07-28. New screen built alongside, then swapped in.**
+  `screens/ScreenTapeMatchCuration.tsx` now serves `/tapematch` and
+  `ScreenTapeMatch.tsx` is deleted; `/tapematch/curation` redirects, query
+  string intact. The swap waited for the Phase 6 write path (parity =
+  matrix + dossier + A/B player + judgment write path) and carried over the
+  three things only the old screen had: crawl start/stop, the `/library?lb=`
+  deep-link, and the raw `analysis.md` view. Known cost, accepted: the
+  curation screen is hardcoded English, so TapeMatch lost its five
+  translations until TODO-275.
 - **D2 — tokens map onto the existing `--lbb-*` system.** The design's hex table
   is a dark-grade palette; gui_next has a light/dark theme engine whose
   `ok/warn/bad/info/mute` tokens are already fg/bar/bg triples. Hardcoding the
@@ -81,16 +85,21 @@ acceptable test fixtures. `tm-data.js` is shape reference, not data.
   !same_family`, computed client-side. No sync, no migration, same best-effort
   null fallback as the rest of the block.
 
-- **D10 — the accept record is an additive table in observations.db, not a
-  schema change and not the app DB.** Q4 puts the record "alongside the
-  existing `pairs.human_judgment` writes", which is observations.db; the
-  standing constraint forbids changing *that* schema. Both hold at once
-  because `curation_accepts` is a table the tapematch generator never reads
-  or writes: nothing in the pipeline's own schema moves, and no migration
-  step exists (`CREATE TABLE IF NOT EXISTS` runs on every accept). Keeping it
-  next to `human_judgment` matters — curator truth for a date and curator
-  truth for its pairs are read together, and the app DB's `tapematch_pairs`
-  is a synced copy that a re-sync would talk over.
+- **D10 — REVISED same day: the accept record lives in the app DB**, as
+  `tapematch_date_curation` (USER table). It was first built as an additive
+  `curation_accepts` table inside observations.db, reading Q4's "alongside
+  the existing `pairs.human_judgment` writes" literally. tj asked for the
+  best schema rather than the most literal one, and the app DB wins on three
+  counts the first read missed: observations.db is **write-locked for hours**
+  by the nightly analysis runs, so an accept stored there could 409 purely
+  because a batch was mid-flight; the app DB's `USER_TABLES` already means
+  "local, never exported, survives a master import", which is exactly what a
+  curator's sign-off is; and it is created by the normal `init_db` schema
+  pass instead of an ad-hoc `CREATE TABLE` on every write. Nothing in the
+  pipeline reads an accept, so co-locating it with `human_judgment` bought
+  nothing. The route still *reads* observations.db (read-only) for the run
+  and the two provenance counts. observations.db is back to its original
+  schema — the interim table was dropped.
 - **D11 — the judged count is server truth, not a local queue.** §3 counts
   judgments *queued*; D4's explicit Save means nothing is ever queued, so
   `Accept families · n judged`, the top-bar pill and `n_judged` in the accept
@@ -248,3 +257,15 @@ Order follows README "Implementation Order", collapsed into committable bites.
   for the test write — `confirmed_same`/`confirmed_different` are calibration
   truth for `regression.py`, and a stray one would have polluted it.
   **Resume at Phase 7 (report.md view §11).**
+- 2026-07-28 — **D1 executed: the screen swap.** `/tapematch` now serves the
+  curation screen, `ScreenTapeMatch.tsx` is deleted, `/tapematch/curation`
+  redirects with its query preserved, and the nav entry needed no change
+  (it already pointed at `/tapematch`). Three carry-overs so nothing was
+  lost: crawl start/stop in the §1 top bar, LB deep-links on the dossier
+  headings, raw `analysis.md` behind a disclosure under §7. D10 revised in
+  the same pass — the accept record moved to the app DB (see above), and
+  observations.db was restored to its original schema. `/gui-check` green;
+  `/verify --electron` confirmed the route swap, the redirect resolving to
+  `#/tapematch?date=2001-10-30`, the crawl buttons, both LB link targets and
+  the raw-document disclosure opening on 1998-06-14. Backend 1055 pass.
+  TODO-275 opened for the missing i18n.

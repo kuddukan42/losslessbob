@@ -1,10 +1,15 @@
 // TapeMatch Curation screen — Phases 1–6.
 //
 // Built per instructions/design_handoff_tapematch_curation/{README,
-// WORK_PACKAGE,DESIGN_ANSWERS_B}.md. D1: new screen, old ScreenTapeMatch.tsx
-// stays untouched and keeps its nav entry until this one reaches parity
-// (end of Phase 6) — this screen therefore has NO nav entry yet and is only
-// reachable at /tapematch/curation.
+// WORK_PACKAGE,DESIGN_ANSWERS_B}.md. D1 is complete as of 2026-07-28: this
+// screen reached parity at Phase 6 and replaced the read-only
+// ScreenTapeMatch.tsx (deleted) at /tapematch, taking over its nav entry;
+// /tapematch/curation redirects here. Three things came across in the swap
+// because only the old screen had them: crawl start/stop (§1 top bar), the
+// /library?lb= deep-link (dossier LB headings), and the raw analysis.md
+// disclosure under §7.
+//
+// NOT internationalised — every string here is hardcoded English (TODO-275).
 //
 // Phase 1 scope: §1 top bar, §2 triage queue rail (incl. keybindings), §3
 // date header (incl. DESIGN_ANSWERS_B §B3 verdict clamp), §4 section
@@ -29,7 +34,7 @@
 // report.md (§11) and run diff (§12) remain placeholders.
 
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { Icon } from '../components/Icon'
 import { Pill, Chip, Button, Kbd } from '../components'
@@ -70,6 +75,7 @@ interface CrawlStatus {
   running: boolean
   runs_on_disk: number
   distinct_dates: number
+  log_tail?: string[]
 }
 
 interface AnalysisResponse {
@@ -234,6 +240,30 @@ function TopBar({
 }) {
   const dotColor = crawl?.running ? 'var(--lbb-warn-bar)' : 'var(--lbb-ok-bar)'
   const statusWord = crawl?.running ? 'running' : 'idle'
+  // Crawl start/stop, carried over from the retired ScreenTapeMatch. The
+  // design's §1 shows crawl state read-only, but this was the only place in
+  // the app that could start or stop the library crawl — retiring the old
+  // screen without it would have removed the control outright. The scripts
+  // remain the single-instance authority; 409 means one is already running.
+  const queryClient = useQueryClient()
+  const [pending, setPending] = useState<'start' | 'stop' | null>(null)
+  const [crawlMsg, setCrawlMsg] = useState<string | null>(null)
+
+  async function crawlAction(action: 'start' | 'stop'): Promise<void> {
+    setPending(action)
+    setCrawlMsg(null)
+    try {
+      const res = await fetch(`${BASE}/api/tapematch/crawl/${action}`, { method: 'POST' })
+      if (action === 'start' && res.status === 409) setCrawlMsg('already running')
+      else if (!res.ok) setCrawlMsg(`couldn't ${action} the crawl`)
+      else if (action === 'stop') setCrawlMsg('stopping…')
+      queryClient.invalidateQueries({ queryKey: ['tapematch-crawl-status'] })
+    } catch {
+      setCrawlMsg(`couldn't ${action} the crawl`)
+    } finally {
+      setPending(null)
+    }
+  }
   return (
     <div style={{
       display: 'flex', alignItems: 'center', gap: 14, padding: '10px 18px',
@@ -257,6 +287,24 @@ function TopBar({
             <span style={{ width: 7, height: 7, borderRadius: '50%', background: dotColor }} />
             crawl {statusWord} · {crawl.runs_on_disk.toLocaleString()} runs ·{' '}
             {crawl.distinct_dates.toLocaleString()} dates
+          </div>
+        )}
+        {crawl && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <Button
+              variant="ghost" size="sm"
+              disabled={crawl.running || pending !== null}
+              onClick={() => crawlAction('start')}
+              title={crawl.log_tail?.length ? crawl.log_tail.join('\n') : 'no crawl log yet'}
+            >{pending === 'start' ? 'Starting…' : 'Start crawl'}</Button>
+            <Button
+              variant="ghost" size="sm"
+              disabled={!crawl.running || pending !== null}
+              onClick={() => crawlAction('stop')}
+            >{pending === 'stop' ? 'Stopping…' : 'Stop'}</Button>
+            {crawlMsg && (
+              <span style={{ fontSize: 10.5, color: 'var(--lbb-fg3)' }}>{crawlMsg}</span>
+            )}
           </div>
         )}
         {/* §3's judgment pill. The design counts judgments *queued* locally;
@@ -1115,7 +1163,7 @@ function DossierSubhead({ children }: { children: React.ReactNode }): React.JSX.
 }
 
 function Dossier({
-  selected, pair, date, colorOf, onClose, drawer, onJudgmentSaved,
+  selected, pair, date, colorOf, onClose, drawer, onJudgmentSaved, onOpenLb,
 }: {
   selected: SelectedPair
   pair: PairRow | null
@@ -1124,6 +1172,7 @@ function Dossier({
   onClose: () => void
   drawer: boolean
   onJudgmentSaved: () => void
+  onOpenLb: (lb: number) => void
 }): React.JSX.Element {
   const { lbA, lbB } = selected
   const sim = pair?.similarity_pct ?? null
@@ -1140,16 +1189,28 @@ function Dossier({
   const claim = pair?.lb_relation_text ?? null
   const hasClaim = !!claim && claim.trim() !== '' && claim.trim() !== '—'
 
+  // Both LB headings deep-link into the Library detail panel — carried over
+  // from the retired ScreenTapeMatch's LbLinkButton (TODO-215 sub-feature 3),
+  // which ScreenLibrary consumes one-shot from `?lb=`. It reads as the plain
+  // mono label it replaces; only the hover colour marks it as a target.
   const lbLabel = (lb: number) => (
-    <span style={{
-      display: 'inline-flex', alignItems: 'center', gap: 6,
-      font: '700 13px var(--lbb-mono)', color: 'var(--lbb-fg)',
-    }}>
+    <button
+      type="button"
+      onClick={() => onOpenLb(lb)}
+      title={`Open LB-${shortId(lb)} in the Library`}
+      style={{
+        display: 'inline-flex', alignItems: 'center', gap: 6, padding: 0,
+        background: 'none', border: 'none', cursor: 'pointer',
+        font: '700 13px var(--lbb-mono)', color: 'var(--lbb-fg)',
+      }}
+      onMouseEnter={e => { e.currentTarget.style.color = 'var(--lbb-accent-mid)' }}
+      onMouseLeave={e => { e.currentTarget.style.color = 'var(--lbb-fg)' }}
+    >
       <span style={{
         width: 8, height: 8, borderRadius: 2, background: colorOf(lb), flex: '0 0 8px',
       }} />
       LB-{shortId(lb)}
-    </span>
+    </button>
   )
 
   return (
@@ -1932,8 +1993,49 @@ function VerdictCards({
   )
 }
 
+/**
+ * The raw `analysis.md` behind the §7 cards, collapsed by default.
+ *
+ * Carried over from the retired ScreenTapeMatch's `AnalysisSection`. §7's cards
+ * are a reading of the document, and this audience works in the filesystem too
+ * — when a card looks wrong, the next question is always "what does the file
+ * actually say". Not §11: that overlay renders `report.md`, a different file.
+ */
+function RawAnalysis({ md }: { md: string | null }): React.JSX.Element | null {
+  const [open, setOpen] = useState(false)
+  if (!md) return null
+  return (
+    <div style={{ marginTop: 12 }}>
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        style={{
+          display: 'flex', alignItems: 'center', gap: 7, padding: '7px 0',
+          border: 'none', borderTop: '1px solid var(--lbb-border)', width: '100%',
+          background: 'transparent', color: 'var(--lbb-fg3)', cursor: 'pointer',
+          font: '600 11px var(--lbb-font)', textAlign: 'left',
+        }}
+      >
+        <Icon name={open ? 'chevDown' : 'chevRight'} size={11} />
+        <span style={{ fontFamily: 'var(--lbb-mono)' }}>analysis.md</span>
+        <span style={{ fontWeight: 500 }}>— the document these cards were read from</span>
+      </button>
+      {open && (
+        <pre style={{
+          margin: 0, padding: 12, borderRadius: 6,
+          background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+          color: 'var(--lbb-fg2)', font: '400 11.5px/1.5 var(--lbb-mono)',
+          whiteSpace: 'pre-wrap', wordBreak: 'break-word',
+          maxHeight: 420, overflowY: 'auto',
+        }}>{md}</pre>
+      )}
+    </div>
+  )
+}
+
 export function ScreenTapeMatchCuration(): React.JSX.Element {
   const [searchParams, setSearchParams] = useSearchParams()
+  const navigate = useNavigate()
   const selectedDate = searchParams.get('date')
   const cursorIndexRef = useRef(0)
 
@@ -2103,6 +2205,10 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
     queryClient.invalidateQueries({ queryKey: ['tapematch-curation-pairs', selectedDate] })
   }
 
+  // TODO-215 sub-feature 3, carried over from ScreenTapeMatch: ScreenLibrary
+  // consumes `?lb=` one-shot and opens that recording's detail panel.
+  const openLb = (lb: number) => navigate(`/library?lb=${lb}`)
+
   const [accept, setAccept] = useState<AcceptState>({ kind: 'idle' })
   useEffect(() => { setAccept({ kind: 'idle' }) }, [selectedDate])
   useEffect(() => {
@@ -2153,6 +2259,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
       onClose={() => setSelectedPair(null)}
       drawer={narrowDossier}
       onJudgmentSaved={refetchPairs}
+      onOpenLb={openLb}
     />
   ) : <DossierEmpty />
 
@@ -2264,12 +2371,15 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
                     + 'match pass.'
                   } />
                 ) : (
-                  <VerdictCards
-                    doc={analysisDoc}
-                    colorOf={colorOf}
-                    pairsByKey={pairsByKey}
-                    onOpenPair={(lbA, lbB) => setSelectedPair({ lbA, lbB })}
-                  />
+                  <>
+                    <VerdictCards
+                      doc={analysisDoc}
+                      colorOf={colorOf}
+                      pairsByKey={pairsByKey}
+                      onOpenPair={(lbA, lbB) => setSelectedPair({ lbA, lbB })}
+                    />
+                    <RawAnalysis md={analysisMd} />
+                  </>
                 )}
               </CurationSection>
             </div>
