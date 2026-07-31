@@ -15,16 +15,6 @@ Work (spec §0 dark-launch contract): (1) enable asr on a labeled multi-source d
 
 Known limiter to attack first: utterance YIELD, not compute (11-30s per source transcribes ~1600s of selected audio; yield is 2-9 gated utterances). Cheap experiments: a larger model (small vs base), more max_gaps, and boundary-robust matching -- the same utterance decodes differently depending on the clip boundary ('Judge Rossell is on the drums' vs 'God, the sun is on the drums', Dice 0.33), which currently costs real matches at min_similarity 0.5.
 
-TODO-276: tapematch — re-run the 7 BUG-277 self-pair dates to clear the stale wrong-LB rows
-Priority: Medium
-Status: Open
-Added: 2026-07-29
-Description: BUG-277 (fixed 2026-07-29, commit 89ca6e39) stopped NEW runs from resolving two distinct folders to the same LB number, but the rows already written under the old first-match regex are still in observations.db and the app DB. The 7 affected dates: 1989-07-16/LB-2204, 1988-06-07/2564, 1988-06-25/6295, 1988-07-20/1475, 1988-09-11/2585, 1988-09-23/3164, 1993-06-19/1929. Their pair/family rows are attributed to the WRONG LB entry, so recording_families membership for those sources is incorrect; two of the 7 have corr ~0.003, i.e. genuinely different recordings collapsed onto one LB number.
-
-Work: re-run each date (live tapematch session) and re-sync families to the app DB. Deferred out of the fix session because live sessions must not run concurrently with the nightly cron -- schedule this when the cron is idle.
-
-Watch item: 1993-06-19 (LB-1929/LB-2072) cannot be resolved from the folder name at all -- both numbers appear ambiguously positioned -- so it depends entirely on the DB-authoritative name_to_lb path. If that path misses, the new _assert_no_self_pair() guard will ABORT the run rather than write a bad row. Expect that date to fail loudly if the DB map does not cover both folders; resolving it may need a manual folder rename or a name_to_lb correction first.
-
 TODO-275: gui_next — internationalise ScreenTapeMatchCuration (tapematch.* keys)
 Priority: Medium
 Status: Open

@@ -1,3 +1,23 @@
+[2026-07-31] — fix(tapematch): repair the 7 BUG-277 self-pair dates (TODO-276) + close BUG-279
+Fixed: the 7 dates whose pair/family rows were attributed to the wrong LB number under the
+  pre-BUG-277 first-match regex — 1989-07-16, 1988-06-07, 1988-06-25, 1988-07-20, 1988-09-11,
+  1988-09-23, 1993-06-19 — re-run live (34 min, all exit 0) and re-synced. New runs carry 0
+  self-pairs; tapematch_pairs in the app DB has 0; all 7 dates now point at the 20260731 runs
+  with corrected recording_families membership.
+  1993-06-19 behaved exactly as TODO-276's watch item predicted: extract_own_lb_number still
+  collides there (both folders -> LB-1929), because that folder inverts the convention — its
+  OWN number is the bracketed `[LB-02072]` and the trailing 1929 is the xref. The
+  DB-authoritative my_collection path resolves it, confirmed by --dry-run before committing to
+  the re-run, so _assert_no_self_pair never had to abort.
+  The 7 stale lb_a==lb_b rows stay in observations.db under their original June run_ids;
+  _pick_best_run no longer selects those runs, so they are inert history, not live data.
+  Side effect: all 7 dates now have an un-analysed run and re-entered the batch backlog
+  (1545 -> 1548 eligible). 6 of 7 triage 'attention' on R1_contradiction — expected, the xref
+  lineage claims on these folders are real and that is what R1 measures.
+Fixed: BUG-279 ledger entry — the fix shipped 2026-07-27 but the entry was left in BUGS.md.
+  Re-verified before closing: tapematch suite 383 passed in 29s, 0 runs written to
+  observations.db, so the conftest _spawn guard is holding.
+
 [2026-07-31] — feat(tapematch): rule-based auto-triage for the analysis backlog
 Added: instructions/complete/TAPEMATCH_AUTOFLAG_SPEC.md — spec + calibration record. Only 1,397 of 3,037
   dates with a completed TapeMatch run have an analysis.md, and tapematch_sync reads the human
