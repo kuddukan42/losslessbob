@@ -179,6 +179,32 @@ CREATE TABLE IF NOT EXISTS pairs (
 
 CREATE INDEX IF NOT EXISTS idx_pairs_latest ON pairs(concert_date, lb_a, lb_b, run_at);
 
+-- Banter/ASR transcripts (FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3). One row per
+-- confidence-gated utterance found in a between-song gap. Times are seconds on
+-- the TRIMMED performance clock (same clock as every other per-source metric),
+-- not raw file offsets. Written only when config asr.enabled is on.
+--
+-- Stored keyed by lb + time rather than per-run-only because the spec's reuse
+-- cases live outside TapeMatch: the mislabel hunter ("good evening <city>" vs
+-- the claimed venue), the song-centric index (sung-lyric fragments confirming
+-- setlist rows), and taper attribution (spoken credits).
+CREATE TABLE IF NOT EXISTS transcripts (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id          TEXT NOT NULL,
+    concert_date    TEXT NOT NULL,
+    lb              INTEGER,
+    folder_name     TEXT,
+    t_start         REAL,           -- seconds from trimmed performance start
+    t_end           REAL,
+    text            TEXT,
+    avg_logprob     REAL,           -- whisper mean token logprob (confidence)
+    no_speech_prob  REAL,
+    FOREIGN KEY (run_id) REFERENCES runs(run_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_transcripts_lb ON transcripts(lb, t_start);
+CREATE INDEX IF NOT EXISTS idx_transcripts_run ON transcripts(run_id);
+
 -- One row per normalized (concert_date, lb_a, lb_b) key: the most recent
 -- verdict by run_at (ties broken by id). See migrate_observations.py (Task 2
 -- of instructions/CC_TAPEMATCH_FIXES.md).
@@ -222,6 +248,18 @@ def open_obs_db() -> sqlite3.Connection:
         # (never 0 for "assessed clean" — see audit_fn.py docstring). Tier C
         # training/eval excludes label_suspect=1 rows.
         ("label_suspect", "INTEGER"),
+        # FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3 (banter/ASR transcript
+        # overlap). Dark-launched: populated when config asr.enabled is on, but
+        # no verdict rule reads it. NULL = not transcribed or too few
+        # utterances; 0.0 = transcribed with no corroborated shared banter.
+        # banter_n_matched / banter_offset_sec are diagnostics, not evidence:
+        # the score alone cannot be calibrated, because 2-of-2 matched
+        # utterances and 8-of-8 land at very different confidences for the same
+        # number. banter_offset_sec should track the pair's alignment lag — a
+        # score with an implausible offset is a coincidence, not a match.
+        ("banter_score", "REAL"),
+        ("banter_n_utts_a", "INTEGER"), ("banter_n_utts_b", "INTEGER"),
+        ("banter_n_matched", "INTEGER"), ("banter_offset_sec", "REAL"),
     ):
         try:
             conn.execute(f"ALTER TABLE pairs ADD COLUMN {col} {decl}")
@@ -849,6 +887,20 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
         flaw_n_b = sec.get("flaw_n_events_b")
         spec_stationarity_v = sec.get("spec_stationarity")
         env_corr_v = sec.get("env_corr")
+
+        # Banter/ASR (§3): its own results map, since it scores every pair, not
+        # just the ones the secondary pass reached. Absent (-> NULL) whenever
+        # asr.enabled was off for the run.
+        banter_pairs = results.get("banter_pairs", {}) or {}
+        bant = (banter_pairs.get(f"{na}|{nb}") or banter_pairs.get(f"{nb}|{na}") or {})
+        banter_score_v = bant.get("banter_score")
+        # n_a/n_b follow the ORIGINAL name order in the run JSON; after the
+        # lb-order normalization above na/nb may have been swapped, so re-read
+        # them by which key actually matched rather than assuming a/b.
+        if banter_pairs.get(f"{na}|{nb}") is not None:
+            banter_n_a, banter_n_b = bant.get("n_a"), bant.get("n_b")
+        else:
+            banter_n_a, banter_n_b = bant.get("n_b"), bant.get("n_a")
         nq_a = int(bool(sa["nyquist_capped"])) if sa.get("nyquist_capped") is not None else None
         nq_b = int(bool(sb["nyquist_capped"])) if sb.get("nyquist_capped") is not None else None
 
@@ -873,9 +925,11 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
                 windowed_frac, hiss_frac, hiss_median, fp_score, fp_triplet_score,
                 flaw_match_score, flaw_n_events_a, flaw_n_events_b, spec_stationarity,
                 env_corr,
+                banter_score, banter_n_utts_a, banter_n_utts_b,
+                banter_n_matched, banter_offset_sec,
                 nyquist_capped_a, nyquist_capped_b,
                 lb_says_same, lb_relation_text, human_judgment, human_notes, run_at)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (run_id, date_iso, lb_a, lb_b, na, nb,
              corr, "same_family" if same_family else "different_family",
              sa["family_id"], sb["family_id"],
@@ -889,9 +943,46 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
              windowed_frac, hiss_frac_v, hiss_median_v, fp_score_v, fp_triplet_v,
              flaw_score_v, flaw_n_a, flaw_n_b, spec_stationarity_v,
              env_corr_v,
+             banter_score_v, banter_n_a, banter_n_b,
+             bant.get("n_matched"), bant.get("offset_sec"),
              nq_a, nq_b,
              lb_says_same, lb_rel, None, None, run_at),
         )
+
+
+def insert_transcripts(conn: sqlite3.Connection, run_id: str, date_iso: str,
+                       results: dict, found_folders: dict[int, Path]) -> None:
+    """Persist the run's banter/ASR utterances to the ``transcripts`` table.
+
+    No-op when the run carried no ``transcripts`` payload (``asr.enabled``
+    false, faster-whisper unavailable, or nothing cleared the confidence gate).
+
+    Args:
+        conn: Open observations.db connection.
+        run_id: This run's id.
+        date_iso: Concert date (DB format), stored on every row.
+        results: The tapematch run JSON.
+        found_folders: LB number -> staged folder, for the folder->LB mapping.
+    """
+    payload = results.get("transcripts") or {}
+    if not payload:
+        return
+    name_to_lb: dict[str, int] = {p.name: n for n, p in found_folders.items()}
+    rows = [
+        (run_id, date_iso, _lb_num_from_folder(folder, name_to_lb), folder,
+         u.get("t_start"), u.get("t_end"), u.get("text"),
+         u.get("avg_logprob"), u.get("no_speech_prob"))
+        for folder, utts in payload.items() for u in utts
+    ]
+    if not rows:
+        return
+    conn.executemany(
+        """INSERT INTO transcripts
+           (run_id, concert_date, lb, folder_name, t_start, t_end, text,
+            avg_logprob, no_speech_prob)
+           VALUES (?,?,?,?,?,?,?,?,?)""",
+        rows,
+    )
 
 
 def _lb_num_from_folder(folder_name: str, name_to_lb: dict[str, int] | None = None) -> int | None:
@@ -1753,6 +1844,8 @@ def _log_to_obs_db(run_id: str, run_at: str, date_iso: str, location: str,
         )
         insert_sources(conn, run_id, date_iso, results, found_folders, run_at, root_dir=root_dir)
         insert_pairs(conn, run_id, date_iso, results, found_folders, run_at, root_dir=root_dir)
+        # §3 banter/ASR: no-op unless the run carried transcripts (asr.enabled).
+        insert_transcripts(conn, run_id, date_iso, results, found_folders)
         # TODO-200: populate emb_score/emb_score_global so addon_links.rule_d fires
         # live. No-op unless rule_d.enabled AND rule_d.live_embed; any failure leaves
         # emb NULL (Rule D abstains). Runs before commit, same transaction.

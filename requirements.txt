@@ -23,5 +23,13 @@ numpy==2.4.6
 soundfile==0.13.1
 scipy==1.17.1
 
+# TapeMatch banter/ASR signal (FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3).
+# OPTIONAL + feature-gated: imported lazily by tools/tapematch/tapematch/asr.py
+# and only when config.yaml `asr.enabled` is true (it ships false). If the
+# package is absent the signal degrades to NULL and the pipeline is unaffected,
+# so this line may be dropped from a minimal install. Pulls ctranslate2 +
+# onnxruntime + tokenizers; resolves against the pinned numpy above.
+faster-whisper==1.2.1
+
 # Packaging (run separately, not imported)
 # pyinstaller==6.8.0

@@ -1,4 +1,14 @@
 
+TODO-293: tapematch — calibrate the §3 banter/ASR signal and decide its weight
+Priority: Medium
+Status: Open
+Added: 2026-07-30
+Description: The signal is BUILT and DARK (asr.enabled: false, no addon_links rule reads banter_score). Shipped 2026-07-30: tapematch/asr.py, pairs.banter_score + banter_n_utts_a/b + banter_n_matched + banter_offset_sec, new transcripts table, 46 tests. Live proof on 2003-05-11: LB-01097/13538 scored 0.778 with 2 corroborating utterances at a consistent -16.3s offset on a pair whose corr is only 0.233 (same performance, very different-sounding tapes -- exactly the case music-based signals miss); the different-taper pair LB-01015/01046 correctly scored 0.0.
+
+Work (spec §0 dark-launch contract): (1) enable asr on a labeled multi-source date set and pull the banter_score distribution split by frozen-set truth label; (2) decide whether the shipped scalar should be matched-count-aware -- min(n_a, n_b, cap) as denominator makes 2-of-2 score like 8-of-8, and banter_n_matched is persisted so this is re-derivable without re-transcribing; (3) cross-check banter_offset_sec against each pair's alignment lag (a high score at an implausible offset is coincidence); (4) only then propose an addon_links rule, and only after a synth/frozen-set regression run. Detail + the two empirically-set gates are in CALIBRATION_PROGRESS.md '§3 banter/ASR signal'.
+
+Known limiter to attack first: utterance YIELD, not compute (11-30s per source transcribes ~1600s of selected audio; yield is 2-9 gated utterances). Cheap experiments: a larger model (small vs base), more max_gaps, and boundary-robust matching -- the same utterance decodes differently depending on the clip boundary ('Judge Rossell is on the drums' vs 'God, the sun is on the drums', Dice 0.33), which currently costs real matches at min_similarity 0.5.
+
 TODO-276: tapematch — re-run the 7 BUG-277 self-pair dates to clear the stale wrong-LB rows
 Priority: Medium
 Status: Open

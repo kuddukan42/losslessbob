@@ -34,7 +34,12 @@ GUI (Next) Conventions · Notable Implementation Details · Change Log
 | Numerical computing | numpy | 2.4.6 |
 | Audio I/O | soundfile | 0.13.1 |
 | Signal processing | scipy | 1.17.1 |
+| Speech recognition (optional) | faster-whisper | 1.2.1 |
 | Language | Python | 3.11+ |
+
+`faster-whisper` is optional and feature-gated: only `tools/tapematch/tapematch/asr.py`
+imports it, lazily, and only when `tools/tapematch/config.yaml`'s `asr.enabled` is true
+(ships false). Absent, the TapeMatch banter signal is NULL and nothing else changes.
 
 **Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. `gui_next` (Electron/React) is the sole GUI; Flask is launched as a child process from the Electron main process (or standalone via `run_backend.py`).
 

@@ -8,10 +8,11 @@ and lineage evidence.
 """
 from __future__ import annotations
 import argparse, atexit, json, os, shutil, sys, tempfile, time
+from itertools import combinations
 from pathlib import Path
 import numpy as np
 import yaml
-from . import ingest, trim, align, match, verdict
+from . import asr, ingest, trim, align, match, verdict
 from .audio import to_mono, resample_ratio
 from .ingest import fmt_hms
 
@@ -923,6 +924,80 @@ def main(argv=None):
             print(f"  embedding: scored {len(emb_scores)} pair(s), "
                   f"{n_fire} at/above the rule_d bar")
 
+    # TODO-235: per-source piecewise lag model vs the final reference, so a
+    # staircase source's perf->source time map survives the run (backend
+    # ab_clips, TODO-233 pt2). The reference source itself has no curve —
+    # it IS the clock (lag identically 0). Computed here rather than at the
+    # results-assembly site because the §3 ASR block below maps its reference
+    # windows into each source through this model.
+    step_thr = cfg["align"]["step_flag_sec"]
+    lag_segments_out = {
+        nm: align.fit_lag_segments(lag_rows_final.get(nm, []), step_thr)
+        for nm in names
+    }
+
+    # === Banter/ASR transcripts + pair scores (LISTENING_SIGNALS §3) ===
+    # Transcribe between-song gaps once per source, then score every pair on
+    # shared spoken content + timeline agreement. DARK: no addon_links rule
+    # reads banter_score, so this cannot change a verdict — it populates the
+    # column the calibration study needs. Off unless asr.enabled.
+    asr_cfg = cfg.get("asr", {}) or {}
+    transcripts: dict[str, list] = {}
+    banter_results: dict[tuple[int, int], dict] = {}
+    if asr_cfg.get("enabled"):
+        print("\n=== BANTER / ASR ===")
+        asr_model = asr.load_model(asr_cfg)
+        if asr_model is None:
+            print("  faster-whisper unavailable — banter_score NULL for all pairs")
+        else:
+            # Windows are chosen ONCE, on the reference source, then mapped into
+            # each other source through its lag model. Two tapes only corroborate
+            # if they transcribe the same moments of the show, and per-source gap
+            # detection does not converge on that by itself — measured 2026-07-30
+            # on 2003-05-11, where LB-01097 caught the band intro and LB-13538
+            # spent its whole budget on other minutes and scored 0.0.
+            ref_gaps = asr.find_banter_gaps(_mmap(ref_name), sr, asr_cfg)
+            print(f"  {len(ref_gaps)} window(s) picked on ref={_label(ref_name)} "
+                  f"({sum(e - s for s, e in ref_gaps):.0f}s/source)")
+            for nm in names:
+                t0 = time.time()
+                mapped = [
+                    w for w in (
+                        asr.map_window(s, e, lag_segments_out.get(nm, []), perf_durs[nm])
+                        for s, e in ref_gaps
+                    ) if w is not None
+                ]
+                try:
+                    utts = asr.transcribe_gaps(_mmap(nm), sr, mapped, asr_cfg,
+                                               model=asr_model)
+                except Exception as exc:  # noqa: BLE001 — one bad source, not the run
+                    print(f"  {_label(nm)}: transcription failed ({exc})")
+                    utts = []
+                transcripts[nm] = utts
+                print(f"  {_label(nm)}: {len(utts)} utterance(s) "
+                      f"in {time.time() - t0:.0f}s")
+                dbg.log(f"ASR  {nm}  n_utts={len(utts)}")
+            for i2, j2 in combinations(range(len(names)), 2):
+                na2, nb2 = names[i2], names[j2]
+                # Relative speed ratio from trimmed performance durations: the
+                # utterance clocks are performance-relative, so a constant-speed
+                # offset shows up here directly. Guarded — a wild duration ratio
+                # means INCOMPLETE/INFLATED, not speed, and 1.0 plus the offset
+                # tolerance is the honest fallback.
+                ratio = perf_durs[nb2] / perf_durs[na2] if perf_durs[na2] > 0 else 1.0
+                if not 0.9 <= ratio <= 1.1:
+                    ratio = 1.0
+                score, detail = asr.banter_score(
+                    transcripts.get(na2, []), transcripts.get(nb2, []),
+                    asr_cfg, ratio=ratio,
+                )
+                detail["banter_score"] = score
+                banter_results[(i2, j2)] = detail
+                if score:
+                    print(f"  {_label(na2)}/{_label(nb2)}: banter {score:.3f} "
+                          f"({detail['n_matched']} matched, "
+                          f"offset {detail['offset_sec']}s)")
+
     # Route the link decision through verdict.pair_links so the clustering logic
     # lives in exactly one place (Task 1.3). A None signal (no secondary pass, or
     # fingerprint disabled) is skipped by the predicate, reproducing the built-in
@@ -962,6 +1037,9 @@ def main(argv=None):
             # normalized (min, max) LB, matching emb_score_pairs' order convention.
             "emb_score": emb_pair(na, nb)[0],
             "emb_score_global": emb_pair(na, nb)[1],
+            # LISTENING_SIGNALS §3, dark: carried so cached-scoring metrics
+            # dicts round-trip it, but no addon_links rule reads it yet.
+            "banter_score": banter_results.get((i, j), {}).get("banter_score"),
         }
 
     groups = match.cluster(names, M, m_thr,
@@ -1235,16 +1313,6 @@ def main(argv=None):
             for nm in g:
                 source_family[nm] = gi
 
-        # TODO-235: per-source piecewise lag model vs the final reference, so a
-        # staircase source's perf->source time map survives the run (backend
-        # ab_clips, TODO-233 pt2). The reference source itself has no curve —
-        # it IS the clock (lag identically 0).
-        step_thr = cfg["align"]["step_flag_sec"]
-        lag_segments_out = {
-            nm: align.fit_lag_segments(lag_rows_final.get(nm, []), step_thr)
-            for nm in names
-        }
-
         results = {
             "sources": {
                 nm: {
@@ -1299,6 +1367,20 @@ def main(argv=None):
             "secondary_pairs": {
                 f"{names[i]}|{names[j]}": sec
                 for (i, j), sec in sec_results.items()
+            },
+            # LISTENING_SIGNALS §3. banter_pairs carries the scalar + its
+            # diagnostics (persisted to pairs.banter_score/banter_n_utts_a/b);
+            # transcripts is the variable-length payload, persisted to the
+            # observations `transcripts` table and reused by the mislabel
+            # hunter / song index / taper attribution. Empty when asr.enabled
+            # is false.
+            "banter_pairs": {
+                f"{names[i]}|{names[j]}": det
+                for (i, j), det in banter_results.items()
+            },
+            "transcripts": {
+                nm: [u.as_row() for u in utts]
+                for nm, utts in transcripts.items() if utts
             },
             "config": cfg,
         }

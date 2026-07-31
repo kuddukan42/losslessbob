@@ -1,3 +1,55 @@
+[2026-07-30] — feat(tapematch): §3 banter/ASR transcript matching (built, dark-launched)
+Added: tools/tapematch/tapematch/asr.py — FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3. Every other
+  TapeMatch signal measures the music; this one measures the words. Gap finder (low-energy
+  between-song regions via match.find_quiet_segments) -> faster-whisper over those windows only
+  (greedy, temperature 0, confidence-gated on avg_logprob/no_speech_prob) -> `banter_score`:
+  Dice overlap of content tokens PLUS timeline agreement — matched utterances must share one
+  time offset, which is what separates a real match from two shows colliding on stock stage
+  phrases. Requires >=2 corroborating utterances (spec §3: singles are noise).
+Added: observations.db `transcripts` table (run_id, lb, t_start/t_end on the TRIMMED performance
+  clock, text, avg_logprob, no_speech_prob) + idempotent `pairs.banter_score`,
+  `banter_n_utts_a/b`, `banter_n_matched`, `banter_offset_sec`. Transcripts are stored keyed by
+  lb + time because the spec's reuse cases live outside TapeMatch: mislabel hunter, song-centric
+  index, taper attribution.
+Added: tools/tapematch/tests/test_asr.py + test_asr_persistence.py — 46 tests, no model download
+  (a stub model covers the gating and timestamp arithmetic). test_asr_persistence.py also covers
+  insert_pairs, which had no test at all before this session widened its 43-way INSERT.
+Changed: tools/tapematch/tapematch/cli.py — windows are picked ONCE on the run's reference source
+  and mapped into every other source through its fit_lag_segments model (TODO-235's persisted lag
+  curve), not detected per source. This is the load-bearing design decision: a pair signal only
+  corroborates if both sides transcribe the same moments, and per-source gap detection does not
+  converge on that — measured on 2003-05-11, where one tape caught the band intro and the other
+  spent its whole budget elsewhere and scored 0.0. lag_segments_out moved earlier (pure
+  reordering) so the ASR block can read it.
+Changed: tools/tapematch/config.yaml — new `asr:` block, **enabled: false**. Per spec §0 the
+  signal ships dark: computed and persisted, but no addon_links rule reads it until a
+  distribution study assigns a threshold. verdict.py registers `banter_score` in METRIC_KEYS with
+  no rule attached. NULL = unavailable; 0.0 = computed, no corroborating banter.
+Changed: requirements.txt, PROJECT.md — faster-whisper==1.2.1, OPTIONAL and feature-gated
+  (lazy import; absent -> signal NULL, pipeline unaffected).
+Verified on real audio (2003-05-11 Solomons MD): LB-01097/13538 scored **0.778** with 2
+  corroborating utterances at a consistent -16.3 s offset — both tapes independently caught
+  "[George Recile] is on the drums" — on a pair whose waveform corr is only 0.233. That is
+  exactly §3's target case: same performance, very different-sounding tapes, music-based
+  similarity weak, words decisive. The different-taper pair LB-01015/01046 correctly scored 0.0.
+  Cost: 11-30 s per source for ~1600 s of selected audio (vad_filter skips the music) — compute
+  is not the constraint, utterance yield is. Full detail + the two empirically-set gates in
+  CALIBRATION_PROGRESS.md; calibration is TODO-293.
+
+[2026-07-30] — fix(env): rebuild .venv on Python 3.14 (system 3.13 removed out from under it)
+Fixed: .venv — the system python moved 3.13 -> 3.14 and /usr/bin/python3.13 no longer exists, so
+  .venv/bin/python3 (a symlink to /usr/bin/python3) resolved to 3.14 while site-packages stayed
+  on python3.13/. EVERY .venv/bin/python3 call in the repo — backend, tapematch, tests — was
+  failing with ModuleNotFoundError: No module named 'numpy'. Recreated the venv on 3.14 and
+  reinstalled requirements.txt: all pins resolve unchanged (numpy 2.4.6, scipy 1.17.1, ...).
+  Also restored the dev/audio packages that live in the venv but not in requirements.txt —
+  pytest 9.0.3, ruff 0.15.16, pre-commit 4.6.0, uv, pip, deepl 1.30.0, librosa 0.11.0,
+  soxr 1.1.0 (tapematch imports the last two: pitch_ratio_pyin and resample_ratio).
+  1070 backend tests + 383 tapematch tests green afterwards. The dead 3.13 venv was moved to
+  .venv-broken-py313/ rather than deleted — remove it when convinced nothing is missing.
+Changed: .gitignore — .numba_cache/ (written under tools/tapematch/tests/ when pytest imports
+  librosa directly; cli.py routes its own cache to NUMBA_CACHE_DIR, plain collection does not).
+
 [2026-07-29] — chore(docs): bump actions/setup-node v4 → v5 (Node 20 runtime deprecation)
 Changed: .github/workflows/ci.yml, .github/workflows/release.yml — all three actions/setup-node@v4
   uses bumped to @v5. v4 declares `runs-using: node20` for its own wrapper, which GitHub has

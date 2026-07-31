@@ -107,6 +107,13 @@ METRIC_KEYS = (
     # here so both round-trip through the cached-scoring metrics dict.
     "emb_score",
     "emb_score_global",
+    # Banter/ASR transcript overlap (FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3).
+    # DARK: registered so it round-trips through the cached-scoring metrics
+    # dict, but no rule below reads it — the spec's §0 dark-launch contract
+    # requires a same-family vs different-family distribution study before any
+    # threshold exists. NULL = not transcribed / too few utterances;
+    # 0.0 = transcribed, no corroborated shared banter.
+    "banter_score",
     "speed_kind_a",
     "speed_kind_b",
     "hf_ceiling_hz_a",
