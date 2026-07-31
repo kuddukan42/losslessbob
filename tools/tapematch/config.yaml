@@ -431,3 +431,69 @@ secondary_match:
   staircase_hop_sec: 2.0
   staircase_window_corr_threshold: null   # set after calibration step below
   staircase_coverage_threshold: null      # set after calibration step below
+
+# ── ASR / banter matching (FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3) ────────────
+# Transcribes between-song gaps with faster-whisper and scores two sources on
+# shared spoken content + timeline agreement (`pairs.banter_score`). Independent
+# of every music-based signal, so it is strongest where waveform similarity is
+# weakest (two very different-sounding tapes of one show).
+#
+# DARK-LAUNCHED (spec §0): with `enabled: false` nothing is transcribed and
+# banter_score stays NULL. Even when enabled, no addon_links rule reads the
+# score — it is computed and persisted for the distribution study that must
+# precede any merge weight. NULL = unavailable; 0.0 = computed, no evidence.
+#
+# `faster-whisper` is an OPTIONAL dependency (pinned in requirements.txt) and is
+# imported lazily: if it is missing, or the model cannot be fetched, the signal
+# degrades to NULL and the run is otherwise unaffected.
+asr:
+  enabled: false
+
+  # --- model ---
+  model: base                # tiny/base — CPU-affordable; base is the accuracy knee
+  model_revision: null       # pin a HF revision hash for reproducible transcripts
+  device: cpu
+  compute_type: int8         # int8 on CPU: ~4x faster than float32, no useful loss
+  cpu_threads: 0             # 0 = CTranslate2 default (all cores)
+  download_root: null        # null = HF default cache
+  local_files_only: false    # true = never hit the network (fails closed to NULL)
+  language: en               # fixed: Dylan stage banter; free language ID invites
+  #                            hallucinated Welsh on tape hiss
+
+  # --- gap finding (between-song regions; never the full show) ---
+  gap_energy_percentile: 25.0   # frames below this energy percentile are "quiet"
+  gap_min_sec: 4.0              # shorter quiet runs are bars of music, not breaks
+  gap_pad_sec: 30.0             # spec §3's +/-30 s: banter starts under the applause
+  gap_max_window_sec: 75.0      # cap on one padded window
+  # Windows are chosen ONE PER TIME BIN (max_gaps bins across the performance),
+  # not by gap length: a pair signal only corroborates if both sides transcribe
+  # the same parts of the show, and length-ranking diverges between two tapes
+  # of one performance (measured 2026-07-30 — see asr.find_banter_gaps).
+  # 60 bins x <=75 s window is the real coverage cap, not max_total_sec.
+  # Measured 2026-07-30 (2003-05-11, base/int8, 32-core CPU): ~1600 s of
+  # selected audio transcribes in 11-30 s per source, because vad_filter skips
+  # the music inside each window. Coverage is the scarce resource here, not
+  # compute — utterance yield on rough AUD is only a handful per source.
+  max_gaps: 60
+  always_head_sec: 60.0         # always transcribe the head: the announcer's
+  #                               "Columbia recording artist Bob Dylan" intro is
+  #                               the most identifying utterance on the tape
+  max_total_sec: 2400.0         # hard ASR budget per source
+  vad_filter: true              # skip pure applause/hiss inside a window
+
+  # --- confidence gate (rough AUD tape hallucinates) ---
+  min_avg_logprob: -1.0         # discard segments below this mean token logprob
+  # 0.8, not Whisper's usual 0.6: no_speech_prob is reported per DECODE WINDOW,
+  # not per segment, so on an AUD tape where the crowd roars under the words a
+  # single 0.61 rejects every segment in that window. Measured 2026-07-30 on
+  # 2003-05-11 (LB-01015): the "Columbia recording artist Bob Dylan" intro —
+  # the most identifying banter a Dylan tape can carry — sat at exactly 0.61.
+  max_no_speech_prob: 0.8
+  min_content_tokens: 2         # after stopword removal — "yeah" identifies nothing
+
+  # --- pair scoring ---
+  min_utterances: 2             # below this on EITHER side -> NULL, not 0.0
+  min_similarity: 0.5           # Dice on content tokens for a candidate match
+  offset_tolerance_sec: 5.0     # matched utterances must share one time offset
+  min_corroborating: 2          # spec §3: single-utterance matches are noise
+  score_denominator_cap: 8      # a full-score pair needs 8 corroborations, not 2

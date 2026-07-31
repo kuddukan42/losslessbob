@@ -974,3 +974,58 @@ Shipped **min_hiss_median: 0.05** (symmetric to min_hiss_frac; tj sign-off
 boundary case. The two removed frozen FPs: LB-10165/10241 (median 0.017),
 LB-04535/05649 (median 0.048), both staircase relaxed-bar merges corroborated
 only by noise-level hiss. Tests in `tests/test_staircase_gating.py`. TODO-255 CLOSED.
+
+## §3 banter/ASR signal — BUILT + DARK 2026-07-30 (uncalibrated)
+
+FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3 shipped as `tapematch/asr.py` +
+`pairs.banter_score` (with `banter_n_utts_a/b`, `banter_n_matched`,
+`banter_offset_sec`) + a new `transcripts` table. Config block `asr:`,
+**`enabled: false`**. No `addon_links` rule reads the score — per spec §0 it
+needs a same-family vs different-family distribution before any threshold.
+
+**Design note — window selection is the load-bearing decision.** A pair signal
+only corroborates if both sides transcribe the *same moments*. Per-source
+gap detection does not converge on that: on 2003-05-11, "longest quiet stretch
+first" had LB-01097 catch the band intro while LB-13538 spent its whole budget
+elsewhere and scored 0.0. Windows are therefore picked **once on the run's
+reference source** and mapped into every other source through its
+`fit_lag_segments` model (TODO-235's persisted lag curve), plus a
+one-per-time-bin spread and an always-transcribed head window (the announcer's
+intro is the most identifying utterance a Dylan tape carries).
+
+**Live evidence, 2003-05-11 Solomons MD** (5 sources, all different families):
+
+| pair | corr | emb_score | banter_score | note |
+|------|------|-----------|--------------|------|
+| LB-01097 / 13538 | 0.233 | 0.905 | **0.778** (2 matched, offset −16.3 s) | same performance, both caught "[George Recile] is on the drums" + "playing on the bass guitar tonight" |
+| LB-01015 / 01046 | 0.010 | 0.189 | 0.0 | correct negative — different tapers, no shared banter |
+
+The positive is exactly §3's target case: waveform correlation weak (0.233),
+words decisive. Both sides agreed on one time offset, which is what separates
+this from stock-phrase collision.
+
+**Measured cost/yield** (base/int8, 32-core CPU, 95-min show): ~1,600 s of
+selected audio transcribes in **11–30 s per source** — `vad_filter` skips the
+music inside each window. Compute is NOT the constraint; **yield is**: 2–9
+gated utterances per source on rough AUD. Defaults raised accordingly
+(`max_gaps` 40→60, `max_total_sec` 1800→2400).
+
+**Two gates found empirically, both documented in `config.yaml`:**
+- `max_no_speech_prob` 0.6 → **0.8**. Whisper reports `no_speech_prob` per
+  *decode window*, not per segment, so on a crowd-loud AUD tape one 0.61
+  rejects every segment in that window — including the intro announcement.
+- `min_similarity` 0.5 (Dice on content tokens) is currently a real limiter:
+  the same utterance decodes differently depending on the clip boundary
+  ("Judge Rossell is on the drums" vs "God, the sun is on the drums" — Dice
+  0.33), so a true match can miss. Do not lower it blind; it is a precision
+  knob and stock stage phrases are its adversary.
+
+**Before assigning any weight** (the calibration study this section still owes):
+1. Enable `asr` on a labeled multi-source date set, pull the `banter_score`
+   distribution split by frozen-set truth label, exactly as §0 requires.
+2. Score the denominator: `min(n_a, n_b, cap)` makes a 2-of-2 pair score like
+   an 8-of-8 pair. `banter_n_matched` is persisted so this can be re-derived
+   without re-transcribing — decide whether the shipped scalar should be
+   matched-count-aware before a threshold is set.
+3. Check `banter_offset_sec` against each pair's alignment lag. A high score at
+   an implausible offset is coincidence, and that cross-check is free.
