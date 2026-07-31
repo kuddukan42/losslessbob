@@ -1,4 +1,10 @@
 
+TODO-295: gui_next — surface auto_triage in the TapeMatch Curation screen
+Priority: Medium
+Status: Open
+Added: 2026-07-31
+Description: Expose backend/tapematch_autoflag's machine triage in ScreenTapeMatchCuration: an 'attention'/'clear' indicator per date plus the fired rule names from auto_triage_reasons (JSON array; rule -> human text is in tapematch_autoflag.RULES). Needs GET /api/tapematch/families to return the two columns first — it currently selects review_flag/review_reason only (surfaced as fam_needs_review/fam_review_reason). Keep it visually distinct from and subordinate to the existing 'Needs review' Pill: review_flag means a human read the analysis.md prose, auto_triage is a ~0.19-precision prioritisation hint whose real value is the inverse (97.4% of 'clear' dates were human-judged clean). Do not merge the two into one badge. Deferred deliberately at ship time (TODO-294, 2026-07-31) so the field could be eyeballed in the DB first. i18n required (see TODO-275). Rule R6 staircase is also still deferred — it needs the real discontinuity logic from tools/tapematch/tapematch/cli.py surfaced into observations.db before it can be calibrated.
+
 TODO-293: tapematch — calibrate the §3 banter/ASR signal and decide its weight
 Priority: Medium
 Status: Open
