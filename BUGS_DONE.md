@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-279: tapematch: `pytest tests/` launches REAL tapematch sessions against the production DB and live audio
+Status: Fixed
+File(s): tools/tapematch/tests/test_batch_queue.py:24,tools/tapematch/tapematch_session.py:1473
+Reported: 2026-07-27
+Fixed: 2026-07-31
+Root cause: test_batch_queue.py monkeypatched sess.run_date, but run_batch() stopped calling it in ac804108 (2026-06-18) when it was refactored to spawn one subprocess per date (tapematch_session.py:1473). The test file was last touched 2026-06-14, so the patch had been a silent no-op for ~6 weeks and the real dates in the queue fixtures ran for real against the production observations.db and live audio.
+Fix: Fixed in code 2026-07-27: _spawn(cmd) seam in tapematch_session.py routing all three drivers (run_batch/run_year/run_crawl); new tools/tapematch/tests/conftest.py autouse fixture stubs _spawn to raise AssertionError so no test can spawn a session; test_batch_queue.py rewritten to patch _spawn and assert on argv with year-2999 dates; test_find_lb_folders_no_audio.py's (found, excluded) tuple misuse fixed. Ledger entry was left in BUGS.md by mistake; closed 2026-07-31 after re-verifying: 383 passed in 29s and 0 runs written to observations.db by the suite.
+
 BUG-277: tapematch: a cross-referenced LB tag in a folder name shadows the folder's own LB number
 Status: Fixed
 File(s): tools/tapematch/tapematch/cli.py:512,tools/tapematch/tapematch_session.py:697
