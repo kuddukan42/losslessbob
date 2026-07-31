@@ -2,6 +2,18 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-276: tapematch — re-run the 7 BUG-277 self-pair dates to clear the stale wrong-LB rows
+Priority: Medium
+Status: Done
+Added: 2026-07-29
+Closed: 2026-07-31
+Description: BUG-277 (fixed 2026-07-29, commit 89ca6e39) stopped NEW runs from resolving two distinct folders to the same LB number, but the rows already written under the old first-match regex are still in observations.db and the app DB. The 7 affected dates: 1989-07-16/LB-2204, 1988-06-07/2564, 1988-06-25/6295, 1988-07-20/1475, 1988-09-11/2585, 1988-09-23/3164, 1993-06-19/1929. Their pair/family rows are attributed to the WRONG LB entry, so recording_families membership for those sources is incorrect; two of the 7 have corr ~0.003, i.e. genuinely different recordings collapsed onto one LB number.
+
+Work: re-run each date (live tapematch session) and re-sync families to the app DB. Deferred out of the fix session because live sessions must not run concurrently with the nightly cron -- schedule this when the cron is idle.
+
+Watch item: 1993-06-19 (LB-1929/LB-2072) cannot be resolved from the folder name at all -- both numbers appear ambiguously positioned -- so it depends entirely on the DB-authoritative name_to_lb path. If that path misses, the new _assert_no_self_pair() guard will ABORT the run rather than write a bad row. Expect that date to fail loudly if the DB map does not cover both folders; resolving it may need a manual folder rename or a name_to_lb correction first.
+Done 2026-07-31. All 7 dates re-run live (34 min, all exit 0) with the BUG-277 fix in place, then re-synced. observations.db: new runs carry 0 self-pairs; 1993-06-19 correctly resolves both LB-01929 and LB-02072 via the DB-authoritative my_collection path (folder-name extraction alone still collides there, as predicted — its own number is the bracketed [LB-02072], inverting the strip-brackets convention). App DB: 0 self-pairs in tapematch_pairs, all 7 dates now point at the 20260731 runs with corrected recording_families membership. The 7 stale lb_a==lb_b rows remain in observations.db attached to their original June run_ids; _pick_best_run no longer selects those runs, so they are inert history. Side effect: each date now has an un-analysed new run, so all 7 re-entered the /tapematch-batch backlog (eligible 1545 -> 1548); 6 of 7 triage as 'attention' on R1_contradiction, which is expected — the xref lineage claims are real.
+
 TODO-294: tapematch — rule-based auto-triage flagger (autoflag.py)
 Priority: High
 Status: Done
