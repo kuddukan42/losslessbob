@@ -1,3 +1,8 @@
+[2026-08-04] — chore(bookkeeping): close BUG-210, stray lossless_bob.db gitignored
+Fixed: BUG-210 (backend/lossless_bob.db reappearing untracked) closed won't-fix/by-design —
+  root cause confirmed 2026-07-27 as an ad hoc sqlite3.connect() typo, not app code. Added
+  backend/lossless_bob.db to .gitignore so the stray file no longer shows as noise.
+
 [2026-08-04] — fix(backend): close BUG-309 + BUG-310, pipeline rename/lbdir gaps
 Fixed: /api/folder/rename (app.py:9096) resolved qBittorrent-sync lb_number only from
   my_collection/Pin-and-continue — both unset for the typical single-LB auto-rename candidate,
