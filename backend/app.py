@@ -441,6 +441,27 @@ def _pinned_lb_for_folder(folder: Path) -> int | None:
     return links[0]["lb_number"] if len(links) == 1 else None
 
 
+def _resolve_xref_for_folder(folder: Path, lb_number: "int | None") -> int:
+    """Copy-level fileset id (my_collection.xref) a folder's lbdir lookup should use.
+
+    0 = canonical fileset, N>0 = alternate fileset xref-N (docs/XREF_SEMANTICS.md
+    §3). Prefers the my_collection row (authoritative, set by the pipeline's
+    lookup match) over the folder name's own ``-xrefNNNNN`` tag, which is only
+    present once the folder has actually been renamed. Getting this wrong hands
+    find_lbdir_attachment() the wrong manifest for the folder's real fileset
+    (BUG-310).
+    """
+    if lb_number is not None:
+        with database.get_connection() as conn:
+            row = conn.execute(
+                "SELECT xref FROM my_collection WHERE disk_path=?", (str(folder),)
+            ).fetchone()
+        if row is not None:
+            return row["xref"] or 0
+    from backend.folder_naming import parse_xref_tag
+    return parse_xref_tag(folder.name)
+
+
 def _resolve_lb_number_for_folder(folder: Path) -> int | None:
     """Best-effort LB# for a folder: single pin, then my_collection row, then name regex.
 
@@ -3041,16 +3062,19 @@ def create_app() -> Flask:
                         "lbdir_filename": None,
                     })
                     continue
-                lbdir_src = find_lbdir_attachment(lb_number)
+                xref = _resolve_xref_for_folder(folder, lb_number)
+                lbdir_src = find_lbdir_attachment(lb_number, xref=xref)
                 was_scraped = False
 
                 if not lbdir_src:
                     scraper.scrape_entry(lb_number, force=False, download_files=True)
-                    lbdir_src = find_lbdir_attachment(lb_number)
+                    lbdir_src = find_lbdir_attachment(lb_number, xref=xref)
                     was_scraped = True
 
-                if not lbdir_src:
+                if not lbdir_src and xref == 0:
                     # This LB has no lbdir — try the canonical if this is an alias.
+                    # (Only for canonical lookups: an xref-N miss means the specific
+                    # fileset attachment is missing, not that lb_number is an alias.)
                     canonical_list = database.resolve_aliases([lb_number])
                     canonical = (
                         canonical_list[0]
@@ -8538,7 +8562,7 @@ def create_app() -> Flask:
         if lb_number and "lbdir" in steps:
             try:
                 if (_find_lbdir_in_folder(folder) is None
-                        and find_lbdir_attachment(lb_number) is None):
+                        and find_lbdir_attachment(lb_number, xref=_xref_for(lb_number)) is None):
                     _submit_lbdir_prefetch(lb_number)
             except Exception as exc:
                 _log.warning("lbdir prefetch trigger failed for LB-%05d: %s",
@@ -8562,11 +8586,15 @@ def create_app() -> Flask:
                     # Try the attachments cache; if uncached, either park on an
                     # inflight P3 prefetch or (fallback) scrape synchronously.
                     try:
-                        lbdir_src = find_lbdir_attachment(lb_number)
+                        xref = _xref_for(lb_number)
+                        lbdir_src = find_lbdir_attachment(lb_number, xref=xref)
                         if not lbdir_src:
                             # Resolve canonical alias once — needed both for the
-                            # inflight check and the synchronous fallback.
-                            canonicals = database.resolve_aliases([lb_number])
+                            # inflight check and the synchronous fallback. Alias
+                            # resolution only applies to canonical (xref=0) lookups:
+                            # an xref-N miss means the specific fileset attachment
+                            # is missing, not that lb_number is an alias (BUG-310).
+                            canonicals = database.resolve_aliases([lb_number]) if xref == 0 else []
                             canonical = canonicals[0] if canonicals and canonicals[0] != lb_number else None
                             with _LBDIR_PREFETCH_LOCK:
                                 inflight = (
@@ -8583,7 +8611,7 @@ def create_app() -> Flask:
                                 # failed or never fired) — original synchronous
                                 # scrape path, unchanged.
                                 scraper.scrape_entry(lb_number, force=False, download_files=True)
-                                lbdir_src = find_lbdir_attachment(lb_number)
+                                lbdir_src = find_lbdir_attachment(lb_number, xref=xref)
                                 if not lbdir_src and canonical:
                                     lbdir_src = find_lbdir_attachment(canonical)
                                     if not lbdir_src:

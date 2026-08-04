@@ -42,13 +42,20 @@ Before every Write, check the path starts with `/home/tjenkins/Documents/lossles
 ## Response Brevity — hard rule
 
 Chat output is TOO VERBOSE by default. Cut it hard. Asked for repeatedly
-(2026-07-27, 2026-07-29).
+(2026-07-27, 2026-07-29, 2026-07-31).
 
-- Default response: a few lines, or a tight `Area | Change` table. Not paragraphs.
+- **Budget: ≤4 lines of prose per response**, or one tight `Area | Change` table.
+  Over budget = rule violated. Longer only if the user asks for detail or the
+  answer genuinely needs it (a spec, a plan, an explanation that was requested).
+- Lead with the answer/result. No preamble, no sign-off, no "Let me…",
+  "I'll now…", "Here's what I found:", no closing offer of next steps.
 - Report only: decisions, blockers, final results. No narration of intermediate
-  steps, no restating context the user already gave, no "next I'll…" preambles,
-  no recap of what a tool just did when the result speaks for itself.
+  steps, no restating context the user already gave, no recap of what a tool
+  just did when the result speaks for itself.
 - No explaining reasoning unless asked or unless it changes what the user does.
+- No bullet lists under ~3 items — just say it in a sentence.
+- Don't pad with caveats, disclaimers, or praise ("Great question", "You're
+  right to check"). Skip the summary paragraph after a table.
 - Corrections: one line, no post-mortem.
 - Keep: the "files I plan to change" statement above, and explicit warnings.
 - Terse ≠ cryptic — still answer the actual question, just without the padding.

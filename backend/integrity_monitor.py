@@ -46,7 +46,7 @@ def _find_lbdir_in_folder(folder: Path) -> "Path | None":
     return None
 
 
-def _find_lbdir(folder: Path, lb_number: int) -> "Path | None":
+def _find_lbdir(folder: Path, lb_number: int, xref: int = 0) -> "Path | None":
     """Locate the lbdir manifest for a collection folder.
 
     Tries the folder itself first, then falls back to the lbdir attachment
@@ -55,6 +55,9 @@ def _find_lbdir(folder: Path, lb_number: int) -> "Path | None":
     Args:
         folder: Collection folder on disk.
         lb_number: LB number, used to locate the attached lbdir file.
+        xref: Copy-level fileset id the folder matches (my_collection.xref;
+            0 = canonical). Must match the folder's own fileset, else the
+            wrong manifest is compared against (BUG-310).
 
     Returns:
         Path to the lbdir*.txt manifest, or None if not found.
@@ -62,7 +65,7 @@ def _find_lbdir(folder: Path, lb_number: int) -> "Path | None":
     lbdir = _find_lbdir_in_folder(folder)
     if lbdir is not None:
         return lbdir
-    return find_lbdir_attachment(lb_number)
+    return find_lbdir_attachment(lb_number, xref=xref)
 
 
 def _classify_verify_result(result: dict) -> dict:
@@ -219,7 +222,7 @@ def scan_collection(mount_id: "int | None" = None, cancel_event: "threading.Even
 
             folder = Path(disk_path)
             entry_mount_id = _mount_for_path(disk_path, mounts)
-            lbdir_path = _find_lbdir(folder, lb_number)
+            lbdir_path = _find_lbdir(folder, lb_number, xref=row["xref"] or 0)
 
             if lbdir_path is None:
                 classification = {

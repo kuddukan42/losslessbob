@@ -1,3 +1,15 @@
+[2026-08-04] — fix(backend): close BUG-310, lbdir attachment lookup ignored copy-level xref
+Fixed: backend/paths.py find_lbdir_attachment(lb_number) had no xref parameter — on the 1,473
+  LBs with both a canonical and an xref-N lbdir attachment on disk, it returned whichever
+  Path.iterdir() yielded first, filesystem-order-dependent. LB-16420 (my_collection.xref=0,
+  canonical) was resolving to xref-02147's manifest instead of its own (tj's manually-added
+  bug note, filed as BUG-310 and fixed same session). find_lbdir_attachment(lb_number, xref=0)
+  now matches by fileset id (docs/XREF_SEMANTICS.md §3); added app.py _resolve_xref_for_folder()
+  reading my_collection.xref (falling back to the folder name's -xrefNNNNN tag); threaded xref
+  through /api/lbdir/retrieve, the pipeline's Step 3 lbdir fetch + P3 prefetch trigger, and
+  integrity_monitor's collection scan. Alias-resolution fallback now only fires for xref=0
+  lookups. Verified both directions on LB-16420 and LB-5058 (has both variants).
+
 [2026-07-31] — fix(tapematch): repair the 7 BUG-277 self-pair dates (TODO-276) + close BUG-279
 Fixed: the 7 dates whose pair/family rows were attributed to the wrong LB number under the
   pre-BUG-277 first-match regex — 1989-07-16, 1988-06-07, 1988-06-25, 1988-07-20, 1988-09-11,
