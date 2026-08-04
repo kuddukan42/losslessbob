@@ -478,7 +478,9 @@
         "loading": "Résolution en cours…",
         "standardize": "Normaliser les noms",
         "choose": "Choisir un LB…"
-      }
+      },
+      "qbtSynced": "Mise à jour du chemin d'enregistrement de qBittorrent — le seeding se poursuit sous le nouveau nom",
+      "qbtSyncFailed": "Renommé, mais échec de la mise à jour du chemin d'enregistrement de qBittorrent : {{error}}"
     },
     "stepStates": {
       "pass": "Pass",

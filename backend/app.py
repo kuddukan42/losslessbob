@@ -9127,12 +9127,16 @@ def create_app() -> Flask:
 
         Also best-effort syncs qBittorrent (see backend.filer._sync_qbt_location)
         if the folder is already tracked in qBittorrent for a known lb_number,
-        resolved from my_collection or, failing that, a "Pin & continue" folder
-        link — so an already-added torrent keeps seeding under the new name.
+        resolved from the request body's ``lb_number`` (the pipeline's lookup
+        match — set for the typical single-LB-match rename candidate, which has
+        not been filed into my_collection yet at rename time, BUG-309), else
+        my_collection, else a "Pin & continue" folder link — so an already-added
+        torrent keeps seeding under the new name.
 
-        Body: {folder: "/abs/path/to/folder", new_name: "new folder name"}
+        Body: {folder: "/abs/path/to/folder", new_name: "new folder name",
+               lb_number?: int}
         Returns:
-            JSON {ok: true, new_path: "/abs/path/to/new folder name"}
+            JSON {ok: true, new_path: "...", qbt_synced: bool, qbt_error: str|None}
         """
         try:
             from backend.filer import _sync_qbt_location
@@ -9140,6 +9144,12 @@ def create_app() -> Flask:
             data = request.get_json() or {}
             folder = Path(data.get("folder", ""))
             new_name: str = (data.get("new_name") or "").strip()
+            lb_number_hint = data.get("lb_number")
+            if lb_number_hint is not None:
+                try:
+                    lb_number_hint = int(lb_number_hint)
+                except (ValueError, TypeError):
+                    lb_number_hint = None
             if not folder.exists() or not folder.is_dir():
                 return jsonify({"error": "Folder not found"}), 400
             if not new_name or "/" in new_name or "\\" in new_name:
@@ -9178,15 +9188,23 @@ def create_app() -> Flask:
             # Best-effort qBittorrent sync so a torrent already tracked under
             # the old name keeps seeding instead of erroring on missing files.
             # lb_number: prefer the my_collection row just synced above, else
-            # fall back to a "Pin & continue" folder link if this folder
-            # hasn't been filed into the collection yet.
+            # the caller-supplied lookup hint (BUG-309 — the typical single-LB
+            # rename candidate has no my_collection row yet, since it isn't
+            # filed until later), else a "Pin & continue" folder link.
             lb_number = row["lb_number"] if row else None
+            if lb_number is None:
+                lb_number = lb_number_hint
             if lb_number is None:
                 link = database.get_folder_link(old_disk_path)
                 lb_number = link["lb_number"] if link else None
+            qbt_synced = False
+            qbt_error = None
             if lb_number is not None:
-                _sync_qbt_location(int(lb_number), folder, new_path)
-            return jsonify({"ok": True, "new_path": str(new_path)})
+                qbt_synced, qbt_error = _sync_qbt_location(int(lb_number), folder, new_path)
+            return jsonify({
+                "ok": True, "new_path": str(new_path),
+                "qbt_synced": qbt_synced, "qbt_error": qbt_error,
+            })
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 

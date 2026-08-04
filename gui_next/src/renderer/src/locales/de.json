@@ -478,7 +478,9 @@
         "loading": "Wird aufgelöst…",
         "standardize": "Namenskonvention vereinheitlichen",
         "choose": "LB wählen…"
-      }
+      },
+      "qbtSynced": "Speicherpfad von qBittorrent aktualisiert – das Seeding wird unter dem neuen Namen fortgesetzt",
+      "qbtSyncFailed": "Umbenannt, aber Aktualisierung des Speicherpfads von qBittorrent fehlgeschlagen: {{error}}"
     },
     "stepStates": {
       "pass": "Pass",

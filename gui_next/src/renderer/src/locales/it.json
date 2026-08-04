@@ -478,7 +478,9 @@
         "loading": "Risoluzione in corso…",
         "standardize": "Standardizzare il nome",
         "choose": "Scegli LB…"
-      }
+      },
+      "qbtSynced": "Percorso di salvataggio di qBittorrent aggiornato — il seeding prosegue con il nuovo nome",
+      "qbtSyncFailed": "Rinominato, ma l'aggiornamento del percorso di salvataggio di qBittorrent non è andato a buon fine: {{error}}"
     },
     "stepStates": {
       "pass": "Pass",

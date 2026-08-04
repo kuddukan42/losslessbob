@@ -478,7 +478,9 @@
         "loading": "Resolviéndose…",
         "standardize": "Estandarizar el nombre",
         "choose": "Elegir LB…"
-      }
+      },
+      "qbtSynced": "Se ha actualizado la ruta de guardado de qBittorrent; la distribución continúa con el nuevo nombre",
+      "qbtSyncFailed": "Se ha cambiado el nombre, pero ha fallado la actualización de la ruta de guardado de qBittorrent: {{error}}"
     },
     "stepStates": {
       "pass": "Aceptar",

@@ -1,4 +1,11 @@
-[2026-08-04] — fix(backend): close BUG-310, lbdir attachment lookup ignored copy-level xref
+[2026-08-04] — fix(backend): close BUG-309 + BUG-310, pipeline rename/lbdir gaps
+Fixed: /api/folder/rename (app.py:9096) resolved qBittorrent-sync lb_number only from
+  my_collection/Pin-and-continue — both unset for the typical single-LB auto-rename candidate,
+  so the sync silently no-op'd (BUG-309). Now accepts an optional lb_number in the request body
+  (the pipeline's lookup match, mirroring /api/pipeline/file/start) and returns qbt_synced/
+  qbt_error. gui_next ScreenPipeline.tsx applyRename() sends lb_number and toasts the result,
+  mirroring applyFile(). New locale keys pipeline.rename.qbtSynced/qbtSyncFailed added to all
+  6 locales via DeepL.
 Fixed: backend/paths.py find_lbdir_attachment(lb_number) had no xref parameter — on the 1,473
   LBs with both a canonical and an xref-N lbdir attachment on disk, it returned whichever
   Path.iterdir() yielded first, filesystem-order-dependent. LB-16420 (my_collection.xref=0,
