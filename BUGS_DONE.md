@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-309: pipeline auto-rename/auto-collect leave qBittorrent unsynced (no toast either way)
+Status: Fixed
+File(s): backend/app.py:9096(/api/folder/rename),backend/filer.py:465(_sync_qbt_location),gui_next/src/renderer/src/screens/ScreenPipeline.tsx:2188(applyRename)
+Reported: 2026-08-02
+Fixed: 2026-08-04
+Root cause: /api/folder/rename (app.py:9096) only resolved lb_number for its qBittorrent sync via an existing my_collection row or a Pin-and-continue folder_link. At the point auto-rename fires (verify/lookup/lbdir passed, filing still pending) neither exists for the ordinary single-LB-match case, so lb_number was None and _sync_qbt_location() was skipped silently -- the endpoint's response didn't even carry qbt_synced/qbt_error. Compounding gap: the frontend's applyRename() (ScreenPipeline.tsx:2188) never read or surfaced qbt_synced/qbt_error even on the rare path where sync was attempted, unlike applyFile()'s existing toast wiring.
+Fix: backend/app.py: /api/folder/rename now accepts an optional lb_number in the request body (the pipeline's lookup match, mirroring how /api/pipeline/file/start already receives it) and uses it as a fallback ahead of the Pin-and-continue folder_link lookup when no my_collection row exists yet; response now includes qbt_synced/qbt_error. gui_next/ScreenPipeline.tsx applyRename() now sends row.steps.lookup.lb_number in the request body and toasts pipeline.rename.qbtSynced / qbtSyncFailed off the response, mirroring applyFile(). New locale keys added to en.json (i18n sync pending). Verified live: POSTing /api/folder/rename with an explicit lb_number and no my_collection/pin record now reaches _sync_qbt_location (confirmed by the attempted-but-unreachable-host error in the response, vs. being silently skipped before). Auto-collect's own relocate call (file/start, already unconditional) is unaffected; the untested rename_history-fallback recovery path noted in the original report is a separate, lower-priority question left open.
+
 BUG-310: find_lbdir_attachment picks xref lbdir file over canonical (LB-16420 resolves to xref-02147)
 Status: Fixed
 File(s): backend/paths.py:88(find_lbdir_attachment)

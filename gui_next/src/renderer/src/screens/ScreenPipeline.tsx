@@ -2192,9 +2192,15 @@ export function ScreenPipeline(): React.JSX.Element {
       const resp = await fetch(`${BASE}/api/folder/rename`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ folder: row.folderPath, new_name: proposed }),
+        body: JSON.stringify({
+          folder: row.folderPath, new_name: proposed,
+          ...(row.steps.lookup.lb_number != null ? { lb_number: row.steps.lookup.lb_number } : {}),
+        }),
       })
-      const data = await resp.json() as { ok?: boolean; new_path?: string; error?: string }
+      const data = await resp.json() as {
+        ok?: boolean; new_path?: string; error?: string
+        qbt_synced?: boolean; qbt_error?: string | null
+      }
       if (data.ok && data.new_path) {
         const newName = data.new_path.split(/[/\\]/).pop() ?? proposed
         // If the detail panel was open for this row, update its id
@@ -2220,6 +2226,12 @@ export function ScreenPipeline(): React.JSX.Element {
         }))
         useFolderQueueStore.getState().removeFolders([row.folderPath])
         useFolderQueueStore.getState().addFolders([data.new_path])
+
+        if (data.qbt_synced) {
+          showToast(t('pipeline.rename.qbtSynced'), true)
+        } else if (data.qbt_error) {
+          showToast(t('pipeline.rename.qbtSyncFailed', { error: data.qbt_error }), false)
+        }
 
         // The "file" step's destination was resolved against the pre-rename
         // folder name — refresh it now that the rename has been applied on disk.

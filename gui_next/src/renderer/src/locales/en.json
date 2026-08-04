@@ -313,6 +313,8 @@
       "copyDiff": "Copy diff",
       "loggedOnly": "Logged to rename_history.",
       "apply": "Apply rename",
+      "qbtSynced": "qBittorrent save path updated — seeding continues under the new name",
+      "qbtSyncFailed": "Renamed, but qBittorrent save path update failed: {{error}}",
       "disambiguate": {
         "title": "Disambiguate · pick one",
         "desc": "Multiple LB numbers matched. Select the correct one, then click \"Pin selection\".",
