@@ -1,5 +1,18 @@
 
-BUG-278: tapematch: addon_links.rule_d can never fire in a live session (emb_score absent from the link metrics)
+BUG-309: pipeline auto-rename/auto-collect leave qBittorrent unsynced (no toast either way)
+Status: Open
+File(s): backend/app.py:9096(/api/folder/rename),backend/filer.py:465(_sync_qbt_location),gui_next/src/renderer/src/screens/ScreenPipeline.tsx:2188(applyRename)
+Reported: 2026-08-02
+Description: tj ran auto-rename + auto-collect on a queue and qBittorrent was left pointing at the old names/paths -- torrents weren't relocated or renamed to match.
+
+Root cause (code-read, not yet repro'd against a live qBittorrent): `/api/folder/rename` (app.py:9096) only calls `_sync_qbt_location()` when it can resolve an `lb_number` for the folder, via either (a) an existing `my_collection` row (folder already filed) or (b) `database.get_folder_link()`. At the point auto-rename fires -- verify/lookup/lbdir all pass, rename still pending -- the folder has not been filed yet, so (a) is never true. And `get_folder_link()` rows are only written for "Pin & continue" or the multi-LB-perfect-match auto-link path (app.py:8444); the ordinary single-LB-match case (app.py:8421, the common path auto-rename runs on) never calls `set_folder_link()`. So for the typical auto-rename candidate, lb_number resolves to None and `_sync_qbt_location()` is skipped entirely -- silently, since the endpoint's JSON response (app.py:9161) doesn't even include a qbt_synced/qbt_error field to report the skip.
+
+Compounding gap: unlike `/api/pipeline/file/start` (whose response's qbt_synced/qbt_error the frontend reads at ScreenPipeline.tsx:2430-2434 to toast success/failure), `applyRename()` (ScreenPipeline.tsx:2188) never reads or surfaces qbt_synced/qbt_error at all -- so even on the rare path where sync IS attempted, the user gets no feedback either way.
+
+Auto-collect (`/api/pipeline/file/start`) is passed lb_number explicitly by the frontend (row.steps.lookup.lb_number) and does call `_sync_qbt_location()` unconditionally (filer.py:762), so collect's own relocate call should fire. Whether it actually re-syncs qBittorrent after an unsynced prior rename depends on `relocate_tracked_torrent`'s `rename_history` fallback (qbittorrent.py:530-547) finding the torrent under its still-current (pre-rename) name -- untested; the DB-tracked path (`torrents.source_folder`) will still be stale in this case since the rename step never updated it via a torrents-table sync. Needs a live-qBittorrent repro to confirm whether collect alone recovers or whether both steps end up desynced, as tj observed.
+
+Fix direction: resolve lb_number for the sync check the same way the frontend already knows it (pass lb_number through to /api/folder/rename from the pipeline's applyRename call, mirroring how file/start receives it) instead of relying on my_collection/folder_link lookups that don't exist yet at rename time. Also add qbt_synced/qbt_error to the rename response and wire applyRename's toast the same way applyFile's already is.
+
 Status: FIXED 2026-07-27 (code); re-run of the 79 remaining affected dates in progress
 File(s): tools/tapematch/tapematch/cli.py:890,tools/tapematch/tapematch_session.py:1665,tools/tapematch/tapematch/verdict.py:311
 Reported: 2026-07-27

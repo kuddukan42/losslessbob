@@ -85,18 +85,36 @@ def attachment_path(filename: str) -> "Path":
     return SITE_FILES_DIR / filename
 
 
-def find_lbdir_attachment(lb_number: int) -> "Path | None":
-    """Find the lbdir attachment file for lb_number in SITE_FILES_DIR.
+def find_lbdir_attachment(lb_number: int, xref: int = 0) -> "Path | None":
+    """Find the lbdir attachment file for (lb_number, xref) in SITE_FILES_DIR.
 
-    Searches for files matching ``LBF-{lb_number:05d}-*lbdir*.txt``.
-    Returns None if SITE_FILES_DIR does not exist or no file is found.
+    ``xref`` selects which fileset's manifest to return (docs/XREF_SEMANTICS.md
+    §1/§3): 0 (default) is the canonical fileset, ``LBF-{lb:05d}-*lbdir*.txt``
+    with no xref tag in the name; N>0 is the specific alternate fileset
+    ``LBF-{lb:05d}-xref-{N:05d}-lbdir.txt``. A folder matching group (N, X)
+    genuinely wants the xref-X manifest — but a folder matching the canonical
+    fileset must never be handed an xref manifest by filesystem-iteration luck,
+    which is what happened before ``xref`` was a parameter here (BUG-310: an LB
+    with both a canonical and an xref-N lbdir attachment on disk resolved to
+    whichever ``iterdir()`` yielded first).
+    Returns None if SITE_FILES_DIR does not exist or no matching file is found.
     """
     if not SITE_FILES_DIR.exists():
         return None
     prefix = f"LBF-{lb_number:05d}-"
+    if xref:
+        xref_tag = f"-xref-{xref:05d}-"
+        for f in SITE_FILES_DIR.iterdir():
+            if (f.name.startswith(prefix)
+                    and xref_tag.lower() in f.name.lower()
+                    and "lbdir" in f.name.lower()
+                    and f.suffix.lower() == ".txt"):
+                return f
+        return None
     for f in SITE_FILES_DIR.iterdir():
         if (f.name.startswith(prefix)
                 and "lbdir" in f.name.lower()
+                and "xref" not in f.name.lower()
                 and f.suffix.lower() == ".txt"):
             return f
     return None

@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-310: find_lbdir_attachment picks xref lbdir file over canonical (LB-16420 resolves to xref-02147)
+Status: Fixed
+File(s): backend/paths.py:88(find_lbdir_attachment)
+Reported: 2026-08-04
+Fixed: 2026-08-04
+Root cause: find_lbdir_attachment(lb_number) had no xref parameter: it matched any file starting with LBF-{lb:05d}- containing 'lbdir', via Path.iterdir() (undefined order). LBs with BOTH a canonical and an xref-N lbdir attachment on disk (1,473 of them, confirmed by scan) resolved to whichever iterdir() yielded first -- for LB-16420 that was the xref-02147 file even though the folder's my_collection row (and its lookup match) is canonical (xref=0).
+Fix: backend/paths.py: find_lbdir_attachment(lb_number, xref=0) now matches the canonical pattern (excludes any filename containing 'xref') when xref=0, or the specific LBF-{lb:05d}-xref-{xref:05d}-lbdir.txt when xref>0. Added _resolve_xref_for_folder() (app.py) to read the folder's real fileset id from my_collection.xref, falling back to the folder name's own -xrefNNNNN tag via folder_naming.parse_xref_tag. Threaded xref through every caller: /api/lbdir/retrieve, the pipeline's Step 3 lbdir fetch + P3 prefetch trigger (via the pipeline's own _xref_for() lookup-match map), and integrity_monitor's collection scan (via my_collection.xref already present in its row). Alias-resolution fallback (lb_number is itself an alias) now only fires for xref=0 lookups -- an xref-N miss means the specific fileset attachment is missing, not that lb_number redirects elsewhere. Verified both directions post-fix: LB-16420 xref=0 now resolves to its canonical lbdir file, xref=2147 still resolves to the xref-02147 file; same spot-checked on LB-5058 (has both variants).
+
 BUG-279: tapematch: `pytest tests/` launches REAL tapematch sessions against the production DB and live audio
 Status: Fixed
 File(s): tools/tapematch/tests/test_batch_queue.py:24,tools/tapematch/tapematch_session.py:1473
