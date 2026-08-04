@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-210: backend/lossless_bob.db keeps reappearing in repo root (untracked, empty)
+Status: Fixed
+File(s): backend/lossless_bob.db (unknown origin)
+Reported: 2026-06-18
+Fixed: 2026-08-04
+Root cause: Confirmed 2026-07-27: an ad hoc sqlite3.connect('backend/lossless_bob.db') one-liner (typo'd DB path, run from repo root) creates a 0-byte file on connect even with no writes. Not an application code path — real DB path is backend/paths.py:25 DB_PATH -> APP_ROOT/data/losslessbob.db.
+Fix: Won't-fix/by-design: added backend/lossless_bob.db to .gitignore so the stray file no longer shows as untracked noise in git status/session briefings.
+
 BUG-309: pipeline auto-rename/auto-collect leave qBittorrent unsynced (no toast either way)
 Status: Fixed
 File(s): backend/app.py:9096(/api/folder/rename),backend/filer.py:465(_sync_qbt_location),gui_next/src/renderer/src/screens/ScreenPipeline.tsx:2188(applyRename)

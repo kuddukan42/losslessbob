@@ -74,6 +74,7 @@ tools/tapematch/embedding/**/__pycache__/
 # Generated output files
 losslessbob.db
 backend/losslessbob.db
+backend/lossless_bob.db
 batch_verify_run.log
 missing_from_collection.tsv
 public_not_owned.html
