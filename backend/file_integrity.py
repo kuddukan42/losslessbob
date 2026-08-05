@@ -81,12 +81,55 @@ BATCH_SIZE = 500
 #: Directory names never walked — none of these hold collection audio.
 SKIP_DIRS = frozenset({".git", "$RECYCLE.BIN", "System Volume Information", ".Trash-1000"})
 
+#: Wall-clock budget for one stat/read call. A stalled network share or a
+#: failing disk can block indefinitely without ever raising OSError; without
+#: this, one bad file freezes the whole scan thread forever with no way to
+#: cancel it (the cancel_event is only checked between files).
+IO_TIMEOUT_SECONDS = 30
+
 _JOB_LOCK = threading.Lock()
 _JOBS: dict[int, dict] = {}          # mount_id -> progress dict
 _CANCEL: dict[int, threading.Event] = {}
 _THREADS: dict[int, threading.Thread] = {}
 
 ProgressCb = Callable[[dict], None]
+
+
+def _with_timeout(fn: Callable[[], Any], timeout: float = IO_TIMEOUT_SECONDS) -> Any:
+    """Run ``fn`` on a daemon thread and enforce a wall-clock timeout.
+
+    ``TimeoutError`` is a subclass of ``OSError``, so every existing
+    ``except OSError`` around a stat/read call handles a stall exactly like a
+    real I/O error — no separate branch needed. If ``fn`` never returns, its
+    thread is simply abandoned (it's a daemon, so it can't block shutdown).
+
+    Args:
+        fn: Zero-argument callable to run.
+        timeout: Seconds to wait before giving up.
+
+    Returns:
+        Whatever ``fn`` returns.
+
+    Raises:
+        TimeoutError: If ``fn`` has not completed within ``timeout`` seconds.
+        Exception: Whatever ``fn`` itself raised, re-raised on this thread.
+    """
+    box: dict[str, Any] = {}
+
+    def _target() -> None:
+        try:
+            box["value"] = fn()
+        except BaseException as exc:  # noqa: BLE001 — re-raised on the caller's thread
+            box["error"] = exc
+
+    t = threading.Thread(target=_target, daemon=True)
+    t.start()
+    t.join(timeout)
+    if t.is_alive():
+        raise TimeoutError(f"stalled for over {timeout:.0f}s (possible drive I/O hang)")
+    if "error" in box:
+        raise box["error"]
+    return box["value"]
 
 
 def hash_file(path: Path, chunk_size: int = CHUNK_SIZE) -> dict[str, Any]:
@@ -482,9 +525,9 @@ def scan_mount(
 
             row = known.get(rel)
             try:
-                st = full.stat()
+                st = _with_timeout(full.stat)
             except OSError:
-                continue  # vanished mid-walk; the missing sweep will catch it
+                continue  # vanished mid-walk, or a stalled stat; missing sweep catches it
 
             stat_same = _stat_matches(row, st.st_size, st.st_mtime)
 
@@ -493,7 +536,7 @@ def scan_mount(
                 continue
 
             try:
-                h = hash_file(full)
+                h = _with_timeout(lambda full=full: hash_file(full))
             except OSError as exc:
                 sink.unreadable(full, rel, row, exc)
                 sink.flush()
@@ -596,14 +639,20 @@ def verify_batch(
             progress["elapsed"] = time.monotonic() - started
 
             try:
-                st = full.stat()
+                st = _with_timeout(full.stat)
+            except TimeoutError as exc:
+                # A stall means the drive is misbehaving, not that the file is
+                # gone — flag it as unreadable, don't launder it into "missing".
+                sink.unreadable(full, rel, row, exc)
+                sink.flush()
+                continue
             except OSError:
                 sink.missing(full, rel, row)
                 sink.flush()
                 continue
 
             try:
-                h = hash_file(full)
+                h = _with_timeout(lambda full=full: hash_file(full))
             except OSError as exc:
                 sink.unreadable(full, rel, row, exc)
                 sink.flush()
@@ -669,7 +718,7 @@ def rebaseline(mount_id: int, rel_paths: list[str]) -> dict[str, Any]:
         full = mount_root / rel
         row = known.get(rel)
         try:
-            h = hash_file(full)
+            h = _with_timeout(lambda full=full: hash_file(full))
         except OSError as exc:
             failed.append((rel, str(exc)))
             continue

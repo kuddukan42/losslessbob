@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-311: File integrity scan hangs forever on a stalled drive read (no timeout)
+Status: Fixed
+File(s): backend/file_integrity.py:92,backend/file_integrity.py:420,backend/file_integrity.py:537
+Reported: 2026-08-05
+Fixed: 2026-08-05
+Root cause: backend/file_integrity.py: hash_file() and Path.stat() calls in scan_mount(), verify_batch(), and rebaseline() were plain blocking calls with no timeout. A stalled network mount or a drive with a failing sector blocks the underlying read() syscall indefinitely without raising OSError, so the scan thread parks forever; cancel_event is only polled between files, so Cancel never gets a turn either.
+Fix: Added _with_timeout() (file_integrity.py) which runs a call on a daemon thread and raises TimeoutError (a subclass of OSError, so existing except OSError handling covers it unchanged) if it hasn't returned within IO_TIMEOUT_SECONDS=30. Wrapped the stat() and hash_file() calls in scan_mount, verify_batch, and rebaseline. In verify_batch, a stat timeout is now routed to sink.unreadable() instead of sink.missing() so a stalled-but-present file isn't misreported as deleted.
+
 BUG-210: backend/lossless_bob.db keeps reappearing in repo root (untracked, empty)
 Status: Fixed
 File(s): backend/lossless_bob.db (unknown origin)
