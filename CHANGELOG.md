@@ -1,3 +1,11 @@
+[2026-08-05] — fix(backend): close BUG-311, file integrity scan hang on stalled drive read
+Fixed: backend/file_integrity.py — hash_file()/Path.stat() calls in scan_mount(),
+  verify_batch(), and rebaseline() had no I/O timeout, so a stalled network mount or a
+  failing sector blocked the scan thread forever with no exception raised and no response
+  to Cancel. Added _with_timeout() (30s, IO_TIMEOUT_SECONDS) around those calls; a timeout
+  now surfaces as an "unreadable" row (logged) and the scan moves on, instead of freezing
+  progress indefinitely.
+
 [2026-08-04] — chore(bookkeeping): close BUG-210, stray lossless_bob.db gitignored
 Fixed: BUG-210 (backend/lossless_bob.db reappearing untracked) closed won't-fix/by-design —
   root cause confirmed 2026-07-27 as an ad hoc sqlite3.connect() typo, not app code. Added
