@@ -10,9 +10,11 @@ Complements, rather than replaces, the two hash stores that already exist:
   by folder, and decodes FLAC audio to compute ffp. That decode is what makes it
   slow, and folders with no manifest are skipped entirely.
 
-This module walks every file under a collection mount and keeps a durable hash
-inventory in ``file_inventory``, so a later full re-read can be compared against
-a known-good baseline.
+This module walks a collection mount and keeps a durable hash inventory in
+``file_inventory``, so a later full re-read can be compared against a known-good
+baseline. Only files that resolve to an LB folder are inventoried — a mount also
+carries working copies, downloads and disk cruft, and indexing those would report
+files that were never part of the collection as ``missing`` once they moved.
 
 Three entry points, and the distinction between the first two is the whole point:
 
@@ -343,6 +345,31 @@ def _resolve_lb(file_path: Path, mount_root: Path, index: dict[str, int]) -> int
     return None
 
 
+def _purge_unlinked(mount_id: int, known: dict[str, dict]) -> dict[str, dict]:
+    """Drop inventory rows that belong to no LB folder.
+
+    Earlier scans indexed every file on the mount, so the inventory can still
+    hold rows for files that were never part of the collection. Those must not
+    survive: once such a file is moved or deleted off the drive, the missing
+    sweep reports it as a missing collection file. Scans no longer create them,
+    and this clears the ones already stored.
+
+    Args:
+        mount_id: Mount being scanned.
+        known: Rows from :func:`db.get_file_inventory_rows`, keyed by rel_path.
+
+    Returns:
+        ``known`` less the purged rows.
+    """
+    stale = [rel for rel, row in known.items() if not row.get("lb_number")]
+    if not stale:
+        return known
+    database.delete_file_inventory_rows([(mount_id, rel) for rel in stale])
+    _log.info("file_integrity: mount %s — purged %s inventory row(s) with no "
+              "owning LB folder", mount_id, len(stale))
+    return {rel: row for rel, row in known.items() if rel not in set(stale)}
+
+
 def _walk_files(mount_root: Path):
     """Yield every regular file under a mount root, skipping symlinks.
 
@@ -501,7 +528,9 @@ def scan_mount(
 
     known = database.get_file_inventory_rows(mount_id)
     lb_index = _lb_index(mount_root)
+    known = _purge_unlinked(mount_id, known)
     seen: set[str] = set()
+    skipped_unlinked = 0
     root_prefix = normalise_path(str(mount_root)).rstrip("/") + "/"
     progress = _begin_progress(mount_id, mode, scan_id, mount.get("label"), counts)
     # A tree walk never knows its true total up front, but the prior inventory
@@ -523,12 +552,23 @@ def scan_mount(
 
             norm = normalise_path(str(full))
             rel = norm[len(root_prefix):] if norm.startswith(root_prefix) else norm
+
+            # Only collection files are inventoried. A mount also holds plenty
+            # that isn't ours (working copies, downloads, disk cruft); indexing
+            # it would both waste the walk and, once it later moved or was
+            # deleted, report a file that was never part of the collection as
+            # "missing".
+            row = known.get(rel)
+            lb_number = _resolve_lb(full, mount_root, lb_index)
+            if lb_number is None:
+                skipped_unlinked += 1
+                continue
+
             seen.add(rel)
             counts["files_seen"] += 1
             progress["current"] = rel
             progress["elapsed"] = time.monotonic() - started
 
-            row = known.get(rel)
             try:
                 st = _with_timeout(full.stat)
             except OSError:
@@ -547,9 +587,6 @@ def scan_mount(
                 sink.flush()
                 continue
 
-            lb_number = (
-                row["lb_number"] if row else _resolve_lb(full, mount_root, lb_index)
-            )
             sink.triage(full, rel, row, lb_number, h, stat_same)
             sink.flush()
             if progress_cb is not None:
@@ -565,6 +602,9 @@ def scan_mount(
                 sink.missing(mount_root / rel, rel, row)
 
         sink.flush(force=True)
+        if skipped_unlinked:
+            _log.info("file_integrity: mount %s — skipped %s file(s) outside any "
+                      "collection folder", mount_id, skipped_unlinked)
 
     except Exception as exc:  # noqa: BLE001 — recorded on the scan row
         final_status = "error"
@@ -638,6 +678,12 @@ def verify_batch(
                 break
 
             rel = row["rel_path"]
+            if not row.get("lb_number"):
+                # Legacy row for a file outside every collection folder — drop
+                # it rather than verify it (see _purge_unlinked).
+                database.delete_file_inventory_rows([(mount_id, rel)])
+                continue
+
             full = mount_root / rel
             counts["files_seen"] += 1
             progress["current"] = rel

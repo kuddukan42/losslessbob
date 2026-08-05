@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-313: file_integrity: files outside collection folders inventoried and reported missing
+Status: Fixed
+File(s): backend/file_integrity.py:514
+Reported: 2026-08-05
+Fixed: 2026-08-05
+Root cause: scan_mount() inventoried every regular file under a mount root and only resolved the owning LB number after hashing, storing lb_number NULL when a file sat outside every collection folder. Those rows then participated in the missing sweep, so working copies, downloads and disk cruft that later moved off the drive were reported as missing collection files.
+Fix: The walk now resolves the owning LB before any stat/hash and skips files that belong to no collection folder (also a large speedup — non-collection bytes are never read). _purge_unlinked() deletes pre-existing lb_number-NULL rows at the start of each scan, and verify_batch() drops any it still encounters. Test: test_files_outside_collection_folders_are_never_inventoried.
+
 BUG-312: File Integrity progress bar always shows indeterminate shimmer, never real percent
 Status: Fixed
 File(s): backend/file_integrity.py:502,gui_next/src/renderer/src/screens/ScreenFileIntegrity.tsx:120
