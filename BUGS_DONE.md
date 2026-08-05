@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-312: File Integrity progress bar always shows indeterminate shimmer, never real percent
+Status: Fixed
+File(s): backend/file_integrity.py:502,gui_next/src/renderer/src/screens/ScreenFileIntegrity.tsx:120
+Reported: 2026-08-05
+Fixed: 2026-08-05
+Root cause: backend/file_integrity.py scan_mount() never populated progress['total'] during an index/verify tree walk (only the rolling verify_batch() slice, which knows its row count up front, set it). ScreenFileIntegrity.tsx's ScanProgressBar computes pct from files_seen/total and falls back to a fixed 40%-width indeterminate shimmer whenever total is null -- so the bar looked permanently stuck regardless of actual progress.
+Fix: scan_mount() now seeds progress['total'] from len(known), the existing file_inventory row count already loaded into memory before the walk starts (no extra I/O). Verified live: a re-run reported total:258338 against the mount's known inventory and the live files_seen climbed correctly against it to completion.
+
 BUG-311: File integrity scan hangs forever on a stalled drive read (no timeout)
 Status: Fixed
 File(s): backend/file_integrity.py:92,backend/file_integrity.py:420,backend/file_integrity.py:537
