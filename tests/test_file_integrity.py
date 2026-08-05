@@ -246,6 +246,44 @@ def test_missing_file_flagged_on_complete_pass_only():
         restore()
 
 
+def test_files_outside_collection_folders_are_never_inventoried():
+    """Non-collection files are skipped, and legacy rows for them are purged."""
+    db_path, conn, tmp_dir, restore = _make_db()
+    try:
+        import backend.db as db
+        from backend import file_integrity as fi
+
+        mount_id, root = _make_mount(tmp_dir, n_files=2)
+        stray = os.path.join(root, "downloads", "not-mine.flac")
+        os.makedirs(os.path.dirname(stray))
+        with open(stray, "wb") as f:
+            f.write(b"someone-elses-file" * 100)
+
+        result = fi.scan_mount(mount_id, "index")
+        assert result["files_seen"] == 2, "stray file must not be walked into the inventory"
+        assert conn.execute(
+            "SELECT COUNT(*) c FROM file_inventory WHERE rel_path LIKE '%not-mine%'"
+        ).fetchone()["c"] == 0
+
+        # A row left behind by an older whole-drive scan is purged, not flagged
+        # missing once the file moves off the drive.
+        db.get_write_queue().execute(
+            lambda c: c.execute(
+                "INSERT INTO file_inventory(mount_id, rel_path, lb_number, size, "
+                "mtime, xxh3, sha256, status) "
+                "VALUES(?, 'downloads/gone.flac', NULL, 1, 1.0, 'a', 'b', 'ok')",
+                (mount_id,),
+            )
+        )
+        after = fi.scan_mount(mount_id, "index")
+        assert after["files_missing"] == 0
+        assert conn.execute(
+            "SELECT COUNT(*) c FROM file_inventory WHERE rel_path LIKE 'downloads/%'"
+        ).fetchone()["c"] == 0
+    finally:
+        restore()
+
+
 def test_rolling_verify_advances_through_the_collection():
     """Successive batches pick different files rather than re-checking the head."""
     db_path, conn, tmp_dir, restore = _make_db()

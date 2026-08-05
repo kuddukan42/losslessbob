@@ -1,3 +1,13 @@
+[2026-08-05] — fix(backend): close BUG-313, file integrity indexed files outside the collection
+Fixed: backend/file_integrity.py — scan_mount() inventoried every file under a mount root and
+  resolved the owning LB only after hashing, so files belonging to no collection folder were
+  stored with lb_number NULL ("unlinked" in ScreenFileIntegrity) and then reported as missing
+  once they moved or were deleted. The walk now resolves the LB first and skips anything outside
+  a collection folder — the inventory covers collection files only, and non-collection bytes are
+  never read. Added _purge_unlinked(), which deletes pre-existing unlinked rows at the start of
+  each scan; verify_batch() drops any it still encounters.
+Added: tests/test_file_integrity.py — test_files_outside_collection_folders_are_never_inventoried.
+
 [2026-08-05] — fix(backend): close BUG-312, file integrity progress bar stuck on indeterminate shimmer
 Fixed: backend/file_integrity.py scan_mount() never set progress['total'] during an index/verify
   tree walk, so ScreenFileIntegrity.tsx's ScanProgressBar always fell back to a fixed 40%-width
