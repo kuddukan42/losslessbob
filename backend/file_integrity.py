@@ -504,6 +504,11 @@ def scan_mount(
     seen: set[str] = set()
     root_prefix = normalise_path(str(mount_root)).rstrip("/") + "/"
     progress = _begin_progress(mount_id, mode, scan_id, mount.get("label"), counts)
+    # A tree walk never knows its true total up front, but the prior inventory
+    # count is a good estimate — without it the GUI progress bar has nothing
+    # to show but an indeterminate shimmer for the entire run, however far
+    # along it actually is.
+    progress["total"] = len(known) or None
 
     try:
         for full in _walk_files(mount_root):

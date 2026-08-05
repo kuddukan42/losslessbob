@@ -1,3 +1,11 @@
+[2026-08-05] — fix(backend): close BUG-312, file integrity progress bar stuck on indeterminate shimmer
+Fixed: backend/file_integrity.py scan_mount() never set progress['total'] during an index/verify
+  tree walk, so ScreenFileIntegrity.tsx's ScanProgressBar always fell back to a fixed 40%-width
+  shimmer animation regardless of real progress — read as the scan being permanently stuck at a
+  small percentage. Now seeds total from the file_inventory row count already loaded in memory
+  (no extra I/O); verified live against a real scan (total:258338, files_seen climbing to
+  completion).
+
 [2026-08-05] — fix(backend): close BUG-311, file integrity scan hang on stalled drive read
 Fixed: backend/file_integrity.py — hash_file()/Path.stat() calls in scan_mount(),
   verify_batch(), and rebaseline() had no I/O timeout, so a stalled network mount or a
