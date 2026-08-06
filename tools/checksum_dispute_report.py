@@ -2,19 +2,27 @@
 
 Groups the isolated per-file mismatches found by ``backend.checksum_provenance``
 by LB entry, joins in the entry metadata that gives them context, and derives the
-verdict each row supports.  Three verdicts are possible, and telling them apart is
-the point of the report — they have different culprits and different fixes:
+verdict each row supports.  Telling the verdicts apart is the point of the report —
+they have different culprits and different fixes:
 
 ``db_error``
     The uploader and the LB's own ``lbdir`` manifest agree, and only the
     ``checksums`` table differs.  Jeff received the file the uploader published
     and the DB mis-recorded it.  Fixing the DB row is the whole repair.
 
-``receipt_fault``
+``audio_differs``
     The DB and the ``lbdir`` agree with each other and both differ from the
-    uploader.  Jeff hashes what he downloaded, so this says the bytes that reached
-    him are not the bytes the uploader hashed — a damaged or substituted file.  The
-    DB is a faithful record of a fileset that is itself wrong.
+    uploader, and the disagreement reaches the FFP — the hash of the *decoded audio
+    stream*.  The bytes that reached Jeff are a different or damaged recording.
+
+``retag``
+    Same shape, but only the MD5 differs while the track's FFP agrees.  MD5 hashes
+    the whole file and FFP hashes the audio inside it, so the recording is
+    bit-identical and only the container moved — tags or padding rewritten.  Not a
+    damaged file, but still a failed lookup for anyone holding the original.
+
+``receipt_unknown``
+    MD5-only, with no FFP for the track to decide retag vs damage.
 
 ``lbdir_only``
     Only the ``lbdir`` disagrees with the uploader; the DB either matches the
@@ -50,7 +58,9 @@ _CHK_TYPE_LABEL = {"m": "MD5", "f": "FFP", "s": "ST5"}
 
 _VERDICT_LABEL = {
     "db_error": "LB database is wrong",
-    "receipt_fault": "Jeff did not receive the uploader's file",
+    "audio_differs": "Jeff's copy is different audio",
+    "retag": "Jeff's copy is the same audio, retagged",
+    "receipt_unknown": "Jeff's copy differs, audio unverifiable",
     "lbdir_only": "lbdir disagrees, DB does not",
 }
 _VERDICT_BLURB = {
@@ -58,14 +68,22 @@ _VERDICT_BLURB = {
                 "checksums table differs. The fileset is fine — the database row is "
                 "a transcription error, and a user with the correct audio is being "
                 "told NOT FOUND.",
-    "receipt_fault": "The database and Jeff's lbdir agree with each other and both "
-                     "differ from the uploader. Jeff generates his checksums after "
-                     "downloading, so this says the file that reached him is not the "
-                     "file the uploader published — the LB itself carries bad audio.",
+    "audio_differs": "The database and Jeff's lbdir agree with each other and both "
+                     "differ from the uploader, and the disagreement reaches the FFP — "
+                     "the hash of the decoded audio stream. The bytes that reached Jeff "
+                     "are a different recording or a damaged transfer.",
+    "retag": "Only the MD5 differs; the FFP for the same track agrees. FFP hashes the "
+             "decoded audio and MD5 hashes the whole file, so the audio is bit-identical "
+             "and only the container changed — tags or padding rewritten after the "
+             "uploader published it. Nothing is wrong with the recording, but a user "
+             "holding the uploader's original file still fails an MD5 lookup.",
+    "receipt_unknown": "The MD5 differs and there is no FFP for the track to say whether "
+                       "the audio itself changed. Could be a retag, could be damage — "
+                       "not decidable from checksums alone.",
     "lbdir_only": "Only the lbdir manifest disagrees with the uploader. The DB either "
                   "already matches the uploader or never ingested this track.",
 }
-_VERDICT_ORDER = ["db_error", "receipt_fault", "lbdir_only"]
+_VERDICT_ORDER = ["db_error", "audio_differs", "retag", "receipt_unknown", "lbdir_only"]
 
 
 def load_rows(conn: sqlite3.Connection, include_divergence: bool = False) -> list[dict]:
@@ -116,7 +134,8 @@ def merge_by_track(rows: list[dict]) -> list[dict]:
         rows: Output of :func:`load_rows`.
 
     Returns:
-        One finding per (lb, filename, chk_type, source value), with a ``verdict``,
+        One finding per (lb, filename, chk_type, source value), with a provisional
+        ``verdict`` (``receipt_fault`` is refined by :func:`split_receipt_verdicts`),
         a ``refs`` map of reference_kind → that reference's row, and the union of
         the source files that witnessed it.
     """
@@ -150,9 +169,47 @@ def merge_by_track(rows: list[dict]) -> list[dict]:
             "statuses": sorted({r["status"] for r in group}),
             "ids": sorted(r["id"] for r in group),
         })
-    out.sort(key=lambda f: (_VERDICT_ORDER.index(f["verdict"]), f["lb_number"],
-                            f["filename"].lower()))
     return out
+
+
+def split_receipt_verdicts(conn: sqlite3.Connection, findings: list[dict]) -> list[dict]:
+    """Split ``receipt_fault`` by whether the decoded audio actually changed.
+
+    MD5 hashes the whole file; FFP hashes the decoded audio stream. So an MD5-only
+    disagreement whose FFP agrees means the audio is bit-identical and only the
+    container moved — tags or padding rewritten — which is a very different finding
+    from a file that arrived damaged, and was the shape of the LB-15933 report that
+    started this work.
+
+    Args:
+        conn: Open database connection (for the FFP-exists check).
+        findings: Output of :func:`merge_by_track`, modified in place.
+
+    Returns:
+        The same list, sorted by verdict, with every ``receipt_fault`` replaced by
+        ``audio_differs``, ``retag`` or ``receipt_unknown``.
+    """
+    disputed = {(f["lb_number"], f["filename"].lower(), f["chk_type"]) for f in findings}
+    for f in findings:
+        if f["verdict"] != "receipt_fault":
+            continue
+        lb, fname = f["lb_number"], f["filename"].lower()
+        if f["chk_type"] in ("f", "s"):
+            # FFP/ST5 disagree: the decoded audio itself differs.
+            f["verdict"] = "audio_differs"
+        elif (lb, fname, "f") in disputed:
+            # The track's FFP is disputed too — the audio moved, not just the tags.
+            f["verdict"] = "audio_differs"
+        else:
+            has_ffp = conn.execute(
+                "SELECT 1 FROM checksums WHERE lb_number=? AND chk_type='f' "
+                "AND LOWER(filename)=? LIMIT 1",
+                (lb, fname),
+            ).fetchone()
+            f["verdict"] = "retag" if has_ffp else "receipt_unknown"
+    findings.sort(key=lambda f: (_VERDICT_ORDER.index(f["verdict"]), f["lb_number"],
+                                 f["filename"].lower()))
+    return findings
 
 
 def _entry_line(finding: dict) -> str:
@@ -190,6 +247,10 @@ def _render_finding(f: dict) -> str:
         badges.append('<span class="badge weak" title="The source filename says its own '
                       'contents are the discarded ones (bad/old/superseded)">suspect '
                       'source name</span>')
+    if f["source_kind"] == "collection":
+        badges.append('<span class="badge weak" title="Read from an uploader sidecar in '
+                      'your own collection folder, not from the site mirror">from '
+                      'collection</span>')
     if f["source_scope"] == "xref":
         badges.append('<span class="badge weak" title="The evidence comes from a manifest '
                       'filed under another LB for the same fileset">xref evidence</span>')
@@ -293,13 +354,15 @@ def render(findings: list[dict], divergence_count: int = 0) -> str:
 <style>
   :root {{
     --bg:#f6f7f9; --card:#fff; --fg:#16181d; --dim:#5c6470; --line:#e2e5ea;
-    --db:#b4471f; --receipt:#8a2d6b; --lbdir:#3a5a9b; --orphan:#9a6b00;
+    --db:#b4471f; --audio:#8a2d6b; --retag:#1f7a5a; --unk:#6b6f7a;
+    --lbdir:#3a5a9b; --orphan:#9a6b00;
     --hi:#b4471f; --code:#f1f3f6;
   }}
   @media (prefers-color-scheme: dark) {{
     :root {{
       --bg:#14161a; --card:#1c1f25; --fg:#e6e8ec; --dim:#98a1ae; --line:#2c3138;
-      --db:#ff9068; --receipt:#e77ac2; --lbdir:#89aefb; --orphan:#e0b445;
+      --db:#ff9068; --audio:#e77ac2; --retag:#4fd1a5; --unk:#9aa2ae;
+      --lbdir:#89aefb; --orphan:#e0b445;
       --hi:#ff9068; --code:#23272e;
     }}
   }}
@@ -317,7 +380,9 @@ def render(findings: list[dict], divergence_count: int = 0) -> str:
   .stat {{ background:var(--card); border:1px solid var(--line); border-left:4px solid var(--dim);
     border-radius:10px; padding:.9rem 1rem; }}
   .stat.db_error {{ border-left-color:var(--db); }}
-  .stat.receipt_fault {{ border-left-color:var(--receipt); }}
+  .stat.audio_differs {{ border-left-color:var(--audio); }}
+  .stat.retag {{ border-left-color:var(--retag); }}
+  .stat.receipt_unknown {{ border-left-color:var(--unk); }}
   .stat.lbdir_only {{ border-left-color:var(--lbdir); }}
   .stat .n {{ font-size:2rem; font-weight:700; line-height:1; }}
   .stat .k {{ font-weight:600; margin:.25rem 0 .4rem; }}
@@ -344,7 +409,9 @@ def render(findings: list[dict], divergence_count: int = 0) -> str:
   .chip {{ font-size:.75rem; padding:.15rem .5rem; border-radius:999px;
     border:1px solid currentColor; }}
   .chip.db_error {{ color:var(--db); }}
-  .chip.receipt_fault {{ color:var(--receipt); }}
+  .chip.audio_differs {{ color:var(--audio); }}
+  .chip.retag {{ color:var(--retag); }}
+  .chip.receipt_unknown {{ color:var(--unk); }}
   .chip.lbdir_only {{ color:var(--lbdir); }}
   .chip.orphan {{ color:var(--orphan); }}
   .tablewrap {{ overflow-x:auto; }}
@@ -389,6 +456,15 @@ generated {generated}</p>
   they do not, and which of the three is the odd one out — that is what says whether the
   database needs a correction or the LB itself is carrying a file that never made it
   across intact.</p>
+  <p>The uploader's side is read from the site's attachment mirror and, where
+  <code>--include-collection</code> was used, from the <code>.ffp</code>/<code>.md5</code>
+  sidecars inside your own collection folders — those often hold checksums the uploader
+  shipped in the torrent but never attached to the entry, which is the only place some of
+  these disagreements are visible at all. Rows sourced that way are marked
+  <span class="badge weak">from collection</span>.</p>
+  <p>MD5 hashes the whole file; FFP hashes only the decoded audio inside it. That gap is
+  what separates a damaged file from one that was merely retagged, and it is why the two
+  are counted separately below.</p>
   <p class="sub" style="margin:.4rem 0 0">Whole-set divergences are excluded
   ({divergence_count:,} rows): those are remasters and alternate filesets sharing an LB
   number, not per-file faults.</p>
@@ -399,7 +475,9 @@ generated {generated}</p>
 <div class="controls">
   <button data-filter="all" aria-pressed="true">All</button>
   <button data-filter="db_error">DB wrong ({counts['db_error']})</button>
-  <button data-filter="receipt_fault">Bad receipt ({counts['receipt_fault']})</button>
+  <button data-filter="audio_differs">Different audio ({counts['audio_differs']})</button>
+  <button data-filter="retag">Retag only ({counts['retag']})</button>
+  <button data-filter="receipt_unknown">Unverifiable ({counts['receipt_unknown']})</button>
   <button data-filter="lbdir_only">lbdir only ({counts['lbdir_only']})</button>
   <button data-filter="orphan">Orphan values ({n_orphan})</button>
   <input type="search" placeholder="filter by track or source filename…">
@@ -468,7 +546,7 @@ def main() -> None:
     divergence_count = conn.execute(
         "SELECT COUNT(*) FROM checksum_disputes WHERE kind = 'set_divergence'"
     ).fetchone()[0]
-    findings = merge_by_track(rows)
+    findings = split_receipt_verdicts(conn, merge_by_track(rows))
 
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)

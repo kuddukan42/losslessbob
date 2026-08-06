@@ -275,6 +275,84 @@ def test_a_plain_mismatch_has_no_displacement(tmp_path):
     assert found[0]["displaced_to"] is None
 
 
+# ------------------------------------------------------- collection-folder sources
+
+def _collection_conn(tmp_path, lb, folder_name="Show (LB-00800)"):
+    """A DB with my_collection pointing at a real folder under tmp_path."""
+    conn = _conn()
+    conn.execute("""
+        CREATE TABLE my_collection (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            lb_number INTEGER NOT NULL,
+            folder_name TEXT,
+            disk_path TEXT
+        )
+    """)
+    folder = tmp_path / folder_name
+    folder.mkdir()
+    conn.execute("INSERT INTO my_collection (lb_number, folder_name, disk_path) VALUES (?,?,?)",
+                 (lb, folder_name, str(folder)))
+    conn.commit()
+    return conn, folder
+
+
+@pytest.mark.parametrize("name,expected", [
+    ("show.md5", True), ("show.ffp", True), ("show.st5", True),
+    ("show_mychecksums_2.md5", False),   # the app's own hash of the user's copy
+    ("lbdir-bd74-01-14.txt", False),     # Jeff's manifest, already the reference
+    ("info.txt", False), ("cover.jpg", False),
+])
+def test_classify_collection_source_selects_uploader_sidecars(name, expected):
+    assert (prov.classify_collection_source(name, 800) is not None) is expected
+
+
+def test_collection_sidecar_is_audited_as_uploader_evidence(tmp_path):
+    """The mirror can lack a manifest the uploader shipped inside the torrent.
+
+    This is the LB-15933 shape: the site holds only an .ffp, so a mirror-only pass
+    sees nothing, while the .md5 in the collection folder disagrees on one track.
+    """
+    conn, folder = _collection_conn(tmp_path, 800)
+    _seed_db(conn, 800, 20)
+    rows = [(f"track{i:02d}.flac", _hash(i)) for i in range(1, 21)]
+    rows[13] = ("track14.flac", _hash(8008))
+    _write_md5(folder, "Show LB-00800.md5", rows)
+
+    mirror = tmp_path / "mirror"
+    mirror.mkdir()
+    assert prov.run_audit(conn, mirror)["disputes"] == 0  # invisible to the mirror
+
+    summary = prov.run_audit(conn, mirror, include_collection=True)
+    assert summary["disputes"] == 1
+    assert summary["src_collection"] == 1
+    row = prov.get_disputes(conn)[0]
+    assert row["source_kind"] == "collection"
+    assert row["confidence"] == "high"
+    assert row["source_checksum"] == _hash(8008)
+
+
+def test_app_generated_checksums_are_not_treated_as_evidence(tmp_path):
+    """_mychecksums_ files hash the user's copy — they say nothing about the uploader."""
+    conn, folder = _collection_conn(tmp_path, 801)
+    _seed_db(conn, 801, 20)
+    rows = [(f"track{i:02d}.flac", _hash(i)) for i in range(1, 21)]
+    rows[0] = ("track01.flac", _hash(9009))
+    _write_md5(folder, "Show_mychecksums_2.md5", rows)
+    mirror = tmp_path / "mirror"
+    mirror.mkdir()
+    assert prov.run_audit(conn, mirror, include_collection=True)["disputes"] == 0
+
+
+def test_an_offline_collection_folder_is_skipped_quietly(tmp_path):
+    """An unmounted drive must not look like an absence of evidence."""
+    conn, folder = _collection_conn(tmp_path, 802)
+    _seed_db(conn, 802, 20)
+    conn.execute("UPDATE my_collection SET disk_path=? WHERE lb_number=802",
+                 (str(tmp_path / "not-mounted"),))
+    conn.commit()
+    assert list(prov.iter_collection_sources(conn)) == []
+
+
 # --------------------------------------------------------------------------- run_audit
 
 def test_run_audit_skips_lbdir_unless_asked(tmp_path):

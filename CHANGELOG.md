@@ -1,3 +1,37 @@
+[2026-08-06] — feat(db): close TODO-302, read collection-folder sidecars and split receipt faults by audio impact
+Both gaps were found by running LB-15933 — the entry TODO-296 was opened on — through the real
+  verify/lookup/lbdir pipeline. Result: /api/verify passes 28/28 against the uploader's sidecars,
+  the lbdir check fails 1 of 38, and the lookup returns 55/56 matched with the odd one a bare
+  NOT FOUND. So the originally-reported bug is real and reproducible, and the audit could not see
+  it for two separate reasons.
+Changed: backend/checksum_provenance.py — the attachment mirror is not complete evidence.
+  LB-15933's site attachment is FFP-only; the uploader's MD5 (the value that actually disagrees)
+  exists nowhere in data/site/files/, only in the .md5 shipped inside the torrent and sitting in
+  the collection folder. classify_collection_source() + iter_collection_sources() now read
+  .ffp/.md5/.st5 sidecars out of every my_collection folder, excluding the app's own
+  *_mychecksums_* files (those hash the user's copy, not the uploader's intent) and lbdir*.txt
+  copies (already the lbdir reference). Recorded with source_kind='collection'. Opt-in via
+  run_audit(include_collection=True) / lb checksum-audit --include-collection, because it walks
+  16.5k folders and is disk-bound. A folder that fails to stat is skipped quietly — an unmounted
+  drive must never read as an absence of evidence.
+Changed: tools/checksum_dispute_report.py — receipt_fault conflated two different findings.
+  MD5 hashes the whole file, FFP hashes the decoded audio inside it, so an MD5-only disagreement
+  whose FFP agrees means the recording is bit-identical and only the container moved — a retag,
+  not a damaged transfer. split_receipt_verdicts() replaces it with audio_differs (the FFP moved),
+  retag (MD5-only, FFP agrees) and receipt_unknown (MD5-only, no FFP to decide). Findings sourced
+  from a collection folder carry a 'from collection' badge.
+Changed: cli.py — checksum-audit --include-collection, and from_collection in the summary line.
+Live run (84,157 sources, 21,973 of them collection sidecars): 570 isolated mismatches, paired
+  into 312 findings across 93 LBs — 191 db_error, 13 audio_differs, 27 retag, 9 receipt_unknown,
+  72 lbdir_only, 177 carrying an orphan value. 49 findings are visible only through collection
+  sidecars. LB-15933 d1t14 is now caught at high confidence (27 rows agree, 1 disagrees) and
+  correctly classified retag: uploader MD5 b54789c5…, DB and lbdir both 5840da36…, FFP
+  c8d16745… agreeing everywhere. Jeff's copy is the same audio with a rewritten container, and
+  the user holding the uploader's original still fails an MD5 lookup — which is the bug as
+  reported.
+Added: tests/test_checksum_dispute_report.py — 16 tests over the reference pairing and the
+  retag/damage split. tests/test_checksum_provenance.py gains collection-source coverage (39).
+
 [2026-08-06] — feat(db): close TODO-300, judge every checksum source against both the DB and Jeff's lbdir
 Changed: backend/checksum_provenance.py — the audit had one reference (the checksums table), so it
   could only ever ask "is the DB value wrong?". Corrected premise from tj: Jeff does not transcribe

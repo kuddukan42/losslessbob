@@ -299,6 +299,80 @@ def load_lbdir_reference(
     return ref
 
 
+def classify_collection_source(path: str | Path, lb_number: int) -> dict | None:
+    """Classify a checksum sidecar sitting in one of the user's collection folders.
+
+    These matter because the attachment mirror is not complete evidence: an entry
+    may have only an ``.ffp`` attached while the ``.md5`` the uploader shipped
+    inside the torrent exists nowhere on the site. LB-15933 is exactly that shape —
+    its uploader MD5 lives only in the collection folder, so a mirror-only audit
+    could never see the disagreement that was reported against it.
+
+    Files the app itself wrote (``*_mychecksums_*``) are excluded: they are hashes
+    of the user's own copy, not a statement of what the uploader published. So are
+    ``lbdir*.txt`` copies, which are Jeff's manifest and already the lbdir
+    reference.
+
+    Args:
+        path: Path to a file inside a collection folder.
+        lb_number: LB the folder is confirmed to hold.
+
+    Returns:
+        A :func:`classify_source`-shaped dict with ``kind='uploader'`` and
+        ``origin='collection'``, or None when the file is not uploader evidence.
+    """
+    name = Path(path).name
+    low = name.lower()
+    if not low.endswith((".ffp", ".md5", ".st5")):
+        return None
+    if "_mychecksums_" in low or "lbdir" in low:
+        return None
+    return {
+        "lb_number": lb_number,
+        "kind": "uploader",
+        "scope": "self",
+        "xref_lb": None,
+        "suspect": bool(_SUSPECT_RE.search(name)),
+        "origin": "collection",
+    }
+
+
+def iter_collection_sources(
+    conn: sqlite3.Connection, lb_numbers: Sequence[int] | None = None
+) -> Iterator[tuple[Path, dict]]:
+    """Yield uploader checksum sidecars found in the user's collection folders.
+
+    Args:
+        conn: Open database connection (reads ``my_collection``).
+        lb_numbers: Restrict to these LB numbers, or None for all.
+
+    Yields:
+        ``(path, info)`` pairs ready for :func:`audit_attachment`. Folders that
+        have gone missing (unmounted drive, moved directory) are skipped quietly —
+        an offline drive must not look like an absence of evidence.
+    """
+    sql = "SELECT lb_number, disk_path FROM my_collection WHERE disk_path IS NOT NULL"
+    params: tuple = ()
+    if lb_numbers is not None:
+        if not lb_numbers:
+            return
+        sql += f" AND lb_number IN ({','.join('?' * len(lb_numbers))})"
+        params = tuple(lb_numbers)
+    for lb, disk_path in conn.execute(sql, params).fetchall():
+        folder = Path(disk_path)
+        try:
+            if not folder.is_dir():
+                continue
+            entries = sorted(folder.iterdir())
+        except OSError:
+            logger.debug("Collection folder unreadable, skipped: %s", disk_path)
+            continue
+        for entry in entries:
+            info = classify_collection_source(entry, lb)
+            if info is not None and entry.is_file():
+                yield entry, info
+
+
 def audit_attachment(
     path: str | Path,
     reference: Reference,
@@ -368,7 +442,11 @@ def audit_attachment(
             "reference_file": reference.file_for.get(lb),
             "source_checksum": source_checksum,
             "source_file": path.name,
-            "source_kind": info["kind"],
+            # 'collection' marks evidence that came from the user's own folder
+            # rather than the site mirror — same uploader authority, different
+            # provenance, and worth being able to filter on.
+            "source_kind": ("collection" if info.get("origin") == "collection"
+                            else info["kind"]),
             "source_scope": info["scope"],
             "source_suspect": int(info["suspect"]),
             "displaced_to": displaced_to,
@@ -429,6 +507,7 @@ def run_audit(
     lb_numbers: Sequence[int] | None = None,
     include_lbdir: bool = False,
     lbdir_reference: bool = True,
+    include_collection: bool = False,
     progress: Callable[[int, int], None] | None = None,
 ) -> dict:
     """Cross-check every mirrored attachment against both references, and store it.
@@ -448,6 +527,11 @@ def run_audit(
         lbdir_reference: Build and check the lbdir reference. On by default;
             turning it off makes the pass DB-only (and skips parsing every
             ``lbdir-*`` manifest).
+        include_collection: Also read the uploader sidecars sitting in the user's
+            own collection folders (:func:`iter_collection_sources`). Off by
+            default because it walks every folder in ``my_collection`` and is
+            disk-bound, but it is the only way to see checksums the uploader
+            shipped inside a torrent and never attached to the site.
         progress: Optional callback ``(done, total)`` invoked every 500 files.
 
     Returns:
@@ -477,6 +561,11 @@ def run_audit(
             continue
         candidates.append((entry, info))
 
+    if include_collection:
+        collection = list(iter_collection_sources(conn, lb_numbers))
+        logger.info("Collection sidecars found: %d", len(collection))
+        candidates.extend(collection)
+
     summary = {
         "files_scanned": 0,
         "files_with_disputes": 0,
@@ -488,6 +577,7 @@ def run_audit(
         "low": 0,
         "ref_db": 0,
         "ref_lbdir": 0,
+        "src_collection": 0,
         "lb_numbers": set(),
     }
     total = len(candidates)
@@ -507,6 +597,8 @@ def run_audit(
                 summary[d["kind"]] += 1
                 summary[d["confidence"]] += 1
                 summary["ref_" + d["reference_kind"]] += 1
+                if d["source_kind"] == "collection":
+                    summary["src_collection"] += 1
                 summary["lb_numbers"].add(d["lb_number"])
             batch.extend(found)
         if len(batch) >= 500:
