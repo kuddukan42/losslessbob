@@ -922,6 +922,9 @@ CREATE INDEX IF NOT EXISTS idx_finv_verify ON file_inventory(mount_id, last_veri
 CREATE INDEX IF NOT EXISTS idx_finv_status ON file_inventory(status) WHERE status != 'ok';
 CREATE INDEX IF NOT EXISTS idx_finv_lb ON file_inventory(lb_number);
 CREATE INDEX IF NOT EXISTS idx_finv_sha ON file_inventory(sha256);
+-- Move detection (TODO-297): find an existing ok row for a hash before
+-- declaring the rel_path it used to live at missing.
+CREATE INDEX IF NOT EXISTS idx_finv_xxh3_ok ON file_inventory(xxh3) WHERE status = 'ok';
 
 CREATE TABLE IF NOT EXISTS file_integrity_scans (
     id               INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -937,6 +940,7 @@ CREATE TABLE IF NOT EXISTS file_integrity_scans (
     files_rot        INTEGER DEFAULT 0,
     files_changed    INTEGER DEFAULT 0,
     files_missing    INTEGER DEFAULT 0,
+    files_moved      INTEGER DEFAULT 0,
     files_unreadable INTEGER DEFAULT 0,
     bytes_hashed     INTEGER DEFAULT 0,
     error            TEXT
@@ -2481,6 +2485,14 @@ def init_db(db_path=None):
         _ie_cols = [r[1] for r in conn.execute("PRAGMA table_info(integrity_events)").fetchall()]
         if "mount_id" not in _ie_cols:
             conn.execute("ALTER TABLE integrity_events ADD COLUMN mount_id INTEGER")
+        # Migration: add files_moved to file_integrity_scans (TODO-297)
+        _fis_cols = [
+            r[1] for r in conn.execute("PRAGMA table_info(file_integrity_scans)").fetchall()
+        ]
+        if "files_moved" not in _fis_cols:
+            conn.execute(
+                "ALTER TABLE file_integrity_scans ADD COLUMN files_moved INTEGER DEFAULT 0"
+            )
         # Migration: add city_lat/city_lon/city_state to setlistfm_shows (TODO-222) —
         # setlist.fm's API returns venue.city.coords + stateCode on every setlist;
         # storing them gives a zero-geocoding, guaranteed city-level coordinate.
@@ -5111,6 +5123,33 @@ def delete_file_inventory_rows(keys: list[tuple[int, str]], db_path=None) -> Non
     )
 
 
+def find_ok_inventory_by_xxh3(xxh3_values: list[str], db_path=None) -> dict[str, tuple[int, str]]:
+    """Look up an existing 'ok' file_inventory row for each hash, if any.
+
+    Used by the missing-file sweep (TODO-297) to tell a genuine deletion from a
+    relocation: if the content that used to live at a now-absent rel_path is
+    already sitting under an 'ok' row somewhere else (any mount), the old row
+    is stale bookkeeping, not a real loss.
+
+    Args:
+        xxh3_values: Hashes to look up. Duplicates are fine.
+
+    Returns:
+        Mapping of xxh3 -> (mount_id, rel_path) for one matching row per hash.
+        Hashes with no 'ok' row, or with no match at all, are absent.
+    """
+    if not xxh3_values:
+        return {}
+    with get_connection(db_path) as conn:
+        placeholders = ",".join("?" * len(set(xxh3_values)))
+        rows = conn.execute(
+            f"SELECT xxh3, mount_id, rel_path FROM file_inventory "
+            f"WHERE status='ok' AND xxh3 IN ({placeholders})",
+            list(set(xxh3_values)),
+        ).fetchall()
+    return {r["xxh3"]: (r["mount_id"], r["rel_path"]) for r in rows}
+
+
 def get_rolling_verify_batch(
     mount_id: int, limit: int, db_path=None
 ) -> list[dict]:
@@ -5193,7 +5232,7 @@ def record_file_scan_start(mount_id: int, mode: str, db_path=None) -> int:
 
 _FILE_SCAN_COUNTS = (
     "files_seen", "files_hashed", "files_new", "files_ok", "files_rot",
-    "files_changed", "files_missing", "files_unreadable", "bytes_hashed",
+    "files_changed", "files_missing", "files_moved", "files_unreadable", "bytes_hashed",
 )
 
 

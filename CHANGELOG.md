@@ -1,3 +1,17 @@
+[2026-08-06] — fix(backend): close TODO-297, reconcile moved/renamed collection files by hash
+Changed: backend/db.py: add file_inventory.xxh3 partial index (ok rows), file_integrity_scans.files_moved
+  column + migration, find_ok_inventory_by_xxh3() batch lookup helper.
+Changed: backend/file_integrity.py: scan_mount's missing-sweep force-flushes pending upserts, then
+  batch-checks each about-to-be-missing row's xxh3 against other 'ok' inventory rows (any mount)
+  before flagging it. A match means the content already surfaced elsewhere this pass or a prior one,
+  so the stale row is dropped (files_moved) instead of coexisting with the new location as a
+  missing+new pair. Verified live: relocate a file, rescan, old row gone, destination stays ok,
+  files_missing stays 0.
+Changed: gui_next/.../ScreenFileIntegrity.tsx: surface files_moved in the recent-scans list.
+Closed: TODO-301 (won't-do — sized the 'uncorrected'/'corrected' regex change: uncorrected is a
+  1-LB/2-file edge case, corrected spans 97 files/40 LBs and would need asymmetric confidence logic
+  tj judged not worth building).
+
 [2026-08-06] — feat(db): close TODO-302, read collection-folder sidecars and split receipt faults by audio impact
 Both gaps were found by running LB-15933 — the entry TODO-296 was opened on — through the real
   verify/lookup/lbdir pipeline. Result: /api/verify passes 28/28 against the uploader's sidecars,
