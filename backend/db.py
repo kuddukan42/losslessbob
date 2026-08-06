@@ -3227,7 +3227,7 @@ def lookup_checksums(parsed_entries, db_path=None):
             if dispute:
                 item["dispute"] = {
                     "lb_number": dispute["lb_number"],
-                    "db_checksum": dispute["db_checksum"],
+                    "db_checksum": dispute["reference_checksum"],
                     "source_file": dispute["source_file"],
                     "confidence": dispute["confidence"],
                     "status": dispute["status"],

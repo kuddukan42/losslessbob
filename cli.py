@@ -480,11 +480,18 @@ def _build_parser(klass=argparse.ArgumentParser) -> argparse.ArgumentParser:
 
     p_audit = sub.add_parser(
         "checksum-audit",
-        help="Cross-check DB checksums against the uploader files in data/site/files/")
+        help="Cross-check DB and lbdir checksums against the uploader files "
+             "in data/site/files/")
     p_audit.add_argument("--lb", type=int, action="append", metavar="N",
                          help="Restrict to this LB number (repeatable)")
     p_audit.add_argument("--include-lbdir", action="store_true",
-                         help="Also re-check the lbdir manifests the DB was built from")
+                         help="Also use the lbdir manifests as sources, not just "
+                              "as a reference")
+    p_audit.add_argument("--db-only", action="store_true",
+                         help="Skip the lbdir reference (did Jeff receive the "
+                              "uploader's fileset intact?) and check the DB only")
+    p_audit.add_argument("--reference", choices=["db", "lbdir"], default=None,
+                         help="With --list: show only disputes against this reference")
     p_audit.add_argument("--list", action="store_true",
                          help="List stored disputes instead of re-running the audit")
     p_audit.add_argument("--all", action="store_true",
@@ -941,15 +948,17 @@ def _execute(args: argparse.Namespace, base_url: str) -> None:
             rows = _prov.get_disputes(
                 conn,
                 lb_number=args.lb[0] if args.lb else None,
-                kind=None if args.all else "db_mismatch",
+                kind=None if args.all else "isolated_mismatch",
                 confidence=None if args.all else ("high", "medium"),
+                reference_kind=args.reference,
             )
             if args.json:
                 print(json.dumps(rows, indent=2))
             else:
                 for r in rows:
                     print(f"LB-{r['lb_number']:05d}  {r['confidence']:<6} {r['chk_type']}  "
-                          f"{r['filename'][:44]:<44} db={r['db_checksum']} "
+                          f"{r['filename'][:38]:<38} "
+                          f"{r['reference_kind']:<5}={r['reference_checksum']} "
                           f"src={r['source_checksum']}  {r['source_file']}")
                 print(f"{len(rows)} dispute(s)")
         else:
@@ -957,6 +966,7 @@ def _execute(args: argparse.Namespace, base_url: str) -> None:
                 print(f"\r  {done}/{total} attachments", end="", flush=True)
             summary = _prov.run_audit(
                 conn, lb_numbers=args.lb, include_lbdir=args.include_lbdir,
+                lbdir_reference=not args.db_only,
                 progress=None if args.json else _progress,
             )
             if not args.json:
@@ -966,8 +976,9 @@ def _execute(args: argparse.Namespace, base_url: str) -> None:
             else:
                 print(f"scanned={summary['files_scanned']} "
                       f"disputes={summary['disputes']} "
-                      f"db_mismatch={summary['db_mismatch']} "
+                      f"isolated={summary['isolated_mismatch']} "
                       f"set_divergence={summary['set_divergence']} "
+                      f"vs_db={summary['ref_db']} vs_lbdir={summary['ref_lbdir']} "
                       f"high={summary['high']} medium={summary['medium']} "
                       f"low={summary['low']} lbs={summary['lb_numbers']}")
 

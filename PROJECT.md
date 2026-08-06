@@ -218,6 +218,7 @@ losslessbob/
 │   ├── scan_collection_folders.py # CLI: scan disk for candidate collection folders not yet in my_collection
 │   ├── import_private_metadata.py # CLI: TODO-245 private-LB metadata import (data/private docs + collection folder txts; fill-blank-only)
 │   ├── parse_dff_reports.py  # CLI: parse DigiFlawFinder reports attached to entries
+│   ├── checksum_dispute_report.py # CLI: render checksum_disputes as a standalone HTML report (.debug/checksum_disputes.html); pairs the db+lbdir references per track to derive db_error / receipt_fault / lbdir_only (TODO-300)
 │   ├── parse_lineage.py      # CLI wrapper: backend.taper_attribution / entry_lineage batch parse (see backend/db.py extract_lb_references)
 │   ├── wtrf_fetch_missing.py # CLI: batch WTRF torrent fetch for missing items (wraps /api/wtrf/fetch_torrent logic)
 │   ├── fit_aud_quality_model.py # CLI: fit the AUD quality regression model used by concert_ranker
@@ -877,35 +878,53 @@ incomplete torrent, corrupt files, mislabelled metadata, etc.). Included in mast
 Index: `idx_lb_problems_lb ON lb_problems(lb_number)`.
 Managed via `GET/POST /api/lb_problems` and `PUT/DELETE /api/lb_problems/<id>`.
 
-### `checksum_disputes` — DB checksums that disagree with their own provenance (TODO-296, MASTER table)
-Findings from `backend/checksum_provenance.py`: places where a checksum stored in
-`checksums` disagrees with the checksum the original uploader published for the same
-file, as read from the mirrored attachments in `data/site/files/`. Distinct from a
-user's local file mismatching the DB — here the DB's own reference value is suspect.
+### `checksum_disputes` — checksums that disagree with their own provenance (TODO-296/300, MASTER table)
+Findings from `backend/checksum_provenance.py`: places where the checksum an uploader
+published for a file (read from the mirrored attachments in `data/site/files/`)
+disagrees with a reference. Distinct from a user's local file mismatching the DB — here
+one of the site's own reference values is suspect.
+
+Each source is judged against **two** references, recorded as separate rows keyed by
+`reference_kind`, because they answer different questions:
+- `db` — the `checksums` table: *is the value user lookups are scored against wrong?*
+- `lbdir` — the LB's own `lbdir-*` manifest. Jeff generates those from the folder
+  **after** downloading it (he does not transcribe the uploader's values), so this asks
+  *did Jeff receive the fileset exactly as the uploader published it?* A disagreement
+  means the bytes that reached him are not the bytes the uploader hashed.
+
 | Column | Type | Notes |
 |--------|------|-------|
 | id | INTEGER PK | Auto-increment |
 | lb_number | INTEGER NOT NULL | Entry the disputed checksum belongs to |
-| filename | TEXT NOT NULL | As stored in `checksums.filename` (may carry a `Disc 1\` prefix) |
+| filename | TEXT NOT NULL | As the reference records it (may carry a `Disc 1\` prefix) |
 | chk_type | TEXT NOT NULL | `m` / `f` / `s` |
-| db_checksum | TEXT NOT NULL | What the LB database holds |
+| reference_kind | TEXT NOT NULL | `db` \| `lbdir` — what the source was compared against |
+| reference_checksum | TEXT NOT NULL | What that reference holds |
+| reference_file | TEXT | lbdir attachment name; NULL when `reference_kind='db'` |
 | source_checksum | TEXT NOT NULL | What the uploader's file holds |
 | source_file | TEXT NOT NULL | `LBF-*` attachment basename the source value came from |
 | source_kind | TEXT NOT NULL | `lbdir` \| `uploader` |
 | source_scope | TEXT NOT NULL | `self` (this LB's own manifest) \| `xref` (another LB's identical fileset) |
 | source_suspect | INTEGER NOT NULL | 1 when the source filename says its values are the discarded ones (`…bad.md5.txt`) |
-| kind | TEXT NOT NULL | `db_mismatch` (isolated → corrupted DB value) \| `set_divergence` (whole set differs → different version, not a DB error) |
+| displaced_to | TEXT | Reference filename that holds the source's value under another track name (same audio, renumbered) |
+| kind | TEXT NOT NULL | `isolated_mismatch` (agrees on ≥3 rows, disagrees on ≤25% → a per-file fault) \| `set_divergence` (whole set differs → different version, informational) |
 | confidence | TEXT NOT NULL | `high` (self, non-suspect source) \| `medium` (xref/suspect source) \| `low` (set divergence) |
 | rows_agree / rows_disagree | INTEGER NOT NULL | Agreement counts for the source file that produced the row |
 | status | TEXT NOT NULL | `open` \| `confirmed` \| `dismissed` — survives re-running the audit |
 | note | TEXT | Curator rationale |
 | detected_at | TIMESTAMP | First detection |
 
-`UNIQUE(lb_number, filename, chk_type, source_checksum, source_file)`; indexes on
-`lb_number`, `source_checksum`, `(status, confidence)`.
+`UNIQUE(lb_number, filename, chk_type, source_checksum, source_file, reference_kind)`;
+indexes on `lb_number`, `source_checksum`, `(status, confidence)`. `ensure_schema()`
+drops a pre-`reference_kind` table rather than migrating it — every row is derived data
+the audit regenerates in ~30s.
+
 Populated by `lb checksum-audit`; read via `GET /api/checksum-disputes`, triaged via
 `PUT /api/checksum-disputes/<id>`. `lookup_checksums()` uses the `source_checksum`
-index to annotate a NOT FOUND that a known-bad DB value explains.
+index to annotate a NOT FOUND, filtered to `reference_kind='db'` — only the DB is what
+the lookup scored against. `tools/checksum_dispute_report.py` renders the isolated
+mismatches as a standalone HTML report, pairing the two references per track to derive
+which party is at fault (`db_error` / `receipt_fault` / `lbdir_only`).
 
 ### `curated_lists` / `curated_list_entries` — Curator "best of" picks (TODO-181, MASTER tables)
 Named lists of curator-picked best LB recordings (e.g. carbonbit, 10haaf), imported via
