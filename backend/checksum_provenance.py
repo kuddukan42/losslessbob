@@ -13,16 +13,34 @@ uploader-supplied FFP/MD5/ST5 manifests, which are an independent witness to wha
 the fileset's checksums should be.  No network access and no collection-folder
 crawling is involved.
 
-Two failure modes have to be told apart, because only the first is a DB error:
+Each source is judged against two independent references, which answer two
+different questions:
 
-``db_mismatch``
-    A source file agrees with the DB on most of its rows and disagrees on one or
-    two.  That is the signature of a corrupted individual DB value.
+``db``
+    The ``checksums`` table.  "Is the value users are scored against wrong?"
+
+``lbdir``
+    The site's own ``lbdir-*`` manifest for that LB.  Jeff does not transcribe the
+    uploader's checksums — he generates his own from the folder *after* he has
+    downloaded it.  So this reference asks a question the DB cannot: **the uploader
+    published one set of checksums; did Jeff actually receive the fileset exactly
+    as the uploader intended?**  A disagreement here means the bytes that landed on
+    Jeff's disk are not the bytes the uploader hashed — a truncated or corrupted
+    transfer, a re-encode, or a different fileset altogether.  It is visible even
+    for filesets the DB never ingested, and it is the upstream cause of a DB value
+    that is "wrong" while faithfully recording what was received.
+
+Within either reference, two shapes have to be told apart:
+
+``isolated_mismatch``
+    The source agrees with the reference on most of its rows and disagrees on one
+    or two.  Against the DB that is the signature of a corrupted individual value;
+    against the lbdir it is a single file that did not survive the transfer.
 
 ``set_divergence``
-    A source file disagrees with the DB on most of its rows.  That is a different
-    fileset or a different version of the recording filed under the same LB number
-    (remasters reuse track filenames), not a DB error.
+    The source disagrees on most of its rows.  That is a different fileset or a
+    different version of the recording filed under the same LB number (remasters
+    reuse track filenames), not a per-file fault.
 
 Findings are persisted to ``checksum_disputes`` so lookups can annotate a
 NOT FOUND that is explained by a known-bad DB value, and so a human verdict
@@ -45,24 +63,27 @@ logger = logging.getLogger(__name__)
 
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS checksum_disputes (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    lb_number       INTEGER NOT NULL,
-    filename        TEXT NOT NULL,   -- filename as stored in checksums.filename
-    chk_type        TEXT NOT NULL,   -- m | f | s
-    db_checksum     TEXT NOT NULL,   -- what the LB database holds
-    source_checksum TEXT NOT NULL,   -- what the uploader's file holds
-    source_file     TEXT NOT NULL,   -- LBF-* attachment basename
-    source_kind     TEXT NOT NULL,   -- lbdir | uploader
-    source_scope    TEXT NOT NULL,   -- self | xref
-    source_suspect  INTEGER NOT NULL DEFAULT 0,  -- name marks it bad/old/superseded
-    kind            TEXT NOT NULL,   -- db_mismatch | set_divergence
-    confidence      TEXT NOT NULL,   -- high | medium | low
-    rows_agree      INTEGER NOT NULL,
-    rows_disagree   INTEGER NOT NULL,
-    status          TEXT NOT NULL DEFAULT 'open',  -- open | confirmed | dismissed
-    note            TEXT,
-    detected_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE(lb_number, filename, chk_type, source_checksum, source_file)
+    id                 INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number          INTEGER NOT NULL,
+    filename           TEXT NOT NULL,   -- filename as the reference records it
+    chk_type           TEXT NOT NULL,   -- m | f | s
+    reference_kind     TEXT NOT NULL,   -- db | lbdir  (what the source was compared against)
+    reference_checksum TEXT NOT NULL,   -- what that reference holds
+    reference_file     TEXT,            -- lbdir attachment name, NULL when reference_kind='db'
+    source_checksum    TEXT NOT NULL,   -- what the uploader's file holds
+    source_file        TEXT NOT NULL,   -- LBF-* attachment basename
+    source_kind        TEXT NOT NULL,   -- lbdir | uploader
+    source_scope       TEXT NOT NULL,   -- self | xref
+    source_suspect     INTEGER NOT NULL DEFAULT 0,  -- name marks it bad/old/superseded
+    displaced_to       TEXT,            -- reference filename holding the source's value, if any
+    kind               TEXT NOT NULL,   -- isolated_mismatch | set_divergence
+    confidence         TEXT NOT NULL,   -- high | medium | low
+    rows_agree         INTEGER NOT NULL,
+    rows_disagree      INTEGER NOT NULL,
+    status             TEXT NOT NULL DEFAULT 'open',  -- open | confirmed | dismissed
+    note               TEXT,
+    detected_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(lb_number, filename, chk_type, source_checksum, source_file, reference_kind)
 );
 CREATE INDEX IF NOT EXISTS idx_disputes_lb ON checksum_disputes(lb_number);
 CREATE INDEX IF NOT EXISTS idx_disputes_source_chk ON checksum_disputes(source_checksum);
@@ -84,9 +105,9 @@ _SUSPECT_RE = re.compile(
 )
 _AUDIO_EXT = (".flac", ".shn", ".wav", ".ape", ".wv", ".aif", ".aiff", ".m4a")
 
-# An "isolated" disagreement — the DB-error signature. A source file must agree
-# with the DB on at least MIN_AGREE rows (so it is demonstrably describing the
-# same fileset) and disagree on no more than MAX_DISAGREE_RATIO of them.
+# An "isolated" disagreement — the per-file-fault signature. A source file must
+# agree with the reference on at least MIN_AGREE rows (so it is demonstrably
+# describing the same fileset) and disagree on no more than MAX_DISAGREE_RATIO.
 MIN_AGREE = 3
 MAX_DISAGREE_RATIO = 0.25
 
@@ -97,9 +118,17 @@ _SECTION_TO_TYPE = {"md5": "m", "ffp": "f", "shntool": "s"}
 def ensure_schema(conn: sqlite3.Connection) -> None:
     """Create the ``checksum_disputes`` table and its indexes if absent.
 
+    A pre-``reference_kind`` table (the shape shipped earlier the same day) is
+    dropped rather than migrated: every row is derived data that ``run_audit()``
+    regenerates from the attachment mirror in seconds.
+
     Args:
         conn: Open connection to the LosslessBob database.
     """
+    cols = [r[1] for r in conn.execute("PRAGMA table_info(checksum_disputes)")]
+    if cols and "reference_kind" not in cols:
+        logger.info("checksum_disputes: pre-reference_kind shape found, rebuilding")
+        conn.execute("DROP TABLE checksum_disputes")
     conn.executescript(SCHEMA_SQL)
     conn.commit()
 
@@ -172,19 +201,51 @@ def _basename(filename: str) -> str:
     return filename.replace("\\", "/").rsplit("/", 1)[-1].strip().lower()
 
 
-def _load_db_checksums(
+class Reference:
+    """The set of checksums a source file is judged against.
+
+    Two references matter, and they answer different questions. The DB reference
+    asks "is the value users are scored against wrong?". The lbdir reference holds
+    the checksums Jeff generated from the folder he downloaded, so comparing an
+    uploader's own manifest against it asks "did Jeff receive this fileset exactly
+    as the uploader published it?" — an independent fault, and the upstream cause
+    of a DB value that faithfully records a file that arrived damaged.
+
+    Attributes:
+        kind: ``db`` or ``lbdir``.
+        by_file: (lb, basename, chk_type) → {checksum: filename as the reference
+            records it}. A key holds several checksums when an LB legitimately
+            carries more than one fileset, and a source value is a mismatch only
+            when it matches none of them.
+        by_checksum: (lb, chk_type) → {checksum: filename}, the inverse index —
+            used to spot a value that is present but filed under another track.
+        file_for: lb → the attachment the reference came from (lbdir only).
+    """
+
+    def __init__(self, kind: str):
+        self.kind = kind
+        self.by_file: dict[tuple[int, str, str], dict[str, str]] = defaultdict(dict)
+        self.by_checksum: dict[tuple[int, str], dict[str, str]] = defaultdict(dict)
+        self.file_for: dict[int, str] = {}
+
+    def add(self, lb: int, filename: str, chk_type: str, checksum: str) -> None:
+        """Index one reference checksum."""
+        checksum = checksum.lower()
+        self.by_file[(lb, _basename(filename), chk_type)][checksum] = filename
+        self.by_checksum[(lb, chk_type)].setdefault(checksum, filename)
+
+
+def load_db_reference(
     conn: sqlite3.Connection, lb_numbers: Sequence[int] | None = None
-) -> dict[tuple[int, str, str], dict[str, str]]:
-    """Load the DB's reference checksums keyed by (lb, basename, chk_type).
+) -> Reference:
+    """Build the reference from the ``checksums`` table.
 
     Args:
         conn: Open database connection.
         lb_numbers: Restrict to these LB numbers, or None for the whole table.
 
     Returns:
-        Mapping of key → {checksum: filename-as-stored}. A key can hold several
-        checksums (xref variants, remasters filed under one LB), and a source
-        value is only a mismatch when it matches none of them.
+        A populated :class:`Reference` with ``kind='db'``.
     """
     sql = "SELECT lb_number, filename, chk_type, checksum FROM checksums"
     params: tuple = ()
@@ -192,22 +253,63 @@ def _load_db_checksums(
         placeholders = ",".join("?" * len(lb_numbers))
         sql += f" WHERE lb_number IN ({placeholders})"
         params = tuple(lb_numbers)
-    out: dict[tuple[int, str, str], dict[str, str]] = defaultdict(dict)
+    ref = Reference("db")
     for lb, fname, chk_type, checksum in conn.execute(sql, params):
-        out[(lb, _basename(fname), chk_type)][checksum.lower()] = fname
-    return out
+        ref.add(lb, fname, chk_type, checksum)
+    return ref
+
+
+def load_lbdir_reference(
+    files_dir: str | Path | None = None, lb_numbers: Sequence[int] | None = None
+) -> Reference:
+    """Build the reference from the ``lbdir`` manifests in the attachment mirror.
+
+    Args:
+        files_dir: Attachment mirror; defaults to ``data/site/files/``.
+        lb_numbers: Restrict to these LB numbers, or None for all.
+
+    Returns:
+        A populated :class:`Reference` with ``kind='lbdir'``.
+    """
+    files_dir = Path(files_dir) if files_dir else SITE_FILES_DIR
+    ref = Reference("lbdir")
+    if not files_dir.exists():
+        return ref
+    wanted = set(lb_numbers) if lb_numbers is not None else None
+    for entry in sorted(files_dir.iterdir()):
+        if not entry.is_file():
+            continue
+        info = classify_source(entry.name)
+        # Only an LB's own lbdir speaks for it; an xref manifest describes a
+        # different entry's fileset and would poison the reference.
+        if info is None or info["kind"] != "lbdir" or info["scope"] != "self":
+            continue
+        if wanted is not None and info["lb_number"] not in wanted:
+            continue
+        lb = info["lb_number"]
+        try:
+            rows = list(iter_source_rows(entry))
+        except Exception:
+            logger.exception("Failed to read lbdir manifest %s", entry.name)
+            continue
+        if rows:
+            ref.file_for.setdefault(lb, entry.name)
+        for base, chk_type, checksum in rows:
+            ref.add(lb, base, chk_type, checksum)
+    return ref
 
 
 def audit_attachment(
     path: str | Path,
-    db_checksums: dict[tuple[int, str, str], dict[str, str]],
+    reference: Reference,
     source_info: dict | None = None,
 ) -> list[dict]:
-    """Compare one attachment's checksums against the DB's reference values.
+    """Compare one attachment's checksums against a reference.
 
     Args:
         path: Path to the attachment file.
-        db_checksums: Result of :func:`_load_db_checksums`.
+        reference: Result of :func:`load_db_reference` or
+            :func:`load_lbdir_reference`.
         source_info: Pre-computed :func:`classify_source` result, or None to
             derive it from the filename.
 
@@ -220,20 +322,23 @@ def audit_attachment(
     if info is None:
         return []
     lb = info["lb_number"]
+    if reference.kind == "lbdir" and info["kind"] == "lbdir":
+        # Comparing the lbdir against itself proves nothing.
+        return []
 
     agree = 0
-    disagreements: list[tuple[str, str, str, str]] = []  # base, type, source, db
+    disagreements: list[tuple[str, str, str, str]] = []  # ref name, type, source, ref
     for base, chk_type, checksum in iter_source_rows(path):
-        known = db_checksums.get((lb, base, chk_type))
+        known = reference.by_file.get((lb, base, chk_type))
         if not known:
-            # Filename the DB has no row for: a bonus track, an artwork-era
-            # rename, or a fileset never ingested. Not evidence either way.
+            # A filename the reference has no row for: a bonus track, a rename,
+            # or a fileset never ingested. Not evidence either way.
             continue
         if checksum in known:
             agree += 1
         else:
-            db_checksum, db_filename = next(iter(known.items()))
-            disagreements.append((db_filename, chk_type, checksum, db_checksum))
+            ref_checksum, ref_filename = next(iter(known.items()))
+            disagreements.append((ref_filename, chk_type, checksum, ref_checksum))
 
     if not disagreements:
         return []
@@ -241,30 +346,38 @@ def audit_attachment(
     total = agree + len(disagreements)
     isolated = agree >= MIN_AGREE and (len(disagreements) / total) <= MAX_DISAGREE_RATIO
     if isolated:
-        kind = "db_mismatch"
+        kind = "isolated_mismatch"
         confidence = "high" if (info["scope"] == "self" and not info["suspect"]) else "medium"
     else:
         kind = "set_divergence"
         confidence = "low"
 
-    return [
-        {
+    out = []
+    for ref_filename, chk_type, source_checksum, ref_checksum in disagreements:
+        # The source's value is present in the reference, but under a different
+        # track name: the same audio arrived intact and only the naming differs
+        # (track renumbering, a differently-ordered rip). Worth flagging, but it
+        # is not a damaged or missing file.
+        displaced_to = reference.by_checksum.get((lb, chk_type), {}).get(source_checksum)
+        out.append({
             "lb_number": lb,
-            "filename": db_filename,
+            "filename": ref_filename,
             "chk_type": chk_type,
-            "db_checksum": db_checksum,
+            "reference_kind": reference.kind,
+            "reference_checksum": ref_checksum,
+            "reference_file": reference.file_for.get(lb),
             "source_checksum": source_checksum,
             "source_file": path.name,
             "source_kind": info["kind"],
             "source_scope": info["scope"],
             "source_suspect": int(info["suspect"]),
+            "displaced_to": displaced_to,
             "kind": kind,
             "confidence": confidence,
             "rows_agree": agree,
             "rows_disagree": len(disagreements),
-        }
-        for db_filename, chk_type, source_checksum, db_checksum in disagreements
-    ]
+        })
+    return out
 
 
 def record_disputes(conn: sqlite3.Connection, disputes: Iterable[dict]) -> int:
@@ -283,21 +396,26 @@ def record_disputes(conn: sqlite3.Connection, disputes: Iterable[dict]) -> int:
     conn.executemany(
         """
         INSERT INTO checksum_disputes (
-            lb_number, filename, chk_type, db_checksum, source_checksum,
-            source_file, source_kind, source_scope, source_suspect,
+            lb_number, filename, chk_type, reference_kind, reference_checksum,
+            reference_file, source_checksum, source_file, source_kind,
+            source_scope, source_suspect, displaced_to,
             kind, confidence, rows_agree, rows_disagree
         ) VALUES (
-            :lb_number, :filename, :chk_type, :db_checksum, :source_checksum,
-            :source_file, :source_kind, :source_scope, :source_suspect,
+            :lb_number, :filename, :chk_type, :reference_kind, :reference_checksum,
+            :reference_file, :source_checksum, :source_file, :source_kind,
+            :source_scope, :source_suspect, :displaced_to,
             :kind, :confidence, :rows_agree, :rows_disagree
         )
-        ON CONFLICT(lb_number, filename, chk_type, source_checksum, source_file)
+        ON CONFLICT(lb_number, filename, chk_type, source_checksum, source_file,
+                    reference_kind)
         DO UPDATE SET
-            db_checksum   = excluded.db_checksum,
-            kind          = excluded.kind,
-            confidence    = excluded.confidence,
-            rows_agree    = excluded.rows_agree,
-            rows_disagree = excluded.rows_disagree
+            reference_checksum = excluded.reference_checksum,
+            reference_file     = excluded.reference_file,
+            displaced_to       = excluded.displaced_to,
+            kind               = excluded.kind,
+            confidence         = excluded.confidence,
+            rows_agree         = excluded.rows_agree,
+            rows_disagree      = excluded.rows_disagree
         """,
         rows,
     )
@@ -310,21 +428,30 @@ def run_audit(
     files_dir: str | Path | None = None,
     lb_numbers: Sequence[int] | None = None,
     include_lbdir: bool = False,
+    lbdir_reference: bool = True,
     progress: Callable[[int, int], None] | None = None,
 ) -> dict:
-    """Cross-check every mirrored attachment against the DB and store the findings.
+    """Cross-check every mirrored attachment against both references, and store it.
+
+    Each source attachment is judged twice: against the ``checksums`` table (did
+    the DB record the right value?) and against the LB's own ``lbdir`` manifest
+    (did Jeff receive the fileset the uploader published?). The two are recorded
+    as separate rows, distinguished by ``reference_kind``.
 
     Args:
         conn: Open database connection.
         files_dir: Attachment mirror; defaults to ``data/site/files/``.
         lb_numbers: Restrict the pass to these LB numbers, or None for all.
-        include_lbdir: Also re-check the ``lbdir`` manifests the DB was built
-            from. Off by default — those are the DB's own source, so they test
-            the ingest path rather than the provenance.
+        include_lbdir: Also use the ``lbdir`` manifests as *sources*. Off by
+            default — against the DB they test the ingest path rather than the
+            provenance, and against themselves they prove nothing.
+        lbdir_reference: Build and check the lbdir reference. On by default;
+            turning it off makes the pass DB-only (and skips parsing every
+            ``lbdir-*`` manifest).
         progress: Optional callback ``(done, total)`` invoked every 500 files.
 
     Returns:
-        Summary dict with counts by kind and confidence.
+        Summary dict with counts by kind, confidence and reference.
     """
     files_dir = Path(files_dir) if files_dir else SITE_FILES_DIR
     ensure_schema(conn)
@@ -333,7 +460,9 @@ def run_audit(
         return {"files_scanned": 0, "disputes": 0}
 
     wanted = set(lb_numbers) if lb_numbers is not None else None
-    db_checksums = _load_db_checksums(conn, lb_numbers)
+    references = [load_db_reference(conn, lb_numbers)]
+    if lbdir_reference:
+        references.append(load_lbdir_reference(files_dir, lb_numbers))
 
     candidates = []
     for entry in sorted(files_dir.iterdir()):
@@ -352,28 +481,32 @@ def run_audit(
         "files_scanned": 0,
         "files_with_disputes": 0,
         "disputes": 0,
-        "db_mismatch": 0,
+        "isolated_mismatch": 0,
         "set_divergence": 0,
         "high": 0,
         "medium": 0,
         "low": 0,
+        "ref_db": 0,
+        "ref_lbdir": 0,
         "lb_numbers": set(),
     }
     total = len(candidates)
     batch: list[dict] = []
     for i, (entry, info) in enumerate(candidates, 1):
         summary["files_scanned"] += 1
-        try:
-            found = audit_attachment(entry, db_checksums, info)
-        except Exception:  # a single malformed attachment must not stop the pass
-            logger.exception("Failed to audit attachment %s", entry.name)
-            continue
+        found: list[dict] = []
+        for reference in references:
+            try:
+                found.extend(audit_attachment(entry, reference, info))
+            except Exception:  # one malformed attachment must not stop the pass
+                logger.exception("Failed to audit attachment %s", entry.name)
         if found:
             summary["files_with_disputes"] += 1
             for d in found:
                 summary["disputes"] += 1
                 summary[d["kind"]] += 1
                 summary[d["confidence"]] += 1
+                summary["ref_" + d["reference_kind"]] += 1
                 summary["lb_numbers"].add(d["lb_number"])
             batch.extend(found)
         if len(batch) >= 500:
@@ -393,8 +526,9 @@ def get_disputes(
     conn: sqlite3.Connection,
     lb_number: int | None = None,
     status: str | None = "open",
-    kind: str | None = "db_mismatch",
+    kind: str | None = "isolated_mismatch",
     confidence: Sequence[str] | None = ("high", "medium"),
+    reference_kind: str | None = None,
 ) -> list[dict]:
     """Read stored disputes, filtered to the actionable ones by default.
 
@@ -404,6 +538,7 @@ def get_disputes(
         status: Restrict to this status, or None for any.
         kind: Restrict to this kind, or None for any.
         confidence: Restrict to these confidence levels, or None for any.
+        reference_kind: Restrict to ``db`` or ``lbdir``, or None for both.
 
     Returns:
         Dispute rows as dicts, ordered by LB number then filename.
@@ -419,6 +554,9 @@ def get_disputes(
     if kind:
         where.append("kind = ?")
         params.append(kind)
+    if reference_kind:
+        where.append("reference_kind = ?")
+        params.append(reference_kind)
     if confidence:
         where.append(f"confidence IN ({','.join('?' * len(confidence))})")
         params.extend(confidence)
@@ -437,7 +575,8 @@ def set_dispute_status(
     Args:
         conn: Open database connection.
         dispute_id: ``checksum_disputes.id``.
-        status: ``open``, ``confirmed`` (the DB value is wrong) or ``dismissed``.
+        status: ``open``, ``confirmed`` (the reference value is at fault) or
+            ``dismissed``.
         note: Optional free-text rationale.
 
     Returns:
@@ -463,17 +602,20 @@ def lookup_disputed_checksums(
     """Find user-supplied checksums that an uploader's file vouches for.
 
     This is the recovery path for the false mismatch: the user's audio file is
-    fine, its checksum is exactly what the original uploader published, and only
-    the DB's transcription of it is wrong — so the plain lookup returns NOT FOUND.
+    fine — its checksum is exactly what the original uploader published — and the
+    DB holds a different value, so the plain lookup returns NOT FOUND. Only
+    ``reference_kind='db'`` rows can explain that, since the DB is what the lookup
+    scored against; an lbdir dispute is a finding about the site's copy, not about
+    the user's file.
 
     Args:
         conn: Open database connection.
         checksums: Checksums that failed to match the ``checksums`` table.
 
     Returns:
-        Mapping of checksum → dispute row (dict) for those explained by a
-        known-bad DB value. Dismissed disputes and whole-set divergences are
-        excluded; a ``confirmed`` dispute outranks an ``open`` one.
+        Mapping of checksum → dispute row (dict) for those the uploader vouches
+        for. Dismissed disputes and whole-set divergences are excluded; a
+        ``confirmed`` dispute outranks an ``open`` one.
     """
     if not checksums:
         return {}
@@ -489,7 +631,8 @@ def lookup_disputed_checksums(
             f"""
             SELECT * FROM checksum_disputes
             WHERE source_checksum IN ({','.join('?' * len(chunk))})
-              AND kind = 'db_mismatch'
+              AND kind = 'isolated_mismatch'
+              AND reference_kind = 'db'
               AND status != 'dismissed'
               AND confidence IN ('high', 'medium')
             ORDER BY CASE status WHEN 'confirmed' THEN 0 ELSE 1 END,

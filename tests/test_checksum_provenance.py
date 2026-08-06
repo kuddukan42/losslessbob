@@ -1,7 +1,8 @@
 """Tests for backend.checksum_provenance (TODO-296).
 
 Covers source classification, the isolated-mismatch vs whole-set-divergence
-split, verdict persistence across re-runs, and the lookup rescue index.
+split, both references (DB and lbdir), verdict persistence across re-runs, and
+the lookup rescue index.
 """
 
 import sqlite3
@@ -90,14 +91,15 @@ def test_isolated_mismatch_is_flagged_high_confidence(tmp_path):
     rows[13] = ("track14.flac", _hash(999))  # uploader disagrees on exactly one track
     path = _write_md5(tmp_path, "LBF-00500-uploader.md5.txt", rows)
 
-    found = prov.audit_attachment(path, prov._load_db_checksums(conn))
+    found = prov.audit_attachment(path, prov.load_db_reference(conn))
 
     assert len(found) == 1
     d = found[0]
     assert d["filename"] == "track14.flac"
-    assert d["kind"] == "db_mismatch"
+    assert d["kind"] == "isolated_mismatch"
     assert d["confidence"] == "high"
-    assert d["db_checksum"] == _hash(14)
+    assert d["reference_checksum"] == _hash(14)
+    assert d["reference_kind"] == "db"
     assert d["source_checksum"] == _hash(999)
     assert (d["rows_agree"], d["rows_disagree"]) == (19, 1)
 
@@ -109,7 +111,7 @@ def test_whole_set_divergence_is_not_a_db_error(tmp_path):
     rows = [(f"track{i:02d}.flac", _hash(1000 + i)) for i in range(1, 21)]
     path = _write_md5(tmp_path, "LBF-00501-remaster.md5.txt", rows)
 
-    found = prov.audit_attachment(path, prov._load_db_checksums(conn))
+    found = prov.audit_attachment(path, prov.load_db_reference(conn))
 
     assert len(found) == 20
     assert {d["kind"] for d in found} == {"set_divergence"}
@@ -121,7 +123,7 @@ def test_agreement_alone_yields_no_disputes(tmp_path):
     _seed_db(conn, 502, 10)
     path = _write_md5(tmp_path, "LBF-00502-uploader.md5.txt",
                       [(f"track{i:02d}.flac", _hash(i)) for i in range(1, 11)])
-    assert prov.audit_attachment(path, prov._load_db_checksums(conn)) == []
+    assert prov.audit_attachment(path, prov.load_db_reference(conn)) == []
 
 
 def test_too_few_agreeing_rows_is_not_isolated(tmp_path):
@@ -132,7 +134,7 @@ def test_too_few_agreeing_rows_is_not_isolated(tmp_path):
         ("track01.flac", _hash(1)),
         ("track02.flac", _hash(888)),
     ])
-    found = prov.audit_attachment(path, prov._load_db_checksums(conn))
+    found = prov.audit_attachment(path, prov.load_db_reference(conn))
     assert [d["kind"] for d in found] == ["set_divergence"]
 
 
@@ -145,10 +147,10 @@ def test_suspect_and_xref_sources_are_downgraded_to_medium(tmp_path):
 
     suspect = _write_md5(tmp_path, "LBF-00504-set-old.md5.txt", rows)
     xref = _write_md5(tmp_path, "LBF-00505-xref-00123-text.txt", rows)
-    db_checksums = prov._load_db_checksums(conn)
+    db_ref = prov.load_db_reference(conn)
 
-    assert prov.audit_attachment(suspect, db_checksums)[0]["confidence"] == "medium"
-    assert prov.audit_attachment(xref, db_checksums)[0]["confidence"] == "medium"
+    assert prov.audit_attachment(suspect, db_ref)[0]["confidence"] == "medium"
+    assert prov.audit_attachment(xref, db_ref)[0]["confidence"] == "medium"
 
 
 def test_filenames_absent_from_db_are_ignored(tmp_path):
@@ -158,7 +160,7 @@ def test_filenames_absent_from_db_are_ignored(tmp_path):
     rows = [(f"track{i:02d}.flac", _hash(i)) for i in range(1, 11)]
     rows.append(("bonus99.flac", _hash(4242)))
     path = _write_md5(tmp_path, "LBF-00506-uploader.md5.txt", rows)
-    assert prov.audit_attachment(path, prov._load_db_checksums(conn)) == []
+    assert prov.audit_attachment(path, prov.load_db_reference(conn)) == []
 
 
 def test_db_filename_with_directory_prefix_still_matches(tmp_path):
@@ -173,7 +175,7 @@ def test_db_filename_with_directory_prefix_still_matches(tmp_path):
     rows[5] = ("track06.flac", _hash(606))
     path = _write_md5(tmp_path, "LBF-00507-uploader.md5.txt", rows)
 
-    found = prov.audit_attachment(path, prov._load_db_checksums(conn))
+    found = prov.audit_attachment(path, prov.load_db_reference(conn))
     assert len(found) == 1
     assert found[0]["filename"] == "Disc 1\\track06.flac"  # reported as the DB stores it
 
@@ -190,7 +192,87 @@ def test_several_db_values_for_one_track_means_no_mismatch(tmp_path):
     rows = [(f"track{i:02d}.flac", _hash(i)) for i in range(1, 11)]
     rows[2] = ("track03.flac", _hash(3003))
     path = _write_md5(tmp_path, "LBF-00508-uploader.md5.txt", rows)
-    assert prov.audit_attachment(path, prov._load_db_checksums(conn)) == []
+    assert prov.audit_attachment(path, prov.load_db_reference(conn)) == []
+
+
+# ---------------------------------------------------------------- lbdir reference
+
+def test_lbdir_reference_catches_a_file_that_did_not_arrive_intact(tmp_path):
+    """Jeff hashes what he downloaded, so lbdir vs uploader is a transfer check.
+
+    The DB faithfully records the lbdir here — only the uploader disagrees — so
+    the same track raises one dispute against each reference.
+    """
+    conn = _conn()
+    _seed_db(conn, 700, 20)
+    good = [(f"track{i:02d}.flac", _hash(i)) for i in range(1, 21)]
+    _write_md5(tmp_path, "LBF-00700-lbdir-set.txt", good)
+    bad = list(good)
+    bad[0] = ("track01.flac", _hash(7007))
+    _write_md5(tmp_path, "LBF-00700-uploader.md5.txt", bad)
+
+    summary = prov.run_audit(conn, tmp_path)
+
+    assert (summary["ref_db"], summary["ref_lbdir"]) == (1, 1)
+    by_ref = {d["reference_kind"]: d for d in prov.get_disputes(conn)}
+    assert set(by_ref) == {"db", "lbdir"}
+    assert by_ref["lbdir"]["reference_file"] == "LBF-00700-lbdir-set.txt"
+    assert by_ref["lbdir"]["reference_checksum"] == _hash(1)
+    assert by_ref["db"]["reference_file"] is None
+
+
+def test_lbdir_is_never_checked_against_itself(tmp_path):
+    conn = _conn()
+    _seed_db(conn, 701, 20)
+    rows = [(f"track{i:02d}.flac", _hash(i)) for i in range(1, 21)]
+    path = _write_md5(tmp_path, "LBF-00701-lbdir-set.txt", rows)
+    ref = prov.load_lbdir_reference(tmp_path)
+    assert ref.by_file[(701, "track01.flac", "m")] == {_hash(1): "track01.flac"}
+    assert prov.audit_attachment(path, ref) == []
+
+
+def test_an_xref_manifest_does_not_become_the_lbdir_reference(tmp_path):
+    """An xref lbdir describes another entry's fileset and would poison the ref."""
+    _write_md5(tmp_path, "LBF-00702-xref-01595-lbdir.txt",
+               [(f"track{i:02d}.flac", _hash(i)) for i in range(1, 11)])
+    assert prov.load_lbdir_reference(tmp_path).by_file == {}
+
+
+def test_db_only_skips_the_lbdir_reference(tmp_path):
+    conn = _conn()
+    _seed_db(conn, 703, 20)
+    good = [(f"track{i:02d}.flac", _hash(i)) for i in range(1, 21)]
+    _write_md5(tmp_path, "LBF-00703-lbdir-set.txt", good)
+    bad = list(good)
+    bad[0] = ("track01.flac", _hash(7373))
+    _write_md5(tmp_path, "LBF-00703-uploader.md5.txt", bad)
+
+    summary = prov.run_audit(conn, tmp_path, lbdir_reference=False)
+    assert (summary["ref_db"], summary["ref_lbdir"]) == (1, 0)
+
+
+def test_displaced_value_names_the_track_that_holds_it(tmp_path):
+    """Two swapped tracks are the same audio under different names, not damage."""
+    conn = _conn()
+    _seed_db(conn, 704, 20)
+    rows = [(f"track{i:02d}.flac", _hash(i)) for i in range(1, 21)]
+    rows[0] = ("track01.flac", _hash(2))
+    rows[1] = ("track02.flac", _hash(1))
+    path = _write_md5(tmp_path, "LBF-00704-uploader.md5.txt", rows)
+
+    found = {d["filename"]: d for d in prov.audit_attachment(path, prov.load_db_reference(conn))}
+    assert found["track01.flac"]["displaced_to"] == "track02.flac"
+    assert found["track02.flac"]["displaced_to"] == "track01.flac"
+
+
+def test_a_plain_mismatch_has_no_displacement(tmp_path):
+    conn = _conn()
+    _seed_db(conn, 705, 20)
+    rows = [(f"track{i:02d}.flac", _hash(i)) for i in range(1, 21)]
+    rows[0] = ("track01.flac", _hash(9999))
+    path = _write_md5(tmp_path, "LBF-00705-uploader.md5.txt", rows)
+    found = prov.audit_attachment(path, prov.load_db_reference(conn))
+    assert found[0]["displaced_to"] is None
 
 
 # --------------------------------------------------------------------------- run_audit
@@ -217,7 +299,7 @@ def test_run_audit_summary_and_lb_filter(tmp_path):
 
     summary = prov.run_audit(conn, tmp_path)
     assert summary["disputes"] == 2
-    assert summary["db_mismatch"] == 2
+    assert summary["isolated_mismatch"] == 2
     assert summary["high"] == 2
     assert summary["lb_numbers"] == 2
 
@@ -246,6 +328,28 @@ def test_rerun_is_idempotent_and_keeps_the_human_verdict(tmp_path):
 def test_run_audit_tolerates_a_missing_mirror(tmp_path):
     conn = _conn()
     assert prov.run_audit(conn, tmp_path / "nope")["disputes"] == 0
+
+
+def test_ensure_schema_rebuilds_a_pre_reference_kind_table():
+    """The v1 shape is dropped, not migrated — every row is re-derivable."""
+    conn = sqlite3.connect(":memory:")
+    conn.row_factory = sqlite3.Row
+    conn.execute("""
+        CREATE TABLE checksum_disputes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            lb_number INTEGER NOT NULL,
+            db_checksum TEXT NOT NULL
+        )
+    """)
+    conn.execute("INSERT INTO checksum_disputes (lb_number, db_checksum) VALUES (1, 'x')")
+    conn.commit()
+
+    prov.ensure_schema(conn)
+
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(checksum_disputes)")}
+    assert "reference_kind" in cols and "db_checksum" not in cols
+    assert conn.execute("SELECT COUNT(*) FROM checksum_disputes").fetchone()[0] == 0
+    prov.ensure_schema(conn)  # second call is a no-op
 
 
 def test_set_dispute_status_rejects_unknown_status(tmp_path):
@@ -284,7 +388,7 @@ def test_lookup_rescue_returns_the_uploader_vouched_checksum(tmp_path):
 
     hit = prov.lookup_disputed_checksums(conn, [_hash(555)])
     assert hit[_hash(555)]["lb_number"] == 606
-    assert hit[_hash(555)]["db_checksum"] == _hash(1)
+    assert hit[_hash(555)]["reference_checksum"] == _hash(1)
     # The DB's own (wrong) value is not a rescue key.
     assert prov.lookup_disputed_checksums(conn, [_hash(1)]) == {}
     assert prov.lookup_disputed_checksums(conn, []) == {}

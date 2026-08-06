@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-300: Judge checksum sources against both the DB and Jeff's lbdir manifest
+Priority: Medium
+Status: Done
+Added: 2026-08-06
+Closed: 2026-08-06
+Description: Follow-up to TODO-296. The audit had a single reference (the checksums table) and could only ask 'is the DB value wrong?'. Jeff generates his own checksums from the folder after downloading it rather than transcribing the uploader's, so the lbdir manifest is an independent witness to a second question: did Jeff receive the fileset exactly as the uploader published it? Add a Reference abstraction with db and lbdir loaders, run every source past both, and record reference_kind/reference_checksum/reference_file/displaced_to. Ship an HTML report that pairs the two references per track to derive the culprit (db_error / receipt_fault / lbdir_only).
+Shipped 2026-08-06. backend/checksum_provenance.py: Reference class + load_db_reference()/load_lbdir_reference(); run_audit() stores one row per reference; kind is now structural (isolated_mismatch | set_divergence) with reference_kind carrying which reference; new displaced_to column names a track already holding the source's value under another name. lookup_checksums()'s rescue path filters to reference_kind='db' so API/GUI behaviour is unchanged. tools/checksum_dispute_report.py renders .debug/checksum_disputes.html. Live: 62,184 sources in 30s -> 454 isolated mismatches (187 high/99 medium vs the DB, reproducing the prior audit; 147 high/19 medium vs the lbdir on 39 LBs), paired into 289 findings across 78 LBs: 180 db_error, 38 receipt_fault, 71 lbdir_only, 159 with an orphan value. 36 tests pass.
+
 TODO-296: db — detect/document LB-database checksums that don't match the original uploader's checksum file
 Priority: Medium
 Status: Done

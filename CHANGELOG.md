@@ -1,3 +1,38 @@
+[2026-08-06] — feat(db): close TODO-300, judge every checksum source against both the DB and Jeff's lbdir
+Changed: backend/checksum_provenance.py — the audit had one reference (the checksums table), so it
+  could only ever ask "is the DB value wrong?". Corrected premise from tj: Jeff does not transcribe
+  the uploader's checksums, he generates his own from the folder after he has downloaded it. That
+  makes the lbdir manifest an independent witness to a different question — the uploader published
+  one set of checksums, did Jeff actually receive the fileset exactly as intended? A disagreement
+  there means the bytes that reached him are not the bytes the uploader hashed (damaged transfer,
+  re-encode, substituted file), which is invisible to a DB-only check and is the upstream cause of
+  a DB value that "wrongly" records a file that arrived broken. New Reference class +
+  load_db_reference() / load_lbdir_reference() (self-scope lbdir only — an xref manifest describes
+  another entry's fileset and would poison the reference; an lbdir is never checked against
+  itself); run_audit() now runs each source past both references and stores one row per reference.
+  kind is now structural — isolated_mismatch | set_divergence — with reference_kind carrying which
+  reference, and new columns reference_checksum/reference_file/displaced_to. displaced_to names the
+  track that already holds the source's value under a different name (renumbered rip, same audio —
+  not a damaged file). lookup_checksums()'s rescue path filters to reference_kind='db', since the
+  DB is the only thing a user lookup was scored against, so API/GUI behaviour is unchanged.
+  ensure_schema() drops a pre-reference_kind table instead of migrating it (all rows are derived;
+  the 9,513 stored rows were all status=open with no curator notes, so nothing human was lost).
+Added: tools/checksum_dispute_report.py — standalone HTML report at .debug/checksum_disputes.html.
+  Merges the two per-reference rows for a track into one finding, because the pairing is what
+  names the culprit: db_error (uploader + lbdir agree, only the DB differs → a transcription error
+  fixable in one row), receipt_fault (DB + lbdir agree and both differ from the uploader → the LB
+  itself carries a file that never arrived intact), lbdir_only. Cards carry the entry's
+  date/venue/taper/source/timing/rating, the three checksums side by side, the witnessing source
+  manifests, agreement ratios, and badges for orphan values (uploader hash present in no checksums
+  row at all — a user with that exact file gets a bare NOT FOUND today), displacements, suspect
+  filenames and xref evidence. Self-contained, light/dark, sticky filters + search.
+Changed: cli.py — checksum-audit gains --db-only (skip the lbdir reference) and --reference db|lbdir
+  (filter --list); the listing and summary now print the reference each dispute is against.
+Live run (62,184 sources, 30s): 454 isolated mismatches — 187 high / 99 medium against the DB
+  (reproducing the prior audit), and 147 high / 19 medium against the lbdir, i.e. tracks that did
+  not reach Jeff as published, on 39 LBs. Paired into 289 findings across 78 LBs: 180 db_error,
+  38 receipt_fault, 71 lbdir_only, of which 159 carry an orphan value.
+
 [2026-08-05] — feat(db): close TODO-296, detect LB-database checksums that contradict their own provenance
 Added: backend/checksum_provenance.py — cross-checks the checksums table against the uploader
   checksum files already mirrored in data/site/files/, without touching a collection folder.
