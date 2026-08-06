@@ -2,6 +2,22 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-297: file_integrity: reconcile moved/renamed files by hash instead of missing+new
+Priority: Medium
+Status: Done
+Added: 2026-08-05
+Closed: 2026-08-06
+Description: backend/file_integrity.py's scan_mount() has no move detection: nothing in the app's move/rename code paths (backend/filer.py) touches file_inventory, so relocating a file inside the app (or on disk) makes the old rel_path show up as 'missing' and the destination gets rehashed as a brand-new row on the next index scan, even though it's byte-identical content. Confirmed live on 2026-08-05: of 1,443 rows flagged missing on DYLAN1 after an index run, 23 had an exact xxh3 match already sitting under a different rel_path/mount (a 2021 short-clips folder reorg onto DYLAN3) but were never relinked -- both the stale missing row and the pre-existing ok row for the same content coexist. Fix: before declaring a file missing in scan_mount's missing-sweep, check whether its xxh3 already has an 'ok' row elsewhere in file_inventory (any mount); if so, treat it as moved -- drop/relabel the old row and skip rehashing the new one.
+Fixed: scan_mount's missing-sweep now batch-checks each candidate's xxh3 against other 'ok' file_inventory rows (idx_finv_xxh3_ok) before flagging missing. A match elsewhere drops the stale row (files_moved) instead of leaving a missing+new pair. Upserts are force-flushed before the sweep query so same-scan destinations are visible. Verified with a live simulated move (old row dropped, destination stays ok, files_missing=0).
+
+TODO-301: checksum-audit: decide whether 'uncorrected'/'corrected' belong in the suspect-source regex
+Priority: Low
+Status: Done
+Added: 2026-08-06
+Closed: 2026-08-06
+Description: Found while reviewing the TODO-300 report (2026-08-06). LB-08638's uploader manifest is named LBF-08638-uncorrected-bd-19960417-Burlington.md5.txt -- the filename says its own values are the pre-fix ones, so the 6 'receipt_fault' rows it produces are really 'Jeff shipped the corrected files', not 'Jeff received a damaged transfer'. _SUSPECT_RE in backend/checksum_provenance.py matches bad/old/wrong/orig/prev/broken/corrupt/obsolete/superseded/unfixed/incorrect/error but not uncorrected or corrected. Adding 'uncorrected' would downgrade those to medium confidence; 'corrected' is the inverse signal (the source is the good one) and arguably deserves an upgrade rather than a downgrade, so it is not a one-line regex change. Grep the mirror for both words to size the effect before deciding.
+Won't-do: uncorrected only appears in 2 files (1 LB, the TODO-300 case already reported); corrected spans 97 files/40 LBs and would need asymmetric upgrade logic tj judged not worth building. Sized via grep of data/site/files/ 2026-08-06.
+
 TODO-302: checksum-audit: split receipt faults by audio impact, and harvest uploader sidecars from collection folders
 Priority: Medium
 Status: Done

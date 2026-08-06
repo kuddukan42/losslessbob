@@ -174,7 +174,7 @@ def _new_counts() -> dict[str, int]:
     """Return a zeroed aggregate-counts dict for a scan."""
     return {
         "files_seen": 0, "files_hashed": 0, "files_new": 0, "files_ok": 0,
-        "files_rot": 0, "files_changed": 0, "files_missing": 0,
+        "files_rot": 0, "files_changed": 0, "files_missing": 0, "files_moved": 0,
         "files_unreadable": 0, "bytes_hashed": 0,
     }
 
@@ -195,6 +195,7 @@ class _Sink:
         self._upserts: list[dict] = []
         self._verified: list[tuple[int, str]] = []
         self._flagged: list[tuple[str, int, str]] = []
+        self._moved_away: list[tuple[int, str]] = []
 
     def baseline(self, rel: str, lb_number: int | None, h: dict) -> None:
         """Queue a full row write for a new or legitimately-changed file."""
@@ -284,6 +285,26 @@ class _Sink:
             "file in inventory no longer present on disk", self.mount_id,
         )
 
+    def moved(self, full: Path, rel: str, row: dict, dest: tuple[int, str]) -> None:
+        """Record an inventoried file whose content already lives elsewhere.
+
+        The old rel_path is dropped rather than flagged missing: its content is
+        demonstrably not lost, it is sitting under an 'ok' row at ``dest``.
+
+        Args:
+            full: Absolute path the file used to occupy.
+            rel: Inventory key it used to occupy.
+            row: The stored row being dropped.
+            dest: (mount_id, rel_path) of the matching 'ok' row.
+        """
+        self.counts["files_moved"] += 1
+        self._moved_away.append((self.mount_id, rel))
+        database.log_integrity_event(
+            row.get("lb_number") or 0, str(full), "file_moved",
+            f"content now found at mount {dest[0]} / {dest[1]} — dropping stale row",
+            self.mount_id,
+        )
+
     def flush(self, force: bool = False) -> None:
         """Write queued rows once any batch is full, or unconditionally.
 
@@ -299,6 +320,9 @@ class _Sink:
         if self._flagged and (force or len(self._flagged) >= BATCH_SIZE):
             database.mark_file_inventory_status(self._flagged)
             self._flagged = []
+        if self._moved_away and (force or len(self._moved_away) >= BATCH_SIZE):
+            database.delete_file_inventory_rows(self._moved_away)
+            self._moved_away = []
 
 
 def _lb_index(mount_root: Path) -> dict[str, int]:
@@ -480,10 +504,11 @@ def _log_result(mode: str, mount_id: int, status: str, counts: dict) -> None:
     """
     _log.info(
         "file_integrity: %s scan of mount %s finished (%s) — %s files, %s hashed, "
-        "%.1f GB, %s new, %s rot, %s changed, %s missing, %s unreadable",
+        "%.1f GB, %s new, %s rot, %s changed, %s missing, %s moved, %s unreadable",
         mode, mount_id, status, counts["files_seen"], counts["files_hashed"],
         counts["bytes_hashed"] / 1e9, counts["files_new"], counts["files_rot"],
-        counts["files_changed"], counts["files_missing"], counts["files_unreadable"],
+        counts["files_changed"], counts["files_missing"], counts.get("files_moved", 0),
+        counts["files_unreadable"],
     )
 
 
@@ -596,10 +621,22 @@ def scan_mount(
         # budget-stopped run never reached the tail of the walk and would
         # otherwise declare every untouched file missing.
         if final_status == "done":
-            for rel, row in known.items():
-                if rel in seen or row["status"] == "missing":
-                    continue
-                sink.missing(mount_root / rel, rel, row)
+            # Force the pending upserts to disk first — a moved file's
+            # destination row must be queryable before the sweep looks for it.
+            sink.flush(force=True)
+            candidates = {
+                rel: row for rel, row in known.items()
+                if rel not in seen and row["status"] != "missing"
+            }
+            moved_to = database.find_ok_inventory_by_xxh3(
+                [row["xxh3"] for row in candidates.values()]
+            )
+            for rel, row in candidates.items():
+                dest = moved_to.get(row["xxh3"])
+                if dest is not None and dest != (mount_id, rel):
+                    sink.moved(mount_root / rel, rel, row, dest)
+                else:
+                    sink.missing(mount_root / rel, rel, row)
 
         sink.flush(force=True)
         if skipped_unlinked:

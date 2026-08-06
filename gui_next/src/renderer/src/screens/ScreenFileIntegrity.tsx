@@ -27,6 +27,7 @@ interface StatusCounts {
   files_rot: number
   files_changed: number
   files_missing: number
+  files_moved: number
   files_unreadable: number
   bytes_hashed: number
 }
@@ -71,6 +72,7 @@ interface ScanRun {
   files_rot: number
   files_changed: number
   files_missing: number
+  files_moved: number
   bytes_hashed: number
 }
 
@@ -483,6 +485,7 @@ export function ScreenFileIntegrity() {
                   <span style={{ color: 'var(--lbb-fg2)' }}>{mount}</span>
                   <span>{h.files_seen.toLocaleString()} files · {fmtBytes(h.bytes_hashed)}</span>
                   {flagged > 0 && <Pill tone="bad" soft>{flagged} flagged</Pill>}
+                  {h.files_moved > 0 && <Pill tone="mute" soft>{h.files_moved} moved</Pill>}
                   <span style={{ marginLeft: 'auto' }}>{h.started_at.slice(0, 16)}</span>
                 </div>
               )
