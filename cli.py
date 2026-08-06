@@ -487,6 +487,10 @@ def _build_parser(klass=argparse.ArgumentParser) -> argparse.ArgumentParser:
     p_audit.add_argument("--include-lbdir", action="store_true",
                          help="Also use the lbdir manifests as sources, not just "
                               "as a reference")
+    p_audit.add_argument("--include-collection", action="store_true",
+                         help="Also read uploader .ffp/.md5/.st5 sidecars from the "
+                              "folders in my_collection (disk-bound; finds checksums "
+                              "the uploader shipped but never attached to the site)")
     p_audit.add_argument("--db-only", action="store_true",
                          help="Skip the lbdir reference (did Jeff receive the "
                               "uploader's fileset intact?) and check the DB only")
@@ -967,6 +971,7 @@ def _execute(args: argparse.Namespace, base_url: str) -> None:
             summary = _prov.run_audit(
                 conn, lb_numbers=args.lb, include_lbdir=args.include_lbdir,
                 lbdir_reference=not args.db_only,
+                include_collection=args.include_collection,
                 progress=None if args.json else _progress,
             )
             if not args.json:
@@ -979,6 +984,7 @@ def _execute(args: argparse.Namespace, base_url: str) -> None:
                       f"isolated={summary['isolated_mismatch']} "
                       f"set_divergence={summary['set_divergence']} "
                       f"vs_db={summary['ref_db']} vs_lbdir={summary['ref_lbdir']} "
+                      f"from_collection={summary['src_collection']} "
                       f"high={summary['high']} medium={summary['medium']} "
                       f"low={summary['low']} lbs={summary['lb_numbers']}")
 

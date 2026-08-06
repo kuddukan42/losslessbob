@@ -218,7 +218,7 @@ losslessbob/
 │   ├── scan_collection_folders.py # CLI: scan disk for candidate collection folders not yet in my_collection
 │   ├── import_private_metadata.py # CLI: TODO-245 private-LB metadata import (data/private docs + collection folder txts; fill-blank-only)
 │   ├── parse_dff_reports.py  # CLI: parse DigiFlawFinder reports attached to entries
-│   ├── checksum_dispute_report.py # CLI: render checksum_disputes as a standalone HTML report (.debug/checksum_disputes.html); pairs the db+lbdir references per track to derive db_error / receipt_fault / lbdir_only (TODO-300)
+│   ├── checksum_dispute_report.py # CLI: render checksum_disputes as a standalone HTML report (.debug/checksum_disputes.html); pairs the db+lbdir references per track to derive db_error / audio_differs / retag / receipt_unknown / lbdir_only (TODO-300, 302)
 │   ├── parse_lineage.py      # CLI wrapper: backend.taper_attribution / entry_lineage batch parse (see backend/db.py extract_lb_references)
 │   ├── wtrf_fetch_missing.py # CLI: batch WTRF torrent fetch for missing items (wraps /api/wtrf/fetch_torrent logic)
 │   ├── fit_aud_quality_model.py # CLI: fit the AUD quality regression model used by concert_ranker
@@ -903,7 +903,7 @@ Each source is judged against **two** references, recorded as separate rows keye
 | reference_file | TEXT | lbdir attachment name; NULL when `reference_kind='db'` |
 | source_checksum | TEXT NOT NULL | What the uploader's file holds |
 | source_file | TEXT NOT NULL | `LBF-*` attachment basename the source value came from |
-| source_kind | TEXT NOT NULL | `lbdir` \| `uploader` |
+| source_kind | TEXT NOT NULL | `lbdir` \| `uploader` (mirrored attachment) \| `collection` (uploader sidecar read from a `my_collection` folder — checksums shipped inside the torrent that were never attached to the site; `lb checksum-audit --include-collection`) |
 | source_scope | TEXT NOT NULL | `self` (this LB's own manifest) \| `xref` (another LB's identical fileset) |
 | source_suspect | INTEGER NOT NULL | 1 when the source filename says its values are the discarded ones (`…bad.md5.txt`) |
 | displaced_to | TEXT | Reference filename that holds the source's value under another track name (same audio, renumbered) |
@@ -924,7 +924,10 @@ Populated by `lb checksum-audit`; read via `GET /api/checksum-disputes`, triaged
 index to annotate a NOT FOUND, filtered to `reference_kind='db'` — only the DB is what
 the lookup scored against. `tools/checksum_dispute_report.py` renders the isolated
 mismatches as a standalone HTML report, pairing the two references per track to derive
-which party is at fault (`db_error` / `receipt_fault` / `lbdir_only`).
+which party is at fault: `db_error` (only the DB differs), `audio_differs` (DB+lbdir
+agree against the uploader and the FFP moved → different/damaged audio), `retag` (same
+shape but MD5-only with an agreeing FFP → identical audio, rewritten container),
+`receipt_unknown` (MD5-only, no FFP to decide), `lbdir_only`.
 
 ### `curated_lists` / `curated_list_entries` — Curator "best of" picks (TODO-181, MASTER tables)
 Named lists of curator-picked best LB recordings (e.g. carbonbit, 10haaf), imported via

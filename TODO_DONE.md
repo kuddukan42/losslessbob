@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-302: checksum-audit: split receipt faults by audio impact, and harvest uploader sidecars from collection folders
+Priority: Medium
+Status: Done
+Added: 2026-08-06
+Closed: 2026-08-06
+Description: Two gaps exposed by running LB-15933 (the entry TODO-296 was opened on) through the verify/lookup/lbdir pipeline. (1) The mirror is not complete evidence: LB-15933's site attachment is FFP-only, so the uploader's MD5 -- which is the value that actually disagrees -- exists nowhere in data/site/files/, only in the .md5 sidecar inside the collection folder. A mirror-only audit structurally cannot see this class of finding. Add collection-folder sidecars as a source (excluding app-written *_mychecksums_* and lbdir*.txt copies). (2) receipt_fault conflated two very different things: an MD5-only disagreement whose FFP agrees means the audio is bit-identical and only the container was retagged, not that the file arrived damaged. Split it in the report.
+Shipped 2026-08-06. (1) backend/checksum_provenance.py: classify_collection_source() + iter_collection_sources() read uploader .ffp/.md5/.st5 sidecars from my_collection folders (skipping app-written *_mychecksums_* and lbdir*.txt), recorded with source_kind='collection'; run_audit(include_collection=True) / lb checksum-audit --include-collection. Offline folders are skipped quietly so an unmounted drive never reads as absence of evidence. (2) tools/checksum_dispute_report.py: split_receipt_verdicts() replaces receipt_fault with audio_differs (FFP moved -> different/damaged audio), retag (MD5-only with an agreeing FFP -> identical audio, rewritten container) and receipt_unknown (no FFP to decide). Full run: 84,157 sources (21,973 from collection folders) -> 570 isolated mismatches, 312 findings across 93 LBs: 191 db_error, 13 audio_differs, 27 retag, 9 receipt_unknown, 72 lbdir_only; 49 findings visible only via collection sidecars. LB-15933 d1t14 -- the case TODO-296 was opened on and which the mirror-only audit could not see -- is now detected at high confidence and correctly classified 'retag' (uploader MD5 b54789c5 vs DB/lbdir 5840da36, FFP c8d16745 agreeing everywhere). 55 tests pass.
+
 TODO-300: Judge checksum sources against both the DB and Jeff's lbdir manifest
 Priority: Medium
 Status: Done
