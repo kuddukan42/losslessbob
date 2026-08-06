@@ -4939,6 +4939,60 @@ def create_app() -> Flask:
 
     # ── lb_problems API ────────────────────────────────────────────────────────
 
+    @app.route("/api/checksum-disputes", methods=["GET"])
+    def checksum_disputes_list() -> Response:
+        """List LB entries whose stored checksum disagrees with the uploader's file.
+
+        Query params: lb (int) — restrict to one entry; status (str, default
+        ``open``, empty for any); all (``1`` to include low-confidence whole-set
+        divergences alongside the isolated DB mismatches).
+
+        Returns:
+            JSON list of checksum_disputes rows.
+        """
+        try:
+            from backend import checksum_provenance
+            lb_q = request.args.get("lb", "").strip()
+            show_all = request.args.get("all") == "1"
+            status = request.args.get("status", "open").strip() or None
+            rows = checksum_provenance.get_disputes(
+                database.get_connection(),
+                lb_number=int(lb_q) if lb_q else None,
+                status=status,
+                kind=None if show_all else "db_mismatch",
+                confidence=None if show_all else ("high", "medium"),
+            )
+            return jsonify(rows)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/checksum-disputes/<int:dispute_id>", methods=["PUT"])
+    def checksum_disputes_update(dispute_id: int) -> Response:
+        """Curator-only. Record a verdict on a checksum dispute.
+
+        Body: {status: open|confirmed|dismissed, note?: str}
+
+        Returns:
+            JSON {ok, id, status}.
+        """
+        try:
+            from backend import checksum_provenance
+            if not database.is_curator():
+                return jsonify({"error": "curator_required"}), 403
+            body = request.get_json(force=True) or {}
+            status = (body.get("status") or "").strip()
+            try:
+                updated = checksum_provenance.set_dispute_status(
+                    database.get_connection(), dispute_id, status, body.get("note")
+                )
+            except ValueError as exc:
+                return jsonify({"error": str(exc)}), 400
+            if not updated:
+                return jsonify({"error": "not_found"}), 404
+            return jsonify({"ok": True, "id": dispute_id, "status": status})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
     @app.route("/api/lb_problems", methods=["GET"])
     def lb_problems_list() -> Response:
         """List lb_problems rows, optionally filtered to a single LB.

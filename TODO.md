@@ -1,15 +1,15 @@
 
+TODO-299: Triage the 188 high-confidence checksum disputes and surface them in the GUI
+Priority: Medium
+Status: Open
+Added: 2026-08-05
+Description: Follow-up to TODO-296. The audit (lb checksum-audit) found 287 db_mismatch rows — 188 high-confidence (the LB's own uploader manifest disagrees with the DB on an isolated track) and 99 medium (evidence comes from an xref manifest or a source whose filename marks it superseded). They sit at status=open in checksum_disputes. Two pieces of work: (1) curator triage — for each high-confidence row decide confirmed (the DB value is wrong) or dismissed, via PUT /api/checksum-disputes/<id>; the 78 whose source_checksum appears nowhere in checksums are the highest-value ones, since a user with the correct file gets a bare NOT FOUND today. (2) GUI — the lookup result detail items now carry a dispute{} annotation and the summary a disputed count, but no screen reads either; surface it in the lookup/diff result view and add a curator triage list (GET /api/checksum-disputes). Consider also showing a badge on the entry detail screen when an LB has open disputes. Re-running the audit is cheap (8s) and preserves verdicts, so it can be wired into the flat-file update pipeline once triage exists.
+
 TODO-297: file_integrity: reconcile moved/renamed files by hash instead of missing+new
 Priority: Medium
 Status: Open
 Added: 2026-08-05
 Description: backend/file_integrity.py's scan_mount() has no move detection: nothing in the app's move/rename code paths (backend/filer.py) touches file_inventory, so relocating a file inside the app (or on disk) makes the old rel_path show up as 'missing' and the destination gets rehashed as a brand-new row on the next index scan, even though it's byte-identical content. Confirmed live on 2026-08-05: of 1,443 rows flagged missing on DYLAN1 after an index run, 23 had an exact xxh3 match already sitting under a different rel_path/mount (a 2021 short-clips folder reorg onto DYLAN3) but were never relinked -- both the stale missing row and the pre-existing ok row for the same content coexist. Fix: before declaring a file missing in scan_mount's missing-sweep, check whether its xxh3 already has an 'ok' row elsewhere in file_inventory (any mount); if so, treat it as moved -- drop/relabel the old row and skip rehashing the new one.
-
-TODO-296: db — detect/document LB-database checksums that don't match the original uploader's checksum file
-Priority: Medium
-Status: Open
-Added: 2026-08-04
-Description: Found by inspection: LB-15933 d1t14's checksum stored in the LB database does not match the checksum the original uploader provided for that fileset (i.e. the DB value was corrupted/mistyped/wrongly-sourced at some point, independent of whether the audio file itself is fine). This is a distinct failure mode from a user's local file mismatching the DB — here the DB's own reference value is wrong relative to its own provenance. Need: (1) a way to flag/annotate specific LB entries+files as "DB checksum known bad / disputed" so lookups against them don't silently report false mismatches to users, and (2) ideally a detection pass that cross-checks stored checksums against original uploader-provided checksum files (FFP/MD5/ST5) where those source files are still available, to find other instances of this. Start by cataloguing how many such source checksum files exist and whether provenance per-entry is already tracked anywhere in the schema.
 
 TODO-295: gui_next — surface auto_triage in the TapeMatch Curation screen
 Priority: Medium

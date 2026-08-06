@@ -51,7 +51,7 @@ imports it, lazily, and only when `tools/tapematch/config.yaml`'s `asr.enabled` 
 
 ```
 losslessbob/
-├── cli.py                    # Headless CLI: lookup / search / stats / import / serve
+├── cli.py                    # Headless CLI: lookup / search / stats / import / serve / checksum-audit
 ├── run_backend.py            # Headless entrypoint: Flask only, no GUI (phone/LAN use)
 ├── requirements.txt
 ├── requirements-dev.txt      # Dev-only tools: ruff, pre-commit, pytest (CI installs this; not bundled in builds)
@@ -77,6 +77,7 @@ losslessbob/
 │   ├── version.py            # App VERSION string, read from the VERSION file at APP_ROOT
 │   ├── updater.py            # restart_application(): relaunch the app after an in-place update
 │   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
+│   ├── checksum_provenance.py # Cross-checks checksums vs the uploader files in data/site/files/ (TODO-296)
 │   ├── credentials.py        # OS keyring credential storage (SERVICE_QBT, SERVICE_WTRF)
 │   ├── flat_file.py          # Flat-file update pipeline: discover/download/diff/apply + audit tables
 │   ├── xref_ingest.py        # Site-mirror xref ingest: scan/stage/approve reviewed import path (TODO-252)
@@ -876,6 +877,36 @@ incomplete torrent, corrupt files, mislabelled metadata, etc.). Included in mast
 Index: `idx_lb_problems_lb ON lb_problems(lb_number)`.
 Managed via `GET/POST /api/lb_problems` and `PUT/DELETE /api/lb_problems/<id>`.
 
+### `checksum_disputes` — DB checksums that disagree with their own provenance (TODO-296, MASTER table)
+Findings from `backend/checksum_provenance.py`: places where a checksum stored in
+`checksums` disagrees with the checksum the original uploader published for the same
+file, as read from the mirrored attachments in `data/site/files/`. Distinct from a
+user's local file mismatching the DB — here the DB's own reference value is suspect.
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER NOT NULL | Entry the disputed checksum belongs to |
+| filename | TEXT NOT NULL | As stored in `checksums.filename` (may carry a `Disc 1\` prefix) |
+| chk_type | TEXT NOT NULL | `m` / `f` / `s` |
+| db_checksum | TEXT NOT NULL | What the LB database holds |
+| source_checksum | TEXT NOT NULL | What the uploader's file holds |
+| source_file | TEXT NOT NULL | `LBF-*` attachment basename the source value came from |
+| source_kind | TEXT NOT NULL | `lbdir` \| `uploader` |
+| source_scope | TEXT NOT NULL | `self` (this LB's own manifest) \| `xref` (another LB's identical fileset) |
+| source_suspect | INTEGER NOT NULL | 1 when the source filename says its values are the discarded ones (`…bad.md5.txt`) |
+| kind | TEXT NOT NULL | `db_mismatch` (isolated → corrupted DB value) \| `set_divergence` (whole set differs → different version, not a DB error) |
+| confidence | TEXT NOT NULL | `high` (self, non-suspect source) \| `medium` (xref/suspect source) \| `low` (set divergence) |
+| rows_agree / rows_disagree | INTEGER NOT NULL | Agreement counts for the source file that produced the row |
+| status | TEXT NOT NULL | `open` \| `confirmed` \| `dismissed` — survives re-running the audit |
+| note | TEXT | Curator rationale |
+| detected_at | TIMESTAMP | First detection |
+
+`UNIQUE(lb_number, filename, chk_type, source_checksum, source_file)`; indexes on
+`lb_number`, `source_checksum`, `(status, confidence)`.
+Populated by `lb checksum-audit`; read via `GET /api/checksum-disputes`, triaged via
+`PUT /api/checksum-disputes/<id>`. `lookup_checksums()` uses the `source_checksum`
+index to annotate a NOT FOUND that a known-bad DB value explains.
+
 ### `curated_lists` / `curated_list_entries` — Curator "best of" picks (TODO-181, MASTER tables)
 Named lists of curator-picked best LB recordings (e.g. carbonbit, 10haaf), imported via
 `tools/import_curated_lists.py` from `data/lists/`. Routes: `GET/POST /api/curated_lists`,
@@ -1473,6 +1504,8 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 ### LB Problems (known issues with LB entries)
 | Method | Route | Description |
 |--------|-------|-------------|
+| GET | `/api/checksum-disputes` | List `checksum_disputes` rows. Query params: `lb=<int>`, `status=<str>` (default `open`, empty for any), `all=1` to include low-confidence set divergences. Returns the full rows. |
+| PUT | `/api/checksum-disputes/<id>` | **Curator-only.** Record a verdict. Body: `{status: open\|confirmed\|dismissed, note?}`. Returns `{ok, id, status}`. |
 | GET | `/api/lb_problems` | List all lb_problems rows. Optional query param `lb=<int>` to filter to one LB. Returns `[{id, lb_number, notes, added}]`. |
 | POST | `/api/lb_problems` | **Curator-only.** Add a problem note. Body: `{lb_number, notes, added?}`. Returns `{ok, id, lb_number}`. |
 | PUT | `/api/lb_problems/<id>` | **Curator-only.** Update notes on a row. Body: `{notes}`. Returns `{ok, id}`. |

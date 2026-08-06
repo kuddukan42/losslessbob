@@ -478,6 +478,18 @@ def _build_parser(klass=argparse.ArgumentParser) -> argparse.ArgumentParser:
                                help="Verify local audio files against on-disk checksum files")
     p_verify.add_argument("dirs", nargs="+")
 
+    p_audit = sub.add_parser(
+        "checksum-audit",
+        help="Cross-check DB checksums against the uploader files in data/site/files/")
+    p_audit.add_argument("--lb", type=int, action="append", metavar="N",
+                         help="Restrict to this LB number (repeatable)")
+    p_audit.add_argument("--include-lbdir", action="store_true",
+                         help="Also re-check the lbdir manifests the DB was built from")
+    p_audit.add_argument("--list", action="store_true",
+                         help="List stored disputes instead of re-running the audit")
+    p_audit.add_argument("--all", action="store_true",
+                         help="With --list: include low-confidence set divergences")
+
     p_missing = sub.add_parser("missing", help="List entries missing checksums or metadata")
     p_missing.add_argument("--field", default="checksums",
                            choices=["checksums", "metadata"])
@@ -919,6 +931,45 @@ def _execute(args: argparse.Namespace, base_url: str) -> None:
             print(json.dumps(r, indent=2))
         else:
             _print_verify(r.get("results", []))
+
+    elif args.command == "checksum-audit":
+        # Local operation: reads the attachment mirror and the DB directly, no server.
+        from backend import checksum_provenance as _prov
+        from backend import db as _database
+        conn = _database.get_connection()
+        if args.list:
+            rows = _prov.get_disputes(
+                conn,
+                lb_number=args.lb[0] if args.lb else None,
+                kind=None if args.all else "db_mismatch",
+                confidence=None if args.all else ("high", "medium"),
+            )
+            if args.json:
+                print(json.dumps(rows, indent=2))
+            else:
+                for r in rows:
+                    print(f"LB-{r['lb_number']:05d}  {r['confidence']:<6} {r['chk_type']}  "
+                          f"{r['filename'][:44]:<44} db={r['db_checksum']} "
+                          f"src={r['source_checksum']}  {r['source_file']}")
+                print(f"{len(rows)} dispute(s)")
+        else:
+            def _progress(done, total):
+                print(f"\r  {done}/{total} attachments", end="", flush=True)
+            summary = _prov.run_audit(
+                conn, lb_numbers=args.lb, include_lbdir=args.include_lbdir,
+                progress=None if args.json else _progress,
+            )
+            if not args.json:
+                print()
+            if args.json:
+                print(json.dumps(summary, indent=2))
+            else:
+                print(f"scanned={summary['files_scanned']} "
+                      f"disputes={summary['disputes']} "
+                      f"db_mismatch={summary['db_mismatch']} "
+                      f"set_divergence={summary['set_divergence']} "
+                      f"high={summary['high']} medium={summary['medium']} "
+                      f"low={summary['low']} lbs={summary['lb_numbers']}")
 
     elif args.command == "missing":
         if args.field == "checksums":
