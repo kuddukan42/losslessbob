@@ -1,3 +1,39 @@
+[2026-08-05] — feat(db): close TODO-296, detect LB-database checksums that contradict their own provenance
+Added: backend/checksum_provenance.py — cross-checks the checksums table against the uploader
+  checksum files already mirrored in data/site/files/, without touching a collection folder.
+  classify_source() sorts every LBF-* attachment into lbdir vs uploader, self vs xref, and marks
+  names whose own words say their values are the discarded ones (bd00-09-23bad.md5.txt);
+  iter_source_rows() re-reads it via parse_lbdir_file (handles both the sectioned lbdir layout and
+  a flat .ffp/.md5/.st5); audit_attachment() compares by (lb, basename, chk_type) against the set
+  of hashes the DB holds for that key, so an LB legitimately carrying two filesets is not flagged.
+  The critical split: a source agreeing on >=3 rows and disagreeing on <=25% is kind=db_mismatch
+  (one corrupted DB value); a source disagreeing across the whole set is kind=set_divergence — a
+  remaster filed under the same LB reusing track filenames, informational only. Confidence is high
+  for a self, non-suspect source and medium for xref/suspect ones. Findings persist in the new
+  MASTER table checksum_disputes with a curator verdict (open/confirmed/dismissed) that re-running
+  the audit preserves.
+Changed: backend/db.py — checksum_disputes added to MASTER_TABLES and created by init_db();
+  lookup_checksums() now looks every remaining NOT FOUND up in the dispute index by
+  source_checksum and attaches dispute{lb_number, db_checksum, source_file, confidence, status,
+  detail_url}, plus a `disputed` count in the summary. Status strings are unchanged — the item is
+  still unmatched against the DB, the caller just learns why. This is the recovery path for the
+  reported failure: the user's audio is fine, its hash is exactly what the uploader published, and
+  only the DB's transcription is wrong.
+Added: backend/app.py — GET /api/checksum-disputes (filter by lb/status, all=1 for the low-
+  confidence divergences), PUT /api/checksum-disputes/<id> (curator-only verdict).
+Added: cli.py — `lb checksum-audit [--lb N] [--include-lbdir] [--list] [--all]`, a local pass
+  needing no server; 62,184 attachments in ~8s.
+Added: tests/test_checksum_provenance.py — 22 tests covering classification, the isolated-vs-
+  divergent split, MIN_AGREE, Windows subdirectory prefixes in checksums.filename, multi-fileset
+  LBs, verdict persistence across re-runs, and the rescue index.
+Catalogue (the TODO asked for it first): 98,718 attachments over 15,205 LBs — 20,533 lbdir,
+  64,021 other txt, 12,414 DFF reports. 34,502 non-lbdir files carry 744k hash rows over 14,357
+  LBs, so most of the library has an independent witness. Provenance was tracked nowhere in the
+  schema before this. First pass: 287 db_mismatch (188 high / 99 medium), 9,627 set_divergence;
+  78 high-confidence source values appear nowhere in checksums, so those are live false NOT FOUNDs
+  today. LB-15933 produced no dispute — its lbdir, its .ffp attachment and the DB all agree on
+  d1t14, so that report needs evidence from outside the mirror. Triage + GUI surfacing: TODO-299.
+
 [2026-08-05] — fix(backend): close BUG-313, file integrity indexed files outside the collection
 Fixed: backend/file_integrity.py — scan_mount() inventoried every file under a mount root and
   resolved the owning LB only after hashing, so files belonging to no collection folder were

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useQueryClient } from '@tanstack/react-query'
 import { Button, Pill } from '../components'
 
 const BASE = window.api.flaskBase
@@ -981,6 +982,8 @@ export function ScreenDbEditor() {
   const [integrityStats, setIntegrityStats] = useState<IntegrityStats | null>(null)
   const [integrityCollapsed, setIntegrityCollapsed] = useState(false)
 
+  const queryClient = useQueryClient()
+
   // Aliases panel
   const [aliases, setAliases]       = useState<LbAlias[]>([])
   const [isCurator, setIsCurator]   = useState(false)
@@ -1464,6 +1467,7 @@ export function ScreenDbEditor() {
             })
           )
           loadAliases()
+          queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
         }
       })
       .catch((e) => setAliasStatus(`Error: ${e}`))
@@ -1479,6 +1483,7 @@ export function ScreenDbEditor() {
         if (data.ok) {
           setAliasStatus(t('dbeditor.aliases.removed', { lb: String(aliasLb).padStart(5, '0') }))
           loadAliases()
+          queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
         } else {
           setAliasStatus(`Error: ${data.error || 'unknown'}`)
         }

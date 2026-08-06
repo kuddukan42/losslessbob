@@ -65,6 +65,7 @@ MASTER_TABLES = (
     "curated_lists",
     "curated_list_entries",
     "taper_confirmations",
+    "checksum_disputes",
 )
 # Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
 # `entries` via triggers. It is NOT copied directly during export/import; the
@@ -2398,6 +2399,11 @@ def init_db(db_path=None):
     with _write_lock:
         conn = get_connection(db_path)
         conn.executescript(SCHEMA_SQL)
+        # checksum_disputes lives with its module (backend.checksum_provenance) so the
+        # DDL sits next to the code that interprets it; imported here so a fresh DB
+        # still gets the table.
+        from backend import checksum_provenance
+        checksum_provenance.ensure_schema(conn)
         cols = [r[1] for r in conn.execute("PRAGMA table_info(entries)").fetchall()]
         if "status" not in cols:
             conn.execute("ALTER TABLE entries ADD COLUMN status TEXT DEFAULT 'ok'")
@@ -3199,6 +3205,35 @@ def lookup_checksums(parsed_entries, db_path=None):
             for item in fully_matched:
                 item["status"] = "MATCHED"
 
+    # Provenance rescue (TODO-296): a NOT FOUND can mean the user's file is fine and
+    # the DB's own reference value is wrong. checksum_disputes records exactly those
+    # cases — DB value vs the original uploader's checksum file. Annotate rather than
+    # re-status, so the item still counts as unmatched against the DB while the caller
+    # can show *why* it didn't match.
+    _not_found = [
+        d for d in detail
+        if d["status"] == "NOT FOUND" and not d.get("ignored")
+    ]
+    if _not_found:
+        from backend import checksum_provenance
+        try:
+            _disputes = checksum_provenance.lookup_disputed_checksums(
+                conn, [d["checksum"] for d in _not_found]
+            )
+        except sqlite3.Error:
+            _disputes = {}
+        for item in _not_found:
+            dispute = _disputes.get(item["checksum"].lower())
+            if dispute:
+                item["dispute"] = {
+                    "lb_number": dispute["lb_number"],
+                    "db_checksum": dispute["db_checksum"],
+                    "source_file": dispute["source_file"],
+                    "confidence": dispute["confidence"],
+                    "status": dispute["status"],
+                    "detail_url": detail_url(dispute["lb_number"]),
+                }
+
     # Build summary per LB
     lb_summary = {}
     unmatched_count = 0
@@ -3284,6 +3319,7 @@ def lookup_checksums(parsed_entries, db_path=None):
         "matched": sum(1 for d in detail if d["lb_number"] is not None),
         "unmatched": unmatched_count,
         "missing_from_db": unmatched_count,
+        "disputed": sum(1 for d in detail if d.get("dispute")),
         "lb_numbers_found": list(lb_summary.keys()),
         "lb_summary": list(lb_summary.values()),
     }
