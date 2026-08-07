@@ -1023,9 +1023,72 @@ gated utterances per source on rough AUD. Defaults raised accordingly
 **Before assigning any weight** (the calibration study this section still owes):
 1. Enable `asr` on a labeled multi-source date set, pull the `banter_score`
    distribution split by frozen-set truth label, exactly as §0 requires.
-2. Score the denominator: `min(n_a, n_b, cap)` makes a 2-of-2 pair score like
-   an 8-of-8 pair. `banter_n_matched` is persisted so this can be re-derived
-   without re-transcribing — decide whether the shipped scalar should be
-   matched-count-aware before a threshold is set.
+2. ~~Score the denominator~~ **DONE 2026-08-07 — see below.**
 3. Check `banter_offset_sec` against each pair's alignment lag. A high score at
    an implausible offset is coincidence, and that cross-check is free.
+
+### Step 2 — the denominator, decided 2026-08-07 (TODO-293)
+
+**Correction to this section's premise.** Step 2 was written as re-derivable
+"without re-transcribing" from persisted `banter_n_matched`. It is not:
+`observations.db` holds 33,103 pairs and **zero** non-NULL `banter_score`, and
+the `transcripts` table is empty. Nothing has ever been persisted, because
+`asr.enabled: false` means no session writes it — the 2003-05-11 figures in the
+table above came from an ad hoc dev run that was never archived. The decision
+below is therefore analytic, taken against the scoring function itself
+(`asr.banter_score`), not against a labeled distribution. It settles the *form*
+of the scalar; step 1 still owes the threshold and confirms the cap.
+
+**Two defects in `sum(sim) / min(n_a, n_b, cap)`**, both reproduced against the
+real function with synthetic utterances (cap 4, evidence held at 2 matches):
+
+| yield (n_a=n_b) | matched | `witnesses` (new) | `rate` (old) |
+|---|---|---|---|
+| 2 | 2 | 0.500 | **1.000** |
+| 3 | 2 | 0.500 | 0.667 |
+| 4 | 2 | 0.500 | 0.500 |
+| 8 | 2 | 0.500 | 0.500 |
+
+1. **Yield-dependent, which is disqualifying.** The denominator is assembled
+   from tunable ASR knobs — `max_gaps`, `max_total_sec`, model size, both
+   confidence gates. So `banter_score` is not a stable property of two
+   recordings: it moves when unrelated config moves. Holding the real evidence
+   fixed at 2 corroborating utterances, it falls 1.000 → 0.500 as yield rises
+   2 → 4. Raising yield is this signal's explicitly stated next move ("the known
+   limiter is utterance YIELD, not compute" — larger model, more `max_gaps`), so
+   under `rate` **every planned improvement depresses true pairs** and
+   invalidates any threshold calibrated beforehand.
+2. **Evidence-blind.** With `min(n_a, n_b, cap)`, a 2-of-2 pair and an 8-of-8
+   pair both score 1.000, though eight independent utterances agreeing on one
+   offset is far stronger evidence than two.
+
+**Decision: matched-count-aware, with a yield-independent denominator.**
+`score_mode: witnesses` (new default) returns `sum(sim) / score_denominator_cap`
+— a saturating count of corroborating witnesses. Unmatched utterances no longer
+count against a pair, which is right on the merits too: a non-match is
+*missingness* (the other side's window missed that moment, or the boundary
+problem decoded it differently — "Judge Rossell" vs "God, the sun", Dice 0.33),
+not disagreement. Disagreement is already handled by the offset cluster.
+
+`score_mode: rate` retains the exact old scalar, and **both are always computed
+and persisted** (`pairs.banter_score` = the selected one, new
+`pairs.banter_score_rate` = always `rate`; both also land in `results.json` via
+`banter_pairs`). The expensive step is transcription, not arithmetic, so step 1
+gets both distributions over an identical match set from one pass and can settle
+the choice empirically rather than taking this analysis on faith.
+
+`score_denominator_cap` 8 → **4**, and its meaning changes: under `rate` it was
+only a ceiling on `min(n_a, n_b)`; under `witnesses` it sets the entire scale.
+At 8, with observed yield of 2–9 gated utterances per source and matched a
+subset of that, every real pair would compress into ~[0.25, 0.5] and 1.0 would
+be unreachable. At 4: 2 matches → 0.50, 3 → 0.75, 4+ → 1.0. **Provisional** —
+step 1's labeled distribution confirms or moves it. Note the two scalars
+coincide once yield ≥ cap; they diverge only in the thin-yield regime, which is
+the observed one.
+
+Unchanged: the `min_corroborating: 2` floor (still returns 0.0, not a small
+positive), the offset cluster, and the one-corroboration-per-utterance dedup.
+No `addon_links` rule reads `banter_score`, so this change is free now and would
+not have been after a rule shipped. Pinned by five tests in `tests/test_asr.py`
+("denominator: TODO-293 step 2"), including one that re-asserts the old scalar's
+yield penalty so it cannot be quietly reinstated.

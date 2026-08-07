@@ -252,12 +252,14 @@ def open_obs_db() -> sqlite3.Connection:
         # overlap). Dark-launched: populated when config asr.enabled is on, but
         # no verdict rule reads it. NULL = not transcribed or too few
         # utterances; 0.0 = transcribed with no corroborated shared banter.
-        # banter_n_matched / banter_offset_sec are diagnostics, not evidence:
-        # the score alone cannot be calibrated, because 2-of-2 matched
-        # utterances and 8-of-8 land at very different confidences for the same
-        # number. banter_offset_sec should track the pair's alignment lag — a
-        # score with an implausible offset is a coincidence, not a match.
-        ("banter_score", "REAL"),
+        # banter_n_matched / banter_offset_sec are diagnostics, not evidence.
+        # banter_offset_sec should track the pair's alignment lag — a score with
+        # an implausible offset is a coincidence, not a match.
+        # banter_score carries whichever scalar asr.score_mode selects
+        # ('witnesses' by default, TODO-293 step 2); banter_score_rate always
+        # carries the older yield-normalised scalar, so the calibration study
+        # gets both distributions from a single transcription pass.
+        ("banter_score", "REAL"), ("banter_score_rate", "REAL"),
         ("banter_n_utts_a", "INTEGER"), ("banter_n_utts_b", "INTEGER"),
         ("banter_n_matched", "INTEGER"), ("banter_offset_sec", "REAL"),
     ):
@@ -925,11 +927,11 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
                 windowed_frac, hiss_frac, hiss_median, fp_score, fp_triplet_score,
                 flaw_match_score, flaw_n_events_a, flaw_n_events_b, spec_stationarity,
                 env_corr,
-                banter_score, banter_n_utts_a, banter_n_utts_b,
+                banter_score, banter_score_rate, banter_n_utts_a, banter_n_utts_b,
                 banter_n_matched, banter_offset_sec,
                 nyquist_capped_a, nyquist_capped_b,
                 lb_says_same, lb_relation_text, human_judgment, human_notes, run_at)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (run_id, date_iso, lb_a, lb_b, na, nb,
              corr, "same_family" if same_family else "different_family",
              sa["family_id"], sb["family_id"],
@@ -943,7 +945,7 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
              windowed_frac, hiss_frac_v, hiss_median_v, fp_score_v, fp_triplet_v,
              flaw_score_v, flaw_n_a, flaw_n_b, spec_stationarity_v,
              env_corr_v,
-             banter_score_v, banter_n_a, banter_n_b,
+             banter_score_v, bant.get("score_rate"), banter_n_a, banter_n_b,
              bant.get("n_matched"), bant.get("offset_sec"),
              nq_a, nq_b,
              lb_says_same, lb_rel, None, None, run_at),

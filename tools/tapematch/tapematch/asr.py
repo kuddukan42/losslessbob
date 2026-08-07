@@ -448,6 +448,24 @@ def banter_score(utts_a: list[Utterance], utts_b: list[Utterance], cfg: dict,
     ``ratio`` lets the caller pass the pair's known speed ratio so a 1 %-slow
     tape's linearly stretched timestamps still cluster.
 
+    **Denominator (TODO-293 step 2, decided 2026-08-07).** Two scalars are
+    computed from the same matches and ``score_mode`` selects which one is
+    returned:
+
+    * ``witnesses`` (default) — ``sum(sim) / score_denominator_cap``. A count
+      of corroborating witnesses, saturating at the cap.
+    * ``rate`` — ``sum(sim) / min(n_a, n_b, cap)``, the original scalar, kept
+      so the calibration study can compare both from one transcription pass.
+
+    ``rate`` was demoted because its denominator is built from *tunable ASR
+    knobs* (``max_gaps``, ``max_total_sec``, model size, the confidence
+    gates), so it is not a stable property of the two recordings: holding the
+    real evidence fixed at 2 corroborating utterances, it falls 1.000 → 0.250
+    as per-source yield rises 2 → 8. Since raising yield is TODO-293's stated
+    next move, every planned improvement would have depressed the score on
+    true pairs and invalidated any threshold set beforehand. ``rate`` is also
+    evidence-blind: 2-of-2 and 8-of-8 both score 1.000.
+
     Args:
         utts_a: Side A utterances (trimmed-performance clock).
         utts_b: Side B utterances (same clock).
@@ -459,17 +477,20 @@ def banter_score(utts_a: list[Utterance], utts_b: list[Utterance], cfg: dict,
         unavailable — either side had fewer than ``min_utterances`` usable
         utterances — and a float in [0, 1] otherwise, where 0.0 means
         "computed, no corroborated banter". *detail* carries the diagnostic
-        fields (``n_a``, ``n_b``, ``n_matched``, ``offset_sec``) for the run
+        fields (``n_a``, ``n_b``, ``n_matched``, ``offset_sec``) plus both
+        candidate scalars (``score_witnesses``, ``score_rate``) for the run
         JSON and the calibration study.
     """
     min_utts = int(cfg.get("min_utterances", 2))
     t_sim = float(cfg.get("min_similarity", 0.5))
     tol = float(cfg.get("offset_tolerance_sec", 5.0))
     min_corrob = int(cfg.get("min_corroborating", 2))
-    denom_cap = int(cfg.get("score_denominator_cap", 8))
+    denom_cap = int(cfg.get("score_denominator_cap", 4))
+    mode = str(cfg.get("score_mode", "witnesses"))
 
     detail: dict = {"n_a": len(utts_a), "n_b": len(utts_b),
-                    "n_matched": 0, "offset_sec": None}
+                    "n_matched": 0, "offset_sec": None,
+                    "score_witnesses": None, "score_rate": None}
     if len(utts_a) < min_utts or len(utts_b) < min_utts:
         return None, detail
 
@@ -483,6 +504,7 @@ def banter_score(utts_a: list[Utterance], utts_b: list[Utterance], cfg: dict,
             if sim >= t_sim:
                 candidates.append((ub.t_start - ratio * ua.t_start, sim, ia, ib))
     if not candidates:
+        detail["score_witnesses"] = detail["score_rate"] = 0.0
         return 0.0, detail
 
     # Largest set of candidates sharing one offset (within tol). O(n^2) over
@@ -510,11 +532,18 @@ def banter_score(utts_a: list[Utterance], utts_b: list[Utterance], cfg: dict,
     if len(matches) < min_corrob:
         # Single-utterance agreement is noise (spec §3): report no evidence
         # rather than a small positive score.
+        detail["score_witnesses"] = detail["score_rate"] = 0.0
         return 0.0, detail
 
-    denom = min(len(utts_a), len(utts_b), denom_cap)
-    score = sum(m[1] for m in matches) / float(denom)
-    return float(min(1.0, score)), detail
+    sim_sum = sum(m[1] for m in matches)
+    # Both scalars are always computed, because the expensive step is the
+    # transcription, not the arithmetic: one ASR pass hands the TODO-293
+    # calibration study both distributions over the identical match set.
+    witnesses = min(1.0, sim_sum / float(denom_cap))
+    rate = min(1.0, sim_sum / float(min(len(utts_a), len(utts_b), denom_cap)))
+    detail["score_witnesses"] = round(witnesses, 4)
+    detail["score_rate"] = round(rate, 4)
+    return float(rate if mode == "rate" else witnesses), detail
 
 
 def transcribe_source(mono: np.ndarray, sr: int, cfg: dict,

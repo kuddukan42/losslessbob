@@ -1,3 +1,33 @@
+[2026-08-07] — feat(scraper): TODO-293 step 2 — banter_score is now matched-count-aware
+Decided: the §3 banter/ASR scalar's denominator. Step 2's stated premise was false — it assumed
+  banter_n_matched was persisted and the question re-derivable without re-transcribing, but
+  observations.db holds 33,103 pairs with ZERO non-NULL banter_score and an empty transcripts
+  table (asr.enabled:false means no session ever writes it; the 2003-05-11 figures came from an
+  unarchived dev run). Decision taken analytically against asr.banter_score instead.
+Changed: tools/tapematch/tapematch/asr.py — new `score_mode`. Default `witnesses` =
+  sum(sim)/score_denominator_cap, a saturating count of corroborating witnesses. `rate` keeps the
+  old sum(sim)/min(n_a,n_b,cap). rate was demoted for two defects, both reproduced against the
+  real function: (1) its denominator is assembled from tunable ASR knobs (max_gaps, max_total_sec,
+  model size, both confidence gates), so with evidence held fixed at 2 corroborations the score
+  falls 1.000 -> 0.500 as yield rises 2 -> 4 — and raising yield is this signal's own stated next
+  move, so every planned improvement would have depressed true pairs and invalidated any threshold
+  set beforehand; (2) evidence-blind — 2-of-2 and 8-of-8 both scored 1.000.
+Changed: both scalars are always computed and persisted, because the expensive step is
+  transcription, not arithmetic: pairs.banter_score carries the selected one, new
+  pairs.banter_score_rate always carries rate (idempotent ALTER, tapematch_session.py), and both
+  reach results.json via banter_pairs. The step-1 distribution study now gets both curves over an
+  identical match set from a single ASR pass.
+Changed: config.yaml — score_denominator_cap 8 -> 4. Its meaning changed: under rate it was only a
+  ceiling on min(n_a,n_b); under witnesses it sets the whole scale, and at 8 every real pair would
+  compress into ~[0.25,0.5] with 1.0 unreachable (observed yield is 2-9 gated utterances/source,
+  matched a subset). At 4: 2 matches -> 0.50, 3 -> 0.75, 4+ -> 1.0. PROVISIONAL, step 1 confirms.
+Unchanged: min_corroborating floor, offset clustering, per-utterance dedup. Signal stays dark
+  (asr.enabled: false, no addon_links rule reads it) — which is why the scalar was free to change
+  now and would not have been after a rule shipped.
+Tests: 5 new in tools/tapematch/tests/test_asr.py, incl. one re-asserting rate's yield penalty so
+  it cannot be quietly reinstated. 45 pass in test_asr.py; 24 pass across the persistence,
+  migration, emb_live and rerun-queue suites.
+
 [2026-08-07] — docs: recover BUG-278 from BUGS.md, lost by a bad ledger edit
 Fixed: BUGS.md was empty, but that was only mostly correct. BUG-278 (tapematch rule_d never fires
   live) was never closed — it was silently dropped. In b1ba0aa3 the BUG-309 block was inserted over
