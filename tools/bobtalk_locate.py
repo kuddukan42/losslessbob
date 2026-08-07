@@ -123,8 +123,8 @@ def detect_device() -> str:
     return "cpu"
 
 
-def _asr_cfg(model: str, threads: int, device: str,
-             compute_type: str | None = None) -> tuple[dict, list[str], str]:
+def build_asr_cfg(model: str, threads: int, device: str,
+                  compute_type: str | None = None) -> tuple[dict, list[str], str]:
     """Build the ASR config block and audio extensions for a locate pass.
 
     Args:
@@ -347,7 +347,7 @@ def main() -> None:
     if args.rescore and args.no_cache:
         p.error("--rescore reads the cache; it cannot be combined with --no-cache")
 
-    cfg, exts, device = _asr_cfg(args.model, args.threads, args.device, args.compute_type)
+    cfg, exts, device = build_asr_cfg(args.model, args.threads, args.device, args.compute_type)
     if not args.rescore:
         log.info("decoding with %s on %s (%s)", args.model, device, cfg["compute_type"])
     conn = sqlite3.connect(str(bpaths.DB_PATH))
