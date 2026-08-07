@@ -1,3 +1,36 @@
+[2026-08-07] — feat(backend): TODO-303 backend — locate Olof's bobtalk in our audio
+Added: backend/bobtalk.py. Parses an olof_events.bobtalk block into matchable quotes (dropping the
+  catalogue/release lines that bleed into that field), scores each quote against decoded audio
+  windows by Dice overlap, and decides confidence by SEPARATION rather than magnitude: a match must
+  clear MIN_DICE 0.30 *and* beat the runner-up window by MIN_RATIO 2.0. That rule comes straight
+  from the PoC, where every true match beat its runner-up 3-6x while every failure tied it. No ASR
+  dependency by design — it takes token sets, so the logic is unit-testable without faster-whisper.
+Added: bobtalk_locations table (lb_number, event_id, quote_index, t_start, dice, runner_up,
+  confident, model), idempotent CREATE + PRAGMA-checked ALTER. Stores a REFERENCE, never the text:
+  quote_index indexes into the olof_events block, which is joined back at read time, so the row is
+  a timestamp and edits to Olof's text flow through. A re-run replaces a recording's rows rather
+  than appending, so re-locating with a better model leaves no stale timestamps.
+Added: tools/bobtalk_locate.py — the ASR half. Decodes one window around EVERY track boundary and
+  lets each quote pick its own; it deliberately does not infer the window from setlist position,
+  which drifts and failed in both directions on the PoC. Requires large-v3 + vad_filter:False.
+Added: GET /api/bobtalk/<lb> (low-confidence matches excluded unless ?all=1, so an unresolved match
+  degrades to "no play button" rather than one that jumps to the wrong moment) and
+  POST /api/bobtalk/clip, which reuses the existing A/B clip cache and its range-capable
+  /api/ab_clip/<file> serving route.
+Fixed: backend/ab_clips.py — _ffprobe_duration now falls back to a decode-to-null probe when the
+  container reports no duration. SHN carries no frame-count header, so every .shn track previously
+  measured 0.0s, which made every offset look out of range. FLAC always reports duration and never
+  reaches the new path. Also generalised folder_flac_durations into folder_audio_durations(glob)
+  so non-FLAC folders are reachable; the FLAC entry point is unchanged and delegates.
+Note: bobtalk playback resolves tracks through tapematch's ingest.list_tracks ordering (rglob,
+  directories first, natural sort within name). A stored t_start is an offset into that exact
+  concatenation, and plain glob would miss d1/-style disc layouts entirely.
+Tests: 18 new in tests/test_bobtalk.py (parsing, metadata-bleed rejection, the separation rule,
+  tie-means-not-confident, re-save replacement, reference-not-copy semantics). Full backend suite
+  1,144 passed. Verified live: clip extraction from a .shn folder produced a playable WAV.
+Remaining for TODO-303: the GUI half (render the bobtalk block with a per-quote play button) and
+  a decision on how widely to run the locate pass.
+
 [2026-08-07] — docs: file TODO-303, locate Olof's bobtalk in our audio (PoC passed)
 Added: TODO-303. tj's idea, and it inverts TODO-293's failed approach — stop asking ASR to PRODUCE
   transcripts, use Olof's curated bobtalk as the target and use ASR only to LOCATE it. Fuzzy-matching
