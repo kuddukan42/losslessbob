@@ -1,3 +1,7 @@
+[2026-08-06] — docs: close TODO-274, breadcrumbs/global search removal confirmed as final (won't-do)
+Closed: TODO-274 (won't-do — tj confirmed no relocation wanted for the breadcrumb trail or global
+  search field removed from AppShell's Topbar; the code change from that earlier session stands as-is).
+
 [2026-08-06] — fix(backend): close TODO-297, reconcile moved/renamed collection files by hash
 Changed: backend/db.py: add file_inventory.xxh3 partial index (ok rows), file_integrity_scans.files_moved
   column + migration, find_ok_inventory_by_xxh3() batch lookup helper.

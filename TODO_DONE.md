@@ -2,6 +2,22 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-274: gui_next — Topbar retired (breadcrumbs + global search removed from AppShell)
+Priority: Low
+Status: Done
+Added: 2026-07-27
+Closed: 2026-08-06
+Description: Reverses the TODO-179 won't-do (2026-07-14), whose closure note said to re-file if the vertical-space itch returned. It returned: the Topbar component was removed in a session that ended without bookkeeping, and this task records the change retroactively.
+
+Change as found in the working tree: gui_next/src/renderer/src/components/AppShell.tsx -145 lines, removing the Topbar component (52px header) and its deriveCrumbs() helper, i.e. the breadcrumb trail, the per-screen actions slot, and the global search field. The appShell.search locale key was removed from all six locale files (en/de/fr/es/it/nl), which remain at 1,725 keys each -- parity intact, and no /gui-next-i18n run is needed since this was a key removal, not an addition.
+
+Verified 2026-07-27 before committing: no dangling references to Topbar, deriveCrumbs, or appShell.search anywhere under gui_next/src; gui-check PASS (node types 0 errors, renderer types 0 errors, production build clean).
+
+OPEN QUESTION FOR TJ -- TODO-179 explicitly required 'a concrete decision on where breadcrumbs/per-screen actions move' BEFORE removal, and that decision is not recorded anywhere. The removal appears deliberate and is self-consistent, but two affordances are simply gone rather than relocated: (1) the breadcrumb trail, which was the only visible indicator of nesting depth for screens reached via drill-down; (2) the global search field ('Find LB#, folder, location...'), which had no other entry point in the shell. If either is meant to reappear inside individual screen headers, that work is not done. Close this task if the loss is intended; otherwise it is the tracking item for relocating them.
+
+Status left Open deliberately -- the code change is shipped, the design decision is not.
+Won't-do: breadcrumbs and global search not wanted back; removal is intentional and final. No relocation work needed.
+
 TODO-297: file_integrity: reconcile moved/renamed files by hash instead of missing+new
 Priority: Medium
 Status: Done
