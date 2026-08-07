@@ -53,6 +53,25 @@ def test_parse_indexes_are_contiguous_over_retained_quotes():
     assert [q.index for q in bobtalk.parse_bobtalk(block)] == [0, 1]
 
 
+def test_parse_keeps_speech_containing_a_year_or_number():
+    """Regression: an IGNORECASE catalogue pattern ate ordinary speech.
+
+    "<2+ letters><number>" describes a catalogue code only when the letters are
+    upper-case. Matched case-insensitively it also describes "In 1963", which
+    silently discarded the strongest match on the 1978-12-16 PoC.
+    """
+    for line in ("Thank you, thank you. In 1963, I was living in a small room",
+                 "We drove all the way down highway 61 to get here tonight now",
+                 "There were about 200 people in that room on that evening"):
+        assert bobtalk.is_metadata_line(line) is False
+        assert len(bobtalk.parse_bobtalk(line)) == 1
+
+
+def test_parse_still_drops_uppercase_catalogue_codes():
+    assert bobtalk.is_metadata_line("Some Release Title WMM 58/59.") is True
+    assert bobtalk.is_metadata_line("Disc 2 of the set") is True
+
+
 def test_parse_drops_quotes_with_too_few_content_tokens():
     # Long enough in characters, but almost all stopwords.
     assert bobtalk.parse_bobtalk("and the it is to be of that we in on at as so") == []
