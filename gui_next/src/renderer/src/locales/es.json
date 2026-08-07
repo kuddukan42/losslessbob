@@ -1696,6 +1696,11 @@
       "toastPdfFallback": "El PDF no está disponible fuera de la aplicación; en su lugar, se descarga el HTML.",
       "toastAmbiguous": "Esta fecha tiene más de un evento: ábrela desde la Biblioteca para aclarar la ambigüedad.",
       "toastFailed": "Error al exportar el expediente"
+    },
+    "bobtalk": {
+      "label": "BobTalk en esta grabación",
+      "playAt": "Reproducir desde {{clock}}",
+      "clipFailed": "clip no disponible"
     }
   },
   "tapematch": {

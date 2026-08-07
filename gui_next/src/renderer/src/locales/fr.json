@@ -1696,6 +1696,11 @@
       "toastPdfFallback": "PDF indisponible en dehors de l'application — téléchargement au format HTML à la place",
       "toastAmbiguous": "Cette date comporte plusieurs concerts — ouvrez-la depuis la Bibliothèque pour lever toute ambiguïté",
       "toastFailed": "Échec de l'exportation du dossier"
+    },
+    "bobtalk": {
+      "label": "BobTalk dans cet enregistrement",
+      "playAt": "Lecture à partir de {{clock}}",
+      "clipFailed": "Extrait indisponible"
     }
   },
   "tapematch": {

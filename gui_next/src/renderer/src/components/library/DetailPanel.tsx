@@ -1277,6 +1277,114 @@ function OlofEventCard({ ev }: { ev: OlofEventRow }) {
   )
 }
 
+// TODO-303: Olof's bobtalk quotes located inside THIS recording, each playable.
+//
+// The list is rendered from GET /api/bobtalk/<lb>, which returns each located
+// quote's text alongside its timestamp. The renderer deliberately does not
+// re-split ev.bobtalk itself: quote_index is assigned by backend.bobtalk's
+// parser, and a second, drifting implementation here would attach play buttons
+// to the wrong lines. The full block still renders above (OlofEventCard) — this
+// zone is additive, and typically only about half of an event's quotes get
+// located, so a quote without a button is the normal case, not a failure.
+interface BobtalkLocation {
+  event_id: number
+  quote_index: number
+  text: string
+  t_start: number
+  dice: number
+  runner_up: number
+  confident: boolean
+}
+
+function fmtClock(sec: number): string {
+  const s = Math.max(0, Math.round(sec))
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
+}
+
+function BobtalkQuoteRow({ loc, lbNumber }: { loc: BobtalkLocation; lbNumber: number }) {
+  const { t } = useTranslation()
+  const [clipUrl, setClipUrl] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false)
+  const [failed, setFailed] = useState(false)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+
+  // The clip is cut on demand rather than pre-rendered for every located quote:
+  // extraction is cheap, and the A/B cache prunes itself.
+  async function play() {
+    if (clipUrl) { void audioRef.current?.play(); return }
+    setLoading(true); setFailed(false)
+    try {
+      const r = await fetch(`${BASE}/api/bobtalk/clip`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ lb: lbNumber, t_start: loc.t_start }),
+      })
+      const j = await r.json()
+      if (!r.ok || !j.url) { setFailed(true); return }
+      setClipUrl(j.url)
+    } catch {
+      setFailed(true)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginBottom: 10 }}>
+      <Button
+        size="sm"
+        onClick={play}
+        disabled={loading}
+        title={t('library.bobtalk.playAt', { clock: fmtClock(loc.t_start) })}
+      >
+        {loading ? '…' : '▶'}
+      </Button>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{
+          fontSize: 'var(--t-meta)', fontStyle: 'italic',
+          color: 'var(--lbb-fg2)', lineHeight: 1.5,
+        }}>
+          {loc.text}
+        </div>
+        <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
+          {fmtClock(loc.t_start)}
+          {failed && ` · ${t('library.bobtalk.clipFailed')}`}
+        </div>
+      </div>
+      {clipUrl && (
+        <audio
+          ref={audioRef} src={`${BASE}${clipUrl}`} preload="auto" autoPlay
+          style={{ display: 'none' }}
+        />
+      )}
+    </div>
+  )
+}
+
+function BobtalkZone({ lbNumber }: { lbNumber: number }) {
+  const { t } = useTranslation()
+  const { data } = useQuery<{ lb: number; locations: BobtalkLocation[] }>({
+    queryKey: ['bobtalk-locations', lbNumber],
+    queryFn: () => fetch(`${BASE}/api/bobtalk/${lbNumber}`).then(r => r.json()),
+    staleTime: 300_000,
+    enabled: lbNumber != null,
+  })
+
+  const locs = data?.locations ?? []
+  // Nothing located (or the pass has not been run for this recording): stay
+  // silent rather than showing an empty shell.
+  if (locs.length === 0) return null
+
+  return (
+    <div style={{ flexShrink: 0, marginTop: 4 }}>
+      <ZoneLabel>{t('library.bobtalk.label')}</ZoneLabel>
+      {locs.map(l => (
+        <BobtalkQuoteRow key={`${l.event_id}-${l.quote_index}`} loc={l} lbNumber={lbNumber} />
+      ))}
+    </div>
+  )
+}
+
 function OlofChronicleList({ entries }: { entries: OlofChronicleEntry[] }) {
   const { t } = useTranslation()
   if (entries.length === 0) return null
@@ -1379,6 +1487,7 @@ function OlofZone({ date, lbNumber, hideLabel }: { date: string; lbNumber?: numb
       {!hideLabel && <ZoneLabel>{t('library.olof.label')}</ZoneLabel>}
       {lbNumber != null && <OlofCompareNote date={date} lbNumber={lbNumber} />}
       {data!.events.map(ev => <OlofEventCard key={ev.event_id} ev={ev} />)}
+      {lbNumber != null && <BobtalkZone lbNumber={lbNumber} />}
       <OlofChronicleList entries={data!.chronicle} />
       <OlofNewTapesList entries={data!.new_tapes} />
     </div>
