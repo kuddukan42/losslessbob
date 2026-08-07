@@ -727,8 +727,43 @@ def resolve_disk_path(main_conn: sqlite3.Connection, lb_number: int) -> str | No
 
 
 # ── ffprobe / ffmpeg extraction ──────────────────────────────────────────────
+def _decode_duration(path: str) -> float:
+    """Return duration by decoding to null and reading the final timestamp.
+
+    SHN and some other legacy containers carry no frame-count header, so
+    ``ffprobe`` reports no ``format.duration`` for them. Decoding is the only
+    way to learn the length. Costly, but the result is cached per folder by
+    :func:`folder_audio_durations`, and FLAC never reaches this path.
+
+    Args:
+        path: Absolute path to the audio file.
+
+    Returns:
+        Duration in seconds, or 0.0 if it could not be determined.
+    """
+    try:
+        out = subprocess.run(
+            [FFMPEG_BIN, "-v", "quiet", "-stats", "-i", path, "-f", "null", "-"],
+            capture_output=True, text=True, timeout=300,
+        )
+        matches = re.findall(r"time=(\d+):(\d+):([\d.]+)", out.stderr)
+        if not matches:
+            log.warning("could not determine duration by decode for %s", path)
+            return 0.0
+        h, m, s = matches[-1]     # last stats line = final decode position
+        return int(h) * 3600 + int(m) * 60 + float(s)
+    except (OSError, ValueError, subprocess.SubprocessError):
+        log.warning("decode-duration error for %s", path, exc_info=True)
+        return 0.0
+
+
 def _ffprobe_duration(flac_path: str) -> float:
-    """Return an audio file's duration in seconds via ffprobe (0.0 on failure)."""
+    """Return an audio file's duration in seconds via ffprobe (0.0 on failure).
+
+    Falls back to :func:`_decode_duration` when the container reports no
+    duration (``.shn``), so a non-FLAC folder does not silently present every
+    track as zero-length — which would make every offset look out of range.
+    """
     try:
         out = subprocess.run(
             [
@@ -743,10 +778,37 @@ def _ffprobe_duration(flac_path: str) -> float:
         import json as _json
 
         fmt = _json.loads(out.stdout).get("format", {})
-        return float(fmt.get("duration", 0.0) or 0.0)
+        dur = float(fmt.get("duration", 0.0) or 0.0)
+        return dur if dur > 0 else _decode_duration(flac_path)
     except (OSError, ValueError, subprocess.SubprocessError):
         log.warning("ffprobe error for %s", flac_path, exc_info=True)
         return 0.0
+
+
+def folder_audio_durations(disk_path: str, glob: str = _FLAC_GLOB) -> list[tuple[str, float]]:
+    """Return a folder's audio tracks (sorted by name) with durations, cached.
+
+    Generalises :func:`folder_flac_durations` to other containers. TapeMatch A/B
+    clips are always FLAC, but bobtalk playback (TODO-303) has to reach ``.shn``
+    and other legacy folders, and ffmpeg decodes those here anyway.
+
+    Args:
+        disk_path: Absolute path to the LB folder.
+        glob: Filename glob selecting the audio tracks.
+
+    Returns:
+        A list of ``(absolute_path, duration_sec)`` in playback (filename)
+        order. Cached in memory per ``(folder, glob)`` for the life of the
+        process.
+    """
+    key = f"{disk_path}\x00{glob}"
+    cached = _DURATION_CACHE.get(key)
+    if cached is not None:
+        return cached
+    files = sorted(Path(disk_path).glob(glob))
+    result = [(str(p), _ffprobe_duration(str(p))) for p in files]
+    _DURATION_CACHE[key] = result
+    return result
 
 
 def folder_flac_durations(disk_path: str) -> list[tuple[str, float]]:
@@ -759,13 +821,7 @@ def folder_flac_durations(disk_path: str) -> list[tuple[str, float]]:
         A list of ``(absolute_flac_path, duration_sec)`` in playback (filename)
         order. Cached in memory per folder for the life of the process.
     """
-    cached = _DURATION_CACHE.get(disk_path)
-    if cached is not None:
-        return cached
-    flac_files = sorted(Path(disk_path).glob(_FLAC_GLOB))
-    result = [(str(p), _ffprobe_duration(str(p))) for p in flac_files]
-    _DURATION_CACHE[disk_path] = result
-    return result
+    return folder_audio_durations(disk_path, _FLAC_GLOB)
 
 
 def clear_duration_cache() -> None:

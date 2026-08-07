@@ -6240,6 +6240,71 @@ def create_app() -> Flask:
         except NotFound:
             return jsonify({"error": "clip_not_found"}), 404
 
+    @app.route("/api/bobtalk/<int:lb>", methods=["GET"])
+    def bobtalk_locations(lb: int) -> Response:
+        """Return Olof's bobtalk quotes located inside one recording (TODO-303).
+
+        Query params:
+            all: ``1`` to include low-confidence matches. They are excluded by
+                default — an unresolved match must degrade to "no play button",
+                never to a play button that jumps to the wrong moment.
+
+        Returns:
+            ``{"lb": <n>, "locations": [{quote_index, text, t_start, dice,
+            runner_up, confident}, ...]}`` ordered by timestamp.
+        """
+        from backend import bobtalk as _bobtalk
+
+        include_all = request.args.get("all") in ("1", "true", "yes")
+        try:
+            conn = database.get_connection()
+            rows = _bobtalk.get_locations(conn, lb, confident_only=not include_all)
+            return jsonify({"lb": lb, "locations": rows})
+        except Exception as exc:
+            _log.exception("bobtalk_locations failed for lb=%s", lb)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/bobtalk/clip", methods=["POST"])
+    def bobtalk_clip() -> Response:
+        """Build a playable clip at a located bobtalk quote (TODO-303).
+
+        Body:
+            ``lb``: LB number of the recording.
+            ``t_start``: source-local offset in seconds, from a location row.
+            ``dur_sec``: optional clip length (defaults to 30).
+
+        Returns:
+            ``{"filename": ..., "url": "/api/ab_clip/<filename>"}``, reusing the
+            existing A/B clip cache and its range-capable serving route.
+        """
+        from backend import bobtalk as _bobtalk
+
+        body = request.get_json(force=True) or {}
+        lb = body.get("lb")
+        t_start = body.get("t_start")
+        if lb is None or t_start is None:
+            return jsonify({"error": "missing_fields"}), 400
+        try:
+            t_val = float(t_start)
+            dur = int(body.get("dur_sec") or 30)
+        except (TypeError, ValueError):
+            return jsonify({"error": "bad_params"}), 400
+
+        try:
+            conn = database.get_connection()
+            from backend import ab_clips as _ab
+
+            disk_path = _ab.resolve_disk_path(conn, int(lb))
+            if not disk_path or not os.path.isdir(disk_path):
+                return jsonify({"error": "folder_missing"}), 404
+            name = _bobtalk.build_quote_clip(disk_path, t_val, dur)
+            return jsonify({"filename": name, "url": f"/api/ab_clip/{name}"})
+        except ValueError as exc:
+            return jsonify({"error": "bad_position", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("bobtalk_clip failed for lb=%s t=%s", lb, t_start)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     @app.route("/api/tapematch/pairs/judgment", methods=["POST"])
     def tapematch_pairs_judgment() -> Response:
         """Write a curator's human judgment/notes for one TapeMatch pair.
