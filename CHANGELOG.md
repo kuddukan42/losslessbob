@@ -1,3 +1,32 @@
+[2026-08-07] — docs(scraper): TODO-293 — full-show ASR experiment; coverage is not the limiter, VAD is
+Measured: transcribed all five 2003-05-11 sources end to end (one window = whole show, no gap
+  selection, no lag mapping) against the known family split (1 true-same pair, 9 true-different).
+  Cost is a non-issue — ~10s per 97-minute source, ~600x realtime — so full-show coverage is free
+  and the config's "coverage is the scarce resource" note is wrong; speech is scarce.
+Found: yield rose only 2-9 -> 6-13 utterances/source, and the extra material is consecutive
+  fragments of just two speech events (announcer intro, band intro). A 2003 Dylan show carries
+  ~50 seconds of speech. Discrimination got WORSE: 7 of 9 true-different pairs now score above
+  zero, and every match on every pair — including all 7 on the true pair — is a fragment of the
+  same scripted announcer intro. That intro is tour boilerplate, confirmed by recovering the same
+  announcement from 2003-04-18 Dallas.
+Corrected: CALIBRATION_PROGRESS.md's documented "correct negative" (LB-01015/01046, "different
+  tapers, no shared banter") is not one — the pair shares the whole intro and scores 0.708 once
+  coverage reaches it. The 0.0 was a coverage artifact.
+Found (highest value): vad_filter:true is the real limiter and fails SILENTLY. Full-show ASR on
+  2003-04-18 (98 min) and 2003-11-01 Rome (121 min) returned ZERO utterances each; not the
+  confidence gates, since it stays zero with min_avg_logprob/max_no_speech_prob/min_content_tokens
+  all disabled. With vad_filter:False the same Dallas source yields 32 utterances in its first
+  300s at no_speech_prob 0.63 — inside the shipped 0.8 gate. Silero VAD discards
+  announcer-over-crowd-noise before Whisper sees it, NULLing banter_score for entire dates.
+  Cost without VAD is ~100x realtime (~60s/source), still affordable.
+Found (defect, unfixed): consecutive fragments of ONE sentence count as independent witnesses
+  toward min_corroborating — the 0.708 pair's four "corroborations" are four chunks of a single
+  announcement ~9s apart. Affects the shipped windowed path too (always_head_sec guarantees the
+  intro is transcribed). Filed against step 1; must be fixed before any threshold.
+Scope: three dates, all 2002-03, an era when Dylan barely addressed audiences — re-run on a 1970s
+  date before drawing a corpus-wide conclusion. No code or config changed by this experiment;
+  findings recorded in CALIBRATION_PROGRESS.md and TODO-293.
+
 [2026-08-07] — feat(scraper): TODO-293 step 2 — banter_score is now matched-count-aware
 Decided: the §3 banter/ASR scalar's denominator. Step 2's stated premise was false — it assumed
   banter_n_matched was persisted and the question re-derivable without re-transcribing, but
