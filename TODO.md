@@ -1,4 +1,18 @@
 
+TODO-303: Locate Olof's bobtalk quotes in our audio and add a play button
+Priority: Medium
+Status: Open — PoC PASSED 2026-08-07
+Added: 2026-08-07
+Description: tj's idea, and it inverts the failed TODO-293 approach. Instead of asking ASR to PRODUCE transcripts (which fails -- see TODO-293 and CALIBRATION_PROGRESS.md '§3 banter/ASR signal'), use Olof's already-curated bobtalk as the target and use ASR only to LOCATE it in our own audio. Fuzzy-matching a garbled decode against a KNOWN string is a far easier problem than open transcription, so large-v3's fidelity ceiling stops mattering. The stored artifact is a timestamp, not a transcript: (lb_number, event_id, quote_index, t_start, confidence) -- small, and a low-confidence match degrades to "no play button" rather than to wrong text on screen.
+
+Data on hand: olof_events.bobtalk is populated for 859 events (median 538 chars, max 19,329), concentrated where Dylan actually talked (674 of 859 in the 70s-90s; only 65 in the 2000s). 812 of 826 bobtalk dates have audio on disk = 3,275 source recordings. 766 of 859 (89%) also have olof_songs setlist rows. Quotes carry positional cues: 606 blocks have a 'before' cue, 436 an 'after' cue, 198 an 'introduction' cue, and 542 name a known song title. Separately, 18 bobtalk sidecar files ship inside collection folders (incl. LB-13216 "1979 - All the BobTalk") -- too sparse to be a primary source, useful as a validation set.
+
+PoC RESULT (1978-12-16 Hollywood Sportatorium, ev5020, LB-00212, 154 min, 29 tracks == 29 setlist songs): decode a window around EVERY track boundary once, then let each quote argmax Dice (asr.content_tokens, already shipped) over all windows. 5 of 10 quotes located confidently, 2 marginal, 3 no-match. The separation is the usable part: every confident match beats its runner-up by 3-6x (0.82 vs 0.17, 0.76 vs 0.14, 0.72 vs 0.12, 0.59 vs 0.14, 0.54 vs 0.15) while every failure ties its runner-up (0.00/0.00, 0.10/0.10). So best-vs-second-best is a self-calibrating confidence rule -- no threshold tuning. Cost 443s per source (29 windows, 8 threads, batch running concurrently).
+
+Design notes learned the hard way: (a) do NOT guess which boundary holds a quote from the setlist position -- track/setlist mapping drifts, and guessing failed in BOTH directions (a 'that was <song>' = after-cue correction made quote 1 worse, 0.49 -> 0.06). Scan all boundaries instead. (b) Track filenames are numeric (d1t01.shn / track001.flac), so title->filename matching is impossible; boundaries, not names, are the anchor. (c) Requires model: large-v3 + vad_filter: False -- base garbles too much and VAD silently drops speech entirely (TODO-293). (d) Multiple sources per date give redundancy: a quote missing from one tape may be present on another.
+
+Work: (1) generalise the PoC (tools/_bobtalk_scan.py was the throwaway -- rewrite properly under tools/); (2) persist matches to a new table + confidence; (3) parse the 55 short bobtalk blocks that look like release-metadata bleed rather than speech; (4) GUI: render the Olof bobtalk block on the entry/show screen with a play button per located quote, hidden when confidence is low; (5) decide scope -- 3,275 source recordings at ~440s each is ~400 single-stream hours, so run it selectively (one best source per date) or parallel.
+
 TODO-299: Triage the 312 checksum disputes and surface them in the GUI
 Priority: Medium
 Status: Open

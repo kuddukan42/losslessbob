@@ -1,3 +1,22 @@
+[2026-08-07] — docs: file TODO-303, locate Olof's bobtalk in our audio (PoC passed)
+Added: TODO-303. tj's idea, and it inverts TODO-293's failed approach — stop asking ASR to PRODUCE
+  transcripts, use Olof's curated bobtalk as the target and use ASR only to LOCATE it. Fuzzy-matching
+  a garbled decode against a KNOWN string is far easier than open transcription, so large-v3's
+  fidelity ceiling stops mattering, and the stored artifact is a timestamp rather than a transcript.
+Data: olof_events.bobtalk populated for 859 events (median 538 chars), 674 of them in the 70s-90s;
+  812 of 826 bobtalk dates have audio on disk (3,275 source recordings); 766/859 also have
+  olof_songs setlist rows; positional cues present (606 'before', 436 'after', 198 'introduction',
+  542 naming a known song). Also found 18 bobtalk sidecar files inside collection folders.
+PoC: 1978-12-16 Hollywood Sportatorium (ev5020 / LB-00212, 154 min, 29 tracks == 29 songs). Decode a
+  window at EVERY track boundary once, then argmax Dice per quote via asr.content_tokens. 5 of 10
+  quotes located confidently, 2 marginal, 3 no-match — and every confident match beats its runner-up
+  by 3-6x while every failure ties its runner-up, so best-vs-second-best is a self-calibrating
+  confidence rule needing no threshold. 443s per source (8 threads, batch running concurrently).
+Learned: do NOT infer the boundary from setlist position — track/setlist mapping drifts and guessing
+  failed in both directions (an after-cue correction moved one quote 0.49 -> 0.06); scan all
+  boundaries. Track filenames are numeric, so title->filename matching is impossible. Needs
+  large-v3 + vad_filter:False. No production code changed; throwaway scripts removed.
+
 [2026-08-07] — docs(scraper): TODO-293 — era hypothesis rejected; ASR failures are model-size artifacts
 Rejected: the "talkative era" hypothesis. Re-ran full-show ASR on 1979-11-01 Warfield (gospel tour,
   the most talkative era in the collection) with vad_filter off. Utterance density is 0.110/sec vs
