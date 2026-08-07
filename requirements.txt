@@ -31,5 +31,15 @@ scipy==1.17.1
 # onnxruntime + tokenizers; resolves against the pinned numpy above.
 faster-whisper==1.2.1
 
+# OPTIONAL, GPU ONLY: CTranslate2 links these at first CUDA use. Without them a
+# CUDA decode fails per window rather than at load, which reads as "the tape is
+# silent" — tools/bobtalk_locate.py therefore probes them via preload_cuda_libs()
+# and falls back to CPU instead of trusting the result. Omit on a CPU-only or
+# minimal install; the TODO-303 locate pass then runs ~14x slower but correctly.
+# Roughly 1.2 GB installed. pip needs scratch space on a large filesystem —
+# TMPDIR=~/.cache/pip-tmp if /tmp is small.
+nvidia-cublas-cu12==12.9.1.4
+nvidia-cudnn-cu12==9.13.1.26
+
 # Packaging (run separately, not imported)
 # pyinstaller==6.8.0
