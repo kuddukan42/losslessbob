@@ -1113,6 +1113,66 @@ talk, so the 50-seconds-of-speech figure is era-specific and the signal may be
 materially stronger there. Worth re-running this experiment on a 1970s date
 before drawing a corpus-wide conclusion.
 
+### Follow-up 2026-08-07 — era hypothesis REJECTED; model size is the real knob
+
+Re-ran on **1979-11-01 Warfield** (gospel tour, 5 sources — the most talkative
+era in the collection) with `vad_filter: False`.
+
+**The era hypothesis does not survive a controlled comparison.** Utterance
+density is essentially identical once VAD is held constant:
+
+| date / config | utts/sec |
+|---|---|
+| 1979-11-01 gospel, VAD off | 0.110 |
+| 2003-04-18 Dallas, VAD off | 0.107 |
+| 2003-05-11 Solomons, VAD **on** | 0.0019 |
+
+VAD is a ~58x effect; era is not measurable next to it. The apparent "50 minutes
+of speech per gospel show" is an artifact — with VAD off, Whisper transcribes
+sung material too, so the figure measures vocal fraction, not stage talk.
+
+**`vad_filter: False` alone is not the fix — it trades a silent failure for a
+noisy one.** On the 1979 source only 330 of 653 full-show utterances were
+unique; the output is dominated by Whisper repetition loops on music. Restricting
+ASR to `find_banter_gaps` windows does **not** rescue it (energy-quiet windows
+still contain music): 27 windows / 2,193 s gave 0 utterances with VAD on and 207
+utterances at 78 unique with VAD off.
+
+**Both failures are substantially model-size artifacts.** Everything above ran
+`model: base`, chosen when this was a cheap per-pair signal. On the same 6
+gospel windows (476 s), with `vad_filter: False`:
+
+| model | segments | unique | wall |
+|---|---|---|---|
+| base | 59 | 27 (46 %) | 8 s |
+| large-v3 | 44 | 36 (82 %) | 92 s |
+| large-v3 + anti-loop params | 46 | **40 (87 %)** | 95 s |
+
+"anti-loop params" = `compression_ratio_threshold: 2.0`,
+`repetition_penalty: 1.15`, `no_repeat_ngram_size: 3` — all supported by
+faster-whisper and **none currently set by `asr.transcribe_gaps`**.
+
+**Fidelity also improves, but only partly.** On the controlled 2003-05-11
+announcer intro (loud, scripted, spoken), large-v3 recovers the single most
+identifying line correctly — "Ladies and gentlemen, Columbia recording artist
+Bob Dylan" — where `base` produced "come up in the party, artists". The middle of
+the same announcement is still wrong, and wrong in a more dangerous way: `base`
+emits obvious garbage, large-v3 emits fluent, confident, incorrect sentences.
+
+**Cost:** large-v3/int8 runs ~5–6x realtime on 8 threads (~17–20 min per
+100-minute show, faster on all 32 cores). Affordable per show; ~1,100 single-
+stream hours across all 3,924 runs, so any library-wide pass needs to be
+selective or parallel.
+
+**Bearing on TODO-293:** none of this rescues the pair signal — §3 still has no
+non-boilerplate positive, and stripping the intro leaves 1 of 5 sources above
+`min_utterances`. What it does establish is that **transcripts are viable as a
+documentation artifact** (curated stage-banter index with timestamps back into
+the audio) and **not viable for detecting lyric variation**, where a confidently
+mis-decoded word is indistinguishable from a real change. If transcripts are
+pursued for their own sake, the config is large-v3 + anti-loop params +
+`vad_filter: False`, which is a different profile from anything §3 needs.
+
 **Before assigning any weight** (the calibration study this section still owes):
 1. Enable `asr` on a labeled multi-source date set, pull the `banter_score`
    distribution split by frozen-set truth label, exactly as §0 requires.

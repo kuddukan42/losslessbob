@@ -1,3 +1,28 @@
+[2026-08-07] — docs(scraper): TODO-293 — era hypothesis rejected; ASR failures are model-size artifacts
+Rejected: the "talkative era" hypothesis. Re-ran full-show ASR on 1979-11-01 Warfield (gospel tour,
+  the most talkative era in the collection) with vad_filter off. Utterance density is 0.110/sec vs
+  0.107/sec for 2003-04-18 — indistinguishable. VAD on/off is a ~58x effect (0.0019/sec); era is not
+  measurable beside it. The apparent "50 min of speech per gospel show" is an artifact: with VAD off
+  Whisper transcribes sung material too, so it measures vocal fraction, not stage talk.
+Found: vad_filter:False alone is NOT the fix — it trades a silent failure for a noisy one. 330 of
+  653 full-show utterances unique; output dominated by Whisper repetition loops on music.
+  Restricting ASR to find_banter_gaps windows does not rescue it (energy-quiet windows still contain
+  music): 27 windows/2193s gave 0 utts with VAD on, 207 utts at 78 unique with VAD off.
+Found: both failures are substantially model-size artifacts. On 6 gospel windows (476s), VAD off —
+  base 59 segs/27 unique (46%, 8s); large-v3 44/36 (82%, 92s); large-v3 + anti-loop params 46/40
+  (87%, 95s). Anti-loop = compression_ratio_threshold 2.0 / repetition_penalty 1.15 /
+  no_repeat_ngram_size 3, all supported by faster-whisper and NONE currently set by
+  asr.transcribe_gaps. Fidelity improves only partly: on the controlled 2003-05-11 announcer intro,
+  large-v3 recovers the most identifying line correctly where base garbled it, but the middle of the
+  same announcement is still wrong — and wrong more dangerously, since base emits obvious garbage
+  while large-v3 emits fluent confident errors.
+Cost: large-v3/int8 ~5-6x realtime on 8 threads (~17-20 min per 100-min show); ~1,100 single-stream
+  hours across all 3,924 runs, so a library-wide pass must be selective or parallel.
+Bearing: none of this rescues the §3 pair signal (still no non-boilerplate positive). It does
+  establish transcripts as viable for stage-banter DOCUMENTATION (curated, timestamped back into the
+  audio) and NOT viable for detecting lyric variation, where a confidently mis-decoded word is
+  indistinguishable from a real change. No code or config changed; findings in CALIBRATION_PROGRESS.md.
+
 [2026-08-07] — docs(scraper): TODO-293 — full-show ASR experiment; coverage is not the limiter, VAD is
 Measured: transcribed all five 2003-05-11 sources end to end (one window = whole show, no gap
   selection, no lag mapping) against the known family split (1 true-same pair, 9 true-different).
