@@ -57,10 +57,12 @@ which who will with would you your
 """.split())
 
 # Catalogue / release noise: "Wanted Man WMM 58/59.", "Bootleg", "CD 1-2".
-_CATALOGUE_RE = re.compile(
-    r"(\b[A-Z]{2,}\s*\d+([/-]\d+)?\b)|(^\s*(bootleg|cd|disc|vol\.?)\b)",
-    re.IGNORECASE,
-)
+# The code pattern is deliberately CASE-SENSITIVE: real catalogue codes are
+# upper-case, and matching case-insensitively would swallow ordinary speech —
+# "In 1963, ..." reads as <2+ letters><number> and would be discarded, which
+# silently dropped the strongest match on the 1978-12-16 PoC.
+_CATALOGUE_CODE_RE = re.compile(r"\b[A-Z]{2,}\s*\d+(?:[/-]\d+)?\b")
+_RELEASE_PREFIX_RE = re.compile(r"^\s*(bootleg|cd|disc|vol\.?)\b", re.IGNORECASE)
 
 
 @dataclass(frozen=True)
@@ -139,7 +141,7 @@ def is_metadata_line(line: str) -> bool:
     """
     if not line:
         return True
-    return bool(_CATALOGUE_RE.search(line))
+    return bool(_CATALOGUE_CODE_RE.search(line) or _RELEASE_PREFIX_RE.match(line))
 
 
 def parse_bobtalk(block: str | None) -> list[Quote]:
