@@ -35,11 +35,21 @@ GUI (Next) Conventions · Notable Implementation Details · Change Log
 | Audio I/O | soundfile | 0.13.1 |
 | Signal processing | scipy | 1.17.1 |
 | Speech recognition (optional) | faster-whisper | 1.2.1 |
+| CUDA runtime (optional, GPU only) | nvidia-cublas-cu12 / nvidia-cudnn-cu12 | 12.9.1.4 / 9.13.1.26 |
 | Language | Python | 3.11+ |
 
-`faster-whisper` is optional and feature-gated: only `tools/tapematch/tapematch/asr.py`
-imports it, lazily, and only when `tools/tapematch/config.yaml`'s `asr.enabled` is true
-(ships false). Absent, the TapeMatch banter signal is NULL and nothing else changes.
+`faster-whisper` is optional and feature-gated: `tools/tapematch/tapematch/asr.py` imports it
+lazily, and only when `tools/tapematch/config.yaml`'s `asr.enabled` is true (ships false).
+Absent, the TapeMatch banter signal is NULL and nothing else changes. `tools/bobtalk_locate.py`
+(TODO-303) also uses it, on demand rather than through that gate.
+
+The two NVIDIA wheels are optional and GPU-only, ~1.2 GB installed. CTranslate2 links cuBLAS and
+cuDNN at first CUDA use rather than at model load, and `asr.transcribe_gaps` swallows per-window
+failures, so their absence would otherwise read as "the tape is silent" (BUG-314) — hence
+`bobtalk_locate.preload_cuda_libs()` dlopens them and falls back to CPU unless all load. On the
+RTX 3080 the locate pass decodes ~14x faster than CPU int8; omit them and it runs correctly but
+that much slower. Installing needs pip scratch space on a large filesystem (`/tmp` here is 1.8 GB,
+so `TMPDIR=~/.cache/pip-tmp`).
 
 **Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. `gui_next` (Electron/React) is the sole GUI; Flask is launched as a child process from the Electron main process (or standalone via `run_backend.py`).
 
@@ -114,6 +124,8 @@ losslessbob/
 │   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting
 │   ├── wtrf_scraper.py       # Searches the WTRF SMF forum for torrent posts matching missing items
 │   ├── ab_clips.py           # Aligned A/B listening clip service (LISTENING §2, TODO-231/232/233)
+│   ├── bobtalk.py            # Locates Olof's curated bobtalk quotes in our audio; scoring, confidence, persistence (TODO-303)
+│   ├── bobtalk_decodes.py    # Discardable cache of raw ASR window decodes, so re-scoring costs no CPU (TODO-303, BUG-314)
 │   ├── archive_org.py        # Internet Archive (archive.org) S3-like upload integration
 │   ├── sharing.py            # File-sharing: ephemeral token-based share state, streaming, Cloudflare Tunnel
 │   ├── tapematch_autoflag.py # Rule-based clear/attention triage per date, from observations.db
@@ -195,6 +207,8 @@ losslessbob/
 │   ├── test_concert_ranker.py # concert_ranker LB-integration layer
 │   ├── test_concert_ranker_pipeline.py # Synthetic end-to-end concert_ranker pipeline test
 │   ├── test_ab_clips.py      # backend/ab_clips.py: aligned A/B listening clip service (LISTENING §2, TODO-231)
+│   ├── test_bobtalk.py       # backend/bobtalk.py: quote parsing, the separation rule, persistence (TODO-303)
+│   ├── test_bobtalk_decodes.py # backend/bobtalk_decodes.py: cache key isolation + failed-decode guards (BUG-314)
 │   ├── test_tapematch_routes.py # LISTENING §1 read routes in backend/app.py
 │   ├── test_tapematch_sync.py # backend/tapematch_sync.py
 │   └── test_batch_verify.py  # tools/batch_verify.py helper functions
@@ -780,6 +794,53 @@ propagation.
 | computed_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
 
 Indexes: `idx_taper_attr_name(taper_normalised)`, `idx_taper_attr_conf(confidence)`.
+
+### `bobtalk_locations` — Located Olof bobtalk quotes (USER table, TODO-303)
+Written by `tools/bobtalk_locate.py` via `backend/bobtalk.py`. Stores a **reference, never a
+transcript**: the words already live in `olof_events.bobtalk`, so a row is a timestamp plus the
+quote's index into `bobtalk.parse_bobtalk(block)`, joined back at read time — edits to Olof's text
+flow through, and a re-locate with a better model replaces a recording's rows rather than appending.
+Confidence is decided by SEPARATION, not magnitude: a match must clear `MIN_DICE` 0.30 *and* beat
+the runner-up window by `MIN_RATIO` 2.0. A non-confident match degrades to "no play button" rather
+than to a button that jumps to the wrong moment.
+| Column | Type | Notes |
+|--------|------|-------|
+| lb_number | INTEGER | Recording searched (PK part 1) |
+| event_id | INTEGER | `olof_events.event_id` supplying the text (PK part 2) |
+| quote_index | INTEGER | Index into `parse_bobtalk(block)` (PK part 3) |
+| t_start | REAL NOT NULL | Source-local seconds, an offset into `ingest.list_tracks` order |
+| dice | REAL NOT NULL | Best window's Dice overlap |
+| runner_up | REAL NOT NULL | Second-best window's Dice — the separation denominator |
+| confident | INTEGER NOT NULL | 1 = clears both `MIN_DICE` and `MIN_RATIO` |
+| model | TEXT | ASR model that produced the decode, for provenance |
+| located_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
+
+Index: `idx_bobtalk_loc_lb(lb_number)`.
+
+### `bobtalk_decode_runs` / `bobtalk_decode_windows` — ASR decode cache (`data/bobtalk_decodes.db`)
+**Not in `losslessbob.db`.** Derived, discardable data in its own file (the `fingerprints.db`
+precedent) so it can be deleted wholesale once the locate thresholds settle, without touching the
+main DB or its backups. Managed by `backend/bobtalk_decodes.py`; see it for the full rationale.
+Keeps the decoded window TEXT so re-scoring costs no CPU (`--rescore`: 0.3 s vs 67 s per recording).
+Both tables key on `(lb_number, model, compute_type, pre_sec, post_sec)` — changing a threshold or
+`content_tokens` re-scores from cache, while changing the model, quantisation or window geometry
+misses and re-decodes, because those genuinely change what was heard. `device` is recorded but
+deliberately NOT part of the key, so a CPU and a GPU pass at the same quantisation share an entry.
+Sizing: ~10 KB per recording, so a full 3,275-recording corpus run is ~30-50 MB.
+
+Two reads are refused as misses rather than served (BUG-314): a run row whose `n_windows` disagrees
+with the stored windows (a decode killed halfway is not a complete one), and an entry whose every
+window is textless (a dead decoder, not a silent tape — `asr.transcribe_gaps` swallows per-window
+failures, so a missing cuBLAS library produces exactly that shape).
+| Column (`bobtalk_decode_windows`) | Type | Notes |
+|--------|------|-------|
+| lb_number, model, compute_type, pre_sec, post_sec | | Cache key |
+| window_index | INTEGER | Position in the recording's boundary sequence (PK part 6) |
+| t_start / t_end | REAL NOT NULL | Window bounds, source-local seconds |
+| text | TEXT NOT NULL | Raw decoded text, stored **un-tokenised** so a tokenizer change re-scores free |
+
+`bobtalk_decode_runs` carries the same key minus `window_index`, plus `n_windows`, `audio_sec`,
+`decode_sec`, `device`, `decoded_at`. Index: `idx_bobtalk_dec_lb(lb_number)`.
 
 ### `show_picks` — Derived per-date "best of" ranking (USER table)
 Recomputed wholesale by `tools/compute_show_picks.py` (scoring in `concert_ranker/picks.py`)
@@ -1454,6 +1515,8 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | GET | `/api/tapematch/dup_encodes` | Likely-duplicate-encode curation leads (TODO-210b): same-date pairs with byte-identical `metric_json` within one scan_id. `{candidates: [{date, lb_a, lb_b, scan_id, same_family, reason}]}`. Read-only, never auto-merges; no GUI yet (TODO-215). |
 | POST | `/api/ab_clip` | Aligned A/B listening (LISTENING §2, TODO-231/232/233). Body `{date, lb_a, lb_b, t_sec?, dur_sec?}` (`dur_sec` clamped 5-60, default 20; `t_sec` OPTIONAL — omit it and the backend auto-picks a quiet-vocal start point per the LB curator method via `ab_clips.auto_pick_t_sec`/`pick_start_frame` over a `concert_ranker` TrackCache, returning the chosen value in `t_sec`, TODO-232). Eligible pairs: both sources' `speed_kind ∈ {reference, aligned, constant-speed-offset}` in observations.db `sources` (latest common run) from a run on/after the 2026-07-06 confidence gate (`is_run_eligible`, TODO-233). Maps `t_sec` to each source's local offset via `trim_head + t*factor` (factor from `speed_ppm`); a constant-speed-offset source is resampled to reference speed (`asetrate`/`aresample`) and both clips are RMS level-matched to -20 dBFS (TODO-232). Extracts WAV clips (16-bit/44.1k/stereo, may span track boundaries) from `my_collection.disk_path` via `backend/ab_clips.py`, caches in `data/ab_clips/` (LRU-pruned to 40). Returns `{date, lb_a, lb_b, t_sec, dur_sec, clip_a, clip_b}` (`/api/ab_clip/<name>` URLs). 400 `bad_request`/`t_out_of_range`, 404 `pair_not_found`/`folder_missing`, 409 `not_eligible`/`locked`. |
 | GET | `/api/ab_clip/<name>` | Serves one cached A/B WAV clip from `data/ab_clips/`. 404 `clip_not_found` if pruned/absent. |
+| GET | `/api/bobtalk/<int:lb>` | Located Olof bobtalk quotes for one recording (TODO-303). Joins `bobtalk_locations` back to `olof_events.bobtalk` at read time, so each quote's text comes from Olof's block and is never stored twice. Low-confidence matches are EXCLUDED unless `?all=1` — an unresolved match must degrade to "no play button", not to one that jumps to the wrong moment. Returns `{lb, event_id, quotes: [{quote_index, text, t_start, dice, runner_up, confident, model}]}`; an empty list is normal for a recording that has not been through the locate pass. |
+| POST | `/api/bobtalk/clip` | Cuts the audio for one located quote on demand. Body `{lb, t_start, dur_sec?}`. Resolves tracks through tapematch's `ingest.list_tracks` ordering (rglob, directories first, natural sort) because a stored `t_start` is an offset into that exact concatenation and plain glob would miss `d1/`-style disc layouts. Reuses the A/B clip cache and its range-capable `/api/ab_clip/<name>` serving route. |
 
 ### Derived-Data Recompute
 | Method | Route | Description |

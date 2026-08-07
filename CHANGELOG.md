@@ -1,3 +1,44 @@
+[2026-08-07] — feat(backend): TODO-303 — cache ASR decodes, and run them on the GPU
+Added: backend/bobtalk_decodes.py + data/bobtalk_decodes.db — the decoded window TEXT is now kept,
+  so re-scoring costs no CPU. bobtalk_locations still stores only a timestamp; this is a separate,
+  derived, discardable database (the fingerprints.db precedent) precisely so it can be thrown away
+  once MIN_DICE/MIN_RATIO settle, without touching the main DB or its backups. Two tables keyed on
+  (lb_number, model, compute_type, pre_sec, post_sec): changing a threshold or content_tokens now
+  re-scores from cache, while changing the model, quantisation or window geometry misses and
+  re-decodes, because those genuinely change what was heard. device is recorded but deliberately
+  NOT in the key — a CPU and GPU pass at the same quantisation should share an entry. A run row
+  whose window count disagrees with the stored windows reads as a miss, so a decode killed halfway
+  cannot be served as a complete one. Sizing: ~10 KB/recording, so a full corpus run is ~30-50 MB.
+Added: tools/bobtalk_locate.py --rescore (re-score from cache, never runs ASR — 0.3 s vs 67 s, and
+  needs no audio on disk), --cache-summary, --prune-cache [MODEL], --device, --compute-type.
+Changed: the locate pass now runs on CUDA by default. config.yaml's asr block pins device: cpu for
+  the tapematch batch signal; this is a different workload (large-v3, on demand) so it picks its own
+  device rather than inheriting that. On the RTX 3080, large-v3 float16 decodes LB-00212's 29
+  windows in 31 s against 443 s on CPU int8 — ~14x, and end-to-end per recording drops 7.5 min ->
+  67 s, now dominated by SHN->PCM ingest rather than Whisper. Corpus scope re-estimates: all 3,275
+  recordings ~61 h (was ~400 h), one best source per date ~15 h (was ~95 h).
+Fixed: BUG-314 — a failed CUDA decode silently overwrote good locations with none. CTranslate2
+  links cuBLAS at first use rather than at load, and asr.transcribe_gaps swallows per-window
+  failures by design, so a missing libcublas.so.12 turned a 154-minute show into 29 empty windows
+  and a clean exit 0 — which cached the emptiness and replaced LB-00212's 6/10 stored locations
+  with 0/10. Same silent-failure shape as the vad_filter bug in TODO-293. Guarded three ways:
+  detect_device() dlopens cuBLAS/cuDNN and falls back to CPU unless they load; decode_windows()
+  raises when no window yielded any text; load_windows() refuses to serve a textless entry, so
+  poison written before the write-side guard existed cannot leak. Rows restored.
+Changed: requirements.txt — nvidia-cublas-cu12==12.9.1.4, nvidia-cudnn-cu12==9.13.1.26, OPTIONAL
+  and GPU-only (~1.2 GB). Omit them and the pass runs ~14x slower but correctly. pip needs scratch
+  space on a large filesystem; /tmp here is 1.8 GB, so TMPDIR=~/.cache/pip-tmp.
+Note: float16 located 5/10 quotes where CPU int8 located 6/10. Not a method regression — the four
+  strong matches (0.81, 0.78, 0.70, 0.60) are identical on both, and the difference is entirely in
+  quotes sitting on the separation rule: two scored 0.37 at 1.85x and 1.95x runner-up, just under
+  MIN_RATIO 2.0, where int8 had put one of them at 3.1x. This is why compute_type is in the key.
+Tests: 23 new in tests/test_bobtalk_decodes.py (key isolation per model/quantisation/geometry,
+  device-not-in-key, partial and textless decodes reading as misses, the legacy-table drop, prune
+  filters, and the guard that a wholly empty decode raises rather than caching). 43 pass across
+  test_bobtalk_decodes.py + test_bobtalk.py; ruff clean.
+Remaining for TODO-303: still the corpus-run scope decision, now much cheaper — see the figures
+  above.
+
 [2026-08-07] — feat(gui): TODO-303 GUI — play buttons for located bobtalk quotes
 Added: BobtalkZone + BobtalkQuoteRow in the Library DetailPanel's existing Olof tab. Reads
   GET /api/bobtalk/<lb> and renders each located quote with a play button; clicking it POSTs to

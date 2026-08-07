@@ -27,6 +27,10 @@ APP_ROOT = _app_root()
 DATA_DIR = APP_ROOT / "data"
 DB_PATH    = DATA_DIR / "losslessbob.db"
 BATCH_VERIFY_DB_PATH = DATA_DIR / "batch_verify.db"
+# Derived, discardable: raw ASR window decodes cached by the TODO-303 locate
+# pass so re-scoring costs no CPU. Kept out of the main DB because it is the one
+# artifact here that is meant to be thrown away (see backend/bobtalk_decodes.py).
+BOBTALK_DECODES_DB_PATH = DATA_DIR / "bobtalk_decodes.db"
 TORRENTS_DIR = DATA_DIR / "torrents"
 LOGS_DIR = DATA_DIR / "logs"
 LOG_FILE = LOGS_DIR / "scraper.log"

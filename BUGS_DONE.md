@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-314: bobtalk locate: a failed ASR decode silently overwrote good locations with none
+Status: Fixed
+File(s): tools/bobtalk_locate.py,backend/bobtalk_decodes.py
+Reported: 2026-08-07
+Fixed: 2026-08-07
+Root cause: CTranslate2 links cuBLAS/cuDNN at first CUDA use, not at model load, so WhisperModel(device='cuda') constructed fine and every subsequent decode raised. asr.transcribe_gaps catches per-window exceptions by design, turning a total decoder failure into a clean run of empty windows -- indistinguishable from silence to every caller.
+Fix: Guarded on three sides. (1) tools/bobtalk_locate.py detect_device() now dlopens libcublas/libcublasLt/libcudnn with RTLD_GLOBAL via preload_cuda_libs() and falls back to cpu unless they all load; --device cuda raises rather than falling back silently. (2) decode_windows() raises when no window in a recording yielded any text, so nothing is cached and no locations are saved. (3) backend/bobtalk_decodes.load_windows() refuses to serve a wholly textless cached entry, so poison written before the write-side guard cannot leak. LB-00212's rows restored by re-running on GPU.
+
 BUG-313: file_integrity: files outside collection folders inventoried and reported missing
 Status: Fixed
 File(s): backend/file_integrity.py:514
