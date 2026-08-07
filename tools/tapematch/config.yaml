@@ -496,4 +496,24 @@ asr:
   min_similarity: 0.5           # Dice on content tokens for a candidate match
   offset_tolerance_sec: 5.0     # matched utterances must share one time offset
   min_corroborating: 2          # spec §3: single-utterance matches are noise
-  score_denominator_cap: 8      # a full-score pair needs 8 corroborations, not 2
+  # TODO-293 step 2, decided 2026-08-07 (CALIBRATION_PROGRESS.md '§3 banter/ASR
+  # signal'). 'witnesses' = sum(sim)/score_denominator_cap — a saturating count
+  # of corroborating witnesses. 'rate' = the original sum(sim)/min(n_a,n_b,cap).
+  # rate was demoted because its denominator is built from the ASR knobs above
+  # (max_gaps, max_total_sec, model, the confidence gates), so it is not a
+  # stable property of the two recordings: with the evidence held fixed at 2
+  # corroborating utterances it falls 1.000 -> 0.250 as yield rises 2 -> 8.
+  # Raising yield is this signal's next planned move, and under 'rate' every
+  # such improvement would DEPRESS true pairs and invalidate any threshold set
+  # beforehand. rate is also evidence-blind: 2-of-2 and 8-of-8 both score 1.000.
+  # Both scalars are always computed and persisted (pairs.banter_score carries
+  # the selected one, pairs.banter_score_rate always carries rate), so the
+  # step-1 distribution study compares them from ONE transcription pass.
+  score_mode: witnesses
+  # Corroborations at which the signal saturates. 8 under 'rate' (where it was
+  # only a ceiling on min(n_a,n_b)); 4 under 'witnesses', where it sets the
+  # whole scale — observed yield is 2-9 gated utterances/source and matched is
+  # a subset of that, so a cap of 8 would compress every real pair into
+  # [0.25, 0.5] and never reach 1.0. At 4: 2 matches ~ 0.5, 3 ~ 0.75, 4+ -> 1.0.
+  # PROVISIONAL — step 1's labeled distribution is what confirms this value.
+  score_denominator_cap: 4

@@ -31,7 +31,8 @@ CFG = {
     "min_similarity": 0.5,
     "offset_tolerance_sec": 5.0,
     "min_corroborating": 2,
-    "score_denominator_cap": 8,
+    "score_denominator_cap": 4,
+    "score_mode": "witnesses",
 }
 
 
@@ -149,12 +150,89 @@ def test_speed_ratio_rescues_a_stretched_clock():
 
 
 def test_score_is_bounded_and_denominator_capped():
-    """20 matched utterances must not score 2.5 — the score stays in [0, 1]."""
+    """20 matched utterances must not score 5.0 — the score stays in [0, 1]."""
     a = [utt(i * 10.0, f"unique phrase number {i} spoken here") for i in range(20)]
     b = [utt(i * 10.0 + 4.0, f"unique phrase number {i} spoken here") for i in range(20)]
     score, detail = asr.banter_score(a, b, CFG)
     assert detail["n_matched"] == 20
     assert score == 1.0
+
+
+# ── denominator: TODO-293 step 2 ───────────────────────────────────────────────
+#
+# The shipped scalar is 'witnesses' = sum(sim)/cap. These tests pin the two
+# properties that demoted 'rate' = sum(sim)/min(n_a, n_b, cap), so a future
+# session cannot quietly reinstate a yield-dependent denominator.
+
+_SHARED = ["harmonica in the key of G", "everybody in Boston tonight",
+           "this song is about a hurricane", "Tony Garnier playing bass guitar"]
+_FILLER_A = ["spotlight swung toward stage left", "someone spilled beer nearby",
+             "taper adjusted his microphone stand", "long pause before highway",
+             "crowd chanted for another encore", "harmonica case fell over"]
+_FILLER_B = ["unrelated chatter about parking lots", "muffled merchandise announcement",
+             "loud whistle pierced my ears", "friend asked whether we leave",
+             "rain started falling outside venue", "usher blocked the aisle"]
+
+
+def _sides(n_utts: int, n_shared: int):
+    """Two sides with *n_utts* utterances each, *n_shared* of them corroborating.
+
+    Filler shares no content tokens across sides, so it never corroborates.
+    """
+    a = [utt(i * 100.0, t) for i, t in enumerate(_SHARED[:n_shared] + _FILLER_A[:n_utts - n_shared])]
+    b = [utt(i * 100.0 + 3.0, t)
+         for i, t in enumerate(_SHARED[:n_shared] + _FILLER_B[:n_utts - n_shared])]
+    return a, b
+
+
+@pytest.mark.parametrize("n_utts", [2, 3, 4, 6])
+def test_witnesses_scalar_is_independent_of_yield(n_utts):
+    """Fixed evidence (2 corroborations) must score the same at any yield.
+
+    The denominator is built from tunable ASR knobs (max_gaps, model size, the
+    confidence gates), so a yield-dependent scalar is not a stable property of
+    the two recordings and cannot carry a threshold across a config change.
+    """
+    score, detail = asr.banter_score(*_sides(n_utts, 2), CFG)
+    assert detail["n_matched"] == 2
+    assert score == pytest.approx(2.0 / CFG["score_denominator_cap"])
+
+
+def test_rate_scalar_still_penalises_yield():
+    """Why 'rate' was demoted: same evidence, score collapses as yield rises."""
+    cfg = {**CFG, "score_mode": "rate"}
+    scores = [asr.banter_score(*_sides(n, 2), cfg)[0] for n in (2, 3, 4, 6)]
+    assert scores == sorted(scores, reverse=True)
+    assert scores[0] == 1.0 and scores[-1] < 0.6
+
+
+def test_witnesses_scalar_grows_with_corroboration_count():
+    """4-of-4 is stronger evidence than 2-of-2 and must outrank it."""
+    weak, _ = asr.banter_score(*_sides(4, 2), CFG)
+    strong, _ = asr.banter_score(*_sides(4, 4), CFG)
+    assert strong > weak
+
+
+def test_both_scalars_are_always_reported():
+    """One transcription pass must hand the calibration study both curves.
+
+    They diverge only below the cap: ``rate``'s denominator is
+    ``min(n_a, n_b, cap)``, so at a yield of 2 with cap 4 it reads 1.0 where
+    ``witnesses`` reads 0.5. That thin-yield regime is precisely the observed
+    one (2-9 gated utterances per source, matched a subset).
+    """
+    score, detail = asr.banter_score(*_sides(2, 2), CFG)
+    assert detail["score_witnesses"] == pytest.approx(score)
+    assert detail["score_witnesses"] == pytest.approx(0.5)
+    assert detail["score_rate"] == pytest.approx(1.0)
+
+
+def test_both_scalars_reported_as_zero_below_corroboration_floor():
+    a = [utt(10.0, "this song is about a hurricane"), utt(500.0, "guitar tuning break")]
+    b = [utt(12.0, "this song is about a hurricane"), utt(800.0, "wrong words entirely")]
+    score, detail = asr.banter_score(a, b, CFG)
+    assert score == 0.0
+    assert detail["score_witnesses"] == 0.0 and detail["score_rate"] == 0.0
 
 
 # ── gap finding ────────────────────────────────────────────────────────────────
