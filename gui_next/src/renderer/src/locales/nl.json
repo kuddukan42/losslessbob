@@ -1696,6 +1696,11 @@
       "toastPdfFallback": "PDF niet beschikbaar buiten de app — in plaats daarvan HTML gedownload",
       "toastAmbiguous": "Op deze datum zijn er meerdere optredens — open het vanuit de bibliotheek om duidelijkheid te krijgen",
       "toastFailed": "Het exporteren van het dossier is mislukt"
+    },
+    "bobtalk": {
+      "label": "BobTalk in deze opname",
+      "playAt": "Afspelen vanaf {{clock}}",
+      "clipFailed": "clip niet beschikbaar"
     }
   },
   "tapematch": {

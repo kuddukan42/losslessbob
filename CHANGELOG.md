@@ -1,3 +1,24 @@
+[2026-08-07] — feat(gui): TODO-303 GUI — play buttons for located bobtalk quotes
+Added: BobtalkZone + BobtalkQuoteRow in the Library DetailPanel's existing Olof tab. Reads
+  GET /api/bobtalk/<lb> and renders each located quote with a play button; clicking it POSTs to
+  /api/bobtalk/clip, which cuts the clip on demand, and plays it through a hidden <audio> element
+  (same pattern as the TapeMatch A/B player). The zone renders nothing at all when no quotes are
+  located, so a recording that has not been through the locate pass shows no empty shell.
+Design: the renderer deliberately does NOT re-split ev.bobtalk to attach buttons inline. quote_index
+  is assigned by backend.bobtalk's parser, and a second implementation in TypeScript would drift and
+  hang play buttons on the wrong lines. The API already returns each located quote's text, so the
+  zone renders that; the full block still shows above it in OlofEventCard. Since only about half of
+  an event's quotes typically locate, a quote without a button is the normal case, not a defect.
+Added: library.bobtalk.{label,playAt,clipFailed} in en.json, translated to de/fr/es/it/nl via DeepL
+  (4,983 chars; {{clock}} placeholders preserved).
+Verified: gui-check PASS — node types 0 errors, renderer types 0 errors, production build clean.
+  Locate pass re-run on LB-00212 after the parser fix: 6 of 10 quotes located (was 3 of 6), the
+  recovered quote now the strongest match in the show at 0.81 vs 0.14. The separation rule behaved
+  exactly as designed on two quotes that both scored 0.37 — one passed at 3.1x its runner-up, the
+  other failed at 1.5x.
+Remaining for TODO-303: decide the corpus-wide run scope (3,275 recordings at ~7 min each is ~400
+  single-stream hours; one best source per date is ~95 h and still covers every show).
+
 [2026-08-07] — feat(backend): TODO-303 backend — locate Olof's bobtalk in our audio
 Added: backend/bobtalk.py. Parses an olof_events.bobtalk block into matchable quotes (dropping the
   catalogue/release lines that bleed into that field), scores each quote against decoded audio

@@ -1696,6 +1696,11 @@
       "toastPdfFallback": "PDF außerhalb der App nicht verfügbar – stattdessen HTML heruntergeladen",
       "toastAmbiguous": "Für dieses Datum gibt es mehrere Sendungen – öffnen Sie den Eintrag in der Bibliothek, um die Unklarheit zu beseitigen",
       "toastFailed": "Der Export des Dossiers ist fehlgeschlagen"
+    },
+    "bobtalk": {
+      "label": "BobTalk in dieser Aufnahme",
+      "playAt": "Ab {{clock}} abspielen",
+      "clipFailed": "Clip nicht verfügbar"
     }
   },
   "tapematch": {

@@ -1660,6 +1660,11 @@
       "confirm": "Confirm",
       "reject": "Reject"
     },
+    "bobtalk": {
+      "label": "BobTalk in this recording",
+      "playAt": "Play from {{clock}}",
+      "clipFailed": "clip unavailable"
+    },
     "olof": {
       "label": "Still On The Road",
       "emptyNote": "No Olof Björner data for this date.",
