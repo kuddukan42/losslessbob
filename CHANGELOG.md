@@ -1,3 +1,17 @@
+[2026-08-07] — docs: recover BUG-278 from BUGS.md, lost by a bad ledger edit
+Fixed: BUGS.md was empty, but that was only mostly correct. BUG-278 (tapematch rule_d never fires
+  live) was never closed — it was silently dropped. In b1ba0aa3 the BUG-309 block was inserted over
+  BUG-278's title line, orphaning BUG-278's body under BUG-309's header; 929be8e2 then deleted the
+  merged block from BUGS.md while archiving only BUG-309 to BUGS_DONE.md. Entry recovered verbatim
+  from `git show 929be8e2^:BUGS.md` and restored with its title line repaired.
+Audited: no other losses. BUG-210/309/310 were closed legitimately 2026-08-04 (all three present in
+  BUGS_DONE.md); every BUG id 1–313 is accounted for except 67/136/147/148, which never existed in
+  any commit (skipped numbers, confirmed by pickaxe over all history).
+Changed: BUGS.md — status line corrected to "re-run PAUSED at 49/79" (was "in progress"), plus a
+  LEDGER NOTE recording the loss and a resume block: queue at 49/79 (last 2003-05-09, next
+  2003-05-11), no process running, resumable batch command, and the post-batch steps (family
+  re-sync, CONTRADICTED_EMB_SECOND_PASS.md regen, then close BUG-278 + TODO-273).
+
 [2026-08-06] — docs: close TODO-274, breadcrumbs/global search removal confirmed as final (won't-do)
 Closed: TODO-274 (won't-do — tj confirmed no relocation wanted for the breadcrumb trail or global
   search field removed from AppShell's Topbar; the code change from that earlier session stands as-is).
