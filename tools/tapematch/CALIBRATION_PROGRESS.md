@@ -998,7 +998,7 @@ intro is the most identifying utterance a Dylan tape carries).
 | pair | corr | emb_score | banter_score | note |
 |------|------|-----------|--------------|------|
 | LB-01097 / 13538 | 0.233 | 0.905 | **0.778** (2 matched, offset −16.3 s) | same performance, both caught "[George Recile] is on the drums" + "playing on the bass guitar tonight" |
-| LB-01015 / 01046 | 0.010 | 0.189 | 0.0 | correct negative — different tapers, no shared banter |
+| LB-01015 / 01046 | 0.010 | 0.189 | 0.0 | **NOT a correct negative** — see the full-show experiment below: these two share the entire announcer intro and score 0.708 once coverage reaches it. The 0.0 here is a coverage artifact. |
 
 The positive is exactly §3's target case: waveform correlation weak (0.233),
 words decisive. Both sides agreed on one time offset, which is what separates
@@ -1019,6 +1019,99 @@ gated utterances per source on rough AUD. Defaults raised accordingly
   ("Judge Rossell is on the drums" vs "God, the sun is on the drums" — Dice
   0.33), so a true match can miss. Do not lower it blind; it is a precision
   knob and stock stage phrases are its adversary.
+
+### Full-show coverage experiment, 2026-08-07 — coverage is NOT the limiter, VAD is
+
+Tested the standing assumption that utterance yield is coverage-bound, by
+transcribing all five 2003-05-11 sources **end to end** (one window = the whole
+show, no gap selection, no lag mapping). Ground truth from run
+`20260807_094521_2003-05-11`: family 1 = {LB-13538, LB-01097}, families 2/3/4 =
+LB-01015 / LB-01046 / LB-01159 — one true-same pair, nine true-different.
+Raw artifacts: `.debug/asr_fullshow.json`.
+
+**Cost is a non-issue.** ~10 s of ASR per 97-minute source — **~600x realtime**
+with `vad_filter: true`, because the VAD skips almost everything. Full-show
+coverage costs no more than the shipped 1,600 s budget. The config's "coverage
+is the scarce resource here, not compute" note is wrong: *speech* is scarce.
+
+**Yield barely moved and the extra material is worthless.** 6–13 utterances per
+source (vs 2–9 windowed), but essentially all of them are consecutive fragments
+of **two** speech events: the pre-show announcer intro (0–40 s) and the band
+introduction (~4,470–4,520 s). A 2003 Dylan show contains roughly **50 seconds
+of speech**. No coverage policy fixes that.
+
+**Discrimination got worse, not better:**
+
+| pair | truth | matched | offset | witnesses |
+|---|---|---|---|---|
+| LB-13538 / LB-01097 | **SAME** | 7 | −0.4 s | 1.000 |
+| LB-01015 / LB-01046 | diff | 4 | −8.9 s | **0.708** |
+| LB-01046 / LB-01159 | diff | 3 | −4.9 s | 0.494 |
+| LB-01015 / LB-01159 | diff | 3 | −14.1 s | 0.439 |
+| …4 more diff pairs | diff | 2–3 | — | 0.285–0.383 |
+
+Seven of nine true-different pairs now score above zero. Inspecting the matches:
+**every match on every pair, including all 7 on the true pair, is a fragment of
+the same scripted announcer intro.** Not one is show-specific banter.
+
+**This section's one documented negative was a coverage artifact.** The claim
+above that LB-01015/01046 is a "correct negative — different tapers, no shared
+banter" is **false**. They share the entire intro; the windowed run scored 0.0
+only because thin coverage happened to miss it on one side. With full coverage
+it scores 0.708.
+
+**The intro is tour boilerplate — confirmed, not inferred.** Full-show ASR on
+2003-04-18 Dallas (LB-00971) recovers the same scripted announcement ("…written
+off … in the 80s … Ladies and gentlemen, please welcome…"). It is delivered
+verbatim at every show of the era, so a match on it identifies *"a 2002+ Dylan
+show"*, not *this* show. Note the irony: `always_head_sec: 60` exists to
+guarantee transcription of what the comments call "the most identifying
+utterance a Dylan tape carries". For deciding **which show**, it is the least
+identifying thing on the tape.
+
+**The real limiter is `vad_filter: true`, and it fails silently.** Full-show ASR
+on 2003-04-18 (98 min) and 2003-11-01 Rome (121 min) returned **zero**
+utterances each. Not a gate problem — with `min_avg_logprob`,
+`max_no_speech_prob` and `min_content_tokens` all disabled it is still zero. With
+`vad_filter: False`, the same Dallas source yields **32 utterances in the first
+300 s**, intro included, at `no_speech_prob` 0.63 (inside the shipped 0.8 gate).
+Silero VAD classifies announcer-over-crowd-noise as non-speech and discards it
+before Whisper sees it, zeroing out whole sources — `banter_score` is then NULL
+for every pair on that date. Cost without VAD is ~100x realtime (≈60 s per
+full source), still affordable; the tradeoff is that the confidence gates become
+load-bearing against hallucination on music.
+
+**Consequences for the calibration study (step 1), in priority order:**
+1. `vad_filter` is the highest-value knob by a wide margin — it is the
+   difference between a signal and a NULL column on an unknown fraction of
+   sources. Sample yield with it on vs off across a labeled date set *before*
+   pulling any distribution, or the distribution is conditioned on a silent
+   filter.
+2. Matching on the boilerplate intro must be neutralised, or the false-pair
+   floor sits near 0.7. Options: a stop-phrase list for the standard
+   announcement, or excluding the head window from *scoring* while keeping it
+   for alignment — the opposite of `always_head_sec`'s current intent.
+3. Fix fragment corroboration (below) before any threshold is set.
+4. Full-show coverage may as well be adopted — it is free — but it is not worth
+   anything on its own and must not be credited with the yield gain.
+
+**Defect found in passing — sentence fragments count as independent witnesses.**
+`min_corroborating: 2` is meant to require two *independent* agreements, and the
+one-corroboration-per-utterance dedup guards a repeated catchphrase. Neither
+guards **one continuous sentence split across several consecutive utterances**:
+LB-01015/01046's four "corroborations" are four consecutive chunks of a single
+announcement, ~9 s apart. This inflates every pair that hears the same
+announcement and is what carries that pair to 0.708. It affects the shipped
+windowed path too, since `always_head_sec` guarantees the intro is transcribed.
+Candidate fix: require matched utterances to be separated by a minimum interval
+(or merge adjacent same-offset matches into one witness) before counting toward
+`min_corroborating`. Not yet implemented — filed for the step-1 work.
+
+**Scope caution:** three dates, all 2002–2003, an era in which Dylan barely
+addressed audiences. Earlier eras (1966, 1975–78) carry substantially more stage
+talk, so the 50-seconds-of-speech figure is era-specific and the signal may be
+materially stronger there. Worth re-running this experiment on a 1970s date
+before drawing a corpus-wide conclusion.
 
 **Before assigning any weight** (the calibration study this section still owes):
 1. Enable `asr` on a labeled multi-source date set, pull the `banter_score`
