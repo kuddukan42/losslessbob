@@ -1306,12 +1306,19 @@ function BobtalkQuoteRow({ loc, lbNumber }: { loc: BobtalkLocation; lbNumber: nu
   const [clipUrl, setClipUrl] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [failed, setFailed] = useState(false)
+  const [playing, setPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   // The clip is cut on demand rather than pre-rendered for every located quote:
   // extraction is cheap, and the A/B cache prunes itself.
-  async function play() {
-    if (clipUrl) { void audioRef.current?.play(); return }
+  async function toggle() {
+    if (clipUrl) {
+      const el = audioRef.current
+      if (!el) return
+      if (el.paused) void el.play()
+      else el.pause()
+      return
+    }
     setLoading(true); setFailed(false)
     try {
       const r = await fetch(`${BASE}/api/bobtalk/clip`, {
@@ -1329,16 +1336,35 @@ function BobtalkQuoteRow({ loc, lbNumber }: { loc: BobtalkLocation; lbNumber: nu
     }
   }
 
+  // Stop rewinds but keeps clipUrl: the clip is already cut, so pressing play
+  // again should restart instantly rather than round-trip to the backend.
+  function stop() {
+    const el = audioRef.current
+    if (!el) return
+    el.pause()
+    el.currentTime = 0
+    setPlaying(false)
+  }
+
   return (
     <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginBottom: 10 }}>
       <Button
         size="sm"
-        onClick={play}
+        onClick={toggle}
         disabled={loading}
-        title={t('library.bobtalk.playAt', { clock: fmtClock(loc.t_start) })}
+        title={
+          playing
+            ? t('library.bobtalk.pause')
+            : t('library.bobtalk.playAt', { clock: fmtClock(loc.t_start) })
+        }
       >
-        {loading ? '…' : '▶'}
+        {loading ? '…' : playing ? '⏸' : '▶'}
       </Button>
+      {clipUrl && (
+        <Button size="sm" onClick={stop} title={t('library.bobtalk.stop')}>
+          ■
+        </Button>
+      )}
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{
           fontSize: 'var(--t-meta)', fontStyle: 'italic',
@@ -1354,6 +1380,9 @@ function BobtalkQuoteRow({ loc, lbNumber }: { loc: BobtalkLocation; lbNumber: nu
       {clipUrl && (
         <audio
           ref={audioRef} src={`${BASE}${clipUrl}`} preload="auto" autoPlay
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          onEnded={() => setPlaying(false)}
           style={{ display: 'none' }}
         />
       )}

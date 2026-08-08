@@ -1700,7 +1700,9 @@
     "bobtalk": {
       "label": "BobTalk en esta grabación",
       "playAt": "Reproducir desde {{clock}}",
-      "clipFailed": "clip no disponible"
+      "clipFailed": "clip no disponible",
+      "pause": "Pausa",
+      "stop": "Detener"
     }
   },
   "tapematch": {

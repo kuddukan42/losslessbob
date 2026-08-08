@@ -216,7 +216,8 @@ def test_a_fully_empty_decode_raises_and_caches_nothing(cache, monkeypatch):
     _stub_tapematch(monkeypatch, ["", "", ""])
     cfg = {"model": "large-v3", "device": "cuda", "compute_type": "float16"}
     with pytest.raises(RuntimeError, match="no text"):
-        loc.decode_windows(212, "/nonexistent", cfg, [".flac"], "large-v3", cache)
+        loc.decode_windows(212, "/nonexistent", cfg, [".flac"], "large-v3", cache,
+                           full_show=False)
     assert dec.load_windows(cache, 212, "large-v3", "float16",
                             loc.PRE_SEC, loc.POST_SEC) is None
 
@@ -225,7 +226,8 @@ def test_a_partly_empty_decode_is_kept(cache, monkeypatch):
     """Quiet windows are normal; only a wholly textless recording is a failure."""
     _stub_tapematch(monkeypatch, ["", "thank you friends", ""])
     cfg = {"model": "large-v3", "device": "cpu", "compute_type": "int8"}
-    got = loc.decode_windows(212, "/nonexistent", cfg, [".flac"], "large-v3", cache)
+    got = loc.decode_windows(212, "/nonexistent", cfg, [".flac"], "large-v3", cache,
+                             full_show=False)
     assert len(got) == 3
     assert dec.load_windows(cache, 212, "large-v3", "int8",
                             loc.PRE_SEC, loc.POST_SEC) is not None
@@ -240,3 +242,49 @@ def test_cache_never_holds_olof_quote_text(cache):
     dec.save_windows(cache, 212, MODEL, CT, PRE, POST, _windows())
     cols = {r[1] for r in cache.execute("PRAGMA table_info(bobtalk_decode_windows)")}
     assert "quote_index" not in cols and "quote" not in cols
+
+
+# ── full-show geometry (TODO-303, second corpus pass) ─────────────────────────
+def _stub_full_show(monkeypatch, utts):
+    """Stub ``tapematch`` so a full-show decode yields *utts* as ``(t0, t1, text)``."""
+    ingest = types.ModuleType("tapematch.ingest")
+    ingest.concat_source = lambda *a, **k: (
+        np.zeros(16000 * 3600, dtype=np.float32), 16000, [0])
+    asr = types.ModuleType("tapematch.asr")
+    asr.load_model = lambda cfg: object()
+    asr.transcribe_gaps = lambda mono, sr, gaps, cfg, model=None: [
+        types.SimpleNamespace(text=t, t_start=a, t_end=b) for a, b, t in utts]
+    pkg = types.ModuleType("tapematch")
+    pkg.asr, pkg.ingest = asr, ingest
+    monkeypatch.setitem(sys.modules, "tapematch", pkg)
+    monkeypatch.setitem(sys.modules, "tapematch.asr", asr)
+    monkeypatch.setitem(sys.modules, "tapematch.ingest", ingest)
+
+
+def test_full_show_decode_stores_utterances_with_their_timestamps(cache, monkeypatch):
+    _stub_full_show(monkeypatch, [(12.0, 15.0, "good evening"), (600.0, 604.0, "thank you")])
+    cfg = {"model": "large-v3", "device": "cuda", "compute_type": "float16"}
+    got = loc.decode_windows(212, "/nonexistent", cfg, [".flac"], "large-v3", cache)
+    assert [(w.t_start, w.t_end) for w in got] == [(12.0, 15.0), (600.0, 604.0)]
+
+
+def test_full_show_and_boundary_decodes_coexist_in_the_cache(cache, monkeypatch):
+    """The upgrade must not invalidate the boundary decodes already paid for."""
+    _stub_tapematch(monkeypatch, ["", "thank you friends", ""])
+    cfg = {"model": "large-v3", "device": "cpu", "compute_type": "int8"}
+    loc.decode_windows(212, "/x", cfg, [".flac"], "large-v3", cache, full_show=False)
+    _stub_full_show(monkeypatch, [(12.0, 15.0, "good evening friends")])
+    loc.decode_windows(212, "/x", cfg, [".flac"], "large-v3", cache, full_show=True)
+
+    boundary = dec.load_windows(cache, 212, "large-v3", "int8", loc.PRE_SEC, loc.POST_SEC)
+    full = dec.load_windows(cache, 212, "large-v3", "int8", *dec.FULL_SHOW_GEOM)
+    assert len(boundary) == 3 and len(full) == 1
+
+
+def test_full_show_yielding_nothing_is_a_decoder_failure_not_silence(cache, monkeypatch):
+    """Zero utterances over a whole show is the vad_filter silent-failure shape."""
+    _stub_full_show(monkeypatch, [])
+    cfg = {"model": "large-v3", "device": "cuda", "compute_type": "float16"}
+    with pytest.raises(RuntimeError, match="no text"):
+        loc.decode_windows(212, "/nonexistent", cfg, [".flac"], "large-v3", cache)
+    assert dec.load_windows(cache, 212, "large-v3", "float16", *dec.FULL_SHOW_GEOM) is None
