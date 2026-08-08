@@ -1,3 +1,19 @@
+[2026-08-08] — feat(gui): "Send to LosslessBob pipeline" right-click action for Nemo
+Added: tools/nemo/ — a Cinnamon/Nemo action that queues one or MORE selected folders on the
+  Pipeline screen. Transport is a drop file in ~/.local/share/losslessbob/pipeline-inbox/, not
+  argv or a single-instance lock: in dev the app is started by `npm run dev`, whose argv the
+  launcher owns, and a drop written before the app exists still survives a cold start.
+  install-nemo-action.sh substitutes the repo path into the .nemo_action and installs it.
+Added: gui_next/src/main/index.ts watches that inbox (150ms debounce — a drop fires several
+  fs events, and the sender renames the file into place so a half-written list is never read),
+  drains it at startup, focuses the window, and writes ~/.local/share/losslessbob/gui.pid so the
+  sender can tell a running app from a cold one. Batches that land before the renderer mounts are
+  buffered and handed over by the new pipeline:consumePending IPC; later ones push on
+  pipeline:folders. Renderer side: App.tsx PipelineInbox adds the paths to the folder queue and
+  navigates to /pipeline. No new user-facing strings, so no locale work.
+Note: the sender prefers `npm run dev` over gui_next/dist/*.AppImage — that dist build is months
+  old, and silently starting it instead of the working tree looks like the app losing its changes.
+
 [2026-08-08] — feat(backend): TODO-303 — search whole shows, and re-gate the confidence rule
 Added: backend/bobtalk.windows_from_utterances + tools/bobtalk_locate.py --full-show (now the
   DEFAULT; --boundaries keeps the old pass). The first corpus run located 998 of 3,301 quotes with

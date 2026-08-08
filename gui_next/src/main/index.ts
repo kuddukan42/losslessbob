@@ -1,13 +1,30 @@
 import { app, BrowserWindow, shell, ipcMain, dialog } from 'electron'
 import { join } from 'path'
-import { tmpdir } from 'os'
+import { tmpdir, homedir } from 'os'
 import { spawn, ChildProcess, execSync } from 'child_process'
 import { createConnection } from 'net'
-import { writeFile, readFile, unlink } from 'fs/promises'
+import { watch } from 'fs'
+import { writeFile, readFile, unlink, mkdir, readdir } from 'fs/promises'
 
 const FLASK_PORT = 5174
 const PID_FILE = join(tmpdir(), 'losslessbob_backend.pid')
 let backendProc: ChildProcess | null = null
+
+// ── Pipeline inbox (file-manager "Send to LosslessBob pipeline" hand-off) ─────
+//
+// tools/nemo/lb-send-to-pipeline.sh drops one newline-separated path list per
+// invocation into PIPELINE_INBOX, then launches the app if GUI_PID_FILE names no
+// live process. A drop file — not argv or a single-instance lock — is the transport
+// because in dev the app is started via `npm run dev`, whose argv the launcher owns;
+// the inbox is identical for dev and packaged builds and survives a cold start (the
+// drop is written before the app exists and drained once the renderer mounts).
+const LB_STATE_DIR   = join(homedir(), '.local', 'share', 'losslessbob')
+const PIPELINE_INBOX = join(LB_STATE_DIR, 'pipeline-inbox')
+const GUI_PID_FILE   = join(LB_STATE_DIR, 'gui.pid')
+
+let mainWindow: BrowserWindow | null = null
+let rendererReady = false
+let pendingFolders: string[] = []
 
 // On native Wayland (GNOME) the taskbar/dock icon is resolved ONLY by matching the
 // window's Wayland app_id to an installed .desktop file whose basename equals that
@@ -130,6 +147,63 @@ async function ensureBackend(): Promise<void> {
   }
 }
 
+/**
+ * Hand a batch of folder paths to the renderer's pipeline queue.
+ *
+ * Buffers until the renderer has called `pipeline:consumePending`, so a batch
+ * dropped before (or during) app start is not lost.
+ */
+function deliverFolders(paths: string[]): void {
+  if (!paths.length) return
+  if (mainWindow && rendererReady) {
+    mainWindow.webContents.send('pipeline:folders', paths)
+  } else {
+    pendingFolders = [...new Set([...pendingFolders, ...paths])]
+  }
+  if (mainWindow) {
+    if (mainWindow.isMinimized()) mainWindow.restore()
+    mainWindow.show()
+    mainWindow.focus()
+  }
+}
+
+/** Read every drop file in the inbox, delete each one, and deliver its paths. */
+async function drainPipelineInbox(): Promise<void> {
+  let names: string[]
+  try {
+    names = (await readdir(PIPELINE_INBOX)).filter(n => n.endsWith('.txt')).sort()
+  } catch {
+    return // inbox not created yet
+  }
+  const paths: string[] = []
+  for (const name of names) {
+    const file = join(PIPELINE_INBOX, name)
+    try {
+      const raw = await readFile(file, 'utf8')
+      paths.push(...raw.split('\n').map(l => l.trim()).filter(Boolean))
+    } catch { /* unreadable — still unlink below so it can't wedge the inbox */ }
+    await unlink(file).catch(() => {})
+  }
+  deliverFolders([...new Set(paths)])
+}
+
+/** Create the inbox dir, drain anything already waiting, and watch for new drops. */
+async function startPipelineInbox(): Promise<void> {
+  await mkdir(PIPELINE_INBOX, { recursive: true }).catch(() => {})
+  await drainPipelineInbox()
+  let timer: NodeJS.Timeout | null = null
+  try {
+    watch(PIPELINE_INBOX, () => {
+      // Debounced: one drop can fire several rename/change events, and the
+      // sender writes the file before we should read it.
+      if (timer) clearTimeout(timer)
+      timer = setTimeout(() => { void drainPipelineInbox() }, 150)
+    })
+  } catch (err) {
+    console.error('[main] pipeline inbox watch failed:', err)
+  }
+}
+
 function createWindow(): void {
   const iconPath = app.isPackaged
     ? join(process.resourcesPath, 'icon.png')
@@ -151,6 +225,8 @@ function createWindow(): void {
     }
   })
 
+  mainWindow = win
+  win.on('closed', () => { if (mainWindow === win) mainWindow = null })
   win.on('ready-to-show', () => win.show())
 
   win.webContents.setWindowOpenHandler(({ url }) => {
@@ -182,6 +258,15 @@ ipcMain.handle('dialog:pickDir', async () => {
 })
 
 ipcMain.handle('shell:openPath', (_event, path: string) => shell.openPath(path))
+
+// Called once by the renderer on mount: marks it ready for pushed batches and
+// returns anything that arrived before it could listen.
+ipcMain.handle('pipeline:consumePending', () => {
+  rendererReady = true
+  const paths = pendingFolders
+  pendingFolders = []
+  return paths
+})
 
 ipcMain.handle('dialog:saveFile', async (_event, content: string, defaultFilename: string) => {
   const { canceled, filePath } = await dialog.showSaveDialog({
@@ -256,6 +341,10 @@ app.whenReady().then(async () => {
   await ensureBackend()
   await waitForPort(FLASK_PORT)
   createWindow()
+  await mkdir(LB_STATE_DIR, { recursive: true }).catch(() => {})
+  // The sender script checks this PID to decide whether to launch the app.
+  await writeFile(GUI_PID_FILE, String(process.pid), 'utf8').catch(() => {})
+  await startPipelineInbox()
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
@@ -265,6 +354,7 @@ app.on('before-quit', () => {
   if (backendProc?.pid) killProcessTree(backendProc.pid)
   backendProc = null
   unlink(PID_FILE).catch(() => {})
+  unlink(GUI_PID_FILE).catch(() => {})
 })
 
 app.on('window-all-closed', () => {

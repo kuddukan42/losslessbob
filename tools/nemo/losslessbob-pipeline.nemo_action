@@ -1,0 +1,10 @@
+[Nemo Action]
+Name=Send to LosslessBob pipeline
+Comment=Queue the selected folder(s) on the LosslessBob Pipeline screen
+Exec=<INSTALL_DIR>/lb-send-to-pipeline.sh %F
+Icon-Name=media-optical
+Selection=NotNone
+Extensions=dir;
+Quote=double
+Terminal=false
+Dependencies=bash;
