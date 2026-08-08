@@ -48,17 +48,34 @@ log = logging.getLogger(__name__)
 # representation difference invisible to the caller.
 _GEOM_DP = 3
 
+# A full-show decode has no boundary geometry to key on: it heard everything.
+# It is keyed by this sentinel pair instead of by a window size, which keeps the
+# existing key columns (and so the boundary decodes already cached) untouched
+# while guaranteeing the two passes can never be served for each other.
+#
+# Deliberately absent from the key: the sliding window/hop the matcher later
+# cuts over these utterances. Re-cutting stored utterances is free, so making it
+# part of the key would throw away good decodes every time the matcher is tuned.
+FULL_SHOW_PRE = -1.0
+FULL_SHOW_POST = -1.0
+FULL_SHOW_GEOM = (FULL_SHOW_PRE, FULL_SHOW_POST)
+
 
 @dataclass(frozen=True)
 class Window:
-    """One decoded listening window around a track boundary.
+    """One decoded stretch of audio.
+
+    Under the boundary geometry this is a listening window around a track split;
+    under :data:`FULL_SHOW_GEOM` it is a single ASR utterance, and the matcher
+    cuts its own windows over the sequence. Both are ``(t_start, t_end, text)``
+    on the source-local clock, so the storage layer needs no second shape.
 
     Attributes:
-        index: Position in the recording's boundary sequence.
-        t_start: Window start, source-local seconds.
-        t_end: Window end, source-local seconds.
-        text: Raw decoded text, joined across the window's utterances. Stored
-            un-tokenised so a later tokenizer change can be re-scored for free.
+        index: Position in the recording's decoded sequence.
+        t_start: Start, source-local seconds.
+        t_end: End, source-local seconds.
+        text: Raw decoded text. Stored un-tokenised so a later tokenizer change
+            can be re-scored for free.
     """
 
     index: int

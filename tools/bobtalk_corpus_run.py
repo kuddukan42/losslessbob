@@ -10,9 +10,16 @@ Best source = ``show_picks`` rank 1 when that recording is collected and on
 disk (the derived per-date "best of" ranking, FABLE_UNIFIED_RANKING §3/§4),
 else the lowest collected LB number for the date.
 
+Searches each recording END TO END by default (``bobtalk_locate --full-show``).
+The first corpus pass used track-boundary windows and located 998 of 3,301
+quotes; boundary windows only cover about a fifth of a show, so quotes spoken
+away from a track split could not be found at any threshold. ``--boundaries``
+restores the old geometry.
+
 Resumable by design, because this is a long run: a date whose chosen source
-already carries locations for the current model is skipped, so re-launching
-after an interrupt continues rather than restarts. SIGINT/SIGTERM finish the
+already carries locations for the current model AND geometry is skipped, so
+re-launching after an interrupt continues rather than restarts. Rows from the
+boundary pass do not count as done for a full-show run. SIGINT/SIGTERM finish the
 recording in flight and then stop, which keeps the database consistent — a
 half-written recording is never left behind.
 
@@ -36,6 +43,7 @@ APP_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(APP_ROOT))
 sys.path.insert(0, str(APP_ROOT / "tools" / "tapematch"))
 
+from backend import bobtalk as bt  # noqa: E402
 from backend import bobtalk_decodes as dec  # noqa: E402
 from backend import paths as bpaths  # noqa: E402
 from tools import bobtalk_locate as loc  # noqa: E402
@@ -122,11 +130,28 @@ def plan(conn: sqlite3.Connection) -> list[tuple[str, int, int, str]]:
     return out
 
 
-def already_done(conn: sqlite3.Connection, lb_number: int, event_id: int, model: str) -> bool:
-    """Return whether this recording already carries locations for *model*."""
+def already_done(conn: sqlite3.Connection, lb_number: int, event_id: int, model: str,
+                 geometry: str) -> bool:
+    """Return whether this recording already carries locations for *model*.
+
+    Geometry is part of the question, not a detail: rows from the weaker
+    boundary pass must not make a full-show run skip the recording, or the
+    upgrade silently covers nothing.
+
+    Args:
+        conn: Open main-database connection.
+        lb_number: Recording to check.
+        event_id: Event whose quotes were searched for.
+        model: ASR model the existing rows must have used.
+        geometry: Search geometry the existing rows must have used.
+
+    Returns:
+        True when an equivalent pass has already been stored.
+    """
     row = conn.execute(
         "SELECT 1 FROM bobtalk_locations WHERE lb_number = ? AND event_id = ? "
-        "AND model = ? LIMIT 1", (lb_number, event_id, model)).fetchone()
+        "AND model = ? AND geometry = ? LIMIT 1",
+        (lb_number, event_id, model, geometry)).fetchone()
     return row is not None
 
 
@@ -140,9 +165,12 @@ def main() -> None:
     p.add_argument("--device", default="auto", choices=("auto", "cuda", "cpu"))
     p.add_argument("--compute-type", default=None)
     p.add_argument("--threads", type=int, default=0)
+    p.add_argument("--boundaries", dest="full_show", action="store_false",
+                   help="search track boundaries only (the original, weaker geometry)")
     p.add_argument("--redo", action="store_true",
-                   help="re-locate recordings that already have rows for this model")
+                   help="re-locate recordings that already have rows for this pass")
     args = p.parse_args()
+    geometry = bt.GEOM_FULL if args.full_show else bt.GEOM_BOUNDARIES
 
     bpaths.LOGS_DIR.mkdir(parents=True, exist_ok=True)
     handlers: list[logging.Handler] = [logging.StreamHandler(sys.stdout)]
@@ -152,12 +180,13 @@ def main() -> None:
                         format="%(asctime)s %(levelname)s %(message)s")
 
     conn = sqlite3.connect(str(bpaths.DB_PATH))
+    bt.ensure_schema(conn)   # already_done() reads geometry; the column must exist
     todo = plan(conn)
     log.info("plan: %d date(s) with bobtalk and audio on disk", len(todo))
 
     if args.dry_run:
         for date_str, event_id, lb, _ in todo[:args.limit or len(todo)]:
-            done = already_done(conn, lb, event_id, args.model)
+            done = already_done(conn, lb, event_id, args.model, geometry)
             sys.stdout.write(f"{date_str}  ev{event_id:<6} LB-{lb:05d}"
                              f"{'  (done)' if done else ''}\n")
         conn.close()
@@ -171,7 +200,8 @@ def main() -> None:
 
     cfg, exts, device = loc.build_asr_cfg(args.model, args.threads, args.device,
                                           args.compute_type)
-    log.info("decoding with %s on %s (%s)", args.model, device, cfg["compute_type"])
+    log.info("decoding with %s on %s (%s), geometry=%s",
+             args.model, device, cfg["compute_type"], geometry)
     cache = dec.connect()
 
     started = time.time()
@@ -181,7 +211,7 @@ def main() -> None:
         for date_str, event_id, lb, disk_path in todo:
             if _stop or (args.limit and attempted >= args.limit):
                 break
-            if not args.redo and already_done(conn, lb, event_id, args.model):
+            if not args.redo and already_done(conn, lb, event_id, args.model, geometry):
                 skipped += 1
                 continue
             block = conn.execute("SELECT bobtalk FROM olof_events WHERE event_id = ?",
@@ -193,7 +223,8 @@ def main() -> None:
             t0 = time.time()
             try:
                 matches = loc.locate_one(conn, lb, disk_path, event_id, block[0],
-                                         cfg, exts, args.model, cache=cache)
+                                         cfg, exts, args.model, cache=cache,
+                                         full_show=args.full_show)
             except Exception as exc:  # noqa: BLE001 — one bad source must not end the run
                 failed += 1
                 log.error("LB-%05d (%s): %s", lb, date_str, exc)
@@ -204,7 +235,7 @@ def main() -> None:
             quotes += len(matches)
             rate = (time.time() - started) / max(done + failed, 1)
             remaining = sum(1 for d, e, n, _ in todo
-                            if not already_done(conn, n, e, args.model)) if done % 25 == 0 else None
+                            if not already_done(conn, n, e, args.model, geometry)) if done % 25 == 0 else None
             log.info("[%d/%d] %s LB-%05d: %d/%d located in %.0fs%s",
                      done, len(todo) - skipped, date_str, lb, ok, len(matches),
                      time.time() - t0,

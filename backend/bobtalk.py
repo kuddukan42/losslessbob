@@ -49,6 +49,40 @@ MIN_QUOTE_TOKENS = 4
 # speech (55 of 859 blocks are suspiciously short). These are dropped.
 MIN_QUOTE_CHARS = 40
 
+# Full-show windowing. The length matches the boundary pass's listening window
+# (PRE_SEC + POST_SEC = 80s) so a quote's Dice denominator is comparable across
+# the two geometries and MIN_DICE keeps meaning what it was measured to mean.
+# The hop is half of it: see :func:`windows_from_utterances`.
+WINDOW_SEC = 80.0
+HOP_SEC = 40.0
+
+# Geometry labels, stored per location row for provenance. A corpus pass must be
+# able to tell "this recording was searched at track boundaries only" from "this
+# recording was searched end to end" — otherwise a resumable run skips every
+# recording the weaker pass already touched.
+GEOM_BOUNDARIES = "boundaries"
+GEOM_FULL = "full"
+
+# Full-show gate. MIN_RATIO does NOT survive the geometry change and is switched
+# off there — measured 2026-08-08 on 8 recordings / 36 quotes with both geometries
+# decoded (tools/_bobtalk_geom_compare.py, now deleted):
+#
+#   boundary + ratio 7 located | full + ratio 7 | full + MIN_DICE only 14
+#
+# The runner-up is a MAXIMUM over the noise draws, so ~160 sliding windows inflate
+# it far above what ~25 disjoint boundary windows produced, and the 3-6x separation
+# the rule was calibrated on collapses to 1.1-1.7x for matches that are visibly
+# correct in the decoded text. Percentile-of-bulk variants do not rescue it: p90
+# accepted all 14 of 14 (a bare threshold in disguise), p96 13, p98 10.
+#
+# So under GEOM_FULL magnitude is the only gate, raised to compensate. Eyeballing
+# ASR text against Olof's line put 10 of the 14 right; at 0.40 the sample keeps 9
+# with 7 right. This trades a real false-positive rate (a play button landing on
+# the wrong 80 seconds) for double the yield — tj's call, 2026-08-08. The known
+# failure mode is LONG quotes (band intros, tour stories) whose token set cannot
+# fit an 80s window: their Dice is depressed and they drift onto song lyrics.
+MIN_DICE_FULL = 0.40
+
 _STOPWORDS = frozenset("""
 a an and are as at be been but by can did do does for from had has have he her
 his i if in into is it its me my no not of on or our out she so than that the
@@ -169,8 +203,71 @@ def parse_bobtalk(block: str | None) -> list[Quote]:
     return out
 
 
-def match_quote(quote: Quote, windows: list[tuple[float, frozenset[str]]]) -> Match | None:
-    """Pick the window that best matches *quote*, and qualify it by separation.
+def windows_from_utterances(utterances: list[tuple[float, float, str]],
+                            window_sec: float = WINDOW_SEC,
+                            hop_sec: float = HOP_SEC) -> list[tuple[float, frozenset[str]]]:
+    """Slide fixed-length listening windows over a full-show decode.
+
+    The boundary-window pass gets its candidate windows for free — one per track
+    split. A full-show decode has no such structure, so windows are cut over the
+    utterance timeline instead. They **overlap** (``hop_sec`` < ``window_sec``)
+    because a quote landing across a cut would otherwise be split between two
+    windows and score poorly in both; with a half-window hop every quote shorter
+    than the hop falls whole inside at least one window.
+
+    Overlap is also why :func:`match_quote` needs ``min_separation_sec``: two
+    windows sharing most of their text score almost identically, which would
+    make every match tie its own neighbour and fail :data:`MIN_RATIO`.
+
+    Args:
+        utterances: ``(t_start, t_end, text)`` in time order, source-local.
+        window_sec: Window length in seconds.
+        hop_sec: Distance between consecutive window starts.
+
+    Returns:
+        ``(t_start, tokens)`` per window, in time order. Windows that caught no
+        utterance are dropped, so a show's silent stretches cost nothing.
+    """
+    if not utterances or window_sec <= 0 or hop_sec <= 0:
+        return []
+    end = max(u[1] for u in utterances)
+    out: list[tuple[float, frozenset[str]]] = []
+    t = min(u[0] for u in utterances)
+    while t < end:
+        lo, hi = t, t + window_sec
+        # An utterance counts for a window when it overlaps it at all: speech
+        # straddling the edge is exactly what the overlap exists to catch.
+        text = " ".join(txt for a, b, txt in utterances if b > lo and a < hi)
+        toks = content_tokens(text)
+        if toks:
+            out.append((round(lo, 3), toks))
+        t += hop_sec
+    return out
+
+
+def gate_for(geometry: str) -> tuple[float, float, float]:
+    """Return ``(min_dice, min_ratio, min_separation_sec)`` for a search geometry.
+
+    One knob rather than three, because the three are not independently valid:
+    the full-show gate is only defensible together with full-show windowing, and
+    applying the boundary ratio rule to overlapping windows disqualifies every
+    match against its own neighbour.
+
+    Args:
+        geometry: :data:`GEOM_BOUNDARIES` or :data:`GEOM_FULL`.
+
+    Returns:
+        The Dice floor, the runner-up factor (0.0 = gate off) and the radius
+        within which windows are too close to count as the runner-up.
+    """
+    if geometry == GEOM_FULL:
+        return MIN_DICE_FULL, 0.0, WINDOW_SEC
+    return MIN_DICE, MIN_RATIO, 0.0
+
+
+def match_quote(quote: Quote, windows: list[tuple[float, frozenset[str]]],
+                geometry: str = GEOM_BOUNDARIES) -> Match | None:
+    """Pick the window that best matches *quote*, and qualify it.
 
     Every window is scored and the best is compared against the runner-up.
     Crucially this makes **no assumption about where in the show the quote
@@ -181,6 +278,9 @@ def match_quote(quote: Quote, windows: list[tuple[float, frozenset[str]]]) -> Ma
         quote: The quote to place.
         windows: ``(t_start, decoded_tokens)`` for each candidate window, in
             time order.
+        geometry: How *windows* were cut — see :func:`gate_for`. Under
+            :data:`GEOM_FULL` the separation rule only shapes the reported
+            ``runner_up``, which stays as provenance for re-gating later.
 
     Returns:
         The best :class:`Match`, or None when there are no windows. A returned
@@ -188,31 +288,38 @@ def match_quote(quote: Quote, windows: list[tuple[float, frozenset[str]]]) -> Ma
     """
     if not windows:
         return None
+    min_dice, min_ratio, min_separation_sec = gate_for(geometry)
     scored = sorted(
         ((dice(toks, quote.tokens), i, t) for i, (t, toks) in enumerate(windows)),
         key=lambda s: (-s[0], s[1]),
     )
     best_d, best_i, best_t = scored[0]
-    runner = scored[1][0] if len(scored) > 1 else 0.0
-    confident = best_d >= MIN_DICE and best_d >= MIN_RATIO * runner
+    runner = 0.0
+    for d, _i, t in scored[1:]:
+        if abs(t - best_t) >= min_separation_sec:
+            runner = d
+            break
+    confident = best_d >= min_dice and best_d >= min_ratio * runner
     return Match(quote_index=quote.index, window_index=best_i, t_start=best_t,
                  dice=round(best_d, 4), runner_up=round(runner, 4), confident=confident)
 
 
 def locate_quotes(quotes: list[Quote],
-                  windows: list[tuple[float, frozenset[str]]]) -> list[Match]:
+                  windows: list[tuple[float, frozenset[str]]],
+                  geometry: str = GEOM_BOUNDARIES) -> list[Match]:
     """Match every quote against the decoded windows.
 
     Args:
         quotes: Parsed quotes from :func:`parse_bobtalk`.
         windows: ``(t_start, decoded_tokens)`` per window, in time order.
+        geometry: How *windows* were cut; see :func:`gate_for`.
 
     Returns:
         One :class:`Match` per quote that produced one, in quote order.
     """
     out = []
     for q in quotes:
-        m = match_quote(q, windows)
+        m = match_quote(q, windows, geometry)
         if m is not None:
             out.append(m)
     return out
@@ -238,21 +345,29 @@ def ensure_schema(conn: sqlite3.Connection) -> None:
             runner_up   REAL    NOT NULL,
             confident   INTEGER NOT NULL,   -- 1 = clears MIN_DICE and MIN_RATIO
             model       TEXT,               -- ASR model that produced the decode
+            geometry    TEXT,               -- GEOM_BOUNDARIES | GEOM_FULL
             located_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             PRIMARY KEY (lb_number, event_id, quote_index)
         )
     """)
     cols = {r[1] for r in conn.execute("PRAGMA table_info(bobtalk_locations)")}
-    for name, decl in (("model", "TEXT"),):
+    for name, decl in (("model", "TEXT"), ("geometry", "TEXT")):
         if name not in cols:
             conn.execute(f"ALTER TABLE bobtalk_locations ADD COLUMN {name} {decl}")
+            if name == "geometry":
+                # Every row that predates the column came from the only pass
+                # that existed then — the boundary-window one. Labelling them
+                # is what lets a full-show run tell them apart and redo them.
+                conn.execute("UPDATE bobtalk_locations SET geometry = ? "
+                             "WHERE geometry IS NULL", (GEOM_BOUNDARIES,))
     conn.execute(
         "CREATE INDEX IF NOT EXISTS idx_bobtalk_loc_lb ON bobtalk_locations(lb_number)"
     )
 
 
 def save_locations(conn: sqlite3.Connection, lb_number: int, event_id: int,
-                   matches: list[Match], model: str | None = None) -> int:
+                   matches: list[Match], model: str | None = None,
+                   geometry: str | None = None) -> int:
     """Upsert located quotes for one recording.
 
     A re-run replaces that recording's rows for the event, so re-locating with a
@@ -264,6 +379,8 @@ def save_locations(conn: sqlite3.Connection, lb_number: int, event_id: int,
         event_id: ``olof_events.event_id`` the quotes came from.
         matches: Matches to store (both confident and not).
         model: ASR model identifier for provenance.
+        geometry: How the audio was searched — :data:`GEOM_BOUNDARIES` or
+            :data:`GEOM_FULL`.
 
     Returns:
         Number of rows written.
@@ -272,12 +389,13 @@ def save_locations(conn: sqlite3.Connection, lb_number: int, event_id: int,
     conn.execute("DELETE FROM bobtalk_locations WHERE lb_number = ? AND event_id = ?",
                  (int(lb_number), int(event_id)))
     rows = [(int(lb_number), int(event_id), m.quote_index, float(m.t_start),
-             float(m.dice), float(m.runner_up), 1 if m.confident else 0, model)
+             float(m.dice), float(m.runner_up), 1 if m.confident else 0, model, geometry)
             for m in matches]
     conn.executemany(
         """INSERT INTO bobtalk_locations
-           (lb_number, event_id, quote_index, t_start, dice, runner_up, confident, model)
-           VALUES (?,?,?,?,?,?,?,?)""", rows)
+           (lb_number, event_id, quote_index, t_start, dice, runner_up, confident,
+            model, geometry)
+           VALUES (?,?,?,?,?,?,?,?,?)""", rows)
     conn.commit()
     return len(rows)
 

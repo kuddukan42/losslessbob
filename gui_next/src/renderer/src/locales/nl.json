@@ -1700,7 +1700,9 @@
     "bobtalk": {
       "label": "BobTalk in deze opname",
       "playAt": "Afspelen vanaf {{clock}}",
-      "clipFailed": "clip niet beschikbaar"
+      "clipFailed": "clip niet beschikbaar",
+      "pause": "Pauze",
+      "stop": "Stoppen"
     }
   },
   "tapematch": {

@@ -1,14 +1,29 @@
 """Locate Olof's bobtalk quotes inside our recordings and persist timestamps.
 
 TODO-303. The scoring, confidence and persistence rules live in
-``backend/bobtalk.py``; this is the ASR half — it decodes one window around
-every track boundary and hands the token sets over.
+``backend/bobtalk.py``; this is the ASR half — it decodes the audio and hands
+the token sets over.
 
-Why boundaries, and why *all* of them: bobtalk happens between songs, and
-inferring WHICH boundary holds a given quote from the setlist position was
-tried and drifts (it failed in both directions on the 1978-12-16 PoC). Decoding
-every boundary once and letting each quote pick its own best window costs one
-pass and removes the assumption entirely.
+Two geometries, and **full-show is the default**:
+
+* ``--full-show`` (default) decodes the recording end to end and slides
+  overlapping windows over the utterances. Chosen after the first corpus pass:
+  boundary windows hear only about a fifth of a show, and quotes spoken away
+  from a track split were unreachable at any threshold. Measured cost on the GPU
+  is ~65x realtime (92s for a 100-minute show), so a corpus pass is hours, not
+  the minutes the boundary pass took — plan for a resumable overnight run.
+* ``--boundaries`` keeps the original pass: one window around every track split.
+  Cheaper on CPU, and the geometry the first corpus run used.
+
+The geometries are gated DIFFERENTLY, and the geometry flag carries the gate —
+see :func:`backend.bobtalk.gate_for`. Boundary windows keep the best-vs-runner-up
+separation rule; full-show drops it (it does not survive the change in window
+count) and raises the Dice floor instead.
+
+Why *all* candidate windows are scored either way: inferring WHICH window holds
+a given quote from the setlist position was tried and drifts (it failed in both
+directions on the 1978-12-16 PoC). Letting each quote pick its own best window
+costs one pass and removes the assumption entirely.
 
 Requires ``model: large-v3`` and ``vad_filter: False``: the shipped ``base``
 model garbles too heavily to recognise a known line, and Silero VAD silently
@@ -23,6 +38,7 @@ settle: ``--prune-cache``, or delete the file.
 
 Usage:
     .venv/bin/python3 tools/bobtalk_locate.py --lb 212
+    .venv/bin/python3 tools/bobtalk_locate.py --lb 212 --boundaries
     .venv/bin/python3 tools/bobtalk_locate.py --date 1978-12-16 --all-sources
     .venv/bin/python3 tools/bobtalk_locate.py --lb 212 --rescore
     .venv/bin/python3 tools/bobtalk_locate.py --cache-summary
@@ -50,7 +66,7 @@ from backend import paths as bpaths  # noqa: E402
 
 log = logging.getLogger("bobtalk_locate")
 
-PRE_SEC = 55.0          # how far before a track boundary to listen
+PRE_SEC = 55.0          # how far before a track boundary to listen (--boundaries)
 POST_SEC = 25.0         # ...and after; banter straddles the split either way
 DEFAULT_MODEL = "large-v3"
 CONFIG_PATH = APP_ROOT / "tools" / "tapematch" / "config.yaml"
@@ -182,14 +198,27 @@ def _sources_for_date(conn: sqlite3.Connection, date_str: str,
     return sorted(out)
 
 
-def decode_windows(lb_number: int, disk_path: str, cfg: dict, exts: list[str],
-                   model_name: str,
-                   cache: sqlite3.Connection | None) -> list[dec.Window]:
-    """Return a recording's boundary-window decodes, from cache when possible.
+def geometry_key(full_show: bool) -> tuple[float, float]:
+    """Return the decode-cache geometry key for a pass.
 
-    The cache key covers the model and the window geometry, so a cache hit is
-    only ever served for audio decoded under exactly these settings; changing
-    ``PRE_SEC``/``POST_SEC`` or the model re-decodes rather than reusing.
+    Args:
+        full_show: Whether the pass decodes the whole recording.
+
+    Returns:
+        ``(pre_sec, post_sec)`` as the cache keys them.
+    """
+    return dec.FULL_SHOW_GEOM if full_show else (PRE_SEC, POST_SEC)
+
+
+def decode_windows(lb_number: int, disk_path: str, cfg: dict, exts: list[str],
+                   model_name: str, cache: sqlite3.Connection | None,
+                   full_show: bool = True) -> list[dec.Window]:
+    """Return a recording's decodes, from cache when possible.
+
+    The cache key covers the model, the quantisation and the geometry, so a hit
+    is only ever served for audio decoded under exactly these settings: a
+    boundary pass and a full-show pass of the same recording coexist rather than
+    overwriting each other.
 
     Args:
         lb_number: Recording being decoded.
@@ -198,18 +227,22 @@ def decode_windows(lb_number: int, disk_path: str, cfg: dict, exts: list[str],
         exts: Audio file extensions to ingest.
         model_name: Model identifier, part of the cache key.
         cache: Open decode-cache connection, or ``None`` to bypass the cache.
+        full_show: Decode end to end (one entry per utterance) instead of one
+            window per track boundary.
 
     Returns:
-        Decoded windows in boundary order.
+        Decoded windows in time order — utterances under *full_show*, boundary
+        windows otherwise.
 
     Raises:
         RuntimeError: If a decode is needed and faster-whisper is unavailable.
     """
     ctype = cfg.get("compute_type", "int8")
+    pre, post = geometry_key(full_show)
     if cache is not None:
-        cached = dec.load_windows(cache, lb_number, model_name, ctype, PRE_SEC, POST_SEC)
+        cached = dec.load_windows(cache, lb_number, model_name, ctype, pre, post)
         if cached is not None:
-            log.info("LB-%05d: %d windows from decode cache", lb_number, len(cached))
+            log.info("LB-%05d: %d window(s) from decode cache", lb_number, len(cached))
             return cached
 
     from tapematch import asr, ingest  # deferred: heavy, and optional for tests
@@ -222,14 +255,23 @@ def decode_windows(lb_number: int, disk_path: str, cfg: dict, exts: list[str],
 
     windows: list[dec.Window] = []
     t0 = time.time()
-    for i, b in enumerate(bounds):
-        ts = b / float(sr)
-        w0, w1 = max(0.0, ts - PRE_SEC), min(dur, ts + POST_SEC)
-        text = " ".join(u.text for u in
-                        asr.transcribe_gaps(mono, sr, [(w0, w1)], cfg, model=model))
-        windows.append(dec.Window(i, w0, w1, text))
+    if full_show:
+        # One gap spanning the recording: faster-whisper does its own internal
+        # chunking, and handing it the whole stream keeps utterance timestamps
+        # on a single clock with no per-window seam to reconcile.
+        for i, u in enumerate(asr.transcribe_gaps(mono, sr, [(0.0, dur)], cfg, model=model)):
+            windows.append(dec.Window(i, u.t_start, u.t_end, u.text))
+    else:
+        for i, b in enumerate(bounds):
+            ts = b / float(sr)
+            w0, w1 = max(0.0, ts - PRE_SEC), min(dur, ts + POST_SEC)
+            text = " ".join(u.text for u in
+                            asr.transcribe_gaps(mono, sr, [(w0, w1)], cfg, model=model))
+            windows.append(dec.Window(i, w0, w1, text))
     elapsed = time.time() - t0
-    log.info("LB-%05d: decoded %d windows in %.0fs", lb_number, len(windows), elapsed)
+    log.info("LB-%05d: decoded %s in %.0fs (%.0fx realtime)", lb_number,
+             f"{len(windows)} utterance(s) over {dur / 60:.0f} min" if full_show
+             else f"{len(windows)} windows", elapsed, dur / max(elapsed, 1e-6))
 
     # A decoder that cannot run at all still returns cleanly: transcribe_gaps
     # swallows per-window failures so one bad window cannot kill a session, so
@@ -238,14 +280,18 @@ def decode_windows(lb_number: int, disk_path: str, cfg: dict, exts: list[str],
     # result is expensive twice over — it caches the emptiness, and it replaces
     # good stored locations with none. This is the same silent-failure shape as
     # the vad_filter bug in TODO-293; fail loudly instead.
-    if windows and not any(w.text.strip() for w in windows):
+    # Under full-show the same failure reads as an EMPTY list rather than as
+    # textless windows, because there are no boundaries to enumerate — so zero
+    # utterances over a whole show is refused too. A real Dylan tape decoded
+    # with vad_filter off never legitimately yields nothing.
+    if not any(w.text.strip() for w in windows):
         raise RuntimeError(
-            f"decoder produced no text across {len(windows)} windows "
+            f"decoder produced no text across {len(windows)} window(s) "
             f"({cfg.get('model')} on {cfg.get('device')}/{ctype}) — treating as a "
             "decoder failure, not as silence; nothing cached or saved")
 
     if cache is not None:
-        dec.save_windows(cache, lb_number, model_name, ctype, PRE_SEC, POST_SEC, windows,
+        dec.save_windows(cache, lb_number, model_name, ctype, pre, post, windows,
                          audio_sec=dur, decode_sec=elapsed, device=cfg.get("device"))
     return windows
 
@@ -253,8 +299,8 @@ def decode_windows(lb_number: int, disk_path: str, cfg: dict, exts: list[str],
 def locate_one(conn: sqlite3.Connection, lb_number: int, disk_path: str,
                event_id: int, block: str, cfg: dict, exts: list[str],
                model_name: str, cache: sqlite3.Connection | None = None,
-               cache_only: bool = False) -> list[bt.Match]:
-    """Decode a recording's boundary windows and locate every bobtalk quote.
+               cache_only: bool = False, full_show: bool = True) -> list[bt.Match]:
+    """Decode a recording and locate every bobtalk quote in it.
 
     Tokenisation happens here rather than at decode time, so the cache holds raw
     text and a change to ``content_tokens`` can be re-scored for free.
@@ -271,6 +317,7 @@ def locate_one(conn: sqlite3.Connection, lb_number: int, disk_path: str,
         cache: Open decode-cache connection, or ``None`` to bypass the cache.
         cache_only: Skip recordings with no cached decode instead of decoding
             them. Re-scoring a corpus must never silently start ASR work.
+        full_show: Search the whole recording rather than track boundaries.
 
     Returns:
         The matches written (both confident and not).
@@ -280,20 +327,29 @@ def locate_one(conn: sqlite3.Connection, lb_number: int, disk_path: str,
         log.warning("LB-%05d: no matchable quotes in event %s", lb_number, event_id)
         return []
 
+    pre, post = geometry_key(full_show)
     if cache_only:
         if cache is None:
             raise RuntimeError("cache_only requires a decode cache")
         decoded = dec.load_windows(cache, lb_number, model_name,
-                                   cfg.get("compute_type", "int8"), PRE_SEC, POST_SEC)
+                                   cfg.get("compute_type", "int8"), pre, post)
         if decoded is None:
             log.info("LB-%05d: no cached decode; skipped", lb_number)
             return []
     else:
-        decoded = decode_windows(lb_number, disk_path, cfg, exts, model_name, cache)
+        decoded = decode_windows(lb_number, disk_path, cfg, exts, model_name, cache,
+                                 full_show=full_show)
 
-    windows = [(w.t_start, frozenset(bt.content_tokens(w.text))) for w in decoded]
-    matches = bt.locate_quotes(quotes, windows)
-    bt.save_locations(conn, lb_number, event_id, matches, model=model_name)
+    geometry = bt.GEOM_FULL if full_show else bt.GEOM_BOUNDARIES
+    if full_show:
+        # Windows are cut here, not at decode time: the cache holds utterances,
+        # so re-cutting at a different length costs nothing but a re-score.
+        windows = bt.windows_from_utterances([(w.t_start, w.t_end, w.text) for w in decoded])
+    else:
+        windows = [(w.t_start, frozenset(bt.content_tokens(w.text))) for w in decoded]
+    matches = bt.locate_quotes(quotes, windows, geometry=geometry)
+    bt.save_locations(conn, lb_number, event_id, matches, model=model_name,
+                      geometry=geometry)
     return matches
 
 
@@ -310,6 +366,8 @@ def main() -> None:
                    help="discard cached decodes (optionally only one model's), and exit")
     p.add_argument("--all-sources", action="store_true",
                    help="with --date, process every source, not just the first")
+    p.add_argument("--boundaries", dest="full_show", action="store_false",
+                   help="search one window per track boundary instead of the whole show")
     p.add_argument("--rescore", action="store_true",
                    help="re-score from cached decodes only; never runs ASR")
     p.add_argument("--no-cache", action="store_true",
@@ -331,9 +389,11 @@ def main() -> None:
         try:
             if args.cache_summary:
                 for r in dec.summary(cache):
+                    geom = ("full-show          "
+                            if (r["pre_sec"], r["post_sec"]) == dec.FULL_SHOW_GEOM
+                            else f"pre={r['pre_sec']:<6.1f} post={r['post_sec']:<6.1f}")
                     sys.stdout.write(
-                        f"{r['model']:<12} {r['compute_type']:<8} "
-                        f"pre={r['pre_sec']:<6.1f} post={r['post_sec']:<6.1f} "
+                        f"{r['model']:<12} {r['compute_type']:<8} {geom} "
                         f"{r['recordings']:>6} rec {r['windows']:>7} win "
                         f"{r['chars'] / 1e6:>7.2f} Mchar {r['decode_hours']:>7.1f} h "
                         f"{r['last_at']}\n")
@@ -382,7 +442,7 @@ def main() -> None:
             try:
                 matches = locate_one(conn, lb_number, disk_path, event_id, block,
                                      cfg, exts, args.model, cache=cache,
-                                     cache_only=args.rescore)
+                                     cache_only=args.rescore, full_show=args.full_show)
             except Exception as exc:  # noqa: BLE001 — one bad source, not the run
                 log.error("LB-%05d: locate failed (%s)", lb_number, exc)
                 continue

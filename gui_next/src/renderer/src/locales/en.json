@@ -1663,7 +1663,9 @@
     "bobtalk": {
       "label": "BobTalk in this recording",
       "playAt": "Play from {{clock}}",
-      "clipFailed": "clip unavailable"
+      "clipFailed": "clip unavailable",
+      "pause": "Pause",
+      "stop": "Stop"
     },
     "olof": {
       "label": "Still On The Road",

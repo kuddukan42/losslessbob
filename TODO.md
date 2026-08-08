@@ -1,7 +1,14 @@
 
 TODO-303: Locate Olof's bobtalk quotes in our audio and add a play button
 Priority: Medium
-Status: Open — BUILT 2026-08-07 (backend + GUI shipped); only the corpus-wide run remains
+Status: Open — BUILT 2026-08-07, re-geometried 2026-08-08; only the corpus-wide run remains
+Corpus run 2026-08-08: the FIRST corpus pass (boundary windows, 807 recordings, 998 of 3,301 quotes
+  located) is superseded, not authoritative — full-show is now the default geometry and rows carry
+  a `geometry` column so the run redoes rather than skips them. Relaunch:
+  `.venv/bin/python3 tools/bobtalk_corpus_run.py` (resumable; SIGINT finishes the recording in
+  flight). Budget ~20-25 h of GPU time at the measured 65x realtime — an overnight job, unlike the
+  boundary pass. Expect roughly double the located quotes and a real false-positive rate; see the
+  2026-08-08 CHANGELOG entry for the gate measurement and MIN_DICE_FULL.
 Built 2026-08-07: backend/bobtalk.py (parse/score/confidence/persist/clip), bobtalk_locations table, tools/bobtalk_locate.py, GET /api/bobtalk/<lb> + POST /api/bobtalk/clip, BobtalkZone in the Library DetailPanel's Olof tab, locale keys in all 6 languages. 20 tests; backend suite 1,144 pass; gui-check PASS. Verified live on LB-00212 (1978-12-16): 6 of 10 quotes located, written to the DB, clip extraction from .shn confirmed playable. Remaining: decide the corpus-wide run scope (item 5 below), and optionally render play buttons inline against each line of the bobtalk block rather than as a separate list (needs the frontend to agree with backend.bobtalk's quote_index, which is why v1 renders the API's own text instead).
 Added: 2026-08-07
 Description: tj's idea, and it inverts the failed TODO-293 approach. Instead of asking ASR to PRODUCE transcripts (which fails -- see TODO-293 and CALIBRATION_PROGRESS.md '§3 banter/ASR signal'), use Olof's already-curated bobtalk as the target and use ASR only to LOCATE it in our own audio. Fuzzy-matching a garbled decode against a KNOWN string is a far easier problem than open transcription, so large-v3's fidelity ceiling stops mattering. The stored artifact is a timestamp, not a transcript: (lb_number, event_id, quote_index, t_start, confidence) -- small, and a low-confidence match degrades to "no play button" rather than to wrong text on screen.

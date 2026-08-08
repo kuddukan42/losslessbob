@@ -191,3 +191,128 @@ def test_text_is_joined_from_olof_not_copied(conn):
     conn.execute("UPDATE olof_events SET bobtalk = ? WHERE event_id = 7",
                  ("Completely different words now recorded for this event here",))
     assert bobtalk.get_locations(conn, 212)[0]["text"].startswith("Completely different")
+
+
+# ── full-show windowing (TODO-303, second corpus pass) ────────────────────────
+def test_windows_slide_with_overlap_and_cover_every_utterance():
+    utts = [(t, t + 4.0, f"utterance number {i} spoken here") for i, t in
+            enumerate(range(0, 200, 20))]
+    wins = bobtalk.windows_from_utterances(utts, window_sec=80.0, hop_sec=40.0)
+    starts = [t for t, _ in wins]
+    assert starts == [0.0, 40.0, 80.0, 120.0, 160.0]
+    # Overlap is the point: the 40s window carries speech the 0s window also saw.
+    assert wins[0][1] & wins[1][1]
+
+
+def test_windows_drop_silent_stretches():
+    """A show's dead air must not cost a window — nothing was said there."""
+    utts = [(0.0, 3.0, "opening words spoken plainly"), (600.0, 603.0, "closing remarks")]
+    wins = bobtalk.windows_from_utterances(utts, window_sec=80.0, hop_sec=40.0)
+    # 15 windows would tile 0-600s; only those actually holding speech survive.
+    # Two per utterance, because overlapping windows both catch it.
+    assert [t for t, _ in wins] == [0.0, 560.0, 600.0]
+
+
+def test_windows_from_no_utterances_is_empty():
+    assert bobtalk.windows_from_utterances([]) == []
+
+
+def test_quote_straddling_a_window_cut_still_lands_whole_in_one_window():
+    """The reason the hop is half the window."""
+    quote = _q("A few years back I was living in a hotel room out in Arizona")
+    # Speech split across the 80s cut: half at 70s, half at 85s.
+    utts = [(70.0, 75.0, "a few years back I was living"),
+            (85.0, 90.0, "in a hotel room out in Arizona")]
+    wins = bobtalk.windows_from_utterances(utts, window_sec=80.0, hop_sec=40.0)
+    m = bobtalk.match_quote(quote, wins, bobtalk.GEOM_FULL)
+    assert m.dice > bobtalk.MIN_DICE
+
+
+def test_gate_differs_by_geometry():
+    """The two geometries are gated on different things, and only on one each."""
+    assert bobtalk.gate_for(bobtalk.GEOM_BOUNDARIES) == (
+        bobtalk.MIN_DICE, bobtalk.MIN_RATIO, 0.0)
+    assert bobtalk.gate_for(bobtalk.GEOM_FULL) == (
+        bobtalk.MIN_DICE_FULL, 0.0, bobtalk.WINDOW_SEC)
+    # An unknown label must not silently get the loose gate.
+    assert bobtalk.gate_for("something-new") == bobtalk.gate_for(bobtalk.GEOM_BOUNDARIES)
+
+
+def test_full_show_gate_accepts_a_strong_match_with_a_close_runner_up():
+    """The measured reason MIN_RATIO is off under full-show.
+
+    Over ~160 sliding windows the runner-up is a maximum across far more noise
+    draws than the ~25 disjoint boundary windows it was calibrated on, so real
+    matches routinely beat it by only 1.1-1.7x. The boundary gate rejects this;
+    the full-show gate accepts it on magnitude.
+    """
+    quote = _q("Ladies and gentlemen on the drums tonight from Kingston Jamaica Ian Wallace")
+    utts = [(100.0, 106.0, "ladies and gentlemen on the drums tonight "
+                           "from Kingston Jamaica Ian Wallace"),
+            (2000.0, 2006.0, "ladies and gentlemen on the drums tonight give him a hand")]
+    wins = bobtalk.windows_from_utterances(utts, window_sec=80.0, hop_sec=40.0)
+    m = bobtalk.match_quote(quote, wins, bobtalk.GEOM_FULL)
+    assert m.dice >= bobtalk.MIN_DICE_FULL
+    assert m.runner_up > m.dice / bobtalk.MIN_RATIO      # would fail the boundary rule
+    assert m.confident is True
+    assert bobtalk.match_quote(quote, wins, bobtalk.GEOM_BOUNDARIES).confident is False
+
+
+def test_full_show_gate_is_stricter_on_magnitude_than_the_boundary_gate():
+    """Dropping the ratio rule is paid for by a higher Dice floor, not for free."""
+    quote = _q("A few years back I was living in a hotel room out in Arizona")
+    utts = [(100.0, 104.0, "living in a hotel room somewhere far away "
+                           "tonight folks crowd noise here")]
+    wins = bobtalk.windows_from_utterances(utts, window_sec=80.0, hop_sec=40.0)
+    m = bobtalk.match_quote(quote, wins, bobtalk.GEOM_FULL)
+    assert bobtalk.MIN_DICE <= m.dice < bobtalk.MIN_DICE_FULL
+    assert m.confident is False
+    # The same evidence clears the boundary gate: no rival, and over MIN_DICE.
+    assert bobtalk.match_quote(quote, wins, bobtalk.GEOM_BOUNDARIES).confident is True
+
+
+def test_separation_still_shapes_the_reported_runner_up():
+    """It no longer gates, but it is kept as provenance for re-gating later.
+
+    Without it the runner-up is the winner's own overlapping neighbour scoring
+    the same speech, which says nothing about how alone the match is.
+    """
+    quote = _q("A few years back I was living in a hotel room out in Arizona")
+    # 150s, not 100s: the first window starts at the first utterance, so speech
+    # a hop or more in is what actually lands in two overlapping windows.
+    utts = [(50.0, 52.0, "some earlier remark"),
+            (150.0, 156.0, "a few years back living in a hotel room out in Arizona"),
+            (900.0, 903.0, "entirely different chatter about the parking lot")]
+    wins = bobtalk.windows_from_utterances(utts, window_sec=80.0, hop_sec=40.0)
+    near = bobtalk.match_quote(quote, wins, bobtalk.GEOM_BOUNDARIES)
+    far = bobtalk.match_quote(quote, wins, bobtalk.GEOM_FULL)
+    assert near.dice == pytest.approx(near.runner_up)   # its own neighbour
+    assert far.runner_up < far.dice
+
+
+def test_a_tied_rival_elsewhere_in_the_show_is_still_reported():
+    """Exclusion is local: a competing window far away survives into runner_up."""
+    quote = _q("We have a stage technical monitoring problem here tonight folks")
+    tied = "stage technical monitoring problem tonight"
+    utts = [(100.0, 104.0, tied), (2000.0, 2004.0, tied)]
+    wins = bobtalk.windows_from_utterances(utts, window_sec=80.0, hop_sec=40.0)
+    m = bobtalk.match_quote(quote, wins, bobtalk.GEOM_FULL)
+    assert m.dice == pytest.approx(m.runner_up)
+
+
+def test_geometry_is_stored_and_backfilled_for_pre_existing_rows(conn):
+    """Rows written before the column existed are the boundary pass, by definition."""
+    conn.execute("""CREATE TABLE bobtalk_locations (
+        lb_number INTEGER NOT NULL, event_id INTEGER NOT NULL,
+        quote_index INTEGER NOT NULL, t_start REAL NOT NULL, dice REAL NOT NULL,
+        runner_up REAL NOT NULL, confident INTEGER NOT NULL, model TEXT,
+        located_at TIMESTAMP, PRIMARY KEY (lb_number, event_id, quote_index))""")
+    conn.execute("INSERT INTO bobtalk_locations VALUES (212,7,0,620.0,0.8,0.1,1,'large-v3',NULL)")
+    bobtalk.ensure_schema(conn)
+    assert conn.execute("SELECT geometry FROM bobtalk_locations").fetchone()[0] == \
+        bobtalk.GEOM_BOUNDARIES
+
+    bobtalk.save_locations(conn, 213, 7, [bobtalk.Match(0, 1, 10.0, 0.9, 0.1, True)],
+                           model="large-v3", geometry=bobtalk.GEOM_FULL)
+    assert conn.execute("SELECT geometry FROM bobtalk_locations WHERE lb_number = 213"
+                        ).fetchone()[0] == bobtalk.GEOM_FULL

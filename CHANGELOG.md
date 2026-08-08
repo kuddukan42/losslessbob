@@ -1,3 +1,36 @@
+[2026-08-08] — feat(backend): TODO-303 — search whole shows, and re-gate the confidence rule
+Added: backend/bobtalk.windows_from_utterances + tools/bobtalk_locate.py --full-show (now the
+  DEFAULT; --boundaries keeps the old pass). The first corpus run located 998 of 3,301 quotes with
+  one window per track split, but boundary windows hear only about a fifth of a show, so quotes
+  spoken away from a split were unreachable at any threshold. A full-show decode is now cut into
+  overlapping 80s/40s windows at MATCH time, not decode time — the cache holds raw utterances, so
+  re-cutting or re-tokenising costs a --rescore rather than a re-decode.
+Changed: the confidence rule is now geometry-dependent (backend.bobtalk.gate_for, one knob so the
+  invalid combinations cannot be built). Measured on 8 recordings / 36 quotes decoded under BOTH
+  geometries: boundary + the shipped best-vs-runner-up rule located 7, full-show + the same rule 7,
+  full-show + MIN_DICE alone 14 (10 of them right, by reading the ASR text against Olof's line).
+  MIN_RATIO does not survive the geometry change: the runner-up is a MAXIMUM over the noise draws,
+  so ~160 sliding windows inflate it far above what ~25 disjoint boundary windows produced, and the
+  3-6x separation it was calibrated on collapses to 1.1-1.7x for visibly correct matches.
+  Percentile-of-bulk variants do not rescue it — p90 accepted 14 of 14 (a bare threshold in
+  disguise), p96 13, p98 10. So GEOM_FULL drops the ratio gate and raises the floor instead
+  (MIN_DICE_FULL 0.40; the sample keeps 9, 7 right), accepting a real false-positive rate — a play
+  button on the wrong 80 seconds — for double the yield. tj's call. Known failure mode: LONG quotes
+  (band intros, tour stories) whose token set cannot fit an 80s window score low and drift onto song
+  lyrics. runner_up is still computed and stored under a separation radius, as provenance for
+  re-gating from cache later.
+Added: bobtalk_locations.geometry, backfilled to 'boundaries' for every pre-existing row, and part
+  of the corpus runner's resume key — otherwise rows from the weaker pass make a full-show run skip
+  the recording and the upgrade silently covers nothing. The decode cache keys full-show under a
+  (-1,-1) sentinel geometry, so both passes of one recording coexist.
+Changed: the empty-decode guard now also fires when a full-show decode returns ZERO utterances —
+  under that geometry a silent decoder failure has no textless windows to be caught by.
+Changed: gui_next DetailPanel bobtalk rows — play is now play/pause with a stop button that rewinds
+  without discarding the cut clip. Locale keys in all 6 languages.
+Measured: full-show ASR costs ~65x realtime on the RTX 3080 (92 s for a 100-minute show), NOT the
+  ~600x quoted from the tapematch §3 experiment. One best source per date is therefore ~20-25 h of
+  GPU time, not the ~15 h estimated for the boundary pass.
+
 [2026-08-07] — feat(backend): TODO-303 — cache ASR decodes, and run them on the GPU
 Added: backend/bobtalk_decodes.py + data/bobtalk_decodes.db — the decoded window TEXT is now kept,
   so re-scoring costs no CPU. bobtalk_locations still stores only a timestamp; this is a separate,
