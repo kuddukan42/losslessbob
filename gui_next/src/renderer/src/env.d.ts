@@ -16,5 +16,7 @@ interface Window {
     printDossierPdf: (url: string, filename: string) => Promise<boolean>
     pickAndReadFile:  (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }) => Promise<string | null>
     pickAndReadFiles: (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }) => Promise<{ path: string; content: string }[]>
+    consumePipelineFolders: () => Promise<string[]>
+    onPipelineFolders: (cb: (paths: string[]) => void) => () => void
   }
 }

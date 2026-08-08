@@ -13,6 +13,7 @@ import {
   TableShell, TH, TR, TD, GroupRow,
 } from './components'
 import { useSettingsStore } from './store'
+import { useFolderQueueStore } from './lib/folderQueueStore'
 import i18n from './i18n'
 import { ScreenHome } from './screens/ScreenHome'
 import { ScreenPipeline } from './screens/ScreenPipeline'
@@ -117,6 +118,32 @@ function RouteRestorer(): null {
     // mount-only: restoring once at launch, not on later navigations
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  return null
+}
+
+// ── "Send to LosslessBob pipeline" from the file manager ─────────────────────
+//
+// tools/nemo drops folder paths for the main process (see PIPELINE_INBOX there);
+// they arrive here as a batch, join the pipeline queue and pull the app to the
+// Pipeline screen. Also runs when the drop is what launched the app, via the
+// pending batch the main process buffered until this mounted.
+
+function PipelineInbox(): null {
+  const navigate = useNavigate()
+  const addFolders = useFolderQueueStore((s) => s.addFolders)
+
+  useEffect(() => {
+    if (!window.api?.onPipelineFolders) return // renderer-only dev/screenshot mode
+    const accept = (paths: string[]): void => {
+      if (!paths.length) return
+      addFolders(paths)
+      navigate('/pipeline')
+    }
+    const off = window.api.onPipelineFolders(accept)
+    window.api.consumePipelineFolders().then(accept).catch(() => {})
+    return off
+  }, [addFolders, navigate])
+
   return null
 }
 
@@ -352,6 +379,7 @@ export default function App(): React.JSX.Element {
     >
     <HashRouter>
       <RouteRestorer />
+      <PipelineInbox />
       {!splashDone && <SplashOverlay onDone={() => setSplashDone(true)} />}
       {showAbout && <AboutDialog onClose={() => setShowAbout(false)} />}
       <AppShell onAbout={() => setShowAbout(true)}>

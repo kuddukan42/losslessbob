@@ -250,7 +250,11 @@ losslessbob/
 │   ├── electron_preflight.mjs # CLI: display-backend probe matrix (Wayland/XWayland/Xvfb/ozone-headless); writes + preserves the `selected` decision
 │   ├── electron_display.mjs  # Shared X11/Wayland socket discovery + Xvfb lifecycle helpers (preflight + electron_driver)
 │   ├── electron_driver.config.json # Committed display-backend decision (Xvfb, screen 2920x1860x24) + probe matrix; electron_driver.mjs reads it, never re-probes
-│   └── debug_screens.json    # Tier-agnostic screen tour (session action list) — same file feeds both drivers
+│   ├── debug_screens.json    # Tier-agnostic screen tour (session action list) — same file feeds both drivers
+│   └── nemo/                 # Cinnamon/Nemo "Send to LosslessBob pipeline" right-click action (multi-folder)
+│       ├── lb-send-to-pipeline.sh      # Drops the selected folders in ~/.local/share/losslessbob/pipeline-inbox/, launches the app if ~/.local/share/losslessbob/gui.pid names no live process
+│       ├── losslessbob-pipeline.nemo_action # Action template (<INSTALL_DIR> substituted at install time)
+│       └── install-nemo-action.sh      # Installs/uninstalls (--uninstall) into ~/.local/share/nemo/actions/
 ├── instructions/              # Fable spec pack + working docs (not shipped; planning/reference only)
 │   ├── README.md              # Index of instructions/ docs and how to use them
 │   ├── SPEC_INTEGRATION_NOTES.md # Cross-spec integration notes; read before implementing any spec-pack item
