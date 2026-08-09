@@ -416,13 +416,66 @@ def get_spectrogram_status() -> dict:
         return dict(_spectro_state)
 
 
-def _find_lbdir_in_folder(folder: Path) -> "Path | None":
-    """Return the first lbdir*.txt (or LBF-*-lbdir.txt) found in folder, or None."""
+_LBF_NAME_RE = re.compile(r'^LBF-(\d+)-', re.IGNORECASE)
+
+
+def _lbdir_file_lb(path: Path) -> "int | None":
+    """LB# a manifest filename declares (``LBF-01234-lbdir.txt`` → 1234), or None."""
+    m = _LBF_NAME_RE.match(path.name)
+    return int(m.group(1)) if m else None
+
+
+def _find_lbdir_in_folder(folder: Path, lb_number: "int | None" = None) -> "Path | None":
+    """Return the folder's lbdir*.txt manifest, or None.
+
+    When *lb_number* is given, only a manifest that belongs to that LB is
+    accepted: an ``LBF-NNNNN-…`` file whose number matches, or an untagged
+    ``lbdir*.txt`` (folder-supplied, unattributable — assumed to be the
+    folder's own). A manifest carrying a *different* LB's tag is ignored, so
+    an LB override makes the stale manifest of the previously-matched LB
+    invisible and callers re-retrieve the right one instead of verifying
+    against the wrong archive entry (BUG-315).
+
+    Args:
+        folder: Folder to search (non-recursive).
+        lb_number: LB the manifest must belong to, or None to accept any.
+
+    Returns:
+        Path of the chosen manifest, or None when the folder has none that
+        qualifies.
+    """
     if not folder.exists():
         return None
-    for f in folder.iterdir():
-        if f.is_file() and 'lbdir' in f.name.lower() and f.suffix.lower() == '.txt':
+    candidates = [
+        f for f in sorted(folder.iterdir())
+        if f.is_file() and 'lbdir' in f.name.lower() and f.suffix.lower() == '.txt'
+    ]
+    if lb_number is None:
+        return candidates[0] if candidates else None
+    untagged: Path | None = None
+    tagged: list[tuple[int, Path]] = []
+    for f in candidates:
+        file_lb = _lbdir_file_lb(f)
+        if file_lb == lb_number:
             return f
+        if file_lb is None:
+            if untagged is None:
+                untagged = f
+        else:
+            tagged.append((file_lb, f))
+    if untagged is not None:
+        return untagged
+    # An alias LB legitimately carries its canonical's manifest (the retrieve
+    # paths fall back to the canonical when the alias has no attachment).
+    if tagged:
+        try:
+            canonicals = database.resolve_aliases([lb_number])
+            canonical = canonicals[0] if canonicals else lb_number
+        except Exception:
+            canonical = lb_number
+        for file_lb, f in tagged:
+            if file_lb == canonical:
+                return f
     return None
 
 
@@ -2967,7 +3020,9 @@ def create_app() -> Flask:
                 if lb_number is None and lb_number_hint is not None:
                     lb_number = lb_number_hint
 
-                lbdir_path = _find_lbdir_in_folder(folder)
+                # LB-scoped: a manifest left behind by a previously-matched LB
+                # must not be checked against this folder (BUG-315).
+                lbdir_path = _find_lbdir_in_folder(folder, lb_number)
 
                 if not lbdir_path:
                     results.append({
@@ -3100,7 +3155,10 @@ def create_app() -> Flask:
                     continue
 
                 dest = folder / lbdir_src.name
-                existing = _find_lbdir_in_folder(folder)
+                # Only an lbdir belonging to *this* LB counts as already
+                # present — after an override the folder may still hold the
+                # previous LB's manifest, which must be superseded (BUG-315).
+                existing = _find_lbdir_in_folder(folder, lb_number)
                 if existing:
                     results.append({
                         "folder": str(folder_path),
@@ -3150,7 +3208,9 @@ def create_app() -> Flask:
             results = []
             for folder_path in folders:
                 folder = Path(folder_path)
-                lbdir_path = _find_lbdir_in_folder(folder)
+                lbdir_path = _find_lbdir_in_folder(
+                    folder, _resolve_lb_number_for_folder(folder) or lb_number_hint
+                )
                 if not lbdir_path:
                     results.append({"folder": str(folder), "error": "No lbdir*.txt found"})
                     continue
@@ -3253,7 +3313,9 @@ def create_app() -> Flask:
             results = []
             for folder_path in folders:
                 folder = Path(folder_path)
-                lbdir_path = _find_lbdir_in_folder(folder)
+                lbdir_path = _find_lbdir_in_folder(
+                    folder, _resolve_lb_number_for_folder(folder)
+                )
                 if not lbdir_path:
                     results.append({"folder": str(folder), "error": "No lbdir*.txt found"})
                     continue
@@ -8680,7 +8742,7 @@ def create_app() -> Flask:
         # must never break the lookup step.
         if lb_number and "lbdir" in steps:
             try:
-                if (_find_lbdir_in_folder(folder) is None
+                if (_find_lbdir_in_folder(folder, lb_number) is None
                         and find_lbdir_attachment(lb_number, xref=_xref_for(lb_number)) is None):
                     _submit_lbdir_prefetch(lb_number)
             except Exception as exc:
@@ -8699,7 +8761,11 @@ def create_app() -> Flask:
             row["lbdir"] = {**state["steps"]["lbdir"], "cached": True}
         elif "lbdir" in steps:
             if lb_number:
-                lbdir_file = _find_lbdir_in_folder(folder)
+                # Scoped to the LB the lookup just resolved: after an override
+                # the folder still holds the previous LB's manifest, and
+                # verifying against it reports the wrong archive entry until
+                # the file is manually removed (BUG-315).
+                lbdir_file = _find_lbdir_in_folder(folder, lb_number)
                 pending_fetch = False
                 if not lbdir_file:
                     # Try the attachments cache; if uncached, either park on an

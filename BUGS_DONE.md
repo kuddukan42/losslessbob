@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-315: LB override kept checking the previous LB's lbdir manifest
+Status: Fixed
+File(s): backend/app.py:419,backend/app.py:8767
+Reported: 2026-08-08
+Fixed: 2026-08-08
+Root cause: _find_lbdir_in_folder() returned the first lbdir*.txt in the folder with no regard for which LB it belonged to, and every caller (pipeline LBDIR step, /api/lbdir/check, retrieve, reconcile, find_extra) short-circuited on it — retrieve even reported 'already_present'. A re-pin changed the resolved LB but the stale manifest stayed authoritative.
+Fix: _find_lbdir_in_folder(folder, lb_number) now accepts only a manifest that belongs to that LB (LBF-NNNNN- prefix match, or its canonical for an alias) or an untagged folder-supplied lbdir.txt; a different LB's manifest is invisible, so the correct one is retrieved and checked. All five call sites pass the resolved/pinned LB. Regression tests in tests/test_lbdir_manifest_scope.py.
+
 BUG-314: bobtalk locate: a failed ASR decode silently overwrote good locations with none
 Status: Fixed
 File(s): tools/bobtalk_locate.py,backend/bobtalk_decodes.py
