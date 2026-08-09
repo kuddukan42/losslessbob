@@ -4,6 +4,20 @@ import { Icon } from '../Icon'
 import { Button, Chip, Pill, Banner, TableShell, TH, TR, TD } from '../index'
 import { FileRow, CheckStatus } from '../../lib/verifyStore'
 
+/**
+ * Cell style for the md5/ffp digest columns: overrides TD's nowrap + ellipsis
+ * clipping so the full digest always renders, wrapping onto a second line when
+ * the column is narrower than the hash.
+ */
+const HASH_CELL: React.CSSProperties = {
+  whiteSpace: 'normal',
+  wordBreak: 'break-all',
+  overflow: 'visible',
+  textOverflow: 'clip',
+  lineHeight: 1.3,
+  userSelect: 'text',
+}
+
 export function StatusDot({ s }: { s: CheckStatus }): React.JSX.Element {
   if (s === 'pass') return <Icon name="check" size={13} style={{ color: 'var(--lbb-ok-bar)' }} />
   if (s === 'fail') return <Icon name="x"     size={13} style={{ color: 'var(--lbb-bad-fg)' }} />
@@ -66,60 +80,65 @@ export function VerifyDetail({
           {t('verify.allClear.desc', { count: files.length })}
         </Banner>
       ) : (
-        <TableShell>
-          <colgroup>
-            <col style={{ width: 3 }} />
-            <col />
-            <col style={{ width: 130 }} /><col style={{ width: 130 }} /><col style={{ width: 60 }} />
-            <col style={{ width: 130 }} /><col style={{ width: 130 }} /><col style={{ width: 60 }} />
-            <col style={{ width: 60 }} /><col style={{ width: 60 }} /><col style={{ width: 90 }} />
-          </colgroup>
-          <thead>
-            <tr>
-              <TH> </TH><TH>{t('verify.table.filename')}</TH>
-              <TH align="right">{t('verify.table.md5Expected')}</TH><TH align="right">{t('verify.table.md5Actual')}</TH><TH align="center">{t('verify.table.md5')}</TH>
-              <TH align="right">{t('verify.table.ffpExpected')}</TH><TH align="right">{t('verify.table.ffpActual')}</TH><TH align="center">{t('verify.table.ffp')}</TH>
-              <TH align="center">{t('verify.table.st5')}</TH><TH align="center">{t('verify.table.disk')}</TH><TH>{t('verify.table.overall')}</TH>
-            </tr>
-          </thead>
-          <tbody>
-            {visible.map((f, i) => {
-              const edge: 'ok' | 'warn' | 'bad' = f.overall === 'pass' ? 'ok' : f.overall === 'missing' ? 'warn' : 'bad'
-              const md5e = f.md5_expected ? f.md5_expected.slice(0, 12) + '…' : '—'
-              const md5a = f.md5_actual   ? f.md5_actual.slice(0, 12)   + '…' : '—'
-              const ffpe = f.ffp_expected ? f.ffp_expected.slice(0, 12) + '…' : '—'
-              const ffpa = f.ffp_actual   ? f.ffp_actual.slice(0, 12)   + '…' : '—'
-              return (
-                <TR key={i} edge={edge}>
-                  <TD mono style={{ color: f.overall === 'pass' ? 'var(--lbb-fg)' : f.overall === 'missing' ? 'var(--lbb-warn-fg)' : 'var(--lbb-bad-fg)' }}>
-                    {f.filename}
-                  </TD>
-                  <TD align="right" mono dim>{md5e}</TD>
-                  <TD align="right" mono style={{ color: f.md5_status === 'fail' ? 'var(--lbb-bad-fg)' : f.md5_status === 'miss' ? 'var(--lbb-fg3)' : 'var(--lbb-fg2)' }}>
-                    {md5a}
-                  </TD>
-                  <TD align="center"><StatusDot s={f.md5_status} /></TD>
-                  <TD align="right" mono dim>{ffpe}</TD>
-                  <TD align="right" mono style={{ color: f.ffp_status === 'fail' ? 'var(--lbb-bad-fg)' : f.ffp_status === 'miss' ? 'var(--lbb-fg3)' : 'var(--lbb-fg2)' }}>
-                    {ffpa}
-                  </TD>
-                  <TD align="center"><StatusDot s={f.ffp_status} /></TD>
-                  <TD align="center"><StatusDot s={f.shntool_status} /></TD>
-                  <TD align="center">
-                    {f.on_disk
-                      ? <Icon name="check" size={12} style={{ color: 'var(--lbb-ok-bar)' }} />
-                      : <Icon name="x"     size={12} style={{ color: 'var(--lbb-warn-fg)' }} />}
-                  </TD>
-                  <TD>
-                    <Pill tone={edge} soft>
-                      {f.overall === 'pass' ? t('verify.fileStates.pass') : f.overall === 'missing' ? t('verify.fileStates.missing') : f.overall === 'extra' ? t('verify.fileStates.extra') : t('verify.fileStates.fail')}
-                    </Pill>
-                  </TD>
-                </TR>
-              )
-            })}
-          </tbody>
-        </TableShell>
+        <div style={{ overflowX: 'auto', maxWidth: '100%' }}>
+          <TableShell style={{ minWidth: 1150 }}>
+            <colgroup>
+              <col style={{ width: 3 }} />
+              <col />
+              <col style={{ width: 180 }} /><col style={{ width: 180 }} /><col style={{ width: 60 }} />
+              <col style={{ width: 180 }} /><col style={{ width: 180 }} /><col style={{ width: 60 }} />
+              <col style={{ width: 60 }} /><col style={{ width: 60 }} /><col style={{ width: 90 }} />
+            </colgroup>
+            <thead>
+              <tr>
+                <TH> </TH><TH>{t('verify.table.filename')}</TH>
+                <TH>{t('verify.table.md5Expected')}</TH><TH>{t('verify.table.md5Actual')}</TH><TH align="center">{t('verify.table.md5')}</TH>
+                <TH>{t('verify.table.ffpExpected')}</TH><TH>{t('verify.table.ffpActual')}</TH><TH align="center">{t('verify.table.ffp')}</TH>
+                <TH align="center">{t('verify.table.st5')}</TH><TH align="center">{t('verify.table.disk')}</TH><TH>{t('verify.table.overall')}</TH>
+              </tr>
+            </thead>
+            <tbody>
+              {visible.map((f, i) => {
+                const edge: 'ok' | 'warn' | 'bad' = f.overall === 'pass' ? 'ok' : f.overall === 'missing' ? 'warn' : 'bad'
+                // Hashes are shown in full — a truncated digest is useless for the
+                // eyeball comparison this table exists for. HASH_CELL wraps them
+                // instead of clipping, so no character is lost at any density.
+                const md5e = f.md5_expected || '—'
+                const md5a = f.md5_actual   || '—'
+                const ffpe = f.ffp_expected || '—'
+                const ffpa = f.ffp_actual   || '—'
+                return (
+                  <TR key={i} edge={edge}>
+                    <TD mono style={{ color: f.overall === 'pass' ? 'var(--lbb-fg)' : f.overall === 'missing' ? 'var(--lbb-warn-fg)' : 'var(--lbb-bad-fg)' }}>
+                      {f.filename}
+                    </TD>
+                    <TD mono dim style={HASH_CELL}>{md5e}</TD>
+                    <TD mono style={{ ...HASH_CELL, color: f.md5_status === 'fail' ? 'var(--lbb-bad-fg)' : f.md5_status === 'miss' ? 'var(--lbb-fg3)' : 'var(--lbb-fg2)' }}>
+                      {md5a}
+                    </TD>
+                    <TD align="center"><StatusDot s={f.md5_status} /></TD>
+                    <TD mono dim style={HASH_CELL}>{ffpe}</TD>
+                    <TD mono style={{ ...HASH_CELL, color: f.ffp_status === 'fail' ? 'var(--lbb-bad-fg)' : f.ffp_status === 'miss' ? 'var(--lbb-fg3)' : 'var(--lbb-fg2)' }}>
+                      {ffpa}
+                    </TD>
+                    <TD align="center"><StatusDot s={f.ffp_status} /></TD>
+                    <TD align="center"><StatusDot s={f.shntool_status} /></TD>
+                    <TD align="center">
+                      {f.on_disk
+                        ? <Icon name="check" size={12} style={{ color: 'var(--lbb-ok-bar)' }} />
+                        : <Icon name="x"     size={12} style={{ color: 'var(--lbb-warn-fg)' }} />}
+                    </TD>
+                    <TD>
+                      <Pill tone={edge} soft>
+                        {f.overall === 'pass' ? t('verify.fileStates.pass') : f.overall === 'missing' ? t('verify.fileStates.missing') : f.overall === 'extra' ? t('verify.fileStates.extra') : t('verify.fileStates.fail')}
+                      </Pill>
+                    </TD>
+                  </TR>
+                )
+              })}
+            </tbody>
+          </TableShell>
+        </div>
       )}
 
       {!showAll && visible.length > 0 && (

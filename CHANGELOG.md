@@ -1,3 +1,12 @@
+[2026-08-09] — fix(gui): Verify stage shows full md5/ffp digests instead of 12-char stubs
+Fixed: gui_next/src/renderer/src/components/pipeline/VerifyDetail.tsx: the expected/actual md5 and
+  ffp columns rendered `hash.slice(0, 12) + '…'`, so a mismatch could not actually be compared by
+  eye — the differing bytes are usually past character 12. All four digest columns now print the
+  complete hash. The cells override TD's nowrap/ellipsis clipping (wrap + break-all) so no
+  character is lost at any density or font-size setting, the columns widened 130→180px, and the
+  table sits in a horizontal-scroll wrapper with a 1150px min-width so narrow panels scroll rather
+  than squeeze the digests. Digest headers/cells are left-aligned now that they wrap.
+
 [2026-08-08] — fix(backend): BUG-315 — an LB override now takes the lbdir manifest with it
 Fixed: backend/app.py: _find_lbdir_in_folder() took the first lbdir*.txt in the folder whatever
   LB it belonged to, so after "Override LB#" / "Pin & continue" the LBDIR stage kept verifying
