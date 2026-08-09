@@ -425,20 +425,30 @@ def _lbdir_file_lb(path: Path) -> "int | None":
     return int(m.group(1)) if m else None
 
 
-def _find_lbdir_in_folder(folder: Path, lb_number: "int | None" = None) -> "Path | None":
+def _find_lbdir_in_folder(
+    folder: Path, lb_number: "int | None" = None, strict: bool = False,
+) -> "Path | None":
     """Return the folder's lbdir*.txt manifest, or None.
 
-    When *lb_number* is given, only a manifest that belongs to that LB is
-    accepted: an ``LBF-NNNNN-…`` file whose number matches, or an untagged
+    With *lb_number* the search is ordered by how well a manifest is attributed
+    to that LB: an ``LBF-NNNNN-…`` file whose number matches (or matches the
+    LB's canonical, which an alias legitimately carries), then an untagged
     ``lbdir*.txt`` (folder-supplied, unattributable — assumed to be the
-    folder's own). A manifest carrying a *different* LB's tag is ignored, so
-    an LB override makes the stale manifest of the previously-matched LB
-    invisible and callers re-retrieve the right one instead of verifying
-    against the wrong archive entry (BUG-315).
+    folder's own), then any other LB's manifest.
+
+    *strict* stops before that last step: it answers "does this folder already
+    hold **this LB's** manifest?", which is what the retrieve paths must ask so
+    an LB override re-fetches instead of leaving the previously-matched LB's
+    manifest authoritative (BUG-315). The non-strict fallback keeps a folder
+    whose pinned LB has no lbdir attachment of its own (common for double-LB
+    pairs, where only one entry carries the manifest) verifying against the
+    manifest that *is* there rather than against nothing.
 
     Args:
         folder: Folder to search (non-recursive).
-        lb_number: LB the manifest must belong to, or None to accept any.
+        lb_number: LB to prefer the manifest of, or None to accept any.
+        strict: Reject manifests belonging to a different LB instead of
+            falling back to them.
 
     Returns:
         Path of the chosen manifest, or None when the folder has none that
@@ -465,18 +475,19 @@ def _find_lbdir_in_folder(folder: Path, lb_number: "int | None" = None) -> "Path
             tagged.append((file_lb, f))
     if untagged is not None:
         return untagged
+    if not tagged:
+        return None
     # An alias LB legitimately carries its canonical's manifest (the retrieve
     # paths fall back to the canonical when the alias has no attachment).
-    if tagged:
-        try:
-            canonicals = database.resolve_aliases([lb_number])
-            canonical = canonicals[0] if canonicals else lb_number
-        except Exception:
-            canonical = lb_number
-        for file_lb, f in tagged:
-            if file_lb == canonical:
-                return f
-    return None
+    try:
+        canonicals = database.resolve_aliases([lb_number])
+        canonical = canonicals[0] if canonicals else lb_number
+    except Exception:
+        canonical = lb_number
+    for file_lb, f in tagged:
+        if file_lb == canonical:
+            return f
+    return None if strict else tagged[0][1]
 
 
 def _pinned_lb_for_folder(folder: Path) -> int | None:
@@ -3158,7 +3169,7 @@ def create_app() -> Flask:
                 # Only an lbdir belonging to *this* LB counts as already
                 # present — after an override the folder may still hold the
                 # previous LB's manifest, which must be superseded (BUG-315).
-                existing = _find_lbdir_in_folder(folder, lb_number)
+                existing = _find_lbdir_in_folder(folder, lb_number, strict=True)
                 if existing:
                     results.append({
                         "folder": str(folder_path),
@@ -8765,7 +8776,7 @@ def create_app() -> Flask:
                 # the folder still holds the previous LB's manifest, and
                 # verifying against it reports the wrong archive entry until
                 # the file is manually removed (BUG-315).
-                lbdir_file = _find_lbdir_in_folder(folder, lb_number)
+                lbdir_file = _find_lbdir_in_folder(folder, lb_number, strict=True)
                 pending_fetch = False
                 if not lbdir_file:
                     # Try the attachments cache; if uncached, either park on an
@@ -8807,6 +8818,16 @@ def create_app() -> Flask:
                             lbdir_file = folder / lbdir_src.name
                     except Exception:
                         pass
+
+                if not lbdir_file:
+                    # This LB has no manifest of its own to pull in (common for
+                    # double-LB pairs — only one entry carries the lbdir). Fall
+                    # back to whatever manifest the folder already holds rather
+                    # than reporting nothing, and don't park on a prefetch that
+                    # has something to verify against meanwhile (BUG-315).
+                    lbdir_file = _find_lbdir_in_folder(folder, lb_number)
+                    if lbdir_file:
+                        pending_fetch = False
 
                 if pending_fetch:
                     # Wire status stays "mute" because the GUI StepStatus type is a
