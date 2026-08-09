@@ -7,8 +7,16 @@ Fixed: backend/app.py: _find_lbdir_in_folder() took the first lbdir*.txt in the 
   untagged folder-supplied lbdir.txt; another LB's manifest is ignored so the correct one is
   retrieved. All five call sites (pipeline LBDIR step + prefetch trigger, /api/lbdir/check,
   retrieve, reconcile, find_extra) pass the pinned/resolved LB.
-Added: tests/test_lbdir_manifest_scope.py — 8 cases pinning the selector: stale manifest ignored,
-  correct one wins when both are present, untagged accepted, alias→canonical accepted.
+Changed: backend/app.py: same-day follow-up — the first cut rejected another LB's manifest
+  outright, which stopped double-LB folders (pinned to the entry that has no lbdir attachment of
+  its own, e.g. LB-03043 of the 2986/3043 pair) from checking against the sibling's manifest at
+  all. Rejection is now the `strict=True` mode, used only where the question is "must I retrieve
+  this LB's manifest?" (pipeline fetch decision, /api/lbdir/retrieve); everywhere else a
+  mismatched manifest is the last-resort fallback, and the pipeline no longer parks on
+  "Fetching LBDIR…" when it has a manifest it could verify against.
+Added: tests/test_lbdir_manifest_scope.py — 9 cases pinning the selector: this LB's manifest wins,
+  untagged accepted, alias→canonical accepted, other-LB manifest invisible to strict callers but
+  usable as a fallback.
 
 [2026-08-08] — feat(gui): "Send to LosslessBob pipeline" right-click action for Nemo
 Added: tools/nemo/ — a Cinnamon/Nemo action that queues one or MORE selected folders on the

@@ -34,16 +34,25 @@ def test_matching_lb_manifest_is_returned(tmp_path):
     assert _find_lbdir_in_folder(tmp_path, 1234) == f
 
 
-def test_stale_manifest_from_another_lb_is_ignored(tmp_path):
-    """The override case: folder still holds the old LB's manifest."""
+def test_stale_manifest_from_another_lb_is_not_this_lb_s(tmp_path):
+    """The override case: folder still holds the old LB's manifest, so the
+    retrieve paths (strict) must see nothing and fetch the right one."""
     _touch(tmp_path, "LBF-01234-lbdir.txt")
-    assert _find_lbdir_in_folder(tmp_path, 9999) is None
+    assert _find_lbdir_in_folder(tmp_path, 9999, strict=True) is None
+
+
+def test_other_lb_manifest_is_a_fallback_when_not_strict(tmp_path):
+    """Nothing to retrieve for this LB (double-LB pair, only the sibling entry
+    has an lbdir) — verify against what's there rather than against nothing."""
+    f = _touch(tmp_path, "LBF-01234-lbdir.txt")
+    assert _find_lbdir_in_folder(tmp_path, 9999) == f
 
 
 def test_correct_manifest_wins_when_both_present(tmp_path):
     _touch(tmp_path, "LBF-01234-lbdir.txt")
     right = _touch(tmp_path, "LBF-09999-lbdir.txt")
     assert _find_lbdir_in_folder(tmp_path, 9999) == right
+    assert _find_lbdir_in_folder(tmp_path, 9999, strict=True) == right
 
 
 def test_untagged_manifest_is_accepted_for_any_lb(tmp_path):
@@ -64,3 +73,4 @@ def test_canonical_manifest_accepted_for_alias_lb(tmp_path, monkeypatch):
 def test_empty_and_missing_folder(tmp_path):
     assert _find_lbdir_in_folder(tmp_path, 1234) is None
     assert _find_lbdir_in_folder(tmp_path / "nope", 1234) is None
+    assert _find_lbdir_in_folder(tmp_path, 1234, strict=True) is None
