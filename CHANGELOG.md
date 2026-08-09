@@ -1,3 +1,15 @@
+[2026-08-08] — fix(backend): BUG-315 — an LB override now takes the lbdir manifest with it
+Fixed: backend/app.py: _find_lbdir_in_folder() took the first lbdir*.txt in the folder whatever
+  LB it belonged to, so after "Override LB#" / "Pin & continue" the LBDIR stage kept verifying
+  against the manifest the *previous* match had copied in (and /api/lbdir/retrieve answered
+  "already_present" instead of fetching the right one). It now takes the resolved LB and accepts
+  only that LB's manifest (LBF-NNNNN- prefix, or its canonical when the pin is an alias) or an
+  untagged folder-supplied lbdir.txt; another LB's manifest is ignored so the correct one is
+  retrieved. All five call sites (pipeline LBDIR step + prefetch trigger, /api/lbdir/check,
+  retrieve, reconcile, find_extra) pass the pinned/resolved LB.
+Added: tests/test_lbdir_manifest_scope.py — 8 cases pinning the selector: stale manifest ignored,
+  correct one wins when both are present, untagged accepted, alias→canonical accepted.
+
 [2026-08-08] — feat(gui): "Send to LosslessBob pipeline" right-click action for Nemo
 Added: tools/nemo/ — a Cinnamon/Nemo action that queues one or MORE selected folders on the
   Pipeline screen. Transport is a drop file in ~/.local/share/losslessbob/pipeline-inbox/, not
