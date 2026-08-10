@@ -526,7 +526,102 @@ function TopBar({
   )
 }
 
-// ── §2 Triage queue rail ────────────────────────────────────────────────────
+// ── §2 Triage queue rail — query field + year brush (design_handoff_
+//    tapematch_rail_filter README) ──────────────────────────────────────────
+//
+// Additive on top of the original four-chip rail: a query field (grammar in
+// parseQueryTokens below), a year-brush histogram with decade chips, and a
+// windowed year-grouped list so the rail stays responsive at the real crawl
+// index's size (thousands of dates). Ported per the handoff's §8 state shape
+// and §4 windowing contract; tmf-rail.jsx is the reference, not line-ported.
+
+const RAIL_ROW_H = 46
+const RAIL_HEADER_H = 26
+const RAIL_OVERSCAN = 8
+
+interface IndexedRow extends DateRow {
+  hay: string
+  status: TriageStatus
+}
+
+interface ParsedQuery {
+  statuses: Set<TriageStatus>
+  years: Set<number>
+  prefixes: string[]
+  monthDays: { m: number; d: number }[]
+  texts: string[]
+}
+
+const STATUS_WORDS: TriageStatus[] = ['conflict', 'review', 'clean', 'curated']
+
+// Grammar (README §2 "Grammar"): whitespace-separated tokens, classified by
+// shape and ANDed across classes, ORed within a class. Order matters — a
+// token is tested against each shape in the table order and stops at the
+// first match, falling through to a free-text substring at the end.
+function parseQueryTokens(q: string): ParsedQuery {
+  const statuses = new Set<TriageStatus>()
+  const years = new Set<number>()
+  const prefixes: string[] = []
+  const monthDays: { m: number; d: number }[] = []
+  const texts: string[] = []
+
+  for (const raw of q.trim().toLowerCase().split(/\s+/).filter(Boolean)) {
+    const statusMatch = raw.match(/^status:(.+)$/)
+    const bare = statusMatch ? statusMatch[1] : raw
+    if ((STATUS_WORDS as string[]).includes(bare)) { statuses.add(bare as TriageStatus); continue }
+
+    if (/^(?:19|20)\d{2}$/.test(raw)) { years.add(Number(raw)); continue }
+
+    let m = raw.match(/^((?:19|20)\d)0s$/)
+    if (m) {
+      const base = Number(m[1]) * 10
+      for (let y = base; y < base + 10; y++) years.add(y)
+      continue
+    }
+    m = raw.match(/^(\d)0s$/)
+    if (m) {
+      const d = Number(m[1])
+      const base = (d >= 3 ? 1900 : 2000) + d * 10
+      for (let y = base; y < base + 10; y++) years.add(y)
+      continue
+    }
+    m = raw.match(/^'?(\d{2})$/)
+    if (m) {
+      const n = Number(m[1])
+      years.add(n > 30 ? 1900 + n : 2000 + n)
+      continue
+    }
+    m = raw.match(/^((?:19|20)\d{2})-(\d{1,2})(?:-(\d{1,2}))?$/)
+    if (m) {
+      const [, yr, mo, da] = m
+      prefixes.push(da ? `${yr}-${mo.padStart(2, '0')}-${da.padStart(2, '0')}` : `${yr}-${mo.padStart(2, '0')}`)
+      continue
+    }
+    m = raw.match(/^(\d{1,2})\/(\d{1,2})$/)
+    if (m) { monthDays.push({ m: Number(m[1]), d: Number(m[2]) }); continue }
+
+    texts.push(raw)
+  }
+  return { statuses, years, prefixes, monthDays, texts }
+}
+
+function matchesQuery(row: IndexedRow, parsed: ParsedQuery): boolean {
+  const { statuses, years, prefixes, monthDays, texts } = parsed
+  if (statuses.size && !statuses.has(row.status)) return false
+  if (years.size && !years.has(Number(row.date.slice(0, 4)))) return false
+  if (prefixes.length && !prefixes.some(p => row.date.startsWith(p))) return false
+  if (monthDays.length) {
+    const mo = Number(row.date.slice(5, 7))
+    const da = Number(row.date.slice(8, 10))
+    if (!monthDays.some(md => md.m === mo && md.d === da)) return false
+  }
+  if (texts.length && !texts.some(t => row.hay.includes(t))) return false
+  return true
+}
+
+type RailItem =
+  | { kind: 'header'; year: number; count: number }
+  | { kind: 'row'; row: IndexedRow; rowIndex: number }
 
 function TriageRail({
   rows, narrow, selectedDate, onOpen, cursorIndexRef, familyCountByDate, loading,
@@ -541,72 +636,251 @@ function TriageRail({
   familyCountByDate: Map<string, number>
 }) {
   const [filter, setFilter] = useState<FilterKey>('needs')
+  const [q, setQ] = useState('')
+  const [range, setRange] = useState<[number, number] | null>(null)
+  const [asc, setAsc] = useState(false)
   const [cursor, setCursor] = useState(0)
+  const [scrollTop, setScrollTop] = useState(0)
+  const [viewH, setViewH] = useState(0)
   const listRef = useRef<HTMLDivElement | null>(null)
-  const rowRefs = useRef<Map<number, HTMLButtonElement>>(new Map())
+  const searchRef = useRef<HTMLInputElement | null>(null)
+  const rafRef = useRef<number | null>(null)
 
-  const filtered = useMemo(
-    () => rows.filter(r => matchesFilter(statusOf(r), filter)),
-    [rows, filter],
-  )
-  const needsCount = useMemo(
-    () => rows.filter(r => matchesFilter(statusOf(r), 'needs')).length,
+  const indexed: IndexedRow[] = useMemo(
+    () => rows.map(r => ({
+      ...r, status: statusOf(r), hay: `${r.date} ${r.location ?? ''}`.toLowerCase(),
+    })),
     [rows],
   )
+  const needsCount = useMemo(
+    () => indexed.filter(r => matchesFilter(r.status, 'needs')).length,
+    [indexed],
+  )
+
+  // Full catalogue span — the brush's bars, not just the matched years, so
+  // the shape of the whole queue stays visible as context (README §3).
+  const [spanMin, spanMax] = useMemo(() => {
+    if (indexed.length === 0) return [0, 0]
+    let lo = Infinity
+    let hi = -Infinity
+    for (const r of indexed) {
+      const y = Number(r.date.slice(0, 4))
+      if (y < lo) lo = y
+      if (y > hi) hi = y
+    }
+    return [lo, hi]
+  }, [indexed])
+
+  const parsedQuery = useMemo(() => parseQueryTokens(q), [q])
+
+  // Staged: status chip + query, range NOT applied — this is what the
+  // histogram is computed from (README §3 "Counts react to the query").
+  const staged = useMemo(
+    () => indexed.filter(r => matchesFilter(r.status, filter) && matchesQuery(r, parsedQuery)),
+    [indexed, filter, parsedQuery],
+  )
+
+  const counts = useMemo(() => {
+    const byYear = new Map<number, { count: number; need: number }>()
+    for (const r of staged) {
+      const y = Number(r.date.slice(0, 4))
+      const c = byYear.get(y) ?? { count: 0, need: 0 }
+      c.count += 1
+      if (matchesFilter(r.status, 'needs')) c.need += 1
+      byYear.set(y, c)
+    }
+    return byYear
+  }, [staged])
+  const maxCount = useMemo(
+    () => Math.max(1, ...Array.from(counts.values(), c => c.count)),
+    [counts],
+  )
+
+  const rowsFinal = useMemo(() => {
+    let out = staged
+    if (range) {
+      out = out.filter(r => {
+        const y = Number(r.date.slice(0, 4))
+        return y >= range[0] && y <= range[1]
+      })
+    }
+    return [...out].sort((a, b) => asc ? a.date.localeCompare(b.date) : b.date.localeCompare(a.date))
+  }, [staged, range, asc])
+
+  // Flatten into year-header + row items with a precomputed offset table
+  // (README §4) — the enabling structure for windowing at any queue size.
+  const { items, offsets, totalH, rowItemIndex } = useMemo(() => {
+    const yearCounts = new Map<number, number>()
+    for (const r of rowsFinal) {
+      const yr = Number(r.date.slice(0, 4))
+      yearCounts.set(yr, (yearCounts.get(yr) ?? 0) + 1)
+    }
+    const items: RailItem[] = []
+    const offsets: number[] = []
+    const rowItemIndex: number[] = []
+    let y = 0
+    let curYear: number | null = null
+    rowsFinal.forEach((row, i) => {
+      const yr = Number(row.date.slice(0, 4))
+      if (yr !== curYear) {
+        curYear = yr
+        offsets.push(y)
+        items.push({ kind: 'header', year: yr, count: yearCounts.get(yr) ?? 0 })
+        y += RAIL_HEADER_H
+      }
+      offsets.push(y)
+      items.push({ kind: 'row', row, rowIndex: i })
+      rowItemIndex[i] = items.length - 1
+      y += RAIL_ROW_H
+    })
+    return { items, offsets, totalH: y, rowItemIndex }
+  }, [rowsFinal])
 
   // Cursor reconciliation (README §2): snap to the open date's row if it's
   // in the filtered list, otherwise clamp into range. Deliberately does not
   // re-run when only the cursor moves (cursor is local state, not a dep).
   useEffect(() => {
     if (selectedDate) {
-      const idx = filtered.findIndex(r => r.date === selectedDate)
+      const idx = rowsFinal.findIndex(r => r.date === selectedDate)
       if (idx >= 0) { setCursor(idx); return }
     }
-    setCursor(c => Math.max(0, Math.min(c, filtered.length - 1)))
+    setCursor(c => Math.max(0, Math.min(c, rowsFinal.length - 1)))
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filtered, selectedDate])
+  }, [rowsFinal, selectedDate])
 
   useEffect(() => { cursorIndexRef.current = cursor }, [cursor, cursorIndexRef])
 
-  // Keep the cursor row visible — manual scrollTop math, not scrollIntoView
-  // (README §2: scrollIntoView drags ancestor containers around too).
   useEffect(() => {
     const box = listRef.current
-    const row = rowRefs.current.get(cursor)
-    if (!box || !row) return
-    const margin = 6
-    const rowTop = row.offsetTop - box.offsetTop
-    const rowBottom = rowTop + row.offsetHeight
-    if (rowTop - margin < box.scrollTop) box.scrollTop = rowTop - margin
-    else if (rowBottom + margin > box.scrollTop + box.clientHeight) {
-      box.scrollTop = rowBottom + margin - box.clientHeight
+    if (!box) return
+    const ro = new ResizeObserver(() => setViewH(box.clientHeight))
+    ro.observe(box)
+    setViewH(box.clientHeight)
+    return () => ro.disconnect()
+  }, [])
+
+  // Cursor scrolling uses the offset table directly (README §4) — with
+  // windowing the target row may not be mounted, so scrollIntoView can't
+  // find it. Leaves a header's worth of margin above, per spec.
+  useEffect(() => {
+    const box = listRef.current
+    const itemIdx = rowItemIndex[cursor]
+    if (!box || itemIdx == null) return
+    const top = offsets[itemIdx]
+    const bottom = top + RAIL_ROW_H
+    const margin = RAIL_HEADER_H + 4
+    if (top - margin < box.scrollTop) box.scrollTop = Math.max(0, top - margin)
+    else if (bottom + 6 > box.scrollTop + box.clientHeight) {
+      box.scrollTop = bottom + 6 - box.clientHeight
     }
-  }, [cursor])
+  }, [cursor, offsets, rowItemIndex])
+
+  const onListScroll = () => {
+    if (rafRef.current != null) return
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = null
+      if (listRef.current) setScrollTop(listRef.current.scrollTop)
+    })
+  }
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       if (e.metaKey || e.ctrlKey || e.altKey) return
       const target = e.target as HTMLElement | null
+      const inSearch = target === searchRef.current
       const tag = target?.tagName
-      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target?.isContentEditable) return
+      if (!inSearch && (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target?.isContentEditable)) return
 
-      if (e.key === 'j' || e.key === 'ArrowDown') {
+      if (!inSearch && e.key === '/') {
         e.preventDefault()
-        setCursor(c => Math.min(c + 1, filtered.length - 1))
-      } else if (e.key === 'k' || e.key === 'ArrowUp') {
+        searchRef.current?.focus()
+        return
+      }
+      if (e.key === 'ArrowDown' || (!inSearch && e.key === 'j')) {
+        e.preventDefault()
+        setCursor(c => Math.min(c + 1, rowsFinal.length - 1))
+        return
+      }
+      if (e.key === 'ArrowUp' || (!inSearch && e.key === 'k')) {
         e.preventDefault()
         setCursor(c => Math.max(c - 1, 0))
-      } else if (e.key === 'Enter') {
-        const row = filtered[cursor]
+        return
+      }
+      if (e.key === 'Enter') {
+        const row = rowsFinal[cursor]
         if (row) { e.preventDefault(); onOpen(row.date) }
-      } else if (e.key === 'Escape') {
-        // Phase 1 has no pair selection yet to clear — no-op, kept for parity
-        // with the documented model once Phase 2/3 add one.
+        if (inSearch) (target as HTMLInputElement).blur()
+        return
+      }
+      if (e.key === 'Escape') {
+        if (inSearch) {
+          if (q) setQ('')
+          else (target as HTMLInputElement).blur()
+        }
+        // Outside the field: no pair selection to clear yet at this phase —
+        // no-op, kept for parity with the documented model.
       }
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [filtered, cursor, onOpen])
+  }, [rowsFinal, cursor, onOpen, q])
+
+  const anyFilterActive = q !== '' || range !== null || filter !== 'needs' || asc
+  const resetAll = () => { setQ(''); setRange(null); setFilter('all'); setAsc(false) }
+
+  const decades = useMemo(() => {
+    if (spanMax < spanMin) return []
+    const out: number[] = []
+    for (let d = Math.floor(spanMin / 10) * 10; d <= spanMax; d += 10) out.push(d)
+    return out
+  }, [spanMin, spanMax])
+
+  // Pointer-driven year brush (README §3): pointerdown sets a 1-year anchor,
+  // pointermove extends it either direction, pointerup ends. Click = one
+  // year, drag = a span.
+  const brushRef = useRef<HTMLDivElement | null>(null)
+  const anchorYearRef = useRef<number | null>(null)
+  const yearFromClientX = (clientX: number): number => {
+    const box = brushRef.current
+    if (!box || spanMax < spanMin) return spanMin
+    const rect = box.getBoundingClientRect()
+    const n = spanMax - spanMin + 1
+    const frac = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width))
+    return spanMin + Math.min(n - 1, Math.floor(frac * n))
+  }
+  const onBrushPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    e.currentTarget.setPointerCapture(e.pointerId)
+    const y = yearFromClientX(e.clientX)
+    anchorYearRef.current = y
+    setRange([y, y])
+  }
+  const onBrushPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (anchorYearRef.current == null) return
+    const y = yearFromClientX(e.clientX)
+    const a = anchorYearRef.current
+    setRange(a <= y ? [a, y] : [y, a])
+  }
+  const onBrushPointerUp = () => { anchorYearRef.current = null }
+
+  // Visible slice for windowing — binary search over the offset table, with
+  // overscan either side. Roughly two dozen items in the DOM regardless of
+  // queue size (README §4).
+  const [visStart, visEnd] = useMemo(() => {
+    if (items.length === 0) return [0, -1]
+    const floorIdx = (target: number): number => {
+      let lo = 0
+      let hi = offsets.length - 1
+      while (lo < hi) {
+        const mid = Math.ceil((lo + hi) / 2)
+        if (offsets[mid] <= target) lo = mid
+        else hi = mid - 1
+      }
+      return lo
+    }
+    const start = Math.max(0, floorIdx(scrollTop) - RAIL_OVERSCAN)
+    const end = Math.min(items.length - 1, floorIdx(scrollTop + viewH) + RAIL_OVERSCAN)
+    return [start, end]
+  }, [items, offsets, scrollTop, viewH])
 
   return (
     <div style={{
@@ -619,7 +893,10 @@ function TriageRail({
       borderRight: '1px solid var(--lbb-border)', display: 'flex', flexDirection: 'column',
       minHeight: 0,
     }}>
-      <div style={{ padding: '12px 12px 10px', borderBottom: '1px solid var(--lbb-border)' }}>
+      <div style={{
+        padding: '10px 10px 9px', borderBottom: '1px solid var(--lbb-border)',
+        display: 'flex', flexDirection: 'column', gap: 8,
+      }}>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, flexWrap: 'wrap' }}>
           <span style={{
             fontSize: 11, fontWeight: 700, letterSpacing: '0.08em',
@@ -627,7 +904,50 @@ function TriageRail({
           }}>TRIAGE QUEUE</span>
           <span style={{ fontSize: 10.5, color: 'var(--lbb-warn-fg)' }}>{needsCount} need you</span>
         </div>
-        <div style={{ display: 'flex', gap: 5, marginTop: 9, flexWrap: 'wrap' }}>
+
+        {/* Query field (README §2) — placeholder doubles as the grammar's docs. */}
+        <div style={{ position: 'relative' }}>
+          <Icon name="search" size={10} stroke={2} style={{
+            position: 'absolute', left: 8, top: '50%', transform: 'translateY(-50%)',
+            color: 'var(--lbb-fg3)', pointerEvents: 'none',
+          }} />
+          <input
+            ref={searchRef}
+            type="text"
+            value={q}
+            onChange={e => setQ(e.target.value)}
+            placeholder="date, city, 1974, 70s, conflict…"
+            style={{
+              width: '100%', background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+              borderRadius: 6, color: 'var(--lbb-fg)', font: '500 11.5px var(--lbb-mono)',
+              padding: `6px ${q ? 26 : 8}px 6px 22px`, boxSizing: 'border-box',
+            }}
+            onFocus={e => {
+              e.currentTarget.style.borderColor = 'var(--lbb-accent-mid)'
+              e.currentTarget.style.background = 'var(--lbb-accent-soft)'
+            }}
+            onBlur={e => {
+              e.currentTarget.style.borderColor = 'var(--lbb-border)'
+              e.currentTarget.style.background = 'var(--lbb-surface2)'
+            }}
+          />
+          {q && (
+            <button
+              type="button"
+              onClick={() => { setQ(''); searchRef.current?.focus() }}
+              aria-label="Clear query"
+              style={{
+                position: 'absolute', right: 5, top: '50%', transform: 'translateY(-50%)',
+                background: 'transparent', border: 'none', padding: 2, cursor: 'pointer',
+                color: 'var(--lbb-fg3)', display: 'flex',
+              }}
+            >
+              <Icon name="x" size={11} stroke={2} />
+            </button>
+          )}
+        </div>
+
+        <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
           {FILTERS.map(f => (
             <button
               key={f.key}
@@ -644,9 +964,113 @@ function TriageRail({
             </button>
           ))}
         </div>
+
+        {/* Year brush (README §3) — two-segment bars (total / needs-you) over
+            the queue's full year span, drag-to-scope. */}
+        {rows.length > 0 && spanMax >= spanMin && (
+          <div>
+            <div style={{
+              fontSize: 9.5, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)',
+              display: 'flex', alignItems: 'center', gap: 4, marginBottom: 3,
+            }}>
+              {range ? (
+                <>
+                  <span style={{ color: 'var(--lbb-fg2)', fontWeight: 600 }}>
+                    {range[0] === range[1] ? range[0] : `${range[0]}–${range[1]}`}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setRange(null)}
+                    style={{
+                      background: 'transparent', border: 'none', padding: 0, cursor: 'pointer',
+                      color: 'var(--lbb-fg3)', font: 'inherit',
+                    }}
+                  >×</button>
+                </>
+              ) : <span>all · drag to scope</span>}
+            </div>
+            <div
+              ref={brushRef}
+              onPointerDown={onBrushPointerDown}
+              onPointerMove={onBrushPointerMove}
+              onPointerUp={onBrushPointerUp}
+              style={{
+                display: 'flex', alignItems: 'flex-end', gap: 1, height: 34,
+                cursor: 'ew-resize', touchAction: 'none', borderBottom: '1px solid var(--lbb-border)',
+              }}
+            >
+              {Array.from({ length: spanMax - spanMin + 1 }, (_, i) => {
+                const yr = spanMin + i
+                const c = counts.get(yr)
+                const count = c?.count ?? 0
+                const need = c?.need ?? 0
+                const h = Math.max(2, Math.round((count / maxCount) * 32))
+                const nh = count > 0 ? Math.round((need / count) * h) : 0
+                const inRange = !range || (yr >= range[0] && yr <= range[1])
+                return (
+                  <div
+                    key={yr}
+                    title={`${yr} · ${count} dates · ${need} need you`}
+                    style={{
+                      flex: '1 1 0', height: h, display: 'flex', flexDirection: 'column-reverse',
+                      opacity: inRange ? 1 : 0.42,
+                    }}
+                  >
+                    <div style={{ height: h - nh, background: 'var(--lbb-fg3)' }} />
+                    <div style={{ height: nh, background: 'var(--lbb-warn-bar)' }} />
+                  </div>
+                )
+              })}
+            </div>
+            <div style={{ display: 'flex', gap: 4, marginTop: 4, flexWrap: 'wrap' }}>
+              {decades.map(d => {
+                const active = !!range && range[0] === d && range[1] === d + 9
+                return (
+                  <button
+                    key={d}
+                    type="button"
+                    onClick={() => setRange(active ? null : [d, d + 9])}
+                    style={{
+                      background: active ? 'var(--lbb-accent-soft)' : 'transparent',
+                      border: `1px solid ${active ? 'var(--lbb-accent-mid)' : 'var(--lbb-border)'}`,
+                      color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)',
+                      borderRadius: 4, padding: '1px 5px', font: '600 9.5px var(--lbb-mono)', cursor: 'pointer',
+                    }}
+                  >{`${d % 100}s`}</button>
+                )
+              })}
+            </div>
+          </div>
+        )}
       </div>
 
-      <div ref={listRef} style={{ flex: 1, overflowY: 'auto', padding: 6, minHeight: 0 }}>
+      {/* Result bar (README §5) */}
+      <div style={{
+        padding: '6px 12px', borderBottom: '1px solid var(--lbb-border)',
+        font: '500 10px var(--lbb-mono)', color: 'var(--lbb-fg3)',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6,
+      }}>
+        <span>
+          <span style={{ color: 'var(--lbb-fg2)', fontWeight: 700 }}>{rowsFinal.length.toLocaleString()}</span>
+          {' '}of {rows.length.toLocaleString()} dates
+        </span>
+        <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          {anyFilterActive && (
+            <button
+              type="button"
+              onClick={resetAll}
+              style={{ background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', font: 'inherit', color: 'var(--lbb-accent-mid)' }}
+            >reset</button>
+          )}
+          <button
+            type="button"
+            onClick={() => setAsc(v => !v)}
+            style={{ background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', font: 'inherit', color: 'var(--lbb-fg3)' }}
+          >{asc ? 'oldest ↑' : 'newest ↓'}</button>
+        </span>
+      </div>
+
+      <div ref={listRef} onScroll={onListScroll} style={{ flex: 1, overflowY: 'auto', padding: '6px', minHeight: 0, position: 'relative' }}>
         {loading && rows.length === 0 && (
           // §10.1 — the rail resolves first and is a cheap-looking query that
           // isn't: rendering the empty state while it is in flight told the
@@ -663,18 +1087,18 @@ function TriageRail({
             ))}
           </div>
         )}
-        {!loading && filtered.length === 0 && (
+        {!loading && rowsFinal.length === 0 && (
           <div style={{ padding: '20px 14px', textAlign: 'center' }}>
             <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', fontWeight: 600 }}>
-              {EMPTY_FILTER_COPY[filter][0]}
+              {q || range ? 'No dates match.' : EMPTY_FILTER_COPY[filter][0]}
             </div>
             <div style={{ fontSize: 10.5, marginTop: 6, lineHeight: 1.5, color: 'var(--lbb-fg3)' }}>
-              {EMPTY_FILTER_COPY[filter][1]}
+              {q || range ? 'Try a year, a city, or clear the filters.' : EMPTY_FILTER_COPY[filter][1]}
             </div>
-            {filter !== 'all' && (
+            {(filter !== 'all' || q || range) && (
               <button
                 type="button"
-                onClick={() => setFilter('all')}
+                onClick={resetAll}
                 style={{
                   marginTop: 9, background: 'transparent', border: 'none', padding: 0,
                   font: '600 11px inherit', color: 'var(--lbb-accent-mid)', cursor: 'pointer',
@@ -683,53 +1107,76 @@ function TriageRail({
             )}
           </div>
         )}
-        {filtered.map((row, i) => {
-          const status = statusOf(row)
-          const tone = STATUS_TONE[status]
-          const isCursor = i === cursor
-          const isOpen = row.date === selectedDate
-          return (
-            <button
-              key={row.date}
-              ref={el => { if (el) rowRefs.current.set(i, el); else rowRefs.current.delete(i) }}
-              type="button"
-              onClick={() => { setCursor(i); onOpen(row.date) }}
-              style={{
-                width: '100%', display: 'flex', alignItems: 'center', gap: 9,
-                padding: '8px 9px', borderRadius: 6, textAlign: 'left', cursor: 'pointer',
-                fontFamily: 'inherit',
-                background: isOpen ? 'var(--lbb-accent-soft)' : 'transparent',
-                border: `1px solid ${isOpen ? 'var(--lbb-accent-mid)' : 'transparent'}`,
-                boxShadow: isCursor
-                  ? `inset 2px 0 0 ${isOpen ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)'}`
-                  : 'none',
-              }}
-              onMouseEnter={e => { if (!isOpen) e.currentTarget.style.background = 'var(--lbb-surface2)' }}
-              onMouseLeave={e => { if (!isOpen) e.currentTarget.style.background = 'transparent' }}
-            >
-              <span style={{
-                flex: '0 0 7px', width: 7, height: 7, borderRadius: '50%',
-                background: `var(--lbb-${tone}-bar)`,
-              }} />
-              <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
-                <span style={{
-                  fontSize: 11.5, fontWeight: 600, fontFamily: 'var(--lbb-mono)',
-                  color: isOpen ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)',
-                }}>{row.date}</span>
-                <span style={{
-                  fontSize: narrow ? 10.5 : 11.5, color: 'var(--lbb-fg3)',
-                  whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-                }}>{row.location ?? '—'}</span>
-              </span>
-              <span style={{ fontSize: 11, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)' }}>
-                {row.n_lbs}<span style={{ color: 'var(--lbb-fg3)' }}>&rarr;</span>
-                <span style={{ color: 'var(--lbb-fg2)', fontWeight: 700 }}>
-                  {familyCountByDate.get(row.date) ?? '—'}
-                </span>
-              </span>
-            </button>
-          )
-        })}
+        {!loading && rowsFinal.length > 0 && (
+          <div style={{ height: totalH, position: 'relative' }}>
+            {items.slice(visStart, visEnd + 1).map((item, k) => {
+              const idx = visStart + k
+              const top = offsets[idx]
+              if (item.kind === 'header') {
+                return (
+                  <div
+                    key={`h${item.year}`}
+                    style={{
+                      position: 'absolute', left: 0, right: 0, top, height: RAIL_HEADER_H,
+                      display: 'flex', alignItems: 'center', gap: 6, padding: '0 4px',
+                    }}
+                  >
+                    <span style={{
+                      font: '700 9.5px var(--lbb-mono)', letterSpacing: '0.06em', color: 'var(--lbb-fg3)',
+                    }}>{item.year}</span>
+                    <span style={{ font: '700 9.5px var(--lbb-mono)', color: 'var(--lbb-fg3)', opacity: 0.7 }}>· {item.count}</span>
+                    <span style={{ flex: 1, height: 1, background: 'var(--lbb-border)' }} />
+                  </div>
+                )
+              }
+              const row = item.row
+              const tone = STATUS_TONE[row.status]
+              const isCursor = item.rowIndex === cursor
+              const isOpen = row.date === selectedDate
+              return (
+                <button
+                  key={row.date}
+                  type="button"
+                  onClick={() => { setCursor(item.rowIndex); onOpen(row.date) }}
+                  style={{
+                    position: 'absolute', left: 0, right: 0, top, height: RAIL_ROW_H, boxSizing: 'border-box',
+                    width: '100%', display: 'flex', alignItems: 'center', gap: 9,
+                    padding: '8px 9px', borderRadius: 6, textAlign: 'left', cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    background: isOpen ? 'var(--lbb-accent-soft)' : 'transparent',
+                    border: `1px solid ${isOpen ? 'var(--lbb-accent-mid)' : (isCursor ? 'var(--lbb-border2)' : 'transparent')}`,
+                    boxShadow: isCursor
+                      ? `inset 2px 0 0 ${isOpen ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)'}`
+                      : 'none',
+                  }}
+                  onMouseEnter={e => { if (!isOpen) e.currentTarget.style.background = 'var(--lbb-surface2)' }}
+                  onMouseLeave={e => { if (!isOpen) e.currentTarget.style.background = 'transparent' }}
+                >
+                  <span style={{
+                    flex: '0 0 7px', width: 7, height: 7, borderRadius: '50%',
+                    background: `var(--lbb-${tone}-bar)`,
+                  }} />
+                  <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
+                    <span style={{
+                      fontSize: 11.5, fontWeight: 600, fontFamily: 'var(--lbb-mono)',
+                      color: isOpen ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)',
+                    }}>{row.date}</span>
+                    <span style={{
+                      fontSize: narrow ? 10.5 : 11.5, color: 'var(--lbb-fg3)',
+                      whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+                    }}>{row.location ?? '—'}</span>
+                  </span>
+                  <span style={{ fontSize: 11, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)' }}>
+                    {row.n_lbs}<span style={{ color: 'var(--lbb-fg3)' }}>&rarr;</span>
+                    <span style={{ color: 'var(--lbb-fg2)', fontWeight: 700 }}>
+                      {familyCountByDate.get(row.date) ?? '—'}
+                    </span>
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+        )}
       </div>
 
       <div style={{
@@ -737,7 +1184,7 @@ function TriageRail({
         fontSize: 10.5, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)',
         display: 'flex', alignItems: 'center', gap: 4, flexWrap: 'wrap',
       }}>
-        <Kbd>j</Kbd> / <Kbd>k</Kbd> to move · <Kbd>enter</Kbd> to open · <Kbd>esc</Kbd> to close
+        <Kbd>/</Kbd> search · <Kbd>j</Kbd> <Kbd>k</Kbd> move · <Kbd>enter</Kbd> open · <Kbd>esc</Kbd> clear
       </div>
     </div>
   )

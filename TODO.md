@@ -49,7 +49,7 @@ TODO-275: gui_next — internationalise ScreenTapeMatchCuration (tapematch.* key
 Priority: Medium
 Status: Open
 Added: 2026-07-28
-Description: The curation screen replaced ScreenTapeMatch at /tapematch on 2026-07-28 with all strings hardcoded English, so the TapeMatch screen is no longer translated in de/fr/es/it/nl. The retired screen's tapematch.* keys are still in locales/*.json and cover part of the surface (crawl strip, rail, judgment vocabulary, analysis section); the new surface (triage filters, matrix legend, evidence bars, speed-strip glyph legend, verdict cards, save/accept status lines) needs new keys. Extract to t() in the tapematch namespace, then run /gui-next-i18n to fill the five locales via DeepL.
+Description: The curation screen replaced ScreenTapeMatch at /tapematch on 2026-07-28 with all strings hardcoded English, so the TapeMatch screen is no longer translated in de/fr/es/it/nl. The retired screen's tapematch.* keys are still in locales/*.json and cover part of the surface (crawl strip, rail, judgment vocabulary, analysis section); the new surface (triage filters, matrix legend, evidence bars, speed-strip glyph legend, verdict cards, save/accept status lines) needs new keys. Extract to t() in the tapematch namespace, then run /gui-next-i18n to fill the five locales via DeepL. 2026-08-10: the rail-filter add-on (design_handoff_tapematch_rail_filter, folded into TriageRail) added more hardcoded strings on top — the query field's placeholder/grammar, year-brush readout ("all · drag to scope"), decade chip labels, result-bar reset/sort toggle, and the updated keyboard footer.
 
 TODO-273: tapematch — characterize the 1,822 curator-contradicted pairs (what class are they?)
 Priority: Medium
