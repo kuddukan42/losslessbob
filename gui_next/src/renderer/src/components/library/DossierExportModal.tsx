@@ -58,7 +58,11 @@ export function DossierExportModal({
       const filename = `dossier-${showId}.${dossierFormat}`
 
       if (dossierFormat === 'pdf' && typeof window.api?.printDossierPdf === 'function') {
-        const url = `${window.api.flaskBase}/api/dossier/html?${params.toString()}`
+        // inline=1 is required: without it the route sends
+        // `Content-Disposition: attachment`, so the hidden print window
+        // downloads the HTML instead of navigating to it and printToPDF
+        // never runs (the export silently produced an .html file).
+        const url = `${window.api.flaskBase}/api/dossier/html?${params.toString()}&inline=1`
         const ok = await window.api.printDossierPdf(url, filename)
         if (ok) { showToast(t('library.dossier.toastExported'), 'ok'); onClose() }
         setBusy(false)

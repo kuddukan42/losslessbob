@@ -2,6 +2,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-318: Dossier Olof cross-reference 404s on 2022+ shows
+Status: Fixed
+File(s): backend/dossier.py:920
+Reported: 2026-08-09
+Fixed: 2026-08-09
+Root cause: Shows from 2022 on are ingested from bobserve's own setlist database, and their olof_events.page_filename is the synthetic local name of the scraped page ('bobserve_event_<id>.html'). _build_xref pasted that name onto the Olof mirror base, producing a URL that never existed. The card also credited Olof Bjorner for setlist/context data that came from bobserve, and the xref host label was derived from site (bjorner.com) rather than the emitted link.
+Fix: backend/dossier.py: _bobserve_event_id() recognises the synthetic filename; the bobserve card then deep-links https://bobserve.com/setlist?event=<id> and is flagged is_source, while the Olof card falls back to the chronicle index. backend/templates/dossier.html: context/setlist/footer credits follow the is_source card and name Bobserve when that is the real source; xref host label now derives from x.url.
+
+BUG-317: Dossier PDF export silently produced an HTML download
+Status: Fixed
+File(s): gui_next/src/renderer/src/components/library/DossierExportModal.tsx:61
+Reported: 2026-08-09
+Fixed: 2026-08-09
+Root cause: The Electron print path loaded /api/dossier/html without inline=1, so the response carried Content-Disposition: attachment; the hidden BrowserWindow treated the navigation as a download (loadURL rejects with ERR_FAILED) and printToPDF never ran, while Electron's default download handler wrote the HTML to the downloads dir.
+Fix: DossierExportModal appends inline=1 to the URL handed to window.api.printDossierPdf. Verified by printing the same URL in a headless Electron window: 141 KB, 4-page PDF.
+
 BUG-316: Nonexistent LB override is rejected by the API and never hides the LB from the Collection screen
 Status: Fixed
 File(s): backend/app.py:4847,backend/db.py:4509,gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:1332
