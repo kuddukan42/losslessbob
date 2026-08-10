@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-316: Nonexistent LB override is rejected by the API and never hides the LB from the Collection screen
+Status: Fixed
+File(s): backend/app.py:4847,backend/db.py:4509,gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:1332
+Reported: 2026-08-09
+Fixed: 2026-08-09
+Root cause: Three independent gaps: (1) the manual-override route's allowlist omitted 'nonexistent' even though lb_master's CHECK constraint and the GUI dropdown both support it; (2) addOverride() in ScreenDbEditor parsed the JSON response but never checked for an 'error' key, so a 400 rendered as a success toast; (3) get_missing_from_collection() joined lb_master only to display lb_status, with no WHERE filter -- unlike gap_analysis.py and timeline.py, which both exclude 'nonexistent'.
+Fix: backend/app.py: accept 'nonexistent' in both the PUT /api/lb_master/<lb>/manual allowlist and the GET /api/lb_master status filter. backend/db.py: get_missing_from_collection() now excludes rows whose lb_master status is 'nonexistent', matching gap_analysis and timeline. ScreenDbEditor.tsx: addOverride() throws on an error body so the failure reaches the toast. Three tests added in tests/test_db_writes.py (TestMissingFromCollection) pinning that 'nonexistent' hides the row and 'missing' does not.
+
 BUG-315: LB override kept checking the previous LB's lbdir manifest
 Status: Fixed
 File(s): backend/app.py:419,backend/app.py:8767

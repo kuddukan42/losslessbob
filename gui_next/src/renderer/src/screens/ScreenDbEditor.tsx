@@ -347,7 +347,7 @@ function AliasPanel({
 
   return (
     <div>
-      <div style={{ overflowX: 'auto', marginBottom: 6 }}>
+      <div style={{ maxHeight: 220, overflowY: 'auto', overflowX: 'auto', marginBottom: 6 }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--lbb-fs-11)' }}>
           <thead>
             <tr>
@@ -357,6 +357,7 @@ function AliasPanel({
                   padding: '3px 5px', textAlign: 'left', fontWeight: 700,
                   color: 'var(--lbb-fg3)', borderBottom: '1px solid var(--lbb-border)',
                   whiteSpace: 'nowrap',
+                  position: 'sticky', top: 0, background: 'var(--lbb-surface)', zIndex: 1,
                 }}>
                   {h}
                 </th>
@@ -1329,7 +1330,8 @@ export function ScreenDbEditor() {
       body: JSON.stringify({ status: ovStatus, notes }),
     })
       .then((r) => r.json())
-      .then(() => {
+      .then((data) => {
+        if (data?.error) throw new Error(data.error)
         showToast(
           t('dbeditor.integrity.overrideSet', { lb: String(lb).padStart(5, '0'), status: ovStatus }),
           'ok'

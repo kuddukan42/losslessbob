@@ -1,3 +1,20 @@
+[2026-08-09] — fix(backend): BUG-316 — a "nonexistent" LB override now applies and hides the LB
+Fixed: backend/app.py: PUT /api/lb_master/<lb>/manual rejected status="nonexistent" with a 400 even
+  though the DB Editor's override modal offers it and lb_master's CHECK constraint allows it. Both
+  that route and the GET /api/lb_master status filter now accept it.
+Fixed: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx: addOverride() read the JSON response
+  but never inspected it, so the 400 above rendered as a success toast and the override looked
+  applied when it had not been. It now throws on an error body.
+Fixed: backend/db.py: get_missing_from_collection() joined lb_master only to display lb_status and
+  had no filter on it, so an LB confirmed never to have existed stayed in the Collection screen's
+  Missing-LBs list forever. It now excludes 'nonexistent' rows, matching the same exclusion in
+  gap_analysis.py and timeline.py. 'missing' rows are still listed — the tape exists, the page is
+  gone, so it remains a real gap.
+Added: tests/test_db_writes.py: TestMissingFromCollection — three tests pinning that an unowned
+  entry is listed, a 'nonexistent' override hides it, and a 'missing' override does not.
+Changed: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx: the alias panel's table scrolls
+  within a 220px max-height with a sticky header row (uncommitted from the prior session).
+
 [2026-08-09] — fix(gui): Verify stage shows full md5/ffp digests instead of 12-char stubs
 Fixed: gui_next/src/renderer/src/components/pipeline/VerifyDetail.tsx: the expected/actual md5 and
   ffp columns rendered `hash.slice(0, 12) + '…'`, so a mismatch could not actually be compared by
