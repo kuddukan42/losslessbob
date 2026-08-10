@@ -1,3 +1,20 @@
+[2026-08-10] — feat(gui): TapeMatch triage-rail query field + year brush + windowed list
+Added: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx: implemented the
+  design_handoff_tapematch_rail_filter add-on for the §2 triage-queue rail. `parseQueryTokens`
+  classifies whitespace-separated tokens (status word, year, decade, 2-digit year, date prefix,
+  month/day, free text) and ANDs across classes, ORs within one; a pointer-driven year-brush
+  histogram (total + needs-you segments, computed from the status-chip+query-staged set, not the
+  final range-scoped one) with decade chips scopes the list to a year range; the rail is now
+  year-grouped and windowed (fixed 46px row / 26px header, precomputed offset table, binary-search
+  visible slice with 8-item overscan) so it stays responsive at the real ~3,195-date crawl index
+  instead of the four-chip original. `/` focuses the query field, `↑`/`↓` move the cursor without
+  leaving it, `esc` clears then blurs; cursor auto-scroll now seeks the offset table directly since
+  the target row may not be mounted. Verified against live data (backend on :5174, `/verify
+  --renderer-only`): grammar, decade chips, brush dimming and the windowed list all behaved as
+  spec'd. TODO-275 (i18n) description updated — the add-on's new strings add to that debt.
+Changed: instructions/README.md, instructions/complete/design_handoff_tapematch_rail_filter/: spec
+  moved to complete/, indexed.
+
 [2026-08-09] — fix(gui/backend): BUG-317/BUG-318 — dossier PDF export, and cross-reference links that 404'd
 Fixed: gui_next/src/renderer/src/components/library/DossierExportModal.tsx: choosing PDF saved an
   HTML file. The URL handed to window.api.printDossierPdf omitted inline=1, so the response carried

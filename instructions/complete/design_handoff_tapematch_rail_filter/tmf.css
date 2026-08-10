@@ -1,0 +1,71 @@
+/* TapeMatch rail filter — ADD-ON stylesheet.
+   Loads after tm.css. Every selector is new (tmf*); no existing rule is overridden
+   except two additive lines at the bottom, both scoped inside .tmfList. */
+.tmfHead{padding:10px 10px 9px;border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:8px}
+.tmfTitleRow{display:flex;align-items:center;gap:8px}
+.tmfSearchWrap{position:relative;display:flex;align-items:center}
+.tmfSearchIcon{position:absolute;left:8px;font-size:10px;color:var(--fg3);pointer-events:none}
+.tmfSearch{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;color:var(--fg);font:500 11.5px var(--mono);padding:6px 26px 6px 22px;outline:none}
+.tmfSearch::placeholder{color:var(--fg3)}
+.tmfSearch:focus{border-color:var(--accent);background:var(--accent-soft)}
+.tmfClear{position:absolute;right:5px;background:none;border:none;color:var(--fg3);cursor:pointer;font-size:12px;line-height:1;padding:3px 4px;border-radius:4px}
+.tmfClear:hover{color:var(--fg);background:var(--surface3)}
+.tmfHint{font:500 9.5px var(--mono);color:var(--fg3);letter-spacing:.01em}
+.tmfHint b{color:var(--fg2);font-weight:600}
+.tmfTokens{display:flex;gap:4px;flex-wrap:wrap}
+.tmfToken{display:inline-flex;align-items:center;gap:5px;background:var(--accent-soft);border:1px solid var(--accent);color:var(--accent);border-radius:5px;padding:2px 5px 2px 7px;font:600 10px var(--mono)}
+.tmfToken button{background:none;border:none;color:inherit;cursor:pointer;font-size:11px;line-height:1;padding:0 1px;opacity:.75}
+.tmfToken button:hover{opacity:1}
+/* year brush ------------------------------------------------------------ */
+.tmfBrush{display:flex;flex-direction:column;gap:4px;user-select:none}
+.tmfBrushTop{display:flex;align-items:baseline;justify-content:space-between;gap:6px}
+.tmfBrushLbl{font:600 9.5px Inter;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)}
+.tmfBrushVal{font:600 10px var(--mono);color:var(--fg2)}
+.tmfBrushVal .dim{font-weight:500}
+.tmfBars{display:flex;align-items:flex-end;gap:1px;height:34px;cursor:ew-resize;touch-action:none;padding-bottom:1px;border-bottom:1px solid var(--border)}
+.tmfBar{flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;gap:1px;height:100%;position:relative;opacity:.42;transition:opacity .08s}
+.tmfBar.in{opacity:1}
+.tmfBar i{display:block;border-radius:1px}
+.tmfBarNeed{background:var(--warn-bar)}
+.tmfBarRest{background:var(--border2)}
+.tmfBar.in .tmfBarRest{background:var(--fg3)}
+.tmfBar.hot .tmfBarRest{background:var(--accent)}
+.tmfAxis{display:flex;justify-content:space-between;font:500 9px var(--mono);color:var(--fg3)}
+.tmfDecades{display:flex;gap:3px;flex-wrap:wrap}
+.tmfDec{background:none;border:1px solid var(--border);color:var(--fg3);border-radius:4px;padding:1px 5px;font:600 9.5px var(--mono);cursor:pointer}
+.tmfDec:hover{color:var(--fg2);border-color:var(--border2)}
+.tmfDec.on{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+/* result bar + virtual list -------------------------------------------- */
+.tmfResult{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 12px;border-bottom:1px solid var(--border);font:500 10px var(--mono);color:var(--fg3);background:var(--surface)}
+.tmfResult b{color:var(--fg2);font-weight:700}
+.tmfSort{background:none;border:none;color:var(--fg3);cursor:pointer;font:500 10px var(--mono);padding:1px 3px;border-radius:4px}
+.tmfSort:hover{color:var(--fg2);background:var(--surface2)}
+.tmfList{flex:1;overflow-y:auto;position:relative;padding:0 6px}
+.tmfSpacer{position:relative;width:100%}
+.tmfAbs{position:absolute;left:0;right:0}
+.tmfYear{display:flex;align-items:center;gap:7px;height:26px;padding:0 3px;font:700 9.5px var(--mono);color:var(--fg3);letter-spacing:.06em;background:var(--surface);position:relative}
+.tmfYear::after{content:"";flex:1;height:1px;background:var(--border)}
+.tmfYearN{color:var(--fg3);font-weight:500;letter-spacing:0}
+.tmfFoot{padding:7px 12px;border-top:1px solid var(--border);font-size:10px;font-family:var(--mono);color:var(--fg3);display:flex;gap:10px;flex-wrap:wrap}
+.tmfFoot kbd{font:600 9.5px var(--mono);color:var(--fg2);background:var(--surface2);border:1px solid var(--border);border-radius:3px;padding:0 3px}
+/* the two additive row rules — uniform height is what makes windowing possible */
+.tmfList .tmDateRow{height:46px}
+.tmfList .tmDateRow.cur{border-color:var(--border2)}
+/* spec pane (demo chrome only — not shipped) ---------------------------- */
+.tmfDoc{flex:1;min-width:0;overflow-y:auto;padding:22px 26px 60px}
+.tmfDocIn{max-width:720px;display:flex;flex-direction:column;gap:20px}
+.tmfDocH{font-size:18px;font-weight:700}
+.tmfDocSub{font-size:12px;color:var(--fg2);line-height:1.6;text-wrap:pretty;margin-top:5px}
+.tmfCard{border:1px solid var(--border);border-radius:8px;background:var(--surface);padding:14px 16px}
+.tmfCardH{font:700 10.5px Inter;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3);margin-bottom:10px}
+.tmfRows{display:flex;flex-direction:column;gap:9px}
+.tmfRow{display:grid;grid-template-columns:132px 1fr;gap:12px;align-items:baseline;font-size:11.5px;color:var(--fg2);line-height:1.55}
+.tmfRow .k{font:600 11px var(--mono);color:var(--fg)}
+.tmfCode{border:1px solid var(--border);border-radius:8px;background:var(--bg);padding:12px 14px;font:500 11px/1.7 var(--mono);color:var(--fg2);white-space:pre;overflow-x:auto}
+.tmfCode .add{color:var(--ok-fg)}
+.tmfCode .del{color:var(--bad-fg)}
+.tmfCode .cm{color:var(--fg3)}
+.tmfGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tmfStat{border:1px solid var(--border);border-radius:7px;background:var(--surface2);padding:9px 11px}
+.tmfStatN{font:800 17px var(--mono);color:var(--fg)}
+.tmfStatL{font-size:10px;color:var(--fg3);margin-top:2px}
