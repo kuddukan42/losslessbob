@@ -255,6 +255,14 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 {% for x in (d.xref or []) %}{% set _ = xref_by_key.update({x.key: x}) %}{% endfor %}
 {% set olof_x = xref_by_key.get('olof') %}
 {% set lbb_x = xref_by_key.get('losslessbob') %}
+{% set bobserve_x = xref_by_key.get('bobserve') %}
+{# The setlist/context source is the Olof chronicle page for DSN-era shows and
+   the bobserve setlist page for 2022+ ones; _build_xref flags whichever card
+   we actually ingested (is_source) so the credit lines link a page that
+   resolves and name the right chronicler. #}
+{% set src_x = (d.xref or []) | selectattr('is_source') | first %}
+{% if not src_x %}{% set src_x = olof_x %}{% endif %}
+{% set src_is_bobserve = src_x and src_x.key == 'bobserve' %}
 
 {% macro grade_badge(q) -%}
   {%- set gl = (q.grade[:1] | upper) if q.grade else '' -%}
@@ -297,7 +305,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   <div{% if has_map and d.context %} class="split"{% endif %}>
     {% if d.context %}
     <section class="context"{% if has_map %} style="margin-top:0"{% endif %}>
-      <h2><span>Context</span><span class="line"></span>{% if olof_x %}<span class="credit">source: <a href="{{ olof_x.url }}" target="_blank" rel="noopener">Olof Björner, <em>Still on the Road</em></a> ↗</span>{% endif %}</h2>
+      <h2><span>Context</span><span class="line"></span>{% if src_x %}<span class="credit">source: <a href="{{ src_x.url }}" target="_blank" rel="noopener">{% if src_is_bobserve %}Bobserve{% else %}Olof Björner, <em>Still on the Road</em>{% endif %}</a> ↗</span>{% endif %}</h2>
       {% if d.context.chronicle %}<p><span class="label">Chronicle</span>{{ d.context.chronicle }}</p>{% endif %}
       {% if d.context.bobtalk %}<p class="bobtalk"><span class="label">Bobtalk</span>{{ d.context.bobtalk }}</p>{% endif %}
       {% if d.context.lineup %}<p><span class="label">Lineup</span>{{ d.context.lineup }}</p>{% endif %}
@@ -413,7 +421,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 
   {% if d.setlist %}
   <section>
-    <h2><span>Setlist · {{ d.setlist | length }} songs</span><span class="line"></span>{% if olof_x %}<span class="credit">source: <a href="{{ olof_x.url }}" target="_blank" rel="noopener">Olof Björner, <em>Still on the Road</em></a> ↗</span>{% endif %}</h2>
+    <h2><span>Setlist · {{ d.setlist | length }} songs</span><span class="line"></span>{% if src_x %}<span class="credit">source: <a href="{{ src_x.url }}" target="_blank" rel="noopener">{% if src_is_bobserve %}Bobserve{% else %}Olof Björner, <em>Still on the Road</em>{% endif %}</a> ↗</span>{% endif %}</h2>
     <table class="setlist">
       <thead><tr><th class="pos">#</th><th>Song</th><th class="tags"></th></tr></thead>
       <tbody>
@@ -452,7 +460,10 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     <h2><span>Cross-reference · this show elsewhere</span><span class="line"></span></h2>
     <div class="xref">
       {% for x in d.xref %}
-      {% set host = (x.site | replace('https://', '') | replace('http://', '')).split('/')[0] | replace('www.', '') %}
+      {# host comes from the link we actually emit, not the site home — otherwise a
+   card whose deep link lives on a different host (Olof pages on the bobserve
+   mirror) advertises the wrong domain. #}
+      {% set host = ((x.url | default(x.site)) | replace('https://', '') | replace('http://', '')).split('/')[0] | replace('www.', '') %}
       <a class="card" href="{{ x.url }}" target="_blank" rel="noopener">
         <div class="name">{{ x.name }} <span class="arrow">↗</span></div>
         <div class="desc">{{ x.desc }}</div>
@@ -465,10 +476,11 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 
   <footer class="prov">
     <p class="credits">
-      Setlist, chronicle, lineup &amp; bobtalk from <a href="{{ olof_x.url if olof_x else 'http://www.bjorner.com/still.htm' }}" target="_blank" rel="noopener">Olof Björner's <em>Still on the Road</em></a> (bjorner.com).
+      {% if src_is_bobserve %}Setlist, lineup &amp; show data from <a href="{{ src_x.url }}" target="_blank" rel="noopener">Bobserve</a> (bobserve.com).
+      {% else %}Setlist, chronicle, lineup &amp; bobtalk from <a href="{{ src_x.url if src_x else 'http://www.bjorner.com/still.htm' }}" target="_blank" rel="noopener">Olof Björner's <em>Still on the Road</em></a> (bjorner.com).{% endif %}
       Recording catalog, ratings &amp; lineage from <a href="{{ lbb_x.site if lbb_x else 'https://www.losslessbob.com' }}" target="_blank" rel="noopener">LosslessBob</a>.
       Venue coordinates &amp; tour names via <a href="https://www.setlist.fm" target="_blank" rel="noopener">setlist.fm</a>.
-      Performance statistics via <a href="https://bobserve.com" target="_blank" rel="noopener">Bobserve</a>.
+      {% if not src_is_bobserve %}Performance statistics via <a href="{{ bobserve_x.url if bobserve_x else 'https://bobserve.com' }}" target="_blank" rel="noopener">Bobserve</a>.{% endif %}
       AI index grades, tape-family grouping &amp; pick ranking are local analysis by this install.
     </p>
     <div class="meta">

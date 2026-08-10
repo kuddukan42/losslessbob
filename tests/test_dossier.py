@@ -311,3 +311,54 @@ class TestFamilyGrouping:
         finally:
             import shutil
             shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+class TestXrefDeepLinks:
+    """Every cross-reference card must link a page that actually resolves.
+
+    2022+ shows are ingested from bobserve's own setlist database, and their
+    olof_events.page_filename is the synthetic local name of the scraped page
+    ('bobserve_event_<id>.html'). That file does not exist on the Olof mirror,
+    so building an Olof deep link from it 404s — the bobserve card carries the
+    deep link for those instead.
+    """
+
+    def test_dsn_page_deep_links_the_olof_mirror(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            with conn:
+                _insert_entry(conn, 201, "7/28/00")
+                _insert_event(conn, 1, "2000-07-28", page_filename="DSN12345 (00).htm")
+                conn.commit()
+
+            from backend.dossier import build_dossier
+            xref = {c["key"]: c for c in build_dossier("2000-07-28", db_path=db_path)["xref"]}
+            assert xref["olof"]["url"] == (
+                "https://www.bobserve.com/olof/DSN12345%20%2800%29.htm")
+            assert xref["olof"]["is_source"] is True
+            assert xref["bobserve"]["url"] == "https://bobserve.com/eventsperiod?period=2000"
+            assert xref["bobserve"]["is_source"] is False
+        finally:
+            import shutil
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_bobserve_page_deep_links_bobserve_not_the_olof_mirror(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            with conn:
+                _insert_entry(conn, 202, "10/16/23")
+                _insert_event(conn, 9004282, "2023-10-16",
+                              page_filename="bobserve_event_4282.html")
+                conn.commit()
+
+            from backend.dossier import build_dossier
+            xref = {c["key"]: c for c in build_dossier("2023-10-16", db_path=db_path)["xref"]}
+            assert xref["bobserve"]["url"] == "https://bobserve.com/setlist?event=4282"
+            assert xref["bobserve"]["is_source"] is True
+            # No fabricated mirror link — fall back to the chronicle index.
+            assert xref["olof"]["url"] == "http://www.bjorner.com/still.htm"
+            assert xref["olof"]["is_source"] is False
+            assert xref["boblinks"]["url"] == "https://boblinks.com/101623s.html"
+        finally:
+            import shutil
+            shutil.rmtree(tmp_dir, ignore_errors=True)

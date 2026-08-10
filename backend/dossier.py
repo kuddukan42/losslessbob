@@ -29,6 +29,7 @@ import json
 import logging
 import math
 import os
+import re
 import sqlite3
 import urllib.parse
 
@@ -838,6 +839,27 @@ _BOBLINKS_HOME = "https://boblinks.com"
 _BOBSERVE_HOME = "https://bobserve.com"
 # Boblinks per-show pages (MMDDYYs.html) only exist from 1995 on.
 _BOBLINKS_FIRST_YEAR = 1995
+# 2022+ shows come from bobserve's own setlist database, not the DSN mirror.
+# Their olof_events.page_filename is the synthetic local name of the scraped
+# page ('bobserve_event_<id>.html') — it does NOT exist on the Olof mirror, so
+# a link built from it 404s. Deep-link bobserve's real setlist page instead.
+_BOBSERVE_PAGE_RE = re.compile(r"^bobserve_event_(\d+)\.html$")
+
+
+def _bobserve_event_id(event: sqlite3.Row | None) -> str | None:
+    """Return bobserve's own numeric event id for an event row, if it has one.
+
+    Args:
+        event: An ``olof_events`` row, or None.
+
+    Returns:
+        The id as a string (e.g. ``'4282'``), or None when the row is missing
+        or was not sourced from bobserve.
+    """
+    if event is None or not event["page_filename"]:
+        return None
+    m = _BOBSERVE_PAGE_RE.match(event["page_filename"])
+    return m.group(1) if m else None
 
 
 def _build_xref(date_iso: str, event: sqlite3.Row | None,
@@ -857,7 +879,10 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
             (recommendation first, else first visible source).
 
     Returns:
-        List of ``{key, name, desc, site, url, link_label}`` dicts.
+        List of ``{key, name, desc, site, url, link_label, is_source}``
+        dicts. ``is_source`` marks the card the context/setlist were actually
+        ingested from (the Olof page for DSN-era shows, the bobserve setlist
+        page for 2022+), so the renderer can credit the right one.
     """
     try:
         dt = datetime.datetime.strptime(date_iso, "%Y-%m-%d")
@@ -873,10 +898,13 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
         "site": SITE_BASE_URL,
         "url": SITE_BASE_URL,
         "link_label": "catalog home",
+        "is_source": False,
     }
     if lb_number is not None:
         lbb["url"] = detail_url(lb_number)
         lbb["link_label"] = f"LB-{lb_number:05d} detail page"
+
+    bobserve_event_id = _bobserve_event_id(event)
 
     olof = {
         "key": "olof",
@@ -886,10 +914,12 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
         "site": _OLOF_HOME,
         "url": _OLOF_HOME,
         "link_label": "chronicle index",
+        "is_source": False,
     }
-    if event is not None and event["page_filename"]:
+    if event is not None and event["page_filename"] and bobserve_event_id is None:
         olof["url"] = _OLOF_MIRROR_BASE + urllib.parse.quote(event["page_filename"])
         olof["link_label"] = event["page_filename"]
+        olof["is_source"] = True
 
     boblinks = {
         "key": "boblinks",
@@ -899,6 +929,7 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
         "site": _BOBLINKS_HOME,
         "url": _BOBLINKS_HOME,
         "link_label": "site home",
+        "is_source": False,
     }
     if dt and dt.year >= _BOBLINKS_FIRST_YEAR:
         boblinks["url"] = f"{_BOBLINKS_HOME}/{dt.strftime('%m%d%y')}s.html"
@@ -912,10 +943,15 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
         "site": _BOBSERVE_HOME,
         "url": _BOBSERVE_HOME,
         "link_label": "site home",
+        "is_source": False,
     }
     if year:
         bobserve["url"] = f"{_BOBSERVE_HOME}/eventsperiod?period={year}"
         bobserve["link_label"] = f"events · {year}"
+    if bobserve_event_id is not None:
+        bobserve["url"] = f"{_BOBSERVE_HOME}/setlist?event={bobserve_event_id}"
+        bobserve["link_label"] = f"setlist · {date_iso}"
+        bobserve["is_source"] = True
 
     return [lbb, olof, boblinks, bobserve]
 

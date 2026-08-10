@@ -1,3 +1,23 @@
+[2026-08-09] — fix(gui/backend): BUG-317/BUG-318 — dossier PDF export, and cross-reference links that 404'd
+Fixed: gui_next/src/renderer/src/components/library/DossierExportModal.tsx: choosing PDF saved an
+  HTML file. The URL handed to window.api.printDossierPdf omitted inline=1, so the response carried
+  `Content-Disposition: attachment` — the hidden print window treated the navigation as a download
+  (loadURL rejects ERR_FAILED, printToPDF never runs) and Electron's default download handler wrote
+  dossier-<date>.html. The print URL now sets inline=1; verified as a 4-page PDF.
+Fixed: backend/dossier.py: the Olof cross-reference card 404'd on every 2022+ show. Those shows are
+  ingested from bobserve's own setlist database and their olof_events.page_filename is the synthetic
+  local name of the scraped page ('bobserve_event_<id>.html'), which does not exist on the Olof
+  mirror. _bobserve_event_id() now recognises it: the Bobserve card deep-links
+  bobserve.com/setlist?event=<id> (instead of the year index) and is flagged `is_source`, and the
+  Olof card falls back to the chronicle index rather than fabricating a mirror link. DSN-era shows
+  are unchanged — they still deep-link the exact mirror page ingested.
+Changed: backend/templates/dossier.html: the context/setlist/footer credits follow the `is_source`
+  card, so a bobserve-sourced show is credited to Bobserve instead of attributing its setlist to
+  Olof Björner. The xref card's host label is derived from the link actually emitted rather than the
+  source's home page, which had it advertising bjorner.com for a bobserve.com URL.
+Added: tests/test_dossier.py: TestXrefDeepLinks — DSN page deep-links the Olof mirror, bobserve page
+  deep-links bobserve and leaves the Olof card on the chronicle index.
+
 [2026-08-09] — feat(gui): My Collection now uses the Library's recording detail panel
 Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: selecting a row opened a
   screen-local detail panel with a different layout and a different feature set than the one the
