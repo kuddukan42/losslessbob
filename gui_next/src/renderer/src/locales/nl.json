@@ -670,7 +670,9 @@
       "forumLoadError": "Forum geschiedenis laden mislukt.",
       "delRecord": "Opname verwijderen",
       "xrefCopy": "Xref-bestandsset · xref-{{id}}",
-      "altFilesetsNote": "Alt-bestandsets gedocumenteerd voor dit item"
+      "altFilesetsNote": "Alt-bestandsets gedocumenteerd voor dit item",
+      "discs": "Schijven",
+      "tabCollection": "Collectie"
     },
     "confirmDelete": {
       "torrentTitle": ".torrent-bestand verwijderen",

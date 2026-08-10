@@ -1,3 +1,29 @@
+[2026-08-09] — feat(gui): My Collection now uses the Library's recording detail panel
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: selecting a row opened a
+  screen-local detail panel with a different layout and a different feature set than the one the
+  Library screen shows for the same recording. It now mounts the shared RecordingDetailPanel —
+  same identity block, Overview/Picks/Taper/Olof/Assets/Seed & Share/Quality tabs, checksums and
+  action bar — so both screens describe a recording identically. The panel is fed the catalog row
+  when the LB is in it (it carries source/description/pick/taper data the collection payload
+  lacks) and falls back to the collection row otherwise.
+Added: gui_next/src/renderer/src/components/library/DetailPanel.tsx: `extraTabs` / `renderExtraTab`
+  props on RecordingDetailPanel — a host screen can append its own tabs.
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: a "Collection" tab (via the above)
+  holding everything the shared panel has no place for and that would otherwise have been lost:
+  disk path / size / discs, audio-format and linked-LB pills, personal rating + listen count with
+  Log listen / Edit personal info, and the per-record torrent and forum management (qBittorrent
+  add/remove, regenerate, relocate, delete file, delete record, open post, delete post).
+Added: gui_next/src/renderer/src/lib/useLibraryActions.tsx: the ActionHandlers bag and its overlay
+  UI (context menu, toast, confirm, dossier modal), extracted verbatim from ScreenLibrary.tsx so
+  both screens drive the panel through one implementation instead of two.
+Added: gui_next/src/renderer/src/lib/libraryPanelData.ts: useLibraryHistoryMap / useAttachCountMap,
+  the two lb_number-keyed panel side-data maps, extracted for the same reason. Both reuse the
+  react-query keys the screens already share, so the second consumer costs no extra fetch.
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: consumes the two new modules; ~330
+  lines of handler/overlay code removed with no behavior change.
+Changed: gui_next/src/renderer/src/locales/*.json: new collection.detail.discs and
+  collection.detail.tabCollection keys, translated for de/fr/es/it/nl.
+
 [2026-08-09] — fix(backend): BUG-316 — a "nonexistent" LB override now applies and hides the LB
 Fixed: backend/app.py: PUT /api/lb_master/<lb>/manual rejected status="nonexistent" with a 400 even
   though the DB Editor's override modal offers it and lb_master's CHECK constraint allows it. Both

@@ -670,7 +670,9 @@
       "forumLoadError": "Impossibile caricare la cronologia del forum.",
       "delRecord": "Elimina record",
       "xrefCopy": "Set di file Xref · xref-{{id}}",
-      "altFilesetsNote": "Set di file alternativi documentati per questa voce"
+      "altFilesetsNote": "Set di file alternativi documentati per questa voce",
+      "discs": "Dischi",
+      "tabCollection": "Collezione"
     },
     "confirmDelete": {
       "torrentTitle": "Eliminare il file .torrent",

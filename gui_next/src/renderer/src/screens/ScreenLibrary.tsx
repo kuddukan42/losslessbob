@@ -1,24 +1,18 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
-import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { useVirtualizer } from '@tanstack/react-virtual'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { Icon } from '../components/Icon'
-import { Button, IconButton, Input, Pill, Toast, ConfirmDialog } from '../components'
-import type { ToastTone } from '../components'
+import { Button, IconButton, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import {
-  buildRecordingActions, buildPerformanceActions, ActionMenu, useActionMenu, BulkActionBar,
+  buildRecordingActions, buildPerformanceActions, BulkActionBar,
 } from '../components/library/actions'
 import type { ActionRow, ActionHandlers, LibAction } from '../components/library/actions'
 import { RecordingDetailPanel, PerformanceDetailPanel } from '../components/library/DetailPanel'
 import type { RowHistory } from '../components/library/DetailPanel'
-import { DossierExportModal } from '../components/library/DossierExportModal'
-import { useAttachmentsStore } from '../lib/attachmentsStore'
-import { useSpectrogramStore } from '../lib/spectrogramStore'
-import { useFolderQueueStore } from '../lib/folderQueueStore'
-import { lbDetailUrl } from '../lib/lbUrl'
 import { useResizableColumns, useResizableWidth } from '../lib/useResizableColumns'
 import {
   type LibStatus, type RatingGrade, type Scope, type SortKey, type SortDir,
@@ -30,6 +24,8 @@ import {
   useLibraryFilterStore, snapshotRecordingFilters, hasRecordingFilters,
 } from '../lib/libraryFilterStore'
 import { useSavedViewsStore } from '../lib/savedViewsStore'
+import { useLibraryActions } from '../lib/useLibraryActions'
+import { useLibraryHistoryMap, useAttachCountMap } from '../lib/libraryPanelData'
 
 // ── TODO-150 step (4): Recording lens / no-families fallback ──────────────────
 // Flat, LB#-keyed table over the full catalog. Per the design contract
@@ -44,15 +40,6 @@ import { useSavedViewsStore } from '../lib/savedViewsStore'
 // remove. The detail-panel ActionBar/MoreMenu surface is step 8.
 
 const BASE = window.api.flaskBase
-
-function blobDownload(blob: Blob, filename: string): void {
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = filename
-  a.click()
-  URL.revokeObjectURL(url)
-}
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 // RecordingRow + its filter primitives (LibStatus/RatingGrade/Scope/SortKey/
@@ -446,247 +433,16 @@ export function ScreenLibrary(): React.JSX.Element {
   const { widths: colWidths, startResize: startColResize } = useResizableColumns('lbb_library_rec_col_widths', REC_COL_DEFAULTS)
 
   // ── TODO-150 step 7: shared action system ───────────────────────────────────
-  // Toast/confirm UI + the ActionHandlers bag, shared by both lenses. Handlers
-  // call the SAME backend endpoints ScreenCollection.tsx already uses for
-  // these ids — this isn't new backend behavior, just a second surface for it.
+  // The ActionHandlers bag + the overlay UI it drives now live in
+  // ../lib/useLibraryActions so ScreenCollection.tsx can mount the same
+  // RecordingDetailPanel with the same behavior. Handlers call the SAME backend
+  // endpoints that screen already uses for these ids — this isn't new backend
+  // behavior, just a second surface for it.
 
-  const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
-  const queryClient = useQueryClient()
-  const setActiveAttachLb = useAttachmentsStore(s => s.setActiveLb)
-  const addPendingSpectro = useSpectrogramStore(s => s.addPending)
-  const addToFolderQueue = useFolderQueueStore(s => s.addFolders)
-
-  const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
-  const [confirm, setConfirm] = useState<{ title: string; body: string; onConfirm: () => void } | null>(null)
-  const [actionBusy, setActionBusy] = useState(false)
-  const [dossierShowId, setDossierShowId] = useState<string | null>(null)
-  const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
-  const refreshCollection = useCallback(() => {
-    queryClient.invalidateQueries({ queryKey: ['library-catalog'] })
-    queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
-  }, [queryClient])
-
-  const actionHandlers = useMemo<ActionHandlers>(() => ({
-    onOpen: (row) => {
-      window.open(lbDetailUrl(row.lbNumber), '_blank')
-    },
-    onCopyLb: (row) => { navigator.clipboard.writeText(row.lb) },
-    onCopyPath: (row) => { navigator.clipboard.writeText(row.path) },
-    onPlay: async (row) => {
-      if (!row.path) return
-      try {
-        const resp = await fetch(`${BASE}/api/open/vlc`, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ paths: [row.path] }),
-        })
-        const data = await resp.json()
-        if (!data.ok) showToast(data.error || t('library.toast.vlcNotFound'), 'bad')
-      } catch { showToast(t('library.toast.vlcFailed'), 'bad') }
-    },
-    onReveal: async (row) => {
-      if (!row.path) { showToast(t('library.toast.noDiskPath'), 'info'); return }
-      await window.api.openPath(row.path)
-    },
-    onQbt: async (rows) => {
-      const lbs = rows.map(r => r.lbNumber)
-      if (!lbs.length) return
-      try {
-        const resp = await fetch(`${BASE}/api/qbt/add`, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ lb_numbers: lbs }),
-        })
-        const data = await resp.json()
-        showToast(t('library.toast.qbtAdded', { added: data.added ?? 0, total: data.total ?? lbs.length }), data.ok ? 'ok' : 'bad')
-      } catch { showToast(t('library.toast.qbtFailed'), 'bad') }
-    },
-    onTorrent: async (rows) => {
-      const targets = rows.filter(r => r.path)
-      if (!targets.length) { showToast(t('library.toast.noDiskPath'), 'info'); return }
-      setActionBusy(true)
-      let ok = 0; let fail = 0
-      for (const r of targets) {
-        try {
-          const resp = await fetch(`${BASE}/api/torrent/create`, {
-            method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ lb_number: r.lbNumber, source_folder: r.path }),
-          })
-          const data = await resp.json()
-          if (data.ok) ok++; else fail++
-        } catch { fail++ }
-      }
-      setActionBusy(false)
-      showToast(t('library.toast.torrentsCreated', { count: ok }) + (fail > 0 ? t('library.toast.failedSuffix', { count: fail }) : ''), ok > 0 ? 'ok' : 'bad')
-    },
-    onForum: (rows) => {
-      const postOne = async (r: ActionRow): Promise<{ ok: boolean; topicUrl: string }> => {
-        try {
-          const previewResp = await fetch(`${BASE}/api/entry/${r.lbNumber}/preview_forum`)
-          const previewData = await previewResp.json()
-          const postResp = await fetch(`${BASE}/api/entry/${r.lbNumber}/post_forum`, {
-            method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ subject: previewData.subject ?? '', body: previewData.body ?? '' }),
-          })
-          const data = await postResp.json()
-          return { ok: !!data.ok, topicUrl: data.topic_url ?? '' }
-        } catch { return { ok: false, topicUrl: '' } }
-      }
-      const copyUrls = (urls: string[]): Promise<boolean> => {
-        if (urls.length === 0) return Promise.resolve(false)
-        return navigator.clipboard.writeText(urls.join('\n')).then(() => true, () => false)
-      }
-      if (rows.length === 1) {
-        postOne(rows[0]).then(async ({ ok, topicUrl }) => {
-          if (ok && topicUrl && await copyUrls([topicUrl])) {
-            showToast(t('library.toast.postedForumCopied', { lb: rows[0].lb }), 'ok')
-          } else {
-            showToast(ok ? t('library.toast.postedForum', { lb: rows[0].lb }) : t('library.toast.forumPostFailed'), ok ? 'ok' : 'bad')
-          }
-        })
-        return
-      }
-      setConfirm({
-        title: t('library.ctx.postForum'),
-        body: t('library.toast.confirmForumBody', { count: rows.length }),
-        onConfirm: async () => {
-          setConfirm(null)
-          setActionBusy(true)
-          let ok = 0; let fail = 0
-          const urls: string[] = []
-          for (const r of rows) {
-            const res = await postOne(r)
-            if (res.ok) { ok++; if (res.topicUrl) urls.push(res.topicUrl) } else fail++
-          }
-          const copied = await copyUrls(urls)
-          setActionBusy(false)
-          const base = t('library.toast.postsCreated', { count: ok }) + (fail > 0 ? t('library.toast.failedSuffix', { count: fail }) : '')
-          showToast(ok > 0 && copied ? base + t('library.toast.linksCopiedSuffix', { count: urls.length }) : base, ok > 0 ? 'ok' : 'bad')
-        },
-      })
-    },
-    onM3u: async (rows) => {
-      const lbs = rows.map(r => r.lbNumber)
-      if (!lbs.length) { showToast(t('library.toast.noOwnedExport'), 'info'); return }
-      try {
-        const resp = await fetch(`${BASE}/api/collection/export/m3u?lb_numbers=${lbs.join(',')}`)
-        const blob = await resp.blob()
-        blobDownload(blob, 'show.m3u')
-      } catch { showToast(t('library.toast.m3uFailed'), 'bad') }
-    },
-    onDossier: (showId) => setDossierShowId(showId),
-    onAttach: (row) => { setActiveAttachLb(row.lbNumber); navigate('/attachments') },
-    onSpectro: async (row) => {
-      if (!row.path) return
-      try {
-        const resp = await fetch(`${BASE}/api/spectrogram/generate`, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ folders: [row.path] }),
-        })
-        const data = await resp.json()
-        if (data.ok) { addPendingSpectro([row.path]); navigate('/spectrograms') }
-        else showToast(data.error || t('library.toast.spectroFailed'), 'bad')
-      } catch { showToast(t('library.toast.spectroFailed'), 'bad') }
-    },
-    onMap: () => navigate('/map'),
-    onReconfirm: (row) => {
-      if (!row.path) return
-      addToFolderQueue([row.path])
-      navigate('/pipeline')
-    },
-    onRelocate: async (rows) => {
-      if (!rows.length) return
-      if (rows.length === 1) {
-        const target = rows[0]
-        const dir = await window.api.pickDir()
-        if (!dir) return
-        const folderName = dir.replace(/\/+$/, '').split('/').pop() || dir
-        try {
-          await fetch(`${BASE}/api/collection/${target.lbNumber}`, {
-            method: 'PATCH', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ disk_path: dir, folder_name: folderName }),
-          })
-          showToast(t('library.toast.locationUpdated', { lb: target.lb }), 'ok')
-          refreshCollection()
-        } catch { showToast(t('library.toast.updateFailed'), 'bad') }
-        return
-      }
-      const parentDir = await window.api.pickDir()
-      if (!parentDir) return
-      setActionBusy(true)
-      let ok = 0; let skip = 0
-      try {
-        const scanResp = await fetch(`${BASE}/api/pipeline/scan-dir`, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ root: parentDir, recursive: false }),
-        })
-        const scanData = await scanResp.json()
-        const entries: { lb_number: number; folder: string; path: string }[] = scanData.entries ?? []
-        for (const r of rows) {
-          const match = entries.find(e => e.lb_number === r.lbNumber)
-          if (match) {
-            await fetch(`${BASE}/api/collection/${r.lbNumber}`, {
-              method: 'PATCH', headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ disk_path: match.path, folder_name: match.folder }),
-            })
-            ok++
-          } else skip++
-        }
-      } catch { skip = rows.length }
-      setActionBusy(false)
-      showToast(t('library.toast.updated', { count: ok }) + (skip > 0 ? t('library.toast.notFoundSuffix', { count: skip }) : ''), ok > 0 ? 'ok' : 'info')
-      if (ok > 0) refreshCollection()
-    },
-    onRemove: (rows) => {
-      if (!rows.length) return
-      setConfirm({
-        title: t('library.ctx.removeCollection'),
-        body: t('library.toast.confirmRemoveBody', { count: rows.length }),
-        onConfirm: async () => {
-          setConfirm(null)
-          setActionBusy(true)
-          let ok = 0; let fail = 0
-          for (const r of rows) {
-            try { await fetch(`${BASE}/api/collection/${r.lbNumber}`, { method: 'DELETE' }); ok++ } catch { fail++ }
-          }
-          setActionBusy(false)
-          showToast(t('library.toast.removed', { count: ok }) + (fail > 0 ? t('library.toast.failedSuffix', { count: fail }) : ''), ok > 0 ? 'ok' : 'bad')
-          refreshCollection()
-        },
-      })
-    },
-    onWishlistToggle: async (row) => {
-      try {
-        if (row.wish) {
-          await fetch(`${BASE}/api/wishlist/${row.lbNumber}`, { method: 'DELETE' })
-          showToast(t('library.toast.wishlistRemoved', { lb: row.lb }), 'ok')
-        } else {
-          await fetch(`${BASE}/api/wishlist`, {
-            method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ lb_number: row.lbNumber }),
-          })
-          showToast(t('library.toast.wishlistAdded', { lb: row.lb }), 'ok')
-        }
-        refreshCollection()
-      } catch { showToast(t('library.toast.wishlistFailed'), 'bad') }
-    },
-    onWishlistAddMany: async (rows) => {
-      if (!rows.length) return
-      let ok = 0
-      for (const r of rows) {
-        try {
-          await fetch(`${BASE}/api/wishlist`, {
-            method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ lb_number: r.lbNumber }),
-          })
-          ok++
-        } catch { /* continue */ }
-      }
-      showToast(t('library.toast.wishlistAddedCount', { count: ok }), ok > 0 ? 'ok' : 'bad')
-      if (ok > 0) refreshCollection()
-    },
-  }), [t, showToast, refreshCollection, navigate, setActiveAttachLb, addPendingSpectro, addToFolderQueue])
-
-  const { menu: ctxMenu, openMenu: openCtxMenu, closeMenu: closeCtxMenu } = useActionMenu()
+  const {
+    actionHandlers, openCtxMenu, actionBusy, showToast, overlays: actionOverlays,
+  } = useLibraryActions()
 
   // ── Data loading — client-side adapter over the existing catalog + collection
   // prefetch endpoints (no backend changes this step) ──────────────────────────
@@ -716,42 +472,11 @@ export function ScreenLibrary(): React.JSX.Element {
     staleTime: Infinity,
   })
 
-  // TODO-150 step 8: detail-panel ShareSeed zone. `prefetch.torrents`/
-  // `prefetch.forum_posts` already cover every LB — no new backend endpoint,
-  // just grouped by lb_number into the per-row shape the panel reads.
-  const { data: attachData } = useQuery({
-    queryKey: ['library-attachments-cached'],
-    queryFn: () => fetch(`${BASE}/api/attachments/cached`).then(r => r.json()),
-    staleTime: 60_000,
-  })
-
-  const historyMap = useMemo(() => {
-    const m = new Map<number, RowHistory>()
-    const get = (lb: number) => m.get(lb) ?? (m.set(lb, { torrents: [], forum: [] }), m.get(lb)!)
-    if (Array.isArray(prefetch?.torrents)) {
-      for (const t of prefetch.torrents) {
-        get(t.lb_number).torrents.push({
-          d: t.created_at ?? '',
-          f: (t.torrent_path ?? '').split(/[/\\]/).pop() ?? '',
-          tag: t.added_to_qbt ? 'qBittorrent' : 'Local',
-        })
-      }
-    }
-    if (Array.isArray(prefetch?.forum_posts)) {
-      for (const p of prefetch.forum_posts) {
-        get(p.lb_number).forum.push({ d: p.posted_at ?? '', f: p.subject ?? '', tag: 'Posted' })
-      }
-    }
-    return m
-  }, [prefetch])
-
-  const attachCountMap = useMemo(() => {
-    const m = new Map<number, number>()
-    if (Array.isArray(attachData?.entries)) {
-      for (const e of attachData.entries) m.set(e.lb_number, (e.files ?? []).length)
-    }
-    return m
-  }, [attachData])
+  // TODO-150 step 8: detail-panel ShareSeed zone. Both maps live in
+  // ../lib/libraryPanelData so My Collection's panel reads the same data off
+  // the same query keys.
+  const historyMap = useLibraryHistoryMap()
+  const attachCountMap = useAttachCountMap()
 
   // Merged recording-lens rows. The builder lives in ../lib/libraryRows so the
   // sidebar's Saved Views count against the exact same row set (shared
@@ -956,24 +681,7 @@ export function ScreenLibrary(): React.JSX.Element {
   // separate screen root. ──────────────────────────────────────────────────
   const overlays = (
     <>
-      {ctxMenu && <ActionMenu state={ctxMenu} onClose={closeCtxMenu} />}
-      {toast && <Toast msg={toast.msg} tone={toast.tone} onDone={() => setToast(null)} />}
-      {confirm && (
-        <ConfirmDialog
-          title={confirm.title}
-          body={confirm.body}
-          onConfirm={confirm.onConfirm}
-          onCancel={() => setConfirm(null)}
-        />
-      )}
-      {dossierShowId && (
-        <DossierExportModal
-          showId={dossierShowId}
-          base={BASE}
-          onClose={() => setDossierShowId(null)}
-          showToast={showToast}
-        />
-      )}
+      {actionOverlays}
       {savingView && (
         <div
           onClick={() => setSavingView(false)}
