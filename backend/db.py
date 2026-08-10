@@ -4507,6 +4507,21 @@ def set_lbdir_verified(disk_path: str, db_path=None) -> bool:
 
 
 def get_missing_from_collection(db_path=None):
+    """Return ``entries`` rows the user does not own, as the Collection screen's
+    "Missing LBs" list.
+
+    Rows whose ``lb_master`` status is ``'nonexistent'`` are excluded — the LB
+    number was allocated but no release ever existed, so it is not a gap the
+    user can fill. Mirrors the same exclusion in ``gap_analysis`` and
+    ``timeline``.
+
+    Args:
+        db_path: Optional database path override.
+
+    Returns:
+        List of row dicts (lb_number, date_str, location, rating, description,
+        lb_status), ordered by LB number.
+    """
     with get_connection(db_path) as conn:
         rows = conn.execute("""
             SELECT e.lb_number, e.date_str, e.location, e.rating, e.description,
@@ -4516,6 +4531,7 @@ def get_missing_from_collection(db_path=None):
             LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
             WHERE c.lb_number IS NULL
               AND e.status = 'ok'
+              AND (lm.lb_status IS NULL OR lm.lb_status != 'nonexistent')
               AND NOT EXISTS (
                   SELECT 1 FROM lb_alias la
                   JOIN my_collection mc ON la.canonical_lb = mc.lb_number

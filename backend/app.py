@@ -4791,14 +4791,15 @@ def create_app() -> Flask:
     def lb_master_list() -> Response:
         """Return paginated lb_master rows.
 
-        Query params: status (public|private|missing), override=1, review=1,
+        Query params: status (public|private|missing|nonexistent), override=1, review=1,
                       limit (default 500), offset (default 0).
         """
         try:
             status = request.args.get("status") or None
-            if status and status not in ("public", "private", "missing"):  # #6
+            if status and status not in ("public", "private", "missing", "nonexistent"):  # #6
                 return jsonify({"error": "invalid_status",
-                                "message": "status must be public, private, or missing"}), 400
+                                "message": "status must be public, private, missing, "
+                                           "or nonexistent"}), 400
             override_only = request.args.get("override") == "1"
             review_only = request.args.get("review") == "1"
             limit = max(1, min(int(request.args.get("limit", 500)), 2000))
@@ -4844,8 +4845,9 @@ def create_app() -> Flask:
             body = request.get_json(silent=True) or {}
             status = body.get("status")
             notes = str(body.get("notes", ""))[:1000]  # #11
-            if status not in ("public", "private", "missing"):
-                return jsonify({"error": "status must be public, private, or missing"}), 400
+            if status not in ("public", "private", "missing", "nonexistent"):
+                return jsonify({"error": "status must be public, private, missing, "
+                                         "or nonexistent"}), 400
             database.set_lb_manual_override(lb, status, notes)
             return jsonify({"ok": True})
         except Exception as exc:

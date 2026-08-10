@@ -705,6 +705,50 @@ class TestInsertMissingEntry:
 # lb_missing table and 'nonexistent' status (TODO-102)
 # ---------------------------------------------------------------------------
 
+class TestMissingFromCollection:
+    """get_missing_from_collection() must hide 'nonexistent' LBs."""
+
+    def _seed_entry(self, conn, lb: int) -> None:
+        conn.execute(
+            "INSERT INTO entries(lb_number, date_str, location, status) "
+            "VALUES (?, '11/1/03', 'Rome, Italy', 'ok')", (lb,),
+        )
+        conn.commit()
+
+    def test_unowned_entry_is_listed(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            self._seed_entry(conn, 1407)
+            rows = db.get_missing_from_collection(db_path)
+            assert [r["lb_number"] for r in rows] == [1407]
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_nonexistent_override_hides_entry(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            self._seed_entry(conn, 1407)
+            db.set_lb_manual_override(1407, "nonexistent", "never existed", db_path=db_path)
+            rows = db.get_missing_from_collection(db_path)
+            assert rows == []
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_missing_status_still_listed(self):
+        """'missing' means the tape exists but the page is gone — still a gap."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            self._seed_entry(conn, 1407)
+            db.set_lb_manual_override(1407, "missing", "page gone", db_path=db_path)
+            rows = db.get_missing_from_collection(db_path)
+            assert [r["lb_number"] for r in rows] == [1407]
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
 class TestLbMissing:
     """lb_missing table: seeding, CRUD, reconcile integration, scraper skip."""
 
