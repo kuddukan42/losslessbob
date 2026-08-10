@@ -9,6 +9,12 @@ import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import { useSpectrogramStore } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { lbDetailUrl } from '../lib/lbUrl'
+import { RecordingDetailPanel } from '../components/library/DetailPanel'
+import type { DetailRow, PanelTab } from '../components/library/DetailPanel'
+import { useLibraryActions } from '../lib/useLibraryActions'
+import { useLibraryHistoryMap, useAttachCountMap } from '../lib/libraryPanelData'
+import { useLibraryRows } from '../lib/libraryRows'
+import { useResizableWidth } from '../lib/useResizableColumns'
 
 const BASE = window.api.flaskBase
 
@@ -1288,21 +1294,16 @@ interface PersonalMeta {
   last_listened: string | null
 }
 
-interface DetailPanelProps {
+interface CollectionTabProps {
   row: CollectionRow
   historyTab: HistoryTab
   onHistoryTab: (t: HistoryTab) => void
-  onClose: () => void
-  onReveal: (path: string) => void
   onRegenTorrent: (lb: number, path: string) => void
   onPostForum: (lb: number) => void
-  onWishlistToggle: (lb: number, currentlyOn: boolean) => void
   onPersonalInfo: (lb: string, lbNumber: number) => void
   personalMetaVersion: number
   onToast: (msg: string, tone: ToastTone) => void
   onRefetch: () => void
-  onSpectrograms: (row: CollectionRow) => void
-  onNavigate: (path: string) => void
 }
 
 interface AudioInfo {
@@ -1314,9 +1315,16 @@ interface AudioInfo {
   offline?: boolean
 }
 
-function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegenTorrent, onPostForum, onWishlistToggle, onPersonalInfo, personalMetaVersion, onToast, onRefetch, onSpectrograms, onNavigate }: DetailPanelProps): React.JSX.Element {
+/**
+ * The "Collection" tab body mounted inside the shared RecordingDetailPanel.
+ *
+ * Holds only what that panel's catalog-wide zones don't cover: this copy's
+ * on-disk facts, personal listening meta, and per-record torrent/forum
+ * management. Identity, actions, checksums, picks, taper, assets, seed & share
+ * and quality all come from the shared panel.
+ */
+function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostForum, onPersonalInfo, personalMetaVersion, onToast, onRefetch }: CollectionTabProps): React.JSX.Element {
   const { t } = useTranslation()
-  const edge = edgeFor(row.status)
 
   const [personalMeta, setPersonalMeta] = useState<PersonalMeta | null>(null)
   const [logListenBusy, setLogListenBusy] = useState(false)
@@ -1531,13 +1539,9 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
   }
 
   const META_ROWS: [string, React.ReactNode][] = [
-    [t('collection.detail.folder'),        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)' }}>{row.folder || '—'}</span>],
     [t('collection.detail.diskPath'),     <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>{row.diskPath || '—'}</span>],
     [t('collection.detail.size'),          <span style={{ fontFamily: 'var(--lbb-mono)' }}>{row.size || '—'}</span>],
-    [t('collection.detail.confirmed'),     <span style={{ fontFamily: 'var(--lbb-mono)' }}>{row.confirmed || '—'}</span>],
-    [t('collection.detail.archRating'),  row.rating
-      ? <Pill tone="ok" soft>{row.rating}</Pill>
-      : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>],
+    [t('collection.detail.discs'),         <span style={{ fontFamily: 'var(--lbb-mono)' }}>{row.discs > 0 ? row.discs : '—'}</span>],
     [t('collection.detail.myRating'),     personalMeta?.personal_rating != null
       ? <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{personalMeta.personal_rating} {t('collection.detail.perFive')}</span>
       : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>],
@@ -1553,26 +1557,10 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
 
   return (
     <>
-    <div style={{
-      borderLeft: '1px solid var(--lbb-border)',
-      display: 'flex', flexDirection: 'column',
-      overflowY: 'auto', minHeight: 0,
-      background: 'var(--lbb-surface)',
-    }}>
-      {/* close button */}
-      <div style={{
-        display: 'flex', justifyContent: 'flex-end', alignItems: 'center',
-        padding: '6px 10px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
-      }}>
-        <IconButton icon="x" size={14} title="Close detail" onClick={onClose} />
-      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
 
-      <div style={{ padding: '14px 16px', display: 'flex', flexDirection: 'column', gap: 14 }}>
-
-        {/* 1. Pill row */}
+        {/* 1. Pill row — copy-level facts the shared identity block doesn't carry */}
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-          <Pill tone="ok" soft dot>{t('collection.detail.owned')}</Pill>
-          <Pill tone={edge} soft>{row.status}</Pill>
           {/* Copy-level (D4): this copy IS the xref-N fileset, from my_collection.xref */}
           {row.xref > 0 && (
             <Pill tone="info" soft>
@@ -1605,25 +1593,7 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
           </div>
         )}
 
-        {/* 2. ID + title block */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-          <span style={{
-            fontSize: 'var(--lbb-fs-16)', fontWeight: 700,
-            fontFamily: 'var(--lbb-mono)',
-            color: 'var(--lbb-accent-mid)',
-          }}>
-            {row.lbNumber}
-          </span>
-          <span style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, color: 'var(--lbb-fg)' }}>
-            {row.title || row.folder || '—'}
-          </span>
-          <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
-            {row.date} · {row.location}
-            {row.discs > 0 ? ` · ${row.discs} CD${row.discs !== 1 ? 's' : ''}` : ''}
-          </span>
-        </div>
-
-        {/* 3. Meta grid */}
+        {/* 2. Meta grid */}
         <div style={{
           background: 'var(--lbb-surface2)',
           border: '1px solid var(--lbb-border)',
@@ -1645,40 +1615,17 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
           ))}
         </div>
 
-        {/* 4. Action buttons */}
+        {/* 3. Personal-meta actions */}
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-          <Button
-            variant="secondary" size="sm" icon="reveal"
-            disabled={!row.diskPath}
-            onClick={() => onReveal(row.diskPath)}
-          >
-            {t('collection.detail.revealOnDisk')}
-          </Button>
-          <Button
-            variant={row.wishlist ? 'primary' : 'ghost'} size="sm" icon="star"
-            onClick={() => onWishlistToggle(row.lbNumberInt, row.wishlist)}
-            title={row.wishlist ? 'Remove from wishlist' : 'Add to wishlist'}
-          >
-            {row.wishlist ? t('collection.detail.onWishlist') : t('collection.detail.wishlist')}
-          </Button>
           <Button variant="ghost" size="sm" disabled={logListenBusy} onClick={handleLogListen}>
             {t('collection.detail.logListen')}
           </Button>
           <Button variant="ghost" size="sm" onClick={() => onPersonalInfo(row.lbNumber, row.lbNumberInt)}>
             {t('collection.detail.editPersonalInfo')}
           </Button>
-          <Button variant="ghost" size="sm" onClick={() => onNavigate('/attachments')}>
-            {t('collection.detail.attachments')}
-          </Button>
-          <Button variant="ghost" size="sm" disabled={!row.diskPath} onClick={() => onSpectrograms(row)}>
-            {t('collection.detail.spectrograms')}
-          </Button>
-          <Button variant="ghost" size="sm" onClick={() => onNavigate('/map')}>
-            {t('collection.detail.onMap')}
-          </Button>
         </div>
 
-        {/* 5. History */}
+        {/* 4. History — per-record torrent/forum management */}
         <div>
           <div style={{
             fontSize: 'var(--lbb-fs-11)', fontWeight: 700, color: 'var(--lbb-fg3)',
@@ -1840,7 +1787,6 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
         </div>
 
       </div>
-    </div>
 
     {deleteConfirm !== null && (
       <ConfirmDialog
@@ -2435,6 +2381,46 @@ export function ScreenCollection(): React.JSX.Element {
 
   const selectedRow = selectedId ? (filteredRows.find(r => r.lbNumber === selectedId) ?? null) : null
 
+  // ── Shared detail panel ─────────────────────────────────────────────────────
+  // Same RecordingDetailPanel the Library screen mounts, fed by the same shared
+  // action bag and side-data maps. The catalog row is preferred (it carries
+  // source/description/picks/taper badges the collection payload lacks); the
+  // collection row is the fallback so a copy missing from the catalog still
+  // renders. Collection-only management rides an extra tab.
+  const libraryRows = useLibraryRows()
+  const libRowByLb = useMemo(() => {
+    const m = new Map<number, DetailRow>()
+    for (const r of libraryRows) m.set(r.lbNumber, r)
+    return m
+  }, [libraryRows])
+  const libActions = useLibraryActions()
+  const panelHistory = useLibraryHistoryMap()
+  const panelAttachCounts = useAttachCountMap()
+  const { width: detailWidth, startResize: startDetailResize } = useResizableWidth('lbb_collection_detail_width', 380)
+
+  const detailRow = useMemo<DetailRow | null>(() => {
+    if (!selectedRow) return null
+    return libRowByLb.get(selectedRow.lbNumberInt) ?? {
+      lbNumber: selectedRow.lbNumberInt,
+      lb: selectedRow.lbNumber,
+      owned: true,
+      wish: selectedRow.wishlist,
+      path: selectedRow.diskPath,
+      date: selectedRow.date,
+      loc: selectedRow.location,
+      desc: selectedRow.notes || selectedRow.title,
+      rating: selectedRow.rating,
+      src: null,
+      status: selectedRow.status,
+      folder: selectedRow.folder,
+      conf: selectedRow.confirmed,
+      dup: selectedRow.isDuplicate,
+      xref: selectedRow.hasAltFilesets,
+    }
+  }, [selectedRow, libRowByLb])
+
+  const extraTabs = useMemo<PanelTab[]>(() => [{ id: 'collection', label: t('collection.detail.tabCollection') }], [t])
+
   const handleSort = useCallback((col: string) => {
     setSortCol(prev => {
       if (prev === col) { setSortDir(d => d === 'asc' ? 'desc' : 'asc'); return col }
@@ -2593,11 +2579,6 @@ export function ScreenCollection(): React.JSX.Element {
       setTorrentProgress(null)
     }
   }
-
-  const handleReveal = useCallback(async (diskPath: string) => {
-    if (!diskPath) { showToast('No disk path for this entry', 'info'); return }
-    await window.api.openPath(diskPath)
-  }, [showToast])
 
   const handleRemoveChecked = () => {
     const targets = getTargetRows()
@@ -2766,25 +2747,6 @@ export function ScreenCollection(): React.JSX.Element {
   const handleForumPosted = useCallback((topicUrl: string) => {
     showToast(topicUrl ? t('collection.toast.postedWithUrl', { url: topicUrl }) : t('collection.toast.postedToForum'), 'ok')
     refetch()
-  }, [showToast, refetch])
-
-  const handleWishlistToggle = useCallback(async (lb: number, currentlyOn: boolean) => {
-    try {
-      if (currentlyOn) {
-        await fetch(`${BASE}/api/wishlist/${lb}`, { method: 'DELETE' })
-        showToast(t('collection.toast.removedFromWishlist', { lb }), 'ok')
-      } else {
-        await fetch(`${BASE}/api/wishlist`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ lb_number: lb }),
-        })
-        showToast(t('collection.toast.addedToWishlist', { lb }), 'ok')
-      }
-      refetch()
-    } catch {
-      showToast(t('collection.toast.wishlistUpdateFailed'), 'bad')
-    }
   }, [showToast, refetch])
 
   const handleWishlistUpdate = useCallback(async (lb: number, priority: number, notes: string) => {
@@ -3249,7 +3211,9 @@ export function ScreenCollection(): React.JSX.Element {
       <div style={{
         flex: 1, minHeight: 0,
         display: 'grid',
-        gridTemplateColumns: (notOwned || filter === 'forum_global' || filter === 'torrent_global') ? '1fr' : (selectedRow ? '1fr 360px' : '1fr'),
+        // `auto` (not a fixed track): the shared panel carries its own width and
+        // drag-to-resize handle, so the grid must follow it rather than pin it.
+        gridTemplateColumns: (notOwned || filter === 'forum_global' || filter === 'torrent_global') ? '1fr' : (selectedRow ? '1fr auto' : '1fr'),
       }}>
 
         {/* Not-in-collection table */}
@@ -3697,28 +3661,40 @@ export function ScreenCollection(): React.JSX.Element {
         </div>
         )}
 
-        {/* Detail panel */}
-        {!notOwned && filter !== 'forum_global' && filter !== 'torrent_global' && selectedRow && (
-          <DetailPanel
-            row={selectedRow}
-            historyTab={historyTab}
-            onHistoryTab={setHistoryTab}
+        {/* Detail panel — the shared Library panel, plus a Collection tab */}
+        {!notOwned && filter !== 'forum_global' && filter !== 'torrent_global' && selectedRow && detailRow && (
+          <RecordingDetailPanel
+            row={detailRow}
+            history={panelHistory.get(detailRow.lbNumber)}
+            attachCount={panelAttachCounts.get(detailRow.lbNumber)}
+            actionHandlers={libActions.actionHandlers}
+            openMenu={libActions.openCtxMenu}
             onClose={() => setSelectedId(null)}
-            onReveal={handleReveal}
-            onRegenTorrent={handleRegenTorrent}
-            onPostForum={handlePostForum}
-            onWishlistToggle={handleWishlistToggle}
-            onPersonalInfo={(lb, lbNumber) => setPersonalModal({ lb, lbNumber })}
-            personalMetaVersion={personalSaveVer}
-            onToast={showToast}
-            onRefetch={refetch}
-            onSpectrograms={handleCtxSpectrograms}
-            onNavigate={navigate}
+            width={detailWidth}
+            onResizeStart={e => startDetailResize(e.clientX, detailWidth)}
+            extraTabs={extraTabs}
+            renderExtraTab={() => (
+              <CollectionTab
+                row={selectedRow}
+                historyTab={historyTab}
+                onHistoryTab={setHistoryTab}
+                onRegenTorrent={handleRegenTorrent}
+                onPostForum={handlePostForum}
+                onPersonalInfo={(lb, lbNumber) => setPersonalModal({ lb, lbNumber })}
+                personalMetaVersion={personalSaveVer}
+                onToast={showToast}
+                onRefetch={refetch}
+              />
+            )}
           />
         )}
       </div>
 
       {/* ── Overlays ──────────────────────────────────────────────────────────── */}
+
+      {/* Context menu / toast / confirm / dossier for the shared detail panel's
+          own actions — separate state from this screen's overlays below. */}
+      {libActions.overlays}
 
       {toast && (
         <Toast msg={toast.msg} tone={toast.tone} onDone={() => setToast(null)} />

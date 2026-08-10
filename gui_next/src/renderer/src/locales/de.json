@@ -670,7 +670,9 @@
       "forumLoadError": "Forumhistorie konnte nicht geladen werden.",
       "delRecord": "Aufzeichnung",
       "xrefCopy": "Xref-Dateisatz · xref-{{id}}",
-      "altFilesetsNote": "Für diesen Eintrag dokumentierte alternative Dateisätze"
+      "altFilesetsNote": "Für diesen Eintrag dokumentierte alternative Dateisätze",
+      "discs": "Discs",
+      "tabCollection": "Sammlung"
     },
     "confirmDelete": {
       "torrentTitle": ".torrent-Datei löschen",

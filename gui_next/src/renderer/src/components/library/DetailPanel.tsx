@@ -1621,7 +1621,7 @@ function TabStrip({ tabs, active, onChange }: { tabs: PanelTab[]; active: string
 
 // ── Recording detail panel ──────────────────────────────────────────────────
 
-export function RecordingDetailPanel({ row, history, attachCount, actionHandlers, openMenu, onClose, open = true, onToggle, width = 380, onResizeStart }: {
+export function RecordingDetailPanel({ row, history, attachCount, actionHandlers, openMenu, onClose, open = true, onToggle, width = 380, onResizeStart, extraTabs, renderExtraTab }: {
   row: DetailRow | null
   history: RowHistory | undefined
   attachCount: number | undefined
@@ -1632,6 +1632,12 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
   onToggle?: () => void
   width?: number
   onResizeStart?: (e: React.MouseEvent) => void
+  // Host-screen extension point: tabs appended after the built-in ones, with a
+  // renderer keyed by tab id. My Collection uses it for the collection-only
+  // record management (torrent/forum rows, personal listening meta) that has no
+  // place in the shared, catalog-wide zones.
+  extraTabs?: PanelTab[]
+  renderExtraTab?: (id: string) => React.ReactNode
 }) {
   const { t } = useTranslation()
   const toggle = onToggle ?? onClose
@@ -1681,7 +1687,9 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
     tabs.push({ id: 'share', label: t('library.panel.tabShare') })
     tabs.push({ id: 'quality', label: t('library.panel.tabQuality') })
   }
+  for (const x of extraTabs ?? []) tabs.push(x)
   const activeTab = tabs.some(x => x.id === tab) ? tab : 'overview'
+  const isExtraTab = (extraTabs ?? []).some(x => x.id === activeTab)
 
   return (
     <aside style={panelAsideStyle(width)} data-panel="recording-detail">
@@ -1814,6 +1822,8 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
         {activeTab === 'quality' && row.owned && (
           <QualityZone row={row} hideLabel />
         )}
+
+        {isExtraTab && renderExtraTab?.(activeTab)}
       </div>
     </aside>
   )

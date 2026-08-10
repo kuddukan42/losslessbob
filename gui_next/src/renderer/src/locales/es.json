@@ -670,7 +670,9 @@
       "forumLoadError": "Error al cargar el historial del foro.",
       "delRecord": "Eliminar registro",
       "xrefCopy": "Conjunto de archivos Xref · xref-{{id}}",
-      "altFilesetsNote": "Conjuntos de archivos alternativos documentados para esta entrada"
+      "altFilesetsNote": "Conjuntos de archivos alternativos documentados para esta entrada",
+      "discs": "Discos",
+      "tabCollection": "Colección"
     },
     "confirmDelete": {
       "torrentTitle": "Eliminar archivo .torrent",

@@ -670,7 +670,9 @@
       "forumLoadError": "Échec du chargement de l'historique du forum.",
       "delRecord": "Enregistrement Del",
       "xrefCopy": "Ensemble de fichiers Xref · xref-{{id}}",
-      "altFilesetsNote": "Ensembles de fichiers « Alt » documentés pour cette entrée"
+      "altFilesetsNote": "Ensembles de fichiers « Alt » documentés pour cette entrée",
+      "discs": "Disques",
+      "tabCollection": "Collection"
     },
     "confirmDelete": {
       "torrentTitle": "Supprimer un fichier .torrent",
