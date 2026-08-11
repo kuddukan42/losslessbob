@@ -11,6 +11,7 @@ import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { lbDetailUrl } from '../lib/lbUrl'
 import { RecordingDetailPanel } from '../components/library/DetailPanel'
 import type { DetailRow, PanelTab } from '../components/library/DetailPanel'
+import { buildRecordingActions } from '../components/library/actions'
 import { useLibraryActions } from '../lib/useLibraryActions'
 import { useLibraryHistoryMap, useAttachCountMap } from '../lib/libraryPanelData'
 import { useLibraryRows } from '../lib/libraryRows'
@@ -2123,6 +2124,7 @@ export function ScreenCollection(): React.JSX.Element {
   const [personalSaveVer, setPersonalSaveVer] = useState(0)
   const [scanPreviewModal, setScanPreviewModal] = useState<{ entries: ScanEntry[]; skipped: number } | null>(null)
   const [missingLbRows, setMissingLbRows]   = useState<MissingLbRow[]>([])
+  const [missingSelectedId, setMissingSelectedId] = useState<number | null>(null)
   const [rawForumPosts,   setRawForumPosts]   = useState<GlobalForumPost[]>([])
   const [rawTorrentRecs,  setRawTorrentRecs]  = useState<GlobalTorrentRecord[]>([])
   const [duplicateGroups,  setDuplicateGroups]  = useState<DuplicateGroup[]>([])
@@ -2418,6 +2420,37 @@ export function ScreenCollection(): React.JSX.Element {
       xref: selectedRow.hasAltFilesets,
     }
   }, [selectedRow, libRowByLb])
+
+  // Not-in-collection rows feed the same panel. The catalog row is preferred;
+  // the missing-LB payload is the fallback so an LB absent from the catalog
+  // still opens. `owned: false` is what makes the action set collapse to the
+  // acquire actions (open / copy LB# / wishlist).
+  const missingDetailRow = useMemo<DetailRow | null>(() => {
+    if (missingSelectedId == null) return null
+    // Scoped to the visible rows so a public/private flip drops a selection
+    // that scrolled out of the list.
+    const r = filteredMissingRows.find(m => m.lb_number === missingSelectedId)
+    if (!r) return null
+    const cat = libRowByLb.get(missingSelectedId)
+    if (cat) return cat
+    return {
+      lbNumber: r.lb_number,
+      lb: `LB-${String(r.lb_number).padStart(5, '0')}`,
+      owned: false,
+      wish: false,
+      path: '',
+      date: r.date_str,
+      loc: r.location,
+      desc: r.description,
+      rating: r.rating,
+      src: null,
+      status: r.lb_status,
+      folder: '',
+      conf: '',
+      dup: false,
+      xref: false,
+    }
+  }, [missingSelectedId, libRowByLb, filteredMissingRows])
 
   const extraTabs = useMemo<PanelTab[]>(() => [{ id: 'collection', label: t('collection.detail.tabCollection') }], [t])
 
@@ -2964,6 +2997,22 @@ export function ScreenCollection(): React.JSX.Element {
     } catch { showToast('HTML export failed', 'bad') }
   }, [filteredMissingRows, missingLbRows])
 
+  // Right-click on a not-in-collection row gets the shared Library action menu.
+  // The row is unowned by definition, so buildRecordingActions yields the
+  // acquire set (open on LB / copy LB# / wishlist toggle).
+  const openMissingCtxMenu = useCallback((e: React.MouseEvent, row: MissingLbRow) => {
+    const lb = `LB-${String(row.lb_number).padStart(5, '0')}`
+    const cat = libRowByLb.get(row.lb_number)
+    const action = {
+      lbNumber: row.lb_number,
+      lb,
+      owned: false,
+      wish: cat?.wish ?? false,
+      path: '',
+    }
+    libActions.openCtxMenu(e, lb, buildRecordingActions(action, [], libActions.actionHandlers, t))
+  }, [libRowByLb, libActions, t])
+
   const handleMissingRowDblClick = useCallback((row: MissingLbRow) => {
     const lb = `LB-${String(row.lb_number).padStart(5, '0')}`
     navigate('/quicklookup', { state: { seed: lb } })
@@ -3213,7 +3262,10 @@ export function ScreenCollection(): React.JSX.Element {
         display: 'grid',
         // `auto` (not a fixed track): the shared panel carries its own width and
         // drag-to-resize handle, so the grid must follow it rather than pin it.
-        gridTemplateColumns: (notOwned || filter === 'forum_global' || filter === 'torrent_global') ? '1fr' : (selectedRow ? '1fr auto' : '1fr'),
+        gridTemplateColumns: notOwned
+          ? (missingDetailRow ? '1fr auto' : '1fr')
+          : (filter === 'forum_global' || filter === 'torrent_global') ? '1fr'
+          : (selectedRow ? '1fr auto' : '1fr'),
       }}>
 
         {/* Not-in-collection table */}
@@ -3246,7 +3298,14 @@ export function ScreenCollection(): React.JSX.Element {
                   return (
                     <TR
                       key={r.lb_number}
+                      selected={missingSelectedId === r.lb_number}
+                      onClick={() => setMissingSelectedId(
+                        id => id === r.lb_number ? null : r.lb_number)}
                       onDoubleClick={() => handleMissingRowDblClick(r)}
+                      onContextMenu={e => {
+                        setMissingSelectedId(r.lb_number)
+                        openMissingCtxMenu(e, r)
+                      }}
                       style={{ cursor: 'pointer' }}
                     >
                       <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{lb}</TD>
@@ -3659,6 +3718,21 @@ export function ScreenCollection(): React.JSX.Element {
             </div>
           )}
         </div>
+        )}
+
+        {/* Detail panel for the not-in-collection view — same shared panel, no
+            Collection tab (there is no copy to manage). */}
+        {notOwned && missingDetailRow && (
+          <RecordingDetailPanel
+            row={missingDetailRow}
+            history={panelHistory.get(missingDetailRow.lbNumber)}
+            attachCount={panelAttachCounts.get(missingDetailRow.lbNumber)}
+            actionHandlers={libActions.actionHandlers}
+            openMenu={libActions.openCtxMenu}
+            onClose={() => setMissingSelectedId(null)}
+            width={detailWidth}
+            onResizeStart={e => startDetailResize(e.clientX, detailWidth)}
+          />
         )}
 
         {/* Detail panel — the shared Library panel, plus a Collection tab */}
