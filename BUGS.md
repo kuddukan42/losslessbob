@@ -1,4 +1,12 @@
 
+BUG-320: electron_driver Tier B (--electron) fails: playwright "Process failed to launch!"
+Status: Open
+File(s): tools/electron_driver.mjs
+Reported: 2026-08-10
+Description: On 2026-08-10 both a --no-build and a full-build Tier B run died right after 'launching Electron...' with playwright-core Error: Process failed to launch! (Xvfb started OK on :92/:93, backend probe fine). Tier A --renderer-only works. Verification for that session fell back to Tier A.
+Root cause: Unknown
+Fix: —
+
 BUG-278: tapematch: addon_links.rule_d can never fire in a live session (emb_score absent from the link metrics)
 Status: FIXED 2026-07-27 (code); re-run of the 79 affected dates PAUSED at 49/79
 File(s): tools/tapematch/tapematch/cli.py:890,tools/tapematch/tapematch_session.py:1665,tools/tapematch/tapematch/verdict.py:311

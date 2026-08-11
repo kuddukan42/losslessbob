@@ -1,3 +1,20 @@
+[2026-08-10] — fix(gui): BUG-319 — "Not in collection" rows get right-click + a detail pane
+Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: the not-owned view was a
+  dead-end list — rows carried only onDoubleClick (Quick Lookup), and both the grid's
+  `gridTemplateColumns` and the RecordingDetailPanel render condition explicitly excluded
+  `notOwned`, so nothing could be selected or inspected. Rows now select (`missingSelectedId`,
+  click toggles), right-click opens the shared Library action menu built by
+  `buildRecordingActions` with `owned: false` — Open LB page / Copy LB number / Add to wishlist —
+  and the selection mounts the same `RecordingDetailPanel` the Library and owned-collection views
+  use, with no Collection tab (there is no copy to manage). `missingDetailRow` prefers the catalog
+  row from `libRowByLb` (source/description/picks/taper badges) and falls back to a row synthesized
+  from the missing-LB payload; it resolves against `filteredMissingRows`, so flipping the
+  public/private chip drops a selection that left the list. Verified with the driver against live
+  data (Tier A; Tier B is down — BUG-320): selected row renders the panel with the Not owned /
+  Public / pick badges and an Add to wishlist primary, right-click renders the 3-item acquire menu.
+Added: BUGS.md: BUG-320 — electron_driver Tier B (--electron) dies with playwright
+  "Process failed to launch!" right after Xvfb comes up; Tier A unaffected.
+
 [2026-08-10] — feat(gui): TapeMatch triage-rail query field + year brush + windowed list
 Added: gui_next/src/renderer/src/screens/ScreenTapeMatchCuration.tsx: implemented the
   design_handoff_tapematch_rail_filter add-on for the §2 triage-queue rail. `parseQueryTokens`

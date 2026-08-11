@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-319: My Collection "Not in collection" rows have no context menu and no detail pane
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenCollection.tsx:3244
+Reported: 2026-08-10
+Fixed: 2026-08-10
+Root cause: The not-owned view was built as a read-only export list — rows had only onDoubleClick, and the detail-panel grid/render conditions explicitly excluded notOwned.
+Fix: Rows now select (missingSelectedId), right-click opens the shared Library action menu via buildRecordingActions with owned:false (Open LB page / Copy LB number / Add to wishlist), and the selected row mounts RecordingDetailPanel (catalog row preferred, missing-LB payload fallback, no Collection tab). Selection is scoped to the visible rows so a public/private flip drops it.
+
 BUG-318: Dossier Olof cross-reference 404s on 2022+ shows
 Status: Fixed
 File(s): backend/dossier.py:920
