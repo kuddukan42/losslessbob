@@ -1,4 +1,16 @@
 
+TODO-305: Coverage award: build the /lbdir/ledger and /lbdir/sync routes
+Priority: Low
+Status: Open
+Added: 2026-08-12
+Description: instructions/design_handoff_lb_coverage_award/README.md section 1 specifies four routes. /about/coverage and its certificate modal shipped 2026-08-12; the full per-entry ledger (/lbdir/ledger) and the LB snapshot-sync history (/lbdir/sync) are not built and the shipped screen has no entry points to them. Spec stays in instructions/ until these land.
+
+TODO-304: Translate the coverage-award screen strings (de/fr/es/it/nl)
+Priority: Medium
+Status: Open
+Added: 2026-08-12
+Description: The 'Complete against LB' coverage screen and its About-dialog entry row added ~60 keys to gui_next/src/renderer/src/locales/en.json; the other five locales are untranslated. Run /gui-next-i18n.
+
 TODO-303: Locate Olof's bobtalk quotes in our audio and add a play button
 Priority: Medium
 Status: Open — BUILT 2026-08-07, re-geometried 2026-08-08; only the corpus-wide run remains

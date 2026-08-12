@@ -136,6 +136,19 @@ export function familyColorVar(index: number): string {
   return `var(--lbb-fam-${n + 1})`;
 }
 
+// Award ramp — the "Complete against LB" milestone gold (design handoff
+// design_handoff_lb_coverage_award §7). Deliberately NOT an accent: the
+// milestone must read identically under all eight accents and both frame
+// palettes, so these values are fixed per mode and never derived from
+// ACCENT_PALETTES. Light-mode `mid` is the darkened amber that clears
+// contrast on light surfaces (§8 — never use it for body copy in light mode).
+// Emitted as --lbb-award-{mid,hi,lo,soft,on}.
+interface AwardTone { mid: string; hi: string; lo: string; soft: string; on: string; }
+const AWARD: Record<ConcreteMode, AwardTone> = {
+  light: { mid: '#9a6800', hi: '#ad7400', lo: '#7d5200', soft: '#f7ead0', on: '#ffffff' },
+  dark:  { mid: '#d9b26a', hi: '#e6c689', lo: '#b8924f', soft: '#241d10', on: '#1a1408' },
+};
+
 const MODES: Record<ConcreteMode, ModePalette> = {
   light: {
     bg:        '#faf8f3',
@@ -258,6 +271,9 @@ export function applyTheme({ mode, accent, density, font, fontSize, customTokens
     root.style.setProperty(`--lbb-${tone}-bar`, v.bar);
   });
   Object.entries(seq).forEach(([step, v]) => root.style.setProperty(`--lbb-seq-${step}`, v));
+  Object.entries(AWARD[resolved] ?? AWARD.light).forEach(([k, v]) =>
+    root.style.setProperty(`--lbb-award-${k}`, v)
+  );
   FAMILY_COLORS.forEach((v, i) => root.style.setProperty(`--lbb-fam-${i + 1}`, v));
   (Object.entries(d) as [string, number][]).forEach(([k, v]) =>
     root.style.setProperty(`--lbb-d-${k}`, `${v}px`)

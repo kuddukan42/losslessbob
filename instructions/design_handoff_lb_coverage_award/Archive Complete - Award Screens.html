@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="design_doc_mode" content="canvas">
+<title>Archive Complete — award screens</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c1017;--surface:#131822;--surface2:#1a2130;--surface3:#222b3d;--border:#232b3a;--border2:#33405a;--fg:#e6e9f0;--fg2:#9aa5b5;--fg3:#5f6b7d;--accent:#5b8df2;--accent-soft:#1a2740;--ok-fg:#5db679;--ok-bar:#39a360;--ok-bg:#16241b;--warn-fg:#d4a35a;--gold:#d9b26a;--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box}
+body{margin:0;font:13px/1.45 Inter,system-ui,sans-serif;color:var(--fg)}
+a{color:var(--accent)}a:hover{color:#7ea6f5}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.dim{color:var(--fg3)}
+.frame{position:absolute;width:1280px;height:800px;background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.flabel{position:absolute;font:700 12px/1 Inter;letter-spacing:.1em;text-transform:uppercase;color:#7c8698}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:999px;font-size:10.5px;font-weight:600;white-space:nowrap}
+.pill.ok{background:var(--ok-bg);color:var(--ok-fg);border:1px solid color-mix(in oklab,var(--ok-bar) 45%,transparent)}
+.pill.gold{background:#241d10;color:var(--gold);border:1px solid color-mix(in oklab,var(--gold) 40%,transparent)}
+.btn{border-radius:6px;padding:8px 15px;font:600 12px Inter;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--fg)}
+.btn.ghost{background:transparent;color:var(--fg2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#0b1020}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#1a1408}
+.eyebrow{font:700 10.5px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--fg3)}
+.topbar{display:flex;align-items:center;gap:12px;padding:10px 18px;border-bottom:1px solid var(--border);background:var(--surface)}
+.topbar .crumb{font-size:12.5px;color:var(--fg2)}.topbar .crumb strong{color:var(--fg)}
+.stat{display:flex;flex-direction:column;gap:3px}
+.stat b{font:600 22px var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.stat span{font:600 10px Inter;letter-spacing:.1em;text-transform:uppercase;color:var(--fg3)}
+
+/* ── A: certificate ── */
+#a .glow{position:absolute;inset:-30% 20% 50%;background:radial-gradient(50% 50% at 50% 50%,rgba(217,178,106,.13),transparent 70%);pointer-events:none}
+#a .cert{position:absolute;inset:70px 150px 104px;border:1px solid color-mix(in oklab,var(--gold) 32%,transparent);border-radius:6px;background:linear-gradient(180deg,#141924,#10141d);padding:44px 56px;display:flex;flex-direction:column;align-items:center;text-align:center}
+#a .cert:before{content:"";position:absolute;inset:7px;border:1px solid rgba(217,178,106,.14);border-radius:3px;pointer-events:none}
+#a .seal{width:92px;height:92px;border-radius:50%;border:1px solid color-mix(in oklab,var(--gold) 45%,transparent);display:grid;place-items:center;position:relative;background:radial-gradient(70% 70% at 50% 30%,#2a2314,#171a22)}
+#a .seal:before{content:"";position:absolute;inset:7px;border:1px dashed rgba(217,178,106,.35);border-radius:50%}
+#a .seal em{font:700 26px var(--mono);color:var(--gold);font-style:normal}
+#a h1{margin:22px 0 0;font:800 44px/1.05 Inter;letter-spacing:-.025em}
+#a .sub{margin-top:12px;max-width:640px;font-size:15px;line-height:1.5;color:var(--fg2);text-wrap:pretty}
+#a .rule{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:30px 0 22px}
+#a .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;width:100%}
+#a .stats .stat{align-items:center;gap:5px;padding:14px 8px;background:#151a25;border:1px solid var(--border)}
+#a .eras{width:100%;margin-top:22px;display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+#a .era{display:flex;flex-direction:column;gap:6px;align-items:center}
+#a .era i{display:block;width:100%;height:5px;border-radius:3px;background:linear-gradient(90deg,color-mix(in oklab,var(--gold) 70%,#000),var(--gold))}
+#a .era span{font:600 9.5px var(--mono);color:var(--fg3)}
+#a .sig{margin-top:26px;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:30px;text-align:left}
+#a .sigcol{font:11px/1.6 var(--mono);color:var(--fg3)}
+#a .sigcol strong{display:block;color:var(--fg2);font-weight:500}
+#a .acts{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:10px;padding:0 0 22px}
+
+/* ── B: mosaic ── */
+#b .wrap{display:flex;height:calc(100% - 42px)}
+#b .left{flex:0 0 452px;padding:40px 34px;border-right:1px solid var(--border);display:flex;flex-direction:column}
+#b .hero{font:800 92px/1 var(--mono);letter-spacing:-.04em;color:var(--fg)}
+#b .heroLbl{margin-top:8px;font:700 12px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--ok-fg)}
+#b h2{margin:26px 0 0;font:700 26px/1.15 Inter;letter-spacing:-.02em}
+#b .say{margin-top:11px;font-size:13.5px;line-height:1.6;color:var(--fg2);text-wrap:pretty}
+#b .prog{margin-top:26px}
+#b .progBar{height:7px;border-radius:4px;background:var(--surface2);border:1px solid var(--border);overflow:hidden}
+#b .progBar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#2f7a4d,var(--ok-fg))}
+#b .progMarks{display:flex;justify-content:space-between;margin-top:7px;font:10.5px var(--mono);color:var(--fg3)}
+#b .badges{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#b .badge{padding:11px 10px;border-radius:7px;background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;gap:5px}
+#b .badge em{font:700 15px var(--mono);font-style:normal;color:var(--gold)}
+#b .badge span{font:600 9.5px Inter;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3);line-height:1.35}
+#b .kv{margin-top:auto;display:grid;grid-template-columns:1fr auto;gap:9px 12px;font:11.5px/1 var(--mono);color:var(--fg3);padding-top:22px;border-top:1px solid var(--border)}
+#b .kv b{color:var(--fg);font-weight:500}
+#b .right{flex:1;min-width:0;padding:26px 30px;display:flex;flex-direction:column}
+#b .mos{flex:1;min-height:0;display:grid;grid-template-columns:repeat(48,1fr);grid-auto-rows:1fr;gap:3px;align-content:stretch;overflow:hidden}
+#b .c{width:100%;aspect-ratio:1;border-radius:2px;background:var(--ok-bar);opacity:0;animation:pop .5s ease forwards}
+#b .c.d{background:#2f7a4d}
+#b .legend{margin-top:16px;display:flex;align-items:center;gap:16px;font:11px var(--mono);color:var(--fg3);padding-top:14px;border-top:1px solid var(--border)}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+
+/* ── C: ledger ── */
+#c .split{display:flex;height:calc(100% - 42px)}
+#c .lcol{flex:1;min-width:0;padding:44px 46px;display:flex;flex-direction:column}
+#c .ribbon{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:6px 12px;border-radius:5px;background:#241d10;border:1px solid color-mix(in oklab,var(--gold) 38%,transparent);color:var(--gold);font:700 11px Inter;letter-spacing:.1em;text-transform:uppercase}
+#c h1{margin:20px 0 0;font:800 40px/1.08 Inter;letter-spacing:-.025em;max-width:15ch}
+#c .sub{margin-top:14px;max-width:44ch;font-size:14.5px;line-height:1.6;color:var(--fg2);text-wrap:pretty}
+#c .bests{margin-top:28px;display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:7px;overflow:hidden}
+#c .best{display:flex;align-items:baseline;gap:12px;padding:12px 14px;background:var(--surface)}
+#c .best .n{font:600 15px var(--mono);color:var(--fg);min-width:96px}
+#c .best .t{font-size:12.5px;color:var(--fg2)}
+#c .best .t em{font-style:normal;color:var(--fg3)}
+#c .acts{margin-top:auto;display:flex;gap:10px;padding-top:26px}
+#c .rcol{flex:0 0 452px;border-left:1px solid var(--border);background:#0e131c;padding:34px 40px;display:flex;flex-direction:column}
+#c .receipt{font:11.5px/1.9 var(--mono);color:var(--fg2)}
+#c .receipt h3{margin:0 0 14px;font:700 11px Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--fg3)}
+#c .row{display:flex;justify-content:space-between;gap:14px}
+#c .row b{color:var(--fg);font-weight:500}
+#c .dash{border-top:1px dashed var(--border2);margin:14px 0}
+#c .tot{display:flex;justify-content:space-between;font:600 14px var(--mono);color:var(--ok-fg)}
+#c .hash{margin-top:auto;font:10.5px/1.8 var(--mono);color:var(--fg3);word-break:break-all;padding-top:24px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="flabel" style="left:80px;top:44px">A · Certificate</div>
+<div class="frame" id="a" style="left:80px;top:76px" data-screen-label="A Certificate">
+  <div class="glow"></div>
+  <div class="cert">
+    <div class="seal"><em>✓</em></div>
+    <div class="eyebrow" style="margin-top:18px">TapeMatch · curation ledger closed</div>
+    <h1>The archive is complete.</h1>
+    <p class="sub">Every known date has been analysed, every disagreement settled by hand. 2,075 shows across 63 years now resolve to one canonical family tree — yours.</p>
+    <div class="rule"></div>
+    <div class="stats">
+      <div class="stat"><b data-count="2075">2,075</b><span>dates curated</span></div>
+      <div class="stat"><b data-count="9731">9,731</b><span>recordings</span></div>
+      <div class="stat"><b data-count="4186">4,186</b><span>families</span></div>
+      <div class="stat"><b>0</b><span>open conflicts</span></div>
+    </div>
+    <div class="eras">
+      <div class="era"><i></i><span>60s</span></div><div class="era"><i></i><span>70s</span></div><div class="era"><i></i><span>80s</span></div><div class="era"><i></i><span>90s</span></div><div class="era"><i></i><span>00s</span></div><div class="era"><i></i><span>10s</span></div><div class="era"><i></i><span>20s</span></div>
+    </div>
+    <div class="sig">
+      <div class="sigcol"><strong>Closed 2026-08-11 · 03:41</strong>first date curated 2024-02-19 · 906 days</div>
+      <div class="sigcol" style="text-align:right"><strong>ledger sha256</strong>4f9c…a17e · signed by lbdir v2.4.1</div>
+    </div>
+  </div>
+  <div class="acts"><button class="btn gold">Export certificate</button><button class="btn ghost">View full ledger</button></div>
+</div>
+
+<div class="flabel" style="left:1440px;top:44px">B · The whole wall</div>
+<div class="frame" id="b" style="left:1440px;top:76px" data-screen-label="B Mosaic">
+  <div class="topbar"><span class="crumb"><strong>TapeMatch</strong> · all dates</span><span class="pill ok">2,075 of 2,075 curated</span><span style="margin-left:auto" class="mono dim">run 20260811_034118</span></div>
+  <div class="wrap">
+    <div class="left">
+      <div class="hero" data-count="2075">2,075</div>
+      <div class="heroLbl">dates curated · nothing left</div>
+      <h2>You finished the whole thing.</h2>
+      <p class="say">Two years ago this wall was 8% green. Every square below is a night you listened to, compared and decided on — 1961 through 2024, with no unresolved disagreement anywhere in the archive.</p>
+      <div class="prog">
+        <div class="progBar"><i></i></div>
+        <div class="progMarks"><span>2024-02 · 8%</span><span>2025-06 · 54%</span><span>today · 100%</span></div>
+      </div>
+      <div class="badges">
+        <div class="badge"><em>63</em><span>years<br>closed out</span></div>
+        <div class="badge"><em>412</em><span>curation<br>sessions</span></div>
+        <div class="badge"><em>0</em><span>dates left<br>undecided</span></div>
+      </div>
+      <div class="kv">
+        <span>recordings clustered</span><b>9,731</b>
+        <span>conflicts you resolved by hand</span><b>1,204</b>
+        <span>times you overruled LB</span><b>77</b>
+        <span>lossless audio verified</span><b>14.8 TB</b>
+      </div>
+    </div>
+    <div class="right">
+      <div class="mos" id="mos"></div>
+      <div class="legend"><span style="display:inline-flex;align-items:center;gap:6px"><i class="c" style="width:9px;height:9px;opacity:1;animation:none"></i> curated by you</span><span style="display:inline-flex;align-items:center;gap:6px"><i class="c d" style="width:9px;height:9px;opacity:1;animation:none"></i> auto-clean, confirmed</span><span style="margin-left:auto">one square = one date</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="flabel" style="left:2800px;top:44px">C · Final reconciliation</div>
+<div class="frame" id="c" style="left:2800px;top:76px" data-screen-label="C Ledger">
+  <div class="topbar"><span class="crumb"><strong>TapeMatch</strong> · session closed</span><span class="pill gold">archivist, first class</span><span style="margin-left:auto" class="mono dim">906 days · 412 sessions</span></div>
+  <div class="split">
+    <div class="lcol">
+      <span class="ribbon">Archive complete</span>
+      <h1>Nothing left to decide.</h1>
+      <p class="sub">The queue is empty for the first time since you started. Here's what it took — kept on the record, in case anyone ever asks how the collection got this clean.</p>
+      <div class="bests">
+        <div class="best"><span class="n">1,204</span><span class="t">conflicts resolved by ear <em>— LB couldn't call these</em></span></div>
+        <div class="best"><span class="n">77</span><span class="t">times you overruled the model <em>— and were right</em></span></div>
+        <div class="best"><span class="n">6h 12m</span><span class="t">longest single sitting <em>— 1978, 114 dates</em></span></div>
+        <div class="best"><span class="n">14.8 TB</span><span class="t">lossless audio checksum-verified <em>— zero mismatches</em></span></div>
+      </div>
+      <div class="acts"><button class="btn primary">Export the ledger</button><button class="btn">Print certificate</button><button class="btn ghost">Back to library</button></div>
+    </div>
+    <div class="rcol">
+      <div class="receipt">
+        <h3>Final reconciliation</h3>
+        <div class="row"><span>dates known</span><b>2,075</b></div>
+        <div class="row"><span>dates curated</span><b>2,075</b></div>
+        <div class="row"><span>recordings ingested</span><b>9,731</b></div>
+        <div class="row"><span>source families</span><b>4,186</b></div>
+        <div class="row"><span>duplicates retired</span><b>3,118</b></div>
+        <div class="dash"></div>
+        <div class="row"><span>conflicts opened</span><b>1,204</b></div>
+        <div class="row"><span>conflicts resolved</span><b>1,204</b></div>
+        <div class="row"><span>left uncertain</span><b>0</b></div>
+        <div class="dash"></div>
+        <div class="row"><span>first curated</span><b>2024-02-19</b></div>
+        <div class="row"><span>last curated</span><b>2026-08-11</b></div>
+        <div class="dash"></div>
+        <div class="tot"><span>ARCHIVE STATUS</span><span>COMPLETE</span></div>
+      </div>
+      <div class="hash">ledger sha256<br>4f9c2b70e5a8d31c96f4ab5528e7c0d9<br>1e6b84af0937cc25d4e1780b3fa2a17e</div>
+    </div>
+  </div>
+</div>
+<script>
+// mosaic: decade rows of small squares, staggered fill
+(function(){
+  const counts={1961:3,1962:9,1963:14,1964:22,1965:41,1966:44,1969:2,1970:1,1971:2,1974:40,1975:31,1976:34,1978:114,1979:33,1980:44,1981:54,1984:28,1985:6,1986:59,1987:38,1988:71,1989:99,1990:93,1991:101,1992:92,1993:81,1994:104,1995:116,1996:86,1997:94,1998:110,1999:119,2000:112,2001:107,2002:107,2003:100,2004:113,2005:112,2006:110,2007:97,2008:98,2009:96,2010:99,2011:87,2012:73,2013:75,2014:80,2015:87,2016:78,2017:83,2018:84,2019:76,2021:35,2022:73,2023:66,2024:70};
+  void counts;
+  const mos=document.getElementById('mos'),TOT=2075,frag=document.createDocumentFragment();
+  for(let i=0;i<TOT;i++){const c=document.createElement('i');c.className='c'+(i%3===0?' d':'');c.style.animationDelay=(i*0.55)+'ms';frag.appendChild(c)}
+  mos.appendChild(frag);
+  // count-ups
+  document.querySelectorAll('[data-count]').forEach(el=>{
+    const to=+el.dataset.count,t0=performance.now(),dur=1400;
+    (function step(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e).toLocaleString('en-US');if(p<1)requestAnimationFrame(step)})(t0);
+  });
+})();
+</script>
+</body>
+</html>

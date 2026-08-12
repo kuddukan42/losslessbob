@@ -25,6 +25,7 @@ import { ScreenCollection } from './screens/ScreenCollection'
 import { ScreenSearch } from './screens/ScreenSearch'
 import { ScreenBootlegs } from './screens/ScreenBootlegs'
 import { ScreenThemes } from './screens/ScreenThemes'
+import { ScreenCoverage } from './screens/ScreenCoverage'
 import { ScreenMap } from './screens/ScreenMap'
 import { ScreenAttachments } from './screens/ScreenAttachments'
 import { ScreenSpectrograms } from './screens/ScreenSpectrograms'
@@ -412,6 +413,11 @@ export default function App(): React.JSX.Element {
           <Route path="/mounts"      element={<ScreenMounts />} />
           <Route path="/fileintegrity" element={<ScreenFileIntegrity />} />
           <Route path="/themes"      element={<ScreenThemes />} />
+          {/* Coverage / "Complete against LB" award screen. Deliberately not a
+              sidebar destination — reached from the About modal's "Collection
+              progress" row, but a real deep-linkable route so the milestone
+              survives a reload and can be shared. */}
+          <Route path="/about/coverage" element={<ScreenCoverage />} />
         </Routes>
       </AppShell>
     </HashRouter>

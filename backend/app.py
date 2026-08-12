@@ -42,6 +42,7 @@ from backend import (
 from backend import db as database
 from backend import dossier as _dossier
 from backend import gap_analysis as _gap_analysis
+from backend import lb_coverage as _lb_coverage
 from backend import setlist_fingerprint as _setlist_fingerprint
 from backend import setlistfm as setlistfm_mod
 from backend import song_index as _song_index
@@ -4417,10 +4418,18 @@ def create_app() -> Flask:
             # its stored checksums (see BUG-120 — swapped/re-encoded audio slipping
             # through undetected). Runs before torrent resolution so a bad folder
             # isn't auto-torrented/seeded either.
+            skip_integrity_check = bool(data.get("skip_integrity_check"))
             if coll_row and coll_row["disk_path"]:
                 verify_result = checksum_utils.verify_folder(coll_row["disk_path"])
                 verify_status = verify_result.get("status")
-                if verify_status in ("fail", "incomplete"):
+                # "fail" (mismatch) means audio content itself doesn't match its stored
+                # checksum -- possible swapped/re-encoded file (BUG-120) -- never skippable.
+                # "incomplete" (missing) just means fewer files on disk than the checksum
+                # sidecar lists, which can be a stale/mismatched sidecar; allow an explicit
+                # user override for that case only.
+                if verify_status == "fail" or (
+                    verify_status == "incomplete" and not skip_integrity_check
+                ):
                     return jsonify({
                         "ok": False,
                         "error": (
@@ -4429,6 +4438,7 @@ def create_app() -> Flask:
                             f"{verify_result.get('missing', 0)} missing) — "
                             "fix the folder's integrity before posting to the forum."
                         ),
+                        "skippable": verify_status == "incomplete",
                     }), 400
 
             # Resolve torrent file
@@ -4771,6 +4781,15 @@ def create_app() -> Flask:
         """Return {public, private, missing, max_lb, overrides, needs_review} counts."""
         try:
             return jsonify(database.get_lb_master_stats())
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb/coverage", methods=["GET"])
+    def lb_coverage_endpoint() -> Response:
+        """Return the read-only LB-catalogue coverage snapshot for the award screen."""
+        try:
+            conn = database.get_connection()
+            return jsonify(_lb_coverage.get_coverage(conn))
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 

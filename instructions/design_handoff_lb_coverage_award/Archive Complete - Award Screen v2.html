@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Complete against LB — award screen</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c1017;--surface:#131822;--surface2:#1a2130;--border:#232b3a;--border2:#33405a;--fg:#e6e9f0;--fg2:#9aa5b5;--fg3:#5f6b7d;--accent:#5b8df2;--ok-fg:#5db679;--ok-bar:#39a360;--ok-bg:#16241b;--gold:#d9b26a;--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:40px;background:#080b11;font:13px/1.45 Inter,system-ui,sans-serif;color:var(--fg)}
+a{color:var(--accent)}a:hover{color:#7ea6f5}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.frame{position:relative;width:1280px;height:800px;background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;flex:none}
+.eyebrow{font:700 10.5px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--fg3)}
+.btn{border-radius:6px;padding:8px 15px;font:600 12px Inter;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--fg)}
+.btn.ghost{background:transparent;color:var(--fg2)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#1a1408}
+.glow{position:absolute;inset:-30% 20% 50%;background:radial-gradient(50% 50% at 50% 50%,rgba(217,178,106,.13),transparent 70%);pointer-events:none}
+.cert{position:absolute;inset:56px 150px 94px;border:1px solid color-mix(in oklab,var(--gold) 32%,transparent);border-radius:6px;background:linear-gradient(180deg,#141924,#10141d);padding:38px 56px 30px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.cert:before{content:"";position:absolute;inset:7px;border:1px solid rgba(217,178,106,.14);border-radius:3px;pointer-events:none}
+.seal{width:88px;height:88px;border-radius:50%;border:1px solid color-mix(in oklab,var(--gold) 45%,transparent);display:grid;place-items:center;position:relative;background:radial-gradient(70% 70% at 50% 30%,#2a2314,#171a22)}
+.seal:before{content:"";position:absolute;inset:7px;border:1px dashed rgba(217,178,106,.35);border-radius:50%}
+.seal em{font:700 25px var(--mono);color:var(--gold);font-style:normal}
+h1{margin:20px 0 0;font:800 42px/1.05 Inter;letter-spacing:-.025em}
+.sub{margin-top:11px;max-width:660px;font-size:14.5px;line-height:1.55;color:var(--fg2);text-wrap:pretty}
+.rule{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:26px 0 20px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;width:100%}
+.stats .stat{display:flex;flex-direction:column;align-items:center;gap:5px;padding:13px 8px;background:#151a25;border:1px solid var(--border)}
+.stats .stat b{font:600 22px var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.stats .stat span{font:600 10px Inter;letter-spacing:.1em;text-transform:uppercase;color:var(--fg3)}
+.eras{width:100%;margin-top:18px;display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.era{display:flex;flex-direction:column;gap:6px;align-items:center}
+.era i{display:block;width:100%;height:5px;border-radius:3px;background:linear-gradient(90deg,color-mix(in oklab,var(--gold) 70%,#000),var(--gold))}
+.era span{font:600 9.5px var(--mono);color:var(--fg3)}
+.live{margin-top:22px;width:100%;display:flex;align-items:center;gap:14px;padding:12px 16px;border:1px solid var(--border);border-radius:7px;background:#111722;text-align:left}
+.live .dot{position:relative;width:8px;height:8px;border-radius:50%;background:var(--ok-fg);flex:none}
+.live .dot:after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--ok-fg);opacity:.5;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{from{transform:scale(.6);opacity:.6}to{transform:scale(1.5);opacity:0}}
+.live p{margin:0;font-size:12.5px;color:var(--fg2)}
+.live p b{color:var(--fg);font-weight:600}
+.live .when{margin-left:auto;font:11px var(--mono);color:var(--fg3);white-space:nowrap;text-align:right;line-height:1.6}
+.sig{margin-top:auto;padding-top:22px;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:30px;text-align:left}
+.sigcol{font:11px/1.6 var(--mono);color:var(--fg3)}
+.sigcol strong{display:block;color:var(--fg2);font-weight:500}
+.acts{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:10px;padding:0 0 20px}
+</style>
+</head>
+<body>
+<div class="frame" data-screen-label="Complete against LB">
+  <div class="glow"></div>
+  <div class="cert">
+    <div class="seal"><em>✓</em></div>
+    <div class="eyebrow" style="margin-top:16px">Complete against LB 2026.08</div>
+    <h1>Every LB entry, collected.</h1>
+    <p class="sub">As of the August update, every date in the Lossless Bob catalogue is in your archive, matched to a source family and verified. Nothing missing, nothing unresolved — and the archive stays open for whatever surfaces next.</p>
+    <div class="rule"></div>
+    <div class="stats">
+      <div class="stat"><b data-count="2075">2,075</b><span>LB entries held</span></div>
+      <div class="stat"><b data-count="9731">9,731</b><span>recordings</span></div>
+      <div class="stat"><b data-count="4186">4,186</b><span>families</span></div>
+      <div class="stat"><b>0</b><span>entries missing</span></div>
+    </div>
+    <div class="eras">
+      <div class="era"><i></i><span>60s</span></div><div class="era"><i></i><span>70s</span></div><div class="era"><i></i><span>80s</span></div><div class="era"><i></i><span>90s</span></div><div class="era"><i></i><span>00s</span></div><div class="era"><i></i><span>10s</span></div><div class="era"><i></i><span>20s</span></div>
+    </div>
+    <div class="live">
+      <span class="dot"></span>
+      <p><b>Watching LB for the next update.</b> They land most months, usually 20–30 entries — the last batch was 26, all matched and filed within 6 days.</p>
+      <span class="when">last checked 2026-08-11 · 03:41<br>updates arrive monthly, no fixed day</span>
+    </div>
+    <div class="sig">
+      <div class="sigcol"><strong>Caught up 2026-08-11</strong>first entry filed 2024-02-19 · 906 days · 412 sessions</div>
+      <div class="sigcol" style="text-align:right"><strong>ledger sha256</strong>4f9c…a17e · signed by lbdir v2.4.1</div>
+    </div>
+  </div>
+  <div class="acts"><button class="btn gold">Export certificate</button><button class="btn">Sync with LB now</button><button class="btn ghost">View full ledger</button></div>
+</div>
+<script>
+function roll(){document.querySelectorAll('[data-count]').forEach(el=>{
+  const to=+el.dataset.count,t0=performance.now(),dur=1400;
+  (function step(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e).toLocaleString('en-US');if(p<1)requestAnimationFrame(step)})(t0);
+})}
+roll();
+document.querySelector('.frame').addEventListener('click',roll);
+</script>
+</body>
+</html>
