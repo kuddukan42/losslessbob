@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-321: Coverage screen and "Not in collection" list disagreed on what counts as a gap
+Status: Fixed
+File(s): backend/lb_coverage.py:107,backend/db.py:4509
+Reported: 2026-08-12
+Fixed: 2026-08-12
+Root cause: Two independent definitions of "gap". backend/lb_coverage.py counted held LBs with a plain my_collection join (no lb_alias folding) and excluded lb_status 'missing' from the denominator; backend.db.get_missing_from_collection folded aliases both directions but also required entries.status='ok'. Of the 92-vs-0 gap: 57 were owned via an alias twin (coverage wrong), 32 were entries.status='private' and 3 entries.status='missing' (the list wrong -- its public/private chips could never show a private row).
+Fix: lb_coverage grew _held_sql(), which counts an LB as held when it is in my_collection directly or via lb_alias in either direction (degrading to the direct test when lb_alias is absent), used by both entries_held and the by_decade rollup; _HELD_EXCLUDED_STATUSES narrowed to ('nonexistent',) since 'missing' (tape exists, LB page gone) is a fillable gap already pinned by tests/test_db_writes.py. get_missing_from_collection dropped its entries.status='ok' restriction. Both now report 35 gaps / 99.79% against the live DB; new alias-folding test in tests/test_lb_coverage.py.
+
 BUG-319: My Collection "Not in collection" rows have no context menu and no detail pane
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenCollection.tsx:3244

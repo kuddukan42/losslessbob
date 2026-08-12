@@ -4512,8 +4512,14 @@ def get_missing_from_collection(db_path=None):
 
     Rows whose ``lb_master`` status is ``'nonexistent'`` are excluded — the LB
     number was allocated but no release ever existed, so it is not a gap the
-    user can fill. Mirrors the same exclusion in ``gap_analysis`` and
-    ``timeline``.
+    user can fill. ``'missing'`` (the tape exists, the LB page is gone) stays
+    listed. Mirrors the same exclusion in ``gap_analysis``, ``timeline`` and
+    ``backend.lb_coverage._HELD_EXCLUDED_STATUSES``.
+
+    ``entries.status`` is deliberately *not* filtered: private entries (whose
+    metadata is stripped from public master snapshots) and entries with no
+    scraped metadata are still real, unfilled gaps, and the screen's
+    public/private chips need the private ones to exist.
 
     Args:
         db_path: Optional database path override.
@@ -4530,7 +4536,6 @@ def get_missing_from_collection(db_path=None):
             LEFT JOIN my_collection c ON e.lb_number = c.lb_number
             LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
             WHERE c.lb_number IS NULL
-              AND e.status = 'ok'
               AND (lm.lb_status IS NULL OR lm.lb_status != 'nonexistent')
               AND NOT EXISTS (
                   SELECT 1 FROM lb_alias la

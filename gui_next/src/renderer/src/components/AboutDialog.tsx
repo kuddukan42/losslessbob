@@ -2,6 +2,7 @@
 // Four tabs: About / Tech / Credits / Changes.
 
 import React, { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Icon } from './Icon'
 
 // ── Static content ────────────────────────────────────────────────────────────
@@ -147,6 +148,91 @@ function useBackendUptime(): string | null {
   }, [])
 
   return display
+}
+
+// Coverage headline for the "Collection progress" entry-point row — the single
+// (and, below 100%, only) way into /about/coverage. Same one-shot fetch shape
+// as useBackendUptime above; failures leave the row showing a neutral dash
+// rather than hiding it, because the row is present in every state.
+interface CoverageSummary { pct: number; complete: boolean; label: string }
+
+function useCoverageSummary(): CoverageSummary | null {
+  const [summary, setSummary] = useState<CoverageSummary | null>(null)
+
+  useEffect(() => {
+    let live = true
+    fetch(`${window.api.flaskBase}/api/lb/coverage`)
+      .then(r => r.json())
+      .then((data: {
+        coverage?: { coverage_pct?: number; complete?: boolean }
+        snapshot?: { label?: string }
+      }) => {
+        if (!live || typeof data.coverage?.coverage_pct !== 'number') return
+        setSummary({
+          pct: data.coverage.coverage_pct,
+          complete: data.coverage.complete === true,
+          label: data.snapshot?.label ?? '—',
+        })
+      })
+      .catch(() => {})
+    return () => { live = false }
+  }, [])
+
+  return summary
+}
+
+function CoverageRow({ onOpen }: { onOpen: () => void }): React.JSX.Element {
+  const cov = useCoverageSummary()
+  const complete = cov?.complete === true
+
+  return (
+    <button
+      type="button"
+      onClick={onOpen}
+      style={{
+        gridColumn: '1 / -1',
+        display: 'flex', alignItems: 'center', gap: 10,
+        marginTop: 4, padding: '9px 11px', borderRadius: 7, width: '100%',
+        background: 'var(--lbb-surface)',
+        border: `1px solid ${complete
+          ? 'color-mix(in oklab, var(--lbb-award-mid) 45%, transparent)'
+          : 'var(--lbb-border)'}`,
+        cursor: 'pointer', textAlign: 'left', fontFamily: 'inherit',
+      }}
+      onMouseEnter={e => { e.currentTarget.style.background = 'var(--lbb-surface3)' }}
+      onMouseLeave={e => { e.currentTarget.style.background = 'var(--lbb-surface)' }}
+    >
+      {complete ? (
+        <span style={{
+          width: 22, height: 22, borderRadius: '50%', flexShrink: 0,
+          display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+          background: 'var(--lbb-award-soft)',
+          border: '1px solid color-mix(in oklab, var(--lbb-award-mid) 55%, transparent)',
+          color: 'var(--lbb-award-mid)',
+        }}>
+          <Icon name="check" size={12} stroke={2.2} />
+        </span>
+      ) : (
+        <Icon name="collection" size={14} style={{ color: 'var(--lbb-fg3)', flexShrink: 0 }} />
+      )}
+      <span style={{ flex: 1, minWidth: 0 }}>
+        <span style={{ display: 'block', fontSize: 12.3, fontWeight: 600, color: 'var(--lbb-fg)' }}>
+          Collection progress
+        </span>
+        <span style={{
+          display: 'block', fontFamily: 'var(--lbb-mono)', fontSize: 10.5,
+          color: complete ? 'var(--lbb-award-mid)' : 'var(--lbb-fg3)',
+        }}>
+          {cov
+            ? complete
+              ? `Complete against LB ${cov.label}`
+              : `${(cov.pct * 100).toFixed(1)}% of LB ${cov.label}`
+            : '—'}
+        </span>
+      </span>
+      <Icon name="reveal" size={12} style={{ color: 'var(--lbb-fg3)', flexShrink: 0 }} />
+    </button>
+  )
 }
 
 function BlockTitle({ children }: { children: React.ReactNode }): React.JSX.Element {
@@ -296,8 +382,9 @@ function TabBar({ tab, onTab }: { tab: TabId; onTab: (t: TabId) => void }): Reac
 
 // ── Tab: About ────────────────────────────────────────────────────────────────
 
-function TabAbout(): React.JSX.Element {
+function TabAbout({ onClose }: { onClose: () => void }): React.JSX.Element {
   const uptime = useBackendUptime()
+  const navigate = useNavigate()
   const metaItems = [
     { key: 'version',  value: `${META.version} · ${META.channel}`, accent: true },
     { key: 'build',    value: META.build },
@@ -337,6 +424,11 @@ function TabAbout(): React.JSX.Element {
             </span>
           </span>
         ))}
+
+        {/* Entry point to /about/coverage — always present, in every state.
+            Closes the modal first: the coverage screen is a real route, not a
+            tab inside this dialog. */}
+        <CoverageRow onOpen={() => { onClose(); navigate('/about/coverage') }} />
       </div>
 
       {/* Links */}
@@ -610,7 +702,7 @@ export function AboutDialog({ onClose }: AboutDialogProps): React.JSX.Element {
         <AboutHeader onClose={onClose} />
         <TabBar tab={tab} onTab={setTab} />
         <div style={{ flex: 1, overflowY: 'auto', minHeight: 0, padding: '22px 24px 26px' }}>
-          {tab === 'about'   && <TabAbout />}
+          {tab === 'about'   && <TabAbout onClose={onClose} />}
           {tab === 'tech'    && <TabTech />}
           {tab === 'credits' && <TabCredits />}
           {tab === 'log'     && <TabLog />}

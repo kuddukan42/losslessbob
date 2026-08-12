@@ -20,6 +20,9 @@ FORUM_BASE = "http://www.watchingtheriverflow.org"
 
 _LOGIN_URL  = f"{FORUM_BASE}/index.php?action=login2"
 
+# Shown directly under the metadata header banner, above the info text.
+SHARE_EMBARGO_NOTICE = "[b]PLEASE DO NOT SHARE ELSEWHERE FOR 7 DAYS[/b]"
+
 
 def _compose_url(board_id: int) -> str:
     return f"{FORUM_BASE}/index.php?action=post;board={board_id}.0"
@@ -375,6 +378,9 @@ def _build_body(entry: dict, attachments_dir: Path | None, lb_number: int | None
         # Slightly larger than body text so the header stands out; [hr] follows on next line
         header_line = "   |   ".join(meta_fields)
         parts.append(f"[size=13pt]{header_line}[/size]\n[hr]")
+
+    # --- Sharing embargo notice (directly under the header banner) ---
+    parts.append(SHARE_EMBARGO_NOTICE)
 
     # --- Info / setlist text ---
     attach_path = attachments_dir if isinstance(attachments_dir, Path) else (

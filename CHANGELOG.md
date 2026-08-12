@@ -1,3 +1,42 @@
+[2026-08-12] — feat(backend/gui): "Complete against LB" coverage award screen + BUG-321 gap-definition reconciliation
+Added: backend/lb_coverage.py, backend/app.py: GET /api/lb/coverage — a read-only
+  snapshot/coverage/stats payload (LB master label + version, entries_total/held/missing,
+  coverage_pct, per-decade held/total, recordings, families, a deterministic sorted
+  recording_families ledger_sha256, first_entry_filed_at/days_active). Every query is guarded by
+  a sqlite_master table check so a fresh or partial DB returns a zeroed payload instead of 500ing.
+Added: gui_next/.../screens/ScreenCoverage.tsx, App.tsx, components/AboutDialog.tsx,
+  lib/tokens.ts, index.css: the /about/coverage progress screen from
+  instructions/design_handoff_lb_coverage_award — one component whose award treatment is a state,
+  not a separate screen, with a client-side canvas certificate renderer + export modal. Reached
+  from the About dialog's "Collection progress" row, deliberately not a sidebar destination, but a
+  real deep-linkable route so the milestone survives a reload. The award gold is a fixed per-mode
+  ramp (--lbb-award-{mid,hi,lo,soft,on}) rather than an accent, so the milestone reads identically
+  under all eight accents and both frame palettes.
+Fixed: backend/lb_coverage.py, backend/db.py: BUG-321 — the coverage screen reported 92 missing
+  entries (99.5%) while the Collection screen's "Not in collection" chip showed 0 rows off the
+  same DB. Two independent definitions of "gap": coverage counted held LBs with a plain
+  my_collection join and excluded lb_status 'missing' from the denominator, while
+  get_missing_from_collection folded lb_alias twins but also required entries.status='ok'. Of the
+  92: 57 were owned via an alias twin (coverage wrong), 32 were entries.status='private' and 3
+  entries.status='missing' (the list wrong — its public/private chips could never show a private
+  row). New _held_sql() folds lb_alias in either direction for both entries_held and the
+  by_decade rollup and degrades to the direct test when lb_alias is absent;
+  _HELD_EXCLUDED_STATUSES narrowed to ('nonexistent',) since 'missing' (tape exists, LB page
+  gone) is a fillable gap already pinned by tests/test_db_writes.py; the entries.status='ok'
+  filter is gone. Both surfaces now report 35 gaps / 99.79% against live data (all 35 private —
+  4 with metadata, 31 stripped). Full suite 1200 passed; /gui-check clean.
+Added: tests/test_lb_coverage.py: payload-contract, by_decade bucketing, ledger-hash determinism,
+  fresh-DB zeroing, and an alias-folding regression test.
+Changed: backend/forum_poster.py, backend/app.py, gui_next/.../ScreenCollection.tsx: forum posts
+  now carry a SHARE_EMBARGO_NOTICE line under the metadata banner, and the pre-post integrity
+  gate distinguishes 'fail' (checksum mismatch — never skippable, BUG-120) from 'incomplete'
+  (fewer files than the sidecar lists, which can be a stale sidecar); the latter returns
+  skippable:true and the forum modal offers a "post anyway" checkbox that sets
+  skip_integrity_check.
+Added: TODO-304 (translate the ~60 new coverage/About locale keys — en.json only so far),
+  TODO-305 (the handoff's /lbdir/ledger and /lbdir/sync routes are unbuilt; spec stays in
+  instructions/).
+
 [2026-08-10] — fix(gui): BUG-319 — "Not in collection" rows get right-click + a detail pane
 Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: the not-owned view was a
   dead-end list — rows carried only onDoubleClick (Quick Lookup), and both the grid's

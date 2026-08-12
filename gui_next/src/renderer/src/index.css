@@ -128,6 +128,51 @@ table tbody tr:hover td {
   100% { transform: translateX(290%); }
 }
 
+/* Coverage / award screen (design_handoff_lb_coverage_award §5).
+   All three are motion-only and are suppressed wholesale under
+   prefers-reduced-motion by the guard at the bottom of this block. */
+@keyframes lbb-cov-pulse {   /* live-strip dot ring */
+  from { transform: scale(0.6); opacity: 0.6; }
+  to   { transform: scale(1.5); opacity: 0; }
+}
+@keyframes lbb-cov-rise {    /* first-time celebration: card fade + rise */
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes lbb-cov-seal {    /* first-time celebration: seal scales in */
+  from { opacity: 0; transform: scale(0.72); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes lbb-cov-glow {    /* first-time celebration: ambient glow ramp */
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes lbb-cov-shimmer { /* loading skeleton sweep */
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(200%); }
+}
+.lbb-cov-dot::after {
+  content: ""; position: absolute; inset: -5px;
+  border-radius: 50%; border: 1px solid var(--lbb-ok-fg); opacity: 0.5;
+  animation: lbb-cov-pulse 2.4s ease-out infinite;
+}
+.lbb-cov-celebrate      { animation: lbb-cov-rise 420ms cubic-bezier(.2,.7,.3,1) both; }
+.lbb-cov-celebrate-seal { animation: lbb-cov-seal 200ms ease-out 200ms both; }
+.lbb-cov-celebrate-glow { animation: lbb-cov-glow 800ms ease-out both; }
+.lbb-cov-shimmer::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, var(--lbb-surface3), transparent);
+  animation: lbb-cov-shimmer 1.5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lbb-cov-dot::after,
+  .lbb-cov-celebrate,
+  .lbb-cov-celebrate-seal,
+  .lbb-cov-celebrate-glow,
+  .lbb-cov-shimmer::after { animation: none; }
+  .lbb-cov-dot::after { opacity: 0.5; }
+}
+
 /* Pipeline stage spinner — "running" state indicator */
 @keyframes p2-spin {
   to { transform: rotate(360deg); }

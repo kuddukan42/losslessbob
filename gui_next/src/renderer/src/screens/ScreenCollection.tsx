@@ -1110,6 +1110,8 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
   const [body, setBody]       = useState(initBody)
   const [busy, setBusy]       = useState(false)
   const [err, setErr]         = useState<string | null>(null)
+  const [skippable, setSkippable] = useState(false)
+  const [skipIntegrityCheck, setSkipIntegrityCheck] = useState(false)
 
   const handlePost = async () => {
     setBusy(true); setErr(null)
@@ -1117,7 +1119,7 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
       const resp = await fetch(`${BASE}/api/entry/${lb}/post_forum`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ subject, body }),
+        body: JSON.stringify({ subject, body, skip_integrity_check: skipIntegrityCheck }),
       })
       const data = await resp.json()
       if (data.ok) {
@@ -1125,9 +1127,11 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
         onClose()
       } else {
         setErr(data.error || 'Post failed')
+        setSkippable(!!data.skippable)
       }
     } catch (e) {
       setErr(String(e))
+      setSkippable(false)
     } finally {
       setBusy(false)
     }
@@ -1184,7 +1188,17 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
           </div>
           {err && (
             <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-err-fg)', background: 'var(--lbb-err-bg)', padding: '6px 10px', borderRadius: 5 }}>
-              {err}
+              <div>{err}</div>
+              {skippable && (
+                <label style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 6, cursor: 'pointer' }}>
+                  <input
+                    type="checkbox"
+                    checked={skipIntegrityCheck}
+                    onChange={e => setSkipIntegrityCheck(e.target.checked)}
+                  />
+                  {t('collection.forum.skipIntegrityCheck')}
+                </label>
+              )}
             </div>
           )}
         </div>
