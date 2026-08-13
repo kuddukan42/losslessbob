@@ -1,3 +1,65 @@
+[2026-08-12] — feat(backend/gui): pipeline refresh Phase 1 — the freshness planner
+Added: instructions/PIPELINE_REFRESH_INVENTORY.md, instructions/PIPELINE_REFRESH_PHASE1.md:
+  a 57-step inventory of everything needed to bring the app up to date (four triggers
+  T1–T4, the dependency DAG, disjoints D1–D8), and the Phase 1 spec built on it. The
+  inventory's key finding: there is no staleness *ledger*, but the underlying signal
+  already exists in the tables — most derived tables carry a computed_at/parsed_at/
+  imported_at/fetched_at stamp that is written today and read by nothing. Phase 1 is
+  therefore "read the ledger that already exists", not "build one": no schema, no writes,
+  no existing code path changed.
+Added: backend/refresh.py: the registry + planner. 27 declarative RefreshStep rows
+  (modeled on activity.py's JOB_ADAPTERS, same "observe, never own" rule) each declaring
+  a trigger, a kind, its upstream step_ids (the DAG written down once — fixes D3 for read
+  purposes), a display-only how_to_run, and one or more signals. State is the most severe
+  result across signals: a **backlog** count where one is computable, falling back to an
+  upstream **watermark** comparison only when no backlog signal exists — so backlog=0 is
+  never overridden by a newer upstream stamp, which is the alert-fatigue false positive
+  that would have made the card ignorable. compute_plan() evaluates in topological order
+  so a step downstream of a stale one reports `blocked` naming the culprit rather than
+  double-reporting the symptom.
+Added: backend/refresh.py `_parse_ts()`: the one timestamp normalizer. olof_pages is the
+  lone ISO-'T' writer (861 rows) while every other stamp column is space-separated, and
+  'T' (0x54) sorts after ' ' (0x20), so naive string comparison inverts within a single
+  day — and olof parse → song_index is exactly such a cross-format comparison, i.e. a live
+  bug rather than a hypothetical. Every comparison in the module goes through _parse_ts();
+  none happen in SQL across tables. meta.master_published_at is additionally tz-aware UTC
+  while everything else is naive local, so tz-aware values are converted to local and
+  stripped before comparing.
+Added: backend/app.py: GET /api/refresh/status — thin read-only wrapper over compute_plan(),
+  registered beside /api/lb/coverage, optional ?trigger=T1 filter narrowing steps and counts.
+  No curator gate; a missing table degrades that step to `unknown` rather than raising.
+Added: backend/refresh.py `_publish_lag()`: the D7 fix — publishing was the only trigger
+  whose neglect was invisible locally, because the cost lands on other installations. Counts
+  are taken from lb_status_history (real status *transitions*) rather than
+  lb_master.last_status_at, which a full reconcile re-stamps on every row and would have
+  reported the entire 16,703-row catalogue as "changed" the day after any rebuild; the honest
+  live figure is 260 transitions + 252 entries scraped since the 2026-07-14 publish.
+Added: tools/refresh_status.py: single-line-per-row CLI report (--trigger, --stale-only,
+  --json, --db, --exit-nonzero-if-stale for later cron use; exit 0 by default since it is a
+  report, not a gate).
+Added: gui_next/.../components/DataFreshnessCard.tsx, screens/ScreenHome.tsx: a Home card,
+  not a new screen — following the ScreenGaps→Library-rows precedent (TODO-270) rather than
+  proliferating screens. Stale/blocked rows grouped by trigger with age, backlog and the
+  how_to_run string; publish lag called out separately; a muted footnote counts the steps
+  with no freshness signal. Nothing new becomes executable: route steps that map to an
+  existing screen get a "Go to screen" link, everything else is copyable text (Phase 2 turns
+  those into buttons). The card hides itself entirely when the route is absent or errors, so
+  older installs see nothing rather than an error banner.
+Added: tests/test_refresh.py (25 tests): _step_state truth table including the
+  backlog-beats-watermark false-positive guard and blocked-over-stale precedence; _parse_ts
+  cross-format regression asserting the ISO-'T'-vs-space inversion both ways; every registry
+  backlog_sql/last_run_sql executes against a real init_db schema with the right arity (the
+  guard that catches a renamed column the day it is renamed instead of silently reporting
+  `unknown` forever); DAG integrity and cycle detection; missing-table → unknown, no raise.
+Known gaps, reported honestly as `unknown` rather than guessed: xref ingest, attachments
+  reconcile, mirror crawl, WTRF, bootlegs, site-data publish, preservation, archive.org have
+  no queryable local signal; ranker rerank has a backlog but no timestamp column anywhere, so
+  its watermark is reported as unavailable rather than inferred. Config-only inputs (spec §1c:
+  _KNOWN_TAPER_ALIASES, concert_ranker config, TapeMatch thresholds) move no timestamp at all;
+  a `version` signal for them is a write, so it belongs to Phase 2 (TODO-306).
+Changed: PROJECT.md: + backend/refresh.py and tests/test_refresh.py structure rows,
+  GET /api/refresh/status route reference, DataFreshnessCard on the ScreenHome row.
+
 [2026-08-12] — feat(backend/gui): "Complete against LB" coverage award screen + BUG-321 gap-definition reconciliation
 Added: backend/lb_coverage.py, backend/app.py: GET /api/lb/coverage — a read-only
   snapshot/coverage/stats payload (LB master label + version, entries_total/held/missing,

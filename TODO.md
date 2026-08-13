@@ -1,4 +1,10 @@
 
+TODO-306: Pipeline refresh Phase 2: make the CLI-only steps runnable + add version signals
+Priority: High
+Status: Open
+Added: 2026-08-12
+Description: Follow-on to the Phase 1 freshness planner (backend/refresh.py, instructions/PIPELINE_REFRESH_PHASE1.md). Phase 2 is the first phase that writes: (a) wrap the four out-of-app roots-of-record — olof fetch, bobserve fetch, concert_ranker scan/rerank — behind routes so the freshness card's copyable CLI strings become buttons; (b) add the 'version' signal from spec 1c (hash of _KNOWN_TAPER_ALIASES and concert_ranker/config.py constants, stored in meta) so config-only changes stop reporting as unknown; (c) add refresh_step_runs at that point, since the newly wrapped steps are the first ones that genuinely need run-records. Phase 3 chains steps in dependency order; Phase 4 gives human queues (taper conflicts, fingerprint suggestions, TapeMatch judgments) first-class blocker treatment.
+
 TODO-305: Coverage award: build the /lbdir/ledger and /lbdir/sync routes
 Priority: Low
 Status: Open

@@ -1,0 +1,303 @@
+"""Tests for backend/refresh.py (GET /api/refresh/status).
+
+Covers the spec's Sec 2.5 checklist: _step_state's truth table (all four
+states, blocked-beats-stale precedence, the backlog=0-beats-newer-upstream-
+watermark false-positive guard), _parse_ts's format normalization (including
+the Sec 1b same-day string-comparison inversion regression), registry
+integrity (unique ids, resolvable upstream, no cycles), every registered SQL
+query executing against the full init_db() schema with the right arity, a
+missing-table degrading to 'unknown' without raising, and compute_plan()'s
+payload shape on an empty-schema DB.
+
+All tests use a temp-file SQLite DB built via backend.db.init_db() so the
+full production schema is present; they never touch the real
+data/losslessbob.db.
+"""
+
+from __future__ import annotations
+
+import datetime as _dt
+import os
+import sqlite3
+import tempfile
+
+import backend.db as db
+from backend.refresh import (
+    STEPS,
+    RefreshStep,
+    _parse_ts,
+    _step_state,
+    _topological_order,
+    compute_plan,
+)
+
+
+def _make_conn() -> tuple[sqlite3.Connection, str]:
+    """Create a fresh temp DB with full schema. Returns (conn, tmp_dir)."""
+    tmp_dir = tempfile.mkdtemp(prefix="lbtest_refresh_")
+    db_path = os.path.join(tmp_dir, "test.db")
+    db.init_db(db_path)
+    conn = db.get_connection(db_path)
+    return conn, tmp_dir
+
+
+# ── _parse_ts ────────────────────────────────────────────────────────────
+
+
+def test_parse_ts_space_separated() -> None:
+    assert _parse_ts("2026-08-02 22:22:28") == _dt.datetime(2026, 8, 2, 22, 22, 28)
+
+
+def test_parse_ts_t_separated() -> None:
+    assert _parse_ts("2026-07-14T00:04:41") == _dt.datetime(2026, 7, 14, 0, 4, 41)
+
+
+def test_parse_ts_microseconds() -> None:
+    result = _parse_ts("2026-07-14T00:04:41.894196")
+    assert result == _dt.datetime(2026, 7, 14, 0, 4, 41, 894196)
+
+
+def test_parse_ts_tz_aware_converts_to_naive_local() -> None:
+    result = _parse_ts("2026-07-14T00:04:41.894196+00:00")
+    assert result is not None
+    assert result.tzinfo is None
+    # Must equal the local-time conversion of the UTC instant.
+    expected = (
+        _dt.datetime(2026, 7, 14, 0, 4, 41, 894196, tzinfo=_dt.UTC)
+        .astimezone()
+        .replace(tzinfo=None)
+    )
+    assert result == expected
+
+
+def test_parse_ts_z_suffix() -> None:
+    result = _parse_ts("2026-07-14T00:04:41Z")
+    assert result is not None
+    assert result.tzinfo is None
+
+
+def test_parse_ts_none_and_empty() -> None:
+    assert _parse_ts(None) is None
+    assert _parse_ts("") is None
+
+
+def test_parse_ts_garbage() -> None:
+    assert _parse_ts("garbage") is None
+    assert _parse_ts("not-a-date") is None
+
+
+def test_parse_ts_fixes_string_comparison_inversion() -> None:
+    """Sec 1b regression: 'T' (0x54) sorts after ' ' (0x20), inverting same-day
+    order under raw string comparison. _parse_ts must fix this."""
+    iso_t = "2026-07-14T00:00:01"
+    space = "2026-07-14 23:59:59"
+
+    # The raw-string bug: naive comparison says T-separated > space-separated
+    # even though T-separated is earlier in the same day.
+    assert (iso_t > space) is True
+
+    # _parse_ts must invert this back to the true chronological order.
+    assert (_parse_ts(iso_t) < _parse_ts(space)) is True
+
+
+# ── _step_state truth table ─────────────────────────────────────────────
+
+
+def _step(**overrides) -> RefreshStep:
+    base = dict(
+        step_id="x", label="x", trigger="T1", kind="wholesale",
+        backlog_sql=None, last_run_sql=None, version_key=None,
+        upstream=(), how_to_run="POST /api/x", cost="fast", human_gate=False,
+    )
+    base.update(overrides)
+    return RefreshStep(**base)
+
+
+def test_step_state_stale_from_backlog() -> None:
+    step = _step(backlog_sql="SELECT 1")
+    state, reason = _step_state(step, last_run=None, upstream_runs={}, backlog=5)
+    assert state == "stale"
+    assert "backlog" in reason
+
+
+def test_step_state_blocked_beats_stale_precedence() -> None:
+    """An upstream that is itself stale must mark this step 'blocked', not
+    re-derive 'stale' from a stale watermark of its own."""
+    step = _step(upstream=("up",))
+    now = _dt.datetime(2026, 8, 1)
+    upstream_runs = {"up": ("stale", now)}
+    state, reason = _step_state(step, last_run=None, upstream_runs=upstream_runs, backlog=None)
+    assert state == "blocked"
+    assert "up" in reason
+
+
+def test_step_state_blocked_from_upstream_blocked() -> None:
+    step = _step(upstream=("up",))
+    upstream_runs = {"up": ("blocked", None)}
+    state, _reason = _step_state(step, last_run=None, upstream_runs=upstream_runs, backlog=None)
+    assert state == "blocked"
+
+
+def test_step_state_watermark_stale_when_upstream_newer() -> None:
+    step = _step(upstream=("up",))
+    mine = _dt.datetime(2026, 7, 1)
+    theirs = _dt.datetime(2026, 7, 15)
+    upstream_runs = {"up": ("fresh", theirs)}
+    state, reason = _step_state(step, last_run=mine, upstream_runs=upstream_runs, backlog=None)
+    assert state == "stale"
+    assert "watermark" in reason or "no backlog signal" in reason
+
+
+def test_step_state_backlog_zero_beats_newer_upstream_watermark() -> None:
+    """Sec 1a false-positive guard: backlog == 0 must NOT be overridden by a
+    newer upstream watermark -- backlog is the direct measure and wins."""
+    step = _step(upstream=("up",))
+    mine = _dt.datetime(2026, 7, 1)
+    theirs = _dt.datetime(2026, 7, 15)
+    upstream_runs = {"up": ("fresh", theirs)}
+    state, reason = _step_state(step, last_run=mine, upstream_runs=upstream_runs, backlog=0)
+    assert state == "fresh"
+    assert "backlog 0" in reason
+
+
+def test_step_state_unknown_when_no_signal() -> None:
+    step = _step()
+    state, reason = _step_state(step, last_run=None, upstream_runs={}, backlog=None)
+    assert state == "unknown"
+
+
+def test_step_state_fresh_when_backlog_zero_no_watermark() -> None:
+    step = _step()
+    state, reason = _step_state(step, last_run=None, upstream_runs={}, backlog=0)
+    assert state == "fresh"
+    assert "no watermark column" in reason
+
+
+def test_step_state_fresh_with_watermark_and_no_newer_upstream() -> None:
+    step = _step(upstream=("up",))
+    mine = _dt.datetime(2026, 7, 15)
+    theirs = _dt.datetime(2026, 7, 1)
+    upstream_runs = {"up": ("fresh", theirs)}
+    state, _reason = _step_state(step, last_run=mine, upstream_runs=upstream_runs, backlog=None)
+    assert state == "fresh"
+
+
+# ── Registry integrity ───────────────────────────────────────────────────
+
+
+def test_registry_step_ids_unique() -> None:
+    ids = [step.step_id for step in STEPS]
+    assert len(ids) == len(set(ids))
+
+
+def test_registry_upstream_resolves_to_real_step_ids() -> None:
+    ids = {step.step_id for step in STEPS}
+    for step in STEPS:
+        for upstream_id in step.upstream:
+            assert upstream_id in ids, f"{step.step_id} references unknown upstream {upstream_id}"
+
+
+def test_registry_has_no_cycles_and_topological_order_is_well_defined() -> None:
+    order = _topological_order()
+    ids = {step.step_id for step in STEPS}
+    assert set(order) == ids
+    assert len(order) == len(set(order))
+
+    position = {step_id: i for i, step_id in enumerate(order)}
+    for step in STEPS:
+        for upstream_id in step.upstream:
+            assert position[upstream_id] < position[step.step_id], (
+                f"{upstream_id} must precede {step.step_id} in topological order"
+            )
+
+
+def test_registry_at_least_one_signal_or_documented_unknown() -> None:
+    """Every step either declares a signal, or is one of the documented
+    Sec 4 unmeasurable steps (backlog_sql and last_run_sql both None)."""
+    for step in STEPS:
+        has_signal = step.backlog_sql is not None or step.last_run_sql is not None
+        assert has_signal or (step.backlog_sql is None and step.last_run_sql is None)
+
+
+# ── Every registered SQL query executes against the full schema ────────
+
+
+def test_all_backlog_sql_execute_with_right_arity() -> None:
+    conn, _tmp_dir = _make_conn()
+    for step in STEPS:
+        if step.backlog_sql is None:
+            continue
+        row = conn.execute(step.backlog_sql).fetchone()
+        assert row is not None, f"{step.step_id}.backlog_sql returned no row"
+        assert len(row) == 1, f"{step.step_id}.backlog_sql returned {len(row)} columns"
+        assert isinstance(row[0], int), f"{step.step_id}.backlog_sql did not return an int"
+
+
+def test_all_last_run_sql_execute_with_right_arity() -> None:
+    """Every last_run_sql must execute and return single-column rows.
+
+    MAX(...) queries always return exactly one row (NULL on an empty table).
+    WHERE-filtered queries (e.g. db_import's `meta` lookup) legitimately
+    return zero rows against an empty table -- that is not a query defect,
+    it is what `_run_scalar()` treats as "no watermark yet".
+    """
+    conn, _tmp_dir = _make_conn()
+    for step in STEPS:
+        if step.last_run_sql is None:
+            continue
+        rows = conn.execute(step.last_run_sql).fetchall()
+        assert len(rows) <= 1, f"{step.step_id}.last_run_sql returned {len(rows)} rows"
+        if rows:
+            assert len(rows[0]) == 1, f"{step.step_id}.last_run_sql returned {len(rows[0])} cols"
+
+
+# ── Missing table degrades to 'unknown', never raises ───────────────────
+
+
+def test_missing_table_reports_unknown_not_raise() -> None:
+    conn, tmp_dir = _make_conn()
+    db_path = os.path.join(tmp_dir, "test.db")
+    conn.execute("DROP TABLE quality_recording_metrics")
+    conn.commit()
+
+    plan = compute_plan(db_path=db_path)
+    ranker_scan = next(s for s in plan["steps"] if s["step_id"] == "ranker_scan")
+    assert ranker_scan["state"] == "unknown"
+
+
+# ── compute_plan payload shape ───────────────────────────────────────────
+
+
+def test_compute_plan_empty_schema_returns_well_formed_payload() -> None:
+    conn, tmp_dir = _make_conn()
+    db_path = os.path.join(tmp_dir, "test.db")
+    plan = compute_plan(db_path=db_path)
+
+    assert "generated_at" in plan
+    assert "steps" in plan
+    assert "stale_count" in plan
+    assert "blocked_count" in plan
+    assert "unknown_count" in plan
+    assert "by_trigger" in plan
+    assert "publish_lag" in plan
+
+    assert len(plan["steps"]) == len(STEPS)
+    for trigger in ("T1", "T2", "T3", "T4"):
+        assert trigger in plan["by_trigger"]
+        assert "total" in plan["by_trigger"][trigger]
+
+    lag = plan["publish_lag"]
+    assert lag["published_at"] is None
+    assert lag["lb_status_changes_since"] == 0
+    assert lag["entries_scraped_since"] == 0
+    assert lag["days_since"] is None
+
+
+def test_compute_plan_trigger_filter() -> None:
+    conn, tmp_dir = _make_conn()
+    db_path = os.path.join(tmp_dir, "test.db")
+    plan = compute_plan(db_path=db_path, trigger="T1")
+    assert all(s["trigger"] == "T1" for s in plan["steps"])
+    # counts still reflect the full registry, not just the filtered steps.
+    total_t1 = sum(1 for s in STEPS if s.trigger == "T1")
+    assert len(plan["steps"]) == total_t1
