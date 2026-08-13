@@ -1,7 +1,9 @@
+import json
 import logging
 import re
 import sqlite3
 import threading
+import time
 from pathlib import Path
 
 from pybloom_live import ScalableBloomFilter as _SBF
@@ -102,6 +104,7 @@ USER_TABLES = (
     "xref_ingest_filesets",
     "xref_ingest_rows",
     "user_taper_aliases",
+    "refresh_step_runs",
 )
 
 # Guard against f-string injection if a table name is ever mis-typed (#10)
@@ -130,6 +133,9 @@ USER_META_KEYS = frozenset({
     "wtrf_board_id", "wtrf_username", "wtrf_password",
     "is_curator",
     "setlistfm_api_key",
+    "refresh_version_taper_aliases",
+    "refresh_version_ranker_scan_config",
+    "refresh_version_ranker_rank_config",
 })
 
 # Degenerate checksums identify no recording: hashes of zero-byte input, plus
@@ -513,6 +519,19 @@ CREATE TABLE IF NOT EXISTS scrape_sessions (
     status      TEXT NOT NULL DEFAULT 'running',   -- running | done | stopped | failed
     notes       TEXT
 );
+
+CREATE TABLE IF NOT EXISTS refresh_step_runs (
+    id             INTEGER PRIMARY KEY AUTOINCREMENT,
+    step_id        TEXT NOT NULL,          -- refresh.STEPS step_id
+    started_at     TIMESTAMP NOT NULL,     -- 'YYYY-MM-DD HH:MM:SS', naive local
+    finished_at    TIMESTAMP,
+    status         TEXT NOT NULL DEFAULT 'running',  -- running|ok|noop|stopped|error
+    trigger_source TEXT,                   -- 'route' | 'cli' | 'cron'
+    counters_json  TEXT,                   -- worker summary dict, verbatim
+    notes          TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_refresh_step_runs_step
+    ON refresh_step_runs(step_id, finished_at);
 
 CREATE TABLE IF NOT EXISTS site_inventory (
     url             TEXT PRIMARY KEY,
@@ -1922,23 +1941,77 @@ def _normalise_taper(name: str | None) -> str | None:
 # / _TAPER_UNIVERSE / _KNOWN_TAPER_KEYS_SORTED / _KNOWN_TAPER_RE globals used
 # by parsing and attribution.
 
-def _run_alias_write(fn, db_path: str | None):
-    """Route a user_taper_aliases write through the write queue, matching the
-    BUG-246 guard used elsewhere (taper_attribution.py, song_index.py,
-    xref_ingest.py): the write queue singleton is first-caller-wins, so under
-    pytest (each test module's own temp DB) it may be bound to a different DB
-    than *db_path*.
+def _run_queued_write(fn, db_path: str | None, label: str = "write"):
+    """Route a write through the write queue, matching the BUG-246 guard used
+    elsewhere (taper_attribution.py, song_index.py, xref_ingest.py): the write
+    queue singleton is first-caller-wins, so under pytest (each test module's
+    own temp DB) it may be bound to a different DB than *db_path*.
+
+    Args:
+        fn: Callable taking a ``sqlite3.Connection`` and performing the write.
+        db_path: Optional database path the caller intended to target.
+        label: Short description used only in the mismatch warning log.
     """
     queue = get_write_queue()
     if db_path is not None and str(Path(db_path).resolve()) != str(Path(queue.db_path).resolve()):
         logger.warning(
-            "user_taper_aliases: write queue bound to %s but this write targets %s"
-            " — writing directly", queue.db_path, db_path,
+            "%s: write queue bound to %s but this write targets %s"
+            " — writing directly", label, queue.db_path, db_path,
         )
         conn = get_connection(db_path)
         with conn:
             return fn(conn)
     return queue.execute(fn)
+
+
+def _run_alias_write(fn, db_path: str | None):
+    """Route a user_taper_aliases write through the write queue (see
+    :func:`_run_queued_write`)."""
+    return _run_queued_write(fn, db_path, label="user_taper_aliases")
+
+
+def record_step_run(
+    step_id: str, *, status: str = "ok",
+    started_at: str | None = None, finished_at: str | None = None,
+    counters: dict | None = None, notes: str | None = None,
+    trigger_source: str = "route", db_path: str | None = None,
+) -> int:
+    """Insert one completed ``refresh_step_runs`` row (TODO-306).
+
+    One insert at completion, not a start/finish pair: "currently running" is
+    already fully covered by ``activity.snapshot()``, and a single insert
+    avoids carrying a rowid across a thread boundary and avoids orphan
+    ``running`` rows after a crash.
+
+    Args:
+        step_id: ``refresh.STEPS`` step id this run corresponds to.
+        status: One of ``ok | noop | stopped | error``.
+        started_at: 'YYYY-MM-DD HH:MM:SS' naive-local timestamp; defaults to
+            ``finished_at`` (or now) when omitted.
+        finished_at: 'YYYY-MM-DD HH:MM:SS' naive-local timestamp; defaults to now.
+        counters: Worker summary dict, stored verbatim as JSON.
+        notes: Optional free-text note (e.g. a version-change reason).
+        trigger_source: ``route | cli | cron``.
+        db_path: Optional database path override.
+
+    Returns:
+        The new row's id.
+    """
+    finished = finished_at or time.strftime("%Y-%m-%d %H:%M:%S")
+    started = started_at or finished
+    counters_json = json.dumps(counters) if counters is not None else None
+
+    def _do(c: sqlite3.Connection) -> int:
+        cur = c.execute(
+            """INSERT INTO refresh_step_runs
+                   (step_id, started_at, finished_at, status, trigger_source,
+                    counters_json, notes)
+               VALUES (?, ?, ?, ?, ?, ?, ?)""",
+            (step_id, started, finished, status, trigger_source, counters_json, notes),
+        )
+        return cur.lastrowid
+
+    return _run_queued_write(_do, db_path, label="refresh_step_runs")
 
 
 def reload_taper_aliases(db_path: str | None = None) -> dict:

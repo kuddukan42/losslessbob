@@ -30,7 +30,13 @@ from backend import refresh as _refresh  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
-_HEADER = f"{'STEP':<22}{'TRIGGER':<9}{'STATE':<9}{'LAST RUN':<13}{'AGE':<7}{'BACKLOG':<9}HOW TO RUN"
+_HEADER = (
+    f"{'STEP':<22}{'TRIGGER':<9}{'STATE':<9}{'VER':<5}"
+    f"{'LAST RUN':<13}{'AGE':<7}{'BACKLOG':<9}HOW TO RUN"
+)
+
+# version.state -> single-glance column value (TODO-306 Phase 2).
+_VER_DISPLAY = {"ok": "ok", "changed": "chg", "unstamped": "-", "n/a": "-"}
 
 
 def _fmt_row(step: dict) -> str:
@@ -38,8 +44,10 @@ def _fmt_row(step: dict) -> str:
     last_run = (step["last_run"] or "-")[:10]
     age = f"{step['age_days']}d" if step["age_days"] is not None else "-"
     backlog = str(step["backlog"]) if step["backlog"] is not None else "-"
+    ver_state = (step.get("version") or {}).get("state", "n/a")
+    ver = _VER_DISPLAY.get(ver_state, "-")
     return (
-        f"{step['step_id']:<22}{step['trigger']:<9}{step['state']:<9}"
+        f"{step['step_id']:<22}{step['trigger']:<9}{step['state']:<9}{ver:<5}"
         f"{last_run:<13}{age:<7}{backlog:<9}{step['how_to_run']}"
     )
 

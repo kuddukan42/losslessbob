@@ -90,7 +90,10 @@
         "sitedata_publish": "Daten der Website werden veröffentlicht…",
         "sitedata_install": "Website-Daten werden geladen…",
         "derived_recompute": "Abgeleitete Daten werden neu berechnet…",
-        "file_integrity": "Dateiintegrität wird überprüft…"
+        "file_integrity": "Dateiintegrität wird überprüft…",
+        "olof_fetching": "Olof-Seiten werden abgerufen…",
+        "bobserve_fetching": "Bobserve-Setlists werden abgerufen…",
+        "ranker_scanning": "Audioqualität wird geprüft…"
       },
       "tray": {
         "title": "Aktivität",
@@ -2183,7 +2186,20 @@
       "sitedata_publish": "Sitedata veröffentlichen",
       "preservation": "Prüfung der Datenintegrität",
       "archive_org": "Mit Archive.org synchronisieren"
-    }
+    },
+    "run": "Ausführen",
+    "stop": "Stopp",
+    "running": "Wird ausgeführt…",
+    "alreadyRunning": "Wird bereits ausgeführt",
+    "runFailed": "Ausführung fehlgeschlagen",
+    "confirmFetch": "Jetzt abrufen?",
+    "confirmFetchBody": "Bitte etwas Geduld (~2 s zwischen den Anfragen) – dies kann eine Weile dauern.",
+    "confirmScanTitle": "Audioqualitätsprüfung durchführen?",
+    "scanBacklog": "Scan-Rückstand ({{count}})",
+    "scanAll": "Vollständiger erneuter Scan",
+    "scanAllWarning": "Jede Aufnahme in der Sammlung wird erneut gescannt – deutlich langsamer als ein Backlog-Scan.",
+    "scanNoBacklog": "Es gibt nichts zu scannen – der Rückstand ist leer.",
+    "versionChanged": "Konfiguration seit dem letzten Lauf geändert"
   },
   "screenCoverage": {
     "title": "Fortschritt der Sammlung",

@@ -50,6 +50,7 @@ import re
 import sqlite3
 from typing import NamedTuple
 
+from backend import config_version
 from backend.db import get_connection
 
 logger = logging.getLogger(__name__)
@@ -165,7 +166,7 @@ STEPS: tuple[RefreshStep, ...] = (
         last_run_sql="SELECT MAX(fetched_at) FROM olof_pages WHERE corpus IN ('dsn','chronicle')",
         version_key=None,
         upstream=(),
-        how_to_run=".venv/bin/python3 -m backend.olof_fetcher",
+        how_to_run="POST /api/olof/fetch",
         cost="slow",
         human_gate=False,
     ),
@@ -200,7 +201,7 @@ STEPS: tuple[RefreshStep, ...] = (
         last_run_sql="SELECT MAX(fetched_at) FROM olof_pages WHERE corpus='bobserve'",
         version_key=None,
         upstream=(),
-        how_to_run=".venv/bin/python3 -m backend.bobserve_fetcher",
+        how_to_run="POST /api/bobserve/fetch",
         cost="slow",
         human_gate=False,
     ),
@@ -243,7 +244,7 @@ STEPS: tuple[RefreshStep, ...] = (
         kind="wholesale",
         backlog_sql=None,
         last_run_sql="SELECT MAX(computed_at) FROM taper_attributions",
-        version_key=None,
+        version_key="refresh_version_taper_aliases",
         upstream=("parse_lineage",),
         how_to_run="POST /api/derived/recompute",
         cost="slow",
@@ -320,14 +321,19 @@ STEPS: tuple[RefreshStep, ...] = (
         label="ranker_scan",
         trigger="T2",
         kind="incremental",
+        # Rescoped to the latest scan_id (TODO-306 Phase 2 decision 5) so this
+        # count equals POST /api/ranker/scan's own `planned` -- unscoped, it
+        # would count every my_collection LB missing metrics under ANY scan,
+        # which is not what a "backlog" scan run actually plans to touch.
         backlog_sql=(
             "SELECT COUNT(*) FROM my_collection mc WHERE NOT EXISTS "
-            "(SELECT 1 FROM quality_recording_metrics m WHERE m.lb_number = mc.lb_number)"
+            "(SELECT 1 FROM quality_recording_metrics m WHERE m.lb_number = mc.lb_number "
+            "AND m.scan_id = (SELECT MAX(scan_id) FROM quality_scans))"
         ),
         last_run_sql="SELECT MAX(started_at) FROM quality_scans",
-        version_key=None,
+        version_key="refresh_version_ranker_scan_config",
         upstream=("pipeline_run", "tapematch_sync"),
-        how_to_run=".venv/bin/python3 concert_ranker/cli.py scan --all",
+        how_to_run="POST /api/ranker/scan",
         cost="very_slow",
         human_gate=False,
     ),
@@ -342,12 +348,12 @@ STEPS: tuple[RefreshStep, ...] = (
             "(SELECT 1 FROM quality_recording_scores s WHERE s.lb_number = m.lb_number)"
         ),
         # quality_recording_scores has NO timestamp column -- do not invent one.
-        # The reason string reports the watermark as unavailable; only the
-        # backlog signal above is used for this step's state.
+        # The run-record supplies last_run instead (see _last_run_record) --
+        # only the backlog signal above is used for this step's watermark.
         last_run_sql=None,
-        version_key=None,
+        version_key="refresh_version_ranker_rank_config",
         upstream=("ranker_scan",),
-        how_to_run=".venv/bin/python3 concert_ranker/cli.py rerank",
+        how_to_run="POST /api/ranker/rerank",
         cost="fast",
         human_gate=False,
     ),
@@ -564,33 +570,59 @@ def _step_state(
     last_run: _dt.datetime | None,
     upstream_runs: dict[str, tuple[str, _dt.datetime | None]],
     backlog: int | None,
+    *,
+    version_state: str = "n/a",
+    last_run_status: str | None = None,
+    last_run_source: str | None = None,
 ) -> tuple[str, str]:
     """Return (state, reason) for one step. Pure function, no DB access.
 
-    Evaluation order (spec Sec 2.5):
-      1. backlog > 0 -> 'stale' (direct measure, checked first).
-      2. any upstream step is itself stale/blocked -> 'blocked'.
-      3. backlog is None and an upstream last_run is newer than mine (after
+    Evaluation order (spec Sec 2.5, extended by TODO-306 Phase 2 Sec 3.7):
+      1. version_state == 'changed' -> 'stale' (a config change invalidates
+         output even at backlog 0, so it is checked before the backlog
+         signal).
+      2. backlog > 0 -> 'stale' (direct measure).
+      3. newest refresh_step_runs row for this step has status='error' with
+         no later success -> 'stale', "last run failed".
+      4. any upstream step is itself stale/blocked -> 'blocked'.
+      5. backlog is None and an upstream last_run is newer than mine (after
          `_parse_ts` normalization) -> 'stale' (watermark proxy; only
          consulted when no backlog signal exists, so backlog == 0 can never
          be overridden by a newer upstream watermark -- spec Sec 1a's
          false-positive guard).
-      4. no signal at all available -> 'unknown'.
-      5. otherwise -> 'fresh'.
+      6. no signal at all available -> 'unknown'.
+      7. otherwise -> 'fresh'; version_state == 'unstamped' is appended to
+         the reason but never changes the state (TODO-306 Phase 2 decision 6).
 
     Args:
         step: The step being evaluated.
-        last_run: This step's own parsed watermark, or None if unavailable.
+        last_run: This step's own last-run timestamp -- the newer of its
+            watermark and its newest successful run-record (see
+            `_last_run_record` / `compute_plan`), or None if unavailable.
         upstream_runs: Mapping step_id -> (state, last_run) for each entry in
             `step.upstream`, already computed (topological order).
         backlog: This step's own backlog count, or None if no backlog_sql.
+        version_state: One of 'ok' | 'changed' | 'unstamped' | 'n/a', from
+            `config_version.version_state`.
+        last_run_status: Status of the newest `refresh_step_runs` row for
+            this step (any status, not just successful), or None if no rows
+            exist.
+        last_run_source: 'run_record' | 'watermark' | None -- unused in the
+            state logic itself, accepted only so callers can pass the same
+            kwargs they already computed for `last_run` (documentation only).
 
     Returns:
         (state, reason) where state is one of
         'stale' | 'blocked' | 'unknown' | 'fresh'.
     """
+    if version_state == "changed":
+        return "stale", "config changed since last run"
+
     if backlog is not None and backlog > 0:
         return "stale", f"backlog {backlog} unprocessed"
+
+    if last_run_status == "error":
+        return "stale", "last run failed"
 
     for upstream_id in step.upstream:
         upstream_state, _upstream_last_run = upstream_runs.get(upstream_id, ("unknown", None))
@@ -617,14 +649,90 @@ def _step_state(
 
     if backlog is None and last_run is None:
         if not step.upstream:
-            return "unknown", "no backlog or watermark signal for this step"
-        return "unknown", "no backlog or watermark signal; upstream all fresh/unknown"
+            state, reason = "unknown", "no backlog or watermark signal for this step"
+        else:
+            state, reason = "unknown", "no backlog or watermark signal; upstream all fresh/unknown"
+    elif backlog == 0 and last_run is None:
+        state, reason = "fresh", "no watermark column; backlog 0"
+    elif backlog == 0:
+        state, reason = "fresh", "backlog 0"
+    else:
+        state, reason = (
+            "fresh",
+            f"watermark {last_run.date()}, no newer upstream" if last_run else "fresh",
+        )
 
-    if backlog == 0 and last_run is None:
-        return "fresh", "no watermark column; backlog 0"
-    if backlog == 0:
-        return "fresh", "backlog 0"
-    return "fresh", f"watermark {last_run.date()}, no newer upstream" if last_run else "fresh"
+    # Config-version gap noted but never downgrades state (decision 6) --
+    # 'changed' already returned 'stale' above; only 'unstamped' reaches here.
+    if version_state == "unstamped":
+        reason = f"{reason} (version unstamped)"
+    return state, reason
+
+
+def _last_run_record(
+    conn: sqlite3.Connection, step_id: str,
+) -> tuple[_dt.datetime | None, str | None]:
+    """Return (newest successful finished_at, status of the newest row overall).
+
+    Closes the Phase 1 gap for steps like `ranker_rerank` whose output table
+    has no timestamp column at all (`quality_recording_scores`) -- Phase 2's
+    `refresh_step_runs` is the first run-record any step here can rely on.
+
+    Args:
+        conn: Live connection.
+        step_id: `refresh.STEPS` step id.
+
+    Returns:
+        (last_success, last_status) -- both None if the table is absent or
+        no rows exist for this step_id. Never raises.
+    """
+    if not _table_exists(conn, "refresh_step_runs"):
+        return None, None
+    try:
+        newest_ok_row = conn.execute(
+            "SELECT finished_at FROM refresh_step_runs "
+            "WHERE step_id = ? AND status IN ('ok', 'noop') "
+            "ORDER BY finished_at DESC, id DESC LIMIT 1",
+            (step_id,),
+        ).fetchone()
+        newest_any_row = conn.execute(
+            "SELECT status FROM refresh_step_runs WHERE step_id = ? "
+            "ORDER BY finished_at DESC, id DESC LIMIT 1",
+            (step_id,),
+        ).fetchone()
+    except sqlite3.Error:
+        logger.exception("refresh: failed reading refresh_step_runs for %s", step_id)
+        return None, None
+    last_success = _parse_ts(newest_ok_row[0]) if newest_ok_row else None
+    last_status = newest_any_row[0] if newest_any_row else None
+    return last_success, last_status
+
+
+def _version_signal(conn: sqlite3.Connection, step: RefreshStep) -> dict:
+    """Return the {key, state, expected, stored} version block for one step.
+
+    Args:
+        conn: Live connection.
+        step: The step being evaluated.
+
+    Returns:
+        A dict with `key` (None if unversioned), `state` (see
+        `config_version.version_state`), `expected`, and `stored`.
+    """
+    if not step.version_key:
+        return {"key": None, "state": "n/a", "expected": None, "stored": None}
+    stored = None
+    if _table_exists(conn, "meta"):
+        try:
+            row = conn.execute(
+                "SELECT value FROM meta WHERE key = ?", (step.version_key,)
+            ).fetchone()
+            stored = row[0] if row else None
+        except sqlite3.Error:
+            logger.exception("refresh: failed reading meta key %s", step.version_key)
+    expected = config_version.compute_expected(step.step_id)
+    state = config_version.version_state(step.step_id, stored)
+    return {"key": step.version_key, "state": state, "expected": expected, "stored": stored}
 
 
 def _topological_order() -> list[str]:
@@ -746,12 +854,21 @@ def compute_plan(db_path: str | None = None, trigger: str | None = None) -> dict
     now = _dt.datetime.now()
 
     order = _topological_order()
-    computed: dict[str, tuple[str, str, _dt.datetime | None, int | None]] = {}
+    computed: dict[str, tuple] = {}
 
     for step_id in order:
         step = _STEPS_BY_ID[step_id]
-        last_run_raw = _run_scalar(conn, step.last_run_sql)
-        last_run = _parse_ts(last_run_raw)
+        watermark_raw = _run_scalar(conn, step.last_run_sql)
+        watermark = _parse_ts(watermark_raw)
+        run_record_last, last_run_status = _last_run_record(conn, step_id)
+
+        if run_record_last is not None and (watermark is None or run_record_last > watermark):
+            last_run, last_run_source = run_record_last, "run_record"
+        elif watermark is not None:
+            last_run, last_run_source = watermark, "watermark"
+        else:
+            last_run, last_run_source = None, None
+
         backlog = _run_scalar(conn, step.backlog_sql)
         if backlog is not None:
             try:
@@ -759,13 +876,21 @@ def compute_plan(db_path: str | None = None, trigger: str | None = None) -> dict
             except (TypeError, ValueError):
                 backlog = None
 
+        version = _version_signal(conn, step)
+
         upstream_runs = {
             upstream_id: (computed[upstream_id][0], computed[upstream_id][2])
             for upstream_id in step.upstream
             if upstream_id in computed
         }
-        state, reason = _step_state(step, last_run, upstream_runs, backlog)
-        computed[step_id] = (state, reason, last_run, backlog)
+        state, reason = _step_state(
+            step, last_run, upstream_runs, backlog,
+            version_state=version["state"], last_run_status=last_run_status,
+            last_run_source=last_run_source,
+        )
+        computed[step_id] = (
+            state, reason, last_run, backlog, last_run_source, last_run_status, version,
+        )
 
     steps_out = []
     stale_count = blocked_count = unknown_count = 0
@@ -775,7 +900,9 @@ def compute_plan(db_path: str | None = None, trigger: str | None = None) -> dict
     }
 
     for step in STEPS:
-        state, reason, last_run, backlog = computed[step.step_id]
+        state, reason, last_run, backlog, last_run_source, last_run_status, version = (
+            computed[step.step_id]
+        )
         # Clamped at 0: a handful of writers stamp UTC into otherwise
         # naive-local columns (pipeline_folder_state.updated_at is the live
         # example), which can put a "last run" a few hours into the future.
@@ -815,6 +942,8 @@ def compute_plan(db_path: str | None = None, trigger: str | None = None) -> dict
             "state": state,
             "reason": reason,
             "last_run": last_run.isoformat() if last_run is not None else None,
+            "last_run_source": last_run_source,
+            "last_run_status": last_run_status,
             "age_days": age_days,
             "backlog": backlog,
             "blocked_by": blocked_by,
@@ -822,6 +951,7 @@ def compute_plan(db_path: str | None = None, trigger: str | None = None) -> dict
             "how_to_run": step.how_to_run,
             "cost": step.cost,
             "human_gate": step.human_gate,
+            "version": version,
         })
 
     return {

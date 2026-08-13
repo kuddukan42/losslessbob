@@ -12,7 +12,7 @@ authoritative source**, this wiki is the readable overview layer on top.
 | [Backend-API](Backend-API.md) | Flask API (port 5174), route groups, backend modules | fresh | 2026-07-22 |
 | [GUI](GUI.md) | gui_next (Electron/React, sole GUI; legacy PyQt6 removed) | fresh | 2026-07-22 |
 | [TapeMatch](TapeMatch.md) | Recording-family matching pipeline, calibration workflow | fresh | 2026-07-22 |
-| [Concert-Ranker](Concert-Ranker.md) | Quality scans, recording scores, ranking pipeline | fresh | 2026-07-22 |
+| [Concert-Ranker](Concert-Ranker.md) | Quality scans, recording scores, ranking pipeline | fresh | 2026-08-13 |
 | [Data-Flows](Data-Flows.md) | Key end-to-end flows, checksum format, publish/subscribe | fresh | 2026-07-22 |
 | [Dev-Workflow](Dev-Workflow.md) | Sessions, bookkeeping, skills/commands, verification rules | fresh | 2026-07-22 |
 | [Visual-Verification](Visual-Verification.md) | Screenshot engine: electron_driver two modes, tour file, /verify workflow | fresh | 2026-07-22 |

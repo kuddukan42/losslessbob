@@ -90,7 +90,10 @@
         "sitedata_publish": "Publication des données du site…",
         "sitedata_install": "Installation des données du site…",
         "derived_recompute": "Recalcul des données dérivées…",
-        "file_integrity": "Vérification de l'intégrité des fichiers…"
+        "file_integrity": "Vérification de l'intégrité des fichiers…",
+        "olof_fetching": "Récupération des pages Olof…",
+        "bobserve_fetching": "Récupération des setlists de bobserve…",
+        "ranker_scanning": "Analyse de la qualité audio…"
       },
       "tray": {
         "title": "Activité",
@@ -2183,7 +2186,20 @@
       "sitedata_publish": "Publier les données du site",
       "preservation": "Contrôle de conservation",
       "archive_org": "Synchronisation avec Archive.org"
-    }
+    },
+    "run": "Exécuter",
+    "stop": "Arrêter",
+    "running": "Exécution en cours…",
+    "alreadyRunning": "Déjà en service",
+    "runFailed": "Échec de l'exécution",
+    "confirmFetch": "Télécharger maintenant ?",
+    "confirmFetchBody": "À un rythme modéré (environ 2 s entre chaque requête) — cela peut prendre un certain temps.",
+    "confirmScanTitle": "Lancer une analyse de la qualité audio ?",
+    "scanBacklog": "Liste des tâches en attente de numérisation ({{count}})",
+    "scanAll": "Nouvelle analyse complète",
+    "scanAllWarning": "Réanalyse chaque enregistrement de la collection — beaucoup plus lent qu'une analyse des enregistrements en attente.",
+    "scanNoBacklog": "Rien à analyser — le carnet de commandes est vide.",
+    "versionChanged": "Configuration modifiée depuis la dernière exécution"
   },
   "screenCoverage": {
     "title": "Progression de la collection",

@@ -150,6 +150,25 @@ def _get_pipeline_run_status() -> dict:
     return _app.get_pipeline_run_status()
 
 
+# TODO-306 Phase 2's three JobState-backed workers. Imported lazily (not at
+# module top level, unlike the JobAdapter wrappers above) so bs4/lxml
+# (olof/bobserve fetchers) and concert_ranker/numpy (ranker_jobs) are not
+# pulled into backend startup just because activity.py is imported.
+def _get_olof_fetch_status() -> dict:
+    from backend import olof_fetcher as _olof_fetcher
+    return _olof_fetcher.get_status()
+
+
+def _get_bobserve_fetch_status() -> dict:
+    from backend import bobserve_fetcher as _bobserve_fetcher
+    return _bobserve_fetcher.get_status()
+
+
+def _get_ranker_scan_status() -> dict:
+    from backend import ranker_jobs as _ranker_jobs
+    return _ranker_jobs.get_status()
+
+
 # ── The adapter table ────────────────────────────────────────────────────────
 # Order matters: it is the precedence order for the legacy busy_snapshot()
 # "first running worker wins" response, preserved byte-for-byte from the old
@@ -192,6 +211,13 @@ JOB_ADAPTERS: list[JobAdapter] = [
         "archive_uploading", _get_archive_org_status,
         "/api/archive_org/stop", "/sharing",
     ),
+    # --- TODO-306 Phase 2: wrapped CLI-only pipeline steps ------------------
+    # screen_route="/" (ScreenHome) -- the freshness card is these jobs' only UI.
+    JobAdapter("olof_fetching", _get_olof_fetch_status, "/api/olof/fetch/stop", "/"),
+    JobAdapter(
+        "bobserve_fetching", _get_bobserve_fetch_status, "/api/bobserve/fetch/stop", "/",
+    ),
+    JobAdapter("ranker_scanning", _get_ranker_scan_status, "/api/ranker/scan/stop", "/"),
 ]
 
 
@@ -220,6 +246,9 @@ _PROGRESS_FIELDS: dict[str, dict[str, str]] = {
     "tapematch_crawling": {"current": "runs_on_disk"},
     "pipeline_running": {"current": "folders_done", "total": "folders_total"},
     "archive_uploading": {"current": "files_done", "total": "files_total", "label": "current_file"},
+    "olof_fetching": {"current": "done", "total": "total", "label": "current"},
+    "bobserve_fetching": {"current": "done", "total": "total", "label": "current"},
+    "ranker_scanning": {"current": "done", "total": "total", "label": "current"},
 }
 
 

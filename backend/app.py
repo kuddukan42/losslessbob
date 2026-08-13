@@ -4803,6 +4803,164 @@ def create_app() -> Flask:
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
+    # ── Pipeline refresh Phase 2: wrapped CLI-only steps (TODO-306) ─────────
+    # Fetch routes are ungated (same rationale as /api/geocode/run — decision 2);
+    # the GUI Run button confirms once. Ranker scan/rerank are also ungated.
+
+    @app.route("/api/olof/fetch", methods=["POST"])
+    def olof_fetch_run() -> Response:
+        """Start an olof (DSN + chronicle) fetch job. Body: {corpus?, limit?,
+        refresh?, dry_run?}."""
+        import backend.olof_fetcher as _olof_fetcher
+
+        body = request.get_json(silent=True) or {}
+        corpus = body.get("corpus", "all")
+        if corpus not in ("dsn", "chronicle", "all"):
+            return jsonify({"error": "bad_request",
+                            "message": "corpus must be 'dsn', 'chronicle', or 'all'"}), 400
+        if not _olof_fetcher.try_begin(stage="queued", corpus=corpus):
+            return jsonify({"error": "already_running"}), 409
+        threading.Thread(
+            target=_olof_fetcher.run_fetch_claimed,
+            kwargs={
+                "corpus": corpus,
+                "limit": body.get("limit"),
+                "refresh": bool(body.get("refresh", False)),
+                "dry_run": bool(body.get("dry_run", False)),
+            },
+            daemon=True, name="olof-fetch",
+        ).start()
+        return jsonify({"status": "started"})
+
+    @app.route("/api/olof/fetch/status", methods=["GET"])
+    def olof_fetch_status() -> Response:
+        """Return the current olof-fetch job's progress snapshot."""
+        import backend.olof_fetcher as _olof_fetcher
+        return jsonify(_olof_fetcher.get_status())
+
+    @app.route("/api/olof/fetch/stop", methods=["POST"])
+    def olof_fetch_stop() -> Response:
+        """Request that the active olof-fetch job stop as soon as possible."""
+        import backend.olof_fetcher as _olof_fetcher
+        _olof_fetcher.stop()
+        return jsonify(_olof_fetcher.get_status())
+
+    @app.route("/api/bobserve/fetch", methods=["POST"])
+    def bobserve_fetch_run() -> Response:
+        """Start a bobserve.com setlist fetch job. Body: {start_year?, end_year?,
+        limit?, refresh?, dry_run?}."""
+        import backend.bobserve_fetcher as _bobserve_fetcher
+
+        body = request.get_json(silent=True) or {}
+        if not _bobserve_fetcher.try_begin(
+            stage="queued", start_year=body.get("start_year"), end_year=body.get("end_year"),
+        ):
+            return jsonify({"error": "already_running"}), 409
+        kwargs = {
+            "limit": body.get("limit"),
+            "refresh": bool(body.get("refresh", False)),
+            "dry_run": bool(body.get("dry_run", False)),
+        }
+        if body.get("start_year") is not None:
+            kwargs["start_year"] = body["start_year"]
+        if body.get("end_year") is not None:
+            kwargs["end_year"] = body["end_year"]
+        threading.Thread(
+            target=_bobserve_fetcher.run_fetch_claimed, kwargs=kwargs,
+            daemon=True, name="bobserve-fetch",
+        ).start()
+        return jsonify({"status": "started"})
+
+    @app.route("/api/bobserve/fetch/status", methods=["GET"])
+    def bobserve_fetch_status() -> Response:
+        """Return the current bobserve-fetch job's progress snapshot."""
+        import backend.bobserve_fetcher as _bobserve_fetcher
+        return jsonify(_bobserve_fetcher.get_status())
+
+    @app.route("/api/bobserve/fetch/stop", methods=["POST"])
+    def bobserve_fetch_stop() -> Response:
+        """Request that the active bobserve-fetch job stop as soon as possible."""
+        import backend.bobserve_fetcher as _bobserve_fetcher
+        _bobserve_fetcher.stop()
+        return jsonify(_bobserve_fetcher.get_status())
+
+    @app.route("/api/ranker/scan", methods=["POST"])
+    def ranker_scan_run() -> Response:
+        """Plan + start a ranker scan. Body: {mode?, lb?, workers?, notes?}.
+
+        mode defaults to 'backlog' (decision 1) — a full rescan needs an
+        explicit {mode:'all'}. Claims the job, then calls plan_scan() (fast,
+        synchronous) before starting the scan thread; an empty backlog
+        finishes the claim immediately and returns 'noop' rather than
+        starting a thread for nothing.
+        """
+        import backend.ranker_jobs as _ranker_jobs
+
+        body = request.get_json(silent=True) or {}
+        mode = body.get("mode", "backlog")
+        if mode not in ("backlog", "all"):
+            return jsonify({"error": "bad_request",
+                            "message": "mode must be 'backlog' or 'all'"}), 400
+        lbs = body.get("lb")
+        if not _ranker_jobs.try_begin(stage="queued", mode=mode):
+            return jsonify({"error": "already_running"}), 409
+        try:
+            plan = _ranker_jobs.plan_scan(mode=mode, lbs=lbs)
+        except Exception as exc:
+            _ranker_jobs.finish(stage="error")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+        if plan["planned"] == 0:
+            _ranker_jobs.finish(stage="done")
+            return jsonify({
+                "status": "noop", "scan_id": plan["scan_id"], "planned": 0,
+                "reused_scan": plan["reused_scan"], "config_changed": plan["config_changed"],
+            })
+        threading.Thread(
+            target=_ranker_jobs.run_scan_claimed,
+            kwargs={
+                "worklist": plan["worklist"], "scan_id": plan["scan_id"],
+                "workers": body.get("workers"),
+            },
+            daemon=True, name="ranker-scan",
+        ).start()
+        return jsonify({
+            "status": "started", "scan_id": plan["scan_id"], "planned": plan["planned"],
+            "reused_scan": plan["reused_scan"], "config_changed": plan["config_changed"],
+        })
+
+    @app.route("/api/ranker/scan/status", methods=["GET"])
+    def ranker_scan_status() -> Response:
+        """Return the current ranker-scan job's progress snapshot."""
+        import backend.ranker_jobs as _ranker_jobs
+        return jsonify(_ranker_jobs.get_status())
+
+    @app.route("/api/ranker/scan/stop", methods=["POST"])
+    def ranker_scan_stop() -> Response:
+        """Request that the active ranker-scan job stop as soon as possible."""
+        import backend.ranker_jobs as _ranker_jobs
+        _ranker_jobs.stop()
+        return jsonify(_ranker_jobs.get_status())
+
+    @app.route("/api/ranker/rerank", methods=["POST"])
+    def ranker_rerank_run() -> Response:
+        """Re-band/rank from stored metrics only. Body: {scan_id?}.
+
+        Synchronous, pure-DB (unlike scan, this needs no thread). 409s while
+        a scan is running so it doesn't race the scan's own trailing rerank.
+        """
+        import backend.ranker_jobs as _ranker_jobs
+
+        if _ranker_jobs.get_status().get("running"):
+            return jsonify({"error": "scan_running"}), 409
+        body = request.get_json(silent=True) or {}
+        try:
+            result = _ranker_jobs.run_rerank(scan_id=body.get("scan_id"))
+            return jsonify(result)
+        except ValueError as exc:
+            return jsonify({"error": "not_found", "message": str(exc)}), 404
+        except Exception as exc:
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     @app.route("/api/lb_master/<int:lb>", methods=["GET"])
     def lb_master_get(lb: int) -> Response:
         """Return a single lb_master row joined with entry metadata."""
@@ -5636,6 +5794,7 @@ def create_app() -> Flask:
 
         def _stream():
             from backend import activity as _activity
+            from backend import config_version as _config_version
 
             with _activity.track("derived_recompute", screen="/dbeditor") as _job:
                 for name, module_name, func_name in steps:
@@ -5647,14 +5806,25 @@ def create_app() -> Flask:
                     except (ImportError, AttributeError):
                         yield f"data: {json.dumps({'event': 'skipped', 'step': name})}\n\n"
                         continue
+                    started_at = time.strftime("%Y-%m-%d %H:%M:%S")
                     try:
                         result = func()
                         payload = {"event": "done", "step": name}
                         if isinstance(result, dict):
                             payload["stats"] = result
+                        database.record_step_run(
+                            name, status="ok", started_at=started_at,
+                            counters=result if isinstance(result, dict) else None,
+                            trigger_source="route",
+                        )
+                        _config_version.stamp_for_step(name)
                         yield f"data: {json.dumps(payload)}\n\n"
                     except Exception as exc:
                         _log.exception("derived/recompute: step %s failed", name)
+                        database.record_step_run(
+                            name, status="error", started_at=started_at,
+                            trigger_source="route",
+                        )
                         err = json.dumps(
                             {"event": "error", "step": name, "message": str(exc)}
                         )

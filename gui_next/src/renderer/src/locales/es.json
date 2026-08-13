@@ -90,7 +90,10 @@
         "sitedata_publish": "Publicando datos del sitio…",
         "sitedata_install": "Instalando los datos del sitio…",
         "derived_recompute": "Recalculando datos derivados…",
-        "file_integrity": "Comprobando la integridad del archivo…"
+        "file_integrity": "Comprobando la integridad del archivo…",
+        "olof_fetching": "Cargando páginas de Olof…",
+        "bobserve_fetching": "Cargando las listas de canciones de bobserve…",
+        "ranker_scanning": "Analizando la calidad del audio…"
       },
       "tray": {
         "title": "Actividad",
@@ -2183,7 +2186,20 @@
       "sitedata_publish": "Publicar datos del sitio",
       "preservation": "Comprobación de conservación",
       "archive_org": "Sincronizar con Archive.org"
-    }
+    },
+    "run": "Ejecutar",
+    "stop": "Detener",
+    "running": "En ejecución…",
+    "alreadyRunning": "Ya en funcionamiento",
+    "runFailed": "Error al ejecutar",
+    "confirmFetch": "¿Descargar ahora?",
+    "confirmFetchBody": "A un ritmo moderado (aprox. 2 s entre cada solicitud); esto puede tardar un rato.",
+    "confirmScanTitle": "¿Deseas realizar un análisis de la calidad del audio?",
+    "scanBacklog": "Pendientes de escaneo ({{count}})",
+    "scanAll": "Nuevo escaneo completo",
+    "scanAllWarning": "Vuelve a escanear todas las grabaciones de la colección —mucho más lento que un escaneo de tareas pendientes—.",
+    "scanNoBacklog": "No hay nada que revisar: la lista de tareas pendientes está vacía.",
+    "versionChanged": "La configuración ha cambiado desde la última ejecución"
   },
   "screenCoverage": {
     "title": "Progreso de la colección",

@@ -21,10 +21,12 @@ import os
 import sqlite3
 import tempfile
 
+import backend.config_version as config_version
 import backend.db as db
 from backend.refresh import (
     STEPS,
     RefreshStep,
+    _last_run_record,
     _parse_ts,
     _step_state,
     _topological_order,
@@ -301,3 +303,171 @@ def test_compute_plan_trigger_filter() -> None:
     # counts still reflect the full registry, not just the filtered steps.
     total_t1 = sum(1 for s in STEPS if s.trigger == "T1")
     assert len(plan["steps"]) == total_t1
+
+
+# ── TODO-306 Phase 2: run-record + version signals ─────────────────────
+
+
+def test_run_record_newer_than_watermark_wins(tmp_path) -> None:
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+    db.record_step_run(
+        "attribute_tapers", status="ok",
+        finished_at="2026-08-01 00:00:00", db_path=db_path,
+    )
+    conn = db.get_connection(db_path)
+    conn.execute(
+        "INSERT INTO taper_attributions"
+        "(lb_number, taper_normalised, confidence, evidence_json, computed_at) "
+        "VALUES (1, 'x', 'inferred', '[]', '2026-01-01 00:00:00')"
+    )
+    conn.commit()
+
+    plan = compute_plan(db_path=db_path)
+    step = next(s for s in plan["steps"] if s["step_id"] == "attribute_tapers")
+    assert step["last_run_source"] == "run_record"
+    assert step["last_run"].startswith("2026-08-01")
+
+
+def test_older_run_record_loses_to_watermark(tmp_path) -> None:
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+    db.record_step_run(
+        "attribute_tapers", status="ok",
+        finished_at="2026-01-01 00:00:00", db_path=db_path,
+    )
+    conn = db.get_connection(db_path)
+    conn.execute(
+        "INSERT INTO taper_attributions"
+        "(lb_number, taper_normalised, confidence, evidence_json, computed_at) "
+        "VALUES (1, 'x', 'inferred', '[]', '2026-08-01 00:00:00')"
+    )
+    conn.commit()
+
+    plan = compute_plan(db_path=db_path)
+    step = next(s for s in plan["steps"] if s["step_id"] == "attribute_tapers")
+    assert step["last_run_source"] == "watermark"
+    assert step["last_run"].startswith("2026-08-01")
+
+
+def test_ranker_rerank_last_run_purely_from_record(tmp_path) -> None:
+    """ranker_rerank has no last_run_sql -- its last_run comes only from the run-record."""
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+    db.record_step_run(
+        "ranker_rerank", status="ok",
+        finished_at="2026-08-01 00:00:00", db_path=db_path,
+    )
+    plan = compute_plan(db_path=db_path)
+    step = next(s for s in plan["steps"] if s["step_id"] == "ranker_rerank")
+    assert step["last_run_source"] == "run_record"
+    assert step["last_run"].startswith("2026-08-01")
+
+
+def test_last_run_record_helper(tmp_path) -> None:
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+    conn = db.get_connection(db_path)
+    last_success, last_status = _last_run_record(conn, "olof_fetch")
+    assert last_success is None
+    assert last_status is None
+
+    db.record_step_run("olof_fetch", status="ok", finished_at="2026-08-01 00:00:00",
+                        db_path=db_path)
+    last_success, last_status = _last_run_record(conn, "olof_fetch")
+    assert last_success == _dt.datetime(2026, 8, 1)
+    assert last_status == "ok"
+
+
+def test_newest_error_run_marks_stale_until_later_success(tmp_path) -> None:
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+    db.record_step_run("olof_fetch", status="error", finished_at="2026-08-01 00:00:00",
+                        db_path=db_path)
+
+    plan = compute_plan(db_path=db_path)
+    step = next(s for s in plan["steps"] if s["step_id"] == "olof_fetch")
+    assert step["state"] == "stale"
+    assert "last run failed" in step["reason"]
+
+    db.record_step_run("olof_fetch", status="ok", finished_at="2026-08-02 00:00:00",
+                        db_path=db_path)
+    plan = compute_plan(db_path=db_path)
+    step = next(s for s in plan["steps"] if s["step_id"] == "olof_fetch")
+    assert step["state"] != "stale" or "last run failed" not in step["reason"]
+
+
+def test_step_state_version_truth_table() -> None:
+    step = _step(backlog_sql=None)
+    # 'changed' -> stale even at backlog 0.
+    state, reason = _step_state(
+        step, last_run=None, upstream_runs={}, backlog=0, version_state="changed",
+    )
+    assert state == "stale"
+    assert "config changed" in reason
+
+    # 'unstamped' never downgrades a fresh state, just annotates the reason.
+    state, reason = _step_state(
+        step, last_run=None, upstream_runs={}, backlog=0, version_state="unstamped",
+    )
+    assert state == "fresh"
+    assert "unstamped" in reason
+
+    # 'ok' and 'n/a' leave state untouched.
+    for vs in ("ok", "n/a"):
+        state, reason = _step_state(
+            step, last_run=None, upstream_runs={}, backlog=0, version_state=vs,
+        )
+        assert state == "fresh"
+        assert "unstamped" not in reason
+
+
+def test_registry_version_key_matches_step_version_sources() -> None:
+    """Every step with a version_key must be a STEP_VERSION_SOURCES key, and
+    vice versa -- the two must stay in sync or version_state()/stamp_for_step()
+    silently no-op for a step that thinks it has a version signal."""
+    registry_keys = {step.step_id: step.version_key for step in STEPS if step.version_key}
+    for step_id, key in registry_keys.items():
+        assert step_id in config_version.STEP_VERSION_SOURCES, (
+            f"{step_id} declares version_key={key!r} but has no STEP_VERSION_SOURCES entry"
+        )
+        assert config_version.STEP_VERSION_SOURCES[step_id][0] == key
+    for step_id, (key, _fn) in config_version.STEP_VERSION_SOURCES.items():
+        assert registry_keys.get(step_id) == key, (
+            f"STEP_VERSION_SOURCES[{step_id!r}] has no matching registry version_key"
+        )
+
+
+def test_route_how_to_run_resolves_in_url_map() -> None:
+    """Every how_to_run starting POST/GET must resolve in the Flask app's url_map
+    (catches a typo'd route string on the card the day it is written)."""
+    from backend.app import create_app
+
+    app = create_app()
+    rules = {(rule.rule, method) for rule in app.url_map.iter_rules() for method in rule.methods}
+
+    for step in STEPS:
+        for token in step.how_to_run.split(" then "):
+            token = token.strip()
+            if not (token.startswith("POST ") or token.startswith("GET ")):
+                continue
+            method, path = token.split(" ", 1)
+            if "<" in path:
+                # Parameterized routes (e.g. '/api/flat_file/apply/<id>') are
+                # documentation shorthand, not Flask's literal converter
+                # syntax (e.g. '<int:release_id>') -- only static how_to_run
+                # paths are checked exactly.
+                continue
+            assert (path, method) in rules, (
+                f"{step.step_id}.how_to_run={token!r} does not resolve in url_map"
+            )
+
+
+def test_record_step_run_then_init_db_again_no_error(tmp_path) -> None:
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+    db.record_step_run("olof_fetch", status="ok", db_path=db_path)
+    db.init_db(db_path)  # idempotent re-init must not error or duplicate rows
+    conn = db.get_connection(db_path)
+    count = conn.execute("SELECT COUNT(*) FROM refresh_step_runs").fetchone()[0]
+    assert count == 1

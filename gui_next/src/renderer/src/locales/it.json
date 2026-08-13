@@ -90,7 +90,10 @@
         "sitedata_publish": "Pubblicazione dei dati del sito…",
         "sitedata_install": "Installazione dei dati del sito…",
         "derived_recompute": "Ricalcolo dei dati derivati…",
-        "file_integrity": "Verifica dell'integrità dei file…"
+        "file_integrity": "Verifica dell'integrità dei file…",
+        "olof_fetching": "Caricamento delle pagine di Olof in corso…",
+        "bobserve_fetching": "Recupero delle scalette di bobserve…",
+        "ranker_scanning": "Analisi della qualità audio…"
       },
       "tray": {
         "title": "Attività",
@@ -2183,7 +2186,20 @@
       "sitedata_publish": "Pubblica i dati del sito",
       "preservation": "Controllo di conservazione",
       "archive_org": "Sincronizza Archive.org"
-    }
+    },
+    "run": "Esegui",
+    "stop": "Stop",
+    "running": "In esecuzione…",
+    "alreadyRunning": "Già in esecuzione",
+    "runFailed": "Esecuzione non riuscita",
+    "confirmFetch": "Scaricare ora?",
+    "confirmFetchBody": "Con un ritmo moderato (circa 2 secondi tra una richiesta e l'altra) — l'operazione potrebbe richiedere un po' di tempo.",
+    "confirmScanTitle": "Eseguire la scansione della qualità audio?",
+    "scanBacklog": "Elaborazione degli elementi in sospeso ({{count}})",
+    "scanAll": "Nuova scansione completa",
+    "scanAllWarning": "Esegue una nuova scansione di ogni registrazione presente nella raccolta — operazione molto più lenta rispetto a una scansione degli elementi in sospeso.",
+    "scanNoBacklog": "Niente da scansionare — l'elenco delle attività in sospeso è vuoto.",
+    "versionChanged": "Configurazione modificata dall'ultima esecuzione"
   },
   "screenCoverage": {
     "title": "Stato di avanzamento della raccolta",

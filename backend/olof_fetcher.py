@@ -12,7 +12,14 @@ Two decoupled corpora (see instructions/FABLE_OLOF_FILES.md §1-§3):
                 re-parsing its links.
 
 Public API:
-    run_fetch(corpus, limit, refresh, dry_run, db_path, pages_dir) — the crawl
+    run_fetch(corpus, limit, refresh, dry_run, db_path, pages_dir) — the crawl,
+        claims the job itself (raises if already running). Also records a
+        refresh_step_runs row (trigger_source='cli') and stamps nothing (this
+        step has no version signal).
+    get_status(), stop(), try_begin() — job-progress surface for routes
+        (TODO-306 Phase 2).
+    run_fetch_claimed(...) — thread target for the route; the caller has
+        already claimed the job via try_begin().
 
 CLI:
     .venv/bin/python3 -m backend.olof_fetcher [--corpus dsn|chronicle|all]
@@ -23,6 +30,12 @@ Schema: olof_pages (see db.py). Upsert on filename.
 Cloudflare fronts bobserve.com and 403s non-browser User-Agents (verified) —
 _HEADERS below is required, not optional. The site updates only a few times
 a year so this fetcher is meant to be run manually, never scheduled.
+
+Stop support (TODO-306 Phase 2): every `time.sleep` in the discovery and
+fetch loops is replaced with `_JOB.sleep(...)`, so `stop()` is honored within
+one slice interval almost everywhere. The one exception is an in-flight
+`requests.get(timeout=30)` inside `_fetch()` — not interruptible, so worst-case
+stop latency is ~30s while a request is outstanding.
 """
 from __future__ import annotations
 
@@ -39,7 +52,8 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-from backend.db import get_connection, init_db
+from backend.db import get_connection, init_db, record_step_run
+from backend.job_progress import JobState, JobStopped
 from backend.paths import DATA_DIR
 
 _log = logging.getLogger(__name__)
@@ -56,6 +70,23 @@ _BROWSER_UA = (
 _HEADERS = {"User-Agent": _BROWSER_UA}
 _REQUEST_DELAY = 2.0   # seconds between requests (spec §7 risk: Cloudflare)
 _PROGRESS_EVERY = 20   # log an INFO progress line every N fetched pages
+
+_JOB = JobState("olof-fetch")
+
+
+def get_status() -> dict:
+    """Return the current fetch job's progress snapshot."""
+    return _JOB.snapshot()
+
+
+def stop() -> None:
+    """Request that the active fetch job stop as soon as possible."""
+    _JOB.stop()
+
+
+def try_begin(**fields) -> bool:
+    """Atomically claim the fetch job. See JobState.try_begin."""
+    return _JOB.try_begin(**fields)
 
 _DSN_HREF_RE = re.compile(r"^DSN\d+.*\.htm$", re.IGNORECASE)
 _YEAR4_TOC_RE = re.compile(r"^(?P<y>(?:19|20)\d{2})\s?0\.htm$", re.IGNORECASE)
@@ -99,7 +130,7 @@ def _fetch(url: str, retries: int = 3) -> requests.Response | None:
             resp = requests.get(url, headers=_HEADERS, timeout=30)
             if resp.status_code == 429:
                 _log.warning("olof_fetcher: 429 on %s, sleeping 30s", url)
-                time.sleep(30)
+                _JOB.sleep(30, slice_s=0.5)
                 continue
             if resp.status_code == 404:
                 _log.warning("olof_fetcher: 404 for %s", url)
@@ -110,7 +141,7 @@ def _fetch(url: str, retries: int = 3) -> requests.Response | None:
             _log.warning("olof_fetcher: fetch attempt %d/%d failed %s: %s",
                          attempt + 1, retries, url, exc)
             if attempt < retries - 1:
-                time.sleep(3 * (attempt + 1))
+                _JOB.sleep(3 * (attempt + 1), slice_s=0.5)
     return None
 
 
@@ -140,7 +171,7 @@ def _load(filename: str, url: str, pages_dir: Path, refresh: bool, persist: bool
     if persist:
         pages_dir.mkdir(parents=True, exist_ok=True)
         path.write_bytes(content)
-    time.sleep(_REQUEST_DELAY)
+    _JOB.sleep(_REQUEST_DELAY, slice_s=0.25)
     return content
 
 
@@ -376,6 +407,130 @@ def _upsert_page(conn, task: PageTask, content: bytes, fetched_at: str | None) -
 # Orchestration
 # ---------------------------------------------------------------------------
 
+def _run_fetch_inner(
+    corpus: str,
+    limit: int | None,
+    refresh: bool,
+    dry_run: bool,
+    db_path: str | None,
+    pages_dir: Path | None,
+    trigger_source: str,
+) -> dict:
+    """Core fetch body — progress-aware, assumes the job is already claimed.
+
+    Args:
+        (same as run_fetch)
+        trigger_source: 'route' | 'cli', recorded on the refresh_step_runs row.
+
+    Returns:
+        Summary dict, plus ``{"stopped": True}`` if a stop was requested
+        mid-run (in which case the summary reflects partial progress).
+    """
+    if corpus not in ("dsn", "chronicle", "all"):
+        raise ValueError(f"corpus must be 'dsn', 'chronicle', or 'all', got {corpus!r}")
+
+    started_at = time.strftime("%Y-%m-%d %H:%M:%S")
+    resolved_pages_dir = pages_dir or PAGES_DIR
+    summary: dict = {}
+    status = "ok"
+    try:
+        _JOB.update(stage="discovering")
+        tasks = _discover(corpus, resolved_pages_dir, refresh, persist=not dry_run)
+
+        by_corpus: dict[str, int] = {}
+        for t in tasks:
+            by_corpus[t.corpus] = by_corpus.get(t.corpus, 0) + 1
+
+        if dry_run:
+            for t in tasks:
+                _log.debug("olof_fetcher: [dry-run] would fetch %s (%s)", t.filename, t.corpus)
+            _log.info("olof_fetcher: dry-run — %d pages planned (%s)", len(tasks),
+                       ", ".join(f"{k}={v}" for k, v in sorted(by_corpus.items())))
+            summary = {"planned": len(tasks), "fetched": 0, "skipped": 0, "errors": 0,
+                       "by_corpus": by_corpus}
+            return summary
+
+        if limit is not None:
+            tasks = tasks[:limit]
+
+        init_db(db_path)
+        conn = get_connection(db_path)
+
+        _JOB.update(stage="fetching", total=len(tasks), done=0, errors=0, skipped=0)
+        fetched = skipped = errors = 0
+        for task in tasks:
+            _JOB.check_stop()
+            _JOB.update(current=task.filename)
+            path = resolved_pages_dir / task.filename
+            already_recorded = conn.execute(
+                "SELECT 1 FROM olof_pages WHERE filename = ?", (task.filename,)
+            ).fetchone() is not None
+
+            if path.exists() and not refresh:
+                if already_recorded:
+                    skipped += 1
+                    _JOB.bump("skipped")
+                    _log.debug("olof_fetcher: skip (already fetched) %s", task.filename)
+                    _JOB.update(done=fetched + skipped)
+                    continue
+                content = path.read_bytes()
+                _upsert_page(conn, task, content, fetched_at=None)
+                skipped += 1
+                _JOB.bump("skipped")
+                _log.debug("olof_fetcher: backfilled DB row for existing file %s", task.filename)
+                _JOB.update(done=fetched + skipped)
+                continue
+
+            resp = _fetch(task.url)
+            if resp is None:
+                errors += 1
+                _JOB.bump("errors")
+                _log.error("olof_fetcher: failed to fetch %s", task.url)
+                _JOB.update(done=fetched + skipped)
+                continue
+            content = resp.content
+            resolved_pages_dir.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(content)
+            _upsert_page(conn, task, content, fetched_at=time.strftime("%Y-%m-%dT%H:%M:%S"))
+            fetched += 1
+            _JOB.update(done=fetched + skipped)
+            if fetched % _PROGRESS_EVERY == 0:
+                _log.info("olof_fetcher: %d/%d fetched (%d skipped, %d errors)",
+                           fetched, len(tasks), skipped, errors)
+            _JOB.sleep(_REQUEST_DELAY, slice_s=0.25)
+
+        _log.info("olof_fetcher: done — %d fetched, %d skipped, %d errors, %d planned (%s)",
+                   fetched, skipped, errors, len(tasks),
+                   ", ".join(f"{k}={v}" for k, v in sorted(by_corpus.items())))
+        summary = {"planned": len(tasks), "fetched": fetched, "skipped": skipped,
+                   "errors": errors, "by_corpus": by_corpus}
+        return summary
+    except JobStopped:
+        status = "stopped"
+        # `fetched`/`skipped`/`errors`/`by_corpus`/`tasks` are function-scoped
+        # in Python, so they're still visible here even though the exception
+        # unwound out of the try block that assigned them.
+        summary = {
+            "planned": len(locals().get("tasks", [])),
+            "fetched": locals().get("fetched", 0),
+            "skipped": locals().get("skipped", 0),
+            "errors": locals().get("errors", 0),
+            "by_corpus": locals().get("by_corpus", {}),
+            "stopped": True,
+        }
+        _log.info("olof_fetcher: stopped by request")
+        return summary
+    except Exception:
+        status = "error"
+        raise
+    finally:
+        if not dry_run:
+            record_step_run(
+                "olof_fetch", status=status, started_at=started_at,
+                counters=summary or None, trigger_source=trigger_source, db_path=db_path,
+            )
+
+
 def run_fetch(
     corpus: str = "all",
     limit: int | None = None,
@@ -391,6 +546,10 @@ def run_fetch(
     already on disk unless refresh=True. Sequential, >=2s between requests
     (Cloudflare — spec §7), resume-safe.
 
+    Claims the job itself (see JobState.try_begin) — raises RuntimeError if
+    a fetch is already running. Use ``try_begin()`` + ``run_fetch_claimed()``
+    from a route to avoid a check-then-set race across the HTTP boundary.
+
     Args:
         corpus: 'dsn' | 'chronicle' | 'all'.
         limit: Cap the number of pages actually mirrored (testing). Applied
@@ -404,70 +563,41 @@ def run_fetch(
 
     Returns:
         Summary dict: {"planned": N, "fetched": N, "skipped": N, "errors": N,
-        "by_corpus": {"dsn": N, "chronicle": N}}.
+        "by_corpus": {"dsn": N, "chronicle": N}}, plus "stopped": True if
+        stop() was called mid-run.
+
+    Raises:
+        RuntimeError: a fetch job is already running.
     """
-    if corpus not in ("dsn", "chronicle", "all"):
-        raise ValueError(f"corpus must be 'dsn', 'chronicle', or 'all', got {corpus!r}")
+    if not _JOB.try_begin(stage="queued", corpus=corpus):
+        raise RuntimeError("olof fetch already running")
+    try:
+        return _run_fetch_inner(corpus, limit, refresh, dry_run, db_path, pages_dir,
+                                 trigger_source="cli")
+    finally:
+        _JOB.finish(stage="done")
 
-    resolved_pages_dir = pages_dir or PAGES_DIR
-    tasks = _discover(corpus, resolved_pages_dir, refresh, persist=not dry_run)
 
-    by_corpus: dict[str, int] = {}
-    for t in tasks:
-        by_corpus[t.corpus] = by_corpus.get(t.corpus, 0) + 1
+def run_fetch_claimed(
+    corpus: str = "all",
+    limit: int | None = None,
+    refresh: bool = False,
+    dry_run: bool = False,
+    db_path: str | None = None,
+    pages_dir: Path | None = None,
+) -> dict:
+    """Thread target for POST /api/olof/fetch — job already claimed by the route.
 
-    if dry_run:
-        for t in tasks:
-            _log.debug("olof_fetcher: [dry-run] would fetch %s (%s)", t.filename, t.corpus)
-        _log.info("olof_fetcher: dry-run — %d pages planned (%s)", len(tasks),
-                   ", ".join(f"{k}={v}" for k, v in sorted(by_corpus.items())))
-        return {"planned": len(tasks), "fetched": 0, "skipped": 0, "errors": 0,
-                "by_corpus": by_corpus}
+    Args: same as run_fetch.
 
-    if limit is not None:
-        tasks = tasks[:limit]
-
-    init_db(db_path)
-    conn = get_connection(db_path)
-
-    fetched = skipped = errors = 0
-    for task in tasks:
-        path = resolved_pages_dir / task.filename
-        already_recorded = conn.execute(
-            "SELECT 1 FROM olof_pages WHERE filename = ?", (task.filename,)
-        ).fetchone() is not None
-
-        if path.exists() and not refresh:
-            if already_recorded:
-                skipped += 1
-                _log.debug("olof_fetcher: skip (already fetched) %s", task.filename)
-                continue
-            content = path.read_bytes()
-            _upsert_page(conn, task, content, fetched_at=None)
-            skipped += 1
-            _log.debug("olof_fetcher: backfilled DB row for existing file %s", task.filename)
-            continue
-
-        resp = _fetch(task.url)
-        if resp is None:
-            errors += 1
-            _log.error("olof_fetcher: failed to fetch %s", task.url)
-            continue
-        content = resp.content
-        resolved_pages_dir.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(content)
-        _upsert_page(conn, task, content, fetched_at=time.strftime("%Y-%m-%dT%H:%M:%S"))
-        fetched += 1
-        if fetched % _PROGRESS_EVERY == 0:
-            _log.info("olof_fetcher: %d/%d fetched (%d skipped, %d errors)",
-                       fetched, len(tasks), skipped, errors)
-        time.sleep(_REQUEST_DELAY)
-
-    _log.info("olof_fetcher: done — %d fetched, %d skipped, %d errors, %d planned (%s)",
-               fetched, skipped, errors, len(tasks),
-               ", ".join(f"{k}={v}" for k, v in sorted(by_corpus.items())))
-    return {"planned": len(tasks), "fetched": fetched, "skipped": skipped,
-            "errors": errors, "by_corpus": by_corpus}
+    Returns:
+        Same summary shape as run_fetch.
+    """
+    try:
+        return _run_fetch_inner(corpus, limit, refresh, dry_run, db_path, pages_dir,
+                                 trigger_source="route")
+    finally:
+        _JOB.finish(stage="done")
 
 
 # ---------------------------------------------------------------------------
