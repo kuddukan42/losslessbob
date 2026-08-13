@@ -43,6 +43,7 @@ from backend import db as database
 from backend import dossier as _dossier
 from backend import gap_analysis as _gap_analysis
 from backend import lb_coverage as _lb_coverage
+from backend import refresh as _refresh
 from backend import setlist_fingerprint as _setlist_fingerprint
 from backend import setlistfm as setlistfm_mod
 from backend import song_index as _song_index
@@ -4790,6 +4791,15 @@ def create_app() -> Flask:
         try:
             conn = database.get_connection()
             return jsonify(_lb_coverage.get_coverage(conn))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/refresh/status", methods=["GET"])
+    def refresh_status_endpoint() -> Response:
+        """Return the read-only pipeline freshness snapshot. Optional ?trigger=T1 filter."""
+        try:
+            trigger = request.args.get("trigger")
+            return jsonify(_refresh.compute_plan(trigger=trigger))
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 

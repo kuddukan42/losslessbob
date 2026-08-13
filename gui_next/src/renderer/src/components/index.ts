@@ -31,3 +31,5 @@ export type { EvidenceListProps, EvidenceRecord } from './EvidenceList'
 
 export { OnboardingWizard } from './OnboardingWizard'
 export type { OnboardingWizardProps, OnboardingStatus } from './OnboardingWizard'
+
+export { DataFreshnessCard } from './DataFreshnessCard'

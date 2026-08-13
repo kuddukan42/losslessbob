@@ -2112,6 +2112,60 @@
       "error": "Update check failed: {{error}}"
     }
   },
+  "refresh": {
+    "title": "Data freshness",
+    "subtitle": "What's stale in the pipeline right now",
+    "allUpToDate": "Everything up to date",
+    "nOutOfDate_one": "{{count}} step out of date",
+    "nOutOfDate_other": "{{count}} steps out of date",
+    "publishLag": "Published master is {{days}} days and {{changes}} LB status changes behind local.",
+    "goTo": "Go to screen",
+    "backlog_one": "{{count}} pending",
+    "backlog_other": "{{count}} pending",
+    "unknownFootnote_one": "{{count}} step has no freshness signal",
+    "unknownFootnote_other": "{{count}} steps have no freshness signal",
+    "state": {
+      "fresh": "Fresh",
+      "stale": "Stale",
+      "blocked": "Blocked",
+      "unknown": "Unknown"
+    },
+    "triggers": {
+      "T1": "New LB data",
+      "T2": "New local folders",
+      "T3": "Upstream drift",
+      "T4": "Publish"
+    },
+    "steps": {
+      "flat_file_apply": "Apply flat-file update",
+      "db_import": "Import master DB",
+      "scrape_entries": "Scrape entries",
+      "lb_master_reconcile": "Reconcile LB master",
+      "olof_fetch": "Fetch Olof pages",
+      "olof_parse": "Parse Olof pages",
+      "bobserve_fetch": "Fetch bobserve setlists",
+      "bobserve_parse": "Parse bobserve setlists",
+      "parse_lineage": "Parse lineage notes",
+      "attribute_tapers": "Attribute tapers",
+      "compute_show_picks": "Compute show picks",
+      "song_index": "Build song index",
+      "setlist_fingerprint": "Fingerprint setlists",
+      "pipeline_run": "Run ingest pipeline",
+      "tapematch_sync": "Sync TapeMatch",
+      "ranker_scan": "Audio quality scan",
+      "ranker_rerank": "Re-rank audio quality",
+      "geocode": "Geocode venues",
+      "master_publish": "Publish master",
+      "xref_ingest": "Ingest cross-references",
+      "attachments_reconcile": "Reconcile attachments",
+      "mirror_crawl": "Crawl mirror",
+      "wtrf_crawl": "Crawl WTRF",
+      "bootleg_scrape": "Scrape bootleg catalog",
+      "sitedata_publish": "Publish sitedata",
+      "preservation": "Preservation check",
+      "archive_org": "Sync Archive.org"
+    }
+  },
   "savedViews": {
     "title": "Saved Views",
     "save": "Save view",

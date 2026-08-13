@@ -5,6 +5,7 @@ import { Icon } from '../components/Icon'
 import { Button, Card, Stat, Pill, IconButton } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { OnboardingWizard, type OnboardingStatus } from '../components/OnboardingWizard'
+import { DataFreshnessCard } from '../components/DataFreshnessCard'
 
 const BASE = window.api.flaskBase
 
@@ -400,6 +401,9 @@ export function ScreenHome(): React.JSX.Element {
           </div>
         </Card>
       </div>
+
+      {/* ── Data freshness (Pipeline Refresh Phase 1 §2.4) ──────────────────── */}
+      <DataFreshnessCard />
 
       {/* ── Bottom row ─────────────────────────────────────────────────────── */}
       <div className="lbb-home-grid-bottom">
