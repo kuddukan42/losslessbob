@@ -101,10 +101,12 @@ losslessbob/
 │   ├── bootleg_scraper.py    # Bootleg-CD catalog (LBBCD index) scraper
 │   ├── bobdylan_scraper.py   # bobdylan.com official setlist scraper (bobdylan_shows/bobdylan_setlist)
 │   ├── setlistfm.py          # setlist.fm API integration (setlistfm_shows/setlistfm_setlist)
-│   ├── olof_fetcher.py       # Olof Björner (bobserve.com) page mirror → data/olof/pages/ (TODO-162 P1)
+│   ├── job_progress.py       # TODO-306 P2: JobState/JobStopped — shared thread-safe progress+stop+atomic-claim primitive for background pipeline jobs
+│   ├── config_version.py     # TODO-306 P2: config-only version signals — hashes _KNOWN_TAPER_ALIASES + concert_ranker/config.py constants into meta, closing the Phase 1 §1c gap
+│   ├── olof_fetcher.py       # Olof Björner (bobserve.com) page mirror → data/olof/pages/ (TODO-162 P1); TODO-306 P2: JobState-backed run_fetch/run_fetch_claimed, POST /api/olof/fetch
 │   ├── olof_parser.py        # DSN event+song parser: olof_pages → olof_events + olof_songs (TODO-162 P2–P3)
 │   ├── olof_chronicle_parser.py  # Yearly Chronicles parser: calendar + new-tapes (2022+ appendix superseded, see below) (TODO-162 P4)
-│   ├── bobserve_fetcher.py   # bobserve.com setlist page mirror (2022+, supersedes chronicle appendix) → data/olof/bobserve_pages/ (TODO-228)
+│   ├── bobserve_fetcher.py   # bobserve.com setlist page mirror (2022+, supersedes chronicle appendix) → data/olof/bobserve_pages/ (TODO-228); TODO-306 P2: JobState-backed run_fetch/run_fetch_claimed, POST /api/bobserve/fetch
 │   ├── bobserve_parser.py    # bobserve setlist parser: olof_pages(corpus=bobserve) → olof_events + olof_songs, source='bobserve' (TODO-228)
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-284: lbdir-based collection integrity scan engine
@@ -118,7 +120,8 @@ losslessbob/
 │   ├── gap_analysis.py       # Gaps view (TODO-256): live coverage classifier, no derived table — olof_events vs entries
 │   ├── timeline.py           # Timeline navigator (TODO-268): live Decade→Tour→Night grade rollup, no derived table — olof_events vs entries, GRADE_RANK best-grade
 │   ├── lb_coverage.py        # Coverage award (`design_handoff_lb_coverage_award`): read-only snapshot/coverage/stats rollup for GET /api/lb/coverage; alias-folded held test shared with db.get_missing_from_collection (BUG-321)
-│   ├── refresh.py            # Freshness planner (`instructions/PIPELINE_REFRESH_PHASE1.md`): 27-step registry + DAG, backlog/watermark signals read from existing computed_at/parsed_at/imported_at columns, `_parse_ts()` cross-format normalizer, publish-lag (D7); read-only, powers GET /api/refresh/status
+│   ├── refresh.py            # Freshness planner (`instructions/PIPELINE_REFRESH_PHASE1.md` + `PHASE2.md`): 27-step registry + DAG, backlog/watermark signals read from existing computed_at/parsed_at/imported_at columns, `_parse_ts()` cross-format normalizer, publish-lag (D7); powers GET /api/refresh/status. TODO-306 P2: `_last_run_record()` merges `refresh_step_runs` into `last_run`/`last_run_source`, `version` block (`config_version.version_state()`) takes precedence over backlog in `_step_state()`, a newest `status='error'` run marks a step stale
+│   ├── ranker_jobs.py        # TODO-306 P2: backend-side concert_ranker wrapper — plan_scan/run_scan_claimed/run_rerank, JobState-backed, POST /api/ranker/scan + /api/ranker/rerank; reuses concert_ranker.cli.collection_worklist/rerank (promoted from private names)
 │   ├── dossier.py            # Show dossier (TODO-257/260): build_dossier() assembly + filter_dossier_sections/render_bbcode presentation layer; _render_locator_svg() server-side Mercator map
 │   ├── setlist_fingerprint.py # Setlist fingerprinting: score entries.setlist vs olof_songs, curator suggestion queue (TODO-225)
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
@@ -1052,6 +1055,22 @@ One row per site-crawler run started via POST /api/crawler/start.
 | status | TEXT | `'running'`, `'done'`, `'stopped'`, `'error'` |
 | notes | TEXT | Optional freeform notes |
 
+### `refresh_step_runs` — Pipeline step run log (USER table, TODO-306 P2)
+One row per completed run of a wrapped `refresh.STEPS` step (`olof_fetch`, `bobserve_fetch`,
+`ranker_scan`, `ranker_rerank`, plus the four `/api/derived/recompute` steps). One insert at
+completion, not a start/finish pair — "currently running" is covered by `activity.snapshot()`;
+avoids orphan `running` rows after a crash. Written via `db.record_step_run()`.
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| step_id | TEXT NOT NULL | `refresh.STEPS` step_id |
+| started_at | TIMESTAMP NOT NULL | `'YYYY-MM-DD HH:MM:SS'` naive local |
+| finished_at | TIMESTAMP | Same format |
+| status | TEXT NOT NULL | `'running'`/`'ok'`/`'noop'`/`'stopped'`/`'error'` (only completed rows are ever written, so `'running'` never actually appears) |
+| trigger_source | TEXT | `'route'` / `'cli'` / `'cron'` |
+| counters_json | TEXT | Worker summary dict, verbatim JSON |
+| notes | TEXT | Optional free-text note (e.g. a version-change reason) |
+
 ### `site_inventory` — Per-URL crawl state (MASTER table)
 One row per unique URL discovered or fetched by the site crawler.
 | Column | Type | Notes |
@@ -1459,7 +1478,14 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/api/lb/coverage` | `backend.lb_coverage.get_coverage()` — read-only award/progress payload for `/about/coverage`: `snapshot` (LB master label/version/published_at, last import, entry count), `coverage` (`entries_total`/`held`/`missing`, `coverage_pct`, `complete`, per-decade `total`/`held`, `recordings`, `families`, deterministic sorted-`recording_families` `ledger_sha256`, `signed_by`) and `stats` (`first_entry_filed_at`, `days_active`). "Held" folds `lb_alias` twins in either direction and the denominator excludes only `lb_status='nonexistent'`, so the figure agrees with the Collection screen's "Not in collection" list (BUG-321). Every table is feature-detected — a fresh DB returns a zeroed payload, never a 500. |
-| GET | `/api/refresh/status` | `backend.refresh.compute_plan()` — read-only pipeline-freshness snapshot (Phase 1 of `instructions/PIPELINE_REFRESH_PHASE1.md`). Returns `steps[]` (`step_id`, `trigger` T1–T4, `kind`, `state` `fresh`/`stale`/`blocked`/`unknown`, `reason`, `last_run`, `age_days`, `backlog`, `blocked_by`, `upstream`, `how_to_run`, `cost`, `human_gate`), `stale_count`/`blocked_count`/`unknown_count`, `by_trigger`, and `publish_lag` (the D7 fix: `days_since` + `lb_status_changes_since` from `lb_status_history` + `entries_scraped_since`). Optional `?trigger=T1` filter narrows `steps` and all counts. State prefers a **backlog** count where one is computable and falls back to an upstream **watermark** comparison only when no backlog signal exists, so `backlog=0` is never overridden by a newer upstream stamp. All timestamps are normalized through `_parse_ts()` before comparison (`olof_pages` writes ISO-`T`, everything else space-separated; naive string ordering inverts within a day) and no timestamp is ever compared in SQL across tables. Read-only, no curator gate, no writes; a missing table degrades that step to `unknown` rather than raising. |
+| GET | `/api/refresh/status` | `backend.refresh.compute_plan()` — pipeline-freshness snapshot (`instructions/PIPELINE_REFRESH_PHASE1.md` + `PHASE2.md`). Returns `steps[]` (`step_id`, `trigger` T1–T4, `kind`, `state` `fresh`/`stale`/`blocked`/`unknown`, `reason`, `last_run`, `last_run_source` `run_record`/`watermark`/`None`, `last_run_status`, `age_days`, `backlog`, `blocked_by`, `upstream`, `how_to_run`, `cost`, `human_gate`, `version` `{key, state, expected, stored}`), `stale_count`/`blocked_count`/`unknown_count`, `by_trigger`, and `publish_lag` (the D7 fix: `days_since` + `lb_status_changes_since` from `lb_status_history` + `entries_scraped_since`). Optional `?trigger=T1` filter narrows `steps` and all counts. State precedence (TODO-306 P2): `version.state=='changed'` → stale (even at backlog 0) → **backlog** count where computable → newest `refresh_step_runs` row `status='error'` with no later success → stale → upstream blocked/stale → **watermark** comparison (only when no backlog signal exists, so `backlog=0` is never overridden) → `unknown`/`fresh`; `version.state=='unstamped'` never downgrades state, only annotates `reason`. `last_run` is `max(watermark, newest successful refresh_step_runs row)`. All timestamps are normalized through `_parse_ts()` before comparison and no timestamp is ever compared in SQL across tables. GET is read-only, no curator gate; a missing table degrades that step to `unknown` rather than raising. |
+| POST | `/api/olof/fetch` | Body `{corpus?, limit?, refresh?, dry_run?}`. TODO-306 P2: claims `backend.olof_fetcher`'s `JobState`, runs `run_fetch_claimed` in a background thread; `{"status":"started"}` / 409 if already running / 400 bad corpus. Ungated (same rationale as `/api/geocode/run`). |
+| GET/POST | `/api/olof/fetch/status`, `/api/olof/fetch/stop` | Job progress snapshot / cooperative stop request. |
+| POST | `/api/bobserve/fetch` | Body `{start_year?, end_year?, limit?, refresh?, dry_run?}`. Same shape/pattern as `/api/olof/fetch`. |
+| GET/POST | `/api/bobserve/fetch/status`, `/api/bobserve/fetch/stop` | Job progress snapshot / cooperative stop request. |
+| POST | `/api/ranker/scan` | Body `{mode?, lb?, workers?, notes?}`. `mode` defaults to `'backlog'` (a full rescan needs an explicit `{mode:'all'}`, GUI confirms). Claims the job, calls `ranker_jobs.plan_scan()` (fast, sync) — `{"status":"noop", ...}` and releases the claim on an empty backlog; otherwise starts `run_scan_claimed` in a background thread, chunked `4×workers` per `scan_folders()` call so `stop()` is honored between chunks. `{"status":"started","scan_id","planned","reused_scan","config_changed"}`; 409 if already running. |
+| GET/POST | `/api/ranker/scan/status`, `/api/ranker/scan/stop` | Job progress snapshot / cooperative stop request. |
+| POST | `/api/ranker/rerank` | Body `{scan_id?}`. Synchronous, pure-DB (no thread) — re-bands/ranks from stored `quality_recording_metrics` only, no audio re-decode. `{"ok":true,"scan_id","rows"}`; 409 while a scan is running (avoids racing the scan's own trailing rerank); 404 if no scans exist. |
 | GET | `/api/lb_master/stats` | Return `{public, private, missing, nonexistent, max_lb, overrides, needs_review, public_no_checksums}` counts. |
 | GET | `/api/lb_master` | Paginated lb_master rows. Query params: `status`, `override=1`, `review=1`, `limit` (max 2000), `offset`. |
 | GET | `/api/lb_master/<lb>` | Single lb_master row joined with entry metadata. |
@@ -2212,7 +2238,7 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 
 | Screen | File | Status |
 |--------|------|--------|
-| ScreenHome | `screens/ScreenHome.tsx` | Done — dashboard, live stats, activity log, flat-file update; first-run onboarding (TODO-217): auto-opens `components/OnboardingWizard.tsx` (4-step modal: master install → sitedata install → mounts/pipeline nav → done + `/api/derived/recompute`) once per launch when `entries_count == 0`, plus a setup-checklist card while `/api/onboarding/status` `complete == false`; `components/DataFreshnessCard.tsx` renders the `/api/refresh/status` rollup (stale/blocked steps grouped by trigger, publish-lag callout, muted no-signal footnote) and hides itself entirely when the route is absent or errors |
+| ScreenHome | `screens/ScreenHome.tsx` | Done — dashboard, live stats, activity log, flat-file update; first-run onboarding (TODO-217): auto-opens `components/OnboardingWizard.tsx` (4-step modal: master install → sitedata install → mounts/pipeline nav → done + `/api/derived/recompute`) once per launch when `entries_count == 0`, plus a setup-checklist card while `/api/onboarding/status` `complete == false`; `components/DataFreshnessCard.tsx` renders the `/api/refresh/status` rollup (stale/blocked steps grouped by trigger, publish-lag callout, muted no-signal footnote) and hides itself entirely when the route is absent or errors; TODO-306 P2: `olof_fetch`/`bobserve_fetch`/`ranker_scan`/`ranker_rerank` get a real "Run" button (`RUNNABLE` map) with a `ConfirmDialog`, 2s status polling + Stop button while running, and a `version.state=='changed'` tooltip hint — every other row keeps the Phase 1 copyable-text/nav-button behaviour |
 | ScreenSetup | `screens/ScreenSetup.tsx` | Done — all 16 handlers: credentials, purge, import/export, master, data packages |
 | ScreenMounts | `screens/ScreenMounts.tsx` | Done — storage mounts, year routing, filing mode, preview tester (split out of ScreenSetup) |
 | ScreenFileIntegrity | `screens/ScreenFileIntegrity.tsx` | Done (2026-07-24, TODO-267) — `/fileintegrity`, Settings group, shield icon. Per-file bit-rot inventory over `/api/file-integrity/*`: collection roll-up (files/bytes/corrupt/missing), per-mount cards with Index / Deep Verify + live progress bar + Stop, nightly rolling-verify toggle (`file_verify_enabled`), rot-first problems list with per-file Re-baseline, recent-scans strip. Health badge says "clean" (no problems), not "verified" — index baselines, it does not deep-verify. |

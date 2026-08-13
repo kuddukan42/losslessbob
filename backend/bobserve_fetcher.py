@@ -24,6 +24,12 @@ on subsequent runs unless --refresh).
 
 Public API:
     run_fetch(start_year, end_year, limit, refresh, dry_run, db_path, pages_dir)
+        — claims the job itself (raises if already running) and records a
+        refresh_step_runs row (trigger_source='cli').
+    get_status(), stop(), try_begin() — job-progress surface for routes
+        (TODO-306 Phase 2).
+    run_fetch_claimed(...) — thread target for the route; the caller has
+        already claimed the job via try_begin().
 
 CLI:
     .venv/bin/python3 -m backend.bobserve_fetcher [--start-year N] [--end-year N]
@@ -31,6 +37,10 @@ CLI:
 
 Schema: olof_pages (corpus='bobserve'), shared with the DSN/chronicle
 corpora. Upsert on filename.
+
+Stop support (TODO-306 Phase 2): shares olof_fetcher's ``_fetch()`` (and
+thus its interruptible 429/retry backoff sleeps); the year-index politeness
+sleep below uses this module's own JobState the same way.
 """
 from __future__ import annotations
 
@@ -45,7 +55,8 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from backend.db import get_connection, init_db
+from backend.db import get_connection, init_db, record_step_run
+from backend.job_progress import JobState, JobStopped
 from backend.olof_fetcher import _REQUEST_DELAY, _fetch
 from backend.paths import DATA_DIR
 
@@ -58,6 +69,23 @@ PAGES_DIR = DATA_DIR / "olof" / "bobserve_pages"
 # own setlist database is the only source consulted for 2022+ shows.
 DEFAULT_START_YEAR = 2022
 _PROGRESS_EVERY = 20
+
+_JOB = JobState("bobserve-fetch")
+
+
+def get_status() -> dict:
+    """Return the current fetch job's progress snapshot."""
+    return _JOB.snapshot()
+
+
+def stop() -> None:
+    """Request that the active fetch job stop as soon as possible."""
+    _JOB.stop()
+
+
+def try_begin(**fields) -> bool:
+    """Atomically claim the fetch job. See JobState.try_begin."""
+    return _JOB.try_begin(**fields)
 
 _EVENT_LINK_RE = re.compile(r"(?:https://bobserve\.com)?/setlist\?event=(\d+)$")
 
@@ -154,6 +182,148 @@ def _upsert_page(conn, event_id: int, filename: str, content: bytes,
 # Orchestration
 # ---------------------------------------------------------------------------
 
+def _run_fetch_inner(
+    start_year: int,
+    end_year: int | None,
+    limit: int | None,
+    refresh: bool,
+    dry_run: bool,
+    db_path: str | None,
+    pages_dir: Path | None,
+    trigger_source: str,
+) -> dict:
+    """Core fetch body — progress-aware, assumes the job is already claimed.
+
+    Args:
+        (same as run_fetch)
+        trigger_source: 'route' | 'cli', recorded on the refresh_step_runs row.
+
+    Returns:
+        Summary dict, plus ``{"stopped": True}`` if a stop was requested
+        mid-run (in which case the summary reflects partial progress).
+    """
+    started_at = time.strftime("%Y-%m-%d %H:%M:%S")
+    resolved_pages_dir = pages_dir or PAGES_DIR
+    resolved_end_year = end_year if end_year is not None else datetime.date.today().year
+    if resolved_end_year < start_year:
+        raise ValueError(
+            f"end_year ({resolved_end_year}) must be >= start_year ({start_year})"
+        )
+
+    id_year: dict[int, int] = {}
+    id_title: dict[int, str] = {}
+    ordered_ids: list[int] = []
+    years_crawled: list[int] = []
+    summary: dict = {}
+    status = "ok"
+
+    try:
+        _JOB.update(stage="discovering")
+        for year in range(start_year, resolved_end_year + 1):
+            _JOB.check_stop()
+            _JOB.update(current=f"eventsperiod {year}")
+            resp = _fetch(_period_url(year))
+            if resp is None:
+                _log.error("bobserve_fetcher: could not fetch eventsperiod for %d", year)
+                continue
+            years_crawled.append(year)
+            pairs = _extract_year_event_ids(resp.content)
+            _log.info("bobserve_fetcher: eventsperiod %d -> %d event ids", year, len(pairs))
+            for event_id, date_hint in pairs:
+                if event_id not in id_year:
+                    id_year[event_id] = year
+                    id_title[event_id] = date_hint
+                    ordered_ids.append(event_id)
+            _JOB.sleep(_REQUEST_DELAY, slice_s=0.25)
+
+        if dry_run:
+            _log.info("bobserve_fetcher: dry-run — %d event ids planned across years %s",
+                       len(ordered_ids), years_crawled)
+            summary = {"years": years_crawled, "planned": len(ordered_ids), "fetched": 0,
+                       "skipped": 0, "errors": 0}
+            return summary
+
+        if limit is not None:
+            ordered_ids = ordered_ids[:limit]
+
+        init_db(db_path)
+        conn = get_connection(db_path)
+
+        _JOB.update(stage="fetching", total=len(ordered_ids), done=0, errors=0, skipped=0)
+        fetched = skipped = errors = 0
+        for event_id in ordered_ids:
+            _JOB.check_stop()
+            _JOB.update(current=str(event_id))
+            filename = _filename(event_id)
+            path = resolved_pages_dir / filename
+            already_recorded = conn.execute(
+                "SELECT 1 FROM olof_pages WHERE filename = ?", (filename,)
+            ).fetchone() is not None
+
+            if path.exists() and not refresh:
+                if already_recorded:
+                    skipped += 1
+                    _JOB.bump("skipped")
+                    _log.debug("bobserve_fetcher: skip (already fetched) event %d", event_id)
+                    _JOB.update(done=fetched + skipped)
+                    continue
+                content = path.read_bytes()
+                _upsert_page(conn, event_id, filename, content, fetched_at=None,
+                             year=id_year[event_id], segment_title=id_title[event_id])
+                skipped += 1
+                _JOB.bump("skipped")
+                _log.debug("bobserve_fetcher: backfilled DB row for existing event %d", event_id)
+                _JOB.update(done=fetched + skipped)
+                continue
+
+            resp = _fetch(_event_url(event_id))
+            if resp is None:
+                errors += 1
+                _JOB.bump("errors")
+                _log.error("bobserve_fetcher: failed to fetch event %d", event_id)
+                _JOB.update(done=fetched + skipped)
+                continue
+            content = resp.content
+            resolved_pages_dir.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(content)
+            _upsert_page(conn, event_id, filename, content,
+                         fetched_at=time.strftime("%Y-%m-%dT%H:%M:%S"),
+                         year=id_year[event_id], segment_title=id_title[event_id])
+            fetched += 1
+            _JOB.update(done=fetched + skipped)
+            if fetched % _PROGRESS_EVERY == 0:
+                _log.info("bobserve_fetcher: %d/%d fetched (%d skipped, %d errors)",
+                           fetched, len(ordered_ids), skipped, errors)
+            _JOB.sleep(_REQUEST_DELAY, slice_s=0.25)
+
+        _log.info("bobserve_fetcher: done — %d fetched, %d skipped, %d errors, %d planned "
+                   "(years %s)", fetched, skipped, errors, len(ordered_ids), years_crawled)
+        summary = {"years": years_crawled, "planned": len(ordered_ids), "fetched": fetched,
+                   "skipped": skipped, "errors": errors}
+        return summary
+    except JobStopped:
+        status = "stopped"
+        summary = {
+            "years": years_crawled,
+            "planned": len(locals().get("ordered_ids", [])),
+            "fetched": locals().get("fetched", 0),
+            "skipped": locals().get("skipped", 0),
+            "errors": locals().get("errors", 0),
+            "stopped": True,
+        }
+        _log.info("bobserve_fetcher: stopped by request")
+        return summary
+    except Exception:
+        status = "error"
+        raise
+    finally:
+        if not dry_run:
+            record_step_run(
+                "bobserve_fetch", status=status, started_at=started_at,
+                counters=summary or None, trigger_source=trigger_source, db_path=db_path,
+            )
+
+
 def run_fetch(
     start_year: int = DEFAULT_START_YEAR,
     end_year: int | None = None,
@@ -170,6 +340,10 @@ def run_fetch(
     refresh=True. Sequential, >=2s between requests (same Cloudflare
     politeness rule as backend/olof_fetcher.py), resume-safe.
 
+    Claims the job itself (see JobState.try_begin) — raises RuntimeError if
+    a fetch is already running. Use ``try_begin()`` + ``run_fetch_claimed()``
+    from a route to avoid a check-then-set race across the HTTP boundary.
+
     Args:
         start_year: First year to crawl (default 2022, the year after DSN's
             2021 cutoff — see module docstring).
@@ -185,86 +359,42 @@ def run_fetch(
 
     Returns:
         Summary dict: {"years": [...], "planned": N, "fetched": N,
-        "skipped": N, "errors": N}.
+        "skipped": N, "errors": N}, plus "stopped": True if stop() was
+        called mid-run.
+
+    Raises:
+        RuntimeError: a fetch job is already running.
     """
-    resolved_pages_dir = pages_dir or PAGES_DIR
-    end_year = end_year if end_year is not None else datetime.date.today().year
-    if end_year < start_year:
-        raise ValueError(f"end_year ({end_year}) must be >= start_year ({start_year})")
+    if not _JOB.try_begin(stage="queued", start_year=start_year, end_year=end_year):
+        raise RuntimeError("bobserve fetch already running")
+    try:
+        return _run_fetch_inner(start_year, end_year, limit, refresh, dry_run, db_path,
+                                 pages_dir, trigger_source="cli")
+    finally:
+        _JOB.finish(stage="done")
 
-    id_year: dict[int, int] = {}
-    id_title: dict[int, str] = {}
-    ordered_ids: list[int] = []
-    years_crawled: list[int] = []
 
-    for year in range(start_year, end_year + 1):
-        resp = _fetch(_period_url(year))
-        if resp is None:
-            _log.error("bobserve_fetcher: could not fetch eventsperiod for %d", year)
-            continue
-        years_crawled.append(year)
-        pairs = _extract_year_event_ids(resp.content)
-        _log.info("bobserve_fetcher: eventsperiod %d -> %d event ids", year, len(pairs))
-        for event_id, date_hint in pairs:
-            if event_id not in id_year:
-                id_year[event_id] = year
-                id_title[event_id] = date_hint
-                ordered_ids.append(event_id)
-        time.sleep(_REQUEST_DELAY)
+def run_fetch_claimed(
+    start_year: int = DEFAULT_START_YEAR,
+    end_year: int | None = None,
+    limit: int | None = None,
+    refresh: bool = False,
+    dry_run: bool = False,
+    db_path: str | None = None,
+    pages_dir: Path | None = None,
+) -> dict:
+    """Thread target for POST /api/bobserve/fetch — job already claimed by the route.
 
-    if dry_run:
-        _log.info("bobserve_fetcher: dry-run — %d event ids planned across years %s",
-                   len(ordered_ids), years_crawled)
-        return {"years": years_crawled, "planned": len(ordered_ids), "fetched": 0,
-                "skipped": 0, "errors": 0}
+    Args: same as run_fetch.
 
-    if limit is not None:
-        ordered_ids = ordered_ids[:limit]
-
-    init_db(db_path)
-    conn = get_connection(db_path)
-
-    fetched = skipped = errors = 0
-    for event_id in ordered_ids:
-        filename = _filename(event_id)
-        path = resolved_pages_dir / filename
-        already_recorded = conn.execute(
-            "SELECT 1 FROM olof_pages WHERE filename = ?", (filename,)
-        ).fetchone() is not None
-
-        if path.exists() and not refresh:
-            if already_recorded:
-                skipped += 1
-                _log.debug("bobserve_fetcher: skip (already fetched) event %d", event_id)
-                continue
-            content = path.read_bytes()
-            _upsert_page(conn, event_id, filename, content, fetched_at=None,
-                         year=id_year[event_id], segment_title=id_title[event_id])
-            skipped += 1
-            _log.debug("bobserve_fetcher: backfilled DB row for existing event %d", event_id)
-            continue
-
-        resp = _fetch(_event_url(event_id))
-        if resp is None:
-            errors += 1
-            _log.error("bobserve_fetcher: failed to fetch event %d", event_id)
-            continue
-        content = resp.content
-        resolved_pages_dir.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(content)
-        _upsert_page(conn, event_id, filename, content,
-                     fetched_at=time.strftime("%Y-%m-%dT%H:%M:%S"),
-                     year=id_year[event_id], segment_title=id_title[event_id])
-        fetched += 1
-        if fetched % _PROGRESS_EVERY == 0:
-            _log.info("bobserve_fetcher: %d/%d fetched (%d skipped, %d errors)",
-                       fetched, len(ordered_ids), skipped, errors)
-        time.sleep(_REQUEST_DELAY)
-
-    _log.info("bobserve_fetcher: done — %d fetched, %d skipped, %d errors, %d planned "
-               "(years %s)", fetched, skipped, errors, len(ordered_ids), years_crawled)
-    return {"years": years_crawled, "planned": len(ordered_ids), "fetched": fetched,
-            "skipped": skipped, "errors": errors}
+    Returns:
+        Same summary shape as run_fetch.
+    """
+    try:
+        return _run_fetch_inner(start_year, end_year, limit, refresh, dry_run, db_path,
+                                 pages_dir, trigger_source="route")
+    finally:
+        _JOB.finish(stage="done")
 
 
 # ---------------------------------------------------------------------------

@@ -13,6 +13,7 @@ Usage:
 """
 import argparse
 import logging
+import multiprocessing
 import sys
 import time
 from pathlib import Path
@@ -36,6 +37,12 @@ def _request_restart() -> None:
 
 def main() -> None:
     global _srv, _restart_flag
+
+    # Required first statement for a packaged/frozen build (TODO-306 Phase 2
+    # decision 4): without it, a frozen ranker scan's multiprocessing Pool
+    # re-launches the frozen exe itself instead of a worker, recursing.
+    # A no-op on unfrozen (dev/CI) runs.
+    multiprocessing.freeze_support()
 
     parser = argparse.ArgumentParser(prog="run_backend")
     parser.add_argument("--port", type=int, default=5174,

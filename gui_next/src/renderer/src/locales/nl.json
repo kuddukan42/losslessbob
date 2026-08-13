@@ -90,7 +90,10 @@
         "sitedata_publish": "Gegevens van de publicatiesite worden geladen…",
         "sitedata_install": "Sitegegevens worden geïnstalleerd…",
         "derived_recompute": "Afgeleide gegevens worden opnieuw berekend…",
-        "file_integrity": "Bestandsintegriteit wordt gecontroleerd…"
+        "file_integrity": "Bestandsintegriteit wordt gecontroleerd…",
+        "olof_fetching": "Olof-pagina's worden opgehaald…",
+        "bobserve_fetching": "Bobserve-setlists worden opgehaald…",
+        "ranker_scanning": "Audiokwaliteit wordt gescand…"
       },
       "tray": {
         "title": "Activiteit",
@@ -2183,7 +2186,20 @@
       "sitedata_publish": "Sitegegevens publiceren",
       "preservation": "Controle op behoud",
       "archive_org": "Synchroniseer met Archive.org"
-    }
+    },
+    "run": "Uitvoeren",
+    "stop": "Stop",
+    "running": "Wordt uitgevoerd…",
+    "alreadyRunning": "Reeds actief",
+    "runFailed": "Uitvoering mislukt",
+    "confirmFetch": "Nu ophalen?",
+    "confirmFetchBody": "Met een rustig tempo (~2 s tussen verzoeken) — dit kan even duren.",
+    "confirmScanTitle": "Een scan van de audiokwaliteit uitvoeren?",
+    "scanBacklog": "Scanachterstand ({{count}})",
+    "scanAll": "Volledig opnieuw scannen",
+    "scanAllWarning": "Scant elke opname in de collectie opnieuw — dit duurt veel langer dan een scan van de achterstand.",
+    "scanNoBacklog": "Niets om te scannen — de achterstand is leeg.",
+    "versionChanged": "Configuratie gewijzigd sinds de laatste uitvoering"
   },
   "screenCoverage": {
     "title": "Voortgang van de verzameling",

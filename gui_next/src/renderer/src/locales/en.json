@@ -90,7 +90,10 @@
         "master_install": "Installing master…",
         "sitedata_publish": "Publishing site data…",
         "sitedata_install": "Installing site data…",
-        "derived_recompute": "Recomputing derived data…"
+        "derived_recompute": "Recomputing derived data…",
+        "olof_fetching": "Fetching Olof pages…",
+        "bobserve_fetching": "Fetching bobserve setlists…",
+        "ranker_scanning": "Scanning audio quality…"
       },
       "tray": {
         "title": "Activity",
@@ -2127,6 +2130,19 @@
     "backlog_other": "{{count}} pending",
     "unknownFootnote_one": "{{count}} step has no freshness signal",
     "unknownFootnote_other": "{{count}} steps have no freshness signal",
+    "run": "Run",
+    "stop": "Stop",
+    "running": "Running…",
+    "alreadyRunning": "Already running",
+    "runFailed": "Run failed",
+    "confirmFetch": "Fetch now?",
+    "confirmFetchBody": "Politely paced (~2s between requests) — this can take a while.",
+    "confirmScanTitle": "Run audio quality scan?",
+    "scanBacklog": "Scan backlog ({{count}})",
+    "scanAll": "Full rescan",
+    "scanAllWarning": "Rescans every recording in the collection — much slower than a backlog scan.",
+    "scanNoBacklog": "Nothing to scan — backlog is empty.",
+    "versionChanged": "Config changed since last run",
     "state": {
       "fresh": "Fresh",
       "stale": "Stale",

@@ -1,3 +1,59 @@
+[2026-08-13] — feat(backend/gui): pipeline refresh Phase 2 — CLI-only steps become Run buttons
+Added: backend/job_progress.py: JobState/JobStopped — one shared thread-safe progress dict,
+  atomic try_begin() claim, and cooperative stop()/sleep() primitive for background pipeline
+  jobs, modelled on backend/geocoder.py's inline pattern but reusable (and closing that
+  pattern's check-then-set race across concurrent POSTs).
+  backend/config_version.py: hashes the effective merged taper-alias config and two separate
+  concert_ranker/config.py constant slices (extraction vs. banding/scoring) into meta, so
+  config-only edits (spec Sec 1c's Phase 1 gap) stop reporting as "unknown" on the freshness
+  card — refresh.py's version signal now takes precedence over backlog (a config change is
+  stale even at backlog 0).
+  backend/ranker_jobs.py: backend-side concert_ranker wrapper — plan_scan()/
+  run_scan_claimed()/run_rerank(), chunked (4×workers) so Stop is honored mid-scan, always
+  reranks after (including a partial/stopped scan). Reuses concert_ranker.cli's
+  collection_worklist/rerank (promoted from _collection_worklist/_rerank, private aliases
+  kept) instead of duplicating the non-concert/non-public exclusion logic.
+  db.refresh_step_runs + db.record_step_run(): the first durable run-record any of these
+  steps has ever had — one insert at completion (status ok/noop/stopped/error), closing the
+  D8 backend-restart-loses-history gap and giving ranker_rerank (whose output table has no
+  timestamp column) a real last_run for the first time.
+  8 new routes in backend/app.py: POST/GET/POST {olof,bobserve}/fetch{,/status,/stop},
+  ranker/scan{,/status,/stop}, POST ranker/rerank. Ungated (same rationale as
+  /api/geocode/run); ranker/scan defaults to backlog-only, a full rescan needs an explicit
+  {mode:'all'} plus a GUI confirm.
+Changed: backend/olof_fetcher.py, backend/bobserve_fetcher.py: retrofit for stop/progress —
+  run_fetch() now claims via JobState (raises if already running), run_fetch_claimed() is
+  the route's thread target, every time.sleep() in the discovery/fetch loops and the 429/
+  retry backoff is now an interruptible JobState.sleep() (stop honored within ~1s instead
+  of up to 30s; an in-flight requests.get(timeout=30) is the one exception, documented).
+  backend/refresh.py: _last_run_record() merges refresh_step_runs into last_run (the newer
+  of watermark vs. newest successful run-record) with a new last_run_source field;
+  _step_state() gains keyword-only version_state/last_run_status/last_run_source args and a
+  new precedence (config changed > backlog > last-run-failed > blocked > watermark >
+  unknown/fresh); olof_fetch/bobserve_fetch/ranker_scan/ranker_rerank/attribute_tapers
+  registry entries get real how_to_run routes + version_key; ranker_scan's backlog_sql is
+  rescoped to the latest scan_id so the card's number matches the route's planned count.
+  backend/activity.py: three JobAdapter rows (olof_fetching, bobserve_fetching,
+  ranker_scanning) appended, screen_route="/" since the freshness card is these jobs' only
+  UI. run_backend.py: multiprocessing.freeze_support() as main()'s first statement (a
+  packaged build's frozen scan would otherwise re-launch the exe instead of a Pool worker).
+  concert_ranker/cli.py: _collection_worklist/_rerank promoted to public
+  collection_worklist/rerank (private aliases kept) so backend/ranker_jobs.py isn't reaching
+  into underscore names.
+  gui_next/.../DataFreshnessCard.tsx: the four wrapped steps get a real "Run" button (a
+  RUNNABLE map) — fetchers get a single ConfirmDialog naming the politeness delay,
+  ranker_scan gets a two-option dialog (Scan backlog (N) / Full rescan with a danger-toned
+  warning), a running job polls its status route every 2s with a Stop button, ranker_rerank
+  (synchronous) awaits its POST directly; every other row keeps the Phase 1 copyable-
+  text/nav-button behaviour untouched. version.state=='changed' appends a tooltip hint.
+  tools/refresh_status.py: new VER column (ok/chg/—).
+Added: gui_next/src/renderer/src/locales/*.json: refresh.{run,stop,running,alreadyRunning,
+  runFailed,confirmFetch,confirmFetchBody,confirmScanTitle,scanBacklog,scanAll,
+  scanAllWarning,scanNoBacklog,versionChanged} + appShell.statusBar.activity.
+  {olof_fetching,bobserve_fetching,ranker_scanning}, translated de/fr/es/it/nl via
+  /gui-next-i18n.
+Closes: TODO-306.
+
 [2026-08-13] — feat(gui): DB Editor edits long-text columns in a textarea
 Changed: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx: the inline cell editor was
   a single-line <input>, so pasting a multi-line value (a setlist, a source chain) into a

@@ -42,12 +42,16 @@ def _setup_logging(verbose: bool) -> None:
 # ─────────────────────────────────────────────────────────────────────────────
 # Worklist construction
 # ─────────────────────────────────────────────────────────────────────────────
-def _collection_worklist(conn, lb_filter=None) -> list[tuple]:
+def collection_worklist(conn, lb_filter=None) -> list[tuple]:
     """Build ``(lb, disk_path, source_class)`` from my_collection.
 
     Non-concert entries (studio, interview, tv, compilation, rehearsal, radio,
     soundcheck) and non-public entries (private/missing/nonexistent in lb_master)
     are silently excluded — the ranker is designed for public concerts only.
+
+    Public (promoted from ``_collection_worklist`` for TODO-306 Phase 2's
+    ``backend/ranker_jobs.py``, which reuses this instead of duplicating the
+    exclusion logic — duplicating it would drift).
     """
     cats_ph = ",".join("?" * len(_NON_CONCERT_CATEGORIES))
     sql = ("SELECT c.lb_number AS lb, c.disk_path AS disk_path,"
@@ -68,6 +72,9 @@ def _collection_worklist(conn, lb_filter=None) -> list[tuple]:
             r["description"], r["source_chain"], r["source_type"])
         out.append((int(r["lb"]), r["disk_path"], cls))
     return out
+
+
+_collection_worklist = collection_worklist  # back-compat alias
 
 
 def _family_lbs(conn, fam_int_or_id) -> list[int]:
@@ -100,7 +107,7 @@ def cmd_scan(args) -> int:
         print("specify --all, --lb N..., or --family ID", file=sys.stderr)
         return 2
 
-    worklist = _collection_worklist(conn, lb_filter)
+    worklist = collection_worklist(conn, lb_filter)
     if not worklist:
         print("no matching recordings in my_collection", file=sys.stderr)
         return 1
@@ -121,7 +128,7 @@ def cmd_scan(args) -> int:
         print(f"scanned {ok}/{len(results)} ok")
 
     # Rank straight after scanning so scores are immediately available.
-    _rerank(conn, scan_id)
+    rerank(conn, scan_id)
     print(f"ranked scan {scan_id}. Use: concert_ranker report --scan-id {scan_id}")
     return 0
 
@@ -229,8 +236,12 @@ def _filter_non_public(conn, metrics: dict) -> int:
     return removed
 
 
-def _rerank(conn, scan_id: int) -> int:
-    """Re-band/rank from stored metrics only (no audio). Returns row count."""
+def rerank(conn, scan_id: int) -> int:
+    """Re-band/rank from stored metrics only (no audio). Returns row count.
+
+    Public (promoted from ``_rerank`` for TODO-306 Phase 2's
+    ``backend/ranker_jobs.py`` — see :func:`collection_worklist`).
+    """
     from concert_ranker import families
 
     metrics = repo.load_metrics(conn, scan_id)
@@ -253,6 +264,9 @@ def _rerank(conn, scan_id: int) -> int:
     return len(rows)
 
 
+_rerank = rerank  # back-compat alias
+
+
 def cmd_rerank(args) -> int:
     conn = repo.connect(args.db)
     repo.ensure_schema(conn)
@@ -260,7 +274,7 @@ def cmd_rerank(args) -> int:
     if scan_id is None:
         print("no scans exist", file=sys.stderr)
         return 1
-    n = _rerank(conn, scan_id)
+    n = rerank(conn, scan_id)
     print(f"reranked scan {scan_id}: wrote {n} score row(s) from stored metrics")
     return 0
 

@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-306: Pipeline refresh Phase 2: make the CLI-only steps runnable + add version signals
+Priority: High
+Status: Done
+Added: 2026-08-12
+Closed: 2026-08-13
+Description: Follow-on to the Phase 1 freshness planner (backend/refresh.py, instructions/PIPELINE_REFRESH_PHASE1.md). Phase 2 is the first phase that writes: (a) wrap the four out-of-app roots-of-record — olof fetch, bobserve fetch, concert_ranker scan/rerank — behind routes so the freshness card's copyable CLI strings become buttons; (b) add the 'version' signal from spec 1c (hash of _KNOWN_TAPER_ALIASES and concert_ranker/config.py constants, stored in meta) so config-only changes stop reporting as unknown; (c) add refresh_step_runs at that point, since the newly wrapped steps are the first ones that genuinely need run-records. Phase 3 chains steps in dependency order; Phase 4 gives human queues (taper conflicts, fingerprint suggestions, TapeMatch judgments) first-class blocker treatment.
+Shipped: JobState/config_version/ranker_jobs new modules; 8 new routes; olof/bobserve fetcher retrofit; refresh.py version+run-record signals; activity.py 3 adapters; DataFreshnessCard Run/Stop buttons; full test coverage; see CHANGELOG 2026-08-13.
+
 TODO-274: gui_next — Topbar retired (breadcrumbs + global search removed from AppShell)
 Priority: Low
 Status: Done

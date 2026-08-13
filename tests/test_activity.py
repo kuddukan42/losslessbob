@@ -227,4 +227,7 @@ def test_job_adapters_cover_original_11_plus_gap_workers():
         "pipeline_running", "archive_uploading",
     ):
         assert gap_kind in kinds
-    assert len(kinds) == 15
+    # TODO-306 Phase 2 appended three more (olof/bobserve fetch, ranker scan).
+    for pipeline_kind in ("olof_fetching", "bobserve_fetching", "ranker_scanning"):
+        assert pipeline_kind in kinds
+    assert len(kinds) == 18
