@@ -1,3 +1,17 @@
+[2026-08-13] — feat(gui): DB Editor edits long-text columns in a textarea
+Changed: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx: the inline cell editor was
+  a single-line <input>, so pasting a multi-line value (a setlist, a source chain) into a
+  cell collapsed it to one line — the blocker for filling private-LB metadata (entries rows
+  with status='private' / metadata_source='private_import') by copy-paste from an external
+  source. Columns in the new LONG_TEXT_COLUMNS set (setlist, description, source_chain,
+  timing, note/notes, comment) now open an 8-row resizable <textarea> that preserves
+  newlines; in it Enter inserts a newline and Ctrl/Cmd+Enter commits, while every other
+  column keeps the old input with Enter-to-commit. Esc still cancels in both. The editing
+  cell drops its nowrap/max-width clamp while a textarea is open. No backend change — the
+  existing /api/dbedit/table/entries/row PATCH already round-trips multi-line values.
+Added: gui_next/src/renderer/src/locales/*.json: dbeditor.edit.multilineHint (the textarea
+  tooltip), translated de/fr/es/it/nl via /gui-next-i18n.
+
 [2026-08-12] — feat(backend/gui): pipeline refresh Phase 1 — the freshness planner
 Added: instructions/PIPELINE_REFRESH_INVENTORY.md, instructions/PIPELINE_REFRESH_PHASE1.md:
   a 57-step inventory of everything needed to bring the app up to date (four triggers

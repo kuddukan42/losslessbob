@@ -1078,6 +1078,9 @@
     }
   },
   "dbeditor": {
+    "edit": {
+      "multilineHint": "Multi-line field — Enter adds a newline, Ctrl+Enter (Cmd+Enter) confirms, Esc cancels."
+    },
     "tables": "Tables",
     "refresh": "Refresh",
     "selectTable": "Select a table",

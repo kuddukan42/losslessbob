@@ -1222,6 +1222,9 @@
       "recomputing": "Opnieuw aan het berekenen…",
       "recomputeDone": "Herberekening voltooid.",
       "recomputeError": "Herberekening mislukt: {{msg}}"
+    },
+    "edit": {
+      "multilineHint": "Veld met meerdere regels — Enter voegt een nieuwe regel toe, Ctrl+Enter (Cmd+Enter) bevestigt, Esc annuleert."
     }
   },
   "quickLookup": {
