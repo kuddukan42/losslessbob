@@ -1222,6 +1222,9 @@
       "recomputing": "Ricalcolo in corso…",
       "recomputeDone": "Ricalcolo completato.",
       "recomputeError": "Errore di ricalcolo: {{msg}}"
+    },
+    "edit": {
+      "multilineHint": "Campo multilinea — Il tasto Invio aggiunge una nuova riga, Ctrl+Invio (Cmd+Invio) conferma, Esc annulla."
     }
   },
   "quickLookup": {

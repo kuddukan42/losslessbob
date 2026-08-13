@@ -1222,6 +1222,9 @@
       "recomputing": "Wird neu berechnet…",
       "recomputeDone": "Neuberechnung abgeschlossen.",
       "recomputeError": "Neuberechnung fehlgeschlagen: {{msg}}"
+    },
+    "edit": {
+      "multilineHint": "Mehrzeiliges Feld – Mit der Eingabetaste wird eine neue Zeile eingefügt, mit Strg+Eingabetaste (Cmd+Eingabetaste) wird bestätigt, mit Esc wird abgebrochen."
     }
   },
   "quickLookup": {

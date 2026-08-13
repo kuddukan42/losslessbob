@@ -5,6 +5,17 @@ import { Button, Pill } from '../components'
 
 const BASE = window.api.flaskBase
 
+// Columns edited as a multi-line textarea instead of a single-line input, so
+// pasting a setlist or source chain from an external source keeps its newlines.
+const LONG_TEXT_COLUMNS = new Set([
+  'setlist', 'description', 'source_chain', 'timing', 'note', 'notes', 'comment',
+])
+
+/** Return true when a column should be edited in a multi-line textarea. */
+function isLongTextColumn(col: string | undefined): boolean {
+  return !!col && LONG_TEXT_COLUMNS.has(col.toLowerCase())
+}
+
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 interface TableMeta {
@@ -977,7 +988,7 @@ export function ScreenDbEditor() {
   const [selected, setSelected] = useState<Set<number>>(new Set())
   const [editCell, setEditCell] = useState<{ row: number; col: number } | null>(null)
   const [editValue, setEditValue] = useState('')
-  const editInputRef = useRef<HTMLInputElement>(null)
+  const editInputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null)
 
   // Integrity panel
   const [integrityStats, setIntegrityStats] = useState<IntegrityStats | null>(null)
@@ -1200,7 +1211,12 @@ export function ScreenDbEditor() {
   }
 
   function onEditKeyDown(e: React.KeyboardEvent) {
-    if (e.key === 'Enter')  { commitEditCell() }
+    // In a textarea a bare Enter inserts a newline; Ctrl/Cmd+Enter commits.
+    const multiline = isLongTextColumn(columns[editCell?.col ?? -1])
+    if (e.key === 'Enter' && (!multiline || e.ctrlKey || e.metaKey)) {
+      e.preventDefault()
+      commitEditCell()
+    }
     if (e.key === 'Escape') { cancelEditCell() }
   }
 
@@ -1884,6 +1900,7 @@ export function ScreenDbEditor() {
                     {(row as unknown[]).map((cell, ci) => {
                       const isEdit = editCell?.row === ri && editCell?.col === ci
                       const isDirty = (`${ri}_${ci}` as DirtyKey) in dirty
+                      const isMultiline = isEdit && isLongTextColumn(columns[ci])
                       const displayVal = isDirty
                         ? dirty[`${ri}_${ci}` as DirtyKey]
                         : (cell === null || cell === undefined ? '' : String(cell))
@@ -1900,13 +1917,33 @@ export function ScreenDbEditor() {
                               : isDirty
                               ? 'color-mix(in oklab, var(--lbb-warn-bg) 70%, transparent)'
                               : cellBackground(ri, ci),
-                            maxWidth: 300, overflow: 'hidden', textOverflow: 'ellipsis',
-                            whiteSpace: 'nowrap',
+                            maxWidth: isMultiline ? 'none' : 300,
+                            minWidth: isMultiline ? 380 : undefined,
+                            overflow: 'hidden', textOverflow: 'ellipsis',
+                            whiteSpace: isMultiline ? 'normal' : 'nowrap',
                           }}
                         >
                           {isEdit && isEditable ? (
+                            isMultiline ? (
+                              <textarea
+                                ref={editInputRef as React.RefObject<HTMLTextAreaElement>}
+                                value={editValue}
+                                rows={8}
+                                onChange={(e) => setEditValue(e.target.value)}
+                                onBlur={commitEditCell}
+                                onKeyDown={onEditKeyDown}
+                                title={t('dbeditor.edit.multilineHint')}
+                                style={{
+                                  width: '100%', padding: '3px 4px', fontSize: 'var(--lbb-fs-12)',
+                                  background: 'var(--lbb-bg)', border: '1px solid var(--lbb-accent-mid)',
+                                  borderRadius: 3, color: 'var(--lbb-fg)', fontFamily: 'var(--lbb-mono)',
+                                  boxSizing: 'border-box', resize: 'vertical', lineHeight: 1.4,
+                                  whiteSpace: 'pre',
+                                }}
+                              />
+                            ) : (
                             <input
-                              ref={editInputRef}
+                              ref={editInputRef as React.RefObject<HTMLInputElement>}
                               value={editValue}
                               onChange={(e) => setEditValue(e.target.value)}
                               onBlur={commitEditCell}
@@ -1918,6 +1955,7 @@ export function ScreenDbEditor() {
                                 boxSizing: 'border-box',
                               }}
                             />
+                            )
                           ) : (
                             displayVal
                           )}

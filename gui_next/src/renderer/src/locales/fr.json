@@ -1222,6 +1222,9 @@
       "recomputing": "Recalcul en cours…",
       "recomputeDone": "Recalcul terminé.",
       "recomputeError": "Échec du recalcul : {{msg}}"
+    },
+    "edit": {
+      "multilineHint": "Champ multiligne — La touche Entrée ajoute un saut de ligne, Ctrl+Entrée (Cmd+Entrée) valide la saisie, Esc annule."
     }
   },
   "quickLookup": {

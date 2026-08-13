@@ -1222,6 +1222,9 @@
       "recomputing": "Recalculando…",
       "recomputeDone": "Recálculo completado.",
       "recomputeError": "Error al volver a calcular: {{msg}}"
+    },
+    "edit": {
+      "multilineHint": "Campo de varias líneas: «Intro» añade un salto de línea, «Ctrl+Intro» (Cmd+Intro) confirma y «Esc» cancela."
     }
   },
   "quickLookup": {
