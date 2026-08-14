@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-322: DB Editor edits to entries table don't refresh Collection tab
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:1225,1260
+Reported: 2026-08-13
+Fixed: 2026-08-13
+Root cause: commitChanges()/deleteSelected() in ScreenDbEditor.tsx only called local loadRows(); the alias add/delete flows were the only paths invalidating the collection-prefetch react-query cache, so generic row edits/deletes on any table (e.g. entries) never propagated to the Collection tab's staleTime:Infinity caches.
+Fix: Added shared invalidateLibraryCaches() helper (invalidates library-catalog, collection-prefetch, library-badges) and call it from commitChanges() and deleteSelected().
+
 BUG-321: Coverage screen and "Not in collection" list disagreed on what counts as a gap
 Status: Fixed
 File(s): backend/lb_coverage.py:107,backend/db.py:4509

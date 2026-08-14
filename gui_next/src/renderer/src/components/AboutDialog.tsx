@@ -1,9 +1,11 @@
 // About dialog — Variant C "Tabbed"
-// Four tabs: About / Tech / Credits / Changes.
+// Five tabs: About / Tech / Credits / Changes / Options.
 
 import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from './Icon'
+import { NAV_GROUPS } from '../lib/navigation'
+import { useNavVisibilityStore } from '../lib/navVisibilityStore'
 
 // ── Static content ────────────────────────────────────────────────────────────
 
@@ -331,13 +333,14 @@ function AboutHeader({ onClose }: { onClose: () => void }): React.JSX.Element {
 
 // ── Tab bar ───────────────────────────────────────────────────────────────────
 
-type TabId = 'about' | 'tech' | 'credits' | 'log'
+type TabId = 'about' | 'tech' | 'credits' | 'log' | 'options'
 
 const TABS: Array<{ id: TabId; label: string; icon: string }> = [
   { id: 'about',   label: 'About',   icon: 'info'   },
   { id: 'tech',    label: 'Tech',    icon: 'setup'  },
   { id: 'credits', label: 'Credits', icon: 'user'   },
   { id: 'log',     label: 'Changes', icon: 'lbdir'  },
+  { id: 'options', label: 'Options', icon: 'filter' },
 ]
 
 function TabBar({ tab, onTab }: { tab: TabId; onTab: (t: TabId) => void }): React.JSX.Element {
@@ -633,6 +636,52 @@ function TabLog(): React.JSX.Element {
   )
 }
 
+// ── Tab: Options ──────────────────────────────────────────────────────────────
+// Sidebar declutter — check a nav item off to hide it from the left panel.
+// Group order/headings mirror NAV_GROUPS exactly; only 'Home' (ungrouped, no
+// label) is omitted since it's the app's one mandatory landing screen.
+
+function TabOptions(): React.JSX.Element {
+  const hiddenNav = useNavVisibilityStore((s) => s.hidden)
+  const toggleNav = useNavVisibilityStore((s) => s.toggle)
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+      <p style={{ margin: 0, fontSize: 12.3, lineHeight: 1.6, color: 'var(--lbb-fg2)' }}>
+        Uncheck a screen to hide it from the sidebar. Order and section headings stay
+        put — this only controls what's visible.
+      </p>
+      {NAV_GROUPS.filter((group) => group.label).map((group) => (
+        <div key={group.label}>
+          <BlockTitle>
+            {group.label}
+            {group.gatedGroup ? ' (curator mode)' : ''}
+          </BlockTitle>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {group.items.map((item) => (
+              <label
+                key={item.id}
+                style={{
+                  display: 'flex', alignItems: 'center', gap: 9,
+                  fontSize: 12.5, color: 'var(--lbb-fg2)', cursor: 'pointer',
+                }}
+              >
+                <input
+                  type="checkbox"
+                  checked={!hiddenNav.includes(item.id)}
+                  onChange={() => toggleNav(item.id)}
+                />
+                <Icon name={item.icon} size={14} style={{ color: 'var(--lbb-fg3)' }} />
+                {item.label}
+              </label>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 // ── Footer ────────────────────────────────────────────────────────────────────
 
 function AboutFooter(): React.JSX.Element {
@@ -706,6 +755,7 @@ export function AboutDialog({ onClose }: AboutDialogProps): React.JSX.Element {
           {tab === 'tech'    && <TabTech />}
           {tab === 'credits' && <TabCredits />}
           {tab === 'log'     && <TabLog />}
+          {tab === 'options' && <TabOptions />}
         </div>
         <AboutFooter />
       </div>

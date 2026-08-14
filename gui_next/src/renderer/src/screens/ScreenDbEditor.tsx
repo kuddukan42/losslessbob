@@ -996,6 +996,15 @@ export function ScreenDbEditor() {
 
   const queryClient = useQueryClient()
 
+  // Any row mutation here can change what the Collection tab / sidebar shows;
+  // those read from react-query caches with staleTime: Infinity, so they need
+  // an explicit invalidate or they'll keep serving pre-edit data indefinitely.
+  function invalidateLibraryCaches() {
+    queryClient.invalidateQueries({ queryKey: ['library-catalog'] })
+    queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
+    queryClient.invalidateQueries({ queryKey: ['library-badges'] })
+  }
+
   // Aliases panel
   const [aliases, setAliases]       = useState<LbAlias[]>([])
   const [isCurator, setIsCurator]   = useState(false)
@@ -1248,6 +1257,7 @@ export function ScreenDbEditor() {
       showToast(t('dbeditor.status.committed', { count: Object.keys(byRow).length }), 'ok')
     }
     loadRows()
+    invalidateLibraryCaches()
   }
 
   function discardChanges() {
@@ -1279,6 +1289,7 @@ export function ScreenDbEditor() {
         } else {
           showToast(t('dbeditor.status.deleted', { count: data.deleted ?? 0 }), 'ok')
           loadRows()
+          invalidateLibraryCaches()
         }
       })
       .catch((e) => showToast(`Error: ${e}`, 'bad'))
