@@ -1,3 +1,18 @@
+[2026-08-13] — feat(gui): sidebar nav visibility toggle + DB Editor cache-invalidation fix
+Added: gui_next/src/renderer/src/lib/navVisibilityStore.ts: persisted zustand store
+  (key lbb-nav-visibility) tracking hidden nav item ids. AboutDialog.tsx: new 5th
+  "Options" tab listing every sidebar nav item, grouped/ordered as NAV_GROUPS, with a
+  checkbox per item to hide it from the left panel; Home stays mandatory. AppShell.tsx:
+  Sidebar filters each group's items against the hidden set and skips rendering a
+  group's header entirely when every item in it is hidden. (TODO-307)
+Fixed: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx: commitChanges() and
+  deleteSelected() only called local loadRows() and never invalidated the
+  library-catalog/collection-prefetch/library-badges react-query caches (staleTime:
+  Infinity), so DB Editor row edits/deletes on any table (e.g. entries) never showed
+  up on the Collection tab or sidebar count until app restart — only the alias
+  add/delete flows invalidated collection-prefetch. Added a shared
+  invalidateLibraryCaches() helper and call it from both. (BUG-322)
+
 [2026-08-13] — feat(backend/gui): pipeline refresh Phase 2 — CLI-only steps become Run buttons
 Added: backend/job_progress.py: JobState/JobStopped — one shared thread-safe progress dict,
   atomic try_begin() claim, and cooperative stop()/sleep() primitive for background pipeline

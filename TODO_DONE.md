@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-307: About dialog: Options tab to hide sidebar nav items
+Priority: Medium
+Status: Done
+Added: 2026-08-13
+Closed: 2026-08-13
+Description: Add a 5th About-dialog tab listing every sidebar nav item (grouped/ordered as in the sidebar) with checkboxes to show/hide each from the left panel, for decluttering.
+Shipped: AboutDialog Options tab + lib/navVisibilityStore.ts (zustand persist, key lbb-nav-visibility); AppShell Sidebar filters NAV_GROUPS by hidden set and auto-hides an empty group header. Home stays mandatory (not offered). Verified via /gui-check + /verify screenshots.
+
 TODO-306: Pipeline refresh Phase 2: make the CLI-only steps runnable + add version signals
 Priority: High
 Status: Done

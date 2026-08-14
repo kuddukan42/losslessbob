@@ -5,6 +5,7 @@ import { Icon } from './Icon'
 import { useSettingsStore } from '../store'
 import { useActivityStore, startActivityPolling, type ActivityJob } from '../lib/activityStore'
 import { NAV_GROUPS, NAV_GROUP_KEYS, navPathForId } from '../lib/navigation'
+import { useNavVisibilityStore } from '../lib/navVisibilityStore'
 import { CommandPalette } from './CommandPalette'
 import { SavedViews } from './SavedViews'
 
@@ -42,6 +43,7 @@ function Sidebar({
   const [wtrfUsername, setWtrfUsername] = useState<string>('')
   const [langOpen, setLangOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
+  const hiddenNav = useNavVisibilityStore((s) => s.hidden)
 
   useEffect(() => {
     if (!langOpen) return
@@ -134,6 +136,8 @@ function Sidebar({
       <div style={{ flex: 1, overflowY: 'auto', padding: '10px 8px 16px' }}>
         {NAV_GROUPS.map((group, gi) => {
           if (group.gatedGroup && !curatorMode) return null
+          const visibleItems = group.items.filter((item) => !hiddenNav.includes(item.id))
+          if (!visibleItems.length) return null
           return (
             <div key={gi} style={{ marginTop: gi === 0 ? 0 : 14 }}>
               {group.label && (
@@ -169,7 +173,7 @@ function Sidebar({
                   )}
                 </div>
               )}
-              {group.items.map((item) => {
+              {visibleItems.map((item) => {
                 const isActive = item.id === active
                 const dynamicCount = item.id === 'collection' ? collectionCount : item.count
                 return (
