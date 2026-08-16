@@ -93,7 +93,8 @@
         "file_integrity": "Bestandsintegriteit wordt gecontroleerd…",
         "olof_fetching": "Olof-pagina's worden opgehaald…",
         "bobserve_fetching": "Bobserve-setlists worden opgehaald…",
-        "ranker_scanning": "Audiokwaliteit wordt gescand…"
+        "ranker_scanning": "Audiokwaliteit wordt gescand…",
+        "refresh_chain": "Vernieuwingsketen wordt uitgevoerd…"
       },
       "tray": {
         "title": "Activiteit",
@@ -2199,7 +2200,24 @@
     "scanAll": "Volledig opnieuw scannen",
     "scanAllWarning": "Scant elke opname in de collectie opnieuw — dit duurt veel langer dan een scan van de achterstand.",
     "scanNoBacklog": "Niets om te scannen — de achterstand is leeg.",
-    "versionChanged": "Configuratie gewijzigd sinds de laatste uitvoering"
+    "versionChanged": "Configuratie gewijzigd sinds de laatste uitvoering",
+    "chain": {
+      "runTrigger": "Vernieuwen {{trigger}}",
+      "runChain": "Uitvoeringsketen",
+      "previewTitle": "Voorbeeld van de keten — {{scope}}",
+      "willRun": "Werkt ({{count}})",
+      "wontRun": "Werkt niet ({{count}})",
+      "excluded": "Uitgesloten ({{count}})",
+      "includeExpensive": "Voeg stappen voor langzaam en publiceren toe ({{count}})",
+      "confirm": "Uitvoeringsketen",
+      "running": "{{step}} — {{done}}/{{total}} wordt uitgevoerd",
+      "stopping": "Beëindigen…",
+      "outcomeOk": "{{ran}} van {{total}} stappen uitgevoerd",
+      "outcomePartial": "{{ran}} van {{total}} stappen uitgevoerd; {{step}} mislukt",
+      "outcomeStopped": "Gestopt na stap {{ran}} van {{total}}",
+      "alreadyRunning": "Er is al een vernieuwingsketen actief",
+      "busyStep": "{{steps}} nog bezig — probeer het straks nog eens"
+    }
   },
   "screenCoverage": {
     "title": "Voortgang van de verzameling",

@@ -105,6 +105,7 @@ USER_TABLES = (
     "xref_ingest_rows",
     "user_taper_aliases",
     "refresh_step_runs",
+    "refresh_chain_runs",
 )
 
 # Guard against f-string injection if a table name is ever mis-typed (#10)
@@ -532,6 +533,19 @@ CREATE TABLE IF NOT EXISTS refresh_step_runs (
 );
 CREATE INDEX IF NOT EXISTS idx_refresh_step_runs_step
     ON refresh_step_runs(step_id, finished_at);
+
+CREATE TABLE IF NOT EXISTS refresh_chain_runs (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    scope_kind   TEXT NOT NULL,          -- 'step' | 'trigger'
+    scope_value  TEXT NOT NULL,          -- step_id or 'T1'
+    started_at   TIMESTAMP NOT NULL,
+    finished_at  TIMESTAMP,
+    status       TEXT NOT NULL,          -- ok|partial|stopped|error
+    steps_json   TEXT,                   -- the frozen plan + per-step outcome
+    notes        TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_refresh_chain_runs_started
+    ON refresh_chain_runs(started_at);
 
 CREATE TABLE IF NOT EXISTS site_inventory (
     url             TEXT PRIMARY KEY,
@@ -2012,6 +2026,50 @@ def record_step_run(
         return cur.lastrowid
 
     return _run_queued_write(_do, db_path, label="refresh_step_runs")
+
+
+def record_chain_run(
+    scope_kind: str, scope_value: str, *, status: str,
+    started_at: str | None = None, finished_at: str | None = None,
+    steps: list | dict | None = None, notes: str | None = None,
+    db_path: str | None = None,
+) -> int:
+    """Insert one completed ``refresh_chain_runs`` row (Phase 3).
+
+    One insert at completion, mirroring :func:`record_step_run`: the frozen
+    plan plus per-step outcomes are the history record, while
+    ``refresh_step_runs`` remains the authoritative freshness signal.
+
+    Args:
+        scope_kind: ``'step'`` or ``'trigger'``.
+        scope_value: The step id or trigger id (e.g. ``'T1'``) the chain
+            was planned against.
+        status: One of ``ok | partial | stopped | error``.
+        started_at: 'YYYY-MM-DD HH:MM:SS' naive-local timestamp; defaults to
+            ``finished_at`` (or now) when omitted.
+        finished_at: 'YYYY-MM-DD HH:MM:SS' naive-local timestamp; defaults to now.
+        steps: The frozen plan plus per-step outcome, stored verbatim as JSON.
+        notes: Optional free-text note.
+        db_path: Optional database path override.
+
+    Returns:
+        The new row's id.
+    """
+    finished = finished_at or time.strftime("%Y-%m-%d %H:%M:%S")
+    started = started_at or finished
+    steps_json = json.dumps(steps) if steps is not None else None
+
+    def _do(c: sqlite3.Connection) -> int:
+        cur = c.execute(
+            """INSERT INTO refresh_chain_runs
+                   (scope_kind, scope_value, started_at, finished_at, status,
+                    steps_json, notes)
+               VALUES (?, ?, ?, ?, ?, ?, ?)""",
+            (scope_kind, scope_value, started, finished, status, steps_json, notes),
+        )
+        return cur.lastrowid
+
+    return _run_queued_write(_do, db_path, label="refresh_chain_runs")
 
 
 def reload_taper_aliases(db_path: str | None = None) -> dict:

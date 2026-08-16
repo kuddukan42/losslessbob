@@ -181,14 +181,23 @@ STEPS: tuple[RefreshStep, ...] = (
         # identical and the comparison is safe without going through
         # _parse_ts(). Every cross-table comparison in this module still goes
         # through _parse_ts() in Python.
+        # Scoped to corpus='dsn' only, because that is exactly what this step
+        # runs: backend.olof_parser.run_parse() selects `WHERE corpus = 'dsn'`.
+        # Chronicle pages are parsed by a different module
+        # (backend/olof_chronicle_parser.py) that no registry step wires up
+        # yet, and one of them (`chronologies.htm`, the year index) has no
+        # year so no parser consumes it at all -- with 'chronicle' in this
+        # predicate the backlog sat permanently at 1 and olof_parse could
+        # never report fresh, which also defeated Phase 3's "a re-run is
+        # cheap" noop skip.
         backlog_sql=(
-            "SELECT COUNT(*) FROM olof_pages WHERE corpus IN ('dsn','chronicle') "
+            "SELECT COUNT(*) FROM olof_pages WHERE corpus = 'dsn' "
             "AND (parsed_at IS NULL OR parsed_at < fetched_at)"
         ),
-        last_run_sql="SELECT MAX(parsed_at) FROM olof_pages WHERE corpus IN ('dsn','chronicle')",
+        last_run_sql="SELECT MAX(parsed_at) FROM olof_pages WHERE corpus = 'dsn'",
         version_key=None,
         upstream=("olof_fetch",),
-        how_to_run=".venv/bin/python3 -m backend.olof_parser",
+        how_to_run="POST /api/olof/parse",
         cost="fast",
         human_gate=False,
     ),
@@ -219,7 +228,7 @@ STEPS: tuple[RefreshStep, ...] = (
         last_run_sql="SELECT MAX(parsed_at) FROM olof_pages WHERE corpus='bobserve'",
         version_key=None,
         upstream=("bobserve_fetch",),
-        how_to_run=".venv/bin/python3 -m backend.bobserve_parser",
+        how_to_run="POST /api/bobserve/parse",
         cost="fast",
         human_gate=False,
     ),

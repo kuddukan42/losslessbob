@@ -169,6 +169,14 @@ def _get_ranker_scan_status() -> dict:
     return _ranker_jobs.get_status()
 
 
+# TODO-306 Phase 3's chain runner. Imported lazily for the same reason as the
+# three wrappers above -- refresh_exec pulls in whichever step module is
+# currently running, which must not happen at backend startup.
+def _get_refresh_chain_status() -> dict:
+    from backend import refresh_exec as _refresh_exec
+    return _refresh_exec.get_status()
+
+
 # ── The adapter table ────────────────────────────────────────────────────────
 # Order matters: it is the precedence order for the legacy busy_snapshot()
 # "first running worker wins" response, preserved byte-for-byte from the old
@@ -218,6 +226,13 @@ JOB_ADAPTERS: list[JobAdapter] = [
         "bobserve_fetching", _get_bobserve_fetch_status, "/api/bobserve/fetch/stop", "/",
     ),
     JobAdapter("ranker_scanning", _get_ranker_scan_status, "/api/ranker/scan/stop", "/"),
+    # --- TODO-306 Phase 3: chained execution in dependency order ------------
+    # Appended last: order is precedence for the legacy busy_snapshot()
+    # "first running worker wins" response, and appending preserves the
+    # existing rows' behaviour unchanged. The chained worker's own adapter
+    # row above stays where it is -- both can report running at once while a
+    # chain runs a `job`-mode step, which is correct (two true facts).
+    JobAdapter("refresh_chain", _get_refresh_chain_status, "/api/refresh/chain/stop", "/"),
 ]
 
 
@@ -249,6 +264,7 @@ _PROGRESS_FIELDS: dict[str, dict[str, str]] = {
     "olof_fetching": {"current": "done", "total": "total", "label": "current"},
     "bobserve_fetching": {"current": "done", "total": "total", "label": "current"},
     "ranker_scanning": {"current": "done", "total": "total", "label": "current"},
+    "refresh_chain": {"current": "done", "total": "total", "label": "current"},
 }
 
 
