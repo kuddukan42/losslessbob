@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-310: Pipeline refresh Phase 4: human review queues as first-class blockers
+Priority: Medium
+Status: Done
+Added: 2026-08-16
+Closed: 2026-08-16
+Description: Spec: instructions/PIPELINE_REFRESH_PHASE4.md. backend/queues.py registry of the four human review queues, per-step attention + queues in /api/refresh/status, chain advisories, GET /api/refresh/queues, queue panel on DataFreshnessCard, nav badges, /library?view= deep link.
+Shipped 2026-08-16 in 4446f413 (backend + tests + CLI) and 630c5cd8 (GUI + locales). Verified live: 129/242/0/3057 match the spec's measured table; no step state changed. Deliberately left open: nothing is incremental (inventory D4), 15 manual steps unchained.
+
 TODO-308: Pipeline refresh Phase 3: chained execution in dependency order
 Priority: Medium
 Status: Done
