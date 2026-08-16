@@ -2217,6 +2217,33 @@
       "outcomeStopped": "Se detuvo tras el paso {{ran}} de {{total}}.",
       "alreadyRunning": "Ya se está ejecutando una cadena de actualización",
       "busyStep": "{{steps}} sigue ocupado — inténtalo de nuevo dentro de un rato"
+    },
+    "queues": {
+      "title": "Te esperamos",
+      "subtitle": "Colas de revisión manual que determinan el contenido que se publica en el flujo de trabajo",
+      "pending_one": "Elemento {{count}} pendiente de revisión",
+      "pending_other": "Elementos {{count}} pendientes de revisión",
+      "clear": "No hay nada pendiente",
+      "unknown": "No disponible en esta instalación",
+      "review": "Revisión",
+      "ratio": "Fechas seleccionadas de {{done}} y {{total}}",
+      "attention_one": "{{count}} para revisar",
+      "attention_other": "{{count}} para revisar",
+      "advisoryIntro": "No pasa nada si se ejecuta de todos modos —",
+      "advisoryQueue": "{{step}} utilizará {{count}} y {{queue}} sin revisar.",
+      "advisoryPublish": "La publicación incluye ahora elementos {{count}} que aún no ha revisado nadie.",
+      "labels": {
+        "taper_conflicts": "Conflictos de taping",
+        "fingerprint_suggestions": "Sugerencias de listas de reproducción",
+        "xref_filesets": "Conjuntos de archivos de referencias cruzadas organizados por etapas",
+        "tapematch_dates": "Selección de fechas en TapeMatch"
+      },
+      "actions": {
+        "taper_conflicts": "Confirmar, rechazar o marcar como sin resolver",
+        "fingerprint_suggestions": "Aceptar o rechazar cada sugerencia de coincidencia en la lista de reproducción",
+        "xref_filesets": "Archivos de suma de comprobación del sitio espejo que no se incluyeron en la descarga de la base de datos de Jeff — resuelto mediante una descarga posterior, no desde aquí",
+        "tapematch_dates": "Aceptar o rechazar los pares de candidatos para una fecha"
+      }
     }
   },
   "screenCoverage": {

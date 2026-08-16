@@ -2217,6 +2217,33 @@
       "outcomeStopped": "Nach Schritt {{ran}} von {{total}} angehalten",
       "alreadyRunning": "Eine Aktualisierungskette läuft bereits",
       "busyStep": "{{steps}} ist noch beschäftigt – bitte versuchen Sie es in Kürze erneut"
+    },
+    "queues": {
+      "title": "Wir warten auf dich",
+      "subtitle": "Von Menschen geprüfte Warteschlangen, die bestimmen, was die Pipeline veröffentlicht",
+      "pending_one": "{{count}} – zu prüfender Eintrag",
+      "pending_other": "Zu prüfende Elemente unter {{count}}",
+      "clear": "Keine Warteschlange",
+      "unknown": "In dieser Installation nicht verfügbar",
+      "review": "Bewertung",
+      "ratio": "{{done}} von {{total}} – kuratierte Daten",
+      "attention_one": "{{count}} zur Überprüfung",
+      "attention_other": "{{count}} zur Überprüfung",
+      "advisoryIntro": "Es ist in Ordnung, wenn es trotzdem läuft —",
+      "advisoryQueue": "{{step}} wird {{count}} verwenden, {{queue}} ist noch nicht geprüft.",
+      "advisoryPublish": "Die Veröffentlichung umfasst nun {{count}}-Elemente, die noch von niemandem geprüft wurden.",
+      "labels": {
+        "taper_conflicts": "Konflikte bei der Taper-Zuordnung",
+        "fingerprint_suggestions": "Vorschläge für Setlisten",
+        "xref_filesets": "Vorbereitete Dateisätze mit Querverweisen",
+        "tapematch_dates": "TapeMatch – Datums-Kuratierung"
+      },
+      "actions": {
+        "taper_conflicts": "Bestätigen, ablehnen oder als ungelöst markieren",
+        "fingerprint_suggestions": "Jeden vorgeschlagenen Treffer für die Setlist akzeptieren oder ablehnen",
+        "xref_filesets": "Prüfsummen-Dateien für die Website-Spiegelung, die in Jeffs Datenbank-Drop nicht enthalten waren – durch einen späteren Drop behoben, nicht von hier",
+        "tapematch_dates": "Kandidatenpaare für ein Datum annehmen oder ablehnen"
+      }
     }
   },
   "screenCoverage": {

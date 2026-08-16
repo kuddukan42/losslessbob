@@ -2201,6 +2201,33 @@
       "outcomeStopped": "Stopped after {{ran}} of {{total}} steps",
       "alreadyRunning": "A refresh chain is already running",
       "busyStep": "{{steps}} still busy — try again shortly"
+    },
+    "queues": {
+      "title": "Waiting on you",
+      "subtitle": "Human review queues that shape what the pipeline publishes",
+      "pending_one": "{{count}} item to review",
+      "pending_other": "{{count}} items to review",
+      "clear": "Nothing waiting",
+      "unknown": "Not available on this install",
+      "review": "Review",
+      "ratio": "{{done}} of {{total}} dates curated",
+      "attention_one": "{{count}} to review",
+      "attention_other": "{{count}} to review",
+      "advisoryIntro": "Running anyway is fine —",
+      "advisoryQueue": "{{step}} will use {{count}} unreviewed {{queue}}.",
+      "advisoryPublish": "Publishing now includes {{count}} items no one has reviewed yet.",
+      "labels": {
+        "taper_conflicts": "Taper conflicts",
+        "fingerprint_suggestions": "Setlist suggestions",
+        "xref_filesets": "Staged cross-reference filesets",
+        "tapematch_dates": "TapeMatch date curation"
+      },
+      "actions": {
+        "taper_conflicts": "Confirm, reject or mark unresolved",
+        "fingerprint_suggestions": "Accept or dismiss each suggested setlist match",
+        "xref_filesets": "Site-mirror checksum files Jeff's DB drop didn't include — resolved by a later drop, not from here",
+        "tapematch_dates": "Accept or reject the candidate pairs for a date"
+      }
     }
   },
   "savedViews": {

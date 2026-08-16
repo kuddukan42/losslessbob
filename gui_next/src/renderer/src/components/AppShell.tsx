@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Icon } from './Icon'
 import { useSettingsStore } from '../store'
 import { useActivityStore, startActivityPolling, type ActivityJob } from '../lib/activityStore'
-import { NAV_GROUPS, NAV_GROUP_KEYS, navPathForId } from '../lib/navigation'
+import { NAV_GROUPS, NAV_GROUP_KEYS, NAV_QUEUE_BADGES, navPathForId } from '../lib/navigation'
 import { useNavVisibilityStore } from '../lib/navVisibilityStore'
 import { CommandPalette } from './CommandPalette'
 import { SavedViews } from './SavedViews'
@@ -40,6 +40,9 @@ function Sidebar({
   const language = useSettingsStore((s) => s.language)
   const setLanguage = useSettingsStore((s) => s.setLanguage)
   const [collectionCount, setCollectionCount] = useState<number | undefined>(undefined)
+  // Phase 4 queue badges: NavId -> pending count, refreshed every 60s from
+  // /api/refresh/queues (four sub-millisecond counts, not the 27-step plan).
+  const [queueCounts, setQueueCounts] = useState<Record<string, number>>({})
   const [wtrfUsername, setWtrfUsername] = useState<string>('')
   const [langOpen, setLangOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
@@ -65,6 +68,27 @@ function Sidebar({
       .then(r => r.ok ? r.json() : Promise.reject())
       .then((d: { username?: string }) => setWtrfUsername(d.username ?? ''))
       .catch(() => {})
+  }, [])
+
+  useEffect(() => {
+    function pollQueues(): void {
+      fetch(`${window.api.flaskBase}/api/refresh/queues`)
+        .then(r => r.ok ? r.json() : Promise.reject())
+        .then((d: { queues?: Array<{ queue_id: string; kind: string; count: number | null }> }) => {
+          const next: Record<string, number> = {}
+          for (const q of d.queues ?? []) {
+            const navId = NAV_QUEUE_BADGES[q.queue_id]
+            if (navId && q.kind === 'gate' && typeof q.count === 'number' && q.count > 0) {
+              next[navId] = q.count
+            }
+          }
+          setQueueCounts(next)
+        })
+        .catch(() => {})
+    }
+    pollQueues()
+    const timer = window.setInterval(pollQueues, 60000)
+    return () => window.clearInterval(timer)
   }, [])
 
   return (
@@ -175,7 +199,9 @@ function Sidebar({
               )}
               {visibleItems.map((item) => {
                 const isActive = item.id === active
-                const dynamicCount = item.id === 'collection' ? collectionCount : item.count
+                const dynamicCount = item.id === 'collection'
+                  ? collectionCount
+                  : (queueCounts[item.id] ?? item.count)
                 return (
                   <button
                     key={item.id}
