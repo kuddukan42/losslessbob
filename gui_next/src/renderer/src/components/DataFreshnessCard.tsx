@@ -55,6 +55,32 @@ interface RefreshStep {
   cost: 'fast' | 'slow' | 'very_slow'
   human_gate: boolean
   version: VersionInfo
+  // Phase 4: orthogonal to `state` — a pending human queue annotates a step,
+  // it never restyles it as stale/blocked (spec §2 decision 3).
+  attention: QueueAttention[]
+}
+
+// ── Phase 4 queue types (mirrors backend/queues.py) ─────────────────────────
+
+type QueueKind = 'gate' | 'backlog'
+type QueueState = 'pending' | 'open' | 'clear' | 'unknown'
+
+interface QueueAttention {
+  queue_id: string
+  count: number
+  kind: QueueKind
+}
+
+interface RefreshQueue {
+  queue_id: string
+  label: string
+  kind: QueueKind
+  count: number | null
+  total: number | null
+  blocks: string[]
+  screen: string | null
+  action: string
+  state: QueueState
 }
 
 interface RefreshStatus {
@@ -70,6 +96,8 @@ interface RefreshStatus {
     days_since: number | null
   }
   steps: RefreshStep[]
+  queues?: RefreshQueue[]
+  queue_pending_total?: number
 }
 
 const TRIGGER_ORDER: Trigger[] = ['T1', 'T2', 'T3', 'T4']
@@ -96,12 +124,20 @@ interface ChainWhyItem {
   why: string
 }
 
+interface ChainAdvisory {
+  queue_id: string | null
+  count: number
+  step_id: string
+  kind: 'queue' | 'publish'
+}
+
 interface ChainPlan {
   scope: { step_id: string | null; trigger: string | null; include_expensive: boolean }
   runnable: ChainRunnableItem[]
   excluded: ChainWhyItem[]
   manual: ChainWhyItem[]
   blocked_by_running: string[]
+  advisories?: ChainAdvisory[]
   planned_at: string
 }
 
@@ -411,6 +447,7 @@ function ChainPreviewDialog({
   const runnable = plan?.runnable ?? []
   const manual = plan?.manual ?? []
   const excluded = plan?.excluded ?? []
+  const advisories = plan?.advisories ?? []
   const wontRunOpen = manual.length > runnable.length
 
   return (
@@ -486,6 +523,30 @@ function ChainPreviewDialog({
                     {excluded.map(item => t(`refresh.steps.${item.step_id}`, item.step_id)).join(', ')}
                   </div>
                 )}
+              </div>
+            )}
+
+            {/* Phase 4 §3.5: advisories are text, never a gate — Confirm stays enabled. */}
+            {advisories.length > 0 && (
+              <div style={{ marginBottom: 14 }}>
+                <div style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg2)', marginBottom: 4 }}>
+                  {t('refresh.queues.advisoryIntro')}
+                </div>
+                <ul style={{
+                  margin: 0, paddingLeft: 18, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)',
+                }}>
+                  {advisories.map((adv, i) => (
+                    <li key={`${adv.kind}-${adv.queue_id ?? 'all'}-${i}`}>
+                      {adv.kind === 'publish'
+                        ? t('refresh.queues.advisoryPublish', { count: adv.count })
+                        : t('refresh.queues.advisoryQueue', {
+                          step: t(`refresh.steps.${adv.step_id}`, adv.step_id),
+                          count: adv.count,
+                          queue: t(`refresh.queues.labels.${adv.queue_id}`, adv.queue_id ?? ''),
+                        })}
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
 
@@ -582,9 +643,52 @@ function HowToRun({
   )
 }
 
+// Phase 4 §3.5: a distinct, quieter treatment than any state chip — a queue is
+// not staleness, and colouring it like one would train the user to read "needs
+// a human" as "the pipeline is broken".
+function AttentionMarker({
+  attention, queues,
+}: { attention: QueueAttention[]; queues: RefreshQueue[] }): React.JSX.Element | null {
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+  const gates = attention.filter(a => a.kind === 'gate')
+  if (gates.length === 0) return null
+
+  return (
+    <>
+      {gates.map(entry => {
+        const queue = queues.find(q => q.queue_id === entry.queue_id)
+        const screen = queue?.screen ?? null
+        const label = t(`refresh.queues.labels.${entry.queue_id}`, entry.queue_id)
+        const text = `⚑ ${t('refresh.queues.attention', { count: entry.count })}`
+        const style: React.CSSProperties = {
+          fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)',
+          background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+          borderRadius: 5, padding: '1px 6px', whiteSpace: 'nowrap',
+        }
+        if (!screen) return <span key={entry.queue_id} style={style} title={label}>{text}</span>
+        return (
+          <button
+            key={entry.queue_id} type="button" title={label}
+            onClick={() => navigate(screen)}
+            style={{ ...style, cursor: 'pointer', font: 'inherit', fontSize: 'var(--lbb-fs-10-5)' }}
+          >
+            {text}
+          </button>
+        )
+      })}
+    </>
+  )
+}
+
 function StepRow({
-  step, onRefresh, onChainStarted,
-}: { step: RefreshStep; onRefresh: () => void; onChainStarted: () => void }): React.JSX.Element {
+  step, queues, onRefresh, onChainStarted,
+}: {
+  step: RefreshStep
+  queues: RefreshQueue[]
+  onRefresh: () => void
+  onChainStarted: () => void
+}): React.JSX.Element {
   const { t } = useTranslation()
   const tooltip = step.version?.state === 'changed'
     ? `${step.reason} — ${t('refresh.versionChanged')}`
@@ -598,6 +702,7 @@ function StepRow({
         {t(`refresh.steps.${step.step_id}`, step.label)}
       </span>
       <Pill tone={STATE_TONE[step.state]} soft title={tooltip}>{t(`refresh.state.${step.state}`)}</Pill>
+      <AttentionMarker attention={step.attention ?? []} queues={queues} />
       <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', width: 34, textAlign: 'right' }}>
         {fmtAge(step.age_days)}
       </span>
@@ -607,6 +712,110 @@ function StepRow({
         </span>
       )}
       <HowToRun step={step} onRefresh={onRefresh} onChainStarted={onChainStarted} />
+    </div>
+  )
+}
+
+// ── Phase 4: the queue panel ────────────────────────────────────────────────
+// A `clear` gate renders muted with a check rather than disappearing: a queue
+// that vanished when empty would leave the user unable to confirm it is empty.
+
+function GateQueueRow({ queue }: { queue: RefreshQueue }): React.JSX.Element {
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+  const pending = queue.state === 'pending'
+  const label = t(`refresh.queues.labels.${queue.queue_id}`, queue.label)
+  const action = t(`refresh.queues.actions.${queue.queue_id}`, queue.action)
+
+  let pill: React.JSX.Element
+  if (queue.state === 'unknown') {
+    pill = <Pill tone="mute" soft>{t('refresh.queues.unknown')}</Pill>
+  } else if (pending) {
+    pill = <Pill tone="warn" soft>{t('refresh.queues.pending', { count: queue.count ?? 0 })}</Pill>
+  } else {
+    pill = <Pill tone="mute" soft>{`✓ ${t('refresh.queues.clear')}`}</Pill>
+  }
+
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'center', gap: 10, padding: '7px 4px',
+      borderBottom: '1px solid var(--lbb-border)', flexWrap: 'wrap',
+    }}>
+      <span style={{ flex: '1 1 160px', fontSize: 'var(--lbb-fs-12-5)', minWidth: 0 }}>{label}</span>
+      {pill}
+      <span style={{
+        flex: '2 1 220px', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', minWidth: 0,
+      }}>
+        {action}
+      </span>
+      {/* xref_filesets has screen=null: display-only by decision 7 — the app
+          reports this queue and cannot resolve it, and the row reads that way. */}
+      {queue.screen && (
+        <Button
+          variant="ghost" size="sm" iconRight="chevRight"
+          onClick={() => navigate(queue.screen as string)}
+        >
+          {t('refresh.queues.review')}
+        </Button>
+      )}
+    </div>
+  )
+}
+
+function BacklogQueueRow({ queue }: { queue: RefreshQueue }): React.JSX.Element {
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+  const total = queue.total ?? 0
+  const done = Math.max(0, total - (queue.count ?? 0))
+  const pct = total > 0 ? Math.round((done / total) * 100) : 0
+  const label = t(`refresh.queues.labels.${queue.queue_id}`, queue.label)
+
+  // No pill and no colour: this reads as information, not as debt (decision 2).
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'center', gap: 10, padding: '7px 4px',
+      borderBottom: '1px solid var(--lbb-border)', flexWrap: 'wrap',
+    }}>
+      <span style={{ flex: '1 1 160px', fontSize: 'var(--lbb-fs-12-5)', minWidth: 0 }}>{label}</span>
+      <div style={{ flex: '2 1 220px', minWidth: 120 }}>
+        <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginBottom: 3 }}>
+          {t('refresh.queues.ratio', { done, total })}
+        </div>
+        <div style={{
+          height: 3, borderRadius: 2, background: 'var(--lbb-surface2)', overflow: 'hidden',
+        }}>
+          <div style={{ width: `${pct}%`, height: '100%', background: 'var(--lbb-fg3)' }} />
+        </div>
+      </div>
+      {queue.screen && (
+        <Button
+          variant="ghost" size="sm" iconRight="chevRight"
+          onClick={() => navigate(queue.screen as string)}
+        >
+          {t('refresh.queues.review')}
+        </Button>
+      )}
+    </div>
+  )
+}
+
+function QueuePanel({ queues }: { queues: RefreshQueue[] }): React.JSX.Element | null {
+  const { t } = useTranslation()
+  if (queues.length === 0) return null
+  return (
+    <div style={{ marginTop: 4 }}>
+      <div style={{
+        fontSize: 'var(--lbb-fs-10-5)', letterSpacing: 0.1, textTransform: 'uppercase',
+        color: 'var(--lbb-fg3)', fontWeight: 600, margin: '6px 0 2px',
+      }}>
+        {t('refresh.queues.title')}
+      </div>
+      {queues.filter(q => q.kind === 'gate').map(q => (
+        <GateQueueRow key={q.queue_id} queue={q} />
+      ))}
+      {queues.filter(q => q.kind === 'backlog').map(q => (
+        <BacklogQueueRow key={q.queue_id} queue={q} />
+      ))}
     </div>
   )
 }
@@ -708,6 +917,7 @@ export function DataFreshnessCard(): React.JSX.Element | null {
 
   if (failed || !status) return null
 
+  const queues = status.queues ?? []
   const notFresh = status.steps.filter(s => s.state === 'stale' || s.state === 'blocked')
   const unknownSteps = status.steps.filter(s => s.state === 'unknown')
   const outOfDate = status.stale_count + status.blocked_count
@@ -790,10 +1000,15 @@ export function DataFreshnessCard(): React.JSX.Element | null {
               />
             </div>
             {g.rows.map(step => (
-              <StepRow key={step.step_id} step={step} onRefresh={fetchStatus} onChainStarted={startChainPolling} />
+              <StepRow
+                key={step.step_id} step={step} queues={queues}
+                onRefresh={fetchStatus} onChainStarted={startChainPolling}
+              />
             ))}
           </div>
         ))}
+
+        <QueuePanel queues={queues} />
 
         {unknownSteps.length > 0 && (
           <div

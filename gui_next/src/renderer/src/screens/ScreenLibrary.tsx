@@ -58,6 +58,12 @@ type PerfView = 'all' | 'owned' | 'gaps' | 'uncirculated' | 'wishlist' | 'duplic
   | 'recommended' | 'superseded' | 'carbonbit' | 'tenhaaf' | 'curatedAny'
   | 'taperConfirmed' | 'taperReview'
 
+const PERF_VIEWS: readonly PerfView[] = [
+  'all', 'owned', 'gaps', 'uncirculated', 'wishlist', 'duplicates',
+  'recommended', 'superseded', 'carbonbit', 'tenhaaf', 'curatedAny',
+  'taperConfirmed', 'taperReview',
+]
+
 type FlatItem =
   | { kind: 'group'; year: string; count: number }
   | { kind: 'row'; row: RecordingRow }
@@ -501,6 +507,20 @@ export function ScreenLibrary(): React.JSX.Element {
       setSearchParams(prev => { prev.delete('lb'); return prev }, { replace: true })
     }
   }, [rows, searchParams, setSearchParams])
+
+  // Pipeline refresh Phase 4: `?view=taperReview` deep-link from the Data
+  // Freshness card's queue panel. Same one-shot consume-then-clear shape as
+  // `?lb=` above, but it needs no data — the store carries both fields.
+  const setPerfView = useLibraryFilterStore(s => s.setPerfView)
+  useEffect(() => {
+    const raw = searchParams.get('view')
+    if (raw === null) return
+    if ((PERF_VIEWS as readonly string[]).includes(raw)) {
+      setLens('performance')
+      setPerfView(raw as PerfView)
+    }
+    setSearchParams(prev => { prev.delete('view'); return prev }, { replace: true })
+  }, [searchParams, setSearchParams, setLens, setPerfView])
 
   const ownedCount = useMemo(() => rows.reduce((n, r) => n + (r.owned ? 1 : 0), 0), [rows])
 

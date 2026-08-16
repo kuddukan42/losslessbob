@@ -2217,6 +2217,33 @@
       "outcomeStopped": "Arrêt après l'étape {{ran}} sur {{total}}",
       "alreadyRunning": "Une chaîne de rafraîchissement est déjà en cours d'exécution",
       "busyStep": "{{steps}} toujours occupé — veuillez réessayer dans quelques instants"
+    },
+    "queues": {
+      "title": "En attente de votre réponse",
+      "subtitle": "Files d'attente de vérification humaine qui déterminent le contenu publié par le pipeline",
+      "pending_one": "Élément {{count}} à examiner",
+      "pending_other": "Éléments {{count}} à vérifier",
+      "clear": "Rien en attente",
+      "unknown": "Non disponible dans cette installation",
+      "review": "Révision",
+      "ratio": "Dates {{done}} et {{total}} sélectionnées",
+      "attention_one": "{{count}} à réviser",
+      "attention_other": "{{count}} à réviser",
+      "advisoryIntro": "Le fait que cela fonctionne quand même ne pose pas de problème —",
+      "advisoryQueue": "{{step}} utilisera {{count}} et {{queue}} (non révisé).",
+      "advisoryPublish": "La publication inclut désormais les éléments {{count}} qui n'ont encore fait l'objet d'aucune révision.",
+      "labels": {
+        "taper_conflicts": "Conflits de taper",
+        "fingerprint_suggestions": "Suggestions de setlists",
+        "xref_filesets": "Ensembles de fichiers de références croisées organisés par étapes",
+        "tapematch_dates": "Organisation chronologique des données dans TapeMatch"
+      },
+      "actions": {
+        "taper_conflicts": "Valider, rejeter ou marquer comme non résolu",
+        "fingerprint_suggestions": "Accepter ou rejeter chaque suggestion de correspondance de setlist",
+        "xref_filesets": "Fichiers de somme de contrôle du site miroir que la mise à jour de la base de données de Jeff n'incluait pas — problème résolu par une mise à jour ultérieure, ne provenant pas d'ici",
+        "tapematch_dates": "Accepter ou rejeter les paires de candidats pour une date"
+      }
     }
   },
   "screenCoverage": {

@@ -2217,6 +2217,33 @@
       "outcomeStopped": "Interruzione dopo il passaggio {{ran}} di {{total}}",
       "alreadyRunning": "È già in esecuzione una catena di aggiornamento",
       "busyStep": "{{steps}} ancora occupato — riprovare tra poco"
+    },
+    "queues": {
+      "title": "Ti aspettiamo",
+      "subtitle": "Code di revisione manuale che determinano i contenuti pubblicati dalla pipeline",
+      "pending_one": "Elemento {{count}} da revisionare",
+      "pending_other": "Elementi {{count}} da revisionare",
+      "clear": "Nessuna attività in sospeso",
+      "unknown": "Non disponibile in questa installazione",
+      "review": "Recensione",
+      "ratio": "Date curate di {{done}} e {{total}}",
+      "attention_one": "{{count}} da revisionare",
+      "attention_other": "{{count}} da revisionare",
+      "advisoryIntro": "Va bene anche se viene eseguita comunque —",
+      "advisoryQueue": "{{step}} utilizzerà {{count}} e {{queue}} non revisionato.",
+      "advisoryPublish": "La pubblicazione ora include elementi {{count}} che nessuno ha ancora revisionato.",
+      "labels": {
+        "taper_conflicts": "Conflitti di taping",
+        "fingerprint_suggestions": "Suggerimenti per le scalette",
+        "xref_filesets": "Set di file di riferimenti incrociati organizzati per fasi",
+        "tapematch_dates": "Curatela cronologica di TapeMatch"
+      },
+      "actions": {
+        "taper_conflicts": "Conferma, rifiuta o contrassegna come irrisolto",
+        "fingerprint_suggestions": "Accetta o ignora ogni corrispondenza suggerita per la scaletta",
+        "xref_filesets": "File di checksum del mirror del sito che non erano stati inclusi nel drop del database di Jeff — problema risolto da un drop successivo, non proveniente da qui",
+        "tapematch_dates": "Accettare o rifiutare le coppie candidate per una data"
+      }
     }
   },
   "screenCoverage": {

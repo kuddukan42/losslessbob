@@ -2217,6 +2217,33 @@
       "outcomeStopped": "Gestopt na stap {{ran}} van {{total}}",
       "alreadyRunning": "Er is al een vernieuwingsketen actief",
       "busyStep": "{{steps}} nog bezig — probeer het straks nog eens"
+    },
+    "queues": {
+      "title": "We wachten op je",
+      "subtitle": "Door mensen gecontroleerde wachtrijen die bepalen wat er via de pijplijn wordt gepubliceerd",
+      "pending_one": "{{count}} item ter beoordeling",
+      "pending_other": "{{count}} te controleren items",
+      "clear": "Niets in de wachtrij",
+      "unknown": "Niet beschikbaar in deze installatie",
+      "review": "Beoordeling",
+      "ratio": "{{done}} van {{total}} geselecteerde datums",
+      "attention_one": "{{count}} ter beoordeling",
+      "attention_other": "{{count}} ter beoordeling",
+      "advisoryIntro": "Het is prima om het gewoon te laten draaien —",
+      "advisoryQueue": "{{step}} zal gebruikmaken van {{count}} en het nog niet beoordeelde {{queue}}.",
+      "advisoryPublish": "Bij het publiceren worden nu ook {{count}}-items meegenomen die nog door niemand zijn beoordeeld.",
+      "labels": {
+        "taper_conflicts": "Conflicten bij het tapen",
+        "fingerprint_suggestions": "Suggesties voor setlists",
+        "xref_filesets": "Gefaseerde sets met kruisverwijzingsbestanden",
+        "tapematch_dates": "TapeMatch: datacuratie"
+      },
+      "actions": {
+        "taper_conflicts": "Bevestigen, afwijzen of als onopgelost markeren",
+        "fingerprint_suggestions": "Elke voorgestelde overeenkomst voor een setlist accepteren of negeren",
+        "xref_filesets": "Checksum-bestanden voor de sitespiegel die niet in Jeffs databaseback-up waren opgenomen — opgelost door een latere back-up, niet afkomstig van hier",
+        "tapematch_dates": "De kandidaatparen voor een datum accepteren of afwijzen"
+      }
     }
   },
   "screenCoverage": {

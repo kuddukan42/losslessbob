@@ -29,6 +29,17 @@ export interface NavItem {
   count?: number
 }
 
+// Pipeline refresh Phase 4: which nav item wears which human-review-queue
+// count (backend/queues.py). Only `gate` queues appear here — the TapeMatch
+// date backlog is open-ended by nature and a badge that never reaches zero
+// teaches the user to ignore every badge (spec §2 decision 2). `xref_filesets`
+// is excluded for the opposite reason: it is the one queue this install cannot
+// resolve, so its count could sit non-zero forever (decision 7).
+export const NAV_QUEUE_BADGES: Record<string, NavId> = {
+  taper_conflicts: 'library',
+  fingerprint_suggestions: 'fingerprint',
+}
+
 export interface NavGroup {
   label: NavGroupLabel | null
   gatedGroup?: boolean
