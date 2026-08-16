@@ -27,6 +27,7 @@ if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
 from backend import refresh as _refresh  # noqa: E402
+from backend import refresh_exec as _refresh_exec  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
@@ -63,13 +64,59 @@ def build_parser() -> argparse.ArgumentParser:
         help="Exit 1 if any step is stale or blocked (default: always exit 0)",
     )
     parser.add_argument("--db", default=None, help="Override the DB path")
+    parser.add_argument(
+        "--chain", metavar="STEP_ID|T1..T4", default=None,
+        help="Print the plan_chain() dry-run for this step_id or trigger and exit "
+        "without running anything",
+    )
+    parser.add_argument(
+        "--include-expensive", action="store_true",
+        help="With --chain: include very_slow/human_gate steps in runnable",
+    )
     return parser
+
+
+_CHAIN_HEADER = f"{'STEP':<22}{'MODE':<8}{'COST':<10}{'STATE':<9}REASON"
+
+
+def _print_chain(chain_arg: str, *, include_expensive: bool, db_path: str | None) -> int:
+    """Print the ``plan_chain()`` dry-run and return the process exit code."""
+    kwargs = {"include_expensive": include_expensive, "db_path": db_path}
+    if chain_arg in ("T1", "T2", "T3", "T4"):
+        plan = _refresh_exec.plan_chain(trigger=chain_arg, **kwargs)
+    else:
+        plan = _refresh_exec.plan_chain(step_id=chain_arg, **kwargs)
+
+    lines = [f"scope: {plan['scope']}", "", "RUNNABLE", _CHAIN_HEADER]
+    for step in plan["runnable"]:
+        lines.append(
+            f"{step['step_id']:<22}{step['mode']:<8}{step['cost']:<10}"
+            f"{step['state']:<9}{step['reason']}"
+        )
+    lines.append("")
+    lines.append("EXCLUDED")
+    for step in plan["excluded"]:
+        lines.append(f"{step['step_id']:<22}{step['why']}")
+    lines.append("")
+    lines.append("MANUAL")
+    for step in plan["manual"]:
+        lines.append(f"{step['step_id']:<22}{step['why']}")
+    if plan["blocked_by_running"]:
+        lines.append("")
+        lines.append(f"blocked_by_running: {', '.join(plan['blocked_by_running'])}")
+    sys.stdout.write("\n".join(lines) + "\n")
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:
     """Entry point: print the freshness table and return the exit code."""
     logging.basicConfig(level=logging.WARNING)
     args = build_parser().parse_args(argv)
+
+    if args.chain:
+        return _print_chain(
+            args.chain, include_expensive=args.include_expensive, db_path=args.db,
+        )
 
     plan = _refresh.compute_plan(db_path=args.db, trigger=args.trigger)
 

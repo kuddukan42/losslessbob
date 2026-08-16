@@ -262,3 +262,93 @@ def test_derived_recompute_writes_run_records_and_stamps_version(monkeypatch):
     assert step_ids == ["parse_lineage", "attribute_tapers", "compute_show_picks", "song_index"]
     assert all(r["status"] == "ok" for r in rows)
     assert db.get_meta("refresh_version_taper_aliases", db_path) is not None
+
+
+# ── Pipeline refresh Phase 3: parser routes (TODO-306 / spec §3.3) ──────────
+
+
+def test_olof_parse_route_writes_one_run_record(monkeypatch):
+    """POST /api/olof/parse writes exactly one refresh_step_runs row for
+    step_id='olof_parse' with the coverage summary as counters."""
+    import backend.olof_parser as olof_parser
+
+    fake_summary = {"pages_parsed": 3, "pages_ok": 3, "events_emitted": 5}
+    monkeypatch.setattr(olof_parser, "run_parse", lambda file=None: fake_summary)
+
+    db_path, _tmp = _make_db()
+    with _AppClient(db_path) as client:
+        resp = client.post("/api/olof/parse", json={})
+        assert resp.status_code == 200
+        body = resp.get_json()
+        assert body["ok"] is True
+        assert body["pages_parsed"] == 3
+
+    conn = db.get_connection(db_path)
+    rows = conn.execute(
+        "SELECT step_id, status FROM refresh_step_runs"
+    ).fetchall()
+    assert len(rows) == 1
+    assert rows[0]["step_id"] == "olof_parse"
+    assert rows[0]["status"] == "ok"
+
+
+def test_olof_parse_route_409_while_fetch_running(monkeypatch):
+    """A running olof-fetch job must block /api/olof/parse — parsing a
+    half-written mirror directory would look like data loss."""
+    import backend.olof_fetcher as olof_fetcher
+
+    db_path, _tmp = _make_db()
+    olof_fetcher._JOB.try_begin(stage="fetching")
+    try:
+        with _AppClient(db_path) as client:
+            resp = client.post("/api/olof/parse", json={})
+            assert resp.status_code == 409
+    finally:
+        olof_fetcher._JOB.finish()
+
+    conn = db.get_connection(db_path)
+    rows = conn.execute("SELECT COUNT(*) AS n FROM refresh_step_runs").fetchall()
+    assert rows[0]["n"] == 0
+
+
+def test_bobserve_parse_route_writes_one_run_record(monkeypatch):
+    """POST /api/bobserve/parse writes exactly one refresh_step_runs row for
+    step_id='bobserve_parse' with the coverage summary as counters."""
+    import backend.bobserve_parser as bobserve_parser
+
+    fake_summary = {"pages_parsed": 2, "pages_ok": 2, "events_emitted": 2}
+    monkeypatch.setattr(bobserve_parser, "run_parse", lambda file=None: fake_summary)
+
+    db_path, _tmp = _make_db()
+    with _AppClient(db_path) as client:
+        resp = client.post("/api/bobserve/parse", json={})
+        assert resp.status_code == 200
+        body = resp.get_json()
+        assert body["ok"] is True
+        assert body["pages_parsed"] == 2
+
+    conn = db.get_connection(db_path)
+    rows = conn.execute(
+        "SELECT step_id, status FROM refresh_step_runs"
+    ).fetchall()
+    assert len(rows) == 1
+    assert rows[0]["step_id"] == "bobserve_parse"
+    assert rows[0]["status"] == "ok"
+
+
+def test_bobserve_parse_route_409_while_fetch_running(monkeypatch):
+    """A running bobserve-fetch job must block /api/bobserve/parse."""
+    import backend.bobserve_fetcher as bobserve_fetcher
+
+    db_path, _tmp = _make_db()
+    bobserve_fetcher._JOB.try_begin(stage="fetching")
+    try:
+        with _AppClient(db_path) as client:
+            resp = client.post("/api/bobserve/parse", json={})
+            assert resp.status_code == 409
+    finally:
+        bobserve_fetcher._JOB.finish()
+
+    conn = db.get_connection(db_path)
+    rows = conn.execute("SELECT COUNT(*) AS n FROM refresh_step_runs").fetchall()
+    assert rows[0]["n"] == 0

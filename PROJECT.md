@@ -121,6 +121,7 @@ losslessbob/
 │   ├── timeline.py           # Timeline navigator (TODO-268): live Decade→Tour→Night grade rollup, no derived table — olof_events vs entries, GRADE_RANK best-grade
 │   ├── lb_coverage.py        # Coverage award (`design_handoff_lb_coverage_award`): read-only snapshot/coverage/stats rollup for GET /api/lb/coverage; alias-folded held test shared with db.get_missing_from_collection (BUG-321)
 │   ├── refresh.py            # Freshness planner (`instructions/PIPELINE_REFRESH_PHASE1.md` + `PHASE2.md`): 27-step registry + DAG, backlog/watermark signals read from existing computed_at/parsed_at/imported_at columns, `_parse_ts()` cross-format normalizer, publish-lag (D7); powers GET /api/refresh/status. TODO-306 P2: `_last_run_record()` merges `refresh_step_runs` into `last_run`/`last_run_source`, `version` block (`config_version.version_state()`) takes precedence over backlog in `_step_state()`, a newest `status='error'` run marks a step stale
+│   ├── refresh_exec.py       # Pipeline refresh Phase 3 (`instructions/PIPELINE_REFRESH_PHASE3.md`): `StepExecutor` registry mapping every `refresh.STEPS` step_id to an in-process call or a `JobState`-backed background worker; `plan_chain()` walks the DAG from a step_id/trigger seed pulling in stale ancestors (`_pull_stale_ancestors`), `run_chain_claimed()` runs the plan sequentially with a single-flight claim (`try_begin`/`finish`) and per-step `sub_progress`; all executor targets are resolved lazily inside wrapper functions so `concert_ranker`/`bs4`/`lxml` are never pulled into backend startup; powers POST /api/refresh/chain/preview, /start, /stop, GET /status, /history
 │   ├── ranker_jobs.py        # TODO-306 P2: backend-side concert_ranker wrapper — plan_scan/run_scan_claimed/run_rerank, JobState-backed, POST /api/ranker/scan + /api/ranker/rerank; reuses concert_ranker.cli.collection_worklist/rerank (promoted from private names)
 │   ├── dossier.py            # Show dossier (TODO-257/260): build_dossier() assembly + filter_dossier_sections/render_bbcode presentation layer; _render_locator_svg() server-side Mercator map
 │   ├── setlist_fingerprint.py # Setlist fingerprinting: score entries.setlist vs olof_songs, curator suggestion queue (TODO-225)
@@ -1071,6 +1072,21 @@ avoids orphan `running` rows after a crash. Written via `db.record_step_run()`.
 | counters_json | TEXT | Worker summary dict, verbatim JSON |
 | notes | TEXT | Optional free-text note (e.g. a version-change reason) |
 
+### `refresh_chain_runs` — Pipeline chain run log (USER table, TODO-306 P3)
+One row per completed `backend.refresh_exec.run_chain_claimed()` run (a chain, not a single
+step — `steps_json` freezes the whole plan). Never exported in master data. Written via
+`db.record_chain_run()`.
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| scope_kind | TEXT NOT NULL | `'step'` / `'trigger'` — what the chain was seeded from |
+| scope_value | TEXT NOT NULL | The step_id or trigger (e.g. `'T1'`) that seeded the plan |
+| started_at | TIMESTAMP NOT NULL | `'YYYY-MM-DD HH:MM:SS'` naive local |
+| finished_at | TIMESTAMP | Same format |
+| status | TEXT NOT NULL | `'ok'` / `'partial'` / `'stopped'` / `'error'` |
+| steps_json | TEXT | The frozen plan plus per-step outcome, verbatim JSON |
+| notes | TEXT | Optional free-text note |
+
 ### `site_inventory` — Per-URL crawl state (MASTER table)
 One row per unique URL discovered or fetched by the site crawler.
 | Column | Type | Notes |
@@ -1496,6 +1512,13 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | GET | `/api/lb_master/<lb>/nft` | Return `{nft: bool, reason}` for folder naming guidance. |
 | GET | `/api/lb_master/overrides/export` | Export all `manual_override=1` rows as a JSON array. Read-only; no curator check required. Returns `[{lb_number, manual_status, manual_notes, manual_set_by, manual_set_at}, ...]`. |
 | POST | `/api/lb_master/overrides/import` | **Curator-only.** Body: same JSON array. Upserts each row via `set_lb_manual_override`, writes `lb_status_history` with `trigger_event='import'`, skips lb_numbers outside current max. Returns `{imported, skipped}`. |
+| POST | `/api/olof/parse` | Body `{file?}`. TODO-306 P3: synchronous reparse of local DSN/chronicle pages via `backend.olof_parser.run_parse()`; 409 while the olof fetch job is running; 503 if `backend.olof_parser` isn't importable (bs4/lxml missing). Records a `refresh_step_runs` row (`olof_parse`). |
+| POST | `/api/bobserve/parse` | Body `{file?}`. Same shape/pattern as `/api/olof/parse`, via `backend.bobserve_parser.run_parse()`; 409 while the bobserve fetch job is running. Records a `refresh_step_runs` row (`bobserve_parse`). |
+| POST | `/api/refresh/chain/preview` | Body `{step_id?, trigger?, include_expensive?}` (exactly one of `step_id`/`trigger`). `backend.refresh_exec.plan_chain()` — read-only DAG walk from the seed pulling in stale ancestors; claims nothing, starts nothing, safe to call on every keystroke. 400 on a bad seed. |
+| POST | `/api/refresh/chain/start` | Same body shape as `/preview`. Re-plans server-side (never trusts a client-side plan) and starts `run_chain_claimed` in a background thread. 409 if the re-plan finds anything in `blocked_by_running` or the chain job is already claimed; `{"status":"noop"}` if nothing is left to run; otherwise `{"status":"started","steps":[...]}`. |
+| GET | `/api/refresh/chain/status` | `backend.refresh_exec.get_status()` — running chain's progress snapshot, including per-step `sub_progress`. |
+| POST | `/api/refresh/chain/stop` | Request that the active chain stop as soon as possible; returns the post-stop status snapshot. |
+| GET | `/api/refresh/chain/history` | `refresh_chain_runs` rows, newest first. Query param: `limit` (default 10). Each row's `steps_json` is parsed into `steps` before returning. |
 
 ### LB Missing (confirmed non-existent entries)
 | Method | Route | Description |

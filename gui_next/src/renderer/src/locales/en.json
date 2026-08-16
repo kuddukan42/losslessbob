@@ -89,6 +89,7 @@
         "master_publish": "Publishing master…",
         "master_install": "Installing master…",
         "sitedata_publish": "Publishing site data…",
+        "refresh_chain": "Running refresh chain…",
         "sitedata_install": "Installing site data…",
         "derived_recompute": "Recomputing derived data…",
         "olof_fetching": "Fetching Olof pages…",
@@ -2183,6 +2184,23 @@
       "sitedata_publish": "Publish sitedata",
       "preservation": "Preservation check",
       "archive_org": "Sync Archive.org"
+    },
+    "chain": {
+      "runTrigger": "Refresh {{trigger}}",
+      "runChain": "Run chain",
+      "previewTitle": "Chain preview — {{scope}}",
+      "willRun": "Will run ({{count}})",
+      "wontRun": "Won't run ({{count}})",
+      "excluded": "Excluded ({{count}})",
+      "includeExpensive": "Include slow and publish steps ({{count}})",
+      "confirm": "Run chain",
+      "running": "Running {{step}} — {{done}}/{{total}}",
+      "stopping": "Stopping…",
+      "outcomeOk": "{{ran}} of {{total}} steps ran",
+      "outcomePartial": "{{ran}} of {{total}} steps ran; {{step}} failed",
+      "outcomeStopped": "Stopped after {{ran}} of {{total}} steps",
+      "alreadyRunning": "A refresh chain is already running",
+      "busyStep": "{{steps}} still busy — try again shortly"
     }
   },
   "savedViews": {

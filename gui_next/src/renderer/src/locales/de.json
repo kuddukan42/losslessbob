@@ -93,7 +93,8 @@
         "file_integrity": "Dateiintegrität wird überprüft…",
         "olof_fetching": "Olof-Seiten werden abgerufen…",
         "bobserve_fetching": "Bobserve-Setlists werden abgerufen…",
-        "ranker_scanning": "Audioqualität wird geprüft…"
+        "ranker_scanning": "Audioqualität wird geprüft…",
+        "refresh_chain": "Aktualisierungskette wird ausgeführt…"
       },
       "tray": {
         "title": "Aktivität",
@@ -2199,7 +2200,24 @@
     "scanAll": "Vollständiger erneuter Scan",
     "scanAllWarning": "Jede Aufnahme in der Sammlung wird erneut gescannt – deutlich langsamer als ein Backlog-Scan.",
     "scanNoBacklog": "Es gibt nichts zu scannen – der Rückstand ist leer.",
-    "versionChanged": "Konfiguration seit dem letzten Lauf geändert"
+    "versionChanged": "Konfiguration seit dem letzten Lauf geändert",
+    "chain": {
+      "runTrigger": "Aktualisieren {{trigger}}",
+      "runChain": "Ausführungskette",
+      "previewTitle": "Vorschau der Kette — {{scope}}",
+      "willRun": "Wird ausgeführt ({{count}})",
+      "wontRun": "Läuft nicht ({{count}})",
+      "excluded": "Ausgeschlossen ({{count}})",
+      "includeExpensive": "Schritte „Einlesen“ und „Veröffentlichen“ einbeziehen ({{count}})",
+      "confirm": "Ausführungskette",
+      "running": "Ausführung von {{step}} – {{done}}/{{total}}",
+      "stopping": "Wird angehalten…",
+      "outcomeOk": "{{ran}} von {{total}} Schritten wurden ausgeführt",
+      "outcomePartial": "{{ran}} von {{total}} Schritten wurden ausgeführt; {{step}} ist fehlgeschlagen",
+      "outcomeStopped": "Nach Schritt {{ran}} von {{total}} angehalten",
+      "alreadyRunning": "Eine Aktualisierungskette läuft bereits",
+      "busyStep": "{{steps}} ist noch beschäftigt – bitte versuchen Sie es in Kürze erneut"
+    }
   },
   "screenCoverage": {
     "title": "Fortschritt der Sammlung",

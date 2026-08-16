@@ -2505,47 +2505,7 @@ def create_app() -> Flask:
             download = database.get_meta("scrape_attachments") != "0"
             use_local_pages = database.get_meta("use_local_pages") == "1"
 
-            with database.get_connection() as conn:
-                q = (
-                    "SELECT DISTINCT c.lb_number FROM checksums c "
-                    "LEFT JOIN lb_master m ON m.lb_number = c.lb_number "
-                    "WHERE c.lb_number >= ? "
-                    "AND (m.lb_status IS NULL OR m.lb_status != 'private')"
-                )
-                params: list = [start_lb]
-                if end_lb:
-                    q += " AND c.lb_number <= ?"
-                    params.append(end_lb)
-                q += " ORDER BY c.lb_number"
-                lb_numbers = [r[0] for r in conn.execute(q, params).fetchall()]
-
-            # Always fill every sequential gap so no LB number is left out of
-            # the database. Derive the upper bound from the highest checksum entry
-            # when no explicit end_lb was given ("Scrape All Missing" path).
-            # Gap numbers are also queued for scraping (not just stubbed), so a
-            # user-specified start_lb/end_lb with no existing checksum row still
-            # gets fetched instead of silently sitting as a "missing" placeholder.
-            effective_end = end_lb or (lb_numbers[-1] if lb_numbers else None)
-            if effective_end:
-                known = set(lb_numbers)
-                gap_range = [n for n in range(start_lb, effective_end + 1) if n not in known]
-                private_gaps: set = set()
-                if gap_range:
-                    with database.get_connection() as conn:
-                        ph = ",".join("?" * len(gap_range))
-                        private_gaps = {
-                            r[0] for r in conn.execute(
-                                f"SELECT lb_number FROM lb_master WHERE lb_number IN ({ph}) "
-                                "AND lb_status='private'",
-                                gap_range,
-                            ).fetchall()
-                        }
-                for n in gap_range:
-                    if n in private_gaps:
-                        continue
-                    database.insert_missing_entry(n)
-                    lb_numbers.append(n)
-                lb_numbers.sort()
+            lb_numbers = scraper.plan_range(start_lb, end_lb)
 
             _start_scrape_thread(lb_numbers, force=force, delay_ms=delay, download=download, use_local_pages=use_local_pages)
             return jsonify({"ok": True, "total": len(lb_numbers)})
@@ -4883,6 +4843,178 @@ def create_app() -> Flask:
         import backend.bobserve_fetcher as _bobserve_fetcher
         _bobserve_fetcher.stop()
         return jsonify(_bobserve_fetcher.get_status())
+
+    # ── Pipeline refresh Phase 3: parser routes (decision 2, spec §3.3) ──────
+    # Synchronous: a full DSN/bobserve reparse is tens of seconds and both
+    # run_parse() functions are already pure-DB with no network. The 409
+    # guard matters — parsing a half-written mirror directory (fetch still
+    # running) yields a coverage summary that reads as data loss.
+
+    @app.route("/api/olof/parse", methods=["POST"])
+    def olof_parse_run() -> Response:
+        """Synchronously reparse local DSN/chronicle pages. Body: {file?}.
+
+        409 while the olof fetch job is running; 503 if backend.olof_parser
+        isn't importable (bs4/lxml missing).
+        """
+        try:
+            import backend.olof_fetcher as _olof_fetcher
+            import backend.olof_parser as _olof_parser
+        except ImportError as exc:
+            return jsonify({"error": "module_unavailable", "message": str(exc)}), 503
+
+        if _olof_fetcher.get_status()["running"]:
+            return jsonify({"error": "fetch_running"}), 409
+
+        body = request.get_json(silent=True) or {}
+        started_at = time.strftime("%Y-%m-%d %H:%M:%S")
+        try:
+            summary = _olof_parser.run_parse(file=body.get("file"))
+        except Exception as exc:
+            _log.exception("olof_parse route failed")
+            database.record_step_run(
+                "olof_parse", status="error", started_at=started_at,
+                trigger_source="route",
+            )
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+        database.record_step_run(
+            "olof_parse", status="ok", started_at=started_at,
+            counters=summary, trigger_source="route",
+        )
+        return jsonify({"ok": True, **summary})
+
+    @app.route("/api/bobserve/parse", methods=["POST"])
+    def bobserve_parse_run() -> Response:
+        """Synchronously reparse local bobserve pages. Body: {file?}.
+
+        409 while the bobserve fetch job is running; 503 if
+        backend.bobserve_parser isn't importable (bs4/lxml missing).
+        """
+        try:
+            import backend.bobserve_fetcher as _bobserve_fetcher
+            import backend.bobserve_parser as _bobserve_parser
+        except ImportError as exc:
+            return jsonify({"error": "module_unavailable", "message": str(exc)}), 503
+
+        if _bobserve_fetcher.get_status()["running"]:
+            return jsonify({"error": "fetch_running"}), 409
+
+        body = request.get_json(silent=True) or {}
+        started_at = time.strftime("%Y-%m-%d %H:%M:%S")
+        try:
+            summary = _bobserve_parser.run_parse(file=body.get("file"))
+        except Exception as exc:
+            _log.exception("bobserve_parse route failed")
+            database.record_step_run(
+                "bobserve_parse", status="error", started_at=started_at,
+                trigger_source="route",
+            )
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+        database.record_step_run(
+            "bobserve_parse", status="ok", started_at=started_at,
+            counters=summary, trigger_source="route",
+        )
+        return jsonify({"ok": True, **summary})
+
+    @app.route("/api/refresh/chain/preview", methods=["POST"])
+    def refresh_chain_preview() -> Response:
+        """Preview the ordered chain plan_chain() would run.
+
+        Body: {step_id?, trigger?, include_expensive?}. Exactly one of
+        step_id/trigger is required. Read-only -- claims nothing, starts
+        nothing, so the GUI can call this on every keystroke of a dialog.
+        """
+        import backend.refresh_exec as _refresh_exec
+
+        body = request.get_json(silent=True) or {}
+        try:
+            plan = _refresh_exec.plan_chain(
+                step_id=body.get("step_id"), trigger=body.get("trigger"),
+                include_expensive=bool(body.get("include_expensive", False)),
+            )
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        return jsonify(plan)
+
+    @app.route("/api/refresh/chain/start", methods=["POST"])
+    def refresh_chain_start() -> Response:
+        """Re-plan server-side and start the chain thread. Body: {step_id?, trigger?, include_expensive?}.
+
+        Re-plans from the posted body rather than trusting a client-side
+        plan (spec Sec 3.4) -- the client's plan may be seconds stale.
+        409s when the re-plan finds anything in ``blocked_by_running`` or
+        the chain job is already claimed by another run; ``{"status":
+        "noop"}`` when nothing is left to run.
+        """
+        import backend.refresh_exec as _refresh_exec
+
+        body = request.get_json(silent=True) or {}
+        try:
+            plan = _refresh_exec.plan_chain(
+                step_id=body.get("step_id"), trigger=body.get("trigger"),
+                include_expensive=bool(body.get("include_expensive", False)),
+            )
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+
+        if plan["blocked_by_running"]:
+            return jsonify({
+                "error": "blocked_by_running",
+                "blocked_by_running": plan["blocked_by_running"],
+            }), 409
+
+        if not plan["runnable"]:
+            return jsonify({"status": "noop"})
+
+        if not _refresh_exec.try_begin(stage="queued"):
+            return jsonify({"error": "already_running"}), 409
+
+        threading.Thread(
+            target=_refresh_exec.run_chain_claimed,
+            kwargs={"plan": plan},
+            daemon=True, name="refresh-chain",
+        ).start()
+        return jsonify({
+            "status": "started",
+            "steps": [item["step_id"] for item in plan["runnable"]],
+        })
+
+    @app.route("/api/refresh/chain/status", methods=["GET"])
+    def refresh_chain_status() -> Response:
+        """Return the running chain's progress snapshot, including sub_progress."""
+        import backend.refresh_exec as _refresh_exec
+        return jsonify(_refresh_exec.get_status())
+
+    @app.route("/api/refresh/chain/stop", methods=["POST"])
+    def refresh_chain_stop() -> Response:
+        """Request that the active chain stop as soon as possible."""
+        import backend.refresh_exec as _refresh_exec
+        _refresh_exec.stop()
+        return jsonify(_refresh_exec.get_status())
+
+    @app.route("/api/refresh/chain/history", methods=["GET"])
+    def refresh_chain_history() -> Response:
+        """Return refresh_chain_runs rows, newest first. Query: ?limit= (default 10)."""
+        limit = request.args.get("limit", default=10, type=int)
+        rows = database.get_connection().execute(
+            """SELECT id, scope_kind, scope_value, started_at, finished_at, status,
+                      steps_json, notes
+               FROM refresh_chain_runs ORDER BY started_at DESC, id DESC LIMIT ?""",
+            (limit,),
+        ).fetchall()
+        history = []
+        for row in rows:
+            entry = dict(row)
+            if entry.get("steps_json"):
+                try:
+                    entry["steps"] = json.loads(entry["steps_json"])
+                except (TypeError, ValueError):
+                    entry["steps"] = None
+            else:
+                entry["steps"] = None
+            del entry["steps_json"]
+            history.append(entry)
+        return jsonify(history)
 
     @app.route("/api/ranker/scan", methods=["POST"])
     def ranker_scan_run() -> Response:

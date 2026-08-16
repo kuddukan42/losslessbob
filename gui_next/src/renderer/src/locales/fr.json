@@ -93,7 +93,8 @@
         "file_integrity": "Vérification de l'intégrité des fichiers…",
         "olof_fetching": "Récupération des pages Olof…",
         "bobserve_fetching": "Récupération des setlists de bobserve…",
-        "ranker_scanning": "Analyse de la qualité audio…"
+        "ranker_scanning": "Analyse de la qualité audio…",
+        "refresh_chain": "Exécution de la chaîne de rafraîchissement…"
       },
       "tray": {
         "title": "Activité",
@@ -2199,7 +2200,24 @@
     "scanAll": "Nouvelle analyse complète",
     "scanAllWarning": "Réanalyse chaque enregistrement de la collection — beaucoup plus lent qu'une analyse des enregistrements en attente.",
     "scanNoBacklog": "Rien à analyser — le carnet de commandes est vide.",
-    "versionChanged": "Configuration modifiée depuis la dernière exécution"
+    "versionChanged": "Configuration modifiée depuis la dernière exécution",
+    "chain": {
+      "runTrigger": "Actualiser {{trigger}}",
+      "runChain": "Chaîne d'exécution",
+      "previewTitle": "Aperçu de la chaîne — {{scope}}",
+      "willRun": "Fonctionnera ({{count}})",
+      "wontRun": "Ne fonctionne pas ({{count}})",
+      "excluded": "Exclu ({{count}})",
+      "includeExpensive": "Inclure les étapes de transfert et de publication ({{count}})",
+      "confirm": "Chaîne d'exécution",
+      "running": "Exécution de {{step}} — {{done}}/{{total}}",
+      "stopping": "Arrêt…",
+      "outcomeOk": "{{ran}} des étapes {{total}} ont été exécutées",
+      "outcomePartial": "{{ran}} des étapes {{total}} ont été exécutées ; {{step}} a échoué",
+      "outcomeStopped": "Arrêt après l'étape {{ran}} sur {{total}}",
+      "alreadyRunning": "Une chaîne de rafraîchissement est déjà en cours d'exécution",
+      "busyStep": "{{steps}} toujours occupé — veuillez réessayer dans quelques instants"
+    }
   },
   "screenCoverage": {
     "title": "Progression de la collection",

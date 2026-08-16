@@ -93,7 +93,8 @@
         "file_integrity": "Comprobando la integridad del archivo…",
         "olof_fetching": "Cargando páginas de Olof…",
         "bobserve_fetching": "Cargando las listas de canciones de bobserve…",
-        "ranker_scanning": "Analizando la calidad del audio…"
+        "ranker_scanning": "Analizando la calidad del audio…",
+        "refresh_chain": "Ejecutando la cadena de actualización…"
       },
       "tray": {
         "title": "Actividad",
@@ -2199,7 +2200,24 @@
     "scanAll": "Nuevo escaneo completo",
     "scanAllWarning": "Vuelve a escanear todas las grabaciones de la colección —mucho más lento que un escaneo de tareas pendientes—.",
     "scanNoBacklog": "No hay nada que revisar: la lista de tareas pendientes está vacía.",
-    "versionChanged": "La configuración ha cambiado desde la última ejecución"
+    "versionChanged": "La configuración ha cambiado desde la última ejecución",
+    "chain": {
+      "runTrigger": "Actualizar {{trigger}}",
+      "runChain": "Cadena de ejecución",
+      "previewTitle": "Vista previa de la cadena — {{scope}}",
+      "willRun": "Se ejecutará ({{count}})",
+      "wontRun": "No se ejecuta ({{count}})",
+      "excluded": "Excluidas ({{count}})",
+      "includeExpensive": "Incluir los pasos de «slow» y «publish» ({{count}})",
+      "confirm": "Cadena de ejecución",
+      "running": "Ejecutando {{step}} — {{done}}/{{total}}",
+      "stopping": "Deteniéndose…",
+      "outcomeOk": "Se han ejecutado {{ran}} de {{total}} pasos",
+      "outcomePartial": "Se han ejecutado {{ran}} de {{total}} pasos; {{step}} ha fallado",
+      "outcomeStopped": "Se detuvo tras el paso {{ran}} de {{total}}.",
+      "alreadyRunning": "Ya se está ejecutando una cadena de actualización",
+      "busyStep": "{{steps}} sigue ocupado — inténtalo de nuevo dentro de un rato"
+    }
   },
   "screenCoverage": {
     "title": "Progreso de la colección",

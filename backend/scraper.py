@@ -455,6 +455,82 @@ def scrape_entry(
     return {"ok": True, "files_downloaded": downloaded, "local_source": used_local}
 
 
+def plan_range(
+    start_lb: int = 1,
+    end_lb: int | None = None,
+    db_path: str | None = None,
+) -> list[int]:
+    """Build the ordered worklist of LB numbers to scrape over a range.
+
+    Selects distinct ``checksums.lb_number`` rows in ``[start_lb, end_lb]``
+    (or ``start_lb..`` when *end_lb* is omitted), excluding any LB whose
+    ``lb_master.lb_status`` is ``'private'`` — private LBs are handled
+    exclusively by the private-rescrape path. It then fills every sequential
+    gap in the range so no LB number is left out of the database: the upper
+    bound for gap-filling is *end_lb* if given, otherwise the highest known
+    checksum LB number ("Scrape All Missing" path). Gap numbers are stubbed
+    via :func:`backend.db.insert_missing_entry` and queued for scraping too
+    (not just left as placeholders), unless they are themselves private.
+
+    Has no Flask request-context dependency, so it is callable directly from
+    a background chain executor.
+
+    Args:
+        start_lb: First LB number to include (inclusive). Defaults to 1.
+        end_lb: Last LB number to include (inclusive). ``None`` means no
+            upper bound is applied to the checksum query; the gap-fill upper
+            bound then falls back to the highest known checksum LB number.
+        db_path: Optional override DB path, forwarded to
+            :func:`backend.db.get_connection` / ``insert_missing_entry``.
+
+    Returns:
+        Sorted list of LB numbers to scrape.
+    """
+    with get_connection(db_path) as conn:
+        q = (
+            "SELECT DISTINCT c.lb_number FROM checksums c "
+            "LEFT JOIN lb_master m ON m.lb_number = c.lb_number "
+            "WHERE c.lb_number >= ? "
+            "AND (m.lb_status IS NULL OR m.lb_status != 'private')"
+        )
+        params: list = [start_lb]
+        if end_lb:
+            q += " AND c.lb_number <= ?"
+            params.append(end_lb)
+        q += " ORDER BY c.lb_number"
+        lb_numbers = [r[0] for r in conn.execute(q, params).fetchall()]
+
+    # Always fill every sequential gap so no LB number is left out of
+    # the database. Derive the upper bound from the highest checksum entry
+    # when no explicit end_lb was given ("Scrape All Missing" path).
+    # Gap numbers are also queued for scraping (not just stubbed), so a
+    # user-specified start_lb/end_lb with no existing checksum row still
+    # gets fetched instead of silently sitting as a "missing" placeholder.
+    effective_end = end_lb or (lb_numbers[-1] if lb_numbers else None)
+    if effective_end:
+        known = set(lb_numbers)
+        gap_range = [n for n in range(start_lb, effective_end + 1) if n not in known]
+        private_gaps: set = set()
+        if gap_range:
+            with get_connection(db_path) as conn:
+                ph = ",".join("?" * len(gap_range))
+                private_gaps = {
+                    r[0] for r in conn.execute(
+                        f"SELECT lb_number FROM lb_master WHERE lb_number IN ({ph}) "
+                        "AND lb_status='private'",
+                        gap_range,
+                    ).fetchall()
+                }
+        for n in gap_range:
+            if n in private_gaps:
+                continue
+            insert_missing_entry(n, db_path=db_path)
+            lb_numbers.append(n)
+        lb_numbers.sort()
+
+    return lb_numbers
+
+
 def scrape_range(
     lb_numbers: list[int],
     force: bool = False,

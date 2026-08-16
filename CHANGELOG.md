@@ -1,3 +1,51 @@
+[2026-08-16] — feat(backend/gui): pipeline refresh Phase 3 — chained execution in dependency order
+Added: backend/refresh_exec.py: StepExecutor + EXECUTORS registry tiering all 27 refresh.STEPS
+  into 'inproc' (7), 'job' (5) and 'manual' (15, each with an honest one-line reason shown
+  verbatim in the GUI); plan_chain() building an ordered chain for either scope — per-step
+  "run this and everything it's blocked on" (transitive stale-ancestor walk; a blocked
+  ancestor contributes its ancestors, not itself-as-work) or per-trigger "refresh every stale
+  step in T1", pulling prerequisites across trigger boundaries; and run_chain_claimed(), the
+  sequential chain runner under one _CHAIN JobState claim. Every executor callable resolves
+  lazily inside its wrapper so concert_ranker/numpy and bs4/lxml stay out of backend startup.
+  (TODO-308, spec instructions/PIPELINE_REFRESH_PHASE3.md)
+Added: backend/db.py: refresh_chain_runs table (+ USER_TABLES, never exported in master) and
+  record_chain_run(), one insert at completion through _run_queued_write. refresh_step_runs
+  stays the authoritative freshness signal; this table is so "what did that chain actually
+  do?" survives the restart D8 otherwise eats.
+Added: backend/app.py: POST /api/olof/parse and POST /api/bobserve/parse — the two CLI-only
+  parsers become routes, since they are the direct downstream of Phase 2's fetch buttons and
+  a fetch that chains into a copyable <code> string is not a chain. Both 409 while their
+  fetcher runs (parsing a half-written mirror yields a coverage summary that reads as data
+  loss) and record their own refresh_step_runs row. Plus the five /api/refresh/chain/*
+  routes (preview, start, status, stop, history); start re-plans server-side rather than
+  trusting a posted plan, 409s on blocked_by_running or an existing claim, and returns
+  noop when nothing is runnable.
+Added: backend/scraper.py: plan_range() — the /api/scrape/start worklist builder extracted
+  verbatim (private exclusion, sequential gap fill, sort) so a chain can plan a scrape with
+  no Flask request context. The route now calls it and is otherwise unchanged.
+Added: backend/activity.py: refresh_chain JobAdapter appended (append preserves the legacy
+  busy_snapshot precedence order) with its lazy status wrapper and _PROGRESS_FIELDS entry;
+  `current` carries the running step_id, so the status bar names the step.
+Added: gui_next/.../components/DataFreshnessCard.tsx: per-trigger "Refresh Tn" header
+  buttons, "Run chain" on every blocked row, and a preview dialog listing the ordered
+  runnable steps with cost pills plus a "won't run" section carrying each manual step's
+  reason — not collapsed when it is longer than the runnable list, because on this registry
+  that list is the honest headline. Live done/total polling with a nested sub_progress bar
+  for job-mode steps, Stop, and a one-line outcome. Phase 2's RUNNABLE map and RunControl
+  are untouched. New refresh.chain.* + appShell.statusBar.activity.refresh_chain keys in all
+  six locales.
+Added: tools/refresh_status.py: --chain <step_id|Tn> prints the plan without running
+  anything — the dry-run surface the GUI dialog is built on.
+Fixed: backend/refresh.py: olof_parse's backlog_sql counted corpus IN ('dsn','chronicle')
+  but the step only runs the DSN parser (olof_parser.run_parse selects WHERE corpus='dsn').
+  One chronicle page — chronologies.htm, the year index, which has no year, so the chronicle
+  parser will not take it either — sat in the backlog permanently, so olof_parse could never
+  report fresh and song_index stayed blocked behind it forever. Under Phase 3 that also
+  defeated the "a re-run is cheap" noop skip: every chain containing olof_parse would have
+  re-run a 65-second full reparse for good. Scoped backlog_sql/last_run_sql to corpus='dsn'.
+  Verified live: olof_parse now reads fresh, song_index moved blocked -> stale, and a second
+  chain over olof_parse finished in under 3s with a 'noop' run record.
+
 [2026-08-13] — feat(gui): sidebar nav visibility toggle + DB Editor cache-invalidation fix
 Added: gui_next/src/renderer/src/lib/navVisibilityStore.ts: persisted zustand store
   (key lbb-nav-visibility) tracking hidden nav item ids. AboutDialog.tsx: new 5th

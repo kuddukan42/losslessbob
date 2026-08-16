@@ -379,6 +379,83 @@ class TestScrapeRangeLocalPages:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
+# 4b. plan_range()
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestPlanRange:
+    def test_empty_db_returns_empty(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.scraper import plan_range
+            assert plan_range(1, None, db_path=db_path) == []
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_excludes_private_and_fills_gaps(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            # Checksums exist for 1, 3, 5 (LB 2 and 4 are gaps). LB 5 is private.
+            conn.executemany(
+                "INSERT INTO checksums(checksum, filename, chk_type, lb_number) VALUES (?,?,?,?)",
+                [("aaa", "f1", "md5", 1), ("bbb", "f2", "md5", 3), ("ccc", "f3", "md5", 5)],
+            )
+            conn.execute(
+                "INSERT INTO lb_master(lb_number, lb_status) VALUES (5, 'private')"
+            )
+            conn.commit()
+
+            from backend.scraper import plan_range
+            result = plan_range(1, None, db_path=db_path)
+
+            # LB 5 excluded (private) entirely, including from gap-fill upper
+            # bound derivation, so the effective end is the highest remaining
+            # checksum LB (3); only gap 2 is filled.
+            assert result == [1, 2, 3]
+
+            row = conn.execute(
+                "SELECT status FROM entries WHERE lb_number=2"
+            ).fetchone()
+            assert row is not None
+            assert row["status"] == "missing"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_end_lb_honoured(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.executemany(
+                "INSERT INTO checksums(checksum, filename, chk_type, lb_number) VALUES (?,?,?,?)",
+                [("aaa", "f1", "md5", 1), ("bbb", "f2", "md5", 10)],
+            )
+            conn.commit()
+
+            from backend.scraper import plan_range
+            result = plan_range(1, 5, db_path=db_path)
+
+            # end_lb=5 excludes checksum LB 10 and caps gap-fill at 5.
+            assert result == [1, 2, 3, 4, 5]
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_start_lb_honoured(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.executemany(
+                "INSERT INTO checksums(checksum, filename, chk_type, lb_number) VALUES (?,?,?,?)",
+                [("aaa", "f1", "md5", 1), ("bbb", "f2", "md5", 8)],
+            )
+            conn.commit()
+
+            from backend.scraper import plan_range
+            result = plan_range(5, None, db_path=db_path)
+
+            # LB 1 is below start_lb and excluded; gap-fill runs 5..8.
+            assert result == [5, 6, 7, 8]
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
 # 5. get_scrape_status() / stop_scrape()
 # ═══════════════════════════════════════════════════════════════════════════════
 

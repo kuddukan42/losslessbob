@@ -93,7 +93,8 @@
         "file_integrity": "Verifica dell'integrità dei file…",
         "olof_fetching": "Caricamento delle pagine di Olof in corso…",
         "bobserve_fetching": "Recupero delle scalette di bobserve…",
-        "ranker_scanning": "Analisi della qualità audio…"
+        "ranker_scanning": "Analisi della qualità audio…",
+        "refresh_chain": "Esecuzione della catena di aggiornamento…"
       },
       "tray": {
         "title": "Attività",
@@ -2199,7 +2200,24 @@
     "scanAll": "Nuova scansione completa",
     "scanAllWarning": "Esegue una nuova scansione di ogni registrazione presente nella raccolta — operazione molto più lenta rispetto a una scansione degli elementi in sospeso.",
     "scanNoBacklog": "Niente da scansionare — l'elenco delle attività in sospeso è vuoto.",
-    "versionChanged": "Configurazione modificata dall'ultima esecuzione"
+    "versionChanged": "Configurazione modificata dall'ultima esecuzione",
+    "chain": {
+      "runTrigger": "Aggiorna {{trigger}}",
+      "runChain": "Catena di esecuzione",
+      "previewTitle": "Anteprima della catena — {{scope}}",
+      "willRun": "Funzionerà ({{count}})",
+      "wontRun": "Non funziona ({{count}})",
+      "excluded": "Esclusi ({{count}})",
+      "includeExpensive": "Includere le fasi di elaborazione e pubblicazione ({{count}})",
+      "confirm": "Catena di esecuzione",
+      "running": "In esecuzione {{step}} — {{done}}/{{total}}",
+      "stopping": "Interruzione…",
+      "outcomeOk": "Sono state eseguite le fasi {{ran}} di {{total}}",
+      "outcomePartial": "Sono state eseguite {{ran}} delle {{total}} fasi; {{step}} non è andata a buon fine",
+      "outcomeStopped": "Interruzione dopo il passaggio {{ran}} di {{total}}",
+      "alreadyRunning": "È già in esecuzione una catena di aggiornamento",
+      "busyStep": "{{steps}} ancora occupato — riprovare tra poco"
+    }
   },
   "screenCoverage": {
     "title": "Stato di avanzamento della raccolta",

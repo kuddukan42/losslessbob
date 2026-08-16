@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-308: Pipeline refresh Phase 3: chained execution in dependency order
+Priority: Medium
+Status: Done
+Added: 2026-08-16
+Closed: 2026-08-16
+Description: Spec: instructions/PIPELINE_REFRESH_PHASE3.md (written 2026-08-16, decisions signed off by tj). Adds backend/refresh_exec.py (StepExecutor registry + plan_chain + run_chain_claimed), the refresh_chain_runs table, POST /api/olof/parse + /api/bobserve/parse, five /api/refresh/chain/* routes, a refresh_chain activity adapter, and chain buttons + preview dialog on the Home freshness card. Two scopes: per-step unblock and per-trigger. Sequential, one chain at a time; very_slow/human_gate steps opt-in; 15 of 24 steps stay 'manual' with a reason string. Land the planner half (plan_chain + tools/refresh_status.py --chain) as its own commit before any execution code. Phase 4 (human-queue blockers, inventory D5) remains unspec'd.
+Shipped 2026-08-16. backend/refresh_exec.py (registry + plan_chain + run_chain_claimed), refresh_chain_runs table, 2 parser routes + 5 chain routes, refresh_chain activity adapter, freshness-card chain buttons + preview dialog, tools/refresh_status.py --chain, locales in all 6 languages. Also fixed a pre-existing Phase 1 signal bug: olof_parse's backlog_sql counted chronicle pages the DSN parser never touches, pinning it permanently stale. Verified live on the real DB: chain ran olof_parse end-to-end (chain + step run records), a second run noop'd in <3s, T3 planned olof_parse -> song_index -> geocode. 1,294 backend tests pass; gui-check PASS; visual verification PASS in Electron. Phase 4 (human-queue blockers, inventory D5) remains unspec'd.
+
 TODO-307: About dialog: Options tab to hide sidebar nav items
 Priority: Medium
 Status: Done
