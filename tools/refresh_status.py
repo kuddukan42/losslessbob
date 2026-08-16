@@ -73,6 +73,10 @@ def build_parser() -> argparse.ArgumentParser:
         "--include-expensive", action="store_true",
         help="With --chain: include very_slow/human_gate steps in runnable",
     )
+    parser.add_argument(
+        "--queues", action="store_true",
+        help="Print the human review queues (counts, kind, state, blocked steps) and exit",
+    )
     return parser
 
 
@@ -101,9 +105,43 @@ def _print_chain(chain_arg: str, *, include_expensive: bool, db_path: str | None
     lines.append("MANUAL")
     for step in plan["manual"]:
         lines.append(f"{step['step_id']:<22}{step['why']}")
+    if plan.get("advisories"):
+        lines.append("")
+        lines.append("ADVISORIES (informational — the chain still runs)")
+        for adv in plan["advisories"]:
+            label = adv["queue_id"] or "all gate queues"
+            lines.append(f"{adv['step_id']:<22}{label} — {adv['count']} awaiting review")
     if plan["blocked_by_running"]:
         lines.append("")
         lines.append(f"blocked_by_running: {', '.join(plan['blocked_by_running'])}")
+    sys.stdout.write("\n".join(lines) + "\n")
+    return 0
+
+
+_QUEUE_HEADER = f"{'QUEUE':<24}{'KIND':<9}{'STATE':<9}{'COUNT':<12}BLOCKS"
+
+
+def _print_queues(db_path: str | None) -> int:
+    """Print the human-review-queue table and return the process exit code."""
+    from backend import queues as _queues
+
+    snap = _queues.snapshot(db_path)
+    lines = [_QUEUE_HEADER]
+    for queue in snap["queues"]:
+        count = queue["count"]
+        if count is None:
+            shown = "-"
+        elif queue["total"] is not None:
+            done = queue["total"] - count
+            shown = f"{done}/{queue['total']}"
+        else:
+            shown = str(count)
+        lines.append(
+            f"{queue['queue_id']:<24}{queue['kind']:<9}{queue['state']:<9}"
+            f"{shown:<12}{', '.join(queue['blocks'])}"
+        )
+    lines.append("")
+    lines.append(f"pending_total (gates only): {snap['pending_total']}")
     sys.stdout.write("\n".join(lines) + "\n")
     return 0
 
@@ -112,6 +150,9 @@ def main(argv: list[str] | None = None) -> int:
     """Entry point: print the freshness table and return the exit code."""
     logging.basicConfig(level=logging.WARNING)
     args = build_parser().parse_args(argv)
+
+    if args.queues:
+        return _print_queues(args.db)
 
     if args.chain:
         return _print_chain(

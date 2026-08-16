@@ -4763,6 +4763,21 @@ def create_app() -> Flask:
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
+    @app.route("/api/refresh/queues", methods=["GET"])
+    def refresh_queues_endpoint() -> Response:
+        """Return the human review queue counts (Phase 4, TODO-310).
+
+        Standalone from /api/refresh/status (which carries the same list) so
+        the nav badge can poll four sub-millisecond counts without recomputing
+        the whole 27-step plan every minute.
+        """
+        try:
+            from backend import queues as _queues
+
+            return jsonify(_queues.snapshot())
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
     # ── Pipeline refresh Phase 2: wrapped CLI-only steps (TODO-306) ─────────
     # Fetch routes are ungated (same rationale as /api/geocode/run — decision 2);
     # the GUI Run button confirms once. Ranker scan/rerank are also ungated.

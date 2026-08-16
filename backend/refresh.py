@@ -843,6 +843,30 @@ def _publish_lag(conn: sqlite3.Connection) -> dict:
     }
 
 
+def _queue_signals(db_path: str | None) -> tuple[list[dict], dict[str, list[dict]]]:
+    """Return `(queue_counts, attention_by_step)` from ``backend.queues``.
+
+    Imported lazily and inside a guard on purpose (Phase 4 decision 1): the
+    dependency runs *queues -> refresh*, never the other way, and a queue
+    failure must leave the freshness card intact with empty attention rather
+    than break it. Never raises.
+
+    Args:
+        db_path: Optional DB path override, forwarded to ``queue_counts``.
+
+    Returns:
+        The queue list (empty on any failure) and the step_id -> attention map.
+    """
+    try:
+        from backend import queues as _queues
+
+        counts = _queues.queue_counts(db_path)
+        return counts, _queues.attention_by_step(counts)
+    except Exception:
+        logger.exception("refresh: queue counts unavailable")
+        return [], {}
+
+
 def compute_plan(db_path: str | None = None, trigger: str | None = None) -> dict:
     """Return the full freshness snapshot for GET /api/refresh/status.
 
@@ -855,12 +879,14 @@ def compute_plan(db_path: str | None = None, trigger: str | None = None) -> dict
 
     Returns:
         A dict with `generated_at`, `steps`, `stale_count`, `blocked_count`,
-        `unknown_count`, `by_trigger`, and `publish_lag` keys. Every field is
-        defensively computed; a missing table degrades a step to 'unknown'
-        rather than raising.
+        `unknown_count`, `by_trigger`, `publish_lag`, `queues` and
+        `queue_pending_total` keys. Every field is defensively computed; a
+        missing table degrades a step to 'unknown' rather than raising.
     """
     conn = get_connection(db_path)
     now = _dt.datetime.now()
+
+    queues, attention_map = _queue_signals(db_path)
 
     order = _topological_order()
     computed: dict[str, tuple] = {}
@@ -961,6 +987,9 @@ def compute_plan(db_path: str | None = None, trigger: str | None = None) -> dict
             "cost": step.cost,
             "human_gate": step.human_gate,
             "version": version,
+            # Orthogonal to `state` by design (Phase 4 decision 3): a pending
+            # human queue never turns a step stale/blocked, it only annotates.
+            "attention": attention_map.get(step.step_id, []),
         })
 
     return {
@@ -971,4 +1000,11 @@ def compute_plan(db_path: str | None = None, trigger: str | None = None) -> dict
         "unknown_count": unknown_count,
         "by_trigger": by_trigger,
         "publish_lag": _publish_lag(conn),
+        "queues": queues,
+        # Gate queues only -- a `backlog` queue is information, not debt, and
+        # must never inflate the nav badge (Phase 4 decision 2).
+        "queue_pending_total": sum(
+            q["count"] for q in queues
+            if q.get("kind") == "gate" and isinstance(q.get("count"), int)
+        ),
     }
