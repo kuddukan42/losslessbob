@@ -1,3 +1,43 @@
+[2026-08-16] — feat(backend/gui): pipeline refresh Phase 4 — human queues as first-class blockers
+Added: backend/queues.py: RefreshQueue registry of the four human review queues — taper
+  conflicts (129 pending), setlist-fingerprint suggestions (242 LBs), staged xref filesets (0)
+  and TapeMatch date curation (3,057 of 3,060) — counted from the app DB only, never
+  tools/tapematch/observations.db, which nightly analysis holds locked for hours. Two kinds:
+  'gate' (expected to drain to zero → badge, step attention, chain advisory) and 'backlog'
+  (open-ended → ratio only, never a badge, because a badge that never reaches zero teaches the
+  user to ignore all of them). Counts are decision units, not rows: 691 suggestion rows are 242
+  decisions. queue_counts()/attention_by_step()/pending_total()/snapshot(); no new tables.
+Added: backend/app.py: GET /api/refresh/queues — the standalone route so the sidebar badge can
+  poll four sub-millisecond counts without recomputing the 27-step plan every minute.
+Added: tools/refresh_status.py: --queues prints the queue table; --chain now also prints the
+  plan's advisories.
+Changed: backend/refresh.py: every step dict carries an `attention` list and the response
+  carries `queues` + `queue_pending_total` (gate queues only), fed by a lazy, guarded import of
+  queues.py — the dependency runs queues→refresh, never the reverse. A pending queue never
+  changes a step's state: stale/blocked/fresh/unknown keep their Phase 1 meanings exactly, and
+  a test asserts no step's state differs when queues are made unavailable.
+Changed: backend/refresh_exec.py: plan_chain() returns `advisories` (one per pending gate queue
+  blocking a runnable step, plus a kind='publish' entry when master_publish is runnable —
+  inventory open question 4 answered as an advisory, not a gate). Display-only: /start and the
+  409 path are untouched, so no queue can ever refuse a chain.
+Added: gui_next DataFreshnessCard.tsx: "Waiting on you" panel below the trigger groups. Gate
+  queues get a warn pill, their action line and a Review deep link; a clear gate stays visible
+  muted with a check rather than disappearing, so an empty queue can be confirmed empty. The
+  TapeMatch backlog renders as a ratio + thin bar with no pill and no colour. Steps a queue
+  names get a quiet "⚑ N to review" marker after the state chip — deliberately not coloured
+  like stale. Chain-preview advisories render above Confirm, which stays enabled.
+  xref_filesets is display-only per tj: count and explanation, no Review button, and the card
+  calls no /api/xref_ingest/ route.
+Added: gui_next AppShell.tsx + lib/navigation.ts: NAV_QUEUE_BADGES maps gate queues onto the
+  Library and Fingerprint nav items, polled every 60s. TapeMatch (backlog) and xref (no local
+  resolution path) are deliberately unbadged.
+Changed: gui_next ScreenLibrary.tsx: one-shot `?view=` search param (same consume-then-clear
+  shape as `?lb=`) so /library?view=taperReview lands on the taper review filter.
+Added: tests/test_queues.py (18 tests) + attention/advisory additions to test_refresh.py and
+  test_refresh_exec.py. Locales: refresh.queues.* in all six files. Wiki: new
+  docs/wiki/Pipeline-Refresh.md covering all four phases.
+  Closes TODO-310; PIPELINE_REFRESH_PHASE4.md moved to instructions/complete/.
+
 [2026-08-16] — feat(backend/gui): pipeline refresh Phase 3 — chained execution in dependency order
 Added: backend/refresh_exec.py: StepExecutor + EXECUTORS registry tiering all 27 refresh.STEPS
   into 'inproc' (7), 'job' (5) and 'manual' (15, each with an honest one-line reason shown
