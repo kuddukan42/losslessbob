@@ -471,3 +471,72 @@ def test_record_step_run_then_init_db_again_no_error(tmp_path) -> None:
     conn = db.get_connection(db_path)
     count = conn.execute("SELECT COUNT(*) FROM refresh_step_runs").fetchone()[0]
     assert count == 1
+
+
+# ── Phase 4: queue attention (TODO-310) ──────────────────────────────────
+
+
+def test_every_step_carries_an_attention_list(tmp_path) -> None:
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+    plan = compute_plan(db_path=db_path)
+    for step in plan["steps"]:
+        assert isinstance(step["attention"], list)
+
+
+def test_plan_carries_queues_and_gate_only_pending_total(tmp_path) -> None:
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+    conn = db.get_connection(db_path)
+    conn.execute(
+        "INSERT INTO taper_attributions "
+        "(lb_number, taper_normalised, confidence, evidence_json, conflict) "
+        "VALUES (1, 'x', 'inferred', '[]', 1)"
+    )
+    # A backlog queue with items must not move queue_pending_total.
+    conn.execute("INSERT INTO tapematch_pairs (concert_date, lb_a, lb_b) VALUES ('1974-01-01', 1, 2)")
+    conn.commit()
+
+    plan = compute_plan(db_path=db_path)
+    assert {q["queue_id"] for q in plan["queues"]} == {
+        "taper_conflicts", "fingerprint_suggestions", "xref_filesets", "tapematch_dates",
+    }
+    assert plan["queue_pending_total"] == 1
+
+    by_id = {s["step_id"]: s for s in plan["steps"]}
+    assert by_id["attribute_tapers"]["attention"] == [
+        {"queue_id": "taper_conflicts", "count": 1, "kind": "gate"}
+    ]
+    assert by_id["song_index"]["attention"] == []
+
+
+def test_pending_queue_never_changes_any_step_state(tmp_path, monkeypatch) -> None:
+    """Decision 3: queues are orthogonal to state. This is its regression test."""
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+    conn = db.get_connection(db_path)
+    for lb in range(1, 6):
+        conn.execute(
+            "INSERT INTO taper_attributions "
+            "(lb_number, taper_normalised, confidence, evidence_json, conflict) "
+            "VALUES (?, 'x', 'inferred', '[]', 1)", (lb,),
+        )
+    conn.commit()
+
+    with_queues = compute_plan(db_path=db_path)
+    assert with_queues["queue_pending_total"] == 5
+
+    import backend.queues as queues_mod
+
+    def _boom(*args, **kwargs):
+        raise RuntimeError("queues unavailable")
+
+    monkeypatch.setattr(queues_mod, "queue_counts", _boom)
+    without_queues = compute_plan(db_path=db_path)
+
+    assert without_queues["queues"] == []
+    assert without_queues["queue_pending_total"] == 0
+    assert {s["step_id"]: s["state"] for s in without_queues["steps"]} == {
+        s["step_id"]: s["state"] for s in with_queues["steps"]
+    }
+    assert all(s["attention"] == [] for s in without_queues["steps"])

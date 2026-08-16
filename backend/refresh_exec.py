@@ -450,8 +450,10 @@ def plan_chain(
 
     Returns:
         A dict with ``scope``, ``runnable``, ``excluded``, ``manual``,
-        ``blocked_by_running``, and ``planned_at`` keys (see spec Sec 3.1 for
-        the exact shape).
+        ``blocked_by_running``, ``advisories`` and ``planned_at`` keys (see
+        spec Sec 3.1 for the exact shape). ``advisories`` (Phase 4) is text for
+        the preview dialog and nothing else -- a pending human queue never
+        stops a chain from starting.
 
     Raises:
         ValueError: if neither or both of ``step_id``/``trigger`` are given.
@@ -527,8 +529,53 @@ def plan_chain(
         "excluded": excluded,
         "manual": manual,
         "blocked_by_running": blocked_by_running,
+        "advisories": _chain_advisories(runnable, plan.get("queues") or []),
         "planned_at": _dt.datetime.now().isoformat(),
     }
+
+
+def _chain_advisories(runnable: list[dict], queues: list[dict]) -> list[dict]:
+    """Build the preview-dialog advisories for a planned chain (Phase 4 §3.3).
+
+    Advisory, never a gate: these entries are displayed above the confirm
+    button and affect nothing else. ``POST /api/refresh/chain/start`` does not
+    read them, and no queue can produce a 409.
+
+    Args:
+        runnable: The chain's ``runnable`` list.
+        queues: ``refresh.compute_plan()``'s ``queues`` list.
+
+    Returns:
+        One ``kind='queue'`` entry per gate queue that blocks a runnable step,
+        plus one ``kind='publish'`` entry when the chain would publish while
+        any gate queue is non-empty (decision 8 -- an advisory, not a new way
+        for a publish to fail).
+    """
+    runnable_ids = {step["step_id"] for step in runnable}
+    advisories: list[dict] = []
+    pending_gates = [
+        q for q in queues
+        if q.get("kind") == "gate" and isinstance(q.get("count"), int) and q["count"] > 0
+    ]
+
+    for queue in pending_gates:
+        for step_id in queue.get("blocks", ()):
+            if step_id in runnable_ids:
+                advisories.append({
+                    "queue_id": queue["queue_id"],
+                    "count": queue["count"],
+                    "step_id": step_id,
+                    "kind": "queue",
+                })
+
+    if "master_publish" in runnable_ids and pending_gates:
+        advisories.append({
+            "queue_id": None,
+            "count": sum(q["count"] for q in pending_gates),
+            "step_id": "master_publish",
+            "kind": "publish",
+        })
+    return advisories
 
 
 # ── the chain job ────────────────────────────────────────────────────────

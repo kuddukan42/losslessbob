@@ -523,3 +523,85 @@ def test_run_chain_claimed_job_mode_wait_loop_mirrors_sub_progress(monkeypatch) 
 
     final_status = refresh_exec_mod.get_status()
     assert final_status["sub_progress"] == {"done": 3, "total": 3}
+
+
+# ── Phase 4: queue advisories (TODO-310) ─────────────────────────────────
+
+
+def _seed_taper_conflicts(db_path: str, n: int) -> None:
+    """Insert *n* undecided taper conflicts into *db_path*."""
+    conn = db.get_connection(db_path)
+    for lb in range(1, n + 1):
+        conn.execute(
+            "INSERT INTO taper_attributions "
+            "(lb_number, taper_normalised, confidence, evidence_json, conflict) "
+            "VALUES (?, 'x', 'inferred', '[]', 1)", (lb,),
+        )
+    conn.commit()
+
+
+def test_plan_chain_has_advisories_key_and_it_is_empty_when_queues_are_clear() -> None:
+    db_path = _make_db_path()
+    db.record_step_run("scrape_entries", status="error", db_path=db_path)
+    plan = plan_chain(step_id="geocode", db_path=db_path)
+    assert plan["advisories"] == []
+
+
+def test_pending_gate_queue_produces_an_advisory_without_blocking() -> None:
+    db_path = _make_db_path()
+    _seed_taper_conflicts(db_path, 129)
+    db.record_step_run("attribute_tapers", status="error", db_path=db_path)
+
+    plan = plan_chain(step_id="attribute_tapers", db_path=db_path)
+
+    assert "attribute_tapers" in [s["step_id"] for s in plan["runnable"]], (
+        "a pending queue must not move a step out of runnable"
+    )
+    assert plan["advisories"] == [{
+        "queue_id": "taper_conflicts", "count": 129,
+        "step_id": "attribute_tapers", "kind": "queue",
+    }]
+    assert plan["blocked_by_running"] == [], "a queue must never 409 a chain start"
+
+
+def test_advisory_only_names_steps_the_chain_would_actually_run() -> None:
+    """taper_conflicts blocks three steps; only the planned one is advised."""
+    db_path = _make_db_path()
+    _seed_taper_conflicts(db_path, 2)
+    db.record_step_run("attribute_tapers", status="error", db_path=db_path)
+
+    plan = plan_chain(step_id="attribute_tapers", db_path=db_path)
+    advised = {a["step_id"] for a in plan["advisories"]}
+    assert advised <= {s["step_id"] for s in plan["runnable"]}
+    assert "master_publish" not in advised
+
+
+def test_backlog_queue_never_produces_an_advisory() -> None:
+    db_path = _make_db_path()
+    conn = db.get_connection(db_path)
+    for date in ("1974-01-01", "1975-02-02"):
+        conn.execute(
+            "INSERT INTO tapematch_pairs (concert_date, lb_a, lb_b) VALUES (?, 1, 2)", (date,)
+        )
+    conn.commit()
+    db.record_step_run("attribute_tapers", status="error", db_path=db_path)
+
+    plan = plan_chain(step_id="attribute_tapers", db_path=db_path)
+    assert plan["advisories"] == []
+
+
+def test_publish_advisory_when_master_publish_is_runnable(monkeypatch) -> None:
+    """Decision 8: a non-empty gate queue advises a publish, it does not gate it."""
+    db_path = _make_db_path()
+    _seed_taper_conflicts(db_path, 3)
+    runnable = [{"step_id": "master_publish", "mode": "inproc", "cost": "fast",
+                 "state": "stale", "reason": "forced"}]
+    queues = [{"queue_id": "taper_conflicts", "kind": "gate", "count": 3,
+               "blocks": ["attribute_tapers", "compute_show_picks", "master_publish"]}]
+
+    advisories = refresh_exec_mod._chain_advisories(runnable, queues)
+    kinds = [a["kind"] for a in advisories]
+    assert "publish" in kinds
+    publish = next(a for a in advisories if a["kind"] == "publish")
+    assert publish["step_id"] == "master_publish"
+    assert publish["count"] == 3
