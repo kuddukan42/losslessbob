@@ -184,11 +184,11 @@ STEPS: tuple[RefreshStep, ...] = (
         # Scoped to corpus='dsn' only, because that is exactly what this step
         # runs: backend.olof_parser.run_parse() selects `WHERE corpus = 'dsn'`.
         # Chronicle pages are parsed by a different module
-        # (backend/olof_chronicle_parser.py) that no registry step wires up
-        # yet, and one of them (`chronologies.htm`, the year index) has no
-        # year so no parser consumes it at all -- with 'chronicle' in this
-        # predicate the backlog sat permanently at 1 and olof_parse could
-        # never report fresh, which also defeated Phase 3's "a re-run is
+        # (backend/olof_chronicle_parser.py), which has its own
+        # `olof_chronicle_parse` step below -- with 'chronicle' in this
+        # predicate the backlog sat permanently at 1 (`chronologies.htm`, the
+        # year index, has no year and no parser consumes it) and olof_parse
+        # could never report fresh, which also defeated Phase 3's "a re-run is
         # cheap" noop skip.
         backlog_sql=(
             "SELECT COUNT(*) FROM olof_pages WHERE corpus = 'dsn' "
@@ -198,6 +198,32 @@ STEPS: tuple[RefreshStep, ...] = (
         version_key=None,
         upstream=("olof_fetch",),
         how_to_run="POST /api/olof/parse",
+        cost="fast",
+        human_gate=False,
+    ),
+    RefreshStep(
+        step_id="olof_chronicle_parse",
+        label="olof_chronicle_parse",
+        trigger="T3",
+        kind="wholesale",
+        # Same sanctioned same-table exception as olof_parse above (both
+        # columns in olof_pages, same ISO-'T' writer), scoped to the rows
+        # backend.olof_chronicle_parser.run_parse() actually selects:
+        # corpus='chronicle' AND a year is known. `chronologies.htm` (the year
+        # index) carries no year, so no parser can ever consume it -- counting
+        # it would pin this backlog at 1 forever, exactly the failure that
+        # forced olof_parse's rescope (TODO-309).
+        backlog_sql=(
+            "SELECT COUNT(*) FROM olof_pages WHERE corpus = 'chronicle' "
+            "AND year IS NOT NULL AND (parsed_at IS NULL OR parsed_at < fetched_at)"
+        ),
+        last_run_sql=(
+            "SELECT MAX(parsed_at) FROM olof_pages "
+            "WHERE corpus = 'chronicle' AND year IS NOT NULL"
+        ),
+        version_key=None,
+        upstream=("olof_fetch",),
+        how_to_run="POST /api/olof/chronicle_parse",
         cost="fast",
         human_gate=False,
     ),
@@ -280,7 +306,9 @@ STEPS: tuple[RefreshStep, ...] = (
         backlog_sql=None,
         last_run_sql="SELECT MAX(computed_at) FROM song_performances",
         version_key=None,
-        upstream=("olof_parse", "bobserve_parse"),
+        # olof_chronicle_parse writes olof_events/olof_songs too, so a stale
+        # chronicle parse leaves the song index missing those performances.
+        upstream=("olof_parse", "olof_chronicle_parse", "bobserve_parse"),
         how_to_run="POST /api/derived/recompute",
         cost="slow",
         human_gate=False,

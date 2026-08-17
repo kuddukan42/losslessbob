@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-309: Wire up the olof chronicle parser (no registry step runs it)
+Priority: Low
+Status: Done
+Added: 2026-08-16
+Closed: 2026-08-16
+Description: Found during TODO-308 (2026-08-16). backend/olof_chronicle_parser.py exists with its own run_parse() writing olof_chronicle/olof_new_tapes/olof_events, but nothing calls it: no Flask route, no refresh.STEPS entry, no tool. Chronicle pages are fetched by olof_fetch and then parsed by nothing. Phase 3 scoped olof_parse's backlog_sql to corpus='dsn' to stop a permanently-stale backlog (see the 2026-08-16 CHANGELOG entry), which is correct for the step that exists but leaves chronicle pages with no freshness signal at all. Options: add an olof_chronicle_parse step + POST /api/olof/chronicle_parse and register it in refresh.STEPS/EXECUTORS, or decide chronicles are deliberately unparsed and record that. Note chronologies.htm (the year index) has no year, so the chronicle parser cannot take it either way.
+Added the olof_chronicle_parse registry step (backend/refresh.py) + inproc executor (backend/refresh_exec.py) + POST /api/olof/chronicle_parse (backend/app.py), backlog scoped to corpus='chronicle' AND year IS NOT NULL so the yearless chronologies.htm index cannot pin it at 1. song_index gains it as an upstream. Verified live.
+
 TODO-310: Pipeline refresh Phase 4: human review queues as first-class blockers
 Priority: Medium
 Status: Done

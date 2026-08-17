@@ -2166,6 +2166,7 @@
       "lb_master_reconcile": "LB-master afstemmen",
       "olof_fetch": "Olof-pagina's ophalen",
       "olof_parse": "Olof-pagina's parseren",
+      "olof_chronicle_parse": "Olof-kronieken parseren",
       "bobserve_fetch": "Bobserve-setlists ophalen",
       "bobserve_parse": "Bobserve-setlists parseren",
       "parse_lineage": "Lineage-notities parseren",

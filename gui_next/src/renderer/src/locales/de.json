@@ -2166,6 +2166,7 @@
       "lb_master_reconcile": "LB-Master abgleichen",
       "olof_fetch": "Olof-Seiten abrufen",
       "olof_parse": "Olof-Seiten analysieren",
+      "olof_chronicle_parse": "Olof-Chroniken analysieren",
       "bobserve_fetch": "Bobserve-Setlisten abrufen",
       "bobserve_parse": "bobserve-Setlisten analysieren",
       "parse_lineage": "Herkunftsangaben auswerten",

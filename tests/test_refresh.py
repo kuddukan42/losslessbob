@@ -253,6 +253,40 @@ def test_all_last_run_sql_execute_with_right_arity() -> None:
             assert len(rows[0]) == 1, f"{step.step_id}.last_run_sql returned {len(rows[0])} cols"
 
 
+# ── olof_chronicle_parse backlog scoping (TODO-309) ─────────────────────
+
+
+def test_chronicle_backlog_ignores_yearless_pages_and_other_corpora() -> None:
+    """`chronologies.htm` has no year, so no parser can ever consume it —
+    counting it would pin this backlog at 1 forever, the same failure that
+    forced olof_parse's rescope. DSN rows must not leak in either."""
+    conn, tmp_dir = _make_conn()
+    db_path = os.path.join(tmp_dir, "test.db")
+    conn.executemany(
+        "INSERT INTO olof_pages (filename, url, corpus, year, fetched_at, parsed_at) "
+        "VALUES (?, 'http://x', ?, ?, ?, ?)",
+        [
+            # yearless index: unparsable by design, must not count
+            # (parsed_at is NOT NULL DEFAULT '' in the schema — never-parsed
+            # pages carry '', which sorts below any fetched_at)
+            ("chronologies.htm", "chronicle", None, "2026-08-01T00:00:00", ""),
+            # parsed after fetch: fresh, must not count
+            ("chronicle1990.htm", "chronicle", 1990,
+             "2026-08-01T00:00:00", "2026-08-02T00:00:00"),
+            # fetched since its last parse: the one real backlog row
+            ("chronicle1991.htm", "chronicle", 1991,
+             "2026-08-03T00:00:00", "2026-08-02T00:00:00"),
+            # other corpus: olof_parse's problem, not this step's
+            ("dsn01.htm", "dsn", None, "2026-08-03T00:00:00", ""),
+        ],
+    )
+    conn.commit()
+
+    plan = compute_plan(db_path=db_path)
+    step = next(s for s in plan["steps"] if s["step_id"] == "olof_chronicle_parse")
+    assert step["backlog"] == 1
+
+
 # ── Missing table degrades to 'unknown', never raises ───────────────────
 
 
