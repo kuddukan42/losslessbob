@@ -4754,6 +4754,39 @@ def create_app() -> Flask:
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
+    @app.route("/api/lb/coverage/ledger", methods=["GET"])
+    def lb_coverage_ledger_endpoint() -> Response:
+        """Return one page of the per-entry LB ledger (TODO-305).
+
+        Query params: page, per_page, filter (all|held|missing|unmatched|review),
+        q (free text over LB#/date/location), lb (deep-link — returns the page
+        containing that LB number).
+        """
+        try:
+            lb_raw = request.args.get("lb")
+            conn = database.get_connection()
+            return jsonify(_lb_coverage.get_ledger(
+                conn,
+                page=request.args.get("page", 1, type=int),
+                per_page=request.args.get("per_page", 50, type=int),
+                filt=request.args.get("filter", "all"),
+                q=request.args.get("q", ""),
+                lb=int(lb_raw) if lb_raw and lb_raw.strip().lstrip("-").isdigit() else None,
+            ))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb/snapshots", methods=["GET"])
+    def lb_snapshots_endpoint() -> Response:
+        """Return LB-catalogue snapshot/import history, newest first (TODO-305)."""
+        try:
+            conn = database.get_connection()
+            return jsonify(_lb_coverage.get_snapshots(
+                conn, limit=request.args.get("limit", 50, type=int)
+            ))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
     @app.route("/api/refresh/status", methods=["GET"])
     def refresh_status_endpoint() -> Response:
         """Return the read-only pipeline freshness snapshot. Optional ?trigger=T1 filter."""
@@ -7781,7 +7814,7 @@ def create_app() -> Flask:
                     _json.dump(manifest, fh, indent=2)
 
                 ev_q.put({"type": "progress", "label": "Applying update to local database…", "pct": None})
-                summary = database.import_master_db(str(db_dest))
+                summary = database.import_master_db(str(db_dest), source="github")
                 ev_q.put({"type": "done", "summary": summary})
 
             except Exception as exc:

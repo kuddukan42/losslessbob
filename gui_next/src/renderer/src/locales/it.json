@@ -2304,6 +2304,77 @@
       "export": "Esporta",
       "exporting": "Rendering in corso…",
       "failed": "Esportazione non riuscita — non è stato scritto nulla."
-    }
+    },
+    "actSyncHistory": "Cronologia delle sincronizzazioni"
+  },
+  "lbLedger": {
+    "title": "Registro LB",
+    "subtitle": "ogni voce del catalogo e la sua posizione",
+    "actSync": "Cronologia delle sincronizzazioni",
+    "actBack": "Torna alla pagina \"Stato di avanzamento\"",
+    "filter": {
+      "all": "Tutte le voci",
+      "held": "Nella raccolta",
+      "missing": "Mancante",
+      "unmatched": "Non esiste ancora una famiglia",
+      "review": "Da revisionare"
+    },
+    "searchPlaceholder": "Numero LB, data o posizione",
+    "colLb": "LB",
+    "colDate": "Data",
+    "colLocation": "Ubicazione",
+    "colFamily": "Famiglia",
+    "colState": "Stato",
+    "colFiled": "Archiviato",
+    "state": {
+      "verified": "Verificato",
+      "held": "In corso",
+      "unmatched": "Impareggiabile",
+      "missing": "Mancante"
+    },
+    "needsReview": "revisione",
+    "countLabel_one": "1 voce",
+    "countLabel_other": "Voci {{formatted}}",
+    "pageLabel": "pagina {{page}} di {{pages}}",
+    "prev": "Precedente",
+    "next": "Avanti",
+    "empty": "Nessun risultato corrisponde a questo filtro.",
+    "error": "Impossibile caricare il registro. Verificare che il backend sia in esecuzione, quindi ricaricare."
+  },
+  "lbSync": {
+    "title": "Sincronizzazione del catalogo LB",
+    "subtitle": "Cronologia delle istantanee e novità introdotte da ciascun aggiornamento",
+    "actCheck": "Controlla LB per eventuali aggiornamenti",
+    "checking": "Verifica in corso…",
+    "actLedger": "Visualizza il registro completo",
+    "actBack": "Torna alla pagina \"Stato di avanzamento\"",
+    "curLabel": "istantanea",
+    "curVersion": "versione",
+    "curPublished": "pubblicato",
+    "curImported": "importato",
+    "curEntries": "voci",
+    "newerTitle": "È disponibile una nuova versione di LB: {{version}}.",
+    "newerBody": "Installalo dal programma di installazione: il catalogo su questo computer rimarrà inalterato finché non lo farai.",
+    "openSetup": "Apri configurazione",
+    "upToDateTitle": "Aggiornato allo snapshot LB {{version}}.",
+    "upToDateBody": "Non è stato pubblicato nulla di più recente dalla tua ultima importazione.",
+    "failedTitle": "Impossibile contattare LB.",
+    "failedBody": "Verifica la connessione e riprova: in questa schermata non è cambiato nulla.",
+    "retry": "Riprova",
+    "colLabel": "Istantanea",
+    "colImported": "Importato",
+    "colSource": "Codice sorgente",
+    "colTotal": "Voci",
+    "colAdded": "Aggiunto",
+    "colChanges": "Modifiche",
+    "colNote": "Versione",
+    "source": {
+      "github": "GitHub",
+      "file": "File",
+      "unknown": "Sconosciuto"
+    },
+    "syntheticNote": "installato prima che venisse registrata la cronologia delle importazioni",
+    "empty": "Non è stata ancora importata alcuna istantanea del catalogo.",
+    "error": "Impossibile caricare la cronologia degli snapshot. Verificare che il backend sia in esecuzione, quindi ricaricare."
   }
 }

@@ -966,8 +966,11 @@ export function ScreenCoverage(): React.JSX.Element {
             ? <Icon name="refresh" size={13} className="p2-spin" />
             : t('screenCoverage.actSync')}
         </Button>
-        <Button variant="ghost" block={narrow} onClick={() => navigate('/collection')}>
+        <Button variant="ghost" block={narrow} onClick={() => navigate('/lbdir/ledger')}>
           {t('screenCoverage.actLedger')}
+        </Button>
+        <Button variant="ghost" block={narrow} onClick={() => navigate('/lbdir/sync')}>
+          {t('screenCoverage.actSyncHistory')}
         </Button>
       </div>
 

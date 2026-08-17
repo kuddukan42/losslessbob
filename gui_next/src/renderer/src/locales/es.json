@@ -2304,6 +2304,77 @@
       "export": "Exportar",
       "exporting": "Renderizando…",
       "failed": "Error al exportar: no se ha escrito nada."
-    }
+    },
+    "actSyncHistory": "Historial de sincronización"
+  },
+  "lbLedger": {
+    "title": "Libro mayor LB",
+    "subtitle": "cada entrada del catálogo y su ubicación",
+    "actSync": "Historial de sincronización",
+    "actBack": "Volver al progreso",
+    "filter": {
+      "all": "Todas las entradas",
+      "held": "En la colección",
+      "missing": "Falta",
+      "unmatched": "Aún no hay una familia",
+      "review": "Necesita revisión"
+    },
+    "searchPlaceholder": "Número de LB, fecha o ubicación",
+    "colLb": "LB",
+    "colDate": "Fecha",
+    "colLocation": "Ubicación",
+    "colFamily": "Familia",
+    "colState": "Estado",
+    "colFiled": "Archivado",
+    "state": {
+      "verified": "Verificado",
+      "held": "Realizado",
+      "unmatched": "Inigualable",
+      "missing": "Falta"
+    },
+    "needsReview": "revisión",
+    "countLabel_one": "1 entrada",
+    "countLabel_other": "Entradas {{formatted}}",
+    "pageLabel": "página {{page}} de {{pages}}",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "empty": "No hay entradas que coincidan con este filtro.",
+    "error": "No se ha podido cargar el libro mayor. Comprueba que el servidor esté en funcionamiento y vuelve a cargarlo."
+  },
+  "lbSync": {
+    "title": "Sincronización del catálogo de LB",
+    "subtitle": "Historial de instantáneas y novedades de cada actualización",
+    "actCheck": "Consulta LB para ver si hay alguna actualización.",
+    "checking": "Comprobando…",
+    "actLedger": "Ver el libro mayor completo",
+    "actBack": "Volver al progreso",
+    "curLabel": "instantánea",
+    "curVersion": "versión",
+    "curPublished": "publicado",
+    "curImported": "importado",
+    "curEntries": "entradas",
+    "newerTitle": "Hay disponible una nueva instantánea de LB: {{version}}.",
+    "newerBody": "Instálala desde el programa de instalación: el catálogo de este equipo permanecerá intacto hasta que lo hagas.",
+    "openSetup": "Abrir configuración",
+    "upToDateTitle": "Actualizado con la instantánea de LB {{version}}.",
+    "upToDateBody": "No se ha publicado nada más reciente desde tu última importación.",
+    "failedTitle": "No he podido contactar con LB.",
+    "failedBody": "Comprueba la conexión e inténtalo de nuevo: nada ha cambiado en esta pantalla.",
+    "retry": "Reintentar",
+    "colLabel": "Instantánea",
+    "colImported": "Importado",
+    "colSource": "Fuente",
+    "colTotal": "Entradas",
+    "colAdded": "Añadido",
+    "colChanges": "Cambios",
+    "colNote": "Versión",
+    "source": {
+      "github": "GitHub",
+      "file": "Archivo",
+      "unknown": "Desconocido"
+    },
+    "syntheticNote": "Se instaló antes de que se registrara el historial de importaciones",
+    "empty": "Aún no se ha importado ninguna instantánea del catálogo.",
+    "error": "No se ha podido cargar el historial de instantáneas. Comprueba que el servidor esté en funcionamiento y vuelve a cargarlo."
   }
 }

@@ -2304,6 +2304,77 @@
       "export": "Export",
       "exporting": "Rendering…",
       "failed": "Export failed — nothing was written."
-    }
+    },
+    "actSyncHistory": "Sync history"
+  },
+  "lbLedger": {
+    "title": "LB ledger",
+    "subtitle": "every catalogue entry and where it stands",
+    "actSync": "Sync history",
+    "actBack": "Back to progress",
+    "filter": {
+      "all": "All entries",
+      "held": "In collection",
+      "missing": "Missing",
+      "unmatched": "No family yet",
+      "review": "Needs review"
+    },
+    "searchPlaceholder": "LB number, date or location",
+    "colLb": "LB",
+    "colDate": "Date",
+    "colLocation": "Location",
+    "colFamily": "Family",
+    "colState": "State",
+    "colFiled": "Filed",
+    "state": {
+      "verified": "Verified",
+      "held": "Held",
+      "unmatched": "Unmatched",
+      "missing": "Missing"
+    },
+    "needsReview": "review",
+    "countLabel_one": "1 entry",
+    "countLabel_other": "{{formatted}} entries",
+    "pageLabel": "page {{page}} of {{pages}}",
+    "prev": "Previous",
+    "next": "Next",
+    "empty": "No entries match this filter.",
+    "error": "The ledger couldn't be loaded. Check that the backend is running, then reload."
+  },
+  "lbSync": {
+    "title": "LB catalogue sync",
+    "subtitle": "snapshot history and what each update brought",
+    "actCheck": "Check LB for an update",
+    "checking": "Checking…",
+    "actLedger": "View full ledger",
+    "actBack": "Back to progress",
+    "curLabel": "snapshot",
+    "curVersion": "version",
+    "curPublished": "published",
+    "curImported": "imported",
+    "curEntries": "entries",
+    "newerTitle": "A newer LB snapshot is available: {{version}}.",
+    "newerBody": "Install it from Setup — the catalogue on this machine stays untouched until you do.",
+    "openSetup": "Open Setup",
+    "upToDateTitle": "Up to date with LB snapshot {{version}}.",
+    "upToDateBody": "Nothing newer has been published since your last import.",
+    "failedTitle": "Couldn't reach LB.",
+    "failedBody": "Check the connection and try again — nothing on this screen has changed.",
+    "retry": "Retry",
+    "colLabel": "Snapshot",
+    "colImported": "Imported",
+    "colSource": "Source",
+    "colTotal": "Entries",
+    "colAdded": "Added",
+    "colChanges": "Changes",
+    "colNote": "Version",
+    "source": {
+      "github": "GitHub",
+      "file": "File",
+      "unknown": "Unknown"
+    },
+    "syntheticNote": "installed before import history was recorded",
+    "empty": "No catalogue snapshot has been imported yet.",
+    "error": "The snapshot history couldn't be loaded. Check that the backend is running, then reload."
   }
 }

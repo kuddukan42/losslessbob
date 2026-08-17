@@ -1241,6 +1241,26 @@ CREATE TABLE IF NOT EXISTS pipeline_folder_state (
     updated_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 CREATE INDEX IF NOT EXISTS idx_pipeline_state_fp ON pipeline_folder_state(fingerprint);
+
+-- LB catalogue snapshot history (TODO-305): one row per master-snapshot import,
+-- written by import_master_db(). Feeds GET /api/lb/snapshots and the
+-- /lbdir/sync screen, which is the only place the per-update diff is visible —
+-- the meta table only ever holds the *current* master_version.
+CREATE TABLE IF NOT EXISTS lb_snapshot_history (
+    id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    master_version      TEXT,
+    master_published_at TEXT,
+    imported_at         TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    source              TEXT,           -- 'github' | 'file' | 'unknown'
+    entries_total       INTEGER,        -- lb_master rows after the import
+    entries_held        INTEGER,        -- of those, in my_collection
+    entries_added       INTEGER,        -- lb_master delta vs the previous row
+    lb_status_changes   INTEGER,
+    status_counts_json  TEXT,           -- post-import lb_status histogram
+    row_counts_json     TEXT,           -- rows written per master table
+    backup_path         TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_lb_snapshot_hist_at ON lb_snapshot_history(imported_at DESC);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -6754,7 +6774,8 @@ def get_map_data(filters: dict, db_path=None) -> dict:
     return {"markers": markers, "unplottable_count": unplottable_count}
 
 
-def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
+def import_master_db(snapshot_path: "Path | str", db_path=None,
+                     source: str = "file") -> dict:
     """Import a master snapshot into the local DB, preserving user data.
 
     Pipeline:
@@ -6773,6 +6794,16 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
          leave user keys (theme, qbt_*, wtrf_*, is_curator, ...) untouched.
       7. ``INSERT INTO entries_fts(entries_fts) VALUES('rebuild');``
       8. ``DETACH DATABASE incoming``.
+      9. Append a ``lb_snapshot_history`` row (TODO-305) so ``/lbdir/sync`` can
+         show the per-update diff; a failure there never fails the import.
+
+    Args:
+        snapshot_path: Path to the master ``.db`` snapshot (its
+            ``.manifest.json`` sidecar must sit alongside it).
+        db_path: Target database; defaults to the app DB.
+        source: Where the snapshot came from — ``"github"`` for an installed
+            release, ``"file"`` for a local/manual import. Recorded in the
+            snapshot-history row only.
 
     Returns:
         Summary dict: ``{master_version, rows_per_table, lb_status_counts,
@@ -6921,6 +6952,26 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
                           for k in all_keys) // 2
             break
 
+    imported_at = _dt.now(UTC).isoformat()
+
+    # Snapshot history (TODO-305). Best-effort: the import itself has already
+    # committed, so a bookkeeping failure must not turn a good import into an
+    # error — /lbdir/sync would just be missing one row.
+    try:
+        _record_snapshot_history(
+            conn,
+            master_version=manifest.get("master_version"),
+            master_published_at=manifest.get("master_published_at"),
+            imported_at=imported_at,
+            source=source,
+            status_counts=post_status,
+            lb_status_changes=changed,
+            row_counts=row_counts,
+            backup_path=str(backup_path),
+        )
+    except sqlite3.Error:
+        logger.exception("import_master_db: failed recording lb_snapshot_history")
+
     return {
         "master_version": manifest.get("master_version"),
         "master_published_at": manifest.get("master_published_at"),
@@ -6929,9 +6980,74 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
         "post_status_counts": post_status,
         "lb_status_changes": changed,
         "backup_path": str(backup_path),
-        "imported_at": _dt.now(UTC).isoformat(),
+        "imported_at": imported_at,
         "skipped_tables": skipped_tables,
     }
+
+
+def _record_snapshot_history(conn: sqlite3.Connection, *, master_version: str | None,
+                             master_published_at: str | None, imported_at: str,
+                             source: str, status_counts: dict[str, int],
+                             lb_status_changes: int, row_counts: dict,
+                             backup_path: str | None) -> None:
+    """Append one row to ``lb_snapshot_history`` describing a master import.
+
+    ``entries_added`` is the ``lb_master`` row-count delta against the newest
+    existing history row, so the first-ever import reports its full size rather
+    than a meaningless zero.
+
+    Args:
+        conn: Open connection to the target database (already committed).
+        master_version: ``master_version`` from the incoming manifest.
+        master_published_at: ``master_published_at`` from the incoming manifest.
+        imported_at: ISO-8601 UTC stamp for this import.
+        source: ``"github"`` or ``"file"``.
+        status_counts: Post-import ``lb_status`` histogram.
+        lb_status_changes: Number of LBs whose status moved in this import.
+        row_counts: Rows written per master table.
+        backup_path: Path of the pre-import backup, if one was taken.
+    """
+    import json as _json
+
+    conn.executescript("""
+        CREATE TABLE IF NOT EXISTS lb_snapshot_history (
+            id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+            master_version      TEXT,
+            master_published_at TEXT,
+            imported_at         TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            source              TEXT,
+            entries_total       INTEGER,
+            entries_held        INTEGER,
+            entries_added       INTEGER,
+            lb_status_changes   INTEGER,
+            status_counts_json  TEXT,
+            row_counts_json     TEXT,
+            backup_path         TEXT
+        );
+    """)
+
+    entries_total = conn.execute("SELECT COUNT(*) FROM lb_master").fetchone()[0]
+    entries_held = conn.execute("""
+        SELECT COUNT(*) FROM lb_master lm
+        WHERE lm.lb_status != 'nonexistent'
+          AND EXISTS (SELECT 1 FROM my_collection mc WHERE mc.lb_number = lm.lb_number)
+    """).fetchone()[0]
+
+    prev = conn.execute(
+        "SELECT entries_total FROM lb_snapshot_history ORDER BY id DESC LIMIT 1"
+    ).fetchone()
+    prev_total = prev[0] if prev and prev[0] is not None else 0
+
+    conn.execute("""
+        INSERT INTO lb_snapshot_history
+            (master_version, master_published_at, imported_at, source,
+             entries_total, entries_held, entries_added, lb_status_changes,
+             status_counts_json, row_counts_json, backup_path)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (master_version, master_published_at, imported_at, source,
+          entries_total, entries_held, entries_total - prev_total, lb_status_changes,
+          _json.dumps(status_counts), _json.dumps(row_counts), backup_path))
+    conn.commit()
 
 
 # ── lb_alias helpers ──────────────────────────────────────────────────────────
