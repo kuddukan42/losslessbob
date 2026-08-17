@@ -384,6 +384,37 @@ def test_older_run_record_loses_to_watermark(tmp_path) -> None:
     assert step["last_run"].startswith("2026-08-01")
 
 
+def test_ranker_scan_backlog_matches_the_planner(tmp_path) -> None:
+    """TODO-311: the freshness pill is the scan's own `planned`, not a count of
+    raw my_collection under MAX(scan_id)."""
+    import backend.ranker_jobs as ranker_jobs
+    from concert_ranker.lb import repo
+
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+    conn = repo.connect(db_path)
+    for lb, category, status in ((1, None, "public"), (2, "studio", "public"),
+                                 (3, None, "private"), (4, None, "public")):
+        conn.execute(
+            "INSERT INTO my_collection(lb_number, folder_name, disk_path) VALUES(?,?,?)",
+            (lb, f"lb{lb}", f"/nope/{lb}"),
+        )
+        conn.execute("INSERT INTO entries(lb_number, lb_category) VALUES(?,?)", (lb, category))
+        conn.execute("INSERT INTO lb_master(lb_number, lb_status) VALUES(?,?)", (lb, status))
+    conn.commit()
+
+    # Only LBs 1 and 4 are eligible; measure 1 under the active scan.
+    plan_before = ranker_jobs.plan_scan(mode="backlog", db_path=db_path)
+    assert plan_before["planned"] == 2
+    repo.persist_recording(conn, plan_before["scan_id"], 1, "SBD",
+                           repo.build_metric_json({"crowd_snr_db": 1.0}))
+
+    step = next(s for s in compute_plan(db_path=db_path)["steps"]
+                if s["step_id"] == "ranker_scan")
+    assert step["backlog"] == 1
+    assert step["backlog"] == ranker_jobs.plan_scan(mode="backlog", db_path=db_path)["planned"]
+
+
 def test_ranker_rerank_last_run_purely_from_record(tmp_path) -> None:
     """ranker_rerank has no last_run_sql -- its last_run comes only from the run-record."""
     db_path = str(tmp_path / "test.db")

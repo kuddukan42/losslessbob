@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-311: Ranker scan must never re-measure a folder that already has metrics
+Priority: High
+Status: Done
+Added: 2026-08-16
+Closed: 2026-08-16
+Description: A scoring-only config change (one polarity value) made plan_scan fork a new scan_id, orphaning 16,099 measured LBs and queuing a full corpus re-scan; the freshness pill also counted raw my_collection under MAX(scan_id) (16,496) against a real plan of 14,558. Split extraction-relevant config from scoring-only config, reuse/adopt metrics across scans sharing an extraction key, and count the backlog with the planner's own code.
+Fixed: concert_ranker/config.py extraction_fingerprint() (SCORING_ONLY_FIELDS = polarity, family_weights); quality_scans.extraction_key + repo.reusable_scan_id/adopt_metrics; plan_scan appends to the richest same-key scan and adopts stranded rows; refresh.py ranker steps count via backlog_fn. Live: pending 16,496 -> 454, active scan 18 (16,099 rows) reused.
+
 TODO-309: Wire up the olof chronicle parser (no registry step runs it)
 Priority: Low
 Status: Done

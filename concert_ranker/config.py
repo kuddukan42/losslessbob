@@ -14,6 +14,8 @@ the DB-stored override table). Do not trust them as ranking-grade until fitted.
 """
 from __future__ import annotations
 
+import hashlib
+import json
 from dataclasses import dataclass, field
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -460,3 +462,41 @@ class Config:
 
 def default_config() -> Config:
     return Config()
+
+
+# Config fields consumed only by scoring/ranking (scoring.py), never by feature
+# extraction. Changing one re-ranks stored metrics; it does not change a single
+# measured value, so it must NOT invalidate a scan's audio measurements
+# (TODO-311: a one-value `polarity` tweak silently orphaned 16,099 scanned LBs
+# and queued a full re-scan of the corpus).
+SCORING_ONLY_FIELDS = frozenset({"polarity", "family_weights"})
+
+
+def extraction_config(config: Config | dict | None = None) -> dict:
+    """Return only the config fields that affect what gets *measured*.
+
+    Args:
+        config: A :class:`Config`, a plain dict of its fields, or None for the
+            default config.
+
+    Returns:
+        The config minus :data:`SCORING_ONLY_FIELDS`.
+    """
+    if config is None:
+        config = default_config()
+    fields_ = config if isinstance(config, dict) else vars(config)
+    return {k: v for k, v in fields_.items() if k not in SCORING_ONLY_FIELDS}
+
+
+def extraction_fingerprint(config: Config | dict | None = None) -> str:
+    """Stable hash of :func:`extraction_config` — two scans with the same
+    fingerprint hold interchangeable measurements.
+
+    Args:
+        config: See :func:`extraction_config`.
+
+    Returns:
+        A 16-char hex digest.
+    """
+    payload = json.dumps(extraction_config(config), sort_keys=True, default=str)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:16]

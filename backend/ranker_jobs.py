@@ -13,7 +13,6 @@ non-concert/non-public exclusion logic lives in exactly one place.
 
 from __future__ import annotations
 
-import json
 import logging
 import os
 import sys
@@ -23,7 +22,7 @@ from backend import config_version
 from backend.db import record_step_run
 from backend.job_progress import JobState, JobStopped
 from concert_ranker import config as cr_config
-from concert_ranker.cli import collection_worklist, rerank
+from concert_ranker.cli import collection_backlog_count, collection_worklist, rerank
 from concert_ranker.lb import repo
 
 logger = logging.getLogger(__name__)
@@ -81,21 +80,69 @@ def _resolve_workers(requested: int | None) -> int:
     return max(1, min(requested, 16))
 
 
+def active_scan_id(conn) -> int | None:
+    """The scan a backlog run would append to, i.e. the one holding reusable
+    measurements for the current extraction config.
+
+    Args:
+        conn: An open connection (``repo.connect``).
+
+    Returns:
+        A ``scan_id``, or None when nothing has been scanned with this config.
+    """
+    key = cr_config.extraction_fingerprint(vars(cr_config.default_config()))
+    return repo.reusable_scan_id(conn, key)
+
+
+def count_scan_backlog(conn) -> int:
+    """Folders a ``mode='backlog'`` scan would measure — the freshness pill.
+
+    Deliberately shares :func:`collection_backlog_count` with the planner so
+    the Home card's pending count and the scan's own ``planned`` cannot drift
+    (TODO-311: the card read 16,496 against a plan of 14,558).
+
+    Read-only — never calls ``ensure_schema``: this runs on the freshness poll,
+    which must not write to the DB behind the backend's write queue. Counts
+    against every scan sharing the current extraction config, matching the
+    planner, which adopts those rows instead of re-measuring them.
+    """
+    key = cr_config.extraction_fingerprint(vars(cr_config.default_config()))
+    return collection_backlog_count(conn, repo.same_key_scan_ids(conn, key))
+
+
+def count_rerank_backlog(conn) -> int:
+    """LBs measured under the active scan but not yet scored under it. Read-only."""
+    scan_id = active_scan_id(conn)
+    if scan_id is None:
+        return 0
+    row = conn.execute(
+        "SELECT COUNT(*) FROM quality_recording_metrics m WHERE m.scan_id=? "
+        "AND NOT EXISTS (SELECT 1 FROM quality_recording_scores s "
+        "WHERE s.lb_number=m.lb_number AND s.scan_id=m.scan_id)",
+        (scan_id,),
+    ).fetchone()
+    return int(row[0])
+
+
 def plan_scan(
     mode: str = "backlog", lbs: list[int] | None = None, db_path: str | None = None,
 ) -> dict:
     """Build the worklist for a ranker scan without running it (decision 1).
 
     Args:
-        mode: 'backlog' (default) reuses the latest scan_id and filters to
-            LBs not yet scanned under it, unless the effective config has
-            drifted since that scan was created (in which case a *new* scan
-            is created instead of appending — mixing two extraction configs
-            inside one scan_id silently corrupts rankings). 'all' always
+        mode: 'backlog' (default) appends to the scan holding the most
+            measurements taken with the *current extraction config*, and plans
+            only the LBs missing from it — an already-measured folder is never
+            re-measured (TODO-311). A new scan is created only when no scan
+            matches the extraction config, i.e. when the change actually alters
+            what gets measured; mixing two extraction configs inside one
+            scan_id would silently corrupt rankings. Scoring-only drift
+            (polarity/family weights) is handled by rerank, which re-reads
+            those from config, so it never triggers a re-scan. 'all' always
             creates a new scan with the full collection worklist.
-        lbs: Explicit LB filter — reuses the latest scan_id (creating one if
-            none exists), no done-lbs filtering (an explicit re-scan request
-            should re-scan even if already done).
+        lbs: Explicit LB filter — reuses the active scan (creating one if none
+            exists), no done-lbs filtering (an explicit re-scan request should
+            re-scan even if already done).
         db_path: Optional database path override.
 
     Returns:
@@ -107,13 +154,13 @@ def plan_scan(
     conn = repo.connect(db_path)
     repo.ensure_schema(conn)
     config_now = vars(cr_config.default_config())
-    config_json_now = json.dumps(config_now, sort_keys=True)
+    extraction_key = cr_config.extraction_fingerprint(config_now)
 
     reused_scan = False
     config_changed = False
 
     if lbs:
-        scan_id = repo.latest_scan_id(conn)
+        scan_id = repo.reusable_scan_id(conn, extraction_key)
         if scan_id is None:
             scan_id = repo.create_scan(conn, config=config_now)
         else:
@@ -123,23 +170,20 @@ def plan_scan(
         scan_id = repo.create_scan(conn, config=config_now)
         worklist = collection_worklist(conn)
     elif mode == "backlog":
-        scan_id = repo.latest_scan_id(conn)
+        scan_id = repo.reusable_scan_id(conn, extraction_key)
         if scan_id is None:
+            # No scan measured with this extraction config: a genuine extraction
+            # change (config_changed) unless this is the very first scan.
+            config_changed = repo.latest_scan_id(conn) is not None
             scan_id = repo.create_scan(conn, config=config_now)
             worklist = collection_worklist(conn)
         else:
-            row = conn.execute(
-                "SELECT config_json FROM quality_scans WHERE scan_id=?", (scan_id,)
-            ).fetchone()
-            stored_config_json = row["config_json"] if row else None
-            if stored_config_json != config_json_now:
-                scan_id = repo.create_scan(conn, config=config_now)
-                config_changed = True
-                worklist = collection_worklist(conn)
-            else:
-                reused_scan = True
-                done = repo.done_lbs(conn, scan_id)
-                worklist = [w for w in collection_worklist(conn) if w[0] not in done]
+            reused_scan = True
+            adopted = repo.adopt_metrics(conn, scan_id, extraction_key)
+            if adopted:
+                logger.info("ranker: adopted %d metric row(s) into scan %d", adopted, scan_id)
+            done = repo.done_lbs(conn, scan_id)
+            worklist = [w for w in collection_worklist(conn) if w[0] not in done]
     else:
         raise ValueError(f"mode must be 'backlog' or 'all', got {mode!r}")
 
@@ -248,7 +292,9 @@ def run_rerank(scan_id: int | None = None, db_path: str | None = None) -> dict:
     running, so as not to race the scan's own trailing rerank.
 
     Args:
-        scan_id: Scan to rerank; defaults to the latest scan.
+        scan_id: Scan to rerank; defaults to the active scan (the one backlog
+            scans append to), falling back to the latest — reranking the
+            newest scan_id would score an empty fork.
         db_path: Optional database path override.
 
     Returns:
@@ -259,7 +305,9 @@ def run_rerank(scan_id: int | None = None, db_path: str | None = None) -> dict:
     """
     conn = repo.connect(db_path)
     repo.ensure_schema(conn)
-    resolved_scan_id = scan_id if scan_id is not None else repo.latest_scan_id(conn)
+    resolved_scan_id = scan_id
+    if resolved_scan_id is None:
+        resolved_scan_id = active_scan_id(conn) or repo.latest_scan_id(conn)
     if resolved_scan_id is None:
         raise ValueError("no scans exist")
 
