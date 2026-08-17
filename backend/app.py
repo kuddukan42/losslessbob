@@ -6170,6 +6170,148 @@ def create_app() -> Flask:
             _log.exception("taper_attribution_unresolved failed for LB-%s", lb)
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
+    # ── Taper curation console (TODO-312) ───────────────────────────────────────
+    # Backs the three tabs of /taper-review. Reads are open (matching the
+    # attribution read routes above); the bulk and revert writes are curator-gated
+    # exactly like the single-LB confirm/reject/unresolved routes.
+
+    def _review_args() -> dict:
+        """Parse the filter query params shared by the two review read routes.
+
+        Returns:
+            Kwargs for taper_attribution.list_review_rows / taper_rollup.
+
+        Raises:
+            ValueError: A param has an unusable value (surfaced as a 400).
+        """
+        conflict_arg = request.args.get("conflict")
+        attributed_arg = request.args.get("attributed")
+        return {
+            "state": request.args.get("state") or None,
+            "confidence": request.args.get("confidence") or None,
+            "conflict": (conflict_arg.lower() in ("1", "true")) if conflict_arg else None,
+            "taper": request.args.get("taper") or None,
+            "q": request.args.get("q") or None,
+            "attributed": ((attributed_arg.lower() in ("1", "true"))
+                           if attributed_arg else None),
+        }
+
+    @app.route("/api/tapers/review", methods=["GET"])
+    def taper_review_rows() -> Response:
+        """One page of the curation console's entry view, with facet counts.
+
+        Query params (all optional): state (any/undecided/confirm/reject/
+        unresolved), confidence, conflict, kind (mention/series), taper, q,
+        attributed (1/0 — 0 surfaces entries with no attribution at all),
+        limit (default 100, max 500), offset, sort (lb/date/taper/confidence,
+        '-' prefix to descend).
+        """
+        try:
+            args = _review_args()
+            result = _taper_attribution.list_review_rows(
+                conflict_kind=(request.args.get("kind") or "").lower() or None,
+                limit=request.args.get("limit", type=int, default=100),
+                offset=request.args.get("offset", type=int, default=0),
+                sort=request.args.get("sort") or "lb",
+                **args,
+            )
+            return jsonify(result)
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("taper_review_rows failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/review/tapers", methods=["GET"])
+    def taper_review_rollup() -> Response:
+        """Per-taper rollup for the console's grouped view (same filters, no taper)."""
+        try:
+            args = _review_args()
+            args.pop("taper", None)
+            args.pop("attributed", None)
+            return jsonify({"tapers": _taper_attribution.taper_rollup(**args)})
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("taper_review_rollup failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/decisions", methods=["GET"])
+    def taper_decisions_list() -> Response:
+        """Decision history from taper_decision_log, newest first.
+
+        Query params: lb (restrict to one entry), limit (default 200, max 1000).
+        """
+        try:
+            return jsonify({"decisions": _taper_attribution.list_decisions(
+                lb=request.args.get("lb", type=int),
+                limit=request.args.get("limit", type=int, default=200),
+            )})
+        except Exception as exc:
+            _log.exception("taper_decisions_list failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/attributions/bulk", methods=["POST"])
+    def taper_attribution_bulk() -> Response:
+        """Curator-only. Apply one decision to many LBs (console multi-select).
+
+        Body: {action: 'confirm'|'reject'|'unresolved', lbs: [int, ...],
+        taper?, note?}. Each LB is applied independently and its outcome
+        reported, so one bad row (e.g. a taper outside the known-taper
+        universe) does not sink the rest of the batch.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        body = request.get_json(silent=True) or {}
+        action = (body.get("action") or "").lower()
+        if action not in ("confirm", "reject", "unresolved"):
+            return jsonify({"error": "bad_request",
+                            "message": "action must be confirm/reject/unresolved"}), 400
+        lbs = body.get("lbs")
+        if not isinstance(lbs, list) or not lbs:
+            return jsonify({"error": "bad_request", "message": "lbs must be a non-empty list"}), 400
+        cap = _taper_attribution.REVIEW_MAX_LIMIT
+        if len(lbs) > cap:
+            return jsonify({"error": "bad_request",
+                            "message": f"at most {cap} lbs per batch"}), 400
+        taper, note = body.get("taper"), body.get("note")
+        results, ok_count = [], 0
+        for raw in lbs:
+            try:
+                lb = int(raw)
+            except (TypeError, ValueError):
+                results.append({"lb": raw, "ok": False, "error": "not an LB number"})
+                continue
+            try:
+                if action == "confirm":
+                    _taper_attribution.confirm(lb, taper=taper, source="bulk", note=note)
+                elif action == "reject":
+                    _taper_attribution.reject(lb, taper=taper, source="bulk", note=note)
+                else:
+                    _taper_attribution.mark_unresolved(lb, source="bulk", note=note)
+                results.append({"lb": lb, "ok": True})
+                ok_count += 1
+            except ValueError as exc:
+                results.append({"lb": lb, "ok": False, "error": str(exc)})
+            except Exception as exc:
+                _log.exception("bulk %s failed for LB-%s", action, lb)
+                results.append({"lb": lb, "ok": False, "error": str(exc)})
+        return jsonify({"results": results, "ok_count": ok_count,
+                        "fail_count": len(results) - ok_count})
+
+    @app.route("/api/tapers/decisions/<int:log_id>/revert", methods=["POST"])
+    def taper_decision_revert(log_id: int) -> Response:
+        """Curator-only. Undo one logged decision, restoring its recorded prior state."""
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        try:
+            return jsonify(_taper_attribution.revert_decision(log_id))
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("taper_decision_revert failed for log #%s", log_id)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     # ── Known-taper alias admin (TODO-241) ──────────────────────────────────────
     # UI/CLI conduit to add/remove known-taper handles without a code edit. See
     # backend.db.{list,add,remove}_taper_alias / reload_taper_aliases and the

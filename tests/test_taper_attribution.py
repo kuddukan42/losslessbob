@@ -602,3 +602,307 @@ def test_list_and_get_routes_no_curator_gate():
         assert client.get("/api/tapers/attributions/1400").status_code == 200
 
     shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ── TODO-312: decision log, revert, and the curation-console queries ───────────
+
+def _decisions(conn, lb=None):
+    where, params = ("", ())
+    if lb is not None:
+        where, params = " WHERE lb_number = ?", (lb,)
+    return [dict(r) for r in conn.execute(
+        f"SELECT * FROM taper_decision_log{where} ORDER BY id", params)]
+
+
+def _seed_console_corpus(conn):
+    """Three entries with dates/locations, one attributed per confidence tier."""
+    for lb, date_str, location in (
+        (2001, "6/18/00", "George, WA"),
+        (2002, "5/1/66", "Manchester, England"),
+        (2003, "", "Unknown"),
+    ):
+        conn.execute(
+            "INSERT OR REPLACE INTO entries(lb_number, date_str, location, description)"
+            " VALUES (?, ?, ?, '')", (lb, date_str, location))
+    conn.executemany(
+        """INSERT OR REPLACE INTO taper_attributions
+           (lb_number, taper_normalised, confidence, evidence_json, conflict)
+           VALUES (?, ?, ?, '[]', ?)""",
+        [(2001, "spot", "confirmed", 0), (2002, "spot", "propagated", 1)],
+    )
+    conn.commit()
+
+
+def test_decision_log_records_prev_state_for_each_action():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1500, "Audience recording.")
+
+    taper_attribution.confirm(1500, taper="spot", db_path=db_path)
+    taper_attribution.confirm(1500, taper="bach", db_path=db_path, source="bulk")
+    taper_attribution.reject(1500, db_path=db_path, note="wrong handle")
+    taper_attribution.mark_unresolved(1500, db_path=db_path)
+
+    rows = _decisions(conn, 1500)
+    assert [r["action"] for r in rows] == ["confirm", "confirm", "reject", "unresolved"]
+    # First decision has no prior state; each later one records the one before it.
+    assert rows[0]["prev_action"] is None and rows[0]["prev_taper"] is None
+    assert rows[1]["prev_action"] == "confirm" and rows[1]["prev_taper"] == "spot"
+    assert rows[2]["prev_action"] == "confirm" and rows[2]["prev_taper"] == "bach"
+    assert rows[3]["prev_action"] == "reject"
+    assert rows[0]["source"] == "ui" and rows[1]["source"] == "bulk"
+    assert rows[2]["note"] == "wrong handle"
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_revert_restores_previous_decision():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1501, "Audience recording.")
+
+    taper_attribution.confirm(1501, taper="spot", db_path=db_path)
+    taper_attribution.confirm(1501, taper="bach", db_path=db_path)
+    second = _decisions(conn, 1501)[1]
+
+    result = taper_attribution.revert_decision(second["id"], db_path=db_path)
+    assert result["restored"] == "confirm"
+    assert result["needs_recompute"] is False
+    assert _get_confirmation(conn, 1501)["taper_normalised"] == "spot"
+    assert _get_attr(conn, 1501)["taper_normalised"] == "spot"
+    # The revert is itself logged, so the trail stays append-only.
+    assert _decisions(conn, 1501)[-1]["source"] == "revert"
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_revert_of_first_decision_clears_confirmation():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1502, "Audience recording.")
+
+    taper_attribution.confirm(1502, taper="spot", db_path=db_path)
+    first = _decisions(conn, 1502)[0]
+
+    result = taper_attribution.revert_decision(first["id"], db_path=db_path)
+    assert result["restored"] is None
+    assert result["needs_recompute"] is True
+    assert _get_confirmation(conn, 1502) is None
+    # The derived row goes too — the undone confirm had stamped it
+    # confidence='confirmed', which would otherwise outlive its confirmation.
+    assert _get_attr(conn, 1502) is None
+    assert _decisions(conn, 1502)[-1]["action"] == "revert"
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_revert_unknown_log_id_raises():
+    db_path, tmp_dir = _make_db()
+    try:
+        taper_attribution.revert_decision(999999, db_path=db_path)
+        raise AssertionError("expected ValueError")
+    except ValueError as exc:
+        assert "999999" in str(exc)
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_list_review_rows_filters_and_pages():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_console_corpus(conn)
+
+    everything = taper_attribution.list_review_rows(db_path=db_path)
+    assert everything["total"] == 3
+    assert taper_attribution.list_review_rows(attributed=True, db_path=db_path)["total"] == 2
+    # The unattributed slice is the entry with no taper_attributions row at all.
+    unattributed = taper_attribution.list_review_rows(attributed=False, db_path=db_path)
+    assert [r["lb_number"] for r in unattributed["rows"]] == [2003]
+
+    assert taper_attribution.list_review_rows(
+        confidence="propagated", db_path=db_path)["total"] == 1
+    assert taper_attribution.list_review_rows(conflict=True, db_path=db_path)["total"] == 1
+    assert taper_attribution.list_review_rows(taper="spot", db_path=db_path)["total"] == 2
+    assert taper_attribution.list_review_rows(q="2002", db_path=db_path)["total"] == 1
+    assert taper_attribution.list_review_rows(q="Manchester", db_path=db_path)["total"] == 1
+
+    # Entry context is joined in, so the console needs no per-row /api/entry call.
+    row = taper_attribution.list_review_rows(q="2001", db_path=db_path)["rows"][0]
+    assert row["location"] == "George, WA" and row["date_str"] == "6/18/00"
+
+    page = taper_attribution.list_review_rows(limit=1, offset=1, db_path=db_path)
+    assert page["total"] == 3 and [r["lb_number"] for r in page["rows"]] == [2002]
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_list_review_rows_state_filter_and_counts():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_console_corpus(conn)
+    taper_attribution.confirm(2001, db_path=db_path)
+
+    assert taper_attribution.list_review_rows(
+        state="confirm", db_path=db_path)["total"] == 1
+    assert taper_attribution.list_review_rows(
+        state="undecided", db_path=db_path)["total"] == 2
+
+    # Facet counts leave their own dimension open: the state chips are computed
+    # without the active state filter, so they show what switching would yield.
+    counts = taper_attribution.list_review_rows(state="confirm", db_path=db_path)["counts"]
+    assert counts["state"] == {"undecided": 2, "confirm": 1, "reject": 0, "unresolved": 0}
+    assert counts["total"] == 1
+
+    try:
+        taper_attribution.list_review_rows(state="bogus", db_path=db_path)
+        raise AssertionError("expected ValueError")
+    except ValueError as exc:
+        assert "state must be" in str(exc)
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_list_review_rows_sorts_m_d_yy_dates_chronologically():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_console_corpus(conn)
+
+    rows = taper_attribution.list_review_rows(
+        attributed=True, sort="date", db_path=db_path)["rows"]
+    # 5/1/66 precedes 6/18/00 chronologically but follows it as text — the
+    # sortable-date rewrite is what makes this pass.
+    assert [r["lb_number"] for r in rows] == [2002, 2001]
+    assert [r["sort_date"] for r in rows] == ["1966-05-01", "2000-06-18"]
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_taper_rollup_counts_and_date_span():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_console_corpus(conn)
+    taper_attribution.confirm(2001, db_path=db_path)
+
+    rollup = taper_attribution.taper_rollup(db_path=db_path)
+    assert len(rollup) == 1
+    spot = rollup[0]
+    assert spot["taper"] == "spot"
+    assert spot["total"] == 2 and spot["confirmed"] == 1 and spot["propagated"] == 1
+    assert spot["conflicts"] == 1
+    assert spot["decided"] == 1 and spot["undecided"] == 1
+    assert spot["first_date"] == "1966-05-01" and spot["last_date"] == "2000-06-18"
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_list_decisions_scopes_to_one_lb():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_console_corpus(conn)
+    taper_attribution.confirm(2001, db_path=db_path)
+    taper_attribution.confirm(2002, db_path=db_path)
+
+    assert len(taper_attribution.list_decisions(db_path=db_path)) == 2
+    scoped = taper_attribution.list_decisions(lb=2001, db_path=db_path)
+    assert len(scoped) == 1 and scoped[0]["lb_number"] == 2001
+    assert scoped[0]["date_str"] == "6/18/00"
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_bulk_route_applies_and_reports_per_lb_failures():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_console_corpus(conn)
+    db.set_curator(True, db_path)
+
+    with _AppClient(db_path) as client:
+        resp = client.post("/api/tapers/attributions/bulk",
+                           json={"action": "confirm", "lbs": [2001, 2002, 2003]})
+        assert resp.status_code == 200
+        body = resp.get_json()
+        # 2003 has no attribution to source a taper from, so it fails alone.
+        assert body["ok_count"] == 2 and body["fail_count"] == 1
+        failed = [r for r in body["results"] if not r["ok"]]
+        assert failed[0]["lb"] == 2003 and "no existing attribution" in failed[0]["error"]
+
+    assert _get_confirmation(conn, 2001)["action"] == "confirm"
+    assert _get_confirmation(conn, 2003) is None
+    assert all(r["source"] == "bulk" for r in _decisions(conn))
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_bulk_route_validates_action_and_batch_size():
+    db_path, tmp_dir = _make_db()
+    db.set_curator(True, db_path)
+
+    with _AppClient(db_path) as client:
+        assert client.post("/api/tapers/attributions/bulk",
+                           json={"action": "nope", "lbs": [1]}).status_code == 400
+        assert client.post("/api/tapers/attributions/bulk",
+                           json={"action": "confirm", "lbs": []}).status_code == 400
+        over = list(range(taper_attribution.REVIEW_MAX_LIMIT + 1))
+        resp = client.post("/api/tapers/attributions/bulk",
+                           json={"action": "confirm", "lbs": over})
+        assert resp.status_code == 400 and "per batch" in resp.get_json()["message"]
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_console_write_routes_403_when_not_curator():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_console_corpus(conn)
+    db.set_curator(False, db_path)
+
+    with _AppClient(db_path) as client:
+        assert client.post("/api/tapers/attributions/bulk",
+                           json={"action": "confirm", "lbs": [2001]}).status_code == 403
+        assert client.post("/api/tapers/decisions/1/revert").status_code == 403
+        # Reads stay open, matching the other attribution read routes.
+        assert client.get("/api/tapers/review").status_code == 200
+        assert client.get("/api/tapers/review/tapers").status_code == 200
+        assert client.get("/api/tapers/decisions").status_code == 200
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_review_routes_return_filtered_payloads():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_console_corpus(conn)
+
+    with _AppClient(db_path) as client:
+        body = client.get("/api/tapers/review?state=undecided&attributed=1").get_json()
+        assert body["total"] == 2 and body["limit"] == 100
+        assert body["counts"]["conflict"] == 1
+
+        assert client.get("/api/tapers/review?state=bogus").status_code == 400
+        assert client.get("/api/tapers/review?sort=bogus").status_code == 400
+        assert client.get("/api/tapers/review?kind=bogus").status_code == 400
+
+        tapers = client.get("/api/tapers/review/tapers").get_json()["tapers"]
+        assert [t["taper"] for t in tapers] == ["spot"]
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_revert_route_round_trips_a_decision():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_console_corpus(conn)
+    db.set_curator(True, db_path)
+
+    taper_attribution.confirm(2001, taper="spot", db_path=db_path)
+    taper_attribution.confirm(2001, taper="bach", db_path=db_path)
+    log_id = _decisions(conn, 2001)[1]["id"]
+
+    with _AppClient(db_path) as client:
+        resp = client.post(f"/api/tapers/decisions/{log_id}/revert")
+        assert resp.status_code == 200
+        assert resp.get_json()["restored"] == "confirm"
+        assert client.post("/api/tapers/decisions/999999/revert").status_code == 400
+
+    assert _get_confirmation(conn, 2001)["taper_normalised"] == "spot"
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)

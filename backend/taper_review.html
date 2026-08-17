@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taper Review</title>
+  <title>Taper Curation</title>
   <style>
     :root {
       --bg:       #0d1117;
@@ -31,14 +31,12 @@
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      padding: 14px 20px 0;
       position: sticky;
       top: 0;
       z-index: 100;
     }
+    .head-row { display: flex; align-items: center; gap: 12px; }
     header h1 { font-size: 1.05rem; font-weight: 600; flex: 1; }
     .pill {
       display: inline-flex;
@@ -53,16 +51,38 @@
       border: 1px solid rgba(37,99,235,.4);
       white-space: nowrap;
     }
-    main {
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 18px 14px 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    .pill.readonly { background: rgba(217,119,6,.18); color: #fcd34d; border-color: rgba(217,119,6,.45); }
+
+    .tabs { display: flex; gap: 4px; margin-top: 12px; }
+    .tab {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 9px 14px;
+      cursor: pointer;
     }
+    .tab:hover { color: var(--text); }
+    .tab.active { color: var(--text); border-bottom-color: var(--accent); }
+
+    main { max-width: 560px; margin: 0 auto; padding: 18px 14px 60px;
+           display: flex; flex-direction: column; gap: 16px; }
+    main.wide { max-width: 1180px; }
     .prog-wrap { background: var(--surface2); border-radius: 4px; height: 6px; overflow: hidden; }
     .prog-bar { height: 100%; border-radius: 4px; background: var(--accent); transition: width .3s; }
+
+    .banner {
+      background: rgba(217,119,6,.12);
+      border: 1px solid rgba(217,119,6,.45);
+      color: #fcd34d;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
 
     .card {
       background: var(--surface);
@@ -109,11 +129,7 @@
       border-radius: 6px;
       padding: 10px 12px;
     }
-    .evidence-list li {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-    }
+    .evidence-list li { display: flex; align-items: baseline; gap: 6px; }
     .evidence-list li::before { content: "·"; }
     .ev-detail { flex: 1; }
     .ev-link {
@@ -146,10 +162,10 @@
     .btn-ghost   { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
     .btn-warn    { background: #b8860b; color: #fff; }
     .btn-wide    { width: 100%; }
+    .btn-sm      { padding: 6px 10px; font-size: 0.75rem; }
 
     .custom-row { display: flex; gap: 8px; }
-    .custom-row input {
-      flex: 1;
+    .custom-row input, .filter-bar input, .filter-bar select {
       background: var(--surface2);
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -157,17 +173,87 @@
       color: var(--text);
       font-size: 0.9rem;
     }
-    .custom-row input:focus { outline: none; border-color: var(--accent); }
+    .custom-row input { flex: 1; }
+    .custom-row input:focus, .filter-bar input:focus, .filter-bar select:focus {
+      outline: none; border-color: var(--accent);
+    }
 
     .footer-row { display: flex; gap: 8px; }
+    .empty { text-align: center; color: var(--muted); padding: 50px 20px;
+             font-size: 0.95rem; line-height: 1.6; }
 
-    .empty {
-      text-align: center;
-      color: var(--muted);
-      padding: 50px 20px;
-      font-size: 0.95rem;
-      line-height: 1.6;
+    /* ── Filter bar ─────────────────────────────────────────────────────── */
+    .filter-bar {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 12px 14px;
     }
+    .filter-bar input[type="search"] { flex: 1; min-width: 160px; }
+    .filter-bar label { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+      background: var(--surface2); border: 1px solid var(--border);
+      color: var(--muted); border-radius: 999px; padding: 5px 12px;
+      font-size: 0.78rem; font-weight: 600; cursor: pointer; font-family: inherit;
+    }
+    .chip:hover { color: var(--text); }
+    .chip.active { background: rgba(37,99,235,.2); color: #93c5fd; border-color: rgba(37,99,235,.5); }
+    .chip .n { opacity: .65; margin-left: 5px; font-variant-numeric: tabular-nums; }
+
+    /* ── Tables ─────────────────────────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; background: var(--surface);
+                  border: 1px solid var(--border); border-radius: var(--radius); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+    th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border);
+             white-space: nowrap; }
+    th { color: var(--muted); font-size: 0.72rem; text-transform: uppercase;
+         letter-spacing: 0.05em; font-weight: 600; position: sticky; top: 0;
+         background: var(--surface2); cursor: pointer; user-select: none; }
+    th.nosort { cursor: default; }
+    tbody tr:hover { background: var(--surface2); }
+    tbody tr.selected { background: rgba(37,99,235,.12); }
+    td.wrap { white-space: normal; max-width: 260px; }
+    td.num { font-variant-numeric: tabular-nums; }
+    .lb-cell { color: #93c5fd; font-weight: 600; cursor: pointer; }
+    .taper-cell { font-weight: 600; cursor: pointer; }
+    .dash { color: var(--muted); }
+
+    .badge {
+      display: inline-block; font-size: 0.68rem; font-weight: 700;
+      text-transform: uppercase; padding: 2px 7px; border-radius: 999px;
+      white-space: nowrap;
+    }
+    .badge.confirmed  { background: rgba(22,163,74,.2);  color: #86efac; }
+    .badge.propagated { background: rgba(37,99,235,.2);  color: #93c5fd; }
+    .badge.inferred   { background: rgba(217,119,6,.2);  color: #fcd34d; }
+    .badge.none       { background: rgba(125,133,144,.2); color: var(--muted); }
+    .badge.confirm    { background: rgba(22,163,74,.2);  color: #86efac; }
+    .badge.reject     { background: rgba(220,38,38,.2);  color: #fca5a5; }
+    .badge.unresolved { background: rgba(217,119,6,.2);  color: #fcd34d; }
+    .badge.undecided  { background: rgba(125,133,144,.18); color: var(--muted); }
+    .badge.conflict   { background: rgba(220,38,38,.2);  color: #fca5a5; }
+
+    .detail-row td { background: var(--surface2); white-space: normal; }
+    .detail-box { display: flex; flex-direction: column; gap: 10px; padding: 4px 0 8px; }
+    .hist-list { list-style: none; display: flex; flex-direction: column; gap: 5px;
+                 font-size: 0.8rem; color: var(--muted); }
+    .hist-list li { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .hist-when { font-variant-numeric: tabular-nums; }
+
+    .pager { display: flex; align-items: center; gap: 10px; justify-content: center;
+             color: var(--muted); font-size: 0.82rem; }
+
+    .bulk-bar {
+      position: sticky; bottom: 0; z-index: 50;
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+      background: var(--surface); border: 1px solid var(--accent);
+      border-radius: var(--radius); padding: 12px 14px;
+      box-shadow: 0 -6px 18px rgba(0,0,0,.35);
+    }
+    .bulk-bar .count { font-weight: 700; font-size: 0.85rem; }
+    .bulk-bar input { flex: 1; min-width: 130px; background: var(--surface2);
+                      border: 1px solid var(--border); border-radius: 8px;
+                      padding: 9px 10px; color: var(--text); font-size: 0.85rem; }
 
     details.alias-section {
       background: var(--surface);
@@ -191,11 +277,7 @@
     details.alias-section[open] summary::before { content: "▾"; }
     .alias-body { display: flex; flex-direction: column; gap: 12px; }
     .alias-counts { color: var(--muted); font-size: 0.82rem; }
-    .alias-add-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .alias-add-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .alias-add-row input {
       flex: 1;
       min-width: 100px;
@@ -207,13 +289,8 @@
       font-size: 0.85rem;
     }
     .alias-add-row input:focus { outline: none; border-color: var(--accent); }
-    .alias-list {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      max-height: 320px;
-      overflow-y: auto;
-    }
+    .alias-list { display: flex; flex-direction: column; gap: 4px;
+                  max-height: 320px; overflow-y: auto; }
     .alias-row {
       display: flex;
       align-items: center;
@@ -267,13 +344,81 @@
 <body>
 
 <header>
-  <h1>🎙️ Taper Review</h1>
-  <span class="pill" id="remaining-pill">…</span>
+  <div class="head-row">
+    <h1>🎙️ Taper Curation</h1>
+    <span class="pill" id="mode-pill">…</span>
+  </div>
+  <nav class="tabs">
+    <button class="tab active" data-tab="queue" onclick="setTab('queue')">Queue</button>
+    <button class="tab" data-tab="entries" onclick="setTab('entries')">Entries</button>
+    <button class="tab" data-tab="tapers" onclick="setTab('tapers')">Tapers</button>
+  </nav>
 </header>
 
-<main>
-  <div class="prog-wrap"><div class="prog-bar" id="prog-bar" style="width:0%"></div></div>
-  <div id="content"><div class="empty">Loading conflicts…</div></div>
+<main id="main">
+  <div id="readonly-banner" style="display:none" class="banner">
+    This install is not flagged as the curator, so every decision control is
+    disabled. Reads still work. Enable curator mode in the app's Setup tab
+    (or <code>meta.is_curator</code>) to make decisions here.
+  </div>
+
+  <!-- ── Queue tab ─────────────────────────────────────────────────────── -->
+  <section id="tab-queue">
+    <div class="filter-bar" style="margin-bottom:16px">
+      <label for="queue-preset">Queue</label>
+      <select id="queue-preset" onchange="onQueuePreset()">
+        <option value="conflicts">Conflicts needing a call</option>
+        <option value="conflicts-all">All conflicts, including series-vs-series</option>
+        <option value="propagated">Undecided propagated attributions</option>
+        <option value="undecided">Every undecided attribution</option>
+      </select>
+    </div>
+    <div class="prog-wrap" style="margin-bottom:16px"><div class="prog-bar" id="prog-bar" style="width:0%"></div></div>
+    <div id="content"><div class="empty">Loading…</div></div>
+  </section>
+
+  <!-- ── Entries tab ───────────────────────────────────────────────────── -->
+  <section id="tab-entries" style="display:none">
+    <div class="filter-bar" style="margin-bottom:12px">
+      <input type="search" id="q-input" placeholder="Search LB number, taper, date, location…"
+             oninput="onSearchInput()">
+      <label for="attr-select">Rows</label>
+      <select id="attr-select" onchange="onFilterChange('attributed', this.value)">
+        <option value="1">With an attribution</option>
+        <option value="">All entries</option>
+        <option value="0">No attribution yet</option>
+      </select>
+      <label for="conf-select">Tier</label>
+      <select id="conf-select" onchange="onFilterChange('confidence', this.value)">
+        <option value="">Any</option>
+        <option value="confirmed">confirmed</option>
+        <option value="propagated">propagated</option>
+        <option value="inferred">inferred</option>
+      </select>
+      <button class="chip" id="conflict-chip" onclick="toggleConflict()">Conflicts<span class="n"></span></button>
+      <button class="btn btn-ghost btn-sm" onclick="clearFilters()">Clear</button>
+    </div>
+    <div class="chips" id="state-chips" style="margin-bottom:12px"></div>
+    <div id="entries-body"><div class="empty">Loading…</div></div>
+    <div class="pager" id="entries-pager" style="margin-top:12px"></div>
+    <div class="bulk-bar" id="bulk-bar" style="display:none; margin-top:12px">
+      <span class="count" id="bulk-count">0 selected</span>
+      <input type="text" id="bulk-taper" placeholder="taper handle (blank = each row's own)">
+      <button class="btn btn-success btn-sm" onclick="bulkAct('confirm')">✓ Confirm</button>
+      <button class="btn btn-danger btn-sm" onclick="bulkAct('reject')">✕ Reject</button>
+      <button class="btn btn-warn btn-sm" onclick="bulkAct('unresolved')">? Can't determine</button>
+      <button class="btn btn-ghost btn-sm" onclick="clearSelection()">Clear</button>
+    </div>
+  </section>
+
+  <!-- ── Tapers tab ────────────────────────────────────────────────────── -->
+  <section id="tab-tapers" style="display:none">
+    <div class="filter-bar" style="margin-bottom:12px">
+      <span class="alias-counts" id="rollup-summary">Loading…</span>
+      <button class="btn btn-ghost btn-sm" onclick="loadRollup()">Refresh</button>
+    </div>
+    <div id="tapers-body"><div class="empty">Loading…</div></div>
+  </section>
 
   <details class="alias-section" id="alias-section">
     <summary>Taper aliases</summary>
@@ -298,17 +443,48 @@
 <script>
   const BASE = window.location.origin;
   const LB_DETAIL_BASE = 'http://www.losslessbob.wonderingwhattochoose.com/detail/LB-';
+  const PAGE_SIZE = 100;
 
+  // Queue presets map to /api/tapers/review filters. 'conflicts' reproduces the
+  // pre-TODO-312 behaviour exactly: 'mention' drops series-vs-series conflicts
+  // (two legitimate tapers on one over-merged family, TODO-234), which a
+  // confirm/reject on this page cannot resolve.
+  const QUEUE_PRESETS = {
+    'conflicts':     { conflict: '1', kind: 'mention', state: 'undecided' },
+    'conflicts-all': { conflict: '1', state: 'undecided' },
+    'propagated':    { confidence: 'propagated', state: 'undecided', attributed: '1' },
+    'undecided':     { state: 'undecided', attributed: '1' },
+  };
+
+  let isCurator = false;
+  let tab = 'queue';
+
+  // Queue tab state
+  let queuePreset = 'conflicts';
   let queue = [];
-  let total = 0;
+  let queueTotal = 0;
   let doneThisSession = 0;
+
+  // Entries tab state
+  let filters = { state: '', confidence: '', conflict: '', taper: '', q: '', attributed: '1' };
+  let sort = 'lb';
+  let page = 0;
+  let entriesData = { rows: [], total: 0, counts: {} };
+  let selected = new Set();
+  let expanded = null;
+  let searchTimer = null;
 
   async function api(method, path, body) {
     const opts = { method, headers: { 'Content-Type': 'application/json' } };
     if (body != null) opts.body = JSON.stringify(body);
     const r = await fetch(BASE + path, opts);
     const data = await r.json().catch(() => ({}));
-    if (!r.ok) throw new Error(data.message || data.error || ('HTTP ' + r.status));
+    if (!r.ok) {
+      const err = new Error(data.message || data.error || ('HTTP ' + r.status));
+      err.code = data.error;
+      err.status = r.status;
+      throw err;
+    }
     return data;
   }
 
@@ -322,117 +498,194 @@
     setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 300); }, 3200);
   }
 
-  function lbUrl(lb) {
-    return LB_DETAIL_BASE + String(lb).padStart(5, '0') + '.html';
-  }
-
-  function candidateNames(evidence) {
-    const names = new Set();
-    for (const ev of evidence) {
-      const m = /'([^']+)'/.exec(ev.detail || '');
-      if (m) names.add(m[1]);
-    }
-    return [...names];
-  }
-
-  function updateProgress() {
-    document.getElementById('remaining-pill').textContent = queue.length + ' remaining';
-    const pct = total ? Math.round((doneThisSession / total) * 100) : 0;
-    document.getElementById('prog-bar').style.width = Math.min(pct, 100) + '%';
-  }
-
-  async function loadQueue() {
-    try {
-      // 'mention' drops series-vs-series conflicts: two legitimate tapers on one
-      // over-merged family (TODO-234), unresolvable by confirm/reject here.
-      const data = await api('GET', '/api/tapers/attributions?conflict=1&kind=mention');
-      queue = data.attributions || [];
-      total = Math.max(total, queue.length + doneThisSession);
-      updateProgress();
-      renderCurrent();
-    } catch (e) {
-      document.getElementById('content').innerHTML =
-        '<div class="empty">Failed to load conflicts: ' + e.message + '</div>';
-    }
-  }
-
-  async function renderCurrent() {
-    const el = document.getElementById('content');
-    if (!queue.length) {
-      el.innerHTML = '<div class="empty">🎉 No taper conflicts left to review.' +
-        '<br><small>Series-vs-series conflicts (two real tapers on one over-merged ' +
-        'family) are excluded here — they are a TapeMatch family-split task (TODO-234).' +
-        '</small></div>';
-      return;
-    }
-    const row = queue[0];
-    const lb = row.lb_number;
-    el.innerHTML = '<div class="empty">Loading LB-' + lb + '…</div>';
-
-    let entry = {};
-    try {
-      const data = await api('GET', '/api/entry/' + lb);
-      entry = data.entry || {};
-    } catch (e) { /* entry fetch is best-effort context; card still works without it */ }
-
-    const candidates = candidateNames(row.evidence || []);
-    const evidenceHtml = (row.evidence || [])
-      .map(ev => {
-        const detail = '<span class="ev-detail">' + escapeHtml(ev.detail) + '</span>';
-        if (ev.via_lb == null) return '<li>' + detail + '</li>';
-        const label = 'LB-' + String(ev.via_lb).padStart(5, '0');
-        const link = '<a class="ev-link" href="' + lbUrl(ev.via_lb) +
-          '" target="_blank" rel="noopener">' + label + ' →</a>';
-        return '<li>' + detail + link + '</li>';
-      }).join('');
-    const candButtons = candidates
-      .map(name => '<button class="btn btn-success" onclick="doConfirm(' + lb + ', ' +
-        escapeHtml(JSON.stringify(name)) + ')">✓ ' + escapeHtml(name) + '</button>').join('');
-
-    el.innerHTML = `
-      <div class="card">
-        <div class="lb-title">LB-${String(lb).padStart(5, '0')}</div>
-        <div class="lb-meta">
-          <b>${escapeHtml(entry.date_str || '—')}</b> · ${escapeHtml(entry.location || '—')}<br>
-          Parsed taper: <b>${escapeHtml(entry.taper_name || '—')}</b><br>
-          Source: ${escapeHtml(entry.source_chain || '—')}
-        </div>
-        <a class="lb-link" href="${lbUrl(lb)}" target="_blank" rel="noopener">Open full LB page →</a>
-
-        <div class="section-label">Conflict evidence</div>
-        <ul class="evidence-list">${evidenceHtml || '<li>No evidence recorded</li>'}</ul>
-
-        <div class="section-label">Confirm as</div>
-        <div class="candidates">${candButtons}</div>
-
-        <div class="custom-row">
-          <input type="text" id="custom-taper" placeholder="Other taper handle…">
-          <button class="btn btn-success" onclick="doConfirmCustom(${lb})">✓</button>
-        </div>
-
-        <div class="footer-row">
-          <button class="btn btn-danger btn-wide" onclick="doReject(${lb})">✕ Reject / no taper</button>
-        </div>
-        <button class="btn btn-warn btn-wide" onclick="doUnresolved(${lb})" title="Same recording, two documented tapers, no way to know which is right — attribute nothing and stop asking.">? Can't determine (historical conflict)</button>
-        <button class="btn btn-ghost btn-wide" onclick="doSkip()">Skip for now</button>
-      </div>
-    `;
-  }
-
   function escapeHtml(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     }[c]));
   }
 
-  async function doConfirm(lb, taper) {
-    try {
-      await api('POST', '/api/tapers/attributions/' + lb + '/confirm', { taper });
-      toast('LB-' + lb + ' confirmed as ' + taper, 'success');
-      afterDecision();
-    } catch (e) {
-      toast('Confirm failed: ' + e.message, 'error');
+  function lbUrl(lb) {
+    return LB_DETAIL_BASE + String(lb).padStart(5, '0') + '.html';
+  }
+
+  function lbLabel(lb) { return 'LB-' + String(lb).padStart(5, '0'); }
+
+  function qs(obj) {
+    return Object.entries(obj)
+      .filter(([, v]) => v !== '' && v != null)
+      .map(([k, v]) => encodeURIComponent(k) + '=' + encodeURIComponent(v))
+      .join('&');
+  }
+
+  function candidateNames(evidence) {
+    const names = new Set();
+    for (const ev of evidence || []) {
+      const m = /'([^']+)'/.exec(ev.detail || '');
+      if (m) names.add(m[1]);
     }
+    return [...names];
+  }
+
+  // ── Curator gate ───────────────────────────────────────────────────────────
+
+  async function loadCurator() {
+    try {
+      const data = await api('GET', '/api/curator');
+      isCurator = !!data.is_curator;
+    } catch (e) {
+      isCurator = false;
+    }
+    const pill = document.getElementById('mode-pill');
+    pill.textContent = isCurator ? 'curator' : 'read-only';
+    pill.className = 'pill' + (isCurator ? '' : ' readonly');
+    document.getElementById('readonly-banner').style.display = isCurator ? 'none' : '';
+  }
+
+  /** Disable every write control at once rather than 403-toasting per click. */
+  function applyGate(root) {
+    if (isCurator) return;
+    (root || document).querySelectorAll('[data-write]').forEach(el => {
+      el.disabled = true;
+      el.title = 'Curator mode required';
+    });
+  }
+
+  // ── Hash routing ───────────────────────────────────────────────────────────
+
+  function writeHash() {
+    const parts = { tab };
+    if (tab === 'queue') {
+      parts.preset = queuePreset;
+    } else if (tab === 'entries') {
+      Object.assign(parts, filters);
+      if (sort !== 'lb') parts.sort = sort;
+      if (page) parts.page = page;
+    }
+    const next = '#' + qs(parts);
+    if (next !== location.hash) history.replaceState(null, '', next);
+  }
+
+  function readHash() {
+    const p = new URLSearchParams(location.hash.replace(/^#/, ''));
+    tab = p.get('tab') || 'queue';
+    queuePreset = p.get('preset') || 'conflicts';
+    for (const k of Object.keys(filters)) {
+      if (p.has(k)) filters[k] = p.get(k);
+    }
+    sort = p.get('sort') || 'lb';
+    page = parseInt(p.get('page') || '0', 10) || 0;
+  }
+
+  function setTab(next) {
+    tab = next;
+    document.querySelectorAll('.tab').forEach(
+      b => b.classList.toggle('active', b.dataset.tab === next));
+    document.getElementById('tab-queue').style.display = next === 'queue' ? '' : 'none';
+    document.getElementById('tab-entries').style.display = next === 'entries' ? '' : 'none';
+    document.getElementById('tab-tapers').style.display = next === 'tapers' ? '' : 'none';
+    // The queue is a single narrow card; the two tables need the full width.
+    document.getElementById('main').className = next === 'queue' ? '' : 'wide';
+    writeHash();
+    if (next === 'queue') loadQueue();
+    else if (next === 'entries') loadEntries();
+    else loadRollup();
+  }
+
+  // ── Queue tab ──────────────────────────────────────────────────────────────
+
+  function onQueuePreset() {
+    queuePreset = document.getElementById('queue-preset').value;
+    queue = []; queueTotal = 0; doneThisSession = 0;
+    writeHash();
+    loadQueue();
+  }
+
+  async function loadQueue() {
+    document.getElementById('queue-preset').value = queuePreset;
+    const preset = QUEUE_PRESETS[queuePreset] || QUEUE_PRESETS.conflicts;
+    try {
+      // limit=500 is the server cap; the queue is worked one card at a time and
+      // reloaded when it drains, so a full fetch is never needed.
+      const data = await api('GET', '/api/tapers/review?' + qs({ ...preset, limit: 500 }));
+      queue = data.rows || [];
+      queueTotal = data.total || 0;
+      updateProgress();
+      renderCurrent();
+    } catch (e) {
+      document.getElementById('content').innerHTML =
+        '<div class="empty">Failed to load queue: ' + escapeHtml(e.message) + '</div>';
+    }
+  }
+
+  function updateProgress() {
+    const denom = queueTotal + doneThisSession;
+    const pct = denom ? Math.round((doneThisSession / denom) * 100) : 0;
+    document.getElementById('prog-bar').style.width = Math.min(pct, 100) + '%';
+  }
+
+  function renderCurrent() {
+    const el = document.getElementById('content');
+    if (!queue.length) {
+      el.innerHTML = '<div class="empty">🎉 Nothing left in this queue.' +
+        '<br><small>Series-vs-series conflicts (two real tapers on one over-merged ' +
+        'family) are excluded from the default queue — they are a TapeMatch ' +
+        'family-split task (TODO-234). Switch the queue selector to see them.' +
+        '</small></div>';
+      return;
+    }
+    const row = queue[0];
+    const lb = row.lb_number;
+    const candidates = candidateNames(row.evidence);
+    const evidenceHtml = (row.evidence || [])
+      .map(ev => {
+        const detail = '<span class="ev-detail">' + escapeHtml(ev.detail) + '</span>';
+        if (ev.via_lb == null) return '<li>' + detail + '</li>';
+        const link = '<a class="ev-link" href="' + lbUrl(ev.via_lb) +
+          '" target="_blank" rel="noopener">' + lbLabel(ev.via_lb) + ' →</a>';
+        return '<li>' + detail + link + '</li>';
+      }).join('');
+    const candButtons = candidates
+      .map(name => '<button class="btn btn-success" data-write onclick="doConfirm(' + lb + ', ' +
+        escapeHtml(JSON.stringify(name)) + ')">✓ ' + escapeHtml(name) + '</button>').join('');
+    const current = row.taper_normalised
+      ? '<button class="btn btn-success" data-write onclick="doConfirm(' + lb + ', ' +
+        escapeHtml(JSON.stringify(row.taper_normalised)) + ')">✓ ' +
+        escapeHtml(row.taper_normalised) + ' (current)</button>'
+      : '';
+
+    el.innerHTML = `
+      <div class="card">
+        <div class="lb-title">${lbLabel(lb)}
+          <span class="pill" style="float:right">${queue.length} in queue</span></div>
+        <div class="lb-meta">
+          <b>${escapeHtml(row.date_str || '—')}</b> · ${escapeHtml(row.location || '—')}<br>
+          Parsed taper: <b>${escapeHtml(row.taper_name || '—')}</b><br>
+          Attributed: <b>${escapeHtml(row.taper_normalised || '—')}</b>
+          ${row.confidence ? '<span class="badge ' + row.confidence + '">' + row.confidence + '</span>' : ''}
+          ${row.conflict ? '<span class="badge conflict">conflict</span>' : ''}<br>
+          Source: ${escapeHtml(row.source_chain || '—')}
+        </div>
+        <a class="lb-link" href="${lbUrl(lb)}" target="_blank" rel="noopener">Open full LB page →</a>
+
+        <div class="section-label">Evidence</div>
+        <ul class="evidence-list">${evidenceHtml || '<li>No evidence recorded</li>'}</ul>
+
+        <div class="section-label">Confirm as</div>
+        <div class="candidates">${current}${candButtons}</div>
+
+        <div class="custom-row">
+          <input type="text" id="custom-taper" placeholder="Other taper handle…">
+          <button class="btn btn-success" data-write onclick="doConfirmCustom(${lb})">✓</button>
+        </div>
+
+        <div class="footer-row">
+          <button class="btn btn-danger btn-wide" data-write onclick="doReject(${lb})">✕ Reject / no taper</button>
+        </div>
+        <button class="btn btn-warn btn-wide" data-write onclick="doUnresolved(${lb})" title="Same recording, two documented tapers, no way to know which is right — attribute nothing and stop asking.">? Can't determine (historical conflict)</button>
+        <button class="btn btn-ghost btn-wide" onclick="doSkip()">Skip for now</button>
+      </div>
+    `;
+    applyGate(el);
   }
 
   function doConfirmCustom(lb) {
@@ -441,32 +694,9 @@
     doConfirm(lb, val);
   }
 
-  async function doReject(lb) {
-    try {
-      await api('POST', '/api/tapers/attributions/' + lb + '/reject', {});
-      toast('LB-' + lb + ' rejected', 'success');
-      afterDecision();
-    } catch (e) {
-      toast('Reject failed: ' + e.message, 'error');
-    }
-  }
-
-  async function doUnresolved(lb) {
-    // Historical conflict with no ground truth: park it as undecidable. Suppresses
-    // any taper for this lb (no pill) and drops it from the queue for good, unlike
-    // 'Skip for now' (local-only) or 'Reject' (suppresses only one taper).
-    try {
-      await api('POST', '/api/tapers/attributions/' + lb + '/unresolved', {});
-      toast('LB-' + lb + " parked — can't determine", 'success');
-      afterDecision();
-    } catch (e) {
-      toast("Can't-determine failed: " + e.message, 'error');
-    }
-  }
-
   function doSkip() {
     // Move to the back of the local queue; nothing is persisted, so a reload
-    // will re-fetch the same conflict (still unresolved server-side).
+    // will re-fetch the same row (still undecided server-side).
     queue.push(queue.shift());
     renderCurrent();
   }
@@ -474,8 +704,411 @@
   function afterDecision() {
     queue.shift();
     doneThisSession++;
+    queueTotal = Math.max(0, queueTotal - 1);
     updateProgress();
     renderCurrent();
+  }
+
+  // ── Single-LB decisions (shared by both tabs) ──────────────────────────────
+
+  /** Confirm, offering to register an unknown handle as an alias and retry.
+   *
+   * confirm() rejects any taper outside the known-taper universe, which is the
+   * common case when reassigning to a handle the corpus has never labelled.
+   * Turning that dead end into "add the alias, then retry" is the whole point.
+   */
+  async function doConfirm(lb, taper, opts) {
+    const fromQueue = !opts || opts.fromQueue !== false;
+    try {
+      await api('POST', '/api/tapers/attributions/' + lb + '/confirm', { taper });
+      toast(lbLabel(lb) + ' confirmed as ' + taper, 'success');
+      if (fromQueue && tab === 'queue') afterDecision(); else await refreshRow(lb);
+      return true;
+    } catch (e) {
+      if (/known-taper universe/.test(e.message) && taper) {
+        if (confirm(`"${taper}" is not a known taper handle yet.\n\n` +
+                    `Add it as a taper alias and confirm ${lbLabel(lb)} as "${taper}"?`)) {
+          try {
+            await api('POST', '/api/tapers/aliases', { alias: taper, canonical: taper,
+                                                       note: 'added from /taper-review' });
+            loadAliases();
+            return await doConfirm(lb, taper, opts);
+          } catch (e2) {
+            toast('Could not add alias: ' + e2.message, 'error');
+            return false;
+          }
+        }
+        return false;
+      }
+      toast('Confirm failed: ' + e.message, 'error');
+      return false;
+    }
+  }
+
+  async function doReject(lb, opts) {
+    const fromQueue = !opts || opts.fromQueue !== false;
+    try {
+      await api('POST', '/api/tapers/attributions/' + lb + '/reject', {});
+      toast(lbLabel(lb) + ' rejected', 'success');
+      if (fromQueue && tab === 'queue') afterDecision(); else await refreshRow(lb);
+    } catch (e) {
+      toast('Reject failed: ' + e.message, 'error');
+    }
+  }
+
+  async function doUnresolved(lb, opts) {
+    // Historical conflict with no ground truth: park it as undecidable. Suppresses
+    // any taper for this lb (no pill) and drops it from the queue for good, unlike
+    // 'Skip for now' (local-only) or 'Reject' (suppresses only one taper).
+    const fromQueue = !opts || opts.fromQueue !== false;
+    try {
+      await api('POST', '/api/tapers/attributions/' + lb + '/unresolved', {});
+      toast(lbLabel(lb) + " parked — can't determine", 'success');
+      if (fromQueue && tab === 'queue') afterDecision(); else await refreshRow(lb);
+    } catch (e) {
+      toast("Can't-determine failed: " + e.message, 'error');
+    }
+  }
+
+  async function refreshRow() { if (tab === 'entries') await loadEntries(); }
+
+  // ── Entries tab ────────────────────────────────────────────────────────────
+
+  function onSearchInput() {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      filters.q = document.getElementById('q-input').value.trim();
+      page = 0;
+      loadEntries();
+    }, 250);
+  }
+
+  function onFilterChange(key, value) {
+    filters[key] = value;
+    page = 0;
+    loadEntries();
+  }
+
+  function toggleConflict() {
+    filters.conflict = filters.conflict === '1' ? '' : '1';
+    page = 0;
+    loadEntries();
+  }
+
+  function setState(state) {
+    filters.state = filters.state === state ? '' : state;
+    page = 0;
+    loadEntries();
+  }
+
+  function clearFilters() {
+    filters = { state: '', confidence: '', conflict: '', taper: '', q: '', attributed: '1' };
+    page = 0;
+    document.getElementById('q-input').value = '';
+    loadEntries();
+  }
+
+  function setSort(key) {
+    sort = sort === key ? '-' + key : key;
+    page = 0;
+    loadEntries();
+  }
+
+  function gotoPage(n) { page = n; loadEntries(); }
+
+  async function loadEntries() {
+    document.getElementById('q-input').value = filters.q;
+    document.getElementById('attr-select').value = filters.attributed;
+    document.getElementById('conf-select').value = filters.confidence;
+    document.getElementById('conflict-chip').classList.toggle('active', filters.conflict === '1');
+    writeHash();
+    const body = document.getElementById('entries-body');
+    try {
+      entriesData = await api('GET', '/api/tapers/review?' + qs({
+        ...filters, sort, limit: PAGE_SIZE, offset: page * PAGE_SIZE,
+      }));
+    } catch (e) {
+      body.innerHTML = '<div class="empty">Failed to load: ' + escapeHtml(e.message) + '</div>';
+      return;
+    }
+    renderChips();
+    renderEntries();
+  }
+
+  function renderChips() {
+    const counts = entriesData.counts || {};
+    const states = counts.state || {};
+    const chips = [['', 'All', counts.total]].concat(
+      ['undecided', 'confirm', 'reject', 'unresolved'].map(s => [s, s, states[s]]));
+    document.getElementById('state-chips').innerHTML = chips.map(([val, label, n]) =>
+      `<button class="chip${filters.state === val ? ' active' : ''}"
+               onclick="setState(${JSON.stringify(val)})">${escapeHtml(label)}` +
+      (n == null ? '' : `<span class="n">${n}</span>`) + '</button>').join('');
+    document.getElementById('conflict-chip').querySelector('.n').textContent =
+      counts.conflict == null ? '' : counts.conflict;
+  }
+
+  function sortArrow(key) {
+    if (sort === key) return ' ▲';
+    if (sort === '-' + key) return ' ▼';
+    return '';
+  }
+
+  function renderEntries() {
+    const body = document.getElementById('entries-body');
+    const rows = entriesData.rows || [];
+    if (!rows.length) {
+      body.innerHTML = '<div class="empty">No entries match these filters.</div>';
+      renderPager();
+      return;
+    }
+    const allSelected = rows.every(r => selected.has(r.lb_number));
+    const head = `
+      <tr>
+        <th class="nosort"><input type="checkbox" data-write ${allSelected ? 'checked' : ''}
+            onclick="toggleAll(this.checked)"></th>
+        <th onclick="setSort('lb')">LB${sortArrow('lb')}</th>
+        <th onclick="setSort('date')">Date${sortArrow('date')}</th>
+        <th class="nosort">Location</th>
+        <th class="nosort">Parsed</th>
+        <th onclick="setSort('taper')">Attributed${sortArrow('taper')}</th>
+        <th onclick="setSort('confidence')">Tier${sortArrow('confidence')}</th>
+        <th class="nosort">Decision</th>
+        <th class="nosort"></th>
+      </tr>`;
+    const bodyRows = rows.map(r => {
+      const sel = selected.has(r.lb_number);
+      const decision = r.decision || 'undecided';
+      const main = `
+        <tr class="${sel ? 'selected' : ''}">
+          <td><input type="checkbox" data-write ${sel ? 'checked' : ''}
+              onclick="toggleRow(${r.lb_number}, this.checked)"></td>
+          <td class="num lb-cell" onclick="toggleExpand(${r.lb_number})">${lbLabel(r.lb_number)}</td>
+          <td class="num">${escapeHtml(r.date_str || '—')}</td>
+          <td class="wrap">${escapeHtml(r.location || '—')}</td>
+          <td class="wrap">${escapeHtml(r.taper_name || '—')}</td>
+          <td class="taper-cell" onclick="filterByTaper(${JSON.stringify(r.taper_normalised || '')})">
+            ${r.taper_normalised ? escapeHtml(r.taper_normalised) : '<span class="dash">—</span>'}</td>
+          <td><span class="badge ${r.confidence || 'none'}">${escapeHtml(r.confidence || 'none')}</span>
+              ${r.conflict ? '<span class="badge conflict">conflict</span>' : ''}</td>
+          <td><span class="badge ${decision}">${escapeHtml(decision)}</span></td>
+          <td><button class="btn btn-ghost btn-sm" onclick="toggleExpand(${r.lb_number})">
+              ${expanded === r.lb_number ? 'Hide' : 'Review'}</button></td>
+        </tr>`;
+      return main + (expanded === r.lb_number ? detailRow(r) : '');
+    }).join('');
+    body.innerHTML = `<div class="table-wrap"><table><thead>${head}</thead>
+                      <tbody>${bodyRows}</tbody></table></div>`;
+    renderPager();
+    renderBulkBar();
+    applyGate(body);
+    if (expanded != null) loadHistory(expanded);
+  }
+
+  function detailRow(r) {
+    const lb = r.lb_number;
+    const evidence = (r.evidence || []).map(ev => {
+      const detail = '<span class="ev-detail">' + escapeHtml(ev.detail) + '</span>';
+      if (ev.via_lb == null) return '<li>' + detail + '</li>';
+      return '<li>' + detail + '<a class="ev-link" href="' + lbUrl(ev.via_lb) +
+        '" target="_blank" rel="noopener">' + lbLabel(ev.via_lb) + ' →</a></li>';
+    }).join('') || '<li>No evidence recorded</li>';
+    const cands = candidateNames(r.evidence);
+    const buttons = (r.taper_normalised ? [r.taper_normalised] : [])
+      .concat(cands.filter(c => c !== r.taper_normalised))
+      .map(name => `<button class="btn btn-success btn-sm" data-write
+            onclick="doConfirm(${lb}, ${escapeHtml(JSON.stringify(name))}, {fromQueue:false})">
+            ✓ ${escapeHtml(name)}</button>`).join('');
+    return `
+      <tr class="detail-row"><td colspan="9"><div class="detail-box">
+        <a class="lb-link" href="${lbUrl(lb)}" target="_blank" rel="noopener">Open full LB page →</a>
+        <div class="section-label">Evidence</div>
+        <ul class="evidence-list">${evidence}</ul>
+        <div class="section-label">Decide</div>
+        <div class="candidates">
+          ${buttons}
+          <input type="text" id="reassign-${lb}" placeholder="Other taper handle…"
+                 style="background:var(--surface2);border:1px solid var(--border);
+                        border-radius:8px;padding:8px 10px;color:var(--text);font-size:0.85rem">
+          <button class="btn btn-success btn-sm" data-write onclick="reassign(${lb})">✓ Reassign</button>
+          <button class="btn btn-danger btn-sm" data-write
+                  onclick="doReject(${lb}, {fromQueue:false})">✕ Reject</button>
+          <button class="btn btn-warn btn-sm" data-write
+                  onclick="doUnresolved(${lb}, {fromQueue:false})">? Can't determine</button>
+        </div>
+        <div class="section-label">Decision history</div>
+        <ul class="hist-list" id="hist-${lb}"><li>Loading…</li></ul>
+      </div></td></tr>`;
+  }
+
+  function toggleExpand(lb) {
+    expanded = expanded === lb ? null : lb;
+    renderEntries();
+  }
+
+  function reassign(lb) {
+    const val = document.getElementById('reassign-' + lb).value.trim();
+    if (!val) { toast('Enter a taper handle first', 'error'); return; }
+    doConfirm(lb, val, { fromQueue: false });
+  }
+
+  function filterByTaper(taper) {
+    if (!taper) return;
+    filters.taper = taper;
+    filters.attributed = '1';
+    page = 0;
+    setTab('entries');
+  }
+
+  async function loadHistory(lb) {
+    const el = document.getElementById('hist-' + lb);
+    if (!el) return;
+    try {
+      const data = await api('GET', '/api/tapers/decisions?lb=' + lb);
+      const rows = data.decisions || [];
+      if (!rows.length) { el.innerHTML = '<li>No decisions recorded yet.</li>'; return; }
+      el.innerHTML = rows.map(d => `
+        <li>
+          <span class="badge ${d.action}">${escapeHtml(d.action)}</span>
+          <span>${escapeHtml(d.taper_normalised || '—')}</span>
+          <span class="hist-when">${escapeHtml(d.decided_at || '')}</span>
+          <span>via ${escapeHtml(d.source)}</span>
+          ${d.prev_action ? '<span>was ' + escapeHtml(d.prev_action) + ' ' +
+                            escapeHtml(d.prev_taper || '') + '</span>' : '<span>first decision</span>'}
+          ${d.note ? '<span>“' + escapeHtml(d.note) + '”</span>' : ''}
+          <button class="btn btn-ghost btn-sm" data-write onclick="revertDecision(${d.id})">Revert</button>
+        </li>`).join('');
+      applyGate(el);
+    } catch (e) {
+      el.innerHTML = '<li>Failed to load history: ' + escapeHtml(e.message) + '</li>';
+    }
+  }
+
+  async function revertDecision(id) {
+    try {
+      const data = await api('POST', '/api/tapers/decisions/' + id + '/revert', {});
+      if (data.needs_recompute) {
+        // Clearing a first-ever decision drops the derived row with it, so the
+        // entry shows no taper until Layers 0/1 run again. Offer that directly
+        // rather than leaving the curator to find the button under Aliases.
+        toast(lbLabel(data.lb_number) + ' decision cleared — attribution needs a recompute',
+              'success');
+        if (confirm(`${lbLabel(data.lb_number)}'s decision was cleared, which also removed ` +
+                    `its derived attribution.\n\nRun a full recompute now to rebuild it?`)) {
+          await recomputeAttributions();
+        }
+      } else {
+        toast(lbLabel(data.lb_number) + ' restored to ' + data.restored, 'success');
+      }
+      await loadEntries();
+    } catch (e) {
+      toast('Revert failed: ' + e.message, 'error');
+    }
+  }
+
+  function renderPager() {
+    const total = entriesData.total || 0;
+    const pages = Math.ceil(total / PAGE_SIZE);
+    const el = document.getElementById('entries-pager');
+    if (pages <= 1) {
+      el.innerHTML = total ? `${total} row${total === 1 ? '' : 's'}` : '';
+      return;
+    }
+    el.innerHTML = `
+      <button class="btn btn-ghost btn-sm" ${page === 0 ? 'disabled' : ''}
+              onclick="gotoPage(${page - 1})">← Prev</button>
+      <span>${page * PAGE_SIZE + 1}–${Math.min((page + 1) * PAGE_SIZE, total)} of ${total}</span>
+      <button class="btn btn-ghost btn-sm" ${page >= pages - 1 ? 'disabled' : ''}
+              onclick="gotoPage(${page + 1})">Next →</button>`;
+  }
+
+  // ── Multi-select + bulk actions ────────────────────────────────────────────
+
+  function toggleRow(lb, on) {
+    if (on) selected.add(lb); else selected.delete(lb);
+    renderEntries();
+  }
+
+  function toggleAll(on) {
+    for (const r of entriesData.rows || []) {
+      if (on) selected.add(r.lb_number); else selected.delete(r.lb_number);
+    }
+    renderEntries();
+  }
+
+  function clearSelection() { selected.clear(); renderEntries(); }
+
+  function renderBulkBar() {
+    const bar = document.getElementById('bulk-bar');
+    bar.style.display = selected.size ? '' : 'none';
+    document.getElementById('bulk-count').textContent = selected.size + ' selected';
+    applyGate(bar);
+  }
+
+  async function bulkAct(action) {
+    const lbs = [...selected];
+    if (!lbs.length) return;
+    const taper = document.getElementById('bulk-taper').value.trim();
+    const what = action === 'confirm'
+      ? (taper ? `confirm as "${taper}"` : 'confirm each row as its own attributed taper')
+      : action === 'reject' ? 'reject' : "mark can't-determine";
+    if (!confirm(`${what} for ${lbs.length} entr${lbs.length === 1 ? 'y' : 'ies'}?`)) return;
+    try {
+      const data = await api('POST', '/api/tapers/attributions/bulk',
+                             { action, lbs, taper: taper || undefined });
+      if (data.fail_count) {
+        // Partial failure is normal (e.g. a row with no attribution to confirm),
+        // so report both halves rather than treating the batch as failed.
+        const first = (data.results.find(r => !r.ok) || {}).error || '';
+        toast(`${data.ok_count} applied, ${data.fail_count} failed — ${first}`, 'error');
+      } else {
+        toast(`${data.ok_count} entries updated`, 'success');
+      }
+      selected.clear();
+      document.getElementById('bulk-taper').value = '';
+      await loadEntries();
+    } catch (e) {
+      toast('Bulk action failed: ' + e.message, 'error');
+    }
+  }
+
+  // ── Tapers tab ─────────────────────────────────────────────────────────────
+
+  async function loadRollup() {
+    const body = document.getElementById('tapers-body');
+    try {
+      const data = await api('GET', '/api/tapers/review/tapers');
+      const rows = data.tapers || [];
+      const totals = rows.reduce((a, r) => {
+        a.entries += r.total; a.undecided += r.undecided; a.conflicts += r.conflicts; return a;
+      }, { entries: 0, undecided: 0, conflicts: 0 });
+      document.getElementById('rollup-summary').textContent =
+        `${rows.length} tapers · ${totals.entries} attributed entries · ` +
+        `${totals.undecided} undecided · ${totals.conflicts} conflicts`;
+      if (!rows.length) { body.innerHTML = '<div class="empty">No attributions yet.</div>'; return; }
+      body.innerHTML = `<div class="table-wrap"><table>
+        <thead><tr>
+          <th class="nosort">Taper</th><th class="nosort">Entries</th>
+          <th class="nosort">Confirmed</th><th class="nosort">Propagated</th>
+          <th class="nosort">Conflicts</th><th class="nosort">Decided</th>
+          <th class="nosort">Undecided</th><th class="nosort">Span</th><th class="nosort"></th>
+        </tr></thead><tbody>${rows.map(r => `
+          <tr>
+            <td class="taper-cell" onclick="filterByTaper(${escapeHtml(JSON.stringify(r.taper))})">
+              ${escapeHtml(r.taper)}</td>
+            <td class="num">${r.total}</td>
+            <td class="num">${r.confirmed}</td>
+            <td class="num">${r.propagated}</td>
+            <td class="num">${r.conflicts ? '<span class="badge conflict">' + r.conflicts + '</span>' : '<span class="dash">0</span>'}</td>
+            <td class="num">${r.decided}</td>
+            <td class="num">${r.undecided}</td>
+            <td class="num">${escapeHtml((r.first_date || '?').slice(0, 4))}–${escapeHtml((r.last_date || '?').slice(0, 4))}</td>
+            <td><button class="btn btn-ghost btn-sm"
+                onclick="filterByTaper(${escapeHtml(JSON.stringify(r.taper))})">Review →</button></td>
+          </tr>`).join('')}</tbody></table></div>`;
+    } catch (e) {
+      body.innerHTML = '<div class="empty">Failed to load rollup: ' + escapeHtml(e.message) + '</div>';
+    }
   }
 
   // ── Taper aliases admin (TODO-241) ────────────────────────────────────────
@@ -493,11 +1126,12 @@
           <span class="origin-pill ${e.origin}">${e.origin}</span>
           <span class="alias-name">${escapeHtml(e.alias)}
             <span class="alias-arrow">&rarr;</span> ${escapeHtml(e.canonical)}</span>
-          <button class="btn btn-danger" onclick="removeAlias(${escapeHtml(JSON.stringify(e.alias))})">
+          <button class="btn btn-danger" data-write onclick="removeAlias(${escapeHtml(JSON.stringify(e.alias))})">
             ${e.origin === 'builtin' ? 'Suppress' : 'Remove'}
           </button>
         </div>
       `).join('') || '<div class="empty">No aliases.</div>';
+      applyGate(list);
     } catch (e) {
       counts.textContent = '';
       list.innerHTML = '<div class="empty">Failed to load aliases: ' + escapeHtml(e.message) + '</div>';
@@ -540,8 +1174,28 @@
     }
   }
 
-  loadQueue();
-  loadAliases();
+  // ── Boot ───────────────────────────────────────────────────────────────────
+
+  // Our own writeHash() calls are silent (replaceState fires no event), so a
+  // hashchange only ever means the user navigated — pasted a linked view, or
+  // hit Back. Re-read and re-render rather than leaving the URL lying about
+  // which tab is showing.
+  window.addEventListener('hashchange', () => {
+    const before = JSON.stringify([tab, queuePreset, filters, sort, page]);
+    readHash();
+    if (JSON.stringify([tab, queuePreset, filters, sort, page]) === before) return;
+    selected.clear();
+    expanded = null;
+    setTab(tab);
+  });
+
+  (async function init() {
+    readHash();
+    await loadCurator();
+    document.querySelectorAll('.alias-add-row .btn').forEach(b => b.setAttribute('data-write', ''));
+    setTab(tab);
+    loadAliases();
+  })();
 </script>
 
 </body>
