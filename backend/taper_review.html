@@ -397,6 +397,7 @@
     <button class="tab active" data-tab="queue" onclick="setTab('queue')">Queue</button>
     <button class="tab" data-tab="entries" onclick="setTab('entries')">Entries</button>
     <button class="tab" data-tab="tapers" onclick="setTab('tapers')">Tapers</button>
+    <button class="tab" data-tab="vocab" onclick="setTab('vocab')">Taper list</button>
   </nav>
 </header>
 
@@ -481,22 +482,26 @@
     <div id="tapers-body"><div class="empty">Loading…</div></div>
   </section>
 
-  <details class="alias-section" id="alias-section">
-    <summary>Taper aliases</summary>
-    <div class="alias-body">
-      <div class="alias-counts" id="alias-counts">Loading…</div>
-      <div class="alias-add-row">
-        <input type="text" id="alias-input" placeholder="alias, e.g. mysoundman">
-        <input type="text" id="canonical-input" placeholder="canonical taper">
-        <input type="text" id="note-input" placeholder="note (optional)">
-        <button class="btn btn-success" onclick="addAlias()">+ Add</button>
-      </div>
-      <div class="alias-list" id="alias-list"></div>
-      <button class="btn btn-ghost btn-wide" onclick="recomputeAttributions()">
-        Recompute attributions
-      </button>
+  <!-- ── Taper list tab (master vocabulary) ────────────────────────────── -->
+  <section id="tab-vocab" style="display:none">
+    <div class="filter-bar" style="margin-bottom:12px">
+      <input type="search" id="vocab-q" placeholder="Search taper or alias…" oninput="renderVocab()">
+      <select id="vocab-filter" onchange="renderVocab()">
+        <option value="">All names</option>
+        <option value="tapers">Tapers only</option>
+        <option value="not">Not a taper</option>
+        <option value="unused">Tapers with no attributions</option>
+        <option value="user">Has user-added aliases</option>
+        <option value="multi">Multiple aliases</option>
+      </select>
+      <button class="btn btn-success btn-sm" data-write onclick="createTaper()">+ New taper</button>
+      <button class="btn btn-ghost btn-sm" onclick="loadVocab()">Refresh</button>
     </div>
-  </details>
+    <div class="alias-counts" id="vocab-summary" style="margin-bottom:12px">Loading…</div>
+    <div id="vocab-body"><div class="empty">Loading…</div></div>
+    <button class="btn btn-ghost btn-wide" data-write style="margin-top:14px"
+            onclick="recomputeAttributions()">Recompute attributions</button>
+  </section>
 </main>
 
 <div id="toast-container"></div>
@@ -644,11 +649,13 @@
     document.getElementById('tab-queue').style.display = next === 'queue' ? '' : 'none';
     document.getElementById('tab-entries').style.display = next === 'entries' ? '' : 'none';
     document.getElementById('tab-tapers').style.display = next === 'tapers' ? '' : 'none';
-    // The queue is a single narrow card; the two tables need the full width.
+    document.getElementById('tab-vocab').style.display = next === 'vocab' ? '' : 'none';
+    // The queue is a single narrow card; the tables need the full width.
     document.getElementById('main').className = next === 'queue' ? '' : 'wide';
     writeHash();
     if (next === 'queue') loadQueue();
     else if (next === 'entries') loadEntries();
+    else if (next === 'vocab') loadVocab();
     else loadRollup();
   }
 
@@ -792,7 +799,6 @@
           try {
             await api('POST', '/api/tapers/aliases', { alias: taper, canonical: taper,
                                                        note: 'added from /taper-review' });
-            loadAliases();
             return await doConfirm(lb, taper, opts);
           } catch (e2) {
             toast('Could not add alias: ' + e2.message, 'error');
@@ -1186,45 +1192,153 @@
     }
   }
 
-  // ── Taper aliases admin (TODO-241) ────────────────────────────────────────
+  // ── Taper list: master vocabulary curation (TODO-313) ─────────────────────
 
-  async function loadAliases() {
-    const counts = document.getElementById('alias-counts');
-    const list = document.getElementById('alias-list');
+  let vocab = { tapers: [], counts: {} };
+  let vocabExpanded = null;
+
+  /** Safe id fragment for a canonical — many contain spaces ("net taper a"),
+   *  which are not legal in an HTML id. The real name is always passed to the
+   *  handlers separately, so this only has to be unique, not reversible. */
+  function vid(name) { return String(name).replace(/[^a-z0-9]+/gi, '-'); }
+
+  async function loadVocab() {
+    const body = document.getElementById('vocab-body');
     try {
-      const data = await api('GET', '/api/tapers/aliases');
-      const c = data.counts;
-      counts.textContent = c.merged + ' aliases total (' + c.builtin + ' builtin, ' +
-        c.user_add + ' added, ' + c.user_remove + ' suppressed)';
-      list.innerHTML = data.entries.map(e => `
-        <div class="alias-row">
-          <span class="origin-pill ${e.origin}">${e.origin}</span>
-          <span class="alias-name">${escapeHtml(e.alias)}
-            <span class="alias-arrow">&rarr;</span> ${escapeHtml(e.canonical)}</span>
-          <button class="btn btn-danger" data-write onclick="removeAlias(${escapeHtml(JSON.stringify(e.alias))})">
-            ${e.origin === 'builtin' ? 'Suppress' : 'Remove'}
-          </button>
-        </div>
-      `).join('') || '<div class="empty">No aliases.</div>';
-      applyGate(list);
+      vocab = await api('GET', '/api/tapers/vocabulary');
     } catch (e) {
-      counts.textContent = '';
-      list.innerHTML = '<div class="empty">Failed to load aliases: ' + escapeHtml(e.message) + '</div>';
+      body.innerHTML = '<div class="empty">Failed to load: ' + escapeHtml(e.message) + '</div>';
+      return;
     }
+    const c = vocab.counts;
+    document.getElementById('vocab-summary').textContent =
+      `${c.canonicals} names · ${c.in_universe} tapers · ${c.not_taper} not a taper · ` +
+      `${c.aliases} aliases · ${c.unused} tapers with no attributions`;
+    renderVocab();
   }
 
-  async function addAlias() {
-    const alias = document.getElementById('alias-input').value.trim();
-    const canonical = document.getElementById('canonical-input').value.trim();
-    const note = document.getElementById('note-input').value.trim();
-    if (!alias || !canonical) { toast('Alias and canonical taper are both required', 'error'); return; }
+  function vocabFiltered() {
+    const q = document.getElementById('vocab-q').value.trim().toLowerCase();
+    const mode = document.getElementById('vocab-filter').value;
+    return vocab.tapers.filter(t => {
+      if (mode === 'tapers' && !t.in_universe) return false;
+      if (mode === 'not' && t.in_universe) return false;
+      if (mode === 'unused' && (!t.in_universe || t.attributions)) return false;
+      if (mode === 'user' && !t.aliases.some(a => a.origin === 'user')) return false;
+      if (mode === 'multi' && t.alias_count < 2) return false;
+      if (!q) return true;
+      // Match the canonical or any of its aliases — a curator hunting a
+      // variant spelling knows the alias, not necessarily the canonical.
+      return t.canonical.includes(q) || t.aliases.some(a => a.alias.includes(q));
+    });
+  }
+
+  function renderVocab() {
+    const rows = vocabFiltered();
+    const body = document.getElementById('vocab-body');
+    if (!rows.length) {
+      body.innerHTML = '<div class="empty">No names match.</div>';
+      return;
+    }
+    body.innerHTML = `<div class="table-wrap"><table>
+      <thead><tr>
+        <th class="nosort">Taper</th><th class="nosort">Aliases</th>
+        <th class="nosort">Source</th><th class="nosort">Status</th>
+        <th class="nosort">Attributions</th><th class="nosort">Confirmed</th>
+        <th class="nosort"></th>
+      </tr></thead><tbody>${rows.map(t => vocabRow(t)).join('')}</tbody></table></div>`;
+    applyGate(body);
+  }
+
+  function vocabRow(t) {
+    const status = t.in_universe
+      ? '<span class="badge confirmed">taper</span>'
+      : `<span class="badge none">not a taper</span>` +
+        (t.not_taper_origin === 'builtin'
+          ? '<span class="badge undecided">builtin</span>'
+          : '<span class="badge unresolved">yours</span>');
+    const main = `
+      <tr class="${vocabExpanded === t.canonical ? 'selected' : ''}">
+        <td data-label="Taper" class="taper-cell"
+            onclick="vocabToggle(${escapeHtml(JSON.stringify(t.canonical))})">
+          ${escapeHtml(t.canonical)}</td>
+        <td data-label="Aliases" class="num">${t.alias_count}</td>
+        <td data-label="Source"><span class="origin-pill ${t.origin === 'mixed' ? 'user' : t.origin}">${t.origin}</span></td>
+        <td data-label="Status">${status}</td>
+        <td data-label="Attributions" class="num">${t.attributions}</td>
+        <td data-label="Confirmed" class="num">${t.confirmations}</td>
+        <td data-label=""><button class="btn btn-ghost btn-sm"
+            onclick="vocabToggle(${escapeHtml(JSON.stringify(t.canonical))})">
+            ${vocabExpanded === t.canonical ? 'Hide' : 'Curate'}</button></td>
+      </tr>`;
+    return main + (vocabExpanded === t.canonical ? vocabDetail(t) : '');
+  }
+
+  function vocabDetail(t) {
+    const name = JSON.stringify(t.canonical);
+    const chips = t.aliases.map(a => `
+      <span class="alias-row" style="display:inline-flex;width:auto">
+        <span class="origin-pill ${a.origin}">${a.origin}</span>
+        <span class="alias-name">${escapeHtml(a.alias)}</span>
+        <button class="btn btn-danger btn-sm" data-write
+                onclick="removeAlias(${escapeHtml(JSON.stringify(a.alias))})">
+          ${a.origin === 'builtin' ? 'Suppress' : 'Remove'}</button>
+      </span>`).join('');
+    // A builtin exclusion can be overridden but not deleted — the shipped
+    // _NOT_TAPER set is code — so the controls differ by where it came from.
+    const flagBtn = t.in_universe
+      ? `<button class="btn btn-warn btn-sm" data-write onclick="setFlag(${escapeHtml(name)}, false)">
+           Mark "not a taper"</button>`
+      : `<button class="btn btn-success btn-sm" data-write onclick="setFlag(${escapeHtml(name)}, true)">
+           Mark as a real taper</button>`;
+    const clearBtn = t.flag
+      ? `<button class="btn btn-ghost btn-sm" data-write onclick="clearFlag(${escapeHtml(name)})">
+           Reset to shipped default</button>` : '';
+    const inputStyle = 'background:var(--surface2);border:1px solid var(--border);' +
+      'border-radius:8px;padding:8px 10px;color:var(--text);font-size:0.85rem';
+    return `
+      <tr class="detail-row"><td colspan="7"><div class="detail-box">
+        <div class="section-label">Aliases resolving to “${escapeHtml(t.canonical)}”</div>
+        <div class="candidates">${chips || '<span class="dash">none</span>'}</div>
+
+        <div class="section-label">Add an alias</div>
+        <div class="candidates">
+          <input type="text" id="va-${vid(t.canonical)}" placeholder="another spelling…" style="${inputStyle}">
+          <button class="btn btn-success btn-sm" data-write
+                  onclick="addAliasTo(${escapeHtml(name)})">+ Add</button>
+        </div>
+
+        <div class="section-label">Is this a taper?</div>
+        <div class="candidates">${flagBtn}${clearBtn}
+          <span class="alias-counts">Marking "not a taper" keeps the spellings
+            collapsing to one token, but stops the engine ever seeding it.</span>
+        </div>
+
+        <div class="section-label">Merge or rename</div>
+        <div class="candidates">
+          <input type="text" id="vm-${vid(t.canonical)}" placeholder="merge into… (or a new name)" style="${inputStyle}">
+          <button class="btn btn-danger btn-sm" data-write
+                  onclick="mergeTaper(${escapeHtml(name)})">Merge →</button>
+          <span class="alias-counts">Moves every alias and every sticky
+            confirmation onto the target. ${t.attributions} attribution${t.attributions === 1 ? '' : 's'}
+            rebuild on the next recompute.</span>
+        </div>
+      </div></td></tr>`;
+  }
+
+  function vocabToggle(canonical) {
+    vocabExpanded = vocabExpanded === canonical ? null : canonical;
+    renderVocab();
+  }
+
+  async function addAliasTo(canonical) {
+    const el = document.getElementById('va-' + vid(canonical));
+    const alias = (el.value || '').trim();
+    if (!alias) { toast('Enter an alias first', 'error'); return; }
     try {
-      await api('POST', '/api/tapers/aliases', { alias, canonical, note: note || undefined });
-      toast('Added alias: ' + alias + ' → ' + canonical, 'success');
-      document.getElementById('alias-input').value = '';
-      document.getElementById('canonical-input').value = '';
-      document.getElementById('note-input').value = '';
-      loadAliases();
+      await api('POST', '/api/tapers/aliases', { alias, canonical });
+      toast(`${alias} → ${canonical}`, 'success');
+      await loadVocab();
     } catch (e) {
       toast('Add failed: ' + e.message, 'error');
     }
@@ -1234,9 +1348,70 @@
     try {
       const data = await api('DELETE', '/api/tapers/aliases/' + encodeURIComponent(alias));
       toast('Alias ' + alias + ': ' + data.result, 'success');
-      loadAliases();
+      await loadVocab();
     } catch (e) {
       toast('Remove failed: ' + e.message, 'error');
+    }
+  }
+
+  async function setFlag(canonical, isTaper) {
+    const verb = isTaper ? 'treat as a real taper' : 'mark as NOT a taper';
+    if (!confirm(`${canonical}: ${verb}?\n\nThis changes the shared taper vocabulary ` +
+                 `for the whole corpus, not just one entry.`)) return;
+    try {
+      await api('POST', '/api/tapers/vocabulary/' + encodeURIComponent(canonical) + '/flag',
+                { is_taper: isTaper });
+      toast(`${canonical} updated — recompute to apply it to attributions`, 'success');
+      await loadVocab();
+    } catch (e) {
+      toast('Failed: ' + e.message, 'error');
+    }
+  }
+
+  async function clearFlag(canonical) {
+    try {
+      await api('POST', '/api/tapers/vocabulary/' + encodeURIComponent(canonical) + '/flag',
+                { clear: true });
+      toast(`${canonical} reset to the shipped default`, 'success');
+      await loadVocab();
+    } catch (e) {
+      toast('Failed: ' + e.message, 'error');
+    }
+  }
+
+  async function mergeTaper(source) {
+    const el = document.getElementById('vm-' + vid(source));
+    const target = (el.value || '').trim();
+    if (!target) { toast('Enter a target name first', 'error'); return; }
+    if (!confirm(`Merge "${source}" into "${target}"?\n\nEvery alias of ${source} will ` +
+                 `resolve to ${target}, and its curator confirmations move across. ` +
+                 `This is not automatically reversible.`)) return;
+    try {
+      const d = await api('POST', '/api/tapers/vocabulary/merge', { source, target });
+      toast(`Merged: ${d.aliases_moved} alias(es), ${d.confirmations_moved} confirmation(s)` +
+            (d.attributions_pending ? `, ${d.attributions_pending} attributions await recompute` : ''),
+            'success');
+      vocabExpanded = null;
+      await loadVocab();
+      if (d.needs_recompute &&
+          confirm(`${d.attributions_pending} attributions still name "${source}". ` +
+                  `Run a recompute now?`)) {
+        await recomputeAttributions();
+      }
+    } catch (e) {
+      toast('Merge failed: ' + e.message, 'error');
+    }
+  }
+
+  async function createTaper() {
+    const name = prompt('New canonical taper name:');
+    if (!name || !name.trim()) return;
+    try {
+      await api('POST', '/api/tapers/vocabulary', { name: name.trim() });
+      toast('Added taper: ' + name.trim(), 'success');
+      await loadVocab();
+    } catch (e) {
+      toast('Failed: ' + e.message, 'error');
     }
   }
 
@@ -1267,9 +1442,7 @@
   (async function init() {
     readHash();
     await loadCurator();
-    document.querySelectorAll('.alias-add-row .btn').forEach(b => b.setAttribute('data-write', ''));
     setTab(tab);
-    loadAliases();
   })();
 </script>
 

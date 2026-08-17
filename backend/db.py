@@ -104,6 +104,7 @@ USER_TABLES = (
     "xref_ingest_filesets",
     "xref_ingest_rows",
     "user_taper_aliases",
+    "user_taper_flags",
     "taper_decision_log",
     "refresh_step_runs",
     "refresh_chain_runs",
@@ -486,6 +487,24 @@ CREATE TABLE IF NOT EXISTS user_taper_aliases (
 );
 CREATE INDEX IF NOT EXISTS idx_user_taper_aliases_action
     ON user_taper_aliases(action, approved);
+
+-- Curator overrides on top of backend.db._NOT_TAPER (TODO-313), which is a
+-- code-level frozenset and therefore un-editable from the UI. USER-tier, never
+-- exported. Rows key on a *canonical* taper name, not an alias key:
+--   'not_taper' — exclude this canonical from _TAPER_UNIVERSE. The parser still
+--     collapses its spellings to one token (it stays a _KNOWN_TAPER_ALIASES
+--     value), but the attribution engine will never seed it as a candidate.
+--     This is the dolphinsmile/lk/jtt call — curator or transferer, not taper.
+--   'is_taper' — the inverse: re-admit a canonical that the builtin _NOT_TAPER
+--     excludes, for when a local curator disagrees with the shipped judgement.
+-- Applied in reload_taper_aliases; see set_taper_flag / clear_taper_flag.
+CREATE TABLE IF NOT EXISTS user_taper_flags (
+    canonical   TEXT PRIMARY KEY,
+    action      TEXT NOT NULL CHECK(action IN ('not_taper', 'is_taper')),
+    note        TEXT,
+    created_at  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 
 CREATE TABLE IF NOT EXISTS lb_alias (
     alias_lb       INTEGER PRIMARY KEY,
@@ -2160,8 +2179,20 @@ def reload_taper_aliases(db_path: str | None = None) -> dict:
     for r in adds:
         _KNOWN_TAPER_ALIASES[r["alias_norm"]] = r["canonical"]
 
+    # Curator overrides on the code-level _NOT_TAPER set (TODO-313). 'not_taper'
+    # rows exclude extra canonicals; 'is_taper' rows re-admit builtin-excluded
+    # ones. Applied after the subtraction so an 'is_taper' row always wins over
+    # the shipped judgement — a local curator's explicit call beats a default.
+    flag_rows = conn.execute(
+        "SELECT canonical, action FROM user_taper_flags"
+    ).fetchall()
+    user_not = {r["canonical"] for r in flag_rows if r["action"] == "not_taper"}
+    user_is = {r["canonical"] for r in flag_rows if r["action"] == "is_taper"}
+
     global _TAPER_UNIVERSE, _KNOWN_TAPER_KEYS_SORTED, _KNOWN_TAPER_RE
-    _TAPER_UNIVERSE = frozenset(_KNOWN_TAPER_ALIASES.values()) - _NOT_TAPER
+    _TAPER_UNIVERSE = (
+        (frozenset(_KNOWN_TAPER_ALIASES.values()) - _NOT_TAPER - user_not) | user_is
+    )
     _KNOWN_TAPER_KEYS_SORTED = sorted(_KNOWN_TAPER_ALIASES, key=len, reverse=True)
     _KNOWN_TAPER_RE = re.compile(
         r'\b(' + '|'.join(
@@ -2175,10 +2206,14 @@ def reload_taper_aliases(db_path: str | None = None) -> dict:
         "user_add": len(adds),
         "user_remove": len(removes),
         "merged": len(_KNOWN_TAPER_ALIASES),
+        "universe": len(_TAPER_UNIVERSE),
+        "user_not_taper": len(user_not),
+        "user_is_taper": len(user_is),
     }
     logger.info(
         "reload_taper_aliases: builtin=%(builtin)d user_add=%(user_add)d "
-        "user_remove=%(user_remove)d merged=%(merged)d", counts,
+        "user_remove=%(user_remove)d merged=%(merged)d universe=%(universe)d "
+        "user_not_taper=%(user_not_taper)d user_is_taper=%(user_is_taper)d", counts,
     )
     return counts
 
@@ -2338,6 +2373,264 @@ def remove_taper_alias(alias: str, db_path: str | None = None) -> str:
         return "suppressed"
 
     raise KeyError(alias_norm)
+
+
+# ── Master taper vocabulary curation (TODO-313) ───────────────────────────────
+# The alias helpers above are alias-keyed; everything below is *canonical*-keyed,
+# which is the unit a curator actually reasons about ("is this person a taper?",
+# "are these two names the same person?").
+
+def list_taper_vocabulary(db_path: str | None = None) -> dict:
+    """Return the canonical-centric master taper list.
+
+    Groups the flat alias table by canonical name and joins in whether each
+    canonical is in the live ``_TAPER_UNIVERSE``, why it is or isn't, and how
+    much of the corpus currently depends on it. Reloads the merged tables first,
+    so it always reflects the DB rather than a stale import-time snapshot.
+
+    Args:
+        db_path: Optional database path override.
+
+    Returns:
+        ``{"tapers": [...], "counts": {...}}``. Each taper dict has: canonical,
+        aliases (list of ``{alias, origin}``), alias_count, origin
+        (``builtin``/``user``/``mixed`` — where its aliases come from),
+        in_universe, not_taper_origin (``builtin``/``user``/None — why it is
+        excluded), flag (the ``user_taper_flags`` action, if any), note,
+        attributions (rows in ``taper_attributions``) and confirmations (rows in
+        ``taper_confirmations``).
+    """
+    reload_taper_aliases(db_path)
+    conn = get_connection(db_path)
+
+    grouped: dict[str, list[dict]] = {}
+    for alias, canonical in _KNOWN_TAPER_ALIASES.items():
+        grouped.setdefault(canonical, []).append({
+            "alias": alias,
+            "origin": "builtin" if alias in _BUILTIN_TAPER_ALIASES else "user",
+        })
+
+    flags = {
+        r["canonical"]: dict(r)
+        for r in conn.execute("SELECT canonical, action, note FROM user_taper_flags")
+    }
+
+    # Most _NOT_TAPER names are exclusion tokens only — they are never alias
+    # *values*, so grouping the alias table alone would hide them and there
+    # would be no way to reverse the call from the UI. dolphinsmile is the case
+    # that matters (a real person judged a curator rather than a taper); the
+    # rest are source-chain noise ('sbd', 'aud', 'poor sound'). They appear here
+    # with no aliases, and the "Not a taper" filter is where a curator finds
+    # them, so the default view stays the list of actual tapers.
+    for name in _NOT_TAPER | set(flags):
+        grouped.setdefault(name, [])
+    attr_counts = {
+        r["taper_normalised"]: r["n"] for r in conn.execute(
+            "SELECT taper_normalised, COUNT(*) AS n FROM taper_attributions"
+            " GROUP BY taper_normalised")
+    }
+    conf_counts = {
+        r["taper_normalised"]: r["n"] for r in conn.execute(
+            "SELECT taper_normalised, COUNT(*) AS n FROM taper_confirmations"
+            " WHERE action = 'confirm' GROUP BY taper_normalised")
+    }
+
+    tapers = []
+    for canonical, aliases in grouped.items():
+        aliases.sort(key=lambda a: a["alias"])
+        origins = {a["origin"] for a in aliases} or {"builtin"}
+        flag = flags.get(canonical)
+        in_universe = canonical in _TAPER_UNIVERSE
+        # Distinguish "the shipped list says no" from "this install said no" —
+        # only the latter is revertible from the UI without a code change.
+        if in_universe:
+            not_taper_origin = None
+        elif flag and flag["action"] == "not_taper":
+            not_taper_origin = "user"
+        else:
+            not_taper_origin = "builtin"
+        tapers.append({
+            "canonical": canonical,
+            "aliases": aliases,
+            "alias_count": len(aliases),
+            "origin": origins.pop() if len(origins) == 1 else "mixed",
+            "in_universe": in_universe,
+            "not_taper_origin": not_taper_origin,
+            "flag": flag["action"] if flag else None,
+            "note": flag["note"] if flag else None,
+            "attributions": attr_counts.get(canonical, 0),
+            "confirmations": conf_counts.get(canonical, 0),
+        })
+    tapers.sort(key=lambda t: (-t["attributions"], t["canonical"]))
+
+    return {
+        "tapers": tapers,
+        "counts": {
+            "canonicals": len(tapers),
+            "in_universe": sum(1 for t in tapers if t["in_universe"]),
+            "not_taper": sum(1 for t in tapers if not t["in_universe"]),
+            "aliases": len(_KNOWN_TAPER_ALIASES),
+            "unused": sum(1 for t in tapers if t["in_universe"] and not t["attributions"]),
+        },
+    }
+
+
+def set_taper_flag(canonical: str, is_taper: bool, note: str | None = None,
+                   db_path: str | None = None) -> dict:
+    """Mark a canonical as not-a-taper, or re-admit a builtin-excluded one.
+
+    ``is_taper=False`` writes a 'not_taper' row, excluding the canonical from
+    ``_TAPER_UNIVERSE``; the name stays a ``_KNOWN_TAPER_ALIASES`` value so the
+    parser still collapses its spellings to one token, but the attribution
+    engine will never seed it as a candidate. ``is_taper=True`` writes an
+    'is_taper' row, which re-admits a canonical the code-level ``_NOT_TAPER``
+    excludes. Existing ``taper_attributions`` rows are unaffected until the next
+    recompute — the caller should say so.
+
+    Args:
+        canonical: Canonical taper name (lowercased here).
+        is_taper: True to admit, False to exclude.
+        note: Optional free-text provenance note.
+        db_path: Optional database path override.
+
+    Returns:
+        ``{"canonical", "action", "in_universe"}`` after the reload.
+
+    Raises:
+        ValueError: *canonical* is missing or blank.
+    """
+    canonical_norm = (canonical or "").strip().lower()
+    if not canonical_norm:
+        raise ValueError("canonical must be non-empty")
+    action = "is_taper" if is_taper else "not_taper"
+    init_db(db_path)
+
+    def _do(conn: sqlite3.Connection) -> None:
+        conn.execute(
+            """INSERT INTO user_taper_flags (canonical, action, note, created_at, updated_at)
+               VALUES (?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+               ON CONFLICT(canonical) DO UPDATE SET
+                   action     = excluded.action,
+                   note       = excluded.note,
+                   updated_at = CURRENT_TIMESTAMP""",
+            (canonical_norm, action, note),
+        )
+
+    _run_alias_write(_do, db_path)
+    reload_taper_aliases(db_path)
+    return {"canonical": canonical_norm, "action": action,
+            "in_universe": canonical_norm in _TAPER_UNIVERSE}
+
+
+def clear_taper_flag(canonical: str, db_path: str | None = None) -> dict:
+    """Drop a curator not_taper/is_taper override, restoring the shipped default.
+
+    Args:
+        canonical: Canonical taper name.
+        db_path: Optional database path override.
+
+    Returns:
+        ``{"canonical", "cleared": bool, "in_universe": bool}``.
+    """
+    canonical_norm = (canonical or "").strip().lower()
+    init_db(db_path)
+    conn = get_connection(db_path)
+    existed = conn.execute(
+        "SELECT 1 FROM user_taper_flags WHERE canonical = ?", (canonical_norm,)
+    ).fetchone() is not None
+
+    def _do(c: sqlite3.Connection) -> None:
+        c.execute("DELETE FROM user_taper_flags WHERE canonical = ?", (canonical_norm,))
+
+    _run_alias_write(_do, db_path)
+    reload_taper_aliases(db_path)
+    return {"canonical": canonical_norm, "cleared": existed,
+            "in_universe": canonical_norm in _TAPER_UNIVERSE}
+
+
+def merge_tapers(source: str, target: str, db_path: str | None = None) -> dict:
+    """Repoint every alias of *source* at *target*, and carry decisions across.
+
+    Use for "these two names are the same person" (merge) and for "this name is
+    wrong" (rename — merge into a target that doesn't exist yet). Three things
+    move:
+
+    1. **User alias rows** for source are rewritten to target in place.
+    2. **Builtin alias keys** for source get a user 'add' override pointing at
+       target — the builtin table is code and is never edited, so an override is
+       the only way to redirect one.
+    3. **``taper_confirmations``** rows naming source are rewritten to target.
+       These are sticky MASTER-tier curator calls; leaving them behind would
+       point them at a canonical nothing resolves to any more, silently voiding
+       real decisions.
+
+    Derived ``taper_attributions`` rows are deliberately *not* rewritten: they
+    are recomputed output, and the next recompute rebuilds them from the
+    rewritten vocabulary. The returned ``attributions_pending`` says how many
+    rows are stale until then.
+
+    Args:
+        source: Canonical name being merged away.
+        target: Canonical name to merge into.
+        db_path: Optional database path override.
+
+    Returns:
+        ``{"source", "target", "aliases_moved", "confirmations_moved",
+        "attributions_pending"}``.
+
+    Raises:
+        ValueError: Either name is blank, they are equal, or *source* is not a
+            known canonical.
+    """
+    src = (source or "").strip().lower()
+    dst = (target or "").strip().lower()
+    if not src or not dst:
+        raise ValueError("source and target must be non-empty")
+    if src == dst:
+        raise ValueError("source and target must differ")
+
+    reload_taper_aliases(db_path)
+    if src not in set(_KNOWN_TAPER_ALIASES.values()):
+        raise ValueError(f"{src!r} is not a known canonical taper")
+
+    conn = get_connection(db_path)
+    src_aliases = [a for a, c in _KNOWN_TAPER_ALIASES.items() if c == src]
+    attributions_pending = conn.execute(
+        "SELECT COUNT(*) FROM taper_attributions WHERE taper_normalised = ?", (src,)
+    ).fetchone()[0]
+
+    def _do(c: sqlite3.Connection) -> None:
+        for alias in src_aliases:
+            c.execute(
+                """INSERT INTO user_taper_aliases
+                       (alias_norm, canonical, action, approved, note, created_at, updated_at)
+                   VALUES (?, ?, 'add', 1, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+                   ON CONFLICT(alias_norm) DO UPDATE SET
+                       canonical  = excluded.canonical,
+                       action     = 'add',
+                       approved   = 1,
+                       note       = excluded.note,
+                       updated_at = CURRENT_TIMESTAMP""",
+                (alias, dst, f"merged from {src}"),
+            )
+        c.execute(
+            "UPDATE taper_confirmations SET taper_normalised = ? WHERE taper_normalised = ?",
+            (dst, src),
+        )
+
+    confirmations_moved = conn.execute(
+        "SELECT COUNT(*) FROM taper_confirmations WHERE taper_normalised = ?", (src,)
+    ).fetchone()[0]
+    _run_alias_write(_do, db_path)
+    reload_taper_aliases(db_path)
+
+    return {
+        "source": src,
+        "target": dst,
+        "aliases_moved": len(src_aliases),
+        "confirmations_moved": confirmations_moved,
+        "attributions_pending": attributions_pending,
+    }
 
 
 def _compute_parse_confidence(

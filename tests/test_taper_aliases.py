@@ -224,3 +224,137 @@ def test_new_handle_gains_attribution_after_add_and_recompute():
     assert row["taper_normalised"] == "brandnewtaper"
     evidence = json.loads(row["evidence_json"])
     assert any(e["kind"] == "explicit" for e in evidence)
+
+
+# ── TODO-313: master taper vocabulary curation ────────────────────────────────
+
+def test_not_taper_flag_removes_canonical_from_universe():
+    db_path, _ = _make_db()
+    assert 'spot' in db._TAPER_UNIVERSE
+
+    result = db.set_taper_flag('spot', False, note='curator, not a taper', db_path=db_path)
+    assert result == {'canonical': 'spot', 'action': 'not_taper', 'in_universe': False}
+    assert 'spot' not in db._TAPER_UNIVERSE
+    # The name stays an alias value, so the parser still collapses its spellings.
+    assert 'spot' in set(db._KNOWN_TAPER_ALIASES.values())
+
+    db.clear_taper_flag('spot', db_path=db_path)
+    assert 'spot' in db._TAPER_UNIVERSE
+
+
+def test_is_taper_flag_readmits_a_builtin_exclusion():
+    db_path, _ = _make_db()
+    # 'jtt' ships in _NOT_TAPER (transfers/masters others' tapes).
+    assert 'jtt' not in db._TAPER_UNIVERSE
+
+    db.set_taper_flag('jtt', True, db_path=db_path)
+    assert 'jtt' in db._TAPER_UNIVERSE, "an explicit local call must beat the shipped default"
+
+    # Clearing the override restores the shipped judgement.
+    db.clear_taper_flag('jtt', db_path=db_path)
+    assert 'jtt' not in db._TAPER_UNIVERSE
+
+
+def test_flag_survives_a_reload():
+    db_path, _ = _make_db()
+    db.set_taper_flag('spot', False, db_path=db_path)
+    db.reload_taper_aliases(db_path)
+    assert 'spot' not in db._TAPER_UNIVERSE
+    db.clear_taper_flag('spot', db_path=db_path)
+
+
+def test_vocabulary_lists_canonicals_with_aliases_and_exclusions():
+    db_path, _ = _make_db()
+    db.add_taper_alias('mysoundman', 'spot', db_path=db_path)
+
+    v = db.list_taper_vocabulary(db_path)
+    by_name = {t['canonical']: t for t in v['tapers']}
+
+    spot = by_name['spot']
+    assert spot['alias_count'] == 2
+    assert {a['alias'] for a in spot['aliases']} == {'spot', 'mysoundman'}
+    assert spot['origin'] == 'mixed'          # one builtin alias, one user-added
+    assert spot['in_universe'] is True
+    assert spot['not_taper_origin'] is None
+
+    # Exclusion-only names are never alias values, so grouping the alias table
+    # alone would hide them and leave the call un-reversible from the UI.
+    assert 'dolphinsmile' in by_name
+    assert by_name['dolphinsmile']['alias_count'] == 0
+    assert by_name['dolphinsmile']['in_universe'] is False
+    assert by_name['dolphinsmile']['not_taper_origin'] == 'builtin'
+
+    assert v['counts']['canonicals'] == len(v['tapers'])
+    assert v['counts']['in_universe'] == sum(1 for t in v['tapers'] if t['in_universe'])
+
+
+def test_vocabulary_distinguishes_builtin_from_local_exclusions():
+    db_path, _ = _make_db()
+    db.set_taper_flag('spot', False, db_path=db_path)
+
+    by_name = {t['canonical']: t for t in db.list_taper_vocabulary(db_path)['tapers']}
+    assert by_name['spot']['not_taper_origin'] == 'user'
+    assert by_name['spot']['flag'] == 'not_taper'
+    assert by_name['dolphinsmile']['not_taper_origin'] == 'builtin'
+    db.clear_taper_flag('spot', db_path=db_path)
+
+
+def test_merge_repoints_aliases_and_carries_confirmations():
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1700, 'Audience recording.')
+    db.add_taper_alias('probetaper', 'probetaper', db_path=db_path)
+    db.add_taper_alias('probe taper', 'probetaper', db_path=db_path)
+    taper_attribution._rebuild_alias_index()
+    taper_attribution.confirm(1700, taper='probetaper', db_path=db_path)
+
+    result = db.merge_tapers('probetaper', 'spot', db_path=db_path)
+    assert result['aliases_moved'] == 2
+    assert result['confirmations_moved'] == 1
+
+    # Both spellings now resolve to the target...
+    assert db._KNOWN_TAPER_ALIASES['probe taper'] == 'spot'
+    assert db._KNOWN_TAPER_ALIASES['probetaper'] == 'spot'
+    # ...and the sticky curator decision moved with them, rather than being left
+    # pointing at a canonical nothing resolves to any more.
+    row = conn.execute(
+        'SELECT taper_normalised FROM taper_confirmations WHERE lb_number = 1700').fetchone()
+    assert row['taper_normalised'] == 'spot'
+
+
+def test_merge_rejects_bad_input():
+    db_path, _ = _make_db()
+    for source, target in (('', 'spot'), ('spot', ''), ('spot', 'spot'), ('nosuchname', 'spot')):
+        try:
+            db.merge_tapers(source, target, db_path=db_path)
+            raise AssertionError(f'expected ValueError for {source!r} -> {target!r}')
+        except ValueError:
+            pass
+
+
+def test_vocabulary_routes_and_curator_gate():
+    db_path, _ = _make_db()
+    db.set_curator(False, db_path)
+    with _AppClient(db_path) as client:
+        assert client.get('/api/tapers/vocabulary').status_code == 200      # read is open
+        assert client.post('/api/tapers/vocabulary', json={'name': 'x'}).status_code == 403
+        assert client.post('/api/tapers/vocabulary/spot/flag',
+                           json={'is_taper': False}).status_code == 403
+        assert client.post('/api/tapers/vocabulary/merge',
+                           json={'source': 'a', 'target': 'b'}).status_code == 403
+
+    db.set_curator(True, db_path)
+    with _AppClient(db_path) as client:
+        assert client.post('/api/tapers/vocabulary', json={'name': ''}).status_code == 400
+        assert client.post('/api/tapers/vocabulary/spot/flag', json={}).status_code == 400
+        assert client.post('/api/tapers/vocabulary/merge',
+                           json={'source': 'nosuchname', 'target': 'spot'}).status_code == 400
+
+        resp = client.post('/api/tapers/vocabulary', json={'name': 'routeprobe'})
+        assert resp.status_code == 200
+        body = client.get('/api/tapers/vocabulary').get_json()
+        assert 'routeprobe' in {t['canonical'] for t in body['tapers']}
+
+        flag = client.post('/api/tapers/vocabulary/routeprobe/flag', json={'is_taper': False})
+        assert flag.get_json()['in_universe'] is False
+        assert flag.get_json()['needs_recompute'] is True

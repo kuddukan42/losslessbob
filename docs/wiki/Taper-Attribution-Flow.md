@@ -91,7 +91,11 @@ flowchart LR
   mentions of him are uploader credit, not taping evidence. Also excludes
   `lk` (curator), `captain acid` (remasters existing recordings), and `jtt`
   (transfers/masters others' tapes) — TODO-213 curation pass, 2026-07-13.
-- `_TAPER_UNIVERSE = frozenset(_KNOWN_TAPER_ALIASES.values()) - _NOT_TAPER` —
+- `user_taper_flags` (TODO-313) — the runtime override on `_NOT_TAPER`, which
+  is otherwise code and un-editable from the UI. `not_taper` rows exclude extra
+  canonicals, `is_taper` rows re-admit builtin-excluded ones, and they are
+  applied *after* the subtraction so a local call beats the shipped one.
+- `_TAPER_UNIVERSE = (aliases.values() - _NOT_TAPER - user_not) | user_is` —
   the actual candidate set Layer 0 seeds from and the Library grid's
   `is_known_taper()` checks against, so a display surface never shows a
   taper the attribution engine itself would reject.
@@ -136,7 +140,7 @@ flowchart LR
 ## Curation console (`/taper-review`)
 
 `backend/taper_review.html`, served by Flask, opened directly in a browser —
-not part of gui_next. Three tabs over one filter vocabulary:
+not part of gui_next. Four tabs over one filter vocabulary:
 
 - **Queue** — the original one-card flow, still defaulting to
   `conflict=1&kind=mention`; other presets select wider slices.
@@ -147,7 +151,27 @@ not part of gui_next. Three tabs over one filter vocabulary:
 - **Tapers** — `GET /api/tapers/review/tapers` rollup, ordered by undecided
   count; the surface for spotting alias variants and era outliers.
 
-Reads are ungated; bulk and revert are curator-gated like the single-LB routes.
+- **Taper list** — `GET /api/tapers/vocabulary`, the master vocabulary (TODO-313).
+  Canonical-keyed rather than alias-keyed, because that is the unit a curator
+  reasons about: *is this person a taper*, and *are these two names the same
+  person*. Per row: alias add/remove, a not-a-taper toggle backed by
+  `user_taper_flags`, reset-to-shipped-default, and merge/rename.
+
+Two things about the vocabulary tab are easy to get wrong:
+
+- `_NOT_TAPER` is a **code-level frozenset**; `user_taper_flags` is the only way
+  to change that judgement at runtime. It is applied *after* the subtraction in
+  `reload_taper_aliases`, so a local `is_taper` always beats the shipped call.
+- 32 of the 35 shipped exclusions (including `dolphinsmile`) are never alias
+  *values*, so `list_taper_vocabulary` unions `_NOT_TAPER` into the grouped
+  alias table. Without that they are invisible and the call is irreversible.
+- A **merge carries `taper_confirmations` across**. Those are sticky MASTER-tier
+  curator calls; leaving them on the merged-away canonical would silently void
+  real decisions. Derived attributions are not rewritten — a recompute does that,
+  and `attributions_pending` reports how many are stale meanwhile.
+
+Reads are ungated; bulk, revert and every vocabulary write are curator-gated
+like the single-LB routes.
 Scale as of 2026-08-17: 8,646 attributions over 273 handles, 136 conflicts, and
 only 109 rows carrying a curator decision — the console exists because the old
 page could only reach the ~96-row mention-conflict slice.

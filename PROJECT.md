@@ -1088,6 +1088,23 @@ returns `needs_recompute: true` for that case.
 
 Index: `idx_taper_declog_lb (lb_number, id DESC)`.
 
+### `user_taper_flags` — Curator not-a-taper overrides (USER table, TODO-313)
+Overrides on top of `backend.db._NOT_TAPER`, which is a code-level frozenset and therefore
+un-editable from the UI. USER-tier, never exported. Rows key on a **canonical** taper name, not an
+alias key. `'not_taper'` excludes a canonical from `_TAPER_UNIVERSE` — the name stays a
+`_KNOWN_TAPER_ALIASES` value so the parser still collapses its spellings to one token, but the
+attribution engine never seeds it as a candidate (the dolphinsmile/lk/jtt call: curator or
+transferer, not taper). `'is_taper'` is the inverse, re-admitting a canonical the shipped
+`_NOT_TAPER` excludes. Applied in `reload_taper_aliases` **after** the `_NOT_TAPER` subtraction, so
+an explicit local call always beats the shipped default. Existing `taper_attributions` rows are
+unaffected until the next recompute.
+| Column | Type | Notes |
+|--------|------|-------|
+| canonical | TEXT PK | Canonical taper name (lowercased) |
+| action | TEXT NOT NULL | `'not_taper'` / `'is_taper'` (CHECK-constrained) |
+| note | TEXT | Optional free-text provenance note |
+| created_at / updated_at | TEXT | DEFAULT CURRENT_TIMESTAMP |
+
 ### `scrape_sessions` — Crawler session log (MASTER table)
 One row per site-crawler run started via POST /api/crawler/start.
 | Column | Type | Notes |
@@ -1669,6 +1686,10 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | GET | `/api/tapers/decisions?lb=&limit=` | TODO-312. `taper_decision_log` rows newest-first (joined to `entries` for date/location), scoped to one LB or the global recent feed. `limit` clamps to ≤1000. Open. |
 | POST | `/api/tapers/attributions/bulk` | TODO-312, curator-only. Body `{action: 'confirm'\|'reject'\|'unresolved', lbs: [int], taper?, note?}`. Applies each LB independently through the single-LB engine functions with `source='bulk'`, returning `{results: [{lb, ok, error?}], ok_count, fail_count}` — one bad row (e.g. a taper outside the known-taper universe) does not sink the batch. 400 on a bad action, an empty `lbs`, or a batch over 500. |
 | POST | `/api/tapers/decisions/<log_id>/revert` | TODO-312, curator-only. Undoes one logged decision by replaying its recorded `prev_action`/`prev_taper` through the matching engine function (`source='revert'`, itself logged, so the trail stays append-only). A NULL `prev_action` instead deletes both the `taper_confirmations` and `taper_attributions` rows and returns `needs_recompute: true`. Returns `{log_id, lb_number, restored, attribution, needs_recompute}`; 400 on an unknown log id. |
+| GET | `/api/tapers/vocabulary` | TODO-313. The canonical-centric master taper list: `{tapers: [{canonical, aliases: [{alias, origin}], alias_count, origin, in_universe, not_taper_origin, flag, note, attributions, confirmations}], counts}`. Groups the flat alias table by canonical and unions in `_NOT_TAPER` plus any flagged names — 32 of the 35 shipped exclusions (`dolphinsmile` among them) are never alias *values*, so grouping the alias table alone would hide them and leave the call un-reversible from the UI. `not_taper_origin` (`builtin`/`user`/None) distinguishes a shipped judgement from a local one. Reloads the merged tables first, so it never serves a stale import-time snapshot. Open (no curator gate). |
+| POST | `/api/tapers/vocabulary` | TODO-313, curator-only. Body `{name, note?}` — registers a brand-new canonical taper. A new taper is just an alias whose canonical is itself, so this delegates to `add_taper_alias` rather than inventing a second way for a name to enter the vocabulary. 400 on a blank name. |
+| POST | `/api/tapers/vocabulary/<canonical>/flag` | TODO-313, curator-only. Body `{is_taper: bool, note?}` to set a `user_taper_flags` override, or `{clear: true}` to drop it and fall back to the shipped `_NOT_TAPER` default. Returns `{canonical, action, in_universe, needs_recompute: true}` — excluding a taper does not retract attributions already computed under it. 400 if neither field is given. |
+| POST | `/api/tapers/vocabulary/merge` | TODO-313, curator-only. Body `{source, target}` — merges one canonical into another, or renames it (a target that doesn't exist yet). Repoints user alias rows, writes user 'add' overrides for builtin alias keys (the builtin table is code and is never edited), and rewrites `taper_confirmations` — leaving those behind would point sticky MASTER-tier decisions at a canonical nothing resolves to any more. Derived `taper_attributions` are deliberately *not* rewritten; the next recompute rebuilds them, and `attributions_pending` says how many are stale until then. 400 on blank/equal names or an unknown source. |
 | GET | `/api/tapers/aliases` | Merged known-taper alias table (TODO-241): `{entries: [{alias, canonical, origin: builtin\|user}], suppressed: [alias_norm], counts}`. Reloads from `user_taper_aliases` first, so it always reflects the DB. Open (no curator gate). |
 | POST | `/api/tapers/aliases` | Curator-only. Body `{alias, canonical, note?}`. Upserts an 'add' override, reloads the merged tables + `taper_attribution`'s alias index. 400 on missing/blank fields. |
 | DELETE | `/api/tapers/aliases/<alias>` | Curator-only. Deletes a user 'add' row outright, or upserts a 'remove' row to suppress a builtin key (`result: deleted\|suppressed`); 404 if neither. Existing attributions are only re-scored by a later `/api/derived/recompute` (button on `/taper-review`). |
@@ -2013,7 +2034,7 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/admin` | Serve mobile-friendly admin control panel (`backend/admin.html`). |
-| GET | `/taper-review` | Serve the taper curation console (`backend/taper_review.html`) — a self-contained page (no build step, no external deps) opened directly in a browser, not linked from gui_next. Three tabs sharing one filter vocabulary: **Queue** (the original one-card-at-a-time flow, defaulting to `conflict=1&kind=mention` so the pre-TODO-312 workflow is unchanged, with selectable presets), **Entries** (`/api/tapers/review` table — facet chips, search, pagination, checkbox multi-select → bulk confirm/reject/unresolved, per-row expander with evidence + decision history + Revert), and **Tapers** (`/api/tapers/review/tapers` rollup; clicking a handle drills into Entries filtered to it). Tab/filters/page live in `location.hash`, so any view is linkable. Write controls are disabled wholesale with a banner when `GET /api/curator` reports non-curator, rather than 403-toasting per click. Confirming a handle outside the known-taper universe offers to register it via `POST /api/tapers/aliases` and retry. Retains the TODO-241 alias admin section. |
+| GET | `/taper-review` | Serve the taper curation console (`backend/taper_review.html`) — a self-contained page (no build step, no external deps) opened directly in a browser, not linked from gui_next. Four tabs sharing one filter vocabulary: **Queue** (the original one-card-at-a-time flow, defaulting to `conflict=1&kind=mention` so the pre-TODO-312 workflow is unchanged, with selectable presets), **Entries** (`/api/tapers/review` table — facet chips, search, pagination, checkbox multi-select → bulk confirm/reject/unresolved, per-row expander with evidence + decision history + Revert), **Tapers** (`/api/tapers/review/tapers` rollup; clicking a handle drills into Entries filtered to it), and **Taper list** (TODO-313 — the master vocabulary: 331 canonical names searchable by canonical *or* alias, six filters, and a per-row curate panel with alias add/remove, the not-a-taper toggle, reset-to-shipped-default, and merge/rename; the TODO-241 alias admin section retired into this tab). Tab/filters/page live in `location.hash`, so any view is linkable. Write controls are disabled wholesale with a banner when `GET /api/curator` reports non-curator, rather than 403-toasting per click. Confirming a handle outside the known-taper universe offers to register it via `POST /api/tapers/aliases` and retry. |
 | GET | `/api/admin/status` | Combined snapshot: `{db, scrape, import_status, master, uptime_seconds}`. |
 | POST | `/api/admin/restart` | Restart the entire process (`os.execv`) to pick up code changes. Returns 202 before exit. |
 
