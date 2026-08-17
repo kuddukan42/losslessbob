@@ -81,6 +81,7 @@ losslessbob/
 │   ├── assets/               # Bundled render-time data assets
 │   │   └── world_countries_110m.json  # 168KB GeoJSON (177 countries, Natural Earth names) for the dossier locator map; decoded from world-atlas@2.0.2 (TODO-260)
 │   ├── admin.html            # Mobile-friendly admin control panel (served at /admin)
+│   ├── taper_review.html     # Taper curation console (served at /taper-review) — Queue/Entries/Tapers tabs, bulk decisions, decision history, alias admin (TODO-312)
 │   ├── db.py                 # SQLite layer, checksum parsing, search
 │   ├── db_queue.py           # DB-09: DatabaseWriteQueue — single writer thread, serialises all writes
 │   ├── paths.py              # Central path resolver: normal / PyInstaller-frozen / portable-ZIP builds; SITE_* dirs. `LOSSLESSBOB_APP_ROOT` env var overrides APP_ROOT in the unfrozen branch (CI/cloud-agent/fixture use, TODO-261) — unset behavior unchanged
@@ -1057,8 +1058,35 @@ confirm/reject curator API lands in TAPER phase 2.
 |--------|------|-------|
 | lb_number | INTEGER PK | LosslessBob entry number |
 | taper_normalised | TEXT NOT NULL | Canonical key into `_KNOWN_TAPER_ALIASES` values |
-| action | TEXT NOT NULL | `'confirm'` / `'reject'` (convention only, no CHECK) |
+| action | TEXT NOT NULL | `'confirm'` / `'reject'` / `'unresolved'` (convention only, no CHECK) |
 | decided_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
+
+### `taper_decision_log` — Taper decision audit trail (USER table, TODO-312)
+Append-only history behind the `/taper-review` curation console. The decisions themselves live in
+the MASTER-tier `taper_confirmations` above; this is the local record of how they got there, so it
+is USER-tier and never exported. Every write goes through
+`backend.taper_attribution.{confirm,reject,mark_unresolved,revert_decision}`, which call
+`_log_decision()` *inside* the same transaction and before the `taper_confirmations` upsert — that
+ordering is what captures `prev_action`/`prev_taper`, and that pair is what makes a decision
+revertible without a full recompute. Logging in the engine rather than the route means CLI callers
+(`tools/attribute_tapers.py`) are recorded too.
+Reverting to a NULL `prev_action` (undoing a first-ever decision) deletes both the
+`taper_confirmations` row and the derived `taper_attributions` row — the undone decision had already
+rewritten the latter, so leaving it would claim curator approval that no longer exists. The API
+returns `needs_recompute: true` for that case.
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | AUTOINCREMENT |
+| lb_number | INTEGER NOT NULL | LosslessBob entry number |
+| action | TEXT NOT NULL | `'confirm'` / `'reject'` / `'unresolved'` / `'revert'` |
+| taper_normalised | TEXT | Taper the decision applies to (NULL if none resolved) |
+| prev_action | TEXT | `taper_confirmations.action` before this write; NULL = no prior decision |
+| prev_taper | TEXT | `taper_confirmations.taper_normalised` before this write |
+| source | TEXT NOT NULL | `'ui'` / `'bulk'` / `'cli'` / `'revert'` (DEFAULT `'ui'`) |
+| note | TEXT | Optional free-text curator note |
+| decided_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
+
+Index: `idx_taper_declog_lb (lb_number, id DESC)`.
 
 ### `scrape_sessions` — Crawler session log (MASTER table)
 One row per site-crawler run started via POST /api/crawler/start.
@@ -1636,6 +1664,11 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | POST | `/api/tapers/attributions/<lb>/confirm` | Curator-only. Body `{taper?}` (else sourced from the existing attribution row; 400 if neither). Upserts a sticky `taper_confirmations` 'confirm' row (MASTER, F2) and immediately upserts `taper_attributions` to `confidence='confirmed'` — recompute-equivalent, so a later `/api/derived/recompute` is a no-op for this lb. Taper must be in the known-taper universe. |
 | POST | `/api/tapers/attributions/<lb>/reject` | Curator-only. Body `{taper?}`. Upserts a sticky 'reject' row and deletes the matching `taper_attributions` row (same pair-match rule as recompute's `_apply_rejects`); future recomputes stay suppressed via `taper_confirmations`. |
 | POST | `/api/tapers/attributions/<lb>/unresolved` | Curator-only. No body. "Can't determine" verdict for a genuine historical conflict (same recording documented with two different tapers, no ground truth): upserts a sticky `taper_confirmations` 'unresolved' row and deletes the `taper_attributions` row so the entry shows no pill and leaves the review queue. Suppressed across recomputes via `_apply_unresolved` (drops every taper for the lb, not just one). Reversible — a later confirm/reject overwrites the row. |
+| GET | `/api/tapers/review?state=&confidence=&conflict=&kind=&taper=&q=&attributed=&limit=&offset=&sort=` | TODO-312. One page of the curation console's entry view: `{rows, total, limit, offset, counts}`. Rows join `entries` → `taper_attributions` → `taper_confirmations`, so each carries date/location/parsed-taper/source-chain alongside the derived attribution and any sticky decision — the console needs no per-row `/api/entry/<lb>` call. `state` ∈ `any\|undecided\|confirm\|reject\|unresolved` (`undecided` = no `taper_confirmations` row). `attributed=0` surfaces the ~8k entries with no attribution at all; `=1` only those with one. `q` matches `lb_number` exactly when all-digits, else a substring over taper/date/location/parsed-taper. `sort` ∈ `lb\|date\|taper\|confidence`, `-` prefix descends; `date` sorts via a SQL rewrite of `entries.date_str` (`M/D/YY`, two-digit year pivoting at 40) to `YYYY-MM-DD`, since it sorts wrong as text. `limit` clamps to ≤500. `counts` are facet totals with each facet's own dimension left open, so a chip's number is what switching to it would yield. 400 on bad `state`/`sort`/`kind`. Open (no curator gate). |
+| GET | `/api/tapers/review/tapers?state=&confidence=&conflict=&q=` | TODO-312. Per-taper rollup for the console's grouped view: `{tapers: [{taper, total, confirmed, propagated, inferred, conflicts, decided, undecided, first_date, last_date}]}`, one GROUP BY over the same join, ordered by `undecided` desc. Restricted to rows that have an attribution. This is the alias-variant/outlier spotting surface. Open. |
+| GET | `/api/tapers/decisions?lb=&limit=` | TODO-312. `taper_decision_log` rows newest-first (joined to `entries` for date/location), scoped to one LB or the global recent feed. `limit` clamps to ≤1000. Open. |
+| POST | `/api/tapers/attributions/bulk` | TODO-312, curator-only. Body `{action: 'confirm'\|'reject'\|'unresolved', lbs: [int], taper?, note?}`. Applies each LB independently through the single-LB engine functions with `source='bulk'`, returning `{results: [{lb, ok, error?}], ok_count, fail_count}` — one bad row (e.g. a taper outside the known-taper universe) does not sink the batch. 400 on a bad action, an empty `lbs`, or a batch over 500. |
+| POST | `/api/tapers/decisions/<log_id>/revert` | TODO-312, curator-only. Undoes one logged decision by replaying its recorded `prev_action`/`prev_taper` through the matching engine function (`source='revert'`, itself logged, so the trail stays append-only). A NULL `prev_action` instead deletes both the `taper_confirmations` and `taper_attributions` rows and returns `needs_recompute: true`. Returns `{log_id, lb_number, restored, attribution, needs_recompute}`; 400 on an unknown log id. |
 | GET | `/api/tapers/aliases` | Merged known-taper alias table (TODO-241): `{entries: [{alias, canonical, origin: builtin\|user}], suppressed: [alias_norm], counts}`. Reloads from `user_taper_aliases` first, so it always reflects the DB. Open (no curator gate). |
 | POST | `/api/tapers/aliases` | Curator-only. Body `{alias, canonical, note?}`. Upserts an 'add' override, reloads the merged tables + `taper_attribution`'s alias index. 400 on missing/blank fields. |
 | DELETE | `/api/tapers/aliases/<alias>` | Curator-only. Deletes a user 'add' row outright, or upserts a 'remove' row to suppress a builtin key (`result: deleted\|suppressed`); 404 if neither. Existing attributions are only re-scored by a later `/api/derived/recompute` (button on `/taper-review`). |
@@ -1980,6 +2013,7 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/admin` | Serve mobile-friendly admin control panel (`backend/admin.html`). |
+| GET | `/taper-review` | Serve the taper curation console (`backend/taper_review.html`) — a self-contained page (no build step, no external deps) opened directly in a browser, not linked from gui_next. Three tabs sharing one filter vocabulary: **Queue** (the original one-card-at-a-time flow, defaulting to `conflict=1&kind=mention` so the pre-TODO-312 workflow is unchanged, with selectable presets), **Entries** (`/api/tapers/review` table — facet chips, search, pagination, checkbox multi-select → bulk confirm/reject/unresolved, per-row expander with evidence + decision history + Revert), and **Tapers** (`/api/tapers/review/tapers` rollup; clicking a handle drills into Entries filtered to it). Tab/filters/page live in `location.hash`, so any view is linkable. Write controls are disabled wholesale with a banner when `GET /api/curator` reports non-curator, rather than 403-toasting per click. Confirming a handle outside the known-taper universe offers to register it via `POST /api/tapers/aliases` and retry. Retains the TODO-241 alias admin section. |
 | GET | `/api/admin/status` | Combined snapshot: `{db, scrape, import_status, master, uptime_seconds}`. |
 | POST | `/api/admin/restart` | Restart the entire process (`os.execv`) to pick up code changes. Returns 202 before exit. |
 

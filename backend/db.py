@@ -104,6 +104,7 @@ USER_TABLES = (
     "xref_ingest_filesets",
     "xref_ingest_rows",
     "user_taper_aliases",
+    "taper_decision_log",
     "refresh_step_runs",
     "refresh_chain_runs",
 )
@@ -701,6 +702,26 @@ CREATE TABLE IF NOT EXISTS taper_confirmations (
     action            TEXT NOT NULL,      -- 'confirm' / 'reject' (no CHECK; convention only)
     decided_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- taper_decision_log: append-only audit trail behind the /taper-review console
+-- (TODO-312). The *decisions* themselves live in the MASTER-tier
+-- `taper_confirmations` above — this is the local history of how they got there,
+-- so it is USER-tier and never exported. Every write goes through
+-- `taper_attribution.{confirm,reject,mark_unresolved,revert_decision}`, which
+-- capture the pre-write `taper_confirmations` state in prev_action/prev_taper;
+-- that pair is what makes a decision revertible without a full recompute.
+CREATE TABLE IF NOT EXISTS taper_decision_log (
+    id                INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number         INTEGER NOT NULL,
+    action            TEXT NOT NULL,      -- 'confirm'/'reject'/'unresolved'/'revert'
+    taper_normalised  TEXT,               -- taper the decision applies to (NULL if none resolved)
+    prev_action       TEXT,               -- taper_confirmations.action before this write
+    prev_taper        TEXT,               -- NULL prev_action = no prior decision existed
+    source            TEXT NOT NULL DEFAULT 'ui',  -- 'ui'/'bulk'/'cli'/'revert'
+    note              TEXT,
+    decided_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_taper_declog_lb ON taper_decision_log(lb_number, id DESC);
 
 -- bobdylan.com official setlist data
 -- bobdylan_shows: one row per concert page on bobdylan.com/date/

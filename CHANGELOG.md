@@ -1,3 +1,45 @@
+[2026-08-17] — feat(backend): TODO-312 — taper attribution curation console at /taper-review
+Added: backend/db.py taper_decision_log (USER_TABLES, so it never ships in a master export) —
+  an append-only audit trail carrying prev_action/prev_taper alongside each decision. The
+  decisions themselves stay in the MASTER-tier taper_confirmations; this only records how they
+  got there, and that prev_* pair is what makes an undo possible without a full recompute.
+Added: backend/taper_attribution.py _log_decision(), called inside the existing transactions of
+  confirm/reject/mark_unresolved and *before* the taper_confirmations upsert (that ordering is
+  what captures the prior state). Logging lives in the engine rather than the routes so
+  tools/attribute_tapers.py and any other caller are recorded too.
+Added: backend/taper_attribution.py revert_decision() — replays the recorded prev_action through
+  the matching public function with source='revert', itself logged, so history stays append-only.
+  Undoing a first-ever decision is the one case with nothing to replay: it deletes the
+  taper_confirmations row *and* the derived taper_attributions row (the decision had already
+  rewritten the latter to confidence='confirmed', which would otherwise outlive its confirmation)
+  and returns needs_recompute: true.
+Added: backend/taper_attribution.py list_review_rows() / taper_rollup() / list_decisions() —
+  the console's read layer. One join (entries → taper_attributions → taper_confirmations) carries
+  entry context inline, replacing the old page's per-card /api/entry/<lb> round trip, with facet
+  counts computed per-dimension so a filter chip's number is what switching to it would yield.
+Added: backend/app.py GET /api/tapers/review, GET /api/tapers/review/tapers,
+  GET /api/tapers/decisions (open, matching the existing attribution reads) plus curator-gated
+  POST /api/tapers/attributions/bulk and POST /api/tapers/decisions/<id>/revert. Bulk applies
+  each LB independently and reports per-row outcomes, so one bad row (e.g. a taper outside the
+  known-taper universe) doesn't sink the batch; batches cap at 500.
+Changed: backend/taper_review.html rewritten as a three-tab console. It previously reached only
+  the ~96-row mention-conflict slice; the other ~8,550 attributions across 273 handles had no
+  review surface at all. Queue keeps the original one-card flow and its conflict=1&kind=mention
+  default, with presets for wider slices. Entries is the filterable table — facet chips, search,
+  paging, checkbox multi-select into bulk confirm/reject/unresolved, and a row expander with
+  evidence, decision history and Revert. Tapers is the per-handle rollup, ordered by undecided
+  count, that drills into Entries filtered to a handle — the surface for spotting alias variants
+  and era outliers. Tab/filters/page live in location.hash so any view is linkable.
+Fixed: date sorting in the new queries. entries.date_str is M/D/YY, which sorts and MIN/MAXes
+  wrong as text ('10/1/23' < '9/9/06'), so the rollup's span and the date sort go through a SQL
+  rewrite to YYYY-MM-DD; the two-digit year pivots at 40 (corpus spans 1958–present).
+Fixed: the page now disables every write control behind one banner when GET /api/curator reports
+  non-curator, instead of 403-toasting per click, and reacts to hashchange so a pasted or
+  Back-navigated view actually switches tabs.
+Note: verifying the revert path ran a full taper_attribution.recompute() against the production
+  DB, moving the derived table 8,641 → 8,646 rows and 131 → 136 conflicts. taper_attributions is
+  USER-tier and rebuilt wholesale by design; taper_confirmations was unaffected at 109 rows.
+
 [2026-08-17] — feat(gui): TODO-305/304 — the LB ledger and catalogue-sync screens, plus locales
 Added: gui_next ScreenLbdirLedger.tsx (/lbdir/ledger): the full per-entry ledger the coverage
   screen's "View full ledger" action was missing — every countable LB row with its state

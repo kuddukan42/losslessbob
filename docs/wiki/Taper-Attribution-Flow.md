@@ -123,6 +123,34 @@ flowchart LR
   as TODO-234, not a curator confirm/reject decision). The 2026-07-20 corpus
   rescore refreshed the TODO-234 table 18→14 conflicts, most flipping to
   label-review; final picks await tj.
+- **Every decision is logged** (TODO-312): `confirm`/`reject`/`mark_unresolved`
+  call `_log_decision()` inside their own transaction, *before* the
+  `taper_confirmations` upsert, capturing `prev_action`/`prev_taper` into the
+  USER-tier `taper_decision_log`. That pair is what `revert_decision()` replays,
+  so an undo needs no recompute. Logging sits in the engine, not the route, so
+  CLI callers are recorded too. Undoing a *first-ever* decision is the one case
+  that can't be replayed: it drops the `taper_confirmations` row **and** the
+  derived `taper_attributions` row (the decision had already rewritten the
+  latter to `confidence='confirmed'`) and returns `needs_recompute: true`.
+
+## Curation console (`/taper-review`)
+
+`backend/taper_review.html`, served by Flask, opened directly in a browser —
+not part of gui_next. Three tabs over one filter vocabulary:
+
+- **Queue** — the original one-card flow, still defaulting to
+  `conflict=1&kind=mention`; other presets select wider slices.
+- **Entries** — `GET /api/tapers/review`, the joined/paginated/faceted view
+  (`entries` → `taper_attributions` → `taper_confirmations`), with multi-select
+  bulk decisions via `POST /api/tapers/attributions/bulk` and a per-row
+  expander showing evidence, decision history and a Revert button.
+- **Tapers** — `GET /api/tapers/review/tapers` rollup, ordered by undecided
+  count; the surface for spotting alias variants and era outliers.
+
+Reads are ungated; bulk and revert are curator-gated like the single-LB routes.
+Scale as of 2026-08-17: 8,646 attributions over 273 handles, 136 conflicts, and
+only 109 rows carrying a curator decision — the console exists because the old
+page could only reach the ~96-row mention-conflict slice.
 
 ## Related
 

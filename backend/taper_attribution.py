@@ -147,6 +147,43 @@ def _run_write(fn, db_path: str | None):
     return queue.execute(fn)
 
 
+def _log_decision(
+    c: sqlite3.Connection,
+    lb: int,
+    action: str,
+    taper: str | None,
+    source: str,
+    note: str | None,
+) -> None:
+    """Append one ``taper_decision_log`` row, capturing the pre-write state.
+
+    Must be called *before* the ``taper_confirmations`` upsert in the same
+    transaction — it reads that table to fill prev_action/prev_taper, which is
+    what makes :func:`revert_decision` possible without a full recompute.
+
+    Args:
+        c: The write connection for the enclosing transaction.
+        lb: LB number the decision applies to.
+        action: 'confirm' / 'reject' / 'unresolved' / 'revert'.
+        taper: Canonical taper the decision applies to, if one was resolved.
+        source: Origin of the write — 'ui' / 'bulk' / 'cli' / 'revert'.
+        note: Optional free-text curator note.
+    """
+    prev = c.execute(
+        "SELECT action, taper_normalised FROM taper_confirmations WHERE lb_number=?",
+        (lb,),
+    ).fetchone()
+    c.execute(
+        """INSERT INTO taper_decision_log
+               (lb_number, action, taper_normalised, prev_action, prev_taper, source, note)
+           VALUES (?, ?, ?, ?, ?, ?, ?)""",
+        (lb, action, taper,
+         prev["action"] if prev else None,
+         prev["taper_normalised"] if prev else None,
+         source, note),
+    )
+
+
 def _evidence(kind: str, detail: str, **extras) -> dict:
     """Build one evidence record: common core + optional non-None extras (F3)."""
     rec: dict = {"kind": kind, "detail": detail}
@@ -832,7 +869,8 @@ def _resolve_taper(conn: sqlite3.Connection, lb: int, taper: str | None) -> str:
     return resolved
 
 
-def confirm(lb: int, taper: str | None = None, db_path: str | None = None) -> dict:
+def confirm(lb: int, taper: str | None = None, db_path: str | None = None,
+            source: str = "ui", note: str | None = None) -> dict:
     """Curator-confirm one LB's taper attribution immediately (Phase 2 API).
 
     Writes a sticky 'confirm' row to the MASTER-tier taper_confirmations
@@ -847,6 +885,8 @@ def confirm(lb: int, taper: str | None = None, db_path: str | None = None) -> di
         taper: Raw or canonical taper name. Normalised via _normalise_taper.
             If omitted, taken from this lb's existing taper_attributions row.
         db_path: Optional database path override.
+        source: Origin recorded in taper_decision_log ('ui'/'bulk'/'cli'/'revert').
+        note: Optional free-text curator note for the audit trail.
 
     Returns:
         The updated taper_attributions row (see get_attribution_for_lb).
@@ -863,6 +903,7 @@ def confirm(lb: int, taper: str | None = None, db_path: str | None = None) -> di
         raise ValueError(f"{taper_norm!r} is not in the known-taper universe")
 
     def _do(c: sqlite3.Connection) -> None:
+        _log_decision(c, lb, "confirm", taper_norm, source, note)
         c.execute(
             """INSERT INTO taper_confirmations (lb_number, taper_normalised, action, decided_at)
                VALUES (?, ?, 'confirm', CURRENT_TIMESTAMP)
@@ -894,7 +935,8 @@ def confirm(lb: int, taper: str | None = None, db_path: str | None = None) -> di
     return get_attribution_for_lb(lb, db_path)
 
 
-def reject(lb: int, taper: str | None = None, db_path: str | None = None) -> dict | None:
+def reject(lb: int, taper: str | None = None, db_path: str | None = None,
+           source: str = "ui", note: str | None = None) -> dict | None:
     """Curator-reject one LB's taper attribution immediately (Phase 2 API).
 
     Writes a sticky 'reject' row to the MASTER-tier taper_confirmations
@@ -911,6 +953,8 @@ def reject(lb: int, taper: str | None = None, db_path: str | None = None) -> dic
             _normalise_taper. If omitted, taken from this lb's existing
             taper_attributions row.
         db_path: Optional database path override.
+        source: Origin recorded in taper_decision_log ('ui'/'bulk'/'cli'/'revert').
+        note: Optional free-text curator note for the audit trail.
 
     Returns:
         The updated taper_attributions row, or None if it was deleted (or
@@ -925,6 +969,7 @@ def reject(lb: int, taper: str | None = None, db_path: str | None = None) -> dic
     taper_norm = _resolve_taper(conn, lb, taper)
 
     def _do(c: sqlite3.Connection) -> None:
+        _log_decision(c, lb, "reject", taper_norm, source, note)
         c.execute(
             """INSERT INTO taper_confirmations (lb_number, taper_normalised, action, decided_at)
                VALUES (?, ?, 'reject', CURRENT_TIMESTAMP)
@@ -943,7 +988,8 @@ def reject(lb: int, taper: str | None = None, db_path: str | None = None) -> dic
     return get_attribution_for_lb(lb, db_path)
 
 
-def mark_unresolved(lb: int, db_path: str | None = None) -> dict | None:
+def mark_unresolved(lb: int, db_path: str | None = None,
+                    source: str = "ui", note: str | None = None) -> dict | None:
     """Curator verdict: this taper conflict is undecidable — attribute nothing.
 
     For a genuine historical conflict (the same recording documented with two
@@ -959,6 +1005,8 @@ def mark_unresolved(lb: int, db_path: str | None = None) -> dict | None:
     Args:
         lb: LB number whose conflict is being parked as undecidable.
         db_path: Optional database path override.
+        source: Origin recorded in taper_decision_log ('ui'/'bulk'/'cli'/'revert').
+        note: Optional free-text curator note for the audit trail.
 
     Returns:
         The updated ``taper_attributions`` row (None, since it is deleted).
@@ -973,6 +1021,7 @@ def mark_unresolved(lb: int, db_path: str | None = None) -> dict | None:
     taper_norm = existing["taper_normalised"] if existing else "?"
 
     def _do(c: sqlite3.Connection) -> None:
+        _log_decision(c, lb, "unresolved", taper_norm, source, note)
         c.execute(
             """INSERT INTO taper_confirmations (lb_number, taper_normalised, action, decided_at)
                VALUES (?, ?, 'unresolved', CURRENT_TIMESTAMP)
@@ -986,3 +1035,441 @@ def mark_unresolved(lb: int, db_path: str | None = None) -> dict | None:
 
     _run_write(_do, db_path)
     return get_attribution_for_lb(lb, db_path)
+
+
+# ── Curation console: review queries + decision history (TODO-312) ────────────
+
+_REVIEW_STATES = ("any", "undecided", "confirm", "reject", "unresolved")
+
+# entries.date_str is M/D/YY, which sorts and MIN/MAXes wrong as text ('10/1/23'
+# < '9/9/06'). This rewrites it to a sortable YYYY-MM-DD. The two-digit year
+# pivots at 60: Dylan's first taped shows are 1961, so 60-99 is 19xx and 00-59
+# is 20xx. Blank/malformed dates yield NULL, which SQLite sorts first ascending
+# and MIN/MAX skip — both the behaviour we want.
+#
+# Pivot rationale: the corpus spans 1958 (earliest circulating tape) to the
+# current year, so any split in [27, 57] separates them. 40 is used for
+# headroom at both ends. A partial date like 'xx/xx/59' yields '1959-00-00',
+# which sorts just before that year's real dates — the right place for it.
+_SORTABLE_DATE = """
+CASE WHEN e.date_str LIKE '%/%/%' THEN printf('%04d-%02d-%02d',
+    CASE WHEN CAST(substr(e.date_str, instr(e.date_str, '/') + 1 +
+                          instr(substr(e.date_str, instr(e.date_str, '/') + 1), '/'))
+              AS INTEGER) >= 40
+         THEN 1900 ELSE 2000 END
+    + CAST(substr(e.date_str, instr(e.date_str, '/') + 1 +
+                  instr(substr(e.date_str, instr(e.date_str, '/') + 1), '/')) AS INTEGER),
+    CAST(substr(e.date_str, 1, instr(e.date_str, '/') - 1) AS INTEGER),
+    CAST(substr(substr(e.date_str, instr(e.date_str, '/') + 1), 1,
+                instr(substr(e.date_str, instr(e.date_str, '/') + 1), '/') - 1) AS INTEGER))
+END
+"""
+
+_REVIEW_SORTS = {
+    "lb": "e.lb_number",
+    "date": _SORTABLE_DATE,
+    "taper": "a.taper_normalised",
+    "confidence": "a.confidence",
+}
+REVIEW_MAX_LIMIT = 500
+
+
+def _review_filters(
+    state: str | None = None,
+    confidence: str | None = None,
+    conflict: bool | None = None,
+    taper: str | None = None,
+    q: str | None = None,
+    attributed: bool | None = None,
+) -> tuple[str, list]:
+    """Build the shared WHERE clause for the review queries.
+
+    Applies to the ``entries e LEFT JOIN taper_attributions a LEFT JOIN
+    taper_confirmations f`` shape used by :func:`list_review_rows` and
+    :func:`taper_rollup`. The ``kind`` sub-filter is *not* here — it needs the
+    parsed evidence list, so it is applied in Python by the caller.
+
+    Args:
+        state: Curator-decision state — one of :data:`_REVIEW_STATES`.
+            'undecided' means no ``taper_confirmations`` row at all.
+        confidence: Restrict to a ``taper_attributions.confidence`` tier.
+        conflict: True/False restricts to conflict rows / non-conflict rows.
+        taper: Restrict to one taper (raw or canonical; normalised here).
+        q: Free-text search. An all-digit value matches lb_number exactly;
+            otherwise a substring match over taper, date, location and the
+            entry's own parsed taper name.
+        attributed: True restricts to entries that have a ``taper_attributions``
+            row, False to entries that have none. None applies no filter.
+
+    Returns:
+        (where_sql, params) — where_sql includes a leading " WHERE " or is "".
+
+    Raises:
+        ValueError: *state* is not a recognised value.
+    """
+    if state and state not in _REVIEW_STATES:
+        raise ValueError(f"state must be one of {', '.join(_REVIEW_STATES)}")
+    clauses: list[str] = []
+    params: list = []
+    if attributed is True:
+        clauses.append("a.lb_number IS NOT NULL")
+    elif attributed is False:
+        clauses.append("a.lb_number IS NULL")
+    if state and state != "any":
+        if state == "undecided":
+            clauses.append("f.lb_number IS NULL")
+        else:
+            clauses.append("f.action = ?")
+            params.append(state)
+    if confidence:
+        clauses.append("a.confidence = ?")
+        params.append(confidence)
+    if conflict is not None:
+        clauses.append("a.conflict = ?")
+        params.append(1 if conflict else 0)
+    if taper:
+        clauses.append("a.taper_normalised = ?")
+        params.append(_normalise_taper(taper) or taper)
+    if q:
+        term = q.strip()
+        if term.isdigit():
+            clauses.append("e.lb_number = ?")
+            params.append(int(term))
+        elif term:
+            like = f"%{term}%"
+            clauses.append(
+                "(a.taper_normalised LIKE ? OR e.date_str LIKE ?"
+                " OR e.location LIKE ? OR e.taper_name LIKE ?)"
+            )
+            params.extend([like, like, like, like])
+    where = f" WHERE {' AND '.join(clauses)}" if clauses else ""
+    return where, params
+
+
+def list_review_rows(
+    state: str | None = None,
+    confidence: str | None = None,
+    conflict: bool | None = None,
+    conflict_kind: str | None = None,
+    taper: str | None = None,
+    q: str | None = None,
+    attributed: bool | None = None,
+    limit: int = 100,
+    offset: int = 0,
+    sort: str = "lb",
+    db_path: str | None = None,
+) -> dict:
+    """Return one page of the curation console's entry view, plus facet counts.
+
+    One joined query replaces the old per-card ``/api/entry/<lb>`` round trip:
+    every row already carries the entry context (date, location, the entry's own
+    parsed taper and source chain) alongside the derived attribution and any
+    sticky curator decision.
+
+    Args:
+        state: Curator-decision state filter (see :func:`_review_filters`).
+        confidence: Confidence-tier filter.
+        conflict: Restrict to conflict / non-conflict rows.
+        conflict_kind: 'mention' drops series-vs-series conflicts (the hand-review
+            queue), 'series' keeps only them. Applied in Python on the parsed
+            evidence, so it is only meaningful together with ``conflict=True``.
+        taper: Restrict to one taper.
+        q: Free-text / LB-number search.
+        attributed: True = only entries with an attribution, False = only those
+            without, None = both.
+        limit: Page size, clamped to [1, :data:`REVIEW_MAX_LIMIT`].
+        offset: Page offset.
+        sort: One of :data:`_REVIEW_SORTS` keys; prefix with '-' to descend.
+        db_path: Optional database path override.
+
+    Returns:
+        ``{"rows": [...], "total": int, "limit": int, "offset": int,
+        "counts": {...}}``. ``counts`` holds the facet totals for the filter
+        chips (by decision state and by confidence tier) under the *same*
+        filters minus the one each facet varies.
+
+    Raises:
+        ValueError: Bad *state*, *conflict_kind* or *sort* value.
+    """
+    if conflict_kind not in (None, "mention", "series"):
+        raise ValueError("conflict_kind must be 'mention' or 'series'")
+    desc = sort.startswith("-")
+    sort_key = sort[1:] if desc else sort
+    if sort_key not in _REVIEW_SORTS:
+        raise ValueError(f"sort must be one of {', '.join(_REVIEW_SORTS)}")
+    limit = max(1, min(int(limit), REVIEW_MAX_LIMIT))
+    offset = max(0, int(offset))
+
+    conn = get_connection(db_path)
+    base = (
+        " FROM entries e"
+        " LEFT JOIN taper_attributions a ON a.lb_number = e.lb_number"
+        " LEFT JOIN taper_confirmations f ON f.lb_number = e.lb_number"
+    )
+    where, params = _review_filters(state, confidence, conflict, taper, q, attributed)
+
+    # conflict_kind needs parsed evidence, so it can't ride in SQL. It only ever
+    # narrows conflict rows (131 of them today), so paging over the unfiltered
+    # set and trimming in Python would mis-count; fetch the conflict slice whole
+    # and page it here instead. Without the sub-filter, page in SQL as usual.
+    if conflict_kind:
+        rows = [dict(r) for r in conn.execute(
+            f"SELECT e.lb_number, e.date_str, e.location, e.taper_name, e.source_chain,"
+            f" a.taper_normalised, a.confidence, a.evidence_json, a.conflict,"
+            f" a.confirmed_at, a.computed_at, ({_SORTABLE_DATE}) AS sort_date,"
+            f" f.action AS decision, f.taper_normalised AS decision_taper,"
+            f" f.decided_at{base}{where}"
+            f" ORDER BY {_REVIEW_SORTS[sort_key]}{' DESC' if desc else ''}, e.lb_number",
+            params,
+        )]
+        for r in rows:
+            r["evidence"] = json.loads(r.pop("evidence_json") or "[]")
+        kept = []
+        for r in rows:
+            if r["conflict"]:
+                is_series = _is_series_vs_series(r["taper_normalised"], r["evidence"])
+                if (conflict_kind == "mention") == bool(is_series):
+                    continue
+            kept.append(r)
+        total = len(kept)
+        page = kept[offset:offset + limit]
+    else:
+        total = conn.execute(f"SELECT COUNT(*){base}{where}", params).fetchone()[0]
+        page = [dict(r) for r in conn.execute(
+            f"SELECT e.lb_number, e.date_str, e.location, e.taper_name, e.source_chain,"
+            f" a.taper_normalised, a.confidence, a.evidence_json, a.conflict,"
+            f" a.confirmed_at, a.computed_at, ({_SORTABLE_DATE}) AS sort_date,"
+            f" f.action AS decision, f.taper_normalised AS decision_taper,"
+            f" f.decided_at{base}{where}"
+            f" ORDER BY {_REVIEW_SORTS[sort_key]}{' DESC' if desc else ''}, e.lb_number"
+            f" LIMIT ? OFFSET ?",
+            [*params, limit, offset],
+        )]
+        for r in page:
+            r["evidence"] = json.loads(r.pop("evidence_json") or "[]")
+
+    return {
+        "rows": page,
+        "total": total,
+        "limit": limit,
+        "offset": offset,
+        "counts": _review_counts(conn, confidence, conflict, taper, q, attributed, state),
+    }
+
+
+def _review_counts(
+    conn: sqlite3.Connection,
+    confidence: str | None,
+    conflict: bool | None,
+    taper: str | None,
+    q: str | None,
+    attributed: bool | None,
+    state: str | None,
+) -> dict:
+    """Facet totals for the console's filter chips.
+
+    Each facet group is counted with every *other* active filter applied but its
+    own dimension left open, so a chip's number is what you would get by
+    switching to it — not what is on screen now.
+
+    Args:
+        conn: Read connection.
+        confidence: Active confidence filter.
+        conflict: Active conflict filter.
+        taper: Active taper filter.
+        q: Active search term.
+        attributed: Active attributed filter.
+        state: Active decision-state filter.
+
+    Returns:
+        ``{"state": {...}, "confidence": {...}, "conflict": int, "total": int}``.
+    """
+    base = (
+        " FROM entries e"
+        " LEFT JOIN taper_attributions a ON a.lb_number = e.lb_number"
+        " LEFT JOIN taper_confirmations f ON f.lb_number = e.lb_number"
+    )
+    # State facet: all filters except `state`.
+    where, params = _review_filters(None, confidence, conflict, taper, q, attributed)
+    state_counts = {s: 0 for s in _REVIEW_STATES if s != "any"}
+    for row in conn.execute(
+        f"SELECT COALESCE(f.action, 'undecided') AS s, COUNT(*) AS n{base}{where}"
+        f" GROUP BY s", params,
+    ):
+        state_counts[row["s"]] = state_counts.get(row["s"], 0) + row["n"]
+
+    # Confidence facet: all filters except `confidence`.
+    where_c, params_c = _review_filters(state, None, conflict, taper, q, attributed)
+    conf_counts: dict[str, int] = {}
+    for row in conn.execute(
+        f"SELECT a.confidence AS c, COUNT(*) AS n{base}{where_c} GROUP BY c",
+        params_c,
+    ):
+        conf_counts[row["c"] or "none"] = row["n"]
+
+    # Conflict facet: all filters except `conflict`.
+    where_x, params_x = _review_filters(state, confidence, None, taper, q, attributed)
+    conflict_n = conn.execute(
+        f"SELECT COUNT(*){base}{where_x}"
+        f"{' AND' if where_x else ' WHERE'} a.conflict = 1", params_x,
+    ).fetchone()[0]
+
+    where_t, params_t = _review_filters(state, confidence, conflict, taper, q, attributed)
+    total = conn.execute(f"SELECT COUNT(*){base}{where_t}", params_t).fetchone()[0]
+    return {
+        "state": state_counts,
+        "confidence": conf_counts,
+        "conflict": conflict_n,
+        "total": total,
+    }
+
+
+def taper_rollup(
+    state: str | None = None,
+    confidence: str | None = None,
+    conflict: bool | None = None,
+    q: str | None = None,
+    db_path: str | None = None,
+) -> list[dict]:
+    """Per-taper rollup powering the console's grouped view.
+
+    One GROUP BY over the same join as :func:`list_review_rows`, so the counts
+    always agree with what the entry view shows for that handle. Ordered by
+    undecided count descending — the handles with the most curation left first.
+    Restricted to rows that actually have an attribution (a rollup of "no taper"
+    would be one meaningless bucket).
+
+    Args:
+        state: Curator-decision state filter.
+        confidence: Confidence-tier filter.
+        conflict: Restrict to conflict / non-conflict rows.
+        q: Free-text / LB-number search.
+        db_path: Optional database path override.
+
+    Returns:
+        List of dicts: taper, total, confirmed, propagated, inferred, conflicts,
+        decided, undecided, first_date, last_date.
+    """
+    conn = get_connection(db_path)
+    where, params = _review_filters(state, confidence, conflict, None, q, True)
+    rows = conn.execute(
+        f"""SELECT a.taper_normalised AS taper,
+                   COUNT(*) AS total,
+                   SUM(a.confidence = 'confirmed')  AS confirmed,
+                   SUM(a.confidence = 'propagated') AS propagated,
+                   SUM(a.confidence = 'inferred')   AS inferred,
+                   SUM(a.conflict = 1)              AS conflicts,
+                   SUM(f.lb_number IS NOT NULL)     AS decided,
+                   SUM(f.lb_number IS NULL)         AS undecided,
+                   MIN({_SORTABLE_DATE}) AS first_date,
+                   MAX({_SORTABLE_DATE}) AS last_date
+            FROM entries e
+            LEFT JOIN taper_attributions a ON a.lb_number = e.lb_number
+            LEFT JOIN taper_confirmations f ON f.lb_number = e.lb_number
+            {where}
+            GROUP BY a.taper_normalised
+            ORDER BY undecided DESC, total DESC, taper""",
+        params,
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def list_decisions(lb: int | None = None, limit: int = 200,
+                   db_path: str | None = None) -> list[dict]:
+    """Return ``taper_decision_log`` rows, newest first.
+
+    Args:
+        lb: Restrict to one LB's history, or None for the global recent feed.
+        limit: Maximum rows to return (clamped to [1, 1000]).
+        db_path: Optional database path override.
+
+    Returns:
+        List of dicts: id, lb_number, action, taper_normalised, prev_action,
+        prev_taper, source, note, decided_at, plus the entry's date_str and
+        location for display.
+    """
+    init_db(db_path)
+    conn = get_connection(db_path)
+    limit = max(1, min(int(limit), 1000))
+    where, params = ("", [])
+    if lb is not None:
+        where, params = " WHERE d.lb_number = ?", [lb]
+    rows = conn.execute(
+        f"""SELECT d.id, d.lb_number, d.action, d.taper_normalised, d.prev_action,
+                   d.prev_taper, d.source, d.note, d.decided_at,
+                   e.date_str, e.location
+            FROM taper_decision_log d
+            LEFT JOIN entries e ON e.lb_number = d.lb_number
+            {where}
+            ORDER BY d.id DESC LIMIT ?""",
+        [*params, limit],
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def revert_decision(log_id: int, db_path: str | None = None) -> dict:
+    """Undo one logged decision by replaying the state it recorded as previous.
+
+    Three cases, driven by the log row's ``prev_action``:
+
+    - ``'confirm'`` / ``'reject'`` / ``'unresolved'`` — replay that decision on
+      ``prev_taper`` via the matching public function, with ``source='revert'``.
+      That writes its own log row, so the history stays append-only.
+    - NULL (this was the first decision for that lb) — delete the
+      ``taper_confirmations`` row *and* the derived ``taper_attributions`` row,
+      then log an explicit 'revert' entry. The derived row has to go too: the
+      undone decision had already rewritten it (a confirm stamps
+      ``confidence='confirmed'`` + ``confirmed_at``), so leaving it would claim
+      curator approval that no longer exists. What Layers 0/1 would have said
+      instead is only knowable by re-running them, so the row is dropped and
+      ``needs_recompute`` is returned True — a later ``/api/derived/recompute``
+      rebuilds it.
+
+    Args:
+        log_id: ``taper_decision_log.id`` of the decision to undo.
+        db_path: Optional database path override.
+
+    Returns:
+        ``{"log_id", "lb_number", "restored", "attribution", "needs_recompute"}``
+        where ``restored`` is the prev_action replayed (None if cleared).
+
+    Raises:
+        ValueError: No such log id.
+    """
+    init_db(db_path)
+    conn = get_connection(db_path)
+    row = conn.execute(
+        "SELECT lb_number, prev_action, prev_taper FROM taper_decision_log WHERE id=?",
+        (log_id,),
+    ).fetchone()
+    if row is None:
+        raise ValueError(f"no taper_decision_log row with id {log_id}")
+    lb, prev_action, prev_taper = row["lb_number"], row["prev_action"], row["prev_taper"]
+    note = f"revert of log #{log_id}"
+
+    if prev_action == "confirm":
+        attribution = confirm(lb, taper=prev_taper, db_path=db_path,
+                              source="revert", note=note)
+    elif prev_action == "reject":
+        attribution = reject(lb, taper=prev_taper, db_path=db_path,
+                             source="revert", note=note)
+    elif prev_action == "unresolved":
+        attribution = mark_unresolved(lb, db_path=db_path, source="revert", note=note)
+    else:
+        def _do(c: sqlite3.Connection) -> None:
+            _log_decision(c, lb, "revert", prev_taper, "revert", note)
+            c.execute("DELETE FROM taper_confirmations WHERE lb_number=?", (lb,))
+            c.execute("DELETE FROM taper_attributions WHERE lb_number=?", (lb,))
+
+        _run_write(_do, db_path)
+        attribution = get_attribution_for_lb(lb, db_path)
+
+    return {
+        "log_id": log_id,
+        "lb_number": lb,
+        "restored": prev_action,
+        "attribution": attribution,
+        # Clearing a first-ever decision drops the derived row with it; only a
+        # recompute can rebuild what Layers 0/1 would have said on their own.
+        "needs_recompute": prev_action is None,
+    }
