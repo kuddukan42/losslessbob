@@ -26,6 +26,7 @@ from backend.refresh_exec import EXECUTORS, StepExecutor, plan_chain
 # wrapper bodies so the test verifies the real target, not the wrapper.
 _INPROC_TARGETS: dict[str, tuple[str, tuple[str, ...]]] = {
     "olof_parse": ("backend.olof_parser", ("run_parse",)),
+    "olof_chronicle_parse": ("backend.olof_chronicle_parser", ("run_parse",)),
     "bobserve_parse": ("backend.bobserve_parser", ("run_parse",)),
     "parse_lineage": ("tools.parse_lineage", ("run",)),
     "attribute_tapers": ("tools.attribute_tapers", ("run",)),
@@ -132,12 +133,12 @@ def test_job_targets_resolve() -> None:
 
 
 def test_manual_count_matches_spec_tiering() -> None:
-    """27 STEPS total (spec §3.1): 7 inproc + 5 job + 15 manual."""
+    """28 STEPS total (spec §3.1 + olof_chronicle_parse): 8 inproc + 5 job + 15 manual."""
     modes = [ex.mode for ex in EXECUTORS.values()]
-    assert modes.count("inproc") == 7
+    assert modes.count("inproc") == 8
     assert modes.count("job") == 5
     assert modes.count("manual") == 15
-    assert len(modes) == 27
+    assert len(modes) == 28
 
 
 # ── plan_chain ───────────────────────────────────────────────────────────

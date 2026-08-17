@@ -2166,6 +2166,7 @@
       "lb_master_reconcile": "Réconciliation du master LB",
       "olof_fetch": "Récupérer les pages Olof",
       "olof_parse": "Analyser les pages Olof",
+      "olof_chronicle_parse": "Analyser les chroniques d'Olof",
       "bobserve_fetch": "Récupérer les setlists de bobserve",
       "bobserve_parse": "Analyser les setlists de bobserve",
       "parse_lineage": "Analyser les notes de filiation",

@@ -1,3 +1,23 @@
+[2026-08-16] — feat(backend): TODO-309 — the chronicle parser gets a registry step and a route
+Added: backend/refresh.py step `olof_chronicle_parse` (T3, wholesale, upstream olof_fetch) +
+  backend/refresh_exec.py inproc executor calling backend.olof_chronicle_parser.run_parse.
+  The module has existed since the Olof work but nothing called it: no route, no STEPS entry,
+  no tool — chronicle pages were fetched by olof_fetch and parsed by nothing, and Phase 3's
+  rescope of olof_parse to corpus='dsn' (correct for the step that exists) left them with no
+  freshness signal at all.
+Added: POST /api/olof/chronicle_parse (backend/app.py) — mirrors /api/olof/parse: synchronous,
+  409 while the olof fetch job runs, 503 without bs4/lxml, one refresh_step_runs row under its
+  own step_id. Verified live on '2016 A Wonderful Answer.htm' (21 chronicle rows).
+Changed: song_index upstream now includes olof_chronicle_parse — the chronicle parser writes
+  olof_events/olof_songs too, so a stale chronicle parse leaves the song index short those
+  performances. On the live DB the new step reports stale/backlog 0 and song_index correctly
+  flips to blocked; a Run clears both.
+Note: the backlog predicate is scoped to `corpus='chronicle' AND year IS NOT NULL`.
+  chronologies.htm (the year index) carries no year, so no parser can ever consume it —
+  counting it would pin the backlog at 1 forever, the exact failure that forced olof_parse's
+  rescope. Pinned by a test; executor tiering is now 8 inproc + 5 job + 15 manual (28 steps).
+Locale: `pipeline.steps.olof_chronicle_parse` added in all 6 languages.
+
 [2026-08-16] — feat(backend/gui): pipeline refresh Phase 4 — human queues as first-class blockers
 Added: backend/queues.py: RefreshQueue registry of the four human review queues — taper
   conflicts (129 pending), setlist-fingerprint suggestions (242 LBs), staged xref filesets (0)

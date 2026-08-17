@@ -311,6 +311,48 @@ def test_olof_parse_route_409_while_fetch_running(monkeypatch):
     assert rows[0]["n"] == 0
 
 
+def test_olof_chronicle_parse_route_writes_one_run_record(monkeypatch):
+    """POST /api/olof/chronicle_parse records a run under its OWN step_id —
+    the chronicle corpus has a separate parser from olof_parse (TODO-309)."""
+    import backend.olof_chronicle_parser as chronicle_parser
+
+    fake_summary = {"years_parsed": 4, "pages_ok": 4, "appendix_events": 12}
+    monkeypatch.setattr(chronicle_parser, "run_parse", lambda file=None: fake_summary)
+
+    db_path, _tmp = _make_db()
+    with _AppClient(db_path) as client:
+        resp = client.post("/api/olof/chronicle_parse", json={})
+        assert resp.status_code == 200
+        body = resp.get_json()
+        assert body["ok"] is True
+        assert body["years_parsed"] == 4
+
+    conn = db.get_connection(db_path)
+    rows = conn.execute("SELECT step_id, status FROM refresh_step_runs").fetchall()
+    assert len(rows) == 1
+    assert rows[0]["step_id"] == "olof_chronicle_parse"
+    assert rows[0]["status"] == "ok"
+
+
+def test_olof_chronicle_parse_route_409_while_fetch_running(monkeypatch):
+    """Same half-written-mirror guard as /api/olof/parse — both corpora are
+    written by the one olof fetch job."""
+    import backend.olof_fetcher as olof_fetcher
+
+    db_path, _tmp = _make_db()
+    olof_fetcher._JOB.try_begin(stage="fetching")
+    try:
+        with _AppClient(db_path) as client:
+            resp = client.post("/api/olof/chronicle_parse", json={})
+            assert resp.status_code == 409
+    finally:
+        olof_fetcher._JOB.finish()
+
+    conn = db.get_connection(db_path)
+    rows = conn.execute("SELECT COUNT(*) AS n FROM refresh_step_runs").fetchall()
+    assert rows[0]["n"] == 0
+
+
 def test_bobserve_parse_route_writes_one_run_record(monkeypatch):
     """POST /api/bobserve/parse writes exactly one refresh_step_runs row for
     step_id='bobserve_parse' with the coverage summary as counters."""

@@ -14,7 +14,7 @@ all shipped 2026-08.
 
 ## Phase 1 — the planner (read-only)
 
-`refresh.STEPS` is a 27-node registry + DAG. Each step declares a `backlog_sql`
+`refresh.STEPS` is a 28-node registry + DAG. Each step declares a `backlog_sql`
 (rows still unprocessed — the direct measure), a `last_run_sql` watermark (a
 proxy, only consulted when no backlog signal exists), upstream edges, cost, and
 whether it is human-gated. `compute_plan()` reads only existing `computed_at`/

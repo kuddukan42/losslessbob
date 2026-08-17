@@ -72,6 +72,11 @@ def _run_olof_parse(**kwargs) -> dict:
     return olof_parser.run_parse(**kwargs)
 
 
+def _run_olof_chronicle_parse(**kwargs) -> dict:
+    from backend import olof_chronicle_parser
+    return olof_chronicle_parser.run_parse(**kwargs)
+
+
 def _run_bobserve_parse(**kwargs) -> dict:
     from backend import bobserve_parser
     return bobserve_parser.run_parse(**kwargs)
@@ -276,6 +281,9 @@ EXECUTORS: dict[str, StepExecutor] = {
     # ── inproc ───────────────────────────────────────────────────────────
     "olof_parse": StepExecutor(
         "olof_parse", "inproc", _run_olof_parse, None, None, None, None,
+    ),
+    "olof_chronicle_parse": StepExecutor(
+        "olof_chronicle_parse", "inproc", _run_olof_chronicle_parse, None, None, None, None,
     ),
     "bobserve_parse": StepExecutor(
         "bobserve_parse", "inproc", _run_bobserve_parse, None, None, None, None,

@@ -2163,6 +2163,7 @@
       "lb_master_reconcile": "Reconcile LB master",
       "olof_fetch": "Fetch Olof pages",
       "olof_parse": "Parse Olof pages",
+      "olof_chronicle_parse": "Parse Olof chronicles",
       "bobserve_fetch": "Fetch bobserve setlists",
       "bobserve_parse": "Parse bobserve setlists",
       "parse_lineage": "Parse lineage notes",

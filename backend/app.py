@@ -4898,6 +4898,41 @@ def create_app() -> Flask:
         )
         return jsonify({"ok": True, **summary})
 
+    @app.route("/api/olof/chronicle_parse", methods=["POST"])
+    def olof_chronicle_parse_run() -> Response:
+        """Synchronously reparse local chronicle pages. Body: {file?}.
+
+        Separate from /api/olof/parse because a different module owns the
+        chronicle corpus (backend.olof_chronicle_parser) and olof_parse only
+        selects corpus='dsn' (TODO-309). 409 while the olof fetch job is
+        running; 503 if the parser isn't importable (bs4/lxml missing).
+        """
+        try:
+            import backend.olof_chronicle_parser as _chronicle_parser
+            import backend.olof_fetcher as _olof_fetcher
+        except ImportError as exc:
+            return jsonify({"error": "module_unavailable", "message": str(exc)}), 503
+
+        if _olof_fetcher.get_status()["running"]:
+            return jsonify({"error": "fetch_running"}), 409
+
+        body = request.get_json(silent=True) or {}
+        started_at = time.strftime("%Y-%m-%d %H:%M:%S")
+        try:
+            summary = _chronicle_parser.run_parse(file=body.get("file"))
+        except Exception as exc:
+            _log.exception("olof_chronicle_parse route failed")
+            database.record_step_run(
+                "olof_chronicle_parse", status="error", started_at=started_at,
+                trigger_source="route",
+            )
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+        database.record_step_run(
+            "olof_chronicle_parse", status="ok", started_at=started_at,
+            counters=summary, trigger_source="route",
+        )
+        return jsonify({"ok": True, **summary})
+
     @app.route("/api/bobserve/parse", methods=["POST"])
     def bobserve_parse_run() -> Response:
         """Synchronously reparse local bobserve pages. Body: {file?}.

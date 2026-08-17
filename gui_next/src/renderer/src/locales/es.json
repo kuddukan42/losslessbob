@@ -2166,6 +2166,7 @@
       "lb_master_reconcile": "Sincronizar el archivo maestro de LB",
       "olof_fetch": "Recuperar páginas de Olof",
       "olof_parse": "Analizar las páginas de Olof",
+      "olof_chronicle_parse": "Analizar las crónicas de Olof",
       "bobserve_fetch": "Recuperar listas de canciones de bobserve",
       "bobserve_parse": "Analizar las listas de canciones de bobserve",
       "parse_lineage": "Analizar notas de linaje",
