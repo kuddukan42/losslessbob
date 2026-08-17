@@ -48,6 +48,7 @@ import datetime as _dt
 import logging
 import re
 import sqlite3
+from collections.abc import Callable
 from typing import NamedTuple
 
 from backend import config_version
@@ -73,6 +74,12 @@ class RefreshStep(NamedTuple):
         kind: ``'wholesale'`` | ``'incremental'`` | ``'manual'``.
         backlog_sql: SQL returning one row, one int -- rows still unprocessed,
             or ``None`` if no backlog predicate exists.
+        backlog_fn: Callable ``(conn) -> int`` used INSTEAD of ``backlog_sql``
+            when the count cannot be expressed in standalone SQL -- currently
+            only the ranker steps, whose backlog depends on which scan_id is
+            active (see :func:`backend.ranker_jobs.active_scan_id`). Sharing
+            the step's own planner code is what keeps the pill and the run's
+            ``planned`` in agreement.
         last_run_sql: SQL returning one row, one scalar timestamp (or a
             ``meta`` value string), or ``None`` if no watermark exists.
         version_key: ``meta`` key holding a config hash. Always ``None`` in
@@ -95,6 +102,34 @@ class RefreshStep(NamedTuple):
     how_to_run: str
     cost: str
     human_gate: bool
+    backlog_fn: Callable[[sqlite3.Connection], int | None] | None = None
+
+
+def _ranker_tables_present(conn: sqlite3.Connection) -> bool:
+    """True when the quality tables exist — mirrors ``_run_scalar``'s guard, which
+    a callable backlog bypasses (a never-scanned DB must read 'unknown', not 0)."""
+    return all(
+        _table_exists(conn, table)
+        for table in ("quality_scans", "quality_recording_metrics", "my_collection")
+    )
+
+
+def _ranker_scan_backlog(conn: sqlite3.Connection) -> int | None:
+    """Backlog for ``ranker_scan`` — delegates to the scan planner's own count."""
+    from backend import ranker_jobs  # lazy: keeps concert_ranker off the import path
+
+    if not _ranker_tables_present(conn):
+        return None
+    return ranker_jobs.count_scan_backlog(conn)
+
+
+def _ranker_rerank_backlog(conn: sqlite3.Connection) -> int | None:
+    """Backlog for ``ranker_rerank`` — measured-but-unscored LBs in the active scan."""
+    from backend import ranker_jobs  # lazy: keeps concert_ranker off the import path
+
+    if not _ranker_tables_present(conn) or not _table_exists(conn, "quality_recording_scores"):
+        return None
+    return ranker_jobs.count_rerank_backlog(conn)
 
 
 STEPS: tuple[RefreshStep, ...] = (
@@ -358,16 +393,17 @@ STEPS: tuple[RefreshStep, ...] = (
         label="ranker_scan",
         trigger="T2",
         kind="incremental",
-        # Rescoped to the latest scan_id (TODO-306 Phase 2 decision 5) so this
-        # count equals POST /api/ranker/scan's own `planned` -- unscoped, it
-        # would count every my_collection LB missing metrics under ANY scan,
-        # which is not what a "backlog" scan run actually plans to touch.
-        backlog_sql=(
-            "SELECT COUNT(*) FROM my_collection mc WHERE NOT EXISTS "
-            "(SELECT 1 FROM quality_recording_metrics m WHERE m.lb_number = mc.lb_number "
-            "AND m.scan_id = (SELECT MAX(scan_id) FROM quality_scans))"
-        ),
-        last_run_sql="SELECT MAX(started_at) FROM quality_scans",
+        # Counted by the planner itself (TODO-311). The earlier SQL scoped to
+        # MAX(scan_id) and counted raw my_collection, so it disagreed with the
+        # run's own `planned` two ways: it ignored the non-concert/non-public
+        # exclusions, and any newer scan_id -- including an empty fork -- reset
+        # it to the whole collection.
+        backlog_sql=None,
+        backlog_fn=_ranker_scan_backlog,
+        # When anything was last actually measured. MAX(quality_scans.started_at)
+        # dated an empty fork as a fresh scan (TODO-311); scored_at only moves
+        # when a folder's metrics are persisted.
+        last_run_sql="SELECT MAX(scored_at) FROM quality_recording_metrics",
         version_key="refresh_version_ranker_scan_config",
         upstream=("pipeline_run", "tapematch_sync"),
         how_to_run="POST /api/ranker/scan",
@@ -379,11 +415,10 @@ STEPS: tuple[RefreshStep, ...] = (
         label="ranker_rerank",
         trigger="T2",
         kind="wholesale",
-        backlog_sql=(
-            "SELECT COUNT(DISTINCT m.lb_number) FROM quality_recording_metrics m "
-            "WHERE NOT EXISTS "
-            "(SELECT 1 FROM quality_recording_scores s WHERE s.lb_number = m.lb_number)"
-        ),
+        # Scoped to the active scan (TODO-311) — an unscoped count treats an LB
+        # measured under an older extraction config as pending forever.
+        backlog_sql=None,
+        backlog_fn=_ranker_rerank_backlog,
         # quality_recording_scores has NO timestamp column -- do not invent one.
         # The run-record supplies last_run instead (see _last_run_record) --
         # only the backlog signal above is used for this step's watermark.
@@ -573,6 +608,21 @@ def _run_scalar(conn: sqlite3.Connection, sql: str | None):
     if row is None:
         return None
     return row[0]
+
+
+def _run_backlog(conn: sqlite3.Connection, step: RefreshStep):
+    """Return *step*'s backlog count via its callable or its SQL. Never raises.
+
+    ``backlog_fn`` wins when both are set; any failure degrades the step to "no
+    backlog signal" (None), matching :func:`_run_scalar`'s contract.
+    """
+    if step.backlog_fn is not None:
+        try:
+            return step.backlog_fn(conn)
+        except Exception:
+            logger.exception("refresh: backlog_fn failed for step %s", step.step_id)
+            return None
+    return _run_scalar(conn, step.backlog_sql)
 
 
 def _parse_ts(value) -> _dt.datetime | None:
@@ -932,7 +982,7 @@ def compute_plan(db_path: str | None = None, trigger: str | None = None) -> dict
         else:
             last_run, last_run_source = None, None
 
-        backlog = _run_scalar(conn, step.backlog_sql)
+        backlog = _run_backlog(conn, step)
         if backlog is not None:
             try:
                 backlog = int(backlog)

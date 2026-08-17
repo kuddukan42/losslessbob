@@ -1,3 +1,37 @@
+[2026-08-16] — fix(backend): TODO-311 — an already-measured folder is never re-scanned
+Fixed: backend/ranker_jobs.py plan_scan(): a backlog run forked a NEW scan_id whenever the
+  effective ranker config differed at all from the stored one. A single scoring-only tweak
+  (`polarity['sibilance_ratio_db'] -1 -> 0`) therefore orphaned scan 18's 16,099 measured LBs
+  and queued a full corpus re-scan — 14,558 folders of audio decode to recover data that was
+  already on disk and still valid, since polarity is read by scoring.py, not by extraction.
+  Backlog runs now append to the scan holding the most measurements taken with the *current
+  extraction config*, and plan only the LBs missing from it.
+Added: concert_ranker/config.py SCORING_ONLY_FIELDS / extraction_config() /
+  extraction_fingerprint() — the config split that decides what actually invalidates a
+  measurement. A new scan is created only when the fingerprint changes.
+Added: quality_scans.extraction_key (backend/db.py SCHEMA_SQL + concert_ranker/lb/repo.py
+  ensure_schema, both with PRAGMA table_info guards and a backfill from each scan's stored
+  config_json) + repo.reusable_scan_id() / same_key_scan_ids() / adopt_metrics(). Adoption
+  copies rows measured under a sibling same-key scan into the active one (INSERT OR IGNORE),
+  so the 21 rows the stopped fork had written are reused rather than re-decoded — ranking is
+  per-scan_id, so measurements have to live under the scan being ranked.
+Fixed: backend/refresh.py — the Home card's "pending" for ranker_scan counted raw
+  my_collection under MAX(scan_id), ignoring the non-concert/non-public exclusions the scan
+  itself applies, so it read 16,496 against a plan of 14,558 and reset to the whole
+  collection whenever an empty fork appeared. Both ranker steps now count through the
+  planner's own code via a new RefreshStep.backlog_fn (callable backlog, used when the count
+  cannot be standalone SQL; falls back to backlog_sql, and returns None -> 'unknown' when the
+  quality tables are absent). ranker_scan's watermark is MAX(quality_recording_metrics
+  .scored_at) — when anything was last actually measured — not MAX(quality_scans.started_at),
+  which dated an empty fork as a fresh scan.
+Changed: concert_ranker/cli.py — worklist eligibility SQL factored into _worklist_from_where()
+  and reused by the new collection_backlog_count(), so the pill and the run's `planned` cannot
+  drift; backend/ranker_jobs.py run_rerank() defaults to the active scan, not the newest
+  scan_id (which would score an empty fork).
+Live effect: ranker_scan pending 16,496 -> 454, active scan 18 (16,099 rows) reused; the
+  running full re-scan was stopped. Tests: +7 (test_concert_ranker, test_pipeline_jobs,
+  test_refresh), full suite 1,330 passing.
+
 [2026-08-16] — feat(backend): TODO-309 — the chronicle parser gets a registry step and a route
 Added: backend/refresh.py step `olof_chronicle_parse` (T3, wholesale, upstream olof_fetch) +
   backend/refresh_exec.py inproc executor calling backend.olof_chronicle_parser.run_parse.

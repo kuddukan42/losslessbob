@@ -9,6 +9,7 @@ itself is covered by concert_ranker/test_pipeline.py.
 import numpy as np
 import pytest
 
+from concert_ranker import config as cr_config
 from concert_ranker.families import rank_group, rank_scan
 from concert_ranker.lb import commentary, repo, source_type
 
@@ -53,6 +54,46 @@ def test_scan_metrics_roundtrip(conn):
     loaded = repo.load_metrics(conn, sid)
     assert loaded[1]["source_class"] == "SBD"
     assert loaded[1]["metrics"]["crowd_snr_db"] == 10.0
+
+
+def test_scoring_only_config_change_keeps_the_same_extraction_key():
+    """A polarity/weight tweak re-ranks stored metrics; it must not read as a
+    different measurement config (TODO-311)."""
+    base = vars(cr_config.default_config())
+    scored = dict(base, polarity=dict(base["polarity"], crest_factor_db=0))
+    weighted = dict(base, family_weights=dict(base["family_weights"]))
+    assert cr_config.extraction_fingerprint(scored) == cr_config.extraction_fingerprint(base)
+    assert cr_config.extraction_fingerprint(weighted) == cr_config.extraction_fingerprint(base)
+    # ...while a real extraction change does fork.
+    louder = dict(base, bulk_sr=base["bulk_sr"] * 2)
+    assert cr_config.extraction_fingerprint(louder) != cr_config.extraction_fingerprint(base)
+
+
+def test_reusable_scan_id_prefers_the_richest_matching_scan(conn):
+    """Reuse follows measurements, not scan_id order: an empty newer scan must
+    not shadow the scan holding the corpus (TODO-311)."""
+    cfg = vars(cr_config.default_config())
+    big = repo.create_scan(conn, config=cfg)
+    for lb in (1, 2, 3):
+        repo.persist_recording(conn, big, lb, "SBD", repo.build_metric_json({"a": 1.0}))
+    empty_newer = repo.create_scan(conn, config=cfg)
+    assert repo.reusable_scan_id(conn, cr_config.extraction_fingerprint(cfg)) == big
+    assert empty_newer > big
+    # A scan measured with a different extraction config is not reusable.
+    other = cr_config.extraction_fingerprint(dict(cfg, bulk_sr=8000))
+    assert repo.reusable_scan_id(conn, other) is None
+
+
+def test_backfill_extraction_keys_stamps_pre_existing_scans(conn):
+    cfg = vars(cr_config.default_config())
+    sid = repo.create_scan(conn, config=cfg)
+    conn.execute("UPDATE quality_scans SET extraction_key=NULL")
+    conn.commit()
+    repo.backfill_extraction_keys(conn)
+    row = conn.execute(
+        "SELECT extraction_key FROM quality_scans WHERE scan_id=?", (sid,)
+    ).fetchone()
+    assert row["extraction_key"] == cr_config.extraction_fingerprint(cfg)
 
 
 def test_build_metric_json_sanitizes_numpy_and_nan():

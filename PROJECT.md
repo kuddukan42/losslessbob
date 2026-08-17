@@ -742,6 +742,7 @@ audio rescan — the "scan once, store RAW metrics" guarantee. Created by `init_
 | started_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
 | config_json | TEXT | Thresholds/weights used, for reproducibility |
 | notes | TEXT | Free-text |
+| extraction_key | TEXT | Hash of the extraction-relevant config only (`config.extraction_fingerprint()`, i.e. everything except `SCORING_ONLY_FIELDS` = polarity/family weights). Scans sharing a key hold interchangeable measurements: a backlog run appends to the richest one and adopts its siblings' rows (`repo.adopt_metrics`) instead of re-measuring, so a scoring-only config change costs a rerank, not a corpus re-scan (TODO-311) |
 
 | Column (`quality_recording_metrics`) | Type | Notes |
 |--------|------|-------|

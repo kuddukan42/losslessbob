@@ -31,10 +31,11 @@ from typing import Any
 # Flask DB layer. ``IF NOT EXISTS`` makes it harmless when init_db already ran.
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS quality_scans (
-    scan_id      INTEGER PRIMARY KEY AUTOINCREMENT,
-    started_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    config_json  TEXT,
-    notes        TEXT
+    scan_id        INTEGER PRIMARY KEY AUTOINCREMENT,
+    started_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    config_json    TEXT,
+    notes          TEXT,
+    extraction_key TEXT
 );
 CREATE TABLE IF NOT EXISTS quality_recording_metrics (
     lb_number    INTEGER NOT NULL,
@@ -123,7 +124,38 @@ def ensure_schema(conn: sqlite3.Connection) -> None:
     for col, decl in (("abs_score", "REAL"), ("abs_grade", "TEXT")):
         if col not in cols:
             conn.execute(f"ALTER TABLE quality_recording_scores ADD COLUMN {col} {decl}")
+    # Migration (TODO-311): extraction_key on an already-created scans table,
+    # backfilled from each scan's stored config so pre-existing scans stay
+    # reusable instead of reading as "unknown extraction" and forcing a rescan.
+    scan_cols = {r[1] for r in conn.execute("PRAGMA table_info(quality_scans)")}
+    if "extraction_key" not in scan_cols:
+        conn.execute("ALTER TABLE quality_scans ADD COLUMN extraction_key TEXT")
+        backfill_extraction_keys(conn)
     conn.commit()
+
+
+def backfill_extraction_keys(conn: sqlite3.Connection) -> None:
+    """Stamp ``extraction_key`` on scans that predate the column.
+
+    Derived from each row's stored ``config_json``; rows with no stored config
+    are left NULL (unknown extraction — never reused).
+    """
+    from concert_ranker import config as cr_config  # lazy: avoid import cycle
+
+    rows = conn.execute(
+        "SELECT scan_id, config_json FROM quality_scans WHERE extraction_key IS NULL"
+    ).fetchall()
+    for row in rows:
+        if not row["config_json"]:
+            continue
+        try:
+            stored = json.loads(row["config_json"])
+        except (TypeError, ValueError):
+            continue
+        conn.execute(
+            "UPDATE quality_scans SET extraction_key=? WHERE scan_id=?",
+            (cr_config.extraction_fingerprint(stored), row["scan_id"]),
+        )
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -139,13 +171,43 @@ def create_scan(conn: sqlite3.Connection, config: dict | None = None,
             JSON for reproducibility.
         notes: Optional free-text note.
     """
+    from concert_ranker import config as cr_config  # lazy: avoid import cycle
+
     config_json = json.dumps(config, sort_keys=True) if config is not None else None
+    key = cr_config.extraction_fingerprint(config) if config is not None else None
     cur = conn.execute(
-        "INSERT INTO quality_scans(config_json, notes) VALUES(?, ?)",
-        (config_json, notes),
+        "INSERT INTO quality_scans(config_json, notes, extraction_key) VALUES(?, ?, ?)",
+        (config_json, notes, key),
     )
     conn.commit()
     return int(cur.lastrowid)
+
+
+def reusable_scan_id(conn: sqlite3.Connection, extraction_key: str) -> int | None:
+    """Return the scan whose stored metrics are reusable under *extraction_key*.
+
+    Among scans measured with the same extraction config, the one holding the
+    most metric rows wins (ties → newest), because appending to it re-scans the
+    fewest folders. Scoring-only config drift does not disqualify a scan — see
+    :data:`concert_ranker.config.SCORING_ONLY_FIELDS`.
+
+    Args:
+        conn: An open connection.
+        extraction_key: Fingerprint from
+            :func:`concert_ranker.config.extraction_fingerprint`.
+
+    Returns:
+        A ``scan_id``, or None when no scan was measured with this config.
+    """
+    row = conn.execute(
+        "SELECT s.scan_id AS scan_id, COUNT(m.lb_number) AS n "
+        "FROM quality_scans s "
+        "LEFT JOIN quality_recording_metrics m ON m.scan_id = s.scan_id "
+        "WHERE s.extraction_key = ? "
+        "GROUP BY s.scan_id ORDER BY n DESC, s.scan_id DESC LIMIT 1",
+        (extraction_key,),
+    ).fetchone()
+    return int(row["scan_id"]) if row else None
 
 
 def get_scan(conn: sqlite3.Connection, scan_id: int) -> dict | None:
@@ -211,6 +273,54 @@ def persist_recording(conn: sqlite3.Connection, scan_id: int, lb_number: int,
             " VALUES(?,?,?,?,?,?)",
             (lb_number, scan_id, source_class, payload, completeness, duration_sec),
         )
+
+
+def same_key_scan_ids(conn: sqlite3.Connection, extraction_key: str) -> list[int]:
+    """Scan ids measured with *extraction_key* — mutually interchangeable metrics."""
+    rows = conn.execute(
+        "SELECT scan_id FROM quality_scans WHERE extraction_key = ? ORDER BY scan_id",
+        (extraction_key,),
+    ).fetchall()
+    return [int(r["scan_id"]) for r in rows]
+
+
+def adopt_metrics(conn: sqlite3.Connection, target_scan_id: int,
+                  extraction_key: str) -> int:
+    """Copy metrics measured under *extraction_key* into *target_scan_id*.
+
+    Measurements are valid for every scan sharing an extraction config, but
+    ranking is per-scan (``load_metrics`` is scoped to one ``scan_id``), so a
+    recording measured under a sibling scan would otherwise be re-decoded just
+    to be visible to rerank. Adopting the newest copy of each LB instead makes
+    "already measured → never re-measured" hold across scans (TODO-311); the
+    21 rows a stopped fork had already written are a live example.
+
+    Idempotent (``INSERT OR IGNORE`` on the ``(lb_number, scan_id)`` key) and
+    never overwrites a measurement the target scan already holds.
+
+    Args:
+        conn: An open connection.
+        target_scan_id: Scan to adopt into.
+        extraction_key: Only scans with this key are eligible sources.
+
+    Returns:
+        Number of rows adopted.
+    """
+    cur = conn.execute(
+        "INSERT OR IGNORE INTO quality_recording_metrics"
+        "(lb_number, scan_id, source_class, metric_json, completeness, duration_sec, scored_at)"
+        " SELECT m.lb_number, ?, m.source_class, m.metric_json, m.completeness,"
+        "        m.duration_sec, m.scored_at"
+        " FROM quality_recording_metrics m"
+        " JOIN quality_scans s ON s.scan_id = m.scan_id"
+        " WHERE s.extraction_key = ? AND m.scan_id != ?"
+        "   AND m.scan_id = (SELECT MAX(m2.scan_id) FROM quality_recording_metrics m2"
+        "                    JOIN quality_scans s2 ON s2.scan_id = m2.scan_id"
+        "                    WHERE m2.lb_number = m.lb_number AND s2.extraction_key = ?)",
+        (target_scan_id, extraction_key, target_scan_id, extraction_key),
+    )
+    conn.commit()
+    return int(cur.rowcount or 0)
 
 
 def done_lbs(conn: sqlite3.Connection, scan_id: int) -> set[int]:

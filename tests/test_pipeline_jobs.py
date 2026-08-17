@@ -213,6 +213,105 @@ def test_ranker_rerank_route_409_during_scan(monkeypatch):
         ranker_jobs._JOB.finish()
 
 
+def _seed_collection(db_path, lbs):
+    """Insert *lbs* as eligible (public, uncategorised) collection rows."""
+    from concert_ranker.lb import repo
+
+    conn = repo.connect(db_path)
+    for lb in lbs:
+        conn.execute(
+            "INSERT OR REPLACE INTO my_collection(lb_number, folder_name, disk_path)"
+            " VALUES(?, ?, ?)",
+            (lb, f"lb{lb}", f"/nope/{lb}"),
+        )
+    conn.commit()
+    return conn
+
+
+def test_plan_scan_skips_folders_already_measured(monkeypatch):
+    """TODO-311: a scoring-only config change must not re-measure the corpus.
+
+    Metrics stored under the current extraction config are reused, so the plan
+    contains only the folders that have none — even after `polarity` changes,
+    which previously forked an empty scan and re-planned everything.
+    """
+    import backend.ranker_jobs as ranker_jobs
+    from concert_ranker import config as cr_config
+    from concert_ranker.lb import repo
+
+    db_path, _tmp = _make_db()
+    conn = _seed_collection(db_path, [1, 2, 3])
+
+    first = ranker_jobs.plan_scan(mode="backlog", db_path=db_path)
+    assert sorted(w[0] for w in first["worklist"]) == [1, 2, 3]
+
+    # Two of the three get measured.
+    for lb in (1, 2):
+        repo.persist_recording(conn, first["scan_id"], lb, "SBD",
+                               repo.build_metric_json({"crowd_snr_db": 1.0}))
+
+    # A scoring-only config change lands.
+    base = cr_config.default_config()
+    tweaked = cr_config.Config(**dict(vars(base), polarity=dict(base.polarity, lr_corr=1)))
+    monkeypatch.setattr(cr_config, "default_config", lambda: tweaked)
+
+    second = ranker_jobs.plan_scan(mode="backlog", db_path=db_path)
+    assert second["scan_id"] == first["scan_id"], "must append, not fork"
+    assert second["reused_scan"] is True
+    assert second["config_changed"] is False
+    assert [w[0] for w in second["worklist"]] == [3]
+    assert ranker_jobs.count_scan_backlog(conn) == 1  # pill agrees with `planned`
+
+
+def test_plan_scan_adopts_metrics_stranded_in_a_sibling_scan():
+    """Rows a stopped/older scan already measured are adopted, not re-measured
+    (TODO-311) — ranking is per-scan_id, so they must land in the active scan."""
+    import backend.ranker_jobs as ranker_jobs
+    from concert_ranker import config as cr_config
+    from concert_ranker.lb import repo
+
+    db_path, _tmp = _make_db()
+    conn = _seed_collection(db_path, [1, 2, 3])
+    cfg = vars(cr_config.default_config())
+
+    big = repo.create_scan(conn, config=cfg)
+    for lb in (1, 3):
+        repo.persist_recording(conn, big, lb, "SBD", repo.build_metric_json({"crowd_snr_db": 1.0}))
+    stranded = repo.create_scan(conn, config=cfg)  # e.g. a fork that was stopped early
+    repo.persist_recording(conn, stranded, 2, "AUD", repo.build_metric_json({"crowd_snr_db": 2.0}))
+
+    plan = ranker_jobs.plan_scan(mode="backlog", db_path=db_path)
+    assert plan["scan_id"] == big
+    assert plan["planned"] == 0, "nothing left to measure — LB 2 was adopted"
+    assert repo.done_lbs(conn, big) == {1, 2, 3}
+    assert repo.load_metrics(conn, big)[2]["metrics"]["crowd_snr_db"] == 2.0
+    assert ranker_jobs.count_scan_backlog(conn) == 0
+
+
+def test_plan_scan_forks_on_a_real_extraction_change(monkeypatch):
+    """A change to what gets measured still forks a new scan — old metrics are
+    not valid under it."""
+    import backend.ranker_jobs as ranker_jobs
+    from concert_ranker import config as cr_config
+    from concert_ranker.lb import repo
+
+    db_path, _tmp = _make_db()
+    conn = _seed_collection(db_path, [1])
+    first = ranker_jobs.plan_scan(mode="backlog", db_path=db_path)
+    repo.persist_recording(conn, first["scan_id"], 1, "SBD",
+                           repo.build_metric_json({"crowd_snr_db": 1.0}))
+
+    base = cr_config.default_config()
+    monkeypatch.setattr(
+        cr_config, "default_config",
+        lambda: cr_config.Config(**dict(vars(base), bulk_sr=base.bulk_sr * 2)),
+    )
+    second = ranker_jobs.plan_scan(mode="backlog", db_path=db_path)
+    assert second["scan_id"] != first["scan_id"]
+    assert second["config_changed"] is True
+    assert [w[0] for w in second["worklist"]] == [1]
+
+
 def test_ranker_rerank_route_404_no_scans():
     db_path, _tmp = _make_db()
     with _AppClient(db_path) as client:

@@ -986,10 +986,14 @@ CREATE INDEX IF NOT EXISTS idx_fiscans_mount
 -- metrics (quality_recording_metrics.metric_json) are stored separately from the
 -- derived scores so re-banding/re-ranking never needs an audio rescan.
 CREATE TABLE IF NOT EXISTS quality_scans (
-    scan_id      INTEGER PRIMARY KEY AUTOINCREMENT,
-    started_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    config_json  TEXT,
-    notes        TEXT
+    scan_id        INTEGER PRIMARY KEY AUTOINCREMENT,
+    started_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    config_json    TEXT,
+    notes          TEXT,
+    -- Hash of the extraction-relevant config only (TODO-311). Scans sharing a
+    -- key hold interchangeable measurements, so a backlog run appends to one
+    -- instead of re-measuring the corpus after a scoring-only config change.
+    extraction_key TEXT
 );
 CREATE TABLE IF NOT EXISTS quality_recording_metrics (
     lb_number    INTEGER NOT NULL,
@@ -2863,6 +2867,16 @@ def init_db(db_path=None):
                 "CREATE INDEX IF NOT EXISTS idx_show_picks_date_iso"
                 " ON show_picks(concert_date_iso)"
             )
+
+        # Migration (TODO-311): extraction_key on quality_scans, backfilled from
+        # each scan's stored config. Mirrors concert_ranker/lb/repo.py's own
+        # ensure_schema migration so the freshness card can resolve the active
+        # scan on a DB that has not been re-scanned since the column landed.
+        _qs_cols = [r[1] for r in conn.execute("PRAGMA table_info(quality_scans)").fetchall()]
+        if "extraction_key" not in _qs_cols:
+            conn.execute("ALTER TABLE quality_scans ADD COLUMN extraction_key TEXT")
+            from concert_ranker.lb import repo as _cr_repo
+            _cr_repo.backfill_extraction_keys(conn)
 
         # Always commit: UPDATE above opens a Python implicit transaction regardless
         # of rowcount.  Without this, a zero-row UPDATE leaves the read connection

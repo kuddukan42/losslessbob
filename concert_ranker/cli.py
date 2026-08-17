@@ -42,6 +42,61 @@ def _setup_logging(verbose: bool) -> None:
 # ─────────────────────────────────────────────────────────────────────────────
 # Worklist construction
 # ─────────────────────────────────────────────────────────────────────────────
+def _worklist_from_where(lb_filter=None) -> tuple[str, list]:
+    """Return the shared ``FROM ... WHERE ...`` fragment + params of the worklist.
+
+    Split out of :func:`collection_worklist` so the eligibility rules (public
+    concerts only) live in exactly one place and a *count* of the worklist can
+    reuse them without materialising and source-classing 16k rows.
+
+    Args:
+        lb_filter: Optional explicit LB-number filter.
+
+    Returns:
+        ``(sql_fragment, params)`` — the fragment starts at ``FROM``.
+    """
+    cats_ph = ",".join("?" * len(_NON_CONCERT_CATEGORIES))
+    sql = ("FROM my_collection c "
+           "LEFT JOIN entries e ON c.lb_number = e.lb_number "
+           "LEFT JOIN lb_master lm ON c.lb_number = lm.lb_number"
+           f" WHERE (e.lb_category IS NULL OR e.lb_category NOT IN ({cats_ph}))"
+           " AND (lm.lb_status IS NULL OR lm.lb_status = 'public')")
+    params: list = list(_NON_CONCERT_CATEGORIES)
+    if lb_filter:
+        sql += " AND c.lb_number IN ({})".format(",".join("?" * len(lb_filter)))
+        params.extend(lb_filter)
+    return sql, params
+
+
+def collection_backlog_count(conn, scan_ids) -> int:
+    """Count eligible LBs with no stored metrics under any of *scan_ids*.
+
+    The exact number of folders a ``mode='backlog'`` scan would compute, so the
+    Home freshness card's pending pill can never disagree with the scan's own
+    ``planned`` (TODO-311). Counting against raw ``my_collection`` instead
+    over-reports by every non-concert/non-public row.
+
+    Args:
+        conn: An open connection.
+        scan_ids: Scans whose measurements count as done — every scan sharing
+            the current extraction config, since the planner adopts their rows
+            rather than re-measuring. Empty (nothing scanned with this config)
+            means everything eligible is pending.
+
+    Returns:
+        Number of LBs still to scan.
+    """
+    where, params = _worklist_from_where()
+    ids = [scan_ids] if isinstance(scan_ids, int) else list(scan_ids or [])
+    if not ids:
+        return int(conn.execute(f"SELECT COUNT(*) {where}", params).fetchone()[0])
+    sql = (f"SELECT COUNT(*) {where} AND NOT EXISTS ("
+           "SELECT 1 FROM quality_recording_metrics m "
+           "WHERE m.lb_number = c.lb_number AND m.scan_id IN ({}))".format(
+               ",".join("?" * len(ids))))
+    return int(conn.execute(sql, [*params, *ids]).fetchone()[0])
+
+
 def collection_worklist(conn, lb_filter=None) -> list[tuple]:
     """Build ``(lb, disk_path, source_class)`` from my_collection.
 
@@ -53,19 +108,10 @@ def collection_worklist(conn, lb_filter=None) -> list[tuple]:
     ``backend/ranker_jobs.py``, which reuses this instead of duplicating the
     exclusion logic — duplicating it would drift).
     """
-    cats_ph = ",".join("?" * len(_NON_CONCERT_CATEGORIES))
+    where, params = _worklist_from_where(lb_filter)
     sql = ("SELECT c.lb_number AS lb, c.disk_path AS disk_path,"
            "       e.description AS description, e.source_chain AS source_chain,"
-           "       e.source_type AS source_type "
-           "FROM my_collection c "
-           "LEFT JOIN entries e ON c.lb_number = e.lb_number "
-           "LEFT JOIN lb_master lm ON c.lb_number = lm.lb_number"
-           f" WHERE (e.lb_category IS NULL OR e.lb_category NOT IN ({cats_ph}))"
-           " AND (lm.lb_status IS NULL OR lm.lb_status = 'public')")
-    params: list = list(_NON_CONCERT_CATEGORIES)
-    if lb_filter:
-        sql += " AND c.lb_number IN ({})".format(",".join("?" * len(lb_filter)))
-        params.extend(lb_filter)
+           "       e.source_type AS source_type " + where)
     out = []
     for r in conn.execute(sql, params):
         cls = source_type.derive_source_class(
