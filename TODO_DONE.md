@@ -2,6 +2,22 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-304: Translate the coverage-award screen strings (de/fr/es/it/nl)
+Priority: Medium
+Status: Done
+Added: 2026-08-12
+Closed: 2026-08-17
+Description: The 'Complete against LB' coverage screen and its About-dialog entry row added ~60 keys to gui_next/src/renderer/src/locales/en.json; the other five locales are untranslated. Run /gui-next-i18n.
+Ran /gui-next-i18n: de/fr/es/it/nl translated for the coverage screen and the new ledger/sync keys (10,508 DeepL chars). Remaining still-English values are cognates/proper nouns.
+
+TODO-305: Coverage award: build the /lbdir/ledger and /lbdir/sync routes
+Priority: Low
+Status: Done
+Added: 2026-08-12
+Closed: 2026-08-17
+Description: instructions/design_handoff_lb_coverage_award/README.md section 1 specifies four routes. /about/coverage and its certificate modal shipped 2026-08-12; the full per-entry ledger (/lbdir/ledger) and the LB snapshot-sync history (/lbdir/sync) are not built and the shipped screen has no entry points to them. Spec stays in instructions/ until these land.
+Built: GET /api/lb/coverage/ledger + GET /api/lb/snapshots (backend/lb_coverage.py), lb_snapshot_history written on master import (backend/db.py), and the two gui_next screens at /lbdir/ledger and /lbdir/sync, wired from the coverage screen's actions. Spec bundle can leave instructions/ now.
+
 TODO-311: Ranker scan must never re-measure a folder that already has metrics
 Priority: High
 Status: Done

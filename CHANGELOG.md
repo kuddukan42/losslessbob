@@ -1,3 +1,27 @@
+[2026-08-17] — feat(gui): TODO-305/304 — the LB ledger and catalogue-sync screens, plus locales
+Added: gui_next ScreenLbdirLedger.tsx (/lbdir/ledger): the full per-entry ledger the coverage
+  screen's "View full ledger" action was missing — every countable LB row with its state
+  (verified / held / unmatched / missing), source family, filed date and needs-review flag.
+  Filter chips (all / in collection / missing / no family yet / needs review), free-text search
+  over LB#/date/location, 100-row paging, and `?lb=<n>` deep-linking that lands on the page
+  holding that entry. Filter/page/query live in the URL so a view survives a reload.
+Added: gui_next ScreenLbdirSync.tsx (/lbdir/sync): installed-catalogue header, a manual
+  "Check LB for an update" (GET /api/master/github_check, install still happens in Setup), and
+  the snapshot import history with per-update entry delta and status-change count.
+Added: backend/lb_coverage.py get_ledger() / get_snapshots() + GET /api/lb/coverage/ledger and
+  GET /api/lb/snapshots in backend/app.py. The ledger shares _held_sql() with the coverage
+  payload, so the two screens can never disagree about what "held" means.
+Added: backend/db.py lb_snapshot_history table + _record_snapshot_history(), written by
+  import_master_db() (new `source` arg: "github" | "file"). meta only ever holds the *current*
+  master_version, so without this table there is no per-update diff to show. A DB that installed
+  its catalogue before this shipped gets one synthetic row derived from meta, flagged as such.
+Changed: gui_next ScreenCoverage.tsx — "View full ledger" now goes to /lbdir/ledger instead of
+  standing in with /collection; new "Sync history" ghost action alongside it.
+Changed: gui_next locales de/fr/es/it/nl — TODO-304's ~60 coverage-screen strings translated
+  along with the ~60 new ledger/sync keys (DeepL, 10,508 chars). Remaining still-English values
+  are proper nouns and identical cognates ("LB", "GitHub", "Format").
+Added: tests/test_lb_coverage.py — 10 tests over ledger state/filters/paging/search/deep-link
+  and snapshot history, including one asserting import_master_db() writes exactly one row.
 [2026-08-16] — fix(backend): TODO-311 — an already-measured folder is never re-scanned
 Fixed: backend/ranker_jobs.py plan_scan(): a backlog run forked a NEW scan_id whenever the
   effective ranker config differed at all from the stored one. A single scoring-only tweak
