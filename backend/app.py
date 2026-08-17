@@ -6312,6 +6312,99 @@ def create_app() -> Flask:
             _log.exception("taper_decision_revert failed for log #%s", log_id)
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
+    # ── Master taper vocabulary curation (TODO-313) ─────────────────────────────
+    # Canonical-keyed counterpart to the alias-keyed admin below: the unit here is
+    # "is this person a taper" / "are these two names the same person", which the
+    # flat alias table cannot express. Read open, writes curator-gated, matching
+    # the rest of the taper API. Every write reloads the merged alias tables, so
+    # `_TAPER_UNIVERSE` is live immediately; attributions only catch up on the
+    # next /api/derived/recompute, which the responses flag.
+
+    @app.route("/api/tapers/vocabulary", methods=["GET"])
+    def taper_vocabulary_list() -> Response:
+        """The canonical-centric master taper list with aliases and usage counts."""
+        try:
+            return jsonify(database.list_taper_vocabulary())
+        except Exception as exc:
+            _log.exception("taper_vocabulary_list failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/vocabulary", methods=["POST"])
+    def taper_vocabulary_create() -> Response:
+        """Curator-only. Register a brand-new canonical taper.
+
+        Body: {name, note?}. A new taper is just an alias whose canonical is
+        itself, so this delegates to add_taper_alias rather than inventing a
+        second way for a name to enter the vocabulary.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        body = request.get_json(silent=True) or {}
+        name = (body.get("name") or "").strip()
+        if not name:
+            return jsonify({"error": "bad_request", "message": "name is required"}), 400
+        try:
+            row = database.add_taper_alias(name, name, note=body.get("note"))
+            _taper_attribution._rebuild_alias_index()
+            return jsonify({"created": row})
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("taper_vocabulary_create failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/vocabulary/<path:canonical>/flag", methods=["POST"])
+    def taper_vocabulary_flag(canonical: str) -> Response:
+        """Curator-only. Set or clear the not-a-taper judgement on a canonical.
+
+        Body: {is_taper: bool, note?} to set, or {clear: true} to drop a local
+        override and fall back to the shipped `_NOT_TAPER` default.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        body = request.get_json(silent=True) or {}
+        try:
+            if body.get("clear"):
+                result = database.clear_taper_flag(canonical)
+            else:
+                if "is_taper" not in body:
+                    return jsonify({"error": "bad_request",
+                                    "message": "is_taper (bool) or clear:true required"}), 400
+                result = database.set_taper_flag(
+                    canonical, bool(body["is_taper"]), note=body.get("note"))
+            _taper_attribution._rebuild_alias_index()
+            # Excluding a taper does not retract attributions already computed
+            # under it; only a recompute does.
+            result["needs_recompute"] = True
+            return jsonify(result)
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("taper_vocabulary_flag failed for %s", canonical)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/vocabulary/merge", methods=["POST"])
+    def taper_vocabulary_merge() -> Response:
+        """Curator-only. Merge one canonical into another (or rename it).
+
+        Body: {source, target}. Repoints every alias of source at target and
+        carries `taper_confirmations` across; derived attributions catch up on
+        the next recompute (see `attributions_pending` in the response).
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        body = request.get_json(silent=True) or {}
+        try:
+            result = database.merge_tapers(body.get("source"), body.get("target"))
+            _taper_attribution._rebuild_alias_index()
+            result["needs_recompute"] = result["attributions_pending"] > 0
+            return jsonify(result)
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("taper_vocabulary_merge failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     # ── Known-taper alias admin (TODO-241) ──────────────────────────────────────
     # UI/CLI conduit to add/remove known-taper handles without a code edit. See
     # backend.db.{list,add,remove}_taper_alias / reload_taper_aliases and the

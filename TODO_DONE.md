@@ -2,6 +2,39 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-313: Master taper list curation on /taper-review
+Priority: Medium
+Status: Done
+Added: 2026-08-17
+Closed: 2026-08-17
+Description: Canonical-keyed vocabulary curation, the counterpart to TODO-241's alias-keyed admin.
+The page could add/remove aliases but not answer the questions a curator actually asks: is this
+person a taper, and are these two names the same person. _NOT_TAPER was a code-level frozenset,
+so the dolphinsmile-style call could not be made or reversed from the UI at all, and 32 of its 35
+names were invisible because they are never alias values. Adds user_taper_flags (USER-tier
+not_taper/is_taper overrides applied in reload_taper_aliases), list_taper_vocabulary /
+set_taper_flag / clear_taper_flag / merge_tapers in backend/db.py, four routes under
+/api/tapers/vocabulary, and a fourth 'Taper list' tab that retires the old collapsed alias
+section. Tier decision: stays USER-tier for now; promoting curated vocabulary to MASTER so it
+ships to other installs is deferred to a follow-up.
+Shipped 2026-08-17. user_taper_flags
+table (USER_TABLES, CHECK on action) applied in reload_taper_aliases after the _NOT_TAPER
+subtraction, so an explicit local 'is_taper' always beats the shipped default. list_taper_vocabulary
+groups the flat 431-alias table by canonical and unions in _NOT_TAPER + flagged names, because 32 of
+the 35 exclusions (dolphinsmile among them) are never alias values and would otherwise be
+un-curatable; it reports not_taper_origin so builtin-vs-local exclusions are distinguishable in the
+UI. merge_tapers repoints user alias rows, writes overrides for builtin alias keys (the builtin table
+is code), and carries taper_confirmations across — leaving those behind would point sticky MASTER
+decisions at a dead canonical. Derived attributions are deliberately not rewritten; the response
+returns attributions_pending and the UI offers a recompute. Four routes added (read open, three
+writes curator-gated). Fourth 'Taper list' tab with search over canonical AND aliases, six filters,
+per-row curate panel (alias add/remove, not-a-taper toggle, reset-to-default, merge/rename) and a
+new-taper action; the old collapsed alias section retired into it. Verified: 22 tests in
+tests/test_taper_aliases.py, full suite 1361 green; live round-trip of create -> add alias ->
+not_taper -> is_taper -> clear -> merge against the running backend, all probe rows removed and
+user_taper_aliases back to its 145-row baseline; headless Chromium at 1280px and 390px, 331 rows,
+no overflow, no JS errors. Deferred: promoting curated vocabulary to MASTER tier.
+
 TODO-312: Taper attribution curation console at /taper-review
 Priority: High
 Status: Done

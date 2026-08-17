@@ -1,3 +1,34 @@
+[2026-08-17] — feat(backend): TODO-313 — master taper list curation on /taper-review
+Added: backend/db.py user_taper_flags (USER_TABLES, never exported) — the runtime override on
+  _NOT_TAPER, which is a code-level frozenset and so could not be changed from the UI at all.
+  'not_taper' rows exclude a canonical from _TAPER_UNIVERSE (the name stays an alias value, so
+  the parser still collapses its spellings, but the engine never seeds it); 'is_taper' rows
+  re-admit a builtin-excluded one. Applied in reload_taper_aliases *after* the _NOT_TAPER
+  subtraction, so an explicit local call always beats the shipped default.
+Added: backend/db.py list_taper_vocabulary() — the canonical-keyed master list, the counterpart
+  to TODO-241's alias-keyed admin. Groups the flat 431-alias table by canonical and unions in
+  _NOT_TAPER plus any flagged names: 32 of the 35 shipped exclusions — dolphinsmile among them —
+  are never alias *values*, so grouping the alias table alone hid them and left that call
+  irreversible. Reports not_taper_origin so a shipped judgement is distinguishable from a local one.
+Added: backend/db.py set_taper_flag/clear_taper_flag and merge_tapers(). A merge repoints user
+  alias rows, writes user 'add' overrides for builtin alias keys (the builtin table is code and is
+  never edited), and rewrites taper_confirmations — leaving those behind would point sticky
+  MASTER-tier curator decisions at a canonical nothing resolves to any more, silently voiding real
+  work. Derived attributions are deliberately not rewritten; attributions_pending reports how many
+  are stale until the next recompute.
+Added: backend/app.py GET/POST /api/tapers/vocabulary, POST /api/tapers/vocabulary/<canonical>/flag
+  and POST /api/tapers/vocabulary/merge. Read open, the three writes curator-gated, matching the
+  rest of the taper API.
+Added: backend/taper_review.html fourth "Taper list" tab — 331 names searchable by canonical *or*
+  alias (a curator hunting a variant knows the alias, not the canonical), six filters, and a
+  per-row curate panel with alias add/remove, the not-a-taper toggle, reset-to-shipped-default,
+  and merge/rename. Destructive actions confirm and say plainly that they change the shared
+  vocabulary corpus-wide rather than one entry.
+Changed: the old collapsed "Taper aliases" section retired into that tab — it was a flat 431-row
+  list that could not express either question a curator actually asks.
+Note: curated vocabulary stays USER-tier for now. Promoting it to MASTER so it ships to other
+  installs alongside taper_confirmations is deferred to a follow-up by decision.
+
 [2026-08-17] — feat(backend): TODO-312 follow-up — /taper-review usable on a phone
 Changed: backend/taper_review.html — Entries and Tapers collapse from 9-column tables into
   stacked cards below 760px. The markup stays a real table and each cell carries a data-label
