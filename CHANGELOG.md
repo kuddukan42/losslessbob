@@ -1,3 +1,20 @@
+[2026-08-17] — feat(backend): TODO-312 follow-up — /taper-review usable on a phone
+Changed: backend/taper_review.html — Entries and Tapers collapse from 9-column tables into
+  stacked cards below 760px. The markup stays a real table and each cell carries a data-label
+  that becomes its heading in the card layout, so there is still only one render path. Before
+  this the columns a decision actually turns on (attributed taper, tier, decision, the Review
+  button) sat off-screen behind a horizontal scroll on a phone. The Queue tab was already
+  mobile-first and is unchanged.
+Added: two phone-only controls, because both of their desktop homes are in the table header the
+  card layout hides — a sort dropdown in the filter bar, and a "Select page" button standing in
+  for the header's select-all checkbox.
+Changed: the entry's own parsed taper is dropped from the phone card (it is context, not a
+  decision input, and is still in the expanded Review panel), and the select checkbox moved to
+  the card's top-right corner instead of claiming a labelled row.
+Verified: headless Chromium at 390×844 (iPhone 14 logical px, isMobile/hasTouch) over all three
+  tabs, the expanded review panel, and the bulk bar — no horizontal body overflow anywhere, no
+  JS errors, tap-driven selection and "Select page" both working.
+
 [2026-08-17] — feat(backend): TODO-312 — taper attribution curation console at /taper-review
 Added: backend/db.py taper_decision_log (USER_TABLES, so it never ships in a master export) —
   an append-only audit trail carrying prev_action/prev_taper alongside each decision. The

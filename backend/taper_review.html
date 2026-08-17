@@ -243,6 +243,51 @@
     .pager { display: flex; align-items: center; gap: 10px; justify-content: center;
              color: var(--muted); font-size: 0.82rem; }
 
+    /* Phones: a 9-column table pushes the columns that matter (attributed
+       taper, tier, decision, the Review button) off-screen behind a horizontal
+       scroll, so every row becomes a stacked card instead. The markup stays a
+       real table — each cell carries a data-label that becomes its heading —
+       so there is only one render path to maintain. */
+    .mobile-sort { display: none; }
+    @media (max-width: 760px) {
+      main.wide { max-width: 100%; }
+      .table-wrap { overflow-x: visible; background: none; border: none; }
+      table, tbody, tr, td { display: block; width: 100%; }
+      thead { display: none; }
+      tbody tr {
+        background: var(--surface); border: 1px solid var(--border);
+        border-radius: var(--radius); margin-bottom: 10px; padding: 6px 4px;
+      }
+      tbody tr.selected { border-color: var(--accent); }
+      td {
+        border: none; white-space: normal; max-width: none;
+        display: flex; align-items: baseline; justify-content: space-between;
+        gap: 14px; padding: 5px 12px;
+      }
+      td::before {
+        content: attr(data-label);
+        color: var(--muted); font-size: 0.7rem; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0;
+      }
+      td:empty { display: none; }
+      td.wrap, td.num { text-align: right; }
+      /* Keep a card to the fields a decision actually turns on. The entry's own
+         parsed taper is context, and it is still in the expanded Review panel. */
+      td.col-parsed { display: none; }
+      /* The select checkbox rides in the card's top-right corner rather than
+         claiming a labelled row of its own. */
+      tbody tr { position: relative; padding-top: 10px; }
+      td.col-select {
+        position: absolute; top: 8px; right: 10px; padding: 0; width: auto;
+      }
+      td.col-select input { width: 20px; height: 20px; }
+      td[data-label="LB"] { padding-right: 44px; }
+      .detail-row td { display: block; padding: 8px 12px; }
+      .detail-row td::before { content: none; }
+      .mobile-sort { display: inline-block; }
+      .bulk-bar .count { width: 100%; }
+    }
+
     .bulk-bar {
       position: sticky; bottom: 0; z-index: 50;
       display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
@@ -396,6 +441,22 @@
         <option value="inferred">inferred</option>
       </select>
       <button class="chip" id="conflict-chip" onclick="toggleConflict()">Conflicts<span class="n"></span></button>
+      <!-- Sortable column headers are hidden in the phone card layout, so sort
+           moves into the filter bar there. -->
+      <select class="mobile-sort" id="sort-select" onchange="setSortValue(this.value)">
+        <option value="lb">LB ↑</option>
+        <option value="-lb">LB ↓</option>
+        <option value="date">Date ↑</option>
+        <option value="-date">Date ↓</option>
+        <option value="taper">Taper ↑</option>
+        <option value="-taper">Taper ↓</option>
+        <option value="confidence">Tier ↑</option>
+        <option value="-confidence">Tier ↓</option>
+      </select>
+      <!-- The header's select-all checkbox lives in the thead, which the phone
+           card layout hides, so mobile gets its own control. -->
+      <button class="btn btn-ghost btn-sm mobile-sort" data-write
+              onclick="toggleAll(!pageAllSelected())">Select page</button>
       <button class="btn btn-ghost btn-sm" onclick="clearFilters()">Clear</button>
     </div>
     <div class="chips" id="state-chips" style="margin-bottom:12px"></div>
@@ -814,6 +875,12 @@
     loadEntries();
   }
 
+  function setSortValue(value) {
+    sort = value;
+    page = 0;
+    loadEntries();
+  }
+
   function gotoPage(n) { page = n; loadEntries(); }
 
   async function loadEntries() {
@@ -821,6 +888,7 @@
     document.getElementById('attr-select').value = filters.attributed;
     document.getElementById('conf-select').value = filters.confidence;
     document.getElementById('conflict-chip').classList.toggle('active', filters.conflict === '1');
+    document.getElementById('sort-select').value = sort;
     writeHash();
     const body = document.getElementById('entries-body');
     try {
@@ -862,7 +930,7 @@
       renderPager();
       return;
     }
-    const allSelected = rows.every(r => selected.has(r.lb_number));
+    const allSelected = pageAllSelected();
     const head = `
       <tr>
         <th class="nosort"><input type="checkbox" data-write ${allSelected ? 'checked' : ''}
@@ -881,18 +949,19 @@
       const decision = r.decision || 'undecided';
       const main = `
         <tr class="${sel ? 'selected' : ''}">
-          <td><input type="checkbox" data-write ${sel ? 'checked' : ''}
+          <td data-label="" class="col-select"><input type="checkbox" data-write ${sel ? 'checked' : ''}
               onclick="toggleRow(${r.lb_number}, this.checked)"></td>
-          <td class="num lb-cell" onclick="toggleExpand(${r.lb_number})">${lbLabel(r.lb_number)}</td>
-          <td class="num">${escapeHtml(r.date_str || '—')}</td>
-          <td class="wrap">${escapeHtml(r.location || '—')}</td>
-          <td class="wrap">${escapeHtml(r.taper_name || '—')}</td>
-          <td class="taper-cell" onclick="filterByTaper(${JSON.stringify(r.taper_normalised || '')})">
+          <td data-label="LB" class="num lb-cell" onclick="toggleExpand(${r.lb_number})">${lbLabel(r.lb_number)}</td>
+          <td data-label="Date" class="num">${escapeHtml(r.date_str || '—')}</td>
+          <td data-label="Location" class="wrap">${escapeHtml(r.location || '—')}</td>
+          <td data-label="Parsed" class="wrap col-parsed">${escapeHtml(r.taper_name || '—')}</td>
+          <td data-label="Attributed" class="taper-cell"
+              onclick="filterByTaper(${JSON.stringify(r.taper_normalised || '')})">
             ${r.taper_normalised ? escapeHtml(r.taper_normalised) : '<span class="dash">—</span>'}</td>
-          <td><span class="badge ${r.confidence || 'none'}">${escapeHtml(r.confidence || 'none')}</span>
+          <td data-label="Tier"><span class="badge ${r.confidence || 'none'}">${escapeHtml(r.confidence || 'none')}</span>
               ${r.conflict ? '<span class="badge conflict">conflict</span>' : ''}</td>
-          <td><span class="badge ${decision}">${escapeHtml(decision)}</span></td>
-          <td><button class="btn btn-ghost btn-sm" onclick="toggleExpand(${r.lb_number})">
+          <td data-label="Decision"><span class="badge ${decision}">${escapeHtml(decision)}</span></td>
+          <td data-label=""><button class="btn btn-ghost btn-sm" onclick="toggleExpand(${r.lb_number})">
               ${expanded === r.lb_number ? 'Hide' : 'Review'}</button></td>
         </tr>`;
       return main + (expanded === r.lb_number ? detailRow(r) : '');
@@ -1029,6 +1098,11 @@
     renderEntries();
   }
 
+  function pageAllSelected() {
+    const rows = entriesData.rows || [];
+    return rows.length > 0 && rows.every(r => selected.has(r.lb_number));
+  }
+
   function toggleAll(on) {
     for (const r of entriesData.rows || []) {
       if (on) selected.add(r.lb_number); else selected.delete(r.lb_number);
@@ -1094,16 +1168,17 @@
           <th class="nosort">Undecided</th><th class="nosort">Span</th><th class="nosort"></th>
         </tr></thead><tbody>${rows.map(r => `
           <tr>
-            <td class="taper-cell" onclick="filterByTaper(${escapeHtml(JSON.stringify(r.taper))})">
+            <td data-label="Taper" class="taper-cell"
+                onclick="filterByTaper(${escapeHtml(JSON.stringify(r.taper))})">
               ${escapeHtml(r.taper)}</td>
-            <td class="num">${r.total}</td>
-            <td class="num">${r.confirmed}</td>
-            <td class="num">${r.propagated}</td>
-            <td class="num">${r.conflicts ? '<span class="badge conflict">' + r.conflicts + '</span>' : '<span class="dash">0</span>'}</td>
-            <td class="num">${r.decided}</td>
-            <td class="num">${r.undecided}</td>
-            <td class="num">${escapeHtml((r.first_date || '?').slice(0, 4))}–${escapeHtml((r.last_date || '?').slice(0, 4))}</td>
-            <td><button class="btn btn-ghost btn-sm"
+            <td data-label="Entries" class="num">${r.total}</td>
+            <td data-label="Confirmed" class="num">${r.confirmed}</td>
+            <td data-label="Propagated" class="num">${r.propagated}</td>
+            <td data-label="Conflicts" class="num">${r.conflicts ? '<span class="badge conflict">' + r.conflicts + '</span>' : '<span class="dash">0</span>'}</td>
+            <td data-label="Decided" class="num">${r.decided}</td>
+            <td data-label="Undecided" class="num">${r.undecided}</td>
+            <td data-label="Span" class="num">${escapeHtml((r.first_date || '?').slice(0, 4))}–${escapeHtml((r.last_date || '?').slice(0, 4))}</td>
+            <td data-label=""><button class="btn btn-ghost btn-sm"
                 onclick="filterByTaper(${escapeHtml(JSON.stringify(r.taper))})">Review →</button></td>
           </tr>`).join('')}</tbody></table></div>`;
     } catch (e) {
