@@ -1536,7 +1536,7 @@
       "tabTaper": "Taper",
       "tabOlof": "Olof",
       "altFilesets": "Alternatieve bestandsets",
-      "checksumsLabel": "Checksums",
+      "checksumsLabel": "Controlesommen",
       "checksumsCanonical_one": "Canonical ({{count}}-bestand)",
       "checksumsCanonical_other": "Canonical ({{count}}-bestanden)",
       "checksumsXrefGroup_one": "xref-{{id}} ({{count}}-bestand)",
@@ -1908,7 +1908,7 @@
         "size": "Grootte",
         "linked": "Hardlinked",
         "copied": "Gekopieerd",
-        "snapshots": "Snapshots",
+        "snapshots": "Momentopnames",
         "latest": "Laatste versie",
         "seconds": "Duur"
       },
@@ -2304,6 +2304,77 @@
       "export": "Exporteren",
       "exporting": "Wordt weergegeven…",
       "failed": "Exporteren mislukt — er is niets opgeslagen."
-    }
+    },
+    "actSyncHistory": "Synchronisatiegeschiedenis"
+  },
+  "lbLedger": {
+    "title": "LB-grootboek",
+    "subtitle": "elk catalogusitem en waar het zich bevindt",
+    "actSync": "Synchronisatiegeschiedenis",
+    "actBack": "Terug naar voortgang",
+    "filter": {
+      "all": "Alle vermeldingen",
+      "held": "In de collectie",
+      "missing": "Ontbreekt",
+      "unmatched": "Nog geen familie",
+      "review": "Moet worden gecontroleerd"
+    },
+    "searchPlaceholder": "LB-nummer, datum of locatie",
+    "colLb": "LB",
+    "colDate": "Datum",
+    "colLocation": "Locatie",
+    "colFamily": "Familie",
+    "colState": "Status",
+    "colFiled": "Gearchiveerd",
+    "state": {
+      "verified": "Geverifieerd",
+      "held": "Uitgesteld",
+      "unmatched": "Ongeëvenaard",
+      "missing": "Ontbreekt"
+    },
+    "needsReview": "beoordeling",
+    "countLabel_one": "1 item",
+    "countLabel_other": "{{formatted}}-vermeldingen",
+    "pageLabel": "pagina {{page}} van {{pages}}",
+    "prev": "Vorige",
+    "next": "Volgende",
+    "empty": "Er zijn geen resultaten die aan deze filtercriteria voldoen.",
+    "error": "Het grootboek kon niet worden geladen. Controleer of de backend actief is en laad het vervolgens opnieuw."
+  },
+  "lbSync": {
+    "title": "LB-catalogussynchronisatie",
+    "subtitle": "overzicht van de versiegeschiedenis en wat elke update te bieden had",
+    "actCheck": "Kijk op LB voor een update",
+    "checking": "Wordt gecontroleerd…",
+    "actLedger": "Volledig overzicht bekijken",
+    "actBack": "Terug naar voortgang",
+    "curLabel": "momentopname",
+    "curVersion": "versie",
+    "curPublished": "gepubliceerd",
+    "curImported": "geïmporteerd",
+    "curEntries": "vermeldingen",
+    "newerTitle": "Er is een nieuwere LB-snapshot beschikbaar: {{version}}.",
+    "newerBody": "Installeer het via Setup — de catalogus op deze computer blijft ongewijzigd totdat u dit doet.",
+    "openSetup": "Open Setup",
+    "upToDateTitle": "Bijgewerkt naar LB-snapshot {{version}}.",
+    "upToDateBody": "Sinds je laatste import is er niets nieuws gepubliceerd.",
+    "failedTitle": "Ik kon LB niet bereiken.",
+    "failedBody": "Controleer de verbinding en probeer het opnieuw — er is niets veranderd op dit scherm.",
+    "retry": "Opnieuw proberen",
+    "colLabel": "Overzicht",
+    "colImported": "Geïmporteerd",
+    "colSource": "Bron",
+    "colTotal": "Vermeldingen",
+    "colAdded": "Toegevoegd",
+    "colChanges": "Wijzigingen",
+    "colNote": "Versie",
+    "source": {
+      "github": "GitHub",
+      "file": "Bestand",
+      "unknown": "Onbekend"
+    },
+    "syntheticNote": "geïnstalleerd voordat de importgeschiedenis werd vastgelegd",
+    "empty": "Er is nog geen catalogusoverzicht geïmporteerd.",
+    "error": "De snapshotgeschiedenis kon niet worden geladen. Controleer of de backend actief is en laad vervolgens opnieuw."
   }
 }

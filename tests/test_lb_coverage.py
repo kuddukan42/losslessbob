@@ -14,7 +14,7 @@ import sqlite3
 import tempfile
 
 import backend.db as db
-from backend.lb_coverage import get_coverage
+from backend.lb_coverage import get_coverage, get_ledger, get_snapshots
 
 
 def _make_conn() -> tuple[sqlite3.Connection, str]:
@@ -201,3 +201,155 @@ def test_ledger_sha256_is_order_independent() -> None:
     assert get_coverage(conn_a)["coverage"]["ledger_sha256"] == (
         get_coverage(conn_b)["coverage"]["ledger_sha256"]
     )
+
+
+# ── Ledger + snapshot history (TODO-305) ──────────────────────────────────────
+
+
+def test_ledger_lists_every_countable_entry_with_state() -> None:
+    conn, _tmp_dir = _make_conn()
+    _seed(conn)
+    page = get_ledger(conn)
+
+    # Same denominator as the coverage payload: lb 4 (nonexistent) is excluded.
+    assert page["total"] == 5
+    assert [r["lb_number"] for r in page["rows"]] == [1, 2, 3, 5, 6]
+
+    by_lb = {r["lb_number"]: r for r in page["rows"]}
+    assert by_lb[1]["held"] is True
+    assert by_lb[1]["fam_id"] == "fam-1"
+    assert by_lb[1]["state"] == "held"          # held + family, never lbdir-verified
+    assert by_lb[1]["filed_at"] == "2026-05-13"
+    assert by_lb[1]["location"] == "Forest Hills, NY"
+    assert by_lb[2]["held"] is False
+    assert by_lb[2]["state"] == "missing"
+
+
+def test_ledger_verified_state_needs_an_lbdir_stamp() -> None:
+    conn, _tmp_dir = _make_conn()
+    _seed(conn)
+    conn.execute(
+        "UPDATE my_collection SET lbdir_verified_at = '2026-06-02 09:00:00' WHERE lb_number = 1"
+    )
+    conn.commit()
+
+    by_lb = {r["lb_number"]: r for r in get_ledger(conn)["rows"]}
+    assert by_lb[1]["state"] == "verified"
+    assert by_lb[1]["verified"] is True
+    assert by_lb[3]["state"] == "held"
+
+
+def test_ledger_filters() -> None:
+    conn, _tmp_dir = _make_conn()
+    _seed(conn)
+
+    assert [r["lb_number"] for r in get_ledger(conn, filt="held")["rows"]] == [1, 3]
+    assert [r["lb_number"] for r in get_ledger(conn, filt="missing")["rows"]] == [2, 5, 6]
+    # "unmatched" = in the collection but no recording family yet. Both held
+    # entries have one in the seed, so add a third that does not.
+    conn.execute("INSERT INTO my_collection(lb_number, folder_name, disk_path) VALUES(6,'lb6','/x/6')")
+    conn.commit()
+    assert [r["lb_number"] for r in get_ledger(conn, filt="unmatched")["rows"]] == [6]
+
+    conn.execute("UPDATE lb_master SET needs_review = 1 WHERE lb_number = 2")
+    conn.commit()
+    assert [r["lb_number"] for r in get_ledger(conn, filt="review")["rows"]] == [2]
+
+    # An unknown filter degrades to "all" rather than raising.
+    assert get_ledger(conn, filt="bogus")["filter"] == "all"
+
+
+def test_ledger_pagination_and_search() -> None:
+    conn, _tmp_dir = _make_conn()
+    _seed(conn)
+
+    p1 = get_ledger(conn, page=1, per_page=2)
+    assert p1["pages"] == 3
+    assert [r["lb_number"] for r in p1["rows"]] == [1, 2]
+    assert [r["lb_number"] for r in get_ledger(conn, page=3, per_page=2)["rows"]] == [6]
+    # Past the end clamps to the last page instead of returning nothing.
+    assert get_ledger(conn, page=99, per_page=2)["page"] == 3
+
+    hits = get_ledger(conn, q="carnegie")
+    assert [r["lb_number"] for r in hits["rows"]] == [2]
+    assert get_ledger(conn, q="8/28/65")["total"] == 1
+
+
+def test_ledger_deep_link_returns_the_page_holding_that_lb() -> None:
+    conn, _tmp_dir = _make_conn()
+    _seed(conn)
+
+    page = get_ledger(conn, lb=6, per_page=2)
+    assert page["page"] == 3
+    assert 6 in [r["lb_number"] for r in page["rows"]]
+
+
+def test_ledger_on_fresh_db_is_empty_not_an_error() -> None:
+    conn, _tmp_dir = _make_conn()
+    page = get_ledger(conn)
+    assert page == {"rows": [], "page": 1, "pages": 0, "per_page": 50,
+                    "total": 0, "filter": "all", "q": "", "lb": None}
+
+
+def test_snapshots_synthesise_current_catalogue_when_history_is_empty() -> None:
+    conn, _tmp_dir = _make_conn()
+    _seed(conn)
+    result = get_snapshots(conn)
+
+    assert result["total"] == 1
+    row = result["snapshots"][0]
+    assert row["synthetic"] is True
+    assert row["master_version"] == "2026-07-14_000430"
+    assert row["label"] == "2026.07"
+    assert row["entries_total"] == 5
+    assert row["entries_held"] == 2
+    assert result["current"]["version"] == "2026-07-14_000430"
+
+
+def test_snapshots_read_history_newest_first() -> None:
+    conn, _tmp_dir = _make_conn()
+    _seed(conn)
+    conn.executemany(
+        "INSERT INTO lb_snapshot_history(master_version, master_published_at, imported_at,"
+        " source, entries_total, entries_held, entries_added, lb_status_changes,"
+        " status_counts_json, row_counts_json, backup_path) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
+        [
+            ("2026-06-01_000000", "2026-06-01T00:00:00+00:00", "2026-06-02 10:00:00",
+             "github", 100, 90, 100, 0, '{"public": 100}', '{"lb_master": 100}', "/b/1.db"),
+            ("2026-07-14_000430", "2026-07-14T00:04:41+00:00", "2026-07-15 10:00:00",
+             "file", 126, 118, 26, 3, '{"public": 126}', '{"lb_master": 126}', "/b/2.db"),
+        ],
+    )
+    conn.commit()
+
+    rows = get_snapshots(conn)["snapshots"]
+    assert [r["master_version"] for r in rows] == ["2026-07-14_000430", "2026-06-01_000000"]
+    assert rows[0]["synthetic"] is False
+    assert rows[0]["label"] == "2026.07"
+    assert rows[0]["entries_added"] == 26
+    assert rows[0]["source"] == "file"
+    assert rows[0]["status_counts"] == {"public": 126}
+    assert rows[0]["row_counts"] == {"lb_master": 126}
+
+
+def test_snapshot_history_row_written_on_master_import() -> None:
+    """import_master_db() must append exactly one history row, with the delta."""
+    conn, tmp_dir = _make_conn()
+    _seed(conn)
+    user_path = os.path.join(tmp_dir, "test.db")
+
+    # Keep the snapshot + pre-import backup inside the temp dir.
+    import backend.paths as _paths
+    _paths.DATA_DIR = type(_paths.DATA_DIR)(tmp_dir)
+
+    export_path, _manifest = db.export_master_db(reason="test", db_path=user_path)
+
+    db.import_master_db(export_path, db_path=user_path, source="github")
+
+    rows = get_snapshots(db.get_connection(user_path))["snapshots"]
+    assert len(rows) == 1
+    assert rows[0]["synthetic"] is False
+    assert rows[0]["source"] == "github"
+    assert rows[0]["entries_total"] == 6      # every lb_master row, statuses included
+    assert rows[0]["entries_added"] == 6      # first import: full size, not 0
+    assert rows[0]["entries_held"] == 2

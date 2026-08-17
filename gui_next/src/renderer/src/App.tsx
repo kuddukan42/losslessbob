@@ -26,6 +26,8 @@ import { ScreenSearch } from './screens/ScreenSearch'
 import { ScreenBootlegs } from './screens/ScreenBootlegs'
 import { ScreenThemes } from './screens/ScreenThemes'
 import { ScreenCoverage } from './screens/ScreenCoverage'
+import { ScreenLbdirLedger } from './screens/ScreenLbdirLedger'
+import { ScreenLbdirSync } from './screens/ScreenLbdirSync'
 import { ScreenMap } from './screens/ScreenMap'
 import { ScreenAttachments } from './screens/ScreenAttachments'
 import { ScreenSpectrograms } from './screens/ScreenSpectrograms'
@@ -418,6 +420,11 @@ export default function App(): React.JSX.Element {
               progress" row, but a real deep-linkable route so the milestone
               survives a reload and can be shared. */}
           <Route path="/about/coverage" element={<ScreenCoverage />} />
+          {/* Ledger + sync (TODO-305): the two surfaces the coverage screen's
+              "View full ledger" / "Sync with LB now" actions point at. Also not
+              sidebar destinations — reached from /about/coverage, or by URL. */}
+          <Route path="/lbdir/ledger" element={<ScreenLbdirLedger />} />
+          <Route path="/lbdir/sync"   element={<ScreenLbdirSync />} />
         </Routes>
       </AppShell>
     </HashRouter>
