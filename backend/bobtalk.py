@@ -463,6 +463,7 @@ def build_quote_clip(disk_path: str, t_start: float, dur_sec: int = 30,
     import tempfile
 
     from backend import ab_clips as _ab
+    from backend.tmp_utils import audio_tmp_dir
 
     files = ordered_tracks(disk_path)
     if not files:
@@ -479,7 +480,7 @@ def build_quote_clip(disk_path: str, t_start: float, dur_sec: int = 30,
     if out_path.exists():
         return out_name
 
-    tmp_dir = tempfile.mkdtemp(prefix="bt_raw_")
+    tmp_dir = tempfile.mkdtemp(prefix="bt_raw_", dir=audio_tmp_dir())
     try:
         raw_path = os.path.join(tmp_dir, "raw.wav")
         _ab._extract_clip(files, segments, raw_path)

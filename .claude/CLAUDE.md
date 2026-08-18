@@ -16,6 +16,12 @@ Before every Write, check the path starts with `/home/tjenkins/Documents/lossles
 - Disposable driver sessions, screenshots, scratch JSON → `.debug/` (gitignored).
 - Throwaway scripts → `tools/_<name>.<ext>`, deleted when done.
 - Bash redirects to `/tmp` are fine — the hook only covers the file tools.
+- **Never put bulk audio in `/tmp`** — it is a 2.7 GB partition, and decoded WAV is
+  ~10x its source. An ad-hoc `ffmpeg` decode loop into `/tmp/shnwav` filled it on
+  2026-08-10. Ad-hoc decodes go to `/mnt/DATA0/tmp/<name>/`, and you delete the
+  directory in the same session that created it. Backend code uses
+  `backend.tmp_utils.audio_tmp_dir()` for every temp WAV — pass it as `dir=` to
+  `tempfile.mkstemp`/`mkdtemp`, never call them bare.
 
 ---
 

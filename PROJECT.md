@@ -115,6 +115,7 @@ losslessbob/
 │   ├── disk_scanner.py       # TODO-250: os.scandir walk for audio folders outside the collection
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
 │   ├── startup_log.py        # Startup timing logger → data/logs/startup.log
+│   ├── tmp_utils.py          # BUG-323: audio_tmp_dir() — temp WAVs go to a large-disk scratch base, not the 2.7 GB /tmp
 │   ├── taper_attribution.py  # Taper attribution engine: evidence harvest → confirmed/propagated/inferred designations
 │   ├── taper_fingerprints.py # Layer 2 vocabulary fingerprints (TODO-214): log-odds profiles + 3-gate infer; LAYER2_ENABLED=False pending precision sign-off
 │   ├── song_index.py         # Song-centric index: song_canonical seeding + song_performances recompute (TODO-230)
