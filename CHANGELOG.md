@@ -1,3 +1,17 @@
+[2026-08-17] — fix(backend): BUG-323 — temp WAV decoding no longer fills the 2.7 GB /tmp partition
+Added: backend/tmp_utils.py: audio_tmp_dir() — probes LOSSLESSBOB_TMPDIR, then /mnt/DATA0/tmp
+  (458 GB), returns None to mean "system temp dir"; result cached, reset_cache() for tests and
+  drive remounts. Generalises the precedent already used in tools/tapematch/tapematch/cli.py:161.
+Fixed: backend/checksum_utils.py, backend/sox_utils.py, backend/ab_clips.py, backend/bobtalk.py:
+  every tempfile.mkstemp/mkdtemp for decoded audio now passes dir=audio_tmp_dir(). Decoded WAV is
+  ~10x its FLAC/SHN source, so a few concurrent decodes — or one process killed before its
+  finally-block unlink — could fill /tmp (107 MB of orphaned WAVs from 2026-08-08 did exactly
+  that; the other 1.1 GB was an ad-hoc /tmp/shnwav decode loop from a 2026-08-10 session).
+Added: tests/test_tmp_utils.py: 5 tests — env override, unwritable-override fallback, caching,
+  empty scratch-base list, writability of the selected dir.
+Changed: .claude/CLAUDE.md: temp-files section — no bulk audio in /tmp; ad-hoc decodes go to
+  /mnt/DATA0/tmp/<name>/ and are deleted in the same session; backend code uses audio_tmp_dir().
+
 [2026-08-17] — feat(backend): TODO-313 — master taper list curation on /taper-review
 Added: backend/db.py user_taper_flags (USER_TABLES, never exported) — the runtime override on
   _NOT_TAPER, which is a code-level frozenset and so could not be changed from the UI at all.

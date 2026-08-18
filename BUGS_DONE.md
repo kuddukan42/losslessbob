@@ -2,6 +2,30 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-323: Temp WAV decoding fills the 2.7 GB /tmp partition
+Status: Fixed
+File(s): backend/checksum_utils.py:463,backend/sox_utils.py:247,backend/ab_clips.py:865,backend/bobtalk.py:482
+Reported: 2026-08-17
+Fixed: 2026-08-17
+Root cause: Every temp-audio site used tempfile with no dir= argument, so all decoded WAVs landed on the small /tmp partition; a finally-block unlink does not survive a killed process, and ad-hoc session decodes had no rule pointing them elsewhere. tools/tapematch/tapematch/cli.py:161 already avoided /tmp for exactly this reason, but that precedent was never generalised.
+Fix: Added backend/tmp_utils.py::audio_tmp_dir() — probes LOSSLESSBOB_TMPDIR then /mnt/DATA0/tmp (458 GB), returns None to fall back to the system temp dir, result cached. Passed as dir= at all four sites: checksum_utils.py (shntool-via-ffmpeg fallback), sox_utils.py (spectrogram decode), ab_clips.py (ab_clip_/ab_raw_), bobtalk.py (bt_raw_). Covered by tests/test_tmp_utils.py (5 tests). Cleaned up 1.2 GB of existing junk (/tmp now 30% used, was 76%). .claude/CLAUDE.md gained a rule: no bulk audio in /tmp, ad-hoc decodes go to /mnt/DATA0/tmp/<name>/ and are deleted in the same session.
+
+BUG-320: electron_driver Tier B (--electron) fails: playwright "Process failed to launch!"
+Status: Fixed
+File(s): tools/electron_driver.mjs
+Reported: 2026-08-10
+Fixed: 2026-08-17
+Root cause: Unreproducible — environmental/transient. Re-ran Tier B (--no-build and full build) on 2026-08-17; Electron launched and screenshotted cleanly both times via playwright _electron.launch(), no 'Process failed to launch!' error. Host has ample free memory/fds, so not a resource-exhaustion issue in the code path.
+Fix: No code change. If it recurs, capture Xvfb log + electron stderr at time of failure (playwright's error swallows Electron's own stderr).
+
+BUG-278: tapematch: addon_links.rule_d can never fire in a live session (emb_score absent from the link metrics)
+Status: Fixed
+File(s): tools/tapematch/tapematch/cli.py:890,tools/tapematch/tapematch_session.py:1665,tools/tapematch/tapematch/verdict.py:311
+Reported: 2026-07-27
+Fixed: 2026-08-17
+Root cause: cli.py's _pair_metrics() never set emb_score/emb_score_global in the dict handed to verdict.pair_links, so rule_d's guard abstained on every live pair; emb_live only populated those columns post-clustering, one stage too late to affect the verdict.
+Fix: commit a27594cb hoisted emb scoring ahead of match.cluster (emb_live.score_session_pairs(), --concert-date on the CLI) so rule_d sees real scores live. Re-ran all 79 affected dates (completed 2026-08-07, confirmed via rerun_bug278.txt), re-synced families (.venv/bin/python3 -m backend.tapematch_sync: 3060 dates / 9113 families / 0 errors), and regenerated CONTRADICTED_EMB_SECOND_PASS.md — tier A (rule_d-qualifying stale verdicts) dropped from 46 to 0, confirming the fix is fully applied corpus-wide.
+
 BUG-322: DB Editor edits to entries table don't refresh Collection tab
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:1225,1260

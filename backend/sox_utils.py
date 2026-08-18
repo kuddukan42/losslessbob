@@ -2,7 +2,7 @@
 SoX tool detection and spectrogram generation.
 
 Strategy for non-native formats (SHN, APE, WV, M4A, etc.):
-  1. Decode to a temporary WAV in the system temp directory using ffmpeg.
+  1. Decode to a temporary WAV on a large-disk scratch base (see backend.tmp_utils)
   2. Run SoX on the temp WAV.
   3. Delete the temp WAV unconditionally in a finally block.
 
@@ -15,6 +15,8 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+
+from backend.tmp_utils import audio_tmp_dir
 
 # ── Console suppression (inline — no gui imports in backend) ──────────────────
 
@@ -247,6 +249,7 @@ def _convert_to_wav(audio_path: Path) -> Path:
     fd, tmp_path_str = tempfile.mkstemp(
         suffix=".wav",
         prefix=f"lb_spectro_{audio_path.stem}_",
+        dir=audio_tmp_dir(),
     )
     os.close(fd)
     tmp_path = Path(tmp_path_str)

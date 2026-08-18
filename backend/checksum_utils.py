@@ -9,6 +9,7 @@ import tempfile
 from pathlib import Path
 
 from backend.paths import to_long_path
+from backend.tmp_utils import audio_tmp_dir
 
 
 def _no_window_kwargs() -> dict:
@@ -460,7 +461,7 @@ def _compute_shntool_via_ffmpeg(invoke_path: str, cmd: list[str]) -> str | None:
     """
     if not shutil.which('ffmpeg'):
         return None
-    tmp_fd, tmp_path = tempfile.mkstemp(suffix='.wav')
+    tmp_fd, tmp_path = tempfile.mkstemp(suffix='.wav', dir=audio_tmp_dir())
     try:
         os.close(tmp_fd)
         dec = subprocess.run(

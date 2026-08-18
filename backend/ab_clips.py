@@ -65,6 +65,7 @@ from pathlib import Path
 import numpy as np
 
 from backend.paths import DATA_DIR
+from backend.tmp_utils import audio_tmp_dir
 
 log = logging.getLogger(__name__)
 
@@ -862,7 +863,7 @@ def _extract_clip(
         _extract_segment(files[idx], start, take, out_path)
         return
 
-    tmp_dir = tempfile.mkdtemp(prefix="ab_clip_")
+    tmp_dir = tempfile.mkdtemp(prefix="ab_clip_", dir=audio_tmp_dir())
     try:
         parts: list[str] = []
         for i, (idx, start, take) in enumerate(segments):
@@ -1023,7 +1024,7 @@ def build_clip(
             "requested position is beyond the recorded audio", error="t_out_of_range"
         )
 
-    tmp_dir = tempfile.mkdtemp(prefix="ab_raw_")
+    tmp_dir = tempfile.mkdtemp(prefix="ab_raw_", dir=audio_tmp_dir())
     try:
         raw_path = os.path.join(tmp_dir, "raw.wav")
         _extract_clip(files, segments, raw_path)
