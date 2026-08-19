@@ -1,3 +1,28 @@
+[2026-08-19] — chore(docs): 50-run tapematch batch fanned out to subagents; BUG-324 title residue
+Changed: .claude/commands/tapematch-batch.md: removed the false claim that subagents hit a hard
+  Write-tool block on .md files — the only PreToolUse hook in .claude/settings.json is a path
+  guard for writes outside the project root. Documented the real fan-out constraint instead:
+  next_batch.py is stateless and only reports dirs lacking analysis.md, so concurrent agents each
+  calling it are handed the same dirs. The parent session must run steps 1-2 once, partition the
+  dirs into disjoint per-agent lists, and forbid agents from calling next_batch.py /
+  prep_analysis_input.py themselves. Step 4 attribution now records the model that actually wrote
+  the file (the subagent's id when fanned out), not the orchestrator's.
+Changed: data/tapematch/runs/ (gitignored): 50 analysis.md written by 5 parallel sonnet agents,
+  10 disjoint dirs each; 33/50 flagged for review. Backlog 1315 -> 1265 eligible. Family sync
+  clean: 3060 dates, 9113 families, 12011 recordings linked, 0 errors.
+Fixed: data/tapematch/runs/*/report.md, */analysis.md: BUG-324 — 44 title lines (41 report.md,
+  3 analysis.md) still carried the pre-BUG-280 +100y date, e.g. "tapematch session — 2061-09-06".
+  BUG-280's fix (c4e9b1e2, 2026-07-29) renamed the run dirs and backfilled the DBs but never
+  rewrote markdown already on disk. Swept with the run dir name as the authoritative date,
+  rewriting only dates exactly 100 years ahead of it so real 2025/2026 shows were untouched.
+  Also amended the stale prose notes in 7 analysis.md files that described this as a live
+  report-generator defect and told readers to chase it in the code — the generator has been
+  correct since 2026-07-29.
+Note: two further leads from the batch were checked and are NOT bugs — the 2026-04-29 "mixed
+  date" folder is half of a Crystal Cat two-show release (LB-16664+LB-16665, Rochester and
+  Tyler), and 1998-06-28's LB-15721 has an "Aud>FM>..." lineage with commentary reading
+  "Obviously, an audience tape", i.e. one source with confusing prose, not two bundled.
+
 [2026-08-17] — fix(backend): BUG-323 — temp WAV decoding no longer fills the 2.7 GB /tmp partition
 Added: backend/tmp_utils.py: audio_tmp_dir() — probes LOSSLESSBOB_TMPDIR, then /mnt/DATA0/tmp
   (458 GB), returns None to mean "system temp dir"; result cached, reset_cache() for tests and

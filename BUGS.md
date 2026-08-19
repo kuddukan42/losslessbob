@@ -1,39 +1,3 @@
 
-BUG-320: electron_driver Tier B (--electron) fails: playwright "Process failed to launch!"
-Status: Open
-File(s): tools/electron_driver.mjs
-Reported: 2026-08-10
-Description: On 2026-08-10 both a --no-build and a full-build Tier B run died right after 'launching Electron...' with playwright-core Error: Process failed to launch! (Xvfb started OK on :92/:93, backend probe fine). Tier A --renderer-only works. Verification for that session fell back to Tier A.
-Root cause: Unknown
-Fix: —
 
-BUG-278: tapematch: addon_links.rule_d can never fire in a live session (emb_score absent from the link metrics)
-Status: FIXED 2026-07-27 (code); re-run of the 79 affected dates PAUSED at 49/79
-File(s): tools/tapematch/tapematch/cli.py:890,tools/tapematch/tapematch_session.py:1665,tools/tapematch/tapematch/verdict.py:311
-Reported: 2026-07-27
-Description: `addon_links.rule_d` (emb_score AND emb_score_global both >= 0.75) was calibrated on the full frozen set 2026-07-04 at zero new FP and shipped `enabled: true`. It has never fired during an actual tapematch session. 46 curator-claimed pairs in observations.db clear its bar and are still stored `different_family`; run dates span 2026-06-02 to 2026-07-26, i.e. well past the enablement date.
 
-Root cause: cli.py's `_pair_metrics(i, j)` (the dict handed to `verdict.pair_links` via `match.cluster(link_fn=...)`) builds only corr / windowed_frac / hiss / fp_score / speed_kind / hf_ceiling / nyquist / lb_a / lb_b. It never sets `emb_score` or `emb_score_global`, so `verdict._rule_d_emb_both` hits its `if emb is None` guard and returns False on every pair. The columns DO get populated -- but by `emb_live.populate_live_emb_scores()` called from `tapematch_session.py::_log_to_obs_db()`, which runs after the analysis has already clustered and decided `same_family`. TODO-200 added the live embedding path intending exactly this rule to fire live; the values land in the DB one stage too late to affect the verdict that is written alongside them.
-
-Impact: the only production merge path for the embedding is dead in live runs. Offline it partly compensates -- regression.py::_passthrough_with_rule_d additively unions rule_d into the passthrough result -- so the harness and the shipped session disagree about what the configured system does, and CALIBRATION/regression numbers reflect a rule the pipeline is not actually applying. Measured effect of linking rule_d and re-closing each date transitively: 58 curator-claimed pairs and 80 curator-silent pairs flip to same_family across 80 dates.
-
-VALIDATION GATE PASSED 2026-07-27: the corpus-wide flips were scored against the curator's own stance before proposing the fix. Splitting all 23,962 pairs by lb_says_same (1 = claims same, 0 = EXPLICIT denial, NULL = silent), rule_d fires on 20.16% of claims-same (732/3,631), 4.17% of silent (721/17,293) and 0.39% of explicit denials (12/3,038) -- a 52x discrimination between claimed-same and curator-denied, i.e. the rule tracks source identity rather than firing indiscriminately. Of those 12 denial hits, 10 already carry corr >= 0.83 (primary signal merges them anyway -- curator label noise, the TODO-201 class), not rule_d errors. Of the 138 transitive flips: 58 curator-claims-same, 79 curator-silent, and exactly ONE contradicts an explicit denial -- 1999-11-09 LB-02737/LB-04289 (emb 0.872/0.937, corr 0.101), where LB-4289's notes read "different recording than LB-1401 , LB-2064 , and LB-2737 based on different crowd at begin of d1t2". That single pair is the entire measured FP exposure. Earlier framing of "80 unvalidated silent merges" was wrong: curator SILENCE is not curator DISAGREEMENT, and separating NULL from 0 is what resolves it.
-
-Fix direction: NOT a one-line addition of two dict keys. Making rule_d fire live requires emb scores to exist before clustering, which means hoisting the emb_live extraction ahead of `match.cluster` in the cli analyze path (it needs only source folder paths, not `results`, so this is feasible) and then adding the two keys to `_pair_metrics`. Then re-run the 80 affected dates and re-sync families. Two non-blocking watch items: (a) 1978-03-09 is the only date with >=4 sources where rule_d links EVERY pair, collapsing the date into one family -- spot-check before/after; (b) 156 of 793 rule_d-firing dates have median emb >= 0.60 across all pairs (the same-show/different-source confound from BASELINE.md Task 8) -- the both-convention requirement appears to handle it, but a per-date baseline guard is the natural mitigation if t_emb is ever loosened below 0.75. Evidence + per-pair tables: tools/tapematch/CONTRADICTED_EMB_SECOND_PASS.md (section 4), regenerate with tools/tapematch/emb_second_pass.py.
-Fix (commit a27594cb): (1) emb_live.score_session_pairs() -- DB-free scoring shared by the pre-clustering path and the existing post-clustering persist path, so a live verdict and the row later written to observations.db cannot disagree. (2) tapematch/cli.py: new `--concert-date` (the embedding cache is date-keyed and the CLI had no notion of a date); scores every pair before `match.cluster` and feeds emb_score/emb_score_global into `_pair_metrics`. Lazy, defensive import -- any failure leaves the scores None and rule_d abstains exactly as before. (3) tapematch_session.py: passes the date at both run_tapematch call sites.
-VERIFIED end-to-end 2026-07-27 on 1994-02-16 (a tier-A date): the run logged "embedding: scored 21 pair(s), 3 at/above the rule_d bar" -- the first time rule_d has ever fired in a live session -- and produced exactly the 3 predicted flips. LB-10872 joined the {5202, 14921, 15363} family via two direct links (5202/10872 emb 0.978, 10872/15363 emb 0.954) plus 10872/14921 transitively. Regression test test_cli_shaped_metrics_reach_rule_d pins the behaviour: the same metrics dict links with emb present and abstains without, so dropping the keys again fails the suite.
-Remaining: re-run the other 79 affected dates + re-sync families to the app DB.
-LEDGER NOTE 2026-08-07: this entry was silently lost from BUGS.md between commits b1ba0aa3
-  (BUG-309's block was inserted over BUG-278's title line, orphaning this body under the wrong
-  header) and 929be8e2 (the merged block was deleted from BUGS.md while only BUG-309 was
-  archived to BUGS_DONE.md). Recovered from `git show 929be8e2^:BUGS.md`. Nothing else was lost:
-  BUG-210/309/310 closed legitimately on 2026-08-04, and BUG-67/136/147/148 were never assigned.
-Re-run state as of 2026-08-07: 49/79 done (last completed 2003-05-09, next 2003-05-11), paused
-  by tj 2026-07-28; no batch process is running. Queue file tools/tapematch/rerun_bug278.txt is
-  resumable (skips lines marked `# done`); resume with
-  `setsid nohup .venv/bin/python3 tools/tapematch/tapematch_session.py --batch
-  tools/tapematch/rerun_bug278.txt >> data/tapematch/bug278_rerun.log 2>&1 &`
-  (~8 min/date, ~4h for the remaining 30; never run concurrently with another live session).
-  After the batch: re-sync families to the app DB, regenerate
-  tools/tapematch/CONTRADICTED_EMB_SECOND_PASS.md via emb_second_pass.py (its tier-A table is
-  stale by design), then close this bug and TODO-273.

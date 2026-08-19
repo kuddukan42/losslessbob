@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-324: BUG-280 residue: 44 tapematch report/analysis title lines still show the +100y date
+Status: Fixed
+File(s): data/tapematch/runs/*/report.md,data/tapematch/runs/*/analysis.md
+Reported: 2026-08-19
+Fixed: 2026-08-19
+Root cause: The BUG-280 backfill (c4e9b1e2) corrected the run dir names and the DB rows but never touched the markdown write-ups those runs had already produced, so the pre-fix +100y date survived in the title line of 41 report.md and 3 analysis.md files. tapematch_session.py's parse_db_date() has been correct since 2026-07-29 — no live generator defect exists.
+Fix: Swept every run dir with tools/_fix_bug280_titles.py, taking the run directory name (corrected by the BUG-280 backfill) as the authoritative date and rewriting any title-line date exactly 100 years ahead of it. 44 title lines corrected, 0 residual; legitimate 2025/2026 concert dates were left untouched by the +100y-exact guard.
+
 BUG-323: Temp WAV decoding fills the 2.7 GB /tmp partition
 Status: Fixed
 File(s): backend/checksum_utils.py:463,backend/sox_utils.py:247,backend/ab_clips.py:865,backend/bobtalk.py:482
