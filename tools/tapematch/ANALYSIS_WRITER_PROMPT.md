@@ -68,6 +68,16 @@ the drafted text — write the file.
   **"result needs review — <short reason>"**. Don't paper over real
   ambiguity with "looks correct" — that's the one mistake to avoid; some
   older analyses in this run set did that and it's wrong.
+- A flagged anomaly whose cause the sources themselves already explain —
+  an `[INFLATED]` duration matching a documented bonus disc, opener set, or
+  multi-show box set; an `[INCOMPLETE]` run the taper's own note calls
+  partial — is **not** ambiguity. Use **"result looks correct — anomaly
+  explained"** (or **"all sources confirmed different — anomaly
+  explained"** when `M == N`) and say in the callout what explains it.
+  Reserve "needs review" for contradictions nothing in the data resolves,
+  so the review queue stays worth reading. On 2026-08-19 a 50-run batch
+  came back 35/50 "needs review" largely from explained inflation — that
+  rate makes the flag useless.
 
 ## Per-LB notes and anomaly write-ups
 
@@ -80,7 +90,7 @@ the table, for any LB flagged in report.md's diagnostics:
 | Constant speed offset, large ppm (e.g. ±15000) | `+15000 ppm` (use the actual value) | "Speed offset near ±N ppm suggests a PAL/NTSC speed mismatch or cassette played at wrong speed." |
 | LINEAGE EVIDENCE HF ceiling notably lower than the group's majority value | `HF X.XkHz` | Only call out if it stands apart from the rest of the group — it's a generation/equipment signature, not proof of distinctness on its own. |
 | `[MEDIUM CONFIDENCE]` / `[LOW CONFIDENCE]` merge | leave blank or `medium confidence merge` | "Same source likely but significant processing (resampling, level boost, EQ) may explain reduced correlation." (only write a callout if it affects the verdict) |
-| `[TIMING MISMATCH]`, `[INCOMPLETE]`, `[INFLATED]`, `STDERR`/`EXIT CODE` | flag in the note | These are data-quality/run problems, not source-identity findings — say so plainly and reflect it in the verdict outcome. |
+| `[TIMING MISMATCH]`, `[INCOMPLETE]`, `[INFLATED]`, `STDERR`/`EXIT CODE` | flag in the note | These are data-quality/run problems, not source-identity findings — say so plainly. Reflect it in the verdict outcome only when the sources don't already explain it; if they do, use the "anomaly explained" wording above rather than "needs review". |
 
 LBs with no flags get a blank Notes cell and no callout section — don't
 manufacture commentary where the data is unremarkable.
@@ -89,7 +99,13 @@ manufacture commentary where the data is unremarkable.
 
 - Don't invent a verdict that contradicts report.md's own CLUSTERS/
   DIAGNOSTICS output — your job is to synthesize and explain it, not
-  re-run the analysis.
+  re-run the analysis. The exception is a documented override: when the
+  LBs' own commentary squarely contradicts a cluster (e.g. three tapers
+  each describing a distinct mic rig that tapematch merged into one
+  family), you may say the clustering looks wrong — but state the
+  clustered result first, then the contradicting evidence, and mark the
+  verdict "needs review". Never silently substitute your own family count
+  for the report's.
 - Don't skip the table for multi-recording runs, even when everything is
   clean (a one-line "clean date" verdict with no table is an inconsistency
   from older analyses — don't repeat it).

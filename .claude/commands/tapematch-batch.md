@@ -14,6 +14,15 @@ concurrent agents each calling it get handed the **same** dirs. To fan out, the 
 session must do steps 1–2 once, partition the dirs into disjoint per-agent lists, and
 forbid the agents from calling `next_batch.py` / `prep_analysis_input.py` themselves.
 
+**Partition on date-group boundaries.** The last column of `next_batch.py` output is
+`i/j` — the row's position among that concert date's pending run dirs. All rows of one
+group must go to the same agent; a row whose group is not `1/j` may never start an
+agent's list. Two agents analysing the same date independently produce contradictory
+verdicts (2026-08-19, 2010-11-24: one run called a merge spurious, the other reported
+three families). `next_batch.py N` already rounds its own output up to the next group
+boundary, so plain `split -l` on a per-agent chunk size is *not* safe — check the
+column. Use `--newest-per-date` to skip superseded re-runs entirely.
+
 Batch size: $ARGUMENTS (number of run dirs this invocation). If empty, default to **5**.
 
 ## Steps
@@ -23,6 +32,9 @@ Batch size: $ARGUMENTS (number of run dirs this invocation). If empty, default t
    .venv/bin/python3 tools/tapematch/next_batch.py 5   # arg = batch size
    ```
    This applies the eligibility rule — has `report.md`, no `analysis.md`, **complete set** (tapematch actually ran, `=== CLUSTERS ===` present, and every DB entry was found on disk) — and orders what's left by `backend.tapematch_autoflag`'s machine triage: `attention` dates first, most rules fired first, then fewest entries first. Incomplete runs lack comparative data and yield no actionable verdict; the script skips them and they get re-picked when secondary sources appear.
+
+   Same-date run dirs are emitted contiguously and tagged `i/j` in the last column; the
+   batch size rounds up so a date group is never cut in half.
 
    The printed `attention` / `N rules` columns are a **prioritisation hint, not a verdict** — the rules run at ~0.19 precision against human judgment. Don't let them pre-bias the analysis: a 3-rule `attention` date can still be entirely clean, and a `clear` date can still need review. Write what the report and info files actually support.
 2. Build input bundles for those dirs:

@@ -10,6 +10,29 @@ Changed: .claude/commands/tapematch-batch.md: removed the false claim that subag
 Changed: data/tapematch/runs/ (gitignored): 50 analysis.md written by 5 parallel sonnet agents,
   10 disjoint dirs each; 33/50 flagged for review. Backlog 1315 -> 1265 eligible. Family sync
   clean: 3060 dates, 9113 families, 12011 recordings linked, 0 errors.
+Changed: data/tapematch/runs/ (gitignored): a second 50-run batch, same 5x10 sonnet fan-out;
+  35/50 flagged for review. Backlog 1265 -> 1215 dirs / 1038 dates. Sync clean (3060 dates,
+  9113 families, 12011 recordings, 0 errors). The triage_analysis.py --apply pre-step was a
+  no-op this round: AUTO=0, ESCALATE=2020 — the trivially-clean tier is drained, so every
+  remaining dir needs real judgment.
+Changed: tools/tapematch/next_batch.py: same-date run dirs are now emitted contiguously as a
+  date group, tagged i/j in a new trailing column, and a batch size rounds up to the group
+  boundary so a date is never split across two writers. Two agents in the batch above analysed
+  2010-11-24 from separate run dirs and returned contradictory verdicts (one called the
+  LB-09012/LB-15230 merge spurious, the other reported three families) — 163 of 875 pending
+  dates have multiple runs, so this was systemic, not a one-off. Added --newest-per-date to skip
+  superseded re-runs (1215 dirs collapse to 1038 dates), and --stats now reports dirs and dates
+  separately.
+Changed: tools/tapematch/ANALYSIS_WRITER_PROMPT.md: added a fourth verdict outcome, "anomaly
+  explained", for a flagged [INFLATED]/[INCOMPLETE] run whose cause the sources themselves
+  document (bonus disc, opener set, multi-show box set, taper's own "partial" note). The old
+  wording pushed every such flag into "needs review", which is why the batch came back 35/50
+  flagged — a rate that makes the queue unreadable; the writers had already started inventing an
+  undocumented "flag explained" category to cope. Also replaced the blanket "never contradict
+  report.md's clusters" ban with a documented-override rule: state the clustered result first,
+  then the contradicting commentary, then mark it needs review.
+Changed: .claude/commands/tapematch-batch.md: fan-out must partition on date-group boundaries
+  (check the i/j column) — a blind split -l on the batch listing can cut a date in half.
 Fixed: data/tapematch/runs/*/report.md, */analysis.md: BUG-324 — 44 title lines (41 report.md,
   3 analysis.md) still carried the pre-BUG-280 +100y date, e.g. "tapematch session — 2061-09-06".
   BUG-280's fix (c4e9b1e2, 2026-07-29) renamed the run dirs and backfilled the DBs but never
