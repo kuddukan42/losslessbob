@@ -1301,6 +1301,77 @@ CREATE TABLE IF NOT EXISTS lb_snapshot_history (
     backup_path         TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_lb_snapshot_hist_at ON lb_snapshot_history(imported_at DESC);
+
+-- ── TUIT tracker mirror (USER — scraped catalogue of tangledupintorrents.org) ─
+-- One row per site recording id. Every field the site renders is kept, so the
+-- data can be compared against lb_master later without a re-crawl; list-shaped
+-- fields (lineage nodes, setlist, file list, sibling sources) are JSON blobs.
+CREATE TABLE IF NOT EXISTS tuit_recordings (
+    rec_id          INTEGER PRIMARY KEY,   -- site /recordings/<id>
+    show_id         INTEGER,               -- site /shows/<id>
+    lb_number       INTEGER,
+    detail_url      TEXT,
+    title           TEXT,                  -- 'Providence, Civic Center'
+    eyebrow         TEXT,                  -- '7 Oct 1978 · Street Legal Tour · Audience'
+    headline        TEXT,                  -- 'Source 1 of 2 circulating for this show…'
+    date_str        TEXT,
+    venue           TEXT,
+    location        TEXT,
+    tour            TEXT,
+    source_type     TEXT,                  -- AUD / SBD / FM / MTX
+    source_label    TEXT,                  -- 'Audience', 'Soundboard', …
+    format          TEXT,                  -- 'FLAC 16/44'
+    quality         TEXT,                  -- 'Very good'
+    quality_slug    TEXT,                  -- 'very-good'
+    info_hash       TEXT,
+    size_label      TEXT,
+    size_bytes      INTEGER,
+    n_files         INTEGER,
+    n_sources       INTEGER,
+    seeders         INTEGER,
+    leechers        INTEGER,
+    snatched        INTEGER,
+    freeleech       INTEGER DEFAULT 0,
+    lb_verified     INTEGER DEFAULT 0,
+    taper           TEXT,
+    uploader        TEXT,
+    uploader_url    TEXT,
+    uploaded_label  TEXT,
+    added_at        TEXT,                  -- ISO-8601 from the listing <time>
+    lineage         TEXT,                  -- ' > '-joined lineage chain
+    lineage_json    TEXT,
+    info_text       TEXT,                  -- the recording's info-file body
+    setlist_json    TEXT,
+    files_json      TEXT,
+    siblings_json   TEXT,
+    spectrogram_url TEXT,
+    preview_url     TEXT,
+    torrent_url     TEXT,
+    first_seen_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_seen_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_tuit_rec_lb   ON tuit_recordings(lb_number);
+CREATE INDEX IF NOT EXISTS idx_tuit_rec_hash ON tuit_recordings(info_hash);
+CREATE INDEX IF NOT EXISTS idx_tuit_rec_date ON tuit_recordings(date_str);
+CREATE INDEX IF NOT EXISTS idx_tuit_rec_seen ON tuit_recordings(added_at DESC);
+
+-- Fetch/seed attempts against TUIT (USER). Mirrors wtrf_downloads.
+CREATE TABLE IF NOT EXISTS tuit_downloads (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    rec_id       INTEGER NOT NULL,
+    lb_number    INTEGER,
+    torrent_path TEXT,
+    seed_folder  TEXT,     -- collection folder matched via folder_lb_link
+    status       TEXT NOT NULL DEFAULT 'pending',
+                 -- 'pending'/'downloaded'/'qbt_added'/'no_local_files'/'failed'
+    error        TEXT,
+    attempted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    qbt_added_at TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_tuit_dl_rec
+    ON tuit_downloads(rec_id, attempted_at DESC);
+CREATE INDEX IF NOT EXISTS idx_tuit_dl_status
+    ON tuit_downloads(status, attempted_at DESC);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -5952,6 +6023,203 @@ def get_wtrf_pending_lb_numbers(db_path=None) -> list[int]:
             """
         ).fetchall()
     return [r[0] for r in rows]
+
+
+# ── TUIT tracker mirror ───────────────────────────────────────────────────────
+
+TUIT_RECORDING_COLUMNS = (
+    "rec_id", "show_id", "lb_number", "detail_url", "title", "eyebrow",
+    "headline", "date_str", "venue", "location", "tour", "source_type",
+    "source_label", "format", "quality", "quality_slug", "info_hash",
+    "size_label", "size_bytes", "n_files", "n_sources", "seeders", "leechers",
+    "snatched", "freeleech", "lb_verified", "taper", "uploader", "uploader_url",
+    "uploaded_label", "added_at", "lineage", "lineage_json", "info_text",
+    "setlist_json", "files_json", "siblings_json", "spectrogram_url",
+    "preview_url", "torrent_url",
+)
+
+
+def upsert_tuit_recording(row: dict, db_path=None) -> int:
+    """Insert or refresh one tuit_recordings row, keyed by rec_id.
+
+    Unknown keys in ``row`` are ignored, so a scraper dict can be passed
+    straight through. ``first_seen_at`` is preserved across refreshes;
+    ``last_seen_at`` is always bumped.
+
+    Args:
+        row: Column→value mapping; must contain ``rec_id``.
+        db_path: Optional DB path override.
+
+    Returns:
+        The rec_id written.
+
+    Raises:
+        ValueError: If ``rec_id`` is missing.
+    """
+    rec_id = row.get("rec_id")
+    if rec_id is None:
+        raise ValueError("upsert_tuit_recording requires rec_id")
+
+    data = {k: row[k] for k in TUIT_RECORDING_COLUMNS if k in row}
+    for flag in ("freeleech", "lb_verified"):
+        if flag in data:
+            data[flag] = int(bool(data[flag]))
+
+    cols = list(data)
+    placeholders = ", ".join("?" for _ in cols)
+    updates = ", ".join(f"{c}=excluded.{c}" for c in cols if c != "rec_id")
+    values = [data[c] for c in cols]
+
+    def _run(c):
+        c.execute(
+            f"INSERT INTO tuit_recordings ({', '.join(cols)}) "
+            f"VALUES ({placeholders}) "
+            f"ON CONFLICT(rec_id) DO UPDATE SET {updates}, "
+            f"last_seen_at=CURRENT_TIMESTAMP",
+            values,
+        )
+        return rec_id
+
+    return get_write_queue().execute(_run)
+
+
+def get_tuit_recording(rec_id: int, db_path=None) -> dict | None:
+    """Return one tuit_recordings row by site recording id, or None."""
+    with get_connection(db_path) as conn:
+        row = conn.execute(
+            "SELECT * FROM tuit_recordings WHERE rec_id=?", (rec_id,)
+        ).fetchone()
+    return dict(row) if row else None
+
+
+def get_tuit_recordings(
+    lb_number: int | None = None, limit: int | None = None, db_path=None
+) -> list[dict]:
+    """Return tuit_recordings rows, newest-added first.
+
+    Args:
+        lb_number: If given, return only rows for this LB number.
+        limit: Optional maximum row count.
+        db_path: Optional DB path override.
+
+    Returns:
+        List of row dicts.
+    """
+    sql = "SELECT * FROM tuit_recordings"
+    params: list = []
+    if lb_number is not None:
+        sql += " WHERE lb_number=?"
+        params.append(lb_number)
+    sql += " ORDER BY added_at DESC, rec_id DESC"
+    if limit:
+        sql += " LIMIT ?"
+        params.append(limit)
+    with get_connection(db_path) as conn:
+        return [dict(r) for r in conn.execute(sql, params).fetchall()]
+
+
+def add_tuit_download(
+    rec_id: int,
+    lb_number: int | None,
+    torrent_path: str | None,
+    status: str,
+    seed_folder: str | None = None,
+    error: str | None = None,
+    db_path=None,
+) -> int:
+    """Insert a tuit_downloads row and return its new id.
+
+    Args:
+        rec_id: Site recording id being fetched.
+        lb_number: LB number the recording claims, if any.
+        torrent_path: Local path of the downloaded .torrent, if any.
+        status: pending/downloaded/qbt_added/no_local_files/failed.
+        seed_folder: Collection folder the torrent was pointed at, if any.
+        error: Error message when status is 'failed'.
+        db_path: Optional DB path override.
+
+    Returns:
+        New row id.
+    """
+    _args = (rec_id, lb_number, torrent_path, seed_folder, status, error)
+
+    def _run(c):
+        cur = c.execute(
+            "INSERT INTO tuit_downloads"
+            "(rec_id, lb_number, torrent_path, seed_folder, status, error)"
+            " VALUES (?, ?, ?, ?, ?, ?)",
+            _args,
+        )
+        return cur.lastrowid
+
+    return get_write_queue().execute(_run)
+
+
+def update_tuit_download(download_id: int, fields: dict, db_path=None) -> None:
+    """Update one or more columns on a tuit_downloads row.
+
+    Args:
+        download_id: Primary key of the row to update.
+        fields: Dict of column→value pairs to set.
+        db_path: Optional DB path override.
+    """
+    if not fields:
+        return
+    set_clause = ", ".join(f"{k}=?" for k in fields)
+    values = list(fields.values()) + [download_id]
+    get_write_queue().execute(
+        lambda c: c.execute(
+            f"UPDATE tuit_downloads SET {set_clause} WHERE id=?", values
+        )
+    )
+
+
+def get_tuit_downloads(rec_id: int | None = None, db_path=None) -> list[dict]:
+    """Return tuit_downloads rows, newest first, optionally filtered by rec_id."""
+    with get_connection(db_path) as conn:
+        if rec_id is not None:
+            rows = conn.execute(
+                "SELECT * FROM tuit_downloads WHERE rec_id=? "
+                "ORDER BY attempted_at DESC",
+                (rec_id,),
+            ).fetchall()
+        else:
+            rows = conn.execute(
+                "SELECT * FROM tuit_downloads ORDER BY attempted_at DESC"
+            ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_folders_for_lb(lb_number: int, db_path=None) -> list[str]:
+    """Return every on-disk folder known to hold an LB number's files.
+
+    Checks ``my_collection.disk_path`` first — the confirmed collection — then
+    ``folder_lb_link``, which the pipeline populates for freshly downloaded
+    folders that are not filed into the collection yet. Used to point a
+    scraped torrent at files that already exist locally.
+
+    Args:
+        lb_number: LB number to look up.
+        db_path: Optional DB path override.
+
+    Returns:
+        Absolute folder paths, collection entries first, de-duplicated.
+    """
+    paths: list[str] = []
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT disk_path FROM my_collection "
+            " WHERE lb_number=? AND disk_path IS NOT NULL AND disk_path <> ''",
+            (lb_number,),
+        ).fetchall()
+        paths.extend(r[0] for r in rows)
+        rows = conn.execute(
+            "SELECT folder_path FROM folder_lb_link WHERE lb_number=? "
+            "ORDER BY linked_at DESC",
+            (lb_number,),
+        ).fetchall()
+        paths.extend(r[0] for r in rows)
+    return list(dict.fromkeys(paths))
 
 
 def get_all_forum_posts(db_path=None) -> list:

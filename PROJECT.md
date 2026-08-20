@@ -89,7 +89,7 @@ losslessbob/
 │   ├── updater.py            # restart_application(): relaunch the app after an in-place update
 │   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
 │   ├── checksum_provenance.py # Cross-checks checksums vs the uploader files in data/site/files/ (TODO-296)
-│   ├── credentials.py        # OS keyring credential storage (SERVICE_QBT, SERVICE_WTRF)
+│   ├── credentials.py        # OS keyring credential storage (SERVICE_QBT, SERVICE_WTRF, SERVICE_IA, SERVICE_TUIT)
 │   ├── flat_file.py          # Flat-file update pipeline: discover/download/diff/apply + audit tables
 │   ├── xref_ingest.py        # Site-mirror xref ingest: scan/stage/approve reviewed import path (TODO-252)
 │   ├── importer.py           # Flat-file import logic (legacy: imports from local file path)
@@ -132,6 +132,7 @@ losslessbob/
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
 │   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting
 │   ├── wtrf_scraper.py       # Searches the WTRF SMF forum for torrent posts matching missing items
+│   ├── tuit_scraper.py       # TUIT private tracker (tangledupintorrents.org): login, /browse + /recordings parsers, torrent fetch (TODO-314)
 │   ├── ab_clips.py           # Aligned A/B listening clip service (LISTENING §2, TODO-231/232/233)
 │   ├── bobtalk.py            # Locates Olof's curated bobtalk quotes in our audio; scoring, confidence, persistence (TODO-303)
 │   ├── bobtalk_decodes.py    # Discardable cache of raw ASR window decodes, so re-scoring costs no CPU (TODO-303, BUG-314)
@@ -191,6 +192,8 @@ losslessbob/
 │   ├── test_geocoder.py      # backend/geocoder.py: date conversion, performances/bobdylan_shows/olof_events/setlistfm_shows lookup + priority, concert eligibility, geocode_one/run_batch (mocked urllib)
 │   ├── test_venue_gazetteer.py # backend/venue_gazetteer.py: venue-level gazetteer seeding (TODO-223)
 │   ├── test_wtrf_scraper.py  # backend/wtrf_scraper.py: WTRF forum torrent scraper
+│   ├── test_tuit_scraper.py  # backend/tuit_scraper.py: TUIT browse/detail parsers, row merge, bencode root name (TODO-314)
+│   ├── test_tuit_db.py       # backend/db.py: tuit_recordings/tuit_downloads accessors + get_folders_for_lb (TODO-314)
 │   ├── test_checksum_utils_site_recovery.py # find_site_recoverable_files: MD5 + filename-fallback matching against data/site/files/
 │   ├── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
 │   ├── test_db_lookup.py     # lookup_checksums() in backend/db.py
@@ -247,6 +250,7 @@ losslessbob/
 │   ├── checksum_dispute_report.py # CLI: render checksum_disputes as a standalone HTML report (.debug/checksum_disputes.html); pairs the db+lbdir references per track to derive db_error / audio_differs / retag / receipt_unknown / lbdir_only (TODO-300, 302)
 │   ├── parse_lineage.py      # CLI wrapper: backend.taper_attribution / entry_lineage batch parse (see backend/db.py extract_lb_references)
 │   ├── wtrf_fetch_missing.py # CLI: batch WTRF torrent fetch for missing items (wraps /api/wtrf/fetch_torrent logic)
+│   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314)
 │   ├── fit_aud_quality_model.py # CLI: fit the AUD quality regression model used by concert_ranker
 │   ├── refit_aud_model.py    # CLI: refit/recalibrate the AUD quality model against new labels
 │   ├── gui_next_locale_parity.py # CLI: check gui_next locales/*.json for missing/extra keys vs en.json
@@ -437,6 +441,59 @@ One row per attempt to locate and download a missing item's torrent from the WTR
 | qbt_added_at | TIMESTAMP | When the torrent was added to qBittorrent, if applicable |
 
 Indexes: `idx_wtrf_downloads_lb(lb_number, attempted_at DESC)`, `idx_wtrf_downloads_status(status, attempted_at DESC)`.
+
+### `tuit_recordings` — TUIT private-tracker catalogue mirror (USER table)
+One row per recording on tangledupintorrents.org, keyed by the site's own recording id and
+written by `backend/tuit_scraper.py` via `tools/tuit_sync.py`. Every field the site renders is
+kept so the mirror can be diffed against `lb_master` later without a re-crawl (TODO-314/315).
+| Column | Type | Notes |
+|--------|------|-------|
+| rec_id | INTEGER PK | Site `/recordings/<id>` |
+| show_id | INTEGER | Site `/shows/<id>`; also the `/show/<id>/download` torrent id |
+| lb_number | INTEGER | LB number the uploader assigned |
+| detail_url | TEXT | Canonical recording URL |
+| title / eyebrow / headline | TEXT | Hero copy: `'Providence, Civic Center'`, `'7 Oct 1978 · Street Legal Tour · Audience'`, `'Source 1 of 2 circulating…'` |
+| date_str, venue, location, tour | TEXT | From the Information panel |
+| source_type | TEXT | `AUD` / `SBD` / `FM` / `MTX` |
+| source_label | TEXT | `'Audience'`, `'Soundboard'`, … |
+| format | TEXT | e.g. `'FLAC 16/44'`, `'SHN 16/44'` |
+| quality / quality_slug | TEXT | `'Very good'` / `'very-good'` |
+| info_hash | TEXT | Full 40-char hash (read from the `title` attribute; the page text truncates it) |
+| size_label / size_bytes | TEXT / INTEGER | `'1,006.42 MB'` and its parsed byte count |
+| n_files, n_sources | INTEGER | File count; sources circulating for the same show |
+| seeders, leechers, snatched | INTEGER | Swarm counts at last scrape |
+| freeleech, lb_verified | INTEGER | 0/1 flags |
+| taper, uploader, uploader_url | TEXT | Taper handle where credited; uploading member |
+| uploaded_label | TEXT | Site's coarse upload label |
+| added_at | TEXT | ISO-8601 from the listing `<time datetime>` |
+| lineage / lineage_json | TEXT | `' > '`-joined chain, plus the node array |
+| info_text | TEXT | The recording's info-file body |
+| setlist_json | TEXT | `[{track, song, song_url}]` |
+| files_json | TEXT | `[{name, size_label, size_bytes}]` — includes the .ffp/.md5 sidecar names |
+| siblings_json | TEXT | Other sources for the same show: `[{title, note, source_type, url, rec_id, is_current, size_label, seeders, snatched}]` |
+| spectrogram_url, preview_url | TEXT | `/storage/spectrograms/<id>.png`, `/storage/samples/<id>.mp3` |
+| torrent_url | TEXT | `/show/<id>/download` (personalised — embeds the member passkey) |
+| first_seen_at | TIMESTAMP | Preserved across refreshes |
+| last_seen_at | TIMESTAMP | Bumped on every upsert |
+
+Indexes: `idx_tuit_rec_lb(lb_number)`, `idx_tuit_rec_hash(info_hash)`, `idx_tuit_rec_date(date_str)`,
+`idx_tuit_rec_seen(added_at DESC)`.
+
+### `tuit_downloads` — TUIT torrent fetch/seed attempts (USER table)
+Mirrors `wtrf_downloads`, written by `tools/tuit_sync.py --fetch-torrents [--seed]`.
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| rec_id | INTEGER NOT NULL | Site recording fetched |
+| lb_number | INTEGER | LB number the recording claims |
+| torrent_path | TEXT | Local path of the downloaded .torrent |
+| seed_folder | TEXT | Collection folder the torrent was pointed at (`db.get_folders_for_lb()`) |
+| status | TEXT NOT NULL | `'pending'`, `'downloaded'`, `'qbt_added'`, `'no_local_files'`, `'failed'` (default `'pending'`) |
+| error | TEXT | Failure detail, or why a seed was refused |
+| attempted_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| qbt_added_at | TIMESTAMP | When the torrent was added to qBittorrent |
+
+Indexes: `idx_tuit_dl_rec(rec_id, attempted_at DESC)`, `idx_tuit_dl_status(status, attempted_at DESC)`.
 
 ### `lb_master` — Unified per-LB status/integrity record (MASTER table)
 The single source of truth for whether an LB number is public/private/missing/nonexistent;

@@ -1,4 +1,16 @@
 
+TODO-316: TUIT — decide whether to scrape the forum/wiki/requests surfaces
+Priority: Low
+Status: Open
+Added: 2026-08-19
+Description: The tracker also exposes /forum, /wiki, /requests, /collages, /songs, /tour, /venue and /stats, none of which backend/tuit_scraper.py touches. Worth deciding which carry lineage or taper intelligence worth mirroring before writing more parsers.
+
+TODO-315: TUIT — crawl the full 1,635-recording catalogue and diff it against lb_master
+Priority: Medium
+Status: Open
+Added: 2026-08-19
+Description: tools/tuit_sync.py --pages currently syncs only what is asked for; the remaining ~33 listing pages have never been crawled. Once mirrored, tuit_recordings.lb_number + info_hash + files_json can be diffed against lb_master/my_collection to find (a) shows TUIT has that the collection lacks, (b) checksum/lineage disagreements feeding TODO-299. Pace it like the wtrf crawl — small nightly batches at the 3s delay, not a single sweep.
+
 TODO-303: Locate Olof's bobtalk quotes in our audio and add a play button
 Priority: Medium
 Status: Open — BUILT 2026-08-07, re-geometried 2026-08-08; only the corpus-wide run remains

@@ -28,6 +28,20 @@ never deleted) / presence-check that syncs the DB flag.
 - **Fetching**: WTRF torrent search downloads matching torrents for missing
   LB items (`wtrf_downloads`); `crawl_missing` batch-crawls via SSE.
 
+## TUIT private tracker
+
+`tangledupintorrents.org` — a ~21-member private Bob Dylan tracker, 1,635
+recordings. Laravel; login is a CSRF `_token` POST, there is no JSON API.
+`backend/tuit_scraper.py` parses `/browse` rows and `/recordings/<id>` detail
+pages into `tuit_recordings` (every rendered field, list-shaped ones as JSON).
+`tools/tuit_sync.py` drives it: `--fetch-torrents` saves the personalised
+`.torrent`, `--seed` resolves the LB number to a folder via
+`db.get_folders_for_lb()` (my_collection first, folder_lb_link second) and adds
+it to qBittorrent for seeding — refused unless the torrent's root folder name
+matches the local folder, since a mismatch turns a seed into a download.
+Attempts land in `tuit_downloads`. Credentials: `SERVICE_TUIT`.
+**Pacing**: 3s between requests, small batches — this is a tiny private site.
+
 ## Archive.org
 
 Async single-LB uploads via IA S3 credentials: start → poll status (per-file
