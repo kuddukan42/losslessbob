@@ -56,7 +56,7 @@ Changed: tools/tuit_sync.py: --overlay makes the 100% gate a fallback instead of
 Added: tests/test_seed_overlay.py: 23 tests including the piece-boundary demotion rule, inode
   identity for hardlinks, refetch size rejection, and explicit collection-untouched assertions.
 
-[2026-08-19] — fix(backend): TUIT seeding must never write to a collection folder
+[2026-08-19] — fix(backend): BUG-325 — TUIT seeding must never write to a collection folder
 Fixed: tools/tuit_sync.py: --seed added LB-00707 to qBittorrent at 99.70%, which means the client
   would have downloaded the 10 absent files (4 missing text sidecars plus a partial .shn) straight
   into /mnt/DYLAN2/Concerts/1978/…(LB-00707). Caught by tj before any data moved — the torrent was

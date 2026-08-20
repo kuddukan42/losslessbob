@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-325: TUIT --seed added an incomplete torrent to qBittorrent, risking writes into a collection folder
+Status: Fixed
+File(s): tools/tuit_sync.py,backend/torrent_verify.py
+Reported: 2026-08-19
+Fixed: 2026-08-19
+Root cause: The seed path checked only that the torrent's root folder name matched a collection folder, never that the folder's contents actually satisfied the torrent. Folder-name equality was treated as a proxy for completeness, which it is not: TUIT torrents carry the LBF-* sidecars the curated collection does not keep, so a name-matching folder is routinely ~99.7% complete. torrent_root_name() only regex-peeked at info.name and could not see piece hashes, so nothing in the codebase could answer 'is this folder complete?'.
+Fix: Added backend/torrent_verify.py — a real bencode reader plus verify_folder(), which streams the folder through the torrent's SHA1 piece hashes read-only (zero-filling absent regions so covering pieces fail) and reports percent, missing files and size mismatches. It reproduced qBittorrent's 99.70% independently in 0.7s. Seeding now requires lb_status='public' (db.is_seedable_to_tracker) plus a 100% local verify before qBittorrent is contacted at all; --force-seed was removed. Where a folder is genuinely short, --overlay assembles a separate seed folder (audio hardlinked, sidecars copied or re-fetched) so the remainder can never land in the collection. Live torrent was stopped and removed with deleteFiles=false at downloaded=0; the folder was never modified.
+
 BUG-324: BUG-280 residue: 44 tapematch report/analysis title lines still show the +100y date
 Status: Fixed
 File(s): data/tapematch/runs/*/report.md,data/tapematch/runs/*/analysis.md
