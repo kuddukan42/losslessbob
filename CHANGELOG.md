@@ -1,3 +1,28 @@
+[2026-08-19] — fix(backend): TUIT seeding must never write to a collection folder
+Fixed: tools/tuit_sync.py: --seed added LB-00707 to qBittorrent at 99.70%, which means the client
+  would have downloaded the 10 absent files (4 missing text sidecars plus a partial .shn) straight
+  into /mnt/DYLAN2/Concerts/1978/…(LB-00707). Caught by tj before any data moved — the torrent was
+  stopped and removed with deleteFiles=false at downloaded=0, so the folder was never touched.
+  Seeding is now refused unless the folder verifies at exactly 100%.
+Added: backend/torrent_verify.py: a real bencode reader (the previous regex peek at info.name
+  could not see piece hashes) plus verify_folder(), which streams the folder through the torrent's
+  SHA1 piece hashes read-only, zero-filling absent regions so covering pieces fail. Reports
+  percent, missing files and size mismatches. Independently reproduced qBittorrent's 99.70% on
+  LB-00707 in 0.7s. Nothing in the module opens a file for writing.
+Added: backend/db.py is_seedable_to_tracker(): lb_status is the authority — only 'public' may be
+  seeded ('private'/'missing'/'nonexistent'/unknown are refused). Counterpart to
+  is_postable_to_forum(). A first draft also blocked on folder-path markers (PRIVATE LB,
+  NOTORRENT); tj ruled lb_status is the signal, so the path heuristics were dropped.
+Changed: tools/tuit_sync.py: --force-seed removed outright — it was the exact footgun. Seed status
+  'no_local_files' renamed 'not_seeded', now covering refusal by status, name mismatch or
+  incomplete verification, with the reason recorded in tuit_downloads.error.
+Added: tools/tuit_sync.py --set-credentials: prompts for username + password (getpass, no echo),
+  stores them in the keyring and verifies with a real login. For rotating the password without
+  putting it in a file or in shell history.
+Added: tests/test_torrent_verify.py: 30 tests over torrents built from real bytes with genuine
+  piece hashes — complete/missing/wrong-size/corrupted-byte/renamed-folder cases, plus assertions
+  that verification creates no files and changes no mtimes.
+
 [2026-08-19] — feat(scraper): TODO-314 — TUIT private-tracker integration (catalogue + seed)
 Added: backend/tuit_scraper.py: scraper for tangledupintorrents.org, a ~21-member private Bob
   Dylan tracker (Laravel; CSRF _token + session-cookie login, no JSON API — /api is 404). Parses

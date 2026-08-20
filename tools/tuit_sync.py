@@ -3,7 +3,18 @@
 Scrapes the newest recordings off ``/browse``, stores every field the site
 exposes in ``tuit_recordings``, and can optionally fetch the personalised
 ``.torrent`` and hand it to qBittorrent pointed at files already in the
-collection so the recording starts seeding instead of downloading.
+collection so the recording seeds without downloading anything.
+
+Seeding is gated three ways and is otherwise skipped, never forced:
+
+* ``lb_status`` must be 'public' (``db.is_seedable_to_tracker``);
+* a linked collection folder must exist whose name matches the torrent root;
+* the folder must hash to 100 % against the torrent's pieces, checked locally
+  and read-only by ``backend.torrent_verify`` before qBittorrent is contacted.
+
+The third gate is the important one: qBittorrent given a 99 %-complete torrent
+downloads the remainder *into* the collection folder. Curated folders are
+never modified, so an incomplete match is reported and dropped.
 
 Usage::
 
@@ -14,9 +25,12 @@ Usage::
     python tools/tuit_sync.py --fetch-torrents         # also save .torrent files
     python tools/tuit_sync.py --fetch-torrents --seed  # …and seed from collection
     python tools/tuit_sync.py --dry-run                # show the queue, no writes
+    python tools/tuit_sync.py --set-credentials        # store/rotate the password
 
 Run from the project root. Credentials come from the OS keyring
-(``losslessbob_tuit``); ``--username``/``--password`` override for a one-off.
+(``losslessbob_tuit``). ``--set-credentials`` prompts for them without echoing
+and verifies with a real login; ``--username``/``--password`` override for a
+one-off but land in your shell history.
 
 Politeness: TUIT is a ~21-member private tracker. The default 3s delay between
 requests is deliberate — do not lower it for bulk runs.
@@ -24,6 +38,7 @@ requests is deliberate — do not lower it for bulk runs.
 from __future__ import annotations
 
 import argparse
+import getpass
 import logging
 import sys
 from datetime import UTC, datetime
@@ -38,7 +53,14 @@ from backend import qbittorrent, tuit_scraper  # noqa: E402
 from backend.credentials import (  # noqa: E402
     SERVICE_QBT,
     SERVICE_QBT_KEY,
+    SERVICE_TUIT,
     get_credentials,
+    save_credentials,
+)
+from backend.torrent_verify import (  # noqa: E402
+    BencodeError,
+    read_torrent,
+    verify_folder,
 )
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -68,19 +90,61 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument("--seed", action="store_true",
                    help="With --fetch-torrents: locate the recording's files in "
                         "my_collection (then folder_lb_link) and add the torrent "
-                        "to qBittorrent for seeding.")
+                        "to qBittorrent for seeding — only when lb_status is "
+                        "'public' AND the folder already hashes to 100%%. "
+                        "Collection folders are never written to.")
     p.add_argument("--paused", action="store_true",
                    help="Add torrents to qBittorrent in a stopped state.")
-    p.add_argument("--force-seed", action="store_true",
-                   help="Add to qBittorrent even when the torrent's root folder "
-                        "name does not match the local folder. UNSAFE — "
-                        "qBittorrent will start downloading instead of seeding.")
+    p.add_argument("--set-credentials", action="store_true",
+                   help="Prompt for the TUIT username and password, store them "
+                        "in the OS keyring, verify them with a login, and exit. "
+                        "The password is never echoed, written to disk, or put "
+                        "in your shell history. Use this after rotating it.")
     p.add_argument("--username", default="", help="Override the stored username.")
-    p.add_argument("--password", default="", help="Override the stored password.")
+    p.add_argument("--password", default="",
+                   help="Override the stored password for one run. Prefer "
+                        "--set-credentials; an argument here lands in your "
+                        "shell history.")
     p.add_argument("--dry-run", action="store_true",
                    help="Print the queue and exit without writing to the DB.")
     p.add_argument("-v", "--verbose", action="store_true")
     return p
+
+
+def _set_credentials(delay: float) -> int:
+    """Prompt for TUIT credentials, store them in the keyring, verify by login.
+
+    Args:
+        delay: Seconds between the token fetch and the login POST.
+
+    Returns:
+        A process exit code — 0 when the stored credentials logged in.
+    """
+    current, _pw = get_credentials(SERVICE_TUIT)
+    prompt = f"TUIT username [{current}]: " if current else "TUIT username: "
+    username = input(prompt).strip() or current
+    if not username:
+        print("No username given.", file=sys.stderr)
+        return 1
+
+    password = getpass.getpass("TUIT password (not echoed): ")
+    if not password:
+        print("No password given.", file=sys.stderr)
+        return 1
+
+    stored = save_credentials(SERVICE_TUIT, username, password)
+    print(f"Stored: {stored.label}")
+    if "Session only" in stored.label:
+        print("WARNING: no OS keyring backend — this will not survive a reboot.",
+              file=sys.stderr)
+
+    session = tuit_scraper.get_session(username, password, delay=delay)
+    if session is None:
+        print("Login FAILED with these credentials — they are stored but wrong.",
+              file=sys.stderr)
+        return 1
+    print(f"Login OK as {username}.")
+    return 0
 
 
 def _qbt_seed(torrent_path: str, source_folder: str, paused: bool) -> dict:
@@ -117,19 +181,23 @@ def _qbt_seed(torrent_path: str, source_folder: str, paused: bool) -> dict:
     return result
 
 
-def _match_local_folder(lb_number: int | None, torrent_path: str,
-                        force: bool) -> tuple[str | None, str]:
-    """Find a collection folder whose name matches the torrent's root folder.
+def _find_seedable_folder(lb_number: int | None, torrent_path: str
+                          ) -> tuple[str | None, str]:
+    """Find a collection folder that may be seeded and is already complete.
 
-    qBittorrent only resumes an existing download when the torrent's root name
-    matches a directory inside ``save_path``. A mismatch silently turns a
-    seed into a fresh download, so a non-matching folder is rejected unless
-    ``force`` is set.
+    Three gates, all of which must pass before qBittorrent is told anything:
+
+    1. ``db.is_seedable_to_tracker()`` — lb_status must be 'public'.
+    2. A linked collection folder must exist on disk whose name matches the
+       torrent's root folder.
+    3. Every piece must hash correctly against that folder. An incomplete
+       folder is refused outright: handing qBittorrent a 99% torrent makes it
+       download the remainder *into* the collection folder, and curated
+       folders are never written to.
 
     Args:
         lb_number: LB number claimed by the recording.
         torrent_path: Local .torrent file.
-        force: Accept a name mismatch anyway.
 
     Returns:
         (folder_path or None, human-readable reason).
@@ -137,29 +205,36 @@ def _match_local_folder(lb_number: int | None, torrent_path: str,
     if lb_number is None:
         return None, "recording has no LB number"
 
-    folders = database.get_folders_for_lb(lb_number)
+    allowed, why = database.is_seedable_to_tracker(lb_number)
+    if not allowed:
+        return None, f"LB-{lb_number} not seedable ({why})"
+
+    folders = [f for f in database.get_folders_for_lb(lb_number) if Path(f).is_dir()]
     if not folders:
-        return None, f"no collection folder linked to LB-{lb_number}"
+        return None, f"no collection folder on disk for LB-{lb_number}"
 
-    root = tuit_scraper.torrent_root_name(torrent_path)
-    if root:
-        for folder in folders:
-            if Path(folder).name == root:
-                if not Path(folder).is_dir():
-                    continue
-                return folder, "root name matches"
+    try:
+        info = read_torrent(torrent_path)
+    except BencodeError as exc:
+        return None, f"unreadable torrent: {exc}"
 
-    existing = [f for f in folders if Path(f).is_dir()]
-    if not existing:
-        return None, f"linked folder(s) for LB-{lb_number} not on disk"
-    if force:
-        return existing[0], (
-            f"FORCED — torrent root {root!r} != folder {Path(existing[0]).name!r}"
+    candidates = [f for f in folders if Path(f).name == info.name]
+    if not candidates:
+        return None, (
+            f"torrent root {info.name!r} matches no linked folder "
+            f"(have {', '.join(Path(f).name for f in folders[:3])})"
         )
-    return None, (
-        f"torrent root {root!r} does not match linked folder "
-        f"{Path(existing[0]).name!r} (use --force-seed to override)"
-    )
+
+    best = ""
+    for folder in candidates:
+        result = verify_folder(info, folder)
+        if result.complete:
+            return folder, f"verified {result.summary()}"
+        best = result.summary()
+        if result.missing_files:
+            best += f"; first missing: {Path(result.missing_files[0]).name}"
+
+    return None, f"folder incomplete — {best}"
 
 
 def _sync_one(session, rec_id: int, row, args) -> str:
@@ -220,15 +295,13 @@ def _sync_one(session, rec_id: int, row, args) -> str:
         )
         return "downloaded"
 
-    folder, reason = _match_local_folder(
-        rec.lb_number, torrent_path, args.force_seed
-    )
+    folder, reason = _find_seedable_folder(rec.lb_number, torrent_path)
     if folder is None:
         database.add_tuit_download(
-            rec.rec_id, rec.lb_number, torrent_path, "no_local_files", error=reason
+            rec.rec_id, rec.lb_number, torrent_path, "not_seeded", error=reason
         )
-        logger.info("  seed: skipped — %s", reason)
-        return "no_local_files"
+        logger.info("  seed: skipped, folder untouched — %s", reason)
+        return "not_seeded"
 
     dl_id = database.add_tuit_download(
         rec.rec_id, rec.lb_number, torrent_path, "downloaded", seed_folder=folder
@@ -254,6 +327,9 @@ def main() -> int:
     args = _build_parser().parse_args()
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
+
+    if args.set_credentials:
+        return _set_credentials(args.delay)
 
     database.init_db()
 

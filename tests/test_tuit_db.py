@@ -189,6 +189,37 @@ class TestTuitDownloads:
         assert db.get_tuit_downloads(db_path=path)[0]["seed_folder"] == "/music/LB-00707"
 
 
+class TestIsSeedableToTracker:
+    def _set_status(self, db, path, lb: int, status: str) -> None:
+        with db.get_connection(path) as conn:
+            conn.execute("INSERT OR IGNORE INTO entries(lb_number, status) VALUES(?,?)",
+                         (lb, "ok"))
+            conn.execute(
+                "INSERT INTO lb_master(lb_number, lb_status) VALUES(?,?)"
+                " ON CONFLICT(lb_number) DO UPDATE SET lb_status=excluded.lb_status",
+                (lb, status))
+            conn.commit()
+
+    def test_public_is_allowed(self, dbmod):
+        db, path = dbmod
+        self._set_status(db, path, 707, "public")
+        assert db.is_seedable_to_tracker(707, path) == (True, None)
+
+    @pytest.mark.parametrize("status,reason", [
+        ("private", "lb_private"),
+        ("missing", "lb_missing"),
+        ("nonexistent", "lb_nonexistent"),
+    ])
+    def test_non_public_is_blocked(self, dbmod, status, reason):
+        db, path = dbmod
+        self._set_status(db, path, 707, status)
+        assert db.is_seedable_to_tracker(707, path) == (False, reason)
+
+    def test_unknown_lb_is_blocked(self, dbmod):
+        db, path = dbmod
+        assert db.is_seedable_to_tracker(424242, path) == (False, "status_unknown")
+
+
 class TestGetFoldersForLb:
     def test_prefers_my_collection_then_folder_lb_link(self, dbmod):
         db, path = dbmod
