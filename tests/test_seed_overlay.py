@@ -272,6 +272,38 @@ class TestBuildOverlay:
         assert result["refetched"] == 0
 
 
+class TestSourceFolderNamingIsIrrelevant:
+    """The overlay is created with the torrent's name and sources by basename,
+    so the collection folder may be named anything at all."""
+
+    def test_plans_from_a_differently_named_collection_folder(self, rig, tmp_path):
+        info, collection, sidecars, root = rig
+        renamed = collection.parent / "1974-01-01 Some Other Naming Scheme"
+        collection.rename(renamed)
+        plan = plan_overlay(info, renamed, root, [sidecars])
+        assert plan.count(FETCH) == 0
+        assert plan.count(LINK) == 2
+
+    def test_builds_and_verifies_from_a_differently_named_folder(self, rig):
+        info, collection, sidecars, root = rig
+        renamed = collection.parent / "Roskilde 29-6-1990-NTB No Torrent LB-13475"
+        collection.rename(renamed)
+        plan = plan_overlay(info, renamed, root, [sidecars])
+        build_overlay(plan)
+        # The overlay directory itself must carry the torrent's root name.
+        assert plan.target_dir.name == info.name
+        assert verify_overlay(info, plan).complete is True
+
+    def test_audio_is_still_hardlinked_from_the_renamed_folder(self, rig):
+        info, collection, sidecars, root = rig
+        renamed = collection.parent / "totally unrelated name"
+        collection.rename(renamed)
+        plan = plan_overlay(info, renamed, root, [sidecars])
+        build_overlay(plan)
+        assert os.stat(renamed / "t01.flac").st_ino == os.stat(
+            plan.target_dir / "t01.flac").st_ino
+
+
 class TestOverlayStatus:
     def test_healthy_overlay_shares_its_audio(self, rig):
         info, collection, sidecars, root = rig
