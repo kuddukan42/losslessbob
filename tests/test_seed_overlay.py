@@ -5,6 +5,7 @@ so several tests assert that explicitly rather than only checking the overlay.
 """
 import hashlib
 import os
+import shutil
 
 import pytest
 
@@ -15,6 +16,7 @@ from backend.seed_overlay import (
     REFETCH,
     build_overlay,
     collection_is_untouched,
+    overlay_status,
     plan_overlay,
     snapshot_folder,
     verify_overlay,
@@ -268,6 +270,63 @@ class TestBuildOverlay:
         result = build_overlay(plan, fetcher=None)
         assert result["skipped"] == 1
         assert result["refetched"] == 0
+
+
+class TestOverlayStatus:
+    def test_healthy_overlay_shares_its_audio(self, rig):
+        info, collection, sidecars, root = rig
+        plan = plan_overlay(info, collection, root, [sidecars])
+        build_overlay(plan)
+        status = overlay_status(plan.target_dir)
+        assert status.exists is True
+        assert status.n_files == 4
+        assert status.shared_bytes == 1300 + 1100     # the hardlinked audio
+        assert status.pinned_bytes > 0                # the copied sidecars
+        assert status.orphaned is False
+
+    def test_same_volume_rename_leaves_the_overlay_healthy(self, rig):
+        # Hardlinks follow the inode, so renaming the collection folder is a
+        # no-op for the overlay — this is why a rename needs no repair.
+        info, collection, sidecars, root = rig
+        plan = plan_overlay(info, collection, root, [sidecars])
+        build_overlay(plan)
+        collection.rename(collection.parent / "1974-01-01 Renamed (LB-00042)")
+        status = overlay_status(plan.target_dir)
+        assert status.orphaned is False
+        assert status.shared_bytes == 1300 + 1100
+        assert verify_overlay(info, plan).complete is True
+
+    def test_collection_delete_orphans_the_overlay(self, rig):
+        info, collection, sidecars, root = rig
+        plan = plan_overlay(info, collection, root, [sidecars])
+        build_overlay(plan)
+        for p in collection.iterdir():
+            p.unlink()
+        collection.rmdir()
+        status = overlay_status(plan.target_dir)
+        assert status.orphaned is True
+        assert status.shared_bytes == 0
+        assert status.pinned_bytes >= 1300 + 1100
+        # The data survives — that is exactly why the space is not reclaimed.
+        assert verify_overlay(info, plan).complete is True
+
+    def test_cross_volume_move_orphans_the_overlay(self, rig, tmp_path):
+        # A cross-device move is copy + rmtree, which is a delete as far as the
+        # original inodes are concerned.
+        info, collection, sidecars, root = rig
+        plan = plan_overlay(info, collection, root, [sidecars])
+        build_overlay(plan)
+        other_volume = tmp_path / "other" / collection.name
+        other_volume.parent.mkdir(parents=True)
+        shutil.copytree(collection, other_volume)
+        shutil.rmtree(collection)
+        assert overlay_status(plan.target_dir).orphaned is True
+
+    def test_missing_overlay_reports_not_exists(self, tmp_path):
+        status = overlay_status(tmp_path / "never_built")
+        assert status.exists is False
+        assert status.orphaned is False
+        assert "gone" in status.summary()
 
 
 class TestSnapshotHelpers:

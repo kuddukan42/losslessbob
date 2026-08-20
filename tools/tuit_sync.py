@@ -61,6 +61,7 @@ from backend.seed_overlay import (  # noqa: E402
     build_overlay,
     collection_is_untouched,
     http_fetch,
+    overlay_status,
     plan_overlay,
     snapshot_folder,
 )
@@ -124,6 +125,11 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument("--allow-partial-overlay", action="store_true",
                    help="Seed an overlay that is not yet 100%%. The remainder "
                         "downloads into the overlay — never the collection.")
+    p.add_argument("--check-overlays", action="store_true",
+                   help="List every recorded seed overlay and flag any whose "
+                        "collection folder was deleted or moved to another "
+                        "drive, leaving the overlay holding the only copy of "
+                        "those bytes. Exits 1 if any are orphaned.")
     p.add_argument("--set-credentials", action="store_true",
                    help="Prompt for the TUIT username and password, store them "
                         "in the OS keyring, verify them with a login, and exit. "
@@ -173,6 +179,66 @@ def _set_credentials(delay: float) -> int:
               file=sys.stderr)
         return 1
     print(f"Login OK as {username}.")
+    return 0
+
+
+def _check_overlays() -> int:
+    """Report every recorded seed overlay and whether it has been orphaned.
+
+    A same-volume collection rename leaves an overlay perfectly healthy — the
+    hardlinks follow the inode. A delete or cross-volume move drops the link
+    count to 1, and the overlay silently becomes the only holder of those
+    bytes, so the disk space is never reclaimed. That is what this flags.
+
+    Returns:
+        A process exit code — 1 when at least one overlay looks orphaned.
+    """
+    # get_tuit_downloads() is newest-first, so the first row per LB is the seed
+    # currently in force; earlier attempts have been superseded.
+    latest: dict[int, str] = {}
+    for row in database.get_tuit_downloads():
+        folder = row.get("seed_folder")
+        lb_number = row.get("lb_number")
+        if folder and lb_number is not None and lb_number not in latest:
+            latest[lb_number] = folder
+
+    if not latest:
+        print("No seed overlays recorded.")
+        return 0
+
+    collection_roots = [
+        m["root_path"] for m in database.get_collection_mounts() if m.get("root_path")
+    ]
+
+    print(f"\n{len(latest)} recorded seed folder(s):\n")
+    orphans = 0
+    pinned_total = 0
+    for lb_number, folder in sorted(latest.items()):
+        status = overlay_status(folder)
+        label = f"LB-{lb_number:05d}"
+        kind = (
+            "direct" if any(folder.startswith(r) for r in collection_roots)
+            else "overlay"
+        )
+        if not status.exists:
+            print(f"  {label}  GONE      {folder}")
+            continue
+        flag = "ORPHANED" if status.orphaned else "ok      "
+        if status.orphaned:
+            orphans += 1
+            pinned_total += status.pinned_bytes
+        print(f"  {label}  {flag}  [{kind}] {folder}")
+        print(f"           {status.summary()}")
+
+    if orphans:
+        print(
+            f"\n{orphans} overlay(s) now hold the only copy of their audio "
+            f"({pinned_total / 1e9:.2f} GB). Their collection folder was deleted "
+            f"or moved to another drive. Deleting an overlay reclaims that space "
+            f"— but check you still have the recording elsewhere first."
+        )
+        return 1
+    print("\nAll overlays still share their audio with the collection.")
     return 0
 
 
@@ -458,6 +524,9 @@ def main() -> int:
         return _set_credentials(args.delay)
 
     database.init_db()
+
+    if args.check_overlays:
+        return _check_overlays()
 
     session = tuit_scraper.get_session(
         args.username, args.password, delay=args.delay

@@ -364,6 +364,130 @@ def collection_is_untouched(
     return sorted(set(changed))
 
 
+@dataclass
+class OverlayStatus:
+    """How an existing overlay relates to the collection right now."""
+
+    path: Path
+    exists: bool = False
+    n_files: int = 0
+    shared_bytes: int = 0   # files whose inode has another name (the collection)
+    pinned_bytes: int = 0   # files the overlay is the sole holder of
+
+    @property
+    def orphaned(self) -> bool:
+        """True when the overlay holds audio nothing else references.
+
+        After a same-volume rename the overlay is untouched and still shares
+        every inode. After a delete or a cross-volume move (copy + rmtree) the
+        link count drops to 1 and the overlay silently keeps those bytes alive,
+        so the space is never reclaimed.
+        """
+        return self.exists and self.pinned_bytes > self.shared_bytes
+
+    def summary(self) -> str:
+        """Return a one-line human-readable summary."""
+        if not self.exists:
+            return "overlay directory is gone"
+        return (
+            f"{self.n_files} files, {self.shared_bytes / 1e6:.1f} MB shared with "
+            f"the collection, {self.pinned_bytes / 1e6:.1f} MB held only here"
+        )
+
+
+def overlay_status(overlay_dir: str | Path) -> OverlayStatus:
+    """Report whether an overlay still shares its bytes with the collection.
+
+    Uses link counts rather than paths, so it stays correct after the
+    collection folder is renamed or moved within its volume.
+
+    Args:
+        overlay_dir: The overlay folder to inspect.
+
+    Returns:
+        An OverlayStatus.
+    """
+    path = Path(overlay_dir)
+    status = OverlayStatus(path=path)
+    try:
+        entries = [p for p in path.iterdir() if p.is_file()]
+    except OSError:
+        return status
+
+    status.exists = True
+    for item in entries:
+        stat = item.stat()
+        status.n_files += 1
+        if stat.st_nlink > 1:
+            status.shared_bytes += stat.st_size
+        else:
+            status.pinned_bytes += stat.st_size
+    return status
+
+
+def find_overlays_for_lb(lb_number: int, db_path=None) -> list[Path]:
+    """Return recorded overlay/seed folders for an LB number.
+
+    Reads ``tuit_downloads.seed_folder``, so it only knows about seeds this
+    tool created.
+
+    Args:
+        lb_number: LB number to look up.
+        db_path: Optional DB path override.
+
+    Returns:
+        Distinct seed folder paths, newest attempt first.
+    """
+    from backend import db  # imported here to keep module import cheap
+
+    with db.get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT DISTINCT seed_folder FROM tuit_downloads "
+            " WHERE lb_number=? AND seed_folder IS NOT NULL AND seed_folder <> ''"
+            " ORDER BY attempted_at DESC",
+            (lb_number,),
+        ).fetchall()
+    return [Path(r[0]) for r in rows]
+
+
+def warn_if_seeded(lb_number: int, action: str, db_path=None) -> list[str]:
+    """Log a warning when an LB about to be moved or deleted has live seeds.
+
+    A same-volume rename is harmless — hardlinks follow the inode. A delete or
+    cross-volume move is not: the overlay keeps the old bytes alive, so the
+    space is never reclaimed and the seed silently stops shadowing the
+    collection copy.
+
+    Args:
+        lb_number: LB number being operated on.
+        action: Short description used in the log line.
+        db_path: Optional DB path override.
+
+    Returns:
+        The overlay paths that were warned about (empty when there are none).
+    """
+    try:
+        overlays = find_overlays_for_lb(lb_number, db_path)
+    except Exception as exc:  # never let bookkeeping block a file operation
+        logger.debug("warn_if_seeded: lookup failed for LB-%s: %s", lb_number, exc)
+        return []
+
+    warned: list[str] = []
+    for overlay in overlays:
+        status = overlay_status(overlay)
+        if not status.exists:
+            continue
+        warned.append(str(overlay))
+        logger.warning(
+            "LB-%05d is being %s but is seeded from %s (%s). After a delete or "
+            "cross-volume move that overlay holds the only copy of those bytes, "
+            "so the space is not reclaimed — run "
+            "'tools/tuit_sync.py --check-overlays' afterwards.",
+            lb_number, action, overlay, status.summary(),
+        )
+    return warned
+
+
 def snapshot_folder(folder: str | Path) -> dict[str, tuple[int, int]]:
     """Return {filename: (size, mtime_ns)} for every file directly in a folder.
 

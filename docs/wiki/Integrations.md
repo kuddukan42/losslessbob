@@ -54,6 +54,14 @@ size. Any collection file sharing a piece with unresolved data is copied rather
 than linked, so a client write can never reach a collection inode. LB-00707
 assembles to a verified 100% for 2.3 MB of extra disk on a 1.06 GB recording.
 
+**Overlays and collection moves**: hardlinks follow the inode, so renaming or
+moving a collection folder *within* its drive leaves the overlay healthy — no
+repair needed. A delete, or a cross-volume move (`filer.py` falls back to
+copy + `rmtree`), drops the link count to 1 and the overlay silently becomes
+the only holder of those bytes, so the space is never reclaimed. `filer.py`
+warns via `seed_overlay.warn_if_seeded()` before that `rmtree`, and
+`tools/tuit_sync.py --check-overlays` audits every recorded seed folder.
+
 Attempts land in `tuit_downloads`. Credentials: `SERVICE_TUIT`, set or rotated
 with `tools/tuit_sync.py --set-credentials` (prompts, no echo).
 **Pacing**: 3s between requests, small batches — this is a tiny private site.
