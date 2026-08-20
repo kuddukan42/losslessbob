@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-314: TUIT tracker integration — scraper, catalogue mirror, qBittorrent seeding
+Priority: Medium
+Status: Done
+Added: 2026-08-19
+Closed: 2026-08-19
+Description: Scrape tangledupintorrents.org (private Bob Dylan tracker, 1,635 recordings) into tuit_recordings/tuit_downloads; fetch personalised torrents and seed from the existing collection via qBittorrent. backend/tuit_scraper.py + tools/tuit_sync.py.
+Shipped: backend/tuit_scraper.py (login, /browse + /recordings parsers, torrent fetch, bencode root-name read), tuit_recordings/tuit_downloads tables + accessors, db.get_folders_for_lb(), tools/tuit_sync.py CLI with --fetch-torrents/--seed, 58 tests. Verified end to end: newest 5 recordings stored, LB-00707 torrent seeded from the collection at 99.7% (all audio matched). Not covered: the /forum, /wiki, /requests, /collages and /stats surfaces, and no backlog crawl of the remaining ~33 listing pages.
+
 TODO-313: Master taper list curation on /taper-review
 Priority: Medium
 Status: Done

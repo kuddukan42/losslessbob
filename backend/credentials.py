@@ -17,6 +17,7 @@ SERVICE_QBT     = "losslessbob_qbittorrent"
 SERVICE_QBT_KEY = "losslessbob_qbittorrent_apikey"
 SERVICE_WTRF    = "losslessbob_wtrf"
 SERVICE_IA      = "losslessbob_archive_org"
+SERVICE_TUIT    = "losslessbob_tuit"
 
 # In-session credential cache (cleared when the process exits)
 _session: dict[str, tuple[str, str]] = {}
@@ -29,6 +30,7 @@ _SECRET_MAP: dict[str, tuple[str, str]] = {
     SERVICE_QBT:     ("qbt_username",    "qbt_password"),
     SERVICE_QBT_KEY: ("qbt_apikey_user", "qbt_apikey"),
     SERVICE_WTRF:    ("wtrf_username",   "wtrf_password"),
+    SERVICE_TUIT:    ("tuit_username",   "tuit_password"),
 }
 
 

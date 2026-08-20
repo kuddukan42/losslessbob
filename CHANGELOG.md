@@ -1,3 +1,37 @@
+[2026-08-19] — feat(scraper): TODO-314 — TUIT private-tracker integration (catalogue + seed)
+Added: backend/tuit_scraper.py: scraper for tangledupintorrents.org, a ~21-member private Bob
+  Dylan tracker (Laravel; CSRF _token + session-cookie login, no JSON API — /api is 404). Parses
+  two surfaces: /browse listing rows (source type, date, venue, LB number, lineage, format,
+  quality, swarm counts, taper, uploader, added-time; 1,635 recordings at 50/page) and
+  /recordings/<id> detail pages (full info hash from the title attribute, size, file list with
+  per-file sizes, setlist, sibling sources for the same show, info-file text, spectrogram and
+  preview URLs, /show/<id>/download torrent link). merge_row_into_recording() reconciles the two,
+  with the listing authoritative for taper and freeleech. torrent_root_name() reads info.name via
+  a minimal bencode scan so a fetched torrent can be name-matched against a collection folder.
+  Every request is separated by a 3s default delay — the site's robots.txt is a blanket
+  Disallow whose own comment scopes it to search indexes, and /rules + /terms carry no
+  prohibition on automated access, but a 21-member tracker gets human pacing regardless.
+Added: backend/db.py: tuit_recordings (one row per site recording id; every rendered field kept,
+  list-shaped fields as JSON blobs, first_seen_at preserved across refreshes) and tuit_downloads
+  (fetch/seed attempts, mirroring wtrf_downloads) plus accessors upsert_tuit_recording,
+  get_tuit_recording(s), add/update/get_tuit_downloads.
+Added: backend/db.py: get_folders_for_lb() — resolves an LB number to on-disk folders, reading
+  my_collection.disk_path (16,610 rows) first and folder_lb_link (228) second. folder_lb_link
+  alone was not enough: it only covers freshly downloaded folders, not the filed collection.
+Added: tools/tuit_sync.py: CLI to sync the newest N recordings (default 5), whole listing pages,
+  or specific ids; --fetch-torrents saves the personalised .torrent; --seed then locates the
+  local files and hands the torrent to qBittorrent via add_torrent_for_seeding, tagged "tuit".
+  A seed is refused unless the torrent's root folder name matches the local folder name —
+  a mismatch silently turns a seed into a fresh download — with --force-seed to override.
+Added: tests/test_tuit_scraper.py, tests/test_tuit_db.py: 58 tests over hand-written HTML
+  fixtures (no scraped page with a session token is committed) and temp-file DBs.
+Changed: backend/credentials.py: SERVICE_TUIT added, with a /run/secrets mapping like WTRF.
+  Credentials imported into the OS keyring and the plaintext tuit.cred deleted.
+Changed: .gitignore: *.cred — tuit.cred was sitting untracked and unignored in the project root.
+Verified: logged in as kuddukan, synced the newest 5 recordings (every column populated), fetched
+  LB-00707's torrent and added it to qBittorrent — it matched the collection folder and came up
+  at 99.7%, all 26 .shn audio files recognised, only text sidecars outstanding.
+
 [2026-08-19] — chore(docs): 50-run tapematch batch fanned out to subagents; BUG-324 title residue
 Changed: .claude/commands/tapematch-batch.md: removed the false claim that subagents hit a hard
   Write-tool block on .md files — the only PreToolUse hook in .claude/settings.json is a path

@@ -91,3 +91,7 @@ tests/pipeline_smoke_results.txt
 # numba JIT cache written when tests import librosa directly (cli.py routes
 # its own cache to NUMBA_CACHE_DIR; pytest collection does not).
 .numba_cache/
+
+# Plaintext site credentials — never commit
+tuit.cred
+*.cred
