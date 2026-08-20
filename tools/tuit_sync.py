@@ -317,25 +317,69 @@ def _find_seedable_folder(lb_number: int | None, torrent_path: str, args
     except BencodeError as exc:
         return None, f"unreadable torrent: {exc}"
 
-    candidates = [f for f in folders if Path(f).name == info.name]
-    if not candidates:
-        return None, (
-            f"torrent root {info.name!r} matches no linked folder "
-            f"(have {', '.join(Path(f).name for f in folders[:3])})"
-        )
+    # Seeding the collection folder in place needs its name to equal the torrent
+    # root, since a client resolves files as <save_path>/<root>/… An overlay is
+    # created *with* the torrent's name and sources files by basename, so there
+    # the collection folder may be named anything.
+    named = [f for f in folders if Path(f).name == info.name]
 
     best = ""
-    for folder in candidates:
+    for folder in named:
         result = verify_folder(info, folder)
         if result.complete:
-            return folder, f"verified {result.summary()}"
+            return folder, f"verified in place, {result.summary()}"
         best = result.summary()
         if result.missing_files:
             best += f"; first missing: {Path(result.missing_files[0]).name}"
 
     if not args.overlay:
+        if not named:
+            return None, (
+                f"torrent root {info.name!r} matches no linked folder "
+                f"(have {', '.join(Path(f).name for f in folders[:3])}) "
+                f"— use --overlay to seed regardless of folder naming"
+            )
         return None, f"folder incomplete — {best} (use --overlay to assemble one)"
-    return _build_seed_overlay(info, candidates[0], args, best)
+
+    source = named[0] if named else _best_source_folder(info, folders)
+    if source is None:
+        return None, (
+            f"no linked folder shares enough files with the torrent "
+            f"(have {', '.join(Path(f).name for f in folders[:3])})"
+        )
+    return _build_seed_overlay(info, source, args, best or "name mismatch")
+
+
+def _best_source_folder(info, folders: list[str]) -> str | None:
+    """Pick the collection folder that supplies the most of a torrent's audio.
+
+    Used when no folder is named after the torrent root — the uploader's naming
+    rarely matches the collection's. Selection is by content, not by name.
+
+    Args:
+        info: Parsed torrent metadata.
+        folders: Candidate collection folders, all known to exist.
+
+    Returns:
+        The best-matching folder, or None when none supplies any audio.
+    """
+    wanted = {
+        Path(p).name for p, _s in info.files
+        if Path(p).suffix.lower() in (".flac", ".shn", ".wav", ".ape")
+    }
+    if not wanted:
+        wanted = {Path(p).name for p, _s in info.files}
+
+    best_folder, best_hits = None, 0
+    for folder in folders:
+        try:
+            have = {p.name for p in Path(folder).iterdir() if p.is_file()}
+        except OSError:
+            continue
+        hits = len(wanted & have)
+        if hits > best_hits:
+            best_folder, best_hits = folder, hits
+    return best_folder
 
 
 def _overlay_root_for(source_folder: Path, override: str) -> Path:

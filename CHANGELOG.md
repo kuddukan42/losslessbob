@@ -1,3 +1,19 @@
+[2026-08-19] — fix(backend): overlay seeding must not require matching folder names
+Fixed: tools/tuit_sync.py: the torrent-root/folder name match was applied to the overlay path as
+  well as the direct path, and wrongly — an overlay is *created* with the torrent's root name and
+  sources files by basename, so the collection folder may be named anything. The check is a
+  leftover from the pre-overlay design, where a client resolving <save_path>/<root>/… genuinely
+  did need the names to agree. It rejected 5 of 5 real recordings whose audio matched 100%
+  (19/19, 19/19, 19/19, 20/20, 20/20) purely because the uploader's folder naming differs from
+  the collection's. Name matching now gates only the in-place path.
+Added: tools/tuit_sync.py _best_source_folder(): when no folder carries the torrent's name, the
+  source is chosen by content — the linked folder supplying the most of the torrent's audio.
+Verified: 6 recordings now seeding from overlays across DYLAN1/DYLAN2 — 4.09 GB of audio shared
+  by hardlink for 31.4 MB of actual disk. Two are at 99.83%/99.92% pending 0.7 MB of uploader
+  extras (JPEGs, Thumbs.db) that exist neither locally nor on losslessbob.com; taken with
+  --allow-partial-overlay so the remainder downloads into the overlay. Every collection folder
+  untouched, qBittorrent downloaded=0 on all six.
+
 [2026-08-19] — feat(backend): detect seed overlays orphaned by a collection move or delete
 Added: backend/seed_overlay.py overlay_status() / find_overlays_for_lb() / warn_if_seeded():
   a hardlink follows the inode, so renaming or moving a collection folder *within* its volume
