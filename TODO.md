@@ -1,4 +1,10 @@
 
+TODO-317: File the 1,976 unrouted my_collection folders into the routed tree
+Priority: Medium
+Status: Open
+Added: 2026-08-20
+Description: my_collection rows whose disk_path sits outside the collection_mounts x collection_routes roots. Work package: instructions/UNROUTED_COLLECTION_BACKLOG.md (scope, phases, decisions signed off by tj 2026-08-17). 1,976 in-scope folders, ~1.36 TB: PRIVATE LB / Private Clean Ups at status=ok (1,205, formerly private and now public, drop the -NFT suffix), /mnt/DYLAN1 LB HOPPER (753), /mnt/DYLAN2 LB HOPPER (4), LK Collections (9, in scope but excluded from filing per Phase 5), Double LBs (5). 1,968 resolve cleanly, 8 blocked on no_date. Zero destination collisions against the filed tree. Out of scope: the 1,171 deliberately-private status=private rows and 4 status=missing. Audit/dry-run scripts tools/_route_audit.py and tools/_route_dryrun.py are throwaway - delete them when this closes.
+
 TODO-316: TUIT — decide whether to scrape the forum/wiki/requests surfaces
 Priority: Low
 Status: Open

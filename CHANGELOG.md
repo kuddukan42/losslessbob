@@ -1,3 +1,28 @@
+[2026-08-20] — chore(docs): third 50-run tapematch batch; unrouted-collection work package filed
+Changed: data/tapematch/runs/ (gitignored): a third 50-run batch, same 5x10 sonnet fan-out over
+  disjoint dir lists prepared by the parent session; 32/50 flagged for review. Every dir in the
+  batch came back 1/1 on next_batch.py's date-group column, so the partition could not split a
+  date. One agent dropped on an API error with 9 of its 10 written; resuming it by name finished
+  the tenth from its own transcript, no re-prep needed. Backlog now 1065 dirs / 902 dates
+  (attention 246, clear 819). Sync clean: 3060 dates, 9113 families, 12011 recordings, 0 errors.
+  The dominant flag pattern this round is a taper's own "same source as LB-xxxxx" claim sitting
+  against a near-zero correlation, plus several unexplained [INCOMPLETE] flags.
+Changed: tools/tapematch/CONTRADICTED_EMB_SECOND_PASS.md: regenerated from the current
+  observations.db (uncommitted from an earlier session, recorded here). The corpus shrank
+  1822 -> 1766 pairs as re-runs superseded old observations, and Tier A rule_d-qualifying went
+  46 -> 0 — the 34 alignment_failure and 10 unexplained pairs that previously cleared the 0.75
+  bar no longer do. The document's verdict is unchanged and now rests on a cleaner base: the
+  contradicted corpus remains statistically indistinguishable from the curator-silent control,
+  and the unexplained bucket is 90.0% control-like.
+Added: instructions/UNROUTED_COLLECTION_BACKLOG.md (written 2026-08-17, never committed):
+  work package for the 1,976 in-scope my_collection folders whose disk_path sits outside the
+  routed mount roots — ~1.36 TB across PRIVATE LB (now-public, status=ok), both LB HOPPER trees,
+  LK Collections, and Double LBs. 1,968 resolve cleanly, 8 blocked no_date, zero destination
+  collisions. Filed as TODO-317; status remains not started.
+Added: tools/_route_audit.py, tools/_route_dryrun.py: read-only audit and filing dry-run behind
+  that package (routed-vs-unrouted census; canonical name + destination for every unrouted
+  folder, to .debug/unrouted_plan.csv). Throwaway by convention — delete when TODO-317 closes.
+
 [2026-08-19] — fix(backend): overlay seeding must not require matching folder names
 Fixed: tools/tuit_sync.py: the torrent-root/folder name match was applied to the overlay path as
   well as the direct path, and wrongly — an overlay is *created* with the torrent's root name and
