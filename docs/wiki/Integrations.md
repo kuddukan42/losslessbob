@@ -43,6 +43,17 @@ name must match the folder name, and `backend/torrent_verify.py` must hash the
 folder to 100% locally and read-only. An incomplete folder is dropped, never
 forced — qBittorrent handed a 99% torrent downloads the rest *into* the
 collection folder, which is exactly what must not happen.
+`--overlay` turns gate 3 from a refusal into a fallback. TUIT torrents include
+the `LBF-*` sidecars the collection folder does not keep, so a folder typically
+verifies at ~99.7%. `backend/seed_overlay.py` assembles a third location
+(`<mount>/TUIT Seeds/<name>`, outside the `…/Concerts` scanner roots): audio
+**hardlinked** from the collection (same inode, no extra disk), sidecars copied
+from `data/site/files`, and — with `--refetch-sidecars` — re-downloaded from
+losslessbob.com when the crawl's saved HTML was link-rewritten to the wrong
+size. Any collection file sharing a piece with unresolved data is copied rather
+than linked, so a client write can never reach a collection inode. LB-00707
+assembles to a verified 100% for 2.3 MB of extra disk on a 1.06 GB recording.
+
 Attempts land in `tuit_downloads`. Credentials: `SERVICE_TUIT`, set or rotated
 with `tools/tuit_sync.py --set-credentials` (prompts, no echo).
 **Pacing**: 3s between requests, small batches — this is a tiny private site.

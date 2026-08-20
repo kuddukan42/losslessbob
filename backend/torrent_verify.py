@@ -128,6 +128,27 @@ class TorrentInfo:
         """Return the expected SHA1 for one piece index."""
         return self.pieces[index * 20:(index + 1) * 20]
 
+    def file_piece_ranges(self) -> list[tuple[int, int]]:
+        """Return the inclusive (first_piece, last_piece) each file spans.
+
+        Torrent files are laid out as one contiguous byte stream, so a piece
+        can straddle a file boundary. Callers use this to find which files
+        share a piece with a file they do not have — those are the only files
+        a client can write to while completing the torrent.
+
+        Returns:
+            One (first, last) tuple per entry in ``files``, same order. A
+            zero-length file yields a range covering its single offset.
+        """
+        ranges: list[tuple[int, int]] = []
+        offset = 0
+        for _path, size in self.files:
+            first = offset // self.piece_length
+            last = max(first, (offset + max(size, 1) - 1) // self.piece_length)
+            ranges.append((first, last))
+            offset += size
+        return ranges
+
 
 def read_torrent(torrent_path: str | Path) -> TorrentInfo:
     """Parse a .torrent file.

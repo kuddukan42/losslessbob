@@ -1,3 +1,28 @@
+[2026-08-19] — feat(backend): seed TUIT torrents from an overlay, collection untouched
+Added: backend/seed_overlay.py: builds a seedable folder outside the collection so a recording
+  can seed at 100% without a byte being written to curated files. Audio is hardlinked from the
+  collection (same inode — 1,059.9 MB cost nothing on LB-00707); LBF sidecars are copied from
+  data/site/files; anything still short is left to the swarm and lands in the overlay. Overlays go
+  to <mount>/TUIT Seeds — the source's own filesystem, since the drives are separate NTFS volumes
+  and hardlinks cannot cross a mount, and outside the …/Concerts roots in collection_mounts so the
+  disk scanner will not index them as collection folders.
+  The subtle part: a torrent piece can straddle a file boundary, so a file next to missing data
+  can be written to while the client completes that piece. plan_overlay() computes the piece span
+  of every file and demotes any hardlink that shares a piece with unresolved data to a copy, so a
+  client write can never reach a collection inode. build_overlay() snapshots the source and the
+  caller re-checks it afterwards; the run aborts if anything moved.
+Added: backend/db.py get_site_file_urls(): maps LBF filenames to their original losslessbob.com
+  URLs from site_inventory. The crawl rewrote links inside saved HTML, so data/site/files holds
+  2,412,606 B where the torrent wants 2,281,077 B (the row's local_sha256 != body_sha256 flags
+  exactly this). Re-fetching the URL returned a byte-exact original.
+Changed: tools/tuit_sync.py: --overlay makes the 100% gate a fallback instead of a refusal, with
+  --overlay-root, --refetch-sidecars, --max-fetch-mb (default 25) and --allow-partial-overlay.
+  Verified end to end on LB-00707: 32 hardlinked, 3 copied, 1 re-fetched, 0 left to the swarm →
+  overlay verified 100%, added to qBittorrent, state stalledUP with downloaded=0. The collection
+  folder still has its original 32 files and none of the 4 sidecars.
+Added: tests/test_seed_overlay.py: 23 tests including the piece-boundary demotion rule, inode
+  identity for hardlinks, refetch size rejection, and explicit collection-untouched assertions.
+
 [2026-08-19] — fix(backend): TUIT seeding must never write to a collection folder
 Fixed: tools/tuit_sync.py: --seed added LB-00707 to qBittorrent at 99.70%, which means the client
   would have downloaded the 10 absent files (4 missing text sidecars plus a partial .shn) straight

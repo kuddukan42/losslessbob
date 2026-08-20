@@ -57,11 +57,20 @@ from backend.credentials import (  # noqa: E402
     get_credentials,
     save_credentials,
 )
+from backend.seed_overlay import (  # noqa: E402
+    build_overlay,
+    collection_is_untouched,
+    http_fetch,
+    plan_overlay,
+    snapshot_folder,
+)
 from backend.torrent_verify import (  # noqa: E402
     BencodeError,
     read_torrent,
     verify_folder,
 )
+
+SIDECAR_DIR = _project_root / "data" / "site" / "files"
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger("tuit_sync")
@@ -95,6 +104,26 @@ def _build_parser() -> argparse.ArgumentParser:
                         "Collection folders are never written to.")
     p.add_argument("--paused", action="store_true",
                    help="Add torrents to qBittorrent in a stopped state.")
+    p.add_argument("--overlay", action="store_true",
+                   help="When the collection folder is not 100%%, assemble a "
+                        "separate seed folder instead of giving up: audio "
+                        "hardlinked from the collection (no extra disk space), "
+                        "LBF sidecars copied from data/site/files. The "
+                        "collection is never written to.")
+    p.add_argument("--overlay-root", default="",
+                   help="Where overlays are created. Default <mount>/TUIT Seeds, "
+                        "chosen on the source's own filesystem so hardlinks work.")
+    p.add_argument("--refetch-sidecars", action="store_true",
+                   help="With --overlay: re-download sidecars from "
+                        "losslessbob.com when the crawl's stored copy is the "
+                        "wrong size (saved HTML was link-rewritten). Often the "
+                        "difference between 99.7%% and a fully local 100%%.")
+    p.add_argument("--max-fetch-mb", type=float, default=25.0,
+                   help="Refuse an overlay that would still leave more than this "
+                        "many MB for the swarm to download (default 25).")
+    p.add_argument("--allow-partial-overlay", action="store_true",
+                   help="Seed an overlay that is not yet 100%%. The remainder "
+                        "downloads into the overlay — never the collection.")
     p.add_argument("--set-credentials", action="store_true",
                    help="Prompt for the TUIT username and password, store them "
                         "in the OS keyring, verify them with a login, and exit. "
@@ -181,7 +210,7 @@ def _qbt_seed(torrent_path: str, source_folder: str, paused: bool) -> dict:
     return result
 
 
-def _find_seedable_folder(lb_number: int | None, torrent_path: str
+def _find_seedable_folder(lb_number: int | None, torrent_path: str, args
                           ) -> tuple[str | None, str]:
     """Find a collection folder that may be seeded and is already complete.
 
@@ -195,9 +224,13 @@ def _find_seedable_folder(lb_number: int | None, torrent_path: str
        download the remainder *into* the collection folder, and curated
        folders are never written to.
 
+    With ``--overlay``, gate 3 becomes a fallback rather than a refusal: an
+    overlay folder is assembled elsewhere and seeded from instead.
+
     Args:
         lb_number: LB number claimed by the recording.
         torrent_path: Local .torrent file.
+        args: Parsed CLI arguments.
 
     Returns:
         (folder_path or None, human-readable reason).
@@ -234,7 +267,100 @@ def _find_seedable_folder(lb_number: int | None, torrent_path: str
         if result.missing_files:
             best += f"; first missing: {Path(result.missing_files[0]).name}"
 
-    return None, f"folder incomplete — {best}"
+    if not args.overlay:
+        return None, f"folder incomplete — {best} (use --overlay to assemble one)"
+    return _build_seed_overlay(info, candidates[0], args, best)
+
+
+def _overlay_root_for(source_folder: Path, override: str) -> Path:
+    """Choose where the overlay lives — same filesystem as the source.
+
+    Hardlinks cannot cross a mount, and the drives here are separate NTFS
+    volumes, so the overlay is placed at ``<mount>/TUIT Seeds`` by default.
+    The directory sits outside the ``…/Concerts`` roots in
+    ``collection_mounts``, so the disk scanner will not index it as collection.
+
+    Args:
+        source_folder: The collection folder being seeded from.
+        override: An explicit root from --overlay-root, or "".
+
+    Returns:
+        The overlay root directory.
+    """
+    if override:
+        return Path(override)
+    parts = source_folder.resolve().parts
+    # /mnt/<DRIVE>/Concerts/... → /mnt/<DRIVE>/TUIT Seeds
+    if len(parts) >= 3 and parts[1] == "mnt":
+        return Path(parts[0], parts[1], parts[2], "TUIT Seeds")
+    return source_folder.parent / "TUIT Seeds"
+
+
+def _build_seed_overlay(info, source_folder: str, args, shortfall: str
+                        ) -> tuple[str | None, str]:
+    """Assemble an overlay folder that can seed without touching the collection.
+
+    Audio is hardlinked from the collection (free, same inode); LBF sidecars are
+    copied from ``data/site/files`` or re-fetched from losslessbob.com; anything
+    still unresolved is left to the swarm and lands in the overlay. Any
+    collection file sharing a piece with unresolved data is copied rather than
+    linked, so a client write can never reach the collection's inode.
+
+    Args:
+        info: Parsed torrent metadata.
+        source_folder: The collection folder to source audio from.
+        args: Parsed CLI arguments.
+        shortfall: The collection folder's verify summary, for messages.
+
+    Returns:
+        (overlay_path or None, human-readable reason).
+    """
+    source = Path(source_folder)
+    root = _overlay_root_for(source, args.overlay_root)
+    names = [Path(p).name for p, _s in info.files]
+    site_urls = (
+        database.get_site_file_urls(names) if args.refetch_sidecars else {}
+    )
+
+    plan = plan_overlay(info, source, root, [SIDECAR_DIR], site_urls)
+    logger.info("  overlay: %s", plan.summary())
+    if plan.fetch_bytes > args.max_fetch_mb * 1_000_000:
+        return None, (
+            f"overlay would leave {plan.fetch_bytes / 1e6:.1f} MB to download, "
+            f"over the {args.max_fetch_mb} MB limit ({shortfall})"
+        )
+
+    before = snapshot_folder(source)
+    built = build_overlay(
+        plan, fetcher=http_fetch if args.refetch_sidecars else None
+    )
+    for err in built["errors"]:
+        logger.warning("  overlay: %s", err)
+
+    touched = collection_is_untouched(source, before)
+    if touched:
+        return None, (
+            f"ABORTED — building the overlay altered the collection: "
+            f"{', '.join(touched[:3])}"
+        )
+
+    result = verify_folder(info, plan.target_dir)
+    logger.info("  overlay verify: %s", result.summary())
+    if not result.complete:
+        if not args.allow_partial_overlay:
+            return None, (
+                f"overlay still {result.summary()} — qBittorrent would download "
+                f"the rest into it; re-run with --allow-partial-overlay to accept"
+            )
+        return str(plan.target_dir), (
+            f"overlay {result.summary()}; remainder will download into the "
+            f"overlay, not the collection"
+        )
+    return str(plan.target_dir), (
+        f"overlay assembled 100% locally ({built['linked']} hardlinked, "
+        f"{built['copied']} copied, {built['refetched']} re-fetched); "
+        f"collection untouched"
+    )
 
 
 def _sync_one(session, rec_id: int, row, args) -> str:
@@ -295,7 +421,7 @@ def _sync_one(session, rec_id: int, row, args) -> str:
         )
         return "downloaded"
 
-    folder, reason = _find_seedable_folder(rec.lb_number, torrent_path)
+    folder, reason = _find_seedable_folder(rec.lb_number, torrent_path, args)
     if folder is None:
         database.add_tuit_download(
             rec.rec_id, rec.lb_number, torrent_path, "not_seeded", error=reason

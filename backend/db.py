@@ -6224,6 +6224,38 @@ def get_folders_for_lb(lb_number: int, db_path=None) -> list[str]:
     return list(dict.fromkeys(paths))
 
 
+def get_site_file_urls(filenames: list[str], db_path=None) -> dict[str, str]:
+    """Map LBF sidecar filenames to their original losslessbob.com URLs.
+
+    ``data/site/files/`` holds the crawl's copies, but HTML files there were
+    link-rewritten on save and no longer match the bytes the site served — the
+    row's ``local_sha256`` differs from ``body_sha256`` in that case. Re-fetching
+    the URL yields the pristine original, which is what a torrent's piece hashes
+    were computed over.
+
+    Args:
+        filenames: Basenames to look up, e.g. ``LBF-00707-bd1978-11-01.txt``.
+        db_path: Optional DB path override.
+
+    Returns:
+        {filename: url} for those found in ``site_inventory``.
+    """
+    if not filenames:
+        return {}
+    out: dict[str, str] = {}
+    with get_connection(db_path) as conn:
+        for chunk_start in range(0, len(filenames), 400):
+            chunk = filenames[chunk_start:chunk_start + 400]
+            rows = conn.execute(
+                "SELECT relative_path, url FROM site_inventory "
+                " WHERE relative_path IN ({})".format(",".join("?" * len(chunk))),
+                [f"files/{n}" for n in chunk],
+            ).fetchall()
+            for rel, url in rows:
+                out[rel.split("/", 1)[-1]] = url
+    return out
+
+
 def get_all_forum_posts(db_path=None) -> list:
     """Return all forum posts across all LB entries, newest first."""
     with get_connection(db_path) as conn:
