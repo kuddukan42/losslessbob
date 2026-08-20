@@ -1,3 +1,20 @@
+[2026-08-19] — feat(backend): detect seed overlays orphaned by a collection move or delete
+Added: backend/seed_overlay.py overlay_status() / find_overlays_for_lb() / warn_if_seeded():
+  a hardlink follows the inode, so renaming or moving a collection folder *within* its volume
+  leaves an overlay perfectly healthy and needs no repair (verified: inode and link count
+  unchanged, overlay still verifies 100%). A delete — or a cross-volume move, which is
+  copy + rmtree — drops the link count to 1, and the overlay silently becomes the sole holder of
+  those bytes, so the disk space is never reclaimed. Detection uses link counts rather than
+  paths, so it stays correct after any rename.
+Changed: backend/filer.py: start_file_job()'s cross-device branch now calls warn_if_seeded()
+  immediately before shutil.rmtree() of the source. Warning only, wrapped so a lookup failure can
+  never block filing; the same-device os.rename() path is untouched because it is harmless.
+Added: tools/tuit_sync.py --check-overlays: lists the seed folder currently in force per LB
+  (newest attempt wins), labels it [overlay] or [direct], reports MB shared with the collection
+  vs MB held only by the overlay, and exits 1 when any are orphaned.
+Added: tests/test_seed_overlay.py: 5 more tests covering the rename-is-harmless case and the
+  delete / simulated cross-volume-move cases that do orphan an overlay.
+
 [2026-08-19] — feat(backend): seed TUIT torrents from an overlay, collection untouched
 Added: backend/seed_overlay.py: builds a seedable folder outside the collection so a recording
   can seed at 100% without a byte being written to curated files. Audio is hardlinked from the

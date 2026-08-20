@@ -683,6 +683,12 @@ def start_file_job(
                         raise _HashVerificationError(dest) from None
                     with _FILE_JOB_LOCK:
                         _FILE_JOB["stage"] = "removing"
+                    # A cross-device move deletes the source. Any TUIT seed
+                    # overlay hardlinked to it then becomes the sole holder of
+                    # those bytes, so the space is never reclaimed. Warn only —
+                    # bookkeeping must never block filing.
+                    from backend.seed_overlay import warn_if_seeded
+                    warn_if_seeded(lb_number, "moved across volumes", db_path)
                     try:
                         shutil.rmtree(str(folder))
                     except OSError as exc:
