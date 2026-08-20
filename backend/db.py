@@ -1363,7 +1363,9 @@ CREATE TABLE IF NOT EXISTS tuit_downloads (
     torrent_path TEXT,
     seed_folder  TEXT,     -- collection folder matched via folder_lb_link
     status       TEXT NOT NULL DEFAULT 'pending',
-                 -- 'pending'/'downloaded'/'qbt_added'/'no_local_files'/'failed'
+                 -- 'pending'/'downloaded'/'qbt_added'/'not_seeded'/'failed'
+                 -- 'not_seeded' = fetched but refused a seed (not public, no
+                 -- matching folder, or the folder is not 100% complete)
     error        TEXT,
     attempted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     qbt_added_at TIMESTAMP
@@ -6957,6 +6959,32 @@ def is_postable_to_forum(lb_number: int, db_path=None) -> tuple[bool, str | None
         return False, "lb_private"
     if status == "missing":
         return False, "lb_missing"
+    return True, None
+
+
+def is_seedable_to_tracker(lb_number: int, db_path=None) -> tuple[bool, str | None]:
+    """Return (allowed, reason) for seeding a recording to a public tracker.
+
+    The seeding counterpart of :func:`is_postable_to_forum`: ``lb_status`` is
+    the authority on what may leave the collection. Only 'public' passes.
+
+    Args:
+        lb_number: LB number being seeded.
+        db_path: Optional DB path override.
+
+    Returns:
+        (allowed, reason). ``reason`` is None when allowed, otherwise one of
+        'status_unknown', 'lb_private', 'lb_missing', 'lb_nonexistent'.
+    """
+    status = get_lb_status(lb_number, db_path)
+    if status is None:
+        return False, "status_unknown"
+    if status == "private":
+        return False, "lb_private"
+    if status == "missing":
+        return False, "lb_missing"
+    if status == "nonexistent":
+        return False, "lb_nonexistent"
     return True, None
 
 

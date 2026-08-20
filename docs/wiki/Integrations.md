@@ -37,9 +37,14 @@ pages into `tuit_recordings` (every rendered field, list-shaped ones as JSON).
 `tools/tuit_sync.py` drives it: `--fetch-torrents` saves the personalised
 `.torrent`, `--seed` resolves the LB number to a folder via
 `db.get_folders_for_lb()` (my_collection first, folder_lb_link second) and adds
-it to qBittorrent for seeding — refused unless the torrent's root folder name
-matches the local folder, since a mismatch turns a seed into a download.
-Attempts land in `tuit_downloads`. Credentials: `SERVICE_TUIT`.
+it to qBittorrent. **Three gates before qBittorrent hears anything**:
+`db.is_seedable_to_tracker()` (lb_status must be 'public'), the torrent root
+name must match the folder name, and `backend/torrent_verify.py` must hash the
+folder to 100% locally and read-only. An incomplete folder is dropped, never
+forced — qBittorrent handed a 99% torrent downloads the rest *into* the
+collection folder, which is exactly what must not happen.
+Attempts land in `tuit_downloads`. Credentials: `SERVICE_TUIT`, set or rotated
+with `tools/tuit_sync.py --set-credentials` (prompts, no echo).
 **Pacing**: 3s between requests, small batches — this is a tiny private site.
 
 ## Archive.org

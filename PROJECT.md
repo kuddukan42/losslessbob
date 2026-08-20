@@ -133,6 +133,7 @@ losslessbob/
 │   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting
 │   ├── wtrf_scraper.py       # Searches the WTRF SMF forum for torrent posts matching missing items
 │   ├── tuit_scraper.py       # TUIT private tracker (tangledupintorrents.org): login, /browse + /recordings parsers, torrent fetch (TODO-314)
+│   ├── torrent_verify.py     # Bencode reader + read-only piece-hash check of a folder against a .torrent; gates seeding so incomplete folders are never written to (TODO-314)
 │   ├── ab_clips.py           # Aligned A/B listening clip service (LISTENING §2, TODO-231/232/233)
 │   ├── bobtalk.py            # Locates Olof's curated bobtalk quotes in our audio; scoring, confidence, persistence (TODO-303)
 │   ├── bobtalk_decodes.py    # Discardable cache of raw ASR window decodes, so re-scoring costs no CPU (TODO-303, BUG-314)
@@ -193,6 +194,7 @@ losslessbob/
 │   ├── test_venue_gazetteer.py # backend/venue_gazetteer.py: venue-level gazetteer seeding (TODO-223)
 │   ├── test_wtrf_scraper.py  # backend/wtrf_scraper.py: WTRF forum torrent scraper
 │   ├── test_tuit_scraper.py  # backend/tuit_scraper.py: TUIT browse/detail parsers, row merge, bencode root name (TODO-314)
+│   ├── test_torrent_verify.py # backend/torrent_verify.py: bencode decode, torrent parse, folder piece verification, read-only guarantees (TODO-314)
 │   ├── test_tuit_db.py       # backend/db.py: tuit_recordings/tuit_downloads accessors + get_folders_for_lb (TODO-314)
 │   ├── test_checksum_utils_site_recovery.py # find_site_recoverable_files: MD5 + filename-fallback matching against data/site/files/
 │   ├── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
@@ -488,7 +490,7 @@ Mirrors `wtrf_downloads`, written by `tools/tuit_sync.py --fetch-torrents [--see
 | lb_number | INTEGER | LB number the recording claims |
 | torrent_path | TEXT | Local path of the downloaded .torrent |
 | seed_folder | TEXT | Collection folder the torrent was pointed at (`db.get_folders_for_lb()`) |
-| status | TEXT NOT NULL | `'pending'`, `'downloaded'`, `'qbt_added'`, `'no_local_files'`, `'failed'` (default `'pending'`) |
+| status | TEXT NOT NULL | `'pending'`, `'downloaded'`, `'qbt_added'`, `'not_seeded'`, `'failed'` (default `'pending'`) |
 | error | TEXT | Failure detail, or why a seed was refused |
 | attempted_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
 | qbt_added_at | TIMESTAMP | When the torrent was added to qBittorrent |
