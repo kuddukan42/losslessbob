@@ -1,4 +1,22 @@
 
+TODO-320: Fix three data-integrity findings from the 2026-08-21 tapematch batch
+Priority: Low
+Status: Open
+Added: 2026-08-21
+Description: Three concrete per-LB defects surfaced while writing analyses; each is a data fix, not a matcher change. (a) LB-04433 is grouped under 2002-04-30 but its info file describes a completely different piano-era show — either the LB is date-mis-tagged or the info file is mis-filed; check the audio against both candidate dates before changing anything. (b) LB-14883 (2019-07-06) and LB-14908 (1997-12-10) were excluded from their runs by ingest failures on unreadable files — establish whether the source files are damaged on disk or merely in a format the ingest path mishandles, repair or re-source, then re-run those two dates. (c) LB-11041 (2006-11-11) appears to span two show dates, which needs a split or a re-tag decision. Also on 2006-11-11: LB-04265's clustering contradicts both the correlation data and the taper identity — that one belongs to TODO-319's over-merge review, not here.
+
+TODO-319: tapematch — investigate chain-clustering over-merges surfaced by the 2026-08-21 batch
+Priority: Medium
+Status: Open
+Added: 2026-08-21
+Description: Recurring pattern across the 2026-08-21 50-run batch: a recording gets chained into a family with no confirmed pairwise correlation to any member, against the taper commentary. Instances flagged: 2010-03-23 Tokyo (all 6 recordings merged into one family, zero confirmed pairwise evidence, contradicted by every taper account), 2010-03-24 (LB-15001 plus three others chained in unsupported), 2004-03-05 (LB-01632), 2009-10-10 (LB-08098), 1997-12-10 (over-merged single family against taper accounts), 2007-04-04 (Family 1 contradicts LB-06130's own 'distinct from all four' commentary), 2024-04-06 (LB-16228 merged into the nightlymoth family unsupported). Question to answer: is single-linkage/transitive clustering promoting weak or one-sided links into full family membership, and should family formation require a minimum confirmed-pair density rather than connectivity alone? Note the overlap with TODO-318 — some of these may be genuine same-source pairs that the disabled polarity rescue would have scored correctly, so run that validation first and re-check which of these survive as real over-merges. Per-date analysis.md files carry the specifics.
+
+TODO-318: tapematch — validate and enable the channel-polarity rescue path
+Priority: Medium
+Status: Open
+Added: 2026-08-21
+Description: The 2026-08-21 50-run batch produced a clean validation set for this. Five 1984-tour shows (Boston 1984-05-31, Hamburg 1984-06-02, Basel 1984-06-21, Rome, Miami 1984-07-05) each carry taper commentary claiming the same clapping/talking wavs with channels swapped and/or phase-inverted, and every one reads near-zero mid-mid correlation and got split into distinct families. That is precisely the failure mode match.polarity_aware_corr / match.polarity_rescue were built for under TODO-184 (shipped 2026-06-24, wiring in cli.py:473-490). The capability is NOT missing — config.yaml polarity.enabled is false, held back deliberately because enabling it decodes stereo in Pass 1 (peak RAM ~461 MB mono -> ~1.2 GB stereo) and the matcher threshold is calibrated on mid-mid. The config comment asks for validation on real multi-source dates plus confirmation of no spurious merges before turning it on; these five dates supply that. Work: re-run the five with polarity.enabled=true, check whether the mid-side / side-mid pairings lift them above threshold in the direction the taper commentary predicts, then run the frozen regression set to confirm no new spurious merges, and only then decide whether to flip the default. If it validates, the analysis.md needs-review verdicts on those five dates should be revisited.
+
 TODO-317: File the 1,976 unrouted my_collection folders into the routed tree
 Priority: Medium
 Status: Open
