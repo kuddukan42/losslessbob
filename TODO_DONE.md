@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-321: tapematch — investigate doubled-folder ingests inflating track counts and durations
+Priority: Medium
+Status: Done
+Added: 2026-08-21
+Closed: 2026-08-21
+Description: Fifth 50-run batch (2026-08-21) surfaced a repeating shape: an LB's ingested track count and total duration are almost exactly 2x what its own info file states, which then trips report.md's [INFLATED] diagnostic and distorts every correlation involving it. Instances: LB-10250 (2012-07-03) ingested 34 tracks / 3:27 against a documented 17-track / 1:44 setlist; LB-03685 (1975-12-01) 108 tracks / 7:57 against ~54 tracks / 3:59 for its own confirmed-same family; LB-10257 (2012-07-06) 38 tracks / 3:38 against a stated 19 tracks / 1:50:36. Separately and probably related, LB-05444 and LB-05457 (1969-08-31) both resolve to one shared on-disk folder and were ingested as a single 40-track blob, so that run's match to LB-07385 cannot be attributed to either LB. Determine whether the duplication is on disk (the folder genuinely holds two copies, e.g. a flac and an mp3 tree, or a nested re-download) or in the ingest walk (same files enumerated twice via symlink, case-insensitive duplicate, or a subfolder recursion bug). If it is the ingest walk it is a real code defect and should be re-filed as a BUG. Per-date analysis.md files carry the specifics.
+Investigated 2026-08-21: not an ingest-walk defect. The rglob walk is correct; the cause is that config audio_exts matches several formats at once with no de-duplication, so a folder holding the same show as both WAV and FLAC (LB-10250, LB-10257) counts every track twice, and a folder holding a duplicated subtree (LB-03685: CD 1..4 == D1..4, byte-identical MD5 manifests) counts the whole show twice. Re-filed as BUG-326 with the full mechanism, including the interleaving consequence the original TODO did not capture — _natural_key puts each .flac immediately before its matching .wav, so the concatenated stream repeats every track back to back and the source becomes unalignable rather than just long. LB-05444/LB-05457 is unrelated and not a defect: that source folder is deliberately named '1969-08-31 Isle of Wight (LB-05457 + LB-05444)', an intentional combined folder.
+
 TODO-314: TUIT tracker integration — scraper, catalogue mirror, qBittorrent seeding
 Priority: Medium
 Status: Done

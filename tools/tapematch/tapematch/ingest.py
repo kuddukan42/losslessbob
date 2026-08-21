@@ -6,10 +6,13 @@ concatenates into a single continuous stream per source. Filenames are used
 ONLY for ordering, then discarded -- we compare ~2-hour waveforms, not tracks.
 """
 from __future__ import annotations
+import logging
 import re
 from pathlib import Path
 import numpy as np
 from . import audio
+
+log = logging.getLogger(__name__)
 
 
 _LB_TAG_RE = re.compile(r"LB-(\d+)")
@@ -63,13 +66,120 @@ def discover_sources(root: Path):
     return sources
 
 
+# Preferred order when one track exists in several formats: losslessly-compressed
+# first, then uncompressed, then lossy. Anything unlisted sorts last.
+_FORMAT_PREFERENCE = [".flac", ".shn", ".ape", ".wav", ".aiff", ".aif", ".m4a", ".mp3"]
+
+
+def _format_rank(p: Path) -> int:
+    """Return the preference rank of *p*'s extension (lower is better)."""
+    suffix = p.suffix.lower()
+    if suffix in _FORMAT_PREFERENCE:
+        return _FORMAT_PREFERENCE.index(suffix)
+    return len(_FORMAT_PREFERENCE)
+
+
+def _dedupe_formats(tracks: list[Path]) -> tuple[list[Path], int]:
+    """Keep one file per (parent, stem), preferring the best available format.
+
+    A source folder frequently holds the same show twice — a lossless tree plus
+    a decoded or lossy copy alongside it. Since ``audio_exts`` matches every
+    format at once, both copies enter the track list, and because ``_natural_key``
+    sorts ``x_01.flac`` immediately before ``x_01.wav`` the concatenated stream
+    repeats each track back to back, leaving the source unalignable against any
+    sibling rather than merely twice as long (BUG-326).
+
+    Args:
+        tracks: Candidate track paths, in any order.
+
+    Returns:
+        ``(kept, n_dropped)`` — the de-duplicated paths and how many were dropped.
+    """
+    best: dict[tuple[Path, str], Path] = {}
+    for t in tracks:
+        key = (t.parent, t.stem.lower())
+        incumbent = best.get(key)
+        if incumbent is None or _format_rank(t) < _format_rank(incumbent):
+            best[key] = t
+    kept = list(best.values())
+    return kept, len(tracks) - len(kept)
+
+
+def _dedupe_subtrees(tracks: list[Path], source_dir: Path) -> tuple[list[Path], int]:
+    """Drop whole duplicated subtrees that repeat another subtree's contents.
+
+    Some folders carry the same show under two directory layouts — e.g. LB-03685
+    holds ``CD 1``..``CD 4`` and ``D1``..``D4`` with identical filenames and
+    byte-identical checksum manifests. Each subtree is identified by the multiset
+    of its files' ``(stem, size)`` pairs; when two subtrees share a signature only
+    the first in natural order is kept (BUG-326).
+
+    Args:
+        tracks: Candidate track paths, already format-de-duplicated.
+        source_dir: The source root, used to group by top-level subfolder.
+
+    Returns:
+        ``(kept, n_dropped)`` — the surviving paths and how many were dropped.
+    """
+    source_dir = Path(source_dir)
+    groups: dict[Path, list[Path]] = {}
+    for t in tracks:
+        try:
+            rel = t.relative_to(source_dir)
+        except ValueError:
+            rel = Path(t.name)
+        # Group by the top-level subfolder; files at the root are their own group.
+        top = source_dir / rel.parts[0] if len(rel.parts) > 1 else source_dir
+        groups.setdefault(top, []).append(t)
+
+    if len(groups) < 2:
+        return tracks, 0
+
+    seen: dict[frozenset, Path] = {}
+    kept: list[Path] = []
+    dropped = 0
+    for top in sorted(groups, key=_natural_key):
+        members = groups[top]
+        try:
+            sig = frozenset((p.stem.lower(), p.stat().st_size) for p in members)
+        except OSError:
+            sig = None
+        if sig is not None and len(sig) == len(members) and sig in seen:
+            log.warning("ingest: %s duplicates %s — skipping %d track(s)",
+                        top.name, seen[sig].name, len(members))
+            dropped += len(members)
+            continue
+        if sig is not None:
+            seen[sig] = top
+        kept.extend(members)
+    return kept, dropped
+
+
 def list_tracks(source_dir: Path, exts):
+    """Return this source's tracks in concert order, de-duplicated.
+
+    Args:
+        source_dir: The source folder to walk.
+        exts: Audio extensions to accept (matched case-insensitively).
+
+    Returns:
+        Track paths sorted into concert order by natural path order.
+    """
     exts = {e.lower() for e in exts}
     tracks = [p for p in Path(source_dir).rglob("*")
               if p.is_file()
               and p.suffix.lower() in exts
               and not p.name.startswith("._")
               and "__MACOSX" not in p.parts]
+
+    tracks, n_fmt = _dedupe_formats(tracks)
+    if n_fmt:
+        log.warning("ingest: %s holds the same track in several formats — "
+                    "dropped %d duplicate file(s)", Path(source_dir).name, n_fmt)
+
+    tracks = sorted(tracks, key=_natural_key)
+    # _dedupe_subtrees logs each dropped subtree by name itself.
+    tracks, _ = _dedupe_subtrees(tracks, source_dir)
     return sorted(tracks, key=_natural_key)
 
 

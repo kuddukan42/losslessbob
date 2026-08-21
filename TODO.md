@@ -1,15 +1,15 @@
 
+TODO-323: Re-run the 44 tapematch dates whose sources were corrupted by BUG-326
+Priority: High
+Status: Open
+Added: 2026-08-21
+Description: BUG-326 (ingest counted the same track twice in dual-format and duplicated-subtree folders) is fixed, but every run produced before the fix used the doubled, track-interleaved stream for the affected source, so its correlations against every sibling are meaningless and its family placement cannot be trusted. Corpus scan (2026-08-21) over 13,067 concert folders under /mnt/DYLAN1/Concerts and /mnt/DYLAN2/Concerts found 50 affected folders — 44 with dual-format duplicate tracks (.flac+.wav, .shn+.wav) and 6 with a duplicated subtree — covering 52 LB numbers across 43 dates. 44 existing run dirs sit on one of those dates and 32 of them already carry a written analysis.md whose verdict may be wrong for the affected source. Worst offenders by duplicate count: LB-15179 and LB-15180 (1987-07-19, 36 dupes each), LB-13902 (1987-07-12, 34), LB-04086 (1990-07-09, 19), LB-10257 (2012-07-06, 19), LB-13393 (2018-04-07, 18), LB-11373 (1964 revisited, 18 .shn/.wav), LB-10250 (2012-07-03, 17). Duplicated-subtree cases: LB-08222, LB-11789, LB-03685, LB-04935 and the 2000-07-08 Riverport folder. The affected-folder list is reproducible from the scan; regenerate it rather than trusting a stale copy. Plan: re-run those dates, diff the new family assignments against the old, and re-write only the analysis.md files whose verdict actually changed. Note the overlap with TODO-318 and TODO-319 — some dates appear on both lists, and this fix should land before that polarity/over-merge review so it is not chasing artefacts of this bug.
+
 TODO-322: tapematch — tighten the commentary-audit DISAGREES heuristic, which false-positives on boilerplate
 Priority: Low
 Status: Open
 Added: 2026-08-21
 Description: The auto-generated commentary audit in report.md raises DISAGREES by keyword-matching an LB's info-file prose against the clustering result, and in the 2026-08-21 batch several of those flags were spurious: the keyword hit landed in boilerplate or unrelated filler text rather than in an actual lineage claim. Confirmed false positives: 1984-06-04 (noted explicitly in that run's write-up) and 1995-03-31 (keyword hit inside bonus-filler track notes). Cost is real but bounded — an analysis writer must read past the flag to discover it means nothing, on every run where it fires. Worth scoping the match to the lineage/source portion of the info file, or requiring the matched sentence to name another LB number or a source-identity term, before raising the flag. Low priority: it wastes reader attention, it does not corrupt any stored family data.
-
-TODO-321: tapematch — investigate doubled-folder ingests inflating track counts and durations
-Priority: Medium
-Status: Open
-Added: 2026-08-21
-Description: Fifth 50-run batch (2026-08-21) surfaced a repeating shape: an LB's ingested track count and total duration are almost exactly 2x what its own info file states, which then trips report.md's [INFLATED] diagnostic and distorts every correlation involving it. Instances: LB-10250 (2012-07-03) ingested 34 tracks / 3:27 against a documented 17-track / 1:44 setlist; LB-03685 (1975-12-01) 108 tracks / 7:57 against ~54 tracks / 3:59 for its own confirmed-same family; LB-10257 (2012-07-06) 38 tracks / 3:38 against a stated 19 tracks / 1:50:36. Separately and probably related, LB-05444 and LB-05457 (1969-08-31) both resolve to one shared on-disk folder and were ingested as a single 40-track blob, so that run's match to LB-07385 cannot be attributed to either LB. Determine whether the duplication is on disk (the folder genuinely holds two copies, e.g. a flac and an mp3 tree, or a nested re-download) or in the ingest walk (same files enumerated twice via symlink, case-insensitive duplicate, or a subfolder recursion bug). If it is the ingest walk it is a real code defect and should be re-filed as a BUG. Per-date analysis.md files carry the specifics.
 
 TODO-320: Fix three data-integrity findings from the 2026-08-21 tapematch batch
 Priority: Low

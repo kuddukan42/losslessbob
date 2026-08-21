@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-326: tapematch ingest counts the same track twice when a folder holds two copies of a show
+Status: Fixed
+File(s): tools/tapematch/tapematch/ingest.py:66,tools/tapematch/config.yaml:12
+Reported: 2026-08-21
+Fixed: 2026-08-21
+Root cause: ingest.list_tracks matched every file whose suffix appeared in config audio_exts, which lists eight formats at once, with no de-duplication step. A folder holding the same show as both WAV and FLAC therefore yielded each track twice (LB-10250: 17+17, LB-10257: 19+19), and a folder holding a duplicated directory tree yielded the whole show twice (LB-03685: CD 1..4 byte-identical to D1..4). The rglob walk was correct; nothing downstream collapsed the duplicates. The damage was not the inflated count alone: _natural_key sorts '..._01.flac' immediately before '..._01.wav', so concat_source produced a stream repeating every track back to back, leaving the source unalignable against its siblings (LB-10250 scored 0.003 against all seven) rather than merely twice as long.
+Fix: Added two de-duplication passes to ingest.list_tracks. _dedupe_formats keeps one file per (parent, stem), choosing by a _FORMAT_PREFERENCE order (flac, shn, ape, wav, aiff, aif, m4a, mp3) so the lossless copy wins and unlisted extensions sort last. _dedupe_subtrees identifies each top-level subfolder by the multiset of its files' (stem, size) pairs and drops any subtree whose signature repeats one already kept, in natural order; it is skipped when a source has fewer than two groups, and a subtree with internally-colliding signatures is never used as a dedup source. Both passes log a warning naming what was dropped. Verified against the three real folders: LB-10250 34 -> 17, LB-10257 38 -> 19, LB-03685 108 -> 54, each matching its own info file, with D1..D4 correctly pairing to CD 1..CD 4 rather than collapsing onto one disc. Four regression tests added to tests/test_ingest_list_tracks.py covering both real shapes, lossy fallback, and a genuine multi-disc show that must NOT be deduped; full tapematch suite 395 passed.
+
 BUG-325: TUIT --seed added an incomplete torrent to qBittorrent, risking writes into a collection folder
 Status: Fixed
 File(s): tools/tuit_sync.py,backend/torrent_verify.py
