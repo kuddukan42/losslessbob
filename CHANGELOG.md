@@ -1,3 +1,29 @@
+[2026-08-21] — chore(docs): fifth 50-run tapematch batch; doubled-ingest and audit-heuristic tasks filed
+Changed: data/tapematch/runs/ (gitignored): a fifth 50-run batch, same 5x10 sonnet fan-out over
+  disjoint dir lists prepared by the parent session; 31/50 flagged for review. Every dir came back
+  1/1 on next_batch.py's date-group column, so the partition could not split a date. All five
+  agents ran to completion first try — no mid-batch drop and no resume needed, unlike the previous
+  two batches. Backlog now 826 dirs / 717 dates; the attention queue is effectively drained
+  (86 -> 7) since this batch and the last took the attention-first ordering, leaving 819 clear
+  dirs as the remainder. Sync clean: 3060 dates, 9113 families, 12011 recordings, 24053 pairs,
+  0 errors.
+Changed: TODO.md: two new tasks, and corroboration appended to the three filed by the previous
+  batch. TODO-321 — an LB's ingested track count and duration come back almost exactly 2x what
+  its own info file states, tripping report.md's [INFLATED] diagnostic and distorting every
+  correlation it takes part in: LB-10250 (34 tracks vs a documented 17), LB-03685 (108 vs ~54),
+  LB-10257 (38 vs a stated 19), plus LB-05444/LB-05457 resolving to one shared folder ingested as
+  a single 40-track blob. The open question is whether the duplication is on disk or in the ingest
+  walk; if it is the walk, that is a code defect and re-files as a BUG. TODO-322 — the
+  commentary-audit DISAGREES flag keyword-matches info-file prose and fires on boilerplate and
+  bonus-track filler (confirmed spurious on 1984-06-04 and 1995-03-31), costing reader attention
+  on every run where it misfires without corrupting stored data; scope the match to the lineage
+  portion or require a named LB number. TODO-318 and TODO-319 both gained materially larger
+  evidence sets rather than new tasks: 318's polarity validation set grew past the original five
+  1984 dates (1995-06-15, 2009-04-02, 1997-08-23, 1984-06-09, plus processing-defeated under-merges
+  on 1978-12-10 and 1984-06-04), and 319's over-merge pattern has a new worst case in 2007-04-08,
+  where all 7 recordings collapsed into one family against four explicit taper contradictions.
+  TODO-320 took LB-06631, whose lineage text describes an unrelated 1971 event.
+
 [2026-08-21] — chore(docs): fourth 50-run tapematch batch; polarity-rescue and over-merge tasks filed
 Changed: data/tapematch/runs/ (gitignored): a fourth 50-run batch, same 5x10 sonnet fan-out over
   disjoint dir lists prepared by the parent session; 31/50 flagged for review. Every dir came back
