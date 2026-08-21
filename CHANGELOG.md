@@ -1,3 +1,30 @@
+[2026-08-21] — fix(tapematch): ingest counted the same track twice in dual-format folders
+Fixed: tools/tapematch/tapematch/ingest.py: BUG-326. list_tracks matched every file whose suffix
+  appeared in config audio_exts, which lists eight formats at once, with no de-duplication. A
+  source folder holding the same show as both WAV and FLAC therefore yielded every track twice
+  (LB-10250: 17+17 -> 34, LB-10257: 19+19 -> 38), and a folder holding a duplicated directory tree
+  yielded the whole show twice (LB-03685: CD 1..4 byte-identical to D1..4 -> 108 for a 54-track
+  show). The rglob walk was never at fault; nothing collapsed the duplicates. The damage was worse
+  than the inflated count report.md's [INFLATED] line already noted: _natural_key sorts
+  '..._01.flac' immediately before '..._01.wav', so concat_source built a stream repeating every
+  track back to back, leaving the source unalignable against its siblings rather than merely twice
+  as long — which is why LB-10250 scored 0.003 against all seven of its siblings. Added two passes:
+  _dedupe_formats keeps one file per (parent, stem) by a lossless-first preference order, and
+  _dedupe_subtrees drops any top-level subfolder whose (stem, size) signature repeats one already
+  kept. Both log what they dropped. Verified on the real folders: 34 -> 17, 38 -> 19, 108 -> 54,
+  each matching its own info file, with D1..D4 pairing correctly to CD 1..CD 4 rather than
+  collapsing onto one disc.
+Added: tools/tapematch/tests/test_ingest_list_tracks.py: four regressions — both real-world shapes,
+  lossy fallback when no lossless copy exists, and a genuine multi-disc show that must NOT be
+  deduped (the first draft of that fixture gave every disc identical bytes and correctly deduped
+  all eight subtrees, which is what surfaced the need for the negative case). Full suite 395 passed.
+Changed: TODO.md: TODO-321 closed — the investigation it asked for is done and the answer was "not
+  a walk bug", re-filed as BUG-326. TODO-323 opened for the re-run: a scan of all 13,067 concert
+  folders under /mnt/DYLAN1 and /mnt/DYLAN2 found 50 affected folders (44 dual-format, 6 duplicated
+  subtree) over 52 LBs and 43 dates, touching 44 existing run dirs of which 32 already carry a
+  written analysis.md that may be wrong for the affected source. That is 0.4% of the corpus, well
+  short of the "meaningful slice" this session first guessed at before measuring.
+
 [2026-08-21] — chore(docs): fifth 50-run tapematch batch; doubled-ingest and audit-heuristic tasks filed
 Changed: data/tapematch/runs/ (gitignored): a fifth 50-run batch, same 5x10 sonnet fan-out over
   disjoint dir lists prepared by the parent session; 31/50 flagged for review. Every dir came back
