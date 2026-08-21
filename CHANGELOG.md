@@ -1,3 +1,27 @@
+[2026-08-21] — chore(docs): fourth 50-run tapematch batch; polarity-rescue and over-merge tasks filed
+Changed: data/tapematch/runs/ (gitignored): a fourth 50-run batch, same 5x10 sonnet fan-out over
+  disjoint dir lists prepared by the parent session; 31/50 flagged for review. Every dir came back
+  1/1 on next_batch.py's date-group column, so the partition could not split a date. One agent
+  stopped at 4 of 10 and was resumed by name to finish the rest from its own transcript — the same
+  failure and the same cheap recovery as the 2026-08-20 batch, which is now the expected pattern
+  rather than a surprise. Backlog now 905 dirs / 782 dates (attention 86, clear 819). Sync clean:
+  3060 dates, 9113 families, 12011 recordings, 0 errors.
+Changed: TODO.md: three tasks filed from cross-run patterns the batch exposed. TODO-318 —
+  five 1984-tour shows (Boston, Hamburg, Basel, Rome, Miami) each carry taper commentary claiming
+  channels swapped and/or wavs phase-inverted, and each reads near-zero mid-mid correlation and
+  split into distinct families. An agent read that as a missing capability; it is not. TODO-184
+  shipped match.polarity_aware_corr / polarity_rescue on 2026-06-24 and cli.py:473-490 wires it,
+  but config.yaml polarity.enabled is false, held back pending validation on real multi-source
+  dates because enabling it decodes stereo in Pass 1 (~461 MB mono -> ~1.2 GB stereo peak RAM) and
+  the matcher threshold is calibrated on mid-mid. These five dates are exactly the validation set
+  that config comment asks for. TODO-319 — recordings chained into families with no confirmed
+  pairwise correlation to any member, against taper commentary, on seven dates (2010-03-23 Tokyo
+  is the worst: all 6 merged with zero confirmed pairwise evidence). Ordered behind TODO-318,
+  since some may be genuine same-source pairs the disabled rescue would have scored correctly.
+  TODO-320 — three per-LB data fixes: LB-04433's info file describes a piano-era show under
+  2002-04-30, LB-14883 and LB-14908 excluded by ingest failures on unreadable files, LB-11041
+  spans two show dates.
+
 [2026-08-20] — chore(docs): third 50-run tapematch batch; unrouted-collection work package filed
 Changed: data/tapematch/runs/ (gitignored): a third 50-run batch, same 5x10 sonnet fan-out over
   disjoint dir lists prepared by the parent session; 32/50 flagged for review. Every dir in the
