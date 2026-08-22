@@ -1,3 +1,20 @@
+[2026-08-21] — chore(tapematch): cleared the two short-duration sources; filed BUG-330
+Added: BUGS.md: BUG-330. Checking LB-06780 (1987-07-19) and LB-06698 (1969-08-31), the two
+  unexplained short durations left over from the batch, cleared both as ingest defects: each is a
+  flat single-directory folder whose on-disk track count matches report.md exactly (11 and 17), and
+  each is a partial commercial bootleg CD pressing, so the [INCOMPLETE] flags are correct and
+  BUG-327 does not apply. The check did surface a real defect in how both were diagnosed. cli.py
+  gates its [DISTINCT SOURCE] line on abs(ppm) > ppm_thr and prints that ppm as a measured speed
+  offset, without consulting speed_info[name]["kind"] or ["ratio_confidence"] — so for a
+  speed-unknown source it is gated on the untrusted estimate the pipeline already discarded at
+  cli.py:398 and quotes it as evidence. The other half of the evidence is circular: correlation ran
+  at ratio 1.0, and a same-source copy 3.6-5.7% off speed cannot correlate without resampling. Both
+  sources were called "entirely different recording" on that basis. The verdicts may still be right
+  (the fingerprint pass ran on 53 and 64 cross-family pairs and linked neither), but they do not
+  follow from the printed evidence.
+Changed: BUGS.md: BUG-327 now records that these two were checked and excluded, replacing the note
+  that they still needed a look.
+
 [2026-08-21] — chore(bookkeeping): sixth 50-run tapematch batch; three new tapematch data-integrity bugs
 Added: data/tapematch/runs/*/analysis.md: wrote 50 missing analysis write-ups (fanned out to five
   claude-sonnet-5 subagents holding disjoint dir lists; every date group was 1/1, so no group was
