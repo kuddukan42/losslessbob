@@ -37,6 +37,35 @@ def _rss_mb() -> float:
     return -1.0
 
 
+def _speed_offset_trusted(name: str, speed_info: dict[str, dict],
+                          speed_info_central: dict[str, dict]) -> bool:
+    """Report whether a source's measured ppm offset may be quoted as fact.
+
+    A source is marked "speed-unknown" when estimate_ratio_v2 returns a
+    confidence below align.ratio_confidence_min. The pipeline then discards
+    that ratio (forces 1.0, skips resampling), so the stored ppm is the
+    rejected estimate and must not be presented as a measured speed offset.
+
+    Mirrors align.union_staircase_sources: a source is judged against BOTH
+    lag-curve passes, and either pass calling it speed-unknown is enough to
+    withhold the claim. speed_info_central is empty when the central reference
+    equals the initial one, in which case only the initial pass has an opinion.
+
+    Args:
+        name: Source name to check.
+        speed_info: Per-source speed data from the initial-reference pass.
+        speed_info_central: Per-source speed data from the re-selected central
+            reference pass; empty if no re-selection happened.
+
+    Returns:
+        True if every pass that classified this source gave it a trusted ratio.
+    """
+    for info in (speed_info.get(name), speed_info_central.get(name)):
+        if info is not None and info.get("kind") == "speed-unknown":
+            return False
+    return True
+
+
 class _DebugLog:
     """Per-run debug log: elapsed time + RSS at each pass boundary."""
 
@@ -1189,13 +1218,40 @@ def main(argv=None):
             continue
         name = g[0]
         si = speed_info.get(name, {})
-        if abs(si.get("ppm", 0.0)) <= ppm_thr:
+        others = [o for o in names if o != name]
+        if not others:
             continue
         # Best correlation to any other source
-        best_any = max(
-            M[names.index(name), names.index(other)]
-            for other in names if other != name
-        )
+        best_any = max(M[names.index(name), names.index(other)] for other in others)
+        # BUG-330: when the ratio search failed its confidence gate, the stored
+        # ppm is the estimate the matrix pass already rejected, and the
+        # correlations below were computed WITHOUT resampling -- a same-source
+        # copy a few percent off speed cannot correlate under those conditions.
+        # Neither number may be cited as evidence of a distinct recording, so
+        # report the unresolved state instead of concluding from it.
+        if not _speed_offset_trusted(name, speed_info, speed_info_central):
+            if best_any < REMASTER_MIN_CORR:
+                conf = si.get("ratio_confidence")
+                conf_txt = f"{conf:.1f}" if conf is not None else "n/a"
+                idx = names.index(name)
+                fp_best = max(
+                    (sec_results[(min(idx, names.index(o)), max(idx, names.index(o)))]
+                     .get("fp_score", 0.0)
+                     for o in others
+                     if (min(idx, names.index(o)), max(idx, names.index(o))) in sec_results),
+                    default=None,
+                )
+                fp_txt = ("no fingerprint pair computed" if fp_best is None
+                          else f"best fingerprint Dice {fp_best:.3f}")
+                diag_lines.append(
+                    f"  [SPEED UNRESOLVED] {name} (ratio confidence {conf_txt} "
+                    f"< {ratio_conf_min:g}, best cross-family corr {best_any:.3f}): "
+                    f"speed ratio untrusted, so correlation ran unresampled and cannot "
+                    f"rule same-source in or out; {fp_txt} — needs a listen, not a verdict"
+                )
+            continue
+        if abs(si.get("ppm", 0.0)) <= ppm_thr:
+            continue
         if best_any < REMASTER_MIN_CORR:
             diag_lines.append(
                 f"  [DISTINCT SOURCE] {name} ({si['ppm']:+.0f} ppm speed offset, "

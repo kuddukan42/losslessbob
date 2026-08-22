@@ -1,4 +1,10 @@
 
+TODO-324: Re-check the 1,869 written analysis.md verdicts whose [DISTINCT SOURCE] line rested on an untrusted speed ratio
+Priority: High
+Status: Open
+Added: 2026-08-21
+Description: Fallout from BUG-330, quantified by a scan over data/tapematch/runs on 2026-08-21. Of 5,458 [DISTINCT SOURCE] lines across 2,785 run dirs, 3,678 (67%) name a source whose results.json records speed_kind == 'speed-unknown' — so two out of every three of those 'entirely different recording' claims quoted a ppm figure the pipeline had already rejected, against a correlation computed without resampling. 2,006 distinct run dirs are affected and 1,869 of the bad lines sit in runs that ALREADY have a written analysis.md, so the verdicts in those files may have leaned on the claim. The cli.py fix (commit on this branch) only changes future runs: it emits [SPEED UNRESOLVED] instead, reporting ratio confidence, best cross-family correlation and best fingerprint Dice, and drawing no conclusion. Existing report.md files are not rewritten. Plan: (1) reproduce the scan and dump the affected (run dir, source, ppm, confidence) rows to a work file; (2) for the 1,869 with an analysis.md, grep each verdict for reliance on the distinct-source claim — a verdict already resting on commentary or fingerprint evidence needs no change, one whose only support was the DISTINCT SOURCE line does; (3) re-run tapematch only for the dates where the verdict actually turns on it, since a re-run is the only way to get a trustworthy speed ratio; (4) re-write just those analysis.md files. Do NOT bulk re-run all 2,006 dirs. Note the population skews to off-speed bootleg CD/vinyl pressings, the class most likely to be a same-source copy at wrong pitch, so expect real merges to surface. Related: BUG-330, and triage_analysis.py now escalates [SPEED UNRESOLVED] rather than auto-clearing it.
+
 TODO-323: Re-run the 44 tapematch dates whose sources were corrupted by BUG-326
 Priority: High
 Status: Open
