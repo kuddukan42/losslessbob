@@ -35,7 +35,9 @@ import gen_analysis as ga
 
 RUNS_DIR = Path(__file__).parent.parent.parent / "data" / "tapematch" / "runs"
 
-# Diagnostic tags that do NOT block an all-distinct auto verdict.
+# Diagnostic tags that do NOT block an all-distinct auto verdict. [SPEED UNRESOLVED]
+# (BUG-330) is deliberately absent: it marks a source whose speed ratio was untrusted, so
+# its correlations were computed unresampled and settle nothing. Those dates must ESCALATE.
 ALLOWED_TAGS = {"DISTINCT SOURCE", "INCOMPLETE"}
 
 ATTRIBUTION = f"*auto-triage (triage_analysis.py, gen_analysis template) — {ga.TODAY}*"

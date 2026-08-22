@@ -102,7 +102,13 @@ below threshold; the link is carried by windowed/hiss evidence.
 ### DIAGNOSTICS section
 
 - `[SECONDARY SAME-SOURCE]` — pair grouped via secondary evidence; verify against LB commentary
-- `[DISTINCT SOURCE]` — singleton with near-zero correlation to everything; confirmed different recording
+- `[DISTINCT SOURCE]` — singleton with a TRUSTED speed offset and near-zero correlation to
+  everything; confirmed different recording
+- `[SPEED UNRESOLVED]` — singleton whose ratio search failed its confidence gate (BUG-330).
+  Correlation ran unresampled, so it proves nothing either way; the line reports the ratio
+  confidence, the best cross-family correlation and the best fingerprint Dice, and draws no
+  conclusion. Never read it as a distinct-source finding — it escalates in `triage_analysis.py`
+  precisely because it needs a listen.
 - `[INCOMPLETE]` — recording is >5% shorter than group median; likely truncated
 
 ---

@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-330: [DISTINCT SOURCE] diagnostic asserts 'entirely different recording' from a speed estimate the pipeline itself marked untrusted
+Status: Fixed
+File(s): tools/tapematch/tapematch/cli.py:1191,tools/tapematch/tapematch/cli.py:1201,tools/tapematch/tapematch/cli.py:398
+Reported: 2026-08-21
+Fixed: 2026-08-21
+Root cause: The DIAGNOSTICS section-3 loop in tapematch/cli.py triaged singleton sources purely on abs(speed_info[name]['ppm']) > ppm_thr, never consulting speed_info[name]['kind'] or ['ratio_confidence'] — both of which it already stored. When estimate_ratio_v2 fails its confidence gate the matrix pass sets kind='speed-unknown', forces ratio=1.0 and skips resampling, so the retained ppm is the rejected estimate. The diagnostic was therefore gated on a discarded number and printed it as a measured '+N ppm speed offset'. Its second premise was circular: the correlations it called 'near-zero' were computed unresampled, and a same-source copy several percent off speed cannot correlate that way, so the low correlation was partly an artifact of the same failed estimate.
+Fix: Added module-level _speed_offset_trusted(name, speed_info, speed_info_central) to tapematch/cli.py: a source's ppm may be quoted only if neither lag-curve pass (initial reference, re-selected central reference) classified it 'speed-unknown', mirroring align.union_staircase_sources. Staircase sources stay quotable, since that classification comes from the lag-curve shape rather than the ratio search. Section 3 now computes best_any first and, for an untrusted source with near-zero correlation, emits [SPEED UNRESOLVED] instead of [DISTINCT SOURCE]: it reports ratio confidence against the threshold, best cross-family correlation and best fingerprint Dice, states that the unresampled correlation cannot rule same-source in or out, and draws no conclusion. Both [DISTINCT SOURCE] and [REMASTER?] are now reachable only on a trusted offset. triage_analysis.py's ALLOWED_TAGS deliberately omits the new tag, so such dates ESCALATE rather than auto-clearing; documented in WORKFLOW.md and DATA_PRODUCED.md. Six unit tests in tools/tapematch/tests/test_speed_trust_diagnostic.py; full tapematch suite 401 passed, backend tapematch tests 87 passed. Verified against the two reported sources: results.json records speed_kind='speed-unknown' for LB-06780 (conf 2.36) and LB-06698 (conf 4.70), so both now take the new path. Historical report.md files are NOT rewritten — a scan found 3,678 of 5,458 existing [DISTINCT SOURCE] lines (67%, 2,006 run dirs, 1,869 already carrying an analysis.md) rest on an untrusted ratio; that re-check is TODO-324.
+
 BUG-326: tapematch ingest counts the same track twice when a folder holds two copies of a show
 Status: Fixed
 File(s): tools/tapematch/tapematch/ingest.py:66,tools/tapematch/config.yaml:12

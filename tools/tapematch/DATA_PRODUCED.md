@@ -108,8 +108,10 @@ Same data, rendered for reading, with LB page context the JSON doesn't carry:
   corroborated against what the taper actually said.
 
 The diagnostics line is the part worth reading first: `[SECONDARY SAME-SOURCE]` (grouped
-on fallback evidence — verify against commentary), `[DISTINCT SOURCE]` (near-zero
-correlation to everything), `[INCOMPLETE]` (>5% shorter than the group median).
+on fallback evidence — verify against commentary), `[DISTINCT SOURCE]` (trusted speed
+offset plus near-zero correlation to everything), `[SPEED UNRESOLVED]` (ratio search
+failed its confidence gate, so the unresampled correlation settles nothing — needs a
+listen), `[INCOMPLETE]` (>5% shorter than the group median).
 
 ## 4. `analysis.md` — the human/AI verdict layer
 

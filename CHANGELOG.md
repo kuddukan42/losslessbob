@@ -1,3 +1,33 @@
+[2026-08-21] — fix(tapematch): [DISTINCT SOURCE] no longer concludes from a rejected speed ratio
+Fixed: tools/tapematch/tapematch/cli.py: BUG-330. The DIAGNOSTICS section-3 loop triaged singleton
+  sources on abs(speed_info[name]["ppm"]) > ppm_thr alone, never reading the "kind" or
+  "ratio_confidence" it already stored beside that ppm. When estimate_ratio_v2 fails its confidence
+  gate the matrix pass sets kind="speed-unknown", forces ratio 1.0 and skips resampling, so the
+  retained ppm is precisely the estimate that was thrown away — and the diagnostic both gated on it
+  and printed it as a measured "+36200 ppm speed offset". The second premise was circular: the
+  correlations it called near-zero were computed unresampled, and a same-source copy several percent
+  off speed cannot correlate that way, so the low correlation was partly an artifact of the same
+  failed estimate. Added _speed_offset_trusted(), which quotes a ppm only if neither lag-curve pass
+  (initial reference, re-selected central reference) called the source speed-unknown — mirroring
+  align.union_staircase_sources, and leaving staircase sources quotable because that classification
+  comes from the lag-curve shape rather than the ratio search. An untrusted source with near-zero
+  correlation now gets [SPEED UNRESOLVED], which reports ratio confidence against the threshold,
+  best cross-family correlation and best fingerprint Dice, says the unresampled correlation cannot
+  rule same-source in or out, and concludes nothing. [DISTINCT SOURCE] and [REMASTER?] are now
+  reachable only on a trusted offset.
+Changed: tools/tapematch/triage_analysis.py: ALLOWED_TAGS deliberately omits [SPEED UNRESOLVED], so
+  a date carrying it ESCALATES instead of auto-clearing. Comment records why.
+Changed: tools/tapematch/WORKFLOW.md, tools/tapematch/DATA_PRODUCED.md: document the new tag and
+  narrow the [DISTINCT SOURCE] description to trusted offsets.
+Added: tools/tapematch/tests/test_speed_trust_diagnostic.py: six tests over _speed_offset_trusted
+  (either pass objecting withholds the claim, staircase stays quotable, unknown source defaults to
+  trusted). Full tapematch suite 401 passed; backend tapematch tests 87 passed.
+Added: TODO.md: TODO-324. The fix changes future runs only. Scanning data/tapematch/runs found
+  3,678 of 5,458 existing [DISTINCT SOURCE] lines (67%, across 2,006 run dirs) name a source whose
+  results.json records speed_kind "speed-unknown", and 1,869 of those sit in runs that already have
+  a written analysis.md. Those verdicts need re-checking, targeted rather than by bulk re-run; the
+  affected population skews to off-speed bootleg CD/vinyl pressings, so expect real merges.
+
 [2026-08-21] — chore(tapematch): cleared the two short-duration sources; filed BUG-330
 Added: BUGS.md: BUG-330. Checking LB-06780 (1987-07-19) and LB-06698 (1969-08-31), the two
   unexplained short durations left over from the batch, cleared both as ingest defects: each is a
