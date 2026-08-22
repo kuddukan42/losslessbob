@@ -1,3 +1,11 @@
+BUG-331: tapematch: a 'staircase/splice' lag curve merges sources into one family even when correlation is near-zero and the secondary check finds no evidence
+Status: Open
+File(s): tools/tapematch/tapematch/verdict.py:128,tools/tapematch/tapematch/align.py:192
+Reported: 2026-08-22
+Description: Found by /tapematch-batch on 2026-08-22 in two independent run dirs. data/tapematch/runs/20260715_052612_2008-07-08: LB-06272 vs LB-06304, residual corr 0.030, SECONDARY MATCH prints 'No secondary same-source evidence found', LAG CURVES classifies the pair 'staircase/splice' (speed ratio 0.999990) — and CLUSTERS still emits a single family '(mean intra-corr 0.030 [low confidence])'. LB-06304's own info file compares itself against 'bach LB-6272' as a different-sounding recording (warmer vs brighter), so the merge contradicts the curator prose too. Same shape in data/tapematch/runs/20260714_201900_2006-10-27: LB-04178 (M&A Schoeps) vs LB-04273 (soomlos Neumann KM140s) merged on a staircase pattern at near-zero correlation with no secondary evidence and no same-source claim in either info file; the 2026-07-18 re-run of that date splits them into 2 families. The staircase relaxation is documented as a LOWER FINGERPRINT BAR (verdict.py _is_staircase, TODO-234/235 mitigation (b)), not as a standalone merge link — so a pair that clears no fingerprint/hiss/windowed evidence at all should not be merged by it. Needs a check of whether the clustering path treats staircase as a same-source edge independent of the secondary result, and whether current code still does this (both affected runs predate recent fixes; the 2006-10-27 re-run may have been corrected incidentally by an expanded curator-lineage set rather than by a code fix). Overlaps BUG-329/BUG-330 territory (verdict lines concluding from weak/rejected alignment signals).
+Root cause: Unknown
+Fix: —
+
 BUG-329: tapematch secondary-match display and cluster merge use different predicates, so a pair prints 'below merge threshold' and is merged anyway
 Status: Open
 File(s): tools/tapematch/tapematch/cli.py:835,tools/tapematch/tapematch/cli.py:839
