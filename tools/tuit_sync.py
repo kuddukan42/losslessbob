@@ -125,6 +125,11 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument("--allow-partial-overlay", action="store_true",
                    help="Seed an overlay that is not yet 100%%. The remainder "
                         "downloads into the overlay — never the collection.")
+    p.add_argument("--rescan", action="store_true",
+                   help="Include recordings that already have a tuit_downloads "
+                        "attempt (default: --pages/--limit skip them so re-runs "
+                        "advance past what was already scanned). Ignored with "
+                        "--rec, which always processes the ids given.")
     p.add_argument("--check-overlays", action="store_true",
                    help="List every recorded seed overlay and flag any whose "
                         "collection folder was deleted or moved to another "
@@ -581,6 +586,8 @@ def main() -> int:
 
     rows_by_id: dict[int, object] = {}
     queue: list[int] = []
+    known_ids = set() if args.rescan else database.get_tuit_download_rec_ids()
+    skipped_known = 0
 
     if args.rec:
         queue = list(dict.fromkeys(args.rec))
@@ -592,14 +599,38 @@ def main() -> int:
             if page == 1 and total:
                 logger.info("TUIT catalogue: %s recordings", f"{total:,}")
             for row in rows:
-                if row.rec_id and row.rec_id not in rows_by_id:
-                    rows_by_id[row.rec_id] = row
-                    queue.append(row.rec_id)
-    else:
-        for row in tuit_scraper.fetch_recent(session, args.limit, delay=args.delay):
-            if row.rec_id and row.rec_id not in rows_by_id:
+                if not row.rec_id or row.rec_id in rows_by_id:
+                    continue
+                if row.rec_id in known_ids:
+                    skipped_known += 1
+                    continue
                 rows_by_id[row.rec_id] = row
                 queue.append(row.rec_id)
+    else:
+        page = 1
+        while len(queue) < args.limit:
+            rows, _total, _html = tuit_scraper.fetch_browse_page(
+                session, page=page, delay=args.delay
+            )
+            if not rows:
+                break
+            for row in rows:
+                if not row.rec_id or row.rec_id in rows_by_id:
+                    continue
+                if row.rec_id in known_ids:
+                    skipped_known += 1
+                    continue
+                rows_by_id[row.rec_id] = row
+                queue.append(row.rec_id)
+                if len(queue) >= args.limit:
+                    break
+            page += 1
+
+    if skipped_known:
+        logger.info(
+            "  skipped %s already-scanned recording(s) (use --rescan to include)",
+            skipped_known,
+        )
 
     if not queue:
         print("Nothing to sync.")
