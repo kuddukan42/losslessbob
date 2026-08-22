@@ -1,3 +1,32 @@
+[2026-08-22] — chore(tapematch): TODO-323 step 2 — post-fix verdict diff; 4 stale analyses rewritten
+Added: tools/tapematch/bug326_diff.py: parses the `=== CLUSTERS ===` block of each post-fix run and
+  of its newest pre-fix predecessor, compares the two LB partitions, and buckets every date
+  SAME/CHANGED/NO-PRIOR/UNUSABLE. It also reads the INGEST block and reports which sources actually
+  shrank on re-ingest, which is what distinguishes a real de-dup effect from an unrelated corpus
+  change. Reporting only; exit status is always 0.
+Fixed: four pre-fix analysis.md files whose verdicts rested on a doubled, track-interleaved stream
+  (BUG-326) rewritten as superseded, each keeping its original table as the record of what the
+  pre-fix run said and pointing at the post-fix run as authoritative:
+  runs/20260721_201619_1969-08-31 (LB-05444 splits out of LB-05457+LB-07385, 9 -> 10 families —
+  this also answers that run's own open question about which LB owned the Family 2 correlation:
+  on clean ingest it is LB-05457); runs/20260603_133817_1989-06-21 (LB-02142 merges into
+  LB-06976+LB-08351, 3 -> 2, and its "staircase" note turns out to be an artefact of the doubled
+  stream); runs/20260702_144047_1990-11-10 (LB-08282 joins LB-01201+LB-01215, 6 -> 5);
+  runs/20260720_145852_2012-07-03 (Family 3 breaks up, 5 -> 7). Three of the four corrections vindicate
+  taper commentary that the pre-fix run had contradicted, and the 2012-07-03 split confirms an
+  over-merge that run's own analysis had already flagged as suspected — the fix moved the data
+  toward the human-readable evidence in every case, which is the strongest signal it was real.
+Changed: TODO-323 closed. The diff's most useful result is the negative one: 33 of 43 dates came
+  back SAME, so the de-dup changed no family assignment there and their existing verdicts stand
+  untouched. 4 dates had no prior run at all; 1991-06-21's pre-fix run was incomplete (no CLUSTERS
+  section) so it had no verdict to invalidate — its post-fix run is complete and unanalysed, and
+  /tapematch-batch will pick it up normally. The fifth CHANGED date, 1981-06-29, needed no rewrite:
+  no analysis.md existed on either side, and its change is not a de-dup effect at all — no source
+  shrank, a new source (LB-16657) simply entered the corpus between the two runs.
+Notes: backend.tapematch_sync re-run afterwards returns unchanged totals (3,062 dates / 9,132
+  families / 12,035 recordings / 0 errors), confirming recording_families already reflected the
+  post-fix clustering — the stale data was in the written analyses, not in the DB.
+
 [2026-08-22] — chore(bookkeeping): close out the BUG-326 re-run leftovers; tuit_sync --rescan
 Added: tools/tuit_sync.py, backend/db.py: a `--rescan` flag, and the `get_tuit_download_rec_ids()`
   helper behind it. By default `--pages`/`--limit` now skip recordings that already have a
