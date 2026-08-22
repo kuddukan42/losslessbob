@@ -1,3 +1,30 @@
+[2026-08-22] — chore(bookkeeping): close out the BUG-326 re-run leftovers; tuit_sync --rescan
+Added: tools/tuit_sync.py, backend/db.py: a `--rescan` flag, and the `get_tuit_download_rec_ids()`
+  helper behind it. By default `--pages`/`--limit` now skip recordings that already have a
+  tuit_downloads attempt and log how many were skipped, so repeated nightly runs advance through
+  the catalogue instead of re-scanning the same head of the listing every time; `--rescan` restores
+  the old include-everything behaviour and `--rec` is unaffected (explicit ids always process).
+  `--limit` also switched from tuit_scraper.fetch_recent to paging fetch_browse_page until the
+  limit is filled, because skipping already-seen ids out of a single fixed-size recent fetch would
+  otherwise return fewer rows than asked for. This is the pacing enabler TODO-315 (full-catalogue
+  crawl) calls for; the crawl itself is still not run, so TODO-315 stays open. Note fetch_recent
+  now has no callers in the tree — left in place as scraper API rather than removed here.
+  Verified: 63 tuit tests pass (tests/test_tuit_db.py, tests/test_tuit_scraper.py).
+Changed: tools/tapematch/bug326_scan.py: promoted out of the tools/_ throwaway namespace (was
+  tools/_bug326_scan.py). TODO-323 explicitly says to regenerate the affected-folder list from the
+  scan rather than trust a stale copy, so the script has to outlive the session that wrote it.
+  tools/_bug326_launch.sh deleted — its detached batch ran to completion.
+Changed: TODO-323 marked In Progress with a progress note. Step 1 is COMPLETE: all 43 affected
+  dates were re-run (bug326_rerun_queue.txt fully marked done, log ends "Batch complete: 43
+  date(s) processed"), producing data/tapematch/runs/20260821_*. Step 2 — diff the new family
+  assignments against the pre-fix runs and re-write only the analysis.md files whose verdict
+  actually changed — has NOT been started, so the task is not closed. Recorded there because it is
+  a live trap: 26 of the 43 new dirs already carry an analysis.md written by the nightly
+  /tapematch-batch cron, which analyses a run dir on its own and never diffs it against the
+  superseded run, so those files must not be mistaken for step 2 having been done.
+Added: tools/tapematch/bug326_rerun_queue.txt: the completed re-run queue, committed as the record
+  of which dates were reprocessed and when.
+
 [2026-08-22] — chore(tapematch): seventh 50-run tapematch batch; one new clustering bug
 Added: data/tapematch/runs/<50 dirs>/analysis.md: verdicts for 50 complete-set run dirs spanning
   2002-08-23 through 2008-07-08, fanned out to five claude-sonnet-5 subagents holding disjoint

@@ -6192,6 +6192,13 @@ def get_tuit_downloads(rec_id: int | None = None, db_path=None) -> list[dict]:
     return [dict(r) for r in rows]
 
 
+def get_tuit_download_rec_ids(db_path=None) -> set[int]:
+    """Return the set of rec_ids with at least one tuit_downloads attempt."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute("SELECT DISTINCT rec_id FROM tuit_downloads").fetchall()
+    return {r["rec_id"] for r in rows}
+
+
 def get_folders_for_lb(lb_number: int, db_path=None) -> list[str]:
     """Return every on-disk folder known to hold an LB number's files.
 
