@@ -1,3 +1,27 @@
+[2026-08-22] — chore(tapematch): seventh 50-run tapematch batch; one new clustering bug
+Added: data/tapematch/runs/<50 dirs>/analysis.md: verdicts for 50 complete-set run dirs spanning
+  2002-08-23 through 2008-07-08, fanned out to five claude-sonnet-5 subagents holding disjoint
+  10-dir lists partitioned on date-group boundaries (the 2003-04-25, 2006-07-11 and 2006-10-27
+  same-date pairs each went to a single agent, so a date is never judged twice independently).
+  45 clean; 5 written as needs-review. Four of the five are the older half of a same-date pair and
+  are superseded by their own re-run, which the analysis.md cross-references: 2003-04-25 (a merge on
+  0.027 residual correlation against LB-02477's own "different recording than previous"),
+  2006-07-11 (a split contradicting LB-04191's documented same-recording-with-channel-swap claim),
+  2006-10-27 (see BUG-331). The fifth, 2005-06-11, is a standing judgment call rather than a
+  suspected defect: the merge rests only on secondary evidence (windowed 0.48, hiss 0.70) at a
+  0.394 primary correlation, with two unrelated taper credits and no same-source claim either way.
+Added: BUGS.md: BUG-331 — a "staircase/splice" lag curve merges two sources into one family even
+  when residual correlation is near-zero and SECONDARY MATCH reports no evidence at all. Two
+  independent instances this batch (2008-07-08 at corr 0.030; 2006-10-27 at near-zero across two
+  differently-credited taper rigs). The staircase rule is documented as a lower fingerprint bar,
+  not a standalone same-source link, so a pair clearing no secondary evidence should not merge.
+Changed: recording_families / tapematch_family_meta refreshed via backend.tapematch_sync:
+  3,062 dates processed, 9,132 families written, 12,035 recordings linked, 0 errors.
+Notes: batch 2 turned up another commentary-audit DISAGREES false positive fired by truncated
+  table-header boilerplate (2003-10-12) — more evidence for the still-open TODO-322, no new task
+  filed. Backlog after this batch: 733 eligible complete-set dirs / 625 dates, all machine-triaged
+  clear, 0 attention.
+
 [2026-08-21] — chore(tapematch): TODO-324 steps 1-2 — BUG-330 re-check queue built and triaged
 Added: tools/tapematch/todo324_scan.py, tools/tapematch/todo324_recheck_queue.tsv: the scan
   TODO-324 asks for, plus the evidence needed to aim step 3. For every [DISTINCT SOURCE] line whose
