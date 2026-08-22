@@ -8,9 +8,12 @@ Added: data/tapematch/runs/*/analysis.md: wrote 50 missing analysis write-ups (f
   merge at mean intra-corr 0.101 built largely on chained secondary links, whose own commentary
   audit already flagged three DISAGREES.
 Added: BUGS.md: three bugs found by the batch rather than by the source-identity calls themselves.
-  BUG-327 — ingest still double-counts LB-07173 (1993-08-28) at 25 tracks / 3:27:33 against a
-  1:32:48 median, even though both BUG-326's _dedupe_formats pass and _dedupe_subtrees fired on it,
-  so a third duplicate layout escapes both. BUG-328 — prep_analysis_input.py globs an LBF info file
+  BUG-327 — LB-07173 (1993-08-28) ingests at 25 tracks / 3:27:33 against a 1:32:48 median. Filed
+  first as a missed de-dup case; inspecting the folder showed the opposite. It holds the show
+  twice, as top-level d1/d2 and a nested "(REMASTERED)_fixed" copy with its own d1/d2, and the two
+  are not byte-identical (412.9 MB vs 467.9 MB for d1), so both de-dup passes are correct to leave
+  them alone and concat_source simply glues an original to a remaster. The fix is source-level
+  version selection, not wider de-duplication, which would discard a real recording. BUG-328 — prep_analysis_input.py globs an LBF info file
   for every \bLB-(\d+)\b in a source's commentary with no date check, so uploader typos splice a
   different concert's lineage prose into the bundle (LB-00897/1981-06-30 into the 1999-06-20 run,
   LB-01711/1999-06-26 into 1999-07-24). BUG-329 — cli.py's SECONDARY MATCH display and the
@@ -21,8 +24,8 @@ Note: TODO-323 stays open. Its re-run leg is finished — all 43 dates in
   tools/tapematch/bug326_rerun_queue.txt are marked done, and this batch analysed the resulting
   20260821_* run dirs — but its remaining legs are not: the new family assignments have not been
   diffed against the pre-fix ones, and the superseded run dirs still hold analysis.md files whose
-  verdicts were written from doubled streams. BUG-327 also shows the re-runs did not fully clear
-  the corruption: LB-07173 came out of a post-fix re-run still inflated.
+  verdicts were written from doubled streams. BUG-327 is a separate defect that the re-runs were
+  never going to clear, since it is not a de-duplication failure.
 
 [2026-08-21] — fix(tapematch): ingest counted the same track twice in dual-format folders
 Fixed: tools/tapematch/tapematch/ingest.py: BUG-326. list_tracks matched every file whose suffix
