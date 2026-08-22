@@ -1,3 +1,26 @@
+[2026-08-21] — chore(tapematch): TODO-324 steps 1-2 — BUG-330 re-check queue built and triaged
+Added: tools/tapematch/todo324_scan.py, tools/tapematch/todo324_recheck_queue.tsv: the scan
+  TODO-324 asks for, plus the evidence needed to aim step 3. For every [DISTINCT SOURCE] line whose
+  source results.json records as speed-unknown, it collects the corroboration that exists
+  INDEPENDENTLY of the discredited line and buckets the row. Of 3,678 affected rows across 2,006 run
+  dirs: SAFE-COMMENTARY 751 (508 dirs, 182 with an analysis.md) — a taper's own info file asserts
+  the split, so the verdict never needed the line; AT-RISK-UNCORROBORATED 2,144 (1,410 dirs, 782
+  with analysis); AT-RISK-DISAGREES 729 (482 dirs, 268 with analysis); CONFLICTED-SUBTHRESHOLD 54
+  (41 dirs, 22 with analysis) — the sharp bucket, where the same source carries real hiss or
+  fingerprint overlap that missed the merge bar while being declared "entirely different recording"
+  off an untrusted ratio. Those two claims cannot both hold, and the conflict overlaps BUG-329.
+  Nothing is CONTRADICTED outright: no affected source sits on a "→ SECONDARY LINK" line.
+Changed: two heuristics were wrong on their first pass and are worth recording, since both failed
+  in the direction that quietly shrinks the queue. (1) Distinctness claims were read from report.md's
+  commentary block, which truncates each LB to a few hundred characters — the assertions almost
+  always fall outside it. The scan now reads data/site/files/LBF-*.txt, the same prose
+  prep_analysis_input.py bundles, via a single directory index (a per-LB glob over ~99k files was
+  far too slow). (2) The claim regex matched "alternate recordings I am sharing for this date" and
+  mined the trailing track-list LB ids as if they were a claim, crediting verdicts with
+  corroboration they never had; a comparative connector (than/from/as/...) is now required. Same
+  boilerplate-false-positive shape as TODO-322. Verified against a hand-read case (1984-07-05, where
+  three sources are explicitly asserted distinct and a fourth has no LB id at all).
+
 [2026-08-21] — fix(tapematch): [DISTINCT SOURCE] no longer concludes from a rejected speed ratio
 Fixed: tools/tapematch/tapematch/cli.py: BUG-330. The DIAGNOSTICS section-3 loop triaged singleton
   sources on abs(speed_info[name]["ppm"]) > ppm_thr alone, never reading the "kind" or
