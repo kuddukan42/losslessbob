@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-327: Taper curation workbench at /taper-curation
+Priority: High
+Status: Done
+Added: 2026-08-30
+Closed: 2026-08-30
+Description: New Flask-served console (backend/taper_curation.html + backend/taper_curation.py) that puts every taper opinion for an entry in one row: LB entry text, entry_lineage parse, taper_attributions + evidence, the TUIT tracker's uploader-declared handle (or 'not scraped'), the TapeMatch family with label/member count/family conf/best scored pair, and any sticky curator decision, alongside the full LB description with known aliases highlighted by verdict. Adds GET /api/tapers/curation (filters: state, confidence, conflict, taper, q, attributed, tuit, family, agreement), /api/tapers/curation/isolated (the excluded and unknown text populations), /api/tapers/curation/tapers (per-canonical rollup incl. TUIT tags) and /api/tapers/curation/text/<lb>. Writes reuse the existing curator-gated confirm/reject/unresolved, bulk and vocabulary routes so decisions stay logged in taper_decision_log. Built on the /taper-review foundation, which stays as the narrow conflict queue.
+Shipped 2026-08-30. backend/taper_curation.py (read model, 20 tests in tests/test_taper_curation.py), backend/taper_curation.html (3 tabs: Workbench grid + detail pane, Isolated text, Tapers), four read routes in backend/app.py, page at /taper-curation. Verified against the live DB via Playwright: presets, keyboard nav, both other tabs, no console errors. Two behaviours worth remembering: TUIT placeholder text ('unknown', 'n/a', …) counts as no tag, and agreement() ignores vocabulary-barred names so gear text in entries.taper_name cannot fill the disagree queue.
+
 TODO-323: Re-run the 44 tapematch dates whose sources were corrupted by BUG-326
 Priority: High
 Status: Done

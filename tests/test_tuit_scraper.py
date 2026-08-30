@@ -18,6 +18,7 @@ from backend.tuit_scraper import (
     parse_size,
     recording_id_from_url,
     recording_to_json_fields,
+    save_recording_html,
     torrent_root_name,
 )
 
@@ -360,3 +361,22 @@ class TestTorrentRootName:
         path = tmp_path / "x.torrent"
         path.write_bytes(b"not a torrent")
         assert torrent_root_name(path) is None
+
+
+class TestSaveRecordingHtml:
+    """save_recording_html() archives the raw detail page."""
+
+    def test_writes_named_file(self, tmp_path):
+        path = save_recording_html("<html>x</html>", 42, tmp_path / "html")
+        assert path == tmp_path / "html" / "rec-42.html"
+        assert path.read_text(encoding="utf-8") == "<html>x</html>"
+
+    def test_overwrites_existing(self, tmp_path):
+        save_recording_html("<html>old</html>", 7, tmp_path)
+        path = save_recording_html("<html>new</html>", 7, tmp_path)
+        assert path.read_text(encoding="utf-8") == "<html>new</html>"
+
+    def test_unwritable_dir_returns_none(self, tmp_path):
+        blocker = tmp_path / "blocked"
+        blocker.write_text("not a directory")
+        assert save_recording_html("<html/>", 1, blocker) is None
