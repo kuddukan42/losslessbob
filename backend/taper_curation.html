@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taper Curation Workbench</title>
+  <style>
+    :root {
+      --bg:       #0d1117;
+      --surface:  #161b22;
+      --surface2: #1c2128;
+      --surface3: #22272e;
+      --border:   #30363d;
+      --text:     #e6edf3;
+      --muted:    #7d8590;
+      --accent:   #2563eb;
+      --accent-h: #1d4ed8;
+      --success:  #16a34a;
+      --warning:  #d97706;
+      --danger:   #dc2626;
+      --radius:   8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg); color: var(--text);
+      font-size: 14px; height: 100vh; display: flex; flex-direction: column;
+    }
+    code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 16px; }
+    .head-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    header h1 { font-size: 1rem; font-weight: 600; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 5px; font-size: .72rem; font-weight: 600;
+      padding: 2px 9px; border-radius: 999px; background: rgba(37,99,235,.2);
+      color: #93c5fd; border: 1px solid rgba(37,99,235,.4); white-space: nowrap;
+    }
+    .pill.readonly { background: rgba(217,119,6,.18); color: #fcd34d; border-color: rgba(217,119,6,.45); }
+    .stats { display: flex; gap: 14px; flex-wrap: wrap; margin-left: auto; font-size: .74rem; color: var(--muted); }
+    .stats b { color: var(--text); font-variant-numeric: tabular-nums; }
+
+    .tabs { display: flex; gap: 4px; margin-top: 8px; }
+    .tab {
+      background: none; border: none; border-bottom: 2px solid transparent;
+      color: var(--muted); padding: 6px 12px; font: inherit; font-size: .82rem;
+      cursor: pointer; border-radius: 6px 6px 0 0;
+    }
+    .tab:hover { color: var(--text); background: var(--surface2); }
+    .tab.active { color: var(--text); border-bottom-color: var(--accent); }
+
+    .toolbar {
+      display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+      padding: 8px 16px; background: var(--surface2); border-bottom: 1px solid var(--border);
+    }
+    select, input[type=text], input[type=search] {
+      background: var(--bg); color: var(--text); border: 1px solid var(--border);
+      border-radius: 6px; padding: 5px 8px; font: inherit; font-size: .8rem;
+    }
+    input[type=search] { min-width: 220px; }
+    button {
+      background: var(--surface3); color: var(--text); border: 1px solid var(--border);
+      border-radius: 6px; padding: 5px 10px; font: inherit; font-size: .8rem; cursor: pointer;
+    }
+    button:hover:not(:disabled) { background: var(--border); }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    button.primary { background: var(--accent); border-color: var(--accent); }
+    button.primary:hover:not(:disabled) { background: var(--accent-h); }
+    button.danger { background: rgba(220,38,38,.18); border-color: rgba(220,38,38,.5); color: #fca5a5; }
+    button.ghost { background: none; }
+    .preset { font-size: .74rem; padding: 3px 9px; border-radius: 999px; }
+    .preset.on { background: rgba(37,99,235,.25); border-color: rgba(37,99,235,.6); color: #bfdbfe; }
+
+    main { flex: 1; display: flex; min-height: 0; }
+    #list-pane { width: 54%; overflow: auto; border-right: 1px solid var(--border); }
+    #detail-pane { flex: 1; overflow: auto; padding: 14px 16px 40px; }
+    @media (max-width: 1100px) {
+      main { flex-direction: column; }
+      #list-pane { width: 100%; height: 45%; border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    table.grid { width: 100%; border-collapse: collapse; font-size: .78rem; }
+    table.grid th {
+      position: sticky; top: 0; background: var(--surface2); text-align: left;
+      padding: 6px 8px; border-bottom: 1px solid var(--border); font-weight: 600;
+      color: var(--muted); cursor: pointer; white-space: nowrap; z-index: 5;
+    }
+    table.grid td { padding: 5px 8px; border-bottom: 1px solid rgba(48,54,61,.5); vertical-align: top; }
+    table.grid tr.row { cursor: pointer; }
+    table.grid tr.row:hover { background: var(--surface2); }
+    table.grid tr.row.focus { background: rgba(37,99,235,.16); box-shadow: inset 3px 0 0 var(--accent); }
+    .lbcell { white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .src { display: block; line-height: 1.35; }
+    .src .lab { color: var(--muted); font-size: .68rem; text-transform: uppercase; letter-spacing: .03em; }
+    .nowrap { white-space: nowrap; }
+    .dim { color: var(--muted); }
+    .tag {
+      display: inline-block; font-size: .66rem; font-weight: 600; padding: 1px 6px;
+      border-radius: 999px; border: 1px solid transparent; white-space: nowrap;
+    }
+    .tag.confirmed { background: rgba(22,163,74,.18); color: #86efac; border-color: rgba(22,163,74,.45); }
+    .tag.propagated { background: rgba(37,99,235,.18); color: #93c5fd; border-color: rgba(37,99,235,.45); }
+    .tag.inferred { background: rgba(147,51,234,.18); color: #d8b4fe; border-color: rgba(147,51,234,.45); }
+    .tag.conflict, .tag.bad { background: rgba(220,38,38,.18); color: #fca5a5; border-color: rgba(220,38,38,.45); }
+    .tag.warn { background: rgba(217,119,6,.18); color: #fcd34d; border-color: rgba(217,119,6,.45); }
+    .tag.none, .tag.muted { background: var(--surface3); color: var(--muted); border-color: var(--border); }
+    .tag.agree { background: rgba(22,163,74,.14); color: #86efac; border-color: rgba(22,163,74,.35); }
+
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; }
+    .panel h3 {
+      font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
+      padding: 8px 12px; border-bottom: 1px solid var(--border); font-weight: 600;
+    }
+    .panel .body { padding: 10px 12px; }
+    table.sources { width: 100%; border-collapse: collapse; font-size: .8rem; }
+    table.sources td { padding: 6px 8px; border-bottom: 1px solid rgba(48,54,61,.6); vertical-align: top; }
+    table.sources td:first-child { width: 150px; color: var(--muted); white-space: nowrap; }
+    table.sources tr:last-child td { border-bottom: none; }
+    .value { font-weight: 600; }
+    .desc {
+      white-space: pre-wrap; word-break: break-word; font-size: .8rem; line-height: 1.5;
+      max-height: 340px; overflow: auto; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 6px; padding: 10px;
+    }
+    .desc mark { background: rgba(22,163,74,.3); color: #bbf7d0; border-radius: 3px; padding: 0 2px; }
+    .desc mark.excluded { background: rgba(217,119,6,.3); color: #fde68a; }
+    .desc mark.unknown { background: rgba(125,133,144,.3); color: #d1d5db; }
+    .actions { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .kbd {
+      display: inline-block; font-family: ui-monospace, monospace; font-size: .66rem;
+      background: var(--surface3); border: 1px solid var(--border); border-bottom-width: 2px;
+      border-radius: 4px; padding: 0 4px; color: var(--muted);
+    }
+    .empty { padding: 40px; text-align: center; color: var(--muted); }
+    .pager { display: flex; gap: 8px; align-items: center; padding: 8px 16px; border-top: 1px solid var(--border); font-size: .78rem; }
+    #toast-container { position: fixed; bottom: 16px; right: 16px; display: flex; flex-direction: column; gap: 8px; z-index: 999; }
+    .toast {
+      background: var(--surface3); border: 1px solid var(--border); border-left: 3px solid var(--success);
+      border-radius: 6px; padding: 8px 12px; font-size: .8rem; opacity: 0; transform: translateY(6px);
+      transition: .2s; max-width: 380px;
+    }
+    .toast.show { opacity: 1; transform: none; }
+    .toast.error { border-left-color: var(--danger); }
+    .banner {
+      background: rgba(217,119,6,.12); border: 1px solid rgba(217,119,6,.4); color: #fcd34d;
+      padding: 8px 12px; border-radius: 6px; font-size: .78rem; margin: 10px 16px;
+    }
+    a { color: #93c5fd; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head-row">
+      <h1>Taper Curation Workbench</h1>
+      <span class="pill" id="mode-pill">…</span>
+      <a href="/taper-review" class="pill" style="text-decoration:none">old console →</a>
+      <div class="stats" id="stats"></div>
+    </div>
+    <div class="tabs">
+      <button class="tab active" data-tab="work">Workbench</button>
+      <button class="tab" data-tab="isolated">Isolated text</button>
+      <button class="tab" data-tab="tapers">Tapers</button>
+    </div>
+  </header>
+
+  <div class="banner" id="readonly-banner" style="display:none">
+    Read-only: this install is not flagged as the curator, so decisions are disabled.
+  </div>
+
+  <!-- ── Workbench ─────────────────────────────────────────────────────────── -->
+  <div id="tab-work" style="display:flex;flex-direction:column;flex:1;min-height:0">
+    <div class="toolbar">
+      <input type="search" id="q" placeholder="LB number, location, taper, description…">
+      <select id="f-state">
+        <option value="">any decision</option>
+        <option value="undecided">undecided</option>
+        <option value="confirm">confirmed</option>
+        <option value="reject">rejected</option>
+        <option value="unresolved">unresolved</option>
+      </select>
+      <select id="f-confidence">
+        <option value="">any tier</option>
+        <option value="confirmed">confirmed</option>
+        <option value="propagated">propagated</option>
+        <option value="inferred">inferred</option>
+        <option value="none">unattributed</option>
+      </select>
+      <select id="f-tuit">
+        <option value="">TUIT: any</option>
+        <option value="scraped">scraped</option>
+        <option value="not_scraped">not scraped</option>
+        <option value="has_taper">has taper tag</option>
+        <option value="taper_only">taper tag, no attribution</option>
+      </select>
+      <select id="f-family">
+        <option value="">family: any</option>
+        <option value="has">in a family</option>
+        <option value="none">no family</option>
+        <option value="review">review-flagged</option>
+      </select>
+      <select id="f-agreement">
+        <option value="">agreement: any</option>
+        <option value="agree">sources agree</option>
+        <option value="conflict">sources disagree</option>
+        <option value="tuit_only">TUIT only</option>
+        <option value="lb_only">LB text only</option>
+        <option value="attr_only">attribution only</option>
+        <option value="none">nothing anywhere</option>
+      </select>
+      <span style="flex:1"></span>
+      <button class="preset" data-preset="new_evidence">TUIT taper, no attribution</button>
+      <button class="preset" data-preset="disagree">Sources disagree</button>
+      <button class="preset" data-preset="conflicts">Engine conflicts</button>
+      <button class="preset" data-preset="weak">Propagated + undecided</button>
+      <button class="ghost" id="clear-filters">clear</button>
+    </div>
+    <div class="toolbar" id="bulkbar" style="display:none">
+      <b id="sel-count" style="font-size:.8rem"></b>
+      <input type="text" id="bulk-taper" placeholder="taper (optional)" style="width:180px">
+      <button data-write class="primary" id="bulk-confirm">Confirm selected</button>
+      <button data-write class="danger" id="bulk-reject">Reject</button>
+      <button data-write id="bulk-unresolved">Unresolved</button>
+      <button class="ghost" id="bulk-clear">deselect</button>
+    </div>
+
+    <main>
+      <div id="list-pane">
+        <table class="grid">
+          <thead>
+            <tr>
+              <th style="width:26px"></th>
+              <th data-sort="lb">LB</th>
+              <th data-sort="date">Date / place</th>
+              <th data-sort="taper">Attribution</th>
+              <th>TUIT</th>
+              <th>LB text</th>
+              <th data-sort="similarity">Match</th>
+              <th>State</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div class="empty" id="rows-empty" style="display:none">No entries match these filters.</div>
+      </div>
+      <div id="detail-pane"><div class="empty">Select a row — <span class="kbd">j</span>/<span class="kbd">k</span> to move,
+        <span class="kbd">c</span> confirm attribution, <span class="kbd">t</span> confirm TUIT tag,
+        <span class="kbd">r</span> reject, <span class="kbd">u</span> unresolved, <span class="kbd">x</span> select.</div></div>
+    </main>
+
+    <div class="pager">
+      <button id="prev">← prev</button>
+      <button id="next">next →</button>
+      <span id="page-info" class="dim"></span>
+      <span style="flex:1"></span>
+      <label class="dim">page size
+        <select id="page-size"><option>25</option><option selected>50</option><option>100</option><option>200</option></select>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── Isolated text ─────────────────────────────────────────────────────── -->
+  <div id="tab-isolated" style="display:none;flex:1;overflow:auto;padding:14px 16px 40px">
+    <div class="toolbar" style="border-radius:8px;border:1px solid var(--border);margin-bottom:12px">
+      <select id="iso-kind">
+        <option value="">both populations</option>
+        <option value="excluded">excluded — barred by vocabulary</option>
+        <option value="unknown">unknown — never ruled on</option>
+      </select>
+      <input type="search" id="iso-q" placeholder="filter text…">
+      <button id="iso-refresh">rescan corpus</button>
+      <span class="dim" id="iso-summary"></span>
+    </div>
+    <p class="dim" style="font-size:.78rem;margin-bottom:10px">
+      <b>Excluded</b> = the text resolves to a canonical the vocabulary bars (<code>_NOT_TAPER</code> builtins
+      such as <code>jtt</code>/<code>lk</code>, or a local not-a-taper flag) — the parser drops it before it can
+      ever become a credit. <b>Unknown</b> = the text normalised to nothing the vocabulary knows: the pool worth
+      mining for new handles. Counts are entries, not mentions.
+    </p>
+    <table class="grid" id="iso-table">
+      <thead><tr><th>Text</th><th>Population</th><th>Entries</th><th>Variants seen</th><th>Sample LBs</th><th>Actions</th></tr></thead>
+      <tbody id="iso-rows"></tbody>
+    </table>
+  </div>
+
+  <!-- ── Tapers ────────────────────────────────────────────────────────────── -->
+  <div id="tab-tapers" style="display:none;flex:1;overflow:auto;padding:14px 16px 40px">
+    <table class="grid" id="tapers-table">
+      <thead><tr>
+        <th>Taper</th><th>In vocabulary</th><th>Attributed</th><th>Confirmed</th>
+        <th>Propagated</th><th>Conflicts</th><th>Decided</th><th>Undecided</th><th>TUIT tags</th>
+      </tr></thead>
+      <tbody id="tapers-rows"></tbody>
+    </table>
+  </div>
+
+  <div id="toast-container"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  const BASE = window.location.origin;
+  const LB_DETAIL_BASE = 'http://www.losslessbob.wonderingwhattochoose.com/detail/LB-';
+
+  let isCurator = false;
+  let data = { rows: [], total: 0, counts: {} };
+  let filters = { q: '', state: '', confidence: '', tuit: '', family: '', agreement: '' };
+  let sort = 'lb';
+  let page = 0;
+  let pageSize = 50;
+  let focusIndex = 0;
+  const selected = new Set();
+  let searchTimer = null;
+  let activeTab = 'work';
+
+  // ── helpers ────────────────────────────────────────────────────────────────
+
+  async function api(method, path, body) {
+    const opts = { method, headers: { 'Content-Type': 'application/json' } };
+    if (body != null) opts.body = JSON.stringify(body);
+    const r = await fetch(BASE + path, opts);
+    const payload = await r.json().catch(() => ({}));
+    if (!r.ok) {
+      const err = new Error(payload.message || payload.error || ('HTTP ' + r.status));
+      err.code = payload.error;
+      throw err;
+    }
+    return payload;
+  }
+
+  function toast(msg, type) {
+    const c = document.getElementById('toast-container');
+    const t = document.createElement('div');
+    t.className = 'toast ' + (type || 'success');
+    t.textContent = msg;
+    c.appendChild(t);
+    requestAnimationFrame(() => requestAnimationFrame(() => t.classList.add('show')));
+    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 300); }, 3200);
+  }
+
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const lbLabel = lb => 'LB-' + String(lb).padStart(5, '0');
+  const lbUrl = lb => LB_DETAIL_BASE + String(lb).padStart(5, '0') + '.html';
+  const qs = obj => Object.entries(obj)
+    .filter(([, v]) => v !== '' && v != null)
+    .map(([k, v]) => encodeURIComponent(k) + '=' + encodeURIComponent(v)).join('&');
+
+  function tag(text, cls) { return '<span class="tag ' + cls + '">' + esc(text) + '</span>'; }
+
+  const AGREE_TAG = {
+    agree: ['agree', 'agree'], conflict: ['disagree', 'conflict'],
+    tuit_only: ['TUIT only', 'warn'], lb_only: ['LB text only', 'warn'],
+    attr_only: ['attribution only', 'propagated'], none: ['no taper', 'none'],
+    not_scraped: ['no taper', 'none']
+  };
+
+  // ── curator gate ───────────────────────────────────────────────────────────
+
+  async function loadCurator() {
+    try {
+      isCurator = !!(await api('GET', '/api/curator')).is_curator;
+    } catch (e) { isCurator = false; }
+    const pill = document.getElementById('mode-pill');
+    pill.textContent = isCurator ? 'curator' : 'read-only';
+    pill.className = 'pill' + (isCurator ? '' : ' readonly');
+    document.getElementById('readonly-banner').style.display = isCurator ? 'none' : '';
+    applyGate(document);
+  }
+
+  /** Disable every write control at once rather than 403-toasting per click. */
+  function applyGate(root) {
+    if (isCurator) return;
+    (root || document).querySelectorAll('[data-write]').forEach(el => {
+      el.disabled = true;
+      el.title = 'Curator mode required';
+    });
+  }
+
+  // ── list ───────────────────────────────────────────────────────────────────
+
+  async function loadRows(keepFocus) {
+    const query = qs(Object.assign({}, filters, {
+      limit: pageSize, offset: page * pageSize, sort
+    }));
+    try {
+      data = await api('GET', '/api/tapers/curation?' + query);
+    } catch (e) {
+      toast(e.message, 'error');
+      return;
+    }
+    if (!keepFocus) focusIndex = 0;
+    renderStats();
+    renderRows();
+    renderDetail();
+  }
+
+  function renderStats() {
+    const c = data.counts || {};
+    const el = document.getElementById('stats');
+    el.innerHTML = [
+      ['entries', c.entries], ['attributed', c.attributed], ['confirmed tier', c.confirmed],
+      ['conflicts', c.conflicts], ['curator calls', c.decided],
+      ['TUIT scraped', c.tuit_scraped], ['TUIT tags', c.tuit_with_taper],
+      ['in family', c.in_family], ['unknown texts', c.unknown_text], ['vocabulary', c.vocabulary]
+    ].map(([k, v]) => '<span>' + k + ' <b>' + (v == null ? '–' : v.toLocaleString()) + '</b></span>').join('');
+  }
+
+  function sourceCell(label, value, extra) {
+    if (!value) return '<span class="src dim">–</span>';
+    return '<span class="src"><span class="lab">' + label + '</span>' + esc(value) +
+           (extra ? ' ' + extra : '') + '</span>';
+  }
+
+  function renderRows() {
+    const tbody = document.getElementById('rows');
+    document.getElementById('rows-empty').style.display = data.rows.length ? 'none' : '';
+    tbody.innerHTML = data.rows.map((row, i) => {
+      const a = row.attribution || {}, t = row.tuit, m = row.tapematch, e = row.entry || {};
+      const attrCell = a.taper
+        ? esc(a.taper) + ' ' + tag(a.confidence || '?', a.confidence || 'none') +
+          (a.conflict ? ' ' + tag('conflict', 'conflict') : '')
+        : '<span class="dim">none</span>';
+      const tuitCell = !t
+        ? '<span class="dim">not scraped</span>'
+        : (t.taper ? esc(t.taper) : '<span class="dim">scraped, no tag</span>') +
+          (t.source_type ? ' <span class="dim">' + esc(t.source_type) + '</span>' : '');
+      const lbCell = e.taper_name
+        ? esc(String(e.taper_name).replace(/\s+/g, ' ').slice(0, 40)) +
+          (e.taper_excluded ? ' ' + tag(e.taper_excluded === 'unknown_text' ? 'unknown' : 'barred', 'muted') : '')
+        : '<span class="dim">–</span>';
+      const matchCell = !m ? '<span class="dim">–</span>'
+        : (m.best_similarity != null ? m.best_similarity.toFixed(0) + '%' : '–') +
+          ' <span class="dim">' + (m.member_count || 0) + 'x</span>' +
+          (m.review_flag ? ' ' + tag('review', 'warn') : '');
+      const [aTxt, aCls] = AGREE_TAG[row.agreement] || ['?', 'none'];
+      const decision = (row.decision || {}).action;
+      return '<tr class="row' + (i === focusIndex ? ' focus' : '') + '" data-i="' + i + '">' +
+        '<td><input type="checkbox" data-lb="' + row.lb_number + '"' +
+          (selected.has(row.lb_number) ? ' checked' : '') + '></td>' +
+        '<td class="lbcell"><a href="' + lbUrl(row.lb_number) + '" target="_blank" rel="noopener">' +
+          lbLabel(row.lb_number) + '</a></td>' +
+        '<td class="nowrap">' + esc(e.date_str || '') +
+          '<span class="src dim">' + esc((e.location || '').slice(0, 30)) + '</span></td>' +
+        '<td>' + attrCell + '</td>' +
+        '<td>' + tuitCell + '</td>' +
+        '<td>' + lbCell + '</td>' +
+        '<td class="nowrap">' + matchCell + '</td>' +
+        '<td class="nowrap">' + tag(aTxt, aCls) +
+          (decision ? ' ' + tag(decision, decision === 'confirm' ? 'confirmed' : 'muted') : '') + '</td>' +
+        '</tr>';
+    }).join('');
+
+    tbody.querySelectorAll('tr.row').forEach(tr => {
+      tr.addEventListener('click', ev => {
+        if (ev.target.type === 'checkbox') return;
+        focusIndex = Number(tr.dataset.i);
+        renderRows();
+        renderDetail();
+      });
+    });
+    tbody.querySelectorAll('input[type=checkbox]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const lb = Number(cb.dataset.lb);
+        cb.checked ? selected.add(lb) : selected.delete(lb);
+        renderBulk();
+      });
+    });
+
+    const from = data.total ? page * pageSize + 1 : 0;
+    document.getElementById('page-info').textContent =
+      from + '–' + Math.min((page + 1) * pageSize, data.total) + ' of ' + data.total.toLocaleString();
+    document.getElementById('prev').disabled = page === 0;
+    document.getElementById('next').disabled = (page + 1) * pageSize >= data.total;
+  }
+
+  function renderBulk() {
+    const bar = document.getElementById('bulkbar');
+    bar.style.display = selected.size ? '' : 'none';
+    document.getElementById('sel-count').textContent = selected.size + ' selected';
+    applyGate(bar);
+  }
+
+  // ── detail ─────────────────────────────────────────────────────────────────
+
+  /** Highlight every alias hit in the description, coloured by vocabulary verdict. */
+  function highlight(text, candidates) {
+    let html = esc(text || '');
+    const seen = new Set();
+    for (const c of candidates || []) {
+      const key = c.text.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const cls = c.status === 'known' ? '' : (c.status === 'unknown_text' ? 'unknown' : 'excluded');
+      const re = new RegExp('\\b(' + c.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')\\b', 'gi');
+      html = html.replace(re, '<mark class="' + cls + '">$1</mark>');
+    }
+    return html;
+  }
+
+  function evidenceList(evidence) {
+    if (!evidence || !evidence.length) return '<span class="dim">no evidence recorded</span>';
+    return evidence.map(ev =>
+      '<div style="margin-bottom:4px"><span class="tag muted">' + esc(ev.kind || '?') + '</span> ' +
+      esc(ev.detail || '') + (ev.via_lb ? ' <span class="dim">via ' + lbLabel(ev.via_lb) + '</span>' : '') +
+      '</div>').join('');
+  }
+
+  function renderDetail() {
+    const pane = document.getElementById('detail-pane');
+    const row = data.rows[focusIndex];
+    if (!row) { pane.innerHTML = '<div class="empty">Nothing selected.</div>'; return; }
+    const e = row.entry || {}, a = row.attribution || {}, t = row.tuit, m = row.tapematch,
+          p = row.parsed || {}, d = row.decision || {};
+
+    const candidateButtons = [];
+    const add = (label, value) => {
+      if (value && !candidateButtons.some(b => b.value === value)) {
+        candidateButtons.push({ label, value });
+      }
+    };
+    add('attribution', a.taper);
+    add('TUIT', t && t.canonical);
+    add('LB text', e.taper_canonical);
+    add('parser', p.canonical);
+
+    const excludedNote = x => x
+      ? ' ' + tag(x === 'unknown_text' ? 'not in vocabulary' : 'barred: not a taper', 'warn') : '';
+
+    pane.innerHTML =
+      '<div class="head-row" style="margin-bottom:10px">' +
+        '<h2 style="font-size:1rem"><a href="' + lbUrl(row.lb_number) + '" target="_blank" rel="noopener">' +
+          lbLabel(row.lb_number) + '</a></h2>' +
+        '<span class="dim">' + esc(e.date_str || '') + ' · ' + esc(e.location || '') + '</span>' +
+        (e.lb_status ? ' ' + tag(e.lb_status, 'muted') : '') +
+        (e.lb_category ? ' ' + tag(e.lb_category, 'muted') : '') +
+      '</div>' +
+
+      '<div class="panel"><h3>What each source says</h3><div class="body">' +
+        '<table class="sources">' +
+          '<tr><td>Attribution engine</td><td>' +
+            (a.taper ? '<span class="value">' + esc(a.taper) + '</span> ' +
+              tag(a.confidence || '?', a.confidence || 'none') +
+              (a.conflict ? ' ' + tag('conflict', 'conflict') : '')
+              : '<span class="dim">no attribution</span>') +
+            '<div style="margin-top:6px">' + evidenceList(a.evidence) + '</div></td></tr>' +
+          '<tr><td>TUIT tracker</td><td>' +
+            (!t ? '<span class="dim">not scraped</span>'
+                : (t.taper ? '<span class="value">' + esc(t.taper) + '</span>' + excludedNote(t.excluded)
+                           : '<span class="dim">scraped, no taper tag</span>') +
+                  '<div class="dim" style="margin-top:4px">' +
+                    [t.source_type, t.quality, t.uploader ? 'uploaded by ' + t.uploader : '',
+                     t.lb_verified ? 'LB-verified' : ''].filter(Boolean).map(esc).join(' · ') +
+                  '</div>' +
+                  (t.lineage ? '<div class="dim mono" style="margin-top:4px">' + esc(t.lineage) + '</div>' : '')
+            ) + '</td></tr>' +
+          '<tr><td>LB entry text</td><td>' +
+            (e.taper_name ? '<span class="value">' + esc(e.taper_name) + '</span>' + excludedNote(e.taper_excluded)
+                          : '<span class="dim">none</span>') +
+            (e.source_chain ? '<div class="dim mono" style="margin-top:4px">' + esc(e.source_chain) + '</div>' : '') +
+            '</td></tr>' +
+          '<tr><td>Parser (entry_lineage)</td><td>' +
+            (p.taper ? esc(p.taper) + excludedNote(p.excluded) +
+                       (p.parse_confidence ? ' ' + tag(p.parse_confidence + ' confidence', 'muted') : '')
+                     : '<span class="dim">nothing extracted</span>') + '</td></tr>' +
+          '<tr><td>TapeMatch family</td><td>' +
+            (!m ? '<span class="dim">not in a family</span>'
+                : '<span class="value">' + esc(m.label || m.fam_id) + '</span> ' +
+                  tag((m.member_count || 0) + ' members', 'muted') +
+                  (m.conf != null ? ' ' + tag('family conf ' + Number(m.conf).toFixed(3), 'muted') : '') +
+                  (m.best_similarity != null
+                    ? ' ' + tag('best pair ' + m.best_similarity.toFixed(1) + '%', 'agree') : '') +
+                  (m.pair_count ? ' <span class="dim">' + m.pair_count + ' scored pairs</span>' : '') +
+                  (m.review_flag ? '<div style="margin-top:4px">' + tag('review flagged', 'warn') + ' ' +
+                     '<span class="dim">' + esc(m.review_reason || '') + '</span></div>' : '')
+            ) + '</td></tr>' +
+          '<tr><td>Curator decision</td><td>' +
+            (d.action ? tag(d.action, d.action === 'confirm' ? 'confirmed' : 'muted') +
+                        (d.taper ? ' ' + esc(d.taper) : '') +
+                        ' <span class="dim">' + esc((d.decided_at || '').slice(0, 19)) + '</span>'
+                      : '<span class="dim">undecided</span>') + '</td></tr>' +
+        '</table>' +
+      '</div></div>' +
+
+      '<div class="panel"><h3>Decide</h3><div class="body actions">' +
+        candidateButtons.map(b =>
+          '<button data-write class="primary" data-confirm="' + esc(b.value) + '">Confirm ' +
+          esc(b.value) + ' <span class="dim">(' + b.label + ')</span></button>').join('') +
+        '<input type="text" id="custom-taper" placeholder="other taper…" style="width:170px">' +
+        '<button data-write id="confirm-custom">Confirm typed</button>' +
+        '<button data-write class="danger" data-reject="1">Reject' +
+          (a.taper ? ' ' + esc(a.taper) : '') + '</button>' +
+        '<button data-write data-unresolved="1">Mark unresolved</button>' +
+        '<span class="dim" style="margin-left:auto">' +
+          '<span class="kbd">c</span> confirm attribution · <span class="kbd">t</span> confirm TUIT · ' +
+          '<span class="kbd">r</span> reject · <span class="kbd">u</span> unresolved</span>' +
+      '</div></div>' +
+
+      '<div class="panel"><h3>Names found in this text</h3><div class="body actions">' +
+        ((row.candidates || []).length
+          ? row.candidates.map(c =>
+              '<span class="tag ' + (c.status === 'known' ? 'confirmed'
+                : c.status === 'unknown_text' ? 'muted' : 'warn') + '">' + esc(c.text) +
+              (c.canonical !== c.text.toLowerCase() ? ' → ' + esc(c.canonical) : '') +
+              ' · ' + (c.status === 'known' ? 'taper' :
+                       c.status === 'unknown_text' ? 'unknown' : 'barred') + '</span>').join(' ')
+          : '<span class="dim">no known aliases appear in this text</span>') +
+      '</div></div>' +
+
+      '<div class="panel"><h3>LB description <span class="dim">(' + (e.description_len || 0) +
+        ' chars)</span></h3><div class="body">' +
+        '<div class="desc">' + highlight(e.description, row.candidates) + '</div>' +
+      '</div></div>' +
+
+      (t && t.info_text ? '<div class="panel"><h3>TUIT info file</h3><div class="body">' +
+        '<div class="desc">' + highlight(t.info_text, row.candidates) + '</div></div></div>' : '');
+
+    pane.querySelectorAll('[data-confirm]').forEach(b =>
+      b.addEventListener('click', () => decide(row.lb_number, 'confirm', b.dataset.confirm)));
+    const custom = pane.querySelector('#confirm-custom');
+    if (custom) custom.addEventListener('click', () => {
+      const v = pane.querySelector('#custom-taper').value.trim();
+      if (!v) { toast('Type a taper name first', 'error'); return; }
+      decide(row.lb_number, 'confirm', v);
+    });
+    const rej = pane.querySelector('[data-reject]');
+    if (rej) rej.addEventListener('click', () => decide(row.lb_number, 'reject', a.taper));
+    const unres = pane.querySelector('[data-unresolved]');
+    if (unres) unres.addEventListener('click', () => decide(row.lb_number, 'unresolved'));
+    applyGate(pane);
+  }
+
+  // ── decisions ──────────────────────────────────────────────────────────────
+
+  const ROUTE = { confirm: 'confirm', reject: 'reject', unresolved: 'unresolved' };
+
+  async function decide(lb, action, taper) {
+    if (!isCurator) { toast('Curator mode required', 'error'); return; }
+    try {
+      await api('POST', '/api/tapers/attributions/' + lb + '/' + ROUTE[action],
+                taper ? { taper } : {});
+      toast(lbLabel(lb) + ' ' + action + (taper ? ' → ' + taper : ''));
+      const wasFocus = focusIndex;
+      await loadRows(true);
+      focusIndex = Math.min(wasFocus + 1, data.rows.length - 1);
+      renderRows();
+      renderDetail();
+    } catch (e) {
+      toast(e.message, 'error');
+    }
+  }
+
+  async function bulk(action) {
+    const lbs = [...selected];
+    if (!lbs.length) return;
+    const taper = document.getElementById('bulk-taper').value.trim();
+    try {
+      const res = await api('POST', '/api/tapers/attributions/bulk',
+                            { action, lbs, taper: taper || undefined });
+      if (res.fail_count) {
+        const first = (res.results.find(r => !r.ok) || {}).error || '';
+        toast(res.ok_count + ' applied, ' + res.fail_count + ' failed — ' + first, 'error');
+      } else {
+        toast(res.ok_count + ' entries updated');
+      }
+      selected.clear();
+      renderBulk();
+      await loadRows(true);
+    } catch (e) {
+      toast(e.message, 'error');
+    }
+  }
+
+  // ── isolated text tab ──────────────────────────────────────────────────────
+
+  async function loadIsolated(refresh) {
+    const body = document.getElementById('iso-rows');
+    body.innerHTML = '<tr><td colspan="6" class="dim" style="padding:14px">Scanning…</td></tr>';
+    let res;
+    try {
+      res = await api('GET', '/api/tapers/curation/isolated?' + qs({
+        kind: document.getElementById('iso-kind').value,
+        q: document.getElementById('iso-q').value.trim(),
+        limit: 400, refresh: refresh ? 1 : ''
+      }));
+    } catch (e) { toast(e.message, 'error'); return; }
+
+    document.getElementById('iso-summary').textContent =
+      res.total_groups.toLocaleString() + ' distinct texts across ' +
+      res.total_entries.toLocaleString() + ' entries';
+    body.innerHTML = res.groups.map(g =>
+      '<tr>' +
+        '<td class="mono"><b>' + esc(g.canonical) + '</b></td>' +
+        '<td>' + tag(g.kind === 'excluded' ? 'excluded · ' + g.reason.replace('not_taper_', '') : 'unknown',
+                     g.kind === 'excluded' ? 'warn' : 'muted') + '</td>' +
+        '<td class="nowrap">' + g.count.toLocaleString() + '</td>' +
+        '<td class="dim">' + esc(g.variants.join(' · ')) + '</td>' +
+        '<td class="dim">' + g.sample_lbs.map(lb =>
+            '<a href="#" data-jump="' + lb + '">' + lbLabel(lb) + '</a>').join(' ') + '</td>' +
+        '<td class="actions">' +
+          (g.kind === 'unknown'
+            ? '<button data-write data-add-taper="' + esc(g.canonical) + '">Add as taper</button>' +
+              '<button data-write data-alias-of="' + esc(g.canonical) + '">Alias of…</button>' +
+              '<button data-write data-not-taper="' + esc(g.canonical) + '">Not a taper</button>'
+            : '<button data-write data-is-taper="' + esc(g.canonical) + '">Re-admit as taper</button>') +
+        '</td>' +
+      '</tr>').join('') || '<tr><td colspan="6" class="empty">Nothing here.</td></tr>';
+
+    body.querySelectorAll('[data-jump]').forEach(a => a.addEventListener('click', ev => {
+      ev.preventDefault();
+      document.getElementById('q').value = a.dataset.jump;
+      filters.q = a.dataset.jump;
+      page = 0;
+      switchTab('work');
+      loadRows();
+    }));
+    body.querySelectorAll('[data-add-taper]').forEach(b => b.addEventListener('click', async () => {
+      await vocab('POST', '/api/tapers/vocabulary', { name: b.dataset.addTaper },
+                  b.dataset.addTaper + ' added to the vocabulary');
+    }));
+    body.querySelectorAll('[data-alias-of]').forEach(b => b.addEventListener('click', async () => {
+      const canonical = prompt('Make "' + b.dataset.aliasOf + '" an alias of which canonical taper?');
+      if (!canonical) return;
+      await vocab('POST', '/api/tapers/aliases',
+                  { alias: b.dataset.aliasOf, canonical: canonical.trim() },
+                  b.dataset.aliasOf + ' → ' + canonical.trim());
+    }));
+    body.querySelectorAll('[data-not-taper]').forEach(b => b.addEventListener('click', async () => {
+      await vocab('POST', '/api/tapers/vocabulary/' + encodeURIComponent(b.dataset.notTaper) + '/flag',
+                  { is_taper: false }, b.dataset.notTaper + ' flagged not-a-taper');
+    }));
+    body.querySelectorAll('[data-is-taper]').forEach(b => b.addEventListener('click', async () => {
+      await vocab('POST', '/api/tapers/vocabulary/' + encodeURIComponent(b.dataset.isTaper) + '/flag',
+                  { is_taper: true }, b.dataset.isTaper + ' re-admitted as a taper');
+    }));
+    applyGate(body);
+  }
+
+  async function vocab(method, path, body, okMsg) {
+    if (!isCurator) { toast('Curator mode required', 'error'); return; }
+    try {
+      const res = await api(method, path, body);
+      toast(okMsg + (res.needs_recompute ? ' — recompute pending' : ''));
+      await loadIsolated(true);
+    } catch (e) { toast(e.message, 'error'); }
+  }
+
+  // ── tapers tab ─────────────────────────────────────────────────────────────
+
+  async function loadTapers() {
+    const body = document.getElementById('tapers-rows');
+    body.innerHTML = '<tr><td colspan="9" class="dim" style="padding:14px">Loading…</td></tr>';
+    let res;
+    try { res = await api('GET', '/api/tapers/curation/tapers'); }
+    catch (e) { toast(e.message, 'error'); return; }
+    body.innerHTML = res.tapers.map(t =>
+      '<tr>' +
+        '<td><a href="#" data-taper="' + esc(t.taper) + '"><b>' + esc(t.taper) + '</b></a></td>' +
+        '<td>' + (t.in_universe ? tag('yes', 'confirmed') : tag('excluded', 'warn')) + '</td>' +
+        '<td>' + t.attributed + '</td><td>' + t.confirmed + '</td><td>' + t.propagated + '</td>' +
+        '<td>' + (t.conflicts ? tag(String(t.conflicts), 'conflict') : '0') + '</td>' +
+        '<td>' + t.decided + '</td><td>' + t.undecided + '</td><td>' + t.tuit + '</td>' +
+      '</tr>').join('');
+    body.querySelectorAll('[data-taper]').forEach(a => a.addEventListener('click', ev => {
+      ev.preventDefault();
+      filters.q = '';
+      document.getElementById('q').value = '';
+      filters.taper = a.dataset.taper;
+      page = 0;
+      switchTab('work');
+      loadRows();
+    }));
+  }
+
+  // ── tabs, filters, keyboard ────────────────────────────────────────────────
+
+  function switchTab(name) {
+    activeTab = name;
+    document.querySelectorAll('.tab').forEach(t =>
+      t.classList.toggle('active', t.dataset.tab === name));
+    document.getElementById('tab-work').style.display = name === 'work' ? 'flex' : 'none';
+    document.getElementById('tab-isolated').style.display = name === 'isolated' ? 'block' : 'none';
+    document.getElementById('tab-tapers').style.display = name === 'tapers' ? 'block' : 'none';
+    if (name === 'isolated' && !document.getElementById('iso-rows').children.length) loadIsolated();
+    if (name === 'tapers' && !document.getElementById('tapers-rows').children.length) loadTapers();
+  }
+
+  const PRESETS = {
+    new_evidence: { tuit: 'taper_only', state: 'undecided' },
+    disagree: { agreement: 'conflict' },
+    conflicts: { confidence: '', state: 'undecided', conflictOnly: true },
+    weak: { confidence: 'propagated', state: 'undecided' }
+  };
+
+  function applyPreset(name) {
+    filters = { q: '', state: '', confidence: '', tuit: '', family: '', agreement: '' };
+    const p = PRESETS[name] || {};
+    Object.assign(filters, p);
+    if (p.conflictOnly) { filters.conflict = '1'; delete filters.conflictOnly; }
+    else delete filters.conflict;
+    syncControls();
+    page = 0;
+    document.querySelectorAll('.preset').forEach(b => b.classList.toggle('on', b.dataset.preset === name));
+    loadRows();
+  }
+
+  function syncControls() {
+    document.getElementById('q').value = filters.q || '';
+    document.getElementById('f-state').value = filters.state || '';
+    document.getElementById('f-confidence').value = filters.confidence || '';
+    document.getElementById('f-tuit').value = filters.tuit || '';
+    document.getElementById('f-family').value = filters.family || '';
+    document.getElementById('f-agreement').value = filters.agreement || '';
+  }
+
+  function bindFilter(id, key) {
+    document.getElementById(id).addEventListener('change', ev => {
+      filters[key] = ev.target.value;
+      delete filters.conflict;
+      page = 0;
+      document.querySelectorAll('.preset').forEach(b => b.classList.remove('on'));
+      loadRows();
+    });
+  }
+
+  function init() {
+    document.querySelectorAll('.tab').forEach(t =>
+      t.addEventListener('click', () => switchTab(t.dataset.tab)));
+    bindFilter('f-state', 'state');
+    bindFilter('f-confidence', 'confidence');
+    bindFilter('f-tuit', 'tuit');
+    bindFilter('f-family', 'family');
+    bindFilter('f-agreement', 'agreement');
+    document.getElementById('q').addEventListener('input', ev => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => {
+        filters.q = ev.target.value.trim();
+        page = 0;
+        loadRows();
+      }, 300);
+    });
+    document.getElementById('clear-filters').addEventListener('click', () => {
+      filters = { q: '', state: '', confidence: '', tuit: '', family: '', agreement: '' };
+      syncControls();
+      document.querySelectorAll('.preset').forEach(b => b.classList.remove('on'));
+      page = 0;
+      loadRows();
+    });
+    document.querySelectorAll('.preset').forEach(b =>
+      b.addEventListener('click', () => applyPreset(b.dataset.preset)));
+    document.getElementById('prev').addEventListener('click', () => { page--; loadRows(); });
+    document.getElementById('next').addEventListener('click', () => { page++; loadRows(); });
+    document.getElementById('page-size').addEventListener('change', ev => {
+      pageSize = Number(ev.target.value); page = 0; loadRows();
+    });
+    document.querySelectorAll('th[data-sort]').forEach(th =>
+      th.addEventListener('click', () => {
+        sort = sort === th.dataset.sort ? '-' + th.dataset.sort : th.dataset.sort;
+        page = 0;
+        loadRows();
+      }));
+    document.getElementById('bulk-confirm').addEventListener('click', () => bulk('confirm'));
+    document.getElementById('bulk-reject').addEventListener('click', () => bulk('reject'));
+    document.getElementById('bulk-unresolved').addEventListener('click', () => bulk('unresolved'));
+    document.getElementById('bulk-clear').addEventListener('click', () => {
+      selected.clear(); renderBulk(); renderRows();
+    });
+    document.getElementById('iso-kind').addEventListener('change', () => loadIsolated());
+    document.getElementById('iso-q').addEventListener('input', () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => loadIsolated(), 300);
+    });
+    document.getElementById('iso-refresh').addEventListener('click', () => loadIsolated(true));
+
+    document.addEventListener('keydown', ev => {
+      if (activeTab !== 'work') return;
+      const tagName = (ev.target.tagName || '').toLowerCase();
+      if (tagName === 'input' || tagName === 'select' || tagName === 'textarea') return;
+      const row = data.rows[focusIndex];
+      if (ev.key === 'j' || ev.key === 'ArrowDown') {
+        focusIndex = Math.min(focusIndex + 1, data.rows.length - 1);
+      } else if (ev.key === 'k' || ev.key === 'ArrowUp') {
+        focusIndex = Math.max(focusIndex - 1, 0);
+      } else if (ev.key === 'x' && row) {
+        selected.has(row.lb_number) ? selected.delete(row.lb_number) : selected.add(row.lb_number);
+        renderBulk();
+      } else if (ev.key === 'c' && row) {
+        return void decide(row.lb_number, 'confirm', (row.attribution || {}).taper);
+      } else if (ev.key === 't' && row && row.tuit && row.tuit.canonical) {
+        return void decide(row.lb_number, 'confirm', row.tuit.canonical);
+      } else if (ev.key === 'r' && row) {
+        return void decide(row.lb_number, 'reject', (row.attribution || {}).taper);
+      } else if (ev.key === 'u' && row) {
+        return void decide(row.lb_number, 'unresolved');
+      } else if (ev.key === 'n') {
+        document.getElementById('next').click(); return;
+      } else if (ev.key === 'p') {
+        document.getElementById('prev').click(); return;
+      } else { return; }
+      ev.preventDefault();
+      renderRows();
+      renderDetail();
+      const el = document.querySelector('tr.row.focus');
+      if (el) el.scrollIntoView({ block: 'nearest' });
+    });
+
+    loadCurator().then(loadRows);
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+</body>
+</html>

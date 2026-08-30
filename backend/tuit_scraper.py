@@ -531,8 +531,37 @@ def parse_recording(html: str, rec_id: int | None = None) -> Recording:
     return rec
 
 
+def save_recording_html(html: str, rec_id: int, html_dir: str | Path) -> Path | None:
+    """Write the raw detail-page HTML to ``<html_dir>/rec-<id>.html``.
+
+    The parsed fields in the DB are lossy — anything the parser does not yet
+    read (new page sections, changed markup) is only recoverable from the page
+    itself, and re-fetching costs another hit on a 21-member private tracker.
+
+    Args:
+        html: Raw HTML of the detail page.
+        rec_id: Site recording id, used for the filename.
+        html_dir: Directory to write into; created if missing.
+
+    Returns:
+        The path written, or None when the write failed.
+    """
+    try:
+        target = Path(html_dir)
+        target.mkdir(parents=True, exist_ok=True)
+        path = target / f"rec-{rec_id}.html"
+        path.write_text(html, encoding="utf-8")
+        return path
+    except OSError as exc:
+        logger.warning("could not save detail HTML for rec %s: %s", rec_id, exc)
+        return None
+
+
 def fetch_recording(
-    session: requests.Session, rec_id: int, delay: float = DEFAULT_DELAY
+    session: requests.Session,
+    rec_id: int,
+    delay: float = DEFAULT_DELAY,
+    html_dir: str | Path | None = None,
 ) -> Recording | None:
     """Fetch and parse one recording detail page.
 
@@ -540,6 +569,8 @@ def fetch_recording(
         session: Authenticated session.
         rec_id: Site recording id.
         delay: Seconds to sleep before the request.
+        html_dir: When given, the raw page is also archived there as
+            ``rec-<id>.html``. A failed write is logged, not raised.
 
     Returns:
         A Recording, or None when the page could not be fetched.
@@ -547,6 +578,8 @@ def fetch_recording(
     resp = _get(session, f"/recordings/{rec_id}", delay)
     if resp is None:
         return None
+    if html_dir is not None:
+        save_recording_html(resp.text, rec_id, html_dir)
     return parse_recording(resp.text, rec_id=rec_id)
 
 

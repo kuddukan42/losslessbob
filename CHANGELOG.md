@@ -1,3 +1,34 @@
+[2026-08-30] — feat(backend): TODO-327 taper curation workbench; TUIT detail-page HTML archived
+Added: backend/taper_curation.py: read model joining every source that has an opinion about a
+  recording's taper — entries text, entry_lineage parse, taper_attributions + evidence,
+  taper_confirmations, tuit_recordings (uploader-declared handle, or None = "not scraped") and
+  recording_families/tapematch_family_meta/tapematch_pairs (label, member count, family conf and
+  strongest scored pair = the quality of the match behind a propagated credit). Also isolated_texts(),
+  which surfaces the two populations that never became a credit: *excluded* (resolves to a barred
+  canonical) and *unknown* (nothing the vocabulary knows). The excluded half only exists in raw
+  description text — the parser drops those names before entry_lineage — so it comes from a
+  full-corpus regex scan (~12s), cached on an entry-count/vocabulary fingerprint.
+Added: backend/taper_curation.html + /taper-curation: three tabs over 16.7k entries. Workbench is a
+  dense grid (LB / date / attribution / TUIT / LB text / match / state) beside a detail pane holding
+  the source comparison, the full LB description with every known alias highlighted by verdict, and
+  the decide row; j/k/c/t/r/u keyboard flow, multi-select bulk, presets for the queues that matter
+  (TUIT taper with no attribution, sources disagree, engine conflicts, propagated + undecided).
+  Isolated text lists the excluded/unknown groups with add-as-taper / alias-of / not-a-taper actions;
+  Tapers is a per-canonical rollup including TUIT tag counts. Reads are ungated; every write reuses
+  the existing curator-gated confirm/reject/unresolved, bulk and vocabulary routes, so decisions stay
+  in taper_decision_log exactly as /taper-review records them.
+Added: backend/app.py: GET /api/tapers/curation, /api/tapers/curation/isolated,
+  /api/tapers/curation/tapers, /api/tapers/curation/text/<lb>, and the /taper-curation page route.
+Changed: backend/taper_curation.py agreement(): a vocabulary-barred name is not a competing opinion,
+  so gear/source-type text sitting in entries.taper_name ("master", "sbd") cannot fill the "sources
+  disagree" queue; merely-unknown names still count, since flagging one not-a-taper in the isolated
+  tab is the loop the two tabs are meant to form. TUIT placeholder text ("unknown", "unidentified",
+  "n/a") is treated as no tag at all, in the filters and the verdict alike.
+Added: backend/tuit_scraper.py save_recording_html() + fetch_recording(html_dir=...), and
+  tools/tuit_sync.py --html-dir / --no-save-html: every fetched /recordings/<id> page is archived
+  verbatim to data/downloads/tuit/html/rec-<id>.html by default. The parsed fields are lossy, and a
+  re-fetch costs another hit on a 21-member private tracker.
+
 [2026-08-22] — chore(tapematch): TODO-323 step 2 — post-fix verdict diff; 4 stale analyses rewritten
 Added: tools/tapematch/bug326_diff.py: parses the `=== CLUSTERS ===` block of each post-fix run and
   of its newest pre-fix predecessor, compares the two LB partitions, and buckets every date

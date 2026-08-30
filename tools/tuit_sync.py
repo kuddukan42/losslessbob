@@ -77,6 +77,7 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger("tuit_sync")
 
 DEFAULT_TORRENT_DIR = _project_root / "data" / "downloads" / "tuit"
+DEFAULT_HTML_DIR = _project_root / "data" / "downloads" / "tuit" / "html"
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -97,6 +98,12 @@ def _build_parser() -> argparse.ArgumentParser:
                    help="Also download each recording's personalised .torrent.")
     p.add_argument("--torrent-dir", default=str(DEFAULT_TORRENT_DIR),
                    help="Where to write .torrent files.")
+    p.add_argument("--html-dir", default=str(DEFAULT_HTML_DIR),
+                   help="Where the raw /recordings/<id> detail pages are "
+                        "archived as rec-<id>.html (default "
+                        "data/downloads/tuit/html).")
+    p.add_argument("--no-save-html", action="store_true",
+                   help="Do not archive the raw detail-page HTML.")
     p.add_argument("--seed", action="store_true",
                    help="With --fetch-torrents: locate the recording's files in "
                         "my_collection (then folder_lb_link) and add the torrent "
@@ -490,7 +497,10 @@ def _sync_one(session, rec_id: int, row, args) -> str:
     Returns:
         A short status word for the summary counter.
     """
-    rec = tuit_scraper.fetch_recording(session, rec_id, delay=args.delay)
+    html_dir = None if args.no_save_html else args.html_dir
+    rec = tuit_scraper.fetch_recording(
+        session, rec_id, delay=args.delay, html_dir=html_dir
+    )
     if rec is None:
         logger.warning("  rec %s: detail page unavailable", rec_id)
         return "failed"

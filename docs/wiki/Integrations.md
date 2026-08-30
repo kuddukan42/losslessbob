@@ -34,6 +34,9 @@ never deleted) / presence-check that syncs the DB flag.
 recordings. Laravel; login is a CSRF `_token` POST, there is no JSON API.
 `backend/tuit_scraper.py` parses `/browse` rows and `/recordings/<id>` detail
 pages into `tuit_recordings` (every rendered field, list-shaped ones as JSON).
+Every fetched detail page is also archived verbatim to
+`data/downloads/tuit/html/rec-<id>.html` (`--html-dir`, `--no-save-html`)
+so a parser gap can be re-read without hitting the tracker again.
 `tools/tuit_sync.py` drives it: `--fetch-torrents` saves the personalised
 `.torrent`, `--seed` resolves the LB number to a folder via
 `db.get_folders_for_lb()` (my_collection first, folder_lb_link second) and adds

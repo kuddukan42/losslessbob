@@ -176,6 +176,44 @@ Scale as of 2026-08-17: 8,646 attributions over 273 handles, 136 conflicts, and
 only 109 rows carrying a curator decision — the console exists because the old
 page could only reach the ~96-row mention-conflict slice.
 
+## Curation workbench (`/taper-curation`)
+
+`backend/taper_curation.html` + `backend/taper_curation.py` (TODO-327). Where
+`/taper-review` asks "do I agree with the engine?", the workbench puts *every*
+source that has an opinion in one row, because most calls turn on comparing
+them: LB entry text, the parser's `entry_lineage` normalisation, the derived
+attribution + evidence, the TUIT tracker's uploader-declared handle (or "not
+scraped"), the TapeMatch family with its label, member count, family conf and
+strongest scored pair, and any sticky curator decision. The full LB description
+sits in the same pane with every known alias highlighted by verdict, so a call
+needs no second lookup.
+
+- `GET /api/tapers/curation` — the wide paged read; filters `state`,
+  `confidence` (`none` = unattributed), `conflict`, `taper`, `q`, `attributed`,
+  `tuit` (scraped / not_scraped / has_taper / taper_only), `family`
+  (has/none/review) and `agreement`.
+- `GET /api/tapers/curation/isolated` — the two populations that never became a
+  credit: **excluded** (resolves to a barred canonical — `_NOT_TAPER` builtins
+  or a `user_taper_flags` row) and **unknown** (normalises to nothing the
+  vocabulary knows). The excluded half only exists in raw description text —
+  the parser drops those names before `entry_lineage` — so it comes from a
+  full-corpus regex scan (~12s), cached on an entry-count/vocabulary key.
+- `GET /api/tapers/curation/tapers` — per-canonical rollup including TUIT tags.
+
+Two rules worth knowing:
+
+- **Placeholders are not tapers.** `unknown`, `unidentified`, `n/a` and friends
+  in a TUIT taper field are treated as no tag at all, in both the filters and
+  the agreement verdict.
+- **Barred names don't create disagreements.** `agreement()` ignores a name the
+  vocabulary bars, so gear and source-type text (`master`, `sbd`) sitting in
+  `entries.taper_name` cannot fill the "sources disagree" queue. Names that are
+  merely *unknown* still count — flagging one not-a-taper in the isolated-text
+  tab is what removes it, which is the loop the two tabs are meant to form.
+
+Writes reuse the existing curator-gated routes, so a decision made here is the
+same decision, logged the same way, as one made in `/taper-review`.
+
 ## Related
 
 - [TapeMatch](TapeMatch.md) — `recording_families` origin, family-split leads.

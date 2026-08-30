@@ -48,6 +48,7 @@ from backend import setlist_fingerprint as _setlist_fingerprint
 from backend import setlistfm as setlistfm_mod
 from backend import song_index as _song_index
 from backend import taper_attribution as _taper_attribution
+from backend import taper_curation as _taper_curation
 from backend import timeline as _timeline
 from backend.paths import (
     BATCH_VERIFY_DB_PATH,
@@ -6236,6 +6237,88 @@ def create_app() -> Flask:
             _log.exception("taper_review_rollup failed")
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
+    # ── Taper curation workbench (/taper-curation) ────────────────────────────
+    # A wider read model than /api/tapers/review: every source that has an
+    # opinion about a recording's taper (LB text, parser, attribution engine,
+    # TUIT, TapeMatch family) in one row. Read-only — the workbench posts its
+    # decisions to the curator-gated attribution/vocabulary routes above.
+
+    @app.route("/api/tapers/curation", methods=["GET"])
+    def taper_curation_rows() -> Response:
+        """One page of the curation workbench.
+
+        Query params (all optional): state, confidence ('none' = unattributed),
+        conflict, taper, q, attributed, tuit (scraped/not_scraped/has_taper/
+        taper_only), family (has/none/review), agreement, limit (max 500),
+        offset, sort (lb/date/taper/confidence/similarity, '-' to descend).
+        """
+        try:
+            conflict_arg = request.args.get("conflict")
+            attributed_arg = request.args.get("attributed")
+            return jsonify(_taper_curation.list_rows(
+                state=request.args.get("state") or None,
+                confidence=request.args.get("confidence") or None,
+                conflict=((conflict_arg.lower() in ("1", "true"))
+                          if conflict_arg else None),
+                taper=request.args.get("taper") or None,
+                q=request.args.get("q") or None,
+                attributed=((attributed_arg.lower() in ("1", "true"))
+                            if attributed_arg else None),
+                tuit=request.args.get("tuit") or None,
+                family=request.args.get("family") or None,
+                agreement_filter=request.args.get("agreement") or None,
+                limit=request.args.get("limit", type=int, default=50),
+                offset=request.args.get("offset", type=int, default=0),
+                sort=request.args.get("sort") or "lb",
+            ))
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("taper_curation_rows failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/curation/isolated", methods=["GET"])
+    def taper_curation_isolated() -> Response:
+        """Texts that never became a taper credit, grouped by canonical.
+
+        Query params: kind (excluded/unknown), q, limit (default 200),
+        refresh=1 to rebuild the cached description scan.
+        """
+        try:
+            return jsonify(_taper_curation.isolated_texts(
+                kind=request.args.get("kind") or None,
+                q=request.args.get("q") or None,
+                limit=request.args.get("limit", type=int, default=200),
+                refresh=request.args.get("refresh") in ("1", "true"),
+            ))
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("taper_curation_isolated failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/curation/tapers", methods=["GET"])
+    def taper_curation_rollup() -> Response:
+        """Per-canonical rollup across attribution, curator decisions and TUIT."""
+        try:
+            return jsonify({"tapers": _taper_curation.taper_rollup()})
+        except Exception as exc:
+            _log.exception("taper_curation_rollup failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/curation/text/<int:lb>", methods=["GET"])
+    def taper_curation_text_hits(lb: int) -> Response:
+        """Description snippets around each occurrence of ?needle= in one entry."""
+        needle = request.args.get("needle") or ""
+        if not needle:
+            return jsonify({"error": "bad_request", "message": "needle required"}), 400
+        try:
+            return jsonify({"lb_number": lb,
+                            "hits": _taper_curation.text_hits(lb, needle)})
+        except Exception as exc:
+            _log.exception("taper_curation_text_hits failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     @app.route("/api/tapers/decisions", methods=["GET"])
     def taper_decisions_list() -> Response:
         """Decision history from taper_decision_log, newest first.
@@ -8472,6 +8555,18 @@ def create_app() -> Flask:
         """
         review_html = Path(__file__).parent / "taper_review.html"
         return send_from_directory(str(review_html.parent), review_html.name)
+
+    @app.route("/taper-curation")
+    def taper_curation_page() -> Response:
+        """Serve the taper curation workbench (TODO-327).
+
+        A wide, keyboard-driven grid over all 16.7k entries: every source's
+        taper opinion side by side with the raw LB description text, plus the
+        isolated-text views for vocabulary work. Decisions post to the same
+        curator-gated routes /taper-review uses.
+        """
+        page_html = Path(__file__).parent / "taper_curation.html"
+        return send_from_directory(str(page_html.parent), page_html.name)
 
     @app.route("/api/admin/status", methods=["GET"])
     def admin_status() -> Response:
