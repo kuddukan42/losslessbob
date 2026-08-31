@@ -457,8 +457,14 @@ def _build_subject(lb_number: int, entry: dict) -> str:
     """Build the forum topic subject line for an LB entry.
 
     For BOOTLEG entries (entry contains 'bootleg_title'), uses the bootleg
-    title in place of the concert location.
+    title in place of the concert location, and adds no flag — a compilation
+    has no single country.
+
+    A concert whose date resolves to one country is prefixed with that
+    country's flag emoji (see :mod:`backend.country_flags`), matching the
+    board's existing convention. An unresolved location simply gets no prefix.
     """
+    from backend.country_flags import flag_for_date
     from backend.torrent_maker import _parse_date
     lb_id = f"LB-{lb_number:05d}"
     date_str = entry.get("date_str") or ""
@@ -467,10 +473,18 @@ def _build_subject(lb_number: int, entry: dict) -> str:
     bootleg_title = (entry.get("bootleg_title") or "").strip()
     label = (f"BOOTLEG: {bootleg_title}" if bootleg_title else (entry.get("location") or "")).strip()
     if iso_date and label:
-        return f"{iso_date} {label} ({lb_id})"
-    if label:
-        return f"{label} ({lb_id})"
-    return lb_id
+        subject = f"{iso_date} {label} ({lb_id})"
+    elif label:
+        subject = f"{label} ({lb_id})"
+    else:
+        return lb_id
+    # A country flag prefix, the board's own convention. Only for concerts: a
+    # BOOTLEG compiles shows from several places, so no one flag is true of it.
+    if not bootleg_title:
+        flag = flag_for_date(date_str)
+        if flag:
+            subject = f"{flag} {subject}"
+    return subject
 
 
 def preview_lb_topic(
