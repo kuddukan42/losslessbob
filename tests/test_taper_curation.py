@@ -164,6 +164,18 @@ class TestRollupAndText:
         assert spot["tuit"] == 1
         assert spot["in_universe"] is True
 
+    def test_rollup_reports_why_a_name_is_excluded(self, curation):
+        tc, db_path = curation
+        import backend.db as db
+        db.set_taper_flag("spot", False, db_path=db_path)
+        try:
+            spot = next(r for r in tc.taper_rollup(db_path=db_path) if r["taper"] == "spot")
+            assert spot["in_universe"] is False
+            assert spot["excluded"] == "not_taper_user"
+        finally:
+            db.clear_taper_flag("spot", db_path=db_path)
+            tc.refresh_user_flags(db_path)
+
     def test_text_hits_returns_snippets(self, curation):
         tc, db_path = curation
         hits = tc.text_hits(1, "spot", db_path=db_path)

@@ -130,6 +130,36 @@ def canonical(name: str | None) -> str:
     return norm or ""
 
 
+# Curator not-a-taper calls (user_taper_flags, TODO-313). A flagged canonical is
+# usually NOT an alias value — 'bootleg' is plain description text — so it can
+# only be recognised by reading the table; without this it would fall through to
+# 'unknown_text' and keep contesting the agreement verdict after being ruled out.
+_USER_NOT_TAPER: set[str] = set()
+
+
+def refresh_user_flags(db_path: str | None = None) -> set[str]:
+    """Reload the curator's not-a-taper canonicals into module state.
+
+    Called at the top of every read entry point: one tiny indexed query, versus
+    a stale exclusion verdict surviving until the process restarts.
+
+    Args:
+        db_path: Optional database path override.
+
+    Returns:
+        The set of canonicals a curator has flagged not-a-taper.
+    """
+    global _USER_NOT_TAPER
+    try:
+        _USER_NOT_TAPER = {
+            row[0] for row in get_connection(db_path).execute(
+                "SELECT canonical FROM user_taper_flags WHERE action = 'not_taper'")
+        }
+    except sqlite3.Error:  # table absent on a bare DB — treat as no overrides
+        _USER_NOT_TAPER = set()
+    return _USER_NOT_TAPER
+
+
 def exclusion_reason(canon: str) -> str | None:
     """Why a canonical token is barred from being a taper credit, if it is.
 
@@ -146,7 +176,7 @@ def exclusion_reason(canon: str) -> str | None:
         return None
     if canon in _NOT_TAPER:
         return "not_taper_builtin"
-    if canon in set(_KNOWN_TAPER_ALIASES.values()):
+    if canon in _USER_NOT_TAPER or canon in set(_KNOWN_TAPER_ALIASES.values()):
         return "not_taper_user"
     return "unknown_text"
 
@@ -504,6 +534,7 @@ def list_rows(
     limit = max(1, min(int(limit), MAX_LIMIT))
     offset = max(0, int(offset))
 
+    refresh_user_flags(db_path)
     conn = get_connection(db_path)
     where, params = _filters(state, confidence, conflict, taper, q,
                              attributed, tuit, family)
@@ -560,6 +591,7 @@ def counts(db_path: str | None = None) -> dict:
         Dict of headline counts (entries, attributed, conflicts, decided,
         TUIT coverage, family coverage, excluded-text rows).
     """
+    refresh_user_flags(db_path)
     conn = get_connection(db_path)
     one = lambda sql: conn.execute(sql).fetchone()[0]  # noqa: E731
     universe = _db._TAPER_UNIVERSE
@@ -607,7 +639,8 @@ def _corpus_fingerprint(conn: sqlite3.Connection) -> tuple:
     """
     n, newest = conn.execute(
         "SELECT COUNT(*), MAX(COALESCE(scraped_at, '')) FROM entries").fetchone()
-    return (n, newest, len(_KNOWN_TAPER_ALIASES), len(_db._TAPER_UNIVERSE))
+    return (n, newest, len(_KNOWN_TAPER_ALIASES), len(_db._TAPER_UNIVERSE),
+            tuple(sorted(_USER_NOT_TAPER)))
 
 
 def excluded_mentions(
@@ -681,6 +714,7 @@ def isolated_texts(
     """
     if kind not in (None, "excluded", "unknown"):
         raise ValueError("kind must be 'excluded' or 'unknown'")
+    refresh_user_flags(db_path)
     conn = get_connection(db_path)
     groups: dict[str, dict] = {}
     for lb, raw, norm in conn.execute(
@@ -730,6 +764,7 @@ def taper_rollup(db_path: str | None = None) -> list[dict]:
         One dict per canonical taper: attribution counts by tier, curator
         decisions, TUIT-side count, and how many rows still need a call.
     """
+    refresh_user_flags(db_path)
     conn = get_connection(db_path)
     out: dict[str, dict] = {}
 
@@ -738,6 +773,9 @@ def taper_rollup(db_path: str | None = None) -> list[dict]:
             "taper": name, "attributed": 0, "confirmed": 0, "propagated": 0,
             "conflicts": 0, "decided": 0, "undecided": 0, "tuit": 0,
             "in_universe": name in _db._TAPER_UNIVERSE,
+            # Why it is out, so the UI can offer the right fix: a barred name
+            # needs an is_taper flag, an unknown one needs a vocabulary entry.
+            "excluded": exclusion_reason(name),
         })
 
     for name, conf, conflict, decision in conn.execute(

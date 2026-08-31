@@ -214,6 +214,17 @@ Two rules worth knowing:
 Writes reuse the existing curator-gated routes, so a decision made here is the
 same decision, logged the same way, as one made in `/taper-review`.
 
+**Admitting a name to the vocabulary.** `confirm` refuses anything outside
+`_TAPER_UNIVERSE`, which is a wall for exactly the names curation is trying to
+add (a real handle that only ever appeared as a TUIT tag, e.g. *Black Rider*).
+The workbench therefore offers the fix wherever the name is shown: every
+candidate outside the vocabulary carries a **+ vocab** button, the Names-found
+chips carry *+ add* / *re-admit*, the Tapers tab has an **Include as taper** /
+**Not a taper** action per row, and confirming an excluded name asks once and
+adds it before retrying. The mechanism follows the reason — a *barred* canonical
+gets a `user_taper_flags` `is_taper` row, an *unknown* one gets a vocabulary
+entry — because the two are not interchangeable.
+
 ## Related
 
 - [TapeMatch](TapeMatch.md) — `recording_families` origin, family-split leads.
