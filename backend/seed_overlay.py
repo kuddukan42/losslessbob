@@ -98,27 +98,99 @@ class OverlayPlan:
         )
 
 
-def _index_sources(dirs: list[Path]) -> dict[str, Path]:
-    """Map basename → path for every file in the given directories.
+def _index_sources(dirs: list[Path]) -> dict[str, list[Path]]:
+    """Index every file under the given directories by path suffix.
 
-    Earlier directories win, so the caller controls precedence.
+    A tracker's torrent is often nested — ``<root>/<show>/cd-1/01 Track01.flac``
+    — while the collection files the same audio under its own layout. Indexing
+    only basenames both misses everything below the top level and collides
+    (``cd-1/01 Track01.flac`` and ``cd-2/01 Track01.flac`` share a basename), so
+    each file is registered under **every** suffix of its relative path:
+    ``01 Track01.flac``, ``cd-1/01 Track01.flac``, and so on. The resolver can
+    then ask for the most specific match first.
+
+    Directories are walked recursively and earlier ones win, so the caller
+    controls precedence.
 
     Args:
         dirs: Directories to index, most-preferred first.
 
     Returns:
-        A basename→path mapping.
+        A suffix→paths mapping; each list is in directory-preference order.
     """
-    found: dict[str, Path] = {}
+    found: dict[str, list[Path]] = {}
     for directory in dirs:
         try:
-            entries = list(directory.iterdir())
+            paths = sorted(directory.rglob("*"))
         except OSError:
             continue
-        for path in entries:
-            if path.is_file() and path.name not in found:
-                found[path.name] = path
+        for path in paths:
+            try:
+                if not path.is_file():
+                    continue
+                parts = path.relative_to(directory).parts
+            except (OSError, ValueError):
+                continue
+            for depth in range(1, len(parts) + 1):
+                found.setdefault("/".join(parts[-depth:]), []).append(path)
     return found
+
+
+def _resolve_source(
+    index: dict[str, list[Path]], rel_path: str, size: int
+) -> Path | None:
+    """Find the indexed file that satisfies one torrent entry.
+
+    Suffixes are tried longest-first, so ``cd-1/01 Track01.flac`` is preferred
+    over the ambiguous bare ``01 Track01.flac``, and only files of exactly the
+    right size are accepted. Where several equally specific candidates share
+    that size they are interchangeable by definition — the piece hashes are
+    checked afterwards regardless, and a wrong pick fails verification rather
+    than being seeded.
+
+    The torrent's own root segment is dropped before matching, since the
+    collection never repeats the uploader's name for it.
+
+    Args:
+        index: Mapping from :func:`_index_sources`.
+        rel_path: The torrent's path for this file, root segment included.
+        size: The exact byte size the torrent expects.
+
+    Returns:
+        The best local file, or None when nothing of that size matches.
+    """
+    parts = Path(rel_path).parts
+    if len(parts) > 1:
+        parts = parts[1:]        # drop the torrent's root directory
+    for depth in range(len(parts), 0, -1):
+        for candidate in index.get("/".join(parts[-depth:]), []):
+            try:
+                if candidate.stat().st_size == size:
+                    return candidate
+            except OSError:
+                continue
+    return None
+
+
+def resolvable_files(info: TorrentInfo, dirs: list[str | Path]) -> int:
+    """Count how many of a torrent's files the given folders can supply.
+
+    Uses exactly the matching rule :func:`plan_overlay` will use — recursive,
+    path-suffix keyed, exact size — so the number is a truthful preview of how
+    much of the torrent those folders would satisfy, not a basename guess.
+
+    Args:
+        info: Parsed torrent metadata.
+        dirs: Collection folders to score, most-preferred first.
+
+    Returns:
+        The number of torrent files with a local source in ``dirs``.
+    """
+    index = _index_sources([Path(d) for d in dirs])
+    return sum(
+        1 for rel_path, size in info.files
+        if _resolve_source(index, rel_path, size) is not None
+    )
 
 
 def plan_overlay(
@@ -127,12 +199,14 @@ def plan_overlay(
     overlay_root: str | Path,
     sidecar_dirs: list[str | Path] | None = None,
     site_urls: dict[str, str] | None = None,
+    link_dirs: list[str | Path] | None = None,
 ) -> OverlayPlan:
     """Decide how each torrent file will be satisfied, without touching disk.
 
-    Sources are tried in order: the collection folder (hardlink), the sidecar
-    store (copy), the original URL on losslessbob.com (re-fetch), and finally
-    the BitTorrent swarm.
+    Sources are tried in order: the collection folder (hardlink), any further
+    collection folders in ``link_dirs`` (hardlink), the sidecar store (copy),
+    the original URL on losslessbob.com (re-fetch), and finally the BitTorrent
+    swarm.
 
     Args:
         info: Parsed torrent metadata.
@@ -140,9 +214,16 @@ def plan_overlay(
         overlay_root: Directory the overlay folder is created inside. Should be
             on the same filesystem as ``source_folder`` so hardlinks work.
         sidecar_dirs: Extra read-only directories to source missing files from,
-            typically ``data/site/files``.
+            typically ``data/site/files``. Files found here are **copied**.
         site_urls: {filename: url} from :func:`db.get_site_file_urls`, used
             when the stored sidecar is the wrong size (link-rewritten HTML).
+        link_dirs: Further collection folders, most-preferred first, whose
+            files are **hardlinked** like ``source_folder``'s. A tracker's
+            torrent can span more than one LB entry — a two-CD boot posted as
+            one ``.torrent`` covering LB-14777 and LB-14778, say — and each
+            entry is filed in its own collection folder. Passing the others
+            here assembles the whole torrent at no extra disk cost. Must be on
+            the same filesystem as ``overlay_root`` for the link to succeed.
 
     Returns:
         An OverlayPlan. Building it is a separate call.
@@ -152,6 +233,11 @@ def plan_overlay(
     plan = OverlayPlan(target_dir=target_dir)
 
     sidecars = _index_sources([Path(d) for d in (sidecar_dirs or [])])
+    # The primary folder and any siblings are all curated collection folders,
+    # so all of them are hardlink sources, the primary taking precedence.
+    collection = _index_sources(
+        [source_folder] + [Path(d) for d in (link_dirs or [])]
+    )
     ranges = info.file_piece_ranges()
 
     # Pass 1 — resolve a local source for each file, by exact size match.
@@ -160,20 +246,25 @@ def plan_overlay(
         name = Path(rel_path).name
         entry = PlanEntry(rel_path=rel_path, action=FETCH, size=size)
 
-        in_collection = source_folder / name
-        try:
-            if in_collection.is_file() and in_collection.stat().st_size == size:
-                entry.action = LINK
-                entry.source = str(in_collection)
-                entry.reason = "collection"
-                resolved.append((entry, in_collection))
-                plan.entries.append(entry)
-                continue
-        except OSError:
-            pass
+        in_collection = _resolve_source(collection, rel_path, size)
+        if in_collection is not None:
+            entry.action = LINK
+            entry.source = str(in_collection)
+            entry.reason = (
+                "collection" if in_collection.is_relative_to(source_folder)
+                else f"collection ({in_collection.parent.name})"
+            )
+            resolved.append((entry, in_collection))
+            plan.entries.append(entry)
+            continue
 
-        candidate = sidecars.get(name)
+        candidate = _resolve_source(sidecars, rel_path, size)
         local_size: int | None = None
+        if candidate is None:
+            # Fall back to any same-named sidecar so a size mismatch can be
+            # reported (and re-fetched) rather than silently left to the swarm.
+            same_named = sidecars.get(name) or []
+            candidate = same_named[0] if same_named else None
         if candidate is not None:
             try:
                 local_size = candidate.stat().st_size
@@ -205,7 +296,7 @@ def plan_overlay(
             entry.reason = (
                 f"sidecar store has it at {local_size} B, torrent wants {size} B"
             )
-        elif in_collection.exists():
+        elif (source_folder / name).exists():
             entry.reason = "present locally but the wrong size"
         else:
             entry.reason = "no local source"
@@ -489,7 +580,11 @@ def warn_if_seeded(lb_number: int, action: str, db_path=None) -> list[str]:
 
 
 def snapshot_folder(folder: str | Path) -> dict[str, tuple[int, int]]:
-    """Return {filename: (size, mtime_ns)} for every file directly in a folder.
+    """Return {relative path: (size, mtime_ns)} for every file under a folder.
+
+    Walks the whole tree, not just the top level: a collection folder holding
+    ``cd-1/``/``cd-2/`` subdirectories would otherwise let a write below the
+    root pass the :func:`collection_is_untouched` guard unnoticed.
 
     Args:
         folder: Directory to snapshot.
@@ -497,13 +592,18 @@ def snapshot_folder(folder: str | Path) -> dict[str, tuple[int, int]]:
     Returns:
         A mapping usable with :func:`collection_is_untouched`.
     """
+    root = Path(folder)
     out: dict[str, tuple[int, int]] = {}
     try:
-        entries = list(Path(folder).iterdir())
+        paths = list(root.rglob("*"))
     except OSError:
         return out
-    for path in entries:
-        if path.is_file():
+    for path in paths:
+        try:
+            if not path.is_file():
+                continue
             stat = path.stat()
-            out[path.name] = (stat.st_size, stat.st_mtime_ns)
+            out[str(path.relative_to(root))] = (stat.st_size, stat.st_mtime_ns)
+        except (OSError, ValueError):
+            continue
     return out

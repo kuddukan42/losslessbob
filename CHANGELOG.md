@@ -28,8 +28,35 @@ Changed: backend/db.py: `wtrf_downloads` gains `seed_folder` (idempotent PRAGMA-
   'not_seeded' status, mirroring `tuit_downloads`; `add_wtrf_download` takes the new column.
 Changed: tools/tuit_sync.py: delegates to backend/tracker_seed.py — 261 lines lighter, behaviour and
   the `TUIT Seeds` overlay root unchanged.
-Added: tests/test_wtrf_seed.py: 27 tests over link parsing, canonicalisation, LB resolution priority,
-  the ambiguity refusal, and the per-tracker overlay roots.
+Fixed: backend/seed_overlay.py: the source index was flat and basename-keyed, which broke on every
+  nested torrent. Real WTRF posts are box sets — `<root>/artwork/`, `<root>/<show>/cd-1|cd-2/…` — so
+  none of the audio was ever seen (it lives below the top level the index scanned), and the basenames
+  that were seen collide: "84 Revisited" repeats `01 Track01.flac` four times across its discs. The
+  index now walks recursively and registers each file under every suffix of its relative path, and
+  `_resolve_source` matches longest-suffix-first with an exact size check, so `cd-1/01 Track01.flac`
+  is distinguished from `cd-2/01 Track01.flac` instead of being a coin toss. `plan_overlay` gained
+  `link_dirs` — further collection folders to hardlink from — because a torrent can span several LB
+  entries, each filed in its own folder. New `resolvable_files()` scores a folder by that same rule.
+Fixed: backend/seed_overlay.py: `snapshot_folder` was also flat, so the collection-untouched guard
+  could not see a write into a nested `cd-1/`. It now walks the tree and keys on the relative path.
+Fixed: backend/tracker_seed.py: `best_source_folder` scored folders by top-level audio basenames and
+  so scored every nested collection folder at zero. It now uses `resolvable_files()`.
+Changed: backend/wtrf_seed.py: several LB numbers in a post is no longer refused outright. Prose
+  cannot distinguish a cross-reference (a body opening `LB-11872` that mentions `LB-11880` as the
+  batch the artwork ships in) from a genuinely two-entry torrent (`…LB-14777+ LB-14778.torrent`), so
+  the post only nominates and the torrent's contents decide: new `pick_by_content()` scores each
+  candidate's folder by the files the torrent actually wants, drops the ones supplying nothing, and
+  hands the rest to the overlay as `link_dirs`. Only when content cannot separate them is the link
+  refused. Non-public candidates are excluded before scoring, so one can never win.
+Added: tests/test_wtrf_seed.py, tests/test_seed_overlay.py: 35 + 39 tests, covering link parsing and
+  canonicalisation, LB-resolution priority, the content pick (multi-entry kept, cross-reference
+  dropped, non-public excluded, wrong-size same-name rejected), nested/colliding-basename sourcing,
+  sibling-folder supply, and the recursive untouched guard.
+
+Verified live against WTRF: topic 43459 assembled the two-entry "84 Revisited" box set to 100% from
+  two collection folders (72 files, all hardlinked, nlink=2, no extra disk) and qBittorrent reports it
+  seeding at 100%; topic 53461 correctly dropped the cross-referenced LB-11880 and seeded LB-11872
+  (25/25 files). All four collection folders independently confirmed unmodified afterwards.
 
 [2026-08-30] — feat(gui): LBDIR pipeline status in the forum post preview; Bob-O-Matic footer loses its version
 Added: backend/app.py: `GET /api/entry/<lb>/lbdir_status` returns the LBDIR pipeline verdict for an

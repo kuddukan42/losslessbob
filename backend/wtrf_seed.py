@@ -16,9 +16,25 @@ supplies the ``LBF-*`` sidecars a curated folder does not keep.
 The LB number is read from the post itself rather than guessed. In priority
 order it comes from the attachment's own filename (``LB-00008.torrent`` — the
 uploader tagged it, so this is definitive), then the topic title, then the post
-body. A body naming several distinct LB numbers is reported as ambiguous and
-seeded only when the caller pins the number explicitly, since seeding the wrong
-recording publishes the wrong files under someone else's post.
+body, taking the first tag in the strongest field that carries one.
+
+Posts routinely name more than one LB number, in two quite different ways, and
+neither can be told apart by reading the prose:
+
+* a cross-reference — a body that opens with its own ``LB-11872`` and mentions
+  ``LB-11880`` further down as the batch the artwork will ship in;
+* a genuinely multi-entry torrent — ``Bob Dylan 84 Revisited LB-14777+
+  LB-14778.torrent`` is one file covering two catalogue entries, each of which
+  is filed in its own collection folder.
+
+So the prose only nominates candidates and the torrent's **contents** decide.
+:func:`pick_by_content` asks each candidate's collection folder how many of the
+files the torrent actually wants it holds, which separates the two cases
+without guessing: the cross-referenced entry supplies nothing and drops out,
+while both halves of a multi-entry torrent supply their share and are
+hardlinked into a single overlay. Only when content cannot separate the
+candidates is the link refused — seeding the wrong recording would publish the
+wrong files under someone else's post.
 """
 from __future__ import annotations
 
@@ -36,6 +52,8 @@ import requests
 from backend import db as database
 from backend.credentials import SERVICE_WTRF, get_credentials
 from backend.forum_poster import FORUM_BASE, _get_session
+from backend.seed_overlay import resolvable_files
+from backend.torrent_verify import BencodeError, read_torrent
 from backend.tracker_seed import SeedOptions, seed_torrent
 from backend.wtrf_scraper import (
     _download_torrent,
@@ -199,19 +217,26 @@ def resolve_link(session: requests.Session, spec: LinkSpec,
                  delay: float = DEFAULT_DELAY) -> dict:
     """Fetch one topic and work out which LB it is and where its torrent is.
 
+    The prose only nominates candidates. When it names more than one, the
+    primary is the first tag in the strongest field that carries any, and
+    ``needs_content_check`` is set so the caller settles it against the
+    downloaded torrent via :func:`pick_by_content` rather than on the text.
+
     Args:
         session: Authenticated WTRF session.
         spec: The pasted link, possibly with a pinned LB number.
         delay: Seconds to sleep before the request.
 
     Returns:
-        Dict with ``lb_number`` (int|None), ``lb_candidates`` (list[int]),
-        ``lb_source`` (str), ``confidence`` (str), ``torrent_url`` (str|None),
-        ``title`` (str) and ``error`` (str).
+        Dict with ``lb_number`` (int|None, the primary candidate),
+        ``lb_candidates`` (list[int], ordered strongest first),
+        ``lb_source`` (str), ``confidence`` (str), ``needs_content_check``
+        (bool), ``torrent_url`` (str|None), ``title`` (str) and ``error`` (str).
     """
     out: dict = {
         "lb_number": spec.lb_number, "lb_candidates": [], "lb_source": "",
-        "confidence": "not_found", "torrent_url": None, "title": "", "error": "",
+        "confidence": "not_found", "needs_content_check": False,
+        "torrent_url": None, "title": "", "error": "",
     }
     post = _fetch_topic(session, spec.url, delay)
     out["title"] = post["topic_title"]
@@ -222,6 +247,8 @@ def resolve_link(session: requests.Session, spec: LinkSpec,
         return out
 
     if spec.lb_number is not None:
+        # The curator wrote the number on the line; nothing outranks that.
+        out["lb_candidates"] = [spec.lb_number]
         out["lb_source"] = "explicit"
         out["confidence"] = _SOURCE_CONFIDENCE["explicit"]
     else:
@@ -235,24 +262,94 @@ def resolve_link(session: requests.Session, spec: LinkSpec,
                 continue
             out["lb_candidates"] = candidates
             out["lb_source"] = source
+            out["lb_number"] = candidates[0]
             if len(candidates) == 1:
-                out["lb_number"] = candidates[0]
                 out["confidence"] = _SOURCE_CONFIDENCE[source]
             else:
-                # Several LB numbers in the same field — a lineage discussion,
-                # or a post covering a run of shows. Refuse to guess.
+                # Could be a cross-reference or a genuinely multi-entry
+                # torrent. Both look the same in prose, so defer to content.
                 out["confidence"] = "ambiguous"
-                out["error"] = (
-                    f"{source} names {len(candidates)} LB numbers "
-                    f"({', '.join(f'LB-{n:05d}' for n in candidates[:4])}) "
-                    f"— pin one by writing it before the link"
-                )
+                out["needs_content_check"] = True
             break
 
-    if out["lb_number"] is None and not out["error"]:
+    if out["lb_number"] is None:
         out["error"] = "no LB number in the post's title, body or attachment"
-    if out["torrent_url"] is None and not out["error"]:
+    elif out["torrent_url"] is None:
         out["error"] = "the first post has no .torrent attachment"
+    return out
+
+
+def pick_by_content(candidates: list[int], torrent_path: str) -> dict:
+    """Decide which of several nominated LB numbers the torrent really holds.
+
+    Each candidate is scored by how many of the torrent's files its linked
+    collection folders actually hold, matched by basename and exact size — the
+    same test the overlay planner uses to decide what it can hardlink. A
+    candidate the torrent has no files for scores zero and is dropped, which is
+    what retires a cross-reference; a multi-entry torrent leaves every entry it
+    covers with a non-zero score.
+
+    Candidates that may not be published at all (``lb_status`` other than
+    'public') are excluded before scoring, so an unpublishable entry can never
+    become the winner.
+
+    Args:
+        candidates: LB numbers nominated by the post, strongest first.
+        torrent_path: Local ``.torrent`` file to test them against.
+
+    Returns:
+        Dict with ``winner`` (int|None, the best-supplied candidate),
+        ``matched`` (list[int], every candidate supplying at least one file,
+        best first), ``link_dirs`` (list[str], the *other* matched candidates'
+        folders, to hardlink alongside the winner's), ``scores``
+        (dict[int, int]) and ``reason`` (str).
+    """
+    out: dict = {"winner": None, "matched": [], "link_dirs": [], "scores": {},
+                 "reason": ""}
+    try:
+        info = read_torrent(torrent_path)
+    except BencodeError as exc:
+        out["reason"] = f"unreadable torrent: {exc}"
+        return out
+
+    folders_for: dict[int, list[Path]] = {}
+    for lb in candidates:
+        allowed, _why = database.is_seedable_to_tracker(lb)
+        if not allowed:
+            continue
+        dirs = [Path(f) for f in database.get_folders_for_lb(lb) if Path(f).is_dir()]
+        if dirs:
+            folders_for[lb] = dirs
+
+    if not folders_for:
+        out["reason"] = "no candidate is both public and filed on disk"
+        return out
+
+    for lb, dirs in folders_for.items():
+        out["scores"][lb] = resolvable_files(info, list(dirs))
+
+    matched = sorted(
+        (lb for lb, hits in out["scores"].items() if hits > 0),
+        key=lambda lb: (-out["scores"][lb], candidates.index(lb)),
+    )
+    out["matched"] = matched
+    if not matched:
+        out["reason"] = (
+            "none of the nominated entries holds any of the torrent's files"
+        )
+        return out
+
+    out["winner"] = matched[0]
+    out["link_dirs"] = [
+        str(d) for lb in matched[1:] for d in folders_for[lb]
+    ]
+    supplied = ", ".join(
+        f"LB-{lb:05d}×{out['scores'][lb]}" for lb in matched[:4]
+    )
+    out["reason"] = (
+        f"content picked LB-{out['winner']:05d} of "
+        f"{len(candidates)} nominated ({supplied} of {len(info.files)} files)"
+    )
     return out
 
 
@@ -322,8 +419,18 @@ def seed_from_links(
                 continue
 
             if dry_run:
-                event.update({"status": "resolved",
-                              "reason": f"would seed from {info['torrent_url']}"})
+                nominated = ", ".join(
+                    f"LB-{n:05d}" for n in info["lb_candidates"][:4]
+                )
+                event.update({
+                    "status": "resolved",
+                    "reason": (
+                        f"nominates {nominated}; the seed run downloads the "
+                        f"torrent and lets its contents pick"
+                        if info["needs_content_check"]
+                        else f"would seed from {info['torrent_url']}"
+                    ),
+                })
                 yield event
                 continue
 
@@ -338,11 +445,35 @@ def seed_from_links(
                 continue
 
             event["torrent_path"] = str(path)
-            result = seed_one(info["lb_number"], str(path), opts)
+
+            # The post nominated several entries. Which one (or ones) the
+            # torrent actually holds is a question about bytes, not prose.
+            link_dirs: list[str] = []
+            if info["needs_content_check"]:
+                picked = pick_by_content(info["lb_candidates"], str(path))
+                if picked["winner"] is None:
+                    event["error"] = (
+                        f"{len(info['lb_candidates'])} LB numbers nominated and "
+                        f"{picked['reason']} — pin one by writing it before the link"
+                    )
+                    failed += 1
+                    _record(info, spec, str(path), "skipped", event["error"], "")
+                    yield event
+                    continue
+                info["lb_number"] = picked["winner"]
+                info["lb_source"] = "content"
+                info["confidence"] = "high"
+                link_dirs = picked["link_dirs"]
+                event.update({"lb_number": picked["winner"], "confidence": "high"})
+                event["picked"] = picked["reason"]
+
+            result = seed_one(info["lb_number"], str(path), opts, link_dirs)
             event.update({
                 "reason": result["reason"], "folder": result["folder"],
                 "overlay": result["overlay"],
             })
+            if event.get("picked"):
+                event["reason"] = f"{event['picked']}; {event['reason']}"
             if result["ok"]:
                 event["status"] = "qbt_added"
                 seeded += 1
@@ -373,7 +504,8 @@ def seed_from_links(
            "failed": failed, "error": ""}
 
 
-def seed_one(lb_number: int, torrent_path: str, opts: SeedOptions) -> dict:
+def seed_one(lb_number: int, torrent_path: str, opts: SeedOptions,
+             link_dirs: list[str] | None = None) -> dict:
     """Run the shared gate → overlay → qBittorrent sequence for one torrent.
 
     A thin pass-through to :func:`backend.tracker_seed.seed_torrent`, kept so
@@ -383,11 +515,13 @@ def seed_one(lb_number: int, torrent_path: str, opts: SeedOptions) -> dict:
         lb_number: LB number the torrent is for.
         torrent_path: Local ``.torrent`` file.
         opts: Seeding policy.
+        link_dirs: Further collection folders to hardlink from when the
+            torrent spans more than one LB entry.
 
     Returns:
         The tracker_seed result dict (ok/folder/reason/overlay/error).
     """
-    return seed_torrent(lb_number, torrent_path, opts)
+    return seed_torrent(lb_number, torrent_path, opts, link_dirs)
 
 
 def _record(info: dict, spec: LinkSpec, torrent_path: str | None,

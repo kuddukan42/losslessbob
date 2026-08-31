@@ -36,6 +36,7 @@ from backend.seed_overlay import (
     collection_is_untouched,
     http_fetch,
     plan_overlay,
+    resolvable_files,
     snapshot_folder,
 )
 from backend.torrent_verify import BencodeError, TorrentInfo, read_torrent, verify_folder
@@ -47,11 +48,6 @@ _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 #: Where the site crawl already stored the ``LBF-*`` sidecars a tracker's
 #: torrent contains but the curated collection folder does not keep.
 SIDECAR_DIR = _PROJECT_ROOT / "data" / "site" / "files"
-
-#: Extensions treated as the recording's audio when picking a source folder
-#: by content rather than by name.
-_AUDIO_SUFFIXES = (".flac", ".shn", ".wav", ".ape")
-
 
 @dataclass
 class SeedOptions:
@@ -112,32 +108,24 @@ def overlay_root_for(source_folder: Path, opts: SeedOptions) -> Path:
 
 
 def best_source_folder(info: TorrentInfo, folders: list[str]) -> str | None:
-    """Pick the collection folder that supplies the most of a torrent's audio.
+    """Pick the collection folder that supplies the most of a torrent.
 
     Used when no folder is named after the torrent root — an uploader's naming
-    rarely matches the collection's. Selection is by content, not by name.
+    rarely matches the collection's. Selection is by content, not by name, and
+    by the same recursive path-suffix rule the overlay planner uses, so a
+    nested torrent (``<root>/<show>/cd-1/…``) scores against a nested
+    collection folder instead of finding nothing at its top level.
 
     Args:
         info: Parsed torrent metadata.
         folders: Candidate collection folders, all known to exist.
 
     Returns:
-        The best-matching folder, or None when none supplies any audio.
+        The best-matching folder, or None when none supplies any file.
     """
-    wanted = {
-        Path(p).name for p, _s in info.files
-        if Path(p).suffix.lower() in _AUDIO_SUFFIXES
-    }
-    if not wanted:
-        wanted = {Path(p).name for p, _s in info.files}
-
     best_folder, best_hits = None, 0
     for folder in folders:
-        try:
-            have = {p.name for p in Path(folder).iterdir() if p.is_file()}
-        except OSError:
-            continue
-        hits = len(wanted & have)
+        hits = resolvable_files(info, [folder])
         if hits > best_hits:
             best_folder, best_hits = folder, hits
     return best_folder
@@ -148,6 +136,7 @@ def build_seed_overlay(
     source_folder: str,
     opts: SeedOptions,
     shortfall: str,
+    link_dirs: list[str] | None = None,
 ) -> tuple[str | None, str]:
     """Assemble an overlay folder that can seed without touching the collection.
 
@@ -162,6 +151,8 @@ def build_seed_overlay(
         source_folder: The collection folder to source audio from.
         opts: Seeding options.
         shortfall: The collection folder's verify summary, for messages.
+        link_dirs: Further collection folders to hardlink from, for a torrent
+            that spans more than one LB entry.
 
     Returns:
         (overlay_path or None, human-readable reason).
@@ -171,7 +162,8 @@ def build_seed_overlay(
     names = [Path(p).name for p, _s in info.files]
     site_urls = database.get_site_file_urls(names) if opts.refetch_sidecars else {}
 
-    plan = plan_overlay(info, source, root, [SIDECAR_DIR], site_urls)
+    plan = plan_overlay(info, source, root, [SIDECAR_DIR], site_urls,
+                        link_dirs=link_dirs)
     logger.info("  overlay: %s", plan.summary())
     if plan.fetch_bytes > opts.max_fetch_mb * 1_000_000:
         return None, (
@@ -214,6 +206,7 @@ def find_seedable_folder(
     lb_number: int | None,
     torrent_path: str,
     opts: SeedOptions,
+    link_dirs: list[str] | None = None,
 ) -> tuple[str | None, str]:
     """Find a folder that may be seeded for ``lb_number`` and is complete.
 
@@ -225,6 +218,8 @@ def find_seedable_folder(
         lb_number: LB number claimed by the recording.
         torrent_path: Local ``.torrent`` file.
         opts: Seeding options.
+        link_dirs: Further collection folders to hardlink from when the
+            torrent spans more than one LB entry.
 
     Returns:
         (folder_path or None, human-readable reason).
@@ -275,7 +270,7 @@ def find_seedable_folder(
             f"no linked folder shares enough files with the torrent "
             f"(have {', '.join(Path(f).name for f in folders[:3])})"
         )
-    return build_seed_overlay(info, source, opts, best or "name mismatch")
+    return build_seed_overlay(info, source, opts, best or "name mismatch", link_dirs)
 
 
 def qbt_seed(torrent_path: str, source_folder: str, opts: SeedOptions) -> dict:
@@ -318,6 +313,7 @@ def seed_torrent(
     lb_number: int | None,
     torrent_path: str,
     opts: SeedOptions,
+    link_dirs: list[str] | None = None,
 ) -> dict:
     """Run the whole gate → overlay → qBittorrent sequence for one torrent.
 
@@ -325,6 +321,8 @@ def seed_torrent(
         lb_number: LB number the torrent claims to be.
         torrent_path: Local ``.torrent`` file.
         opts: Seeding options.
+        link_dirs: Further collection folders to hardlink from when the
+            torrent spans more than one LB entry.
 
     Returns:
         Dict with ``ok`` (bool), ``folder`` (str, the folder handed to
@@ -333,7 +331,7 @@ def seed_torrent(
         ``error`` (str, a qBittorrent failure) — ``reason`` is always
         populated and is the line worth showing a user.
     """
-    folder, reason = find_seedable_folder(lb_number, torrent_path, opts)
+    folder, reason = find_seedable_folder(lb_number, torrent_path, opts, link_dirs)
     if not folder:
         return {"ok": False, "folder": "", "reason": reason, "overlay": False,
                 "error": ""}
