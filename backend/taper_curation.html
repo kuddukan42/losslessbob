@@ -584,18 +584,29 @@
       '</div></div>' +
 
       '<div class="panel"><h3>Decide</h3><div class="body actions">' +
-        candidateButtons.map(b =>
-          '<span class="actions" style="gap:2px">' +
-          '<button data-write class="primary" data-confirm="' + esc(b.value) + '"' +
-            (b.excluded ? ' data-excluded="' + esc(b.excluded) + '"' : '') + '>Confirm ' +
-          esc(b.value) + ' <span class="dim">(' + b.label + ')</span></button>' +
-          (b.excluded
-            ? '<button data-write title="' +
-              (b.excluded === 'unknown_text' ? 'Not in the vocabulary yet'
-                                             : 'Flagged not-a-taper') +
-              '" data-vocab="' + esc(b.value) + '" data-vocab-reason="' + esc(b.excluded) +
-              '">+ vocab</button>'
-            : '') + '</span>').join('') +
+        candidateButtons.map(b => {
+          const barred = b.excluded === 'not_taper_builtin' || b.excluded === 'not_taper_user';
+          return '<span class="actions" style="gap:2px">' +
+            (barred
+              // Blacklisted: not offered as a taper at all, only as something to
+              // re-admit if the call turns out to be wrong.
+              ? '<span class="tag warn" title="' +
+                (b.excluded === 'not_taper_builtin' ? 'Excluded by the shipped vocabulary'
+                                                    : 'You blacklisted this text') + '">' +
+                esc(b.value) + ' · blacklisted <span class="dim">(' + b.label + ')</span></span>' +
+                '<button data-write data-vocab="' + esc(b.value) + '" data-vocab-reason="' +
+                esc(b.excluded) + '">re-admit</button>'
+              : '<button data-write class="primary" data-confirm="' + esc(b.value) + '"' +
+                (b.excluded ? ' data-excluded="' + esc(b.excluded) + '"' : '') + '>Confirm ' +
+                esc(b.value) + ' <span class="dim">(' + b.label + ')</span></button>' +
+                (b.excluded
+                  ? '<button data-write title="Not in the vocabulary yet" data-vocab="' +
+                    esc(b.value) + '" data-vocab-reason="' + esc(b.excluded) + '">+ vocab</button>'
+                  : '') +
+                '<button data-write class="danger" title="Never suggest this text as a taper again"' +
+                ' data-blacklist="' + esc(b.value) + '">⊘</button>') +
+            '</span>';
+        }).join('') +
         '<input type="text" id="custom-taper" placeholder="other taper…" style="width:170px">' +
         '<button data-write id="confirm-custom">Confirm typed</button>' +
         '<button data-write class="danger" data-reject="1">Reject' +
@@ -615,10 +626,13 @@
               (c.canonical !== c.text.toLowerCase() ? ' → ' + esc(c.canonical) : '') +
               ' · ' + (c.status === 'known' ? 'taper' :
                        c.status === 'unknown_text' ? 'unknown' : 'barred') + '</span>' +
-              (c.status === 'known' ? ''
-                : '<button data-write class="ghost" style="font-size:.68rem;padding:1px 6px"' +
-                  ' data-vocab="' + esc(c.canonical) + '" data-vocab-reason="' + esc(c.status) +
-                  '">' + (c.status === 'unknown_text' ? '+ add' : 're-admit') + '</button>') +
+              '<button data-write class="ghost" style="font-size:.68rem;padding:1px 6px"' +
+                ' data-vocab="' + esc(c.canonical) + '" data-vocab-reason="' + esc(c.status) +
+                '">' + (c.status === 'known' || c.status === 'unknown_text'
+                        ? '+ add' : 're-admit') + '</button>' +
+              (c.status === 'known' || c.status === 'unknown_text'
+                ? '<button data-write class="ghost danger" style="font-size:.68rem;padding:1px 6px"' +
+                  ' data-blacklist="' + esc(c.canonical) + '">⊘ blacklist</button>' : '') +
               '</span>').join(' ')
           : '<span class="dim">no known aliases appear in this text</span>') +
       '</div></div>' +
@@ -634,6 +648,14 @@
     pane.querySelectorAll('[data-confirm]').forEach(b =>
       b.addEventListener('click', () =>
         decide(row.lb_number, 'confirm', b.dataset.confirm, b.dataset.excluded || null)));
+    pane.querySelectorAll('[data-blacklist]').forEach(b =>
+      b.addEventListener('click', async () => {
+        if (await blacklist(b.dataset.blacklist)) {
+          await loadRows(true);
+          renderRows();
+          renderDetail();
+        }
+      }));
     pane.querySelectorAll('[data-vocab]').forEach(b =>
       b.addEventListener('click', async () => {
         if (await addToVocabulary(b.dataset.vocab, b.dataset.vocabReason)) {
@@ -678,6 +700,29 @@
                   { name, note: 'added from the curation workbench' });
         toast(name + ' added to the vocabulary');
       }
+      return true;
+    } catch (e) {
+      toast(e.message, 'error');
+      return false;
+    }
+  }
+
+  /**
+   * Blacklist a text so it is never suggested as a taper again: a
+   * `user_taper_flags` not_taper row, which drops it from _TAPER_UNIVERSE for
+   * the parser, the attribution engine and every surface here at once.
+   * @returns {Promise<boolean>} true when the flag was written.
+   */
+  async function blacklist(name) {
+    if (!isCurator) { toast('Curator mode required', 'error'); return false; }
+    if (!name) return false;
+    if (!confirm('Blacklist "' + name + '"?\n\nIt will never be offered as a taper ' +
+                 'again, here or in the attribution engine. Reversible from the Tapers ' +
+                 'tab or Isolated text.')) return false;
+    try {
+      await api('POST', '/api/tapers/vocabulary/' + encodeURIComponent(name) + '/flag',
+                { is_taper: false, note: 'blacklisted from the curation workbench' });
+      toast(name + ' blacklisted — recompute pending');
       return true;
     } catch (e) {
       toast(e.message, 'error');

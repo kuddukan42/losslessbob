@@ -75,6 +75,13 @@ Fixed: backend/taper_curation.py exclusion_reason(): a curator's `user_taper_fla
   token ('bootleg') left it counting as a live opinion in the agreement verdict. The flags table is
   now read at every read entry point (and invalidates the cached description scan). Flagging
   'bootleg' + a full /api/derived/recompute took the "sources disagree" queue 1,463 -> 1,317.
+Added: backend/taper_curation.html: a blacklist action beside every taper suggestion. Description
+  text like 'first rehearsal' or 'excellent sound' reads as a candidate handle until somebody rules
+  on it, so the Decide row and the names-found chips now carry a one-click blacklist writing a
+  user_taper_flags not_taper row — it drops out of _TAPER_UNIVERSE for the parser, the attribution
+  engine and every workbench surface at once. A blacklisted name is no longer offered for confirm at
+  all: it renders as 'blacklisted' with only a re-admit button, so a ruled-out text cannot be
+  confirmed by reflex. Existing derived rows still need /api/derived/recompute.
 Added: backend/taper_curation.html: admitting a name to the vocabulary from wherever it is shown —
   confirm() refuses anything outside _TAPER_UNIVERSE, which blocked exactly the names curation
   exists to add (a real handle that only ever appeared as a TUIT tag, e.g. Black Rider). Every
