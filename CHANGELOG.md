@@ -29,6 +29,20 @@ Added: backend/app.py: `_lbdir_reconcile_text()` — before judging a folder, mi
   text and both recoverable — it now reads green with 54/54 audio pass.
 Changed: gui_next ScreenCollection ForumModal: the strip's colour follows the audio verdict, with a
   second line describing the text files, files auto-restored this check, and unlisted extras.
+Added: backend/country_flags.py: country flag emoji for a show's location, and forum subject lines
+  now carry one as a prefix — the board's own convention (verified against 400 topics on WTRF board
+  16: 🇺🇸 22x, 🇩🇪 6x, 🇸🇪 3x, the Scotland subdivision flag 3x; SMF 2.0 is UTF-8 and passes four-byte
+  emoji in topic titles unchanged). `flag_for_date()` resolves through `olof_events` by parsed date,
+  its `country` first and then its `region` — which for a US show is the only column carrying the
+  location, and which the page parser also filled with whole countries ("The Netherlands"), Canadian
+  provinces and typos ("Irelandw"). Both columns map by name through one table that is exhaustive
+  over the values actually in the corpus. Resolves 15,409 of 16,611 collection rows (92.8%); the
+  1,202 misses are almost all dates with no Olof event at all (studio, rehearsal, compilation).
+  Anything ambiguous returns no flag rather than a guess — Yugoslavia, the USSR and Czechoslovakia
+  are deliberately unmapped, while East/West Germany resolve to 🇩🇪. England/Scotland/Wales get their
+  subdivision flags, matching the board; Northern Ireland has none and falls back to 🇬🇧.
+Changed: backend/forum_poster.py: `_build_subject()` prefixes that flag. BOOTLEG subjects never get
+  one — a compilation has no single country. An unresolved location leaves the subject untouched.
 
 [2026-08-30] — feat(backend): TODO-327 taper curation workbench; TUIT detail-page HTML archived
 Added: backend/taper_curation.py: read model joining every source that has an opinion about a
