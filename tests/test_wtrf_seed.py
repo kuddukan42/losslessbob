@@ -12,6 +12,7 @@ from backend.forum_poster import FORUM_BASE
 from backend.tracker_seed import SeedOptions, overlay_root_for
 from backend.wtrf_seed import (
     LinkSpec,
+    _absolutise,
     _canonical_topic_url,
     _lb_numbers_in,
     is_wtrf_topic_url,
@@ -43,9 +44,20 @@ def test_lb_numbers_in(text, expected):
     "https://www.watchingtheriverflow.org/index.php?topic=1234.0",
     "http://watchingtheriverflow.org/index.php?topic=1234.msg99#msg99",
     "index.php?topic=1234.0",
+    # Scheme-less — what the address bar displays, so what a paste yields.
+    "www.watchingtheriverflow.org/index.php?topic=1234.0",
+    "watchingtheriverflow.org/index.php?topic=1234.0",
 ])
 def test_is_wtrf_topic_url_accepts(url):
     assert is_wtrf_topic_url(url)
+
+
+def test_a_scheme_less_paste_is_not_glued_onto_the_forum_base():
+    """The bug this guards: _resolve_url reads a bare host as a relative path
+    and produces FORUM_BASE + "/www.watchingtheriverflow.org/…"."""
+    out = _absolutise("www.watchingtheriverflow.org/index.php?topic=1234.0")
+    assert out == "http://www.watchingtheriverflow.org/index.php?topic=1234.0"
+    assert out.count("watchingtheriverflow.org") == 1
 
 
 @pytest.mark.parametrize("url", [
@@ -65,6 +77,36 @@ def test_canonical_collapses_scheme_www_anchor_and_offset():
         "https://www.watchingtheriverflow.org/index.php?topic=1234.msg99#msg99",
     ]
     assert {_canonical_topic_url(u) for u in variants} == {TOPIC}
+
+
+@pytest.mark.parametrize("line", [
+    "www.watchingtheriverflow.org/index.php?topic=29688.msg103317#msg103317",
+    "watchingtheriverflow.org/index.php?topic=29688.msg103317",
+    "index.php?topic=29688.0",
+    "http://www.watchingtheriverflow.org/index.php?topic=29688.msg103317#msg103317",
+    "see www.watchingtheriverflow.org/index.php?topic=29688.0, then stop.",
+])
+def test_every_paste_shape_reaches_the_same_topic(line):
+    """A scheme-less copy is the common case, not the exception — dropping it
+    reported "no WTRF topic links found" on a perfectly good link."""
+    specs = parse_topic_links(line)
+    assert len(specs) == 1
+    assert specs[0].url == f"{FORUM_BASE}/index.php?topic=29688.0"
+
+
+def test_a_scheme_less_link_can_still_be_pinned():
+    specs = parse_topic_links(
+        "LB-00707 www.watchingtheriverflow.org/index.php?topic=42.0")
+    assert specs[0].lb_number == 707
+
+
+def test_mixed_paste_shapes_dedupe_to_one_topic():
+    specs = parse_topic_links(
+        "www.watchingtheriverflow.org/index.php?topic=1234.msg99#msg99\n"
+        "https://watchingtheriverflow.org/index.php?topic=1234.15\n"
+        "index.php?topic=1234.0\n"
+    )
+    assert [s.url for s in specs] == [f"{FORUM_BASE}/index.php?topic=1234.0"]
 
 
 def test_parse_dedupes_and_preserves_order():
