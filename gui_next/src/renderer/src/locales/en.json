@@ -662,18 +662,26 @@
         "checking": "Checking folder…",
         "recheck": "Re-check",
         "cached": "(cached)",
-        "counts": "{{pass}}/{{total}} pass · {{missing}} missing · {{mismatch}} mismatch · {{extra}} extra",
         "state": {
-          "pass": "Pass",
-          "missing": "Missing {{n}}",
-          "extra": "Extra {{n}}",
-          "no_shntool": "No shntool",
-          "fail": "Fail",
-          "fail_n": "Fail {{n}}",
           "no_lbdir": "No LBDIR manifest",
           "no_folder": "No collection folder",
           "folder_missing": "Folder missing on disk",
           "error": "Status unavailable"
+        },
+        "audioCounts": "{{pass}}/{{total}} audio pass · {{missing}} missing · {{mismatch}} mismatch",
+        "restored": "auto-restored {{n}} text file(s)",
+        "unlisted": "{{n}} unlisted file(s) in folder",
+        "audio": {
+          "pass": "All {{n}} audio files pass",
+          "missing": "{{n}} audio file(s) missing",
+          "fail": "{{n}} audio file(s) mismatch",
+          "none": "No audio in the manifest"
+        },
+        "text": {
+          "pass": "All {{total}} text files present",
+          "missing": "{{n}} of {{total}} text files still missing",
+          "mismatch": "{{n}} of {{total}} text files differ from the manifest",
+          "none": "No text files in the manifest"
         }
       }
     },

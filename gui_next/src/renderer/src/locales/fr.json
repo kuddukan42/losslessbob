@@ -653,6 +653,21 @@
           "no_folder": "Pas de dossier de collection",
           "folder_missing": "Dossier manquant sur le disque",
           "error": "Statut : indisponible"
+        },
+        "audioCounts": "Passage audio {{pass}}/{{total}} · {{missing}} manquant · {{mismatch}} non concordant",
+        "restored": "Fichier(s) texte {{n}} restauré(s) automatiquement",
+        "unlisted": "{{n}} fichier(s) non répertorié(s) dans le dossier",
+        "audio": {
+          "pass": "Tous les fichiers audio {{n}} sont conformes",
+          "missing": "Fichier(s) audio {{n}} manquant(s)",
+          "fail": "Incohérence entre les fichiers audio {{n}}",
+          "none": "Pas de fichier audio dans le manifeste"
+        },
+        "text": {
+          "pass": "Tous les fichiers texte {{total}} sont présents",
+          "missing": "Les fichiers texte {{n}} et {{total}} sont toujours manquants",
+          "mismatch": "Les fichiers texte {{n}} et {{total}} diffèrent du manifeste",
+          "none": "Aucun fichier texte dans le manifeste"
         }
       }
     },

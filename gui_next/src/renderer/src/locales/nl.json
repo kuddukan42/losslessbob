@@ -653,6 +653,21 @@
           "no_folder": "Geen verzamelingsmap",
           "folder_missing": "Map ontbreekt op schijf",
           "error": "Status: niet beschikbaar"
+        },
+        "audioCounts": "{{pass}}/{{total}} audio geslaagd · {{missing}} ontbreekt · {{mismatch}} komt niet overeen",
+        "restored": "automatisch herstelde {{n}}-tekstbestanden",
+        "unlisted": "{{n}} niet-vermelde bestanden in map",
+        "audio": {
+          "pass": "Alle {{n}}-audiobestanden voldoen aan de eisen",
+          "missing": "{{n}} audiobestand(en) ontbreekt/ontbreken",
+          "fail": "{{n}} audiobestand(en) komen niet overeen",
+          "none": "Geen audio in het manifest"
+        },
+        "text": {
+          "pass": "Alle {{total}}-tekstbestanden zijn aanwezig",
+          "missing": "{{n}}- en {{total}}-tekstbestanden ontbreken nog steeds",
+          "mismatch": "De tekstbestanden {{n}} en {{total}} wijken af van het manifest",
+          "none": "Geen tekstbestanden in het manifest"
         }
       }
     },

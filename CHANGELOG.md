@@ -15,6 +15,20 @@ Changed: gui_next ScreenCollection ForumModal: a tone-coloured status strip abov
 Changed: gui_next locales: `collection.forum.lbdir.*` added to en.json and translated to de/fr/es/it/nl.
 Changed: backend/forum_poster.py: the post footer is now "Brought to you by <name>, via the
   Bob-O-Matic." — the app version is gone, and the now-unused `backend.version` import with it.
+Changed: backend/app.py: `lbdir_status` is now audio-first. `_lbdir_split_counts()` separates the
+  manifest's audio entries from its text entries (unlisted disk files counted apart, excluded from
+  either total), and `_lbdir_forum_view()` derives the shown verdict from the audio bucket alone —
+  a folder whose music is intact reads green, and the text population gets its own descriptive line
+  instead of dragging the colour down. The strict `_lbdir_verdict()` shape the pipeline consumes is
+  unchanged and still cached alongside.
+Added: backend/app.py: `_lbdir_reconcile_text()` — before judging a folder, missing *non-audio*
+  manifest entries are recovered automatically: in-folder copies at the wrong path are moved to the
+  path the manifest expects, and entries the site mirror still holds are copied in. Exact-MD5 matches
+  only (a name-only match is a different revision of the document and stays a human decision), audio
+  is never moved or copied, and nothing is ever deleted. LB-03442's two "missing" files were both
+  text and both recoverable — it now reads green with 54/54 audio pass.
+Changed: gui_next ScreenCollection ForumModal: the strip's colour follows the audio verdict, with a
+  second line describing the text files, files auto-restored this check, and unlisted extras.
 
 [2026-08-30] — feat(backend): TODO-327 taper curation workbench; TUIT detail-page HTML archived
 Added: backend/taper_curation.py: read model joining every source that has an opinion about a
