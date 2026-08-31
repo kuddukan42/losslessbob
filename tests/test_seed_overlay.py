@@ -6,6 +6,7 @@ so several tests assert that explicitly rather than only checking the overlay.
 import hashlib
 import os
 import shutil
+from pathlib import Path
 
 import pytest
 
@@ -18,6 +19,7 @@ from backend.seed_overlay import (
     collection_is_untouched,
     overlay_status,
     plan_overlay,
+    resolvable_files,
     snapshot_folder,
     verify_overlay,
 )
@@ -387,3 +389,109 @@ class TestSnapshotHelpers:
 
     def test_missing_folder_snapshots_empty(self, tmp_path):
         assert snapshot_folder(tmp_path / "nope") == {}
+
+
+# ── Nested torrents: box sets spanning subfolders and several LB entries ─────
+# Real WTRF torrents are not flat. "Bob Dylan 84 Revisited LB-14777+ LB-14778"
+# nests <root>/artwork/ and <root>/<show>/cd-1|cd-2/, covers two catalogue
+# entries filed in separate collection folders, and repeats basenames across
+# its discs ("01 Track01.flac" appears four times). A flat, basename-keyed
+# index found none of the audio and could not have told those copies apart.
+
+NESTED = {
+    "artwork/scan01.jpg": b"\xff\xd8" + b"\x01" * 500,
+    "Rome 1984/cd-1/01 Track01.flac": b"\xa1" * 900,
+    "Rome 1984/cd-2/01 Track01.flac": b"\xa2" * 800,
+    "London 1984/cd-1/01 Track01.flac": b"\xb1" * 700,
+    "London 1984/cd-2/01 Track01.flac": b"\xb2" * 600,
+}
+
+
+@pytest.fixture
+def nested_rig(tmp_path):
+    """A two-show torrent vs two collection folders, each nested cd-1/cd-2."""
+    torrent_meta = {b"info": {
+        b"name": b"Box Set",
+        b"piece length": PIECE_LEN,
+        b"pieces": _pieces(list(NESTED.values())),
+        b"files": [{b"path": [p.encode() for p in n.split("/")], b"length": len(b)}
+                   for n, b in NESTED.items()],
+    }}
+    torrent = tmp_path / "box.torrent"
+    torrent.write_bytes(_bencode(torrent_meta))
+
+    rome = tmp_path / "collection" / "1984-06-19 Rome (LB-14777)"
+    london = tmp_path / "collection" / "1984-07-07 London (LB-14778)"
+    for folder, prefix in ((rome, "Rome 1984"), (london, "London 1984")):
+        for disc in ("cd-1", "cd-2"):
+            (folder / disc).mkdir(parents=True)
+            key = f"{prefix}/{disc}/01 Track01.flac"
+            (folder / disc / "01 Track01.flac").write_bytes(NESTED[key])
+    (rome / "artwork").mkdir()
+    (rome / "artwork" / "scan01.jpg").write_bytes(NESTED["artwork/scan01.jpg"])
+
+    return read_torrent(torrent), rome, london, tmp_path / "WTRF Seeds"
+
+
+class TestNestedTorrents:
+    def test_audio_below_the_top_level_is_found(self, nested_rig):
+        """The whole point: a recursive index sees cd-1/cd-2, a flat one did not."""
+        info, rome, london, root = nested_rig
+        plan = plan_overlay(info, rome, root, [], None, link_dirs=[str(london)])
+        assert plan.count(FETCH) == 0
+        assert plan.count(LINK) == len(NESTED)
+
+    def test_colliding_basenames_resolve_to_the_right_disc(self, nested_rig):
+        """Four files are named "01 Track01.flac"; each must get its own bytes."""
+        info, rome, london, root = nested_rig
+        plan = plan_overlay(info, rome, root, [], None, link_dirs=[str(london)])
+        sources = {e.rel_path: Path(e.source) for e in plan.entries}
+        for rel, blob in NESTED.items():
+            picked = sources[f"Box Set/{rel}"]
+            assert picked.read_bytes() == blob, f"{rel} sourced from {picked}"
+
+    def test_a_sibling_folder_supplies_its_own_half(self, nested_rig):
+        info, rome, london, root = nested_rig
+        plan = plan_overlay(info, rome, root, [], None, link_dirs=[str(london)])
+        from_london = [e for e in plan.entries
+                       if Path(e.source).is_relative_to(london)]
+        assert len(from_london) == 2          # London's two discs
+        assert all(e.action == LINK for e in from_london)
+
+    def test_without_the_sibling_its_files_are_left_to_the_swarm(self, nested_rig):
+        """No silent wrong-file substitution when a half is missing."""
+        info, rome, london, root = nested_rig
+        plan = plan_overlay(info, rome, root)
+        fetched = {e.rel_path for e in plan.entries if e.action == FETCH}
+        assert fetched == {"Box Set/London 1984/cd-1/01 Track01.flac",
+                           "Box Set/London 1984/cd-2/01 Track01.flac"}
+
+    def test_the_nested_overlay_builds_and_verifies(self, nested_rig):
+        info, rome, london, root = nested_rig
+        plan = plan_overlay(info, rome, root, [], None, link_dirs=[str(london)])
+        before_rome, before_london = snapshot_folder(rome), snapshot_folder(london)
+        build_overlay(plan)
+        assert verify_overlay(info, plan).complete
+        assert collection_is_untouched(rome, before_rome) == []
+        assert collection_is_untouched(london, before_london) == []
+
+    def test_resolvable_files_scores_nested_folders(self, nested_rig):
+        info, rome, london, _root = nested_rig
+        assert resolvable_files(info, [str(rome)]) == 3      # artwork + 2 discs
+        assert resolvable_files(info, [str(london)]) == 2
+        assert resolvable_files(info, [str(rome), str(london)]) == len(NESTED)
+
+
+class TestSnapshotIsRecursive:
+    def test_a_write_below_the_root_is_caught(self, nested_rig):
+        """A nested collection folder must not hide a write from the guard."""
+        _info, rome, _london, _root = nested_rig
+        before = snapshot_folder(rome)
+        (rome / "cd-1" / "01 Track01.flac").write_bytes(b"\x00" * 900)
+        assert collection_is_untouched(rome, before) == ["cd-1/01 Track01.flac"]
+
+    def test_a_new_nested_file_is_caught(self, nested_rig):
+        _info, rome, _london, _root = nested_rig
+        before = snapshot_folder(rome)
+        (rome / "cd-2" / "intruder.flac").write_bytes(b"x")
+        assert collection_is_untouched(rome, before) == ["cd-2/intruder.flac"]
