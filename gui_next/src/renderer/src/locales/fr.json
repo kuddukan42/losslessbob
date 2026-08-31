@@ -635,7 +635,26 @@
       "body": "Corps (BBCode)",
       "posting": "Détachement...",
       "postTopic": "Sujet du message",
-      "skipIntegrityCheck": "Publier quand même (il manque des fichiers avec somme de contrôle dans le dossier)"
+      "skipIntegrityCheck": "Publier quand même (il manque des fichiers avec somme de contrôle dans le dossier)",
+      "lbdir": {
+        "title": "LBDIR",
+        "checking": "Vérification du dossier…",
+        "recheck": "Vérifier à nouveau",
+        "cached": "(en cache)",
+        "counts": "{{pass}}/{{total}} validé · {{missing}} manquant · {{mismatch}} incohérence · {{extra}} en trop",
+        "state": {
+          "pass": "Pass",
+          "missing": "{{n}} manquant",
+          "extra": "Supplément {{n}}",
+          "no_shntool": "Pas de shntool",
+          "fail": "Échec",
+          "fail_n": "Échec {{n}}",
+          "no_lbdir": "Pas de manifeste LBDIR",
+          "no_folder": "Pas de dossier de collection",
+          "folder_missing": "Dossier manquant sur le disque",
+          "error": "Statut : indisponible"
+        }
+      }
     },
     "detail": {
       "owned": "Propriétaire",

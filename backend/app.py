@@ -493,6 +493,111 @@ def _find_lbdir_in_folder(
     return None if strict else tagged[0][1]
 
 
+def _lbdir_verdict(check: "dict | None") -> dict:
+    """Map a :func:`checksum_utils.verify_folder_lbdir` result to a step verdict.
+
+    Single source of truth for the LBDIR step's wire shape, shared by the
+    pipeline row builder and the forum-preview status endpoint so both label a
+    given manifest check identically.
+
+    Args:
+        check: The verify result, or None when the folder has no manifest.
+
+    Returns:
+        Dict with ``status`` (ok/warn/bad), ``label``, ``label_key``,
+        ``label_params`` and ``check`` (the trimmed counts, or None).
+    """
+    if not check:
+        return {"status": "warn", "label": "No LBDIR", "check": None,
+                "label_key": "no_lbdir", "label_params": {}}
+    chk_status = check.get("status", "fail")
+    n_miss = check.get("missing", 0)
+    n_mm = check.get("mismatch", 0)
+    n_extra = check.get("extra", 0)
+    detail = {"status": chk_status, "total": check.get("total", 0),
+              "pass": check.get("pass", 0), "missing": n_miss,
+              "mismatch": n_mm, "extra": n_extra}
+    if chk_status == "pass":
+        return {"status": "ok", "label": "Pass", "check": detail,
+                "label_key": "pass", "label_params": {}}
+    if chk_status == "missing_files":
+        return {"status": "warn", "label": f"Missing {n_miss}", "check": detail,
+                "label_key": "missing", "label_params": {"n": n_miss}}
+    if chk_status == "extra_files":
+        return {"status": "warn", "label": f"Extra {n_extra}", "check": detail,
+                "label_key": "extra", "label_params": {"n": n_extra}}
+    if chk_status == "shntool_missing":
+        return {"status": "warn", "label": "No shntool", "check": detail,
+                "label_key": "no_shntool", "label_params": {}}
+    return {"status": "bad", "label": f"Fail {n_mm}" if n_mm else "Fail",
+            "check": detail, "label_key": "fail_n" if n_mm else "fail",
+            "label_params": {"n": n_mm} if n_mm else {}}
+
+
+def _lbdir_status_for_lb(lb_number: int, force: bool = False) -> dict:
+    """LBDIR pipeline verdict for an LB's filed collection folder.
+
+    Reuses the pipeline's cached per-folder step verdict
+    (``pipeline_folder_state``) when the folder's stat fingerprint still
+    matches, so opening the forum preview is free for a folder the pipeline
+    already checked; otherwise the manifest is verified live and the result is
+    written back into the same cache.
+
+    Args:
+        lb_number: LB to resolve a collection folder for.
+        force: Ignore any cached verdict and re-verify from disk.
+
+    Returns:
+        A :func:`_lbdir_verdict` dict plus ``folder``, ``manifest``, ``cached``
+        and ``checked_at``. ``status`` is ``"unknown"`` with a ``reason`` of
+        ``no_disk_path`` or ``folder_missing`` when there is nothing to check.
+    """
+    with database.get_connection() as conn:
+        row = conn.execute(
+            "SELECT disk_path FROM my_collection WHERE lb_number=?", (lb_number,)
+        ).fetchone()
+    disk_path = row["disk_path"] if row else None
+    if not disk_path:
+        return {"status": "unknown", "reason": "no_disk_path", "label": "No folder",
+                "label_key": "no_folder", "label_params": {}, "check": None,
+                "folder": None, "manifest": None, "cached": False, "checked_at": None}
+    folder = Path(disk_path)
+    if not folder.is_dir():
+        return {"status": "unknown", "reason": "folder_missing", "label": "Folder missing",
+                "label_key": "folder_missing", "label_params": {}, "check": None,
+                "folder": str(folder), "manifest": None, "cached": False,
+                "checked_at": None}
+
+    fingerprint = database.folder_fingerprint(str(folder))
+    if not force and fingerprint:
+        state = database.get_folder_state(str(folder))
+        cached = (state or {}).get("steps", {}).get("lbdir")
+        if state and state.get("fingerprint") == fingerprint and cached:
+            return {**cached, "folder": str(folder),
+                    "manifest": cached.get("manifest"), "cached": True,
+                    "checked_at": state.get("updated_at")}
+
+    xref = _resolve_xref_for_folder(folder, lb_number)
+    manifest = _find_lbdir_in_folder(folder, lb_number, strict=True)
+    if manifest is None:
+        manifest = find_lbdir_attachment(lb_number, xref=xref)
+    if manifest is None:
+        manifest = _find_lbdir_in_folder(folder, lb_number)
+
+    check = (checksum_utils.verify_folder_lbdir(str(folder), manifest)
+             if manifest else None)
+    verdict = _lbdir_verdict(check)
+    verdict["manifest"] = manifest.name if manifest else None
+    if fingerprint:
+        try:
+            database.put_folder_state(str(folder), fingerprint, {"lbdir": dict(verdict)})
+        except Exception:
+            _log.exception("Could not cache LBDIR verdict for LB-%05d", lb_number)
+    from datetime import datetime
+    return {**verdict, "folder": str(folder), "cached": False,
+            "checked_at": datetime.now(UTC).isoformat(timespec="seconds")}
+
+
 def _pinned_lb_for_folder(folder: Path) -> int | None:
     """LB# of a *single* explicit folder→LB pin, or None.
 
@@ -4319,6 +4424,24 @@ def create_app() -> Flask:
                 entry["bootleg_title"] = bootlegs[0]["title"]
             result = preview_lb_topic(lb_number=lb, entry=entry, attachments_dir=SITE_FILES_DIR)
             return jsonify(result)
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/entry/<int:lb>/lbdir_status", methods=["GET"])
+    def lbdir_status(lb: int) -> Response:
+        """Return the LBDIR pipeline verdict for an LB's filed collection folder.
+
+        Query: ``force=1`` re-verifies instead of reusing the pipeline's cached
+        per-folder verdict. Surfaced in the forum post preview so the folder's
+        manifest state is visible before the post is made.
+
+        Returns: {ok, lb, status, label, label_key, label_params, check,
+        folder, manifest, cached, checked_at}.
+        """
+        try:
+            force = request.args.get("force", "").lower() in ("1", "true", "yes")
+            result = _lbdir_status_for_lb(lb, force=force)
+            return jsonify({"ok": True, "lb": lb, **result})
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
 
@@ -9584,40 +9707,14 @@ def create_app() -> Flask:
                                     "pending_fetch": True, "check": None}
                 elif lbdir_file:
                     check = checksum_utils.verify_folder_lbdir(str(folder), lbdir_file)
-                    chk_status = check.get("status", "fail")
-                    n_total = check.get("total", 0)
-                    n_pass  = check.get("pass", 0)
-                    n_miss  = check.get("missing", 0)
-                    n_mm    = check.get("mismatch", 0)
-                    n_extra = check.get("extra", 0)
-                    detail  = {"status": chk_status, "total": n_total,
-                               "pass": n_pass, "missing": n_miss, "mismatch": n_mm,
-                               "extra": n_extra}
-                    if chk_status == "pass":
-                        row["lbdir"] = {"status": "ok",   "label": "Pass",              "check": detail,
-                                         "label_key": "pass", "label_params": {}}
+                    row["lbdir"] = _lbdir_verdict(check)
+                    if check.get("status") == "pass":
                         # If this folder is already an owned collection item (re-check
                         # of an in-place folder), stamp lbdir_verified_at so the Collect
                         # stage's "Confirmed" date reflects this pass. No-op otherwise.
                         database.set_lbdir_verified(str(folder))
-                    elif chk_status == "missing_files":
-                        row["lbdir"] = {"status": "warn", "label": f"Missing {n_miss}", "check": detail,
-                                         "label_key": "missing", "label_params": {"n": n_miss}}
-                    elif chk_status == "extra_files":
-                        row["lbdir"] = {"status": "warn", "label": f"Extra {n_extra}",  "check": detail,
-                                         "label_key": "extra", "label_params": {"n": n_extra}}
-                    elif chk_status == "shntool_missing":
-                        row["lbdir"] = {"status": "warn", "label": "No shntool",         "check": detail,
-                                         "label_key": "no_shntool", "label_params": {}}
-                    else:
-                        label = f"Fail {n_mm}" if n_mm else "Fail"
-                        label_key = "fail_n" if n_mm else "fail"
-                        label_params = {"n": n_mm} if n_mm else {}
-                        row["lbdir"] = {"status": "bad",  "label": label,               "check": detail,
-                                         "label_key": label_key, "label_params": label_params}
                 else:
-                    row["lbdir"] = {"status": "warn", "label": "No LBDIR", "check": None,
-                                     "label_key": "no_lbdir", "label_params": {}}
+                    row["lbdir"] = _lbdir_verdict(None)
             # else: stays mute
 
         # ── Step 4: Rename proposal ───────────────────────────────────────────

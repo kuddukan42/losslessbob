@@ -12,7 +12,6 @@ from bs4 import BeautifulSoup
 
 from backend.credentials import SERVICE_WTRF, get_credentials
 from backend.paths import detail_url
-from backend.version import VERSION as APP_VERSION
 
 logger = logging.getLogger(__name__)
 
@@ -324,10 +323,10 @@ def _read_lbdir(attachments_dir: Path, lb_number: int | None) -> str:
 
 
 def _build_footer() -> str:
-    """Return the BBcode footer line using the stored WTRF username and APP_VERSION."""
+    """Return the BBcode footer attribution line using the stored WTRF username."""
     username, _ = get_credentials(SERVICE_WTRF)
     name = username.strip() if username.strip() else "kuddukan"
-    return f"[i][color=#888888]Brought to you by {name}, via the Bob-O-Matic v{APP_VERSION}.[/color][/i]"
+    return f"[i][color=#888888]Brought to you by {name}, via the Bob-O-Matic.[/color][/i]"
 
 
 def _build_body(entry: dict, attachments_dir: Path | None, lb_number: int | None = None) -> str:

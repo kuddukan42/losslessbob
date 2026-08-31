@@ -656,7 +656,26 @@
       "body": "Body (BBCode)",
       "posting": "Posting…",
       "postTopic": "Post topic",
-      "skipIntegrityCheck": "Post anyway (folder is missing checksum'd files)"
+      "skipIntegrityCheck": "Post anyway (folder is missing checksum'd files)",
+      "lbdir": {
+        "title": "LBDIR",
+        "checking": "Checking folder…",
+        "recheck": "Re-check",
+        "cached": "(cached)",
+        "counts": "{{pass}}/{{total}} pass · {{missing}} missing · {{mismatch}} mismatch · {{extra}} extra",
+        "state": {
+          "pass": "Pass",
+          "missing": "Missing {{n}}",
+          "extra": "Extra {{n}}",
+          "no_shntool": "No shntool",
+          "fail": "Fail",
+          "fail_n": "Fail {{n}}",
+          "no_lbdir": "No LBDIR manifest",
+          "no_folder": "No collection folder",
+          "folder_missing": "Folder missing on disk",
+          "error": "Status unavailable"
+        }
+      }
     },
     "forumList": {
       "button": "Post from list…",

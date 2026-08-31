@@ -635,7 +635,26 @@
       "body": "Cuerpo (BBCode)",
       "posting": "Publicando...",
       "postTopic": "Publicar tema",
-      "skipIntegrityCheck": "Publicar de todos modos (a la carpeta le faltan archivos con suma de comprobación)."
+      "skipIntegrityCheck": "Publicar de todos modos (a la carpeta le faltan archivos con suma de comprobación).",
+      "lbdir": {
+        "title": "LBDIR",
+        "checking": "Comprobando la carpeta…",
+        "recheck": "Vuelve a comprobarlo",
+        "cached": "(en caché)",
+        "counts": "{{pass}}/{{total}} correcto · {{missing}} falta · {{mismatch}} discrepancia · {{extra}} de más",
+        "state": {
+          "pass": "Aceptar",
+          "missing": "Falta {{n}}",
+          "extra": "Extra {{n}}",
+          "no_shntool": "Sin shntool",
+          "fail": "Fallo",
+          "fail_n": "Fallo {{n}}",
+          "no_lbdir": "Sin manifiesto LBDIR",
+          "no_folder": "Sin carpeta de colección",
+          "folder_missing": "Carpeta ausente en el disco",
+          "error": "Estado: no disponible"
+        }
+      }
     },
     "detail": {
       "owned": "Propiedad",

@@ -1,3 +1,21 @@
+[2026-08-30] — feat(gui): LBDIR pipeline status in the forum post preview; Bob-O-Matic footer loses its version
+Added: backend/app.py: `GET /api/entry/<lb>/lbdir_status` returns the LBDIR pipeline verdict for an
+  LB's filed collection folder — the same `verify_folder_lbdir` check the pipeline's LBDIR step runs,
+  resolved against the folder's own manifest first (strict), then the LB's site attachment for its
+  xref fileset. Reuses the pipeline's cached per-folder verdict (`pipeline_folder_state`) whenever the
+  stat fingerprint still matches, so a folder the pipeline already checked answers in ~10 ms instead
+  of ~70 s of re-hashing; a live check is written back into the same cache. `?force=1` re-verifies.
+  Status is `unknown` (reason `no_disk_path` / `folder_missing`) when there is nothing to check —
+  never silently "ok".
+Changed: backend/app.py: the LBDIR step's status/label mapping moved out of the pipeline row builder
+  into module-level `_lbdir_verdict()`, so the pipeline row and the new endpoint cannot drift apart.
+Changed: gui_next ScreenCollection ForumModal: a tone-coloured status strip above the Subject field
+  shows the LBDIR verdict, the pass/missing/mismatch/extra counts, whether the answer came from cache,
+  and a Re-check button (force). Fetched asynchronously on open so the modal never blocks on hashing.
+Changed: gui_next locales: `collection.forum.lbdir.*` added to en.json and translated to de/fr/es/it/nl.
+Changed: backend/forum_poster.py: the post footer is now "Brought to you by <name>, via the
+  Bob-O-Matic." — the app version is gone, and the now-unused `backend.version` import with it.
+
 [2026-08-30] — feat(backend): TODO-327 taper curation workbench; TUIT detail-page HTML archived
 Added: backend/taper_curation.py: read model joining every source that has an opinion about a
   recording's taper — entries text, entry_lineage parse, taper_attributions + evidence,

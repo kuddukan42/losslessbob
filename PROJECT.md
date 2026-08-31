@@ -2036,6 +2036,7 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 |--------|-------|-------------|
 | POST | `/api/wtrf/test` | Test WTRF forum credentials. Body: `{username?, password?}`. Returns `{ok, username}`. |
 | GET | `/api/entry/<lb>/preview_forum` | Return the auto-generated subject and BBcode body for an LB entry without posting. Returns `{subject, body}`. |
+| GET | `/api/entry/<lb>/lbdir_status` | LBDIR pipeline verdict for the LB's filed collection folder (shown in the forum post preview). Reuses the cached `pipeline_folder_state` verdict while the folder fingerprint matches; `?force=1` re-verifies. Returns `{status, label_key, label_params, check, folder, manifest, cached, checked_at}`. |
 | POST | `/api/entry/<lb>/post_forum` | Post a topic to the WTRF forum. Body: `{username?, password?, torrent_id?, subject?, body?}`. Optional `subject`/`body` override the auto-generated values (used when the user edits the preview). Gated by an LBDIR integrity check (`checksum_utils.verify_folder` on the entry's `my_collection.disk_path`, if any) — 400 if status is `fail`/`incomplete`. If no torrent exists, one is auto-generated from the collection folder and added to qBittorrent before posting (qBittorrent failure is non-fatal). Returns `{ok, topic_url, torrent_auto_created?, qbt_auto_add?}`. |
 | GET | `/api/entry/<lb>/forum_posts` | List all logged forum posts for an LB entry, newest first. |
 | DELETE | `/api/forum_post/<id>` | Delete a forum post log record by id. |
