@@ -42,6 +42,19 @@ Changed: backend/taper_curation.py agreement(): a vocabulary-barred name is not 
   disagree" queue; merely-unknown names still count, since flagging one not-a-taper in the isolated
   tab is the loop the two tabs are meant to form. TUIT placeholder text ("unknown", "unidentified",
   "n/a") is treated as no tag at all, in the filters and the verdict alike.
+Fixed: backend/taper_curation.py exclusion_reason(): a curator's `user_taper_flags` not-a-taper call
+  was invisible unless the canonical also happened to be an alias value, so flagging a plain-text
+  token ('bootleg') left it counting as a live opinion in the agreement verdict. The flags table is
+  now read at every read entry point (and invalidates the cached description scan). Flagging
+  'bootleg' + a full /api/derived/recompute took the "sources disagree" queue 1,463 -> 1,317.
+Added: backend/taper_curation.html: admitting a name to the vocabulary from wherever it is shown —
+  confirm() refuses anything outside _TAPER_UNIVERSE, which blocked exactly the names curation
+  exists to add (a real handle that only ever appeared as a TUIT tag, e.g. Black Rider). Every
+  out-of-vocabulary candidate now carries a '+ vocab' button, the names-found chips carry
+  '+ add'/'re-admit', the Tapers tab gained per-row Include-as-taper / Not-a-taper actions, and
+  confirming an excluded name asks once and adds it before retrying. A *barred* canonical gets a
+  user_taper_flags is_taper row, an *unknown* one gets a vocabulary entry; taper_rollup() now
+  returns `excluded` so the UI can pick the right one.
 Added: backend/tuit_scraper.py save_recording_html() + fetch_recording(html_dir=...), and
   tools/tuit_sync.py --html-dir / --no-save-html: every fetched /recordings/<id> page is archived
   verbatim to data/downloads/tuit/html/rec-<id>.html by default. The parsed fields are lossy, and a

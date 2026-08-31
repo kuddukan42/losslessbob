@@ -288,6 +288,7 @@
       <thead><tr>
         <th>Taper</th><th>In vocabulary</th><th>Attributed</th><th>Confirmed</th>
         <th>Propagated</th><th>Conflicts</th><th>Decided</th><th>Undecided</th><th>TUIT tags</th>
+        <th>Actions</th>
       </tr></thead>
       <tbody id="tapers-rows"></tbody>
     </table>
@@ -514,15 +515,15 @@
           p = row.parsed || {}, d = row.decision || {};
 
     const candidateButtons = [];
-    const add = (label, value) => {
+    const add = (label, value, excluded) => {
       if (value && !candidateButtons.some(b => b.value === value)) {
-        candidateButtons.push({ label, value });
+        candidateButtons.push({ label, value, excluded: excluded || null });
       }
     };
-    add('attribution', a.taper);
-    add('TUIT', t && t.canonical);
-    add('LB text', e.taper_canonical);
-    add('parser', p.canonical);
+    add('attribution', a.taper, null);
+    add('TUIT', t && t.canonical, t && t.excluded);
+    add('LB text', e.taper_canonical, e.taper_excluded);
+    add('parser', p.canonical, p.excluded);
 
     const excludedNote = x => x
       ? ' ' + tag(x === 'unknown_text' ? 'not in vocabulary' : 'barred: not a taper', 'warn') : '';
@@ -584,8 +585,17 @@
 
       '<div class="panel"><h3>Decide</h3><div class="body actions">' +
         candidateButtons.map(b =>
-          '<button data-write class="primary" data-confirm="' + esc(b.value) + '">Confirm ' +
-          esc(b.value) + ' <span class="dim">(' + b.label + ')</span></button>').join('') +
+          '<span class="actions" style="gap:2px">' +
+          '<button data-write class="primary" data-confirm="' + esc(b.value) + '"' +
+            (b.excluded ? ' data-excluded="' + esc(b.excluded) + '"' : '') + '>Confirm ' +
+          esc(b.value) + ' <span class="dim">(' + b.label + ')</span></button>' +
+          (b.excluded
+            ? '<button data-write title="' +
+              (b.excluded === 'unknown_text' ? 'Not in the vocabulary yet'
+                                             : 'Flagged not-a-taper') +
+              '" data-vocab="' + esc(b.value) + '" data-vocab-reason="' + esc(b.excluded) +
+              '">+ vocab</button>'
+            : '') + '</span>').join('') +
         '<input type="text" id="custom-taper" placeholder="other taper…" style="width:170px">' +
         '<button data-write id="confirm-custom">Confirm typed</button>' +
         '<button data-write class="danger" data-reject="1">Reject' +
@@ -599,11 +609,17 @@
       '<div class="panel"><h3>Names found in this text</h3><div class="body actions">' +
         ((row.candidates || []).length
           ? row.candidates.map(c =>
+              '<span class="actions" style="gap:3px">' +
               '<span class="tag ' + (c.status === 'known' ? 'confirmed'
                 : c.status === 'unknown_text' ? 'muted' : 'warn') + '">' + esc(c.text) +
               (c.canonical !== c.text.toLowerCase() ? ' → ' + esc(c.canonical) : '') +
               ' · ' + (c.status === 'known' ? 'taper' :
-                       c.status === 'unknown_text' ? 'unknown' : 'barred') + '</span>').join(' ')
+                       c.status === 'unknown_text' ? 'unknown' : 'barred') + '</span>' +
+              (c.status === 'known' ? ''
+                : '<button data-write class="ghost" style="font-size:.68rem;padding:1px 6px"' +
+                  ' data-vocab="' + esc(c.canonical) + '" data-vocab-reason="' + esc(c.status) +
+                  '">' + (c.status === 'unknown_text' ? '+ add' : 're-admit') + '</button>') +
+              '</span>').join(' ')
           : '<span class="dim">no known aliases appear in this text</span>') +
       '</div></div>' +
 
@@ -616,7 +632,16 @@
         '<div class="desc">' + highlight(t.info_text, row.candidates) + '</div></div></div>' : '');
 
     pane.querySelectorAll('[data-confirm]').forEach(b =>
-      b.addEventListener('click', () => decide(row.lb_number, 'confirm', b.dataset.confirm)));
+      b.addEventListener('click', () =>
+        decide(row.lb_number, 'confirm', b.dataset.confirm, b.dataset.excluded || null)));
+    pane.querySelectorAll('[data-vocab]').forEach(b =>
+      b.addEventListener('click', async () => {
+        if (await addToVocabulary(b.dataset.vocab, b.dataset.vocabReason)) {
+          await loadRows(true);
+          renderRows();
+          renderDetail();
+        }
+      }));
     const custom = pane.querySelector('#confirm-custom');
     if (custom) custom.addEventListener('click', () => {
       const v = pane.querySelector('#custom-taper').value.trim();
@@ -634,8 +659,43 @@
 
   const ROUTE = { confirm: 'confirm', reject: 'reject', unresolved: 'unresolved' };
 
-  async function decide(lb, action, taper) {
+  /**
+   * Put a name into the taper vocabulary, picking the right mechanism for why
+   * it is out: a barred canonical needs a user_taper_flags is_taper row, an
+   * unrecognised one needs a vocabulary entry of its own.
+   * @returns {Promise<boolean>} true when the vocabulary actually changed.
+   */
+  async function addToVocabulary(name, reason) {
+    if (!isCurator) { toast('Curator mode required', 'error'); return false; }
+    if (!name) return false;
+    try {
+      if (reason === 'not_taper_builtin' || reason === 'not_taper_user') {
+        await api('POST', '/api/tapers/vocabulary/' + encodeURIComponent(name) + '/flag',
+                  { is_taper: true, note: 'admitted from the curation workbench' });
+        toast(name + ' re-admitted as a taper');
+      } else {
+        await api('POST', '/api/tapers/vocabulary',
+                  { name, note: 'added from the curation workbench' });
+        toast(name + ' added to the vocabulary');
+      }
+      return true;
+    } catch (e) {
+      toast(e.message, 'error');
+      return false;
+    }
+  }
+
+  async function decide(lb, action, taper, excluded) {
     if (!isCurator) { toast('Curator mode required', 'error'); return; }
+    if (action === 'confirm' && excluded) {
+      // The confirm route rejects anything outside the universe, so ask once
+      // and fix the vocabulary first rather than bouncing the curator off a 400.
+      const label = excluded === 'unknown_text'
+        ? '"' + taper + '" is not in the taper vocabulary yet. Add it and confirm?'
+        : '"' + taper + '" is flagged not-a-taper. Re-admit it and confirm?';
+      if (!confirm(label)) return;
+      if (!await addToVocabulary(taper, excluded)) return;
+    }
     try {
       await api('POST', '/api/tapers/attributions/' + lb + '/' + ROUTE[action],
                 taper ? { taper } : {});
@@ -646,6 +706,12 @@
       renderRows();
       renderDetail();
     } catch (e) {
+      if (action === 'confirm' && taper && !excluded &&
+          /known-taper universe/.test(e.message)) {
+        // Reached from a keyboard shortcut or a typed name, where the caller
+        // had no exclusion reason to check up front.
+        return void decide(lb, action, taper, 'unknown_text');
+      }
       toast(e.message, 'error');
     }
   }
@@ -756,11 +822,31 @@
     body.innerHTML = res.tapers.map(t =>
       '<tr>' +
         '<td><a href="#" data-taper="' + esc(t.taper) + '"><b>' + esc(t.taper) + '</b></a></td>' +
-        '<td>' + (t.in_universe ? tag('yes', 'confirmed') : tag('excluded', 'warn')) + '</td>' +
+        '<td>' + (t.in_universe ? tag('yes', 'confirmed')
+                                : tag(t.excluded === 'unknown_text' ? 'not in vocabulary'
+                                                                    : 'flagged not-a-taper', 'warn')) + '</td>' +
         '<td>' + t.attributed + '</td><td>' + t.confirmed + '</td><td>' + t.propagated + '</td>' +
         '<td>' + (t.conflicts ? tag(String(t.conflicts), 'conflict') : '0') + '</td>' +
         '<td>' + t.decided + '</td><td>' + t.undecided + '</td><td>' + t.tuit + '</td>' +
+        '<td>' + (t.in_universe
+          ? '<button data-write data-exclude="' + esc(t.taper) + '">Not a taper</button>'
+          : '<button data-write data-include="' + esc(t.taper) + '" data-reason="' +
+            esc(t.excluded || 'unknown_text') + '">Include as taper</button>') + '</td>' +
       '</tr>').join('');
+    body.querySelectorAll('[data-include]').forEach(b => b.addEventListener('click', async () => {
+      if (await addToVocabulary(b.dataset.include, b.dataset.reason)) loadTapers();
+    }));
+    body.querySelectorAll('[data-exclude]').forEach(b => b.addEventListener('click', async () => {
+      if (!isCurator) { toast('Curator mode required', 'error'); return; }
+      if (!confirm('Flag "' + b.dataset.exclude + '" as not a taper?')) return;
+      try {
+        await api('POST', '/api/tapers/vocabulary/' + encodeURIComponent(b.dataset.exclude) + '/flag',
+                  { is_taper: false, note: 'excluded from the curation workbench' });
+        toast(b.dataset.exclude + ' flagged not-a-taper — recompute pending');
+        loadTapers();
+      } catch (e) { toast(e.message, 'error'); }
+    }));
+    applyGate(body);
     body.querySelectorAll('[data-taper]').forEach(a => a.addEventListener('click', ev => {
       ev.preventDefault();
       filters.q = '';
@@ -887,7 +973,7 @@
       } else if (ev.key === 'c' && row) {
         return void decide(row.lb_number, 'confirm', (row.attribution || {}).taper);
       } else if (ev.key === 't' && row && row.tuit && row.tuit.canonical) {
-        return void decide(row.lb_number, 'confirm', row.tuit.canonical);
+        return void decide(row.lb_number, 'confirm', row.tuit.canonical, row.tuit.excluded);
       } else if (ev.key === 'r' && row) {
         return void decide(row.lb_number, 'reject', (row.attribution || {}).taper);
       } else if (ev.key === 'u' && row) {
