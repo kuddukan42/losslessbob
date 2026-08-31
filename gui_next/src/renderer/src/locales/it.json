@@ -635,7 +635,26 @@
       "body": "Corpo (BBCode)",
       "posting": "Postilla...",
       "postTopic": "Argomento del post",
-      "skipIntegrityCheck": "Pubblica comunque (nella cartella mancano i file con checksum)"
+      "skipIntegrityCheck": "Pubblica comunque (nella cartella mancano i file con checksum)",
+      "lbdir": {
+        "title": "LBDIR",
+        "checking": "Verifica della cartella…",
+        "recheck": "Ricontrollare",
+        "cached": "(memorizzato nella cache)",
+        "counts": "{{pass}}/{{total}} presente · {{missing}} mancante · {{mismatch}} non corrispondente · {{extra}} in eccesso",
+        "state": {
+          "pass": "Pass",
+          "missing": "Manca {{n}}",
+          "extra": "Extra {{n}}",
+          "no_shntool": "No shntool",
+          "fail": "Errore",
+          "fail_n": "Fallito {{n}}",
+          "no_lbdir": "Nessun manifesto LBDIR",
+          "no_folder": "Nessuna cartella della raccolta",
+          "folder_missing": "Cartella mancante sul disco",
+          "error": "Stato non disponibile"
+        }
+      }
     },
     "detail": {
       "owned": "Di proprietà",

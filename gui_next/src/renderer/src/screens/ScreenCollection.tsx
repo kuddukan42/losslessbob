@@ -1096,6 +1096,46 @@ function AddFolderModal({ paths, onClose, onAdded }: {
   )
 }
 
+// ── LBDIR status (forum preview) ──────────────────────────────────
+
+interface LbdirCheck {
+  status: string
+  total: number
+  pass: number
+  missing: number
+  mismatch: number
+  extra: number
+}
+
+interface LbdirStatus {
+  status: 'ok' | 'warn' | 'bad' | 'unknown'
+  label_key?: string
+  label_params?: Record<string, unknown>
+  check?: LbdirCheck | null
+  manifest?: string | null
+  cached?: boolean
+}
+
+const LBDIR_STATE_KEY = {
+  pass:           'collection.forum.lbdir.state.pass',
+  missing:        'collection.forum.lbdir.state.missing',
+  extra:          'collection.forum.lbdir.state.extra',
+  no_shntool:     'collection.forum.lbdir.state.no_shntool',
+  fail:           'collection.forum.lbdir.state.fail',
+  fail_n:         'collection.forum.lbdir.state.fail_n',
+  no_lbdir:       'collection.forum.lbdir.state.no_lbdir',
+  no_folder:      'collection.forum.lbdir.state.no_folder',
+  folder_missing: 'collection.forum.lbdir.state.folder_missing',
+  error:          'collection.forum.lbdir.state.error',
+} as const
+
+const LBDIR_TONE: Record<string, { fg: string; bg: string }> = {
+  ok:      { fg: 'var(--lbb-ok-fg)',   bg: 'var(--lbb-ok-bg)' },
+  warn:    { fg: 'var(--lbb-warn-fg)', bg: 'var(--lbb-warn-bg)' },
+  bad:     { fg: 'var(--lbb-bad-fg)',  bg: 'var(--lbb-bad-bg)' },
+  unknown: { fg: 'var(--lbb-mute-fg)', bg: 'var(--lbb-mute-bg)' },
+}
+
 // ── ForumModal ─────────────────────────────────────────────────────────────────
 
 function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPosted }: {
@@ -1112,6 +1152,23 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
   const [err, setErr]         = useState<string | null>(null)
   const [skippable, setSkippable] = useState(false)
   const [skipIntegrityCheck, setSkipIntegrityCheck] = useState(false)
+  const [lbdir, setLbdir] = useState<LbdirStatus | null>(null)
+  const [lbdirBusy, setLbdirBusy] = useState(true)
+
+  const loadLbdir = useCallback(async (force: boolean) => {
+    setLbdirBusy(true)
+    try {
+      const resp = await fetch(`${BASE}/api/entry/${lb}/lbdir_status${force ? '?force=1' : ''}`)
+      const data = await resp.json()
+      setLbdir(data.ok ? (data as LbdirStatus) : { status: 'unknown', label_key: 'error' })
+    } catch {
+      setLbdir({ status: 'unknown', label_key: 'error' })
+    } finally {
+      setLbdirBusy(false)
+    }
+  }, [lb])
+
+  useEffect(() => { void loadLbdir(false) }, [loadLbdir])
 
   const handlePost = async () => {
     setBusy(true); setErr(null)
@@ -1154,6 +1211,46 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1, minHeight: 0, overflow: 'hidden' }}>
+          {(() => {
+            const tone = LBDIR_TONE[lbdirBusy || !lbdir ? 'unknown' : lbdir.status] ?? LBDIR_TONE.unknown
+            const chk = lbdir?.check
+            return (
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap',
+                background: tone.bg, border: `1px solid ${tone.fg}`,
+                borderRadius: 6, padding: '6px 10px', fontSize: 'var(--lbb-fs-11-5)',
+              }}>
+                <span style={{
+                  width: 8, height: 8, borderRadius: '50%', background: tone.fg, flexShrink: 0,
+                }} />
+                <span style={{ fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: '0.07em', textTransform: 'uppercase', fontSize: 'var(--lbb-fs-10-5)' }}>
+                  {t('collection.forum.lbdir.title')}
+                </span>
+                <span style={{ color: tone.fg, fontWeight: 600 }}>
+                  {lbdirBusy
+                    ? t('collection.forum.lbdir.checking')
+                    : t(LBDIR_STATE_KEY[(lbdir?.label_key ?? 'error') as keyof typeof LBDIR_STATE_KEY]
+                          ?? LBDIR_STATE_KEY.error, lbdir?.label_params ?? {})}
+                </span>
+                {!lbdirBusy && chk && (
+                  <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
+                    {t('collection.forum.lbdir.counts', {
+                      pass: chk.pass, total: chk.total, missing: chk.missing,
+                      mismatch: chk.mismatch, extra: chk.extra,
+                    })}
+                  </span>
+                )}
+                {!lbdirBusy && lbdir?.cached && (
+                  <span style={{ color: 'var(--lbb-fg3)' }}>{t('collection.forum.lbdir.cached')}</span>
+                )}
+                <span style={{ marginLeft: 'auto' }}>
+                  <Button variant="ghost" size="sm" disabled={lbdirBusy} onClick={() => void loadLbdir(true)}>
+                    {t('collection.forum.lbdir.recheck')}
+                  </Button>
+                </span>
+              </div>
+            )
+          })()}
           <div>
             <label style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--lbb-fg3)', display: 'block', marginBottom: 4 }}>
               {t('collection.forum.subject')}

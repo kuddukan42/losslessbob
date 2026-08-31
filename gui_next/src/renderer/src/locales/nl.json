@@ -635,7 +635,26 @@
       "body": "Lichaam (BBCode)",
       "posting": "Posten...",
       "postTopic": "Post onderwerp",
-      "skipIntegrityCheck": "Toch plaatsen (in de map ontbreken bestanden met checksum)"
+      "skipIntegrityCheck": "Toch plaatsen (in de map ontbreken bestanden met checksum)",
+      "lbdir": {
+        "title": "LBDIR",
+        "checking": "Map wordt gecontroleerd…",
+        "recheck": "Nogmaals controleren",
+        "cached": "(in de cache opgeslagen)",
+        "counts": "{{pass}}/{{total}} geslaagd · {{missing}} ontbreekt · {{mismatch}} komt niet overeen · {{extra}} extra",
+        "state": {
+          "pass": "Pass",
+          "missing": "Ontbreekt {{n}}",
+          "extra": "Extra {{n}}",
+          "no_shntool": "Geen shntool",
+          "fail": "Mislukt",
+          "fail_n": "Fout {{n}}",
+          "no_lbdir": "Geen LBDIR-manifest",
+          "no_folder": "Geen verzamelingsmap",
+          "folder_missing": "Map ontbreekt op schijf",
+          "error": "Status: niet beschikbaar"
+        }
+      }
     },
     "detail": {
       "owned": "Eigendom",
@@ -943,7 +962,7 @@
       "noHistory": "Nog geen importgeschiedenis.",
       "active": "actief",
       "reveal": "Onthullen",
-      "download": "Download",
+      "download": "Downloaden",
       "downloading": "Bezig met downloaden…",
       "downloadDone": "Download voltooid.",
       "reviewApply": "Controleren en toepassen",
@@ -1160,7 +1179,7 @@
     "overrides": {
       "addTitle": "Overschrijven toevoegen/bijwerken",
       "removeTitle": "Overschrijven verwijderen",
-      "lbNumber": "LB #:",
+      "lbNumber": "LB-nr.:",
       "status": "Status:",
       "notes": "Opmerkingen:",
       "notesPlaceholder": "Optionele reden...",

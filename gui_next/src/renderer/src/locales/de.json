@@ -635,7 +635,26 @@
       "body": "Körper (BBCode)",
       "posting": "Entsendung...",
       "postTopic": "Thema des Beitrags",
-      "skipIntegrityCheck": "Trotzdem veröffentlichen (im Ordner fehlen Dateien mit Prüfsumme)"
+      "skipIntegrityCheck": "Trotzdem veröffentlichen (im Ordner fehlen Dateien mit Prüfsumme)",
+      "lbdir": {
+        "title": "LBDIR",
+        "checking": "Ordner wird überprüft…",
+        "recheck": "Nochmals prüfen",
+        "cached": "(zwischengespeichert)",
+        "counts": "{{pass}}/{{total}} bestanden · {{missing}} fehlt · {{mismatch}} Abweichung · {{extra}} zusätzlich",
+        "state": {
+          "pass": "Pass",
+          "missing": "Fehlt {{n}}",
+          "extra": "Extra {{n}}",
+          "no_shntool": "Kein shntool",
+          "fail": "Fehlgeschlagen",
+          "fail_n": "Fehler {{n}}",
+          "no_lbdir": "Kein LBDIR-Manifest",
+          "no_folder": "Kein Sammlungsordner",
+          "folder_missing": "Ordner auf der Festplatte fehlt",
+          "error": "Status: nicht verfügbar"
+        }
+      }
     },
     "detail": {
       "owned": "Eigene",
@@ -1514,7 +1533,7 @@
       "catalogNote": "Aus der Hauptdatenbank angezeigte Katalog-Metadaten.",
       "unconfirmed": "Unbestätigt",
       "releasedAs": "Veröffentlicht als „{{title}}“",
-      "bestOwned": "best owned",
+      "bestOwned": "im eigenen Besitz",
       "noRecording": "Keine Aufnahmen in Ihrer Sammlung",
       "youHold_one": "Sie besitzen {{owned}} aus der Quellfamilie {{count}}",
       "youHold_other": "Sie besitzen die Quellfamilien {{owned}} und {{count}}",
