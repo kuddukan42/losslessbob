@@ -2131,9 +2131,9 @@
     "wtrf": {
       "tab": "WTRF Seeding",
       "seededCount": "{{count}} seeded",
-      "linksLabel": "WTRF topic links",
-      "linksPlaceholder": "Paste one WTRF topic link per line.\nPrefix a line with LB-00123 to pin that entry explicitly.",
-      "linkCount": "{{count}} link(s) detected",
+      "linksLabel": "WTRF links or LB numbers",
+      "linksPlaceholder": "Paste WTRF topic links, one per line —\nor paste a forum round-up post and the LB numbers in it are used instead.\nPrefix a link with LB-00123 to pin that entry explicitly.",
+      "targetCount": "{{count}} target(s) detected",
       "optionsLabel": "Options",
       "opt": {
         "overlay": "Build a seeding overlay",
@@ -2152,7 +2152,7 @@
         "seeded": "Seeded",
         "failed": "Not seeded"
       },
-      "note": "Each link is walked to its first post for the LB number and the .torrent attachment. A recording is only seeded when its lb_status is public and the files hash to 100% locally — an incomplete folder is reported, never forced.",
+      "note": "A topic link is walked to its first post for the LB number and the .torrent attachment. Text with no usable links falls back to the LB numbers in it, searching the board for each — slower, and only downloaded on a confident match. A recording is only seeded when its lb_status is public and the files hash to 100% locally; an incomplete folder is reported, never forced.",
       "historyTitle": "Recent WTRF attempts",
       "noHistory": "No attempts yet",
       "col": {

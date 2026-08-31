@@ -1964,9 +1964,6 @@
     "wtrf": {
       "tab": "WTRF-seeding",
       "seededCount": "{{count}} geseed",
-      "linksLabel": "WTRF-onderwerplinks",
-      "linksPlaceholder": "Plak één WTRF-onderwerplink per regel.\nZet LB-00123 voor een regel om dat item expliciet vast te zetten.",
-      "linkCount": "{{count}}-link(s) gedetecteerd",
       "optionsLabel": "Opties",
       "opt": {
         "overlay": "Een seeding-overlay bouwen",
@@ -1985,7 +1982,6 @@
         "seeded": "Geseed",
         "failed": "Nog niet gezaaid"
       },
-      "note": "Elke link wordt doorlopen tot aan het eerste bericht voor het LB-nummer en de .torrent-bijlage. Een opname wordt alleen ge-seed als de `lb_status` op ‘public’ staat en de bestanden lokaal 100% overeenkomen — een onvolledige map wordt gemeld, maar nooit geforceerd.",
       "historyTitle": "Recente pogingen met WTRF",
       "noHistory": "Nog geen pogingen",
       "col": {
@@ -2000,7 +1996,11 @@
         "dryRunStart": "Proefdraaien — WTRF-links die zijn geplakt, oplossen, niets downloaden…",
         "found": "{{count}} onderwerpkoppeling(en) om door te lopen",
         "done": "Klaar — {{seeded}} gezaaid, {{failed}} niet gezaaid"
-      }
+      },
+      "linksLabel": "WTRF-links of LB-nummers",
+      "linksPlaceholder": "Plak WTRF-onderwerplinks, één per regel —\nof plak een samenvattingsbericht van het forum; dan worden de LB-nummers daarin gebruikt.\nZet ‘LB-00123’ voor een link om dat bericht expliciet vast te zetten.",
+      "targetCount": "{{count}}-doel(en) gedetecteerd",
+      "note": "Een onderwerpkoppeling wordt gevolgd naar het eerste bericht voor het LB-nummer en de .torrent-bijlage. Tekst zonder bruikbare koppelingen valt terug op de LB-nummers die erin staan, waarbij het forum voor elk nummer wordt doorzocht — dit is trager en er wordt alleen gedownload bij een zekere overeenkomst. Een opname wordt alleen ge-seeded wanneer de `lb_status` op ‘public’ staat en de bestanden lokaal 100% overeenkomen; een onvolledige map wordt gemeld, maar nooit geforceerd."
     }
   },
   "songs": {

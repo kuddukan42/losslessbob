@@ -1964,9 +1964,6 @@
     "wtrf": {
       "tab": "Inicio de WTRF",
       "seededCount": "{{count}} inicializado",
-      "linksLabel": "Enlaces a temas de WTRF",
-      "linksPlaceholder": "Pega un enlace a un tema de WTRF por línea.\nAñade el prefijo LB-00123 al principio de una línea para fijar esa entrada de forma explícita.",
-      "linkCount": "Se han detectado enlaces {{count}}",
       "optionsLabel": "Opciones",
       "opt": {
         "overlay": "Crear una superposición de siembra",
@@ -1985,7 +1982,6 @@
         "seeded": "Sembrados",
         "failed": "Sin semillas"
       },
-      "note": "Se recorre cada enlace hasta su primera publicación para obtener el número LB y el archivo adjunto .torrent. Una grabación solo se comparte cuando su lb_status es «público» y el hash de los archivos es del 100 % a nivel local; se informa de las carpetas incompletas, pero nunca se fuerza la compartición.",
       "historyTitle": "Intentos recientes de WTRF",
       "noHistory": "Aún no se han realizado intentos.",
       "col": {
@@ -2000,7 +1996,11 @@
         "dryRunStart": "Prueba de simulación: resolución de enlaces WTRF pegados, sin descargar nada…",
         "found": "Enlaces al tema {{count}} para seguir",
         "done": "Hecho: {{seeded}} incluido, {{failed}} no incluido"
-      }
+      },
+      "linksLabel": "Enlaces WTRF o números LB",
+      "linksPlaceholder": "Pega enlaces a temas de WTRF, uno por línea —\no pega una publicación resumen del foro y, en su lugar, se utilizarán los números de LB que aparezcan en ella.\nAñade el prefijo LB-00123 a un enlace para fijar esa entrada de forma explícita.",
+      "targetCount": "Se han detectado uno o varios objetivos {{count}}",
+      "note": "Se recorre un enlace de tema hasta su primera publicación para obtener el número LB y el archivo adjunto .torrent. El texto sin enlaces utilizables recurre a los números LB que contiene, buscando cada uno de ellos en el foro —un proceso más lento, y que solo se descarga cuando hay una coincidencia segura—. Una grabación solo se comparte cuando su lb_status es «público» y los archivos se verifican al 100 % localmente; se notifica la existencia de una carpeta incompleta, pero nunca se fuerza la descarga."
     }
   },
   "songs": {

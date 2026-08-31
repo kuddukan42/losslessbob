@@ -139,7 +139,7 @@ losslessbob/
 │   ├── torrent_verify.py     # Bencode reader + read-only piece-hash check of a folder against a .torrent; gates seeding so incomplete folders are never written to (TODO-314)
 │   ├── seed_overlay.py       # Assembles a seedable folder outside the collection: audio hardlinked, LBF sidecars copied from data/site/files or re-fetched from the LB site (TODO-314). Sources recursively by longest path-suffix + exact size, so nested box-set torrents (<root>/<show>/cd-1/…) resolve and colliding basenames don't cross discs; `link_dirs` hardlinks from several collection folders for a torrent spanning >1 LB entry
 │   ├── tracker_seed.py       # Tracker-agnostic seeding pipeline (gates → overlay → qBittorrent), parameterised per tracker: <mount>/<TRACKER> Seeds + qbt tag. Shared by TUIT and WTRF
-│   ├── wtrf_seed.py          # Pasted WTRF topic links → first post → LB number + .torrent attachment → tracker_seed; refuses to guess between several LB numbers
+│   ├── wtrf_seed.py          # Pasted WTRF topic links → first post → LB number + .torrent attachment → tracker_seed. Also seeds from bare LB numbers (a plain-text round-up paste keeps no hrefs) via the board search; content, not prose, picks between several nominated LBs
 │   ├── ab_clips.py           # Aligned A/B listening clip service (LISTENING §2, TODO-231/232/233)
 │   ├── bobtalk.py            # Locates Olof's curated bobtalk quotes in our audio; scoring, confidence, persistence (TODO-303)
 │   ├── bobtalk_decodes.py    # Discardable cache of raw ASR window decodes, so re-scoring costs no CPU (TODO-303, BUG-314)
@@ -2056,7 +2056,7 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | POST | `/api/wtrf/fetch_torrent` | Search WTRF for a torrent matching a single LB entry and download it. |
 | GET | `/api/wtrf/downloads` | List `wtrf_downloads` records, optionally filtered by `lb_number`. |
 | POST | `/api/wtrf/crawl_missing` | Start a background batch crawl of missing items (SSE stream). |
-| POST | `/api/wtrf/seed_links` | Seed every recording named by a pasted list of WTRF topic links (SSE stream: start/link/done). Body: `{links, save_path?, delay?, dry_run?}` plus the seeding-policy fields (`overlay`, `overlay_root`, `refetch_sidecars`, `max_fetch_mb`, `allow_partial_overlay`, `paused`). Single-instance guarded. |
+| POST | `/api/wtrf/seed_links` | Seed everything a pasted blob names (SSE stream: start/link/done). Targets are topic links, **or** bare LB numbers when the paste has no usable links — copying a forum round-up as plain text collapses every hyperlink to its display text, so only the LB numbers survive; those are resolved by searching the board. `LB-11486/88` shorthand expands to its same-date siblings. Body: `{links, save_path?, delay?, dry_run?, board_id?}` plus the seeding-policy fields (`overlay`, `overlay_root`, `refetch_sidecars`, `max_fetch_mb`, `allow_partial_overlay`, `paused`). Single-instance guarded. |
 | POST | `/api/entry/<lb>/seed_wtrf` | Seed one LB entry to WTRF. Uses `topic_url` when given, else searches the board. Refuses a non-public entry before any forum round-trip. Returns `{ok, folder, overlay, reason, confidence, error}`. |
 
 ### Archive.org Upload

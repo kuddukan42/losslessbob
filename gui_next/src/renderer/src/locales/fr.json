@@ -1964,9 +1964,6 @@
     "wtrf": {
       "tab": "Seeding WTRF",
       "seededCount": "{{count}} initialisé",
-      "linksLabel": "Liens vers les rubriques WTRF",
-      "linksPlaceholder": "Collez un lien vers un sujet WTRF par ligne.\nPréfixe une ligne avec LB-00123 pour épingler explicitement cette entrée.",
-      "linkCount": "Lien(s) {{count}} détecté(s)",
       "optionsLabel": "Options",
       "opt": {
         "overlay": "Créer une superposition de semis",
@@ -1985,7 +1982,6 @@
         "seeded": "En cours de développement",
         "failed": "Non pré-rempli"
       },
-      "note": "Chaque lien est suivi jusqu'à son premier message afin d'obtenir le numéro LB et la pièce jointe .torrent. Un enregistrement n'est mis en partage que lorsque son lb_status est « public » et que le hachage des fichiers est de 100 % en local — un dossier incomplet est signalé, mais jamais imposé.",
       "historyTitle": "Tentatives récentes de WTRF",
       "noHistory": "Aucune tentative pour l'instant",
       "col": {
@@ -2000,7 +1996,11 @@
         "dryRunStart": "Test à blanc — résolution des liens WTRF collés, sans rien télécharger…",
         "found": "Lien(s) vers le sujet {{count}} à parcourir",
         "done": "Terminé — {{seeded}} intégrées, {{failed}} non intégrées"
-      }
+      },
+      "linksLabel": "Liens WTRF ou numéros LB",
+      "linksPlaceholder": "Collez les liens vers les sujets WTRF, un par ligne —\nou collez un message récapitulatif du forum ; les numéros LB qu'il contient seront alors utilisés à la place.\nAjoutez le préfixe « LB-00123 » à un lien pour épingler explicitement cette entrée.",
+      "targetCount": "Une ou plusieurs cibles {{count}} ont été détectées",
+      "note": "Un lien vers un sujet est suivi jusqu'à son premier message pour obtenir le numéro LB et la pièce jointe .torrent. Le texte ne contenant aucun lien utilisable est traité en se basant sur les numéros LB qu'il contient, en effectuant une recherche sur le forum pour chacun d'entre eux — ce qui est plus lent et ne déclenche le téléchargement qu'en cas de correspondance certaine. Un enregistrement n’est mis en partage que lorsque son lb_status est public et que les fichiers sont vérifiés à 100 % localement ; un dossier incomplet est signalé, mais jamais imposé."
     }
   },
   "songs": {

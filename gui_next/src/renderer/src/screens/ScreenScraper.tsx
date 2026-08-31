@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 import { Button, Chip, Pill, Card, SectionHead, Toolbar, Input, Banner } from '../components'
@@ -1330,7 +1330,28 @@ function WtrfTab({ logs, onClearLog, onLog }: {
       .catch(() => {})
   }, [running])
 
-  const linkCount = links.split('\n').filter(l => l.includes('watchingtheriverflow.org')).length
+  // A paste is not always a list of links. Copying a forum round-up post as
+  // plain text collapses every hyperlink to its bare "www.watchingtheriverflow.org"
+  // display text, leaving only the LB numbers — which the backend seeds by
+  // searching the board instead. So count both shapes, and count neither for a
+  // bare host line, which carries no topic id at all. This mirrors the backend's
+  // parse_seed_targets closely enough to enable the buttons; the exact figure
+  // (including LB-11486/88 shorthand, which needs the catalogue) comes back on
+  // the stream's start event.
+  const targetCount = useMemo(() => {
+    const seen = new Set<number>()
+    let count = 0
+    for (const line of links.split('\n')) {
+      if (/topic=\d+/.test(line)) { count += 1; continue }
+      for (const m of line.matchAll(/\bLB[-_ ]?(\d{1,5})((?:\s*\/\s*\d{1,4})+)?/gi)) {
+        const lb = parseInt(m[1], 10)
+        if (!lb || seen.has(lb)) continue
+        seen.add(lb)
+        count += 1 + (m[2] ? m[2].split('/').filter(Boolean).length : 0)
+      }
+    }
+    return count
+  }, [links])
 
   const run = async (dryRun: boolean) => {
     if (running) return
@@ -1405,7 +1426,7 @@ function WtrfTab({ logs, onClearLog, onLog }: {
             }}
           />
           <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 4 }}>
-            {t('scraper.wtrf.linkCount', { count: linkCount })}
+            {t('scraper.wtrf.targetCount', { count: targetCount })}
           </div>
 
           <CtrlLabel>{t('scraper.wtrf.optionsLabel')}</CtrlLabel>
@@ -1422,10 +1443,10 @@ function WtrfTab({ logs, onClearLog, onLog }: {
           ))}
 
           <div style={{ display: 'flex', gap: 8, marginTop: 16 }}>
-            <Button variant="primary" size="sm" icon="play" onClick={() => run(false)} disabled={running || linkCount === 0}>
+            <Button variant="primary" size="sm" icon="play" onClick={() => run(false)} disabled={running || targetCount === 0}>
               {t('scraper.wtrf.seedButton')}
             </Button>
-            <Button variant="ghost" size="sm" onClick={() => run(true)} disabled={running || linkCount === 0}>
+            <Button variant="ghost" size="sm" onClick={() => run(true)} disabled={running || targetCount === 0}>
               {t('scraper.wtrf.dryRunButton')}
             </Button>
           </div>
