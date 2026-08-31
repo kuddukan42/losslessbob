@@ -929,7 +929,7 @@
       "de": "Deutsch",
       "fr": "Französisch",
       "es": "Spanisch",
-      "it": "Italiano",
+      "it": "Italienisch",
       "nl": "Niederländisch"
     },
     "purges": {
@@ -1379,7 +1379,8 @@
       "createTorrent": "Torrent erstellen…",
       "wishlistGaps_one": "Wunschliste: Quelle fehlt",
       "wishlistGaps_other": "Fehlende Quellen auf der Wunschliste",
-      "dossier": "Dossier exportieren…"
+      "dossier": "Dossier exportieren…",
+      "seedWtrf": "Seed an WTRF"
     },
     "groups": {
       "acquire": "Erfassen",
@@ -1520,7 +1521,11 @@
       "wishlistFailed": "Aktualisierung der Wunschliste fehlgeschlagen",
       "confirmForumBody": "{{count}}-Einträge im Forum veröffentlichen? Jeder Eintrag wird mit seinem automatisch generierten Betreff und Text veröffentlicht.",
       "confirmRemoveBody_one": "Möchten Sie den Eintrag „{{count}}“ aus Ihrer Sammlung entfernen? Die Dateien auf der Festplatte werden nicht gelöscht.",
-      "confirmRemoveBody_other": "Möchten Sie {{count}}-Elemente aus Ihrer Sammlung entfernen? Die Dateien auf der Festplatte werden dabei nicht gelöscht."
+      "confirmRemoveBody_other": "Möchten Sie {{count}}-Elemente aus Ihrer Sammlung entfernen? Die Dateien auf der Festplatte werden dabei nicht gelöscht.",
+      "wtrfSeeded": "{{lb}} wird in WTRF {{where}} übernommen",
+      "wtrfViaOverlay": "aus einem WTRF Seeds-Overlay",
+      "wtrfInPlace": "aus dem Sammlungsordner",
+      "wtrfSeedFailed": "{{lb}} noch nicht vorbelegt — {{reason}}"
     },
     "panel": {
       "details": "Details",
@@ -1954,6 +1959,47 @@
         "sealed": "Zustand",
         "seal": "Siegel",
         "open": "Öffnen"
+      }
+    },
+    "wtrf": {
+      "tab": "WTRF-Seeding",
+      "seededCount": "{{count}} geseedet",
+      "linksLabel": "WTRF-Themenlinks",
+      "linksPlaceholder": "Fügen Sie pro Zeile einen WTRF-Themenlink ein.\nFügen Sie dem Zeilenanfang „LB-00123“ hinzu, um diesen Eintrag explizit anzuheften.",
+      "linkCount": "{{count}}-Link(s) erkannt",
+      "optionsLabel": "Optionen",
+      "opt": {
+        "overlay": "Erstellen eines Seeding-Overlays",
+        "overlayHelp": "Stellen Sie die Aufnahme unter <mount>/WTRF Seeds aus den per Hardlink verknüpften Audiodateien der Sammlung und den separat bereitgestellten LBF-Sidecars zusammen, sodass niemals in den Sammlungsordner geschrieben wird.",
+        "refetch": "Sidecars erneut abrufen",
+        "refetchHelp": "LBF-Sidecars von losslessbob.com erneut herunterladen, wenn die lokal gespeicherte Kopie die falsche Größe hat.",
+        "allowPartial": "Teilweise Überlagerung akzeptieren",
+        "allowPartialHelp": "Seed-Daten werden auch dann übertragen, wenn der Hash-Wert des Overlays noch zu kurz ist. Der Rest wird in das Overlay heruntergeladen, niemals in die Sammlung.",
+        "paused": "„Angehalten“ hinzufügen",
+        "pausedHelp": "Fügen Sie den Torrent im angehaltenen Zustand zu qBittorrent hinzu."
+      },
+      "seedButton": "Seed an WTRF",
+      "dryRunButton": "Probelauf",
+      "stat": {
+        "links": "Links",
+        "seeded": "Geseedet",
+        "failed": "Nicht vorbelegt"
+      },
+      "note": "Jeder Link wird bis zum ersten Beitrag durchlaufen, um die LB-Nummer und den .torrent-Anhang zu ermitteln. Eine Aufnahme wird nur dann als Seed bereitgestellt, wenn ihr „lb_status“ auf „public“ gesetzt ist und die Dateien lokal zu 100 % gehasht sind – ein unvollständiger Ordner wird gemeldet, aber niemals erzwungen.",
+      "historyTitle": "Jüngste WTRF-Versuche",
+      "noHistory": "Bisher keine Versuche",
+      "col": {
+        "attempted": "Versucht",
+        "lb": "LB",
+        "status": "Status",
+        "confidence": "Vertrauen",
+        "folder": "Ausgangsordner / Fehler"
+      },
+      "log": {
+        "start": "Einfügen von eingefügten WTRF-Links…",
+        "dryRunStart": "Testlauf – Auflösen der eingefügten WTRF-Links, ohne etwas herunterzuladen…",
+        "found": "{{count}} Themenlink(s) zum Durchgehen",
+        "done": "Erledigt – {{seeded}} bereitgestellt, {{failed}} nicht bereitgestellt"
       }
     }
   },

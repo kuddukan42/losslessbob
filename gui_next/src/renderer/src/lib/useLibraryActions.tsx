@@ -168,6 +168,36 @@ export function useLibraryActions(): LibraryActions {
         },
       })
     },
+    // Seeds one recording to WTRF: the backend finds the entry's forum post,
+    // downloads its .torrent and runs the shared seeding gates, which never
+    // point qBittorrent at an incomplete collection folder. The forum search
+    // is slow (paced requests against a small hobbyist board), so the toast
+    // reports rather than blocking on a progress surface.
+    onSeedWtrf: async (row) => {
+      if (!row.path) { showToast(t('library.toast.noDiskPath'), 'info'); return }
+      setActionBusy(true)
+      try {
+        const resp = await fetch(`${BASE}/api/entry/${row.lbNumber}/seed_wtrf`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({}),
+        })
+        const data = await resp.json()
+        if (data.ok) {
+          showToast(t('library.toast.wtrfSeeded', {
+            lb: row.lb,
+            where: data.overlay ? t('library.toast.wtrfViaOverlay') : t('library.toast.wtrfInPlace'),
+          }), 'ok')
+        } else {
+          showToast(t('library.toast.wtrfSeedFailed', {
+            lb: row.lb, reason: data.error || data.reason || '',
+          }), 'bad')
+        }
+      } catch (e) {
+        showToast(t('library.toast.wtrfSeedFailed', { lb: row.lb, reason: (e as Error).message }), 'bad')
+      } finally {
+        setActionBusy(false)
+      }
+    },
     onM3u: async (rows) => {
       const lbs = rows.map(r => r.lbNumber)
       if (!lbs.length) { showToast(t('library.toast.noOwnedExport'), 'info'); return }

@@ -1372,7 +1372,8 @@
       "createTorrent": "Create torrent…",
       "wishlistGaps_one": "Wishlist missing source",
       "wishlistGaps_other": "Wishlist missing sources",
-      "dossier": "Export dossier…"
+      "dossier": "Export dossier…",
+      "seedWtrf": "Seed to WTRF"
     },
     "groups": {
       "acquire": "Acquire",
@@ -1513,7 +1514,11 @@
       "wishlistFailed": "Wishlist update failed",
       "confirmForumBody": "Post {{count}} entries to the forum? Each will be posted using its auto-generated subject and body.",
       "confirmRemoveBody_one": "Remove {{count}} item from your collection? Files on disk will not be deleted.",
-      "confirmRemoveBody_other": "Remove {{count}} items from your collection? Files on disk will not be deleted."
+      "confirmRemoveBody_other": "Remove {{count}} items from your collection? Files on disk will not be deleted.",
+      "wtrfSeeded": "{{lb}} seeding to WTRF {{where}}",
+      "wtrfViaOverlay": "from a WTRF Seeds overlay",
+      "wtrfInPlace": "from the collection folder",
+      "wtrfSeedFailed": "{{lb}} not seeded — {{reason}}"
     },
     "dossier": {
       "title": "Export show dossier",
@@ -2121,6 +2126,47 @@
         "sealed": "State",
         "seal": "Seal",
         "open": "Open"
+      }
+    },
+    "wtrf": {
+      "tab": "WTRF Seeding",
+      "seededCount": "{{count}} seeded",
+      "linksLabel": "WTRF topic links",
+      "linksPlaceholder": "Paste one WTRF topic link per line.\nPrefix a line with LB-00123 to pin that entry explicitly.",
+      "linkCount": "{{count}} link(s) detected",
+      "optionsLabel": "Options",
+      "opt": {
+        "overlay": "Build a seeding overlay",
+        "overlayHelp": "Assemble the recording at <mount>/WTRF Seeds with the audio hardlinked from the collection and the LBF sidecars supplied separately, so the collection folder is never written to.",
+        "refetch": "Re-fetch sidecars",
+        "refetchHelp": "Re-download LBF sidecars from losslessbob.com when the locally saved copy is the wrong size.",
+        "allowPartial": "Accept a partial overlay",
+        "allowPartialHelp": "Seed even when the overlay still hashes short. The remainder downloads into the overlay, never into the collection.",
+        "paused": "Add paused",
+        "pausedHelp": "Add the torrent to qBittorrent in a stopped state."
+      },
+      "seedButton": "Seed to WTRF",
+      "dryRunButton": "Dry run",
+      "stat": {
+        "links": "Links",
+        "seeded": "Seeded",
+        "failed": "Not seeded"
+      },
+      "note": "Each link is walked to its first post for the LB number and the .torrent attachment. A recording is only seeded when its lb_status is public and the files hash to 100% locally — an incomplete folder is reported, never forced.",
+      "historyTitle": "Recent WTRF attempts",
+      "noHistory": "No attempts yet",
+      "col": {
+        "attempted": "Attempted",
+        "lb": "LB",
+        "status": "Status",
+        "confidence": "Confidence",
+        "folder": "Seed folder / error"
+      },
+      "log": {
+        "start": "Seeding pasted WTRF links…",
+        "dryRunStart": "Dry run — resolving pasted WTRF links, downloading nothing…",
+        "found": "{{count}} topic link(s) to walk",
+        "done": "Done — {{seeded}} seeded, {{failed}} not seeded"
       }
     }
   },

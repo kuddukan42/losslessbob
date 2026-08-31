@@ -1,4 +1,10 @@
 
+TODO-328: Per-LB 'Seed to WTRF' has no progress surface — the board search runs behind a silent toast
+Priority: Low
+Status: Open
+Added: 2026-08-30
+Description: POST /api/entry/<lb>/seed_wtrf without a topic_url calls find_torrent_for_lb, which issues paced, flood-control-throttled searches against the WTRF board and can take a minute or more. useLibraryActions.tsx fires it as a plain fetch and only reports the outcome, so the user sees nothing between click and toast. The batch path (/api/wtrf/seed_links) already streams SSE; either give the single-LB route the same stream, or route the action through the WTRF Seeding tab with the link pre-filled.
+
 TODO-326: next_batch.py --newest-per-date can hand back a superseded run, producing contradictory analysis.md files for one date
 Priority: Medium
 Status: Open

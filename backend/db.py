@@ -1236,8 +1236,12 @@ CREATE TABLE IF NOT EXISTS wtrf_downloads (
     torrent_path TEXT,
     confidence   TEXT,    -- 'definitive'/'high'/'medium'/'needs_review'/'ambiguous'/'not_found'
     signals_json TEXT,    -- JSON scoring details
-    status       TEXT NOT NULL DEFAULT 'pending',  -- 'pending'/'downloaded'/'qbt_added'/'failed'/'skipped'
+    status       TEXT NOT NULL DEFAULT 'pending',
+                 -- 'pending'/'downloaded'/'qbt_added'/'not_seeded'/'failed'/'skipped'
+                 -- 'not_seeded' = fetched but refused a seed (not public, no
+                 -- matching folder, or the folder is not 100% complete)
     error        TEXT,
+    seed_folder  TEXT,   -- folder handed to qBittorrent (collection or overlay)
     attempted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     qbt_added_at TIMESTAMP
 );
@@ -3071,6 +3075,12 @@ def init_db(db_path=None):
         _si_cols = [r[1] for r in conn.execute("PRAGMA table_info(site_inventory)").fetchall()]
         if "local_sha256" not in _si_cols:
             conn.execute("ALTER TABLE site_inventory ADD COLUMN local_sha256 TEXT")
+        # Migration: wtrf_downloads.seed_folder — the folder (collection or
+        # overlay) that was actually handed to qBittorrent, mirroring
+        # tuit_downloads.seed_folder. Added when WTRF gained seed-from-links.
+        _wd_cols = [r[1] for r in conn.execute("PRAGMA table_info(wtrf_downloads)").fetchall()]
+        if "seed_folder" not in _wd_cols:
+            conn.execute("ALTER TABLE wtrf_downloads ADD COLUMN seed_folder TEXT")
         # Migration: collection_mounts / collection_routes tables (pipeline step 5)
         if not conn.execute(
             "SELECT name FROM sqlite_master WHERE type='table' AND name='collection_mounts'"
@@ -5923,6 +5933,7 @@ def add_wtrf_download(
     signals_json: str,
     status: str,
     error: str | None = None,
+    seed_folder: str | None = None,
     db_path=None,
 ) -> int:
     """Insert a wtrf_downloads row and return its new id.
@@ -5935,21 +5946,24 @@ def add_wtrf_download(
         signals_json: JSON string of scoring detail dict.
         status: One of pending/downloaded/qbt_added/failed/skipped.
         error: Error message string if status=failed.
+        seed_folder: Folder handed to qBittorrent (collection or overlay), if any.
         db_path: Optional DB path override.
 
     Returns:
         New row id.
     """
-    _lb, _tu, _tp, _conf, _sj, _st, _err = (
-        lb_number, topic_url, torrent_path, confidence, signals_json, status, error
+    _lb, _tu, _tp, _conf, _sj, _st, _err, _sf = (
+        lb_number, topic_url, torrent_path, confidence, signals_json, status,
+        error, seed_folder,
     )
 
     def _run(c):
         cur = c.execute(
             "INSERT INTO wtrf_downloads"
-            "(lb_number, topic_url, torrent_path, confidence, signals_json, status, error)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?)",
-            (_lb, _tu, _tp, _conf, _sj, _st, _err),
+            "(lb_number, topic_url, torrent_path, confidence, signals_json, status,"
+            " error, seed_folder)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            (_lb, _tu, _tp, _conf, _sj, _st, _err, _sf),
         )
         return cur.lastrowid
 

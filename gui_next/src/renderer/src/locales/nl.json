@@ -1379,7 +1379,8 @@
       "createTorrent": "Torrent aanmaken…",
       "wishlistGaps_one": "Bron ontbreekt in verlanglijst",
       "wishlistGaps_other": "Ontbrekende bronnen op de verlanglijst",
-      "dossier": "Dossier exporteren…"
+      "dossier": "Dossier exporteren…",
+      "seedWtrf": "Seed naar WTRF"
     },
     "groups": {
       "acquire": "Acquire",
@@ -1520,7 +1521,11 @@
       "wishlistFailed": "Update van verlanglijstje is mislukt",
       "confirmForumBody": "{{count}}-berichten op het forum plaatsen? Elk bericht wordt geplaatst met het automatisch gegenereerde onderwerp en de automatisch gegenereerde tekst.",
       "confirmRemoveBody_one": "Wilt u het item {{count}} uit uw verzameling verwijderen? Bestanden op de schijf worden niet verwijderd.",
-      "confirmRemoveBody_other": "Wilt u de {{count}}-items uit uw verzameling verwijderen? De bestanden op de schijf worden niet verwijderd."
+      "confirmRemoveBody_other": "Wilt u de {{count}}-items uit uw verzameling verwijderen? De bestanden op de schijf worden niet verwijderd.",
+      "wtrfSeeded": "{{lb}} seeding naar WTRF {{where}}",
+      "wtrfViaOverlay": "uit een WTRF Seeds-overlay",
+      "wtrfInPlace": "uit de verzamelingsmap",
+      "wtrfSeedFailed": "{{lb}} niet ingevuld — {{reason}}"
     },
     "panel": {
       "details": "Details",
@@ -1954,6 +1959,47 @@
         "sealed": "Status",
         "seal": "Zegel",
         "open": "Openen"
+      }
+    },
+    "wtrf": {
+      "tab": "WTRF-seeding",
+      "seededCount": "{{count}} geseed",
+      "linksLabel": "WTRF-onderwerplinks",
+      "linksPlaceholder": "Plak één WTRF-onderwerplink per regel.\nZet LB-00123 voor een regel om dat item expliciet vast te zetten.",
+      "linkCount": "{{count}}-link(s) gedetecteerd",
+      "optionsLabel": "Opties",
+      "opt": {
+        "overlay": "Een seeding-overlay bouwen",
+        "overlayHelp": "Stel de opname samen in <mount>/WTRF Seeds met de audio waarnaar vanuit de verzameling een harde koppeling is gemaakt en de afzonderlijk geleverde LBF-sidecars, zodat er nooit naar de verzamelingsmap wordt geschreven.",
+        "refetch": "Sidecars opnieuw ophalen",
+        "refetchHelp": "LBF-sidecars opnieuw downloaden van losslessbob.com wanneer de lokaal opgeslagen kopie de verkeerde grootte heeft.",
+        "allowPartial": "Een gedeeltelijke overlay accepteren",
+        "allowPartialHelp": "Zet de seed zelfs als de overlay nog steeds een te korte hash heeft. De rest wordt gedownload naar de overlay, nooit naar de collectie.",
+        "paused": "Pauzeren toevoegen",
+        "pausedHelp": "Voeg de torrent toe aan qBittorrent terwijl deze is gestopt."
+      },
+      "seedButton": "Seed naar WTRF",
+      "dryRunButton": "Proefdraaien",
+      "stat": {
+        "links": "Links",
+        "seeded": "Geseed",
+        "failed": "Nog niet gezaaid"
+      },
+      "note": "Elke link wordt doorlopen tot aan het eerste bericht voor het LB-nummer en de .torrent-bijlage. Een opname wordt alleen ge-seed als de `lb_status` op ‘public’ staat en de bestanden lokaal 100% overeenkomen — een onvolledige map wordt gemeld, maar nooit geforceerd.",
+      "historyTitle": "Recente pogingen met WTRF",
+      "noHistory": "Nog geen pogingen",
+      "col": {
+        "attempted": "Poging",
+        "lb": "LB",
+        "status": "Status",
+        "confidence": "Zekerheid",
+        "folder": "Startmap / foutmelding"
+      },
+      "log": {
+        "start": "WTRF-links die zijn geplakt, worden geïndexeerd…",
+        "dryRunStart": "Proefdraaien — WTRF-links die zijn geplakt, oplossen, niets downloaden…",
+        "found": "{{count}} onderwerpkoppeling(en) om door te lopen",
+        "done": "Klaar — {{seeded}} gezaaid, {{failed}} niet gezaaid"
       }
     }
   },
