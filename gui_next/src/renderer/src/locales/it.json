@@ -1964,9 +1964,6 @@
     "wtrf": {
       "tab": "Seeding WTRF",
       "seededCount": "{{count}} in fase di sviluppo",
-      "linksLabel": "Link agli argomenti WTRF",
-      "linksPlaceholder": "Inserisci un solo link a un argomento WTRF per riga.\nAggiungi il prefisso LB-00123 all'inizio di una riga per evidenziare esplicitamente quella voce.",
-      "linkCount": "Rilevati link {{count}}",
       "optionsLabel": "Opzioni",
       "opt": {
         "overlay": "Creazione di un overlay di seeding",
@@ -1985,7 +1982,6 @@
         "seeded": "Seminati",
         "failed": "Non distribuito"
       },
-      "note": "Viene seguito ogni link fino al primo post per ottenere il numero LB e l'allegato .torrent. Una registrazione viene messa in seed solo quando il suo lb_status è pubblico e l'hash dei file è al 100% a livello locale — una cartella incompleta viene segnalata, ma non mai imposta.",
       "historyTitle": "Tentativi recenti di WTRF",
       "noHistory": "Nessun tentativo effettuato finora",
       "col": {
@@ -2000,7 +1996,11 @@
         "dryRunStart": "Prova generale — risoluzione dei link WTRF incollati, senza scaricare nulla…",
         "found": "Link agli argomenti {{count}} da consultare",
         "done": "Completato — {{seeded}} inserito, {{failed}} non inserito"
-      }
+      },
+      "linksLabel": "Collegamenti WTRF o numeri LB",
+      "linksPlaceholder": "Inserisci i link agli argomenti WTRF, uno per riga —\noppure incolla un post di sintesi del forum: verranno utilizzati i numeri LB in esso contenuti.\nAggiungi il prefisso LB-00123 a un link per fissare esplicitamente quella voce.",
+      "targetCount": "Rilevati uno o più target {{count}}",
+      "note": "Un link a un argomento viene seguito fino al primo post per ottenere il numero LB e l'allegato .torrent. Il testo privo di link utilizzabili ricorre ai numeri LB in esso contenuti, effettuando la ricerca nel forum per ciascuno di essi — un processo più lento, che porta al download solo in caso di corrispondenza certa. Una registrazione viene messa in seed solo quando il suo lb_status è «public» e l’hash dei file è al 100% a livello locale; una cartella incompleta viene segnalata, ma mai imposta."
     }
   },
   "songs": {

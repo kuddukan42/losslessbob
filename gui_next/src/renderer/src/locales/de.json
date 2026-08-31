@@ -1964,9 +1964,6 @@
     "wtrf": {
       "tab": "WTRF-Seeding",
       "seededCount": "{{count}} geseedet",
-      "linksLabel": "WTRF-Themenlinks",
-      "linksPlaceholder": "Fügen Sie pro Zeile einen WTRF-Themenlink ein.\nFügen Sie dem Zeilenanfang „LB-00123“ hinzu, um diesen Eintrag explizit anzuheften.",
-      "linkCount": "{{count}}-Link(s) erkannt",
       "optionsLabel": "Optionen",
       "opt": {
         "overlay": "Erstellen eines Seeding-Overlays",
@@ -1985,7 +1982,6 @@
         "seeded": "Geseedet",
         "failed": "Nicht vorbelegt"
       },
-      "note": "Jeder Link wird bis zum ersten Beitrag durchlaufen, um die LB-Nummer und den .torrent-Anhang zu ermitteln. Eine Aufnahme wird nur dann als Seed bereitgestellt, wenn ihr „lb_status“ auf „public“ gesetzt ist und die Dateien lokal zu 100 % gehasht sind – ein unvollständiger Ordner wird gemeldet, aber niemals erzwungen.",
       "historyTitle": "Jüngste WTRF-Versuche",
       "noHistory": "Bisher keine Versuche",
       "col": {
@@ -2000,7 +1996,11 @@
         "dryRunStart": "Testlauf – Auflösen der eingefügten WTRF-Links, ohne etwas herunterzuladen…",
         "found": "{{count}} Themenlink(s) zum Durchgehen",
         "done": "Erledigt – {{seeded}} bereitgestellt, {{failed}} nicht bereitgestellt"
-      }
+      },
+      "linksLabel": "WTRF-Links oder LB-Nummern",
+      "linksPlaceholder": "Fügen Sie WTRF-Themenlinks ein, einen pro Zeile —\noder fügen Sie einen zusammenfassenden Forumsbeitrag ein; in diesem Fall werden stattdessen die darin enthaltenen LB-Nummern verwendet.\nFügen Sie einem Link das Präfix „LB-00123“ hinzu, um diesen Eintrag explizit anzuheften.",
+      "targetCount": "{{count}}-Ziel(e) erkannt",
+      "note": "Ein Themenlink wird bis zum ersten Beitrag verfolgt, um die LB-Nummer und den .torrent-Anhang zu ermitteln. Bei Text ohne verwertbare Links wird auf die darin enthaltenen LB-Nummern zurückgegriffen, wobei das Forum nach jeder einzelnen durchsucht wird – dies ist langsamer und erfolgt nur bei einer sicheren Übereinstimmung. Eine Aufnahme wird nur dann als Seed bereitgestellt, wenn ihr „lb_status“ auf „public“ gesetzt ist und die Dateien lokal zu 100 % gehasht sind; ein unvollständiger Ordner wird gemeldet, aber niemals erzwungen."
     }
   },
   "songs": {

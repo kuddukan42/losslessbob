@@ -15,7 +15,9 @@ from backend.wtrf_seed import (
     _absolutise,
     _canonical_topic_url,
     _lb_numbers_in,
+    expand_lb_shorthand,
     is_wtrf_topic_url,
+    parse_seed_targets,
     parse_topic_links,
     pick_by_content,
     resolve_link,
@@ -390,3 +392,85 @@ def test_content_ignores_a_same_named_file_of_the_wrong_size(tmp_path, monkeypat
                         lambda lb, db_path=None: [str(d)])
     out = pick_by_content([42], torrent)
     assert out["winner"] is None
+
+
+# ── LB-only pastes: a forum round-up copied as plain text ────────────────────
+# The links in such a post are hyperlinks whose href does not survive a
+# plain-text copy — every one collapses to the bare "www.watchingtheriverflow.org"
+# display text. Only the LB numbers make it across, and they are enough.
+
+ROUNDUP = """shows. Many thanks to everyone's help once again!
+
+1974-01-31 New York
+LB-11486/88 (LTE)
+www.watchingtheriverflow.org
+www.watchingtheriverflow.org
+LB-11612 (SM)
+www.watchingtheriverflow.org
+
+1978-06-27 Dortmund
+LB-12653 (NTB)
+www.watchingtheriverflow.org
+LB-12654 (LTB)
+www.watchingtheriverflow.org
+"""
+
+
+@pytest.fixture
+def catalogue(monkeypatch):
+    """Stub the entry dates the shorthand expansion verifies against."""
+    dates = {11486: "1/31/74", 11488: "1/31/74", 11487: "1/23/76",
+             11612: "1/31/74", 12653: "6/27/78", 12654: "6/27/78"}
+    monkeypatch.setattr("backend.wtrf_seed._entry_date", dates.get)
+    return dates
+
+
+def test_a_roundup_paste_yields_no_links_at_all(catalogue):
+    """The premise: there is no URL in this paste to walk."""
+    assert parse_topic_links(ROUNDUP) == []
+
+
+def test_a_roundup_paste_still_yields_every_lb(catalogue):
+    targets = parse_seed_targets(ROUNDUP)
+    assert [t.lb_number for t in targets] == [11486, 11488, 11612, 12653, 12654]
+    assert all(not t.by_link for t in targets)
+
+
+def test_a_bare_host_line_contributes_nothing_but_suppresses_nothing(catalogue):
+    """"www.watchingtheriverflow.org" has no topic= and is not a target, but it
+    must not stop the LB numbers on neighbouring lines being picked up."""
+    targets = parse_seed_targets(
+        "LB-11612 (SM)\nwww.watchingtheriverflow.org\nLB-12653 (NTB)\n")
+    assert [t.lb_number for t in targets] == [11612, 12653]
+
+
+def test_shorthand_expands_only_to_a_same_date_sibling(catalogue):
+    """LB-11486/88 is 11486 and 11488 — not the range through 11487, which is
+    a different show two years later."""
+    assert expand_lb_shorthand(11486, "/88") == [11486, 11488]
+    assert expand_lb_shorthand(11486, "/87") == [11486]      # 1/23/76, refused
+
+
+def test_shorthand_refuses_an_unknown_entry(catalogue):
+    assert expand_lb_shorthand(11486, "/99") == [11486]
+
+
+def test_shorthand_ignores_a_suffix_longer_than_the_base(catalogue):
+    assert expand_lb_shorthand(11486, "/123456") == [11486]
+
+
+def test_a_mixed_paste_yields_both_kinds(catalogue):
+    targets = parse_seed_targets(
+        f"{TOPIC}\nLB-12653 (NTB)\nwww.watchingtheriverflow.org\n")
+    assert [(t.by_link, t.lb_number) for t in targets] == [
+        (True, None), (False, 12653)]
+
+
+def test_an_lb_pinned_to_a_link_is_not_repeated_as_its_own_target(catalogue):
+    targets = parse_seed_targets(f"LB-12653 {TOPIC}\nLB-12653 (NTB)\n")
+    assert len(targets) == 1
+    assert targets[0].by_link and targets[0].lb_number == 12653
+
+
+def test_date_headers_and_source_tags_are_not_lb_numbers(catalogue):
+    assert parse_seed_targets("1974-01-31 New York\n(LTE) (SM) (NTB)\n") == []

@@ -61,12 +61,30 @@ Fixed: backend/wtrf_seed.py: a scheme-less paste was silently dropped as "no WTR
   bare host as a relative path and would glue it onto FORUM_BASE. Trailing prose punctuation is
   trimmed, so a link pasted mid-sentence still resolves.
 
+Added: backend/wtrf_seed.py: a paste often contains no links at all. Copying a forum round-up post as
+  plain text collapses every hyperlink to its bare `www.watchingtheriverflow.org` display text — the
+  href does not survive — so the LB numbers beside them are the only thing left, and they are enough.
+  New `SeedTarget` is either a topic link or a bare LB number; `parse_seed_targets()` reads both from
+  one paste (a bare host line contributes nothing but no longer suppresses the LB numbers around it),
+  and an LB-only target is resolved by searching the board via `wtrf_scraper.find_torrent_for_lb`,
+  inheriting its refusal to download below 'medium' confidence. `seed_from_links` gained the two
+  `_prepare_from_link` / `_prepare_from_lb` branches that converge on the shared seeding gates.
+Added: backend/wtrf_seed.py: `expand_lb_shorthand()` reads "LB-11486/88" as the two entries it
+  abbreviates — 11486 and 11488, *not* the range through 11487, which is a different show two years
+  later. Because a mis-expansion would seed the wrong recording, each expansion is kept only when the
+  entry exists and carries the same date as the base; anything else is dropped and logged.
+Changed: gui_next ScreenScraper: the WTRF tab counts seed *targets* rather than lines mentioning the
+  forum host — the old count was exactly wrong for a round-up paste, where every such line is a
+  hyperlink's leftover display text and none of them is a target.
+
 Verified live against WTRF: topic 43459 assembled the two-entry "84 Revisited" box set to 100% from
   two collection folders (72 files, all hardlinked, nlink=2, no extra disk) and qBittorrent reports it
   seeding at 100%; topic 53461 correctly dropped the cross-referenced LB-11880 and seeded LB-11872
   (25/25 files). Topics 53463/53465/53467, pasted in all three scheme-less/relative shapes, seeded
   3/3 at 25/25 files each. All seven collection folders independently confirmed unmodified afterwards;
-  every one of the 172 overlay files has a link count of 2, so no bytes were duplicated.
+  every one of the 172 overlay files has a link count of 2, so no bytes were duplicated. A real
+  round-up paste containing zero URLs yielded 8 targets (including the LB-11486/88 expansion), and
+  LB-12653/12654 seeded 2/2 through the board search at 'definitive' confidence.
 
 [2026-08-30] — feat(gui): LBDIR pipeline status in the forum post preview; Bob-O-Matic footer loses its version
 Added: backend/app.py: `GET /api/entry/<lb>/lbdir_status` returns the LBDIR pipeline verdict for an

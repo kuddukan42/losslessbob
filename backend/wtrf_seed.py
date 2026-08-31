@@ -77,6 +77,12 @@ _LB_TAG_RE = re.compile(r"\bLB[-_ ]?(\d{1,5})\b", re.IGNORECASE)
 #: two can never drift apart.
 _FORUM_HOST = (urlparse(FORUM_BASE).hostname or "").lower().removeprefix("www.")
 
+#: "LB-11486/88" — two related entries written with only the differing trailing
+#: digits of the second spelled out. Common in forum round-up posts.
+_LB_SHORTHAND_RE = re.compile(
+    r"\bLB[-_ ]?(\d{1,5})((?:\s*/\s*\d{1,4})+)", re.IGNORECASE
+)
+
 #: A link inside pasted text. Copying out of the forum rarely yields a tidy
 #: absolute URL: the address bar's own display drops the scheme, so a paste is
 #: usually ``www.<host>/index.php?topic=…`` and sometimes just
@@ -116,6 +122,33 @@ class LinkSpec:
     url: str
     lb_number: int | None
     raw: str
+
+
+@dataclass
+class SeedTarget:
+    """One thing to seed: a topic link, or an LB number to look the topic up by.
+
+    A paste copied out of a forum round-up post carries no usable links at all
+    — the ``www.watchingtheriverflow.org`` lines in it are the *display text*
+    of hyperlinks, and the href does not survive a plain-text copy. The LB
+    numbers beside them do survive, and are enough: the board can be searched
+    by LB number instead, which is what :mod:`backend.wtrf_scraper` already
+    does. So a target is either a link or a bare LB number.
+
+    Attributes:
+        url: Normalised topic URL, or "" for an LB-only target.
+        lb_number: The entry, when the text named one.
+        raw: The line as pasted, for error messages.
+    """
+
+    url: str
+    lb_number: int | None
+    raw: str
+
+    @property
+    def by_link(self) -> bool:
+        """Whether this target has a topic URL to walk."""
+        return bool(self.url)
 
 
 def _lb_numbers_in(text: str) -> list[int]:
@@ -173,6 +206,92 @@ def _absolutise(token: str) -> str:
         # it as a relative path and glue it onto FORUM_BASE.
         return "http://" + token
     return _resolve_url(token)
+
+
+def _entry_date(lb_number: int) -> str | None:
+    """The ``date_str`` of one entry, or None when there is no such entry.
+
+    Args:
+        lb_number: LosslessBob entry number.
+
+    Returns:
+        The entry's date string, or None.
+    """
+    try:
+        with database.get_connection() as conn:
+            row = conn.execute(
+                "SELECT date_str FROM entries WHERE lb_number=?", (lb_number,)
+            ).fetchone()
+    except Exception:
+        return None
+    return row["date_str"] if row else None
+
+
+def expand_lb_shorthand(base: int, suffixes: str) -> list[int]:
+    """Expand ``LB-11486/88`` into the entries it abbreviates.
+
+    Each ``/NN`` replaces the trailing digits of the base number, so
+    ``11486/88`` means 11486 and 11488 — *not* the range 11486-11488, whose
+    middle entry is a different show entirely. Because a mis-expansion would
+    seed the wrong recording, every expansion is checked against the catalogue
+    and kept only when the entry exists **and** carries the same date as the
+    base. Anything else is dropped rather than guessed at.
+
+    Args:
+        base: The fully written LB number.
+        suffixes: The matched ``/NN`` run, e.g. ``"/88"`` or ``"/88/90"``.
+
+    Returns:
+        The verified LB numbers, base first, in the order written.
+    """
+    out = [base]
+    base_date = _entry_date(base)
+    for tail in re.findall(r"\d{1,4}", suffixes):
+        digits = len(tail)
+        stem = str(base)
+        if digits >= len(stem):
+            continue
+        candidate = int(stem[:-digits] + tail)
+        if candidate in out:
+            continue
+        # Same date as the base is what makes it the same show's sibling
+        # rather than an unrelated entry that happens to share a prefix.
+        if base_date and _entry_date(candidate) == base_date:
+            out.append(candidate)
+        else:
+            logger.info(
+                "wtrf_seed: not expanding LB-%05d%s to LB-%05d — %s",
+                base, suffixes.strip(), candidate,
+                "no such entry" if _entry_date(candidate) is None
+                else "different date",
+            )
+    return out
+
+
+def lb_numbers_in_line(line: str) -> list[int]:
+    """Every LB number a pasted line names, shorthand runs expanded.
+
+    Args:
+        line: One line of pasted text.
+
+    Returns:
+        Distinct LB numbers in the order written.
+    """
+    found: list[int] = []
+    consumed: list[tuple[int, int]] = []
+    for match in _LB_SHORTHAND_RE.finditer(line):
+        consumed.append(match.span())
+        for lb in expand_lb_shorthand(int(match.group(1)), match.group(2)):
+            if lb not in found:
+                found.append(lb)
+    # Plain tags outside any shorthand run.
+    for match in _LB_TAG_RE.finditer(line):
+        if any(a <= match.start() < b for a, b in consumed):
+            continue
+        lb = int(match.group(1))
+        if lb and lb not in found:
+            found.append(lb)
+    return found
 
 
 def is_wtrf_topic_url(url: str) -> bool:
@@ -256,6 +375,58 @@ def parse_topic_links(text: str) -> list[LinkSpec]:
                 raw=line.strip(),
             ))
     return specs
+
+
+def parse_seed_targets(text: str) -> list[SeedTarget]:
+    """Work out everything a paste asks to be seeded, links or not.
+
+    Two shapes arrive in practice and both must work:
+
+    * a list of topic links, one per line, optionally pinned with an LB number;
+    * a forum round-up post copied as plain text, where every link has
+      collapsed to the bare ``www.watchingtheriverflow.org`` display text and
+      only the LB numbers survive.
+
+    A line contributes a link target when it holds a usable topic URL, and LB
+    targets otherwise — so a mixed paste yields both, and a bare host with no
+    ``topic=`` contributes nothing but does not suppress the LB numbers around
+    it. LB numbers already pinned to a link are not repeated as separate
+    targets.
+
+    Args:
+        text: The pasted blob.
+
+    Returns:
+        Deduplicated targets in the order pasted.
+    """
+    targets: list[SeedTarget] = []
+    seen_urls: set[str] = set()
+    seen_lbs: set[int] = set()
+
+    for line in (text or "").splitlines():
+        urls = [u for u in _URL_RE.findall(line) if is_wtrf_topic_url(u)]
+        # An LB tag on the line pins it, but only when it is not part of a URL.
+        lbs = lb_numbers_in_line(_URL_RE.sub(" ", line))
+
+        if urls:
+            pinned = lbs[0] if len(lbs) == 1 else None
+            for url in urls:
+                norm = _canonical_topic_url(_absolutise(url))
+                if norm in seen_urls:
+                    continue
+                seen_urls.add(norm)
+                if pinned is not None:
+                    seen_lbs.add(pinned)
+                targets.append(SeedTarget(norm, pinned, line.strip()))
+            continue
+
+        for lb in lbs:
+            if lb in seen_lbs:
+                continue
+            seen_lbs.add(lb)
+            targets.append(SeedTarget("", lb, line.strip()))
+
+    return targets
 
 
 def resolve_link(session: requests.Session, spec: LinkSpec,
@@ -404,114 +575,90 @@ def seed_from_links(
     dest_dir: str | Path,
     delay: float = DEFAULT_DELAY,
     dry_run: bool = False,
+    board_id: int | None = None,
 ) -> Iterator[dict]:
-    """Walk every pasted WTRF link and seed the recording it points at.
+    """Seed everything a paste asks for, whether it carries links or not.
 
-    Yields one event dict per link as it completes, so a caller can stream
-    progress; a final ``{"event": "done", …}`` carries the tallies. Each
-    attempt is recorded in ``wtrf_downloads`` exactly as the LB-first search
-    path records its own.
+    Link targets are walked to their post; LB-only targets — all a plain-text
+    copy of a forum round-up leaves behind — are looked up by searching the
+    board, exactly as ``/api/wtrf/fetch_torrent`` does, which only downloads at
+    'medium' confidence or better. Either way the torrent then goes through the
+    shared seeding gates, and the attempt is recorded in ``wtrf_downloads``.
+
+    Yields one event dict per target as it completes, so a caller can stream
+    progress; a final ``{"event": "done", …}`` carries the tallies.
 
     Args:
-        text: Pasted blob of topic links.
+        text: Pasted blob of topic links and/or LB numbers.
         opts: Seeding policy (overlay, tolerances, qBittorrent tag).
         dest_dir: Directory to write downloaded ``.torrent`` files into.
-        delay: Seconds between HTTP requests.
+        delay: Seconds between HTTP requests. A board search additionally
+            respects the forum's search flood-control floor, so an LB-only
+            target costs appreciably more than a link.
         dry_run: Resolve and report, but download nothing and seed nothing.
+        board_id: SMF board to search for LB-only targets; defaults to the
+            configured ``wtrf_board_id``.
 
     Yields:
-        Event dicts. Per-link events carry ``event="link"``, ``url``,
-        ``lb_number``, ``status`` (one of resolved/downloaded/qbt_added/
-        not_seeded/failed), ``reason`` and ``error``.
+        Event dicts. Per-target events carry ``event="link"``, ``url``,
+        ``lb_number``, ``via`` ("link" or "lb_search"), ``status`` (one of
+        resolved/qbt_added/not_seeded/failed), ``reason`` and ``error``.
     """
-    specs = parse_topic_links(text)
+    targets = parse_seed_targets(text)
     dest = Path(dest_dir)
-    yield {"event": "start", "total": len(specs)}
-    if not specs:
+    if board_id is None:
+        board_id = int(database.get_meta("wtrf_board_id") or 16)
+
+    by_link = sum(1 for t in targets if t.by_link)
+    yield {"event": "start", "total": len(targets),
+           "by_link": by_link, "by_lb": len(targets) - by_link}
+    if not targets:
         yield {"event": "done", "total": 0, "seeded": 0, "failed": 0,
-               "error": "no WTRF topic links found in the pasted text"}
+               "error": "no WTRF topic links or LB numbers found in the "
+                        "pasted text"}
         return
 
-    username, password = get_credentials(SERVICE_WTRF)
-    if not username or not password:
-        yield {"event": "done", "total": len(specs), "seeded": 0,
-               "failed": len(specs), "error": "WTRF credentials not configured"}
-        return
-    session = _get_session(username, password)
-    if session is None:
-        yield {"event": "done", "total": len(specs), "seeded": 0,
-               "failed": len(specs),
-               "error": "WTRF login failed — check the stored credentials"}
-        return
+    session = None
+    if by_link:
+        # Only the link path needs a logged-in session of our own; the board
+        # search opens its own inside wtrf_scraper.
+        username, password = get_credentials(SERVICE_WTRF)
+        if not username or not password:
+            yield {"event": "done", "total": len(targets), "seeded": 0,
+                   "failed": len(targets),
+                   "error": "WTRF credentials not configured"}
+            return
+        session = _get_session(username, password)
+        if session is None:
+            yield {"event": "done", "total": len(targets), "seeded": 0,
+                   "failed": len(targets),
+                   "error": "WTRF login failed — check the stored credentials"}
+            return
 
     seeded = failed = 0
-    for index, spec in enumerate(specs, start=1):
-        event = {"event": "link", "index": index, "total": len(specs),
-                 "url": spec.url, "lb_number": None, "title": "",
+    for index, target in enumerate(targets, start=1):
+        event = {"event": "link", "index": index, "total": len(targets),
+                 "url": target.url, "lb_number": target.lb_number, "title": "",
+                 "via": "link" if target.by_link else "lb_search",
                  "status": "failed", "reason": "", "error": "",
                  "confidence": "not_found", "folder": "", "overlay": False}
         try:
-            info = resolve_link(session, spec, delay)
-            event.update({
-                "lb_number": info["lb_number"], "title": info["title"],
-                "confidence": info["confidence"],
-            })
-            if info["error"] or info["lb_number"] is None:
-                event["error"] = info["error"] or "unresolved"
-                failed += 1
-                _record(info, spec, None, "skipped", event["error"], "")
+            if target.by_link:
+                outcome = _prepare_from_link(session, target, dest, delay,
+                                             dry_run, event)
+            else:
+                outcome = _prepare_from_lb(target, dest, board_id, delay,
+                                           dry_run, event)
+            if outcome is None:            # already reported into `event`
+                failed += 1 if event["status"] == "failed" else 0
+                yield event
+                continue
+            if outcome == "dry_run":
                 yield event
                 continue
 
-            if dry_run:
-                nominated = ", ".join(
-                    f"LB-{n:05d}" for n in info["lb_candidates"][:4]
-                )
-                event.update({
-                    "status": "resolved",
-                    "reason": (
-                        f"nominates {nominated}; the seed run downloads the "
-                        f"torrent and lets its contents pick"
-                        if info["needs_content_check"]
-                        else f"would seed from {info['torrent_url']}"
-                    ),
-                })
-                yield event
-                continue
-
-            path = _download_torrent(
-                session, info["torrent_url"], dest, info["lb_number"], delay
-            )
-            if path is None:
-                event["error"] = "torrent download failed"
-                failed += 1
-                _record(info, spec, None, "failed", event["error"], "")
-                yield event
-                continue
-
+            info, path, link_dirs = outcome
             event["torrent_path"] = str(path)
-
-            # The post nominated several entries. Which one (or ones) the
-            # torrent actually holds is a question about bytes, not prose.
-            link_dirs: list[str] = []
-            if info["needs_content_check"]:
-                picked = pick_by_content(info["lb_candidates"], str(path))
-                if picked["winner"] is None:
-                    event["error"] = (
-                        f"{len(info['lb_candidates'])} LB numbers nominated and "
-                        f"{picked['reason']} — pin one by writing it before the link"
-                    )
-                    failed += 1
-                    _record(info, spec, str(path), "skipped", event["error"], "")
-                    yield event
-                    continue
-                info["lb_number"] = picked["winner"]
-                info["lb_source"] = "content"
-                info["confidence"] = "high"
-                link_dirs = picked["link_dirs"]
-                event.update({"lb_number": picked["winner"], "confidence": "high"})
-                event["picked"] = picked["reason"]
-
             result = seed_one(info["lb_number"], str(path), opts, link_dirs)
             event.update({
                 "reason": result["reason"], "folder": result["folder"],
@@ -519,34 +666,144 @@ def seed_from_links(
             })
             if event.get("picked"):
                 event["reason"] = f"{event['picked']}; {event['reason']}"
+
             if result["ok"]:
                 event["status"] = "qbt_added"
                 seeded += 1
-                dl_id = _record(info, spec, str(path), "downloaded", "",
+                dl_id = _record(info, target, str(path), "downloaded", "",
                                 result["folder"])
                 database.update_wtrf_download(dl_id, {
                     "status": "qbt_added",
                     "qbt_added_at": datetime.now(UTC).isoformat(),
                 })
             elif result["error"]:
-                event["status"] = "failed"
-                event["error"] = result["error"]
+                event.update({"status": "failed", "error": result["error"]})
                 failed += 1
-                _record(info, spec, str(path), "failed", result["error"],
+                _record(info, target, str(path), "failed", result["error"],
                         result["folder"])
             else:
                 event["status"] = "not_seeded"
                 failed += 1
-                _record(info, spec, str(path), "not_seeded", result["reason"],
+                _record(info, target, str(path), "not_seeded", result["reason"],
                         result["folder"])
-        except Exception as exc:                       # one bad link must not
-            logger.exception("wtrf_seed: %s", spec.url)  # kill the whole batch
+        except Exception as exc:                         # one bad target must
+            logger.exception("wtrf_seed: %s", target.raw)  # not kill the batch
             event["error"] = str(exc)
             failed += 1
         yield event
 
-    yield {"event": "done", "total": len(specs), "seeded": seeded,
+    yield {"event": "done", "total": len(targets), "seeded": seeded,
            "failed": failed, "error": ""}
+
+
+def _prepare_from_link(session, target: SeedTarget, dest: Path, delay: float,
+                       dry_run: bool, event: dict):
+    """Walk a topic link to a downloaded torrent, filling ``event`` as it goes.
+
+    Args:
+        session: Authenticated WTRF session.
+        target: The link target.
+        dest: Directory for the downloaded ``.torrent``.
+        delay: Seconds between HTTP requests.
+        dry_run: Report only.
+        event: The event dict being built, updated in place.
+
+    Returns:
+        ``(info, torrent_path, link_dirs)`` when ready to seed, ``"dry_run"``
+        when only reporting, or None when the target was rejected.
+    """
+    spec = LinkSpec(target.url, target.lb_number, target.raw)
+    info = resolve_link(session, spec, delay)
+    event.update({"lb_number": info["lb_number"], "title": info["title"],
+                  "confidence": info["confidence"]})
+    if info["error"] or info["lb_number"] is None:
+        event["error"] = info["error"] or "unresolved"
+        _record(info, target, None, "skipped", event["error"], "")
+        return None
+
+    if dry_run:
+        nominated = ", ".join(f"LB-{n:05d}" for n in info["lb_candidates"][:4])
+        event.update({"status": "resolved", "reason": (
+            f"nominates {nominated}; the seed run downloads the torrent and "
+            f"lets its contents pick" if info["needs_content_check"]
+            else f"would seed from {info['torrent_url']}")})
+        return "dry_run"
+
+    path = _download_torrent(session, info["torrent_url"], dest,
+                             info["lb_number"], delay)
+    if path is None:
+        event["error"] = "torrent download failed"
+        _record(info, target, None, "failed", event["error"], "")
+        return None
+
+    link_dirs: list[str] = []
+    if info["needs_content_check"]:
+        picked = pick_by_content(info["lb_candidates"], str(path))
+        if picked["winner"] is None:
+            event["error"] = (
+                f"{len(info['lb_candidates'])} LB numbers nominated and "
+                f"{picked['reason']} — pin one by writing it before the link"
+            )
+            _record(info, target, str(path), "skipped", event["error"], "")
+            return None
+        info.update({"lb_number": picked["winner"], "lb_source": "content",
+                     "confidence": "high"})
+        event.update({"lb_number": picked["winner"], "confidence": "high",
+                      "picked": picked["reason"]})
+        link_dirs = picked["link_dirs"]
+    return info, path, link_dirs
+
+
+def _prepare_from_lb(target: SeedTarget, dest: Path, board_id: int,
+                     delay: float, dry_run: bool, event: dict):
+    """Find an LB's torrent by searching the board, filling ``event`` as it goes.
+
+    This is the path a plain-text paste needs: the post's link did not survive
+    the copy, so the board is searched by LB number instead. The search is the
+    same one ``/api/wtrf/fetch_torrent`` runs, and inherits its refusal to
+    download anything below 'medium' confidence.
+
+    Args:
+        target: The LB-only target.
+        dest: Directory for the downloaded ``.torrent``.
+        board_id: SMF board to search.
+        delay: Seconds between HTTP requests.
+        dry_run: Report only.
+        event: The event dict being built, updated in place.
+
+    Returns:
+        ``(info, torrent_path, [])`` when ready to seed, ``"dry_run"`` when
+        only reporting, or None when nothing usable was found.
+    """
+    from backend.wtrf_scraper import find_torrent_for_lb
+
+    lb = target.lb_number
+    info = {"lb_number": lb, "lb_candidates": [lb], "lb_source": "lb_search",
+            "confidence": "not_found", "needs_content_check": False,
+            "torrent_url": None, "title": "", "error": ""}
+
+    allowed, why = database.is_seedable_to_tracker(lb)
+    if not allowed:
+        event["error"] = f"LB-{lb:05d} is not seedable ({why})"
+        _record(info, target, None, "skipped", event["error"], "")
+        return None
+
+    if dry_run:
+        event.update({"status": "resolved",
+                      "reason": "would search the board for this LB number"})
+        return "dry_run"
+
+    found = find_torrent_for_lb(lb_number=lb, board_id=board_id,
+                                dest_dir=dest, delay=delay)
+    info["confidence"] = found.get("confidence", "not_found")
+    event.update({"confidence": info["confidence"],
+                  "url": found.get("topic_url") or ""})
+    target.url = found.get("topic_url") or ""
+    if not found.get("ok"):
+        event["error"] = found.get("error") or "no matching WTRF post found"
+        _record(info, target, None, "skipped", event["error"], "")
+        return None
+    return info, Path(found["torrent_path"]), []
 
 
 def seed_one(lb_number: int, torrent_path: str, opts: SeedOptions,
@@ -569,13 +826,13 @@ def seed_one(lb_number: int, torrent_path: str, opts: SeedOptions,
     return seed_torrent(lb_number, torrent_path, opts, link_dirs)
 
 
-def _record(info: dict, spec: LinkSpec, torrent_path: str | None,
+def _record(info: dict, target: SeedTarget, torrent_path: str | None,
             status: str, error: str, seed_folder: str) -> int:
     """Log one attempt to ``wtrf_downloads``.
 
     Args:
-        info: The resolve_link result.
-        spec: The pasted link.
+        info: The resolve_link result, or its LB-search equivalent.
+        target: The pasted target.
         torrent_path: Local .torrent path, or None if nothing was downloaded.
         status: wtrf_downloads status word.
         error: Error/reason text, or "".
@@ -586,7 +843,7 @@ def _record(info: dict, spec: LinkSpec, torrent_path: str | None,
     """
     return database.add_wtrf_download(
         lb_number=info["lb_number"] or 0,
-        topic_url=spec.url,
+        topic_url=target.url or None,
         torrent_path=torrent_path,
         confidence=info["confidence"],
         signals_json=json.dumps({

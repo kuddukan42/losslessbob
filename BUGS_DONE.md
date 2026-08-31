@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-332: Seeding gate reads lb_master.lb_status only; a folder filed under 'PRIVATE LB'/'NOTORRENT' still passes
+Status: Fixed
+File(s): backend/db.py:is_seedable_to_tracker,backend/tracker_seed.py:find_seedable_folder
+Reported: 2026-08-30
+Fixed: 2026-08-30
+Root cause: Not a defect. db.is_seedable_to_tracker() consults lb_master.lb_status, which is the intended and authoritative marker for what may leave the collection. LB-12653/12654 are 'public' there and were correctly seedable; the 'PRIVATE LB'/'NOTORRENT' strings are only disk-organisation folder names, which the gate deliberately does not read. Corroborating: WTRF itself carries a torrent for both, matched at 'definitive' confidence.
+Fix: No code change. tj confirmed 2026-08-30 that the DB marker governs privacy, not folder location. The two torrents stopped while this was open have been resumed.
+
 BUG-330: [DISTINCT SOURCE] diagnostic asserts 'entirely different recording' from a speed estimate the pipeline itself marked untrusted
 Status: Fixed
 File(s): tools/tapematch/tapematch/cli.py:1191,tools/tapematch/tapematch/cli.py:1201,tools/tapematch/tapematch/cli.py:398
