@@ -1107,26 +1107,48 @@ interface LbdirCheck {
   extra: number
 }
 
+interface LbdirBucket {
+  total: number
+  pass: number
+  missing: number
+  mismatch: number
+  extra: number
+}
+
 interface LbdirStatus {
   status: 'ok' | 'warn' | 'bad' | 'unknown'
+  audio_status?: 'ok' | 'warn' | 'bad'
+  audio_label_key?: string
+  audio_label_params?: Record<string, unknown>
+  text_label_key?: string
+  text_label_params?: Record<string, unknown>
   label_key?: string
   label_params?: Record<string, unknown>
+  split?: { audio: LbdirBucket; text: LbdirBucket }
   check?: LbdirCheck | null
+  reconciled?: { renamed: string[]; copied: string[]; errors: unknown[] }
   manifest?: string | null
   cached?: boolean
 }
 
-const LBDIR_STATE_KEY = {
-  pass:           'collection.forum.lbdir.state.pass',
-  missing:        'collection.forum.lbdir.state.missing',
-  extra:          'collection.forum.lbdir.state.extra',
-  no_shntool:     'collection.forum.lbdir.state.no_shntool',
-  fail:           'collection.forum.lbdir.state.fail',
-  fail_n:         'collection.forum.lbdir.state.fail_n',
+// The audio verdict drives the colour; anything that isn't a manifest check at
+// all (no folder, no manifest, request failed) falls back to these.
+const LBDIR_AUDIO_KEY = {
+  audio_pass:     'collection.forum.lbdir.audio.pass',
+  audio_missing:  'collection.forum.lbdir.audio.missing',
+  audio_fail:     'collection.forum.lbdir.audio.fail',
+  audio_none:     'collection.forum.lbdir.audio.none',
   no_lbdir:       'collection.forum.lbdir.state.no_lbdir',
   no_folder:      'collection.forum.lbdir.state.no_folder',
   folder_missing: 'collection.forum.lbdir.state.folder_missing',
   error:          'collection.forum.lbdir.state.error',
+} as const
+
+const LBDIR_TEXT_KEY = {
+  text_pass:     'collection.forum.lbdir.text.pass',
+  text_missing:  'collection.forum.lbdir.text.missing',
+  text_mismatch: 'collection.forum.lbdir.text.mismatch',
+  text_none:     'collection.forum.lbdir.text.none',
 } as const
 
 const LBDIR_TONE: Record<string, { fg: string; bg: string }> = {
@@ -1212,42 +1234,57 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1, minHeight: 0, overflow: 'hidden' }}>
           {(() => {
-            const tone = LBDIR_TONE[lbdirBusy || !lbdir ? 'unknown' : lbdir.status] ?? LBDIR_TONE.unknown
-            const chk = lbdir?.check
+            const audioTone = lbdirBusy || !lbdir
+              ? LBDIR_TONE.unknown
+              : LBDIR_TONE[lbdir.audio_status ?? 'warn'] ?? LBDIR_TONE.unknown
+            const audio = lbdir?.split?.audio
+            const restored = (lbdir?.reconciled?.renamed.length ?? 0)
+                           + (lbdir?.reconciled?.copied.length ?? 0)
+            const extra = (lbdir?.split?.audio.extra ?? 0) + (lbdir?.split?.text.extra ?? 0)
             return (
               <div style={{
-                display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap',
-                background: tone.bg, border: `1px solid ${tone.fg}`,
+                display: 'flex', flexDirection: 'column', gap: 4,
+                background: audioTone.bg, border: `1px solid ${audioTone.fg}`,
                 borderRadius: 6, padding: '6px 10px', fontSize: 'var(--lbb-fs-11-5)',
               }}>
-                <span style={{
-                  width: 8, height: 8, borderRadius: '50%', background: tone.fg, flexShrink: 0,
-                }} />
-                <span style={{ fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: '0.07em', textTransform: 'uppercase', fontSize: 'var(--lbb-fs-10-5)' }}>
-                  {t('collection.forum.lbdir.title')}
-                </span>
-                <span style={{ color: tone.fg, fontWeight: 600 }}>
-                  {lbdirBusy
-                    ? t('collection.forum.lbdir.checking')
-                    : t(LBDIR_STATE_KEY[(lbdir?.label_key ?? 'error') as keyof typeof LBDIR_STATE_KEY]
-                          ?? LBDIR_STATE_KEY.error, lbdir?.label_params ?? {})}
-                </span>
-                {!lbdirBusy && chk && (
-                  <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
-                    {t('collection.forum.lbdir.counts', {
-                      pass: chk.pass, total: chk.total, missing: chk.missing,
-                      mismatch: chk.mismatch, extra: chk.extra,
-                    })}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                  <span style={{
+                    width: 8, height: 8, borderRadius: '50%', background: audioTone.fg, flexShrink: 0,
+                  }} />
+                  <span style={{ fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: '0.07em', textTransform: 'uppercase', fontSize: 'var(--lbb-fs-10-5)' }}>
+                    {t('collection.forum.lbdir.title')}
                   </span>
+                  <span style={{ color: audioTone.fg, fontWeight: 600 }}>
+                    {lbdirBusy
+                      ? t('collection.forum.lbdir.checking')
+                      : t(LBDIR_AUDIO_KEY[(lbdir?.audio_label_key ?? lbdir?.label_key ?? 'error') as keyof typeof LBDIR_AUDIO_KEY]
+                            ?? LBDIR_AUDIO_KEY.error, lbdir?.audio_label_params ?? {})}
+                  </span>
+                  {!lbdirBusy && audio && audio.total > 0 && (
+                    <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
+                      {t('collection.forum.lbdir.audioCounts', {
+                        pass: audio.pass, total: audio.total,
+                        missing: audio.missing, mismatch: audio.mismatch,
+                      })}
+                    </span>
+                  )}
+                  {!lbdirBusy && lbdir?.cached && (
+                    <span style={{ color: 'var(--lbb-fg3)' }}>{t('collection.forum.lbdir.cached')}</span>
+                  )}
+                  <span style={{ marginLeft: 'auto' }}>
+                    <Button variant="ghost" size="sm" disabled={lbdirBusy} onClick={() => void loadLbdir(true)}>
+                      {t('collection.forum.lbdir.recheck')}
+                    </Button>
+                  </span>
+                </div>
+                {!lbdirBusy && lbdir?.text_label_key && (
+                  <div style={{ color: 'var(--lbb-fg3)', paddingLeft: 16 }}>
+                    {t(LBDIR_TEXT_KEY[lbdir.text_label_key as keyof typeof LBDIR_TEXT_KEY]
+                         ?? LBDIR_TEXT_KEY.text_none, lbdir.text_label_params ?? {})}
+                    {restored > 0 && ` · ${t('collection.forum.lbdir.restored', { n: restored })}`}
+                    {extra > 0 && ` · ${t('collection.forum.lbdir.unlisted', { n: extra })}`}
+                  </div>
                 )}
-                {!lbdirBusy && lbdir?.cached && (
-                  <span style={{ color: 'var(--lbb-fg3)' }}>{t('collection.forum.lbdir.cached')}</span>
-                )}
-                <span style={{ marginLeft: 'auto' }}>
-                  <Button variant="ghost" size="sm" disabled={lbdirBusy} onClick={() => void loadLbdir(true)}>
-                    {t('collection.forum.lbdir.recheck')}
-                  </Button>
-                </span>
               </div>
             )
           })()}

@@ -653,6 +653,21 @@
           "no_folder": "Kein Sammlungsordner",
           "folder_missing": "Ordner auf der Festplatte fehlt",
           "error": "Status: nicht verfügbar"
+        },
+        "audioCounts": "{{pass}}/{{total}} Audio-Durchlauf · {{missing}} fehlt · {{mismatch}} Abweichung",
+        "restored": "automatisch wiederhergestellte {{n}}-Textdatei(en)",
+        "unlisted": "{{n}} nicht aufgeführte Datei(en) im Ordner",
+        "audio": {
+          "pass": "Alle {{n}}-Audiodateien bestehen den Test",
+          "missing": "{{n}} Audiodatei(en) fehlt/fehlen",
+          "fail": "{{n}} – Nicht übereinstimmende Audiodatei(en)",
+          "none": "Kein Audio im Manifest"
+        },
+        "text": {
+          "pass": "Alle {{total}}-Textdateien sind vorhanden",
+          "missing": "{{n}}- und {{total}}-Textdateien fehlen noch",
+          "mismatch": "Die Textdateien „{{n}}“ und „{{total}}“ weichen vom Manifest ab",
+          "none": "Keine Textdateien im Manifest"
         }
       }
     },
@@ -1598,7 +1613,7 @@
       "regenerate": "Neu generieren",
       "post": "Beitrag…",
       "filterAll": "Alle",
-      "filterTorrents": "Torrents",
+      "filterTorrents": "Torrent-Dateien",
       "filterForum": "Forum",
       "note": "Veröffentlichung für die beste eigene Quelle · {{lb}}"
     },

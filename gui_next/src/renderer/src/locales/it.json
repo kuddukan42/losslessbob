@@ -653,6 +653,21 @@
           "no_folder": "Nessuna cartella della raccolta",
           "folder_missing": "Cartella mancante sul disco",
           "error": "Stato non disponibile"
+        },
+        "audioCounts": "{{pass}}/{{total}} audio pass · {{missing}} mancante · {{mismatch}} non corrispondente",
+        "restored": "file di testo {{n}} ripristinati automaticamente",
+        "unlisted": "{{n}} file non elencati nella cartella",
+        "audio": {
+          "pass": "Tutti i file audio {{n}} superano il test",
+          "missing": "{{n}} file audio mancanti",
+          "fail": "{{n}} file audio non corrispondenti",
+          "none": "Nessun file audio nel manifesto"
+        },
+        "text": {
+          "pass": "Sono presenti tutti i file di testo {{total}}",
+          "missing": "I file di testo {{n}} e {{total}} sono ancora mancanti",
+          "mismatch": "I file di testo {{n}} e {{total}} differiscono dal manifesto",
+          "none": "Nessun file di testo nel manifesto"
         }
       }
     },

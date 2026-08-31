@@ -653,6 +653,21 @@
           "no_folder": "Sin carpeta de colección",
           "folder_missing": "Carpeta ausente en el disco",
           "error": "Estado: no disponible"
+        },
+        "audioCounts": "{{pass}}/{{total}} audio correcto · {{missing}} falta · {{mismatch}} discrepancia",
+        "restored": "Archivos de texto {{n}} restaurados automáticamente",
+        "unlisted": "{{n}} archivo(s) no incluido(s) en la lista de la carpeta",
+        "audio": {
+          "pass": "Todos los archivos de audio {{n}} superan la prueba",
+          "missing": "Faltan archivos de audio {{n}}",
+          "fail": "{{n}}: discrepancia en los archivos de audio",
+          "none": "No hay audio en el manifiesto"
+        },
+        "text": {
+          "pass": "Todos los archivos de texto {{total}} presentes",
+          "missing": "Aún faltan los archivos de texto {{n}} y {{total}}",
+          "mismatch": "Los archivos de texto {{n}} y {{total}} difieren del manifiesto",
+          "none": "No hay archivos de texto en el manifiesto"
         }
       }
     },
