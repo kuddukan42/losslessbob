@@ -1,3 +1,22 @@
+[2026-08-31] — chore: reseed 584 TUIT recordings stalled on the partial-overlay gate
+Changed: qBittorrent runtime setting (not in the repo): `max_concurrent_http_announces` lowered 20 -> 5
+  after a 200-torrent sample showed 33% of tuit announces at status 4 'timed out'. Adding 584 torrents in
+  an hour, atop the 1,833 already tagged, flooded a ~21-member tracker's announce endpoint; torrents that
+  fail to announce are dropped from its peer list, so the site's seeding count falls while the local
+  client still believes it is seeding. Logged as TODO-330.
+Fixed: no code change — 584 recordings that had refused to seed were re-run with `allow_partial_overlay`
+  and accepted. Every one had already hardlinked 100% of its audio and was refused only over a few KB of
+  uploader sidecars. A tally over all 592 stalled overlays found NOT ONE unresolved audio file: 525 .txt,
+  272 .md5, 249 .html, 59 .jpg, 30 .ffp. Causes, per torrent: 512 'no local source' (the uploader's own
+  checksum/info files, which only the swarm has), 203 a size mismatch against the site mirror, 85 a
+  wrong-size local variant. The remainder now downloads into the overlay, never the collection.
+  TUIT seeded total 1,833 -> 2,417. One holdout, rec 2750 / LB-2725 (Montpellier 1995-07-27), refused for
+  an unrelated reason: its linked folder no longer shares enough files with the torrent.
+Added: TODO-329 — the site mirror re-serialises every .html attachment through BeautifulSoup, inflating
+  the LBF DigiFlawFinder files 5-8% so their bytes can never match an uploader's copy. Root-caused this
+  session to site_crawler._save + html_utils.rewrite_links; backend/scraper.py:440 already saves
+  attachments verbatim, so the two fetch paths disagree. Deferred by request until the reseed finished.
+
 [2026-08-30] — feat: seed to WTRF from a list of forum links, with its own overlay
 Added: backend/tracker_seed.py: the tracker-agnostic half of the TUIT seeding pipeline, lifted out of
   tools/tuit_sync.py and parameterised by a `SeedOptions` dataclass. Same three gates as before —
