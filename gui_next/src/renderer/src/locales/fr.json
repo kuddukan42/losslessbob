@@ -1379,7 +1379,8 @@
       "createTorrent": "Créer un torrent…",
       "wishlistGaps_one": "Source manquante dans la liste de souhaits",
       "wishlistGaps_other": "Sources manquantes dans la liste de souhaits",
-      "dossier": "Exporter le dossier…"
+      "dossier": "Exporter le dossier…",
+      "seedWtrf": "Seed vers WTRF"
     },
     "groups": {
       "acquire": "Acquire",
@@ -1520,7 +1521,11 @@
       "wishlistFailed": "Échec de la mise à jour de la liste de souhaits",
       "confirmForumBody": "Publier les entrées {{count}} sur le forum ? Chacune sera publiée avec son objet et son corps générés automatiquement.",
       "confirmRemoveBody_one": "Souhaitez-vous supprimer l'élément {{count}} de votre collection ? Les fichiers présents sur le disque ne seront pas supprimés.",
-      "confirmRemoveBody_other": "Souhaitez-vous supprimer les éléments {{count}} de votre collection ? Les fichiers présents sur le disque ne seront pas supprimés."
+      "confirmRemoveBody_other": "Souhaitez-vous supprimer les éléments {{count}} de votre collection ? Les fichiers présents sur le disque ne seront pas supprimés.",
+      "wtrfSeeded": "{{lb}} vers WTRF {{where}}",
+      "wtrfViaOverlay": "Extrait d'une superposition WTRF Seeds",
+      "wtrfInPlace": "à partir du dossier de la collection",
+      "wtrfSeedFailed": "{{lb}} non initialisé — {{reason}}"
     },
     "panel": {
       "details": "Détails",
@@ -1954,6 +1959,47 @@
         "sealed": "État",
         "seal": "Sceau",
         "open": "Ouvrir"
+      }
+    },
+    "wtrf": {
+      "tab": "Seeding WTRF",
+      "seededCount": "{{count}} initialisé",
+      "linksLabel": "Liens vers les rubriques WTRF",
+      "linksPlaceholder": "Collez un lien vers un sujet WTRF par ligne.\nPréfixe une ligne avec LB-00123 pour épingler explicitement cette entrée.",
+      "linkCount": "Lien(s) {{count}} détecté(s)",
+      "optionsLabel": "Options",
+      "opt": {
+        "overlay": "Créer une superposition de semis",
+        "overlayHelp": "Assemblez l'enregistrement dans <mount>/WTRF Seeds à l'aide du fichier audio lié en dur à partir de la collection et des fichiers sidecar LBF fournis séparément, de sorte que le dossier de la collection ne soit jamais modifié.",
+        "refetch": "Récupérer à nouveau les fichiers sidecars",
+        "refetchHelp": "Téléchargez à nouveau les fichiers « sidecars » LBF depuis losslessbob.com lorsque la copie enregistrée localement n'a pas la bonne taille.",
+        "allowPartial": "Accepter un recouvrement partiel",
+        "allowPartialHelp": "Lancer le processus même si le hachage de la superposition est encore insuffisant. Le reste est téléchargé dans la superposition, jamais dans la collection.",
+        "paused": "Ajouter « en pause »",
+        "pausedHelp": "Ajoutez le torrent à qBittorrent alors qu'il est à l'arrêt."
+      },
+      "seedButton": "Seed vers WTRF",
+      "dryRunButton": "Simulation",
+      "stat": {
+        "links": "Liens",
+        "seeded": "En cours de développement",
+        "failed": "Non pré-rempli"
+      },
+      "note": "Chaque lien est suivi jusqu'à son premier message afin d'obtenir le numéro LB et la pièce jointe .torrent. Un enregistrement n'est mis en partage que lorsque son lb_status est « public » et que le hachage des fichiers est de 100 % en local — un dossier incomplet est signalé, mais jamais imposé.",
+      "historyTitle": "Tentatives récentes de WTRF",
+      "noHistory": "Aucune tentative pour l'instant",
+      "col": {
+        "attempted": "Tentative",
+        "lb": "LB",
+        "status": "État",
+        "confidence": "Confiance",
+        "folder": "Dossier source / erreur"
+      },
+      "log": {
+        "start": "Diffusion de liens WTRF collés…",
+        "dryRunStart": "Test à blanc — résolution des liens WTRF collés, sans rien télécharger…",
+        "found": "Lien(s) vers le sujet {{count}} à parcourir",
+        "done": "Terminé — {{seeded}} intégrées, {{failed}} non intégrées"
       }
     }
   },

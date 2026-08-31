@@ -49,29 +49,18 @@ if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
 from backend import db as database  # noqa: E402
-from backend import qbittorrent, tuit_scraper  # noqa: E402
+from backend import tuit_scraper  # noqa: E402
 from backend.credentials import (  # noqa: E402
-    SERVICE_QBT,
-    SERVICE_QBT_KEY,
     SERVICE_TUIT,
     get_credentials,
     save_credentials,
 )
-from backend.seed_overlay import (  # noqa: E402
-    build_overlay,
-    collection_is_untouched,
-    http_fetch,
-    overlay_status,
-    plan_overlay,
-    snapshot_folder,
+from backend.seed_overlay import overlay_status  # noqa: E402
+from backend.tracker_seed import (  # noqa: E402
+    SeedOptions,
+    find_seedable_folder,
+    qbt_seed,
 )
-from backend.torrent_verify import (  # noqa: E402
-    BencodeError,
-    read_torrent,
-    verify_folder,
-)
-
-SIDECAR_DIR = _project_root / "data" / "site" / "files"
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger("tuit_sync")
@@ -254,234 +243,23 @@ def _check_overlays() -> int:
     return 0
 
 
-def _qbt_seed(torrent_path: str, source_folder: str, paused: bool) -> dict:
-    """Add a .torrent to qBittorrent pointed at an existing collection folder.
+def _seed_options(args) -> SeedOptions:
+    """Translate parsed CLI arguments into a tracker_seed option set.
 
     Args:
-        torrent_path: Local .torrent file.
-        source_folder: Absolute path of the folder holding the files.
-        paused: Add in a stopped state.
-
-    Returns:
-        The qbittorrent module's result dict (``ok`` plus optional ``error``).
-    """
-    host = database.get_meta("qbt_host") or "localhost"
-    port = int(database.get_meta("qbt_port") or 8080)
-    category = database.get_meta("qbt_category") or ""
-    tags = ",".join(t for t in [database.get_meta("qbt_tags") or "", "tuit"] if t)
-    qbt_user, qbt_pass = get_credentials(SERVICE_QBT)
-    _, qbt_key = get_credentials(SERVICE_QBT_KEY)
-
-    result = qbittorrent.add_torrent_for_seeding(
-        torrent_path=torrent_path,
-        source_folder=source_folder,
-        host=host,
-        port=port,
-        username=qbt_user,
-        password=qbt_pass,
-        category=category,
-        tags=tags,
-        api_key=qbt_key,
-    )
-    if result.get("ok") and paused:
-        logger.info("  (added; pause it in the qBittorrent UI if needed)")
-    return result
-
-
-def _find_seedable_folder(lb_number: int | None, torrent_path: str, args
-                          ) -> tuple[str | None, str]:
-    """Find a collection folder that may be seeded and is already complete.
-
-    Three gates, all of which must pass before qBittorrent is told anything:
-
-    1. ``db.is_seedable_to_tracker()`` — lb_status must be 'public'.
-    2. A linked collection folder must exist on disk whose name matches the
-       torrent's root folder.
-    3. Every piece must hash correctly against that folder. An incomplete
-       folder is refused outright: handing qBittorrent a 99% torrent makes it
-       download the remainder *into* the collection folder, and curated
-       folders are never written to.
-
-    With ``--overlay``, gate 3 becomes a fallback rather than a refusal: an
-    overlay folder is assembled elsewhere and seeded from instead.
-
-    Args:
-        lb_number: LB number claimed by the recording.
-        torrent_path: Local .torrent file.
         args: Parsed CLI arguments.
 
     Returns:
-        (folder_path or None, human-readable reason).
+        The SeedOptions describing this run's TUIT seeding policy.
     """
-    if lb_number is None:
-        return None, "recording has no LB number"
-
-    allowed, why = database.is_seedable_to_tracker(lb_number)
-    if not allowed:
-        return None, f"LB-{lb_number} not seedable ({why})"
-
-    folders = [f for f in database.get_folders_for_lb(lb_number) if Path(f).is_dir()]
-    if not folders:
-        return None, f"no collection folder on disk for LB-{lb_number}"
-
-    try:
-        info = read_torrent(torrent_path)
-    except BencodeError as exc:
-        return None, f"unreadable torrent: {exc}"
-
-    # Seeding the collection folder in place needs its name to equal the torrent
-    # root, since a client resolves files as <save_path>/<root>/… An overlay is
-    # created *with* the torrent's name and sources files by basename, so there
-    # the collection folder may be named anything.
-    named = [f for f in folders if Path(f).name == info.name]
-
-    best = ""
-    for folder in named:
-        result = verify_folder(info, folder)
-        if result.complete:
-            return folder, f"verified in place, {result.summary()}"
-        best = result.summary()
-        if result.missing_files:
-            best += f"; first missing: {Path(result.missing_files[0]).name}"
-
-    if not args.overlay:
-        if not named:
-            return None, (
-                f"torrent root {info.name!r} matches no linked folder "
-                f"(have {', '.join(Path(f).name for f in folders[:3])}) "
-                f"— use --overlay to seed regardless of folder naming"
-            )
-        return None, f"folder incomplete — {best} (use --overlay to assemble one)"
-
-    source = named[0] if named else _best_source_folder(info, folders)
-    if source is None:
-        return None, (
-            f"no linked folder shares enough files with the torrent "
-            f"(have {', '.join(Path(f).name for f in folders[:3])})"
-        )
-    return _build_seed_overlay(info, source, args, best or "name mismatch")
-
-
-def _best_source_folder(info, folders: list[str]) -> str | None:
-    """Pick the collection folder that supplies the most of a torrent's audio.
-
-    Used when no folder is named after the torrent root — the uploader's naming
-    rarely matches the collection's. Selection is by content, not by name.
-
-    Args:
-        info: Parsed torrent metadata.
-        folders: Candidate collection folders, all known to exist.
-
-    Returns:
-        The best-matching folder, or None when none supplies any audio.
-    """
-    wanted = {
-        Path(p).name for p, _s in info.files
-        if Path(p).suffix.lower() in (".flac", ".shn", ".wav", ".ape")
-    }
-    if not wanted:
-        wanted = {Path(p).name for p, _s in info.files}
-
-    best_folder, best_hits = None, 0
-    for folder in folders:
-        try:
-            have = {p.name for p in Path(folder).iterdir() if p.is_file()}
-        except OSError:
-            continue
-        hits = len(wanted & have)
-        if hits > best_hits:
-            best_folder, best_hits = folder, hits
-    return best_folder
-
-
-def _overlay_root_for(source_folder: Path, override: str) -> Path:
-    """Choose where the overlay lives — same filesystem as the source.
-
-    Hardlinks cannot cross a mount, and the drives here are separate NTFS
-    volumes, so the overlay is placed at ``<mount>/TUIT Seeds`` by default.
-    The directory sits outside the ``…/Concerts`` roots in
-    ``collection_mounts``, so the disk scanner will not index it as collection.
-
-    Args:
-        source_folder: The collection folder being seeded from.
-        override: An explicit root from --overlay-root, or "".
-
-    Returns:
-        The overlay root directory.
-    """
-    if override:
-        return Path(override)
-    parts = source_folder.resolve().parts
-    # /mnt/<DRIVE>/Concerts/... → /mnt/<DRIVE>/TUIT Seeds
-    if len(parts) >= 3 and parts[1] == "mnt":
-        return Path(parts[0], parts[1], parts[2], "TUIT Seeds")
-    return source_folder.parent / "TUIT Seeds"
-
-
-def _build_seed_overlay(info, source_folder: str, args, shortfall: str
-                        ) -> tuple[str | None, str]:
-    """Assemble an overlay folder that can seed without touching the collection.
-
-    Audio is hardlinked from the collection (free, same inode); LBF sidecars are
-    copied from ``data/site/files`` or re-fetched from losslessbob.com; anything
-    still unresolved is left to the swarm and lands in the overlay. Any
-    collection file sharing a piece with unresolved data is copied rather than
-    linked, so a client write can never reach the collection's inode.
-
-    Args:
-        info: Parsed torrent metadata.
-        source_folder: The collection folder to source audio from.
-        args: Parsed CLI arguments.
-        shortfall: The collection folder's verify summary, for messages.
-
-    Returns:
-        (overlay_path or None, human-readable reason).
-    """
-    source = Path(source_folder)
-    root = _overlay_root_for(source, args.overlay_root)
-    names = [Path(p).name for p, _s in info.files]
-    site_urls = (
-        database.get_site_file_urls(names) if args.refetch_sidecars else {}
-    )
-
-    plan = plan_overlay(info, source, root, [SIDECAR_DIR], site_urls)
-    logger.info("  overlay: %s", plan.summary())
-    if plan.fetch_bytes > args.max_fetch_mb * 1_000_000:
-        return None, (
-            f"overlay would leave {plan.fetch_bytes / 1e6:.1f} MB to download, "
-            f"over the {args.max_fetch_mb} MB limit ({shortfall})"
-        )
-
-    before = snapshot_folder(source)
-    built = build_overlay(
-        plan, fetcher=http_fetch if args.refetch_sidecars else None
-    )
-    for err in built["errors"]:
-        logger.warning("  overlay: %s", err)
-
-    touched = collection_is_untouched(source, before)
-    if touched:
-        return None, (
-            f"ABORTED — building the overlay altered the collection: "
-            f"{', '.join(touched[:3])}"
-        )
-
-    result = verify_folder(info, plan.target_dir)
-    logger.info("  overlay verify: %s", result.summary())
-    if not result.complete:
-        if not args.allow_partial_overlay:
-            return None, (
-                f"overlay still {result.summary()} — qBittorrent would download "
-                f"the rest into it; re-run with --allow-partial-overlay to accept"
-            )
-        return str(plan.target_dir), (
-            f"overlay {result.summary()}; remainder will download into the "
-            f"overlay, not the collection"
-        )
-    return str(plan.target_dir), (
-        f"overlay assembled 100% locally ({built['linked']} hardlinked, "
-        f"{built['copied']} copied, {built['refetched']} re-fetched); "
-        f"collection untouched"
+    return SeedOptions(
+        tracker="tuit",
+        overlay=args.overlay,
+        overlay_root=args.overlay_root,
+        refetch_sidecars=args.refetch_sidecars,
+        max_fetch_mb=args.max_fetch_mb,
+        allow_partial_overlay=args.allow_partial_overlay,
+        paused=args.paused,
     )
 
 
@@ -546,7 +324,8 @@ def _sync_one(session, rec_id: int, row, args) -> str:
         )
         return "downloaded"
 
-    folder, reason = _find_seedable_folder(rec.lb_number, torrent_path, args)
+    opts = _seed_options(args)
+    folder, reason = find_seedable_folder(rec.lb_number, torrent_path, opts)
     if folder is None:
         database.add_tuit_download(
             rec.rec_id, rec.lb_number, torrent_path, "not_seeded", error=reason
@@ -557,7 +336,7 @@ def _sync_one(session, rec_id: int, row, args) -> str:
     dl_id = database.add_tuit_download(
         rec.rec_id, rec.lb_number, torrent_path, "downloaded", seed_folder=folder
     )
-    qbt = _qbt_seed(torrent_path, folder, args.paused)
+    qbt = qbt_seed(torrent_path, folder, opts)
     if qbt.get("ok"):
         database.update_tuit_download(dl_id, {
             "status": "qbt_added",

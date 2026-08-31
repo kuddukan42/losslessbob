@@ -137,7 +137,7 @@ interface SnapshotRow {
 
 type PreservationJob = 'verify' | 'baseline' | 'linkcheck' | 'snapshot'
 
-type TabId = 'crawler' | 'entry' | 'bootlegs' | 'bobdylan' | 'setlistfm' | 'geocoder' | 'preservation'
+type TabId = 'crawler' | 'entry' | 'bootlegs' | 'bobdylan' | 'setlistfm' | 'geocoder' | 'preservation' | 'wtrf'
 
 interface LogLine { ts: string; text: string; tone?: 'ok' | 'bad' | 'warn' | 'mute' }
 
@@ -1258,6 +1258,226 @@ function PreservationTab({ status, logs, onClearLog }: {
 
 // ── Main Screen ───────────────────────────────────────────────────────────────
 
+// ── Tab: WTRF seeding ─────────────────────────────────────────────────────────
+
+interface WtrfSeedEvent {
+  event: 'start' | 'link' | 'done' | 'error'
+  index?: number
+  total?: number
+  url?: string
+  lb_number?: number | null
+  title?: string
+  status?: 'resolved' | 'downloaded' | 'qbt_added' | 'not_seeded' | 'failed'
+  reason?: string
+  error?: string
+  confidence?: string
+  folder?: string
+  overlay?: boolean
+  seeded?: number
+  failed?: number
+}
+
+interface WtrfDownload {
+  id: number
+  lb_number: number
+  topic_url: string | null
+  torrent_path: string | null
+  confidence: string | null
+  status: string
+  error: string | null
+  seed_folder: string | null
+  attempted_at: string | null
+}
+
+/** Minimal SSE frame reader for /api/wtrf/seed_links (mirrors ScreenDbEditor's). */
+async function readSSE<T>(resp: Response, onEvent: (ev: T) => void): Promise<void> {
+  if (!resp.body) return
+  const reader = resp.body.getReader()
+  const decoder = new TextDecoder()
+  let buf = ''
+  for (;;) {
+    const { done, value } = await reader.read()
+    if (done) break
+    buf += decoder.decode(value, { stream: true })
+    let nl: number
+    while ((nl = buf.indexOf('\n\n')) >= 0) {
+      const frame = buf.slice(0, nl)
+      buf = buf.slice(nl + 2)
+      if (!frame.startsWith('data: ')) continue
+      try { onEvent(JSON.parse(frame.slice(6)) as T) } catch { /* malformed frame */ }
+    }
+  }
+}
+
+function WtrfTab({ logs, onClearLog, onLog }: {
+  logs: LogLine[]; onClearLog: () => void
+  onLog: (text: string, tone?: LogLine['tone']) => void
+}) {
+  const { t } = useTranslation()
+  const [links, setLinks] = useState('')
+  const [overlay, setOverlay] = useState(true)
+  const [refetch, setRefetch] = useState(true)
+  const [allowPartial, setAllowPartial] = useState(false)
+  const [paused, setPaused] = useState(false)
+  const [running, setRunning] = useState(false)
+  const [progress, setProgress] = useState({ done: 0, total: 0, seeded: 0, failed: 0 })
+  const [history, setHistory] = useState<WtrfDownload[]>([])
+
+  useEffect(() => {
+    fetch(`${BASE}/api/wtrf/downloads?limit=25`)
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then((rows: WtrfDownload[]) => setHistory(rows.slice(0, 25)))
+      .catch(() => {})
+  }, [running])
+
+  const linkCount = links.split('\n').filter(l => l.includes('watchingtheriverflow.org')).length
+
+  const run = async (dryRun: boolean) => {
+    if (running) return
+    setRunning(true)
+    setProgress({ done: 0, total: 0, seeded: 0, failed: 0 })
+    onLog(dryRun ? t('scraper.wtrf.log.dryRunStart') : t('scraper.wtrf.log.start'), 'mute')
+    try {
+      const resp = await fetch(`${BASE}/api/wtrf/seed_links`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          links, dry_run: dryRun, overlay,
+          refetch_sidecars: refetch,
+          allow_partial_overlay: allowPartial,
+          paused,
+        }),
+      })
+      if (!resp.ok) {
+        const d = await resp.json().catch(() => ({}))
+        onLog(d.error ?? `HTTP ${resp.status}`, 'bad')
+        return
+      }
+      await readSSE<WtrfSeedEvent>(resp, ev => {
+        if (ev.event === 'start') {
+          setProgress(p => ({ ...p, total: ev.total ?? 0 }))
+          onLog(t('scraper.wtrf.log.found', { count: ev.total ?? 0 }), 'mute')
+        } else if (ev.event === 'link') {
+          const lb = ev.lb_number ? `LB-${String(ev.lb_number).padStart(5, '0')}` : '—'
+          const tail = ev.error || ev.reason || ev.status || ''
+          const tone: LogLine['tone'] =
+            ev.status === 'qbt_added' ? 'ok' : ev.status === 'resolved' ? 'mute'
+              : ev.error ? 'bad' : 'warn'
+          onLog(`[${ev.index}/${ev.total}] ${lb} — ${tail}`, tone)
+          setProgress(p => ({
+            ...p,
+            done: ev.index ?? p.done,
+            seeded: p.seeded + (ev.status === 'qbt_added' ? 1 : 0),
+            failed: p.failed + (ev.status && ev.status !== 'qbt_added' && ev.status !== 'resolved' ? 1 : 0),
+          }))
+        } else if (ev.event === 'done') {
+          if (ev.error) onLog(ev.error, 'bad')
+          else onLog(t('scraper.wtrf.log.done', { seeded: ev.seeded ?? 0, failed: ev.failed ?? 0 }), 'ok')
+        } else if (ev.event === 'error') {
+          onLog(ev.error ?? 'error', 'bad')
+        }
+      })
+    } catch (e) {
+      onLog((e as Error).message, 'bad')
+    } finally {
+      setRunning(false)
+    }
+  }
+
+  const histTone = (s: string): 'ok' | 'warn' | 'bad' | 'mute' =>
+    s === 'qbt_added' ? 'ok' : s === 'downloaded' ? 'mute' : s === 'not_seeded' ? 'warn' : 'bad'
+
+  return (
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+      <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
+        <div style={{ width: 340, flexShrink: 0, padding: '14px 16px', borderRight: '1px solid var(--lbb-border)', overflowY: 'auto' }}>
+          <CtrlLabel>{t('scraper.wtrf.linksLabel')}</CtrlLabel>
+          <textarea
+            value={links}
+            onChange={e => setLinks(e.target.value)}
+            spellCheck={false}
+            placeholder={t('scraper.wtrf.linksPlaceholder')}
+            style={{
+              width: '100%', height: 150, resize: 'vertical', padding: 8,
+              fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)',
+              background: 'var(--lbb-surface2)', color: 'var(--lbb-fg1)',
+              border: '1px solid var(--lbb-border)', borderRadius: 6,
+            }}
+          />
+          <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 4 }}>
+            {t('scraper.wtrf.linkCount', { count: linkCount })}
+          </div>
+
+          <CtrlLabel>{t('scraper.wtrf.optionsLabel')}</CtrlLabel>
+          {([
+            ['overlay', overlay, setOverlay],
+            ['refetch', refetch, setRefetch],
+            ['allowPartial', allowPartial, setAllowPartial],
+            ['paused', paused, setPaused],
+          ] as const).map(([key, value, setter]) => (
+            <label key={key} title={t(`scraper.wtrf.opt.${key}Help`)} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', cursor: 'pointer', marginBottom: 4 }}>
+              <input type="checkbox" checked={value} onChange={e => setter(e.target.checked)} disabled={running} />
+              {t(`scraper.wtrf.opt.${key}`)}
+            </label>
+          ))}
+
+          <div style={{ display: 'flex', gap: 8, marginTop: 16 }}>
+            <Button variant="primary" size="sm" icon="play" onClick={() => run(false)} disabled={running || linkCount === 0}>
+              {t('scraper.wtrf.seedButton')}
+            </Button>
+            <Button variant="ghost" size="sm" onClick={() => run(true)} disabled={running || linkCount === 0}>
+              {t('scraper.wtrf.dryRunButton')}
+            </Button>
+          </div>
+
+          {(running || progress.total > 0) && (
+            <>
+              <div style={{ marginTop: 12 }}>
+                <ProgressBar value={progress.done} total={progress.total} indeterminate={running && progress.total === 0} />
+              </div>
+              <StatGrid rows={[
+                [t('scraper.wtrf.stat.links'), progress.total],
+                [t('scraper.wtrf.stat.seeded'), progress.seeded],
+                [t('scraper.wtrf.stat.failed'), progress.failed],
+              ]} />
+            </>
+          )}
+
+          <div style={{ marginTop: 14, fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', lineHeight: 1.5 }}>
+            {t('scraper.wtrf.note')}
+          </div>
+        </div>
+        <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+          <LogPanel lines={logs} onClear={onClearLog} />
+        </div>
+      </div>
+      <div style={{ borderTop: '1px solid var(--lbb-border)', flexShrink: 0 }}>
+        <Toolbar pad="6px 14px">
+          <SectionHead title={t('scraper.wtrf.historyTitle')} style={{ flex: 1, marginBottom: 0 }} />
+        </Toolbar>
+        <div style={{ maxHeight: 180, overflowY: 'auto' }}>
+          <TableShell stickyHeader>
+            <colgroup><col style={{ width: 3 }} /><col style={{ width: 150 }} /><col style={{ width: 90 }} /><col style={{ width: 110 }} /><col style={{ width: 100 }} /><col /></colgroup>
+            <thead><tr><TH /><TH>{t('scraper.wtrf.col.attempted')}</TH><TH>{t('scraper.wtrf.col.lb')}</TH><TH>{t('scraper.wtrf.col.status')}</TH><TH>{t('scraper.wtrf.col.confidence')}</TH><TH>{t('scraper.wtrf.col.folder')}</TH></tr></thead>
+            <tbody>
+              {history.map(h => (
+                <TR key={h.id}>
+                  <TD mono dim>{fmtTs(h.attempted_at)}</TD>
+                  <TD mono>{h.lb_number ? `LB-${String(h.lb_number).padStart(5, '0')}` : '—'}</TD>
+                  <TD><Pill tone={histTone(h.status)} soft dot>{h.status}</Pill></TD>
+                  <TD dim>{h.confidence ?? '—'}</TD>
+                  <TD mono dim><span title={h.seed_folder ?? h.error ?? ''}>{h.seed_folder ?? h.error ?? '—'}</span></TD>
+                </TR>
+              ))}
+              {history.length === 0 && <TR><TD colSpan={5} style={{ textAlign: 'center', color: 'var(--lbb-fg3)' }}>{t('scraper.wtrf.noHistory')}</TD></TR>}
+            </tbody>
+          </TableShell>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const TABS: { id: TabId; label: string }[] = [
   { id: 'crawler',   label: 'LB Crawler' },
   { id: 'entry',     label: 'Entry Metadata' },
@@ -1266,6 +1486,7 @@ const TABS: { id: TabId; label: string }[] = [
   { id: 'setlistfm', label: 'Setlist.fm' },
   { id: 'geocoder',  label: 'Geocoder' },
   { id: 'preservation', label: 'Preservation' },
+  { id: 'wtrf',      label: 'WTRF Seeding' },
 ]
 
 function ScreenScraperInner() {
@@ -1291,6 +1512,7 @@ function ScreenScraperInner() {
   const [geoStats,       setGeoStats]       = useState<GeoStats | null>(null)
   const [invStats,       setInvStats]       = useState<{ total: number } | null>(null)
   const [entryDbStats,   setEntryDbStats]   = useState<{ ok: number } | null>(null)
+  const [wtrfStats,      setWtrfStats]      = useState<{ seeded: number; last: string } | null>(null)
 
   // Logs per tab (max 500 lines each) — held in a module-level store so they
   // survive this screen unmounting on tab navigation (TODO-148).
@@ -1324,6 +1546,23 @@ function ScreenScraperInner() {
   }, [clearLogInStore])
 
   // Fetch all statuses
+  // WTRF seeding has no background job to poll — its strip card summarises
+  // wtrf_downloads instead, refreshed when the tab is opened.
+  useEffect(() => {
+    fetch(`${BASE}/api/wtrf/downloads?limit=200`)
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then((rows: { status: string; seed_folder: string | null; attempted_at: string | null }[]) => {
+        // Only the seeding routes write seed_folder; the LB-first crawl also
+        // marks rows 'qbt_added' when it adds a torrent to *download*.
+        const seeds = rows.filter(r => r.seed_folder)
+        setWtrfStats({
+          seeded: seeds.filter(r => r.status === 'qbt_added').length,
+          last: seeds.length ? fmtTs(seeds[0].attempted_at) : '—',
+        })
+      })
+      .catch(() => {})
+  }, [activeTab])
+
   const pollAll = useCallback(async () => {
     const results = await Promise.allSettled([
       fetch(`${BASE}/api/crawler/status`).then(r => r.ok ? r.json() : null),
@@ -1544,6 +1783,13 @@ function ScreenScraperInner() {
         : '—',
       badge: preservStatus?.running ? (preservStatus.job ?? undefined) : undefined,
     },
+    {
+      id: 'wtrf', label: t('scraper.wtrf.tab'),
+      running: false,
+      status: 'manual',
+      stat: wtrfStats ? t('scraper.wtrf.seededCount', { count: wtrfStats.seeded }) : '—',
+      lastDate: wtrfStats?.last ?? '—',
+    },
   ]
 
   return (
@@ -1576,6 +1822,7 @@ function ScreenScraperInner() {
           {activeTab === 'setlistfm' && <SetlistFmTab  status={setlistFmStatus} logs={logs.setlistfm} onClearLog={() => clearLog('setlistfm')} />}
           {activeTab === 'geocoder'  && <GeocoderTab   status={geocoderStatus}  geoStats={geoStats}  logs={logs.geocoder}  onClearLog={() => clearLog('geocoder')} />}
           {activeTab === 'preservation' && <PreservationTab status={preservStatus} logs={logs.preservation} onClearLog={() => clearLog('preservation')} />}
+          {activeTab === 'wtrf'      && <WtrfTab       logs={logs.wtrf}      onClearLog={() => clearLog('wtrf')} onLog={(text, tone) => pushLog('wtrf', text, tone)} />}
         </div>
       </div>
     </>

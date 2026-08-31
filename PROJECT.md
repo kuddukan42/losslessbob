@@ -138,6 +138,8 @@ losslessbob/
 │   ├── tuit_scraper.py       # TUIT private tracker (tangledupintorrents.org): login, /browse + /recordings parsers, torrent fetch (TODO-314)
 │   ├── torrent_verify.py     # Bencode reader + read-only piece-hash check of a folder against a .torrent; gates seeding so incomplete folders are never written to (TODO-314)
 │   ├── seed_overlay.py       # Assembles a seedable folder outside the collection: audio hardlinked, LBF sidecars copied from data/site/files or re-fetched from the LB site (TODO-314)
+│   ├── tracker_seed.py       # Tracker-agnostic seeding pipeline (gates → overlay → qBittorrent), parameterised per tracker: <mount>/<TRACKER> Seeds + qbt tag. Shared by TUIT and WTRF
+│   ├── wtrf_seed.py          # Pasted WTRF topic links → first post → LB number + .torrent attachment → tracker_seed; refuses to guess between several LB numbers
 │   ├── ab_clips.py           # Aligned A/B listening clip service (LISTENING §2, TODO-231/232/233)
 │   ├── bobtalk.py            # Locates Olof's curated bobtalk quotes in our audio; scoring, confidence, persistence (TODO-303)
 │   ├── bobtalk_decodes.py    # Discardable cache of raw ASR window decodes, so re-scoring costs no CPU (TODO-303, BUG-314)
@@ -200,6 +202,7 @@ losslessbob/
 │   ├── test_tuit_scraper.py  # backend/tuit_scraper.py: TUIT browse/detail parsers, row merge, bencode root name (TODO-314)
 │   ├── test_torrent_verify.py # backend/torrent_verify.py: bencode decode, torrent parse, folder piece verification, read-only guarantees (TODO-314)
 │   ├── test_seed_overlay.py  # backend/seed_overlay.py: link/copy/refetch planning, piece-boundary safety rule, collection-untouched assertions (TODO-314)
+│   ├── test_wtrf_seed.py     # backend/wtrf_seed.py: link parsing/canonicalisation, LB-resolution priority, ambiguity refusal, per-tracker overlay roots
 │   ├── test_tuit_db.py       # backend/db.py: tuit_recordings/tuit_downloads accessors + get_folders_for_lb (TODO-314)
 │   ├── test_checksum_utils_site_recovery.py # find_site_recoverable_files: MD5 + filename-fallback matching against data/site/files/
 │   ├── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
@@ -434,7 +437,10 @@ Index: `idx_changes_lb ON entry_changes(lb_number, changed_at DESC)`.
 
 ### `wtrf_downloads` — WTRF forum torrent-fetch attempts (USER table)
 One row per attempt to locate and download a missing item's torrent from the WTRF forum
-(`backend/forum_poster.py` / `POST /api/wtrf/fetch_torrent`, `POST /api/wtrf/crawl_missing`).
+(`backend/forum_poster.py` / `POST /api/wtrf/fetch_torrent`, `POST /api/wtrf/crawl_missing`), and
+one row per attempt to *seed* to WTRF (`backend/wtrf_seed.py` / `POST /api/wtrf/seed_links`,
+`POST /api/entry/<lb>/seed_wtrf`). Only the seeding paths ever write `seed_folder`, which is how the
+two are told apart — the fetch path also reaches `'qbt_added'`, but for a download, not a seed.
 | Column | Type | Notes |
 |--------|------|-------|
 | id | INTEGER PK | Auto-increment |
@@ -443,8 +449,9 @@ One row per attempt to locate and download a missing item's torrent from the WTR
 | torrent_path | TEXT | Local path of the downloaded .torrent, if any |
 | confidence | TEXT | `'definitive'`, `'high'`, `'medium'`, `'needs_review'`, `'ambiguous'`, `'not_found'` |
 | signals_json | TEXT | JSON blob of the matching signals used to score confidence |
-| status | TEXT NOT NULL | `'pending'`, `'downloaded'`, `'qbt_added'`, `'failed'`, `'skipped'` (default `'pending'`) |
+| status | TEXT NOT NULL | `'pending'`, `'downloaded'`, `'qbt_added'`, `'not_seeded'`, `'failed'`, `'skipped'` (default `'pending'`). `'not_seeded'` = the torrent was fetched but a seed was refused (not public, no matching folder, or the folder is not 100% complete) |
 | error | TEXT | Failure detail, if any |
+| seed_folder | TEXT | Folder handed to qBittorrent — the collection folder, or a `<mount>/WTRF Seeds` overlay. NULL on the fetch-only path |
 | attempted_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
 | qbt_added_at | TIMESTAMP | When the torrent was added to qBittorrent, if applicable |
 
@@ -2049,6 +2056,8 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | POST | `/api/wtrf/fetch_torrent` | Search WTRF for a torrent matching a single LB entry and download it. |
 | GET | `/api/wtrf/downloads` | List `wtrf_downloads` records, optionally filtered by `lb_number`. |
 | POST | `/api/wtrf/crawl_missing` | Start a background batch crawl of missing items (SSE stream). |
+| POST | `/api/wtrf/seed_links` | Seed every recording named by a pasted list of WTRF topic links (SSE stream: start/link/done). Body: `{links, save_path?, delay?, dry_run?}` plus the seeding-policy fields (`overlay`, `overlay_root`, `refetch_sidecars`, `max_fetch_mb`, `allow_partial_overlay`, `paused`). Single-instance guarded. |
+| POST | `/api/entry/<lb>/seed_wtrf` | Seed one LB entry to WTRF. Uses `topic_url` when given, else searches the board. Refuses a non-public entry before any forum round-trip. Returns `{ok, folder, overlay, reason, confidence, error}`. |
 
 ### Archive.org Upload
 | Method | Route | Description |
@@ -2436,7 +2445,7 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | ScreenSpectrograms | `screens/ScreenSpectrograms.tsx` | Done — tool dots, batch generate, PNG viewer |
 | ScreenMap | `screens/ScreenMap.tsx` | Done — filter rail + browser map launcher |
 | ScreenDbEditor | `screens/ScreenDbEditor.tsx` | Done — multi-DB (`losslessbob`/`batchverify`/`tapematch`) table browser, query console, curator-gated edit/delete/export at `/dbeditor`. Sidebar side-panels (losslessbob DB only): DB Integrity, LB Aliases, and **Known Tapers** (TODO-258) — a filterable list of merged known-taper aliases with builtin/user origin tags (`/api/tapers/aliases`), curator-gated inline add + remove, and a "Recompute derived data" button that streams the chained `/api/derived/recompute` SSE with per-step status dots. |
-| ScreenScraper | `screens/ScreenScraper.tsx` | Done — curator-gated (`CuratorRoute`) at `/scraper`: site crawler, entry scraper, bootleg catalog, bobdylan.com, setlist.fm, geocoder, per-tab live log (`scraperLogStore`). **Preservation** tab (2026-07-23, TODO-266) drives the preservation stack via `/api/preservation/*`: job chips (verify/baseline/linkcheck/snapshot) with per-job options, Run/Stop, a 2 s poll feeding progress bar + stage pill + diffed log lines, a per-job result StatGrid with failed/cancelled banners and an Open report button, the mirror restore one-liner, and a "Snapshots on disk" table (files, size, seal, sealed state, folder-open). Note the screen's table convention: `TR` injects a 3px edge-bar `<td>`, so every colgroup needs a leading `<col width=3>` and every thead a leading `<TH />` (BUG-273). |
+| ScreenScraper | `screens/ScreenScraper.tsx` | Done — curator-gated (`CuratorRoute`) at `/scraper`: site crawler, entry scraper, bootleg catalog, bobdylan.com, setlist.fm, geocoder, per-tab live log (`scraperLogStore`). **WTRF Seeding** tab (2026-08-30): paste a list of WTRF topic links, resolve each to its LB number and `.torrent` attachment, and seed via `POST /api/wtrf/seed_links` (SSE) — options for the overlay, sidecar re-fetch, partial overlay and paused-add, a Dry run that downloads nothing, and a recent-attempts table. **Preservation** tab (2026-07-23, TODO-266) drives the preservation stack via `/api/preservation/*`: job chips (verify/baseline/linkcheck/snapshot) with per-job options, Run/Stop, a 2 s poll feeding progress bar + stage pill + diffed log lines, a per-job result StatGrid with failed/cancelled banners and an Open report button, the mirror restore one-liner, and a "Snapshots on disk" table (files, size, seal, sealed state, folder-open). Note the screen's table convention: `TR` injects a 3px edge-bar `<td>`, so every colgroup needs a leading `<col width=3>` and every thead a leading `<TH />` (BUG-273). |
 | ScreenSharing | `screens/ScreenSharing.tsx` | Done — Cloudflare Tunnel file-sharing at `/sharing`: create/list/revoke shares, copy share URL |
 | ScreenTrading | `screens/ScreenTrading.tsx` | Done — collection trading at `/trading`: export `.lbcollection`, import/manage friend collections, compare diffs |
 

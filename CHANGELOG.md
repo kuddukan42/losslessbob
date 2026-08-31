@@ -1,3 +1,36 @@
+[2026-08-30] — feat: seed to WTRF from a list of forum links, with its own overlay
+Added: backend/tracker_seed.py: the tracker-agnostic half of the TUIT seeding pipeline, lifted out of
+  tools/tuit_sync.py and parameterised by a `SeedOptions` dataclass. Same three gates as before —
+  `is_seedable_to_tracker` (lb_status must be 'public'), the torrent root must name a linked collection
+  folder, and `torrent_verify` must hash that folder to 100% locally — with the overlay as gate 3's
+  fallback. The tracker name now drives the overlay root and the qBittorrent tag, so WTRF assembles at
+  `<mount>/WTRF Seeds` and TUIT keeps `<mount>/TUIT Seeds`; the two never share a directory, because the
+  same show's torrents differ in their LBF sidecars.
+Added: backend/wtrf_seed.py: walks a pasted list of WTRF topic links to the recordings they seed —
+  first post → LB number + `.torrent` attachment → download → tracker_seed. The LB number is read from
+  the post, in priority order attachment filename ("LB-00008.torrent", definitive) → topic title → body;
+  a field naming several distinct LB numbers is reported ambiguous and refused rather than guessed at,
+  since seeding the wrong recording under someone else's post cannot be taken back. A line may pin the
+  entry explicitly by writing "LB-00123" before the URL. Link canonicalisation collapses scheme, `www.`,
+  `#msg` anchors and `.msgNNNN`/page offsets, so one topic is walked once whatever form it was copied in.
+Added: backend/app.py: `POST /api/wtrf/seed_links` streams the batch as SSE (start / link / done),
+  single-instance guarded like the crawl; `POST /api/entry/<lb>/seed_wtrf` seeds one entry, using a
+  supplied `topic_url` when the curator has the link and falling back to the board search otherwise.
+  Both refuse a non-public entry before spending a forum round-trip. The overlay defaults ON here,
+  unlike the TUIT CLI: a WTRF torrent carries the LBF sidecars the curated folder does not keep, so
+  seeding in place all but always falls a fraction short.
+Added: gui_next ScreenScraper: a "WTRF Seeding" tab — paste box, seeding options, Seed/Dry-run buttons,
+  live SSE log, and a recent-attempts table. Its strip card counts only rows with a `seed_folder`, since
+  the LB-first crawl also marks rows 'qbt_added' when it adds a torrent to *download*.
+Added: gui_next library actions: a per-recording "Seed to WTRF" action in the share group, on both the
+  context menu and the detail panel.
+Changed: backend/db.py: `wtrf_downloads` gains `seed_folder` (idempotent PRAGMA-guarded ALTER) and a
+  'not_seeded' status, mirroring `tuit_downloads`; `add_wtrf_download` takes the new column.
+Changed: tools/tuit_sync.py: delegates to backend/tracker_seed.py — 261 lines lighter, behaviour and
+  the `TUIT Seeds` overlay root unchanged.
+Added: tests/test_wtrf_seed.py: 27 tests over link parsing, canonicalisation, LB resolution priority,
+  the ambiguity refusal, and the per-tracker overlay roots.
+
 [2026-08-30] — feat(gui): LBDIR pipeline status in the forum post preview; Bob-O-Matic footer loses its version
 Added: backend/app.py: `GET /api/entry/<lb>/lbdir_status` returns the LBDIR pipeline verdict for an
   LB's filed collection folder — the same `verify_folder_lbdir` check the pipeline's LBDIR step runs,

@@ -46,6 +46,7 @@ export interface ActionHandlers {
   onQbt: (rows: ActionRow[]) => void
   onTorrent: (rows: ActionRow[]) => void
   onForum: (rows: ActionRow[]) => void
+  onSeedWtrf: (row: ActionRow) => void
   onM3u: (rows: ActionRow[]) => void
   onAttach: (row: ActionRow) => void
   onSpectro: (row: ActionRow) => void
@@ -91,6 +92,7 @@ export function buildRecordingActions(row: ActionRow, batch: ActionRow[], h: Act
       { id: 'qbt',      label: t('library.actions.qbtAdd', { count: n }), icon: 'upload', group: 'share', run: () => h.onQbt(targets) },
       { id: 'torrent',  label: t('library.actions.torrent'),  icon: 'copy',     group: 'share', disabled: !targets.some(r => r.path), run: () => h.onTorrent(targets) },
       { id: 'forum',    label: t('library.actions.forumPost', { count: n }), icon: 'globe', group: 'share', run: () => h.onForum(targets) },
+      { id: 'seedWtrf', label: t('library.actions.seedWtrf'), icon: 'upload', group: 'share', disabled: !row.path, run: () => h.onSeedWtrf(row) },
       { id: 'attach',   label: t('library.actions.attachments'), icon: 'attachments', group: 'assets', run: () => h.onAttach(row) },
       { id: 'spectro',  label: t('library.actions.spectrograms'), icon: 'spectro',  group: 'assets', disabled: !row.path, run: () => h.onSpectro(row) },
       { id: 'map',      label: t('library.actions.showOnMap'), icon: 'map',      group: 'assets', run: () => h.onMap() },
