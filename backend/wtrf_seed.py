@@ -73,8 +73,25 @@ DEFAULT_DELAY = 2.0
 #: The separator is optional and the zero padding is not required.
 _LB_TAG_RE = re.compile(r"\bLB[-_ ]?(\d{1,5})\b", re.IGNORECASE)
 
-#: A bare URL inside pasted text.
-_URL_RE = re.compile(r"https?://[^\s<>\"']+")
+#: The board's own hostname, without a ``www.``, taken from FORUM_BASE so the
+#: two can never drift apart.
+_FORUM_HOST = (urlparse(FORUM_BASE).hostname or "").lower().removeprefix("www.")
+
+#: A link inside pasted text. Copying out of the forum rarely yields a tidy
+#: absolute URL: the address bar's own display drops the scheme, so a paste is
+#: usually ``www.<host>/index.php?topic=…`` and sometimes just
+#: ``index.php?topic=…``. All three forms have to be recognised, or a perfectly
+#: good link is silently dropped as "no links found". Non-WTRF absolute URLs
+#: are matched too, then filtered out by :func:`is_wtrf_topic_url`.
+_URL_RE = re.compile(
+    r"https?://[^\s<>\"']+"
+    r"|(?:www\.)?" + re.escape(_FORUM_HOST) + r"[^\s<>\"']*"
+    r"|index\.php\?[^\s<>\"']*",
+    re.IGNORECASE,
+)
+
+#: Punctuation a pasted link picks up from surrounding prose.
+_TRIM = "<>()[]{}.,;:!?\"'"
 
 #: How the LB number was established, strongest first.
 _SOURCE_CONFIDENCE = {
@@ -130,6 +147,34 @@ def _host(url: str) -> str:
     return urlparse(url).hostname.lower().removeprefix("www.") if urlparse(url).hostname else ""
 
 
+def _absolutise(token: str) -> str:
+    """Turn a pasted link fragment into an absolute URL.
+
+    Handles the three shapes a paste actually arrives in — already absolute,
+    scheme-less (``www.<host>/index.php?…``, which is what the browser's
+    address bar displays and therefore what a copy usually yields), and
+    forum-relative (``index.php?…``) — and trims the punctuation a link picks
+    up from the prose around it.
+
+    Args:
+        token: One whitespace-delimited fragment of the pasted text.
+
+    Returns:
+        An absolute URL. Fragments that are not links at all come back
+        unchanged and are rejected later by :func:`is_wtrf_topic_url`.
+    """
+    token = token.strip().strip(_TRIM)
+    if token.lower().startswith(("http://", "https://")):
+        return token
+    if _FORUM_HOST and re.match(
+        r"(?:www\.)?" + re.escape(_FORUM_HOST), token, re.IGNORECASE
+    ):
+        # A scheme-less host cannot go through _resolve_url, which would read
+        # it as a relative path and glue it onto FORUM_BASE.
+        return "http://" + token
+    return _resolve_url(token)
+
+
 def is_wtrf_topic_url(url: str) -> bool:
     """Whether a URL points at a topic on the WTRF forum.
 
@@ -138,13 +183,13 @@ def is_wtrf_topic_url(url: str) -> bool:
     and usually has one, and both reach the same board.
 
     Args:
-        url: Absolute or forum-relative URL.
+        url: Absolute, scheme-less or forum-relative URL.
 
     Returns:
         True for a WTRF topic/msg link, False for anything else pasted along
         with it (image hosts, the curator's own notes, other forums).
     """
-    resolved = _resolve_url(url)
+    resolved = _absolutise(url)
     if _host(resolved) != _host(FORUM_BASE):
         return False
     return "topic=" in resolved or "msg" in resolved
@@ -201,7 +246,7 @@ def parse_topic_links(text: str) -> list[LinkSpec]:
         # part of the URL itself.
         pinned = _lb_numbers_in(_URL_RE.sub(" ", line))
         for url in urls:
-            norm = _canonical_topic_url(_resolve_url(url))
+            norm = _canonical_topic_url(_absolutise(url))
             if norm in seen:
                 continue
             seen.add(norm)

@@ -53,10 +53,20 @@ Added: tests/test_wtrf_seed.py, tests/test_seed_overlay.py: 35 + 39 tests, cover
   dropped, non-public excluded, wrong-size same-name rejected), nested/colliding-basename sourcing,
   sibling-folder supply, and the recursive untouched guard.
 
+Fixed: backend/wtrf_seed.py: a scheme-less paste was silently dropped as "no WTRF topic links found".
+  `_URL_RE` required an `http(s)://` prefix, but the browser's address bar displays the URL without
+  one, so that is what a copy usually yields — `www.watchingtheriverflow.org/index.php?topic=…`. The
+  pattern now also matches a bare forum host and a forum-relative `index.php?…`, and new
+  `_absolutise()` prepends the scheme; `_resolve_url` could not be used for this, since it reads a
+  bare host as a relative path and would glue it onto FORUM_BASE. Trailing prose punctuation is
+  trimmed, so a link pasted mid-sentence still resolves.
+
 Verified live against WTRF: topic 43459 assembled the two-entry "84 Revisited" box set to 100% from
   two collection folders (72 files, all hardlinked, nlink=2, no extra disk) and qBittorrent reports it
   seeding at 100%; topic 53461 correctly dropped the cross-referenced LB-11880 and seeded LB-11872
-  (25/25 files). All four collection folders independently confirmed unmodified afterwards.
+  (25/25 files). Topics 53463/53465/53467, pasted in all three scheme-less/relative shapes, seeded
+  3/3 at 25/25 files each. All seven collection folders independently confirmed unmodified afterwards;
+  every one of the 172 overlay files has a link count of 2, so no bytes were duplicated.
 
 [2026-08-30] — feat(gui): LBDIR pipeline status in the forum post preview; Bob-O-Matic footer loses its version
 Added: backend/app.py: `GET /api/entry/<lb>/lbdir_status` returns the LBDIR pipeline verdict for an
