@@ -6,6 +6,7 @@ import { TableShell, TH, TR, TD } from '../components'
 import { Icon } from '../components/Icon'
 import { useScraperLogStore } from '../lib/scraperLogStore'
 import { LB_SITE_BASE } from '../lib/lbUrl'
+import { copyText } from '../lib/clipboard'
 
 // ── Error Boundary ─────────────────────────────────────────────────────────────
 
@@ -198,9 +199,7 @@ function LogPanel({ lines, onClear }: { lines: LogLine[]; onClear: () => void })
         }}>Clear</button>
         <button type="button" onClick={() => {
           const text = lines.map(l => `${l.ts}  ${l.text}`).join('\n')
-          navigator.clipboard.writeText(text)
-            .then(() => flashCopyLabel('Copied ✓'))
-            .catch(() => flashCopyLabel('Copy failed'))
+          void copyText(text).then(ok => flashCopyLabel(ok ? 'Copied ✓' : 'Copy failed'))
         }} style={{
           fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', background: 'none', border: 'none',
           cursor: 'pointer', padding: '2px 6px',

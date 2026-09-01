@@ -787,7 +787,9 @@
       "vlcRequestFailed": "Richiesta VLC fallita",
       "spectrogramFailed": "Spettrogramma fallito",
       "spectrogramRequestFailed": "Richiesta di spettrogramma fallita",
-      "torrentRecordDeleted": "Record Torrent cancellato"
+      "torrentRecordDeleted": "Record Torrent cancellato",
+      "postedCopied": "Pubblicato sul forum — link copiato negli appunti",
+      "postedNotCopied": "Pubblicato sul forum — copia il link qui sotto"
     },
     "columnPicker": {
       "button": "Colonne…",
@@ -1525,7 +1527,10 @@
       "wtrfSeeded": "{{lb}} seeding verso WTRF {{where}}",
       "wtrfViaOverlay": "da un overlay WTRF Seeds",
       "wtrfInPlace": "dalla cartella della raccolta",
-      "wtrfSeedFailed": "{{lb}} non inizializzato — {{reason}}"
+      "wtrfSeedFailed": "{{lb}} non inizializzato — {{reason}}",
+      "postedForumNotCopied": "Pubblicato {{lb}} sul forum — copia il link qui sotto",
+      "linksNotCopiedSuffix_one": " — Link {{count}}, copialo qui sotto",
+      "linksNotCopiedSuffix_other": " — {{count}} link, copiali qui sotto"
     },
     "panel": {
       "details": "Dettagli",

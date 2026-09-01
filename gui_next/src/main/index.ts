@@ -1,4 +1,4 @@
-import { app, BrowserWindow, shell, ipcMain, dialog } from 'electron'
+import { app, BrowserWindow, shell, ipcMain, dialog, clipboard } from 'electron'
 import { join } from 'path'
 import { tmpdir, homedir } from 'os'
 import { spawn, ChildProcess, execSync } from 'child_process'
@@ -258,6 +258,17 @@ ipcMain.handle('dialog:pickDir', async () => {
 })
 
 ipcMain.handle('shell:openPath', (_event, path: string) => shell.openPath(path))
+
+// Clipboard writes go through the main process rather than the renderer's
+// navigator.clipboard: in a packaged build the renderer is a file:// document,
+// where the async Clipboard API rejects unless the document holds focus — which
+// it does not while a native menu or dialog is closing. Electron's clipboard
+// module has no such precondition, so a "copy the forum links" action cannot
+// silently no-op.
+ipcMain.handle('clipboard:write', (_event, text: string) => {
+  clipboard.writeText(String(text ?? ''))
+  return true
+})
 
 // Called once by the renderer on mount: marks it ready for pushed batches and
 // returns anything that arrived before it could listen.

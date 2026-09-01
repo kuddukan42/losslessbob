@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router-dom'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useVirtualizer } from '@tanstack/react-virtual'
 import { Icon } from '../components/Icon'
-import { Button, Chip, IconButton, Input, Pill } from '../components'
+import { Button, Chip, IconButton, Input, Pill, Toast } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import { useSpectrogramStore } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { lbDetailUrl } from '../lib/lbUrl'
+import { copyText } from '../lib/clipboard'
 import { RecordingDetailPanel } from '../components/library/DetailPanel'
 import type { DetailRow, PanelTab } from '../components/library/DetailPanel'
 import { buildRecordingActions } from '../components/library/actions'
@@ -269,30 +270,6 @@ function blobDownload(blob: Blob, filename: string): void {
   const a = document.createElement('a')
   a.href = url; a.download = filename; a.click()
   setTimeout(() => URL.revokeObjectURL(url), 1000)
-}
-
-// ── Toast ─────────────────────────────────────────────────────────────────────
-
-function Toast({ msg, tone, onDone }: { msg: string; tone: ToastTone; onDone: () => void }) {
-  useEffect(() => {
-    const t = setTimeout(onDone, 3500)
-    return () => clearTimeout(t)
-  }, [onDone])
-
-  const bg     = tone === 'ok'  ? 'var(--lbb-ok-bg)'   : tone === 'bad' ? 'var(--lbb-err-bg)'  : 'var(--lbb-surface2)'
-  const border = tone === 'ok'  ? 'var(--lbb-ok-bar)'  : tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-border2)'
-  const color  = tone === 'ok'  ? 'var(--lbb-ok-fg)'   : tone === 'bad' ? 'var(--lbb-err-fg)'  : 'var(--lbb-fg)'
-
-  return (
-    <div style={{
-      position: 'fixed', bottom: 24, right: 24, zIndex: 999,
-      background: bg, border: `1px solid ${border}`, borderRadius: 8,
-      padding: '10px 16px', color, fontSize: 'var(--lbb-fs-13)', fontWeight: 500,
-      boxShadow: '0 4px 16px rgba(0,0,0,0.15)', maxWidth: 400,
-    }}>
-      {msg}
-    </div>
-  )
 }
 
 // ── ConfirmDialog ─────────────────────────────────────────────────────────────
@@ -2257,7 +2234,7 @@ export function ScreenCollection(): React.JSX.Element {
   // conflated — see docs/XREF_SEMANTICS.md.
   const [xrefCopiesOnly, setXrefCopiesOnly]     = useState(false)
   const [altFilesetsOnly, setAltFilesetsOnly]   = useState(false)
-  const [toast, setToast]             = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [toast, setToast]             = useState<{ msg: string; tone: ToastTone; detail?: string } | null>(null)
   const [confirm, setConfirm]         = useState<{ title: string; body: string; onConfirm: () => void } | null>(null)
   const [addModal, setAddModal]       = useState<{ paths: string[] } | null>(null)
   const [forumModal, setForumModal]   = useState<{ lb: number; subject: string; body: string } | null>(null)
@@ -2302,7 +2279,8 @@ export function ScreenCollection(): React.JSX.Element {
     () => queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] }),
     [queryClient]
   )
-  const showToast  = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
+  const showToast  = useCallback(
+    (msg: string, tone: ToastTone, detail?: string) => setToast({ msg, tone, detail }), [])
 
   // ── Data loading ───────────────────────────────────────────────────────────
 
@@ -2925,10 +2903,20 @@ export function ScreenCollection(): React.JSX.Element {
     } catch { showToast(t('collection.toast.couldNotLoadForumPreview'), 'bad') }
   }, [showToast])
 
+  // The topic URL is copied AND parked in a sticky toast (`detail`): the copy can
+  // lose a race with a focus change, and a link that vanishes after 3.5s is a link
+  // the curator has to go hunt for on the board again.
   const handleForumPosted = useCallback((topicUrl: string) => {
-    showToast(topicUrl ? t('collection.toast.postedWithUrl', { url: topicUrl }) : t('collection.toast.postedToForum'), 'ok')
+    if (!topicUrl) {
+      showToast(t('collection.toast.postedToForum'), 'ok')
+    } else {
+      void copyText(topicUrl).then(copied => {
+        showToast(copied ? t('collection.toast.postedCopied') : t('collection.toast.postedNotCopied'),
+                  'ok', topicUrl)
+      })
+    }
     refetch()
-  }, [showToast, refetch])
+  }, [showToast, refetch, t])
 
   const handleWishlistUpdate = useCallback(async (lb: number, priority: number, notes: string) => {
     try {
@@ -3055,6 +3043,7 @@ export function ScreenCollection(): React.JSX.Element {
 
   const runForumBatch = useCallback(async (targets: CollectionRow[]) => {
     let ok = 0; let fail = 0
+    const urls: string[] = []
     for (const r of targets) {
       try {
         const previewResp = await fetch(`${BASE}/api/entry/${r.lbNumberInt}/preview_forum`)
@@ -3065,12 +3054,16 @@ export function ScreenCollection(): React.JSX.Element {
           body: JSON.stringify({ subject: previewData.subject ?? '', body: previewData.body ?? '' }),
         })
         const postData = await postResp.json()
-        if (postData.ok) ok++; else fail++
+        if (postData.ok) { ok++; if (postData.topic_url) urls.push(postData.topic_url) } else fail++
       } catch { fail++ }
     }
+    const copied = urls.length > 0 && await copyText(urls.join('\n'))
+    const base = `${ok} post${ok !== 1 ? 's' : ''} created${fail > 0 ? `, ${fail} failed` : ''}`
     showToast(
-      `${ok} post${ok !== 1 ? 's' : ''} created${fail > 0 ? `, ${fail} failed` : ''}`,
-      ok > 0 ? 'ok' : 'bad'
+      urls.length === 0 ? base
+        : `${base} — ${urls.length} link${urls.length !== 1 ? 's' : ''}${copied ? ' copied to clipboard' : ' (copy failed)'}`,
+      ok > 0 ? 'ok' : 'bad',
+      urls.length > 0 ? urls.join('\n') : undefined,
     )
     refetch()
   }, [showToast, refetch])
@@ -3919,7 +3912,8 @@ export function ScreenCollection(): React.JSX.Element {
       {libActions.overlays}
 
       {toast && (
-        <Toast msg={toast.msg} tone={toast.tone} onDone={() => setToast(null)} />
+        <Toast msg={toast.msg} tone={toast.tone} detail={toast.detail}
+               onDone={() => setToast(null)} />
       )}
 
       {confirm && (

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Icon } from '../components/Icon'
+import { copyText } from '../lib/clipboard'
 
 const BASE = window.api.flaskBase
 
@@ -176,7 +177,7 @@ function CreateShareForm({ tunnelStatus, onCreated }: { tunnelStatus: TunnelStat
               onClick={e => (e.target as HTMLInputElement).select()}
             />
             <button
-              onClick={() => { navigator.clipboard.writeText(result.share_url) }}
+              onClick={() => { void copyText(result.share_url) }}
               style={{
                 height: 32, padding: '0 12px', borderRadius: 6,
                 background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border2)',

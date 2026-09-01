@@ -21,6 +21,7 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Card, Pill, Button, ConfirmDialog } from './primitives'
 import type { StatusTone } from './primitives'
+import { copyText } from '../lib/clipboard'
 
 const BASE = window.api.flaskBase
 
@@ -637,7 +638,7 @@ function HowToRun({
       <Button
         variant="ghost" size="sm" icon="copy"
         title={t('common.copy')}
-        onClick={() => { void navigator.clipboard.writeText(route) }}
+        onClick={() => { void copyText(route) }}
       >{t('common.copy')}</Button>
     </div>
   )

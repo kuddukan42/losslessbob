@@ -20,6 +20,7 @@ import { useAttachmentsStore } from './attachmentsStore'
 import { useSpectrogramStore } from './spectrogramStore'
 import { useFolderQueueStore } from './folderQueueStore'
 import { lbDetailUrl } from './lbUrl'
+import { copyText } from './clipboard'
 
 const BASE = window.api.flaskBase
 
@@ -32,6 +33,14 @@ function blobDownload(blob: Blob, filename: string): void {
   URL.revokeObjectURL(url)
 }
 
+/** Extra Toast behavior a caller can ask for — see `Toast` in components. */
+export interface ToastOpts {
+  /** Verbatim text (forum links, typically) shown with a Copy button. */
+  detail?: string
+  /** Keep the toast up until dismissed. */
+  sticky?: boolean
+}
+
 export interface LibraryActions {
   /** Handler bag consumed by buildRecordingActions / the detail panels. */
   actionHandlers: ActionHandlers
@@ -39,7 +48,7 @@ export interface LibraryActions {
   openCtxMenu: (e: React.MouseEvent, title: string | undefined, actions: LibAction[]) => void
   /** True while a multi-row action is running — drives panel button `busy`. */
   actionBusy: boolean
-  showToast: (msg: string, tone: ToastTone) => void
+  showToast: (msg: string, tone: ToastTone, opts?: ToastOpts) => void
   /** Invalidates the catalog + collection caches both screens read. */
   refreshCollection: () => void
   /** Render once per screen root: menu, toast, confirm, dossier modal. */
@@ -61,11 +70,12 @@ export function useLibraryActions(): LibraryActions {
   const addPendingSpectro = useSpectrogramStore(s => s.addPending)
   const addToFolderQueue = useFolderQueueStore(s => s.addFolders)
 
-  const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [toast, setToast] = useState<{ msg: string; tone: ToastTone; detail?: string; sticky?: boolean } | null>(null)
   const [confirm, setConfirm] = useState<{ title: string; body: string; onConfirm: () => void } | null>(null)
   const [actionBusy, setActionBusy] = useState(false)
   const [dossierShowId, setDossierShowId] = useState<string | null>(null)
-  const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
+  const showToast = useCallback(
+    (msg: string, tone: ToastTone, opts?: ToastOpts) => setToast({ msg, tone, ...opts }), [])
   const refreshCollection = useCallback(() => {
     queryClient.invalidateQueries({ queryKey: ['library-catalog'] })
     queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
@@ -75,8 +85,8 @@ export function useLibraryActions(): LibraryActions {
     onOpen: (row) => {
       window.open(lbDetailUrl(row.lbNumber), '_blank')
     },
-    onCopyLb: (row) => { navigator.clipboard.writeText(row.lb) },
-    onCopyPath: (row) => { navigator.clipboard.writeText(row.path) },
+    onCopyLb: (row) => { void copyText(row.lb) },
+    onCopyPath: (row) => { void copyText(row.path) },
     onPlay: async (row) => {
       if (!row.path) return
       try {
@@ -135,17 +145,23 @@ export function useLibraryActions(): LibraryActions {
           return { ok: !!data.ok, topicUrl: data.topic_url ?? '' }
         } catch { return { ok: false, topicUrl: '' } }
       }
-      const copyUrls = (urls: string[]): Promise<boolean> => {
-        if (urls.length === 0) return Promise.resolve(false)
-        return navigator.clipboard.writeText(urls.join('\n')).then(() => true, () => false)
-      }
+      // The topic URLs are both copied AND shown in a sticky toast: the copy can
+      // still lose a race with a focus change, and a link the user watched
+      // disappear after 3.5s is a link they have to go find on the board again.
+      const copyUrls = (urls: string[]): Promise<boolean> =>
+        urls.length === 0 ? Promise.resolve(false) : copyText(urls.join('\n'))
       if (rows.length === 1) {
-        postOne(rows[0]).then(async ({ ok, topicUrl }) => {
-          if (ok && topicUrl && await copyUrls([topicUrl])) {
-            showToast(t('library.toast.postedForumCopied', { lb: rows[0].lb }), 'ok')
-          } else {
-            showToast(ok ? t('library.toast.postedForum', { lb: rows[0].lb }) : t('library.toast.forumPostFailed'), ok ? 'ok' : 'bad')
-          }
+        setActionBusy(true)
+        void postOne(rows[0]).then(async ({ ok, topicUrl }) => {
+          setActionBusy(false)
+          if (!ok) { showToast(t('library.toast.forumPostFailed'), 'bad'); return }
+          if (!topicUrl) { showToast(t('library.toast.postedForum', { lb: rows[0].lb }), 'ok'); return }
+          const copied = await copyUrls([topicUrl])
+          showToast(
+            copied ? t('library.toast.postedForumCopied', { lb: rows[0].lb })
+                   : t('library.toast.postedForumNotCopied', { lb: rows[0].lb }),
+            'ok', { detail: topicUrl },
+          )
         })
         return
       }
@@ -164,7 +180,12 @@ export function useLibraryActions(): LibraryActions {
           const copied = await copyUrls(urls)
           setActionBusy(false)
           const base = t('library.toast.postsCreated', { count: ok }) + (fail > 0 ? t('library.toast.failedSuffix', { count: fail }) : '')
-          showToast(ok > 0 && copied ? base + t('library.toast.linksCopiedSuffix', { count: urls.length }) : base, ok > 0 ? 'ok' : 'bad')
+          const msg = urls.length === 0
+            ? base
+            : base + (copied ? t('library.toast.linksCopiedSuffix', { count: urls.length })
+                             : t('library.toast.linksNotCopiedSuffix', { count: urls.length }))
+          showToast(msg, ok > 0 ? 'ok' : 'bad',
+                    urls.length > 0 ? { detail: urls.join('\n') } : undefined)
         },
       })
     },
@@ -325,7 +346,10 @@ export function useLibraryActions(): LibraryActions {
   const overlays = (
     <>
       {ctxMenu && <ActionMenu state={ctxMenu} onClose={closeCtxMenu} />}
-      {toast && <Toast msg={toast.msg} tone={toast.tone} onDone={() => setToast(null)} />}
+      {toast && (
+        <Toast msg={toast.msg} tone={toast.tone} detail={toast.detail}
+               sticky={toast.sticky} onDone={() => setToast(null)} />
+      )}
       {confirm && (
         <ConfirmDialog
           title={confirm.title}

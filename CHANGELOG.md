@@ -1,3 +1,26 @@
+[2026-08-31] — fix: forum topic links now actually reach the clipboard, and the toast waits
+Fixed: gui_next/src/main/index.ts, gui_next/src/preload/index.ts, gui_next/src/renderer/src/lib/clipboard.ts:
+  BUG-333. The renderer copied forum topic URLs with `navigator.clipboard.writeText`, which in a packaged
+  build (a file:// document) rejects with "Document is not focused" whenever the write fires while the
+  context menu or forum modal that triggered the post is closing — i.e. every real path into "post to
+  WTRF". The rejection was swallowed. Copying now goes through a `clipboard:write` IPC handler backed by
+  Electron's main-process clipboard module, which has no focus precondition, exposed as
+  `window.api.writeClipboard` and wrapped by `copyText()`; the web API stays as a browser-only fallback.
+  Every `navigator.clipboard.writeText` call site in the renderer was moved onto the helper.
+Changed: gui_next/src/renderer/src/components/primitives.tsx: `Toast` gained `detail` and `sticky`. A
+  toast carrying `detail` renders it verbatim in a selectable monospace block with Copy and Dismiss
+  buttons and never auto-dismisses — a link the curator watched disappear after 3.5s is a link they have
+  to go find on the board again.
+Changed: gui_next/src/renderer/src/lib/useLibraryActions.tsx,
+  gui_next/src/renderer/src/screens/ScreenCollection.tsx: both forum-post paths (single and batch) now
+  park the topic URLs in a sticky toast and say whether the copy landed. ScreenCollection's batch had
+  discarded `topic_url` outright and its single-post toast rendered the literal key
+  `collection.toast.postedWithUrl`, which does not exist in en.json; its duplicate local `Toast` was
+  deleted in favour of the shared primitive.
+Added: locale keys `library.toast.postedForumNotCopied`, `library.toast.linksNotCopiedSuffix`,
+  `collection.toast.postedCopied`, `collection.toast.postedNotCopied` — de/fr/es/it/nl filled via
+  /gui-next-i18n (5,863 DeepL chars).
+
 [2026-08-31] — chore: reseed 584 TUIT recordings stalled on the partial-overlay gate
 Changed: qBittorrent runtime setting (not in the repo): `max_concurrent_http_announces` lowered 20 -> 5
   after a 200-torrent sample showed 33% of tuit announces at status 4 'timed out'. Adding 584 torrents in

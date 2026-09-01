@@ -787,7 +787,9 @@
       "vlcRequestFailed": "VLC-verzoek mislukt",
       "spectrogramFailed": "Spectrogram mislukt",
       "spectrogramRequestFailed": "Spectrogram verzoek mislukt",
-      "torrentRecordDeleted": "Torrent record verwijderd"
+      "torrentRecordDeleted": "Torrent record verwijderd",
+      "postedCopied": "Geplaatst op het forum — link gekopieerd naar klembord",
+      "postedNotCopied": "Geplaatst op het forum — kopieer de onderstaande link"
     },
     "columnPicker": {
       "button": "Kolommen…",
@@ -1525,7 +1527,10 @@
       "wtrfSeeded": "{{lb}} seeding naar WTRF {{where}}",
       "wtrfViaOverlay": "uit een WTRF Seeds-overlay",
       "wtrfInPlace": "uit de verzamelingsmap",
-      "wtrfSeedFailed": "{{lb}} niet ingevuld — {{reason}}"
+      "wtrfSeedFailed": "{{lb}} niet ingevuld — {{reason}}",
+      "postedForumNotCopied": "{{lb}} op het forum geplaatst — kopieer de onderstaande link",
+      "linksNotCopiedSuffix_one": " — {{count}}-link, kopieer deze hieronder",
+      "linksNotCopiedSuffix_other": " — {{count}}-links, kopieer deze hieronder"
     },
     "panel": {
       "details": "Details",

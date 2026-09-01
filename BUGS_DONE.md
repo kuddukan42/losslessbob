@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-333: Forum topic links never reach the clipboard, and the toast holding them vanishes in 3.5s
+Status: Fixed
+File(s): gui_next/src/renderer/src/lib/useLibraryActions.tsx:137,gui_next/src/renderer/src/screens/ScreenCollection.tsx:2928,gui_next/src/renderer/src/components/primitives.tsx:386
+Reported: 2026-08-31
+Fixed: 2026-08-31
+Root cause: navigator.clipboard.writeText is unusable from this renderer: the packaged app loads index.html over file://, and the async Clipboard API rejects unless the document holds focus — it does not while the context menu or forum modal that triggered the post is closing. The rejection was swallowed. Compounding it, the toast carrying the result auto-dismissed after 3.5s and never displayed the URL, and ScreenCollection's key 'collection.toast.postedWithUrl' was missing from en.json so it rendered the key literal.
+Fix: Added a clipboard:write IPC handler backed by Electron's main-process clipboard module (no focus precondition), exposed as window.api.writeClipboard, wrapped in lib/clipboard.ts copyText() with the web API as a dev-only fallback; every navigator.clipboard.writeText call site now goes through it. The shared Toast gained 'detail' and 'sticky': a toast with detail shows the URLs verbatim in a selectable monospace block with Copy and Dismiss buttons and never auto-dismisses. Both forum-post paths (library actions single + batch, ScreenCollection modal + batch) now pass the topic URLs as detail and say whether the copy landed. ScreenCollection's duplicate local Toast was deleted in favour of the shared one, and its batch path — which had discarded topic_url entirely — now collects and copies them.
+
 BUG-332: Seeding gate reads lb_master.lb_status only; a folder filed under 'PRIVATE LB'/'NOTORRENT' still passes
 Status: Fixed
 File(s): backend/db.py:is_seedable_to_tracker,backend/tracker_seed.py:find_seedable_folder

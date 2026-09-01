@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { Icon } from '../components/Icon'
 import { Button, Chip, Input, Pill } from '../components'
 import { useAttachmentsStore, LbStatus } from '../lib/attachmentsStore'
+import { copyText } from '../lib/clipboard'
 
 const BASE = window.api.flaskBase
 
@@ -185,7 +186,7 @@ export function ScreenAttachments(): React.JSX.Element {
 
   const handleCopyContents = useCallback(() => {
     if (!fileContent) return
-    navigator.clipboard.writeText(fileContent)
+    void copyText(fileContent)
       .then(() => showToast('Copied', 'ok'))
       .catch(() => showToast('Copy failed', 'bad'))
   }, [fileContent, showToast])
