@@ -300,7 +300,13 @@ losslessbob/
 │   ├── wiki/                 # Agentic wiki: Home.md + 15 topic pages (Architecture, Backend-API, Database, Data-Flows, GUI, Concert-Ranker, TapeMatch, Dev-Workflow, Visual-Verification, Taper-Attribution-Flow, Setlist-Sources, Show-Dossier, Master-Data-Sync, Collection-Pipeline, Integrations), refreshed via /wiki-update
 │   └── screenshots/          # Real app screenshots (Tier A driver captures) used by index.html, README.md, wiki
 │       └── README.md         # Inventory + refresh recipe for the screenshot set
-├── attic/                    # Holding pen for deletion candidates (see attic/README.md); review + purge
+├── archive/                  # Obsolete material moved out of the tree, never deleted (see archive/README.md)
+│   ├── attic/                # The former top-level attic/ holding pen, folded in verbatim
+│   ├── tools-throwaway/      # Retired tools/_<name> one-off scripts
+│   ├── venvs/                # Dead virtualenvs (gitignored)
+│   ├── build-artifacts/      # Superseded gui_next build output (gitignored)
+│   ├── debug/                # .debug/ artifacts older than 2026-08-01 (gitignored)
+│   └── scratch/              # The former .scratch/ working set (gitignored)
 └── data/
     ├── losslessbob.db        # SQLite database
     ├── *_flat_file.txt       # Tab-delimited flat-file (user-provided)

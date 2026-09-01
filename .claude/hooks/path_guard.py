@@ -10,7 +10,7 @@ Covers two matchers:
     downloads can't bypass the file-tool guard.
 
 Fail-closed: any unexpected error denies the call rather than letting it
-through. Temp files belong in <project>/.scratch/ (gitignored).
+through. Temp files belong in <project>/.debug/ (gitignored).
 """
 import json
 import os
@@ -45,7 +45,7 @@ def main() -> None:
             deny("Blocked by path_guard: command references a temp location "
                  "outside the project (/tmp, /var/tmp, /dev/shm, mktemp, "
                  "$TMPDIR). All temp/scratch files must go in "
-                 f"{PROJECT}/.scratch/ instead.")
+                 f"{PROJECT}/.debug/ instead.")
         return
 
     file_path = tool_input.get("file_path") or tool_input.get("notebook_path") or ""
@@ -56,7 +56,7 @@ def main() -> None:
         if resolved == root or resolved.startswith(root + os.sep):
             return
     deny(f"Blocked by path_guard: {file_path} is outside the project "
-         f"directory. Stay under {PROJECT} (temp files: .scratch/).")
+         f"directory. Stay under {PROJECT} (temp files: .debug/).")
 
 
 if __name__ == "__main__":
