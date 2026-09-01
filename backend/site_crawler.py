@@ -62,6 +62,10 @@ _HEADERS = {"User-Agent": "LosslessBob-Archiver/1.0 (offline mirror)"}
 _RAW_EXTS = {".txt", ".ffp", ".md5", ".st5", ".sha1", ".sha256",
              ".jpg", ".jpeg", ".png", ".gif", ".ico", ".css", ".js"}
 
+# Everything under this path is an uploader's attachment, never a browsable page,
+# and is mirrored byte-for-byte whatever its extension.  See is_rewritten_html.
+_ATTACHMENT_PREFIX = "/files/"
+
 # Extensions that are definitely not worth downloading
 _SKIP_EXTS = {".mp3", ".flac", ".ape", ".wav", ".shn", ".m4a",
               ".zip", ".gz", ".tar", ".rar", ".exe", ".dmg",
@@ -273,12 +277,25 @@ def is_rewritten_html(url: str) -> bool:
     files are re-encoded on save, so their on-disk bytes can never match the
     ``body_sha256`` of the raw HTTP body.  Verbatim files always match.
 
+    Only *pages* are rewritten — the ones browsed offline via ``file://``, whose
+    server-absolute links must become relative to resolve.  Anything under
+    ``/files/`` is an **attachment**: a taper's md5 listing, a DigiFlawFinder
+    report, an info sheet.  Those are uploaded artefacts that happen to carry an
+    ``.html`` extension, they contain no site links worth rewriting, and a torrent
+    seeded from the collection needs them byte-identical to the uploader's copy.
+    Passing them through BeautifulSoup re-serialises the whole document — bare
+    attributes gain quotes, tags are lowercased and closed — which inflated the
+    LBF DigiFlawFinder reports by 5-8% and broke that byte-identity (TODO-329).
+
     Args:
         url: Absolute or site-relative URL.
 
     Returns:
-        True for HTML (``.html`` or extension-less directory index), else False.
+        True for a browsable page (``.html`` or extension-less directory index)
+        outside the attachment store, else False.
     """
+    if urlparse(url).path.startswith(_ATTACHMENT_PREFIX):
+        return False
     return _ext(url) in (".html", "")
 
 
