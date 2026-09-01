@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-329: Site mirror re-serialises every .html attachment, so its bytes can never match an uploader's file
+Priority: Medium
+Status: Done
+Added: 2026-08-31
+Closed: 2026-09-01
+Description: Found 2026-08-31 while diagnosing why 585 TUIT recordings refused to seed. backend/site_crawler.py::_save decides by extension: is_rewritten_html(url) is True for anything ending .html, so those bodies are decoded and passed through html_utils.rewrite_links() before being written to data/site/files/. rewrite_links parses with BeautifulSoup and returns str(soup), which re-serialises the WHOLE document, not just the href/src it was meant to fix - bare attributes gain quotes, tags are lowercased and closed. On the LBF DigiFlawFinder attachments (tens of thousands of table cells like <td align=right width=7%>) that inflates the file 5-8 percent, so the mirrored copy is the wrong size and seed_overlay leaves it to the swarm. Measured over the 592 stalled overlays: 203 blocked by a sidecar size mismatch, 249 unresolved .html files. These attachments contain no server-absolute links at all, so the rewrite pass gains nothing and only breaks byte-identity. Note backend/scraper.py:440 already does it correctly (local_path.write_bytes(file_resp.content)) - the two fetch paths disagree and whichever reaches an attachment first wins. Fix: save attachments verbatim regardless of extension; restrict rewriting to the detail/index pages actually browsed via file://. Care needed - is_rewritten_html is documented as the mirror's single source of truth for hash provenance (rewritten files can never match body_sha256 of the raw body), so narrowing it touches checksum_provenance.py and any stored digests; existing mirrored .html attachments need a verbatim re-fetch to benefit. Workaround already shipped: the 2026-08-31 reseed pass used allow_partial_overlay so the missing sidecars download into the overlay, never the collection.
+site_crawler.is_rewritten_html now returns False for anything under /files/, so an attachment is mirrored byte-for-byte whatever its extension and its on-disk bytes match the recorded body_sha256. tools/refetch_html_attachments.py repairs already-mirrored copies through site_crawler._save (no private copy of the save logic), skipping any row that already hashes correct. Repair pass complete: 14,147 .html attachments mirrored, 0 needing a re-fetch as of 2026-09-01. Tests in tests/test_site_mirror_verify.py.
+
 TODO-327: Taper curation workbench at /taper-curation
 Priority: High
 Status: Done

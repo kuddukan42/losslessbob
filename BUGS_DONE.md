@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-334: Forum post gate reads loose .ffp/.md5 sidecars, so a folder with two filename conventions is reported half-missing while its LBDIR manifest verifies clean
+Status: Fixed
+File(s): backend/app.py:4689
+Reported: 2026-09-01
+Fixed: 2026-09-01
+Root cause: The gate used checksum_utils.verify_folder, a sidecar sweep, while every other integrity surface (the forum preview banner, the pipeline) reads the LBDIR manifest. Loose sidecars are frequently stale or written under a second filename convention for the same tracks, so the sweep's expected-file universe is not the fileset; non-audio entries also counted toward the missing tally.
+Fix: The gate now calls _lbdir_status_for_lb(lb) and reads split.audio only: a mismatch (swapped or re-encoded audio, BUG-120) blocks unconditionally, missing audio blocks but stays overridable via skip_integrity_check, and non-audio entries never gate. Banner and gate now render the same verdict for the same folder. Four tests in tests/test_lb_master.py::TestForumIntegrityGate.
+
 BUG-327: tapematch ingest concatenates two different versions of a show that share one LB folder
 Status: Fixed
 File(s): tools/tapematch/tapematch/ingest.py:158,tools/tapematch/tapematch/ingest.py:182

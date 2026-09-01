@@ -1,4 +1,4 @@
-[2026-09-01] — fix: a run's analysis bundle no longer quotes the wrong concert, and one LB folder holding the show twice is no longer spliced end to end
+[2026-09-01] — fix: four integrity defects — wrong-concert prose in analysis bundles, one LB folder spliced end to end, re-serialised mirror attachments, and a forum gate that disagreed with its own banner
 Fixed: tools/tapematch/prep_analysis_input.py:
   BUG-328. Every `LB-<n>` in report.md was globbed straight into `LBF-<padded>-*.txt` with no check that
   the id belonged to the run's date, so a typo in uploader prose pulled a different concert's info file
@@ -23,6 +23,27 @@ Fixed: tools/tapematch/tapematch/ingest.py:
   and picking by track count would be fooled by patch dirs like `d1/fix/Track08.fix.flac` that repeat a
   track rather than add one — and the dropped pass is named in a warning that reaches report.md so it can
   be analysed by pointing a run at that subfolder. LB-07173 now ingests 11 tracks, down from 25.
+Fixed: backend/site_crawler.py, tools/refetch_html_attachments.py:
+  TODO-329 (carried over from the previous session, unrecorded until now). `is_rewritten_html` decided by
+  extension alone, so an uploader's DigiFlawFinder report or md5 listing that happens to end in `.html`
+  went through BeautifulSoup on the way to `data/site/files/` — bare attributes gained quotes, tags were
+  lowercased and closed, and the mirrored copy came out 5-8% larger (smaller on malformed input, where the
+  parser dropped what it could not read). Its bytes could then never match the recorded `body_sha256`, so
+  `seed_overlay` could not source the sidecar and left it to the swarm. Anything under `/files/` is now
+  treated as an attachment and mirrored verbatim whatever its extension; only browsable pages, whose
+  server-absolute links must be made relative for `file://`, are still rewritten.
+  `tools/refetch_html_attachments.py` repairs already-mirrored copies through `site_crawler._save` itself
+  so the two cannot drift, skipping any row that already hashes correct. Repair pass is complete: 14,147
+  attachments mirrored, 0 needing a re-fetch.
+Fixed: backend/app.py:
+  BUG-334 (carried over from the previous session, unrecorded until now). The forum post gate ran
+  `checksum_utils.verify_folder`, a sweep of whatever loose sidecars sit in the folder. LB-03696 carries an
+  uppercase `.ffp` and a lowercase `.md5` for the same 32 tracks; the sweep counted each convention as its
+  own expected fileset and blocked the post as "incomplete" with half the files missing, while the LBDIR
+  manifest — the very verdict the forum preview banner shows the user — verified clean. The gate now reads
+  `_lbdir_status_for_lb`'s `split.audio`: a mismatch (swapped or re-encoded audio, BUG-120) blocks
+  unconditionally, missing audio blocks but remains overridable, and non-audio entries never gate. Banner
+  and gate now agree on the same folder.
 Added: tools/tapematch/tests/test_prep_analysis_input.py, tools/tapematch/tests/test_version_selection.py:
   23 tests covering date matching, coverage-table extraction, the cross-reference split, the no-DB
   fallback, LB-07173's exact layout, and the layouts that must NOT be treated as two passes (multi-disc
