@@ -18,6 +18,10 @@ Changed: PROJECT.md file-structure tree — the attic/ line becomes the archive/
 Changed: .claude/hooks/path_guard.py — its refusal messages and docstring pointed temp files at
   .scratch/, which no longer exists and contradicted CLAUDE.md; they now say .debug/. Message text
   only, no change to what the hook blocks.
+Removed: data/webengine_cache/ (1.2 MB) and the WEBENGINE_DIR constant in backend/paths.py, on tj's
+  call. The directory was a Qt WebEngine profile cache written by the PyQt6 attachments tab, which
+  was removed with the legacy GUI on 2026-07-16; grep found no reader of the constant anywhere in
+  the tree, only its definition. Deleted, not archived. 1594 tests still pass.
 Note: .debug/ itself and its electron/ and screenshots/ subdirs stay in place — /verify writes to
   those exact paths. Nothing under data/ was touched; archive/README.md lists the stale-looking
   candidates there (webengine_cache/ orphaned by the PyQt6 removal, the lossless_bob.db /

@@ -35,7 +35,6 @@ TORRENTS_DIR = DATA_DIR / "torrents"
 LOGS_DIR = DATA_DIR / "logs"
 LOG_FILE = LOGS_DIR / "scraper.log"
 TOOLS_DIR = APP_ROOT / "tools"
-WEBENGINE_DIR = DATA_DIR / "webengine_cache"
 TAPEMATCH_RUNS_DIR = DATA_DIR / "tapematch" / "runs"
 TAPEMATCH_DB_PATH = TOOLS_DIR / "tapematch" / "observations.db"
 
