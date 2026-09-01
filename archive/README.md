@@ -18,10 +18,9 @@ machine-local); `attic/` and `tools-throwaway/` are tracked.
 
 ## Deliberately left alone
 
-- `data/` — user data, 33 GB, gitignored. `data/webengine_cache/` (a Qt
-  WebEngine cache orphaned by the 2026-07-16 PyQt6 removal) and the
-  `data/lossless_bob.db` / `data/losslessbob.db` pair look stale, but they are
-  yours to judge.
+- `data/` — user data, 33 GB, gitignored. `data/webengine_cache/` was deleted
+  outright on tj's call (see the CHANGELOG). The `data/lossless_bob.db` /
+  `data/losslessbob.db` pair still looks stale, but it is yours to judge.
 - `__pycache__/`, `.pytest_cache/`, `.ruff_cache/` — regenerable caches, not archive material.
 - `instructions/complete/` — already serves as the spec archive.
 - Everything under `tools/` that is not `_`-prefixed: reference counts alone
