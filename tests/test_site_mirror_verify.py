@@ -265,6 +265,27 @@ def test_is_rewritten_html_matches_save_behaviour():
     assert is_rewritten_html(f"{BASE}/bynumber/")      # directory index
     assert not is_rewritten_html(f"{BASE}/files/a.txt")
     assert not is_rewritten_html(f"{BASE}/files/x.flac")
+    # TODO-329: an attachment is verbatim whatever its extension — a taper's
+    # DigiFlawFinder report must stay byte-identical to the uploader's copy so a
+    # torrent seeded from the collection still hashes.
+    assert not is_rewritten_html(f"{BASE}/files/LBF-02719-DigiFlawFinder-a.wavf.html")
+    assert not is_rewritten_html("/files/LBF-02719-DigiFlawFinder-a.wavf.html")
+
+
+def test_attachment_html_is_saved_verbatim(tmp_path, monkeypatch):
+    """An .html attachment keeps the raw bytes; a page is still rewritten."""
+    import backend.site_crawler as sc
+
+    monkeypatch.setattr(sc, "SITE_DIR", tmp_path)
+    raw = b'<table border=0 width= 100%><td align=right>x</td></table>'
+
+    path, digest = sc._save(f"{BASE}/files/LBF-00001-DigiFlawFinder-a.wavf.html", raw)
+    assert path.read_bytes() == raw, "attachment must not be re-serialised"
+    assert digest == _sha(raw), "verbatim files must match the raw body"
+
+    page, page_digest = sc._save(f"{BASE}/detail/LB-00001.html", raw)
+    assert page.read_bytes() != raw, "a browsable page is still re-serialised"
+    assert page_digest == _sha(page.read_bytes())
 
 
 def test_local_sha256_column_exists_after_init(tmp_path):
