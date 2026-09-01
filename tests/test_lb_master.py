@@ -361,3 +361,97 @@ class TestForumEndpointGuard:
         assert resp.status_code == 403
         data = resp.get_json()
         assert data["error"] == "lb_private"
+
+
+# ---------------------------------------------------------------------------
+# Forum post integrity gate — judged on the LBDIR manifest's audio only
+# ---------------------------------------------------------------------------
+
+class TestForumIntegrityGate:
+    """The post gate reads the LBDIR verdict, not loose .ffp/.md5 sidecars.
+
+    A folder can carry several sidecars written under different filename
+    conventions for the same tracks (LB-03696: uppercase .ffp + lowercase
+    .md5); the old sidecar sweep counted each convention separately and
+    reported half the fileset missing while the manifest verified clean.
+    """
+
+    @pytest.fixture
+    def gated_client(self, tmp_path, monkeypatch):
+        import backend.credentials as credentials
+        import backend.db as db
+        import backend.paths as _p
+
+        db_path = str(tmp_path / "test.db")
+        _p.DATA_DIR = tmp_path
+        (tmp_path / "attachments").mkdir(exist_ok=True)
+        (tmp_path / "backups").mkdir(exist_ok=True)
+        folder = tmp_path / "LB-00001"
+        folder.mkdir()
+
+        db.init_db(db_path)
+        conn = db.get_connection(db_path)
+        _seed_checksums(conn, [1])
+        _seed_entries(conn, [(1, "ok")])
+        conn.execute(
+            "INSERT INTO my_collection (lb_number, folder_name, disk_path) VALUES (?, ?, ?)",
+            (1, folder.name, str(folder)),
+        )
+        conn.commit()
+        db.reconcile_lb_status(1, db_path=db_path)  # public
+
+        _orig_dbpath = db.DB_PATH
+        db.DB_PATH = db_path
+        monkeypatch.setattr(credentials, "get_credentials", lambda _svc: ("u", "p"))
+
+        from backend.app import create_app
+        app = create_app()
+        app.config["TESTING"] = True
+
+        yield app.test_client()
+
+        db.DB_PATH = _orig_dbpath
+
+    @staticmethod
+    def _patch_lbdir(monkeypatch, *, missing=0, mismatch=0):
+        import backend.app as app_mod
+
+        def _fake(lb_number, force=False):
+            return {"status": "ok", "split": {
+                "audio": {"total": 32, "pass": 32 - missing - mismatch,
+                          "missing": missing, "mismatch": mismatch, "extra": 0},
+                "text": {"total": 2, "pass": 2, "missing": 0, "mismatch": 0, "extra": 2},
+            }}
+
+        monkeypatch.setattr(app_mod, "_lbdir_status_for_lb", _fake)
+
+    def test_clean_manifest_passes_gate(self, gated_client, monkeypatch):
+        # Stale sidecars in the folder must not matter — only the manifest does.
+        self._patch_lbdir(monkeypatch)
+        resp = gated_client.post("/api/entry/1/post_forum", json={})
+        data = resp.get_json() or {}
+        assert "LBDIR verify failed" not in (data.get("error") or "")
+
+    def test_missing_audio_blocks_but_is_skippable(self, gated_client, monkeypatch):
+        self._patch_lbdir(monkeypatch, missing=3)
+        resp = gated_client.post("/api/entry/1/post_forum", json={})
+        assert resp.status_code == 400
+        data = resp.get_json()
+        assert "incomplete: 0 mismatch, 3 missing" in data["error"]
+        assert data["skippable"] is True
+
+    def test_missing_audio_can_be_overridden(self, gated_client, monkeypatch):
+        self._patch_lbdir(monkeypatch, missing=3)
+        resp = gated_client.post(
+            "/api/entry/1/post_forum", json={"skip_integrity_check": True})
+        data = resp.get_json() or {}
+        assert "LBDIR verify failed" not in (data.get("error") or "")
+
+    def test_mismatched_audio_is_never_skippable(self, gated_client, monkeypatch):
+        self._patch_lbdir(monkeypatch, mismatch=1)
+        resp = gated_client.post(
+            "/api/entry/1/post_forum", json={"skip_integrity_check": True})
+        assert resp.status_code == 400
+        data = resp.get_json()
+        assert "fail: 1 mismatch" in data["error"]
+        assert data["skippable"] is False

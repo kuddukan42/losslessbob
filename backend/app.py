@@ -4686,27 +4686,35 @@ def create_app() -> Flask:
             # its stored checksums (see BUG-120 — swapped/re-encoded audio slipping
             # through undetected). Runs before torrent resolution so a bad folder
             # isn't auto-torrented/seeded either.
+            #
+            # Judged on the LBDIR manifest alone — the same verdict the forum
+            # preview's banner shows — not on whatever loose .ffp/.md5 sidecars
+            # happen to sit in the folder. Those are frequently stale or written
+            # under a different filename convention (LB-03696 carried an
+            # uppercase .ffp and a lowercase .md5 for the same 32 tracks), and
+            # the sidecar sweep counted each convention separately and reported
+            # half of them missing while the manifest verified clean.
             skip_integrity_check = bool(data.get("skip_integrity_check"))
             if coll_row and coll_row["disk_path"]:
-                verify_result = checksum_utils.verify_folder(coll_row["disk_path"])
-                verify_status = verify_result.get("status")
-                # "fail" (mismatch) means audio content itself doesn't match its stored
-                # checksum -- possible swapped/re-encoded file (BUG-120) -- never skippable.
-                # "incomplete" (missing) just means fewer files on disk than the checksum
-                # sidecar lists, which can be a stale/mismatched sidecar; allow an explicit
-                # user override for that case only.
-                if verify_status == "fail" or (
-                    verify_status == "incomplete" and not skip_integrity_check
-                ):
+                lbdir_state = _lbdir_status_for_lb(lb)
+                audio = (lbdir_state.get("split") or {}).get("audio") or {}
+                n_mismatch = audio.get("mismatch", 0)
+                n_missing = audio.get("missing", 0)
+                # A mismatch means audio content itself doesn't match the manifest --
+                # possible swapped/re-encoded file (BUG-120) -- never skippable. A
+                # missing entry just means the manifest lists audio the folder no
+                # longer holds, which can be a stale manifest; allow an explicit
+                # user override for that case only. Non-audio entries never gate.
+                if n_mismatch or (n_missing and not skip_integrity_check):
+                    verify_status = "fail" if n_mismatch else "incomplete"
                     return jsonify({
                         "ok": False,
                         "error": (
                             f"LBDIR verify failed ({verify_status}: "
-                            f"{verify_result.get('mismatch', 0)} mismatch, "
-                            f"{verify_result.get('missing', 0)} missing) — "
+                            f"{n_mismatch} mismatch, {n_missing} missing audio file(s)) — "
                             "fix the folder's integrity before posting to the forum."
                         ),
-                        "skippable": verify_status == "incomplete",
+                        "skippable": not n_mismatch,
                     }), 400
 
             # Resolve torrent file
