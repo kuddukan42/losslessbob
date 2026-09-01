@@ -2,6 +2,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-327: tapematch ingest concatenates two different versions of a show that share one LB folder
+Status: Fixed
+File(s): tools/tapematch/tapematch/ingest.py:158,tools/tapematch/tapematch/ingest.py:182
+Reported: 2026-08-21
+Fixed: 2026-09-01
+Root cause: list_tracks rglob'd the whole source tree and concatenated everything it found. Its two existing de-dup passes only remove copies that are the SAME audio — _dedupe_formats (one file per (parent, stem)) and _dedupe_subtrees (byte-identical subtrees) — so LB-07173's top-level d1/d2 and its nested '(REMASTERED)_fixed' d1/d2, which differ in bytes, were both walked and spliced into one 3:27:33 stream against a 1:32:48 date median. No pass existed for 'the folder holds two different masterings of the same show'.
+Fix: Added ingest._select_version, run after the two de-dup passes: a nested directory is treated as a second pass when its track keys (directory path + stem, taken relative to that directory) overlap the keys of everything outside it by >=80%% over >=3 tracks. The outer pass is kept — the nested copy is a re-master/fix in every observed case, and selecting by track count would be fooled by patch dirs like d1/fix/Track08.fix.flac that repeat a track rather than add one — and the dropped pass is named in a log.warning that reaches report.md, so the other version can be analysed by pointing a run at that subfolder. Verified live on the real LB-07173 folder: 11 tracks now, down from 25. 8 tests in tools/tapematch/tests/test_version_selection.py. NOTE: run 20260821_184430_1993-08-28 still needs a re-run — its verdict was computed from the inflated source.
+
+BUG-328: prep_analysis_input.py attaches unrelated LB info files pulled from typos in uploader commentary
+Status: Fixed
+File(s): tools/tapematch/prep_analysis_input.py:36,tools/tapematch/prep_analysis_input.py:101
+Reported: 2026-08-21
+Fixed: 2026-09-01
+Root cause: LB_TAG_RE scraped every \bLB-(\d+)\b out of report.md — including uploader commentary — and globbed LBF-<padded>-*.txt for each hit with no check that the id belonged to the run's date. Typo'd ids ('Source: LB-0897' for LB-00857) therefore attached a different concert's info file inline with the run's own sources.
+Fix: prep_analysis_input.py now derives the run's date (dir-name suffix, report title as fallback) and the coverage table's LB numbers, and looks up every other referenced LB number in entries.date_str via the new db_date_matches_iso/lb_dates helpers. Off-date or unknown-date references are still attached — a real cross-reference is evidence — but under a 'Cross-references from commentary — NOT sources for this run' heading tagged [DIFFERENT DATE: ...] or [DATE UNKNOWN]. Verified on both reported runs: LB-00897 (1981-06-30) and LB-01711 (1999-06-26) now land in that section. 15 tests in tools/tapematch/tests/test_prep_analysis_input.py.
+
 BUG-333: Forum topic links never reach the clipboard, and the toast holding them vanishes in 3.5s
 Status: Fixed
 File(s): gui_next/src/renderer/src/lib/useLibraryActions.tsx:137,gui_next/src/renderer/src/screens/ScreenCollection.tsx:2928,gui_next/src/renderer/src/components/primitives.tsx:386

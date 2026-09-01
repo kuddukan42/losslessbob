@@ -14,20 +14,4 @@ Description: In cli.py the SECONDARY MATCH section computes will_merge = windowe
 Root cause: Unknown
 Fix: —
 
-BUG-328: prep_analysis_input.py attaches unrelated LB info files pulled from typos in uploader commentary
-Status: Open
-File(s): tools/tapematch/prep_analysis_input.py:36,tools/tapematch/prep_analysis_input.py:101
-Reported: 2026-08-21
-Description: LB_TAG_RE scans each source's commentary for \bLB-(\d+)\b and globs LBF-<padded>-*.txt for every hit, with no check that the matched id belongs to the date under analysis. Uploader commentary routinely contains typo'd or cross-referenced ids, so unrelated shows get spliced into analysis_input.md as if they were lineage evidence for this date. Two cases from the 2026-08-21 batch: (1) 20260710_120810_1999-06-20 — LB-11925's text cites 'Source: LB-0897', which pulled in the LBF file for LB-00897, a 1981-06-30 London show; the real match was LB-00857. (2) 20260710_131015_1999-07-24 — LB-07488's text contains 'LB-1711', pulling in LB-01711 (1999-06-26 Las Vegas); the real reference was LB-01771. Neither changed its verdict, but the analysis writer (human or model) is handed prose from the wrong concert and asked to reconcile it, which is exactly the input that produces false 'needs review' flags. Fix: before attaching an LBF file, confirm its concert date matches the run's date (or attach it under an explicit 'cross-reference, different date' heading rather than inline with the source's own lineage).
-Root cause: Unknown
-Fix: —
-
-BUG-327: tapematch ingest concatenates two different versions of a show that share one LB folder
-Status: Open
-File(s): tools/tapematch/tapematch/ingest.py:158,tools/tapematch/tapematch/ingest.py:182
-Reported: 2026-08-21
-Description: Not a de-duplication bug — the opposite. LB-07173 (run data/tapematch/runs/20260821_184430_1993-08-28) ingests 25 tracks / 3:27:33 against a 1:32:48 date median, flagged [INFLATED] at 120.2% longer with "correlation results for this source are unreliable". The folder /mnt/DYLAN1/Concerts/1993/1993-08-28 Milwaukee, Wisconsin, Marcus Amphitheatre (LB-07173) holds the show twice: top-level d1/ + d2/ (9 + 2 tracks), and a nested "bd1993-08-28-LB-7173_Milwaukee (REMASTERED)_fixed/" containing its own d1/ + d2/ (9 + 2) plus patch dirs bd1993-08-28d1.fix/ (4 files) and d1/fix/ (1). The two copies are NOT byte-identical — d1 is 412,900,389 B against the remaster's 467,889,785 B — so _dedupe_subtrees is right to leave them alone and BUG-326's _dedupe_formats has nothing to collapse. rglob then walks both and concat_source builds one stream containing the original followed by the remaster, which is why the duration lands at roughly 2x the median. Fixing this by widening either de-dup pass would be wrong: it would silently discard a legitimately distinct recording. What is needed is version selection at the source level — detect that one LB folder contains multiple complete passes of the same show, pick one (or emit them as separate sources), and say so in report.md. Note the ingest log line about dropped duplicate files IS present for this source and is unrelated (real dual-format files inside the copies), so that log line must not be read as evidence the source is clean. LB-06780 (20260821_174451_1987-07-19) and LB-06698 (20260821_150958_1969-08-31) were checked on 2026-08-21 and are NOT this bug: both are flat single-directory folders whose on-disk track counts match report.md exactly (11 and 17), and both are partial commercial bootleg CD pressings, so their INCOMPLETE flags are correct. That check did surface a separate defect in how they were diagnosed — see BUG-330. Any INFLATED source corrupts correlation and clustering for its whole date, so the 1993-08-28 verdict is in question until this is fixed.
-Root cause: Unknown
-Fix: —
-
 

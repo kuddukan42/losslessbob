@@ -1,4 +1,10 @@
 
+TODO-331: Re-run tapematch for 1993-08-28 — its verdict was computed from the BUG-327 inflated LB-07173 source
+Priority: Medium
+Status: Open
+Added: 2026-09-01
+Description: Run data/tapematch/runs/20260821_184430_1993-08-28 ingested LB-07173 at 25 tracks / 3:27:33 (both passes of the show concatenated) and was flagged [INFLATED], which corrupts correlation and clustering for the whole date. BUG-327 is fixed in ingest.list_tracks, so a fresh session for 1993-08-28 will now ingest 11 tracks / ~1:32 and produce a trustworthy verdict. Separately worth analysing the nested 'bd1993-08-28-LB-7173_Milwaukee (REMASTERED)_fixed' pass as its own source by pointing a run at that subfolder.
+
 TODO-330: Bulk tracker seeding has no announce pacing — a large add floods TUIT and drops existing seeds
 Priority: Medium
 Status: Open

@@ -155,6 +155,89 @@ def _dedupe_subtrees(tracks: list[Path], source_dir: Path) -> tuple[list[Path], 
     return kept, dropped
 
 
+# A nested pass counts as a second version of the show when it shares at least
+# this fraction of the smaller side's track keys, over at least this many tracks.
+_VERSION_MATCH_RATIO = 0.8
+_MIN_VERSION_TRACKS = 3
+
+
+def _version_key(track: Path, base: Path) -> str:
+    """Return a track's position within a pass: its directory path plus stem, lowercased."""
+    rel = track.relative_to(base)
+    return "/".join(rel.parts[:-1] + (rel.stem,)).lower()
+
+
+def _select_version(
+    tracks: list[Path], source_dir: Path
+) -> tuple[list[Path], tuple[Path, int, int] | None]:
+    """Keep one pass of the show when the folder holds the same show twice (BUG-327).
+
+    Distinct from ``_dedupe_formats`` / ``_dedupe_subtrees``, which only remove
+    copies that are the *same* audio in another container or a byte-identical
+    subtree. LB-07173 holds ``d1``/``d2`` at the top level and a second, complete
+    ``d1``/``d2`` inside ``bd1993-08-28-LB-7173_Milwaukee (REMASTERED)_fixed``,
+    with different byte sizes — two legitimately different masterings. Both were
+    walked and concatenated into one stream, giving 3:27:33 against a 1:32:48
+    date median, an ``[INFLATED]`` flag, and unusable correlations for the whole
+    date.
+
+    A nested directory is treated as a second pass when the track keys beneath
+    it (directory path + stem, relative to that directory) match the keys of
+    everything outside it. The **outer** pass is kept: in every case observed the
+    nested copy is a re-master or fix of the folder's own layout, and
+    source-identity work wants the least-processed pass. Choosing by track count
+    instead would be fooled by patch directories (``d1/fix/Track08.fix.flac``),
+    which repeat a track rather than add one. The dropped pass is logged by name
+    so it can be analysed by pointing a run at that subfolder.
+
+    A folder that genuinely holds two different concerts under this layout is
+    reduced to the outer one, which the log line names; that is preferable to a
+    concatenation that corrupts the whole date's verdict silently.
+
+    Args:
+        tracks: Candidate track paths, already format- and subtree-de-duplicated.
+        source_dir: The source root.
+
+    Returns:
+        ``(kept, dropped)`` where ``dropped`` is ``(nested_root, n_inside,
+        n_outside)`` for the discarded pass, or None if only one pass was found.
+    """
+    source_dir = Path(source_dir)
+    rels: dict[Path, Path] = {}
+    for t in tracks:
+        try:
+            rels[t] = t.relative_to(source_dir)
+        except ValueError:
+            return tracks, None  # unexpected layout; leave the source untouched
+
+    candidates = {rel.parts[:k] for rel in rels.values() for k in range(1, len(rel.parts))}
+
+    best: tuple[tuple[int, int], Path, list[Path], list[Path]] | None = None
+    for parts in candidates:
+        depth = len(parts)
+        inside = [t for t, rel in rels.items() if rel.parts[:depth] == parts]
+        outside = [t for t, rel in rels.items() if rel.parts[:depth] != parts]
+        if min(len(inside), len(outside)) < _MIN_VERSION_TRACKS:
+            continue
+        nested_root = source_dir.joinpath(*parts)
+        keys_in = {_version_key(t, nested_root) for t in inside}
+        keys_out = {_version_key(t, source_dir) for t in outside}
+        overlap = len(keys_in & keys_out)
+        if overlap < _MIN_VERSION_TRACKS:
+            continue
+        if overlap / min(len(keys_in), len(keys_out)) < _VERSION_MATCH_RATIO:
+            continue
+        # Most-overlapping pass wins; ties go to the shallowest nesting.
+        score = (overlap, -depth)
+        if best is None or score > best[0]:
+            best = (score, nested_root, inside, outside)
+
+    if best is None:
+        return tracks, None
+    _, nested_root, inside, outside = best
+    return outside, (nested_root, len(inside), len(outside))
+
+
 def list_tracks(source_dir: Path, exts):
     """Return this source's tracks in concert order, de-duplicated.
 
@@ -180,6 +263,18 @@ def list_tracks(source_dir: Path, exts):
     tracks = sorted(tracks, key=_natural_key)
     # _dedupe_subtrees logs each dropped subtree by name itself.
     tracks, _ = _dedupe_subtrees(tracks, source_dir)
+
+    tracks, dropped_version = _select_version(tracks, source_dir)
+    if dropped_version:
+        nested_root, n_inside, n_outside = dropped_version
+        log.warning(
+            "ingest: %s holds the show twice — using the outer pass (%d track(s)) and "
+            "skipping the nested copy in %r (%d track(s)); analyse that version by "
+            "pointing a run at that subfolder (BUG-327)",
+            Path(source_dir).name, n_outside,
+            str(nested_root.relative_to(Path(source_dir))), n_inside,
+        )
+
     return sorted(tracks, key=_natural_key)
 
 
