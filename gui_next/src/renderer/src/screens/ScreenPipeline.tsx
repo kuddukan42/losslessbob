@@ -22,6 +22,7 @@ import {
   DEFAULT_STAGES,
   type Bucket, type StepData, type FolderRow,
 } from '../components/pipeline/PipelineParts'
+import { copyText } from '../lib/clipboard'
 
 const BASE = window.api.flaskBase
 
@@ -637,7 +638,7 @@ function VerifyStageContent({ step, row, onRun }: {
     const lines = (step.files ?? []).map(f =>
       `${f.overall === 'pass' ? '✓' : '✗'} ${f.filename}\t[md5] ${f.md5_status}\t[ffp] ${f.ffp_status}`
     )
-    navigator.clipboard.writeText(lines.join('\n'))
+    void copyText(lines.join('\n'))
       .then(() => setToast({ msg: t('verify.toast.reportCopied'), tone: 'ok' }))
       .catch(() => setToast({ msg: t('verify.toast.copyFailed'), tone: 'bad' }))
   }, [step.files, t])
@@ -1250,7 +1251,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
 
   const copyDiff = () => {
     const target = editing ? editValue : displayProposed
-    navigator.clipboard.writeText(`Current:  ${row.folderName}\nProposed: ${target}`)
+    void copyText(`Current:  ${row.folderName}\nProposed: ${target}`)
   }
 
   return (

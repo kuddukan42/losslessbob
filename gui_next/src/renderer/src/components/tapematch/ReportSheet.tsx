@@ -28,6 +28,7 @@ import {
   lbsIn, outlineOf, panelDomId, parseReportMd,
   type AuditRow, type OutputPanel, type ReportDoc, type ReportSection,
 } from '../../lib/reportMd'
+import { copyText } from '../../lib/clipboard'
 
 const JUDGMENT_LABEL: Record<string, string> = {
   confirmed_same: 'Same source',
@@ -473,7 +474,7 @@ export function ReportSheet(props: ReportSheetProps): React.JSX.Element {
   const copy = async () => {
     if (!md) return
     try {
-      await navigator.clipboard.writeText(md)
+      if (!await copyText(md)) throw new Error('clipboard unavailable')
       setCopied(true)
       window.setTimeout(() => setCopied(false), 1800)
     } catch { /* clipboard unavailable — the raw view is still selectable */ }

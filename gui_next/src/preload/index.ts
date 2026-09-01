@@ -10,6 +10,7 @@ contextBridge.exposeInMainWorld('api', {
   pickDir:         (): Promise<string | null> => ipcRenderer.invoke('dialog:pickDir'),
   pickFile:        (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }): Promise<string | null> => ipcRenderer.invoke('dialog:pickFile', opts),
   openPath:        (path: string): Promise<string> => ipcRenderer.invoke('shell:openPath', path),
+  writeClipboard:  (text: string): Promise<boolean> => ipcRenderer.invoke('clipboard:write', text),
   saveFile:        (content: string, filename: string): Promise<boolean> => ipcRenderer.invoke('dialog:saveFile', content, filename),
   printDossierPdf: (url: string, filename: string): Promise<boolean> => ipcRenderer.invoke('dossier:printPdf', url, filename),
   pickAndReadFile:  (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }): Promise<string | null> => ipcRenderer.invoke('dialog:pickAndReadFile', opts),

@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Chip, Input, Pill } from '../components'
+import { copyText } from '../lib/clipboard'
 
 const PINS = [
   { x: 22, y: 28, c: '#3b6a99',                  n: 3,   l: 'Hibbing, MN',              era: '1957'    },
@@ -118,7 +119,7 @@ export function ScreenMap(): React.JSX.Element {
           </div>
         </div>
         <div style={{ flex: 1 }} />
-        <Button variant="ghost"   size="sm" icon="copy"   onClick={() => navigator.clipboard.writeText(MAP_URL)}>{t('map.copyShareUrl')}</Button>
+        <Button variant="ghost"   size="sm" icon="copy"   onClick={() => { void copyText(MAP_URL) }}>{t('map.copyShareUrl')}</Button>
         <Button variant="primary" size="sm" icon="reveal" onClick={() => window.open(MAP_URL)}>{t('map.openLiveMap')}</Button>
       </div>
 

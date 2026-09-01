@@ -2,6 +2,7 @@
 // Ported from _source/lbb-ui.jsx.
 
 import React from 'react'
+import { copyText } from '../lib/clipboard'
 import { Icon } from './Icon'
 import type { IconName } from './Icon'
 
@@ -381,26 +382,63 @@ export interface ToastProps {
   msg: string
   tone: ToastTone
   onDone: () => void
+  /**
+   * Text the toast shows verbatim under the message and offers a Copy button
+   * for — the forum topic URLs, typically. A toast carrying `detail` never
+   * auto-dismisses, because the whole point is that the user reads or copies
+   * it before it goes away.
+   */
+  detail?: string
+  /** Keep the toast up until dismissed even without `detail`. */
+  sticky?: boolean
 }
 
-export function Toast({ msg, tone, onDone }: ToastProps) {
+export function Toast({ msg, tone, onDone, detail, sticky }: ToastProps) {
+  const persistent = sticky || !!detail
+  const [copied, setCopied] = React.useState(false)
+
   React.useEffect(() => {
+    if (persistent) return
     const t = setTimeout(onDone, 3500)
     return () => clearTimeout(t)
-  }, [onDone])
+  }, [onDone, persistent])
 
   const bg     = tone === 'ok'  ? 'var(--lbb-ok-bg)'   : tone === 'bad' ? 'var(--lbb-err-bg)'  : 'var(--lbb-surface2)'
   const border = tone === 'ok'  ? 'var(--lbb-ok-bar)'  : tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-border2)'
   const color  = tone === 'ok'  ? 'var(--lbb-ok-fg)'   : tone === 'bad' ? 'var(--lbb-err-fg)'  : 'var(--lbb-fg)'
+
+  const btn: React.CSSProperties = {
+    fontSize: 'var(--lbb-fs-11)', fontWeight: 600, color, background: 'none',
+    border: `1px solid ${border}`, borderRadius: 5, padding: '2px 8px', cursor: 'pointer',
+  }
 
   return (
     <div style={{
       position: 'fixed', bottom: 24, right: 24, zIndex: 999,
       background: bg, border: `1px solid ${border}`, borderRadius: 8,
       padding: '10px 16px', color, fontSize: 'var(--lbb-fs-13)', fontWeight: 500,
-      boxShadow: '0 4px 16px rgba(0,0,0,0.15)', maxWidth: 400,
+      boxShadow: '0 4px 16px rgba(0,0,0,0.15)', maxWidth: 460,
+      display: 'flex', flexDirection: 'column', gap: 8,
     }}>
-      {msg}
+      <div>{msg}</div>
+      {detail && (
+        <div style={{
+          fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', fontWeight: 400,
+          background: 'var(--lbb-bg)', border: `1px solid ${border}`, borderRadius: 6,
+          padding: '6px 8px', maxHeight: 140, overflow: 'auto', whiteSpace: 'pre-wrap',
+          wordBreak: 'break-all', userSelect: 'text', cursor: 'text',
+        }}>{detail}</div>
+      )}
+      {persistent && (
+        <div style={{ display: 'flex', gap: 6, justifyContent: 'flex-end' }}>
+          {detail && (
+            <button type="button" style={btn} onClick={() => {
+              void copyText(detail).then(okCopy => setCopied(okCopy))
+            }}>{copied ? 'Copied ✓' : 'Copy'}</button>
+          )}
+          <button type="button" style={btn} onClick={onDone}>Dismiss</button>
+        </div>
+      )}
     </div>
   )
 }

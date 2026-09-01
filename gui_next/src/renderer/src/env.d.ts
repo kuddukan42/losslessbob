@@ -12,6 +12,7 @@ interface Window {
     pickDir:         () => Promise<string | null>
     pickFile:        (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }) => Promise<string | null>
     openPath:        (path: string) => Promise<string>
+    writeClipboard:  (text: string) => Promise<boolean>
     saveFile:        (content: string, filename: string) => Promise<boolean>
     printDossierPdf: (url: string, filename: string) => Promise<boolean>
     pickAndReadFile:  (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }) => Promise<string | null>
