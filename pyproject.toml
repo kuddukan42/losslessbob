@@ -5,6 +5,7 @@ exclude = [
     ".venv",
     "gui",        # frozen legacy GUI — no new features, not linted
     "tools",      # standalone scripts, not part of the importable package
+    "archive",    # retired code, kept verbatim — linting it would rewrite history
 ]
 
 [tool.ruff.lint]

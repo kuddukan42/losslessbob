@@ -95,3 +95,10 @@ tests/pipeline_smoke_results.txt
 # Plaintext site credentials — never commit
 tuit.cred
 *.cred
+
+# Archived material (see archive/README.md). The bulky, machine-local
+# subdirectories stay out of git; the rest of archive/ is tracked.
+/archive/venvs/
+/archive/build-artifacts/
+/archive/debug/
+/archive/scratch/

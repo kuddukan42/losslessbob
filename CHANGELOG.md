@@ -1,3 +1,29 @@
+[2026-09-01] — chore: cleanup pass — obsolete material moved to archive/, nothing deleted
+Added: archive/ — a single holding area for material that is no longer part of the working
+  tree. Nothing was deleted; every item can be moved straight back. archive/README.md is the
+  manifest and records what was deliberately left alone. Contents: venvs/venv-broken-py313
+  (642 MB dead 3.13 virtualenv superseded by .venv), build-artifacts/gui_next-dist-1.2.0-2026-05-29
+  (electron-builder output incl. a 124 MB AppImage, built at v1.2.0 against a tree now at 1.4.0),
+  scratch/taper-tier-2026-07-17 (the former .scratch/ — one-off taper tier recompute scripts and a
+  standalone taper_review.html draft, superseded by backend/taper_review.html and /taper-curation),
+  debug/ (318 .debug/ artifacts dated before 2026-08-01), attic/ (the pre-existing top-level attic/
+  moved verbatim, so there is one archive rather than two) and tools-throwaway/ (_qbt_sysctl.conf,
+  _qbt_tune.sh, _route_audit.py, _route_dryrun.py — the tools/_<name> throwaway convention; the
+  route pair shipped its work in 62cbb8f2/TODO-317).
+Changed: .gitignore — archive/venvs, archive/build-artifacts, archive/debug and archive/scratch are
+  ignored (bulky and machine-local); archive/attic and archive/tools-throwaway stay tracked.
+Changed: pyproject.toml — ruff excludes archive/, alongside the existing tools/ exclusion. The
+  archived scripts are kept verbatim; the pre-commit hook would otherwise auto-fix retired code.
+Changed: PROJECT.md file-structure tree — the attic/ line becomes the archive/ subtree.
+Changed: .claude/hooks/path_guard.py — its refusal messages and docstring pointed temp files at
+  .scratch/, which no longer exists and contradicted CLAUDE.md; they now say .debug/. Message text
+  only, no change to what the hook blocks.
+Note: .debug/ itself and its electron/ and screenshots/ subdirs stay in place — /verify writes to
+  those exact paths. Nothing under data/ was touched; archive/README.md lists the stale-looking
+  candidates there (webengine_cache/ orphaned by the PyQt6 removal, the lossless_bob.db /
+  losslessbob.db pair) for tj to judge. Verified: 1594 backend tests pass, check_project_refs.py
+  exits clean.
+
 [2026-09-01] — fix: four integrity defects — wrong-concert prose in analysis bundles, one LB folder spliced end to end, re-serialised mirror attachments, and a forum gate that disagreed with its own banner
 Fixed: tools/tapematch/prep_analysis_input.py:
   BUG-328. Every `LB-<n>` in report.md was globbed straight into `LBF-<padded>-*.txt` with no check that
