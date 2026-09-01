@@ -1,3 +1,33 @@
+[2026-09-01] — fix: a run's analysis bundle no longer quotes the wrong concert, and one LB folder holding the show twice is no longer spliced end to end
+Fixed: tools/tapematch/prep_analysis_input.py:
+  BUG-328. Every `LB-<n>` in report.md was globbed straight into `LBF-<padded>-*.txt` with no check that
+  the id belonged to the run's date, so a typo in uploader prose pulled a different concert's info file
+  in alongside the run's own sources — `"Source: LB-0897"` on 1999-06-20 attached LB-00897 (1981-06-30
+  London), and `"LB-1711"` on 1999-07-24 attached LB-01711 (1999-06-26 Las Vegas). The analysis writer
+  was then handed prose from the wrong show and asked to reconcile it, which is exactly the input that
+  manufactures false "needs review" flags. The bundle now derives the run's date (dir-name suffix, report
+  title as fallback) and the coverage table's LB numbers, and checks every other reference against
+  `entries.date_str`. Off-date and unknown-date references are still attached — a genuine cross-reference
+  is evidence — but under a "Cross-references from commentary — NOT sources for this run" heading tagged
+  `[DIFFERENT DATE: ...]` / `[DATE UNKNOWN]`. A missing or unreadable DB degrades to treating every
+  prose-only reference as unverified rather than trusting it.
+Fixed: tools/tapematch/tapematch/ingest.py:
+  BUG-327. `list_tracks` rglob'd the whole source tree and concatenated it. Its two de-dup passes only
+  remove copies that are the *same* audio — `_dedupe_formats` (one file per `(parent, stem)`) and
+  `_dedupe_subtrees` (byte-identical subtrees) — so LB-07173's top-level `d1`/`d2` plus its nested
+  "(REMASTERED)_fixed" `d1`/`d2`, which differ in bytes, were both walked into one 3:27:33 stream against
+  a 1:32:48 date median, flagged `[INFLATED]`, and put the whole date's correlations and clustering in
+  question. New `_select_version` runs after the de-dup passes: a nested directory is a second pass when
+  its track keys (directory path + stem, relative to that directory) overlap the keys outside it by ≥80%
+  over ≥3 tracks. The outer pass is kept — the nested copy is a re-master or fix in every observed case,
+  and picking by track count would be fooled by patch dirs like `d1/fix/Track08.fix.flac` that repeat a
+  track rather than add one — and the dropped pass is named in a warning that reaches report.md so it can
+  be analysed by pointing a run at that subfolder. LB-07173 now ingests 11 tracks, down from 25.
+Added: tools/tapematch/tests/test_prep_analysis_input.py, tools/tapematch/tests/test_version_selection.py:
+  23 tests covering date matching, coverage-table extraction, the cross-reference split, the no-DB
+  fallback, LB-07173's exact layout, and the layouts that must NOT be treated as two passes (multi-disc
+  shows with repeated filenames, nested bonus material, flat folders).
+
 [2026-08-31] — fix: forum topic links now actually reach the clipboard, and the toast waits
 Fixed: gui_next/src/main/index.ts, gui_next/src/preload/index.ts, gui_next/src/renderer/src/lib/clipboard.ts:
   BUG-333. The renderer copied forum topic URLs with `navigator.clipboard.writeText`, which in a packaged
