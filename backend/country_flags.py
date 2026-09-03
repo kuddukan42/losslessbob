@@ -14,6 +14,10 @@ is exhaustive over the values actually present in the corpus. Anything that
 does not resolve unambiguously returns None: a subject with no flag is right,
 a subject with the wrong flag is not.
 
+A date Olof has no event for falls back to the entry's free-text ``location``
+via :func:`flag_for_location` — the 1975 Rolling Thunder gap (New Haven
+1975-11-13 and friends) is real and left US shows unflagged.
+
 The UK nations get their subdivision flags (🏴󠁧󠁢󠁳󠁣󠁴󠁿 and friends) rather than
 🇬🇧, matching the board's existing usage.
 """
@@ -62,6 +66,8 @@ _NAME_TO_CODE: dict[str, str] = {
     "holland": "NL", "the netherlands": "NL", "irelandw": "IE",
     "republic of singapore": "SG", "slovak republic": "SK",
     "isle of wight": "GB",
+    # Spellings that only ever turn up in free-text entry locations.
+    "usa": "US", "u.s.a.": "US", "u.s.": "US", "uk": "GB", "u.k.": "GB",
     # ── US states and DC ─────────────────────────────────────────────────────
     **{s: "US" for s in (
         "alabama", "alaska", "arizona", "arkansas", "california", "colorado",
@@ -161,3 +167,38 @@ def flag_for_date(date_str: str | None) -> str | None:
         if flag:
             return flag
     return None
+
+
+#: Separators that split a free-text location into candidate place names.
+_LOCATION_SPLIT = re.compile(r"[,;()\[\]]")
+
+
+def flag_for_location(location: str | None) -> str | None:
+    """Flag emoji for a free-text ``entries.location`` string, or None.
+
+    The fallback for a date Olof's corpus does not cover. ``location`` is
+    user-entered and unstructured ("New Haven, Connecticut, Veterans Memorial
+    Coliseum", "Columbia Studio A. Nashville, Tennessee, USA"), so it is split
+    on commas, semicolons and brackets and every part is looked up in the same
+    name table :func:`flag_for_name` uses. Two-letter abbreviations are
+    deliberately not recognised: "DE" is Delaware or Germany, and a wrong flag
+    is worse than none.
+
+    Returns:
+        The flag emoji when exactly one country is named, or None when nothing
+        resolves or the parts disagree (a city that shares a country's name,
+        say — "Mexico, Missouri" names two, so it names neither).
+    """
+    raw = (location or "").strip()
+    if not raw:
+        return None
+    found: set[str] = set()
+    for part in _LOCATION_SPLIT.split(raw):
+        flag = flag_for_name(part.strip().strip("."))
+        if flag:
+            found.add(flag)
+    if len(found) != 1:
+        if found:
+            logger.debug("Location %r names %d countries; no flag", raw, len(found))
+        return None
+    return found.pop()

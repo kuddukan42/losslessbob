@@ -1,3 +1,34 @@
+[2026-09-02] — tapematch: 26-run tail batch analysed, backlog drained; forum subject flag fallback
+Added: backend/country_flags.py — flag_for_location(), the fallback for concert dates Olof's corpus
+  does not cover (the 1975 Rolling Thunder gap left US shows unflagged). Splits a free-text
+  entries.location on commas/semicolons/brackets and looks each part up in the existing name table.
+  Returns a flag only when exactly one country is named — "Mexico, Missouri" names two, so none —
+  and deliberately does not recognise two-letter abbreviations ("DE" is Delaware or Germany). Five
+  free-text-only spellings added to _NAME_TO_CODE (usa, u.s.a., u.s., uk, u.k.).
+Changed: backend/forum_poster.py — _build_subject() falls back to flag_for_location(entry.location)
+  when flag_for_date() finds nothing. BOOTLEG titles still get no flag. (Carried over uncommitted
+  from the previous session; recorded here.)
+Changed: tests/test_country_flags.py — coverage for the fallback, incl. the ambiguous-parts and
+  abbreviation cases. 18 pass.
+Changed: TODO.md — TODO-319 (tapematch chain-clustering over-merges) corroborated with the
+  2026-09-02 batch rather than opening a duplicate. 14 of 26 dirs came back needs-review, 56%
+  against a 32% all-time base rate (996/3100), and the excess is almost entirely that mechanism.
+  Worst case 2010-03-28 Tokyo: 8 recordings in one family at mean intra-corr 0.058, 3 pairs with
+  secondary hiss evidence and 28 chain-unverified, against distinct rigs and noise floors spanning
+  -72 to -89 dB. Noted the skew — the tail batch is all 6-11-entry dates, so a fix wants validating
+  against high-entry-count dates specifically.
+Note: /tapematch-batch 30 wrote the last 26 eligible analysis.md files (5 sonnet subagents on
+  date-group-safe partitions; the 1991-02-10, 2004-10-14 and 2002-10-11 same-date pairs each went
+  to one agent). 12 looks-correct / 14 needs-review. backend.tapematch_sync then ran: 3,062 dates,
+  9,132 families, 12,035 recordings linked, 24,226 pairs, 0 errors. next_batch.py --stats is now
+  0 eligible dirs — the complete-set queue is drained. The ~995 run dirs still lacking analysis.md
+  fail the complete-set rule and requeue only when their secondary sources land. Run outputs live
+  under data/, which is gitignored, so none of the 26 files appear in this commit.
+Note: 2002-10-11 has two analyses reaching different family counts (older run 5, newer 8) because
+  the two tapematch runs clustered differently; both were still pending so both were written. The
+  analyses agree on the real structure and name the newer one correct. This is the situation
+  TODO-326 already describes — no new ticket opened.
+
 [2026-09-01] — chore: cleanup pass — obsolete material moved to archive/, nothing deleted
 Added: archive/ — a single holding area for material that is no longer part of the working
   tree. Nothing was deleted; every item can be moved straight back. archive/README.md is the
