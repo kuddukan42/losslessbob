@@ -1,3 +1,46 @@
+[2026-09-02] — tapematch: one merge predicate for display + clustering; superseded-run fix; TODO-325 sweep
+Fixed: tools/tapematch/tapematch/cli.py — BUG-329. The SECONDARY MATCH section hand-rolled its own
+  will_merge expression (windowed OR hiss-frac+median OR fp cluster bar) to print "→ SECONDARY LINK"
+  vs "→ hiss evidence (below merge threshold)", while the real merge was decided later by
+  verdict.pair_links; the copy ignored the staircase/curator fp relaxations, the lo-fi hiss median,
+  the triplet fingerprint and addon_links, so a pair could print "below merge threshold" and still be
+  merged (repro: 20260710_030008_1997-12-05). New _merge_tag() derives the tag from verdict.pair_links
+  itself. The report block had to move below _pair_metrics (which needs the emb/ASR passes), so
+  SECONDARY MATCH now prints after BANTER/ASR; the "=== CLUSTERS ===" header moved down with it so
+  section order still reads SECONDARY MATCH → CLUSTERS. Negative tag reworded "→ below merge
+  threshold" — the old text claimed hiss evidence for windowed- and fingerprint-only pairs.
+Added: tools/tapematch/tests/test_merge_tag.py — pins _merge_tag ≡ pair_links, incl. the BUG-329 case.
+Fixed: tools/tapematch/next_batch.py — TODO-326. ranked(newest_per_date=True) built by_date from
+  eligible_dirs(), which already drops analysed runs, so members[-1:] picked the newest *pending* run
+  and happily handed back a superseded older run once a date's newest was analysed — two contradictory
+  analysis.md files per date. New _iter_run_dirs()/_has_analysis()/newest_run_dir_by_date()/
+  superseded_eligible_dirs(): the newest run is now computed over ALL run dirs, and the date is dropped
+  when that run is already analysed. --stats excludes superseded dirs and reports their count.
+Added: tools/tapematch/tests/test_next_batch.py — 5 cases over the newest/superseded matrix.
+Changed: data/tapematch/runs/{20260715_055200_2008-09-01,20260715_122016_2009-08-04,
+  20260715_133621_2009-11-05}/analysis.md — SUPERSEDED banner on the older of each contradictory pair
+  (the 2026-07-18 re-runs supersede them; the app DB already reflects the newer clustering). No
+  deletions. Untracked — data/ is gitignored.
+Added: tools/tapematch/tapematch/verdict.py — TODO-325 / BUG-331. Two dark config keys, both absent
+  from the shipped config so behaviour is byte-identical: match.secondary_primary_floor
+  (_secondary_corroborated — windowed/hiss/fp/triplet links must also show corr >= floor) and
+  match.fingerprint_primary_floor (_fingerprint_corroborated — the same floor scoped to the
+  fingerprint/triplet legs only). addon_links is deliberately ungated (folding Rule D in costs
+  150-230 tp).
+Added: tools/tapematch/tests/{test_secondary_primary_floor.py,test_fingerprint_primary_floor.py}.
+Changed: tools/tapematch/CALIBRATION_PROGRESS.md + config.yaml — the sweep behind both keys.
+  BUG-331 root cause: the two reported merges came from the staircase-relaxed fp bar (fp 0.417/0.420
+  vs cluster_threshold_staircase 0.40), not from a staircase "link" — 2006-10-27 no longer merges
+  under today's config (the 2026-07-17 staircase_corroboration gate fixed it incidentally), but
+  2008-07-08 LB-06272/06304 still does, corroborated only by noise-floor hiss (frac 0.134, median
+  0.079 against 0.05 floors) at corr 0.030, and it is live in the DB with no newer run. A UNIFORM
+  primary floor cannot fix it: 1980-12-04 is a real taper-corroborated merge on a windowed leg at
+  corr 0.0215, LOWER than the false merge's 0.0295. Scoping the floor to the fingerprint legs
+  separates them by mechanism. Recommended fingerprint_primary_floor 0.10 (fixes BUG-331 and all
+  three 1990-06-01 pairs, 0 new frozen-set fp, -91 tp / -11 fp; preserves 1980-12-04, 1993-10-03 and
+  1995-09-27's core pair) with 0.05 as the cheaper buy (-50 tp / -7 fp, same two fixes). NOT enabled
+  — thresholds need tj sign-off. 465 tapematch tests pass.
+
 [2026-09-02] — tapematch: 26-run tail batch analysed, backlog drained; forum subject flag fallback
 Added: backend/country_flags.py — flag_for_location(), the fallback for concert dates Olof's corpus
   does not cover (the 1975 Rolling Thunder gap left US shows unflagged). Splits a free-text
