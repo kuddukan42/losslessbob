@@ -1,3 +1,29 @@
+[2026-09-03] — tapematch: collection gap list; TODO-334 premise corrected; TODO-333/335/336 filed
+Added: tools/tapematch/build_gap_list.py — TODO-334. Resolves the n_sources_db vs n_sources_found
+  shortfall in observations.db per LB number instead of per count, into four buckets: present /
+  private / unranked / absent. Over the 3,061 run dates (14,215 catalogued recordings): present
+  12,017, private 2,069, unranked 110, absent 19. The 1,414-recording shortfall was read as an
+  acquisition gap when TODO-334 was filed; it is not. Only 19 recordings are genuinely off disk
+  (18 of them with no my_collection row at all). The 2,069 "private" ones are on disk WITH audio
+  and are dropped by find_lb_folders' PRIVATE/NOTORRENT path rule, because a private entry has no
+  local LB page and so no commentary to corroborate a merge against — meaning ~15% of the corpus
+  on run dates has never been matched, concentrated in the 1990s (1,157) and 1980s (316), with 87
+  dates holding at least as many private recordings as ingested ones. Metadata only, no audio
+  decoded, no directory walked except to test existence. Refuses to write when a DYLAN drive is
+  unmounted: every "absent" verdict is a filesystem existence test, so an unmounted drive would
+  invent thousands of false acquisition targets.
+Added: tools/tapematch/GAP_LIST.md (tracked summary) + data/tapematch/gap_list.json (gitignored,
+  per-date bucket lists). Regenerate with .venv/bin/python3 tools/tapematch/build_gap_list.py.
+Changed: TODO.md — TODO-334 rewritten around the corrected premise; what remains of it is the
+  policy question (should tapematch ingest private sources and mark the families
+  commentary-uncorroborated?), which should be gated behind the TODO-325 corroboration floor rather
+  than shipped first. Also filed TODO-333 (latest-run configs hash to 10+ distinct calibrations,
+  largest covering 876 of 3,062 dates; verdict provenance unrecorded), TODO-335 (7,198 of 9,131
+  source tapes are single-copy, a lower bound since over-merge can only shrink it; redundancy by
+  era 1.86 in 1974, 1.6–1.8 in 1995–97, 1.05–1.17 from 2017), and TODO-336 (114 pairs where LB says
+  different and the run merged them — the polarity CONTRADICTED_CENSUS.md never covered; 14
+  decisive at corr ≥ 0.75, 100 below threshold and better held as a TODO-325 validation set).
+
 [2026-09-02] — tapematch: one merge predicate for display + clustering; superseded-run fix; TODO-325 sweep
 Fixed: tools/tapematch/tapematch/cli.py — BUG-329. The SECONDARY MATCH section hand-rolled its own
   will_merge expression (windowed OR hiss-frac+median OR fp cluster bar) to print "→ SECONDARY LINK"
