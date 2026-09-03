@@ -462,9 +462,10 @@ def _build_subject(lb_number: int, entry: dict) -> str:
 
     A concert whose date resolves to one country is prefixed with that
     country's flag emoji (see :mod:`backend.country_flags`), matching the
-    board's existing convention. An unresolved location simply gets no prefix.
+    board's existing convention. Dates Olof's corpus does not cover fall back to
+    the entry's own location text. An unresolved location simply gets no prefix.
     """
-    from backend.country_flags import flag_for_date
+    from backend.country_flags import flag_for_date, flag_for_location
     from backend.torrent_maker import _parse_date
     lb_id = f"LB-{lb_number:05d}"
     date_str = entry.get("date_str") or ""
@@ -481,7 +482,7 @@ def _build_subject(lb_number: int, entry: dict) -> str:
     # A country flag prefix, the board's own convention. Only for concerts: a
     # BOOTLEG compiles shows from several places, so no one flag is true of it.
     if not bootleg_title:
-        flag = flag_for_date(date_str)
+        flag = flag_for_date(date_str) or flag_for_location(entry.get("location"))
         if flag:
             subject = f"{flag} {subject}"
     return subject
