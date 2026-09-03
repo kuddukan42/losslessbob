@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-329: tapematch secondary-match display and cluster merge use different predicates, so a pair prints 'below merge threshold' and is merged anyway
+Status: Fixed
+File(s): tools/tapematch/tapematch/cli.py:835,tools/tapematch/tapematch/cli.py:839
+Reported: 2026-08-21
+Fixed: 2026-09-02
+Root cause: cli.py's SECONDARY MATCH section duplicated the merge predicate inline (windowed OR hiss frac+median OR fp cluster_threshold) instead of asking verdict.pair_links; the copy knew nothing of the staircase/curator fp relaxations, the lo-fi hiss median, the triplet fingerprint or addon_links, so its printed tag and the actual cluster decision could disagree.
+Fix: New cli._merge_tag() derives the tag from verdict.pair_links — the identical call match.cluster uses. The report block moved below _pair_metrics (which needs the emb/ASR passes) and the '=== CLUSTERS ===' header moved with it, so section order still reads SECONDARY MATCH then CLUSTERS. Negative tag reworded '→ below merge threshold'. Pinned by tests/test_merge_tag.py.
+
 BUG-334: Forum post gate reads loose .ffp/.md5 sidecars, so a folder with two filename conventions is reported half-missing while its LBDIR manifest verifies clean
 Status: Fixed
 File(s): backend/app.py:4689

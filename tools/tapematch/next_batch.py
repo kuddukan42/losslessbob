@@ -43,12 +43,24 @@ _COVERAGE_RE = re.compile(
 )
 
 
+def _iter_run_dirs() -> "list[Path]":
+    """Return every run dir under ``RUNS_DIR``, sorted (chronological by name)."""
+    if not RUNS_DIR.is_dir():
+        return []
+    return [p for p in sorted(RUNS_DIR.iterdir()) if p.is_dir()]
+
+
+def _has_analysis(run_dir: Path) -> bool:
+    """Return whether ``run_dir`` already has a written analysis.md."""
+    return (run_dir / "analysis.md").exists()
+
+
 def eligible_dirs() -> "list[tuple[Path, int]]":
     """Return ``(run_dir, db_entry_count)`` for every eligible run dir."""
     out: "list[tuple[Path, int]]" = []
-    for run_dir in sorted(RUNS_DIR.iterdir()):
+    for run_dir in _iter_run_dirs():
         report = run_dir / "report.md"
-        if not report.is_file() or (run_dir / "analysis.md").exists():
+        if not report.is_file() or _has_analysis(run_dir):
             continue
         text = report.read_text(errors="replace")
         if "=== CLUSTERS ===" not in text:
@@ -60,6 +72,25 @@ def eligible_dirs() -> "list[tuple[Path, int]]":
         if db_entries != found_disk:
             continue
         out.append((run_dir, db_entries))
+    return out
+
+
+def newest_run_dir_by_date() -> "dict[str, Path]":
+    """Return each concert date's most recent run dir, from ALL run dirs.
+
+    Unlike :func:`eligible_dirs`, this does not filter on report.md,
+    completeness, or analysis.md presence — it is the ground truth for "what
+    is actually the latest run of this date", used to detect when a date's
+    newest run has already been analysed while older, superseded runs of the
+    same date are still sitting around eligible (TODO-326).
+    """
+    out: "dict[str, Path]" = {}
+    for run_dir in _iter_run_dirs():
+        concert_date = run_dir.name.split("_")[-1]
+        # Run dir names are ``YYYYMMDD_HHMMSS_<date>``, which sort
+        # chronologically, and _iter_run_dirs() is sorted — so the last dir
+        # seen per date is the newest.
+        out[concert_date] = run_dir
     return out
 
 
@@ -88,12 +119,36 @@ def triage_by_date() -> "dict[str, tuple[str, int]]":
     return out
 
 
+def superseded_eligible_dirs() -> "list[Path]":
+    """Return eligible run dirs that are superseded re-runs (TODO-326).
+
+    An eligible dir (no analysis.md of its own) is superseded when its
+    concert date's true newest run dir is a *different* dir that already has
+    an analysis.md — i.e. the date has since been re-run and analysed, but
+    this older run dir predates that and would otherwise still look
+    "eligible". These can never correctly be picked by any writer.
+    """
+    newest_by_date = newest_run_dir_by_date()
+    out: "list[Path]" = []
+    for run_dir, _db_entries in eligible_dirs():
+        concert_date = run_dir.name.split("_")[-1]
+        true_newest = newest_by_date.get(concert_date)
+        if true_newest is not None and true_newest != run_dir and _has_analysis(true_newest):
+            out.append(run_dir)
+    return out
+
+
 def ranked(newest_per_date: bool = False) -> "list[tuple[Path, int, str, int, str]]":
     """Return eligible dirs, best first, with same-date runs kept contiguous.
 
     Args:
         newest_per_date: Keep only each concert date's most recent run dir,
-            dropping superseded earlier runs of the same date.
+            dropping superseded earlier runs of the same date.  "Most recent"
+            is judged against ALL run dirs for that date (see
+            :func:`newest_run_dir_by_date`), not just the eligible ones — a
+            date whose true newest run already has an analysis.md is dropped
+            entirely rather than falling back to an older, superseded run
+            (TODO-326).
 
     Returns:
         ``(dir, db_entries, verdict, n_rules, group)`` tuples, where ``group``
@@ -109,11 +164,20 @@ def ranked(newest_per_date: bool = False) -> "list[tuple[Path, int, str, int, st
             (run_dir, db_entries, verdict, n_rules)
         )
 
+    newest_by_date = newest_run_dir_by_date() if newest_per_date else {}
     groups = []
     for concert_date, members in by_date.items():
         members.sort(key=lambda r: r[0].name)  # run dirs sort chronologically
         if newest_per_date:
-            members = members[-1:]
+            true_newest = newest_by_date.get(concert_date)
+            if true_newest is not None and _has_analysis(true_newest):
+                continue  # the real newest run is already analysed; skip the date
+            members = [m for m in members if m[0] == true_newest]
+            if not members:
+                # The true newest run isn't itself eligible (missing report,
+                # incomplete set, etc). Don't fall back to an older,
+                # superseded run — wait for the newest to become eligible.
+                continue
         # A group's priority is its most urgent / cheapest member.
         key = min((r[2] != "attention", -r[3], r[1], r[0].name) for r in members)
         groups.append((key, concert_date, members))
@@ -139,11 +203,19 @@ def main() -> int:
 
     rows = ranked(newest_per_date=args.newest_per_date)
     if args.stats:
+        # Superseded runs can never correctly be picked (TODO-326), so they
+        # never belong in "eligible" — strip them even without
+        # --newest-per-date, which ranked() already excludes them under.
+        superseded = superseded_eligible_dirs()
+        if not args.newest_per_date and superseded:
+            drop = {p.name for p in superseded}
+            rows = [r for r in rows if r[0].name not in drop]
         att = sum(1 for r in rows if r[2] == "attention")
         dates = len({r[0].name.split("_")[-1] for r in rows})
+        suffix = f" | superseded {len(superseded)} (excluded)" if superseded else ""
         print(
             f"eligible: {len(rows)} dirs / {dates} dates | "
-            f"attention {att} | clear {len(rows) - att}"
+            f"attention {att} | clear {len(rows) - att}{suffix}"
         )
         return 0
 

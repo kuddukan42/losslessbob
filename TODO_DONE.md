@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-326: next_batch.py --newest-per-date can hand back a superseded run, producing contradictory analysis.md files for one date
+Priority: Medium
+Status: Done
+Added: 2026-08-22
+Closed: 2026-09-02
+Description: Found 2026-08-22 while running three back-to-back tapematch batches. The flag is documented as 'consider only each date's most recent run' and is the stated way to skip superseded re-runs, but it does not do that. In tools/tapematch/next_batch.py ranked() (line ~115), by_date is built from eligible_dirs(), which already filters out any run dir that has an analysis.md. members[-1:] therefore selects the newest run *that is still pending*, not the newest run that exists. Once a date's newest run has been analysed, its older superseded runs become eligible again and --newest-per-date happily hands one back. Observed impact: batch 1 analysed the 2026-07-18 runs of 2008-09-01, 2009-08-04 and 2009-11-05, each correctly split into 2 families; batch 2 was then handed the older 2026-07-15 runs of those same three dates, whose stale clustering merges the pair at correlations 0.003-0.026, and the writer correctly flagged all three as needs-review. The result is two analysis.md files per date on disk reaching opposite verdicts, with nothing recording which one supersedes the other. Stored family data is NOT corrupted — backend.tapematch_sync reads the newest run per date, so the DB reflects the 07-18 clustering — but the on-disk analyses are now self-contradictory, and any later audit or training-set build that walks data/tapematch/runs will ingest both. Fix: under --newest-per-date, compute each date's newest run dir from ALL run dirs for that date, not from the eligible (pending) subset, and drop the date entirely if that newest run already has an analysis.md. Also worth deciding what to do with the three contradictory pairs already written — either delete the superseded 2026-07-15 analyses or mark them superseded in-file. Consider whether --stats should apply the same rule, since the eligible-dir count currently includes superseded runs that arguably should never be picked.
+next_batch.py now computes each date's newest run from ALL run dirs (newest_run_dir_by_date) and drops the date when that run already has an analysis.md, so --newest-per-date can no longer hand back a superseded run; --stats excludes superseded dirs and reports their count. The three contradictory pairs (2008-09-01, 2009-08-04, 2009-11-05) got a SUPERSEDED banner on the older analysis.md rather than deletion. 5 tests in tests/test_next_batch.py.
+
 TODO-329: Site mirror re-serialises every .html attachment, so its bytes can never match an uploader's file
 Priority: Medium
 Status: Done

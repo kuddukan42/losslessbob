@@ -25,6 +25,14 @@ os.environ.setdefault("NUMBA_CACHE_DIR", "/mnt/DATA0/tmp/numba_cache")
 Path(os.environ["NUMBA_CACHE_DIR"]).mkdir(parents=True, exist_ok=True)
 
 
+def _merge_tag(pair: dict, cfg: dict, lineage) -> str:
+    """BUG-329: the SECONDARY MATCH display tag, derived from the exact same
+    predicate ``match.cluster`` uses for the merge decision (``verdict.pair_links``),
+    so the printed tag can never disagree with the actual clustering outcome.
+    """
+    return "→ SECONDARY LINK" if verdict.pair_links(pair, cfg, lineage=lineage) else "→ below merge threshold"
+
+
 def _rss_mb() -> float:
     """Current process RSS in MB via /proc/self/status (Linux). Returns -1 elsewhere."""
     try:
@@ -697,8 +705,6 @@ def main(argv=None):
         ]
         dbg.log(f"SECONDARY_START  cross_pairs={len(cross_pairs)}")
         if cross_pairs:
-            print(f"\n=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===")
-            print(f"  {len(cross_pairs)} cross-family pair(s) — computing secondary evidence ...")
             high_ppm_thr = cfg["secondary_match"].get("high_ppm_threshold", 0)
             for i, j in cross_pairs:
                 ri = ref_mono if i == ref_idx else _mmap(names[i])
@@ -829,48 +835,6 @@ def main(argv=None):
                 if j != ref_idx and rj is not ref_mono:
                     del rj
 
-            wc_thr = cfg["secondary_match"]["coverage_threshold"]
-            hf_thr = cfg["secondary_match"]["hiss_frac_threshold"]
-            hm_thr = cfg["secondary_match"].get("hiss_merge_frac", 1.0)
-            hm_med_thr = cfg["secondary_match"].get("hiss_merge_median", 1.0)
-            fp_display_thr = cfg.get("fingerprint", {}).get("match_threshold", 1.0)
-            fp_cluster_thr = cfg.get("fingerprint", {}).get("cluster_threshold", 0.0)
-            hits = [
-                (i, j, sec_results[(i, j)])
-                for i, j in cross_pairs
-                if sec_results[(i, j)]["windowed_frac"] >= wc_thr
-                or sec_results[(i, j)]["hiss_frac"] >= hf_thr
-                or sec_results[(i, j)]["fp_score"] >= min(fp_display_thr,
-                                                          fp_cluster_thr or fp_display_thr)
-            ]
-            if hits:
-                for i, j, sec in hits:
-                    a, b = names[i], names[j]
-                    parts = []
-                    if sec["windowed_frac"] >= wc_thr:
-                        parts.append(f"windowed {sec['windowed_frac']:.2f} "
-                                     f"({sec['n_windows']} win, med {sec['windowed_median']:.3f})")
-                    if sec["hiss_frac"] >= hf_thr:
-                        parts.append(f"hiss {sec['hiss_frac']:.2f} "
-                                     f"({sec['n_hiss_segs']} segs, med {sec['hiss_median']:.3f})")
-                    fp_show_thr = fp_cluster_thr if fp_cluster_thr > 0.0 else fp_display_thr
-                    if sec["fp_score"] >= fp_show_thr:
-                        ha = len(fp_hashes.get(names[i], set()))
-                        hb = len(fp_hashes.get(names[j], set()))
-                        parts.append(f"fingerprint Dice {sec['fp_score']:.3f} "
-                                     f"({ha} / {hb} hashes)")
-                    evidence = "; ".join(parts)
-                    will_merge = (
-                        sec["windowed_frac"] >= wc_thr
-                        or (sec["hiss_frac"] >= hm_thr and sec["hiss_median"] >= hm_med_thr)
-                        or (fp_cluster_thr > 0.0 and sec["fp_score"] >= fp_cluster_thr)
-                    )
-                    tag = "→ SECONDARY LINK" if will_merge else "→ hiss evidence (below merge threshold)"
-                    print(f"  {_label(a)} / {_label(b)}: {evidence}  "
-                          f"[primary corr {M[i,j]:.3f}] {tag}")
-            else:
-                print(f"  No secondary same-source evidence found.")
-
     # === Re-select reference as the most central source (highest row-sum in M) ===
     # The alphabetical first source may be an outlier (e.g. a bootleg CD).
     # central_name/speed_info_central were already computed above (before the
@@ -895,7 +859,6 @@ def main(argv=None):
     else:
         lag_rows_final = lag_rows_pass1
 
-    print("\n=== CLUSTERS ===")
     m_thr = cfg["match"]["cluster_threshold"]
     wc_thr = cfg.get("secondary_match", {}).get("coverage_threshold", 0.0) if sec_results else 0.0
     hm_thr = cfg.get("secondary_match", {}).get("hiss_merge_frac", 1.0) if sec_results else 1.0
@@ -1071,6 +1034,53 @@ def main(argv=None):
             "banter_score": banter_results.get((i, j), {}).get("banter_score"),
         }
 
+    # === SECONDARY MATCH report (BUG-329) === printed here, after _pair_metrics
+    # is defined, so the merge tag can be computed by the exact predicate
+    # match.cluster below uses (verdict.pair_links) instead of a hand-rolled
+    # duplicate that could (and did) disagree with the real merge decision.
+    # Display thresholds (wc_thr/hf_thr/fp_display_thr) still gate which pairs
+    # are worth printing at all -- only the merge tag's truth source changed.
+    if sec_results:
+        print(f"\n=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===")
+        wc_thr = cfg["secondary_match"]["coverage_threshold"]
+        hf_thr = cfg["secondary_match"]["hiss_frac_threshold"]
+        fp_display_thr = cfg.get("fingerprint", {}).get("match_threshold", 1.0)
+        hits = [
+            (i, j, sec_results[(i, j)])
+            for i, j in cross_pairs
+            if sec_results[(i, j)]["windowed_frac"] >= wc_thr
+            or sec_results[(i, j)]["hiss_frac"] >= hf_thr
+            or sec_results[(i, j)]["fp_score"] >= min(fp_display_thr,
+                                                      fp_cluster_thr or fp_display_thr)
+        ]
+        if hits:
+            for i, j, sec in hits:
+                a, b = names[i], names[j]
+                parts = []
+                if sec["windowed_frac"] >= wc_thr:
+                    parts.append(f"windowed {sec['windowed_frac']:.2f} "
+                                 f"({sec['n_windows']} win, med {sec['windowed_median']:.3f})")
+                if sec["hiss_frac"] >= hf_thr:
+                    parts.append(f"hiss {sec['hiss_frac']:.2f} "
+                                 f"({sec['n_hiss_segs']} segs, med {sec['hiss_median']:.3f})")
+                fp_show_thr = fp_cluster_thr if fp_cluster_thr > 0.0 else fp_display_thr
+                if sec["fp_score"] >= fp_show_thr:
+                    ha = len(fp_hashes.get(names[i], set()))
+                    hb = len(fp_hashes.get(names[j], set()))
+                    parts.append(f"fingerprint Dice {sec['fp_score']:.3f} "
+                                 f"({ha} / {hb} hashes)")
+                evidence = "; ".join(parts)
+                tag = _merge_tag(_pair_metrics(i, j), cfg, lineage_pairs)
+                print(f"  {_label(a)} / {_label(b)}: {evidence}  "
+                      f"[primary corr {M[i,j]:.3f}] {tag}")
+        else:
+            print(f"  No secondary same-source evidence found.")
+
+    # The CLUSTERS header moved down here with the BUG-329 report reordering: the
+    # SECONDARY MATCH section must print before it, and it has to wait for
+    # _pair_metrics. Only the rare "  embedding: ..." lines above are now
+    # headerless; every other section between still prints its own header.
+    print("\n=== CLUSTERS ===")
     groups = match.cluster(names, M, m_thr,
                            link_fn=lambda i, j: verdict.pair_links(
                                _pair_metrics(i, j), cfg, lineage=lineage_pairs))

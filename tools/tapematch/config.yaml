@@ -72,6 +72,35 @@ match:
   # 0.45: catches same-source pairs with clipping/level mismatch between transfers
   #   (e.g. CDR trade copy vs fresh DAT transfer of same tape — observed 0.520 corr).
   # Safety margin: max observed different-source corr is 0.362 (1995-07-08).
+  # secondary_primary_floor (TODO-325, BUG-331, see CALIBRATION_PROGRESS.md
+  # "2026-09-02 TODO-325" section for the full sweep + evidence-date table):
+  # a family edge formed WITHOUT primary corr clearing cluster_threshold —
+  # windowed_frac / hiss frac+median / fingerprint (incl. the staircase- and
+  # curator-relaxed bars) / triplet ALONE — must also show corr >= this floor
+  # (tapematch/verdict.py:_secondary_corroborated). Deliberately excludes
+  # addon_links (Rule A-D), which is separately calibrated.
+  # RECOMMENDATION: DO NOT ENABLE THIS KEY. 1980-12-04 is a taper-
+  # corroborated real merge that links via windowed_frac=1.0 at corr 0.0215 —
+  # LOWER than BUG-331's false merge (corr 0.0295, staircase-fp path). Any
+  # floor that blocks BUG-331 (>0.03) necessarily also blocks 1980-12-04
+  # (needs floor <=0.0215 to survive) — the two cases are on the wrong sides
+  # of every threshold. Superseded by fingerprint_primary_floor below, which
+  # targets the same BUG-331 mechanism without this collateral damage.
+  # secondary_primary_floor: 0.05
+  # fingerprint_primary_floor (2026-09-02 follow-up, same section): the SAME
+  # corroboration idea, scoped to ONLY the fingerprint (base/staircase/
+  # curator) and triplet legs — windowed_frac and hiss are left ungated, so
+  # 1980-12-04's and 1995-09-27's windowed-leg merges are untouched at any
+  # floor (tapematch/verdict.py:_fingerprint_corroborated). This is the
+  # gate that actually targets BUG-331's mechanism (weak fp score, relaxed
+  # by the staircase bar, corroborated only by noise-floor hiss).
+  # RECOMMENDATION: 0.10, pending tj sign-off — fixes BUG-331 (2008-07-08)
+  # and 1990-06-01 (all 3 pairs), zero new frozen-set FPs, preserves
+  # 1980-12-04 and 1993-10-03 in full; the only casualty is 1995-09-27's
+  # third recording (LB-07477, a weak fp-leg edge at corr 0.024) — the
+  # correct 2-way core of that family (LB-04459/07426, windowed leg) stays
+  # merged. Not enabled here — needs sign-off per tools/tapematch/CLAUDE.md.
+  # fingerprint_primary_floor: 0.10
 
 refine:
   # Lag-curve-slope speed refinement (primary residual matrix).

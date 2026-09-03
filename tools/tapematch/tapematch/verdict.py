@@ -60,6 +60,36 @@ valid negative control). All four rules default ``enabled: false`` in the
 committed config, so with the committed config every historical/live verdict
 is byte-identical to pre-Task-5 behaviour.
 
+TODO-325 — ``match.secondary_primary_floor`` — the windowed-coverage, hiss,
+fingerprint (staircase- and curator-relaxed bars included), and triplet-
+fingerprint OR-legs are additionally gated by :func:`_secondary_corroborated`:
+a link formed by one of THOSE signals alone must also show ``corr >=
+match.secondary_primary_floor``. Deliberately excludes ``addon_links``
+(Rules A-D): those are each independently calibrated, zero-new-FP-on-frozen-
+set combination rules (module docstring above) — Rule D in particular is a
+LONE embedding-only path *by design*, precisely because embedding similarity
+is expected to be near-orthogonal to residual correlation (catches EQ'd/
+remastered/pitch-corrected copies correlation misses); folding it into this
+floor was swept and costs ~150-230 true positives for a handful of FPs, i.e.
+it guts a signal that already proved itself safe on its own terms. This gate
+does not replace BUG-331's fp-side ``staircase_corroboration`` gate — it is a
+second, orthogonal net: the existing gate asks "is there non-fingerprint
+evidence for this fingerprint merge", this one asks "is the primary channel
+itself at least consistent with a merge, for the weaker non-primary paths".
+Absent/``0`` (the committed default) returns True unconditionally —
+byte-identical to pre-TODO-325 behaviour, the same dark-launch pattern as
+``staircase_corroboration``. See CALIBRATION_PROGRESS.md for the floor sweep.
+
+``match.fingerprint_primary_floor`` (2026-09-02 follow-up) is a SECOND,
+narrower gate on the SAME question, scoped to only the fingerprint (base/
+staircase/curator) and triplet legs — windowed and hiss are left ungated.
+The uniform ``secondary_primary_floor`` above cannot fix BUG-331 without also
+breaking 1980-12-04 (a genuine windowed-leg merge whose corr, 0.0215, is
+*lower* than BUG-331's false fp-staircase merge, 0.0295); scoping the floor
+away from the windowed/hiss legs targets exactly BUG-331's mechanism instead.
+See :func:`_fingerprint_corroborated` and CALIBRATION_PROGRESS.md for the
+sweep. Both floor keys are independent and may be set simultaneously.
+
 The only behavioural difference from the historical scalar ``f_threshold`` is
 that the fingerprint threshold is now *per-pair* via :func:`fp_threshold`
 (Tasks 3.2 / 4.1): a staircase-flagged or curator-claimed pair may use a lower
@@ -184,6 +214,62 @@ def _staircase_corroborated(pair: Mapping, fp_cfg: Mapping) -> bool:
         if hmed is not None and hmed >= min_hmed:
             return True
     return False
+
+
+def _secondary_corroborated(pair: Mapping, cfg: Mapping) -> bool:
+    """TODO-325 mitigation: a non-primary-only link must show primary corr too.
+
+    A family edge formed WITHOUT the primary residual correlation clearing
+    ``match.cluster_threshold`` — i.e. by windowed coverage, hiss frac/median,
+    fingerprint (including the staircase- and curator-relaxed bars), the
+    or the triplet fingerprint, alone — must also show at least
+    ``match.secondary_primary_floor`` primary correlation. ``addon_links``
+    (Rules A-D) is NOT gated by this floor — see the module docstring. This does not
+    replace any of those signals; it requires the primary channel to be
+    *consistent with* a merge, not silent or contradictory, before a
+    non-primary signal is trusted to form the edge on its own.
+
+    Gate off (``match.secondary_primary_floor`` absent, ``None``, or ``0``)
+    returns True, preserving historical behaviour byte-for-byte — the same
+    dark-launch contract as ``fingerprint.staircase_corroboration``. When set,
+    ``corr is None`` does NOT corroborate (fail-closed on a missing primary
+    signal, same NULL-safety as every other leg in this module).
+    """
+    floor = (cfg.get("match", {}) or {}).get("secondary_primary_floor")
+    if not floor:
+        return True
+    corr = pair.get("corr")
+    return corr is not None and corr >= floor
+
+
+def _fingerprint_corroborated(pair: Mapping, cfg: Mapping) -> bool:
+    """TODO-325 follow-up: a floor scoped to ONLY the fingerprint/triplet legs.
+
+    Coordinator follow-up to :func:`_secondary_corroborated` (2026-09-02):
+    that gate applied uniformly to windowed/hiss/fp/triplet cannot fix
+    BUG-331 (2008-07-08, fp-staircase link, corr 0.0295) without also
+    severing 1980-12-04 (a genuine windowed-leg merge, corr 0.0215 —
+    *lower* than BUG-331's false merge). Scoping the floor to the
+    fingerprint/triplet legs only, and leaving windowed/hiss ungated,
+    targets exactly the mechanism BUG-331 actually exploits (a weak
+    fingerprint score, relaxed by the staircase/curator bar, corroborated
+    only by noise-floor hiss) without touching 1980-12-04's or
+    1995-09-27's windowed-leg merges.
+
+    Gate off (``match.fingerprint_primary_floor`` absent, ``None``, or
+    ``0``) returns True — historical behaviour, same dark-launch pattern as
+    :func:`_secondary_corroborated`. When set, ``corr is None`` does NOT
+    corroborate. Independent of ``match.secondary_primary_floor`` — both
+    keys may be set at once (a pair must then clear whichever gates its
+    OR-leg); see ``pair_links`` for the wiring, and
+    CALIBRATION_PROGRESS.md "2026-09-02 TODO-325" for the sweep that
+    justified splitting this out from the uniform gate.
+    """
+    floor = (cfg.get("match", {}) or {}).get("fingerprint_primary_floor")
+    if not floor:
+        return True
+    corr = pair.get("corr")
+    return corr is not None and corr >= floor
 
 
 def _lineage_key(pair: Mapping) -> tuple[int, int] | None:
@@ -380,14 +466,16 @@ def pair_links(pair: Mapping, cfg: Mapping,
     wc_thr = sec.get("coverage_threshold", 0.0)
     wf = pair.get("windowed_frac")
     if wc_thr and wf is not None and wf >= wc_thr:
-        return True
+        if _secondary_corroborated(pair, cfg):
+            return True
 
     hm_frac = sec.get("hiss_merge_frac", None)
     hm_med = _effective_hiss_median(pair, sec)
     hf, hmed = pair.get("hiss_frac"), pair.get("hiss_median")
     if (hm_frac is not None and hm_med is not None and hf is not None
             and hmed is not None and hf >= hm_frac and hmed >= hm_med):
-        return True
+        if _secondary_corroborated(pair, cfg):
+            return True
 
     fp_thr = fp_threshold(pair, cfg, lineage)
     fp = pair.get("fp_score")
@@ -399,9 +487,11 @@ def pair_links(pair: Mapping, cfg: Mapping,
         # floor sits exactly at the relaxed bar. A blocked fp leg falls through
         # to the remaining OR-paths rather than returning False.
         if fp >= fp_threshold(pair, cfg, lineage, staircase=False):
-            return True
-        if _staircase_corroborated(pair, cfg.get("fingerprint", {}) or {}):
-            return True
+            if _secondary_corroborated(pair, cfg) and _fingerprint_corroborated(pair, cfg):
+                return True
+        elif _staircase_corroborated(pair, cfg.get("fingerprint", {}) or {}):
+            if _secondary_corroborated(pair, cfg) and _fingerprint_corroborated(pair, cfg):
+                return True
 
     # Ratio-invariant triplet fingerprint (Task 7). An OR-path with its own
     # threshold, applied to ALL pairs but especially the sole surviving signal for
@@ -412,7 +502,8 @@ def pair_links(pair: Mapping, cfg: Mapping,
         tri_thr = tri_cfg.get("cluster_threshold", None)
         tri = pair.get("fp_triplet_score")
         if tri_thr is not None and tri_thr > 0.0 and tri is not None and tri >= tri_thr:
-            return True
+            if _secondary_corroborated(pair, cfg) and _fingerprint_corroborated(pair, cfg):
+                return True
 
     # Task 5 evidence-combination rules (addon_links: Rule A/B/C). Rule A is
     # the sole canonical flaw-fingerprint merge path (see module docstring —

@@ -1245,3 +1245,171 @@ No `addon_links` rule reads `banter_score`, so this change is free now and would
 not have been after a rule shipped. Pinned by five tests in `tests/test_asr.py`
 ("denominator: TODO-293 step 2"), including one that re-asserts the old scalar's
 yield penalty so it cannot be quietly reinstated.
+
+---
+
+## 2026-09-02 TODO-325 — primary-correlation corroboration for secondary/fp links
+
+**Mechanism shipped (dark-launched, disabled):** `match.secondary_primary_floor`
+in `config.yaml`, enforced by `verdict._secondary_corroborated()`. A family
+edge formed WITHOUT primary `corr` clearing `match.cluster_threshold` — i.e.
+by `windowed_frac`, hiss frac+median, fingerprint (base, staircase-relaxed, or
+curator-relaxed bar), or the triplet fingerprint ALONE — must also show
+`corr >= secondary_primary_floor`. `addon_links` (Rules A-D) is deliberately
+excluded: those are each independently calibrated combination rules (Rule D
+in particular is a proven zero-new-FP lone embedding path, calibrated
+2026-07-04 — see `verdict.py` module docstring); an early version of this
+gate folded `addon_links` in too and it cost ~150-230 frozen-set true
+positives for a handful of FPs, because embedding similarity is *supposed* to
+be near-orthogonal to residual correlation. Absent/0 (committed) = historical
+behaviour, verified byte-identical (`floor 0.00` row below reproduces the
+un-gated cached score exactly).
+
+### Sweep — `regression.py score --cached`, floors against the frozen set
+
+Candidate configs `_cand_floor_*.yaml` (deleted after this sweep), diffed
+against the true floor-absent baseline (not the harness's own "baseline"
+column, which does not strip `secondary_primary_floor` and so double-applies
+it — see `_sweep_325.py`, also deleted):
+
+| floor | tp | fn | fp | tn | precision | recall | Δtp vs floor 0 | Δfp vs floor 0 |
+|---|---|---|---|---|---|---|---|---|
+| 0.00 (committed) | 705 | 870 | 18 | 1372 | 97.51% | 44.76% | — | — |
+| 0.05 | 650 | 925 | 11 | 1379 | 98.34% | 41.27% | −55 | −7 |
+| 0.10 | 609 | 966 | 7 | 1383 | 98.86% | 38.67% | −96 | −11 |
+| 0.15 | 595 | 980 | 7 | 1383 | 98.84% | 37.78% | −110 | −11 |
+| 0.20 | 586 | 989 | 7 | 1383 | 98.82% | 37.21% | −119 | −11 |
+| 0.25 | 579 | 996 | 6 | 1384 | 98.97% | 36.76% | −126 | −12 |
+| 0.30 | 571 | 1004 | 6 | 1384 | 98.96% | 36.25% | −134 | −12 |
+
+Zero *new* FPs at any floor (the gate only removes links, never adds one) —
+but the tp cost per fp removed is steep (≈5-9 tp lost per fp), and 4 of the
+18 floor-0 FPs are untouchable by this mechanism regardless of floor (3 are
+pure primary-corr matches, corr 0.93-0.95, that this gate never reaches; 1 is
+a self-pair inheriting family membership transitively).
+
+### TODO-325 evidence dates — checked directly against `observations.db`
+`latest_pairs`, not the frozen set (`_sweep_325.py`, single-date recompute via
+`regression._candidate_verdicts_for_date`):
+
+| date | pair(s) | link path today | corr | fixed by floor? |
+|---|---|---|---|---|
+| 2008-07-08 (BUG-331) | LB-06272/06304 | fingerprint, staircase-relaxed bar, corroborated only by noise-floor hiss | 0.0295 | **yes**, any floor ≥0.05 |
+| 1990-06-01 | all 3 pairs (04200/12552/12884) | fingerprint, base bar (no staircase flag on these rows) | 0.002-0.003 | **yes**, any floor ≥0.05 |
+| 1995-06-16 | LB-04782/15705, LB-04865/15705 | — | 0.022-0.024 | **already fixed**, pre-dates this change — the existing `staircase_corroboration` gate already blocks both edges today (`hiss_median` 0.012 fails its 0.05 floor); LB-15705 does not merge with 04782/04865 under the committed config even at floor 0.00. The TODO-325 note describing this as still-merging is stale. |
+| 2024-03-05 | LB-15974/15975 | `addon_links.rule_d` (emb 0.755/0.755, both ≥0.75) | 0.073 | **no** — floor never reaches rule_d by design |
+| 2024-11-08 | LB-16189/16294 | `addon_links.rule_d` (emb 0.783/0.783) | 0.189 | **no** — same reason |
+| 2023-04-20 | LB-15764/15772 | `windowed_frac` 0.784 (rule_d abstains: emb 0.359 < 0.75 t_emb on one leg) | 0.390 | **no** at any sensible floor — would need floor > 0.39, which is past `cluster_threshold` territory, not a "secondary corroboration" floor |
+| 1981-06-21 | LB-00328/08360 | `addon_links.rule_d` (emb 0.983/0.892) | 0.0047 | **no** — TODO-325 filed this as a plain primary-threshold failure with "no secondary evidence"; today's data shows it actually links via rule_d embedding, not via a bare threshold pass. Either way this gate doesn't reach it. |
+
+Correct secondary merges the item asks to preserve:
+
+| date | pair(s) | link path | corr | survives? |
+|---|---|---|---|---|
+| 1980-12-04 | LB-01910/07463 | `windowed_frac` 1.0 (max), hiss frac 0.98/median 0.74 | **0.0215** | breaks at **any** floor ≥0.05 |
+| 1993-10-03 | LB-03781/05912 | fingerprint, base bar (0.506 ≥ 0.50) | 0.115 | survives floor ≤0.10, breaks ≥0.15 |
+| 1995-09-27 | LB-04459/07426 (core pair) | `windowed_frac` 0.858 | 0.290 | survives through floor 0.25 |
+| 1995-09-27 | LB-04459/07477 (3rd source) | fingerprint, base bar (0.524 ≥ 0.50) | 0.024 | breaks at any floor ≥0.05 — LB-07477 drops out of the family, core pair (04459/07426) stays merged |
+
+### Verdict: NO FLOOR IS SAFE at the scope this task specified
+
+`match.secondary_primary_floor`, applied uniformly to windowed/hiss/fp/triplet
+as designed, cannot fix BUG-331 without also breaking 1980-12-04 — the two
+sit on the **wrong sides of every threshold relative to each other**:
+BUG-331's false merge shows corr 0.0295; 1980-12-04's genuine,
+taper-corroborated merge (windowed_frac = 1.0, the maximum possible) shows
+corr **0.0215, lower still**. Any floor that excludes BUG-331 (floor > 0.0295)
+necessarily also excludes 1980-12-04 (needs floor ≤ 0.0215 to survive) — there
+is no floor value where "block BUG-331" and "keep 1980-12-04" are both true.
+This is not a precision/recall tradeoff to tune around; it is a hard
+contradiction in the evidence itself.
+
+Recommendation: **leave `secondary_primary_floor` disabled** (as committed).
+It does not fix 4 of the 6 TODO-325 evidence dates anyway (they merge via
+`addon_links.rule_d`, out of scope by design, or sit too close to
+`cluster_threshold` to reach without collateral). Of the two dates it can fix
+(BUG-331, 1990-06-01), the mechanism is provably unsound because it also
+severs 1980-12-04.
+
+**Path not implemented here, for tj to consider:** scope the gate to the
+fingerprint/triplet legs only, excluding `windowed_frac`/hiss — BUG-331 and
+1990-06-01 both link via the fingerprint leg, while 1980-12-04's and
+1995-09-27's core-pair merges link via `windowed_frac`, which would then be
+ungated. That narrower version was not swept or implemented in this session
+(the task as specced calls for the uniform gate); if pursued, 1995-09-27's
+third member (LB-07477, fp-path, corr 0.024) and 1993-10-03 (fp-path, corr
+0.115, above floor 0.10) would still be casualties at floor ≥0.05/0.15
+respectively — smaller, bounded, and arguably a fairer trade since both are
+tp losses, not new fp.
+
+---
+
+### 2026-09-02 follow-up — `match.fingerprint_primary_floor` (fp/triplet-only scope)
+
+Implemented the "path not implemented" alternative above as a second,
+independent config key: `match.fingerprint_primary_floor`, enforced by
+`verdict._fingerprint_corroborated()`, wired ONLY into the fp (base/
+staircase/curator) and triplet legs of `pair_links` — `windowed_frac` and
+hiss are left completely ungated. Both floor keys can be set at once (a pair
+must clear whichever gate(s) apply to the leg that links it); absent/0 on
+either = historical behaviour, same dark-launch contract.
+
+#### Sweep — `regression.py score --cached`, same method as above (diffed
+against the true floor-absent baseline via `_sweep_325b.py`, deleted after
+this sweep; candidate configs `_cand_fpfloor_*.yaml`, also deleted):
+
+| floor | tp | fn | fp | tn | precision | recall | Δtp vs floor 0 | Δfp vs floor 0 |
+|---|---|---|---|---|---|---|---|---|
+| 0.00 (committed) | 705 | 870 | 18 | 1372 | 97.51% | 44.76% | — | — |
+| 0.05 | 655 | 920 | 11 | 1379 | 98.35% | 41.59% | −50 | −7 |
+| 0.10 | 614 | 961 | 7 | 1383 | 98.87% | 38.98% | −91 | −11 |
+| 0.15 | 604 | 971 | 7 | 1383 | 98.85% | 38.35% | −101 | −11 |
+| 0.20 | 598 | 977 | 7 | 1383 | 98.84% | 37.97% | −107 | −11 |
+| 0.25 | 590 | 985 | 6 | 1384 | 98.99% | 37.46% | −115 | −12 |
+| 0.30 | 587 | 988 | 6 | 1384 | 98.99% | 37.27% | −118 | −12 |
+
+Roughly the same frozen-set aggregate shape as the uniform gate (marginally
+fewer tp lost per floor, since windowed/hiss-leg true positives are no longer
+touched at all) — the real difference is in the evidence-date table below.
+
+#### Evidence-date re-check — same 10 dates, `fingerprint_primary_floor` only:
+
+| date | pair(s) | link path | corr | fixed/preserved? |
+|---|---|---|---|---|
+| 2008-07-08 (BUG-331) | LB-06272/06304 | fp, staircase-relaxed | 0.0295 | **fixed** at any floor ≥0.05 (same as before — this IS an fp-leg link) |
+| 1990-06-01 | all 3 pairs | fp, base bar | 0.002-0.003 | **fixed** at any floor ≥0.05 (same as before — fp-leg link) |
+| 1995-06-16 | LB-04782/15705, 04865/15705 | — | 0.022-0.024 | unaffected either way — already blocked by `staircase_corroboration` at floor 0 |
+| 2023-04-20 | LB-15764/15772 | `windowed_frac` 0.784 | 0.390 | unaffected at any floor (windowed leg, now permanently ungated by this key) |
+| **1980-12-04** | LB-01910/07463 | `windowed_frac` 1.0 | 0.0215 | **preserved at every floor tested (0.00-0.30)** — this is the fix: the windowed leg is never gated by `fingerprint_primary_floor`, so BUG-331's false merge (fp-leg) and 1980-12-04's real merge (windowed-leg) are now correctly separated by MECHANISM, not just by corr magnitude |
+| 1993-10-03 | LB-03781/05912 | fp, base bar (0.506) | 0.115 | preserved through floor 0.10, breaks at ≥0.15 |
+| 1995-09-27 | LB-04459/07426 (core pair) | `windowed_frac` 0.858 | 0.290 | **preserved at every floor tested** (windowed leg, ungated) |
+| 1995-09-27 | LB-04459/07477 (3rd source) | fp, base bar (0.524) | 0.024 | breaks at any floor ≥0.05 — same casualty as the uniform gate; LB-07477 drops out, core pair stays merged |
+
+#### Verdict: this scoping fixes the contradiction the uniform gate could not
+
+`fingerprint_primary_floor` separates BUG-331 from 1980-12-04 by **mechanism**
+(which OR-leg formed the edge) rather than by corr magnitude alone, which is
+exactly what the corr-magnitude comparison in the prior section showed was
+impossible for a uniform floor. At **floor 0.10**: fixes BUG-331 and all
+three 1990-06-01 pairs, zero new frozen-set FPs, and preserves 1980-12-04,
+1995-09-27's core pair, AND 1993-10-03 in full. The only remaining casualty
+across the full evidence set is LB-07477 dropping out of the 1995-09-27
+family (a tp loss on a weak fp-leg edge, corr 0.024 — not a new fp, and the
+family's correct 2-way core stays intact).
+
+**Recommendation: 0.10**, commented out in `config.yaml` pending tj
+sign-off (per `tools/tapematch/CLAUDE.md` — thresholds don't ship without
+explicit approval even when the sweep looks clean). `secondary_primary_floor`
+stays committed-disabled and unrecommended (superseded by this narrower key
+for the BUG-331 mechanism specifically); it is not deleted since the
+underlying idea — corroborate windowed/hiss-only links too — may still be
+worth its own separate, better-targeted follow-up.
+
+#### Cheaper alternative for tj's sign-off: floor 0.05
+
+0.05 already fixes BUG-331 (corr 0.0295) and all three 1990-06-01 pairs — the
+two false merges this key exists for — at −50 tp / −7 fp, where 0.10 costs
+−91 tp / −11 fp. The extra 41 true positives buy only 4 further false
+positives, and both floors preserve 1980-12-04, 1995-09-27's core pair and
+(at 0.10) 1993-10-03; 1993-10-03 survives at 0.05 too, since its corr is
+0.115. If recall matters more than the last 4 fp, 0.05 is the better buy.
