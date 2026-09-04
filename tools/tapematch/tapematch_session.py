@@ -36,6 +36,7 @@ from itertools import combinations
 from pathlib import Path
 
 import emb_live  # TODO-200: live emb_score/emb_score_global for addon_links.rule_d
+from tapematch import calibration  # TODO-333: per-run calibration identity
 from tapematch.ingest import extract_own_lb_number
 
 log = logging.getLogger("tapematch_session")
@@ -79,6 +80,11 @@ CREATE TABLE IF NOT EXISTS runs (
     n_sources_ran   INTEGER,            -- folders included in tapematch run
     n_families      INTEGER,            -- distinct source families detected
     config_json     TEXT,               -- full config.yaml as JSON
+    -- TODO-333: stable identity of the verdict-relevant config subset, so a
+    -- family can be asked which calibration produced it. See
+    -- tapematch/calibration.py; NULL on runs written before 2026-09-03 until
+    -- calibration_eras.py --backfill fills them in.
+    calibration_hash TEXT,
     archive_dir     TEXT,               -- path to runs/RUN_ID/ archive folder
     run_at          TEXT,               -- ISO timestamp
     duration_sec    REAL                -- wall time for tapematch
@@ -278,6 +284,10 @@ def open_obs_db() -> sqlite3.Connection:
             conn.execute(f"ALTER TABLE sources ADD COLUMN {col} {decl}")
         except sqlite3.OperationalError:
             pass  # column already exists
+    # TODO-333: calibration identity per run (see tapematch/calibration.py).
+    run_cols = {r[1] for r in conn.execute("PRAGMA table_info(runs)").fetchall()}
+    if "calibration_hash" not in run_cols:
+        conn.execute("ALTER TABLE runs ADD COLUMN calibration_hash TEXT")
     conn.commit()
     return conn
 
@@ -775,14 +785,23 @@ def archive_run(run_id: str, date_iso: str, log_text: str, report_text: str,
 
 def insert_run(conn: sqlite3.Connection, run_id: str, date_iso: str, location: str,
                n_db: int, n_found: int, n_ran: int, n_families: int,
-               config_json: str, archive_dir: str, run_at: str, duration_sec: float) -> None:
+               config_json: str, archive_dir: str, run_at: str, duration_sec: float,
+               calibration_hash: str | None = None) -> None:
+    """Write one run row.
+
+    Args:
+        calibration_hash: TODO-333 identity of the verdict-relevant config
+            subset, from ``tapematch.calibration.calibration_hash``. None only
+            for callers that have no config to hash.
+    """
     conn.execute(
         """INSERT OR REPLACE INTO runs
            (run_id, concert_date, location, n_sources_db, n_sources_found,
-            n_sources_ran, n_families, config_json, archive_dir, run_at, duration_sec)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?)""",
+            n_sources_ran, n_families, config_json, calibration_hash,
+            archive_dir, run_at, duration_sec)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?)""",
         (run_id, date_iso, location, n_db, n_found, n_ran, n_families,
-         config_json, archive_dir, run_at, duration_sec),
+         config_json, calibration_hash, archive_dir, run_at, duration_sec),
     )
 
 
@@ -1829,7 +1848,9 @@ def _log_to_obs_db(run_id: str, run_at: str, date_iso: str, location: str,
                    lb_numbers: list[int], found_folders: dict[int, Path],
                    results: dict, duration: float, arch: Path,
                    root_dir: Path = EXAMPLES_DIR) -> None:
-    cfg_json = json.dumps(results.get("config", {}))
+    run_cfg = results.get("config", {}) or {}
+    cfg_json = json.dumps(run_cfg)
+    cal_hash = calibration.calibration_hash(run_cfg) if run_cfg else None
 
     conn = open_obs_db()
     try:
@@ -1840,6 +1861,7 @@ def _log_to_obs_db(run_id: str, run_at: str, date_iso: str, location: str,
             n_ran=len(results["sources"]),
             n_families=results["n_families"],
             config_json=cfg_json,
+            calibration_hash=cal_hash,
             archive_dir=str(arch),
             run_at=run_at,
             duration_sec=duration,

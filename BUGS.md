@@ -1,3 +1,11 @@
+BUG-335: tapematch ingest counts patched-track subfolders as extra tracks, inflating a source
+Status: Open
+File(s): tools/tapematch/tapematch/ingest.py
+Reported: 2026-09-03
+Description: Found while re-running 1993-08-28 for TODO-331. BUG-327 taught ingest.list_tracks to spot a folder holding the show TWICE (nested full copy) and use the outer pass. It does not spot a folder holding the show once plus a handful of REPLACEMENT tracks. LB-07173's remaster folder 'bd1993-08-28-LB-7173_Milwaukee (REMASTERED)_fixed' carries d1/ + d2/ (11 tracks, the release) alongside 'bd1993-08-28d1.fix/Track08.fix.flac', 'bd1993-08-28d1.fix/Track09.fix.flac' and 'd1/fix/Track08.fix.flac' — patched versions of two of those tracks, published as fixes. Ingest counts them as additional tracks, so the source reads 14 tracks / 1:55:34 against a real performance of 11 tracks / 1:26:24: a 27-minute inflation, which is enough to trip the TIMING MISMATCH diagnostic and to make correlation against the same show unreliable. Same failure class and same consequence as BUG-327 (correlation computed over a source that is partly duplicated), one level down. A '.fix'/'fixed' sibling whose track names match tracks already present should replace them or be skipped, not appended. Note the ambiguity to decide first: the fix files are the CORRECT audio for those two tracks, so replacing is the right call, but a rule keyed on the literal token 'fix' is narrow — survey how many folders in the corpus carry a same-named-track sibling directory before choosing the predicate.
+Root cause: Unknown
+Fix: —
+
 BUG-331: tapematch: a 'staircase/splice' lag curve merges sources into one family even when correlation is near-zero and the secondary check finds no evidence
 Status: Open
 File(s): tools/tapematch/tapematch/verdict.py:128,tools/tapematch/tapematch/align.py:192

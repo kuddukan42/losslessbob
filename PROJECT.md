@@ -808,6 +808,7 @@ different recording set. See `instructions/design_handoff_unified_library/07-tap
 | review_reason | TEXT | Short reason text parsed from the verdict line, if present |
 | auto_triage | TEXT | `'clear'` / `'attention'` — `backend/tapematch_autoflag.py`'s machine verdict, computed from `observations.db` for **every** date including the ~54% with no `analysis.md`. Also per-`concert_date`. Deliberately separate from `review_flag`: that means a human read the prose, this is a ~0.19-precision prioritisation hint whose value is the inverse (97.4% of `'clear'` dates were human-judged clean) |
 | auto_triage_reasons | TEXT | JSON array of fired rule names (`[]` when clear) |
+| calibration_hash | TEXT | TODO-333: which tapematch calibration produced this family, carried through from `observations.db` `runs.calibration_hash` (see `tools/tapematch/tapematch/calibration.py` — a stable hash of the verdict-relevant config subset, normalised so a key added later at its existing default is not a new era). NULL means unknown provenance, **not** current. Report: `tools/tapematch/calibration_eras.py` |
 | imported_at | TIMESTAMP | |
 
 Exposed flat (no clustering logic client-side) via `GET /api/tapematch/families` →

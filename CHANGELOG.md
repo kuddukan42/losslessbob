@@ -1,4 +1,35 @@
 [2026-09-03] — tapematch: false-merge census; link mechanism attribution; collection gap list;
+Added: tools/tapematch/tapematch/calibration.py — TODO-333. The calibration identity of a config:
+  DECISION_KEYS (every key that can change a verdict, each with its code default), GATED_BLOCKS (a
+  disabled block collapses to its off switch), NON_DECISION_KEYS (device/threads/paths) and
+  VERDICT_ONLY_KEYS (the subset verdict.py reads). calibration_hash() is 12 hex chars over that
+  normalised view, so a key added to config.yaml later at the value already in use does not read as
+  a new calibration era — which is what made runs.config_json useless for the question.
+Changed: tools/tapematch/tapematch_session.py: runs.calibration_hash column (PRAGMA migration) written
+  on every new run. backend/db.py + backend/tapematch_sync.py: the hash carries through to
+  tapematch_family_meta.calibration_hash, so a shipped family can be asked which calibration decided
+  it; the sync reads the column defensively, since an older observations.db may not have it.
+Added: tools/tapematch/calibration_eras.py — backfills the column (--backfill / --rehash) and writes
+  tools/tapematch/CALIBRATION_ERAS.md. The normalisation collapses 18 raw config_json hashes to 11
+  real eras; the shipped config covers 768 of 3,062 dates (25.1%). The two largest stale eras turn
+  out to be narrow — 876 dates differ in ONE key, 811 in four, all inside the staircase-corroboration
+  block. Prioritises the re-run queue by expected verdict change rather than age: 1,687 stale dates
+  differ only in threshold keys, so their stored pair metrics are re-decided exactly by replaying
+  cluster_verdicts under both configs, and only 33 of them actually move. The other 1,654 are
+  bookkeeping-stale; the 607 that differ on signal-generation keys cannot be replayed and need real
+  re-runs (the queue TODO-324/326 should share).
+Added: tools/tapematch/tests/test_calibration.py — 10 tests, including the drift guard that fails
+  when a shipped config key is neither a declared decision key nor explicitly a non-decision one.
+Fixed: data/tapematch/runs/20260903_201840_1993-08-28 — TODO-331. Re-ran 1993-08-28 on the
+  BUG-327-fixed ingest: LB-07173 ingests as 11 tracks / 1:28:39 rather than 25 / 3:27:33, and the
+  date goes from 3 families to 2. LB-05903 and LB-07173 are not merely the same source — all 11
+  tracks are MD5-identical on disk, so the curator's "different recording than LB-5903" note is
+  false for the audio in that folder's outer pass (it describes the remaster, which sits in a
+  subfolder). analysis.md written, families re-synced. The nested remaster, analysed separately,
+  stays unresolved: corr 0.002 at ratio confidence 1.4, fingerprint Dice 0.375 under the 0.40 bar.
+Added: BUG-335 — that remaster folder also holds patched replacement tracks in .fix subfolders,
+  which ingest counts as extra tracks (14 / 1:55:34 vs a real 11 / 1:26:24). BUG-327's fix covers a
+  duplicated whole show, not a partially patched one.
   TODO-334 premise corrected; TODO-333/335/336 filed
 Added: tools/tapematch/census_false_merge.py — TODO-336. The mirror of census_contradicted.py:
   the 114 pairs where LB commentary says different but the latest run merged them. Splits them by

@@ -277,6 +277,18 @@ def _sync_one_date(
     triage_by_date: "dict[str, tuple[str, str]]",
 ) -> None:
     """Compute and upsert families for a single concert_date's chosen run."""
+    # TODO-333: the calibration that produced this run's verdicts. NULL when the
+    # run predates the column, when the observations DB is older than the
+    # migration in tapematch_session.open_obs_db(), or when the run has not been
+    # backfilled by tools/tapematch/calibration_eras.py --backfill.
+    _run_cols = {r[1] for r in obs_conn.execute("PRAGMA table_info(runs)").fetchall()}
+    calibration_hash = None
+    if "calibration_hash" in _run_cols:
+        _cal_row = obs_conn.execute(
+            "SELECT calibration_hash FROM runs WHERE run_id = ?", (run_id,)
+        ).fetchone()
+        calibration_hash = _cal_row["calibration_hash"] if _cal_row else None
+
     sources = obs_conn.execute(
         "SELECT lb_number, family_id FROM sources "
         "WHERE run_id = ? AND lb_number IS NOT NULL",
@@ -354,7 +366,7 @@ def _sync_one_date(
         fresh_fam_ids.add(fam_id)
         family_rows.append(
             (fam_id, concert_date, label, by, conf, member_count, run_id,
-             review_flag, review_reason, auto_triage, auto_reasons)
+             review_flag, review_reason, auto_triage, auto_reasons, calibration_hash)
         )
         for lb_number in lb_numbers:
             fresh_lb_numbers.add(lb_number)
@@ -365,7 +377,7 @@ def _sync_one_date(
         fresh_fam_ids.add(fam_id)
         family_rows.append(
             (fam_id, concert_date, "Solo", "ai", None, 1, run_id,
-             review_flag, review_reason, auto_triage, auto_reasons)
+             review_flag, review_reason, auto_triage, auto_reasons, calibration_hash)
         )
         fresh_lb_numbers.add(lb_number)
         member_rows.append((lb_number, fam_id, concert_date, run_id))
@@ -377,8 +389,9 @@ def _sync_one_date(
                 """
                 INSERT INTO tapematch_family_meta
                     (fam_id, concert_date, label, by, conf, member_count, run_id,
-                     review_flag, review_reason, auto_triage, auto_triage_reasons)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                     review_flag, review_reason, auto_triage, auto_triage_reasons,
+                     calibration_hash)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(fam_id) DO UPDATE SET
                     label=excluded.label,
                     by=excluded.by,
@@ -389,6 +402,7 @@ def _sync_one_date(
                     review_reason=excluded.review_reason,
                     auto_triage=excluded.auto_triage,
                     auto_triage_reasons=excluded.auto_triage_reasons,
+                    calibration_hash=excluded.calibration_hash,
                     imported_at=CURRENT_TIMESTAMP
                 """,
                 row,
