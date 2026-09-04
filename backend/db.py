@@ -667,6 +667,11 @@ CREATE TABLE IF NOT EXISTS tapematch_family_meta (
     review_reason   TEXT,
     auto_triage     TEXT,
     auto_triage_reasons TEXT,
+    -- TODO-333: which tapematch calibration produced this family, carried
+    -- through from observations.db runs.calibration_hash. NULL means the run
+    -- predates the column, so the family's provenance is unknown rather than
+    -- current. See tools/tapematch/tapematch/calibration.py.
+    calibration_hash TEXT,
     imported_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -3068,6 +3073,13 @@ def init_db(db_path=None):
             conn.execute(
                 "ALTER TABLE tapematch_family_meta ADD COLUMN auto_triage_reasons TEXT"
             )
+        # Migration: add calibration_hash to tapematch_family_meta (TODO-333) —
+        # the identity of the tapematch config that produced this family,
+        # carried through from observations.db runs.calibration_hash so a family
+        # can be asked which calibration decided it. NULL = run predates the
+        # column; that is "unknown provenance", not "current".
+        if "calibration_hash" not in _tmm_cols:
+            conn.execute("ALTER TABLE tapematch_family_meta ADD COLUMN calibration_hash TEXT")
         # Migration: add local_sha256 to site_inventory (preservation stack B1) —
         # body_sha256 is the hash of the raw HTTP body, but HTML is saved
         # link-rewritten, so it can never match the file on disk.  local_sha256

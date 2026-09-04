@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-331: Re-run tapematch for 1993-08-28 — its verdict was computed from the BUG-327 inflated LB-07173 source
+Priority: Medium
+Status: Done
+Added: 2026-09-01
+Closed: 2026-09-03
+Description: Run data/tapematch/runs/20260821_184430_1993-08-28 ingested LB-07173 at 25 tracks / 3:27:33 (both passes of the show concatenated) and was flagged [INFLATED], which corrupts correlation and clustering for the whole date. BUG-327 is fixed in ingest.list_tracks, so a fresh session for 1993-08-28 will now ingest 11 tracks / ~1:32 and produce a trustworthy verdict. Separately worth analysing the nested 'bd1993-08-28-LB-7173_Milwaukee (REMASTERED)_fixed' pass as its own source by pointing a run at that subfolder.
+Re-ran 1993-08-28 on the BUG-327-fixed ingest (run 20260903_201840): LB-07173 comes in at 11 tracks / 1:28:39 instead of 25 / 3:27:33, and the verdict changes from 3 families to 2. LB-05903/LB-07173 read corr 1.000 with identical lineage figures because they are the same files — all 11 tracks are MD5-identical on disk (bd1993-08-28-d1t01.flac and d1/Track01.flac both adecbee5ae247b4f2619fc5bbb4e3358), so the merge needs no inference. That also makes LB-07173's curator claim ('different recording than LB-5903') false for the audio actually in its outer pass; the curator was describing the remaster, which lives only in the nested subfolder. analysis.md written, families synced to the app DB. The nested remaster was analysed separately as the TODO asked (package CLI, no DB write): it is 11 tracks / 1:26:24, reads corr 0.002 at ratio confidence 1.4 (speed unresolved) and fingerprint Dice 0.375 under the 0.40 staircase bar, so it is unresolved and needs a listen rather than a verdict. Noted in the analysis: that subfolder holds duplicate patched tracks (bd1993-08-28d1.fix/ and d1/fix/ both carry Track08.fix) which inflate it to 14 tracks / 1:55:34 unless excluded — the BUG-327 hazard one level down.
+
 TODO-326: next_batch.py --newest-per-date can hand back a superseded run, producing contradictory analysis.md files for one date
 Priority: Medium
 Status: Done
