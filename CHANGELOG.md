@@ -1,4 +1,26 @@
-[2026-09-03] — tapematch: collection gap list; TODO-334 premise corrected; TODO-333/335/336 filed
+[2026-09-03] — tapematch: false-merge census; link mechanism attribution; collection gap list;
+  TODO-334 premise corrected; TODO-333/335/336 filed
+Added: tools/tapematch/census_false_merge.py — TODO-336. The mirror of census_contradicted.py:
+  the 114 pairs where LB commentary says different but the latest run merged them. Splits them by
+  the leg the clusterer actually merged on, not by a corr cut — lb_error_candidate 14 (primary corr
+  0.82–0.99, catalogue-correction candidates, none lineage-linked in entry_lineage), weak_link 41
+  (fingerprint_staircase 21 / fingerprint 13 / windowed 6 / rule_d 1 — the TODO-325 floor's validation
+  set), chained 59 (no direct leg fires; transitive, so TODO-319's problem and out of reach of any
+  pairwise floor). The TODO filed the latter two as one 100-pair queue; they are not one queue.
+  Also measures a label-quality caveat nobody had checked: lb_says_same=0 comes from a _DIFF_RE hit
+  anywhere in a ±250-char window around the other side's LB number, with no check that the denial is
+  about the pair — in 30 of the 114 the phrase names a THIRD LB number, so those rows are proximity
+  artifacts, not curator disagreement. Each row carries denial_scope (84 pair_scoped / 30 third_party).
+  Metadata only, no audio decoded. Artifacts: tools/tapematch/FALSE_MERGE_CENSUS.md (tracked) and
+  data/tapematch/false_merge_queue.json (gitignored, machine-readable, for re-running after a floor).
+Changed: tools/tapematch/tapematch/verdict.py: new link_mechanism() names the first OR-leg that links
+  a pair (primary / windowed / hiss / fingerprint / fingerprint_staircase / triplet / rule_a-d), and
+  pair_links() now delegates to it, so the boolean verdict and the named mechanism cannot drift apart.
+  The four addon rules move into an ADDON_RULES tuple, replacing _addon_links(). No behaviour change —
+  same evaluation order, same thresholds; the 484-test tapematch suite passes unchanged.
+Added: tools/tapematch/tests/test_link_mechanism.py — 19 tests: per-leg naming, primary wins over every
+  other leg, addon rules reported by name and inert when disabled, and pair_links == (mechanism is not
+  None) on every fixture.
 Added: tools/tapematch/build_gap_list.py — TODO-334. Resolves the n_sources_db vs n_sources_found
   shortfall in observations.db per LB number instead of per count, into four buckets: present /
   private / unranked / absent. Over the 3,061 run dates (14,215 catalogued recordings): present

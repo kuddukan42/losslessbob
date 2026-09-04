@@ -110,7 +110,7 @@ from __future__ import annotations
 import json
 import sqlite3
 from pathlib import Path
-from typing import Iterable, Mapping
+from typing import Callable, Iterable, Mapping
 
 # Verdict string constants — match the values stored in pairs.tapematch_verdict.
 SAME_FAMILY = "same_family"
@@ -434,19 +434,17 @@ def _rule_d_emb_both(pair: Mapping, al_cfg: Mapping) -> bool:
     return emb >= t_emb and emb_g >= t_emb
 
 
-def _addon_links(pair: Mapping, cfg: Mapping) -> bool:
-    """Evaluate all Task 5 ``addon_links`` rules; True if any fires.
-
-    Every rule is independently gated on its own ``enabled`` flag (default
-    absent/false), so with the committed config (no ``addon_links`` block, or
-    a block with every rule ``enabled: false``) this always returns False —
-    byte-identical to pre-Task-5 behaviour.
-    """
-    al_cfg = cfg.get("addon_links", {}) or {}
-    return (_rule_a_lone_lineage(pair, al_cfg)
-            or _rule_b_two_leg(pair, al_cfg)
-            or _rule_c_belt_and_braces(pair, al_cfg)
-            or _rule_d_emb_both(pair, al_cfg))
+# Task 5 ``addon_links`` rules, in evaluation order. Every rule is
+# independently gated on its own ``enabled`` flag (default absent/false), so
+# with the committed config (no ``addon_links`` block, or a block with every
+# rule ``enabled: false``) none of them fires — byte-identical to pre-Task-5
+# behaviour. Named here so ``link_mechanism`` can report which one merged.
+ADDON_RULES: tuple[tuple[str, Callable[[Mapping, Mapping], bool]], ...] = (
+    ("rule_a", _rule_a_lone_lineage),
+    ("rule_b", _rule_b_two_leg),
+    ("rule_c", _rule_c_belt_and_braces),
+    ("rule_d", _rule_d_emb_both),
+)
 
 
 def pair_links(pair: Mapping, cfg: Mapping,
@@ -456,18 +454,45 @@ def pair_links(pair: Mapping, cfg: Mapping,
     A ``None`` signal is treated as "unavailable" and cannot fire a link; this
     lets the same predicate run against a full live-results dict or a
     corr-only historical DB row.
+
+    Delegates to :func:`link_mechanism`, which carries the actual OR-chain, so
+    the boolean verdict and the named mechanism can never disagree.
+    """
+    return link_mechanism(pair, cfg, lineage) is not None
+
+
+def link_mechanism(pair: Mapping, cfg: Mapping,
+                   lineage: Iterable[tuple[int, int]] | None = None) -> str | None:
+    """Name the first OR-leg that links ``pair``, or None if none does.
+
+    Same evaluation order as the historical :func:`pair_links` body, so the
+    returned name is the leg the clusterer would actually have merged on.
+    Diagnostic tooling (TODO-336's false-merge census, TODO-325's floor
+    validation) needs the mechanism, not just the boolean, because the two
+    populations are worked as separate queues by how the edge was formed.
+
+    Args:
+        pair: Pair signals — a live results dict or an ``observations.db`` row.
+        cfg: Loaded tapematch config.
+        lineage: Optional curator lineage pairs, as taken by
+            :func:`fp_threshold`.
+
+    Returns:
+        One of ``primary``, ``windowed``, ``hiss``, ``fingerprint``,
+        ``fingerprint_staircase``, ``triplet``, ``rule_a``, ``rule_b``,
+        ``rule_c``, ``rule_d``; or None when no leg fires.
     """
     m_thr = (cfg.get("match", {}) or {}).get("cluster_threshold", None)
     corr = pair.get("corr")
     if m_thr is not None and corr is not None and corr >= m_thr:
-        return True
+        return "primary"
 
     sec = cfg.get("secondary_match", {}) or {}
     wc_thr = sec.get("coverage_threshold", 0.0)
     wf = pair.get("windowed_frac")
     if wc_thr and wf is not None and wf >= wc_thr:
         if _secondary_corroborated(pair, cfg):
-            return True
+            return "windowed"
 
     hm_frac = sec.get("hiss_merge_frac", None)
     hm_med = _effective_hiss_median(pair, sec)
@@ -475,7 +500,7 @@ def pair_links(pair: Mapping, cfg: Mapping,
     if (hm_frac is not None and hm_med is not None and hf is not None
             and hmed is not None and hf >= hm_frac and hmed >= hm_med):
         if _secondary_corroborated(pair, cfg):
-            return True
+            return "hiss"
 
     fp_thr = fp_threshold(pair, cfg, lineage)
     fp = pair.get("fp_score")
@@ -488,10 +513,10 @@ def pair_links(pair: Mapping, cfg: Mapping,
         # to the remaining OR-paths rather than returning False.
         if fp >= fp_threshold(pair, cfg, lineage, staircase=False):
             if _secondary_corroborated(pair, cfg) and _fingerprint_corroborated(pair, cfg):
-                return True
+                return "fingerprint"
         elif _staircase_corroborated(pair, cfg.get("fingerprint", {}) or {}):
             if _secondary_corroborated(pair, cfg) and _fingerprint_corroborated(pair, cfg):
-                return True
+                return "fingerprint_staircase"
 
     # Ratio-invariant triplet fingerprint (Task 7). An OR-path with its own
     # threshold, applied to ALL pairs but especially the sole surviving signal for
@@ -503,16 +528,18 @@ def pair_links(pair: Mapping, cfg: Mapping,
         tri = pair.get("fp_triplet_score")
         if tri_thr is not None and tri_thr > 0.0 and tri is not None and tri >= tri_thr:
             if _secondary_corroborated(pair, cfg) and _fingerprint_corroborated(pair, cfg):
-                return True
+                return "triplet"
 
     # Task 5 evidence-combination rules (addon_links: Rule A/B/C). Rule A is
     # the sole canonical flaw-fingerprint merge path (see module docstring —
     # it supersedes the Task 2.3 standalone OR-leg). Inert on historical/
     # dormant rows: every rule defaults enabled:false and abstains on NULL.
-    if _addon_links(pair, cfg):
-        return True
+    al_cfg = cfg.get("addon_links", {}) or {}
+    for name, rule in ADDON_RULES:
+        if rule(pair, al_cfg):
+            return name
 
-    return False
+    return None
 
 
 def cluster_verdicts(pairs: list[Mapping], cfg: Mapping,
