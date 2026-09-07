@@ -1,3 +1,15 @@
+[2026-09-07] — Hourly TUIT RSS cron
+Added: data/tuit/cron_rss.sh (gitignored, like the tapematch runners) plus the crontab entry
+  "17 * * * *" — :17 keeps it clear of the tapematch batches at :15 and :45. Runs
+  tools/tuit_sync.py --rss --fetch-torrents --seed --overlay under flock, so a slow run never
+  overlaps the next hour and doubles the request rate against a ~21-member tracker.
+Note: qBittorrent is optional. A preflight calls qbittorrent.test_connection() with host/port from
+  app settings and the API key from the keyring; when the client is down the run drops the
+  --fetch-torrents/--seed/--overlay flags and still scrapes metadata (which needs only the
+  tracker), then exits 0, so a stopped client cannot turn into an hourly cron mail. The run is
+  silent when tuit_sync reports "Nothing to sync." — cron mails only real work or a real failure.
+  Everything lands in data/tuit/cron_logs/<date>.log either way, pruned after 30 days.
+
 [2026-09-07] — TUIT: discover new uploads from the RSS feed instead of paging /browse
 Added: backend/tuit_scraper.py: parse_rss/fetch_rss/rss_url/redact_passkey. The feed needs no
   login, answers in one request, and its guid (tuit-rec-<id>) names the recording id outright, so
