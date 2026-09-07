@@ -28,6 +28,7 @@ from __future__ import annotations
 import logging
 import os
 import shutil
+import sqlite3
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -200,6 +201,7 @@ def plan_overlay(
     sidecar_dirs: list[str | Path] | None = None,
     site_urls: dict[str, str] | None = None,
     link_dirs: list[str | Path] | None = None,
+    overlay_name: str = "",
 ) -> OverlayPlan:
     """Decide how each torrent file will be satisfied, without touching disk.
 
@@ -224,12 +226,18 @@ def plan_overlay(
             entry is filed in its own collection folder. Passing the others
             here assembles the whole torrent at no extra disk cost. Must be on
             the same filesystem as ``overlay_root`` for the link to succeed.
+        overlay_name: Folder name to create inside ``overlay_root``. Defaults
+            to the torrent's own root name, which is not unique across a
+            tracker — roots like ``track`` or ``FLAC`` recur, and two LB
+            entries then assemble into one directory, the second build
+            relinking over the first. Callers that can tell the entries apart
+            pass a disambiguated name; see :func:`unique_overlay_name`.
 
     Returns:
         An OverlayPlan. Building it is a separate call.
     """
     source_folder = Path(source_folder)
-    target_dir = Path(overlay_root) / info.name
+    target_dir = Path(overlay_root) / (overlay_name or info.name)
     plan = OverlayPlan(target_dir=target_dir)
 
     sidecars = _index_sources([Path(d) for d in (sidecar_dirs or [])])
@@ -539,6 +547,77 @@ def find_overlays_for_lb(lb_number: int, db_path=None) -> list[Path]:
             (lb_number,),
         ).fetchall()
     return [Path(r[0]) for r in rows]
+
+
+def lbs_for_seed_folder(folder: str | Path, db_path=None) -> set[int]:
+    """Return the LB numbers already recorded as seeding from ``folder``.
+
+    Reads both tracker tables, so an overlay claimed by a WTRF seed is visible
+    to a TUIT run and vice versa.
+
+    Args:
+        folder: Seed folder path to look up.
+        db_path: Optional DB path override.
+
+    Returns:
+        The distinct LB numbers recorded against that folder; empty when the
+        folder predates this bookkeeping or was created by hand.
+    """
+    from backend import db  # imported here to keep module import cheap
+
+    found: set[int] = set()
+    with db.get_connection(db_path) as conn:
+        for table in ("tuit_downloads", "wtrf_downloads"):
+            try:
+                rows = conn.execute(
+                    f"SELECT DISTINCT lb_number FROM {table} "  # noqa: S608 — fixed literals
+                    " WHERE seed_folder=? AND lb_number IS NOT NULL",
+                    (str(folder),),
+                ).fetchall()
+            except sqlite3.Error:      # table absent on an older DB
+                continue
+            found.update(r[0] for r in rows)
+    return found
+
+
+def unique_overlay_name(
+    overlay_root: str | Path, torrent_name: str, lb_number: int | None,
+    db_path=None,
+) -> str:
+    """Pick an overlay folder name that no other LB entry already owns.
+
+    Torrent root names are not unique on a tracker — ``track``, ``FLAC`` and
+    ``1`` all recur — so ``overlay_root/<root name>`` silently collides and the
+    second build relinks over the first, leaving one of the two torrents
+    seeding files that belong to the other show. The name is kept as-is when
+    the directory is free or already this LB's, so existing overlays are never
+    renamed out from under qBittorrent; only a genuine collision is suffixed.
+
+    Args:
+        overlay_root: Directory overlays are created inside.
+        torrent_name: The torrent's own root folder name.
+        lb_number: LB entry the overlay is being built for.
+        db_path: Optional DB path override.
+
+    Returns:
+        ``torrent_name``, or ``"<torrent_name> (LB-NNNNN)"`` on a collision.
+    """
+    candidate = Path(overlay_root) / torrent_name
+    if lb_number is None or not candidate.exists():
+        return torrent_name
+    try:
+        owners = lbs_for_seed_folder(candidate, db_path)
+    except Exception as exc:   # bookkeeping must never block a seed
+        logger.debug("unique_overlay_name: lookup failed for %s: %s", candidate, exc)
+        return torrent_name
+    if not owners or lb_number in owners:
+        return torrent_name
+    unique = f"{torrent_name} (LB-{lb_number:05d})"
+    logger.info(
+        "overlay name %r is already LB-%s's — using %r instead",
+        torrent_name, ", LB-".join(f"{n:05d}" for n in sorted(owners)), unique,
+    )
+    return unique
 
 
 def warn_if_seeded(lb_number: int, action: str, db_path=None) -> list[str]:

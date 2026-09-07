@@ -127,10 +127,13 @@ def _build_parser() -> argparse.ArgumentParser:
                         "advance past what was already scanned). Ignored with "
                         "--rec, which always processes the ids given.")
     p.add_argument("--check-overlays", action="store_true",
-                   help="List every recorded seed overlay and flag any whose "
-                        "collection folder was deleted or moved to another "
-                        "drive, leaving the overlay holding the only copy of "
-                        "those bytes. Exits 1 if any are orphaned.")
+                   help="List every recorded seed overlay and flag both "
+                        "failure modes: the overlay directory has gone "
+                        "missing (qBittorrent then reports 'missingFiles' "
+                        "and stops seeding), or its collection folder was "
+                        "deleted or moved to another drive, leaving the "
+                        "overlay holding the only copy of those bytes. "
+                        "Exits 1 if either is found.")
     p.add_argument("--set-credentials", action="store_true",
                    help="Prompt for the TUIT username and password, store them "
                         "in the OS keyring, verify them with a login, and exit. "
@@ -184,15 +187,20 @@ def _set_credentials(delay: float) -> int:
 
 
 def _check_overlays() -> int:
-    """Report every recorded seed overlay and whether it has been orphaned.
+    """Report every recorded seed overlay and whether it is still healthy.
 
-    A same-volume collection rename leaves an overlay perfectly healthy — the
-    hardlinks follow the inode. A delete or cross-volume move drops the link
-    count to 1, and the overlay silently becomes the only holder of those
-    bytes, so the disk space is never reclaimed. That is what this flags.
+    Two things go wrong, and both are silent until a torrent stops seeding:
+
+    * **Gone** — the overlay directory no longer exists. qBittorrent moves the
+      torrent to 'missingFiles' and stops; nothing rebuilds it automatically.
+    * **Orphaned** — the collection folder was deleted or moved to another
+      drive. A same-volume rename is harmless, since hardlinks follow the
+      inode, but a delete or cross-volume move drops the link count to 1 and
+      the overlay silently becomes the only holder of those bytes, so the disk
+      space is never reclaimed.
 
     Returns:
-        A process exit code — 1 when at least one overlay looks orphaned.
+        A process exit code — 1 when any overlay is gone or orphaned.
     """
     # get_tuit_downloads() is newest-first, so the first row per LB is the seed
     # currently in force; earlier attempts have been superseded.
@@ -213,6 +221,7 @@ def _check_overlays() -> int:
 
     print(f"\n{len(latest)} recorded seed folder(s):\n")
     orphans = 0
+    gone = 0
     pinned_total = 0
     for lb_number, folder in sorted(latest.items()):
         status = overlay_status(folder)
@@ -222,6 +231,7 @@ def _check_overlays() -> int:
             else "overlay"
         )
         if not status.exists:
+            gone += 1
             print(f"  {label}  GONE      {folder}")
             continue
         flag = "ORPHANED" if status.orphaned else "ok      "
@@ -231,6 +241,12 @@ def _check_overlays() -> int:
         print(f"  {label}  {flag}  [{kind}] {folder}")
         print(f"           {status.summary()}")
 
+    if gone:
+        print(
+            f"\n{gone} recorded seed folder(s) no longer exist on disk. "
+            f"qBittorrent reports those torrents as 'missingFiles' and stops "
+            f"seeding them — rebuild the overlay, then force a recheck."
+        )
     if orphans:
         print(
             f"\n{orphans} overlay(s) now hold the only copy of their audio "
@@ -238,6 +254,7 @@ def _check_overlays() -> int:
             f"or moved to another drive. Deleting an overlay reclaims that space "
             f"— but check you still have the recording elsewhere first."
         )
+    if gone or orphans:
         return 1
     print("\nAll overlays still share their audio with the collection.")
     return 0

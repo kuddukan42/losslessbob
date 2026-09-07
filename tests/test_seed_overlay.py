@@ -21,6 +21,7 @@ from backend.seed_overlay import (
     plan_overlay,
     resolvable_files,
     snapshot_folder,
+    unique_overlay_name,
     verify_overlay,
 )
 from backend.torrent_verify import read_torrent
@@ -105,6 +106,12 @@ class TestPlanOverlay:
         info, collection, sidecars, root = rig
         plan = plan_overlay(info, collection, root, [sidecars])
         assert plan.target_dir == root / ROOT
+
+    def test_overlay_name_overrides_the_torrent_root(self, rig):
+        info, collection, sidecars, root = rig
+        plan = plan_overlay(info, collection, root, [sidecars],
+                            overlay_name=f"{ROOT} (LB-00042)")
+        assert plan.target_dir == root / f"{ROOT} (LB-00042)"
 
     def test_absent_sidecar_becomes_fetch(self, rig):
         info, collection, sidecars, root = rig
@@ -495,3 +502,45 @@ class TestSnapshotIsRecursive:
         before = snapshot_folder(rome)
         (rome / "cd-2" / "intruder.flac").write_bytes(b"x")
         assert collection_is_untouched(rome, before) == ["cd-2/intruder.flac"]
+
+
+class TestUniqueOverlayName:
+    """Torrent root names recur on a tracker; two LB entries must not share one."""
+
+    def test_free_directory_keeps_the_torrent_name(self, tmp_path):
+        assert unique_overlay_name(tmp_path, "track", 12242) == "track"
+
+    def test_no_lb_number_keeps_the_torrent_name(self, tmp_path):
+        (tmp_path / "track").mkdir()
+        assert unique_overlay_name(tmp_path, "track", None) == "track"
+
+    def test_own_overlay_is_reused_not_renamed(self, tmp_path, monkeypatch):
+        (tmp_path / "track").mkdir()
+        monkeypatch.setattr(
+            "backend.seed_overlay.lbs_for_seed_folder", lambda *a, **k: {12242}
+        )
+        assert unique_overlay_name(tmp_path, "track", 12242) == "track"
+
+    def test_unrecorded_overlay_is_reused(self, tmp_path, monkeypatch):
+        """A hand-made or pre-bookkeeping overlay must not be duplicated."""
+        (tmp_path / "track").mkdir()
+        monkeypatch.setattr(
+            "backend.seed_overlay.lbs_for_seed_folder", lambda *a, **k: set()
+        )
+        assert unique_overlay_name(tmp_path, "track", 12242) == "track"
+
+    def test_another_lbs_overlay_is_disambiguated(self, tmp_path, monkeypatch):
+        (tmp_path / "track").mkdir()
+        monkeypatch.setattr(
+            "backend.seed_overlay.lbs_for_seed_folder", lambda *a, **k: {12243}
+        )
+        assert unique_overlay_name(tmp_path, "track", 12242) == "track (LB-12242)"
+
+    def test_lookup_failure_falls_back_to_the_torrent_name(self, tmp_path, monkeypatch):
+        (tmp_path / "track").mkdir()
+
+        def boom(*a, **k):
+            raise RuntimeError("no db")
+
+        monkeypatch.setattr("backend.seed_overlay.lbs_for_seed_folder", boom)
+        assert unique_overlay_name(tmp_path, "track", 12242) == "track"

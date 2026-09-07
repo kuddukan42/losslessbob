@@ -63,7 +63,20 @@ repair needed. A delete, or a cross-volume move (`filer.py` falls back to
 copy + `rmtree`), drops the link count to 1 and the overlay silently becomes
 the only holder of those bytes, so the space is never reclaimed. `filer.py`
 warns via `seed_overlay.warn_if_seeded()` before that `rmtree`, and
-`tools/tuit_sync.py --check-overlays` audits every recorded seed folder.
+`tools/tuit_sync.py --check-overlays` audits every recorded seed folder — it
+reports both an *orphaned* overlay (collection gone, overlay holds the only
+copy) and a *gone* one (overlay directory deleted, so qBittorrent parks the
+torrent in `missingFiles` and stops seeding), and exits 1 on either.
+
+**Name collisions**: a torrent's root name is not unique on the tracker —
+`track`, `FLAC` and `1` are each claimed by several unrelated recordings — so
+two things used to overwrite each other silently. `download_torrent` now keeps
+the tracker's Content-Disposition filename only while the bytes match, and
+falls back to `<name> [tuit-<rec_id>].torrent` on a real collision; likewise
+`seed_overlay.unique_overlay_name()` suffixes the overlay directory with
+`(LB-NNNNN)` when another LB entry already owns that path. Both reuse the
+existing name whenever the target is free, unrecorded, or already this entry's,
+so no overlay is ever renamed out from under qBittorrent.
 
 Attempts land in `tuit_downloads`. Credentials: `SERVICE_TUIT`, set or rotated
 with `tools/tuit_sync.py --set-credentials` (prompts, no echo).

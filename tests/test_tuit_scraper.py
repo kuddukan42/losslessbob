@@ -11,6 +11,7 @@ import pytest
 from backend.tuit_scraper import (
     BrowseRow,
     Recording,
+    _unique_torrent_path,
     browse_total,
     merge_row_into_recording,
     parse_browse,
@@ -380,3 +381,31 @@ class TestSaveRecordingHtml:
         blocker = tmp_path / "blocked"
         blocker.write_text("not a directory")
         assert save_recording_html("<html/>", 1, blocker) is None
+
+
+class TestUniqueTorrentPath:
+    """The tracker's Content-Disposition name is a root folder, not an id."""
+
+    def test_free_name_is_used_as_is(self, tmp_path):
+        assert _unique_torrent_path(tmp_path, "track.torrent", b"d1:xi1ee", 1468) == (
+            tmp_path / "track.torrent"
+        )
+
+    def test_identical_redownload_reuses_the_path(self, tmp_path):
+        body = b"d1:xi1ee"
+        (tmp_path / "track.torrent").write_bytes(body)
+        assert _unique_torrent_path(tmp_path, "track.torrent", body, 1468) == (
+            tmp_path / "track.torrent"
+        )
+
+    def test_different_torrent_gets_a_rec_scoped_name(self, tmp_path):
+        (tmp_path / "track.torrent").write_bytes(b"d1:xi1ee")
+        assert _unique_torrent_path(tmp_path, "track.torrent", b"d1:xi2ee", 1469) == (
+            tmp_path / "track [tuit-1469].torrent"
+        )
+
+    def test_without_a_rec_id_the_name_is_unchanged(self, tmp_path):
+        (tmp_path / "track.torrent").write_bytes(b"d1:xi1ee")
+        assert _unique_torrent_path(tmp_path, "track.torrent", b"d1:xi2ee", None) == (
+            tmp_path / "track.torrent"
+        )

@@ -38,6 +38,7 @@ from backend.seed_overlay import (
     plan_overlay,
     resolvable_files,
     snapshot_folder,
+    unique_overlay_name,
 )
 from backend.torrent_verify import BencodeError, TorrentInfo, read_torrent, verify_folder
 
@@ -137,6 +138,7 @@ def build_seed_overlay(
     opts: SeedOptions,
     shortfall: str,
     link_dirs: list[str] | None = None,
+    lb_number: int | None = None,
 ) -> tuple[str | None, str]:
     """Assemble an overlay folder that can seed without touching the collection.
 
@@ -153,6 +155,8 @@ def build_seed_overlay(
         shortfall: The collection folder's verify summary, for messages.
         link_dirs: Further collection folders to hardlink from, for a torrent
             that spans more than one LB entry.
+        lb_number: LB entry being seeded, used to keep the overlay folder from
+            colliding with another entry whose torrent has the same root name.
 
     Returns:
         (overlay_path or None, human-readable reason).
@@ -163,7 +167,8 @@ def build_seed_overlay(
     site_urls = database.get_site_file_urls(names) if opts.refetch_sidecars else {}
 
     plan = plan_overlay(info, source, root, [SIDECAR_DIR], site_urls,
-                        link_dirs=link_dirs)
+                        link_dirs=link_dirs,
+                        overlay_name=unique_overlay_name(root, info.name, lb_number))
     logger.info("  overlay: %s", plan.summary())
     if plan.fetch_bytes > opts.max_fetch_mb * 1_000_000:
         return None, (
@@ -270,7 +275,8 @@ def find_seedable_folder(
             f"no linked folder shares enough files with the torrent "
             f"(have {', '.join(Path(f).name for f in folders[:3])})"
         )
-    return build_seed_overlay(info, source, opts, best or "name mismatch", link_dirs)
+    return build_seed_overlay(info, source, opts, best or "name mismatch",
+                              link_dirs, lb_number)
 
 
 def qbt_seed(torrent_path: str, source_folder: str, opts: SeedOptions) -> dict:
