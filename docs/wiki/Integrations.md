@@ -101,6 +101,16 @@ source — it is what exposed BUG-337. What it adds is per-performance:
 `n_sources` (how many tapes circulate for that night) and `note`
 (`Bob on electric keyboard`), neither of which the Olof parse carries.
 
+**Discovery via RSS** (`--rss`): `/rss/<passkey>` is a rolling window of the
+newest 50 uploads, needs **no login**, and its `<guid>` (`tuit-rec-<id>`) names
+the recording id outright — so a sync fetches detail pages only for ids it has
+not seen, instead of paging `/browse`. Each `<enclosure>` is a passkey-bearing
+`.torrent` URL with an exact byte length. The passkey is a bearer secret in its
+own right: keyring service `SERVICE_TUIT_RSS`, set with `--set-rss-key`
+(prompts, no echo, verified against the live feed), and `redact_passkey()`
+scrubs it from anything logged. After a gap long enough for 50 uploads to
+accumulate, fall back to `--pages`.
+
 Attempts land in `tuit_downloads`. Credentials: `SERVICE_TUIT`, set or rotated
 with `tools/tuit_sync.py --set-credentials` (prompts, no echo).
 **Pacing**: 3s between requests, small batches — this is a tiny private site.

@@ -1,3 +1,16 @@
+[2026-09-07] — TUIT: discover new uploads from the RSS feed instead of paging /browse
+Added: backend/tuit_scraper.py: parse_rss/fetch_rss/rss_url/redact_passkey. The feed needs no
+  login, answers in one request, and its guid (tuit-rec-<id>) names the recording id outright, so
+  a sync fetches detail pages only for ids it has not seen. Each <enclosure> carries a
+  passkey-bearing .torrent URL and an exact byte length. An item whose guid does not match is kept
+  with rec_id None rather than dropped — a feed-format change should be visible, not silently halve
+  the queue. The feed is a rolling window of the newest 50 uploads, so after a long gap --pages is
+  still the right tool.
+Added: backend/credentials.py: SERVICE_TUIT_RSS. The passkey authorises the feed and its torrent
+  enclosures on its own, so it is stored apart from the login and can be rotated separately.
+Added: tools/tuit_sync.py --rss (discovery source) and --set-rss-key (prompts without echo,
+  verifies against the live feed before storing, never prints the key back).
+
 [2026-09-07] — TUIT songbook: /songs and /song/<title> scraped into two tables
 Added: backend/tuit_scraper.py: parse_songs_index, parse_song_page, song_url_for, fetch_songs and
   fetch_song_performances. Three site quirks the parsers have to handle: the songbook index must be

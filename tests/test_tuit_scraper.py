@@ -16,6 +16,7 @@ from backend.tuit_scraper import (
     merge_row_into_recording,
     parse_browse,
     parse_recording,
+    parse_rss,
     parse_size,
     parse_song_page,
     parse_songs_index,
@@ -24,6 +25,8 @@ from backend.tuit_scraper import (
     parse_venue_page,
     recording_id_from_url,
     recording_to_json_fields,
+    redact_passkey,
+    rss_url,
     save_recording_html,
     songs_page_count,
     torrent_root_name,
@@ -648,3 +651,66 @@ class TestParseSongPage:
 
     def test_empty_html_is_not_an_error(self):
         assert parse_song_page("") == []
+
+
+RSS_XML = """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>TUIT — new uploads</title>
+  <item>
+    <title>Hall &quot;A&quot; — 1997-02-10 (AUD/FLAC)</title>
+    <link>https://tangledupintorrents.org/recordings/5119</link>
+    <guid isPermaLink="false">tuit-rec-5119</guid>
+    <pubDate>Mon, 07 Sep 26 07:36:03 +0000</pubDate>
+    <description>Tokyo, Japan · FLAC 16/44</description>
+    <enclosure url="https://tangledupintorrents.org/api/v1/torrent/5119?passkey=SECRET"
+      length="659150623" type="application/x-bittorrent" />
+  </item>
+  <item>
+    <title>O2 Apollo — 2015-10-27 (AUD/FLAC)</title>
+    <link>https://tangledupintorrents.org/recordings/5117</link>
+    <guid isPermaLink="false">tuit-rec-5117</guid>
+    <pubDate>Sun, 06 Sep 26 17:26:42 +0000</pubDate>
+    <description>Manchester, England · taped by Spot · FLAC 16/44</description>
+  </item>
+  <item>
+    <title>Feed format changed</title>
+    <link>https://tangledupintorrents.org/other/1</link>
+    <guid isPermaLink="false">something-else</guid>
+  </item>
+</channel></rss>
+"""
+
+
+class TestParseRss:
+    """The feed is the cheapest discovery surface — it names rec_ids outright."""
+
+    def test_rec_id_comes_from_the_guid(self):
+        items = parse_rss(RSS_XML)
+        assert [i.rec_id for i in items] == [5119, 5117, None]
+
+    def test_enclosure_gives_the_torrent_url_and_size(self):
+        item = parse_rss(RSS_XML)[0]
+        assert item.size_bytes == 659150623
+        assert item.torrent_url.endswith("torrent/5119?passkey=SECRET")
+
+    def test_a_missing_enclosure_is_not_an_error(self):
+        item = parse_rss(RSS_XML)[1]
+        assert (item.torrent_url, item.size_bytes) == ("", None)
+        assert item.description.startswith("Manchester, England")
+
+    def test_an_unrecognised_guid_is_kept_not_dropped(self):
+        """A silently halved queue is worse than a visible None."""
+        assert len(parse_rss(RSS_XML)) == 3
+
+    def test_empty_feed_is_not_an_error(self):
+        assert parse_rss("") == []
+
+    def test_rss_url_is_built_from_the_passkey(self):
+        assert rss_url("abc123").endswith("/rss/abc123")
+
+    def test_passkey_is_redacted_from_text(self):
+        text = "GET /rss/abc123 failed"
+        assert redact_passkey(text, "abc123") == "GET /rss/<passkey> failed"
+
+    def test_redaction_with_no_passkey_is_a_no_op(self):
+        assert redact_passkey("plain", "") == "plain"

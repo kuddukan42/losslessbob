@@ -52,6 +52,7 @@ from backend import db as database  # noqa: E402
 from backend import tuit_scraper  # noqa: E402
 from backend.credentials import (  # noqa: E402
     SERVICE_TUIT,
+    SERVICE_TUIT_RSS,
     get_credentials,
     save_credentials,
 )
@@ -143,6 +144,15 @@ def _build_parser() -> argparse.ArgumentParser:
                         "(46 pages).")
     p.add_argument("--venue-pages", type=int, default=0,
                    help="With --sync-venues, stop after N pages (0 = all).")
+    p.add_argument("--rss", action="store_true",
+                   help="Discover new recordings from the RSS feed instead of "
+                        "paging /browse — one unauthenticated request that "
+                        "names the recording ids outright. The feed is a "
+                        "rolling window of the newest 50 uploads, so fall back "
+                        "to --pages after a long gap.")
+    p.add_argument("--set-rss-key", action="store_true",
+                   help="Prompt for the TUIT RSS passkey, store it in the OS "
+                        "keyring, verify it against the live feed, and exit.")
     p.add_argument("--sync-songs", action="store_true",
                    help="Scrape /songs and every /song/<title> page into "
                         "tuit_songs + tuit_song_performances. ~850 requests — "
@@ -200,6 +210,34 @@ def _set_credentials(delay: float) -> int:
               file=sys.stderr)
         return 1
     print(f"Login OK as {username}.")
+    return 0
+
+
+def _set_rss_key(delay: float) -> int:
+    """Prompt for the RSS passkey, store it, and verify it against the feed.
+
+    The passkey authorises the feed and its torrent enclosures on its own, so
+    it is prompted without echo and never printed back.
+
+    Args:
+        delay: Seconds to sleep before the verification request.
+
+    Returns:
+        Process exit code.
+    """
+    passkey = getpass.getpass("TUIT RSS passkey (input hidden): ").strip()
+    if not passkey:
+        print("No passkey entered — nothing stored.", file=sys.stderr)
+        return 1
+
+    items = tuit_scraper.fetch_rss(passkey, delay=delay)
+    if not items:
+        print("That passkey returned no feed items — nothing stored.",
+              file=sys.stderr)
+        return 1
+
+    result = save_credentials(SERVICE_TUIT_RSS, "rss", passkey)
+    print(f"Passkey verified ({len(items)} items). {result.label}")
     return 0
 
 
@@ -477,6 +515,9 @@ def main() -> int:
     if args.set_credentials:
         return _set_credentials(args.delay)
 
+    if args.set_rss_key:
+        return _set_rss_key(args.delay)
+
     database.init_db()
 
     if args.check_overlays:
@@ -499,6 +540,23 @@ def main() -> int:
 
     if args.rec:
         queue = list(dict.fromkeys(args.rec))
+    elif args.rss:
+        for item in tuit_scraper.fetch_rss(delay=args.delay):
+            if not item.rec_id or item.rec_id in rows_by_id:
+                continue
+            if item.rec_id in known_ids:
+                skipped_known += 1
+                continue
+            # Deliberately not stored in rows_by_id: that map feeds
+            # merge_row_into_recording, which expects a BrowseRow. The feed
+            # carries less than the detail page does, so the detail fetch is
+            # the single source for these ids.
+            rows_by_id[item.rec_id] = None
+            queue.append(item.rec_id)
+        if not queue and not skipped_known:
+            print("RSS returned nothing — store a passkey with --set-rss-key.",
+                  file=sys.stderr)
+            return 1
     elif args.pages:
         for page in range(1, args.pages + 1):
             rows, total, _ = tuit_scraper.fetch_browse_page(
