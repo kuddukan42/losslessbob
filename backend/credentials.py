@@ -18,6 +18,10 @@ SERVICE_QBT_KEY = "losslessbob_qbittorrent_apikey"
 SERVICE_WTRF    = "losslessbob_wtrf"
 SERVICE_IA      = "losslessbob_archive_org"
 SERVICE_TUIT    = "losslessbob_tuit"
+# The TUIT RSS passkey is a bearer secret in its own right: the feed URL needs
+# no login, and its <enclosure> links download .torrent files as the account.
+# Stored separately from the login so it can be rotated on its own.
+SERVICE_TUIT_RSS = "losslessbob_tuit_rss"
 
 # In-session credential cache (cleared when the process exits)
 _session: dict[str, tuple[str, str]] = {}
@@ -31,6 +35,7 @@ _SECRET_MAP: dict[str, tuple[str, str]] = {
     SERVICE_QBT_KEY: ("qbt_apikey_user", "qbt_apikey"),
     SERVICE_WTRF:    ("wtrf_username",   "wtrf_password"),
     SERVICE_TUIT:    ("tuit_username",   "tuit_password"),
+    SERVICE_TUIT_RSS: ("tuit_rss_user",  "tuit_rss_passkey"),
 }
 
 

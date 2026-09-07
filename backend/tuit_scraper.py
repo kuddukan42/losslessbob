@@ -34,7 +34,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-from backend.credentials import SERVICE_TUIT, get_credentials
+from backend.credentials import SERVICE_TUIT, SERVICE_TUIT_RSS, get_credentials
 
 logger = logging.getLogger(__name__)
 
@@ -1212,3 +1212,137 @@ def fetch_song_performances(
     if resp is None:
         return []
     return parse_song_page(resp.text, song.song)
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# /rss/<passkey> — the new-uploads feed
+# ──────────────────────────────────────────────────────────────────────────────
+_RSS_GUID_RE = re.compile(r"tuit-rec-(\d+)")
+
+
+@dataclass
+class RssItem:
+    """One entry in TUIT's new-uploads feed.
+
+    The feed is the cheapest discovery surface the tracker has: it needs no
+    login, answers in one request, and names the recording id outright, so a
+    sync can fetch detail pages only for ids it has not seen.
+    """
+
+    rec_id: int | None = None
+    title: str = ""
+    detail_url: str = ""
+    pub_date: str = ""          # RFC-822, as published
+    description: str = ""       # 'Tokyo, Japan · taped by Spot · FLAC 16/44'
+    torrent_url: str = ""       # passkey-bearing enclosure — treat as a secret
+    size_bytes: int | None = None
+
+    def as_dict(self) -> dict:
+        """Return the item as a plain dict."""
+        return dict(self.__dict__)
+
+
+def rss_url(passkey: str) -> str:
+    """Return the feed URL for a passkey.
+
+    Args:
+        passkey: The account's RSS passkey.
+
+    Returns:
+        Absolute feed URL.
+    """
+    return f"{BASE_URL}/rss/{passkey}"
+
+
+def redact_passkey(text: str, passkey: str) -> str:
+    """Blank a passkey out of ``text`` so it never reaches a log or a report.
+
+    Args:
+        text: Text that may embed the passkey.
+        passkey: The secret to remove.
+
+    Returns:
+        ``text`` with every occurrence replaced by ``<passkey>``.
+    """
+    return text.replace(passkey, "<passkey>") if passkey else text
+
+
+def parse_rss(xml: str) -> list[RssItem]:
+    """Parse the new-uploads feed into items, newest first.
+
+    Args:
+        xml: Raw feed body.
+
+    Returns:
+        List of :class:`RssItem`. Items whose guid carries no recording id are
+        kept with ``rec_id`` None rather than dropped, so a feed-format change
+        is visible to the caller instead of silently halving the queue.
+    """
+    soup = BeautifulSoup(xml or "", "xml")
+    items: list[RssItem] = []
+    for node in soup.find_all("item"):
+        guid = _text(node.find("guid"))
+        link = _text(node.find("link"))
+        enclosure = node.find("enclosure")
+        rec_id = None
+        m = _RSS_GUID_RE.search(guid)
+        if m:
+            rec_id = _int_or_none(m.group(1))
+        elif link:
+            rec_id = recording_id_from_url(link)
+        items.append(
+            RssItem(
+                rec_id=rec_id,
+                title=_text(node.find("title")),
+                detail_url=link,
+                pub_date=_text(node.find("pubDate")),
+                description=_text(node.find("description")),
+                torrent_url=enclosure.get("url", "") if enclosure else "",
+                size_bytes=(
+                    _int_or_none(enclosure.get("length", "")) if enclosure else None
+                ),
+            )
+        )
+    return items
+
+
+def fetch_rss(
+    passkey: str = "", delay: float = DEFAULT_DELAY
+) -> list[RssItem]:
+    """Fetch and parse the new-uploads feed.
+
+    No session is involved: the passkey in the URL is the whole authorisation,
+    which is why it is stored in the keyring under ``SERVICE_TUIT_RSS`` and
+    never written to a log. The feed is a rolling window of the newest 50
+    uploads, so a poll interval long enough to let 50 recordings accumulate
+    will miss some — fall back to ``/browse`` paging after a long gap.
+
+    Args:
+        passkey: RSS passkey; read from the keyring when empty.
+        delay: Seconds to sleep before the request.
+
+    Returns:
+        Feed items newest first, or an empty list when the fetch failed or no
+        passkey is stored.
+    """
+    if not passkey:
+        _user, passkey = get_credentials(SERVICE_TUIT_RSS)
+    if not passkey:
+        logger.warning(
+            "TUIT: no RSS passkey stored (keyring service %s)", SERVICE_TUIT_RSS
+        )
+        return []
+
+    time.sleep(delay)
+    try:
+        resp = requests.get(
+            rss_url(passkey), timeout=30, headers={"User-Agent": USER_AGENT}
+        )
+        resp.raise_for_status()
+    except requests.RequestException as exc:
+        logger.warning("TUIT: RSS fetch failed: %s", redact_passkey(str(exc), passkey))
+        return []
+
+    items = parse_rss(resp.text)
+    logger.info("TUIT RSS: %d item(s)", len(items))
+    return items
