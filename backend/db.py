@@ -1446,6 +1446,8 @@ CREATE TABLE IF NOT EXISTS tuit_songs (
 -- Per-performance rows from /song/<title> (LOCAL). n_sources is the tracker's
 -- circulating-source count for that night, and note is its lineup annotation
 -- ('Bob on electric keyboard') — neither exists in the Olof-derived spine.
+-- show_id is part of the key: a date can hold an afternoon and an evening show
+-- whose rendered venue_text is identical, and only the show id separates them.
 CREATE TABLE IF NOT EXISTS tuit_song_performances (
     id            INTEGER PRIMARY KEY AUTOINCREMENT,
     song          TEXT NOT NULL,
@@ -1457,7 +1459,7 @@ CREATE TABLE IF NOT EXISTS tuit_song_performances (
     note          TEXT,
     first_seen_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     last_seen_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE(song, date_str, venue_text)
+    UNIQUE(song, date_str, venue_text, show_id)
 );
 CREATE INDEX IF NOT EXISTS idx_tuit_sperf_song ON tuit_song_performances(song);
 CREATE INDEX IF NOT EXISTS idx_tuit_sperf_date ON tuit_song_performances(date_str);
@@ -3123,6 +3125,20 @@ def init_db(db_path=None):
             conn.execute(
                 "ALTER TABLE file_integrity_scans ADD COLUMN files_moved INTEGER DEFAULT 0"
             )
+        # Migration: tuit_song_performances was first created with
+        # UNIQUE(song, date_str, venue_text), which silently collapsed the two
+        # shows some dates carry (an afternoon and an evening at one venue render
+        # the same text). Rebuild it with show_id in the key; the table is a pure
+        # scrape cache, so dropping it costs only a re-sync.
+        _tsp = conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type='table'"
+            " AND name='tuit_song_performances'"
+        ).fetchone()
+        if _tsp and "UNIQUE(song, date_str, venue_text)" in (_tsp["sql"] or ""):
+            conn.execute("DROP TABLE tuit_song_performances")
+            conn.execute("UPDATE tuit_songs SET scraped_at=NULL, n_listed=NULL")
+            conn.executescript(SCHEMA_SQL)  # recreate it with the new key
+
         # Migration: add source to tuit_venues — the /venue register's paginated
         # listing is unstable (no tiebreak on its sort), so it both repeats and
         # drops rows; venues recovered from tuit_shows are marked 'shows'.
@@ -6439,9 +6455,10 @@ def upsert_tuit_songs(rows: list[dict], db_path=None) -> int:
 def upsert_tuit_song_performances(rows: list[dict], db_path=None) -> int:
     """Insert or refresh ``tuit_song_performances`` rows.
 
-    Keyed by (song, date_str, venue_text) — a song can be played twice on one
-    date at different venues (an afternoon and an evening show), so the date
-    alone is not unique.
+    Keyed by (song, date_str, venue_text, show_id). The show id is needed
+    because a date can carry two shows at the same venue — an afternoon and an
+    evening — whose rendered ``venue_text`` is identical. It is coerced to 0
+    rather than left NULL so the UNIQUE constraint actually fires.
 
     Args:
         rows: Dicts from
@@ -6455,11 +6472,12 @@ def upsert_tuit_song_performances(rows: list[dict], db_path=None) -> int:
     for row in rows:
         row = dict(row)
         row["venue_text"] = row.get("venue_text") or ""
+        row["show_id"] = row.get("show_id") or 0
         normalised.append(row)
     return _upsert_tuit_row(
         "tuit_song_performances", TUIT_SONG_PERF_COLUMNS,
-        ("song", "date_str", "venue_text"), ("is_encore",), normalised,
-        required=("song", "date_str"),
+        ("song", "date_str", "venue_text", "show_id"), ("is_encore",),
+        normalised, required=("song", "date_str"),
     )
 
 
@@ -6481,6 +6499,25 @@ def get_tuit_songs(song: str = "", db_path=None) -> list[dict]:
     sql += " ORDER BY n_performances DESC, song"
     with get_connection(db_path) as conn:
         return [dict(r) for r in conn.execute(sql, params).fetchall()]
+
+
+def get_tuit_scraped_songs(db_path=None) -> set[str]:
+    """Return the titles whose own ``/song`` page has already been read.
+
+    Used to resume an interrupted songbook sweep — it runs to ~850 requests, so
+    a restart must not re-fetch what already landed.
+
+    Args:
+        db_path: Optional DB path override.
+
+    Returns:
+        Set of song titles with a non-null ``scraped_at``.
+    """
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT song FROM tuit_songs WHERE scraped_at IS NOT NULL"
+        ).fetchall()
+    return {r["song"] for r in rows}
 
 
 def get_tuit_song_performances(
