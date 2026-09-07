@@ -1,3 +1,13 @@
+[2026-09-07] — TUIT vs entries: a field-level agreement check (analysis only, no code)
+Note: measured tuit_recordings (4,809 rows, 4,792 with an LB number) against entries. Every LB
+  number TUIT claims exists in entries, and 4,761 of the 4,764 usable date pairs agree — TUIT is an
+  independent corroboration of the catalogue, not another noisy corpus. The residue is filed as
+  TODO-339: 3 date conflicts (two look like bad TUIT lb_number attribution, not bad LB dates),
+  28 'xx' circa-dates that TUIT resolves exactly, 69 source-type conflicts (29 TUIT-SBD vs
+  LB-Audience, 22 the reverse, 18 FM vs Audience), 582 recordings where TUIT names a taper and
+  entries has none, 74 tracker recordings claiming LB numbers we hold as private, and 968 dates
+  where entries.location is city-only and tuit_shows supplies the venue name.
+
 [2026-09-07] — TUIT live history: the tour spine and venue register are now in the DB
 Added: backend/tuit_scraper.py: parsers for two TUIT surfaces that were never read. parse_tour_index
   (/tour) and parse_tour_page (/tour/<name>) yield TourShow rows for every show the tracker knows,
