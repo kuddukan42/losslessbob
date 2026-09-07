@@ -1,3 +1,14 @@
+[2026-09-07] — TUIT /song probe: their songbook exposes a split in our song spine (analysis only)
+Note: /songs (832 songs, 67,728 performances) and /song/<title> (per-performance date, venue, "N src"
+  and a lineup note such as "Bob on electric keyboard") are the same Olof-derived corpus we already
+  hold — song_performances has 67,844 rows, and All Along The Watchtower agrees at 2,251 concert
+  performances vs their 2,252. The rankings disagree, and the fault is ours: song_canonical's 1,338
+  titles fold to 1,307 on alphanumerics, i.e. 28 titles exist as spacing/encoding variants with
+  4,290 performances stranded in the smaller one ("Blowin ' In The Wind" 270 apart from
+  "Blowin' In The Wind" 1,213; "The Times They Are A-Changin'" split four ways; "Se or" vs "Senor").
+  Filed as BUG-337 — the dossier's first/last/only rarity flags are computed over that fragmented
+  spine. What TUIT genuinely adds is the per-performance source count and the lineup note.
+
 [2026-09-07] — TUIT vs entries: a field-level agreement check (analysis only, no code)
 Note: measured tuit_recordings (4,809 rows, 4,792 with an LB number) against entries. Every LB
   number TUIT claims exists in entries, and 4,761 of the 4,764 usable date pairs agree — TUIT is an
