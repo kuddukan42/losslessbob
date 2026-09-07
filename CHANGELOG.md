@@ -1,3 +1,29 @@
+[2026-09-07] — TUIT songbook: /songs and /song/<title> scraped into two tables
+Added: backend/tuit_scraper.py: parse_songs_index, parse_song_page, song_url_for, fetch_songs and
+  fetch_song_performances. Three site quirks the parsers have to handle: the songbook index must be
+  paged with sort=alpha (the default sort=plays has no tiebreak and drifts rows across page
+  boundaries the way /venue does); a song page's <details> decade sections are collapsed but NOT
+  lazily loaded, so one fetch yields the whole history; and the site's own /song/ hrefs escape
+  spaces while leaving '#', '?' and '/' raw, so following them verbatim requests the wrong page —
+  26 songs ("Rainy Day Women #12 & 35", "What Good Am I?", "The Market Town/Scatter The Mud") came
+  back with zero rows and no error until song_url_for() re-encoded the title.
+Added: backend/db.py: tuit_songs (832 rows) and tuit_song_performances (66,679 rows over 3,924
+  dates — 41,005 with a circulating-source count, 33,872 with a lineup note, 8,201 encores), plus
+  upsert_tuit_songs/upsert_tuit_song_performances, get_tuit_songs/get_tuit_song_performances and
+  get_tuit_scraped_songs.
+Added: tools/tuit_sync.py --sync-songs / --song-limit. Already-scraped songs are skipped unless
+  --rescan, so an interrupted ~850-request sweep resumes instead of restarting.
+Fixed: tuit_song_performances was first keyed UNIQUE(song, date_str, venue_text), which silently
+  collapsed 252 rows: a date can carry two shows at one venue (1974-02-11 renders one venue string
+  for two "Rainy Day Women" performances carrying different source counts) and only show_id
+  separates them. show_id is now in the key, coerced to 0 rather than NULL so the constraint fires;
+  a guarded migration drops and rebuilds the table, which is a pure scrape cache.
+Note: the corpus is the same Olof-derived spine as song_performances, so it is a cross-check, not a
+  new source — All Along The Watchtower is 2,252 listed there vs 2,251 concert rows here. Their
+  index and their own song pages disagree (2,285 vs 2,252; High Water 721 vs 512), so both counts
+  are stored. 7 songs have an index count of 1 and an empty page, one of them titled "Jok erman" —
+  the same mid-word-space corruption as BUG-337, inherited from the same source.
+
 [2026-09-07] — TUIT /song probe: their songbook exposes a split in our song spine (analysis only)
 Note: /songs (832 songs, 67,728 performances) and /song/<title> (per-performance date, venue, "N src"
   and a lineup note such as "Bob on electric keyboard") are the same Olof-derived corpus we already

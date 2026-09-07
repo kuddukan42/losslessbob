@@ -149,7 +149,8 @@ def _build_parser() -> argparse.ArgumentParser:
                         "expect half an hour at the default delay.")
     p.add_argument("--song-limit", type=int, default=0,
                    help="With --sync-songs, fetch only the first N song pages "
-                        "(0 = all). The index is always read in full.")
+                        "(0 = all). The index is always read in full, and "
+                        "already-scraped songs are skipped unless --rescan.")
     p.add_argument("--set-credentials", action="store_true",
                    help="Prompt for the TUIT username and password, store them "
                         "in the OS keyring, verify them with a login, and exit. "
@@ -328,7 +329,12 @@ def _sync_history(session, args) -> int:
             return 0
 
         database.upsert_tuit_songs([s.as_dict() for s in songs])
-        queue = songs[:args.song_limit] if args.song_limit else songs
+        done = set() if args.rescan else database.get_tuit_scraped_songs()
+        queue = [s for s in songs if s.song not in done]
+        if done:
+            logger.info("  resuming: %d song page(s) already read", len(done))
+        if args.song_limit:
+            queue = queue[:args.song_limit]
         total = 0
         for n, song in enumerate(queue, 1):
             perfs = tuit_scraper.fetch_song_performances(

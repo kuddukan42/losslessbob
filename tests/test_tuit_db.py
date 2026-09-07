@@ -411,6 +411,29 @@ class TestTuitSongs:
         assert db.upsert_tuit_song_performances(rows) == 2
         assert len(db.get_tuit_song_performances(song="AAtW", db_path=path)) == 2
 
+    def test_same_venue_text_twice_is_split_by_show_id(self, dbmod):
+        """1974-02-11 renders one venue string for two shows — only the id differs."""
+        db, path = dbmod
+        db.upsert_tuit_song_performances([
+            {"song": "Rainy Day Women", "date_str": "1974-02-11",
+             "venue_text": "Nassau Coliseum — Uniondale", "show_id": 900,
+             "n_sources": 1},
+            {"song": "Rainy Day Women", "date_str": "1974-02-11",
+             "venue_text": "Nassau Coliseum — Uniondale", "show_id": 901,
+             "n_sources": 2},
+        ])
+        got = db.get_tuit_song_performances(date_str="1974-02-11", db_path=path)
+        assert [r["n_sources"] for r in got] == [1, 2]
+
+    def test_a_missing_show_id_still_upserts_idempotently(self, dbmod):
+        db, path = dbmod
+        row = {"song": "AAtW", "date_str": "1993-01-01",
+               "venue_text": "Somewhere", "n_sources": 1}
+        db.upsert_tuit_song_performances([row])
+        db.upsert_tuit_song_performances([{**row, "n_sources": 3}])
+        got = db.get_tuit_song_performances(song="AAtW", db_path=path)
+        assert len(got) == 1 and got[0]["n_sources"] == 3
+
     def test_encore_and_missing_source_count(self, dbmod):
         db, path = dbmod
         db.upsert_tuit_song_performances([

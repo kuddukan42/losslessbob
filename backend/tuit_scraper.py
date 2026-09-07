@@ -1064,16 +1064,38 @@ def parse_songs_index(html: str) -> list[TuitSong]:
         link = tr.find("a", href=True)
         if len(cells) < 6 or link is None or "/song/" not in link["href"]:
             continue
+        title = _text(link)
         rows.append(
             TuitSong(
-                song=_text(link),
-                song_url=link["href"],
+                song=title,
+                song_url=song_url_for(title),
                 n_performances=_int_or_none(re.sub(r"\D", "", _text(cells[3]))),
                 year_first=_int_or_none(_text(cells[4])),
                 year_last=_int_or_none(_text(cells[5])),
             )
         )
     return rows
+
+
+def song_url_for(title: str) -> str:
+    """Return the ``/song/<title>`` URL for a song, fully percent-encoded.
+
+    The site's own hrefs escape spaces but leave ``#``, ``?`` and ``/`` raw, so
+    following them verbatim silently requests the wrong page — ``#`` truncates
+    at the fragment, ``?`` starts a query string and ``/`` adds a path segment.
+    That cost 26 songs ("Rainy Day Women #12 & 35", "What Good Am I?",
+    "The Market Town/Scatter The Mud") on the first sweep, each returning a page
+    with no performance rows rather than an error.
+
+    Args:
+        title: Song title exactly as the site renders it.
+
+    Returns:
+        Absolute URL to the song's page.
+    """
+    from urllib.parse import quote
+
+    return f"{BASE_URL}/song/{quote(title, safe='')}"
 
 
 def songs_page_count(html: str) -> int:
@@ -1186,7 +1208,7 @@ def fetch_song_performances(
     Returns:
         The song's performance rows, or an empty list on a failed fetch.
     """
-    resp = _get(session, song.song_url, delay)
+    resp = _get(session, song.song_url or song_url_for(song.song), delay)
     if resp is None:
         return []
     return parse_song_page(resp.text, song.song)
