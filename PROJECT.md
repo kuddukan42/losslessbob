@@ -261,7 +261,7 @@ losslessbob/
 │   ├── checksum_dispute_report.py # CLI: render checksum_disputes as a standalone HTML report (.debug/checksum_disputes.html); pairs the db+lbdir references per track to derive db_error / audio_differs / retag / receipt_unknown / lbdir_only (TODO-300, 302)
 │   ├── parse_lineage.py      # CLI wrapper: backend.taper_attribution / entry_lineage batch parse (see backend/db.py extract_lb_references)
 │   ├── wtrf_fetch_missing.py # CLI: batch WTRF torrent fetch for missing items (wraps /api/wtrf/fetch_torrent logic)
-│   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314)
+│   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314); --sync-tours / --sync-venues fill tuit_shows + tuit_venues
 │   ├── fit_aud_quality_model.py # CLI: fit the AUD quality regression model used by concert_ranker
 │   ├── refit_aud_model.py    # CLI: refit/recalibrate the AUD quality model against new labels
 │   ├── gui_next_locale_parity.py # CLI: check gui_next locales/*.json for missing/extra keys vs en.json
@@ -515,6 +515,48 @@ Mirrors `wtrf_downloads`, written by `tools/tuit_sync.py --fetch-torrents [--see
 | qbt_added_at | TIMESTAMP | When the torrent was added to qBittorrent |
 
 Indexes: `idx_tuit_dl_rec(rec_id, attempted_at DESC)`, `idx_tuit_dl_status(status, attempted_at DESC)`.
+
+### `tuit_shows` — TUIT live-history concert spine (LOCAL table)
+Every show the tracker knows about, circulating or not. Written by
+`tools/tuit_sync.py --sync-tours` from `/tour/<name>`. Keyed by (date, venue) because a
+circulating row links to `/recordings/<id>` and a gap row to `/shows/<id>` — no single site
+id spans the table.
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| date_str | TEXT NOT NULL | ISO `YYYY-MM-DD`; year comes from the page's `.tl-year` divider |
+| venue | TEXT NOT NULL | May carry a `· Afternoon`/`· Evening` suffix |
+| location | TEXT | Free text, `City, Region, Country` |
+| tour | TEXT | One of TUIT's 46 coarse tours (vs `olof_events.tour_name`'s 204 legs) |
+| row_url | TEXT | `/recordings/<id>` or `/shows/<id>` |
+| rec_id | INTEGER | Top circulating recording, when one exists |
+| show_id | INTEGER | Site show id; set on gap rows |
+| circulating | INTEGER | 0 = no tape **on the tracker** (not "no tape exists") |
+| in_collection | INTEGER | The site's own "in your collection" marker |
+| has_sbd / has_aud | INTEGER | Source-type badges on the row |
+| seeders | INTEGER | Swarm size of the top recording |
+| first_seen_at / last_seen_at | TIMESTAMP | Default CURRENT_TIMESTAMP |
+
+Indexes: `idx_tuit_shows_date(date_str)`, `idx_tuit_shows_tour(tour)`, `idx_tuit_shows_circ(circulating)`.
+UNIQUE(date_str, venue).
+
+### `tuit_venues` — TUIT venue register (LOCAL table)
+Written by `tools/tuit_sync.py --sync-venues` from `/venue`, then completed by
+`db.backfill_tuit_venues_from_shows()` — the register's pagination sorts by show count with
+no tiebreak, so a sweep repeats rows and drops others (2,744 fetched → 1,931 distinct, 685 missed).
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| venue | TEXT NOT NULL | Venue name |
+| city | TEXT | `''` not NULL, so the UNIQUE key fires |
+| country | TEXT | `''` not NULL |
+| year_first / year_last | INTEGER | Year span the site advertises |
+| n_shows | INTEGER | Shows at this venue |
+| venue_url | TEXT | `/venue/<name>` |
+| source | TEXT | `'register'` (scraped) or `'shows'` (recovered from `tuit_shows`) |
+| first_seen_at / last_seen_at | TIMESTAMP | Default CURRENT_TIMESTAMP |
+
+Indexes: `idx_tuit_venues_name(venue)`. UNIQUE(venue, city, country).
 
 ### `lb_master` — Unified per-LB status/integrity record (MASTER table)
 The single source of truth for whether an LB number is public/private/missing/nonexistent;
