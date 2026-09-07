@@ -1427,6 +1427,41 @@ CREATE TABLE IF NOT EXISTS tuit_venues (
     UNIQUE(venue, city, country)
 );
 CREATE INDEX IF NOT EXISTS idx_tuit_venues_name ON tuit_venues(venue);
+
+-- TUIT's songbook (LOCAL), scraped from /songs. The index's own performance
+-- count is kept alongside the rows actually listed on the song page: the two
+-- disagree on the site itself (All Along The Watchtower is 2,285 vs 2,252).
+CREATE TABLE IF NOT EXISTS tuit_songs (
+    song           TEXT PRIMARY KEY,
+    song_url       TEXT,
+    n_performances INTEGER,          -- as advertised by the /songs index
+    n_listed       INTEGER,          -- rows actually parsed off /song/<title>
+    year_first     INTEGER,
+    year_last      INTEGER,
+    scraped_at     TIMESTAMP,        -- set when the song page itself was read
+    first_seen_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_seen_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Per-performance rows from /song/<title> (LOCAL). n_sources is the tracker's
+-- circulating-source count for that night, and note is its lineup annotation
+-- ('Bob on electric keyboard') — neither exists in the Olof-derived spine.
+CREATE TABLE IF NOT EXISTS tuit_song_performances (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    song          TEXT NOT NULL,
+    date_str      TEXT NOT NULL,     -- ISO 'YYYY-MM-DD'
+    venue_text    TEXT,              -- 'Venue — City, Country' as rendered
+    show_id       INTEGER,
+    n_sources     INTEGER,           -- NULL when nothing circulates
+    is_encore     INTEGER DEFAULT 0,
+    note          TEXT,
+    first_seen_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_seen_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(song, date_str, venue_text)
+);
+CREATE INDEX IF NOT EXISTS idx_tuit_sperf_song ON tuit_song_performances(song);
+CREATE INDEX IF NOT EXISTS idx_tuit_sperf_date ON tuit_song_performances(date_str);
+CREATE INDEX IF NOT EXISTS idx_tuit_sperf_show ON tuit_song_performances(show_id);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -6373,6 +6408,108 @@ def upsert_tuit_venues(rows: list[dict], db_path=None) -> int:
         "tuit_venues", TUIT_VENUE_COLUMNS, ("venue", "city", "country"),
         (), normalised, required=("venue",),
     )
+
+
+TUIT_SONG_COLUMNS = (
+    "song", "song_url", "n_performances", "n_listed", "year_first",
+    "year_last", "scraped_at",
+)
+
+TUIT_SONG_PERF_COLUMNS = (
+    "song", "date_str", "venue_text", "show_id", "n_sources", "is_encore",
+    "note",
+)
+
+
+def upsert_tuit_songs(rows: list[dict], db_path=None) -> int:
+    """Insert or refresh ``tuit_songs`` rows, keyed by song title.
+
+    Args:
+        rows: Dicts from :class:`backend.tuit_scraper.TuitSong.as_dict`.
+        db_path: Unused; writes go through the shared write queue.
+
+    Returns:
+        Number of rows written.
+    """
+    return _upsert_tuit_row(
+        "tuit_songs", TUIT_SONG_COLUMNS, ("song",), (), rows,
+    )
+
+
+def upsert_tuit_song_performances(rows: list[dict], db_path=None) -> int:
+    """Insert or refresh ``tuit_song_performances`` rows.
+
+    Keyed by (song, date_str, venue_text) — a song can be played twice on one
+    date at different venues (an afternoon and an evening show), so the date
+    alone is not unique.
+
+    Args:
+        rows: Dicts from
+            :class:`backend.tuit_scraper.TuitSongPerformance.as_dict`.
+        db_path: Unused; writes go through the shared write queue.
+
+    Returns:
+        Number of rows written.
+    """
+    normalised = []
+    for row in rows:
+        row = dict(row)
+        row["venue_text"] = row.get("venue_text") or ""
+        normalised.append(row)
+    return _upsert_tuit_row(
+        "tuit_song_performances", TUIT_SONG_PERF_COLUMNS,
+        ("song", "date_str", "venue_text"), ("is_encore",), normalised,
+        required=("song", "date_str"),
+    )
+
+
+def get_tuit_songs(song: str = "", db_path=None) -> list[dict]:
+    """Return ``tuit_songs`` rows, most-performed first.
+
+    Args:
+        song: If given, only this exact title.
+        db_path: Optional DB path override.
+
+    Returns:
+        List of row dicts.
+    """
+    sql = "SELECT * FROM tuit_songs"
+    params: list = []
+    if song:
+        sql += " WHERE song=?"
+        params.append(song)
+    sql += " ORDER BY n_performances DESC, song"
+    with get_connection(db_path) as conn:
+        return [dict(r) for r in conn.execute(sql, params).fetchall()]
+
+
+def get_tuit_song_performances(
+    song: str = "", date_str: str = "", db_path=None
+) -> list[dict]:
+    """Return ``tuit_song_performances`` rows, oldest first.
+
+    Args:
+        song: If given, only this song.
+        date_str: If given, only this ISO date — i.e. one night's setlist.
+        db_path: Optional DB path override.
+
+    Returns:
+        List of row dicts.
+    """
+    sql = "SELECT * FROM tuit_song_performances"
+    clauses: list[str] = []
+    params: list = []
+    if song:
+        clauses.append("song=?")
+        params.append(song)
+    if date_str:
+        clauses.append("date_str=?")
+        params.append(date_str)
+    if clauses:
+        sql += " WHERE " + " AND ".join(clauses)
+    sql += " ORDER BY date_str, song"
+    with get_connection(db_path) as conn:
+        return [dict(r) for r in conn.execute(sql, params).fetchall()]
 
 
 def backfill_tuit_venues_from_shows(db_path=None) -> int:

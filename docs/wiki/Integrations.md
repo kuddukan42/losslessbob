@@ -91,6 +91,16 @@ marks them `source='shows'`. TUIT's 1,507 "no tape" shows mean *not on this
 tracker*, not *no tape exists* — LB holds recordings for 1,269 of them.
 See [Setlist-Sources](Setlist-Sources.md); reconciliation is TODO-338.
 
+**Songbook** (`--sync-songs`, ~850 requests): `/songs` → `tuit_songs`,
+`/song/<title>` → `tuit_song_performances`. Page the index with `sort=alpha`,
+not the default `sort=plays` — the latter has no tiebreak and drifts the same
+way `/venue` does. A song page's `<details>` decade sections are collapsed, not
+lazily loaded, so one fetch yields the full history. The corpus is the same
+Olof-derived spine as `song_performances`, so it is a **cross-check**, not a new
+source — it is what exposed BUG-337. What it adds is per-performance:
+`n_sources` (how many tapes circulate for that night) and `note`
+(`Bob on electric keyboard`), neither of which the Olof parse carries.
+
 Attempts land in `tuit_downloads`. Credentials: `SERVICE_TUIT`, set or rotated
 with `tools/tuit_sync.py --set-credentials` (prompts, no echo).
 **Pacing**: 3s between requests, small batches — this is a tiny private site.

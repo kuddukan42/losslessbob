@@ -143,6 +143,13 @@ def _build_parser() -> argparse.ArgumentParser:
                         "(46 pages).")
     p.add_argument("--venue-pages", type=int, default=0,
                    help="With --sync-venues, stop after N pages (0 = all).")
+    p.add_argument("--sync-songs", action="store_true",
+                   help="Scrape /songs and every /song/<title> page into "
+                        "tuit_songs + tuit_song_performances. ~850 requests — "
+                        "expect half an hour at the default delay.")
+    p.add_argument("--song-limit", type=int, default=0,
+                   help="With --sync-songs, fetch only the first N song pages "
+                        "(0 = all). The index is always read in full.")
     p.add_argument("--set-credentials", action="store_true",
                    help="Prompt for the TUIT username and password, store them "
                         "in the OS keyring, verify them with a login, and exit. "
@@ -310,6 +317,39 @@ def _sync_history(session, args) -> int:
                   f"({len(venues)} scraped, the register's unstable pagination "
                   f"repeats rows), {recovered} more recovered from tuit_shows")
 
+    if args.sync_songs:
+        songs = tuit_scraper.fetch_songs(session, delay=args.delay)
+        if not songs:
+            print("No songbook rows parsed — the site layout may have changed.",
+                  file=sys.stderr)
+            return 1
+        if args.dry_run:
+            print(f"songs: {len(songs)} in the songbook (dry run)")
+            return 0
+
+        database.upsert_tuit_songs([s.as_dict() for s in songs])
+        queue = songs[:args.song_limit] if args.song_limit else songs
+        total = 0
+        for n, song in enumerate(queue, 1):
+            perfs = tuit_scraper.fetch_song_performances(
+                session, song, delay=args.delay
+            )
+            if not perfs:
+                logger.warning("  %s: no performances parsed", song.song)
+                continue
+            total += database.upsert_tuit_song_performances(
+                [p.as_dict() for p in perfs]
+            )
+            database.upsert_tuit_songs([{
+                **song.as_dict(),
+                "n_listed": len(perfs),
+                "scraped_at": datetime.now(UTC).isoformat(timespec="seconds"),
+            }])
+            logger.info("  [%d/%d] %s: %d performance(s)",
+                        n, len(queue), song.song, len(perfs))
+        print(f"tuit_songs: {len(songs)} songs, "
+              f"tuit_song_performances: {total} rows over {len(queue)} song page(s)")
+
     return 0
 
 
@@ -443,7 +483,7 @@ def main() -> int:
         print("TUIT login failed — check the keyring credentials.", file=sys.stderr)
         return 1
 
-    if args.sync_tours or args.sync_venues:
+    if args.sync_tours or args.sync_venues or args.sync_songs:
         return _sync_history(session, args)
 
     rows_by_id: dict[int, object] = {}

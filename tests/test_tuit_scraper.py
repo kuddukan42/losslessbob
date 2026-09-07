@@ -17,12 +17,15 @@ from backend.tuit_scraper import (
     parse_browse,
     parse_recording,
     parse_size,
+    parse_song_page,
+    parse_songs_index,
     parse_tour_index,
     parse_tour_page,
     parse_venue_page,
     recording_id_from_url,
     recording_to_json_fields,
     save_recording_html,
+    songs_page_count,
     torrent_root_name,
     tour_name_from_url,
     venue_page_count,
@@ -539,3 +542,109 @@ class TestParseVenuePage:
 
     def test_page_count_defaults_to_one(self):
         assert venue_page_count("<p>no pager</p>") == 1
+
+
+SONGS_INDEX_HTML = """
+<span class="result-count">top <b>50</b> &middot; 1 of 17 pages</span>
+<table class="tbl">
+  <thead><tr><th>#</th><th>Song</th><th></th><th class="r">Performances</th>
+    <th>First</th><th>Last</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="rank"><span class="medal-gold">&#9733;</span></td>
+      <td><a href="https://tangledupintorrents.org/song/All%20Along%20The%20Watchtower"
+        >All Along The Watchtower</a></td>
+      <td><div class="comp-bar"><i style="width:100%"></i></div></td>
+      <td class="r">2,285<span>&times;</span></td>
+      <td class="num">1974</td><td class="num">2026</td>
+    </tr>
+    <tr>
+      <td class="rank">4</td>
+      <td><a href="https://tangledupintorrents.org/song/Tangled%20Up%20In%20Blue"
+        >Tangled Up In Blue</a></td>
+      <td><div class="comp-bar"><i style="width:71%"></i></div></td>
+      <td class="r">1,620<span>&times;</span></td>
+      <td class="num">1975</td><td class="num">2018</td>
+    </tr>
+  </tbody>
+</table>
+"""
+
+SONG_PAGE_HTML = """
+<section class="song-hero"><h1>All Along The Watchtower</h1></section>
+<details class="decade" open>
+  <summary class="decade-hd"><span class="dec">2020s</span>
+    <span class="dcount">111 shows</span></summary>
+  <div class="perf-row">
+    <span class="perf-date">Jun 23, 2026</span>
+    <a class="venue" href="https://tangledupintorrents.org/shows/5025"
+      >Arizona Financial Theatre &mdash; Phoenix, United States</a>
+    <span class="perf-src"><span class="tag">1 src</span></span>
+  </div>
+  <div class="perf-note">Bob on guitar and electric keyboard</div>
+  <div class="perf-row">
+    <span class="perf-date">Jun 18, 2026</span>
+    <a class="venue" href="https://tangledupintorrents.org/shows/5030"
+      >Yaamava' Theater &mdash; Highland, United States</a>
+    <span class="perf-src"></span>
+  </div>
+</details>
+<details class="decade">
+  <summary class="decade-hd"><span class="dec">2010s</span></summary>
+  <div class="perf-row">
+    <span class="perf-date">Aug 13, 2011</span>
+    <a class="venue" href="https://tangledupintorrents.org/shows/2197"
+      >Nikon at Jones Beach Theater &mdash; Wantagh, United States</a>
+    <span class="perf-src"><span class="tag">Encore</span>
+      <span class="tag">3 src</span></span>
+  </div>
+</details>
+"""
+
+
+class TestParseSongsIndex:
+    """The /songs songbook is a paginated table like /venue."""
+
+    def test_rows_carry_counts_and_year_span(self):
+        rows = parse_songs_index(SONGS_INDEX_HTML)
+        assert [r.song for r in rows] == [
+            "All Along The Watchtower", "Tangled Up In Blue",
+        ]
+        assert rows[0].n_performances == 2285
+        assert (rows[0].year_first, rows[0].year_last) == (1974, 2026)
+
+    def test_page_count_is_read_from_the_result_line(self):
+        assert songs_page_count(SONGS_INDEX_HTML) == 17
+
+    def test_page_count_defaults_to_one(self):
+        assert songs_page_count("<p>nothing</p>") == 1
+
+
+class TestParseSongPage:
+    """A collapsed <details> still carries its rows, so one fetch is enough."""
+
+    def test_every_decade_section_is_parsed(self):
+        rows = parse_song_page(SONG_PAGE_HTML)
+        assert [r.date_str for r in rows] == [
+            "2026-06-23", "2026-06-18", "2011-08-13",
+        ]
+
+    def test_a_note_attaches_to_the_row_above_it(self):
+        rows = parse_song_page(SONG_PAGE_HTML)
+        assert rows[0].note == "Bob on guitar and electric keyboard"
+        assert rows[1].note == ""
+
+    def test_source_count_and_encore_tags(self):
+        rows = parse_song_page(SONG_PAGE_HTML)
+        assert (rows[0].n_sources, rows[0].is_encore) == (1, False)
+        assert (rows[1].n_sources, rows[1].is_encore) == (None, False)
+        assert (rows[2].n_sources, rows[2].is_encore) == (3, True)
+
+    def test_show_id_comes_from_the_venue_link(self):
+        assert parse_song_page(SONG_PAGE_HTML)[0].show_id == 5025
+
+    def test_song_falls_back_to_the_page_heading(self):
+        assert parse_song_page(SONG_PAGE_HTML)[0].song == "All Along The Watchtower"
+
+    def test_empty_html_is_not_an_error(self):
+        assert parse_song_page("") == []

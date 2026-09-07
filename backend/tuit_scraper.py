@@ -1007,3 +1007,186 @@ def fetch_venues(
         venues.extend(parse_venue_page(nxt.text))
     logger.info("TUIT venues: %d row(s) over %d page(s)", len(venues), total)
     return venues
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# /songs and /song/<title> — the songbook and per-song performance history
+# ──────────────────────────────────────────────────────────────────────────────
+@dataclass
+class TuitSong:
+    """One row of the ``/songs`` songbook index."""
+
+    song: str = ""
+    song_url: str = ""
+    n_performances: int | None = None   # the index's own count
+    year_first: int | None = None
+    year_last: int | None = None
+
+    def as_dict(self) -> dict:
+        """Return the row as a plain dict."""
+        return dict(self.__dict__)
+
+
+@dataclass
+class TuitSongPerformance:
+    """One performance row on a ``/song/<title>`` page."""
+
+    song: str = ""
+    date_str: str = ""          # ISO 'YYYY-MM-DD'
+    venue_text: str = ""        # 'Venue — City, Country' as rendered
+    show_id: int | None = None
+    n_sources: int | None = None  # the row's 'N src' tag, absent when uncirculated
+    is_encore: bool = False
+    note: str = ""              # e.g. 'Bob on electric keyboard'
+
+    def as_dict(self) -> dict:
+        """Return the row as a plain dict."""
+        return dict(self.__dict__)
+
+
+def parse_songs_index(html: str) -> list[TuitSong]:
+    """Parse one ``/songs`` listing page into songbook rows.
+
+    Args:
+        html: Raw HTML of a songs listing page.
+
+    Returns:
+        List of :class:`TuitSong` in page order.
+    """
+    soup = BeautifulSoup(html or "", "html.parser")
+    table = soup.select_one("table.tbl")
+    rows: list[TuitSong] = []
+    if table is None:
+        return rows
+
+    for tr in table.select("tbody tr"):
+        cells = tr.find_all("td")
+        link = tr.find("a", href=True)
+        if len(cells) < 6 or link is None or "/song/" not in link["href"]:
+            continue
+        rows.append(
+            TuitSong(
+                song=_text(link),
+                song_url=link["href"],
+                n_performances=_int_or_none(re.sub(r"\D", "", _text(cells[3]))),
+                year_first=_int_or_none(_text(cells[4])),
+                year_last=_int_or_none(_text(cells[5])),
+            )
+        )
+    return rows
+
+
+def songs_page_count(html: str) -> int:
+    """Return the '1 of 17 pages' page total, or 1 when absent."""
+    m = re.search(r"\d+\s+of\s+([\d,]+)\s+pages", html or "")
+    return _int_or_none(m.group(1)) or 1 if m else 1
+
+
+def parse_song_page(html: str, song: str = "") -> list[TuitSongPerformance]:
+    """Parse one ``/song/<title>`` page into performance rows.
+
+    Every decade section is present in the HTML — the ``<details>`` elements are
+    collapsed, not lazily loaded — so one fetch yields the song's full history.
+    A ``.perf-note`` follows the row it annotates as a sibling, so the nodes are
+    walked in document order rather than selected separately.
+
+    Args:
+        html: Raw HTML of a song page.
+        song: Song title to stamp on each row; falls back to the page heading.
+
+    Returns:
+        List of :class:`TuitSongPerformance` in page order (newest first).
+    """
+    soup = BeautifulSoup(html or "", "html.parser")
+    if not song:
+        song = _text(soup.select_one(".song-hero h1") or soup.find("h1"))
+
+    rows: list[TuitSongPerformance] = []
+    for node in soup.select(".perf-row, .perf-note"):
+        classes = node.get("class") or []
+        if "perf-note" in classes:
+            if rows:
+                rows[-1].note = _text(node)
+            continue
+
+        date_iso = _parse_long_date(_text(node.select_one(".perf-date")))
+        if not date_iso:
+            continue
+        venue = node.select_one("a.venue")
+        tags = [_text(t) for t in node.select(".perf-src .tag")]
+        src = next((t for t in tags if re.match(r"\d+\s+src", t)), "")
+        rows.append(
+            TuitSongPerformance(
+                song=song,
+                date_str=date_iso,
+                venue_text=_text(venue),
+                show_id=(
+                    _int_or_none(venue["href"].rstrip("/").rsplit("/", 1)[-1])
+                    if venue and "/shows/" in venue.get("href", "") else None
+                ),
+                n_sources=_int_or_none(re.sub(r"\D", "", src)) if src else None,
+                is_encore=any(t.lower() == "encore" for t in tags),
+            )
+        )
+    return rows
+
+
+def _parse_long_date(label: str) -> str:
+    """Convert 'Jun 23, 2026' to '2026-06-23'; return '' when unparseable."""
+    m = re.match(r"([A-Z][a-z]{2})\s+(\d{1,2}),\s*(\d{4})", (label or "").strip())
+    if not m or m.group(1) not in _MONTHS:
+        return ""
+    return f"{int(m.group(3)):04d}-{_MONTHS[m.group(1)]:02d}-{int(m.group(2)):02d}"
+
+
+def fetch_songs(
+    session: requests.Session, delay: float = DEFAULT_DELAY, max_pages: int = 0
+) -> list[TuitSong]:
+    """Fetch the ``/songs`` songbook index.
+
+    Paged with ``sort=alpha``: the default ``sort=plays`` has no tiebreak, so
+    songs sharing a performance count drift between pages the way the /venue
+    register does. Alphabetical order is unique, so the sweep is complete.
+
+    Args:
+        session: Authenticated session.
+        delay: Seconds to sleep before each request.
+        max_pages: Stop after this many pages; 0 means all of them.
+
+    Returns:
+        Every songbook row; empty when the first fetch failed.
+    """
+    resp = _get(session, "/songs?sort=alpha", delay)
+    if resp is None:
+        return []
+
+    total = songs_page_count(resp.text)
+    if max_pages:
+        total = min(total, max_pages)
+    songs = parse_songs_index(resp.text)
+    for page in range(2, total + 1):
+        nxt = _get(session, f"/songs?sort=alpha&page={page}", delay)
+        if nxt is None:
+            break
+        songs.extend(parse_songs_index(nxt.text))
+    logger.info("TUIT songbook: %d song(s) over %d page(s)", len(songs), total)
+    return songs
+
+
+def fetch_song_performances(
+    session: requests.Session, song: TuitSong, delay: float = DEFAULT_DELAY
+) -> list[TuitSongPerformance]:
+    """Fetch one song's full performance history.
+
+    Args:
+        session: Authenticated session.
+        song: A row from :func:`fetch_songs`.
+        delay: Seconds to sleep before the request.
+
+    Returns:
+        The song's performance rows, or an empty list on a failed fetch.
+    """
+    resp = _get(session, song.song_url, delay)
+    if resp is None:
+        return []
+    return parse_song_page(resp.text, song.song)
