@@ -378,3 +378,53 @@ class TestVenueBackfill:
         assert db.backfill_tuit_venues_from_shows(path) == 0
         got = db.get_tuit_venues(venue="Beacon Theatre", db_path=path)
         assert len(got) == 1 and got[0]["n_shows"] == 46
+
+
+class TestTuitSongs:
+    """tuit_songs / tuit_song_performances mirror TUIT's songbook."""
+
+    def test_songs_are_keyed_by_title(self, dbmod):
+        db, path = dbmod
+        db.upsert_tuit_songs([
+            {"song": "All Along The Watchtower", "n_performances": 2285,
+             "year_first": 1974, "year_last": 2026},
+            {"song": "Tangled Up In Blue", "n_performances": 1620},
+        ])
+        got = db.get_tuit_songs(db_path=path)
+        assert [r["song"] for r in got] == [
+            "All Along The Watchtower", "Tangled Up In Blue",
+        ]
+        db.upsert_tuit_songs([
+            {"song": "All Along The Watchtower", "n_listed": 2252},
+        ])
+        one = db.get_tuit_songs(song="All Along The Watchtower", db_path=path)[0]
+        assert one["n_listed"] == 2252 and one["n_performances"] == 2285
+
+    def test_two_shows_on_one_date_are_two_performances(self, dbmod):
+        db, path = dbmod
+        rows = [
+            {"song": "AAtW", "date_str": "1970-02-09",
+             "venue_text": "Seattle Center Coliseum · Afternoon", "n_sources": 2},
+            {"song": "AAtW", "date_str": "1970-02-09",
+             "venue_text": "Seattle Center Coliseum · Evening", "n_sources": 2},
+        ]
+        assert db.upsert_tuit_song_performances(rows) == 2
+        assert len(db.get_tuit_song_performances(song="AAtW", db_path=path)) == 2
+
+    def test_encore_and_missing_source_count(self, dbmod):
+        db, path = dbmod
+        db.upsert_tuit_song_performances([
+            {"song": "AAtW", "date_str": "2018-11-29", "venue_text": "Beacon",
+             "is_encore": True, "n_sources": None,
+             "note": "Bob on piano, Donnie on lap steel"},
+        ])
+        got = db.get_tuit_song_performances(date_str="2018-11-29", db_path=path)[0]
+        assert got["is_encore"] == 1
+        assert got["n_sources"] is None
+        assert got["note"].startswith("Bob on piano")
+
+    def test_a_row_without_a_date_is_skipped(self, dbmod):
+        db, path = dbmod
+        assert db.upsert_tuit_song_performances(
+            [{"song": "AAtW", "date_str": ""}, {"date_str": "1993-01-01"}]
+        ) == 0

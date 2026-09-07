@@ -261,7 +261,7 @@ losslessbob/
 │   ├── checksum_dispute_report.py # CLI: render checksum_disputes as a standalone HTML report (.debug/checksum_disputes.html); pairs the db+lbdir references per track to derive db_error / audio_differs / retag / receipt_unknown / lbdir_only (TODO-300, 302)
 │   ├── parse_lineage.py      # CLI wrapper: backend.taper_attribution / entry_lineage batch parse (see backend/db.py extract_lb_references)
 │   ├── wtrf_fetch_missing.py # CLI: batch WTRF torrent fetch for missing items (wraps /api/wtrf/fetch_torrent logic)
-│   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314); --sync-tours / --sync-venues fill tuit_shows + tuit_venues
+│   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314); --sync-tours / --sync-venues fill tuit_shows + tuit_venues; --sync-songs fills tuit_songs + tuit_song_performances
 │   ├── fit_aud_quality_model.py # CLI: fit the AUD quality regression model used by concert_ranker
 │   ├── refit_aud_model.py    # CLI: refit/recalibrate the AUD quality model against new labels
 │   ├── gui_next_locale_parity.py # CLI: check gui_next locales/*.json for missing/extra keys vs en.json
@@ -557,6 +557,36 @@ no tiebreak, so a sweep repeats rows and drops others (2,744 fetched → 1,931 d
 | first_seen_at / last_seen_at | TIMESTAMP | Default CURRENT_TIMESTAMP |
 
 Indexes: `idx_tuit_venues_name(venue)`. UNIQUE(venue, city, country).
+
+### `tuit_songs` — TUIT songbook (LOCAL table)
+Written by `tools/tuit_sync.py --sync-songs` from `/songs` (paged `sort=alpha`, since the
+default `sort=plays` has no tiebreak). Same Olof-derived corpus as `song_performances`, so
+it serves as a cross-check — it is what surfaced BUG-337.
+| Column | Type | Notes |
+|--------|------|-------|
+| song | TEXT PK | Song title as the site renders it |
+| song_url | TEXT | `/song/<title>` |
+| n_performances | INTEGER | Count advertised by the `/songs` index |
+| n_listed | INTEGER | Rows actually parsed off the song page — the two disagree on the site (2,285 vs 2,252 for All Along The Watchtower) |
+| year_first / year_last | INTEGER | Year span |
+| scraped_at | TIMESTAMP | Set when the song's own page was read |
+| first_seen_at / last_seen_at | TIMESTAMP | Default CURRENT_TIMESTAMP |
+
+### `tuit_song_performances` — per-performance rows from `/song/<title>` (LOCAL table)
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| song | TEXT NOT NULL | Joins `tuit_songs.song` |
+| date_str | TEXT NOT NULL | ISO `YYYY-MM-DD` |
+| venue_text | TEXT | `Venue — City, Country` as rendered; `''` not NULL |
+| show_id | INTEGER | Joins `tuit_shows.show_id` |
+| n_sources | INTEGER | Tapes circulating for that night; NULL when none |
+| is_encore | INTEGER | From the row's `Encore` tag |
+| note | TEXT | Lineup annotation, e.g. `Bob on electric keyboard` — not in the Olof parse |
+| first_seen_at / last_seen_at | TIMESTAMP | Default CURRENT_TIMESTAMP |
+
+Indexes: `idx_tuit_sperf_song(song)`, `idx_tuit_sperf_date(date_str)`, `idx_tuit_sperf_show(show_id)`.
+UNIQUE(song, date_str, venue_text) — a song can be played twice on one date at two shows.
 
 ### `lb_master` — Unified per-LB status/integrity record (MASTER table)
 The single source of truth for whether an LB number is public/private/missing/nonexistent;
