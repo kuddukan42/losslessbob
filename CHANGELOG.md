@@ -1,3 +1,27 @@
+[2026-09-07] — TUIT live history: the tour spine and venue register are now in the DB
+Added: backend/tuit_scraper.py: parsers for two TUIT surfaces that were never read. parse_tour_index
+  (/tour) and parse_tour_page (/tour/<name>) yield TourShow rows for every show the tracker knows,
+  circulating or not — a row linking to /recordings/<id> has a tape, one linking to /shows/<id> does
+  not. The year comes from the .tl-year divider, NOT from month wrap-around: Country/Nashville
+  (1969-1974) and Infidels/Empire (1984-1987) skip whole years, and wrap-inference silently filed
+  Tour '74 as 1970 and the 1986 European leg as 1985. parse_venue_page/fetch_venues read the /venue
+  register (venue, city, country, year span, show count).
+Added: backend/db.py: tuit_shows (UNIQUE(date_str, venue) — a gap row and a circulating row carry
+  different site ids, so no single id spans the table) and tuit_venues (UNIQUE(venue, city, country),
+  with a source column marking 'register' vs 'shows'). upsert_tuit_shows/upsert_tuit_venues,
+  get_tuit_shows/get_tuit_venues, and backfill_tuit_venues_from_shows.
+Added: tools/tuit_sync.py --sync-tours / --sync-venues / --venue-pages. First run: 4,036 shows over
+  46 tours (1961-02-01 to 2026-08-01), 2,529 circulating and 1,507 with no tape on the tracker;
+  2,452 venues.
+Fixed: the /venue register cannot be swept by pagination alone — it sorts by show count with no
+  tiebreak, so rows repeat across page boundaries and others are never shown. The 46-page sweep
+  returns 2,744 rows that collapse to 1,931 distinct venues and misses 685 real ones.
+  backfill_tuit_venues_from_shows recovers those from tuit_shows (complete by construction),
+  splitting location on its last comma and stripping the "· Afternoon"/"· Evening" suffix.
+Note: TUIT's 1,507 "no tape" shows are a tracker-availability signal, not scarcity — LB already
+  holds recordings for 1,269 of those dates. The reverse gap is 5 dates where TUIT has a tape and LB
+  has nothing (1962-08-11 plus four 2026-06 shows). Cross-corpus reconciliation is TODO-338.
+
 [2026-09-06] — TUIT seeding: torrent/overlay name collisions; overlay audit counts missing dirs
 Fixed: backend/tuit_scraper.py: BUG-336. download_torrent named the saved .torrent from the
   response's Content-Disposition, which is only the torrent's root folder name and is not unique on

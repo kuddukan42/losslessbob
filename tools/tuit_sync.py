@@ -134,6 +134,15 @@ def _build_parser() -> argparse.ArgumentParser:
                         "deleted or moved to another drive, leaving the "
                         "overlay holding the only copy of those bytes. "
                         "Exits 1 if either is found.")
+    p.add_argument("--sync-tours", action="store_true",
+                   help="Scrape /tour and every tour page into tuit_shows "
+                        "(46 requests) — the site's full concert spine, "
+                        "including shows with no circulating tape.")
+    p.add_argument("--sync-venues", action="store_true",
+                   help="Scrape the /venue register into tuit_venues "
+                        "(46 pages).")
+    p.add_argument("--venue-pages", type=int, default=0,
+                   help="With --sync-venues, stop after N pages (0 = all).")
     p.add_argument("--set-credentials", action="store_true",
                    help="Prompt for the TUIT username and password, store them "
                         "in the OS keyring, verify them with a login, and exit. "
@@ -257,6 +266,50 @@ def _check_overlays() -> int:
     if gone or orphans:
         return 1
     print("\nAll overlays still share their audio with the collection.")
+    return 0
+
+
+def _sync_history(session, args) -> int:
+    """Scrape TUIT's live history (/tour, /venue) into the local DB.
+
+    Args:
+        session: Authenticated TUIT session.
+        args: Parsed CLI arguments.
+
+    Returns:
+        Process exit code.
+    """
+    if args.sync_tours:
+        shows = tuit_scraper.fetch_tour_shows(session, delay=args.delay)
+        if not shows:
+            print("No tour rows parsed — the site layout may have changed.",
+                  file=sys.stderr)
+            return 1
+        circ = sum(1 for s in shows if s.circulating)
+        if args.dry_run:
+            print(f"tours: {len(shows)} shows, {circ} circulating (dry run)")
+        else:
+            written = database.upsert_tuit_shows([s.as_dict() for s in shows])
+            print(f"tuit_shows: {written} rows written, {circ} circulating, "
+                  f"{len(shows) - circ} with no circulating tape")
+
+    if args.sync_venues:
+        venues = tuit_scraper.fetch_venues(
+            session, delay=args.delay, max_pages=args.venue_pages
+        )
+        if not venues:
+            print("No venue rows parsed — the site layout may have changed.",
+                  file=sys.stderr)
+            return 1
+        if args.dry_run:
+            print(f"venues: {len(venues)} rows (dry run)")
+        else:
+            written = database.upsert_tuit_venues([v.as_dict() for v in venues])
+            recovered = database.backfill_tuit_venues_from_shows()
+            print(f"tuit_venues: {written} rows written "
+                  f"({len(venues)} scraped, the register's unstable pagination "
+                  f"repeats rows), {recovered} more recovered from tuit_shows")
+
     return 0
 
 
@@ -389,6 +442,9 @@ def main() -> int:
     if session is None:
         print("TUIT login failed — check the keyring credentials.", file=sys.stderr)
         return 1
+
+    if args.sync_tours or args.sync_venues:
+        return _sync_history(session, args)
 
     rows_by_id: dict[int, object] = {}
     queue: list[int] = []

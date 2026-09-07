@@ -17,10 +17,15 @@ from backend.tuit_scraper import (
     parse_browse,
     parse_recording,
     parse_size,
+    parse_tour_index,
+    parse_tour_page,
+    parse_venue_page,
     recording_id_from_url,
     recording_to_json_fields,
     save_recording_html,
     torrent_root_name,
+    tour_name_from_url,
+    venue_page_count,
 )
 
 BROWSE_HTML = """
@@ -409,3 +414,128 @@ class TestUniqueTorrentPath:
         assert _unique_torrent_path(tmp_path, "track.torrent", b"d1:xi2ee", None) == (
             tmp_path / "track.torrent"
         )
+
+
+TOUR_INDEX_HTML = """
+<div class="card">
+  <a href="https://tangledupintorrents.org/tour/Never%20Ending%20Tour%201993">
+    <b>Never Ending Tour 1993</b><span>77</span><span>shows</span></a>
+  <a href="https://tangledupintorrents.org/tour/Country/Nashville">
+    <b>Country/Nashville</b><span>42</span><span>shows</span></a>
+  <a href="/browse">Browse</a>
+</div>
+"""
+
+TOUR_PAGE_HTML = """
+<h1>Country/Nashville</h1>
+<div class="tl">
+  <div class="tl-year">1969</div>
+  <a href="https://tangledupintorrents.org/recordings/1584" class="tl-row">
+    <div class="tl-date">Aug 31</div>
+    <div class="tl-main"><b>Woodside Bay</b><small>Isle Of Wight, England</small></div>
+    <div class="tl-meta">
+      <span class="text-green" title="In your collection">&#10003;</span>
+      <span class="mini-src sbd">SBD</span>
+      <span class="mini-src aud">AUD</span>
+      <span class="num text-green mono-sm" title="4 seeding">&#9650; 4</span>
+    </div>
+  </a>
+  <div class="tl-year">1974</div>
+  <a href="https://tangledupintorrents.org/shows/4273" class="tl-row">
+    <div class="tl-date">Jan 3</div>
+    <div class="tl-main"><b>Chicago Stadium</b><small>Chicago, Illinois</small></div>
+    <div class="tl-meta"><span class="tl-missing">Request &rarr;</span></div>
+  </a>
+</div>
+"""
+
+VENUE_PAGE_HTML = """
+<span class="result-count"><b>2,744</b> venues &middot; page 1 of 46</span>
+<table class="tbl">
+  <thead><tr><th>Venue</th><th>City</th><th>Country</th><th>Years</th>
+    <th class="r">Shows</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://tangledupintorrents.org/venue/Beacon%20Theatre">
+        Beacon Theatre</a></td>
+      <td>New York, New York</td><td>United States</td>
+      <td class="num">1989 &ndash; 2023</td><td class="r">46</td>
+    </tr>
+    <tr>
+      <td><a href="https://tangledupintorrents.org/venue/Spektrum">Spektrum</a></td>
+      <td>Oslo</td><td>Norway</td>
+      <td class="num">1995</td><td class="r">13</td>
+    </tr>
+  </tbody>
+</table>
+"""
+
+
+class TestParseTourIndex:
+    """/tour lists one link per named tour; names come from the URL."""
+
+    def test_only_tour_links_are_returned(self):
+        tours = parse_tour_index(TOUR_INDEX_HTML)
+        assert [t["name"] for t in tours] == [
+            "Never Ending Tour 1993", "Country/Nashville",
+        ]
+
+    def test_a_slash_in_a_tour_name_survives_the_url(self):
+        assert tour_name_from_url(
+            "https://tangledupintorrents.org/tour/Country/Nashville"
+        ) == "Country/Nashville"
+
+
+class TestParseTourPage:
+    """Rows carry only 'Mon D' — the year comes from the .tl-year divider."""
+
+    def test_year_comes_from_the_divider_not_month_wrap(self):
+        rows = parse_tour_page(TOUR_PAGE_HTML)
+        assert [r.date_str for r in rows] == ["1969-08-31", "1974-01-03"]
+
+    def test_a_recording_link_means_circulating(self):
+        row = parse_tour_page(TOUR_PAGE_HTML)[0]
+        assert row.circulating is True
+        assert (row.rec_id, row.show_id) == (1584, None)
+        assert (row.has_sbd, row.has_aud, row.in_collection) == (True, True, True)
+        assert row.seeders == 4
+
+    def test_a_shows_link_means_no_tape_circulates(self):
+        row = parse_tour_page(TOUR_PAGE_HTML)[1]
+        assert row.circulating is False
+        assert (row.rec_id, row.show_id) == (None, 4273)
+        assert (row.has_sbd, row.has_aud, row.seeders) == (False, False, None)
+
+    def test_tour_falls_back_to_the_page_heading(self):
+        assert parse_tour_page(TOUR_PAGE_HTML)[0].tour == "Country/Nashville"
+
+    def test_an_explicit_tour_name_wins(self):
+        rows = parse_tour_page(TOUR_PAGE_HTML, tour="Tour '74")
+        assert {r.tour for r in rows} == {"Tour '74"}
+
+    def test_empty_html_is_not_an_error(self):
+        assert parse_tour_page("") == []
+
+
+class TestParseVenuePage:
+    """The /venue register is a plain paginated table."""
+
+    def test_rows_are_parsed_with_their_year_span(self):
+        rows = parse_venue_page(VENUE_PAGE_HTML)
+        assert len(rows) == 2
+        assert (rows[0].venue, rows[0].city, rows[0].country) == (
+            "Beacon Theatre", "New York, New York", "United States",
+        )
+        assert (rows[0].year_first, rows[0].year_last, rows[0].n_shows) == (
+            1989, 2023, 46,
+        )
+
+    def test_a_single_year_spans_itself(self):
+        row = parse_venue_page(VENUE_PAGE_HTML)[1]
+        assert (row.year_first, row.year_last) == (1995, 1995)
+
+    def test_page_count_is_read_from_the_result_line(self):
+        assert venue_page_count(VENUE_PAGE_HTML) == 46
+
+    def test_page_count_defaults_to_one(self):
+        assert venue_page_count("<p>no pager</p>") == 1

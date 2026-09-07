@@ -265,3 +265,116 @@ class TestGetFoldersForLb:
     def test_unknown_lb_returns_empty(self, dbmod):
         db, path = dbmod
         assert db.get_folders_for_lb(424242, path) == []
+
+
+class TestTuitShows:
+    """tuit_shows is TUIT's concert spine, keyed by (date_str, venue)."""
+
+    def test_insert_and_read_back(self, dbmod):
+        db, path = dbmod
+        rows = [
+            {"date_str": "1993-02-13", "venue": "Hammersmith Apollo",
+             "location": "London, England", "tour": "Never Ending Tour 1993",
+             "rec_id": 2589, "circulating": True, "in_collection": True,
+             "has_sbd": True, "has_aud": True, "seeders": 10},
+            {"date_str": "1993-04-13", "venue": "Jackson Hall",
+             "tour": "Never Ending Tour 1993", "show_id": 4273,
+             "circulating": False},
+        ]
+        assert db.upsert_tuit_shows(rows) == 2
+        got = db.get_tuit_shows(db_path=path)
+        assert [r["date_str"] for r in got] == ["1993-02-13", "1993-04-13"]
+        assert got[0]["circulating"] == 1 and got[0]["has_sbd"] == 1
+        assert got[1]["circulating"] == 0 and got[1]["show_id"] == 4273
+
+    def test_refresh_updates_in_place(self, dbmod):
+        db, path = dbmod
+        row = {"date_str": "1993-02-13", "venue": "Hammersmith Apollo",
+               "seeders": 10, "circulating": True}
+        db.upsert_tuit_shows([row])
+        db.upsert_tuit_shows([{**row, "seeders": 12}])
+        got = db.get_tuit_shows(db_path=path)
+        assert len(got) == 1 and got[0]["seeders"] == 12
+
+    def test_rows_without_a_key_are_skipped(self, dbmod):
+        db, path = dbmod
+        assert db.upsert_tuit_shows(
+            [{"date_str": "1993-02-13", "venue": ""}, {"venue": "X"}]
+        ) == 0
+        assert db.get_tuit_shows(db_path=path) == []
+
+    def test_filters(self, dbmod):
+        db, path = dbmod
+        db.upsert_tuit_shows([
+            {"date_str": "1993-02-13", "venue": "A", "tour": "NET 1993",
+             "circulating": True},
+            {"date_str": "1994-02-13", "venue": "B", "tour": "NET 1994",
+             "circulating": False},
+        ])
+        assert len(db.get_tuit_shows(tour="NET 1993", db_path=path)) == 1
+        assert len(db.get_tuit_shows(circulating=False, db_path=path)) == 1
+        assert len(db.get_tuit_shows(date_str="1994-02-13", db_path=path)) == 1
+
+
+class TestTuitVenues:
+    """tuit_venues is keyed by (venue, city, country) — names repeat."""
+
+    def test_insert_and_order_by_show_count(self, dbmod):
+        db, path = dbmod
+        db.upsert_tuit_venues([
+            {"venue": "Spektrum", "city": "Oslo", "country": "Norway",
+             "year_first": 1995, "year_last": 2022, "n_shows": 13},
+            {"venue": "Beacon Theatre", "city": "New York, New York",
+             "country": "United States", "n_shows": 46},
+        ])
+        got = db.get_tuit_venues(db_path=path)
+        assert [r["venue"] for r in got] == ["Beacon Theatre", "Spektrum"]
+
+    def test_same_name_in_two_cities_is_two_rows(self, dbmod):
+        db, path = dbmod
+        db.upsert_tuit_venues([
+            {"venue": "Palasport", "city": "Turin", "country": "Italy"},
+            {"venue": "Palasport", "city": "Genoa", "country": "Italy"},
+        ])
+        assert len(db.get_tuit_venues(venue="Palasport", db_path=path)) == 2
+
+    def test_missing_city_is_normalised_so_the_key_fires(self, dbmod):
+        db, path = dbmod
+        db.upsert_tuit_venues([{"venue": "Unknown Hall", "n_shows": 1}])
+        db.upsert_tuit_venues([{"venue": "Unknown Hall", "n_shows": 2}])
+        got = db.get_tuit_venues(venue="Unknown Hall", db_path=path)
+        assert len(got) == 1 and got[0]["n_shows"] == 2
+
+
+class TestVenueBackfill:
+    """The /venue register drops rows; tuit_shows is complete by construction."""
+
+    def test_a_venue_only_in_shows_is_recovered(self, dbmod):
+        db, path = dbmod
+        db.upsert_tuit_shows([
+            {"date_str": "1995-06-01", "venue": "Adler Theatre",
+             "location": "Davenport, IA, United States"},
+            {"date_str": "2001-06-01", "venue": "Adler Theatre · Evening",
+             "location": "Davenport, IA, United States"},
+        ])
+        assert db.backfill_tuit_venues_from_shows(path) == 1
+        got = db.get_tuit_venues(venue="Adler Theatre", db_path=path)
+        assert len(got) == 1
+        assert (got[0]["city"], got[0]["country"]) == ("Davenport, IA",
+                                                       "United States")
+        assert (got[0]["year_first"], got[0]["year_last"]) == (1995, 2001)
+        assert got[0]["n_shows"] == 2
+        assert got[0]["source"] == "shows"
+
+    def test_a_venue_already_in_the_register_is_left_alone(self, dbmod):
+        db, path = dbmod
+        db.upsert_tuit_venues([
+            {"venue": "Beacon Theatre", "city": "New York, New York",
+             "country": "United States", "n_shows": 46},
+        ])
+        db.upsert_tuit_shows([{"date_str": "1993-01-01",
+                               "venue": "Beacon Theatre",
+                               "location": "New York, USA"}])
+        assert db.backfill_tuit_venues_from_shows(path) == 0
+        got = db.get_tuit_venues(venue="Beacon Theatre", db_path=path)
+        assert len(got) == 1 and got[0]["n_shows"] == 46

@@ -757,3 +757,253 @@ def recording_to_json_fields(rec: Recording) -> dict:
         "files_json": json.dumps(rec.files, ensure_ascii=False),
         "siblings_json": json.dumps(rec.siblings, ensure_ascii=False),
     }
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# /tour — the site's live history (every known show, circulating or not)
+# ──────────────────────────────────────────────────────────────────────────────
+_MONTHS = {
+    m: i + 1
+    for i, m in enumerate(
+        ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    )
+}
+
+
+@dataclass
+class TourShow:
+    """One show row on a ``/tour/<name>`` page.
+
+    The tour pages are the site's concert spine: every show Dylan is known to
+    have played, whether or not a recording circulates. A row links to
+    ``/recordings/<id>`` when a tape exists and to ``/shows/<id>`` when it does
+    not, which is exactly the circulating/gap distinction.
+    """
+
+    tour: str = ""
+    date_str: str = ""          # ISO 'YYYY-MM-DD'
+    venue: str = ""
+    location: str = ""
+    row_url: str = ""
+    rec_id: int | None = None   # top recording, when one circulates
+    show_id: int | None = None  # set only on gap rows, which link to /shows
+    circulating: bool = False
+    in_collection: bool = False  # the ✓ "In your collection" marker
+    has_sbd: bool = False
+    has_aud: bool = False
+    seeders: int | None = None
+
+    def as_dict(self) -> dict:
+        """Return the row as a plain dict."""
+        return dict(self.__dict__)
+
+
+def parse_tour_index(html: str) -> list[dict]:
+    """Parse ``/tour`` into one dict per named tour.
+
+    Args:
+        html: Raw HTML of the tour index.
+
+    Returns:
+        List of ``{'name', 'url'}`` dicts in page order.
+    """
+    soup = BeautifulSoup(html or "", "html.parser")
+    tours: list[dict] = []
+    seen: set[str] = set()
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        if "/tour/" not in href or href in seen:
+            continue
+        seen.add(href)
+        tours.append({"name": tour_name_from_url(href), "url": href})
+    return tours
+
+
+def tour_name_from_url(url: str) -> str:
+    """Return the tour name encoded in a ``/tour/<name>`` URL."""
+    from urllib.parse import unquote
+
+    return unquote(url.rstrip("/").split("/tour/", 1)[-1]) if "/tour/" in url else ""
+
+
+def parse_tour_page(html: str, tour: str = "") -> list[TourShow]:
+    """Parse one ``/tour/<name>`` page into show rows.
+
+    The row's ``.tl-date`` carries only 'Mon D'; the year comes from the
+    ``.tl-year`` divider that precedes it in document order. Deriving the year
+    from month wrap-around instead is wrong — tours such as ``Country/Nashville``
+    (1969–1974) and ``Infidels/Empire`` (1984–1987) skip whole years.
+
+    Args:
+        html: Raw HTML of a tour page.
+        tour: Tour name to stamp on each row; falls back to the page heading.
+
+    Returns:
+        List of :class:`TourShow`, in page order. Rows with an unparseable
+        date are skipped.
+    """
+    soup = BeautifulSoup(html or "", "html.parser")
+    if not tour:
+        heading = soup.find("h1")
+        tour = _text(heading)
+
+    shows: list[TourShow] = []
+    year = 0
+    for node in soup.select(".tl-year, a.tl-row"):
+        classes = node.get("class") or []
+        if "tl-year" in classes:
+            year = _int_or_none(_text(node)) or year
+            continue
+
+        m = re.match(r"([A-Z][a-z]{2})\s+(\d{1,2})", _text(node.select_one(".tl-date")))
+        if not m or not year:
+            continue
+        month = _MONTHS.get(m.group(1))
+        if not month:
+            continue
+
+        main = node.select_one(".tl-main")
+        meta = node.select_one(".tl-meta")
+        href = node.get("href", "")
+        seed = meta.select_one(".num") if meta else None
+        row = TourShow(
+            tour=tour,
+            date_str=f"{year:04d}-{month:02d}-{int(m.group(2)):02d}",
+            venue=_text(main.find("b")) if main else "",
+            location=_text(main.find("small")) if main else "",
+            row_url=href,
+            circulating=not (meta and meta.select_one(".tl-missing")),
+            in_collection=bool(meta and meta.select_one('[title="In your collection"]')),
+            has_sbd=bool(meta and meta.select_one(".mini-src.sbd")),
+            has_aud=bool(meta and meta.select_one(".mini-src.aud")),
+            seeders=_int_or_none(re.sub(r"\D", "", _text(seed))) if seed else None,
+        )
+        if "/recordings/" in href:
+            row.rec_id = recording_id_from_url(href)
+        elif "/shows/" in href:
+            row.show_id = _int_or_none(href.rstrip("/").rsplit("/", 1)[-1])
+        shows.append(row)
+
+    return shows
+
+
+def fetch_tour_shows(
+    session: requests.Session, delay: float = DEFAULT_DELAY
+) -> list[TourShow]:
+    """Fetch ``/tour`` and every tour page it lists.
+
+    46 requests at ``delay`` seconds apart — the whole concert spine costs one
+    slow pass, so callers should sync it on demand, not per session.
+
+    Args:
+        session: Authenticated session.
+        delay: Seconds to sleep before each request.
+
+    Returns:
+        Every show row across all tours; empty when the index fetch failed.
+    """
+    resp = _get(session, "/tour", delay)
+    if resp is None:
+        return []
+
+    shows: list[TourShow] = []
+    for tour in parse_tour_index(resp.text):
+        page = _get(session, tour["url"], delay)
+        if page is None:
+            continue
+        rows = parse_tour_page(page.text, tour_name_from_url(tour["url"]))
+        logger.info("TUIT tour %s: %d show(s)", tour["name"], len(rows))
+        shows.extend(rows)
+    return shows
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# /venue — the site's venue register
+# ──────────────────────────────────────────────────────────────────────────────
+@dataclass
+class TuitVenue:
+    """One row of the paginated ``/venue`` register."""
+
+    venue: str = ""
+    city: str = ""
+    country: str = ""
+    year_first: int | None = None
+    year_last: int | None = None
+    n_shows: int | None = None
+    venue_url: str = ""
+
+    def as_dict(self) -> dict:
+        """Return the row as a plain dict."""
+        return dict(self.__dict__)
+
+
+def venue_page_count(html: str) -> int:
+    """Return the 'page 1 of 46' page total, or 1 when absent."""
+    m = re.search(r"page\s+\d+\s+of\s+([\d,]+)", html or "")
+    return _int_or_none(m.group(1)) or 1 if m else 1
+
+
+def parse_venue_page(html: str) -> list[TuitVenue]:
+    """Parse one ``/venue`` listing page into venue rows.
+
+    Args:
+        html: Raw HTML of a venue listing page.
+
+    Returns:
+        List of :class:`TuitVenue` in page order.
+    """
+    soup = BeautifulSoup(html or "", "html.parser")
+    table = soup.select_one("table.tbl")
+    rows: list[TuitVenue] = []
+    if table is None:
+        return rows
+
+    for tr in table.select("tbody tr"):
+        cells = tr.find_all("td")
+        if len(cells) < 5:
+            continue
+        link = cells[0].find("a", href=True)
+        years = re.findall(r"\d{4}", _text(cells[3]))
+        rows.append(
+            TuitVenue(
+                venue=_text(cells[0]),
+                city=_text(cells[1]),
+                country=_text(cells[2]),
+                year_first=_int_or_none(years[0]) if years else None,
+                year_last=_int_or_none(years[-1]) if years else None,
+                n_shows=_int_or_none(_text(cells[4])),
+                venue_url=link["href"] if link else "",
+            )
+        )
+    return rows
+
+
+def fetch_venues(
+    session: requests.Session, delay: float = DEFAULT_DELAY, max_pages: int = 0
+) -> list[TuitVenue]:
+    """Fetch every page of the ``/venue`` register.
+
+    Args:
+        session: Authenticated session.
+        delay: Seconds to sleep before each request.
+        max_pages: Stop after this many pages; 0 means all of them.
+
+    Returns:
+        Every venue row; empty when the first fetch failed.
+    """
+    resp = _get(session, "/venue", delay)
+    if resp is None:
+        return []
+
+    total = venue_page_count(resp.text)
+    if max_pages:
+        total = min(total, max_pages)
+    venues = parse_venue_page(resp.text)
+    for page in range(2, total + 1):
+        nxt = _get(session, f"/venue?page={page}", delay)
+        if nxt is None:
+            break
+        venues.extend(parse_venue_page(nxt.text))
+    logger.info("TUIT venues: %d row(s) over %d page(s)", len(venues), total)
+    return venues

@@ -78,6 +78,19 @@ falls back to `<name> [tuit-<rec_id>].torrent` on a real collision; likewise
 existing name whenever the target is free, unrecorded, or already this entry's,
 so no overlay is ever renamed out from under qBittorrent.
 
+**Live history** (`--sync-tours`, `--sync-venues`): `/tour/<name>` is the
+tracker's concert spine — every show Dylan played, with a `/recordings/<id>`
+link when a tape circulates and a `/shows/<id>` link when none does. It lands in
+`tuit_shows` (4,036 rows, 46 tours, keyed by date+venue). Row years come from the
+`.tl-year` divider, never from month wrap-around — `Country/Nashville` and
+`Infidels/Empire` skip whole years. The `/venue` register lands in `tuit_venues`,
+but its pagination sorts on show count with no tiebreak, so a full sweep repeats
+some rows and never shows others (2,744 fetched → 1,931 distinct, 685 missed);
+`db.backfill_tuit_venues_from_shows()` recovers the rest from `tuit_shows` and
+marks them `source='shows'`. TUIT's 1,507 "no tape" shows mean *not on this
+tracker*, not *no tape exists* — LB holds recordings for 1,269 of them.
+See [Setlist-Sources](Setlist-Sources.md); reconciliation is TODO-338.
+
 Attempts land in `tuit_downloads`. Credentials: `SERVICE_TUIT`, set or rotated
 with `tools/tuit_sync.py --set-credentials` (prompts, no echo).
 **Pacing**: 3s between requests, small batches — this is a tiny private site.

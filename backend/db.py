@@ -1383,6 +1383,50 @@ CREATE INDEX IF NOT EXISTS idx_tuit_dl_rec
     ON tuit_downloads(rec_id, attempted_at DESC);
 CREATE INDEX IF NOT EXISTS idx_tuit_dl_status
     ON tuit_downloads(status, attempted_at DESC);
+
+-- TUIT's live-history spine: every show the tracker knows about, circulating
+-- or not (LOCAL). Scraped from /tour/<name>; keyed by (date, venue) because a
+-- gap row links to /shows/<id> while a circulating row links to a recording,
+-- so no single site id spans the table.
+CREATE TABLE IF NOT EXISTS tuit_shows (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    date_str      TEXT NOT NULL,          -- ISO 'YYYY-MM-DD'
+    venue         TEXT NOT NULL,
+    location      TEXT,
+    tour          TEXT,
+    row_url       TEXT,
+    rec_id        INTEGER,                -- top /recordings/<id>, when taped
+    show_id       INTEGER,                -- /shows/<id>, set on gap rows
+    circulating   INTEGER DEFAULT 0,      -- 0 = TUIT has no tape for this show
+    in_collection INTEGER DEFAULT 0,      -- the site's own "in your collection"
+    has_sbd       INTEGER DEFAULT 0,
+    has_aud       INTEGER DEFAULT 0,
+    seeders       INTEGER,
+    first_seen_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_seen_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(date_str, venue)
+);
+CREATE INDEX IF NOT EXISTS idx_tuit_shows_date ON tuit_shows(date_str);
+CREATE INDEX IF NOT EXISTS idx_tuit_shows_tour ON tuit_shows(tour);
+CREATE INDEX IF NOT EXISTS idx_tuit_shows_circ ON tuit_shows(circulating);
+
+-- TUIT's venue register (LOCAL), scraped from /venue. Venue names repeat
+-- across cities, so the key is (venue, city, country).
+CREATE TABLE IF NOT EXISTS tuit_venues (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    venue         TEXT NOT NULL,
+    city          TEXT,
+    country       TEXT,
+    year_first    INTEGER,
+    year_last     INTEGER,
+    n_shows       INTEGER,
+    venue_url     TEXT,
+    source        TEXT DEFAULT 'register',  -- 'register' | 'shows' (backfill)
+    first_seen_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_seen_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(venue, city, country)
+);
+CREATE INDEX IF NOT EXISTS idx_tuit_venues_name ON tuit_venues(venue);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -3043,6 +3087,14 @@ def init_db(db_path=None):
         if "files_moved" not in _fis_cols:
             conn.execute(
                 "ALTER TABLE file_integrity_scans ADD COLUMN files_moved INTEGER DEFAULT 0"
+            )
+        # Migration: add source to tuit_venues — the /venue register's paginated
+        # listing is unstable (no tiebreak on its sort), so it both repeats and
+        # drops rows; venues recovered from tuit_shows are marked 'shows'.
+        _tv_cols = [r[1] for r in conn.execute("PRAGMA table_info(tuit_venues)").fetchall()]
+        if _tv_cols and "source" not in _tv_cols:
+            conn.execute(
+                "ALTER TABLE tuit_venues ADD COLUMN source TEXT DEFAULT 'register'"
             )
         # Migration: add city_lat/city_lon/city_state to setlistfm_shows (TODO-222) —
         # setlist.fm's API returns venue.city.coords + stateCode on every setlist;
@@ -6223,6 +6275,222 @@ def get_tuit_download_rec_ids(db_path=None) -> set[int]:
     with get_connection(db_path) as conn:
         rows = conn.execute("SELECT DISTINCT rec_id FROM tuit_downloads").fetchall()
     return {r["rec_id"] for r in rows}
+
+
+TUIT_SHOW_COLUMNS = (
+    "date_str", "venue", "location", "tour", "row_url", "rec_id", "show_id",
+    "circulating", "in_collection", "has_sbd", "has_aud", "seeders",
+)
+
+TUIT_VENUE_COLUMNS = (
+    "venue", "city", "country", "year_first", "year_last", "n_shows",
+    "venue_url", "source",
+)
+
+
+def _upsert_tuit_row(
+    table: str, columns: tuple, key: tuple, flags: tuple, rows: list[dict],
+    required: tuple = (),
+) -> int:
+    """Upsert scraped TUIT rows into ``table``, keyed by ``key``.
+
+    Args:
+        table: Target table name (trusted, module-internal).
+        columns: Columns to accept from each row dict.
+        key: The table's UNIQUE columns, used as the conflict target.
+        flags: Columns coerced to 0/1.
+        rows: Scraper dicts; unknown keys are ignored.
+        required: Columns that must be non-empty for a row to be written;
+            defaults to every key column. A key column may legitimately be
+            blank (a venue with no recorded city), so the two differ.
+
+    Returns:
+        Number of rows written.
+    """
+    written = 0
+
+    def _run(conn):
+        nonlocal written
+        for row in rows:
+            data = {k: row[k] for k in columns if k in row}
+            if any(not data.get(k) for k in (required or key)):
+                continue
+            for flag in flags:
+                if flag in data:
+                    data[flag] = int(bool(data[flag]))
+            cols = list(data)
+            updates = [f"{c}=excluded.{c}" for c in cols if c not in key]
+            updates.append("last_seen_at=CURRENT_TIMESTAMP")
+            conn.execute(
+                f"INSERT INTO {table} ({', '.join(cols)}) "
+                f"VALUES ({', '.join('?' for _ in cols)}) "
+                f"ON CONFLICT({', '.join(key)}) DO UPDATE SET "
+                f"{', '.join(updates)}",
+                [data[c] for c in cols],
+            )
+            written += 1
+        return written
+
+    return get_write_queue().execute(_run)
+
+
+def upsert_tuit_shows(rows: list[dict], db_path=None) -> int:
+    """Insert or refresh ``tuit_shows`` rows, keyed by (date_str, venue).
+
+    Args:
+        rows: Dicts from :class:`backend.tuit_scraper.TourShow.as_dict`.
+        db_path: Unused; writes go through the shared write queue.
+
+    Returns:
+        Number of rows written.
+    """
+    return _upsert_tuit_row(
+        "tuit_shows", TUIT_SHOW_COLUMNS, ("date_str", "venue"),
+        ("circulating", "in_collection", "has_sbd", "has_aud"), rows,
+    )
+
+
+def upsert_tuit_venues(rows: list[dict], db_path=None) -> int:
+    """Insert or refresh ``tuit_venues`` rows, keyed by (venue, city, country).
+
+    ``city`` and ``country`` are coerced to '' rather than NULL so the UNIQUE
+    constraint actually fires — SQLite treats NULLs as distinct.
+
+    Args:
+        rows: Dicts from :class:`backend.tuit_scraper.TuitVenue.as_dict`.
+        db_path: Unused; writes go through the shared write queue.
+
+    Returns:
+        Number of rows written.
+    """
+    normalised = []
+    for row in rows:
+        row = dict(row)
+        row["city"] = row.get("city") or ""
+        row["country"] = row.get("country") or ""
+        normalised.append(row)
+    return _upsert_tuit_row(
+        "tuit_venues", TUIT_VENUE_COLUMNS, ("venue", "city", "country"),
+        (), normalised, required=("venue",),
+    )
+
+
+def backfill_tuit_venues_from_shows(db_path=None) -> int:
+    """Add venues seen in ``tuit_shows`` that the /venue register never listed.
+
+    TUIT's venue listing pages an unstable sort (``n_shows`` descending with no
+    tiebreak), so a full sweep both repeats rows across page boundaries and
+    silently drops others — a 2,744-venue register yields ~1,900 distinct rows
+    and misses ~700 real venues. ``tuit_shows`` is complete by construction, so
+    the missing venues are recovered from it: the ``· Afternoon``/``· Evening``
+    suffix is stripped, and ``location`` is split into city (everything before
+    the last comma) and country (after it). Register rows are never overwritten.
+
+    Args:
+        db_path: Optional DB path override.
+
+    Returns:
+        Number of venues added.
+    """
+    with get_connection(db_path) as conn:
+        known = {
+            _normalise_venue_key(r["venue"])
+            for r in conn.execute("SELECT venue FROM tuit_venues").fetchall()
+        }
+        rows = conn.execute(
+            "SELECT venue, location, date_str FROM tuit_shows"
+        ).fetchall()
+
+    derived: dict[str, dict] = {}
+    for row in rows:
+        venue = re.sub(r"\s*·.*$", "", row["venue"] or "").strip()
+        key = _normalise_venue_key(venue)
+        if not key or key in known:
+            continue
+        parts = [p.strip() for p in (row["location"] or "").split(",") if p.strip()]
+        country = parts[-1] if parts else ""
+        city = ", ".join(parts[:-1])
+        year = _int_or_none_str(row["date_str"][:4])
+        entry = derived.setdefault(key, {
+            "venue": venue, "city": city, "country": country,
+            "year_first": year, "year_last": year, "n_shows": 0,
+            "source": "shows",
+        })
+        entry["n_shows"] += 1
+        if year:
+            entry["year_first"] = min(entry["year_first"] or year, year)
+            entry["year_last"] = max(entry["year_last"] or year, year)
+
+    if not derived:
+        return 0
+    return upsert_tuit_venues(list(derived.values()))
+
+
+def _normalise_venue_key(venue: str) -> str:
+    """Return a venue name folded to lowercase alphanumerics for matching."""
+    return re.sub(r"[^a-z0-9]+", " ", (venue or "").lower()).strip()
+
+
+def _int_or_none_str(value: str) -> int | None:
+    """Return ``value`` as an int, or None when it is not numeric."""
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def get_tuit_shows(
+    date_str: str = "", tour: str = "", circulating: bool | None = None,
+    db_path=None,
+) -> list[dict]:
+    """Return ``tuit_shows`` rows, oldest date first.
+
+    Args:
+        date_str: If given, only this ISO date.
+        tour: If given, only this tour name.
+        circulating: If given, filter on whether TUIT has a tape.
+        db_path: Optional DB path override.
+
+    Returns:
+        List of row dicts.
+    """
+    sql = "SELECT * FROM tuit_shows"
+    clauses: list[str] = []
+    params: list = []
+    if date_str:
+        clauses.append("date_str=?")
+        params.append(date_str)
+    if tour:
+        clauses.append("tour=?")
+        params.append(tour)
+    if circulating is not None:
+        clauses.append("circulating=?")
+        params.append(int(circulating))
+    if clauses:
+        sql += " WHERE " + " AND ".join(clauses)
+    sql += " ORDER BY date_str, venue"
+    with get_connection(db_path) as conn:
+        return [dict(r) for r in conn.execute(sql, params).fetchall()]
+
+
+def get_tuit_venues(venue: str = "", db_path=None) -> list[dict]:
+    """Return ``tuit_venues`` rows, busiest venue first.
+
+    Args:
+        venue: If given, only rows with this exact venue name.
+        db_path: Optional DB path override.
+
+    Returns:
+        List of row dicts.
+    """
+    sql = "SELECT * FROM tuit_venues"
+    params: list = []
+    if venue:
+        sql += " WHERE venue=?"
+        params.append(venue)
+    sql += " ORDER BY n_shows DESC, venue"
+    with get_connection(db_path) as conn:
+        return [dict(r) for r in conn.execute(sql, params).fetchall()]
 
 
 def get_folders_for_lb(lb_number: int, db_path=None) -> list[str]:
