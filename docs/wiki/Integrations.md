@@ -111,6 +111,13 @@ own right: keyring service `SERVICE_TUIT_RSS`, set with `--set-rss-key`
 scrubs it from anything logged. After a gap long enough for 50 uploads to
 accumulate, fall back to `--pages`.
 
+`data/tuit/cron_rss.sh` runs that sync hourly at :17 (gitignored, flocked,
+logs to `data/tuit/cron_logs/`). It preflights qBittorrent with
+`qbittorrent.test_connection()` and, when the client is down, drops the
+`--fetch-torrents/--seed/--overlay` flags rather than failing — metadata
+scraping needs only the tracker. Silent on a no-op run so cron mails only real
+work or a real failure.
+
 Attempts land in `tuit_downloads`. Credentials: `SERVICE_TUIT`, set or rotated
 with `tools/tuit_sync.py --set-credentials` (prompts, no echo).
 **Pacing**: 3s between requests, small batches — this is a tiny private site.
