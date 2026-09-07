@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-336: TUIT torrent filenames and overlay directories collide on non-unique torrent root names
+Status: Fixed
+File(s): backend/tuit_scraper.py:677,backend/seed_overlay.py:232,tools/tuit_sync.py:226
+Reported: 2026-09-06
+Fixed: 2026-09-06
+Root cause: Two identifiers were derived from the torrent's root folder name, which the tracker does not guarantee to be unique: the saved .torrent filename (from Content-Disposition) and the overlay directory (overlay_root / info.name). Neither had a collision check, so the later write silently replaced the earlier one and a torrent could end up paired with another show's audio. The --check-overlays audit that would have surfaced the resulting missingFiles state detected the condition but did not count it toward its exit code or summary.
+Fix: backend/tuit_scraper.py: new _unique_torrent_path() — the Content-Disposition name is reused only while the bytes on disk match, keeping a re-download idempotent and leaving every already-saved file where the DB says it is; a genuine collision falls back to '<name> [tuit-<rec_id>].torrent'. backend/seed_overlay.py: plan_overlay takes an overlay_name override; new lbs_for_seed_folder() (reads tuit_downloads and wtrf_downloads, so a WTRF-claimed overlay is visible to a TUIT run) and unique_overlay_name(), which suffixes '(LB-NNNNN)' only when the directory exists AND is recorded against a different LB — a free, unrecorded, or already-ours path keeps its name, so no live overlay is renamed out from under qBittorrent, and a lookup failure falls back to the plain name rather than blocking the seed. backend/tracker_seed.py threads lb_number from find_seedable_folder into build_seed_overlay. tools/tuit_sync.py: --check-overlays now counts GONE overlays, explains that qBittorrent parks them in missingFiles, and exits 1 on gone or orphaned. Tests: TestUniqueOverlayName (6 cases) and TestUniqueTorrentPath (4 cases); full suite 1610 passed. The two torrents already broken were repaired by hand — track rebuilt from LB-12242 (100%, 1191 pieces) and bd1995-07-01-Roskilde, Denmark from LB-11801 (100%, 1183 pieces), both rechecked and reseeding. The size-only source matching that let the wrong folder look plausible is NOT fixed here — see TODO-337.
+
 BUG-329: tapematch secondary-match display and cluster merge use different predicates, so a pair prints 'below merge threshold' and is merged anyway
 Status: Fixed
 File(s): tools/tapematch/tapematch/cli.py:835,tools/tapematch/tapematch/cli.py:839

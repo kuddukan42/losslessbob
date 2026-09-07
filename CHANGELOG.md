@@ -1,3 +1,36 @@
+[2026-09-06] — TUIT seeding: torrent/overlay name collisions; overlay audit counts missing dirs
+Fixed: backend/tuit_scraper.py: BUG-336. download_torrent named the saved .torrent from the
+  response's Content-Disposition, which is only the torrent's root folder name and is not unique on
+  the tracker — five filenames were shared by twelve recordings (FLAC.torrent alone by five), each
+  overwriting the last. New _unique_torrent_path() reuses the name only while the bytes match, so a
+  re-download stays idempotent and every already-saved file stays where tuit_downloads says it is;
+  a real collision saves as "<name> [tuit-<rec_id>].torrent".
+Fixed: backend/seed_overlay.py, backend/tracker_seed.py: BUG-336. plan_overlay hardcoded
+  target_dir = overlay_root / info.name, so two LB entries assembled into one directory and the
+  second build relinked over the first — three overlay paths are recorded against more than one LB.
+  plan_overlay now takes an overlay_name override; unique_overlay_name() suffixes "(LB-NNNNN)" only
+  when the directory both exists and is recorded against a different entry, so a free, unrecorded or
+  already-ours path keeps its name and no live overlay is renamed out from under qBittorrent.
+  lbs_for_seed_folder() reads tuit_downloads and wtrf_downloads, so a WTRF-claimed overlay is
+  visible to a TUIT run. find_seedable_folder threads lb_number through to build_seed_overlay.
+Fixed: tools/tuit_sync.py: BUG-336. --check-overlays printed GONE for a vanished overlay and then
+  continued without counting it, so the exit code ignored it and the run still ended "All overlays
+  still share their audio with the collection" while 18 recorded overlays were absent from disk. It
+  now counts them, says what the consequence is (qBittorrent parks the torrent in missingFiles and
+  stops seeding), and exits 1 on gone or orphaned.
+Changed: docs/wiki/Integrations.md: TUIT section documents both collision guards and the widened
+  --check-overlays contract.
+Added: tests/test_seed_overlay.py TestUniqueOverlayName, tests/test_tuit_scraper.py
+  TestUniqueTorrentPath — the reuse cases matter as much as the rename case, since renaming a live
+  overlay is the failure this guard must not cause.
+Note: two TUIT torrents already in missingFiles were repaired by hand — "track" rebuilt from
+  LB-12242 (the tracker attributed it to LB-12243; 100%, 1191 pieces) and
+  "bd1995-07-01-Roskilde, Denmark" from LB-11801 (attributed to LB-11813; 100%, 1183 pieces), both
+  rechecked and reseeding. TODO-337 opened for the underlying defect these exposed: seed_overlay
+  resolves sources by file size alone, and with --allow-partial-overlay a same-size wrong sidecar is
+  seeded permanently short — the median outstanding across 31 partial TUIT torrents is 524,288
+  bytes, exactly one piece.
+
 [2026-09-03] — tapematch: false-merge census; link mechanism attribution; collection gap list;
 Added: tools/tapematch/tapematch/calibration.py — TODO-333. The calibration identity of a config:
   DECISION_KEYS (every key that can change a verdict, each with its code default), GATED_BLOCKS (a

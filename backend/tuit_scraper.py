@@ -626,6 +626,44 @@ def _filename_from_content_disposition(header: str) -> str | None:
     return re.sub(r"[^\w.\-+() ]", "_", name) or None
 
 
+def _unique_torrent_path(
+    dest: Path, name: str, body: bytes, rec_id: int | None
+) -> Path:
+    """Return a path for ``body`` that will not overwrite a different torrent.
+
+    The tracker's Content-Disposition filename is just the torrent's root
+    folder name, which is not unique across the site — ``track.torrent``,
+    ``FLAC.torrent`` and ``1.torrent`` are each claimed by several unrelated
+    recordings. Writing them all to one path leaves the last one standing, so
+    the seeder later pairs a torrent with another show's audio. Identical bytes
+    still reuse the path, keeping a re-download idempotent and leaving every
+    already-saved file exactly where the DB says it is.
+
+    Args:
+        dest: Directory the .torrent is written into.
+        name: Candidate filename, ``.torrent`` suffix included.
+        body: The bytes about to be written.
+        rec_id: TUIT recording id, used to disambiguate a real collision.
+
+    Returns:
+        The path to write to.
+    """
+    path = dest / name
+    if not path.exists() or rec_id is None:
+        return path
+    try:
+        if path.read_bytes() == body:
+            return path
+    except OSError:
+        return path
+    unique = dest / f"{path.stem} [tuit-{rec_id}]{path.suffix}"
+    logger.warning(
+        "TUIT: %s already holds a different torrent — saving rec %s as %s",
+        path.name, rec_id, unique.name,
+    )
+    return unique
+
+
 def download_torrent(
     session: requests.Session,
     rec: Recording,
@@ -679,7 +717,7 @@ def download_torrent(
     if not name.endswith(".torrent"):
         name += ".torrent"
 
-    path = dest / name
+    path = _unique_torrent_path(dest, name, body, rec.rec_id)
     path.write_bytes(body)
     logger.info("TUIT: saved %s (%d bytes)", path, len(body))
     return {"ok": True, "torrent_path": str(path)}
