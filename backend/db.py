@@ -6156,6 +6156,39 @@ def get_wtrf_pending_lb_numbers(db_path=None) -> list[int]:
     return [r[0] for r in rows]
 
 
+def get_wtrf_attempted_topics(db_path=None) -> dict[str, str]:
+    """Return the latest attempt status for every WTRF topic already tried.
+
+    The board walk (``backend.wtrf_board``) uses this to resume: a topic that
+    has been resolved once — seeded, refused or found to hold no torrent — is
+    not fetched again unless the caller asks for a rescan.
+
+    Only the *seeding* paths count. The fetch path (``wtrf_fetch_missing.py``
+    and ``/api/wtrf/fetch_torrent``) writes rows for topics it downloaded a
+    torrent from without ever asking whether the recording could be seeded, and
+    those must not stop the walk from seeding the same post later.
+
+    Args:
+        db_path: Optional DB path override.
+
+    Returns:
+        Mapping of topic_url to the newest seeding attempt's status.
+    """
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            """
+            SELECT topic_url, status
+              FROM wtrf_downloads
+             WHERE topic_url IS NOT NULL AND topic_url != ''
+               AND (seed_folder IS NOT NULL
+                    OR signals_json LIKE '%"via": "pasted_link"%'
+                    OR signals_json LIKE '%"via": "board_walk"%')
+             ORDER BY attempted_at ASC
+            """
+        ).fetchall()
+    return {r[0]: r[1] for r in rows}
+
+
 # ── TUIT tracker mirror ───────────────────────────────────────────────────────
 
 TUIT_RECORDING_COLUMNS = (

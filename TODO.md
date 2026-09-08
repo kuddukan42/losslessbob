@@ -1,3 +1,9 @@
+TODO-341: WTRF board walk: 3 publicly-posted recordings are lb_private locally
+Priority: Medium
+Status: Open
+Added: 2026-09-08
+Description: The 2026-09-08 board walk refused LB-6582, LB-9226 and LB-13594 with 'not seedable (lb_private)', yet all three have public WTRF topics (61694, 61692, 61693) with .torrent attachments. Either lb_status is stale for these three or the posts predate a status change; a wider sweep of board topics against lb_status would show how common it is. Until then the walk refuses them every run (recorded as not_seeded, so they are not retried).
+
 TODO-340: Cron's TUIT RSS backfill is capped at 10 /browse pages — no alert if a gap ever exceeds 500 uploads
 Priority: Low
 Status: Open

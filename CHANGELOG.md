@@ -1,3 +1,28 @@
+[2026-09-08] — Seed WTRF by walking the board, not by pasting links
+Added: backend/wtrf_board.py: the WTRF counterpart of `tools/tuit_sync.py --fetch-torrents
+  --seed`. `seed_board()` pages the board itself (SMF `board=<id>.<offset>`, 20 topics a page,
+  sorted first_post desc, stickies dropped), resolves each post to its LB number and .torrent
+  attachment, and seeds it through the shared gates. Order of work is chosen so the expensive
+  parts are the ones skipped: a topic already in `wtrf_downloads` costs no request at all; a post
+  whose recording is not in the collection is dropped after the page fetch but *before* the
+  torrent is downloaded, because this tool seeds what is held rather than collecting what is not
+  (`--include-missing` reopens the fetch path). Candidates the collection lacks are also struck
+  from an ambiguous post, which often decides it without a content check.
+Added: tools/wtrf_seed_board.py: the CLI — `--start-page`/`--pages` walk backwards in time so
+  dead posts get a seeder again, `--limit` caps attempts per run, `--rescan` re-tries recorded
+  topics, `--dry-run` resolves without downloading, plus the full seeding-policy group.
+Added: backend/db.py `get_wtrf_attempted_topics()`: the resume log, deliberately narrowed to
+  *seeding* attempts (a `seed_folder`, or a `via` of pasted_link/board_walk). The fetch path has
+  written 262 topic rows that never asked whether a recording could be seeded; counting those
+  would have made the walk skip 90% of the board on its first run.
+Changed: backend/wtrf_seed.py: `_prepare_from_link` accepts a pre-resolved `resolve_link` result,
+  so the board walk can gate on ownership without fetching the post twice; `_record` takes `via`.
+Added: tests/test_wtrf_board.py: 14 tests over the listing parse, the page walk (ordering, end of
+  board, a dead page), the ownership gate, dry run, resume and rescan.
+Verified live against board 16: page 1 seeded 6 (all verified in place, 100%), skipped 1 post
+  with no LB tag anywhere, and refused 3 as `lb_private` — LB-6582, LB-9226, LB-13594 are posted
+  publicly on WTRF but carry a private lb_status locally, which is worth a look.
+
 [2026-09-08] — Partial overlays are the seeding default
 Changed: backend/tracker_seed.py, backend/app.py, tools/tuit_sync.py, gui_next ScreenScraper:
   `allow_partial_overlay` now defaults to True — SeedOptions, the `/api/wtrf/seed_links` and
