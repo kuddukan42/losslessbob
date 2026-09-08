@@ -127,6 +127,9 @@ def _seed_options(args: argparse.Namespace) -> SeedOptions:
         max_fetch_mb=args.max_fetch_mb,
         allow_partial_overlay=args.allow_partial_overlay,
         paused=args.paused,
+        # The walk only ever seeds posts that exist on the board, so a private
+        # lb_status does not apply here — see SeedOptions.allow_private.
+        allow_private=True,
     )
 
 

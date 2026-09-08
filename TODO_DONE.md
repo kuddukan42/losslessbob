@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-341: WTRF board walk: 3 publicly-posted recordings are lb_private locally
+Priority: Medium
+Status: Done
+Added: 2026-09-08
+Closed: 2026-09-08
+Description: The 2026-09-08 board walk refused LB-6582, LB-9226 and LB-13594 with 'not seedable (lb_private)', yet all three have public WTRF topics (61694, 61692, 61693) with .torrent attachments. Either lb_status is stale for these three or the posts predate a status change; a wider sweep of board topics against lb_status would show how common it is. Until then the walk refuses them every run (recorded as not_seeded, so they are not retried).
+Not a data problem: a private lb_status is the right answer for forum posting but not for seeding a post that already exists on WTRF. SeedOptions.allow_private (2026-09-08) exempts the WTRF paths; all three recordings now seed as partial overlays.
+
 TODO-331: Re-run tapematch for 1993-08-28 — its verdict was computed from the BUG-327 inflated LB-07173 source
 Priority: Medium
 Status: Done

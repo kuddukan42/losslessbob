@@ -5057,6 +5057,9 @@ def create_app() -> Flask:
             max_fetch_mb=float(data.get("max_fetch_mb", 25.0)),
             allow_partial_overlay=bool(data.get("allow_partial_overlay", True)),
             paused=bool(data.get("paused", False)),
+            # Every WTRF seeding path starts from a post already on the board,
+            # so a private lb_status is not a reason to leave it unseeded.
+            allow_private=True,
         )
 
     @app.route("/api/wtrf/seed_links", methods=["POST"])
