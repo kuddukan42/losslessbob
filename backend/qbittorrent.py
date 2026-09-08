@@ -174,6 +174,12 @@ def add_torrent_for_seeding(
                 return {"ok": True}
         except Exception:
             pass
+        # HTTP 409 "Conflict" means the torrent is already in the client, which
+        # is the goal state, not a failure. Reporting it as one made the caller
+        # record 'failed' against nine recordings that were seeding at 100%,
+        # and any retry queue keyed on that status would churn them forever.
+        if add_r.status_code == 409 or body.lower().startswith("conflict"):
+            return {"ok": True, "already_present": True}
         return {"ok": False, "error": f"qBittorrent response: {body[:200]}"}
 
     except requests.exceptions.ConnectionError:

@@ -6667,6 +6667,65 @@ def get_tuit_venues(venue: str = "", db_path=None) -> list[dict]:
         return [dict(r) for r in conn.execute(sql, params).fetchall()]
 
 
+# Statuses a TUIT sync should try again. 'qbt_added' is done; 'not_seeded' is
+# usually structural (no LB number, an overlay that will not reach 100%) and is
+# only retried on request. 'downloaded' means the torrent was saved but never
+# reached qBittorrent — the exact state a run leaves behind when the client dies
+# mid-sync — and 'failed' covers a transient refusal.
+TUIT_RETRY_STATUSES = ("downloaded", "failed")
+
+
+def get_tuit_retry_rec_ids(
+    include_unseeded: bool = False, limit: int | None = None,
+    max_attempts: int = 3, db_path=None
+) -> list[int]:
+    """Return rec_ids whose most recent sync attempt stopped short of seeding.
+
+    Without this, a partial attempt is worse than no attempt: a recording with
+    any ``tuit_downloads`` row is filtered out by
+    :func:`get_tuit_download_rec_ids`, so one qBittorrent outage mid-run would
+    strand it permanently. A recording that ever reached ``qbt_added`` is never
+    returned, even if a later attempt failed.
+
+    Args:
+        include_unseeded: Also retry rows whose latest status is
+            ``'not_seeded'``. Off by default — the common reasons (no LB
+            number, an overlay one piece short) do not change hour to hour.
+        limit: Cap the number of ids returned, oldest attempt first, so a
+            backlog cannot swamp a scheduled run.
+        max_attempts: Give up on a recording after this many attempts that
+            never reached ``qbt_added``. Without it a recording deleted from
+            the tracker is re-fetched every run forever, since its detail page
+            404s before any status can improve. 0 disables the cap.
+        db_path: Optional DB path override.
+
+    Returns:
+        Recording ids to re-queue, oldest attempt first.
+    """
+    statuses = list(TUIT_RETRY_STATUSES)
+    if include_unseeded:
+        statuses.append("not_seeded")
+
+    sql = f"""
+        SELECT d.rec_id
+          FROM tuit_downloads d
+         WHERE d.id = (SELECT MAX(id) FROM tuit_downloads
+                        WHERE rec_id = d.rec_id)
+           AND d.status IN ({', '.join('?' for _ in statuses)})
+           AND NOT EXISTS (SELECT 1 FROM tuit_downloads
+                            WHERE rec_id = d.rec_id AND status = 'qbt_added')
+           AND (? = 0 OR (SELECT COUNT(*) FROM tuit_downloads
+                           WHERE rec_id = d.rec_id) < ?)
+         ORDER BY d.attempted_at, d.id
+    """
+    params: list = [*statuses, max_attempts, max_attempts]
+    if limit:
+        sql += " LIMIT ?"
+        params.append(limit)
+    with get_connection(db_path) as conn:
+        return [r["rec_id"] for r in conn.execute(sql, params).fetchall()]
+
+
 def get_folders_for_lb(lb_number: int, db_path=None) -> list[str]:
     """Return every on-disk folder known to hold an LB number's files.
 

@@ -451,3 +451,62 @@ class TestTuitSongs:
         assert db.upsert_tuit_song_performances(
             [{"song": "AAtW", "date_str": ""}, {"date_str": "1993-01-01"}]
         ) == 0
+
+
+class TestTuitRetryQueue:
+    """A partial attempt must not strand a recording — see get_tuit_retry_rec_ids."""
+
+    def _attempt(self, db, rec_id, status, when, error=None):
+        return db.add_tuit_download(rec_id, 707, "/t.torrent", status, error=error)
+
+    def test_downloaded_and_failed_are_retried(self, dbmod):
+        db, path = dbmod
+        db.add_tuit_download(101, 707, "/a.torrent", "downloaded")
+        db.add_tuit_download(102, 707, "/b.torrent", "failed", error="qbt refused")
+        assert sorted(db.get_tuit_retry_rec_ids(db_path=path)) == [101, 102]
+
+    def test_a_seeded_recording_is_never_retried(self, dbmod):
+        db, path = dbmod
+        db.add_tuit_download(103, 707, "/c.torrent", "qbt_added")
+        assert db.get_tuit_retry_rec_ids(db_path=path) == []
+
+    def test_a_later_failure_after_success_is_not_retried(self, dbmod):
+        """Once it seeded, a subsequent failed re-scan is not a reason to redo it."""
+        db, path = dbmod
+        db.add_tuit_download(104, 707, "/d.torrent", "qbt_added")
+        db.add_tuit_download(104, 707, "/d.torrent", "failed", error="transient")
+        assert db.get_tuit_retry_rec_ids(db_path=path) == []
+
+    def test_only_the_latest_attempt_decides(self, dbmod):
+        db, path = dbmod
+        db.add_tuit_download(105, 707, "/e.torrent", "failed")
+        db.add_tuit_download(105, 707, "/e.torrent", "not_seeded", error="no LB")
+        assert db.get_tuit_retry_rec_ids(db_path=path) == []
+        assert db.get_tuit_retry_rec_ids(include_unseeded=True, db_path=path) == [105]
+
+    def test_not_seeded_is_excluded_by_default(self, dbmod):
+        db, path = dbmod
+        db.add_tuit_download(106, 707, "/f.torrent", "not_seeded", error="no LB")
+        assert db.get_tuit_retry_rec_ids(db_path=path) == []
+
+    def test_limit_caps_the_backlog(self, dbmod):
+        db, path = dbmod
+        for rec_id in range(200, 210):
+            db.add_tuit_download(rec_id, 707, "/g.torrent", "failed")
+        assert len(db.get_tuit_retry_rec_ids(limit=3, db_path=path)) == 3
+
+    def test_a_recording_is_given_up_on_after_max_attempts(self, dbmod):
+        """A recording pulled from the tracker 404s forever — stop re-fetching it."""
+        db, path = dbmod
+        for _ in range(3):
+            db.add_tuit_download(107, None, None, "failed",
+                                 error="detail page unavailable")
+        assert db.get_tuit_retry_rec_ids(db_path=path) == []
+        assert db.get_tuit_retry_rec_ids(max_attempts=0, db_path=path) == [107]
+        assert db.get_tuit_retry_rec_ids(max_attempts=5, db_path=path) == [107]
+
+    def test_two_attempts_are_still_retried(self, dbmod):
+        db, path = dbmod
+        db.add_tuit_download(108, 707, "/h.torrent", "failed")
+        db.add_tuit_download(108, 707, "/h.torrent", "failed")
+        assert db.get_tuit_retry_rec_ids(db_path=path) == [108]

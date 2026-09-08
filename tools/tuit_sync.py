@@ -150,6 +150,23 @@ def _build_parser() -> argparse.ArgumentParser:
                         "names the recording ids outright. The feed is a "
                         "rolling window of the newest 50 uploads, so fall back "
                         "to --pages after a long gap.")
+    p.add_argument("--no-retry", action="store_true",
+                   help="Do not re-queue recordings whose last attempt stopped "
+                        "short of seeding. By default a run picks those up "
+                        "first, so a qBittorrent outage mid-sync costs an hour, "
+                        "not the recording.")
+    p.add_argument("--retry-unseeded", action="store_true",
+                   help="Also retry 'not_seeded' rows. Off by default — the "
+                        "usual reasons (no LB number, an overlay one piece "
+                        "short) do not change hour to hour.")
+    p.add_argument("--retry-limit", type=int, default=25,
+                   help="Cap re-queued recordings per run (default 25, 0 = no "
+                        "cap) so a backlog cannot swamp a scheduled sync.")
+    p.add_argument("--retry-max-attempts", type=int, default=3,
+                   help="Give up on a recording after this many attempts that "
+                        "never seeded (default 3, 0 = never give up). Stops a "
+                        "recording deleted from the tracker being re-fetched "
+                        "every run.")
     p.add_argument("--set-rss-key", action="store_true",
                    help="Prompt for the TUIT RSS passkey, store it in the OS "
                         "keyring, verify it against the live feed, and exit.")
@@ -435,6 +452,13 @@ def _sync_one(session, rec_id: int, row, args) -> str:
     )
     if rec is None:
         logger.warning("  rec %s: detail page unavailable", rec_id)
+        if args.fetch_torrents:
+            # Record the attempt. A recording pulled from the tracker never
+            # gets further than this, and without a row the retry queue has no
+            # attempt count to give up on, so it would re-fetch the 404 hourly.
+            database.add_tuit_download(
+                rec_id, None, None, "failed", error="detail page unavailable"
+            )
         return "failed"
     if row is not None:
         tuit_scraper.merge_row_into_recording(rec, row)
@@ -496,7 +520,11 @@ def _sync_one(session, rec_id: int, row, args) -> str:
             "status": "qbt_added",
             "qbt_added_at": datetime.now(UTC).isoformat(),
         })
-        logger.info("  seed: qBittorrent added, seeding from %s (%s)", folder, reason)
+        if qbt.get("already_present"):
+            logger.info("  seed: already in qBittorrent, nothing to do")
+        else:
+            logger.info("  seed: qBittorrent added, seeding from %s (%s)",
+                        folder, reason)
         return "qbt_added"
 
     database.update_tuit_download(dl_id, {
@@ -591,6 +619,23 @@ def main() -> int:
                 if len(queue) >= args.limit:
                     break
             page += 1
+
+    # Re-queue partial attempts first: they already cost a fetch, and a
+    # recording stranded by a dead client is invisible to known_ids forever
+    # (any tuit_downloads row excludes it).
+    if args.fetch_torrents and not args.no_retry and not args.rec:
+        retry = database.get_tuit_retry_rec_ids(
+            include_unseeded=args.retry_unseeded,
+            limit=args.retry_limit or None,
+            max_attempts=args.retry_max_attempts,
+        )
+        new_retries = [r for r in retry if r not in rows_by_id]
+        if new_retries:
+            logger.info("  re-queued %d recording(s) from earlier attempts",
+                        len(new_retries))
+            queue = new_retries + queue
+            for rec_id in new_retries:
+                rows_by_id.setdefault(rec_id, None)
 
     if skipped_known:
         logger.info(
