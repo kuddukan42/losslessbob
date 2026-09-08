@@ -1316,7 +1316,7 @@ function WtrfTab({ logs, onClearLog, onLog }: {
   const [links, setLinks] = useState('')
   const [overlay, setOverlay] = useState(true)
   const [refetch, setRefetch] = useState(true)
-  const [allowPartial, setAllowPartial] = useState(false)
+  const [allowPartial, setAllowPartial] = useState(true)
   const [paused, setPaused] = useState(false)
   const [running, setRunning] = useState(false)
   const [progress, setProgress] = useState({ done: 0, total: 0, seeded: 0, failed: 0 })
