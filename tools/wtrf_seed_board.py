@@ -17,8 +17,12 @@ Examples::
     # Seed the newest page for real.
     tools/wtrf_seed_board.py --pages 1
 
-    # Work backwards through the board, ten pages a night.
-    tools/wtrf_seed_board.py --start-page 12 --pages 10 --limit 40
+    # Work backwards through the board until 40 topics have been attempted,
+    # however many pages that takes. --limit governs, --pages is ignored.
+    tools/wtrf_seed_board.py --start-page 12 --limit 40
+
+    # Ten pages, however many topics they hold.
+    tools/wtrf_seed_board.py --start-page 12 --pages 10
 """
 from __future__ import annotations
 
@@ -56,12 +60,15 @@ def _build_parser() -> argparse.ArgumentParser:
                    help=f"Board page to start on, 1 = newest (default: 1). "
                         f"Page N covers topics {TOPICS_PER_PAGE}(N-1)"
                         f"..{TOPICS_PER_PAGE}N.")
-    p.add_argument("--pages", type=int, default=1,
+    p.add_argument("--pages", type=int, default=None,
                    help=f"How many listing pages to walk this run "
-                        f"(default: 1, i.e. {TOPICS_PER_PAGE} topics).")
+                        f"(default: 1, i.e. {TOPICS_PER_PAGE} topics — or as "
+                        f"many as --limit needs when --limit is given alone).")
     p.add_argument("--limit", type=int, default=None,
                    help="Stop after this many topics have been attempted. "
-                        "Topics skipped as already-seen do not count.")
+                        "Topics skipped as already-seen do not count. Given "
+                        "without --pages, the walk keeps going back through "
+                        "the board until the limit is filled.")
     p.add_argument("--delay", type=float, default=2.0,
                    help="Seconds between HTTP requests (default: 2.0). "
                         "Be polite.")
@@ -150,13 +157,23 @@ def main() -> int:
     dest.mkdir(parents=True, exist_ok=True)
     start_offset = max(0, args.start_page - 1) * TOPICS_PER_PAGE
 
+    # --limit governs the run: walk as far back as it takes to fill it, rather
+    # than stopping at a page count the limit never reaches.
+    if args.limit is not None:
+        if args.pages is not None:
+            logger.info("--limit %d given: ignoring --pages %d, the walk runs "
+                        "until the limit is filled", args.limit, args.pages)
+        pages = None
+    else:
+        pages = 1 if args.pages is None else args.pages
+
     exit_code = 0
     for event in seed_board(
         opts=_seed_options(args),
         dest_dir=dest,
         board_id=args.board_id,
         start_offset=start_offset,
-        pages=args.pages,
+        pages=pages,
         limit=args.limit,
         delay=args.delay,
         dry_run=args.dry_run,
@@ -164,9 +181,11 @@ def main() -> int:
         include_missing=args.include_missing,
     ):
         if event["event"] == "start":
-            logger.info("board %d: pages %d-%d, %d topic(s) already attempted",
-                        event["board_id"], args.start_page,
-                        args.start_page + args.pages - 1, event["known"])
+            span = (f"pages {args.start_page}-{args.start_page + pages - 1}"
+                    if pages is not None
+                    else f"page {args.start_page} onwards, limit {args.limit}")
+            logger.info("board %d: %s, %d topic(s) already attempted",
+                        event["board_id"], span, event["known"])
         elif event["event"] == "topic":
             lb = f"LB-{event['lb_number']:05d}" if event["lb_number"] else "LB-?????"
             detail = event["error"] or event["reason"]

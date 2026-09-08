@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-339: wtrf_seed_board --limit was capped at one board page
+Status: Fixed
+File(s): tools/wtrf_seed_board.py:59
+Reported: 2026-09-08
+Fixed: 2026-09-08
+Root cause: --pages defaulted to 1 and bounded the walk independently of --limit, so iter_board_topics fetched one page regardless of how many attempts --limit asked for.
+Fix: --pages now defaults to None; with --limit the walk runs unbounded (pages=None in iter_board_topics/seed_board) until the limit is filled or the board ends.
+
 BUG-338: Hourly TUIT RSS cron failed every run — cron has no D-Bus session, so the OS keyring is unreachable
 Status: Fixed
 File(s): backend/credentials.py,data/tuit/cron_rss.sh

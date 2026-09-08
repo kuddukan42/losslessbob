@@ -1,3 +1,13 @@
+[2026-09-08] — --limit governs the WTRF board walk instead of losing to --pages
+Fixed: tools/wtrf_seed_board.py, backend/wtrf_board.py: `--limit N` on its own stopped after the
+  single default page, so a run asking for 40 attempts got at most one page of topics — and on a
+  board whose newest page is already all attempted, none. `--pages` now defaults to unset: given
+  `--limit`, the walk goes back through the board as far as it takes to fill the limit (or until
+  the board ends), and says so in the log when `--pages` was also passed and is being ignored.
+  `iter_board_topics`/`seed_board` accept `pages=None` for that unbounded walk; `--pages` without
+  `--limit` behaves exactly as before.
+Added: tests/test_wtrf_board.py: pages=None walks every page until the board runs out.
+
 [2026-09-08] — Overlays find sidecars the LB site renamed
 Added: backend/seed_overlay.py `_alias_keys`/`_index_aliases`/`_resolve_alias`: a last pass before
   a file is handed to the swarm, matching it against local copies under the name losslessbob.com
