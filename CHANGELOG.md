@@ -1,3 +1,25 @@
+[2026-09-07] — TUIT sync: re-queue attempts that stopped short of seeding
+Fixed: backend/qbittorrent.py: add_torrent_for_seeding reported HTTP 409 "Conflict" as a failure.
+  Conflict means the torrent is ALREADY in the client, which is the goal state — nine recordings
+  were recorded 'failed' while seeding at 100% (verified in the client as stalledUP, progress 1.0).
+  It now returns ok with an already_present flag, and tuit_sync logs "already in qBittorrent"
+  rather than claiming an add.
+Added: backend/db.py: get_tuit_retry_rec_ids() — rec_ids whose LATEST tuit_downloads attempt is
+  'downloaded' or 'failed' and which never reached 'qbt_added'. This is the queue the hourly cron
+  needs: a recording with any tuit_downloads row is filtered out by get_tuit_download_rec_ids, so
+  before this an outage mid-run stranded it permanently. 'not_seeded' is excluded by default
+  (--retry-unseeded to include) because its usual reasons — no LB number, an overlay one piece
+  short — do not change hour to hour.
+Added: tools/tuit_sync.py --no-retry / --retry-unseeded / --retry-limit (default 25) /
+  --retry-max-attempts (default 3). Re-queued recordings go to the FRONT of the queue.
+Fixed: tools/tuit_sync.py recorded nothing when a detail page 404s, so a recording deleted from the
+  tracker had no attempt count and would be re-fetched every run forever. The attempt is now
+  recorded, and get_tuit_retry_rec_ids gives up after max_attempts. Verified on rec 4686 (pulled
+  from the tracker): re-queued twice, then retired.
+Note: the qBittorrent-down path needed no queue of its own — a metadata-only run writes no
+  tuit_downloads row, so the recording is still unknown to known_ids and is picked up whole on the
+  next hour that finds the client up.
+
 [2026-09-07] — Hourly TUIT RSS cron
 Added: data/tuit/cron_rss.sh (gitignored, like the tapematch runners) plus the crontab entry
   "17 * * * *" — :17 keeps it clear of the tapematch batches at :15 and :45. Runs
