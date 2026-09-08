@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 import shutil
 import sqlite3
 from dataclasses import dataclass, field
@@ -135,6 +136,111 @@ def _index_sources(dirs: list[Path]) -> dict[str, list[Path]]:
             for depth in range(1, len(parts) + 1):
                 found.setdefault("/".join(parts[-depth:]), []).append(path)
     return found
+
+
+
+#: The prefix losslessbob.com puts on every sidecar it publishes.
+_LBF_PREFIX_RE = re.compile(r"^lbf-\d{3,6}-")
+
+#: Format markers the site's filename carries that the taper's original does
+#: not, or vice versa — ``lbdir-bd00-07-19a.txt.md5`` on disk is the torrent's
+#: ``lbdir-bd00-07-19a.shnf.md5``.
+_FORMAT_TOKENS = frozenset({"txt", "shnf", "flacf", "wavf"})
+
+
+def _alias_keys(name: str) -> set[str]:
+    """Reduce a sidecar filename to the forms that survive the site's renaming.
+
+    losslessbob.com republishes a taper's sidecar under a name of its own:
+    prefixed with ``LBF-<lb>-``, the containing folder folded into the
+    filename, punctuation flattened to dashes, a format marker swapped
+    (``…bd00-07-19a.txt.md5`` on disk for the torrent's ``…shnf.md5``) and a
+    ``.txt`` appended to anything that is not already text. None of that
+    changes the bytes, so a torrent built from the taper's copy and a mirror
+    holding the site's copy are the same file under two names — which is why an
+    old post can look unseedable when the only thing missing is a 1 KB text
+    file we already have.
+
+    Args:
+        name: A bare filename.
+
+    Returns:
+        Normalised keys: lowercase, the LBF prefix and interior format markers
+        dropped, punctuation collapsed to single dashes, plus the variant
+        without the site's appended ``.txt``.
+    """
+    stripped = _LBF_PREFIX_RE.sub("", name.lower())
+    tokens = [t for t in re.split(r"[^a-z0-9]+", stripped) if t]
+    if not tokens:
+        return set()
+    # A format marker is noise anywhere but the end, where it is the extension
+    # proper — the only thing separating "foo.md5" from "foo.txt".
+    kept = [t for i, t in enumerate(tokens)
+            if t not in _FORMAT_TOKENS or i == len(tokens) - 1]
+    keys = {"-".join(kept)}
+    if len(kept) > 2 and kept[-1] == "txt":
+        keys.add("-".join(kept[:-1]))
+    return keys
+
+
+def _index_aliases(*indexes: dict[str, list[Path]]) -> list[tuple[set[str], Path]]:
+    """Build the alias lookup used for files no exact name matched.
+
+    Args:
+        *indexes: Suffix indexes from :func:`_index_sources`, most-preferred
+            first.
+
+    Returns:
+        (alias keys, path) pairs, one per distinct file, in preference order.
+    """
+    seen: set[Path] = set()
+    pairs: list[tuple[set[str], Path]] = []
+    for index in indexes:
+        for paths in index.values():
+            for path in paths:
+                if path in seen:
+                    continue
+                seen.add(path)
+                pairs.append((_alias_keys(path.name), path))
+    return pairs
+
+
+def _resolve_alias(aliases: list[tuple[set[str], Path]], rel_path: str,
+                   size: int) -> Path | None:
+    """Find a renamed local copy of one torrent entry.
+
+    A candidate qualifies when it shares an alias key with the wanted file, or
+    when one of its keys *ends* with one — the site folds the containing folder
+    into the name, so ``BD---Toads-Place-d5-bd1990-1-12-d5-Toads-LTE.txt`` ends
+    with the key of the torrent's ``bd1990-1-12-d5-Toads-LTE.txt``. The size
+    must match exactly, and the overlay is piece-verified afterwards
+    regardless, so a wrong pick fails verification rather than being seeded.
+
+    Args:
+        aliases: Pairs from :func:`_index_aliases`.
+        rel_path: The torrent's path for this file.
+        size: The exact byte size the torrent expects.
+
+    Returns:
+        The renamed local file, or None when nothing of that size matches.
+    """
+    wanted = _alias_keys(Path(rel_path).name)
+    if not wanted:
+        return None
+    suffix_match: Path | None = None
+    for keys, path in aliases:
+        exact = bool(keys & wanted)
+        if not exact and not any(k.endswith(f"-{w}") for k in keys for w in wanted):
+            continue
+        try:
+            if path.stat().st_size != size:
+                continue
+        except OSError:
+            continue
+        if exact:
+            return path
+        suffix_match = suffix_match or path
+    return suffix_match
 
 
 def _resolve_source(
@@ -247,6 +353,9 @@ def plan_overlay(
         [source_folder] + [Path(d) for d in (link_dirs or [])]
     )
     ranges = info.file_piece_ranges()
+    #: Built on first use — indexing the sidecar store is not free, and most
+    #: torrents resolve every file by name without ever needing it.
+    aliases: list[tuple[set[str], Path]] | None = None
 
     # Pass 1 — resolve a local source for each file, by exact size match.
     resolved: list[tuple[PlanEntry, Path | None]] = []
@@ -297,6 +406,20 @@ def plan_overlay(
                 if local_size is not None else "re-fetch original from the site"
             )
             resolved.append((entry, None))
+            plan.entries.append(entry)
+            continue
+
+        # Last resort before the swarm: the same bytes under the name the LB
+        # site gave them. Worth trying on any post, and the only thing that
+        # completes an old one whose swarm has nobody left in it.
+        if aliases is None:
+            aliases = _index_aliases(collection, sidecars)
+        renamed = _resolve_alias(aliases, rel_path, size)
+        if renamed is not None:
+            entry.action = COPY
+            entry.source = str(renamed)
+            entry.reason = f"renamed copy ({renamed.name})"
+            resolved.append((entry, renamed))
             plan.entries.append(entry)
             continue
 
