@@ -150,6 +150,12 @@ def _build_parser() -> argparse.ArgumentParser:
                         "names the recording ids outright. The feed is a "
                         "rolling window of the newest 50 uploads, so fall back "
                         "to --pages after a long gap.")
+    p.add_argument("--rss-backfill-pages", type=int, default=10,
+                   help="With --rss, cap the /browse backfill that runs when the "
+                        "feed comes back full with no overlap against what we "
+                        "already hold — the one case where the window may have "
+                        "rolled past uploads we never saw (default 10 pages of "
+                        "50 rows, 0 = disable the backfill).")
     p.add_argument("--no-retry", action="store_true",
                    help="Do not re-queue recordings whose last attempt stopped "
                         "short of seeding. By default a run picks those up "
@@ -534,6 +540,94 @@ def _sync_one(session, rec_id: int, row, args) -> str:
     return "failed"
 
 
+def _rss_window_may_have_rolled(
+    items: list, skipped_known: int, known_ids: set, args
+) -> bool:
+    """Return True when the RSS poll cannot prove it saw every new upload.
+
+    The feed is a rolling window of the newest ``RSS_WINDOW`` uploads. One
+    already-known item in it is proof the window still overlaps what we hold,
+    so nothing fell off the end. A *full* window with zero overlap is the only
+    ambiguous case: either exactly that many uploads landed since the last
+    poll, or more did and the surplus rolled off unseen.
+
+    Args:
+        items: Feed items as returned by ``fetch_rss``.
+        skipped_known: How many feed items were already in the database.
+        known_ids: Recording ids already downloaded; empty on a first run.
+        args: Parsed CLI arguments.
+
+    Returns:
+        True if the /browse backfill should run.
+    """
+    if not args.rss_backfill_pages or args.rescan:
+        return False
+    # An empty known_ids is a first run (or --rescan), not a rolled window —
+    # backfilling there would page the whole catalogue for no reason.
+    if not known_ids:
+        return False
+    return len(items) >= tuit_scraper.RSS_WINDOW and skipped_known == 0
+
+
+def _rss_backfill(session, args, known_ids: set, rows_by_id: dict,
+                  queue: list) -> int:
+    """Page /browse newest-first to recover uploads the RSS window dropped.
+
+    Stops as soon as a page contains a recording we already hold — that
+    re-establishes the overlap the feed failed to prove — or after
+    ``--rss-backfill-pages`` pages. Mutates ``rows_by_id`` and ``queue`` in
+    place, appending recovered ids after the ones the feed supplied.
+
+    Args:
+        session: Authenticated TUIT session.
+        args: Parsed CLI arguments.
+        known_ids: Recording ids already downloaded.
+        rows_by_id: Map of recording id to BrowseRow, extended here.
+        queue: Recording ids to sync, extended here.
+
+    Returns:
+        How many already-known recordings the backfill skipped.
+    """
+    logger.warning(
+        "  RSS returned a full %d-item window with no overlap — uploads may "
+        "have rolled off the feed; backfilling from /browse (max %d page(s))",
+        tuit_scraper.RSS_WINDOW, args.rss_backfill_pages,
+    )
+    skipped = 0
+    recovered = 0
+    for page in range(1, args.rss_backfill_pages + 1):
+        rows, _total, _html = tuit_scraper.fetch_browse_page(
+            session, page=page, delay=args.delay
+        )
+        if not rows:
+            break
+        overlap = False
+        for row in rows:
+            if not row.rec_id:
+                continue
+            if row.rec_id in known_ids:
+                overlap = True
+                if row.rec_id not in rows_by_id:
+                    skipped += 1
+                continue
+            if row.rec_id in rows_by_id:
+                continue
+            rows_by_id[row.rec_id] = row
+            queue.append(row.rec_id)
+            recovered += 1
+        if overlap:
+            logger.info("  backfill: overlap re-established on page %d", page)
+            break
+    else:
+        logger.warning(
+            "  backfill: still no overlap after %d page(s) — run --pages N by "
+            "hand to reach further back", args.rss_backfill_pages,
+        )
+    logger.info("  backfill: recovered %d recording(s) the feed did not name",
+                recovered)
+    return skipped
+
+
 def main() -> int:
     """Entry point. Returns a process exit code."""
     args = _build_parser().parse_args()
@@ -569,7 +663,8 @@ def main() -> int:
     if args.rec:
         queue = list(dict.fromkeys(args.rec))
     elif args.rss:
-        for item in tuit_scraper.fetch_rss(delay=args.delay):
+        items = tuit_scraper.fetch_rss(delay=args.delay)
+        for item in items:
             if not item.rec_id or item.rec_id in rows_by_id:
                 continue
             if item.rec_id in known_ids:
@@ -585,6 +680,9 @@ def main() -> int:
             print("RSS returned nothing — store a passkey with --set-rss-key.",
                   file=sys.stderr)
             return 1
+        if _rss_window_may_have_rolled(items, skipped_known, known_ids, args):
+            skipped_known += _rss_backfill(session, args, known_ids,
+                                           rows_by_id, queue)
     elif args.pages:
         for page in range(1, args.pages + 1):
             rows, total, _ = tuit_scraper.fetch_browse_page(
