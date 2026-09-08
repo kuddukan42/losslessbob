@@ -44,6 +44,12 @@ USER_AGENT = (
 )
 DEFAULT_DELAY = 3.0
 
+# The /rss feed is a rolling window of this many newest uploads. A poll that
+# comes back with a full window and no overlap against what we already hold
+# cannot prove the window did not roll past unseen uploads — see the
+# --rss-backfill-pages fallback in tools/tuit_sync.py.
+RSS_WINDOW = 50
+
 _SIZE_UNITS = {"B": 1, "KB": 1024, "MB": 1024**2, "GB": 1024**3, "TB": 1024**4}
 
 
