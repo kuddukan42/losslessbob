@@ -121,6 +121,41 @@ class TestPlanOverlay:
         assert by_name["LBF-00042-info.txt"].action == FETCH
         assert plan.note == ""
 
+    def test_sidecar_renamed_by_the_site_is_still_found(self, rig):
+        """The mirror holds the file under the LBF name; the torrent wants the
+        taper's. Same bytes, and an old post's swarm cannot supply them."""
+        info, collection, sidecars, root = rig
+        (sidecars / "LBF-00042-info.txt").rename(
+            sidecars / "LBF-00099-Some-Show-d1-info.txt")
+
+        plan = plan_overlay(info, collection, root, [sidecars])
+        entry = {e.rel_path.split("/")[-1]: e for e in plan.entries}["LBF-00042-info.txt"]
+
+        assert entry.action == COPY
+        assert "renamed copy" in entry.reason
+        assert plan.count(FETCH) == 0
+
+    def test_renamed_sidecar_of_the_wrong_size_is_refused(self, rig):
+        info, collection, sidecars, root = rig
+        (sidecars / "LBF-00042-info.txt").rename(sidecars / "info-renamed.txt")
+        (sidecars / "info-renamed.txt").write_bytes(b"different length entirely")
+
+        plan = plan_overlay(info, collection, root, [sidecars])
+        entry = {e.rel_path.split("/")[-1]: e for e in plan.entries}["LBF-00042-info.txt"]
+
+        assert entry.action == FETCH
+
+    def test_exact_name_still_wins_over_a_renamed_candidate(self, rig):
+        info, collection, sidecars, root = rig
+        (sidecars / "LBF-00099-copy-of-info.txt").write_bytes(
+            FILES["LBF-00042-info.txt"])
+
+        plan = plan_overlay(info, collection, root, [sidecars])
+        entry = {e.rel_path.split("/")[-1]: e for e in plan.entries}["LBF-00042-info.txt"]
+
+        assert entry.source.endswith("LBF-00042-info.txt")
+        assert entry.reason == "sidecar store"
+
     def test_neighbour_of_missing_data_is_copied_not_linked(self, rig):
         # The safety rule: a file sharing a piece with unresolved data must
         # never be hardlinked, or a client write reaches the collection inode.
@@ -589,3 +624,41 @@ def test_allow_private_does_not_excuse_a_missing_lb(monkeypatch, tmp_path):
 
     assert folder is None
     assert "lb_missing" in reason
+
+
+# ── alias keys: the LB site's renaming conventions ───────────────────────────
+
+@pytest.mark.parametrize("site_name, taper_name", [
+    # The site prefixes every sidecar it publishes with LBF-<lb>-.
+    ("LBF-03323-bd00-07-19a-LB-3323.txt", "bd00-07-19a-LB-3323.txt"),
+    # …swaps the format marker: .txt.md5 on disk for the torrent's .shnf.md5.
+    ("LBF-03323-lbdir-bd00-07-19a.txt.md5", "lbdir-bd00-07-19a.shnf.md5"),
+    # …and appends .txt to anything that is not already text.
+    ("LBF-00001-bd87-05d1.md5.txt", "bd87-05d1.md5"),
+])
+def test_alias_keys_match_across_the_sites_renaming(site_name, taper_name):
+    from backend.seed_overlay import _alias_keys
+    assert _alias_keys(site_name) & _alias_keys(taper_name)
+
+
+def test_alias_keys_keep_distinct_sidecars_apart():
+    from backend.seed_overlay import _alias_keys
+    assert not (_alias_keys("LBF-03323-noname.md5.txt")
+                & _alias_keys("bd00-07-19a.md5"))
+
+
+def test_alias_resolution_folds_the_folder_into_the_name(tmp_path):
+    """The site flattens <folder>/<file> into one name; a suffix match finds it."""
+    from backend.seed_overlay import _index_aliases, _index_sources, _resolve_alias
+    store = tmp_path / "files"
+    store.mkdir()
+    published = store / "LBF-02614-BD---Toads-Place-d5-bd1990-1-12-d5-Toads-LTE.txt"
+    published.write_bytes(b"x" * 1875)
+
+    aliases = _index_aliases(_index_sources([store]))
+    hit = _resolve_alias(
+        aliases, "Bd 1990 LB 2614/Bob Dylan - Toads Place d5/bd1990-1-12-d5-Toads-LTE.txt",
+        1875)
+
+    assert hit == published
+    assert _resolve_alias(aliases, "x/bd1990-1-12-d5-Toads-LTE.txt", 999) is None

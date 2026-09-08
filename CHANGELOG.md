@@ -1,3 +1,21 @@
+[2026-09-08] — Overlays find sidecars the LB site renamed
+Added: backend/seed_overlay.py `_alias_keys`/`_index_aliases`/`_resolve_alias`: a last pass before
+  a file is handed to the swarm, matching it against local copies under the name losslessbob.com
+  publishes them by. The site prefixes `LBF-<lb>-`, folds the containing folder into the filename,
+  flattens punctuation, swaps the format marker (`lbdir-….txt.md5` on disk for the torrent's
+  `lbdir-….shnf.md5`) and appends `.txt` to anything not already text — none of which changes the
+  bytes. A candidate is accepted only on an exact size match, and the overlay is piece-verified
+  afterwards regardless, so a wrong pick fails verification rather than being seeded. Exact-name
+  matches and the re-fetch path still win; the alias index is built on first need.
+Why: seeding old WTRF posts is the case that cannot fall back on the swarm. Sampling 14 topics
+  from board pages 60 and 200, 10 assembled 100% locally and 4 were short only by 1-5 KB-sized
+  .txt/.md5 sidecars — files that in several cases were already on disk under the site's name.
+  Aliasing recovers 3 of those 9 files; the rest (a taper's per-disc notes, and everything for a
+  private entry the site never published) exist nowhere locally, and no size-only guess was added
+  to chase them.
+Added: tests/test_seed_overlay.py: 7 tests — the three renaming conventions, distinct sidecars
+  kept apart, folder-folding resolved by suffix, wrong size refused, exact name still preferred.
+
 [2026-09-08] — Seed WTRF by walking the board, not by pasting links
 Added: backend/wtrf_board.py: the WTRF counterpart of `tools/tuit_sync.py --fetch-torrents
   --seed`. `seed_board()` pages the board itself (SMF `board=<id>.<offset>`, 20 topics a page,
