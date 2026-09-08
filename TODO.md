@@ -1,3 +1,9 @@
+TODO-340: Cron's TUIT RSS backfill is capped at 10 /browse pages — no alert if a gap ever exceeds 500 uploads
+Priority: Low
+Status: Open
+Added: 2026-09-08
+Description: data/tuit/cron_rss.sh does not pass --rss-backfill-pages, so it takes the default 10 pages (500 rows). If the tracker ever goes quiet long enough for more than 500 uploads to land between successful polls, the backfill logs 'still no overlap after 10 page(s)' and stops rather than reaching further back. The warning goes to the cron log, which is only mailed on a non-zero exit, so nobody would see it. Either raise the cap in the cron script, or make the exhausted-cap case exit non-zero so cron mails it.
+
 TODO-339: TUIT corroborates entries almost perfectly — mine the 28 circa-date refinements, 69 source-type conflicts and 582 unattributed tapers
 Priority: Medium
 Status: Open

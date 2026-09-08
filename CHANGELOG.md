@@ -1,3 +1,25 @@
+[2026-09-08] — Headless credentials + an RSS window-roll guard for the TUIT sync
+Fixed: backend/credentials.py: the hourly TUIT RSS cron had failed every run since 2026-09-07
+  19:17 (~20 consecutive, exit 1, "no credentials stored"). cron gets no D-Bus session, so the
+  OS keyring is unreachable there — the credentials were fine, just unreachable from the context
+  that needed them (BUG-338). get_credentials/credentials_stored now fall back to the environment
+  and then to an operator-written KEY=VALUE file (data/credentials.env, mode 600, relocatable via
+  LB_CREDENTIALS_FILE). The app only ever READS that file, so the "no credentials on disk" rule
+  still holds for everything the app itself stores; it warns if the file is group/world readable.
+  Verified under 'env -i' with no D-Bus: login as kuddukan, 8 recordings stored, 6 seeded.
+Added: backend/tuit_scraper.py: RSS_WINDOW = 50, naming the feed's rolling-window size.
+Added: tools/tuit_sync.py: /browse backfill for a possibly-rolled RSS window. The feed carries
+  only the newest 50 uploads, so a poll that comes back FULL with zero overlap against what we
+  already hold cannot prove nothing fell off the end. That one case now pages /browse newest-first
+  and stops as soon as a page contains a recording we already have — which re-establishes the
+  overlap the feed failed to prove — or after --rss-backfill-pages pages (default 10, 0 disables).
+  A single already-known feed item skips the backfill entirely, so the normal hourly run costs no
+  extra requests. Suppressed on --rescan and on an empty database, where every id is new for
+  reasons unrelated to the window.
+Added: tests/test_credentials_env.py (5), tests/test_tuit_rss_backfill.py (10 — 6 on the trigger
+  condition, 4 on paging and stop conditions).
+Changed: PROJECT.md: credentials.py line notes the headless fallback.
+
 [2026-09-07] — TUIT sync: re-queue attempts that stopped short of seeding
 Fixed: backend/qbittorrent.py: add_torrent_for_seeding reported HTTP 409 "Conflict" as a failure.
   Conflict means the torrent is ALREADY in the client, which is the goal state — nine recordings
