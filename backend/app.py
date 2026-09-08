@@ -5055,7 +5055,7 @@ def create_app() -> Flask:
             overlay_root=data.get("overlay_root") or "",
             refetch_sidecars=bool(data.get("refetch_sidecars", True)),
             max_fetch_mb=float(data.get("max_fetch_mb", 25.0)),
-            allow_partial_overlay=bool(data.get("allow_partial_overlay", False)),
+            allow_partial_overlay=bool(data.get("allow_partial_overlay", True)),
             paused=bool(data.get("paused", False)),
         )
 

@@ -65,8 +65,9 @@ class SeedOptions:
             locally saved copy is the wrong size (link-rewritten crawl HTML).
         max_fetch_mb: Refuse an overlay that would leave more than this many
             megabytes for the swarm to supply.
-        allow_partial_overlay: Accept an overlay that still hashes short. The
-            remainder downloads into the overlay, never the collection.
+        allow_partial_overlay: Accept an overlay that still hashes short
+            (default). The remainder downloads into the overlay, never the
+            collection.
         paused: Add the torrent to qBittorrent in a stopped state.
     """
 
@@ -75,7 +76,7 @@ class SeedOptions:
     overlay_root: str = ""
     refetch_sidecars: bool = False
     max_fetch_mb: float = 25.0
-    allow_partial_overlay: bool = False
+    allow_partial_overlay: bool = True
     paused: bool = False
 
     @property

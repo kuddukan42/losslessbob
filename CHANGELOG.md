@@ -1,3 +1,16 @@
+[2026-09-08] — Partial overlays are the seeding default
+Changed: backend/tracker_seed.py, backend/app.py, tools/tuit_sync.py, gui_next ScreenScraper:
+  `allow_partial_overlay` now defaults to True — SeedOptions, the `/api/wtrf/seed_links` and
+  `/api/entry/<lb>/seed_wtrf` policy parser, the WTRF Seeding tab checkbox, and tuit_sync.py
+  (which gains `--no-allow-partial-overlay` to opt back out). An overlay that hashes a few
+  hundred bytes short — almost always a missing sidecar such as md5sum.md5 — no longer refuses
+  to seed; the remainder downloads into the overlay, never the collection. Six WTRF posts seeded
+  this session hit it once (LB-4153, 1247/1248 pieces), and the 2026-08-31 TUIT reseed pass had
+  already needed the flag by hand for 584 recordings.
+Verified live against WTRF board 16: topics 61696-61701 resolved to LB-12068/14232/4135/4152/
+  4153/4154, all `definitive` from the .torrent attachment filename; four verified in place at
+  100%, two assembled full local overlays, LB-4153 seeded at 99.92% under the new default.
+
 [2026-09-08] — Headless credentials + an RSS window-roll guard for the TUIT sync
 Fixed: backend/credentials.py: the hourly TUIT RSS cron had failed every run since 2026-09-07
   19:17 (~20 consecutive, exit 1, "no credentials stored"). cron gets no D-Bus session, so the

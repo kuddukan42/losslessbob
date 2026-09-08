@@ -119,9 +119,12 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument("--max-fetch-mb", type=float, default=25.0,
                    help="Refuse an overlay that would still leave more than this "
                         "many MB for the swarm to download (default 25).")
-    p.add_argument("--allow-partial-overlay", action="store_true",
-                   help="Seed an overlay that is not yet 100%%. The remainder "
-                        "downloads into the overlay — never the collection.")
+    p.add_argument("--allow-partial-overlay", action="store_true", default=True,
+                   help="Seed an overlay that is not yet 100%% (the default). The "
+                        "remainder downloads into the overlay — never the collection.")
+    p.add_argument("--no-allow-partial-overlay", dest="allow_partial_overlay",
+                   action="store_false",
+                   help="Refuse an overlay that still hashes short.")
     p.add_argument("--rescan", action="store_true",
                    help="Include recordings that already have a tuit_downloads "
                         "attempt (default: --pages/--limit skip them so re-runs "
