@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-338: Hourly TUIT RSS cron failed every run — cron has no D-Bus session, so the OS keyring is unreachable
+Status: Fixed
+File(s): backend/credentials.py,data/tuit/cron_rss.sh
+Reported: 2026-09-08
+Fixed: 2026-09-08
+Root cause: backend.credentials read only the OS keyring and /run/secrets. A cron job has no D-Bus session, so the keyring backend is unavailable and get_credentials returned ('','') — the sync then failed at login. Nothing was wrong with the stored credentials; they were simply unreachable from the context that needed them.
+Fix: get_credentials/credentials_stored now fall back to the environment and then to an operator-written KEY=VALUE file (data/credentials.env, mode 600, relocatable via LB_CREDENTIALS_FILE), read-only so the app still never writes credentials to disk. Verified end-to-end under 'env -i' with no D-Bus: login succeeded as kuddukan and the recovery sync stored 8 recordings and seeded 6.
+
 BUG-336: TUIT torrent filenames and overlay directories collide on non-unique torrent root names
 Status: Fixed
 File(s): backend/tuit_scraper.py:677,backend/seed_overlay.py:232,tools/tuit_sync.py:226
