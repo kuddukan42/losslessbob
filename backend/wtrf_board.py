@@ -29,6 +29,7 @@ Stickies are announcements, not uploads, and are dropped — they carry no
 """
 from __future__ import annotations
 
+import itertools
 import logging
 import re
 import time
@@ -172,7 +173,7 @@ def board_page_count(session: requests.Session, board_id: int) -> int:
 
 
 def iter_board_topics(session: requests.Session, board_id: int,
-                      start_offset: int = 0, pages: int = 1,
+                      start_offset: int = 0, pages: int | None = 1,
                       delay: float = DEFAULT_DELAY) -> Iterator[BoardTopic]:
     """Yield topics from consecutive board pages, newest first.
 
@@ -181,13 +182,14 @@ def iter_board_topics(session: requests.Session, board_id: int,
         board_id: SMF board number.
         start_offset: Topic offset to start at — a multiple of
             :data:`TOPICS_PER_PAGE`.
-        pages: How many pages to walk.
+        pages: How many pages to walk, or ``None`` to keep walking until the
+            board runs out (the caller is expected to stop it another way).
         delay: Seconds to sleep between page fetches.
 
     Yields:
         :class:`BoardTopic` rows in listing order.
     """
-    for page in range(pages):
+    for page in itertools.count() if pages is None else range(pages):
         offset = start_offset + page * TOPICS_PER_PAGE
         if page or start_offset:
             time.sleep(delay)
@@ -224,7 +226,7 @@ def seed_board(
     dest_dir: str | Path,
     board_id: int | None = None,
     start_offset: int = 0,
-    pages: int = 1,
+    pages: int | None = 1,
     limit: int | None = None,
     delay: float = DEFAULT_DELAY,
     dry_run: bool = False,
@@ -245,7 +247,8 @@ def seed_board(
         board_id: SMF board to walk; defaults to the configured
             ``wtrf_board_id``.
         start_offset: Topic offset to start at, for resuming a deep walk.
-        pages: How many listing pages to walk this run.
+        pages: How many listing pages to walk this run, or ``None`` to walk
+            back through the board until ``limit`` is filled or the board ends.
         limit: Stop after this many topics have been *attempted* (skips of
             already-seen topics do not count).
         delay: Seconds between HTTP requests.

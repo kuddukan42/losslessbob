@@ -116,6 +116,19 @@ def test_iter_board_topics_stops_at_the_end_of_the_board(monkeypatch):
     assert len(session.requested) == 2
 
 
+def test_iter_board_topics_walks_the_whole_board_when_pages_is_none(monkeypatch):
+    monkeypatch.setattr("backend.wtrf_board.time.sleep", lambda _s: None)
+    session = _StubSession({
+        offset: _page(_row(900 - n, f"t{n}"))
+        for n, offset in enumerate(TOPICS_PER_PAGE * i for i in range(4))
+    })
+
+    topics = list(iter_board_topics(session, 16, 0, pages=None, delay=0.0))
+
+    # No page budget: the walk only stopped because the board ran out.
+    assert [t.topic_id for t in topics] == [900, 899, 898, 897]
+
+
 def test_iter_board_topics_survives_a_dead_page(monkeypatch):
     monkeypatch.setattr("backend.wtrf_board.time.sleep", lambda _s: None)
 
