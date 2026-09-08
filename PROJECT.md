@@ -90,7 +90,7 @@ losslessbob/
 │   ├── updater.py            # restart_application(): relaunch the app after an in-place update
 │   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
 │   ├── checksum_provenance.py # Cross-checks checksums vs the uploader files in data/site/files/ (TODO-296)
-│   ├── credentials.py        # OS keyring credential storage (SERVICE_QBT, SERVICE_WTRF, SERVICE_IA, SERVICE_TUIT)
+│   ├── credentials.py        # OS keyring credential storage (SERVICE_QBT, SERVICE_WTRF, SERVICE_IA, SERVICE_TUIT); falls back to env vars / data/credentials.env for headless callers (cron)
 │   ├── flat_file.py          # Flat-file update pipeline: discover/download/diff/apply + audit tables
 │   ├── xref_ingest.py        # Site-mirror xref ingest: scan/stage/approve reviewed import path (TODO-252)
 │   ├── importer.py           # Flat-file import logic (legacy: imports from local file path)

@@ -6,8 +6,16 @@ keeping credentials in the in-process session cache only.
 
 Container deployments can pre-load credentials via secret files mounted at
 /run/secrets/ (see _SECRET_MAP for the expected filenames).
+
+Headless callers (cron, systemd) get no D-Bus session, so the OS keyring is
+unreachable there. For those, credentials may come from the environment, or
+from a KEY=VALUE file the operator writes by hand (see _ENV_MAP for the
+variable names). The app only ever reads that file — it is never written here,
+so the "no credentials on disk" rule still holds for everything the app itself
+stores.
 """
 import logging
+import os
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -37,6 +45,80 @@ _SECRET_MAP: dict[str, tuple[str, str]] = {
     SERVICE_TUIT:    ("tuit_username",   "tuit_password"),
     SERVICE_TUIT_RSS: ("tuit_rss_user",  "tuit_rss_passkey"),
 }
+
+# Environment fallback — used when the keyring is unreachable (cron, systemd).
+_ENV_MAP: dict[str, tuple[str, str]] = {
+    SERVICE_QBT:      ("LB_QBT_USER",      "LB_QBT_PASSWORD"),
+    SERVICE_QBT_KEY:  ("LB_QBT_APIKEY_USER", "LB_QBT_APIKEY"),
+    SERVICE_WTRF:     ("LB_WTRF_USER",     "LB_WTRF_PASSWORD"),
+    SERVICE_IA:       ("LB_IA_ACCESS_KEY", "LB_IA_SECRET_KEY"),
+    SERVICE_TUIT:     ("LB_TUIT_USER",     "LB_TUIT_PASSWORD"),
+    SERVICE_TUIT_RSS: ("LB_TUIT_RSS_USER", "LB_TUIT_RSS_PASSKEY"),
+}
+
+# Operator-written KEY=VALUE file, read when a variable is absent from os.environ.
+# Override the location with LB_CREDENTIALS_FILE.
+_ENV_FILE_DEFAULT = Path(__file__).resolve().parent.parent / "data" / "credentials.env"
+_env_file_cache: dict[str, str] | None = None
+
+
+def _env_file_path() -> Path:
+    """Return the credentials env-file path, honouring LB_CREDENTIALS_FILE."""
+    override = os.environ.get("LB_CREDENTIALS_FILE", "").strip()
+    return Path(override) if override else _ENV_FILE_DEFAULT
+
+
+def _load_env_file() -> dict[str, str]:
+    """Parse the credentials env file into a dict. Cached; missing file gives {}.
+
+    Accepts ``KEY=VALUE`` lines with optional ``export`` prefix, ``#`` comments,
+    and single- or double-quoted values. Malformed lines are skipped.
+
+    Returns:
+        Mapping of variable name to value, empty when the file is absent.
+    """
+    global _env_file_cache
+    if _env_file_cache is not None:
+        return _env_file_cache
+    values: dict[str, str] = {}
+    path = _env_file_path()
+    try:
+        raw = path.read_text()
+    except OSError:
+        _env_file_cache = values
+        return values
+    try:
+        mode = path.stat().st_mode
+        if mode & 0o077:
+            logger.warning("%s is readable by other users — chmod 600 it", path)
+    except OSError:
+        pass
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        if line.startswith("export "):
+            line = line[len("export "):].lstrip()
+        key, _, value = line.partition("=")
+        key = key.strip()
+        value = value.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+            value = value[1:-1]
+        if key:
+            values[key] = value
+    _env_file_cache = values
+    return values
+
+
+def _get_from_env(service: str) -> tuple[str, str]:
+    """Return (username, password) from the environment or env file, or ('', '')."""
+    pair = _ENV_MAP.get(service)
+    if not pair:
+        return "", ""
+    file_values = _load_env_file()
+    user = os.environ.get(pair[0]) or file_values.get(pair[0], "")
+    secret = os.environ.get(pair[1]) or file_values.get(pair[1], "")
+    return user.strip(), secret.strip()
 
 
 def _read_docker_secret(name: str) -> str:
@@ -112,7 +194,7 @@ def save_credentials(service: str, username: str, password: str) -> StorageResul
 
 
 def get_credentials(service: str) -> tuple[str, str]:
-    """Return (username, password) from session cache, OS keyring, or Docker secrets.
+    """Return (username, password) from session cache, keyring, env, or Docker secrets.
 
     Args:
         service: Service constant.
@@ -132,6 +214,11 @@ def get_credentials(service: str) -> tuple[str, str]:
                 return username, password
         except Exception as exc:
             logger.warning("keyring get failed for %s: %s", service, exc)
+    # Fall back to the environment / operator env file (cron, systemd)
+    u, p = _get_from_env(service)
+    if u:
+        _session[service] = (u, p)
+        return u, p
     # Fall back to Docker secrets mounted at /run/secrets/
     u, p = _get_from_docker_secrets(service)
     if u:
@@ -178,7 +265,7 @@ def credentials_stored(service: str) -> bool:
         service: Service constant.
 
     Returns:
-        True if credentials exist in session cache, keyring, or Docker secrets.
+        True if credentials exist in session cache, keyring, env, or Docker secrets.
     """
     if service in _session:
         return True
@@ -188,6 +275,8 @@ def credentials_stored(service: str) -> bool:
             return bool(_kr.get_password(service, "__username__"))
         except Exception:
             pass
+    if _get_from_env(service)[0]:
+        return True
     pair = _SECRET_MAP.get(service)
     if pair:
         return bool(_read_docker_secret(pair[0]))
