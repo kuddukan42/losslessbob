@@ -544,3 +544,48 @@ class TestUniqueOverlayName:
 
         monkeypatch.setattr("backend.seed_overlay.lbs_for_seed_folder", boom)
         assert unique_overlay_name(tmp_path, "track", 12242) == "track"
+
+
+# ── the private-status gate ──────────────────────────────────────────────────
+
+def test_private_lb_is_refused_by_default(monkeypatch, tmp_path):
+    """A private recording never leaves the collection on a default policy."""
+    from backend import tracker_seed
+    monkeypatch.setattr(tracker_seed.database, "is_seedable_to_tracker",
+                        lambda _lb: (False, "lb_private"))
+
+    folder, reason = tracker_seed.find_seedable_folder(
+        4154, str(tmp_path / "x.torrent"), tracker_seed.SeedOptions("tuit"))
+
+    assert folder is None
+    assert "lb_private" in reason
+
+
+def test_private_lb_passes_when_the_post_already_exists(monkeypatch, tmp_path):
+    """allow_private (the WTRF paths) gets past 'private', nothing else."""
+    from backend import tracker_seed
+    monkeypatch.setattr(tracker_seed.database, "is_seedable_to_tracker",
+                        lambda _lb: (False, "lb_private"))
+    monkeypatch.setattr(tracker_seed.database, "get_folders_for_lb",
+                        lambda _lb: [])
+
+    opts = tracker_seed.SeedOptions("wtrf", allow_private=True)
+    folder, reason = tracker_seed.find_seedable_folder(
+        4154, str(tmp_path / "x.torrent"), opts)
+
+    # Past the status gate — it fails at the next one instead.
+    assert folder is None
+    assert "no collection folder" in reason
+
+
+def test_allow_private_does_not_excuse_a_missing_lb(monkeypatch, tmp_path):
+    from backend import tracker_seed
+    monkeypatch.setattr(tracker_seed.database, "is_seedable_to_tracker",
+                        lambda _lb: (False, "lb_missing"))
+
+    opts = tracker_seed.SeedOptions("wtrf", allow_private=True)
+    folder, reason = tracker_seed.find_seedable_folder(
+        4154, str(tmp_path / "x.torrent"), opts)
+
+    assert folder is None
+    assert "lb_missing" in reason

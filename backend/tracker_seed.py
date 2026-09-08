@@ -69,6 +69,12 @@ class SeedOptions:
             (default). The remainder downloads into the overlay, never the
             collection.
         paused: Add the torrent to qBittorrent in a stopped state.
+        allow_private: Seed a recording whose ``lb_status`` is 'private'. Set
+            only on the WTRF paths, and only because every one of them starts
+            from a post that already exists on the board: the recording is
+            public there whatever the local status says, so refusing to seed
+            it only starves a swarm the curator already published to. 'missing'
+            and 'nonexistent' still refuse, and TUIT is unaffected.
     """
 
     tracker: str
@@ -78,6 +84,7 @@ class SeedOptions:
     max_fetch_mb: float = 25.0
     allow_partial_overlay: bool = True
     paused: bool = False
+    allow_private: bool = False
 
     @property
     def overlay_dirname(self) -> str:
@@ -234,7 +241,7 @@ def find_seedable_folder(
         return None, "recording has no LB number"
 
     allowed, why = database.is_seedable_to_tracker(lb_number)
-    if not allowed:
+    if not allowed and not (why == "lb_private" and opts.allow_private):
         return None, f"LB-{lb_number} not seedable ({why})"
 
     folders = [f for f in database.get_folders_for_lb(lb_number) if Path(f).is_dir()]

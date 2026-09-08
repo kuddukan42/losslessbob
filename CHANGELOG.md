@@ -19,6 +19,15 @@ Changed: backend/wtrf_seed.py: `_prepare_from_link` accepts a pre-resolved `reso
   so the board walk can gate on ownership without fetching the post twice; `_record` takes `via`.
 Added: tests/test_wtrf_board.py: 14 tests over the listing parse, the page walk (ordering, end of
   board, a dead page), the ownership gate, dry run, resume and rescan.
+Changed: backend/tracker_seed.py, backend/app.py, tools/wtrf_seed_board.py: SeedOptions gains
+  `allow_private`, set on every WTRF path. A private lb_status blocks forum *posting*, but every
+  WTRF seeding path starts from a post already on the board — the recording is public there
+  whatever the local status says, so refusing to seed it only starves a swarm the curator already
+  published to. 'missing' and 'nonexistent' still refuse, and TUIT is unaffected. LB-6582,
+  LB-9226 and LB-13594 (topics 61694/61693/61692) seeded on the second pass, all three as
+  partial overlays that hash 99.8%.
+Added: tests/test_seed_overlay.py: 3 tests over the status gate — refused by default, past
+  'private' with allow_private, still refused for 'missing'.
 Verified live against board 16: page 1 seeded 6 (all verified in place, 100%), skipped 1 post
   with no LB tag anywhere, and refused 3 as `lb_private` — LB-6582, LB-9226, LB-13594 are posted
   publicly on WTRF but carry a private lb_status locally, which is worth a look.
