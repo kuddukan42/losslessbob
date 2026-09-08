@@ -697,7 +697,7 @@ def seed_from_links(
 
 
 def _prepare_from_link(session, target: SeedTarget, dest: Path, delay: float,
-                       dry_run: bool, event: dict):
+                       dry_run: bool, event: dict, info: dict | None = None):
     """Walk a topic link to a downloaded torrent, filling ``event`` as it goes.
 
     Args:
@@ -707,13 +707,18 @@ def _prepare_from_link(session, target: SeedTarget, dest: Path, delay: float,
         delay: Seconds between HTTP requests.
         dry_run: Report only.
         event: The event dict being built, updated in place.
+        info: A :func:`resolve_link` result the caller already has — the board
+            walk resolves first so it can drop a post whose recording is not
+            in the collection before anything is downloaded. None to resolve
+            here.
 
     Returns:
         ``(info, torrent_path, link_dirs)`` when ready to seed, ``"dry_run"``
         when only reporting, or None when the target was rejected.
     """
-    spec = LinkSpec(target.url, target.lb_number, target.raw)
-    info = resolve_link(session, spec, delay)
+    if info is None:
+        spec = LinkSpec(target.url, target.lb_number, target.raw)
+        info = resolve_link(session, spec, delay)
     event.update({"lb_number": info["lb_number"], "title": info["title"],
                   "confidence": info["confidence"]})
     if info["error"] or info["lb_number"] is None:
@@ -827,7 +832,8 @@ def seed_one(lb_number: int, torrent_path: str, opts: SeedOptions,
 
 
 def _record(info: dict, target: SeedTarget, torrent_path: str | None,
-            status: str, error: str, seed_folder: str) -> int:
+            status: str, error: str, seed_folder: str,
+            via: str = "pasted_link") -> int:
     """Log one attempt to ``wtrf_downloads``.
 
     Args:
@@ -837,6 +843,9 @@ def _record(info: dict, target: SeedTarget, torrent_path: str | None,
         status: wtrf_downloads status word.
         error: Error/reason text, or "".
         seed_folder: Folder handed to qBittorrent, or "".
+        via: Which seeding path wrote the row — ``"pasted_link"`` or
+            ``"board_walk"``. It is what tells a seeding attempt apart from
+            the fetch path's rows, which must never stop a later seed.
 
     Returns:
         The new row id.
@@ -847,7 +856,7 @@ def _record(info: dict, target: SeedTarget, torrent_path: str | None,
         torrent_path=torrent_path,
         confidence=info["confidence"],
         signals_json=json.dumps({
-            "via": "pasted_link",
+            "via": via,
             "lb_source": info["lb_source"],
             "lb_candidates": info["lb_candidates"],
             "title": info["title"],

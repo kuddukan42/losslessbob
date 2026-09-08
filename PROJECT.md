@@ -139,6 +139,7 @@ losslessbob/
 │   ├── torrent_verify.py     # Bencode reader + read-only piece-hash check of a folder against a .torrent; gates seeding so incomplete folders are never written to (TODO-314)
 │   ├── seed_overlay.py       # Assembles a seedable folder outside the collection: audio hardlinked, LBF sidecars copied from data/site/files or re-fetched from the LB site (TODO-314). Sources recursively by longest path-suffix + exact size, so nested box-set torrents (<root>/<show>/cd-1/…) resolve and colliding basenames don't cross discs; `link_dirs` hardlinks from several collection folders for a torrent spanning >1 LB entry
 │   ├── tracker_seed.py       # Tracker-agnostic seeding pipeline (gates → overlay → qBittorrent), parameterised per tracker: <mount>/<TRACKER> Seeds + qbt tag. Shared by TUIT and WTRF
+│   ├── wtrf_board.py         # Walks the WTRF board newest-first (SMF pagination, stickies dropped) and seeds every post the collection already holds; resumes off wtrf_downloads.topic_url, drops posts whose LB is not held before downloading anything
 │   ├── wtrf_seed.py          # Pasted WTRF topic links → first post → LB number + .torrent attachment → tracker_seed. Also seeds from bare LB numbers (a plain-text round-up paste keeps no hrefs) via the board search; content, not prose, picks between several nominated LBs
 │   ├── ab_clips.py           # Aligned A/B listening clip service (LISTENING §2, TODO-231/232/233)
 │   ├── bobtalk.py            # Locates Olof's curated bobtalk quotes in our audio; scoring, confidence, persistence (TODO-303)
@@ -202,6 +203,7 @@ losslessbob/
 │   ├── test_tuit_scraper.py  # backend/tuit_scraper.py: TUIT browse/detail parsers, row merge, bencode root name (TODO-314)
 │   ├── test_torrent_verify.py # backend/torrent_verify.py: bencode decode, torrent parse, folder piece verification, read-only guarantees (TODO-314)
 │   ├── test_seed_overlay.py  # backend/seed_overlay.py: link/copy/refetch planning, piece-boundary safety rule, collection-untouched assertions (TODO-314)
+│   ├── test_wtrf_board.py    # backend/wtrf_board.py: board listing parse, page walk, the ownership gate and resume/rescan
 │   ├── test_wtrf_seed.py     # backend/wtrf_seed.py: link parsing/canonicalisation, LB-resolution priority, ambiguity refusal, per-tracker overlay roots
 │   ├── test_tuit_db.py       # backend/db.py: tuit_recordings/tuit_downloads accessors + get_folders_for_lb (TODO-314)
 │   ├── test_checksum_utils_site_recovery.py # find_site_recoverable_files: MD5 + filename-fallback matching against data/site/files/
@@ -261,6 +263,7 @@ losslessbob/
 │   ├── checksum_dispute_report.py # CLI: render checksum_disputes as a standalone HTML report (.debug/checksum_disputes.html); pairs the db+lbdir references per track to derive db_error / audio_differs / retag / receipt_unknown / lbdir_only (TODO-300, 302)
 │   ├── parse_lineage.py      # CLI wrapper: backend.taper_attribution / entry_lineage batch parse (see backend/db.py extract_lb_references)
 │   ├── wtrf_fetch_missing.py # CLI: batch WTRF torrent fetch for missing items (wraps /api/wtrf/fetch_torrent logic)
+│   ├── wtrf_seed_board.py    # CLI: crawl the WTRF board and seed what is held (--start-page/--pages walk back in time, --limit, --rescan, --include-missing, --dry-run)
 │   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314); --sync-tours / --sync-venues fill tuit_shows + tuit_venues; --sync-songs fills tuit_songs + tuit_song_performances
 │   ├── fit_aud_quality_model.py # CLI: fit the AUD quality regression model used by concert_ranker
 │   ├── refit_aud_model.py    # CLI: refit/recalibrate the AUD quality model against new labels
