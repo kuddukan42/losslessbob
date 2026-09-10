@@ -123,6 +123,62 @@ anchor element carries `data-lb="<key>"`.
 
 ---
 
+## Chunks & progress
+
+One row = one commit, through `/session-close` and pushed. **Resume at the first row not
+`done`.** Flip a row to `done` in that chunk's own commit. Its commit subject ends
+`[dossier Cnn]`, so `git log --grep 'dossier C07'` finds it.
+
+- **Order:** the phase order is binding (see Execution notes), with one deviation. C13 pulls
+  the D-01 track matcher ahead of Phase 3, because the 3a quorum and R-E2 both align titles
+  with it.
+- **Tests ship with their chunk.** The Phase 8 list is the union of these tests, not a separate
+  later chunk.
+- **PROJECT.md** sections are updated in the chunk that adds the schema, route or file.
+- **Sign-off** marks a chunk that stops for tj before it merges. Chunks that aren't marked
+  don't wait for him.
+
+| # | Ph | Scope | Needs | Model | Done when | Status |
+|---|---|---|---|---|---|---|
+| C00 | 0 | Ledger: redesign TODO + the Phase 0 BUGs; branch `feat/dossier-redesign` off `main` | — | orch. | IDs noted in this table | todo |
+| C01 | 1 | New Olof columns (idempotent) + upsert lists; `tools/olof_reparse_diff.py`; `tools/dossier_acceptance.py --parser` baseline. No parser behaviour change | C00 | sonnet | `init_db` twice is clean; baseline counts recorded | todo |
+| C02 | 1 | P1a guest/interlude blocks + P1g section guard | C01 | opus | fixture tests: 1975-12-08 = 22, 1986-02-24 = 25 | todo |
+| C03 | 1 | P1b date lines, P1c venue-history blob, P1d rotation stat → new columns | C01 | opus | fixture tests for each fix | todo |
+| C04 | 1 | P1e credits vs subtitle, P1f release lines | C01 | opus | fixture tests (1965-06-01, `and part of 22`) | todo |
+| C05 | 1 | Full reparse → diff gate → `song_index.run()` | C02–C04 | orch. | UNEXPLAINED = 0; `--parser` PASS; counts in CHANGELOG; F1/F2/F4 BUGs closed | todo |
+| C06 | 2 | `backend/qc/` package + CLI; all five tables; `evidence_hash` reopen; quarantine lookup; rules R-O1, R-O3 | C05 | sonnet | `python -m backend.qc run` prints per-rule counts; reopen test | todo |
+| C07 | 2 | Rules R-O2, R-G1, R-E1, R-F1, R-S1 | C06 | sonnet | one test per rule; baseline counts in CHANGELOG | todo |
+| C08 | 2 | Upstream fix 1 (taper: no bare mention, no weak-family propagation) + R-T1–R-T3; re-run tapers | C06 | opus | 0 open R-T1/R-T2 on the five samples; LB-08493 has no Millard; F16 BUG closed | todo |
+| C09 | 2 | Upstream fixes 2–3: picks after families, NULL-date skip, per-LB latest scored scan; queue the 114-LB rerank | C07 | sonnet | R-S1 count drops; the 383 LBs have grades; F17 + NULL-date BUGs closed | todo |
+| C10 | 2 | Upstream fix 4: TUIT taper names → `user_taper_aliases`; rule R-T4 | C08 | sonnet | R-T4 count measured after mapping | todo |
+| C11 | 2b | `backend/qc/review.py`, GET routes, page shell + Findings tab | C07 | sonnet | read-route tests | todo |
+| C12 | 2b | Write routes + curator 403, Queue tab (cards, keys), `queues.py` entries | C11 | sonnet | 2b acceptance 2, 4, 5; steps 1 and 3 re-checked at C29. **tj can now work findings in parallel** | todo |
+| C13 | 4* | `clean_track_title()`, `match_track()`, `_ENTRY_TRACK_MARKER_RE` fix; rule R-E2 | C06 | opus | matcher tests; LB-08477 = 18 tracks | todo |
+| C14 | 3 | 3a setlist quorum + rule R-O4 | C05, C13 | sonnet | `--corroborate`: both samples `corroborated` now, `disputed` against `.debug/olof_before.db`; shares in CHANGELOG | todo |
+| C15 | 3 | 3b premieres & rotation recompute; 3c tracklist vs TUIT | C14 | sonnet | `tests/test_corroborate.py` | todo |
+| C16 | 3 | 3d file format, 3e taper, 3f venue / city | C10, C14 | sonnet | `tests/test_corroborate.py` | todo |
+| C17 | 4 | D-01 completeness + G2 fit flag | C13, C15 | opus | D-01 accept cases (2010-03-29, 1965-06-01) | todo |
+| C18 | 4 | D-02 song history + three-part gate + gap badge | C15 | opus | 2010-03-29 badges songs 4 and 14 only; `--d02` rate in CHANGELOG | todo |
+| C19 | 4 | D-03: draft `official_releases.json`, `official_release()`, rule R-R1 | C05, C06 | sonnet | D-03 accept cases. **Sign-off: allowlist** | todo |
+| C20 | 4 | D-07 run / tour / city history, then D-04 rotation rank | C15 | sonnet | night 7 of 7, `is_last` false, Tokyo = 50; sum assertion; synthetic tie → no superlative | todo |
+| C21 | 4 | D-05 generation, D-13 medium (incl. the broadcast-taper R-T finding) | C08 | sonnet | D-05 / D-13 accept cases. **Sign-off: 100-row generation audit** | todo |
+| C22 | 4 | D-09 setlist confidence + `.debug/dossier_calibration.md`; D-11 file meta | C14 | sonnet | 1986-02-24 complete / 25 / corroborated; LB-08485 "16/44 file · recorded 24/96" | todo |
+| C23 | 4 | Supporting parsers (band, members, instruments, tally, writers, `set[].label`, character / flags, lineage_short, runtime, `family.basis`, taper render rule) | C04, C08 | sonnet | parser tests; runtime split sums to total | todo |
+| C24 | 4 | D-08 pairwise comparison; D-10 bobtalk anchoring | C17, C22 | sonnet | D-08 / D-10 accept cases | todo |
+| C25 | 5 | `dossier_anchors.py`: `Field`, full `ANCHORS` map (D-06 / D-12 as null stubs), `build_view`; `dossier["view"]`; `filter_dossier_sections(local_analysis=0)` | C17–C24 | sonnet | D1 payload unchanged (existing `test_dossier.py` passes); every anchor's fallback tested | todo |
+| C26 | 5 | Claim engine + T4 slot templates | C25 | opus | `tests/test_dossier_claims.py` (ties, partial scope, disputed input → no claim) | todo |
+| C27 | 5 | §8 selection rules: fragments (7.4), verdict pick, collapse, families, confidence, tape wording | C26 | sonnet | 300-show histogram in `.debug/`. **Sign-off: 60% fragment threshold** | todo |
+| C28 | 5 | `dossier_qc.py` gate G1–G9, 422 refusals, `prov.withheld`, lint L1 | C27 | sonnet | `tests/test_dossier_qc.py` pass + fail per check; <100 ms | todo |
+| C29 | 6–7 | Template rewrite: sections, `lbf` / `claim` macros, palette, "Scanned quality" (HTML / BBcode / footer), QC footer + `lb-qc` JSON, 7.5–7.8, lint L2 | C28 | sonnet | L1 / L2, anchor coverage, blank lines <5%; 2b acceptance 1 and 3; `/verify` Tier A on 2010-03-29 + 1965-06-01, light and dark | todo |
+| C30 | 7 | Compact map: `marker` param, ~240×150, venue card, `view.venue.coords`, L1 pin rule | C29 | sonnet | 2010-03-29 hollow ring; one verified-`high` show gets a solid pin | todo |
+| C31 | 8 | `tools/make_fixture_db.py` + golden-set harness, run in CI | C30 | sonnet | harness runs green on placeholder files | todo |
+| C32 | 8 | Golden values for the 15 shows | C31 | orch. | **Sign-off: tj hand-verifies every file** | todo |
+| C33 | 8 | `tools/dossier_sweep.py` + nightly cron + push on rise; `tools/dossier_verify_export.py` | C28 | sonnet | sweep report written; export drift detected on a doctored file | todo |
+| C34 | 8 | Full verification in the Phase 8 order of checks, incl. `/verify --electron` PDF | C32, C33 | orch. | `--all` PASS; sweep totals in CHANGELOG | todo |
+| C35 | 9 | `/wiki-update` pages + new Data-Quality page; close the redesign TODO + remaining BUGs; open follow-up TODOs; merge to `main` (tj) | C34 | orch. | ledger consistent; merged | todo |
+
+\* C13 is Phase 4 work pulled forward; see *Order* above.
+
 ## Phase 0 — Prerequisites
 
 1. The mock is in `instructions/`. Its data is **not** authoritative (audit §4).
@@ -871,7 +927,8 @@ Runs at the end of every `build_dossier()` call, target <100 ms.
 - **Build order is binding:** 0 → 1 → 2 → 2b → 3 → 4 → 5 → 6 → 7 → 8 → 9. No template work
   before the Phase 5 gate exists. The 2b console lands right after the QC rules, so the first
   wave of findings (tapers, geocodes, staleness) can be worked while Phases 3–5 are built.
-- **Commit in small bites**, each through `/session-close` and pushed (standing preference).
+- **Commit in small bites**, one per row of *Chunks & progress*, each through `/session-close`
+  and pushed (standing preference).
   Phase 1's reparse and Phase 2's upstream fixes land first, because every later acceptance
   number depends on them.
 - **Delegation:** opus for Phase 1 (parser), the Phase 2 taper fix, D-01/D-02 and the claim
