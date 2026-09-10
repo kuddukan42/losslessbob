@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>29 March 2010 — Zepp Tokyo — LosslessBob dossier</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #131c2e; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+    #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
+    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #131c2e; z-index: 9999; }
+    #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
+    #__bundler_placeholder { color: #999; font-size: 14px; }
+  </style>
+  <noscript>
+    <style>#__bundler_loading { display: none; }</style>
+    <div style="position:fixed;bottom:12px;left:12px;font:13px/1.4 -apple-system,BlinkMacSystemFont,sans-serif;color:#999;background:rgba(255,255,255,0.9);padding:6px 12px;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.08);z-index:10000;">
+      This page requires JavaScript to display.
+    </div>
+  </noscript>
+</head>
+<body>
+  <div id="__bundler_thumbnail">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#131c2e"></rect><rect x="360" y="240" width="480" height="320" rx="28" fill="#1e2a45"></rect><rect x="360" y="240" width="480" height="10" rx="5" fill="#5b8df2"></rect><text x="600" y="420" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="150" font-weight="800" fill="#eef3fc" letter-spacing="6">LB</text><rect x="470" y="470" width="260" height="14" rx="7" fill="#324069"></rect><rect x="530" y="506" width="140" height="14" rx="7" fill="oklch(.80 .12 78)"></rect></svg>
+</div>
+  <div id="__bundler_loading">Unpacking...</div>
+
+  <script>
+    
+document.addEventListener('DOMContentLoaded', async function() {
+  const loading = document.getElementById('__bundler_loading');
+  function setStatus(msg) { if (loading) loading.textContent = msg; }
+
+  const FONT_MIME = /^(font[/]|application[/](x-)?font-|application[/]vnd\.ms-fontobject)/i;
+  const MIME_TOKEN = /^[\w.+-]+[/][\w.+-]+$/;
+  function toBase64(bytes) {
+    let bin = '';
+    for (let i = 0; i < bytes.length; i += 0x8000) {
+      bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    }
+    return btoa(bin);
+  }
+
+  // Error sink persists across replaceWith since it's on window, not the DOM.
+  window.addEventListener('error', function(e) {
+    // Failed resource loads (CSP-blocked links, scripts, images) fire plain
+    // events at the element — warn only; real JS errors carry message/error.
+    if (!e.message && !e.error && e.target && e.target !== window) {
+      console.warn('[bundle] resource failed to load:',
+        e.target.tagName, String(e.target.src || e.target.href || ''));
+      return;
+    }
+    var p = document.body || document.documentElement;
+    var d = document.getElementById('__bundler_err') || p.appendChild(document.createElement('div'));
+    d.id = '__bundler_err';
+    d.style.cssText = 'position:fixed;bottom:12px;left:12px;right:12px;font:12px/1.4 ui-monospace,monospace;background:#2a1215;color:#ff8a80;padding:10px 14px;border-radius:8px;border:1px solid #5c2b2e;z-index:99999;white-space:pre-wrap;max-height:40vh;overflow:auto';
+    d.textContent = (d.textContent ? d.textContent + String.fromCharCode(10) : '') +
+      '[bundle] ' + (e.message || e.type) +
+      (e.filename ? ' (' + e.filename.slice(0, 60) + ':' + e.lineno + ')' : '');
+  }, true);
+
+  try {
+    const manifestEl = document.querySelector('script[type="__bundler/manifest"]');
+    const templateEl = document.querySelector('script[type="__bundler/template"]');
+    if (!manifestEl || !templateEl) {
+      setStatus('Error: missing bundle data');
+      console.error('[bundler] Missing script tags — manifestEl:', !!manifestEl, 'templateEl:', !!templateEl);
+      return;
+    }
+
+    const manifest = JSON.parse(manifestEl.textContent);
+    let template = JSON.parse(templateEl.textContent);
+
+    // Nested page bundles (iframe targets). Each ships ONCE, in the ROOT
+    // document's manifest; frame srcs carry an about:blank#<uuid> marker
+    // instead of a substitutable uuid. Every document mints the blobs for
+    // its OWN frames — from local text at the root, or text obtained from
+    // its DIRECT parent over the relay protocol below — so each frame
+    // navigation stays same-origin with its initiator and a deduped page
+    // loads at any depth on any host, including a file:// download's
+    // opaque origins (where a blob minted by one document cannot be
+    // navigated to by another).
+    const pageOrderEl = document.querySelector('script[type="__bundler/page_order"]');
+    const pageOrder = pageOrderEl ? JSON.parse(pageOrderEl.textContent) : [];
+    const pageSet = new Set(pageOrder);
+    const pageTexts = {};
+
+    // ── Nested-page text protocol (parent-chain relay) ──
+    // Page bundles ship once, in the ROOT document's manifest. Every
+    // document mints the blobs for its OWN frames, obtaining page text
+    // through a strict parent-chain relay: a document only ever SENDS to
+    // its direct parent (which, for every document the publisher's own
+    // runtime minted, is another publisher document) and only ACCEPTS
+    // text from that direct parent; requests from below are honored only
+    // for the document's own child frames, and the ROOT never sends
+    // upward at all. That last rule is load-bearing: the artifact host's
+    // frame-ancestors allows claude.ai (and friends) to frame an
+    // artifact, so window.top can be a FOREIGN document — a top-addressed
+    // protocol would hand page uuids to that ancestor and accept forged
+    // "page text" from it, minting attacker HTML as an artifact-origin
+    // blob document. The chain never touches the ancestor: requests stop
+    // at the root, replies are origin-addressed per hop (never '*' when
+    // an origin exists), and both directions are origin-gated (on https
+    // a foreign sender's origin can never equal this document's; in
+    // opaque contexts — file:// — everything serializes as 'null', where
+    // an embedded EXTERNAL frame still fails the gate by carrying its
+    // own real origin, and a sandboxed child of such a frame is excluded
+    // by the own-child-frames check plus uuid unguessability). Shape is
+    // deny-by-default: one request form, one reply form, no error
+    // replies.
+    // window.origin is the SERIALIZED SECURITY origin ('null' in opaque
+    // contexts such as a sandboxed preview iframe) — location.origin is
+    // computed from the URL and stays 'https://…' even when the document
+    // is sandboxed, which would misgate every opaque chain.
+    const OWN_TARGET = /^https?:[/][/]/.test(window.origin || '')
+      ? window.origin
+      : '*';
+    function trustedOrigin(e) {
+      if (e.origin === window.origin) return true; // https chains; opaque==opaque
+      // file:// trees: Chrome serializes the file document's origin as
+      // 'file://' while the blob: documents it mints serialize as 'null',
+      // so the two legitimate shapes can never string-match — accept the
+      // pair in both directions. https origins never serialize as either,
+      // and sender identity (own child frame / direct parent) is checked
+      // separately.
+      return (
+        (e.origin === 'null' &&
+          (window.origin === 'file://' ||
+            window.location.protocol === 'file:')) ||
+        (/^file:/.test(e.origin) && window.origin === 'null')
+      );
+    }
+    // Non-empty only in the root document (nested bundles ship an empty
+    // island), so it doubles as the root marker: the root answers from
+    // local text and treats a miss as authoritative — never relaying to
+    // its (possibly foreign) parent.
+    const isPageRoot = pageOrder.length > 0;
+    const blobUrls = {};
+    const resourceBlobs = {};
+    const UUID_SHAPE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+    const pendingFrames = {}; // uuid -> [{el, frag}] awaiting text for own frames
+    const pendingRelays = {}; // uuid -> [childWindow] awaiting text to pass down
+    function mountPage(el, frag, text) {
+      const pageBlob = new Blob([text], { type: 'text/html' });
+      const u = URL.createObjectURL(pageBlob);
+      resourceBlobs[u] = pageBlob;
+      el.src = u + frag;
+    }
+    function deliverPage(uuid, text) {
+      const frames = pendingFrames[uuid];
+      delete pendingFrames[uuid];
+      if (frames) for (const f of frames) mountPage(f.el, f.frag, text);
+      const relays = pendingRelays[uuid];
+      delete pendingRelays[uuid];
+      if (relays) {
+        for (const cw of relays) {
+          try { cw.postMessage({ __bundler_page: uuid, __bundler_text: text }, OWN_TARGET); } catch (err) { /* gone */ }
+        }
+      }
+    }
+    function ownFrameWindows() {
+      const out = [];
+      for (const f of Array.from(document.querySelectorAll('iframe'))) {
+        try { if (f.contentWindow) out.push(f.contentWindow); } catch (err) { /* detached */ }
+      }
+      return out;
+    }
+    window.addEventListener('message', function (e) {
+      const d = e.data;
+      if (!d || typeof d !== 'object' || !e.source) return;
+      // Origin gate first; the structural checks below (own-child-frames
+      // for requests, direct-parent + solicited-uuid for replies, the
+      // root's never-relay rule) are what hold in fully opaque chains
+      // where origin strings can't discriminate — a sandboxed root's
+      // FOREIGN wrapper still fails all three even though both serialize
+      // as real-vs-'null' rather than matching.
+      if (!trustedOrigin(e)) return;
+      if (typeof d.__bundler_need === 'string' && UUID_SHAPE.test(d.__bundler_need)) {
+        // Requests are honored only for this document's own child frames.
+        if (ownFrameWindows().indexOf(e.source) < 0) return;
+        const uuid = d.__bundler_need;
+        const text = pageTexts[uuid];
+        if (typeof text === 'string') {
+          try { e.source.postMessage({ __bundler_page: uuid, __bundler_text: text }, OWN_TARGET); } catch (err) { /* gone */ }
+          return;
+        }
+        if (isPageRoot || window.parent === window) return; // authoritative miss
+        const waiting = pendingRelays[uuid];
+        if (waiting) {
+          if (waiting.indexOf(e.source) < 0) waiting.push(e.source);
+          return;
+        }
+        // Never-answered uuids would otherwise accumulate forever under a
+        // request spray; past the cap (far above any real page count) new
+        // relays are dropped rather than remembered.
+        if (Object.keys(pendingRelays).length >= 128) return;
+        pendingRelays[uuid] = [e.source];
+        window.parent.postMessage({ __bundler_need: uuid }, OWN_TARGET);
+      } else if (
+        typeof d.__bundler_page === 'string' &&
+        UUID_SHAPE.test(d.__bundler_page) &&
+        typeof d.__bundler_text === 'string'
+      ) {
+        // The shape test is load-bearing beyond tidiness: the solicited
+        // check below uses the in operator, which matches prototype keys
+        // ('__proto__', 'constructor') — an unshaped key would reach
+        // deliverPage and throw, painting the error banner.
+        // Text is accepted only from the direct parent — the document
+        // that minted this one.
+        if (e.source !== window.parent || window.parent === window) return;
+        if (!(d.__bundler_page in pendingFrames) && !(d.__bundler_page in pendingRelays)) return;
+        deliverPage(d.__bundler_page, d.__bundler_text);
+      }
+    });
+
+    const uuids = Object.keys(manifest);
+    setStatus('Unpacking ' + uuids.length + ' assets...');
+
+    await Promise.all(uuids.map(async (uuid) => {
+      const entry = manifest[uuid];
+      try {
+        const binaryStr = atob(entry.data);
+        const bytes = new Uint8Array(binaryStr.length);
+        for (let i = 0; i < binaryStr.length; i++) bytes[i] = binaryStr.charCodeAt(i);
+
+        let finalBytes = bytes;
+        if (entry.compressed) {
+          if (typeof DecompressionStream !== 'undefined') {
+            const ds = new DecompressionStream('gzip');
+            const writer = ds.writable.getWriter();
+            const reader = ds.readable.getReader();
+            writer.write(bytes);
+            writer.close();
+            const chunks = [];
+            let totalLen = 0;
+            while (true) {
+              const { done, value } = await reader.read();
+              if (done) break;
+              chunks.push(value);
+              totalLen += value.length;
+            }
+            finalBytes = new Uint8Array(totalLen);
+            let offset = 0;
+            for (const chunk of chunks) { finalBytes.set(chunk, offset); offset += chunk.length; }
+          } else {
+            console.warn('DecompressionStream not available, asset ' + uuid + ' may not render');
+          }
+        }
+
+        if (pageSet.has(uuid)) {
+          pageTexts[uuid] = new TextDecoder().decode(finalBytes);
+          return;
+        }
+        if (FONT_MIME.test(entry.mime) && MIME_TOKEN.test(entry.mime)) {
+          // Strict artifact hosts allow font-src data: but not blob:.
+          blobUrls[uuid] = 'data:' + entry.mime + ';base64,' +
+            (entry.compressed ? toBase64(finalBytes) : entry.data);
+        } else {
+          const blob = new Blob([finalBytes], { type: entry.mime });
+          blobUrls[uuid] = URL.createObjectURL(blob);
+          resourceBlobs[blobUrls[uuid]] = blob;
+        }
+      } catch (err) {
+        console.error('Failed to decode asset ' + uuid + ':', err);
+        const blob = new Blob([], { type: entry.mime });
+        blobUrls[uuid] = URL.createObjectURL(blob);
+        resourceBlobs[blobUrls[uuid]] = blob;
+      }
+    }));
+
+    const extResEl = document.querySelector('script[type="__bundler/ext_resources"]');
+    const extResources = extResEl ? JSON.parse(extResEl.textContent) : [];
+    const resourceMap = {};
+    for (const entry of extResources) {
+      if (blobUrls[entry.uuid]) resourceMap[entry.id] = blobUrls[entry.uuid];
+    }
+
+    // Artifact-host CSP (connect-src 'self') refuses fetch() of blob: URLs —
+    // consumers read these Blobs directly. Survives the swap like the error sink.
+    window.__resourceBlobs = resourceBlobs;
+
+    setStatus('Rendering...');
+    // Page uuids have no blob here — they ride inside about:blank#<uuid>
+    // frame markers the pass below resolves after the swap.
+    for (const uuid of uuids) {
+      if (pageSet.has(uuid)) continue;
+      template = template.split(uuid).join(blobUrls[uuid]);
+    }
+
+    // Strip integrity + crossorigin — blob URLs from a file:// document inherit
+    // a null origin, so crossorigin forces a CORS fetch that SRI then rejects.
+    // The manifest bytes are ours; SRI protects against CDN compromise, not this.
+    template = template.replace(/\s+integrity="[^"]*"/gi, '').replace(/\s+crossorigin="[^"]*"/gi, '');
+
+    const resourceScript = '<script>window.__resources = ' +
+      JSON.stringify(resourceMap).replace(/<\//g, '<\\/') +
+      ';</' + 'script>';
+    // Inject after <head> so the DOCTYPE stays first; prepending the script
+    // would push the parser into quirks mode. DOMParser always emits a <head>
+    // (synthesizing one if the source HTML omitted it) but may carry
+    // attributes through, so match the full opening tag. slice() rather than
+    // replace() keeps us clear of $-pattern substitution in resourceScript.
+    const headOpen = template.match(/<head[^>]*>/i);
+    if (headOpen) {
+      const i = headOpen.index + headOpen[0].length;
+      template = template.slice(0, i) + resourceScript + template.slice(i);
+    }
+
+    // Parse the template and swap the root element. Scripts inserted via
+    // DOMParser/replaceWith are inert per spec — re-create each with
+    // createElement so they execute, awaiting onload for src scripts to
+    // preserve ordering (React before ReactDOM before Babel before text/babel).
+    const doc = new DOMParser().parseFromString(template, 'text/html');
+    document.documentElement.replaceWith(doc.documentElement);
+
+    // Resolve page-frame markers: mint this document's own blob for each
+    // framed page — from local text when this is the root, otherwise by
+    // asking the direct parent over the relay protocol above. An
+    // unanswered request leaves the frame on about:blank, the same
+    // degraded state as a refused embed.
+    {
+      const MARKER = /^about:blank#([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})(#.*)?$/;
+      const needed = [];
+      for (const el of Array.from(document.querySelectorAll('iframe'))) {
+        const m = MARKER.exec(el.getAttribute('src') || '');
+        if (!m) continue;
+        const text = pageTexts[m[1]];
+        if (typeof text === 'string') {
+          mountPage(el, m[2] || '', text);
+        } else if (window.parent !== window && !isPageRoot) {
+          const had = pendingFrames[m[1]];
+          (pendingFrames[m[1]] = had || []).push({ el: el, frag: m[2] || '' });
+          if (!had) needed.push(m[1]);
+        }
+      }
+      for (const uuid of needed) {
+        window.parent.postMessage({ __bundler_need: uuid }, OWN_TARGET);
+      }
+    }
+
+    const dead = Array.from(document.scripts);
+    for (const old of dead) {
+      const s = document.createElement('script');
+      for (const a of old.attributes) s.setAttribute(a.name, a.value);
+      s.textContent = old.textContent;
+      // text/babel scripts with a src: read and inline. transformScriptTags
+      // does XHR against the src, but blob:null/ from a file:// origin is
+      // silently dropped. Inlining makes it a plain inline babel script,
+      // which transformScriptTags handles unconditionally.
+      if ((s.type === 'text/babel' || s.type === 'text/jsx') && s.src) {
+        const pre = resourceBlobs[s.src.split('#')[0]];
+        s.textContent = pre ? await pre.text() : await (await fetch(s.src)).text();
+        s.removeAttribute('src');
+      }
+      const p = s.src ? new Promise(function(r) { s.onload = s.onerror = r; }) : null;
+      old.replaceWith(s);
+      if (p) await p;
+    }
+    // Babel standalone auto-transforms type=text/babel on DOMContentLoaded,
+    // which fired before we swapped the document. Trigger manually if present.
+    if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
+      window.Babel.transformScriptTags();
+    }
+  } catch (err) {
+    setStatus('Error unpacking: ' + err.message);
+    console.error('Bundle unpack error:', err);
+  }
+});
+
+  </script>
+
+  <script type="__bundler/manifest">
+{}
+  </script>
+
+  <script type="__bundler/ext_resources">
+[]
+  </script>
+
+  <script type="__bundler/page_order">
+[]
+  </script>
+
+  <script type="__bundler/template">
+"<!DOCTYPE html>\n<html lang=\"en\" data-theme=\"dark\"><head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>29 March 2010 — Zepp Tokyo — LosslessBob dossier<\u002Ftitle>\n<style>\n:root{\n--bg:#131c2e;--surface:#1e2a45;--surface2:#273457;--surface3:#324069;\n--ink:#eef3fc;--muted:#aebcd6;--faint:#7384a2;--rule:#37466c;--rule2:#4c5c88;\n--accent:#5b8df2;--accent-hi:#7aa3f7;--accent-soft:#1c2640;--on-accent:#0a0f1c;\n--pick:oklch(.80 .12 78);--pick-hi:oklch(.87 .10 80);--pick-soft:oklch(.32 .06 78);--on-pick:#1a1405;\n--pos:#5db679;--neg:#e08070;--warn:#d4a35a;--info:#7eb4e8;\n--shadow:0 1px 0 rgba(255,255,255,.04) inset,0 6px 18px rgba(0,0,0,.35);\n--serif:\"Iowan Old Style\",\"Palatino Linotype\",Palatino,Georgia,\"Times New Roman\",serif;\n--sans:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Arial,sans-serif;\n--mono:\"SF Mono\",ui-monospace,\"Roboto Mono\",Menlo,Consolas,monospace;\n}\nhtml[data-theme=\"light\"]{\n--bg:#dde7f6;--surface:#f6f9fe;--surface2:#e9f0fb;--surface3:#d2e1f4;\n--ink:#13203a;--muted:#3f547a;--faint:#6f83a6;--rule:#c2d4ec;--rule2:#9bb9e0;\n--accent:#2b5fd0;--accent-hi:#1f4baa;--accent-soft:#e3ebf8;--on-accent:#fff;\n--pick:oklch(.52 .12 70);--pick-hi:oklch(.44 .12 68);--pick-soft:oklch(.95 .04 80);--on-pick:#fff;\n--pos:#1f7a3e;--neg:#b03f30;--warn:#8a5c00;--info:#1f5b8f;\n--shadow:0 1px 3px rgba(19,32,58,.10);\n}\n*{box-sizing:border-box}\nhtml{background:var(--bg)}\nbody{margin:0;padding:2.2rem 1.5rem 3rem;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}\n.page{max-width:940px;margin:0 auto}\na{color:var(--accent);text-decoration:none}\na:hover{color:var(--accent-hi);text-decoration:underline}\n.mono{font-family:var(--mono)}\n.eyebrow{font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}\n.theme-toggle{position:fixed;top:1rem;right:1rem;z-index:20;font-size:.72rem;font-weight:600;display:inline-flex;align-items:center;gap:.4em;padding:.42em .8em;border-radius:999px;border:1px solid var(--rule2);background:var(--surface);color:var(--muted);cursor:pointer;box-shadow:var(--shadow);font-family:var(--sans)}\n.theme-toggle:hover{color:var(--ink);border-color:var(--accent)}\n\n/* 1 — HEADER: date is the identity, venue is the subtitle */\n.masthead{border-bottom:2px solid var(--accent);padding-bottom:.9rem}\n.masthead .kicker{display:flex;align-items:center;gap:.55em;margin-bottom:.8rem}\n.masthead .mark{width:22px;height:22px;border-radius:6px;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;color:var(--on-accent);font-family:var(--mono);font-weight:800;font-size:.7rem}\n.mast-grid{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem}\nh1{margin:0;font-size:2.5rem;font-weight:800;line-height:1;letter-spacing:-.025em}\nh1 .dow{font-size:1rem;font-weight:600;color:var(--faint);letter-spacing:0;margin-left:.6rem;vertical-align:.35em}\n.venue-line{margin-top:.4rem;font-size:1rem;color:var(--ink);font-weight:600}\n.venue-line .place{color:var(--muted);font-weight:400}\n.show-meta{margin-top:.45rem;font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.35em .6em;align-items:center}\n.show-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--faint)}\n.netnum{font-family:var(--mono);font-weight:600;color:var(--accent-hi)}\n/* run nav — sibling nights */\n.runnav{display:flex;flex-direction:column;gap:.4rem;align-items:flex-end}\n.runnav .lbl{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}\n.run{display:flex;gap:3px;align-items:center}\n.run a,.run span.cur{display:inline-flex;flex-direction:column;align-items:center;min-width:2.5rem;padding:.3rem .35rem;border:1px solid var(--rule);border-radius:6px;background:var(--surface);font-family:var(--mono);font-size:.72rem;font-weight:600;color:var(--muted);line-height:1.15}\n.run a:hover{border-color:var(--accent);color:var(--accent-hi);text-decoration:none}\n.run span.cur{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}\n.run em{font-style:normal;font-size:.54rem;letter-spacing:.06em;text-transform:uppercase;font-family:var(--sans);opacity:.75}\n\nsection{margin:2rem 0}\nh2{font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-hi);display:flex;align-items:center;gap:.8em;margin:0 0 .9rem}\nh2 .line{flex:1;height:1px;background:var(--rule)}\nh2 .credit{font-weight:500;letter-spacing:.02em;text-transform:none;font-size:.7rem;color:var(--faint)}\nh2 .credit a{color:var(--muted);border-bottom:1px dotted var(--rule2)}\nh2 .credit a:hover{color:var(--accent-hi);text-decoration:none}\nh2.pickhead{color:var(--pick-hi)}\n\n/* 2 — VERDICT */\n.verdict-card{border:1px solid color-mix(in oklab,var(--pick) 45%,transparent);border-radius:12px;background:linear-gradient(160deg,color-mix(in oklab,var(--pick) 9%,transparent),transparent 55%),var(--surface);box-shadow:var(--shadow);overflow:hidden}\n.vc-top{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:1.6rem;padding:1.3rem 1.5rem}\n.vc-id .eyebrow{color:var(--pick-hi);margin-bottom:.35rem}\n.vc-id .lb{font-family:var(--mono);font-size:2rem;font-weight:700;line-height:1}\n.vc-id .lb a{color:var(--ink)}\n.vc-id .lb a:hover{color:var(--pick-hi);text-decoration:none}\n.vc-id .taper{margin-top:.5rem;font-size:.78rem;color:var(--muted)}\n.vc-id .taper b{color:var(--ink)}\n.vc-id .taper .tick{color:var(--pos);font-weight:700}\n.vc-id .get{display:inline-flex;align-items:center;gap:.4em;margin-top:.9rem;font-size:.72rem;font-weight:700;letter-spacing:.03em;background:var(--pick);color:var(--on-pick);border-radius:999px;padding:.45em 1em}\n.vc-id .get:hover{background:var(--pick-hi);text-decoration:none;color:var(--on-pick)}\n.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.1rem 1.4rem;align-self:start}\n.spec{display:flex;justify-content:space-between;gap:.8rem;align-items:baseline;padding:.34rem 0;border-bottom:1px dotted var(--rule2);font-size:.8rem;color:var(--muted)}\n.spec b{font-family:var(--mono);font-weight:600;color:var(--ink);text-align:right;font-size:.78rem}\n.spec b.none{color:var(--faint);font-weight:400}\n.spec b .g{color:var(--pos)}\n/* completeness bar */\n.cbar{display:inline-flex;align-items:center;gap:.45em}\n.cbar .track{width:48px;height:5px;border-radius:99px;background:var(--surface3);overflow:hidden}\n.cbar .track i{display:block;height:100%;background:var(--pos)}\n/* why-this row */\n.vc-why{border-top:1px solid var(--rule);padding:1rem 1.5rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;background:color-mix(in oklab,var(--surface2) 55%,transparent)}\n.why{font-size:.8rem;color:var(--muted)}\n.why .k{display:block;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:.3rem}\n.why b{color:var(--ink);font-weight:600}\n.why .lbref{font-family:var(--mono);font-size:.78rem}\n.why em{font-style:normal;color:var(--pos)}\n.why .neg{color:var(--neg)}\n/* score disclosure */\n.ledger-wrap{border-top:1px solid var(--rule)}\n.ledger-wrap summary{cursor:pointer;list-style:none;padding:.65rem 1.5rem;font-size:.72rem;font-weight:600;letter-spacing:.03em;color:var(--muted);display:flex;align-items:center;gap:.5em}\n.ledger-wrap summary::-webkit-details-marker{display:none}\n.ledger-wrap summary:hover{color:var(--ink)}\n.ledger-wrap summary .caret{font-family:var(--mono);color:var(--faint);font-size:.7rem}\n.ledger-wrap summary .tot{margin-left:auto;font-family:var(--mono);color:var(--pick-hi);font-weight:700}\n.ledger{list-style:none;margin:0;padding:0 1.5rem 1rem;font-size:.78rem;columns:2;column-gap:2rem}\n.ledger li{display:flex;justify-content:space-between;gap:1rem;padding:.24rem 0;border-bottom:1px dotted var(--rule2);color:var(--muted);break-inside:avoid}\n.ledger .pts{font-family:var(--mono);font-weight:600}\n.ledger .pts.pos{color:var(--pos)}\n.ledger .pts.neg{color:var(--neg)}\n\n/* 3 — SETLIST */\n.setwrap{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:1.6rem;align-items:start}\n.setlist{width:100%;border-collapse:collapse;font-size:.95rem}\n.setlist thead th{font-size:.58rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);text-align:left;padding:0 .6rem .45rem;border-bottom:1px solid var(--rule2)}\n.setlist td{padding:.4rem .6rem;border-bottom:1px solid var(--rule);vertical-align:baseline}\n.setlist tbody tr:hover td{background:color-mix(in oklab,var(--surface2) 60%,transparent)}\n.setlist .pos{font-family:var(--mono);font-size:.78rem;color:var(--faint);text-align:center;width:2.4em}\n.setlist .song{font-weight:600}\n.setlist .writ{display:block;font-size:.7rem;font-weight:400;color:var(--faint);margin-top:.05rem}\n.setlist .tags{text-align:right;white-space:nowrap;width:1%}\n.instr{display:inline-flex;align-items:center;gap:.3em;font-size:.66rem;color:var(--muted);border:1px solid var(--rule);border-radius:4px;padding:.06em .4em;margin-left:.3em;font-family:var(--mono)}\n.badge-new{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--pick-hi);border:1px solid color-mix(in oklab,var(--pick) 55%,transparent);border-radius:4px;padding:.1em .45em;margin-left:.3em}\n.setband td{background:var(--surface2)!important;border-bottom:1px solid var(--rule2);padding:.42rem .6rem!important}\n.setband .w{display:flex;align-items:center;gap:.6em;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}\n.setband .w i{flex:1;height:1px;background:var(--rule2);font-style:normal}\n/* show notes rail */\n.rail{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:1rem 1.05rem;box-shadow:var(--shadow)}\n.rail h3{margin:0 0 .6rem;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}\n.stat{padding:.5rem 0;border-bottom:1px solid var(--rule)}\n.stat:last-child{border-bottom:none;padding-bottom:0}\n.stat .n{font-family:var(--mono);font-size:1.25rem;font-weight:700;color:var(--ink);line-height:1}\n.stat .n small{font-size:.7rem;color:var(--faint);font-weight:600}\n.stat .d{font-size:.74rem;color:var(--muted);margin-top:.15rem;line-height:1.35}\n.rail .band{margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--rule);font-size:.76rem;color:var(--muted)}\n.rail .band .who{display:flex;justify-content:space-between;gap:.6rem;padding:.16rem 0}\n.rail .band .who b{color:var(--ink);font-weight:600}\n.rail .band .who span{font-size:.68rem;color:var(--faint);text-align:right;font-family:var(--mono)}\n\n/* 5 — SOURCES */\n.srcwrap{border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--surface)}\n.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}\n.sources{width:100%;border-collapse:collapse;font-size:.88rem;min-width:660px}\n.sources thead th{font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);text-align:left;padding:.6rem .55rem;border-bottom:1px solid var(--rule2);background:var(--surface2);white-space:nowrap}\n.sources th.c,.sources td.c{text-align:center}\n.sources td{padding:.5rem .55rem;border-bottom:1px solid var(--rule);vertical-align:middle}\n.sources tbody tr:hover td{background:color-mix(in oklab,var(--surface2) 45%,transparent)}\n.sources tr:last-child td{border-bottom:none}\n.sources .lb{font-family:var(--mono);font-weight:700;font-size:.9rem}\n.sources .lb a{color:var(--ink);border-bottom:1px dotted var(--rule2)}\n.sources .lb a:hover{color:var(--accent-hi);text-decoration:none}\n.sources .who{display:block;font-size:.68rem;color:var(--muted);margin-top:.1rem}\n.sources .who .tick{color:var(--pos)}\n.sources .rating{font-family:var(--mono);font-weight:600}\n.sources .len{font-family:var(--mono);font-size:.78rem;color:var(--muted);white-space:nowrap}\n.sources .fmt{font-family:var(--mono);font-size:.72rem;color:var(--muted);white-space:nowrap}\n.sources .fmt.unk{color:var(--faint)}\n.sources .character{font-size:.74rem;color:var(--muted);max-width:19rem;line-height:1.35}\n.sources tr.is-pick td{background:var(--pick-soft)}\n.sources tr.is-pick td:first-child{box-shadow:inset 3px 0 0 var(--pick)}\n.sources tr.is-pick:hover td{background:var(--pick-soft)}\n.pick-tag{font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--faint)}\n.pick-tag.one{color:var(--pick-hi)}\n.gen{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;border-radius:4px;padding:.1em .45em;white-space:nowrap}\n.gen.master{color:var(--pos);border:1px solid color-mix(in oklab,var(--pos) 45%,transparent)}\n.gen.lowgen{color:var(--info);border:1px solid color-mix(in oklab,var(--info) 45%,transparent)}\n.gen.silver{color:var(--warn);border:1px solid color-mix(in oklab,var(--warn) 45%,transparent)}\n.grade{font-family:var(--mono);font-size:.78rem;font-weight:700;white-space:nowrap}\n.grade.a{color:var(--pos)}.grade.b{color:var(--info)}.grade.c{color:var(--warn)}\n.grade small{font-weight:400;color:var(--faint);font-size:.66rem;margin-left:.25em}\n.flag{display:inline-block;font-size:.6rem;color:var(--warn);border:1px solid color-mix(in oklab,var(--warn) 45%,transparent);border-radius:4px;padding:.05em .4em;margin-top:.2rem}\n/* family banding — only for real families */\n.famband td{background:var(--surface2)!important;padding:.4rem .6rem!important;border-bottom:1px solid var(--rule2)}\n.famband .w{display:flex;align-items:center;gap:.6em;flex-wrap:wrap;font-size:.68rem;color:var(--muted)}\n.famband b{color:var(--ink);font-size:.72rem}\n.famband .conf{margin-left:auto;font-family:var(--mono);font-size:.66rem;display:inline-flex;align-items:center;gap:.5em}\n.famband .conf .track{width:56px;height:5px;border-radius:99px;background:var(--surface3);overflow:hidden}\n.famband .conf .track i{display:block;height:100%;background:var(--warn)}\n.famband .lowconf{color:var(--warn);border:1px solid color-mix(in oklab,var(--warn) 45%,transparent);border-radius:4px;padding:.05em .4em;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em}\n.more{border-top:1px solid var(--rule)}\n.more summary{cursor:pointer;list-style:none;padding:.7rem 1rem;font-size:.75rem;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:.5em;background:color-mix(in oklab,var(--surface2) 45%,transparent)}\n.more summary::-webkit-details-marker{display:none}\n.more summary:hover{color:var(--ink)}\n.more summary .caret{font-family:var(--mono);color:var(--faint)}\n.more summary .hint{margin-left:auto;font-weight:400;color:var(--faint);font-size:.7rem}\n.lineage-note{padding:.7rem 1rem;font-size:.7rem;color:var(--faint);border-top:1px solid var(--rule);font-family:var(--mono);line-height:1.5}\n\n/* 4 — CONTEXT */\n.ctx{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:1.6rem;align-items:start}\n.ctx-prose p{margin:0 0 .8rem;font-size:.96rem;font-family:var(--serif);color:var(--ink)}\n.ctx-prose .label{font-family:var(--sans);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);display:block;margin-bottom:.15rem}\n.novox{font-family:var(--sans)!important;font-size:.8rem!important;color:var(--faint)!important;border:1px dashed var(--rule2);border-radius:8px;padding:.7rem .9rem}\n.loc-card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}\n.loc-card .strip{height:6px;background:linear-gradient(90deg,var(--accent),color-mix(in oklab,var(--accent) 25%,transparent))}\n.loc-meta{padding:.8rem .9rem;font-size:.78rem;color:var(--muted)}\n.loc-meta .venue{color:var(--ink);font-weight:600;font-size:.88rem}\n.loc-meta .coord{font-family:var(--mono);font-size:.7rem;color:var(--faint);margin-top:.45rem;padding-top:.45rem;border-top:1px solid var(--rule)}\n.loc-meta .runs{margin-top:.5rem;font-size:.74rem;line-height:1.5}\n.loc-meta .runs b{color:var(--ink)}\n\n/* 6 — RELATED */\n.rel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}\n.rel .col{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:.9rem 1.05rem;box-shadow:var(--shadow)}\n.rel h3{margin:0 0 .55rem;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}\n.venue-hist{list-style:none;margin:0;padding:0;font-size:.8rem;columns:2;column-gap:1.2rem}\n.venue-hist li{padding:.12rem 0;color:var(--muted);break-inside:avoid;display:flex;gap:.5em}\n.venue-hist li .yr{font-family:var(--mono);color:var(--faint);font-size:.74rem;min-width:2.6em}\n.venue-hist li b{font-weight:600;color:var(--ink)}\n.xlinks{display:grid;gap:.4rem}\n.xlinks a{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;padding:.4rem .6rem;border:1px solid var(--rule);border-radius:7px;font-size:.8rem;color:var(--ink);background:color-mix(in oklab,var(--surface2) 40%,transparent)}\n.xlinks a:hover{border-color:var(--accent);text-decoration:none;color:var(--accent-hi)}\n.xlinks a span{font-family:var(--mono);font-size:.66rem;color:var(--faint)}\n\nfooter.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule);font-size:.7rem;color:var(--faint)}\n.prov .credits{margin:0 0 .55rem;line-height:1.7;max-width:70ch}\n.prov .credits a{color:var(--muted);border-bottom:1px dotted var(--rule2)}\n.prov .credits a:hover{color:var(--accent-hi);text-decoration:none}\n.prov .meta{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;align-items:center}\n.prov .tag{text-transform:uppercase;letter-spacing:.05em;border:1px solid var(--rule2);border-radius:4px;padding:.1em .45em}\n\n@media(max-width:860px){\n.vc-top{grid-template-columns:1fr}\n.setwrap,.ctx{grid-template-columns:1fr}\n.vc-why{grid-template-columns:1fr;gap:.9rem}\n.rel{grid-template-columns:1fr}\n.ledger{columns:1}\n}\n@media(max-width:720px){\nbody{padding:3.2rem .9rem 2rem}\nh1{font-size:1.9rem}\n.mast-grid{flex-direction:column;align-items:flex-start}\n.runnav{align-items:flex-start}\n.specs{grid-template-columns:1fr}\n.venue-hist{columns:1}\n}\n@media print{\nhtml[data-theme=\"dark\"]{--bg:#fff;--surface:#fff;--surface2:#eef3fa;--surface3:#dfe8f4;--ink:#13203a;--muted:#3f547a;--faint:#6f83a6;--rule:#c2d4ec;--rule2:#9bb9e0;--accent:#2b5fd0;--accent-hi:#1f4baa;--accent-soft:#e3ebf8;--on-accent:#fff;--pick:#8a5c00;--pick-hi:#6b4700;--pick-soft:#fbf3e2;--on-pick:#fff;--pos:#1f7a3e;--neg:#b03f30;--warn:#8a5c00;--info:#1f5b8f;--shadow:none}\nhtml,body{background:#fff}\nbody{padding:0;font-size:10.5pt}\n.page{max-width:none}\n.theme-toggle,.runnav{display:none}\nsection{margin:1.1rem 0;break-inside:avoid}\ndetails{open:open}\n.more summary,.ledger-wrap summary{display:none}\n.ledger,.more>div{display:block!important}\n@page{margin:14mm}\n}\n<\u002Fstyle>\n<\u002Fhead>\n<body>\n\n<button class=\"theme-toggle\" id=\"themeToggle\" aria-label=\"Toggle light mode\"><span id=\"themeIcon\">☀<\u002Fspan> <span id=\"themeLabel\">Light<\u002Fspan><\u002Fbutton>\n<div class=\"page\">\n\n<header class=\"masthead\">\n<div class=\"kicker\"><span class=\"mark\">LB<\u002Fspan><span class=\"eyebrow\">LosslessBob · Show Dossier<\u002Fspan><\u002Fdiv>\n<div class=\"mast-grid\">\n<div>\n<h1>29 March 2010<span class=\"dow\">Monday<\u002Fspan><\u002Fh1>\n<div class=\"venue-line\">Zepp Tokyo <span class=\"place\">· Tokyo, Japan<\u002Fspan><\u002Fdiv>\n<div class=\"show-meta\"><span>Never Ending Tour<\u002Fspan><span class=\"dot\"><\u002Fspan><span class=\"netnum\">NET #2217<\u002Fspan><span class=\"dot\"><\u002Fspan><span>2010 concert #14<\u002Fspan><span class=\"dot\"><\u002Fspan><span>concert #47 with the 21st NET band<\u002Fspan><\u002Fdiv>\n<\u002Fdiv>\n<div class=\"runnav\">\n<div class=\"lbl\">Zepp Tokyo run · night 7 of 7<\u002Fdiv>\n<div class=\"run\">\n<a href=\"#\" title=\"21 March 2010\">21<em>Mar<\u002Fem><\u002Fa>\n<a href=\"#\" title=\"23 March 2010\">23<em>Mar<\u002Fem><\u002Fa>\n<a href=\"#\" title=\"24 March 2010\">24<em>Mar<\u002Fem><\u002Fa>\n<a href=\"#\" title=\"25 March 2010\">25<em>Mar<\u002Fem><\u002Fa>\n<a href=\"#\" title=\"26 March 2010\">26<em>Mar<\u002Fem><\u002Fa>\n<a href=\"#\" title=\"28 March 2010\">28<em>Mar<\u002Fem><\u002Fa>\n<span class=\"cur\">29<em>Mar<\u002Fem><\u002Fspan>\n<\u002Fdiv>\n<\u002Fdiv>\n<\u002Fdiv>\n<\u002Fheader>\n\n<section>\n<h2 class=\"pickhead\"><span>The copy to get<\u002Fspan><span class=\"line\"><\u002Fspan><span class=\"credit\">pick engine · local analysis<\u002Fspan><\u002Fh2>\n<div class=\"verdict-card\">\n<div class=\"vc-top\">\n<div class=\"vc-id\">\n<div class=\"eyebrow\">Best available transfer<\u002Fdiv>\n<div class=\"lb\"><a href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08485.html\" target=\"_blank\" rel=\"noopener\">LB-08485<\u002Fa><\u002Fdiv>\n<div class=\"taper\">Taped by <b>hide<\u002Fb> <span class=\"tick\" title=\"Taper confirmed in catalog metadata\">✓<\u002Fspan><br>Audience master · DPA 4061 → MMA6000 → Edirol R-09HR<\u002Fdiv>\n<a class=\"get\" href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08485.html\" target=\"_blank\" rel=\"noopener\">View on LosslessBob ↗<\u002Fa>\n<\u002Fdiv>\n<div class=\"specs\">\n<div class=\"spec\"><span>LB rating<\u002Fspan><b>A<\u002Fb><\u002Fdiv>\n<div class=\"spec\"><span>Scanned quality<\u002Fspan><b><span class=\"g\">A−<\u002Fspan> 84/100<\u002Fb><\u002Fdiv>\n<div class=\"spec\"><span>Resolution<\u002Fspan><b>24-bit / 96 kHz<\u002Fb><\u002Fdiv>\n<div class=\"spec\"><span>Generation<\u002Fspan><b>Master<\u002Fb><\u002Fdiv>\n<div class=\"spec\"><span>Running time<\u002Fspan><b>126 min · 80 + 46<\u002Fb><\u002Fdiv>\n<div class=\"spec\"><span>Completeness<\u002Fspan><b><span class=\"cbar\"><span class=\"track\"><i style=\"width:100%\"><\u002Fi><\u002Fspan>18 / 18<\u002Fspan><\u002Fb><\u002Fdiv>\n<div class=\"spec\"><span>Curated in<\u002Fspan><b>10haaf's picks<\u002Fb><\u002Fdiv>\n<div class=\"spec\"><span>Official release<\u002Fspan><b class=\"none\">none indexed<\u002Fb><\u002Fdiv>\n<\u002Fdiv>\n<\u002Fdiv>\n<div class=\"vc-why\">\n<div class=\"why\"><span class=\"k\">Why this one<\u002Fspan>Highest LB rating on the show (<b>A<\u002Fb>), the only <b>24/96<\u002Fb> transfer in circulation, and the only one from a <b>confirmed taper<\u002Fb> with a high median rating. Character: <em>clean, present vocals<\u002Fem>.<\u002Fdiv>\n<div class=\"why\"><span class=\"k\">vs. runner-up LB-08476<\u002Fspan>Same LB rating; <b>romeo<\u002Fb>'s Neumann km140 pull scans 5 points lower (<b>B+ 79<\u002Fb>) and reads <span class=\"neg\">distant / recessed<\u002Fspan>. Half-set split differs (74 + 51).<\u002Fdiv>\n<div class=\"why\"><span class=\"k\">Take a different copy if…<\u002Fspan><b class=\"lbref\">LB-08637<\u002Fb> — you want the best raw scan on the show (<em>A 90/100<\u002Fem>, bright / airy) and don't mind unknown lineage. <b class=\"lbref\">LB-08493<\u002Fb> — you prefer a smaller 16/44.1 file set.<\u002Fdiv>\n<\u002Fdiv>\n<details class=\"ledger-wrap\">\n<summary><span class=\"caret\">▸<\u002Fspan> How the composite score was built <span class=\"tot\">105.8<\u002Fspan><\u002Fsummary>\n<ul class=\"ledger\">\n<li><span>LB rating A<\u002Fspan><span class=\"pts pos\">+91.7<\u002Fspan><\u002Fli>\n<li><span>Curated in 10haaf's picks<\u002Fspan><span class=\"pts pos\">+8.0<\u002Fspan><\u002Fli>\n<li><span>Best transfer in its family<\u002Fspan><span class=\"pts pos\">+5.0<\u002Fspan><\u002Fli>\n<li><span>Confirmed taper 'hide' (high median)<\u002Fspan><span class=\"pts pos\">+3.0<\u002Fspan><\u002Fli>\n<li><span>Scanned quality 84/100<\u002Fspan><span class=\"pts neg\">−1.9<\u002Fspan><\u002Fli>\n<\u002Ful>\n<\u002Fdetails>\n<\u002Fdiv>\n<\u002Fsection>\n\n<section>\n<h2><span>Setlist · 18 songs<\u002Fspan><span class=\"line\"><\u002Fspan><span class=\"credit\">source: <a href=\"https://www.bobserve.com/olof/DSN31870%20-%202010%20Tour%20Of%20Japan.htm\" target=\"_blank\" rel=\"noopener\">Olof Björner, <em>Still on the Road<\u002Fem><\u002Fa> ↗<\u002Fspan><\u002Fh2>\n<div class=\"setwrap\">\n<table class=\"setlist\">\n<thead><tr><th class=\"pos\">#<\u002Fth><th>Song<\u002Fth><th class=\"tags\">Notes<\u002Fth><\u002Ftr><\u002Fthead>\n<tbody>\n<tr class=\"setband\"><td colspan=\"3\"><div class=\"w\">Main set<i><\u002Fi>14 songs<\u002Fdiv><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">1<\u002Ftd><td><span class=\"song\">Rainy Day Women # 12 &amp; 35<\u002Fspan><\u002Ftd><td class=\"tags\"><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">2<\u002Ftd><td><span class=\"song\">It's All Over Now, Baby Blue<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"instr\">guitar<\u002Fspan><span class=\"instr\">harp<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">3<\u002Ftd><td><span class=\"song\">Most Likely You Go Your Way (And I'll Go Mine)<\u002Fspan><\u002Ftd><td class=\"tags\"><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">4<\u002Ftd><td><span class=\"song\">My Wife's Home Town<\u002Fspan><span class=\"writ\">Dylan–Hunter / Willie Dixon &amp; Dylan<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"instr\">harp<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">5<\u002Ftd><td><span class=\"song\">I Don't Believe You (She Acts Like We Never Have Met)<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"instr\">harp<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">6<\u002Ftd><td><span class=\"song\">Spirit On The Water<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"instr\">harp<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">7<\u002Ftd><td><span class=\"song\">Cold Irons Bound<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"instr\">harp<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">8<\u002Ftd><td><span class=\"song\">Desolation Row<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"instr\">Herron: mandolin<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">9<\u002Ftd><td><span class=\"song\">The Levee's Gonna Break<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"instr\">Herron: mandolin<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">10<\u002Ftd><td><span class=\"song\">When The Deal Goes Down<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"instr\">harp<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">11<\u002Ftd><td><span class=\"song\">Highway 61 Revisited<\u002Fspan><\u002Ftd><td class=\"tags\"><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">12<\u002Ftd><td><span class=\"song\">Can't Wait<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"instr\">Herron: mandolin<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">13<\u002Ftd><td><span class=\"song\">Thunder On The Mountain<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"badge-new\">new to tour<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">14<\u002Ftd><td><span class=\"song\">Forever Young<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"instr\">harp<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr class=\"setband\"><td colspan=\"3\"><div class=\"w\">Encore<i><\u002Fi>4 songs<\u002Fdiv><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">15<\u002Ftd><td><span class=\"song\">Like A Rolling Stone<\u002Fspan><\u002Ftd><td class=\"tags\"><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">16<\u002Ftd><td><span class=\"song\">Jolene<\u002Fspan><span class=\"writ\">Dylan–Hunter<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"badge-new\">new to tour<\u002Fspan><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">17<\u002Ftd><td><span class=\"song\">All Along The Watchtower<\u002Fspan><\u002Ftd><td class=\"tags\"><\u002Ftd><\u002Ftr>\n<tr><td class=\"pos\">18<\u002Ftd><td><span class=\"song\">Blowin' In The Wind<\u002Fspan><\u002Ftd><td class=\"tags\"><span class=\"instr\">Herron: violin<\u002Fspan><span class=\"instr\">harp<\u002Fspan><\u002Ftd><\u002Ftr>\n<\u002Ftbody>\n<\u002Ftable>\n<aside class=\"rail\">\n<h3>What was different about this night<\u002Fh3>\n<div class=\"stat\"><div class=\"n\">13 <small>/ 18<\u002Fsmall><\u002Fdiv><div class=\"d\">songs changed (72%) from the previous night, 28 March — the biggest rotation of the Japan run.<\u002Fdiv><\u002Fdiv>\n<div class=\"stat\"><div class=\"n\">2<\u002Fdiv><div class=\"d\">tour premieres: <b>Thunder On The Mountain<\u002Fb>, <b>Jolene<\u002Fb>.<\u002Fdiv><\u002Fdiv>\n<div class=\"stat\"><div class=\"n\">8 <small>× harp<\u002Fsmall><\u002Fdiv><div class=\"d\">Dylan on harmonica in 8 of 18; keyboard otherwise, guitar only on <em>Baby Blue<\u002Fem>.<\u002Fdiv><\u002Fdiv>\n<div class=\"band\">\n<h3 style=\"margin-bottom:.4rem\">21st NET band<\u002Fh3>\n<div class=\"who\"><b>Bob Dylan<\u002Fb><span>vocal, keyboard<\u002Fspan><\u002Fdiv>\n<div class=\"who\"><b>Charlie Sexton<\u002Fb><span>guitar<\u002Fspan><\u002Fdiv>\n<div class=\"who\"><b>Stu Kimball<\u002Fb><span>guitar<\u002Fspan><\u002Fdiv>\n<div class=\"who\"><b>Donnie Herron<\u002Fb><span>violin, mandolin, steel<\u002Fspan><\u002Fdiv>\n<div class=\"who\"><b>Tony Garnier<\u002Fb><span>bass<\u002Fspan><\u002Fdiv>\n<div class=\"who\"><b>George Recile<\u002Fb><span>drums, percussion<\u002Fspan><\u002Fdiv>\n<\u002Fdiv>\n<\u002Faside>\n<\u002Fdiv>\n<\u002Fsection>\n\n<section>\n<h2><span>Circulating sources · 9<\u002Fspan><span class=\"line\"><\u002Fspan><span class=\"credit\">catalog: <a href=\"http://www.losslessbob.wonderingwhattochoose.com\" target=\"_blank\" rel=\"noopener\">LosslessBob<\u002Fa> ↗ · 8 independent tapes<\u002Fspan><\u002Fh2>\n<div class=\"srcwrap\">\n<div class=\"tbl-scroll\">\n<table class=\"sources\">\n<thead><tr><th>Source<\u002Fth><th class=\"c\">LB<\u002Fth><th class=\"c\">Scan<\u002Fth><th class=\"c\">Length<\u002Fth><th class=\"c\">Format<\u002Fth><th>Character<\u002Fth><th class=\"c\">Rank<\u002Fth><\u002Ftr><\u002Fthead>\n<tbody>\n<tr class=\"is-pick\">\n<td><span class=\"lb\"><a href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08485.html\" target=\"_blank\" rel=\"noopener\">LB-08485<\u002Fa><\u002Fspan><span class=\"who\">hide <span class=\"tick\">✓<\u002Fspan> · <span class=\"gen master\">master<\u002Fspan><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"rating\">A<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"grade a\">A−<small>84<\u002Fsmall><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"len\">126m<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"fmt\">24/96<\u002Fspan><\u002Ftd>\n<td class=\"character\">Clean, present vocals.<\u002Ftd>\n<td class=\"c\"><span class=\"pick-tag one\">★ 1<\u002Fspan><\u002Ftd>\n<\u002Ftr>\n<tr>\n<td><span class=\"lb\"><a href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08476.html\" target=\"_blank\" rel=\"noopener\">LB-08476<\u002Fa><\u002Fspan><span class=\"who\">romeo <span class=\"tick\">✓<\u002Fspan> · <span class=\"gen master\">master<\u002Fspan><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"rating\">A<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"grade b\">B+<small>79<\u002Fsmall><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"len\">125m<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"fmt unk\">—<\u002Fspan><\u002Ftd>\n<td class=\"character\">Clean; distant / recessed vocals.<\u002Ftd>\n<td class=\"c\"><span class=\"pick-tag\">2<\u002Fspan><\u002Ftd>\n<\u002Ftr>\n<tr>\n<td><span class=\"lb\"><a href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08637.html\" target=\"_blank\" rel=\"noopener\">LB-08637<\u002Fa><\u002Fspan><span class=\"who\">taper unknown<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"rating\">A<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"grade a\">A<small>90<\u002Fsmall><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"len\">128m<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"fmt unk\">—<\u002Fspan><\u002Ftd>\n<td class=\"character\">Bright / airy, clean, present vocals. <span class=\"flag\">no lineage on file<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"pick-tag\">3<\u002Fspan><\u002Ftd>\n<\u002Ftr>\n<tr>\n<td><span class=\"lb\"><a href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08493.html\" target=\"_blank\" rel=\"noopener\">LB-08493<\u002Fa><\u002Fspan><span class=\"who\">mike millard (propagated) · <span class=\"gen lowgen\">low gen<\u002Fspan><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"rating\">A<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"grade a\">A<small>88<\u002Fsmall><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"len\">123m<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"fmt\">16/44.1<\u002Fspan><\u002Ftd>\n<td class=\"character\">Clean, slightly recessed.<\u002Ftd>\n<td class=\"c\"><span class=\"pick-tag\">4<\u002Fspan><\u002Ftd>\n<\u002Ftr>\n<\u002Ftbody>\n<\u002Ftable>\n<\u002Fdiv>\n<details class=\"more\">\n<summary><span class=\"caret\">▸<\u002Fspan> 5 more sources <span class=\"hint\">B+ and below · includes one silver-disc bootleg<\u002Fspan><\u002Fsummary>\n<div class=\"tbl-scroll\">\n<table class=\"sources\">\n<tbody>\n<tr>\n<td><span class=\"lb\"><a href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08481.html\" target=\"_blank\" rel=\"noopener\">LB-08481<\u002Fa><\u002Fspan><span class=\"who\">taper unknown<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"rating\">A−<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"grade a\">A−<small>82<\u002Fsmall><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"len\">126m<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"fmt unk\">—<\u002Fspan><\u002Ftd>\n<td class=\"character\">Some crowd, a little forward, present vocals.<\u002Ftd>\n<td class=\"c\"><span class=\"pick-tag\">5<\u002Fspan><\u002Ftd>\n<\u002Ftr>\n<tr>\n<td><span class=\"lb\"><a href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08477.html\" target=\"_blank\" rel=\"noopener\">LB-08477<\u002Fa><\u002Fspan><span class=\"who\">taper unknown<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"rating\">B+<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"grade b\">B+<small>79<\u002Fsmall><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"len\">126m<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"fmt unk\">—<\u002Fspan><\u002Ftd>\n<td class=\"character\">Clean, very quiet, slightly muddy / recessed.<\u002Ftd>\n<td class=\"c\"><span class=\"pick-tag\">7<\u002Fspan><\u002Ftd>\n<\u002Ftr>\n<tr>\n<td><span class=\"lb\"><a href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08490.html\" target=\"_blank\" rel=\"noopener\">LB-08490<\u002Fa><\u002Fspan><span class=\"who\">taper unknown<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"rating\">B+<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"grade b\">B+<small>77<\u002Fsmall><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"len\">125m<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"fmt unk\">—<\u002Fspan><\u002Ftd>\n<td class=\"character\">Clean, slightly muddy, present vocals.<\u002Ftd>\n<td class=\"c\"><span class=\"pick-tag\">8<\u002Fspan><\u002Ftd>\n<\u002Ftr>\n<tr class=\"famband\"><td colspan=\"7\"><div class=\"w\"><b>oscar's tape · 2 transfers<\u002Fb><span>same master, one is a silver-disc reissue<\u002Fspan><span class=\"lowconf\">low confidence<\u002Fspan><span class=\"conf\"><span class=\"track\"><i style=\"width:4%\"><\u002Fi><\u002Fspan>4% match<\u002Fspan><\u002Fdiv><\u002Ftd><\u002Ftr>\n<tr>\n<td><span class=\"lb\"><a href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08537.html\" target=\"_blank\" rel=\"noopener\">LB-08537<\u002Fa><\u002Fspan><span class=\"who\">oscar <span class=\"tick\">✓<\u002Fspan> · <span class=\"gen master\">master<\u002Fspan> · best of 2<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"rating\">B+<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"grade b\">B+<small>79<\u002Fsmall><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"len\">123m<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"fmt unk\">—<\u002Fspan><\u002Ftd>\n<td class=\"character\">Thin / bass-light, clean, very quiet, slightly recessed.<\u002Ftd>\n<td class=\"c\"><span class=\"pick-tag\">6<\u002Fspan><\u002Ftd>\n<\u002Ftr>\n<tr>\n<td><span class=\"lb\"><a href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-15005.html\" target=\"_blank\" rel=\"noopener\">LB-15005<\u002Fa><\u002Fspan><span class=\"who\">oscar (propagated) · <span class=\"gen silver\">silver disc<\u002Fspan><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"rating\" style=\"color:var(--faint)\">—<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"grade a\">A−<small>82<\u002Fsmall><\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"len\">126m<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"fmt unk\">—<\u002Fspan><\u002Ftd>\n<td class=\"character\">Clean, very forward vocals. <span class=\"flag\">audible mains hum<\u002Fspan><br><span style=\"font-size:.68rem;color:var(--faint)\">Xavel Silver Masterpiece Series-016 · silver CDs → EAC<\u002Fspan><\u002Ftd>\n<td class=\"c\"><span class=\"pick-tag\">9<\u002Fspan><\u002Ftd>\n<\u002Ftr>\n<\u002Ftbody>\n<\u002Ftable>\n<\u002Fdiv>\n<\u002Fdetails>\n<div class=\"lineage-note\">Lineages on file — 08485: DPA 4061 &gt; MMA6000 &gt; Edirol R-09HR (24/96) · 08476: Neumann km140 &gt; Denecke PS-2 &gt; Marantz PMD661 · 08493: SP-CMC-8 &gt; MM-EBM-1 &gt; MicroTrack 24/96 (16/44.1) · 08477: Sony ECM-MS907 &gt; Edirol R-09 &gt; Goldwave &gt; FLAC · 08490: Audio-Technica AT9900 · 15005: silver CDs &gt; EAC<\u002Fdiv>\n<\u002Fdiv>\n<\u002Fsection>\n\n<section>\n<h2><span>Context<\u002Fspan><span class=\"line\"><\u002Fspan><span class=\"credit\">source: <a href=\"https://www.bobserve.com/olof/DSN31870%20-%202010%20Tour%20Of%20Japan.htm\" target=\"_blank\" rel=\"noopener\">Olof Björner, <em>Still on the Road<\u002Fem><\u002Fa> ↗<\u002Fspan><\u002Fh2>\n<div class=\"ctx\">\n<div class=\"ctx-prose\">\n<p><span class=\"label\">Chronicle<\u002Fspan>Final night of a seven-show stand at Zepp Tokyo, closing the 2010 Tour of Japan — the fourteenth concert of 2010 and the 47th with the 21st Never-Ending Tour band.<\u002Fp>\n<p class=\"novox\">No bobtalk recorded for this show in the chronicle. Where stage patter exists it appears here, attributed to the song it precedes.<\u002Fp>\n<\u002Fdiv>\n<div class=\"loc-card\">\n<div class=\"strip\"><\u002Fdiv>\n<div class=\"loc-meta\">\n<div class=\"venue\">Zepp Tokyo<\u002Fdiv>\n<div>Odaiba, Tokyo · Japan<\u002Fdiv>\n<div class=\"runs\"><b>7 nights<\u002Fb> here in March 2010 · <b>9 shows<\u002Fb> at Zepp DiverCity in 2014 · <b>45 Tokyo shows<\u002Fb> since 1978<\u002Fdiv>\n<div class=\"coord\">35.6900, <a href=\"tel:139.6920\">139.6920<\u002Fa> · setlist.fm<\u002Fdiv>\n<\u002Fdiv>\n<\u002Fdiv>\n<\u002Fdiv>\n<\u002Fsection>\n\n<section>\n<h2><span>This show elsewhere<\u002Fspan><span class=\"line\"><\u002Fspan><\u002Fh2>\n<div class=\"rel\">\n<div class=\"col\">\n<h3>Dylan in Tokyo · 45 shows<\u002Fh3>\n<ul class=\"venue-hist\">\n<li><span class=\"yr\">1978<\u002Fspan><b>Nippon Budokan<\u002Fb> × 8<\u002Fli>\n<li><span class=\"yr\">1986<\u002Fspan><b>Nippon Budokan<\u002Fb> × 2<\u002Fli>\n<li><span class=\"yr\">1994<\u002Fspan><b>Nippon Budokan<\u002Fb> × 3<\u002Fli>\n<li><span class=\"yr\">1997<\u002Fspan><b>Tokyo Int'l Forum<\u002Fb> × 3<\u002Fli>\n<li><span class=\"yr\">2001<\u002Fspan><b>Forum ×2 / Budokan ×1<\u002Fb><\u002Fli>\n<li><span class=\"yr\">2010<\u002Fspan><b>Zepp Tokyo<\u002Fb> × 7<\u002Fli>\n<li><span class=\"yr\">2014<\u002Fspan><b>Zepp DiverCity<\u002Fb> × 9<\u002Fli>\n<li><span class=\"yr\">2016<\u002Fspan><b>Bunkamura ×9 / Dome City ×1<\u002Fb><\u002Fli>\n<\u002Ful>\n<\u002Fdiv>\n<div class=\"col\">\n<h3>Cross-reference<\u002Fh3>\n<div class=\"xlinks\">\n<a href=\"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08485.html\" target=\"_blank\" rel=\"noopener\">LosslessBob — recommended copy <span>LB-08485 ↗<\u002Fspan><\u002Fa>\n<a href=\"https://www.bobserve.com/olof/DSN31870%20-%202010%20Tour%20Of%20Japan.htm\" target=\"_blank\" rel=\"noopener\">Olof's Files · Still on the Road <span>DSN31870 ↗<\u002Fspan><\u002Fa>\n<a href=\"https://boblinks.com/032910s.html\" target=\"_blank\" rel=\"noopener\">Bob Links — setlist &amp; reviews <span>032910s ↗<\u002Fspan><\u002Fa>\n<a href=\"https://bobserve.com/eventsperiod?period=2010\" target=\"_blank\" rel=\"noopener\">Bobserve — 2010 statistics <span>events ↗<\u002Fspan><\u002Fa>\n<a href=\"https://www.bobserve.com/olof/DSN31870%20-%202010%20Tour%20Of%20Japan.htm\" target=\"_blank\" rel=\"noopener\">Tokyo show history — full list <span>chronicle ↗<\u002Fspan><\u002Fa>\n<\u002Fdiv>\n<\u002Fdiv>\n<\u002Fdiv>\n<\u002Fsection>\n\n<footer class=\"prov\">\n<p class=\"credits\">Setlist, chronicle, lineup &amp; bobtalk from <a href=\"https://www.bobserve.com/olof/DSN31870%20-%202010%20Tour%20Of%20Japan.htm\" target=\"_blank\" rel=\"noopener\">Olof Björner's <em>Still on the Road<\u002Fem><\u002Fa> (bjorner.com). Recording catalog, ratings &amp; lineage from <a href=\"http://www.losslessbob.wonderingwhattochoose.com\" target=\"_blank\" rel=\"noopener\">LosslessBob<\u002Fa>. Venue coordinates &amp; tour names via <a href=\"https://www.setlist.fm\" target=\"_blank\" rel=\"noopener\">setlist.fm<\u002Fa>. Performance statistics via <a href=\"https://bobserve.com/eventsperiod?period=2010\" target=\"_blank\" rel=\"noopener\">Bobserve<\u002Fa>. Scanned quality grades, generation tags, completeness, tape-family grouping &amp; pick ranking are local analysis by this install.<\u002Fp>\n<div class=\"meta\"><span>Generated 2026-09-09T21:50:32<\u002Fspan><span>Master 2026-08-20_003101<\u002Fspan><span>Channel: full<\u002Fspan><span class=\"tag\">Includes local analysis (this install)<\u002Fspan><span class=\"tag\">Layout: redesign mock<\u002Fspan><\u002Fdiv>\n<\u002Ffooter>\n\n<\u002Fdiv>\n<script>\n(function(){\nvar root=document.documentElement,btn=document.getElementById('themeToggle'),lbl=document.getElementById('themeLabel'),ic=document.getElementById('themeIcon');\nfunction set(t){root.setAttribute('data-theme',t);try{localStorage.setItem('lb-dossier-theme',t)}catch(e){}lbl.textContent=t==='dark'?'Light':'Dark';ic.textContent=t==='dark'?'☀':'◐';}\ntry{var s=localStorage.getItem('lb-dossier-theme');if(s)set(s);}catch(e){}\nbtn.addEventListener('click',function(){set(root.getAttribute('data-theme')==='dark'?'light':'dark')});\ndocument.querySelectorAll('details').forEach(function(d){d.addEventListener('toggle',function(){var c=d.querySelector('.caret');if(c)c.textContent=d.open?'▾':'▸'})});\n})();\n<\u002Fscript>\n\n\n<\u002Fbody><\u002Fhtml>"
+  </script>
+</body>
+</html>
