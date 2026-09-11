@@ -1,3 +1,14 @@
+[2026-09-10] — Show dossier redesign opens: ledger and branch (dossier C00)
+Added: TODO.md: TODO-342 tracks the redesign (spec Rev A) across plan chunks C00–C35.
+Added: BUGS.md: the Phase 0 bugs — BUG-340 guest-set headers stop the Olof song walk, BUG-341
+  venue-history date lines and the rotation stat stored as song notes, BUG-342 subtitles stored as
+  credits, BUG-343 dossier HTML is 37% blank lines, BUG-344 taper propagation by bare mention and
+  through weak families, BUG-345 stale picks and global-MAX(scan_id) grades, BUG-346 NULL-date
+  bucket in show picks.
+Changed: instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: C00 marked done with the IDs; branch
+  feat/dossier-redesign is cut from todo-312 @ 08493b2f rather than main, which lacks the plan and
+  the TUIT tables the plan relies on; BUG-337 noted as overlapping the Phase 1 parser work.
+
 [2026-09-08] — --limit governs the WTRF board walk instead of losing to --pages
 Fixed: tools/wtrf_seed_board.py, backend/wtrf_board.py: `--limit N` on its own stopped after the
   single default page, so a run asking for 40 attempts got at most one page of topics — and on a
