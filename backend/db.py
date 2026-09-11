@@ -868,7 +868,7 @@ CREATE TABLE IF NOT EXISTS olof_songs (
     take_number  INTEGER,                    -- studio rows only
     take_status  TEXT NOT NULL DEFAULT '',   -- complete | breakdown | rehearsal | false start | incomplete
     annotations  TEXT NOT NULL DEFAULT '',   -- 'acoustic w band', 'harmonica', …
-    released_on  TEXT NOT NULL DEFAULT '',   -- release titles resolved from position ranges, '; '-joined
+    released_on  TEXT NOT NULL DEFAULT '',   -- release titles resolved from position ranges, '; '-joined; '(part) ' / '(uncertain) ' prefixes
     subtitle     TEXT NOT NULL DEFAULT '',   -- parenthetical alternate title, not a credit (TODO-342)
     PRIMARY KEY (event_id, position)
 );

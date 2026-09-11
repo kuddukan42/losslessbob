@@ -76,7 +76,9 @@ def _strip_stat(text: str) -> str:
 
 # Wording P1f strips from a release token: 'and part of 22 released on X' → 'X'.
 _RELEASE_PREFIX_RE = re.compile(
-    r"^(?:and\s+)?(?:part\s+of\s+\d+\s+)?(?:(?:released|available)\s+(?:on|in|as)\s+)?",
+    r"^(?:\((?:part|uncertain)\)\s*)*"
+    r"(?:(?:,\s*(?:and|or)?|and|or)\s*(?:part\s+of\s+)?\d+(?:\s*-\s*\d+)?\s*)*"
+    r"(?:(?:partly|fragments?)\s+)?(?:(?:released|available)\s+(?:on|in|as|from)\s+)?",
     re.IGNORECASE,
 )
 _WORD_RE = re.compile(r"[^\W_]+")
@@ -212,10 +214,13 @@ def _explain_song(d: EventDiff, pos: int, old: dict, new: dict, context: str,
             d.problems.append(f"song {pos}: title/credits text changed, not just re-split")
 
     old_ann, new_ann = Counter(_tokens(old.get("annotations"))), Counter(_tokens(new.get("annotations")))
+    new_rel_norm = {_release_norm(t) for t in _tokens(new.get("released_on"))}
     for tok in (new_ann - old_ann).elements():
         d.problems.append(f"song {pos}: annotation added {tok!r}")
     for tok in (old_ann - new_ann).elements():
-        if MONTH_YEAR_RE.match(tok) or HISTORY_DATE_RE.match(f"{pos} {tok}"):
+        if _release_norm(tok) in new_rel_norm:
+            d.buckets.add("P1f")  # "released in/as ..." now read as a release line
+        elif MONTH_YEAR_RE.match(tok) or HISTORY_DATE_RE.match(f"{pos} {tok}"):
             d.buckets.add("P1b")
         elif ROTATION_FRAGMENT_RE.search(tok):
             d.buckets.add("P1d")

@@ -1,3 +1,23 @@
+[2026-09-10] — Olof subtitles split from credits; release lines read "in/as" wording and partials (dossier C04)
+Fixed: backend/olof_parser.py: (P1e) new _split_title_parts for the DSN walk — 16 curated Olof
+  alternate titles ("I'm Only Bleeding", "And I'll Go Mine", "For Charley Patton", …) go to
+  olof_songs.subtitle; a parenthetical with a composer marker (/ & , ? trad arr "adapted from",
+  a dash between names) is credits whatever its length; short unmarked ones ("Hank Snow") stay
+  credits; long unmarked ones stay in the title. _split_title_credits (bobserve, chronicle) is
+  unchanged. (P1f) "released in/as" and "available as/from" lines are releases, not annotations;
+  a release position list may continue with "and N", "and part of N" or "or N" — a partial song
+  gets a "(part) " prefix, "partly"/"fragment released on" marks the whole line partial, and the
+  positions beside an "or" get "(uncertain) ". BUG-342 stays open until C05.
+  In-memory C03 vs new over every DSN page: 0 UNEXPLAINED; 2,670 songs gain a subtitle, 528
+  titles shed a composer credit (0 left), 0 "And I'll Go Mine" credits; 154 events' release
+  lines fixed, 0 "released in" annotations left, 12 partial and 27 uncertain release tokens.
+Changed: tools/olof_reparse_diff.py: release normalisation strips the new prefixes and compound
+  position lists; an annotation that became a release line is P1f.
+Changed: backend/db.py: released_on column comment names the prefixes.
+Added: tests/test_olof_parser_fixes.py: title/credit/subtitle cases (1965-06-01, 2010-03-29,
+  1986-02-24 writers), bobserve split unchanged, "and part of 22", "or" neighbours, wording.
+Changed: instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: C04 done with the corpus numbers.
+
 [2026-09-10] — Olof venue-history lists and rotation stat get their own columns (dossier C03)
 Fixed: backend/olof_parser.py: (P1d) the rotation stat ("13 new songs (72%) compared to previous
   concert. 2 new songs for this tour.") fills rotation_new / rotation_pct / tour_new_count and is
