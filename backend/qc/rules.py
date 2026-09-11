@@ -218,6 +218,48 @@ def rule_o2(conn: sqlite3.Connection) -> Iterable[Finding]:
             )
 
 
+def rule_o4(conn: sqlite3.Connection) -> Iterable[Finding]:
+    """R-O4: Olof's setlist disagrees with >=2 independent sources that agree with each other.
+
+    Runs :func:`backend.qc.corroborate.corroborate_all` (Phase 3 row (a), audit
+    Q1-a) over every dated Olof concert and fires on every ``disputed``
+    verdict: setlist.fm, bobdylan.com and TUIT are independent of Olof and of
+    each other, and when at least two of them agree with each other on a
+    setlist that isn't Olof's, Olof's page is the outlier. Keyed the same way
+    as R-O1 (``entity_kind='olof_event'``, the date's primary event id) since
+    both flag the same ``olof_events`` row from different angles.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        One error Finding per date whose corroboration verdict is 'disputed'.
+    """
+    from backend.qc.corroborate import corroborate_all, is_order_only_dispute, primary_event_id
+
+    for date_str, quorum in corroborate_all(conn):
+        if quorum["verdict"] != "disputed":
+            continue
+        event_id = primary_event_id(conn, date_str)
+        if event_id is None:
+            continue
+        a, b = quorum["disputed_sources"]
+        n = quorum["disputed_song_count"]
+        # A reordering alone doesn't withhold the whole setlist: warn, not error.
+        order_only = is_order_only_dispute(quorum)
+        yield Finding(
+            entity_kind="olof_event",
+            entity_key=str(event_id),
+            severity="warn" if order_only else "error",
+            detail=(
+                f"{date_str}: {a} and {b} agree with each other on a {n}-song setlist "
+                + ("in a different order from Olof's" if order_only
+                   else "that disagrees with Olof")
+            ),
+            evidence={"date": date_str, "quorum": quorum},
+        )
+
+
 # Building-type / administrative words dropped when comparing a venue name's
 # tokens to a geocoder POI name — see rule_g1. Neither list needs a
 # spelling-variant map (e.g. theatre/theater): both spellings are listed, and
@@ -934,6 +976,12 @@ RULES: dict[str, RuleDef] = {
         description="Date-shaped or stat-shaped song annotation",
         severity="error",
         func=rule_o3,
+    ),
+    "R-O4": RuleDef(
+        rule_id="R-O4",
+        description="Olof setlist disagrees with >=2 agreeing independent sources",
+        severity="error",
+        func=rule_o4,
     ),
     "R-G1": RuleDef(
         rule_id="R-G1",

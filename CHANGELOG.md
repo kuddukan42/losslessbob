@@ -1,3 +1,20 @@
+[2026-09-11] — Cross-source setlist quorum + rule R-O4 (dossier C14)
+Added: backend/qc/corroborate.py: setlist_quorum(conn, date) — Olof vs setlist.fm, bobdylan.com and
+  TUIT, aligned title by title with the C13 matcher. corroborated (≥1 source agrees in set and
+  order, 1-song slack), disputed (≥2 sources agree with each other against Olof), stated,
+  unavailable. TUIT carries no running order, so it agrees on set only. corroborate_all() preloads
+  each source once for the corpus pass. Talkin'/Talking spellings and Olof placeholders
+  ("Unidentified Instrumental", "Harmonica Riffs") are folded out before comparing.
+Added: backend/qc/rules.py: R-O4 — 292 open errors + 33 warnings (order-only disputes). 198 of the
+  errors sit on events R-O1 already flags as truncated.
+Added: tools/dossier_acceptance.py --corroborate: 1986-02-24 and 1975-12-08 corroborated live,
+  disputed against the pre-Phase-1 snapshot (4/4). Corpus shares over 4,494 dated concerts:
+  corroborated 81.1%, stated 8.1%, disputed 7.2%, unavailable 3.6%.
+Changed: backend/qc/store.py: a re-run now refreshes the severity of an open or reopened finding
+  (it kept the first run's severity).
+Changed: backend/qc/review.py: R-O4 findings get a live quorum context panel.
+Added: tests/test_corroborate.py (13 tests).
+
 [2026-09-11] — Entry track matcher + rule R-E2 (dossier C13)
 Added: backend/dossier_fields.py: clean_track_title() (durations, [..] suffixes, performance-note
   parentheticals, glued Disc/CD/Show/Broadcast headers, non-songs → None), parse_entry_tracklist()

@@ -105,10 +105,12 @@ def run_rule(conn: sqlite3.Connection, rule: RuleDef) -> RunStats:
                 continue
 
             if row["status"] in ("open", "confirmed"):
+                # Severity is per finding (R-O4 grades order-only disputes 'warn'),
+                # so a re-run refreshes it along with the evidence.
                 conn.execute(
-                    "UPDATE qc_findings SET detail=?, evidence_json=?, evidence_hash=?,"
-                    " last_seen=? WHERE id=?",
-                    (finding.detail, evidence_json, ehash, now, row["id"]),
+                    "UPDATE qc_findings SET severity=?, detail=?, evidence_json=?,"
+                    " evidence_hash=?, last_seen=? WHERE id=?",
+                    (finding.severity, finding.detail, evidence_json, ehash, now, row["id"]),
                 )
                 continue
 
@@ -120,7 +122,7 @@ def run_rule(conn: sqlite3.Connection, rule: RuleDef) -> RunStats:
                     continue
                 _transition(
                     conn, row, "open", now, finding.detail, evidence_json, ehash,
-                    note="evidence changed since decision",
+                    note="evidence changed since decision", severity=finding.severity,
                 )
                 stats.n_reopened += 1
                 continue
@@ -128,7 +130,7 @@ def run_rule(conn: sqlite3.Connection, rule: RuleDef) -> RunStats:
             if row["status"] == "fixed":
                 _transition(
                     conn, row, "open", now, finding.detail, evidence_json, ehash,
-                    note="rule fired again",
+                    note="rule fired again", severity=finding.severity,
                 )
                 stats.n_reopened += 1
                 continue
@@ -168,12 +170,18 @@ def _transition(
     evidence_json: str,
     ehash: str,
     note: str,
+    severity: str | None = None,
 ) -> None:
-    """Move a finding to *new_status*, updating its row and appending a log entry."""
+    """Move a finding to *new_status*, updating its row and appending a log entry.
+
+    *severity* replaces the stored one when given (a reopen re-grades the finding);
+    ``None`` keeps it.
+    """
     conn.execute(
-        "UPDATE qc_findings SET status=?, detail=?, evidence_json=?, evidence_hash=?,"
-        " last_seen=?, decided_by='qc-run', decided_at=?, note=? WHERE id=?",
-        (new_status, detail, evidence_json, ehash, now, now, note, row["id"]),
+        "UPDATE qc_findings SET status=?, severity=COALESCE(?, severity), detail=?,"
+        " evidence_json=?, evidence_hash=?, last_seen=?, decided_by='qc-run', decided_at=?,"
+        " note=? WHERE id=?",
+        (new_status, severity, detail, evidence_json, ehash, now, now, note, row["id"]),
     )
     conn.execute(
         "INSERT INTO qc_decision_log (finding_id, rule_id, entity_key, prev_status,"
