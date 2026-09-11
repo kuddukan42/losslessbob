@@ -1,3 +1,18 @@
+[2026-09-11] — Tour premieres, rotation recompute, LB-vs-TUIT tracklists (dossier C15)
+Added: backend/qc/corroborate.py: tour_premieres(conn, event_id) — per-song tour premiere from our
+  corpus (song_performances + olof_events) vs setlist.fm's own tour grouping (D-02 gate item 2).
+  2010-03-29: positions 4 and 14, count 2 = tour_new_count. setlist.fm files every NET show under
+  one "Never Ending Tour", so it rarely confirms a NET-era premiere.
+Added: backend/qc/corroborate.py: rotation_check(conn, event_id) — recomputes Olof's
+  rotation_new/rotation_pct against the preceding concert (not tour/venue scoped;
+  pct = floor(new / songs * 100)). Exact on the 2010 Zepp Tokyo run; 87.3% of 3,068 stated events
+  agree corpus-wide — the rest are mostly thin 1974 listings.
+Added: backend/qc/corroborate.py: tracklist_check(conn, lb_number) — entries.setlist vs
+  tuit_recordings.setlist_json, set + count only. 76.4% of 3,816 LBs agree.
+Added: tools/dossier_acceptance.py --premieres (2010-03-29 accept case, PASS); --corroborate now
+  prints the rotation and tracklist corpus rates.
+Added: tests/test_corroborate.py (+10 tests, 23 total).
+
 [2026-09-11] — Cross-source setlist quorum + rule R-O4 (dossier C14)
 Added: backend/qc/corroborate.py: setlist_quorum(conn, date) — Olof vs setlist.fm, bobdylan.com and
   TUIT, aligned title by title with the C13 matcher. corroborated (≥1 source agrees in set and
