@@ -1,3 +1,16 @@
+[2026-09-11] — Olof title repair: a writer credit spliced mid-word (BUG-347)
+Fixed: backend/olof_parser.py: SPLICED_CREDIT_RE + a repair in _split_title_parts — Olof's page
+  drops the NEXT song's credit into the middle of a word ("Like A Rolling St (Bob Dylan-Robert
+  Hunter/Bob Dylan) one", "Forgetful Hear (…) t"), so song_norm read them as distinct songs. The
+  word is re-joined and the stray credit dropped; the repair needs a credit marker inside the
+  parenthetical, so a real subtitle is untouched.
+Changed: tools/olof_reparse_diff.py: new B347 bucket. The two affected pages reparsed
+  (DSN31870, DSN32500): changed 2, B347 2, UNEXPLAINED 0. song_index.run() → 70,711
+  performances, 1,335 songs, 1,362 canonical norms.
+Changed: backend.qc run: R-O4 12 fixed (313 open); no other rule moved.
+Changed: rotation_check for 2010-03-21 / 03-23 now reads 9 new, matching Olof, which unblocks the
+  C20 D-04 superlative: all 7 Zepp Tokyo nights verify, 72% ranks 1 of 7, --d07 5/5.
+
 [2026-09-11] — D-05 generation rules per tj's sign-off (dossier C21)
 Changed: backend/dossier_fields.py: classify_generation — a silver disc is silver with or
   without a label or catalogue number (+15 LBs); "master" followed by a clone hop is low_gen,

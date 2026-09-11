@@ -56,7 +56,8 @@ DEBUG_DIR = _PROJECT_ROOT / ".debug"
 DEFAULT_SNAPSHOT = DEBUG_DIR / "olof_before.db"
 DEFAULT_REPORT = DEBUG_DIR / "olof_reparse_diff.md"
 
-BUCKETS = ("P1a", "P1b", "P1c", "P1d", "P1e", "P1f", "P1g")
+# B347: BUG-347's repair of a writer credit spliced mid-word into a title.
+BUCKETS = ("P1a", "P1b", "P1c", "P1d", "P1e", "P1f", "P1g", "B347")
 UNEXPLAINED = "UNEXPLAINED"
 _MAX_LISTED = 150  # events listed per explained bucket; UNEXPLAINED is always listed in full
 
@@ -193,6 +194,14 @@ def _explain_rotation(d: EventDiff, before: dict, after: dict) -> None:
         d.problems.append("rotation stats set, but the page text has no stat line")
 
 
+def _is_spliced_credit_repair(old: dict, new: dict) -> bool:
+    """BUG-347: a writer credit spliced mid-word was dropped and the word re-joined."""
+    from backend.olof_parser import SPLICED_CREDIT_RE
+
+    m = SPLICED_CREDIT_RE.match(old.get("song_title") or "")
+    return bool(m) and _ws(new.get("song_title")) == _ws(m.group(1) + m.group(3))
+
+
 def _explain_song(d: EventDiff, pos: int, old: dict, new: dict, context: str,
                   raw: str, venue_history: str = "") -> None:
     """One song position present before and after."""
@@ -204,6 +213,8 @@ def _explain_song(d: EventDiff, pos: int, old: dict, new: dict, context: str,
     if any(_blank(old.get(c)) != _blank(new.get(c)) for c in title_cols):
         if _words(*(old.get(c) for c in title_cols)) == _words(*(new.get(c) for c in title_cols)):
             d.buckets.add("P1e")
+        elif _is_spliced_credit_repair(old, new):
+            d.buckets.add("B347")
         else:
             d.problems.append(f"song {pos}: title/credits text changed, not just re-split")
 

@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-347: Olof source splices a credits parenthetical mid-title (2 songs), breaking song identity
+Status: Fixed
+File(s): backend/olof_parser.py,backend/song_index.py:179
+Reported: 2026-09-11
+Fixed: 2026-09-11
+Root cause: Olof's page text drops the next song's writer credit into the middle of a word, so _split_title_parts left it in the title and song_norm read one song as two.
+Fix: backend/olof_parser.py: SPLICED_CREDIT_RE re-joins the word and drops the stray credit in _split_title_parts (it belongs to the following song, which carries its own). Guarded on a credit marker inside the parenthetical so real subtitles are untouched. The two affected pages reparsed (diff gate: changed 2, B347 2, UNEXPLAINED 0), song_index.run() rebuilt (70,711 performances). rotation_check for 2010-03-21/03-23 now reads 9 new and the C20 D-04 superlative renders (--d07 5/5).
+
 BUG-345: Derived tables go stale: show picks computed before families, grades read from one global MAX(scan_id)
 Status: Fixed
 File(s): backend/dossier.py:694,backend/song_index.py:372,backend/db.py:4311

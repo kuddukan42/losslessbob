@@ -726,6 +726,12 @@ _KNOWN_SUBTITLES = frozenset({
 })
 
 
+# BUG-347: Olof's page drops the next song's writer credit into the middle of a word
+# ("Like A Rolling St (Bob Dylan-Robert Hunter/Bob Dylan) one"). The word is re-joined and
+# the stray credit dropped — it belongs to the following song, which carries its own.
+SPLICED_CREDIT_RE = re.compile(r"^(.*[A-Za-z])\s+\(([^()]+)\)\s+([a-z]{1,4})\s*$")
+
+
 def _split_title_parts(text: str) -> tuple[str, str, str]:
     """P1e: split a DSN song title line into (title, credits, subtitle).
 
@@ -742,6 +748,9 @@ def _split_title_parts(text: str) -> tuple[str, str, str]:
     Returns:
         (title, credits, subtitle); credits and subtitle are '' when absent.
     """
+    spliced = SPLICED_CREDIT_RE.match(text)
+    if spliced and _CREDIT_MARKER_RE.search(spliced.group(2)):
+        text = spliced.group(1) + spliced.group(3)
     m = _CREDITS_SUFFIX_RE.match(text)
     if not m:
         return text.strip(), "", ""

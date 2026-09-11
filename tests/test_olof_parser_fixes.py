@@ -164,6 +164,28 @@ def test_credits_resplit_into_subtitle_is_p1e():
     assert d.problems == ["song 3: title/credits text changed, not just re-split"]
 
 
+@pytest.mark.parametrize("line,title", [
+    ("Like A Rolling St (Bob Dylan-Robert Hunter/Bob Dylan) one", "Like A Rolling Stone"),
+    ("Forgetful Hear (Bob Dylan-Robert Hunter/Bob Dylan) t", "Forgetful Heart"),
+])
+def test_spliced_credit_is_dropped_and_word_rejoined(line, title):
+    """BUG-347: the next song's credit landed mid-word on Olof's page."""
+    assert _split_title_parts(line) == (title, "", "")
+
+
+def test_spliced_credit_repair_needs_a_credit_marker():
+    assert _split_title_parts("Song Of The Day (Early Version) live") == (
+        "Song Of The Day (Early Version) live", "", "")
+    assert _split_title_parts("Jolene (Bob Dylan-Robert Hunter/Bob Dylan)") == (
+        "Jolene", "Bob Dylan-Robert Hunter/Bob Dylan", "")
+
+
+def test_spliced_credit_repair_is_b347():
+    before = [_song(15, song_title="Like A Rolling St (Bob Dylan-Robert Hunter/Bob Dylan) one")]
+    d = _classify(_event(), _event(), before, [_song(15, song_title="Like A Rolling Stone")])
+    assert d.buckets == {"B347"} and not d.problems
+
+
 def test_release_wording_cleanup_is_p1f():
     before = [_song(4, released_on="and part of 22 released on X")]
     d = _classify(_event(), _event(), before, [_song(4, released_on="X")])
