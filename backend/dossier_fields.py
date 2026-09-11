@@ -26,9 +26,10 @@ import json
 import logging
 import re
 import sqlite3
+import statistics
 import unicodedata
 from bisect import bisect_left, bisect_right
-from collections import defaultdict
+from collections import Counter, defaultdict
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -1137,4 +1138,303 @@ def official_release(
 
     return OfficialRelease(
         status=status, whole_show=whole_show, whole_show_title=whole_show_title, songs=songs,
+    )
+
+
+# ---------------------------------------------------------------------------
+# D-07 run, tour & city history
+# ---------------------------------------------------------------------------
+
+# Olof's year buckets ("1965 Recording sessions & concerts") aren't tours.
+_NOT_A_TOUR = "recording session"
+
+
+class TourContext(TypedDict):
+    """The one tour object a page shows (audit P6).
+
+    Keys:
+        name: Olof's ``tour_name`` (the leg); NET # is the umbrella.
+        net_number: ``olof_events.concert_no_net``, or ``None``.
+        position: 1-based concert position within the tour.
+        size: Concerts in the tour.
+        is_first: ``position == 1``.
+        is_last: ``position == size``.
+        claims_ok: Every tour concert has parsed songs and no open R-O1 — the
+            completeness guard for "first" / "last" / "N of M" wording.
+    """
+
+    name: str
+    net_number: int | None
+    position: int
+    size: int
+    is_first: bool
+    is_last: bool
+    claims_ok: bool
+
+
+class VenueRun(TypedDict):
+    """Consecutive concerts at one exact venue within one tour, nothing between.
+
+    Keys:
+        venue: The exact Olof venue name.
+        position: This show's night within the run.
+        size: Nights in the run.
+        dates: Each night's date, in order (the view builds dossier URLs from them).
+        event_ids: Each night's event id, in order.
+        claims_ok: Every night has parsed songs and no open R-O1.
+    """
+
+    venue: str
+    position: int
+    size: int
+    dates: list[str]
+    event_ids: list[int]
+    claims_ok: bool
+
+
+class CityHistoryRow(TypedDict):
+    """One ``(year, venue)`` row of a city's concert history; venues never merge."""
+
+    year: str
+    venue: str
+    count: int
+
+
+class CityHistory(TypedDict):
+    """Every concert in this show's city.
+
+    Keys:
+        city: Display city (setlist.fm's, else Olof's).
+        country: Display country, or ``''``.
+        basis: ``'setlistfm'`` or ``'olof'`` — where this show's city came from.
+        total: Concerts in the city (``venue.city_total``).
+        rows: ``{year, venue, count}`` sorted by year then venue.
+        invariant_ok: G5 — ``sum(count) == total``; the panel is suppressed otherwise.
+    """
+
+    city: str
+    country: str
+    basis: str
+    total: int
+    rows: list[CityHistoryRow]
+    invariant_ok: bool
+
+
+class RunContext(TypedDict):
+    """Result of :func:`run_context`; each part is ``None`` when it doesn't apply."""
+
+    event_id: int
+    tour: TourContext | None
+    venue_run: VenueRun | None
+    city_history: CityHistory | None
+
+
+def _concert_rows(conn: sqlite3.Connection) -> list[sqlite3.Row]:
+    """Every dated concert event, in the D-02/D-07 ``(date_str, event_id)`` order."""
+    from backend.qc.corroborate import is_concert_row
+
+    rows = conn.execute(
+        "SELECT event_id, date_str, venue, city, country, tour_name, event_type, concert_no_net"
+        " FROM olof_events WHERE date_str != ''"
+    ).fetchall()
+    concerts = [r for r in rows if is_concert_row(r["event_type"], r["tour_name"])]
+    return sorted(concerts, key=lambda r: (r["date_str"], r["event_id"]))
+
+
+def _claims_ok(conn: sqlite3.Connection, event_ids: list[int]) -> bool:
+    """Completeness guard: every event has parsed songs and no open R-O1 finding."""
+    if not event_ids:
+        return False
+    with_songs = {
+        r[0] for r in conn.execute(
+            "SELECT DISTINCT event_id FROM song_performances"
+            f" WHERE event_id IN ({','.join('?' * len(event_ids))})",
+            event_ids,
+        )
+    }
+    truncated = _open_finding_events(conn, ("R-O1",))
+    return all(e in with_songs and e not in truncated for e in event_ids)
+
+
+def _city_history(
+    conn: sqlite3.Connection, concerts: list[sqlite3.Row], ev: sqlite3.Row,
+) -> CityHistory | None:
+    """Concerts grouped by setlist.fm ``(city, country)`` per date, Olof's city as fallback."""
+    from backend.qc.corroborate import _fold_city_name, _fold_place_name
+
+    sfm: dict[str, tuple[str, str]] = {}
+    for r in conn.execute(
+        "SELECT date_str, city, country FROM setlistfm_shows WHERE COALESCE(city, '') != ''"
+        " ORDER BY setlistfm_id"
+    ):
+        sfm.setdefault(r["date_str"], (r["city"], r["country"] or ""))
+
+    def place(r: sqlite3.Row) -> tuple[str, str | None, str, str, str]:
+        if r["date_str"] in sfm:
+            city, country = sfm[r["date_str"]]
+            return _fold_city_name(city), _fold_place_name(country), "setlistfm", city, country
+        city, country = r["city"] or "", r["country"] or ""
+        return _fold_city_name(city), _fold_place_name(country) or None, "olof", city, country
+
+    city_key, country_key, basis, city, country = place(ev)
+    if not city_key:
+        return None
+    rows: Counter[tuple[str, str]] = Counter()
+    total = 0
+    for r in concerts:
+        other_city, other_country, *_ = place(r)
+        if other_city != city_key:
+            continue
+        if country_key and other_country and other_country != country_key:
+            continue
+        total += 1
+        rows[(r["date_str"][:4], (r["venue"] or "").strip())] += 1
+    out_rows = [
+        CityHistoryRow(year=y, venue=v, count=n) for (y, v), n in sorted(rows.items())
+    ]
+    return CityHistory(
+        city=city, country=country, basis=basis, total=total, rows=out_rows,
+        invariant_ok=sum(r["count"] for r in out_rows) == total,
+    )
+
+
+def run_context(conn: sqlite3.Connection, event_id: int) -> RunContext:
+    """D-07: this concert's tour, venue run and city history.
+
+    Args:
+        conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
+        event_id: ``olof_events.event_id`` (a concert).
+
+    Returns:
+        A :class:`RunContext`; every part is ``None`` for a non-concert event. The
+        tour is ``None`` too when ``tour_name`` is empty or an Olof year bucket
+        ("Recording sessions").
+    """
+    out = RunContext(event_id=event_id, tour=None, venue_run=None, city_history=None)
+    concerts = _concert_rows(conn)
+    idx = next((i for i, r in enumerate(concerts) if r["event_id"] == event_id), None)
+    if idx is None:
+        return out
+    ev = concerts[idx]
+
+    tour_name = (ev["tour_name"] or "").strip()
+    if tour_name and _NOT_A_TOUR not in tour_name.lower():
+        tour_ids = [r["event_id"] for r in concerts if r["tour_name"] == ev["tour_name"]]
+        pos = tour_ids.index(event_id) + 1
+        out["tour"] = TourContext(
+            name=tour_name, net_number=ev["concert_no_net"], position=pos, size=len(tour_ids),
+            is_first=pos == 1, is_last=pos == len(tour_ids),
+            claims_ok=_claims_ok(conn, tour_ids),
+        )
+
+    venue = (ev["venue"] or "").strip()
+    if venue:
+        def same_run(r: sqlite3.Row) -> bool:
+            return r["tour_name"] == ev["tour_name"] and (r["venue"] or "").strip() == venue
+
+        lo = hi = idx
+        while lo > 0 and same_run(concerts[lo - 1]):
+            lo -= 1
+        while hi + 1 < len(concerts) and same_run(concerts[hi + 1]):
+            hi += 1
+        run = concerts[lo:hi + 1]
+        ids = [r["event_id"] for r in run]
+        out["venue_run"] = VenueRun(
+            venue=venue, position=idx - lo + 1, size=len(run),
+            dates=[r["date_str"] for r in run], event_ids=ids, claims_ok=_claims_ok(conn, ids),
+        )
+
+    out["city_history"] = _city_history(conn, concerts, ev)
+    return out
+
+
+# ---------------------------------------------------------------------------
+# D-04 cross-show rotation
+# ---------------------------------------------------------------------------
+
+
+class RotationSibling(TypedDict):
+    """One night of the venue run and whether its Olof rotation stat holds up.
+
+    Keys:
+        event_id: The night's event.
+        date: Its date.
+        pct: Olof's ``rotation_pct``, or ``None``.
+        new: Olof's ``rotation_new``, or ``None``.
+        verified: Our recompute from the previous concert matches Olof (Phase 3b).
+        disputed: The recompute contradicts Olof.
+    """
+
+    event_id: int
+    date: str
+    pct: int | None
+    new: int | None
+    verified: bool
+    disputed: bool
+
+
+class RotationRank(TypedDict):
+    """Result of :func:`rotation_rank`.
+
+    Keys:
+        pct: This show's ``rotation_pct``.
+        new: This show's ``rotation_new``.
+        rank_in_run: 1 + siblings with a higher pct.
+        run_size: Nights in the run.
+        run_median_pct: Median of the run's stated pcts.
+        tie: Another night has the same pct.
+        siblings: One :class:`RotationSibling` per night.
+        superlative_ok: The claim engine may say "most changed … <scope>": every night
+            verified, rank 1 with no tie, a run of 2+ nights passing the completeness guard.
+        scope: The named scope, e.g. "of the 7-night Zepp Tokyo run".
+    """
+
+    pct: int
+    new: int | None
+    rank_in_run: int
+    run_size: int
+    run_median_pct: float
+    tie: bool
+    siblings: list[RotationSibling]
+    superlative_ok: bool
+    scope: str
+
+
+def rotation_rank(
+    conn: sqlite3.Connection, event_id: int, venue_run: VenueRun,
+) -> RotationRank | None:
+    """D-04: rank this show's rotation stat within its venue run.
+
+    Args:
+        conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
+        event_id: The show.
+        venue_run: Its :class:`VenueRun` from :func:`run_context`.
+
+    Returns:
+        A :class:`RotationRank`, or ``None`` when Olof states no rotation stat for
+        this show.
+    """
+    from backend.qc.corroborate import rotation_check
+
+    siblings: list[RotationSibling] = []
+    for eid, date in zip(venue_run["event_ids"], venue_run["dates"], strict=True):
+        rc = rotation_check(conn, eid)
+        siblings.append(RotationSibling(
+            event_id=eid, date=date, pct=rc["olof_pct"], new=rc["olof_new"],
+            verified=rc["agrees"] is True, disputed=rc["agrees"] is False,
+        ))
+    me = next((s for s in siblings if s["event_id"] == event_id), None)
+    if me is None or me["pct"] is None:
+        return None
+    pcts = [s["pct"] for s in siblings if s["pct"] is not None]
+    rank = 1 + sum(p > me["pct"] for p in pcts)
+    tie = sum(p == me["pct"] for p in pcts) > 1
+    return RotationRank(
+        pct=me["pct"], new=me["new"], rank_in_run=rank, run_size=len(siblings),
+        run_median_pct=statistics.median(pcts), tie=tie, siblings=siblings,
+        superlative_ok=(
+            venue_run["size"] >= 2 and venue_run["claims_ok"] and rank == 1 and not tie
+            and all(s["verified"] for s in siblings)
+        ),
+        scope=f"of the {venue_run['size']}-night {venue_run['venue']} run",
     )

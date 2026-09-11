@@ -1,3 +1,18 @@
+[2026-09-11] — D-07 run/tour/city context + D-04 rotation rank (dossier C20)
+Added: backend/dossier_fields.py: run_context(conn, event_id) — one tour object (Olof's leg,
+  NET #, position / size, is_first / is_last; "Recording sessions" year buckets aren't tours),
+  the venue run (consecutive concerts at one exact venue within the tour, nothing between) and
+  the city history ({year, venue, count} rows grouped by setlist.fm (city, country), Olof's city
+  as fallback; venues never merge; G5 sum invariant). Position claims need every tour/run
+  concert parsed and free of open R-O1. 2010-03-29: tour concert 14 of 15 (is_last false —
+  Seoul follows), Zepp Tokyo night 7 of 7, Tokyo 50 concerts incl. Tokyo Garden Theater ×5 in
+  2023 (42 ms).
+Added: rotation_rank(conn, event_id, venue_run) — rank, run median, tie, and superlative_ok only
+  when every night's Olof stat matches our recompute with rank 1 and no tie. 2010-03-29's 72%
+  ranks 1 of 7 (median 58), but superlative_ok is false: nights 1–2 don't verify because Olof's
+  page splices a credit into "Like A Rolling Stone" (BUG-347).
+Added: tools/dossier_acceptance.py --d07; tests/test_run_context.py (11 tests).
+
 [2026-09-11] — D-03 official release status + rule R-R1 (dossier C19)
 Added: backend/assets/official_releases.json — draft allowlist of 84 entries (73 official, 11 not
   official: Wolfgang's Vault, Westwood One, Crystal Cat, the 2012 "Bob Dylan Archive" and

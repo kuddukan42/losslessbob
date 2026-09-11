@@ -26,6 +26,9 @@ for the mode asked. Modes arrive chunk by chunk; today there are two:
     --d03           D-03 accept cases: backend.dossier_fields.official_release —
                     1965-06-01 full, 1986-02-24 partial, 1975-12-08 partial (C19; the
                     plan's "none" predates allowlisting the 2019 Rolling Thunder box).
+    --d07           D-07 / D-04 accept cases on 2010-03-29: Zepp Tokyo night 7 of 7, is_last
+                    false, Tokyo city_total = 50 with the sum invariant, and the verified
+                    rotation superlative (C20; blocked by BUG-347 until that's fixed).
 
 Usage::
 
@@ -571,6 +574,47 @@ def run_parser(db_path: Path, before: Path | None, residuals: bool) -> int:
     return 1 if failed else 0
 
 
+def run_d07(db_path: Path) -> int:
+    """D-07 / D-04 accept cases (C20) on 2010-03-29."""
+    from backend.dossier_fields import rotation_rank, run_context
+
+    live = _open_ro(db_path)
+    try:
+        event_id = corroborate.primary_event_id(live, "2010-03-29")
+        rc = run_context(live, event_id) if event_id else None
+        run = rc["venue_run"] if rc else None
+        rank = rotation_rank(live, event_id, run) if run else None
+    finally:
+        live.close()
+
+    tour = rc["tour"] if rc else None
+    city = rc["city_history"] if rc else None
+    if tour:
+        _log.info("tour %r: concert %d of %d (is_last=%s, claims_ok=%s)", tour["name"],
+                  tour["position"], tour["size"], tour["is_last"], tour["claims_ok"])
+    if city:
+        _log.info("city %s, %s (%s): %d concerts", city["city"], city["country"],
+                  city["basis"], city["total"])
+    if rank:
+        _log.info("rotation %d%%: rank %d of %d, median %s, tie=%s — nights %s", rank["pct"],
+                  rank["rank_in_run"], rank["run_size"], rank["run_median_pct"], rank["tie"],
+                  [(s["pct"], "ok" if s["verified"] else "UNVERIFIED") for s in rank["siblings"]])
+    checks = [
+        (bool(run) and (run["venue"], run["position"], run["size"]) == ("Zepp Tokyo", 7, 7),
+         "2010-03-29: Zepp Tokyo run, night 7 of 7"),
+        (bool(tour) and tour["is_last"] is False,
+         "is_last false (the tour continues to Seoul): no closing claim"),
+        (bool(city) and city["total"] == 50, "Tokyo city_total = 50"),
+        (bool(city) and city["invariant_ok"], "city history rows sum to city_total"),
+        (bool(rank) and rank["rank_in_run"] == 1 and not rank["tie"] and rank["superlative_ok"],
+         "72% is the run's verified maximum, so the superlative renders (BUG-347 blocks it)"),
+    ]
+    _log.info("")
+    for ok, label in checks:
+        _log.info("%s  %s", "PASS" if ok else "FAIL", label)
+    return 0 if all(ok for ok, _ in checks) else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI entry point; returns the process exit code."""
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
@@ -587,6 +631,8 @@ def main(argv: list[str] | None = None) -> int:
                       help="D-02 accept case + premiere-gate rate over 200 concerts (C18).")
     mode.add_argument("--d03", action="store_true",
                       help="D-03 accept cases: official_release status on three dates (C19).")
+    mode.add_argument("--d07", action="store_true",
+                      help="D-07 / D-04 accept cases: run, tour, city, rotation rank (C20).")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
                         help="--parser: olof_reparse_diff snapshot to print beside the live"
@@ -605,6 +651,8 @@ def main(argv: list[str] | None = None) -> int:
         return run_d02(args.db)
     if args.d03:
         return run_d03(args.db)
+    if args.d07:
+        return run_d07(args.db)
     return run_parser(args.db, args.before, args.residuals)
 
 
