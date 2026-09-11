@@ -1,3 +1,18 @@
+[2026-09-11] — D-02 song history + premiere gate + gap badge (dossier C18)
+Added: backend/dossier_fields.py: song_history(conn, event_id) — per position tour_premiere,
+  career_debut, last_played, gap_shows, times_played over concert-filtered song_performances in
+  (date_str, event_id) order. A song played twice in a show (210 events) premieres at its first
+  position only. Premiere badges need all three gate items: computed count = Olof's
+  tour_new_count; setlist.fm confirms each premiere (corroborate.tour_premieres, tour-date
+  scoped); no open R-O1/R-O4 on the tour up to this event. Otherwise the count renders alone.
+  Gap badge at ≥ 100 concerts away, withheld when an open R-O1 sits in the span.
+  2010-03-29: badges on songs 4 and 14 only (86 ms).
+Added: tools/dossier_acceptance.py --d02: the gate passes on 93 of 200 sampled concerts (46.5%,
+  seed 342; 193 premiere badges, 13 gap badges). Failing items: 60 open R-O1/R-O4 earlier in
+  the tour, 53 no tour_new_count from Olof, 31 setlist.fm doesn't confirm, 11 count mismatch.
+Changed: backend/qc/corroborate.py: is_concert_row is public.
+Added: tests/test_corroborate.py (+6 song_history tests, 55 total).
+
 [2026-09-11] — D-01 per-source completeness + G2 fit flag (dossier C17)
 Added: backend/dossier_fields.py: completeness(conn, event_id, lb_numbers) — maps each source's
   song tracks onto the event's Olof setlist positions: present / missing / partial (a repeated
