@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QC Review Console</title>
+  <style>
+    :root {
+      --bg:       #0d1117;
+      --surface:  #161b22;
+      --surface2: #1c2128;
+      --surface3: #22272e;
+      --border:   #30363d;
+      --text:     #e6edf3;
+      --muted:    #7d8590;
+      --accent:   #2563eb;
+      --accent-h: #1d4ed8;
+      --success:  #16a34a;
+      --warning:  #d97706;
+      --danger:   #dc2626;
+      --radius:   8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg); color: var(--text);
+      font-size: 14px; height: 100vh; display: flex; flex-direction: column;
+    }
+    code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 16px; }
+    .head-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    header h1 { font-size: 1rem; font-weight: 600; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 5px; font-size: .72rem; font-weight: 600;
+      padding: 2px 9px; border-radius: 999px; background: rgba(37,99,235,.2);
+      color: #93c5fd; border: 1px solid rgba(37,99,235,.4); white-space: nowrap;
+    }
+    .pill.readonly { background: rgba(217,119,6,.18); color: #fcd34d; border-color: rgba(217,119,6,.45); }
+    .stats { display: flex; gap: 14px; flex-wrap: wrap; margin-left: auto; font-size: .74rem; color: var(--muted); }
+    .stats b { color: var(--text); font-variant-numeric: tabular-nums; }
+    .stats b.err { color: #fca5a5; }
+    .stats b.warn { color: #fcd34d; }
+
+    .tabs { display: flex; gap: 4px; margin-top: 8px; }
+    .tab {
+      background: none; border: none; border-bottom: 2px solid transparent;
+      color: var(--muted); padding: 6px 12px; font: inherit; font-size: .82rem;
+      cursor: pointer; border-radius: 6px 6px 0 0;
+    }
+    .tab:hover { color: var(--text); background: var(--surface2); }
+    .tab.active { color: var(--text); border-bottom-color: var(--accent); }
+
+    .toolbar {
+      display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+      padding: 8px 16px; background: var(--surface2); border-bottom: 1px solid var(--border);
+    }
+    select, input[type=text], input[type=search] {
+      background: var(--bg); color: var(--text); border: 1px solid var(--border);
+      border-radius: 6px; padding: 5px 8px; font: inherit; font-size: .8rem;
+    }
+    input[type=search] { min-width: 200px; }
+    button {
+      background: var(--surface3); color: var(--text); border: 1px solid var(--border);
+      border-radius: 6px; padding: 5px 10px; font: inherit; font-size: .8rem; cursor: pointer;
+    }
+    button:hover:not(:disabled) { background: var(--border); }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    button.primary { background: var(--accent); border-color: var(--accent); }
+    button.primary:hover:not(:disabled) { background: var(--accent-h); }
+    .chip {
+      font-size: .74rem; padding: 3px 9px; border-radius: 999px; cursor: pointer;
+      background: var(--surface3); border: 1px solid var(--border); color: var(--muted);
+    }
+    .chip.on { background: rgba(37,99,235,.25); border-color: rgba(37,99,235,.6); color: #bfdbfe; }
+    .chip-group { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+    .chip-group .lab { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; margin-right: 2px; }
+
+    main { flex: 1; display: flex; min-height: 0; }
+    #list-pane { width: 58%; overflow: auto; border-right: 1px solid var(--border); display: flex; flex-direction: column; }
+    #grid-wrap { flex: 1; overflow: auto; }
+    #detail-pane { flex: 1; overflow: auto; padding: 14px 16px 40px; }
+    @media (max-width: 1100px) {
+      main { flex-direction: column; }
+      #list-pane { width: 100%; height: 50%; border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    table.grid { width: 100%; border-collapse: collapse; font-size: .78rem; }
+    table.grid th {
+      position: sticky; top: 0; background: var(--surface2); text-align: left;
+      padding: 6px 8px; border-bottom: 1px solid var(--border); font-weight: 600;
+      color: var(--muted); white-space: nowrap; z-index: 5;
+    }
+    table.grid td { padding: 5px 8px; border-bottom: 1px solid rgba(48,54,61,.5); vertical-align: top; }
+    table.grid tr.row { cursor: pointer; }
+    table.grid tr.row:hover { background: var(--surface2); }
+    table.grid tr.row.focus { background: rgba(37,99,235,.16); box-shadow: inset 3px 0 0 var(--accent); }
+    .nowrap { white-space: nowrap; }
+    .dim { color: var(--muted); }
+    .tag {
+      display: inline-block; font-size: .66rem; font-weight: 600; padding: 1px 6px;
+      border-radius: 999px; border: 1px solid transparent; white-space: nowrap;
+    }
+    .tag.error { background: rgba(220,38,38,.18); color: #fca5a5; border-color: rgba(220,38,38,.45); }
+    .tag.warn { background: rgba(217,119,6,.18); color: #fcd34d; border-color: rgba(217,119,6,.45); }
+    .tag.info { background: var(--surface3); color: var(--muted); border-color: var(--border); }
+    .tag.open { background: rgba(220,38,38,.14); color: #fca5a5; border-color: rgba(220,38,38,.35); }
+    .tag.confirmed { background: rgba(217,119,6,.14); color: #fcd34d; border-color: rgba(217,119,6,.35); }
+    .tag.false_positive, .tag.fixed { background: rgba(22,163,74,.14); color: #86efac; border-color: rgba(22,163,74,.35); }
+    .tag.corrected { background: rgba(37,99,235,.14); color: #93c5fd; border-color: rgba(37,99,235,.35); }
+
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; }
+    .panel h3 {
+      font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
+      padding: 8px 12px; border-bottom: 1px solid var(--border); font-weight: 600;
+    }
+    .panel .body { padding: 10px 12px; }
+    table.sources { width: 100%; border-collapse: collapse; font-size: .8rem; }
+    table.sources td { padding: 6px 8px; border-bottom: 1px solid rgba(48,54,61,.6); vertical-align: top; }
+    table.sources td:first-child { width: 150px; color: var(--muted); white-space: nowrap; }
+    table.sources tr:last-child td { border-bottom: none; }
+    pre.evidence {
+      white-space: pre-wrap; word-break: break-word; font-size: .76rem; line-height: 1.5;
+      max-height: 300px; overflow: auto; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 6px; padding: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .dates { display: flex; gap: 6px; flex-wrap: wrap; }
+    .dates a {
+      color: #93c5fd; text-decoration: none; font-size: .76rem; border: 1px solid rgba(37,99,235,.4);
+      border-radius: 6px; padding: 2px 8px; background: rgba(37,99,235,.12);
+    }
+    .dates a:hover { background: rgba(37,99,235,.24); }
+    .empty { padding: 40px; text-align: center; color: var(--muted); }
+    .pager { display: flex; gap: 8px; align-items: center; padding: 8px 16px; border-top: 1px solid var(--border); font-size: .78rem; }
+    .pager span { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head-row">
+      <h1>QC Review Console</h1>
+      <span class="pill readonly">read-only build (C11)</span>
+      <div class="stats">
+        <span>open errors <b class="err" id="stat-errors">–</b></span>
+        <span>open warnings <b class="warn" id="stat-warnings">–</b></span>
+        <span>last run <b id="stat-last-run">–</b></span>
+      </div>
+      <button id="run-rules-btn" disabled title="Wired up in C12">Run rules</button>
+    </div>
+    <div class="tabs">
+      <button class="tab active" data-tab="findings">Findings</button>
+      <button class="tab" data-tab="queue">Queue</button>
+    </div>
+  </header>
+
+  <div id="tab-queue" class="empty" style="display:none;">Queue arrives in C12.</div>
+
+  <main id="tab-findings">
+    <div id="list-pane">
+      <div class="toolbar">
+        <div class="chip-group" id="rule-chips"><span class="lab">rule</span></div>
+      </div>
+      <div class="toolbar">
+        <div class="chip-group" id="severity-chips">
+          <span class="lab">severity</span>
+          <span class="chip" data-filter="severity" data-value="">any</span>
+          <span class="chip" data-filter="severity" data-value="error">error</span>
+          <span class="chip" data-filter="severity" data-value="warn">warn</span>
+          <span class="chip" data-filter="severity" data-value="info">info</span>
+        </div>
+        <div class="chip-group" id="status-chips">
+          <span class="lab">status</span>
+          <span class="chip" data-filter="status" data-value="">any</span>
+          <span class="chip" data-filter="status" data-value="open">open</span>
+          <span class="chip" data-filter="status" data-value="confirmed">confirmed</span>
+          <span class="chip" data-filter="status" data-value="false_positive">false_positive</span>
+          <span class="chip" data-filter="status" data-value="corrected">corrected</span>
+          <span class="chip" data-filter="status" data-value="fixed">fixed</span>
+        </div>
+      </div>
+      <div class="toolbar">
+        <input type="search" id="q-input" placeholder="search detail / entity key…">
+        <button id="q-clear">Clear filters</button>
+      </div>
+      <div id="grid-wrap">
+        <table class="grid">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Rule</th>
+              <th>Severity</th>
+              <th>Status</th>
+              <th>Entity</th>
+              <th>Detail</th>
+              <th>First seen</th>
+              <th>Last seen</th>
+              <th>Shows</th>
+            </tr>
+          </thead>
+          <tbody id="grid-body"></tbody>
+        </table>
+      </div>
+      <div class="pager">
+        <button id="page-prev">&larr;</button>
+        <span id="page-info">–</span>
+        <button id="page-next">&rarr;</button>
+      </div>
+    </div>
+    <div id="detail-pane"><div class="empty">Select a finding to see its evidence and context.</div></div>
+  </main>
+
+<script>
+  const state = {
+    tab: 'findings',
+    filters: { rule: '', severity: '', status: '', entity_kind: '', q: '' },
+    page: 1,
+    page_size: 50,
+    total: 0,
+    rows: [],
+    focusId: null,
+  };
+
+  async function getJSON(path) {
+    const r = await fetch(path);
+    if (!r.ok) throw new Error('request failed: ' + r.status);
+    return r.json();
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    }[c]));
+  }
+
+  // ── header / summary ────────────────────────────────────────────────────
+
+  async function loadSummary() {
+    try {
+      const s = await getJSON('/api/qc/summary');
+      document.getElementById('stat-errors').textContent = s.total_open_errors;
+      document.getElementById('stat-warnings').textContent = s.total_open_warnings;
+      document.getElementById('stat-last-run').textContent = s.last_run_at || 'never';
+      renderRuleChips(s.rules);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  function renderRuleChips(rules) {
+    const box = document.getElementById('rule-chips');
+    box.innerHTML = '<span class="lab">rule</span>';
+    const any = document.createElement('span');
+    any.className = 'chip' + (state.filters.rule === '' ? ' on' : '');
+    any.textContent = 'any';
+    any.onclick = () => setFilter('rule', '');
+    box.appendChild(any);
+    for (const ruleId of Object.keys(rules).sort()) {
+      const chip = document.createElement('span');
+      chip.className = 'chip' + (state.filters.rule === ruleId ? ' on' : '');
+      chip.title = rules[ruleId].description;
+      chip.textContent = ruleId;
+      chip.onclick = () => setFilter('rule', ruleId);
+      box.appendChild(chip);
+    }
+  }
+
+  // ── filters / paging ────────────────────────────────────────────────────
+
+  function setFilter(key, value) {
+    state.filters[key] = value;
+    state.page = 1;
+    syncChips();
+    loadFindings();
+  }
+
+  function syncChips() {
+    document.querySelectorAll('.chip[data-filter]').forEach(chip => {
+      const key = chip.dataset.filter;
+      chip.classList.toggle('on', state.filters[key] === chip.dataset.value);
+    });
+    document.querySelectorAll('#rule-chips .chip').forEach(chip => {
+      const isAny = chip.textContent === 'any';
+      chip.classList.toggle('on', isAny ? state.filters.rule === '' : chip.textContent === state.filters.rule);
+    });
+  }
+
+  document.querySelectorAll('.chip[data-filter]').forEach(chip => {
+    chip.addEventListener('click', () => setFilter(chip.dataset.filter, chip.dataset.value));
+  });
+
+  let qTimer = null;
+  document.getElementById('q-input').addEventListener('input', e => {
+    clearTimeout(qTimer);
+    const v = e.target.value;
+    qTimer = setTimeout(() => setFilter('q', v), 250);
+  });
+
+  document.getElementById('q-clear').addEventListener('click', () => {
+    state.filters = { rule: '', severity: '', status: '', entity_kind: '', q: '' };
+    document.getElementById('q-input').value = '';
+    state.page = 1;
+    syncChips();
+    loadFindings();
+  });
+
+  document.getElementById('page-prev').addEventListener('click', () => {
+    if (state.page > 1) { state.page--; loadFindings(); }
+  });
+  document.getElementById('page-next').addEventListener('click', () => {
+    if (state.page * state.page_size < state.total) { state.page++; loadFindings(); }
+  });
+
+  // ── findings grid ───────────────────────────────────────────────────────
+
+  async function loadFindings() {
+    const params = new URLSearchParams();
+    for (const [k, v] of Object.entries(state.filters)) if (v) params.set(k, v);
+    params.set('page', state.page);
+    params.set('page_size', state.page_size);
+    try {
+      const data = await getJSON('/api/qc/findings?' + params.toString());
+      state.rows = data.rows;
+      state.total = data.total;
+      renderGrid();
+      renderPager();
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  function renderGrid() {
+    const body = document.getElementById('grid-body');
+    if (!state.rows.length) {
+      body.innerHTML = '<tr><td colspan="9" class="empty">No findings match these filters.</td></tr>';
+      return;
+    }
+    body.innerHTML = state.rows.map(r => `
+      <tr class="row${r.id === state.focusId ? ' focus' : ''}" data-id="${r.id}">
+        <td><input type="checkbox" disabled title="Bulk actions arrive in C12"></td>
+        <td class="mono nowrap">${esc(r.rule_id)}</td>
+        <td><span class="tag ${esc(r.severity)}">${esc(r.severity)}</span></td>
+        <td><span class="tag ${esc(r.status)}">${esc(r.status)}</span></td>
+        <td class="nowrap">${esc(r.entity_kind)}:${esc(r.entity_key)}</td>
+        <td>${esc(r.detail)}</td>
+        <td class="nowrap dim">${esc(r.first_seen)}</td>
+        <td class="nowrap dim">${esc(r.last_seen)}</td>
+        <td class="nowrap">${r.shows_affected}</td>
+      </tr>`).join('');
+    body.querySelectorAll('tr.row').forEach(tr => {
+      tr.addEventListener('click', () => selectFinding(Number(tr.dataset.id)));
+    });
+  }
+
+  function renderPager() {
+    const start = state.total === 0 ? 0 : (state.page - 1) * state.page_size + 1;
+    const end = Math.min(state.page * state.page_size, state.total);
+    document.getElementById('page-info').textContent = `${start}–${end} of ${state.total}`;
+    document.getElementById('page-prev').disabled = state.page <= 1;
+    document.getElementById('page-next').disabled = state.page * state.page_size >= state.total;
+  }
+
+  // ── detail drawer ───────────────────────────────────────────────────────
+
+  async function selectFinding(id) {
+    state.focusId = id;
+    renderGrid();
+    const pane = document.getElementById('detail-pane');
+    pane.innerHTML = '<div class="empty">Loading…</div>';
+    try {
+      const f = await getJSON('/api/qc/findings/' + id);
+      renderDetail(f);
+    } catch (e) {
+      pane.innerHTML = '<div class="empty">Could not load finding ' + esc(id) + '.</div>';
+    }
+  }
+
+  function renderDetail(f) {
+    const pane = document.getElementById('detail-pane');
+    const dateLinks = (f.affected_dates || []).map(d =>
+      `<a href="/api/dossier/html?date=${encodeURIComponent(d)}&inline=1" target="_blank" rel="noopener">${esc(d)}</a>`
+    ).join('') || '<span class="dim">none resolved</span>';
+
+    pane.innerHTML = `
+      <div class="panel">
+        <h3>${esc(f.rule_id)} · ${esc(f.severity)} · ${esc(f.status)}</h3>
+        <div class="body">
+          <table class="sources">
+            <tr><td>Entity</td><td class="value">${esc(f.entity_kind)}:${esc(f.entity_key)}</td></tr>
+            <tr><td>Rule description</td><td>${esc(f.rule_description || '')}</td></tr>
+            <tr><td>Detail</td><td>${esc(f.detail)}</td></tr>
+            <tr><td>First / last seen</td><td>${esc(f.first_seen)} &rarr; ${esc(f.last_seen)}</td></tr>
+            <tr><td>Quarantined</td><td>${f.quarantined ? 'yes' : 'no'}</td></tr>
+            ${f.decided_by ? `<tr><td>Decided</td><td>${esc(f.decided_by)} at ${esc(f.decided_at)}${f.note ? ' — ' + esc(f.note) : ''}</td></tr>` : ''}
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Evidence</h3>
+        <div class="body"><pre class="evidence">${esc(JSON.stringify(f.evidence, null, 2))}</pre></div>
+      </div>
+
+      <div class="panel">
+        <h3>Context (${esc(f.rule_id)} family)</h3>
+        <div class="body"><pre class="evidence">${esc(JSON.stringify(f.context, null, 2))}</pre></div>
+      </div>
+
+      <div class="panel">
+        <h3>Affected shows</h3>
+        <div class="body dates">${dateLinks}</div>
+      </div>
+    `;
+  }
+
+  // ── tabs ────────────────────────────────────────────────────────────────
+
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const isQueue = tab.dataset.tab === 'queue';
+      document.getElementById('tab-queue').style.display = isQueue ? 'block' : 'none';
+      document.getElementById('tab-findings').style.display = isQueue ? 'none' : 'flex';
+    });
+  });
+
+  // ── init ────────────────────────────────────────────────────────────────
+
+  async function init() {
+    await loadSummary();
+    await loadFindings();
+  }
+  document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

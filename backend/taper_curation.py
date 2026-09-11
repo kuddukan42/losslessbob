@@ -142,14 +142,19 @@ def tuit_taper_parts(raw: str | None) -> list[str]:
         raw: ``tuit_recordings.taper`` text.
 
     Returns:
-        Distinct canonicals for the whole value and each split part; placeholders
-        and blanks dropped. Empty when the field carries no attribution.
+        Distinct canonicals for the whole value and each split part; placeholders,
+        blanks and not-a-taper handles (``_NOT_TAPER`` / curator flags, e.g. the
+        uploader 'dolphinsmile') dropped. Empty when the field carries no attribution.
     """
+    known = set(_KNOWN_TAPER_ALIASES.values()) | _NOT_TAPER
     out: list[str] = []
     for part in [raw or "", *_TUIT_PART_SPLIT_RE.split(raw or "")]:
         canon = canonical(part.strip())
-        if canon and canon not in out:
-            out.append(canon)
+        if not canon or canon in out:
+            continue
+        if canon in known and canon not in _db._TAPER_UNIVERSE:
+            continue  # a known handle ruled out as a taper
+        out.append(canon)
     return out
 
 
