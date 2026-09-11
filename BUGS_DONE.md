@@ -2,6 +2,30 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-342: Olof parser stores subtitles as credits and leaves long composer credits inside the title
+Status: Fixed
+File(s): backend/olof_parser.py:533
+Reported: 2026-09-10
+Fixed: 2026-09-10
+Root cause: _split_title_credits filed any short trailing parenthetical as credits and left long ones in the title, so alternate titles became credits and long composer credits stayed in song_title
+Fix: C04 (7213c9c8): _split_title_parts sends 16 curated alternate titles to olof_songs.subtitle and any marked composer parenthetical to credits; live reparse at C05: 306 And I'll Go Mine credits -> 0, 292 titles with a composer credit -> 0, 2,668 subtitles
+
+BUG-341: Olof parser stores venue-history date lines and the rotation-stat line as per-song notes
+Status: Fixed
+File(s): backend/olof_parser.py:673
+Reported: 2026-09-10
+Fixed: 2026-09-10
+Root cause: The trailer scan read venue-history date lines (1 March 1978) and the rotation-stat line (13 new songs ...) as '<position> <text>' annotation lines
+Fix: C03 (fa1678e4): stat -> rotation_new/rotation_pct/tour_new_count, venue lists -> venue_history_raw, date lines never position lists; live reparse at C05: 6,222 date-line and 2,714 stat annotations -> 0, 3,102 events with the stat, 1,192 with a venue list
+
+BUG-340: Olof parser stops the song walk at guest-set headers — 99 concerts parse 0 songs, 434 truncated
+Status: Fixed
+File(s): backend/olof_parser.py:583
+Reported: 2026-09-10
+Fixed: 2026-09-10
+Root cause: _parse_song_lines stopped at the first line that was neither a numbered song nor the encore dash, so a guest/interlude header (Bob Neuwirth:, Tom Petty & The Heartbreakers:) ended the walk
+Fix: C02 (726dc456): the walk skips a guest block and resumes at the next numbered position; live reparse at C05: zero-song concerts 84 -> 21, truncated 352 -> 236, 1986-02-24 = 25, 1975-12-08 = 22
+
 BUG-339: wtrf_seed_board --limit was capped at one board page
 Status: Fixed
 File(s): tools/wtrf_seed_board.py:59
