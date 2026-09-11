@@ -134,6 +134,32 @@ QUEUES: tuple[RefreshQueue, ...] = (
         screen="/tapematch",
         action="accept or reject the candidate pairs for a date",
     ),
+    RefreshQueue(
+        queue_id="qc_errors",
+        label="qc_errors",
+        kind="gate",
+        count_sql=(
+            "SELECT COUNT(*) FROM qc_findings WHERE severity='error'"
+            " AND status IN ('open','confirmed')"
+        ),
+        total_sql=None,
+        blocks=(),
+        screen=None,
+        action="review at /qc-review",
+    ),
+    RefreshQueue(
+        queue_id="qc_warnings",
+        label="qc_warnings",
+        kind="backlog",
+        count_sql=(
+            "SELECT COUNT(*) FROM qc_findings WHERE severity='warn'"
+            " AND status IN ('open','confirmed')"
+        ),
+        total_sql="SELECT COUNT(*) FROM qc_findings WHERE severity='warn'",
+        blocks=(),
+        screen=None,
+        action="review at /qc-review",
+    ),
 )
 
 _QUEUES_BY_ID: dict[str, RefreshQueue] = {q.queue_id: q for q in QUEUES}

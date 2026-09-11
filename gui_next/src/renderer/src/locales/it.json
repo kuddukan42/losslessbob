@@ -1385,7 +1385,7 @@
       "seedWtrf": "Da Seed a WTRF"
     },
     "groups": {
-      "acquire": "Acquire",
+      "acquire": "Acquisisci",
       "share": "Condivisione e seed",
       "assets": "Risorse",
       "maintain": "Manutenzione"
@@ -2267,7 +2267,7 @@
       "master_publish": "Pubblica master",
       "xref_ingest": "Riferimenti incrociati di acquisizione",
       "attachments_reconcile": "Riconciliazione degli allegati",
-      "mirror_crawl": "Crawl mirror",
+      "mirror_crawl": "Mirror di indicizzazione",
       "wtrf_crawl": "Crawl WTRF",
       "bootleg_scrape": "Estrazione dati dal catalogo di registrazioni non autorizzate",
       "sitedata_publish": "Pubblica i dati del sito",
@@ -2322,13 +2322,17 @@
         "taper_conflicts": "Conflitti di taping",
         "fingerprint_suggestions": "Suggerimenti per le scalette",
         "xref_filesets": "Set di file di riferimenti incrociati organizzati per fasi",
-        "tapematch_dates": "Curatela cronologica di TapeMatch"
+        "tapematch_dates": "Curatela cronologica di TapeMatch",
+        "qc_errors": "Errori di controllo qualità",
+        "qc_warnings": "Avvisi di controllo qualità"
       },
       "actions": {
         "taper_conflicts": "Conferma, rifiuta o contrassegna come irrisolto",
         "fingerprint_suggestions": "Accetta o ignora ogni corrispondenza suggerita per la scaletta",
         "xref_filesets": "File di checksum del mirror del sito che non erano stati inclusi nel drop del database di Jeff — problema risolto da un drop successivo, non proveniente da qui",
-        "tapematch_dates": "Accettare o rifiutare le coppie candidate per una data"
+        "tapematch_dates": "Accettare o rifiutare le coppie candidate per una data",
+        "qc_errors": "Revisione su /qc-review",
+        "qc_warnings": "Revisione su /qc-review"
       }
     }
   },

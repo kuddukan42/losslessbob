@@ -61,6 +61,8 @@ from backend.paths import (
     detail_url,
     find_lbdir_attachment,
 )
+from backend.qc import decisions as _qc_decisions
+from backend.qc import jobs as _qc_jobs
 from backend.qc import review as _qc_review
 from concert_ranker.config import resolve_band_set
 from concert_ranker.scoring import band_metric
@@ -6863,10 +6865,10 @@ def create_app() -> Flask:
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
     # ── QC review console (/qc-review, TODO-342 Phase 2b, experimental) ───────
-    # Read side only (C11): the rule engine (backend/qc/store.py, run via
-    # `python -m backend.qc`) and its findings/runs/decision-log tables are
-    # already live; these routes just surface them. Reads are open — no
-    # curator guard, unlike the write routes C12 adds next to these.
+    # Reads (C11) are open — no curator guard. Writes (C12, below) — decisions,
+    # bulk decisions, corrections, and starting a rules run — are curator-only,
+    # the same `database.is_curator()` -> 403 `curator_required` guard as
+    # /api/tapers/attributions/<lb>/confirm.
 
     @app.route("/api/qc/summary", methods=["GET"])
     def qc_summary() -> Response:
@@ -6928,6 +6930,115 @@ def create_app() -> Flask:
         except Exception as exc:
             _log.exception("qc_decisions_list failed")
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/qc/findings/<int:finding_id>/decision", methods=["POST"])
+    def qc_finding_decision(finding_id: int) -> Response:
+        """Curator-only. Decide one finding: confirmed or false_positive.
+
+        Body: {status: 'confirmed'|'false_positive', note?}.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        body = request.get_json(silent=True) or {}
+        status = body.get("status")
+        if status not in ("confirmed", "false_positive"):
+            return jsonify({"error": "bad_request",
+                             "message": "status must be confirmed or false_positive"}), 400
+        try:
+            conn = database.get_connection()
+            finding = _qc_decisions.decide(conn, finding_id, status, note=body.get("note"))
+            return jsonify({"finding": finding})
+        except ValueError as exc:
+            msg = str(exc)
+            if msg.startswith("no such finding"):
+                return jsonify({"error": "not_found", "message": msg}), 404
+            return jsonify({"error": "illegal_transition", "message": msg}), 409
+        except Exception as exc:
+            _log.exception("qc_finding_decision failed for finding %s", finding_id)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/qc/findings/bulk", methods=["POST"])
+    def qc_findings_bulk() -> Response:
+        """Curator-only. Decide many findings at once, one rule per batch.
+
+        Body: {ids: [int, ...], status: 'confirmed'|'false_positive', note?}.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        body = request.get_json(silent=True) or {}
+        ids = body.get("ids")
+        status = body.get("status")
+        if not isinstance(ids, list) or not ids or not all(isinstance(i, int) for i in ids):
+            return jsonify({"error": "bad_request", "message": "ids must be a non-empty list"
+                             " of integers"}), 400
+        if status not in ("confirmed", "false_positive"):
+            return jsonify({"error": "bad_request",
+                             "message": "status must be confirmed or false_positive"}), 400
+        try:
+            conn = database.get_connection()
+            findings = _qc_decisions.bulk_decide(conn, ids, status, note=body.get("note"))
+            return jsonify({"findings": findings})
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("qc_findings_bulk failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/qc/corrections", methods=["POST"])
+    def qc_corrections_create() -> Response:
+        """Curator-only. Record a field correction and mark its finding corrected.
+
+        Body: {finding_id: int, field: str, corrected: str, reason?, original?}.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        body = request.get_json(silent=True) or {}
+        finding_id = body.get("finding_id")
+        field = body.get("field")
+        corrected = body.get("corrected")
+        if not isinstance(finding_id, int) or not field or corrected is None:
+            return jsonify({"error": "bad_request",
+                             "message": "finding_id, field and corrected are required"}), 400
+        try:
+            conn = database.get_connection()
+            result = _qc_decisions.add_correction(
+                conn, finding_id, field, corrected,
+                reason=body.get("reason"), original=body.get("original"),
+            )
+            return jsonify(result)
+        except ValueError as exc:
+            msg = str(exc)
+            if msg.startswith("no such finding"):
+                return jsonify({"error": "not_found", "message": msg}), 404
+            return jsonify({"error": "illegal_transition", "message": msg}), 409
+        except Exception as exc:
+            _log.exception("qc_corrections_create failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/qc/run", methods=["POST"])
+    def qc_run_start() -> Response:
+        """Curator-only. Start a rules run (all rules, or one via body {rule_id?})."""
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        body = request.get_json(silent=True) or {}
+        rule_id = body.get("rule_id") or None
+        try:
+            started = _qc_jobs.start(rule_id=rule_id)
+        except KeyError:
+            return jsonify({"error": "bad_request",
+                             "message": f"no such rule: {rule_id}"}), 400
+        except Exception as exc:
+            _log.exception("qc_run_start failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+        if not started:
+            return jsonify({"error": "run_active", "message": "a rules run is already active"}
+                            ), 409
+        return jsonify(_qc_jobs.get_status())
+
+    @app.route("/api/qc/run", methods=["GET"])
+    def qc_run_status() -> Response:
+        """Poll the active/last rules run's progress."""
+        return jsonify(_qc_jobs.get_status())
 
     @app.route("/api/tapers/decisions", methods=["GET"])
     def taper_decisions_list() -> Response:
@@ -9182,10 +9293,8 @@ def create_app() -> Flask:
     def qc_review_page() -> Response:
         """Serve the QC review console (TODO-342 Phase 2b, experimental).
 
-        Read-only in this build (C11): the Queue tab is a placeholder and the
-        Findings tab's workbench table/detail drawer talk to the /api/qc/*
-        read routes above. Write routes (decisions, corrections, rule runs)
-        land in C12.
+        v1: Queue (one card at a time) and Findings (workbench table) tabs,
+        both curator-gated for writes via the /api/qc/* routes above.
         """
         page_html = Path(__file__).parent / "qc_review.html"
         return send_from_directory(str(page_html.parent), page_html.name)

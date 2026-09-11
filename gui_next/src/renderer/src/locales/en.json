@@ -2299,13 +2299,17 @@
         "taper_conflicts": "Taper conflicts",
         "fingerprint_suggestions": "Setlist suggestions",
         "xref_filesets": "Staged cross-reference filesets",
-        "tapematch_dates": "TapeMatch date curation"
+        "tapematch_dates": "TapeMatch date curation",
+        "qc_errors": "QC errors",
+        "qc_warnings": "QC warnings"
       },
       "actions": {
         "taper_conflicts": "Confirm, reject or mark unresolved",
         "fingerprint_suggestions": "Accept or dismiss each suggested setlist match",
         "xref_filesets": "Site-mirror checksum files Jeff's DB drop didn't include — resolved by a later drop, not from here",
-        "tapematch_dates": "Accept or reject the candidate pairs for a date"
+        "tapematch_dates": "Accept or reject the candidate pairs for a date",
+        "qc_errors": "Review at /qc-review",
+        "qc_warnings": "Review at /qc-review"
       }
     }
   },

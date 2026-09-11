@@ -133,30 +133,74 @@
     .empty { padding: 40px; text-align: center; color: var(--muted); }
     .pager { display: flex; gap: 8px; align-items: center; padding: 8px 16px; border-top: 1px solid var(--border); font-size: .78rem; }
     .pager span { color: var(--muted); }
+
+    /* Queue tab */
+    #tab-queue { flex: 1; overflow: auto; display: flex; flex-direction: column; align-items: center; padding: 18px 16px 60px; }
+    .queue-toolbar { width: 100%; max-width: 760px; display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
+    .queue-progress { font-size: .76rem; color: var(--muted); margin-left: auto; }
+    .card { width: 100%; max-width: 760px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+    .card-head { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .card-head .entity { font-weight: 600; }
+    .card-head .first-seen { margin-left: auto; font-size: .74rem; color: var(--muted); }
+    .card-body { padding: 12px 16px; }
+    .why-flagged { font-size: .84rem; margin-bottom: 12px; }
+    .why-flagged .rule-desc { color: var(--muted); }
+    .decision-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 12px 16px; border-top: 1px solid var(--border); }
+    .decision-row textarea {
+      flex-basis: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+      border-radius: 6px; padding: 6px 8px; font: inherit; font-size: .8rem; resize: vertical; min-height: 34px;
+    }
+    button.confirm { border-color: rgba(22,163,74,.5); }
+    button.fp { border-color: rgba(37,99,235,.5); }
+    button.danger-outline { border-color: rgba(220,38,38,.5); }
+    kbd {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .7rem;
+      background: var(--surface3); border: 1px solid var(--border); border-radius: 4px; padding: 0 4px;
+    }
+    .correction-form { display: flex; flex-direction: column; gap: 6px; width: 100%; padding: 10px 16px; border-top: 1px solid var(--border); }
+    .correction-form[hidden] { display: none; }
+    .correction-form input { background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; font: inherit; font-size: .8rem; }
+    .correction-form .row2 { display: flex; gap: 8px; }
+    .correction-form .row2 > * { flex: 1; }
+    .flash {
+      position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 50;
+      background: var(--surface3); border: 1px solid var(--border); border-radius: 8px;
+      padding: 8px 14px; font-size: .82rem; box-shadow: 0 4px 14px rgba(0,0,0,.4);
+    }
+    .flash.error { border-color: rgba(220,38,38,.6); color: #fca5a5; }
+    .flash.ok { border-color: rgba(22,163,74,.6); color: #86efac; }
+    .bulk-bar { display: flex; gap: 8px; align-items: center; padding: 6px 16px; background: var(--surface2); border-bottom: 1px solid var(--border); font-size: .78rem; }
+    .bulk-bar .n { color: var(--muted); }
   </style>
 </head>
 <body>
   <header>
     <div class="head-row">
       <h1>QC Review Console</h1>
-      <span class="pill readonly">read-only build (C11)</span>
+      <span class="pill" id="curator-pill">curator —</span>
       <div class="stats">
         <span>open errors <b class="err" id="stat-errors">–</b></span>
         <span>open warnings <b class="warn" id="stat-warnings">–</b></span>
         <span>last run <b id="stat-last-run">–</b></span>
       </div>
-      <button id="run-rules-btn" disabled title="Wired up in C12">Run rules</button>
+      <button id="run-rules-btn">Run rules</button>
     </div>
     <div class="tabs">
-      <button class="tab active" data-tab="findings">Findings</button>
-      <button class="tab" data-tab="queue">Queue</button>
+      <button class="tab active" data-tab="queue">Queue</button>
+      <button class="tab" data-tab="findings">Findings</button>
     </div>
   </header>
 
-  <div id="tab-queue" class="empty" style="display:none;">Queue arrives in C12.</div>
+  <div id="tab-queue"></div>
 
-  <main id="tab-findings">
+  <main id="tab-findings" style="display:none;">
     <div id="list-pane">
+      <div class="bulk-bar" id="bulk-bar" style="display:none;">
+        <span class="n" id="bulk-count">0 selected</span>
+        <button id="bulk-confirm" class="confirm" disabled>Confirm selected</button>
+        <button id="bulk-fp" class="fp" disabled>False positive selected</button>
+        <span class="dim" id="bulk-hint"></span>
+      </div>
       <div class="toolbar">
         <div class="chip-group" id="rule-chips"><span class="lab">rule</span></div>
       </div>
@@ -211,19 +255,59 @@
 
 <script>
   const state = {
-    tab: 'findings',
+    tab: 'queue',
     filters: { rule: '', severity: '', status: '', entity_kind: '', q: '' },
     page: 1,
     page_size: 50,
     total: 0,
     rows: [],
     focusId: null,
+    selected: new Map(),
+    isCurator: null,
+  };
+
+  const queue = {
+    ids: [],        // ordered finding ids, error-before-warn, then rule_id, then id
+    idx: 0,
+    ruleFilter: '',
+    skipped: new Set(),
+    current: null,  // loaded finding detail for queue.ids[idx]
   };
 
   async function getJSON(path) {
     const r = await fetch(path);
     if (!r.ok) throw new Error('request failed: ' + r.status);
     return r.json();
+  }
+
+  function flash(msg, kind) {
+    const el = document.createElement('div');
+    el.className = 'flash' + (kind ? ' ' + kind : '');
+    el.textContent = msg;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 3200);
+  }
+
+  function flashError(status, body) {
+    if (status === 403) {
+      flash('Curator mode is off — enable it to make decisions here.', 'error');
+    } else {
+      flash((body && (body.message || body.error)) || ('request failed: ' + status), 'error');
+    }
+  }
+
+  // ── curator flag ─────────────────────────────────────────────────────────
+
+  async function loadCurator() {
+    try {
+      const s = await getJSON('/api/curator');
+      state.isCurator = !!s.is_curator;
+    } catch (e) {
+      state.isCurator = false;
+    }
+    const pill = document.getElementById('curator-pill');
+    pill.textContent = state.isCurator ? 'curator on' : 'curator off — read only';
+    pill.classList.toggle('readonly', !state.isCurator);
   }
 
   function esc(s) {
@@ -336,7 +420,8 @@
     }
     body.innerHTML = state.rows.map(r => `
       <tr class="row${r.id === state.focusId ? ' focus' : ''}" data-id="${r.id}">
-        <td><input type="checkbox" disabled title="Bulk actions arrive in C12"></td>
+        <td><input type="checkbox" class="bulk-check" data-id="${r.id}" data-rule="${esc(r.rule_id)}"
+          ${state.selected.has(r.id) ? 'checked' : ''}></td>
         <td class="mono nowrap">${esc(r.rule_id)}</td>
         <td><span class="tag ${esc(r.severity)}">${esc(r.severity)}</span></td>
         <td><span class="tag ${esc(r.status)}">${esc(r.status)}</span></td>
@@ -347,9 +432,58 @@
         <td class="nowrap">${r.shows_affected}</td>
       </tr>`).join('');
     body.querySelectorAll('tr.row').forEach(tr => {
-      tr.addEventListener('click', () => selectFinding(Number(tr.dataset.id)));
+      tr.addEventListener('click', (e) => {
+        if (e.target.classList.contains('bulk-check')) return;
+        selectFinding(Number(tr.dataset.id));
+      });
     });
+    body.querySelectorAll('.bulk-check').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const id = Number(cb.dataset.id);
+        if (cb.checked) state.selected.set(id, cb.dataset.rule);
+        else state.selected.delete(id);
+        renderBulkBar();
+      });
+    });
+    renderBulkBar();
   }
+
+  // ── bulk decisions ──────────────────────────────────────────────────────
+
+  function renderBulkBar() {
+    const bar = document.getElementById('bulk-bar');
+    const n = state.selected.size;
+    bar.style.display = n ? 'flex' : 'none';
+    document.getElementById('bulk-count').textContent = `${n} selected`;
+    const rules = new Set(state.selected.values());
+    const oneRule = n > 0 && rules.size === 1;
+    document.getElementById('bulk-confirm').disabled = !oneRule;
+    document.getElementById('bulk-fp').disabled = !oneRule;
+    document.getElementById('bulk-hint').textContent =
+      n > 0 && !oneRule ? 'bulk actions need one rule per batch' : '';
+  }
+
+  async function bulkDecide(status) {
+    const ids = [...state.selected.keys()];
+    if (!ids.length) return;
+    try {
+      const r = await fetch('/api/qc/findings/bulk', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ids, status }),
+      });
+      const body = await r.json();
+      if (!r.ok) return flashError(r.status, body);
+      flash(`${ids.length} finding(s) marked ${status}.`, 'ok');
+      state.selected.clear();
+      await loadSummary();
+      await loadFindings();
+    } catch (e) {
+      flash('Bulk decision failed: ' + e.message, 'error');
+    }
+  }
+
+  document.getElementById('bulk-confirm').addEventListener('click', () => bulkDecide('confirmed'));
+  document.getElementById('bulk-fp').addEventListener('click', () => bulkDecide('false_positive'));
 
   function renderPager() {
     const start = state.total === 0 ? 0 : (state.page - 1) * state.page_size + 1;
@@ -419,16 +553,451 @@
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       const isQueue = tab.dataset.tab === 'queue';
-      document.getElementById('tab-queue').style.display = isQueue ? 'block' : 'none';
+      state.tab = tab.dataset.tab;
+      document.getElementById('tab-queue').style.display = isQueue ? 'flex' : 'none';
       document.getElementById('tab-findings').style.display = isQueue ? 'none' : 'flex';
+      if (isQueue && !queue.ids.length) loadQueue();
+      if (!isQueue && !state.rows.length) loadFindings();
     });
+  });
+
+  // ── run rules ────────────────────────────────────────────────────────────
+
+  let runPollTimer = null;
+
+  async function startRun() {
+    const btn = document.getElementById('run-rules-btn');
+    btn.disabled = true;
+    btn.textContent = 'Running…';
+    try {
+      const r = await fetch('/api/qc/run', { method: 'POST',
+        headers: { 'Content-Type': 'application/json' }, body: '{}' });
+      const body = await r.json();
+      if (!r.ok) {
+        flashError(r.status, body);
+        btn.disabled = false;
+        btn.textContent = 'Run rules';
+        return;
+      }
+      pollRun();
+    } catch (e) {
+      flash('Could not start run: ' + e.message, 'error');
+      btn.disabled = false;
+      btn.textContent = 'Run rules';
+    }
+  }
+
+  async function pollRun() {
+    clearTimeout(runPollTimer);
+    try {
+      const s = await getJSON('/api/qc/run');
+      const btn = document.getElementById('run-rules-btn');
+      if (s.running) {
+        btn.disabled = true;
+        btn.textContent = `Running… (${s.done || 0}/${s.total || 0})`;
+        runPollTimer = setTimeout(pollRun, 800);
+        return;
+      }
+      btn.disabled = false;
+      btn.textContent = 'Run rules';
+      if (s.stage === 'done') {
+        flash('Rules run finished.', 'ok');
+        await loadSummary();
+        queue.ids = []; queue.current = null;
+        if (state.tab === 'queue') await loadQueue();
+        else await loadFindings();
+      } else if (s.stage === 'error') {
+        flash('Rules run failed — see server logs.', 'error');
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  document.getElementById('run-rules-btn').addEventListener('click', startRun);
+
+  // ── queue tab ────────────────────────────────────────────────────────────
+
+  const QUEUE_STORAGE_KEY = 'qc_queue_state_v1';
+
+  function saveQueueState() {
+    try {
+      localStorage.setItem(QUEUE_STORAGE_KEY, JSON.stringify({
+        currentId: queue.ids[queue.idx] ?? null,
+        skipped: [...queue.skipped],
+      }));
+    } catch (e) { /* ignore — private mode, quota, etc. */ }
+  }
+
+  function loadQueueState() {
+    try {
+      const raw = localStorage.getItem(QUEUE_STORAGE_KEY);
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async function loadQueue() {
+    const params = new URLSearchParams({ status: 'open', page_size: '200' });
+    if (queue.ruleFilter) params.set('rule', queue.ruleFilter);
+    let rows = [];
+    try {
+      let page = 1;
+      while (true) {
+        params.set('page', page);
+        const data = await getJSON('/api/qc/findings?' + params.toString());
+        rows = rows.concat(data.rows);
+        if (!data.rows.length || rows.length >= data.total) break;
+        page++;
+      }
+    } catch (e) {
+      document.getElementById('tab-queue').innerHTML =
+        '<div class="empty">Could not load the queue.</div>';
+      return;
+    }
+    const sevRank = { error: 0, warn: 1, info: 2 };
+    rows.sort((a, b) =>
+      (sevRank[a.severity] ?? 9) - (sevRank[b.severity] ?? 9)
+      || a.rule_id.localeCompare(b.rule_id) || a.id - b.id);
+
+    queue.ids = rows.map(r => r.id);
+    queue.idx = 0;
+
+    const saved = loadQueueState();
+    if (saved) {
+      queue.skipped = new Set(saved.skipped || []);
+      if (saved.currentId != null) {
+        const at = queue.ids.indexOf(saved.currentId);
+        if (at >= 0) queue.idx = at;
+      }
+    }
+    advanceToUnskipped(queue.idx);
+    await renderQueueCard();
+  }
+
+  function advanceToUnskipped(fromIdx) {
+    let i = fromIdx;
+    while (i < queue.ids.length && queue.skipped.has(queue.ids[i])) i++;
+    queue.idx = i;
+  }
+
+  async function renderQueueCard() {
+    const root = document.getElementById('tab-queue');
+    if (!queue.ids.length) {
+      root.innerHTML = '<div class="empty">No open findings' +
+        (queue.ruleFilter ? ` for ${esc(queue.ruleFilter)}` : '') + '. Nice.</div>';
+      return;
+    }
+    if (queue.idx >= queue.ids.length) {
+      root.innerHTML = '<div class="empty">Queue cleared for this session.</div>';
+      return;
+    }
+    const id = queue.ids[queue.idx];
+    root.innerHTML = `
+      <div class="queue-toolbar">
+        <select id="queue-rule-filter"></select>
+        <span class="queue-progress">${queue.idx + 1} / ${queue.ids.length}
+          (${queue.skipped.size} skipped) &nbsp;
+          <kbd>c</kbd> confirm · <kbd>f</kbd> false positive · <kbd>e</kbd> correct ·
+          <kbd>s</kbd> skip · <kbd>j</kbd>/<kbd>k</kbd> next/prev · <kbd>o</kbd> open source</span>
+      </div>
+      <div id="queue-card-wrap"><div class="empty">Loading…</div></div>
+    `;
+    populateQueueRuleFilter();
+    saveQueueState();
+    try {
+      const f = await getJSON('/api/qc/findings/' + id);
+      queue.current = f;
+      renderQueueCardBody(f);
+    } catch (e) {
+      document.getElementById('queue-card-wrap').innerHTML =
+        '<div class="empty">Could not load finding ' + esc(id) + '.</div>';
+    }
+  }
+
+  function populateQueueRuleFilter() {
+    const sel = document.getElementById('queue-rule-filter');
+    if (!sel) return;
+    const rules = [...new Set(queue.ids.map(id => (queue.current && queue.current.id === id)
+      ? queue.current.rule_id : null).filter(Boolean))];
+    // Rebuild from the summary rule set instead (stable across the queue).
+    getJSON('/api/qc/summary').then(s => {
+      const ids = Object.keys(s.rules).sort();
+      sel.innerHTML = '<option value="">all rules</option>' +
+        ids.map(r => `<option value="${esc(r)}"${r === queue.ruleFilter ? ' selected' : ''}>${esc(r)}</option>`).join('');
+    }).catch(() => {});
+    sel.onchange = () => {
+      queue.ruleFilter = sel.value;
+      queue.skipped.clear();
+      loadQueue();
+    };
+  }
+
+  function highlightMention(text, evidence) {
+    if (!text) return '';
+    const needle = evidence && (evidence.mention || evidence.matched_text);
+    if (!needle) return esc(text);
+    const idx = text.indexOf(needle);
+    if (idx < 0) return esc(text);
+    return esc(text.slice(0, idx)) + '<mark>' + esc(needle) + '</mark>' +
+      esc(text.slice(idx + needle.length));
+  }
+
+  function renderQueueCardBody(f) {
+    const wrap = document.getElementById('queue-card-wrap');
+    const dateLinks = (f.affected_dates || []).map(d =>
+      `<a href="/api/dossier/html?date=${encodeURIComponent(d)}&inline=1" target="_blank" rel="noopener">${esc(d)}</a>`
+    ).join('') || '<span class="dim">none resolved</span>';
+
+    wrap.innerHTML = `
+      <div class="card">
+        <div class="card-head">
+          <span class="tag ${esc(f.severity)}">${esc(f.severity)}</span>
+          <span class="mono">${esc(f.rule_id)}</span>
+          <span class="entity">${esc(f.entity_kind)}:${esc(f.entity_key)}</span>
+          <span class="dim">${(f.affected_dates || []).length} show(s)</span>
+          <span class="first-seen">first seen ${esc(f.first_seen)}</span>
+        </div>
+        <div class="card-body">
+          <div class="why-flagged">
+            <div class="rule-desc">${esc(f.rule_description || '')}</div>
+            <div>${esc(f.detail)}</div>
+          </div>
+          ${renderEvidencePanel(f)}
+          <div class="panel">
+            <h3>Affected shows</h3>
+            <div class="body dates">${dateLinks}</div>
+          </div>
+        </div>
+        <div class="decision-row">
+          <button class="confirm" id="q-confirm">Confirm</button>
+          <button class="fp" id="q-fp">False positive</button>
+          <button id="q-correct">Correct…</button>
+          <button id="q-skip">Skip</button>
+          <textarea id="q-note" placeholder="note (optional)"></textarea>
+        </div>
+        <div class="correction-form" id="q-correction-form" hidden>
+          <div class="row2">
+            <input id="q-corr-field" placeholder="field" value="${esc(f.evidence && f.evidence.field || '')}">
+            <input id="q-corr-original" placeholder="original"
+              value="${esc(f.evidence && (f.evidence.original || f.evidence.value) || '')}">
+          </div>
+          <div class="row2">
+            <input id="q-corr-corrected" placeholder="corrected value">
+            <input id="q-corr-reason" placeholder="reason">
+          </div>
+          <div>
+            <button class="confirm" id="q-corr-submit">Save correction</button>
+            <button id="q-corr-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('q-confirm').addEventListener('click', () => queueDecide('confirmed'));
+    document.getElementById('q-fp').addEventListener('click', () => queueDecide('false_positive'));
+    document.getElementById('q-skip').addEventListener('click', () => queueSkip());
+    document.getElementById('q-correct').addEventListener('click', () => {
+      document.getElementById('q-correction-form').hidden = false;
+    });
+    document.getElementById('q-corr-cancel').addEventListener('click', () => {
+      document.getElementById('q-correction-form').hidden = true;
+    });
+    document.getElementById('q-corr-submit').addEventListener('click', queueSubmitCorrection);
+
+    wireTaperActions(f);
+  }
+
+  function renderEvidencePanel(f) {
+    const ctx = f.context || {};
+    if (f.rule_id.startsWith('R-T')) {
+      const attr = ctx.attribution || {};
+      const entry = ctx.entry || {};
+      const mentionHtml = highlightMention(entry.description, f.evidence);
+      return `
+        <div class="panel">
+          <h3>Taper attribution</h3>
+          <div class="body">
+            <table class="sources">
+              <tr><td>Attribution</td><td>${esc(attr.taper_normalised || '(none)')} · ${esc(attr.confidence || '')}</td></tr>
+              <tr><td>Evidence text</td><td>${mentionHtml}</td></tr>
+              <tr><td>TUIT tapers</td><td>${(ctx.tuit_tapers || []).map(t => esc(t.taper)).join(', ') || '(none)'}</td></tr>
+            </table>
+            <div style="margin-top:8px; display:flex; gap:8px;">
+              <button id="q-reject-attribution" class="danger-outline">Reject attribution</button>
+              <a class="pill" style="text-decoration:none"
+                href="/taper-review#tab=entries&q=${encodeURIComponent(f.entity_key)}"
+                target="_blank" rel="noopener">Open in /taper-review</a>
+            </div>
+          </div>
+        </div>`;
+    }
+    if (f.rule_id.startsWith('R-O')) {
+      return `
+        <div class="panel">
+          <h3>Olof setlist</h3>
+          <div class="body">
+            <pre class="evidence">${esc(ctx.raw_text || '')}</pre>
+            <table class="sources">
+              ${(ctx.parsed_songs || []).map(s =>
+                `<tr><td>${s.position}</td><td>${esc(s.song_title)} ${esc(s.annotations || '')}</td></tr>`
+              ).join('')}
+            </table>
+          </div>
+        </div>`;
+    }
+    if (f.rule_id === 'R-G1') {
+      const g = ctx.venue_geocoded || {};
+      return `
+        <div class="panel">
+          <h3>Geocode</h3>
+          <div class="body">
+            <table class="sources">
+              <tr><td>Venue</td><td>${esc(g.venue || f.entity_key)} · ${esc(g.city || '')}</td></tr>
+              <tr><td>Geocoder match</td><td>${esc(g.note || f.evidence?.note || '')}</td></tr>
+              <tr><td>Missing tokens</td><td>${esc((f.evidence?.missing || []).join(', '))}</td></tr>
+              <tr><td>Confidence</td><td>${esc(g.confidence ?? '')} · ${esc(g.source || '')}</td></tr>
+            </table>
+          </div>
+        </div>`;
+    }
+    if (f.rule_id === 'R-E1') {
+      const e = ctx.entry || {};
+      return `
+        <div class="panel"><h3>Entry</h3>
+          <div class="body"><pre class="evidence">${esc(JSON.stringify(e, null, 2))}</pre></div>
+        </div>`;
+    }
+    if (f.rule_id === 'R-F1') {
+      return `
+        <div class="panel"><h3>Family</h3>
+          <div class="body"><pre class="evidence">${esc(JSON.stringify(ctx, null, 2))}</pre></div>
+        </div>`;
+    }
+    // R-S1 and anything else: raw context/evidence dump.
+    return `
+      <div class="panel"><h3>Evidence</h3>
+        <div class="body"><pre class="evidence">${esc(JSON.stringify(f.evidence, null, 2))}</pre></div>
+      </div>`;
+  }
+
+  function wireTaperActions(f) {
+    const btn = document.getElementById('q-reject-attribution');
+    if (!btn) return;
+    btn.addEventListener('click', async () => {
+      const lb = f.entity_key;
+      try {
+        const r = await fetch(`/api/tapers/attributions/${encodeURIComponent(lb)}/reject`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}',
+        });
+        const body = await r.json();
+        if (!r.ok) return flashError(r.status, body);
+        flash(`LB-${lb} attribution rejected. Run rules to clear the finding.`, 'ok');
+      } catch (e) {
+        flash('Reject failed: ' + e.message, 'error');
+      }
+    });
+  }
+
+  async function queueDecide(status) {
+    if (!queue.current) return;
+    const id = queue.current.id;
+    const note = document.getElementById('q-note').value || null;
+    try {
+      const r = await fetch(`/api/qc/findings/${id}/decision`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status, note }),
+      });
+      const body = await r.json();
+      if (!r.ok) return flashError(r.status, body);
+      flash(`Finding ${id} marked ${status}.`, 'ok');
+      queueNext();
+    } catch (e) {
+      flash('Decision failed: ' + e.message, 'error');
+    }
+  }
+
+  async function queueSubmitCorrection() {
+    if (!queue.current) return;
+    const field = document.getElementById('q-corr-field').value.trim();
+    const original = document.getElementById('q-corr-original').value || null;
+    const corrected = document.getElementById('q-corr-corrected').value.trim();
+    const reason = document.getElementById('q-corr-reason').value || null;
+    if (!field || !corrected) return flash('field and corrected value are required', 'error');
+    try {
+      const r = await fetch('/api/qc/corrections', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ finding_id: queue.current.id, field, corrected, reason, original }),
+      });
+      const body = await r.json();
+      if (!r.ok) return flashError(r.status, body);
+      flash('Correction saved.', 'ok');
+      queueNext();
+    } catch (e) {
+      flash('Correction failed: ' + e.message, 'error');
+    }
+  }
+
+  function queueSkip() {
+    if (!queue.current) return;
+    queue.skipped.add(queue.current.id);
+    queueNext();
+  }
+
+  function queueNext() {
+    advanceToUnskipped(queue.idx + 1);
+    if (queue.idx < queue.ids.length && queue.ids[queue.idx] !== queue.current?.id) {
+      saveQueueState();
+      renderQueueCard();
+      return;
+    }
+    // Nothing left ahead that isn't skipped/current — reload from the server
+    // (a decision usually removes the finding from the open set entirely).
+    loadQueue();
+  }
+
+  function queuePrev() {
+    if (queue.idx > 0) {
+      queue.idx--;
+      saveQueueState();
+      renderQueueCard();
+    }
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (state.tab !== 'queue') return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    const tag = (e.target && e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+    switch (e.key) {
+      case 'c': queueDecide('confirmed'); break;
+      case 'f': queueDecide('false_positive'); break;
+      case 'e': {
+        const form = document.getElementById('q-correction-form');
+        if (form) form.hidden = !form.hidden;
+        break;
+      }
+      case 's': queueSkip(); break;
+      case 'j': queueNext(); break;
+      case 'k': queuePrev(); break;
+      case 'o': {
+        const link = document.querySelector('#queue-card-wrap .dates a');
+        if (link) window.open(link.href, '_blank', 'noopener');
+        break;
+      }
+      default: return;
+    }
+    e.preventDefault();
   });
 
   // ── init ────────────────────────────────────────────────────────────────
 
   async function init() {
+    await loadCurator();
     await loadSummary();
-    await loadFindings();
+    await loadQueue();
   }
   document.addEventListener('DOMContentLoaded', init);
 </script>

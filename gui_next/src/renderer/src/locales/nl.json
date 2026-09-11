@@ -2322,13 +2322,17 @@
         "taper_conflicts": "Conflicten bij het tapen",
         "fingerprint_suggestions": "Suggesties voor setlists",
         "xref_filesets": "Gefaseerde sets met kruisverwijzingsbestanden",
-        "tapematch_dates": "TapeMatch: datacuratie"
+        "tapematch_dates": "TapeMatch: datacuratie",
+        "qc_errors": "QC-fouten",
+        "qc_warnings": "QC-waarschuwingen"
       },
       "actions": {
         "taper_conflicts": "Bevestigen, afwijzen of als onopgelost markeren",
         "fingerprint_suggestions": "Elke voorgestelde overeenkomst voor een setlist accepteren of negeren",
         "xref_filesets": "Checksum-bestanden voor de sitespiegel die niet in Jeffs databaseback-up waren opgenomen — opgelost door een latere back-up, niet afkomstig van hier",
-        "tapematch_dates": "De kandidaatparen voor een datum accepteren of afwijzen"
+        "tapematch_dates": "De kandidaatparen voor een datum accepteren of afwijzen",
+        "qc_errors": "Beoordeling op /qc-review",
+        "qc_warnings": "Beoordeling op /qc-review"
       }
     }
   },

@@ -2322,13 +2322,17 @@
         "taper_conflicts": "Conflits de taper",
         "fingerprint_suggestions": "Suggestions de setlists",
         "xref_filesets": "Ensembles de fichiers de références croisées organisés par étapes",
-        "tapematch_dates": "Organisation chronologique des données dans TapeMatch"
+        "tapematch_dates": "Organisation chronologique des données dans TapeMatch",
+        "qc_errors": "Erreurs de contrôle qualité",
+        "qc_warnings": "Avertissements de contrôle qualité"
       },
       "actions": {
         "taper_conflicts": "Valider, rejeter ou marquer comme non résolu",
         "fingerprint_suggestions": "Accepter ou rejeter chaque suggestion de correspondance de setlist",
         "xref_filesets": "Fichiers de somme de contrôle du site miroir que la mise à jour de la base de données de Jeff n'incluait pas — problème résolu par une mise à jour ultérieure, ne provenant pas d'ici",
-        "tapematch_dates": "Accepter ou rejeter les paires de candidats pour une date"
+        "tapematch_dates": "Accepter ou rejeter les paires de candidats pour une date",
+        "qc_errors": "Révision sur /qc-review",
+        "qc_warnings": "Révision sur /qc-review"
       }
     }
   },

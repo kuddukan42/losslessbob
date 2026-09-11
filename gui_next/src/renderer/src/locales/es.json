@@ -2322,13 +2322,17 @@
         "taper_conflicts": "Conflictos de taping",
         "fingerprint_suggestions": "Sugerencias de listas de reproducción",
         "xref_filesets": "Conjuntos de archivos de referencias cruzadas organizados por etapas",
-        "tapematch_dates": "Selección de fechas en TapeMatch"
+        "tapematch_dates": "Selección de fechas en TapeMatch",
+        "qc_errors": "Errores de control de calidad",
+        "qc_warnings": "Advertencias de control de calidad"
       },
       "actions": {
         "taper_conflicts": "Confirmar, rechazar o marcar como sin resolver",
         "fingerprint_suggestions": "Aceptar o rechazar cada sugerencia de coincidencia en la lista de reproducción",
         "xref_filesets": "Archivos de suma de comprobación del sitio espejo que no se incluyeron en la descarga de la base de datos de Jeff — resuelto mediante una descarga posterior, no desde aquí",
-        "tapematch_dates": "Aceptar o rechazar los pares de candidatos para una fecha"
+        "tapematch_dates": "Aceptar o rechazar los pares de candidatos para una fecha",
+        "qc_errors": "Revisión en /qc-review",
+        "qc_warnings": "Revisión en /qc-review"
       }
     }
   },

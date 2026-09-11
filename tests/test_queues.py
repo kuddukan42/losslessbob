@@ -44,9 +44,14 @@ def test_queue_ids_are_unique() -> None:
 
 
 def test_every_blocks_entry_is_a_real_step_id() -> None:
+    # qc_errors/qc_warnings (TODO-342 C12) intentionally block nothing -- the
+    # QC console isn't a refresh.STEPS entry, so blocks=() there is correct,
+    # not an oversight.
     step_ids = {s.step_id for s in STEPS}
+    no_blocks_ok = {"qc_errors", "qc_warnings"}
     for queue in QUEUES:
-        assert queue.blocks, f"{queue.queue_id} blocks nothing"
+        assert queue.blocks or queue.queue_id in no_blocks_ok, \
+            f"{queue.queue_id} blocks nothing"
         for step_id in queue.blocks:
             assert step_id in step_ids, f"{queue.queue_id} blocks unknown step {step_id!r}"
 
@@ -152,6 +157,47 @@ def test_xref_filesets_counts_staged_only(tmp_path) -> None:
     queue = _by_id(queue_counts(db_path))["xref_filesets"]
     assert queue["count"] == 2
     assert queue["screen"] is None, "xref ingest is display-only (decision 7)"
+
+
+def _insert_finding(conn, rule_id, entity_key, severity, status) -> None:
+    conn.execute(
+        "INSERT INTO qc_findings (rule_id, entity_kind, entity_key, severity, detail,"
+        " evidence_json, evidence_hash, first_seen, last_seen, status) VALUES"
+        " (?, 'lb', ?, ?, '', '{}', '', '2026-01-01T00:00:00', '2026-01-01T00:00:00', ?)",
+        (rule_id, entity_key, severity, status),
+    )
+
+
+def test_qc_errors_counts_open_and_confirmed_only(tmp_path) -> None:
+    db_path = _make_db(tmp_path)
+    conn = db.get_connection(db_path)
+    _insert_finding(conn, "R-T1", "1", "error", "open")
+    _insert_finding(conn, "R-T1", "2", "error", "confirmed")
+    _insert_finding(conn, "R-T1", "3", "error", "false_positive")
+    _insert_finding(conn, "R-T1", "4", "error", "fixed")
+    _insert_finding(conn, "R-G1", "5", "warn", "open")
+    conn.commit()
+
+    queue = _by_id(queue_counts(db_path))["qc_errors"]
+    assert queue["count"] == 2
+    assert queue["kind"] == "gate"
+    assert queue["blocks"] == []
+    assert queue["state"] == "pending"
+
+
+def test_qc_warnings_is_a_backlog_of_all_warn_findings(tmp_path) -> None:
+    db_path = _make_db(tmp_path)
+    conn = db.get_connection(db_path)
+    _insert_finding(conn, "R-G1", "1", "warn", "open")
+    _insert_finding(conn, "R-G1", "2", "warn", "confirmed")
+    _insert_finding(conn, "R-G1", "3", "warn", "fixed")
+    conn.commit()
+
+    queue = _by_id(queue_counts(db_path))["qc_warnings"]
+    assert queue["count"] == 2
+    assert queue["total"] == 3
+    assert queue["kind"] == "backlog"
+    assert queue["state"] == "open"
 
 
 def test_tapematch_dates_is_a_backlog_ratio(tmp_path) -> None:
