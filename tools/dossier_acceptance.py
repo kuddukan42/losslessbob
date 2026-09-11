@@ -9,7 +9,12 @@ for the mode asked. Modes arrive chunk by chunk; today there are two:
                     bobdylan.com / setlist.fm / TUIT) and each defect count at its target.
     --corroborate   Phase 3 row (a): backend.qc.corroborate.setlist_quorum on
                     1986-02-24 and 1975-12-08 (corroborated live, disputed
-                    against ``--before``), then the corpus-wide verdict shares.
+                    against ``--before``), then the corpus-wide verdict shares,
+                    plus the Phase 3 rows (b)/(c) corpus-wide rotation and
+                    LB-vs-TUIT tracklist agreement rates (C15).
+    --premieres     Phase 3 row (b) / D-02 gate item 2: backend.qc.corroborate.tour_premieres
+                    on 2010-03-29 — which positions are premieres per our corpus vs
+                    setlist.fm, and the count vs olof_events.tour_new_count (C15).
 
 Usage::
 
@@ -17,6 +22,7 @@ Usage::
     .venv/bin/python3 tools/dossier_acceptance.py --parser --before .debug/olof_before.db
     .venv/bin/python3 tools/dossier_acceptance.py --parser --residuals
     .venv/bin/python3 tools/dossier_acceptance.py --corroborate --before .debug/olof_before.db
+    .venv/bin/python3 tools/dossier_acceptance.py --premieres
 
 ``--before`` reads the same counts from a tools/olof_reparse_diff.py snapshot and
 prints them beside the live ones (``--parser``), or supplies the pre-Phase-1 Olof
@@ -289,7 +295,12 @@ def corroborate_shares(conn: sqlite3.Connection) -> tuple[dict[str, int], int]:
 
 
 def run_corroborate(db_path: Path, before_path: Path | None) -> int:
-    """Print the Phase 3 row (a) acceptance checks, then the corpus-wide verdict shares."""
+    """Print the Phase 3 row (a) acceptance checks, then the corpus-wide verdict shares.
+
+    Also folds in the Phase 3 rows (b)/(c) corpus-wide agreement rates
+    (:func:`corroborate.rotation_corpus_agreement`,
+    :func:`corroborate.tracklist_corpus_agreement`) — C15.
+    """
     live = _open_ro(db_path)
     before = _open_ro(before_path) if before_path else None
     try:
@@ -306,11 +317,56 @@ def run_corroborate(db_path: Path, before_path: Path | None) -> int:
             n = counts.get(key, 0)
             share = n / total if total else 0.0
             _log.info("  %-14s %6d  %5.1f%%", key, n, share * 100)
+
+        rot = corroborate.rotation_corpus_agreement(live)
+        _log.info("")
+        _log.info(
+            "corpus-wide rotation-stat agreement: %d/%d (%.1f%%)",
+            rot["agree"], rot["total"], rot["rate"] * 100,
+        )
+
+        trk = corroborate.tracklist_corpus_agreement(live)
+        _log.info(
+            "corpus-wide LB-vs-TUIT tracklist agreement: %d/%d (%.1f%%)",
+            trk["agree"], trk["total"], trk["rate"] * 100,
+        )
     finally:
         live.close()
         if before is not None:
             before.close()
     return 1 if failed else 0
+
+
+def run_premieres(db_path: Path) -> int:
+    """Phase 3 row (b) / D-02 accept case: 2010-03-29 tour-premiere agreement."""
+    live = _open_ro(db_path)
+    try:
+        event_id = corroborate.primary_event_id(live, "2010-03-29")
+        if event_id is None:
+            _log.info("FAIL  no olof_events row for 2010-03-29")
+            return 1
+        tp = corroborate.tour_premieres(live, event_id)
+        _log.info(
+            "2010-03-29 (event %d, tour %r): premiere_count=%d tour_new_count=%s%s",
+            event_id, tp["tour_name"], tp["premiere_count"], tp["tour_new_count"],
+            "  PASS" if tp["premiere_count_matches"] else "  FAIL",
+        )
+        _log.info("%-4s %-40s %-6s %-10s %-6s", "pos", "song", "ours", "setlistfm", "agrees")
+        for s in tp["songs"]:
+            _log.info(
+                "%-4d %-40s %-6s %-10s %-6s",
+                s["position"], s["song"][:40], s["ours"], s["setlistfm"], s["agrees"],
+            )
+        ours_premiere_positions = [s["position"] for s in tp["songs"] if s["ours"]]
+        ok = ours_premiere_positions == [4, 14] and tp["premiere_count_matches"]
+        _log.info("")
+        _log.info(
+            "%s  our premiere positions %s = [4, 14], count matches tour_new_count",
+            "PASS" if ok else "FAIL", ours_premiere_positions,
+        )
+    finally:
+        live.close()
+    return 0 if ok else 1
 
 
 def run_parser(db_path: Path, before: Path | None, residuals: bool) -> int:
@@ -349,7 +405,10 @@ def main(argv: list[str] | None = None) -> int:
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--parser", action="store_true", help="Phase 1 Olof parser checks.")
     mode.add_argument("--corroborate", action="store_true",
-                      help="Phase 3 row (a) setlist quorum checks.")
+                      help="Phase 3 row (a) setlist quorum checks (also prints the Phase 3"
+                           " rows (b)/(c) corpus-wide rotation/tracklist agreement rates).")
+    mode.add_argument("--premieres", action="store_true",
+                      help="Phase 3 row (b) / D-02 accept case: 2010-03-29 tour premieres.")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
                         help="--parser: olof_reparse_diff snapshot to print beside the live"
@@ -360,6 +419,8 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.corroborate:
         return run_corroborate(args.db, args.before)
+    if args.premieres:
+        return run_premieres(args.db)
     return run_parser(args.db, args.before, args.residuals)
 
 

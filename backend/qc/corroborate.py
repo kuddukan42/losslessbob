@@ -1,4 +1,4 @@
-"""Cross-source setlist corroboration (TODO-342 Phase 3a, audit Q1-a, plan R-O4).
+"""Cross-source setlist corroboration (TODO-342 Phase 3a/3b/3c, audit Q1-a/b/c, plan R-O4).
 
 Compares Olof's parsed setlist for a date against three sources independent of
 Olof and of each other: ``setlistfm_setlist``, ``bobdylan_setlist`` and
@@ -20,9 +20,34 @@ key populated in alphabetical-by-song order (verified against 1986-02-24: ids
 the table has no other position column. TUIT therefore only ever corroborates
 on song set + count, never on order (``order_agrees`` is always ``None`` for
 it).
+
+C15 (Phase 3 rows (b) and (c), audit Q1-b/c, P10) extends this module with
+three more on-the-fly checks — no new tables, no new QC rule:
+
+- :func:`tour_premieres` — per-song tour-premiere agreement (plan D-02 gate
+  item 2) between our corpus (``song_performances`` joined to
+  ``olof_events``, the D-02 source) and setlist.fm's own tour grouping.
+- :func:`rotation_check` — recomputes "songs not played at the previous
+  concert" from our corpus and compares it against Olof's stated
+  ``rotation_new``/``rotation_pct`` (plan D-04, audit hole P5). Definition
+  learned from the live 2010 Zepp Tokyo run (2010-03-29: stated 13/72%):
+  the previous concert is the immediately preceding ``olof_events`` row
+  under :data:`_CONCERT_TYPE_FILTER` ordered by ``(date_str, event_id)`` —
+  *not* scoped to the same tour or venue run — ``rotation_new`` is this
+  show's song count (``song_performances.song_norm``) absent from that
+  show's song set, and ``rotation_pct`` is ``floor(rotation_new / n_songs *
+  100)``. Verified exactly on the 7-night Zepp Tokyo run (52, 52, 58, 64,
+  70, 52, 72) and at 87.3% corpus-wide (close to the audit's cited ~86%;
+  the gap is mostly 1974 shows where ``song_performances`` has far fewer
+  rows than Olof's stated song count, i.e. thin/placeholder listings, not a
+  formula mismatch).
+- :func:`tracklist_check` — LB-site ``entries.setlist`` (via
+  :func:`backend.dossier_fields.parse_entry_tracklist`) vs TUIT
+  ``tuit_recordings.setlist_json`` for the same ``lb_number`` (audit P10).
 """
 from __future__ import annotations
 
+import json
 import logging
 import re
 import sqlite3
@@ -36,6 +61,7 @@ from backend.dossier_fields import (
     clean_track_title,
     is_non_song,
     match_track,
+    parse_entry_tracklist,
 )
 
 _log = logging.getLogger(__name__)
@@ -519,3 +545,500 @@ def corroborate_all(conn: sqlite3.Connection) -> Iterator[tuple[str, Quorum]]:
             "tuit": (dict(tuit_by_date.get(date_str, {})), False),
         }
         yield date_str, quorum_verdict(olof_titles, sources, cmap)
+
+
+# ---------------------------------------------------------------------------
+# 3b — tour premieres (plan Phase 3 row (b), D-02 gate item 2)
+# ---------------------------------------------------------------------------
+
+
+class PremiereSong(TypedDict):
+    """One event position's tour-premiere agreement.
+
+    Attributes:
+        position: 1-based position in the event's song list.
+        song: Display title (``song_performances.song_canonical``).
+        ours: Whether our corpus has no earlier performance of this song in
+            the same ``tour_name`` (the D-02 source).
+        setlistfm: Same question answered from setlist.fm's own tour
+            grouping, or ``None`` when setlist.fm has no data for this show
+            or doesn't list this song (source has no data / song unmatched).
+        agrees: ``ours == setlistfm``, or ``None`` when ``setlistfm`` is ``None``.
+    """
+
+    position: int
+    song: str
+    ours: bool
+    setlistfm: bool | None
+    agrees: bool | None
+
+
+class TourPremieres(TypedDict):
+    """Result of :func:`tour_premieres`.
+
+    Attributes:
+        event_id: The event checked.
+        tour_name: ``olof_events.tour_name`` for the event.
+        tour_new_count: Olof's stated premiere count for the event, or ``None``.
+        premiere_count: Our computed premiere count (``sum(ours)``).
+        premiere_count_matches: Whether ``premiere_count == tour_new_count``,
+            or ``None`` when ``tour_new_count`` is ``None``.
+        songs: One :class:`PremiereSong` per position.
+    """
+
+    event_id: int
+    tour_name: str
+    tour_new_count: int | None
+    premiere_count: int
+    premiere_count_matches: bool | None
+    songs: list[PremiereSong]
+
+
+def _event_song_rows(conn: sqlite3.Connection, event_id: int) -> list[sqlite3.Row]:
+    """This event's ``song_performances`` rows, in position order."""
+    return conn.execute(
+        "SELECT position, song_norm, song_canonical FROM song_performances"
+        " WHERE event_id = ? ORDER BY position",
+        (event_id,),
+    ).fetchall()
+
+
+def _tour_song_history(
+    conn: sqlite3.Connection, tour_name: str, before_date: str, before_event_id: int,
+) -> set[str]:
+    """``song_norm`` set performed earlier in *tour_name*, strictly before this event.
+
+    One query, scoped to the tour — not a whole-corpus scan — so this stays
+    cheap for a per-dossier call.
+    """
+    oe_filter = _CONCERT_TYPE_FILTER.replace("event_type", "oe.event_type").replace(
+        "tour_name", "oe.tour_name"
+    )
+    rows = conn.execute(
+        "SELECT DISTINCT sp.song_norm FROM song_performances sp"
+        " JOIN olof_events oe ON oe.event_id = sp.event_id"
+        f" WHERE oe.tour_name = ? AND {oe_filter} AND oe.date_str != ''"
+        " AND (oe.date_str < ? OR (oe.date_str = ? AND sp.event_id < ?))",
+        (tour_name, before_date, before_date, before_event_id),
+    ).fetchall()
+    return {r["song_norm"] for r in rows}
+
+
+def _setlistfm_groups_for_date(
+    conn: sqlite3.Connection, date_iso: str,
+) -> dict[str, list[str]]:
+    """setlist.fm track groups (``{setlistfm_id: [track_name, ...]}``) for *date_iso*."""
+    rows = conn.execute(
+        "SELECT l.setlistfm_id, l.track_name FROM setlistfm_setlist l"
+        " JOIN setlistfm_shows s USING (setlistfm_id)"
+        " WHERE s.date_str = ? AND COALESCE(l.is_tape, 0) = 0"
+        " ORDER BY l.setlistfm_id, l.set_index, l.position",
+        (date_iso,),
+    ).fetchall()
+    groups: dict[str, list[str]] = defaultdict(list)
+    for r in rows:
+        groups[r["setlistfm_id"]].append(r["track_name"])
+    return dict(groups)
+
+
+def _best_setlistfm_id(
+    groups: dict[str, list[str]], reference_index: SetlistIndex, canonical_map: dict[str, str],
+) -> str | None:
+    """The ``setlistfm_id`` whose tracks best match *reference_index* (see :func:`_best_group`)."""
+    if not groups:
+        return None
+    if len(groups) == 1:
+        return next(iter(groups))
+    best_id: str | None = None
+    best_score = -1
+    for key in sorted(groups):
+        score = sum(
+            1 for t in _clean_song_titles(groups[key])
+            if match_track(t, reference_index, canonical_map) is not None
+        )
+        if score > best_score:
+            best_id, best_score = key, score
+    return best_id
+
+
+def tour_premieres(
+    conn: sqlite3.Connection, event_id: int, canonical_map: dict[str, str] | None = None,
+) -> TourPremieres:
+    """Per-song tour-premiere agreement between our corpus and setlist.fm.
+
+    Plan Phase 3 row (b) / D-02 gate item 2: a per-song badge needs the
+    computed premiere count to equal ``olof_events.tour_new_count`` (gate
+    item 1, checked by the caller) *and* each badged song to also read as a
+    tour premiere on an independent source — here, setlist.fm, using
+    setlist.fm's *own* ``tour_name`` for the show (it rarely matches Olof's),
+    not Olof's.
+
+    Args:
+        conn: Open SQLite connection.
+        event_id: ``olof_events.event_id`` to check.
+        canonical_map: Optional pre-loaded ``song_canonical`` alias map (saves
+            a query when called in a loop); loaded from *conn* if omitted.
+
+    Returns:
+        A :class:`TourPremieres`. ``songs`` is ``[]`` when the event has no
+        ``song_performances`` rows (not yet recomputed, or a non-song event).
+    """
+    ev = conn.execute(
+        "SELECT tour_name, date_str, tour_new_count FROM olof_events WHERE event_id = ?",
+        (event_id,),
+    ).fetchone()
+    if ev is None:
+        return TourPremieres(
+            event_id=event_id, tour_name="", tour_new_count=None,
+            premiere_count=0, premiere_count_matches=None, songs=[],
+        )
+    tour_name, date_str, tour_new_count = ev["tour_name"], ev["date_str"], ev["tour_new_count"]
+
+    song_rows = _event_song_rows(conn, event_id)
+    if not song_rows:
+        return TourPremieres(
+            event_id=event_id, tour_name=tour_name, tour_new_count=tour_new_count,
+            premiere_count=0, premiere_count_matches=None, songs=[],
+        )
+
+    cmap = canonical_map if canonical_map is not None else load_canonical_map(conn)
+    history = _tour_song_history(conn, tour_name, date_str, event_id) if tour_name else set()
+
+    reference_index = build_setlist_index([r["song_canonical"] for r in song_rows], cmap)
+    sfm_groups = _setlistfm_groups_for_date(conn, date_str) if date_str else {}
+    sfm_id = _best_setlistfm_id(sfm_groups, reference_index, cmap)
+
+    current_index: SetlistIndex | None = None
+    earlier_index: SetlistIndex | None = None
+    if sfm_id is not None:
+        current_titles = _clean_song_titles(sfm_groups[sfm_id])
+        current_index = build_setlist_index(current_titles, cmap)
+        sfm_tour = conn.execute(
+            "SELECT tour_name FROM setlistfm_shows WHERE setlistfm_id = ?", (sfm_id,),
+        ).fetchone()
+        sfm_tour_name = (sfm_tour["tour_name"] or "") if sfm_tour else ""
+        earlier_titles: list[str] = []
+        if sfm_tour_name:
+            # DISTINCT: a long-running tour (e.g. "Never Ending Tour" spans decades)
+            # can carry tens of thousands of prior track rows but only a few hundred
+            # distinct titles — dedupe before the Python-side clean/index work.
+            earlier_rows = conn.execute(
+                "SELECT DISTINCT l.track_name FROM setlistfm_setlist l"
+                " JOIN setlistfm_shows s USING (setlistfm_id)"
+                " WHERE s.tour_name = ? AND s.date_str != '' AND s.date_str < ?"
+                " AND COALESCE(l.is_tape, 0) = 0",
+                (sfm_tour_name, date_str),
+            ).fetchall()
+            earlier_titles = _clean_song_titles(r["track_name"] for r in earlier_rows)
+        earlier_index = build_setlist_index(earlier_titles, cmap)
+
+    songs: list[PremiereSong] = []
+    premiere_count = 0
+    for r in song_rows:
+        ours = r["song_norm"] not in history
+        if ours:
+            premiere_count += 1
+        setlistfm: bool | None = None
+        if current_index is not None and earlier_index is not None:
+            now_match = match_track(r["song_canonical"], current_index, cmap)
+            if now_match is not None:
+                setlistfm = match_track(r["song_canonical"], earlier_index, cmap) is None
+        agrees = None if setlistfm is None else (ours == setlistfm)
+        songs.append(PremiereSong(
+            position=r["position"], song=r["song_canonical"],
+            ours=ours, setlistfm=setlistfm, agrees=agrees,
+        ))
+
+    matches = None if tour_new_count is None else (premiere_count == tour_new_count)
+    return TourPremieres(
+        event_id=event_id, tour_name=tour_name, tour_new_count=tour_new_count,
+        premiere_count=premiere_count, premiere_count_matches=matches, songs=songs,
+    )
+
+
+# ---------------------------------------------------------------------------
+# 3b — rotation (plan Phase 3 row (b), D-04, audit hole P5)
+# ---------------------------------------------------------------------------
+
+
+class RotationCheck(TypedDict):
+    """Result of :func:`rotation_check`.
+
+    Attributes:
+        event_id: The event checked.
+        previous_event_id: The previous concert event used for the recompute,
+            or ``None`` when there isn't one.
+        olof_new: Olof's stated ``rotation_new``, or ``None``.
+        olof_pct: Olof's stated ``rotation_pct``, or ``None``.
+        ours_new: Our recomputed count of songs absent from the previous
+            concert, or ``None`` when there's no previous concert or no
+            ``song_performances`` rows for this event.
+        ours_pct: ``floor(ours_new / n_songs * 100)``, or ``None``.
+        agrees: ``(ours_new, ours_pct) == (olof_new, olof_pct)``, or ``None``
+            when Olof has no stated stat or we couldn't recompute.
+    """
+
+    event_id: int
+    previous_event_id: int | None
+    olof_new: int | None
+    olof_pct: int | None
+    ours_new: int | None
+    ours_pct: int | None
+    agrees: bool | None
+
+
+def _previous_concert_event_id(
+    conn: sqlite3.Connection, event_id: int, date_str: str,
+) -> int | None:
+    """The immediately preceding concert event by ``(date_str, event_id)`` order."""
+    row = conn.execute(
+        f"SELECT event_id FROM olof_events WHERE {_CONCERT_TYPE_FILTER} AND date_str != ''"
+        " AND (date_str < ? OR (date_str = ? AND event_id < ?))"
+        " ORDER BY date_str DESC, event_id DESC LIMIT 1",
+        (date_str, date_str, event_id),
+    ).fetchone()
+    return row["event_id"] if row else None
+
+
+def _recompute_rotation(
+    cur_song_norms: list[str], prev_song_norms: Iterable[str],
+) -> tuple[int, int] | tuple[None, None]:
+    """``(new_count, pct)`` for *cur_song_norms* against *prev_song_norms*, floor rounding."""
+    if not cur_song_norms:
+        return None, None
+    prev_set = set(prev_song_norms)
+    new_count = sum(1 for s in cur_song_norms if s not in prev_set)
+    pct = int(new_count / len(cur_song_norms) * 100)
+    return new_count, pct
+
+
+def rotation_check(conn: sqlite3.Connection, event_id: int) -> RotationCheck:
+    """Recompute "songs not played at the previous concert" and compare to Olof's stat.
+
+    Definition (learned from the live 2010-03-29 case, see the module
+    docstring): the previous concert is the immediately preceding
+    ``olof_events`` row under :data:`_CONCERT_TYPE_FILTER`, ordered by
+    ``(date_str, event_id)`` — regardless of tour or venue. ``rotation_new``
+    is this show's song count absent from that show; ``rotation_pct`` is
+    ``floor(rotation_new / n_songs * 100)``.
+
+    Args:
+        conn: Open SQLite connection.
+        event_id: ``olof_events.event_id`` to check.
+
+    Returns:
+        A :class:`RotationCheck`.
+    """
+    ev = conn.execute(
+        "SELECT date_str, rotation_new, rotation_pct FROM olof_events WHERE event_id = ?",
+        (event_id,),
+    ).fetchone()
+    if ev is None:
+        return RotationCheck(
+            event_id=event_id, previous_event_id=None, olof_new=None, olof_pct=None,
+            ours_new=None, ours_pct=None, agrees=None,
+        )
+    olof_new, olof_pct = ev["rotation_new"], ev["rotation_pct"]
+
+    cur_song_norms = [r["song_norm"] for r in _event_song_rows(conn, event_id)]
+    prev_event_id = _previous_concert_event_id(conn, event_id, ev["date_str"])
+    ours_new: int | None
+    ours_pct: int | None
+    if prev_event_id is None:
+        ours_new = ours_pct = None
+    else:
+        prev_song_norms = [r["song_norm"] for r in _event_song_rows(conn, prev_event_id)]
+        ours_new, ours_pct = _recompute_rotation(cur_song_norms, prev_song_norms)
+
+    agrees = None
+    if olof_new is not None and ours_new is not None:
+        agrees = (ours_new, ours_pct) == (olof_new, olof_pct)
+
+    return RotationCheck(
+        event_id=event_id, previous_event_id=prev_event_id,
+        olof_new=olof_new, olof_pct=olof_pct, ours_new=ours_new, ours_pct=ours_pct,
+        agrees=agrees,
+    )
+
+
+def rotation_corpus_agreement(conn: sqlite3.Connection) -> dict[str, int | float]:
+    """Corpus-wide agreement rate between Olof's stated rotation stat and our recompute.
+
+    One pass over ``olof_events``/``song_performances`` (preloaded, not
+    per-event queries) over every concert event with a stated
+    ``rotation_new``.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Returns:
+        ``{"total": stated event count, "agree": agreeing count, "rate": share}``.
+    """
+    rows = conn.execute(
+        f"SELECT event_id, date_str, rotation_new, rotation_pct FROM olof_events"
+        f" WHERE date_str != '' AND {_CONCERT_TYPE_FILTER} ORDER BY date_str, event_id"
+    ).fetchall()
+    song_rows = conn.execute(
+        "SELECT event_id, song_norm FROM song_performances ORDER BY event_id, position"
+    ).fetchall()
+    songs_by_event: dict[int, list[str]] = defaultdict(list)
+    for r in song_rows:
+        songs_by_event[r["event_id"]].append(r["song_norm"])
+
+    total = 0
+    agree = 0
+    prev_event_id: int | None = None
+    for r in rows:
+        cur = songs_by_event.get(r["event_id"], [])
+        if prev_event_id is not None and r["rotation_new"] is not None and cur:
+            ours_new, ours_pct = _recompute_rotation(cur, songs_by_event.get(prev_event_id, []))
+            total += 1
+            if (ours_new, ours_pct) == (r["rotation_new"], r["rotation_pct"]):
+                agree += 1
+        prev_event_id = r["event_id"]
+
+    return {"total": total, "agree": agree, "rate": (agree / total) if total else 0.0}
+
+
+# ---------------------------------------------------------------------------
+# 3c — source tracklist (plan Phase 3 row (c), audit P10, D-01 confidence)
+# ---------------------------------------------------------------------------
+
+
+class TracklistCheck(TypedDict):
+    """Result of :func:`tracklist_check`.
+
+    Attributes:
+        lb_number: The LB entry checked.
+        lb_songs: LB-site song tracks (:func:`~backend.dossier_fields.parse_entry_tracklist`,
+            song tracks only, missing excluded).
+        tuit_songs: TUIT's ``setlist_json`` song titles, or ``None`` when TUIT
+            has no ``setlist_json`` row for this ``lb_number``.
+        matched: How many ``lb_songs`` a TUIT track hit (0 when ``tuit_songs`` is ``None``).
+        lb_only: ``lb_songs`` no TUIT track matched.
+        tuit_only: TUIT tracks (cleaned) that matched no ``lb_songs`` entry.
+        agrees: Same present-count (within the C14 :data:`_SLACK`) and set
+            agreement, or ``None`` when ``tuit_songs`` is ``None``.
+    """
+
+    lb_number: int
+    lb_songs: list[str]
+    tuit_songs: list[str] | None
+    matched: int
+    lb_only: list[str]
+    tuit_only: list[str]
+    agrees: bool | None
+
+
+def _tuit_setlist_titles(conn: sqlite3.Connection, lb_number: int) -> list[str] | None:
+    """Raw song titles from ``tuit_recordings.setlist_json`` for *lb_number*, or ``None``."""
+    row = conn.execute(
+        "SELECT setlist_json FROM tuit_recordings WHERE lb_number = ?"
+        " AND setlist_json IS NOT NULL AND setlist_json != '' LIMIT 1",
+        (lb_number,),
+    ).fetchone()
+    if row is None:
+        return None
+    try:
+        items = json.loads(row["setlist_json"])
+    except (TypeError, ValueError):
+        _log.warning("tuit_recordings.setlist_json unparsable for lb_number=%s", lb_number)
+        return None
+    return [x.get("song", "") for x in items if isinstance(x, dict) and x.get("song")]
+
+
+def _tracklist_compare(
+    lb_songs: list[str], tuit_titles_raw: list[str], canonical_map: dict[str, str],
+) -> SourceComparison:
+    """Compare TUIT's raw titles against *lb_songs* (order not asserted, per audit P10)."""
+    reference_index = build_setlist_index(lb_songs, canonical_map)
+    return _compare(lb_songs, reference_index, tuit_titles_raw, False, canonical_map)
+
+
+def tracklist_check(
+    conn: sqlite3.Connection, lb_number: int, canonical_map: dict[str, str] | None = None,
+) -> TracklistCheck:
+    """LB-site tracklist vs TUIT ``setlist_json`` for the same ``lb_number`` (audit P10).
+
+    Args:
+        conn: Open SQLite connection.
+        lb_number: ``entries.lb_number`` to check.
+        canonical_map: Optional pre-loaded ``song_canonical`` alias map (saves
+            a query when called in a loop); loaded from *conn* if omitted.
+
+    Returns:
+        A :class:`TracklistCheck`.
+    """
+    row = conn.execute(
+        "SELECT setlist FROM entries WHERE lb_number = ?", (lb_number,),
+    ).fetchone()
+    entry_setlist = row["setlist"] if row else None
+    lb_songs = [
+        t["title"] for t in parse_entry_tracklist(entry_setlist)
+        if t["is_song"] and not t["missing"]
+    ]
+
+    tuit_titles_raw = _tuit_setlist_titles(conn, lb_number)
+    if tuit_titles_raw is None:
+        return TracklistCheck(
+            lb_number=lb_number, lb_songs=lb_songs, tuit_songs=None,
+            matched=0, lb_only=list(lb_songs), tuit_only=[], agrees=None,
+        )
+
+    cmap = canonical_map if canonical_map is not None else load_canonical_map(conn)
+    comp = _tracklist_compare(lb_songs, tuit_titles_raw, cmap)
+    return TracklistCheck(
+        lb_number=lb_number, lb_songs=lb_songs, tuit_songs=_clean_song_titles(tuit_titles_raw),
+        matched=comp["matched"], lb_only=comp["olof_only"], tuit_only=comp["source_only"],
+        agrees=comp["agrees"],
+    )
+
+
+def tracklist_corpus_agreement(conn: sqlite3.Connection) -> dict[str, int | float]:
+    """Corpus-wide LB-vs-TUIT tracklist agreement rate (audit P10).
+
+    One preload pass over ``entries``/``tuit_recordings`` rather than one
+    query pair per LB.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Returns:
+        ``{"total": LBs with both sources, "agree": agreeing count, "rate": share}``.
+    """
+    cmap = load_canonical_map(conn)
+    entry_rows = conn.execute(
+        "SELECT lb_number, setlist FROM entries WHERE setlist IS NOT NULL AND setlist != ''"
+    ).fetchall()
+    tuit_rows = conn.execute(
+        "SELECT lb_number, setlist_json FROM tuit_recordings WHERE lb_number IS NOT NULL"
+        " AND setlist_json IS NOT NULL AND setlist_json != ''"
+    ).fetchall()
+    tuit_by_lb: dict[int, str] = {}
+    for r in tuit_rows:
+        tuit_by_lb.setdefault(r["lb_number"], r["setlist_json"])
+
+    total = 0
+    agree = 0
+    for r in entry_rows:
+        raw_json = tuit_by_lb.get(r["lb_number"])
+        if raw_json is None:
+            continue
+        lb_songs = [
+            t["title"] for t in parse_entry_tracklist(r["setlist"])
+            if t["is_song"] and not t["missing"]
+        ]
+        if not lb_songs:
+            continue
+        try:
+            items = json.loads(raw_json)
+        except (TypeError, ValueError):
+            continue
+        tuit_titles_raw = [x.get("song", "") for x in items if isinstance(x, dict) and x.get("song")]
+        if not tuit_titles_raw:
+            continue
+        total += 1
+        if _tracklist_compare(lb_songs, tuit_titles_raw, cmap)["agrees"]:
+            agree += 1
+
+    return {"total": total, "agree": agree, "rate": (agree / total) if total else 0.0}
