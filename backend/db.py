@@ -104,6 +104,11 @@ USER_TABLES = (
     "xref_ingest_filesets",
     "xref_ingest_rows",
     "user_taper_aliases",
+    "qc_findings",
+    "qc_decision_log",
+    "qc_runs",
+    "release_classifications",
+    "corrections",
     "user_taper_flags",
     "taper_decision_log",
     "refresh_step_runs",
@@ -1471,6 +1476,89 @@ CREATE TABLE IF NOT EXISTS tuit_song_performances (
 CREATE INDEX IF NOT EXISTS idx_tuit_sperf_song ON tuit_song_performances(song);
 CREATE INDEX IF NOT EXISTS idx_tuit_sperf_date ON tuit_song_performances(date_str);
 CREATE INDEX IF NOT EXISTS idx_tuit_sperf_show ON tuit_song_performances(show_id);
+
+-- Dossier redesign Phase 2 (TODO-342): QC findings, decisions, runs, and
+-- curator-supplied corrections/classifications. All five tables are USER-tier
+-- (see USER_TABLES above) — they hold locally-computed findings and this
+-- install's curator decisions, never exported in master data. See
+-- instructions/SHOW_DOSSIER_REDESIGN_PLAN.md "Phase 2" for the rule engine and
+-- "Decision vocabulary" for the status state machine that backend/qc/store.py
+-- implements against qc_findings.status.
+CREATE TABLE IF NOT EXISTS qc_findings (
+    id             INTEGER PRIMARY KEY AUTOINCREMENT,
+    rule_id        TEXT NOT NULL,
+    entity_kind    TEXT NOT NULL,
+    entity_key     TEXT NOT NULL,
+    severity       TEXT NOT NULL,      -- error | warn | info
+    detail         TEXT NOT NULL DEFAULT '',
+    evidence_json  TEXT NOT NULL DEFAULT '{}',
+    evidence_hash  TEXT NOT NULL DEFAULT '',
+    first_seen     TEXT NOT NULL,      -- UTC ISO 8601
+    last_seen      TEXT NOT NULL,      -- UTC ISO 8601
+    status         TEXT NOT NULL DEFAULT 'open',  -- open|confirmed|false_positive|corrected|fixed
+    decided_by     TEXT,
+    decided_at     TEXT,
+    note           TEXT,
+    UNIQUE(rule_id, entity_kind, entity_key)
+);
+CREATE INDEX IF NOT EXISTS idx_qc_findings_status ON qc_findings(status, severity);
+
+-- qc_decision_log: append-only audit trail behind /qc-review, mirroring
+-- taper_decision_log above. Every status transition the run engine or a
+-- curator makes gets a row here; qc_findings itself only ever holds current
+-- state.
+CREATE TABLE IF NOT EXISTS qc_decision_log (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    finding_id    INTEGER NOT NULL REFERENCES qc_findings(id) ON DELETE CASCADE,
+    rule_id       TEXT NOT NULL,
+    entity_key    TEXT NOT NULL,
+    prev_status   TEXT,
+    new_status    TEXT NOT NULL,
+    note          TEXT,
+    decided_by    TEXT NOT NULL DEFAULT 'qc-run',  -- 'qc-run'/'ui'/'bulk'/'cli'
+    decided_at    TEXT NOT NULL      -- UTC ISO 8601
+);
+CREATE INDEX IF NOT EXISTS idx_qc_declog_finding ON qc_decision_log(finding_id, id DESC);
+
+-- qc_runs: one row per rule invocation, for the /qc-review trend lines.
+CREATE TABLE IF NOT EXISTS qc_runs (
+    run_id       INTEGER PRIMARY KEY AUTOINCREMENT,
+    rule_id      TEXT NOT NULL,
+    started_at   TEXT NOT NULL,       -- UTC ISO 8601
+    finished_at  TEXT NOT NULL,       -- UTC ISO 8601
+    n_open       INTEGER NOT NULL DEFAULT 0,
+    n_new        INTEGER NOT NULL DEFAULT 0,
+    n_fixed      INTEGER NOT NULL DEFAULT 0,
+    n_reopened   INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS idx_qc_runs_rule ON qc_runs(rule_id, run_id DESC);
+
+-- release_classifications: curator verdicts on release titles (R-R1). D-03
+-- reads the asset allowlist plus this table, and this table wins.
+CREATE TABLE IF NOT EXISTS release_classifications (
+    title_key   TEXT PRIMARY KEY,
+    official    INTEGER NOT NULL DEFAULT 0,
+    decided_by  TEXT,
+    decided_at  TEXT,
+    note        TEXT
+);
+
+-- corrections: curator-supplied field overrides from the /qc-review
+-- correction form. Source tables are never edited in place — a dossier field
+-- with an open 'corrected' finding renders this value instead, with a
+-- tooltip showing the original.
+CREATE TABLE IF NOT EXISTS corrections (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    entity_kind  TEXT NOT NULL,
+    entity_key   TEXT NOT NULL,
+    field        TEXT NOT NULL,
+    original     TEXT,
+    corrected    TEXT,
+    reason       TEXT,
+    decided_by   TEXT,
+    decided_at   TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_corrections_entity ON corrections(entity_kind, entity_key, field);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
