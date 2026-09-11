@@ -1,3 +1,21 @@
+[2026-09-11] — Picks re-run after family syncs, no NULL-date picks, grades read from the scored scan (dossier C09)
+Fixed: concert_ranker/picks.py: BUG-346. Partial dates (xx/xx/61, 5/xx/87) no longer get a phantom
+  rank-1 pick; live NULL-date picks 589 → 0 (all 112 affected dates were partial).
+Fixed: backend/tapematch_sync.py: BUG-345. New refresh_derived_after_sync re-runs attribute_tapers
+  → compute_show_picks after every family sync (CLI inline; /api/tapematch/sync in a thread),
+  recorded in refresh_step_runs.
+Changed: concert_ranker/lb/repo.py: scored_scan_id() = the scan with the most score rows. dossier
+  _load_quality, song_index/db _load_latest_abs_grades, /api/quality/<lb> and picks
+  _load_latest_quality use it instead of MAX(scan_id) (grades unchanged today: scan 18, 14,380).
+Changed: concert_ranker/cli.py: `rerank` defaults to the reusable scan, not the newest (scan 22 holds
+  21 LBs; reranking it would have moved every grade there).
+Changed: backend/qc/rules.py: R-S1 per-LB = main-scan metrics measured after the last ranker_rerank;
+  calibration re-measures no longer count. R-S1 115 → 0.
+Not done, on purpose: the audit's 383 "lost" grades are rerank-filtered LBs (312 non-concert,
+  71 < 30 min) and stay ungraded; the 114 "unscored" LBs were calibration re-measures, so no rerank
+  was queued.
+Changed: tests (+5, picks fixtures moved to real M/D/YY dates); SHOW_DOSSIER_REDESIGN_PLAN.md: C09 done.
+
 [2026-09-11] — Taper attribution: no bare mentions, no weak-family propagation; rules R-T1–R-T3 (dossier C08)
 Fixed: backend/taper_attribution.py: BUG-344. A Layer-0 mention now needs a taper-context phrase
   directly before the handle (mention_has_taper_context: taped/recorded/recording/master by,

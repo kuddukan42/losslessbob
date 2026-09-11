@@ -225,6 +225,29 @@ def latest_scan_id(conn: sqlite3.Connection) -> int | None:
     return int(row["m"]) if row and row["m"] is not None else None
 
 
+def scored_scan_id(conn: sqlite3.Connection) -> int | None:
+    """Return the scan whose scores are the library's current grades.
+
+    The scan holding the most ``quality_recording_scores`` rows (ties → newest),
+    not ``MAX(scan_id)``: calibration runs and one-off folder scans rerank a
+    handful of LBs into their own scan_id, and reading the newest one would
+    blank every other grade (BUG-345). An LB missing from this scan has no
+    grade on purpose — the last full rerank filtered it (non-concert, short,
+    non-public), so older scans' grades are not resurrected either.
+
+    Args:
+        conn: An open connection.
+
+    Returns:
+        A ``scan_id``, or None when no scan has written scores.
+    """
+    row = conn.execute(
+        "SELECT scan_id FROM quality_recording_scores GROUP BY scan_id"
+        " ORDER BY COUNT(*) DESC, scan_id DESC LIMIT 1"
+    ).fetchone()
+    return int(row[0]) if row else None
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Raw metrics  (the scan-once payload)
 # ─────────────────────────────────────────────────────────────────────────────

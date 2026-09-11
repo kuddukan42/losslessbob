@@ -84,7 +84,7 @@ def test_parse_concert_date_iso_unparseable_is_none():
 
 # ── recompute() populates concert_date_iso ────────────────────────────────────
 
-def test_recompute_populates_concert_date_iso_and_nulls_xx():
+def test_recompute_populates_concert_date_iso_and_skips_xx():
     db_path, tmp_dir = _make_db()
     conn = db.get_connection(db_path)
     _seed_entry(conn, 100, "7/28/00", rating="A")
@@ -99,7 +99,7 @@ def test_recompute_populates_concert_date_iso_and_nulls_xx():
         "SELECT concert_date_iso FROM show_picks WHERE lb_number=101"
     ).fetchone()
     assert row100["concert_date_iso"] == "2000-07-28"
-    assert row101["concert_date_iso"] is None
+    assert row101 is None  # partial dates get no pick (BUG-346)
 
     shutil.rmtree(tmp_dir, ignore_errors=True)
 

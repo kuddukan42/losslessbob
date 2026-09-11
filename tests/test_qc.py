@@ -421,19 +421,40 @@ class TestRuleS1:
                 "INSERT INTO quality_scans (scan_id, started_at) VALUES"
                 " (1, '2026-01-01'), (2, '2026-02-01')"
             )
-            # Scan 1 was reranked (201 scored, 202 seen but unscorable); scan 2 never was.
+            # Scan 1 is the main scan: 200 measured after the rerank, 201 scored,
+            # 202 seen but unscorable. Scan 2 is a calibration re-measure of 201.
             conn.execute(
-                "INSERT INTO quality_recording_metrics (lb_number, scan_id, metric_json)"
-                " VALUES (200, 2, '{}'), (201, 1, '{}'), (202, 1, '{}')"
+                "INSERT INTO quality_recording_metrics (lb_number, scan_id, metric_json,"
+                " scored_at) VALUES (200, 1, '{}', '2026-03-01 00:00:00'),"
+                " (201, 1, '{}', '2026-01-15 00:00:00'), (202, 1, '{}', '2026-01-15 00:00:00'),"
+                " (201, 2, '{}', '2026-03-01 00:00:00')"
             )
             conn.execute(
                 "INSERT INTO quality_recording_scores (lb_number, scan_id, final_score)"
                 " VALUES (201, 1, 5.0)"
             )
+            conn.execute(
+                "INSERT INTO refresh_step_runs (step_id, started_at, finished_at, status,"
+                " trigger_source) VALUES ('ranker_rerank', '2026-02-01 00:00:00',"
+                " '2026-02-01 00:01:00', 'ok', 'route')"
+            )
         keys = {f.entity_key for f in rules.rule_s1(conn)}
         assert "200" in keys
-        assert "201" not in keys
+        assert "201" not in keys  # calibration scan metrics are not staleness
         assert "202" not in keys  # unscored by the last rerank is not stale
+
+    def test_fires_on_never_reranked_main_scan(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO entries (lb_number, timing, cdr, rating) VALUES (300, '', '', '')"
+            )
+            conn.execute("INSERT INTO quality_scans (scan_id, started_at) VALUES (1, '2026-01-01')")
+            conn.execute(
+                "INSERT INTO quality_recording_metrics (lb_number, scan_id, metric_json)"
+                " VALUES (300, 1, '{}')"
+            )
+        assert "300" in {f.entity_key for f in rules.rule_s1(conn)}
 
     def test_does_not_fire_when_everything_fresh(self, qc):
         _db, _store, rules, conn, _path = qc

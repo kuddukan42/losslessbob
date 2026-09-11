@@ -1594,13 +1594,11 @@ def create_app() -> Flask:
         """
         try:
             with database.get_connection() as conn:
-                # quality_scans includes small calibration-sample runs that never
-                # write quality_recording_scores; MAX(scan_id) alone can point at
-                # one of those, so pick the newest scan that has scored rows.
-                scan_row = conn.execute(
-                    "SELECT MAX(scan_id) AS m FROM quality_recording_scores"
-                ).fetchone()
-                scan_id = scan_row["m"] if scan_row else None
+                # Calibration runs and one-off scans rerank a few LBs into their
+                # own scan_id, so read the library's scored scan (BUG-345).
+                from concert_ranker.lb import repo as cr_repo
+
+                scan_id = cr_repo.scored_scan_id(conn)
                 if scan_id is None:
                     return "", 204
                 row = conn.execute(
@@ -6501,6 +6499,14 @@ def create_app() -> Flask:
             stats["pairs_synced"] = pair_stats["pairs_written"]
             stats["pair_dates"] = pair_stats["dates_processed"]
             stats["errors"] = [*stats["errors"], *pair_stats["errors"]]
+            if stats["dates_processed"]:
+                # Tapers + picks read families (BUG-345); ~1 min, so off the request.
+                threading.Thread(
+                    target=_tapematch_sync.refresh_derived_after_sync,
+                    kwargs={"trigger_source": "route"},
+                    name="tapematch-derived-refresh", daemon=True,
+                ).start()
+                stats["derived_refresh"] = "started"
             return jsonify({"ok": True, **stats})
         except FileNotFoundError as exc:
             return jsonify({"error": "not_found", "message": str(exc)}), 404

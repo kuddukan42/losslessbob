@@ -587,10 +587,8 @@ def rule_s1(conn: sqlite3.Connection) -> Iterable[Finding]:
 
     - ``show_picks`` older than ``recording_families`` — one table-level
       finding (families synced after the last picks recompute).
-    - Per ``entries.lb_number``: the latest ``quality_recording_metrics`` scan
-      for that LB is newer than the last rerank (the highest scan_id in
-      ``quality_recording_scores``) — measured, but no rerank has run since
-      (audit P7: 114 LBs in scans 19–22).
+    - Per LB: measured in the ranker's main scan after the last rerank
+      (:func:`_stale_quality_scores`).
     - ``song_performances`` older than the latest Olof ``olof_pages.parsed_at``
       — one table-level finding (a reparse hasn't been followed by a
       song-index recompute).
@@ -619,35 +617,8 @@ def rule_s1(conn: sqlite3.Connection) -> Iterable[Finding]:
                 evidence={"show_picks_computed_at": picks_at, "families_imported_at": families_at},
             )
 
-    if _table_exists_local(conn, "quality_recording_metrics") and _table_exists_local(
-        conn, "quality_recording_scores"
-    ):
-        metrics_max = dict(
-            conn.execute(
-                "SELECT lb_number, MAX(scan_id) FROM quality_recording_metrics GROUP BY lb_number"
-            )
-        )
-        scores_max = dict(
-            conn.execute(
-                "SELECT lb_number, MAX(scan_id) FROM quality_recording_scores GROUP BY lb_number"
-            )
-        )
-        # Stale = measured after the last rerank. An LB that the last rerank saw but left
-        # unscored (unscorable metrics) is not stale, and a rerank wouldn't change it.
-        last_rerank = max(scores_max.values(), default=None)
-        for lb_number, metrics_scan in metrics_max.items():
-            score_scan = scores_max.get(lb_number)
-            if last_rerank is not None and metrics_scan > last_rerank:
-                yield Finding(
-                    entity_kind="lb",
-                    entity_key=str(lb_number),
-                    severity="error",
-                    detail=(
-                        f"LB-{lb_number}: latest quality metrics are from scan "
-                        f"{metrics_scan}, newer than its latest score (scan {score_scan})"
-                    ),
-                    evidence={"metrics_scan": metrics_scan, "score_scan": score_scan},
-                )
+    if _table_exists_local(conn, "quality_recording_metrics"):
+        yield from _stale_quality_scores(conn)
 
     if _table_exists_local(conn, "song_performances") and _table_exists_local(conn, "olof_pages"):
         perf_at = _norm_ts(_max_scalar(conn, "SELECT MAX(computed_at) FROM song_performances"))
@@ -663,6 +634,65 @@ def rule_s1(conn: sqlite3.Connection) -> Iterable[Finding]:
                 ),
                 evidence={"song_performances_computed_at": perf_at, "olof_parsed_at": parsed_at},
             )
+
+
+def _stale_quality_scores(conn: sqlite3.Connection) -> Iterable[Finding]:
+    """R-S1's per-LB check: quality metrics measured after the last rerank.
+
+    Only the ranker's main scan counts — the one holding the most metric rows,
+    which backlog scans append to (``repo.reusable_scan_id``). Calibration runs
+    re-measure LBs into their own scan_ids and are never reranked into the
+    library's grades, so their newer metrics are not staleness (C09: all 114 of
+    the audit's "unscored" LBs were calibration re-measurements).
+
+    Stale = a main-scan metrics row whose ``scored_at`` is newer than the last
+    successful ``ranker_rerank`` step run. With no rerank ever recorded, every
+    main-scan LB is stale only when that scan has no scores at all.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        One per-LB error Finding per stale metrics row.
+    """
+    row = conn.execute(
+        "SELECT scan_id FROM quality_recording_metrics GROUP BY scan_id"
+        " ORDER BY COUNT(*) DESC, scan_id DESC LIMIT 1"
+    ).fetchone()
+    if row is None:
+        return
+    main_scan = row[0]
+    last_rerank = None
+    if _table_exists_local(conn, "refresh_step_runs"):
+        last_rerank = _norm_ts(_max_scalar(
+            conn,
+            "SELECT MAX(finished_at) FROM refresh_step_runs"
+            " WHERE step_id='ranker_rerank' AND status='ok'",
+        ))
+    if last_rerank is None and _table_exists_local(conn, "quality_recording_scores"):
+        n_scores = conn.execute(
+            "SELECT COUNT(*) FROM quality_recording_scores WHERE scan_id=?", (main_scan,)
+        ).fetchone()[0]
+        if n_scores:
+            return
+    rows = conn.execute(
+        "SELECT lb_number, scored_at FROM quality_recording_metrics WHERE scan_id=?",
+        (main_scan,),
+    ).fetchall()
+    for lb_number, scored_at in rows:
+        measured = _norm_ts(scored_at)
+        if last_rerank is not None and (measured is None or measured <= last_rerank):
+            continue
+        yield Finding(
+            entity_kind="lb",
+            entity_key=str(lb_number),
+            severity="error",
+            detail=(
+                f"LB-{lb_number}: measured in scan {main_scan} at {measured}, after the "
+                f"last rerank ({last_rerank or 'never'})"
+            ),
+            evidence={"scan_id": main_scan, "scored_at": measured, "last_rerank": last_rerank},
+        )
 
 
 def _table_exists_local(conn: sqlite3.Connection, name: str) -> bool:

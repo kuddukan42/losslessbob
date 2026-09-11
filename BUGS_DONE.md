@@ -2,6 +2,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-345: Derived tables go stale: show picks computed before families, grades read from one global MAX(scan_id)
+Status: Fixed
+File(s): backend/dossier.py:694,backend/song_index.py:372,backend/db.py:4311
+Reported: 2026-09-10
+Fixed: 2026-09-11
+Root cause: (1) Nothing re-ran taper attribution or picks after a tapematch family sync. (2) Grade readers used MAX(scan_id) over quality_recording_scores, so a small calibration/one-off rerank (or concert_ranker rerank defaulting to the newest scan, 22 = 21 LBs) would move every grade. The audit's 383 'lost grades' are LBs the scan-18 rerank filters on purpose (312 non-concert, 71 under 30 min), and its 114 'unscored' LBs were calibration re-measurements (scans 21/22) of LBs already scored in scan 18.
+Fix: tapematch_sync.refresh_derived_after_sync re-runs attribute_tapers -> compute_show_picks after every family sync (CLI inline, route in a thread). Grade readers use repo.scored_scan_id (the scan with the most score rows); concert_ranker rerank defaults to the reusable scan. R-S1 per-LB now = main-scan metrics measured after the last ranker_rerank. No per-LB-latest grades and no rerank queued (both premises false). R-S1 115 -> 0. (dossier C09)
+
+BUG-346: compute_show_picks collects 589 undated entries into a NULL-date rank-1 bucket
+Status: Fixed
+File(s): tools/compute_show_picks.py
+Reported: 2026-09-10
+Fixed: 2026-09-11
+Root cause: concert_ranker.picks.recompute grouped every entries.date_str, including partial dates (xx/xx/61, 5/xx/87) whose ISO parse is None, so each partial date got its own rank-1 phantom pick.
+Fix: recompute skips dates whose _parse_concert_date_iso is None. Live: NULL-date picks 589 -> 0; all 112 affected concert_date values were partial xx dates. (dossier C09)
+
 BUG-344: Taper propagation matches bare text mentions and propagates through weak or review-flagged families
 Status: Fixed
 File(s): backend/taper_attribution.py:478,backend/taper_attribution.py:578

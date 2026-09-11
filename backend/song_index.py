@@ -361,16 +361,18 @@ def get_songs(q: str | None = None, db_path: str | None = None) -> list[dict]:
 
 
 def _load_latest_abs_grades(conn: sqlite3.Connection) -> dict[int, str]:
-    """Return ``{lb_number: abs_grade}`` from the newest scored scan.
+    """Return ``{lb_number: abs_grade}`` from the library's scored scan.
 
     Mirrors ``backend.db._load_latest_abs_grades`` / ``concert_ranker/picks.py:
     _load_latest_quality`` — duplicated locally rather than imported to avoid
     a db.py <-> song_index.py import cycle risk; feature-detected the same
     way (``abs_grade`` is a later ``concert_ranker/lb/repo.py`` migration
-    column, absent on a DB that has never run Concert Ranker).
+    column, absent on a DB that has never run Concert Ranker). The scan is
+    ``repo.scored_scan_id``, not ``MAX(scan_id)`` (BUG-345).
     """
-    scan_row = conn.execute("SELECT MAX(scan_id) AS m FROM quality_recording_scores").fetchone()
-    scan_id = scan_row["m"] if scan_row else None
+    from concert_ranker.lb import repo as cr_repo
+
+    scan_id = cr_repo.scored_scan_id(conn)
     if scan_id is None:
         return {}
     cols = {r[1] for r in conn.execute("PRAGMA table_info(quality_recording_scores)")}

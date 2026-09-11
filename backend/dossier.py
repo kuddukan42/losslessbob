@@ -36,6 +36,7 @@ import urllib.parse
 from backend.db import get_connection
 from backend.geocoder import entry_date_to_iso
 from backend.paths import SITE_BASE_URL, detail_url
+from concert_ranker.lb import repo as cr_repo
 
 log = logging.getLogger(__name__)
 
@@ -698,8 +699,7 @@ def _load_quality(conn: sqlite3.Connection, lb_numbers: list[int]) -> dict[int, 
     if "abs_grade" not in cols:
         return {}
     has_score = "abs_score" in cols
-    scan_row = conn.execute("SELECT MAX(scan_id) AS m FROM quality_recording_scores").fetchone()
-    scan_id = scan_row["m"] if scan_row else None
+    scan_id = cr_repo.scored_scan_id(conn)
     if scan_id is None:
         return {}
     placeholders = ",".join("?" * len(lb_numbers))

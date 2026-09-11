@@ -697,3 +697,40 @@ def test_duplicate_encode_candidates_distinct_lb_numbers_only_one_row_each():
     finally:
         db.close_connection(db_path)
         shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_refresh_derived_after_sync_runs_tapers_then_picks(tmp_path, monkeypatch):
+    from backend import tapematch_sync
+    from tools import attribute_tapers, compute_show_picks
+
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+    calls = []
+    monkeypatch.setattr(attribute_tapers, "run", lambda db_path=None: calls.append("t") or {})
+    monkeypatch.setattr(compute_show_picks, "run", lambda db_path=None: calls.append("p") or {})
+
+    out = tapematch_sync.refresh_derived_after_sync(db_path=db_path)
+
+    assert calls == ["t", "p"]
+    assert set(out) == {"attribute_tapers", "compute_show_picks"}
+    conn = db.get_connection(db_path)
+    steps = [r[0] for r in conn.execute("SELECT step_id FROM refresh_step_runs ORDER BY id")]
+    assert steps == ["attribute_tapers", "compute_show_picks"]
+
+
+def test_refresh_derived_after_sync_stops_after_failed_tapers(tmp_path, monkeypatch):
+    from backend import tapematch_sync
+    from tools import attribute_tapers, compute_show_picks
+
+    db_path = str(tmp_path / "test.db")
+    db.init_db(db_path)
+
+    def _boom(db_path=None):
+        raise RuntimeError("boom")
+
+    monkeypatch.setattr(attribute_tapers, "run", _boom)
+    monkeypatch.setattr(compute_show_picks, "run", lambda db_path=None: pytest.fail("ran"))
+
+    out = tapematch_sync.refresh_derived_after_sync(db_path=db_path)
+
+    assert out == {"attribute_tapers": "error"}
