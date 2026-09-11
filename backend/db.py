@@ -4416,10 +4416,12 @@ def _load_latest_abs_grades(conn: sqlite3.Connection) -> dict[int, str]:
     ``abs_grade`` is feature-detected via ``PRAGMA table_info`` because it's
     added by ``concert_ranker/lb/repo.py``'s ``ensure_schema`` migration, not
     this module's ``SCHEMA_SQL``, so a DB that has never been scanned via
-    Concert Ranker doesn't have the column yet.
+    Concert Ranker doesn't have the column yet. The scan is
+    ``repo.scored_scan_id`` (most score rows), not ``MAX(scan_id)`` (BUG-345).
     """
-    scan_row = conn.execute("SELECT MAX(scan_id) AS m FROM quality_recording_scores").fetchone()
-    scan_id = scan_row["m"] if scan_row else None
+    from concert_ranker.lb import repo as cr_repo
+
+    scan_id = cr_repo.scored_scan_id(conn)
     if scan_id is None:
         return {}
     cols = {r[1] for r in conn.execute("PRAGMA table_info(quality_recording_scores)")}

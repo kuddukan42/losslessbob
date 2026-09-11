@@ -197,6 +197,50 @@ def sync_tapematch_families(
     return stats
 
 
+def refresh_derived_after_sync(
+    db_path: str | None = None, trigger_source: str = "tapematch_sync",
+) -> dict:
+    """Re-run the derived steps that read ``recording_families``: tapers, then picks.
+
+    Taper propagation walks families and picks score "best transfer in its
+    family", so both go stale on every family sync (BUG-345). Each step is
+    recorded in ``refresh_step_runs`` like a ``/api/derived/recompute`` run; a
+    failed taper step stops the chain rather than scoring picks on stale
+    attributions.
+
+    Args:
+        db_path: Main app DB path, or None for the default.
+        trigger_source: ``refresh_step_runs.trigger_source`` for both rows.
+
+    Returns:
+        ``{step_id: stats dict | "error"}`` for each step attempted.
+    """
+    from backend import config_version
+    from backend.db import record_step_run
+    from tools import attribute_tapers, compute_show_picks
+
+    out: dict = {}
+    for step_id, func in (
+        ("attribute_tapers", attribute_tapers.run),
+        ("compute_show_picks", compute_show_picks.run),
+    ):
+        started_at = time.strftime("%Y-%m-%d %H:%M:%S")
+        try:
+            result = func(db_path=db_path)
+        except Exception:  # noqa: BLE001 — record the failure, don't mask the sync's result
+            log.exception("post-sync %s failed", step_id)
+            record_step_run(step_id, status="error", started_at=started_at,
+                            trigger_source=trigger_source, db_path=db_path)
+            out[step_id] = "error"
+            break
+        record_step_run(step_id, status="ok", started_at=started_at,
+                        counters=result if isinstance(result, dict) else None,
+                        trigger_source=trigger_source, db_path=db_path)
+        config_version.stamp_for_step(step_id, db_path)
+        out[step_id] = result
+    return out
+
+
 def _load_latest_abs_scores(conn: sqlite3.Connection) -> "dict[int, tuple[int, float, str]]":
     """Return ``{lb_number: (scan_id, abs_score, abs_grade)}`` from each lb's
     own most recent scored scan.
@@ -714,6 +758,9 @@ def _main() -> int:
     stats["pairs_synced"] = pair_stats["pairs_written"]
     stats["pair_dates"] = pair_stats["dates_processed"]
     stats["errors"] = [*stats["errors"], *pair_stats["errors"]]
+    if stats["dates_processed"]:
+        derived = refresh_derived_after_sync()
+        stats["derived_refresh"] = {k: "error" if v == "error" else "ok" for k, v in derived.items()}
     print(json.dumps(stats, indent=2))
     return 1 if stats["errors"] else 0
 

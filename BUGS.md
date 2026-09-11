@@ -1,19 +1,3 @@
-BUG-346: compute_show_picks collects 589 undated entries into a NULL-date rank-1 bucket
-Status: Open
-File(s): tools/compute_show_picks.py
-Reported: 2026-09-10
-Description: Audit D12. Undated catalogue entries (xx/xx/61 etc., 589 rows) are correctly excluded from show identity, but compute_show_picks still groups them under a NULL concert_date_iso and ranks one of them #1, so a phantom show pick exists. Fix: skip NULL dates in compute_show_picks; keep them excluded everywhere else. Fixed in dossier chunk C09.
-Root cause: Unknown
-Fix: —
-
-BUG-345: Derived tables go stale: show picks computed before families, grades read from one global MAX(scan_id)
-Status: Open
-File(s): backend/dossier.py:694,backend/song_index.py:372,backend/db.py:4311
-Reported: 2026-09-10
-Description: Plan F17 / audit P7, P8. show_picks (2026-08-31) is older than recording_families (2026-09-04), so 'best transfer in its family' evidence can describe families that no longer exist — picks must re-run after every family sync (tapematch_sync recompute hook). _load_quality and its siblings read the global MAX(scan_id): 383 LBs graded only in older scans silently lose their grade, and 114 LBs have newer metrics (scans 19–22) but no score because no rerank has run. Fix: per-LB latest scored scan; recompute hook; queue the 114-LB rerank; gate G6 flags any LB with metrics newer than its score. Fixed in dossier chunk C09.
-Root cause: Unknown
-Fix: —
-
 BUG-343: Dossier template output is 37% blank lines
 Status: Open
 File(s): backend/templates/dossier.html:1

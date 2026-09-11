@@ -87,13 +87,13 @@ def _evidence_kinds(row):
 def test_rating_base_highest_wins_and_unrated_neutral():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 1, "1975-01-01", rating="A+")
-    _seed_entry(conn, 2, "1975-01-01", rating="C")
-    _seed_entry(conn, 3, "1975-01-01", rating=None)
+    _seed_entry(conn, 1, "1/1/75", rating="A+")
+    _seed_entry(conn, 2, "1/1/75", rating="C")
+    _seed_entry(conn, 3, "1/1/75", rating=None)
 
     picks.recompute(db_path=db_path)
 
-    rows = _picks_for_date(conn, "1975-01-01")
+    rows = _picks_for_date(conn, "1/1/75")
     by_lb = {r["lb_number"]: r for r in rows}
     assert by_lb[1]["pick_rank"] == 1
     assert by_lb[1]["pick_score"] == 100.0  # A+ (rank 13) -> top of the 0-100 scale
@@ -111,13 +111,13 @@ def test_rating_base_highest_wins_and_unrated_neutral():
 def test_curated_list_bonus():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 10, "1976-01-01", rating="B")
-    _seed_entry(conn, 11, "1976-01-01", rating="B")
+    _seed_entry(conn, 10, "1/1/76", rating="B")
+    _seed_entry(conn, 11, "1/1/76", rating="B")
     _seed_curated_list(conn, "carbonbit", [10])
 
     picks.recompute(db_path=db_path)
 
-    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1976-01-01")}
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1/1/76")}
     assert rows[10]["pick_rank"] == 1
     assert "curated_list" in _evidence_kinds(rows[10])
     weight = picks.PICK_WEIGHTS["curated_list_weights"]["carbonbit"]
@@ -129,13 +129,13 @@ def test_curated_list_bonus():
 def test_supersession_claim_bonus_and_penalty():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 20, "1977-01-01", rating="B")
-    _seed_entry(conn, 21, "1977-01-01", rating="B")
+    _seed_entry(conn, 20, "1/1/77", rating="B")
+    _seed_entry(conn, 21, "1/1/77", rating="B")
     _seed_lineage(conn, 20, better_than=[21])
 
     picks.recompute(db_path=db_path)
 
-    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1977-01-01")}
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1/1/77")}
     assert "supersession" in _evidence_kinds(rows[20])
     assert "superseded" in _evidence_kinds(rows[21])
     bonus = picks.PICK_WEIGHTS["supersession_claim_bonus"]
@@ -151,23 +151,23 @@ def test_derived_from_penalty_and_higher_rating_override():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
     # Case A: child (no override) is penalized vs parent, same rating.
-    _seed_entry(conn, 30, "1978-01-01", rating="B")
-    _seed_entry(conn, 31, "1978-01-01", rating="B")
+    _seed_entry(conn, 30, "1/1/78", rating="B")
+    _seed_entry(conn, 31, "1/1/78", rating="B")
     _seed_lineage(conn, 31, derived_from=[30])
 
     # Case B: child outrates parent -> no penalty.
-    _seed_entry(conn, 40, "1979-01-01", rating="C")
-    _seed_entry(conn, 41, "1979-01-01", rating="A")
+    _seed_entry(conn, 40, "1/1/79", rating="C")
+    _seed_entry(conn, 41, "1/1/79", rating="A")
     _seed_lineage(conn, 41, derived_from=[40])
 
     picks.recompute(db_path=db_path)
 
-    rows_a = {r["lb_number"]: r for r in _picks_for_date(conn, "1978-01-01")}
+    rows_a = {r["lb_number"]: r for r in _picks_for_date(conn, "1/1/78")}
     assert "derived_from" in _evidence_kinds(rows_a[31])
     penalty = picks.PICK_WEIGHTS["derived_from_penalty"]
     assert abs((rows_a[31]["pick_score"] - rows_a[30]["pick_score"]) - penalty) < 0.01
 
-    rows_b = {r["lb_number"]: r for r in _picks_for_date(conn, "1979-01-01")}
+    rows_b = {r["lb_number"]: r for r in _picks_for_date(conn, "1/1/79")}
     assert "derived_from" not in _evidence_kinds(rows_b[41])
     assert rows_b[41]["pick_rank"] == 1
 
@@ -177,16 +177,16 @@ def test_derived_from_penalty_and_higher_rating_override():
 def test_family_best_transfer_inferior_and_vetoed():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 50, "1980-01-01", rating="B")
-    _seed_entry(conn, 51, "1980-01-01", rating="B")
-    _seed_entry(conn, 52, "1980-01-01", rating="B")
+    _seed_entry(conn, 50, "1/1/80", rating="B")
+    _seed_entry(conn, 51, "1/1/80", rating="B")
+    _seed_entry(conn, 52, "1/1/80", rating="B")
     _seed_quality(conn, 50, rank_in_family=1)
     _seed_quality(conn, 51, rank_in_family=2)
     _seed_quality(conn, 52, vetoed=1)
 
     picks.recompute(db_path=db_path)
 
-    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1980-01-01")}
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1/1/80")}
     assert "best_transfer" in _evidence_kinds(rows[50])
     assert "inferior_transfer" in _evidence_kinds(rows[51])
     assert "vetoed" in _evidence_kinds(rows[52])
@@ -197,13 +197,13 @@ def test_family_best_transfer_inferior_and_vetoed():
 def test_eac_match_penalty():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 60, "1981-01-01", rating="B", description="Plain copy.")
-    _seed_entry(conn, 61, "1981-01-01", rating="B",
+    _seed_entry(conn, 60, "1/1/81", rating="B", description="Plain copy.")
+    _seed_entry(conn, 61, "1/1/81", rating="B",
                 description="Close EAC match to LB-60, nothing new here.")
 
     picks.recompute(db_path=db_path)
 
-    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1981-01-01")}
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1/1/81")}
     assert "eac_match" in _evidence_kinds(rows[61])
     penalty = picks.PICK_WEIGHTS["eac_match_penalty"]
     assert abs((rows[61]["pick_score"] - rows[60]["pick_score"]) - penalty) < 0.01
@@ -215,22 +215,22 @@ def test_eac_match_penalty():
 def test_audio_quality_blend_and_clamp():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 70, "1982-01-01", rating="B")  # base ~ (9-1)/12*100 = 66.67
+    _seed_entry(conn, 70, "1/1/82", rating="B")  # base ~ (9-1)/12*100 = 66.67
     _seed_quality(conn, 70, abs_score=90.0)
 
-    _seed_entry(conn, 80, "1983-01-01", rating="F")  # base 0
+    _seed_entry(conn, 80, "1/1/83", rating="F")  # base 0
     _seed_quality(conn, 80, abs_score=100.0)  # would blend to +25, clamp to +10
 
     picks.recompute(db_path=db_path)
 
-    row70 = _picks_for_date(conn, "1982-01-01")[0]
+    row70 = _picks_for_date(conn, "1/1/82")[0]
     assert "audio_quality" in _evidence_kinds(row70)
     weight = picks.PICK_WEIGHTS["audio_quality_relative_weight"]
     base70 = (9 - 1) / 12 * 100  # rating "B" -> RATING_RANK 9
     expected_delta = weight * (90.0 - base70)
     assert abs(row70["pick_score"] - (base70 + expected_delta)) < 0.5
 
-    row80 = _picks_for_date(conn, "1983-01-01")[0]
+    row80 = _picks_for_date(conn, "1/1/83")[0]
     clamp = picks.PICK_WEIGHTS["audio_quality_clamp"]
     assert abs(row80["pick_score"] - clamp) < 0.01  # base 0 + clamped +10
 
@@ -247,13 +247,13 @@ def test_taper_reputation_bonus_requires_high_median_and_confirmed():
 
     # Candidate date: one entry attributed (confirmed) to the reputable taper,
     # one plain entry with the same rating.
-    _seed_entry(conn, 910, "1991-01-01", rating="B")
-    _seed_entry(conn, 911, "1991-01-01", rating="B")
+    _seed_entry(conn, 910, "1/1/91", rating="B")
+    _seed_entry(conn, 911, "1/1/91", rating="B")
     _seed_taper_attribution(conn, 910, "reputable_taper", confidence="confirmed")
 
     picks.recompute(db_path=db_path)
 
-    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1991-01-01")}
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1/1/91")}
     assert "taper_reputation" in _evidence_kinds(rows[910])
     assert "taper_reputation" not in _evidence_kinds(rows[911])
     bonus = picks.PICK_WEIGHTS["taper_reputation_bonus"]
@@ -265,7 +265,7 @@ def test_taper_reputation_skipped_when_table_missing_data():
     (no crash), matching a fresh install before TAPER phase 1 has run."""
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 920, "1992-01-01", rating="B")
+    _seed_entry(conn, 920, "1/1/92", rating="B")
 
     stats = picks.recompute(db_path=db_path)
     assert stats["total"] == 1
@@ -276,11 +276,11 @@ def test_taper_reputation_skipped_when_table_missing_data():
 def test_degraded_single_candidate_no_metrics():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 999, "1993-01-01", rating=None)
+    _seed_entry(conn, 999, "1/1/93", rating=None)
 
     picks.recompute(db_path=db_path)
 
-    rows = _picks_for_date(conn, "1993-01-01")
+    rows = _picks_for_date(conn, "1/1/93")
     assert len(rows) == 1
     assert rows[0]["pick_rank"] == 1
     kinds = _evidence_kinds(rows[0])
@@ -293,12 +293,12 @@ def test_degraded_single_candidate_no_metrics():
 def test_tie_breaks_toward_lower_lb_number():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 1002, "1994-01-01", rating="B")
-    _seed_entry(conn, 1001, "1994-01-01", rating="B")
+    _seed_entry(conn, 1002, "1/1/94", rating="B")
+    _seed_entry(conn, 1001, "1/1/94", rating="B")
 
     picks.recompute(db_path=db_path)
 
-    rows = _picks_for_date(conn, "1994-01-01")
+    rows = _picks_for_date(conn, "1/1/94")
     assert rows[0]["lb_number"] == 1001
     assert rows[0]["pick_rank"] == 1
     assert rows[1]["lb_number"] == 1002
@@ -310,8 +310,8 @@ def test_tie_breaks_toward_lower_lb_number():
 def test_idempotent_rerun():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 1100, "1995-01-01", rating="A")
-    _seed_entry(conn, 1101, "1995-01-01", rating="C")
+    _seed_entry(conn, 1100, "1/1/95", rating="A")
+    _seed_entry(conn, 1101, "1/1/95", rating="C")
     _seed_curated_list(conn, "10haaf", [1101])
 
     stats1 = picks.recompute(db_path=db_path)
@@ -329,7 +329,7 @@ def test_idempotent_rerun():
 def test_dry_run_does_not_write():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 1200, "1996-01-01", rating="A")
+    _seed_entry(conn, 1200, "1/1/96", rating="A")
 
     stats = picks.recompute(db_path=db_path, dry_run=True)
 
@@ -344,7 +344,7 @@ def test_empty_recompute_keeps_existing_picks():
     """Zero computed picks must not commit the wholesale DELETE (BUG-246)."""
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 1300, "1997-01-01", rating="A")
+    _seed_entry(conn, 1300, "1/1/97", rating="A")
     picks.recompute(db_path=db_path)
     assert conn.execute("SELECT COUNT(*) FROM show_picks").fetchone()[0] == 1
 
@@ -370,7 +370,7 @@ def test_write_targets_db_path_not_queue_binding():
     db_path_b, _ = _make_db()
     assert str(queue_db) != str(db_path_b)  # queue still bound to its first DB
     conn_b = db.get_connection(db_path_b)
-    _seed_entry(conn_b, 1400, "1998-01-01", rating="B")
+    _seed_entry(conn_b, 1400, "1/1/98", rating="B")
 
     picks.recompute(db_path=db_path_b)
 
@@ -387,7 +387,7 @@ def test_write_targets_db_path_not_queue_binding():
 def test_derived_recompute_endpoint_event_sequence():
     db_path, tmp_dir = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 5000, "1997-01-01", rating="A",
+    _seed_entry(conn, 5000, "1/1/97", rating="A",
                 description="Taper: Spot\nSource: Schoeps > DAT > FLAC")
     db.set_curator(False, db_path)
 
@@ -430,4 +430,35 @@ def test_derived_recompute_endpoint_event_sequence():
     )
     assert picks_done["stats"]["total"] == 1
 
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ── C09: NULL-date skip and scored-scan choice (BUG-346 / BUG-345) ─────────────
+
+def test_partial_dates_get_no_pick():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1, "7/28/00", rating="A")
+    _seed_entry(conn, 2, "xx/xx/61", rating="A")
+    _seed_entry(conn, 3, "5/xx/87", rating="A")
+
+    picks.recompute(db_path=db_path)
+
+    rows = conn.execute("SELECT lb_number, concert_date_iso FROM show_picks").fetchall()
+    assert [(r["lb_number"], r["concert_date_iso"]) for r in rows] == [(1, "2000-07-28")]
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_quality_reads_largest_scored_scan_not_newest():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    for lb in (10, 11, 12):
+        _seed_entry(conn, lb, "7/28/00")
+        _seed_quality(conn, lb, scan_id=5, rank_in_family=1, abs_score=70.0)
+    _seed_quality(conn, 10, scan_id=9, rank_in_family=2, abs_score=40.0)  # small calibration
+
+    quality = picks._load_latest_quality(conn)
+
+    assert set(quality) == {10, 11, 12}
+    assert quality[10]["abs_score"] == 70.0
     shutil.rmtree(tmp_dir, ignore_errors=True)

@@ -19,7 +19,7 @@ import json
 import logging
 import sys
 
-from concert_ranker.config import default_config
+from concert_ranker.config import default_config, extraction_fingerprint
 from concert_ranker.lb import repo, source_type
 
 # lb_category values that are definitively not concerts.
@@ -316,7 +316,11 @@ _rerank = rerank  # back-compat alias
 def cmd_rerank(args) -> int:
     conn = repo.connect(args.db)
     repo.ensure_schema(conn)
-    scan_id = args.scan_id or repo.latest_scan_id(conn)
+    # Default to the scan backlog runs append to (as ranker_jobs.run_rerank does), not
+    # the newest: reranking a small calibration/one-off scan would move the grades.
+    scan_id = (args.scan_id
+               or repo.reusable_scan_id(conn, extraction_fingerprint(vars(default_config())))
+               or repo.latest_scan_id(conn))
     if scan_id is None:
         print("no scans exist", file=sys.stderr)
         return 1

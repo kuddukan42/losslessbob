@@ -211,10 +211,12 @@ def _load_latest_quality(conn: sqlite3.Connection) -> dict[int, dict]:
     quality_scans rows are small calibration runs that never write
     quality_recording_scores, so MAX(scan_id) is taken over that table, not
     quality_scans). abs_score is None if that migration hasn't run yet on
-    this DB (feature-detected via PRAGMA table_info).
+    this DB (feature-detected via PRAGMA table_info). The scan is
+    ``repo.scored_scan_id`` (most score rows), not ``MAX(scan_id)`` (BUG-345).
     """
-    scan_row = conn.execute("SELECT MAX(scan_id) AS m FROM quality_recording_scores").fetchone()
-    scan_id = scan_row["m"] if scan_row else None
+    from concert_ranker.lb import repo as cr_repo
+
+    scan_id = cr_repo.scored_scan_id(conn)
     if scan_id is None:
         return {}
     cols = {r[1] for r in conn.execute("PRAGMA table_info(quality_recording_scores)")}
@@ -475,6 +477,8 @@ def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
     all_rows: list[tuple[str, int, float, int, list[dict], str | None]] = []
     for date, candidates in by_date.items():
         date_iso = _parse_concert_date_iso(date)
+        if date_iso is None:
+            continue  # partial dates (xx/xx/61) are no show: no phantom rank-1 (BUG-346)
         scored = _score_date(candidates, curated, lineage, quality, lb_taper, reputable_tapers)
         for lb, score, ev, rank in _rank_date(scored):
             all_rows.append((date, lb, score, rank, ev, date_iso))
