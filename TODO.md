@@ -1,3 +1,9 @@
+TODO-343: Validate the TUIT uploader end-to-end — one manual upload, then one --apply run
+Priority: High
+Status: Open
+Added: 2026-09-11
+Description: backend/tuit_upload.py + tools/tuit_upload.py are built and unit-tested, but nothing has been POSTed to the tracker yet. Laravel's validator is invisible from outside: every field on /upload is optional in the HTML and only torrent_file is marked required, so which values it actually rejects is unknown until a submit. VALIDATION ORDER: (1) upload one recording BY HAND through the browser and keep the resulting /recordings/<id> page, so there is a known-good result to diff against; (2) run 'tools/tuit_upload.py <lb> --no-torrent' on the same LB and compare the composed fields to what was typed by hand — the mappings most likely to be wrong are QUALITY_MAP (LB's A+..D- collapsed onto TUIT's five slugs, chosen from the tracker's own distribution, not from tj's practice) and SOURCE_TYPE_MAP's FM/Pre-FM->radio and Mixed->matrix; (3) a full dry run with the torrent built, checking the .torrent announces ONLY to TUIT and carries source=TUIT; (4) one --apply on a recording that is not already on the tracker. OPEN QUESTIONS the first real submit answers: whether equipment and recording_position are worth filling (no entries column maps to them, currently never sent), whether tags has a controlled vocabulary, whether allow_partial is needed for split sets we generate ourselves (torrents built from our own folder are complete by construction), and whether the server rejects a payload where show_id and the new_show_* fields are both absent.
+
 TODO-342: Show Dossier redesign (spec Rev A) — execution plan C00–C35
 Priority: High
 Status: Open

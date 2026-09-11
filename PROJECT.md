@@ -141,6 +141,7 @@ losslessbob/
 │   ├── country_flags.py      # Olof country/region name → flag emoji; forum subject-line prefix
 │   ├── wtrf_scraper.py       # Searches the WTRF SMF forum for torrent posts matching missing items
 │   ├── tuit_scraper.py       # TUIT private tracker (tangledupintorrents.org): login, /browse + /recordings parsers, torrent fetch (TODO-314)
+│   ├── tuit_upload.py        # Outbound TUIT: composes every /upload form field from entries + olof_events + a folder probe (the site autofills nothing but show_id), gates on lb_status + a tuit_recordings duplicate check, POSTs, then seeds via tracker_seed (TODO-343)
 │   ├── torrent_verify.py     # Bencode reader + read-only piece-hash check of a folder against a .torrent; gates seeding so incomplete folders are never written to (TODO-314)
 │   ├── seed_overlay.py       # Assembles a seedable folder outside the collection: audio hardlinked, LBF sidecars copied from data/site/files or re-fetched from the LB site (TODO-314). Sources recursively by longest path-suffix + exact size, so nested box-set torrents (<root>/<show>/cd-1/…) resolve and colliding basenames don't cross discs; `link_dirs` hardlinks from several collection folders for a torrent spanning >1 LB entry
 │   ├── tracker_seed.py       # Tracker-agnostic seeding pipeline (gates → overlay → qBittorrent), parameterised per tracker: <mount>/<TRACKER> Seeds + qbt tag. Shared by TUIT and WTRF
@@ -211,6 +212,7 @@ losslessbob/
 │   ├── test_wtrf_board.py    # backend/wtrf_board.py: board listing parse, page walk, the ownership gate and resume/rescan
 │   ├── test_wtrf_seed.py     # backend/wtrf_seed.py: link parsing/canonicalisation, LB-resolution priority, ambiguity refusal, per-tracker overlay roots
 │   ├── test_tuit_db.py       # backend/db.py: tuit_recordings/tuit_downloads accessors + get_folders_for_lb (TODO-314)
+│   ├── test_tuit_upload.py   # backend/tuit_upload.py: form vocabulary maps, sidecar/info-file picking, show disambiguation, field composition, the pre-POST gates (TODO-343)
 │   ├── test_checksum_utils_site_recovery.py # find_site_recoverable_files: MD5 + filename-fallback matching against data/site/files/
 │   ├── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
 │   ├── test_db_lookup.py     # lookup_checksums() in backend/db.py
@@ -276,6 +278,7 @@ losslessbob/
 │   ├── wtrf_fetch_missing.py # CLI: batch WTRF torrent fetch for missing items (wraps /api/wtrf/fetch_torrent logic)
 │   ├── wtrf_seed_board.py    # CLI: crawl the WTRF board and seed what is held (--start-page/--pages walk back in time, --limit, --rescan, --include-missing, --dry-run)
 │   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314); --sync-tours / --sync-venues fill tuit_shows + tuit_venues; --sync-songs fills tuit_songs + tuit_song_performances
+│   ├── tuit_upload.py        # CLI: post one recording to TUIT and seed it. Dry run by default (composes and prints every form field plus the gaps); --apply is the only flag that sends. --no-torrent for a fast preview, --set FIELD=VALUE to override, --allow-duplicate, --no-seed, --paused (TODO-343)
 │   ├── fit_aud_quality_model.py # CLI: fit the AUD quality regression model used by concert_ranker
 │   ├── refit_aud_model.py    # CLI: refit/recalibrate the AUD quality model against new labels
 │   ├── gui_next_locale_parity.py # CLI: check gui_next locales/*.json for missing/extra keys vs en.json
@@ -529,6 +532,30 @@ Mirrors `wtrf_downloads`, written by `tools/tuit_sync.py --fetch-torrents [--see
 | qbt_added_at | TIMESTAMP | When the torrent was added to qBittorrent |
 
 Indexes: `idx_tuit_dl_rec(rec_id, attempted_at DESC)`, `idx_tuit_dl_status(status, attempted_at DESC)`.
+
+### `tuit_uploads` — TUIT upload attempts (USER table)
+The outbound counterpart of `tuit_downloads`, written by `backend/tuit_upload.py` via
+`tools/tuit_upload.py`. A `'prepared'` row is a dry run: the payload was composed and the
+torrent built, but nothing was POSTed. `info_hash` is the duplicate key a later attempt
+checks against `tuit_recordings` (see `db.tuit_has_recording`).
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER NOT NULL | LB number being posted |
+| rec_id | INTEGER | `/recordings/<id>` once the POST lands |
+| info_hash | TEXT | Infohash of the generated .torrent |
+| torrent_path | TEXT | Local path of that .torrent |
+| show_id | INTEGER | Site show id resolved via `/api/shows/search`, if any |
+| source_folder | TEXT | Collection (or overlay) folder the torrent covers |
+| payload_json | TEXT | The exact form fields composed, as JSON |
+| status | TEXT NOT NULL | `'prepared'`, `'uploaded'`, `'seeded'`, `'rejected'`, `'failed'` (default `'prepared'`) |
+| error | TEXT | Laravel's validation messages, or the failure |
+| attempted_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| uploaded_at | TIMESTAMP | When the POST was accepted |
+| seeded_at | TIMESTAMP | When qBittorrent took the torrent |
+
+Indexes: `idx_tuit_up_lb(lb_number, attempted_at DESC)`, `idx_tuit_up_status(status,
+attempted_at DESC)`, `idx_tuit_up_hash(info_hash)`.
 
 ### `tuit_shows` — TUIT live-history concert spine (LOCAL table)
 Every show the tracker knows about, circulating or not. Written by
