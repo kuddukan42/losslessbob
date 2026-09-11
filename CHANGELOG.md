@@ -1,3 +1,24 @@
+[2026-09-10] — Olof venue-history lists and rotation stat get their own columns (dossier C03)
+Fixed: backend/olof_parser.py: (P1d) the rotation stat ("13 new songs (72%) compared to previous
+  concert. 2 new songs for this tour.") fills rotation_new / rotation_pct / tour_new_count and is
+  cut out of notes, releases_raw, bobtalk and the annotation scan; text after it on the same line
+  is kept. Handles split halves, "conc ert", "Only", "(additional)", "!!"; "No new songs" = 0%;
+  a hedged tour count ("Probably", "possible") stays NULL. (P1c) "Other/Previous … Bob Dylan
+  concerts in <city>:" lists (dated entries plus venue lines, incl. ranges, "Late September",
+  Swedish months, same-line venues) move to venue_history_raw; a header with no dated entries
+  stays in notes. (P1b) a date line is never a position list. BUG-341 stays open until C05.
+  In-memory HEAD vs new over every DSN page, classified by the diff gate: 0 UNEXPLAINED; stat on
+  3,104 / 3,104 pages, 0 left in text or annotations; lists lifted on 1,193 events (the audit
+  counted only 80 "shows in" blobs); 0 date-line annotation rows; 0 songs or releases changed.
+Changed: tools/olof_reparse_diff.py: strips the stat with the parser's regexes, lifts multiple
+  lists from any section column, explains annotations that were list entries (P1c) or date lines
+  with a trailer ("(2 shows)"), ignores a stray "." paragraph left behind.
+Changed: tools/dossier_acceptance.py: venue-list metric matches every header variant with a dated
+  entry; rotation_populated counts any of the three stat columns.
+Added: tests/test_olof_parser_fixes.py: 14 fixtures (2010-03-29 Tokyo list + stat, entry shapes,
+  stat and header on one line, pointer header, 7 stat variants, split halves, BobTalk, date lines).
+Changed: instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: C03 done with the corpus numbers.
+
 [2026-09-10] — Olof song walk skips guest sets; trailer scan ignores BobTalk/References prose (dossier C02)
 Fixed: backend/olof_parser.py: (P1a) a guest/interlude header ("Bob Neuwirth:", "Tom Petty & The
   Heartbreakers:") no longer ends the song walk — the block is skipped and the walk resumes at the

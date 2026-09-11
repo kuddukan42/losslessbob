@@ -204,6 +204,45 @@ _PROSE_KEEP_RE = re.compile(r"\b(released|available|recording)\b", re.IGNORECASE
 _RELEASE_KEYWORD_RE = re.compile(r"\b(released on|available on)\b", re.IGNORECASE)
 _RELEASE_TITLE_RE = re.compile(r"^(?:released on|available on)\s+(.+)$", re.IGNORECASE)
 
+# P1d: Olof's rotation stat, "13 new songs (72%) compared to previous concert. 2 new songs
+# for this tour." The halves also sit on separate lines, and the corpus has typos
+# ("conc ert"), "Only", "(additional)", "out of N" and "!!" variants. Text after the stat on
+# the same line ("Same setlist as ...", a recording line) is kept.
+ROTATION_PREV_RE = re.compile(
+    r"(?:\bonly\s+)?(?:\b(\d+|no|one)\s+)?new\s+(?:\(additional\)\s+)?songs?\s*"
+    r"(?:\(\s*(\d+)\s*%[\s!]*\)\s*)?(?:out\s+of\s+\d+\s+)?"
+    r"compared\s+to\s+previous\s+conc\s*ert\s*(?:\(!\))?(?:\s*[.!])*",
+    re.IGNORECASE,
+)
+ROTATION_TOUR_RE = re.compile(
+    r"(?:\b(probably)\s+)?\b(\d+|no|one)\s+(possible\s+)?new\s*(?:\([^)]*\)\.?\s*)?songs?\s*"
+    r"(?:\(\s*\d+\s*%\s*\)\s*)?for\s+this\s+tour(?:\s*[.!])*",
+    re.IGNORECASE,
+)
+ROTATION_LESS_RE = re.compile(
+    r"\bone\s+song\s+less\s+compared\s+to\s+previous\s+concert(?:\s*[.!])*", re.IGNORECASE
+)
+_COUNT_WORDS = {"no": 0, "one": 1}
+# P1b/P1c: the "Other Bob Dylan concerts in <city>:" list — a header, then entries of a
+# date line ("1 March 1978", "12-13 May 1995", "Late September 1961", "8 maj 1984"; the
+# month is matched on its first three letters, which also covers "Noveber" and Swedish)
+# followed by a venue line, or both on one line ("23 May 1992 Civic Centre").
+VENUE_HISTORY_HEADER_RE = re.compile(
+    r"\bBob Dylan\s+(?:shows|concerts)\s+in\b|\b(?:other|previous|next)\s+(?:shows|concerts)\b",
+    re.IGNORECASE,
+)
+_MONTH_WORD = r"(?:jan|feb|mar|apr|ma[yj]|jun|jul|aug|sep|o[ck]t|nov|dec)[a-z]{0,7}\.?"
+_HISTORY_DATE_HEAD = (
+    r"^(?:(?:early|mid|late)[\s-]+)?(?:\d{1,2}(?:\s*(?:[-–,&]|or|and)\s*\d{1,2})*\s+)?"
+    + _MONTH_WORD + r"(?:\s*[-–]\s*\d{1,2}\s+" + _MONTH_WORD + r")?(?:\s+\d{1,2},)?\s+\d{4}\b"
+)
+_HISTORY_ENTRY_RE = re.compile(_HISTORY_DATE_HEAD, re.IGNORECASE)
+# A date line with nothing after it but "(2 shows)", "- Afternoon" or a stray digit.
+HISTORY_DATE_RE = re.compile(
+    _HISTORY_DATE_HEAD + r"(?:\s*\([^)]{1,20}\)|\s*[-–]\s*[A-Za-z ]{1,15}|\s+\d{1,2})?\s*\.?$",
+    re.IGNORECASE,
+)
+
 _SONG_COLUMNS = [
     "event_id", "position", "song_title", "credits", "is_encore",
     "take_number", "take_status", "annotations", "released_on", "subtitle",
@@ -489,7 +528,79 @@ _SECTION_FIELD = {
 }
 
 
-def _extract_sections(lines: list[str], rec: EventRecord) -> None:
+def _count(word: str | None) -> int | None:
+    if word is None:
+        return None
+    return _COUNT_WORDS.get(word.lower(), int(word) if word.isdigit() else None)
+
+
+def _strip_rotation_stat(line: str, rec: EventRecord) -> str:
+    """P1d: record the first rotation stat on *rec*; return *line* without it.
+
+    'No new songs compared to previous concert' implies 0%. A hedged tour count
+    ('Probably 1 new song', '1 possible new song') leaves tour_new_count NULL.
+    """
+    m = ROTATION_PREV_RE.search(line)
+    if m and rec.rotation_new is None and rec.rotation_pct is None:
+        rec.rotation_new = _count(m.group(1))
+        rec.rotation_pct = int(m.group(2)) if m.group(2) else (
+            0 if rec.rotation_new == 0 else None)
+    t = ROTATION_TOUR_RE.search(line)
+    if t and rec.tour_new_count is None and not (t.group(1) or t.group(3)):
+        rec.tour_new_count = _count(t.group(2))
+    if not (m or t or ROTATION_LESS_RE.search(line)):
+        return line
+    for rx in (ROTATION_PREV_RE, ROTATION_TOUR_RE, ROTATION_LESS_RE):
+        line = rx.sub(" ", line)
+    line = " ".join(line.split())
+    return line if re.search(r"\w", line) else ""
+
+
+def _is_history_venue(line: str) -> bool:
+    return bool(line) and not (
+        _HISTORY_ENTRY_RE.match(line) or VENUE_HISTORY_HEADER_RE.search(line)
+        or _classify_special_line(line) or _SECTION_END_RE.match(line.strip()))
+
+
+def _clean_trailer_lines(lines: list[str], rec: EventRecord) -> list[str]:
+    """P1c/P1d: lift the venue-history lists and the rotation stat out of the block.
+
+    Fills rec.rotation_* / tour_new_count and rec.venue_history_raw, and returns a copy
+    of *lines* (same length, so indices still line up) with the stat text cut and every
+    venue-history line blanked. Section content and the annotation scan read this copy.
+
+    Args:
+        lines: Clean paragraph text for the whole event block.
+        rec: EventRecord to fill in place.
+
+    Returns:
+        The cleaned lines; a blanked line is ''.
+    """
+    cleaned = [_strip_rotation_stat(ln, rec) for ln in lines]
+    blobs: list[str] = []
+    i, n = 0, len(cleaned)
+    while i < n:
+        if not VENUE_HISTORY_HEADER_RE.search(cleaned[i]):
+            i += 1
+            continue
+        j = i + 1
+        while j < n and cleaned[j] and _HISTORY_ENTRY_RE.match(cleaned[j]):
+            pure_date = HISTORY_DATE_RE.match(cleaned[j])
+            j += 1
+            if pure_date and j < n and _is_history_venue(cleaned[j]):
+                j += 1
+        if j == i + 1:  # a header with no dated entries is prose ("First Bob Dylan ...")
+            i += 1
+            continue
+        blobs.append("\n".join(cleaned[i:j]))
+        cleaned[i:j] = [""] * (j - i)
+        i = j
+    rec.venue_history_raw = "\n\n".join(blobs)
+    return cleaned
+
+
+def _extract_sections(lines: list[str], rec: EventRecord,
+                      text_lines: list[str] | None = None) -> None:
     """Fill notes/bobtalk/releases_raw/references_raw/recording_*/updated_raw.
 
     Walks the block once, marking every "special" line (section label,
@@ -502,14 +613,17 @@ def _extract_sections(lines: list[str], rec: EventRecord) -> None:
     Args:
         lines: Clean paragraph text for the whole event block.
         rec: EventRecord to fill in place.
+        text_lines: Same-length copy of *lines* that section content is taken
+            from (_clean_trailer_lines output); boundaries still come from *lines*.
     """
+    text_lines = lines if text_lines is None else text_lines
     specials = [(i, kind) for i, line in enumerate(lines)
                 if (kind := _classify_special_line(line))]
     collected: dict[str, list[str]] = {}
     for idx, (pos, kind) in enumerate(specials):
         end = specials[idx + 1][0] if idx + 1 < len(specials) else len(lines)
         if kind in _SECTION_FIELD:
-            content = "\n".join(ln for ln in lines[pos + 1:end] if ln).strip()
+            content = "\n".join(ln for ln in text_lines[pos + 1:end] if ln).strip()
             if content:
                 collected.setdefault(_SECTION_FIELD[kind], []).append(content)
         elif kind == "recording" and not rec.recording_info:
@@ -796,8 +910,8 @@ def _resolve_annotations_and_releases(lines: list[str], consumed_end: int,
         elif _SECTION_END_RE.match(line.strip()):
             in_prose = False
         m = _POSITION_LIST_LINE_RE.match(line)
-        if not m or _LINEUP_RE.search(line):
-            continue
+        if not m or _LINEUP_RE.search(line) or HISTORY_DATE_RE.match(line):
+            continue  # a date line ("1 March 1978") is never a position list (P1b)
         # Prose that starts with a number ("14 years ago ...") is not a position list;
         # an unlabelled range/list, release or recording line inside the section still is.
         if in_prose and not (re.search(r"[-,]", m.group(1))
@@ -826,7 +940,8 @@ def _resolve_annotations_and_releases(lines: list[str], consumed_end: int,
 
 
 def _parse_event_songs(lines: list[str], date_idx: int, session_title: str,
-                        event_id: int) -> list[SongRecord]:
+                        event_id: int,
+                        trailer_lines: list[str] | None = None) -> list[SongRecord]:
     """Parse an event block's numbered song/take rows into SongRecords.
 
     Args:
@@ -838,6 +953,8 @@ def _parse_event_songs(lines: list[str], date_idx: int, session_title: str,
             non-empty value means lines[date_idx + 1] is that paragraph,
             not a song line, and must be skipped.
         event_id: This event's DSN number, copied onto every SongRecord.
+        trailer_lines: Same-length copy of *lines* the annotation/release
+            scan reads (_clean_trailer_lines output); defaults to *lines*.
 
     Returns:
         SongRecords in position order, with annotations/released_on
@@ -852,7 +969,8 @@ def _parse_event_songs(lines: list[str], date_idx: int, session_title: str,
         start += 1
     songs, consumed_end = _parse_song_lines(lines, start, event_id)
     if songs:
-        _resolve_annotations_and_releases(lines, consumed_end, songs)
+        _resolve_annotations_and_releases(
+            lines if trailer_lines is None else trailer_lines, consumed_end, songs)
     return songs
 
 
@@ -881,9 +999,10 @@ def _parse_event(lines: list[str], event_id: int, page_filename: str,
         rec.concert_no_year = int(m.group(2))
     rec.lineup = "; ".join(ln for ln in lines if _LINEUP_RE.search(ln))
 
-    _extract_sections(lines, rec)
+    cleaned = _clean_trailer_lines(lines, rec)
+    _extract_sections(lines, rec, cleaned)
     rec.event_type = _classify_event_type(rec, lines)
-    songs = _parse_event_songs(lines, date_idx, rec.session_title, event_id)
+    songs = _parse_event_songs(lines, date_idx, rec.session_title, event_id, cleaned)
     return rec, songs
 
 
