@@ -1,3 +1,18 @@
+[2026-09-11] — Taper attribution: no bare mentions, no weak-family propagation; rules R-T1–R-T3 (dossier C08)
+Fixed: backend/taper_attribution.py: BUG-344. A Layer-0 mention now needs a taper-context phrase
+  directly before the handle (mention_has_taper_context: taped/recorded/recording/master by,
+  taper); 'mm' in the gear name 'MM-EBM-1' no longer credits LB-08493 to Mike Millard. Families
+  propagate only at conf >= 0.5 (FAMILY_MIN_CONF) and not review-flagged; _propagate_weak deleted.
+Fixed: tools/attribute_tapers.py: never loaded user_taper_aliases, so a CLI recompute dropped
+  272 confirmed rows for curated tapers — now calls reload_taper_aliases() first.
+Added: backend/qc/rules.py: R-T1 (unbound mention), R-T2 (propagated through a weak family),
+  R-T3 (propagated taper >5 y outside the taper's confirmed-tier year span). Before → after the
+  fix: R-T1 3,286 → 0 · R-T2 473 → 0 · R-T3 510 → 139 (107 spot; stay open, quarantine).
+Live recompute: 8,715 → 4,968 attributions (confirmed 3,846 unchanged, propagated 4,869 → 1,122,
+  conflicts 396 → 68). Pre-fix table in .debug/taper_attr_preC08.db.
+Changed: tests/test_taper_attribution.py (+4 tests, bare-mention test inverted); tests/test_qc.py
+  (+4 tests); instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: C08 done.
+
 [2026-09-10] — QC rules R-O2, R-G1, R-E1, R-F1, R-S1 (dossier C07)
 Added: backend/qc/rules.py: R-O2 (warn) Olof city embeds a country, empty city, or one city
   paired with ≥2 countries — an empty country alone is not a finding. R-G1 (error) venue

@@ -2,6 +2,7 @@
 
 All tests use a temp-file DB — the real data/losslessbob.db is never touched.
 """
+import json
 import os
 import shutil
 import tempfile
@@ -44,6 +45,85 @@ def _insert_song(conn, event_id, position, title="Song", annotations=""):
         " VALUES (?, ?, ?, ?)",
         (event_id, position, title, annotations),
     )
+
+
+def _insert_attr(conn, lb, taper, confidence, evidence, description="",
+                 date_str="1/1/80", conflict=0):
+    conn.execute(
+        "INSERT OR REPLACE INTO entries (lb_number, description, date_str) VALUES (?, ?, ?)",
+        (lb, description, date_str),
+    )
+    conn.execute(
+        "INSERT INTO taper_attributions (lb_number, taper_normalised, confidence,"
+        " evidence_json, conflict) VALUES (?, ?, ?, ?, ?)",
+        (lb, taper, confidence, json.dumps(evidence), conflict),
+    )
+
+
+def _insert_family_meta(conn, fam_id, conf, review_flag=0):
+    conn.execute(
+        "INSERT INTO tapematch_family_meta (fam_id, concert_date, member_count, conf,"
+        " review_flag) VALUES (?, '1980-01-01', 2, ?, ?)",
+        (fam_id, conf, review_flag),
+    )
+
+
+_MENTION = [{"kind": "mention", "detail": "mention"}]
+
+
+class TestRuleT1:
+    def test_fires_on_gear_name_mention(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            _insert_attr(conn, 8493, "mike millard", "propagated", _MENTION,
+                         "Source: SP-CMC-8 > MM-EBM-1(Power Supply) > MicroTrack 24/96")
+        findings = list(rules.rule_t1(conn))
+        assert [f.entity_key for f in findings] == ["8493"]
+        assert findings[0].evidence["taper"] == "mike millard"
+
+    def test_quiet_on_context_mention_and_confirmed(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            _insert_attr(conn, 1, "spot", "propagated", _MENTION,
+                         "Audience, recorded by spot on a Sony D5")
+            _insert_attr(conn, 2, "spot", "confirmed",
+                         [{"kind": "confirmation", "detail": "curator confirmed"}],
+                         "thanks to spot")
+        assert list(rules.rule_t1(conn)) == []
+
+
+class TestRuleT2:
+    def test_fires_on_weak_and_flagged_families(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            _insert_family_meta(conn, "F-low", 0.3)
+            _insert_family_meta(conn, "F-flag", 0.9, review_flag=1)
+            _insert_family_meta(conn, "F-ok", 0.8)
+            for lb, fam in ((1, "F-low"), (2, "F-flag"), (3, "F-ok")):
+                _insert_attr(conn, lb, "spot", "propagated",
+                             [{"kind": "family", "detail": "d", "fam_id": fam, "via_lb": 9}])
+        findings = {f.entity_key: f for f in rules.rule_t2(conn)}
+        assert set(findings) == {"1", "2"}
+        assert findings["1"].evidence["fam_id"] == "F-low"
+        assert "review-flagged" in findings["2"].detail
+
+
+class TestRuleT3:
+    def test_fires_outside_confirmed_years(self, qc):
+        _db, _store, rules, conn, _path = qc
+        confirmed = [{"kind": "explicit", "detail": "d"}]
+        with conn:
+            _insert_attr(conn, 1, "spot", "confirmed", confirmed, date_str="1/1/80")
+            _insert_attr(conn, 2, "spot", "confirmed", confirmed, date_str="6/5/85")
+            _insert_attr(conn, 3, "spot", "propagated", _MENTION, date_str="1/1/95")
+            _insert_attr(conn, 4, "spot", "propagated", _MENTION, date_str="5/xx/89")
+            _insert_attr(conn, 5, "spot", "propagated", _MENTION, date_str="1/1/05",
+                         conflict=1)
+            _insert_attr(conn, 6, "hide", "propagated", _MENTION, date_str="1/1/05")
+        findings = list(rules.rule_t3(conn))
+        assert [f.entity_key for f in findings] == ["3"]
+        assert findings[0].evidence == {"taper": "spot", "year": 1995,
+                                        "confirmed_from": 1980, "confirmed_to": 1985}
 
 
 class TestInitDb:

@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-344: Taper propagation matches bare text mentions and propagates through weak or review-flagged families
+Status: Fixed
+File(s): backend/taper_attribution.py:478,backend/taper_attribution.py:578
+Reported: 2026-09-10
+Fixed: 2026-09-11
+Root cause: Layer 0 seeded a 'mention' attribution from any known handle in the text (the 'mm' alias matched gear 'MM-EBM-1'), and _propagate_weak filled members in through review-flagged families while _propagate_strong used families at any confidence.
+Fix: A mention needs a taper-context phrase directly before the handle (mention_has_taper_context); families propagate only at conf >= 0.5 and not review-flagged; _propagate_weak deleted. QC rules R-T1-R-T3 guard it: 3,286 -> 0, 473 -> 0, 510 -> 139. Dossier C08.
+
 BUG-342: Olof parser stores subtitles as credits and leaves long composer credits inside the title
 Status: Fixed
 File(s): backend/olof_parser.py:533

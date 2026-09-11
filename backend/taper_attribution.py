@@ -24,10 +24,11 @@ Confidence tiers (spec §3):
                  "Taper:" label, or a legendary/net-taper series code
                  (lta-ltz, nta-ntz).
     propagated — inherited from a confirmed (or already-propagated) node via
-                 a same-source edge (recording_families / entry_lineage
-                 same_as_lb / derived_from_lb), or a bare handle mention in an
-                 entry's own description (weaker Layer-0 evidence — a mention
-                 is not a taping claim).
+                 a same-source edge (a recording family merged at conf >= 0.5
+                 and not review-flagged, or entry_lineage same_as_lb /
+                 derived_from_lb), or a handle in the entry's own description
+                 bound to a taper-context phrase ("recorded by X"). A handle
+                 anywhere else in the text is not evidence (BUG-344).
     inferred   — vocabulary fingerprints (Layer 2, ``backend.taper_fingerprints``).
                  Implemented but gated OFF in :func:`recompute` via
                  ``taper_fingerprints.LAYER2_ENABLED`` (2026-07-15 calibration
@@ -87,6 +88,19 @@ _SERIES_CODE_RE = re.compile(r'^(?:lt[a-z]|net taper [a-z])$')
 # string, e.g. "component candidate taper 'net taper j' via LB-6083" -> "net
 # taper j". Used to classify a conflict as series-vs-series (§ list_attributions).
 _CONFLICT_CAND_RE = re.compile(r"candidate taper '([^']+)'")
+
+# A taper-context phrase that must sit directly before a handle for a Layer-0
+# mention to count (QC rule R-T1, BUG-344). An optional article or "the
+# legendary"-style adjective may sit between phrase and handle.
+_TAPER_CONTEXT_PREFIX = (
+    r'(?:\b(?:taped|recorded|recording|master)\s+by|\btaper\s*[:\-]?)'
+    r'\s*(?:the\s+)?(?:["\']?legendary["\']?\s+)?'
+)
+
+# Layer 1 floods a taper only through a family TapeMatch merged at this
+# confidence or better, and never through a review-flagged one (QC rule R-T2,
+# BUG-344). Families with NULL conf are singletons, which never propagate anyway.
+FAMILY_MIN_CONF = 0.5
 
 # Reverse index: canonical taper -> raw alias keys, used to find a snippet of
 # description text around a bare handle mention for Layer-0 'mention' evidence.
@@ -249,6 +263,34 @@ def _mention_snippet(description: str, canonical_taper: str, radius: int = 40) -
     return None
 
 
+def mention_has_taper_context(description: str, canonical_taper: str) -> bool:
+    """Whether a mention of *canonical_taper* is bound to a taping claim (QC rule R-T1).
+
+    A handle that merely appears in the text is not taper evidence: 'mm' matches
+    the gear name 'MM-EBM-1' and 'spot' matches 'another spot of discontinuity'.
+    The mention counts only when a taper-context phrase sits directly before the
+    alias — 'taped by', 'recorded by', 'recording by', 'master by', or 'taper'
+    ('Taper: X', 'legendary taper jf'). 'mastered by' and 'transferred by' name
+    whoever worked the tape later, not the taper, so they don't count.
+
+    Args:
+        description: Entry description text; only the first 600 chars are read,
+            the same window extract_taper_and_source scans.
+        canonical_taper: Canonical taper name (a value in _KNOWN_TAPER_ALIASES).
+
+    Returns:
+        True if any alias of the taper follows a taper-context phrase.
+    """
+    window = (description or "")[:600]
+    for key in _ALIAS_KEYS_BY_CANONICAL.get(canonical_taper, ()):
+        pattern = re.compile(
+            _TAPER_CONTEXT_PREFIX + r'\b' + re.escape(key) + r'\b', re.IGNORECASE
+        )
+        if pattern.search(window):
+            return True
+    return False
+
+
 class _DSU:
     """Minimal union-find with path compression, used for the strong-edge graph."""
 
@@ -294,14 +336,21 @@ def _load_lineage_rows(conn: sqlite3.Connection) -> list[sqlite3.Row]:
 
 
 def _load_families(conn: sqlite3.Connection) -> tuple[dict[str, list[int]], dict[str, bool]]:
-    """Return (fam_id -> member lb_numbers, fam_id -> is_review_flagged)."""
+    """Return (fam_id -> member lb_numbers, fam_id -> is_weak).
+
+    A family is weak — never a propagation edge — when it is review-flagged or
+    TapeMatch merged it below :data:`FAMILY_MIN_CONF` (NULL conf counts as weak).
+    """
     fam_members: dict[str, list[int]] = defaultdict(list)
     for row in conn.execute("SELECT lb_number, fam_id FROM recording_families"):
         fam_members[row["fam_id"]].append(row["lb_number"])
-    fam_review: dict[str, bool] = {}
-    for row in conn.execute("SELECT fam_id, review_flag FROM tapematch_family_meta"):
-        fam_review[row["fam_id"]] = bool(row["review_flag"])
-    return dict(fam_members), fam_review
+    fam_weak: dict[str, bool] = {}
+    for row in conn.execute("SELECT fam_id, conf, review_flag FROM tapematch_family_meta"):
+        conf = row["conf"]
+        fam_weak[row["fam_id"]] = (
+            bool(row["review_flag"]) or conf is None or conf < FAMILY_MIN_CONF
+        )
+    return dict(fam_members), fam_weak
 
 
 def _build_adjacency(rows: list[sqlite3.Row]) -> tuple[dict[int, list[int]], dict[int, list[int]]]:
@@ -341,9 +390,12 @@ def _layer0_seed(rows: list[sqlite3.Row], universe: frozenset[str]) -> dict[int,
     - Explicit "Taper:" label or a "taped by <name>" credit in the
       description → confirmed, kind='explicit' — both are an unambiguous,
       named credit, not a guess.
-    - Otherwise (a known handle appears somewhere in the text via a weaker
-      extraction path) → propagated, kind='mention' (mentions are weaker
-      evidence than an explicit credit — "thanks to spot" != "taped by spot").
+    - Otherwise, a known handle bound to a taper-context phrase ("recorded by
+      spot", "legendary taper jf" — :func:`mention_has_taper_context`) →
+      propagated, kind='mention' (weaker than an explicit credit).
+    - A handle anywhere else in the text seeds nothing: "thanks to spot" is
+      not "taped by spot", and 'mm' in the gear name 'MM-EBM-1' is not Mike
+      Millard (BUG-344, QC rule R-T1).
     """
     attrs: dict[int, dict] = {}
     for row in rows:
@@ -363,8 +415,10 @@ def _layer0_seed(rows: list[sqlite3.Row], universe: frozenset[str]) -> dict[int,
             attrs[lb] = _row(taper_norm, "confirmed", [_evidence("explicit", detail)])
             continue
 
+        if not mention_has_taper_context(description, taper_norm):
+            continue
         snippet = _mention_snippet(description, taper_norm)
-        detail = f"bare mention of '{taper_norm}' in description"
+        detail = f"mention of '{taper_norm}' after a taper-context phrase"
         if snippet:
             detail += f": …{snippet}…"
         attrs[lb] = _row(taper_norm, "propagated", [_evidence("mention", detail)])
@@ -478,11 +532,16 @@ def _mark_conflicts(attrs: dict[int, dict], members, candidates: list[tuple[int,
 def _propagate_strong(
     attrs: dict[int, dict],
     fam_members: dict[str, list[int]],
-    fam_review: dict[str, bool],
+    fam_weak: dict[str, bool],
     same_as_adj: dict[int, list[int]],
     derived_from_adj: dict[int, list[int]],
 ) -> None:
-    """Layer 1 over strong edges: family cliques (non review-flagged) + same_as + derived_from.
+    """Layer 1 over strong edges: family cliques + same_as + derived_from.
+
+    Only strong families are edges: conf >= :data:`FAMILY_MIN_CONF` and not
+    review-flagged. A weak family carries no taper at all — the old second
+    pass that filled members in through weak families is gone (BUG-344, QC
+    rule R-T2): a 4%-confidence merge is not evidence two LBs share a taper.
 
     Per component: exactly one confirmed taper -> flood-fill it (BFS) to every
     unattributed member, tier='propagated' (already-propagated nodes push too,
@@ -495,7 +554,7 @@ def _propagate_strong(
     dsu = _DSU()
     lb_fam_strong: dict[int, str] = {}
     for fam_id, members in fam_members.items():
-        if fam_review.get(fam_id, False) or len(members) < 2:
+        if fam_weak.get(fam_id, True) or len(members) < 2:
             continue
         for lb in members:
             lb_fam_strong[lb] = fam_id
@@ -575,41 +634,6 @@ def _propagate_strong(
             frontier = nxt
 
 
-def _propagate_weak(
-    attrs: dict[int, dict],
-    fam_members: dict[str, list[int]],
-    fam_review: dict[str, bool],
-) -> None:
-    """Second pass over weak (review-flagged) family edges only.
-
-    Runs after _propagate_strong so strong resolutions already occupy `attrs`;
-    weak edges only ever fill in nodes strong propagation left untouched, and
-    a strong-vs-weak disagreement can't arise here because a node already
-    attributed by the strong pass is skipped (spec §4.2: "weak edges lose to
-    strong edges instead of raising a conflict").
-    """
-    for fam_id, members in fam_members.items():
-        if not fam_review.get(fam_id, False):
-            continue
-        for lb in members:
-            if lb in attrs:
-                continue
-            candidates: dict[str, int] = {}
-            for other in members:
-                if other == lb or other not in attrs:
-                    continue
-                candidates.setdefault(attrs[other]["taper"], other)
-            if len(candidates) == 1:
-                taper, src = next(iter(candidates.items()))
-                attrs[lb] = _row(
-                    taper, "propagated",
-                    [_evidence("family", f"weak (review-flagged) same family as LB-{src}",
-                               via_lb=src, fam_id=fam_id)],
-                )
-            elif len(candidates) >= 2:
-                _mark_conflicts(attrs, [lb], [(src, t) for t, src in candidates.items()])
-
-
 # ── Orchestration ──────────────────────────────────────────────────────────────
 
 def _write_attributions(attrs: dict[int, dict], db_path: str | None = None) -> None:
@@ -671,23 +695,22 @@ def _compute_layers01(
     Returns:
         ``(attrs, fam_members, same_as_adj, derived_from_adj, rejects,
         unresolved)`` — attrs after Layer 0 seeding, curator 'confirm' rows,
-        one pass of reject suppression, and both propagation passes (strong
-        then weak). Rejects have not yet been re-applied a second time and
+        one pass of reject suppression, and Layer 1 propagation over strong
+        edges. Rejects have not yet been re-applied a second time and
         'unresolved' rows have not yet been stripped — :func:`recompute` does
         both after Layer 2 runs, so Layer 2's own poisoning check (which takes
         *unresolved* directly) sees the same state.
     """
     confirmations = _load_taper_confirmations(conn)
     lineage_rows = _load_lineage_rows(conn)
-    fam_members, fam_review = _load_families(conn)
+    fam_members, fam_weak = _load_families(conn)
     same_as_adj, derived_from_adj = _build_adjacency(lineage_rows)
 
     attrs = _layer0_seed(lineage_rows, _db._TAPER_UNIVERSE)
     rejects, unresolved = _apply_confirmations(attrs, confirmations)
     _apply_rejects(attrs, rejects)
 
-    _propagate_strong(attrs, fam_members, fam_review, same_as_adj, derived_from_adj)
-    _propagate_weak(attrs, fam_members, fam_review)
+    _propagate_strong(attrs, fam_members, fam_weak, same_as_adj, derived_from_adj)
 
     return attrs, fam_members, same_as_adj, derived_from_adj, rejects, unresolved
 

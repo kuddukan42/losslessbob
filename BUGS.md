@@ -14,14 +14,6 @@ Description: Plan F17 / audit P7, P8. show_picks (2026-08-31) is older than reco
 Root cause: Unknown
 Fix: —
 
-BUG-344: Taper propagation matches bare text mentions and propagates through weak or review-flagged families
-Status: Open
-File(s): backend/taper_attribution.py:478,backend/taper_attribution.py:578
-Reported: 2026-09-10
-Description: Plan F16 / audit D5–D7. 3,683 attributions come from a bare text mention of a taper name; LB-08493 is credited to 'mike millard' because of the gear name 'MM-EBM-1', though Millard died in 1994. 168 more were propagated through review_flag=1 families and 510 fall outside the taper's confirmed era (±5 y). Fix: a mention of gear or a label is not taper evidence — propagation by mention needs a taper-context pattern ('taped by', 'recorded by', 'master by'); never propagate through a review-flagged family or one below 0.5 confidence; out-of-era credits become QC findings then quarantine (rules R-T1–R-T3). Fixed in dossier chunk C08.
-Root cause: Unknown
-Fix: —
-
 BUG-343: Dossier template output is 37% blank lines
 Status: Open
 File(s): backend/templates/dossier.html:1
