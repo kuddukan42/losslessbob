@@ -10120,7 +10120,13 @@ def titles_match(norm_a: str, norm_b: str) -> bool:
     return shorter in longer and len(shorter) >= _TITLE_CONTAINMENT_RATIO * len(longer)
 
 
-_ENTRY_TRACK_MARKER_RE = re.compile(r"(?:^|[,\n])\s*(\d{1,3})[.)]?\s+(?=\S)")
+# A track marker: 1-3 digits after a delimiter, then either optional '.'/')' plus
+# whitespace ("1. Title", "01 Title"), or a '.'/')' glued straight onto the title
+# ("10.When The Deal Goes Down" — TODO-342 C13). The glued form requires a letter
+# or opening quote/bracket after the dot so "12.5" or a "10:30" time never splits.
+_ENTRY_TRACK_MARKER_RE = re.compile(
+    r"(?:^|[,\n])\s*(\d{1,3})(?:[.)]?\s+|[.)](?=[^\W\d_]|[\"'(\[]))(?=\S)"
+)
 
 
 def parse_entry_setlist_titles(setlist_text: str) -> list[str]:

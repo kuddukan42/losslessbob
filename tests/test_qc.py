@@ -369,6 +369,120 @@ class TestRuleE1:
         assert list(rules.rule_e1(conn)) == []
 
 
+_BBC_1965 = [
+    "Ballad Of Hollis Brown", "Mr. Tambourine Man", "Gates Of Eden", "If You Gotta Go, Go Now",
+    "It Ain't Me, Babe", "Love Minus Zero/No Limit", "One Too Many Mornings",
+    "Boots Of Spanish Leather", "She Belongs To Me", "It's All Over Now, Baby Blue",
+]
+
+
+def _seed_1965(conn):
+    _insert_event(conn, 1, "raw", date_str="1965-06-01")
+    for pos, title in enumerate(_BBC_1965, start=1):
+        _insert_song(conn, 1, pos, title)
+    _insert_song(conn, 1, 11, "It's Alright, Ma")
+    conn.execute(
+        "UPDATE olof_songs SET subtitle=\"I'm Only Bleeding\" WHERE song_title=\"It's Alright, Ma\""
+    )
+
+
+def _insert_entry(conn, lb, setlist, date_str="6/1/65"):
+    conn.execute(
+        "INSERT INTO entries (lb_number, date_str, setlist) VALUES (?, ?, ?)",
+        (lb, date_str, setlist),
+    )
+
+
+class TestRuleE2:
+    def test_fires_on_misdated_compilation(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            _seed_1965(conn)
+            _insert_entry(conn, 6654, (
+                "CD 1\n1. Like A Rolling Stone\n2. Tombstone Blues\n3. From A Buick 6\n"
+                "4. Desolation Row\n5. Positively 4th Street\nCD 2\n"
+                "6. Rainy Day Women Nos. 12 & 35\n7. Visions Of Johanna\n8. I Want You"
+            ))
+        findings = list(rules.rule_e2(conn))
+        assert [f.entity_key for f in findings] == ["6654"]
+        f = findings[0]
+        assert f.entity_kind == "entry" and f.severity == "error"
+        assert f.evidence["date"] == "1965-06-01"
+        assert f.evidence["song_tracks"] == 8 and f.evidence["matched"] == 0
+        assert f.evidence["share"] == 0.0
+        assert len(f.evidence["unmatched"]) == 8
+        assert f.evidence["unmatched"][0] == "Like A Rolling Stone"
+
+    def test_short_excerpt_and_good_fit_do_not_fire(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            _seed_1965(conn)
+            _insert_entry(conn, 10364, "01. If You Gotta Go, Go Now")  # 1/1 matched
+            _insert_entry(conn, 8855, (
+                "First Broadcast: June 26th 1965, 01. Ballad Of Hollis Brown,"
+                " 02. Mr Tambourine Man, missing, 03. If You Gotta Go, Go Now, missing,"
+                " 04. It Ain't Me Babe, Second Broadcast: June 19th 1965,"
+                " 05. Love Minus Zero/No Limit, 06. It's Alright Ma (I'm Only Bleeding)"
+            ))
+            # Two unlisted songs: below the minimum song-track count, so skipped.
+            _insert_entry(conn, 20001, "1. Like A Rolling Stone, 2. Tombstone Blues")
+        assert list(rules.rule_e2(conn)) == []
+        fits = {f["lb_number"]: f for f in rules.entry_setlist_fit(conn)}
+        assert (fits[10364]["song_tracks"], fits[10364]["matched"]) == (1, 1)
+        # The two 'missing' tracks don't count; the rest all match.
+        assert (fits[8855]["song_tracks"], fits[8855]["matched"]) == (4, 4)
+
+    def test_intro_is_not_a_song_track(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            _seed_1965(conn)
+            _insert_entry(conn, 30001, (
+                "0. Introduction, 1. Gates Of Eden, 2. Tombstone Blues, 3. Desolation Row,"
+                " 4. I Want You, 5. Visions Of Johanna"
+            ))
+        fit = next(iter(rules.entry_setlist_fit(conn)))
+        assert (fit["song_tracks"], fit["matched"]) == (5, 1)
+        assert list(rules.rule_e2(conn)) == []  # 1/5 = 20%, not below
+
+    def test_skips_undated_and_dates_without_olof_songs(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            _seed_1965(conn)
+            _insert_entry(conn, 40001, "1. A, 2. B, 3. C, 4. D", date_str="6/xx/65")
+            _insert_entry(conn, 40002, "1. A Song, 2. B Song, 3. C Song", date_str="7/1/65")
+        assert list(rules.entry_setlist_fit(conn)) == []
+        assert list(rules.rule_e2(conn)) == []
+
+    def test_superset_of_short_olof_listing_does_not_fire(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            _insert_event(conn, 2, "raw", date_str="1976-05-16")
+            _insert_song(conn, 2, 1, "Isis")
+            _insert_song(conn, 2, 2, "Mozambique")
+            # Full show: both of Olof's 2 songs plus 10 guest-set songs (2/12 < 20%).
+            guests = ", ".join(f"{i}. Guest Song {chr(64 + i)}" for i in range(3, 13))
+            _insert_entry(conn, 567, f"1. Isis, 2. Mozambique, {guests}", date_str="5/16/76")
+        fit = next(iter(rules.entry_setlist_fit(conn)))
+        assert (fit["matched"], fit["song_tracks"], fit["olof_matched"]) == (2, 12, 2)
+        assert list(rules.rule_e2(conn)) == []
+
+    def test_glued_tracklist_does_not_fire(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            _seed_1965(conn)
+            _insert_entry(conn, 46, (
+                "1. Somebody Touched Me 2. Long Black Veil 3. Masters Of War,"
+                " 4. Tombstone Blues, 5. Visions Of Johanna"
+            ))
+        fit = next(iter(rules.entry_setlist_fit(conn)))
+        assert fit["glued"] and fit["matched"] == 0
+        assert list(rules.rule_e2(conn)) == []
+
+    def test_registered(self, qc):
+        _db, _store, rules, _conn, _path = qc
+        assert rules.RULES["R-E2"].severity == "error"
+
+
 class TestRuleF1:
     def test_fires_on_weak_or_flagged_family(self, qc):
         _db, _store, rules, conn, _path = qc
