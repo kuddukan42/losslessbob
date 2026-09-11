@@ -168,7 +168,7 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
 | C25 | 5 | `dossier_anchors.py`: `Field`, full `ANCHORS` map (D-06 / D-12 as null stubs), `build_view`; `dossier["view"]`; `filter_dossier_sections(local_analysis=0)` | C17–C24 | sonnet | D1 payload unchanged (existing `test_dossier.py` passes); every anchor's fallback tested | todo |
 | C26 | 5 | Claim engine + T4 slot templates | C25 | opus | `tests/test_dossier_claims.py` (ties, partial scope, disputed input → no claim) | todo |
 | C27 | 5 | §8 selection rules: fragments (7.4), verdict pick, collapse, families, confidence, tape wording | C26 | sonnet | 300-show histogram in `.debug/`. **Sign-off: 60% fragment threshold** | todo |
-| C28 | 5 | `dossier_qc.py` gate G1–G9, 422 refusals, `prov.withheld`, lint L1 | C27 | sonnet | `tests/test_dossier_qc.py` pass + fail per check; <100 ms. **Open (C16):** G1 as written ("venue agrees with ≥1 source" → refuse) would refuse 695 of 4,057 shows; 666 of them agree on city and differ only in venue naming ("Stadio Communale" / "Stadio Comunale", "Sudbury Arena" / "Sudbury Community Arena"). Decide before C28 whether city agreement satisfies G1 with a venue-name notice | todo |
+| C28 | 5 | `dossier_qc.py` gate G1–G9, 422 refusals, `prov.withheld`, lint L1 | C27 | sonnet | `tests/test_dossier_qc.py` pass + fail per check; <100 ms. **Decided (tj, 2026-09-11):** G1 passes when the venue *or* the city agrees with ≥1 source; a city-only match renders a venue-name notice. Exact venue match alone would have refused 695 of 4,057 shows, 666 of which agree on city ("Stadio Communale" / "Stadio Comunale") | todo |
 | C29 | 6–7 | Template rewrite: sections, `lbf` / `claim` macros, palette, "Scanned quality" (HTML / BBcode / footer), QC footer + `lb-qc` JSON, 7.5–7.8, lint L2 | C28 | sonnet | L1 / L2, anchor coverage, blank lines <5%; 2b acceptance 1 and 3; `/verify` Tier A on 2010-03-29 + 1965-06-01, light and dark | todo |
 | C30 | 7 | Compact map: `marker` param, ~240×150, venue card, `view.venue.coords`, L1 pin rule | C29 | sonnet | 2010-03-29 hollow ring; one verified-`high` show gets a solid pin | todo |
 | C31 | 8 | `tools/make_fixture_db.py` + golden-set harness, run in CI | C30 | sonnet | harness runs green on placeholder files | todo |
@@ -779,7 +779,7 @@ Runs at the end of every `build_dossier()` call, target <100 ms.
 
 | Check | Rule | On failure |
 |---|---|---|
-| G1 Identity | Exactly one Olof event (or a disambiguated `location`); venue agrees with ≥1 of setlist.fm / bobdylan_shows | **Refuse**: HTTP 422 + reasons; no page |
+| G1 Identity | Exactly one Olof event (or a disambiguated `location`); venue **or city** agrees with ≥1 of setlist.fm / bobdylan_shows (`corroborate.venue_check`); a city-only match renders a venue-name notice (tj, 2026-09-11) | **Refuse**: HTTP 422 + reasons; no page |
 | G2 Source–show fit | Each source's tracklist matches ≥20% of the setlist | Source leaves the verdict; listed separately |
 | G3 Provenance | Every non-null Field has `source` + `confidence`; no `derived_from` cycles | Withhold the field |
 | G4 Quarantine | No Field sourced from a row with an `open` or `confirmed` error finding | Withhold the field |

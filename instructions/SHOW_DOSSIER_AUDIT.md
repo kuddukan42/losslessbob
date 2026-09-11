@@ -201,7 +201,7 @@ the ledger, the scan scores, the runtimes, and the band.
 
 | Check | Rule | On failure |
 |---|---|---|
-| G1 Identity | Date resolves to exactly one Olof event (or a disambiguated `location`); venue agrees with ≥1 of setlist.fm / bobdylan.com | **Refuse** (422 + reasons) |
+| G1 Identity | Date resolves to exactly one Olof event (or a disambiguated `location`); venue or city agrees with ≥1 of setlist.fm / bobdylan.com (city-only → venue-name notice; amended 2026-09-11, see plan C28) | **Refuse** (422 + reasons) |
 | G2 Source–show fit | Each source's tracklist matches ≥20% of the setlist (when both exist) | That source is withheld from the verdict and listed as "tracklist doesn't match this show" |
 | G3 Provenance | Every non-null field has `source` + `confidence`; no `derived_from` cycles | Withhold the field |
 | G4 Quarantine | No field sourced from a row with an open error finding | Withhold the field |
