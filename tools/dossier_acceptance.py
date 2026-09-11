@@ -33,7 +33,7 @@ if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
 from backend.paths import DB_PATH  # noqa: E402
-from tools.olof_reparse_diff import MONTH_YEAR_RE, ROTATION_FRAGMENT_RE  # noqa: E402
+from backend.qc.rules import MONTH_YEAR_RE, ROTATION_FRAGMENT_RE  # noqa: E402
 
 _log = logging.getLogger(__name__)
 

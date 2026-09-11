@@ -1,3 +1,19 @@
+[2026-09-10] — QC rule engine: findings tables, reopen-on-change, quarantine lookup (dossier C06)
+Added: backend/qc/ (rules.py, store.py, __main__.py): Phase 2 QC engine. Rules are pure
+  (conn) -> Finding functions; run_rule reconciles against qc_findings — new → open, stops firing
+  → fixed, fires again → reopened; a false_positive/corrected decision is bound to the evidence
+  hash and reopens when the evidence changes. quarantined()/quarantined_batch() return the error
+  rules holding an entity. CLI: python -m backend.qc run [--rule ID]. Rules R-O1 (raw numbered
+  songs > parsed) and R-O3 (date/stat-shaped annotations).
+Added: backend/db.py: qc_findings, qc_decision_log, qc_runs, release_classifications, corrections
+  (USER tier, never exported).
+Changed: tools/olof_reparse_diff.py, tools/dossier_acceptance.py: MONTH_YEAR_RE /
+  ROTATION_FRAGMENT_RE moved to backend/qc/rules.py (backend must not import tools/).
+Changed: PROJECT.md: QC schema section + file-tree lines; tests/test_qc.py (11 tests).
+Baseline (live DB): R-O1 255 open (236 truncated + 19 zero-song with numbered lines), R-O3 0.
+  Second run: 0 new / 0 fixed / 0 reopened. --parser still 9/9.
+Changed: instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: C06 done.
+
 [2026-09-10] — Olof corpus reparsed with the Phase 1 fixes; diff gate clean (dossier C05)
 Changed: data (live DB): full DSN reparse after a full backup (.debug/losslessbob_preC05.db) and
   an olof snapshot (.debug/olof_before.db). tools/olof_reparse_diff.py diff: 3,589 changed events,

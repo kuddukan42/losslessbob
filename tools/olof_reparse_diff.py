@@ -45,6 +45,11 @@ from backend.olof_parser import (  # noqa: E402
 )
 from backend.paths import DB_PATH  # noqa: E402
 
+# MONTH_YEAR_RE / ROTATION_FRAGMENT_RE live in backend/qc/rules.py (TODO-342 Phase 2,
+# R-O3) since backend must not import from tools/; this tool and
+# tools/dossier_acceptance.py both import the shared copy from there.
+from backend.qc.rules import MONTH_YEAR_RE, ROTATION_FRAGMENT_RE  # noqa: E402
+
 _log = logging.getLogger(__name__)
 
 DEBUG_DIR = _PROJECT_ROOT / ".debug"
@@ -54,17 +59,6 @@ DEFAULT_REPORT = DEBUG_DIR / "olof_reparse_diff.md"
 BUCKETS = ("P1a", "P1b", "P1c", "P1d", "P1e", "P1f", "P1g")
 UNEXPLAINED = "UNEXPLAINED"
 _MAX_LISTED = 150  # events listed per explained bucket; UNEXPLAINED is always listed in full
-
-_MONTHS = (
-    "January|February|March|April|May|June|July|August|September|October|November|December"
-)
-# 'March 1978' — what a venue-history date line ('1 March 1978') leaves behind once
-# its leading day is read as a song position (P1b).
-MONTH_YEAR_RE = re.compile(rf"^(?:\d{{1,2}}\s+)?(?:{_MONTHS})\s+\d{{4}}\.?$", re.IGNORECASE)
-# Any fragment of Olof's rotation-stat line (P1d).
-ROTATION_FRAGMENT_RE = re.compile(
-    r"compared to previous concert|new songs? for this tour", re.IGNORECASE
-)
 
 
 def _strip_stat(text: str) -> str:
