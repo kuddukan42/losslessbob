@@ -9,7 +9,14 @@ import pytest
 
 import backend.db as db
 import backend.paths as _paths
-from backend.olof_parser import EventRecord, SongRecord, _upsert_events, _upsert_songs
+from backend.olof_parser import (
+    EventRecord,
+    SongRecord,
+    _is_guest_header,
+    _parse_event,
+    _upsert_events,
+    _upsert_songs,
+)
 from tools import olof_reparse_diff as rd
 
 _NEW_EVENT_COLS = {"rotation_new", "rotation_pct", "tour_new_count", "venue_history_raw"}
@@ -185,3 +192,125 @@ def test_snapshot_and_diff_round_trip(db_path, tmp_path):
     assert "taken_at" in meta
     assert [(x.event_id, x.buckets, x.problems) for x in diffs] == [(1, {"P1a"}, [])]
     assert "| UNEXPLAINED | 0 |" in rd.render_report(diffs, db_path, snap, meta)
+
+
+# --- C02: P1a guest/interlude blocks, P1g section guard ------------------------------------
+
+def _numbered(titles: list[str], start: int = 1) -> list[str]:
+    out: list[str] = []
+    for n, title in enumerate(titles, start):
+        out += [f"{n}.", title]
+    return out
+
+
+# Modelled on DSN02910 / 1975-12-08: a session-title line, then guest sets before song 1
+# and between 13 and 14, one header spaced "Rob Stoner :", and "Official release"
+# (singular) inside the References section.
+_RTR_1975 = (
+    ["Madison Square Garden", "New York City , New York", "8 December 1975",
+     "Night of The Hurricane 1",
+     "Bob Neuwirth:", "Good Love Is Hard To Find (Ned Albright)",
+     "Rob Stoner :", "Too Good To Be Wasted (Rob Stoner)",
+     "Bob Neuwirth:", "Cindy (When I Get Home) (trad.)", "Mercedes Benz (Janis Joplin)"]
+    + _numbered([f"Dylan song {n}" for n in range(1, 8)])
+    + ["—"]
+    + _numbered([f"Dylan song {n}" for n in range(8, 14)], 8)
+    + ["Joan Baez:", "Diamonds And Rust (Joan Baez)",
+       "Roger McGuinn:", "Eight Miles High (Gene Clark, Roger McGuinn, David Crosby)"]
+    + _numbered([f"Dylan song {n}" for n in range(14, 23)], 14)
+    + ["Rolling Thunder Revue concert # 31.",
+       "14, 15 Bob Dylan solo (vocal, guitar & harmonica).",
+       "BobTalk", "14 years ago I wrote this one.",
+       "Bootlegs", "Knight of the Hurricane . Razor's Edge GWW 001/002.",
+       "References", "Larry Sloman: On The Road With Bob Dylan . Bantam Books 1978.",
+       "Official release", "5 released on BOB DYLAN. The Rolling Thunder Revue.",
+       "Notes", "2 available on Wolfgang's Vault March 2006.",
+       "Mono audience recording, 105 minutes."]
+)
+
+# Modelled on DSN07660 / 1986-02-24: Tom Petty interludes after 7 and 16, encore dash at 23.
+_TP_1986 = (
+    ["Entertainment Centre", "Sydney, New South Wales, Australia", "24 February 1986"]
+    + _numbered([f"Dylan song {n}" for n in range(1, 8)])
+    + ["Tom Petty & The Heartbreakers:", "Straight Into Darkness (Tom Petty)",
+       "Bye Bye Johnny (Chuck Berry)"]
+    + _numbered([f"Dylan song {n}" for n in range(8, 17)], 8)
+    + ["Tom Petty & The Heartbreakers:", "Refugee (Tom Petty & Mike Campbell)"]
+    + _numbered([f"Dylan song {n}" for n in range(17, 23)], 17)
+    + ["—"]
+    + _numbered([f"Dylan song {n}" for n in range(23, 26)], 23)
+    + ["Concert #13 of the 1986 True Confessions Far East Tour.",
+       "Bob Dylan (vocal & guitar) with Tom Petty & The Heartbreakers:",
+       "Tom Petty (guitar), Mike Campbell (guitar)",
+       "8-10 Bob Dylan solo acoustic.",
+       "Stereo PA audience recording, 120 minutes."]
+)
+
+
+def _songs_of(lines: list[str]) -> list[SongRecord]:
+    return _parse_event(lines, 1, "p1", "")[1]
+
+
+def test_guest_blocks_are_skipped_1975_12_08():
+    songs = _songs_of(_RTR_1975)
+    assert [s.position for s in songs] == list(range(1, 23))
+    assert all(s.song_title.startswith("Dylan song") for s in songs)
+    assert [s.position for s in songs if s.is_encore] == list(range(8, 23))
+    by_pos = {s.position: s for s in songs}
+    assert by_pos[14].annotations == "Bob Dylan solo (vocal, guitar & harmonica)"
+    assert by_pos[5].released_on == "BOB DYLAN. The Rolling Thunder Revue"
+    assert by_pos[2].released_on == "Wolfgang's Vault March 2006"
+
+
+def test_interludes_are_skipped_1986_02_24():
+    songs = _songs_of(_TP_1986)
+    assert [s.position for s in songs] == list(range(1, 26))
+    assert [s.position for s in songs if s.is_encore] == [23, 24, 25]
+    assert {s.position: s.annotations for s in songs}[9] == "Bob Dylan solo acoustic"
+
+
+def test_guest_header_right_after_the_date():
+    lines = ["Venue", "City, Sweden", "1 May 1990", "Opening Act:", "Their Song",
+             "1.", "First", "2.", "Second"]
+    assert [s.song_title for s in _songs_of(lines)] == ["First", "Second"]
+
+
+def test_header_not_followed_by_the_next_song_stops_the_walk():
+    lines = ["Venue", "City, Sweden", "1 May 1990", "1.", "First", "2.", "Second",
+             "Other Bob Dylan shows in Stockholm, Sweden:", "1 March 1978 Hall",
+             "2 released on X.", "Stereo PA recording, 90 minutes."]
+    songs = _songs_of(lines)
+    assert [s.position for s in songs] == [1, 2]
+    assert songs[1].released_on == "X"  # the trailer scan still starts at the header
+    out_of_sequence = ["Venue", "City, Sweden", "1 May 1990", "1.", "First",
+                       "Guest:", "Their Song", "5.", "Fifth"]
+    assert [s.position for s in _songs_of(out_of_sequence)] == [1]
+
+
+def test_lineup_and_section_labels_are_not_guest_headers():
+    assert _is_guest_header("Tom Petty & The Heartbreakers:")
+    assert _is_guest_header("Rob Stoner :")
+    assert not _is_guest_header("Bob Dylan (vocal & guitar) with Tom Petty & The Heartbreakers:")
+    assert not _is_guest_header("BobTalk:")
+    assert not _is_guest_header("x" * 61 + ":")
+
+
+def test_bobtalk_and_references_lines_are_not_position_lists():
+    lines = ["Venue", "City, Sweden", "1 May 1990", "1.", "First", "2.", "Second",
+             "BobTalk", "2 years ago I wrote this.", "References",
+             "1 day in the life. Book 1990.", "Official releases", "1 released on X."]
+    songs = _songs_of(lines)
+    assert songs[0].annotations == "" and songs[1].annotations == ""
+    assert songs[0].released_on == "X"
+
+
+def test_release_lines_after_bobtalk_survive_the_section_guard():
+    # Modelled on DSN00100 / 1961-11-04: "Unauthorized releases" isn't a section label,
+    # and DSN12490 puts per-song recording ranges straight after BobTalk.
+    lines = ["Venue", "City, Sweden", "1 May 1990", "1.", "First", "2.", "Second",
+             "BobTalk", "Thank you.", "Unauthorized releases",
+             "1 released on Y.", "Notes", "2 is also called Omie Wise.",
+             "BobTalk:", "Thanks.", "1- 2 stereo PA recording."]
+    songs = _songs_of(lines)
+    assert songs[0].released_on == "Y"
+    assert songs[1].annotations == "is also called Omie Wise; stereo PA recording"

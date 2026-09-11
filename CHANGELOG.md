@@ -1,3 +1,18 @@
+[2026-09-10] — Olof song walk skips guest sets; trailer scan ignores BobTalk/References prose (dossier C02)
+Fixed: backend/olof_parser.py: (P1a) a guest/interlude header ("Bob Neuwirth:", "Tom Petty & The
+  Heartbreakers:") no longer ends the song walk — the block is skipped and the walk resumes at the
+  next numbered song; a header not followed by the next position stops at the header. A guest
+  header right after the date is no longer skipped as session_title. (P1g) single-number prose
+  lines inside BobTalk/References ("14 years ago ...") are not position lists; range/list, release
+  and recording lines there still are, and `Unauthorized releases` / `Releases` / `Official
+  release` / `Bootlegs` end the section. BUG-340 stays open until the C05 live reparse.
+  In-memory HEAD vs new over every DSN page: zero-song concerts 84 → 21, truncated 352 → 236,
+  +2,867 songs in 185 events, 0 songs lost, 0 release changes, 306 rotation-stat fragments dropped
+  from annotations. Real pages: 1975-12-08 = 22, 1986-02-24 = 25.
+Added: tests/test_olof_parser_fixes.py: guest-block, interlude, header-after-date, stop-at-header,
+  header-recognition and section-guard fixtures modelled on 1975-12-08, 1986-02-24, 1961-11-04.
+Changed: instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: C02 done with the corpus numbers.
+
 [2026-09-10] — Olof columns and the reparse diff gate for the dossier redesign (dossier C01)
 Added: backend/db.py, backend/olof_parser.py: olof_events gains rotation_new, rotation_pct,
   tour_new_count and venue_history_raw; olof_songs gains subtitle. Fresh DBs get them from the

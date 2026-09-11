@@ -44,6 +44,10 @@ Song/take parsing (spec §2.1-§2.2, §6 P3):
       lack the `(` that makes a line a lineup credit. A resolved position
       that isn't one of the event's actual song positions (stray digits in
       Notes/References prose, catalog numbers, etc.) is silently dropped.
+      Lines inside a BobTalk or References section are never scanned (P1g).
+    - Guest/interlude sets (a `Name:` header plus unnumbered titles between
+      numbered songs, e.g. 1975-12-08, 1986-02-24) are skipped and the walk
+      resumes at the next numbered song; guest songs are not stored (P1a).
     - `run_parse` deletes and reinserts an event's olof_songs rows whenever
       its olof_events row is upserted, keeping reparse idempotent.
 
@@ -185,6 +189,18 @@ _ENCORE_SEP_RE = re.compile(r"^[\-‑‒–—―]+$")
 _POSITION_LIST_LINE_RE = re.compile(
     r"^(\d+(?:\s*-\s*\d+)?(?:\s*,\s*\d+(?:\s*-\s*\d+)?)*)\s+(\S.*)$"
 )
+# P1a: a guest/interlude header ("Bob Neuwirth:", "Tom Petty & The Heartbreakers:")
+# is a short line ending in ':' — see _is_guest_header.
+_GUEST_HEADER_MAX_CHARS = 60
+# P1g: labels that close a BobTalk/References section in the trailer scan. Wider
+# than _classify_special_line on purpose ("Official release" singular, "Unauthorized
+# releases", "Bootlegs") — the section fields themselves are unchanged.
+_SECTION_END_RE = re.compile(
+    r"^(?:bootlegs|notes?|(?:(?:official|unauthori[sz]ed)\s+)?releases?)[.:]?$", re.IGNORECASE
+)
+# P1g: a single-position line inside that prose is still scanned when it reads as
+# release/recording trailer data ("17 released in mono ...", "1 stereo audience recording").
+_PROSE_KEEP_RE = re.compile(r"\b(released|available|recording)\b", re.IGNORECASE)
 _RELEASE_KEYWORD_RE = re.compile(r"\b(released on|available on)\b", re.IGNORECASE)
 _RELEASE_TITLE_RE = re.compile(r"^(?:released on|available on)\s+(.+)$", re.IGNORECASE)
 
@@ -588,6 +604,64 @@ def _expand_position_list(spec: str) -> list[int]:
     return positions
 
 
+def _is_guest_header(line: str) -> bool:
+    """True for a guest/interlude set header inside a setlist (plan P1a).
+
+    Olof lists a revue's or co-bill's guest sets between Dylan's numbered
+    songs, each under a 'Name:' header (1975-12-08 'Bob Neuwirth:', 1986-02-24
+    'Tom Petty & The Heartbreakers:'). Section labels ('BobTalk:') and lineup
+    credits ('Bob Dylan (vocal & guitar) with ...:') are not headers.
+
+    Args:
+        line: One clean paragraph line.
+
+    Returns:
+        Whether the line reads as a guest-set header.
+    """
+    text = line.strip()
+    return (len(text) <= _GUEST_HEADER_MAX_CHARS and text.endswith(":")
+            and _classify_special_line(text) is None
+            and not _LINEUP_RE.search(text)
+            and not _SETLIST_LINE_RE.match(text))
+
+
+def _skip_guest_block(lines: list[str], header_idx: int,
+                      max_position: int) -> tuple[int, bool] | None:
+    """Find where Dylan's numbered set resumes after a guest block (plan P1a).
+
+    Skips the header and the unnumbered guest titles after it, including
+    further headers and encore separators. The set resumes only at a song
+    marker for the next position (max_position + 1, or max_position again —
+    the numbering slip _parse_song_lines renumbers). A section label, a lineup
+    credit, a position-list trailer line, an out-of-sequence marker or the end
+    of the block means the 'header' opened trailer text, not a guest set.
+
+    Args:
+        lines: Clean paragraph text for the whole event block.
+        header_idx: Index of the guest header line.
+        max_position: Highest song position parsed so far (0 before any).
+
+    Returns:
+        (index of the resuming marker, whether an encore separator was
+        crossed), or None when the walk should stop at the header.
+    """
+    crossed_encore = False
+    for j in range(header_idx + 1, len(lines)):
+        line = lines[j]
+        if _ENCORE_SEP_RE.match(line):
+            crossed_encore = True
+            continue
+        if _BARE_POSITION_RE.match(line) or _SONG_LINE_RE.match(line):
+            position = int(line.split(".", 1)[0])
+            if position >= 1 and position in (max_position, max_position + 1):
+                return j, crossed_encore
+            return None
+        if (_classify_special_line(line) or _LINEUP_RE.search(line)
+                or _POSITION_LIST_LINE_RE.match(line)):
+            return None
+    return None
+
+
 def _parse_song_lines(lines: list[str], start: int,
                        event_id: int) -> tuple[list[SongRecord], int]:
     """Walk the numbered song/take region of an event block from *start*.
@@ -614,6 +688,11 @@ def _parse_song_lines(lines: list[str], start: int,
       '16.'). Since olof_songs' primary key is (event_id, position), a
       repeat is renumbered to one past the highest position seen so far —
       preserving the extra song instead of dropping it or crashing.
+    - Guest/interlude sets sit between numbered songs under a 'Name:'
+      header (1975-12-08, 1986-02-24). The walk skips such a block and
+      resumes at the next numbered song (_skip_guest_block); guest songs are
+      not stored. A header that isn't followed by the next song stops the
+      walk at the header.
 
     Args:
         lines: Clean paragraph text for the whole event block.
@@ -634,6 +713,13 @@ def _parse_song_lines(lines: list[str], start: int,
         if _ENCORE_SEP_RE.match(line):
             is_encore = True
             i += 1
+            continue
+        if _is_guest_header(line):
+            resume = _skip_guest_block(lines, i, max(seen_positions, default=0))
+            if resume is None:
+                break
+            i, crossed_encore = resume
+            is_encore = is_encore or crossed_encore
             continue
         bare = _BARE_POSITION_RE.match(line)
         combined = _SONG_LINE_RE.match(line)
@@ -702,9 +788,20 @@ def _resolve_annotations_and_releases(lines: list[str], consumed_end: int,
     by_position = {s.position: s for s in songs}
     annotations: dict[int, list[str]] = {}
     releases: dict[int, list[str]] = {}
+    in_prose = False  # P1g: inside a BobTalk/References section
     for line in lines[consumed_end:]:
+        kind = _classify_special_line(line)
+        if kind:
+            in_prose = kind in ("bobtalk", "references")
+        elif _SECTION_END_RE.match(line.strip()):
+            in_prose = False
         m = _POSITION_LIST_LINE_RE.match(line)
         if not m or _LINEUP_RE.search(line):
+            continue
+        # Prose that starts with a number ("14 years ago ...") is not a position list;
+        # an unlabelled range/list, release or recording line inside the section still is.
+        if in_prose and not (re.search(r"[-,]", m.group(1))
+                             or _PROSE_KEEP_RE.search(m.group(2))):
             continue
         positions = [p for p in _expand_position_list(m.group(1)) if p in by_position]
         if not positions:
@@ -748,7 +845,11 @@ def _parse_event_songs(lines: list[str], date_idx: int, session_title: str,
     """
     if date_idx < 0:
         return []
-    start = date_idx + (2 if session_title else 1)
+    start = date_idx + 1
+    # A guest header right after the date is taken as session_title; the walk
+    # must still see it so it can skip the guest block (P1a).
+    if session_title and not _is_guest_header(session_title):
+        start += 1
     songs, consumed_end = _parse_song_lines(lines, start, event_id)
     if songs:
         _resolve_annotations_and_releases(lines, consumed_end, songs)
