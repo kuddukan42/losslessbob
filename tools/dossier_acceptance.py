@@ -40,6 +40,12 @@ _log = logging.getLogger(__name__)
 _NUMBERED_LINE_RE = re.compile(r"^(\d+)\.(?:\s|$)", re.MULTILINE)
 _COMPOSER_PAREN_RE = re.compile(r"\([^()]*[/&][^()]*\)\s*$")
 _SONG_COUNT_CASES = (("1986-02-24", 25), ("1975-12-08", 22))
+# A "... Bob Dylan concerts in <city>:" header followed by a dated entry line.
+_VENUE_LIST_RE = re.compile(
+    r"(?:Bob Dylan\s+(?:shows|concerts)\s+in|\b(?:other|previous|next)\s+(?:shows|concerts))\b"
+    r"[^\n]*\n(?:(?:early|mid|late)\b|\d{1,2}\b)",
+    re.IGNORECASE,
+)
 
 # (key, label). Counts cover DSN/chronicle rows only — bobserve rows are out of Phase 1.
 PARSER_METRICS = (
@@ -113,7 +119,7 @@ def parser_metrics(conn: sqlite3.Connection) -> tuple[dict[str, int | None], lis
             m["rotation_stat_on_page"] += 1
         if ROTATION_FRAGMENT_RE.search(f"{ev['notes'] or ''}\n{ev['releases_raw'] or ''}"):
             m["rotation_stat_in_event_text"] += 1
-        if "Other Bob Dylan shows in" in (ev["notes"] or ""):
+        if _VENUE_LIST_RE.search(f"{ev['notes'] or ''}\n{ev['releases_raw'] or ''}"):
             m["venue_history_in_notes"] += 1
 
     subtitle_sql = ", s.subtitle" if "subtitle" in song_cols else ""
@@ -141,7 +147,7 @@ def parser_metrics(conn: sqlite3.Connection) -> tuple[dict[str, int | None], lis
     else:
         out["rotation_populated"] = conn.execute(
             "SELECT COUNT(*) FROM olof_events WHERE source != 'bobserve'"
-            " AND rotation_new IS NOT NULL").fetchone()[0]
+            " AND COALESCE(rotation_new, rotation_pct, tour_new_count) IS NOT NULL").fetchone()[0]
         out["venue_history_raw_populated"] = conn.execute(
             "SELECT COUNT(*) FROM olof_events WHERE source != 'bobserve'"
             " AND venue_history_raw != ''").fetchone()[0]

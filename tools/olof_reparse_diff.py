@@ -37,6 +37,12 @@ _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
+from backend.olof_parser import (  # noqa: E402
+    HISTORY_DATE_RE,
+    ROTATION_LESS_RE,
+    ROTATION_PREV_RE,
+    ROTATION_TOUR_RE,
+)
 from backend.paths import DB_PATH  # noqa: E402
 
 _log = logging.getLogger(__name__)
@@ -59,12 +65,15 @@ MONTH_YEAR_RE = re.compile(rf"^(?:\d{{1,2}}\s+)?(?:{_MONTHS})\s+\d{{4}}\.?$", re
 ROTATION_FRAGMENT_RE = re.compile(
     r"compared to previous concert|new songs? for this tour", re.IGNORECASE
 )
-# The whole rotation-stat line, as it sits in notes / releases_raw.
-_ROTATION_STAT_RE = re.compile(
-    r"(?:\b(?:\d+|no|one)\s+)?new songs?\s*\(\s*\d+\s*%\s*\)\s*compared to previous concert\.?"
-    r"(?:\s*(?:\d+|no|one)\s+new songs?\s+for this tour\.?)?",
-    re.IGNORECASE,
-)
+
+
+def _strip_stat(text: str) -> str:
+    """Cut every rotation-stat phrase the parser recognises (P1d) out of *text*."""
+    for rx in (ROTATION_PREV_RE, ROTATION_TOUR_RE, ROTATION_LESS_RE):
+        text = rx.sub(" ", text)
+    return text
+
+
 # Wording P1f strips from a release token: 'and part of 22 released on X' → 'X'.
 _RELEASE_PREFIX_RE = re.compile(
     r"^(?:and\s+)?(?:part\s+of\s+\d+\s+)?(?:(?:released|available)\s+(?:on|in|as)\s+)?",
@@ -74,9 +83,11 @@ _WORD_RE = re.compile(r"[^\W_]+")
 
 # Event columns a Phase 1 fix may legitimately change; every other column must not move.
 _EVENT_MOVABLE = frozenset({
-    "notes", "releases_raw", "rotation_new", "rotation_pct", "tour_new_count",
-    "venue_history_raw",
+    "notes", "releases_raw", "bobtalk", "references_raw", "rotation_new", "rotation_pct",
+    "tour_new_count", "venue_history_raw",
 })
+# Section text the P1c list and the P1d stat can sit in (whichever label precedes them).
+_SECTION_COLS = ("notes", "releases_raw", "bobtalk", "references_raw")
 _ROTATION_COLS = ("rotation_new", "rotation_pct", "tour_new_count")
 # Song columns with their own rule below; every other column must not move.
 _SONG_HANDLED = frozenset({
@@ -108,6 +119,10 @@ def _ws(text) -> str:
     return " ".join(str(text or "").split())
 
 
+def _wordy(text: str) -> str:
+    return " ".join(t for t in text.split() if re.search(r"\w", t))
+
+
 def _tokens(text) -> list[str]:
     return [t.strip() for t in str(text or "").split(";") if t.strip()]
 
@@ -137,29 +152,32 @@ def _explain_moved_text(d: EventDiff, before: dict, after: dict) -> None:
     """notes / releases_raw / venue_history_raw: only P1c and P1d may move text."""
     vh_before = _ws(before.get("venue_history_raw"))
     vh_after = _ws(after.get("venue_history_raw"))
-    moved_blob = False
+    blobs: list[str] = []
     if vh_after != vh_before:
+        chunks = [_ws(c) for c in str(after.get("venue_history_raw") or "").split("\n\n")]
         if vh_before:
             d.problems.append("venue_history_raw changed from a non-empty value")
-        elif vh_after in _ws(before.get("notes")):
-            moved_blob = True
+        elif all(c in _ws(before.get("raw_text")) for c in chunks):
+            blobs = chunks
             d.buckets.add("P1c")
-            d.notes.append("venue-history blob moved out of notes")
+            d.notes.append(f"{len(chunks)} venue-history list(s) lifted")
         else:
-            d.problems.append("venue_history_raw set to text the old notes do not contain")
-    for col in ("notes", "releases_raw"):
+            d.problems.append("venue_history_raw set to text the page does not contain")
+    for col in _SECTION_COLS:
         old, new = _ws(before.get(col)), _ws(after.get(col))
         if old == new:
             continue
         residual, used = old, []
-        if col == "notes" and moved_blob:
-            residual = _ws(residual.replace(vh_after, " "))
-            used.append("P1c")
-        stripped = _ws(_ROTATION_STAT_RE.sub(" ", residual))
+        for blob in blobs:
+            if blob in residual:
+                residual = _ws(residual.replace(blob, " "))
+                used.append("P1c")
+        stripped = _ws(_strip_stat(residual))
         if stripped != residual:
             residual = stripped
             used.append("P1d")
-        if used and residual == new:
+        if used and _wordy(residual) == _wordy(new):  # a stray '.' paragraph may stay behind
+            used = list(dict.fromkeys(used))
             d.buckets.update(used)
             d.notes.append(f"{col}: {'+'.join(used)} text removed")
         else:
@@ -180,7 +198,7 @@ def _explain_rotation(d: EventDiff, before: dict, after: dict) -> None:
 
 
 def _explain_song(d: EventDiff, pos: int, old: dict, new: dict, context: str,
-                  raw: str) -> None:
+                  raw: str, venue_history: str = "") -> None:
     """One song position present before and after."""
     for col in sorted((set(old) | set(new)) - _SONG_HANDLED):
         if _blank(old.get(col)) != _blank(new.get(col)):
@@ -197,10 +215,12 @@ def _explain_song(d: EventDiff, pos: int, old: dict, new: dict, context: str,
     for tok in (new_ann - old_ann).elements():
         d.problems.append(f"song {pos}: annotation added {tok!r}")
     for tok in (old_ann - new_ann).elements():
-        if MONTH_YEAR_RE.match(tok):
+        if MONTH_YEAR_RE.match(tok) or HISTORY_DATE_RE.match(f"{pos} {tok}"):
             d.buckets.add("P1b")
         elif ROTATION_FRAGMENT_RE.search(tok):
             d.buckets.add("P1d")
+        elif _ws(tok).casefold() in venue_history:
+            d.buckets.add("P1c")
         elif _ws(tok).casefold() in context:
             d.buckets.add("P1g")
         else:
@@ -259,8 +279,9 @@ def classify_event(event_id: int, before: dict | None, after: dict | None,
         d.notes.append(f"songs {len(b)} -> {len(a)}")
     context = _ws(f"{_blank(before.get('bobtalk'))} {_blank(before.get('references_raw'))}").casefold()
     raw = _ws(before.get("raw_text")).casefold()
+    venue_history = _ws(after.get("venue_history_raw")).casefold()
     for pos in sorted(b.keys() & a.keys()):
-        _explain_song(d, pos, b[pos], a[pos], context, raw)
+        _explain_song(d, pos, b[pos], a[pos], context, raw, venue_history)
     return d
 
 

@@ -314,3 +314,109 @@ def test_release_lines_after_bobtalk_survive_the_section_guard():
     songs = _songs_of(lines)
     assert songs[0].released_on == "Y"
     assert songs[1].annotations == "is also called Omie Wise; stereo PA recording"
+
+
+# --- C03: P1b date lines, P1c venue-history lists, P1d rotation stat ----------------------
+
+_HEAD = ["Zepp Tokyo", "Tokyo, Japan", "29 March 2010"]
+
+
+def _event_of(trailer: list[str], n_songs: int = 28) -> tuple[EventRecord, list[SongRecord]]:
+    lines = _HEAD + _numbered([f"Song {n}" for n in range(1, n_songs + 1)]) + trailer
+    return _parse_event(lines, 1, "p1", "")
+
+
+# Modelled on DSN32000 / 2010-03-29: the Tokyo list and the stat inside Notes.
+_TOKYO = ["Other Bob Dylan shows in Tokyo, Japan:",
+          "20 February 1978", "Nippon Budokan Hall",
+          "1 March 1978", "Nippon Budokan Hall",
+          "9 February 1997", 'Hall "A", Tokyo International Forum',
+          "21 March 2010", "Zepp Tokyo"]
+_STAT_2010 = "13 new songs (72%) compared to previous concert. 2 new songs for this tour."
+
+
+def test_tokyo_list_and_stat_leave_notes_2010_03_29():
+    rec, songs = _event_of(["Notes.", *_TOKYO, _STAT_2010,
+                            "Stereo audience recording, 125 minutes."])
+    assert (rec.rotation_new, rec.rotation_pct, rec.tour_new_count) == (13, 72, 2)
+    assert rec.venue_history_raw == "\n".join(_TOKYO)
+    assert rec.notes == ""
+    assert all(s.annotations == "" for s in songs)  # no "March 1978" on songs 1, 9, 13, 20, 21
+    assert rec.recording_mins == 125
+
+
+def test_venue_list_entry_shapes():
+    blob = ["Other Bob Dylan concerts in Birmingham, England:",
+            "12-13 May 1995", "The Joint",
+            "Late September 1961", "Gerde's Folk City",
+            "8 maj 1984", "St Andrews",
+            "3 May 1976 (2 shows)", "The Warehouse",
+            "23 May 1992 Civic Centre",
+            "4 April 2016 - Afternoon", "Orchard Hall"]
+    rec, songs = _event_of(["Notes.", "First performance of Song 2.", *blob,
+                            "Same setlist as previous concert."])
+    assert rec.venue_history_raw == "\n".join(blob)
+    assert rec.notes == "First performance of Song 2.\nSame setlist as previous concert."
+    assert all(s.annotations == "" for s in songs)
+
+
+def test_stat_and_list_header_on_one_line():
+    # DSN37540: the stat and the next list's header share a paragraph.
+    rec, _ = _event_of(["Notes.", "No new songs compared to previous concert. No new songs for"
+                        " this tour. Previous Bob Dylan concerts in San Diego, California:",
+                        "12 June 1990", "Open Air Theatre"])
+    assert (rec.rotation_new, rec.rotation_pct, rec.tour_new_count) == (0, 0, 0)
+    assert rec.venue_history_raw == (
+        "Previous Bob Dylan concerts in San Diego, California:\n12 June 1990\nOpen Air Theatre")
+    assert rec.notes == ""
+
+
+def test_pointer_header_without_a_list_stays_in_notes():
+    rec, _ = _event_of(["Notes.", "Bob Dylan concerts in London, England .",
+                        "First Bob Dylan concert in Taormina, Italy."])
+    assert rec.venue_history_raw == ""
+    assert rec.notes == ("Bob Dylan concerts in London, England .\n"
+                         "First Bob Dylan concert in Taormina, Italy.")
+
+
+@pytest.mark.parametrize("stat, want, rest", [
+    ("No new songs compared to previous concert. No new songs for this tour. Same setlist as"
+     " 21 June.", (0, 0, 0), "Same setlist as 21 June."),
+    ("1 new song (3%) compared to previous conc ert. 1 new song for this tour.", (1, 3, 1), ""),
+    ("1 new song (3%) compared to previous concert. Probably 1 new song for this tour.",
+     (1, 3, None), ""),
+    ("4 new songs (13%) compared to previous concert. 2 possible new songs for this tour.",
+     (4, 13, None), ""),
+    ("Only 2 new songs (10%) compared to previous concert!! No new songs (0%) for this tour.",
+     (2, 10, 0), ""),
+    ("new songs (50%) compared to previous concert. 1 new song for this tour.", (None, 50, 1), ""),
+    ("No new songs compared to previous concert! Exactly the same set list as last concert!",
+     (0, 0, None), "Exactly the same set list as last concert!"),
+])
+def test_rotation_stat_variants(stat, want, rest):
+    rec, songs = _event_of(["Notes.", stat])
+    assert (rec.rotation_new, rec.rotation_pct, rec.tour_new_count) == want
+    assert rec.notes == rest
+    assert all(s.annotations == "" for s in songs)
+
+
+def test_stat_halves_on_separate_lines_outside_any_section():
+    # DSN4100: no Notes label, so the lines used to become annotations on songs 3 and 10.
+    rec, songs = _event_of(["3 new songs (10%) compared to previous concert.",
+                            "3 new songs for this tour.", "5 harmonica."])
+    assert (rec.rotation_new, rec.rotation_pct, rec.tour_new_count) == (3, 10, 3)
+    assert {s.position: s.annotations for s in songs if s.annotations} == {5: "harmonica"}
+
+
+def test_stat_in_a_bobtalk_section_is_lifted_too():
+    rec, _ = _event_of(["BobTalk", "Thank you.", _STAT_2010])
+    assert rec.rotation_new == 13 and rec.bobtalk == "Thank you."
+
+
+def test_date_lines_are_not_position_lists():
+    rec, songs = _event_of(["Notes.", "1 March 1978", "12-13 May 1995",
+                            "1-7 circulated 1986.", "4 Bob Dylan harmonica."])
+    by_pos = {s.position: s.annotations for s in songs if s.annotations}
+    assert by_pos == {1: "circulated 1986", 2: "circulated 1986", 3: "circulated 1986",
+                      4: "circulated 1986; Bob Dylan harmonica", 5: "circulated 1986",
+                      6: "circulated 1986", 7: "circulated 1986"}
