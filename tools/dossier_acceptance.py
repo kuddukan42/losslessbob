@@ -11,10 +11,15 @@ for the mode asked. Modes arrive chunk by chunk; today there are two:
                     1986-02-24 and 1975-12-08 (corroborated live, disputed
                     against ``--before``), then the corpus-wide verdict shares,
                     plus the Phase 3 rows (b)/(c) corpus-wide rotation and
-                    LB-vs-TUIT tracklist agreement rates (C15).
+                    LB-vs-TUIT tracklist agreement rates (C15), plus the Phase 3
+                    rows (d)/(e)/(f) corpus-wide file-format, taper and venue
+                    corroboration rates (C16).
     --premieres     Phase 3 row (b) / D-02 gate item 2: backend.qc.corroborate.tour_premieres
                     on 2010-03-29 — which positions are premieres per our corpus vs
                     setlist.fm, and the count vs olof_events.tour_new_count (C15).
+    --d01           D-01 accept cases: backend.dossier_fields.completeness on 2010-03-29
+                    (every source basis tracklist) and 1965-06-01 (LB-10364/12222 1/12,
+                    LB-08855's missing positions, LB-06654 fails G2) (C17).
 
 Usage::
 
@@ -23,6 +28,7 @@ Usage::
     .venv/bin/python3 tools/dossier_acceptance.py --parser --residuals
     .venv/bin/python3 tools/dossier_acceptance.py --corroborate --before .debug/olof_before.db
     .venv/bin/python3 tools/dossier_acceptance.py --premieres
+    .venv/bin/python3 tools/dossier_acceptance.py --d01
 
 ``--before`` reads the same counts from a tools/olof_reparse_diff.py snapshot and
 prints them beside the live ones (``--parser``), or supplies the pre-Phase-1 Olof
@@ -299,7 +305,10 @@ def run_corroborate(db_path: Path, before_path: Path | None) -> int:
 
     Also folds in the Phase 3 rows (b)/(c) corpus-wide agreement rates
     (:func:`corroborate.rotation_corpus_agreement`,
-    :func:`corroborate.tracklist_corpus_agreement`) — C15.
+    :func:`corroborate.tracklist_corpus_agreement`) — C15 — and the Phase 3
+    rows (d)/(e)/(f) rates (:func:`corroborate.file_format_corpus_agreement`,
+    :func:`corroborate.taper_corpus_agreement`,
+    :func:`corroborate.venue_corpus_agreement`) — C16.
     """
     live = _open_ro(db_path)
     before = _open_ro(before_path) if before_path else None
@@ -329,6 +338,24 @@ def run_corroborate(db_path: Path, before_path: Path | None) -> int:
         _log.info(
             "corpus-wide LB-vs-TUIT tracklist agreement: %d/%d (%.1f%%)",
             trk["agree"], trk["total"], trk["rate"] * 100,
+        )
+
+        fmt = corroborate.file_format_corpus_agreement(live)
+        _log.info(
+            "corpus-wide file-vs-lineage resolution agreement: %d/%d (%.1f%%)",
+            fmt["agree"], fmt["total"], fmt["rate"] * 100,
+        )
+
+        tpr = corroborate.taper_corpus_agreement(live)
+        _log.info(
+            "corpus-wide taper corroboration: %d/%d corroborated (%.1f%%), %d disputed",
+            tpr["corroborated"], tpr["total"], tpr["rate"] * 100, tpr["disputed"],
+        )
+
+        ven = corroborate.venue_corpus_agreement(live)
+        _log.info(
+            "corpus-wide venue corroboration: %d/%d corroborated (%.1f%%), %d disputed",
+            ven["corroborated"], ven["total"], ven["rate"] * 100, ven["disputed"],
         )
     finally:
         live.close()
@@ -367,6 +394,49 @@ def run_premieres(db_path: Path) -> int:
     finally:
         live.close()
     return 0 if ok else 1
+
+
+def run_d01(db_path: Path) -> int:
+    """D-01 accept cases (C17): per-source completeness on 2010-03-29 and 1965-06-01."""
+    from backend.dossier_fields import completeness
+    from backend.geocoder import entry_date_to_iso
+
+    live = _open_ro(db_path)
+    try:
+        lbs_by_date: dict[str, list[int]] = {"2010-03-29": [], "1965-06-01": []}
+        for r in live.execute("SELECT lb_number, date_str FROM entries"):
+            iso = entry_date_to_iso(r["date_str"] or "")
+            if iso in lbs_by_date:
+                lbs_by_date[iso].append(r["lb_number"])
+        results = {}
+        for date_iso, lbs in lbs_by_date.items():
+            event_id = corroborate.primary_event_id(live, date_iso)
+            results[date_iso] = completeness(live, event_id, lbs) if event_id else {}
+            for lb, c in sorted(results[date_iso].items()):
+                _log.info(
+                    "%s LB-%05d %-9s %s/%s %-12s fit=%s missing=%s", date_iso, lb,
+                    c["basis"], c["songs_present"], c["songs_total"], c["confidence"],
+                    c["fits_show"], [m["position"] for m in c["missing"]],
+                )
+    finally:
+        live.close()
+
+    tokyo, bbc = results["2010-03-29"], results["1965-06-01"]
+    excerpts = [bbc.get(lb) for lb in (10364, 12222)]
+    checks = [
+        (len(tokyo) == 9 and all(c["basis"] == "tracklist" for c in tokyo.values()),
+         "2010-03-29: all 9 sources basis tracklist"),
+        (all(c and (c["songs_present"], c["songs_total"]) == (1, 12) for c in excerpts),
+         "1965-06-01: LB-10364 and LB-12222 read 1/12"),
+        (bool(bbc.get(8855) and bbc[8855]["missing"]),
+         "1965-06-01: LB-08855 lists its missing positions"),
+        (bool(bbc.get(6654)) and not bbc[6654]["fits_show"],
+         "1965-06-01: LB-06654 fails G2 (tracklist doesn't match this show)"),
+    ]
+    _log.info("")
+    for ok, label in checks:
+        _log.info("%s  %s", "PASS" if ok else "FAIL", label)
+    return 0 if all(ok for ok, _ in checks) else 1
 
 
 def run_parser(db_path: Path, before: Path | None, residuals: bool) -> int:
@@ -409,6 +479,8 @@ def main(argv: list[str] | None = None) -> int:
                            " rows (b)/(c) corpus-wide rotation/tracklist agreement rates).")
     mode.add_argument("--premieres", action="store_true",
                       help="Phase 3 row (b) / D-02 accept case: 2010-03-29 tour premieres.")
+    mode.add_argument("--d01", action="store_true",
+                      help="D-01 accept cases: per-source completeness + G2 (C17).")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
                         help="--parser: olof_reparse_diff snapshot to print beside the live"
@@ -421,6 +493,8 @@ def main(argv: list[str] | None = None) -> int:
         return run_corroborate(args.db, args.before)
     if args.premieres:
         return run_premieres(args.db)
+    if args.d01:
+        return run_d01(args.db)
     return run_parser(args.db, args.before, args.residuals)
 
 

@@ -397,23 +397,9 @@ def rule_e1(conn: sqlite3.Connection) -> Iterable[Finding]:
             )
 
 
-# R-E2: an entry fits its dated show when at least this share of its song tracks
-# match the date's Olof setlist (plan G2 / audit S11)...
-E2_MIN_SHARE = 0.20
-# ...and entries with fewer song tracks than this are skipped, so a one- or
-# two-song excerpt of something Olof doesn't list can't flood the queue.
-E2_MIN_SONG_TRACKS = 3
-# ...and an entry that holds at least this share of the date's distinct Olof songs
-# is skipped: Olof's page lists only a subset (1969-02-17 Nashville outtakes,
-# 1976-05-16's 7 Hard Rain songs vs a 49-track full show), so the entry is a
-# superset of the listing, not a mis-dated source.
-E2_MAX_OLOF_COVER = 0.5
+# R-E2's fit test is the dossier's G2 test (backend.dossier_fields.fits_show); its
+# thresholds live there as the FIT_* constants.
 _E2_MAX_UNMATCHED = 8
-
-
-# A split title holding two or more further "N. Title" markers is a tracklist the
-# splitter couldn't separate (space-delimited numbering), not a real title.
-_E2_GLUED_RE = re.compile(r"\s\d{1,3}[.)]?\s+[A-Z]")
 
 
 def _olof_candidates_by_date(conn: sqlite3.Connection) -> dict[str, list[str]]:
@@ -461,7 +447,12 @@ def entry_setlist_fit(conn: sqlite3.Connection) -> Iterable[dict]:
         date's distinct Olof songs and how many of them the entry hit, and
         ``glued`` says a title still holds several track markers (unsplit text).
     """
-    from backend.dossier_fields import build_setlist_index, match_track, parse_entry_tracklist
+    from backend.dossier_fields import (
+        build_setlist_index,
+        is_glued_tracklist,
+        match_track,
+        parse_entry_tracklist,
+    )
     from backend.geocoder import entry_date_to_iso
     from backend.song_index import _load_song_canonical_map
 
@@ -509,7 +500,7 @@ def entry_setlist_fit(conn: sqlite3.Connection) -> Iterable[dict]:
             "unmatched": unmatched,
             "olof_songs": len(olof_titles),
             "olof_matched": len(hit & olof_titles),
-            "glued": any(len(_E2_GLUED_RE.findall(s)) >= 2 for s in songs),
+            "glued": is_glued_tracklist(songs),
         }
 
 
@@ -520,11 +511,12 @@ def rule_e2(conn: sqlite3.Connection) -> Iterable[Finding]:
     ``missing`` tracks excluded) that match the union of Olof's songs on the
     entry's date — so a short excerpt that is all on the setlist passes, while
     a mis-dated compilation (LB-06654, 25 studio "Mono Mixes" tracks dated
-    1965-06-01) fires. Fires below :data:`E2_MIN_SHARE`. Skipped: entries with
-    fewer than :data:`E2_MIN_SONG_TRACKS` song tracks, dates with no Olof
-    songs, entries covering at least :data:`E2_MAX_OLOF_COVER` of the date's
-    Olof songs (Olof lists a subset), and tracklists the splitter left glued
-    (space-delimited numbering, so one "title" holds several songs).
+    1965-06-01) fires. The test is the dossier's G2
+    (:func:`backend.dossier_fields.fits_show`), run against the union of the
+    date's Olof songs: fires below ``FIT_MIN_SHARE``; skips entries with fewer
+    than ``FIT_MIN_SONG_TRACKS`` song tracks, entries covering at least
+    ``FIT_MAX_SETLIST_COVER`` of the date's Olof songs (Olof lists a subset),
+    tracklists the splitter left glued, and dates with no Olof songs.
 
     Args:
         conn: Open SQLite connection.
@@ -532,10 +524,11 @@ def rule_e2(conn: sqlite3.Connection) -> Iterable[Finding]:
     Yields:
         One error Finding per entry whose tracklist mostly misses its dated setlist.
     """
+    from backend.dossier_fields import fits_show
+
     for fit in entry_setlist_fit(conn):
-        if fit["song_tracks"] < E2_MIN_SONG_TRACKS or fit["share"] >= E2_MIN_SHARE:
-            continue
-        if fit["glued"] or fit["olof_matched"] >= E2_MAX_OLOF_COVER * fit["olof_songs"]:
+        if fits_show(fit["song_tracks"], fit["matched"], fit["olof_songs"],
+                     fit["olof_matched"], fit["glued"]):
             continue
         lb = fit["lb_number"]
         yield Finding(
@@ -772,9 +765,12 @@ def rule_t4(conn: sqlite3.Connection) -> Iterable[Finding]:
 
     Both sides go through the live alias tables (``user_taper_aliases``
     included), and a TUIT field naming several tapers or a handle plus a gloss
-    agrees when any part matches (``taper_curation.tuit_taper_parts``). LBs with
-    no TUIT taper, only a placeholder ("unknown"), or a conflict attribution are
-    skipped. Feeds Phase 3e as ``disputed`` (audit D8).
+    agrees when any part matches (``taper_curation.tuit_taper_parts``, via the
+    shared :func:`backend.qc.corroborate.taper_agreement` — C16 factors this
+    rule's verdict logic out so ``backend.qc.corroborate.taper_check`` /
+    ``taper_corpus_agreement`` (Phase 3e) can never drift from it). LBs with
+    no TUIT taper, only a placeholder ("unknown"), or a conflict attribution
+    are skipped. Feeds Phase 3e as ``disputed`` (audit D8).
 
     Args:
         conn: Open SQLite connection.
@@ -786,7 +782,7 @@ def rule_t4(conn: sqlite3.Connection) -> Iterable[Finding]:
             and _table_exists_local(conn, "taper_attributions")):
         return
     from backend import db as _db
-    from backend import taper_curation
+    from backend.qc.corroborate import taper_agreement
 
     db_file = conn.execute("PRAGMA database_list").fetchone()[2]
     _db.reload_taper_aliases(db_file or None)
@@ -800,8 +796,8 @@ def rule_t4(conn: sqlite3.Connection) -> Iterable[Finding]:
     ):
         by_lb.setdefault(lb_number, (ours, []))[1].append(raw)
     for lb_number, (ours, raws) in by_lb.items():
-        theirs = [c for raw in raws for c in taper_curation.tuit_taper_parts(raw)]
-        if not theirs or ours in theirs:
+        verdict, theirs = taper_agreement(ours, raws)
+        if verdict != "disputed":
             continue
         yield Finding(
             entity_kind="lb",
