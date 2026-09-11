@@ -1,3 +1,11 @@
+BUG-347: Olof source splices a credits parenthetical mid-title (2 songs), breaking song identity
+Status: Open
+File(s): backend/olof_parser.py,backend/song_index.py:179
+Reported: 2026-09-11
+Description: Olof's own page text has 'Like A Rolling St (Bob Dylan-Robert Hunter/Bob Dylan) one' (event 31940 pos 15, 2010-03-21 Zepp Tokyo) and 'Forgetful Hear (Bob Dylan-Robert Hunter/Bob Dylan) t' (event 32750 pos 10): the next song's credit landed inside the title. song_norm is normalize_song_title(song_title), so these read as distinct songs: rotation_check for 2010-03-21 and 03-23 computes 10 new vs Olof's 9, which blocks the D-04 'most changed of the 7-night Zepp Tokyo run' superlative for 2010-03-29 (C20 accept case). A song_canonical alias does not help (aliases change song_canonical only, not song_norm), and nothing reads the corrections table yet. Fix options: parser repair of a mid-word credit splice (re-join the word, drop the credit) + reparse through tools/olof_reparse_diff.py, or have song_index / olof_songs consumers apply olof_song song_title corrections.
+Root cause: Unknown
+Fix: —
+
 BUG-343: Dossier template output is 37% blank lines
 Status: Open
 File(s): backend/templates/dossier.html:1

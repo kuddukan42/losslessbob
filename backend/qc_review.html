@@ -808,6 +808,7 @@
     document.getElementById('q-corr-submit').addEventListener('click', queueSubmitCorrection);
 
     wireTaperActions(f);
+    wireReleaseActions(f);
   }
 
   function renderEvidencePanel(f) {
@@ -876,6 +877,24 @@
           <div class="body"><pre class="evidence">${esc(JSON.stringify(ctx, null, 2))}</pre></div>
         </div>`;
     }
+    if (f.rule_id === 'R-R1') {
+      const ev = f.evidence || {};
+      return `
+        <div class="panel">
+          <h3>Release string</h3>
+          <div class="body">
+            <pre class="evidence">${esc(ev.raw || '')}</pre>
+            <table class="sources">
+              <tr><td>Occurrences</td><td>${esc(ev.count ?? '')}</td></tr>
+              <tr><td>Example dates</td><td>${(ev.dates || []).map(esc).join(', ') || '(none)'}</td></tr>
+            </table>
+            <div style="margin-top:8px; display:flex; gap:8px;">
+              <button id="q-release-official" class="confirm">Official</button>
+              <button id="q-release-not-official">Not official</button>
+            </div>
+          </div>
+        </div>`;
+    }
     // R-S1 and anything else: raw context/evidence dump.
     return `
       <div class="panel"><h3>Evidence</h3>
@@ -899,6 +918,29 @@
         flash('Reject failed: ' + e.message, 'error');
       }
     });
+  }
+
+  function wireReleaseActions(f) {
+    const officialBtn = document.getElementById('q-release-official');
+    const notOfficialBtn = document.getElementById('q-release-not-official');
+    if (!officialBtn || !notOfficialBtn) return;
+    const classify = async (official) => {
+      const note = document.getElementById('q-note').value || null;
+      try {
+        const r = await fetch(`/api/qc/releases/${encodeURIComponent(f.entity_key)}`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ official, note }),
+        });
+        const body = await r.json();
+        if (!r.ok) return flashError(r.status, body);
+        flash(`${f.entity_key} classified ${official ? 'official' : 'not official'}.`, 'ok');
+        queueNext();
+      } catch (e) {
+        flash('Classify failed: ' + e.message, 'error');
+      }
+    };
+    officialBtn.addEventListener('click', () => classify(true));
+    notOfficialBtn.addEventListener('click', () => classify(false));
   }
 
   async function queueDecide(status) {

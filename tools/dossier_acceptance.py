@@ -23,6 +23,9 @@ for the mode asked. Modes arrive chunk by chunk; today there are two:
     --d02           D-02: backend.dossier_fields.song_history — 2010-03-29 badges songs 4
                     and 14 only, then the premiere-gate pass rate over 200 sampled concerts
                     (seeded) with the failing gate items tallied (C18).
+    --d03           D-03 accept cases: backend.dossier_fields.official_release —
+                    1965-06-01 full, 1986-02-24 partial, 1975-12-08 partial (C19; the
+                    plan's "none" predates allowlisting the 2019 Rolling Thunder box).
 
 Usage::
 
@@ -33,6 +36,7 @@ Usage::
     .venv/bin/python3 tools/dossier_acceptance.py --premieres
     .venv/bin/python3 tools/dossier_acceptance.py --d01
     .venv/bin/python3 tools/dossier_acceptance.py --d02
+    .venv/bin/python3 tools/dossier_acceptance.py --d03
 
 ``--before`` reads the same counts from a tools/olof_reparse_diff.py snapshot and
 prints them beside the live ones (``--parser``), or supplies the pre-Phase-1 Olof
@@ -496,6 +500,47 @@ def run_d02(db_path: Path) -> int:
     return 0 if ok else 1
 
 
+_D03_CASES = (
+    ("1965-06-01", "full"),
+    ("1986-02-24", "partial"),
+    # Song 5 is on CD 14 of The Rolling Thunder Revue: The 1975 Live Recordings (2019).
+    ("1975-12-08", "partial"),
+)
+
+
+def run_d03(db_path: Path) -> int:
+    """D-03 accept cases (C19): backend.dossier_fields.official_release on three dates."""
+    from backend.dossier_fields import official_release
+
+    live = _open_ro(db_path)
+    checks = []
+    try:
+        for date_iso, expected in _D03_CASES:
+            event_id = corroborate.primary_event_id(live, date_iso)
+            result = official_release(live, event_id) if event_id else None
+            status = result["status"] if result else None
+            ok = status == expected
+            checks.append((ok, f"{date_iso} -> {status} (expected {expected})"))
+            if result:
+                _log.info(
+                    "%s  %-12s status=%-8s whole_show=%s %s", "PASS" if ok else "FAIL",
+                    date_iso, status, result["whole_show"], result["whole_show_title"] or "",
+                )
+                for s in result["songs"]:
+                    if s["matches"]:
+                        _log.info(
+                            "         pos %2d %-30s official=%s partial=%s",
+                            s["position"], s["song_title"][:30], s["official"], s["partial"],
+                        )
+    finally:
+        live.close()
+
+    _log.info("")
+    for ok, label in checks:
+        _log.info("%s  %s", "PASS" if ok else "FAIL", label)
+    return 0 if all(ok for ok, _ in checks) else 1
+
+
 def run_parser(db_path: Path, before: Path | None, residuals: bool) -> int:
     """Print the Phase 1 counts (and a before column), then the checks; return exit code."""
     live = _open_ro(db_path)
@@ -540,6 +585,8 @@ def main(argv: list[str] | None = None) -> int:
                       help="D-01 accept cases: per-source completeness + G2 (C17).")
     mode.add_argument("--d02", action="store_true",
                       help="D-02 accept case + premiere-gate rate over 200 concerts (C18).")
+    mode.add_argument("--d03", action="store_true",
+                      help="D-03 accept cases: official_release status on three dates (C19).")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
                         help="--parser: olof_reparse_diff snapshot to print beside the live"
@@ -556,6 +603,8 @@ def main(argv: list[str] | None = None) -> int:
         return run_d01(args.db)
     if args.d02:
         return run_d02(args.db)
+    if args.d03:
+        return run_d03(args.db)
     return run_parser(args.db, args.before, args.residuals)
 
 

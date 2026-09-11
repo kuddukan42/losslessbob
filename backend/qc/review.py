@@ -236,7 +236,7 @@ def _build_context(
             return _entry_context(conn, int(entity_key))
         if rule_id == "R-F1":
             return _family_context(conn, entity_key)
-        if rule_id == "R-S1":
+        if rule_id in ("R-S1", "R-R1"):
             return dict(evidence)
     except (ValueError, sqlite3.Error):
         logger.exception("qc context build failed for %s/%s/%s", rule_id, entity_kind, entity_key)

@@ -1,0 +1,594 @@
+[
+  {
+    "title": "The Bootleg Series (Rare & Unreleased) 1961-1991, Vols. 1-3",
+    "year": 1991,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series\\s*\\(rare\\s*&\\s*unreleased\\)\\s*1961"]
+  },
+  {
+    "title": "The Bootleg Series Vol. 5 – Live 1975: The Rolling Thunder Revue",
+    "year": 2002,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series,?\\s*vol\\.?\\s*5\\b"]
+  },
+  {
+    "title": "The Bootleg Series Vol. 7 – No Direction Home: The Soundtrack",
+    "year": 2005,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series vol\\.?\\s*7\\b"]
+  },
+  {
+    "title": "Tell Tale Signs: The Bootleg Series Vol. 8",
+    "year": 2008,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["tell tale signs", "bootleg series vol\\.?\\s*8\\b"]
+  },
+  {
+    "title": "Another Self Portrait – The Bootleg Series Vol. 10",
+    "year": 2013,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["another self portrait", "bootleg series vol\\.?\\s*10\\b"]
+  },
+  {
+    "title": "The Cutting Edge – The Bootleg Series Vol. 12",
+    "year": 2015,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series vol\\.?\\s*12\\b", "the cutting edge"]
+  },
+  {
+    "title": "Trouble No More – The Bootleg Series Vol. 13",
+    "year": 2017,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series vol\\.?\\s*13\\b", "trouble no more"]
+  },
+  {
+    "title": "More Blood, More Tracks – The Bootleg Series Vol. 14",
+    "year": 2018,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series vol\\.?\\s*14\\b", "more blood,?\\s*more tracks"]
+  },
+  {
+    "title": "Travelin' Thru – The Bootleg Series Vol. 15",
+    "year": 2019,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series,?\\s*vol\\.?\\s*15\\b", "travelin.?\\s*thru"]
+  },
+  {
+    "title": "Springtime In New York – The Bootleg Series Vol. 16",
+    "year": 2021,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series vol\\.?\\s*16\\b", "springtime in new york"]
+  },
+  {
+    "title": "50th Anniversary Collections",
+    "year": null,
+    "kind": "copyright_collection",
+    "official": true,
+    "patterns": ["50\\s*th?\\s*anniversary collection"]
+  },
+  {
+    "title": "Bob Dylan Live 1962-1966: Rare Performances From The Copyright Collections",
+    "year": 2018,
+    "kind": "copyright_collection",
+    "official": true,
+    "patterns": ["live 1962-1966\\.?\\s*rare performances from the copyright collections"]
+  },
+  {
+    "title": "Bob Dylan Archive BDACD (2012 UK public-domain releases, not official)",
+    "year": 2012,
+    "kind": "public_domain",
+    "official": false,
+    "patterns": ["bob dylan archive"]
+  },
+  {
+    "title": "The Complete Album Collection, Vol. One",
+    "year": 2013,
+    "kind": "box_set",
+    "official": true,
+    "patterns": ["complete album collection"]
+  },
+  {
+    "title": "Bob Dylan Revisited – The Reissue Series (CD/SACD)",
+    "year": 2004,
+    "kind": "box_set",
+    "official": true,
+    "patterns": ["revisited,?\\s*the reissue series"]
+  },
+  {
+    "title": "The Freewheelin' Bob Dylan",
+    "year": 1963,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["the freewheelin.?\\s*bob dylan"]
+  },
+  {
+    "title": "The Times They Are A-Changin'",
+    "year": 1964,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["the times they are a.changin"]
+  },
+  {
+    "title": "Another Side Of Bob Dylan",
+    "year": 1964,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["another side of bob dylan"]
+  },
+  {
+    "title": "Bringing It All Back Home",
+    "year": 1965,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["bringing it all back home"]
+  },
+  {
+    "title": "Highway 61 Revisited",
+    "year": 1965,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["highway 61 revisited"]
+  },
+  {
+    "title": "Blonde On Blonde",
+    "year": 1966,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["blonde on blonde"]
+  },
+  {
+    "title": "John Wesley Harding",
+    "year": 1967,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["john wesley harding"]
+  },
+  {
+    "title": "Nashville Skyline",
+    "year": 1969,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["nashville skyline"]
+  },
+  {
+    "title": "Self Portrait",
+    "year": 1970,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["\\bself portrait\\b(?!.{0,20}bootleg series vol\\.?\\s*10)"]
+  },
+  {
+    "title": "New Morning",
+    "year": 1970,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["\\bnew morning\\b"]
+  },
+  {
+    "title": "Pat Garrett & Billy The Kid (soundtrack)",
+    "year": 1973,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["pat garrett\\s*&?\\s*billy the kid"]
+  },
+  {
+    "title": "Dylan (1973 compilation)",
+    "year": 1973,
+    "kind": "compilation",
+    "official": true,
+    "patterns": ["\\bbox.set dylan\\b", "^dylan,\\s*columbia"]
+  },
+  {
+    "title": "Planet Waves",
+    "year": 1974,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["planet waves"]
+  },
+  {
+    "title": "Before The Flood",
+    "year": 1974,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["before the flood"]
+  },
+  {
+    "title": "Blood On The Tracks",
+    "year": 1975,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["blood on the tracks"]
+  },
+  {
+    "title": "Desire",
+    "year": 1976,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["\\bdesire\\b\\s*,\\s*columbia", "\\bon desire\\b"]
+  },
+  {
+    "title": "Hard Rain",
+    "year": 1976,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["\\bhard rain\\b\\s*,\\s*columbia", "\\bon hard rain\\b"]
+  },
+  {
+    "title": "Bob Dylan At Budokan",
+    "year": 1978,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["bob dylan at budokan"]
+  },
+  {
+    "title": "Slow Train Coming",
+    "year": 1979,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["slow train coming"]
+  },
+  {
+    "title": "Saved",
+    "year": 1980,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["\\bsaved\\b\\s*columbia", "\\bon saved,"]
+  },
+  {
+    "title": "Shot Of Love",
+    "year": 1981,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["shot of love"]
+  },
+  {
+    "title": "Infidels",
+    "year": 1983,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["\\binfidels\\b"]
+  },
+  {
+    "title": "Real Live",
+    "year": 1984,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["\\breal live\\b\\s*,\\s*columbia", "\\bon real live\\b"]
+  },
+  {
+    "title": "Empire Burlesque",
+    "year": 1985,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["empire burlesque"]
+  },
+  {
+    "title": "Biograph",
+    "year": 1985,
+    "kind": "compilation",
+    "official": true,
+    "patterns": ["\\bbiograph\\b"]
+  },
+  {
+    "title": "Knocked Out Loaded",
+    "year": 1986,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["knocked out loaded"]
+  },
+  {
+    "title": "Hard To Handle (commercial video)",
+    "year": 1986,
+    "kind": "video",
+    "official": true,
+    "patterns": ["hard to handle,?\\s*cbs\\s*/\\s*fox"]
+  },
+  {
+    "title": "Down In The Groove",
+    "year": 1988,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["down in the groove"]
+  },
+  {
+    "title": "Dylan & The Dead",
+    "year": 1989,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["dylan\\s*&\\s*the dead"]
+  },
+  {
+    "title": "Oh Mercy",
+    "year": 1989,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["\\boh mercy\\b"]
+  },
+  {
+    "title": "Bob Dylan's Greatest Hits Vol. 1-3 / The Essential / The Best Of",
+    "year": null,
+    "kind": "compilation",
+    "official": true,
+    "patterns": [
+      "bob dylan.s greatest hits",
+      "the essential bob dylan",
+      "the best of bob dylan\\b"
+    ]
+  },
+  {
+    "title": "The Bootleg Series Vol. 8 companion – MTV Unplugged",
+    "year": 1995,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["mtv unplugged"]
+  },
+  {
+    "title": "Live 1961-2000: Thirty-Nine Years Of Great Concert Performances",
+    "year": 2001,
+    "kind": "compilation",
+    "official": true,
+    "patterns": ["thirty.nine years of great concert performances", "live 1961.2000"]
+  },
+  {
+    "title": "“Love And Theft”",
+    "year": 2001,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["love and theft"]
+  },
+  {
+    "title": "The Other Side Of The Mirror: Live At The Newport Folk Festival",
+    "year": 2007,
+    "kind": "video",
+    "official": true,
+    "patterns": ["the other side of the mirror.{0,10}live at the newport folk festival"]
+  },
+  {
+    "title": "Bob Dylan Classics Live",
+    "year": 2007,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["bob dylan classics live"]
+  },
+  {
+    "title": "No Direction Home (DVD, dir. Scorsese)",
+    "year": 2005,
+    "kind": "video",
+    "official": true,
+    "patterns": ["no direction home.{0,10}(a film by martin scorsese|paramount pictures)"]
+  },
+  {
+    "title": "Together Through Life (iTunes pre-order bonus)",
+    "year": 2009,
+    "kind": "digital",
+    "official": true,
+    "patterns": ["pre.orders of together through life"]
+  },
+  {
+    "title": "iTunes RARE TRACKS FROM THE VAULTS",
+    "year": 2006,
+    "kind": "digital",
+    "official": true,
+    "patterns": ["rare tracks from the vaults"]
+  },
+  {
+    "title": "bobdylan.com official site releases",
+    "year": null,
+    "kind": "digital",
+    "official": true,
+    "patterns": ["bobdylan\\.com"]
+  },
+  {
+    "title": "The Bootleg Series Vol. 4 – Live 1966: The \"Royal Albert Hall\" Concert",
+    "year": 1998,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series,?\\s*vol\\.?\\s*4\\b"]
+  },
+  {
+    "title": "The Bootleg Series Vol. 6 – Live 1964: Concert At Philharmonic Hall",
+    "year": 2004,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series,?\\s*vol\\.?\\s*6\\b"]
+  },
+  {
+    "title": "The Witmark Demos – The Bootleg Series Vol. 9",
+    "year": 2010,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series,?\\s*vol\\.?\\s*9\\b", "witmark demos"]
+  },
+  {
+    "title": "The Basement Tapes Complete – The Bootleg Series Vol. 11",
+    "year": 2014,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series,?\\s*vol\\.?\\s*11\\b"]
+  },
+  {
+    "title": "Fragments – Time Out Of Mind Sessions – The Bootleg Series Vol. 17",
+    "year": 2023,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series,?\\s*vol\\.?\\s*17\\b"]
+  },
+  {
+    "title": "Through The Open Window – The Bootleg Series Vol. 18",
+    "year": 2025,
+    "kind": "bootleg_series",
+    "official": true,
+    "patterns": ["bootleg series,?\\s*vol\\.?\\s*18\\b"]
+  },
+  {
+    "title": "The Best Of The Bootleg Series",
+    "year": 2020,
+    "kind": "compilation",
+    "official": true,
+    "patterns": ["best of the bootleg series"]
+  },
+  {
+    "title": "The Original Mono Recordings",
+    "year": 2010,
+    "kind": "box_set",
+    "official": true,
+    "patterns": ["original mono recordings"]
+  },
+  {
+    "title": "1970 (50th Anniversary Collection)",
+    "year": 2021,
+    "kind": "copyright_collection",
+    "official": true,
+    "patterns": ["\\bbob dylan 1970\\b"]
+  },
+  {
+    "title": "The 1966 Live Recordings",
+    "year": 2016,
+    "kind": "box_set",
+    "official": true,
+    "patterns": ["\\b1966 live recordings\\b"]
+  },
+  {
+    "title": "The Rolling Thunder Revue: The 1975 Live Recordings",
+    "year": 2019,
+    "kind": "box_set",
+    "official": true,
+    "patterns": ["rolling thunder revue\\.?\\s*the 1975 live recordings"]
+  },
+  {
+    "title": "Live In San Diego (Trouble No More deluxe)",
+    "year": 2017,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["live in san diego.{0,20}columbia"]
+  },
+  {
+    "title": "Live At The Gaslight 1962",
+    "year": 2005,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["live at the gaslight 1962"]
+  },
+  {
+    "title": "Masterpieces",
+    "year": 1978,
+    "kind": "compilation",
+    "official": true,
+    "patterns": ["\\bmasterpieces,?\\s*cbs"]
+  },
+  {
+    "title": "Pure Dylan – An Intimate Look At Bob Dylan",
+    "year": 2011,
+    "kind": "compilation",
+    "official": true,
+    "patterns": ["pure dylan"]
+  },
+  {
+    "title": "The Very Best Of Bob Dylan",
+    "year": 2000,
+    "kind": "compilation",
+    "official": true,
+    "patterns": ["very best of bob dylan"]
+  },
+  {
+    "title": "Beyond Here Lies Nothin' (Sony UK compilation)",
+    "year": 2011,
+    "kind": "compilation",
+    "official": true,
+    "patterns": ["beyond here lies nothin.{0,3},\\s*sony"]
+  },
+  {
+    "title": "Dont Look Back (film)",
+    "year": 1967,
+    "kind": "video",
+    "official": true,
+    "patterns": ["\\bdon.?t look back\\b"]
+  },
+  {
+    "title": "Masked And Anonymous (film)",
+    "year": 2003,
+    "kind": "video",
+    "official": true,
+    "patterns": ["masked and anonymo"]
+  },
+  {
+    "title": "The Genuine Bootleg Series (fan compilation, not official)",
+    "year": null,
+    "kind": "fan_compilation",
+    "official": false,
+    "patterns": ["genuine bootleg series"]
+  },
+  {
+    "title": "Wolfgang's Vault (streaming bootleg archive)",
+    "year": null,
+    "kind": "bootleg",
+    "official": false,
+    "patterns": ["wolfgang.s vault"]
+  },
+  {
+    "title": "Westwood One / radio station discs",
+    "year": null,
+    "kind": "radio_syndication",
+    "official": false,
+    "patterns": ["westwood one", "radio station (?:disc|cd)"]
+  },
+  {
+    "title": "Crystal Cat bootlegs",
+    "year": null,
+    "kind": "bootleg",
+    "official": false,
+    "patterns": ["crystal cat"]
+  },
+  {
+    "title": "Satellite-feed video",
+    "year": null,
+    "kind": "broadcast",
+    "official": false,
+    "patterns": ["satellite feed"]
+  },
+  {
+    "title": "Storming Music Company bootleg DVDs (Transmissions)",
+    "year": null,
+    "kind": "bootleg",
+    "official": false,
+    "patterns": ["storming music"]
+  },
+  {
+    "title": "Storm Bird bootleg DVDs",
+    "year": null,
+    "kind": "bootleg",
+    "official": false,
+    "patterns": ["storm bird"]
+  },
+  {
+    "title": "Immortal Records bootlegs",
+    "year": null,
+    "kind": "bootleg",
+    "official": false,
+    "patterns": ["\\bimmortal ima\\b"]
+  },
+  {
+    "title": "Humdinger / Smith & Co (public-domain label, not official)",
+    "year": null,
+    "kind": "public_domain",
+    "official": false,
+    "patterns": ["smith\\s*&\\s*co\\b", "humdinger"]
+  },
+  {
+    "title": "Bob Dylan Live Transmissions DVDs (RMS, not official)",
+    "year": 2008,
+    "kind": "bootleg",
+    "official": false,
+    "patterns": ["\\blive transmissions\\b"]
+  }
+]
