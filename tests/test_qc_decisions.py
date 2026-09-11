@@ -371,3 +371,87 @@ class TestRunRoute:
         with _AppClient(path) as client:
             resp = client.post("/api/qc/run", json={"rule_id": "R-NOPE"})
             assert resp.status_code == 400
+
+
+# ── backend.qc.decisions.classify_release (D-03 C19) ────────────────────────
+
+class TestClassifyRelease:
+    def test_inserts_classification_and_closes_finding(self, qc):
+        _db, _store, _rules, decisions, conn, _path = qc
+        with conn:
+            fid = _insert_finding(
+                conn, rule_id="R-R1", entity_kind="release", entity_key="some-release",
+                status="open",
+            )
+        result = decisions.classify_release(conn, "some-release", True, note="tj confirmed")
+        assert result["classification"]["title_key"] == "some-release"
+        assert result["classification"]["official"] == 1
+        assert result["finding"]["id"] == fid
+        assert result["finding"]["status"] == "fixed"
+
+        log = conn.execute(
+            "SELECT * FROM qc_decision_log WHERE finding_id=?", (fid,)
+        ).fetchone()
+        assert log["new_status"] == "fixed"
+        assert log["prev_status"] == "open"
+
+    def test_no_matching_finding_still_classifies(self, qc):
+        _db, _store, _rules, decisions, conn, _path = qc
+        result = decisions.classify_release(conn, "no-finding-yet", False)
+        assert result["classification"]["official"] == 0
+        assert result["finding"] is None
+
+    def test_reclassify_upserts(self, qc):
+        _db, _store, _rules, decisions, conn, _path = qc
+        decisions.classify_release(conn, "flip-flop", True)
+        result = decisions.classify_release(conn, "flip-flop", False, note="changed my mind")
+        assert result["classification"]["official"] == 0
+        assert result["classification"]["note"] == "changed my mind"
+        rows = conn.execute(
+            "SELECT COUNT(*) FROM release_classifications WHERE title_key='flip-flop'"
+        ).fetchone()[0]
+        assert rows == 1
+
+    def test_does_not_reopen_fixed_or_corrected(self, qc):
+        _db, _store, _rules, decisions, conn, _path = qc
+        with conn:
+            fid = _insert_finding(
+                conn, rule_id="R-R1", entity_kind="release", entity_key="already-fixed",
+                status="fixed",
+            )
+        result = decisions.classify_release(conn, "already-fixed", True)
+        assert result["finding"] is None
+        row = conn.execute("SELECT status FROM qc_findings WHERE id=?", (fid,)).fetchone()
+        assert row["status"] == "fixed"
+
+
+class TestReleaseRoute:
+    def test_403_when_curator_off(self, qc):
+        _db, _store, _rules, _decisions, conn, path = qc
+        with _AppClient(path) as client:
+            resp = client.post("/api/qc/releases/some-title", json={"official": True})
+            assert resp.status_code == 403
+
+    def test_success_closes_finding(self, qc):
+        db, _store, _rules, _decisions, conn, path = qc
+        with conn:
+            fid = _insert_finding(
+                conn, rule_id="R-R1", entity_kind="release", entity_key="hard-to-handle",
+                status="open",
+            )
+        db.set_curator(True, path)
+        with _AppClient(path) as client:
+            resp = client.post("/api/qc/releases/hard-to-handle",
+                                json={"official": True, "note": "commercial video"})
+            assert resp.status_code == 200
+            body = resp.get_json()
+            assert body["classification"]["official"] == 1
+            assert body["finding"]["id"] == fid
+            assert body["finding"]["status"] == "fixed"
+
+    def test_bad_body_400(self, qc):
+        db, _store, _rules, _decisions, conn, path = qc
+        db.set_curator(True, path)
+        with _AppClient(path) as client:
+            resp = client.post("/api/qc/releases/some-title", json={"official": "yes"})
+            assert resp.status_code == 400

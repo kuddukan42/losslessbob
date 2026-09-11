@@ -21,13 +21,17 @@ This module holds those pieces and :func:`completeness` itself (C17).
 """
 from __future__ import annotations
 
+import hashlib
+import json
 import logging
 import re
 import sqlite3
+import unicodedata
 from bisect import bisect_left, bisect_right
 from collections import defaultdict
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import TypedDict
 
 from backend.db import normalize_title_for_match, parse_entry_setlist_titles, titles_match
@@ -836,3 +840,301 @@ def song_history(
         premiere_count=len(premieres), gate_passed=passed, gate_reasons=reasons, songs=songs,
     )
     return result
+
+
+# ---------------------------------------------------------------------------
+# D-03 Official release status (TODO-342 C19)
+# ---------------------------------------------------------------------------
+
+_OFFICIAL_RELEASES_ASSET = Path(__file__).resolve().parent / "assets" / "official_releases.json"
+
+# Prefixes olof_parser.py puts on a released_on token (P1f): the song is only
+# partly on the release, or Olof names two positions with "or" and the
+# release holds one of them. Mirrors RELEASE_PART_TAG/RELEASE_UNCERTAIN_TAG
+# in backend/olof_parser.py.
+_RELEASE_PART_TAG = "(part) "
+_RELEASE_UNCERTAIN_TAG = "(uncertain) "
+
+_TITLE_KEY_RE = re.compile(r"[^a-z0-9]+")
+_TITLE_KEY_MAX_LEN = 80
+
+_allowlist_cache: list[ReleaseAllowlistEntry] | None = None
+
+
+def normalize_title_key(raw: str | None) -> str:
+    """Normalize a release string into a stable ``release_classifications`` key.
+
+    Shared by :func:`official_release`, ``backend.qc.rules.rule_r1`` and the
+    ``POST /api/qc/releases/<title_key>`` route, so all three agree on
+    identity. Folds accents, case, punctuation and whitespace so trivial
+    spelling variants of one raw string collapse to one key. A truncated
+    tail plus an 8-hex digest keeps very long strings usable both as a
+    SQLite primary key and as a URL path segment.
+
+    Args:
+        raw: The raw Olof release string (a ``released_on`` token, already
+            stripped of any ``(part)``/``(uncertain)`` prefix, or a
+            whole-show ``releases_raw`` line).
+
+    Returns:
+        A lowercase, hyphen-separated slug. Never empty.
+    """
+    text = unicodedata.normalize("NFKD", str(raw or ""))
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    slug = _TITLE_KEY_RE.sub("-", text.lower()).strip("-")
+    if len(slug) > _TITLE_KEY_MAX_LEN:
+        digest = hashlib.sha1(text.encode("utf-8", "ignore")).hexdigest()[:8]
+        slug = f"{slug[:_TITLE_KEY_MAX_LEN].rstrip('-')}-{digest}"
+    if not slug:
+        slug = f"release-{hashlib.sha1(text.encode('utf-8', 'ignore')).hexdigest()[:8]}"
+    return slug
+
+
+@dataclass
+class ReleaseAllowlistEntry:
+    """One compiled entry of ``backend/assets/official_releases.json``.
+
+    Attributes:
+        title: Display title shown in the QC review console and dossier.
+        year: Release year, or ``None`` when the entry spans several years
+            (e.g. the 50th Anniversary Collections).
+        kind: Free-text category ('studio_album', 'bootleg_series', 'video',
+            'bootleg', 'radio_syndication', ...).
+        official: Whether this is an official Columbia/Legacy/Sony/Bob Dylan
+            Archive release, as opposed to a known non-official source
+            (Wolfgang's Vault, Westwood One, Crystal Cat, satellite feeds).
+        patterns: Compiled case-insensitive regexes; any one matching a raw
+            release string classifies it as this entry.
+    """
+
+    title: str
+    year: int | None
+    kind: str
+    official: bool
+    patterns: tuple[re.Pattern, ...]
+
+
+def load_official_releases(path: Path | None = None) -> list[ReleaseAllowlistEntry]:
+    """Load and compile ``backend/assets/official_releases.json``.
+
+    Cached at module scope after the first call with the default *path*
+    (the packaged asset); a non-default *path* (tests) always reloads and
+    is never cached.
+
+    Args:
+        path: Override for the asset path.
+
+    Returns:
+        Compiled entries in file order. When a raw string matches several
+        entries (a studio album also sold in a reissue box; "50th ANNIVERSARY
+        COLLECTION: 1965 … a gift for purchasers of Bootleg Series Vol. 12"),
+        :func:`classify_release_string` takes the one named earliest in the
+        string; file order only breaks ties.
+    """
+    global _allowlist_cache
+    if path is None and _allowlist_cache is not None:
+        return _allowlist_cache
+    asset_path = path or _OFFICIAL_RELEASES_ASSET
+    with open(asset_path, encoding="utf-8") as f:
+        raw_entries = json.load(f)
+    entries = [
+        ReleaseAllowlistEntry(
+            title=item["title"],
+            year=item.get("year"),
+            kind=item["kind"],
+            official=bool(item["official"]),
+            patterns=tuple(re.compile(p, re.IGNORECASE) for p in item["patterns"]),
+        )
+        for item in raw_entries
+    ]
+    if path is None:
+        _allowlist_cache = entries
+    return entries
+
+
+def strip_release_prefix(token: str) -> tuple[str, bool, bool]:
+    """Split a ``released_on`` token's ``(part)``/``(uncertain)`` prefix off.
+
+    Args:
+        token: One ``'; '``-split piece of ``olof_songs.released_on``.
+
+    Returns:
+        ``(text, is_part, is_uncertain)`` — *text* has the prefix removed.
+    """
+    if token.startswith(_RELEASE_PART_TAG):
+        return token[len(_RELEASE_PART_TAG):], True, False
+    if token.startswith(_RELEASE_UNCERTAIN_TAG):
+        return token[len(_RELEASE_UNCERTAIN_TAG):], False, True
+    return token, False, False
+
+
+def split_release_tokens(text: str | None) -> list[str]:
+    """Split a ``'; '``-joined ``released_on`` string into trimmed tokens."""
+    return [t.strip() for t in str(text or "").split(";") if t.strip()]
+
+
+def release_overrides(conn: sqlite3.Connection) -> dict[str, bool]:
+    """Load curator verdicts as ``{title_key: official}`` from ``release_classifications``.
+
+    This table wins over the packaged allowlist for any ``title_key`` it
+    covers (plan D-03: "the table wins").
+
+    Args:
+        conn: Open SQLite connection.
+
+    Returns:
+        ``{}`` if the table doesn't exist yet (fresh DB, pre-migration).
+    """
+    try:
+        return {
+            r["title_key"]: bool(r["official"])
+            for r in conn.execute("SELECT title_key, official FROM release_classifications")
+        }
+    except sqlite3.OperationalError:
+        return {}
+
+
+def classify_release_string(
+    raw: str, allowlist: list[ReleaseAllowlistEntry], overrides: dict[str, bool],
+) -> tuple[str, str | None, bool | None]:
+    """Classify one raw release string (a ``(part)``/``(uncertain)`` prefix already stripped).
+
+    Args:
+        raw: The raw release string.
+        allowlist: Compiled entries from :func:`load_official_releases`.
+        overrides: ``{title_key: official}`` from :func:`release_overrides`.
+
+    Returns:
+        ``(title_key, title, official)``. *title* and *official* are
+        ``None`` when *raw* matches neither an override nor the allowlist
+        (unclassified — the R-R1 finding this feeds).
+    """
+    title_key = normalize_title_key(raw)
+    if title_key in overrides:
+        return title_key, raw.strip(), overrides[title_key]
+    best: tuple[int, int, ReleaseAllowlistEntry] | None = None
+    for order, entry in enumerate(allowlist):
+        starts = [m.start() for p in entry.patterns if (m := p.search(raw))]
+        if starts and (best is None or (min(starts), order) < best[:2]):
+            best = (min(starts), order, entry)
+    if best is None:
+        return title_key, None, None
+    return title_key, best[2].title, best[2].official
+
+
+class ReleaseMatch(TypedDict):
+    """One classified release string attached to a song position or the whole show."""
+
+    raw: str
+    title_key: str
+    title: str | None
+    official: bool | None
+    part: bool
+    uncertain: bool
+
+
+class SongRelease(TypedDict):
+    """D-03 per-position release coverage — feeds the song release markers."""
+
+    position: int
+    song_title: str
+    official: bool
+    partial: bool
+    matches: list[ReleaseMatch]
+
+
+class OfficialRelease(TypedDict):
+    """D-03 official release status for one dossier event."""
+
+    status: str  # 'full' | 'partial' | 'none'
+    whole_show: bool
+    whole_show_title: str | None
+    songs: list[SongRelease]
+
+
+def official_release(
+    conn: sqlite3.Connection,
+    event_id: int,
+    allowlist: list[ReleaseAllowlistEntry] | None = None,
+) -> OfficialRelease | None:
+    """D-03: official release status for one Olof event.
+
+    Sources: ``olof_events.releases_raw`` for whole-show release lines (a
+    line with no leading position-list — e.g. "Released on X..." rather
+    than "4, 9 released on X..."), and ``olof_songs.released_on`` for
+    per-position coverage. :func:`release_overrides` wins over the packaged
+    allowlist for any given ``title_key``.
+
+    Status:
+        - ``full``: a whole-show line classifies official, or every song
+          position has a non-``(part)``/``(uncertain)`` official match.
+        - ``partial``: some (not all) positions have an official match,
+          counting ``(part)``/``(uncertain)`` tokens toward partial only
+          (never toward full, per plan D-03).
+        - ``none``: the event exists in Olof and nothing classified official.
+
+    Args:
+        conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
+        event_id: ``olof_events.event_id``.
+        allowlist: Optional pre-loaded allowlist (tests); defaults to the
+            packaged asset via :func:`load_official_releases`.
+
+    Returns:
+        ``None`` if there's no such event (the caller omits the row);
+        otherwise an :class:`OfficialRelease`.
+    """
+    ev = conn.execute(
+        "SELECT event_id, releases_raw FROM olof_events WHERE event_id = ?", (event_id,),
+    ).fetchone()
+    if ev is None:
+        return None
+
+    allow = allowlist if allowlist is not None else load_official_releases()
+    overrides = release_overrides(conn)
+
+    whole_show = False
+    whole_show_title: str | None = None
+    for line in (ev["releases_raw"] or "").splitlines():
+        line = line.strip().rstrip(".")
+        if not line or line[0].isdigit():
+            continue  # a leading digit targets specific positions, not the whole show
+        _, title, official = classify_release_string(line, allow, overrides)
+        if official:
+            whole_show = True
+            whole_show_title = title
+            break
+
+    songs: list[SongRelease] = []
+    for r in conn.execute(
+        "SELECT position, song_title, released_on FROM olof_songs"
+        " WHERE event_id = ? ORDER BY position", (event_id,),
+    ):
+        matches: list[ReleaseMatch] = []
+        song_official = False
+        song_partial = False
+        for token in split_release_tokens(r["released_on"]):
+            text, is_part, is_uncertain = strip_release_prefix(token)
+            title_key, title, is_official = classify_release_string(text, allow, overrides)
+            matches.append(ReleaseMatch(
+                raw=token, title_key=title_key, title=title, official=is_official,
+                part=is_part, uncertain=is_uncertain,
+            ))
+            if is_official:
+                song_partial = True
+                if not is_part and not is_uncertain:
+                    song_official = True
+        songs.append(SongRelease(
+            position=r["position"], song_title=r["song_title"], official=song_official,
+            partial=song_partial, matches=matches,
+        ))
+
+    if whole_show or (songs and all(s["official"] for s in songs)):
+        status = "full"
+    elif any(s["partial"] for s in songs):
+        status = "partial"
+    else:
+        status = "none"
+
+    return OfficialRelease(
+        status=status, whole_show=whole_show, whole_show_title=whole_show_title, songs=songs,
+    )

@@ -939,6 +939,82 @@ def _stale_quality_scores(conn: sqlite3.Connection) -> Iterable[Finding]:
         )
 
 
+_R1_MAX_DATES = 5
+
+
+def rule_r1(conn: sqlite3.Connection) -> Iterable[Finding]:
+    """R-R1: an Olof release string matches neither the D-03 allowlist nor a curator override.
+
+    Scans every whole-show line in ``olof_events.releases_raw`` (a line with
+    no leading position-list digit) and every per-position token in
+    ``olof_songs.released_on`` (``(part)``/``(uncertain)`` prefix stripped),
+    classifying each with :func:`backend.dossier_fields.classify_release_string`.
+    Findings group by :func:`backend.dossier_fields.normalize_title_key`, so
+    trivial spelling/whitespace variants of one raw string share a finding;
+    distinct catalogue-number/date variants of the same release stay separate
+    findings until the allowlist grows a pattern that collapses them — by
+    design, so the allowlist grows deliberately (plan D-03).
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        One warn Finding per unclassified ``title_key``, entity_kind 'release'.
+    """
+    from backend.dossier_fields import (
+        classify_release_string,
+        load_official_releases,
+        normalize_title_key,
+        release_overrides,
+        split_release_tokens,
+        strip_release_prefix,
+    )
+
+    allow = load_official_releases()
+    overrides = release_overrides(conn)
+    groups: dict[str, dict] = {}
+
+    def _consider(raw_text: str, date: str | None) -> None:
+        raw_text = raw_text.strip()
+        if not raw_text:
+            return
+        title_key = normalize_title_key(raw_text)
+        if title_key in overrides:
+            return
+        _, title, _official = classify_release_string(raw_text, allow, overrides)
+        if title is not None:
+            return
+        g = groups.setdefault(title_key, {"example": raw_text, "count": 0, "dates": []})
+        g["count"] += 1
+        if date and date not in g["dates"]:
+            g["dates"].append(date)
+
+    for ev in conn.execute("SELECT date_str, releases_raw FROM olof_events"):
+        for line in (ev["releases_raw"] or "").splitlines():
+            line = line.strip().rstrip(".")
+            if not line or line[0].isdigit():
+                continue
+            _consider(line, ev["date_str"])
+
+    for row in conn.execute(
+        "SELECT oe.date_str, os.released_on FROM olof_songs os"
+        " JOIN olof_events oe ON oe.event_id = os.event_id WHERE os.released_on != ''"
+    ):
+        for token in split_release_tokens(row["released_on"]):
+            text, _is_part, _is_uncertain = strip_release_prefix(token)
+            _consider(text, row["date_str"])
+
+    for title_key, g in groups.items():
+        dates = sorted(d for d in g["dates"] if d)[:_R1_MAX_DATES]
+        yield Finding(
+            entity_kind="release",
+            entity_key=title_key,
+            severity="warn",
+            detail=f"unclassified release string ({g['count']}x): {g['example'][:140]}",
+            evidence={"raw": g["example"], "count": g["count"], "dates": dates},
+        )
+
+
 def _table_exists_local(conn: sqlite3.Connection, name: str) -> bool:
     """Return whether table *name* exists and has at least one row.
 
@@ -1032,5 +1108,11 @@ RULES: dict[str, RuleDef] = {
         description="Derived table older than its inputs",
         severity="error",
         func=rule_s1,
+    ),
+    "R-R1": RuleDef(
+        rule_id="R-R1",
+        description="Release string matches no official_releases.json entry or curator override",
+        severity="warn",
+        func=rule_r1,
     ),
 }

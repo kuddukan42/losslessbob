@@ -7015,6 +7015,25 @@ def create_app() -> Flask:
             _log.exception("qc_corrections_create failed")
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
+    @app.route("/api/qc/releases/<title_key>", methods=["POST"])
+    def qc_release_classify(title_key: str) -> Response:
+        """Curator-only. Classify one release title (D-03 R-R1). Body: {official: bool, note?}."""
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        body = request.get_json(silent=True) or {}
+        official = body.get("official")
+        if not isinstance(official, bool):
+            return jsonify({"error": "bad_request", "message": "official must be a bool"}), 400
+        try:
+            conn = database.get_connection()
+            result = _qc_decisions.classify_release(
+                conn, title_key, official, note=body.get("note"),
+            )
+            return jsonify(result)
+        except Exception as exc:
+            _log.exception("qc_release_classify failed for %s", title_key)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     @app.route("/api/qc/run", methods=["POST"])
     def qc_run_start() -> Response:
         """Curator-only. Start a rules run (all rules, or one via body {rule_id?})."""

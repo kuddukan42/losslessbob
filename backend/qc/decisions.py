@@ -211,3 +211,67 @@ def add_correction(
 
     finding = _get_finding(conn, finding_id)
     return {"correction": dict(correction), "finding": dict(finding)}
+
+
+def classify_release(
+    conn: sqlite3.Connection,
+    title_key: str,
+    official: bool,
+    note: str | None = None,
+    decided_by: str = "ui",
+) -> dict:
+    """Record a curator verdict on one release title (D-03, R-R1).
+
+    Upserts ``release_classifications`` (it wins over the packaged
+    ``backend/assets/official_releases.json`` allowlist for this
+    ``title_key`` from here on) and immediately closes any open/confirmed/
+    false_positive R-R1 finding for it — unlike a taper rejection, there is
+    nothing further to re-derive: the classification itself is the fix.
+
+    Args:
+        conn: Open SQLite connection.
+        title_key: :func:`backend.dossier_fields.normalize_title_key` of the
+            raw release string (also the R-R1 finding's ``entity_key``).
+        official: The curator's verdict.
+        note: Optional free-text note.
+        decided_by: Origin recorded in the log row.
+
+    Returns:
+        ``{"classification": {...}, "finding": {...} | None}`` — *finding*
+        is ``None`` when no matching R-R1 finding exists (a title classified
+        ahead of its first rule run).
+    """
+    now = _now()
+    with conn:
+        conn.execute(
+            "INSERT INTO release_classifications (title_key, official, decided_by, decided_at,"
+            " note) VALUES (?, ?, ?, ?, ?)"
+            " ON CONFLICT(title_key) DO UPDATE SET official=excluded.official,"
+            " decided_by=excluded.decided_by, decided_at=excluded.decided_at, note=excluded.note",
+            (title_key, int(official), decided_by, now, note),
+        )
+        classification = conn.execute(
+            "SELECT * FROM release_classifications WHERE title_key = ?", (title_key,)
+        ).fetchone()
+
+        finding_row = conn.execute(
+            "SELECT * FROM qc_findings WHERE rule_id = 'R-R1' AND entity_kind = 'release'"
+            " AND entity_key = ? AND status IN (?, ?, ?)",
+            (title_key, *_DECIDABLE_STATUSES),
+        ).fetchone()
+        finding = None
+        if finding_row is not None:
+            conn.execute(
+                "UPDATE qc_findings SET status='fixed', decided_by=?, decided_at=?, note=?"
+                " WHERE id=?",
+                (decided_by, now, note, finding_row["id"]),
+            )
+            conn.execute(
+                "INSERT INTO qc_decision_log (finding_id, rule_id, entity_key, prev_status,"
+                " new_status, note, decided_by, decided_at) VALUES (?, 'R-R1', ?, ?, 'fixed',"
+                " ?, ?, ?)",
+                (finding_row["id"], title_key, finding_row["status"], note, decided_by, now),
+            )
+            finding = dict(_get_finding(conn, finding_row["id"]))
+
+    return {"classification": dict(classification), "finding": finding}

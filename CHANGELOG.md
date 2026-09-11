@@ -1,3 +1,22 @@
+[2026-09-11] — D-03 official release status + rule R-R1 (dossier C19)
+Added: backend/assets/official_releases.json — draft allowlist of 84 entries (73 official, 11 not
+  official: Wolfgang's Vault, Westwood One, Crystal Cat, the 2012 "Bob Dylan Archive" and
+  Humdinger public-domain labels, …). Awaits tj's sign-off. Patterns collapse disc, catalogue
+  and date variants of one release. A string naming several releases takes the one named
+  earliest, so 1965-06-01's "50th ANNIVERSARY COLLECTION: 1965 … gift for purchasers of Bootleg
+  Series Vol. 12" credits the 50th Anniversary Collection. Olof's per-song release mentions:
+  2,173 official, 209 not official, 393 unclassified.
+Added: backend/dossier_fields.py: official_release(conn, event_id) — full / partial / none plus
+  per-position official releases; "(part)" and "(uncertain)" count toward partial only. Curator
+  verdicts in release_classifications override the asset.
+Added: rule R-R1 (warn, 535 open), one per unclassified release string;
+  POST /api/qc/releases/<title_key> (curator) and Official / Not official buttons on the
+  /qc-review card close it.
+Added: tools/dossier_acceptance.py --d03: 1965-06-01 full, 1986-02-24 partial (Hard To Handle),
+  1975-12-08 partial — not the plan's "none": Olof lists song 5 on CD 14 of The Rolling
+  Thunder Revue: The 1975 Live Recordings (2019).
+Added: tests/test_official_release.py (25 tests), tests/test_qc_decisions.py (+8).
+
 [2026-09-11] — D-02 song history + premiere gate + gap badge (dossier C18)
 Added: backend/dossier_fields.py: song_history(conn, event_id) — per position tour_premiere,
   career_debut, last_played, gap_shows, times_played over concert-filtered song_performances in
