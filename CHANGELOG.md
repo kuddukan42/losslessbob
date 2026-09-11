@@ -1,3 +1,50 @@
+[2026-09-11] — D-01 per-source completeness + G2 fit flag (dossier C17)
+Added: backend/dossier_fields.py: completeness(conn, event_id, lb_numbers) — maps each source's
+  song tracks onto the event's Olof setlist positions: present / missing / partial (a repeated
+  song fills its first free slot; Olof placeholders excluded). basis tracklist / runtime / none;
+  confidence corroborated / stated / inferred from TUIT's per-LB present-count (a '[]'
+  setlist_json counts as no tracklist); show_bar is false when TUIT disagrees or G2 fails.
+  fits_show() + is_glued_tracklist() hold the G2 test. Accept cases: 2010-03-29 all 9 sources
+  basis tracklist; 1965-06-01 LB-10364/12222 read 1/12, LB-08855 lists missing positions 2–5,
+  LB-06654 fails G2.
+  Corpus (15,506 dated sources, 17 s): tracklist 12,278 / runtime 2,380 / none 848; corroborated
+  2,498, stated 8,579, inferred 1,201 (mostly real: LB-site lists shorter than TUIT's); 10,805
+  bars. G2 fails 60 sources against their date's own events; 193 more fit a sibling event on the
+  same date, so the dossier's event pick decides those.
+Fixed: backend/dossier_fields.py: clean_track_title — "(encore break)" / "(2nd encore break)" are
+  non-songs (were "break)"), glued "Encore 1" headers, slash-glued intros ("Intro/ Maggie's Farm",
+  "Jolene / Band Intro"); 140 live setlists change. match_track's exact tier ignores spacing
+  ("Hometown" / "Home Town"; all 11 Olof collisions are typo variants such as "tim e") and folds
+  Talkin' / Talking. R-E2 70 → 69: LB-9746, a multi-artist benefit, now hits 2 of Olof's 3 songs
+  and takes the setlist-cover skip.
+Added: tests/test_dossier_fields.py (+20 tests, 71 total).
+
+[2026-09-11] — File format, taper and venue corroboration (dossier C16)
+Added: backend/qc/corroborate.py: file_format_check(conn, lb) — TUIT's lb_verified format (the
+  file record) vs the resolutions in the lineage (entries.description "Lineage:" clause + TUIT
+  lineage); parse_resolution_tokens() is the reusable D-11 regex. Of 5,068 verified LBs: 4,568
+  have the file record only; 170 document a conversion ending at the file's resolution and 2 don't
+  (LB-12156/12163 say "convert to 24/44", file is 16/44); 131 state one figure equal to the file;
+  123 state only a differing recorder figure (recorded 24/96, file 16/44) — not a conflict.
+Added: taper_check(conn, lb), with taper_agreement() shared by R-T4 (still 67 open): 1,234 of
+  1,301 LBs corroborated, 67 disputed — every sampled dispute is a real conflicting claim.
+Added: venue_check(conn, date) — Olof venue/city vs setlist.fm and bobdylan.com on the exact venue
+  name after case/punctuation/accent/leading-"The" folds (Zepp Tokyo ≠ Zepp DiverCity); a source
+  row with a blank venue is no data. 3,362 of 4,057 dates corroborated, 695 disputed — 666 of
+  those agree on city. Only 29 disagree on both, several of them spellings (San Remo / Sanremo,
+  West Berlin / Berlin) or Olof parse residue ("132 5"). G1 as written would refuse all 695:
+  flagged on the plan's C28 row.
+Fixed: tour_premieres (C15) scoped setlist.fm's earlier history by setlist.fm's own tour_name,
+  "Never Ending Tour" for every NET show, so NET premieres read as repeats. It now uses our tour's
+  date span: 2010-03-29 positions 4 and 14 read ours = setlist.fm = premiere.
+Fixed: tracklist_check (C15) read setlist_json '[]' (294 LBs) as "TUIT lists no songs"; it now
+  means no tracklist. The corpus pass already skipped those; its rate moves 76.4% → 76.9%
+  (2,936 / 3,816) from the C17 matcher fixes.
+Changed: corroborate.is_placeholder is public. backend/qc/rules.py: R-T4 calls taper_agreement;
+  R-E2 calls dossier_fields.fits_show (C17), its E2_* constants gone.
+Added: tools/dossier_acceptance.py --corroborate prints the 3d/3e/3f rates; tests/test_corroborate.py
+  (+26 tests, 49 total).
+
 [2026-09-11] — Tour premieres, rotation recompute, LB-vs-TUIT tracklists (dossier C15)
 Added: backend/qc/corroborate.py: tour_premieres(conn, event_id) — per-song tour premiere from our
   corpus (song_performances + olof_events) vs setlist.fm's own tour grouping (D-02 gate item 2).

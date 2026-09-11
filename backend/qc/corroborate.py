@@ -26,7 +26,11 @@ three more on-the-fly checks — no new tables, no new QC rule:
 
 - :func:`tour_premieres` — per-song tour-premiere agreement (plan D-02 gate
   item 2) between our corpus (``song_performances`` joined to
-  ``olof_events``, the D-02 source) and setlist.fm's own tour grouping.
+  ``olof_events``, the D-02 source) and setlist.fm, scoped to *our* tour's
+  date span (C16 fix, see :func:`_tour_start_date`) rather than setlist.fm's
+  own ``tour_name`` grouping — that field buckets every NET-era show into one
+  decades-wide "Never Ending Tour", which read real tour premieres as
+  setlist.fm=False.
 - :func:`rotation_check` — recomputes "songs not played at the previous
   concert" from our corpus and compares it against Olof's stated
   ``rotation_new``/``rotation_pct`` (plan D-04, audit hole P5). Definition
@@ -44,6 +48,32 @@ three more on-the-fly checks — no new tables, no new QC rule:
 - :func:`tracklist_check` — LB-site ``entries.setlist`` (via
   :func:`backend.dossier_fields.parse_entry_tracklist`) vs TUIT
   ``tuit_recordings.setlist_json`` for the same ``lb_number`` (audit P10).
+
+C16 (Phase 3 rows (d)/(e)/(f), audit Q1-d/e/f, D-11) adds three more —
+still no new tables, no new QC rules:
+
+- :func:`file_format_check` — TUIT's ``lb_verified`` file record
+  (``tuit_recordings.format``, e.g. ``'FLAC 16/44'``) against the resolution
+  figures found in the lineage text. Both ``entries`` (its raw ``description``
+  carries a free-text ``Lineage:`` clause the scraper never split into its own
+  column — only ``Source:``/``Recording:`` land in ``entries.source_chain``,
+  as a fallback, when there is no ``Source:`` clause at all) and TUIT
+  (``tuit_recordings.lineage``, a column the TUIT scraper already split out)
+  are read and concatenated, so a truncated or missing side doesn't drop
+  resolution figures the other side has. :func:`parse_resolution_tokens` is
+  the reusable regex helper D-11 (C22) will need for the same "16/44 file"
+  vs "recorded 24/96" labels — this chunk only computes the values.
+- :func:`taper_check` — ``taper_attributions`` vs TUIT's ``taper`` field,
+  factored through :func:`taper_agreement`, the same verdict function R-T4
+  (:func:`backend.qc.rules.rule_t4`) uses, so the two can never drift.
+- :func:`venue_check` — Olof (``olof_events.venue``/``.city``) against
+  setlist.fm (``setlistfm_shows.venue_name``/``.city``) and bobdylan.com
+  (``bobdylan_shows.venue``, and ``.location`` split on its first comma for
+  city), each folded (case, punctuation, leading "The", accents; city gets a
+  small alias table for "New York City" vs "New York"). A multi-show date's
+  source row is picked the same way :func:`_best_group` already does for
+  setlist rows — the group whose tracklist best matches Olof's, reusing
+  :func:`primary_event_id`.
 """
 from __future__ import annotations
 
@@ -51,6 +81,7 @@ import json
 import logging
 import re
 import sqlite3
+import unicodedata
 from collections import defaultdict
 from collections.abc import Iterable, Iterator
 from typing import TypedDict
@@ -96,9 +127,14 @@ def _fold_source_conventions(title: str) -> str:
     return _TALKIN_RE.sub("Talking", title)
 
 
-def _is_placeholder(title: str) -> bool:
+def is_placeholder(title: str) -> bool:
     """Whether *title* is a placeholder for unnamed material rather than a song."""
     return bool(_PLACEHOLDER_RE.search(title))
+
+
+# Public rename (C16) — backend.dossier_fields imports this under the old
+# private name; kept as an alias until that call site is switched.
+_is_placeholder = is_placeholder
 
 
 # A source's disagreement with Olof is tolerated up to this many extra/missing
@@ -178,7 +214,7 @@ def _clean_song_titles(raw_titles: Iterable[str]) -> list[str]:
             title = (raw or "").strip()
             if not title or is_non_song(title):
                 continue
-        if _is_placeholder(title):
+        if is_placeholder(title):
             continue
         out.append(_fold_source_conventions(title))
     return out
@@ -307,7 +343,7 @@ def quorum_verdict(
         0-song pre-Phase-1 Olof page reads 'disputed' against a 22-song
         bobdylan.com/TUIT agreement on 1975-12-08, proving the check works).
     """
-    olof_titles = [_fold_source_conventions(t) for t in olof_titles if not _is_placeholder(t)]
+    olof_titles = [_fold_source_conventions(t) for t in olof_titles if not is_placeholder(t)]
     if not olof_titles and not any(groups for groups, _ in sources.values()):
         return Quorum(verdict="unavailable", sources={name: None for name in sources})
 
@@ -560,9 +596,10 @@ class PremiereSong(TypedDict):
         song: Display title (``song_performances.song_canonical``).
         ours: Whether our corpus has no earlier performance of this song in
             the same ``tour_name`` (the D-02 source).
-        setlistfm: Same question answered from setlist.fm's own tour
-            grouping, or ``None`` when setlist.fm has no data for this show
-            or doesn't list this song (source has no data / song unmatched).
+        setlistfm: Same question answered from setlist.fm, scoped to our
+            tour's date span (:func:`_tour_start_date`), or ``None`` when
+            setlist.fm has no data for this show or doesn't list this song
+            (source has no data / song unmatched).
         agrees: ``ours == setlistfm``, or ``None`` when ``setlistfm`` is ``None``.
     """
 
@@ -661,6 +698,19 @@ def _best_setlistfm_id(
     return best_id
 
 
+def _tour_start_date(conn: sqlite3.Connection, tour_name: str) -> str | None:
+    """The earliest concert-filtered ``olof_events.date_str`` for *tour_name*, or ``None``."""
+    oe_filter = _CONCERT_TYPE_FILTER.replace("event_type", "oe.event_type").replace(
+        "tour_name", "oe.tour_name"
+    )
+    row = conn.execute(
+        f"SELECT MIN(oe.date_str) AS d FROM olof_events oe"
+        f" WHERE oe.tour_name = ? AND {oe_filter} AND oe.date_str != ''",
+        (tour_name,),
+    ).fetchone()
+    return row["d"] if row and row["d"] else None
+
+
 def tour_premieres(
     conn: sqlite3.Connection, event_id: int, canonical_map: dict[str, str] | None = None,
 ) -> TourPremieres:
@@ -669,9 +719,14 @@ def tour_premieres(
     Plan Phase 3 row (b) / D-02 gate item 2: a per-song badge needs the
     computed premiere count to equal ``olof_events.tour_new_count`` (gate
     item 1, checked by the caller) *and* each badged song to also read as a
-    tour premiere on an independent source — here, setlist.fm, using
-    setlist.fm's *own* ``tour_name`` for the show (it rarely matches Olof's),
-    not Olof's.
+    tour premiere on an independent source — setlist.fm. "Independent" is
+    scoped by *our* tour's date span (this event's ``tour_name``'s earliest
+    concert-filtered ``olof_events`` date through the day before this show),
+    not by setlist.fm's own ``tour_name`` for the show: setlist.fm buckets
+    every NET-era date into one decades-wide "Never Ending Tour", which made
+    2010-03-29's real tour premieres (e.g. "Forever Young") read as
+    setlist.fm=False — setlist.fm "knew" the song from a show years earlier,
+    outside Olof's tour, not from this tour at all (C16 fix).
 
     Args:
         conn: Open SQLite connection.
@@ -713,21 +768,18 @@ def tour_premieres(
     if sfm_id is not None:
         current_titles = _clean_song_titles(sfm_groups[sfm_id])
         current_index = build_setlist_index(current_titles, cmap)
-        sfm_tour = conn.execute(
-            "SELECT tour_name FROM setlistfm_shows WHERE setlistfm_id = ?", (sfm_id,),
-        ).fetchone()
-        sfm_tour_name = (sfm_tour["tour_name"] or "") if sfm_tour else ""
+        tour_start = _tour_start_date(conn, tour_name) if tour_name else None
         earlier_titles: list[str] = []
-        if sfm_tour_name:
-            # DISTINCT: a long-running tour (e.g. "Never Ending Tour" spans decades)
-            # can carry tens of thousands of prior track rows but only a few hundred
-            # distinct titles — dedupe before the Python-side clean/index work.
+        if tour_start:
+            # DISTINCT: a long-running tour can carry many prior track rows but
+            # only a few hundred distinct titles — dedupe before the Python-side
+            # clean/index work.
             earlier_rows = conn.execute(
                 "SELECT DISTINCT l.track_name FROM setlistfm_setlist l"
                 " JOIN setlistfm_shows s USING (setlistfm_id)"
-                " WHERE s.tour_name = ? AND s.date_str != '' AND s.date_str < ?"
+                " WHERE s.date_str >= ? AND s.date_str < ?"
                 " AND COALESCE(l.is_tape, 0) = 0",
-                (sfm_tour_name, date_str),
+                (tour_start, date_str),
             ).fetchall()
             earlier_titles = _clean_song_titles(r["track_name"] for r in earlier_rows)
         earlier_index = build_setlist_index(earlier_titles, cmap)
@@ -930,21 +982,46 @@ class TracklistCheck(TypedDict):
     agrees: bool | None
 
 
-def _tuit_setlist_titles(conn: sqlite3.Connection, lb_number: int) -> list[str] | None:
-    """Raw song titles from ``tuit_recordings.setlist_json`` for *lb_number*, or ``None``."""
-    row = conn.execute(
-        "SELECT setlist_json FROM tuit_recordings WHERE lb_number = ?"
-        " AND setlist_json IS NOT NULL AND setlist_json != '' LIMIT 1",
-        (lb_number,),
-    ).fetchone()
-    if row is None:
-        return None
+def _parse_setlist_json_titles(raw_json: str) -> list[str] | None:
+    """Parse a ``tuit_recordings.setlist_json`` value into song titles, or ``None``.
+
+    ``None`` covers both an unparsable value and a valid-but-empty list
+    (``'[]'``) — the latter means TUIT recorded no tracklist for that
+    recording, not a tracklist of zero songs, so callers must treat it the
+    same as "no ``setlist_json`` row" rather than as a disagreement (C16 fix:
+    this previously returned ``[]`` for ``'[]'``, which made
+    :func:`tracklist_check` / :func:`tracklist_corpus_agreement` count 294
+    TUIT-has-no-tracklist LBs — 223 of them with an ``entries.setlist`` to
+    compare against — as TUIT-disagrees-with-everything).
+    """
     try:
-        items = json.loads(row["setlist_json"])
+        items = json.loads(raw_json)
     except (TypeError, ValueError):
-        _log.warning("tuit_recordings.setlist_json unparsable for lb_number=%s", lb_number)
         return None
-    return [x.get("song", "") for x in items if isinstance(x, dict) and x.get("song")]
+    titles = [x.get("song", "") for x in items if isinstance(x, dict) and x.get("song")]
+    return titles or None
+
+
+def _tuit_setlist_titles(conn: sqlite3.Connection, lb_number: int) -> list[str] | None:
+    """Raw song titles from ``tuit_recordings.setlist_json`` for *lb_number*, or ``None``.
+
+    Tries each of the LB's TUIT recordings in ``rec_id`` order, in case an
+    earlier one has an empty/unparsable ``setlist_json`` but a later one has
+    real data.
+    """
+    rows = conn.execute(
+        "SELECT setlist_json FROM tuit_recordings WHERE lb_number = ?"
+        " AND setlist_json IS NOT NULL AND setlist_json != '' ORDER BY rec_id",
+        (lb_number,),
+    ).fetchall()
+    for row in rows:
+        titles = _parse_setlist_json_titles(row["setlist_json"])
+        if titles is not None:
+            return titles
+        _log.debug(
+            "tuit_recordings.setlist_json empty/unparsable for lb_number=%s", lb_number,
+        )
+    return None
 
 
 def _tracklist_compare(
@@ -1012,17 +1089,26 @@ def tracklist_corpus_agreement(conn: sqlite3.Connection) -> dict[str, int | floa
     ).fetchall()
     tuit_rows = conn.execute(
         "SELECT lb_number, setlist_json FROM tuit_recordings WHERE lb_number IS NOT NULL"
-        " AND setlist_json IS NOT NULL AND setlist_json != ''"
+        " AND setlist_json IS NOT NULL AND setlist_json != '' ORDER BY lb_number, rec_id"
     ).fetchall()
-    tuit_by_lb: dict[int, str] = {}
+    # Per LB, the first recording (by rec_id) whose setlist_json actually parses
+    # to a non-empty list — an earlier recording's '[]' (no tracklist recorded
+    # for that torrent) must not shadow a later recording's real one, and must
+    # not itself be treated as "TUIT disagrees" (C16 fix, see
+    # _parse_setlist_json_titles).
+    tuit_by_lb: dict[int, list[str]] = {}
     for r in tuit_rows:
-        tuit_by_lb.setdefault(r["lb_number"], r["setlist_json"])
+        if r["lb_number"] in tuit_by_lb:
+            continue
+        titles = _parse_setlist_json_titles(r["setlist_json"])
+        if titles is not None:
+            tuit_by_lb[r["lb_number"]] = titles
 
     total = 0
     agree = 0
     for r in entry_rows:
-        raw_json = tuit_by_lb.get(r["lb_number"])
-        if raw_json is None:
+        tuit_titles_raw = tuit_by_lb.get(r["lb_number"])
+        if tuit_titles_raw is None:
             continue
         lb_songs = [
             t["title"] for t in parse_entry_tracklist(r["setlist"])
@@ -1030,15 +1116,738 @@ def tracklist_corpus_agreement(conn: sqlite3.Connection) -> dict[str, int | floa
         ]
         if not lb_songs:
             continue
-        try:
-            items = json.loads(raw_json)
-        except (TypeError, ValueError):
-            continue
-        tuit_titles_raw = [x.get("song", "") for x in items if isinstance(x, dict) and x.get("song")]
-        if not tuit_titles_raw:
-            continue
         total += 1
         if _tracklist_compare(lb_songs, tuit_titles_raw, cmap)["agrees"]:
             agree += 1
 
     return {"total": total, "agree": agree, "rate": (agree / total) if total else 0.0}
+
+
+def _table_exists(conn: sqlite3.Connection, name: str) -> bool:
+    """Whether *name* exists in *conn*'s schema (mirrors ``rules._table_exists_local``)."""
+    row = conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name = ?", (name,),
+    ).fetchone()
+    return row is not None
+
+
+# ---------------------------------------------------------------------------
+# 3d — file format (plan Phase 3 row (d), D-11 basis, audit Q1-d)
+# ---------------------------------------------------------------------------
+
+# Matches both the lineage-text spelling ("24bit/96kHz", "16-bit / 44.1 kHz")
+# and the bare "16/44" shorthand TUIT's own `format` field uses ("FLAC 16/44").
+# The bare form requires a leading digit run of 1-2 and a trailing one of 2-3
+# (with an optional decimal, e.g. "44.1") so it doesn't fire on unrelated
+# digit pairs (track numbers, "2 files") — lineage/format text is the only
+# text this ever runs against, never free-form description prose.
+_RES_TOKEN_RE = re.compile(
+    r"(\d{1,2})\s*-?\s*bit\s*/\s*(\d{2,3}(?:\.\d+)?)\s*k?hz"
+    r"|\b(\d{1,2})\s*/\s*(\d{2,3}(?:\.\d+)?)\b",
+    re.IGNORECASE,
+)
+
+# Real audio bit depths / sample rates only. Without this whitelist the bare
+# "N/M" alternative above (needed for TUIT's "FLAC 16/44") also fires on
+# unrelated digit pairs a lineage chain's free text can carry — dates,
+# fractions, model numbers — e.g. live corpus false positives "10/1", "11/0",
+# "08/7", "3/17", "11/9" that aren't resolutions at all (C16 fix, found while
+# sampling file_format_check disagreements).
+_VALID_BIT_DEPTHS = {"8", "16", "20", "24", "32"}
+_VALID_SAMPLE_RATES = {"22", "32", "44", "48", "88", "96", "176", "192"}
+
+# entries.description carries an unstructured "Lineage: ..." clause the
+# scraper never split into its own column (only "Source:"/"Recording:" feed
+# entries.source_chain, and only as a fallback when there's no "Source:"
+# clause — see backend.db.extract_taper_and_source's step 4). This is the
+# same clause TUIT's own scraper already isolates as tuit_recordings.lineage;
+# reading it straight from entries.description means an LB whose entries row
+# predates a TUIT recording (or has no matching lb_verified TUIT row) still
+# gets a lineage-derived resolution.
+_ENTRY_LINEAGE_RE = re.compile(r"\bLineage\s*:\s*(.+)", re.IGNORECASE)
+
+
+def parse_resolution_tokens(text: str) -> list[str]:
+    """Resolution figures found in *text*, left to right, normalised to ``"BIT/KHZ"``.
+
+    Reusable by D-11 (C22)'s "16/44 file" / "recorded 24/96" labels as well as
+    this chunk's :func:`file_format_check` — kept a pure string function (no DB
+    access) so both call it the same way.
+
+    Args:
+        text: Free text — a lineage chain (``' > '``-joined hops) or a TUIT
+            ``format`` string (``'FLAC 16/44'``).
+
+    Returns:
+        Each match as ``"<bit>/<khz>"`` with the kHz figure truncated to an
+        int (``"44.1kHz"`` -> ``"44"``, matching how TUIT's own ``format``
+        field states it), in the order they appear in *text*. Empty if none.
+    """
+    out: list[str] = []
+    for m in _RES_TOKEN_RE.finditer(text or ""):
+        bit, khz = (m.group(1), m.group(2)) if m.group(1) else (m.group(3), m.group(4))
+        try:
+            khz_i = str(int(float(khz)))
+        except ValueError:
+            khz_i = khz
+        if bit not in _VALID_BIT_DEPTHS or khz_i not in _VALID_SAMPLE_RATES:
+            continue
+        out.append(f"{bit}/{khz_i}")
+    return out
+
+
+def _recorded_and_final(
+    resolutions: list[str], file_res: str | None = None,
+) -> tuple[str | None, str | None]:
+    """``(recorded_res, final_res)`` from an ordered resolution-token list.
+
+    ``final_res`` is set when the text documents an actual conversion step —
+    a second, distinct token after the recorder's (as in LB-08485's
+    "Soundforge (... convert to 16bit/44.1kHz)"). When the text mentions only
+    one resolution (no explicit conversion figure — the majority pattern
+    found sampling live ``file_format_check`` disagreements for C16, e.g.
+    LB-2262, LB-3942, LB-4884: description states only the recorder's rate,
+    the FLAC is a lower, undocumented rate), that lone value is only reported
+    as ``final_res`` when it matches *file_res* — a real confirmation, not a
+    guess. A lone value that *disagrees* with the file is genuinely
+    ambiguous (an undocumented conversion happened, or the recorder figure
+    was simply never updated) rather than a documented disagreement, so it
+    reads ``final_res=None`` (``agrees=None``), not a false "disagrees".
+
+    Args:
+        resolutions: :func:`parse_resolution_tokens`' output, in text order.
+        file_res: The file record's resolution, if any — used only to decide
+            whether a lone recorder-only figure counts as a confirmed final.
+
+    Returns:
+        ``(recorded_res, final_res)``; both ``None`` if *resolutions* is empty.
+    """
+    if not resolutions:
+        return None, None
+    recorded_res = resolutions[0]
+    last = resolutions[-1]
+    if last != recorded_res:
+        return recorded_res, last
+    if file_res is not None and last == file_res:
+        return recorded_res, last
+    return recorded_res, None
+
+
+def _entries_lineage_text(description: str | None) -> str | None:
+    """The free-text ``Lineage:`` clause of *description*, or ``None``."""
+    if not description:
+        return None
+    m = _ENTRY_LINEAGE_RE.search(description)
+    if not m:
+        return None
+    text = m.group(1).strip()
+    return text or None
+
+
+class FileFormatCheck(TypedDict):
+    """Result of :func:`file_format_check`.
+
+    Attributes:
+        lb_number: The LB entry checked.
+        file_res: TUIT's ``lb_verified`` file record resolution
+            (e.g. ``"16/44"``), or ``None`` when there's no verified TUIT
+            recording for this LB.
+        recorded_res: The first resolution figure in the combined lineage
+            text (recorder-stage), or ``None`` when neither side has one.
+        final_res: The last resolution figure in the combined lineage text,
+            but only when it's a genuine second, distinct value — i.e. the
+            text documents an actual conversion step (see
+            :func:`_recorded_and_final`); ``None`` when the text names only
+            the recorder's resolution with no stated conversion.
+        basis: ``"file+lineage"`` when both the file record and a lineage
+            resolution exist, ``"file"`` / ``"lineage"`` when only one does,
+            ``"none"`` when neither does.
+        agrees: ``file_res == final_res``, or ``None`` when either is
+            missing.
+    """
+
+    lb_number: int
+    file_res: str | None
+    recorded_res: str | None
+    final_res: str | None
+    basis: str
+    agrees: bool | None
+
+
+def _tuit_file_record(conn: sqlite3.Connection, lb_number: int) -> tuple[str | None, str | None]:
+    """``(file_res, tuit_lineage_text)`` from the ``lb_verified=1`` TUIT recording."""
+    row = conn.execute(
+        "SELECT format, lineage FROM tuit_recordings WHERE lb_number = ? AND lb_verified = 1"
+        " ORDER BY rec_id LIMIT 1",
+        (lb_number,),
+    ).fetchone()
+    if row is None:
+        return None, None
+    tokens = parse_resolution_tokens(row["format"] or "")
+    return (tokens[0] if tokens else None), row["lineage"]
+
+
+def file_format_check(conn: sqlite3.Connection, lb_number: int) -> FileFormatCheck:
+    """TUIT's verified file record vs the lineage text's stated resolutions (D-11, Q1-d).
+
+    Args:
+        conn: Open SQLite connection.
+        lb_number: ``entries.lb_number`` to check.
+
+    Returns:
+        A :class:`FileFormatCheck`.
+    """
+    row = conn.execute(
+        "SELECT description, source_chain FROM entries WHERE lb_number = ?", (lb_number,),
+    ).fetchone()
+    entries_lineage = _entries_lineage_text(row["description"] if row else None)
+    file_res, tuit_lineage = None, None
+    if _table_exists(conn, "tuit_recordings"):
+        file_res, tuit_lineage = _tuit_file_record(conn, lb_number)
+
+    chain_text = " > ".join(t for t in (entries_lineage, tuit_lineage) if t)
+    resolutions = parse_resolution_tokens(chain_text)
+    recorded_res, final_res = _recorded_and_final(resolutions, file_res)
+
+    if file_res and resolutions:
+        basis = "file+lineage"
+    elif file_res:
+        basis = "file"
+    elif resolutions:
+        basis = "lineage"
+    else:
+        basis = "none"
+
+    agrees = (file_res == final_res) if (file_res and final_res) else None
+    return FileFormatCheck(
+        lb_number=lb_number, file_res=file_res, recorded_res=recorded_res,
+        final_res=final_res, basis=basis, agrees=agrees,
+    )
+
+
+def file_format_corpus_agreement(conn: sqlite3.Connection) -> dict[str, int | float]:
+    """Corpus-wide file-record-vs-lineage agreement rate (D-11, Q1-d).
+
+    One preload pass over ``entries``/``tuit_recordings`` (the ``lb_verified``
+    rows only) rather than a per-LB query pair.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Returns:
+        ``{"total": LBs with both a file record and a lineage-documented
+        final resolution (:func:`_recorded_and_final`'s ``final_res`` is
+        non-``None`` — a lone recorder-resolution mention with no stated
+        conversion doesn't count), "agree": agreeing count, "rate": share}``.
+    """
+    if not _table_exists(conn, "tuit_recordings"):
+        return {"total": 0, "agree": 0, "rate": 0.0}
+
+    entry_rows = conn.execute(
+        "SELECT lb_number, description, source_chain FROM entries"
+        " WHERE description IS NOT NULL AND description != ''"
+    ).fetchall()
+    entries_by_lb: dict[int, str | None] = {
+        r["lb_number"]: _entries_lineage_text(r["description"]) for r in entry_rows
+    }
+
+    tuit_rows = conn.execute(
+        "SELECT lb_number, format, lineage FROM tuit_recordings"
+        " WHERE lb_number IS NOT NULL AND lb_verified = 1"
+    ).fetchall()
+    tuit_by_lb: dict[int, sqlite3.Row] = {}
+    for r in tuit_rows:
+        tuit_by_lb.setdefault(r["lb_number"], r)
+
+    total = 0
+    agree = 0
+    for lb_number, tuit_row in tuit_by_lb.items():
+        file_tokens = parse_resolution_tokens(tuit_row["format"] or "")
+        if not file_tokens:
+            continue
+        file_res = file_tokens[0]
+        chain_text = " > ".join(
+            t for t in (entries_by_lb.get(lb_number), tuit_row["lineage"]) if t
+        )
+        _recorded_res, final_res = _recorded_and_final(
+            parse_resolution_tokens(chain_text), file_res,
+        )
+        if final_res is None:
+            continue
+        total += 1
+        if file_res == final_res:
+            agree += 1
+
+    return {"total": total, "agree": agree, "rate": (agree / total) if total else 0.0}
+
+
+# ---------------------------------------------------------------------------
+# 3e — taper (plan Phase 3 row (e), R-T4, audit Q1-e)
+# ---------------------------------------------------------------------------
+
+
+def taper_agreement(ours: str, raws: list[str]) -> tuple[str, list[str]]:
+    """Verdict for one LB's ours-vs-TUIT taper comparison — shared with R-T4.
+
+    Factored out of :func:`backend.qc.rules.rule_t4` so the QC rule and this
+    chunk's :func:`taper_check` / :func:`taper_corpus_agreement` can never
+    drift: both call this, not a separate copy of the alias-splitting logic.
+
+    Args:
+        ours: Our ``taper_attributions.taper_normalised`` for the LB.
+        raws: TUIT ``tuit_recordings.taper`` raw strings for the LB
+            (non-blank rows only).
+
+    Returns:
+        ``(verdict, canonical_parts)``: ``"corroborated"`` when any of
+        ``raws``' canonical parts (:func:`backend.taper_curation.tuit_taper_parts`)
+        equals ``ours``, ``"disputed"`` when *raws* is non-empty but none do,
+        ``"unavailable"`` when *raws* is empty (TUIT has no usable taper text).
+    """
+    from backend import taper_curation
+
+    theirs = [c for raw in raws for c in taper_curation.tuit_taper_parts(raw)]
+    if not theirs:
+        return "unavailable", theirs
+    return ("corroborated" if ours in theirs else "disputed"), theirs
+
+
+def _reload_taper_aliases(conn: sqlite3.Connection) -> None:
+    """Reload the live taper-alias tables before comparing (the R-T4 gotcha)."""
+    from backend import db as _db
+
+    db_file = conn.execute("PRAGMA database_list").fetchone()[2]
+    _db.reload_taper_aliases(db_file or None)
+
+
+class TaperCheck(TypedDict):
+    """Result of :func:`taper_check`.
+
+    Attributes:
+        lb_number: The LB entry checked.
+        ours: Our ``taper_attributions.taper_normalised``, or ``None`` when
+            we have no (non-conflict) attribution for this LB.
+        tuit_tapers: Raw TUIT ``taper`` strings for the LB (non-blank rows).
+        tuit_canonical: Canonical tapers TUIT's strings resolve to
+            (:func:`backend.taper_curation.tuit_taper_parts`).
+        verdict: ``"corroborated"`` / ``"disputed"`` / ``"unavailable"``.
+    """
+
+    lb_number: int
+    ours: str | None
+    tuit_tapers: list[str]
+    tuit_canonical: list[str]
+    verdict: str
+
+
+def taper_check(conn: sqlite3.Connection, lb_number: int) -> TaperCheck:
+    """``taper_attributions`` vs TUIT's declared taper for one LB (Q1-e).
+
+    Args:
+        conn: Open SQLite connection.
+        lb_number: ``entries.lb_number`` to check.
+
+    Returns:
+        A :class:`TaperCheck`.
+    """
+    if not (_table_exists(conn, "tuit_recordings") and _table_exists(conn, "taper_attributions")):
+        return TaperCheck(
+            lb_number=lb_number, ours=None, tuit_tapers=[], tuit_canonical=[],
+            verdict="unavailable",
+        )
+    _reload_taper_aliases(conn)
+
+    ours_row = conn.execute(
+        "SELECT taper_normalised, conflict FROM taper_attributions WHERE lb_number = ?",
+        (lb_number,),
+    ).fetchone()
+    raws = [
+        r["taper"] for r in conn.execute(
+            "SELECT taper FROM tuit_recordings WHERE lb_number = ?"
+            " AND TRIM(COALESCE(taper, '')) != '' ORDER BY rec_id",
+            (lb_number,),
+        )
+    ]
+    if ours_row is None or ours_row["conflict"]:
+        verdict, theirs = "unavailable", []
+        ours = ours_row["taper_normalised"] if ours_row else None
+    else:
+        ours = ours_row["taper_normalised"]
+        verdict, theirs = taper_agreement(ours, raws)
+
+    return TaperCheck(
+        lb_number=lb_number, ours=ours, tuit_tapers=raws, tuit_canonical=theirs, verdict=verdict,
+    )
+
+
+def taper_corpus_agreement(conn: sqlite3.Connection) -> dict[str, int | float]:
+    """Corpus-wide taper corroboration counts (Q1-e); mirrors R-T4's population.
+
+    One preload pass, joining ``taper_attributions`` (``conflict = 0``) to
+    ``tuit_recordings`` rows with a non-blank ``taper``, grouped by LB — the
+    same population :func:`backend.qc.rules.rule_t4` scans (its open finding
+    count is this function's ``disputed`` count).
+
+    Args:
+        conn: Open SQLite connection.
+
+    Returns:
+        ``{"total": comparable LBs, "corroborated": n, "disputed": n,
+        "rate": corroborated share of total}``.
+    """
+    if not (_table_exists(conn, "tuit_recordings") and _table_exists(conn, "taper_attributions")):
+        return {"total": 0, "corroborated": 0, "disputed": 0, "rate": 0.0}
+    _reload_taper_aliases(conn)
+
+    by_lb: dict[int, tuple[str, list[str]]] = {}
+    for lb_number, ours, raw in conn.execute(
+        "SELECT a.lb_number, a.taper_normalised, t.taper FROM taper_attributions a"
+        " JOIN tuit_recordings t ON t.lb_number = a.lb_number"
+        " WHERE a.conflict = 0 AND TRIM(COALESCE(t.taper,'')) != ''"
+        " ORDER BY a.lb_number, t.rec_id",
+    ):
+        by_lb.setdefault(lb_number, (ours, []))[1].append(raw)
+
+    total = corroborated = disputed = 0
+    for ours, raws in by_lb.values():
+        verdict, theirs = taper_agreement(ours, raws)
+        if verdict == "unavailable":
+            continue
+        total += 1
+        if verdict == "corroborated":
+            corroborated += 1
+        else:
+            disputed += 1
+
+    return {
+        "total": total, "corroborated": corroborated, "disputed": disputed,
+        "rate": (corroborated / total) if total else 0.0,
+    }
+
+
+# ---------------------------------------------------------------------------
+# 3f — venue / city (plan Phase 3 row (f), G1 identity, audit Q1-f)
+# ---------------------------------------------------------------------------
+
+_LEADING_THE_RE = re.compile(r"^\s*the\s+", re.IGNORECASE)
+_NON_ALNUM_RE = re.compile(r"[^a-z0-9\s]")
+
+# Olof and setlist.fm both write "New York City" for what bobdylan.com and
+# most other sources call "New York" — not a real disagreement (same fold
+# family as the module's _TALKIN_RE for setlists).
+_CITY_ALIASES = {
+    "new york city": "new york",
+}
+
+
+def _fold_place_name(name: str | None) -> str:
+    """Case/punctuation/accent/leading-"The" fold shared by venue and city names."""
+    if not name:
+        return ""
+    s = unicodedata.normalize("NFKD", name)
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    s = s.lower()
+    s = _LEADING_THE_RE.sub("", s)
+    s = _NON_ALNUM_RE.sub(" ", s)
+    return " ".join(s.split())
+
+
+def _fold_venue_name(name: str | None) -> str:
+    """Fold a venue name for identity comparison (e.g. "Zepp Tokyo" != "Zepp DiverCity")."""
+    return _fold_place_name(name)
+
+
+def _fold_city_name(name: str | None) -> str:
+    """Fold a city name, then apply :data:`_CITY_ALIASES`."""
+    folded = _fold_place_name(name)
+    return _CITY_ALIASES.get(folded, folded)
+
+
+def _split_bobdylan_location(location: str | None) -> str | None:
+    """bobdylan.com's ``location`` ("Tokyo, Japan" / "New York, NY") -> its city part."""
+    if not location:
+        return None
+    city = location.split(",", 1)[0].strip()
+    return city or None
+
+
+class SourceVenueMatch(TypedDict):
+    """One source's venue/city comparison against Olof, for one date.
+
+    Attributes:
+        venue: The source's venue name, or ``None``.
+        city: The source's city name, or ``None``.
+        venue_agrees: Folded-name equality with Olof's venue, or ``None``
+            when either side lacks a venue name.
+        city_agrees: Same, for city.
+    """
+
+    venue: str | None
+    city: str | None
+    venue_agrees: bool | None
+    city_agrees: bool | None
+
+
+class VenueCheck(TypedDict):
+    """Result of :func:`venue_check`.
+
+    Attributes:
+        date_str: The date checked.
+        event_id: Olof's primary event id for the date, or ``None``.
+        olof_venue: Olof's venue name, or ``None``.
+        olof_city: Olof's city name, or ``None``.
+        sources: ``{"setlistfm": SourceVenueMatch | None, "bobdylan": ...}``;
+            ``None`` when that source has no row for the date (or no group
+            could be picked when the date has several).
+        verdict: ``"corroborated"`` (venue agrees with >=1 source, feeding
+            G1), ``"disputed"`` (>=1 source has a venue but none agree),
+            ``"unavailable"`` (neither Olof nor any source has data).
+    """
+
+    date_str: str
+    event_id: int | None
+    olof_venue: str | None
+    olof_city: str | None
+    sources: dict[str, SourceVenueMatch | None]
+    verdict: str
+
+
+def _match_source_venue(
+    olof_venue: str | None, olof_city: str | None,
+    src_venue: str | None, src_city: str | None,
+) -> SourceVenueMatch:
+    """Build one :class:`SourceVenueMatch` from Olof's and a source's raw names."""
+    venue_agrees = None
+    if olof_venue and src_venue:
+        venue_agrees = _fold_venue_name(olof_venue) == _fold_venue_name(src_venue)
+    city_agrees = None
+    if olof_city and src_city:
+        city_agrees = _fold_city_name(olof_city) == _fold_city_name(src_city)
+    return SourceVenueMatch(
+        venue=src_venue or None, city=src_city or None,
+        venue_agrees=venue_agrees, city_agrees=city_agrees,
+    )
+
+
+def _bobdylan_groups_for_date(conn: sqlite3.Connection, date_iso: str) -> dict[str, list[str]]:
+    """bobdylan.com track groups (``{bobdylan_url: [track_name, ...]}``) for *date_iso*."""
+    rows = conn.execute(
+        "SELECT l.bobdylan_url, l.track_name FROM bobdylan_setlist l"
+        " JOIN bobdylan_shows s USING (bobdylan_url)"
+        " WHERE s.date_str = ? ORDER BY l.bobdylan_url, l.position",
+        (date_iso,),
+    ).fetchall()
+    groups: dict[str, list[str]] = defaultdict(list)
+    for r in rows:
+        groups[r["bobdylan_url"]].append(r["track_name"])
+    return dict(groups)
+
+
+def _best_id_for_date(
+    all_ids: list[str], track_groups: dict[str, list[str]],
+    reference_index: SetlistIndex | None, canonical_map: dict[str, str],
+) -> str | None:
+    """The id (of *all_ids*) whose tracks best match *reference_index* (see :func:`_best_group`).
+
+    Unlike :func:`_best_group`, *all_ids* is the full candidate set from the
+    source's own show table (some ids may have no tracklist rows at all —
+    ``track_groups`` is keyed only by ids that do), so a venue-only source row
+    isn't invisible just because it carries no setlist. Falls back to the
+    lowest id (deterministic) when there's one candidate or no reference
+    setlist to score against.
+
+    Args:
+        all_ids: Every candidate id for the date (e.g. every ``setlistfm_id``
+            with that ``date_str``).
+        track_groups: ``{id: [raw track titles]}`` for ids that have one.
+        reference_index: The Olof setlist index to score against.
+        canonical_map: ``song_canonical`` alias map.
+    """
+    if not all_ids:
+        return None
+    if len(all_ids) == 1 or reference_index is None:
+        return sorted(all_ids)[0]
+    best_id: str | None = None
+    best_score = -1
+    for key in sorted(all_ids):
+        score = sum(
+            1 for t in _clean_song_titles(track_groups.get(key, []))
+            if match_track(t, reference_index, canonical_map) is not None
+        )
+        if score > best_score:
+            best_id, best_score = key, score
+    return best_id
+
+
+def venue_check(
+    conn: sqlite3.Connection, date_iso: str, canonical_map: dict[str, str] | None = None,
+) -> VenueCheck:
+    """Olof's venue/city vs setlist.fm's and bobdylan.com's, for one date (G1, Q1-f).
+
+    A multi-show date's setlist.fm/bobdylan.com row is picked the same way
+    the setlist checks pick among several groups: the one whose tracklist
+    best matches Olof's (:func:`_best_id_for_date`, reusing
+    :func:`primary_event_id`'s Olof pick) — scored over every row the source
+    has for the date, not just ones with a tracklist.
+
+    Args:
+        conn: Open SQLite connection.
+        date_iso: ISO ``YYYY-MM-DD`` date.
+        canonical_map: Optional pre-loaded ``song_canonical`` alias map (saves
+            a query when called in a loop); loaded from *conn* if omitted.
+
+    Returns:
+        A :class:`VenueCheck`.
+    """
+    cmap = canonical_map if canonical_map is not None else load_canonical_map(conn)
+
+    event_id = primary_event_id(conn, date_iso)
+    olof_venue: str | None = None
+    olof_city: str | None = None
+    if event_id is not None:
+        ev = conn.execute(
+            "SELECT venue, city FROM olof_events WHERE event_id = ?", (event_id,),
+        ).fetchone()
+        if ev is not None:
+            olof_venue = (ev["venue"] or "").strip() or None
+            olof_city = (ev["city"] or "").strip() or None
+
+    olof_titles = _primary_event_titles(conn, date_iso) if event_id is not None else []
+    olof_index = build_setlist_index(olof_titles, cmap) if olof_titles else None
+
+    sfm_match: SourceVenueMatch | None = None
+    sfm_ids = [
+        r["setlistfm_id"] for r in
+        conn.execute("SELECT setlistfm_id FROM setlistfm_shows WHERE date_str = ?", (date_iso,))
+    ]
+    sfm_groups = _setlistfm_groups_for_date(conn, date_iso)
+    sfm_id = _best_id_for_date(sfm_ids, sfm_groups, olof_index, cmap)
+    if sfm_id is not None:
+        row = conn.execute(
+            "SELECT venue_name, city FROM setlistfm_shows WHERE setlistfm_id = ?", (sfm_id,),
+        ).fetchone()
+        if row is not None:
+            sfm_match = _match_source_venue(
+                olof_venue, olof_city, row["venue_name"] or None, row["city"] or None,
+            )
+
+    bd_match: SourceVenueMatch | None = None
+    bd_urls = [
+        r["bobdylan_url"] for r in
+        conn.execute("SELECT bobdylan_url FROM bobdylan_shows WHERE date_str = ?", (date_iso,))
+    ]
+    bd_groups = _bobdylan_groups_for_date(conn, date_iso)
+    bd_url = _best_id_for_date(bd_urls, bd_groups, olof_index, cmap)
+    if bd_url is not None:
+        row = conn.execute(
+            "SELECT venue, location FROM bobdylan_shows WHERE bobdylan_url = ?", (bd_url,),
+        ).fetchone()
+        if row is not None:
+            bd_match = _match_source_venue(
+                olof_venue, olof_city, row["venue"] or None,
+                _split_bobdylan_location(row["location"]),
+            )
+
+    sources = {"setlistfm": sfm_match, "bobdylan": bd_match}
+    # A source only counts toward the verdict when it actually has a venue
+    # name to compare — a setlistfm/bobdylan.com row that exists for the date
+    # but carries no venue (blank field) is "no data", not "disagrees" (C16
+    # fix: found sampling live disagreements — 1959-01-10's setlist.fm row has
+    # a city but no venue_name, which previously read as "disputed" against
+    # Olof's venue instead of "unavailable").
+    comparable = [m for m in sources.values() if m is not None and m["venue_agrees"] is not None]
+    agrees_any = any(m["venue_agrees"] for m in comparable)
+
+    if agrees_any:
+        verdict = "corroborated"
+    elif comparable:
+        verdict = "disputed"
+    else:
+        verdict = "unavailable"
+
+    return VenueCheck(
+        date_str=date_iso, event_id=event_id, olof_venue=olof_venue, olof_city=olof_city,
+        sources=sources, verdict=verdict,
+    )
+
+
+def venue_corpus_agreement(conn: sqlite3.Connection) -> dict[str, int | float]:
+    """Corpus-wide venue corroboration counts (G1, Q1-f).
+
+    One preload pass over ``olof_events``, ``setlistfm_shows`` and
+    ``bobdylan_shows`` (grouped by date), rather than :func:`venue_check`'s
+    per-date queries. Track data isn't preloaded for the group-picking step
+    here — dates with several setlist.fm/bobdylan.com rows fall back to the
+    lowest key (deterministic, same as :func:`_best_id_for_date` with no
+    reference index) rather than re-running the setlist scorer corpus-wide;
+    this only affects the rare multi-show date where a source itself has
+    more than one row.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Returns:
+        ``{"total": dates with an Olof venue and >=1 source row,
+        "corroborated": n, "disputed": n, "rate": corroborated share}``.
+    """
+    ev_rows = conn.execute(
+        "SELECT event_id, date_str, event_type, tour_name, venue, city FROM olof_events"
+        " WHERE date_str != ''"
+    ).fetchall()
+    events_by_date: dict[str, list[sqlite3.Row]] = defaultdict(list)
+    for r in ev_rows:
+        events_by_date[r["date_str"]].append(r)
+
+    sfm_rows = conn.execute(
+        "SELECT date_str, setlistfm_id, venue_name, city FROM setlistfm_shows"
+    ).fetchall()
+    sfm_by_date: dict[str, list[sqlite3.Row]] = defaultdict(list)
+    for r in sfm_rows:
+        sfm_by_date[r["date_str"]].append(r)
+
+    bd_rows = conn.execute(
+        "SELECT date_str, bobdylan_url, venue, location FROM bobdylan_shows"
+    ).fetchall()
+    bd_by_date: dict[str, list[sqlite3.Row]] = defaultdict(list)
+    for r in bd_rows:
+        bd_by_date[r["date_str"]].append(r)
+
+    total = corroborated = disputed = 0
+    for date_str, rows in events_by_date.items():
+        concerts = [r for r in rows if _is_concert_row(r["event_type"], r["tour_name"])]
+        pool = concerts or rows
+        primary = min(pool, key=lambda r: r["event_id"])
+        olof_venue = (primary["venue"] or "").strip() or None
+        if not olof_venue:
+            continue
+
+        sfm_row = min(sfm_by_date.get(date_str, []), key=lambda r: r["setlistfm_id"], default=None)
+        bd_row = min(bd_by_date.get(date_str, []), key=lambda r: r["bobdylan_url"], default=None)
+        # Only a row with an actual venue name counts as comparable — a row
+        # that merely exists for the date (blank venue_name/venue) is "no
+        # data", not "disagrees" (same C16 fix as venue_check's `comparable`).
+        sfm_comparable = sfm_row is not None and bool(sfm_row["venue_name"])
+        bd_comparable = bd_row is not None and bool(bd_row["venue"])
+        if not sfm_comparable and not bd_comparable:
+            continue
+
+        agrees_any = False
+        if sfm_comparable:
+            agrees_any = agrees_any or (
+                _fold_venue_name(olof_venue) == _fold_venue_name(sfm_row["venue_name"])
+            )
+        if bd_comparable:
+            agrees_any = agrees_any or (
+                _fold_venue_name(olof_venue) == _fold_venue_name(bd_row["venue"])
+            )
+
+        total += 1
+        if agrees_any:
+            corroborated += 1
+        else:
+            disputed += 1
+
+    return {
+        "total": total, "corroborated": corroborated, "disputed": disputed,
+        "rate": (corroborated / total) if total else 0.0,
+    }

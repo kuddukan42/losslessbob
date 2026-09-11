@@ -1,11 +1,16 @@
 """Tests for backend.dossier_fields (TODO-342 D-01 track matcher) and the C13
 ``_ENTRY_TRACK_MARKER_RE`` fix in backend.db. Pure functions — no DB needed."""
+import json
+import sqlite3
+
 import pytest
 
 from backend import db
 from backend.dossier_fields import (
     build_setlist_index,
     clean_track_title,
+    completeness,
+    fits_show,
     is_non_song,
     match_track,
     parse_entry_tracklist,
@@ -125,6 +130,14 @@ class TestMatchTrack:
         m = match_track("Mr Tambourine Man", ["Gates Of Eden", "Mr. Tambourine Man"])
         assert m == {"candidate": "Mr. Tambourine Man", "tier": "exact"}
 
+    def test_exact_ignores_spacing(self):
+        m = match_track("My Wife's Hometown", ["My Wife's Home Town"])
+        assert m == {"candidate": "My Wife's Home Town", "tier": "exact"}
+
+    def test_exact_folds_talkin(self):
+        m = match_track("T.V. Talkin' Song", ["T.V. Talking Song"])
+        assert m == {"candidate": "T.V. Talking Song", "tier": "exact"}
+
     def test_exact_number_word(self):
         m = match_track("Rainy Day Women Nos. 12 & 35", ["Rainy Day Women # 12 & 35"])
         assert m["tier"] == "exact"
@@ -153,3 +166,104 @@ class TestMatchTrack:
         index = build_setlist_index(["Desolation Row", "", "Cold Irons Bound"])
         assert index.titles == ["Desolation Row", "Cold Irons Bound"]
         assert match_track("Cold Irons Bound", index)["candidate"] == "Cold Irons Bound"
+
+
+class TestCleanTrackTitleC17:
+    @pytest.mark.parametrize("raw,expected", [
+        ("(encore break)", None),
+        ("(2nd encore break)", None),
+        ("Forever Young, Encore 1", "Forever Young"),
+        ("All Along The Watchtower, Encore 2", "All Along The Watchtower"),
+        ("Jolene / Band Intro", "Jolene"),
+        ("Love Minus Zero/No Limit", "Love Minus Zero/No Limit"),
+    ])
+    def test_c17_gaps(self, raw, expected):
+        assert clean_track_title(raw) == expected
+
+
+class TestFitsShow:
+    def test_misdated_compilation_does_not_fit(self):
+        assert not fits_show(25, 0, 12, 0, glued=False)
+
+    def test_short_excerpt_always_fits(self):
+        assert fits_show(2, 0, 12, 0, glued=False)
+
+    def test_share_threshold(self):
+        assert fits_show(5, 1, 12, 1, glued=False)      # 20% exactly
+        assert not fits_show(6, 1, 12, 1, glued=False)  # 16%
+
+    def test_superset_of_setlist_fits(self):
+        assert fits_show(40, 4, 7, 4, glued=False)
+
+    def test_glued_fits(self):
+        assert fits_show(25, 0, 12, 0, glued=True)
+
+
+def _completeness_db(tuit_setlist_json=None):
+    conn = sqlite3.connect(":memory:")
+    conn.row_factory = sqlite3.Row
+    conn.executescript("""
+        CREATE TABLE olof_songs (event_id INTEGER, position INTEGER, song_title TEXT,
+                                 subtitle TEXT);
+        CREATE TABLE entries (lb_number INTEGER, setlist TEXT, timing TEXT);
+        CREATE TABLE tuit_recordings (rec_id INTEGER PRIMARY KEY, lb_number INTEGER,
+                                      setlist_json TEXT);
+    """)
+    songs = ["Ballad Of Hollis Brown", "Mr. Tambourine Man", "Gates Of Eden",
+             "Unidentified Instrumental", "She Belongs To Me", "Mr. Tambourine Man"]
+    conn.executemany(
+        "INSERT INTO olof_songs VALUES (1, ?, ?, '')", list(enumerate(songs, start=1)))
+    conn.executemany("INSERT INTO entries VALUES (?, ?, ?)", [
+        (10, "1. Ballad Of Hollis Brown, 2. Mr Tambourine Man, missing,"
+             " 3. Gates Of Eden (incomplete), 4. She Belongs To Me", "40min"),
+        (11, "1. Mr Tambourine Man, 2. Mr Tambourine Man (reprise)", "10min"),
+        (12, "1. Like A Rolling Stone, 2. Tombstone Blues, 3. Desolation Row", ""),
+        (13, "", "60min"),
+    ])
+    if tuit_setlist_json is not None:
+        conn.execute(
+            "INSERT INTO tuit_recordings (lb_number, setlist_json) VALUES (10, ?)",
+            (tuit_setlist_json,),
+        )
+    return conn
+
+
+class TestCompleteness:
+    def test_positions_missing_partial(self):
+        res = completeness(_completeness_db(), 1, [10], canonical_map={})[10]
+        # Placeholder "Unidentified Instrumental" isn't a setlist song: total 5.
+        assert (res["basis"], res["songs_present"], res["songs_total"]) == ("tracklist", 3, 5)
+        assert [m["position"] for m in res["missing"]] == [2, 6]
+        assert res["partial"] == [3]
+        assert res["confidence"] == "stated" and res["fits_show"] and res["show_bar"]
+
+    def test_repeated_song_fills_both_positions(self):
+        res = completeness(_completeness_db(), 1, [11], canonical_map={})[11]
+        assert res["songs_present"] == 2
+        assert [m["position"] for m in res["missing"]] == [1, 3, 5]
+
+    def test_misdated_source_leaves_verdict(self):
+        res = completeness(_completeness_db(), 1, [12], canonical_map={})[12]
+        assert res["songs_present"] == 0 and not res["fits_show"] and not res["show_bar"]
+        assert res["extra"] == ["Like A Rolling Stone", "Tombstone Blues", "Desolation Row"]
+
+    def test_runtime_basis_never_infers(self):
+        res = completeness(_completeness_db(), 1, [13, 99], canonical_map={})
+        assert 99 not in res
+        assert res[13]["basis"] == "runtime" and res[13]["songs_present"] is None
+        assert not res[13]["show_bar"]
+
+    def test_tuit_agreeing_count_corroborates(self):
+        tuit = json.dumps([{"song": s} for s in
+                           ("Ballad Of Hollis Brown", "Gates Of Eden", "She Belongs To Me")])
+        res = completeness(_completeness_db(tuit), 1, [10], canonical_map={})[10]
+        assert (res["confidence"], res["tuit_present"]) == ("corroborated", 3)
+
+    def test_tuit_different_count_is_inferred_and_hides_bar(self):
+        tuit = json.dumps([{"song": "Ballad Of Hollis Brown"}])
+        res = completeness(_completeness_db(tuit), 1, [10], canonical_map={})[10]
+        assert (res["confidence"], res["tuit_present"], res["show_bar"]) == ("inferred", 1, False)
+
+    def test_tuit_empty_list_is_no_tracklist(self):
+        res = completeness(_completeness_db("[]"), 1, [10], canonical_map={})[10]
+        assert (res["confidence"], res["tuit_present"]) == ("stated", None)
