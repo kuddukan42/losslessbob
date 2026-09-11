@@ -847,7 +847,13 @@ CREATE TABLE IF NOT EXISTS olof_events (
     releases_raw    TEXT NOT NULL DEFAULT '',
     references_raw  TEXT NOT NULL DEFAULT '',
     updated_raw     TEXT NOT NULL DEFAULT '',-- 'Session info updated 6 February 2001'
-    raw_text        TEXT NOT NULL DEFAULT '' -- full block plain text (search + reparse safety net)
+    raw_text        TEXT NOT NULL DEFAULT '',-- full block plain text (search + reparse safety net)
+    -- Dossier redesign Phase 1 (TODO-342); NULL/'' on bobserve rows. Also added by init_db's
+    -- migration, so this order matches a migrated DB.
+    rotation_new      INTEGER,               -- 'N new songs (P%) compared to previous concert'
+    rotation_pct      INTEGER,               -- the P of that line
+    tour_new_count    INTEGER,               -- 'N new songs for this tour'
+    venue_history_raw TEXT NOT NULL DEFAULT '' -- 'Other Bob Dylan shows in X:' blob, out of notes
 );
 CREATE INDEX IF NOT EXISTS idx_olof_events_date ON olof_events(date_str);
 CREATE INDEX IF NOT EXISTS idx_olof_events_tour ON olof_events(tour_name);
@@ -863,6 +869,7 @@ CREATE TABLE IF NOT EXISTS olof_songs (
     take_status  TEXT NOT NULL DEFAULT '',   -- complete | breakdown | rehearsal | false start | incomplete
     annotations  TEXT NOT NULL DEFAULT '',   -- 'acoustic w band', 'harmonica', …
     released_on  TEXT NOT NULL DEFAULT '',   -- release titles resolved from position ranges, '; '-joined
+    subtitle     TEXT NOT NULL DEFAULT '',   -- parenthetical alternate title, not a credit (TODO-342)
     PRIMARY KEY (event_id, position)
 );
 CREATE INDEX IF NOT EXISTS idx_olof_songs_title ON olof_songs(song_title);
@@ -3117,6 +3124,21 @@ def init_db(db_path=None):
         _ie_cols = [r[1] for r in conn.execute("PRAGMA table_info(integrity_events)").fetchall()]
         if "mount_id" not in _ie_cols:
             conn.execute("ALTER TABLE integrity_events ADD COLUMN mount_id INTEGER")
+        # Migration: Olof columns for the show-dossier redesign (TODO-342 Phase 1) —
+        # the rotation stat and the venue-history blob move out of notes, and
+        # parenthetical subtitles out of credits.
+        _oe_cols = {r[1] for r in conn.execute("PRAGMA table_info(olof_events)").fetchall()}
+        for _col, _ddl in (
+            ("rotation_new", "INTEGER"),
+            ("rotation_pct", "INTEGER"),
+            ("tour_new_count", "INTEGER"),
+            ("venue_history_raw", "TEXT NOT NULL DEFAULT ''"),
+        ):
+            if _col not in _oe_cols:
+                conn.execute(f"ALTER TABLE olof_events ADD COLUMN {_col} {_ddl}")
+        _os_cols = {r[1] for r in conn.execute("PRAGMA table_info(olof_songs)").fetchall()}
+        if "subtitle" not in _os_cols:
+            conn.execute("ALTER TABLE olof_songs ADD COLUMN subtitle TEXT NOT NULL DEFAULT ''")
         # Migration: add files_moved to file_integrity_scans (TODO-297)
         _fis_cols = [
             r[1] for r in conn.execute("PRAGMA table_info(file_integrity_scans)").fetchall()

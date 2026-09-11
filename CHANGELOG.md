@@ -1,3 +1,24 @@
+[2026-09-10] — Olof columns and the reparse diff gate for the dossier redesign (dossier C01)
+Added: backend/db.py, backend/olof_parser.py: olof_events gains rotation_new, rotation_pct,
+  tour_new_count and venue_history_raw; olof_songs gains subtitle. Fresh DBs get them from the
+  CREATE TABLE, existing ones from an idempotent PRAGMA-checked ALTER in init_db (applied to the
+  live DB on restart). The parser writes them but does not fill them yet — no behaviour change.
+Added: tools/olof_reparse_diff.py: `snapshot` copies the Olof tables to .debug/olof_before.db
+  (refuses to overwrite the baseline without --force); `diff` explains every changed event by the
+  fix that accounts for it (P1a gained songs, P1b date-line annotations, P1c venue blob, P1d
+  rotation stat, P1e title/credit re-split, P1f release wording, P1g bobtalk/references lines)
+  and exits 1 on any UNEXPLAINED change.
+Added: tools/dossier_acceptance.py --parser: Phase 1 corpus counts plus PASS/FAIL checks.
+  Baseline: 84 zero-song concerts (82 with numbered songs on the page), 352 truncated, 6,222
+  date-line annotation rows, 2,714 rotation-stat annotation rows, 1,867 events with the stat in
+  notes/releases, 3,102 pages stating it, 80 venue blobs in notes, 306 "And I'll Go Mine" stored
+  as credits, 292 titles ending in a composer credit — 0/9 checks pass. 1986-02-24 parses 7 of
+  25 songs, 1975-12-08 0 of 22 (bobdylan.com and TUIT agree on 25 / 22).
+Added: tests/test_olof_parser_fixes.py: migration idempotence and old-DB upgrade, upsert of the new
+  columns, classifier cases per bucket and the unexplained paths, snapshot/diff round trip.
+Changed: instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: C01 done with the baseline; P1e caution —
+  single-writer credits such as "(Hank Snow)" carry no composer marker and must stay credits.
+
 [2026-09-10] — Show dossier redesign opens: ledger and branch (dossier C00)
 Added: TODO.md: TODO-342 tracks the redesign (spec Rev A) across plan chunks C00–C35.
 Added: BUGS.md: the Phase 0 bugs — BUG-340 guest-set headers stop the Olof song walk, BUG-341

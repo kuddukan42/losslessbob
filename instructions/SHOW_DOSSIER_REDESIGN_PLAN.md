@@ -141,7 +141,7 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
 | # | Ph | Scope | Needs | Model | Done when | Status |
 |---|---|---|---|---|---|---|
 | C00 | 0 | Ledger: redesign TODO + the Phase 0 BUGs; branch `feat/dossier-redesign` | — | orch. | IDs: TODO-342; BUG-340 (F1), 341 (F2), 342 (F4), 343 (F14), 344 (F16), 345 (F17), 346 (NULL-date picks) | done |
-| C01 | 1 | New Olof columns (idempotent) + upsert lists; `tools/olof_reparse_diff.py`; `tools/dossier_acceptance.py --parser` baseline. No parser behaviour change | C00 | sonnet | `init_db` twice is clean; baseline counts recorded | todo |
+| C01 | 1 | New Olof columns (idempotent) + upsert lists; `tools/olof_reparse_diff.py`; `tools/dossier_acceptance.py --parser` baseline. No parser behaviour change | C00 | orch. | `init_db` twice is clean; baseline counts recorded: 84 zero-song concerts (82 with numbered songs on the page), 352 truncated, 6,222 date-line annotation rows, 2,714 stat annotation rows, 1,867 events with the stat in notes/releases, 3,102 pages state the stat, 80 venue blobs in notes, 306 `And I'll Go Mine` credits, 292 titles ending in a composer credit; 0/9 checks pass (`.debug/dossier_acceptance_parser_baseline.txt`). Counts differ from the audit's (99 / 434 / 6,214 / 2,686 / 2,707 / 486) because the method differs; this tool's numbers are the gate from here on | done |
 | C02 | 1 | P1a guest/interlude blocks + P1g section guard | C01 | opus | fixture tests: 1975-12-08 = 22, 1986-02-24 = 25 | todo |
 | C03 | 1 | P1b date lines, P1c venue-history blob, P1d rotation stat → new columns | C01 | opus | fixture tests for each fix | todo |
 | C04 | 1 | P1e credits vs subtitle, P1f release lines | C01 | opus | fixture tests (1965-06-01, `and part of 22`) | todo |
@@ -209,6 +209,11 @@ File: `backend/olof_parser.py`. Change `_parse_song_lines` (583-670),
 | P1f Release lines | Keywords become `released (on|in|as)` / `available (on|as)`; `and part of N` marks N as partial | 1986 song 4 clean |
 | P1g Section guard | Lines inside the bobtalk and references sections are never position lists | — |
 
+- **P1e caution (found in C01):** single-writer credits carry none of the listed markers —
+  1986-02-24 has `I'm Moving On (Hank Snow)`, `Uranium Rock (Warren Smith)`; 1975-12-08 has
+  `(Ned Albright)`, `(Joni Mitchell)`. The marker rule alone would file these as subtitles. C04
+  must keep a parenthetical that reads as a person's name (or matches a writer already seen in
+  `olof_songs.credits`) in `credits`, and send only known alternate titles to `subtitle`.
 - **Schema** (`backend/db.py` `init_db`, idempotent `PRAGMA table_info` checks, then `ALTER`):
   - `olof_events`: add `rotation_new`, `rotation_pct`, `tour_new_count` (INTEGER) and
     `venue_history_raw` (TEXT DEFAULT '').
