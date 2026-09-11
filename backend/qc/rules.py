@@ -808,6 +808,34 @@ def rule_t4(conn: sqlite3.Connection) -> Iterable[Finding]:
         )
 
 
+def rule_t5(conn: sqlite3.Connection) -> Iterable[Finding]:
+    """R-T5: a taper is attributed to a broadcast-derived source (plan D-13).
+
+    A TV or radio copy has no taper, so an attribution on one is a mis-read
+    credit — usually the transferrer (e.g. "lta" on a Channel 9 TV tape). The
+    medium comes from :func:`backend.dossier_fields.classify_medium`; an
+    audience-shot video keeps its taper and never fires.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        One warn Finding per broadcast source with a non-conflict attribution.
+    """
+    if not _table_exists_local(conn, "taper_attributions"):
+        return
+    from backend.dossier_fields import broadcast_tapers
+
+    for lb_number, taper, evidence in broadcast_tapers(conn):
+        yield Finding(
+            entity_kind="lb",
+            entity_key=str(lb_number),
+            severity="warn",
+            detail=f"LB-{lb_number}: taper '{taper}' on a broadcast source ({evidence})",
+            evidence={"taper": taper, "medium_evidence": evidence},
+        )
+
+
 def _max_scalar(conn: sqlite3.Connection, sql: str) -> str | None:
     """Return the single scalar result of *sql*, or None if it's NULL/no rows."""
     row = conn.execute(sql).fetchone()
@@ -1114,5 +1142,11 @@ RULES: dict[str, RuleDef] = {
         description="Release string matches no official_releases.json entry or curator override",
         severity="warn",
         func=rule_r1,
+    ),
+    "R-T5": RuleDef(
+        rule_id="R-T5",
+        description="Taper attributed to a broadcast-derived source",
+        severity="warn",
+        func=rule_t5,
     ),
 }

@@ -1438,3 +1438,212 @@ def rotation_rank(
         ),
         scope=f"of the {venue_run['size']}-night {venue_run['venue']} run",
     )
+
+
+# ---------------------------------------------------------------------------
+# D-05 generation classification
+# ---------------------------------------------------------------------------
+
+_BOOTLEG_RE = re.compile(r"\bBOOTLEG\s*:", re.IGNORECASE)
+_SILVER_RE = re.compile(r"\bsilver\s*(?:discs?|cds?|pressings?)\b", re.IGNORECASE)
+# A label credit or a catalogue number ("Label:XAVEL", "SCCD 2488", "BDACD103").
+_LABEL_RE = re.compile(r"(?i:\blabel\s*:)|\b[A-Z]{2,}[\s-]?\d{2,}\b")
+_VINYL_RE = re.compile(r"(?i:\bvinyl\b)|\bLPs?\b")
+# "Radio Shack" is an audience microphone brand, not a broadcast.
+_BROADCAST_RE = re.compile(
+    r"\b(?:TV|FM|pre-?FM|radio(?![\s,]*shack)|broadcast|televised|telecast)\b", re.IGNORECASE
+)
+# A separator is required, so a trader handle like 'lowgen' never reads as a generation.
+_LOW_GEN_RE = re.compile(
+    r"\b(?:1st|first|low)[\s-]+gen(?:eration)?\b|\bclone\s+of\s+(?:the\s+)?master\b",
+    re.IGNORECASE,
+)
+_MASTER_RE = re.compile(r"\bmaster\b", re.IGNORECASE)
+# Rule 6: a first hop naming a microphone, and a later hop naming a recorder.
+_MIC_RE = re.compile(
+    r"\b(?:mics?|microphones?|SP-CMC-?\d*|Core\s*Sound|ECM-?\d+|DPA|Schoeps|AKG|Neumann"
+    r"|Church|Sennheiser|Audio[\s-]?Technica|Countryman|Oktava|Sonic\s*Studios|CM-?300)\b",
+    re.IGNORECASE,
+)
+_RECORDER_RE = re.compile(
+    r"\b(?:MicroTrack|Zoom|H[124]n?|R-?0[59]|R-?44|Tascam|DR-?\d+|PCM-?[A-Z0-9]+|DAT"
+    r"|WM-?D6C|minidisc|MD|cassette|recorder|Marantz|Edirol|TCD-?D?\d+|LS-\d+)\b",
+    re.IGNORECASE,
+)
+
+
+class Generation(TypedDict):
+    """One source's D-05 generation class.
+
+    Keys:
+        lb_number: The source.
+        generation: ``silver`` / ``vinyl`` / ``broadcast`` / ``low_gen`` / ``master`` /
+            ``unknown`` (the tag is omitted).
+        basis: ``'stated'`` (the lineage says so), ``'inferred'`` (rule 6's mic →
+            recorder chain with a confirmed taper), or ``None`` for ``unknown``.
+        evidence: The substring (or ``bootleg_titles`` title) that fired the rule.
+    """
+
+    lb_number: int
+    generation: str
+    basis: str | None
+    evidence: str | None
+
+
+def _confirmed_taper(conn: sqlite3.Connection, lb_number: int) -> bool:
+    """A confirmed (not propagated) attribution that no open R-T error quarantines."""
+    from backend.qc.store import quarantined
+
+    row = conn.execute(
+        "SELECT confidence FROM taper_attributions WHERE lb_number = ? AND conflict = 0",
+        (lb_number,),
+    ).fetchone()
+    if row is None or row[0] != "confirmed":
+        return False
+    return not any(r.startswith("R-T") for r in quarantined(conn, "lb", str(lb_number)))
+
+
+def classify_generation(conn: sqlite3.Connection, lb_number: int) -> Generation:
+    """D-05: classify a source's generation from its lineage, first matching rule wins.
+
+    Never guessed from rating or grade. Rules: ``BOOTLEG:`` / silver disc with a
+    label or catalogue number / a ``bootleg_titles`` row → silver; vinyl/LP → vinyl;
+    TV/FM/radio/broadcast → broadcast; explicit 1st/low gen or clone of master →
+    low_gen; the word "master" → master (stated); a mic → recorder chain with a
+    confirmed, unquarantined taper → master (inferred); otherwise unknown.
+
+    Args:
+        conn: Open SQLite connection.
+        lb_number: ``entries.lb_number``.
+
+    Returns:
+        A :class:`Generation`.
+    """
+    row = conn.execute(
+        "SELECT source_chain FROM entries WHERE lb_number = ?", (lb_number,),
+    ).fetchone()
+    chain = (row[0] if row else None) or ""
+
+    def hit(generation: str, basis: str, evidence: str) -> Generation:
+        return Generation(
+            lb_number=lb_number, generation=generation, basis=basis, evidence=evidence,
+        )
+
+    m = _BOOTLEG_RE.search(chain)
+    if m:
+        return hit("silver", "stated", chain[m.start():m.start() + 40].strip())
+    silver = _SILVER_RE.search(chain)
+    label = _LABEL_RE.search(chain)
+    if silver and label:
+        return hit("silver", "stated", f"{silver.group(0)} · {label.group(0)}")
+    bootleg = conn.execute(
+        "SELECT title FROM bootleg_titles WHERE lb_number = ? ORDER BY id LIMIT 1", (lb_number,),
+    ).fetchone()
+    if bootleg:
+        return hit("silver", "stated", f"bootleg title: {bootleg[0]}")
+    for generation, pattern in (("vinyl", _VINYL_RE), ("broadcast", _BROADCAST_RE),
+                                ("low_gen", _LOW_GEN_RE), ("master", _MASTER_RE)):
+        m = pattern.search(chain)
+        if m:
+            return hit(generation, "stated", m.group(0))
+    hops = [h.strip() for h in chain.split(">") if h.strip()]
+    if len(hops) >= 2:
+        mic = _MIC_RE.search(hops[0])
+        recorder = next((r for h in hops[1:] if (r := _RECORDER_RE.search(h))), None)
+        if mic and recorder and _confirmed_taper(conn, lb_number):
+            return hit("master", "inferred", f"{mic.group(0)} > … > {recorder.group(0)}")
+    return Generation(lb_number=lb_number, generation="unknown", basis=None, evidence=None)
+
+
+# ---------------------------------------------------------------------------
+# D-13 medium
+# ---------------------------------------------------------------------------
+
+# Video carriers: an audience-shot DVD is video but not a broadcast, so it keeps its taper.
+_VIDEO_TOKEN_RE = re.compile(r"\b(?:DVD|VOB|VHS|video|Betamax|laserdisc)\b", re.IGNORECASE)
+_TV_TOKEN_RE = re.compile(r"\b(?:TV|televised|telecast)\b", re.IGNORECASE)
+_RADIO_TOKEN_RE = re.compile(
+    r"\b(?:FM|pre-?FM|AM)\b|(?i:\b(?:radio(?![\s,]*shack)|broadcast)\b)"
+)
+_VIDEO_EXT_RE = re.compile(r"\.(?:vob|mkv|mp4|avi|m2ts|mpe?g|mov|iso|ifo)$", re.IGNORECASE)
+
+
+class Medium(TypedDict):
+    """One source's D-13 medium.
+
+    Keys:
+        lb_number: The source.
+        medium: ``'audio'`` (the default) or ``'audio_from_video'``.
+        broadcast: TV or radio broadcast-derived: "broadcast copy" wording and no
+            taper line, and an attributed taper is a QC finding (R-T5).
+        evidence: What fired (``lb_category``, a lineage token, a video file), or ``None``.
+    """
+
+    lb_number: int
+    medium: str
+    broadcast: bool
+    evidence: str | None
+
+
+def classify_medium(conn: sqlite3.Connection, lb_number: int) -> Medium:
+    """D-13: whether a source is a plain audio recording or a broadcast/video copy.
+
+    Signals, strongest first: ``entries.lb_category`` tv/radio; TV, video (DVD, VOB,
+    VHS) or radio (FM, radio, broadcast) tokens in the lineage; video extensions in
+    ``checksums.filename``.
+
+    Args:
+        conn: Open SQLite connection.
+        lb_number: ``entries.lb_number``.
+
+    Returns:
+        A :class:`Medium`; ``'audio'`` and not broadcast when nothing fires.
+    """
+    row = conn.execute(
+        "SELECT lb_category, source_chain FROM entries WHERE lb_number = ?", (lb_number,),
+    ).fetchone()
+    category, chain = ((row[0] or "").lower(), row[1] or "") if row else ("", "")
+
+    def medium(kind: str, broadcast: bool, evidence: str) -> Medium:
+        return Medium(lb_number=lb_number, medium=kind, broadcast=broadcast, evidence=evidence)
+
+    if category == "tv":
+        return medium("audio_from_video", True, "lb_category tv")
+    if category == "radio":
+        return medium("audio", True, "lb_category radio")
+    m = _TV_TOKEN_RE.search(chain)
+    if m:
+        return medium("audio_from_video", True, m.group(0))
+    m = _VIDEO_TOKEN_RE.search(chain)
+    if m:
+        return medium("audio_from_video", False, m.group(0))
+    m = _RADIO_TOKEN_RE.search(chain)
+    if m:
+        return medium("audio", True, m.group(0))
+    for (filename,) in conn.execute(
+        "SELECT filename FROM checksums WHERE lb_number = ? AND xref = 0", (lb_number,),
+    ):
+        if _VIDEO_EXT_RE.search(filename or ""):
+            return medium("audio_from_video", False, filename)
+    return Medium(lb_number=lb_number, medium="audio", broadcast=False, evidence=None)
+
+
+def media_available(conn: sqlite3.Connection, lb_numbers: list[int]) -> list[str]:
+    """``show.media_available``: the distinct media across a show's sources, sorted."""
+    return sorted({classify_medium(conn, lb)["medium"] for lb in lb_numbers})
+
+
+def broadcast_tapers(conn: sqlite3.Connection) -> list[tuple[int, str, str]]:
+    """``(lb_number, taper, evidence)`` for broadcast-derived sources with a taper.
+
+    A broadcast copy has no taper, so each is a QC finding (rule R-T5). An
+    audience-shot video keeps its taper.
+    """
+    out: list[tuple[int, str, str]] = []
+    for lb, taper in conn.execute(
+        "SELECT lb_number, taper_normalised FROM taper_attributions WHERE conflict = 0"
+    ).fetchall():
+        m = classify_medium(conn, lb)
+        if m["broadcast"]:
+            out.append((lb, taper, m["evidence"] or m["medium"]))
+    return out

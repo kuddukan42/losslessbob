@@ -1,3 +1,21 @@
+[2026-09-11] — D-05 generation + D-13 medium + rule R-T5 (dossier C21)
+Added: backend/dossier_fields.py: classify_generation(conn, lb) — first rule wins: BOOTLEG: /
+  silver disc with a label or catalogue number / a bootleg_titles row → silver; vinyl/LP; TV /
+  FM / radio / broadcast; explicit 1st/low gen or clone of master; the word "master" (stated);
+  a mic → recorder chain with a confirmed, unquarantined taper (inferred); else unknown. The
+  evidence is the substring that fired. "Radio Shack" mics aren't broadcasts, and a trader
+  handle 'lowgen' isn't a generation. Corpus (16,703 LBs): unknown 12,558, master 1,453 stated
+  + 816 inferred, silver 1,405, low_gen 409, broadcast 44, vinyl 18.
+Added: classify_medium(conn, lb) — audio / audio_from_video plus a broadcast flag (lb_category
+  tv/radio, TV / video / radio lineage tokens, video file extensions); an audience-shot DVD is
+  video but keeps its taper. Corpus: 16,470 audio, 105 video broadcasts, 95 other video, 33
+  radio. media_available() feeds show.media_available.
+Added: backend/qc/rules.py: R-T5 (warn) — a taper attributed to a broadcast source: 4
+  (LB-12366, 12680, 15012, 15526, transferrers credited as tapers).
+Added: tools/dossier_acceptance.py --d05: 5 of 6 pass. LB-08637 reads silver (it has a
+  bootleg_titles row) where the plan says unknown; that and the 100-row audit table
+  (.debug/d05_audit.txt) await tj's sign-off. tests/test_generation_medium.py (25 tests).
+
 [2026-09-11] — D-07 run/tour/city context + D-04 rotation rank (dossier C20)
 Added: backend/dossier_fields.py: run_context(conn, event_id) — one tour object (Olof's leg,
   NET #, position / size, is_first / is_last; "Recording sessions" year buckets aren't tours),

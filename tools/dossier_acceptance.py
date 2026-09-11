@@ -29,6 +29,9 @@ for the mode asked. Modes arrive chunk by chunk; today there are two:
     --d07           D-07 / D-04 accept cases on 2010-03-29: Zepp Tokyo night 7 of 7, is_last
                     false, Tokyo city_total = 50 with the sum invariant, and the verified
                     rotation superlative (C20; blocked by BUG-347 until that's fixed).
+    --d05           D-05 / D-13 accept cases (LB-15005 / 09493 / 06654 / 08637 generation,
+                    LB-08493 no "low gen", every 1965-06-01 source audio_from_video), corpus
+                    tallies, then a seeded 100-row generation audit table for sign-off (C21).
 
 Usage::
 
@@ -615,6 +618,78 @@ def run_d07(db_path: Path) -> int:
     return 0 if all(ok for ok, _ in checks) else 1
 
 
+_D05_CASES = (
+    (15005, "silver"),
+    (9493, "vinyl"),
+    (6654, "silver"),
+    # The plan says unknown, but LB-08637 has a bootleg_titles row, which the plan's own
+    # rule 1 reads as silver — this check fails until tj's D-05 sign-off settles it.
+    (8637, "unknown"),
+)
+_D05_AUDIT_ROWS = 100
+_D05_SEED = 342
+
+
+def run_d05(db_path: Path) -> int:
+    """D-05 / D-13 accept cases (C21), corpus tallies, then a seeded audit table."""
+    import random
+
+    from backend.dossier_fields import classify_generation, classify_medium
+    from backend.geocoder import entry_date_to_iso
+
+    live = _open_ro(db_path)
+    try:
+        checks: list[tuple[bool, str]] = []
+        for lb, want in _D05_CASES:
+            g = classify_generation(live, lb)
+            checks.append((g["generation"] == want,
+                           f"LB-{lb:05d} {want} (got {g['generation']}: {g['evidence']})"))
+        g = classify_generation(live, 8493)
+        checks.append((g["generation"] != "low_gen",
+                       f"LB-08493 shows no 'low gen' (got {g['generation']})"))
+        bbc = [r["lb_number"] for r in live.execute("SELECT lb_number, date_str FROM entries")
+               if entry_date_to_iso(r["date_str"] or "") == "1965-06-01"]
+        media = [classify_medium(live, lb) for lb in bbc]
+        checks.append((
+            bool(media) and all(m["medium"] == "audio_from_video" and m["broadcast"]
+                                for m in media),
+            f"1965-06-01: all {len(media)} sources audio_from_video, broadcast (no taper lines)",
+        ))
+
+        generations: Counter[str] = Counter()
+        mediums: Counter[str] = Counter()
+        for (lb,) in live.execute("SELECT lb_number FROM entries").fetchall():
+            gen = classify_generation(live, lb)
+            generations[f"{gen['generation']}/{gen['basis'] or '-'}"] += 1
+            med = classify_medium(live, lb)
+            mediums[f"{med['medium']}{' broadcast' if med['broadcast'] else ''}"] += 1
+        _log.info("generation: %s", dict(generations.most_common()))
+        _log.info("medium: %s", dict(mediums.most_common()))
+
+        with_chain = [r[0] for r in live.execute(
+            "SELECT lb_number FROM entries WHERE COALESCE(source_chain, '') != ''"
+            " ORDER BY lb_number"
+        )]
+        sample = random.Random(_D05_SEED).sample(with_chain, min(_D05_AUDIT_ROWS, len(with_chain)))
+        _log.info("")
+        _log.info("generation audit — %d random LBs with a lineage (seed %d):",
+                  len(sample), _D05_SEED)
+        for lb in sorted(sample):
+            gen = classify_generation(live, lb)
+            chain = live.execute(
+                "SELECT source_chain FROM entries WHERE lb_number = ?", (lb,),
+            ).fetchone()[0]
+            _log.info("LB-%05d %-9s %-8s %-30s | %s", lb, gen["generation"], gen["basis"] or "",
+                      (gen["evidence"] or "")[:30], chain[:80])
+    finally:
+        live.close()
+
+    _log.info("")
+    for ok, label in checks:
+        _log.info("%s  %s", "PASS" if ok else "FAIL", label)
+    return 0 if all(ok for ok, _ in checks) else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI entry point; returns the process exit code."""
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
@@ -633,6 +708,8 @@ def main(argv: list[str] | None = None) -> int:
                       help="D-03 accept cases: official_release status on three dates (C19).")
     mode.add_argument("--d07", action="store_true",
                       help="D-07 / D-04 accept cases: run, tour, city, rotation rank (C20).")
+    mode.add_argument("--d05", action="store_true",
+                      help="D-05 / D-13 accept cases, tallies and a 100-row audit table (C21).")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
                         help="--parser: olof_reparse_diff snapshot to print beside the live"
@@ -653,6 +730,8 @@ def main(argv: list[str] | None = None) -> int:
         return run_d03(args.db)
     if args.d07:
         return run_d07(args.db)
+    if args.d05:
+        return run_d05(args.db)
     return run_parser(args.db, args.before, args.residuals)
 
 
