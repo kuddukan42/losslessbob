@@ -1396,6 +1396,32 @@ CREATE INDEX IF NOT EXISTS idx_tuit_dl_rec
 CREATE INDEX IF NOT EXISTS idx_tuit_dl_status
     ON tuit_downloads(status, attempted_at DESC);
 
+-- Outbound counterpart of tuit_downloads (USER): one row per attempt to post a
+-- recording to TUIT's /upload form. 'prepared' rows are dry runs — the payload
+-- was composed and the torrent built, but nothing was POSTed. info_hash is the
+-- duplicate key a later attempt checks against tuit_recordings.
+CREATE TABLE IF NOT EXISTS tuit_uploads (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number    INTEGER NOT NULL,
+    rec_id       INTEGER,              -- /recordings/<id> once the POST lands
+    info_hash    TEXT,
+    torrent_path TEXT,
+    show_id      INTEGER,
+    source_folder TEXT,
+    payload_json TEXT,                 -- the exact form fields sent
+    status       TEXT NOT NULL DEFAULT 'prepared',
+                 -- 'prepared'/'uploaded'/'seeded'/'rejected'/'failed'
+    error        TEXT,
+    attempted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    uploaded_at  TIMESTAMP,
+    seeded_at    TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_tuit_up_lb
+    ON tuit_uploads(lb_number, attempted_at DESC);
+CREATE INDEX IF NOT EXISTS idx_tuit_up_status
+    ON tuit_uploads(status, attempted_at DESC);
+CREATE INDEX IF NOT EXISTS idx_tuit_up_hash ON tuit_uploads(info_hash);
+
 -- TUIT's live-history spine: every show the tracker knows about, circulating
 -- or not (LOCAL). Scraped from /tour/<name>; keyed by (date, venue) because a
 -- gap row links to /shows/<id> while a circulating row links to a recording,
@@ -6471,6 +6497,123 @@ def get_tuit_download_rec_ids(db_path=None) -> set[int]:
     with get_connection(db_path) as conn:
         rows = conn.execute("SELECT DISTINCT rec_id FROM tuit_downloads").fetchall()
     return {r["rec_id"] for r in rows}
+
+
+def add_tuit_upload(
+    lb_number: int,
+    status: str,
+    info_hash: str | None = None,
+    torrent_path: str | None = None,
+    show_id: int | None = None,
+    source_folder: str | None = None,
+    payload_json: str | None = None,
+    error: str | None = None,
+    db_path=None,
+) -> int:
+    """Insert a tuit_uploads row and return its new id.
+
+    Args:
+        lb_number: LB number being posted to the tracker.
+        status: prepared/uploaded/seeded/rejected/failed.
+        info_hash: Infohash of the generated .torrent, when one was built.
+        torrent_path: Local path of that .torrent.
+        show_id: Site show id the upload was attached to, if resolved.
+        source_folder: Collection (or overlay) folder the torrent covers.
+        payload_json: JSON dump of the exact form fields composed.
+        error: Error message when status is 'failed' or 'rejected'.
+        db_path: Optional DB path override.
+
+    Returns:
+        New row id.
+    """
+    _args = (lb_number, info_hash, torrent_path, show_id, source_folder,
+             payload_json, status, error)
+
+    def _run(c):
+        cur = c.execute(
+            "INSERT INTO tuit_uploads"
+            "(lb_number, info_hash, torrent_path, show_id, source_folder,"
+            " payload_json, status, error)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            _args,
+        )
+        return cur.lastrowid
+
+    return get_write_queue().execute(_run)
+
+
+def update_tuit_upload(upload_id: int, fields: dict, db_path=None) -> None:
+    """Update one or more columns on a tuit_uploads row.
+
+    Args:
+        upload_id: Primary key of the row to update.
+        fields: Dict of column→value pairs to set.
+        db_path: Optional DB path override.
+    """
+    if not fields:
+        return
+    set_clause = ", ".join(f"{k}=?" for k in fields)
+    values = list(fields.values()) + [upload_id]
+    get_write_queue().execute(
+        lambda c: c.execute(
+            f"UPDATE tuit_uploads SET {set_clause} WHERE id=?", values
+        )
+    )
+
+
+def get_tuit_uploads(lb_number: int | None = None, db_path=None) -> list[dict]:
+    """Return tuit_uploads rows, newest first, optionally filtered by LB number."""
+    with get_connection(db_path) as conn:
+        if lb_number is not None:
+            rows = conn.execute(
+                "SELECT * FROM tuit_uploads WHERE lb_number=? "
+                "ORDER BY attempted_at DESC",
+                (lb_number,),
+            ).fetchall()
+        else:
+            rows = conn.execute(
+                "SELECT * FROM tuit_uploads ORDER BY attempted_at DESC"
+            ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def tuit_has_recording(
+    lb_number: int | None = None, info_hash: str = "", db_path=None
+) -> dict | None:
+    """Return the tracker row already carrying this LB number or infohash.
+
+    The duplicate guard for uploading: TUIT is scraped into ``tuit_recordings``
+    already, so a recording we are about to post can be checked against what
+    the tracker holds without another request. An infohash match is exact; an
+    LB-number match only means *a* version of that entry circulates, which is
+    still worth showing a curator before a second copy goes up.
+
+    Args:
+        lb_number: LB number to look for.
+        info_hash: Infohash to look for; matched case-insensitively.
+        db_path: Optional DB path override.
+
+    Returns:
+        The matching ``tuit_recordings`` row as a dict (infohash match wins),
+        or None when the tracker has neither.
+    """
+    with get_connection(db_path) as conn:
+        if info_hash:
+            row = conn.execute(
+                "SELECT * FROM tuit_recordings WHERE lower(info_hash)=lower(?)",
+                (info_hash,),
+            ).fetchone()
+            if row:
+                return dict(row)
+        if lb_number is not None:
+            row = conn.execute(
+                "SELECT * FROM tuit_recordings WHERE lb_number=? "
+                "ORDER BY rec_id LIMIT 1",
+                (lb_number,),
+            ).fetchone()
+            if row:
+                return dict(row)
+    return None
 
 
 TUIT_SHOW_COLUMNS = (

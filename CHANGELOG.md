@@ -1,3 +1,37 @@
+[2026-09-11] — TUIT uploader: compose, post and seed a recording to the tracker
+Added: backend/tuit_upload.py — the outbound half of the TUIT integration. Probed /upload live: it
+  is a plain Laravel multipart form behind a CSRF _token, and the ONLY server-side assist in the
+  wizard is GET /api/shows/search?q=<date> which resolves show_id. Nothing is autofilled from the
+  LB number — the field's own help text says "The desktop uploader detects it automatically", i.e.
+  every value is the client's job. So the module composes all of them: source_type/audio_quality/
+  taper/lineage/description from entries, format+bit_depth+sample_rate from a soundfile/ffprobe
+  probe of the folder, ffp from the .ffp sidecar, info_file from the largest non-checksum
+  .txt/.nfo/.log under the server's 256 KB cap, and date/venue/city/state/country/tour from
+  olof_events (entries.location is too noisy to key a show on). All four selects are closed
+  vocabularies, so SOURCE_TYPE_MAP and QUALITY_MAP map onto them and anything that will not map is
+  reported as a warning rather than guessed — prepare_upload() returns the payload plus the list of
+  gaps, and is the dry run.
+Added: Three gates before any POST: db.is_seedable_to_tracker (lb_status must be 'public'), a
+  duplicate check against the already-scraped tuit_recordings (infohash first, LB number second),
+  and torrent_verify via tracker_seed at the seeding step. post_upload() is the only function that
+  writes to the tracker; upload_and_seed() chains prepare → post → tracker_seed.seed_torrent.
+Added: tools/tuit_upload.py — CLI, dry run by default, --apply is the only flag that sends.
+  --no-torrent skips hashing for a fast payload preview, --set FIELD=VALUE overrides any field,
+  --allow-duplicate, --no-seed, --paused. One LB per invocation.
+Added: db: tuit_uploads (USER) — the outbound counterpart of tuit_downloads, one row per attempt,
+  status prepared/uploaded/seeded/rejected/failed, holding the exact payload as JSON. Helpers
+  add_tuit_upload / update_tuit_upload / get_tuit_uploads / tuit_has_recording.
+Changed: backend/torrent_maker.py: make_torrent() takes `trackers` (explicit announce URLs,
+  replacing the public list entirely — a private tracker's torrent must announce only to it) and
+  `source_tag`. tuit_upload.announce_url() lifts this account's personalised announce URL off any
+  previously fetched TUIT .torrent and caches it in meta.tuit_announce_url.
+Added: tests/test_tuit_upload.py — 23 tests, no network: vocabulary maps stay inside the form's
+  options, sidecar/info-file picking, the extension fallback when audio will not decode, show
+  disambiguation by venue (and refusal when it does not settle a two-show date), field composition
+  against a temp DB, and every gate.
+Note: pre-existing, unrelated — tests/test_make_fixture.py's 3 tests fail on "show_picks non-empty"
+  both with and without this change.
+
 [2026-09-11] — D-09 setlist confidence + D-11 file metadata (dossier C22)
 Added: backend/dossier_fields.py: setlist_confidence(conn, event_id, lb_numbers) — primary is the
   Phase 3a quorum (corroborated → complete; disputed → partial with a notice naming every count;

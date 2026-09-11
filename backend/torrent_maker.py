@@ -160,6 +160,8 @@ def make_torrent(
     force_refresh_trackers: bool = False,
     on_progress: Callable[[int, int], None] | None = None,
     db_path=None,
+    trackers: list[str] | None = None,
+    source_tag: str = "",
 ) -> dict:
     """Generate a .torrent file for one LB entry folder.
 
@@ -174,6 +176,13 @@ def make_torrent(
         force_refresh_trackers: Re-fetch tracker list even if cached.
         on_progress: Optional callback(pieces_done, pieces_total).
         db_path: DB path override for testing.
+        trackers: Explicit announce URLs, replacing the public tracker list
+            entirely. A private tracker's torrent must announce only to that
+            tracker, so the uploader path passes its personalised announce URL
+            here rather than adding it to a list of open trackers.
+        source_tag: Value for the torrent's ``source`` field. Private trackers
+            use it to make otherwise identical torrents hash differently; empty
+            leaves the field unset.
 
     Returns:
         Dict with keys: torrent_path, infohash, torrent_id, excluded_files, name.
@@ -191,8 +200,9 @@ def make_torrent(
     TORRENTS_DIR.mkdir(parents=True, exist_ok=True)
 
     name = _torrent_name(lb_number, db_path=db_path)
-    trackers = fetch_trackers(tracker_list, force_refresh=force_refresh_trackers)
-    trackers = _ensure_tcp_trackers(trackers)
+    if trackers is None:
+        trackers = fetch_trackers(tracker_list, force_refresh=force_refresh_trackers)
+        trackers = _ensure_tcp_trackers(trackers)
 
     # Collect excluded filenames relative to source root
     excluded: list[str] = []
@@ -207,6 +217,8 @@ def make_torrent(
     )
     if trackers:
         t.trackers = trackers
+    if source_tag:
+        t.source = source_tag
 
     # Apply exclusion: use exclude_regexs for exact-name matches and patterns
     excl_regexs = []
