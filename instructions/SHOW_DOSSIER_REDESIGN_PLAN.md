@@ -138,17 +138,12 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
 - **Sign-off** marks a chunk that stops for tj before it merges. Chunks that aren't marked
   don't wait for him.
 
-> **Resume here (handoff 2026-09-11).** C00–C21 are done. Finish **BUG-347** before C22 — it
-> was stopped half-applied:
-> - Uncommitted: `backend/olof_parser.py` (`SPLICED_CREDIT_RE`, the repair in
->   `_split_title_parts`), `tools/olof_reparse_diff.py` (`B347` bucket),
->   `tests/test_olof_parser_fixes.py` (+4 tests, 53 pass).
-> - Live DB: only the two affected pages were reparsed (`DSN31870 - 2010 Tour Of Japan.htm`,
->   `DSN32500 - 2010 US FallTour.htm`). Diff gate clean: changed 2, B347 2
->   (`.debug/olof_reparse_diff_bug347.md`). Rollback snapshot: `.debug/olof_before_bug347.db`.
-> - Remaining: `backend.song_index.run()`, `.venv/bin/python3 -m backend.qc run`,
->   `tools/dossier_acceptance.py --d07` (expect 5/5, the C20 superlative unblocked), CHANGELOG,
->   commit, `tools/ledger.py bug-close 347`.
+> **Resume here (2026-09-11).** C00–C21 are done and **BUG-347 is closed**: the parser repair,
+> the two-page reparse (diff gate changed 2 / B347 2 / UNEXPLAINED 0), `song_index.run()`
+> (70,711 performances), `backend.qc run` (R-O4 −12) and `--d07` **5/5** all landed. Rollback
+> snapshot if ever needed: `.debug/olof_before_bug347.db`.
+>
+> **Next: C22** (D-09 setlist confidence + `.debug/dossier_calibration.md`; D-11 file meta).
 >
 > Pending with tj: the C19 allowlist sign-off (`backend/assets/official_releases.json`) and
 > the C21 100-row generation audit (`.debug/d05_audit.txt`; its three rule questions are
@@ -176,7 +171,7 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
 | C17 | 4 | D-01 completeness + G2 fit flag | C13, C15 | opus | D-01 accept cases (2010-03-29, 1965-06-01). Done: `completeness(conn, event_id, lb_numbers)` + `fits_show()` in `backend/dossier_fields.py`; all accept cases pass (`--d01`). Takes an `event_id`, so the caller's event pick matters: corpus-wide, 60 sources fail G2 against their date's own events, but 193 more fail only against the date's *primary* event while fitting a sibling (early/late shows, TV spots). TUIT confidence: corroborated 2,498, stated 8,579, inferred 1,201. Matcher now ignores spacing and folds Talkin'; cleaning fixes for "(encore break)", "Encore 1", slash-glued intros | done |
 | C18 | 4 | D-02 song history + three-part gate + gap badge | C15 | opus | 2010-03-29 badges songs 4 and 14 only; `--d02` rate in CHANGELOG. Done: `song_history(conn, event_id)` in `backend/dossier_fields.py` (86 ms on 2010-03-29, ~50 ms/show). Premieres reuse `corroborate.tour_premieres`; a song played twice in a show (210 events) premieres at its first position only. `--d02` (seed 342): the gate passes on **93 / 200** sampled concerts (46.5%), 193 premiere badges, 13 gap badges. Failing items: 60 an open R-O1/R-O4 somewhere earlier in the tour (item 3 blocks a whole tour on one truncated setlist), 53 no `tour_new_count` from Olof, 31 setlist.fm doesn't confirm, 11 count mismatch | done |
 | C19 | 4 | D-03: draft `official_releases.json`, `official_release()`, rule R-R1 | C05, C06 | sonnet | D-03 accept cases. **Sign-off: allowlist**. Done (sign-off pending): `backend/assets/official_releases.json` 84 entries (73 official / 11 not), `official_release()`, R-R1 (535 open), `POST /api/qc/releases/<title_key>` + queue card. Multi-release strings take the release named earliest. `--d03` passes; **1975-12-08 reads `partial`, not `none`**: song 5 is on CD 14 of the 2019 Rolling Thunder Revue box | done |
-| C20 | 4 | D-07 run / tour / city history, then D-04 rotation rank | C15 | sonnet | night 7 of 7, `is_last` false, Tokyo = 50; sum assertion; synthetic tie → no superlative. Done: `run_context()` + `rotation_rank()` in `backend/dossier_fields.py` (~42 ms each). 2010-03-29: tour 14 of 15 (`is_last` false), Zepp Tokyo night 7 of 7, Tokyo = 50 with Tokyo Garden Theater ×5 in 2023, sum invariant holds. 72% ranks 1 of 7 but `superlative_ok` is **false**: nights 1–2 don't verify because Olof's page splices a credit into "Like A Rolling Stone" (**BUG-347**); the claim renders once that's fixed. Synthetic tie → no superlative (tested) | done |
+| C20 | 4 | D-07 run / tour / city history, then D-04 rotation rank | C15 | sonnet | night 7 of 7, `is_last` false, Tokyo = 50; sum assertion; synthetic tie → no superlative. Done: `run_context()` + `rotation_rank()` in `backend/dossier_fields.py` (~42 ms each). 2010-03-29: tour 14 of 15 (`is_last` false), Zepp Tokyo night 7 of 7, Tokyo = 50 with Tokyo Garden Theater ×5 in 2023, sum invariant holds. 72% ranks 1 of 7 and `superlative_ok` is **true** since **BUG-347** was fixed (2026-09-11): Olof's page had spliced a credit into "Like A Rolling Stone", so nights 1–2 didn't verify; all 7 nights verify now and the claim renders. Synthetic tie → no superlative (tested) | done |
 | C21 | 4 | D-05 generation, D-13 medium (incl. the broadcast-taper R-T finding) | C08 | sonnet | D-05 / D-13 accept cases. **Sign-off: 100-row generation audit**. Done (sign-off pending): `classify_generation()`, `classify_medium()` (audio / audio_from_video + a broadcast flag, so an audience DVD keeps its taper), `media_available()`, rule R-T5 (4 open). `--d05` 6/6; the audit table is in `.debug/d05_audit.txt`. Rules decided by tj (2026-09-11): LB-08637's `bootleg_titles` row makes it silver (accept case changed from unknown); "master" followed by a clone is low_gen (451 LBs); a silver disc needs no label or catalogue number (+15). The 100-row audit table is still his to review | done |
 | C22 | 4 | D-09 setlist confidence + `.debug/dossier_calibration.md`; D-11 file meta | C14 | sonnet | 1986-02-24 complete / 25 / corroborated; LB-08485 "16/44 file · recorded 24/96" | todo |
 | C23 | 4 | Supporting parsers (band, members, instruments, tally, writers, `set[].label`, character / flags, lineage_short, runtime, `family.basis`, taper render rule) | C04, C08 | sonnet | parser tests; runtime split sums to total | todo |

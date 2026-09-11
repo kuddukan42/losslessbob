@@ -28,7 +28,7 @@ for the mode asked. Modes arrive chunk by chunk; today there are two:
                     plan's "none" predates allowlisting the 2019 Rolling Thunder box).
     --d07           D-07 / D-04 accept cases on 2010-03-29: Zepp Tokyo night 7 of 7, is_last
                     false, Tokyo city_total = 50 with the sum invariant, and the verified
-                    rotation superlative (C20; blocked by BUG-347 until that's fixed).
+                    rotation superlative (C20; unblocked by the BUG-347 parser repair).
     --d05           D-05 / D-13 accept cases (LB-15005 / 09493 / 06654 / 08637 generation,
                     LB-08493 no "low gen", every 1965-06-01 source audio_from_video), corpus
                     tallies, then a seeded 100-row generation audit table for sign-off (C21).
@@ -610,7 +610,7 @@ def run_d07(db_path: Path) -> int:
         (bool(city) and city["total"] == 50, "Tokyo city_total = 50"),
         (bool(city) and city["invariant_ok"], "city history rows sum to city_total"),
         (bool(rank) and rank["rank_in_run"] == 1 and not rank["tie"] and rank["superlative_ok"],
-         "72% is the run's verified maximum, so the superlative renders (BUG-347 blocks it)"),
+         "72% is the run's verified maximum, so the superlative renders"),
     ]
     _log.info("")
     for ok, label in checks:
