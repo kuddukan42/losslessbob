@@ -1,3 +1,19 @@
+[2026-09-10] — Olof corpus reparsed with the Phase 1 fixes; diff gate clean (dossier C05)
+Changed: data (live DB): full DSN reparse after a full backup (.debug/losslessbob_preC05.db) and
+  an olof snapshot (.debug/olof_before.db). tools/olof_reparse_diff.py diff: 3,589 changed events,
+  UNEXPLAINED 0 (P1a 185, P1b 1,211, P1c 1,192, P1d 3,102, P1e 2,052, P1f 151). song_index.run():
+  song_performances 67,844 → 70,711. tools/dossier_acceptance.py --parser 9/9: zero-song concerts
+  84 → 21, truncated 352 → 236, date-line annotations 6,222 → 0, stat annotations 2,714 → 0,
+  rotation set on 3,102 / 3,102 pages, venue lists in notes 1,266 → 0 (1,192 in venue_history_raw),
+  "And I'll Go Mine" credits 306 → 0, composer credits in titles 292 → 0, 2,668 subtitles;
+  1986-02-24 = 25 and 1975-12-08 = 22 songs, matching bobdylan.com and TUIT.
+Changed: tools/dossier_acceptance.py: the venue-list metric needs a day + month entry after the
+  header; 7 pointer headers followed by release/recording lines were false positives.
+Fixed: BUG-340 (guest headers), BUG-341 (date lines / rotation stat), BUG-342 (subtitles vs
+  credits) closed. BUG-337 is not fixed by Phase 1 (27 title keys still split, 941 rows stranded —
+  spacing artifacts such as "Tim es", "Blowin '"); it stays open.
+Changed: instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: C05 done with the counts.
+
 [2026-09-10] — Olof subtitles split from credits; release lines read "in/as" wording and partials (dossier C04)
 Fixed: backend/olof_parser.py: (P1e) new _split_title_parts for the DSN walk — 16 curated Olof
   alternate titles ("I'm Only Bleeding", "And I'll Go Mine", "For Charley Patton", …) go to

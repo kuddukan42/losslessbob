@@ -40,10 +40,13 @@ _log = logging.getLogger(__name__)
 _NUMBERED_LINE_RE = re.compile(r"^(\d+)\.(?:\s|$)", re.MULTILINE)
 _COMPOSER_PAREN_RE = re.compile(r"\([^()]*[/&][^()]*\)\s*$")
 _SONG_COUNT_CASES = (("1986-02-24", 25), ("1975-12-08", 22))
-# A "... Bob Dylan concerts in <city>:" header followed by a dated entry line.
+# A "... Bob Dylan concerts in <city>:" header followed by a dated entry line ("1 March 1978",
+# "12-13 May 1995", "Late September 1961"). A pointer header followed by a release or recording
+# line ("Bob Dylan concerts in Chicago .\n4-6 stereo audience recording") is not a list.
 _VENUE_LIST_RE = re.compile(
     r"(?:Bob Dylan\s+(?:shows|concerts)\s+in|\b(?:other|previous|next)\s+(?:shows|concerts))\b"
-    r"[^\n]*\n(?:(?:early|mid|late)\b|\d{1,2}\b)",
+    r"[^\n]*\n(?:(?:early|mid|late)[\s-]+|\d{1,2}(?:\s*[-–]\s*\d{1,2})?\s+)"
+    r"(?:jan|feb|mar|apr|ma[yj]|jun|jul|aug|sep|o[ck]t|nov|dec)",
     re.IGNORECASE,
 )
 

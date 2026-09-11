@@ -30,30 +30,6 @@ Description: Plan F14. The rendered dossier HTML is 37% blank lines; the masthea
 Root cause: Unknown
 Fix: —
 
-BUG-342: Olof parser stores subtitles as credits and leaves long composer credits inside the title
-Status: Open
-File(s): backend/olof_parser.py:533
-Reported: 2026-09-10
-Description: Plan F4 / P1e. _split_title_credits treats a parenthetical subtitle as a composer credit ('And I'll Go Mine' x486) and leaves long credits inside song_title ('My Wife's Home Town (...)'). Fix: a parenthetical with composer markers ('/', a dash between capitalised names, '&', a comma between names, 'trad', '?') is credits whatever its length; anything else goes to new column olof_songs.subtitle, so song_title and song_norm stay stable. Spellings are stored as Olof writes them; corrections go through the Phase 2 corrections table. Fixed in dossier chunk C04, closed at C05.
-Root cause: Unknown
-Fix: —
-
-BUG-341: Olof parser stores venue-history date lines and the rotation-stat line as per-song notes
-Status: Open
-File(s): backend/olof_parser.py:673
-Reported: 2026-09-10
-Description: Plan F2 / P1b, P1c, P1d. Date lines such as '1 March 1978' from the 'Other Bob Dylan shows in X' venue-history blob are read as position lists: 6,214 bogus annotations. The rotation-stat line ('N new songs (P%) compared to previous concert. N new songs for this tour') lands in notes: 2,686 bogus rows. The venue-history blob sits in notes on 80 events and is frozen at the time Olof wrote the page. Fix: date lines are never position lists; the blob moves to olof_events.venue_history_raw; the stat line is parsed into rotation_new / rotation_pct / tour_new_count (2,707 events). Fixed in dossier chunk C03, closed at C05.
-Root cause: Unknown
-Fix: —
-
-BUG-340: Olof parser stops the song walk at guest-set headers — 99 concerts parse 0 songs, 434 truncated
-Status: Open
-File(s): backend/olof_parser.py:583
-Reported: 2026-09-10
-Description: Plan F1 / P1a. _parse_song_lines halts at guest-set headers such as 'Bob Neuwirth:' or 'Tom Petty & The Heartbreakers:'. 1975-12-08 parses 0 songs (bobdylan.com and TUIT list 22); 1986-02-24 parses 7 of 25. Corpus-wide 99 concerts have 0 songs and 434 are truncated. The spec's own D-09 acceptance case is wrong because of this. Fix: treat a <=60-char line ending ':' that is not a section keyword as a guest header, skip the unnumbered titles after it until the next position marker; add a section guard (P1g). Fixed in dossier chunk C02, closed at C05 after the reparse diff gate.
-Root cause: Unknown
-Fix: —
-
 BUG-337: song_canonical splits 28 titles into spacing/encoding variants, stranding 4,290 performances
 Status: Open
 File(s): backend/olof_parser.py,backend/song_index.py
