@@ -1,3 +1,9 @@
+TODO-342: Show Dossier redesign (spec Rev A) — execution plan C00–C35
+Priority: High
+Status: Open
+Added: 2026-09-10
+Description: Rebuild the show dossier per instructions/Show Dossier Redesign.pdf (Rev A, 2026-09-09) under the execution plan instructions/SHOW_DOSSIER_REDESIGN_PLAN.md and the binding pre-build audit instructions/SHOW_DOSSIER_AUDIT.md. Work proceeds one commit per row of the plan's 'Chunks & progress' table (C00–C35) on branch feat/dossier-redesign; commit subjects end [dossier Cnn]. Order: Olof parser fixes + reparse diff gate, database QC + quarantine + upstream fixes, QC review console, cross-source corroboration, D-01…D-13 derivations, view model + claim engine + per-dossier QC gate, template rewrite, golden set + sweep, bookkeeping. Guiding rule: when the pipeline cannot verify a value, the page shows the field's fallback and lists it as withheld — it never guesses.
+
 TODO-340: Cron's TUIT RSS backfill is capped at 10 /browse pages — no alert if a gap ever exceeds 500 uploads
 Priority: Low
 Status: Open

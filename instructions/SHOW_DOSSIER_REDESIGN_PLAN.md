@@ -140,7 +140,7 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
 
 | # | Ph | Scope | Needs | Model | Done when | Status |
 |---|---|---|---|---|---|---|
-| C00 | 0 | Ledger: redesign TODO + the Phase 0 BUGs; branch `feat/dossier-redesign` off `main` | — | orch. | IDs noted in this table | todo |
+| C00 | 0 | Ledger: redesign TODO + the Phase 0 BUGs; branch `feat/dossier-redesign` | — | orch. | IDs: TODO-342; BUG-340 (F1), 341 (F2), 342 (F4), 343 (F14), 344 (F16), 345 (F17), 346 (NULL-date picks) | done |
 | C01 | 1 | New Olof columns (idempotent) + upsert lists; `tools/olof_reparse_diff.py`; `tools/dossier_acceptance.py --parser` baseline. No parser behaviour change | C00 | sonnet | `init_db` twice is clean; baseline counts recorded | todo |
 | C02 | 1 | P1a guest/interlude blocks + P1g section guard | C01 | opus | fixture tests: 1975-12-08 = 22, 1986-02-24 = 25 | todo |
 | C03 | 1 | P1b date lines, P1c venue-history blob, P1d rotation stat → new columns | C01 | opus | fixture tests for each fix | todo |
@@ -187,8 +187,11 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
    - BUGs for F1, F2, F4, F14, F16 (taper mention and weak-family propagation), F17 (picks
      computed before families; per-LB scan selection) and the NULL-date rank-1 bucket in
      `show_picks`.
-3. Branch `feat/dossier-redesign` off `main`. The current branch is
-   `todo-312-taper-curation-console`, which is unrelated.
+3. Branch `feat/dossier-redesign`. Cut from `todo-312-taper-curation-console` @ `08493b2f`, not
+   `main`: `main` lacks this plan and the TUIT tables/scrapers that F8, F10 and F22 rely on.
+4. Related open bug: BUG-337 (Olof song-title spacing/encoding splits in `song_canonical`) sits in
+   the same parser. Check whether C02–C05 fix it; if not, it stays open and C05's diff must not
+   mask it.
 
 ## Phase 1 — Olof parser fixes + reparse diff gate
 
