@@ -564,6 +564,51 @@ def rule_t3(conn: sqlite3.Connection) -> Iterable[Finding]:
         )
 
 
+def rule_t4(conn: sqlite3.Connection) -> Iterable[Finding]:
+    """R-T4: our taper disagrees with TUIT's uploader-declared taper.
+
+    Both sides go through the live alias tables (``user_taper_aliases``
+    included), and a TUIT field naming several tapers or a handle plus a gloss
+    agrees when any part matches (``taper_curation.tuit_taper_parts``). LBs with
+    no TUIT taper, only a placeholder ("unknown"), or a conflict attribution are
+    skipped. Feeds Phase 3e as ``disputed`` (audit D8).
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        One warn Finding per LB whose TUIT tapers all differ from ours.
+    """
+    if not (_table_exists_local(conn, "tuit_recordings")
+            and _table_exists_local(conn, "taper_attributions")):
+        return
+    from backend import db as _db
+    from backend import taper_curation
+
+    db_file = conn.execute("PRAGMA database_list").fetchone()[2]
+    _db.reload_taper_aliases(db_file or None)
+
+    by_lb: dict[int, tuple[str, list[str]]] = {}
+    for lb_number, ours, raw in conn.execute(
+        "SELECT a.lb_number, a.taper_normalised, t.taper FROM taper_attributions a"
+        " JOIN tuit_recordings t ON t.lb_number = a.lb_number"
+        " WHERE a.conflict = 0 AND TRIM(COALESCE(t.taper,'')) <> ''"
+        " ORDER BY a.lb_number, t.rec_id"
+    ):
+        by_lb.setdefault(lb_number, (ours, []))[1].append(raw)
+    for lb_number, (ours, raws) in by_lb.items():
+        theirs = [c for raw in raws for c in taper_curation.tuit_taper_parts(raw)]
+        if not theirs or ours in theirs:
+            continue
+        yield Finding(
+            entity_kind="lb",
+            entity_key=str(lb_number),
+            severity="warn",
+            detail=f"LB-{lb_number}: taper '{ours}', TUIT says {' / '.join(raws)}",
+            evidence={"taper": ours, "tuit": raws, "tuit_canonical": theirs},
+        )
+
+
 def _max_scalar(conn: sqlite3.Connection, sql: str) -> str | None:
     """Return the single scalar result of *sql*, or None if it's NULL/no rows."""
     row = conn.execute(sql).fetchone()
@@ -764,6 +809,12 @@ RULES: dict[str, RuleDef] = {
         description="Propagated taper more than 5 years outside its confirmed years",
         severity="error",
         func=rule_t3,
+    ),
+    "R-T4": RuleDef(
+        rule_id="R-T4",
+        description="Taper disagrees with TUIT after alias mapping",
+        severity="warn",
+        func=rule_t4,
     ),
     "R-S1": RuleDef(
         rule_id="R-S1",

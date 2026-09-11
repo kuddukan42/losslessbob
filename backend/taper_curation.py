@@ -130,6 +130,61 @@ def canonical(name: str | None) -> str:
     return norm or ""
 
 
+# TUIT taper fields hold one handle, several ("Travitz & Wklitz"), or a handle plus
+# a gloss ("Net Taper P (Bt)", "Legendary Taper F (=Gl…" — truncated by the list page).
+_TUIT_PART_SPLIT_RE = re.compile(r"[,;/()=…]| & | and ")
+
+
+def tuit_taper_parts(raw: str | None) -> list[str]:
+    """Return the canonical tapers a TUIT taper field names, whole value first.
+
+    Args:
+        raw: ``tuit_recordings.taper`` text.
+
+    Returns:
+        Distinct canonicals for the whole value and each split part; placeholders
+        and blanks dropped. Empty when the field carries no attribution.
+    """
+    out: list[str] = []
+    for part in [raw or "", *_TUIT_PART_SPLIT_RE.split(raw or "")]:
+        canon = canonical(part.strip())
+        if canon and canon not in out:
+            out.append(canon)
+    return out
+
+
+def tuit_alias_candidates(conn: sqlite3.Connection) -> dict[str, str]:
+    """Propose ``user_taper_aliases`` rows for TUIT spellings of known tapers.
+
+    Mechanical mappings only: spacing/punctuation variants whose alphanumeric
+    fold equals exactly one known canonical ("tapeboy" → ``tape boy``). The
+    "Legendary Taper X" / "LT X" family is already builtin. Judgement calls
+    ("MM" → Mike Millard) are left to the curator.
+
+    Args:
+        conn: Open connection; the live alias tables must already be loaded
+            (``db.reload_taper_aliases``).
+
+    Returns:
+        ``{alias_norm: canonical}`` for keys not already aliased.
+    """
+    fold_map: dict[str, set[str]] = {}
+    for canon in set(_KNOWN_TAPER_ALIASES.values()):
+        fold_map.setdefault(re.sub(r"[^a-z0-9]", "", canon), set()).add(canon)
+    out: dict[str, str] = {}
+    for (raw,) in conn.execute(
+        "SELECT DISTINCT taper FROM tuit_recordings WHERE TRIM(COALESCE(taper,'')) <> ''"
+    ):
+        key = _db._normalise_alias_key(raw)
+        if not key or is_placeholder(raw) or key in _KNOWN_TAPER_ALIASES:
+            continue
+        cands = fold_map.get(re.sub(r"[^a-z0-9]", "", key), set())
+        target = next(iter(cands)) if len(cands) == 1 else None
+        if target and target != key:
+            out[key] = target
+    return out
+
+
 # Curator not-a-taper calls (user_taper_flags, TODO-313). A flagged canonical is
 # usually NOT an alias value — 'bootleg' is plain description text — so it can
 # only be recognised by reading the table; without this it would fall through to

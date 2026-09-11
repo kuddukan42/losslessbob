@@ -1,3 +1,15 @@
+[2026-09-11] — TUIT taper aliases mapped; rule R-T4 (dossier C10)
+Added: backend/qc/rules.py: R-T4 (warn) — our taper differs from every taper TUIT names for the LB,
+  after alias mapping; conflict rows and placeholders skipped. Live: 69 open of 1,309 LBs with both.
+  The audit's 743 compared raw strings; "Legendary Taper D" etc. already normalise to ltd.
+Added: backend/taper_curation.py: tuit_taper_parts() (splits multi-taper / glossed TUIT fields) and
+  tuit_alias_candidates() (spelling folds that equal exactly one known canonical).
+Added: tools/map_tuit_taper_aliases.py: dry-run by default, --apply writes approved 'add' rows.
+  Applied: 5 aliases (tapeboy, zimmy 21, krewe chief, captainsimard, s h); attributions unchanged
+  at 4,968. Remaining disagreements are judgement pairs (UK C/SY vs lta, cb vs ltb) for the 2b queue.
+Changed: tests/test_qc.py (+3 tests); SHOW_DOSSIER_REDESIGN_PLAN.md: C10 done. Deleted the
+  .debug/taper_attr_preC08.db snapshot.
+
 [2026-09-11] — Picks re-run after family syncs, no NULL-date picks, grades read from the scored scan (dossier C09)
 Fixed: concert_ranker/picks.py: BUG-346. Partial dates (xx/xx/61, 5/xx/87) no longer get a phantom
   rank-1 pick; live NULL-date picks 589 → 0 (all 112 affected dates were partial).

@@ -523,3 +523,62 @@ class TestQuarantine:
         bare = sqlite3.connect(":memory:")  # no qc_findings, no row_factory
         assert store.quarantined(bare, "olof_event", "1") == []
         assert store.quarantined_batch(bare, "olof_event", ["1"]) == {}
+
+
+def _tuit(conn, rec_id, lb, taper):
+    conn.execute(
+        "INSERT INTO tuit_recordings (rec_id, lb_number, taper) VALUES (?, ?, ?)",
+        (rec_id, lb, taper),
+    )
+
+
+def _attr(conn, lb, taper, conflict=0):
+    conn.execute(
+        "INSERT INTO taper_attributions (lb_number, taper_normalised, confidence,"
+        " evidence_json, conflict) VALUES (?, ?, 'confirmed', '[]', ?)",
+        (lb, taper, conflict),
+    )
+
+
+class TestRuleT4:
+    def test_fires_on_real_disagreement_only(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO entries (lb_number, timing, cdr, rating) VALUES"
+                " (1, '', '', ''), (2, '', '', ''), (3, '', '', ''), (4, '', '', ''),"
+                " (5, '', '', '')"
+            )
+            _attr(conn, 1, "spot")
+            _tuit(conn, 101, 1, "Bach")             # disagrees
+            _attr(conn, 2, "spot")
+            _tuit(conn, 102, 2, "SPOT")             # same after normalising
+            _attr(conn, 3, "bach")
+            _tuit(conn, 103, 3, "Spot & Bach")      # one part agrees
+            _attr(conn, 4, "spot")
+            _tuit(conn, 104, 4, "Unknown")          # placeholder
+            _attr(conn, 5, "spot", conflict=1)
+            _tuit(conn, 105, 5, "Bach")             # conflict rows skipped
+        keys = {f.entity_key for f in rules.rule_t4(conn)}
+        assert keys == {"1"}
+
+
+class TestTuitTaperHelpers:
+    def test_parts_split_gloss_and_drop_placeholders(self, qc):
+        from backend import taper_curation
+        assert taper_curation.tuit_taper_parts("Unknown") == []
+        assert "bach" in taper_curation.tuit_taper_parts("Spot (Bach)")
+
+    def test_alias_candidates_are_mechanical(self, qc):
+        db, _store, _rules, conn, path = qc
+        from backend import taper_curation
+        with conn:
+            conn.execute("INSERT INTO entries (lb_number, timing, cdr, rating)"
+                         " VALUES (1, '', '', '')")
+            for i, raw in enumerate(["WalkinDude", "Legendary Taper: Z", "Unknown"]):
+                _tuit(conn, 200 + i, 1, raw)
+        db.add_taper_alias("walkin dude", "walkin dude", db_path=path)
+        cands = taper_curation.tuit_alias_candidates(conn)
+        assert cands.get("walkindude") == "walkin dude"
+        assert "legendary taper z" not in cands  # builtin alias already
+        assert "unknown" not in cands
