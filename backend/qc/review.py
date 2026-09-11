@@ -172,7 +172,7 @@ def _geocode_context(conn: sqlite3.Connection, entity_key: str) -> dict:
 
 
 def _entry_context(conn: sqlite3.Connection, lb_number: int) -> dict:
-    """Context for R-E1: the full entries row."""
+    """Context for R-E1/R-E2: the full entries row."""
     row = conn.execute("SELECT * FROM entries WHERE lb_number = ?", (lb_number,)).fetchone()
     return {"entry": dict(row) if row else None}
 
@@ -214,7 +214,7 @@ def _build_context(
             return _olof_context(conn, entity_kind, entity_key)
         if rule_id == "R-G1":
             return _geocode_context(conn, entity_key)
-        if rule_id == "R-E1":
+        if rule_id in ("R-E1", "R-E2"):
             return _entry_context(conn, int(entity_key))
         if rule_id == "R-F1":
             return _family_context(conn, entity_key)

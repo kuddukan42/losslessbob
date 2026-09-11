@@ -355,6 +355,167 @@ def rule_e1(conn: sqlite3.Connection) -> Iterable[Finding]:
             )
 
 
+# R-E2: an entry fits its dated show when at least this share of its song tracks
+# match the date's Olof setlist (plan G2 / audit S11)...
+E2_MIN_SHARE = 0.20
+# ...and entries with fewer song tracks than this are skipped, so a one- or
+# two-song excerpt of something Olof doesn't list can't flood the queue.
+E2_MIN_SONG_TRACKS = 3
+# ...and an entry that holds at least this share of the date's distinct Olof songs
+# is skipped: Olof's page lists only a subset (1969-02-17 Nashville outtakes,
+# 1976-05-16's 7 Hard Rain songs vs a 49-track full show), so the entry is a
+# superset of the listing, not a mis-dated source.
+E2_MAX_OLOF_COVER = 0.5
+_E2_MAX_UNMATCHED = 8
+
+
+# A split title holding two or more further "N. Title" markers is a tracklist the
+# splitter couldn't separate (space-delimited numbering), not a real title.
+_E2_GLUED_RE = re.compile(r"\s\d{1,3}[.)]?\s+[A-Z]")
+
+
+def _olof_candidates_by_date(conn: sqlite3.Connection) -> dict[str, list[str]]:
+    """Map ISO date -> every Olof song title (and 'title (subtitle)') on that date.
+
+    Unions the songs of every ``olof_events`` row sharing the date (concert,
+    broadcast, session...), since an entry dated to a day may be any of them.
+    A 'title (subtitle)' form always directly follows its plain title.
+    """
+    by_date: dict[str, list[str]] = {}
+    rows = conn.execute(
+        "SELECT oe.date_str, os.song_title, os.subtitle FROM olof_songs os"
+        " JOIN olof_events oe ON oe.event_id = os.event_id"
+        " WHERE oe.date_str IS NOT NULL AND oe.date_str != ''"
+        " ORDER BY oe.date_str, oe.event_id, os.position"
+    ).fetchall()
+    for r in rows:
+        title = (r["song_title"] or "").strip()
+        if not title:
+            continue
+        bucket = by_date.setdefault(r["date_str"], [])
+        bucket.append(title)
+        subtitle = (r["subtitle"] or "").strip()
+        if subtitle:
+            bucket.append(f"{title} ({subtitle})")
+    return by_date
+
+
+def entry_setlist_fit(conn: sqlite3.Connection) -> Iterable[dict]:
+    """Score every dated entry's tracklist against its date's Olof setlist.
+
+    One pass over ``entries``; Olof songs are indexed by date once and each
+    date's :class:`backend.dossier_fields.SetlistIndex` is built on first use.
+    Entries with no clean ISO date, no parsed song tracks, or a date with no
+    Olof songs are skipped. Tracks tagged ``missing`` don't count (they aren't
+    on the recording); partial tracks do.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        ``{lb_number, date, song_tracks, matched, share, unmatched, olof_songs,
+        olof_matched, glued}`` per scored entry: ``unmatched`` holds every
+        unmatched cleaned title in order, ``olof_songs``/``olof_matched`` are the
+        date's distinct Olof songs and how many of them the entry hit, and
+        ``glued`` says a title still holds several track markers (unsplit text).
+    """
+    from backend.dossier_fields import build_setlist_index, match_track, parse_entry_tracklist
+    from backend.geocoder import entry_date_to_iso
+    from backend.song_index import _load_song_canonical_map
+
+    try:
+        canonical_map = _load_song_canonical_map(conn)
+    except sqlite3.OperationalError:
+        canonical_map = {}
+    candidates_by_date = _olof_candidates_by_date(conn)
+    indexes: dict = {}
+
+    rows = conn.execute(
+        "SELECT lb_number, date_str, setlist FROM entries"
+        " WHERE setlist IS NOT NULL AND setlist != '' AND date_str IS NOT NULL"
+    ).fetchall()
+    for r in rows:
+        date_iso = entry_date_to_iso(r["date_str"] or "")
+        if not date_iso or date_iso not in candidates_by_date:
+            continue
+        songs = [
+            t["title"] for t in parse_entry_tracklist(r["setlist"])
+            if t["is_song"] and not t["missing"]
+        ]
+        if not songs:
+            continue
+        index = indexes.get(date_iso)
+        if index is None:
+            index = build_setlist_index(candidates_by_date[date_iso], canonical_map)
+            indexes[date_iso] = index
+        unmatched: list[str] = []
+        hit: set[str] = set()
+        for song in songs:
+            m = match_track(song, index, canonical_map)
+            if m is None:
+                unmatched.append(song)
+            else:
+                hit.add(m["candidate"].split(" (", 1)[0])
+        matched = len(songs) - len(unmatched)
+        olof_titles = {c.split(" (", 1)[0] for c in candidates_by_date[date_iso]}
+        yield {
+            "lb_number": r["lb_number"],
+            "date": date_iso,
+            "song_tracks": len(songs),
+            "matched": matched,
+            "share": matched / len(songs),
+            "unmatched": unmatched,
+            "olof_songs": len(olof_titles),
+            "olof_matched": len(hit & olof_titles),
+            "glued": any(len(_E2_GLUED_RE.findall(s)) >= 2 for s in songs),
+        }
+
+
+def rule_e2(conn: sqlite3.Connection) -> Iterable[Finding]:
+    """R-E2: an entry's tracklist doesn't fit its dated show (plan G2, audit S11).
+
+    The metric is the share of the *entry's* song tracks (non-songs and
+    ``missing`` tracks excluded) that match the union of Olof's songs on the
+    entry's date — so a short excerpt that is all on the setlist passes, while
+    a mis-dated compilation (LB-06654, 25 studio "Mono Mixes" tracks dated
+    1965-06-01) fires. Fires below :data:`E2_MIN_SHARE`. Skipped: entries with
+    fewer than :data:`E2_MIN_SONG_TRACKS` song tracks, dates with no Olof
+    songs, entries covering at least :data:`E2_MAX_OLOF_COVER` of the date's
+    Olof songs (Olof lists a subset), and tracklists the splitter left glued
+    (space-delimited numbering, so one "title" holds several songs).
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        One error Finding per entry whose tracklist mostly misses its dated setlist.
+    """
+    for fit in entry_setlist_fit(conn):
+        if fit["song_tracks"] < E2_MIN_SONG_TRACKS or fit["share"] >= E2_MIN_SHARE:
+            continue
+        if fit["glued"] or fit["olof_matched"] >= E2_MAX_OLOF_COVER * fit["olof_songs"]:
+            continue
+        lb = fit["lb_number"]
+        yield Finding(
+            entity_kind="entry",
+            entity_key=str(lb),
+            severity="error",
+            detail=(
+                f"LB-{lb}: {fit['matched']}/{fit['song_tracks']} song tracks match the"
+                f" {fit['date']} setlist ({fit['share']:.0%}) — mis-dated or a compilation?"
+            ),
+            evidence={
+                "date": fit["date"],
+                "song_tracks": fit["song_tracks"],
+                "matched": fit["matched"],
+                "share": round(fit["share"], 3),
+                "olof_songs": fit["olof_songs"],
+                "olof_matched": fit["olof_matched"],
+                "unmatched": fit["unmatched"][:_E2_MAX_UNMATCHED],
+            },
+        )
+
+
 def rule_f1(conn: sqlite3.Connection) -> Iterable[Finding]:
     """R-F1: a recording family merged at very low confidence, or under review.
 
@@ -785,6 +946,12 @@ RULES: dict[str, RuleDef] = {
         description="Entry field ranges (timing, cdr, rating vocabulary)",
         severity="warn",
         func=rule_e1,
+    ),
+    "R-E2": RuleDef(
+        rule_id="R-E2",
+        description="Entry tracklist matches <20% of its dated Olof setlist",
+        severity="error",
+        func=rule_e2,
     ),
     "R-F1": RuleDef(
         rule_id="R-F1",

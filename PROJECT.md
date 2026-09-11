@@ -111,7 +111,7 @@ losslessbob/
 │   ├── olof_chronicle_parser.py  # Yearly Chronicles parser: calendar + new-tapes (2022+ appendix superseded, see below) (TODO-162 P4)
 │   ├── bobserve_fetcher.py   # bobserve.com setlist page mirror (2022+, supersedes chronicle appendix) → data/olof/bobserve_pages/ (TODO-228); TODO-306 P2: JobState-backed run_fetch/run_fetch_claimed, POST /api/bobserve/fetch
 │   ├── bobserve_parser.py    # bobserve setlist parser: olof_pages(corpus=bobserve) → olof_events + olof_songs, source='bobserve' (TODO-228)
-│   ├── qc/                   # Show Dossier QC engine (TODO-342 Phase 2): rules.py (pure (conn)->Iterable[Finding] functions in RULES; R-O1/R-O2/R-O3/R-T1/R-T2/R-T3/R-G1/R-E1/R-F1/R-S1 shipped, also holds MONTH_YEAR_RE/ROTATION_FRAGMENT_RE for tools/ reuse), store.py (run_rule/run_all reconcile against qc_findings per the decision vocabulary; quarantined()/quarantined_batch()), __main__.py (`python -m backend.qc run`)
+│   ├── qc/                   # Show Dossier QC engine (TODO-342 Phase 2): rules.py (pure (conn)->Iterable[Finding] functions in RULES; R-O1/R-O2/R-O3/R-T1/R-T2/R-T3/R-T4/R-G1/R-E1/R-E2/R-F1/R-S1 shipped, also holds MONTH_YEAR_RE/ROTATION_FRAGMENT_RE for tools/ reuse), store.py (run_rule/run_all reconcile against qc_findings per the decision vocabulary; quarantined()/quarantined_batch()), __main__.py (`python -m backend.qc run`)
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-284: lbdir-based collection integrity scan engine
 │   ├── file_integrity.py     # TODO-267: per-file xxh3+sha256 bit-rot inventory (index/verify/rolling)
@@ -131,6 +131,7 @@ losslessbob/
 │   ├── refresh_exec.py       # Pipeline refresh Phase 3 (`instructions/PIPELINE_REFRESH_PHASE3.md`): `StepExecutor` registry mapping every `refresh.STEPS` step_id to an in-process call or a `JobState`-backed background worker; `plan_chain()` walks the DAG from a step_id/trigger seed pulling in stale ancestors (`_pull_stale_ancestors`), `run_chain_claimed()` runs the plan sequentially with a single-flight claim (`try_begin`/`finish`) and per-step `sub_progress`; TODO-310 P4 adds `advisories` to the plan (`_chain_advisories()` — one per pending `gate` queue blocking a runnable step, plus a `kind='publish'` entry when `master_publish` is runnable) which are display-only and never affect `/start` or the 409 path; all executor targets are resolved lazily inside wrapper functions so `concert_ranker`/`bs4`/`lxml` are never pulled into backend startup; powers POST /api/refresh/chain/preview, /start, /stop, GET /status, /history
 │   ├── ranker_jobs.py        # TODO-306 P2: backend-side concert_ranker wrapper — plan_scan/run_scan_claimed/run_rerank, JobState-backed, POST /api/ranker/scan + /api/ranker/rerank; reuses concert_ranker.cli.collection_worklist/rerank (promoted from private names)
 │   ├── dossier.py            # Show dossier (TODO-257/260): build_dossier() assembly + filter_dossier_sections/render_bbcode presentation layer; _render_locator_svg() server-side Mercator map
+│   ├── dossier_fields.py     # Dossier field requirements (TODO-342 Phase 4 home), D-01 matcher so far: clean_track_title() (durations/suffixes/glued headers stripped, non-songs → None), parse_entry_tracklist() (per-track raw/title/is_song/partial/missing), match_track() (exact → no-subtitle → song_canonical alias → db.titles_match) + build_setlist_index()
 │   ├── setlist_fingerprint.py # Setlist fingerprinting: score entries.setlist vs olof_songs, curator suggestion queue (TODO-225)
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
@@ -230,7 +231,8 @@ losslessbob/
 │   ├── test_queues.py        # backend/queues.py (TODO-310 P4): registry integrity (every `blocks` entry is a real step_id, gate/backlog total_sql rules), each `count_sql` against a fixture (decided conflicts and dismissed suggestions drop out; suggestions counted per LB, not per row), missing-table → `state='unknown'`, `attention_by_step` inversion, backlog never `pending` and never in `pending_total`
 │   ├── test_lb_coverage.py   # backend/lb_coverage.py: payload contract, by_decade bucketing, ledger-hash determinism, fresh-DB zeroing, alias folding (BUG-321)
 │   ├── test_dossier.py       # backend/dossier.py: fresh-install degrade, channel gating, rarity flags, ambiguous-date, family grouping, bbcode digest (TODO-257)
-│   ├── test_qc.py            # backend/qc/: init_db idempotence, R-O1/R-O2/R-O3/R-T1/R-T2/R-T3/R-G1/R-E1/R-F1/R-S1 fire/don't-fire, open→fixed→reopened lifecycle, false_positive stays/reopens on evidence change, quarantine lookup (TODO-342 Phase 2)
+│   ├── test_dossier_fields.py # backend/dossier_fields.py: clean_track_title, glued-marker split, partial/missing flags, match_track tiers (TODO-342 C13)
+│   ├── test_qc.py            # backend/qc/: init_db idempotence, R-O1/R-O2/R-O3/R-T1/R-T2/R-T3/R-G1/R-E1/R-E2/R-F1/R-S1 fire/don't-fire, open→fixed→reopened lifecycle, false_positive stays/reopens on evidence change, quarantine lookup (TODO-342 Phase 2)
 │   ├── test_show_picks.py    # concert_ranker.picks: one date fixture per §4 scoring term
 │   ├── test_picks_tonight.py # LISTENING §9 "this night in Dylan history"
 │   ├── test_library_picks_api.py # FABLE_UNIFIED_RANKING phases 3-4: Library payload extension
@@ -1400,7 +1402,16 @@ venue tokens first, falling back to the full token set if nothing distinctive re
 only ever pinned to a city centroid, `source='setlistfm_city'`/confidence `'city'`, are
 excluded; catches Zepp Tokyo → Zepp DiverCity), `R-E1` (`entries` field ranges: `timing`
 non-empty with no 'min' unit, `cdr` parsed as an int ≤0 or >6, `rating` non-empty and not in
-the standard letter-grade set mirroring `backend.timeline._GRADE_ORDER`), `R-T1` (a
+the standard letter-grade set mirroring `backend.timeline._GRADE_ORDER`), `R-E2` (error,
+entity `entry`: an entry's tracklist doesn't fit its dated show — `entries.setlist` parsed by
+`backend/dossier_fields.parse_entry_tracklist`, `date_str` mapped via `entry_date_to_iso`,
+song tracks (non-songs and `missing` tracks excluded) matched by `match_track` against the
+union of every Olof event's songs on that date; fires when <20% (`E2_MIN_SHARE`) of the
+entry's song tracks match; skips entries with <3 song tracks (`E2_MIN_SONG_TRACKS`), dates
+with no Olof songs, entries covering ≥50% of the date's Olof songs (`E2_MAX_OLOF_COVER` —
+Olof lists a subset), and glued tracklists; evidence: date, song-track/matched counts, share,
+Olof song/matched counts, ≤8 unmatched titles; catches LB-06654 "Mono Mixes" on 1965-06-01;
+`entry_setlist_fit()` exposes the per-entry scores), `R-T1` (a
 non-confirmed `taper_attributions` row whose evidence is a `mention` not bound to a
 taper-context phrase — shares `taper_attribution.mention_has_taper_context`, reloading
 `user_taper_aliases` first), `R-T2` (a propagated row whose `family` evidence names a

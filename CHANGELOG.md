@@ -1,3 +1,17 @@
+[2026-09-11] — Entry track matcher + rule R-E2 (dossier C13)
+Added: backend/dossier_fields.py: clean_track_title() (durations, [..] suffixes, performance-note
+  parentheticals, glued Disc/CD/Show/Broadcast headers, non-songs → None), parse_entry_tracklist()
+  (per-track partial / missing flags), build_setlist_index() + match_track() (exact → without
+  subtitle → song_canonical alias → titles_match containment).
+Added: backend/qc/rules.py: R-E2 (error) — an entry's song tracks match < 20% of the union of its
+  date's Olof songs (≥ 3 song tracks; glued tracklists and entries covering ≥ 50% of Olof's list
+  skipped). Live: 70 open; LB-06654 ("Mono Mixes" dated 1965-06-01) fires at 0/25.
+Fixed: backend/db.py: _ENTRY_TRACK_MARKER_RE missed markers glued to the title ("10.When The Deal
+  Goes Down"), so the rest of the list collapsed into one title. 141 of 13,137 live setlists now
+  split further (+768 titles); LB-08477 10 → 13. Also feeds setlist_fingerprint.
+Changed: backend/qc/review.py: R-E2 findings get the entry-row context panel.
+Added: tests/test_dossier_fields.py (51 tests), 7 R-E2 tests in tests/test_qc.py.
+
 [2026-09-11] — QC review console, write side: decisions, Queue tab, rules run (dossier C12)
 Added: backend/qc/decisions.py: decide() (confirmed / false_positive from open, confirmed or
   false_positive; fixed / corrected refuse), bulk_decide() (one rule per batch, all-or-nothing),
