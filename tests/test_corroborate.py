@@ -305,6 +305,98 @@ class TestTourPremieres:
         assert tp["premiere_count_matches"] is True
 
 
+def _open_finding(conn, rule_id, event_id):
+    conn.execute(
+        "INSERT INTO qc_findings (rule_id, entity_kind, entity_key, severity, detail,"
+        " evidence_json, evidence_hash, first_seen, last_seen, status)"
+        " VALUES (?, 'olof_event', ?, 'error', '', '{}', 'h', '2026-01-01', '2026-01-01', 'open')",
+        (rule_id, str(event_id)),
+    )
+
+
+def _two_show_tour(conn, second_songs, tour_new_count):
+    """T1: 2010-01-01 plays A, B; 2010-01-02 plays *second_songs*; setlist.fm agrees."""
+    _insert_event(conn, 1, "2010-01-01", ["Song A", "Song B"])
+    _insert_song_performances(conn, 1, ["Song A", "Song B"], tour_name="T1")
+    _insert_setlistfm(conn, "s1", "2010-01-01", ["Song A", "Song B"])
+    _insert_event(conn, 2, "2010-01-02", second_songs)
+    _insert_song_performances(conn, 2, second_songs, tour_name="T1")
+    _insert_setlistfm(conn, "s2", "2010-01-02", second_songs)
+    conn.execute("UPDATE olof_events SET tour_new_count = ? WHERE event_id = 2",
+                 (tour_new_count,))
+
+
+class TestSongHistory:
+    """backend.dossier_fields.song_history (D-02, C18) — here for the qc fixture."""
+
+    def test_gate_passes_and_badges_premiere(self, qc):
+        from backend.dossier_fields import song_history
+        _db, _rules, _corroborate, conn = qc
+        with conn:
+            _two_show_tour(conn, ["Song A", "Song C"], tour_new_count=1)
+        h = song_history(conn, 2)
+        assert h["gate_passed"] and h["gate_reasons"] == []
+        assert [s["position"] for s in h["songs"] if s["premiere_badge"]] == [2]
+        assert h["premiere_count"] == 1
+
+    def test_count_mismatch_withholds_badges_keeps_count(self, qc):
+        from backend.dossier_fields import song_history
+        _db, _rules, _corroborate, conn = qc
+        with conn:
+            _two_show_tour(conn, ["Song A", "Song C"], tour_new_count=2)
+        h = song_history(conn, 2)
+        assert not h["gate_passed"] and "Olof states 2" in h["gate_reasons"][0]
+        assert h["premiere_count"] == 1
+        assert not any(s["premiere_badge"] for s in h["songs"])
+
+    def test_open_ro1_earlier_in_tour_withholds_badges(self, qc):
+        from backend.dossier_fields import song_history
+        _db, _rules, _corroborate, conn = qc
+        with conn:
+            _two_show_tour(conn, ["Song A", "Song C"], tour_new_count=1)
+            _open_finding(conn, "R-O1", 1)
+        h = song_history(conn, 2)
+        assert not h["gate_passed"]
+        assert any("R-O1/R-O4" in r for r in h["gate_reasons"])
+
+    def test_repeated_song_premieres_once(self, qc):
+        from backend.dossier_fields import song_history
+        _db, _rules, _corroborate, conn = qc
+        with conn:
+            _two_show_tour(conn, ["Song A", "Song C", "Song C"], tour_new_count=1)
+        h = song_history(conn, 2)
+        assert h["gate_passed"]
+        assert [s["tour_premiere"] for s in h["songs"]] == [False, True, False]
+
+    def test_history_fields(self, qc):
+        from backend.dossier_fields import song_history
+        _db, _rules, _corroborate, conn = qc
+        with conn:
+            for eid, day, songs in ((1, "01", ["Song A"]), (2, "02", ["Song B"]),
+                                    (3, "03", ["Song B"]), (4, "04", ["Song A", "Song D"])):
+                _insert_event(conn, eid, f"2010-01-{day}", songs)
+                _insert_song_performances(conn, eid, songs, tour_name="T1")
+        a, d = song_history(conn, 4)["songs"]
+        assert (a["career_debut"], a["last_played"], a["gap_shows"], a["times_played"]) == (
+            False, "2010-01-01", 2, 2)
+        assert (d["career_debut"], d["last_played"], d["gap_shows"], d["times_played"]) == (
+            True, None, None, 1)
+
+    def test_gap_badge_withheld_by_ro1_in_span(self, qc, monkeypatch):
+        from backend import dossier_fields
+        _db, _rules, _corroborate, conn = qc
+        monkeypatch.setattr(dossier_fields, "GAP_BADGE_SHOWS", 2)
+        with conn:
+            for eid, day, songs in ((1, "01", ["Song A"]), (2, "02", ["Song B"]),
+                                    (3, "03", ["Song B"]), (4, "04", ["Song A"])):
+                _insert_event(conn, eid, f"2010-01-{day}", songs)
+                _insert_song_performances(conn, eid, songs, tour_name="T1")
+        assert dossier_fields.song_history(conn, 4)["songs"][0]["gap_badge"] is True
+        with conn:
+            _open_finding(conn, "R-O1", 2)
+        assert dossier_fields.song_history(conn, 4)["songs"][0]["gap_badge"] is False
+
+
 class TestRotationCheck:
     def test_recompute_matches_stated_stat(self, qc):
         """rotation_new/pct = count/floor(pct) of this show's songs absent from the previous."""

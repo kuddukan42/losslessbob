@@ -24,6 +24,8 @@ from __future__ import annotations
 import logging
 import re
 import sqlite3
+from bisect import bisect_left, bisect_right
+from collections import defaultdict
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass, field
 from typing import TypedDict
@@ -631,3 +633,206 @@ def completeness(
             show_bar=bool(setlist) and fit and confidence != "inferred",
         )
     return out
+
+
+# ---------------------------------------------------------------------------
+# D-02 song-level performance history
+# ---------------------------------------------------------------------------
+
+# Gap badge: a song back after at least this many concerts away (plan D-02).
+GAP_BADGE_SHOWS = 100
+# Open findings of these rules on the tour withhold per-song premiere badges (D-02 gate
+# item 3); R-O1 alone withholds a gap badge across its span (a truncated setlist fakes a gap).
+_PREMIERE_GATE_RULES = ("R-O1", "R-O4")
+_GAP_GATE_RULES = ("R-O1",)
+
+
+class SongHistory(TypedDict):
+    """One setlist position's D-02 history.
+
+    Keys:
+        position: ``song_performances.position``.
+        song: Display title (``song_canonical``).
+        tour_premiere: No earlier performance in the same ``tour_name`` (first
+            occurrence in this show only).
+        career_debut: No earlier concert performance at all.
+        last_played: Date of the previous concert performance, or ``None``.
+        gap_shows: Concert events strictly between that performance and this
+            show, or ``None`` on a debut.
+        times_played: Concert events with this song, up to and including this show.
+        premiere_badge: ``tour_premiere`` and the three-part gate passed.
+        gap_badge: ``gap_shows >= GAP_BADGE_SHOWS`` with no open R-O1 in the span.
+    """
+
+    position: int
+    song: str
+    tour_premiere: bool
+    career_debut: bool
+    last_played: str | None
+    gap_shows: int | None
+    times_played: int
+    premiere_badge: bool
+    gap_badge: bool
+
+
+class SongHistoryResult(TypedDict):
+    """Result of :func:`song_history`.
+
+    Keys:
+        event_id: The event.
+        tour_name: ``olof_events.tour_name``.
+        premiere_count: Computed tour premieres (renders even when the gate fails).
+        tour_new_count: Olof's stated count, or ``None``.
+        gate_passed: All three D-02 gate items hold, so per-song badges may render.
+        gate_reasons: Why the gate failed, one line per failed item; ``[]`` when passed.
+        songs: One :class:`SongHistory` per position, in order.
+    """
+
+    event_id: int
+    tour_name: str
+    premiere_count: int
+    tour_new_count: int | None
+    gate_passed: bool
+    gate_reasons: list[str]
+    songs: list[SongHistory]
+
+
+def _open_finding_events(conn: sqlite3.Connection, rules: tuple[str, ...]) -> set[int]:
+    """Event ids with an open or reopened ``olof_event`` finding under *rules*."""
+    try:
+        rows = conn.execute(
+            "SELECT entity_key FROM qc_findings WHERE entity_kind = 'olof_event'"
+            f" AND rule_id IN ({','.join('?' * len(rules))})"
+            " AND status IN ('open', 'reopened')",
+            rules,
+        ).fetchall()
+    except sqlite3.OperationalError:  # no qc_findings table yet
+        return set()
+    return {int(r[0]) for r in rows if str(r[0]).isdigit()}
+
+
+def _concert_keys(conn: sqlite3.Connection) -> list[tuple[str, int]]:
+    """Every dated concert event as ``(date_str, event_id)``, sorted — the D-02 order."""
+    from backend.qc.corroborate import is_concert_row
+
+    rows = conn.execute(
+        "SELECT event_id, date_str, event_type, tour_name FROM olof_events WHERE date_str != ''"
+    ).fetchall()
+    return sorted((r[1], r[0]) for r in rows if is_concert_row(r[2], r[3]))
+
+
+def song_history(
+    conn: sqlite3.Connection, event_id: int, canonical_map: dict[str, str] | None = None,
+) -> SongHistoryResult:
+    """D-02: per-position performance history, the premiere gate and gap badges.
+
+    Tour premieres come from :func:`backend.qc.corroborate.tour_premieres`
+    (Phase 3b), which also answers gate item 2 from setlist.fm scoped to the
+    tour's date span. A song played twice in one show is a premiere only at
+    its first position. Career history is every earlier concert-filtered
+    ``song_performances`` row, ordered by ``(date_str, event_id)``.
+
+    Gate (all three, or no per-song premiere badges; the count renders alone):
+    the computed premiere count equals ``tour_new_count``; setlist.fm confirms
+    every premiere; no open R-O1/R-O4 finding on this event or an earlier
+    event of the tour.
+
+    Args:
+        conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
+        event_id: ``olof_events.event_id``.
+        canonical_map: Optional pre-loaded ``song_canonical`` alias map.
+
+    Returns:
+        A :class:`SongHistoryResult`; ``songs`` is ``[]`` (gate failed) when the
+        event has no ``song_performances`` rows.
+    """
+    from backend.qc.corroborate import is_concert_row, tour_premieres
+
+    tp = tour_premieres(conn, event_id, canonical_map)
+    ev = conn.execute(
+        "SELECT date_str, tour_name FROM olof_events WHERE event_id = ?", (event_id,),
+    ).fetchone()
+    result = SongHistoryResult(
+        event_id=event_id, tour_name=tp["tour_name"], premiere_count=0,
+        tour_new_count=tp["tour_new_count"], gate_passed=False, gate_reasons=[], songs=[],
+    )
+    if ev is None or not tp["songs"]:
+        result["gate_reasons"].append("no song_performances rows for this event")
+        return result
+    date_str, tour_name = ev["date_str"], ev["tour_name"] or ""
+    here = (date_str, event_id)
+
+    norm_at = {
+        r["position"]: r["song_norm"] for r in conn.execute(
+            "SELECT position, song_norm FROM song_performances WHERE event_id = ?", (event_id,),
+        )
+    }
+    distinct = sorted(set(norm_at.values()))
+    earlier: dict[str, set[tuple[str, int]]] = defaultdict(set)
+    for r in conn.execute(
+        "SELECT sp.song_norm, oe.event_id, oe.date_str, oe.event_type, oe.tour_name"
+        " FROM song_performances sp JOIN olof_events oe ON oe.event_id = sp.event_id"
+        f" WHERE sp.song_norm IN ({','.join('?' * len(distinct))}) AND oe.date_str != ''"
+        " AND (oe.date_str < ? OR (oe.date_str = ? AND oe.event_id < ?))",
+        (*distinct, date_str, date_str, event_id),
+    ):
+        if is_concert_row(r["event_type"], r["tour_name"]):
+            earlier[r["song_norm"]].add((r["date_str"], r["event_id"]))
+
+    keys = _concert_keys(conn)
+    gap_blockers = _open_finding_events(conn, _GAP_GATE_RULES)
+    seen: set[str] = set()
+    songs: list[SongHistory] = []
+    for s in tp["songs"]:
+        norm = norm_at.get(s["position"], "")
+        first = norm not in seen
+        seen.add(norm)
+        prior = earlier.get(norm, set())
+        last = max(prior) if prior else None
+        gap: int | None = None
+        gap_ok = False
+        if last is not None:
+            lo, hi = bisect_right(keys, last), bisect_left(keys, here)
+            gap = hi - lo
+            gap_ok = gap >= GAP_BADGE_SHOWS and not any(
+                eid in gap_blockers for _, eid in keys[lo:hi]
+            )
+        songs.append(SongHistory(
+            position=s["position"], song=s["song"], tour_premiere=s["ours"] and first,
+            career_debut=not prior and first, last_played=last[0] if last else None,
+            gap_shows=gap, times_played=len(prior) + 1, premiere_badge=False, gap_badge=gap_ok,
+        ))
+
+    premieres = [s for s in songs if s["tour_premiere"]]
+    by_position = {s["position"]: s for s in tp["songs"]}
+    reasons: list[str] = []
+    if not tour_name:
+        reasons.append("event has no tour_name")
+    if tp["tour_new_count"] is None:
+        reasons.append("Olof states no tour premiere count")
+    elif len(premieres) != tp["tour_new_count"]:
+        reasons.append(
+            f"computed {len(premieres)} premieres, Olof states {tp['tour_new_count']}"
+        )
+    unconfirmed = [s["position"] for s in premieres
+                   if by_position[s["position"]]["setlistfm"] is not True]
+    if unconfirmed:
+        reasons.append(f"setlist.fm doesn't confirm the premiere at positions {unconfirmed}")
+    if tour_name:
+        blockers = _open_finding_events(conn, _PREMIERE_GATE_RULES)
+        tour_events = [
+            r["event_id"] for r in conn.execute(
+                "SELECT event_id, date_str FROM olof_events WHERE tour_name = ?", (tour_name,),
+            ) if (r["date_str"] or "", r["event_id"]) <= here
+        ]
+        blocked = sorted(e for e in tour_events if e in blockers)
+        if blocked:
+            reasons.append(f"open R-O1/R-O4 finding on tour event(s) {blocked[:5]}")
+
+    passed = not reasons
+    for s in songs:
+        s["premiere_badge"] = passed and s["tour_premiere"]
+    result.update(
+        premiere_count=len(premieres), gate_passed=passed, gate_reasons=reasons, songs=songs,
+    )
+    return result

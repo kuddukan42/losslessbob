@@ -195,6 +195,9 @@ def _is_concert_row(event_type: str | None, tour_name: str | None) -> bool:
     return is_concert and "ehearsal" not in (tour_name or "")
 
 
+is_concert_row = _is_concert_row  # public name for backend.dossier_fields (D-02)
+
+
 def load_canonical_map(conn: sqlite3.Connection) -> dict[str, str]:
     """Best-effort ``song_canonical`` alias map; ``{}`` if the table is missing."""
     from backend.song_index import _load_song_canonical_map

@@ -20,6 +20,9 @@ for the mode asked. Modes arrive chunk by chunk; today there are two:
     --d01           D-01 accept cases: backend.dossier_fields.completeness on 2010-03-29
                     (every source basis tracklist) and 1965-06-01 (LB-10364/12222 1/12,
                     LB-08855's missing positions, LB-06654 fails G2) (C17).
+    --d02           D-02: backend.dossier_fields.song_history — 2010-03-29 badges songs 4
+                    and 14 only, then the premiere-gate pass rate over 200 sampled concerts
+                    (seeded) with the failing gate items tallied (C18).
 
 Usage::
 
@@ -29,6 +32,7 @@ Usage::
     .venv/bin/python3 tools/dossier_acceptance.py --corroborate --before .debug/olof_before.db
     .venv/bin/python3 tools/dossier_acceptance.py --premieres
     .venv/bin/python3 tools/dossier_acceptance.py --d01
+    .venv/bin/python3 tools/dossier_acceptance.py --d02
 
 ``--before`` reads the same counts from a tools/olof_reparse_diff.py snapshot and
 prints them beside the live ones (``--parser``), or supplies the pre-Phase-1 Olof
@@ -439,6 +443,59 @@ def run_d01(db_path: Path) -> int:
     return 0 if all(ok for ok, _ in checks) else 1
 
 
+_D02_SAMPLE = 200
+_D02_SEED = 342
+
+
+def run_d02(db_path: Path) -> int:
+    """D-02 accept case (C18) plus the premiere-gate pass rate over a seeded sample."""
+    import random
+    import re
+    from collections import Counter
+
+    from backend.dossier_fields import song_history
+
+    live = _open_ro(db_path)
+    try:
+        event_id = corroborate.primary_event_id(live, "2010-03-29")
+        hist = song_history(live, event_id) if event_id else None
+        badged = [s["position"] for s in hist["songs"] if s["premiere_badge"]] if hist else []
+        ok = bool(hist) and hist["gate_passed"] and badged == [4, 14]
+        _log.info(
+            "%s  2010-03-29 premiere badges %s = [4, 14] (gate %s)",
+            "PASS" if ok else "FAIL", badged, hist["gate_reasons"] if hist else "no event",
+        )
+
+        cmap = corroborate.load_canonical_map(live)
+        ids = [
+            r["event_id"] for r in live.execute(
+                "SELECT DISTINCT sp.event_id, oe.event_type, oe.tour_name"
+                " FROM song_performances sp JOIN olof_events oe USING (event_id)"
+                " ORDER BY sp.event_id"
+            ) if corroborate.is_concert_row(r["event_type"], r["tour_name"])
+        ]
+        sample = random.Random(_D02_SEED).sample(ids, min(_D02_SAMPLE, len(ids)))
+        passed = badges = gap_badges = 0
+        reasons: Counter[str] = Counter()
+        for eid in sample:
+            h = song_history(live, eid, cmap)
+            passed += h["gate_passed"]
+            badges += sum(s["premiere_badge"] for s in h["songs"])
+            gap_badges += sum(s["gap_badge"] for s in h["songs"])
+            reasons.update(re.sub(r"\[.*\]|\d+", "N", r) for r in h["gate_reasons"])
+    finally:
+        live.close()
+
+    _log.info("")
+    _log.info(
+        "premiere gate passed on %d/%d sampled concerts (%.1f%%): %d premiere badges,"
+        " %d gap badges", passed, len(sample), 100 * passed / len(sample), badges, gap_badges,
+    )
+    for reason, n in reasons.most_common():
+        _log.info("  %4d  %s", n, reason)
+    return 0 if ok else 1
+
+
 def run_parser(db_path: Path, before: Path | None, residuals: bool) -> int:
     """Print the Phase 1 counts (and a before column), then the checks; return exit code."""
     live = _open_ro(db_path)
@@ -481,6 +538,8 @@ def main(argv: list[str] | None = None) -> int:
                       help="Phase 3 row (b) / D-02 accept case: 2010-03-29 tour premieres.")
     mode.add_argument("--d01", action="store_true",
                       help="D-01 accept cases: per-source completeness + G2 (C17).")
+    mode.add_argument("--d02", action="store_true",
+                      help="D-02 accept case + premiere-gate rate over 200 concerts (C18).")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
                         help="--parser: olof_reparse_diff snapshot to print beside the live"
@@ -495,6 +554,8 @@ def main(argv: list[str] | None = None) -> int:
         return run_premieres(args.db)
     if args.d01:
         return run_d01(args.db)
+    if args.d02:
+        return run_d02(args.db)
     return run_parser(args.db, args.before, args.residuals)
 
 
