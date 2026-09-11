@@ -61,6 +61,7 @@ from backend.paths import (
     detail_url,
     find_lbdir_attachment,
 )
+from backend.qc import review as _qc_review
 from concert_ranker.config import resolve_band_set
 from concert_ranker.scoring import band_metric
 
@@ -6861,6 +6862,73 @@ def create_app() -> Flask:
             _log.exception("taper_curation_text_hits failed")
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
+    # ── QC review console (/qc-review, TODO-342 Phase 2b, experimental) ───────
+    # Read side only (C11): the rule engine (backend/qc/store.py, run via
+    # `python -m backend.qc`) and its findings/runs/decision-log tables are
+    # already live; these routes just surface them. Reads are open — no
+    # curator guard, unlike the write routes C12 adds next to these.
+
+    @app.route("/api/qc/summary", methods=["GET"])
+    def qc_summary() -> Response:
+        """Per-rule counts by severity x status, last run per rule, open totals."""
+        try:
+            return jsonify(_qc_review.summary())
+        except Exception as exc:
+            _log.exception("qc_summary failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/qc/findings", methods=["GET"])
+    def qc_findings_list() -> Response:
+        """Paged QC findings list.
+
+        Query params (all optional): rule, severity, status, entity_kind,
+        date (ISO, matches an affected dossier date), q, page, page_size
+        (max 200).
+        """
+        try:
+            return jsonify(_qc_review.list_findings(
+                rule=request.args.get("rule") or None,
+                severity=request.args.get("severity") or None,
+                status=request.args.get("status") or None,
+                entity_kind=request.args.get("entity_kind") or None,
+                date=request.args.get("date") or None,
+                q=request.args.get("q") or None,
+                page=request.args.get("page", type=int, default=1),
+                page_size=request.args.get("page_size", type=int, default=50),
+            ))
+        except Exception as exc:
+            _log.exception("qc_findings_list failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/qc/findings/<int:finding_id>", methods=["GET"])
+    def qc_finding_detail(finding_id: int) -> Response:
+        """One finding: its evidence, rule-family context panel, affected dates."""
+        try:
+            finding = _qc_review.get_finding(finding_id)
+        except Exception as exc:
+            _log.exception("qc_finding_detail failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+        if finding is None:
+            return jsonify({"error": "not_found"}), 404
+        return jsonify(finding)
+
+    @app.route("/api/qc/decisions", methods=["GET"])
+    def qc_decisions_list() -> Response:
+        """Paged qc_decision_log, newest first.
+
+        Query params: page, page_size (max 200), finding_id (restrict to one
+        finding's history).
+        """
+        try:
+            return jsonify(_qc_review.list_decisions(
+                page=request.args.get("page", type=int, default=1),
+                page_size=request.args.get("page_size", type=int, default=50),
+                finding_id=request.args.get("finding_id", type=int),
+            ))
+        except Exception as exc:
+            _log.exception("qc_decisions_list failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     @app.route("/api/tapers/decisions", methods=["GET"])
     def taper_decisions_list() -> Response:
         """Decision history from taper_decision_log, newest first.
@@ -9108,6 +9176,18 @@ def create_app() -> Flask:
         curator-gated routes /taper-review uses.
         """
         page_html = Path(__file__).parent / "taper_curation.html"
+        return send_from_directory(str(page_html.parent), page_html.name)
+
+    @app.route("/qc-review")
+    def qc_review_page() -> Response:
+        """Serve the QC review console (TODO-342 Phase 2b, experimental).
+
+        Read-only in this build (C11): the Queue tab is a placeholder and the
+        Findings tab's workbench table/detail drawer talk to the /api/qc/*
+        read routes above. Write routes (decisions, corrections, rule runs)
+        land in C12.
+        """
+        page_html = Path(__file__).parent / "qc_review.html"
         return send_from_directory(str(page_html.parent), page_html.name)
 
     @app.route("/api/admin/status", methods=["GET"])

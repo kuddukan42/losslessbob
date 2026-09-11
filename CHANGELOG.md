@@ -1,3 +1,17 @@
+[2026-09-11] — QC review console, read side: /qc-review page + Findings tab (dossier C11)
+Added: backend/qc/review.py: read model — summary (per-rule severity × status counts, last run,
+  open totals), paged/filtered findings, one finding with a rule-family context panel (taper /
+  Olof / geocode / entry / family / staleness) and affected dossier dates, decision log. Venue
+  findings share one olof_events index per request (a date-filtered list over 7,877 findings: 0.13 s).
+Added: backend/app.py: GET /qc-review, /api/qc/summary, /api/qc/findings, /api/qc/findings/<id>,
+  /api/qc/decisions (reads open; write routes land in C12).
+Added: backend/qc_review.html: header counts, Findings workbench (filter chips, pager, detail
+  drawer with Open dossier links); Queue tab is a C12 placeholder. English-only, experimental.
+Added: tests/test_qc_review.py (22 tests).
+Fixed: backend/taper_curation.py: R-T4 counted TUIT handles ruled out as tapers (uploader
+  'dolphinsmile', 'jtt', 'captain acid') as disagreement; tuit_taper_parts now drops them unless a
+  curator is_taper flag re-admits them. R-T4 69 → 67.
+
 [2026-09-11] — TUIT taper aliases mapped; rule R-T4 (dossier C10)
 Added: backend/qc/rules.py: R-T4 (warn) — our taper differs from every taper TUIT names for the LB,
   after alias mapping; conflict rows and placeholders skipped. Live: 69 open of 1,309 LBs with both.

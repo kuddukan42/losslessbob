@@ -562,6 +562,15 @@ class TestRuleT4:
         keys = {f.entity_key for f in rules.rule_t4(conn)}
         assert keys == {"1"}
 
+    def test_ignores_not_a_taper_handles(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute("INSERT INTO entries (lb_number, timing, cdr, rating)"
+                         " VALUES (7, '', '', '')")
+            _attr(conn, 7, "spot")
+            _tuit(conn, 107, 7, "Dolphinsmile")     # uploader, not a taper
+        assert list(rules.rule_t4(conn)) == []
+
 
 class TestTuitTaperHelpers:
     def test_parts_split_gloss_and_drop_placeholders(self, qc):
