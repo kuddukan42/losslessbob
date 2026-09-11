@@ -190,7 +190,7 @@ _RELEASE_TITLE_RE = re.compile(r"^(?:released on|available on)\s+(.+)$", re.IGNO
 
 _SONG_COLUMNS = [
     "event_id", "position", "song_title", "credits", "is_encore",
-    "take_number", "take_status", "annotations", "released_on",
+    "take_number", "take_status", "annotations", "released_on", "subtitle",
 ]
 
 # Used to disambiguate a 2-part "City, X" header line: is X a region (US
@@ -215,6 +215,7 @@ _EVENT_COLUMNS = [
     "session_title", "concert_no_net", "concert_no_year", "lineup",
     "recording_info", "recording_kind", "recording_mins", "notes",
     "bobtalk", "releases_raw", "references_raw", "updated_raw", "raw_text",
+    "rotation_new", "rotation_pct", "tour_new_count", "venue_history_raw",
 ]
 
 
@@ -246,6 +247,12 @@ class EventRecord:
     references_raw: str = ""
     updated_raw: str = ""
     raw_text: str = ""
+    # Show-dossier redesign Phase 1 (TODO-342, fixes P1c/P1d). bobserve rows
+    # never carry these trailer lines, so they stay NULL / '' there.
+    rotation_new: int | None = None
+    rotation_pct: int | None = None
+    tour_new_count: int | None = None
+    venue_history_raw: str = ""
 
 
 @dataclass
@@ -261,6 +268,7 @@ class SongRecord:
     take_status: str = ""
     annotations: str = ""
     released_on: str = ""
+    subtitle: str = ""  # parenthetical alternate title, not a credit (TODO-342 P1e)
 
 
 # ---------------------------------------------------------------------------

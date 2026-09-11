@@ -232,6 +232,7 @@ losslessbob/
 │   ├── test_picks_tonight.py # LISTENING §9 "this night in Dylan history"
 │   ├── test_library_picks_api.py # FABLE_UNIFIED_RANKING phases 3-4: Library payload extension
 │   ├── test_olof_bobtalk_search.py # TODO-226 Part A: BobTalk/notes full-text search
+│   ├── test_olof_parser_fixes.py # TODO-342 Phase 1: new Olof columns + migration, tools/olof_reparse_diff.py classifier
 │   ├── test_concert_ranker.py # concert_ranker LB-integration layer
 │   ├── test_concert_ranker_pipeline.py # Synthetic end-to-end concert_ranker pipeline test
 │   ├── test_ab_clips.py      # backend/ab_clips.py: aligned A/B listening clip service (LISTENING §2, TODO-231)
@@ -249,6 +250,8 @@ losslessbob/
 │   ├── import_curated_lists.py # CLI: import curator "best of" picks (TODO-181) — carbonbit's FLglist.xlsx + 10haaf's dylan_boots.zip/years.zip → curated_lists/curated_list_entries
 │   ├── attribute_tapers.py   # CLI wrapper: backend.taper_attribution recompute → taper_attributions (--dry-run, --calibrate-fingerprints)
 │   ├── compute_show_picks.py # CLI wrapper: concert_ranker.picks recompute → show_picks (--dry-run)
+│   ├── olof_reparse_diff.py  # CLI: snapshot olof_events/olof_songs → .debug/olof_before.db, then diff a reparse and bucket every change by fix P1a–P1g; UNEXPLAINED exits 1 (TODO-342)
+│   ├── dossier_acceptance.py # CLI: dossier-redesign live acceptance — one PASS/FAIL line per plan criterion (--parser; --before snapshot column) (TODO-342)
 │   ├── compute_song_performances.py # CLI wrapper: backend.song_index recompute → song_performances (--dry-run)
 │   ├── shntool.exe           # Windows shntool binary (GPL-2); bundled via losslessbob_backend.spec
 │   ├── flac.exe              # Windows flac 1.5.0 Win64 binary (GPL-2); bundled via losslessbob_backend.spec (TODO-146)
@@ -1339,10 +1342,15 @@ or `9_000_000 + bobserve event id` `source='bobserve'` — three disjoint ranges
 date_str ISO + raw, venue/city/region/country split fields, event_type
 `concert|session|rehearsal|broadcast|interview|other` (bobserve also emits richer compound
 labels like `concert - outlaw music festival` verbatim), tour_name, NET/year concert numbers,
-lineup, recording kind/mins, notes, bobtalk, releases_raw, references_raw, raw_text safety net)
+lineup, recording kind/mins, notes, bobtalk, releases_raw, references_raw, raw_text safety net;
+plus, for the show-dossier redesign (TODO-342 Phase 1, added by `init_db`'s idempotent
+migration): `rotation_new` / `rotation_pct` / `tour_new_count` INTEGER from Olof's "N new songs
+(P%) compared to previous concert. N new songs for this tour" line, and `venue_history_raw` TEXT
+for the "Other Bob Dylan shows in X:" blob moved out of notes — NULL / '' on bobserve rows)
 via `backend/olof_parser.py` (DSN) / `backend/bobserve_parser.py` (2022+). `olof_songs` = one
 row per performed song / studio take (event_id+position PK, song_title, credits, is_encore,
-take_number, take_status, annotations, released_on — annotation/release position-ranges
+take_number, take_status, annotations, released_on, subtitle — a parenthetical alternate title,
+not a credit (TODO-342 P1e); annotation/release position-ranges
 resolved per song for DSN; bobserve rows are title+credits only, parsed from the page's
 `data-clipboard-text` blob). `olof_chronicle` = one row per dated calendar/diary entry
 (year+seq PK, date_str ISO where resolvable, date_raw, entry_text — Word field junk stripped);
