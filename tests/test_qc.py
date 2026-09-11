@@ -181,6 +181,220 @@ class TestFalsePositive:
         )
 
 
+class TestRuleO2:
+    def test_fires_on_embedded_country_and_empty_city(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            # A baseline row establishes 'England' in the corpus's known-country set.
+            _insert_event(conn, 19, "1. Song A\n", date_str="1976-01-01")
+            conn.execute("UPDATE olof_events SET city='Manchester', country='England' WHERE event_id=19")
+            _insert_event(conn, 20, "1. Song A\n", date_str="1978-01-01")
+            conn.execute(
+                "UPDATE olof_events SET city='London England', country='' WHERE event_id=20"
+            )
+            _insert_event(conn, 21, "1. Song A\n", date_str="1978-01-02")
+            conn.execute("UPDATE olof_events SET city='', country='' WHERE event_id=21")
+        findings = list(rules.rule_o2(conn))
+        keys = {f.entity_key: f.detail for f in findings}
+        assert "20" in keys and "embeds a country name" in keys["20"]
+        assert "21" in keys and "empty city" in keys["21"]
+
+    def test_fires_on_ambiguous_city_country_pairing(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            _insert_event(conn, 22, "1. Song A\n", date_str="1977-01-01")
+            conn.execute("UPDATE olof_events SET city='London', country='England' WHERE event_id=22")
+            _insert_event(conn, 23, "1. Song A\n", date_str="1997-01-01")
+            conn.execute("UPDATE olof_events SET city='London', country='Canada' WHERE event_id=23")
+        findings = list(rules.rule_o2(conn))
+        keys = {f.entity_key for f in findings}
+        assert {"22", "23"} <= keys
+
+    def test_does_not_fire_on_empty_country_alone(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            _insert_event(conn, 24, "1. Song A\n", date_str="1978-01-01")
+            conn.execute("UPDATE olof_events SET city='Paris', country='' WHERE event_id=24")
+        assert list(rules.rule_o2(conn)) == []
+
+
+class TestRuleG1:
+    def test_fires_on_zepp_tokyo(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, country,"
+                " source, confidence, note) VALUES ('zepp tokyo', 'tokyo', 'Zepp Tokyo',"
+                " 'Tokyo', 'Japan', 'bounded_venue', 'low',"
+                " 'Zepp DiverCity, Aomi, Koto, Tokyo, Japan')"
+            )
+        findings = list(rules.rule_g1(conn))
+        assert len(findings) == 1
+        assert findings[0].entity_key == "zepp tokyo:tokyo"
+        assert "tokyo" in findings[0].evidence["missing"]
+
+    def test_does_not_fire_on_matching_venue(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, country,"
+                " source, confidence, note) VALUES ('symphony hall', 'boston', 'Symphony Hall',"
+                " 'Boston', 'USA', 'bounded_venue', 'low',"
+                " 'Symphony Hall, 301, Massachusetts Avenue, Boston, USA')"
+            )
+        assert list(rules.rule_g1(conn)) == []
+
+    def test_ignores_city_level_pins(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, country,"
+                " source, confidence, note) VALUES ('some club', 'nowhere', 'Some Club',"
+                " 'Nowhere', 'USA', 'setlistfm_city', 'city', 'city-level pin (setlistfm_city)')"
+            )
+        assert list(rules.rule_g1(conn)) == []
+
+
+class TestRuleE1:
+    def test_fires_on_bad_fields(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO entries (lb_number, timing, cdr, rating) VALUES"
+                " (100, 'Heinrich', '2', 'A')"
+            )
+            conn.execute(
+                "INSERT INTO entries (lb_number, timing, cdr, rating) VALUES"
+                " (101, '60min', '26', 'A')"
+            )
+            conn.execute(
+                "INSERT INTO entries (lb_number, timing, cdr, rating) VALUES"
+                " (102, '60min', '2', 'Z')"
+            )
+        findings = {f.entity_key: f.detail for f in rules.rule_e1(conn)}
+        assert "no 'min' unit" in findings["100"]
+        assert "out of range" in findings["101"]
+        assert "not a known grade" in findings["102"]
+
+    def test_does_not_fire_on_clean_entry(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO entries (lb_number, timing, cdr, rating) VALUES"
+                " (103, '60min', '2', 'A-')"
+            )
+            conn.execute(
+                "INSERT INTO entries (lb_number, timing, cdr, rating) VALUES (104, '', '', '')"
+            )
+        assert list(rules.rule_e1(conn)) == []
+
+
+class TestRuleF1:
+    def test_fires_on_weak_or_flagged_family(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO tapematch_family_meta (fam_id, concert_date, conf, member_count,"
+                " review_flag) VALUES ('fam-weak', '1978-01-01', 0.05, 2, 0)"
+            )
+            conn.execute(
+                "INSERT INTO tapematch_family_meta (fam_id, concert_date, conf, member_count,"
+                " review_flag) VALUES ('fam-flagged', '1978-01-01', 0.9, 2, 1)"
+            )
+        keys = {f.entity_key for f in rules.rule_f1(conn)}
+        assert keys == {"fam-weak", "fam-flagged"}
+
+    def test_does_not_fire_on_healthy_family(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO tapematch_family_meta (fam_id, concert_date, conf, member_count,"
+                " review_flag) VALUES ('fam-good', '1978-01-01', 0.9, 2, 0)"
+            )
+        assert list(rules.rule_f1(conn)) == []
+
+
+class TestRuleS1:
+    def test_fires_when_picks_older_than_families(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO show_picks (concert_date, lb_number, pick_score, pick_rank,"
+                " evidence_json, computed_at) VALUES ('1978-01-01', 1, 1.0, 1, '[]',"
+                " '2026-01-01 00:00:00')"
+            )
+            conn.execute(
+                "INSERT INTO recording_families (lb_number, fam_id, concert_date, imported_at)"
+                " VALUES (1, 'fam-1', '1978-01-01', '2026-02-01 00:00:00')"
+            )
+        keys = {f.entity_key for f in rules.rule_s1(conn)}
+        assert "show_picks" in keys
+
+    def test_fires_on_lb_measured_after_last_rerank(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO entries (lb_number, timing, cdr, rating) VALUES"
+                " (200, '', '', ''), (201, '', '', ''), (202, '', '', '')"
+            )
+            conn.execute(
+                "INSERT INTO quality_scans (scan_id, started_at) VALUES"
+                " (1, '2026-01-01'), (2, '2026-02-01')"
+            )
+            # Scan 1 was reranked (201 scored, 202 seen but unscorable); scan 2 never was.
+            conn.execute(
+                "INSERT INTO quality_recording_metrics (lb_number, scan_id, metric_json)"
+                " VALUES (200, 2, '{}'), (201, 1, '{}'), (202, 1, '{}')"
+            )
+            conn.execute(
+                "INSERT INTO quality_recording_scores (lb_number, scan_id, final_score)"
+                " VALUES (201, 1, 5.0)"
+            )
+        keys = {f.entity_key for f in rules.rule_s1(conn)}
+        assert "200" in keys
+        assert "201" not in keys
+        assert "202" not in keys  # unscored by the last rerank is not stale
+
+    def test_does_not_fire_when_everything_fresh(self, qc):
+        _db, _store, rules, conn, _path = qc
+        with conn:
+            conn.execute(
+                "INSERT INTO recording_families (lb_number, fam_id, concert_date, imported_at)"
+                " VALUES (1, 'fam-1', '1978-01-01', '2026-01-01 00:00:00')"
+            )
+            conn.execute(
+                "INSERT INTO show_picks (concert_date, lb_number, pick_score, pick_rank,"
+                " evidence_json, computed_at) VALUES ('1978-01-01', 1, 1.0, 1, '[]',"
+                " '2026-02-01 00:00:00')"
+            )
+            conn.execute(
+                "INSERT INTO entries (lb_number, timing, cdr, rating) VALUES (200, '', '', '')"
+            )
+            conn.execute(
+                "INSERT INTO quality_scans (scan_id, started_at) VALUES (1, '2026-01-01')"
+            )
+            conn.execute(
+                "INSERT INTO quality_recording_metrics (lb_number, scan_id, metric_json)"
+                " VALUES (200, 1, '{}')"
+            )
+            conn.execute(
+                "INSERT INTO quality_recording_scores (lb_number, scan_id, final_score)"
+                " VALUES (200, 1, 5.0)"
+            )
+            conn.execute(
+                "INSERT INTO olof_pages (filename, parsed_at) VALUES"
+                " ('other.htm', '2026-01-01T00:00:00')"
+            )
+            conn.execute(
+                "UPDATE olof_pages SET parsed_at='2026-01-01T00:00:00' WHERE filename='test.htm'"
+            )
+            conn.execute(
+                "INSERT INTO song_performances (event_id, position, song_norm, song_canonical,"
+                " computed_at) VALUES (1, 1, 'song a', 'Song A', '2026-02-01 00:00:00')"
+            )
+        assert list(rules.rule_s1(conn)) == []
+
+
 class TestQuarantine:
     def test_returns_only_open_confirmed_error_rules(self, qc):
         _db, store, rules, conn, _path = qc

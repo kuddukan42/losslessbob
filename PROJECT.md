@@ -110,7 +110,7 @@ losslessbob/
 │   ├── olof_chronicle_parser.py  # Yearly Chronicles parser: calendar + new-tapes (2022+ appendix superseded, see below) (TODO-162 P4)
 │   ├── bobserve_fetcher.py   # bobserve.com setlist page mirror (2022+, supersedes chronicle appendix) → data/olof/bobserve_pages/ (TODO-228); TODO-306 P2: JobState-backed run_fetch/run_fetch_claimed, POST /api/bobserve/fetch
 │   ├── bobserve_parser.py    # bobserve setlist parser: olof_pages(corpus=bobserve) → olof_events + olof_songs, source='bobserve' (TODO-228)
-│   ├── qc/                   # Show Dossier QC engine (TODO-342 Phase 2): rules.py (pure (conn)->Iterable[Finding] functions in RULES; R-O1/R-O3 shipped, also holds MONTH_YEAR_RE/ROTATION_FRAGMENT_RE for tools/ reuse), store.py (run_rule/run_all reconcile against qc_findings per the decision vocabulary; quarantined()/quarantined_batch()), __main__.py (`python -m backend.qc run`)
+│   ├── qc/                   # Show Dossier QC engine (TODO-342 Phase 2): rules.py (pure (conn)->Iterable[Finding] functions in RULES; R-O1/R-O2/R-O3/R-G1/R-E1/R-F1/R-S1 shipped, also holds MONTH_YEAR_RE/ROTATION_FRAGMENT_RE for tools/ reuse), store.py (run_rule/run_all reconcile against qc_findings per the decision vocabulary; quarantined()/quarantined_batch()), __main__.py (`python -m backend.qc run`)
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-284: lbdir-based collection integrity scan engine
 │   ├── file_integrity.py     # TODO-267: per-file xxh3+sha256 bit-rot inventory (index/verify/rolling)
@@ -229,7 +229,7 @@ losslessbob/
 │   ├── test_queues.py        # backend/queues.py (TODO-310 P4): registry integrity (every `blocks` entry is a real step_id, gate/backlog total_sql rules), each `count_sql` against a fixture (decided conflicts and dismissed suggestions drop out; suggestions counted per LB, not per row), missing-table → `state='unknown'`, `attention_by_step` inversion, backlog never `pending` and never in `pending_total`
 │   ├── test_lb_coverage.py   # backend/lb_coverage.py: payload contract, by_decade bucketing, ledger-hash determinism, fresh-DB zeroing, alias folding (BUG-321)
 │   ├── test_dossier.py       # backend/dossier.py: fresh-install degrade, channel gating, rarity flags, ambiguous-date, family grouping, bbcode digest (TODO-257)
-│   ├── test_qc.py            # backend/qc/: init_db idempotence, R-O1/R-O3 fire/don't-fire, open→fixed→reopened lifecycle, false_positive stays/reopens on evidence change, quarantine lookup (TODO-342 Phase 2)
+│   ├── test_qc.py            # backend/qc/: init_db idempotence, R-O1/R-O2/R-O3/R-G1/R-E1/R-F1/R-S1 fire/don't-fire, open→fixed→reopened lifecycle, false_positive stays/reopens on evidence change, quarantine lookup (TODO-342 Phase 2)
 │   ├── test_show_picks.py    # concert_ranker.picks: one date fixture per §4 scoring term
 │   ├── test_picks_tonight.py # LISTENING §9 "this night in Dylan history"
 │   ├── test_library_picks_api.py # FABLE_UNIFIED_RANKING phases 3-4: Library payload extension
@@ -1385,20 +1385,37 @@ on release titles (`title_key` PK, `official`), read by R-R1/D-03 alongside the 
 `field`, `original`, `corrected`, `reason`) — source tables are never edited in place.
 
 Run engine + rules live in `backend/qc/` (`rules.py`: pure `(conn) -> Iterable[Finding]`
-functions in the `RULES` registry, currently `R-O1` — Olof raw numbered-song count exceeds
-parsed `olof_songs` count — and `R-O3` — date-shaped (`MONTH_YEAR_RE`) or stat-shaped
-(`ROTATION_FRAGMENT_RE`) song annotations, both regexes defined here since backend code must
-not import from `tools/`, with `tools/olof_reparse_diff.py` and `tools/dossier_acceptance.py`
-importing the shared copies; `store.py`: `run_rule()`/`run_all()` reconcile a rule's output
-against `qc_findings` per the decision vocabulary (new key → `open`; `open`/`confirmed` refresh
-in place; a sticky `false_positive`/`corrected` with an unchanged evidence hash is left alone,
-a changed hash reopens it; `fixed` that fires again reopens; `open`/`confirmed` that stops
-firing becomes `fixed`), plus `quarantined()`/`quarantined_batch()` — error-severity, open/
-confirmed rule IDs for an entity, returning empty when the tables don't exist yet so dossier
-rendering degrades gracefully on a fresh install). CLI: `.venv/bin/python3 -m backend.qc run
-[--rule ID] [--db PATH]`, one line per rule (id, severity, open/new/fixed/reopened). Tests:
-`tests/test_qc.py`. The `/qc-review` console (Phase 2b) and the upstream taper/geocode/staleness
-rules (R-O2/R-O4/R-T*/R-G1/R-E*/R-F1/R-S1) are not built yet.
+functions in the `RULES` registry — `R-O1` (Olof raw numbered-song count exceeds parsed
+`olof_songs` count), `R-O2` (Olof `olof_events` city/country anomalies on concerts,
+`source != 'bobserve'`: a country name embedded in the city text — checked against the
+corpus's own distinct `country` values, e.g. 'London England' — an empty city, or a city
+string paired with ≥2 different non-empty countries; an empty `country` alone is not a
+finding), `R-O3` (date-shaped (`MONTH_YEAR_RE`) or stat-shaped (`ROTATION_FRAGMENT_RE`) song
+annotations, both regexes defined here since backend code must not import from `tools/`, with
+`tools/olof_reparse_diff.py` and `tools/dossier_acceptance.py` importing the shared copies),
+`R-G1` (a `venue_geocoded` row's venue-name tokens don't cover the geocoder's POI name in
+`note`'s first comma component — generic building/administrative words are dropped from the
+venue tokens first, falling back to the full token set if nothing distinctive remains; rows
+only ever pinned to a city centroid, `source='setlistfm_city'`/confidence `'city'`, are
+excluded; catches Zepp Tokyo → Zepp DiverCity), `R-E1` (`entries` field ranges: `timing`
+non-empty with no 'min' unit, `cdr` parsed as an int ≤0 or >6, `rating` non-empty and not in
+the standard letter-grade set mirroring `backend.timeline._GRADE_ORDER`), `R-F1`
+(`tapematch_family_meta` row with `conf < 0.1` or `review_flag` set, entity `family` keyed by
+`fam_id`), and `R-S1` (a derived table older than its inputs: `show_picks.computed_at` vs
+`recording_families.imported_at` (table-level), per-`entries.lb_number` latest
+`quality_recording_metrics` scan newer than the last rerank (highest `quality_recording_scores`
+scan_id; an LB that rerank left unscored is not stale) (entity `lb`), `song_performances.computed_at` vs `olof_pages.parsed_at`
+(table-level) — each check no-ops if either side's table is missing or empty; `store.py`:
+`run_rule()`/`run_all()` reconcile a rule's output against `qc_findings` per the decision
+vocabulary (new key → `open`; `open`/`confirmed` refresh in place; a sticky
+`false_positive`/`corrected` with an unchanged evidence hash is left alone, a changed hash
+reopens it; `fixed` that fires again reopens; `open`/`confirmed` that stops firing becomes
+`fixed`), plus `quarantined()`/`quarantined_batch()` — error-severity, open/confirmed rule IDs
+for an entity, returning empty when the tables don't exist yet so dossier rendering degrades
+gracefully on a fresh install). CLI: `.venv/bin/python3 -m backend.qc run [--rule ID]
+[--db PATH]`, one line per rule (id, severity, open/new/fixed/reopened). Tests:
+`tests/test_qc.py`. The `/qc-review` console (Phase 2b) and the remaining rules
+(R-O4/R-T*/R-E2) are not built yet.
 
 ### `location_geocoded` — Geocoded concert locations (MASTER TABLE)
 | Column | Type | Notes |

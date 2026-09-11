@@ -1,3 +1,17 @@
+[2026-09-10] — QC rules R-O2, R-G1, R-E1, R-F1, R-S1 (dossier C07)
+Added: backend/qc/rules.py: R-O2 (warn) Olof city embeds a country, empty city, or one city
+  paired with ≥2 countries — an empty country alone is not a finding. R-G1 (error) venue
+  tokens missing from the geocoder POI (venue_geocoded.note's first component; city-level pins
+  excluded) — catches Zepp Tokyo → Zepp DiverCity; renamed venues also fire (review queue).
+  R-E1 (warn) timing with no "min", cdr ≤0 or >6, rating outside the letter scale. R-F1 (warn)
+  family conf < 0.1 or review_flag. R-S1 (error) show_picks older than recording_families,
+  song_performances older than Olof parsed_at, and per LB metrics newer than the last rerank.
+Baseline (live DB): R-O1 255 · R-O2 193 · R-O3 0 · R-G1 576 · R-E1 26 (24 cdr + 2 timing,
+  = audit) · R-F1 2,371 · R-S1 115 (show_picks stale + 114 LBs measured in scans 19–22 after
+  the scan-18 rerank, = audit P7). Second run 0 new / 0 reopened.
+Changed: tests/test_qc.py (+13 tests, 23 total); PROJECT.md QC section.
+Changed: instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: C07 done.
+
 [2026-09-10] — QC rule engine: findings tables, reopen-on-change, quarantine lookup (dossier C06)
 Added: backend/qc/ (rules.py, store.py, __main__.py): Phase 2 QC engine. Rules are pure
   (conn) -> Finding functions; run_rule reconciles against qc_findings — new → open, stops firing
