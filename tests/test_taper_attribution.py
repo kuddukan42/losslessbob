@@ -39,7 +39,7 @@ def _seed_entry(conn, lb, description, taper_name=None, taper_normalised=None,
     conn.commit()
 
 
-def _seed_family(conn, fam_id, concert_date, members, review_flag=0):
+def _seed_family(conn, fam_id, concert_date, members, review_flag=0, conf=0.9):
     conn.executemany(
         "INSERT OR REPLACE INTO recording_families(lb_number, fam_id, concert_date)"
         " VALUES (?, ?, ?)",
@@ -47,8 +47,8 @@ def _seed_family(conn, fam_id, concert_date, members, review_flag=0):
     )
     conn.execute(
         """INSERT OR REPLACE INTO tapematch_family_meta
-           (fam_id, concert_date, member_count, review_flag) VALUES (?, ?, ?, ?)""",
-        (fam_id, concert_date, len(members), review_flag),
+           (fam_id, concert_date, member_count, review_flag, conf) VALUES (?, ?, ?, ?, ?)""",
+        (fam_id, concert_date, len(members), review_flag, conf),
     )
     conn.commit()
 
@@ -91,7 +91,8 @@ def test_layer0_series_code_confirmed():
     assert any(e["kind"] == "series_code" for e in evidence)
 
 
-def test_layer0_bare_mention_propagated():
+def test_layer0_bare_mention_not_seeded():
+    """A handle with no taper-context phrase is not taper evidence (BUG-344)."""
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
     _seed_entry(conn, 102, "Great show, thanks to spot for the tape.",
@@ -99,7 +100,30 @@ def test_layer0_bare_mention_propagated():
 
     taper_attribution.recompute(db_path=db_path)
 
-    row = _get_attr(conn, 102)
+    assert _get_attr(conn, 102) is None
+
+
+def test_layer0_gear_name_not_seeded():
+    """LB-08493: 'mm' in the gear name 'MM-EBM-1' must not credit Mike Millard."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 105, "Source: SP-CMC-8 > MM-EBM-1(Power Supply) > MicroTrack 24/96",
+                taper_name="mm", taper_normalised="mike millard")
+
+    taper_attribution.recompute(db_path=db_path)
+
+    assert _get_attr(conn, 105) is None
+
+
+def test_layer0_context_mention_propagated():
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 106, "Audience recording, recorded by spot on a Sony D5.",
+                taper_name="spot", taper_normalised="spot")
+
+    taper_attribution.recompute(db_path=db_path)
+
+    row = _get_attr(conn, 106)
     assert row["confidence"] == "propagated"
     evidence = json.loads(row["evidence_json"])
     assert any(e["kind"] == "mention" for e in evidence)
@@ -154,6 +178,34 @@ def test_layer1_family_propagation():
     # confirmed row itself is untouched
     row200 = _get_attr(conn, 200)
     assert row200["confidence"] == "confirmed"
+
+
+def test_layer1_no_propagation_through_low_conf_family():
+    """A family merged below 0.5 confidence carries no taper (BUG-344, R-T2)."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 210, "Taper: Spot\nSource: Schoeps > DAT",
+                taper_name="spot", taper_normalised="spot")
+    _seed_entry(conn, 211, "Audience recording, no taper info given.")
+    _seed_family(conn, "F-low", "1975-02-01", [210, 211], conf=0.3)
+
+    taper_attribution.recompute(db_path=db_path)
+
+    assert _get_attr(conn, 211) is None
+
+
+def test_layer1_no_propagation_through_review_flagged_family():
+    """A review-flagged family carries no taper, whatever its confidence."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 212, "Taper: Spot\nSource: Schoeps > DAT",
+                taper_name="spot", taper_normalised="spot")
+    _seed_entry(conn, 213, "Audience recording, no taper info given.")
+    _seed_family(conn, "F-flag", "1975-02-02", [212, 213], review_flag=1, conf=0.9)
+
+    taper_attribution.recompute(db_path=db_path)
+
+    assert _get_attr(conn, 213) is None
 
 
 def test_layer1_same_as_and_derived_from():
@@ -423,7 +475,7 @@ def test_confirm_route_sets_confirmed_and_records_confirmation():
 def test_confirm_route_sources_taper_from_existing_attribution():
     db_path, tmp_dir = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 1101, "Great show, thanks to spot for the tape.",
+    _seed_entry(conn, 1101, "Great show, recorded by spot on a Sony D5.",
                 taper_name="spot", taper_normalised="spot")
     taper_attribution.recompute(db_path=db_path)  # seeds a 'propagated' row
     assert _get_attr(conn, 1101)["confidence"] == "propagated"

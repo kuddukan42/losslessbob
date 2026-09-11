@@ -11,6 +11,7 @@ from this module instead of defining their own copies.
 """
 from __future__ import annotations
 
+import json
 import re
 import sqlite3
 from collections.abc import Callable, Iterable
@@ -387,6 +388,182 @@ def rule_f1(conn: sqlite3.Connection) -> Iterable[Finding]:
         )
 
 
+def _attributions_with_text(conn: sqlite3.Connection) -> list[sqlite3.Row]:
+    """Return every taper_attributions row with its entry's description and date_str."""
+    if not _table_exists_local(conn, "taper_attributions"):
+        return []
+    return conn.execute(
+        "SELECT t.lb_number, t.taper_normalised, t.confidence, t.evidence_json, t.conflict,"
+        " e.description, e.date_str"
+        " FROM taper_attributions t LEFT JOIN entries e ON e.lb_number = t.lb_number"
+        " ORDER BY t.lb_number"
+    ).fetchall()
+
+
+def _entry_year(date_str: str | None) -> int | None:
+    """Return the year of an entries.date_str ('M/D/YY', 'M/xx/YY'), or None.
+
+    Uses the same two-digit pivot as ``geocoder.entry_date_to_iso`` but keeps
+    partial dates, since only the year matters here.
+    """
+    parts = (date_str or "").split("/")
+    if len(parts) != 3:
+        return None
+    try:
+        year = int(parts[2])
+    except ValueError:
+        return None
+    if year < 100:
+        year = 1900 + year if year >= 49 else 2000 + year
+    return year
+
+
+def rule_t1(conn: sqlite3.Connection) -> Iterable[Finding]:
+    """R-T1: a taper attribution rests on a bare mention with no taper-context phrase.
+
+    Layer 0 files a handle found anywhere in an entry's text as a 'mention'.
+    Only a mention bound to 'taped by' / 'recorded by' / 'master by' / 'taper'
+    is taper evidence (audit D5: 'mm' in the gear name 'MM-EBM-1' credited
+    LB-08493 to Mike Millard). Curator-confirmed rows are never flagged.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        One error Finding per LB whose attribution is an unbound mention.
+    """
+    from backend import db as _db
+    from backend import taper_attribution
+
+    # Load user_taper_aliases so their handles have alias keys to match against;
+    # a standalone QC process otherwise holds only the builtin table.
+    db_file = conn.execute("PRAGMA database_list").fetchone()[2]
+    _db.reload_taper_aliases(db_file or None)
+    taper_attribution._rebuild_alias_index()
+
+    for r in _attributions_with_text(conn):
+        if r["confidence"] == "confirmed":
+            continue
+        records = json.loads(r["evidence_json"] or "[]")
+        mentions = [e for e in records if e.get("kind") == "mention"]
+        if not mentions:
+            continue
+        if taper_attribution.mention_has_taper_context(r["description"], r["taper_normalised"]):
+            continue
+        yield Finding(
+            entity_kind="lb",
+            entity_key=str(r["lb_number"]),
+            severity="error",
+            detail=(
+                f"LB-{r['lb_number']}: taper '{r['taper_normalised']}' rests on a bare "
+                "mention with no taper-context phrase"
+            ),
+            evidence={"taper": r["taper_normalised"], "mention": mentions[0].get("detail")},
+        )
+
+
+def rule_t2(conn: sqlite3.Connection) -> Iterable[Finding]:
+    """R-T2: a taper was propagated through a review-flagged or low-confidence family.
+
+    A family TapeMatch merged below ``FAMILY_MIN_CONF`` (0.5), or flagged for
+    review, is not strong enough to carry a taper to its other members (audit D6).
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        One error Finding per LB whose family evidence names a weak family.
+    """
+    from backend.taper_attribution import FAMILY_MIN_CONF
+
+    if not _table_exists_local(conn, "tapematch_family_meta"):
+        return
+    meta = {
+        r["fam_id"]: (r["conf"], r["review_flag"])
+        for r in conn.execute("SELECT fam_id, conf, review_flag FROM tapematch_family_meta")
+    }
+    for r in _attributions_with_text(conn):
+        if r["confidence"] != "propagated":
+            continue
+        for e in json.loads(r["evidence_json"] or "[]"):
+            fam_id = e.get("fam_id")
+            if e.get("kind") != "family" or not fam_id:
+                continue
+            conf, review_flag = meta.get(fam_id, (None, None))
+            if not review_flag and conf is not None and conf >= FAMILY_MIN_CONF:
+                continue
+            if review_flag:
+                reason = "review-flagged"
+            elif conf is None:
+                reason = "no family confidence"
+            else:
+                reason = f"conf {conf:.3f} < {FAMILY_MIN_CONF}"
+            yield Finding(
+                entity_kind="lb",
+                entity_key=str(r["lb_number"]),
+                severity="error",
+                detail=(
+                    f"LB-{r['lb_number']}: taper '{r['taper_normalised']}' propagated through "
+                    f"family {fam_id} ({reason})"
+                ),
+                evidence={"taper": r["taper_normalised"], "fam_id": fam_id,
+                          "conf": conf, "review_flag": review_flag},
+            )
+            break
+
+
+# R-T3's tolerance: a propagated credit may sit this many years outside the
+# span of the taper's confirmed recordings before it is implausible.
+_TAPER_ERA_SLACK_YEARS = 5
+
+
+def rule_t3(conn: sqlite3.Connection) -> Iterable[Finding]:
+    """R-T3: a propagated taper sits more than 5 years outside the taper's confirmed years.
+
+    A taper's confirmed years are the span (min..max year) of the LBs where
+    that taper is confirmed-tier. A propagated credit dated outside that span
+    widened by 5 years each side is implausible (audit D7). Tapers with no
+    dated confirmed LB have no era and are skipped, as are conflict rows (their
+    taper is only a placeholder) and LBs without a year.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        One error Finding per out-of-era propagated LB.
+    """
+    rows = _attributions_with_text(conn)
+    span: dict[str, list[int]] = {}
+    for r in rows:
+        year = _entry_year(r["date_str"])
+        if r["confidence"] != "confirmed" or year is None:
+            continue
+        lo_hi = span.setdefault(r["taper_normalised"], [year, year])
+        lo_hi[0] = min(lo_hi[0], year)
+        lo_hi[1] = max(lo_hi[1], year)
+    for r in rows:
+        if r["confidence"] != "propagated" or r["conflict"]:
+            continue
+        year = _entry_year(r["date_str"])
+        era = span.get(r["taper_normalised"])
+        if year is None or era is None:
+            continue
+        lo, hi = era
+        if lo - _TAPER_ERA_SLACK_YEARS <= year <= hi + _TAPER_ERA_SLACK_YEARS:
+            continue
+        yield Finding(
+            entity_kind="lb",
+            entity_key=str(r["lb_number"]),
+            severity="error",
+            detail=(
+                f"LB-{r['lb_number']}: propagated taper '{r['taper_normalised']}' dated "
+                f"{year}, outside its confirmed years {lo}–{hi} (±{_TAPER_ERA_SLACK_YEARS})"
+            ),
+            evidence={"taper": r["taper_normalised"], "year": year,
+                      "confirmed_from": lo, "confirmed_to": hi},
+        )
+
+
 def _max_scalar(conn: sqlite3.Connection, sql: str) -> str | None:
     """Return the single scalar result of *sql*, or None if it's NULL/no rows."""
     row = conn.execute(sql).fetchone()
@@ -539,6 +716,24 @@ RULES: dict[str, RuleDef] = {
         description="Family merged at conf < 0.1, or review_flag set",
         severity="warn",
         func=rule_f1,
+    ),
+    "R-T1": RuleDef(
+        rule_id="R-T1",
+        description="Taper evidence is a bare mention with no taper-context phrase",
+        severity="error",
+        func=rule_t1,
+    ),
+    "R-T2": RuleDef(
+        rule_id="R-T2",
+        description="Taper propagated through a review-flagged or conf < 0.5 family",
+        severity="error",
+        func=rule_t2,
+    ),
+    "R-T3": RuleDef(
+        rule_id="R-T3",
+        description="Propagated taper more than 5 years outside its confirmed years",
+        severity="error",
+        func=rule_t3,
     ),
     "R-S1": RuleDef(
         rule_id="R-S1",

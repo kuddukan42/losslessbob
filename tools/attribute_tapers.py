@@ -39,7 +39,7 @@ if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
 from backend import taper_fingerprints  # noqa: E402
-from backend.db import get_connection, init_db  # noqa: E402
+from backend.db import get_connection, init_db, reload_taper_aliases  # noqa: E402
 from backend.taper_attribution import _compute_layers01, recompute  # noqa: E402
 from tools import parse_lineage  # noqa: E402
 
@@ -70,6 +70,10 @@ def run(
         _log.info("Refreshing entry_lineage (parse_lineage, incremental)...")
         parse_lineage.run(db_path=db_path)
 
+    # A standalone process holds only the builtin alias table; without this the
+    # user_taper_aliases tapers (TODO-213 curation) drop out of the universe and
+    # their confirmed rows vanish (found in dossier C08).
+    reload_taper_aliases(db_path)
     _log.info("Recomputing taper_attributions (Layer 0 + Layer 1)...")
     stats = recompute(db_path=db_path, dry_run=dry_run)
 
@@ -100,6 +104,7 @@ def run_calibrate_fingerprints(db_path: str | None = None) -> dict:
         The calibration result dict (see backend.taper_fingerprints.calibrate).
     """
     init_db(db_path)
+    reload_taper_aliases(db_path)
     conn = get_connection(db_path)
     attrs, fam_members, same_as_adj, derived_from_adj, _rejects, unresolved = (
         _compute_layers01(conn))
