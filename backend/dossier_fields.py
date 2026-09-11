@@ -1655,3 +1655,278 @@ def broadcast_tapers(conn: sqlite3.Connection) -> list[tuple[int, str, str]]:
         if m["broadcast"]:
             out.append((lb, taper, m["evidence"] or m["medium"]))
     return out
+
+
+# ---------------------------------------------------------------------------
+# D-09 Setlist completeness (C22)
+# ---------------------------------------------------------------------------
+
+_MIN_TOKEN_RE = re.compile(r"(\d+)\s*min", re.IGNORECASE)
+
+# Calibrated from recording_mins (.debug/dossier_calibration.md, C22): the corpus-wide
+# median of recording_mins / song_count over concert events with >= 5 songs (n=3,089).
+_MINS_PER_SONG = 6.33
+
+# Secondary-signal gap threshold, same calibration run: expected_count (a source's
+# median runtime / _MINS_PER_SONG) minus Olof's listed song count, split by the
+# Phase 3a quorum's ground truth -- only 1.7% of 'corroborated' (genuinely complete)
+# dates show a gap over 5, while 42% of 'disputed' (genuinely incomplete-vs-sources)
+# dates do. A conservative cut that rarely misflags a complete setlist.
+_SETLIST_GAP_THRESHOLD = 5
+
+# Olof's own admission that a page's setlist is incomplete ("Incomplete setlist taken
+# from memory.", "This listing is incomplete.", "The song listing is probably
+# incomplete.") -- 10 corpus hits sampled during calibration.
+_INCOMPLETE_SETLIST_RE = re.compile(
+    r"incomplete (?:song )?(?:setlist|listing)|(?:setlist|listing) is (?:probably )?incomplete",
+    re.IGNORECASE,
+)
+
+
+def _timing_minutes(timing: str | None) -> float | None:
+    """Sum every ``Nmin`` token in *timing* (``entries.timing`` free text); ``None`` if none."""
+    if not timing:
+        return None
+    vals = [int(m) for m in _MIN_TOKEN_RE.findall(timing)]
+    return float(sum(vals)) if vals else None
+
+
+class SetlistConfidence(TypedDict):
+    """D-09: whether an event's rendered setlist reads complete or partial.
+
+    Keys:
+        status: ``'complete'``, ``'partial'`` or ``'unavailable'`` (neither Olof nor
+            any source has a setlist for the date -- nothing to judge).
+        verdict: The underlying :class:`~backend.qc.corroborate.Quorum` verdict.
+        basis: ``'quorum'`` when the Phase 3a cross-source check decided it,
+            ``'runtime'`` when the secondary runtime/expected-count signal did,
+            ``'incomplete_note'`` when Olof's own "incomplete setlist" phrasing did,
+            or ``None`` when nothing beyond Olof's page count was available.
+        songs_listed: Olof's non-song-filtered song count for the event.
+        expected_songs: The secondary signal's estimate (rounded), or ``None`` when
+            no source runtime was available to compute one.
+        notice: Human text naming the sources/counts behind a ``disputed`` quorum
+            verdict, or explaining a runtime/note-based ``partial``; ``None`` for
+            ``complete``/``unavailable``.
+    """
+
+    status: str
+    verdict: str
+    basis: str | None
+    songs_listed: int
+    expected_songs: int | None
+    notice: str | None
+
+
+def setlist_confidence(
+    conn: sqlite3.Connection,
+    event_id: int,
+    lb_numbers: Iterable[int],
+    canonical_map: dict[str, str] | None = None,
+) -> SetlistConfidence:
+    """D-09: setlist completeness for one event (plan D-09, audit S9).
+
+    Primary is the Phase 3a cross-source quorum
+    (:func:`backend.qc.corroborate.setlist_quorum`): ``'disputed'`` reads
+    ``'partial'`` with a notice naming the disputing sources and their song
+    counts; ``'corroborated'`` reads ``'complete'``. When no external source
+    has a setlist for the date (quorum ``'stated'`` -- Olof has one, nobody
+    else does), the secondary signal runs instead: *lb_numbers*'s median
+    ``entries.timing`` runtime divided by the calibrated corpus
+    minutes-per-song (:data:`_MINS_PER_SONG`) gives an expected song count; a
+    gap over :data:`_SETLIST_GAP_THRESHOLD` reads ``'partial'``, as does
+    Olof's own "incomplete setlist" phrasing in ``olof_events.notes``.
+    Quorum ``'unavailable'`` (nobody has a setlist at all) reads
+    ``'unavailable'``.
+
+    Args:
+        conn: Open SQLite connection.
+        event_id: ``olof_events.event_id``.
+        lb_numbers: The show's source LB numbers, read for the secondary
+            signal's runtime figure. Unused when the primary quorum decides.
+        canonical_map: Optional pre-loaded ``song_canonical`` alias map.
+
+    Returns:
+        A :class:`SetlistConfidence`.
+    """
+    from backend.qc import corroborate
+
+    row = conn.execute(
+        "SELECT date_str, notes FROM olof_events WHERE event_id = ?", (event_id,),
+    ).fetchone()
+    date_str, notes = (row["date_str"], row["notes"]) if row else (None, None)
+    songs_listed = len(_event_setlist(conn, event_id))
+
+    cmap = canonical_map if canonical_map is not None else corroborate.load_canonical_map(conn)
+    quorum = (
+        corroborate.setlist_quorum(conn, date_str, cmap) if date_str
+        else corroborate.Quorum(verdict="unavailable", sources={})
+    )
+    verdict = quorum["verdict"]
+
+    if verdict == "corroborated":
+        return SetlistConfidence(
+            status="complete", verdict=verdict, basis="quorum", songs_listed=songs_listed,
+            expected_songs=None, notice=None,
+        )
+    if verdict == "disputed":
+        names = quorum["disputed_sources"]
+        pairs = [(n, quorum["sources"][n]["n_songs"]) for n in names if quorum["sources"].get(n)]
+        others = ", ".join(f"{n} lists {c}" for n, c in pairs)
+        notice = f"disputed: Olof lists {songs_listed}" + (f", {others}" if others else "")
+        return SetlistConfidence(
+            status="partial", verdict=verdict, basis="quorum", songs_listed=songs_listed,
+            expected_songs=None, notice=notice,
+        )
+    if verdict == "unavailable":
+        return SetlistConfidence(
+            status="unavailable", verdict=verdict, basis=None, songs_listed=songs_listed,
+            expected_songs=None, notice=None,
+        )
+
+    # verdict == "stated": no external source has data for this date -- secondary signal.
+    if _INCOMPLETE_SETLIST_RE.search(notes or ""):
+        return SetlistConfidence(
+            status="partial", verdict=verdict, basis="incomplete_note",
+            songs_listed=songs_listed, expected_songs=None,
+            notice="Olof's page calls its own setlist incomplete",
+        )
+
+    lb_list = list(lb_numbers)
+    runtimes: list[float] = []
+    if lb_list:
+        placeholders = ",".join("?" * len(lb_list))
+        for (timing,) in conn.execute(
+            f"SELECT timing FROM entries WHERE lb_number IN ({placeholders})", lb_list,
+        ):
+            mins = _timing_minutes(timing)
+            if mins is not None:
+                runtimes.append(mins)
+
+    expected_songs = None
+    if runtimes:
+        expected_songs = round(statistics.median(runtimes) / _MINS_PER_SONG)
+        if expected_songs - songs_listed > _SETLIST_GAP_THRESHOLD:
+            return SetlistConfidence(
+                status="partial", verdict=verdict, basis="runtime", songs_listed=songs_listed,
+                expected_songs=expected_songs,
+                notice=f"expected ~{expected_songs} songs from runtime, {songs_listed} listed",
+            )
+
+    return SetlistConfidence(
+        status="complete", verdict=verdict, basis="runtime" if runtimes else None,
+        songs_listed=songs_listed, expected_songs=expected_songs, notice=None,
+    )
+
+
+# ---------------------------------------------------------------------------
+# D-11 Format & file metadata (C22)
+# ---------------------------------------------------------------------------
+
+_AUDIO_EXT_RE = re.compile(r"\.(flac|wav|shn|ape|wv|tak|m4a|mp3|ogg|aiff?)$", re.IGNORECASE)
+
+
+class FileMeta(TypedDict):
+    """D-11: one source's file-level metadata, each field independently null-safe.
+
+    Keys:
+        lb_number: The source.
+        resolution: Rendered label -- ``"16/44 file"`` (a TUIT ``lb_verified`` file
+            record), ``"recorded 24/96"`` (lineage only, unverified), both joined
+            with " · " when a file record and a differing lineage figure both
+            exist (audit M1), or ``"—"`` when neither is known.
+        file_res: TUIT's verified file record resolution, or ``None``.
+        recorded_res: The lineage's recorder-stage resolution, or ``None``.
+        filesize: TUIT ``size_bytes`` from the ``lb_verified`` row, or ``None`` --
+            never inferred from anything else.
+        filecount: Distinct audio filenames in ``checksums`` (``xref = 0``),
+            falling back to TUIT ``n_files``, or ``None``.
+        disc_count: ``entries.cdr`` as an int, or ``None`` when blank, ``<= 0`` or
+            ``> 6`` (R-E1).
+    """
+
+    lb_number: int
+    resolution: str
+    file_res: str | None
+    recorded_res: str | None
+    filesize: int | None
+    filecount: int | None
+    disc_count: int | None
+
+
+def _disc_count(cdr: str | None) -> int | None:
+    """``entries.cdr`` parsed to an in-range disc count, or ``None`` (R-E1)."""
+    cdr = (cdr or "").strip()
+    if not cdr:
+        return None
+    try:
+        n = int(cdr)
+    except ValueError:
+        return None
+    return n if 0 < n <= 6 else None
+
+
+def file_meta(conn: sqlite3.Connection, lb_number: int) -> FileMeta:
+    """D-11: file-level metadata for one source, TUIT-verified where it exists.
+
+    Reuses :func:`backend.qc.corroborate.file_format_check` (the same D-11/Q1-d
+    file-record-vs-lineage logic, so the two never drift) for the resolution
+    figures, then renders the label per basis: a TUIT ``lb_verified`` file
+    record wins and is labelled "file"; a lineage-only figure is labelled
+    "recorded" since it's never confirmed -- see audit M1 (LB-08485's lineage
+    states "24bit/96kHz" for the recorder, but the circulating file is 16/44).
+
+    Args:
+        conn: Open SQLite connection.
+        lb_number: ``entries.lb_number``.
+
+    Returns:
+        A :class:`FileMeta`.
+    """
+    from backend.qc import corroborate
+
+    fmt = corroborate.file_format_check(conn, lb_number)
+    file_res, recorded_res = fmt["file_res"], fmt["recorded_res"]
+
+    parts: list[str] = []
+    if file_res:
+        parts.append(f"{file_res} file")
+        if recorded_res and recorded_res != file_res:
+            parts.append(f"recorded {recorded_res}")
+    else:
+        value = fmt["final_res"] or recorded_res
+        if value:
+            parts.append(f"recorded {value}")
+    resolution = " · ".join(parts) if parts else "—"
+
+    row = conn.execute("SELECT cdr FROM entries WHERE lb_number = ?", (lb_number,)).fetchone()
+    disc_count = _disc_count(row[0] if row else None)
+
+    filesize: int | None = None
+    filecount: int | None = None
+    try:
+        trow = conn.execute(
+            "SELECT size_bytes, n_files FROM tuit_recordings"
+            " WHERE lb_number = ? AND lb_verified = 1 ORDER BY rec_id LIMIT 1",
+            (lb_number,),
+        ).fetchone()
+    except sqlite3.OperationalError:  # no tuit_recordings table yet
+        trow = None
+    if trow:
+        filesize, filecount = trow["size_bytes"], trow["n_files"]
+
+    names = {
+        r[0] for r in conn.execute(
+            "SELECT DISTINCT filename FROM checksums WHERE lb_number = ? AND xref = 0",
+            (lb_number,),
+        )
+        if _AUDIO_EXT_RE.search(r[0] or "")
+    }
+    if names:
+        filecount = len(names)
+
+    return FileMeta(
+        lb_number=lb_number, resolution=resolution, file_res=file_res,
+        recorded_res=recorded_res, filesize=filesize, filecount=filecount,
+        disc_count=disc_count,
+    )

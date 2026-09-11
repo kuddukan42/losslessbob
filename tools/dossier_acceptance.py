@@ -32,6 +32,11 @@ for the mode asked. Modes arrive chunk by chunk; today there are two:
     --d05           D-05 / D-13 accept cases (LB-15005 / 09493 / 06654 / 08637 generation,
                     LB-08493 no "low gen", every 1965-06-01 source audio_from_video), corpus
                     tallies, then a seeded 100-row generation audit table for sign-off (C21).
+    --d09           D-09 / D-11 accept cases: backend.dossier_fields.setlist_confidence on
+                    1986-02-24 (complete, 25 songs, corroborated) and a synthetic 7-song
+                    fixture (partial), backend.dossier_fields.file_meta on LB-08485
+                    ("16/44 file · recorded 24/96"), then the corpus scan of every remaining
+                    'partial' setlist for review (C22).
 
 Usage::
 
@@ -43,6 +48,7 @@ Usage::
     .venv/bin/python3 tools/dossier_acceptance.py --d01
     .venv/bin/python3 tools/dossier_acceptance.py --d02
     .venv/bin/python3 tools/dossier_acceptance.py --d03
+    .venv/bin/python3 tools/dossier_acceptance.py --d09
 
 ``--before`` reads the same counts from a tools/olof_reparse_diff.py snapshot and
 prints them beside the live ones (``--parser``), or supplies the pre-Phase-1 Olof
@@ -689,6 +695,65 @@ def run_d05(db_path: Path) -> int:
     return 0 if all(ok for ok, _ in checks) else 1
 
 
+def run_d09(db_path: Path) -> int:
+    """D-09 / D-11 accept cases (C22), then a corpus scan of every remaining 'partial'."""
+    from backend.dossier_fields import file_meta, setlist_confidence
+    from backend.geocoder import entry_date_to_iso
+
+    live = _open_ro(db_path)
+    try:
+        entries_by_date: dict[str, list[int]] = {}
+        for r in live.execute("SELECT lb_number, date_str FROM entries"):
+            iso = entry_date_to_iso(r["date_str"] or "")
+            if iso:
+                entries_by_date.setdefault(iso, []).append(r["lb_number"])
+
+        event_id = corroborate.primary_event_id(live, "1986-02-24")
+        sc = setlist_confidence(live, event_id, entries_by_date.get("1986-02-24", [])) \
+            if event_id else None
+        fm = file_meta(live, 8485)
+        checks = [
+            (bool(sc) and (sc["status"], sc["songs_listed"], sc["verdict"])
+             == ("complete", 25, "corroborated"),
+             "1986-02-24 -> "
+             f"{sc['status'] if sc else None}, {sc['songs_listed'] if sc else '?'} songs,"
+             f" {sc['verdict'] if sc else '?'} (expected complete, 25, corroborated)"),
+            (fm["resolution"] == "16/44 file · recorded 24/96",
+             f"LB-08485 file_meta resolution = {fm['resolution']!r}"),
+        ]
+        _log.info("")
+        for ok, label in checks:
+            _log.info("%s  %s", "PASS" if ok else "FAIL", label)
+        _log.info("")
+        _log.info("synthetic 7-song fixture (no real show belongs in the live corpus scan):"
+                  " see tests/test_setlist_confidence_file_meta.py"
+                  "::test_synthetic_short_fixture_reads_partial_from_runtime (-> partial)")
+
+        _log.info("")
+        _log.info("corpus scan: every remaining 'partial' setlist (for review)")
+        cmap = corroborate.load_canonical_map(live)
+        n_partial = n_complete = n_unavailable = 0
+        for date_iso, _quorum in corroborate.corroborate_all(live):
+            eid = corroborate.primary_event_id(live, date_iso)
+            if eid is None:
+                continue
+            result = setlist_confidence(live, eid, entries_by_date.get(date_iso, []), cmap)
+            if result["status"] == "partial":
+                n_partial += 1
+                _log.info("  %-11s basis=%-16s notice=%s", date_iso, result["basis"],
+                          result["notice"])
+            elif result["status"] == "complete":
+                n_complete += 1
+            else:
+                n_unavailable += 1
+        _log.info("")
+        _log.info("%d complete, %d partial, %d unavailable (%d dated concerts)",
+                  n_complete, n_partial, n_unavailable, n_complete + n_partial + n_unavailable)
+    finally:
+        live.close()
+    return 0 if all(ok for ok, _ in checks) else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI entry point; returns the process exit code."""
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
@@ -709,6 +774,8 @@ def main(argv: list[str] | None = None) -> int:
                       help="D-07 / D-04 accept cases: run, tour, city, rotation rank (C20).")
     mode.add_argument("--d05", action="store_true",
                       help="D-05 / D-13 accept cases, tallies and a 100-row audit table (C21).")
+    mode.add_argument("--d09", action="store_true",
+                      help="D-09 / D-11 accept cases + corpus 'partial' setlist scan (C22).")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
                         help="--parser: olof_reparse_diff snapshot to print beside the live"
@@ -731,6 +798,8 @@ def main(argv: list[str] | None = None) -> int:
         return run_d07(args.db)
     if args.d05:
         return run_d05(args.db)
+    if args.d09:
+        return run_d09(args.db)
     return run_parser(args.db, args.before, args.residuals)
 
 
