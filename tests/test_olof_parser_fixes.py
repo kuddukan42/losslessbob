@@ -14,6 +14,8 @@ from backend.olof_parser import (
     SongRecord,
     _is_guest_header,
     _parse_event,
+    _split_title_credits,
+    _split_title_parts,
     _upsert_events,
     _upsert_songs,
 )
@@ -411,6 +413,63 @@ def test_stat_halves_on_separate_lines_outside_any_section():
 def test_stat_in_a_bobtalk_section_is_lifted_too():
     rec, _ = _event_of(["BobTalk", "Thank you.", _STAT_2010])
     assert rec.rotation_new == 13 and rec.bobtalk == "Thank you."
+
+
+@pytest.mark.parametrize("text, want", [
+    # 1965-06-01 and 2010-03-29: Olof's alternate titles are subtitles, not credits.
+    ("It's Alright, Ma (I'm Only Bleeding)", ("It's Alright, Ma", "", "I'm Only Bleeding")),
+    ("Most Likely You Go Your Way (And I’ll Go Mine)",
+     ("Most Likely You Go Your Way", "", "And I’ll Go Mine")),
+    ("High Water (For Charley Patton)", ("High Water", "", "For Charley Patton")),
+    # A composer marker makes a credit whatever its length.
+    ("Melancholy Mood (Walter Schumann & Vick R. Knight Sr.)",
+     ("Melancholy Mood", "Walter Schumann & Vick R. Knight Sr.", "")),
+    ("My Wife's Home Town (Bob Dylan-Robert Hunter/Wille Dixon & Bob Dylan)",
+     ("My Wife's Home Town", "Bob Dylan-Robert Hunter/Wille Dixon & Bob Dylan", "")),
+    ("Dink's Song (trad. arr. by John & Alan Lomax)",
+     ("Dink's Song", "trad. arr. by John & Alan Lomax", "")),
+    # Single-writer credits have no marker and stay credits (C01 caution).
+    ("I'm Moving On (Hank Snow)", ("I'm Moving On", "Hank Snow", "")),
+    ("Uranium Rock (Warren Smith)", ("Uranium Rock", "Warren Smith", "")),
+    # A long parenthetical with no marker is part of the title.
+    ("I Don't Believe You (She Acts Like We Never Have Met)",
+     ("I Don't Believe You (She Acts Like We Never Have Met)", "", "")),
+    ("Forever Young", ("Forever Young", "", "")),
+])
+def test_title_credits_and_subtitle(text, want):
+    assert _split_title_parts(text) == want
+
+
+def test_bobserve_and_chronicle_split_is_unchanged():
+    assert _split_title_credits("Melancholy Mood (Walter Schumann & Vick R. Knight Sr.)") == (
+        "Melancholy Mood (Walter Schumann & Vick R. Knight Sr.)", "")
+
+
+def _releases(trailer: list[str], n_songs: int = 25) -> dict[int, str]:
+    return {s.position: s.released_on for s in _event_of(trailer, n_songs)[1] if s.released_on}
+
+
+def test_and_part_of_marks_a_partial_release_1986_02_24():
+    got = _releases(["4, 9, 12, 15, 16 and part of 22 released on the commercial video HARD TO"
+                     " HANDLE, CBS/FOX 3502 , October 1986."])
+    video = "the commercial video HARD TO HANDLE, CBS/FOX 3502 , October 1986"
+    assert got == {4: video, 9: video, 12: video, 15: video, 16: video, 22: "(part) " + video}
+
+
+def test_or_marks_only_its_neighbours_uncertain():
+    got = _releases(["1 or 2, 10 or 11, 12 and 15 released on X."])
+    assert got == {1: "(uncertain) X", 2: "(uncertain) X", 10: "(uncertain) X",
+                   11: "(uncertain) X", 12: "X", 15: "X"}
+
+
+def test_release_wording_variants():
+    got = _releases(["5 released in remastered version on Y.", "6 partly released on W.",
+                     "3 digitally released on Z.", "7 available as a download from V.",
+                     "20 released on 3 CD box set DYLAN."])
+    assert got == {5: "released in remastered version on Y", 6: "(part) W",
+                   3: "digitally released on Z", 7: "available as a download from V",
+                   20: "3 CD box set DYLAN"}
+    assert all(s.annotations == "" for s in _event_of(["5 released in mono on Y."])[1])
 
 
 def test_date_lines_are_not_position_lists():

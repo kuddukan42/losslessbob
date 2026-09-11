@@ -1346,12 +1346,14 @@ lineup, recording kind/mins, notes, bobtalk, releases_raw, references_raw, raw_t
 plus, for the show-dossier redesign (TODO-342 Phase 1, added by `init_db`'s idempotent
 migration): `rotation_new` / `rotation_pct` / `tour_new_count` INTEGER from Olof's "N new songs
 (P%) compared to previous concert. N new songs for this tour" line, and `venue_history_raw` TEXT
-for the "Other Bob Dylan shows in X:" blob moved out of notes — NULL / '' on bobserve rows)
+for the "Other/Previous Bob Dylan concerts in X:" date/venue lists moved out of the section
+text — NULL / '' on bobserve rows)
 via `backend/olof_parser.py` (DSN) / `backend/bobserve_parser.py` (2022+). `olof_songs` = one
 row per performed song / studio take (event_id+position PK, song_title, credits, is_encore,
 take_number, take_status, annotations, released_on, subtitle — a parenthetical alternate title,
 not a credit (TODO-342 P1e); annotation/release position-ranges
-resolved per song for DSN; bobserve rows are title+credits only, parsed from the page's
+resolved per song for DSN — a released_on token starts "(part) " for a partial release and
+"(uncertain) " when Olof lists the position with "or"; bobserve rows are title+credits only, parsed from the page's
 `data-clipboard-text` blob). `olof_chronicle` = one row per dated calendar/diary entry
 (year+seq PK, date_str ISO where resolvable, date_raw, entry_text — Word field junk stripped);
 `olof_new_tapes` = one row per 'New tapes & bootlegs' subsection (year+seq PK, title, date_str

@@ -201,8 +201,24 @@ _SECTION_END_RE = re.compile(
 # P1g: a single-position line inside that prose is still scanned when it reads as
 # release/recording trailer data ("17 released in mono ...", "1 stereo audience recording").
 _PROSE_KEEP_RE = re.compile(r"\b(released|available|recording)\b", re.IGNORECASE)
-_RELEASE_KEYWORD_RE = re.compile(r"\b(released on|available on)\b", re.IGNORECASE)
-_RELEASE_TITLE_RE = re.compile(r"^(?:released on|available on)\s+(.+)$", re.IGNORECASE)
+# P1f: "released on/in/as", "available on/as/from" all mark a release line ("5 released in
+# remastered version on ...", "7 available as a download").
+_RELEASE_KEYWORD_RE = re.compile(
+    r"\b(?:released\s+(?:on|in|as)|available\s+(?:on|as|from))\b", re.IGNORECASE)
+# Only the plain "released on X" / "available on X" wording is cut down to the title X;
+# "partly" / "fragment(s)" mark every position on the line as a partial release.
+_RELEASE_TITLE_RE = re.compile(
+    r"^(?:(partly|fragments?)\s+)?(?:released|available)\s+on\s+(.+)$", re.IGNORECASE)
+# P1f: one item of a release line's position list, "4", "6-8", ", and part of 22", "or 3"
+# ("4, 9, 16 and part of 22 released on ...", "1 or 2, 10 or 11, 12 released on ...").
+_RELEASE_ITEM_RE = re.compile(
+    r"\s*(,\s*(?:and|or)?|and|or)?\s*(part\s+of\s+)?(\d+)(?:\s*-\s*(\d+))?(?=[\s,]|$)",
+    re.IGNORECASE,
+)
+# Prefixes on a released_on token: the song is only partly on the release, or Olof names two
+# positions with "or" and the release holds one of them.
+RELEASE_PART_TAG = "(part) "
+RELEASE_UNCERTAIN_TAG = "(uncertain) "
 
 # P1d: Olof's rotation stat, "13 new songs (72%) compared to previous concert. 2 new songs
 # for this tour." The halves also sit on separate lines, and the corpus has typos
@@ -695,6 +711,48 @@ def _split_title_credits(text: str) -> tuple[str, str]:
     return text.strip(), ""
 
 
+# P1e: a trailing parenthetical that names the song's writers. Single-writer credits
+# ("Hank Snow") carry no marker, so they still fall back to the word-count rule.
+_CREDIT_MARKER_RE = re.compile(
+    r"[/&,?]|\btrad\b|\barr\b|\badapted from\b|[A-Za-z.]\s*[-–—]\s*[A-Z]", re.IGNORECASE)
+# P1e: Olof's alternate titles, as they appear in the corpus (casefolded, straight
+# apostrophes). Everything else in parentheses is a writer credit or part of the title.
+_KNOWN_SUBTITLES = frozenset({
+    "and i'll go mine", "do unto others", "down in the flood", "for charley patton",
+    "for charlie patton", "hallelujah", "has anybody seen my love", "i'm only bleeding",
+    "journey through dark heat", "philosopher pirate", "sooner or later",
+    "tales of yankee power", "the cough song", "the mighty quinn", "too much to ask",
+    "valley below",
+})
+
+
+def _split_title_parts(text: str) -> tuple[str, str, str]:
+    """P1e: split a DSN song title line into (title, credits, subtitle).
+
+    A known alternate title goes to subtitle ('Most Likely You Go Your Way (And I'll Go
+    Mine)'). A parenthetical with a composer marker is credits whatever its length
+    ('Melancholy Mood (Walter Schumann & Vick R. Knight Sr.)'); a short one without a
+    marker is still credits ('I'm Moving On (Hank Snow)'). A long one without a marker
+    stays in the title ('I Don't Believe You (She Acts Like We Never Have Met)'). Text is
+    kept exactly as Olof spells it.
+
+    Args:
+        text: The title portion of a song line, parens included if present.
+
+    Returns:
+        (title, credits, subtitle); credits and subtitle are '' when absent.
+    """
+    m = _CREDITS_SUFFIX_RE.match(text)
+    if not m:
+        return text.strip(), "", ""
+    title, paren = m.group(1).strip(), m.group(2).strip()
+    if " ".join(paren.replace("’", "'").casefold().split()) in _KNOWN_SUBTITLES:
+        return title, "", paren
+    if _CREDIT_MARKER_RE.search(paren) or len(paren.split()) <= _MAX_CREDIT_WORDS:
+        return title, paren, ""
+    return text.strip(), "", ""
+
+
 def _expand_position_list(spec: str) -> list[int]:
     """Expand a comma-separated position-list ('6-10, 18') into positions.
 
@@ -716,6 +774,45 @@ def _expand_position_list(spec: str) -> list[int]:
         else:
             positions.append(int(token))
     return positions
+
+
+def _release_entries(spec: str, remainder: str) -> list[tuple[int, str]]:
+    """P1f: resolve one release trailer line into (position, released_on token) pairs.
+
+    Args:
+        spec: The leading position list ('4, 9, 12').
+        remainder: The rest of the line, which may continue the list with
+            'and N', 'and part of N' or 'or N' before the release wording.
+
+    Returns:
+        One pair per position. A partial position's token starts with
+        RELEASE_PART_TAG; a position on either side of an 'or' starts with
+        RELEASE_UNCERTAIN_TAG.
+    """
+    text_in = f"{spec} {remainder}"
+    items: list[tuple[list[int], str, bool]] = []  # (positions, separator before, partial)
+    pos = 0
+    while im := _RELEASE_ITEM_RE.match(text_in, pos):
+        sep = (im.group(1) or "").replace(",", "").strip().lower()
+        if items and not im.group(1):
+            break  # two numbers with no separator: the second belongs to the release text
+        lo = int(im.group(3))
+        hi = int(im.group(4)) if im.group(4) else lo
+        items.append((list(range(lo, hi + 1)), sep, bool(im.group(2))))
+        pos = im.end()
+    rest = text_in[pos:].strip()
+    rm = _RELEASE_TITLE_RE.match(rest)
+    text = (rm.group(2) if rm else rest).rstrip(".").strip()
+    if not text:
+        return []
+    whole_line_partial = bool(rm and rm.group(1))
+    out: list[tuple[int, str]] = []
+    for i, (positions, sep, partial) in enumerate(items):
+        uncertain = sep == "or" or (i + 1 < len(items) and items[i + 1][1] == "or")
+        tag = (RELEASE_UNCERTAIN_TAG if uncertain else "") + (
+            RELEASE_PART_TAG if partial or whole_line_partial else "")
+        out += [(p, tag + text) for p in positions]
+    return out
 
 
 def _is_guest_header(line: str) -> bool:
@@ -861,7 +958,7 @@ def _parse_song_lines(lines: list[str], start: int,
             )
             position = renumbered
         seen_positions.add(position)
-        title, credits = _split_title_credits(title_text)
+        title, credits, subtitle = _split_title_parts(title_text)
         take_number: int | None = None
         take_status = ""
         if i < n:
@@ -872,7 +969,7 @@ def _parse_song_lines(lines: list[str], start: int,
                 i += 1
         songs.append(SongRecord(
             event_id=event_id, position=position, song_title=title,
-            credits=credits, is_encore=int(is_encore),
+            credits=credits, subtitle=subtitle, is_encore=int(is_encore),
             take_number=take_number, take_status=take_status,
         ))
     return songs, i
@@ -917,21 +1014,18 @@ def _resolve_annotations_and_releases(lines: list[str], consumed_end: int,
         if in_prose and not (re.search(r"[-,]", m.group(1))
                              or _PROSE_KEEP_RE.search(m.group(2))):
             continue
-        positions = [p for p in _expand_position_list(m.group(1)) if p in by_position]
-        if not positions:
-            continue
         remainder = m.group(2).strip()
         if _RELEASE_KEYWORD_RE.search(remainder):
-            rm = _RELEASE_TITLE_RE.match(remainder)
-            text = (rm.group(1) if rm else remainder).rstrip(".").strip()
-            bucket = releases
-        else:
-            text = remainder.rstrip(".").strip()
-            bucket = annotations
-        if not text:
+            for pos, text in _release_entries(m.group(1), remainder):
+                if pos in by_position:
+                    releases.setdefault(pos, []).append(text)
+            continue
+        positions = [p for p in _expand_position_list(m.group(1)) if p in by_position]
+        text = remainder.rstrip(".").strip()
+        if not positions or not text:
             continue
         for pos in positions:
-            bucket.setdefault(pos, []).append(text)
+            annotations.setdefault(pos, []).append(text)
     for pos, song in by_position.items():
         if pos in annotations:
             song.annotations = "; ".join(annotations[pos])
