@@ -161,6 +161,22 @@ def _olof_context(conn: sqlite3.Connection, entity_kind: str, entity_key: str) -
     }
 
 
+def _quorum_context(conn: sqlite3.Connection, entity_kind: str, entity_key: str) -> dict:
+    """Context for R-O4: Olof's setlist side by side with each source's, live.
+
+    Re-derives :func:`backend.qc.corroborate.setlist_quorum` from the finding's
+    ``olof_event`` date rather than trusting the stored evidence, so the panel
+    reflects any corrections made since the rule last ran.
+    """
+    from backend.qc.corroborate import setlist_quorum
+
+    olof = _olof_context(conn, entity_kind, entity_key)
+    event = olof.get("event")
+    date_str = event["date_str"] if event else None
+    quorum = setlist_quorum(conn, date_str) if date_str else None
+    return {"event": event, "parsed_songs": olof.get("parsed_songs"), "quorum": quorum}
+
+
 def _geocode_context(conn: sqlite3.Connection, entity_key: str) -> dict:
     """Context for R-G1: the venue name plus its venue_geocoded row."""
     venue_norm, _, city_norm = entity_key.partition(":")
@@ -212,6 +228,8 @@ def _build_context(
             return _taper_context(conn, int(entity_key))
         if rule_id in ("R-O1", "R-O2", "R-O3"):
             return _olof_context(conn, entity_kind, entity_key)
+        if rule_id == "R-O4":
+            return _quorum_context(conn, entity_kind, entity_key)
         if rule_id == "R-G1":
             return _geocode_context(conn, entity_key)
         if rule_id in ("R-E1", "R-E2"):

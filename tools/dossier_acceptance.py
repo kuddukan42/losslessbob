@@ -2,20 +2,27 @@
 """Live acceptance checks for the show-dossier redesign (TODO-342).
 
 Prints one PASS/FAIL line per criterion in instructions/SHOW_DOSSIER_REDESIGN_PLAN.md
-for the mode asked. Modes arrive chunk by chunk; today there is one:
+for the mode asked. Modes arrive chunk by chunk; today there are two:
 
-    --parser   Phase 1: Olof parser corpus counts, then the checks — the two
-               song-count cases (1986-02-24 = 25, 1975-12-08 = 22, shown beside
-               bobdylan.com / setlist.fm / TUIT) and each defect count at its target.
+    --parser        Phase 1: Olof parser corpus counts, then the checks — the two
+                    song-count cases (1986-02-24 = 25, 1975-12-08 = 22, shown beside
+                    bobdylan.com / setlist.fm / TUIT) and each defect count at its target.
+    --corroborate   Phase 3 row (a): backend.qc.corroborate.setlist_quorum on
+                    1986-02-24 and 1975-12-08 (corroborated live, disputed
+                    against ``--before``), then the corpus-wide verdict shares.
 
 Usage::
 
     .venv/bin/python3 tools/dossier_acceptance.py --parser
     .venv/bin/python3 tools/dossier_acceptance.py --parser --before .debug/olof_before.db
     .venv/bin/python3 tools/dossier_acceptance.py --parser --residuals
+    .venv/bin/python3 tools/dossier_acceptance.py --corroborate --before .debug/olof_before.db
 
 ``--before`` reads the same counts from a tools/olof_reparse_diff.py snapshot and
-prints them beside the live ones. ``--residuals`` lists every zero-song and
+prints them beside the live ones (``--parser``), or supplies the pre-Phase-1 Olof
+setlist for the two ``--corroborate`` acceptance dates — that snapshot holds only
+``olof_*`` tables, so setlist.fm/bobdylan.com/TUIT are always read from the live DB
+even in the "before" comparison. ``--residuals`` lists every zero-song and
 truncated concert. Exit status is 1 when any check fails. Run from the project root.
 """
 from __future__ import annotations
@@ -32,7 +39,9 @@ _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
+from backend.dossier_fields import is_non_song  # noqa: E402
 from backend.paths import DB_PATH  # noqa: E402
+from backend.qc import corroborate  # noqa: E402
 from backend.qc.rules import MONTH_YEAR_RE, ROTATION_FRAGMENT_RE  # noqa: E402
 
 _log = logging.getLogger(__name__)
@@ -192,6 +201,118 @@ def parser_checks(conn: sqlite3.Connection, metrics: dict[str, int | None]) -> l
     return checks
 
 
+def _olof_titles_from(conn: sqlite3.Connection, date_iso: str) -> list[str]:
+    """Olof's primary-event song titles for *date_iso*, read from *conn* (live or --before)."""
+    event_id = corroborate.primary_event_id(conn, date_iso)
+    if event_id is None:
+        return []
+    rows = conn.execute(
+        "SELECT song_title FROM olof_songs WHERE event_id = ? ORDER BY position", (event_id,)
+    ).fetchall()
+    titles = [(r["song_title"] or "").strip() for r in rows]
+    return [t for t in titles if t and not is_non_song(t)]
+
+
+def _source_groups(
+    conn: sqlite3.Connection, date_iso: str,
+) -> dict[str, tuple[dict[str, list[str]], bool]]:
+    """setlist.fm/bobdylan.com/TUIT track groups for *date_iso*, from the live DB."""
+    sfm: dict[str, list[str]] = {}
+    for r in conn.execute(
+        "SELECT l.setlistfm_id, l.track_name FROM setlistfm_setlist l"
+        " JOIN setlistfm_shows s USING (setlistfm_id)"
+        " WHERE s.date_str = ? AND COALESCE(l.is_tape, 0) = 0"
+        " ORDER BY l.setlistfm_id, l.set_index, l.position", (date_iso,)
+    ):
+        sfm.setdefault(r["setlistfm_id"], []).append(r["track_name"])
+
+    bd: dict[str, list[str]] = {}
+    for r in conn.execute(
+        "SELECT l.bobdylan_url, l.track_name FROM bobdylan_setlist l"
+        " JOIN bobdylan_shows s USING (bobdylan_url)"
+        " WHERE s.date_str = ? ORDER BY l.bobdylan_url, l.position", (date_iso,)
+    ):
+        bd.setdefault(r["bobdylan_url"], []).append(r["track_name"])
+
+    tuit: dict[str, list[str]] = {}
+    for r in conn.execute(
+        "SELECT show_id, song FROM tuit_song_performances WHERE date_str = ? ORDER BY id",
+        (date_iso,),
+    ):
+        tuit.setdefault(str(r["show_id"]), []).append(r["song"])
+
+    return {"setlistfm": (sfm, True), "bobdylan": (bd, True), "tuit": (tuit, False)}
+
+
+def corroborate_quorum(
+    live: sqlite3.Connection, date_iso: str, olof_conn: sqlite3.Connection | None = None,
+) -> corroborate.Quorum:
+    """setlist_quorum for *date_iso*: sources always from *live*, Olof from *olof_conn* if given.
+
+    Args:
+        live: Live DB connection — always the source of setlist.fm/bobdylan.com/TUIT rows.
+        date_iso: ISO date to check.
+        olof_conn: Connection to read Olof's setlist from, e.g. a ``--before`` snapshot
+            that holds only ``olof_*`` tables; defaults to *live*.
+
+    Returns:
+        The combined :class:`~backend.qc.corroborate.Quorum`.
+    """
+    olof_titles = _olof_titles_from(olof_conn or live, date_iso)
+    sources = _source_groups(live, date_iso)
+    cmap = corroborate.load_canonical_map(live)
+    return corroborate.quorum_verdict(olof_titles, sources, cmap)
+
+
+def corroborate_checks(
+    live: sqlite3.Connection, before: sqlite3.Connection | None,
+) -> list[tuple[bool, str]]:
+    """Phase 3 row (a) acceptance: the two dates read 'corroborated' live, 'disputed' before."""
+    checks: list[tuple[bool, str]] = []
+    for date, _want in _SONG_COUNT_CASES:
+        got = corroborate_quorum(live, date)["verdict"]
+        checks.append((got == "corroborated", f"{date} live quorum {got} = corroborated"))
+        if before is not None:
+            got_before = corroborate_quorum(live, date, olof_conn=before)["verdict"]
+            checks.append((
+                got_before == "disputed", f"{date} --before quorum {got_before} = disputed",
+            ))
+    return checks
+
+
+def corroborate_shares(conn: sqlite3.Connection) -> tuple[dict[str, int], int]:
+    """Corpus-wide setlist quorum verdict counts (plan Phase 3 acceptance note)."""
+    counts: Counter = Counter()
+    for _date, q in corroborate.corroborate_all(conn):
+        counts[q["verdict"]] += 1
+    return dict(counts), sum(counts.values())
+
+
+def run_corroborate(db_path: Path, before_path: Path | None) -> int:
+    """Print the Phase 3 row (a) acceptance checks, then the corpus-wide verdict shares."""
+    live = _open_ro(db_path)
+    before = _open_ro(before_path) if before_path else None
+    try:
+        checks = corroborate_checks(live, before)
+        for ok, text in checks:
+            _log.info("%s  %s", "PASS" if ok else "FAIL", text)
+        failed = sum(1 for ok, _ in checks if not ok)
+        _log.info("%d/%d checks pass", len(checks) - failed, len(checks))
+
+        counts, total = corroborate_shares(live)
+        _log.info("")
+        _log.info("corpus-wide setlist quorum (%d dated concerts):", total)
+        for key in ("corroborated", "stated", "disputed", "unavailable"):
+            n = counts.get(key, 0)
+            share = n / total if total else 0.0
+            _log.info("  %-14s %6d  %5.1f%%", key, n, share * 100)
+    finally:
+        live.close()
+        if before is not None:
+            before.close()
+    return 1 if failed else 0
+
+
 def run_parser(db_path: Path, before: Path | None, residuals: bool) -> int:
     """Print the Phase 1 counts (and a before column), then the checks; return exit code."""
     live = _open_ro(db_path)
@@ -227,12 +348,18 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--parser", action="store_true", help="Phase 1 Olof parser checks.")
+    mode.add_argument("--corroborate", action="store_true",
+                      help="Phase 3 row (a) setlist quorum checks.")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
-                        help="olof_reparse_diff snapshot to print beside the live counts.")
+                        help="--parser: olof_reparse_diff snapshot to print beside the live"
+                             " counts. --corroborate: pre-Phase-1 Olof snapshot to read the"
+                             " two acceptance dates' Olof setlist from.")
     parser.add_argument("--residuals", action="store_true",
-                        help="List every zero-song and truncated concert.")
+                        help="--parser only: list every zero-song and truncated concert.")
     args = parser.parse_args(argv)
+    if args.corroborate:
+        return run_corroborate(args.db, args.before)
     return run_parser(args.db, args.before, args.residuals)
 
 

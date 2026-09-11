@@ -111,7 +111,7 @@ losslessbob/
 │   ├── olof_chronicle_parser.py  # Yearly Chronicles parser: calendar + new-tapes (2022+ appendix superseded, see below) (TODO-162 P4)
 │   ├── bobserve_fetcher.py   # bobserve.com setlist page mirror (2022+, supersedes chronicle appendix) → data/olof/bobserve_pages/ (TODO-228); TODO-306 P2: JobState-backed run_fetch/run_fetch_claimed, POST /api/bobserve/fetch
 │   ├── bobserve_parser.py    # bobserve setlist parser: olof_pages(corpus=bobserve) → olof_events + olof_songs, source='bobserve' (TODO-228)
-│   ├── qc/                   # Show Dossier QC engine (TODO-342 Phase 2): rules.py (pure (conn)->Iterable[Finding] functions in RULES; R-O1/R-O2/R-O3/R-T1/R-T2/R-T3/R-T4/R-G1/R-E1/R-E2/R-F1/R-S1 shipped, also holds MONTH_YEAR_RE/ROTATION_FRAGMENT_RE for tools/ reuse), store.py (run_rule/run_all reconcile against qc_findings per the decision vocabulary; quarantined()/quarantined_batch()), __main__.py (`python -m backend.qc run`)
+│   ├── qc/                   # Show Dossier QC engine (TODO-342 Phase 2): rules.py (pure (conn)->Iterable[Finding] functions in RULES; R-O1/R-O2/R-O3/R-O4/R-T1/R-T2/R-T3/R-T4/R-G1/R-E1/R-E2/R-F1/R-S1 shipped, also holds MONTH_YEAR_RE/ROTATION_FRAGMENT_RE for tools/ reuse), corroborate.py (Phase 3a/audit Q1-a: setlist_quorum()/corroborate_all() cross-source setlist corroboration feeding R-O4 — see its own PROJECT.md entry), store.py (run_rule/run_all reconcile against qc_findings per the decision vocabulary; quarantined()/quarantined_batch()), __main__.py (`python -m backend.qc run`)
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-284: lbdir-based collection integrity scan engine
 │   ├── file_integrity.py     # TODO-267: per-file xxh3+sha256 bit-rot inventory (index/verify/rolling)
@@ -132,6 +132,7 @@ losslessbob/
 │   ├── ranker_jobs.py        # TODO-306 P2: backend-side concert_ranker wrapper — plan_scan/run_scan_claimed/run_rerank, JobState-backed, POST /api/ranker/scan + /api/ranker/rerank; reuses concert_ranker.cli.collection_worklist/rerank (promoted from private names)
 │   ├── dossier.py            # Show dossier (TODO-257/260): build_dossier() assembly + filter_dossier_sections/render_bbcode presentation layer; _render_locator_svg() server-side Mercator map
 │   ├── dossier_fields.py     # Dossier field requirements (TODO-342 Phase 4 home), D-01 matcher so far: clean_track_title() (durations/suffixes/glued headers stripped, non-songs → None), parse_entry_tracklist() (per-track raw/title/is_song/partial/missing), match_track() (exact → no-subtitle → song_canonical alias → db.titles_match) + build_setlist_index()
+│   ├── qc/corroborate.py     # Cross-source setlist corroboration (TODO-342 Phase 3a, audit Q1-a): setlist_quorum(conn, date_iso) compares Olof's primary-event setlist against setlistfm_setlist/bobdylan_setlist/tuit_song_performances aligned with the D-01 matcher (not by count); TUIT has no usable order (its `id` is alphabetical-by-song, verified on 1986-02-24), so it only ever corroborates on set+count; multi-show dates (early/late) pick the group best matching Olof; verdict 'disputed' (>=2 independent sources agree with each other against Olof) > 'corroborated' (>=1 agrees) > 'stated' (Olof has songs, neither holds) > 'unavailable' (nobody has a setlist — an empty Olof page against sources with data still runs the full comparison, so it reads 'disputed', not 'unavailable'); corroborate_all(conn) is the corpus-wide path (one preload query per source table) feeding R-O4; a local "Talkin'"→"Talking" fold handles the one D15 source-spelling gap the D-01 matcher's containment tier misses. Tests: tests/test_corroborate.py
 │   ├── setlist_fingerprint.py # Setlist fingerprinting: score entries.setlist vs olof_songs, curator suggestion queue (TODO-225)
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
@@ -1411,7 +1412,14 @@ entry's song tracks match; skips entries with <3 song tracks (`E2_MIN_SONG_TRACK
 with no Olof songs, entries covering ≥50% of the date's Olof songs (`E2_MAX_OLOF_COVER` —
 Olof lists a subset), and glued tracklists; evidence: date, song-track/matched counts, share,
 Olof song/matched counts, ≤8 unmatched titles; catches LB-06654 "Mono Mixes" on 1965-06-01;
-`entry_setlist_fit()` exposes the per-entry scores), `R-T1` (a
+`entry_setlist_fit()` exposes the per-entry scores), `R-O4` (error; warn when the dispute is
+order-only per `is_order_only_dispute()`; entity `olof_event` keyed
+like `R-O1`: `backend/qc/corroborate.py`'s `corroborate_all()` verdict for the date is
+'disputed' — evidence holds the full `Quorum` dict; live corpus 2026-09-11: 292 error + 33 warn
+open, 81.1%/8.1%/7.2%/3.6% corroborated/stated/disputed/unavailable across 4,494 dated concerts;
+198 of the errors correlate with an open `R-O1` truncation on the same event, the rest are genuine
+Olof-vs-sources content gaps such as 1965-05-10 (Olof lists 1 song, setlist.fm+TUIT both list
+a full 15) — not matcher noise), `R-T1` (a
 non-confirmed `taper_attributions` row whose evidence is a `mention` not bound to a
 taper-context phrase — shares `taper_attribution.mention_has_taper_context`, reloading
 `user_taper_aliases` first), `R-T2` (a propagated row whose `family` evidence names a
@@ -1432,8 +1440,7 @@ reopens it; `fixed` that fires again reopens; `open`/`confirmed` that stops firi
 for an entity, returning empty when the tables don't exist yet so dossier rendering degrades
 gracefully on a fresh install). CLI: `.venv/bin/python3 -m backend.qc run [--rule ID]
 [--db PATH]`, one line per rule (id, severity, open/new/fixed/reopened). Tests:
-`tests/test_qc.py`. The `/qc-review` console (Phase 2b) and the remaining rules
-(R-O4/R-T*/R-E2) are not built yet.
+`tests/test_qc.py`, `tests/test_corroborate.py`.
 
 ### `location_geocoded` — Geocoded concert locations (MASTER TABLE)
 | Column | Type | Notes |
