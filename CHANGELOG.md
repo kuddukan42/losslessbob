@@ -1,3 +1,26 @@
+[2026-09-11] — D-09 setlist confidence + D-11 file metadata (dossier C22)
+Added: backend/dossier_fields.py: setlist_confidence(conn, event_id, lb_numbers) — primary is the
+  Phase 3a quorum (corroborated → complete; disputed → partial with a notice naming every count;
+  unavailable → unavailable). On 'stated' (Olof has a setlist, no external source does) a secondary
+  signal runs: Olof's own "incomplete setlist" phrasing forces partial, else the sources' median
+  entries.timing runtime ÷ 6.33 min/song gives an expected count and a gap over 5 reads partial.
+Added: .debug/dossier_calibration.md — the histogram behind both constants. 6.33 = corpus median of
+  recording_mins / song_count (n=3,089). Gap > 5 chosen against the quorum verdicts as ground truth:
+  1.7% false "partial" on corroborated dates at 42% recall on disputed ones, against 8.8% / 47.7%
+  at gap > 3. Negative gaps are never evidence.
+Added: file_meta(conn, lb) (D-11) — reuses corroborate.file_format_check, so the label always names
+  its basis: "16/44 file", "recorded 24/96", or both joined when they differ (audit M1). filesize is
+  TUIT size_bytes only; filecount = distinct audio filenames in checksums (xref=0) else TUIT
+  n_files; disc_count = entries.cdr within R-E1's 1–6.
+Changed: tools/dossier_acceptance.py --d09: both accept cases PASS (1986-02-24 complete / 25 /
+  corroborated; LB-08485 "16/44 file · recorded 24/96"). Corpus: 3,994 complete, 338 partial,
+  162 unavailable of 4,494 dated concerts.
+Fixed (review): the disputed notice named only the external sources, which routinely agree with
+  each other — it now leads with our own count ("Olof lists 0, bobdylan lists 16, tuit lists 15").
+  That reading shows most 2026 disputes are dates where Olof parses 0 songs (R-O1 territory).
+Added: tests/test_setlist_confidence_file_meta.py (18 tests). Pre-existing, unrelated:
+  test_make_fixture.py::test_generation_under_60s fails on a clean tree too.
+
 [2026-09-11] — Olof title repair: a writer credit spliced mid-word (BUG-347)
 Fixed: backend/olof_parser.py: SPLICED_CREDIT_RE + a repair in _split_title_parts — Olof's page
   drops the NEXT song's credit into the middle of a word ("Like A Rolling St (Bob Dylan-Robert
