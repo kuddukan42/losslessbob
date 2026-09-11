@@ -1459,6 +1459,8 @@ _LOW_GEN_RE = re.compile(
     re.IGNORECASE,
 )
 _MASTER_RE = re.compile(r"\bmaster\b", re.IGNORECASE)
+# "cassette master -> DAT - clone -> CDR": a clone after the master makes the source low gen.
+_CLONE_RE = re.compile(r"\bclone\b", re.IGNORECASE)
 # Rule 6: a first hop naming a microphone, and a later hop naming a recorder.
 _MIC_RE = re.compile(
     r"\b(?:mics?|microphones?|SP-CMC-?\d*|Core\s*Sound|ECM-?\d+|DPA|Schoeps|AKG|Neumann"
@@ -1506,11 +1508,13 @@ def _confirmed_taper(conn: sqlite3.Connection, lb_number: int) -> bool:
 def classify_generation(conn: sqlite3.Connection, lb_number: int) -> Generation:
     """D-05: classify a source's generation from its lineage, first matching rule wins.
 
-    Never guessed from rating or grade. Rules: ``BOOTLEG:`` / silver disc with a
-    label or catalogue number / a ``bootleg_titles`` row → silver; vinyl/LP → vinyl;
-    TV/FM/radio/broadcast → broadcast; explicit 1st/low gen or clone of master →
-    low_gen; the word "master" → master (stated); a mic → recorder chain with a
-    confirmed, unquarantined taper → master (inferred); otherwise unknown.
+    Never guessed from rating or grade. Rules: ``BOOTLEG:`` / a silver disc / a
+    ``bootleg_titles`` row → silver; vinyl/LP → vinyl; TV/FM/radio/broadcast →
+    broadcast; explicit 1st/low gen or clone of master → low_gen; the word "master"
+    → master (stated), or low_gen when a clone follows it; a mic → recorder chain
+    with a confirmed, unquarantined taper → master (inferred); otherwise unknown.
+    tj's D-05 sign-off (2026-09-11) dropped the plan's label-or-catalogue condition
+    on silver discs and added the clone-after-master case.
 
     Args:
         conn: Open SQLite connection.
@@ -1533,9 +1537,10 @@ def classify_generation(conn: sqlite3.Connection, lb_number: int) -> Generation:
     if m:
         return hit("silver", "stated", chain[m.start():m.start() + 40].strip())
     silver = _SILVER_RE.search(chain)
-    label = _LABEL_RE.search(chain)
-    if silver and label:
-        return hit("silver", "stated", f"{silver.group(0)} · {label.group(0)}")
+    if silver:
+        label = _LABEL_RE.search(chain)
+        evidence = f"{silver.group(0)} · {label.group(0)}" if label else silver.group(0)
+        return hit("silver", "stated", evidence)
     bootleg = conn.execute(
         "SELECT title FROM bootleg_titles WHERE lb_number = ? ORDER BY id LIMIT 1", (lb_number,),
     ).fetchone()
@@ -1545,6 +1550,9 @@ def classify_generation(conn: sqlite3.Connection, lb_number: int) -> Generation:
                                 ("low_gen", _LOW_GEN_RE), ("master", _MASTER_RE)):
         m = pattern.search(chain)
         if m:
+            clone = _CLONE_RE.search(chain, m.end()) if generation == "master" else None
+            if clone:
+                return hit("low_gen", "stated", f"{m.group(0)} … {clone.group(0)}")
             return hit(generation, "stated", m.group(0))
     hops = [h.strip() for h in chain.split(">") if h.strip()]
     if len(hops) >= 2:

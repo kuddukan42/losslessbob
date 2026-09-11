@@ -62,6 +62,7 @@ class TestClassifyGeneration:
         ("clone of master > CDR", ("low_gen", "stated")),
         ("FLAC received from 'lowgen', no lineage", ("unknown", None)),
         ("Master tape > CDR > EAC", ("master", "stated")),
+        ("Sennheiser MKE2002 -> cassette master -> DAT - clone -> CDR", ("low_gen", "stated")),
         ("", ("unknown", None)),
     ])
     def test_rules_first_match_wins(self, conn, chain, expected):
@@ -69,10 +70,10 @@ class TestClassifyGeneration:
             _entry(conn, 1, chain)
         assert _gen(conn, 1) == expected
 
-    def test_silver_disc_needs_a_label_or_catalogue(self, conn):
+    def test_silver_disc_without_label_is_silver(self, conn):
         with conn:
             _entry(conn, 1, "Silver CD > EAC > FLAC")
-        assert _gen(conn, 1) == ("unknown", None)
+        assert _gen(conn, 1) == ("silver", "stated")
 
     def test_bootleg_titles_row_is_silver(self, conn):
         with conn:

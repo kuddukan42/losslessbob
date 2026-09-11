@@ -622,9 +622,8 @@ _D05_CASES = (
     (15005, "silver"),
     (9493, "vinyl"),
     (6654, "silver"),
-    # The plan says unknown, but LB-08637 has a bootleg_titles row, which the plan's own
-    # rule 1 reads as silver — this check fails until tj's D-05 sign-off settles it.
-    (8637, "unknown"),
+    # The plan said unknown; tj ruled (2026-09-11) that its bootleg_titles row makes it silver.
+    (8637, "silver"),
 )
 _D05_AUDIT_ROWS = 100
 _D05_SEED = 342

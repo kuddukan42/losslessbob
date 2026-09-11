@@ -1,3 +1,11 @@
+[2026-09-11] — D-05 generation rules per tj's sign-off (dossier C21)
+Changed: backend/dossier_fields.py: classify_generation — a silver disc is silver with or
+  without a label or catalogue number (+15 LBs); "master" followed by a clone hop is low_gen,
+  not master (451 LBs, e.g. "cassette master -> DAT - clone"); LB-08637's bootleg_titles row keeps
+  it silver, overruling the plan's "unknown". Corpus: master 1,002 stated + 816 inferred, low_gen
+  860, silver 1,420, unknown 12,543.
+Changed: tools/dossier_acceptance.py --d05: 6/6. tests/test_generation_medium.py (+1 test).
+
 [2026-09-11] — D-05 generation + D-13 medium + rule R-T5 (dossier C21)
 Added: backend/dossier_fields.py: classify_generation(conn, lb) — first rule wins: BOOTLEG: /
   silver disc with a label or catalogue number / a bootleg_titles row → silver; vinyl/LP; TV /
