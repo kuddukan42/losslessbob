@@ -138,6 +138,22 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
 - **Sign-off** marks a chunk that stops for tj before it merges. Chunks that aren't marked
   don't wait for him.
 
+> **Resume here (handoff 2026-09-11).** C00–C21 are done. Finish **BUG-347** before C22 — it
+> was stopped half-applied:
+> - Uncommitted: `backend/olof_parser.py` (`SPLICED_CREDIT_RE`, the repair in
+>   `_split_title_parts`), `tools/olof_reparse_diff.py` (`B347` bucket),
+>   `tests/test_olof_parser_fixes.py` (+4 tests, 53 pass).
+> - Live DB: only the two affected pages were reparsed (`DSN31870 - 2010 Tour Of Japan.htm`,
+>   `DSN32500 - 2010 US FallTour.htm`). Diff gate clean: changed 2, B347 2
+>   (`.debug/olof_reparse_diff_bug347.md`). Rollback snapshot: `.debug/olof_before_bug347.db`.
+> - Remaining: `backend.song_index.run()`, `.venv/bin/python3 -m backend.qc run`,
+>   `tools/dossier_acceptance.py --d07` (expect 5/5, the C20 superlative unblocked), CHANGELOG,
+>   commit, `tools/ledger.py bug-close 347`.
+>
+> Pending with tj: the C19 allowlist sign-off (`backend/assets/official_releases.json`) and
+> the C21 100-row generation audit (`.debug/d05_audit.txt`; its three rule questions are
+> decided).
+
 | # | Ph | Scope | Needs | Model | Done when | Status |
 |---|---|---|---|---|---|---|
 | C00 | 0 | Ledger: redesign TODO + the Phase 0 BUGs; branch `feat/dossier-redesign` | — | orch. | IDs: TODO-342; BUG-340 (F1), 341 (F2), 342 (F4), 343 (F14), 344 (F16), 345 (F17), 346 (NULL-date picks) | done |
