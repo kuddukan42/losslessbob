@@ -1,3 +1,21 @@
+[2026-09-11] — QC review console, write side: decisions, Queue tab, rules run (dossier C12)
+Added: backend/qc/decisions.py: decide() (confirmed / false_positive from open, confirmed or
+  false_positive; fixed / corrected refuse), bulk_decide() (one rule per batch, all-or-nothing),
+  add_correction() (corrections row + finding → corrected). Every change logs to qc_decision_log.
+Added: backend/qc/jobs.py: JobState-backed rules run (all rules or one) on its own connection.
+Added: backend/app.py: POST /api/qc/findings/<id>/decision, POST /api/qc/findings/bulk,
+  POST /api/qc/corrections, POST + GET /api/qc/run. Every POST 403s curator_required when
+  curator mode is off. POST /api/qc/releases moves to C19 with rule R-R1.
+Added: backend/qc_review.html: Queue tab — one card at a time (errors first), per-family evidence
+  (taper mention highlight + Reject attribution, Olof raw vs parsed, geocode POI + missing tokens),
+  impact strip with Open dossier links, Confirm / False positive / Correct… / Skip + note, keys
+  c f e s j k o (ignored with Ctrl/Alt/Meta or in a field), resume across reloads. Findings tab
+  gains a one-rule bulk bar; header Run rules button polls the job.
+Added: backend/queues.py: qc_errors gate (open/confirmed errors) and qc_warnings backlog queues on
+  the Home freshness card. Live at C12: 970 open errors, 2,657 open warnings.
+Added: tests/test_qc_decisions.py (33 tests); tests/test_queues.py, tests/test_refresh.py updated.
+Changed: gui_next locales (all six): qc_errors / qc_warnings labels and actions.
+
 [2026-09-11] — QC review console, read side: /qc-review page + Findings tab (dossier C11)
 Added: backend/qc/review.py: read model — summary (per-rule severity × status counts, last run,
   open totals), paged/filtered findings, one finding with a rule-family context panel (taper /

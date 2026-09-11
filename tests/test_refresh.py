@@ -565,6 +565,7 @@ def test_plan_carries_queues_and_gate_only_pending_total(tmp_path) -> None:
     plan = compute_plan(db_path=db_path)
     assert {q["queue_id"] for q in plan["queues"]} == {
         "taper_conflicts", "fingerprint_suggestions", "xref_filesets", "tapematch_dates",
+        "qc_errors", "qc_warnings",
     }
     assert plan["queue_pending_total"] == 1
 

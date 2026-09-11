@@ -2322,13 +2322,17 @@
         "taper_conflicts": "Konflikte bei der Taper-Zuordnung",
         "fingerprint_suggestions": "Vorschläge für Setlisten",
         "xref_filesets": "Vorbereitete Dateisätze mit Querverweisen",
-        "tapematch_dates": "TapeMatch – Datums-Kuratierung"
+        "tapematch_dates": "TapeMatch – Datums-Kuratierung",
+        "qc_errors": "QC-Fehler",
+        "qc_warnings": "QC-Warnungen"
       },
       "actions": {
         "taper_conflicts": "Bestätigen, ablehnen oder als ungelöst markieren",
         "fingerprint_suggestions": "Jeden vorgeschlagenen Treffer für die Setlist akzeptieren oder ablehnen",
         "xref_filesets": "Prüfsummen-Dateien für die Website-Spiegelung, die in Jeffs Datenbank-Drop nicht enthalten waren – durch einen späteren Drop behoben, nicht von hier",
-        "tapematch_dates": "Kandidatenpaare für ein Datum annehmen oder ablehnen"
+        "tapematch_dates": "Kandidatenpaare für ein Datum annehmen oder ablehnen",
+        "qc_errors": "Überprüfung unter /qc-review",
+        "qc_warnings": "Überprüfung unter /qc-review"
       }
     }
   },
