@@ -2650,3 +2650,419 @@ def taper_render(conn: sqlite3.Connection, lb_number: int) -> TaperRender:
 
     return TaperRender(lb_number=lb_number, name=name, confidence=confidence, marker=marker,
                         notice=notice)
+
+
+# ---------------------------------------------------------------------------
+# D-08 Pairwise comparison (TODO-342 C24, plan line 569-585)
+# ---------------------------------------------------------------------------
+
+# ``entries.timing`` is rounded to the minute, so two runtimes differing by < 2 can be the
+# same length. The floor only removes rounding: calibration (.debug/dossier_calibration.md,
+# D-08) found runtime delta doesn't predict missing songs at any flat, per-era or relative
+# floor, so the runtime axis states "longest runtime" as a fact, never completeness (tj,
+# 2026-09-12).
+_RUNTIME_DIFF_MIN = 2.0
+
+
+def _resolution_key(res: str | None) -> tuple[int, int] | None:
+    """Parse a ``"BIT/KHZ"`` :func:`file_meta` figure into a ``(bit, khz)`` sort key."""
+    if not res:
+        return None
+    m = re.match(r"(\d+)/(\d+)", res)
+    return (int(m.group(1)), int(m.group(2))) if m else None
+
+
+class RunnerUpDiff(TypedDict):
+    """One ``verdict.vs_runner_up`` field comparison (D-08, plan line 573).
+
+    Keys:
+        field: ``'rating'`` / ``'scan'`` / ``'runtime'`` / ``'resolution'`` /
+            ``'generation'`` / ``'character'``.
+        pick_value: The pick's value.
+        runner_value: The runner-up's value.
+        leader: ``'pick'``, ``'runner_up'``, or ``None`` when the field has no
+            direction (rating/generation/character are reported, never ranked)
+            or the two sides tie.
+    """
+
+    field: str
+    pick_value: object
+    runner_value: object
+    leader: str | None
+
+
+class SourceAlternate(TypedDict):
+    """A non-pick visible source leading the pick on one D-08 axis (plan line 577).
+
+    Keys:
+        axis: ``'scan'`` / ``'runtime'`` / ``'resolution'`` / ``'soundboard'`` /
+            ``'complete'`` (the five axes, plan line 574).
+        lb_number: The alternate source.
+        pick_value: The pick's value on this axis.
+        alt_value: The alternate's (leading) value.
+    """
+
+    axis: str
+    lb_number: int
+    pick_value: object
+    alt_value: object
+
+
+class CompareSources(TypedDict):
+    """D-08: the verdict pick diffed against its runner-up, over the visible set.
+
+    Keys:
+        pick: The pick's ``lb_number``, or ``None`` with fewer than one ranked,
+            visible, ``status='ok'`` source.
+        runner_up: The next-best ranked visible source's ``lb_number``, or
+            ``None`` with fewer than two.
+        diffs: Non-tied, non-null pick-vs-runner-up comparisons; empty when
+            every field ties or is unusable on one side.
+        alternates: Non-pick visible sources beating the pick on a D-08 axis,
+            one (the axis's own leader) per axis at most.
+        collapsed: ``True`` when ``diffs`` and ``alternates`` are both empty --
+            "no meaningful deltas" (plan line 578), so the whole block renders
+            nothing.
+    """
+
+    pick: int | None
+    runner_up: int | None
+    diffs: list[RunnerUpDiff]
+    alternates: list[SourceAlternate]
+    collapsed: bool
+
+
+def compare_sources(
+    conn: sqlite3.Connection, event_id: int, date_iso: str, visible_lbs: Sequence[int],
+) -> CompareSources:
+    """D-08: diff the verdict pick against the runner-up, scoped to *visible_lbs*.
+
+    Runs only over *visible_lbs* (audit S7) -- the caller has already dropped
+    withheld/private sources for the channel. ``diffs`` compares the pick
+    against the runner-up (the next-best ``show_picks.pick_rank``) on rating,
+    scan score, runtime, resolution, generation and character terms;
+    ``alternates`` separately scans every other visible source for one that
+    leads the pick on one of the five axes (best scan, longest runtime,
+    highest resolution, only soundboard, only complete). An axis or field only
+    counts when both sides are non-null, on the same basis (a resolution file
+    record is never compared against a lineage-only figure -- audit M1/M17),
+    and (for resolution) not disputed (:func:`backend.qc.corroborate.file_format_check`
+    ``agrees is False``). Ties are reported, never broken -- an equal value
+    never becomes an alternate. Filesize/filecount are never compared (audit
+    M17: no "smaller file set" claim).
+
+    Args:
+        conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
+        event_id: ``olof_events.event_id`` (for D-01 completeness, the "only
+            complete" axis).
+        date_iso: The show's date, for ``show_picks.concert_date_iso``.
+        visible_lbs: The visible source set to compare over.
+
+    Returns:
+        A :class:`CompareSources`.
+    """
+    from backend import tapematch_sync
+    from backend.qc.corroborate import file_format_check
+
+    visible = list(dict.fromkeys(visible_lbs))
+    empty = CompareSources(pick=None, runner_up=None, diffs=[], alternates=[], collapsed=True)
+    if not visible:
+        return empty
+
+    placeholders = ",".join("?" * len(visible))
+    rows = {
+        r["lb_number"]: r for r in conn.execute(
+            f"SELECT lb_number, rating, source_type, timing, status FROM entries"
+            f" WHERE lb_number IN ({placeholders})", visible,
+        )
+    }
+    pick_ranks = {
+        r["lb_number"]: r["pick_rank"] for r in conn.execute(
+            f"SELECT lb_number, pick_rank FROM show_picks WHERE concert_date_iso = ?"
+            f" AND lb_number IN ({placeholders})", [date_iso, *visible],
+        )
+    }
+    ranked = sorted(
+        (lb for lb in visible
+         if lb in pick_ranks and lb in rows and rows[lb]["status"] == "ok"),
+        key=lambda lb: pick_ranks[lb],
+    )
+    if not ranked:
+        return empty
+    pick = ranked[0]
+    runner_up = ranked[1] if len(ranked) > 1 else None
+    others = [lb for lb in ranked if lb != pick]
+
+    scores = tapematch_sync._load_latest_abs_scores(conn)
+    completeness_map = completeness(conn, event_id, visible)
+
+    def rating(lb: int) -> str | None:
+        return (rows[lb]["rating"] or "").strip() or None
+
+    def scan(lb: int) -> float | None:
+        s = scores.get(lb)
+        return s[1] if s else None
+
+    def runtime(lb: int) -> float | None:
+        rt = parse_runtime(rows[lb]["timing"])
+        return rt["total_minutes"] if rt else None
+
+    def resolution(lb: int) -> str | None:
+        return file_meta(conn, lb)["file_res"]
+
+    def resolution_disputed(lb: int) -> bool:
+        return file_format_check(conn, lb)["agrees"] is False
+
+    def generation(lb: int) -> str | None:
+        g = classify_generation(conn, lb)
+        return g["generation"] if g["basis"] else None
+
+    def character(lb: int) -> str | None:
+        return source_character(conn, lb)["character"]
+
+    def is_soundboard(lb: int) -> bool:
+        return (rows[lb]["source_type"] or "") == "Soundboard"
+
+    def is_complete(lb: int) -> bool:
+        c = completeness_map.get(lb)
+        return bool(
+            c and c["basis"] == "tracklist" and c["songs_total"]
+            and c["songs_present"] == c["songs_total"]
+        )
+
+    diffs: list[RunnerUpDiff] = []
+    if runner_up is not None:
+        pv, rv = rating(pick), rating(runner_up)
+        if pv and rv and pv != rv:
+            diffs.append(RunnerUpDiff(field="rating", pick_value=pv, runner_value=rv, leader=None))
+
+        pv2, rv2 = scan(pick), scan(runner_up)
+        if pv2 is not None and rv2 is not None and pv2 != rv2:
+            diffs.append(RunnerUpDiff(
+                field="scan", pick_value=pv2, runner_value=rv2,
+                leader="pick" if pv2 > rv2 else "runner_up",
+            ))
+
+        pv2, rv2 = runtime(pick), runtime(runner_up)
+        if pv2 is not None and rv2 is not None and abs(pv2 - rv2) >= _RUNTIME_DIFF_MIN:
+            diffs.append(RunnerUpDiff(
+                field="runtime", pick_value=pv2, runner_value=rv2,
+                leader="pick" if pv2 > rv2 else "runner_up",
+            ))
+
+        if not resolution_disputed(pick) and not resolution_disputed(runner_up):
+            pres, rres = resolution(pick), resolution(runner_up)
+            pkey, rkey = _resolution_key(pres), _resolution_key(rres)
+            if pkey is not None and rkey is not None and pkey != rkey:
+                diffs.append(RunnerUpDiff(
+                    field="resolution", pick_value=pres, runner_value=rres,
+                    leader="pick" if pkey > rkey else "runner_up",
+                ))
+
+        pv, rv = generation(pick), generation(runner_up)
+        if pv and rv and pv != rv:
+            diffs.append(RunnerUpDiff(field="generation", pick_value=pv, runner_value=rv, leader=None))
+
+        pv, rv = character(pick), character(runner_up)
+        if pv and rv and pv != rv:
+            diffs.append(RunnerUpDiff(field="character", pick_value=pv, runner_value=rv, leader=None))
+
+    alternates: list[SourceAlternate] = []
+
+    p_scan = scan(pick)
+    if p_scan is not None:
+        best_lb, best_val = None, None
+        for lb in others:
+            v = scan(lb)
+            if v is not None and (best_val is None or v > best_val):
+                best_lb, best_val = lb, v
+        if best_lb is not None and best_val > p_scan:
+            alternates.append(SourceAlternate(
+                axis="scan", lb_number=best_lb, pick_value=p_scan, alt_value=best_val,
+            ))
+
+    p_runtime = runtime(pick)
+    if p_runtime is not None:
+        best_lb, best_val = None, None
+        for lb in others:
+            v = runtime(lb)
+            if v is not None and (best_val is None or v > best_val):
+                best_lb, best_val = lb, v
+        if best_lb is not None and best_val - p_runtime >= _RUNTIME_DIFF_MIN:
+            alternates.append(SourceAlternate(
+                axis="runtime", lb_number=best_lb, pick_value=p_runtime, alt_value=best_val,
+            ))
+
+    if not resolution_disputed(pick):
+        p_res = resolution(pick)
+        p_key = _resolution_key(p_res)
+        if p_key is not None:
+            best_lb, best_res, best_key = None, None, None
+            for lb in others:
+                if resolution_disputed(lb):
+                    continue
+                res = resolution(lb)
+                key = _resolution_key(res)
+                if key is not None and (best_key is None or key > best_key):
+                    best_lb, best_res, best_key = lb, res, key
+            if best_key is not None and best_key > p_key:
+                alternates.append(SourceAlternate(
+                    axis="resolution", lb_number=best_lb, pick_value=p_res, alt_value=best_res,
+                ))
+
+    if not is_soundboard(pick):
+        sbd = [lb for lb in visible if is_soundboard(lb)]
+        if len(sbd) == 1 and sbd[0] != pick:
+            alternates.append(SourceAlternate(
+                axis="soundboard", lb_number=sbd[0], pick_value=False, alt_value=True,
+            ))
+
+    if not is_complete(pick):
+        comp = [lb for lb in visible if is_complete(lb)]
+        if len(comp) == 1 and comp[0] != pick:
+            alternates.append(SourceAlternate(
+                axis="complete", lb_number=comp[0], pick_value=False, alt_value=True,
+            ))
+
+    return CompareSources(
+        pick=pick, runner_up=runner_up, diffs=diffs, alternates=alternates,
+        collapsed=not diffs and not alternates,
+    )
+
+
+# ---------------------------------------------------------------------------
+# D-10 Bobtalk anchored to songs (TODO-342 C24, plan line 594-596)
+# ---------------------------------------------------------------------------
+
+# A cue is Olof's own bracketed aside at the end of a bobtalk quote --
+# "(before Naomi Wise)", "<plays Sally Gal>", "(after "Masters of War")". One
+# level of nested parens is allowed so a title with its own parenthetical
+# ("(before It's Alright, Ma (I'm Only Bleeding))") stays whole. Requiring the
+# bracket (not making it optional) keeps ordinary prose ("...verse before
+# Cynthia shouts out something.") from being read as a cue -- an unconstrained
+# end-of-line match over-collects by ~16% against the corpus tally below.
+_BOBTALK_TITLE_RE = r"(?:[^()\[\]<>]|\([^()]*\))*"
+_BOBTALK_CUE_RE = re.compile(
+    rf"[(\[<]\s*\b(before|after|plays|during)\b\s+({_BOBTALK_TITLE_RE})\s*[)\]>][.,:]?",
+    re.IGNORECASE,
+)
+
+
+class BobtalkAnchor(TypedDict):
+    """One D-10 bobtalk quote anchored to a song (``song[].bobtalk``).
+
+    Keys:
+        position: The matched song's ``olof_songs.position``.
+        cue: The cue word that resolved it, lowercased (``'before'`` / ``'after'``
+            / ``'plays'`` / ``'during'``).
+        title: The cue's title text as Olof wrote it, before matching.
+        text: The full bobtalk quote line.
+    """
+
+    position: int
+    cue: str
+    title: str
+    text: str
+
+
+class BobtalkAnchors(TypedDict):
+    """D-10: an event's bobtalk quotes, anchored to songs where a cue resolves.
+
+    Keys:
+        event_id: The event.
+        anchored: One :class:`BobtalkAnchor` per resolved cue, in bobtalk-block
+            order.
+        context: Quote lines with no cue, or an unresolved cue title, in
+            bobtalk-block order (``context.bobtalk``).
+    """
+
+    event_id: int
+    anchored: list[BobtalkAnchor]
+    context: list[str]
+
+
+def anchor_bobtalk(
+    conn: sqlite3.Connection, event_id: int, canonical_map: dict[str, str] | None = None,
+) -> BobtalkAnchors:
+    """D-10: anchor an event's bobtalk quotes to the songs they cue.
+
+    Splits ``olof_events.bobtalk`` into quotes with
+    :func:`backend.bobtalk.parse_bobtalk` (already drops release/catalogue
+    noise and stock short lines -- see that function's ``MIN_QUOTE_CHARS``),
+    then looks for every ``(before|after|plays|during) <title>`` cue
+    (:data:`_BOBTALK_CUE_RE`) in each -- a line may carry more than one, e.g.
+    ``"[plays guitar] (after \"Masters of War\")"``. A cue's title is resolved against the
+    event's setlist with :func:`match_track` via :class:`_PositionMatcher`
+    (shared with D-01's :func:`completeness`, so a song played twice claims
+    its cues in bobtalk-block order, one position at a time).
+    :func:`match_track`'s own exact tier is already space- and
+    hyphen-insensitive (:func:`backend.db.normalize_title_for_match` folds
+    both to nothing before comparing) and its last tier is
+    :func:`backend.db.titles_match`, matching the plan's two-step D-10
+    resolution order without re-deriving it. Every quote without a cue, or
+    whose cue title resolves to no song, stays in ``context``
+    (``context.bobtalk``) -- in original bobtalk-block order.
+
+    Args:
+        conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
+        event_id: ``olof_events.event_id``.
+        canonical_map: Optional pre-loaded ``song_canonical`` alias map; loaded
+            from *conn* if omitted.
+
+    Returns:
+        A :class:`BobtalkAnchors`; both lists empty when there's no bobtalk
+        text or nothing in it survives :func:`~backend.bobtalk.parse_bobtalk`
+        (no empty container should render -- plan line 596).
+    """
+    from backend.bobtalk import parse_bobtalk
+    from backend.qc.corroborate import load_canonical_map
+
+    row = conn.execute(
+        "SELECT bobtalk FROM olof_events WHERE event_id = ?", (event_id,),
+    ).fetchone()
+    quotes = parse_bobtalk(row[0] if row else None)
+    if not quotes:
+        return BobtalkAnchors(event_id=event_id, anchored=[], context=[])
+
+    # A quote line can carry more than one bracketed cue ("[plays guitar]
+    # (after "Masters of War")"), so every quote maps to a *list* of cues,
+    # in the order they appear in the line.
+    cued: dict[int, list[tuple[str, str]]] = {}  # quote.index -> [(cue, title), ...]
+    for q in quotes:
+        found = [
+            (m.group(1).lower(), m.group(2).strip(" \t\"'“”‘’"))
+            for m in _BOBTALK_CUE_RE.finditer(q.text)
+        ]
+        if found:
+            cued[q.index] = found
+
+    if not cued:
+        return BobtalkAnchors(event_id=event_id, anchored=[], context=[q.text for q in quotes])
+
+    cmap = canonical_map if canonical_map is not None else load_canonical_map(conn)
+    setlist = _event_setlist(conn, event_id)
+    matcher = _PositionMatcher(setlist, cmap)
+    quotes_by_index = {q.index: q for q in quotes}
+
+    # Flatten to one entry per cue, in block order, so a repeated song claims
+    # its cues one position at a time regardless of which line they're on.
+    ordered = [
+        (qidx, cue, title) for qidx, cues in cued.items() for cue, title in cues
+    ]
+    hits, _unmatched = matcher.assign([title for _, _, title in ordered])
+    resolved = [
+        (qidx, cue, title, hits.get(f"{i}:{title}"))
+        for i, (qidx, cue, title) in enumerate(ordered)
+    ]
+
+    anchored: list[BobtalkAnchor] = []
+    anchored_quotes: set[int] = set()
+    for qidx, cue, title, position in resolved:
+        if position is not None:
+            anchored.append(BobtalkAnchor(
+                position=position, cue=cue, title=title, text=quotes_by_index[qidx].text,
+            ))
+            anchored_quotes.add(qidx)
+
+    context = [q.text for q in quotes if q.index not in anchored_quotes]
+    return BobtalkAnchors(event_id=event_id, anchored=anchored, context=context)

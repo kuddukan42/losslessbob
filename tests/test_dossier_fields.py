@@ -5,11 +5,13 @@ import sqlite3
 
 import pytest
 
-from backend import db
+from backend import db, dossier_fields
 from backend.dossier_fields import (
+    anchor_bobtalk,
     broadcast_set_labels,
     build_setlist_index,
     clean_track_title,
+    compare_sources,
     completeness,
     family_basis,
     fits_show,
@@ -644,3 +646,348 @@ class TestTaperRender:
         conn = _taper_db(attribution=("cb", "confirmed"), blocked_rules=["R-T4"])
         tr = taper_render(conn, 1)
         assert tr["name"] == "cb"
+
+
+# ---------------------------------------------------------------------------
+# D-08 compare_sources (C24)
+# ---------------------------------------------------------------------------
+#
+# compare_sources() orchestrates five already-tested helpers (file_meta,
+# classify_generation, source_character, completeness, and
+# corroborate.file_format_check). Those helpers' own parsing logic is covered
+# by their dedicated test classes/files above and in
+# tests/test_setlist_confidence_file_meta.py and tests/test_generation_medium.py,
+# so these tests monkeypatch them to plain stand-ins and focus on
+# compare_sources' own orchestration: which axes count, when they tie, when an
+# alternate is the pick's runner-up vs some other visible source, and collapse.
+
+def _compare_db():
+    conn = sqlite3.connect(":memory:")
+    conn.row_factory = sqlite3.Row
+    conn.executescript("""
+        CREATE TABLE entries (lb_number INTEGER PRIMARY KEY, rating TEXT,
+            source_type TEXT, timing TEXT, status TEXT);
+        CREATE TABLE show_picks (lb_number INTEGER, concert_date_iso TEXT,
+            pick_rank INTEGER);
+        CREATE TABLE quality_recording_scores (lb_number INTEGER, scan_id INTEGER,
+            abs_score REAL, abs_grade TEXT);
+    """)
+    return conn
+
+
+def _compare_seed(conn, rows, date_iso="2020-01-01"):
+    """rows: (lb, rating, source_type, timing, rank, scan_or_None)."""
+    for lb, rating, source_type, timing, rank, scan in rows:
+        conn.execute(
+            "INSERT INTO entries VALUES (?, ?, ?, ?, 'ok')", (lb, rating, source_type, timing),
+        )
+        conn.execute(
+            "INSERT INTO show_picks VALUES (?, ?, ?)", (lb, date_iso, rank),
+        )
+        if scan is not None:
+            conn.execute(
+                "INSERT INTO quality_recording_scores VALUES (?, 1, ?, 'A')", (lb, scan),
+            )
+
+
+def _stub_helpers(monkeypatch, file_res=None, generation=None, character=None, complete=None):
+    """Stub compare_sources' five DB-heavy dependencies with plain lookups.
+
+    Args:
+        file_res: ``{lb: "BIT/KHZ" | None}``, default no source has a file record.
+        generation: ``{lb: (generation, basis)}``, default every source "unknown".
+        character: ``{lb: str | None}``, default no character text anywhere.
+        complete: ``{lb: bool}``, default no source is D-01 complete.
+    """
+    file_res = file_res or {}
+    generation = generation or {}
+    character = character or {}
+    complete = complete or {}
+    monkeypatch.setattr(
+        dossier_fields, "file_meta", lambda c, lb: {"file_res": file_res.get(lb)},
+    )
+    monkeypatch.setattr(
+        dossier_fields, "classify_generation",
+        lambda c, lb: {"generation": generation.get(lb, ("unknown", None))[0],
+                        "basis": generation.get(lb, ("unknown", None))[1]},
+    )
+    monkeypatch.setattr(
+        dossier_fields, "source_character", lambda c, lb: {"character": character.get(lb)},
+    )
+    monkeypatch.setattr(
+        dossier_fields, "completeness",
+        lambda c, event_id, lbs, canonical_map=None: {
+            lb: {"basis": "tracklist", "songs_total": 1, "songs_present": 1 if complete.get(lb) else 0}
+            for lb in lbs
+        },
+    )
+    monkeypatch.setattr(
+        "backend.qc.corroborate.file_format_check", lambda c, lb: {"agrees": None},
+    )
+
+
+class TestCompareSources:
+    def test_no_visible_sources_collapses(self, monkeypatch):
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[])
+        assert cs == {"pick": None, "runner_up": None, "diffs": [], "alternates": [],
+                      "collapsed": True}
+
+    def test_single_visible_source_has_no_runner_up(self, monkeypatch):
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        _compare_seed(conn, [(1, "A", None, "60min", 1, None)])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1])
+        assert cs["pick"] == 1 and cs["runner_up"] is None and cs["collapsed"]
+
+    def test_best_scan_alternate_need_not_be_the_runner_up(self, monkeypatch):
+        # Mirrors the 2010-03-29 accept case: LB-08637 (pick_rank 3) beats the
+        # pick's scan score, not LB-08476 (pick_rank 2, the runner-up).
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, 84.0),  # pick
+            (2, "A", None, "59min", 2, 79.0),  # runner-up
+            (3, "A", None, "58min", 3, 90.0),  # scan leader, not the runner-up
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2, 3])
+        assert cs["pick"] == 1 and cs["runner_up"] == 2
+        assert cs["alternates"] == [
+            {"axis": "scan", "lb_number": 3, "pick_value": 84.0, "alt_value": 90.0},
+        ]
+        assert any(d["field"] == "scan" and d["leader"] == "pick" for d in cs["diffs"])
+        assert not cs["collapsed"]
+
+    def test_tied_scan_is_no_alternate(self, monkeypatch):
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, 84.0),
+            (2, "A", None, "60min", 2, 84.0),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
+        assert cs["alternates"] == [] and cs["diffs"] == [] and cs["collapsed"]
+
+    def test_resolution_needs_the_same_basis(self, monkeypatch):
+        # Audit M17 (LB-08493 vs LB-08485/08476): a lineage-only figure never
+        # competes against a file-record figure, even a higher one.
+        _stub_helpers(monkeypatch, file_res={1: "16/44", 2: "16/44"})
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, None),  # pick: file record 16/44
+            (2, "A", None, "60min", 2, None),  # ties the pick's file record
+            (3, "A", None, "60min", 3, None),  # no file_meta entry -> no comparable basis
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2, 3])
+        assert not any(a["axis"] == "resolution" for a in cs["alternates"])
+
+    def test_higher_resolution_file_record_is_an_alternate(self, monkeypatch):
+        _stub_helpers(monkeypatch, file_res={1: "16/44", 2: "16/44", 3: "24/96"})
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, None),
+            (2, "A", None, "60min", 2, None),
+            (3, "A", None, "60min", 3, None),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2, 3])
+        assert {"axis": "resolution", "lb_number": 3, "pick_value": "16/44",
+                "alt_value": "24/96"} in cs["alternates"]
+
+    def test_small_runtime_gap_is_not_meaningful(self, monkeypatch):
+        # A 1-minute gap between two minute-rounded timings can be the same length:
+        # must not produce a diff or an alternate.
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "66min", 1, None),
+            (2, "A", None, "67min", 2, None),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
+        assert cs["diffs"] == [] and cs["alternates"] == [] and cs["collapsed"]
+
+    def test_two_minute_runtime_gap_is_an_alternate(self, monkeypatch):
+        # The rounding floor (tj, 2026-09-12): 2 minutes can't be rounding alone.
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "66min", 1, None),
+            (2, "A", None, "68min", 2, None),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
+        assert {"axis": "runtime", "lb_number": 2, "pick_value": 66.0,
+                "alt_value": 68.0} in cs["alternates"]
+
+    def test_large_runtime_gap_is_an_alternate(self, monkeypatch):
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, None),
+            (2, "A", None, "70min", 2, None),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
+        assert cs["alternates"] == [
+            {"axis": "runtime", "lb_number": 2, "pick_value": 60.0, "alt_value": 70.0},
+        ]
+
+    def test_only_soundboard_needs_a_single_source(self, monkeypatch):
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, None),
+            (2, "A", "Soundboard", "60min", 2, None),
+            (3, "A", "Soundboard", "60min", 3, None),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2, 3])
+        # Two soundboards, so "only soundboard" doesn't hold for either.
+        assert not any(a["axis"] == "soundboard" for a in cs["alternates"])
+
+    def test_only_soundboard_alternate_when_unique(self, monkeypatch):
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, None),
+            (2, "A", "Soundboard", "60min", 2, None),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
+        assert {"axis": "soundboard", "lb_number": 2, "pick_value": False,
+                "alt_value": True} in cs["alternates"]
+
+    def test_only_complete_alternate_when_unique(self, monkeypatch):
+        _stub_helpers(monkeypatch, complete={2: True})
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, None),
+            (2, "A", None, "60min", 2, None),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
+        assert {"axis": "complete", "lb_number": 2, "pick_value": False,
+                "alt_value": True} in cs["alternates"]
+
+    def test_unknown_generation_is_treated_as_null(self, monkeypatch):
+        # classify_generation's "unknown" (basis None) never guesses -- it must
+        # not surface as a real generation diff between pick and runner-up.
+        _stub_helpers(monkeypatch, generation={1: ("unknown", None), 2: ("silver", "stated")})
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, None),
+            (2, "A", None, "60min", 2, None),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
+        assert not any(d["field"] == "generation" for d in cs["diffs"])
+
+    def test_differing_generation_is_reported_not_ranked(self, monkeypatch):
+        _stub_helpers(monkeypatch, generation={1: ("master", "stated"), 2: ("low_gen", "stated")})
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, None),
+            (2, "A", None, "60min", 2, None),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
+        diff = next(d for d in cs["diffs"] if d["field"] == "generation")
+        assert diff == {"field": "generation", "pick_value": "master",
+                        "runner_value": "low_gen", "leader": None}
+
+    def test_status_not_ok_is_excluded(self, monkeypatch):
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        _compare_seed(conn, [(1, "A", None, "60min", 1, None)])
+        conn.execute("INSERT INTO entries VALUES (2, 'A', NULL, '60min', 'private')")
+        conn.execute("INSERT INTO show_picks VALUES (2, '2020-01-01', 2)")
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
+        assert cs["pick"] == 1 and cs["runner_up"] is None
+
+
+# ---------------------------------------------------------------------------
+# D-10 anchor_bobtalk (C24)
+# ---------------------------------------------------------------------------
+
+def _bobtalk_db(bobtalk_text, titles, event_id=1):
+    conn = sqlite3.connect(":memory:")
+    conn.row_factory = sqlite3.Row
+    conn.executescript("""
+        CREATE TABLE olof_events (event_id INTEGER PRIMARY KEY, bobtalk TEXT);
+        CREATE TABLE olof_songs (event_id INTEGER, position INTEGER, song_title TEXT,
+            subtitle TEXT);
+    """)
+    conn.execute("INSERT INTO olof_events VALUES (?, ?)", (event_id, bobtalk_text))
+    conn.executemany(
+        "INSERT INTO olof_songs VALUES (?, ?, ?, '')",
+        [(event_id, i, t) for i, t in enumerate(titles, start=1)],
+    )
+    return conn
+
+
+class TestAnchorBobtalk:
+    def test_no_bobtalk_text_is_empty_both_ways(self):
+        conn = _bobtalk_db("", [])
+        bt = anchor_bobtalk(conn, 1)
+        assert bt == {"event_id": 1, "anchored": [], "context": []}
+
+    def test_simple_cue_resolves(self):
+        line = (
+            "How are you? Sometimes it's hard to find people who understand"
+            " me. (before Trust Yourself)"
+        )
+        conn = _bobtalk_db(line, ["Trust Yourself"])
+        bt = anchor_bobtalk(conn, 1)
+        assert len(bt["anchored"]) == 1
+        anchor = bt["anchored"][0]
+        assert (anchor["position"], anchor["cue"], anchor["title"]) == \
+            (1, "before", "Trust Yourself")
+        assert bt["context"] == []
+
+    def test_nested_parens_title_stays_whole(self):
+        line = (
+            "I don't know how to. If I did, I would. (before It's Alright, Ma"
+            " (I'm Only Bleeding))"
+        )
+        conn = _bobtalk_db(line, ["It's Alright, Ma (I'm Only Bleeding)"])
+        bt = anchor_bobtalk(conn, 1)
+        assert len(bt["anchored"]) == 1
+        assert bt["anchored"][0]["position"] == 1
+
+    def test_hyphen_and_space_insensitive(self):
+        line = "Thank you! The Queens of Rhythm! (after Clean-Cut Kid)"
+        conn = _bobtalk_db(line, ["Clean Cut Kid"])
+        bt = anchor_bobtalk(conn, 1)
+        assert len(bt["anchored"]) == 1
+
+    def test_unresolved_cue_stays_in_context(self):
+        line = "Thank you. This next one you all know pretty well by now. (before Some Song)"
+        conn = _bobtalk_db(line, ["Trust Yourself"])
+        bt = anchor_bobtalk(conn, 1)
+        assert bt["anchored"] == [] and bt["context"] == [line]
+
+    def test_no_cue_stays_in_context(self):
+        line = "Thank you very much everybody, we appreciate you all coming out tonight."
+        conn = _bobtalk_db(line, ["Trust Yourself"])
+        bt = anchor_bobtalk(conn, 1)
+        assert bt["anchored"] == [] and bt["context"] == [line]
+
+    def test_multiple_cues_in_one_line_resolve_independently(self):
+        # One cue ("plays guitar") never resolves to a song; the other
+        # ("after Masters of War") does -- the line still ends up anchored,
+        # not duplicated into context.
+        line = 'He says that aint being a hero. [plays guitar] (after "Masters of War")'
+        conn = _bobtalk_db(line, ["Masters Of War"])
+        bt = anchor_bobtalk(conn, 1)
+        assert len(bt["anchored"]) == 1
+        assert bt["anchored"][0]["cue"] == "after"
+        assert bt["context"] == []
+
+    def test_repeated_song_claims_cues_in_order(self):
+        conn = _bobtalk_db(
+            "Here's one you know. (before Highway 61 Revisited)\n"
+            "That's always fun to play live for you all. (before Highway 61 Revisited)",
+            ["Highway 61 Revisited", "Highway 61 Revisited"],
+        )
+        bt = anchor_bobtalk(conn, 1)
+        assert [a["position"] for a in bt["anchored"]] == [1, 2]
+
+    def test_metadata_and_short_lines_never_become_context(self):
+        # parse_bobtalk() already drops catalogue/short lines -- they must not
+        # leak into context either.
+        conn = _bobtalk_db("Bootlegs\nDuelling Banjos . Papillon 016.", [])
+        bt = anchor_bobtalk(conn, 1)
+        assert bt == {"event_id": 1, "anchored": [], "context": []}
