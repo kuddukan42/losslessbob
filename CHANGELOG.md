@@ -1,3 +1,19 @@
+[2026-09-12] — Show dossier C23: the ten supporting parsers
+Added: backend/dossier_fields.py: parse_band_lineup, song_instruments, instrument_tally,
+  song_writers, broadcast_set_labels, source_character, lineage_short, parse_runtime,
+  family_basis and taper_render — the T2 supporting parsers the Phase 5 view model consumes.
+  The runtime split sums to the total by construction (G5): entries.timing never states a
+  total beside its splits (0 of 12,341 rows); 12,338 parse. The taper render gate blocks on
+  the error rules R-T1/R-T2/R-T3 only, so the warn rule R-T4 renders as the disputed notice
+  (4,761 tapers rendered, 11,942 render nothing). Instruments and the tally read only the
+  numbered range / per-song clauses, never the base personnel clause (audit M13).
+Added: tools/dossier_acceptance.py: --d23 mode — 11 accept cases, all PASS, plus corpus
+  tallies for runtime, band lineups and taper render.
+Changed: backend/dossier_fields.py: band label "Solo" is now Dylan alone in the base
+  personnel clause, not just the literal word "solo" in it — 1 lineup matched before, 243 do
+  now. An unparenthesised band name ("with Tom Petty & The Heartbreakers") is excluded, so
+  the 1,371 lineups with named non-NET backing musicians still render members only.
+
 [2026-09-11] — CI was red on every push: two unrelated breakages, both fixed
 Fixed: tools/make_fixture_db.py: the fixture wrote entries.date_str as ISO (YYYY-MM-DD), but the LB
   site — and so the real entries table — stores M/D/YY, which is the only form
