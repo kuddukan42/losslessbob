@@ -1,3 +1,16 @@
+[2026-09-12] — Show dossier C26: claim engine
+Added: backend/dossier_claims.py: the only producer of comparative/positional wording.
+  Comparators superlative (ties → "tied", all-way tie or any null/disputed/withheld input →
+  no claim; runtime tie floor 2 min), exclusive, comparison; D-04 rotation, D-07 tour/run
+  position (completeness-guarded), D-02 premiere/"since" claims; visible-source axes (LB
+  rating, scan, runtime, file resolution, only soundboard, only complete). attach_claims adds
+  view["claims"] [{anchor, row, claim}] and fills verdict.why / context.chronicle as slot
+  templates {segments, text, claims}, inferred slots flagged per segment. No career-debut
+  claims. 60-show sample: 0 errors, 311 claims.
+Changed: backend/dossier_anchors.py: build_view stashes derivations and calls attach_claims;
+  filter_view keeps claims with their anchor and drops local_analysis claims when stripping.
+Added: tests/test_dossier_claims.py: 48 tests (ties, partial scope, disputed input, guards).
+
 [2026-09-12] — Show dossier C25: anchor registry and view model
 Added: backend/dossier_anchors.py: Field {value, tier, source, confidence, derived_from}, the
   96-anchor ANCHORS registry (61 scalar, 35 per-row) with fallbacks, build_view() → additive
