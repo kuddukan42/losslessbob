@@ -1,3 +1,20 @@
+[2026-09-12] — Show dossier C28: per-dossier QC gate
+Added: backend/dossier_qc.py: run_gate() at the end of build_dossier writes dossier["qc"]
+  {checks_run, passed, withheld, refused, reasons, notices, input_fingerprint} and
+  prov.withheld[]. G1 identity refusal; G4 quarantine maps each rule to the anchors it
+  discredits (R-T1..3 → taper, R-E2 → source row, R-O1/O4 → setlist stats and badges, R-G1 →
+  map); G5 invariants incl. ledger audio evidence vs live scan score; G6 R-S1 staleness; G7
+  drops claims whose comparison scope lost a value; G8 public-channel leak refusal; G9
+  lint_l1 / lint_data_lb (run by the html route once the C29 template emits data-lb).
+Added: backend/qc/corroborate.py: places_agree_loose — G1-only same-place test (accents,
+  spacing, St = Saint, token containment, ratio); disputed refusals 26 → 3. venue_check's
+  exact semantics unchanged.
+Changed: backend/app.py: /api/dossier/html and /bbcode return 422 {refused, reasons} on a
+  refused dossier; /api/dossier stays 200 with qc.
+Added: tests/test_dossier_qc.py (39), tests/test_corroborate.py (+3). Corpus sweep over 3,961
+  dates: 115 refused for no Olof event, 3 for venue; G5 violations 0; G7 dropped 4 claims.
+  Gate ~3 ms warm.
+
 [2026-09-12] — Show dossier C27: §8 selection rules
 Added: backend/dossier_fields.py: FRAGMENT_THRESHOLD 0.60 (tj sign-off from a 300-show
   histogram) + is_fragment; Completeness.glued — an unsplit tracklist ("Serve Somebody 2.
