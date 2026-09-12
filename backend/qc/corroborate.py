@@ -77,6 +77,7 @@ still no new tables, no new QC rules:
 """
 from __future__ import annotations
 
+import difflib
 import json
 import logging
 import re
@@ -1569,6 +1570,63 @@ def _fold_city_name(name: str | None) -> str:
     """Fold a city name, then apply :data:`_CITY_ALIASES`."""
     folded = _fold_place_name(name)
     return _CITY_ALIASES.get(folded, folded)
+
+
+# Words that name a kind of place, not a particular one -- a shared "Arena" proves nothing.
+_GENERIC_PLACE_TOKENS = frozenset({
+    "the", "arena", "stadium", "stadio", "theatre", "theater", "teatro", "hall", "center",
+    "centre", "auditorium", "park", "di", "de", "do", "del", "la", "le", "university",
+    "memorial", "community", "civic", "municipal", "city", "of", "and", "music", "sports",
+    "amphitheatre", "amphitheater", "club", "festival", "field", "pavilion", "comunale",
+    "communale", "municipale", "palace", "forum", "concert", "house", "garden", "gardens",
+    "national", "international", "room", "ballroom", "new", "greater", "west", "east",
+    "north", "south", "college", "state", "county", "fairgrounds", "grounds", "opera",
+})
+_PLACE_TOKEN_ALIASES = {"st": "saint", "ste": "sainte", "mt": "mount", "ft": "fort"}
+_DIRECTION_TOKENS = frozenset({"north", "south", "east", "west"})
+_LOOSE_RATIO = 0.85
+_LOOSE_MIN_CHARS = 5
+_LOOSE_SUBSTRING_MIN_CHARS = 8
+
+
+def places_agree_loose(a: str | None, b: str | None) -> bool | None:
+    """Whether two venue or city names plausibly name the same place (G1 identity only).
+
+    Looser than the exact fold :func:`venue_check` reports: accents/punctuation/spacing
+    folded ("San Remo" = "Sanremo"), "St" = "Saint", one name's distinctive tokens all
+    inside the other ("Reilly Center" in "Reilly Center Arena"), one compact name inside
+    the other ("Forum di Assago" in "DatchForum di Assago"), or a close spelling
+    ("Comunale" / "Communale", mojibake). Conflicting compass words never agree
+    ("Fillmore East" / "Fillmore West"), and a brand token alone doesn't
+    ("Zepp Tokyo" / "Zepp DiverCity").
+
+    Args:
+        a: One raw place name.
+        b: The other raw place name.
+
+    Returns:
+        True / False, or ``None`` when either side is empty.
+    """
+    if not a or not b:
+        return None
+    ta = [_PLACE_TOKEN_ALIASES.get(t, t) for t in _fold_place_name(a).split()]
+    tb = [_PLACE_TOKEN_ALIASES.get(t, t) for t in _fold_place_name(b).split()]
+    ca, cb = "".join(ta), "".join(tb)
+    if not ca or not cb:
+        return None
+    if ca == cb:
+        return True
+    da, db_ = set(ta) & _DIRECTION_TOKENS, set(tb) & _DIRECTION_TOKENS
+    if da and db_ and da != db_:
+        return False
+    short, long_ = (ta, tb) if len(ta) <= len(tb) else (tb, ta)
+    if set(short) <= set(long_) and any(t not in _GENERIC_PLACE_TOKENS for t in short):
+        return True
+    shorter, longer = (ca, cb) if len(ca) <= len(cb) else (cb, ca)
+    if len(shorter) >= _LOOSE_SUBSTRING_MIN_CHARS and shorter in longer:
+        return True
+    return (min(len(ca), len(cb)) >= _LOOSE_MIN_CHARS
+            and difflib.SequenceMatcher(None, ca, cb).ratio() >= _LOOSE_RATIO)
 
 
 def _split_bobdylan_location(location: str | None) -> str | None:

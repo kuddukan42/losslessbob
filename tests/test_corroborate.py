@@ -789,6 +789,30 @@ class TestTaperCorpusAgreement:
         assert result["disputed"] == 1
 
 
+class TestPlacesAgreeLoose:
+    def test_spelling_and_spacing_variants_agree(self):
+        from backend.qc.corroborate import places_agree_loose
+        assert places_agree_loose("Stadio Communale", "Stadio Comunale") is True
+        assert places_agree_loose("San Remo", "Sanremo") is True
+        assert places_agree_loose("St. Bonaventure", "Saint Bonaventure") is True
+        assert places_agree_loose("Reilly Center", "Reilly Center Arena") is True
+        assert places_agree_loose("Forum di Assago", "DatchForum di Assago") is True
+        assert places_agree_loose("Universit tspark", "Universitätspark") is True
+
+    def test_distinct_places_disagree(self):
+        from backend.qc.corroborate import places_agree_loose
+        assert places_agree_loose("Zepp Tokyo", "Zepp DiverCity") is False
+        assert places_agree_loose("Fillmore East", "Fillmore West") is False
+        assert places_agree_loose("Memorial Stadium", "Memorial Stadium Arena Lincoln") is True
+        assert places_agree_loose("Memorial Stadium", "Civic Arena") is False
+        assert places_agree_loose("Denver", "Lincoln") is False
+
+    def test_empty_is_none(self):
+        from backend.qc.corroborate import places_agree_loose
+        assert places_agree_loose("", "Tokyo") is None
+        assert places_agree_loose("Tokyo", None) is None
+
+
 class TestVenueCheck:
     def test_corroborated_when_setlistfm_venue_matches(self, qc):
         _db, _rules, corroborate, conn = qc

@@ -8654,6 +8654,9 @@ def create_app() -> Flask:
             result = _dossier.build_dossier(date_iso, location=location, channel=channel)
             if result.get("ambiguous"):
                 return jsonify(result), 300
+            qc = result.get("qc") or {}
+            if qc.get("refused"):
+                return jsonify({"refused": True, "reasons": qc.get("reasons", [])}), 422
 
             sections_param = request.args.get("sections")
             sections = (
@@ -8665,6 +8668,16 @@ def create_app() -> Flask:
                 result, sections=sections, local_analysis=local_analysis_on
             )
             html = render_template("dossier.html", d=view)
+            if "data-lb=" in html:
+                # C29's template hasn't landed yet -- today's template emits no
+                # data-lb/data-claim spans, so there is nothing to lint (and
+                # running lint_l1 unconditionally would log a bare-superlative
+                # false positive on every render until it does).
+                from backend.dossier_qc import lint_data_lb, lint_l1
+
+                for violation in lint_l1(html) + lint_data_lb(html):
+                    _log.warning("dossier_html lint violation for date=%s: %s",
+                                 date_iso, violation)
             # Default: download as an attachment (the export flow). The in-app
             # dossier viewer (timeline screen) embeds this route in an iframe,
             # where an attachment disposition renders blank -- it passes
@@ -8696,6 +8709,9 @@ def create_app() -> Flask:
             result = _dossier.build_dossier(date_iso, location=location, channel=channel)
             if result.get("ambiguous"):
                 return jsonify(result), 300
+            qc = result.get("qc") or {}
+            if qc.get("refused"):
+                return jsonify({"refused": True, "reasons": qc.get("reasons", [])}), 422
 
             sections_param = request.args.get("sections")
             sections = (
