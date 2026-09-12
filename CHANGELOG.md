@@ -39,6 +39,35 @@ Changed: two fixes from the first live dry run (LB-00006, a SHN recording). (1) 
 Note: pre-existing, unrelated — tests/test_make_fixture.py's 3 tests fail on "show_picks non-empty"
   both with and without this change.
 
+[2026-09-11] — C19 allowlist + C21 generation audit signed off by tj
+Added: backend/assets/official_releases.json 84 → 104 entries (93 official / 11 not). The
+  allowlist stopped at 1989 for studio albums, so a song released on any of these read as not
+  officially released: Under The Red Sky, Good As I Been To You, World Gone Wrong, Time Out Of
+  Mind, Modern Times, Together Through Life, Christmas In The Heart, Tempest, Shadows In The
+  Night, Fallen Angels, Triplicate, Rough And Rowdy Ways, Shadow Kingdom, plus Street-Legal, The
+  Basement Tapes, The Last Waltz, Renaldo And Clara, The Concert For Bangladesh, the 30th
+  Anniversary Concert Celebration and The Complete Budokan 1978. Of 507 events with release text,
+  8 change status (6 none → full, 2 none → partial); --d03 still 3/3.
+Fixed: the MTV Unplugged entry was titled "The Bootleg Series Vol. 8 companion" — it is its own
+  1995 Columbia release (tj).
+Changed: backend/dossier_fields.py: _MASTER_RE also matches the closed compounds mastertape,
+  masterdat, mastercopy, mastercassette, masterreel — the same claim typed without the space
+  (tj: "more like a typo"). unknown 12,543 → 12,530, master/stated 1,002 → 1,014.
+Changed: _CLONE_RE matches the glued forms too (DATClone, CDclone). Without it, widening the
+  master rule alone would have promoted "MasterTape > DAT > DATClone > CD-R" to the stronger
+  master claim instead of low_gen (860 → 861).
+Not changed, by decision (tj, 2026-09-11): a master followed by a clone hop stays low_gen, and
+  nothing further is inferred about chain depth — "we definitely don't know master -> clone1 ->
+  clone2 from any lineage info in our records". An unattributed mic → recorder chain stays
+  unknown rather than inferring master.
+Not changed, verified instead: the nine allowlist patterns that are also song titles ("New
+  Morning", "Shot Of Love") are safe. official_release() only ever reads Olof's own release
+  annotations (olof_songs.released_on, 1,587 rows; olof_events.releases_raw), never a setlist —
+  and of the 19 "released as X on Y" constructions in the corpus, none puts an album-titled song
+  in the "as" slot. Deliberately excluded from the master widening for the same reason:
+  mastered / mastering / masterpiece, and masters (8 of 36 are the song "Masters Of War").
+Changed: tests/test_generation_medium.py +7 cases; --d05 6/6; 157 tests pass.
+
 [2026-09-11] — D-09 setlist confidence + D-11 file metadata (dossier C22)
 Added: backend/dossier_fields.py: setlist_confidence(conn, event_id, lb_numbers) — primary is the
   Phase 3a quorum (corroborated → complete; disputed → partial with a notice naming every count;

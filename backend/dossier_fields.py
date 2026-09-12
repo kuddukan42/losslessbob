@@ -1458,9 +1458,15 @@ _LOW_GEN_RE = re.compile(
     r"\b(?:1st|first|low)[\s-]+gen(?:eration)?\b|\bclone\s+of\s+(?:the\s+)?master\b",
     re.IGNORECASE,
 )
-_MASTER_RE = re.compile(r"\bmaster\b", re.IGNORECASE)
+# Closed compounds are the same claim typed without the space (tj, 2026-09-11): "MasterTape",
+# "MasterDAT", "MasterCopy". Deliberately NOT widened to "mastered"/"mastering" (a post-transfer
+# credit, not a generation), "masterpiece", or "masters" — 8 of the corpus's 36 "masters" are the
+# song "Masters Of War" and most of the rest are prose ("two different masters for this date").
+_MASTER_RE = re.compile(r"\bmaster(?:tape|dat|copy|cassette|reel)?\b", re.IGNORECASE)
 # "cassette master -> DAT - clone -> CDR": a clone after the master makes the source low gen.
-_CLONE_RE = re.compile(r"\bclone\b", re.IGNORECASE)
+# Glued the same way "MasterTape" is ("DATClone", "CDclone"), so the clone hop is still seen —
+# without this, widening _MASTER_RE alone would promote "MasterTape > DAT > DATClone" to master.
+_CLONE_RE = re.compile(r"\b(?:dat|cdr?|tape)?clone\b", re.IGNORECASE)
 # Rule 6: a first hop naming a microphone, and a later hop naming a recorder.
 _MIC_RE = re.compile(
     r"\b(?:mics?|microphones?|SP-CMC-?\d*|Core\s*Sound|ECM-?\d+|DPA|Schoeps|AKG|Neumann"
