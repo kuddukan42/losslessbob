@@ -62,6 +62,14 @@ class TestClassifyGeneration:
         ("clone of master > CDR", ("low_gen", "stated")),
         ("FLAC received from 'lowgen', no lineage", ("unknown", None)),
         ("Master tape > CDR > EAC", ("master", "stated")),
+        # Closed compounds are the same claim without the space (tj, 2026-09-11).
+        ("MasterDAT > CDR", ("master", "stated")),
+        ("mastercopy > flac", ("master", "stated")),
+        ("MasterTape > DAT > DATClone > CD-R", ("low_gen", "stated")),
+        # Not generations: a post-transfer credit, a song title, a bootleg's name.
+        ("Mastered by LTA > flac", ("unknown", None)),
+        ("remastering by the taper > flac", ("unknown", None)),
+        ("cut before Masters Of War, aud > cdr", ("unknown", None)),
         ("Sennheiser MKE2002 -> cassette master -> DAT - clone -> CDR", ("low_gen", "stated")),
         ("", ("unknown", None)),
     ])

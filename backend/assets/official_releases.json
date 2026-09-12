@@ -326,7 +326,7 @@
     ]
   },
   {
-    "title": "The Bootleg Series Vol. 8 companion – MTV Unplugged",
+    "title": "MTV Unplugged",
     "year": 1995,
     "kind": "live_album",
     "official": true,
@@ -590,5 +590,145 @@
     "kind": "bootleg",
     "official": false,
     "patterns": ["\\blive transmissions\\b"]
+  },
+  {
+    "title": "The Basement Tapes",
+    "year": 1975,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["\\bthe basement tapes\\b(?!\\s*complete)"]
+  },
+  {
+    "title": "Street-Legal",
+    "year": 1978,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["street[\\s-]?legal"]
+  },
+  {
+    "title": "The Last Waltz",
+    "year": 1978,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["the last waltz"]
+  },
+  {
+    "title": "Renaldo And Clara (film)",
+    "year": 1978,
+    "kind": "video",
+    "official": true,
+    "patterns": ["renaldo\\s*(?:and|&)\\s*clara"]
+  },
+  {
+    "title": "The Concert For Bangladesh",
+    "year": 1971,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["concert for bangla\\s?desh"]
+  },
+  {
+    "title": "Under The Red Sky",
+    "year": 1990,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["under the red sky"]
+  },
+  {
+    "title": "Good As I Been To You",
+    "year": 1992,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["good as i been to you"]
+  },
+  {
+    "title": "World Gone Wrong",
+    "year": 1993,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["world gone wrong"]
+  },
+  {
+    "title": "The 30th Anniversary Concert Celebration",
+    "year": 1993,
+    "kind": "live_album",
+    "official": true,
+    "patterns": ["30\\s*th\\s*anniversary concert celebration"]
+  },
+  {
+    "title": "Time Out Of Mind",
+    "year": 1997,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["time out of mind(?!\\s*sessions)"]
+  },
+  {
+    "title": "Modern Times",
+    "year": 2006,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["modern times"]
+  },
+  {
+    "title": "Together Through Life",
+    "year": 2009,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["together through life"]
+  },
+  {
+    "title": "Christmas In The Heart",
+    "year": 2009,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["christmas in the heart"]
+  },
+  {
+    "title": "Tempest",
+    "year": 2012,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["\\btempest\\b"]
+  },
+  {
+    "title": "Shadows In The Night",
+    "year": 2015,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["shadows in the night"]
+  },
+  {
+    "title": "Fallen Angels",
+    "year": 2016,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["fallen angels"]
+  },
+  {
+    "title": "Triplicate",
+    "year": 2017,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["\\btriplicate\\b"]
+  },
+  {
+    "title": "Rough And Rowdy Ways",
+    "year": 2020,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["rough and rowdy ways"]
+  },
+  {
+    "title": "Shadow Kingdom",
+    "year": 2023,
+    "kind": "studio_album",
+    "official": true,
+    "patterns": ["shadow kingdom"]
+  },
+  {
+    "title": "The Complete Budokan 1978",
+    "year": 2023,
+    "kind": "box_set",
+    "official": true,
+    "patterns": ["complete budokan"]
   }
 ]
