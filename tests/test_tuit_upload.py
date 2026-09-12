@@ -175,14 +175,14 @@ def _seed_entry(db, db_path, **over):
     row = {"lb_number": 707, "date_str": "10/7/78", "location": "Providence, RI",
            "rating": "A-", "source_type": "Audience", "taper_name": "Some Taper",
            "source_chain": "AUD > Master Cassette > DAT > FLAC",
-           "description": "excellent sound"}
+           "description": "excellent sound", "lb_category": "concert"}
     row.update(over)
     with db.get_connection(db_path) as conn:
         conn.execute(
             "INSERT INTO entries (lb_number, date_str, location, rating, source_type,"
-            " taper_name, source_chain, description)"
+            " taper_name, source_chain, description, lb_category)"
             " VALUES (:lb_number, :date_str, :location, :rating, :source_type,"
-            " :taper_name, :source_chain, :description)", row)
+            " :taper_name, :source_chain, :description, :lb_category)", row)
         # olof_events.page_filename is a FK onto olof_pages.
         conn.execute("INSERT OR IGNORE INTO olof_pages (filename) VALUES ('x.htm')")
         conn.execute(
@@ -381,3 +381,108 @@ def test_depth_from_probe_reads_a_shorten_stream():
 def test_depth_from_probe_gives_up_on_an_unknown_format():
     assert tuit_upload._depth_from_probe({"sample_fmt": "weird"}) is None
     assert tuit_upload._depth_from_probe({}) is None
+
+
+# ── Normalisation borrowed from the official desktop uploader ────────────────
+
+
+def test_normalise_taper_blanks_the_unknown_placeholders():
+    """Both the repo's vocabulary and the extras the desktop uploader adds."""
+    for placeholder in ("anonymous", "Unknown", "identity withheld", "n/a", "?",
+                        "no info", "  VARIOUS  ", "self", "unidentified"):
+        handle, note = tuit_upload.normalise_taper(placeholder)
+        assert (handle, note) == ("", "placeholder"), placeholder
+
+
+def test_normalise_taper_keeps_a_real_handle():
+    handle, note = tuit_upload.normalise_taper("  cos11 ")
+    assert handle == "cos11"
+    assert note in ("", "unrecognised")
+    # A handle that merely contains a placeholder word is still a handle.
+    handle, _ = tuit_upload.normalise_taper("anon-tapes-crew")
+    assert handle == "anon-tapes-crew"
+
+
+def test_normalise_taper_sends_an_unrecognised_handle_with_a_note():
+    """A brand-new taper looks exactly like stray text; send it, but say so."""
+    handle, note = tuit_upload.normalise_taper("zzqx-not-a-real-handle")
+    assert handle == "zzqx-not-a-real-handle"
+    assert note == "unrecognised"
+
+
+def test_normalise_taper_is_empty_on_empty_input():
+    assert tuit_upload.normalise_taper("") == ("", "")
+    assert tuit_upload.normalise_taper(None) == ("", "")
+
+
+def test_quality_from_text_reads_the_trackers_shorthand():
+    assert tuit_upload.quality_from_text("vg+ audience tape") == "very-good"
+    assert tuit_upload.quality_from_text("sounds ex throughout") == "excellent"
+    assert tuit_upload.quality_from_text("very good stereo AUD") == "very-good"
+
+
+def test_quality_from_text_needs_a_whole_token():
+    """The 'ex' inside another word must not decide a grade."""
+    assert tuit_upload.quality_from_text("experimental set, next day") == ""
+    assert tuit_upload.quality_from_text("") == ""
+
+
+def test_quality_from_text_ignores_generation_words():
+    """'low gen' and 'off master' describe lineage, not how it sounds."""
+    assert tuit_upload.quality_from_text("low gen off master") == ""
+
+
+def test_quality_falls_back_to_the_description(dbmod, folder):
+    db, db_path = dbmod
+    _seed_entry(db, db_path, rating="", description="vg+ audience recording")
+    fields, warnings = tuit_upload.build_fields(707, folder, db_path)
+    assert fields["audio_quality"] == "very-good"
+    assert any("read 'very-good'" in w for w in warnings)
+
+
+def test_unknown_taper_is_not_posted_as_a_handle(dbmod, folder):
+    db, db_path = dbmod
+    _seed_entry(db, db_path, taper_name="unknown")
+    fields, warnings = tuit_upload.build_fields(707, folder, db_path)
+    assert "taper" not in fields
+    assert any(w.startswith("taper:") for w in warnings)
+
+
+def test_folder_warnings_flag_a_lossy_source(folder):
+    with open(os.path.join(folder, "d1t01.mp3"), "wb") as fh:
+        fh.write(b"x")
+    assert any(w.startswith("lossy:") for w in tuit_upload.folder_warnings(folder))
+
+
+def test_folder_warnings_flag_stray_wavs(folder):
+    with open(os.path.join(folder, "d1t01.flac"), "wb") as fh:
+        fh.write(b"x")
+    with open(os.path.join(folder, "d1t02.wav"), "wb") as fh:
+        fh.write(b"x")
+    assert any(w.startswith("wav:") for w in tuit_upload.folder_warnings(folder))
+
+
+def test_folder_warnings_are_silent_on_an_ordinary_folder(folder):
+    for name in ("d1t01.flac", "d1t02.flac", "info.txt"):
+        with open(os.path.join(folder, name), "wb") as fh:
+            fh.write(b"x")
+    assert tuit_upload.folder_warnings(folder) == []
+
+
+def test_compilation_category_is_flagged(dbmod, folder):
+    db, db_path = dbmod
+    _seed_entry(db, db_path, lb_category="compilation")
+    _, warnings = tuit_upload.build_fields(707, folder, db_path)
+    assert any(w.startswith("category:") for w in warnings)
+
+
+def test_normalise_taper_rejects_info_file_prose():
+    """entries.taper_name holds phrases as well as handles; only handles ship."""
+    handle, note = tuit_upload.normalise_taper("excellent to outstanding sound")
+    assert (handle, note) == ("", "not_a_taper")
+
+
+def test_normalise_taper_keeps_a_three_part_human_name():
+    handle, note = tuit_upload.normalise_taper("Clay C. Brennecke")
+    assert handle == "Clay C. Brennecke"
+    assert note in ("", "unrecognised")

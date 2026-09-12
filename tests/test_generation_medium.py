@@ -56,7 +56,8 @@ class TestClassifyGeneration:
         ("voice of promise 7, Label:XAVEL, Silver cds>EAC", ("silver", "stated")),
         ("Near Mint Vinyl LPs > Technics SL1200 > FLAC", ("vinyl", "stated")),
         ("pre-FM reel > DAT > CDR", ("broadcast", "stated")),
-        ("Radio Shack mics > Sony D6 > cassette", ("unknown", None)),
+        # "Radio Shack" still isn't a broadcast — but mics > recorder now infers master.
+        ("Radio Shack mics > Sony D6 > cassette", ("master", "inferred")),
         ("Crown/Radio, Shack Mics on Sony D5", ("unknown", None)),
         ("1st gen cassette > DAT > CDR", ("low_gen", "stated")),
         ("clone of master > CDR", ("low_gen", "stated")),
@@ -70,6 +71,14 @@ class TestClassifyGeneration:
         ("Mastered by LTA > flac", ("unknown", None)),
         ("remastering by the taper > flac", ("unknown", None)),
         ("cut before Masters Of War, aud > cdr", ("unknown", None)),
+        # From tj's 2026-09-11 row-by-row review of the 100-LB audit.
+        ("2nd Generation Cassettes (from GS> Akai GX95 > Soundforge 9", ("low_gen", "stated")),
+        ("Vh1 (on line - stream version> Realtek HD Audio > wav > flac", ("broadcast", "stated")),
+        ("Sony PCM-D100 (24bit/48khz ), >USB 3.0 >PC >WaveLab", ("master", "inferred")),
+        ("dpa4061 > Tascam DR-100 @24/48 > PC (Sound Forge> flac", ("master", "inferred")),
+        ("Soundboard in possession of LTE, transferred to CDR by him >", ("low_gen", "stated")),
+        # Nothing names a capture device, so nothing is inferred.
+        ("CDs received in a trade > EAC > WAV > FLAC", ("unknown", None)),
         ("Sennheiser MKE2002 -> cassette master -> DAT - clone -> CDR", ("low_gen", "stated")),
         ("", ("unknown", None)),
     ])
@@ -89,7 +98,12 @@ class TestClassifyGeneration:
             conn.execute("INSERT INTO bootleg_titles (lb_number, title) VALUES (1, 'Some Title')")
         assert _gen(conn, 1) == ("silver", "stated")
 
-    def test_mic_to_recorder_chain_needs_confirmed_taper(self, conn):
+    def test_capture_chain_infers_master_whatever_the_taper(self, conn):
+        """tj, 2026-09-11: the chain is the evidence, not the attribution.
+
+        The inference used to require a confirmed taper, which made the generation
+        field track taper-attribution coverage rather than lineage.
+        """
         chain = "SP-CMC-8 > MM-EBM-1 > MicroTrack 24/96"
         with conn:
             _entry(conn, 1, chain)
@@ -98,10 +112,10 @@ class TestClassifyGeneration:
             _taper(conn, 1, "confirmed")
             _taper(conn, 2, "propagated")
         assert _gen(conn, 1) == ("master", "inferred")
-        assert _gen(conn, 2) == ("unknown", None)
-        assert _gen(conn, 3) == ("unknown", None)
+        assert _gen(conn, 2) == ("master", "inferred")
+        assert _gen(conn, 3) == ("master", "inferred")
 
-    def test_quarantined_taper_counts_as_no_taper(self, conn):
+    def test_quarantined_taper_no_longer_blocks_the_inference(self, conn):
         with conn:
             _entry(conn, 1, "SP-CMC-8 > MicroTrack")
             _taper(conn, 1, "confirmed")
@@ -111,7 +125,7 @@ class TestClassifyGeneration:
                 " VALUES ('R-T3', 'lb', '1', 'error', '', '{}', 'h', '2026-01-01',"
                 " '2026-01-01', 'open')"
             )
-        assert _gen(conn, 1) == ("unknown", None)
+        assert _gen(conn, 1) == ("master", "inferred")
 
 
 class TestClassifyMedium:
