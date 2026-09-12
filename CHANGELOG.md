@@ -1,3 +1,16 @@
+[2026-09-12] — Show dossier C25: anchor registry and view model
+Added: backend/dossier_anchors.py: Field {value, tier, source, confidence, derived_from}, the
+  96-anchor ANCHORS registry (61 scalar, 35 per-row) with fallbacks, build_view() → additive
+  dossier["view"] {fields, rows}, filter_view() for local_analysis=0. Claim-backed anchors
+  resolve to fallbacks until C26; pick = rank-1, family label "Family A/B" until C27.
+Fixed: backend/dossier_anchors.py: taper anchors first bypassed taper_render (dropping the
+  R-T1..3 block and R-T4 notice) because it reloaded aliases — i.e. ran init_db with its
+  threads and bloom rebuild — once per source (20–70 s per build). taper_check/taper_render
+  gain reload_aliases; the view passes False. Warm build ~750 ms (1965-06-01, 18 sources);
+  family_basis reloading abs scores per family is ~430 ms of it.
+Changed: backend/dossier.py: build_dossier adds view; filter_dossier_sections filters it.
+Added: tests/test_dossier_anchors.py: 270 tests (every anchor's fallback on a fresh DB).
+
 [2026-09-12] — Show dossier C24: D-08 pairwise comparison and D-10 bobtalk anchoring
 Added: backend/dossier_fields.py: compare_sources (D-08) diffs the verdict pick against the
   runner-up on rating, scan, runtime, resolution, generation and character, and promotes axis
