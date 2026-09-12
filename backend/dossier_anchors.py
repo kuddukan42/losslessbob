@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import logging
 import sqlite3
+import statistics
 from dataclasses import dataclass
 from typing import Literal, TypedDict
 
@@ -217,6 +218,8 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("source[].lineage", 1, "sources", "parser (footnote)", "omit"),
     _a("source[].curated_in[]", 1, "sources", "existing", "omit"),
     _a("source[].rank", 1, "sources", "show_picks (C27)", "omit", local_analysis=True),
+    _a("source[].group", 2, "sources", "S8.2 fragment/G2 classification (C27)", "value",
+       "primary"),
     _a("family[].id", 1, "sources", "families", "omit"),
     _a("family[].label", 1, "sources", "families + S8.4 rules (C27)", "value", "no band"),
     _a("family[].size", 1, "sources", "families", "omit"),
@@ -330,14 +333,22 @@ def build_view(
     Comparative/positional wording comes only from the claim engine
     (:mod:`backend.dossier_claims`, C26): ``view["claims"]`` lists every
     verified Claim by anchor, and ``verdict.why`` / ``context.chronicle`` are
-    its T4 slot templates. Scope limits (later chunks own these): S8
-    selection rules (fragments, ``sources.visible_n``
-    collapse, family labels/confidence -- C27, so ``family[].label`` here is
-    always "Family A/B/..." by bucket order, never a taper's name); the QC
-    gate and ``prov.withheld[]`` population (C28). Raw D-04/D-08 data with no
-    comparative word is still surfaced where noted (``stats.rotation``,
-    ``stats.rotation_rank``'s bare percentage, ``verdict.vs_runner_up``'s
-    per-field diffs) -- those are facts, not claims.
+    its T4 slot templates. S8 selection rules (C27): each visible source gets
+    a ``source[].group`` (``"primary"`` / ``"fragment"`` / ``"no_match"`` --
+    :func:`_classify_sources`); the header ``pick``/``verdict.*`` anchors and
+    ``verdict.why``'s claims are drawn from the best ``pick_rank`` among
+    ``"primary"`` sources only (:func:`backend.dossier_fields.compare_sources`
+    scoped to that set in :func:`_build_header`) -- dossier-only, D-01 into
+    ``concert_ranker/picks.py`` stays a follow-up TODO; ``family[].label`` is
+    a taper's name only when :func:`backend.dossier_fields.family_taper_label`
+    says every member's credit is confirmed and the family clears the S8.5
+    confidence floor, else "Family A/B/..." by bucket order;
+    ``sources.visible_n`` is the S8.3 collapse count (C26/C27:
+    :mod:`backend.dossier_claims` finishes it once D-08 axes exist). Scope
+    limit (C28 owns this): the QC gate and ``prov.withheld[]`` population.
+    Raw D-04/D-08 data with no comparative word is still surfaced where noted
+    (``stats.rotation``, ``stats.rotation_rank``'s bare percentage,
+    ``verdict.vs_runner_up``'s per-field diffs) -- those are facts, not claims.
 
     Args:
         d1: The dict returned by :func:`backend.dossier.build_dossier`
@@ -372,12 +383,16 @@ def build_view(
             if not m.get("private")
         ]
 
+    visible_members = _visible_members(sources)
+    classes = _classify_sources(conn, event_id, visible_members) if event_id is not None else {}
+    vb.ctx["source_classes"] = classes
+
     # -- Header -----------------------------------------------------------
-    _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode)
+    _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode, visible_members, classes)
     # -- Setlist ------------------------------------------------------------
     _build_setlist(vb, d1, conn, event_id, date_iso, lineup, setlist, visible_lbs)
     # -- Sources ------------------------------------------------------------
-    _build_sources(vb, d1, conn, event_id, date_iso, sources)
+    _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members, classes)
     # -- Context / provenance ------------------------------------------------
     _build_context(vb, d1, conn, event_id, date_iso)
 
@@ -398,6 +413,54 @@ def build_view(
 # Header + verdict
 # ---------------------------------------------------------------------------
 
+def _visible_members(sources: list[dict]) -> list[tuple[int, dict, dict]]:
+    """Every non-private ``(lb, member, bucket)`` triple across *sources*, in D1 order."""
+    return [
+        (int(m["lb"][3:]), m, bucket) for bucket in sources for m in bucket["members"]
+        if not m.get("private")
+    ]
+
+
+def _classify_sources(
+    conn: sqlite3.Connection, event_id: int | None,
+    visible_members: list[tuple[int, dict, dict]],
+) -> dict[int, dict]:
+    """§8.2 (C27): classify every visible source into a selection group.
+
+    Args:
+        conn: Open SQLite connection.
+        event_id: The show's ``olof_events.event_id``, or ``None`` (no
+            setlist to score against -- every source classifies "primary").
+        visible_members: :func:`_visible_members`'s result.
+
+    Returns:
+        ``{lb: {"group": "primary" | "fragment" | "no_match",
+        "completeness": Completeness | None, "runtime": float | None}}``.
+        ``"no_match"`` (G2 :func:`df.fits_show` failed) takes priority over
+        ``"fragment"`` (§8.2) when a source is both.
+    """
+    out: dict[int, dict] = {}
+    lbs = [lb for lb, _, _ in visible_members]
+    if event_id is None or not lbs:
+        return {lb: {"group": "primary", "completeness": None, "runtime": None} for lb in lbs}
+
+    comp_map = _safe(df.completeness, conn, event_id, lbs, default={}) or {}
+    runtimes: dict[int, float | None] = {}
+    for lb, member, _bucket in visible_members:
+        rt = _safe(df.parse_runtime, member.get("timing"))
+        runtimes[lb] = rt["total_minutes"] if rt else None
+    rt_values = [v for v in runtimes.values() if v is not None]
+    median_runtime = statistics.median(rt_values) if rt_values else None
+
+    for lb in lbs:
+        comp = comp_map.get(lb)
+        fits = comp.get("fits_show", True) if comp else True
+        fragment = df.is_fragment(comp, runtimes.get(lb), median_runtime)
+        group = "no_match" if not fits else "fragment" if fragment else "primary"
+        out[lb] = {"group": group, "completeness": comp, "runtime": runtimes.get(lb)}
+    return out
+
+
 def _find_pick_member(d1: dict) -> tuple[int, dict] | None:
     rec = d1.get("recommendation")
     if not rec:
@@ -414,7 +477,54 @@ def _find_pick_member(d1: dict) -> tuple[int, dict] | None:
     return None
 
 
-def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode) -> None:
+def _find_member_by_lb(d1: dict, lb: int) -> dict | None:
+    """The D1 member dict for *lb*, or ``None`` if it isn't in ``d1["sources"]``."""
+    lb_str = f"LB-{lb:05d}"
+    for bucket in d1.get("sources", []):
+        for m in bucket["members"]:
+            if m.get("lb") == lb_str:
+                return m
+    return None
+
+
+def _select_verdict_pick(
+    d1: dict, cmp_src: dict | None, classes: dict[int, dict] | None = None,
+) -> tuple[int, dict] | None:
+    """C27 verdict pick: the best ``pick_rank`` among ``"primary"`` (non-fragment,
+    G2-passing) visible sources.
+
+    Dossier-only (plan S8): this never touches ``show_picks``/``concert_ranker`` --
+    feeding it back into D-01 picks is a follow-up TODO. Falls back to the D1
+    payload's own ``recommendation`` when there is no event, no primary source has
+    a ``show_picks`` row, or the primary source can't be resolved back to a D1
+    member (should not happen -- ``visible_members`` is built from the same
+    ``d1["sources"]``).
+
+    Args:
+        d1: The D1 payload.
+        cmp_src: :func:`df.compare_sources` already computed over the show's
+            "primary" sources (shared with ``verdict.vs_runner_up``/
+            ``verdict.alternates[]`` -- computed once, not twice).
+        classes: :func:`_classify_sources`'s result. When given, the fallback
+            recommendation is used only if it is itself ``"primary"`` -- a
+            fragment or no-match source is never the verdict.
+
+    Returns:
+        ``(lb, member)``, or ``None``.
+    """
+    if cmp_src and cmp_src.get("pick") is not None:
+        member = _find_member_by_lb(d1, cmp_src["pick"])
+        if member is not None:
+            return cmp_src["pick"], member
+    fallback = _find_pick_member(d1)
+    if fallback is not None and classes and \
+            classes.get(fallback[0], {}).get("group", "primary") != "primary":
+        return None
+    return fallback
+
+
+def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode, visible_members,
+                   classes) -> None:
     show = d1.get("show", {})
     if show.get("date_disp"):
         vb.set_field("show.date.long", build_field(
@@ -466,7 +576,13 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode) -> None:
                           build_fallback_field(ANCHORS["run.dates[].url"])})
         vb.rows["run.dates"] = rows
 
-    pick = _find_pick_member(d1)
+    # C27: scoped to "primary" sources (non-fragment, G2-passing) -- computed once and
+    # reused for both the verdict pick and verdict.vs_runner_up/alternates below.
+    # No fallback to every visible source: with no primary source there is no verdict.
+    primary_lbs = [lb for lb in classes if classes[lb]["group"] == "primary"]
+    cmp_src = (_safe(df.compare_sources, conn, event_id, date_iso, primary_lbs)
+               if event_id is not None and date_iso and primary_lbs else None)
+    pick = _select_verdict_pick(d1, cmp_src, classes)
     if pick is not None:
         lb, member = pick
         vb.ctx["pick_lb"] = lb
@@ -510,8 +626,7 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode) -> None:
                 gen["generation"], 3, "D-05 classify_generation",
                 "inferred" if gen.get("basis") == "inferred" else "stated"))
         if event_id is not None:
-            comp = _safe(df.completeness, conn, event_id, [lb])
-            c = (comp or {}).get(lb)
+            c = classes.get(lb, {}).get("completeness")
             if c and c.get("basis") == "tracklist" and c.get("songs_total"):
                 pct = round(100 * c["songs_present"] / c["songs_total"])
                 vb.set_field("pick.completeness", build_field(
@@ -528,7 +643,9 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode) -> None:
             vb.set_field("show.official_release", build_field(
                 official["status"], 3, "D-03 official_release", "stated"))
 
-        cmp_src = _safe(df.compare_sources, conn, event_id, date_iso, visible_lbs_hint(d1))
+        # cmp_src is already scoped to "primary" sources and computed above, shared
+        # with the verdict pick -- the runner-up/alternates a fragment/no_match source
+        # would introduce aren't verdict-worthy.
         vb.ctx["cmp_src"] = cmp_src
         if cmp_src and not cmp_src.get("collapsed"):
             if cmp_src.get("diffs"):
@@ -710,28 +827,83 @@ def _build_setlist(vb, d1, conn, event_id, date_iso, lineup, setlist, visible_lb
 # Sources
 # ---------------------------------------------------------------------------
 
-def _build_sources(vb, d1, conn, event_id, date_iso, sources) -> None:
-    visible_members: list[tuple[int, dict, dict]] = []  # (lb, member, bucket)
-    for bucket in sources:
-        for m in bucket["members"]:
-            if not m.get("private"):
-                lb = int(m["lb"][3:])
-                visible_members.append((lb, m, bucket))
+_GENERATION_SORT_ORDER = ("master", "low_gen", "vinyl", "broadcast", "silver", "unknown")
+
+
+def _sort_within_families(
+    visible_members: list[tuple[int, dict, dict]], conn: sqlite3.Connection,
+) -> list[tuple[int, dict, dict]]:
+    """§8.4 last bullet: order a family's own members by generation, then by rank.
+
+    Non-family (singleton) members, and the relative order between families,
+    are left exactly as *visible_members* had them -- only the members that
+    share one named ``fam_id`` get reordered, in place of their first member's
+    original slot.
+
+    Args:
+        visible_members: :func:`_visible_members`'s result.
+        conn: Open SQLite connection (for :func:`df.classify_generation`).
+
+    Returns:
+        The reordered list, same length and contents as *visible_members*.
+    """
+    families: dict[str, list[tuple[int, dict, dict]]] = {}
+    for entry in visible_members:
+        fam_id = entry[2].get("fam_id")
+        if fam_id and not fam_id.startswith("__singleton_"):
+            families.setdefault(fam_id, []).append(entry)
+
+    def sort_key(entry: tuple[int, dict, dict]) -> tuple[int, float]:
+        lb, member, _bucket = entry
+        gen = _safe(df.classify_generation, conn, lb)
+        gen_name = gen["generation"] if gen and gen.get("generation") else "unknown"
+        gen_rank = (_GENERATION_SORT_ORDER.index(gen_name)
+                    if gen_name in _GENERATION_SORT_ORDER else len(_GENERATION_SORT_ORDER))
+        pick_rank = (member.get("pick") or {}).get("rank")
+        return gen_rank, pick_rank if pick_rank is not None else float("inf")
+
+    sorted_families = {fam_id: sorted(members, key=sort_key)
+                        for fam_id, members in families.items() if len(members) >= 2}
+
+    seen: set[str] = set()
+    ordered: list[tuple[int, dict, dict]] = []
+    for entry in visible_members:
+        fam_id = entry[2].get("fam_id")
+        if fam_id in sorted_families:
+            if fam_id in seen:
+                continue
+            seen.add(fam_id)
+            ordered.extend(sorted_families[fam_id])
+        else:
+            ordered.append(entry)
+    return ordered
+
+
+def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
+                    classes) -> None:
+    visible_members = _sort_within_families(visible_members, conn)
 
     vb.set_field("sources.count", build_field(
         len(visible_members), 1, "d1.sources visible members", "stated"))
-    vb.set_field("sources.visible_n", build_field(
-        len(visible_members), 2, "S8.3 (show all, C27 not yet implemented)", "stated"))
 
-    named_buckets = [b for b in sources if b.get("fam_id") and not b["fam_id"].startswith(
-        "__singleton_")]
+    # A one-visible-member tapematch family is still a tape group; only the family
+    # band (S8.4) needs >=2 members.
+    analysed_buckets = [
+        b for b in sources
+        if b.get("fam_id") and not b["fam_id"].startswith("__singleton_")
+        and any(not m.get("private") for m in b["members"])
+    ]
+    named_buckets = [
+        b for b in analysed_buckets
+        if len([m for m in b["members"] if not m.get("private")]) >= 2
+    ]
     all_visible_in_family = bool(visible_members) and all(
-        b.get("fam_id") for b in sources
+        b.get("fam_id") and not b["fam_id"].startswith("__singleton_") for b in sources
         for m in b["members"] if not m.get("private")
     )
-    if all_visible_in_family and named_buckets:
+    if all_visible_in_family and analysed_buckets:
         vb.set_field("sources.tape_count", build_field(
-            f"{len(named_buckets)} tape groups", 1,
+            f"{len(analysed_buckets)} tape groups", 1,
             "recording_families (every visible source analysed)", "stated"))
 
     for lb, member, _bucket in visible_members:
@@ -753,9 +925,11 @@ def _build_sources(vb, d1, conn, event_id, date_iso, sources) -> None:
         if medium and medium.get("evidence"):
             row["medium"] = build_field(medium["medium"], 3, "D-13 classify_medium", "stated")
 
+        cls = classes.get(lb, {"group": "primary"})
+        row["group"] = build_field(cls["group"], 2, "S8.2 fragment/G2 classification", "stated")
+
         if event_id is not None:
-            comp = _safe(df.completeness, conn, event_id, [lb])
-            c = (comp or {}).get(lb)
+            c = cls.get("completeness")
             if c and c.get("basis") == "tracklist" and c.get("songs_total"):
                 pct = round(100 * c["songs_present"] / c["songs_total"])
                 row["completeness"] = build_field(
@@ -816,9 +990,16 @@ def _build_sources(vb, d1, conn, event_id, date_iso, sources) -> None:
     for idx, bucket in enumerate(named_buckets):
         row = vb.row("family", bucket["fam_id"])
         row["id"] = build_field(bucket["fam_id"], 1, "recording_families", "stated")
-        label = bucket.get("fam_label") or f"Family {chr(ord('A') + idx)}"
+        visible_lbs_in_fam = [
+            int(m["lb"][3:]) for m in bucket["members"] if not m.get("private")
+        ]
+        taper_label = _safe(
+            df.family_taper_label, conn, visible_lbs_in_fam, bucket.get("fam_conf"))
+        # fam_label is tapematch's own "Family A/B" letter -- always set, so it must not
+        # shadow the S8.4 taper label.
+        label = taper_label or bucket.get("fam_label") or f"Family {chr(ord('A') + idx)}"
         row["label"] = build_field(
-            label, 1, "recording_families (S8.4 label rule deferred to C27)", "stated")
+            label, 1, "recording_families + S8.4 taper-label rule", "stated")
         row["size"] = build_field(len(bucket["members"]), 1, "recording_families", "stated")
         if "fam_conf" in bucket:
             row["confidence"] = build_field(bucket["fam_conf"], 1, "tapematch_family_meta.conf",

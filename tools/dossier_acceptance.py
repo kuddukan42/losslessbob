@@ -49,6 +49,12 @@ for the mode asked. Modes arrive chunk by chunk; today there are two:
                     backend.dossier_fields.anchor_bobtalk on 1986-02-24 (>=3 anchored
                     lines) and 2010-03-29 (collapses, no empty container), then corpus
                     tallies for both (C24).
+    --d27           S8 selection accept cases (C27): the 5 named-LB fragment/glued-guard
+                    cases (1999-02-12 LB-10648, 1991-06-21 LB-07180, 2000-07-19 LB-03323
+                    rescued; 2003-11-05 LB-01390, 1998-08-26 LB-02563 genuine fragments),
+                    then a 300-show seeded sample (seed 27, >=2 sources) tallying fragments,
+                    G2 exclusions, glued-guard rescues and verdict picks changed vs raw
+                    show_picks rank-1.
 
 Usage::
 
@@ -1036,6 +1042,139 @@ def run_d24(db_path: Path) -> int:
     return 0 if all(ok for ok, _ in checks) else 1
 
 
+_D27_SEED = 27
+_D27_SAMPLE = 300
+
+# (date, lb, expect_fragment) -- tj's 5 named accept cases (C27 sign-off,
+# .debug/c27_fragment_histogram.md): the first 3 are glued tracklists the guard must
+# rescue back to "primary" (they were rank-1 picks); the last 2 are genuine partials
+# that must become fragments.
+_D27_NAMED_CASES = (
+    ("1999-02-12", 10648, False),
+    ("1991-06-21", 7180, False),
+    ("2000-07-19", 3323, False),
+    ("2003-11-05", 1390, True),
+    ("1998-08-26", 2563, True),
+)
+
+
+def run_d27(db_path: Path) -> int:
+    """S8 selection accept cases (C27): the 5 named LBs, then a 300-show seeded sample."""
+    import random
+    from collections import Counter
+
+    from backend.dossier_anchors import _classify_sources
+    from backend.dossier_fields import compare_sources
+    from backend.geocoder import entry_date_to_iso
+
+    live = _open_ro(db_path)
+    try:
+        checks: list[tuple[bool, str]] = []
+        for date, lb, expect_fragment in _D27_NAMED_CASES:
+            eid = corroborate.primary_event_id(live, date)
+            lbs = [
+                r[0] for r in live.execute(
+                    "SELECT lb_number FROM entries WHERE date_str ="
+                    " (SELECT date_str FROM entries WHERE lb_number = ?) AND status = 'ok'",
+                    (lb,),
+                )
+            ]
+            vm = [(l, {"timing": live.execute(
+                "SELECT timing FROM entries WHERE lb_number = ?", (l,)).fetchone()[0]}, {})
+                for l in lbs]
+            classes = _classify_sources(live, eid, vm) if eid else {}
+            group = classes.get(lb, {}).get("group")
+            got_fragment = group == "fragment"
+            checks.append((
+                got_fragment == expect_fragment and group != "no_match",
+                f"{date} LB-{lb:05d}: expect {'fragment' if expect_fragment else 'primary'}"
+                f" (got {group!r})",
+            ))
+
+        _log.info("")
+        for ok, label in checks:
+            _log.info("%s  %s", "PASS" if ok else "FAIL", label)
+
+        by_date: dict[str, list[int]] = {}
+        timing_by_lb: dict[int, str | None] = {}
+        pick_rank_by_lb: dict[tuple[str, int], int] = {}
+        for r in live.execute(
+            "SELECT lb_number, date_str, timing FROM entries"
+            " WHERE date_str IS NOT NULL AND date_str != '' AND status = 'ok'"
+        ):
+            iso = entry_date_to_iso(r["date_str"])
+            if iso:
+                by_date.setdefault(iso, []).append(r["lb_number"])
+                timing_by_lb[r["lb_number"]] = r["timing"]
+        for r in live.execute(
+            "SELECT concert_date_iso, lb_number, pick_rank FROM show_picks"
+        ):
+            pick_rank_by_lb[(r["concert_date_iso"], r["lb_number"])] = r["pick_rank"]
+
+        dates = sorted(d for d, lbs in by_date.items() if len(lbs) >= 2)
+        rng = random.Random(_D27_SEED)
+        rng.shuffle(dates)
+
+        n_shows = n_sources = n_fragment = n_no_match = n_glued_rescued = 0
+        n_picks_changed = n_no_eligible_pick = 0
+        for date in dates:
+            if n_shows >= _D27_SAMPLE:
+                break
+            eid = corroborate.primary_event_id(live, date)
+            if not eid:
+                continue
+            lbs = by_date[date]
+            vm = [(lb, {"timing": timing_by_lb.get(lb)}, {}) for lb in lbs]
+            classes = _classify_sources(live, eid, vm)
+            if not any(c["completeness"] for c in classes.values()):
+                continue  # no setlist to score against -- same skip as the histogram script
+            n_shows += 1
+            n_sources += len(lbs)
+            for lb, cls in classes.items():
+                if cls["group"] == "fragment":
+                    n_fragment += 1
+                elif cls["group"] == "no_match":
+                    n_no_match += 1
+                comp = cls["completeness"]
+                if (comp and comp.get("glued") and comp.get("basis") == "tracklist"
+                        and comp.get("songs_total")
+                        and comp["songs_present"] / comp["songs_total"] < 0.60
+                        and cls["group"] != "fragment"):
+                    n_glued_rescued += 1
+
+            primary_lbs = [lb for lb, c in classes.items() if c["group"] == "primary"]
+            ranked = sorted(
+                (lb for lb in lbs if (date, lb) in pick_rank_by_lb),
+                key=lambda lb: pick_rank_by_lb[(date, lb)],
+            )
+            raw_pick = ranked[0] if ranked else None
+            cs = compare_sources(live, eid, date, primary_lbs) if primary_lbs else None
+            new_pick = cs["pick"] if cs else None
+            if new_pick is None:
+                n_no_eligible_pick += bool(raw_pick)
+            elif raw_pick is not None and new_pick != raw_pick:
+                n_picks_changed += 1
+
+        _log.info("")
+        _log.info(
+            "corpus tallies: S8.2 classification over %d sampled shows (%d sources)",
+            n_shows, n_sources,
+        )
+        _log.info(
+            "  %d fragments (%.1f%%), %d G2 no_match (%.1f%%), %d glued-guard rescues",
+            n_fragment, 100 * n_fragment / max(n_sources, 1),
+            n_no_match, 100 * n_no_match / max(n_sources, 1), n_glued_rescued,
+        )
+        _log.info(
+            "  verdict pick changed vs raw show_picks rank-1: %d shows; %d shows lost their"
+            " raw pick with no eligible replacement",
+            n_picks_changed, n_no_eligible_pick,
+        )
+    finally:
+        live.close()
+    return 0 if all(ok for ok, _ in checks) else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI entry point; returns the process exit code."""
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
@@ -1063,6 +1202,9 @@ def main(argv: list[str] | None = None) -> int:
     mode.add_argument("--d24", action="store_true",
                       help="D-08 compare_sources / D-10 anchor_bobtalk accept cases +"
                            " corpus tallies (C24).")
+    mode.add_argument("--d27", action="store_true",
+                      help="S8 selection accept cases: 5 named-LB fragment/glued-guard"
+                           " cases + a 300-show seeded sample (C27).")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
                         help="--parser: olof_reparse_diff snapshot to print beside the live"
@@ -1091,6 +1233,8 @@ def main(argv: list[str] | None = None) -> int:
         return run_d23(args.db)
     if args.d24:
         return run_d24(args.db)
+    if args.d27:
+        return run_d27(args.db)
     return run_parser(args.db, args.before, args.residuals)
 
 

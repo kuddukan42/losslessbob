@@ -409,6 +409,16 @@ def is_glued_tracklist(songs: Iterable[str]) -> bool:
     return any(len(_GLUED_TRACKS_RE.findall(s)) >= 2 for s in songs)
 
 
+def _extra_has_inline_numbering(extra: Iterable[str]) -> bool:
+    """Whether any unmatched (``extra``) title still carries a lone inline track marker.
+
+    A weaker signal than :func:`is_glued_tracklist` (one marker, not two) --
+    catches a partially-split blob whose remainder isn't a real title either
+    (C27 glued guard, tj 2026-09-12).
+    """
+    return any(_GLUED_TRACKS_RE.search(s) for s in extra)
+
+
 def fits_show(
     song_tracks: int, matched: int, setlist_songs: int, setlist_matched: int, glued: bool,
 ) -> bool:
@@ -474,6 +484,13 @@ class Completeness(TypedDict):
             the verdict.
         show_bar: Whether a completeness bar may render: a tracklist basis, a
             non-empty setlist, the source fits, and TUIT doesn't disagree.
+        glued: Whether the tracklist looks effectively unparsed -- either
+            :func:`is_glued_tracklist` fires over the source's own tracks, or
+            an unmatched (``extra``) title still carries a lone inline track
+            marker (:func:`_extra_has_inline_numbering`). C27's fragment rule
+            (:func:`is_fragment`) distrusts ``songs_present``/``songs_total``
+            when this is true and falls back to the runtime rule instead
+            (tj's glued guard, 2026-09-12).
     """
 
     lb_number: int
@@ -488,6 +505,7 @@ class Completeness(TypedDict):
     tuit_present: int | None
     fits_show: bool
     show_bar: bool
+    glued: bool
 
 
 def _event_setlist(conn: sqlite3.Connection, event_id: int) -> list[tuple[int, str, str]]:
@@ -596,6 +614,7 @@ def completeness(
                 lb_number=lb, basis="runtime" if runtime else None, songs_present=None,
                 songs_total=None, missing=[], partial=[], extra=[], runtime=runtime,
                 confidence=None, tuit_present=None, fits_show=True, show_bar=False,
+                glued=False,
             )
             continue
 
@@ -612,11 +631,13 @@ def completeness(
             if p not in hit_positions
         ]
         hit_songs = {titles_by_position[p] for p in hit_positions}
+        glued = is_glued_tracklist(songs)
         fit = fits_show(
             song_tracks=len(songs), matched=len(songs) - len(unmatched),
             setlist_songs=setlist_songs, setlist_matched=len(hit_songs),
-            glued=is_glued_tracklist(songs),
+            glued=glued,
         )
+        glued = glued or _extra_has_inline_numbering(unmatched)
 
         tuit = tracklist_check(conn, lb, cmap)
         tuit_present: int | None = None
@@ -636,8 +657,51 @@ def completeness(
             runtime=runtime, confidence=confidence, tuit_present=tuit_present,
             fits_show=fit,
             show_bar=bool(setlist) and fit and confidence != "inferred",
+            glued=glued,
         )
     return out
+
+
+# §8.2 (C27): completeness below this share -- or, with no usable tracklist, a runtime
+# below this share of the show's visible-source median -- makes a source a fragment.
+# Signed off by tj 2026-09-12 from the 300-show histogram in
+# .debug/c27_fragment_histogram.md (20 of 2,044 corpus rank-1 picks fell under the
+# runtime rule at this threshold; the completeness side demoted 12 rank-1 picks, 3 of
+# them glued tracklists rescued by the guard below).
+FRAGMENT_THRESHOLD = 0.60
+
+
+def is_fragment(
+    comp: Completeness | None, runtime_minutes: float | None, median_runtime: float | None,
+) -> bool:
+    """§8.2: whether one source counts as a fragment ("Excerpts & fragments" group).
+
+    A tracklist-basis source is a fragment when its completeness share
+    (``songs_present / songs_total``) is below :data:`FRAGMENT_THRESHOLD` --
+    unless its tracklist is glued (:data:`Completeness.glued <Completeness>`),
+    in which case the percentage can't be trusted (an unsplit blob reads as
+    0-1 songs) and the runtime rule below decides instead, even though
+    ``basis`` is ``'tracklist'`` (tj's glued guard, 2026-09-12). A source with
+    no usable tracklist is a fragment when its runtime is below
+    :data:`FRAGMENT_THRESHOLD` of the show's visible-source median runtime.
+    A source with neither a trustworthy completeness figure nor a runtime to
+    compare is never a fragment (nothing says otherwise).
+
+    Args:
+        comp: The source's :func:`completeness` result, or ``None``.
+        runtime_minutes: The source's parsed runtime total, or ``None``.
+        median_runtime: The median runtime among the show's visible sources
+            (only sources with a parsed runtime count), or ``None``.
+
+    Returns:
+        Whether the source is a fragment.
+    """
+    if comp and comp.get("basis") == "tracklist" and comp.get("songs_total") \
+            and not comp.get("glued"):
+        return (comp["songs_present"] / comp["songs_total"]) < FRAGMENT_THRESHOLD
+    if runtime_minutes is not None and median_runtime:
+        return runtime_minutes < FRAGMENT_THRESHOLD * median_runtime
+    return False
 
 
 # ---------------------------------------------------------------------------
@@ -2565,6 +2629,49 @@ def family_basis(conn: sqlite3.Connection, fam_id: str) -> FamilyBasis:
         notes.append("quality score match")
 
     return FamilyBasis(fam_id=fam_id, conf=conf, notes=notes)
+
+
+# §8.4/8.5 (C27): a family only earns a taper's name once every member's credit is
+# confirmed (not propagated/inferred, not quarantined -- _confirmed_taper) AND the
+# family's own waveform-correlation confidence clears this floor; below it the family
+# stays "Family A"/"Family B"/... by bucket order and gets no taper-based label or
+# identity prose (audit M10, P2; plan S8.5).
+FAMILY_CONFIDENCE_MIN = 0.50
+
+
+def family_taper_label(
+    conn: sqlite3.Connection, lb_numbers: Sequence[int], fam_conf: float | None,
+) -> str | None:
+    """§8.4: ``"<taper>'s tape"`` when every member's taper is confirmed, else ``None``.
+
+    ``None`` means the caller keeps its own bucket-order fallback
+    (``"Family A"``/``"Family B"``/...) -- this never invents that fallback
+    itself, since it doesn't know the family's position among its siblings.
+
+    Args:
+        conn: Open SQLite connection.
+        lb_numbers: The family's member LBs.
+        fam_conf: ``tapematch_family_meta.conf`` (the waveform-correlation
+            mean), or ``None``.
+
+    Returns:
+        ``"<taper>'s tape"``, or ``None`` when the confidence floor isn't met,
+        any member's taper isn't confirmed, or members disagree on the taper.
+    """
+    if fam_conf is None or fam_conf < FAMILY_CONFIDENCE_MIN or not lb_numbers:
+        return None
+    if not all(_confirmed_taper(conn, lb) for lb in lb_numbers):
+        return None
+    names = {
+        row[0] for lb in lb_numbers
+        for row in [conn.execute(
+            "SELECT taper_normalised FROM taper_attributions WHERE lb_number = ?", (lb,),
+        ).fetchone()]
+        if row and row[0]
+    }
+    if len(names) != 1:
+        return None
+    return f"{next(iter(names))}'s tape"
 
 
 # R-T1/R-T2/R-T3 are error-severity (a bare-mention credit, a weak-family

@@ -538,6 +538,42 @@ def source_axes(conn: sqlite3.Connection, d1: dict, view: dict,
     return axes
 
 
+def _collapse_count(view: dict, eligible: list[int], axes: SourceAxes) -> int:
+    """§8.3: how many "primary" source rows show before a "show all" expand.
+
+    Baseline is the pick plus the next 3 by ``show_picks.pick_rank`` among
+    *eligible* ("primary") sources, promoted to include every D-08 axis
+    leader (:func:`source_claims` on that source is non-empty -- best scan,
+    longest runtime, highest resolution, only soundboard, only complete).
+    Fragment/no-match sources sit in their own always-listed groups and
+    aren't part of this count. No collapse (every visible source counts)
+    when the show has 5 or fewer visible sources total.
+
+    Args:
+        view: The view under construction (``rows["source"]`` filled).
+        eligible: The "primary" (non-fragment, G2-passing) visible LBs.
+        axes: :func:`source_axes`'s result, scoped to *eligible*.
+
+    Returns:
+        The collapse count.
+    """
+    total_visible = len(view["rows"].get("source", []))
+    if total_visible <= 5:
+        return total_visible
+    non_primary = total_visible - len(eligible)
+    rows = {int(r["lb_id"]["value"][3:]): r for r in view["rows"].get("source", [])
+            if r.get("lb_id") and r["lb_id"]["value"]}
+
+    def rank_of(lb: int) -> float:
+        f = rows.get(lb, {}).get("rank")
+        return f["value"] if f and f.get("source") else float("inf")
+
+    ordered = sorted(eligible, key=rank_of)
+    shown = set(ordered[:4])
+    shown.update(lb for lb in eligible if source_claims(lb, axes))
+    return len(shown) + non_primary
+
+
 _AXIS_SUPERLATIVE: dict[str, dict] = {
     "lb_rating": {"text_key": "highest_lb_rating", "key": _rating_key, "local": False},
     "scan": {"text_key": "best_scan", "local": True},
@@ -731,9 +767,14 @@ def attach_claims(view: dict, d1: dict, conn: sqlite3.Connection, ctx: Mapping) 
 
     visible = list(ctx.get("visible_lbs") or [])
     pick = ctx.get("pick_lb")
-    axes = source_axes(conn, d1, view, visible) if visible else None
+    # C27: D-08 axes are computed only over "primary" sources (non-fragment, G2-passing --
+    # backend.dossier_anchors._classify_sources) -- a fragment never wins "longest runtime",
+    # a no-match source never wins "best scan".
+    classes = ctx.get("source_classes") or {}
+    eligible = [lb for lb in visible if classes.get(lb, {}).get("group", "primary") == "primary"]
+    axes = source_axes(conn, d1, view, eligible) if eligible else None
     pick_claims: dict[str, Claim] = {}
-    if axes and pick in visible:
+    if axes and pick in eligible:
         pick_claims = source_claims(pick, axes)
         for c in pick_claims.values():
             add("verdict.why", c)
@@ -751,6 +792,11 @@ def attach_claims(view: dict, d1: dict, conn: sqlite3.Connection, ctx: Mapping) 
             add("verdict.alternates[]", pair_claim(alt["axis"], lb, pick, axes), lb)
             alt_claim = source_claims(lb, axes).get(alt["axis"])
             add("verdict.alternates[]", alt_claim, lb)
+
+    if axes is not None:
+        fields["sources.visible_n"] = build_field(
+            _collapse_count(view, eligible, axes), 2, "S8.3 collapse", "stated",
+            ["show_picks.pick_rank", "claim:source_axes"])
 
     why = verdict_why(fields, pick_claims)
     if why is not None:

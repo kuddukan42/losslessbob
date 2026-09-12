@@ -180,10 +180,10 @@ class TestPopulatedFixture:
         assert f["ledger.total"]["value"] == 90.0
 
     def test_family_row(self, populated_view):
+        # C27 (S8.4): a family with a single visible member is a singleton, not a
+        # "band" -- the fixture's fam1 has only lb 101, so no family row renders.
         rows = populated_view["rows"]["family"]
-        assert len(rows) == 1
-        assert rows[0]["id"]["value"] == "2010-03-29#fam1"
-        assert rows[0]["size"]["value"] == 1
+        assert rows == []
 
     def test_derived_from_traced(self, populated_view):
         f = populated_view["fields"]["show.venue"]
