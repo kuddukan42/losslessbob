@@ -36,7 +36,7 @@ from pathlib import Path
 import requests
 
 from backend import db as database
-from backend import torrent_maker, tracker_seed, tuit_scraper
+from backend import taper_curation, torrent_maker, tracker_seed, tuit_scraper
 
 logger = logging.getLogger(__name__)
 
@@ -58,6 +58,17 @@ SOURCE_TAG = "TUIT"
 MAX_INFO_BYTES = 256 * 1024
 
 AUDIO_EXTS = {".flac", ".shn", ".wav", ".aiff", ".aif", ".ape"}
+
+#: Formats that cannot be the source of a lossless upload.
+LOSSY_EXTS = {".mp3", ".m4a", ".aac", ".ogg", ".oga", ".opus", ".wma"}
+
+#: ``entries.lb_category`` values worth a word before the upload goes out. The
+#: desktop uploader flags the same two shapes (comp_warn, studio_warn): both
+#: upload fine, but neither is the live show the show_id says it is.
+CATEGORY_WARNINGS = {
+    "compilation": "entries calls this a compilation — it may span several shows",
+    "studio": "entries calls this studio material, not a live recording",
+}
 
 #: ffmpeg sample formats → PCM bit depth. The trailing 'p' is planar layout,
 #: not a different width. This is the *last* resort of :func:`_depth_from_probe`
@@ -98,7 +109,50 @@ SOURCE_TYPE_MAP = {
     "matrix": "matrix",
     "mtx": "matrix",
     "tv": "tv",
+    # Phrase forms, taken from the official desktop uploader's own
+    # normalisation table. entries.source_type does not hold these today, but
+    # a --set override or a hand-edited row can, and they cost nothing here.
+    "audience recording": "audience",
+    "audience master": "audience",
+    "soundboard recording": "soundboard",
+    "soundboard master": "soundboard",
+    "matrix recording": "matrix",
 }
+
+#: Free-text quality tokens → the form's ``audio_quality``, used only when
+#: ``entries.rating`` is blank (2,838 entries) and a grade has to come out of
+#: prose instead. The vocabulary is the desktop uploader's, which is the best
+#: evidence available of what the tracker's own curators write. 'off master'
+#: and 'low gen' are deliberately absent: they describe a tape's generation,
+#: not how it sounds, and mapping them to a grade would be inventing one.
+QUALITY_TOKENS = {
+    "excellent": "excellent", "exc": "excellent", "ex+": "excellent",
+    "ex": "excellent",
+    "very good": "very-good", "very-good": "very-good", "vg+": "very-good",
+    "vg": "very-good",
+    "good": "good",
+    "fair": "fair",
+    "poor": "poor",
+}
+
+#: Extra "nobody knows who taped this" values, lifted from the official
+#: desktop uploader's own normalisation table. ``taper_curation`` already owns
+#: the repo's placeholder vocabulary and is consulted first; these are the ones
+#: it does not carry yet. They stay local to the outbound path on purpose —
+#: folding 'anonymous', 'various', 'me' and friends into
+#: ``taper_curation._PLACEHOLDER_TAPERS`` is very likely right, but it would
+#: move badge trust and the TODO-213 curation counts, which is a decision for
+#: that subsystem rather than a side effect of building an uploader.
+EXTRA_PLACEHOLDER_TAPERS = frozenset({
+    "not certain", "not known", "unknow", "identity withheld",
+    "identity unknown", "anonymous", "anon", "no info", "no information",
+    "no idea", "various", "me", "myself", "self",
+})
+
+#: Longest an unrecognised taper value may be, in words, before it is read as
+#: info-file prose rather than a handle. Three-part human names ('Clay C.
+#: Brennecke') are the longest real handles in entries, so three is the cut.
+MAX_TAPER_WORDS = 3
 
 #: ``entries.rating`` → the form's ``audio_quality``. LB grades on A+…D-, TUIT
 #: on five slugs; this is the collapse tj's existing TUIT uploads imply.
@@ -417,8 +471,15 @@ def find_show(session: requests.Session, date_iso: str, venue: str = "") -> dict
             other = _norm(show.get("venue") or "")
             if other and (other in norm or norm in other):
                 return show
-    logger.warning("TUIT has %d shows on %s; venue %r did not disambiguate",
-                   len(shows), date_iso, venue)
+    # Two shows at the SAME venue is the early/late case, and only the
+    # tracker's set_label separates them — nothing in entries says which half
+    # of the evening a recording is, so this has to go back to the curator.
+    labels = [s.get("set_label") or "?" for s in shows]
+    logger.warning(
+        "TUIT has %d shows on %s (%s); venue %r did not disambiguate — "
+        "pick one with --set show_id=<id>",
+        len(shows), date_iso, ", ".join(labels), venue,
+    )
     return None
 
 
@@ -474,6 +535,122 @@ def _local_show_facts(lb_number: int, db_path=None) -> dict:
     return facts
 
 
+def normalise_taper(name: str) -> tuple[str, str]:
+    """Decide what to put in the ``taper`` field, and how sure we are.
+
+    ``entries.taper_name`` is transcribed from info files and is not clean: it
+    holds real handles, every spelling of "nobody knows", and — often enough to
+    matter — text that was never a taper at all ('ripped with EAC', 'excellent
+    to outstanding sound'). Posting any of the latter two gives the tracker a
+    taper called 'anonymous' with 300 recordings, or one called 'ripped with
+    EAC'. ``taper_curation`` already owns the vocabulary that tells them apart,
+    so this defers to it and only adds the placeholders it does not carry yet.
+
+    Args:
+        name: Raw taper text.
+
+    Returns:
+        ``(handle, note)``. ``handle`` is "" when the text carries no
+        attribution. ``note`` is "" when the handle is a known taper,
+        'placeholder' when the text means unknown, 'not_a_taper' when the
+        vocabulary bars it, and 'unrecognised' for a handle nobody has seen
+        before — which is sent, since a new taper looks exactly like that, but
+        is worth a curator's eye first.
+    """
+    cleaned = re.sub(r"\s+", " ", (name or "").strip())
+    if not cleaned:
+        return "", ""
+    if cleaned.lower().strip(" .") in EXTRA_PLACEHOLDER_TAPERS:
+        return "", "placeholder"
+    if taper_curation.is_placeholder(cleaned):
+        return "", "placeholder"
+
+    canon = taper_curation.canonical(cleaned)
+    reason = taper_curation.exclusion_reason(canon)
+    if reason in ("not_taper_builtin", "not_taper_user"):
+        return "", "not_a_taper"
+    if reason == "unknown_text":
+        # An unrecognised handle and a sentence of info-file prose are the same
+        # thing to the vocabulary, so fall back to shape. Real handles are
+        # short — 'cos11', 'shu', 'Clay C. Brennecke' — while the pollution in
+        # this column is phrases ('excellent to outstanding sound'). Three
+        # tokens is the cut: it keeps a three-part human name and drops prose.
+        # It is a shape test, not a vocabulary one, so short pollution like
+        # 'ripped with EAC' still gets through — with the warning below.
+        if len(cleaned.split()) > MAX_TAPER_WORDS:
+            return "", "not_a_taper"
+        return cleaned, "unrecognised"
+    return cleaned, ""
+
+
+def quality_from_text(text: str) -> str:
+    """Recover an ``audio_quality`` slug from free prose.
+
+    Only used when ``entries.rating`` is blank. Tokens are matched longest
+    first and on word boundaries, so the 'ex' in 'excellent' — or in
+    'experimental' — never decides the grade.
+
+    Args:
+        text: Description or notes to scan.
+
+    Returns:
+        A slug from :data:`QUALITIES`, or "" when the text says nothing.
+    """
+    if not text:
+        return ""
+    low = text.lower()
+    for token in sorted(QUALITY_TOKENS, key=len, reverse=True):
+        if re.search(rf"(?<![a-z0-9]){re.escape(token)}(?![a-z0-9])", low):
+            return QUALITY_TOKENS[token]
+    return ""
+
+
+def folder_warnings(folder: str | Path) -> list[str]:
+    """Flag things about a folder that should be seen before it is uploaded.
+
+    A cut-down version of the desktop uploader's pre-upload checks, limited to
+    the ones that can be decided from the file listing alone. None of them
+    blocks an upload; they exist so a curator is never surprised by what went
+    up.
+
+    Args:
+        folder: Recording folder to inspect.
+
+    Returns:
+        Warning lines, empty when the folder looks ordinary.
+    """
+    root = Path(folder)
+    if not root.is_dir():
+        return []
+    lossy: set[str] = set()
+    wavs = 0
+    lossless = 0
+    for path in root.rglob("*"):
+        if not path.is_file():
+            continue
+        ext = path.suffix.lower()
+        if ext in LOSSY_EXTS:
+            lossy.add(ext.lstrip("."))
+        elif ext == ".wav":
+            wavs += 1
+        elif ext in AUDIO_EXTS:
+            lossless += 1
+
+    warnings = []
+    if lossy:
+        warnings.append(
+            "lossy: folder contains " + "/".join(sorted(lossy)) +
+            " files — a lossy source is not a lossless upload"
+        )
+    if wavs and lossless:
+        warnings.append(f"wav: {wavs} stray .wav file(s) alongside the lossless audio")
+    elif wavs:
+        warnings.append(
+            f"wav: {wavs} .wav file(s) and no compressed audio — TUIT takes flac or shn"
+        )
+    return warnings
+
+
 def build_fields(lb_number: int, folder: str | Path, db_path=None) -> tuple[dict, list[str]]:
     """Compose every ``/upload`` field this install can fill from local data.
 
@@ -521,7 +698,16 @@ def build_fields(lb_number: int, folder: str | Path, db_path=None) -> tuple[dict
     if quality:
         fields["audio_quality"] = quality
     else:
-        warnings.append(f"audio_quality: entries.rating is {entry.get('rating')!r}")
+        # No letter grade. The curator usually still said how it sounds
+        # somewhere in the description, in the tracker's own shorthand.
+        quality = quality_from_text(entry.get("description") or "")
+        if quality:
+            fields["audio_quality"] = quality
+            warnings.append(
+                f"audio_quality: no rating — read {quality!r} out of the description"
+            )
+        else:
+            warnings.append(f"audio_quality: entries.rating is {entry.get('rating')!r}")
 
     if audio.get("bit_depth") in BIT_DEPTHS:
         fields["bit_depth"] = str(audio["bit_depth"])
@@ -543,9 +729,24 @@ def build_fields(lb_number: int, folder: str | Path, db_path=None) -> tuple[dict
     if audio.get("mixed"):
         warnings.append("audio is mixed format/depth/rate — the lowest was taken")
 
-    taper = (entry.get("taper_name") or "").strip()
+    raw_taper = (entry.get("taper_name") or "").strip()
+    taper, taper_note = normalise_taper(raw_taper)
     if taper:
         fields["taper"] = taper
+    if taper_note == "placeholder":
+        warnings.append(
+            f"taper: {raw_taper!r} means 'unknown' — sent blank rather than as a handle"
+        )
+    elif taper_note == "not_a_taper":
+        warnings.append(
+            f"taper: {raw_taper!r} is barred by the taper vocabulary (gear, source "
+            "or label text, not a person) — sent blank"
+        )
+    elif taper_note == "unrecognised":
+        warnings.append(
+            f"taper: {raw_taper!r} is not a known handle — sending it anyway, but "
+            "check it is a taper and not stray info-file text"
+        )
     lineage = (entry.get("source_chain") or "").strip()
     if lineage:
         fields["lineage"] = lineage
@@ -578,6 +779,11 @@ def build_fields(lb_number: int, folder: str | Path, db_path=None) -> tuple[dict
             f"venue: no olof_events concert on {facts['date_iso'] or 'that date'}; "
             f"entries.location is {facts['location']!r}"
         )
+
+    category = (entry.get("lb_category") or "").strip().lower()
+    if category in CATEGORY_WARNINGS:
+        warnings.append(f"category: {CATEGORY_WARNINGS[category]}")
+    warnings.extend(folder_warnings(folder))
     return fields, warnings
 
 

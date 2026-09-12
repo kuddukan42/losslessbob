@@ -1451,11 +1451,15 @@ _LABEL_RE = re.compile(r"(?i:\blabel\s*:)|\b[A-Z]{2,}[\s-]?\d{2,}\b")
 _VINYL_RE = re.compile(r"(?i:\bvinyl\b)|\bLPs?\b")
 # "Radio Shack" is an audience microphone brand, not a broadcast.
 _BROADCAST_RE = re.compile(
-    r"\b(?:TV|FM|pre-?FM|radio(?![\s,]*shack)|broadcast|televised|telecast)\b", re.IGNORECASE
+    # Named networks are broadcasts too (tj, 2026-09-11: "vh1 is TV, this is a TV source").
+    # CBS/ABC/NBC are deliberately absent — they appear as record labels in these lineages.
+    r"\b(?:TV|FM|pre-?FM|radio(?![\s,]*shack)|broadcast|televised|telecast"
+    r"|VH-?1|MTV|BBC|Showtime|PBS|HBO)\b", re.IGNORECASE
 )
 # A separator is required, so a trader handle like 'lowgen' never reads as a generation.
 _LOW_GEN_RE = re.compile(
-    r"\b(?:1st|first|low)[\s-]+gen(?:eration)?\b|\bclone\s+of\s+(?:the\s+)?master\b",
+    r"\b(?:1st|first|low|2nd|second|3rd|third|4th|fourth|5th)[\s-]+gen(?:eration)?\b"
+    r"|\bclone\s+of\s+(?:the\s+)?master\b",
     re.IGNORECASE,
 )
 # Closed compounds are the same claim typed without the space (tj, 2026-09-11): "MasterTape",
@@ -1467,10 +1471,20 @@ _MASTER_RE = re.compile(r"\bmaster(?:tape|dat|copy|cassette|reel)?\b", re.IGNORE
 # Glued the same way "MasterTape" is ("DATClone", "CDclone"), so the clone hop is still seen —
 # without this, widening _MASTER_RE alone would promote "MasterTape > DAT > DATClone" to master.
 _CLONE_RE = re.compile(r"\b(?:dat|cdr?|tape)?clone\b", re.IGNORECASE)
+# An explicit gap in the chain ("DAT > ??? > Data DVD (FLAC Files"): the hops on either side
+# say nothing about what the file descends from, so nothing is inferred (LB-06991, which tj
+# reviewed and approved as unknown).
+_UNKNOWN_HOP_RE = re.compile(r"\?{2,}|\bunknown\s+(?:source|lineage|origin|provenance)\b",
+                             re.IGNORECASE)
+_SOUNDBOARD_RE = re.compile(r"\b(?:soundboard|sbd)\b", re.IGNORECASE)
+_TRANSFER_RE = re.compile(r"\btransferr?ed\b|\btransfer\b", re.IGNORECASE)
 # Rule 6: a first hop naming a microphone, and a later hop naming a recorder.
+# Model numbers run straight into the brand in these lineages ("dpa4061", "akg391's",
+# "ecm 717", "COS-11PTs", "ca14"), so each brand tolerates an attached number.
 _MIC_RE = re.compile(
-    r"\b(?:mics?|microphones?|SP-CMC-?\d*|Core\s*Sound|ECM-?\d+|DPA|Schoeps|AKG|Neumann"
-    r"|Church|Sennheiser|Audio[\s-]?Technica|Countryman|Oktava|Sonic\s*Studios|CM-?300)\b",
+    r"\b(?:mics?|microphones?|SP-CMC-?\d*|Core\s*Sounds?|ECM[-\s]?\d+|DPA\s*\d*|Schoeps"
+    r"|AKG\s*\d*|Neumann|Church|Sennheiser|Audio[\s-]?Technica|Countryman|Oktava"
+    r"|Sonic\s*Studios?|CM-?300|COS-?\d+|CA-?\d{2}\b|OKM\w*|Sanken|SKM\s*\d+)",
     re.IGNORECASE,
 )
 _RECORDER_RE = re.compile(
@@ -1547,6 +1561,13 @@ def classify_generation(conn: sqlite3.Connection, lb_number: int) -> Generation:
         label = _LABEL_RE.search(chain)
         evidence = f"{silver.group(0)} · {label.group(0)}" if label else silver.group(0)
         return hit("silver", "stated", evidence)
+    # A lineage that names vinyl outranks a bootleg_titles row: the row says the recording was
+    # bootlegged, the lineage says what this file was ripped from (tj, 2026-09-11, on LB-10799
+    # "Vinyl Album 'Going, Going Gothenburg' > Technics SL1200"). No lineage in the corpus names
+    # vinyl and a BOOTLEG:/silver token together, so the two checks above stay authoritative.
+    vinyl_source = _VINYL_RE.search(chain)
+    if vinyl_source:
+        return hit("vinyl", "stated", vinyl_source.group(0))
     bootleg = conn.execute(
         "SELECT title FROM bootleg_titles WHERE lb_number = ? ORDER BY id LIMIT 1", (lb_number,),
     ).fetchone()
@@ -1562,10 +1583,30 @@ def classify_generation(conn: sqlite3.Connection, lb_number: int) -> Generation:
             return hit(generation, "stated", m.group(0))
     hops = [h.strip() for h in chain.split(">") if h.strip()]
     if len(hops) >= 2:
-        mic = _MIC_RE.search(hops[0])
-        recorder = next((r for h in hops[1:] if (r := _RECORDER_RE.search(h))), None)
-        if mic and recorder and _confirmed_taper(conn, lb_number):
-            return hit("master", "inferred", f"{mic.group(0)} > … > {recorder.group(0)}")
+        # tj, 2026-09-11, over 21 of the audit's rows: "master inferred (microphone thru flac
+        # info given)" — a lineage that walks from the capture device to the circulating file
+        # IS the master, whether or not a taper is attributed, and a named recorder counts as
+        # the capture device on its own ("Sony PCM-D100 > USB 3.0 > PC > WaveLab").
+        capture = None if _UNKNOWN_HOP_RE.search(chain) else next(
+            (m for h in hops[:-1] for m in (_MIC_RE.search(h) or _RECORDER_RE.search(h),) if m),
+            None,
+        )
+        if capture:
+            return hit("master", "inferred", f"{capture.group(0)} > … > {hops[-1][:24]}")
+    elif not _UNKNOWN_HOP_RE.search(chain):
+        # Not every taper writes an arrow chain: "rc 631a aud ca14 m10, taped + mastered by: RCM"
+        # and "Neumann skm140 / Neumann BS48i-2 / Marantz PMD 661" separate the hops with commas
+        # or slashes. Both a mic AND a recorder must be named here — stricter than the arrow
+        # rule above, which needs only one, because there is no chain shape to corroborate them.
+        mic, recorder = _MIC_RE.search(chain), _RECORDER_RE.search(chain)
+        if mic and recorder:
+            return hit("master", "inferred", f"{mic.group(0)} + {recorder.group(0)}")
+    # A soundboard someone transferred to disc is a hop off that desk tape, not the tape (tj,
+    # 2026-09-11, on LB-03470). Last in the order, so a lineage that says "master" outright has
+    # already returned above — of the corpus's 6 soundboard-plus-transfer lineages, 2 do.
+    sbd = _SOUNDBOARD_RE.search(chain)
+    if sbd and _TRANSFER_RE.search(chain):
+        return hit("low_gen", "stated", f"{sbd.group(0)} … transferred")
     return Generation(lb_number=lb_number, generation="unknown", basis=None, evidence=None)
 
 

@@ -39,8 +39,56 @@ Changed: two fixes from the first live dry run (LB-00006, a SHN recording). (1) 
   for a file nothing can read at all. (2) description is dropped
   when an info_file is attached — the form's help text says the uploaded file "overrides anything
   typed below", and entries.description usually just repeats the lineage anyway.
+Added: normalisation borrowed from TUIT's official desktop uploader, after static analysis of
+  TUIT-Uploader-Setup.exe (a Tauri/Rust app bundling ffmpeg; it drives qBittorrent over
+  /api/v2/* and posts the same multipart form we do — there is no private API). Its embedded
+  vocabularies gave us three things. (1) normalise_taper() — entries.taper_name is not clean: it
+  holds handles, every spelling of "nobody knows", and outright prose ('excellent to outstanding
+  sound', 'ripped with EAC'). It now defers to taper_curation (is_placeholder / canonical /
+  exclusion_reason) with EXTRA_PLACEHOLDER_TAPERS for the 14 placeholders that vocabulary does not
+  carry yet, plus a shape guard: an unrecognised value over MAX_TAPER_WORDS=3 words is prose, not a
+  handle. Returns (handle, note) so the dry run says which of placeholder / not_a_taper /
+  unrecognised applied. The extras are deliberately NOT folded into
+  taper_curation._PLACEHOLDER_TAPERS — that would move badge trust and the TODO-213 counts, which
+  is that subsystem's call. (2) quality_from_text() — when entries.rating is blank (2,838 entries)
+  the grade is read out of the description in the tracker's own shorthand (vg, vg+, ex, exc), on
+  word boundaries so the 'ex' in 'experimental' decides nothing; 'off master' and 'low gen' are
+  excluded as generation, not sound. (3) folder_warnings() + CATEGORY_WARNINGS — cut-down versions
+  of the uploader's comp_warn/studio_warn/lossy_warn/wav_warn, decided from the file listing and
+  entries.lb_category. Also: SOURCE_TYPE_MAP gained the phrase forms, and an ambiguous two-show
+  date now logs each show's set_label (which the CLI prints) since nothing in entries says which
+  half of the evening a recording is.
 Note: pre-existing, unrelated — tests/test_make_fixture.py's 3 tests fail on "show_picks non-empty"
   both with and without this change.
+
+[2026-09-11] — Generation rules rebuilt from tj's row-by-row audit verdicts
+Note: this REVERSES the "an unattributed mic → recorder chain stays unknown" line recorded
+  earlier today. That was my reading of a one-line answer; tj then marked 72 of the 100 audit
+  rows individually, and 21 of the 26 corrections carry the note "master inferred (microphone
+  thru flac info given)". The verdicts are the authority, so the taper gate is gone.
+Changed: backend/dossier_fields.py: the rule-6 inference no longer requires a confirmed taper,
+  and a named recorder counts as the capture device on its own ("Sony PCM-D100 > USB 3.0 > PC >
+  WaveLab"). The gate made the generation field track taper-attribution coverage rather than
+  lineage — identical chains classified differently depending on whether a taper was attributed.
+Added: a comma/slash-lineage fallback for taper shorthand with no arrow chain ("Neumann skm140 /
+  Neumann BS48i-2 / Marantz PMD 661"): both a mic AND a recorder must be named, stricter than the
+  arrow rule, since there is no chain shape to corroborate them. Reaches 54 LBs.
+Added: a broken-provenance guard — a lineage with an explicit gap ("DAT > ??? > Data DVD",
+  "unknown lineage > trade cdr") infers nothing. 256 of 9,633 lineages carry one. Caught as a
+  regression against tj's own verdict on LB-06991, which he approved as unknown.
+Changed: _LOW_GEN_RE reads "2nd/3rd/4th generation" as well as 1st/low (83 lineages);
+  _BROADCAST_RE adds VH-1, MTV, BBC, Showtime, PBS, HBO ("vh1 is TV, this is a TV source") but
+  deliberately not CBS/ABC/NBC, which appear as record labels here; a lineage naming vinyl now
+  outranks a bootleg_titles row (43 LBs, "Pristine Vinyl > Technics SL-110"); a soundboard
+  someone transferred to disc reads low_gen, last in the order so a stated master still wins.
+Corpus: unknown 12,530 → 8,926, master/inferred 816 → 4,334, low_gen 861 → 944, vinyl 18 → 61,
+  broadcast 44 → 51, silver 1,420 → 1,377, master/stated 1,014 → 1,010.
+Verified against the verdicts themselves: all 43 rows tj approved still classify exactly as they
+  did when he approved them, and 25 of his 26 corrections are satisfied. The one holdout is
+  LB-16451 ("rc 631a aud ca14 m10, taped + mastered by: RCM") — taper shorthand where "m10" is a
+  Sony PCM-M10; left alone rather than contorting the recorder regex for a single row.
+Changed: tests/test_generation_medium.py — 6 new cases from the audit, and the three tests that
+  encoded the taper gate now assert its absence. 38 pass; --d05 6/6.
 
 [2026-09-11] — C19 allowlist + C21 generation audit signed off by tj
 Added: backend/assets/official_releases.json 84 → 104 entries (93 official / 11 not). The
@@ -62,7 +110,8 @@ Changed: _CLONE_RE matches the glued forms too (DATClone, CDclone). Without it, 
 Not changed, by decision (tj, 2026-09-11): a master followed by a clone hop stays low_gen, and
   nothing further is inferred about chain depth — "we definitely don't know master -> clone1 ->
   clone2 from any lineage info in our records". An unattributed mic → recorder chain stays
-  unknown rather than inferring master.
+  unknown rather than inferring master. **Superseded the same day — see the entry above: his
+  row-by-row verdicts reversed the second half of this.**
 Not changed, verified instead: the nine allowlist patterns that are also song titles ("New
   Morning", "Shot Of Love") are safe. official_release() only ever reads Olof's own release
   annotations (olof_songs.released_on, 1,587 rows; olof_events.releases_raw), never a setlist —

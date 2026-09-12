@@ -94,7 +94,11 @@ def _print_payload(payload: tuit_upload.UploadPayload) -> None:
     fields = payload.fields
     print(f"\n  LB-{payload.lb_number:05d}   {payload.source_folder}")
     if payload.show:
-        print(f"  show      /shows/{payload.show['id']}  {payload.show.get('label', '')}")
+        label = payload.show.get("label", "")
+        set_label = payload.show.get("set_label")
+        if set_label:
+            label = f"{label}  [{set_label}]"
+        print(f"  show      /shows/{payload.show['id']}  {label}")
     else:
         print("  show      NEW (the new_show_* fields will create one)")
     print()
