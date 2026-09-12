@@ -138,10 +138,11 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
 - **Sign-off** marks a chunk that stops for tj before it merges. Chunks that aren't marked
   don't wait for him.
 
-> **Resume here (2026-09-11).** C00–C21 are done and **BUG-347 is closed**: the parser repair,
-> the two-page reparse (diff gate changed 2 / B347 2 / UNEXPLAINED 0), `song_index.run()`
-> (70,711 performances), `backend.qc run` (R-O4 −12) and `--d07` **5/5** all landed. Rollback
-> snapshot if ever needed: `.debug/olof_before_bug347.db`.
+> **Resume here (2026-09-12).** C00–C28 are done and pushed (C28 = `34727980`). BUG-347 is
+> closed; rollback snapshot if ever needed: `.debug/olof_before_bug347.db`.
+>
+> **Open with tj:** the G1 no-Olof-event fallback (§ "G1 fallback" under the QC gate, row
+> C28a). It is documented only, not built; C28 still refuses those 115 dates.
 >
 > **Next: C29** (template rewrite: `lbf` / `claim` macros, QC footer + `lb-qc` JSON, lint L2).
 > C28 (`backend/dossier_qc.py` gate G1–G9, `dossier["qc"]`, 422 refusals), C27 (§8 selection
@@ -187,6 +188,7 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
 | C26 | 5 | Claim engine + T4 slot templates | C25 | opus | `tests/test_dossier_claims.py` (ties, partial scope, disputed input → no claim). Done: comparators `superlative` (ties → `*_tied`, all-way tie → none, runtime tie floor 2 min = D-08's), `exclusive`, `comparison`; builders `rotation_claim` (D-04, every night verified + run guard), `tour_position_claim` / `run_position_claim` (D-07 `claims_ok`, ≥2 shows), `song_claims` (D-02 premiere needs the gate, "since" needs `gap_badge`; **career debuts get no claim** — nothing guarantees every earlier concert parsed). Visible-source axes: LB rating, scan, runtime, file resolution (`disputed` when 3d disagrees), only soundboard, only complete. `attach_claims` adds `view["claims"] = [{anchor, row, claim}]` (G7's list) and fills `verdict.why` / `context.chronicle` as `{segments, text, claims}` (inferred slots flagged per segment); claim-backed scalar anchors keep their plain value. **Deviation:** `filter_view(local_analysis=False)` strips only claims flagged `local_analysis` (scan / completeness comparisons), not every Claim — Olof-derived position / premiere / rotation claims are public facts. Candidates are all visible sources until C27/C28 drop fragments and G2 failures. 60-show sample: 0 errors, 311 claims; 2010-03-29 = premieres 4 & 14, "closing night of the 7-night Zepp Tokyo run", "show 14 of 15" (no tour-closing claim, M4). 48 tests | done |
 | C27 | 5 | §8 selection rules: fragments (7.4), verdict pick, collapse, families, confidence, tape wording | C26 | sonnet | 300-show histogram in `.debug/`. **Sign-off: 60% fragment threshold.** Done: `source[].group` (primary/fragment/no_match) from `is_fragment` (glued guard: `Completeness.glued` from `is_glued_tracklist` + a weaker single-marker check on `extra`) and G2 `fits_show`; verdict pick + `verdict.vs_runner_up`/`alternates[]` now come from one `compare_sources` call scoped to "primary" sources (dossier-only, `_select_verdict_pick`); `sources.visible_n` is the §8.3 collapse count in `dossier_claims._collapse_count` (pick+3 by rank, promoted D-08 axis leaders via `source_claims`, no collapse at <=5); families need >=2 *visible* members to render, sorted by generation then rank (`_sort_within_families`); `family[].label` uses `family_taper_label` ("<taper>'s tape" only when every member's credit is confirmed AND `fam_conf` >= 0.50, else "Family A/B/..."); tape wording ("N tape groups") counts every analysed family with a visible member, one-member families included (only the band needs ≥2). Review fixes over sonnet's cut: `tapematch_family_meta.label` ("Family A", always set) had shadowed the taper label, so it never rendered; the tape-group count had dropped one-member families; a fragment/no-match raw pick was the fallback verdict when no primary source had a pick (now no verdict); a comment invented a tj sign-off for the 0.50 floor. §8.5's low-confidence tag is left to the C29 template (it reads `family[].confidence`). 5 named-LB cases (3 glued-guard rescues, 2 genuine fragments) pass in `tools/dossier_acceptance.py --d27`; 300-show sample: 39/1290 fragments (3.0%), 20 G2 no_match (1.6%), 11 glued-guard rescues, 7 verdict picks changed vs raw rank-1. 28 tests in `tests/test_dossier_selection.py`; the four dossier suites 361 passed. Live backend: 2010-03-29 9 primary, visible_n 4, 8 tape groups; 1965-06-01 15 primary / 2 fragment / 1 no_match, visible_n 7. Warm `build_view` improved to ~300 ms median (was ~670 ms) by deduping the `compare_sources` call and cutting `family_basis` calls (13 → 3 named families once the visible-member-count filter applied). Deviation: no "identity prose" (same master/reissue) exists yet to suppress at <50% confidence -- vacuously satisfied | done |
 | C28 | 5 | `dossier_qc.py` gate G1–G9, 422 refusals, `prov.withheld`, lint L1 | C27 | sonnet | `tests/test_dossier_qc.py` pass + fail per check; <100 ms. **Decided (tj, 2026-09-11):** G1 passes when the venue *or* the city agrees with ≥1 source; a city-only match renders a venue-name notice. Exact venue match alone would have refused 695 of 4,057 shows, 666 of which agree on city ("Stadio Communale" / "Stadio Comunale"). Done: `run_gate` at the end of `build_dossier` writes `dossier["qc"] = {checks_run, passed, withheld, refused, reasons, notices, input_fingerprint}` and `prov.withheld[]`; a withheld Field keeps its fallback with confidence `withheld`. G1 refuses on no Olof event, or when no source agrees on venue or city; besides the exact fold it accepts `corroborate.places_agree_loose` (accents / spacing, St = Saint, distinctive-token containment, compact substring, ratio ≥0.85; compass words and brand-only tokens never match — Zepp Tokyo ≠ Zepp DiverCity, Fillmore East ≠ West), which cut disputed refusals 26 → 3 (1965-12-03 KQED vs Berkeley, 1966-03-12 Denver vs Lincoln, 1997-05-22); `venue_check`'s exact semantics and C16's 3f counts are unchanged. No external venue row → pass + notice (69). G4 maps rule → anchors (`_RULE_ANCHOR` tables): R-T1..3 → taper only; R-E2 → the whole source row (+ `pick.*`); R-O1/R-O4 → setlist count, rotation, premiere stats and song premiere/gap badges, never tour / venue / `show.setlist_confidence`; R-G1 → `venue.coords` / `venue.map`; R-O3 → song writers / instruments / bobtalk; `lb` R-S1 is G6's; an unmapped error rule logs and withholds nothing. G5: city-history sum, tape groups ≤ sources, premiere count, ledger sum ±0.05, ledger `audio_quality` evidence vs the pick's live scan score (runtime-split sum deferred: no anchor). G6: R-S1 `show_picks` / `song_performances` / per-LB → dependents withheld + "analysis stale". G7 drops a source-axis claim when any LB in its comparison scope had that axis withheld (vs_runner_up scoped to every primary source — the runner-up isn't always recoverable from the claim), then rebuilds `verdict.why` / `context.chronicle`. G8 (public) refuses only on a private-LB leak or a surviving claim touching a withheld source — a G7 drop is not a refusal. G9 `lint_l1` / `lint_data_lb` are pure; the html route runs them only when `data-lb=` is present (C29). `/api/dossier/html` and `/bbcode` → 422 `{refused, reasons}`; `/api/dossier` stays 200 and carries `qc`. Review fixes over sonnet's cut: G8 refused every page G7 had dropped a claim from; G4 withheld every source field for any finding (R-T1 hid runtime / scan); G7 ignored comparison scope; the route lint would have logged on every render of the old template. Corpus sweep (3,961 dates, 50 ambiguous, before the loose matcher): refused 115 no-event (65 concert-category dates; rest compilations / `-01-01` placeholders) + 25 disputed (now 3); city-only notices 576 (now 204); withheld field instances R-O4 6,203, R-O1 5,690, R-G1 1,016, R-E2 909, R-T3 280; G5 violations 0; G7 dropped 4 claims on 2 dates. Gate ~3 ms warm on 2010-03-29 and 1965-06-01 (1965-06-01 withholds one R-E2 source). 39 tests in `tests/test_dossier_qc.py` + 3 `places_agree_loose` tests; dossier suites + `test_corroborate.py` 602 passed. Live backend: 1966-03-12 html / bbcode 422, json 200; 2010-03-29 200 | done |
+| C28a | 5 | G1 fallback for dates with no Olof event: external identity → reduced dossier (see § "G1 fallback") | C28 | sonnet | 115-date split measured; **Sign-off: tj approves the reduced dossier and the step-3 rule**; one test per step | proposed — not started |
 | C29 | 6–7 | Template rewrite: sections, `lbf` / `claim` macros, palette, "Scanned quality" (HTML / BBcode / footer), QC footer + `lb-qc` JSON, 7.5–7.8, lint L2 | C28 | sonnet | L1 / L2, anchor coverage, blank lines <5%; 2b acceptance 1 and 3; `/verify` Tier A on 2010-03-29 + 1965-06-01, light and dark | todo |
 | C30 | 7 | Compact map: `marker` param, ~240×150, venue card, `view.venue.coords`, L1 pin rule | C29 | sonnet | 2010-03-29 hollow ring; one verified-`high` show gets a solid pin | todo |
 | C31 | 8 | `tools/make_fixture_db.py` + golden-set harness, run in CI | C30 | sonnet | harness runs green on placeholder files | todo |
@@ -823,6 +825,58 @@ Runs at the end of every `build_dossier()` call, target <100 ms.
 - bare only / highest / best / biggest / first / last / closing outside Claim spans.
 
 **Lint L2:** the template source may not contain those words outside the claim macro.
+
+### G1 fallback: no Olof event (proposed 2026-09-12, not built; row C28a)
+
+**Problem.** C28's G1 refuses every date with entries but no `olof_events` row. The corpus
+sweep refused **115** dates this way: 65 have concert-category entries (e.g. 1961-09-06,
+1963-01-14, 1964-12-07), and the rest are compilations (13), other (13), unknown (18),
+rehearsal (7), studio / radio (3 each), interview (2) and tv (1). Many of those are `-01-01`
+year-only placeholders. A refusal hides the sources for a real concert that Olof simply
+doesn't list.
+
+**Proposed rule.** Decide in this order; the first match wins.
+
+1. **External identity:** exactly one `setlistfm_shows` or `bobdylan_shows` row for the
+   date, or several that agree on venue or city via `places_agree_loose` → render a
+   **reduced dossier**. G1 passes and adds the notice "Not in Olof's chronicle; show
+   identity from <source>".
+2. **Several external rows that disagree** → HTTP 300 `{ambiguous, candidates}` from the
+   external rows, the same shape as a multi-event Olof date.
+3. **No external row, but the date is a placeholder** (`MM-DD` = `01-01`, or every entry is
+   non-concert) → refuse with reason "G1: not a dated concert". The dossier is concert-only.
+4. **No external row, concert-category entries** → refuse (current behaviour), with the
+   reason "G1: no Olof event and no external show row".
+
+**Reduced dossier contents.**
+- **Header:** `show.venue` / `show.city` from the external row (confidence `stated`, or
+  `corroborated` when both sources agree).
+- **Setlist:** the external tracklist, confidence `stated`. Setlist.fm wins, then
+  bobdylan.com, because setlist.fm keeps running order and TUIT has none.
+- **Sources:** built as usual. D-08 source claims are allowed: they compare our own sources,
+  not Olof. G2 fit runs against the external tracklist.
+- **Fallbacks, never guessed:** every Olof-derived anchor stays on its fallback with
+  confidence `unavailable`, not `withheld`, because nothing is quarantined. That covers tour
+  / NET number / band, premieres, rotation, tour and run position, chronicle, bobtalk,
+  `show.official_release`, `city_history` and the song premiere / gap badges. Their claims
+  are never built.
+- **Not reached:** G4 `olof_event` / `olof_song` checks (there is no key). G5's premiere and
+  city-history invariants are skipped, since their inputs are absent.
+
+**Measure before building.** Split the 115 by rule step 1–4 with a throwaway
+`tools/_c28a_split.py`. Build only if step 1 rescues a meaningful share of the 65 concert
+dates.
+
+**Needs tj:**
+- Is a reduced dossier acceptable at all?
+- Should step 3 refuse, or render a sources-only page for non-concert entries?
+
+**Touches when built:**
+- `backend/dossier.py`: event resolution plus an external-row fallback for `show` and
+  `setlist`.
+- `backend/dossier_anchors.py`: the build path when `event_id is None`.
+- `backend/dossier_qc.py`: G1 steps 1–4.
+- `tests/test_dossier_qc.py`: one test per step.
 
 ## Phase 6 — Remaining §7 generator defects
 
