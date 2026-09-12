@@ -10,9 +10,9 @@ derived value or with its registered fallback -- an anchor whose derivation
 fails or finds no data degrades to the fallback, it never raises (spec S:1,
 audited by :func:`build_view`'s own safety-net pass). This module is
 read-only: it never writes to the database and never invents comparative or
-positional wording (that's the claim engine, C26, and the selection rules,
-C27 -- anchors in that scope always resolve to their fallback here; see the
-docstring of :func:`build_view`).
+positional wording -- :func:`backend.dossier_claims.attach_claims` (C26) adds
+``view["claims"]`` and fills the T4 anchors; the selection rules are C27 (see
+the docstring of :func:`build_view`).
 
 Key convention (plan lines 93-125):
 
@@ -168,11 +168,11 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("pick.completeness", 3, "header", "D-01", "omit", local_analysis=True),
     _a("pick.curated_in[]", 1, "header", "curated_lists", "omit", local_analysis=True),
     _a("show.official_release", 3, "header", "D-03", "omit"),
-    _a("verdict.why", 4, "header", "claim-engine slot template (C26)", "omit",
+    _a("verdict.why", 4, "header", "claim-engine slot template (verdict_why)", "omit",
        local_analysis=True),
-    _a("verdict.vs_runner_up", 2, "header", "D-08 via the claim engine (C26)", "omit",
+    _a("verdict.vs_runner_up", 2, "header", "D-08 + claim engine", "omit",
        local_analysis=True),
-    _a("verdict.alternates[]", 2, "header", "D-08 via the claim engine (C26)", "omit",
+    _a("verdict.alternates[]", 2, "header", "D-08 + claim engine", "omit",
        local_analysis=True),
     _a("ledger[]", 1, "header", "evidence_json (G5/G6)", "suppress", local_analysis=True),
     _a("ledger.total", 1, "header", "pick_score (G5/G6)", "suppress", local_analysis=True),
@@ -228,7 +228,7 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("source[].disc_count", 3, "sources", "D-11", "value", "—"),
     _a("source[].filecount", 3, "sources", "D-11", "value", "—"),
     # -- Context, related and provenance ----------------------------------------
-    _a("context.chronicle", 4, "context", "slot template (run/tour/Olof chronicle) (C26)",
+    _a("context.chronicle", 4, "context", "slot template (run/tour claims + Olof chronicle)",
        "value"),
     _a("context.bobtalk", 1, "context", "bobtalk minus anchored lines", "value",
        "No bobtalk recorded"),
@@ -282,6 +282,8 @@ class _ViewBuilder:
         self.fields: dict[str, Field] = {}
         self.rows: dict[str, list[dict]] = {}
         self._row_index: dict[str, dict[object, dict]] = {}
+        # Intermediate derivations the claim engine reuses (dossier_claims.attach_claims).
+        self.ctx: dict = {}
 
     def set_field(self, key: str, f: Field) -> None:
         self.fields[key] = f
@@ -325,11 +327,11 @@ def build_view(
     returned view (a value or its fallback) -- a derivation that fails or
     finds no data silently falls back, it never raises (spec S:1).
 
-    Scope limits (later chunks own these -- always the fallback here, per
-    the plan's C25 row): the claim engine's comparative/positional wording
-    (``verdict.why``, ``verdict.vs_runner_up``, ``verdict.alternates[]``,
-    the ``stats.rotation_rank``/``context.chronicle`` claim text, T4 slot
-    templates -- C26); S8 selection rules (fragments, ``sources.visible_n``
+    Comparative/positional wording comes only from the claim engine
+    (:mod:`backend.dossier_claims`, C26): ``view["claims"]`` lists every
+    verified Claim by anchor, and ``verdict.why`` / ``context.chronicle`` are
+    its T4 slot templates. Scope limits (later chunks own these): S8
+    selection rules (fragments, ``sources.visible_n``
     collapse, family labels/confidence -- C27, so ``family[].label`` here is
     always "Family A/B/..." by bucket order, never a taper's name); the QC
     gate and ``prov.withheld[]`` population (C28). Raw D-04/D-08 data with no
@@ -353,7 +355,8 @@ def build_view(
             *visible_lbs*).
 
     Returns:
-        ``{"fields": {key: Field}, "rows": {prefix: [{sub: Field, ...}]}}``.
+        ``{"fields": {key: Field}, "rows": {prefix: [{sub: Field, ...}]},
+        "claims": [{anchor, row, claim}]}``.
     """
     vb = _ViewBuilder()
     show = d1.get("show", {})
@@ -379,6 +382,14 @@ def build_view(
     _build_context(vb, d1, conn, event_id, date_iso)
 
     view = vb.finalize()
+    vb.ctx.update(event_id=event_id, visible_lbs=visible_lbs)
+    from backend.dossier_claims import attach_claims
+
+    try:
+        attach_claims(view, d1, conn, vb.ctx)
+    except Exception:  # noqa: BLE001 -- a claim failure must never cost the page its view
+        log.exception("dossier_anchors: claim engine failed for %s; no claims", date_iso)
+        view["claims"] = []
     _fill_prov_local_fields(view)
     return view
 
@@ -432,6 +443,7 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode) -> None:
             lineup_parsed["band_index"], 2, "lineup regex", "stated"))
 
     run_ctx = _safe(df.run_context, conn, event_id) if event_id is not None else None
+    vb.ctx["run_ctx"] = run_ctx
     venue_run = run_ctx["venue_run"] if run_ctx else None
     if venue_run and venue_run["claims_ok"]:
         vb.set_field("run.label", build_field(
@@ -457,6 +469,7 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode) -> None:
     pick = _find_pick_member(d1)
     if pick is not None:
         lb, member = pick
+        vb.ctx["pick_lb"] = lb
         vb.set_field("pick.lb_id", build_field(member["lb"], 1, "verdict pick", "stated"))
         if member.get("url"):
             vb.set_field("pick.url", build_field(member["url"], 1, "detail_url", "stated"))
@@ -516,6 +529,7 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode) -> None:
                 official["status"], 3, "D-03 official_release", "stated"))
 
         cmp_src = _safe(df.compare_sources, conn, event_id, date_iso, visible_lbs_hint(d1))
+        vb.ctx["cmp_src"] = cmp_src
         if cmp_src and not cmp_src.get("collapsed"):
             if cmp_src.get("diffs"):
                 vb.set_field("verdict.vs_runner_up", build_field(
@@ -602,6 +616,7 @@ def _build_setlist(vb, d1, conn, event_id, date_iso, lineup, setlist, visible_lb
                 row["label"] = build_field(lbl, 1, "broadcast_set_labels", "stated")
 
         song_hist = _safe(df.song_history, conn, event_id)
+        vb.ctx["song_hist"] = song_hist
         songs_by_pos = {s["position"]: s for s in song_hist["songs"]} if song_hist else {}
 
         bobtalk = _safe(df.anchor_bobtalk, conn, event_id)
@@ -823,7 +838,7 @@ def _build_context(vb, d1, conn, event_id, date_iso) -> None:
 
     if context.get("chronicle"):
         vb.set_field("context.chronicle", build_field(
-            context["chronicle"], 4, "olof_chronicle (verbatim; claim engine is C26)",
+            context["chronicle"], 4, "olof_chronicle (verbatim)",
             "stated"))
 
     bobtalk_ctx = _safe(df.anchor_bobtalk, conn, event_id) if event_id is not None else None
@@ -940,7 +955,8 @@ def filter_view(view: dict, sections: set[str] | None = None,
             sentences, claim-backed anchors).
 
     Returns:
-        A new ``{"fields": ..., "rows": ...}`` dict.
+        A new ``{"fields": ..., "rows": ...}`` dict, plus the kept ``claims`` (a claim
+        goes with its anchor; ``local_analysis=False`` also drops local-analysis claims).
     """
     def keep(key: str) -> bool:
         anchor = ANCHORS.get(key)
@@ -964,4 +980,10 @@ def filter_view(view: dict, sections: set[str] | None = None,
             new_rows.append({sub: row[sub] for sub in kept_subs if sub in row})
         rows[prefix] = new_rows
 
-    return {"fields": fields, "rows": rows}
+    out = {"fields": fields, "rows": rows}
+    if "claims" in view:
+        out["claims"] = [
+            c for c in view["claims"]
+            if keep(c["anchor"]) and (local_analysis or not c["claim"]["local_analysis"])
+        ]
+    return out
