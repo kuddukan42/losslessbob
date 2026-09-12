@@ -58,6 +58,18 @@ SOURCE_TAG = "TUIT"
 MAX_INFO_BYTES = 256 * 1024
 
 AUDIO_EXTS = {".flac", ".shn", ".wav", ".aiff", ".aif", ".ape"}
+
+#: ffmpeg sample formats → PCM bit depth. The trailing 'p' is planar layout,
+#: not a different width. This is the *last* resort of :func:`_depth_from_probe`
+#: because ffmpeg decodes 24-bit FLAC into an s32 buffer — sample_fmt describes
+#: the decoded buffer, while bits_per_raw_sample describes the file.
+SAMPLE_FMT_DEPTH = {
+    "u8": 8, "u8p": 8,
+    "s16": 16, "s16p": 16,
+    "s32": 32, "s32p": 32,
+    "flt": 32, "fltp": 32,
+    "dbl": 64, "dblp": 64,
+}
 INFO_EXTS = (".txt", ".nfo", ".log")
 
 # ── The form's fixed vocabularies ────────────────────────────────────────────
@@ -188,6 +200,38 @@ def announce_url(db_path=None) -> str:
 # ── Folder inspection ────────────────────────────────────────────────────────
 
 
+def _depth_from_probe(stream: dict) -> int | None:
+    """Read a PCM bit depth out of one ffprobe audio stream.
+
+    Three fields can carry it and they disagree by design, so they are tried
+    in order of how closely each describes the file rather than the decoder's
+    output buffer:
+
+    1. ``bits_per_raw_sample`` — what the encoder was given. A 24-bit FLAC says
+       24 here while decoding into a 32-bit buffer.
+    2. ``bits_per_sample`` — set for uncompressed PCM, and 0 for every codec
+       that has to be decoded, which is why the zero must be rejected rather
+       than treated as a reading.
+    3. ``sample_fmt`` — always present. It is how a shorten stream's 16 bits
+       are recovered, since shn populates neither of the first two.
+
+    Args:
+        stream: One entry from ffprobe's ``streams`` array.
+
+    Returns:
+        The bit depth, or None when the stream describes none.
+    """
+    for key in ("bits_per_raw_sample", "bits_per_sample"):
+        raw = stream.get(key)
+        try:
+            value = int(raw)
+        except (TypeError, ValueError):
+            continue
+        if value > 0:
+            return value
+    return SAMPLE_FMT_DEPTH.get(str(stream.get("sample_fmt") or "").lower())
+
+
 def probe_audio(folder: str | Path, sample_size: int = 5) -> dict:
     """Probe a folder's audio files for format, bit depth and sample rate.
 
@@ -248,9 +292,7 @@ def probe_audio(folder: str | Path, sample_size: int = 5) -> dict:
                     stream = streams[0]
                     fmt = path.suffix.lstrip(".").lower()
                     rate = int(stream.get("sample_rate") or 0) or None
-                    raw = (stream.get("bits_per_raw_sample")
-                           or stream.get("bits_per_sample"))
-                    bits = int(raw) if raw else None
+                    bits = _depth_from_probe(stream)
             except Exception:  # noqa: BLE001
                 pass
         if fmt:
@@ -484,12 +526,14 @@ def build_fields(lb_number: int, folder: str | Path, db_path=None) -> tuple[dict
     if audio.get("bit_depth") in BIT_DEPTHS:
         fields["bit_depth"] = str(audio["bit_depth"])
     elif fields.get("format") == "shn":
-        # ffprobe reads a shorten stream's sample rate but not its bit depth,
-        # and soundfile cannot open one at all. Shorten only ever carried 8- or
-        # 16-bit PCM, and all 1,233 SHN recordings on TUIT are labelled 16/44 —
-        # so assume 16 and say so, rather than post the field blank.
+        # Only reached when ffprobe could not read the file at all — a readable
+        # shorten stream reports s16p and resolves above. Shorten carried 8- or
+        # 16-bit PCM only, and all 1,233 SHN recordings on TUIT are labelled
+        # 16/44, so fall back to 16 and say so rather than post it blank.
         fields["bit_depth"] = "16"
-        warnings.append("bit_depth: assumed 16 — shn does not report a depth")
+        warnings.append(
+            "bit_depth: fell back to 16 — shn present but nothing could read it"
+        )
     else:
         warnings.append(f"bit_depth: probed {audio.get('bit_depth')!r}")
     if audio.get("sample_rate") in SAMPLE_RATES:
