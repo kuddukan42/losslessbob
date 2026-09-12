@@ -1977,3 +1977,676 @@ def file_meta(conn: sqlite3.Connection, lb_number: int) -> FileMeta:
         recorded_res=recorded_res, filesize=filesize, filecount=filecount,
         disc_count=disc_count,
     )
+
+
+# ---------------------------------------------------------------------------
+# C23 Supporting parsers (T2, same module) -- band/members/instruments/tally,
+# song writers, set[].label banding, source character/flags, lineage_short,
+# runtime, family.basis, taper render rule.
+# ---------------------------------------------------------------------------
+
+# Word-form ordinals ("first" .. "thirtieth"); numeric-ordinal lineups ("21st")
+# are handled by _NUM_ORDINAL_RE instead.
+_ORDINAL_WORDS = {
+    "first": 1, "second": 2, "third": 3, "fourth": 4, "fifth": 5, "sixth": 6,
+    "seventh": 7, "eighth": 8, "ninth": 9, "tenth": 10, "eleventh": 11,
+    "twelfth": 12, "thirteenth": 13, "fourteenth": 14, "fifteenth": 15,
+    "sixteenth": 16, "seventeenth": 17, "eighteenth": 18, "nineteenth": 19,
+    "twentieth": 20, "twenty-first": 21, "twenty-second": 22, "twenty-third": 23,
+    "twenty-fourth": 24, "twenty-fifth": 25, "twenty-sixth": 26,
+    "twenty-seventh": 27, "twenty-eighth": 28, "twenty-ninth": 29,
+    "thirtieth": 30,
+}
+_NUM_ORDINAL_RE = re.compile(r"^(\d+)(?:st|nd|rd|th)$", re.IGNORECASE)
+
+# "First concert with the first Never-Ending Tour Band: ..." / "Concert # 4 with
+# third Never-Ending Tour band: ..." -- "the" is optional and casing of "Band"
+# varies (audit: 3,117 of 4,185 lineups, plan line 636).
+_BAND_RE = re.compile(
+    r"\bwith\s+(?:the\s+)?([A-Za-z0-9-]+)\s+Never-?Ending\s+Tour\s+[Bb]and\b",
+)
+_SOLO_RE = re.compile(r"\bBob\s+Dylan\s*\(\s*solo\b", re.IGNORECASE)
+_MEMBER_RE = re.compile(r"([^,;()]+?)\s*\(([^)]*)\)")
+
+# A per-song/range clause opens with one or more comma/"and"-joined position
+# tokens ("7-9", "7-10 and 15", "11") followed by the override text.
+_RANGE_PREFIX_RE = re.compile(r"^\s*((?:\d+(?:-\d+)?)(?:\s*(?:,|and)\s*\d+(?:-\d+)?)*)\s+(?=\S)")
+_RANGE_TOKEN_RE = re.compile(r"^(\d+)(?:-(\d+))?$")
+
+
+def _ordinal_to_int(token: str) -> int | None:
+    """Parse a band-index ordinal ("21st", "first") to its integer, or None."""
+    token = token.strip().lower()
+    m = _NUM_ORDINAL_RE.match(token)
+    if m:
+        return int(m.group(1))
+    return _ORDINAL_WORDS.get(token)
+
+
+class BandMember(TypedDict):
+    """One lineup personnel entry.
+
+    Keys:
+        name: Musician name, as it appears in ``olof_events.lineup``.
+        instruments: Their parenthetical instrument text, verbatim.
+    """
+
+    name: str
+    instruments: str
+
+
+class BandLineup(TypedDict):
+    """``band_index`` / ``band.label`` / ``band.members`` (plan line 636-637).
+
+    Keys:
+        band_index: The Never-Ending Tour band's ordinal number, or ``None``
+            for a pre-NET / solo lineup or one the regex doesn't recognise.
+        band_label: ``"<ordinal> Never-Ending Tour Band"`` (e.g. "21st Never
+            -Ending Tour Band"), ``"Solo"`` when Dylan plays alone, or
+            ``None``.
+        members: The base personnel, Dylan moved first, from the lineup's
+            first (un-numbered) clause.
+    """
+
+    band_index: int | None
+    band_label: str | None
+    members: list[BandMember]
+
+
+def _base_clause(lineup: str) -> str:
+    """The lineup's first ``;``-separated clause, header (before ``:``) dropped."""
+    clause = lineup.split(";", 1)[0]
+    if ":" in clause:
+        clause = clause.split(":", 1)[1]
+    return clause
+
+
+def _is_dylan_alone(base_clause: str, members: list[BandMember]) -> bool:
+    """True when the base personnel clause names Dylan and nobody else.
+
+    The clause must hold exactly one member, that member must be Dylan, and
+    nothing but punctuation may remain once the parsed members are removed --
+    so an unparenthesised band name ("... with Tom Petty & The Heartbreakers")
+    keeps the lineup out of ``Solo``.
+
+    Args:
+        base_clause: The lineup's base personnel clause.
+        members: The members parsed out of *base_clause*.
+
+    Returns:
+        Whether the lineup is Dylan alone.
+    """
+    if len(members) != 1 or "dylan" not in members[0]["name"].lower():
+        return False
+    residue = _MEMBER_RE.sub("", base_clause)
+    return not re.search(r"[A-Za-z]", residue)
+
+
+def parse_band_lineup(lineup: str | None) -> BandLineup:
+    """``band_index`` / ``band.label`` / ``band.members`` (C23, plan line 636-637).
+
+    ``band_index`` / ``band.label`` come from a regex on "Concert # N with the
+    <ordinal> Never-Ending Tour Band" (the "the" and the "Concert # N with"
+    prefix are both optional -- corpus phrasing varies); ``"solo"`` is used
+    when the lineup opens with "Bob Dylan (solo, ...)". ``band.members`` reads
+    the lineup's first clause -- the base personnel, before any per-song/range
+    override clause -- with Dylan moved to the front.
+
+    Args:
+        lineup: ``olof_events.lineup`` free text.
+
+    Returns:
+        A :class:`BandLineup`.
+    """
+    lineup = lineup or ""
+    band_index: int | None = None
+    band_label: str | None = None
+
+    m = _BAND_RE.search(lineup)
+    if m:
+        band_index = _ordinal_to_int(m.group(1))
+        ordinal = m.group(1)
+        display = ordinal if _NUM_ORDINAL_RE.match(ordinal) else ordinal.capitalize()
+        band_label = f"{display} Never-Ending Tour Band"
+    elif _SOLO_RE.search(lineup):
+        band_label = "Solo"
+
+    base = _base_clause(lineup)
+    members: list[BandMember] = []
+    for name, instruments in _MEMBER_RE.findall(base):
+        name = re.sub(r"^(?:with)\s+", "", name.strip(), flags=re.IGNORECASE).strip(" .")
+        if name:
+            members.append(BandMember(name=name, instruments=instruments.strip()))
+    members.sort(key=lambda mem: 0 if "dylan" in mem["name"].lower() else 1)
+
+    if band_index is None and band_label is None and _is_dylan_alone(base, members):
+        band_label = "Solo"
+
+    return BandLineup(band_index=band_index, band_label=band_label, members=members)
+
+
+def _expand_ranges(token: str) -> set[int]:
+    """``"7-10 and 15"`` -> ``{7, 8, 9, 10, 15}``."""
+    positions: set[int] = set()
+    for part in re.split(r",|\band\b", token, flags=re.IGNORECASE):
+        part = part.strip()
+        if not part:
+            continue
+        m = _RANGE_TOKEN_RE.match(part)
+        if not m:
+            continue
+        lo = int(m.group(1))
+        hi = int(m.group(2)) if m.group(2) else lo
+        positions.update(range(lo, hi + 1))
+    return positions
+
+
+def _lineup_range_clauses(lineup: str | None) -> list[tuple[set[int], str]]:
+    """Per-song/range override clauses from *lineup*, each ``(positions, text)``.
+
+    The lineup's first (un-numbered) clause is the base personnel
+    (:func:`parse_band_lineup`) and is never generalised onto the other
+    songs -- audit M13 found that "otherwise" fallback wrong. Only clauses
+    that open with an explicit position/range token are per-song overrides.
+    """
+    out: list[tuple[set[int], str]] = []
+    for clause in (lineup or "").split(";"):
+        clause = clause.strip()
+        if not clause:
+            continue
+        m = _RANGE_PREFIX_RE.match(clause)
+        if not m:
+            continue
+        positions = _expand_ranges(m.group(1))
+        text = clause[m.end():].strip().rstrip(".").strip()
+        if positions and text:
+            out.append((positions, text))
+    return out
+
+
+def song_instruments(lineup: str | None, position: int) -> str | None:
+    """``song.instruments`` (C23, plan line 638): one song's instrument note.
+
+    Reads only the lineup's per-song/range override clauses and Dylan notes
+    -- never the base personnel clause (audit M13's "no otherwise
+    generalisation": the base lineup is a whole-show default, not a per-song
+    fact). A later clause covering the same position wins.
+
+    Args:
+        lineup: ``olof_events.lineup`` free text.
+        position: The song's ``olof_songs.position``.
+
+    Returns:
+        The covering clause's text, or ``None`` when no clause covers
+        *position*.
+    """
+    text: str | None = None
+    for positions, clause_text in _lineup_range_clauses(lineup):
+        if position in positions:
+            text = clause_text
+    return text
+
+
+# Canonical instrument label per matched token -- "harp" (not "harmonica") and
+# "keyboard" (piano/organ/keyboards folded in) match the plan's example
+# ("harp 8 . keyboard 15 . guitar 1", line 639).
+_INSTRUMENT_RE = re.compile(
+    r"\b(harmonica|harp|piano|organ|keyboards?|guitar|bass|drums?|violin|fiddle|"
+    r"banjo|mandolin|vocals?|pedal steel|accordion)\b",
+    re.IGNORECASE,
+)
+_INSTRUMENT_CANON = {
+    "harmonica": "harp", "harp": "harp",
+    "piano": "keyboard", "organ": "keyboard", "keyboard": "keyboard", "keyboards": "keyboard",
+    "guitar": "guitar",
+    "bass": "bass",
+    "drum": "drums", "drums": "drums",
+    "violin": "violin", "fiddle": "violin",
+    "banjo": "banjo",
+    "mandolin": "mandolin",
+    "vocal": "vocal", "vocals": "vocal",
+    "pedal steel": "pedal steel",
+    "accordion": "accordion",
+}
+
+
+def _instrument_tokens(text: str) -> set[str]:
+    """Distinct canonical instrument names mentioned in *text* (case-folded)."""
+    return {_INSTRUMENT_CANON[m.group(1).lower()] for m in _INSTRUMENT_RE.finditer(text)}
+
+
+def instrument_tally(lineup: str | None, song_count: int) -> Counter[str]:
+    """``stats.instrument_tally`` (C23, plan line 639): per-instrument song counts.
+
+    Counts, per instrument, how many songs its per-song/range override clause
+    covers -- one increment per covered song, not per mention (so a clause
+    naming "guitar" twice for the same song still counts once). Only reads
+    the override clauses (:func:`_lineup_range_clauses`); the base personnel
+    is never generalised onto uncovered songs (audit M13).
+
+    Args:
+        lineup: ``olof_events.lineup`` free text.
+        song_count: The show's total song count, to clip out-of-range
+            position tokens (a stray range past the last song is dropped).
+
+    Returns:
+        A :class:`collections.Counter` keyed by canonical instrument name.
+    """
+    resolved: dict[int, str] = {}
+    for positions, text in _lineup_range_clauses(lineup):
+        for p in positions:
+            if 1 <= p <= song_count:
+                resolved[p] = text
+    tally: Counter[str] = Counter()
+    for text in resolved.values():
+        for instrument in _instrument_tokens(text):
+            tally[instrument] += 1
+    return tally
+
+
+class SongWriters(TypedDict):
+    """``song.writers`` (C23, plan line 640).
+
+    Keys:
+        value: The rendered writer credit (corrected value when one exists,
+            else Olof's ``olof_songs.credits`` as spelled), or ``None`` when
+            the song has no cover credit (it's solely Dylan's).
+        corrected: Whether *value* came from a curator correction.
+        original: Olof's un-corrected credit text, only set when *corrected*
+            is True (for the "corrected" tooltip).
+    """
+
+    value: str | None
+    corrected: bool
+    original: str | None
+
+
+def _latest_correction(
+    conn: sqlite3.Connection, entity_kind: str, entity_key: str, field: str,
+) -> str | None:
+    """The most recent ``corrections.corrected`` value for one field, or None."""
+    try:
+        row = conn.execute(
+            "SELECT corrected FROM corrections WHERE entity_kind = ? AND entity_key = ?"
+            " AND field = ? ORDER BY id DESC LIMIT 1",
+            (entity_kind, entity_key, field),
+        ).fetchone()
+    except sqlite3.OperationalError:  # no corrections table yet
+        return None
+    return row[0] if row else None
+
+
+def song_writers(conn: sqlite3.Connection, event_id: int, position: int) -> SongWriters:
+    """``song.writers`` (C23, plan line 640): one song's writer credit.
+
+    Reads ``olof_songs.credits`` (already populated only for covers -- a
+    Dylan original's ``credits`` is blank, which is how "shown only when the
+    song isn't solely Dylan's" falls out for free), with any curator
+    ``corrections`` row (entity ``olof_song``/``"<event_id>:<position>"``,
+    field ``"credits"``) applied in preference.
+
+    Args:
+        conn: Open SQLite connection.
+        event_id: ``olof_events.event_id``.
+        position: ``olof_songs.position``.
+
+    Returns:
+        A :class:`SongWriters`.
+    """
+    row = conn.execute(
+        "SELECT credits FROM olof_songs WHERE event_id = ? AND position = ?",
+        (event_id, position),
+    ).fetchone()
+    credits_ = ((row[0] if row else "") or "").strip()
+    corrected = _latest_correction(conn, "olof_song", f"{event_id}:{position}", "credits")
+    if corrected is not None and corrected.strip() != credits_:
+        return SongWriters(
+            value=corrected.strip() or None, corrected=True, original=credits_ or None,
+        )
+    return SongWriters(value=credits_ or None, corrected=False, original=None)
+
+
+class SetLabel(TypedDict):
+    """One ``set[].label`` banding result (C23, plan line 641-644).
+
+    Keys:
+        kind: ``"band"`` for a contiguous broadcast range, ``"marker"`` for a
+            single/non-contiguous song.
+        text: The broadcast note text (``olof_songs.annotations``).
+        positions: The song position(s) it covers.
+    """
+
+    kind: str
+    text: str
+    positions: list[int]
+
+
+def broadcast_set_labels(
+    conn: sqlite3.Connection, event_id: int,
+) -> tuple[list[SetLabel], list[str]]:
+    """``set[].label`` broadcast banding + ``context.session_notes`` (C23, plan 641-644).
+
+    Groups an event's ``olof_songs.annotations`` by identical broadcast note
+    text: a note covering every song in the show is a whole-show recording
+    note and goes to ``context.session_notes`` instead of a set label; a note
+    covering a contiguous run of positions becomes one ``"band"`` label; a
+    note on non-contiguous positions (or a single song) becomes one
+    ``"marker"`` label per position.
+
+    Args:
+        conn: Open SQLite connection.
+        event_id: ``olof_events.event_id``.
+
+    Returns:
+        ``(labels, session_notes)``.
+    """
+    rows = conn.execute(
+        "SELECT position, annotations FROM olof_songs WHERE event_id = ? ORDER BY position",
+        (event_id,),
+    ).fetchall()
+    total = len(rows)
+    groups: dict[str, list[int]] = defaultdict(list)
+    for r in rows:
+        ann = (r["annotations"] or "").strip()
+        if ann and "broadcast" in ann.lower():
+            groups[ann].append(r["position"])
+
+    labels: list[SetLabel] = []
+    session_notes: list[str] = []
+    for text, positions in groups.items():
+        positions = sorted(positions)
+        if total and len(positions) == total:
+            session_notes.append(text)
+            continue
+        contiguous = positions == list(range(positions[0], positions[-1] + 1))
+        if contiguous and len(positions) > 1:
+            labels.append(SetLabel(kind="band", text=text, positions=positions))
+        else:
+            for p in positions:
+                labels.append(SetLabel(kind="marker", text=text, positions=[p]))
+    return labels, session_notes
+
+
+# Grade/rank prefix ("Grade B+ (74/100). LB2327: ranked #2 of 2. ") in front of
+# the descriptive sentence -- both the grade clause and the ranked clause are
+# independently optional (a single-source LB has neither/one of them).
+_VERDICT_PREFIX_RE = re.compile(
+    r"^(?:Grade\s+\S+\s*\(\d+/100\)\.\s*)?LB\d+:\s*(?:ranked\s+#\d+\s+of\s+\d+\.\s*)?",
+)
+_VERDICT_FLAGS_RE = re.compile(
+    r"Flags:\s*(.*?)\.(?=\s*(?:Best in group|Weakest in group)|\s*$)", re.DOTALL,
+)
+_SOUNDS_PREFIX_RE = re.compile(r"^Sounds\s+", re.IGNORECASE)
+
+
+class SourceCharacter(TypedDict):
+    """``source.character`` / ``.flags`` (C23, plan line 645-646).
+
+    Keys:
+        lb_number: The source.
+        character: The descriptive sentence(s) from ``verdict_text`` with the
+            grade/LB/rank prefix, the "Sounds " lead-in and any ``Flags:``
+            clause stripped; ``None`` when there's no score/verdict.
+        flags: The ``Flags:`` clause's items, plus ``"no lineage on file"``
+            when ``entries.source_chain`` is empty.
+    """
+
+    lb_number: int
+    character: str | None
+    flags: list[str]
+
+
+def source_character(conn: sqlite3.Connection, lb_number: int) -> SourceCharacter:
+    """``source.character`` / ``.flags`` (C23, plan line 645-646).
+
+    Args:
+        conn: Open SQLite connection.
+        lb_number: ``entries.lb_number``.
+
+    Returns:
+        A :class:`SourceCharacter`.
+    """
+    from concert_ranker.lb import repo as cr_repo
+
+    verdict_text = None
+    scan_id = cr_repo.scored_scan_id(conn)
+    if scan_id is not None:
+        row = conn.execute(
+            "SELECT verdict_text FROM quality_recording_scores WHERE scan_id = ?"
+            " AND lb_number = ?",
+            (scan_id, lb_number),
+        ).fetchone()
+        verdict_text = row[0] if row else None
+
+    flags: list[str] = []
+    character: str | None = None
+    if verdict_text:
+        text = _VERDICT_PREFIX_RE.sub("", verdict_text).strip()
+        m = _VERDICT_FLAGS_RE.search(text)
+        if m:
+            flags = [
+                f.strip() for f in re.split(r",\s*(?:and\s+)?|\s+and\s+", m.group(1))
+                if f.strip()
+            ]
+            text = re.sub(r"\s{2,}", " ", text[:m.start()] + text[m.end():]).strip()
+        text = _SOUNDS_PREFIX_RE.sub("", text).strip().rstrip(".").strip()
+        character = text or None
+
+    chain = conn.execute(
+        "SELECT source_chain FROM entries WHERE lb_number = ?", (lb_number,),
+    ).fetchone()
+    if not ((chain[0] if chain else None) or "").strip():
+        flags.append("no lineage on file")
+
+    return SourceCharacter(lb_number=lb_number, character=character, flags=flags)
+
+
+# DAW/extraction-software and codec/file-format tokens that mark the first
+# "no longer analog/hardware" hop in a source_chain -- lineage_short cuts
+# there. Not exhaustive of the corpus's software vocabulary, but covers its
+# common extraction tools (eac, tlh, cdwave/cd wave, wavelab, cooledit/cool
+# edit, audacity, dbpoweramp, md5summer) and every audio codec/file format.
+_DAW_CODEC_RE = re.compile(
+    r"\b(?:eac|exact\s+audio\s+copy|tlh|trader'?s?\s+little\s+helper|cd\s*wave|"
+    r"wavelab|cool\s*edit|audacity|adobe\s+audition|sound\s*forge|nero|"
+    r"dbpower\s*amp|md5summer|flac|wave?|shn|ape|wv|tak|mp3|m4a|ogg|aiff?)\b",
+    re.IGNORECASE,
+)
+
+
+def lineage_short(source_chain: str | None) -> str | None:
+    """``pick.lineage_short`` (C23, plan line 647): the chain before the first hop.
+
+    Cuts ``entries.source_chain`` before its first DAW/extraction-software or
+    codec/file-format hop (:data:`_DAW_CODEC_RE`), keeping the analog/hardware
+    capture chain. ``None`` for a blank chain; the whole chain when no such
+    hop is present.
+
+    Args:
+        source_chain: ``entries.source_chain`` free text.
+
+    Returns:
+        The truncated lineage, or ``None``.
+    """
+    if not (source_chain or "").strip():
+        return None
+    hops = source_chain.split(">")
+    for i, hop in enumerate(hops):
+        if _DAW_CODEC_RE.search(hop):
+            prefix = ">".join(hops[:i]).strip().rstrip(",").strip()
+            return prefix or None
+    return source_chain.strip()
+
+
+class Runtime(TypedDict):
+    """``runtime`` (C23, plan line 648-649): one source's parsed ``entries.timing``.
+
+    Keys:
+        total_minutes: Sum of every ``Nmin`` token (G5: always equal to
+            ``sum(parts)`` by construction).
+        parts: The individual per-segment minute values, in text order (a
+            multi-disc/multi-set source has more than one).
+        raw: The original ``entries.timing`` text.
+    """
+
+    total_minutes: float
+    parts: list[float]
+    raw: str
+
+
+def parse_runtime(timing: str | None) -> Runtime | None:
+    """``runtime`` (C23, plan line 648-649): parse ``entries.timing`` into segments + total.
+
+    Args:
+        timing: ``entries.timing`` free text (e.g. ``"72min+69min+51min+41min"``).
+
+    Returns:
+        A :class:`Runtime`, or ``None`` when *timing* has no ``Nmin`` token
+        (12,338 of 16,646 parse per the plan's calibration count).
+    """
+    if not timing:
+        return None
+    parts = [float(m) for m in _MIN_TOKEN_RE.findall(timing)]
+    if not parts:
+        return None
+    return Runtime(total_minutes=sum(parts), parts=parts, raw=timing)
+
+
+class FamilyBasis(TypedDict):
+    """``family.basis`` (C23, plan line 650-651), computed at render time.
+
+    Keys:
+        fam_id: The family.
+        conf: ``tapematch_family_meta.conf`` (the waveform-correlation mean),
+            or ``None``.
+        notes: Rendered basis notes, in order: the correlation mean, "LB page
+            states same source" when ``by`` includes ``'lb'``, and "quality
+            score match" when :func:`backend.tapematch_sync._has_quality_match`
+            finds one.
+    """
+
+    fam_id: str
+    conf: float | None
+    notes: list[str]
+
+
+def family_basis(conn: sqlite3.Connection, fam_id: str) -> FamilyBasis:
+    """``family.basis`` (C23, plan line 650-651): render-time basis notes for a family.
+
+    Args:
+        conn: Open SQLite connection.
+        fam_id: ``tapematch_family_meta.fam_id`` / ``recording_families.fam_id``.
+
+    Returns:
+        A :class:`FamilyBasis`.
+    """
+    from backend import tapematch_sync
+
+    row = conn.execute(
+        "SELECT conf, by FROM tapematch_family_meta WHERE fam_id = ?", (fam_id,),
+    ).fetchone()
+    if row is None:
+        return FamilyBasis(fam_id=fam_id, conf=None, notes=[])
+    conf, by = row["conf"], row["by"]
+
+    notes: list[str] = []
+    if conf is not None:
+        notes.append(f"waveform correlation mean {conf:.2f}")
+    if by and "lb" in by:
+        notes.append("LB page states same source")
+
+    lb_numbers = [
+        r[0] for r in conn.execute(
+            "SELECT lb_number FROM recording_families WHERE fam_id = ?", (fam_id,),
+        )
+    ]
+    abs_scores = tapematch_sync._load_latest_abs_scores(conn)
+    if tapematch_sync._has_quality_match(lb_numbers, abs_scores):
+        notes.append("quality score match")
+
+    return FamilyBasis(fam_id=fam_id, conf=conf, notes=notes)
+
+
+# R-T1/R-T2/R-T3 are error-severity (a bare-mention credit, a weak-family
+# propagation, an out-of-era propagation); R-T4/R-T5 are warn-severity
+# (TUIT disagreement, a broadcast-source credit) and don't block rendering --
+# R-T4 becomes the ``disputed`` notice instead.
+_TAPER_BLOCKING_RULES = ("R-T1", "R-T2", "R-T3")
+
+
+class TaperRender(TypedDict):
+    """``taper`` render rule (C23, plan line 652-655).
+
+    Keys:
+        lb_number: The source.
+        name: The taper's canonical name, or ``None`` when it's missing, has
+            an unresolved conflict, or an open R-T1/R-T2/R-T3 error blocks it
+            -- never ``"unknown"`` (audit M8).
+        confidence: ``taper_attributions.confidence`` (``'confirmed'`` /
+            ``'propagated'`` / ``'inferred'``), or ``None``.
+        marker: ``"inferred"`` for a ``propagated``/``inferred``-confidence
+            credit, else ``None``.
+        notice: A disputed-vs-TUIT notice (R-T4) when applicable, else
+            ``None``.
+    """
+
+    lb_number: int
+    name: str | None
+    confidence: str | None
+    marker: str | None
+    notice: str | None
+
+
+def taper_render(conn: sqlite3.Connection, lb_number: int) -> TaperRender:
+    """``taper`` render rule (C23, plan line 652-655): QC-gated taper display.
+
+    Renders only when no open R-T1/R-T2/R-T3 error blocks the credit; a
+    ``propagated``/``inferred``-confidence credit still renders, with an
+    "inferred" marker; a credit that disputes TUIT's declared taper (R-T4)
+    renders with a notice; a missing or conflicted attribution renders
+    nothing, never "unknown" (audit M8).
+
+    Args:
+        conn: Open SQLite connection.
+        lb_number: ``entries.lb_number``.
+
+    Returns:
+        A :class:`TaperRender`.
+    """
+    try:
+        blocked = conn.execute(
+            "SELECT 1 FROM qc_findings WHERE entity_kind = 'lb' AND entity_key = ?"
+            f" AND rule_id IN ({','.join('?' * len(_TAPER_BLOCKING_RULES))})"
+            " AND status IN ('open', 'reopened') LIMIT 1",
+            (str(lb_number), *_TAPER_BLOCKING_RULES),
+        ).fetchone()
+    except sqlite3.OperationalError:  # no qc_findings table yet
+        blocked = None
+    if blocked:
+        return TaperRender(lb_number=lb_number, name=None, confidence=None, marker=None,
+                            notice=None)
+
+    row = conn.execute(
+        "SELECT taper_normalised, confidence, conflict FROM taper_attributions"
+        " WHERE lb_number = ?",
+        (lb_number,),
+    ).fetchone()
+    if row is None or row["conflict"]:
+        return TaperRender(lb_number=lb_number, name=None, confidence=None, marker=None,
+                            notice=None)
+
+    name, confidence = row["taper_normalised"], row["confidence"]
+    marker = "inferred" if confidence in ("propagated", "inferred") else None
+
+    notice: str | None = None
+    try:
+        from backend.qc import corroborate
+
+        check = corroborate.taper_check(conn, lb_number)
+        if check["verdict"] == "disputed":
+            notice = f"disputed: TUIT says {' / '.join(check['tuit_canonical'])}"
+    except sqlite3.OperationalError:  # no tuit_recordings table yet
+        pass
+
+    return TaperRender(lb_number=lb_number, name=name, confidence=confidence, marker=marker,
+                        notice=notice)
