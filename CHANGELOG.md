@@ -29,6 +29,13 @@ Added: tests/test_tuit_upload.py — 23 tests, no network: vocabulary maps stay 
   options, sidecar/info-file picking, the extension fallback when audio will not decode, show
   disambiguation by venue (and refusal when it does not settle a two-show date), field composition
   against a temp DB, and every gate.
+Changed: two fixes from the first live dry run (LB-00006, a SHN recording). (1) bit_depth was left
+  blank on every SHN upload — soundfile cannot open a shorten stream and ffprobe reads its sample
+  rate but not its depth. Shorten only ever carried 8- or 16-bit PCM and all 1,233 SHN recordings
+  on TUIT are labelled 16/44, so shn now assumes 16 and says so in the warnings; flac that will not
+  decode is still left blank, since there the depth is a real unknown. (2) description is dropped
+  when an info_file is attached — the form's help text says the uploaded file "overrides anything
+  typed below", and entries.description usually just repeats the lineage anyway.
 Note: pre-existing, unrelated — tests/test_make_fixture.py's 3 tests fail on "show_picks non-empty"
   both with and without this change.
 
