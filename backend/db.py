@@ -827,54 +827,84 @@ CREATE TABLE IF NOT EXISTS olof_pages (
 );
 
 -- one row per event; joins to entries/bobdylan_shows/setlistfm_shows via date_str
+--
+-- The column bodies below carry NO comments on purpose: SQLite's ALTER TABLE
+-- DROP COLUMN rewrites the stored CREATE text by deleting back through
+-- whitespace to the end of the preceding token, and before 3.46 that let a
+-- nearby `--` comment swallow the closing paren, leaving the table unreadable
+-- ("incomplete input"). It broke CI on 2026-09-11. Column notes live here:
+--   event_id          DSN number; appendix shows get year*1000+seq (e.g.
+--                     2022017 -- no collision, DSN maxes ~5 digits)
+--   source            dsn | chronicle_appendix
+--   event_type        concert | session | rehearsal | broadcast | interview | other
+--   date_str          ISO yyyy-mm-dd ('' if unparsed)
+--   tour_name         from DSN segment title / chronicle tour section
+--   session_title     'The 3rd Blonde On Blonde session, produced by ...'
+--   concert_no_net    'Concert # 186 of The Never-Ending Tour'
+--   concert_no_year   '1990 concert # 16'
+--   recording_info    'Stereo audience recording, 100 minutes.'
+--   recording_kind    audience | soundboard | studio | broadcast | ''
+--   updated_raw       'Session info updated 6 February 2001'
+--   raw_text          full block plain text (search + reparse safety net)
+-- Dossier redesign Phase 1 (TODO-342); NULL/'' on bobserve rows. Also added by
+-- init_db's migration, so this order matches a migrated DB:
+--   rotation_new      'N new songs (P%) compared to previous concert'
+--   rotation_pct      the P of that line
+--   tour_new_count    'N new songs for this tour'
+--   venue_history_raw 'Other Bob Dylan shows in X:' blob, out of notes
 CREATE TABLE IF NOT EXISTS olof_events (
-    event_id        INTEGER PRIMARY KEY,     -- DSN number; appendix shows get year*1000+seq
-                                             -- (e.g. 2022017 — no collision, DSN maxes ~5 digits)
-    source          TEXT NOT NULL DEFAULT '',-- dsn | chronicle_appendix
+    event_id        INTEGER PRIMARY KEY,
+    source          TEXT NOT NULL DEFAULT '',
     page_filename   TEXT NOT NULL REFERENCES olof_pages(filename),
-    event_type      TEXT NOT NULL DEFAULT '',-- concert | session | rehearsal | broadcast | interview | other
-    date_str        TEXT NOT NULL DEFAULT '',-- ISO yyyy-mm-dd ('' if unparsed)
+    event_type      TEXT NOT NULL DEFAULT '',
+    date_str        TEXT NOT NULL DEFAULT '',
     date_raw        TEXT NOT NULL DEFAULT '',
     venue           TEXT NOT NULL DEFAULT '',
     city            TEXT NOT NULL DEFAULT '',
     region          TEXT NOT NULL DEFAULT '',
     country         TEXT NOT NULL DEFAULT '',
-    tour_name       TEXT NOT NULL DEFAULT '',-- from DSN segment title / chronicle tour section
-    session_title   TEXT NOT NULL DEFAULT '',-- 'The 3rd Blonde On Blonde session, produced by …'
-    concert_no_net  INTEGER,                 -- 'Concert # 186 of The Never-Ending Tour'
-    concert_no_year INTEGER,                 -- '1990 concert # 16'
+    tour_name       TEXT NOT NULL DEFAULT '',
+    session_title   TEXT NOT NULL DEFAULT '',
+    concert_no_net  INTEGER,
+    concert_no_year INTEGER,
     lineup          TEXT NOT NULL DEFAULT '',
-    recording_info  TEXT NOT NULL DEFAULT '',-- 'Stereo audience recording, 100 minutes.'
-    recording_kind  TEXT NOT NULL DEFAULT '',-- audience | soundboard | studio | broadcast | ''
+    recording_info  TEXT NOT NULL DEFAULT '',
+    recording_kind  TEXT NOT NULL DEFAULT '',
     recording_mins  INTEGER,
     notes           TEXT NOT NULL DEFAULT '',
     bobtalk         TEXT NOT NULL DEFAULT '',
     releases_raw    TEXT NOT NULL DEFAULT '',
     references_raw  TEXT NOT NULL DEFAULT '',
-    updated_raw     TEXT NOT NULL DEFAULT '',-- 'Session info updated 6 February 2001'
-    raw_text        TEXT NOT NULL DEFAULT '',-- full block plain text (search + reparse safety net)
-    -- Dossier redesign Phase 1 (TODO-342); NULL/'' on bobserve rows. Also added by init_db's
-    -- migration, so this order matches a migrated DB.
-    rotation_new      INTEGER,               -- 'N new songs (P%) compared to previous concert'
-    rotation_pct      INTEGER,               -- the P of that line
-    tour_new_count    INTEGER,               -- 'N new songs for this tour'
-    venue_history_raw TEXT NOT NULL DEFAULT '' -- 'Other Bob Dylan shows in X:' blob, out of notes
+    updated_raw     TEXT NOT NULL DEFAULT '',
+    raw_text        TEXT NOT NULL DEFAULT '',
+    rotation_new      INTEGER,
+    rotation_pct      INTEGER,
+    tour_new_count    INTEGER,
+    venue_history_raw TEXT NOT NULL DEFAULT ''
 );
 CREATE INDEX IF NOT EXISTS idx_olof_events_date ON olof_events(date_str);
 CREATE INDEX IF NOT EXISTS idx_olof_events_tour ON olof_events(tour_name);
 
--- one row per performed song / studio take (TODO-162 P3, FABLE_OLOF_FILES.md §4)
+-- one row per performed song / studio take (TODO-162 P3, FABLE_OLOF_FILES.md S4)
+-- Comment-free body for the DROP COLUMN reason documented on olof_events above.
+--   credits      cover writer(s) from parens
+--   take_number  studio rows only
+--   take_status  complete | breakdown | rehearsal | false start | incomplete
+--   annotations  'acoustic w band', 'harmonica', ...
+--   released_on  release titles resolved from position ranges, '; '-joined;
+--                '(part) ' / '(uncertain) ' prefixes
+--   subtitle     parenthetical alternate title, not a credit (TODO-342)
 CREATE TABLE IF NOT EXISTS olof_songs (
     event_id     INTEGER NOT NULL REFERENCES olof_events(event_id) ON DELETE CASCADE,
     position     INTEGER NOT NULL,
     song_title   TEXT NOT NULL DEFAULT '',
-    credits      TEXT NOT NULL DEFAULT '',   -- cover writer(s) from parens
+    credits      TEXT NOT NULL DEFAULT '',
     is_encore    INTEGER NOT NULL DEFAULT 0,
-    take_number  INTEGER,                    -- studio rows only
-    take_status  TEXT NOT NULL DEFAULT '',   -- complete | breakdown | rehearsal | false start | incomplete
-    annotations  TEXT NOT NULL DEFAULT '',   -- 'acoustic w band', 'harmonica', …
-    released_on  TEXT NOT NULL DEFAULT '',   -- release titles resolved from position ranges, '; '-joined; '(part) ' / '(uncertain) ' prefixes
-    subtitle     TEXT NOT NULL DEFAULT '',   -- parenthetical alternate title, not a credit (TODO-342)
+    take_number  INTEGER,
+    take_status  TEXT NOT NULL DEFAULT '',
+    annotations  TEXT NOT NULL DEFAULT '',
+    released_on  TEXT NOT NULL DEFAULT '',
+    subtitle     TEXT NOT NULL DEFAULT '',
     PRIMARY KEY (event_id, position)
 );
 CREATE INDEX IF NOT EXISTS idx_olof_songs_title ON olof_songs(song_title);
