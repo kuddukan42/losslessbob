@@ -1,3 +1,22 @@
+[2026-09-11] — CI was red on every push: two unrelated breakages, both fixed
+Fixed: tools/make_fixture_db.py: the fixture wrote entries.date_str as ISO (YYYY-MM-DD), but the LB
+  site — and so the real entries table — stores M/D/YY, which is the only form
+  concert_ranker.picks._parse_concert_date_iso parses. Once BUG-346 added the skip-unparseable-date
+  guard, every fixture date was skipped, show_picks came out empty, and the builder's own coverage
+  assertion tripped — taking down backend-smoke outright plus three test_make_fixture tests, on
+  every single push. The canonical _DATES list stays ISO (olof_events, bobdylan_shows and
+  setlistfm_shows really do store ISO); a new _lb_date() converts only the entries inserts, mapping
+  YYYY-xx-xx to xx/xx/YY so the partial-date coverage case keeps a subject. [BUG-348]
+Fixed: backend/db.py: olof_events and olof_songs carried inline `--` comments inside their CREATE
+  TABLE bodies. SQLite's ALTER TABLE DROP COLUMN rewrites the stored CREATE text by deleting back
+  through whitespace to the preceding token, and before 3.46 an adjacent comment then swallowed the
+  closing paren — "error in table olof_events after drop column: incomplete input". Local sqlite is
+  3.53 and has the upstream fix; the GitHub runner's is 3.45 and does not, so
+  test_migration_adds_columns_to_an_old_db failed only in CI and never locally. The column notes now
+  live in a block comment above each statement and both bodies are comment-free, with the reason
+  recorded inline so they don't creep back. [BUG-349]
+Verified: full backend suite 2114 passed, tools/ci_smoke.py PASS.
+
 [2026-09-11] — TUIT uploader: compose, post and seed a recording to the tracker
 Added: backend/tuit_upload.py — the outbound half of the TUIT integration. Probed /upload live: it
   is a plain Laravel multipart form behind a CSRF _token, and the ONLY server-side assist in the

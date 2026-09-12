@@ -2,6 +2,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-349: CI red on every push: DROP COLUMN breaks olof DDL on SQLite < 3.46
+Status: Fixed
+File(s): backend/db.py:830
+Reported: 2026-09-11
+Fixed: 2026-09-11
+Root cause: SQLite's ALTER TABLE DROP COLUMN does a textual rewrite of the stored CREATE statement, trimming whitespace back to the preceding token. Any -- comment adjacent to the dropped column then extended over the closing paren, leaving 'incomplete input'. Fixed upstream by 3.46; the CI runner ships 3.45.
+Fix: Moved every column note in olof_events and olof_songs into a block comment above the CREATE TABLE statement, leaving both bodies comment-free, with the reason recorded there so the comments do not creep back in.
+
+BUG-348: CI red on every push: fixture ISO date_str yields zero show_picks
+Status: Fixed
+File(s): tools/make_fixture_db.py:119,concert_ranker/picks.py:479
+Reported: 2026-09-11
+Fixed: 2026-09-11
+Root cause: The fixture's canonical _DATES list is ISO because the scraped tables (olof_events, bobdylan_shows, setlistfm_shows) genuinely store ISO -- but entries.date_str holds the LB site's raw M/D/YY, and concert_ranker.picks parses only that form. BUG-346's unparseable-date guard turned the mismatch from silent into fatal.
+Fix: Added _lb_date() to tools/make_fixture_db.py and applied it to the entries inserts only, leaving _DATES and the ISO tables alone. YYYY-xx-xx maps to xx/xx/YY so the partial-date coverage assertion still has a subject. Fixture now builds 99 picks over 28 dates; ci_smoke PASS.
+
 BUG-347: Olof source splices a credits parenthetical mid-title (2 songs), breaking song identity
 Status: Fixed
 File(s): backend/olof_parser.py,backend/song_index.py:179
