@@ -2597,7 +2597,8 @@ class TaperRender(TypedDict):
     notice: str | None
 
 
-def taper_render(conn: sqlite3.Connection, lb_number: int) -> TaperRender:
+def taper_render(conn: sqlite3.Connection, lb_number: int,
+                 reload_aliases: bool = True) -> TaperRender:
     """``taper`` render rule (C23, plan line 652-655): QC-gated taper display.
 
     Renders only when no open R-T1/R-T2/R-T3 error blocks the credit; a
@@ -2609,6 +2610,8 @@ def taper_render(conn: sqlite3.Connection, lb_number: int) -> TaperRender:
     Args:
         conn: Open SQLite connection.
         lb_number: ``entries.lb_number``.
+        reload_aliases: Passed to :func:`corroborate.taper_check`; the dossier
+            view passes False (the backend loads aliases at startup).
 
     Returns:
         A :class:`TaperRender`.
@@ -2642,7 +2645,7 @@ def taper_render(conn: sqlite3.Connection, lb_number: int) -> TaperRender:
     try:
         from backend.qc import corroborate
 
-        check = corroborate.taper_check(conn, lb_number)
+        check = corroborate.taper_check(conn, lb_number, reload_aliases=reload_aliases)
         if check["verdict"] == "disputed":
             notice = f"disputed: TUIT says {' / '.join(check['tuit_canonical'])}"
     except sqlite3.OperationalError:  # no tuit_recordings table yet

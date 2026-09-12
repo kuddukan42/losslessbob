@@ -1443,12 +1443,16 @@ class TaperCheck(TypedDict):
     verdict: str
 
 
-def taper_check(conn: sqlite3.Connection, lb_number: int) -> TaperCheck:
+def taper_check(conn: sqlite3.Connection, lb_number: int,
+                reload_aliases: bool = True) -> TaperCheck:
     """``taper_attributions`` vs TUIT's declared taper for one LB (Q1-e).
 
     Args:
         conn: Open SQLite connection.
         lb_number: ``entries.lb_number`` to check.
+        reload_aliases: Reload the taper-alias tables first. The reload runs
+            ``init_db`` (background threads included), so a per-source caller
+            reloads once itself and passes False.
 
     Returns:
         A :class:`TaperCheck`.
@@ -1458,7 +1462,8 @@ def taper_check(conn: sqlite3.Connection, lb_number: int) -> TaperCheck:
             lb_number=lb_number, ours=None, tuit_tapers=[], tuit_canonical=[],
             verdict="unavailable",
         )
-    _reload_taper_aliases(conn)
+    if reload_aliases:
+        _reload_taper_aliases(conn)
 
     ours_row = conn.execute(
         "SELECT taper_normalised, conflict FROM taper_attributions WHERE lb_number = ?",

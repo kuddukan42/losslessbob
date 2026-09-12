@@ -1022,6 +1022,16 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
         provenance["master_version"] = mv["value"]
     dossier["provenance"] = provenance
 
+    from backend.dossier_anchors import build_view
+
+    event_id = event["event_id"] if event is not None else None
+    try:
+        dossier["view"] = build_view(
+            dossier, conn, event_id=event_id, visible_lbs=visible_lbs, channel=channel,
+        )
+    except Exception:  # noqa: BLE001 - view assembly must never break the D1 payload (spec S1)
+        log.exception("build_view failed for %s; dossier ships without a view", date_iso)
+
     return dossier
 
 
@@ -1041,7 +1051,10 @@ def filter_dossier_sections(dossier: dict, sections: set[str] | None = None,
             is in this set (both default to shown when *sections* is None).
         local_analysis: When False, strips pick/quality/curated verdicts and
             family confidence/review flags — and the ``recommendation``
-            section — from the view, leaving only outward-facing facts.
+            section — from the view, leaving only outward-facing facts. Also
+            strips every ``dossier["view"]`` anchor marked
+            ``local_analysis=True`` in the C25 registry (verdict, ledger,
+            scan grades, family confidence/basis, T4 sentences).
 
     Returns:
         A new dict, safe for the template to render directly.
@@ -1065,6 +1078,11 @@ def filter_dossier_sections(dossier: dict, sections: set[str] | None = None,
                 ]
                 new_sources.append(new_bucket)
             view["sources"] = new_sources
+
+    if "view" in view:
+        from backend.dossier_anchors import filter_view
+
+        view["view"] = filter_view(view["view"], sections=sections, local_analysis=local_analysis)
 
     return view
 
