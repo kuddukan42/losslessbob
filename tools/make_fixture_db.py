@@ -106,6 +106,27 @@ def _make_description(rng: random.Random, taper: str, lb_number: int, xrefs: lis
     return " ".join(parts)
 
 
+def _lb_date(iso: str) -> str:
+    """Convert a fixture ISO date to the ``M/D/YY`` form ``entries.date_str`` uses.
+
+    The fixture's canonical ``_DATES`` list is ISO because the scraped tables
+    (olof_events, bobdylan_shows, setlistfm_shows) store ISO, but ``entries``
+    holds the LB site's raw ``M/D/YY`` — and concert_ranker.picks parses that
+    form only, so an ISO date_str silently yields zero show_picks.
+
+    Args:
+        iso: ``YYYY-MM-DD``, or ``YYYY-xx-xx`` for a month/day-unknown show.
+
+    Returns:
+        ``M/D/YY``, or ``xx/xx/YY`` when the month and day are placeholders.
+    """
+    year, month, day = iso.split("-")
+    yy = year[2:]
+    if "x" in month or "x" in day:
+        return f"{month}/{day}/{yy}"
+    return f"{int(month)}/{int(day)}/{yy}"
+
+
 def _seeded_hex(rng: random.Random, n: int = 32) -> str:
     return "".join(rng.choice("0123456789abcdef") for _ in range(n))
 
@@ -136,7 +157,7 @@ def generate(conn, rng: random.Random) -> dict:
                 "INSERT INTO entries (lb_number, date_str, location, rating, "
                 "description, setlist, status, lb_category, source_type) "
                 "VALUES (?, ?, ?, ?, ?, ?, 'ok', 'concert', 'audience')",
-                (lb, date_str, f"{venue}, {city}", rating, description,
+                (lb, _lb_date(date_str), f"{venue}, {city}", rating, description,
                  f"01 Fixture Song One\n02 Fixture Song Two"),
             )
             date_lbs.append(lb)
@@ -157,7 +178,7 @@ def generate(conn, rng: random.Random) -> dict:
     conn.execute(
         "INSERT INTO entries (lb_number, date_str, location, description, "
         "setlist, status, lb_category, source_type) "
-        "VALUES (?, '1980-05-09', 'Private Venue, Hidden City, HC', "
+        "VALUES (?, '5/9/80', 'Private Venue, Hidden City, HC', "
         "'Taper: testtaper_a. Source: AKG C480 > Sony D8. Lineage: DAT > CDR > FLAC.', "
         "'01 Fixture Song One', 'private', 'concert', 'audience')",
         (private_lb,),
