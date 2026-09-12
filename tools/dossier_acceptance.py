@@ -43,6 +43,12 @@ for the mode asked. Modes arrive chunk by chunk; today there are two:
                     banding on 1965-06-01 (BBC TV-1 band + markers), a QC-blocked vs
                     disputed vs confirmed taper render, family.basis on a waveform+LB+quality
                     family, then corpus-wide runtime/band/taper tallies.
+    --d24           D-08 / D-10 accept cases: backend.dossier_fields.compare_sources on
+                    2010-03-29 (LB-08637 best-scan alternate 90 vs 84, no resolution
+                    alternate, no "smaller file set" claim) and 1965-06-01 (runtime alt),
+                    backend.dossier_fields.anchor_bobtalk on 1986-02-24 (>=3 anchored
+                    lines) and 2010-03-29 (collapses, no empty container), then corpus
+                    tallies for both (C24).
 
 Usage::
 
@@ -56,6 +62,7 @@ Usage::
     .venv/bin/python3 tools/dossier_acceptance.py --d03
     .venv/bin/python3 tools/dossier_acceptance.py --d09
     .venv/bin/python3 tools/dossier_acceptance.py --d23
+    .venv/bin/python3 tools/dossier_acceptance.py --d24
 
 ``--before`` reads the same counts from a tools/olof_reparse_diff.py snapshot and
 prints them beside the live ones (``--parser``), or supplies the pre-Phase-1 Olof
@@ -906,6 +913,129 @@ def run_d23(db_path: Path) -> int:
     return 0 if all(ok for ok, _ in checks) else 1
 
 
+def run_d24(db_path: Path) -> int:
+    """D-08 / D-10 accept cases (C24), then corpus tallies."""
+    from backend.dossier_fields import anchor_bobtalk, compare_sources
+    from backend.geocoder import entry_date_to_iso
+
+    live = _open_ro(db_path)
+    try:
+        checks: list[tuple[bool, str]] = []
+
+        date_2010 = "2010-03-29"
+        event_2010 = corroborate.primary_event_id(live, date_2010)
+        visible_2010 = [
+            r[0] for r in live.execute(
+                "SELECT lb_number FROM entries WHERE date_str = ? AND status = 'ok'", ("3/29/10",),
+            )
+        ]
+        cs_2010 = compare_sources(live, event_2010, date_2010, visible_2010)
+        scan_alt = next((a for a in cs_2010["alternates"] if a["axis"] == "scan"), None)
+        checks.append((
+            bool(scan_alt) and scan_alt["lb_number"] == 8637
+            and round(scan_alt["alt_value"]) == 90 and round(scan_alt["pick_value"]) == 84,
+            f"2010-03-29: LB-08637 is the best-scan alternate, 90 vs 84 (got {scan_alt!r})",
+        ))
+        res_alt = next((a for a in cs_2010["alternates"] if a["axis"] == "resolution"), None)
+        checks.append((
+            res_alt is None,
+            f"2010-03-29: no resolution alternate (LB-08476 ties at 16/44 file,"
+            f" LB-08493 is lineage-only) (got {res_alt!r})",
+        ))
+        checks.append((
+            not any(a["axis"] == "filecount" for a in cs_2010["alternates"]),
+            "2010-03-29: no 'smaller file set' claim (audit M17)",
+        ))
+
+        date_1965 = "1965-06-01"
+        event_1965 = corroborate.primary_event_id(live, date_1965)
+        visible_1965 = [
+            r[0] for r in live.execute(
+                "SELECT lb_number FROM entries WHERE date_str = ? AND status = 'ok'", ("6/1/65",),
+            )
+        ]
+        cs_1965 = compare_sources(live, event_1965, date_1965, visible_1965)
+        # Amended 2026-09-12 (tj): the runtime floor is the 2-minute rounding floor, so the
+        # +4 min source renders as a "longest runtime" alternate instead of collapsing.
+        rt_1965 = [a for a in cs_1965["alternates"] if a["axis"] == "runtime"]
+        checks.append((
+            not cs_1965["collapsed"] and len(rt_1965) == 1
+            and rt_1965[0]["alt_value"] - rt_1965[0]["pick_value"] >= 2.0,
+            f"1965-06-01: a 'longest runtime' alternate, >= 2 min (got collapsed="
+            f"{cs_1965['collapsed']}, diffs={cs_1965['diffs']}, alternates={cs_1965['alternates']})",
+        ))
+
+        event_1986 = corroborate.primary_event_id(live, "1986-02-24")
+        bt_1986 = anchor_bobtalk(live, event_1986)
+        checks.append((
+            len(bt_1986["anchored"]) >= 3,
+            f"1986-02-24: anchors >= 3 bobtalk lines (got {len(bt_1986['anchored'])})",
+        ))
+
+        bt_2010 = anchor_bobtalk(live, event_2010)
+        checks.append((
+            bt_2010["anchored"] == [] and bt_2010["context"] == [],
+            f"2010-03-29: bobtalk collapses with no empty container (got {bt_2010!r})",
+        ))
+
+        _log.info("")
+        for ok, label in checks:
+            _log.info("%s  %s", "PASS" if ok else "FAIL", label)
+
+        entries_by_date: dict[str, list[int]] = {}
+        for r in live.execute("SELECT lb_number, date_str, status FROM entries"):
+            if r["status"] != "ok":
+                continue
+            iso = entry_date_to_iso(r["date_str"] or "")
+            if iso:
+                entries_by_date.setdefault(iso, []).append(r["lb_number"])
+
+        _log.info("")
+        _log.info("corpus tallies: D-08 compare_sources over every dated show with a pick")
+        n_collapsed = n_open = n_no_pick = 0
+        n_alternates: Counter[str] = Counter()
+        for date_iso, lb_numbers in entries_by_date.items():
+            eid = corroborate.primary_event_id(live, date_iso)
+            if eid is None:
+                continue
+            cs = compare_sources(live, eid, date_iso, lb_numbers)
+            if cs["pick"] is None:
+                n_no_pick += 1
+                continue
+            if cs["collapsed"]:
+                n_collapsed += 1
+            else:
+                n_open += 1
+                for alt in cs["alternates"]:
+                    n_alternates[alt["axis"]] += 1
+        _log.info("  %d collapsed, %d with a comparison to show, %d no show_picks row",
+                  n_collapsed, n_open, n_no_pick)
+        _log.info("  alternates by axis: %s", dict(n_alternates.most_common()))
+
+        _log.info("")
+        _log.info("corpus tallies: D-10 anchor_bobtalk over every event with a bobtalk block")
+        n_events_anchored = n_events_no_anchor = 0
+        n_anchor_lines = n_context_lines = 0
+        for (eid,) in live.execute(
+            "SELECT event_id FROM olof_events WHERE bobtalk IS NOT NULL AND bobtalk != ''"
+        ):
+            bt = anchor_bobtalk(live, eid)
+            if bt["anchored"]:
+                n_events_anchored += 1
+            elif bt["context"]:
+                n_events_no_anchor += 1
+            n_anchor_lines += len(bt["anchored"])
+            n_context_lines += len(bt["context"])
+        _log.info(
+            "  %d events with >=1 anchored line, %d with bobtalk but no anchor,"
+            " %d anchored lines total, %d leftover context lines",
+            n_events_anchored, n_events_no_anchor, n_anchor_lines, n_context_lines,
+        )
+    finally:
+        live.close()
+    return 0 if all(ok for ok, _ in checks) else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI entry point; returns the process exit code."""
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
@@ -930,6 +1060,9 @@ def main(argv: list[str] | None = None) -> int:
                       help="D-09 / D-11 accept cases + corpus 'partial' setlist scan (C22).")
     mode.add_argument("--d23", action="store_true",
                       help="Supporting-parser accept cases + corpus tallies (C23).")
+    mode.add_argument("--d24", action="store_true",
+                      help="D-08 compare_sources / D-10 anchor_bobtalk accept cases +"
+                           " corpus tallies (C24).")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
                         help="--parser: olof_reparse_diff snapshot to print beside the live"
@@ -956,6 +1089,8 @@ def main(argv: list[str] | None = None) -> int:
         return run_d09(args.db)
     if args.d23:
         return run_d23(args.db)
+    if args.d24:
+        return run_d24(args.db)
     return run_parser(args.db, args.before, args.residuals)
 
 
