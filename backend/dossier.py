@@ -1032,6 +1032,12 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
     except Exception:  # noqa: BLE001 - view assembly must never break the D1 payload (spec S1)
         log.exception("build_view failed for %s; dossier ships without a view", date_iso)
 
+    from backend.dossier_qc import run_gate
+
+    dossier["qc"] = run_gate(
+        dossier, conn, channel=channel, event_id=event_id, visible_lbs=visible_lbs,
+    )
+
     return dossier
 
 
