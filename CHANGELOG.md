@@ -1,3 +1,17 @@
+[2026-09-12] — Show dossier C27: §8 selection rules
+Added: backend/dossier_fields.py: FRAGMENT_THRESHOLD 0.60 (tj sign-off from a 300-show
+  histogram) + is_fragment; Completeness.glued — an unsplit tracklist ("Serve Somebody 2.
+  Million Miles 3. …") falls back to the runtime rule instead of reading 0%; family_taper_label
+  ("<taper>'s tape" only when every member is confirmed and conf ≥ 0.50).
+Changed: backend/dossier_anchors.py: source[].group primary/fragment/no_match; verdict pick =
+  best pick_rank among primary sources (none if no primary); families band at ≥2 visible
+  members, sorted by generation then rank. backend/dossier_claims.py: D-08 axes over primary
+  sources only; sources.visible_n = §8.3 collapse count.
+Fixed: backend/dossier_anchors.py: taper labels never rendered (tapematch's always-set "Family
+  A" label shadowed them); tape-group count dropped one-member families.
+Added: tests/test_dossier_selection.py (28); tools/dossier_acceptance.py --d27 (5/5; 300 shows:
+  39/1,290 fragments, 20 no_match, 11 glued rescues, 7 verdict picks changed).
+
 [2026-09-12] — Show dossier C26: claim engine
 Added: backend/dossier_claims.py: the only producer of comparative/positional wording.
   Comparators superlative (ties → "tied", all-way tie or any null/disputed/withheld input →
