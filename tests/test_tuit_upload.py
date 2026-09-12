@@ -315,3 +315,45 @@ def test_upload_rows_round_trip(dbmod):
     db.update_tuit_upload(upload_id, {"status": "uploaded", "rec_id": 1900}, db_path)
     row = db.get_tuit_uploads(707, db_path)[0]
     assert (row["status"], row["rec_id"]) == ("uploaded", 1900)
+
+
+def test_shn_gets_an_assumed_16_bit_depth(dbmod, folder):
+    """Shorten reports no depth; TUIT labels every SHN it holds 16/44."""
+    db, db_path = dbmod
+    _seed_entry(db, db_path)
+    with open(os.path.join(folder, "d1t01.shn"), "wb") as fh:
+        fh.write(b"not really shorten")
+    fields, warnings = tuit_upload.build_fields(707, folder, db_path)
+    assert fields["format"] == "shn"
+    assert fields["bit_depth"] == "16"
+    assert any("assumed 16" in w for w in warnings)
+
+
+def test_flac_without_a_depth_is_left_blank(dbmod, folder):
+    """The assumption is shn-only — a flac that will not decode stays a gap."""
+    db, db_path = dbmod
+    _seed_entry(db, db_path)
+    with open(os.path.join(folder, "d1t01.flac"), "wb") as fh:
+        fh.write(b"fake")
+    fields, warnings = tuit_upload.build_fields(707, folder, db_path)
+    assert "bit_depth" not in fields
+    assert any(w.startswith("bit_depth: probed") for w in warnings)
+
+
+def test_description_is_dropped_when_an_info_file_is_attached(dbmod, folder, monkeypatch):
+    db, db_path = dbmod
+    _seed_entry(db, db_path)
+    with open(os.path.join(folder, "info.txt"), "w", encoding="utf-8") as fh:
+        fh.write("lineage and notes\n" * 20)
+    monkeypatch.setattr(tuit_upload.database, "is_seedable_to_tracker",
+                        lambda lb, p=None: (True, None))
+    monkeypatch.setattr(tuit_upload.database, "get_folders_for_lb",
+                        lambda lb, p=None: [folder])
+    monkeypatch.setattr(tuit_upload.database, "tuit_has_recording",
+                        lambda lb=None, h="", p=None: None)
+
+    payload = tuit_upload.prepare_upload(707, make_torrent=False, db_path=db_path)
+
+    assert payload.info_path is not None
+    assert "description" not in payload.fields
+    assert any(w.startswith("description: dropped") for w in payload.warnings)

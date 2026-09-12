@@ -483,6 +483,13 @@ def build_fields(lb_number: int, folder: str | Path, db_path=None) -> tuple[dict
 
     if audio.get("bit_depth") in BIT_DEPTHS:
         fields["bit_depth"] = str(audio["bit_depth"])
+    elif fields.get("format") == "shn":
+        # ffprobe reads a shorten stream's sample rate but not its bit depth,
+        # and soundfile cannot open one at all. Shorten only ever carried 8- or
+        # 16-bit PCM, and all 1,233 SHN recordings on TUIT are labelled 16/44 —
+        # so assume 16 and say so, rather than post the field blank.
+        fields["bit_depth"] = "16"
+        warnings.append("bit_depth: assumed 16 — shn does not report a depth")
     else:
         warnings.append(f"bit_depth: probed {audio.get('bit_depth')!r}")
     if audio.get("sample_rate") in SAMPLE_RATES:
@@ -580,6 +587,12 @@ def prepare_upload(
     )
     if payload.info_path is None:
         payload.warnings.append("info_file: no .txt/.nfo/.log under 256 KB in the folder")
+    elif payload.fields.pop("description", None) is not None:
+        # The form's own help text: an uploaded info file "overrides anything
+        # typed below". Sending both just invites a silent mismatch.
+        payload.warnings.append(
+            "description: dropped — the attached info_file overrides it"
+        )
 
     if session is not None:
         show = find_show(session, fields.get("new_show_date", ""), fields.get("new_venue", ""))
