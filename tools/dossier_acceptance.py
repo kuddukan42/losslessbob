@@ -37,6 +37,12 @@ for the mode asked. Modes arrive chunk by chunk; today there are two:
                     fixture (partial), backend.dossier_fields.file_meta on LB-08485
                     ("16/44 file · recorded 24/96"), then the corpus scan of every remaining
                     'partial' setlist for review (C22).
+    --d23           Supporting-parser accept cases (C23): band/members on 1988-06-07
+                    (1st NET Band) and 1965-04-09 (solo), writers on event 2, lineage_short
+                    cutting LB-6 before "eac", runtime split-sums-total on LB-1, set[].label
+                    banding on 1965-06-01 (BBC TV-1 band + markers), a QC-blocked vs
+                    disputed vs confirmed taper render, family.basis on a waveform+LB+quality
+                    family, then corpus-wide runtime/band/taper tallies.
 
 Usage::
 
@@ -49,6 +55,7 @@ Usage::
     .venv/bin/python3 tools/dossier_acceptance.py --d02
     .venv/bin/python3 tools/dossier_acceptance.py --d03
     .venv/bin/python3 tools/dossier_acceptance.py --d09
+    .venv/bin/python3 tools/dossier_acceptance.py --d23
 
 ``--before`` reads the same counts from a tools/olof_reparse_diff.py snapshot and
 prints them beside the live ones (``--parser``), or supplies the pre-Phase-1 Olof
@@ -754,6 +761,151 @@ def run_d09(db_path: Path) -> int:
     return 0 if all(ok for ok, _ in checks) else 1
 
 
+def run_d23(db_path: Path) -> int:
+    """C23 supporting-parser accept cases, then corpus-wide tallies."""
+    from backend.dossier_fields import (
+        broadcast_set_labels, family_basis, lineage_short, parse_band_lineup,
+        parse_runtime, song_writers, taper_render,
+    )
+
+    live = _open_ro(db_path)
+    try:
+        checks: list[tuple[bool, str]] = []
+
+        lineup = live.execute(
+            "SELECT lineup FROM olof_events WHERE event_id = 9100"
+        ).fetchone()[0]
+        band = parse_band_lineup(lineup)
+        checks.append((
+            band["band_index"] == 1 and band["band_label"] == "First Never-Ending Tour Band"
+            and band["members"] and band["members"][0]["name"] == "Bob Dylan",
+            f"1988-06-07 (event 9100) band_index=1, 'First Never-Ending Tour Band',"
+            f" Dylan first (got {band['band_index']!r}, {band['band_label']!r},"
+            f" {band['members'][:1]})",
+        ))
+
+        lineup2 = live.execute(
+            "SELECT lineup FROM olof_events WHERE event_id = 845"
+        ).fetchone()[0]
+        solo = parse_band_lineup(lineup2)
+        checks.append((
+            solo["band_label"] == "Solo" and len(solo["members"]) == 1,
+            f"1965-04-09 (event 845) band.label = 'Solo', one member (got {solo!r})",
+        ))
+
+        w = song_writers(live, 2, 1)
+        checks.append((
+            w["value"] == "Shirley Goodman & Leonard Lee" and not w["corrected"],
+            f"event 2 song 1 writers = 'Shirley Goodman & Leonard Lee' (got {w!r})",
+        ))
+        w_dylan = song_writers(live, 2, 99)
+        checks.append((
+            w_dylan["value"] is None,
+            f"event 2 song 99 (nonexistent -> solely Dylan's / no credit) omits (got {w_dylan!r})",
+        ))
+
+        chain = live.execute(
+            "SELECT source_chain FROM entries WHERE lb_number = 6"
+        ).fetchone()[0]
+        short = lineage_short(chain)
+        checks.append((
+            short == "CSHEB w/ bass roll-off active > M1, trade cdr",
+            f"LB-6 lineage_short cuts before 'eac' (got {short!r} from {chain!r})",
+        ))
+
+        timing = live.execute("SELECT timing FROM entries WHERE lb_number = 1").fetchone()[0]
+        rt = parse_runtime(timing)
+        checks.append((
+            bool(rt) and rt["total_minutes"] == sum(rt["parts"]) and rt["total_minutes"] == 233.0,
+            f"LB-1 runtime split sums to total (G5) (got {rt!r})",
+        ))
+
+        event_1965 = corroborate.primary_event_id(live, "1965-06-01")
+        labels, notes = broadcast_set_labels(live, event_1965) if event_1965 else ([], [])
+        bands = [lbl for lbl in labels if lbl["kind"] == "band"]
+        markers = [lbl for lbl in labels if lbl["kind"] == "marker"]
+        checks.append((
+            any(lbl["positions"] == [7, 8, 9, 10, 11, 12] for lbl in bands) and markers
+            and not notes,
+            "1965-06-01 BBC TV-1 26 June contiguous 7-12 bands, other broadcast notes stay"
+            f" per-song markers (got {len(bands)} bands, {len(markers)} markers,"
+            f" {len(notes)} session notes)",
+        ))
+
+        blocked = taper_render(live, 3762)  # open R-T3 error
+        checks.append((
+            blocked["name"] is None,
+            f"LB-3762 (open R-T3 error) renders no taper (got {blocked!r})",
+        ))
+        disputed = taper_render(live, 10041)  # open R-T4 warn, disputed vs TUIT
+        checks.append((
+            disputed["name"] is not None and disputed["notice"] is not None,
+            f"LB-10041 (R-T4 disputed) renders name + notice (got {disputed!r})",
+        ))
+        confirmed = taper_render(live, 45)
+        checks.append((
+            confirmed["name"] == "clay c brennecke" and confirmed["marker"] is None,
+            f"LB-45 confirmed taper renders plainly (got {confirmed!r})",
+        ))
+
+        fam_row = live.execute(
+            "SELECT fam_id FROM tapematch_family_meta WHERE conf IS NOT NULL"
+            " AND by = 'ai+lb' ORDER BY fam_id LIMIT 1"
+        ).fetchone()
+        if fam_row:
+            fb = family_basis(live, fam_row[0])
+            checks.append((
+                fb["conf"] is not None and any("LB page" in n for n in fb["notes"]),
+                f"family {fam_row[0]} basis includes the correlation mean + LB-page note"
+                f" (got {fb!r})",
+            ))
+
+        _log.info("")
+        for ok, label in checks:
+            _log.info("%s  %s", "PASS" if ok else "FAIL", label)
+
+        _log.info("")
+        _log.info("corpus tallies:")
+        n_runtime = n_no_runtime = 0
+        for (timing,) in live.execute("SELECT timing FROM entries"):
+            if parse_runtime(timing) is not None:
+                n_runtime += 1
+            else:
+                n_no_runtime += 1
+        _log.info("  runtime parses: %d, no timing/no minute token: %d", n_runtime, n_no_runtime)
+
+        band_counts: Counter[str] = Counter()
+        for (lineup,) in live.execute("SELECT lineup FROM olof_events WHERE lineup != ''"):
+            b = parse_band_lineup(lineup)
+            band_counts["band_index" if b["band_index"] else
+                        ("solo" if b["band_label"] == "Solo" else "unrecognised")] += 1
+        _log.info("  band lineups: %s", dict(band_counts.most_common()))
+
+        # Inlined rather than calling taper_render per LB: that would call
+        # corroborate.taper_check (which rebuilds the taper-alias tables on
+        # every call) tens of thousands of times -- fine for one accept-case
+        # LB, far too slow over the whole corpus. The disputed/notice branch
+        # never flips a "rendered" LB to "nothing", so it's safe to skip here.
+        blocked_lbs = {
+            int(r[0]) for r in live.execute(
+                "SELECT DISTINCT entity_key FROM qc_findings WHERE entity_kind = 'lb'"
+                " AND rule_id IN ('R-T1', 'R-T2', 'R-T3') AND status IN ('open', 'reopened')"
+            )
+            if str(r[0]).isdigit()
+        }
+        renderable = {
+            r["lb_number"] for r in live.execute(
+                "SELECT lb_number FROM taper_attributions WHERE conflict = 0"
+            )
+        } - blocked_lbs
+        n_total = live.execute("SELECT COUNT(*) FROM entries").fetchone()[0]
+        taper_counts = Counter(rendered=len(renderable), nothing=n_total - len(renderable))
+        _log.info("  taper render: %s", dict(taper_counts.most_common()))
+    finally:
+        live.close()
+    return 0 if all(ok for ok, _ in checks) else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI entry point; returns the process exit code."""
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
@@ -776,6 +928,8 @@ def main(argv: list[str] | None = None) -> int:
                       help="D-05 / D-13 accept cases, tallies and a 100-row audit table (C21).")
     mode.add_argument("--d09", action="store_true",
                       help="D-09 / D-11 accept cases + corpus 'partial' setlist scan (C22).")
+    mode.add_argument("--d23", action="store_true",
+                      help="Supporting-parser accept cases + corpus tallies (C23).")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
                         help="--parser: olof_reparse_diff snapshot to print beside the live"
@@ -800,6 +954,8 @@ def main(argv: list[str] | None = None) -> int:
         return run_d05(args.db)
     if args.d09:
         return run_d09(args.db)
+    if args.d23:
+        return run_d23(args.db)
     return run_parser(args.db, args.before, args.residuals)
 
 
