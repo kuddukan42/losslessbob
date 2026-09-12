@@ -317,8 +317,8 @@ def test_upload_rows_round_trip(dbmod):
     assert (row["status"], row["rec_id"]) == ("uploaded", 1900)
 
 
-def test_shn_gets_an_assumed_16_bit_depth(dbmod, folder):
-    """Shorten reports no depth; TUIT labels every SHN it holds 16/44."""
+def test_unreadable_shn_falls_back_to_16_bit(dbmod, folder):
+    """Last resort only: a readable shorten stream reports s16p itself."""
     db, db_path = dbmod
     _seed_entry(db, db_path)
     with open(os.path.join(folder, "d1t01.shn"), "wb") as fh:
@@ -326,7 +326,7 @@ def test_shn_gets_an_assumed_16_bit_depth(dbmod, folder):
     fields, warnings = tuit_upload.build_fields(707, folder, db_path)
     assert fields["format"] == "shn"
     assert fields["bit_depth"] == "16"
-    assert any("assumed 16" in w for w in warnings)
+    assert any("fell back to 16" in w for w in warnings)
 
 
 def test_flac_without_a_depth_is_left_blank(dbmod, folder):
@@ -357,3 +357,27 @@ def test_description_is_dropped_when_an_info_file_is_attached(dbmod, folder, mon
     assert payload.info_path is not None
     assert "description" not in payload.fields
     assert any(w.startswith("description: dropped") for w in payload.warnings)
+
+
+def test_depth_from_probe_prefers_the_raw_sample_width():
+    """A 24-bit FLAC decodes into an s32 buffer; the file is still 24-bit."""
+    stream = {"bits_per_raw_sample": "24", "bits_per_sample": 0, "sample_fmt": "s32p"}
+    assert tuit_upload._depth_from_probe(stream) == 24
+
+
+def test_depth_from_probe_ignores_a_zero_bits_per_sample():
+    """ffprobe writes 0 for every codec it has to decode — not a reading."""
+    stream = {"bits_per_sample": 0, "sample_fmt": "s16p"}
+    assert tuit_upload._depth_from_probe(stream) == 16
+
+
+def test_depth_from_probe_reads_a_shorten_stream():
+    """The real shape of a .shn stream: only sample_fmt carries the depth."""
+    stream = {"codec_name": "shorten", "sample_fmt": "s16p", "sample_rate": "44100",
+              "channels": 2, "bits_per_sample": 0, "bits_per_raw_sample": None}
+    assert tuit_upload._depth_from_probe(stream) == 16
+
+
+def test_depth_from_probe_gives_up_on_an_unknown_format():
+    assert tuit_upload._depth_from_probe({"sample_fmt": "weird"}) is None
+    assert tuit_upload._depth_from_probe({}) is None
