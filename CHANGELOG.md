@@ -1,3 +1,20 @@
+[2026-09-12] — Show dossier C24: D-08 pairwise comparison and D-10 bobtalk anchoring
+Added: backend/dossier_fields.py: compare_sources (D-08) diffs the verdict pick against the
+  runner-up on rating, scan, runtime, resolution, generation and character, and promotes axis
+  leaders (best scan, longest runtime, highest resolution, only soundboard, only complete) to
+  alternates over the visible set only. Corpus: 636 shows collapse, 3,198 compare; alternates
+  scan 1,649, runtime 1,092, complete 375, soundboard 91, resolution 81. anchor_bobtalk (D-10)
+  attaches (before|after|plays|during) <title> cues to setlist positions: 668 events anchor
+  ≥1 line (1,765 lines), 1,444 lines stay in Context.
+Changed: backend/dossier_fields.py: runtime floor is 2 minutes, the minute-rounding floor
+  (tj). Calibration (.debug/dossier_calibration.md, D-08) over same-show source pairs found
+  runtime delta predicts no missing songs at any flat, per-era or relative floor, so the axis
+  states "longest runtime" as a fact, never completeness.
+Changed: instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: D-08 accept case "1965-06-01 collapses"
+  amended to a +4 min runtime alternate (LB-03236, 70 vs 66); C24 done, Phase 4 complete.
+Added: tools/dossier_acceptance.py: --d24 mode — 6 accept cases, all PASS, plus corpus
+  tallies. tests/test_dossier_fields.py: 24 tests.
+
 [2026-09-12] — Show dossier C23: the ten supporting parsers
 Added: backend/dossier_fields.py: parse_band_lineup, song_instruments, instrument_tally,
   song_writers, broadcast_set_labels, source_character, lineage_short, parse_runtime,
