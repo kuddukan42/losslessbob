@@ -1,3 +1,19 @@
+[2026-09-12] — Show dossier C29: template rewrite on the view model
+Changed: backend/templates/dossier.html: renders only from dossier["view"] + ["qc"]; section
+  order Header → Verdict → Setlist → Sources → Context/venue → Related → Provenance; lbf/claim
+  macros emit data-lb / data-claim; QC footer, withheld list, embedded lb-qc JSON; warm --pick
+  palette; "Scanned quality" replaces "AI grade" (also render_bbcode); empty columns suppressed,
+  review badge removed, blank lines <1%.
+Added: backend/dossier_claims.py: sentence_segment_groups, claim_texts_for, ledger_detail_text
+  (Jinja globals) — claim-derived text is the only comparative wording on the page.
+Changed: backend/dossier_qc.py: lint_l1 skips data-verbatim elements (quoted source text: song
+  titles, lineage, bobtalk, Olof notes, xref cards); backend/app.py: html route always lints.
+Changed: backend/dossier_fields.py: source_character drops "Best/Weakest in group for X."
+  (unverified sibling ranking). backend/dossier_anchors.py: a curator correction renders
+  stated with a tooltip naming Olof's original spelling.
+Added: tests/test_dossier.py: anchor coverage, L1/L2, no review badge, blank ratio, lb-qc,
+  local_analysis=0 and no-view degrade; tests/test_dossier_qc.py verbatim case.
+
 [2026-09-12] — Show dossier C28: per-dossier QC gate
 Added: backend/dossier_qc.py: run_gate() at the end of build_dossier writes dossier["qc"]
   {checks_run, passed, withheld, refused, reasons, notices, input_fingerprint} and
