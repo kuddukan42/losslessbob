@@ -138,16 +138,23 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
 - **Sign-off** marks a chunk that stops for tj before it merges. Chunks that aren't marked
   don't wait for him.
 
-> **Resume here (2026-09-12).** C00–C29 are done and pushed. BUG-347 is
+> **Resume here (2026-09-13).** C00–C31 are done and pushed. BUG-347 is
 > closed; rollback snapshot if ever needed: `.debug/olof_before_bug347.db`.
 >
 > **Open with tj:** the G1 no-Olof-event fallback (§ "G1 fallback" under the QC gate, row
 > C28a). It is documented only, not built; C28 still refuses those 115 dates.
 >
-> **Next: C31** (`tools/make_fixture_db.py` + golden-set harness in CI). C30 is done: the
-> venue card's compact map draws a hollow ring on city-centre coords and a solid pin only on
-> verified venue coords; the Phase 8 solid-pin show is 1986-06-22 (Reunion Arena). Lint L1
-> runs on every html render, skips `data-claim` / `data-verbatim`, and checks the drawn marker.
+> **Next: C32** (tj hand-verifies the 15 golden files). C31 is done: 15 placeholder specs in
+> `tests/golden/dossier/` (4 plan samples + 1990-01-25 from the spec PDF's sample set + one
+> per stress category), a committed fixture cut from live data
+> (`make_fixture_db.py --golden`, ~4 MB gz; private entries' metadata and checksums
+> scrubbed, per tj 2026-09-13), and `tests/test_dossier_golden.py` (runs in CI with the
+> suite). To pin a spec: `tools/dossier_golden.py --show <name>` → tj verifies → paste as
+> `expected` with `verified_by`. After any re-cut, `tools/dossier_golden.py --check` must
+> print 15/15 (fixture == live) before committing. Cut gotchas: career-wide anchors need
+> whole history tables; run links need one skeleton entry per date; `scored_scan_id` is
+> elected corpus-wide (cut asserts it's unchanged); `abs_grade` comes from the ranker's
+> `ensure_schema`, not `init_db`.
 >
 > Nothing is pending with tj: the C19 allowlist (104/104) and the C21 generation audit are
 > both signed off. C27's 60% fragment threshold signed off by tj 2026-09-12
@@ -189,7 +196,7 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
 | C28a | 5 | G1 fallback for dates with no Olof event: external identity → reduced dossier (see § "G1 fallback") | C28 | sonnet | 115-date split measured; **Sign-off: tj approves the reduced dossier and the step-3 rule**; one test per step | proposed — not started |
 | C29 | 6–7 | Template rewrite: sections, `lbf` / `claim` macros, palette, "Scanned quality" (HTML / BBcode / footer), QC footer + `lb-qc` JSON, 7.5–7.8, lint L2 | C28 | sonnet | L1 / L2, anchor coverage, blank lines <5%; 2b acceptance 1 and 3; `/verify` Tier A on 2010-03-29 + 1965-06-01, light and dark. Done: template renders only from `d.view` (+ `d.qc`), section order Header (date H1, run strip only for runs >1 night) → Verdict → Setlist → Sources → Context + venue card → Related → Provenance; `lbf` (data-lb, inferred / disputed markers, confidence tooltip — source strings left out, they carry internal derivation text) and `claim` (`data-claim`) macros; T4 sentences wrap exactly their claim-derived segment runs (`dossier_claims.sentence_segment_groups`); scalar / row claims render beside their value (`claim_texts_for`: rotation rank, song premieres, runner-up and alternate axes); ledger rows are plain text, with `best_transfer` → "preferred transfer within its tape family" and `solo` → "single circulating copy" (`ledger_detail_text`); warm `--pick` tokens; "Scanned quality" in HTML / BBcode / footer; QC footer + withheld list + `lb-qc` JSON; 7.5 empty-column suppression and "no rating on file"; no review badge; blank lines 0.4–0.7%. Anchor coverage 96/97 (`show.newest_source_date` is a D-12 null stub). **New convention:** `data-verbatim` marks quoted source text (song titles, LB lineage, bobtalk, Olof session notes, xref cards); `lint_l1` skips it like claim spans — a 300-date sweep found 128 L1 hits on 276 pages before (song titles "At Last", LB lineage "unknown taper", Olof "The only 2005 performance"), 29 after (all `song[].bobtalk`, then marked too). `source_character` now drops the scorer's "Best / Weakest in group for X." sentences (scan-sibling ranking, never claim-verified). A curator correction renders `stated` with a tooltip naming Olof's original, not `inferred`. Route always lints. 2b acceptance 1 (LB-08493 R-T1 `fixed`, Millard gone, footer "2 withheld") and 3 (Wille → Willie tooltip, revoke restores) checked against the live backend; screenshots light + dark for both dates, 0 console errors. Review fixes over sonnet's cut: wrong section order and H1; no L2 test; ledger text laundered through `claim()`; scalar claims never rendered; runner-up / alternates read nonexistent keys (rendered blank); rotation labelled "across the tour" (it is vs the previous show); `&amp;middot;` double escaping; a non-anchor Score column; raw taper dict; black map (no `.loc-map` CSS); duplicated broadcast annotations. 613 tests (7 dossier suites + corroborate) | done |
 | C30 | 7 | Compact map: `marker` param, ~240×150, venue card, `view.venue.coords`, L1 pin rule | C29 | sonnet | 2010-03-29 hollow ring; one verified-`high` show gets a solid pin. Done (orch.): `_render_locator_svg(marker=)` — `venue` = pin-dot + halo, `city_centre` = hollow `pin-ring`, no halo; the svg carries `data-marker`; compact 240×150 (`_MAP_COMPACT_W/H`), D1 `show.map_svg` unchanged (300×210, solid). `dossier_anchors._set_venue_map` renders from `venue.coords` into `view["map_svg"]` (kept by `filter_view` only while `venue.map` isn't withheld); no map without a host country (`show.map_focus`). Template reads `d.view.map_svg`. L1 now also checks the **drawn** marker of the card's svg against `data-venue-basis` and `data-map-pin`. Fix found live: G4 withheld `venue.coords`/`venue.map` on R-G1 even after the anchor had fallen back to setlist.fm's city centre, so 2010-03-29 (the accept case) drew no map at all — R-G1 now withholds only a `venue`-basis map. Accept: 2010-03-29 hollow ring captioned "city centre (setlist.fm)"; **1986-06-22 Reunion Arena, Dallas** (Wikidata `high`, no R-G1) solid pin. 300-date sweep (seed 342): 177 hollow / 95 solid / 28 no map, 0 map lint violations. Screenshots light + dark in `.debug/c30/`. Plan's "`display_name` matches the venue name" clause not implemented: `venue_geocoded` has no display name (Wikidata rows note only "P625"); R-G1 covers the mismatch. Seen, not C30: Dallas city history lists a venue named "29939" (D-07 input data). 7 tests in `tests/test_dossier_map.py` + 1 in `test_dossier_qc.py` | done |
-| C31 | 8 | `tools/make_fixture_db.py` + golden-set harness, run in CI | C30 | sonnet | harness runs green on placeholder files | todo |
+| C31 | 8 | `tools/make_fixture_db.py` + golden-set harness, run in CI | C30 | sonnet | harness runs green on placeholder files. Done: 15 specs, `--check` 15/15 fixture == live, 16 tests pass | done |
 | C32 | 8 | Golden values for the 15 shows | C31 | orch. | **Sign-off: tj hand-verifies every file** | todo |
 | C33 | 8 | `tools/dossier_sweep.py` + nightly cron + push on rise; `tools/dossier_verify_export.py` | C28 | sonnet | sweep report written; export drift detected on a doctored file | todo |
 | C34 | 8 | Full verification in the Phase 8 order of checks, incl. `/verify --electron` PDF | C32, C33 | orch. | `--all` PASS; sweep totals in CHANGELOG | todo |

@@ -260,7 +260,8 @@ losslessbob/
 ├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only; bundled inside Electron AppImage
 ├── tools/
 │   ├── ledger.py              # CLI: BUG/TODO ledger ops (next-id, bug-open/close, todo-open/close, --dry-run); used by /session-close
-│   ├── make_fixture_db.py    # CLI: builds a deterministic synthetic install (~101 entries) for CI/onboarding tests, no real data required (TODO-261)
+│   ├── make_fixture_db.py    # CLI: builds a deterministic synthetic install (~101 entries) for CI/onboarding tests, no real data required (TODO-261); --golden instead cuts the show-dossier golden fixture (tests/golden/dossier/fixture.jsonl.gz) from live data for the spec dates, private-entry metadata scrubbed (TODO-342 C31)
+│   ├── dossier_golden.py     # CLI + helpers for the dossier golden set: load_fixture(), snapshot() (anchor value/confidence/source + rows + claims + map marker + gate outcome, timestamps stripped), --check (fixture vs live per spec, must be 15/15 before committing a re-cut), --show NAME (snapshot for tj's C32 verification) (TODO-342)
 │   ├── ci_smoke.py           # CLI: builds a fixture DB, boots the real backend against it, curls 4 boot-smoke routes — used by ci.yml's backend-smoke job (TODO-261)
 │   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
 │   ├── import_curated_lists.py # CLI: import curator "best of" picks (TODO-181) — carbonbit's FLglist.xlsx + 10haaf's dylan_boots.zip/years.zip → curated_lists/curated_list_entries
