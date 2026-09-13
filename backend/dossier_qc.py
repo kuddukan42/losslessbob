@@ -424,8 +424,17 @@ def _run_g4_venue(gate: _Gate, show_venue: str | None, show_city: str | None) ->
         if scalars is None:
             log.warning("dossier_qc: G4 -- unrecognised error rule %r for venue", rule_id)
             continue
+        if rule_id == "R-G1" and _coords_basis(gate.view) != "venue":
+            # The anchor already fell back to setlist.fm's city centre (hollow ring);
+            # the discredited geocode isn't on the page, so nothing to withhold.
+            continue
         for key in scalars:
             gate.withhold_field(key, rule_id)
+
+
+def _coords_basis(view: dict) -> str | None:
+    coords = (view.get("fields", {}).get("venue.coords") or {}).get("value")
+    return coords.get("basis") if isinstance(coords, dict) else None
 
 
 def _run_g4_olof_song(gate: _Gate, event_id: int | None) -> None:
@@ -857,6 +866,9 @@ _L1_PHRASES = ("taper unknown", "unknown taper", "independent tapes", "none inde
 _L1_BARE_WORDS = ("only", "highest", "best", "biggest", "first", "last", "closing")
 _DATA_LB_RE = re.compile(r'data-lb="([^"]*)"')
 _MAP_PIN_RE = re.compile(r'data-map-pin="(solid|hollow)"[^>]*?data-venue-basis="([^"]*)"')
+_LOC_MAP_RE = re.compile(r'<svg class="loc-map".*?</svg>', re.DOTALL)
+# The card's SVG follows its opening tag directly; don't pair a card with a later map.
+_MAP_SVG_WINDOW = 200
 
 
 def lint_l1(html: str) -> list[str]:
@@ -889,6 +901,17 @@ def lint_l1(html: str) -> list[str]:
         if kind == "solid" and basis != "venue":
             violations.append(
                 f"solid map pin rendered with venue.coords.basis={basis!r} (must be 'venue')")
+        # The card's attribute can be right while the SVG inside draws a solid pin anyway
+        # (pre-C30 locator): check the drawn marker of the card's own map.
+        svg = _LOC_MAP_RE.search(html, m.end())
+        if svg and (svg.start() - m.end()) < _MAP_SVG_WINDOW:
+            drawn_solid = 'class="pin-dot"' in svg.group(0)
+            if drawn_solid and basis != "venue":
+                violations.append(
+                    f"map SVG draws a solid pin with venue.coords.basis={basis!r}")
+            if (kind == "solid") != drawn_solid:
+                violations.append(
+                    f"map SVG marker disagrees with data-map-pin={kind!r}")
     return violations
 
 

@@ -609,6 +609,23 @@ class TestLintL1:
         good = '<div data-map-pin="solid" data-venue-basis="venue"></div>'
         assert lint_l1(good) == []
 
+    def test_drawn_marker_must_match_basis(self):
+        """C30: the SVG inside the card is checked, not just the card's attribute."""
+        from backend.dossier import _render_locator_svg
+        from backend.dossier_qc import lint_l1
+
+        def card(kind, basis, marker):
+            svg = _render_locator_svg(35.63, 139.79, "Japan", 400, 240, 150, marker=marker)
+            return (f'<div class="venue-card" data-map-pin="{kind}" '
+                    f'data-venue-basis="{basis}">\n      {svg}</div>')
+
+        assert lint_l1(card("hollow", "city_centre", "city_centre")) == []
+        assert lint_l1(card("solid", "venue", "venue")) == []
+        # The pre-C30 bug: attribute says hollow, SVG still draws the solid pin.
+        bad = lint_l1(card("hollow", "city_centre", "venue"))
+        assert any("draws a solid pin" in v for v in bad)
+        assert any("disagrees" in v for v in lint_l1(card("solid", "venue", "city_centre")))
+
 
 class TestLintDataLb:
     def test_unknown_anchor_flagged(self):

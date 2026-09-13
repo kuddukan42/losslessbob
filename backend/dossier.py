@@ -120,6 +120,10 @@ _WORLD_GEOJSON_PATH = os.path.join(
 _DEFAULT_MAP_SCALE = 400
 _MAP_W = 300
 _MAP_H = 210
+# Compact locator inside the redesigned dossier's venue card (plan Phase 7).
+_MAP_COMPACT_W = 240
+_MAP_COMPACT_H = 150
+MAP_MARKERS = ("venue", "city_centre")
 # d3.geoMercator clips latitude to this value (map becomes square); clamp to it
 # so near-polar geometry doesn't blow up the log-tangent.
 _MERCATOR_LAT_CLAMP = 85.05112878
@@ -193,7 +197,8 @@ def _mainland_bbox(feature: dict) -> tuple[float, float, float, float] | None:
 
 
 def _render_locator_svg(lat: float, lng: float, focus: str | None, scale: float,
-                        width: int = _MAP_W, height: int = _MAP_H) -> str | None:
+                        width: int = _MAP_W, height: int = _MAP_H,
+                        marker: str = "venue") -> str | None:
     """Pre-render a country-locator map framing the host country, as inline SVG.
 
     When *focus* resolves to a bundled country feature, the map auto-fits that
@@ -211,12 +216,17 @@ def _render_locator_svg(lat: float, lng: float, focus: str | None, scale: float,
         scale: d3 Mercator scale (zoom) for the no-host fallback only.
         width: SVG viewbox width in px.
         height: SVG viewbox height in px.
+        marker: ``"venue"`` draws a solid pin + halo (verified venue
+            coordinates); ``"city_centre"`` draws a hollow ring with no halo
+            (city-level coordinates only).
 
     Returns:
         An ``<svg class="loc-map">`` string whose fills are driven by the
         template's CSS custom properties (so it recolors for dark/print), or
         ``None`` if the geometry asset is unavailable.
     """
+    if marker not in MAP_MARKERS:
+        raise ValueError(f"unknown map marker {marker!r}")
     features = _world_features()
     if not features:
         return None
@@ -298,7 +308,7 @@ def _render_locator_svg(lat: float, lng: float, focus: str | None, scale: float,
 
     pin_x, pin_y = _project(lng, lat)
     out = [
-        f'<svg class="loc-map" viewBox="0 0 {width} {height}" '
+        f'<svg class="loc-map" data-marker="{marker}" viewBox="0 0 {width} {height}" '
         f'preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">',
         f'<rect class="map-ocean" x="0" y="0" width="{width}" height="{height}"/>',
     ]
@@ -306,11 +316,14 @@ def _render_locator_svg(lat: float, lng: float, focus: str | None, scale: float,
     # Host drawn after land so neighbours don't overpaint it; keeps map-land
     # stroke, map-host fill wins by later CSS source order.
     out += [f'<path class="map-land map-host" d="{d}"/>' for d in host]
-    out += [
-        f'<circle class="pin-halo" cx="{pin_x:.1f}" cy="{pin_y:.1f}" r="13"/>',
-        f'<circle class="pin-dot" cx="{pin_x:.1f}" cy="{pin_y:.1f}" r="4.5"/>',
-        "</svg>",
-    ]
+    if marker == "venue":
+        out += [
+            f'<circle class="pin-halo" cx="{pin_x:.1f}" cy="{pin_y:.1f}" r="13"/>',
+            f'<circle class="pin-dot" cx="{pin_x:.1f}" cy="{pin_y:.1f}" r="4.5"/>',
+        ]
+    else:
+        out.append(f'<circle class="pin-ring" cx="{pin_x:.1f}" cy="{pin_y:.1f}" r="6"/>')
+    out.append("</svg>")
     return "".join(out)
 
 

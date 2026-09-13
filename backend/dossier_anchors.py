@@ -397,6 +397,7 @@ def build_view(
     _build_context(vb, d1, conn, event_id, date_iso)
 
     view = vb.finalize()
+    view["map_svg"] = vb.ctx.get("map_svg")
     vb.ctx.update(event_id=event_id, visible_lbs=visible_lbs)
     from backend.dossier_claims import attach_claims
 
@@ -1095,8 +1096,7 @@ def _build_venue_geo(vb, conn, show) -> None:
                 vb.set_field("venue.coords", build_field(
                     {"lat": row["lat"], "lng": row["lon"], "basis": "venue"},
                     1, "venue_geocoded (verified)", "stated"))
-                vb.set_field("venue.map", build_field(
-                    "venue", 1, "compact locator (solid pin)", "stated"))
+                _set_venue_map(vb, show, row["lat"], row["lon"], "venue")
                 return
 
     if "lat" in show and "lng" in show:
@@ -1104,8 +1104,28 @@ def _build_venue_geo(vb, conn, show) -> None:
             {"lat": show["lat"], "lng": show["lng"], "basis": "city_centre",
              "label": "city centre (setlist.fm)"},
             1, "setlist.fm city centroid", "stated"))
-        vb.set_field("venue.map", build_field(
-            "city_centre", 1, "compact locator (hollow ring)", "stated"))
+        _set_venue_map(vb, show, show["lat"], show["lng"], "city_centre")
+
+
+def _set_venue_map(vb, show: dict, lat: float, lng: float, marker: str) -> None:
+    """Render the compact venue-card locator; the marker kind mirrors the coords basis.
+
+    No map when the host country is unknown (``show.map_focus`` unset) or the
+    geometry asset is missing -- ``venue.map`` then keeps its "no map" fallback.
+    The SVG is parked in ``vb.ctx["map_svg"]`` and lifted to ``view["map_svg"]``.
+    """
+    from backend.dossier import _MAP_COMPACT_H, _MAP_COMPACT_W, _render_locator_svg
+
+    focus = show.get("map_focus")
+    if not focus:
+        return
+    svg = _render_locator_svg(lat, lng, focus, show.get("map_scale") or 400,
+                              width=_MAP_COMPACT_W, height=_MAP_COMPACT_H, marker=marker)
+    if not svg:
+        return
+    label = "solid pin" if marker == "venue" else "hollow ring"
+    vb.set_field("venue.map", build_field(marker, 1, f"compact locator ({label})", "stated"))
+    vb.ctx["map_svg"] = svg
 
 
 def _fill_prov_local_fields(view: dict) -> None:
@@ -1169,6 +1189,9 @@ def filter_view(view: dict, sections: set[str] | None = None,
         rows[prefix] = new_rows
 
     out = {"fields": fields, "rows": rows}
+    map_f = fields.get("venue.map")
+    if view.get("map_svg") and map_f and map_f["confidence"] not in ("withheld", "unavailable"):
+        out["map_svg"] = view["map_svg"]
     if "claims" in view:
         out["claims"] = [
             c for c in view["claims"]
