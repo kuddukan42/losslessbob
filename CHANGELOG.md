@@ -1,3 +1,14 @@
+[2026-09-13] — Show dossier C30: compact venue map with honest marker
+Changed: backend/dossier.py: _render_locator_svg(marker="venue"|"city_centre") — solid pin +
+  halo vs hollow ring; svg carries data-marker; compact 240×150 constants. D1 map unchanged.
+Changed: backend/dossier_anchors.py: _set_venue_map renders from venue.coords into
+  view["map_svg"] (no map without a host country); filter_view keeps it unless withheld.
+Changed: backend/templates/dossier.html: venue card reads d.view.map_svg; 150px map, pin-ring CSS.
+Fixed: backend/dossier_qc.py: G4 R-G1 withheld the setlist.fm city-centre map too (2010-03-29
+  showed no map); now withholds only a venue-basis map. lint_l1 checks the drawn svg marker.
+Added: tests/test_dossier_map.py (6), lint case in tests/test_dossier_qc.py. 300-date sweep:
+  177 hollow / 95 solid / 28 no map, 0 map lint violations.
+
 [2026-09-12] — Show dossier C29: template rewrite on the view model
 Changed: backend/templates/dossier.html: renders only from dossier["view"] + ["qc"]; section
   order Header → Verdict → Setlist → Sources → Context/venue → Related → Provenance; lbf/claim

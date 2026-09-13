@@ -62,7 +62,7 @@ h2 .credit a:hover{color:var(--accent-hi);text-decoration:none;border-bottom-col
 .context .label{font-family:var(--sans);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);display:block;margin-bottom:.15rem}
 .context .bobtalk{border-left:3px solid var(--accent);padding:.15rem 0 .15rem 1rem;font-style:italic}
 .venue-card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
-.loc-map{--map-land:#273553;--map-host:#33477a;--map-line:#3d4f7c;--map-ocean:#101828;--pin:#5b8df2;width:100%;height:210px;display:block;background:var(--map-ocean)}
+.loc-map{--map-land:#273553;--map-host:#33477a;--map-line:#3d4f7c;--map-ocean:#101828;--pin:#5b8df2;width:100%;height:150px;display:block;background:var(--map-ocean)}
 html[data-theme="light"] .loc-map{--map-land:#e6eefb;--map-host:#bcd2ee;--map-line:#9bb9e0;--map-ocean:#cfdff2;--pin:#2b5fd0}
 .loc-map .map-ocean{fill:var(--map-ocean)}
 .loc-map .map-land{fill:var(--map-land);stroke:var(--map-line);stroke-width:.4px}
@@ -70,6 +70,7 @@ html[data-theme="light"] .loc-map{--map-land:#e6eefb;--map-host:#bcd2ee;--map-li
 .loc-map .pin-halo{fill:var(--pin);opacity:.2}
 .loc-map .pin-dot{fill:var(--pin);stroke:#131c2e;stroke-width:1.5px}
 html[data-theme="light"] .loc-map .pin-dot{stroke:#fff}
+.loc-map .pin-ring{fill:none;stroke:var(--pin);stroke-width:2.25px}
 .venue-map{width:100%;height:150px;display:block;background:var(--map-ocean)}
 .venue-map .map-ocean{fill:var(--map-ocean)}
 .venue-map .map-land{fill:var(--map-land);stroke:var(--map-line);stroke-width:.4px}
@@ -616,7 +617,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 {%- set venue_map_f = fields.get('venue.map') -%}
 {%- set venue_coords_f = fields.get('venue.coords') -%}
 {%- set has_map = venue_map_f and venue_map_f.confidence not in ('withheld', 'unavailable')
-    and venue_map_f.value in ('venue', 'city_centre') and d.show is defined and d.show.map_svg -%}
+    and venue_map_f.value in ('venue', 'city_centre') and d.view.map_svg -%}
 {%- set has_context = (chronicle_f and chronicle_f.value) or (bobtalk_f and bobtalk_f.confidence != 'unavailable')
     or (notes_f and notes_f.value) -%}
 {%- if has_context or has_map %}
@@ -642,7 +643,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   <section style="margin-top:0">
     <h2><span>Venue</span><span class="line"></span><span class="credit">coordinates: {% if basis == 'city_centre' %}<a href="https://www.setlist.fm" target="_blank" rel="noopener">setlist.fm</a> &#8599;{% else %}venue geocode{% endif %}</span></h2>
     <div class="venue-card" data-map-pin="{{ pin_kind }}" data-venue-basis="{{ basis }}">
-      {{ d.show.map_svg | safe }}
+      {{ d.view.map_svg | safe }}
       <div class="venue-meta">
         <div class="name">{{ lbf('venue.name') }}</div>
         {%- set vcity = fields.get('venue.city') -%}
