@@ -1,3 +1,15 @@
+[2026-09-13] — Show dossier C31: golden-set harness on a live-data fixture
+Added: tests/golden/dossier/: 15 placeholder specs (spec samples incl. 1990-01-25 + one per
+  stress category) and fixture.jsonl.gz (~4 MB), cut from live data; private entries' metadata
+  and checksums scrubbed (tj 2026-09-13, public repo).
+Added: tools/make_fixture_db.py --golden: deterministic cut — whole history tables, one skeleton
+  entry per other date, all scans kept but asserts scored_scan_id unchanged, lb_master rows so
+  init_db's backfill thread doesn't race the builds.
+Added: tools/dossier_golden.py: load_fixture (runs ranker ensure_schema; raises on dropped
+  columns), snapshot, --check (fixture == live: 15/15), --show for C32 verification.
+Added: tests/test_dossier_golden.py (16): specs build unambiguously with all scalar anchors;
+  a spec with expected + verified_by is pinned, any diff fails. Runs in CI.
+
 [2026-09-13] — Show dossier C30: compact venue map with honest marker
 Changed: backend/dossier.py: _render_locator_svg(marker="venue"|"city_centre") — solid pin +
   halo vs hollow ring; svg carries data-marker; compact 240×150 constants. D1 map unchanged.
