@@ -1168,7 +1168,7 @@ def render_bbcode(view: dict) -> str:
                 if m.get("pick"):
                     bits.append(f"pick #{m['pick']['rank']}")
                 if m.get("quality"):
-                    bits.append(f"AI grade {m['quality']['grade']}")
+                    bits.append(f"Scanned quality {m['quality']['grade']}")
                 lines.append(" — ".join(bits))
 
     if view.get("recommendation"):

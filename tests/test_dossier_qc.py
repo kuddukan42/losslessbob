@@ -589,6 +589,14 @@ class TestLintL1:
         html = '<span data-claim="x">the only soundboard</span>'
         assert lint_l1(html) == []
 
+    def test_verbatim_source_text_ok(self):
+        # C29: quoted source text (a song title, LB lineage) is not generated wording.
+        from backend.dossier_qc import lint_l1
+        html = ('<span data-lb="song[].title" data-verbatim>Seeing The Real You At Last</span>'
+                '<span data-verbatim>Videoregistration from unknown taper.</span>')
+        assert lint_l1(html) == []
+        assert any("last" in v for v in lint_l1("<p>Seeing The Real You At Last</p>"))
+
     def test_bare_superlative_outside_claim_flagged(self):
         from backend.dossier_qc import lint_l1
         html = "<p>this is the best recording</p>"

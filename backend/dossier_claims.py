@@ -181,6 +181,151 @@ def claim_text(claim: Claim) -> str:
     return segments_text(claim_segments(claim))
 
 
+def claim_texts_for(
+    view: Mapping, anchor: str, row: object = None, axis: str | None = None,
+) -> list[str]:
+    """Rendered text of every Claim attached to one scalar/row anchor (C29 template use).
+
+    ``view["claims"]`` entries are ``{"anchor", "row", "claim"}`` (C26/C27); a scalar
+    anchor (``stats.rotation_rank``) has ``row=None``, a per-song anchor
+    (``song[].premiere``) has ``row=<position>``, ``verdict.vs_runner_up`` has
+    ``row=<field>`` and ``verdict.alternates[]`` has ``row=<lb_number>`` -- the last of
+    those can carry several claims per row (one per D-08 axis), so *axis* narrows to
+    the claim whose ``verified_by`` ends in that axis (``"D-08 scan"`` -> ``"scan"``).
+
+    Args:
+        view: The (possibly filtered) view dict carrying ``"claims"``.
+        anchor: The anchor key to match.
+        row: The row key to match (``None`` for a scalar anchor).
+        axis: If given, keep only claims whose ``verified_by`` ends with this axis.
+
+    Returns:
+        Rendered claim text, in the order the claims were attached. Empty when there
+        is no matching, verified Claim -- the template must fall back to the plain
+        value with no comparative wording.
+    """
+    out: list[str] = []
+    for entry in view.get("claims") or []:
+        if entry["anchor"] != anchor or entry.get("row") != row:
+            continue
+        c = entry["claim"]
+        if axis is not None and c.get("verified_by", "").rsplit(" ", 1)[-1] != axis:
+            continue
+        out.append(claim_text(c))
+    return out
+
+
+_LEDGER_KIND_LABELS: dict[str, str] = {
+    # The pick engine's own wording for these two kinds is comparative/exclusive
+    # ("best transfer in its family", "only surviving circulating copy") -- an L1
+    # bare word the template may not print outside a verified Claim, and there is no
+    # Claim object backing show_picks.evidence_json rows to verify it against. Fixed,
+    # non-superlative copy stands in; every other kind's detail already reads as a
+    # plain fact (a rating, a list name, a scan score, a taper's reputation, ...).
+    "best_transfer": "preferred transfer within its tape family",
+    "solo": "single circulating copy",
+}
+
+
+def ledger_detail_text(ev: Mapping) -> str:
+    """Display text for one ``ledger[]`` evidence row (C29 template use).
+
+    Args:
+        ev: One ``show_picks.evidence_json`` row, ``{"kind", "detail", "points"}``.
+
+    Returns:
+        The fixed label for a comparative/exclusive *kind* (see
+        :data:`_LEDGER_KIND_LABELS`); every other kind's ``detail`` verbatim.
+    """
+    return _LEDGER_KIND_LABELS.get(ev.get("kind"), ev.get("detail", ""))
+
+
+def sentence_claim_spans(value: Mapping, claims: list[Claim]) -> list[tuple[int, int]]:
+    """Index ranges within a T4 sentence's ``segments`` contributed by a Claim (C29).
+
+    ``verdict_why``/``chronicle`` build each sentence by concatenating whole
+    ``claim_segments(claim)`` runs (plus plain-field/separator segments) into one flat
+    list, so a claim's own rendering always appears as a contiguous, exact run of
+    ``Segment`` dicts inside ``value["segments"]``. The template needs those run
+    boundaries to wrap comparative text in a ``data-claim`` span (spec: "the only way
+    comparative text reaches the page") without re-deriving or duplicating wording.
+
+    Args:
+        value: A T4 Field's value, ``{"segments": [...], "text": ..., "claims": [...]}``.
+        claims: The Claims actually used for this sentence (``view["claims"]`` entries
+            whose ``anchor`` matches this Field, in the same order they were applied).
+
+    Returns:
+        ``[(start, end), ...]`` half-open index ranges into ``value["segments"]``, in
+        ascending, non-overlapping order. A claim with no match (e.g. its wording
+        wasn't actually used in this sentence) is skipped.
+    """
+    def _norm_first(run: list[Segment]) -> list[Segment]:
+        # chronicle() upper-cases the very first character of the whole sentence in
+        # place (its own clause[0][0] mutation), which is otherwise indistinguishable
+        # from a fresh claim_segments() re-render -- lower-case both sides' opening
+        # character before comparing so that capitalisation alone doesn't break the
+        # match.
+        if not run or not run[0]["text"]:
+            return run
+        first = run[0]
+        return [Segment(text=first["text"][:1].lower() + first["text"][1:],
+                         slot=first["slot"], inferred=first["inferred"]), *run[1:]]
+
+    segs = value.get("segments") or []
+    spans: list[tuple[int, int]] = []
+    search_from = 0
+    for c in claims:
+        target = claim_segments(c)
+        if not target:
+            continue
+        n = len(target)
+        target_norm = _norm_first(target)
+        for i in range(search_from, len(segs) - n + 1):
+            if segs[i:i + n] == target or _norm_first(segs[i:i + n]) == target_norm:
+                spans.append((i, i + n))
+                search_from = i + n
+                break
+    return spans
+
+
+def sentence_segment_groups(key: str, field: Mapping | None, view: Mapping | None) -> list[dict]:
+    """Template-facing wrapper of :func:`sentence_claim_spans` (C29 Jinja global).
+
+    Args:
+        key: The T4 anchor key (``"verdict.why"`` / ``"context.chronicle"``).
+        field: That anchor's Field (``view["fields"][key]``), or ``None``.
+        view: The (possibly filtered) view dict carrying ``"claims"``.
+
+    Returns:
+        ``[{"claim": bool, "segments": [Segment, ...]}, ...]`` covering every
+        segment in order -- consecutive claim-derived segments are merged into one
+        group so the template wraps each contiguous run in a single ``data-claim``
+        span. Empty when *field* has no usable sentence value.
+    """
+    if not field or not isinstance(field.get("value"), dict):
+        return []
+    value = field["value"]
+    segs = value.get("segments") or []
+    if not segs:
+        return []
+    claims = [
+        e["claim"] for e in (view.get("claims") or []) if view is not None and e["anchor"] == key
+    ] if view else []
+    spans = sentence_claim_spans(value, claims)
+    in_claim = [False] * len(segs)
+    for start, end in spans:
+        for i in range(start, end):
+            in_claim[i] = True
+    groups: list[dict] = []
+    for i, seg in enumerate(segs):
+        if groups and groups[-1]["claim"] == in_claim[i]:
+            groups[-1]["segments"].append(seg)
+        else:
+            groups.append({"claim": in_claim[i], "segments": [seg]})
+    return groups
+
+
 # ---------------------------------------------------------------------------
 # Comparators
 # ---------------------------------------------------------------------------

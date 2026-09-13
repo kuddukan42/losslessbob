@@ -851,6 +851,8 @@ def _run_g8_channel(gate: _Gate, channel: str, d1: dict, pick_lb: int | None) ->
 # ---------------------------------------------------------------------------
 
 _CLAIM_SPAN_RE = re.compile(r"<([a-zA-Z0-9]+)([^>]*\bdata-claim\b[^>]*)>.*?</\1>", re.DOTALL)
+_VERBATIM_SPAN_RE = re.compile(
+    r"<([a-zA-Z0-9]+)([^>]*\bdata-verbatim\b[^>]*)>.*?</\1>", re.DOTALL)
 _L1_PHRASES = ("taper unknown", "unknown taper", "independent tapes", "none indexed")
 _L1_BARE_WORDS = ("only", "highest", "best", "biggest", "first", "last", "closing")
 _DATA_LB_RE = re.compile(r'data-lb="([^"]*)"')
@@ -872,7 +874,9 @@ def lint_l1(html: str) -> list[str]:
         Human-readable violation strings, empty if clean.
     """
     violations: list[str] = []
-    stripped = _CLAIM_SPAN_RE.sub("", html)
+    # Quoted source text (song titles, LB lineage, Olof's notes, xref page names) is
+    # marked data-verbatim: "Seeing The Real You At Last" is not a generated claim.
+    stripped = _VERBATIM_SPAN_RE.sub("", _CLAIM_SPAN_RE.sub("", html))
     lower = stripped.lower()
     for phrase in _L1_PHRASES:
         if phrase in lower:

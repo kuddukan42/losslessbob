@@ -2441,6 +2441,7 @@ _VERDICT_FLAGS_RE = re.compile(
     r"Flags:\s*(.*?)\.(?=\s*(?:Best in group|Weakest in group)|\s*$)", re.DOTALL,
 )
 _SOUNDS_PREFIX_RE = re.compile(r"^Sounds\s+", re.IGNORECASE)
+_RELATIVE_RANK_RE = re.compile(r"\b(?:Best|Weakest) in group for [^.]*\.?", re.IGNORECASE)
 
 
 class SourceCharacter(TypedDict):
@@ -2493,6 +2494,10 @@ def source_character(conn: sqlite3.Connection, lb_number: int) -> SourceCharacte
                 if f.strip()
             ]
             text = re.sub(r"\s{2,}", " ", text[:m.start()] + text[m.end():]).strip()
+        # The scorer's "Best / Weakest in group for X." sentences rank the LB against
+        # its scan siblings -- a comparison the claim engine never verified, and scoped
+        # to a different set than the dossier's visible sources (L1 lint).
+        text = re.sub(r"\s{2,}", " ", _RELATIVE_RANK_RE.sub("", text)).strip()
         text = _SOUNDS_PREFIX_RE.sub("", text).strip().rstrip(".").strip()
         character = text or None
 
