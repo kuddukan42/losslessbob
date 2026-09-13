@@ -887,6 +887,30 @@ def _sort_within_families(
     return ordered
 
 
+def _primary_display_ranks(
+    visible_members: list[tuple[int, dict, dict]], classes: dict[int, dict],
+) -> dict[int, int]:
+    """Number the ranked primary sources 1..n in ``show_picks.pick_rank`` order.
+
+    The ranker scores fragments too, so its raw rank 1 can be a fragment the
+    C27 verdict never picks -- the page then showed the pick as "#2" with no
+    #1 in sight (1963-10-26). Fragments and no-match sources get no rank.
+
+    Args:
+        visible_members: ``(lb, member, bucket)`` triples.
+        classes: :func:`_classify_sources`'s result (an LB missing from it is primary).
+
+    Returns:
+        ``{lb: display_rank}`` for primary sources with a raw pick rank.
+    """
+    ranked = sorted(
+        (member["pick"]["rank"], lb) for lb, member, _ in visible_members
+        if (member.get("pick") or {}).get("rank") is not None
+        and classes.get(lb, {}).get("group", "primary") == "primary"
+    )
+    return {lb: i for i, (_, lb) in enumerate(ranked, start=1)}
+
+
 def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
                     classes) -> None:
     visible_members = _sort_within_families(visible_members, conn)
@@ -913,6 +937,8 @@ def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
         vb.set_field("sources.tape_count", build_field(
             f"{len(analysed_buckets)} tape groups", 1,
             "recording_families (every visible source analysed)", "stated"))
+
+    display_rank = _primary_display_ranks(visible_members, classes)
 
     for lb, member, _bucket in visible_members:
         row = vb.row("source", lb)
@@ -987,10 +1013,10 @@ def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
         if curated:
             row["curated_in[]"] = build_field(curated, 1, "curated_lists", "stated")
 
-        pick_data = member.get("pick")
-        if pick_data and pick_data.get("rank") is not None:
-            row["rank"] = build_field(pick_data["rank"], 1, "show_picks.pick_rank (raw)",
-                                       "stated")
+        if lb in display_rank:
+            row["rank"] = build_field(
+                display_rank[lb], 1, "show_picks.pick_rank, renumbered among primary sources",
+                "stated", ["show_picks.pick_rank"])
 
         # D-12 null stub -- always the fallback.
         row["added"] = build_fallback_field(ANCHORS["source[].added"])

@@ -1,3 +1,9 @@
+TODO-344: Show-pick ranker ignores setlist completeness — fragments outrank complete sources
+Priority: Medium
+Status: Open
+Added: 2026-09-13
+Description: compute_show_picks scores every source without D-01 completeness, so a fragment can take pick_rank 1: 1963-10-26 LB-03216 (65 min, 26% of the setlist) ranks #1 over three complete sources. The dossier's C27 verdict already skips fragments and (as of 2026-09-13) renumbers only primary sources, but show_picks itself, and everything else that reads it (Library picks, recommendation), still leads with the fragment. Fix needs a corpus-wide recompute plus a before/after diff of rank-1 changes for tj. Found reviewing the C32 golden dossiers.
+
 TODO-343: Validate the TUIT uploader end-to-end — one manual upload, then one --apply run
 Priority: High
 Status: Open
