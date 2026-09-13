@@ -509,12 +509,16 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   {%- for s in side %}{% set _ = side_members.append(s) %}{% endfor -%}
 {%- endfor -%}
 {%- set visible_n = visible_n_f.value if visible_n_f and visible_n_f.value else 9999 -%}
-{%- set shown_buckets = [] -%}{%- set collapsed_buckets = [] -%}{%- set seen = namespace(n=0) -%}
-{%- for b in primary_buckets -%}
-  {%- if seen.n < visible_n %}{% set _ = shown_buckets.append(b) %}
-  {%- else %}{% set _ = collapsed_buckets.append(b) %}{% endif -%}
-  {%- set seen.n = seen.n + (b.members | length) -%}
-{%- endfor -%}
+{# Rows run in rank order (tj 2026-09-13: whole-family collapse hid #3/#4 while showing
+   #5/#6). A family band prints whenever the family changes from the row above. #}
+{%- set prim_rows = [] -%}
+{%- for b in primary_buckets %}{% for e in b.members -%}
+  {%- set rk = e.r.rank.value if e.r.rank is defined and e.r.rank.value is not none else 9999 -%}
+  {%- set _ = prim_rows.append({'e': e, 'fam': b.fam, 'fam_n': b.members | length, 'rk': rk}) -%}
+{%- endfor %}{% endfor -%}
+{%- set prim_rows = prim_rows | sort(attribute='rk') -%}
+{%- set shown_rows = prim_rows[:visible_n] -%}
+{%- set collapsed_rows = prim_rows[visible_n:] -%}
 {# any-non-empty flag per optional column, so an entirely-empty column is dropped (7.5) #}
 {%- set col = namespace(type=false, rating=false, runtime=false, grade=false, pick=false) -%}
 {%- for b in primary_buckets %}{% for e in b.members %}
@@ -530,16 +534,19 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   <div class="tbl-scroll"><table class="sources">
     <thead><tr><th>Source</th>{% if col.type %}<th class="c">Type</th>{% endif %}{% if col.rating %}<th class="c">LB rating</th>{% endif %}{% if col.runtime %}<th class="c">Length</th>{% endif %}{% if col.grade %}<th class="c">Scanned quality</th>{% endif %}{% if col.pick %}<th class="c">Rank</th>{% endif %}</tr></thead>
     <tbody>
-      {%- for b in shown_buckets %}
       {%- set ncols = 1 + (1 if col.type else 0) + (1 if col.rating else 0) + (1 if col.runtime else 0) + (1 if col.grade else 0) + (1 if col.pick else 0) -%}
-      {%- if b.fam %}
-      {%- set conf = b.fam.confidence.value if b.fam.confidence is defined else none -%}
+      {%- set band = namespace(prev=none) -%}
+      {%- for x in shown_rows %}
+      {%- set b = {'fam': x.fam, 'members': [x.e]} -%}
+      {%- set fam_key = x.fam.id.value if x.fam else none -%}
+      {%- if x.fam and fam_key != band.prev %}
+      {%- set conf = x.fam.confidence.value if x.fam.confidence is defined else none -%}
       <tr class="fam-head">
         <td colspan="{{ ncols }}">
           <div class="wrap">
             {{ fam_reels() }}
-            <span class="fam-name" data-lb="family[].label" title="{% if b.fam.basis is defined and b.fam.basis.value %}{{ b.fam.basis.value | join('; ') }}{% endif %}">{{ b.fam.label.value }}</span>
-            <span class="fam-sub" data-lb="family[].size">{{ lbf('family[].size', b.fam.get('size'), text=(b.members | length ~ ' source' ~ ('s' if b.members | length != 1 else ''))) }}</span>
+            <span class="fam-name" data-lb="family[].label" title="{% if x.fam.basis is defined and x.fam.basis.value %}{{ x.fam.basis.value | join('; ') }}{% endif %}">{{ x.fam.label.value }}</span>
+            <span class="fam-sub" data-lb="family[].size">{{ lbf('family[].size', x.fam.get('size'), text=(x.fam_n ~ ' source' ~ ('s' if x.fam_n != 1 else ''))) }}</span>
             <span data-lb="family[].id" hidden>{{ b.fam.id.value }}</span>
             <span data-lb="family[].basis" hidden>{% if b.fam.basis is defined and b.fam.basis.value %}{{ b.fam.basis.value | join('; ') }}{% endif %}</span>
             {%- if conf is not none %}
@@ -550,6 +557,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
         </td>
       </tr>
       {%- endif %}
+      {%- set band.prev = fam_key -%}
       {%- for e in b.members %}
       {%- set m, r = e.m, e.r -%}
       {%- set is_pick = pick_lb and r.lb_id.value == pick_lb -%}
@@ -590,9 +598,9 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
       {%- endfor %}
     </tbody>
   </table></div>
-  {%- if collapsed_buckets %}
-  <details class="more-sources"><summary>{{ collapsed_buckets | map(attribute='members') | map('length') | sum }} more source(s)</summary>
-    {%- for b in collapsed_buckets %}{% for e in b.members %}<div>{{ e.r.lb_id.value }}{% if e.r.taper is defined and e.r.taper.value %} &middot; {{ e.r.taper.value.name }}{% endif %}</div>{% endfor %}{% endfor -%}
+  {%- if collapsed_rows %}
+  <details class="more-sources"><summary>{{ collapsed_rows | length }} more source(s)</summary>
+    {%- for x in collapsed_rows %}{% set e = x.e %}<div>{% if x.rk != 9999 %}#{{ x.rk }} &middot; {% endif %}{{ e.r.lb_id.value }}{% if x.fam %} &middot; {{ x.fam.label.value }}{% endif %}{% if e.r.taper is defined and e.r.taper.value %} &middot; {{ e.r.taper.value.name }}{% endif %}</div>{% endfor -%}
   </details>
   {%- endif %}
   {%- if side_members %}

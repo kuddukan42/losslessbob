@@ -1,3 +1,9 @@
+[2026-09-13] — Show dossier: source table runs in rank order
+Changed: backend/templates/dossier.html: primary sources are listed by rank and collapse after
+  sources.visible_n by rank, not whole families — 2024-04-06 showed #1 #2 #5 #6 with #3/#4
+  hidden (tj). A family band prints when the family changes from the row above; the "more
+  sources" list keeps each source's #rank and family.
+
 [2026-09-13] — Show dossier: source ranks count primary sources only
 Fixed: backend/dossier_anchors.py: source[].rank printed raw show_picks.pick_rank, which also
   ranks fragments — 1963-10-26's pick read "#2" with its #1 (LB-03216, a 26% fragment) unranked
