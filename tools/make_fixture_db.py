@@ -14,14 +14,24 @@ Usage::
 
     .venv/bin/python3 tools/make_fixture_db.py --dest data/fixture
     .venv/bin/python3 tools/make_fixture_db.py --dest /tmp/fixture
+    .venv/bin/python3 tools/make_fixture_db.py --golden   # dossier golden-set cut
+
+``--golden`` is the one exception to "all synthetic": the show-dossier golden
+set (plan row C31) is hand-verified against Olof, LB and TUIT, so its fixture is
+cut from the live DB for the dates in tests/golden/dossier/*.json. Private
+entries keep their row shape but lose their metadata (see _PRIVATE_BLANK).
 
 Must be run from the project root (the folder containing backend/ and tools/).
 """
 from __future__ import annotations
 
 import argparse
+import gzip
+import hashlib
+import json
 import logging
 import random
+import sqlite3
 import sys
 from pathlib import Path
 
@@ -383,12 +393,185 @@ def build(dest: Path) -> Path:
     return Path(db_path)
 
 
+# ---------------------------------------------------------------------------
+# Show-dossier golden set (plan row C31, audit Q3) -- a cut of live data
+# ---------------------------------------------------------------------------
+
+GOLDEN_DIR = _PROJECT_ROOT / "tests" / "golden" / "dossier"
+GOLDEN_FIXTURE = GOLDEN_DIR / "fixture.jsonl.gz"
+
+# Copied whole: career-wide anchors (premieres, rotation, rarity, song history,
+# run context, D-02 tour gate) read far beyond the show's own date.
+_GOLDEN_FULL_TABLES = (
+    "olof_pages", "olof_songs", "olof_chronicle", "song_performances", "song_canonical",
+    "setlistfm_shows", "setlistfm_setlist", "dylan_performances", "venue_geocoded",
+    "release_classifications", "curated_lists", "user_taper_aliases", "user_taper_flags",
+    "corrections",
+)
+# Cut to the golden dates' LB numbers. lb_master is not read by the dossier, but a
+# non-empty table stops init_db's background migrate_lb_master backfill, which
+# would otherwise race the builds and delete status='missing' entries.
+_GOLDEN_LB_TABLES = (
+    "checksums", "entry_lineage", "taper_attributions", "quality_recording_scores",
+    "curated_list_entries", "bootleg_titles", "recording_families", "lb_master",
+)
+# Columns kept on the one-per-date skeleton entries outside the golden dates.
+_SKELETON_ENTRY_COLUMNS = ("lb_number", "date_str", "location", "status", "lb_category")
+# qc_findings kinds keyed by LB number (cut); every other kind is copied whole.
+_GOLDEN_LB_FINDING_KINDS = ("entry", "lb")
+# Private entries: these columns are blanked in the committed (public) fixture.
+_PRIVATE_BLANK = {
+    "entries": ("description", "setlist", "source_chain", "taper_name", "timing", "cdr"),
+    "entry_lineage": ("taper_name", "source_chain", "taper_normalised"),
+}
+
+
+def golden_dates(golden_dir: Path = GOLDEN_DIR) -> set[str]:
+    """Return the ISO dates named by the golden spec files.
+
+    Args:
+        golden_dir: Folder holding the ``*.json`` golden specs.
+
+    Returns:
+        The set of ``spec["date"]`` values.
+    """
+    return {json.loads(p.read_text(encoding="utf-8"))["date"]
+            for p in sorted(golden_dir.glob("*.json"))}
+
+
+def _in_clause(column: str, values: set) -> tuple[str, list]:
+    ordered = sorted(values)
+    return f'"{column}" IN ({",".join("?" * len(ordered))})', ordered
+
+
+def _scrub_private(tables: dict[str, list[dict]], private: set[int]) -> None:
+    for table, columns in _PRIVATE_BLANK.items():
+        for row in tables.get(table, []):
+            if row["lb_number"] in private:
+                for col in columns:
+                    row[col] = None
+    for row in tables.get("taper_attributions", []):
+        if row["lb_number"] in private:
+            row["evidence_json"] = "[]"  # NOT NULL column
+    for row in tables.get("checksums", []):
+        if row["lb_number"] in private:
+            ext = Path(row["filename"] or "").suffix
+            digest = hashlib.sha256(f"private:{row['id']}".encode()).hexdigest()
+            row["checksum"] = digest[:len(row["checksum"] or "")] or None
+            row["filename"] = f"private_{row['lb_number']}_{row['id']}{ext}"
+
+
+def cut_golden(src_db: Path, dates: set[str], dest: Path = GOLDEN_FIXTURE) -> dict[str, int]:
+    """Cut the dossier golden-set fixture from a live database.
+
+    The output is gzipped JSON lines, one ``[table, row]`` per line, tables in
+    name order and rows in source order, so two cuts of the same DB are
+    byte-identical. :func:`tools.dossier_golden.load_fixture` loads it.
+
+    Args:
+        src_db: Live ``losslessbob.db`` (opened read-only).
+        dates: ISO dates to cut per-show rows for.
+        dest: Output ``.jsonl.gz`` path.
+
+    Returns:
+        Row count per table.
+    """
+    from backend.geocoder import entry_date_to_iso
+
+    src = sqlite3.connect(f"file:{src_db}?mode=ro", uri=True)
+    src.row_factory = sqlite3.Row
+
+    def rows(table: str, where: str = "", params: list | tuple = ()) -> list[dict]:
+        sql = f'SELECT * FROM "{table}"' + (f" WHERE {where}" if where else "")
+        return [dict(r) for r in src.execute(sql, params)]
+
+    tables: dict[str, list[dict]] = {}
+    all_entries = rows("entries")
+    lbs = {r["lb_number"] for r in all_entries
+           if r["date_str"] and entry_date_to_iso(r["date_str"]) in dates}
+    # A family or pick can hold an LB whose own entry carries a different date.
+    lbs |= {r["lb_number"] for r in rows("recording_families", *_in_clause("concert_date", dates))}
+    lbs |= {r["lb_number"] for r in rows("show_picks", *_in_clause("concert_date_iso", dates))}
+    entries = [r for r in all_entries if r["lb_number"] in lbs]
+    private = {r["lb_number"] for r in entries if r["status"] == "private"}
+    # Run/sibling-night links ask "does this date have any entry?" corpus-wide:
+    # one skeleton row (identity columns only) per other date answers that.
+    seen = {r["date_str"] for r in entries}
+    for r in all_entries:
+        if r["date_str"] and r["date_str"] not in seen and r["status"] != "private":
+            seen.add(r["date_str"])
+            entries.append({k: (r[k] if k in _SKELETON_ENTRY_COLUMNS else None) for k in r})
+    tables["entries"] = entries
+
+    events = rows("olof_events")
+    for e in events:
+        if e["date_str"] not in dates:
+            e["raw_text"] = None  # the bulk of the table; only the golden pages read it
+    tables["olof_events"] = events
+
+    for table in _GOLDEN_FULL_TABLES:
+        tables[table] = rows(table)
+    for table in _GOLDEN_LB_TABLES:
+        tables[table] = rows(table, *_in_clause("lb_number", lbs))
+    # Grades come from the scan holding the most rows corpus-wide
+    # (concert_ranker.lb.repo.scored_scan_id), while family basis reads each
+    # LB's own newest scan -- so every scan stays, and the cut must still
+    # elect the live scan.
+    live_scan = src.execute(
+        "SELECT scan_id FROM quality_recording_scores GROUP BY scan_id"
+        " ORDER BY COUNT(*) DESC, scan_id DESC LIMIT 1").fetchone()
+    per_scan: dict[int, int] = {}
+    for r in tables["quality_recording_scores"]:
+        per_scan[r["scan_id"]] = per_scan.get(r["scan_id"], 0) + 1
+    cut_scan = max(per_scan, key=lambda s: (per_scan[s], s)) if per_scan else None
+    if live_scan and cut_scan != live_scan[0]:
+        raise RuntimeError(f"cut elects scan {cut_scan}, live elects {live_scan[0]}")
+
+    tables["show_picks"] = rows("show_picks", *_in_clause("concert_date_iso", dates))
+    tables["tapematch_family_meta"] = rows(
+        "tapematch_family_meta", *_in_clause("concert_date", dates))
+    lb_where, lb_params = _in_clause("lb_number", lbs)
+    date_where, date_params = _in_clause("date_str", dates)
+    tables["tuit_recordings"] = rows(
+        "tuit_recordings", f"{lb_where} OR {date_where}", lb_params + date_params)
+    tables["tuit_song_performances"] = rows("tuit_song_performances", date_where, date_params)
+    tables["bobdylan_shows"] = rows("bobdylan_shows", date_where, date_params)
+    urls = {r["bobdylan_url"] for r in tables["bobdylan_shows"]}
+    tables["bobdylan_setlist"] = rows("bobdylan_setlist", *_in_clause("bobdylan_url", urls))
+    tables["meta"] = rows("meta", "key = 'master_version'")
+    tables["qc_findings"] = [
+        f for f in rows("qc_findings")
+        if f["entity_kind"] not in _GOLDEN_LB_FINDING_KINDS
+        or (f["entity_key"].isdigit() and int(f["entity_key"]) in lbs)
+    ]
+    src.close()
+
+    _scrub_private(tables, private)
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    with open(dest, "wb") as raw, gzip.GzipFile(
+            filename="", fileobj=raw, mode="wb", compresslevel=9, mtime=0) as gz:
+        for table in sorted(tables):
+            for row in tables[table]:
+                gz.write(json.dumps([table, row], ensure_ascii=False).encode("utf-8"))
+                gz.write(b"\n")
+    return {t: len(r) for t, r in sorted(tables.items())}
+
+
 def main(argv=None) -> None:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--dest", default="data/fixture",
                      help="Destination dir, treated as APP_ROOT (default: data/fixture)")
+    ap.add_argument("--golden", action="store_true",
+                    help="Cut the dossier golden-set fixture from the live DB instead")
     args = ap.parse_args(argv)
+
+    if args.golden:
+        counts = cut_golden(Path(db.DB_PATH), golden_dates())
+        _log.info("Golden fixture written to %s: %s", GOLDEN_FIXTURE,
+                  " ".join(f"{t}={n}" for t, n in counts.items()))
+        return
 
     db_path = build(Path(args.dest))
     _log.info("Fixture DB built at %s", db_path)
