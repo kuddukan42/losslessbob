@@ -413,3 +413,24 @@ class TestCollapseCount:
                 "soundboard": {}, "complete": {}}
         n = _collapse_count(view, [1, 2, 3, 4, 5, 6], axes)
         assert n == 5  # pick+3 (1-4) plus the promoted scan leader (6)
+
+
+class TestPrimaryDisplayRanks:
+    """Source-table ranks count primary sources only (1963-10-26: raw #1 was a fragment)."""
+
+    def test_fragment_rank_one_is_dropped_and_primaries_renumbered(self):
+        members = [
+            (3216, {"pick": {"rank": 1}}, {}),
+            (6180, {"pick": {"rank": 2}}, {}),
+            (9014, {"pick": {"rank": 3}}, {}),
+            (3012, {"pick": {"rank": 5}}, {}),
+            (6185, {"pick": {"rank": 7}}, {}),
+            (7000, {}, {}),
+        ]
+        classes = {3216: {"group": "fragment"}, 3012: {"group": "fragment"},
+                   6180: {"group": "primary"}, 9014: {"group": "primary"}}
+        assert da._primary_display_ranks(members, classes) == {6180: 1, 9014: 2, 6185: 3}
+
+    def test_unclassified_sources_count_as_primary(self):
+        members = [(1, {"pick": {"rank": 4}}, {}), (2, {"pick": {"rank": 2}}, {})]
+        assert da._primary_display_ranks(members, {}) == {2: 1, 1: 2}

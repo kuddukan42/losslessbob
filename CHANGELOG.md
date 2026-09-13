@@ -1,3 +1,10 @@
+[2026-09-13] — Show dossier: source ranks count primary sources only
+Fixed: backend/dossier_anchors.py: source[].rank printed raw show_picks.pick_rank, which also
+  ranks fragments — 1963-10-26's pick read "#2" with its #1 (LB-03216, a 26% fragment) unranked
+  below. _primary_display_ranks renumbers primary sources 1..n; fragments get no rank.
+Added: tests/test_dossier_selection.py TestPrimaryDisplayRanks (2). TODO-344 opened: the
+  ranker itself ignores completeness. Found in tj's C32 golden review.
+
 [2026-09-13] — Show dossier C31: golden-set harness on a live-data fixture
 Added: tests/golden/dossier/: 15 placeholder specs (spec samples incl. 1990-01-25 + one per
   stress category) and fixture.jsonl.gz (~4 MB), cut from live data; private entries' metadata
