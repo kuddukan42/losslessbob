@@ -756,9 +756,16 @@ def _build_setlist(vb, d1, conn, event_id, date_iso, lineup, setlist, visible_lb
 
             writers = _safe(df.song_writers, conn, event_id, pos)
             if writers and writers.get("value"):
-                row["writers"] = build_field(
-                    writers["value"], 2, "song_writers parser",
-                    "inferred" if writers.get("corrected") else "stated")
+                if writers.get("corrected"):
+                    # A curator correction (audit Q5) is stated by the curator, not
+                    # inferred; the source carries Olof's spelling for the tooltip.
+                    row["writers"] = build_field(
+                        writers["value"], 2,
+                        f"corrected; Olof's Files has: {writers.get('original') or '(blank)'}",
+                        "stated", ["corrections", "olof_songs.credits"])
+                else:
+                    row["writers"] = build_field(
+                        writers["value"], 2, "song_writers parser", "stated")
 
             instruments = _safe(df.song_instruments, lineup, pos) if lineup else None
             if instruments:

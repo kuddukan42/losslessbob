@@ -362,3 +362,228 @@ class TestXrefDeepLinks:
         finally:
             import shutil
             shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+
+class TestTemplateAnchorCoverage:
+    """C29: every ANCHORS key must be reachable from the template.
+
+    The template renders keys through ``lbf('<key>', ...)``/``data-lb="<key>"``
+    literals, so a plain quoted-string search of the template source is a
+    faithful (if slightly loose) proxy for "this anchor has a rendering path" --
+    it does not depend on which branches a particular fixture dossier happens to
+    take at render time.
+    """
+
+    _EXCEPTIONS = {
+        "show.newest_source_date": "D-12 null stub (df.newest_source_date is unbuilt); "
+        "fallback_kind='suppress' -- the anchor is registered but never has a value "
+        "to show, so there is nothing for the template to render a data-lb around.",
+    }
+
+    def test_every_anchor_key_referenced_in_template(self):
+        import re
+
+        from backend.dossier_anchors import ANCHORS
+
+        template_path = os.path.join(
+            os.path.dirname(__file__), "..", "backend", "templates", "dossier.html")
+        src = open(template_path, encoding="utf-8").read()
+        missing = [
+            key for key in ANCHORS
+            if key not in self._EXCEPTIONS and not re.search(rf"""['"]{re.escape(key)}['"]""", src)
+        ]
+        assert missing == [], f"anchors with no reference in dossier.html: {missing}"
+
+
+def _render_dossier_template(d):
+    """Render dossier.html directly via Jinja (no Flask app / DB thread startup)."""
+    import os
+
+    from jinja2 import Environment, FileSystemLoader
+
+    from backend.dossier_claims import (
+        claim_texts_for,
+        ledger_detail_text,
+        sentence_segment_groups,
+    )
+
+    templates_dir = os.path.join(os.path.dirname(__file__), "..", "backend", "templates")
+    env = Environment(loader=FileSystemLoader(templates_dir), autoescape=True)
+    env.globals["claim_groups"] = sentence_segment_groups
+    env.globals["claim_texts_for"] = claim_texts_for
+    env.globals["ledger_detail_text"] = ledger_detail_text
+    return env.get_template("dossier.html").render(d=d)
+
+
+def _build_lint_fixture_dossier(channel="full"):
+    """A rendering-rich fixture: an event, 2 songs, 2 sources (pick + runner-up),
+    a family, and a G7 claim -- exercises the verdict/ledger/setlist/sources
+    sections enough to be a meaningful L1/L2/blank-ratio/lb-qc smoke test.
+    """
+    from tests.test_dossier_qc import _insert_two_source_pick
+
+    db_path, conn, tmp_dir = _make_db()
+    _insert_two_source_pick(conn, "3/29/10", "2010-03-29")
+    _insert_song(conn, 1, 1, "Rainy Day Women # 12 & 35")
+    _insert_song_performance(conn, 1, 1, "rainy day women 12 35", "2010-03-29")
+    conn.execute(
+        "INSERT INTO recording_families (lb_number, fam_id, concert_date) VALUES"
+        " (101, '2010-03-29#101-102', '2010-03-29'),"
+        " (102, '2010-03-29#101-102', '2010-03-29')"
+    )
+    conn.commit()
+
+    from backend.dossier import build_dossier
+    result = build_dossier("2010-03-29", db_path=db_path, channel=channel)
+    return result, tmp_dir
+
+
+class TestRenderedTemplateLints:
+    def test_l1_and_data_lb_clean_on_a_fixture_dossier(self):
+        import shutil
+
+        from backend.dossier_qc import lint_data_lb, lint_l1
+
+        result, tmp_dir = _build_lint_fixture_dossier()
+        try:
+            html = _render_dossier_template(result)
+            assert lint_l1(html) == []
+            assert lint_data_lb(html) == []
+            assert "review" not in html.lower() or "data-claim" in html
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_no_always_on_review_badge(self):
+        import shutil
+
+        result, tmp_dir = _build_lint_fixture_dossier()
+        try:
+            html = _render_dossier_template(result)
+            assert "fam-review" not in html
+            assert ">review<" not in html.lower()
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_blank_line_ratio_under_5_percent(self):
+        import shutil
+
+        result, tmp_dir = _build_lint_fixture_dossier()
+        try:
+            html = _render_dossier_template(result)
+            lines = html.splitlines()
+            blank = sum(1 for line in lines if not line.strip())
+            assert blank / len(lines) < 0.05
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_lb_qc_json_parses_and_matches_qc(self):
+        import json
+        import re
+        import shutil
+
+        result, tmp_dir = _build_lint_fixture_dossier()
+        try:
+            html = _render_dossier_template(result)
+            m = re.search(
+                r'<script type="application/json" id="lb-qc">(.*?)</script>', html, re.DOTALL)
+            assert m is not None
+            embedded = json.loads(m.group(1))
+            assert embedded["checks_run"] == result["qc"]["checks_run"]
+            assert embedded["passed"] == result["qc"]["passed"]
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_local_analysis_off_has_no_pick_verdict_ledger_or_scan_grade(self):
+        import shutil
+
+        from backend.dossier import filter_dossier_sections
+
+        result, tmp_dir = _build_lint_fixture_dossier()
+        try:
+            view = filter_dossier_sections(result, local_analysis=False)
+            html = _render_dossier_template(view)
+            assert "Recommended copy" not in html
+            assert 'class="ledger"' not in html
+            assert 'class="pick-tag"' not in html
+            assert 'class="grade ' not in html
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_fresh_install_no_view_renders_minimal_page_not_500(self):
+        html = _render_dossier_template({"show": {"date_iso": "2000-01-01"}})
+        assert "Dossier unavailable" in html
+        assert "data-lb=" not in html
+
+    def test_no_double_escaped_entities(self):
+        import shutil
+
+        result, tmp_dir = _build_lint_fixture_dossier()
+        try:
+            html = _render_dossier_template(result)
+            assert "&amp;middot;" not in html
+            assert "&amp;times;" not in html
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_ledger_best_transfer_and_solo_render_l1_clean(self):
+        import shutil
+
+        from backend.dossier_qc import lint_l1
+
+        result, tmp_dir = _build_lint_fixture_dossier()
+        try:
+            result["view"]["fields"]["ledger[]"]["value"] = [
+                {"kind": "best_transfer", "detail": "best transfer in its family", "points": 5.0},
+                {"kind": "solo", "detail": "only surviving circulating copy", "points": 2.0},
+                {"kind": "rating", "detail": "LB rating A", "points": 91.7},
+            ]
+            html = _render_dossier_template(result)
+            assert "preferred transfer within its tape family" in html
+            assert "single circulating copy" in html
+            assert "LB rating A" in html
+            assert lint_l1(html) == []
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+class TestTemplateL2Lint:
+    """C29: the template SOURCE (CSS/JS/comments included) may not contain any L1
+    forbidden phrase or bare word outside the ``claim`` macro's own definition --
+    that macro is the only place comparative wording is allowed to reach the page,
+    so its *body* (not its call sites, which pass in already-verified text) is the
+    one legitimate exemption zone in the template source itself.
+    """
+
+    def test_l1_words_absent_from_template_source_outside_claim_macro(self):
+        import re
+
+        from backend.dossier_qc import _L1_BARE_WORDS, _L1_PHRASES
+
+        template_path = os.path.join(
+            os.path.dirname(__file__), "..", "backend", "templates", "dossier.html")
+        src = open(template_path, encoding="utf-8").read()
+
+        macro_match = re.search(
+            r"\{%-?\s*macro claim\(.*?\{%-?\s*endmacro\s*-?%\}", src, re.DOTALL)
+        assert macro_match is not None, "claim macro definition not found"
+        stripped = src[:macro_match.start()] + src[macro_match.end():]
+
+        # Jinja control/expression/comment syntax ({%...%}, {{...}}, {#...#}) is
+        # template plumbing (variable names, filters, loop attributes -- "best",
+        # "first", loop.last, developer comments) that can never reach the rendered
+        # page as literal text; the L1/L2 rule is about words a reader could see, so
+        # blank those blocks out before scanning the remaining static HTML/CSS/JS
+        # (tags, attributes, inline <style>/<script> text, HTML comments).
+        for pattern in (r"\{#.*?#\}", r"\{%-?.*?-?%\}", r"\{\{-?.*?-?\}\}"):
+            stripped = re.sub(pattern, " ", stripped, flags=re.DOTALL)
+        lower = stripped.lower()
+
+        violations = []
+        for phrase in _L1_PHRASES:
+            if phrase in lower:
+                violations.append(phrase)
+        for word in _L1_BARE_WORDS:
+            if re.search(rf"\b{re.escape(word)}\b", lower):
+                violations.append(word)
+        assert violations == [], f"L1 words/phrases found in template source: {violations}"

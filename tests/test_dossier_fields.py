@@ -482,10 +482,13 @@ class TestSourceCharacter:
         assert sc["character"] == "clean, close / direct, and present vocals"
         assert sc["flags"] == ["has dropouts/glitches", "incomplete (missing material)"]
 
-    def test_no_flags_keeps_trailer_sentences(self):
-        text = "LB1: Sounds bright / airy, clean. Best in group for transient clarity."
+    def test_no_flags_drops_relative_rank_sentences(self):
+        # C29: "Best/Weakest in group" ranks against scan siblings, unverified by the
+        # claim engine -- it must not reach the page (L1).
+        text = ("LB1: Sounds bright / airy, clean. Best in group for transient clarity."
+                " Weakest in group for freedom from hum.")
         sc = source_character(_character_db(text, "mic > recorder"), 1)
-        assert sc["character"] == "bright / airy, clean. Best in group for transient clarity"
+        assert sc["character"] == "bright / airy, clean"
         assert sc["flags"] == []
 
     def test_empty_source_chain_flags_no_lineage(self):

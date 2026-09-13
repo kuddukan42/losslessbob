@@ -964,6 +964,16 @@ def create_app() -> Flask:
     app = Flask(__name__)
     CORS(app)
 
+    # dossier.html (C29): segment/claim-span grouping lives in dossier_claims, not the
+    # template, so it can't drift from how verdict_why()/chronicle() actually build a
+    # T4 sentence -- exposed as a Jinja global rather than duplicated in Jinja logic.
+    from backend.dossier_claims import claim_texts_for as _dossier_claim_texts_for
+    from backend.dossier_claims import ledger_detail_text as _dossier_ledger_detail_text
+    from backend.dossier_claims import sentence_segment_groups as _dossier_segment_groups
+    app.jinja_env.globals["claim_groups"] = _dossier_segment_groups
+    app.jinja_env.globals["claim_texts_for"] = _dossier_claim_texts_for
+    app.jinja_env.globals["ledger_detail_text"] = _dossier_ledger_detail_text
+
     @app.errorhandler(Exception)
     def _unhandled_exception(e):
         if isinstance(e, HTTPException):
@@ -8668,16 +8678,11 @@ def create_app() -> Flask:
                 result, sections=sections, local_analysis=local_analysis_on
             )
             html = render_template("dossier.html", d=view)
-            if "data-lb=" in html:
-                # C29's template hasn't landed yet -- today's template emits no
-                # data-lb/data-claim spans, so there is nothing to lint (and
-                # running lint_l1 unconditionally would log a bare-superlative
-                # false positive on every render until it does).
-                from backend.dossier_qc import lint_data_lb, lint_l1
+            from backend.dossier_qc import lint_data_lb, lint_l1
 
-                for violation in lint_l1(html) + lint_data_lb(html):
-                    _log.warning("dossier_html lint violation for date=%s: %s",
-                                 date_iso, violation)
+            for violation in lint_l1(html) + lint_data_lb(html):
+                _log.warning("dossier_html lint violation for date=%s: %s",
+                             date_iso, violation)
             # Default: download as an attachment (the export flow). The in-app
             # dossier viewer (timeline screen) embeds this route in an iframe,
             # where an attachment disposition renders blank -- it passes
