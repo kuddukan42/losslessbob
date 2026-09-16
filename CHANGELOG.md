@@ -1,3 +1,10 @@
+[2026-09-16] — Show dossier: song notes print as a subtitle under the title
+Changed: backend/dossier_anchors.py: olof_songs.annotations ("Bob Neuwirth (shared vocal); mono
+  PA recording") no longer glued onto song[].title in parens — new song[].notes anchor.
+  backend/templates/dossier.html renders it as a .sub line under the bold title, like writers
+  and bobtalk (tj, C32 review). Per-song bobtalk lists join with " / " instead of printing
+  Python list brackets.
+
 [2026-09-13] — Show dossier: source table runs in rank order
 Changed: backend/templates/dossier.html: primary sources are listed by rank and collapse after
   sources.visible_n by rank, not whole families — 2024-04-06 showed #1 #2 #5 #6 with #3/#4
