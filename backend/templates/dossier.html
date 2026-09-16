@@ -453,10 +453,11 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
         <td class="pos">{{ lbf('song[].position', song.position) }}</td>
         <td>
           <span class="song" data-lb="song[].title" data-verbatim>{{ song.title.value }}</span>
+          {%- if song.notes is defined and song.notes.value %}<span class="sub" data-lb="song[].notes" data-verbatim>{{ song.notes.value }}</span>{% endif -%}
           {%- if song.writers is defined and song.writers.value and 'corrections' in (song.writers.derived_from or []) %}<span class="sub"><span class="lb-corrected" data-lb="song[].writers" title="{{ song.writers.source }}">{{ song.writers.value }}</span></span>
           {%- elif song.writers is defined and song.writers.value %}<span class="sub">{{ lbf('song[].writers', song.writers) }}</span>{% endif -%}
           {%- if song.instruments is defined and song.instruments.value %}<span class="sub">{{ lbf('song[].instruments[]', song.instruments, text=(song.instruments.value | join(', '))) }}</span>{% endif -%}
-          {%- if song.bobtalk is defined and song.bobtalk.value %}<span class="sub" data-lb="song[].bobtalk" data-verbatim hidden>{{ song.bobtalk.value }}</span>{% endif -%}
+          {%- if song.bobtalk is defined and song.bobtalk.value %}<span class="sub" data-lb="song[].bobtalk" data-verbatim hidden>{{ song.bobtalk.value | join(' / ') if song.bobtalk.value is not string else song.bobtalk.value }}</span>{% endif -%}
           {%- if pos in markers and markers[pos].text not in song.title.value %}<span class="sub" data-lb="set[].label">{{ markers[pos].text }}</span>{% endif -%}
         </td>
         <td class="tags">

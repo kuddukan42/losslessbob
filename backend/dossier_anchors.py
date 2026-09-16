@@ -184,6 +184,7 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("set[].label", 1, "setlist", "encore + broadcast bands", "value"),
     _a("song[].position", 1, "setlist", "olof_songs", "required"),
     _a("song[].title", 1, "setlist", "olof_songs title + subtitle", "required"),
+    _a("song[].notes", 1, "setlist", "olof_songs annotations", "omit"),
     _a("song[].writers", 2, "setlist", "parser", "omit"),
     _a("song[].instruments[]", 2, "setlist", "parser", "omit"),
     _a("song[].premiere", 3, "setlist", "D-02 (three-part gate)", "omit"),
@@ -750,10 +751,10 @@ def _build_setlist(vb, d1, conn, event_id, date_iso, lineup, setlist, visible_lb
             pos = s["position"]
             row = vb.row("song", pos)
             row["position"] = build_field(pos, 1, "olof_songs.position", "stated")
-            title = s["title"]
+            row["title"] = build_field(s["title"], 1, "olof_songs.song_title", "stated")
             if s.get("annotations"):
-                title = f"{title} ({s['annotations']})"
-            row["title"] = build_field(title, 1, "olof_songs.song_title", "stated")
+                row["notes"] = build_field(s["annotations"], 1, "olof_songs.annotations",
+                                           "stated")
 
             writers = _safe(df.song_writers, conn, event_id, pos)
             if writers and writers.get("value"):
