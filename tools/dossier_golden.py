@@ -11,6 +11,7 @@ Usage::
 
     .venv/bin/python3 tools/dossier_golden.py --check        # fixture == live, per spec
     .venv/bin/python3 tools/dossier_golden.py --show 2010-03-29_spec-sample
+    .venv/bin/python3 tools/dossier_golden.py --html ~/Documents/projects/losslessbob_dossiers
 
 ``--check`` must pass before a re-cut fixture is committed: a snapshot that
 differs between the live DB and the fixture means the cut dropped a row the
@@ -229,6 +230,50 @@ def check() -> int:
     return 1 if failed else 0
 
 
+def export_html(out_dir: Path) -> int:
+    """Render every spec's dossier HTML from the live DB into *out_dir*, plus an index.
+
+    Goes through ``/api/dossier/html`` on a Flask test client, so the pages are
+    exactly what the app exports. Feeds the LAN report server (reportserver).
+
+    Args:
+        out_dir: Destination folder, created if missing.
+
+    Returns:
+        Process exit code: 0 when every spec rendered.
+    """
+    from html import escape
+    from urllib.parse import urlencode
+
+    from backend.app import create_app
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    client = create_app().test_client()
+    rows, failed = [], 0
+    for path, spec in golden_specs():
+        q = {"date": spec["date"], "channel": spec.get("channel") or "public", "inline": "1"}
+        if spec.get("location"):
+            q["location"] = spec["location"]
+        res = client.get(f"/api/dossier/html?{urlencode(q)}")
+        name = f"{path.stem}.html"
+        if res.status_code == 200:
+            (out_dir / name).write_bytes(res.data)
+            link = f'<a href="{escape(name)}">{escape(path.stem)}</a>'
+        else:
+            failed += 1
+            link = f"{escape(path.stem)} — HTTP {res.status_code}"
+        state = "verified" if spec.get("expected") is not None else "unverified"
+        rows.append(f"<li>{link} <small>{escape(spec.get('note') or '')} · {state}</small></li>")
+        sys.stdout.write(f"{res.status_code} {path.stem}\n")
+    (out_dir / "index.html").write_text(
+        '<!doctype html><meta charset="utf-8"><meta name="viewport" '
+        'content="width=device-width,initial-scale=1"><title>Golden dossiers</title>'
+        '<style>body{font:16px system-ui;margin:16px;color-scheme:light dark}'
+        'li{margin:.5em 0}small{opacity:.7}</style>'
+        f"<h1>Golden dossiers</h1><ul>{''.join(rows)}</ul>", encoding="utf-8")
+    return 1 if failed else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI entry point."""
     logging.basicConfig(level=logging.WARNING, format="%(levelname)s %(message)s")
@@ -237,11 +282,15 @@ def main(argv: list[str] | None = None) -> int:
     grp = ap.add_mutually_exclusive_group(required=True)
     grp.add_argument("--check", action="store_true", help="fixture vs live, per spec")
     grp.add_argument("--show", metavar="NAME", help="print one spec's snapshot from the fixture")
+    grp.add_argument("--html", metavar="DIR", type=Path,
+                     help="render every spec's HTML from the live DB into DIR")
     grp.add_argument("--snapshots", metavar="DB", help=argparse.SUPPRESS)
     args = ap.parse_args(argv)
 
     if args.check:
         return check()
+    if args.html:
+        return export_html(args.html.expanduser())
     if args.snapshots:
         logging.disable(logging.CRITICAL)  # stdout carries the JSON
         json.dump(_snapshots_json(None if args.snapshots == "-" else args.snapshots),
