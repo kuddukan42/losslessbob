@@ -1,14 +1,14 @@
+TODO-350: Run the BUG-337 live rebuild: re-parse Olof pages + recompute song_performances
+Priority: High
+Status: Open
+Added: 2026-09-17
+Description: Code fix committed 77a77c63; verified on a DB copy only (never run live from a session). tj runs, with the backend stopped: .venv/bin/python3 -m backend.olof_parser && .venv/bin/python3 tools/compute_song_performances.py — then confirm 0 fold collisions and re-check Blowin' In The Wind / Ballad Of A Thin Man against TUIT (expected 1651/1329 vs 1576/1330). Delete .debug/bug337_parse_diff.md afterwards.
+
 TODO-349: show_picks fragment rule demotes a partial tracklist below an equal-length source with no tracklist
 Priority: Low
 Status: Open
 Added: 2026-09-17
 Description: TODO-344 applies dossier_fields.is_fragment verbatim: a tracklist-basis source under FRAGMENT_THRESHOLD is a fragment, a source with no tracklist and a runtime near the median is not. Two 4-minute sources on 1964-05-14 therefore swap rank-1 (LB-01254 1/3 songs -> LB-03015 no tracklist). Decide whether picks should demote a tracklist fragment only when a non-fragment with materially longer runtime exists. Review .debug/todo344_rank1_diff.md first.
-
-TODO-348: seed_overlay cannot repair a wrong-LB tracker attribution
-Priority: Medium
-Status: Open
-Added: 2026-09-17
-Description: choose_source_folder only ranks folders from db.get_folders_for_lb(claimed lb), so when the tracker names LB-11813 and the audio is LB-11801 (rec 451; rec 1469 LB-12243 vs LB-12242) the right folder is never a candidate. Pull same-date candidate folders in independently of the claimed LB and let the piece-hash pick decide. Also: bad_pieces re-reads the overlay per piece rather than streaming, and the 4-piece disambiguation sample can mispick once on a large ambiguous file (self-corrected by repair).
 
 TODO-347: Dossier: rethink stats.instrument_tally line
 Priority: Low

@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-337: song_canonical splits 28 titles into spacing/encoding variants, stranding 4,290 performances
+Status: Fixed
+File(s): backend/olof_parser.py,backend/song_index.py
+Reported: 2026-09-07
+Fixed: 2026-09-17
+Root cause: Three causes in olof_parser: bs4 get_text(' ') inserted spaces at Word inline tags (st1:PersonName, SpellE spans) splitting words ('Tim es', 'Note s'); apostrophe stand-ins U+00B4/U+2019 not folded; five literal upstream typos ('Se or', 'Things Hav,e').
+Fix: Block-level text extractor replaces get_text(' '); apostrophe fold in olof_parser and bobserve_parser; 5-entry typo map; song_index alnum fold-collision guard (run(strict=)) + stale auto-alias prune. Verified on a DB copy: 1322 canonical = 1322 fold keys, 0 stranded. Live rebuild tracked as TODO-350. Commit 77a77c63.
+
 BUG-335: tapematch ingest counts patched-track subfolders as extra tracks, inflating a source
 Status: Fixed
 File(s): tools/tapematch/tapematch/ingest.py
