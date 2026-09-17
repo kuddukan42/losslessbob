@@ -1,8 +1,12 @@
 [2026-09-17] — TUIT/WTRF scraper review: taper loss, freeleech no-op, WTRF walk and attachment fixes
 Fixed: backend/tuit_scraper.py, tools/tuit_sync.py: the detail page carries no taper (0/400 archived
   pages match .taper-name), so recordings discovered via --rss (the hourly cron path) were stored
-  without one — 2,302 of 5,101 rows. RssItem now parses 'taped by …' and stands in as a sparse
-  BrowseRow for the merge; a re-sync with no taper no longer blanks a stored one.
+  without one. RssItem now parses 'taped by …' and stands in as a sparse BrowseRow for the merge;
+  a re-sync with no taper no longer blanks a stored one. A --listing-only refresh over all 98
+  listing pages (4,900 rows, 33 requests → 98 now) filled only 14 of the 2,288 blank tapers: the
+  rest are blank on the tracker itself, not lost by the parser.
+Added: tools/tuit_sync.py --listing-only [--start-page N]: refresh taper/uploader_url/added_at and
+  swarm counts from /browse alone, one request per page, no detail fetches.
 Fixed: backend/tuit_scraper.py: freeleech/lb_verified were substring tests on the whole page text
   (true on 5,101/5,101 rows); they now read the hero's .pill-free / .pill-verified elements.
   .src-pill / [data-q] skip sibling cards. /browse query is urlencoded. torrent_root_name uses
