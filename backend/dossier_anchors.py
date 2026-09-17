@@ -1158,7 +1158,7 @@ def _build_venue_geo(vb, conn, show) -> None:
     if "lat" in show and "lng" in show:
         vb.set_field("venue.coords", build_field(
             {"lat": show["lat"], "lng": show["lng"], "basis": "city_centre",
-             "label": "city centre (setlist.fm)"},
+             "label": "city centre (setlist.fm)", "url": show.get("setlistfm_url")},
             1, "setlist.fm city centroid", "stated"))
         _set_venue_map(vb, show, show["lat"], show["lng"], "city_centre")
 

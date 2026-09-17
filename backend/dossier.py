@@ -465,8 +465,9 @@ def _build_show(conn: sqlite3.Connection, date_iso: str, location: str | None,
         sf_cols = {r[1] for r in conn.execute("PRAGMA table_info(setlistfm_shows)")}
         needed = {"city_lat", "city_lon", "country", "city_state"}
         if needed <= sf_cols:
+            url_col = ", setlistfm_url" if "setlistfm_url" in sf_cols else ""
             sf_loc = conn.execute(
-                "SELECT city_lat, city_lon, country, city_state FROM setlistfm_shows "
+                f"SELECT city_lat, city_lon, country, city_state{url_col} FROM setlistfm_shows "
                 "WHERE date_str = ? LIMIT 1",
                 (date_iso,),
             ).fetchone()
@@ -478,6 +479,8 @@ def _build_show(conn: sqlite3.Connection, date_iso: str, location: str | None,
                     country = sf_loc["country"]
                 if sf_loc["city_state"]:
                     region = sf_loc["city_state"]
+                if url_col and sf_loc["setlistfm_url"]:
+                    show["setlistfm_url"] = sf_loc["setlistfm_url"]
 
     if not country and _table_exists(conn, "dylan_performances"):
         dp_cols = {r[1] for r in conn.execute("PRAGMA table_info(dylan_performances)")}

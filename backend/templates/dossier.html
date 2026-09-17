@@ -616,7 +616,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     <summary>{{ side_members | length }} fragment / non-matching source(s) not counted in the verdict</summary>
     {%- for e in side_members %}
     <div class="grp">
-      <span class="lb">{{ e.r.lb_id.value }}</span> &mdash;
+      <span class="lb">{% if e.r.url is defined and e.r.url.value %}<a href="{{ e.r.url.value }}" target="_blank" rel="noopener">{{ e.r.lb_id.value }}</a>{% else %}{{ e.r.lb_id.value }}{% endif %}</span> &mdash;
       {%- if e.r.group.value == 'no_match' %} does not match this show's setlist
       {%- else %} fragment / partial recording{% endif %}
       <div class="note">{% if e.r.taper is defined and e.r.taper.value %}taper: {{ e.r.taper.value.name }}{% endif %}</div>
@@ -657,7 +657,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   {%- set pin_kind = 'solid' if venue_map_f.value == 'venue' else 'hollow' -%}
   {%- set basis = venue_coords_f.value.basis if venue_coords_f and venue_coords_f.value else '' -%}
   <section style="margin-top:0">
-    <h2><span>Venue</span><span class="line"></span><span class="credit">coordinates: {% if basis == 'city_centre' %}<a href="https://www.setlist.fm" target="_blank" rel="noopener">setlist.fm</a> &#8599;{% else %}venue geocode{% endif %}</span></h2>
+    <h2><span>Venue</span><span class="line"></span><span class="credit">coordinates: {% if basis == 'city_centre' %}<a href="{{ venue_coords_f.value.url or 'https://www.setlist.fm' }}" target="_blank" rel="noopener">setlist.fm</a> &#8599;{% else %}venue geocode{% endif %}</span></h2>
     <div class="venue-card" data-map-pin="{{ pin_kind }}" data-venue-basis="{{ basis }}">
       {{ d.view.map_svg | safe }}
       <div class="venue-meta">
@@ -731,7 +731,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     {%- if src_is_bobserve %}Setlist, lineup &amp; show data from <a href="{{ src_x.url }}" target="_blank" rel="noopener">Bobserve</a> (bobserve.com).
     {%- else %}Setlist, chronicle, lineup &amp; bobtalk from <a href="{{ src_x.url if src_x else 'http://www.bjorner.com/still.htm' }}" target="_blank" rel="noopener">Olof Bj&ouml;rner's <em>Still on the Road</em></a> (bjorner.com).{% endif %}
     Recording catalog, ratings &amp; lineage from <a href="{{ lbb_x.site if lbb_x else 'https://www.losslessbob.com' }}" target="_blank" rel="noopener">LosslessBob</a>.
-    Venue coordinates via <a href="https://www.setlist.fm" target="_blank" rel="noopener">setlist.fm</a>.
+    Venue coordinates via <a href="{{ (venue_coords_f.value.url if venue_coords_f and venue_coords_f.value and venue_coords_f.value.url) or 'https://www.setlist.fm' }}" target="_blank" rel="noopener">setlist.fm</a>.
     Scanned quality grades, tape-family grouping &amp; pick ranking are local analysis by this install.
   </p>
   <div class="meta" data-lb="prov.stamps">
