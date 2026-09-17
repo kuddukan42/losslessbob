@@ -608,6 +608,8 @@ def test_private_lb_passes_when_the_post_already_exists(monkeypatch, tmp_path):
                         lambda _lb: (False, "lb_private"))
     monkeypatch.setattr(tracker_seed.database, "get_folders_for_lb",
                         lambda _lb: [])
+    monkeypatch.setattr(tracker_seed.database, "get_folders_for_same_date",
+                        lambda _lb: {})
 
     opts = tracker_seed.SeedOptions("wtrf", allow_private=True)
     folder, reason = tracker_seed.find_seedable_folder(
@@ -629,6 +631,76 @@ def test_allow_private_does_not_excuse_a_missing_lb(monkeypatch, tmp_path):
 
     assert folder is None
     assert "lb_missing" in reason
+
+
+# ── TODO-348: a wrong LB attribution is rescued by same-date siblings ────────
+
+def _patch_seed_db(monkeypatch, tracker_seed, claimed, siblings):
+    monkeypatch.setattr(tracker_seed.database, "is_seedable_to_tracker",
+                        lambda _lb: (True, "ok"))
+    monkeypatch.setattr(tracker_seed.database, "get_folders_for_lb",
+                        lambda _lb: list(claimed))
+    monkeypatch.setattr(tracker_seed.database, "get_folders_for_same_date",
+                        lambda _lb: dict(siblings))
+
+
+def test_wrong_lb_attribution_is_rescued_by_a_same_date_folder(
+    monkeypatch, rig, tmp_path
+):
+    """The tracker names LB-11813 but the audio is LB-11801's (TODO-348):
+    the sibling folder must be a candidate and win on content."""
+    from backend import tracker_seed
+    info, collection, sidecars, root = rig
+    # The claimed LB's folder exists but holds a different recording.
+    claimed = tmp_path / "claimed" / ROOT
+    claimed.mkdir(parents=True)
+    (claimed / "t01.flac").write_bytes(b"not the same audio at all" * 40)
+    _patch_seed_db(monkeypatch, tracker_seed, [str(claimed)],
+                   {11801: [str(collection)]})
+    details: dict = {}
+    opts = tracker_seed.SeedOptions("tuit", overlay=True, overlay_root=str(root),
+                                    refetch_sidecars=False)
+    monkeypatch.setattr(tracker_seed, "SIDECAR_DIR", str(sidecars))
+
+    folder, reason = tracker_seed.find_seedable_folder(
+        11813, str(tmp_path / "t.torrent"), opts, details=details)
+
+    assert details.get("source_lb") == 11801
+    assert folder is not None and folder.startswith(str(root))
+    assert "content matches LB-11801" in reason
+
+
+def test_same_date_pool_is_not_consulted_without_the_overlay(
+    monkeypatch, rig, tmp_path
+):
+    from backend import tracker_seed
+    info, collection, sidecars, root = rig
+    called = []
+    monkeypatch.setattr(tracker_seed.database, "is_seedable_to_tracker",
+                        lambda _lb: (True, "ok"))
+    monkeypatch.setattr(tracker_seed.database, "get_folders_for_lb",
+                        lambda _lb: [])
+    monkeypatch.setattr(tracker_seed.database, "get_folders_for_same_date",
+                        lambda _lb: called.append(_lb) or {11801: [str(collection)]})
+
+    folder, reason = tracker_seed.find_seedable_folder(
+        11813, str(tmp_path / "t.torrent"),
+        tracker_seed.SeedOptions("tuit", overlay=False))
+
+    assert folder is None
+    assert "no collection folder" in reason
+    assert called == []
+
+
+def test_same_date_lookup_errors_narrow_to_the_claimed_lb(monkeypatch):
+    import sqlite3
+
+    from backend import tracker_seed
+
+    def boom(_lb):
+        raise sqlite3.OperationalError("no such table")
+    monkeypatch.setattr(tracker_seed.database, "get_folders_for_same_date", boom)
+    assert tracker_seed.same_date_folders(1) == {}
 
 
 # ── alias keys: the LB site's renaming conventions ───────────────────────────

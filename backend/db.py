@@ -7087,6 +7087,44 @@ def get_folders_for_lb(lb_number: int, db_path=None) -> list[str]:
     return list(dict.fromkeys(paths))
 
 
+def get_folders_for_same_date(lb_number: int, db_path=None) -> dict[int, list[str]]:
+    """Return on-disk folders of the *other* LB entries sharing a date.
+
+    A tracker's LB attribution can simply be wrong (TODO-348: LB-11813 named
+    for audio that is LB-11801; LB-12243 for LB-12242), and ranking only the
+    claimed number's folders can never find the right one. Same-date siblings
+    are the natural candidate pool: the piece-hash pick then decides by
+    content, not by what the tracker said.
+
+    Args:
+        lb_number: The LB number the tracker claims.
+        db_path: Optional DB path override.
+
+    Returns:
+        ``{other lb_number: [folders]}`` for every same-date entry that has at
+        least one folder, in the same order :func:`get_folders_for_lb` uses.
+        Empty when the claimed entry is unknown or has no parseable date.
+    """
+    out: dict[int, list[str]] = {}
+    with get_connection(db_path) as conn:
+        row = conn.execute(
+            "SELECT date_str FROM entries WHERE lb_number=?", (lb_number,)
+        ).fetchone()
+        if not row or not row[0]:
+            return out
+        siblings = [
+            r[0] for r in conn.execute(
+                "SELECT lb_number FROM entries WHERE date_str=? AND lb_number<>?"
+                " ORDER BY lb_number", (row[0], lb_number),
+            ).fetchall()
+        ]
+    for sibling in siblings:
+        folders = get_folders_for_lb(sibling, db_path)
+        if folders:
+            out[sibling] = folders
+    return out
+
+
 def get_site_file_urls(filenames: list[str], db_path=None) -> dict[str, str]:
     """Map LBF sidecar filenames to their original losslessbob.com URLs.
 
