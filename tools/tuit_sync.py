@@ -125,6 +125,15 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument("--no-allow-partial-overlay", dest="allow_partial_overlay",
                    action="store_false",
                    help="Refuse an overlay that still hashes short.")
+    p.add_argument("--listing-only", action="store_true",
+                   help="With --pages: refresh only the columns the /browse "
+                        "listing carries (taper, uploader_url, added_at, swarm "
+                        "counts) on recordings already in tuit_recordings, "
+                        "without fetching any detail page. One request per page "
+                        "instead of one per recording.")
+    p.add_argument("--start-page", type=int, default=1,
+                   help="With --listing-only: first listing page to read "
+                        "(default 1), to resume a refresh.")
     p.add_argument("--rescan", action="store_true",
                    help="Include recordings that already have a tuit_downloads "
                         "attempt (default: --pages/--limit skip them so re-runs "
@@ -443,6 +452,59 @@ def _seed_options(args) -> SeedOptions:
     )
 
 
+def _refresh_from_listing(session, args) -> int:
+    """Update listing-borne columns from /browse without detail fetches.
+
+    The detail page never names a taper, so a recording synced through the
+    RSS path before the feed's ``taped by`` was parsed has none. The listing
+    does, and one pass over its pages is cheap.
+
+    Args:
+        session: Authenticated TUIT session.
+        args: Parsed CLI arguments (``--start-page``..``--pages`` bounds the walk).
+
+    Returns:
+        Process exit code.
+    """
+    seen = updated = skipped = 0
+    for page in range(args.start_page, args.pages + 1):
+        rows, total, _ = tuit_scraper.fetch_browse_page(
+            session, page=page, delay=args.delay
+        )
+        if page == 1 and total:
+            logger.info("TUIT catalogue: %s recordings", f"{total:,}")
+        if not rows:
+            logger.info("  page %d empty — stopping", page)
+            break
+        for row in rows:
+            if not row.rec_id:
+                continue
+            seen += 1
+            if database.get_tuit_recording(row.rec_id) is None:
+                skipped += 1
+                continue
+            fields = {"rec_id": row.rec_id}
+            if row.taper:
+                fields["taper"] = row.taper
+            if row.uploader_url:
+                fields["uploader_url"] = row.uploader_url
+            if row.added_at:
+                fields["added_at"] = row.added_at
+            for attr in ("seeders", "leechers", "snatched"):
+                if getattr(row, attr) is not None:
+                    fields[attr] = getattr(row, attr)
+            if args.dry_run:
+                updated += 1
+                continue
+            database.upsert_tuit_recording(fields)
+            updated += 1
+        logger.info("  page %d: %d row(s), %d updated so far", page, len(rows), updated)
+    print(f"listing refresh: {seen} rows seen, {updated} updated, "
+          f"{skipped} not in tuit_recordings (skipped)"
+          + (" [dry run]" if args.dry_run else ""))
+    return 0
+
+
 def _sync_one(session, rec_id: int, row, args) -> str:
     """Fetch, store and optionally seed a single recording.
 
@@ -664,6 +726,12 @@ def main() -> int:
 
     if args.sync_tours or args.sync_venues or args.sync_songs:
         return _sync_history(session, args)
+
+    if args.listing_only:
+        if not args.pages:
+            print("--listing-only needs --pages N.", file=sys.stderr)
+            return 2
+        return _refresh_from_listing(session, args)
 
     rows_by_id: dict[int, object] = {}
     queue: list[int] = []
