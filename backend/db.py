@@ -826,6 +826,17 @@ CREATE TABLE IF NOT EXISTS olof_pages (
     event_count   INTEGER NOT NULL DEFAULT 0
 );
 
+-- bobserve.com eventsperiod index rows, every year (dossier deep links to setlist?event=N)
+CREATE TABLE IF NOT EXISTS bobserve_event_index (
+    event_id    INTEGER PRIMARY KEY,             -- bobserve's ?event= id
+    date_str    TEXT NOT NULL DEFAULT '',        -- '1963-10-26' ('1963-10-00' = month only)
+    location    TEXT NOT NULL DEFAULT '',        -- 'New York, NY'
+    venue       TEXT NOT NULL DEFAULT '',
+    event_type  TEXT NOT NULL DEFAULT '',        -- Concert | Soundcheck | Studio | ...
+    indexed_at  TEXT NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS idx_bobserve_event_index_date ON bobserve_event_index(date_str);
+
 -- one row per event; joins to entries/bobdylan_shows/setlistfm_shows via date_str
 --
 -- The column bodies below carry NO comments on purpose: SQLite's ALTER TABLE

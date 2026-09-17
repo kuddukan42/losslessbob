@@ -117,9 +117,20 @@ class TestRunContext:
         assert (ch["city"], ch["basis"], ch["total"], ch["invariant_ok"]) == (
             "Tokyo", "olof", 3, True)
         assert ch["rows"] == [
-            {"year": "2001", "venue": "Zepp Tokyo", "count": 2},
-            {"year": "2014", "venue": "Zepp DiverCity", "count": 1},
+            {"year": "2001", "venue": "Zepp Tokyo", "count": 2, "current": False},
+            {"year": "2014", "venue": "Zepp DiverCity", "count": 1, "current": True},
         ]
+
+    def test_city_history_folds_venue_spellings_and_blanks_fragments(self, conn):
+        from backend.dossier_fields import run_context
+        with conn:
+            _concert(conn, 1, "2019-11-23", "Beacon Theatre", "New York", "T", ["A"])
+            _concert(conn, 2, "2019-11-24", "The Beacon Theatre", "New York", "T", ["A"])
+            _concert(conn, 3, "2019-11-25", "Beacon Theatre", "New York", "T", ["A"])
+            _concert(conn, 4, "2019-11-30", "4 0450", "New York", "T", ["A"])
+        ch = run_context(conn, 1)["city_history"]
+        assert [(r["venue"], r["count"]) for r in ch["rows"]] == [("", 1), ("Beacon Theatre", 3)]
+        assert ch["invariant_ok"] and ch["total"] == 4
 
     def test_city_history_prefers_setlistfm_city(self, conn):
         from backend.dossier_fields import run_context

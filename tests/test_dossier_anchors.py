@@ -245,3 +245,15 @@ class TestFilterStripsLocalAnalysis:
                 assert key not in filtered["fields"]
             else:
                 assert key in filtered["fields"]
+
+
+def test_xref_losslessbob_card_follows_verdict_pick():
+    """The LB xref card links the verdict pick, not the legacy show_picks rank 1."""
+    from backend.dossier_anchors import _xref_to_pick
+    xref = [{"key": "losslessbob", "url": "u/LB-03216", "link_label": "LB-03216 detail page"},
+            {"key": "olof", "url": "o"}]
+    fields = {"pick.lb_id": {"value": "LB-06180"}, "pick.url": {"value": "u/LB-06180"}}
+    out = _xref_to_pick(xref, fields)
+    assert out[0]["url"] == "u/LB-06180" and out[0]["link_label"] == "LB-06180 detail page"
+    assert out[1] == xref[1]
+    assert _xref_to_pick(xref, {}) is xref

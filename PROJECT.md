@@ -110,7 +110,7 @@ losslessbob/
 │   ├── olof_fetcher.py       # Olof Björner (bobserve.com) page mirror → data/olof/pages/ (TODO-162 P1); TODO-306 P2: JobState-backed run_fetch/run_fetch_claimed, POST /api/olof/fetch
 │   ├── olof_parser.py        # DSN event+song parser: olof_pages → olof_events + olof_songs (TODO-162 P2–P3)
 │   ├── olof_chronicle_parser.py  # Yearly Chronicles parser: calendar + new-tapes (2022+ appendix superseded, see below) (TODO-162 P4)
-│   ├── bobserve_fetcher.py   # bobserve.com setlist page mirror (2022+, supersedes chronicle appendix) → data/olof/bobserve_pages/ (TODO-228); TODO-306 P2: JobState-backed run_fetch/run_fetch_claimed, POST /api/bobserve/fetch
+│   ├── bobserve_fetcher.py   # bobserve.com setlist page mirror (2022+, supersedes chronicle appendix) → data/olof/bobserve_pages/ (TODO-228); TODO-306 P2: JobState-backed run_fetch/run_fetch_claimed, POST /api/bobserve/fetch; --index-only / run_index() → bobserve_event_index (all years, index pages only)
 │   ├── bobserve_parser.py    # bobserve setlist parser: olof_pages(corpus=bobserve) → olof_events + olof_songs, source='bobserve' (TODO-228)
 │   ├── qc/                   # Show Dossier QC engine (TODO-342 Phase 2): rules.py (pure (conn)->Iterable[Finding] functions in RULES; R-O1/R-O2/R-O3/R-O4/R-T1/R-T2/R-T3/R-T4/R-G1/R-E1/R-E2/R-F1/R-S1/R-R1 shipped, also holds MONTH_YEAR_RE/ROTATION_FRAGMENT_RE for tools/ reuse), corroborate.py (Phase 3a/audit Q1-a: setlist_quorum()/corroborate_all() cross-source setlist corroboration feeding R-O4 — see its own PROJECT.md entry), decisions.py (write model for /qc-review: decide/bulk_decide/add_correction/classify_release — D-03 C19's classify_release() upserts release_classifications and immediately closes any matching open R-R1 finding), store.py (run_rule/run_all reconcile against qc_findings per the decision vocabulary; quarantined()/quarantined_batch()), __main__.py (`python -m backend.qc run`)
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
@@ -1390,6 +1390,10 @@ migration): `rotation_new` / `rotation_pct` / `tour_new_count` INTEGER from Olof
 (P%) compared to previous concert. N new songs for this tour" line, and `venue_history_raw` TEXT
 for the "Other/Previous Bob Dylan concerts in X:" date/venue lists moved out of the section
 text — NULL / '' on bobserve rows)
+`bobserve_event_index` = bobserve.com eventsperiod rows for every year (event_id PK = bobserve
+`?event=` id, date_str, location, venue, event_type Concert/Soundcheck/TV/…, indexed_at), filled
+by `bobserve_fetcher.py --index-only`; feeds the dossier's bobserve setlist deep link
+(`dossier._bobserve_index_event_id`) for pre-2022 shows.
 via `backend/olof_parser.py` (DSN) / `backend/bobserve_parser.py` (2022+). `olof_songs` = one
 row per performed song / studio take (event_id+position PK, song_title, credits, is_encore,
 take_number, take_status, annotations, released_on, subtitle — a parenthetical alternate title,

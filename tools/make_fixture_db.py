@@ -536,6 +536,7 @@ def cut_golden(src_db: Path, dates: set[str], dest: Path = GOLDEN_FIXTURE) -> di
         "tuit_recordings", f"{lb_where} OR {date_where}", lb_params + date_params)
     tables["tuit_song_performances"] = rows("tuit_song_performances", date_where, date_params)
     tables["bobdylan_shows"] = rows("bobdylan_shows", date_where, date_params)
+    tables["bobserve_event_index"] = rows("bobserve_event_index", date_where, date_params)
     urls = {r["bobdylan_url"] for r in tables["bobdylan_shows"]}
     tables["bobdylan_setlist"] = rows("bobdylan_setlist", *_in_clause("bobdylan_url", urls))
     tables["meta"] = rows("meta", "key = 'master_version'")
