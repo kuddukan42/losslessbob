@@ -83,10 +83,7 @@ html[data-theme="light"] .venue-map .pin-dot{stroke:#fff}
 .venue-meta .coord{font-family:var(--mono);font-size:.72rem;color:var(--faint);margin-top:.3rem}
 .venue-meta .hist{margin-top:.5rem;font-size:.7rem;color:var(--faint)}
 .venue-meta .hist li{display:flex;justify-content:space-between}
-.venue-meta .hist .years{display:flex;flex-wrap:wrap;gap:.1rem .55rem;font-family:var(--mono);font-size:.66rem}
-.venue-meta .hist .yr b{font-weight:500;color:var(--muted)}
-.venue-meta .hist .yr.cur{color:var(--ink)}
-.venue-meta .hist .yr.cur b{color:var(--ink);font-weight:700}
+.venue-meta .hist .years b{font-weight:600;color:var(--ink)}
 .venue-meta .hist ul{margin-top:.35rem}
 .rec{position:relative;display:grid;grid-template-columns:auto 1fr;gap:1.7rem;border:1px solid color-mix(in oklab,var(--pick) 45%,var(--rule2));border-radius:12px;padding:1.25rem 1.5rem;box-shadow:var(--shadow);background:linear-gradient(160deg,color-mix(in oklab,var(--pick) 9%,transparent),transparent 55%),var(--surface)}
 .rec .headline{text-align:center;align-self:center;min-width:13rem}
@@ -686,10 +683,10 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
         {%- set city_hist_f = fields.get('city_history[]') -%}
         {%- if city_hist_f and city_hist_f.value %}
         <div class="hist" data-lb="city_history[]">
-          <div class="years">
-            {%- for yr, yrows in city_hist_f.value | groupby('year') %}<span class="yr{% if yrows[0].current %} cur{% endif %}" title="{% for r in yrows %}{{ r.venue or 'venue unknown' }} ({{ r.count }}){% if not loop.last %}; {% endif %}{% endfor %}">{{ yr }}&nbsp;<b>{{ yrows | sum(attribute='count') }}</b></span>{% endfor -%}
-          </div>
+          {#- One summary line instead of a per-year strip (tj 2026-09-16). #}
+          {%- set yrs = city_hist_f.value | map(attribute='year') | list -%}
           {%- set cur_rows = city_hist_f.value | selectattr('current') | list %}
+          <div class="years">{% if yrs | min != yrs | max %}{{ yrs | min }}&ndash;{{ yrs | max }} &middot; {{ yrs | unique | list | length }} years{% else %}{{ yrs | min }}{% endif %}{% if cur_rows %} &middot; <b>{{ cur_rows | sum(attribute='count') }} in {{ cur_rows[0].year }}</b>{% endif %}</div>
           {%- if cur_rows %}
           <ul>
             {%- for row in cur_rows %}<li><span>{{ row.year }} &middot; {{ row.venue or 'venue unknown' }}</span><span>{{ row.count }}</span></li>{% endfor -%}

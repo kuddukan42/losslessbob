@@ -1,3 +1,7 @@
+[2026-09-16] — Dossier: city history as one line
+Changed: backend/templates/dossier.html: the venue card's per-year strip of city show counts is now
+  one line ("1964–2024 · 27 years · 5 in 1965"); the current year's venue list stays.
+
 [2026-09-16] — Dossier: bobdylan.com cross-reference card
 Added: backend/dossier.py: _bobdylan_show_url + a "BobDylan.com" xref card linking the show's
   bobdylan_shows.bobdylan_url (venue-matched on two-show dates); greyed out when the site has no
