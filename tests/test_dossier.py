@@ -363,6 +363,29 @@ class TestXrefDeepLinks:
             import shutil
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
+    def test_bobdylan_card_picks_the_event_venue_page(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            with conn:
+                _insert_entry(conn, 204, "3/29/10")
+                _insert_event(conn, 611, "2010-03-29", page_filename="DSN00611 2010.htm")
+                conn.execute("UPDATE olof_events SET venue = 'Zepp Tokyo' WHERE event_id = 611")
+                conn.executemany(
+                    "INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue) "
+                    "VALUES (?, '2010-03-29', ?)",
+                    [("https://www.bobdylan.com/date/2010-03-29-a-hall/", "A Hall"),
+                     ("https://www.bobdylan.com/date/2010-03-29-zepp-tokyo/", "Zepp Tokyo")],
+                )
+                conn.commit()
+
+            from backend.dossier import build_dossier
+            xref = {c["key"]: c for c in build_dossier("2010-03-29", db_path=db_path)["xref"]}
+            assert xref["bobdylan"]["url"] == "https://www.bobdylan.com/date/2010-03-29-zepp-tokyo/"
+            assert xref["bobdylan"]["unavailable"] is False
+        finally:
+            import shutil
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
     def test_pre_2022_bobserve_link_from_event_index_and_boblinks_unavailable(self):
         db_path, conn, tmp_dir = _make_db()
         try:
@@ -381,6 +404,8 @@ class TestXrefDeepLinks:
             assert xref["bobserve"]["url"] == "https://bobserve.com/setlist?event=365"
             assert xref["olof"]["url"].endswith("DSN00340%201963.htm#DSN00610")
             assert xref["boblinks"]["unavailable"] is True
+            assert xref["bobdylan"]["unavailable"] is True
+            assert xref["bobdylan"]["url"] == "https://www.bobdylan.com"
         finally:
             import shutil
             shutil.rmtree(tmp_dir, ignore_errors=True)

@@ -852,6 +852,7 @@ def _build_sources(conn: sqlite3.Connection, date_iso: str, entries: list[sqlite
 _OLOF_MIRROR_BASE = "https://www.bobserve.com/olof/"
 _OLOF_HOME = "http://www.bjorner.com/still.htm"
 _BOBLINKS_HOME = "https://boblinks.com"
+_BOBDYLAN_HOME = "https://www.bobdylan.com"
 _BOBSERVE_HOME = "https://bobserve.com"
 # Boblinks per-show pages (MMDDYYs.html) only exist from 1995 on.
 _BOBLINKS_FIRST_YEAR = 1995
@@ -921,8 +922,37 @@ def _bobserve_index_event_id(conn: sqlite3.Connection, date_iso: str,
     return str(rows[0]["event_id"]) if len(rows) == 1 else None
 
 
+def _bobdylan_show_url(conn: sqlite3.Connection, date_iso: str,
+                       event: sqlite3.Row | None) -> str | None:
+    """bobdylan.com's show page for a date, from the scraped ``bobdylan_shows`` table.
+
+    Args:
+        conn: Open connection.
+        date_iso: Concert date, ``'YYYY-MM-DD'``.
+        event: The primary ``olof_events`` row, used to pick between two same-date shows.
+
+    Returns:
+        The ``bobdylan_url``, or ``None`` when the site has no page for the date.
+    """
+    if not _table_exists(conn, "bobdylan_shows"):
+        return None
+    rows = conn.execute(
+        "SELECT bobdylan_url, venue FROM bobdylan_shows WHERE date_str = ? "
+        "AND COALESCE(bobdylan_url, '') != '' ORDER BY bobdylan_url",
+        (date_iso,),
+    ).fetchall()
+    if not rows:
+        return None
+    venue = ((event["venue"] if event is not None else None) or "").casefold()
+    for r in rows:
+        if venue and (r["venue"] or "").casefold() == venue:
+            return r["bobdylan_url"]
+    return rows[0]["bobdylan_url"]
+
+
 def _build_xref(date_iso: str, event: sqlite3.Row | None,
-                lb_number: int | None, bobserve_index_id: str | None = None) -> list[dict]:
+                lb_number: int | None, bobserve_index_id: str | None = None,
+                bobdylan_url: str | None = None) -> list[dict]:
     """Cross-reference cards with working deep links for one date.
 
     Every card carries both ``site`` (the source's home page, used for
@@ -938,6 +968,8 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
             (recommendation first, else first visible source).
         bobserve_index_id: bobserve ``?event=`` id from ``bobserve_event_index``
             for shows whose event row wasn't sourced from bobserve.
+        bobdylan_url: bobdylan.com show page (:func:`_bobdylan_show_url`); the
+            card renders greyed out (``unavailable``) without one.
 
     Returns:
         List of ``{key, name, desc, site, url, link_label, is_source}``
@@ -1022,7 +1054,19 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
         bobserve["link_label"] = f"setlist · {date_iso}"
         bobserve["is_source"] = True
 
-    return [lbb, olof, boblinks, bobserve]
+    bobdylan = {
+        "key": "bobdylan",
+        "name": "BobDylan.com",
+        "desc": "The official site's tour archive — setlist for the show as "
+                "published by Dylan's office.",
+        "site": _BOBDYLAN_HOME,
+        "url": bobdylan_url or _BOBDYLAN_HOME,
+        "link_label": f"setlist page · {date_iso}" if bobdylan_url else "no page for this date",
+        "is_source": False,
+        "unavailable": bobdylan_url is None,
+    }
+
+    return [lbb, olof, boblinks, bobserve, bobdylan]
 
 
 def build_dossier(date_iso: str, location: str | None = None, channel: str = "public",
@@ -1084,7 +1128,8 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
     xref_lb = rank1_lb if rank1_lb is not None and rank1_lb in visible_lbs else (
         visible_lbs[0] if visible_lbs else None)
     dossier["xref"] = _build_xref(date_iso, event, xref_lb,
-                                  _bobserve_index_event_id(conn, date_iso, event))
+                                  _bobserve_index_event_id(conn, date_iso, event),
+                                  _bobdylan_show_url(conn, date_iso, event))
 
     provenance: dict = {"generated_at": _now_iso(), "channel": channel, "local_analysis": local_analysis}
     mv = conn.execute("SELECT value FROM meta WHERE key = 'master_version'").fetchone()
