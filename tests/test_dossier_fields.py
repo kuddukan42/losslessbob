@@ -23,6 +23,7 @@ from backend.dossier_fields import (
     parse_entry_tracklist,
     parse_runtime,
     song_instruments,
+    song_notes_without,
     song_writers,
     source_character,
     taper_render,
@@ -450,6 +451,20 @@ class TestBroadcastSetLabels:
         labels, notes = broadcast_set_labels(conn, 1)
         assert labels == []
         assert notes == ["radio broadcast"]
+
+    def test_extra_clause_bands_with_neighbours(self):
+        bbc = "broadcast by BBC TV-1, 19 June 1965"
+        conn = _broadcast_labels_db([bbc, f"{bbc}; is in circulation as a line recording", bbc, ""])
+        labels, notes = broadcast_set_labels(conn, 1)
+        assert labels == [{"kind": "band", "text": bbc, "positions": [1, 2, 3]}]
+        assert notes == []
+
+    def test_song_notes_drop_shown_clauses(self):
+        bbc = "broadcast by BBC TV-1, 19 June 1965"
+        ann = f"{bbc}; is in circulation as a line recording"
+        assert song_notes_without(ann, {bbc}) == "is in circulation as a line recording"
+        assert song_notes_without(bbc, {bbc}) == ""
+        assert song_notes_without(ann, set()) == ann
 
     def test_no_broadcast_notes(self):
         conn = _broadcast_labels_db(["", "", ""])

@@ -1,3 +1,9 @@
+[2026-09-16] — Dossier: broadcast notes no longer repeat as duplicate track subtitles
+Fixed: backend/dossier_fields.py, backend/dossier_anchors.py: BUG-352 — a song whose Olof annotation
+  added a clause after the broadcast note split the broadcast band into per-song markers, and each
+  rendered next to an identical song-notes subtitle; labels now key on the broadcast clause and song
+  notes omit clauses a label already shows (1965-06-01 now shows two bands + one note).
+
 [2026-09-16] — Olof parser: header numerals, soundchecks and afternoon/evening shows
 Fixed: backend/olof_parser.py: BUG-350 — a split or mismatched event numeral ("4 0450", "1495")
   was parsed as the venue; any letterless first header line is now skipped (40 venues fixed).

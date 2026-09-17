@@ -2401,6 +2401,36 @@ class SetLabel(TypedDict):
     positions: list[int]
 
 
+def _annotation_clauses(annotations: str | None) -> list[str]:
+    return [c.strip() for c in (annotations or "").split(";") if c.strip()]
+
+
+def broadcast_clause(annotations: str | None) -> str:
+    """The broadcast part of an ``olof_songs.annotations`` string.
+
+    Args:
+        annotations: Olof's ``;``-joined per-song notes.
+
+    Returns:
+        The ``;``-joined clauses mentioning "broadcast", or ``""``.
+    """
+    return "; ".join(c for c in _annotation_clauses(annotations) if "broadcast" in c.lower())
+
+
+def song_notes_without(annotations: str | None, shown: set[str]) -> str:
+    """Drop annotation clauses already rendered elsewhere (a set label / session note).
+
+    Args:
+        annotations: Olof's ``;``-joined per-song notes.
+        shown: Clause texts already displayed for this song.
+
+    Returns:
+        The remaining clauses, ``;``-joined (``""`` when nothing is left).
+    """
+    shown_clauses = {c for s in shown for c in _annotation_clauses(s)}
+    return "; ".join(c for c in _annotation_clauses(annotations) if c not in shown_clauses)
+
+
 def broadcast_set_labels(
     conn: sqlite3.Connection, event_id: int,
 ) -> tuple[list[SetLabel], list[str]]:
@@ -2427,9 +2457,11 @@ def broadcast_set_labels(
     total = len(rows)
     groups: dict[str, list[int]] = defaultdict(list)
     for r in rows:
-        ann = (r["annotations"] or "").strip()
-        if ann and "broadcast" in ann.lower():
-            groups[ann].append(r["position"])
+        # Key on the broadcast clause only: "broadcast by X; is in circulation as a line
+        # recording" must band with its plain "broadcast by X" neighbours.
+        key = broadcast_clause(r["annotations"])
+        if key:
+            groups[key].append(r["position"])
 
     labels: list[SetLabel] = []
     session_notes: list[str] = []
