@@ -6,7 +6,9 @@ Fixed: backend/olof_parser.py: BUG-351 — "Soundcheck before concert." blocks w
   "6 January 1974 – Afternoon" date lines failed _DATE_LINE_RE, leaving 36 real early/late shows
   undated 'other' (now dated concerts). Live DB re-parsed + song_index rebuilt
   (song_performances 70,711 -> 71,152; concerts 4,259 -> 4,250). Golden fixture re-cut.
-Added: TODO-345 — dossier selector for same-venue two-show days; replace the 1978 golden spec.
+Added: TODO-345 — dossier selector for same-venue two-show days.
+Changed: tests/golden/dossier: 1978-09-17_two-show-day (a soundcheck, not a second show) replaced
+  by 1974-01-06_two-show-day (Spectrum afternoon + evening); fixture re-cut, --check 15/15.
 
 [2026-09-16] — Show dossier: city history by year, and cross-reference links go to the show
 Fixed: backend/templates/dossier.html: the city panel printed only the last 4 (year, venue)
