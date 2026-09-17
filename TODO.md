@@ -1,3 +1,9 @@
+TODO-347: Dossier: rethink stats.instrument_tally line
+Priority: Low
+Status: Open
+Added: 2026-09-16
+Description: The setlist stats line 'harp × 17, bass × 12, guitar × 17, keyboard × 13, vocal × 17, drums × 12 · complete' (templates/dossier.html:443, stats.instrument_tally) tells the reader nothing useful. Decide what's worth showing instead: e.g. only Dylan's non-default instruments (piano on 6, solo acoustic 10-14), band-vs-solo segments, or drop it.
+
 TODO-346: Dossier: venue reference link (e.g. Wikipedia) on the venue card
 Priority: Low
 Status: Open
