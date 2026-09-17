@@ -1,3 +1,9 @@
+TODO-345: Dossier: same-venue two-show days (1974 Afternoon/Evening) need a show selector
+Priority: Medium
+Status: Open
+Added: 2026-09-16
+Description: 19 dates (1974-01-06 Spectrum etc.) now parse as two concerts at one venue. build_dossier disambiguates by venue only, so it silently picks one show's setlist. Needs an afternoon/evening key from date_raw, and the golden 1978-09-17_two-show-day spec should be replaced by a real one (tj).
+
 TODO-344: Show-pick ranker ignores setlist completeness — fragments outrank complete sources
 Priority: Medium
 Status: Open

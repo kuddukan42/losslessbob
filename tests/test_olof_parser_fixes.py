@@ -501,3 +501,34 @@ def test_date_lines_are_not_position_lists():
     assert by_pos == {1: "circulated 1986", 2: "circulated 1986", 3: "circulated 1986",
                       4: "circulated 1986; Bob Dylan harmonica", 5: "circulated 1986",
                       6: "circulated 1986", 7: "circulated 1986"}
+
+
+def test_header_skips_letterless_numeral_that_is_not_the_event_id():
+    """BUG-350: a split ("4 0450") or mismatched ("1495") numeral line is not the venue."""
+    from backend.olof_parser import _parse_header
+    for numeral, event_id in (("4 0450", 40450), ("1495", 1490)):
+        fields, date_idx = _parse_header(
+            [numeral, "Beacon Theatre", "New York City, New York", "30 November 2019"], event_id)
+        assert (fields["venue"], fields["city"], date_idx) == (
+            "Beacon Theatre", "New York City", 3)
+    fields, _ = _parse_header(["Beacon Theatre", "New York City, New York",
+                               "30 November 2019"], 40450)
+    assert fields["venue"] == "Beacon Theatre"
+
+
+def test_header_date_with_afternoon_evening_suffix():
+    """1974's two-show days write "6 January 1974 – Afternoon"; the suffix stays in date_raw."""
+    from backend.olof_parser import _parse_header
+    for raw in ("6 January 1974 – Afternoon", "14 January 1974 — Evening"):
+        fields, date_idx = _parse_header(["2250", "The Spectrum", "Philadelphia, Pennsylvania",
+                                          raw, "1."], 2250)
+        assert date_idx == 3 and fields["date_raw"] == raw
+        assert fields["date_str"] in ("1974-01-06", "1974-01-14")
+
+
+def test_soundcheck_title_is_rehearsal_not_concert():
+    """A "Soundcheck before concert." block with a setlist is not a second concert."""
+    from backend.olof_parser import EventRecord, _classify_event_type
+    rec = EventRecord(event_id=4320, page_filename="p", venue="War Memorial Coliseum",
+                      session_title="Soundcheck before concert.")
+    assert _classify_event_type(rec, ["1.", "Love You Too Much"]) == "rehearsal"

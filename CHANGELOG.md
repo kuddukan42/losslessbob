@@ -1,3 +1,13 @@
+[2026-09-16] — Olof parser: header numerals, soundchecks and afternoon/evening shows
+Fixed: backend/olof_parser.py: BUG-350 — a split or mismatched event numeral ("4 0450", "1495")
+  was parsed as the venue; any letterless first header line is now skipped (40 venues fixed).
+Fixed: backend/olof_parser.py: BUG-351 — "Soundcheck before concert." blocks with a setlist
+  were typed concert, making 1978-09-17 look like a two-show day (45 corpus-wide, now rehearsal);
+  "6 January 1974 – Afternoon" date lines failed _DATE_LINE_RE, leaving 36 real early/late shows
+  undated 'other' (now dated concerts). Live DB re-parsed + song_index rebuilt
+  (song_performances 70,711 -> 71,152; concerts 4,259 -> 4,250). Golden fixture re-cut.
+Added: TODO-345 — dossier selector for same-venue two-show days; replace the 1978 golden spec.
+
 [2026-09-16] — Show dossier: city history by year, and cross-reference links go to the show
 Fixed: backend/templates/dossier.html: the city panel printed only the last 4 (year, venue)
   rows, so 1963-10-26's NYC dossier read "2019 · Beacon Theatre 6 … 2023 · 1" under "147 shows

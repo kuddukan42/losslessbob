@@ -2,6 +2,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-351: Dossier 1978-09-17 two-show day: golden spec picks War Memorial Coliseum but venue.name renders Veterans Memorial Coliseum
+Status: Fixed
+File(s): backend/dossier_anchors.py,tests/golden/dossier/1978-09-17_two-show-day.json
+Reported: 2026-09-16
+Fixed: 2026-09-16
+Root cause: Not a two-show day: DSN04320 is Olof's 'Soundcheck before concert.' block, typed concert because it carries a setlist (45 such soundchecks corpus-wide). Separately, 1974/75/76 early-late shows ('6 January 1974 – Afternoon') failed _DATE_LINE_RE and were undated 'other'.
+Fix: _classify_event_type: 'soundcheck' in session_title -> rehearsal; _DATE_LINE_RE accepts a '– Afternoon/Evening' suffix. Live re-parse + song_index rebuild: 45 concert->rehearsal, 36 other->dated concert, song_performances 70,711->71,152. The golden spec 1978-09-17_two-show-day no longer tests a two-show day.
+
+BUG-350: Olof parser: 40 olof_events have letterless venue fragments (e.g. event 40450 2019-11-30 venue '4 0450')
+Status: Fixed
+File(s): backend/olof_parser.py
+Reported: 2026-09-16
+Fixed: 2026-09-16
+Root cause: olof_parser._parse_header skipped lines[0] only when it equalled str(event_id); Word exports split the numeral ('4 0450') or print a different one ('1495' on DSN01490), so the numeral became the venue.
+Fix: Skip any letterless first header line. Live re-parse: 40 venues corrected, nothing else changed.
+
 BUG-349: CI red on every push: DROP COLUMN breaks olof DDL on SQLite < 3.46
 Status: Fixed
 File(s): backend/db.py:830
