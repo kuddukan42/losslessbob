@@ -1,3 +1,15 @@
+TODO-349: show_picks fragment rule demotes a partial tracklist below an equal-length source with no tracklist
+Priority: Low
+Status: Open
+Added: 2026-09-17
+Description: TODO-344 applies dossier_fields.is_fragment verbatim: a tracklist-basis source under FRAGMENT_THRESHOLD is a fragment, a source with no tracklist and a runtime near the median is not. Two 4-minute sources on 1964-05-14 therefore swap rank-1 (LB-01254 1/3 songs -> LB-03015 no tracklist). Decide whether picks should demote a tracklist fragment only when a non-fragment with materially longer runtime exists. Review .debug/todo344_rank1_diff.md first.
+
+TODO-348: seed_overlay cannot repair a wrong-LB tracker attribution
+Priority: Medium
+Status: Open
+Added: 2026-09-17
+Description: choose_source_folder only ranks folders from db.get_folders_for_lb(claimed lb), so when the tracker names LB-11813 and the audio is LB-11801 (rec 451; rec 1469 LB-12243 vs LB-12242) the right folder is never a candidate. Pull same-date candidate folders in independently of the claimed LB and let the piece-hash pick decide. Also: bad_pieces re-reads the overlay per piece rather than streaming, and the 4-piece disambiguation sample can mispick once on a large ambiguous file (self-corrected by repair).
+
 TODO-347: Dossier: rethink stats.instrument_tally line
 Priority: Low
 Status: Open
@@ -16,12 +28,6 @@ Status: Open
 Added: 2026-09-16
 Description: 19 dates (1974-01-06 Spectrum etc.) now parse as two concerts at one venue. build_dossier disambiguates by venue only, so it silently picks one show's setlist. Needs an afternoon/evening key from date_raw, and the golden 1978-09-17_two-show-day spec should be replaced by a real one (tj).
 
-TODO-344: Show-pick ranker ignores setlist completeness — fragments outrank complete sources
-Priority: Medium
-Status: Open
-Added: 2026-09-13
-Description: compute_show_picks scores every source without D-01 completeness, so a fragment can take pick_rank 1: 1963-10-26 LB-03216 (65 min, 26% of the setlist) ranks #1 over three complete sources. The dossier's C27 verdict already skips fragments and (as of 2026-09-13) renumbers only primary sources, but show_picks itself, and everything else that reads it (Library picks, recommendation), still leads with the fragment. Fix needs a corpus-wide recompute plus a before/after diff of rank-1 changes for tj. Found reviewing the C32 golden dossiers.
-
 TODO-343: Validate the TUIT uploader end-to-end — one manual upload, then one --apply run
 Priority: High
 Status: Open
@@ -34,12 +40,6 @@ Status: Open
 Added: 2026-09-10
 Description: Rebuild the show dossier per instructions/Show Dossier Redesign.pdf (Rev A, 2026-09-09) under the execution plan instructions/SHOW_DOSSIER_REDESIGN_PLAN.md and the binding pre-build audit instructions/SHOW_DOSSIER_AUDIT.md. Work proceeds one commit per row of the plan's 'Chunks & progress' table (C00–C35) on branch feat/dossier-redesign; commit subjects end [dossier Cnn]. Order: Olof parser fixes + reparse diff gate, database QC + quarantine + upstream fixes, QC review console, cross-source corroboration, D-01…D-13 derivations, view model + claim engine + per-dossier QC gate, template rewrite, golden set + sweep, bookkeeping. Guiding rule: when the pipeline cannot verify a value, the page shows the field's fallback and lists it as withheld — it never guesses.
 
-TODO-340: Cron's TUIT RSS backfill is capped at 10 /browse pages — no alert if a gap ever exceeds 500 uploads
-Priority: Low
-Status: Open
-Added: 2026-09-08
-Description: data/tuit/cron_rss.sh does not pass --rss-backfill-pages, so it takes the default 10 pages (500 rows). If the tracker ever goes quiet long enough for more than 500 uploads to land between successful polls, the backfill logs 'still no overlap after 10 page(s)' and stops rather than reaching further back. The warning goes to the cron log, which is only mailed on a non-zero exit, so nobody would see it. Either raise the cap in the cron script, or make the exhausted-cap case exit non-zero so cron mails it.
-
 TODO-339: TUIT corroborates entries almost perfectly — mine the 28 circa-date refinements, 69 source-type conflicts and 582 unattributed tapers
 Priority: Medium
 Status: Open
@@ -51,12 +51,6 @@ Priority: Medium
 Status: Open
 Added: 2026-09-07
 Description: tuit_shows (4,036 rows, 46 tours, 1961-2026) and tuit_venues (2,452 venues) landed 2026-09-07 from /tour and /venue. The two corpora now disagree in three measurable ways and nothing reconciles them. (1) DATES: 94 TUIT show rows have no matching olof_events concert row and 216 olof concerts have no TUIT row at all — the olof-only side is mostly pre-1970 and circa-dated entries, but the 94 need reading one by one, because a TUIT show with a circulating tape and no olof event is either an olof gap or a TUIT date error. (2) TOURS: zero name overlap by construction — TUIT names 46 coarse tours (Never Ending Tour 1993, Infidels/Empire, Gospel Tour) while olof names 204 fine-grained legs (1994 US Fall Tour, 1986 True Confessions, part two: US). They are complementary, not conflicting, and a date belongs to exactly one of each, so tuit_shows.tour is usable as the era axis the app has never had while olof_events.tour_name stays the leg axis. Nothing yet joins them. (3) VENUES: 1,526 venue names match after case/punctuation folding, 926 are TUIT-only and 848 olof-only. Spot-checking the 1,314 shared dates where the two disagree, TUIT is usually the MORE specific string (its 'Lisner Auditorium, George Washington University' vs olof's 'Lisner Auditorium', 'Porch 1 of Newport Casino, Freebody Park' vs 'Porch 1 of Newport Casino'), i.e. a superset rather than a contradiction — which makes tuit_venues a candidate normaliser for entries.location free text and a geocoder input, since it carries a clean venue/city/country split with a year span. Work: (1) triage the 94 and the 216 into real gaps vs date/format artifacts; (2) decide the join key for venue identity and whether the dossier's show-identity grouping (currently olof_events.venue) should prefer the longer TUIT string; (3) feed tuit_venues city/country into the geocoder priority chain; (4) expose tuit_shows.circulating in the Library performance lens — TUIT calls 1,507 shows uncirculated while LB holds recordings for 1,269 of those dates, so the flag is a tracker-availability signal, not a scarcity one, and must be labelled as such. Do NOT present TUIT 'gap' as 'no tape exists'.
-
-TODO-337: Overlay sidecars are matched by size alone, stranding 29 of 31 partial TUIT seeds one piece short
-Priority: High
-Status: Open
-Added: 2026-09-06
-Description: seed_overlay._resolve_source accepts the FIRST local file whose size equals the torrent entry's, and never checks its content. Its own docstring argues a wrong pick 'fails verification rather than being seeded' — true under the default, but --allow-partial-overlay (which the nightly run uses) seeds it anyway, permanently short. Measured against qBittorrent on 2026-09-06: 31 TUIT torrents are incomplete, and the MEDIAN outstanding is 524,288 bytes — exactly one 512 KiB piece. Excluding one genuinely unbuilt torrent (bd90-07-01-LTD.flacf, 569 MB at 0.00%), the rest are 1-2 pieces from done and will never finish, because the tracker announce problem (see the 2026-09-02 SYN-drop finding) leaves them at 0 seeds / 0 peers. Confirmed root cause on LB-11801: the collection holds a 1,095-byte bd1995-07-01-Roskilde, Denmark.md5, and so does LB-11813's folder — same size, different bytes. The overlay took LB-11813's copy, which shares piece 0 with track 01, so the torrent sat at 99.92% (1182/1183 pieces) with a 17 MB flac marked incomplete because of a 1 KB text file. Rebuilding from LB-11801 gave 100% on all 1183 pieces. Work: (1) when more than one indexed candidate matches a size, try each against the piece hashes rather than taking the first — sidecars are small and usually occupy part of a single piece, so this is cheap; (2) when a built overlay verifies short, re-resolve only the files inside the failing pieces before giving up, instead of handing the remainder to a dead swarm; (3) prefer the source folder with the highest resolvable_files count over the one the tracker's lb_number points at — the tracker's attribution was wrong in both cases repaired on 2026-09-06 (rec 451 claimed LB-11813 but the audio is LB-11801; rec 1469 claimed LB-12243 but the audio is LB-12242); (4) re-run the repaired overlays for the ~29 partials and confirm they reach 100% locally. Related: the collision fixes shipped 2026-09-06 (unique_overlay_name, _unique_torrent_path) prevent NEW instances of the wrong-folder pairing but do not repair the size-only matching.
 
 TODO-336: Triage the 114 pairs where LB says different but tapematch says same — the untested polarity
 Priority: Medium
@@ -95,12 +89,6 @@ Status: Open
 Added: 2026-08-31
 Description: Observed 2026-08-31 during the partial-overlay reseed: adding 584 torrents to qBittorrent inside an hour, on top of 1,833 already tagged 'tuit', pushed the tracker's announce endpoint into timeouts. A 200-torrent random sample showed 65 (33%) at tracker status 4 'timed out' and 10 more at status 1. Torrents that fail to announce are dropped from the tracker's peer list, so the site's seeding count FALLS while the local client still believes it is seeding — that is what the user noticed. Mitigation applied live: qBittorrent max_concurrent_http_announces lowered 20 -> 5 via the WebUI API (a runtime setting, not in the repo). TUIT is a ~21-member private tracker and tools/tuit_sync.py already paces its SCRAPE requests at 3s deliberately, but nothing paces the announce storm that a bulk seed triggers. Options to weigh: have the seeding path add torrents paused and release them on a timer; cap how many adds one run may perform; or document a required max_concurrent_http_announces for bulk runs and assert it before starting. Also worth surfacing tracker status in the seeding UI so a silent announce failure is visible. Re-sample announce health before deciding — the cap at 5 may prove sufficient on its own.
 
-TODO-328: Per-LB 'Seed to WTRF' has no progress surface — the board search runs behind a silent toast
-Priority: Low
-Status: Open
-Added: 2026-08-30
-Description: POST /api/entry/<lb>/seed_wtrf without a topic_url calls find_torrent_for_lb, which issues paced, flood-control-throttled searches against the WTRF board and can take a minute or more. useLibraryActions.tsx fires it as a plain fetch and only reports the outcome, so the user sees nothing between click and toast. The batch path (/api/wtrf/seed_links) already streams SSE; either give the single-LB route the same stream, or route the action through the WTRF Seeding tab with the link pre-filled.
-
 TODO-325: tapematch — require primary-correlation corroboration before a secondary/fingerprint link can merge a family
 Priority: Medium
 Status: Open
@@ -114,12 +102,6 @@ Priority: High
 Status: Open
 Added: 2026-08-21
 Description: Fallout from BUG-330, quantified by a scan over data/tapematch/runs on 2026-08-21. Of 5,458 [DISTINCT SOURCE] lines across 2,785 run dirs, 3,678 (67%) name a source whose results.json records speed_kind == 'speed-unknown' — so two out of every three of those 'entirely different recording' claims quoted a ppm figure the pipeline had already rejected, against a correlation computed without resampling. 2,006 distinct run dirs are affected and 1,869 of the bad lines sit in runs that ALREADY have a written analysis.md, so the verdicts in those files may have leaned on the claim. The cli.py fix (commit on this branch) only changes future runs: it emits [SPEED UNRESOLVED] instead, reporting ratio confidence, best cross-family correlation and best fingerprint Dice, and drawing no conclusion. Existing report.md files are not rewritten. Plan: (1) reproduce the scan and dump the affected (run dir, source, ppm, confidence) rows to a work file; (2) for the 1,869 with an analysis.md, grep each verdict for reliance on the distinct-source claim — a verdict already resting on commentary or fingerprint evidence needs no change, one whose only support was the DISTINCT SOURCE line does; (3) re-run tapematch only for the dates where the verdict actually turns on it, since a re-run is the only way to get a trustworthy speed ratio; (4) re-write just those analysis.md files. Do NOT bulk re-run all 2,006 dirs. Note the population skews to off-speed bootleg CD/vinyl pressings, the class most likely to be a same-source copy at wrong pitch, so expect real merges to surface. Related: BUG-330, and triage_analysis.py now escalates [SPEED UNRESOLVED] rather than auto-clearing it.
-
-TODO-322: tapematch — tighten the commentary-audit DISAGREES heuristic, which false-positives on boilerplate
-Priority: Low
-Status: Open
-Added: 2026-08-21
-Description: The auto-generated commentary audit in report.md raises DISAGREES by keyword-matching an LB's info-file prose against the clustering result, and in the 2026-08-21 batch several of those flags were spurious: the keyword hit landed in boilerplate or unrelated filler text rather than in an actual lineage claim. Confirmed false positives: 1984-06-04 (noted explicitly in that run's write-up) and 1995-03-31 (keyword hit inside bonus-filler track notes). Cost is real but bounded — an analysis writer must read past the flag to discover it means nothing, on every run where it fires. Worth scoping the match to the lineage/source portion of the info file, or requiring the matched sentence to name another LB number or a source-identity term, before raising the flag. Low priority: it wastes reader attention, it does not corrupt any stored family data.
 
 TODO-320: Fix three data-integrity findings from the 2026-08-21 tapematch batch
 Priority: Low

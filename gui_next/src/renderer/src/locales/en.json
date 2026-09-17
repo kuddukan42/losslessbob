@@ -1523,7 +1523,8 @@
       "wtrfSeeded": "{{lb}} seeding to WTRF {{where}}",
       "wtrfViaOverlay": "from a WTRF Seeds overlay",
       "wtrfInPlace": "from the collection folder",
-      "wtrfSeedFailed": "{{lb}} not seeded — {{reason}}"
+      "wtrfSeedFailed": "{{lb}} not seeded — {{reason}}",
+      "wtrfSearching": "Searching WTRF board for {{lb}}…"
     },
     "dossier": {
       "title": "Export show dossier",

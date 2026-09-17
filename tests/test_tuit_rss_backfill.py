@@ -98,12 +98,13 @@ def test_backfill_stops_at_the_first_known_recording(fake_browse):
     rows_by_id: dict = {}
     queue: list = []
 
-    skipped = tuit_sync._rss_backfill(
+    skipped, exhausted = tuit_sync._rss_backfill(
         object(), _args(), {500}, rows_by_id, queue
     )
 
     assert queue == [60, 59, 58]
     assert skipped == 1
+    assert exhausted is False
     assert fake_browse.fetched == [1, 2]
 
 
@@ -141,3 +142,47 @@ def test_backfill_stops_on_an_empty_page(fake_browse):
 
     assert fake_browse.fetched == [1, 2]
     assert queue == [60]
+
+
+# ── cap exhausted (TODO-340) ────────────────────────────────────────────────
+
+def test_backfill_reports_exhausted_when_cap_reached_without_overlap(
+    fake_browse, caplog
+):
+    """No page ever names a known id — the gap may exceed the page cap.
+
+    The oldest (last-fetched) page's rows are all still unknown, which is the
+    only way the loop can run out of pages without breaking on overlap. That
+    case must log a WARNING and tell the caller the cap was exhausted, so the
+    caller can surface it via the same non-zero-exit alert channel other
+    cron-path failures use in this scraper.
+    """
+    for page in range(1, 4):
+        fake_browse.pages[page] = [_row(1000 + page)]     # never 500 (known)
+    rows_by_id: dict = {}
+    queue: list = []
+
+    with caplog.at_level("WARNING"):
+        skipped, exhausted = tuit_sync._rss_backfill(
+            object(), _args(rss_backfill_pages=3), {500}, rows_by_id, queue
+        )
+
+    assert exhausted is True
+    assert skipped == 0
+    assert fake_browse.fetched == [1, 2, 3]
+    assert any(
+        "still no overlap" in r.message and "may exceed" in r.message
+        for r in caplog.records
+    )
+
+
+def test_backfill_not_exhausted_when_overlap_found_on_last_page(fake_browse):
+    """Overlap on the very last allowed page is still a clean stop, not a gap."""
+    fake_browse.pages[1] = [_row(60)]
+    fake_browse.pages[2] = [_row(500)]     # known — overlap on the cap page
+
+    _, exhausted = tuit_sync._rss_backfill(
+        object(), _args(rss_backfill_pages=2), {500}, {}, []
+    )
+
+    assert exhausted is False

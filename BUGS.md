@@ -1,24 +1,8 @@
-BUG-343: Dossier template output is 37% blank lines
-Status: Open
-File(s): backend/templates/dossier.html:1
-Reported: 2026-09-10
-Description: Plan F14. The rendered dossier HTML is 37% blank lines; the masthead does not start until line 383. Target <5% blank lines. Fixed by the template rewrite in dossier chunk C29.
-Root cause: Unknown
-Fix: —
-
 BUG-337: song_canonical splits 28 titles into spacing/encoding variants, stranding 4,290 performances
 Status: Open
 File(s): backend/olof_parser.py,backend/song_index.py
 Reported: 2026-09-07
 Description: Found 2026-09-07 while comparing our song spine against TUIT's /songs songbook (832 songs, 67,728 performances logged — near-identical to our 67,844, since both derive from Olof). The totals match but the rankings do not, and the reason is on our side. song_performances.song_canonical holds 1,338 distinct titles that collapse to 1,307 when folded on alphanumerics alone: 28 titles exist as two or more variants and 4,290 performances sit in the smaller variant of a pair, invisible to any query that names the correct title. Worst cases: "Blowin ' In The Wind" 270 + "Blowin' InThe Wind" 1 split off "Blowin' In The Wind" 1,213 (TUIT counts 1,576, so the fold recovers most of the gap); "The Times They Are A-Changin'" fragments FOUR ways (388 / 52 / 48 / 40) across a stray space before the apostrophe and a stray space inside 'Times'; "Beyond Here Lies Nothin'" 324 + 128; "Tryin' To Get To Heaven" 289 + 51; "Rollin' And Tumblin'" 207 + 38. Two distinct defects are mixed together and both need fixing. (1) SPACING: variants like 'Tim es', 'Tomorrow Is A Long Tim e', 'Born In Tim e', 'Things Hav,e Changed' show a space or comma inserted mid-word, which is a text-extraction artifact in the Olof page parse, not a real alias — db.normalize_title_for_match's punctuation collapse cannot fix a space inside a word. (2) ENCODING: 'Se or' vs 'Senor' (with the tilde n dropped outright) is the cp1252/Unicode class of bug the repo has hit before, so check BOTH normalisation forms and the raw bytes of the source page rather than patching the output string. Work: (a) find where the spacing corruption enters — olof_parser.py's song-title extraction is the suspect, and the fix belongs there so olof_songs is right at rest, not only in the derived table; (b) re-run song_index.py to rebuild song_performances/song_canonical after the parser fix; (c) add a guard that fails loudly when two canonical titles fold to the same alphanumeric key, so this cannot silently return; (d) re-check the ranking against TUIT afterwards — Ballad Of A Thin Man is ours 1,214 vs their 1,330 and It Ain't Me, Babe theirs 1,171, so the 28 splits do not explain every divergence and at least one more cause remains. Consequence today: the dossier's rarity flags (only/first/last/rare in song_index.py) are computed over a fragmented spine, so a song's 'first played' and 'only performance' claims can be wrong wherever a variant holds the earliest row.
-Root cause: Unknown
-Fix: —
-
-BUG-335: tapematch ingest counts patched-track subfolders as extra tracks, inflating a source
-Status: Open
-File(s): tools/tapematch/tapematch/ingest.py
-Reported: 2026-09-03
-Description: Found while re-running 1993-08-28 for TODO-331. BUG-327 taught ingest.list_tracks to spot a folder holding the show TWICE (nested full copy) and use the outer pass. It does not spot a folder holding the show once plus a handful of REPLACEMENT tracks. LB-07173's remaster folder 'bd1993-08-28-LB-7173_Milwaukee (REMASTERED)_fixed' carries d1/ + d2/ (11 tracks, the release) alongside 'bd1993-08-28d1.fix/Track08.fix.flac', 'bd1993-08-28d1.fix/Track09.fix.flac' and 'd1/fix/Track08.fix.flac' — patched versions of two of those tracks, published as fixes. Ingest counts them as additional tracks, so the source reads 14 tracks / 1:55:34 against a real performance of 11 tracks / 1:26:24: a 27-minute inflation, which is enough to trip the TIMING MISMATCH diagnostic and to make correlation against the same show unreliable. Same failure class and same consequence as BUG-327 (correlation computed over a source that is partly duplicated), one level down. A '.fix'/'fixed' sibling whose track names match tracks already present should replace them or be skipped, not appended. Note the ambiguity to decide first: the fix files are the CORRECT audio for those two tracks, so replacing is the right call, but a rule keyed on the literal token 'fix' is narrow — survey how many folders in the corpus carry a same-named-track sibling directory before choosing the predicate.
 Root cause: Unknown
 Fix: —
 

@@ -1530,7 +1530,8 @@
       "wtrfSeedFailed": "{{lb}} niet ingevuld — {{reason}}",
       "postedForumNotCopied": "{{lb}} op het forum geplaatst — kopieer de onderstaande link",
       "linksNotCopiedSuffix_one": " — {{count}}-link, kopieer deze hieronder",
-      "linksNotCopiedSuffix_other": " — {{count}}-links, kopieer deze hieronder"
+      "linksNotCopiedSuffix_other": " — {{count}}-links, kopieer deze hieronder",
+      "wtrfSearching": "Zoeken op het WTRF-forum naar {{lb}}…"
     },
     "panel": {
       "details": "Details",
@@ -1610,7 +1611,7 @@
       "loading": "Setlist wordt geladen…",
       "notScraped": "De setlist voor dit optreden is nog niet verzameld",
       "title": "Setlist",
-      "tracksCount_one": "{{count}} track",
+      "tracksCount_one": "{{count}}-track",
       "tracksCount_other": "{{count}}-tracks"
     },
     "share": {

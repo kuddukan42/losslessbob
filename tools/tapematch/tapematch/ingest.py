@@ -6,10 +6,13 @@ concatenates into a single continuous stream per source. Filenames are used
 ONLY for ordering, then discarded -- we compare ~2-hour waveforms, not tracks.
 """
 from __future__ import annotations
+
 import logging
 import re
 from pathlib import Path
+
 import numpy as np
+
 from . import audio
 
 log = logging.getLogger(__name__)
@@ -238,6 +241,126 @@ def _select_version(
     return outside, (nested_root, len(inside), len(outside))
 
 
+# Trailing edit-marker tokens that a patched track's filename tacks onto the
+# original stem, e.g. "Track08.fix" or "Track09 (patched)". Matched broadly on
+# purpose (BUG-335): the replacement predicate below is the name overlap with
+# a track outside the directory, not this token list by itself.
+_PATCH_MARKER_RE = re.compile(
+    r"[._\-\s]*\(?(fix|fixed|patch|patched|repair|repaired|redo|corrected)\)?$",
+    re.IGNORECASE,
+)
+
+
+def _strip_patch_marker(stem: str) -> str:
+    """Strip a trailing edit-marker token from a track stem, lowercased.
+
+    Args:
+        stem: A track's filename stem (without extension), e.g. ``"Track08.fix"``.
+
+    Returns:
+        The lowercased stem with a trailing marker segment removed, or the
+        lowercased stem unchanged if no marker is present.
+    """
+    lowered = stem.lower()
+    stripped = _PATCH_MARKER_RE.sub("", lowered)
+    return stripped or lowered
+
+
+def _replace_fix_siblings(
+    tracks: list[Path], source_dir: Path
+) -> tuple[list[Path], list[tuple[Path, int]]]:
+    """Fold a fix/patch sibling directory's tracks in as replacements (BUG-335).
+
+    A source occasionally carries the release under its normal layout plus a
+    small sibling directory of corrected tracks — e.g. ``d1/fix/Track08.fix.flac``
+    or a top-level ``<name>d1.fix/`` folder holding just the tracks that needed
+    re-encoding. Unlike ``_select_version`` (a full second pass of the whole
+    show, BUG-327), these directories hold only a handful of tracks; naively
+    walked, they were appended as extra tracks, inflating the source's track
+    count and duration.
+
+    A directory's tracks are treated as replacements — not additional tracks —
+    only when *every* track inside it carries a stripped edit marker (see
+    ``_strip_patch_marker``) *and* its normalised name matches exactly one
+    track outside the directory. The predicate is that name overlap, not the
+    directory's own name: a directory named ``fix`` whose files carry no
+    marker, or whose normalised names don't match a track elsewhere (or match
+    more than one — e.g. same track numbering repeated per-disc), is left
+    alone and its tracks stay ordinary additional tracks. This also means a
+    directory is only ever a *full* replacement set — a mix of marked tracks
+    that match and unrelated tracks that don't is left untouched rather than
+    partially folded in.
+
+    Matched tracks are substituted in place of the outside track they replace,
+    preserving concert order; callers must not re-sort by natural path order
+    afterwards; or the fix track's own directory position would win instead.
+
+    Args:
+        tracks: Candidate track paths, already in concert order (format-,
+            subtree- and version-de-duplicated, naturally sorted).
+        source_dir: The source root.
+
+    Returns:
+        ``(kept, replacements)`` — the tracks with matched directories folded
+        in, and a list of ``(fix_dir, n_replaced)`` for logging.
+    """
+    source_dir = Path(source_dir)
+    kept = list(tracks)
+    by_parent: dict[Path, list[Path]] = {}
+    for t in tracks:
+        by_parent.setdefault(t.parent, []).append(t)
+
+    # Deepest directories first, so a nested fix dir (e.g. d1/fix) resolves
+    # before a shallower sibling that might reference the same outer tracks.
+    parents = sorted(
+        (p for p in by_parent if p != source_dir),
+        key=lambda p: len(p.relative_to(source_dir).parts),
+        reverse=True,
+    )
+
+    replacements: list[tuple[Path, int]] = []
+    for parent in parents:
+        candidates = [t for t in by_parent[parent] if t in kept]
+        if not candidates:
+            continue
+
+        marked: dict[Path, str] = {}
+        for t in candidates:
+            norm = _strip_patch_marker(t.stem)
+            if norm == t.stem.lower():
+                marked = {}
+                break
+            marked[t] = norm
+        if not marked:
+            continue
+
+        outside_by_norm: dict[str, list[Path]] = {}
+        for t in kept:
+            if t.parent == parent:
+                continue
+            outside_by_norm.setdefault(_strip_patch_marker(t.stem), []).append(t)
+
+        matches: dict[Path, Path] = {}
+        for t, norm in marked.items():
+            hits = outside_by_norm.get(norm, [])
+            if len(hits) != 1:
+                matches = {}
+                break
+            matches[t] = hits[0]
+        if not matches or len(set(matches.values())) != len(matches):
+            continue
+
+        for new_track, old_track in matches.items():
+            old_idx = kept.index(old_track)
+            new_idx = kept.index(new_track)
+            kept[old_idx] = new_track
+            del kept[new_idx]
+
+        replacements.append((parent, len(matches)))
+
+    return kept, replacements
+
+
 def list_tracks(source_dir: Path, exts):
     """Return this source's tracks in concert order, de-duplicated.
 
@@ -275,7 +398,19 @@ def list_tracks(source_dir: Path, exts):
             str(nested_root.relative_to(Path(source_dir))), n_inside,
         )
 
-    return sorted(tracks, key=_natural_key)
+    # Re-sort before the fix-sibling pass so it substitutes in place rather
+    # than appending; that pass preserves order itself, so nothing re-sorts
+    # after it (BUG-335).
+    tracks = sorted(tracks, key=_natural_key)
+    tracks, fix_replacements = _replace_fix_siblings(tracks, source_dir)
+    for fix_dir, n_replaced in fix_replacements:
+        log.warning(
+            "ingest: %s — %r replaces %d matching track(s) from the main pass "
+            "(BUG-335)", Path(source_dir).name,
+            str(fix_dir.relative_to(Path(source_dir))), n_replaced,
+        )
+
+    return tracks
 
 
 class UnreadableSourceError(Exception):

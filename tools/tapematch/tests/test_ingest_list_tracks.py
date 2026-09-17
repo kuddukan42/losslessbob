@@ -113,3 +113,87 @@ def test_distinct_subtrees_are_both_kept(tmp_path):
 
     assert len(tracks) == 6
     assert {p.parent.name for p in tracks} == {"D1", "D2"}
+
+
+def test_fix_sibling_directory_replaces_matching_tracks(tmp_path):
+    """BUG-335: LB-07173's shape — d1/fix + a top-level *d1.fix sibling.
+
+    The release (d1/d2, 11 tracks) is nested a level deeper here to mirror the
+    real folder ('...REMASTERED)_fixed/d1', '.../d1/fix', plus a top-level
+    'bd1993-08-28d1.fix' sibling of that folder) but the shape that matters is
+    the same: small sibling directories of '.fix' tracks whose names match
+    tracks already present, which must replace — not inflate — the count.
+    """
+    source = tmp_path / "bd1993-08-28-LB-7173_Milwaukee (REMASTERED)_fixed"
+    source.mkdir()
+    d1 = source / "d1"
+    d1.mkdir()
+    for t in range(1, 9):
+        (d1 / f"Track{t:02d}.flac").write_bytes(b"orig" * t)
+    d2 = source / "d2"
+    d2.mkdir()
+    for t in range(1, 4):
+        (d2 / f"Track{t:02d}.flac").write_bytes(b"origd2" * t)
+
+    # Nested fix sibling: replaces d1/Track08.
+    nested_fix = d1 / "fix"
+    nested_fix.mkdir()
+    (nested_fix / "Track08.fix.flac").write_bytes(b"fixed-08")
+
+    # Top-level fix sibling: replaces d1/Track09... but there is no Track09,
+    # so mirror the bug report with a second genuinely-replaced track instead.
+    top_fix = source / "bd1993-08-28d1.fix"
+    top_fix.mkdir()
+    (top_fix / "Track07.fix.flac").write_bytes(b"fixed-07")
+
+    tracks = ingest.list_tracks(source, {".flac"})
+
+    assert len(tracks) == 11, "fix siblings must replace, not add, tracks"
+    names = {p.name for p in tracks}
+    assert "Track08.fix.flac" in names
+    assert "Track07.fix.flac" in names
+    assert "Track08.flac" not in names
+    assert "Track07.flac" not in names
+    # Concert order preserved: the fix track sits where Track07 used to.
+    stems = [p.stem.split(".")[0] for p in tracks if p.parent != d2]
+    assert stems == [f"Track{t:02d}" for t in range(1, 9)]
+
+
+def test_fix_marker_without_unique_match_is_left_alone(tmp_path):
+    """A marked directory that doesn't uniquely match an outside track is kept as-is."""
+    source = tmp_path / "ambiguous (LB-00004)"
+    source.mkdir()
+    d1 = source / "D1"
+    d1.mkdir()
+    (d1 / "Track01.flac").write_bytes(b"a")
+    d2 = source / "D2"
+    d2.mkdir()
+    (d2 / "Track01.flac").write_bytes(b"bb")  # different size: a real distinct disc
+    # "Track01.fix" matches BOTH D1 and D2's Track01 — ambiguous, must not replace.
+    fixdir = source / "fix"
+    fixdir.mkdir()
+    (fixdir / "Track01.fix.flac").write_bytes(b"c")
+
+    tracks = ingest.list_tracks(source, {".flac"})
+
+    assert len(tracks) == 3, "ambiguous match must be appended, not silently dropped"
+
+
+def test_directory_without_marker_is_not_treated_as_fix_sibling(tmp_path):
+    """A same-named sibling directory with no edit marker is a real duplicate
+
+    concern for other checks, not this predicate — it must not be folded in
+    just because its directory name happens to overlap by track name alone.
+    """
+    source = tmp_path / "no marker (LB-00005)"
+    source.mkdir()
+    d1 = source / "D1"
+    d1.mkdir()
+    (d1 / "Track01.flac").write_bytes(b"a" * 10)
+    other = source / "extra"
+    other.mkdir()
+    (other / "Track01.flac").write_bytes(b"b" * 20)
+
+    tracks = ingest.list_tracks(source, {".flac"})
+
+    assert len(tracks) == 2, "no marker means no replacement predicate applies"

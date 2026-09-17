@@ -41,6 +41,14 @@ log = logging.getLogger(__name__)
 _RATING_MIN_RANK = min(RATING_RANK.values())   # 1  (F)
 _RATING_MAX_RANK = max(RATING_RANK.values())   # 13 (A+)
 
+# Local copy of backend/dossier.py's concert-type filter — repo convention is
+# to duplicate small private feature-detect helpers rather than cross-import
+# (see backend/dossier.py's own docstring on _CONCERT_TYPE_FILTER).
+_CONCERT_TYPE_FILTER = (
+    "((event_type = 'concert' OR event_type LIKE 'concert - %') "
+    "AND tour_name NOT LIKE '%ehearsal%')"
+)
+
 # Spec §8/§5: "exact eac match" / "close eac match" in a description means
 # EAC's wav-compare found this copy identical (or near-identical) to another
 # already-circulating copy — it offers nothing new (concert_ranker/LB_KNOWLEDGE.md
@@ -166,7 +174,7 @@ def _table_exists(conn: sqlite3.Connection, name: str) -> bool:
 def _load_candidates(conn: sqlite3.Connection) -> dict[str, list[dict]]:
     """Group real (status='ok', dated) entries into per-date candidate lists."""
     rows = conn.execute(
-        "SELECT lb_number, date_str, rating, description FROM entries"
+        "SELECT lb_number, date_str, rating, description, timing FROM entries"
         " WHERE status='ok' AND date_str IS NOT NULL AND date_str != ''"
     ).fetchall()
     by_date: dict[str, list[dict]] = defaultdict(list)
@@ -175,8 +183,82 @@ def _load_candidates(conn: sqlite3.Connection) -> dict[str, list[dict]]:
             "lb_number": r["lb_number"],
             "rating": r["rating"],
             "description": r["description"] or "",
+            "timing": r["timing"],
         })
     return dict(by_date)
+
+
+def _primary_event_id(conn: sqlite3.Connection, date_iso: str) -> int | None:
+    """The ``olof_events.event_id`` that best represents this date's show.
+
+    Mirrors ``backend/dossier.py``'s ``_primary_event`` preference order
+    (concert-type rows first, any row second) without its ``prefer_venue``
+    disambiguation — picks scoring has no location parameter, so an
+    ambiguous two-show date falls back to the lowest ``event_id``, same as
+    an un-disambiguated dossier request.
+
+    Args:
+        conn: Open SQLite connection.
+        date_iso: ISO show date (``olof_events.date_str`` is ISO already).
+
+    Returns:
+        The event id, or ``None`` when ``olof_events`` is absent/empty for
+        this date.
+    """
+    if not _table_exists(conn, "olof_events"):
+        return None
+    row = conn.execute(
+        f"SELECT event_id FROM olof_events WHERE {_CONCERT_TYPE_FILTER} AND date_str = ? "
+        "ORDER BY event_id LIMIT 1",
+        (date_iso,),
+    ).fetchone()
+    if row is not None:
+        return row["event_id"]
+    row = conn.execute(
+        "SELECT event_id FROM olof_events WHERE date_str = ? ORDER BY event_id LIMIT 1",
+        (date_iso,),
+    ).fetchone()
+    return row["event_id"] if row is not None else None
+
+
+def _fragment_lbs(
+    conn: sqlite3.Connection, event_id: int | None, candidates: list[dict],
+) -> set[int]:
+    """TODO-344/§8.2 (C27): which of this date's candidates are fragments.
+
+    Reuses ``backend.dossier_fields.completeness``/``is_fragment`` — the same
+    D-01 completeness signal the dossier's C27 verdict applies to keep
+    fragments out of its primary-source numbering — so a fragment can never
+    take ``pick_rank`` 1 over a complete source in ``show_picks`` either.
+
+    Args:
+        conn: Open SQLite connection.
+        event_id: ``olof_events.event_id`` for this date, or ``None`` when no
+            event row exists (completeness then falls back to the
+            runtime-vs-median rule only).
+        candidates: This date's candidate rows (each with ``lb_number`` and
+            ``timing``), as produced by :func:`_load_candidates`.
+
+    Returns:
+        The set of ``lb_number`` values that count as fragments.
+    """
+    from backend.dossier_fields import completeness as _completeness
+    from backend.dossier_fields import is_fragment, parse_runtime
+
+    lbs = [c["lb_number"] for c in candidates]
+    comp_map = _completeness(conn, event_id, lbs) if event_id is not None else {}
+
+    runtimes: dict[int, float] = {}
+    for c in candidates:
+        rt = parse_runtime(c.get("timing"))
+        if rt:
+            runtimes[c["lb_number"]] = rt["total_minutes"]
+    median_runtime = median(runtimes.values()) if runtimes else None
+
+    return {
+        lb for lb in lbs
+        if is_fragment(comp_map.get(lb), runtimes.get(lb), median_runtime)
+    }
 
 
 def _load_curated_lists(conn: sqlite3.Connection) -> dict[int, list[str]]:
@@ -380,9 +462,28 @@ def _score_date(
     return rows
 
 
-def _rank_date(rows: list[tuple[int, float, list[dict]]]) -> list[tuple[int, float, list[dict], int]]:
-    """Sort by score desc, ties toward lower LB number; assign pick_rank 1..N."""
-    ordered = sorted(rows, key=lambda r: (-r[1], r[0]))
+def _rank_date(
+    rows: list[tuple[int, float, list[dict]]], fragments: frozenset[int] = frozenset(),
+) -> list[tuple[int, float, list[dict], int]]:
+    """Rank by fragment status (TODO-344/C27), then score desc, ties to lower LB.
+
+    A fragment (per :func:`_fragment_lbs`, the same D-01 signal the dossier's
+    C27 verdict uses) never outranks a non-fragment candidate on the same
+    date, regardless of score — mirroring the dossier's "Excerpts &
+    fragments" group, which is held out of primary-source numbering.
+    Fragments are still scored and ranked among themselves, so
+    ``pick_rank`` stays a complete 1..N ordering for downstream consumers;
+    it's only guaranteed that rank 1 is never a fragment when a non-fragment
+    candidate exists for the date.
+
+    Args:
+        rows: Unordered ``(lb, score, evidence)`` tuples for one date.
+        fragments: ``lb_number``s on this date classified as fragments.
+
+    Returns:
+        ``(lb, score, evidence, pick_rank)`` tuples, ``pick_rank`` 1..N.
+    """
+    ordered = sorted(rows, key=lambda r: (r[0] in fragments, -r[1], r[0]))
     return [(lb, score, ev, rank) for rank, (lb, score, ev) in enumerate(ordered, start=1)]
 
 
@@ -479,8 +580,15 @@ def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
         date_iso = _parse_concert_date_iso(date)
         if date_iso is None:
             continue  # partial dates (xx/xx/61) are no show: no phantom rank-1 (BUG-346)
+        event_id = _primary_event_id(conn, date_iso)
+        fragments = frozenset(_fragment_lbs(conn, event_id, candidates))
         scored = _score_date(candidates, curated, lineage, quality, lb_taper, reputable_tapers)
-        for lb, score, ev, rank in _rank_date(scored):
+        if fragments:
+            for lb, _score, ev in scored:
+                if lb in fragments:
+                    ev.append(_evidence(
+                        "fragment", "excerpt/fragment (D-01 completeness) — held out of top rank"))
+        for lb, score, ev, rank in _rank_date(scored, fragments):
             all_rows.append((date, lb, score, rank, ev, date_iso))
 
     summary = _summarize(all_rows)

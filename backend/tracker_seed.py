@@ -33,10 +33,11 @@ from backend import qbittorrent
 from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY, get_credentials
 from backend.seed_overlay import (
     build_overlay,
+    choose_source_folder,
     collection_is_untouched,
     http_fetch,
     plan_overlay,
-    resolvable_files,
+    repair_overlay,
     snapshot_folder,
     unique_overlay_name,
 )
@@ -116,28 +117,29 @@ def overlay_root_for(source_folder: Path, opts: SeedOptions) -> Path:
     return source_folder.parent / opts.overlay_dirname
 
 
-def best_source_folder(info: TorrentInfo, folders: list[str]) -> str | None:
+def best_source_folder(
+    info: TorrentInfo, folders: list[str], named: list[str] | None = None
+) -> str | None:
     """Pick the collection folder that supplies the most of a torrent.
 
-    Used when no folder is named after the torrent root — an uploader's naming
-    rarely matches the collection's. Selection is by content, not by name, and
-    by the same recursive path-suffix rule the overlay planner uses, so a
-    nested torrent (``<root>/<show>/cd-1/…``) scores against a nested
-    collection folder instead of finding nothing at its top level.
+    Selection is by content, not by name, and by the same recursive
+    path-suffix rule the overlay planner uses, so a nested torrent
+    (``<root>/<show>/cd-1/…``) scores against a nested collection folder
+    instead of finding nothing at its top level. A folder *named* after the
+    torrent root only breaks a tie: the tracker's attribution is not
+    authoritative (two recordings repaired on 2026-09-06 were filed against
+    the wrong LB outright), so the folder that resolves more of the torrent
+    wins even when another one carries the matching name.
 
     Args:
         info: Parsed torrent metadata.
         folders: Candidate collection folders, all known to exist.
+        named: The subset whose directory name equals the torrent root.
 
     Returns:
         The best-matching folder, or None when none supplies any file.
     """
-    best_folder, best_hits = None, 0
-    for folder in folders:
-        hits = resolvable_files(info, [folder])
-        if hits > best_hits:
-            best_folder, best_hits = folder, hits
-    return best_folder
+    return choose_source_folder(info, list(folders), named)
 
 
 def build_seed_overlay(
@@ -147,6 +149,7 @@ def build_seed_overlay(
     shortfall: str,
     link_dirs: list[str] | None = None,
     lb_number: int | None = None,
+    details: dict | None = None,
 ) -> tuple[str | None, str]:
     """Assemble an overlay folder that can seed without touching the collection.
 
@@ -165,6 +168,12 @@ def build_seed_overlay(
             that spans more than one LB entry.
         lb_number: LB entry being seeded, used to keep the overlay folder from
             colliding with another entry whose torrent has the same root name.
+        details: Optional dict filled in with ``overlay`` (the target dir),
+            ``repaired`` (torrent-relative paths whose source was re-resolved
+            out of a failing piece) and ``bad_pieces``. A caller that finds
+            ``repaired`` non-empty and the torrent *already* in qBittorrent
+            must trigger a recheck — see :func:`recheck_seed` — because the
+            client hashed the overlay before those files changed.
 
     Returns:
         (overlay_path or None, human-readable reason).
@@ -198,6 +207,40 @@ def build_seed_overlay(
 
     result = verify_folder(info, plan.target_dir)
     logger.info("  overlay verify: %s", result.summary())
+
+    if not result.complete:
+        # A short overlay whose failing pieces are locally complete is a wrong
+        # pick, not a shortfall — re-resolve just those files before handing
+        # the remainder to a swarm that may have nobody left in it.
+        repair = repair_overlay(info, plan)
+        if details is not None:
+            details["overlay"] = str(plan.target_dir)
+            details["repaired"] = list(repair["repaired"])
+            details["bad_pieces"] = repair["bad_pieces"]
+        if repair["repaired"]:
+            logger.info(
+                "  overlay repair: re-resolved %s; now %s",
+                ", ".join(Path(p).name for p in repair["repaired"][:3]),
+                repair["verify"].summary(),
+            )
+            result = repair["verify"]
+        elif repair["bad_pieces"]:
+            logger.warning(
+                "  overlay repair: %d piece(s) hash wrong with every byte "
+                "present locally, and no alternative local source to try — "
+                "this seed stays short unless the swarm supplies them",
+                repair["bad_pieces"],
+            )
+        for err in repair["errors"]:
+            logger.warning("  overlay repair: %s", err)
+
+        touched = collection_is_untouched(source, before)
+        if touched:
+            return None, (
+                f"ABORTED — repairing the overlay altered the collection: "
+                f"{', '.join(touched[:3])}"
+            )
+
     if not result.complete:
         if not opts.allow_partial_overlay:
             return None, (
@@ -220,6 +263,7 @@ def find_seedable_folder(
     torrent_path: str,
     opts: SeedOptions,
     link_dirs: list[str] | None = None,
+    details: dict | None = None,
 ) -> tuple[str | None, str]:
     """Find a folder that may be seeded for ``lb_number`` and is complete.
 
@@ -233,6 +277,9 @@ def find_seedable_folder(
         opts: Seeding options.
         link_dirs: Further collection folders to hardlink from when the
             torrent spans more than one LB entry.
+        details: Optional dict filled in by :func:`build_seed_overlay` with
+            what the overlay repair did, for a caller that must recheck the
+            torrent in qBittorrent afterwards.
 
     Returns:
         (folder_path or None, human-readable reason).
@@ -277,14 +324,113 @@ def find_seedable_folder(
             )
         return None, f"folder incomplete — {best} (enable the overlay to assemble one)"
 
-    source = named[0] if named else best_source_folder(info, folders)
+    # Content first, the tracker's naming only as a last resort: a folder that
+    # resolves nothing still beats no overlay at all when it is the named one.
+    source = best_source_folder(info, folders, named) or (named[0] if named else None)
     if source is None:
         return None, (
             f"no linked folder shares enough files with the torrent "
             f"(have {', '.join(Path(f).name for f in folders[:3])})"
         )
     return build_seed_overlay(info, source, opts, best or "name mismatch",
-                              link_dirs, lb_number)
+                              link_dirs, lb_number, details)
+
+
+def _qbt_connection() -> dict:
+    """Collect the qBittorrent WebUI connection settings.
+
+    Returns:
+        Kwargs shared by every qBittorrent call: ``host``, ``port``,
+        ``username``, ``password``, ``api_key``.
+    """
+    qbt_user, qbt_pass = get_credentials(SERVICE_QBT)
+    _, qbt_key = get_credentials(SERVICE_QBT_KEY)
+    return {
+        "host": database.get_meta("qbt_host") or "localhost",
+        "port": int(database.get_meta("qbt_port") or 8080),
+        "username": qbt_user,
+        "password": qbt_pass,
+        "api_key": qbt_key,
+    }
+
+
+def recheck_seed(source_folder: str) -> dict:
+    """Make qBittorrent re-hash a seed folder whose files changed underneath it.
+
+    A torrent already in the client was hashed when it was added. When
+    :func:`backend.seed_overlay.repair_overlay` then swaps a wrongly-picked
+    file, qBittorrent keeps reporting the old, short result until it is told to
+    look again — so a repaired overlay that is *not* rechecked stays at
+    99-point-something forever, which is exactly the state TODO-337 set out to
+    clear. Nothing here writes to disk.
+
+    Args:
+        source_folder: The folder qBittorrent is seeding from (the overlay).
+
+    Returns:
+        Dict with ``ok``, ``infohash`` (str, empty when the torrent could not
+        be located) and ``error``.
+    """
+    conn = _qbt_connection()
+    found = qbittorrent.find_torrent_by_path(source_folder, **conn)
+    if not found.get("ok"):
+        return {"ok": False, "infohash": "", "error": found.get("error") or
+                "could not query qBittorrent"}
+    infohash = found.get("infohash") or ""
+    if not infohash:
+        return {"ok": False, "infohash": "", "error": (
+            f"no torrent in qBittorrent has {source_folder} as its content "
+            f"path — nothing to recheck")}
+
+    result = qbittorrent.recheck_torrent(infohash, **conn)
+    return {"ok": bool(result.get("ok")), "infohash": infohash,
+            "error": result.get("error") or ""}
+
+
+def recheck_repaired_seed(
+    source_folder: str, details: dict | None, qbt_result: dict
+) -> bool:
+    """Recheck a repaired overlay when qBittorrent already held the torrent.
+
+    A freshly added torrent is hashed by the client on add, so it sees the
+    repaired files anyway. An ``already_present`` one does not: it was hashed
+    before :func:`backend.seed_overlay.repair_overlay` swapped a wrongly-picked
+    file, and without a recheck it keeps reporting the old shortfall — the very
+    stuck state TODO-337 exists to clear. Failures are logged, never raised:
+    the seed itself succeeded.
+
+    Args:
+        source_folder: The folder handed to qBittorrent.
+        details: The dict :func:`find_seedable_folder` filled in, or None.
+        qbt_result: What :func:`qbt_seed` returned.
+
+    Returns:
+        True when qBittorrent accepted a recheck.
+    """
+    repaired = (details or {}).get("repaired") or []
+    if not repaired:
+        return False
+    if not qbt_result.get("already_present"):
+        logger.info(
+            "  recheck: not needed — qBittorrent hashed the repaired overlay "
+            "as it was added"
+        )
+        return False
+
+    outcome = recheck_seed(source_folder)
+    if outcome["ok"]:
+        logger.info(
+            "  recheck: qBittorrent re-hashing %s after %d repaired file(s)",
+            outcome["infohash"][:12], len(repaired),
+        )
+        return True
+    logger.warning(
+        "  recheck FAILED for a repaired overlay (%s) — qBittorrent will keep "
+        "reporting the old shortfall until it re-hashes %s: %s",
+        ", ".join(Path(p).name for p in repaired[:3]), source_folder,
+        outcome["error"],
+    )
+    return False
 
 
 def qbt_seed(torrent_path: str, source_folder: str, opts: SeedOptions) -> dict:
@@ -298,25 +444,17 @@ def qbt_seed(torrent_path: str, source_folder: str, opts: SeedOptions) -> dict:
     Returns:
         The qbittorrent module's result dict (``ok`` plus optional ``error``).
     """
-    host = database.get_meta("qbt_host") or "localhost"
-    port = int(database.get_meta("qbt_port") or 8080)
     category = database.get_meta("qbt_category") or ""
     tags = ",".join(
         t for t in [database.get_meta("qbt_tags") or "", opts.tracker] if t
     )
-    qbt_user, qbt_pass = get_credentials(SERVICE_QBT)
-    _, qbt_key = get_credentials(SERVICE_QBT_KEY)
 
     result = qbittorrent.add_torrent_for_seeding(
         torrent_path=torrent_path,
         source_folder=source_folder,
-        host=host,
-        port=port,
-        username=qbt_user,
-        password=qbt_pass,
         category=category,
         tags=tags,
-        api_key=qbt_key,
+        **_qbt_connection(),
     )
     if result.get("ok") and opts.paused:
         logger.info("  (added; pause it in the qBittorrent UI if needed)")
@@ -341,19 +479,25 @@ def seed_torrent(
     Returns:
         Dict with ``ok`` (bool), ``folder`` (str, the folder handed to
         qBittorrent, or ""), ``reason`` (str, why it was seedable or not),
-        ``overlay`` (bool, whether ``folder`` is an assembled overlay) and
-        ``error`` (str, a qBittorrent failure) — ``reason`` is always
-        populated and is the line worth showing a user.
+        ``overlay`` (bool, whether ``folder`` is an assembled overlay),
+        ``rechecked`` (bool, whether a repaired overlay was re-hashed by
+        qBittorrent) and ``error`` (str, a qBittorrent failure) — ``reason``
+        is always populated and is the line worth showing a user.
     """
-    folder, reason = find_seedable_folder(lb_number, torrent_path, opts, link_dirs)
+    details: dict = {}
+    folder, reason = find_seedable_folder(
+        lb_number, torrent_path, opts, link_dirs, details
+    )
     if not folder:
         return {"ok": False, "folder": "", "reason": reason, "overlay": False,
-                "error": ""}
+                "rechecked": False, "error": ""}
 
     is_overlay = Path(folder).parent.name == opts.overlay_dirname
     qbt = qbt_seed(torrent_path, folder, opts)
     if not qbt.get("ok"):
         return {"ok": False, "folder": folder, "reason": reason,
-                "overlay": is_overlay, "error": qbt.get("error") or "qBittorrent refused"}
+                "overlay": is_overlay, "rechecked": False,
+                "error": qbt.get("error") or "qBittorrent refused"}
+    rechecked = recheck_repaired_seed(folder, details, qbt)
     return {"ok": True, "folder": folder, "reason": reason, "overlay": is_overlay,
-            "error": ""}
+            "rechecked": rechecked, "error": ""}

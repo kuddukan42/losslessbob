@@ -4,21 +4,26 @@ The central promise is that the source collection folder is never written to,
 so several tests assert that explicitly rather than only checking the overlay.
 """
 import hashlib
+import logging
 import os
 import shutil
 from pathlib import Path
 
 import pytest
 
+from backend import tracker_seed
 from backend.seed_overlay import (
     COPY,
     FETCH,
     LINK,
     REFETCH,
+    bad_pieces,
     build_overlay,
+    choose_source_folder,
     collection_is_untouched,
     overlay_status,
     plan_overlay,
+    repair_overlay,
     resolvable_files,
     snapshot_folder,
     unique_overlay_name,
@@ -649,16 +654,281 @@ def test_alias_keys_keep_distinct_sidecars_apart():
 
 def test_alias_resolution_folds_the_folder_into_the_name(tmp_path):
     """The site flattens <folder>/<file> into one name; a suffix match finds it."""
-    from backend.seed_overlay import _index_aliases, _index_sources, _resolve_alias
+    from backend.seed_overlay import _alias_candidates, _index_aliases, _index_sources
     store = tmp_path / "files"
     store.mkdir()
     published = store / "LBF-02614-BD---Toads-Place-d5-bd1990-1-12-d5-Toads-LTE.txt"
     published.write_bytes(b"x" * 1875)
 
     aliases = _index_aliases(_index_sources([store]))
-    hit = _resolve_alias(
+    hits = _alias_candidates(
         aliases, "Bd 1990 LB 2614/Bob Dylan - Toads Place d5/bd1990-1-12-d5-Toads-LTE.txt",
         1875)
 
-    assert hit == published
-    assert _resolve_alias(aliases, "x/bd1990-1-12-d5-Toads-LTE.txt", 999) is None
+    assert hits == [published]
+    assert _alias_candidates(aliases, "x/bd1990-1-12-d5-Toads-LTE.txt", 999) == []
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# TODO-337 — a size match is not a content match
+# ──────────────────────────────────────────────────────────────────────────────
+#: The torrent entry the two collection folders disagree about. 43 bytes, and
+#: it shares its piece with the tail of t02.flac — the shape that left 29 TUIT
+#: seeds one 512 KiB piece short.
+_AMBIGUOUS = "LBF-00042-check.md5.txt"
+
+
+@pytest.fixture
+def ambiguous_rig(rig):
+    """Two collection folders holding same-size, different-bytes sidecars.
+
+    The *wrong* copy sits in the preferred folder, so taking the first
+    size match picks it and the covering piece never completes.
+    """
+    info, collection, sidecars, root = rig
+    wrong = collection / _AMBIGUOUS
+    wrong.write_bytes(b"W" * len(FILES[_AMBIGUOUS]))
+
+    sibling = collection.parent / "Same show, other LB"
+    sibling.mkdir()
+    right = sibling / _AMBIGUOUS
+    right.write_bytes(FILES[_AMBIGUOUS])
+
+    # The sidecar store keeps only the other sidecar, so the ambiguity is
+    # decided between the two collection copies alone.
+    (sidecars / _AMBIGUOUS).unlink()
+    return info, collection, sidecars, root, sibling, wrong, right
+
+
+class TestSizeAmbiguity:
+    def test_piece_hashes_decide_between_same_size_candidates(self, ambiguous_rig):
+        info, collection, sidecars, root, sibling, wrong, right = ambiguous_rig
+        plan = plan_overlay(info, collection, root, [sidecars],
+                            link_dirs=[str(sibling)])
+        entry = next(e for e in plan.entries if e.rel_path.endswith(_AMBIGUOUS))
+
+        assert entry.source == str(right), "the wrong same-size copy was kept"
+        build_overlay(plan)
+        assert verify_overlay(info, plan).complete is True
+
+    def test_the_ambiguity_is_recorded_on_the_plan(self, ambiguous_rig):
+        info, collection, sidecars, root, sibling, wrong, right = ambiguous_rig
+        plan = plan_overlay(info, collection, root, [sidecars],
+                            link_dirs=[str(sibling)])
+        idx = next(i for i, (p, _s) in enumerate(info.files)
+                   if p.endswith(_AMBIGUOUS))
+        assert plan.candidates[idx] == [wrong, right]
+
+    def test_an_unambiguous_file_records_no_candidates(self, rig):
+        info, collection, sidecars, root = rig
+        plan = plan_overlay(info, collection, root, [sidecars])
+        assert plan.candidates == {}
+
+    def test_undecidable_ambiguity_keeps_the_first_and_says_so(self, ambiguous_rig):
+        """With a neighbour in the piece left to the swarm, nothing can be
+        hashed — the pick stands, but the plan admits it is a guess."""
+        info, collection, sidecars, root, sibling, wrong, right = ambiguous_rig
+        (sidecars / "LBF-00042-info.txt").unlink()
+        plan = plan_overlay(info, collection, root, [sidecars],
+                            link_dirs=[str(sibling)])
+        entry = next(e for e in plan.entries if e.rel_path.endswith(_AMBIGUOUS))
+        assert entry.source == str(wrong)
+        assert "none verified" in entry.note
+
+    def test_the_collection_is_never_written_to(self, ambiguous_rig):
+        info, collection, sidecars, root, sibling, wrong, right = ambiguous_rig
+        before = snapshot_folder(collection)
+        plan = plan_overlay(info, collection, root, [sidecars],
+                            link_dirs=[str(sibling)])
+        build_overlay(plan)
+        assert collection_is_untouched(collection, before) == []
+
+
+class TestRepairOverlay:
+    def _wrongly_built(self, ambiguous_rig):
+        """Build an overlay that picked the wrong same-size file."""
+        info, collection, sidecars, root, sibling, wrong, right = ambiguous_rig
+        plan = plan_overlay(info, collection, root, [sidecars],
+                            link_dirs=[str(sibling)])
+        entry = next(e for e in plan.entries if e.rel_path.endswith(_AMBIGUOUS))
+        entry.source = str(wrong)      # undo the piece-hash pick
+        build_overlay(plan)
+        return info, plan, entry, right
+
+    def test_a_short_overlay_is_repaired_from_the_failing_piece(
+        self, ambiguous_rig
+    ):
+        info, plan, entry, right = self._wrongly_built(ambiguous_rig)
+        assert verify_overlay(info, plan).complete is False
+
+        repair = repair_overlay(info, plan)
+        assert repair["bad_pieces"] == 1
+        assert repair["repaired"] == [entry.rel_path]
+        assert repair["ok"] is True
+        assert entry.source == str(right)
+        assert verify_overlay(info, plan).complete is True
+
+    def test_a_complete_overlay_is_left_alone(self, rig):
+        info, collection, sidecars, root = rig
+        plan = plan_overlay(info, collection, root, [sidecars])
+        build_overlay(plan)
+        repair = repair_overlay(info, plan)
+        assert repair == {"ok": False, "repaired": [], "bad_pieces": 0,
+                          "errors": [], "verify": None}
+
+    def test_a_genuine_shortfall_is_not_a_bad_pick(self, ambiguous_rig):
+        """A piece missing bytes is unknown, not wrong — repair must not
+        report it and must not touch the overlay."""
+        info, collection, sidecars, root, sibling, wrong, right = ambiguous_rig
+        (sidecars / "LBF-00042-info.txt").unlink()
+        plan = plan_overlay(info, collection, root, [sidecars],
+                            link_dirs=[str(sibling)])
+        build_overlay(plan)
+        repair = repair_overlay(info, plan)
+        assert repair["bad_pieces"] == 0
+        assert repair["repaired"] == []
+
+    def test_bad_pieces_counts_only_locally_complete_mismatches(
+        self, ambiguous_rig
+    ):
+        info, plan, entry, right = self._wrongly_built(ambiguous_rig)
+        assert bad_pieces(info, plan.target_dir) == [4]
+
+    def test_repair_never_writes_to_the_collection(self, ambiguous_rig):
+        info, collection = ambiguous_rig[0], ambiguous_rig[1]
+        before = snapshot_folder(collection)
+        info, plan, entry, right = self._wrongly_built(ambiguous_rig)
+        repair_overlay(info, plan)
+        assert collection_is_untouched(collection, before) == []
+
+
+class TestChooseSourceFolder:
+    def test_content_beats_the_trackers_naming(self, rig):
+        """The tracker's LB attribution was wrong twice on 2026-09-06, so the
+        folder named after the torrent root wins only on a tie."""
+        info, collection, sidecars, root = rig
+        thin = collection.parent / "thin"
+        thin.mkdir()
+        (thin / "t01.flac").write_bytes(FILES["t01.flac"])
+
+        # `collection` is the ROOT-named folder and resolves both flacs.
+        assert choose_source_folder(info, [thin, collection], [collection]) == \
+            str(collection)
+        # Now the named folder is the thin one and loses on content.
+        assert choose_source_folder(info, [thin, collection], [thin]) == \
+            str(collection)
+
+    def test_a_tie_goes_to_the_named_folder(self, rig):
+        info, collection, sidecars, root = rig
+        twin = collection.parent / "twin"
+        twin.mkdir()
+        for name in ("t01.flac", "t02.flac"):
+            (twin / name).write_bytes(FILES[name])
+        assert choose_source_folder(info, [twin, collection], [collection]) == \
+            str(collection)
+
+    def test_no_folder_supplies_anything(self, rig, tmp_path):
+        info, collection, sidecars, root = rig
+        empty = tmp_path / "empty"
+        empty.mkdir()
+        assert choose_source_folder(info, [empty], [empty]) is None
+
+
+class TestUndecidableAmbiguityIsLoud:
+    def test_it_warns_the_operator(self, ambiguous_rig, caplog):
+        """A pick that could not be settled is a coin toss on a seed that will
+        never complete, so it must not pass in silence."""
+        info, collection, sidecars, root, sibling, wrong, right = ambiguous_rig
+        (sidecars / "LBF-00042-info.txt").unlink()
+        with caplog.at_level(logging.WARNING, logger="backend.seed_overlay"):
+            plan_overlay(info, collection, root, [sidecars],
+                         link_dirs=[str(sibling)])
+        warnings = [r for r in caplog.records if r.levelno == logging.WARNING]
+        assert len(warnings) == 1
+        assert "may be the wrong copy" in warnings[0].getMessage()
+
+    def test_a_settled_pick_does_not_warn(self, ambiguous_rig, caplog):
+        info, collection, sidecars, root, sibling, wrong, right = ambiguous_rig
+        with caplog.at_level(logging.WARNING, logger="backend.seed_overlay"):
+            plan_overlay(info, collection, root, [sidecars],
+                         link_dirs=[str(sibling)])
+        assert [r for r in caplog.records if r.levelno == logging.WARNING] == []
+
+
+class _FakeQbt:
+    """Stand-in for backend.qbittorrent, recording what it was asked to do."""
+
+    def __init__(self, infohash="ABCDEF0123456789", ok=True):
+        self.infohash = infohash
+        self.ok = ok
+        self.searched: list[str] = []
+        self.rechecked: list[str] = []
+
+    def find_torrent_by_path(self, folder, **kwargs):
+        self.searched.append(str(folder))
+        return {"ok": True, "infohash": self.infohash, "root_name": "x",
+                "error": None}
+
+    def recheck_torrent(self, infohash, **kwargs):
+        self.rechecked.append(infohash)
+        return {"ok": self.ok, "error": "" if self.ok else "HTTP 403"}
+
+
+@pytest.fixture
+def fake_qbt(monkeypatch):
+    """Replace tracker_seed's qBittorrent client and its credential lookup."""
+    fake = _FakeQbt()
+    monkeypatch.setattr(tracker_seed, "qbittorrent", fake)
+    monkeypatch.setattr(tracker_seed, "_qbt_connection", lambda: {
+        "host": "localhost", "port": 8080, "username": "u", "password": "p",
+        "api_key": "",
+    })
+    return fake
+
+
+class TestRecheckAfterRepair:
+    def test_a_repaired_and_already_present_torrent_is_rechecked(self, fake_qbt):
+        details = {"repaired": ["Show/LBF-00042-check.md5.txt"]}
+        assert tracker_seed.recheck_repaired_seed(
+            "/mnt/X/TUIT Seeds/Show", details, {"ok": True,
+                                                "already_present": True}
+        ) is True
+        assert fake_qbt.searched == ["/mnt/X/TUIT Seeds/Show"]
+        assert fake_qbt.rechecked == ["ABCDEF0123456789"]
+
+    def test_nothing_repaired_means_no_recheck(self, fake_qbt):
+        assert tracker_seed.recheck_repaired_seed(
+            "/mnt/X/TUIT Seeds/Show", {"repaired": []},
+            {"ok": True, "already_present": True}
+        ) is False
+        assert fake_qbt.rechecked == []
+
+    def test_a_freshly_added_torrent_needs_no_recheck(self, fake_qbt):
+        """qBittorrent hashes a torrent as it is added, so it already sees the
+        repaired files."""
+        assert tracker_seed.recheck_repaired_seed(
+            "/mnt/X/TUIT Seeds/Show", {"repaired": ["a"]}, {"ok": True}
+        ) is False
+        assert fake_qbt.searched == []
+
+    def test_missing_details_is_tolerated(self, fake_qbt):
+        assert tracker_seed.recheck_repaired_seed(
+            "/mnt/X/TUIT Seeds/Show", None, {"ok": True,
+                                             "already_present": True}
+        ) is False
+
+    def test_a_refused_recheck_warns_loudly(self, fake_qbt, caplog):
+        fake_qbt.ok = False
+        with caplog.at_level(logging.WARNING, logger="backend.tracker_seed"):
+            assert tracker_seed.recheck_repaired_seed(
+                "/mnt/X/TUIT Seeds/Show", {"repaired": ["Show/x.md5"]},
+                {"ok": True, "already_present": True}
+            ) is False
+        assert any("recheck FAILED" in r.getMessage() for r in caplog.records)
+
+    def test_an_unfindable_torrent_is_reported_not_rechecked(self, fake_qbt):
+        fake_qbt.infohash = ""
+        outcome = tracker_seed.recheck_seed("/mnt/X/TUIT Seeds/Show")
+        assert outcome["ok"] is False
+        assert "nothing to recheck" in outcome["error"]
+        assert fake_qbt.rechecked == []

@@ -1,3 +1,39 @@
+[2026-09-17] — Backlog sweep: 5 TODOs + 2 bugs closed via delegated agents; BUG-337 parser work held back
+Fixed: tools/tapematch/tapematch/ingest.py (BUG-335): patch sibling dirs (d1/fix/, *.fix/) whose
+  marker-stripped track names match tracks already present now replace those tracks in place
+  instead of being appended (LB-07173 read 14 tracks / 1:55 against a real 11 / 1:26). Unique
+  bijective match only; directory names never consulted. tools/tapematch/_survey_fix_siblings.py
+  is a read-only dry run over a root path for tj.
+Fixed: BUG-343 verified closed: all 15 golden dossier exports are 0% blank lines, masthead line 39.
+Changed: backend/seed_overlay.py, backend/tracker_seed.py, tools/tuit_sync.py (TODO-337): size-
+  ambiguous overlay entries are decided by hashing the pieces they occupy (_resolve_candidates,
+  _pick_by_piece_hash); repair_overlay re-resolves only the files inside failing pieces;
+  choose_source_folder prefers the folder resolving the most files over the tracker's lb_number;
+  after a repair on an already-present torrent tracker_seed forces a qBittorrent recheck. An
+  undecidable ambiguity now logs at WARNING. tools/tuit_overlay_repair.sh re-runs the ~29
+  partial seeds (dry-run by default, --apply to seed). Follow-ups in TODO-348.
+Changed: concert_ranker/picks.py (TODO-344): _rank_date sorts (is_fragment, -score, lb) using
+  dossier_fields.completeness/is_fragment, so a fragment can no longer take pick_rank 1. Dry run
+  on a DB copy changed 105 rank-1 sources (.debug/todo344_rank1_diff.md for tj review); the live
+  table refreshes on the next compute_show_picks pipeline step. Asymmetry noted in TODO-349.
+Changed: backend/app.py, gui_next useLibraryActions.tsx (TODO-328): POST /api/entry/<lb>/seed_wtrf
+  without topic_url streams SSE start/done/error like /api/wtrf/seed_links; the GUI shows a sticky
+  "Searching WTRF board" toast until the result. topic_url path unchanged (plain JSON).
+Changed: tools/tapematch/tapematch_session.py (TODO-322): the commentary-audit DISAGREES flag is
+  clause-scoped — a same/different keyword counts only inside the clause that names the other LB
+  and carries a lineage term. 1984-06-04 and 1995-03-31 false positives gone; LB-03917/3914 kept.
+Changed: tools/tuit_sync.py (TODO-340): exhausting --rss-backfill-pages without re-establishing
+  overlap logs WARNING and exits 1, so data/tuit/cron_rss.sh mails it instead of staying silent.
+Added: tests: test_seed_overlay (+20), test_show_picks (+2), test_tuit_rss_backfill (+2),
+  tapematch test_commentary_audit (new, 6), test_ingest_list_tracks (+3). Backend 2701 passed,
+  tapematch 503 passed, gui-check green.
+Note: BUG-337 (song_canonical splits) stays open. An Opus agent found three causes (Word inline
+  tags splitting words via get_text(" "), apostrophe stand-ins, five literal upstream typos) and
+  drafted a block-level text extractor in backend/olof_parser.py + a fold-collision guard in
+  backend/song_index.py, but the full-corpus parse diff (.debug/bug337_parse_diff.md) still shows
+  ~170 non-whitespace changes to review, so those edits are NOT in this commit (left in the
+  working tree with tools/_bug337_dryrun.py / _bug337_rebuild.py).
+
 [2026-09-17] — TUIT/WTRF scraper review: taper loss, freeleech no-op, WTRF walk and attachment fixes
 Fixed: backend/tuit_scraper.py, tools/tuit_sync.py: the detail page carries no taper (0/400 archived
   pages match .taper-name), so recordings discovered via --rss (the hourly cron path) were stored

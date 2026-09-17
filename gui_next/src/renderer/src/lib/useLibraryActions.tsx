@@ -24,6 +24,36 @@ import { copyText } from './clipboard'
 
 const BASE = window.api.flaskBase
 
+/** One SSE frame from POST /api/entry/<lb>/seed_wtrf (no topic_url case). */
+interface WtrfSeedProgressEvent {
+  event: 'start' | 'done' | 'error'
+  lb_number?: number
+  ok?: boolean
+  overlay?: boolean
+  error?: string
+  reason?: string
+}
+
+/** Minimal SSE frame reader, mirrors ScreenScraper's readSSE for /api/wtrf/seed_links. */
+async function readSSE<T>(resp: Response, onEvent: (ev: T) => void): Promise<void> {
+  if (!resp.body) return
+  const reader = resp.body.getReader()
+  const decoder = new TextDecoder()
+  let buf = ''
+  for (;;) {
+    const { done, value } = await reader.read()
+    if (done) break
+    buf += decoder.decode(value, { stream: true })
+    let nl: number
+    while ((nl = buf.indexOf('\n\n')) >= 0) {
+      const frame = buf.slice(0, nl)
+      buf = buf.slice(nl + 2)
+      if (!frame.startsWith('data: ')) continue
+      try { onEvent(JSON.parse(frame.slice(6)) as T) } catch { /* malformed frame */ }
+    }
+  }
+}
+
 function blobDownload(blob: Blob, filename: string): void {
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
@@ -192,26 +222,44 @@ export function useLibraryActions(): LibraryActions {
     // Seeds one recording to WTRF: the backend finds the entry's forum post,
     // downloads its .torrent and runs the shared seeding gates, which never
     // point qBittorrent at an incomplete collection folder. The forum search
-    // is slow (paced requests against a small hobbyist board), so the toast
-    // reports rather than blocking on a progress surface.
+    // is slow (paced requests against a small hobbyist board), so the backend
+    // streams SSE progress (TODO-328) and this shows a sticky toast while it
+    // runs instead of leaving the caller waiting on a silent fetch.
     onSeedWtrf: async (row) => {
       if (!row.path) { showToast(t('library.toast.noDiskPath'), 'info'); return }
       setActionBusy(true)
+      showToast(t('library.toast.wtrfSearching', { lb: row.lb }), 'info', { sticky: true })
       try {
         const resp = await fetch(`${BASE}/api/entry/${row.lbNumber}/seed_wtrf`, {
           method: 'POST', headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({}),
         })
-        const data = await resp.json()
-        if (data.ok) {
-          showToast(t('library.toast.wtrfSeeded', {
-            lb: row.lb,
-            where: data.overlay ? t('library.toast.wtrfViaOverlay') : t('library.toast.wtrfInPlace'),
-          }), 'ok')
-        } else {
-          showToast(t('library.toast.wtrfSeedFailed', {
-            lb: row.lb, reason: data.error || data.reason || '',
-          }), 'bad')
+        if (!resp.ok) {
+          const d = await resp.json().catch(() => ({} as { error?: string }))
+          showToast(t('library.toast.wtrfSeedFailed', { lb: row.lb, reason: d.error || '' }), 'bad')
+          return
+        }
+        let settled = false
+        await readSSE<WtrfSeedProgressEvent>(resp, ev => {
+          if (ev.event === 'done') {
+            settled = true
+            if (ev.ok) {
+              showToast(t('library.toast.wtrfSeeded', {
+                lb: row.lb,
+                where: ev.overlay ? t('library.toast.wtrfViaOverlay') : t('library.toast.wtrfInPlace'),
+              }), 'ok')
+            } else {
+              showToast(t('library.toast.wtrfSeedFailed', {
+                lb: row.lb, reason: ev.error || ev.reason || '',
+              }), 'bad')
+            }
+          } else if (ev.event === 'error') {
+            settled = true
+            showToast(t('library.toast.wtrfSeedFailed', { lb: row.lb, reason: ev.error || '' }), 'bad')
+          }
+        })
+        if (!settled) {
+          showToast(t('library.toast.wtrfSeedFailed', { lb: row.lb, reason: '' }), 'bad')
         }
       } catch (e) {
         showToast(t('library.toast.wtrfSeedFailed', { lb: row.lb, reason: (e as Error).message }), 'bad')
