@@ -1,3 +1,9 @@
+TODO-346: Dossier: venue reference link (e.g. Wikipedia) on the venue card
+Priority: Low
+Status: Open
+Added: 2026-09-16
+Description: Investigate adding a venue reference link, possibly Wikipedia (e.g. https://en.wikipedia.org/wiki/Spectrum_(arena) for The Spectrum, Philadelphia). Needs a venue->article mapping source (Wikidata lookup by venue name + city, curated overrides) and a rule for venues with no article.
+
 TODO-345: Dossier: same-venue two-show days (1974 Afternoon/Evening) need a show selector
 Priority: Medium
 Status: Open

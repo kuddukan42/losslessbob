@@ -2,6 +2,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-354: Dossier bobserve card falls back to the year page on two-show days
+Status: Fixed
+File(s): backend/dossier.py,tools/make_fixture_db.py
+Reported: 2026-09-16
+Fixed: 2026-09-16
+Root cause: _bobserve_index_event_id matched date_str exactly; 167 index rows carry an Early/Late suffix.
+Fix: Match the date prefix and pick Early/Late from the Olof date_raw (afternoon/evening); golden fixture cut matches the prefix too.
+
+BUG-353: Olof parser truncates setlists at unnumbered in-set songs (The Band's 1974 sets)
+Status: Fixed
+File(s): backend/olof_parser.py
+Reported: 2026-09-16
+Fixed: 2026-09-16
+Root cause: _parse_song_lines broke at any unnumbered line without a 'Name:' guest header; The Band's unnumbered songs (and inline guest songs, broken take lines) ended the set early.
+Fix: Skip an unnumbered run of <=12 lines when the next numbered song (max or max+1) follows, via _skip_guest_block(max_lines=). 219 events gained songs, none lost; Olof corpus reparsed and song index rebuilt.
+
 BUG-352: Dossier track list repeats broadcast notes as duplicate subtitles
 Status: Fixed
 File(s): backend/dossier_fields.py,backend/dossier_anchors.py

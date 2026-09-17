@@ -1,3 +1,13 @@
+[2026-09-16] — Olof unnumbered in-set songs; bobserve two-show links; venue link TODO
+Fixed: backend/olof_parser.py: BUG-353 — setlists stopped at the first unnumbered line, so The Band's
+  1974 sets cut Dylan's setlist to 6 songs (1974-01-06 afternoon now 18); an unnumbered run of up to
+  12 lines is skipped when the next numbered song follows. 219 events gained songs, none lost.
+  Corpus reparsed, song index rebuilt.
+Fixed: backend/dossier.py, tools/make_fixture_db.py: BUG-354 — two-show days are indexed by bobserve as
+  "YYYY-MM-DD Early/Late"; the lookup now matches the prefix and picks Early/Late from Olof's date.
+Changed: tests/golden/dossier/fixture.jsonl.gz: re-cut (15/15 specs match live).
+Added: TODO-346 — investigate a venue reference link (Wikipedia) on the dossier venue card.
+
 [2026-09-16] — Dossier: city history as one line
 Changed: backend/templates/dossier.html: the venue card's per-year strip of city show counts is now
   one line ("1964–2024 · 27 years · 5 in 1965"); the current year's venue list stays.

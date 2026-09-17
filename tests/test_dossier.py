@@ -363,6 +363,28 @@ class TestXrefDeepLinks:
             import shutil
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
+    def test_bobserve_two_show_day_picks_early_or_late(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            with conn:
+                _insert_entry(conn, 205, "1/6/74")
+                _insert_event(conn, 2250, "1974-01-06", page_filename="DSN02230 1974 Tour.htm")
+                conn.execute("UPDATE olof_events SET venue = 'The Spectrum', "
+                             "date_raw = '6 January 1974 – Evening' WHERE event_id = 2250")
+                conn.executemany(
+                    "INSERT INTO bobserve_event_index (event_id, date_str, venue, event_type)"
+                    " VALUES (?, ?, 'The Spectrum', 'Concert')",
+                    [(839, "1974-01-06 Early"), (840, "1974-01-06 Late")],
+                )
+                conn.commit()
+
+            from backend.dossier import build_dossier
+            xref = {c["key"]: c for c in build_dossier("1974-01-06", db_path=db_path)["xref"]}
+            assert xref["bobserve"]["url"] == "https://bobserve.com/setlist?event=840"
+        finally:
+            import shutil
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
     def test_bobdylan_card_picks_the_event_venue_page(self):
         db_path, conn, tmp_dir = _make_db()
         try:
