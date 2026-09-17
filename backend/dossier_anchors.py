@@ -749,11 +749,18 @@ def _build_setlist(vb, d1, conn, event_id, date_iso, lineup, setlist, visible_lb
                 "disputed" if conf.get("verdict") == "disputed" else "stated"))
 
         labels_notes = _safe(df.broadcast_set_labels, conn, event_id)
+        # Clause text a set label or session note already shows, per position --
+        # song[].notes must not repeat it as a second subtitle.
+        shown_by_pos: dict[int, set[str]] = {}
         if labels_notes:
             labels, session_notes = labels_notes
             for lbl in labels:
                 row = vb.row("set", tuple(lbl["positions"]))
                 row["label"] = build_field(lbl, 1, "broadcast_set_labels", "stated")
+                for p in lbl["positions"]:
+                    shown_by_pos.setdefault(p, set()).add(lbl["text"])
+            for s in setlist:
+                shown_by_pos.setdefault(s["position"], set()).update(session_notes)
 
         song_hist = _safe(df.song_history, conn, event_id)
         vb.ctx["song_hist"] = song_hist
@@ -773,9 +780,9 @@ def _build_setlist(vb, d1, conn, event_id, date_iso, lineup, setlist, visible_lb
             row = vb.row("song", pos)
             row["position"] = build_field(pos, 1, "olof_songs.position", "stated")
             row["title"] = build_field(s["title"], 1, "olof_songs.song_title", "stated")
-            if s.get("annotations"):
-                row["notes"] = build_field(s["annotations"], 1, "olof_songs.annotations",
-                                           "stated")
+            song_notes = df.song_notes_without(s.get("annotations"), shown_by_pos.get(pos, set()))
+            if song_notes:
+                row["notes"] = build_field(song_notes, 1, "olof_songs.annotations", "stated")
 
             writers = _safe(df.song_writers, conn, event_id, pos)
             if writers and writers.get("value"):

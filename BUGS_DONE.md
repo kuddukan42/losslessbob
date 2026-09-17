@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-352: Dossier track list repeats broadcast notes as duplicate subtitles
+Status: Fixed
+File(s): backend/dossier_fields.py,backend/dossier_anchors.py
+Reported: 2026-09-16
+Fixed: 2026-09-16
+Root cause: broadcast_set_labels grouped on the whole annotation, so a song with an extra '; ...' clause broke the contiguous band into markers; the template then showed both the marker and song[].notes with the same text.
+Fix: Group on the broadcast clause only (broadcast_clause); song[].notes drops clauses already shown by a set label or session note (song_notes_without).
+
 BUG-351: Dossier 1978-09-17 two-show day: golden spec picks War Memorial Coliseum but venue.name renders Veterans Memorial Coliseum
 Status: Fixed
 File(s): backend/dossier_anchors.py,tests/golden/dossier/1978-09-17_two-show-day.json
