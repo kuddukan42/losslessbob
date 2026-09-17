@@ -1,3 +1,10 @@
+[2026-09-16] — Dossier: linked fragment sources and setlist.fm show page
+Changed: backend/templates/dossier.html: fragment / non-matching sources now link their LB detail
+  pages like the main source rows.
+Fixed: backend/dossier.py, backend/dossier_anchors.py, backend/templates/dossier.html: the venue-map
+  and footer setlist.fm links pointed at the setlist.fm home page; venue.coords now carries the
+  show's setlistfm_shows.setlistfm_url (home page only as fallback).
+
 [2026-09-16] — Dossier: broadcast notes no longer repeat as duplicate track subtitles
 Fixed: backend/dossier_fields.py, backend/dossier_anchors.py: BUG-352 — a song whose Olof annotation
   added a clause after the broadcast note split the broadcast band into per-song markers, and each
