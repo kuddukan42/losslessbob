@@ -89,3 +89,62 @@ class TestFilenameFromContentDisposition:
         result = _filename_from_content_disposition(cd)
         assert result != "UTF-8"
         assert result == "LB-16644-realname.torrent"
+
+
+class TestFetchTopicScoping:
+    """Only the opening post's attachments belong to the topic."""
+
+    _PAGE = """
+    <html><head><title>1978-11-01 Madison</title></head><body>
+    <div class="postarea">
+      <div class="keyinfo">« on: August 06, 2025, 10:00:00 »</div>
+      <div class="post"><div class="inner" id="msg_100">first post, no torrent</div></div>
+    </div>
+    <div class="postarea">
+      <div class="keyinfo">« Reply #1 on: August 07, 2025, 10:00:00 »</div>
+      <div class="post"><div class="inner" id="msg_101">re-up of another show</div></div>
+      <div class="attachments">
+        <a href="index.php?action=dlattach;topic=1.0;attach=9">LB-00999.torrent</a>
+      </div>
+    </div>
+    </body></html>
+    """
+
+    class _Resp:
+        def __init__(self, text):
+            self.text = text
+            self.url = "http://www.watchingtheriverflow.org/index.php?topic=1.0"
+
+    def test_a_reply_attachment_is_not_the_first_posts(self, monkeypatch):
+        from backend import wtrf_scraper
+
+        monkeypatch.setattr(wtrf_scraper.time, "sleep", lambda _s: None)
+
+        class _S:
+            def get(self, url, timeout=None, headers=None):
+                return TestFetchTopicScoping._Resp(TestFetchTopicScoping._PAGE)
+
+        post = wtrf_scraper._fetch_topic(_S(), "http://x/index.php?topic=1.0", 0)
+        assert post["body_text"].strip() == "first post, no torrent"
+        assert post["torrent_url"] is None
+        assert post["attachment_text"] == ""
+        assert str(post["post_date"]) == "2025-08-06"
+
+    def test_the_first_posts_own_attachment_is_found(self, monkeypatch):
+        from backend import wtrf_scraper
+
+        monkeypatch.setattr(wtrf_scraper.time, "sleep", lambda _s: None)
+        page = self._PAGE.replace(
+            '<div class="post"><div class="inner" id="msg_100">first post, no torrent</div></div>',
+            '<div class="post"><div class="inner" id="msg_100">first post</div></div>'
+            '<div class="attachments"><a href="index.php?action=dlattach;attach=3">'
+            'LB-00707.torrent</a></div>',
+        )
+
+        class _S:
+            def get(self, url, timeout=None, headers=None):
+                return TestFetchTopicScoping._Resp(page)
+
+        post = wtrf_scraper._fetch_topic(_S(), "http://x/index.php?topic=1.0", 0)
+        assert post["attachment_text"] == "LB-00707.torrent"
+        assert post["torrent_url"].endswith("attach=3")

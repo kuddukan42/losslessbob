@@ -97,8 +97,9 @@ def board_page_url(board_id: int, offset: int) -> str:
 def _is_sticky(row) -> bool:
     """Return True if a listing row is a stickied announcement.
 
-    SMF paints sticky rows with the ``stickybg`` cell classes and gives them a
-    ``*_post_sticky.gif`` topic icon; either is enough.
+    SMF 2.0 paints sticky rows with the ``stickybg`` cell classes and gives
+    them a ``*_post_sticky.gif`` topic icon; SMF 2.1 puts a ``sticky`` class
+    on the row itself. Any of the three is enough.
 
     Args:
         row: The ``<tr>`` element for one topic.
@@ -107,9 +108,9 @@ def _is_sticky(row) -> bool:
         Whether the row is stickied.
     """
     classes = " ".join(
-        c for td in row.find_all("td") for c in (td.get("class") or [])
-    )
-    if "stickybg" in classes:
+        c for el in (row, *row.find_all("td")) for c in (el.get("class") or [])
+    ).lower()
+    if "sticky" in classes:
         return True
     return any("_sticky" in (img.get("src") or "") for img in row.find_all("img"))
 
@@ -128,8 +129,17 @@ def parse_board_page(html: str, offset: int = 0) -> list[BoardTopic]:
     topics: list[BoardTopic] = []
     seen: set[int] = set()
     for row in soup.find_all("tr"):
-        link = row.find("a", href=lambda h: h and "topic=" in h)
-        if link is None or _is_sticky(row):
+        if _is_sticky(row):
+            continue
+        # The subject link is the first topic link *with text*: SMF rows also
+        # carry icon-only links (";topicseen#new", the last-post arrow) that
+        # would otherwise drop the whole row.
+        link = next(
+            (a for a in row.find_all("a", href=lambda h: h and "topic=" in h)
+             if a.get_text(strip=True)),
+            None,
+        )
+        if link is None:
             continue
         match = _TOPIC_ID_RE.search(link["href"])
         title = link.get_text(strip=True)
@@ -188,9 +198,27 @@ def iter_board_topics(session: requests.Session, board_id: int,
 
     Yields:
         :class:`BoardTopic` rows in listing order.
+
+    Two guards end an unbounded walk (``pages=None``). SMF clamps an
+    out-of-range offset to the last page instead of returning an empty one,
+    so the walk is capped at the page count read off the pagination strip,
+    and a page that yields no topic not already seen this run is treated as
+    the end of the board rather than fetched again forever.
     """
+    last_offset: int | None = None
+    if pages is None:
+        count = board_page_count(session, board_id)
+        if count:
+            last_offset = (count - 1) * TOPICS_PER_PAGE
+            time.sleep(delay)
+
+    seen: set[int] = set()
     for page in itertools.count() if pages is None else range(pages):
         offset = start_offset + page * TOPICS_PER_PAGE
+        if last_offset is not None and offset > last_offset:
+            logger.info("board offset %d: past the last page (%d) — end of board",
+                        offset, last_offset)
+            return
         if page or start_offset:
             time.sleep(delay)
         try:
@@ -198,10 +226,12 @@ def iter_board_topics(session: requests.Session, board_id: int,
         except requests.RequestException as exc:
             logger.warning("board offset %d: %s", offset, exc)
             return
-        rows = parse_board_page(resp.text, offset)
+        rows = [r for r in parse_board_page(resp.text, offset)
+                if r.topic_id not in seen]
         if not rows:
-            logger.info("board offset %d: no topics — end of board", offset)
+            logger.info("board offset %d: no new topics — end of board", offset)
             return
+        seen.update(r.topic_id for r in rows)
         yield from rows
 
 

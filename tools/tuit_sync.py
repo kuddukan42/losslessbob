@@ -479,8 +479,15 @@ def _sync_one(session, rec_id: int, row, args) -> str:
     stored.pop("siblings", None)
     stored.update(tuit_scraper.recording_to_json_fields(rec))
     if row is not None:
-        stored["added_at"] = row.added_at
-        stored["uploader_url"] = row.uploader_url
+        if row.added_at:
+            stored["added_at"] = row.added_at
+        if row.uploader_url:
+            stored["uploader_url"] = row.uploader_url
+    if not rec.taper:
+        # The detail page never names a taper; only a listing row or feed item
+        # does. A re-sync without one (retry, --rec) must not blank the value
+        # an earlier browse pass stored.
+        stored.pop("taper", None)
 
     database.upsert_tuit_recording(stored)
     logger.info(
@@ -673,11 +680,11 @@ def main() -> int:
             if item.rec_id in known_ids:
                 skipped_known += 1
                 continue
-            # Deliberately not stored in rows_by_id: that map feeds
-            # merge_row_into_recording, which expects a BrowseRow. The feed
-            # carries less than the detail page does, so the detail fetch is
-            # the single source for these ids.
-            rows_by_id[item.rec_id] = None
+            # A sparse BrowseRow: the feed is the only place a feed-discovered
+            # recording's taper appears (the detail page has none), so it has
+            # to reach merge_row_into_recording. Everything else stays blank
+            # and the detail page fills it.
+            rows_by_id[item.rec_id] = item.as_browse_row()
             queue.append(item.rec_id)
         if not queue and not skipped_known:
             print("RSS returned nothing — store a passkey with --set-rss-key.",
@@ -752,8 +759,8 @@ def main() -> int:
         print(f"\n[dry-run] {len(queue)} recording(s) would be synced:")
         for rec_id in queue:
             row = rows_by_id.get(rec_id)
-            if row is None:
-                print(f"  rec {rec_id}")
+            if row is None or not row.date_str:
+                print(f"  rec {rec_id}" + (f"  taper={row.taper}" if row and row.taper else ""))
             else:
                 print(f"  rec {rec_id:>6}  LB-{row.lb_number or '?':<7} "
                       f"{row.date_str:<12} {row.source_type:<4} "
