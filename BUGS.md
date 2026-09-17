@@ -1,3 +1,19 @@
+BUG-351: Dossier 1978-09-17 two-show day: golden spec picks War Memorial Coliseum but venue.name renders Veterans Memorial Coliseum
+Status: Open
+File(s): backend/dossier_anchors.py,tests/golden/dossier/1978-09-17_two-show-day.json
+Reported: 2026-09-16
+Description: Olof has two concerts that date (4320 War Memorial, 4330 Veterans Memorial New Haven); bobserve lists only New Haven. venue.name disagrees with the selected event; verify which show is real before C32 sign-off.
+Root cause: Unknown
+Fix: —
+
+BUG-350: Olof parser: 40 olof_events have letterless venue fragments (e.g. event 40450 2019-11-30 venue '4 0450')
+Status: Open
+File(s): backend/olof_parser.py
+Reported: 2026-09-16
+Description: 40 rows where venue has no letters; 40450 should be Beacon Theatre. Dossier city history now shows them as 'venue unknown'.
+Root cause: Unknown
+Fix: —
+
 BUG-343: Dossier template output is 37% blank lines
 Status: Open
 File(s): backend/templates/dossier.html:1

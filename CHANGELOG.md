@@ -1,3 +1,20 @@
+[2026-09-16] — Show dossier: city history by year, and cross-reference links go to the show
+Fixed: backend/templates/dossier.html: the city panel printed only the last 4 (year, venue)
+  rows, so 1963-10-26's NYC dossier read "2019 · Beacon Theatre 6 … 2023 · 1" under "147 shows
+  in this city" (tj, C32 review). Now every year prints its total, with this show's year
+  highlighted and broken down by venue.
+Changed: backend/dossier_fields.py: city_history rows merge folded venue spellings ("The Beacon
+  Theatre" == "Beacon Theatre"), blank letterless Olof fragments ("4 0450"), carry `current`.
+Fixed: backend/dossier_anchors.py: the LosslessBob xref card linked the legacy show_picks rank 1
+  (LB-03216, a fragment) instead of the verdict pick (LB-06180) — _xref_to_pick retargets it.
+Fixed: backend/dossier.py: the Olof card deep-links the show's #DSNnnnnn anchor, not just the
+  page; the bobserve card links setlist?event=N for pre-2022 shows via the new
+  bobserve_event_index (venue, then non-soundcheck/rehearsal, then Concert; no guess on a
+  two-venue day); the Boblinks card is grayed out (not a link) before 1995.
+Added: backend/bobserve_fetcher.py: --index-only / run_index() crawls eventsperiod pages
+  1956-now into bobserve_event_index (backend/db.py; 4,882 rows). tools/make_fixture_db.py cuts
+  it into the golden fixture (re-cut; --check 15/15).
+
 [2026-09-16] — Show dossier: song notes print as a subtitle under the title
 Changed: backend/dossier_anchors.py: olof_songs.annotations ("Bob Neuwirth (shared vocal); mono
   PA recording") no longer glued onto song[].title in parens — new song[].notes anchor.

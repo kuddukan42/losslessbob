@@ -334,7 +334,7 @@ class TestXrefDeepLinks:
             from backend.dossier import build_dossier
             xref = {c["key"]: c for c in build_dossier("2000-07-28", db_path=db_path)["xref"]}
             assert xref["olof"]["url"] == (
-                "https://www.bobserve.com/olof/DSN12345%20%2800%29.htm")
+                "https://www.bobserve.com/olof/DSN12345%20%2800%29.htm#DSN00001")
             assert xref["olof"]["is_source"] is True
             assert xref["bobserve"]["url"] == "https://bobserve.com/eventsperiod?period=2000"
             assert xref["bobserve"]["is_source"] is False
@@ -359,6 +359,28 @@ class TestXrefDeepLinks:
             assert xref["olof"]["url"] == "http://www.bjorner.com/still.htm"
             assert xref["olof"]["is_source"] is False
             assert xref["boblinks"]["url"] == "https://boblinks.com/101623s.html"
+        finally:
+            import shutil
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_pre_2022_bobserve_link_from_event_index_and_boblinks_unavailable(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            with conn:
+                _insert_entry(conn, 203, "10/26/63")
+                _insert_event(conn, 610, "1963-10-26", page_filename="DSN00340 1963.htm")
+                conn.executemany(
+                    "INSERT INTO bobserve_event_index (event_id, date_str, venue, event_type)"
+                    " VALUES (?, '1963-10-26', 'Carnegie Hall', ?)",
+                    [(365, "Concert"), (4578, "Soundcheck")],
+                )
+                conn.commit()
+
+            from backend.dossier import build_dossier
+            xref = {c["key"]: c for c in build_dossier("1963-10-26", db_path=db_path)["xref"]}
+            assert xref["bobserve"]["url"] == "https://bobserve.com/setlist?event=365"
+            assert xref["olof"]["url"].endswith("DSN00340%201963.htm#DSN00610")
+            assert xref["boblinks"]["unavailable"] is True
         finally:
             import shutil
             shutil.rmtree(tmp_dir, ignore_errors=True)

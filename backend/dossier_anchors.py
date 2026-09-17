@@ -316,6 +316,27 @@ class _ViewBuilder:
         return {"fields": self.fields, "rows": self.rows}
 
 
+def _xref_to_pick(xref: list[dict], fields: dict) -> list[dict]:
+    """Point the LosslessBob xref card at the verdict pick, not the legacy show_picks rank 1.
+
+    Args:
+        xref: ``_build_xref`` cards.
+        fields: The view's fields so far; ``pick.lb_id``/``pick.url`` are set by then.
+
+    Returns:
+        The cards, with the LosslessBob card's ``url``/``link_label`` retargeted when a
+        pick with a detail URL exists; otherwise ``xref`` unchanged.
+    """
+    lb_f, url_f = fields.get("pick.lb_id"), fields.get("pick.url")
+    if not (lb_f and lb_f.get("value") and url_f and url_f.get("value")):
+        return xref
+    return [
+        {**x, "url": url_f["value"], "link_label": f"{lb_f['value']} detail page"}
+        if x.get("key") == "losslessbob" else x
+        for x in xref
+    ]
+
+
 def build_view(
     d1: dict,
     conn: sqlite3.Connection,
@@ -1094,7 +1115,8 @@ def _build_context(vb, d1, conn, event_id, date_iso) -> None:
                 city_hist["rows"], 3, "D-07 city_history", "stated"))
 
     if d1.get("xref"):
-        vb.set_field("xrefs[]", build_field(d1["xref"], 1, "_build_xref", "stated"))
+        vb.set_field("xrefs[]", build_field(
+            _xref_to_pick(d1["xref"], fields=vb.fields), 1, "_build_xref", "stated"))
 
     credits = [x["name"] for x in d1.get("xref", []) if x.get("is_source")]
     vb.set_field("prov.credits", build_field(

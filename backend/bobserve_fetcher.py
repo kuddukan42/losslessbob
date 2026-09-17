@@ -33,7 +33,7 @@ Public API:
 
 CLI:
     .venv/bin/python3 -m backend.bobserve_fetcher [--start-year N] [--end-year N]
-        [--limit N] [--refresh] [--dry-run]
+        [--limit N] [--refresh] [--dry-run] [--index-only]
 
 Schema: olof_pages (corpus='bobserve'), shared with the DSN/chronicle
 corpora. Upsert on filename.
@@ -68,6 +68,8 @@ PAGES_DIR = DATA_DIR / "olof" / "bobserve_pages"
 # DSN (Still On The Road) covers 1956-2021 (see module docstring) — bobserve.com's
 # own setlist database is the only source consulted for 2022+ shows.
 DEFAULT_START_YEAR = 2022
+# --index-only covers Dylan's whole career (bobserve's first eventsperiod year).
+INDEX_START_YEAR = 1956
 _PROGRESS_EVERY = 20
 
 _JOB = JobState("bobserve-fetch")
@@ -131,6 +133,81 @@ def _extract_year_event_ids(html_bytes: bytes) -> list[tuple[int, str]]:
             continue
         seen[event_id] = " ".join(a.get_text(" ", strip=True).split())
     return list(seen.items())
+
+
+def _extract_year_index_rows(html_bytes: bytes) -> list[dict]:
+    """Extract the eventsperiod table: one row per event id, with its listed columns.
+
+    Args:
+        html_bytes: Raw bytes of a fetched eventsperiod?period=YYYY page.
+
+    Returns:
+        ``{event_id, date_str, location, venue, event_type}`` dicts in document order.
+        The table's columns are Date, (blank), Location, Venue, Type, Name.
+    """
+    soup = BeautifulSoup(html_bytes.decode("utf-8", errors="replace"), "lxml")
+    rows: dict[int, dict] = {}
+    for a in soup.find_all("a", href=True):
+        m = _EVENT_LINK_RE.match(a["href"].strip())
+        tr = a.find_parent("tr") if m else None
+        if not m or tr is None or int(m.group(1)) in rows:
+            continue
+        cells = [" ".join(td.get_text(" ", strip=True).split()) for td in tr.find_all("td")]
+        cells += [""] * (5 - len(cells))
+        rows[int(m.group(1))] = {
+            "event_id": int(m.group(1)), "date_str": cells[0], "location": cells[2],
+            "venue": cells[3], "event_type": cells[4],
+        }
+    return list(rows.values())
+
+
+def _upsert_index_rows(conn, rows: list[dict]) -> None:
+    """Upsert eventsperiod rows into ``bobserve_event_index``."""
+    now = time.strftime("%Y-%m-%dT%H:%M:%S")
+    with conn:
+        conn.executemany(
+            "INSERT INTO bobserve_event_index"
+            " (event_id, date_str, location, venue, event_type, indexed_at)"
+            " VALUES (:event_id, :date_str, :location, :venue, :event_type, :now)"
+            " ON CONFLICT(event_id) DO UPDATE SET date_str = excluded.date_str,"
+            " location = excluded.location, venue = excluded.venue,"
+            " event_type = excluded.event_type, indexed_at = excluded.indexed_at",
+            [{**r, "now": now} for r in rows],
+        )
+
+
+def run_index(start_year: int = INDEX_START_YEAR, end_year: int | None = None,
+              db_path: str | None = None) -> dict:
+    """Crawl only the eventsperiod index pages into ``bobserve_event_index``.
+
+    No event pages are fetched. Feeds the dossier's bobserve deep link for every year,
+    not just the 2022+ shows whose pages are mirrored.
+
+    Args:
+        start_year: First year (default :data:`INDEX_START_YEAR`).
+        end_year: Last year inclusive (default: current year).
+        db_path: Optional database path override.
+
+    Returns:
+        ``{"years": n_years_fetched, "rows": n_rows, "failed": [years]}``.
+    """
+    end = end_year if end_year is not None else datetime.date.today().year
+    init_db(db_path)
+    conn = get_connection(db_path)
+    n_rows, n_years, failed = 0, 0, []
+    for year in range(start_year, end + 1):
+        resp = _fetch(_period_url(year))
+        if resp is None:
+            _log.error("bobserve_fetcher: could not fetch eventsperiod for %d", year)
+            failed.append(year)
+            continue
+        rows = _extract_year_index_rows(resp.content)
+        _upsert_index_rows(conn, rows)
+        n_years += 1
+        n_rows += len(rows)
+        _log.info("bobserve_fetcher: index %d -> %d rows", year, len(rows))
+        time.sleep(_REQUEST_DELAY)
+    return {"years": n_years, "rows": n_rows, "failed": failed}
 
 
 # ---------------------------------------------------------------------------
@@ -413,6 +490,9 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
                          help="Cap the number of event pages mirrored (testing).")
     parser.add_argument("--refresh", action="store_true",
                          help="Re-fetch pages already on disk.")
+    parser.add_argument("--index-only", action="store_true",
+                         help="Only crawl eventsperiod pages into bobserve_event_index "
+                              f"(default start {INDEX_START_YEAR}); no event pages.")
     parser.add_argument("--dry-run", action="store_true",
                          help="List what would be fetched; no mirroring, no network "
                               "beyond the eventsperiod index pages.")
@@ -427,6 +507,11 @@ if __name__ == "__main__":
         stream=sys.stderr,
     )
     _args = _parse_args()
+    if _args.index_only:
+        _log.info("bobserve_fetcher: index summary %s", run_index(
+            start_year=_args.start_year if _args.start_year != DEFAULT_START_YEAR
+            else INDEX_START_YEAR, end_year=_args.end_year))
+        sys.exit(0)
     _summary = run_fetch(
         start_year=_args.start_year, end_year=_args.end_year, limit=_args.limit,
         refresh=_args.refresh, dry_run=_args.dry_run,

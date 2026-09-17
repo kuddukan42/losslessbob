@@ -857,6 +857,8 @@ _BOBLINKS_FIRST_YEAR = 1995
 # page ('bobserve_event_<id>.html') — it does NOT exist on the Olof mirror, so
 # a link built from it 404s. Deep-link bobserve's real setlist page instead.
 _BOBSERVE_PAGE_RE = re.compile(r"^bobserve_event_(\d+)\.html$")
+# bobserve event types that sit beside a show rather than being it.
+_BOBSERVE_AUX_TYPES = frozenset({"soundcheck", "rehearsal"})
 
 
 def _bobserve_event_id(event: sqlite3.Row | None) -> str | None:
@@ -875,8 +877,49 @@ def _bobserve_event_id(event: sqlite3.Row | None) -> str | None:
     return m.group(1) if m else None
 
 
+def _bobserve_index_event_id(conn: sqlite3.Connection, date_iso: str,
+                             event: sqlite3.Row | None) -> str | None:
+    """Resolve bobserve's ``?event=`` id for a date from ``bobserve_event_index``.
+
+    Same-date rows narrow by folded venue, then drop soundchecks/rehearsals, then
+    prefer "Concert" for a concert event (1963-10-26 lists a Concert and a Soundcheck
+    at Carnegie Hall). On a two-venue day with no venue match nothing is guessed.
+
+    Args:
+        conn: Open connection.
+        date_iso: Concert date.
+        event: The primary ``olof_events`` row, if any.
+
+    Returns:
+        The id as a string when exactly one row survives, else None.
+    """
+    from backend.qc.corroborate import _fold_venue_name
+    try:
+        rows = conn.execute(
+            "SELECT event_id, venue, event_type FROM bobserve_event_index WHERE date_str = ?",
+            (date_iso,),
+        ).fetchall()
+    except sqlite3.OperationalError:
+        return None
+    venue = _fold_venue_name(event["venue"]) if event is not None else ""
+    same_venue = [r for r in rows if venue and _fold_venue_name(r["venue"]) == venue]
+    if same_venue:
+        rows = same_venue
+    elif venue and len({_fold_venue_name(v) for (v,) in conn.execute(
+            "SELECT venue FROM olof_events WHERE date_str = ? AND event_type = 'concert'",
+            (date_iso,))}) > 1:
+        # A two-venue day whose venue bobserve spells differently: don't guess.
+        return None
+    if len(rows) > 1:
+        rows = [r for r in rows
+                if r["event_type"].lower() not in _BOBSERVE_AUX_TYPES] or rows
+    if len(rows) > 1 and event is not None and event["event_type"] == "concert":
+        rows = [r for r in rows if r["event_type"].lower() == "concert"] or rows
+    return str(rows[0]["event_id"]) if len(rows) == 1 else None
+
+
 def _build_xref(date_iso: str, event: sqlite3.Row | None,
-                lb_number: int | None) -> list[dict]:
+                lb_number: int | None, bobserve_index_id: str | None = None) -> list[dict]:
     """Cross-reference cards with working deep links for one date.
 
     Every card carries both ``site`` (the source's home page, used for
@@ -890,6 +933,8 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
         event: The primary ``olof_events`` row for the date, if any.
         lb_number: LB number to deep-link on the LosslessBob card
             (recommendation first, else first visible source).
+        bobserve_index_id: bobserve ``?event=`` id from ``bobserve_event_index``
+            for shows whose event row wasn't sourced from bobserve.
 
     Returns:
         List of ``{key, name, desc, site, url, link_label, is_source}``
@@ -930,8 +975,9 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
         "is_source": False,
     }
     if event is not None and event["page_filename"] and bobserve_event_id is None:
-        olof["url"] = _OLOF_MIRROR_BASE + urllib.parse.quote(event["page_filename"])
-        olof["link_label"] = event["page_filename"]
+        olof["url"] = (_OLOF_MIRROR_BASE + urllib.parse.quote(event["page_filename"])
+                       + f"#DSN{event['event_id']:05d}")
+        olof["link_label"] = f"{event['page_filename']} · DSN{event['event_id']:05d}"
         olof["is_source"] = True
 
     boblinks = {
@@ -943,10 +989,14 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
         "url": _BOBLINKS_HOME,
         "link_label": "site home",
         "is_source": False,
+        "unavailable": False,
     }
     if dt and dt.year >= _BOBLINKS_FIRST_YEAR:
         boblinks["url"] = f"{_BOBLINKS_HOME}/{dt.strftime('%m%d%y')}s.html"
         boblinks["link_label"] = f"setlist page · {date_iso}"
+    elif dt:
+        boblinks["unavailable"] = True
+        boblinks["link_label"] = f"no show pages before {_BOBLINKS_FIRST_YEAR}"
 
     bobserve = {
         "key": "bobserve",
@@ -961,6 +1011,9 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
     if year:
         bobserve["url"] = f"{_BOBSERVE_HOME}/eventsperiod?period={year}"
         bobserve["link_label"] = f"events · {year}"
+    if bobserve_event_id is None and bobserve_index_id is not None:
+        bobserve["url"] = f"{_BOBSERVE_HOME}/setlist?event={bobserve_index_id}"
+        bobserve["link_label"] = f"setlist · {date_iso}"
     if bobserve_event_id is not None:
         bobserve["url"] = f"{_BOBSERVE_HOME}/setlist?event={bobserve_event_id}"
         bobserve["link_label"] = f"setlist · {date_iso}"
@@ -1027,7 +1080,8 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
 
     xref_lb = rank1_lb if rank1_lb is not None and rank1_lb in visible_lbs else (
         visible_lbs[0] if visible_lbs else None)
-    dossier["xref"] = _build_xref(date_iso, event, xref_lb)
+    dossier["xref"] = _build_xref(date_iso, event, xref_lb,
+                                  _bobserve_index_event_id(conn, date_iso, event))
 
     provenance: dict = {"generated_at": _now_iso(), "channel": channel, "local_analysis": local_analysis}
     mv = conn.execute("SELECT value FROM meta WHERE key = 'master_version'").fetchone()

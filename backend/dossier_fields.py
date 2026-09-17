@@ -1257,11 +1257,17 @@ class VenueRun(TypedDict):
 
 
 class CityHistoryRow(TypedDict):
-    """One ``(year, venue)`` row of a city's concert history; venues never merge."""
+    """One ``(year, venue)`` row of a city's concert history.
+
+    Venues merge only on their folded name ("The Beacon Theatre" == "Beacon Theatre"); the
+    display spelling is the most common raw one. A venue with no letters (an Olof parse
+    fragment such as "4 0450") is ``''``. ``current`` marks this show's year.
+    """
 
     year: str
     venue: str
     count: int
+    current: bool
 
 
 class CityHistory(TypedDict):
@@ -1324,7 +1330,7 @@ def _city_history(
     conn: sqlite3.Connection, concerts: list[sqlite3.Row], ev: sqlite3.Row,
 ) -> CityHistory | None:
     """Concerts grouped by setlist.fm ``(city, country)`` per date, Olof's city as fallback."""
-    from backend.qc.corroborate import _fold_city_name, _fold_place_name
+    from backend.qc.corroborate import _fold_city_name, _fold_place_name, _fold_venue_name
 
     sfm: dict[str, tuple[str, str]] = {}
     for r in conn.execute(
@@ -1344,6 +1350,7 @@ def _city_history(
     if not city_key:
         return None
     rows: Counter[tuple[str, str]] = Counter()
+    spellings: dict[str, Counter[str]] = defaultdict(Counter)
     total = 0
     for r in concerts:
         other_city, other_country, *_ = place(r)
@@ -1352,9 +1359,18 @@ def _city_history(
         if country_key and other_country and other_country != country_key:
             continue
         total += 1
-        rows[(r["date_str"][:4], (r["venue"] or "").strip())] += 1
+        raw = (r["venue"] or "").strip()
+        key = _fold_venue_name(raw) if any(c.isalpha() for c in raw) else ""
+        if key:
+            spellings[key][raw] += 1
+        rows[(r["date_str"][:4], key)] += 1
+    show_year = ev["date_str"][:4]
     out_rows = [
-        CityHistoryRow(year=y, venue=v, count=n) for (y, v), n in sorted(rows.items())
+        CityHistoryRow(
+            year=y, venue=spellings[k].most_common(1)[0][0] if k else "", count=n,
+            current=y == show_year,
+        )
+        for (y, k), n in sorted(rows.items())
     ]
     return CityHistory(
         city=city, country=country, basis=basis, total=total, rows=out_rows,

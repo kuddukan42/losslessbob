@@ -153,3 +153,18 @@ class TestParsePageEventType:
 
         assert rec.event_type == "concert"
         assert rec.notes == ""
+
+
+def test_eventsperiod_index_rows_carry_venue_and_type():
+    """``_extract_year_index_rows`` keeps same-date events apart by their Type column."""
+    from backend.bobserve_fetcher import _extract_year_index_rows
+    html = (
+        b'<table><tr><td><a href="https://bobserve.com/setlist?event=365">1963-10-26</a></td>'
+        b"<td></td><td>New York, NY</td><td>Carnegie Hall</td><td>Concert</td><td></td></tr>"
+        b'<tr><td><a href="https://bobserve.com/setlist?event=4578">1963-10-26</a></td>'
+        b"<td></td><td>New York, NY</td><td>Carnegie Hall</td><td>Soundcheck</td><td></td></tr>"
+        b"</table>"
+    )
+    rows = _extract_year_index_rows(html)
+    assert [(r["event_id"], r["venue"], r["event_type"]) for r in rows] == [
+        (365, "Carnegie Hall", "Concert"), (4578, "Carnegie Hall", "Soundcheck")]
