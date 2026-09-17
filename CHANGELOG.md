@@ -1,3 +1,8 @@
+[2026-09-16] — Dossier: bobdylan.com cross-reference card
+Added: backend/dossier.py: _bobdylan_show_url + a "BobDylan.com" xref card linking the show's
+  bobdylan_shows.bobdylan_url (venue-matched on two-show dates); greyed out when the site has no
+  page for the date (e.g. 1965-06-01). tests/test_dossier.py: both cases.
+
 [2026-09-16] — Dossier: collapsed sources keep their full table columns
 Changed: backend/templates/dossier.html: sources past sources.visible_n (e.g. #8-#15 on 1965-06-01)
   render as a second sources table (family bands, taper, details, rating, length, grade, rank)
