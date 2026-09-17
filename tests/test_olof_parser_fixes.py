@@ -6,13 +6,16 @@ parser's upsert of them, and tools/olof_reparse_diff.py's change classifier.
 import sqlite3
 
 import pytest
+from bs4 import BeautifulSoup
 
 import backend.db as db
 import backend.paths as _paths
 from backend.olof_parser import (
     EventRecord,
     SongRecord,
+    _clean_para_text,
     _is_guest_header,
+    _normalize_song_title,
     _parse_event,
     _split_title_credits,
     _split_title_parts,
@@ -556,3 +559,85 @@ def test_long_unnumbered_run_is_not_skipped():
     lines = (["Venue", "City, Sweden", "1 May 1990", "1.", "First"]
              + [f"prose line {n}" for n in range(13)] + ["2.", "Second"])
     assert [s.position for s in _songs_of(lines)] == [1]
+
+
+# ── BUG-337: mid-word spacing + encoding splits in song titles ────────────────
+
+def _clean(html: str) -> str:
+    """Extract one paragraph's text the way the parser does."""
+    soup = BeautifulSoup(html, "lxml")
+    return _clean_para_text(soup.find(["p", "td"]))
+
+
+@pytest.mark.parametrize("html,expected", [
+    # Office smart tag wrapping a word PREFIX — the original 'Born In Tim e'.
+    ('<p class=Sng><span lang=EN-GB>Born In '
+     '<st1:PersonName w:st="on">Tim</st1:PersonName>e</span></p>', "Born In Time"),
+    ('<p class=Sng><span>Let The Good '
+     '<st1:personname w:st="on">Tim</st1:personname>es Roll</span></p>',
+     "Let The Good Times Roll"),
+    ('<p class=Sng><span>Big River</span><span> ('
+     '<st1:personname w:st="on">John</st1:personname>ny Cash)</span></p>',
+     "Big River (Johnny Cash)"),
+    # Spell-check span wrapping the word but not its apostrophe.
+    ('<p class=Sng><span class=SpellE>Blowin</span>\' In The Wind</p>',
+     "Blowin' In The Wind"),
+    # Same, one level nested inside a plain formatting span (the case a
+    # class-only predicate misses — BUG-337's second pass).
+    ('<p class=Sng><span class=SpellE><span lang=EN-US>Blowin</span></span>'
+     '<span lang=EN-US>\'\n  In The Wind</span><span><o:p></o:p></span></p>',
+     "Blowin' In The Wind"),
+    # Two plain formatting runs splitting a word, no Word class at all.
+    ('<p class=Sng><span>Knockin</span><span>\' On Heaven\'s Door</span></p>',
+     "Knockin' On Heaven's Door"),
+    # Genuine whitespace inside a run survives.
+    ('<p class=Sng><span>Things Have\n  Changed<o:p></o:p></span></p>',
+     "Things Have Changed"),
+    # Block-level boundaries still separate.
+    ('<td><p>1.</p><p>Mr. Tambourine Man</p></td>', "1. Mr. Tambourine Man"),
+    ('<p>line one<br>line two</p>', "line one line two"),
+    # Ordinal <sup> is inline, so it is no longer split in the first place.
+    ('<p>3<sup>rd</sup> of May</p>', "3rd of May"),
+])
+def test_clean_para_text_never_splits_a_word(html, expected):
+    assert _clean(html) == expected
+
+
+def test_clean_para_text_strips_wingdings_bullets():
+    html = ('<p><span style="font-family:Wingdings">§</span>'
+            '<span>Notes.</span></p>')
+    assert _clean(html) == "Notes."
+
+
+@pytest.mark.parametrize("raw,expected", [
+    # Apostrophe stand-ins fold to a straight apostrophe.
+    ("´Til I Fell In Love With You", "'Til I Fell In Love With You"),
+    ("Two Trains Runnin’", "Two Trains Runnin'"),
+    ("Don‘t Think Twice", "Don't Think Twice"),
+    ("Poʼ Boy", "Po' Boy"),
+    ("Talkin′ New York", "Talkin' New York"),
+    ("Ol`  Mac Donald", "Ol' Mac Donald"),
+    # Straight apostrophes and ordinary titles are untouched.
+    ("Blowin' In The Wind", "Blowin' In The Wind"),
+    ("Señor", "Señor"),
+    # Verified literal typos in the source pages.
+    ("Things Hav,e Changed", "Things Have Changed"),
+    ("Diseaseof Conceit", "Disease Of Conceit"),
+    ("Blowin' InThe Wind", "Blowin' In The Wind"),
+    ("Se or", "Señor"),
+    ("Ride'Em Jewboy", "Ride 'Em Jewboy"),
+])
+def test_normalize_song_title(raw, expected):
+    assert _normalize_song_title(raw) == expected
+
+
+def test_normalize_song_title_collapses_whitespace():
+    assert _normalize_song_title("  Born   In\tTime  ") == "Born In Time"
+
+
+def test_parsed_song_titles_are_normalized_end_to_end():
+    lines = ["Venue", "City, Sweden", "1 May 1990",
+             "1.", "´Til I Fell In Love With You",
+             "2.", "Things Hav,e Changed"]
+    titles = [s.song_title for s in _songs_of(lines)]
+    assert titles == ["'Til I Fell In Love With You", "Things Have Changed"]

@@ -75,6 +75,7 @@ from backend.olof_parser import (
     EventRecord,
     SongRecord,
     _ensure_page_row,
+    _normalize_song_title,
     _pct,
     _resolve_file_path,
     _split_city_region_country,
@@ -275,16 +276,22 @@ def _parse_songs(lines: list[str], event_id: int) -> list[SongRecord]:
     A line not matching 'N. ...' is a medley continuation (see
     _looks_like_song_block) and is folded into the previous song's title
     with ' / ' rather than dropped or mis-parsed as its own entry.
+
+    Titles go through :func:`olof_parser._normalize_song_title` (BUG-337) so
+    the bobserve rows of ``olof_songs`` share one apostrophe spelling with the
+    DSN rows — both corpora feed the same ``song_index`` spine.
     """
     songs: list[SongRecord] = []
     for line in lines:
         m = _SONG_LINE_RE.match(line)
         if not m:
             if songs:
-                songs[-1].song_title = f"{songs[-1].song_title} / {line.strip()}"
+                merged = f"{songs[-1].song_title} / {line.strip()}"
+                songs[-1].song_title = _normalize_song_title(merged)
             continue
         position = int(line.split(".", 1)[0])
         title, credits = _split_title_credits(m.group(1))
+        title = _normalize_song_title(title)
         songs.append(SongRecord(event_id=event_id, position=position,
                                  song_title=title, credits=credits))
     return songs

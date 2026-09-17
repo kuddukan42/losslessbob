@@ -119,7 +119,7 @@ import time
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment, Declaration, Doctype, NavigableString, ProcessingInstruction
 
 from backend.db import get_connection, init_db
 from backend.olof_fetcher import PAGES_DIR
@@ -162,6 +162,18 @@ _TAKE_NOTATION_RE = re.compile(r"\btake\s+\d+\s*:", re.IGNORECASE)
 _SETLIST_LINE_RE = re.compile(r"^\d+\.(\s+\S.*)?$")
 _TOP_LINE_RE = re.compile(r"^\[\s*TOP\s*\]$", re.IGNORECASE)
 _ORDINAL_SUP_RE = re.compile(r"\b(\d+) (st|nd|rd|th)\b")
+# BUG-337: block-level elements are the only place a separator belongs — every
+# other tag in Word's export is an inline formatting run whose boundary a
+# browser renders with no space at all. See _extract_text.
+_BLOCK_LEVEL_TAGS = frozenset({
+    "address", "article", "aside", "blockquote", "br", "caption", "dd", "div",
+    "dl", "dt", "fieldset", "figcaption", "figure", "footer", "form", "h1",
+    "h2", "h3", "h4", "h5", "h6", "header", "hr", "li", "main", "nav", "ol",
+    "p", "pre", "section", "table", "tbody", "td", "tfoot", "th", "thead",
+    "tr", "ul",
+})
+# Elements whose text content is never document text.
+_NON_TEXT_TAGS = frozenset({"script", "style", "title", "head"})
 _REHEARSAL_RE = re.compile(r"\brehearsal\b", re.IGNORECASE)
 _BROADCAST_RE = re.compile(r"\b(broadcast|radio|television|tv)\b", re.IGNORECASE)
 _INTERVIEW_RE = re.compile(r"\b(interview|press conference)\b", re.IGNORECASE)
@@ -350,6 +362,44 @@ class SongRecord:
 # HTML -> per-paragraph clean text
 # ---------------------------------------------------------------------------
 
+def _extract_text(el) -> str:
+    """Concatenate an element's text the way a browser lays it out.
+
+    BUG-337: the previous implementation joined *every* descendant string
+    with a ``" "`` separator, which put a space at every inline tag boundary.
+    Word's exports break words across inline runs constantly — smart tags
+    (``Born In <st1:PersonName>Tim</st1:PersonName>e``), spell-check spans
+    (``<span class=SpellE>Blowin</span>' In The Wind``) and plain formatting
+    spans (``<span>Blowin</span><span>' In The Wind</span>``) — so the
+    separator landed mid-word and split one song into several titles.
+
+    Inline boundaries carry no whitespace in CSS, so inline runs are
+    concatenated with nothing between them: every genuine word space is
+    already inside the text nodes. A separator is emitted only where a
+    block-level element starts or ends, which is where a browser would break
+    the line.
+
+    Args:
+        el: A BeautifulSoup Tag to extract text from.
+
+    Returns:
+        The element's text, separators inserted at block boundaries only.
+        Not yet whitespace-collapsed.
+    """
+    parts: list[str] = []
+    for node in el.descendants:
+        if isinstance(node, NavigableString):
+            # Comment/Doctype/PI are NavigableString subclasses — never text.
+            if isinstance(node, (Comment, Doctype, ProcessingInstruction, Declaration)):
+                continue
+            if node.parent is not None and node.parent.name in _NON_TEXT_TAGS:
+                continue
+            parts.append(str(node))
+        elif node.name in _BLOCK_LEVEL_TAGS:
+            parts.append(" ")
+    return "".join(parts)
+
+
 def _clean_para_text(el) -> str:
     """Return whitespace-normalized text for a paragraph/heading element.
 
@@ -367,9 +417,10 @@ def _clean_para_text(el) -> str:
     dup = copy.deepcopy(el)
     for bad in dup.find_all(style=_WINGDINGS_STYLE_RE):
         bad.decompose()
-    text = " ".join(dup.get_text(" ", strip=True).split())
-    # Ordinal suffixes are commonly wrapped in <sup> ('3<sup>rd</sup>'), which
-    # get_text's separator turns into '3 rd' — rejoin it.
+    text = " ".join(_extract_text(dup).split())
+    # Ordinal suffixes are commonly wrapped in <sup> ('3<sup>rd</sup>'). That is
+    # an inline tag, so block-level extraction no longer splits it; the rejoin
+    # stays as a safety net for a source that puts real whitespace there.
     return _ORDINAL_SUP_RE.sub(r"\1\2", text)
 
 
@@ -771,6 +822,48 @@ def _split_title_parts(text: str) -> tuple[str, str, str]:
     return text.strip(), "", ""
 
 
+# BUG-337 (ENCODING): apostrophe stand-ins Olof's Word exports use
+# interchangeably — curly quotes, modifier letter apostrophe, prime, and the
+# acute/grave accents typed as apostrophes ("´Til I Fell In Love With You").
+# Folded to a straight ASCII apostrophe so the title is one spelling at rest;
+# this matches what ``db.normalize_title_for_match`` and
+# ``song_index.normalize_song_title`` already do for matching only.
+_APOSTROPHE_STANDINS = "‘’ʼ′´`"
+_APOSTROPHE_STANDIN_RE = re.compile("[" + _APOSTROPHE_STANDINS + "]")
+
+# BUG-337: literal typos in the source pages themselves — verified against the
+# raw windows-1252 bytes, so these are upstream authoring slips, not a decode
+# or text-extraction artifact on our side. Each is a single-performance
+# spelling that would otherwise strand its row in its own song group.
+# Keyed on the exact title text Olof publishes.
+_SOURCE_TITLE_TYPOS = {
+    "Things Hav,e Changed": "Things Have Changed",   # DSN37470, stray comma
+    "Diseaseof Conceit": "Disease Of Conceit",       # DSN13230, missing space
+    "Blowin' InThe Wind": "Blowin' In The Wind",     # DSN39660, missing space
+    "Se or": "Señor",                           # DSN24280, n-tilde dropped
+    # DSN03245/03250 spell the same session's two takes both ways, one each.
+    "Ride'Em Jewboy": "Ride 'Em Jewboy",
+}
+
+
+def _normalize_song_title(title: str) -> str:
+    """Normalise one parsed song title for storage in ``olof_songs``.
+
+    Folds apostrophe stand-ins to a straight apostrophe and repairs the
+    handful of verified literal typos in the source pages (BUG-337), so the
+    table is a single spelling per song at rest rather than only after the
+    derived ``song_index`` fold.
+
+    Args:
+        title: Title text as extracted from the page.
+
+    Returns:
+        The normalised title (whitespace-collapsed).
+    """
+    cleaned = " ".join(_APOSTROPHE_STANDIN_RE.sub("'", title).split())
+    return _SOURCE_TITLE_TYPOS.get(cleaned, cleaned)
+
+
 def _expand_position_list(spec: str) -> list[int]:
     """Expand a comma-separated position-list ('6-10, 18') into positions.
 
@@ -989,6 +1082,7 @@ def _parse_song_lines(lines: list[str], start: int,
             position = renumbered
         seen_positions.add(position)
         title, credits, subtitle = _split_title_parts(title_text)
+        title = _normalize_song_title(title)
         take_number: int | None = None
         take_status = ""
         if i < n:
