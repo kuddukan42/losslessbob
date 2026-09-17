@@ -33,6 +33,7 @@ import shutil
 import sqlite3
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import BinaryIO
 
 from backend.torrent_verify import TorrentInfo, VerifyResult, verify_folder
 
@@ -191,7 +192,11 @@ def _file_offsets(info: TorrentInfo) -> list[int]:
 
 
 def _read_piece(
-    info: TorrentInfo, offsets: list[int], sources: dict[int, Path], index: int
+    info: TorrentInfo,
+    offsets: list[int],
+    sources: dict[int, Path],
+    index: int,
+    handles: dict[int, BinaryIO] | None = None,
 ) -> bytes | None:
     """Assemble one piece's bytes from a per-file mapping of local sources.
 
@@ -201,6 +206,11 @@ def _read_piece(
         sources: ``{file index: local path}``. Files absent from the mapping
             make the piece uncheckable rather than wrong.
         index: Piece index to assemble.
+        handles: Optional ``{file index: open handle}`` cache. A caller that
+            walks every piece (:func:`bad_pieces`) passes one so each source
+            is opened once and streamed, instead of re-opened per piece; it
+            owns closing them. Files not in the cache are opened on demand and
+            added to it.
 
     Returns:
         Exactly the piece's bytes, or None when any covering file has no
@@ -223,7 +233,14 @@ def _read_piece(
             return None
         lo, hi = max(start, f_start) - f_start, min(end, f_end) - f_start
         try:
-            with path.open("rb") as handle:
+            if handles is None:
+                with path.open("rb") as handle:
+                    handle.seek(lo)
+                    chunk = handle.read(hi - lo)
+            else:
+                handle = handles.get(i)
+                if handle is None:
+                    handle = handles[i] = path.open("rb")
                 handle.seek(lo)
                 chunk = handle.read(hi - lo)
         except OSError:
@@ -989,12 +1006,17 @@ def bad_pieces(info: TorrentInfo, target_dir: Path) -> list[int]:
     offsets = _file_offsets(info)
     sources = _overlay_sources(info, target_dir)
     out: list[int] = []
-    for piece in range(info.piece_count):
-        data = _read_piece(info, offsets, sources, piece)
-        if data is None:
-            continue
-        if hashlib.sha1(data).digest() != info.piece_hash(piece):
-            out.append(piece)
+    handles: dict[int, BinaryIO] = {}
+    try:
+        for piece in range(info.piece_count):
+            data = _read_piece(info, offsets, sources, piece, handles)
+            if data is None:
+                continue
+            if hashlib.sha1(data).digest() != info.piece_hash(piece):
+                out.append(piece)
+    finally:
+        for handle in handles.values():
+            handle.close()
     return out
 
 

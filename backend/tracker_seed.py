@@ -25,6 +25,7 @@ root's name, the qBittorrent tag, and the fetch/partial tolerances.
 from __future__ import annotations
 
 import logging
+import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -115,6 +116,30 @@ def overlay_root_for(source_folder: Path, opts: SeedOptions) -> Path:
     if len(parts) >= 3 and parts[1] == "mnt":
         return Path(parts[0], parts[1], parts[2], opts.overlay_dirname)
     return source_folder.parent / opts.overlay_dirname
+
+
+def same_date_folders(lb_number: int) -> dict[int, list[str]]:
+    """On-disk folders of the other LB entries dated like ``lb_number``.
+
+    Args:
+        lb_number: The LB number the tracker claims.
+
+    Returns:
+        ``{lb_number: [existing folders]}``, entries without a folder on disk
+        dropped. Empty on any DB error — a missing sibling pool only narrows
+        the choice back to the claimed LB's own folders.
+    """
+    try:
+        raw = database.get_folders_for_same_date(lb_number)
+    except sqlite3.Error as exc:
+        logger.warning("same-date folder lookup failed for LB-%d: %s", lb_number, exc)
+        return {}
+    out: dict[int, list[str]] = {}
+    for lb, folders in raw.items():
+        present = [f for f in folders if Path(f).is_dir()]
+        if present:
+            out[lb] = present
+    return out
 
 
 def best_source_folder(
@@ -292,7 +317,13 @@ def find_seedable_folder(
         return None, f"LB-{lb_number} not seedable ({why})"
 
     folders = [f for f in database.get_folders_for_lb(lb_number) if Path(f).is_dir()]
-    if not folders:
+    # The tracker's LB number is a claim, not a fact (TODO-348): with the
+    # overlay allowed, every same-date entry's folder is a candidate too, and
+    # content decides. Ranked after the claimed LB's own folders so a genuine
+    # tie still goes to the attribution.
+    siblings = same_date_folders(lb_number) if opts.overlay else {}
+    sibling_owner = {f: lb for lb, fs in siblings.items() for f in fs}
+    if not folders and not siblings:
         return None, f"no collection folder on disk for LB-{lb_number}"
 
     try:
@@ -316,6 +347,8 @@ def find_seedable_folder(
             best += f"; first missing: {Path(result.missing_files[0]).name}"
 
     if not opts.overlay:
+        if not folders:
+            return None, f"no collection folder on disk for LB-{lb_number}"
         if not named:
             return None, (
                 f"torrent root {info.name!r} matches no linked folder "
@@ -326,14 +359,27 @@ def find_seedable_folder(
 
     # Content first, the tracker's naming only as a last resort: a folder that
     # resolves nothing still beats no overlay at all when it is the named one.
-    source = best_source_folder(info, folders, named) or (named[0] if named else None)
+    candidates = folders + [f for f in sibling_owner if f not in folders]
+    source = best_source_folder(info, candidates, named) or (named[0] if named else None)
     if source is None:
         return None, (
-            f"no linked folder shares enough files with the torrent "
-            f"(have {', '.join(Path(f).name for f in folders[:3])})"
+            f"no linked or same-date folder shares enough files with the torrent "
+            f"(have {', '.join(Path(f).name for f in candidates[:3])})"
         )
-    return build_seed_overlay(info, source, opts, best or "name mismatch",
-                              link_dirs, lb_number, details)
+    owner = sibling_owner.get(source) if source not in folders else None
+    if owner is not None:
+        logger.warning(
+            "LB-%d: tracker attribution looks wrong — the torrent's content "
+            "is in LB-%d's folder %s; sourcing the overlay from there",
+            lb_number, owner, source,
+        )
+        if details is not None:
+            details["source_lb"] = owner
+    folder, reason = build_seed_overlay(info, source, opts, best or "name mismatch",
+                                        link_dirs, lb_number, details)
+    if owner is not None:
+        reason += f"; content matches LB-{owner}, not the claimed LB-{lb_number}"
+    return folder, reason
 
 
 def _qbt_connection() -> dict:

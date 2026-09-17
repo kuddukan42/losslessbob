@@ -262,6 +262,47 @@ class TestGetFoldersForLb:
             conn.commit()
         assert db.get_folders_for_lb(707, path) == []
 
+
+    def test_same_date_siblings_exclude_the_claimed_lb(self, dbmod):
+        """TODO-348: the tracker's LB may be wrong; same-date entries with a
+        folder are the rescue pool, keyed by their own LB number."""
+        db, path = dbmod
+        with db.get_connection(path) as conn:
+            for lb in (11801, 11813, 11820):
+                conn.execute(
+                    "INSERT INTO entries(lb_number, status, date_str) VALUES(?,?,?)",
+                    (lb, "ok", "1995-07-01"))
+            conn.execute("INSERT INTO entries(lb_number, status, date_str) VALUES(?,?,?)",
+                         (12242, "ok", "1995-07-02"))
+            conn.execute(
+                "INSERT INTO my_collection(lb_number, folder_name, disk_path)"
+                " VALUES(?,?,?)", (11801, "f", "/music/LB-11801"))
+            conn.execute(
+                "INSERT INTO my_collection(lb_number, folder_name, disk_path)"
+                " VALUES(?,?,?)", (11813, "g", "/music/LB-11813"))
+            conn.execute(
+                "INSERT INTO folder_lb_link(folder_path, lb_number, linked_at)"
+                " VALUES(?,?,?)", ("/downloads/LB-11801", 11801, "2026-01-01"))
+            conn.commit()
+        # 11820 shares the date but has no folder; 12242 is another date.
+        assert db.get_folders_for_same_date(11813, path) == {
+            11801: ["/music/LB-11801", "/downloads/LB-11801"],
+        }
+        assert db.get_folders_for_same_date(99999, path) == {}
+
+    def test_same_date_needs_a_date(self, dbmod):
+        db, path = dbmod
+        with db.get_connection(path) as conn:
+            conn.execute("INSERT INTO entries(lb_number, status) VALUES(?,?)",
+                         (707, "ok"))
+            conn.execute("INSERT INTO entries(lb_number, status) VALUES(?,?)",
+                         (708, "ok"))
+            conn.execute(
+                "INSERT INTO my_collection(lb_number, folder_name, disk_path)"
+                " VALUES(?,?,?)", (708, "f", "/music/LB-00708"))
+            conn.commit()
+        assert db.get_folders_for_same_date(707, path) == {}
+
     def test_unknown_lb_returns_empty(self, dbmod):
         db, path = dbmod
         assert db.get_folders_for_lb(424242, path) == []
