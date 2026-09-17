@@ -154,8 +154,8 @@ th.c,td.c{text-align:center}
 .side-groups .grp{padding:.5rem .8rem;font-size:.78rem;color:var(--muted);border-top:1px solid var(--rule)}
 .side-groups .grp .lb{font-family:var(--mono);font-weight:700;color:var(--ink)}
 .side-groups .note{font-size:.68rem;color:var(--faint)}
-.more-sources{margin-top:.6rem;font-size:.72rem}
-.more-sources summary{cursor:pointer;color:var(--muted)}
+.more-sources{margin-top:.6rem}
+.more-sources summary{cursor:pointer;color:var(--muted);font-size:.72rem;margin-bottom:.4rem}
 .setlist{font-size:.95rem}
 .setlist thead th{font-size:.6rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);text-align:left;padding:0 .6rem .45rem;border-bottom:1px solid var(--rule2)}
 .setlist td{padding:.44rem .6rem;border-bottom:1px solid var(--rule);vertical-align:baseline}
@@ -540,12 +540,19 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 <section>
   <h2><span>Circulating sources {% if count_f %}&middot; {{ lbf('sources.count', count_f) }}{% endif %}</span><span class="line"></span>{% if lbb_x %}<span class="credit">catalog: <a href="{{ lbb_x.site }}" target="_blank" rel="noopener">LosslessBob</a> &#8599;</span>{% endif %}</h2>
   {%- if tape_f and tape_f.value %}<p class="stats-line" data-lb="sources.tape_count">{{ tape_f.value }}</p>{% endif %}
+  {#- Collapsed rows (past sources.visible_n) get the same table, folded (tj 2026-09-16). #}
+  {%- set tables = [shown_rows] + ([collapsed_rows] if collapsed_rows else []) -%}
+  {%- for rows in tables %}
+  {%- set is_more = loop.index == 2 -%}
+  {%- if is_more %}
+  <details class="more-sources"><summary>{{ collapsed_rows | length }} more source(s)</summary>
+  {%- endif %}
   <div class="tbl-scroll"><table class="sources">
     <thead><tr><th>Source</th>{% if col.type %}<th class="c">Type</th>{% endif %}{% if col.rating %}<th class="c">LB rating</th>{% endif %}{% if col.runtime %}<th class="c">Length</th>{% endif %}{% if col.grade %}<th class="c">Scanned quality</th>{% endif %}{% if col.pick %}<th class="c">Rank</th>{% endif %}</tr></thead>
     <tbody>
       {%- set ncols = 1 + (1 if col.type else 0) + (1 if col.rating else 0) + (1 if col.runtime else 0) + (1 if col.grade else 0) + (1 if col.pick else 0) -%}
       {%- set band = namespace(prev=none) -%}
-      {%- for x in shown_rows %}
+      {%- for x in rows %}
       {%- set b = {'fam': x.fam, 'members': [x.e]} -%}
       {%- set fam_key = x.fam.id.value if x.fam else none -%}
       {%- if x.fam and fam_key != band.prev %}
@@ -607,11 +614,10 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
       {%- endfor %}
     </tbody>
   </table></div>
-  {%- if collapsed_rows %}
-  <details class="more-sources"><summary>{{ collapsed_rows | length }} more source(s)</summary>
-    {%- for x in collapsed_rows %}{% set e = x.e %}<div>{% if x.rk != 9999 %}#{{ x.rk }} &middot; {% endif %}{{ e.r.lb_id.value }}{% if x.fam %} &middot; {{ x.fam.label.value }}{% endif %}{% if e.r.taper is defined and e.r.taper.value %} &middot; {{ e.r.taper.value.name }}{% endif %}</div>{% endfor -%}
+  {%- if is_more %}
   </details>
   {%- endif %}
+  {%- endfor %}
   {%- if side_members %}
   <details class="side-groups">
     <summary>{{ side_members | length }} fragment source(s) not counted in the verdict</summary>
