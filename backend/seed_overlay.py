@@ -25,6 +25,7 @@ Nothing here ever opens a file inside the source collection folder for writing.
 """
 from __future__ import annotations
 
+import hashlib
 import logging
 import os
 import re
@@ -43,25 +44,58 @@ COPY = "copy"        # byte copy — sidecars, and anything a client might write
 REFETCH = "refetch"  # re-download the pristine original from losslessbob.com
 FETCH = "fetch"      # no local source; the BitTorrent client downloads it
 
+#: How many of an ambiguous file's pieces to hash before accepting a candidate.
+#: A sidecar sits inside a single piece, so it is fully decided by one hash; a
+#: multi-piece file is sampled instead of hashed end to end, because two
+#: byte-identical-in-length audio files diverge in their very first piece and
+#: the whole overlay is piece-verified afterwards regardless.
+_DISAMBIGUATION_PIECES = 4
+
 
 @dataclass
 class PlanEntry:
-    """One torrent file and how the overlay will satisfy it."""
+    """One torrent file and how the overlay will satisfy it.
+
+    Attributes:
+        rel_path: The torrent's path for this file, root segment included.
+        action: One of :data:`LINK`, :data:`COPY`, :data:`REFETCH`,
+            :data:`FETCH`.
+        size: The exact byte size the torrent expects.
+        source: Local path (or URL, for a re-fetch) the bytes come from.
+        reason: Which store supplied it, for the human reading the log.
+        note: How a size ambiguity was settled, when there was one — set by
+            the piece-hash pass and by :func:`repair_overlay`, and kept apart
+            from ``reason`` so the piece-safety pass cannot overwrite it.
+    """
 
     rel_path: str
     action: str
     size: int
     source: str = ""
     reason: str = ""
+    note: str = ""
 
 
 @dataclass
 class OverlayPlan:
-    """What building the overlay would do."""
+    """What building the overlay would do.
+
+    Attributes:
+        target_dir: Overlay directory the plan builds.
+        entries: One :class:`PlanEntry` per torrent file, in torrent order.
+        note: Optional human-readable remark about the plan as a whole.
+        candidates: ``{file index: every equally valid local source}``, in
+            preference order, recorded only where more than one local file has
+            the exact size the torrent wants. This is what
+            :func:`repair_overlay` re-picks from when a built overlay hashes
+            short: a size match is not a content match, and the wrong 1 KB
+            sidecar strands the piece it shares with a 17 MB flac.
+    """
 
     target_dir: Path
     entries: list[PlanEntry] = field(default_factory=list)
     note: str = ""
+    candidates: dict[int, list[Path]] = field(default_factory=dict, repr=False)
 
     def _bytes(self, action: str) -> int:
         return sum(e.size for e in self.entries if e.action == action)
@@ -139,6 +173,225 @@ def _index_sources(dirs: list[Path]) -> dict[str, list[Path]]:
 
 
 
+def _file_offsets(info: TorrentInfo) -> list[int]:
+    """Return each file's absolute offset in the torrent's byte stream.
+
+    Args:
+        info: Parsed torrent metadata.
+
+    Returns:
+        One offset per entry in ``info.files``, same order.
+    """
+    offsets: list[int] = []
+    total = 0
+    for _rel_path, size in info.files:
+        offsets.append(total)
+        total += size
+    return offsets
+
+
+def _read_piece(
+    info: TorrentInfo, offsets: list[int], sources: dict[int, Path], index: int
+) -> bytes | None:
+    """Assemble one piece's bytes from a per-file mapping of local sources.
+
+    Args:
+        info: Parsed torrent metadata.
+        offsets: Offsets from :func:`_file_offsets`.
+        sources: ``{file index: local path}``. Files absent from the mapping
+            make the piece uncheckable rather than wrong.
+        index: Piece index to assemble.
+
+    Returns:
+        Exactly the piece's bytes, or None when any covering file has no
+        readable local source of the right length — in which case the caller
+        must treat the piece as *unknown*, not as a hash failure.
+    """
+    start = index * info.piece_length
+    end = min(start + info.piece_length, info.total_size)
+    if end <= start:
+        return None
+
+    out = bytearray()
+    for i, (_rel_path, size) in enumerate(info.files):
+        f_start = offsets[i]
+        f_end = f_start + size
+        if f_end <= start or f_start >= end:
+            continue
+        path = sources.get(i)
+        if path is None:
+            return None
+        lo, hi = max(start, f_start) - f_start, min(end, f_end) - f_start
+        try:
+            with path.open("rb") as handle:
+                handle.seek(lo)
+                chunk = handle.read(hi - lo)
+        except OSError:
+            return None
+        if len(chunk) != hi - lo:
+            return None
+        out.extend(chunk)
+    return bytes(out) if len(out) == end - start else None
+
+
+def _sample_pieces(first: int, last: int, limit: int) -> list[int]:
+    """Choose up to ``limit`` piece indices spread across an inclusive range.
+
+    Args:
+        first: First piece index of the span.
+        last: Last piece index of the span, inclusive.
+        limit: Maximum number of indices to return; must be at least 2.
+
+    Returns:
+        Ascending piece indices, always including both ends.
+    """
+    if last - first + 1 <= limit:
+        return list(range(first, last + 1))
+    step = (last - first) / (limit - 1)
+    return sorted({first + round(i * step) for i in range(limit)})
+
+
+def _score_candidate(
+    info: TorrentInfo,
+    offsets: list[int],
+    ranges: list[tuple[int, int]],
+    sources: dict[int, Path],
+    index: int,
+    candidate: Path,
+    pieces: list[int] | None = None,
+) -> tuple[int, int]:
+    """Hash the pieces one candidate source would occupy.
+
+    Args:
+        info: Parsed torrent metadata.
+        offsets: Offsets from :func:`_file_offsets`.
+        ranges: Piece ranges from :meth:`TorrentInfo.file_piece_ranges`.
+        sources: The current ``{file index: local path}`` assignment; the
+            neighbours sharing a piece with this file are read from it.
+        index: Index of the torrent file being decided.
+        candidate: The local file to try for it.
+        pieces: Exact piece indices to hash, overriding the spread sample.
+            :func:`repair_overlay` passes the pieces that actually failed.
+
+    Returns:
+        ``(checked, good)`` — how many of the sampled pieces could be hashed at
+        all, and how many matched the torrent. ``checked == 0`` means the
+        candidate is undecidable here (a neighbour is still unresolved).
+    """
+    probe = dict(sources)
+    probe[index] = candidate
+    first, last = ranges[index]
+    wanted = (
+        pieces if pieces is not None
+        else _sample_pieces(first, last, _DISAMBIGUATION_PIECES)
+    )
+    checked = good = 0
+    for piece in wanted:
+        if piece >= info.piece_count:
+            continue
+        data = _read_piece(info, offsets, probe, piece)
+        if data is None:
+            continue
+        checked += 1
+        if hashlib.sha1(data).digest() == info.piece_hash(piece):
+            good += 1
+    return checked, good
+
+
+def _pick_by_piece_hash(
+    info: TorrentInfo,
+    offsets: list[int],
+    ranges: list[tuple[int, int]],
+    sources: dict[int, Path],
+    index: int,
+    candidates: list[Path],
+    pieces: list[int] | None = None,
+) -> Path | None:
+    """Choose the candidate whose bytes satisfy the torrent's piece hashes.
+
+    Args:
+        info: Parsed torrent metadata.
+        offsets: Offsets from :func:`_file_offsets`.
+        ranges: Piece ranges from :meth:`TorrentInfo.file_piece_ranges`.
+        sources: The current ``{file index: local path}`` assignment.
+        index: Index of the torrent file being decided.
+        candidates: Every local file of exactly the right size, in preference
+            order.
+        pieces: Exact piece indices to hash, overriding the spread sample.
+
+    Returns:
+        The candidate that hashed clean, or None when none did (or none could
+        be checked, because a file sharing its pieces is still unresolved).
+    """
+    for candidate in candidates:
+        checked, good = _score_candidate(
+            info, offsets, ranges, sources, index, candidate, pieces
+        )
+        if checked and checked == good:
+            return candidate
+    return None
+
+
+def _disambiguate(
+    info: TorrentInfo,
+    ranges: list[tuple[int, int]],
+    sources: dict[int, Path],
+    choices: dict[int, list[Path]],
+    entries: dict[int, PlanEntry],
+) -> list[int]:
+    """Re-pick every size-ambiguous file by hashing the pieces it sits in.
+
+    Several local files can share a torrent entry's exact size — two LB folders
+    each holding a 1,095-byte ``.md5`` for the same show, or ``cd-1``/``cd-2``
+    tracks of equal length — and a size match says nothing about the bytes.
+    Files are decided narrowest-span first, so a sidecar is settled using the
+    audio it shares a piece with rather than the other way round.
+
+    Args:
+        info: Parsed torrent metadata.
+        ranges: Piece ranges from :meth:`TorrentInfo.file_piece_ranges`.
+        sources: ``{file index: local path}``, updated in place.
+        choices: ``{file index: candidates}`` for the ambiguous entries.
+        entries: ``{file index: plan entry}``, whose ``source``/``reason`` are
+            updated in place when the pick changes.
+
+    Returns:
+        The file indices whose source was changed.
+    """
+    offsets = _file_offsets(info)
+    changed: list[int] = []
+    order = sorted(choices, key=lambda i: (ranges[i][1] - ranges[i][0], i))
+    for index in order:
+        candidates = choices[index]
+        chosen = _pick_by_piece_hash(
+            info, offsets, ranges, sources, index, candidates
+        )
+        entry = entries[index]
+        if chosen is None:
+            entry.note = (
+                f"{len(candidates)} same-size candidates, none verified"
+            )
+            logger.warning(
+                "%s: %d local files have the exact size the torrent wants and "
+                "none could be settled on the piece hashes (a file sharing its "
+                "piece is still unresolved) — keeping %s, which may be the "
+                "wrong copy",
+                entry.rel_path, len(candidates), sources.get(index),
+            )
+            continue
+        if chosen == sources.get(index):
+            continue
+        logger.info(
+            "%s: %d local files match the size; piece hashes pick %s",
+            entry.rel_path, len(candidates), chosen,
+        )
+        sources[index] = chosen
+        entry.source = str(chosen)
+        entry.note = f"piece-verified pick of {len(candidates)} same-size copies"
+        changed.append(index)
+    return changed
+
+
 #: The prefix losslessbob.com puts on every sidecar it publishes.
 _LBF_PREFIX_RE = re.compile(r"^lbf-\d{3,6}-")
 
@@ -205,16 +458,16 @@ def _index_aliases(*indexes: dict[str, list[Path]]) -> list[tuple[set[str], Path
     return pairs
 
 
-def _resolve_alias(aliases: list[tuple[set[str], Path]], rel_path: str,
-                   size: int) -> Path | None:
-    """Find a renamed local copy of one torrent entry.
+def _alias_candidates(aliases: list[tuple[set[str], Path]], rel_path: str,
+                      size: int) -> list[Path]:
+    """Find every renamed local copy of one torrent entry.
 
     A candidate qualifies when it shares an alias key with the wanted file, or
     when one of its keys *ends* with one — the site folds the containing folder
     into the name, so ``BD---Toads-Place-d5-bd1990-1-12-d5-Toads-LTE.txt`` ends
     with the key of the torrent's ``bd1990-1-12-d5-Toads-LTE.txt``. The size
-    must match exactly, and the overlay is piece-verified afterwards
-    regardless, so a wrong pick fails verification rather than being seeded.
+    must match exactly; where several renamed copies match it, the caller
+    settles the choice on the piece hashes.
 
     Args:
         aliases: Pairs from :func:`_index_aliases`.
@@ -222,12 +475,14 @@ def _resolve_alias(aliases: list[tuple[set[str], Path]], rel_path: str,
         size: The exact byte size the torrent expects.
 
     Returns:
-        The renamed local file, or None when nothing of that size matches.
+        The renamed local files of exactly that size, exact key matches first,
+        then suffix matches; empty when nothing matches.
     """
     wanted = _alias_keys(Path(rel_path).name)
     if not wanted:
-        return None
-    suffix_match: Path | None = None
+        return []
+    exact_hits: list[Path] = []
+    suffix_hits: list[Path] = []
     for keys, path in aliases:
         exact = bool(keys & wanted)
         if not exact and not any(k.endswith(f"-{w}") for k in keys for w in wanted):
@@ -237,23 +492,21 @@ def _resolve_alias(aliases: list[tuple[set[str], Path]], rel_path: str,
                 continue
         except OSError:
             continue
-        if exact:
-            return path
-        suffix_match = suffix_match or path
-    return suffix_match
+        (exact_hits if exact else suffix_hits).append(path)
+    return exact_hits + suffix_hits
 
 
-def _resolve_source(
+def _resolve_candidates(
     index: dict[str, list[Path]], rel_path: str, size: int
-) -> Path | None:
-    """Find the indexed file that satisfies one torrent entry.
+) -> list[Path]:
+    """Find every indexed file that could satisfy one torrent entry.
 
-    Suffixes are tried longest-first, so ``cd-1/01 Track01.flac`` is preferred
-    over the ambiguous bare ``01 Track01.flac``, and only files of exactly the
-    right size are accepted. Where several equally specific candidates share
-    that size they are interchangeable by definition — the piece hashes are
-    checked afterwards regardless, and a wrong pick fails verification rather
-    than being seeded.
+    Suffixes are tried longest-first, so ``cd-1/01 Track01.flac`` ranks above
+    the ambiguous bare ``01 Track01.flac``, and only files of exactly the right
+    size are accepted. Equally specific candidates of the same size are *not*
+    interchangeable — two LB folders can hold a same-length, different-bytes
+    ``.md5`` for the same show — so all of them are returned and the caller
+    settles the choice on the piece hashes.
 
     The torrent's own root segment is dropped before matching, since the
     collection never repeats the uploader's name for it.
@@ -264,19 +517,44 @@ def _resolve_source(
         size: The exact byte size the torrent expects.
 
     Returns:
-        The best local file, or None when nothing of that size matches.
+        Matching local files, most specific (and within a depth, most preferred
+        directory) first, without duplicates. Empty when nothing matches.
     """
     parts = Path(rel_path).parts
     if len(parts) > 1:
         parts = parts[1:]        # drop the torrent's root directory
+    found: list[Path] = []
+    seen: set[Path] = set()
     for depth in range(len(parts), 0, -1):
         for candidate in index.get("/".join(parts[-depth:]), []):
+            if candidate in seen:
+                continue
             try:
-                if candidate.stat().st_size == size:
-                    return candidate
+                if candidate.stat().st_size != size:
+                    continue
             except OSError:
                 continue
-    return None
+            seen.add(candidate)
+            found.append(candidate)
+    return found
+
+
+def _resolve_source(
+    index: dict[str, list[Path]], rel_path: str, size: int
+) -> Path | None:
+    """Return the single best indexed file for one torrent entry.
+
+    Args:
+        index: Mapping from :func:`_index_sources`.
+        rel_path: The torrent's path for this file, root segment included.
+        size: The exact byte size the torrent expects.
+
+    Returns:
+        The first of :func:`_resolve_candidates`, or None when nothing of that
+        size matches.
+    """
+    candidates = _resolve_candidates(index, rel_path, size)
+    return candidates[0] if candidates else None
 
 
 def resolvable_files(info: TorrentInfo, dirs: list[str | Path]) -> int:
@@ -300,6 +578,65 @@ def resolvable_files(info: TorrentInfo, dirs: list[str | Path]) -> int:
     )
 
 
+def rank_source_folders(
+    info: TorrentInfo, folders: list[str | Path]
+) -> list[tuple[str, int]]:
+    """Score candidate collection folders by how much of a torrent they supply.
+
+    Args:
+        info: Parsed torrent metadata.
+        folders: Candidate collection folders.
+
+    Returns:
+        ``(folder, resolvable file count)`` pairs, highest count first, ties
+        left in the order given.
+    """
+    scored = [(str(f), resolvable_files(info, [f])) for f in folders]
+    return sorted(scored, key=lambda pair: -pair[1])
+
+
+def choose_source_folder(
+    info: TorrentInfo,
+    folders: list[str | Path],
+    named: list[str | Path] | None = None,
+) -> str | None:
+    """Pick the collection folder to assemble an overlay from, by content.
+
+    A tracker's own attribution is not authoritative: two recordings repaired
+    by hand on 2026-09-06 were filed against the wrong LB number outright, and
+    the folder whose *name* equals the torrent root is no more trustworthy than
+    the rest. Selection is therefore by resolvable-file count, using exactly
+    the matching rule :func:`plan_overlay` will use; a name match only breaks a
+    tie, where it is the better bet at no cost.
+
+    Args:
+        info: Parsed torrent metadata.
+        folders: Candidate collection folders, all known to exist.
+        named: The subset of ``folders`` whose directory name equals the
+            torrent's root name, in preference order.
+
+    Returns:
+        The best-matching folder, or None when none supplies a single file.
+    """
+    ranked = rank_source_folders(info, folders)
+    if not ranked or ranked[0][1] == 0:
+        return None
+    best = ranked[0][1]
+    tied = [folder for folder, hits in ranked if hits == best]
+    preferred = {str(f) for f in (named or [])}
+    for folder in tied:
+        if folder in preferred:
+            return folder
+    winner = tied[0]
+    if preferred and winner not in preferred:
+        logger.info(
+            "overlay source: %s resolves %d files, more than the %r-named "
+            "folder(s) the tracker points at — using it instead",
+            winner, best, info.name,
+        )
+    return winner
+
+
 def plan_overlay(
     info: TorrentInfo,
     source_folder: str | Path,
@@ -315,6 +652,11 @@ def plan_overlay(
     collection folders in ``link_dirs`` (hardlink), the sidecar store (copy),
     the original URL on losslessbob.com (re-fetch), and finally the BitTorrent
     swarm.
+
+    Within a source, a match is by path suffix and exact size — and where more
+    than one local file matches that size, the choice is settled by hashing the
+    pieces the file occupies, not by taking the first. Every candidate list is
+    kept on the plan for :func:`repair_overlay`.
 
     Args:
         info: Parsed torrent metadata.
@@ -359,23 +701,36 @@ def plan_overlay(
 
     # Pass 1 — resolve a local source for each file, by exact size match.
     resolved: list[tuple[PlanEntry, Path | None]] = []
-    for (rel_path, size), _rng in zip(info.files, ranges, strict=True):
+    #: {file index: local path} and {file index: every same-size candidate},
+    #: the inputs piece-hash disambiguation and repair both work from.
+    sources: dict[int, Path] = {}
+    choices: dict[int, list[Path]] = {}
+    by_index: dict[int, PlanEntry] = {}
+    for idx, ((rel_path, size), _rng) in enumerate(
+        zip(info.files, ranges, strict=True)
+    ):
         name = Path(rel_path).name
         entry = PlanEntry(rel_path=rel_path, action=FETCH, size=size)
+        by_index[idx] = entry
 
-        in_collection = _resolve_source(collection, rel_path, size)
-        if in_collection is not None:
+        collection_hits = _resolve_candidates(collection, rel_path, size)
+        if collection_hits:
+            in_collection = collection_hits[0]
             entry.action = LINK
             entry.source = str(in_collection)
             entry.reason = (
                 "collection" if in_collection.is_relative_to(source_folder)
                 else f"collection ({in_collection.parent.name})"
             )
+            sources[idx] = in_collection
+            if len(collection_hits) > 1:
+                choices[idx] = collection_hits
             resolved.append((entry, in_collection))
             plan.entries.append(entry)
             continue
 
-        candidate = _resolve_source(sidecars, rel_path, size)
+        sidecar_hits = _resolve_candidates(sidecars, rel_path, size)
+        candidate = sidecar_hits[0] if sidecar_hits else None
         local_size: int | None = None
         if candidate is None:
             # Fall back to any same-named sidecar so a size mismatch can be
@@ -391,6 +746,9 @@ def plan_overlay(
             entry.action = COPY
             entry.source = str(candidate)
             entry.reason = "sidecar store"
+            sources[idx] = candidate
+            if len(sidecar_hits) > 1:
+                choices[idx] = sidecar_hits
             resolved.append((entry, candidate))
             plan.entries.append(entry)
             continue
@@ -414,11 +772,15 @@ def plan_overlay(
         # completes an old one whose swarm has nobody left in it.
         if aliases is None:
             aliases = _index_aliases(collection, sidecars)
-        renamed = _resolve_alias(aliases, rel_path, size)
-        if renamed is not None:
+        alias_hits = _alias_candidates(aliases, rel_path, size)
+        if alias_hits:
+            renamed = alias_hits[0]
             entry.action = COPY
             entry.source = str(renamed)
             entry.reason = f"renamed copy ({renamed.name})"
+            sources[idx] = renamed
+            if len(alias_hits) > 1:
+                choices[idx] = alias_hits
             resolved.append((entry, renamed))
             plan.entries.append(entry)
             continue
@@ -434,6 +796,13 @@ def plan_overlay(
 
         resolved.append((entry, None))
         plan.entries.append(entry)
+
+    # Pass 1b — a size match is not a content match. Where more than one local
+    # file has the exact size the torrent wants, hash the pieces it sits in and
+    # keep the candidate that actually belongs there.
+    plan.candidates = choices
+    if choices:
+        _disambiguate(info, ranges, sources, choices, by_index)
 
     # Pass 2 — pieces still unsatisfied are the only ones a client can write.
     unresolved_pieces: set[int] = set()
@@ -479,6 +848,22 @@ def http_fetch(url: str, dest: Path, timeout: int = 60) -> int:
     return len(resp.content)
 
 
+def _overlay_dest(target_dir: Path, rel_path: str) -> Path:
+    """Map a torrent-relative path to its place inside the overlay.
+
+    The torrent's own root segment is stripped, because the overlay directory
+    *is* that root.
+
+    Args:
+        target_dir: The overlay directory.
+        rel_path: The torrent's path for one file, root segment included.
+
+    Returns:
+        The absolute destination path.
+    """
+    return target_dir / Path(rel_path).relative_to(Path(rel_path).parts[0])
+
+
 def build_overlay(plan: OverlayPlan, dry_run: bool = False, fetcher=None) -> dict:
     """Create the overlay directory described by a plan.
 
@@ -512,9 +897,7 @@ def build_overlay(plan: OverlayPlan, dry_run: bool = False, fetcher=None) -> dic
             result["skipped"] += 1
             continue
 
-        dest = plan.target_dir / Path(entry.rel_path).relative_to(
-            Path(entry.rel_path).parts[0]
-        )
+        dest = _overlay_dest(plan.target_dir, entry.rel_path)
         try:
             dest.parent.mkdir(parents=True, exist_ok=True)
             if dest.exists():
@@ -563,6 +946,162 @@ def verify_overlay(info: TorrentInfo, plan: OverlayPlan) -> VerifyResult:
         A VerifyResult for the overlay directory.
     """
     return verify_folder(info, plan.target_dir)
+
+
+def _overlay_sources(info: TorrentInfo, target_dir: Path) -> dict[int, Path]:
+    """Map each torrent file index to its built copy inside the overlay.
+
+    Args:
+        info: Parsed torrent metadata.
+        target_dir: The overlay directory.
+
+    Returns:
+        ``{file index: path}`` for the files that exist and are the right size;
+        anything absent or short is left out, so the pieces covering it read as
+        *unknown* rather than as a wrong pick.
+    """
+    present: dict[int, Path] = {}
+    for idx, (rel_path, size) in enumerate(info.files):
+        dest = _overlay_dest(target_dir, rel_path)
+        try:
+            if dest.stat().st_size == size:
+                present[idx] = dest
+        except OSError:
+            continue
+    return present
+
+
+def bad_pieces(info: TorrentInfo, target_dir: Path) -> list[int]:
+    """List the pieces a built overlay has in full but hashes wrong.
+
+    Pieces that merely lack data — a file left to the swarm — are *not*
+    included: they are a shortfall, not a mistake. What is left is the set of
+    pieces where every byte is present locally and still does not match, which
+    means one of the files in them is the wrong file.
+
+    Args:
+        info: Parsed torrent metadata.
+        target_dir: The overlay directory to inspect.
+
+    Returns:
+        Ascending piece indices.
+    """
+    offsets = _file_offsets(info)
+    sources = _overlay_sources(info, target_dir)
+    out: list[int] = []
+    for piece in range(info.piece_count):
+        data = _read_piece(info, offsets, sources, piece)
+        if data is None:
+            continue
+        if hashlib.sha1(data).digest() != info.piece_hash(piece):
+            out.append(piece)
+    return out
+
+
+def repair_overlay(info: TorrentInfo, plan: OverlayPlan) -> dict:
+    """Re-resolve only the files inside a built overlay's failing pieces.
+
+    An overlay that hashes short is normally handed to the swarm for the
+    remainder — but a TUIT torrent's swarm is frequently dead, so a single
+    wrongly-picked 1 KB sidecar leaves a 17 MB flac permanently incomplete.
+    Where a failing piece is locally complete, the fault is a pick and not a
+    shortfall, so every same-size candidate for the files in that piece is
+    tried against the piece's own hash before giving up. Only the files that
+    change are re-materialised; the rest of the overlay is untouched, and
+    nothing here writes to the collection.
+
+    Args:
+        info: Parsed torrent metadata.
+        plan: The already-built plan whose ``target_dir`` verified short.
+
+    Returns:
+        Dict with ``ok`` (the overlay now verifies complete), ``repaired``
+        (torrent-relative paths whose source was swapped), ``bad_pieces`` (how
+        many locally-complete pieces hashed wrong before the attempt),
+        ``errors`` and ``verify`` (a :class:`VerifyResult`, or None when no
+        repair was attempted).
+    """
+    out: dict = {
+        "ok": False, "repaired": [], "bad_pieces": 0, "errors": [],
+        "verify": None,
+    }
+    failing = bad_pieces(info, plan.target_dir)
+    out["bad_pieces"] = len(failing)
+    if not failing:
+        return out
+
+    ranges = info.file_piece_ranges()
+    offsets = _file_offsets(info)
+    sources = _overlay_sources(info, plan.target_dir)
+    by_index = {i: e for i, e in enumerate(plan.entries)}
+    failing_set = set(failing)
+
+    # Only a file with an alternative local source can be re-picked, and only a
+    # locally-sourced one may be replaced at all — a REFETCH or FETCH entry has
+    # nothing to choose between.
+    suspects = [
+        idx for idx in sorted(plan.candidates)
+        if by_index.get(idx) is not None
+        and by_index[idx].action in (LINK, COPY)
+        and any(p in failing_set for p in range(*_span(ranges[idx])))
+    ]
+    if not suspects:
+        logger.info(
+            "overlay repair: %d piece(s) hash wrong but no file in them has an "
+            "alternative local source", len(failing),
+        )
+        return out
+
+    for idx in sorted(suspects, key=lambda i: ranges[i][1] - ranges[i][0]):
+        entry = by_index[idx]
+        pieces = [p for p in range(*_span(ranges[idx])) if p in failing_set]
+        chosen = _pick_by_piece_hash(
+            info, offsets, ranges, sources, idx, plan.candidates[idx], pieces
+        )
+        if chosen is None or str(chosen) == entry.source:
+            continue
+        dest = _overlay_dest(plan.target_dir, entry.rel_path)
+        try:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            if dest.exists():
+                dest.unlink()
+            if entry.action == LINK:
+                try:
+                    os.link(chosen, dest)
+                except OSError:
+                    shutil.copy2(chosen, dest)
+            else:
+                shutil.copy2(chosen, dest)
+        except OSError as exc:
+            out["errors"].append(f"{entry.rel_path}: {exc}")
+            continue
+        logger.info(
+            "overlay repair: %s re-resolved to %s", entry.rel_path, chosen
+        )
+        entry.source = str(chosen)
+        entry.note = "re-resolved from a failing piece"
+        sources[idx] = dest
+        out["repaired"].append(entry.rel_path)
+
+    if not out["repaired"]:
+        return out
+    result = verify_folder(info, plan.target_dir)
+    out["verify"] = result
+    out["ok"] = result.complete
+    return out
+
+
+def _span(rng: tuple[int, int]) -> tuple[int, int]:
+    """Turn an inclusive piece range into a half-open one for ``range()``.
+
+    Args:
+        rng: ``(first, last)`` inclusive, from
+            :meth:`TorrentInfo.file_piece_ranges`.
+
+    Returns:
+        ``(first, last + 1)``.
+    """
+    return rng[0], rng[1] + 1
 
 
 def collection_is_untouched(

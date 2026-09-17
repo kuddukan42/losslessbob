@@ -5139,19 +5139,28 @@ def create_app() -> Flask:
         """Seed one LB entry to WTRF, finding its forum post if needed.
 
         With a ``topic_url`` the post is used directly — the curator has the
-        link and knows it is right. Without one, the board is searched the same
-        way ``/api/wtrf/fetch_torrent`` searches it, and a match weaker than
+        link and knows it is right — and this returns a single JSON object,
+        unchanged from before. Without one, the board is searched the same
+        way ``/api/wtrf/fetch_torrent`` searches it; that search is paced and
+        flood-control-throttled and can take a minute or more (TODO-328), so
+        this path instead streams Server-Sent Events — the same start/done/
+        error shape the batch WTRF routes use — so the caller can show live
+        progress instead of a silent multi-second fetch. A match weaker than
         'medium' is refused rather than guessed at. Either way the torrent is
         downloaded and then run through the shared seeding gates.
 
         Body JSON (all optional):
-          topic_url (str) — skip the search and use this post
+          topic_url (str) — skip the search and use this post; when present
+            the response is the plain JSON object described below instead of
+            an SSE stream
           save_path (str) — directory for the downloaded .torrent
           delay (float, default 2.0) — seconds between HTTP requests
           plus the seeding-policy fields of /api/wtrf/seed_links
 
-        Returns JSON with ok, lb_number, topic_url, torrent_path, folder,
-        overlay, reason, confidence and error.
+        With topic_url: returns JSON with ok, lb_number, topic_url,
+        torrent_path, folder, overlay, reason, confidence and error.
+        Without topic_url: emits SSE events start, done, error — the done
+        and error payloads carry those same fields.
         """
         import json as _json
 
@@ -5163,26 +5172,76 @@ def create_app() -> Flask:
             resolve_link,
             seed_one,
         )
-        try:
-            data      = request.get_json(force=True) or {}
-            topic_url = (data.get("topic_url") or "").strip()
-            save_path = data.get("save_path") or str(DATA_DIR / "downloads" / "wtrf")
-            delay     = float(data.get("delay", 2.0))
-            opts      = _wtrf_seed_options(data)
-            out: dict = {
-                "ok": False, "lb_number": lb_number, "topic_url": topic_url or None,
+
+        data      = request.get_json(force=True) or {}
+        topic_url = (data.get("topic_url") or "").strip()
+        save_path = data.get("save_path") or str(DATA_DIR / "downloads" / "wtrf")
+        delay     = float(data.get("delay", 2.0))
+        opts      = _wtrf_seed_options(data)
+
+        def _new_out(topic: str | None) -> dict:
+            return {
+                "ok": False, "lb_number": lb_number, "topic_url": topic,
                 "torrent_path": None, "folder": "", "overlay": False,
                 "reason": "", "confidence": "not_found", "error": "",
             }
 
-            # The cheapest gate first: an entry that may not be published at
-            # all should cost nobody a forum round-trip.
-            allowed, why = database.is_seedable_to_tracker(lb_number)
-            if not allowed:
-                out["error"] = f"LB-{lb_number:05d} is not seedable ({why})"
-                return jsonify(out), 400
+        def _seed_with_torrent(out: dict, torrent_path: str | None, signals: dict) -> dict:
+            """Run the shared download-bookkeeping + seed_one tail.
 
-            if topic_url:
+            Args:
+                out: The response dict built so far; mutated and returned.
+                torrent_path: Path to the downloaded .torrent, or None on
+                    download failure.
+                signals: Match signals recorded alongside the download row.
+
+            Returns:
+                The same `out` dict, updated with the seeding outcome.
+            """
+            if not torrent_path:
+                out["error"] = "torrent download failed"
+                database.add_wtrf_download(
+                    lb_number=lb_number, topic_url=out["topic_url"],
+                    torrent_path=None, confidence=out["confidence"],
+                    signals_json=_json.dumps(signals), status="failed",
+                    error=out["error"],
+                )
+                return out
+            out["torrent_path"] = torrent_path
+            result = seed_one(lb_number, torrent_path, opts)
+            out.update({"ok": result["ok"], "folder": result["folder"],
+                        "overlay": result["overlay"], "reason": result["reason"],
+                        "error": result["error"]})
+            status = "qbt_added" if result["ok"] else (
+                "failed" if result["error"] else "not_seeded"
+            )
+            dl_id = database.add_wtrf_download(
+                lb_number=lb_number, topic_url=out["topic_url"],
+                torrent_path=torrent_path, confidence=out["confidence"],
+                signals_json=_json.dumps(signals),
+                status="downloaded" if result["ok"] else status,
+                error=result["error"] or (None if result["ok"] else result["reason"]),
+                seed_folder=result["folder"] or None,
+            )
+            if result["ok"]:
+                from datetime import UTC, datetime
+                database.update_wtrf_download(dl_id, {
+                    "status": "qbt_added",
+                    "qbt_added_at": datetime.now(UTC).isoformat(),
+                })
+            return out
+
+        if topic_url:
+            try:
+                out = _new_out(topic_url)
+
+                # The cheapest gate first: an entry that may not be published
+                # at all should cost nobody a forum round-trip.
+                allowed, why = database.is_seedable_to_tracker(lb_number)
+                if not allowed:
+                    out["error"] = f"LB-{lb_number:05d} is not seedable ({why})"
+                    return jsonify(out), 400
+
                 if not is_wtrf_topic_url(topic_url):
                     out["error"] = "That link is not a WTRF forum topic"
                     return jsonify(out), 400
@@ -5206,64 +5265,62 @@ def create_app() -> Flask:
                 )
                 torrent_path = str(path) if path else None
                 signals = {"via": "topic_url", "title": info["title"]}
-            else:
-                from backend.wtrf_scraper import find_torrent_for_lb
-                found = find_torrent_for_lb(
-                    lb_number=lb_number,
-                    board_id=int(database.get_meta("wtrf_board_id") or 16),
-                    dest_dir=save_path,
-                    delay=delay,
-                )
-                out.update({"topic_url": found.get("topic_url"),
-                            "confidence": found.get("confidence", "not_found")})
-                signals = found.get("signals", {})
-                if not found["ok"]:
-                    out["error"] = found.get("error") or "no matching WTRF post found"
-                    database.add_wtrf_download(
-                        lb_number=lb_number, topic_url=found.get("topic_url"),
-                        torrent_path=None, confidence=out["confidence"],
-                        signals_json=_json.dumps(signals), status="skipped",
-                        error=out["error"],
+                out = _seed_with_torrent(out, torrent_path, signals)
+                return jsonify(out)
+            except Exception as exc:
+                _log.exception("entry_seed_wtrf LB-%s failed", lb_number)
+                return jsonify({"ok": False, "error": str(exc)}), 500
+
+        # No topic_url: the board search is slow, so stream progress via SSE
+        # instead of leaving the caller waiting on a single silent fetch.
+        def _stream():
+            from backend import activity as _activity
+            from backend.wtrf_scraper import find_torrent_for_lb
+
+            out = _new_out(None)
+            with _activity.track("wtrf_seed_one", screen="/library") as _job:
+                try:
+                    allowed, why = database.is_seedable_to_tracker(lb_number)
+                    if not allowed:
+                        out["error"] = f"LB-{lb_number:05d} is not seedable ({why})"
+                        yield f"data: {_json.dumps({'event': 'error', **out})}\n\n"
+                        return
+
+                    _job.update({"current": 0, "total": 1})
+                    yield f"data: {_json.dumps({'event': 'start', 'lb_number': lb_number})}\n\n"
+
+                    found = find_torrent_for_lb(
+                        lb_number=lb_number,
+                        board_id=int(database.get_meta("wtrf_board_id") or 16),
+                        dest_dir=save_path,
+                        delay=delay,
                     )
-                    return jsonify(out), 404
-                torrent_path = found.get("torrent_path")
+                    out.update({"topic_url": found.get("topic_url"),
+                                "confidence": found.get("confidence", "not_found")})
+                    signals = found.get("signals", {})
+                    if not found["ok"]:
+                        out["error"] = found.get("error") or "no matching WTRF post found"
+                        database.add_wtrf_download(
+                            lb_number=lb_number, topic_url=found.get("topic_url"),
+                            torrent_path=None, confidence=out["confidence"],
+                            signals_json=_json.dumps(signals), status="skipped",
+                            error=out["error"],
+                        )
+                        yield f"data: {_json.dumps({'event': 'error', **out})}\n\n"
+                        return
 
-            if not torrent_path:
-                out["error"] = "torrent download failed"
-                database.add_wtrf_download(
-                    lb_number=lb_number, topic_url=out["topic_url"],
-                    torrent_path=None, confidence=out["confidence"],
-                    signals_json=_json.dumps(signals), status="failed",
-                    error=out["error"],
-                )
-                return jsonify(out), 502
+                    out = _seed_with_torrent(out, found.get("torrent_path"), signals)
+                    _job.update({"current": 1, "total": 1})
+                    yield f"data: {_json.dumps({'event': 'done', **out})}\n\n"
+                except Exception as exc:
+                    _log.exception("entry_seed_wtrf LB-%s failed", lb_number)
+                    yield f"data: {_json.dumps({'event': 'error', 'error': str(exc)})}\n\n"
 
-            out["torrent_path"] = torrent_path
-            result = seed_one(lb_number, torrent_path, opts)
-            out.update({"ok": result["ok"], "folder": result["folder"],
-                        "overlay": result["overlay"], "reason": result["reason"],
-                        "error": result["error"]})
-            status = "qbt_added" if result["ok"] else (
-                "failed" if result["error"] else "not_seeded"
-            )
-            dl_id = database.add_wtrf_download(
-                lb_number=lb_number, topic_url=out["topic_url"],
-                torrent_path=torrent_path, confidence=out["confidence"],
-                signals_json=_json.dumps(signals),
-                status="downloaded" if result["ok"] else status,
-                error=result["error"] or (None if result["ok"] else result["reason"]),
-                seed_folder=result["folder"] or None,
-            )
-            if result["ok"]:
-                from datetime import UTC, datetime
-                database.update_wtrf_download(dl_id, {
-                    "status": "qbt_added",
-                    "qbt_added_at": datetime.now(UTC).isoformat(),
-                })
-            return jsonify(out)
-        except Exception as exc:
-            _log.exception("entry_seed_wtrf LB-%s failed", lb_number)
-            return jsonify({"ok": False, "error": str(exc)}), 500
+        return Response(
+            _stream(),
+            mimetype="text/event-stream",
+            headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+        )
 
     @app.route("/api/torrents", methods=["GET"])
     def all_torrents() -> Response:

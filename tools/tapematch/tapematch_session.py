@@ -584,16 +584,66 @@ if str(Path(__file__).resolve().parent.parent.parent) not in sys.path:
 from backend.db import _SAME_RE, _DIFF_RE  # noqa: E402
 
 
-def extract_lb_relationship(lb_a: int, lb_b: int) -> tuple[int | None, str]:
-    """Check LB-a's page for mentions of LB-b.
+
+# TODO-322: LB info-file prose packs several distinct claims into one
+# paragraph, e.g. "...; same recording as fendert LB-1785 based on same
+# clapping wavs...; different recording than JvV LB-7416 and LB-3914 based on
+# different crowd...". A raw +/-250-char window around an LB-NNNNN mention can
+# span into a *neighbouring* clause about a different LB (or a different
+# portion of the same recording, e.g. bonus/filler tracks), so a same/
+# different keyword found anywhere in that window used to get attributed to
+# the wrong pair. Scoping the keyword search to the delimiter-bounded clause
+# that actually contains the LB mention fixes this. Semicolons are the
+# dominant clause separator in this prose; ". " (sentence end) is the other.
+_CLAUSE_LEFT_RE  = re.compile(r"[;.]\s")
+_LINEAGE_TERM_RE = re.compile(
+    r"\b(?:tape|taper|source|master|gen(?:eration)?|transfer(?:red)?|eac|"
+    r"recording|reel|dat|flac|wav|spectral|fingerprint|dub(?:bed)?|"
+    r"mic(?:s|rophone)?|soundboard|sbd|aud|clone|channels?|crowd|"
+    r"clap(?:ping)?|talking|identical|duplicate)\b",
+    re.IGNORECASE,
+)
+
+
+def _clause_around(text: str, start: int, end: int) -> str:
+    """Return the delimiter-bounded clause of *text* containing text[start:end].
+
+    Args:
+        text: Full page text to search within.
+        start: Start offset of the span the clause must contain.
+        end: End offset of the span the clause must contain.
+
+    Returns:
+        The substring between the nearest ``;`` or ``. `` boundary before
+        *start* and the nearest one after *end* (or the string edges, if
+        none found).
+    """
+    left = 0
+    for m in _CLAUSE_LEFT_RE.finditer(text, 0, start):
+        left = m.end()
+    right_match = _CLAUSE_LEFT_RE.search(text, end)
+    right = right_match.start() if right_match else len(text)
+    return text[left:right].strip()
+
+
+def _relationship_from_text(text: str, lb_b: int) -> tuple[int | None, str]:
+    """Scan *text* for a same/different claim about LB-*lb_b*.
 
     Returns (lb_says_same, relation_text):
         lb_says_same = 1 if same, 0 if different, None if not mentioned.
 
     Iterates ALL occurrences of the LB number so that an early mention in a
     page header doesn't shadow a relationship note later in the commentary.
+    A same/different keyword only counts (TODO-322) when BOTH:
+      1. it falls in the same delimiter-bounded clause as the LB-b mention
+         (not just somewhere in the wider display window) -- this is what
+         "names another LB number" means in practice, since the clause is
+         anchored on that very reference; and
+      2. that clause also contains a lineage/source-identity term (tape,
+         recording, taper, eac, master, ...), which excludes boilerplate
+         (page-header repeats, track-listing filler) that happens to sit
+         near an LB mention without actually making a lineage claim.
     """
-    text = _page_text(lb_a)
     if not text:
         return None, ""
 
@@ -605,13 +655,28 @@ def extract_lb_relationship(lb_a: int, lb_b: int) -> tuple[int | None, str]:
         ctx   = text[start:end].strip()
         if not first_ctx:
             first_ctx = ctx
-        if _SAME_RE.search(ctx):
+        clause = _clause_around(text, m.start(), m.end())
+        if not _LINEAGE_TERM_RE.search(clause):
+            continue
+        if _SAME_RE.search(clause):
             return 1, ctx
-        if _DIFF_RE.search(ctx):
+        if _DIFF_RE.search(clause):
             return 0, ctx
         # ambiguous occurrence — keep iterating
 
     return None, first_ctx
+
+
+def extract_lb_relationship(lb_a: int, lb_b: int) -> tuple[int | None, str]:
+    """Check LB-a's page for mentions of LB-b.
+
+    Returns (lb_says_same, relation_text):
+        lb_says_same = 1 if same, 0 if different, None if not mentioned.
+
+    See `_relationship_from_text` for the clause-scoping rules (TODO-322)
+    that decide whether a same/different keyword hit actually counts.
+    """
+    return _relationship_from_text(_page_text(lb_a), lb_b)
 
 
 # ── file ops ───────────────────────────────────────────────────────────────────

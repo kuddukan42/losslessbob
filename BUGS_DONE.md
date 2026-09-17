@@ -2,6 +2,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-335: tapematch ingest counts patched-track subfolders as extra tracks, inflating a source
+Status: Fixed
+File(s): tools/tapematch/tapematch/ingest.py
+Reported: 2026-09-03
+Fixed: 2026-09-17
+Root cause: ingest.list_tracks appended tracks from patch sibling dirs (d1/fix/, *.fix/) whose marker-stripped names matched tracks already present
+Fix: tools/tapematch/tapematch/ingest.py: _strip_patch_marker + _replace_fix_siblings substitute a same-named patched track in place (unique bijective match only, dir name never consulted); survey script tools/tapematch/_survey_fix_siblings.py for a read-only corpus dry run
+
+BUG-343: Dossier template output is 37% blank lines
+Status: Fixed
+File(s): backend/templates/dossier.html:1
+Reported: 2026-09-10
+Fixed: 2026-09-17
+Root cause: Pre-C29 dossier.html template carried Jinja control blocks on their own lines, each leaving an empty output line
+Fix: Template rewrite in dossier chunk C29; verified 2026-09-17 on all 15 golden exports: 0% blank, masthead at line 39
+
 BUG-354: Dossier bobserve card falls back to the year page on two-show days
 Status: Fixed
 File(s): backend/dossier.py,tools/make_fixture_db.py

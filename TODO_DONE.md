@@ -2,6 +2,46 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-337: Overlay sidecars are matched by size alone, stranding 29 of 31 partial TUIT seeds one piece short
+Priority: High
+Status: Done
+Added: 2026-09-06
+Closed: 2026-09-17
+Description: seed_overlay._resolve_source accepts the FIRST local file whose size equals the torrent entry's, and never checks its content. Its own docstring argues a wrong pick 'fails verification rather than being seeded' — true under the default, but --allow-partial-overlay (which the nightly run uses) seeds it anyway, permanently short. Measured against qBittorrent on 2026-09-06: 31 TUIT torrents are incomplete, and the MEDIAN outstanding is 524,288 bytes — exactly one 512 KiB piece. Excluding one genuinely unbuilt torrent (bd90-07-01-LTD.flacf, 569 MB at 0.00%), the rest are 1-2 pieces from done and will never finish, because the tracker announce problem (see the 2026-09-02 SYN-drop finding) leaves them at 0 seeds / 0 peers. Confirmed root cause on LB-11801: the collection holds a 1,095-byte bd1995-07-01-Roskilde, Denmark.md5, and so does LB-11813's folder — same size, different bytes. The overlay took LB-11813's copy, which shares piece 0 with track 01, so the torrent sat at 99.92% (1182/1183 pieces) with a 17 MB flac marked incomplete because of a 1 KB text file. Rebuilding from LB-11801 gave 100% on all 1183 pieces. Work: (1) when more than one indexed candidate matches a size, try each against the piece hashes rather than taking the first — sidecars are small and usually occupy part of a single piece, so this is cheap; (2) when a built overlay verifies short, re-resolve only the files inside the failing pieces before giving up, instead of handing the remainder to a dead swarm; (3) prefer the source folder with the highest resolvable_files count over the one the tracker's lb_number points at — the tracker's attribution was wrong in both cases repaired on 2026-09-06 (rec 451 claimed LB-11813 but the audio is LB-11801; rec 1469 claimed LB-12243 but the audio is LB-12242); (4) re-run the repaired overlays for the ~29 partials and confirm they reach 100% locally. Related: the collision fixes shipped 2026-09-06 (unique_overlay_name, _unique_torrent_path) prevent NEW instances of the wrong-folder pairing but do not repair the size-only matching.
+seed_overlay: size-ambiguous entries decided by piece hash, repair_overlay re-resolves only failing pieces, choose_source_folder prefers the folder resolving most files; tracker_seed forces a qbt recheck after a repair on an already-present torrent. Step (4) re-run of the ~29 partials: tools/tuit_overlay_repair.sh (tj runs it)
+
+TODO-344: Show-pick ranker ignores setlist completeness — fragments outrank complete sources
+Priority: Medium
+Status: Done
+Added: 2026-09-13
+Closed: 2026-09-17
+Description: compute_show_picks scores every source without D-01 completeness, so a fragment can take pick_rank 1: 1963-10-26 LB-03216 (65 min, 26% of the setlist) ranks #1 over three complete sources. The dossier's C27 verdict already skips fragments and (as of 2026-09-13) renumbers only primary sources, but show_picks itself, and everything else that reads it (Library picks, recommendation), still leads with the fragment. Fix needs a corpus-wide recompute plus a before/after diff of rank-1 changes for tj. Found reviewing the C32 golden dossiers.
+concert_ranker/picks.py sorts (is_fragment, -score, lb) using dossier_fields.completeness/is_fragment; dry run on a DB copy changed 105 rank-1 sources (.debug/todo344_rank1_diff.md, for tj); live show_picks refresh on the next pipeline compute_show_picks step
+
+TODO-322: tapematch — tighten the commentary-audit DISAGREES heuristic, which false-positives on boilerplate
+Priority: Low
+Status: Done
+Added: 2026-08-21
+Closed: 2026-09-17
+Description: The auto-generated commentary audit in report.md raises DISAGREES by keyword-matching an LB's info-file prose against the clustering result, and in the 2026-08-21 batch several of those flags were spurious: the keyword hit landed in boilerplate or unrelated filler text rather than in an actual lineage claim. Confirmed false positives: 1984-06-04 (noted explicitly in that run's write-up) and 1995-03-31 (keyword hit inside bonus-filler track notes). Cost is real but bounded — an analysis writer must read past the flag to discover it means nothing, on every run where it fires. Worth scoping the match to the lineage/source portion of the info file, or requiring the matched sentence to name another LB number or a source-identity term, before raising the flag. Low priority: it wastes reader attention, it does not corrupt any stored family data.
+tapematch_session.extract_lb_relationship is clause-scoped and requires a lineage term in the clause naming the other LB; 1984-06-04 and 1995-03-31 no longer flag, LB-03917/3914 still does
+
+TODO-328: Per-LB 'Seed to WTRF' has no progress surface — the board search runs behind a silent toast
+Priority: Low
+Status: Done
+Added: 2026-08-30
+Closed: 2026-09-17
+Description: POST /api/entry/<lb>/seed_wtrf without a topic_url calls find_torrent_for_lb, which issues paced, flood-control-throttled searches against the WTRF board and can take a minute or more. useLibraryActions.tsx fires it as a plain fetch and only reports the outcome, so the user sees nothing between click and toast. The batch path (/api/wtrf/seed_links) already streams SSE; either give the single-LB route the same stream, or route the action through the WTRF Seeding tab with the link pre-filled.
+POST /api/entry/<lb>/seed_wtrf without topic_url now streams SSE (start/done/error); useLibraryActions shows a sticky searching toast until done
+
+TODO-340: Cron's TUIT RSS backfill is capped at 10 /browse pages — no alert if a gap ever exceeds 500 uploads
+Priority: Low
+Status: Done
+Added: 2026-09-08
+Closed: 2026-09-17
+Description: data/tuit/cron_rss.sh does not pass --rss-backfill-pages, so it takes the default 10 pages (500 rows). If the tracker ever goes quiet long enough for more than 500 uploads to land between successful polls, the backfill logs 'still no overlap after 10 page(s)' and stops rather than reaching further back. The warning goes to the cron log, which is only mailed on a non-zero exit, so nobody would see it. Either raise the cap in the cron script, or make the exhausted-cap case exit non-zero so cron mails it.
+tools/tuit_sync.py: _rss_backfill returns (skipped, exhausted); exhausting the page cap without overlap logs WARNING and exits 1 so cron_rss.sh mails it
+
 TODO-341: WTRF board walk: 3 publicly-posted recordings are lb_private locally
 Priority: Medium
 Status: Done

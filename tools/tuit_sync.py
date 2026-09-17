@@ -61,6 +61,7 @@ from backend.tracker_seed import (  # noqa: E402
     SeedOptions,
     find_seedable_folder,
     qbt_seed,
+    recheck_repaired_seed,
 )
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -581,7 +582,12 @@ def _sync_one(session, rec_id: int, row, args) -> str:
         return "downloaded"
 
     opts = _seed_options(args)
-    folder, reason = find_seedable_folder(rec.lb_number, torrent_path, opts)
+    # `seed_details` comes back carrying what the overlay repair changed, which
+    # decides whether qBittorrent has to be told to re-hash (TODO-337).
+    seed_details: dict = {}
+    folder, reason = find_seedable_folder(
+        rec.lb_number, torrent_path, opts, details=seed_details
+    )
     if folder is None:
         database.add_tuit_download(
             rec.rec_id, rec.lb_number, torrent_path, "not_seeded", error=reason
@@ -603,6 +609,10 @@ def _sync_one(session, rec_id: int, row, args) -> str:
         else:
             logger.info("  seed: qBittorrent added, seeding from %s (%s)",
                         folder, reason)
+        # An already-present torrent was hashed before the overlay repair
+        # swapped a file, so it keeps reporting the old shortfall until it is
+        # told to look again.
+        recheck_repaired_seed(folder, seed_details, qbt)
         return "qbt_added"
 
     database.update_tuit_download(dl_id, {
@@ -642,7 +652,7 @@ def _rss_window_may_have_rolled(
 
 
 def _rss_backfill(session, args, known_ids: set, rows_by_id: dict,
-                  queue: list) -> int:
+                  queue: list) -> tuple[int, bool]:
     """Page /browse newest-first to recover uploads the RSS window dropped.
 
     Stops as soon as a page contains a recording we already hold — that
@@ -658,7 +668,10 @@ def _rss_backfill(session, args, known_ids: set, rows_by_id: dict,
         queue: Recording ids to sync, extended here.
 
     Returns:
-        How many already-known recordings the backfill skipped.
+        A tuple of (how many already-known recordings the backfill skipped,
+        whether the cap was exhausted without ever re-establishing overlap —
+        the gap may exceed ``--rss-backfill-pages`` and reach further back
+        than this run could see).
     """
     logger.warning(
         "  RSS returned a full %d-item window with no overlap — uploads may "
@@ -691,13 +704,23 @@ def _rss_backfill(session, args, known_ids: set, rows_by_id: dict,
             logger.info("  backfill: overlap re-established on page %d", page)
             break
     else:
+        # Every fetched page — including the oldest, the last one we looked
+        # at — had rows outside known_ids, so at least
+        # rss_backfill_pages * 50 uploads landed since the last successful
+        # poll. The true gap may run further back than the cap let us see.
         logger.warning(
-            "  backfill: still no overlap after %d page(s) — run --pages N by "
-            "hand to reach further back", args.rss_backfill_pages,
+            "  backfill: still no overlap after %d page(s) — the upload gap "
+            "may exceed --rss-backfill-pages=%d; run --pages N by hand to "
+            "reach further back", args.rss_backfill_pages, args.rss_backfill_pages,
         )
+        logger.info(
+            "  backfill: recovered %d recording(s) the feed did not name",
+            recovered,
+        )
+        return skipped, True
     logger.info("  backfill: recovered %d recording(s) the feed did not name",
                 recovered)
-    return skipped
+    return skipped, False
 
 
 def main() -> int:
@@ -737,6 +760,7 @@ def main() -> int:
     queue: list[int] = []
     known_ids = set() if args.rescan else database.get_tuit_download_rec_ids()
     skipped_known = 0
+    backfill_gap_exceeds_cap = False
 
     if args.rec:
         queue = list(dict.fromkeys(args.rec))
@@ -759,8 +783,10 @@ def main() -> int:
                   file=sys.stderr)
             return 1
         if _rss_window_may_have_rolled(items, skipped_known, known_ids, args):
-            skipped_known += _rss_backfill(session, args, known_ids,
-                                           rows_by_id, queue)
+            backfill_skipped, backfill_gap_exceeds_cap = _rss_backfill(
+                session, args, known_ids, rows_by_id, queue
+            )
+            skipped_known += backfill_skipped
     elif args.pages:
         for page in range(1, args.pages + 1):
             rows, total, _ = tuit_scraper.fetch_browse_page(
@@ -820,6 +846,14 @@ def main() -> int:
         )
 
     if not queue:
+        if backfill_gap_exceeds_cap:
+            print(
+                "Nothing to sync, but the RSS backfill exhausted "
+                f"--rss-backfill-pages={args.rss_backfill_pages} without "
+                "re-establishing overlap — the gap may exceed the cap.",
+                file=sys.stderr,
+            )
+            return 1
         print("Nothing to sync.")
         return 0
 
@@ -844,6 +878,13 @@ def main() -> int:
         counts[status] = counts.get(status, 0) + 1
 
     print("\n" + "  ".join(f"{k}={v}" for k, v in sorted(counts.items())))
+    if backfill_gap_exceeds_cap:
+        print(
+            "RSS backfill gap may exceed --rss-backfill-pages="
+            f"{args.rss_backfill_pages} — see the WARNING above.",
+            file=sys.stderr,
+        )
+        return 1
     return 0
 
 

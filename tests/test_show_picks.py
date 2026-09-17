@@ -271,6 +271,54 @@ def test_taper_reputation_skipped_when_table_missing_data():
     assert stats["total"] == 1
 
 
+# ── TODO-344/C27: fragments never outrank complete sources ────────────────────
+
+def _seed_timing(conn, lb, timing):
+    conn.execute("UPDATE entries SET timing = ? WHERE lb_number = ?", (timing, lb))
+    conn.commit()
+
+
+def test_fragment_never_outranks_complete_source_on_runtime():
+    """A short-runtime fragment must not beat full-length sources into rank 1,
+    even with a much higher rating (TODO-344: compute_show_picks previously
+    scored every source with no completeness signal at all)."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 2000, "10/26/63", rating="A+")   # would win on score alone
+    _seed_entry(conn, 2001, "10/26/63", rating="C")
+    _seed_entry(conn, 2002, "10/26/63", rating="C")
+    _seed_timing(conn, 2000, "20min")   # fragment: well under 60% of the median
+    _seed_timing(conn, 2001, "70min")
+    _seed_timing(conn, 2002, "68min")
+
+    picks.recompute(db_path=db_path)
+
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "10/26/63")}
+    assert rows[2000]["pick_score"] > rows[2001]["pick_score"]  # score alone favors it
+    assert rows[2000]["pick_rank"] > rows[2001]["pick_rank"]    # but rank does not
+    assert rows[2001]["pick_rank"] == 1
+    assert "fragment" in _evidence_kinds(rows[2000])
+    assert "fragment" not in _evidence_kinds(rows[2001])
+
+
+def test_no_fragment_penalty_without_runtime_spread():
+    """Sources with similar runtimes (no outlier) all stay non-fragments — the
+    rule only fires on a real runtime gap vs. the date's median."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 2100, "1/1/64", rating="A")
+    _seed_entry(conn, 2101, "1/1/64", rating="B")
+    _seed_timing(conn, 2100, "65min")
+    _seed_timing(conn, 2101, "60min")
+
+    picks.recompute(db_path=db_path)
+
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1/1/64")}
+    assert "fragment" not in _evidence_kinds(rows[2100])
+    assert "fragment" not in _evidence_kinds(rows[2101])
+    assert rows[2100]["pick_rank"] == 1
+
+
 # ── Degraded case (spec §7 phase 2) ────────────────────────────────────────────
 
 def test_degraded_single_candidate_no_metrics():

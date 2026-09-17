@@ -1530,7 +1530,8 @@
       "wtrfSeedFailed": "{{lb}} noch nicht vorbelegt — {{reason}}",
       "postedForumNotCopied": "{{lb}} im Forum gepostet – bitte den untenstehenden Link kopieren",
       "linksNotCopiedSuffix_one": " — {{count}}-Link, bitte unten einfügen",
-      "linksNotCopiedSuffix_other": " — {{count}}-Links, bitte unten einfügen"
+      "linksNotCopiedSuffix_other": " — {{count}}-Links, bitte unten einfügen",
+      "wtrfSearching": "Suche im WTRF-Forum nach {{lb}}…"
     },
     "panel": {
       "details": "Details",
