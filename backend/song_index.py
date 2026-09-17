@@ -75,6 +75,71 @@ def normalize_song_title(text: str | None) -> str:
     return _WHITESPACE_RE.sub(" ", spaced).strip()
 
 
+# BUG-337 guard: two canonical display spellings that differ only in spacing
+# or punctuation ("Blowin' In The Wind" vs "Blowin ' In The Wind") fold to the
+# same alphanumeric key. That is always a parse/normalisation defect, never a
+# real pair of songs, and it silently strands performances in the smaller
+# variant — so the recompute reports it loudly.
+_ALNUM_ONLY_RE = re.compile(r"[^a-z0-9]+")
+
+
+def alnum_fold(text: str) -> str:
+    """Fold a title to lowercase alphanumerics only.
+
+    Args:
+        text: Any title spelling.
+
+    Returns:
+        The title with every non-alphanumeric character removed, casefolded.
+    """
+    return _ALNUM_ONLY_RE.sub("", unicodedata.normalize("NFKD", text or "").casefold())
+
+
+def detect_fold_collisions(canonicals: dict[str, str]) -> dict[str, list[str]]:
+    """Find canonical titles that collapse to the same alphanumeric key.
+
+    Args:
+        canonicals: ``{alias_norm: canonical}`` as stored in ``song_canonical``.
+
+    Returns:
+        ``{alnum_key: [canonical, ...]}`` for every key claimed by two or more
+        distinct canonical spellings. Empty dict when the spine is clean.
+    """
+    by_key: dict[str, set[str]] = defaultdict(set)
+    for canonical in canonicals.values():
+        key = alnum_fold(canonical)
+        if key:
+            by_key[key].add(canonical)
+    return {k: sorted(v) for k, v in by_key.items() if len(v) > 1}
+
+
+def _report_fold_collisions(canonicals: dict[str, str], strict: bool) -> dict[str, list[str]]:
+    """Log (or raise on) canonical titles sharing an alphanumeric key.
+
+    Args:
+        canonicals: ``{alias_norm: canonical}`` from ``song_canonical``.
+        strict: Raise :class:`ValueError` instead of only logging.
+
+    Returns:
+        The collision map from :func:`detect_fold_collisions`.
+
+    Raises:
+        ValueError: If *strict* and at least one collision was found.
+    """
+    collisions = detect_fold_collisions(canonicals)
+    if not collisions:
+        return collisions
+    detail = "; ".join(f"{k}: {v}" for k, v in sorted(collisions.items()))
+    log.error(
+        "song_index: %d canonical title(s) fold to a shared alphanumeric key "
+        "(BUG-337 class — spacing/encoding split in the song spine): %s",
+        len(collisions), detail,
+    )
+    if strict:
+        raise ValueError(f"song_canonical fold collisions: {detail}")
+    return collisions
+
+
 def _table_exists(conn: sqlite3.Connection, name: str) -> bool:
     return conn.execute(
         "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (name,)
@@ -114,9 +179,16 @@ def _seed_song_canonical(conn: sqlite3.Connection) -> dict:
     Args:
         conn: Open write connection (called inside a write-queue txn).
 
+    Auto rows whose ``alias_norm`` no longer occurs in ``olof_songs`` are
+    pruned (BUG-337): the table is otherwise append-only, so a norm retired by
+    a parser fix would keep its stale canonical spelling forever and keep
+    tripping the fold-collision guard. Curator rows are never pruned — a
+    curator alias deliberately maps a spelling that need not be in the corpus.
+
     Returns:
-        Dict with ``distinct_norms`` (song groups seen) and ``skipped_blank``
-        (olof_songs rows whose title normalised to "").
+        Dict with ``distinct_norms`` (song groups seen), ``skipped_blank``
+        (olof_songs rows whose title normalised to "") and ``pruned_auto``
+        (stale auto alias rows deleted).
     """
     rows = conn.execute("SELECT song_title FROM olof_songs").fetchall()
     counts: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
@@ -140,7 +212,23 @@ def _seed_song_canonical(conn: sqlite3.Connection) -> dict:
             (norm, canonical),
         )
 
-    return {"distinct_norms": len(counts), "skipped_blank": skipped_blank}
+    live = set(counts)
+    stale = [
+        r["alias_norm"] for r in conn.execute(
+            "SELECT alias_norm FROM song_canonical WHERE source != 'curator'"
+        ).fetchall() if r["alias_norm"] not in live
+    ]
+    for alias_norm in stale:
+        conn.execute("DELETE FROM song_canonical WHERE alias_norm = ?", (alias_norm,))
+    if stale:
+        log.info("song_index: pruned %d stale auto alias row(s) from song_canonical",
+                 len(stale))
+
+    return {
+        "distinct_norms": len(counts),
+        "skipped_blank": skipped_blank,
+        "pruned_auto": len(stale),
+    }
 
 
 def _load_song_canonical_map(conn: sqlite3.Connection) -> dict[str, str]:
@@ -224,7 +312,7 @@ def _write_song_performances(rows: list[tuple], db_path: str | None) -> None:
     _run_write(_do, db_path)
 
 
-def run(dry_run: bool = False, db_path: str | None = None) -> dict:
+def run(dry_run: bool = False, db_path: str | None = None, strict: bool = False) -> dict:
     """Seed ``song_canonical`` and wholesale-recompute ``song_performances``.
 
     Idempotent: re-running with unchanged ``olof_songs``/``olof_events`` and
@@ -237,11 +325,19 @@ def run(dry_run: bool = False, db_path: str | None = None) -> dict:
     Args:
         dry_run: Compute but do not write to the database.
         db_path: Optional database path override.
+        strict: Raise on the BUG-337 fold-collision guard instead of only
+            logging it at ERROR. Off by default so a live recompute still
+            completes (and still reports) on a dirty spine.
 
     Returns:
         Summary dict: ``performances_written``, ``distinct_songs``,
         ``distinct_events``, ``canonical_distinct_norms``,
-        ``skipped_blank_title``.
+        ``skipped_blank_title``, ``fold_collisions`` (``{alnum_key:
+        [canonical, ...]}``, empty when the spine is clean).
+
+    Raises:
+        ValueError: If *strict* and two canonical titles fold to one
+            alphanumeric key.
     """
     init_db(db_path)  # idempotent; ensures song_canonical/song_performances exist
     conn = get_connection(db_path)
@@ -255,6 +351,7 @@ def run(dry_run: bool = False, db_path: str | None = None) -> dict:
 
     canonical_map = _load_song_canonical_map(conn)
     seed_stats = {"distinct_norms": len(canonical_map)}
+    collisions = _report_fold_collisions(canonical_map, strict)
     rows, build_stats = _build_performance_rows(conn, canonical_map)
 
     distinct_songs = len({r[2] for r in rows})
@@ -269,6 +366,7 @@ def run(dry_run: bool = False, db_path: str | None = None) -> dict:
         "distinct_events": distinct_events,
         "canonical_distinct_norms": seed_stats.get("distinct_norms", 0),
         "skipped_blank_title": build_stats["skipped_blank"],
+        "fold_collisions": collisions,
     }
 
 

@@ -7,6 +7,8 @@ import os
 import shutil
 import tempfile
 
+import pytest
+
 import backend.db as db
 import backend.paths as _paths
 import backend.song_index as song_index
@@ -377,5 +379,123 @@ def test_songs_alias_is_curator_gated_and_recomputes():
 
         resp = client.post("/api/songs/alias", json={"alias": "", "canonical": "x"})
         assert resp.status_code == 400
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ── BUG-337: the fold-collision guard and stale-alias pruning ─────────────────
+
+def test_alnum_fold_strips_everything_but_alphanumerics():
+    assert song_index.alnum_fold("Blowin' In The Wind") == "blowininthewind"
+    assert song_index.alnum_fold("Blowin ' In The Wind") == "blowininthewind"
+    assert song_index.alnum_fold("Rainy Day Women # 12 & 35") == "rainydaywomen1235"
+    assert song_index.alnum_fold("Señor") == "senor"
+    assert song_index.alnum_fold("") == ""
+    assert song_index.alnum_fold(None) == ""
+
+
+def test_detect_fold_collisions_finds_spacing_and_encoding_splits():
+    collisions = song_index.detect_fold_collisions({
+        "a": "Blowin' In The Wind",
+        "b": "Blowin ' In The Wind",
+        "c": "The Tim es They Are A-Changin'",
+        "d": "The Times They Are A-Changin'",
+        "e": "Mr. Tambourine Man",
+    })
+    assert collisions == {
+        "blowininthewind": ["Blowin ' In The Wind", "Blowin' In The Wind"],
+        "thetimestheyareachangin": ["The Tim es They Are A-Changin'",
+                                    "The Times They Are A-Changin'"],
+    }
+
+
+def test_detect_fold_collisions_cannot_see_a_dropped_character():
+    # Documented limit of the guard: it catches INSERTED separators, not a
+    # character missing at source. 'Se or' (BUG-337's dropped n-tilde) folds to
+    # 'seor', not 'senor', so only the parser's typo map repairs it. An accent
+    # that IS present folds away, so 'Senor' and 'Señor' do collide.
+    assert song_index.alnum_fold("Se or") == "seor"
+    assert song_index.alnum_fold("Señor") == "senor"
+    assert song_index.detect_fold_collisions({"a": "Señor", "b": "Se or"}) == {}
+    assert song_index.detect_fold_collisions(
+        {"a": "Señor", "b": "Senor"}
+    ) == {"senor": ["Senor", "Señor"]}
+
+
+def test_detect_fold_collisions_clean_spine_is_empty():
+    assert song_index.detect_fold_collisions({
+        "a": "Blowin' In The Wind",
+        "b": "Mr. Tambourine Man",
+    }) == {}
+
+
+def test_detect_fold_collisions_ignores_duplicate_canonical_spelling():
+    # Two aliases mapping to the SAME display spelling is the normal case.
+    assert song_index.detect_fold_collisions({
+        "ain't talkin'": "Ain't Talkin'",
+        "aint talking": "Ain't Talkin'",
+    }) == {}
+
+
+def test_run_reports_fold_collisions_and_strict_raises():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_event(conn, 1)
+    _seed_event(conn, 2, date_str="2000-07-29")
+    # Two titles that differ only in spacing -> two norm groups, one alnum key.
+    _seed_song(conn, 1, 1, "Blowin' In The Wind")
+    _seed_song(conn, 2, 1, "Blowin ' In The Wind")
+    conn.commit()
+
+    stats = song_index.run(db_path=db_path)
+    assert list(stats["fold_collisions"]) == ["blowininthewind"]
+
+    with pytest.raises(ValueError, match="fold collisions"):
+        song_index.run(db_path=db_path, strict=True)
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_run_on_clean_spine_reports_no_collisions():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_event(conn, 1)
+    _seed_song(conn, 1, 1, "Blowin' In The Wind")
+    conn.commit()
+
+    stats = song_index.run(db_path=db_path, strict=True)
+    assert stats["fold_collisions"] == {}
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_seeding_prunes_stale_auto_alias_but_keeps_curator():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_event(conn, 1)
+    _seed_song(conn, 1, 1, "Blowin ' In The Wind")
+    conn.commit()
+    song_index.run(db_path=db_path)
+    stale_norm = song_index.normalize_song_title("Blowin ' In The Wind")
+    assert conn.execute(
+        "SELECT 1 FROM song_canonical WHERE alias_norm=?", (stale_norm,)
+    ).fetchone() is not None
+
+    song_index.upsert_alias("A Curator Alias", "Blowin' In The Wind", db_path=db_path)
+
+    # The parser fix retires the spaced spelling; the auto alias must go with it.
+    conn.execute("UPDATE olof_songs SET song_title='Blowin'' In The Wind'")
+    conn.commit()
+    stats = song_index.run(db_path=db_path)
+
+    assert stats["fold_collisions"] == {}
+    assert conn.execute(
+        "SELECT 1 FROM song_canonical WHERE alias_norm=?", (stale_norm,)
+    ).fetchone() is None
+    curator_norm = song_index.normalize_song_title("A Curator Alias")
+    row = conn.execute(
+        "SELECT source FROM song_canonical WHERE alias_norm=?", (curator_norm,)
+    ).fetchone()
+    assert row["source"] == "curator"
 
     shutil.rmtree(tmp_dir, ignore_errors=True)
