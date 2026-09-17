@@ -74,8 +74,8 @@ this order against the block's paragraph lines:
        the rehearsal/broadcast keyword checks below.
     2. 'session' appears in the derived session_title -> 'session'.
     3. session_title contains a rehearsal / broadcast / interview keyword
-       (interview includes 'press conference') -> 'rehearsal' / 'broadcast'
-       / 'interview' respectively. Restricted to session_title (not the
+       (interview includes 'press conference'; 'soundcheck' counts as rehearsal)
+       -> 'rehearsal' / 'broadcast' / 'interview' respectively. Restricted to session_title (not the
        whole block) because those words appear incidentally elsewhere
        (e.g. take-status 'rehearsal', notes prose) without the whole event
        being one.
@@ -141,7 +141,8 @@ _PARA_TAGS = ["p", "h1", "h2", "h3", "h4", "h5", "h6"]
 
 _DSN_ANCHOR_RE = re.compile(r"^DSN(\d+)$", re.IGNORECASE)
 _WINGDINGS_STYLE_RE = re.compile(r"font-family:\s*Wingdings", re.IGNORECASE)
-_DATE_LINE_RE = re.compile(r"^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})$")
+# An optional "– Afternoon" / "— Evening" suffix marks a two-show day (1974); date_raw keeps it.
+_DATE_LINE_RE = re.compile(r"^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})(?:\s*[-–—]\s*[A-Za-z][A-Za-z ]*)?$")
 _CONCERT_NET_RE = re.compile(
     r"Concert\s*#\s*(\d+)\s+of\s+The\s+Never-Ending\s+Tour", re.IGNORECASE
 )
@@ -455,7 +456,8 @@ def _parse_header(lines: list[str], event_id: int) -> tuple[dict, int]:
     Args:
         lines: Clean paragraph text for the whole event block.
         event_id: This event's DSN number, used to detect the merged-row
-            layout described above.
+            layout described above. A letterless ``lines[0]`` is treated as the
+            numeral too, even when it isn't ``str(event_id)`` (BUG-350).
 
     Returns:
         (fields, date_idx) — fields has keys venue/city/region/country/
@@ -479,7 +481,11 @@ def _parse_header(lines: list[str], event_id: int) -> tuple[dict, int]:
     if date_idx < 0:
         return fields, -1
 
-    header_start = 1 if lines[0].strip() == str(event_id) else 0
+    # The numeral line isn't always str(event_id): Word exports split it ("4 0450") or
+    # print a different number ("1495" on DSN01490). No venue is letterless, so skip any.
+    first = lines[0].strip()
+    header_start = 1 if first == str(event_id) or (
+        first and not any(c.isalpha() for c in first)) else 0
     loc_lines = [ln for ln in lines[header_start:date_idx] if ln]
     if not loc_lines:
         return fields, date_idx
@@ -666,7 +672,7 @@ def _classify_event_type(rec: EventRecord, lines: list[str]) -> str:
         return "session"
     if "session" in title:
         return "session"
-    if _REHEARSAL_RE.search(title):
+    if _REHEARSAL_RE.search(title) or "soundcheck" in title:
         return "rehearsal"
     if _BROADCAST_RE.search(title):
         return "broadcast"
