@@ -1,3 +1,8 @@
+[2026-09-16] — Dossier: collapsed sources keep their full table columns
+Changed: backend/templates/dossier.html: sources past sources.visible_n (e.g. #8-#15 on 1965-06-01)
+  render as a second sources table (family bands, taper, details, rating, length, grade, rank)
+  folded inside the "N more source(s)" dropdown, instead of a one-line text list.
+
 [2026-09-16] — Dossier: hide sources that don't match the show
 Changed: backend/templates/dossier.html, backend/dossier_anchors.py: G2 no_match sources (other
   recordings mis-catalogued under the date, e.g. LB-06654 mono-mixes bootleg on 1965-06-01) are no
