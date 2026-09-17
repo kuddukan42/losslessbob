@@ -345,8 +345,9 @@ def seed_board(
                 counts["skipped"] += 1
                 event.update({"status": "skipped",
                               "reason": info["error"] or "unresolved"})
-                _record(info, target, None, "skipped", event["reason"], "",
-                        via="board_walk")
+                if not dry_run:
+                    _record(info, target, None, "skipped", event["reason"], "",
+                            via="board_walk")
                 yield event
                 continue
 
@@ -357,8 +358,9 @@ def seed_board(
                     event.update({"status": "skipped", "reason": (
                         f"LB-{info['lb_number']:05d} is not in the collection — "
                         f"nothing local to seed from")})
-                    _record(info, target, None, "not_seeded", event["reason"], "",
-                            via="board_walk")
+                    if not dry_run:
+                        _record(info, target, None, "not_seeded", event["reason"],
+                                "", via="board_walk")
                     yield event
                     continue
                 if len(owned) < len(info["lb_candidates"]):
