@@ -899,12 +899,20 @@ def _bobserve_index_event_id(conn: sqlite3.Connection, date_iso: str,
     """
     from backend.qc.corroborate import _fold_venue_name
     try:
+        # Two-show days are indexed as "1974-01-06 Early" / "1974-01-06 Late".
         rows = conn.execute(
-            "SELECT event_id, venue, event_type FROM bobserve_event_index WHERE date_str = ?",
-            (date_iso,),
+            "SELECT event_id, venue, event_type, date_str FROM bobserve_event_index "
+            "WHERE date_str = ? OR date_str LIKE ?",
+            (date_iso, f"{date_iso} %"),
         ).fetchall()
     except sqlite3.OperationalError:
         return None
+    if any(len(r["date_str"]) > len(date_iso) for r in rows):
+        raw = ((event["date_raw"] or "") if event is not None else "").casefold()
+        part = ("early" if any(w in raw for w in ("afternoon", "early", "matinee")) else
+                "late" if any(w in raw for w in ("evening", "late", "night")) else None)
+        if part is not None:
+            rows = [r for r in rows if r["date_str"].casefold().endswith(part)] or rows
     venue = _fold_venue_name(event["venue"]) if event is not None else ""
     same_venue = [r for r in rows if venue and _fold_venue_name(r["venue"]) == venue]
     if same_venue:

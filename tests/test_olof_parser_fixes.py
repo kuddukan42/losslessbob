@@ -532,3 +532,27 @@ def test_soundcheck_title_is_rehearsal_not_concert():
     rec = EventRecord(event_id=4320, page_filename="p", venue="War Memorial Coliseum",
                       session_title="Soundcheck before concert.")
     assert _classify_event_type(rec, ["1.", "Love You Too Much"]) == "rehearsal"
+
+
+def test_unnumbered_band_sets_are_skipped_1974_01_06():
+    # DSN02250: The Band's songs sit unnumbered between Dylan's, with no "Name:" header.
+    lines = (
+        ["The Spectrum", "Philadelphia , Pennsylvania", "6 January 1974 – Afternoon"]
+        + _numbered([f"Dylan song {n}" for n in range(1, 7)])
+        + ["Stage Fright (Robbie Robertson)", "I Shall Be Released"]
+        + _numbered([f"Dylan song {n}" for n in range(7, 15)], 7)
+        + ["The Weight (Robbie Robertson)"]
+        + _numbered([f"Dylan song {n}" for n in range(15, 19)], 15)
+        + ["Third concert of the 1974 Tour of America with The Band.",
+           "10-14 Bob Dylan (vocal, guitar, harmonica).",
+           "Stereo audience recording, 85 minutes."]
+    )
+    songs = _songs_of(lines)
+    assert [s.position for s in songs] == list(range(1, 19))
+    assert all(s.song_title.startswith("Dylan song") for s in songs)
+
+
+def test_long_unnumbered_run_is_not_skipped():
+    lines = (["Venue", "City, Sweden", "1 May 1990", "1.", "First"]
+             + [f"prose line {n}" for n in range(13)] + ["2.", "Second"])
+    assert [s.position for s in _songs_of(lines)] == [1]

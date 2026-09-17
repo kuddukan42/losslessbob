@@ -171,6 +171,9 @@ _INTERVIEW_RE = re.compile(r"\b(interview|press conference)\b", re.IGNORECASE)
 _SONG_LINE_RE = re.compile(r"^\d+\.\s+(\S.*)$")
 # Bare position marker, split-cell layout: "16." with title on the next line.
 _BARE_POSITION_RE = re.compile(r"^(\d+)\.$")
+# Longest unnumbered in-set block (The Band's 1974 sets run 4-6 songs) skipped
+# without a guest header; a longer run is trailer prose, so the walk stops.
+_MAX_UNNUMBERED_BLOCK = 12
 # Trailing "(cover credits)" on a title line.
 _CREDITS_SUFFIX_RE = re.compile(r"^(.*\S)\s*\(([^()]*)\)\s*$")
 # See _split_title_credits: caps how long a trailing "(...)" can be and
@@ -851,8 +854,8 @@ def _is_guest_header(line: str) -> bool:
             and not _SETLIST_LINE_RE.match(text))
 
 
-def _skip_guest_block(lines: list[str], header_idx: int,
-                      max_position: int) -> tuple[int, bool] | None:
+def _skip_guest_block(lines: list[str], header_idx: int, max_position: int,
+                      max_lines: int | None = None) -> tuple[int, bool] | None:
     """Find where Dylan's numbered set resumes after a guest block (plan P1a).
 
     Skips the header and the unnumbered guest titles after it, including
@@ -866,6 +869,8 @@ def _skip_guest_block(lines: list[str], header_idx: int,
         lines: Clean paragraph text for the whole event block.
         header_idx: Index of the guest header line.
         max_position: Highest song position parsed so far (0 before any).
+        max_lines: Give up (None) after this many lines past the header without
+            reaching the next song; unbounded when None.
 
     Returns:
         (index of the resuming marker, whether an encore separator was
@@ -873,6 +878,8 @@ def _skip_guest_block(lines: list[str], header_idx: int,
     """
     crossed_encore = False
     for j in range(header_idx + 1, len(lines)):
+        if max_lines is not None and j - header_idx > max_lines:
+            return None
         line = lines[j]
         if _ENCORE_SEP_RE.match(line):
             crossed_encore = True
@@ -959,6 +966,14 @@ def _parse_song_lines(lines: list[str], start: int,
             position = int(line.split(".", 1)[0])
             title_text = combined.group(1)
             next_i = i + 1
+        elif seen_positions and (resume := _skip_guest_block(
+                lines, i - 1, max(seen_positions), max_lines=_MAX_UNNUMBERED_BLOCK)):
+            # An unnumbered block between numbered songs with no 'Name:' header --
+            # 1974 Tour sets by The Band ("Songs without numbers are performed by The
+            # Band without Bob Dylan"). Skipped like a guest set; not stored.
+            i, crossed_encore = resume
+            is_encore = is_encore or crossed_encore
+            continue
         else:
             break
         if title_text.count("(") > 1:
