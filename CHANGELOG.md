@@ -27,7 +27,19 @@ Changed: tools/tuit_sync.py (TODO-340): exhausting --rss-backfill-pages without 
 Added: tests: test_seed_overlay (+20), test_show_picks (+2), test_tuit_rss_backfill (+2),
   tapematch test_commentary_audit (new, 6), test_ingest_list_tracks (+3). Backend 2701 passed,
   tapematch 503 passed, gui-check green.
-Note: BUG-337 (song_canonical splits) stays open. An Opus agent found three causes (Word inline
+Fixed: backend/olof_parser.py, backend/song_index.py, backend/bobserve_parser.py (BUG-337, later
+  session): the held-back parser work reviewed and committed (77a77c63). All 169 non-whitespace
+  corpus-diff changes are improvements: "Note s" headings now parse as Notes, moving misfiled
+  recording lines out of bobtalk into notes/recording_info (7 events gain recording_kind/mins;
+  3 2017 events gain city/date + 55 songs). DB-copy rebuild: 1,322 canonical = 1,322 fold keys,
+  0 collisions, 0 stranded, 84 stale auto-aliases pruned. Live rebuild is tj's (TODO-350).
+Fixed: backend/tracker_seed.py, backend/db.py, backend/seed_overlay.py (TODO-348):
+  find_seedable_folder ranks same-date siblings' folders (db.get_folders_for_same_date) alongside
+  the claimed LB's when the overlay is on, so a wrong tracker attribution (LB-11813 for LB-11801
+  audio) is rescued by content; the real LB lands in details["source_lb"] and the reason.
+  bad_pieces streams each source through one cached handle. Tests: test_seed_overlay +3,
+  test_tuit_db +2, all 187 seed/db tests green.
+Note (earlier in the day): BUG-337 (song_canonical splits) stayed open. An Opus agent found three causes (Word inline
   tags splitting words via get_text(" "), apostrophe stand-ins, five literal upstream typos) and
   drafted a block-level text extractor in backend/olof_parser.py + a fold-collision guard in
   backend/song_index.py, but the full-corpus parse diff (.debug/bug337_parse_diff.md) still shows

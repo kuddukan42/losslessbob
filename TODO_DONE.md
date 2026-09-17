@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-348: seed_overlay cannot repair a wrong-LB tracker attribution
+Priority: Medium
+Status: Done
+Added: 2026-09-17
+Closed: 2026-09-17
+Description: choose_source_folder only ranks folders from db.get_folders_for_lb(claimed lb), so when the tracker names LB-11813 and the audio is LB-11801 (rec 451; rec 1469 LB-12243 vs LB-12242) the right folder is never a candidate. Pull same-date candidate folders in independently of the claimed LB and let the piece-hash pick decide. Also: bad_pieces re-reads the overlay per piece rather than streaming, and the 4-piece disambiguation sample can mispick once on a large ambiguous file (self-corrected by repair).
+Same-date sibling folders are overlay candidates when the tracker's LB is wrong; content decides. bad_pieces streams. The 4-piece disambiguation sample is left as-is (repair self-corrects). Commit f41131d4.
+
 TODO-337: Overlay sidecars are matched by size alone, stranding 29 of 31 partial TUIT seeds one piece short
 Priority: High
 Status: Done
