@@ -30,11 +30,14 @@ import re
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
+from urllib.parse import urlencode
 
 import requests
 from bs4 import BeautifulSoup
 
 from backend.credentials import SERVICE_TUIT, SERVICE_TUIT_RSS, get_credentials
+from backend.torrent_verify import BencodeError, read_torrent
+from backend.wtrf_scraper import _filename_from_content_disposition as _cd_filename
 
 logger = logging.getLogger(__name__)
 
@@ -306,8 +309,7 @@ def fetch_browse_page(
     """
     params = {"sort": sort, "page": str(page)}
     params.update(extra or {})
-    query = "&".join(f"{k}={v}" for k, v in params.items())
-    resp = _get(session, f"/browse?{query}", delay)
+    resp = _get(session, f"/browse?{urlencode(params)}", delay)
     if resp is None:
         return [], None, ""
     return parse_browse(resp.text), browse_total(resp.text), resp.text
@@ -415,6 +417,14 @@ def _spec_values(soup: BeautifulSoup) -> dict[str, str]:
     return out
 
 
+def _outside_compare(soup: BeautifulSoup, selector: str):
+    """Return the first ``selector`` match that is not inside a sibling card."""
+    for node in soup.select(selector):
+        if node.find_parent(class_="compare-row") is None:
+            return node
+    return None
+
+
 def parse_recording(html: str, rec_id: int | None = None) -> Recording:
     """Parse a /recordings/<id> detail page.
 
@@ -447,8 +457,11 @@ def parse_recording(html: str, rec_id: int | None = None) -> Recording:
     # The grid truncates the hash; the untruncated value lives in title=.
     rec.info_hash = hash_title or hash_text.replace("…", "")
 
-    rec.source_type = _text(soup.select_one(".src-pill")).upper()
-    qual = soup.select_one("[data-q]")
+    # The sibling cards further down render the same pill classes, so take the
+    # first one that is not inside a .compare-row rather than the first on the
+    # page.
+    rec.source_type = _text(_outside_compare(soup, ".src-pill")).upper()
+    qual = _outside_compare(soup, "[data-q]")
     if qual:
         rec.quality = _text(qual)
         rec.quality_slug = qual.get("data-q", "")
@@ -469,9 +482,10 @@ def parse_recording(html: str, rec_id: int | None = None) -> Recording:
                 sr.extract()
             setattr(rec, attr, _int_or_none(_text(cell)))
 
-    page_text = soup.get_text(" ", strip=True)
-    rec.freeleech = "Freeleech" in page_text
-    rec.lb_verified = "LB verified" in page_text
+    # Read the hero pills, not the page text: a substring test was true on
+    # every page, so the columns carried no signal.
+    rec.freeleech = soup.select_one(".pill-free, .free-tag") is not None
+    rec.lb_verified = soup.select_one(".pill-verified") is not None
 
     uploader = soup.select_one(".uploader b")
     rec.uploader = _text(uploader)
@@ -624,12 +638,15 @@ def merge_row_into_recording(rec: Recording, row: BrowseRow) -> Recording:
 # .torrent download
 # ──────────────────────────────────────────────────────────────────────────────
 def _filename_from_content_disposition(header: str) -> str | None:
-    """Return the filename in a Content-Disposition header, if any."""
-    m = re.search(r'filename\*?=(?:UTF-8\'\')?"?([^";]+)"?', header or "")
-    if not m:
+    """Return the filename in a Content-Disposition header, made path-safe.
+
+    Parsing (plain and RFC 5987 ``filename*`` forms) is shared with the WTRF
+    scraper so the two never drift; only the character sanitising is local.
+    """
+    name = _cd_filename(header or "")
+    if not name:
         return None
-    name = m.group(1).strip()
-    return re.sub(r"[^\w.\-+() ]", "_", name) or None
+    return re.sub(r"[^\w.\-+() ]", "_", name.strip()) or None
 
 
 def _unique_torrent_path(
@@ -732,8 +749,6 @@ def download_torrent(
 def torrent_root_name(torrent_path: str | Path) -> str | None:
     """Return the root folder name declared inside a .torrent file.
 
-    Parsed with a minimal bencode reader so no extra dependency is needed.
-
     Args:
         torrent_path: Path to a .torrent file.
 
@@ -741,17 +756,8 @@ def torrent_root_name(torrent_path: str | Path) -> str | None:
         The ``info.name`` value, or None when it cannot be read.
     """
     try:
-        data = Path(torrent_path).read_bytes()
-    except OSError:
-        return None
-    m = re.search(rb"4:name(\d+):", data)
-    if not m:
-        return None
-    start = m.end()
-    length = int(m.group(1))
-    try:
-        return data[start:start + length].decode("utf-8", "replace")
-    except Exception:
+        return read_torrent(torrent_path).name
+    except (BencodeError, OSError):
         return None
 
 
@@ -1242,10 +1248,38 @@ class RssItem:
     description: str = ""       # 'Tokyo, Japan · taped by Spot · FLAC 16/44'
     torrent_url: str = ""       # passkey-bearing enclosure — treat as a secret
     size_bytes: int | None = None
+    taper: str = ""             # from 'taped by …' in the description
 
     def as_dict(self) -> dict:
         """Return the item as a plain dict."""
         return dict(self.__dict__)
+
+    def as_browse_row(self) -> BrowseRow:
+        """Return the item as the sparse listing row it stands in for.
+
+        The detail page carries no taper at all — only the listing and this
+        feed name one — so a recording discovered through the feed has to
+        merge its taper from here or it is stored without one.
+        """
+        return BrowseRow(
+            rec_id=self.rec_id,
+            detail_url=self.detail_url,
+            taper=self.taper,
+            added_at=_rfc822_to_iso(self.pub_date),
+        )
+
+
+_TAPED_BY_RE = re.compile(r"taped by\s+(.+?)(?:\s+·|\s*$)", re.IGNORECASE)
+
+
+def _rfc822_to_iso(pub_date: str) -> str:
+    """Convert an RSS ``pubDate`` to ISO-8601, or '' when unparseable."""
+    from email.utils import parsedate_to_datetime
+
+    try:
+        return parsedate_to_datetime(pub_date).isoformat() if pub_date else ""
+    except (TypeError, ValueError):
+        return ""
 
 
 def rss_url(passkey: str) -> str:
@@ -1296,13 +1330,16 @@ def parse_rss(xml: str) -> list[RssItem]:
             rec_id = _int_or_none(m.group(1))
         elif link:
             rec_id = recording_id_from_url(link)
+        description = _text(node.find("description"))
+        taped = _TAPED_BY_RE.search(description)
         items.append(
             RssItem(
                 rec_id=rec_id,
                 title=_text(node.find("title")),
                 detail_url=link,
                 pub_date=_text(node.find("pubDate")),
-                description=_text(node.find("description")),
+                description=description,
+                taper=taped.group(1).strip() if taped else "",
                 torrent_url=enclosure.get("url", "") if enclosure else "",
                 size_bytes=(
                     _int_or_none(enclosure.get("length", "")) if enclosure else None

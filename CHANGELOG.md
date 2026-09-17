@@ -1,3 +1,28 @@
+[2026-09-17] — TUIT/WTRF scraper review: taper loss, freeleech no-op, WTRF walk and attachment fixes
+Fixed: backend/tuit_scraper.py, tools/tuit_sync.py: the detail page carries no taper (0/400 archived
+  pages match .taper-name), so recordings discovered via --rss (the hourly cron path) were stored
+  without one — 2,302 of 5,101 rows. RssItem now parses 'taped by …' and stands in as a sparse
+  BrowseRow for the merge; a re-sync with no taper no longer blanks a stored one.
+Fixed: backend/tuit_scraper.py: freeleech/lb_verified were substring tests on the whole page text
+  (true on 5,101/5,101 rows); they now read the hero's .pill-free / .pill-verified elements.
+  .src-pill / [data-q] skip sibling cards. /browse query is urlencoded. torrent_root_name uses
+  torrent_verify.read_torrent instead of a regex; Content-Disposition parsing is shared with the
+  WTRF scraper (the TUIT copy did not decode RFC 5987 names, cf. BUG-233).
+Fixed: backend/wtrf_scraper.py: _fetch_topic scoped attachments to the first div.attachments on the
+  PAGE, so a reply's torrent (and its LB-tagged filename) was attributed to the opening post when it
+  had none; now scoped to the first post's postarea. find_torrent_for_lb scans the topic title too.
+Fixed: backend/wtrf_board.py: an unbounded walk (--limit without --pages, what tools/wtrf.sh runs)
+  ended only on an empty page, which SMF never serves — it clamps to the last page — so the walk
+  would re-fetch it forever. Capped by board_page_count (previously unused) and by a
+  no-new-topics guard. Subject link is the first topic link with text (icon-only links dropped
+  whole rows); SMF 2.1 'sticky' row class recognised.
+Fixed: backend/wtrf_seed.py: resolve_link expands 'LB-11486/88' shorthand in post text as pastes do.
+Added: tools/tuit.sh, tools/wtrf.sh: the two ad-hoc root-level wrappers, moved into tools/ with a
+  cd to the repo root; the redundant --allow-partial-overlay flag dropped.
+Added: tests: archived-page regression class (skipped when data/downloads/tuit/html is absent),
+  RSS taper, board-walk termination guards, subject-link/sticky parsing, _fetch_topic scoping,
+  shorthand in posts. Full suite 2,641 passed.
+
 [2026-09-16] — Olof unnumbered in-set songs; bobserve two-show links; venue link TODO
 Fixed: backend/olof_parser.py: BUG-353 — setlists stopped at the first unnumbered line, so The Band's
   1974 sets cut Dylan's setlist to 6 songs (1974-01-06 afternoon now 18); an unnumbered run of up to

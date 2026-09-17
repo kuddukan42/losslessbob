@@ -473,7 +473,9 @@ def resolve_link(session: requests.Session, spec: LinkSpec,
             (post["topic_title"], "title"),
             (post["body_text"], "body"),
         ):
-            candidates = _lb_numbers_in(field)
+            # Shorthand runs ("LB-11486/88") are expanded and checked against
+            # the catalogue exactly as they are in a paste.
+            candidates = lb_numbers_in_line(field)
             if not candidates:
                 continue
             out["lb_candidates"] = candidates

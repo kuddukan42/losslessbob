@@ -496,15 +496,22 @@ def _fetch_topic(
             if keyinfo:
                 result["post_date"] = _parse_post_date(keyinfo.get_text())
 
-    # Torrent attachment: look only in the FIRST div.attachments on the page
-    # (subsequent ones belong to reply posts).  The attachment link has
-    # action=dlattach in its href and ".torrent" in its visible text.
-    # Attachment filenames live in this div, a sibling of the post body div,
-    # so they're never seen by body_text — collect their text separately so
-    # an "LB-NNNNN" tag on the attachment itself (e.g. "LB-00008.torrent")
-    # still feeds the Round 0 disqualification check in _score_candidate.
+    # Torrent attachment: only the first post's div.attachments counts. It is
+    # a sibling of the post body inside the same div.postarea, so scope the
+    # search there — the first div.attachments *on the page* belongs to a
+    # reply whenever the opening post has none, and a reply's torrent (and
+    # any "LB-NNNNN" in its filename) would then be attributed to the OP.
+    # Attachment filenames are never part of body_text, so they are collected
+    # separately for the Round 0 tag check in _score_candidate.
+    if first_msg is not None:
+        postarea = first_msg.find_parent("div", class_="postarea")
+        scope = postarea if postarea is not None else first_msg.parent
+        attach_divs = scope.find_all("div", class_="attachments") if scope else []
+    else:
+        attach_divs = soup.find_all("div", class_="attachments")[:1]
+
     attach_texts: list[str] = []
-    for attach_div in soup.find_all("div", class_="attachments"):
+    for attach_div in attach_divs:
         for a in attach_div.find_all(
             "a", href=lambda h: h and "dlattach" in (h or "")
         ):
@@ -512,8 +519,6 @@ def _fetch_topic(
             attach_texts.append(text)
             if ".torrent" in text.lower() and not result["torrent_url"]:
                 result["torrent_url"] = _resolve_url(a["href"])
-        if attach_texts:
-            break   # stop after first post's attachment section
 
     result["attachment_text"] = " ".join(attach_texts)
     return result
@@ -786,12 +791,15 @@ def find_torrent_for_lb(
                 _DOWNLOAD_WINDOW_MONTHS, download_date, download_cutoff,
             )
             continue
-        # Scan body + attachment filenames together so an "LB-NNNNN" tag on
-        # either one (e.g. the attachment is literally named "LB-00008.torrent")
-        # triggers the Round 0 disqualification check.
-        scan_text = post["body_text"]
-        if post["attachment_text"]:
-            scan_text = f"{scan_text}\n{post['attachment_text']}"
+        # Scan title + body + attachment filenames together so an "LB-NNNNN"
+        # tag on any of them (many posts carry it only in the subject line,
+        # or the attachment is literally named "LB-00008.torrent") both
+        # confirms this entry and triggers the Round 0 disqualification.
+        scan_text = "\n".join(
+            part for part in (
+                post["topic_title"], post["body_text"], post["attachment_text"]
+            ) if part
+        )
         sc, sigs = _score_candidate(scan_text, checksums, entry)
         if sigs.get("lb_tag_mismatch"):
             disqualified_tag += 1

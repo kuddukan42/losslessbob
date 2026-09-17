@@ -5,6 +5,7 @@ hand-written, so no scraped page carrying a session token or member name is
 committed to the repo.
 """
 import json
+from pathlib import Path
 
 import pytest
 
@@ -90,8 +91,8 @@ RECORDING_HTML = """
     <p class="subtitle">Source 1 of 2 circulating for this show. Considered the definitive tape.</p>
     <span class="src-pill aud">AUD</span>
     <span class="quality-cell" data-q="very-good">Very good</span>
-    <span class="free-tag">Freeleech</span>
-    <span class="badge">LB verified</span>
+    <span class="pill pill-free">Freeleech</span>
+    <span class="pill pill-verified">LB verified</span>
     <a href="https://tangledupintorrents.org/show/1837/download">Download .torrent</a>
   </div>
   <div class="spec"><span>Size</span>1,006.42 MB</div>
@@ -352,8 +353,10 @@ class TestJsonFields:
 
 class TestTorrentRootName:
     def _write(self, tmp_path, name: bytes) -> str:
-        # Minimal bencoded torrent: only the info.name key matters here.
-        body = b"d4:infod4:name" + str(len(name)).encode() + b":" + name + b"ee"
+        # A minimal but well-formed torrent: read_torrent needs the whole
+        # info dict, not just the name.
+        body = (b"d4:infod6:lengthi1e4:name" + str(len(name)).encode() + b":"
+                + name + b"12:piece lengthi1e6:pieces20:" + b"\0" * 20 + b"ee")
         path = tmp_path / "t.torrent"
         path.write_bytes(body)
         return str(path)
@@ -714,3 +717,57 @@ class TestParseRss:
 
     def test_redaction_with_no_passkey_is_a_no_op(self):
         assert redact_passkey("plain", "") == "plain"
+
+
+class TestRssTaper:
+    """The feed is the only surface a feed-discovered recording's taper is on."""
+
+    def test_taper_is_read_from_the_description(self):
+        items = parse_rss(RSS_XML)
+        assert any(i.taper == "Spot" for i in items)
+        assert all(i.taper == "" for i in items if "taped by" not in i.description)
+
+    def test_as_browse_row_carries_taper_and_added_at(self):
+        item = next(i for i in parse_rss(RSS_XML) if i.taper)
+        row = item.as_browse_row()
+        assert row.rec_id == item.rec_id
+        assert row.taper == "Spot"
+        assert row.date_str == ""            # everything else is left blank
+        if item.pub_date:
+            assert row.added_at[:4].isdigit()
+
+
+_ARCHIVE = Path(__file__).resolve().parent.parent / "data" / "downloads" / "tuit" / "html"
+
+
+@pytest.mark.skipif(not _ARCHIVE.is_dir(), reason="no archived TUIT pages")
+class TestArchivedPages:
+    """Parse real archived detail pages, not just the synthetic fixture.
+
+    The synthetic fixture cannot catch a selector that no longer matches the
+    live site — that is how the taper field silently read blank on every page.
+    """
+
+    def _sample(self, n: int = 60) -> list[Path]:
+        files = sorted(_ARCHIVE.glob("rec-*.html"))
+        return files[:: max(1, len(files) // n)][:n]
+
+    def test_core_fields_are_populated(self):
+        recs = [parse_recording(f.read_text(encoding="utf-8", errors="replace"))
+                for f in self._sample()]
+        assert recs
+        for attr in ("rec_id", "date_str", "venue", "source_type", "info_hash",
+                     "size_bytes", "n_files", "torrent_url", "uploader"):
+            missing = [r.rec_id for r in recs if not getattr(r, attr)]
+            assert len(missing) <= len(recs) // 10, f"{attr} blank on {missing}"
+
+    def test_source_type_and_quality_come_from_the_hero(self):
+        for f in self._sample(30):
+            rec = parse_recording(f.read_text(encoding="utf-8", errors="replace"))
+            assert rec.source_type in ("AUD", "SBD", "FM", "MTX", ""), rec.rec_id
+            # The hero's pill and the info grid's label describe the same
+            # recording; a sibling card's pill would not agree with the grid.
+            expected = {"Audience": "AUD", "Soundboard": "SBD",
+                        "Radio": "FM", "Matrix": "MTX"}.get(rec.source_label)
+            if expected:
+                assert rec.source_type == expected, (rec.rec_id, rec.source_label)

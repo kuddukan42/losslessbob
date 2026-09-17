@@ -119,13 +119,14 @@ def test_iter_board_topics_stops_at_the_end_of_the_board(monkeypatch):
 def test_iter_board_topics_walks_the_whole_board_when_pages_is_none(monkeypatch):
     monkeypatch.setattr("backend.wtrf_board.time.sleep", lambda _s: None)
     session = _StubSession({
-        offset: _page(_row(900 - n, f"t{n}"))
+        offset: _page(_row(900 - n, f"t{n}"), pages=4)
         for n, offset in enumerate(TOPICS_PER_PAGE * i for i in range(4))
     })
 
     topics = list(iter_board_topics(session, 16, 0, pages=None, delay=0.0))
 
-    # No page budget: the walk only stopped because the board ran out.
+    # No page budget: the walk only stopped because the board ran out. The
+    # pagination strip says four pages, so page five is never requested.
     assert [t.topic_id for t in topics] == [900, 899, 898, 897]
 
 
@@ -309,3 +310,62 @@ def test_seed_board_limit_counts_attempts_only(monkeypatch, tmp_path):
 
     assert len(topics) == 2
     assert events[-1]["attempted"] == 2
+
+
+# ── walk termination guards ──────────────────────────────────────────────────
+
+def test_walk_stops_when_smf_clamps_to_the_last_page(monkeypatch):
+    """SMF serves the last page again for any offset past the end.
+
+    Without a guard an unbounded walk would re-fetch it forever, since topics
+    already attempted never count toward --limit.
+    """
+    monkeypatch.setattr("backend.wtrf_board.time.sleep", lambda _s: None)
+
+    class _Clamping(_StubSession):
+        def get(self, url, timeout=None):            # noqa: D102 - test stub
+            self.requested.append(url)
+            offset = int(url.split("board=16.")[1].split(";")[0].split("?")[0])
+            # Pagination strip lies (says 9 pages) so only the repeat guard
+            # can end the walk.
+            return _StubResponse(_page(_row(900 - min(offset, 20) // 20, "t"),
+                                       pages=9))
+
+    session = _Clamping({})
+    topics = list(iter_board_topics(session, 16, 0, pages=None, delay=0.0))
+
+    assert [t.topic_id for t in topics] == [900, 899]
+    # count request + offsets 0, 20, 40 (the repeat) and no more.
+    assert len(session.requested) == 4
+
+
+def test_walk_is_capped_by_the_pagination_strip(monkeypatch):
+    monkeypatch.setattr("backend.wtrf_board.time.sleep", lambda _s: None)
+    session = _StubSession({
+        offset: _page(_row(900 - n, f"t{n}"), pages=2)
+        for n, offset in enumerate(TOPICS_PER_PAGE * i for i in range(6))
+    })
+
+    topics = list(iter_board_topics(session, 16, 0, pages=None, delay=0.0))
+
+    assert [t.topic_id for t in topics] == [900, 899]
+
+
+def test_subject_link_is_the_first_topic_link_with_text():
+    row = (
+        '<tr><td class="icon1 windowbg"></td><td class="subject windowbg2">'
+        f'<a href="{FORUM_BASE}/index.php?topic=77.msg1;topicseen#new">'
+        '<img src="new.gif"></a>'
+        f'<a href="{FORUM_BASE}/index.php?topic=77.0">Real title</a>'
+        '</td></tr>'
+    )
+    topics = parse_board_page(_page(row), 0)
+    assert [(t.topic_id, t.title) for t in topics] == [(77, "Real title")]
+
+
+def test_smf21_sticky_class_on_the_row_is_recognised():
+    row = (
+        '<tr class="sticky windowbg"><td class="subject">'
+        f'<a href="{FORUM_BASE}/index.php?topic=5.0">Rules</a></td></tr>'
+    )
+    assert parse_board_page(_page(row), 0) == []

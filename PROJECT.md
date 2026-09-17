@@ -283,6 +283,8 @@ losslessbob/
 │   ├── checksum_dispute_report.py # CLI: render checksum_disputes as a standalone HTML report (.debug/checksum_disputes.html); pairs the db+lbdir references per track to derive db_error / audio_differs / retag / receipt_unknown / lbdir_only (TODO-300, 302)
 │   ├── parse_lineage.py      # CLI wrapper: backend.taper_attribution / entry_lineage batch parse (see backend/db.py extract_lb_references)
 │   ├── wtrf_fetch_missing.py # CLI: batch WTRF torrent fetch for missing items (wraps /api/wtrf/fetch_torrent logic)
+│   ├── tuit.sh               # wrapper: tuit_sync.py --pages 2 --fetch-torrents --seed --overlay
+│   ├── wtrf.sh               # wrapper: wtrf_seed_board.py --limit 5000 --delay 10 (walks to the board's last page)
 │   ├── wtrf_seed_board.py    # CLI: crawl the WTRF board and seed what is held (--start-page/--pages walk back in time, --limit, --rescan, --include-missing, --dry-run)
 │   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314); --sync-tours / --sync-venues fill tuit_shows + tuit_venues; --sync-songs fills tuit_songs + tuit_song_performances
 │   ├── tuit_upload.py        # CLI: post one recording to TUIT and seed it. Dry run by default (composes and prints every form field plus the gaps); --apply is the only flag that sends. --no-torrent for a fast preview, --set FIELD=VALUE to override, --allow-duplicate, --no-seed, --paused (TODO-343)

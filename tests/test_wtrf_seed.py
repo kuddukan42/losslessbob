@@ -474,3 +474,14 @@ def test_an_lb_pinned_to_a_link_is_not_repeated_as_its_own_target(catalogue):
 
 def test_date_headers_and_source_tags_are_not_lb_numbers(catalogue):
     assert parse_seed_targets("1974-01-31 New York\n(LTE) (SM) (NTB)\n") == []
+
+
+def test_resolve_expands_a_shorthand_run_in_the_post(stub_topic, catalogue):
+    """A body reading 'LB-11486/88' nominates both entries, like a paste does."""
+    stub_topic(_post(
+        body_text="Two sources from the same night: LB-11486/88",
+        torrent_url="http://x/dlattach?attach=5",
+    ))
+    out = resolve_link(None, LinkSpec(TOPIC, None, TOPIC))
+    assert out["lb_candidates"] == [11486, 11488]
+    assert out["needs_content_check"] is True
