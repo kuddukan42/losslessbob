@@ -20,6 +20,8 @@ Fixed: backend/wtrf_board.py: an unbounded walk (--limit without --pages, what t
   would re-fetch it forever. Capped by board_page_count (previously unused) and by a
   no-new-topics guard. Subject link is the first topic link with text (icon-only links dropped
   whole rows); SMF 2.1 'sticky' row class recognised.
+Fixed: backend/wtrf_board.py: a --dry-run walk recorded 'no LB' and 'not in collection' skips to
+  wtrf_downloads, so the following real run skipped those topics as already attempted.
 Fixed: backend/wtrf_seed.py: resolve_link expands 'LB-11486/88' shorthand in post text as pastes do.
 Added: tools/tuit.sh, tools/wtrf.sh: the two ad-hoc root-level wrappers, moved into tools/ with a
   cd to the repo root; the redundant --allow-partial-overlay flag dropped.

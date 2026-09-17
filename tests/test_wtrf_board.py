@@ -369,3 +369,39 @@ def test_smf21_sticky_class_on_the_row_is_recognised():
         f'<a href="{FORUM_BASE}/index.php?topic=5.0">Rules</a></td></tr>'
     )
     assert parse_board_page(_page(row), 0) == []
+
+
+def test_dry_run_records_nothing_for_skipped_topics(monkeypatch, tmp_path):
+    """A dry run must not leave attempt rows that a real run would then skip."""
+    monkeypatch.setattr("backend.wtrf_board.time.sleep", lambda _s: None)
+    monkeypatch.setattr("backend.wtrf_board.database.get_meta", lambda _k: "16")
+    monkeypatch.setattr("backend.wtrf_board.database.get_wtrf_attempted_topics",
+                        lambda: {})
+    monkeypatch.setattr("backend.wtrf_board.database.get_folders_for_lb",
+                        lambda _lb: [])
+    recorded = []
+    monkeypatch.setattr("backend.wtrf_board._record",
+                        lambda *a, **k: recorded.append(a) or 1)
+    posts = {
+        900: {"lb_number": None, "lb_candidates": [], "lb_source": "",
+              "confidence": "not_found", "needs_content_check": False,
+              "torrent_url": None, "title": "no tag", "error": "no LB number"},
+        899: {"lb_number": 5, "lb_candidates": [5], "lb_source": "title",
+              "confidence": "high", "needs_content_check": False,
+              "torrent_url": "http://x/dlattach?attach=1", "title": "LB-5",
+              "error": ""},
+    }
+    monkeypatch.setattr("backend.wtrf_board.resolve_link",
+                        lambda s, spec, d: posts[int(spec.url.split("topic=")[1][:3])])
+    session = _StubSession({0: _page(_row(900, "a") + _row(899, "b"))})
+
+    from backend.tracker_seed import SeedOptions
+    from backend.wtrf_board import seed_board
+
+    events = [e for e in seed_board(SeedOptions(tracker="wtrf"), tmp_path,
+                                    board_id=16, pages=1, dry_run=True,
+                                    session=session)
+              if e["event"] == "topic"]
+
+    assert [e["status"] for e in events] == ["skipped", "skipped"]
+    assert recorded == []
