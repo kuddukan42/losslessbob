@@ -512,7 +512,8 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 {%- set primary_buckets = [] -%}{%- set side_members = [] -%}
 {%- for b in buckets -%}
   {%- set prim = b.members | selectattr('r.group.value', 'equalto', 'primary') | list -%}
-  {%- set side = b.members | rejectattr('r.group.value', 'equalto', 'primary') | list -%}
+  {#- G2 no_match sources are other recordings mis-catalogued under this date: hidden (tj 2026-09-16). #}
+  {%- set side = b.members | selectattr('r.group.value', 'equalto', 'fragment') | list -%}
   {%- if prim %}{% set _ = primary_buckets.append({'members': prim, 'fam': b.fam, 'best': b.best}) %}{% endif -%}
   {%- for s in side %}{% set _ = side_members.append(s) %}{% endfor -%}
 {%- endfor -%}
@@ -613,12 +614,11 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   {%- endif %}
   {%- if side_members %}
   <details class="side-groups">
-    <summary>{{ side_members | length }} fragment / non-matching source(s) not counted in the verdict</summary>
+    <summary>{{ side_members | length }} fragment source(s) not counted in the verdict</summary>
     {%- for e in side_members %}
     <div class="grp">
       <span class="lb">{% if e.r.url is defined and e.r.url.value %}<a href="{{ e.r.url.value }}" target="_blank" rel="noopener">{{ e.r.lb_id.value }}</a>{% else %}{{ e.r.lb_id.value }}{% endif %}</span> &mdash;
-      {%- if e.r.group.value == 'no_match' %} does not match this show's setlist
-      {%- else %} fragment / partial recording{% endif %}
+      fragment / partial recording
       <div class="note">{% if e.r.taper is defined and e.r.taper.value %}taper: {{ e.r.taper.value.name }}{% endif %}</div>
     </div>
     {%- endfor %}

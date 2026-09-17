@@ -1,3 +1,8 @@
+[2026-09-16] — Dossier: hide sources that don't match the show
+Changed: backend/templates/dossier.html, backend/dossier_anchors.py: G2 no_match sources (other
+  recordings mis-catalogued under the date, e.g. LB-06654 mono-mixes bootleg on 1965-06-01) are no
+  longer listed and no longer counted in sources.count or the tape-group count (tj 2026-09-16).
+
 [2026-09-16] — Dossier: linked fragment sources and setlist.fm show page
 Changed: backend/templates/dossier.html: fragment / non-matching sources now link their LB detail
   pages like the main source rows.

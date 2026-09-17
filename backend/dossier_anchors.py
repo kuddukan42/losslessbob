@@ -944,19 +944,23 @@ def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
                     classes) -> None:
     visible_members = _sort_within_families(visible_members, conn)
 
+    # G2 no_match sources are other recordings mis-catalogued under this date; the page
+    # hides them, so they don't count as this show's sources or tape groups either.
+    no_match = {m["lb"] for lb, m, _ in visible_members
+                if classes.get(lb, {}).get("group") == "no_match"}
     vb.set_field("sources.count", build_field(
-        len(visible_members), 1, "d1.sources visible members", "stated"))
+        len(visible_members) - len(no_match), 1, "d1.sources visible members", "stated"))
 
     # A one-visible-member tapematch family is still a tape group; only the family
     # band (S8.4) needs >=2 members.
     analysed_buckets = [
         b for b in sources
         if b.get("fam_id") and not b["fam_id"].startswith("__singleton_")
-        and any(not m.get("private") for m in b["members"])
+        and any(not m.get("private") and m["lb"] not in no_match for m in b["members"])
     ]
     named_buckets = [
         b for b in analysed_buckets
-        if len([m for m in b["members"] if not m.get("private")]) >= 2
+        if len([m for m in b["members"] if not m.get("private") and m["lb"] not in no_match]) >= 2
     ]
     all_visible_in_family = bool(visible_members) and all(
         b.get("fam_id") and not b["fam_id"].startswith("__singleton_") for b in sources
