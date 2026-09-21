@@ -2222,29 +2222,8 @@
     }
   },
   "refresh": {
-    "title": "Actualiteit van de gegevens",
-    "subtitle": "Wat er momenteel in de pijplijn zit",
     "allUpToDate": "Alles is up-to-date",
-    "nOutOfDate_one": "{{count}} is verouderd",
-    "nOutOfDate_other": "{{count}} is verouderd",
     "publishLag": "De gepubliceerde master loopt {{days}} dagen en {{changes}} LB-statuswijzigingen achter op de lokale versie.",
-    "goTo": "Ga naar scherm",
-    "backlog_one": "{{count}} in behandeling",
-    "backlog_other": "{{count}} in behandeling",
-    "unknownFootnote_one": "Stap {{count}} heeft geen versheidssignaal",
-    "unknownFootnote_other": "{{count}}-stappen hebben geen versheidssignaal",
-    "state": {
-      "fresh": "Nieuw",
-      "stale": "Verouderd",
-      "blocked": "Geblokkeerd",
-      "unknown": "Onbekend"
-    },
-    "triggers": {
-      "T1": "Nieuwe LB-gegevens",
-      "T2": "Nieuwe lokale mappen",
-      "T3": "Stroomopwaartse afwijking",
-      "T4": "Publiceren"
-    },
     "steps": {
       "flat_file_apply": "Update van platte bestanden toepassen",
       "db_import": "Hoofddatabase importeren",
@@ -2280,43 +2259,9 @@
     "running": "Wordt uitgevoerd…",
     "alreadyRunning": "Reeds actief",
     "runFailed": "Uitvoering mislukt",
-    "confirmFetch": "Nu ophalen?",
-    "confirmFetchBody": "Met een rustig tempo (~2 s tussen verzoeken) — dit kan even duren.",
-    "confirmScanTitle": "Een scan van de audiokwaliteit uitvoeren?",
-    "scanBacklog": "Scanachterstand ({{count}})",
-    "scanAll": "Volledig opnieuw scannen",
-    "scanAllWarning": "Scant elke opname in de collectie opnieuw — dit duurt veel langer dan een scan van de achterstand.",
-    "scanNoBacklog": "Niets om te scannen — de achterstand is leeg.",
-    "versionChanged": "Configuratie gewijzigd sinds de laatste uitvoering",
-    "chain": {
-      "runTrigger": "Vernieuwen {{trigger}}",
-      "runChain": "Uitvoeringsketen",
-      "previewTitle": "Voorbeeld van de keten — {{scope}}",
-      "willRun": "Werkt ({{count}})",
-      "wontRun": "Werkt niet ({{count}})",
-      "excluded": "Uitgesloten ({{count}})",
-      "includeExpensive": "Voeg stappen voor langzaam en publiceren toe ({{count}})",
-      "confirm": "Uitvoeringsketen",
-      "running": "{{step}} — {{done}}/{{total}} wordt uitgevoerd",
-      "stopping": "Beëindigen…",
-      "outcomeOk": "{{ran}} van {{total}} stappen uitgevoerd",
-      "outcomePartial": "{{ran}} van {{total}} stappen uitgevoerd; {{step}} mislukt",
-      "outcomeStopped": "Gestopt na stap {{ran}} van {{total}}",
-      "alreadyRunning": "Er is al een vernieuwingsketen actief",
-      "busyStep": "{{steps}} nog bezig — probeer het straks nog eens"
-    },
     "queues": {
-      "title": "We wachten op je",
-      "subtitle": "Door mensen gecontroleerde wachtrijen die bepalen wat er via de pijplijn wordt gepubliceerd",
       "pending_one": "{{count}} item ter beoordeling",
       "pending_other": "{{count}} te controleren items",
-      "clear": "Niets in de wachtrij",
-      "unknown": "Niet beschikbaar in deze installatie",
-      "review": "Beoordeling",
-      "ratio": "{{done}} van {{total}} geselecteerde datums",
-      "attention_one": "{{count}} ter beoordeling",
-      "attention_other": "{{count}} ter beoordeling",
-      "advisoryIntro": "Het is prima om het gewoon te laten draaien —",
       "advisoryQueue": "{{step}} zal gebruikmaken van {{count}} en het nog niet beoordeelde {{queue}}.",
       "advisoryPublish": "Bij het publiceren worden nu ook {{count}}-items meegenomen die nog door niemand zijn beoordeeld.",
       "labels": {
@@ -2334,7 +2279,73 @@
         "tapematch_dates": "De kandidaatparen voor een datum accepteren of afwijzen",
         "qc_errors": "Beoordeling op /qc-review",
         "qc_warnings": "Beoordeling op /qc-review"
+      },
+      "ratio": "{{done}} van {{total}} voltooid"
+    },
+    "title": "Updates",
+    "summary": "{{total}} achterstallig: {{ready}} kan de app nu doen, {{long}}, {{needs}} wachten op jou.",
+    "longJobs_one": "{{count}} lange taak",
+    "longJobs_other": "{{count}} lange taken",
+    "footer": "{{fresh}} bijgewerkt · {{untracked}} niet gevolgd",
+    "untrackedList": "Niet bijgehouden (er wordt niet vermeld of ze actueel zijn): {{steps}}.",
+    "time": {
+      "seconds": "seconden",
+      "minutes": "minuten",
+      "hours": "uren"
+    },
+    "source": {
+      "lbSite": "LosslessBob-website",
+      "yourFolders": "Uw mappen",
+      "externalSources": "Externe bronnen",
+      "publishing": "Publiceren"
+    },
+    "update": {
+      "button_one": "{{count}} stap bijwerken",
+      "button_other": "{{count}} stappen bijwerken",
+      "confirmTitle_one": "{{count}} stap bijwerken?",
+      "confirmTitle_other": "{{count}} stappen bijwerken?",
+      "confirmBody": "Wordt op de achtergrond uitgevoerd, in de volgorde van de afhankelijkheden. Je kunt de app gewoon blijven gebruiken; de voortgang wordt op de kaart weergegeven.",
+      "confirm": "Bijwerken",
+      "advisoryOk": "Het is nu goed om te draaien — later nog eens bekijken en opnieuw bijwerken.",
+      "notIncluded": "Niet inbegrepen: {{long}}- en {{needs}}-items die je nodig hebt. Die blijven op de kaart staan.",
+      "progress": "Bijwerken — stap {{n}} van {{total}}: {{step}}",
+      "stop": "Stop na deze stap",
+      "stopping": "Beëindigen…",
+      "outcomeOk": "Update voltooid: {{ran}} van {{total}} stappen uitgevoerd",
+      "outcomePartial": "{{ran}} van {{total}} stappen uitgevoerd; {{step}} mislukt",
+      "outcomeStopped": "Gestopt na stap {{ran}} van {{total}}",
+      "alreadyRunning": "Er wordt al een update uitgevoerd",
+      "busyStep": "{{steps}} nog steeds bezet — probeer het straks nog eens"
+    },
+    "ready": {
+      "title": "Klaar om bij te werken",
+      "hint": "De knop ‘Bijwerken’ voert deze bewerkingen achtereenvolgens uit.",
+      "after_one": "Na stap {{steps}}",
+      "after_other": "Na stappen {{steps}}"
+    },
+    "long": {
+      "title": "Lange taken",
+      "hint": "Aantal uren per taak. Maakt nooit deel uit van een update — start er een wanneer je even weg bent.",
+      "start": "Start",
+      "scanNew": "{{count}} nieuwe scannen",
+      "rescanAll": "Alles opnieuw scannen…",
+      "rescanAllConfirm": "Alles opnieuw scannen",
+      "progress": "{{done}}/{{total}} uitvoeren",
+      "confirmStart": "Start {{step}}?",
+      "confirmStartBody": "Neem er de tijd voor — dit kan uren duren. Het programma draait op de achtergrond en kan worden gestopt.",
+      "confirmRescan": "Elke opname opnieuw scannen?",
+      "confirmRescanBody": "De hele collectie wordt opnieuw gescand, niet alleen nieuwe opnames — dit gaat veel langzamer dan het scannen van nieuwe opnames.",
+      "backlog": {
+        "scrape_entries_one": "{{count}} LB-vermelding nog niet verzameld",
+        "scrape_entries_other": "{{count}} LB-vermeldingen zijn nog niet verzameld",
+        "ranker_scan_one": "{{count}} opname nooit gescand",
+        "ranker_scan_other": "{{count}}-opnames zijn nooit gescand"
       }
+    },
+    "needs": {
+      "title": "Wacht op jou",
+      "hint": "De app kan dit niet zelfstandig doen. Elk item wordt geopend op de plek waar je het selecteert.",
+      "open": "Openen"
     }
   },
   "screenCoverage": {

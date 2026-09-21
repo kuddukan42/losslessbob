@@ -5396,8 +5396,10 @@ def create_app() -> Flask:
     def refresh_status_endpoint() -> Response:
         """Return the read-only pipeline freshness snapshot. Optional ?trigger=T1 filter."""
         try:
+            import backend.refresh_exec as _refresh_exec
+
             trigger = request.args.get("trigger")
-            return jsonify(_refresh.compute_plan(trigger=trigger))
+            return jsonify(_refresh_exec.annotate_buckets(_refresh.compute_plan(trigger=trigger)))
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
@@ -5608,8 +5610,8 @@ def create_app() -> Flask:
     def refresh_chain_preview() -> Response:
         """Preview the ordered chain plan_chain() would run.
 
-        Body: {step_id?, trigger?, include_expensive?}. Exactly one of
-        step_id/trigger is required. Read-only -- claims nothing, starts
+        Body: {step_id?, trigger?, all?, include_expensive?}. Exactly one of
+        step_id/trigger/all is required. Read-only -- claims nothing, starts
         nothing, so the GUI can call this on every keystroke of a dialog.
         """
         import backend.refresh_exec as _refresh_exec
@@ -5618,6 +5620,7 @@ def create_app() -> Flask:
         try:
             plan = _refresh_exec.plan_chain(
                 step_id=body.get("step_id"), trigger=body.get("trigger"),
+                all_steps=bool(body.get("all", False)),
                 include_expensive=bool(body.get("include_expensive", False)),
             )
         except ValueError as exc:
@@ -5626,7 +5629,7 @@ def create_app() -> Flask:
 
     @app.route("/api/refresh/chain/start", methods=["POST"])
     def refresh_chain_start() -> Response:
-        """Re-plan server-side and start the chain thread. Body: {step_id?, trigger?, include_expensive?}.
+        """Re-plan server-side and start the chain thread. Body: {step_id?, trigger?, all?, include_expensive?}.
 
         Re-plans from the posted body rather than trusting a client-side
         plan (spec Sec 3.4) -- the client's plan may be seconds stale.
@@ -5640,6 +5643,7 @@ def create_app() -> Flask:
         try:
             plan = _refresh_exec.plan_chain(
                 step_id=body.get("step_id"), trigger=body.get("trigger"),
+                all_steps=bool(body.get("all", False)),
                 include_expensive=bool(body.get("include_expensive", False)),
             )
         except ValueError as exc:

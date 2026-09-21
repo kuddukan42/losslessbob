@@ -1,3 +1,16 @@
+[2026-09-21] — Updates card: pipeline freshness regrouped by who does the work
+Changed: gui_next/.../components/DataFreshnessCard.tsx: rewritten from the Claude Design redesign.
+  Steps now sit in Ready to update (one "Update N steps" button runs the whole-pipeline chain in
+  dependency order), Long jobs (scrape_entries, ranker_scan: started on purpose, hours) and Needs
+  you (manual steps + pending review queues, one Open button each). T1-T4 groups, Stale/Blocked
+  chips, fast/slow/very_slow pills, the include-expensive checkbox and per-trigger Refresh buttons
+  are gone; time shows as seconds/minutes/hours and the data source as a muted column.
+Added: backend/refresh_exec.py: plan_chain(all_steps=True) scope (history scope_kind 'all'),
+  step_bucket()/annotate_buckets(); /api/refresh/status now carries steps[].bucket + update_order,
+  /api/refresh/chain/preview|start accept {all:true} (backend/app.py). Tests pin that the card's
+  ready rows equal the all-scope chain's runnable list (tests/test_refresh_exec.py, +4).
+Changed: locales/*.json: refresh.* keys rewritten (title "Updates"), DeepL + hand-fixed plurals.
+
 [2026-09-17] — Backlog sweep: 5 TODOs + 2 bugs closed via delegated agents; BUG-337 parser work held back
 Fixed: tools/tapematch/tapematch/ingest.py (BUG-335): patch sibling dirs (d1/fix/, *.fix/) whose
   marker-stripped track names match tracks already present now replace those tracks in place

@@ -2199,41 +2199,77 @@
     }
   },
   "refresh": {
-    "title": "Data freshness",
-    "subtitle": "What's stale in the pipeline right now",
-    "allUpToDate": "Everything up to date",
-    "nOutOfDate_one": "{{count}} step out of date",
-    "nOutOfDate_other": "{{count}} steps out of date",
+    "title": "Updates",
+    "allUpToDate": "Everything is up to date",
+    "summary": "{{total}} things behind: {{ready}} the app can do now, {{long}}, {{needs}} need you.",
+    "longJobs_one": "{{count}} long job",
+    "longJobs_other": "{{count}} long jobs",
     "publishLag": "Published master is {{days}} days and {{changes}} LB status changes behind local.",
-    "goTo": "Go to screen",
-    "backlog_one": "{{count}} pending",
-    "backlog_other": "{{count}} pending",
-    "unknownFootnote_one": "{{count}} step has no freshness signal",
-    "unknownFootnote_other": "{{count}} steps have no freshness signal",
     "run": "Run",
     "stop": "Stop",
     "running": "Running…",
     "alreadyRunning": "Already running",
     "runFailed": "Run failed",
-    "confirmFetch": "Fetch now?",
-    "confirmFetchBody": "Politely paced (~2s between requests) — this can take a while.",
-    "confirmScanTitle": "Run audio quality scan?",
-    "scanBacklog": "Scan backlog ({{count}})",
-    "scanAll": "Full rescan",
-    "scanAllWarning": "Rescans every recording in the collection — much slower than a backlog scan.",
-    "scanNoBacklog": "Nothing to scan — backlog is empty.",
-    "versionChanged": "Config changed since last run",
-    "state": {
-      "fresh": "Fresh",
-      "stale": "Stale",
-      "blocked": "Blocked",
-      "unknown": "Unknown"
+    "footer": "{{fresh}} up to date · {{untracked}} not tracked",
+    "untrackedList": "Not tracked (they don't report whether they're current): {{steps}}.",
+    "time": {
+      "seconds": "seconds",
+      "minutes": "minutes",
+      "hours": "hours"
     },
-    "triggers": {
-      "T1": "New LB data",
-      "T2": "New local folders",
-      "T3": "Upstream drift",
-      "T4": "Publish"
+    "source": {
+      "lbSite": "LosslessBob site",
+      "yourFolders": "Your folders",
+      "externalSources": "External sources",
+      "publishing": "Publishing"
+    },
+    "update": {
+      "button_one": "Update {{count}} step",
+      "button_other": "Update {{count}} steps",
+      "confirmTitle_one": "Update {{count}} step?",
+      "confirmTitle_other": "Update {{count}} steps?",
+      "confirmBody": "Runs in the background, in dependency order. You can keep using the app; progress shows on the card.",
+      "confirm": "Update",
+      "advisoryOk": "Fine to run now — review later and update again.",
+      "notIncluded": "Not included: {{long}} and {{needs}} items that need you. They stay on the card.",
+      "progress": "Updating — step {{n}} of {{total}}: {{step}}",
+      "stop": "Stop after this step",
+      "stopping": "Stopping…",
+      "outcomeOk": "Update finished: {{ran}} of {{total}} steps ran",
+      "outcomePartial": "{{ran}} of {{total}} steps ran; {{step}} failed",
+      "outcomeStopped": "Stopped after {{ran}} of {{total}} steps",
+      "alreadyRunning": "An update is already running",
+      "busyStep": "{{steps}} still busy — try again shortly"
+    },
+    "ready": {
+      "title": "Ready to update",
+      "hint": "The Update button runs these, in order.",
+      "after_one": "After step {{steps}}",
+      "after_other": "After steps {{steps}}"
+    },
+    "long": {
+      "title": "Long jobs",
+      "hint": "Hours each. Never part of Update — start one when you're stepping away.",
+      "start": "Start",
+      "scanNew": "Scan {{count}} new",
+      "rescanAll": "Rescan all…",
+      "rescanAllConfirm": "Rescan all",
+      "progress": "Running {{done}}/{{total}}",
+      "confirmStart": "Start {{step}}?",
+      "confirmStartBody": "Politely paced — this can take hours. It runs in the background and can be stopped.",
+      "confirmRescan": "Rescan every recording?",
+      "confirmRescanBody": "Rescans the whole collection, not just new recordings — much slower than scanning new ones.",
+      "backlog": {
+        "scrape_entries_one": "{{count}} LB entry not scraped yet",
+        "scrape_entries_other": "{{count}} LB entries not scraped yet",
+        "ranker_scan_one": "{{count}} recording never scanned",
+        "ranker_scan_other": "{{count}} recordings never scanned"
+      }
+    },
+    "needs": {
+      "title": "Needs you",
+      "hint": "The app can't do these alone. Each opens where you do it.",
+      "open": "Open"
     },
     "steps": {
       "flat_file_apply": "Apply flat-file update",
@@ -2265,35 +2301,10 @@
       "preservation": "Preservation check",
       "archive_org": "Sync Archive.org"
     },
-    "chain": {
-      "runTrigger": "Refresh {{trigger}}",
-      "runChain": "Run chain",
-      "previewTitle": "Chain preview — {{scope}}",
-      "willRun": "Will run ({{count}})",
-      "wontRun": "Won't run ({{count}})",
-      "excluded": "Excluded ({{count}})",
-      "includeExpensive": "Include slow and publish steps ({{count}})",
-      "confirm": "Run chain",
-      "running": "Running {{step}} — {{done}}/{{total}}",
-      "stopping": "Stopping…",
-      "outcomeOk": "{{ran}} of {{total}} steps ran",
-      "outcomePartial": "{{ran}} of {{total}} steps ran; {{step}} failed",
-      "outcomeStopped": "Stopped after {{ran}} of {{total}} steps",
-      "alreadyRunning": "A refresh chain is already running",
-      "busyStep": "{{steps}} still busy — try again shortly"
-    },
     "queues": {
-      "title": "Waiting on you",
-      "subtitle": "Human review queues that shape what the pipeline publishes",
       "pending_one": "{{count}} item to review",
       "pending_other": "{{count}} items to review",
-      "clear": "Nothing waiting",
-      "unknown": "Not available on this install",
-      "review": "Review",
-      "ratio": "{{done}} of {{total}} dates curated",
-      "attention_one": "{{count}} to review",
-      "attention_other": "{{count}} to review",
-      "advisoryIntro": "Running anyway is fine —",
+      "ratio": "{{done}} of {{total}} done",
       "advisoryQueue": "{{step}} will use {{count}} unreviewed {{queue}}.",
       "advisoryPublish": "Publishing now includes {{count}} items no one has reviewed yet.",
       "labels": {
