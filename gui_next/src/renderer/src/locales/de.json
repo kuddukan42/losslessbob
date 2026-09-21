@@ -2222,29 +2222,8 @@
     }
   },
   "refresh": {
-    "title": "Aktualität der Daten",
-    "subtitle": "Was derzeit in der Pipeline feststeckt",
     "allUpToDate": "Alles auf dem neuesten Stand",
-    "nOutOfDate_one": "{{count}} veraltet",
-    "nOutOfDate_other": "{{count}} ist veraltet",
     "publishLag": "Der veröffentlichte Master liegt {{days}} Tage und {{changes}} LB-Statusänderungen hinter der lokalen Version zurück.",
-    "goTo": "Zum Bildschirm wechseln",
-    "backlog_one": "{{count}} ausstehend",
-    "backlog_other": "{{count}} ausstehend",
-    "unknownFootnote_one": "Der Schritt „{{count}}“ weist kein Aktualitätssignal auf",
-    "unknownFootnote_other": "{{count}}-Schritte weisen kein Aktualitätssignal auf",
-    "state": {
-      "fresh": "Neu",
-      "stale": "Veraltet",
-      "blocked": "Gesperrt",
-      "unknown": "Unbekannt"
-    },
-    "triggers": {
-      "T1": "Neue LB-Daten",
-      "T2": "Neue lokale Ordner",
-      "T3": "Stromaufwärtsdrift",
-      "T4": "Veröffentlichen"
-    },
     "steps": {
       "flat_file_apply": "Aktualisierung der Flat-File-Datei durchführen",
       "db_import": "Master-Datenbank importieren",
@@ -2280,43 +2259,9 @@
     "running": "Wird ausgeführt…",
     "alreadyRunning": "Wird bereits ausgeführt",
     "runFailed": "Ausführung fehlgeschlagen",
-    "confirmFetch": "Jetzt abrufen?",
-    "confirmFetchBody": "Bitte etwas Geduld (~2 s zwischen den Anfragen) – dies kann eine Weile dauern.",
-    "confirmScanTitle": "Audioqualitätsprüfung durchführen?",
-    "scanBacklog": "Scan-Rückstand ({{count}})",
-    "scanAll": "Vollständiger erneuter Scan",
-    "scanAllWarning": "Jede Aufnahme in der Sammlung wird erneut gescannt – deutlich langsamer als ein Backlog-Scan.",
-    "scanNoBacklog": "Es gibt nichts zu scannen – der Rückstand ist leer.",
-    "versionChanged": "Konfiguration seit dem letzten Lauf geändert",
-    "chain": {
-      "runTrigger": "Aktualisieren {{trigger}}",
-      "runChain": "Ausführungskette",
-      "previewTitle": "Vorschau der Kette — {{scope}}",
-      "willRun": "Wird ausgeführt ({{count}})",
-      "wontRun": "Läuft nicht ({{count}})",
-      "excluded": "Ausgeschlossen ({{count}})",
-      "includeExpensive": "Schritte „Einlesen“ und „Veröffentlichen“ einbeziehen ({{count}})",
-      "confirm": "Ausführungskette",
-      "running": "Ausführung von {{step}} – {{done}}/{{total}}",
-      "stopping": "Wird angehalten…",
-      "outcomeOk": "{{ran}} von {{total}} Schritten wurden ausgeführt",
-      "outcomePartial": "{{ran}} von {{total}} Schritten wurden ausgeführt; {{step}} ist fehlgeschlagen",
-      "outcomeStopped": "Nach Schritt {{ran}} von {{total}} angehalten",
-      "alreadyRunning": "Eine Aktualisierungskette läuft bereits",
-      "busyStep": "{{steps}} ist noch beschäftigt – bitte versuchen Sie es in Kürze erneut"
-    },
     "queues": {
-      "title": "Wir warten auf dich",
-      "subtitle": "Von Menschen geprüfte Warteschlangen, die bestimmen, was die Pipeline veröffentlicht",
       "pending_one": "{{count}} – zu prüfender Eintrag",
       "pending_other": "Zu prüfende Elemente unter {{count}}",
-      "clear": "Keine Warteschlange",
-      "unknown": "In dieser Installation nicht verfügbar",
-      "review": "Bewertung",
-      "ratio": "{{done}} von {{total}} – kuratierte Daten",
-      "attention_one": "{{count}} zur Überprüfung",
-      "attention_other": "{{count}} zur Überprüfung",
-      "advisoryIntro": "Es ist in Ordnung, wenn es trotzdem läuft —",
       "advisoryQueue": "{{step}} wird {{count}} verwenden, {{queue}} ist noch nicht geprüft.",
       "advisoryPublish": "Die Veröffentlichung umfasst nun {{count}}-Elemente, die noch von niemandem geprüft wurden.",
       "labels": {
@@ -2334,7 +2279,73 @@
         "tapematch_dates": "Kandidatenpaare für ein Datum annehmen oder ablehnen",
         "qc_errors": "Überprüfung unter /qc-review",
         "qc_warnings": "Überprüfung unter /qc-review"
+      },
+      "ratio": "{{done}} von {{total}} fertiggestellt"
+    },
+    "title": "Aktualisierungen",
+    "summary": "{{total}} ausstehend: {{ready}} kann die App jetzt erledigen, {{long}}, {{needs}} brauchen dich.",
+    "longJobs_one": "{{count}} lange Aufgabe",
+    "longJobs_other": "{{count}} lange Aufgaben",
+    "footer": "{{fresh}} aktuell · {{untracked}} nicht erfasst",
+    "untrackedList": "Nicht nachverfolgt (es wird nicht angegeben, ob sie aktuell sind): {{steps}}.",
+    "time": {
+      "seconds": "Sekunden",
+      "minutes": "Minuten",
+      "hours": "Stunden"
+    },
+    "source": {
+      "lbSite": "LosslessBob-Website",
+      "yourFolders": "Ihre Ordner",
+      "externalSources": "Externe Quellen",
+      "publishing": "Veröffentlichung"
+    },
+    "update": {
+      "button_one": "{{count}} Schritt aktualisieren",
+      "button_other": "{{count}} Schritte aktualisieren",
+      "confirmTitle_one": "{{count}} Schritt aktualisieren?",
+      "confirmTitle_other": "{{count}} Schritte aktualisieren?",
+      "confirmBody": "Läuft im Hintergrund in der Reihenfolge der Abhängigkeiten. Sie können die App weiterhin nutzen; der Fortschritt wird auf der Karte angezeigt.",
+      "confirm": "Aktualisieren",
+      "advisoryOk": "Kann jetzt bereits ausgeführt werden – später überprüfen und erneut aktualisieren.",
+      "notIncluded": "Nicht enthalten: {{long}}- und {{needs}}-Elemente, die Sie benötigen. Diese verbleiben auf der Karte.",
+      "progress": "Aktualisierung – Schritt {{n}} von {{total}}: {{step}}",
+      "stop": "Nach diesem Schritt anhalten",
+      "stopping": "Wird angehalten…",
+      "outcomeOk": "Aktualisierung abgeschlossen: {{ran}} von {{total}} Schritten wurden ausgeführt",
+      "outcomePartial": "{{ran}} von {{total}} Schritten wurden ausgeführt; {{step}} ist fehlgeschlagen",
+      "outcomeStopped": "Nach Schritt {{ran}} von {{total}} angehalten",
+      "alreadyRunning": "Ein Update wird bereits ausgeführt",
+      "busyStep": "{{steps}} ist noch beschäftigt – bitte versuchen Sie es in Kürze erneut"
+    },
+    "ready": {
+      "title": "Bereit zur Aktualisierung",
+      "hint": "Die Schaltfläche „Aktualisieren“ führt diese Schritte der Reihe nach aus.",
+      "after_one": "Nach Schritt {{steps}}",
+      "after_other": "Nach den Schritten {{steps}}"
+    },
+    "long": {
+      "title": "Lange Aufgaben",
+      "hint": "Jeweils Stunden. Nie Teil eines Updates – starten Sie einen, wenn Sie die Arbeit unterbrechen.",
+      "start": "Starten",
+      "scanNew": "{{count}} neue scannen",
+      "rescanAll": "Alle erneut scannen…",
+      "rescanAllConfirm": "Alles erneut scannen",
+      "progress": "Ausführung von {{done}}/{{total}}",
+      "confirmStart": "{{step}} starten?",
+      "confirmStartBody": "In gemächlichem Tempo – dies kann mehrere Stunden dauern. Der Vorgang läuft im Hintergrund und kann angehalten werden.",
+      "confirmRescan": "Alle Aufnahmen erneut scannen?",
+      "confirmRescanBody": "Die gesamte Sammlung wird erneut gescannt, nicht nur neue Aufnahmen – dies dauert deutlich länger als das Scannen neuer Aufnahmen.",
+      "backlog": {
+        "scrape_entries_one": "{{count}} LB-Eintrag noch nicht erfasst",
+        "scrape_entries_other": "{{count}} LB-Einträge noch nicht erfasst",
+        "ranker_scan_one": "{{count}} Aufnahme wurde noch nie gescannt",
+        "ranker_scan_other": "{{count}}-Aufnahmen wurden noch nie gescannt"
       }
+    },
+    "needs": {
+      "title": "Braucht dich",
+      "hint": "Die App kann das nicht alleine. Jede Funktion wird dort geöffnet, wo Sie sie ausführen.",
+      "open": "Öffnen"
     }
   },
   "screenCoverage": {

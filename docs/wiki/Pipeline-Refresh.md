@@ -8,7 +8,9 @@
 
 Answers *"what in the data pipeline is out of date, and how do I run it?"* — a
 different subsystem from [Collection-Pipeline](Collection-Pipeline.md), which is
-about filing folders. Surface: the **Data freshness** card on ScreenHome, plus
+about filing folders. Surface: the **Updates** card on ScreenHome (was "Data freshness";
+redesigned 2026-09-21 into Ready / Long jobs / Needs you buckets from
+`refresh_exec.step_bucket`, one whole-pipeline Update button), plus
 `tools/refresh_status.py` for the same picture from a terminal. Four phases,
 all shipped 2026-08.
 

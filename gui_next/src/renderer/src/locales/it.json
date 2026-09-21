@@ -2222,29 +2222,8 @@
     }
   },
   "refresh": {
-    "title": "Aggiornamento dei dati",
-    "subtitle": "Cosa c'è di vecchio in cantiere al momento",
     "allUpToDate": "Tutto aggiornato",
-    "nOutOfDate_one": "{{count}} non più aggiornato",
-    "nOutOfDate_other": "{{count}} non più aggiornato",
     "publishLag": "Il master pubblicato è {{days}} giorni e {{changes}} LB presenta variazioni di stato rispetto alla versione locale.",
-    "goTo": "Vai alla schermata",
-    "backlog_one": "{{count}} in sospeso",
-    "backlog_other": "{{count}} in sospeso",
-    "unknownFootnote_one": "La fase {{count}} non presenta alcun segnale di freschezza",
-    "unknownFootnote_other": "I passaggi {{count}} non presentano alcun segnale di aggiornamento",
-    "state": {
-      "fresh": "Nuovo",
-      "stale": "Non aggiornato",
-      "blocked": "Bloccato",
-      "unknown": "Sconosciuto"
-    },
-    "triggers": {
-      "T1": "Nuovi dati LB",
-      "T2": "Nuove cartelle locali",
-      "T3": "Deriva a monte",
-      "T4": "Pubblica"
-    },
     "steps": {
       "flat_file_apply": "Applica l'aggiornamento del file flat",
       "db_import": "Importa database principale",
@@ -2280,43 +2259,9 @@
     "running": "In esecuzione…",
     "alreadyRunning": "Già in esecuzione",
     "runFailed": "Esecuzione non riuscita",
-    "confirmFetch": "Scaricare ora?",
-    "confirmFetchBody": "Con un ritmo moderato (circa 2 secondi tra una richiesta e l'altra) — l'operazione potrebbe richiedere un po' di tempo.",
-    "confirmScanTitle": "Eseguire la scansione della qualità audio?",
-    "scanBacklog": "Elaborazione degli elementi in sospeso ({{count}})",
-    "scanAll": "Nuova scansione completa",
-    "scanAllWarning": "Esegue una nuova scansione di ogni registrazione presente nella raccolta — operazione molto più lenta rispetto a una scansione degli elementi in sospeso.",
-    "scanNoBacklog": "Niente da scansionare — l'elenco delle attività in sospeso è vuoto.",
-    "versionChanged": "Configurazione modificata dall'ultima esecuzione",
-    "chain": {
-      "runTrigger": "Aggiorna {{trigger}}",
-      "runChain": "Catena di esecuzione",
-      "previewTitle": "Anteprima della catena — {{scope}}",
-      "willRun": "Funzionerà ({{count}})",
-      "wontRun": "Non funziona ({{count}})",
-      "excluded": "Esclusi ({{count}})",
-      "includeExpensive": "Includere le fasi di elaborazione e pubblicazione ({{count}})",
-      "confirm": "Catena di esecuzione",
-      "running": "In esecuzione {{step}} — {{done}}/{{total}}",
-      "stopping": "Interruzione…",
-      "outcomeOk": "Sono state eseguite le fasi {{ran}} di {{total}}",
-      "outcomePartial": "Sono state eseguite {{ran}} delle {{total}} fasi; {{step}} non è andata a buon fine",
-      "outcomeStopped": "Interruzione dopo il passaggio {{ran}} di {{total}}",
-      "alreadyRunning": "È già in esecuzione una catena di aggiornamento",
-      "busyStep": "{{steps}} ancora occupato — riprovare tra poco"
-    },
     "queues": {
-      "title": "Ti aspettiamo",
-      "subtitle": "Code di revisione manuale che determinano i contenuti pubblicati dalla pipeline",
       "pending_one": "Elemento {{count}} da revisionare",
       "pending_other": "Elementi {{count}} da revisionare",
-      "clear": "Nessuna attività in sospeso",
-      "unknown": "Non disponibile in questa installazione",
-      "review": "Recensione",
-      "ratio": "Date curate di {{done}} e {{total}}",
-      "attention_one": "{{count}} da revisionare",
-      "attention_other": "{{count}} da revisionare",
-      "advisoryIntro": "Va bene anche se viene eseguita comunque —",
       "advisoryQueue": "{{step}} utilizzerà {{count}} e {{queue}} non revisionato.",
       "advisoryPublish": "La pubblicazione ora include elementi {{count}} che nessuno ha ancora revisionato.",
       "labels": {
@@ -2334,7 +2279,73 @@
         "tapematch_dates": "Accettare o rifiutare le coppie candidate per una data",
         "qc_errors": "Revisione su /qc-review",
         "qc_warnings": "Revisione su /qc-review"
+      },
+      "ratio": "{{done}} di {{total}} completato"
+    },
+    "title": "Aggiornamenti",
+    "summary": "{{total}} in arretrato: {{ready}} eseguibili ora dall'app, {{long}}, {{needs}} aspettano te.",
+    "longJobs_one": "{{count}} lavoro lungo",
+    "longJobs_other": "{{count}} lavori lunghi",
+    "footer": "{{fresh}} aggiornati · {{untracked}} non monitorati",
+    "untrackedList": "Non monitorate (non viene segnalato se sono aggiornate): {{steps}}.",
+    "time": {
+      "seconds": "secondi",
+      "minutes": "minuti",
+      "hours": "ore"
+    },
+    "source": {
+      "lbSite": "Sito LosslessBob",
+      "yourFolders": "Le tue cartelle",
+      "externalSources": "Fonti esterne",
+      "publishing": "Pubblicazione"
+    },
+    "update": {
+      "button_one": "Aggiorna {{count}} passaggio",
+      "button_other": "Aggiorna {{count}} passaggi",
+      "confirmTitle_one": "Aggiornare {{count}} passaggio?",
+      "confirmTitle_other": "Aggiornare {{count}} passaggi?",
+      "confirmBody": "Viene eseguita in background, nell’ordine delle dipendenze. È possibile continuare a utilizzare l’app; lo stato di avanzamento viene visualizzato sulla scheda.",
+      "confirm": "Aggiorna",
+      "advisoryOk": "Per ora va bene così — da rivedere in seguito e aggiornare nuovamente.",
+      "notIncluded": "Non sono incluse: le voci {{long}} e {{needs}} che richiedono il tuo intervento. Queste rimangono sulla scheda.",
+      "progress": "Aggiornamento — fase {{n}} di {{total}}: {{step}}",
+      "stop": "Fermati dopo questo passaggio",
+      "stopping": "Interruzione…",
+      "outcomeOk": "Aggiornamento completato: sono state eseguite {{ran}} delle {{total}} fasi",
+      "outcomePartial": "Sono stati eseguiti {{ran}} passaggi su {{total}}; {{step}} non è andato a buon fine",
+      "outcomeStopped": "Interruzione dopo il passaggio {{ran}} di {{total}}",
+      "alreadyRunning": "È già in corso un aggiornamento",
+      "busyStep": "{{steps}} ancora occupato — riprovare tra poco"
+    },
+    "ready": {
+      "title": "Pronto per l'aggiornamento",
+      "hint": "Il pulsante «Aggiorna» esegue queste operazioni in ordine.",
+      "after_one": "Dopo il passaggio {{steps}}",
+      "after_other": "Dopo i passaggi {{steps}}"
+    },
+    "long": {
+      "title": "Lavori lunghi",
+      "hint": "Ore ciascuna. Non fa mai parte di un aggiornamento — avviane uno quando ti allontani.",
+      "start": "Inizio",
+      "scanNew": "Scansiona {{count}} nuove",
+      "rescanAll": "Esegui nuova scansione di tutto…",
+      "rescanAllConfirm": "Esegui una nuova scansione di tutto",
+      "progress": "Esecuzione di {{done}}/{{total}}",
+      "confirmStart": "Avvia {{step}}?",
+      "confirmStartBody": "Procedere con calma: l’operazione potrebbe richiedere diverse ore. Il programma viene eseguito in background e può essere interrotto.",
+      "confirmRescan": "Rieseguire la scansione di tutte le registrazioni?",
+      "confirmRescanBody": "Esegue una nuova scansione dell’intera collezione, non solo delle nuove registrazioni — operazione molto più lenta rispetto alla scansione delle nuove registrazioni.",
+      "backlog": {
+        "scrape_entries_one": "{{count}} Voce LB non ancora estratta",
+        "scrape_entries_other": "{{count}} Voci LB non ancora estratte",
+        "ranker_scan_one": "{{count}} registrazione mai scansionata",
+        "ranker_scan_other": "Registrazioni {{count}} mai scansionate"
       }
+    },
+    "needs": {
+      "title": "Aspettano te",
+      "hint": "L’app non può eseguire queste operazioni da sola. Ciascuna si apre nel punto in cui la avvii.",
+      "open": "Apri"
     }
   },
   "screenCoverage": {

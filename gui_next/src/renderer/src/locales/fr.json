@@ -2222,29 +2222,8 @@
     }
   },
   "refresh": {
-    "title": "Actualité des données",
-    "subtitle": "Ce qui est actuellement en attente dans le pipeline",
     "allUpToDate": "Tout est à jour",
-    "nOutOfDate_one": "{{count}} n'est plus à jour",
-    "nOutOfDate_other": "{{count}} n'est plus à jour",
     "publishLag": "La version principale publiée est {{days}} jours et {{changes}} jours de retard par rapport à la version locale en termes de modifications de statut.",
-    "goTo": "Aller à l'écran",
-    "backlog_one": "{{count}} en attente",
-    "backlog_other": "{{count}} en attente",
-    "unknownFootnote_one": "L'étape {{count}} ne présente aucun signal de fraîcheur",
-    "unknownFootnote_other": "Les étapes {{count}} ne comportent aucun indicateur d'actualité",
-    "state": {
-      "fresh": "Nouveau",
-      "stale": "Obsolète",
-      "blocked": "Bloqué",
-      "unknown": "Inconnu"
-    },
-    "triggers": {
-      "T1": "Nouvelles données LB",
-      "T2": "Nouveaux dossiers locaux",
-      "T3": "Dérive en amont",
-      "T4": "Publier"
-    },
     "steps": {
       "flat_file_apply": "Appliquer la mise à jour du fichier plat",
       "db_import": "Importer la base de données principale",
@@ -2280,43 +2259,9 @@
     "running": "Exécution en cours…",
     "alreadyRunning": "Déjà en service",
     "runFailed": "Échec de l'exécution",
-    "confirmFetch": "Télécharger maintenant ?",
-    "confirmFetchBody": "À un rythme modéré (environ 2 s entre chaque requête) — cela peut prendre un certain temps.",
-    "confirmScanTitle": "Lancer une analyse de la qualité audio ?",
-    "scanBacklog": "Liste des tâches en attente de numérisation ({{count}})",
-    "scanAll": "Nouvelle analyse complète",
-    "scanAllWarning": "Réanalyse chaque enregistrement de la collection — beaucoup plus lent qu'une analyse des enregistrements en attente.",
-    "scanNoBacklog": "Rien à analyser — le carnet de commandes est vide.",
-    "versionChanged": "Configuration modifiée depuis la dernière exécution",
-    "chain": {
-      "runTrigger": "Actualiser {{trigger}}",
-      "runChain": "Chaîne d'exécution",
-      "previewTitle": "Aperçu de la chaîne — {{scope}}",
-      "willRun": "Fonctionnera ({{count}})",
-      "wontRun": "Ne fonctionne pas ({{count}})",
-      "excluded": "Exclu ({{count}})",
-      "includeExpensive": "Inclure les étapes de transfert et de publication ({{count}})",
-      "confirm": "Chaîne d'exécution",
-      "running": "Exécution de {{step}} — {{done}}/{{total}}",
-      "stopping": "Arrêt…",
-      "outcomeOk": "{{ran}} des étapes {{total}} ont été exécutées",
-      "outcomePartial": "{{ran}} des étapes {{total}} ont été exécutées ; {{step}} a échoué",
-      "outcomeStopped": "Arrêt après l'étape {{ran}} sur {{total}}",
-      "alreadyRunning": "Une chaîne de rafraîchissement est déjà en cours d'exécution",
-      "busyStep": "{{steps}} toujours occupé — veuillez réessayer dans quelques instants"
-    },
     "queues": {
-      "title": "En attente de votre réponse",
-      "subtitle": "Files d'attente de vérification humaine qui déterminent le contenu publié par le pipeline",
       "pending_one": "Élément {{count}} à examiner",
       "pending_other": "Éléments {{count}} à vérifier",
-      "clear": "Rien en attente",
-      "unknown": "Non disponible dans cette installation",
-      "review": "Révision",
-      "ratio": "Dates {{done}} et {{total}} sélectionnées",
-      "attention_one": "{{count}} à réviser",
-      "attention_other": "{{count}} à réviser",
-      "advisoryIntro": "Le fait que cela fonctionne quand même ne pose pas de problème —",
       "advisoryQueue": "{{step}} utilisera {{count}} et {{queue}} (non révisé).",
       "advisoryPublish": "La publication inclut désormais les éléments {{count}} qui n'ont encore fait l'objet d'aucune révision.",
       "labels": {
@@ -2334,7 +2279,73 @@
         "tapematch_dates": "Accepter ou rejeter les paires de candidats pour une date",
         "qc_errors": "Révision sur /qc-review",
         "qc_warnings": "Révision sur /qc-review"
+      },
+      "ratio": "{{done}} de {{total}} terminé"
+    },
+    "title": "Mises à jour",
+    "summary": "{{total}} en retard : {{ready}} faisables maintenant par l'application, {{long}}, {{needs}} vous attendent.",
+    "longJobs_one": "{{count}} tâche longue",
+    "longJobs_other": "{{count}} tâches longues",
+    "footer": "{{fresh}} à jour · {{untracked}} non suivis",
+    "untrackedList": "Non suivi (ils n'indiquent pas s'ils sont à jour) : {{steps}}.",
+    "time": {
+      "seconds": "secondes",
+      "minutes": "minutes",
+      "hours": "heures"
+    },
+    "source": {
+      "lbSite": "Site LosslessBob",
+      "yourFolders": "Vos dossiers",
+      "externalSources": "Sources externes",
+      "publishing": "Publication"
+    },
+    "update": {
+      "button_one": "Mettre à jour {{count}} étape",
+      "button_other": "Mettre à jour {{count}} étapes",
+      "confirmTitle_one": "Mettre à jour {{count}} étape ?",
+      "confirmTitle_other": "Mettre à jour {{count}} étapes ?",
+      "confirmBody": "S'exécute en arrière-plan, dans l'ordre des dépendances. Vous pouvez continuer à utiliser l'application ; la progression s'affiche sur la carte.",
+      "confirm": "Mettre à jour",
+      "advisoryOk": "C'est bon pour l'instant — à relire plus tard et à mettre à jour à nouveau.",
+      "notIncluded": "Non inclus : les éléments {{long}} et {{needs}} dont vous avez besoin. Ils restent sur la carte.",
+      "progress": "Mise à jour — étape {{n}} de {{total}} : {{step}}",
+      "stop": "S'arrêter après cette étape",
+      "stopping": "Arrêt…",
+      "outcomeOk": "Mise à jour terminée : {{ran}} des étapes {{total}} ont été exécutées",
+      "outcomePartial": "{{ran}} des étapes {{total}} ont été exécutées ; {{step}} a échoué",
+      "outcomeStopped": "Arrêt après l'étape {{ran}} sur {{total}}",
+      "alreadyRunning": "Une mise à jour est déjà en cours d'exécution",
+      "busyStep": "{{steps}} est toujours occupé — veuillez réessayer dans quelques instants"
+    },
+    "ready": {
+      "title": "Prêt à être mis à jour",
+      "hint": "Le bouton « Mettre à jour » les exécute dans cet ordre.",
+      "after_one": "Après l'étape {{steps}}",
+      "after_other": "Après les étapes {{steps}}"
+    },
+    "long": {
+      "title": "Tâches longues",
+      "hint": "Heures chacune. Ne fait jamais partie de la mise à jour — lancez-en une lorsque vous vous absentez.",
+      "start": "Démarrer",
+      "scanNew": "Analyser {{count}} nouveaux",
+      "rescanAll": "Réanalyser tout…",
+      "rescanAllConfirm": "Tout réanalyser",
+      "progress": "Exécution de {{done}}/{{total}}",
+      "confirmStart": "Démarrer {{step}} ?",
+      "confirmStartBody": "À exécuter sans précipitation — cette opération peut prendre plusieurs heures. Elle s'exécute en arrière-plan et peut être interrompue.",
+      "confirmRescan": "Re-analyser chaque enregistrement ?",
+      "confirmRescanBody": "Réanalyse l'intégralité de la collection, et pas seulement les nouveaux enregistrements — cette opération est bien plus lente que l'analyse des nouveaux enregistrements.",
+      "backlog": {
+        "scrape_entries_one": "{{count}} Entrée LB non encore extraite",
+        "scrape_entries_other": "{{count}} Entrées LB non encore extraites",
+        "ranker_scan_one": "{{count}} : enregistrement jamais numérisé",
+        "ranker_scan_other": "Enregistrements {{count}} jamais numérisés"
       }
+    },
+    "needs": {
+      "title": "Vous attend",
+      "hint": "L'application ne peut pas les gérer toute seule. Chacune s'ouvre là où vous l'utilisez.",
+      "open": "Ouvrir"
     }
   },
   "screenCoverage": {

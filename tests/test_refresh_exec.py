@@ -19,7 +19,7 @@ import backend.job_progress as job_progress
 import backend.refresh as refresh_mod
 import backend.refresh_exec as refresh_exec_mod
 from backend.refresh import STEPS, RefreshStep, _topological_order, compute_plan
-from backend.refresh_exec import EXECUTORS, StepExecutor, plan_chain
+from backend.refresh_exec import EXECUTORS, StepExecutor, annotate_buckets, plan_chain, step_bucket
 
 # step_id -> (module path, [attribute names]) the wrapper functions in
 # refresh_exec.py resolve lazily. Kept independent of refresh_exec's own
@@ -606,3 +606,45 @@ def test_publish_advisory_when_master_publish_is_runnable(monkeypatch) -> None:
     publish = next(a for a in advisories if a["kind"] == "publish")
     assert publish["step_id"] == "master_publish"
     assert publish["count"] == 3
+
+
+# ── Updates card: whole-pipeline scope + buckets ─────────────────────────────
+
+def test_plan_chain_rejects_all_steps_combined_with_another_scope() -> None:
+    db_path = _make_db_path()
+    try:
+        plan_chain(all_steps=True, trigger="T1", db_path=db_path)
+        assert False, "expected ValueError for all_steps plus trigger"
+    except ValueError:
+        pass
+
+
+def test_plan_chain_all_steps_covers_every_trigger() -> None:
+    db_path = _make_db_path()
+    db.record_step_run("olof_parse", status="error", db_path=db_path)      # T3
+    db.record_step_run("ranker_rerank", status="error", db_path=db_path)   # T2
+    plan = plan_chain(all_steps=True, db_path=db_path)
+    work = _all_work_ids(plan)
+    assert "olof_parse" in work and "ranker_rerank" in work
+    assert plan["scope"]["all"] is True
+    _assert_buckets_are_topological_subsequences(plan)
+
+
+def test_ready_bucket_matches_the_update_chain_runnable_list() -> None:
+    """The card's 'ready' rows must be exactly what the Update button runs."""
+    db_path = _make_db_path()
+    for sid in ("olof_parse", "ranker_rerank", "scrape_entries", "db_import"):
+        db.record_step_run(sid, status="error", db_path=db_path)
+    status = annotate_buckets(compute_plan(db_path=db_path))
+    chain = plan_chain(all_steps=True, db_path=db_path)
+    assert status["update_order"] == [s["step_id"] for s in chain["runnable"]]
+
+
+def test_step_bucket_rules() -> None:
+    base = {"state": "stale", "human_gate": False, "cost": "fast"}
+    assert step_bucket({**base, "step_id": "olof_parse"}) == "ready"
+    assert step_bucket({**base, "step_id": "scrape_entries", "cost": "very_slow"}) == "long"
+    assert step_bucket({**base, "step_id": "db_import"}) == "needs_you"
+    assert step_bucket({**base, "step_id": "master_publish", "human_gate": True}) == "needs_you"
+    assert step_bucket({**base, "step_id": "olof_parse", "state": "fresh"}) == "fresh"
+    assert step_bucket({**base, "step_id": "olof_parse", "state": "unknown"}) == "untracked"

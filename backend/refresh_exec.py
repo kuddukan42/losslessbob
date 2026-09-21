@@ -431,10 +431,58 @@ def _pull_stale_ancestors(seed_ids, steps_by_id: dict[str, dict]) -> set[str]:
     return work
 
 
+def step_bucket(info: dict) -> str:
+    """Sort one ``compute_plan()`` step into the Updates card's bucket.
+
+    The card groups steps by who does the work, not by trigger or state:
+    ``ready`` steps are what the whole-pipeline Update chain runs, ``long``
+    steps are chainable but take hours so they are started on purpose, and
+    ``needs_you`` steps have no executor the chain can drive. A ``ready``
+    step is exactly one ``plan_chain(all_steps=True)`` puts in ``runnable``
+    (``blocked_by_running`` aside), so the card and the dialog always agree.
+
+    Args:
+        info: One entry of ``refresh.compute_plan()["steps"]``.
+
+    Returns:
+        ``'fresh'``, ``'untracked'`` (state ``unknown``), ``'needs_you'``,
+        ``'long'`` or ``'ready'``.
+    """
+    state = info["state"]
+    if state == "fresh":
+        return "fresh"
+    if state == "unknown":
+        return "untracked"
+    executor = EXECUTORS.get(info["step_id"])
+    if executor is None or executor.mode == "manual" or info["human_gate"]:
+        return "needs_you"
+    if info["cost"] == "very_slow":
+        return "long"
+    return "ready"
+
+
+def annotate_buckets(plan: dict) -> dict:
+    """Add ``bucket`` to every step and ``update_order`` to a status plan.
+
+    Mutates and returns ``plan`` (a ``refresh.compute_plan()`` result).
+    ``update_order`` lists the ``ready`` step ids in topological order -- the
+    order the Update chain will run them in.
+    """
+    for info in plan["steps"]:
+        info["bucket"] = step_bucket(info)
+    order_index = {sid: i for i, sid in enumerate(refresh._topological_order())}
+    plan["update_order"] = sorted(
+        (s["step_id"] for s in plan["steps"] if s["bucket"] == "ready"),
+        key=lambda sid: order_index.get(sid, len(order_index)),
+    )
+    return plan
+
+
 def plan_chain(
     *,
     step_id: str | None = None,
     trigger: str | None = None,
+    all_steps: bool = False,
     include_expensive: bool = False,
     db_path: str | None = None,
 ) -> dict:
@@ -446,11 +494,13 @@ def plan_chain(
     Args:
         step_id: Per-step scope -- plan the target step plus its stale (and
             stale-through-blocked) ancestors. Mutually exclusive with
-            ``trigger``.
+            ``trigger`` and ``all_steps``.
         trigger: Per-trigger scope (e.g. ``'T1'``) -- plan every stale/blocked
             step of that trigger plus the stale ancestors they depend on,
             even across trigger boundaries. Mutually exclusive with
-            ``step_id``.
+            ``step_id`` and ``all_steps``.
+        all_steps: Whole-pipeline scope -- every stale/blocked step, the
+            Updates card's single Update button.
         include_expensive: When False (the default), ``cost='very_slow'`` and
             ``human_gate=True`` steps are moved from ``runnable`` to
             ``excluded`` rather than executed.
@@ -464,10 +514,11 @@ def plan_chain(
         stops a chain from starting.
 
     Raises:
-        ValueError: if neither or both of ``step_id``/``trigger`` are given.
+        ValueError: unless exactly one of ``step_id``/``trigger``/``all_steps``
+            is given.
     """
-    if (step_id is None) == (trigger is None):
-        raise ValueError("plan_chain requires exactly one of step_id or trigger")
+    if (step_id is not None) + (trigger is not None) + bool(all_steps) != 1:
+        raise ValueError("plan_chain requires exactly one of step_id, trigger or all_steps")
 
     plan = refresh.compute_plan(db_path=db_path)
     steps_by_id = {s["step_id"]: s for s in plan["steps"]}
@@ -481,7 +532,8 @@ def plan_chain(
     else:
         seed_ids = {
             sid for sid, info in steps_by_id.items()
-            if info["trigger"] == trigger and info["state"] in ("stale", "blocked")
+            if (all_steps or info["trigger"] == trigger)
+            and info["state"] in ("stale", "blocked")
         }
         work_ids = _pull_stale_ancestors(seed_ids, steps_by_id)
 
@@ -532,7 +584,10 @@ def plan_chain(
         })
 
     return {
-        "scope": {"step_id": step_id, "trigger": trigger, "include_expensive": include_expensive},
+        "scope": {
+            "step_id": step_id, "trigger": trigger, "all": bool(all_steps),
+            "include_expensive": include_expensive,
+        },
         "runnable": runnable,
         "excluded": excluded,
         "manual": manual,
@@ -656,8 +711,11 @@ def run_chain_claimed(plan: dict, db_path: str | None = None) -> dict:
     started_at = time.strftime("%Y-%m-%d %H:%M:%S")
     conn = refresh.get_connection(db_path)
     scope = plan.get("scope") or {}
-    scope_kind = "step" if scope.get("step_id") else "trigger"
-    scope_value = scope.get("step_id") or scope.get("trigger") or ""
+    if scope.get("all"):
+        scope_kind, scope_value = "all", "all"
+    else:
+        scope_kind = "step" if scope.get("step_id") else "trigger"
+        scope_value = scope.get("step_id") or scope.get("trigger") or ""
 
     runnable = plan.get("runnable") or []
     ran: list[dict] = []

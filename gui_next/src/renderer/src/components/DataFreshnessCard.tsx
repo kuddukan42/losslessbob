@@ -1,76 +1,50 @@
-// "Data freshness" card — Pipeline Refresh Phase 1+2, spec §2.4
-// (instructions/PIPELINE_REFRESH_PHASE1.md, instructions/PIPELINE_REFRESH_PHASE2.md).
-// Reads GET /api/refresh/status and summarises stale/blocked pipeline steps
-// on ScreenHome.
+// "Updates" card on ScreenHome — the pipeline-freshness surface (Pipeline
+// Refresh phases 1–4, instructions/PIPELINE_REFRESH_PHASE{1,2,3,4}.md),
+// redesigned 2026-09-21 around one question: who does the work?
 //
-// Phase 1 is read-only (spec §6: "nothing new becomes executable"). Every
-// how_to_run is rendered as copyable text; the only exception is a small,
-// conservative prefix map from stable existing API namespaces to the screen
-// that already owns them (e.g. /api/pipeline/* -> the Pipeline screen) — those
-// render as a "Go to…" navigation button, never a route-firing button. When a
-// prefix isn't recognised the value falls back to copyable text, per the task
-// spec's "prefer copyable text everywhere if navigation targets aren't
-// obvious" guidance.
+//   Ready to update — chainable steps; ONE Update button runs them all, in
+//                     dependency order (POST /api/refresh/chain/start {all}).
+//   Long jobs       — chainable but hours long (cost very_slow); never part
+//                     of Update, each started on purpose with its own button.
+//   Needs you       — manual steps + pending gate queues; each row opens the
+//                     screen where the human does it.
 //
-// Phase 2 (TODO-306) adds real "Run" buttons for exactly the four newly
-// wrapped steps (RUNNABLE below) — every other row keeps the Phase 1
-// copyable-text/nav-button behaviour untouched.
+// The bucket is computed server-side (refresh_exec.step_bucket), so the
+// "Ready" rows are exactly what the Update chain runs. Trigger groups (T1–T4),
+// Stale/Blocked, cost pills and the include-expensive checkbox are
+// deliberately not shown — they were plumbing, not decisions for the user.
 
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import type { TFunction } from 'i18next'
 import { Card, Pill, Button, ConfirmDialog } from './primitives'
-import type { StatusTone } from './primitives'
 import { copyText } from '../lib/clipboard'
 
 const BASE = window.api.flaskBase
 
-// ── Types (mirrors backend/refresh.py's GET /api/refresh/status shape) ──────
+// ── Types (mirror backend/refresh.py + refresh_exec.annotate_buckets) ───────
 
 type Trigger = 'T1' | 'T2' | 'T3' | 'T4'
 type StepState = 'fresh' | 'stale' | 'blocked' | 'unknown'
-type VersionState = 'ok' | 'changed' | 'unstamped' | 'n/a'
-
-interface VersionInfo {
-  key: string | null
-  state: VersionState
-  expected: string | null
-  stored: string | null
-}
+type Bucket = 'ready' | 'long' | 'needs_you' | 'fresh' | 'untracked'
+type Cost = 'fast' | 'slow' | 'very_slow'
 
 interface RefreshStep {
   step_id: string
   label: string
   trigger: Trigger
-  kind: 'wholesale' | 'incremental' | 'manual'
   state: StepState
   reason: string
-  last_run: string | null
-  last_run_source: 'run_record' | 'watermark' | null
-  last_run_status: string | null
-  age_days: number | null
   backlog: number | null
-  blocked_by: string | null
   upstream: string[]
   how_to_run: string
-  cost: 'fast' | 'slow' | 'very_slow'
-  human_gate: boolean
-  version: VersionInfo
-  // Phase 4: orthogonal to `state` — a pending human queue annotates a step,
-  // it never restyles it as stale/blocked (spec §2 decision 3).
-  attention: QueueAttention[]
+  cost: Cost
+  bucket: Bucket
 }
-
-// ── Phase 4 queue types (mirrors backend/queues.py) ─────────────────────────
 
 type QueueKind = 'gate' | 'backlog'
 type QueueState = 'pending' | 'open' | 'clear' | 'unknown'
-
-interface QueueAttention {
-  queue_id: string
-  count: number
-  kind: QueueKind
-}
 
 interface RefreshQueue {
   queue_id: string
@@ -85,61 +59,19 @@ interface RefreshQueue {
 }
 
 interface RefreshStatus {
-  generated_at: string
-  stale_count: number
-  blocked_count: number
-  unknown_count: number
-  by_trigger: Record<Trigger, { total: number; stale: number; blocked: number; unknown: number }>
   publish_lag: {
     published_at: string | null
     lb_status_changes_since: number
-    entries_scraped_since: number
     days_since: number | null
   }
   steps: RefreshStep[]
+  update_order: string[]
   queues?: RefreshQueue[]
-  queue_pending_total?: number
-}
-
-const TRIGGER_ORDER: Trigger[] = ['T1', 'T2', 'T3', 'T4']
-
-const STATE_TONE: Record<StepState, StatusTone> = {
-  fresh: 'ok', stale: 'warn', blocked: 'bad', unknown: 'mute',
-}
-
-// ── Phase 3 chain types (mirrors backend/refresh_exec.py's plan_chain() /
-// get_status() / refresh_chain_runs shapes) ─────────────────────────────────
-
-type ChainScope = { step_id: string; trigger?: undefined } | { trigger: string; step_id?: undefined }
-
-interface ChainRunnableItem {
-  step_id: string
-  mode: 'inproc' | 'job'
-  cost: 'fast' | 'slow' | 'very_slow'
-  state: StepState
-  reason: string
-}
-
-interface ChainWhyItem {
-  step_id: string
-  why: string
-}
-
-interface ChainAdvisory {
-  queue_id: string | null
-  count: number
-  step_id: string
-  kind: 'queue' | 'publish'
 }
 
 interface ChainPlan {
-  scope: { step_id: string | null; trigger: string | null; include_expensive: boolean }
-  runnable: ChainRunnableItem[]
-  excluded: ChainWhyItem[]
-  manual: ChainWhyItem[]
-  blocked_by_running: string[]
-  advisories?: ChainAdvisory[]
-  planned_at: string
+  runnable: Array<{ step_id: string; cost: Cost }>
+  advisories?: Array<{ queue_id: string | null; count: number; step_id: string; kind: 'queue' | 'publish' }>
 }
 
 interface ChainStatusSnapshot {
@@ -147,37 +79,44 @@ interface ChainStatusSnapshot {
   done: number
   total: number
   current: string
-  errors: number
-  skipped: number
-  stage: string
   stop_requested: boolean
-  started_at: string | null
   sub_progress?: { done?: number; total?: number }
 }
 
 interface ChainHistoryEntry {
-  id: number
-  scope_kind: 'step' | 'trigger'
-  scope_value: string
-  started_at: string
-  finished_at: string | null
   status: 'ok' | 'partial' | 'stopped'
   steps: {
-    plan: ChainPlan
-    ran: Array<{ step_id: string; status: string }>
-    skipped: Array<{ step_id: string; reason?: string; status?: string }>
+    plan: { runnable?: unknown[] }
+    ran: Array<{ step_id: string }>
     errors: Array<{ step_id: string; message: string }>
   } | null
-  notes: string | null
 }
 
-const COST_TONE: Record<'fast' | 'slow' | 'very_slow', StatusTone> = {
-  fast: 'mute', slow: 'warn', very_slow: 'bad',
+interface JobSnapshot { running: boolean; done?: number; total?: number }
+
+// ── Static maps ─────────────────────────────────────────────────────────────
+
+// Plain-language time word per cost tier — replaces the fast/slow/very_slow pill.
+const COST_TIME = {
+  fast: 'seconds', slow: 'minutes', very_slow: 'hours',
+} as const satisfies Record<Cost, string>
+
+// Where each step's data comes from, shown as a muted column (was the T1–T4 group).
+const TRIGGER_SOURCE = {
+  T1: 'lbSite', T2: 'yourFolders', T3: 'externalSources', T4: 'publishing',
+} as const satisfies Record<Trigger, string>
+
+// Long jobs the card can start itself. `modes` = the ranker's backlog/all split.
+interface LongJobConfig { start: string; status: string; stop: string; modes?: boolean }
+const LONG_JOBS: Record<string, LongJobConfig> = {
+  scrape_entries: { start: '/api/scrape/start', status: '/api/scrape/status', stop: '/api/scrape/stop' },
+  ranker_scan: {
+    start: '/api/ranker/scan', status: '/api/ranker/scan/status', stop: '/api/ranker/scan/stop', modes: true,
+  },
 }
 
-// Stable existing API namespaces mapped to the screen that already owns them.
-// Conservative on purpose — see file header. Add entries only when a step's
-// how_to_run route is unambiguously owned by one existing screen.
+// Stable API namespaces mapped to the screen that owns them — a Needs-you
+// row's "Open" target. Unmapped routes fall back to a copyable command.
 const ROUTE_NAV_PREFIXES: Array<[prefix: string, path: string]> = [
   ['/api/pipeline', '/pipeline'],
   ['/api/flat_file', '/setup'],
@@ -188,654 +127,349 @@ const ROUTE_NAV_PREFIXES: Array<[prefix: string, path: string]> = [
 ]
 
 function navTargetForRoute(route: string): string | null {
+  if (!route.startsWith('POST ') && !route.startsWith('GET ')) return null
   const path = route.replace(/^(POST|GET)\s+/, '').trim()
   const hit = ROUTE_NAV_PREFIXES.find(([prefix]) => path.startsWith(prefix))
   return hit ? hit[1] : null
 }
 
-function fmtAge(ageDays: number | null): string {
-  if (ageDays === null) return '—'
-  return `${Math.max(0, ageDays)}d`
+const stepName = (t: TFunction, id: string, fallback?: string): string =>
+  t(`refresh.steps.${id}`, fallback ?? id)
+
+// ── Shared row / section chrome ─────────────────────────────────────────────
+
+const ROW: React.CSSProperties = {
+  display: 'flex', alignItems: 'center', gap: 12, padding: '9px 12px',
+  borderBottom: '1px solid var(--lbb-border)', flexWrap: 'wrap',
 }
+const MUTED: React.CSSProperties = { fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)' }
 
-// TODO-306 Phase 2: the four wrapped CLI-only steps get a real Run button.
-// { start } is always a POST route; { status, stop } are omitted for
-// ranker_rerank, which is synchronous/pure-DB (no background job to poll).
-interface RunnableConfig {
-  start: string
-  status?: string
-  stop?: string
-}
-
-const RUNNABLE: Record<string, RunnableConfig> = {
-  olof_fetch: {
-    start: '/api/olof/fetch', status: '/api/olof/fetch/status', stop: '/api/olof/fetch/stop',
-  },
-  bobserve_fetch: {
-    start: '/api/bobserve/fetch', status: '/api/bobserve/fetch/status',
-    stop: '/api/bobserve/fetch/stop',
-  },
-  ranker_scan: {
-    start: '/api/ranker/scan', status: '/api/ranker/scan/status', stop: '/api/ranker/scan/stop',
-  },
-  ranker_rerank: { start: '/api/ranker/rerank' },
-}
-
-interface JobStatusSnapshot {
-  running: boolean
-  done?: number
-  total?: number
-}
-
-function RunControl({ step, onRefresh }: { step: RefreshStep; onRefresh: () => void }): React.JSX.Element {
-  const { t } = useTranslation()
-  const config = RUNNABLE[step.step_id]
-  const [confirming, setConfirming] = useState<'fetch' | 'scan' | null>(null)
-  const [running, setRunning] = useState(false)
-  const [progress, setProgress] = useState<{ done?: number; total?: number } | null>(null)
-  const [error, setError] = useState<string | null>(null)
-  const pollRef = useRef<number | null>(null)
-
-  useEffect(() => () => { if (pollRef.current !== null) window.clearInterval(pollRef.current) }, [])
-
-  const pollStatus = useCallback(() => {
-    if (!config.status) return
-    pollRef.current = window.setInterval(() => {
-      fetch(`${BASE}${config.status}`)
-        .then(r => (r.ok ? r.json() : Promise.reject(new Error('status'))))
-        .then((snap: JobStatusSnapshot) => {
-          setProgress({ done: snap.done, total: snap.total })
-          if (!snap.running) {
-            if (pollRef.current !== null) window.clearInterval(pollRef.current)
-            pollRef.current = null
-            setRunning(false)
-            setProgress(null)
-            onRefresh()
-          }
-        })
-        .catch(() => {})
-    }, 2000)
-  }, [config.status, onRefresh])
-
-  const startRun = useCallback((body: Record<string, unknown> = {}) => {
-    setError(null)
-    setConfirming(null)
-    setRunning(true)
-    fetch(`${BASE}${config.start}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    })
-      .then(async r => {
-        if (r.status === 409) {
-          setError(t('refresh.alreadyRunning'))
-          setRunning(false)
-          return
-        }
-        if (!r.ok) {
-          setError(t('refresh.runFailed'))
-          setRunning(false)
-          return
-        }
-        const data = await r.json().catch(() => ({}))
-        if (data.status === 'noop') {
-          setRunning(false)
-          onRefresh()
-          return
-        }
-        if (config.status) {
-          pollStatus()
-        } else {
-          // Synchronous route (ranker_rerank) — the POST already awaited completion.
-          setRunning(false)
-          onRefresh()
-        }
-      })
-      .catch(() => {
-        setError(t('refresh.runFailed'))
-        setRunning(false)
-      })
-  }, [config.start, config.status, onRefresh, pollStatus, t])
-
-  const stop = useCallback(() => {
-    if (!config.stop) return
-    fetch(`${BASE}${config.stop}`, { method: 'POST' }).catch(() => {})
-  }, [config.stop])
-
-  const label = progress?.total
-    ? `${t('refresh.running')} ${progress.done ?? 0}/${progress.total}`
-    : t('refresh.running')
-
+function NameCell({ name, why }: { name: string; why?: string }): React.JSX.Element {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-      {error && (
-        <Pill tone="bad" soft title={error}>{error}</Pill>
-      )}
-      {running ? (
-        <>
-          <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>{label}</span>
-          {config.stop && (
-            <Button variant="ghost" size="sm" onClick={stop}>{t('refresh.stop')}</Button>
-          )}
-        </>
-      ) : (
-        <Button
-          variant="primary" size="sm"
-          onClick={() => {
-            if (step.step_id === 'ranker_scan') setConfirming('scan')
-            else if (config.status) setConfirming('fetch')
-            else startRun()
-          }}
-        >
-          {t('refresh.run')}
-        </Button>
-      )}
-
-      {confirming === 'fetch' && (
-        <ConfirmDialog
-          title={t('refresh.confirmFetch')}
-          body={t('refresh.confirmFetchBody')}
-          confirmLabel={t('refresh.run')}
-          cancelLabel={t('common.cancel', 'Cancel')}
-          onConfirm={() => startRun()}
-          onCancel={() => setConfirming(null)}
-        />
-      )}
-
-      {confirming === 'scan' && (
-        <div style={{
-          position: 'fixed', inset: 0, zIndex: 1000,
-          background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-        }}>
-          <div style={{
-            background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
-            borderRadius: 10, padding: 24, maxWidth: 440, width: '90%',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
-          }}>
-            <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 8 }}>
-              {t('refresh.confirmScanTitle')}
-            </div>
-            <div style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-bad-fg)', marginBottom: 20, lineHeight: 1.5 }}>
-              {t('refresh.scanAllWarning')}
-            </div>
-            <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
-              <Button variant="ghost" size="sm" onClick={() => setConfirming(null)}>
-                {t('common.cancel', 'Cancel')}
-              </Button>
-              <Button variant="danger" size="sm" onClick={() => startRun({ mode: 'all' })}>
-                {t('refresh.scanAll')}
-              </Button>
-              <Button variant="primary" size="sm" onClick={() => startRun({ mode: 'backlog' })}>
-                {t('refresh.scanBacklog', { count: step.backlog ?? 0 })}
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
+    <div style={{ flex: '1 1 220px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: 2 }}>
+      <span style={{ fontSize: 'var(--lbb-fs-12-5)', fontWeight: 500 }}>{name}</span>
+      {why && <span style={MUTED}>{why}</span>}
     </div>
   )
 }
 
-// ── Phase 3: chain preview dialog + buttons ─────────────────────────────────
-// Fed by /api/refresh/chain/preview; Confirm re-plans server-side via
-// /api/refresh/chain/start (spec §3.4 — never trust a client-side plan).
-// Modeled on RunControl's own hand-rolled dialog markup above (ConfirmDialog's
-// `body: string` prop can't carry the runnable/won't-run lists this needs).
+function Section({ title, hint, children }: {
+  title: string; hint: string; children: React.ReactNode
+}): React.JSX.Element {
+  return (
+    <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
+        <h3 style={{
+          margin: 0, fontSize: 'var(--lbb-fs-11)', fontWeight: 600, textTransform: 'uppercase',
+          letterSpacing: 0.5, color: 'var(--lbb-fg)',
+        }}>{title}</h3>
+        <span style={MUTED}>{hint}</span>
+      </div>
+      <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 8, overflow: 'hidden' }}>
+        {/* -1px swallows the last row's bottom border into the frame's own. */}
+        <div style={{ marginBottom: -1 }}>{children}</div>
+      </div>
+    </section>
+  )
+}
 
-function ChainPreviewDialog({
-  scope, scopeLabel, onClose, onStarted,
-}: {
-  scope: ChainScope
-  scopeLabel: string
+function Modal({ children }: { children: React.ReactNode }): React.JSX.Element {
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.4)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+    }}>
+      <div role="dialog" style={{
+        background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', borderRadius: 10,
+        padding: 24, maxWidth: 520, width: '92%', maxHeight: '80vh', overflowY: 'auto',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.25)', display: 'flex', flexDirection: 'column', gap: 16,
+      }}>
+        {children}
+      </div>
+    </div>
+  )
+}
+
+// ── Update confirm dialog ───────────────────────────────────────────────────
+// Fed by /api/refresh/chain/preview {all}; confirm re-plans server-side via
+// /api/refresh/chain/start (spec §3.4 — never trust a client-side plan).
+
+function UpdateDialog({ notIncluded, onClose, onStarted }: {
+  notIncluded: { long: number; needs: number }
   onClose: () => void
-  onStarted: () => void
+  onStarted: (steps: string[]) => void
 }): React.JSX.Element {
   const { t } = useTranslation()
   const [plan, setPlan] = useState<ChainPlan | null>(null)
-  const [includeExpensive, setIncludeExpensive] = useState(false)
   const [starting, setStarting] = useState(false)
   const [warn, setWarn] = useState<string | null>(null)
 
-  const fetchPreview = useCallback((expensive: boolean) => {
+  useEffect(() => {
     fetch(`${BASE}/api/refresh/chain/preview`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...scope, include_expensive: expensive }),
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ all: true }),
     })
       .then(r => (r.ok ? r.json() : Promise.reject(new Error('preview'))))
       .then((data: ChainPlan) => setPlan(data))
-      .catch(() => {})
-    // scope is a stable prop for the dialog's lifetime (one scope per open).
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEffect(() => { fetchPreview(includeExpensive) }, [fetchPreview, includeExpensive])
+      .catch(() => setWarn(t('refresh.runFailed')))
+  }, [t])
 
   const confirm = useCallback(() => {
     setWarn(null)
     setStarting(true)
     fetch(`${BASE}/api/refresh/chain/start`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...scope, include_expensive: includeExpensive }),
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ all: true }),
     })
       .then(async r => {
-        if (r.status === 409) {
-          const body = await r.json().catch(() => ({}))
-          if (body.error === 'blocked_by_running' && Array.isArray(body.blocked_by_running)) {
-            setWarn(t('refresh.chain.busyStep', { steps: body.blocked_by_running.join(', ') }))
-          } else {
-            setWarn(t('refresh.chain.alreadyRunning'))
-          }
-          setStarting(false)
-          return
-        }
-        if (!r.ok) {
-          setWarn(t('refresh.runFailed'))
-          setStarting(false)
-          return
-        }
+        const body = await r.json().catch(() => ({}))
         setStarting(false)
-        onStarted()
+        if (r.status === 409) {
+          setWarn(body.error === 'blocked_by_running' && Array.isArray(body.blocked_by_running)
+            ? t('refresh.update.busyStep', {
+              steps: body.blocked_by_running.map((id: string) => stepName(t, id)).join(', '),
+            })
+            : t('refresh.update.alreadyRunning'))
+          return
+        }
+        if (!r.ok) { setWarn(t('refresh.runFailed')); return }
+        onStarted(Array.isArray(body.steps) ? body.steps : [])
         onClose()
       })
-      .catch(() => {
-        setWarn(t('refresh.runFailed'))
-        setStarting(false)
-      })
-  }, [scope, includeExpensive, onStarted, onClose, t])
+      .catch(() => { setStarting(false); setWarn(t('refresh.runFailed')) })
+  }, [onStarted, onClose, t])
 
   const runnable = plan?.runnable ?? []
-  const manual = plan?.manual ?? []
-  const excluded = plan?.excluded ?? []
   const advisories = plan?.advisories ?? []
-  const wontRunOpen = manual.length > runnable.length
 
   return (
-    <div style={{
-      position: 'fixed', inset: 0, zIndex: 1000,
-      background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-    }}>
-      <div style={{
-        background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
-        borderRadius: 10, padding: 24, maxWidth: 520, width: '92%', maxHeight: '80vh',
-        overflowY: 'auto', boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
-      }}>
-        <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 12 }}>
-          {t('refresh.chain.previewTitle', { scope: scopeLabel })}
+    <Modal>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+        <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700 }}>
+          {plan ? t('refresh.update.confirmTitle', { count: runnable.length }) : t('common.loading', 'Loading…')}
         </div>
-
-        {!plan ? (
-          <div style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg3)' }}>{t('common.loading', 'Loading…')}</div>
-        ) : (
-          <>
-            <div style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg2)', marginBottom: 6 }}>
-              {t('refresh.chain.willRun', { count: runnable.length })}
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 14 }}>
-              {runnable.map((item, i) => (
-                <div key={item.step_id} style={{
-                  display: 'flex', alignItems: 'center', gap: 8, fontSize: 'var(--lbb-fs-12)',
-                }}>
-                  <span style={{ color: 'var(--lbb-fg3)', width: 18, textAlign: 'right' }}>{i + 1}.</span>
-                  <span style={{ flex: 1, minWidth: 0 }}>{t(`refresh.steps.${item.step_id}`, item.step_id)}</span>
-                  <Pill tone={COST_TONE[item.cost]} soft>{item.cost}</Pill>
-                </div>
-              ))}
-              {runnable.length === 0 && (
-                <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)' }}>—</div>
-              )}
-            </div>
-
-            {manual.length > 0 && (
-              <details open={wontRunOpen} style={{ marginBottom: 14 }}>
-                <summary style={{
-                  cursor: 'pointer', fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg2)',
-                }}>
-                  {t('refresh.chain.wontRun', { count: manual.length })}
-                </summary>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginTop: 8 }}>
-                  {manual.map(item => (
-                    <div key={item.step_id} style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-                      <strong style={{ color: 'var(--lbb-fg2)' }}>
-                        {t(`refresh.steps.${item.step_id}`, item.step_id)}
-                      </strong>
-                      {' — '}{item.why}
-                    </div>
-                  ))}
-                </div>
-              </details>
-            )}
-
-            {excluded.length > 0 && (
-              <div style={{ marginBottom: 14 }}>
-                <label style={{
-                  display: 'flex', alignItems: 'center', gap: 8, fontSize: 'var(--lbb-fs-12)', cursor: 'pointer',
-                }}>
-                  <input
-                    type="checkbox" checked={includeExpensive}
-                    onChange={e => setIncludeExpensive(e.target.checked)}
-                  />
-                  {t('refresh.chain.includeExpensive', { count: excluded.length })}
-                </label>
-                {!includeExpensive && (
-                  <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 4, marginLeft: 24 }}>
-                    {t('refresh.chain.excluded', { count: excluded.length })}:{' '}
-                    {excluded.map(item => t(`refresh.steps.${item.step_id}`, item.step_id)).join(', ')}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Phase 4 §3.5: advisories are text, never a gate — Confirm stays enabled. */}
-            {advisories.length > 0 && (
-              <div style={{ marginBottom: 14 }}>
-                <div style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg2)', marginBottom: 4 }}>
-                  {t('refresh.queues.advisoryIntro')}
-                </div>
-                <ul style={{
-                  margin: 0, paddingLeft: 18, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)',
-                }}>
-                  {advisories.map((adv, i) => (
-                    <li key={`${adv.kind}-${adv.queue_id ?? 'all'}-${i}`}>
-                      {adv.kind === 'publish'
-                        ? t('refresh.queues.advisoryPublish', { count: adv.count })
-                        : t('refresh.queues.advisoryQueue', {
-                          step: t(`refresh.steps.${adv.step_id}`, adv.step_id),
-                          count: adv.count,
-                          queue: t(`refresh.queues.labels.${adv.queue_id}`, adv.queue_id ?? ''),
-                        })}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {warn && <Pill tone="bad" soft title={warn} style={{ marginBottom: 12 }}>{warn}</Pill>}
-
-            <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
-              <Button variant="ghost" size="sm" onClick={onClose}>{t('common.cancel', 'Cancel')}</Button>
-              <Button
-                variant="primary" size="sm" disabled={starting || runnable.length === 0}
-                onClick={confirm}
-              >
-                {t('refresh.chain.confirm')}
-              </Button>
-            </div>
-          </>
-        )}
+        <div style={MUTED}>{t('refresh.update.confirmBody')}</div>
       </div>
+
+      {plan && (
+        <ol style={{ margin: 0, padding: 0, listStyle: 'none', border: '1px solid var(--lbb-border)', borderRadius: 8 }}>
+          {runnable.map((item, i) => (
+            <li key={item.step_id} style={{ ...ROW, padding: '7px 12px' }}>
+              <span style={{ width: 16, textAlign: 'right', fontFamily: 'var(--lbb-mono)', ...MUTED }}>{i + 1}</span>
+              <span style={{ flex: 1, fontSize: 'var(--lbb-fs-12-5)' }}>{stepName(t, item.step_id)}</span>
+              <span style={MUTED}>{t(`refresh.time.${COST_TIME[item.cost]}`)}</span>
+            </li>
+          ))}
+        </ol>
+      )}
+
+      {/* Phase 4 §3.5: advisories are text, never a gate — Update stays enabled. */}
+      {advisories.length > 0 && (
+        <div style={{
+          padding: '10px 12px', borderRadius: 8, background: 'var(--lbb-warn-bg)',
+          fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg)', lineHeight: 1.5,
+        }}>
+          {advisories.map((adv, i) => (
+            <div key={`${adv.kind}-${adv.queue_id ?? 'all'}-${i}`}>
+              {adv.kind === 'publish'
+                ? t('refresh.queues.advisoryPublish', { count: adv.count })
+                : t('refresh.queues.advisoryQueue', {
+                  step: stepName(t, adv.step_id), count: adv.count,
+                  queue: t(`refresh.queues.labels.${adv.queue_id}`, adv.queue_id ?? ''),
+                })}
+            </div>
+          ))}
+          <div style={{ color: 'var(--lbb-fg2)' }}>{t('refresh.update.advisoryOk')}</div>
+        </div>
+      )}
+
+      {(notIncluded.long > 0 || notIncluded.needs > 0) && (
+        <div style={MUTED}>
+          {t('refresh.update.notIncluded', {
+            needs: notIncluded.needs, long: t('refresh.longJobs', { count: notIncluded.long }),
+          })}
+        </div>
+      )}
+
+      {warn && <Pill tone="bad" soft title={warn}>{warn}</Pill>}
+
+      <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
+        <Button variant="ghost" onClick={onClose}>{t('common.cancel', 'Cancel')}</Button>
+        <Button variant="primary" disabled={!plan || starting || runnable.length === 0} onClick={confirm}>
+          {t('refresh.update.confirm')}
+        </Button>
+      </div>
+    </Modal>
+  )
+}
+
+// ── Long-job row ────────────────────────────────────────────────────────────
+
+function LongJobRow({ step, onDone }: { step: RefreshStep; onDone: () => void }): React.JSX.Element {
+  const { t } = useTranslation()
+  const config = LONG_JOBS[step.step_id]
+  const [snap, setSnap] = useState<JobSnapshot | null>(null)
+  const [confirming, setConfirming] = useState<'start' | 'all' | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  const pollRef = useRef<number | null>(null)
+  const wasRunning = useRef(false)
+
+  const poll = useCallback(() => {
+    if (!config) return
+    fetch(`${BASE}${config.status}`)
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error('status'))))
+      .then((s: JobSnapshot) => {
+        setSnap(s)
+        if (s.running) {
+          wasRunning.current = true
+          if (pollRef.current === null) pollRef.current = window.setInterval(poll, 2000)
+        } else {
+          if (pollRef.current !== null) { window.clearInterval(pollRef.current); pollRef.current = null }
+          if (wasRunning.current) { wasRunning.current = false; onDone() }
+        }
+      })
+      .catch(() => {})
+  }, [config, onDone])
+
+  // A job started elsewhere (Scraper screen, another window) shows as running here too.
+  useEffect(() => {
+    poll()
+    return () => { if (pollRef.current !== null) window.clearInterval(pollRef.current) }
+  }, [poll])
+
+  const start = useCallback((body: Record<string, unknown>) => {
+    if (!config) return
+    setConfirming(null)
+    setError(null)
+    fetch(`${BASE}${config.start}`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
+    })
+      .then(r => {
+        if (r.status === 409) setError(t('refresh.alreadyRunning'))
+        else if (!r.ok) setError(t('refresh.runFailed'))
+        else { wasRunning.current = true; poll() }
+      })
+      .catch(() => setError(t('refresh.runFailed')))
+  }, [config, poll, t])
+
+  const stop = useCallback(() => {
+    if (config) fetch(`${BASE}${config.stop}`, { method: 'POST' }).catch(() => {})
+  }, [config])
+
+  const name = stepName(t, step.step_id, step.label)
+  const why = step.backlog !== null
+    ? t(`refresh.long.backlog.${step.step_id}`, { count: step.backlog, defaultValue: step.reason })
+    : step.reason
+
+  let controls: React.JSX.Element
+  if (!config) {
+    controls = <FallbackAction route={step.how_to_run} />
+  } else if (snap?.running) {
+    controls = (
+      <>
+        <span style={MUTED}>
+          {snap.total ? t('refresh.long.progress', { done: snap.done ?? 0, total: snap.total }) : t('refresh.running')}
+        </span>
+        <Button variant="ghost" onClick={stop}>{t('refresh.stop')}</Button>
+      </>
+    )
+  } else if (config.modes) {
+    controls = (
+      <>
+        <Button variant="secondary" disabled={!step.backlog} onClick={() => start({ mode: 'backlog' })}>
+          {t('refresh.long.scanNew', { count: step.backlog ?? 0 })}
+        </Button>
+        <Button variant="ghost" onClick={() => setConfirming('all')}>{t('refresh.long.rescanAll')}</Button>
+      </>
+    )
+  } else {
+    controls = <Button variant="secondary" onClick={() => setConfirming('start')}>{t('refresh.long.start')}</Button>
+  }
+
+  return (
+    <div style={ROW}>
+      <NameCell name={name} why={why} />
+      <span style={{ ...MUTED, flex: '0 0 auto' }}>{t('refresh.time.hours')}</span>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginLeft: 'auto' }}>
+        {error && <Pill tone="bad" soft>{error}</Pill>}
+        {controls}
+      </div>
+      {confirming === 'start' && (
+        <ConfirmDialog
+          title={t('refresh.long.confirmStart', { step: name })}
+          body={t('refresh.long.confirmStartBody')}
+          confirmLabel={t('refresh.long.start')} cancelLabel={t('common.cancel', 'Cancel')}
+          onConfirm={() => start({})} onCancel={() => setConfirming(null)}
+        />
+      )}
+      {confirming === 'all' && (
+        <ConfirmDialog
+          title={t('refresh.long.confirmRescan')}
+          body={t('refresh.long.confirmRescanBody')}
+          confirmLabel={t('refresh.long.rescanAllConfirm')} cancelLabel={t('common.cancel', 'Cancel')}
+          onConfirm={() => start({ mode: 'all' })} onCancel={() => setConfirming(null)}
+        />
+      )}
     </div>
   )
 }
 
-function ChainButton({
-  label, scope, scopeLabel, onStarted,
-}: {
-  label: string
-  scope: ChainScope
-  scopeLabel: string
-  onStarted: () => void
-}): React.JSX.Element {
-  const [open, setOpen] = useState(false)
-  return (
-    <>
-      <Button variant="secondary" size="sm" onClick={() => setOpen(true)}>{label}</Button>
-      {open && (
-        <ChainPreviewDialog
-          scope={scope} scopeLabel={scopeLabel}
-          onClose={() => setOpen(false)}
-          onStarted={onStarted}
-        />
-      )}
-    </>
-  )
-}
+// ── Needs-you row ───────────────────────────────────────────────────────────
 
-function HowToRun({
-  step, onRefresh, onChainStarted,
-}: { step: RefreshStep; onRefresh: () => void; onChainStarted: () => void }): React.JSX.Element {
+function FallbackAction({ route }: { route: string }): React.JSX.Element {
   const { t } = useTranslation()
-  const navigate = useNavigate()
-
-  // Phase 3 §3.6: a blocked row can't be fixed by running itself (its
-  // upstream is what's stale) — replace the copy-fallback with a chain
-  // button regardless of whether the step also happens to be RUNNABLE.
-  if (step.state === 'blocked') {
-    return (
-      <ChainButton
-        label={t('refresh.chain.runChain')}
-        scope={{ step_id: step.step_id }}
-        scopeLabel={t(`refresh.steps.${step.step_id}`, step.label)}
-        onStarted={onChainStarted}
-      />
-    )
-  }
-
-  if (RUNNABLE[step.step_id]) {
-    return <RunControl step={step} onRefresh={onRefresh} />
-  }
-
-  const route = step.how_to_run
-  const isRoute = route.startsWith('POST ') || route.startsWith('GET ')
-  const navTarget = isRoute ? navTargetForRoute(route) : null
-
-  if (navTarget) {
-    return (
-      <Button variant="ghost" size="sm" iconRight="chevRight" onClick={() => navigate(navTarget)}>
-        {t('refresh.goTo')}
-      </Button>
-    )
-  }
-
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 6, minWidth: 0 }}>
       <code style={{
-        fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', background: 'var(--lbb-surface2)',
+        fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)', background: 'var(--lbb-surface2)',
         border: '1px solid var(--lbb-border)', borderRadius: 5, padding: '2px 6px',
-        overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 260,
-      }}>{route}</code>
-      <Button
-        variant="ghost" size="sm" icon="copy"
-        title={t('common.copy')}
-        onClick={() => { void copyText(route) }}
-      >{t('common.copy')}</Button>
+        overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 240,
+      }} title={route}>{route}</code>
+      <Button variant="ghost" size="sm" icon="copy" onClick={() => { void copyText(route) }}>
+        {t('common.copy')}
+      </Button>
     </div>
   )
 }
 
-// Phase 4 §3.5: a distinct, quieter treatment than any state chip — a queue is
-// not staleness, and colouring it like one would train the user to read "needs
-// a human" as "the pipeline is broken".
-function AttentionMarker({
-  attention, queues,
-}: { attention: QueueAttention[]; queues: RefreshQueue[] }): React.JSX.Element | null {
-  const { t } = useTranslation()
-  const navigate = useNavigate()
-  const gates = attention.filter(a => a.kind === 'gate')
-  if (gates.length === 0) return null
-
-  return (
-    <>
-      {gates.map(entry => {
-        const queue = queues.find(q => q.queue_id === entry.queue_id)
-        const screen = queue?.screen ?? null
-        const label = t(`refresh.queues.labels.${entry.queue_id}`, entry.queue_id)
-        const text = `⚑ ${t('refresh.queues.attention', { count: entry.count })}`
-        const style: React.CSSProperties = {
-          fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)',
-          background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
-          borderRadius: 5, padding: '1px 6px', whiteSpace: 'nowrap',
-        }
-        if (!screen) return <span key={entry.queue_id} style={style} title={label}>{text}</span>
-        return (
-          <button
-            key={entry.queue_id} type="button" title={label}
-            onClick={() => navigate(screen)}
-            style={{ ...style, cursor: 'pointer', font: 'inherit', fontSize: 'var(--lbb-fs-10-5)' }}
-          >
-            {text}
-          </button>
-        )
-      })}
-    </>
-  )
-}
-
-function StepRow({
-  step, queues, onRefresh, onChainStarted,
-}: {
-  step: RefreshStep
-  queues: RefreshQueue[]
-  onRefresh: () => void
-  onChainStarted: () => void
+function NeedsYouRow({ name, why, screen, route }: {
+  name: string; why: string; screen: string | null; route?: string
 }): React.JSX.Element {
   const { t } = useTranslation()
-  const tooltip = step.version?.state === 'changed'
-    ? `${step.reason} — ${t('refresh.versionChanged')}`
-    : step.reason
-  return (
-    <div style={{
-      display: 'flex', alignItems: 'center', gap: 10, padding: '7px 4px',
-      borderBottom: '1px solid var(--lbb-border)', flexWrap: 'wrap',
-    }}>
-      <span style={{ flex: '1 1 160px', fontSize: 'var(--lbb-fs-12-5)', minWidth: 0 }}>
-        {t(`refresh.steps.${step.step_id}`, step.label)}
-      </span>
-      <Pill tone={STATE_TONE[step.state]} soft title={tooltip}>{t(`refresh.state.${step.state}`)}</Pill>
-      <AttentionMarker attention={step.attention ?? []} queues={queues} />
-      <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', width: 34, textAlign: 'right' }}>
-        {fmtAge(step.age_days)}
-      </span>
-      {step.backlog !== null && (
-        <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>
-          {t('refresh.backlog', { count: step.backlog })}
-        </span>
-      )}
-      <HowToRun step={step} onRefresh={onRefresh} onChainStarted={onChainStarted} />
-    </div>
-  )
-}
-
-// ── Phase 4: the queue panel ────────────────────────────────────────────────
-// A `clear` gate renders muted with a check rather than disappearing: a queue
-// that vanished when empty would leave the user unable to confirm it is empty.
-
-function GateQueueRow({ queue }: { queue: RefreshQueue }): React.JSX.Element {
-  const { t } = useTranslation()
   const navigate = useNavigate()
-  const pending = queue.state === 'pending'
-  const label = t(`refresh.queues.labels.${queue.queue_id}`, queue.label)
-  const action = t(`refresh.queues.actions.${queue.queue_id}`, queue.action)
-
-  let pill: React.JSX.Element
-  if (queue.state === 'unknown') {
-    pill = <Pill tone="mute" soft>{t('refresh.queues.unknown')}</Pill>
-  } else if (pending) {
-    pill = <Pill tone="warn" soft>{t('refresh.queues.pending', { count: queue.count ?? 0 })}</Pill>
-  } else {
-    pill = <Pill tone="mute" soft>{`✓ ${t('refresh.queues.clear')}`}</Pill>
-  }
-
   return (
-    <div style={{
-      display: 'flex', alignItems: 'center', gap: 10, padding: '7px 4px',
-      borderBottom: '1px solid var(--lbb-border)', flexWrap: 'wrap',
-    }}>
-      <span style={{ flex: '1 1 160px', fontSize: 'var(--lbb-fs-12-5)', minWidth: 0 }}>{label}</span>
-      {pill}
-      <span style={{
-        flex: '2 1 220px', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', minWidth: 0,
-      }}>
-        {action}
-      </span>
-      {/* xref_filesets has screen=null: display-only by decision 7 — the app
-          reports this queue and cannot resolve it, and the row reads that way. */}
-      {queue.screen && (
-        <Button
-          variant="ghost" size="sm" iconRight="chevRight"
-          onClick={() => navigate(queue.screen as string)}
-        >
-          {t('refresh.queues.review')}
-        </Button>
-      )}
-    </div>
-  )
-}
-
-function BacklogQueueRow({ queue }: { queue: RefreshQueue }): React.JSX.Element {
-  const { t } = useTranslation()
-  const navigate = useNavigate()
-  const total = queue.total ?? 0
-  const done = Math.max(0, total - (queue.count ?? 0))
-  const pct = total > 0 ? Math.round((done / total) * 100) : 0
-  const label = t(`refresh.queues.labels.${queue.queue_id}`, queue.label)
-
-  // No pill and no colour: this reads as information, not as debt (decision 2).
-  return (
-    <div style={{
-      display: 'flex', alignItems: 'center', gap: 10, padding: '7px 4px',
-      borderBottom: '1px solid var(--lbb-border)', flexWrap: 'wrap',
-    }}>
-      <span style={{ flex: '1 1 160px', fontSize: 'var(--lbb-fs-12-5)', minWidth: 0 }}>{label}</span>
-      <div style={{ flex: '2 1 220px', minWidth: 120 }}>
-        <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginBottom: 3 }}>
-          {t('refresh.queues.ratio', { done, total })}
-        </div>
-        <div style={{
-          height: 3, borderRadius: 2, background: 'var(--lbb-surface2)', overflow: 'hidden',
-        }}>
-          <div style={{ width: `${pct}%`, height: '100%', background: 'var(--lbb-fg3)' }} />
-        </div>
+    <div style={ROW}>
+      <NameCell name={name} why={why} />
+      <div style={{ marginLeft: 'auto' }}>
+        {screen ? (
+          <Button variant="ghost" iconRight="chevRight" onClick={() => navigate(screen)}
+            style={{ color: 'var(--lbb-accent-mid)' }}>
+            {t('refresh.needs.open')}
+          </Button>
+        ) : route ? (
+          <FallbackAction route={route} />
+        ) : null /* no screen resolves it (xref_filesets, decision 7): the why text says how */}
       </div>
-      {queue.screen && (
-        <Button
-          variant="ghost" size="sm" iconRight="chevRight"
-          onClick={() => navigate(queue.screen as string)}
-        >
-          {t('refresh.queues.review')}
-        </Button>
-      )}
     </div>
   )
 }
 
-function QueuePanel({ queues }: { queues: RefreshQueue[] }): React.JSX.Element | null {
-  const { t } = useTranslation()
-  if (queues.length === 0) return null
-  return (
-    <div style={{ marginTop: 4 }}>
-      <div style={{
-        fontSize: 'var(--lbb-fs-10-5)', letterSpacing: 0.1, textTransform: 'uppercase',
-        color: 'var(--lbb-fg3)', fontWeight: 600, margin: '6px 0 2px',
-      }}>
-        {t('refresh.queues.title')}
-      </div>
-      {queues.filter(q => q.kind === 'gate').map(q => (
-        <GateQueueRow key={q.queue_id} queue={q} />
-      ))}
-      {queues.filter(q => q.kind === 'backlog').map(q => (
-        <BacklogQueueRow key={q.queue_id} queue={q} />
-      ))}
-    </div>
-  )
-}
+// ── The card ────────────────────────────────────────────────────────────────
 
 export function DataFreshnessCard(): React.JSX.Element | null {
   const { t } = useTranslation()
   const [status, setStatus] = useState<RefreshStatus | null>(null)
   const [failed, setFailed] = useState(false)
+  const [dialogOpen, setDialogOpen] = useState(false)
 
-  // Phase 3 §3.6: one global chain job, so its live status lives at card
-  // level (not per-row) — every "Refresh T<n>"/"Run chain" button funnels
-  // into the same poll loop and outcome line.
-  const [chainStatus, setChainStatus] = useState<ChainStatusSnapshot | null>(null)
-  const [chainOutcome, setChainOutcome] = useState<string | null>(null)
+  // One global chain job; its live status lives at card level.
+  const [chain, setChain] = useState<ChainStatusSnapshot | null>(null)
+  const [chainSteps, setChainSteps] = useState<string[]>([])
+  const [outcome, setOutcome] = useState<string | null>(null)
   const chainPollRef = useRef<number | null>(null)
   const chainWasRunningRef = useRef(false)
 
-  const fetchStatus = useCallback((opts?: { keepOutcome?: boolean }) => {
-    if (!opts?.keepOutcome) setChainOutcome(null)
+  const fetchStatus = useCallback(() => {
     fetch(`${BASE}/api/refresh/status`)
       .then(r => (r.ok ? r.json() : Promise.reject(new Error('refresh status'))))
       .then((data: RefreshStatus) => setStatus(data))
@@ -847,179 +481,238 @@ export function DataFreshnessCard(): React.JSX.Element | null {
       .then(r => (r.ok ? r.json() : Promise.reject(new Error('chain history'))))
       .then((rows: ChainHistoryEntry[]) => {
         const entry = rows[0]
-        if (entry?.steps) {
-          const ran = entry.steps.ran.length
-          const total = entry.steps.plan?.runnable?.length ?? ran
-          const firstError = entry.steps.errors[0]
-          const step = firstError ? t(`refresh.steps.${firstError.step_id}`, firstError.step_id) : ''
-          if (entry.status === 'ok') {
-            setChainOutcome(t('refresh.chain.outcomeOk', { ran, total }))
-          } else if (entry.status === 'stopped') {
-            setChainOutcome(t('refresh.chain.outcomeStopped', { ran, total }))
-          } else {
-            setChainOutcome(t('refresh.chain.outcomePartial', { ran, total, step }))
-          }
-        }
+        if (!entry?.steps) return
+        const ran = entry.steps.ran.length
+        const total = entry.steps.plan?.runnable?.length ?? ran
+        const firstError = entry.steps.errors[0]
+        if (entry.status === 'ok') setOutcome(t('refresh.update.outcomeOk', { ran, total }))
+        else if (entry.status === 'stopped') setOutcome(t('refresh.update.outcomeStopped', { ran, total }))
+        else setOutcome(t('refresh.update.outcomePartial', {
+          ran, total, step: firstError ? stepName(t, firstError.step_id) : '',
+        }))
       })
       .catch(() => {})
-      .finally(() => fetchStatus({ keepOutcome: true }))
+      .finally(() => { setChainSteps([]); fetchStatus() })
   }, [fetchStatus, t])
 
-  const pollChainStatus = useCallback(() => {
+  const pollChain = useCallback(() => {
     fetch(`${BASE}/api/refresh/chain/status`)
       .then(r => (r.ok ? r.json() : Promise.reject(new Error('chain status'))))
       .then((snap: ChainStatusSnapshot) => {
-        setChainStatus(snap)
+        setChain(snap)
         if (snap.running) {
           chainWasRunningRef.current = true
-        } else if (chainWasRunningRef.current) {
-          chainWasRunningRef.current = false
-          if (chainPollRef.current !== null) {
-            window.clearInterval(chainPollRef.current)
-            chainPollRef.current = null
-          }
-          handleChainComplete()
+          if (chainPollRef.current === null) chainPollRef.current = window.setInterval(pollChain, 2000)
+        } else {
+          if (chainPollRef.current !== null) { window.clearInterval(chainPollRef.current); chainPollRef.current = null }
+          if (chainWasRunningRef.current) { chainWasRunningRef.current = false; handleChainComplete() }
         }
       })
       .catch(() => {})
   }, [handleChainComplete])
 
-  const startChainPolling = useCallback(() => {
+  const onChainStarted = useCallback((steps: string[]) => {
+    setOutcome(null)
+    setChainSteps(steps)
     chainWasRunningRef.current = true
-    pollChainStatus()
-    if (chainPollRef.current === null) {
-      chainPollRef.current = window.setInterval(pollChainStatus, 2000)
-    }
-  }, [pollChainStatus])
+    pollChain()
+  }, [pollChain])
 
   const stopChain = useCallback(() => {
     fetch(`${BASE}/api/refresh/chain/stop`, { method: 'POST' })
       .then(r => (r.ok ? r.json() : Promise.reject(new Error('chain stop'))))
-      .then((snap: ChainStatusSnapshot) => setChainStatus(snap))
+      .then((snap: ChainStatusSnapshot) => setChain(snap))
       .catch(() => {})
   }, [])
 
-  useEffect(() => { fetchStatus() }, [fetchStatus])
-
-  // A chain started from another window/session should still surface here.
   useEffect(() => {
-    fetch(`${BASE}/api/refresh/chain/status`)
-      .then(r => (r.ok ? r.json() : Promise.reject(new Error('chain status'))))
-      .then((snap: ChainStatusSnapshot) => {
-        setChainStatus(snap)
-        if (snap.running) startChainPolling()
-      })
-      .catch(() => {})
-    return () => {
-      if (chainPollRef.current !== null) window.clearInterval(chainPollRef.current)
-    }
+    fetchStatus()
+    pollChain()   // a chain started from another window should surface here
+    return () => { if (chainPollRef.current !== null) window.clearInterval(chainPollRef.current) }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (failed || !status) return null
 
+  const byId = new Map(status.steps.map(s => [s.step_id, s]))
+  const ready = status.update_order.map(id => byId.get(id)).filter((s): s is RefreshStep => !!s)
+  const long = status.steps.filter(s => s.bucket === 'long')
+  const manual = status.steps.filter(s => s.bucket === 'needs_you')
+  const untracked = status.steps.filter(s => s.bucket === 'untracked')
+  const freshCount = status.steps.filter(s => s.bucket === 'fresh').length
   const queues = status.queues ?? []
-  const notFresh = status.steps.filter(s => s.state === 'stale' || s.state === 'blocked')
-  const unknownSteps = status.steps.filter(s => s.state === 'unknown')
-  const outOfDate = status.stale_count + status.blocked_count
-
-  const groups = TRIGGER_ORDER
-    .map(trig => ({ trig, rows: notFresh.filter(s => s.trigger === trig) }))
-    .filter(g => g.rows.length > 0)
+  const gateQueues = queues.filter(q => q.kind === 'gate' && q.state === 'pending')
+  const backlogQueues = queues.filter(q => q.kind === 'backlog' && (q.total ?? 0) > 0)
+  const needsCount = manual.length + gateQueues.length
+  const behind = ready.length + long.length + needsCount
+  const running = !!chain?.running
 
   const pl = status.publish_lag
-  const showPublishLag = !!pl.published_at
+  const publishLag = !!pl.published_at
     && ((pl.days_since !== null && pl.days_since >= 7) || pl.lb_status_changes_since > 0)
 
+  // "After step N" for a row whose upstream is also in this Update run.
+  const readyIndex = new Map(ready.map((s, i) => [s.step_id, i + 1]))
+  const readyWhy = (s: RefreshStep): string => {
+    const after = s.upstream.map(u => readyIndex.get(u)).filter((n): n is number => n !== undefined)
+    if (s.state === 'blocked' && after.length > 0) {
+      return t('refresh.ready.after', { count: after.length, steps: after.join(', ') })
+    }
+    return s.reason
+  }
+
+  const subtitle = behind === 0
+    ? t('refresh.allUpToDate')
+    : t('refresh.summary', {
+      total: behind, ready: ready.length, needs: needsCount,
+      long: t('refresh.longJobs', { count: long.length }),
+    })
+
+  const action = running ? (
+    <Button variant="secondary" disabled={chain?.stop_requested} onClick={stopChain}>
+      {chain?.stop_requested ? t('refresh.update.stopping') : t('refresh.update.stop')}
+    </Button>
+  ) : (
+    <Button variant="primary" icon="refresh" disabled={ready.length === 0} onClick={() => setDialogOpen(true)}>
+      {t('refresh.update.button', { count: ready.length })}
+    </Button>
+  )
+
   return (
-    <Card title={t('refresh.title')} subtitle={t('refresh.subtitle')} pad={14} style={{ marginBottom: 18 }}>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        <div style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>
-          {outOfDate === 0 ? t('refresh.allUpToDate') : t('refresh.nOutOfDate', { count: outOfDate })}
-        </div>
+    <Card title={t('refresh.title')} subtitle={subtitle} action={action} pad={14} style={{ marginBottom: 18 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
 
-        {showPublishLag && (
-          <div style={{
-            padding: '9px 11px', borderRadius: 8,
-            background: 'var(--lbb-warn-bg)', border: '1px solid var(--lbb-warn-fg)',
-            fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg)',
-          }}>
-            {t('refresh.publishLag', {
-              days: pl.days_since ?? 0,
-              changes: pl.lb_status_changes_since,
-            })}
-          </div>
-        )}
-
-        {chainStatus?.running && (
-          <div style={{
-            display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap',
-            padding: '8px 11px', borderRadius: 8,
-            background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border2)',
-          }}>
-            <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg)', flex: '1 1 auto', minWidth: 0 }}>
-              {t('refresh.chain.running', {
-                step: t(`refresh.steps.${chainStatus.current}`, chainStatus.current || '—'),
-                done: chainStatus.done, total: chainStatus.total,
+        {running && chain && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <div style={MUTED}>
+              {t('refresh.update.progress', {
+                n: Math.min(chain.done + 1, chain.total), total: chain.total,
+                step: stepName(t, chain.current || '—'),
               })}
-              {chainStatus.sub_progress?.total ? (
-                <span style={{ color: 'var(--lbb-fg3)' }}>
-                  {' '}({chainStatus.sub_progress.done ?? 0}/{chainStatus.sub_progress.total})
-                </span>
-              ) : null}
-            </span>
-            <Button
-              variant="ghost" size="sm" disabled={chainStatus.stop_requested}
-              onClick={stopChain}
-            >
-              {chainStatus.stop_requested ? t('refresh.chain.stopping') : t('refresh.stop')}
-            </Button>
+              {chain.sub_progress?.total ? ` (${chain.sub_progress.done ?? 0}/${chain.sub_progress.total})` : ''}
+            </div>
+            <div style={{ height: 5, borderRadius: 3, background: 'var(--lbb-surface2)', overflow: 'hidden' }}>
+              <div style={{
+                width: `${chain.total ? Math.round((chain.done / chain.total) * 100) : 0}%`,
+                height: '100%', background: 'var(--lbb-accent-mid)', transition: 'width 0.4s',
+              }} />
+            </div>
+            {chainSteps.length > 0 && (
+              <ol style={{
+                margin: 0, padding: 0, listStyle: 'none', display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '2px 24px',
+              }}>
+                {chainSteps.map((id, i) => {
+                  const done = i < chain.done
+                  const current = id === chain.current
+                  return (
+                    <li key={id} style={{
+                      display: 'flex', gap: 8, fontSize: 'var(--lbb-fs-12)',
+                      color: current ? 'var(--lbb-fg)' : 'var(--lbb-fg2)', fontWeight: current ? 600 : 400,
+                    }}>
+                      <span style={{ width: 12, fontFamily: 'var(--lbb-mono)' }}>{done ? '✓' : current ? '›' : '·'}</span>
+                      {stepName(t, id)}
+                    </li>
+                  )
+                })}
+              </ol>
+            )}
           </div>
         )}
 
-        {!chainStatus?.running && chainOutcome && (
-          <Pill tone="mute" soft>{chainOutcome}</Pill>
+        {!running && outcome && <Pill tone="mute" soft>{outcome}</Pill>}
+
+        {!running && ready.length > 0 && (
+          <Section title={t('refresh.ready.title')} hint={t('refresh.ready.hint')}>
+            {ready.map((s, i) => (
+              <div key={s.step_id} style={ROW}>
+                <span style={{ width: 16, textAlign: 'right', fontFamily: 'var(--lbb-mono)', ...MUTED }}>{i + 1}</span>
+                <NameCell name={stepName(t, s.step_id, s.label)} why={readyWhy(s)} />
+                <span style={{ ...MUTED, width: 130 }}>{t(`refresh.source.${TRIGGER_SOURCE[s.trigger]}`)}</span>
+                <span style={{ ...MUTED, width: 64, textAlign: 'right' }}>{t(`refresh.time.${COST_TIME[s.cost]}`)}</span>
+              </div>
+            ))}
+          </Section>
         )}
 
-        {groups.map(g => (
-          <div key={g.trig}>
-            <div style={{
-              display: 'flex', alignItems: 'center', gap: 8,
-              margin: '6px 0 2px',
-            }}>
-              <div style={{
-                flex: 1, fontSize: 'var(--lbb-fs-10-5)', letterSpacing: 0.1, textTransform: 'uppercase',
-                color: 'var(--lbb-fg3)', fontWeight: 600,
-              }}>
-                {t(`refresh.triggers.${g.trig}`)}
-              </div>
-              <ChainButton
-                label={t('refresh.chain.runTrigger', { trigger: g.trig })}
-                scope={{ trigger: g.trig }}
-                scopeLabel={t(`refresh.triggers.${g.trig}`)}
-                onStarted={startChainPolling}
-              />
-            </div>
-            {g.rows.map(step => (
-              <StepRow
-                key={step.step_id} step={step} queues={queues}
-                onRefresh={fetchStatus} onChainStarted={startChainPolling}
+        {long.length > 0 && (
+          <Section title={t('refresh.long.title')} hint={t('refresh.long.hint')}>
+            {long.map(s => <LongJobRow key={s.step_id} step={s} onDone={fetchStatus} />)}
+          </Section>
+        )}
+
+        {(needsCount > 0 || publishLag) && (
+          <Section title={t('refresh.needs.title')} hint={t('refresh.needs.hint')}>
+            {gateQueues.map(q => (
+              <NeedsYouRow
+                key={q.queue_id}
+                name={t(`refresh.queues.labels.${q.queue_id}`, q.label)}
+                why={`${t('refresh.queues.pending', { count: q.count ?? 0 })} · ${t(`refresh.queues.actions.${q.queue_id}`, q.action)}`}
+                screen={q.screen}
               />
             ))}
-          </div>
-        ))}
-
-        <QueuePanel queues={queues} />
-
-        {unknownSteps.length > 0 && (
-          <div
-            title={unknownSteps.map(s => t(`refresh.steps.${s.step_id}`, s.label)).join(', ')}
-            style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 4 }}
-          >
-            {t('refresh.unknownFootnote', { count: unknownSteps.length })}
-          </div>
+            {manual.map(s => (
+              <NeedsYouRow
+                key={s.step_id}
+                name={stepName(t, s.step_id, s.label)}
+                why={s.step_id === 'master_publish' && publishLag
+                  ? t('refresh.publishLag', { days: pl.days_since ?? 0, changes: pl.lb_status_changes_since })
+                  : s.reason}
+                screen={navTargetForRoute(s.how_to_run)}
+                route={s.how_to_run}
+              />
+            ))}
+            {publishLag && !manual.some(s => s.step_id === 'master_publish') && (
+              <NeedsYouRow
+                name={stepName(t, 'master_publish')}
+                why={t('refresh.publishLag', { days: pl.days_since ?? 0, changes: pl.lb_status_changes_since })}
+                screen={null}
+                route={byId.get('master_publish')?.how_to_run}
+              />
+            )}
+          </Section>
         )}
+
+        <div style={{
+          display: 'flex', flexDirection: 'column', gap: 8, paddingTop: 12,
+          borderTop: '1px solid var(--lbb-border)',
+        }}>
+          {backlogQueues.map(q => {
+            const total = q.total ?? 0
+            const done = Math.max(0, total - (q.count ?? 0))
+            return (
+              <div key={q.queue_id} style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
+                <span style={{ ...MUTED, flex: '1 1 200px' }}>
+                  {t(`refresh.queues.labels.${q.queue_id}`, q.label)} · {t('refresh.queues.ratio', { done, total })}
+                </span>
+                <div style={{ width: 200, height: 4, borderRadius: 2, background: 'var(--lbb-surface2)', overflow: 'hidden' }}>
+                  <div style={{ width: `${Math.round((done / total) * 100)}%`, height: '100%', background: 'var(--lbb-fg3)' }} />
+                </div>
+              </div>
+            )
+          })}
+          <details style={MUTED}>
+            <summary style={{ cursor: 'pointer' }}>
+              {t('refresh.footer', { fresh: freshCount, untracked: untracked.length })}
+            </summary>
+            {untracked.length > 0 && (
+              <div style={{ padding: '6px 0 0 14px', lineHeight: 1.6 }}>
+                {t('refresh.untrackedList', {
+                  steps: untracked.map(s => stepName(t, s.step_id, s.label)).join(', '),
+                })}
+              </div>
+            )}
+          </details>
+        </div>
       </div>
+
+      {dialogOpen && (
+        <UpdateDialog
+          notIncluded={{ long: long.length, needs: needsCount }}
+          onClose={() => setDialogOpen(false)}
+          onStarted={onChainStarted}
+        />
+      )}
     </Card>
   )
 }
