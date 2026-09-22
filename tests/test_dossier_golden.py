@@ -60,9 +60,17 @@ def test_golden_dossier(golden_db, spec):
     from backend.dossier_anchors import ANCHORS
 
     snap = build_snapshot(spec, golden_db)
-    assert not snap.get("ambiguous"), f"{spec['date']} needs a location"
-    # Scalar anchors live in view.fields; "x[].y" row anchors in view.rows.
-    assert set(snap["fields"]) == {k for k in ANCHORS if "[]." not in k}
+    if snap.get("reason") == "show":
+        # A two-show day with no show named (TODO-345): every candidate must build.
+        assert len(snap["candidates"]) >= 2
+        for cand in snap["candidates"]:
+            each = build_snapshot(spec, golden_db, show=cand["show"])
+            assert not each.get("ambiguous"), cand
+            assert set(each["fields"]) == {k for k in ANCHORS if "[]." not in k}
+    else:
+        assert not snap.get("ambiguous"), f"{spec['date']} needs a location"
+        # Scalar anchors live in view.fields; "x[].y" row anchors in view.rows.
+        assert set(snap["fields"]) == {k for k in ANCHORS if "[]." not in k}
     if spec.get("expected") is None:
         return
     diffs = first_diffs(spec["expected"], snap)

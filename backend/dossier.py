@@ -367,6 +367,80 @@ def _distinct_event_venues(conn: sqlite3.Connection, date_iso: str) -> list[str]
     return sorted(r["venue"] for r in rows)
 
 
+# TODO-345: a same-venue two-show day is keyed by the part of the day Olof names.
+# date_raw carries it as a dash suffix ("6 January 1974 – Afternoon"); a handful of
+# later pages put it in session_title instead ("Early show", "Afternoon concert.").
+# Only these exact shapes count -- "Private afternoon concert" or "Newport Folk
+# Festival. Evening." name no show, so they stay unkeyed rather than guessed at.
+_SHOW_PART_WORDS = r"(afternoon|matinee|evening|night|early|late|first|1st|second|2nd)"
+_DATE_RAW_PART_RE = re.compile(
+    r"[–—-]\s*" + _SHOW_PART_WORDS + r"(?:\s+(?:show|concert))?\.?\s*$", re.IGNORECASE)
+_SESSION_PART_RE = re.compile(
+    r"(?:^|\.\s+)" + _SHOW_PART_WORDS + r"\s+(?:show|concert)\.?\s*$", re.IGNORECASE)
+_SHOW_PART_CANON = {
+    "afternoon": "afternoon", "matinee": "afternoon", "evening": "evening", "night": "evening",
+    "early": "early", "late": "late", "first": "first", "1st": "first",
+    "second": "second", "2nd": "second",
+}
+#: Display label per show key, in day order (the selector sorts by it).
+SHOW_PART_LABELS: dict[str, str] = {
+    # "Show 1", not "First show": the page lint (dossier_qc L1) bans a bare "first".
+    "afternoon": "Afternoon", "early": "Early show", "first": "Show 1",
+    "evening": "Evening", "late": "Late show", "second": "Show 2",
+}
+_SHOW_PART_ORDER = {k: i for i, k in enumerate(SHOW_PART_LABELS)}
+
+
+def show_part_key(date_raw: str | None, session_title: str | None = None) -> str | None:
+    """The show-of-the-day key Olof gives an event, or None when it names none.
+
+    Args:
+        date_raw: ``olof_events.date_raw`` (e.g. ``'6 January 1974 – Afternoon'``).
+        session_title: ``olof_events.session_title``, consulted only when
+            *date_raw* carries no suffix (e.g. ``'Early show'``).
+
+    Returns:
+        One of :data:`SHOW_PART_LABELS`' keys, or None.
+    """
+    for text, rx in ((date_raw, _DATE_RAW_PART_RE), (session_title, _SESSION_PART_RE)):
+        m = rx.search(text or "")
+        if m:
+            return _SHOW_PART_CANON[m.group(1).casefold()]
+    return None
+
+
+def _two_show_events(conn: sqlite3.Connection, date_iso: str,
+                     venue: str | None) -> tuple[list[tuple[str, sqlite3.Row]], bool]:
+    """Keyed events of a same-venue multi-show day.
+
+    Args:
+        conn: Open connection.
+        date_iso: Concert date.
+        venue: The ``olof_events.venue`` the dossier is for (None: every venue of
+            the date, used when the date has exactly one).
+
+    Returns:
+        ``(options, unkeyable)``. *options* is ``[(key, event_row), ...]`` in day
+        order when two or more events at the venue carry distinct show keys, else
+        empty. *unkeyable* is True when two or more events are keyed but their keys
+        collide, so no show can be picked without guessing.
+    """
+    if not _table_exists(conn, "olof_events"):
+        return [], False
+    sql = "SELECT * FROM olof_events WHERE date_str = ?"
+    params: list = [date_iso]
+    if venue:
+        sql += " AND venue = ?"
+        params.append(venue)
+    keyed = [(k, r) for r in conn.execute(sql + " ORDER BY event_id", params).fetchall()
+             if (k := show_part_key(r["date_raw"], r["session_title"])) is not None]
+    if len(keyed) < 2:
+        return [], False
+    if len({k for k, _ in keyed}) != len(keyed):
+        return [], True
+    return sorted(keyed, key=lambda kr: (_SHOW_PART_ORDER[kr[0]], kr[1]["event_id"])), False
+
+
 def _primary_event(conn: sqlite3.Connection, date_iso: str,
                     prefer_venue: str | None = None) -> sqlite3.Row | None:
     """The olof_events row that best represents this date's show, if any."""
@@ -882,7 +956,8 @@ def _bobserve_event_id(event: sqlite3.Row | None) -> str | None:
 
 
 def _bobserve_index_event_id(conn: sqlite3.Connection, date_iso: str,
-                             event: sqlite3.Row | None) -> str | None:
+                             event: sqlite3.Row | None,
+                             show_key: str | None = None) -> str | None:
     """Resolve bobserve's ``?event=`` id for a date from ``bobserve_event_index``.
 
     Same-date rows narrow by folded venue, then drop soundchecks/rehearsals, then
@@ -893,6 +968,7 @@ def _bobserve_index_event_id(conn: sqlite3.Connection, date_iso: str,
         conn: Open connection.
         date_iso: Concert date.
         event: The primary ``olof_events`` row, if any.
+        show_key: The picked show of a two-show day (:func:`show_part_key`), if any.
 
     Returns:
         The id as a string when exactly one row survives, else None.
@@ -909,7 +985,9 @@ def _bobserve_index_event_id(conn: sqlite3.Connection, date_iso: str,
         return None
     if any(len(r["date_str"]) > len(date_iso) for r in rows):
         raw = ((event["date_raw"] or "") if event is not None else "").casefold()
-        part = ("early" if any(w in raw for w in ("afternoon", "early", "matinee")) else
+        part = ("early" if show_key in ("afternoon", "early", "first") else
+                "late" if show_key in ("evening", "late", "second") else
+                "early" if any(w in raw for w in ("afternoon", "early", "matinee")) else
                 "late" if any(w in raw for w in ("evening", "late", "night")) else None)
         if part is not None:
             rows = [r for r in rows if r["date_str"].casefold().endswith(part)] or rows
@@ -931,16 +1009,20 @@ def _bobserve_index_event_id(conn: sqlite3.Connection, date_iso: str,
 
 
 def _bobdylan_show_url(conn: sqlite3.Connection, date_iso: str,
-                       event: sqlite3.Row | None) -> str | None:
+                       event: sqlite3.Row | None, two_show: bool = False) -> str | None:
     """bobdylan.com's show page for a date, from the scraped ``bobdylan_shows`` table.
 
     Args:
         conn: Open connection.
         date_iso: Concert date, ``'YYYY-MM-DD'``.
         event: The primary ``olof_events`` row, used to pick between two same-date shows.
+        two_show: The dossier is one show of a same-venue two-show day. The site's
+            two pages for such a day differ only by a ``-0`` slug suffix that says
+            nothing about which show is which, so none is linked.
 
     Returns:
-        The ``bobdylan_url``, or ``None`` when the site has no page for the date.
+        The ``bobdylan_url``, or ``None`` when the site has no page for the date
+        (or none that is verifiably this show).
     """
     if not _table_exists(conn, "bobdylan_shows"):
         return None
@@ -952,6 +1034,8 @@ def _bobdylan_show_url(conn: sqlite3.Connection, date_iso: str,
     if not rows:
         return None
     venue = ((event["venue"] if event is not None else None) or "").casefold()
+    if two_show and sum((r["venue"] or "").casefold() == venue for r in rows) > 1:
+        return None
     for r in rows:
         if venue and (r["venue"] or "").casefold() == venue:
             return r["bobdylan_url"]
@@ -1078,7 +1162,7 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
 
 
 def build_dossier(date_iso: str, location: str | None = None, channel: str = "public",
-                   db_path: str | None = None) -> dict:
+                   db_path: str | None = None, show: str | None = None) -> dict:
     """Assemble the show dossier for one date.
 
     Args:
@@ -1089,12 +1173,19 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
         channel: ``'public'`` (default, private-entry metadata stripped) or
             ``'full'``.
         db_path: Optional database path override.
+        show: Picks one show of a same-venue two-show day by its
+            :func:`show_part_key` (``'afternoon'``/``'evening'``,
+            ``'early'``/``'late'``, ...). Required on such a day (TODO-345);
+            ignored on a single-show day.
 
     Returns:
         The D1 JSON shape (plus an additive ``xref`` list of external
-        deep-link cards, see :func:`_build_xref`), or
-        ``{"ambiguous": True, "date_iso", "candidates"}`` when *location*
-        is required but not given.
+        deep-link cards, see :func:`_build_xref`; on a two-show day also
+        ``show.show_part``/``show.show_label`` and a ``show_options`` list for
+        the page's selector), or ``{"ambiguous": True, "date_iso",
+        "candidates"}`` when *location* or *show* is required but not given
+        (show candidates carry ``show`` and ``label``; the payload then also
+        has ``"reason": "show"``).
     """
     if channel not in ("public", "full"):
         channel = "public"
@@ -1108,13 +1199,46 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
             "candidates": [{"date_iso": date_iso, "location": v} for v in venues],
         }
 
+    olof_venue = location if location in venues else (venues[0] if len(venues) == 1 else None)
+    two_shows, unkeyable = _two_show_events(conn, date_iso, olof_venue)
+    show_key: str | None = None
+    if two_shows:
+        picked = next((r for k, r in two_shows if k == show), None)
+        if picked is None:
+            # Never pick one of two shows silently: hand back the choice.
+            return {
+                "ambiguous": True,
+                "reason": "show",
+                "date_iso": date_iso,
+                "candidates": [
+                    {"date_iso": date_iso, "location": olof_venue or r["venue"], "show": k,
+                     "label": SHOW_PART_LABELS[k]}
+                    for k, r in two_shows
+                ],
+            }
+        event: sqlite3.Row | None = picked
+        show_key = show
+    elif unkeyable:
+        # Two shows Olof keys identically: which one is which can't be verified, so
+        # the event is withheld and the page falls back (G1 reports it).
+        event = None
+    else:
+        event = _primary_event(conn, date_iso, prefer_venue=location)
+
     entries = _entries_for_date(conn, date_iso)
-    event = _primary_event(conn, date_iso, prefer_venue=location)
     visible_lbs = [
         e["lb_number"] for e in entries if channel == "full" or e["status"] != "private"
     ]
 
     dossier: dict = {"show": _build_show(conn, date_iso, location, event, visible_lbs)}
+    if show_key is not None:
+        dossier["show"]["show_part"] = show_key
+        dossier["show"]["show_label"] = SHOW_PART_LABELS[show_key]
+        dossier["show_options"] = [
+            {"show": k, "label": SHOW_PART_LABELS[k], "location": olof_venue or r["venue"],
+             "selected": k == show_key}
+            for k, r in two_shows
+        ]
 
     context = _build_context(conn, date_iso, event)
     if context:
@@ -1136,8 +1260,9 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
     xref_lb = rank1_lb if rank1_lb is not None and rank1_lb in visible_lbs else (
         visible_lbs[0] if visible_lbs else None)
     dossier["xref"] = _build_xref(date_iso, event, xref_lb,
-                                  _bobserve_index_event_id(conn, date_iso, event),
-                                  _bobdylan_show_url(conn, date_iso, event))
+                                  _bobserve_index_event_id(conn, date_iso, event, show_key),
+                                  _bobdylan_show_url(conn, date_iso, event,
+                                                     two_show=show_key is not None))
 
     provenance: dict = {"generated_at": _now_iso(), "channel": channel, "local_analysis": local_analysis}
     mv = conn.execute("SELECT value FROM meta WHERE key = 'master_version'").fetchone()
@@ -1253,6 +1378,8 @@ def render_bbcode(view: dict) -> str:
     title = show.get("title") or show.get("venue") or show.get("date_disp") or show["date_iso"]
     lines.append(f"[b]{title}[/b]")
     meta_bits = [show.get("date_disp", show["date_iso"])]
+    if show.get("show_label"):
+        meta_bits[0] += f" ({show['show_label']})"
     if show.get("venue"):
         meta_bits.append(show["venue"])
     if show.get("city"):

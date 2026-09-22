@@ -50,6 +50,10 @@ h1{margin:.1rem 0 .45rem;font-size:2.3rem;font-weight:800;line-height:1.08;lette
 .run-strip{margin-top:.7rem;font-size:.72rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:center;gap:.4em .5em}
 .run-strip .cur{font-weight:700;color:var(--ink)}
 .run-strip a{border-bottom:1px dotted var(--rule2)}
+.show-pick{margin-top:.8rem;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.45em}
+.show-pick a,.show-pick .cur{font-size:.78rem;padding:.25em .85em;border-radius:999px;border:1px solid var(--rule2);color:var(--muted)}
+.show-pick a:hover{border-color:var(--accent);color:var(--accent-hi);text-decoration:none}
+.show-pick .cur{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:700}
 section{margin:2.1rem 0;page-break-inside:avoid}
 h2{font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-hi);display:flex;align-items:center;gap:.8em;margin:0 0 .9rem}
 h2.pickhead{color:var(--pick-hi)}
@@ -311,6 +315,16 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     {%- set band_idx_f = fields.get('show.band_index') -%}
     {%- if band_idx_f and band_idx_f.value is not none %}<span data-lb="show.band_index" hidden>{{ band_idx_f.value }}</span>{% endif -%}
   </div>
+  {%- if d.show_links %}
+  {#- TODO-345: a same-venue two-show day -- say which show this is, link the other. #}
+  <nav class="show-pick" aria-label="Shows on this date">
+    <span class="eyebrow">Two shows this day</span>
+    {%- for s in d.show_links %}
+    {%- if s.selected %}<span class="cur" aria-current="page">{{ s.label }}</span>
+    {%- else %}<a href="{{ s.href }}">{{ s.label }}</a>{% endif %}
+    {%- endfor %}
+  </nav>
+  {%- endif %}
   <div class="mast-rules"></div>
   {%- set run_label = fields.get('run.label') -%}
   {%- set run_pos = fields.get('run.position') -%}

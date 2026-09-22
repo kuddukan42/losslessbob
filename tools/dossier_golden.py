@@ -124,7 +124,10 @@ def snapshot(dossier: dict) -> dict:
         A JSON-safe dict.
     """
     if dossier.get("ambiguous"):
-        return {"ambiguous": True, "candidates": dossier.get("candidates")}
+        out = {"ambiguous": True, "candidates": dossier.get("candidates")}
+        if dossier.get("reason"):
+            out["reason"] = dossier["reason"]
+        return out
     view = dossier.get("view") or {}
     marker = _MARKER_RE.search(view.get("map_svg") or "")
     qc = dossier.get("qc") or {}
@@ -142,21 +145,24 @@ def snapshot(dossier: dict) -> dict:
     return _strip_volatile(json.loads(json.dumps(out, default=str)))
 
 
-def build_snapshot(spec: dict, db_path: str | None = None) -> dict:
+def build_snapshot(spec: dict, db_path: str | None = None, show: str | None = None) -> dict:
     """Build one spec's dossier and return its :func:`snapshot`.
 
     Args:
-        spec: A golden spec (``date``, ``location``, ``channel``).
+        spec: A golden spec (``date``, ``location``, ``channel``, optional ``show``).
         db_path: Database to build against (default: the configured DB).
+        show: Picks one show of a two-show day when the spec names none (TODO-345).
 
     Returns:
-        The normalized snapshot.
+        The normalized snapshot -- the ambiguous shape, with ``reason: "show"``,
+        for a two-show day built without a show.
     """
     from backend.dossier import build_dossier
 
     return snapshot(build_dossier(
         spec["date"], location=spec.get("location"),
         channel=spec.get("channel") or "public", db_path=db_path,
+        show=spec.get("show") or show,
     ))
 
 
@@ -254,17 +260,35 @@ def export_html(out_dir: Path) -> int:
         q = {"date": spec["date"], "channel": spec.get("channel") or "public", "inline": "1"}
         if spec.get("location"):
             q["location"] = spec["location"]
+        if spec.get("show"):
+            q["show"] = spec["show"]
         res = client.get(f"/api/dossier/html?{urlencode(q)}")
         name = f"{path.stem}.html"
-        if res.status_code == 200:
-            (out_dir / name).write_bytes(res.data)
-            link = f'<a href="{escape(name)}">{escape(path.stem)}</a>'
-        else:
-            failed += 1
-            link = f"{escape(path.stem)} — HTTP {res.status_code}"
         state = "verified" if spec.get("expected") is not None else "unverified"
-        rows.append(f"<li>{link} <small>{escape(spec.get('note') or '')} · {state}</small></li>")
-        sys.stdout.write(f"{res.status_code} {path.stem}\n")
+        note = f"{escape(spec.get('note') or '')} · {state}"
+        pages = [(name, res)]
+        shows = [c["show"] for c in ((res.get_json(silent=True) or {}).get("candidates") or [])
+                 if c.get("show")] if res.status_code == 300 else []
+        if shows:
+            # Two-show day (TODO-345): the chooser page plus one page per show, with the
+            # selector's query-string links rewritten to the sibling files.
+            pages = [(name, client.get(f"/api/dossier/html?{urlencode(dict(q, chooser='1'))}"))]
+            pages += [(f"{path.stem}--{s}.html",
+                       client.get(f"/api/dossier/html?{urlencode(dict(q, show=s))}"))
+                      for s in shows]
+        links = []
+        for fname, page in pages:
+            if page.status_code in (200, 300) and page.mimetype == "text/html":
+                body = re.sub(r'href="\?[^"]*?show=(\w+)[^"]*"',
+                              lambda m: f'href="{path.stem}--{m.group(1)}.html"',
+                              page.get_data(as_text=True))
+                (out_dir / fname).write_text(body, encoding="utf-8")
+                links.append(f'<a href="{escape(fname)}">{escape(Path(fname).stem)}</a>')
+            else:
+                failed += 1
+                links.append(f"{escape(Path(fname).stem)} — HTTP {page.status_code}")
+            sys.stdout.write(f"{page.status_code} {Path(fname).stem}\n")
+        rows.append(f"<li>{' · '.join(links)} <small>{note}</small></li>")
     (out_dir / "index.html").write_text(
         '<!doctype html><meta charset="utf-8"><meta name="viewport" '
         'content="width=device-width,initial-scale=1"><title>Golden dossiers</title>'
