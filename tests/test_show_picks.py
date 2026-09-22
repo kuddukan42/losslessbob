@@ -319,6 +319,77 @@ def test_no_fragment_penalty_without_runtime_spread():
     assert rows[2100]["pick_rank"] == 1
 
 
+# ── TODO-349: tracklist fragments demoted only vs. a materially longer source ──
+
+def _seed_event(conn, event_id, date_iso, event_type="concert", page_filename="p1"):
+    conn.execute(
+        "INSERT OR IGNORE INTO olof_pages (filename, url, corpus) VALUES (?, 'http://x', 'dsn')",
+        (page_filename,),
+    )
+    conn.execute(
+        "INSERT INTO olof_events (event_id, page_filename, event_type, date_str) "
+        "VALUES (?, ?, ?, ?)",
+        (event_id, page_filename, event_type, date_iso),
+    )
+    conn.commit()
+
+
+def _seed_songs(conn, event_id, titles):
+    conn.executemany(
+        "INSERT INTO olof_songs (event_id, position, song_title, is_encore) VALUES (?, ?, ?, 0)",
+        [(event_id, i, t) for i, t in enumerate(titles, start=1)],
+    )
+    conn.commit()
+
+
+def _seed_setlist_text(conn, lb, setlist_text):
+    conn.execute("UPDATE entries SET setlist = ? WHERE lb_number = ?", (setlist_text, lb))
+    conn.commit()
+
+
+def test_tracklist_fragment_1964_05_14_stays_rank_1_without_materially_longer_source():
+    """1964-05-14 (.debug/todo344_rank1_diff.md): LB-01254 tracklists 1/3 songs
+    (a completeness fragment under FRAGMENT_THRESHOLD) but is the same 4min
+    length as LB-03015's no-tracklist source. TODO-349: without a non-fragment
+    source at least TRACKLIST_FRAGMENT_DEMOTION_RATIO times longer, the
+    tracklisted source is not demoted and keeps rank 1."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_event(conn, 1, "1964-05-14")
+    _seed_songs(conn, 1, ["Song A", "Song B", "Song C"])
+    _seed_entry(conn, 1254, "5/14/64", rating="B")
+    _seed_entry(conn, 3015, "5/14/64", rating="B")
+    _seed_setlist_text(conn, 1254, "1. Song A")  # 1/3 songs -> fragment (tracklist basis)
+    _seed_timing(conn, 1254, "4min")
+    _seed_timing(conn, 3015, "4min")  # no setlist text -> runtime basis, not a fragment
+
+    picks.recompute(db_path=db_path)
+
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "5/14/64")}
+    assert "fragment" not in _evidence_kinds(rows[1254])
+    assert rows[1254]["pick_rank"] == 1
+
+
+def test_tracklist_fragment_demoted_when_non_fragment_materially_longer():
+    """Same completeness shortfall as above, but this time a non-fragment
+    source is >= 1.5x the tracklisted fragment's runtime -- it is demoted."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_event(conn, 2, "1964-05-15")
+    _seed_songs(conn, 2, ["Song A", "Song B", "Song C"])
+    _seed_entry(conn, 1300, "5/15/64", rating="B")
+    _seed_entry(conn, 1301, "5/15/64", rating="B")
+    _seed_setlist_text(conn, 1300, "1. Song A")  # 1/3 songs -> fragment (tracklist basis)
+    _seed_timing(conn, 1300, "4min")
+    _seed_timing(conn, 1301, "10min")  # >= 1.5 * 4min -> materially longer, no tracklist
+
+    picks.recompute(db_path=db_path)
+
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "5/15/64")}
+    assert "fragment" in _evidence_kinds(rows[1300])
+    assert rows[1301]["pick_rank"] == 1
+
+
 # ── Degraded case (spec §7 phase 2) ────────────────────────────────────────────
 
 def test_degraded_single_candidate_no_metrics():

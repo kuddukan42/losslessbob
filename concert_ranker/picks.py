@@ -221,6 +221,19 @@ def _primary_event_id(conn: sqlite3.Connection, date_iso: str) -> int | None:
     return row["event_id"] if row is not None else None
 
 
+# TODO-349: a tracklist-basis fragment (``is_fragment`` found its own
+# completeness share below ``backend.dossier_fields.FRAGMENT_THRESHOLD``) is
+# demoted out of ``show_picks`` rank-1 only when some non-fragment candidate on
+# the same date has a runtime at least this many times the fragment's own
+# runtime -- otherwise the fragment is "as long as anything else on offer"
+# and keeps its rank. tj's decision, 2026-09-22, from the 1964-05-14 case
+# (.debug/todo344_rank1_diff.md): LB-01254 (4min, 1/3 songs) was demoted below
+# LB-03015 (4min, no tracklist) even though neither is materially longer.
+# Runtime-basis fragments (no usable tracklist) are unaffected by this ratio --
+# their fragment status already comes directly from a runtime comparison.
+TRACKLIST_FRAGMENT_DEMOTION_RATIO = 1.5
+
+
 def _fragment_lbs(
     conn: sqlite3.Connection, event_id: int | None, candidates: list[dict],
 ) -> set[int]:
@@ -230,6 +243,9 @@ def _fragment_lbs(
     D-01 completeness signal the dossier's C27 verdict applies to keep
     fragments out of its primary-source numbering — so a fragment can never
     take ``pick_rank`` 1 over a complete source in ``show_picks`` either.
+
+    TODO-349 narrows this for tracklist-basis fragments only: see
+    :data:`TRACKLIST_FRAGMENT_DEMOTION_RATIO`.
 
     Args:
         conn: Open SQLite connection.
@@ -255,10 +271,35 @@ def _fragment_lbs(
             runtimes[c["lb_number"]] = rt["total_minutes"]
     median_runtime = median(runtimes.values()) if runtimes else None
 
-    return {
+    fragments = {
         lb for lb in lbs
         if is_fragment(comp_map.get(lb), runtimes.get(lb), median_runtime)
     }
+    if not fragments:
+        return fragments
+
+    reprieved: set[int] = set()
+    for lb in fragments:
+        comp = comp_map.get(lb)
+        is_tracklist_fragment = bool(
+            comp and comp.get("basis") == "tracklist" and comp.get("songs_total")
+            and not comp.get("glued")
+        )
+        if not is_tracklist_fragment:
+            continue
+        own_runtime = runtimes.get(lb)
+        if own_runtime is None:
+            continue  # can't confirm a "materially longer" alternative; stay demoted
+        threshold = TRACKLIST_FRAGMENT_DEMOTION_RATIO * own_runtime
+        has_longer_non_fragment = any(
+            other_lb not in fragments and runtimes.get(other_lb, 0) >= threshold
+            for other_lb in lbs
+            if other_lb != lb
+        )
+        if not has_longer_non_fragment:
+            reprieved.add(lb)
+
+    return fragments - reprieved
 
 
 def _load_curated_lists(conn: sqlite3.Connection) -> dict[int, list[str]]:
