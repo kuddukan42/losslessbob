@@ -19,6 +19,8 @@ function blobDownload(blob: Blob, filename: string): void {
   URL.revokeObjectURL(url)
 }
 
+interface DossierCandidate { date_iso: string; location?: string; show?: string; label?: string }
+
 export function DossierExportModal({
   showId, base, onClose, showToast,
 }: {
@@ -36,6 +38,22 @@ export function DossierExportModal({
     dossierFormat, setDossierFormat,
   } = useSettingsStore()
   const [busy, setBusy] = useState(false)
+  // A two-show (or two-venue) date answers HTTP 300 with its candidate shows (TODO-345);
+  // the curator picks one and exports again.
+  const [candidates, setCandidates] = useState<DossierCandidate[] | null>(null)
+  const [pick, setPick] = useState(0)
+
+  const takeCandidates = async (resp: Response): Promise<void> => {
+    const body = await resp.json().catch(() => null) as { candidates?: DossierCandidate[] } | null
+    const list = body?.candidates ?? []
+    if (list.length > 1) {
+      setCandidates(list)
+      setPick(0)
+      showToast(t('library.dossier.toastPickShow'), 'info')
+    } else {
+      showToast(t('library.dossier.toastAmbiguous'), 'info')
+    }
+  }
 
   const buildParams = () => {
     const sections = [
@@ -48,6 +66,9 @@ export function DossierExportModal({
       sections: sections.join(','),
       local_analysis: dossierIncludeLocalAnalysis ? '1' : '0',
     })
+    const chosen = candidates?.[pick]
+    if (chosen?.location) p.set('location', chosen.location)
+    if (chosen?.show) p.set('show', chosen.show)
     return p
   }
 
@@ -58,6 +79,10 @@ export function DossierExportModal({
       const filename = `dossier-${showId}.${dossierFormat}`
 
       if (dossierFormat === 'pdf' && typeof window.api?.printDossierPdf === 'function') {
+        if (candidates === null) {
+          const pre = await fetch(`${base}/api/dossier/html?${params.toString()}`)
+          if (pre.status === 300) { await takeCandidates(pre); setBusy(false); return }
+        }
         // inline=1 is required: without it the route sends
         // `Content-Disposition: attachment`, so the hidden print window
         // downloads the HTML instead of navigating to it and printToPDF
@@ -71,7 +96,7 @@ export function DossierExportModal({
 
       // HTML format, or PDF requested outside Electron (D4 fallback).
       const resp = await fetch(`${base}/api/dossier/html?${params.toString()}`)
-      if (resp.status === 300) { showToast(t('library.dossier.toastAmbiguous'), 'info'); setBusy(false); return }
+      if (resp.status === 300) { await takeCandidates(resp); setBusy(false); return }
       if (!resp.ok) throw new Error(String(resp.status))
       const blob = await resp.blob()
       blobDownload(blob, `dossier-${showId}.html`)
@@ -101,6 +126,22 @@ export function DossierExportModal({
           {t('library.dossier.title')}
         </div>
         <div style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg2)', marginBottom: 18 }}>{showId}</div>
+
+        {candidates && (
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: 'var(--lbb-fs-11)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.05, color: 'var(--lbb-fg3)', marginBottom: 6 }}>
+              {t('library.dossier.show')}
+            </div>
+            <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+              {candidates.map((c, i) => (
+                <label key={`${c.location ?? ''}|${c.show ?? ''}`} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg)', cursor: 'pointer' }}>
+                  <input type="radio" name="dossier-show" checked={pick === i} onChange={() => setPick(i)} />
+                  {c.label ?? c.location}
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div style={{ marginBottom: 16 }}>
           <div style={{ fontSize: 'var(--lbb-fs-11)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.05, color: 'var(--lbb-fg3)', marginBottom: 6 }}>

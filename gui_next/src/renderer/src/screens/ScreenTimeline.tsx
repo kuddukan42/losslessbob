@@ -424,7 +424,7 @@ function DossierViewerModal({
           <IconButton icon="x" onClick={onClose} title={t('timeline.viewer.close')} />
         </div>
         <iframe
-          src={`${base}/api/dossier/html?date=${encodeURIComponent(dateIso)}&channel=public&inline=1`}
+          src={`${base}/api/dossier/html?date=${encodeURIComponent(dateIso)}&channel=public&inline=1&chooser=1`}
           title={title}
           style={{ flex: 1, width: '100%', border: 'none', background: 'var(--lbb-bg)' }}
         />

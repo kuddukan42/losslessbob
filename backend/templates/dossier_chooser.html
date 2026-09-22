@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ date_iso }} — pick a show · LosslessBob dossier</title>
+{#- TODO-345: served by /api/dossier/html?chooser=1 (in-app viewer) when a date has
+    more than one show and none was picked. Tokens mirror dossier.html. #}
+<style>
+:root{--bg:#131c2e;--surface:#1e2a45;--ink:#eef3fc;--muted:#aebcd6;--faint:#7384a2;
+  --rule2:#4c5c88;--accent:#5b8df2;--accent-hi:#7aa3f7;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme: light){:root{--bg:#dde7f6;--surface:#f6f9fe;--ink:#13203a;
+  --muted:#3f547a;--faint:#6f83a6;--rule2:#9bb9e0;--accent:#2b5fd0;--accent-hi:#1f4baa}}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;padding:2.4rem 16px;color:var(--ink);font-family:var(--sans);line-height:1.5}
+.page{max-width:520px;margin:0 auto;text-align:center}
+.eyebrow{font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+h1{margin:.4rem 0 .3rem;font-size:1.9rem;font-weight:800;letter-spacing:-.02em}
+p{color:var(--muted);font-size:.9rem;margin:0 0 1.4rem}
+ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.6rem}
+a{display:block;padding:.8rem 1rem;border-radius:10px;border:1px solid var(--rule2);
+  background:var(--surface);color:var(--ink);text-decoration:none;font-weight:600}
+a:hover{border-color:var(--accent);color:var(--accent-hi)}
+a small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">LosslessBob &middot; Show Dossier</div>
+  <h1>{{ date_iso }}</h1>
+  <p>More than one show on this date. Pick one:</p>
+  <ul>
+  {%- for p in picks %}
+    <li><a href="{{ p.href }}">{{ p.label }}{% if p.show and p.location %}<small>{{ p.location }}</small>{% endif %}</a></li>
+  {%- endfor %}
+  </ul>
+</div>
+</body>
+</html>

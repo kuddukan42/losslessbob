@@ -1542,6 +1542,8 @@
       "toastExported": "Dossier exported",
       "toastPdfFallback": "PDF unavailable outside the app — downloaded HTML instead",
       "toastAmbiguous": "This date has more than one show — open it from the Library to disambiguate",
+      "show": "Show",
+      "toastPickShow": "This date has more than one show — pick one, then export again",
       "toastFailed": "Dossier export failed"
     },
     "panel": {

@@ -8692,15 +8692,18 @@ def create_app() -> Flask:
         """Assemble the show dossier for one date (spec D1).
 
         Query params: date (required, YYYY-MM-DD), location (disambiguates a
-        multi-show date), channel ('public' default / 'full').
+        multi-venue date), show (picks one show of a same-venue two-show day,
+        e.g. 'afternoon'/'evening' -- TODO-345), channel ('public' default / 'full').
         Returns the dossier JSON, or HTTP 300 with {ambiguous, candidates}
-        when location is required but not given.
+        when location or show is required but not given.
         """
         try:
             date_iso = request.args.get("date", "")
             location = request.args.get("location") or None
+            show = request.args.get("show") or None
             channel = request.args.get("channel", "public")
-            result = _dossier.build_dossier(date_iso, location=location, channel=channel)
+            result = _dossier.build_dossier(date_iso, location=location, channel=channel,
+                                            show=show)
             if result.get("ambiguous"):
                 return jsonify(result), 300
             return jsonify(result)
@@ -8708,22 +8711,45 @@ def create_app() -> Flask:
             _log.exception("dossier_json failed for date=%r", request.args.get("date"))
             return jsonify({"error": str(e)}), 500
 
+    def _dossier_pick_href(pick: dict) -> str:
+        """Same-route query string that re-requests the dossier for one candidate show."""
+        from urllib.parse import urlencode
+
+        q = {k: v for k, v in request.args.items() if k not in ("location", "show")}
+        if pick.get("location"):
+            q["location"] = pick["location"]
+        if pick.get("show"):
+            q["show"] = pick["show"]
+        return "?" + urlencode(q)
+
     @app.route("/api/dossier/html", methods=["GET"])
     def dossier_html() -> Response:
         """Render the dossier as a self-contained, print-first HTML document (spec D3).
 
-        Query params: date, location?, channel? (as /api/dossier), plus
+        Query params: date, location?, show?, channel? (as /api/dossier), plus
         sections= (comma list of 'context'/'setlist' to include, default both)
         and local_analysis= ('0' hides pick/quality/curated/family-confidence
-        and the recommendation, default shown).
-        Returns an HTML attachment, or HTTP 300 JSON when location is required.
+        and the recommendation, default shown). chooser=1 (the in-app viewer)
+        answers an ambiguous date with an HTML page linking each candidate show
+        instead of JSON.
+        Returns an HTML attachment, or HTTP 300 JSON (or chooser HTML) when
+        location or show is required.
         """
         try:
             date_iso = request.args.get("date", "")
             location = request.args.get("location") or None
+            show = request.args.get("show") or None
             channel = request.args.get("channel", "public")
-            result = _dossier.build_dossier(date_iso, location=location, channel=channel)
+            result = _dossier.build_dossier(date_iso, location=location, channel=channel,
+                                            show=show)
             if result.get("ambiguous"):
+                if request.args.get("chooser") in ("1", "true", "True"):
+                    picks = [dict(c, href=_dossier_pick_href(c),
+                                  label=c.get("label") or c.get("location") or "")
+                             for c in result.get("candidates") or []]
+                    html = render_template("dossier_chooser.html", date_iso=date_iso,
+                                           picks=picks)
+                    return Response(html, status=300, mimetype="text/html")
                 return jsonify(result), 300
             qc = result.get("qc") or {}
             if qc.get("refused"):
@@ -8738,6 +8764,9 @@ def create_app() -> Flask:
             view = _dossier.filter_dossier_sections(
                 result, sections=sections, local_analysis=local_analysis_on
             )
+            if result.get("show_options"):
+                view["show_links"] = [dict(o, href=_dossier_pick_href(o))
+                                      for o in result["show_options"]]
             html = render_template("dossier.html", d=view)
             from backend.dossier_qc import lint_data_lb, lint_l1
 
@@ -8771,8 +8800,10 @@ def create_app() -> Flask:
         try:
             date_iso = request.args.get("date", "")
             location = request.args.get("location") or None
+            show = request.args.get("show") or None
             channel = request.args.get("channel", "public")
-            result = _dossier.build_dossier(date_iso, location=location, channel=channel)
+            result = _dossier.build_dossier(date_iso, location=location, channel=channel,
+                                            show=show)
             if result.get("ambiguous"):
                 return jsonify(result), 300
             qc = result.get("qc") or {}
