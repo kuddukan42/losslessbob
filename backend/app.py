@@ -970,9 +970,12 @@ def create_app() -> Flask:
     from backend.dossier_claims import claim_texts_for as _dossier_claim_texts_for
     from backend.dossier_claims import ledger_detail_text as _dossier_ledger_detail_text
     from backend.dossier_claims import sentence_segment_groups as _dossier_segment_groups
+    from backend.dossier_fields import render_instrument_segments as _render_instr_segments
     app.jinja_env.globals["claim_groups"] = _dossier_segment_groups
     app.jinja_env.globals["claim_texts_for"] = _dossier_claim_texts_for
     app.jinja_env.globals["ledger_detail_text"] = _dossier_ledger_detail_text
+    # TODO-347: instrument_segments() value -> display string (dossier.html stats line).
+    app.jinja_env.globals["render_instrument_segments"] = _render_instr_segments
 
     @app.errorhandler(Exception)
     def _unhandled_exception(e):
@@ -6031,22 +6034,39 @@ def create_app() -> Flask:
 
         Query params: lb (int) — restrict to one entry; status (str, default
         ``open``, empty for any); all (``1`` to include low-confidence whole-set
-        divergences alongside the isolated DB mismatches).
+        divergences alongside the isolated DB mismatches); reference (``db`` or
+        ``lbdir``) — restrict to disputes against that reference; grouped (``1``)
+        — return curator-triage findings instead of raw rows: disputes paired by
+        disputed value across both references and classified into a ``verdict``
+        bucket (``db_error``/``audio_differs``/``retag``/``receipt_unknown``/
+        ``lbdir_only``, see TODO-299). A grouped finding's ``ids`` lists every
+        ``checksum_disputes.id`` it spans (usually one, sometimes two) — apply a
+        verdict via PUT to each id in that list.
 
         Returns:
-            JSON list of checksum_disputes rows.
+            JSON list of checksum_disputes rows, or (``grouped=1``) findings.
         """
         try:
             from backend import checksum_provenance
             lb_q = request.args.get("lb", "").strip()
             show_all = request.args.get("all") == "1"
             status = request.args.get("status", "open").strip() or None
+            reference = request.args.get("reference", "").strip() or None
+            if request.args.get("grouped") == "1":
+                findings = checksum_provenance.get_findings(
+                    database.get_connection(),
+                    lb_number=int(lb_q) if lb_q else None,
+                    status=status,
+                    reference_kind=reference,
+                )
+                return jsonify(findings)
             rows = checksum_provenance.get_disputes(
                 database.get_connection(),
                 lb_number=int(lb_q) if lb_q else None,
                 status=status,
-                kind=None if show_all else "db_mismatch",
+                kind=None if show_all else "isolated_mismatch",
                 confidence=None if show_all else ("high", "medium"),
+                reference_kind=reference,
             )
             return jsonify(rows)
         except Exception as exc:
@@ -7376,19 +7396,45 @@ def create_app() -> Flask:
 
         No pagination — a couple thousand rows max at full catalog scale.
         Merge client-side by lb_number; not joined into /api/search.
+
+        TODO-333(4): also carries each family's calibration provenance —
+        ``calibration_hash`` (which tapematch calibration produced this
+        family's verdict, from ``tapematch_family_meta``, via
+        ``tools/tapematch/tapematch/calibration.py``) and
+        ``current_calibration_hash``, the hash of the *shipped* config.yaml
+        right now, computed server-side once per request so the client can
+        flag a family's ``calibration_hash`` stale without duplicating the
+        hashing rules; None when it couldn't be computed (missing/unparseable
+        config.yaml).
+
+        TODO-295: also carries the machine triage (``auto_triage``/
+        ``auto_triage_reasons``, from ``backend.tapematch_autoflag`` — see
+        its module docstring for why it is kept subordinate to
+        ``fam_needs_review`` in the GUI).
         """
+        from backend import tapematch_sync as _tapematch_sync
+
         conn = database.get_connection()
         rows = conn.execute(
             """
             SELECT rf.lb_number, rf.fam_id, rf.concert_date,
                    COALESCE(m.label_override, m.label) AS fam_label,
                    m.conf AS fam_conf, m.by AS fam_by,
-                   m.review_flag AS fam_needs_review, m.review_reason AS fam_review_reason
+                   m.review_flag AS fam_needs_review, m.review_reason AS fam_review_reason,
+                   m.auto_triage AS fam_auto_triage,
+                   m.auto_triage_reasons AS fam_auto_triage_reasons,
+                   m.calibration_hash AS fam_calibration_hash
             FROM recording_families rf
             JOIN tapematch_family_meta m ON m.fam_id = rf.fam_id
             """
         ).fetchall()
-        return jsonify([dict(r) for r in rows])
+        current_hash = _tapematch_sync.current_calibration_hash()
+        out = []
+        for r in rows:
+            d = dict(r)
+            d["current_calibration_hash"] = current_hash
+            out.append(d)
+        return jsonify(out)
 
     @app.route("/api/tapematch/dup_encodes", methods=["GET"])
     def tapematch_dup_encodes() -> Response:
