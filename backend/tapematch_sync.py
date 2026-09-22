@@ -31,6 +31,52 @@ _VERDICT_LINE_RE = re.compile(r"^## Verdict:\s*(?P<text>.+)$", re.MULTILINE)
 _QUALITY_MATCH_BUMP = 0.05
 _QUALITY_MATCH_TOL = 0.5
 
+_TAPEMATCH_PKG_DIR = str(TOOLS_DIR / "tapematch")
+_SHIPPED_CONFIG_PATH = TOOLS_DIR / "tapematch" / "config.yaml"
+
+
+def current_calibration_hash(config_path: Path = _SHIPPED_CONFIG_PATH) -> "str | None":
+    """TODO-333(4): the calibration hash of the shipped ``config.yaml``.
+
+    Used to flag a family's stored ``tapematch_family_meta.calibration_hash``
+    (the calibration that actually produced its verdict) as stale in the GUI
+    when it no longer matches what would run today. Best-effort: returns None
+    (never raises) if config.yaml is missing/unparseable or the tapematch
+    package can't be imported, same fallback posture as other optional
+    tapematch integrations (see backend.bobtalk._resolve_ingest_paths).
+
+    Args:
+        config_path: Path to the config.yaml to hash. Defaults to the shipped
+            ``tools/tapematch/config.yaml``; overridable for tests.
+
+    Returns:
+        The 12-hex-char calibration hash, or None if it couldn't be computed.
+    """
+    import sys
+
+    import yaml
+
+    if _TAPEMATCH_PKG_DIR not in sys.path:
+        sys.path.insert(0, _TAPEMATCH_PKG_DIR)
+    try:
+        from tapematch.calibration import calibration_hash as _calibration_hash
+    except ImportError:
+        log.warning("current_calibration_hash: tapematch package unavailable", exc_info=True)
+        return None
+
+    try:
+        with open(config_path, encoding="utf-8") as fh:
+            cfg = yaml.safe_load(fh) or {}
+    except OSError:
+        log.warning("current_calibration_hash: could not read %s", config_path, exc_info=True)
+        return None
+
+    try:
+        return _calibration_hash(cfg)
+    except Exception:
+        log.warning("current_calibration_hash: hashing failed", exc_info=True)
+        return None
+
 
 def _resolve_run_dir(obs_conn: sqlite3.Connection, run_id: str, concert_date: str) -> Path:
     """Best-effort path to a tapematch run's archive directory.

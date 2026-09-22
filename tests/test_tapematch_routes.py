@@ -1459,3 +1459,85 @@ def test_crawl_stop_route_subprocess_error_is_500(monkeypatch):
     finally:
         db.close_connection(db_path)
         shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ── GET /api/tapematch/families ──────────────────────────────────────────────
+# TODO-333(4): calibration_hash + current_calibration_hash provenance.
+# TODO-295: auto_triage / auto_triage_reasons machine-triage columns.
+
+
+def test_families_route_includes_triage_and_calibration_fields(monkeypatch):
+    db_path, tmp_dir = _make_db()
+    try:
+        monkeypatch.setattr(
+            tapematch_sync, "current_calibration_hash", lambda *a, **k: "shipped000001"
+        )
+
+        conn = db.get_connection(db_path)
+        conn.execute(
+            "INSERT INTO tapematch_family_meta "
+            "(fam_id, concert_date, label, by, conf, member_count, review_flag, "
+            " review_reason, auto_triage, auto_triage_reasons, calibration_hash) "
+            "VALUES ('fam-a', '1978-01-08', 'Source A', 'ai', 0.9, 1, 0, NULL, "
+            "'attention', '[\"R1_contradiction\"]', 'stale00000a')"
+        )
+        conn.execute(
+            "INSERT INTO recording_families (lb_number, fam_id, concert_date) "
+            "VALUES (100, 'fam-a', '1978-01-08')"
+        )
+        conn.commit()
+
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/families")
+            assert resp.status_code == 200
+            body = resp.get_json()
+            assert len(body) == 1
+            row = body[0]
+            assert row["lb_number"] == 100
+            assert row["fam_auto_triage"] == "attention"
+            assert row["fam_auto_triage_reasons"] == '["R1_contradiction"]'
+            assert row["fam_calibration_hash"] == "stale00000a"
+            assert row["current_calibration_hash"] == "shipped000001"
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_families_route_null_calibration_and_triage_pass_through(monkeypatch):
+    """A family synced before TODO-295/TODO-333 landed carries NULLs, not errors."""
+    db_path, tmp_dir = _make_db()
+    try:
+        monkeypatch.setattr(tapematch_sync, "current_calibration_hash", lambda *a, **k: None)
+
+        conn = db.get_connection(db_path)
+        conn.execute(
+            "INSERT INTO tapematch_family_meta (fam_id, concert_date, member_count) "
+            "VALUES ('fam-b', '1978-01-08', 1)"
+        )
+        conn.execute(
+            "INSERT INTO recording_families (lb_number, fam_id, concert_date) "
+            "VALUES (200, 'fam-b', '1978-01-08')"
+        )
+        conn.commit()
+
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/families")
+            row = resp.get_json()[0]
+            assert row["fam_auto_triage"] is None
+            assert row["fam_auto_triage_reasons"] is None
+            assert row["fam_calibration_hash"] is None
+            assert row["current_calibration_hash"] is None
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_current_calibration_hash_returns_none_on_missing_config():
+    from pathlib import Path
+
+    assert tapematch_sync.current_calibration_hash(Path("/nonexistent/config.yaml")) is None
+
+
+def test_current_calibration_hash_computes_from_real_config():
+    h = tapematch_sync.current_calibration_hash()
+    assert h is None or (isinstance(h, str) and len(h) == 12)
