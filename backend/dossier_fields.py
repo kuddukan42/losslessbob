@@ -1193,6 +1193,39 @@ def official_release(
             partial=song_partial, matches=matches,
         ))
 
+    # C5: name the release even when there's no explicit whole-show release
+    # line -- when every song's per-position ``released_on`` names the same
+    # allowlisted title (e.g. two "CD 12"/"CD 13" position-list lines that
+    # together cover every song), that title is the header's whole_show_title.
+    # This only fills the *name*: it never promotes ``whole_show`` itself
+    # (which stays reserved for a genuine whole-show release line), and a
+    # ``(part)``/``(uncertain)`` match is never counted (audit: never promote).
+    if whole_show_title is None and songs:
+        # Group by the allowlist's own title text, not by title_key --
+        # title_key is derived from each raw release string (which varies,
+        # e.g. "... CD 12" vs "... CD 13" for the same box set), while title
+        # is the stable allowlist label.
+        title_positions: dict[str, set[int]] = defaultdict(set)
+        for s in songs:
+            seen_here: set[str] = set()
+            for m in s["matches"]:
+                if m["official"] and not m["part"] and not m["uncertain"] and m["title"] \
+                        and m["title"] not in seen_here:
+                    title_positions[m["title"]].add(s["position"])
+                    seen_here.add(m["title"])
+        all_positions = {s["position"] for s in songs}
+        for title, positions in title_positions.items():
+            if positions == all_positions:
+                whole_show_title = title
+                break
+
+    if whole_show:
+        # Every song is flagged once the show as a whole is officially
+        # released, even when a position's own ``released_on`` text doesn't
+        # separately name it (C5, fixes 1965-06-01's 1-of-12).
+        for s in songs:
+            s["official"] = True
+
     if whole_show or (songs and all(s["official"] for s in songs)):
         status = "full"
     elif any(s["partial"] for s in songs):
@@ -1299,15 +1332,49 @@ class RunContext(TypedDict):
     city_history: CityHistory | None
 
 
+# C7: a non-performance venue (a hotel room, a broadcast/instrumental studio,
+# a rehearsal space) isn't a concert stop and shouldn't count toward a city's
+# "shows in this city" tally or the venue run. Word-bounded so it doesn't
+# catch a real venue that merely contains one of these as part of a longer
+# proper noun.
+_NON_PERFORMANCE_VENUE_RE = re.compile(
+    r"\bhotel\b|\broom\b|\bstudios?\b|\brentals\b|\brehears", re.IGNORECASE,
+)
+# Not caught by the keyword regex (its own name doesn't say "hotel"), but a
+# hotel performance per Olof's notes -- audit-confirmed (Montreal 1975).
+_NON_PERFORMANCE_VENUE_EXACT = {"chateau champlain"}
+
+
+def _is_non_performance_venue(venue: str | None) -> bool:
+    """True when *venue* is a hotel/studio/rehearsal space, not a concert venue."""
+    venue = (venue or "").strip()
+    if not venue:
+        return False
+    if _NON_PERFORMANCE_VENUE_RE.search(venue):
+        return True
+    return venue.lower() in _NON_PERFORMANCE_VENUE_EXACT
+
+
 def _concert_rows(conn: sqlite3.Connection) -> list[sqlite3.Row]:
-    """Every dated concert event, in the D-02/D-07 ``(date_str, event_id)`` order."""
+    """Every dated concert event, in the D-02/D-07 ``(date_str, event_id)`` order.
+
+    Excludes a hotel/studio/rehearsal-space "concert" (C7,
+    :func:`_is_non_performance_venue`) -- these are correctly ``event_type =
+    'concert'`` in Olof's own typing (so :func:`is_concert_row` alone can't
+    tell them apart; a NULL ``concert_no_net`` isn't reliable either, several
+    genuine concerts also lack one), but aren't a city's performance history.
+    """
     from backend.qc.corroborate import is_concert_row
 
     rows = conn.execute(
         "SELECT event_id, date_str, venue, city, country, tour_name, event_type, concert_no_net"
         " FROM olof_events WHERE date_str != ''"
     ).fetchall()
-    concerts = [r for r in rows if is_concert_row(r["event_type"], r["tour_name"])]
+    concerts = [
+        r for r in rows
+        if is_concert_row(r["event_type"], r["tour_name"]) and not _is_non_performance_venue(
+            r["venue"])
+    ]
     return sorted(concerts, key=lambda r: (r["date_str"], r["event_id"]))
 
 
@@ -1911,6 +1978,16 @@ def setlist_confidence(
             expected_songs=None, notice=None,
         )
 
+    # C3: an open (or reopened) R-O1 finding means Olof's own raw numbered-song
+    # count exceeds what was actually parsed -- the setlist is known-partial
+    # regardless of what the cross-source quorum otherwise reads.
+    if event_id in _open_finding_events(conn, ("R-O1",)):
+        return SetlistConfidence(
+            status="partial", verdict=verdict, basis="r-o1",
+            songs_listed=songs_listed, expected_songs=None,
+            notice="Olof's raw numbered-song count exceeds what was parsed (R-O1 open)",
+        )
+
     # verdict == "stated": no external source has data for this date -- secondary signal.
     if _INCOMPLETE_SETLIST_RE.search(notes or ""):
         return SetlistConfidence(
@@ -2093,6 +2170,46 @@ _MEMBER_RE = re.compile(r"([^,;()]+?)\s*\(([^)]*)\)")
 _RANGE_PREFIX_RE = re.compile(r"^\s*((?:\d+(?:-\d+)?)(?:\s*(?:,|and)\s*\d+(?:-\d+)?)*)\s+(?=\S)")
 _RANGE_TOKEN_RE = re.compile(r"^(\d+)(?:-(\d+))?$")
 
+# A trailing "with <Band Name>" tail after the last parenthesised instrument
+# clause (C1, e.g. "Bob Dylan (vocal & guitar) with Tom Petty & The
+# Heartbreakers") -- captured as ``band.label`` instead of being swept into
+# the next member-name match.
+_WITH_BAND_RE = re.compile(r"\bwith\s+(?P<band>.+?)\s*[.:]?\s*$", re.IGNORECASE)
+
+# Same run-on-sentence split as the B3 Olof parser fix: a position-list
+# clause's tail is split wherever a period is followed by the start of the
+# next position list, so a bobserve/Olof lineup line that concatenates two
+# per-song clauses with "." instead of ";" doesn't bleed the second clause's
+# text into the first's (plan line 73).
+_LINEUP_SENTENCE_SPLIT_RE = re.compile(r"\.\s+(?=\d+[\s,–-])")
+
+
+def _extract_band_label(clause: str) -> tuple[str, str | None]:
+    """Split a trailing "with <Band>" tail off *clause* (C1).
+
+    Only the text after the clause's last parenthesised instrument group is
+    checked, so a member name that happens to contain "with" inside its own
+    clause is left alone.
+
+    Args:
+        clause: A base personnel clause, range prefix included or not.
+
+    Returns:
+        ``(clause_without_tail, band_label)`` -- *band_label* is ``None``
+        when no "with <Band>" tail is present.
+    """
+    last_paren = clause.rfind(")")
+    tail_start = last_paren + 1 if last_paren != -1 else 0
+    tail = clause[tail_start:]
+    m = _WITH_BAND_RE.search(tail)
+    if not m:
+        return clause, None
+    band = m.group("band").strip(" .:")
+    if not band:
+        return clause, None
+    stripped = clause[:tail_start] + tail[:m.start()]
+    return stripped.rstrip(" .:,"), f"with {band}"
+
 
 def _ordinal_to_int(token: str) -> int | None:
     """Parse a band-index ordinal ("21st", "first") to its integer, or None."""
@@ -2122,22 +2239,33 @@ class BandLineup(TypedDict):
         band_index: The Never-Ending Tour band's ordinal number, or ``None``
             for a pre-NET / solo lineup or one the regex doesn't recognise.
         band_label: ``"<ordinal> Never-Ending Tour Band"`` (e.g. "21st Never
-            -Ending Tour Band"), ``"Solo"`` when Dylan plays alone, or
-            ``None``.
+            -Ending Tour Band"), ``"Solo"``, ``"with <Band>"`` when the
+            lineup names a backing band inline (C1), or ``None``.
         members: The base personnel, Dylan moved first, from the lineup's
             first (un-numbered) clause.
+        personnel_text: The base clause's own text (range prefix and
+            instruments kept, "with <Band>" tail and trailing punctuation
+            stripped) -- rendered as the Personnel line verbatim rather than
+            just the member names (C1).
     """
 
     band_index: int | None
     band_label: str | None
     members: list[BandMember]
+    personnel_text: str | None
 
 
 def _base_clause(lineup: str) -> str:
-    """The lineup's first ``;``-separated clause, header (before ``:``) dropped."""
+    """The lineup's first ``;``-separated clause, header (before ``:``) dropped.
+
+    When the text after the colon is empty (a header-only clause like "Bob
+    Dylan (vocal & guitar) with Tom Petty & The Heartbreakers:"), falls back
+    to the text before the colon instead of returning an empty clause (C1).
+    """
     clause = lineup.split(";", 1)[0]
     if ":" in clause:
-        clause = clause.split(":", 1)[1]
+        before, after = clause.split(":", 1)
+        clause = after if after.strip() else before
     return clause
 
 
@@ -2191,18 +2319,41 @@ def parse_band_lineup(lineup: str | None) -> BandLineup:
     elif _SOLO_RE.search(lineup):
         band_label = "Solo"
 
-    base = _base_clause(lineup)
+    base_raw = _base_clause(lineup)
+    base, with_band = _extract_band_label(base_raw)
+    if band_label is None and with_band:
+        band_label = with_band
+
+    range_m = _RANGE_PREFIX_RE.match(base)
+    range_prefix = range_m.group(1) if range_m else None
+    member_source = base[range_m.end():] if range_m else base
+
     members: list[BandMember] = []
-    for name, instruments in _MEMBER_RE.findall(base):
-        name = re.sub(r"^(?:with)\s+", "", name.strip(), flags=re.IGNORECASE).strip(" .")
-        if name:
-            members.append(BandMember(name=name, instruments=instruments.strip()))
+    found = _MEMBER_RE.findall(member_source)
+    if found:
+        for name, instruments in found:
+            name = re.sub(r"^(?:with)\s+", "", name.strip(), flags=re.IGNORECASE).strip(" .")
+            if name:
+                members.append(BandMember(name=name, instruments=instruments.strip()))
+    else:
+        # A plain comma list with no parenthesised instruments -- the
+        # bobserve 2022+ lineup format (C1).
+        for name in re.split(r",\s*(?:and\s+)?", member_source.strip().rstrip(".")):
+            name = name.strip()
+            if name:
+                members.append(BandMember(name=name, instruments=""))
     members.sort(key=lambda mem: 0 if "dylan" in mem["name"].lower() else 1)
 
-    if band_index is None and band_label is None and _is_dylan_alone(base, members):
+    if band_index is None and band_label is None and _is_dylan_alone(member_source, members):
         band_label = "Solo"
 
-    return BandLineup(band_index=band_index, band_label=band_label, members=members)
+    personnel_text = member_source.strip().rstrip(".").strip()
+    if range_prefix:
+        personnel_text = f"{range_prefix} {personnel_text}"
+    personnel_text = personnel_text.strip() or None
+
+    return BandLineup(band_index=band_index, band_label=band_label, members=members,
+                       personnel_text=personnel_text)
 
 
 def _expand_ranges(token: str) -> set[int]:
@@ -2228,19 +2379,26 @@ def _lineup_range_clauses(lineup: str | None) -> list[tuple[set[int], str]]:
     (:func:`parse_band_lineup`) and is never generalised onto the other
     songs -- audit M13 found that "otherwise" fallback wrong. Only clauses
     that open with an explicit position/range token are per-song overrides.
+
+    Each ``;``-separated segment is further split on a run-on sentence
+    boundary (a period followed by the start of the next position list),
+    the same fix as the B3 Olof parser change (plan line 73) -- otherwise
+    "8-10 Bob Dylan solo (vocal & guitar). 25 Bob Dylan (harmonica)." reads
+    as one clause and "25 Bob Dylan (harmonica)" bleeds into song 8-10's text.
     """
     out: list[tuple[set[int], str]] = []
-    for clause in (lineup or "").split(";"):
-        clause = clause.strip()
-        if not clause:
-            continue
-        m = _RANGE_PREFIX_RE.match(clause)
-        if not m:
-            continue
-        positions = _expand_ranges(m.group(1))
-        text = clause[m.end():].strip().rstrip(".").strip()
-        if positions and text:
-            out.append((positions, text))
+    for segment in (lineup or "").split(";"):
+        for clause in _LINEUP_SENTENCE_SPLIT_RE.split(segment):
+            clause = clause.strip()
+            if not clause:
+                continue
+            m = _RANGE_PREFIX_RE.match(clause)
+            if not m:
+                continue
+            positions = _expand_ranges(m.group(1))
+            text = clause[m.end():].strip().rstrip(".").strip()
+            if positions and text:
+                out.append((positions, text))
     return out
 
 
@@ -2555,16 +2713,33 @@ def _annotation_clauses(annotations: str | None) -> list[str]:
     return [c.strip() for c in (annotations or "").split(";") if c.strip()]
 
 
+# C2: broadcast banding generalised to any recording/video/audience clause
+# ("stereo PA recording; mono audience recording", "audience video, 30
+# minutes"), not just "broadcast by X" -- but deliberately narrow, so a
+# clause that merely mentions "recording" in passing ("is in circulation as
+# a line recording") doesn't split a "broadcast by X" band from its plain
+# neighbours (audit: the same-broadcast-note-but-longer-clause case).
+_RECORDING_CLAUSE_RE = re.compile(
+    r"\bbroadcast\b"
+    r"|\b(stereo|mono)\b.{0,20}\brecording\b"
+    r"|\baudience\b.{0,20}\b(recording|video)\b",
+    re.IGNORECASE,
+)
+
+
 def broadcast_clause(annotations: str | None) -> str:
-    """The broadcast part of an ``olof_songs.annotations`` string.
+    """The recording/broadcast part of an ``olof_songs.annotations`` string.
 
     Args:
         annotations: Olof's ``;``-joined per-song notes.
 
     Returns:
-        The ``;``-joined clauses mentioning "broadcast", or ``""``.
+        The ``;``-joined clauses mentioning a recording/broadcast/video/
+        audience word, or ``""``.
     """
-    return "; ".join(c for c in _annotation_clauses(annotations) if "broadcast" in c.lower())
+    return "; ".join(
+        c for c in _annotation_clauses(annotations) if _RECORDING_CLAUSE_RE.search(c)
+    )
 
 
 def song_notes_without(annotations: str | None, shown: set[str]) -> str:
@@ -2584,14 +2759,16 @@ def song_notes_without(annotations: str | None, shown: set[str]) -> str:
 def broadcast_set_labels(
     conn: sqlite3.Connection, event_id: int,
 ) -> tuple[list[SetLabel], list[str]]:
-    """``set[].label`` broadcast banding + ``context.session_notes`` (C23, plan 641-644).
+    """``set[].label`` recording/broadcast banding + ``context.session_notes``
+    (C23/C2, plan 641-644).
 
-    Groups an event's ``olof_songs.annotations`` by identical broadcast note
-    text: a note covering every song in the show is a whole-show recording
-    note and goes to ``context.session_notes`` instead of a set label; a note
-    covering a contiguous run of positions becomes one ``"band"`` label; a
-    note on non-contiguous positions (or a single song) becomes one
-    ``"marker"`` label per position.
+    Groups an event's ``olof_songs.annotations`` by identical recording/
+    broadcast/video/audience note text: a note covering every song in the
+    show is a whole-show recording note and goes to ``context.session_notes``
+    instead of a set label (once, not once per song); a note covering a
+    contiguous run of positions becomes one ``"band"`` label; a note on
+    non-contiguous positions (or a single song) becomes one ``"marker"``
+    label per position.
 
     Args:
         conn: Open SQLite connection.
@@ -2884,6 +3061,100 @@ def family_taper_label(
 _TAPER_BLOCKING_RULES = ("R-T1", "R-T2", "R-T3")
 
 
+def family_taper_conflicts(conn: sqlite3.Connection) -> dict[str, dict[str, list[int]]]:
+    """Plan E3 / R-T6: recording families whose members carry 2+ distinct confirmed tapers.
+
+    Every family counts, weak ones included -- a 0.22-confidence family is too
+    weak to propagate a taper, but three different confirmed tapers inside it is
+    still a contradiction a reader should see.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Returns:
+        ``{fam_id: {taper: [lb, ...]}}`` for conflicting families only.
+    """
+    by_fam: dict[str, dict[str, list[int]]] = defaultdict(lambda: defaultdict(list))
+    for fam_id, lb, taper in conn.execute(
+        "SELECT rf.fam_id, rf.lb_number, ta.taper_normalised FROM recording_families rf"
+        " JOIN taper_attributions ta ON ta.lb_number = rf.lb_number"
+        " WHERE ta.confidence = 'confirmed' AND ta.conflict = 0"
+        " ORDER BY rf.fam_id, rf.lb_number"
+    ):
+        by_fam[fam_id][taper].append(lb)
+    return {f: dict(t) for f, t in by_fam.items() if len(t) >= 2}
+
+
+def _family_conflict_for_lb(conn: sqlite3.Connection, lb_number: int) -> dict[str, list[int]]:
+    """``{taper: [lb, ...]}`` for *lb_number*'s family when it's in conflict, else ``{}``."""
+    fam = conn.execute(
+        "SELECT fam_id FROM recording_families WHERE lb_number = ?", (lb_number,),
+    ).fetchone()
+    if fam is None:
+        return {}
+    tapers: dict[str, list[int]] = defaultdict(list)
+    for lb, taper in conn.execute(
+        "SELECT rf.lb_number, ta.taper_normalised FROM recording_families rf"
+        " JOIN taper_attributions ta ON ta.lb_number = rf.lb_number"
+        " WHERE rf.fam_id = ? AND ta.confidence = 'confirmed' AND ta.conflict = 0"
+        " ORDER BY rf.lb_number",
+        (fam[0],),
+    ):
+        tapers[taper].append(lb)
+    return dict(tapers) if len(tapers) >= 2 else {}
+
+
+# Names an entry's own text may carry that are never a taper credit (plan E6).
+_STATED_TAPER_PLACEHOLDERS = frozenset({
+    "unknown", "unidentified", "bootleg", "none", "n a", "no info", "taper unknown",
+})
+
+
+def _stated_taper(conn: sqlite3.Connection, lb_number: int) -> str | None:
+    """Plan E6: a taper the entry itself names, when the engine has no attribution.
+
+    ``entry_lineage.taper_name`` counts when the description binds it to a
+    taper-context phrase ("Recorded by badpainter", "Taper: X"). A name the
+    vocabulary bars (``_NOT_TAPER`` / a ``not_taper`` flag), a placeholder, or an
+    LB carrying any curator decision is never stated -- a reject or
+    'unresolved' call must not resurface through this path.
+
+    Args:
+        conn: Open SQLite connection.
+        lb_number: ``entries.lb_number``.
+
+    Returns:
+        The name as the entry states it (lowercased), or ``None``.
+    """
+    from backend import db as _db
+    from backend.taper_attribution import _TAPER_CONTEXT_PREFIX
+
+    row = conn.execute(
+        "SELECT el.taper_name, el.taper_normalised, e.description FROM entry_lineage el"
+        " JOIN entries e ON e.lb_number = el.lb_number WHERE el.lb_number = ?",
+        (lb_number,),
+    ).fetchone()
+    if row is None or not row[0] or not row[1]:
+        return None
+    name, norm, description = row[0].strip(), row[1], row[2] or ""
+    if norm in _STATED_TAPER_PLACEHOLDERS:
+        return None
+    if norm in set(_db._KNOWN_TAPER_ALIASES.values()) and norm not in _db._TAPER_UNIVERSE:
+        return None
+    try:
+        if conn.execute("SELECT 1 FROM taper_confirmations WHERE lb_number = ?",
+                        (lb_number,)).fetchone():
+            return None
+    except sqlite3.OperationalError:  # no taper_confirmations table yet
+        pass
+    window = description[:600]
+    bound = (_TAPER_CONTEXT_PREFIX + r"\b" + re.escape(name) + r"\b",
+             r"\ban?\s+" + re.escape(name) + r"\s+recording\b")
+    if not any(re.search(p, window, re.IGNORECASE) for p in bound):
+        return None
+    return name.lower()
+
+
 class TaperRender(TypedDict):
     """``taper`` render rule (C23, plan line 652-655).
 
@@ -2893,11 +3164,14 @@ class TaperRender(TypedDict):
             an unresolved conflict, or an open R-T1/R-T2/R-T3 error blocks it
             -- never ``"unknown"`` (audit M8).
         confidence: ``taper_attributions.confidence`` (``'confirmed'`` /
-            ``'propagated'`` / ``'inferred'``), or ``None``.
+            ``'propagated'`` / ``'inferred'``); ``'stated'`` for a name the entry
+            itself credits with no attribution behind it (plan E6);
+            ``'disputed'`` when the LB's recording family carries 2+ distinct
+            confirmed tapers (plan E3, R-T6); or ``None``.
         marker: ``"inferred"`` for a ``propagated``/``inferred``-confidence
             credit, else ``None``.
-        notice: A disputed-vs-TUIT notice (R-T4) when applicable, else
-            ``None``.
+        notice: A disputed notice -- vs TUIT (R-T4) or vs the family's other
+            confirmed tapers (R-T6) -- when applicable, else ``None``.
     """
 
     lb_number: int
@@ -2944,12 +3218,29 @@ def taper_render(conn: sqlite3.Connection, lb_number: int,
         " WHERE lb_number = ?",
         (lb_number,),
     ).fetchone()
-    if row is None or row["conflict"]:
+    if row is not None and row["conflict"]:
         return TaperRender(lb_number=lb_number, name=None, confidence=None, marker=None,
                             notice=None)
+    if row is None:
+        try:
+            stated = _stated_taper(conn, lb_number)
+        except sqlite3.OperationalError:  # no entry_lineage table yet
+            stated = None
+        return TaperRender(lb_number=lb_number, name=stated,
+                            confidence="stated" if stated else None, marker=None, notice=None)
 
     name, confidence = row["taper_normalised"], row["confidence"]
     marker = "inferred" if confidence in ("propagated", "inferred") else None
+
+    try:
+        family_conflict = _family_conflict_for_lb(conn, lb_number)
+    except sqlite3.OperationalError:  # no recording_families table yet
+        family_conflict = {}
+    if family_conflict:
+        others = sorted(t for t in family_conflict if t != name)
+        return TaperRender(
+            lb_number=lb_number, name=name, confidence="disputed", marker=marker,
+            notice=f"disputed: same family also credits {' / '.join(others)}")
 
     notice: str | None = None
     try:

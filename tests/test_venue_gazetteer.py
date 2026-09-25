@@ -252,7 +252,9 @@ def _row(**kw):
 
 class TestCityAnchor:
     def test_prefers_setlistfm_coord(self, monkeypatch):
-        monkeypatch.setattr(vg, "_setlistfm_city_coord", lambda conn, cn: (51.5, -0.1))
+        monkeypatch.setattr(
+            vg, "_setlistfm_city_coord", lambda conn, cn, country=None: (51.5, -0.1),
+        )
         called = []
         monkeypatch.setattr(vg, "_geocode_retry", lambda *a, **k: called.append(1) or {})
         cache = {}
@@ -261,7 +263,9 @@ class TestCityAnchor:
         assert called == []  # no Nominatim call when setlist.fm has the coord
 
     def test_falls_back_to_city_geocode_and_caches(self, monkeypatch):
-        monkeypatch.setattr(vg, "_setlistfm_city_coord", lambda conn, cn: None)
+        monkeypatch.setattr(
+            vg, "_setlistfm_city_coord", lambda conn, cn, country=None: None,
+        )
         calls = []
 
         def fake_geo(query, viewbox=None, bounded=False):
@@ -278,7 +282,9 @@ class TestCityAnchor:
         assert calls == ["Oakland, California"]
 
     def test_empty_city_cannot_anchor(self, monkeypatch):
-        monkeypatch.setattr(vg, "_setlistfm_city_coord", lambda conn, cn: None)
+        monkeypatch.setattr(
+            vg, "_setlistfm_city_coord", lambda conn, cn, country=None: None,
+        )
         monkeypatch.setattr(vg, "_geocode_retry", lambda *a, **k: pytest.fail("no geocode"))
         coord, src = vg._city_anchor(None, _row(city="", city_norm=""), {})
         assert (coord, src) == (None, "")
@@ -388,3 +394,98 @@ class TestResolveVenues:
         # manual row untouched.
         assert rows["m hall"]["source"] == "manual"
         assert rows["m hall"]["lat"] is None
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 6. C6: city+country keying + migration
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestCityCountryKey:
+    def test_country_distinguishes_same_named_cities(self):
+        uk = vg._norm_city("Birmingham", "United Kingdom")
+        us = vg._norm_city("Birmingham", "United States")
+        assert uk != us
+        assert uk == "birmingham|united kingdom"
+        assert us == "birmingham|united states"
+
+    def test_no_country_keeps_bare_city_key(self):
+        # Backward compatible: a caller without a country still gets the
+        # plain city key, same as before C6.
+        assert vg._norm_city("Birmingham") == "birmingham"
+
+
+def test_migrate_city_norm_with_country(tmp_path, monkeypatch):
+    _db, c = _make_db(tmp_path, monkeypatch)
+    c.executemany(
+        """INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, country,
+               source) VALUES (?,?,?,?,?,?)""",
+        [
+            ("nec", "birmingham", "NEC", "Birmingham", "United Kingdom", "seeded"),
+            ("legion field", "birmingham", "Legion Field", "Birmingham",
+             "United States", "seeded"),
+            ("no country hall", "smallville", "No Country Hall", "Smallville",
+             "", "seeded"),
+        ],
+    )
+    c.commit()
+
+    changed = vg.migrate_city_norm_with_country(c)
+    c.commit()
+    assert changed == 2  # the "no country" row has nothing to rekey on
+
+    rows = {r["venue_norm"]: r["city_norm"] for r in c.execute("SELECT * FROM venue_geocoded")}
+    assert rows["nec"] == "birmingham|united kingdom"
+    assert rows["legion field"] == "birmingham|united states"
+    assert rows["no country hall"] == "smallville"
+    assert rows["nec"] != rows["legion field"]
+
+
+def test_migrate_city_norm_is_idempotent(tmp_path, monkeypatch):
+    _db, c = _make_db(tmp_path, monkeypatch)
+    c.execute(
+        """INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, country, source)
+           VALUES ('nec', 'birmingham', 'NEC', 'Birmingham', 'United Kingdom', 'seeded')"""
+    )
+    c.commit()
+
+    first = vg.migrate_city_norm_with_country(c)
+    c.commit()
+    second = vg.migrate_city_norm_with_country(c)
+    assert first == 1
+    assert second == 0  # already keyed on city+country -- nothing left to change
+
+
+def test_migrate_city_norm_skips_key_collision(tmp_path, monkeypatch):
+    _db, c = _make_db(tmp_path, monkeypatch)
+    # Two rows that would both migrate to the same (venue_norm, city_norm) key.
+    c.executemany(
+        """INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, country, source)
+           VALUES (?,?,?,?,?,?)""",
+        [
+            ("nec", "birmingham", "NEC", "Birmingham", "United Kingdom", "seeded"),
+            ("nec", "birmingham uk", "NEC", "Birmingham", "United Kingdom", "resolved"),
+        ],
+    )
+    c.commit()
+    # Force both rows to want the same new key.
+    monkeypatch.setattr(vg, "_norm_city", lambda city, country=None: "birmingham|united kingdom")
+    changed = vg.migrate_city_norm_with_country(c)
+    c.commit()
+    assert changed == 1  # one migrated, the collider left on its old key
+    rows = [r["city_norm"] for r in c.execute("SELECT city_norm FROM venue_geocoded")]
+    assert "birmingham uk" in rows or rows.count("birmingham|united kingdom") == 1
+
+
+def test_migrate_missing_columns_is_a_noop(tmp_path, monkeypatch):
+    """PRAGMA table_info guard: an old-schema venue_geocoded (or none at all)
+    is left alone rather than raising (plan: never assume a clean DB)."""
+    db_file = str(tmp_path / "old.db")
+    conn = sqlite3.connect(db_file)
+    conn.row_factory = sqlite3.Row
+    conn.execute("CREATE TABLE venue_geocoded (venue_norm TEXT, city_norm TEXT)")
+    conn.commit()
+    assert vg.migrate_city_norm_with_country(conn) == 0
+
+    conn2 = sqlite3.connect(str(tmp_path / "empty.db"))
+    conn2.row_factory = sqlite3.Row
+    assert vg.migrate_city_norm_with_country(conn2) == 0

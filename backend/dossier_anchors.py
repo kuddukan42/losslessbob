@@ -198,6 +198,7 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("stats.instrument_notes", 2, "setlist", "non-default spans only", "omit"),
     _a("band.members[]", 2, "setlist", "lineup parser", "omit"),
     _a("band.label", 2, "setlist", "lineup parser", "value", "Personnel"),
+    _a("band.personnel_text", 2, "setlist", "lineup parser", "omit"),
     # -- Sources ----------------------------------------------------------------
     _a("sources.count", 1, "sources", "visible sources", "required"),
     _a("sources.tape_count", 1, "sources", "tapematch families", "omit"),
@@ -663,8 +664,11 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode, visible_m
     if event_id is not None:
         official = _safe(df.official_release, conn, event_id)
         if official and official.get("status") and official["status"] != "none":
+            # C5: name the release (whole_show_title) in the header when
+            # known, instead of just the raw full/partial status word.
+            display = official.get("whole_show_title") or official["status"]
             vb.set_field("show.official_release", build_field(
-                official["status"], 3, "D-03 official_release", "stated"))
+                display, 3, "D-03 official_release", "stated"))
 
         # cmp_src is already scoped to "primary" sources and computed above, shared
         # with the verdict pick -- the runner-up/alternates a fragment/no_match source
@@ -859,6 +863,9 @@ def _build_setlist(vb, d1, conn, event_id, date_iso, lineup, setlist, visible_lb
             if parsed.get("band_label"):
                 vb.set_field("band.label", build_field(
                     parsed["band_label"], 2, "parse_band_lineup", "stated"))
+            if parsed.get("personnel_text"):
+                vb.set_field("band.personnel_text", build_field(
+                    parsed["personnel_text"], 2, "parse_band_lineup", "stated"))
 
 
 # ---------------------------------------------------------------------------
@@ -1101,7 +1108,15 @@ def _build_context(vb, d1, conn, event_id, date_iso) -> None:
     labels_notes = _safe(df.broadcast_set_labels, conn, event_id) if event_id is not None \
         else None
     if labels_notes and labels_notes[1]:
-        session_notes.extend(labels_notes[1])
+        # C2: skip a whole-show recording note already covered by
+        # olof_events.notes -- clause by clause, since the free-text notes
+        # field doesn't repeat the "; "-joined annotation wording verbatim.
+        existing = " ".join(session_notes).lower()
+        for note in labels_notes[1]:
+            clauses = [c.strip() for c in note.split(";") if c.strip()]
+            if clauses and all(c.lower() in existing for c in clauses):
+                continue
+            session_notes.append(note)
     if session_notes:
         vb.set_field("context.session_notes", build_field(
             session_notes, 1, "olof_events.notes + broadcast_set_labels", "stated"))
@@ -1142,15 +1157,23 @@ def _build_venue_geo(vb, conn, show) -> None:
     from backend.venue_gazetteer import _norm_city, _norm_venue
 
     venue, city = show.get("venue"), show.get("city")
+    country = show.get("country")
     if venue and _table_exists(conn, "venue_geocoded"):
-        vnorm, cnorm = _norm_venue(venue), _norm_city(city or "")
-        row = _safe(
-            lambda c: c.execute(
-                "SELECT * FROM venue_geocoded WHERE venue_norm = ? AND city_norm = ?",
-                (vnorm, cnorm),
-            ).fetchone(), conn,
-        )
-        if row is not None and row["lat"] is not None and row["lon"] is not None:
+        # C6: try every source's name for the venue, not just the one that
+        # won display priority -- venue_geocoded may only have a row keyed
+        # to a differently-worded name from another source.
+        candidates = show.get("venue_candidates") or [venue]
+        cnorm = _norm_city(city or "", country)
+        for cand in candidates:
+            vnorm = _norm_venue(cand)
+            row = _safe(
+                lambda c, vnorm=vnorm, cnorm=cnorm: c.execute(
+                    "SELECT * FROM venue_geocoded WHERE venue_norm = ? AND city_norm = ?",
+                    (vnorm, cnorm),
+                ).fetchone(), conn,
+            )
+            if row is None or row["lat"] is None or row["lon"] is None:
+                continue
             quarantined_ = quarantined(conn, "venue", f"{vnorm}:{cnorm}")
             open_g1 = any(r == "R-G1" for r in quarantined_)
             if row["confidence"] in ("high", "medium") and not open_g1:

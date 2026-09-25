@@ -61,11 +61,22 @@ def _insert_song(conn, event_id, position, song_title, is_encore=0):
     )
 
 
-def _insert_song_performance(conn, event_id, position, song_norm, concert_date_iso):
+def _insert_song_performance(
+    conn, event_id, position, song_norm, concert_date_iso, song_canonical="",
+):
+    """Insert a ``song_performances`` row.
+
+    *song_canonical* defaults to ``""`` (unset -- the column is NOT NULL),
+    not *song_norm* -- most callers only care about rarity/history matching
+    on ``song_norm``, and C4 now displays ``song_canonical`` by position
+    when present, so forcing it to the lowercase norm text would silently
+    override the display title in every test that doesn't care about it.
+    Pass *song_canonical* explicitly to exercise that display path.
+    """
     conn.execute(
         "INSERT INTO song_performances (event_id, position, song_norm, song_canonical, "
         "concert_date_iso) VALUES (?, ?, ?, ?, ?)",
-        (event_id, position, song_norm, song_norm, concert_date_iso),
+        (event_id, position, song_norm, song_canonical, concert_date_iso),
     )
 
 

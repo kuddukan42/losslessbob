@@ -322,10 +322,13 @@ class TestBandLineup:
         assert band["band_index"] is None
 
     def test_unparenthesised_band_name_is_not_solo(self):
+        # C1: a trailing "with <Band>" tail becomes band.label, not Solo, and
+        # is no longer swept into the next member-name match.
         band = parse_band_lineup(
             "Bob Dylan (vocal & guitar) with Tom Petty & The Heartbreakers."
         )
-        assert band["band_label"] is None
+        assert band["band_label"] == "with Tom Petty & The Heartbreakers"
+        assert [m["name"] for m in band["members"]] == ["Bob Dylan"]
 
     def test_dylan_moved_first(self):
         lineup = "Joe Sideman (bass), Bob Dylan (vocal & guitar)."
@@ -333,12 +336,16 @@ class TestBandLineup:
         assert band["members"][0]["name"] == "Bob Dylan"
 
     def test_unrecognised_lineup_omits(self):
+        # No Never-Ending Tour band match, so band_index stays None even
+        # though band_label is now filled from the "with <Band>" tail (C1).
         band = parse_band_lineup("Bob Dylan (vocal & guitar) with Tom Petty & The Heartbreakers")
         assert band["band_index"] is None
-        assert band["band_label"] is None
+        assert band["band_label"] == "with Tom Petty & The Heartbreakers"
 
     def test_blank_lineup(self):
-        assert parse_band_lineup(None) == {"band_index": None, "band_label": None, "members": []}
+        assert parse_band_lineup(None) == {
+            "band_index": None, "band_label": None, "members": [], "personnel_text": None,
+        }
 
 
 class TestSongInstrumentsAndTally:

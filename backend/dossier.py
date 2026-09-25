@@ -75,6 +75,7 @@ _COUNTRY_MAP_META: dict[str, dict] = {
     "switzerland": {"focus": "Switzerland", "scale": 2600},
     "austria": {"focus": "Austria", "scale": 2000},
     "belgium": {"focus": "Belgium", "scale": 3000},
+    "brazil": {"focus": "Brazil", "scale": 420},
 }
 
 # Aliases -> canonical key in _COUNTRY_MAP_META.
@@ -477,6 +478,13 @@ def _build_show(conn: sqlite3.Connection, date_iso: str, location: str | None,
     except ValueError:
         pass
 
+    slf = None
+    if _table_exists(conn, "setlistfm_shows"):
+        slf = conn.execute(
+            "SELECT venue_name, city FROM setlistfm_shows WHERE date_str = ? "
+            "AND venue_name NOT IN ('', '?') LIMIT 1",
+            (date_iso,),
+        ).fetchone()
     bd = conn.execute(
         "SELECT venue FROM bobdylan_shows WHERE date_str = ?", (date_iso,)
     ).fetchone()
@@ -485,16 +493,38 @@ def _build_show(conn: sqlite3.Connection, date_iso: str, location: str | None,
         "AND venue NOT IN ('', '?') LIMIT 1",
         (date_iso,),
     ).fetchone()
+    # C6: dylan_performances / setlist.fm name venues more accurately than
+    # bobdylan.com ("General Motors Place", not "General Motors Arena").
     venue = (
-        (bd["venue"] if bd and bd["venue"] else None)
+        (slf["venue_name"] if slf and slf["venue_name"] else None)
         or (dp["venue"] if dp else None)
+        or (bd["venue"] if bd and bd["venue"] else None)
         or (event["venue"] if event is not None and event["venue"] else None)
         or location
     )
     if venue:
         show["venue"] = venue
+    # C6: every candidate venue name, display priority first, dedup-order
+    # preserved -- the geocode lookup tries each one, not just the display
+    # name, since a source that lost the venue-name priority above may still
+    # be the one ``venue_geocoded`` has a row for.
+    seen_names: set[str] = set()
+    venue_candidates: list[str] = []
+    for cand in (
+        slf["venue_name"] if slf and slf["venue_name"] else None,
+        dp["venue"] if dp else None,
+        bd["venue"] if bd and bd["venue"] else None,
+        event["venue"] if event is not None and event["venue"] else None,
+        location,
+    ):
+        if cand and cand not in seen_names:
+            seen_names.add(cand)
+            venue_candidates.append(cand)
+    if venue_candidates:
+        show["venue_candidates"] = venue_candidates
     city = (
-        (dp["city"] if dp and dp["city"] else None)
+        (slf["city"] if slf and slf["city"] else None)
+        or (dp["city"] if dp and dp["city"] else None)
         or (event["city"] if event is not None and event["city"] else None)
     )
     if city:
@@ -540,11 +570,22 @@ def _build_show(conn: sqlite3.Connection, date_iso: str, location: str | None,
         needed = {"city_lat", "city_lon", "country", "city_state"}
         if needed <= sf_cols:
             url_col = ", setlistfm_url" if "setlistfm_url" in sf_cols else ""
-            sf_loc = conn.execute(
-                f"SELECT city_lat, city_lon, country, city_state{url_col} FROM setlistfm_shows "
-                "WHERE date_str = ? LIMIT 1",
-                (date_iso,),
-            ).fetchone()
+            # C6: match the city as well as the date when it's already known,
+            # so a same-date/different-city ambiguity (or a stray duplicate
+            # setlistfm row) doesn't hand this show the wrong centroid.
+            sf_loc = None
+            if city:
+                sf_loc = conn.execute(
+                    f"SELECT city_lat, city_lon, country, city_state{url_col} FROM "
+                    "setlistfm_shows WHERE date_str = ? AND city = ? LIMIT 1",
+                    (date_iso, city),
+                ).fetchone()
+            if sf_loc is None:
+                sf_loc = conn.execute(
+                    f"SELECT city_lat, city_lon, country, city_state{url_col} FROM "
+                    "setlistfm_shows WHERE date_str = ? LIMIT 1",
+                    (date_iso,),
+                ).fetchone()
             if sf_loc is not None:
                 if sf_loc["city_lat"] is not None and sf_loc["city_lon"] is not None:
                     show["lat"] = sf_loc["city_lat"]
@@ -653,20 +694,27 @@ def _build_setlist(conn: sqlite3.Connection, date_iso: str, event: sqlite3.Row |
         return []
 
     norm_by_position: dict[int, str] = {}
+    canonical_by_position: dict[int, str] = {}
     if _table_exists(conn, "song_performances"):
         for r in conn.execute(
-            "SELECT position, song_norm FROM song_performances WHERE event_id = ?",
+            "SELECT position, song_norm, song_canonical FROM song_performances "
+            "WHERE event_id = ?",
             (event["event_id"],),
         ).fetchall():
             norm_by_position[r["position"]] = r["song_norm"]
+            if r["song_canonical"]:
+                canonical_by_position[r["position"]] = r["song_canonical"]
 
     rarity_map = _rarity_map(conn)
 
     setlist = []
     for s in songs:
+        # C4: song_performances.song_canonical by position when present,
+        # falling back to the Olof title (plan line 79).
+        title = canonical_by_position.get(s["position"]) or s["song_title"]
         row: dict = {
             "position": s["position"],
-            "title": s["song_title"],
+            "title": title,
             "is_encore": bool(s["is_encore"]),
         }
         if s["credits"]:

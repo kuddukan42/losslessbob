@@ -94,7 +94,12 @@ TEMPLATES: dict[str, str] = {
     "run_closing": "closing night of the {size}-night {venue} run",
     "run_night": "night {position} of {size} at {venue}",
     # D-02 songs
-    "tour_premiere": "new to the {tour}",
+    # C8: short badge text -- the tour name used to be inline ("new to the
+    # 1990 The Fastbreak Tour"), which overflowed the badge on phone widths.
+    # The tour name is still carried in the "tour" slot (derived_from stays
+    # intact) for a tooltip; wiring that into the template is Phase F/G work
+    # (out of C's template-edit scope -- see dossier_anchors/dossier.html).
+    "tour_premiere": "tour premiere",
     "gap_since": "first performance since {last_played} ({gap} shows)",
 }
 
