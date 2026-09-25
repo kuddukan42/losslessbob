@@ -15,6 +15,9 @@ Changed: backend/olof_parser.py: medley credits split per part ("I Walk The Line
 Changed: tests/golden/dossier: no-setlist → paren-titles, propagated-tapers → guest-medley, new
   2006-04-30_propagated-tapers; fixture re-cut, --check 16/16; audit 0 structural, 8 known conflicts.
 Added: instructions/GOLDEN_DOSSIER_FIX_PLAN_2.md (plan + dispositions).
+Changed: live DB (TODO-353, tj's go-ahead, backup data/backups/losslessbob_preC32i_reparse_20260925_1024.db):
+  Olof + bobserve reparse, song_performances rebuild, qc run — 438 bobserve subtitle-as-writer rows and 22
+  medley titles with embedded credits cleared; golden fixture re-cut, --check 16/16.
 
 [2026-09-25] — Dossier C33 corpus sweep + export re-check; stranded checksum/crawler/curation work committed
 Added: tools/dossier_sweep.py (+tests/test_dossier_sweep.py): builds every date's dossier through the gate

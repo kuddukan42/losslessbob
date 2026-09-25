@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-353: Live reparse: bobserve pages (subtitles as writers) + Olof medley credits
+Priority: Medium
+Status: Done
+Added: 2026-09-25
+Closed: 2026-09-25
+Description: C32i parser fixes need a live run (tj only, backup first): 438 bobserve olof_songs rows carry the subtitle in credits (C32b B6 fix never re-run live); 22 Olof medley rows keep '(Johnny Cash)' in the title. After: song_performances rebuild, make_fixture_db --golden, dossier_golden --check/--html. See instructions/GOLDEN_DOSSIER_FIX_PLAN_2.md step 5.
+Run live 2026-09-25 with tj's go-ahead after a backup (data/backups/losslessbob_preC32i_reparse_20260925_1024.db; Olof-table snapshot .debug/olof_before_c32i.db): Olof + bobserve reparse, compute_song_performances (72,994 rows / 1,367 songs, unchanged), qc run. 0 subtitle-as-writer rows (was 438), 0 medley titles with embedded credits (was 22). Fixture re-cut, --check 16/16, audit 8 known conflicts. olof_reparse_diff diff was blocked by the permission classifier and not run.
+
 TODO-295: gui_next — surface auto_triage in the TapeMatch Curation screen
 Priority: Medium
 Status: Done
