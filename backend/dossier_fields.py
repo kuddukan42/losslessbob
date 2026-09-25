@@ -2536,6 +2536,26 @@ _SOLO_TEXT_RE = re.compile(r"\bsolo\b", re.IGNORECASE)
 _ACOUSTIC_RE = re.compile(r"\bacoustic\b", re.IGNORECASE)
 
 
+_DYLAN_PAREN_RE = re.compile(r"\bBob\s+Dylan\b(\s+solo)?\s*\(([^)]*)\)", re.IGNORECASE)
+
+
+def _dylan_clause_text(text: str) -> str:
+    """Dylan's own part of a lineup clause: ``"[solo ](<instruments>)"``, or ``""``.
+
+    Args:
+        text: One override clause from :func:`_lineup_range_clauses`.
+
+    Returns:
+        ``"solo (vocal, guitar & harmonica)"`` for "Bob Dylan solo (...)", the
+        parenthetical alone for "Bob Dylan (...)", and ``""`` when the clause
+        doesn't credit Dylan with an instrument.
+    """
+    m = _DYLAN_PAREN_RE.search(text or "")
+    if not m:
+        return ""
+    return f"{'solo ' if m.group(1) else ''}({m.group(2)})"
+
+
 def _era_default_instruments(year: int | None) -> frozenset[str]:
     """The canonical instrument names that are unremarkable for *year*.
 
@@ -2584,9 +2604,18 @@ def instrument_segments(
     defaults = _era_default_instruments(year)
     resolved: dict[int, str] = {}
     for positions, text in _lineup_range_clauses(lineup):
+        # Only Dylan's own instrumentation is noteworthy here; a full-band clause
+        # ("1-13 Bob Dylan (vocal, guitar), David Mansfield (violin, mandolin) ...")
+        # or a guest clause ("6, 7 Scarlet Rivera (violin)") must not leak the
+        # other players' instruments into the line.
+        dylan = _dylan_clause_text(text)
+        if not dylan:
+            continue
         for p in positions:
             if 1 <= p <= song_count:
-                resolved[p] = text
+                # Merge, don't replace: "14, 15 Bob Dylan solo (...)" followed by
+                # "2, 14-16 Bob Dylan (harmonica)" is still a solo spot on 14-15.
+                resolved[p] = f"{resolved[p]} {dylan}" if p in resolved else dylan
 
     labels: dict[int, str] = {}
     for pos, text in resolved.items():

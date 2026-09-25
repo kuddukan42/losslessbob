@@ -506,7 +506,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   {%- if setlist_conf_f and setlist_conf_f.value %}{% set _ = stat_bits.append(lbf('show.setlist_confidence', setlist_conf_f)) %}{% endif -%}
   {%- if stat_bits %}<p class="stats-line">{{ stat_bits | join(' · ') | safe }}</p>{% endif %}
   {%- set official_f = fields.get('show.official_release') -%}
-  {%- if official_f and official_f.value %}<p class="stats-line">{{ lbf('show.official_release', official_f, text=('Officially released: ' ~ official_f.value)) }}</p>{% endif %}
+  {%- if official_f and official_f.value %}{% set _ov = official_f.value %}<p class="stats-line">{{ lbf('show.official_release', official_f, text=(('Official release: ' ~ _ov) if _ov in ('partial', 'full', 'none') else ('Officially released: ' ~ _ov))) }}</p>{% endif %}
   <table class="setlist">
     <thead><tr><th class="pos">#</th><th>Song</th><th class="tags"></th></tr></thead>
     <tbody>
