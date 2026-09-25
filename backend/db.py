@@ -1683,6 +1683,54 @@ def _normalise_alias_key(text: str | None) -> str:
     return s
 
 
+_SERIES_CANONICAL_RE = re.compile(r'^(?:lt[a-z]|net taper [a-z])$')
+# A taper phrase directly before a series code binds it ("taped by nti",
+# "Source: LTB", "Taper=LTA", "Carsten reports this to be NTF", "matches to NTD").
+# "same recording as LTD" binds too -- it names the tape this one is.
+# Comparison words ("as", "than", "vs", "different from") are deliberately absent.
+_SERIES_BINDING_PREFIX_RE = re.compile(
+    r'(?:\b(?:taped|recorded|recording|source|taper|lineage|master|by|be|is|reports?|aka|'
+    r'match(?:es)?(?:\s+to)?|identified\s+as|(?:is|are)\s+from|'
+    r'same\s+(?:recording|source|tape|transfer)\s+as)\b|=)'
+    r'[\s:=\-–>,"\'(]*(?:(?:the|an?)\s+)?$',
+    re.IGNORECASE,
+)
+# The spelled-out label form "Net Taper: I" / "Net Taper - F".
+_NET_TAPER_LABEL_RE = re.compile(r'\bnet\s*taper\s*[:\-#]\s*([a-z])\b', re.IGNORECASE)
+# What may precede a series code that "starts the lineage": nothing, or a
+# version tag ('version "b";'), within the code's own line.
+_SERIES_LEAD_RE = re.compile(r'^[\s(\["\'*]*(?:version\s*"?\w{1,3}"?\s*[;,:]\s*)?$', re.IGNORECASE)
+
+
+def _series_code_bound(text: str, m: re.Match) -> bool:
+    """Whether a series-code match in *text* is a credit rather than a passing mention.
+
+    Bound when the matched alias spells out "taper" itself ("net taper i",
+    "legendary taper b"), when a taper phrase sits directly before it, or when
+    it starts the lineage -- the first thing on its line, optionally after a
+    version tag, or a bare comma-separated item early in the header line.
+
+    Args:
+        text: The scanned description window.
+        m: A match whose group 1 is the series-code alias.
+
+    Returns:
+        True when the code should be read as the taper credit.
+    """
+    if 'taper' in m.group(1).lower():
+        return True
+    before = text[max(0, m.start() - 40):m.start()]
+    if _SERIES_BINDING_PREFIX_RE.search(before):
+        return True
+    line_start = text.rfind('\n', 0, m.start()) + 1
+    if _SERIES_LEAD_RE.match(text[line_start:m.start()]):
+        return True
+    # A bare comma-list item early in the header line ("Off DAT clone(s), LTF, Source").
+    return (line_start == 0 and m.start() < 80
+            and bool(re.search(r'[,;]\s*$', text[:m.start()]))
+            and bool(re.match(r'\s*[,;]', text[m.end():])))
+
+
 def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
     """Parse free-text description into (taper_name, source_chain).
 
@@ -1705,15 +1753,26 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
     source_chain: str | None = None
 
     # ── 0. Known taper handles — confirmed names, checked before heuristics ─
-    m0 = _KNOWN_TAPER_RE.search(d600)
-    if m0:
+    # A series code (lta-ltz, nta-ntz) only counts when it is bound to a taper
+    # phrase or starts the lineage (plan E4: "not as warm as nti" is a comparison
+    # with another source, not a credit); unbound ones are skipped, not fatal.
+    for m0 in _KNOWN_TAPER_RE.finditer(d600):
         raw_h = m0.group(1)
         norm_h = _normalise_alias_key(raw_h)
-        taper_name = _KNOWN_TAPER_ALIASES.get(norm_h, raw_h)
+        canonical = _KNOWN_TAPER_ALIASES.get(norm_h, raw_h)
+        if _SERIES_CANONICAL_RE.match(canonical) and not _series_code_bound(d600, m0):
+            continue
+        taper_name = canonical
+        break
     if not taper_name:
-        m_lt = _LT_TAPER_RE.search(d600)
-        if m_lt:
-            taper_name = m_lt.group(1).lower()
+        m_nt = _NET_TAPER_LABEL_RE.search(d600)
+        if m_nt:
+            taper_name = f"net taper {m_nt.group(1).lower()}"
+    if not taper_name:
+        for m_lt in _LT_TAPER_RE.finditer(d600):
+            if _series_code_bound(d600, m_lt):
+                taper_name = m_lt.group(1).lower()
+                break
 
     # ── 1. Explicit Taper: label (skip inside parentheticals) ────────────
     for m in re.finditer(
@@ -2060,8 +2119,12 @@ _DIFF_RE = re.compile(
     re.IGNORECASE,
 )
 _LB_REF_RE = re.compile(r'\bLB-0*(\d+)\b', re.IGNORECASE)
+# "recorded by" / "recording by" are explicit credits too (plan E5), but only
+# when bound to the parsed handle -- taper_attribution._layer0_seed checks that
+# binding for these two forms (and for "a <handle> recording", which no static
+# regex can express) rather than trusting a match anywhere in the text.
 _EXPLICIT_TAPER_LABEL_RE = re.compile(
-    r'\bTaper\s*:|\btaped\b[\w\s,]{0,40}?\bby\b', re.IGNORECASE,
+    r'\bTaper\s*:|\btaped\b[\w\s,]{0,40}?\bby\b|\brecord(?:ed|ing)\s+by\b', re.IGNORECASE,
 )
 _SEMI_EXPLICIT_TAPER_RE = re.compile(
     r'\btaped\s+by\b|\bSeeded\b|\bBOOTLEG\s*:|'
@@ -2999,6 +3062,11 @@ def extract_lb_references(description: str) -> dict:
     relationship patterns match its context. Snippet is 200 chars centred on
     the match. `_DIFF_RE` matches are not stored; contradictory same+diff context
     stores in same_as_lb only when same_count >= diff_count in that window.
+
+    A reference negated in its own clause ("it has none of the flaws described in
+    LB-0301/LB-4356") is never a same_as claim, whatever the window around it
+    says (plan E1: a nearby "close eac match" otherwise linked four unrelated
+    1999-06-11 sources).
     """
     mentions: list[list] = []
     same_as: list[int] = []
@@ -3022,7 +3090,18 @@ def extract_lb_references(description: str) -> dict:
         same_count = len(_SAME_RE.findall(ctx))
         diff_count = len(_DIFF_RE.findall(ctx))
 
-        if same_count > 0 and same_count >= diff_count:
+        # Negation guard: the clause leading up to this reference (back to the
+        # nearest bracket / comma / sentence / line break, at most 120 chars;
+        # chained "LB-x/LB-y" lists share one clause) negates it.
+        clause = description[max(0, m.start() - 120):m.start()]
+        clause = re.split(r'[()\n;,]|\.\s', clause)[-1]
+        negated = bool(re.search(
+            r"\b(?:none|no|not|never|neither|nor|unlike|without|"
+            r"(?:is|was|does|did|has)n'?t)\b",
+            clause, re.IGNORECASE,
+        ))
+
+        if same_count > 0 and same_count >= diff_count and not negated:
             if lb_num not in same_as:
                 same_as.append(lb_num)
         if _DERIVED_RE.search(ctx) and lb_num not in derived_from:

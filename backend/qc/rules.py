@@ -836,6 +836,41 @@ def rule_t5(conn: sqlite3.Connection) -> Iterable[Finding]:
         )
 
 
+def rule_t6(conn: sqlite3.Connection) -> Iterable[Finding]:
+    """R-T6: a recording family's members carry 2+ distinct confirmed tapers (plan E3).
+
+    One recording can't have two tapers, so either the family is over-merged
+    (weak families included -- they never propagate, but the contradiction still
+    shows) or one credit is wrong. Display-only: the dossier renders each pill
+    in the family as ``disputed`` (:func:`backend.dossier_fields.taper_render`);
+    nothing is withheld.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        One warn Finding per confirmed-credited LB in a conflicting family.
+    """
+    if not (_table_exists_local(conn, "taper_attributions")
+            and _table_exists_local(conn, "recording_families")):
+        return
+    from backend.dossier_fields import family_taper_conflicts
+
+    for fam_id, tapers in family_taper_conflicts(conn).items():
+        summary = "; ".join(
+            f"{t} ({', '.join(f'LB-{lb}' for lb in lbs)})" for t, lbs in sorted(tapers.items()))
+        for taper, lbs in sorted(tapers.items()):
+            for lb in lbs:
+                yield Finding(
+                    entity_kind="lb",
+                    entity_key=str(lb),
+                    severity="warn",
+                    detail=f"LB-{lb}: taper '{taper}' but family {fam_id} credits {summary}",
+                    evidence={"taper": taper, "fam_id": fam_id,
+                              "family_tapers": {t: v for t, v in sorted(tapers.items())}},
+                )
+
+
 def _max_scalar(conn: sqlite3.Connection, sql: str) -> str | None:
     """Return the single scalar result of *sql*, or None if it's NULL/no rows."""
     row = conn.execute(sql).fetchone()
@@ -1148,5 +1183,11 @@ RULES: dict[str, RuleDef] = {
         description="Taper attributed to a broadcast-derived source",
         severity="warn",
         func=rule_t5,
+    ),
+    "R-T6": RuleDef(
+        rule_id="R-T6",
+        description="Recording family carries 2+ distinct confirmed tapers",
+        severity="warn",
+        func=rule_t6,
     ),
 }
