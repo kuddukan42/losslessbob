@@ -958,3 +958,54 @@ def test_revert_route_round_trips_a_decision():
     assert _get_confirmation(conn, 2001)["taper_normalised"] == "spot"
 
     shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ── Golden review 3 (2006-04-30) ──────────────────────────────────────────────
+
+def test_family_with_a_mix_member_does_not_propagate():
+    """A mix matches every tape it was built from, so its family can hold two
+    different tapes -- "jh mix of jh and m&a" must not spread m&a to the jh tape."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 300, "jh mix of jh and m&a  Alt Mix; Source 1 - Stealth Taper: Spot",
+                taper_name="spot", taper_normalised="spot")
+    _seed_entry(conn, 301, "jh; Source: SoundPro SP-CMC4c > Sony MZ-M100")
+    _seed_family(conn, "F3", "2006-04-30", [300, 301])
+
+    taper_attribution.recompute(db_path=db_path)
+
+    assert _get_attr(conn, 300)["confidence"] == "confirmed"
+    assert _get_attr(conn, 301) is None
+
+
+def test_entry_opening_with_handle_recording_is_confirmed():
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 310, "Spot Recording, MBHO 603a---> Sound Devices 722, 8th row",
+                taper_name="spot", taper_normalised="spot")
+    _seed_entry(conn, 311, "Spot recording  10/14 - reported that taper spot confirmed this is"
+                " NOT his recording", taper_name="spot", taper_normalised="spot")
+
+    taper_attribution.recompute(db_path=db_path)
+
+    assert _get_attr(conn, 310)["confidence"] == "confirmed"
+    row = _get_attr(conn, 311)
+    assert row is None or row["confidence"] != "confirmed"
+
+
+def test_same_as_across_dates_does_not_propagate():
+    """Golden review 3 (LB-05661 -> LB-02841): a same_as link between two dates
+    is no evidence of a shared taper."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 320, "Taper: Spot", taper_name="spot", taper_normalised="spot")
+    _seed_entry(conn, 321, "identical to LB-320", same_as=[320])
+    _seed_entry(conn, 322, "identical to LB-320", same_as=[320])
+    conn.execute("UPDATE entries SET date_str = '8/18/04' WHERE lb_number IN (320, 321)")
+    conn.execute("UPDATE entries SET date_str = '1/14/98' WHERE lb_number = 322")
+    conn.commit()
+
+    taper_attribution.recompute(db_path=db_path)
+
+    assert _get_attr(conn, 321)["taper_normalised"] == "spot"
+    assert _get_attr(conn, 322) is None

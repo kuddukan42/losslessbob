@@ -301,6 +301,11 @@ _HEDGE_RE = re.compile(r'\b(?:likely|probably|possibly|maybe|perhaps|presumably)
                        re.IGNORECASE)
 
 
+# "hv recording ... taper hv confirmed this is NOT his recording" (LB-01542).
+_DISOWNED_RE = re.compile(
+    r"\bnot\s+(?:his|her|their|my|the\s+taper'?s)\s+(?:own\s+)?recording\b", re.IGNORECASE)
+
+
 def explicit_credit(description: str, canonical_taper: str) -> bool:
     """Whether *description* explicitly credits *canonical_taper* as the taper.
 
@@ -327,6 +332,11 @@ def explicit_credit(description: str, canonical_taper: str) -> bool:
         for m in re.finditer(r'\ban?\s+' + alias + r'\s+recording\b', window, re.IGNORECASE):
             if not _HEDGE_RE.search(window[max(0, m.start() - 20):m.start()]):
                 return True
+        # Golden review 3 (LB-03808): an entry that opens "M&A Recording, MBHO 603a
+        # > ..." credits its own taper as plainly as "an M&A recording" would.
+        if (re.match(r'\s*' + alias + r'\s+recording\b', window, re.IGNORECASE)
+                and not _DISOWNED_RE.search(window)):
+            return True
     return False
 
 
@@ -581,8 +591,12 @@ def _propagate_strong(
     same_as_adj: dict[int, list[int]],
     derived_from_adj: dict[int, list[int]],
     blocked: frozenset[int] | set[int] = frozenset(),
+    mixes: frozenset[int] | set[int] = frozenset(),
 ) -> None:
     """Layer 1 over strong edges: family cliques + same_as + derived_from.
+
+    Golden review 3: a family holding a mix/matrix member (*mixes*) is not an
+    edge -- the mix can join two different tapes into it.
 
     Nothing is ever propagated onto an LB in *blocked* -- a soundboard, ALD,
     broadcast or matrix source has no audience taper (plan E2). Such a node
@@ -606,6 +620,8 @@ def _propagate_strong(
     lb_fam_strong: dict[int, str] = {}
     for fam_id, members in fam_members.items():
         if fam_weak.get(fam_id, True) or len(members) < 2:
+            continue
+        if any(lb in mixes for lb in members):
             continue
         for lb in members:
             lb_fam_strong[lb] = fam_id
@@ -712,7 +728,8 @@ def _mark_weak_family_conflicts(
 # Sources that never receive a propagated taper (plan E2): a board, ALD, FM or
 # matrix recording has no audience taper to inherit.
 _NO_PROPAGATE_SOURCE_TYPES = frozenset({"Soundboard", "ALD", "FM/Pre-FM", "Mixed"})
-_MATRIX_RE = re.compile(r"\bmatrix\b", re.IGNORECASE)
+# "mix" too (golden review 3): "jh mix of jh and m&a" is a two-source matrix.
+_MATRIX_RE = re.compile(r"\b(?:matrix|mix)\b", re.IGNORECASE)
 
 
 def _load_propagation_blocked(conn: sqlite3.Connection, candidates) -> frozenset[int]:
@@ -748,6 +765,67 @@ def _load_propagation_blocked(conn: sqlite3.Connection, candidates) -> frozenset
         except sqlite3.OperationalError:  # minimal test schemas lack checksums
             pass
     return frozenset(blocked)
+
+
+def _drop_cross_date_edges(
+    conn: sqlite3.Connection,
+    same_as_adj: dict[int, list[int]],
+    derived_from_adj: dict[int, list[int]],
+) -> tuple[dict[int, list[int]], dict[int, list[int]]]:
+    """Drop same_as/derived_from edges between entries of different dates.
+
+    A "same recording" claim can't join two shows (golden review 3: LB-05661,
+    2004-08-18, took 'net taper s' from LB-02841, a 1998 compilation; LB-05364,
+    2000, linked to LB-04002, 2006). One side is misdated or the claim is about
+    a compilation -- either way it is no evidence the two share a taper.
+
+    Args:
+        conn: Database connection.
+        same_as_adj: Undirected same_as adjacency.
+        derived_from_adj: Undirected derived_from adjacency.
+
+    Returns:
+        Both adjacencies with cross-date edges removed.
+    """
+    dates = dict(conn.execute("SELECT lb_number, date_str FROM entries"))
+
+    def keep(adj: dict[int, list[int]]) -> dict[int, list[int]]:
+        out: dict[int, list[int]] = {}
+        for lb, others in adj.items():
+            same = [o for o in others if dates.get(o) == dates.get(lb)]
+            if same:
+                out[lb] = same
+        return out
+
+    return keep(same_as_adj), keep(derived_from_adj)
+
+
+def _load_mix_sources(conn: sqlite3.Connection, candidates) -> frozenset[int]:
+    """LBs in *candidates* that mix two or more sources (a matrix).
+
+    A mix matches every tape it was built from, so TapeMatch can put two
+    different tapes in one family through it (golden review 3, 2006-04-30:
+    LB-08495 "jh mix of jh and m&a" joined the jh and m&a tapes). Such a family
+    is no evidence its members share a taper.
+
+    Args:
+        conn: Database connection.
+        candidates: LBs on some propagation edge.
+
+    Returns:
+        The mix/matrix LB numbers.
+    """
+    wanted = set(candidates)
+    mixes: set[int] = set()
+    for lb, source_type, description in conn.execute(
+        "SELECT lb_number, source_type, description FROM entries"
+    ):
+        if lb not in wanted:
+            continue
+        first_line = (description or "").split("\n", 1)[0][:300]
+        if source_type == "Mixed" or _MATRIX_RE.search(first_line):
+            mixes.add(lb)
+    return frozenset(mixes)
 
 
 # ── Orchestration ──────────────────────────────────────────────────────────────
@@ -821,6 +899,8 @@ def _compute_layers01(
     lineage_rows = _load_lineage_rows(conn)
     fam_members, fam_weak = _load_families(conn)
     same_as_adj, derived_from_adj = _build_adjacency(lineage_rows)
+    same_as_adj, derived_from_adj = _drop_cross_date_edges(
+        conn, same_as_adj, derived_from_adj)
 
     attrs = _layer0_seed(lineage_rows, _db._TAPER_UNIVERSE)
     rejects, unresolved = _apply_confirmations(attrs, confirmations)
@@ -829,7 +909,9 @@ def _compute_layers01(
     on_edges = {lb for members in fam_members.values() for lb in members}
     on_edges.update(same_as_adj, derived_from_adj)
     blocked = _load_propagation_blocked(conn, on_edges)
-    _propagate_strong(attrs, fam_members, fam_weak, same_as_adj, derived_from_adj, blocked)
+    mixes = _load_mix_sources(conn, on_edges)
+    _propagate_strong(attrs, fam_members, fam_weak, same_as_adj, derived_from_adj, blocked,
+                      mixes)
     _mark_weak_family_conflicts(attrs, fam_members, fam_weak, blocked)
 
     return attrs, fam_members, same_as_adj, derived_from_adj, rejects, unresolved

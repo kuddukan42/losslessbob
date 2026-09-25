@@ -46,7 +46,7 @@ def golden_db():
 
 
 def test_specs_are_well_formed():
-    assert len(_SPECS) == 16
+    assert len(_SPECS) == 18
     assert GOLDEN_FIXTURE.exists()
     for path, spec in _SPECS:
         assert path.stem.startswith(spec["date"]), path.name

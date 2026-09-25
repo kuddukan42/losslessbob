@@ -2128,7 +2128,10 @@ _BETTER_RE = re.compile(
 )
 _DIFF_RE = re.compile(
     r'different\s+(?:recording|source|tape|from)|'
-    r'not\s+the\s+same',
+    r'not\s+the\s+same|'
+    # Golden review 3 (LB-14054): "Alternate to LB-2470/..." names a different
+    # recording, even when it goes on to say the others share one source.
+    r'\balternat(?:e|ive)\s+(?:recording\s+|source\s+|version\s+)?to\b',
     re.IGNORECASE,
 )
 _LB_REF_RE = re.compile(r'\bLB-0*(\d+)\b', re.IGNORECASE)
@@ -3113,11 +3116,19 @@ def extract_lb_references(description: str) -> dict:
             r"(?:is|was|does|did|has)n'?t)\b",
             clause, re.IGNORECASE,
         ))
+        # Golden review 3: "Alternate to LB-a/LB-b" negates same_as *and* derived_from;
+        # a generic "not" doesn't block derived_from ("is not LB-67; it is derived from it").
+        alternate = bool(re.search(
+            r"\balternat(?:e|ive)\s+(?:recording\s+|source\s+|version\s+)?to\s*"
+            r"(?:LB-\d+\s*[/&]\s*)*$",
+            clause, re.IGNORECASE,
+        ))
+        negated = negated or alternate
 
         if same_count > 0 and same_count >= diff_count and not negated:
             if lb_num not in same_as:
                 same_as.append(lb_num)
-        if _DERIVED_RE.search(ctx) and lb_num not in derived_from:
+        if _DERIVED_RE.search(ctx) and not alternate and lb_num not in derived_from:
             derived_from.append(lb_num)
         if _BETTER_RE.search(ctx) and lb_num not in better_than:
             better_than.append(lb_num)
