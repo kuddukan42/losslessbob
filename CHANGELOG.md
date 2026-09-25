@@ -1,3 +1,23 @@
+[2026-09-25] — Dossier C33 corpus sweep + export re-check; stranded checksum/crawler/curation work committed
+Added: tools/dossier_sweep.py (+tests/test_dossier_sweep.py): builds every date's dossier through the gate
+  (ambiguous dates fan out per venue/show, _rarity_map cached), writes data/logs/dossier_sweep_<date>.md/.json,
+  --notify on a night-over-night rise in refused/withheld/gate/build errors. First run: 4,050 targets,
+  98 refused (all G1 no-Olof-event), 955 fields withheld on 169 shows, 93 disputed setlists, 0 stale,
+  0 gate/build errors, 19 min. Nightly via crontab 03:15 → data/dossier_sweep_cron.sh (gitignored).
+Added: tools/dossier_verify_export.py: rebuilds an exported dossier from its identity and diffs the lb-qc
+  fingerprint/refusal/withheld set (OK/DRIFT/ERROR, exit 0/1/2).
+Changed: backend/app.py, templates/dossier.html: /api/dossier/html embeds #lb-dossier-id {date_iso, location,
+  show, channel}.
+Fixed: backend/dossier_qc.py (BUG-355): G4 withhold_all_rows used a set row's dict label as a set member —
+  TypeError, page reported a gate internal error (1976-04-22). Row ids are now JSON-encoded.
+Fixed: backend/scraper.py, site_crawler.py, db.py: crawler seeds the renamed LBM-bynumber index; per-URL
+  outcome (last_url/last_result/last_seq) drives the Scraper log; upsert_inventory emits CURRENT_TIMESTAMP
+  as SQL and init_db nulls rows that stored the literal text.
+Added: ScreenChecksumDisputes + checksum_provenance.get_findings (TODO-299 GUI half): findings bucketed
+  db_error/audio_differs/retag/receipt_unknown/lbdir_only; dispute badges in Library + Lookup.
+Changed: ScreenTapeMatchCuration: auto_triage badges (TODO-295) + i18n pass (TODO-275, partial — dossier
+  evidence labels still hardcoded); 13 missing en.json keys restored so it typechecks.
+
 [2026-09-25] — Golden dossiers: adversarial review → C32a–h fixes, live rebuild, regenerated set
 Added: tools/dossier_audit.py (+tests): repeatable adversarial audit of an exported dossier set —
   link sweep (parked/placeholder pages, LB/bobserve date match), internal links, setlist diff vs

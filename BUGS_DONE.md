@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-355: Dossier gate G4 crashed on set rows: dict label used as a set member
+Status: Fixed
+File(s): backend/dossier_qc.py:180
+Reported: 2026-09-25
+Fixed: 2026-09-25
+Root cause: set rows' label anchor holds a dict value; withhold_all_rows used it verbatim as the row id in a set
+Fix: withhold_all_rows JSON-encodes dict/list row ids; regression test in tests/test_dossier_qc.py
+
 BUG-337: song_canonical splits 28 titles into spacing/encoding variants, stranding 4,290 performances
 Status: Fixed
 File(s): backend/olof_parser.py,backend/song_index.py
