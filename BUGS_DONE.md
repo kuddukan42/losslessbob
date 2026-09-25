@@ -2,6 +2,38 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-362: Chronicle glues cross-month range and season headings onto previous entry
+Status: Fixed
+File(s): backend/olof_chronicle_parser.py
+Reported: 2026-09-25
+Fixed: 2026-09-25
+Root cause: _CHRON_DATE_HEAD_RE had no cross-month range or season shape
+Fix: _CHRON_RANGE_HEAD_RE + _CHRON_SEASON_RE (1,244 -> 1,264 rows). Live chronicle reparse pending
+
+BUG-361: Venue run joins same venue name in different cities
+Status: Fixed
+File(s): backend/dossier_fields.py:run_context
+Reported: 2026-09-25
+Fixed: 2026-09-25
+Root cause: run_context compared venue name and tour only
+Fix: also requires the city (containment); render-time, live now
+
+BUG-360: Olof bobtalk swallows media-prefixed bootleg listing
+Status: Fixed
+File(s): backend/olof_parser.py
+Reported: 2026-09-25
+Fixed: 2026-09-25
+Root cause: section-end regex knew only bare 'Bootleg(s)'
+Fix: _BOOTLEG_HEADER_RE accepts CD/DVD/LP/vinyl/video prefixes. Live Olof reparse pending
+
+BUG-359: LB same_as window links comparisons/'different recording' refs as same recording
+Status: Fixed
+File(s): backend/db.py:extract_lb_references
+Reported: 2026-09-25
+Fixed: 2026-09-25
+Root cause: same/different phrases counted over a ±200-char window; clause negation split on commas
+Fix: phrases bind to refs in their own sentence; an earlier 'different …' refuses; 'Fixed LB-x'/'LosslessBob entry: LB-x' count as same (-123/+61 edges). Live re-parse pending (TODO below)
+
 BUG-358: Taper propagation through a mix-bridged family, 'Alternate to' misparse and cross-date lineage edges
 Status: Fixed
 File(s): backend/taper_attribution.py,backend/db.py

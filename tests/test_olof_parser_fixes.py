@@ -347,6 +347,21 @@ def test_release_lines_after_bobtalk_survive_the_section_guard():
     assert songs[1].annotations == "is also called Omie Wise; stereo PA recording"
 
 
+@pytest.mark.parametrize("header", ["CD bootlegs", "CD Bootlegs", "DVD bootleg",
+                                     "LP bootlegs", "Vinyl bootleg"])
+def test_bobtalk_stops_at_a_bootleg_listing_header(header):
+    # Modelled on DSN01135 / 1965-09-03 (golden-dossier review): BobTalk previously
+    # ran on into the bootleg-listing header and its titles.
+    lines = ["Venue", "City, Sweden", "1 May 1990", "1.", "First", "2.", "Second",
+             "BobTalk", "Thank you.", header,
+             "Back In The Hollywood Bowl. Bell Bottom / BB 036",
+             "Official releases", "1 released on X."]
+    rec, songs = _parse_event(lines, 1, "p1", "")
+    assert rec.bobtalk == "Thank you."
+    assert "Bell Bottom" not in rec.bobtalk
+    assert songs[0].released_on == "X"
+
+
 # --- C03: P1b date lines, P1c venue-history lists, P1d rotation stat ----------------------
 
 _HEAD = ["Zepp Tokyo", "Tokyo, Japan", "29 March 2010"]

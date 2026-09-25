@@ -261,11 +261,18 @@ _CLAUSE_SPLIT_RE = re.compile(r"\.\s+(?=\d+[\s,–-])")
 # P1a: a guest/interlude header ("Bob Neuwirth:", "Tom Petty & The Heartbreakers:")
 # is a short line ending in ':' — see _is_guest_header.
 _GUEST_HEADER_MAX_CHARS = 60
+# A bootleg-listing header, optionally naming the media ("CD bootlegs", "DVD
+# bootleg", "LP bootlegs", "Vinyl bootleg") — the silver-dossier review found
+# BobTalk running on into these (event 1135, 1965-09-03: "CD bootlegs";
+# 6 events, all 1965/66, carry a media-prefixed header inside bobtalk).
+_BOOTLEG_HEADER_RE = re.compile(
+    r"^(?:(?:cd|dvd|lp|vinyl|video)\s+)?bootlegs?$", re.IGNORECASE
+)
 # P1g: labels that close a BobTalk/References section in the trailer scan. Wider
 # than _classify_special_line on purpose ("Official release" singular, "Unauthorized
 # releases", "Bootlegs") — the section fields themselves are unchanged.
 _SECTION_END_RE = re.compile(
-    r"^(?:bootlegs?|references?|notes?|"
+    r"^(?:(?:(?:cd|dvd|lp|vinyl|video)\s+)?bootlegs?|references?|notes?|"
     r"(?:(?:official|unauthori[sz]ed)\s+)?releases?)[.:]?$", re.IGNORECASE
 )
 # B2 (golden-dossier plan, phase B): "Bootlegs"/"References" as a standalone
@@ -660,7 +667,7 @@ def _classify_special_line(line: str) -> str | None:
         return "releases"
     if key in ("reference", "references"):
         return "references"
-    if key in ("bootleg", "bootlegs"):
+    if _BOOTLEG_HEADER_RE.match(key):
         return "bootlegs"
     if _RECORDING_RE.search(line):
         return "recording"

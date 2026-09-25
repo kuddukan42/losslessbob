@@ -498,7 +498,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   {%- set premiere_titles_f = fields.get('stats.premiere_titles') -%}
   {#- premiere_titles falls back to a bare count when the D-02 gate withholds names; the
       count is already printed by stats.premiere_count, so a name list is required to render. #}
-  {%- if premiere_titles_f and premiere_titles_f.value is iterable and premiere_titles_f.value is not string and premiere_titles_f.value %}{% set _ = stat_bits.append(lbf('stats.premiere_titles', premiere_titles_f, text=(premiere_titles_f.value | join(', ')))) %}
+  {%- if premiere_titles_f and premiere_titles_f.value is iterable and premiere_titles_f.value is not string and premiere_titles_f.value %}{% set _ = stat_bits.append(lbf('stats.premiere_titles', premiere_titles_f, text=(premiere_titles_f.value | join('; ')))) %}
   {%- elif premiere_titles_f and premiere_titles_f.value %}<span data-lb="stats.premiere_titles" hidden>{{ premiere_titles_f.value }}</span>{% endif -%}
   {%- set instr_notes_f = fields.get('stats.instrument_notes') -%}
   {%- if instr_notes_f and instr_notes_f.value %}{% set _ = stat_bits.append(lbf('stats.instrument_notes', instr_notes_f, text=render_instrument_segments(instr_notes_f.value))) %}{% endif -%}

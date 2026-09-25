@@ -12,6 +12,7 @@ Usage::
     .venv/bin/python3 tools/dossier_golden.py --check        # fixture == live, per spec
     .venv/bin/python3 tools/dossier_golden.py --show 2010-03-29_spec-sample
     .venv/bin/python3 tools/dossier_golden.py --html ~/Documents/projects/losslessbob_dossiers
+    .venv/bin/python3 tools/dossier_golden.py --html DIR --specs tests/silver/dossier
 
 ``--check`` must pass before a re-cut fixture is committed: a snapshot that
 differs between the live DB and the fixture means the cut dropped a row the
@@ -236,7 +237,7 @@ def check() -> int:
     return 1 if failed else 0
 
 
-def export_html(out_dir: Path) -> int:
+def export_html(out_dir: Path, spec_dir: Path = GOLDEN_DIR) -> int:
     """Render every spec's dossier HTML from the live DB into *out_dir*, plus an index.
 
     Goes through ``/api/dossier/html`` on a Flask test client, so the pages are
@@ -244,6 +245,8 @@ def export_html(out_dir: Path) -> int:
 
     Args:
         out_dir: Destination folder, created if missing.
+        spec_dir: Folder of specs to render -- the golden set by default, or the
+            silver set (``tests/silver/dossier``: review-only, no fixture, no expected).
 
     Returns:
         Process exit code: 0 when every spec rendered.
@@ -259,7 +262,7 @@ def export_html(out_dir: Path) -> int:
     # export doesn't control the layout for) and, once every spec's stem is known,
     # rewrite each run-strip's .notlinked span to the exported stem when that date
     # is itself one of the exported specs -- see the .notlinked rewrite pass below.
-    specs = list(golden_specs())
+    specs = list(golden_specs(spec_dir))
     stem_by_date: dict[str, str] = {spec["date"]: path.stem for path, spec in specs}
     rows, failed = [], 0
     for path, spec in specs:
@@ -329,12 +332,14 @@ def main(argv: list[str] | None = None) -> int:
     grp.add_argument("--html", metavar="DIR", type=Path,
                      help="render every spec's HTML from the live DB into DIR")
     grp.add_argument("--snapshots", metavar="DB", help=argparse.SUPPRESS)
+    ap.add_argument("--specs", metavar="DIR", type=Path, default=GOLDEN_DIR,
+                    help="spec folder for --html (default: the golden set)")
     args = ap.parse_args(argv)
 
     if args.check:
         return check()
     if args.html:
-        return export_html(args.html.expanduser())
+        return export_html(args.html.expanduser(), args.specs)
     if args.snapshots:
         logging.disable(logging.CRITICAL)  # stdout carries the JSON
         json.dump(_snapshots_json(None if args.snapshots == "-" else args.snapshots),

@@ -91,6 +91,18 @@ class TestRunContext:
             _concert(conn, 3, "2010-01-03", "V", "Tokyo", "T", ["A"])
         assert run_context(conn, 3)["venue_run"]["size"] == 1
 
+    def test_same_venue_name_in_another_city_is_not_the_run(self, conn):
+        """Silver review: Providence and Springfield "Civic Center" (1975-11-04/06)."""
+        from backend.dossier_fields import run_context
+        with conn:
+            _concert(conn, 1, "1975-11-04", "Civic Center", "Providence", "T", ["A"])
+            _concert(conn, 2, "1975-11-06", "Civic Center", "Springfield", "T", ["A"])
+            _concert(conn, 3, "1997-02-09", "Hall A", "Tokyo International Forum Tokyo", "T",
+                     ["A"])
+            _concert(conn, 4, "1997-02-10", "Hall A", "Tokyo", "T", ["A"])
+        assert run_context(conn, 2)["venue_run"]["size"] == 1
+        assert run_context(conn, 4)["venue_run"]["size"] == 2
+
     def test_claims_guard_open_ro1_or_missing_songs(self, conn):
         from backend.dossier_fields import run_context
         with conn:

@@ -1478,8 +1478,16 @@ def run_context(conn: sqlite3.Connection, event_id: int) -> RunContext:
 
     venue = (ev["venue"] or "").strip()
     if venue:
+        city = (ev["city"] or "").strip().lower()
+
+        # Silver review: the venue name alone isn't a place -- "Civic Center" in
+        # Providence (11-04) and Springfield (11-06) made a false 1975 "2-night run".
+        # Containment, not equality: Olof's 1997-02-09 city is "Tokyo International
+        # Forum Tokyo" for the same 3-night Tokyo run.
         def same_run(r: sqlite3.Row) -> bool:
-            return r["tour_name"] == ev["tour_name"] and (r["venue"] or "").strip() == venue
+            other = (r["city"] or "").strip().lower()
+            return (r["tour_name"] == ev["tour_name"] and (r["venue"] or "").strip() == venue
+                    and (other in city or city in other))
 
         lo = hi = idx
         while lo > 0 and same_run(concerts[lo - 1]):
@@ -3968,11 +3976,13 @@ def _bobtalk_mention_position(
     Titles match case-sensitively as whole words (Olof capitalises titles in
     bobtalk), so prose ("a hurricane") never matches "Hurricane". A quote naming
     two songs, or a song played twice, stays in context -- the cue is ambiguous.
+    Commas are ignored on both sides (silver review: "This is called It's Alright
+    Ma" names "It's Alright, Ma").
     """
-    norm = text.replace("’", "'").replace("‘", "'")
+    norm = text.replace("’", "'").replace("‘", "'").replace(",", "")
     named: dict[str, list[int]] = {}
     for pos, song, _sub in setlist:
-        named.setdefault(song.replace("’", "'"), []).append(pos)
+        named.setdefault(song.replace("’", "'").replace(",", ""), []).append(pos)
     found = [
         song for song in named
         if re.search(r"(?<![\w'])" + re.escape(song) + r"(?![\w'])", norm)

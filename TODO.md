@@ -1,3 +1,9 @@
+TODO-354: Silver dossier review: live rebuild + tj decisions A–I
+Priority: High
+Status: Open
+Added: 2026-09-25
+Description: instructions/SILVER_DOSSIER_REVIEW.md. With tj's OK: backup, Olof + chronicle reparse, parse_lineage --force, attribute_tapers, show_picks, qc run, restart, golden --check, silver re-export. Then tj rules on A–I (silver-over-master picks, multi-rig families, hedged series codes, private-sourced propagation, runtime alternates, two-show sources, range notes, 3dogs alias, DAT copy).
+
 TODO-352: Finish venue_gazetteer city+country rekey
 Priority: Low
 Status: Open
