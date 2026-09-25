@@ -2,6 +2,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-357: Dossier claim engine crashes on two-show days (1974-01-06)
+Status: Fixed
+File(s): backend/dossier_fields.py:1573
+Reported: 2026-09-25
+Fixed: 2026-09-25
+Root cause: 4f9c526d made VenueRun.dates per night but event_ids stayed per show.
+Fix: VenueRun.event_dates (per show) feeds rotation_rank; regression test in test_run_context.py.
+
+BUG-356: Ranker gives the confirmed-taper bonus to disputed taper credits
+Status: Fixed
+File(s): concert_ranker/picks.py:396
+Reported: 2026-09-25
+Fixed: 2026-09-25
+Root cause: _load_taper_reputation read every confirmed attribution without the family-conflict check taper_render applies, nor conflict=0.
+Fix: _disputed_taper_lbs drops LBs in taper-conflicted families (and conflict rows) from the bonus; reputation medians unchanged. show_picks recomputed: rank-1 changed on 22 dates.
+
 BUG-355: Dossier gate G4 crashed on set rows: dict label used as a set member
 Status: Fixed
 File(s): backend/dossier_qc.py:180
