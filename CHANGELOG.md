@@ -1,3 +1,21 @@
+[2026-09-25] — Golden dossiers: second adversarial review → C32i fixes, picks recomputed, set regenerated
+Fixed: concert_ranker/picks.py (BUG-356): disputed taper credits (family with 2+ confirmed tapers) no longer
+  earn the confirmed-taper bonus; it had decided 1987-10-11 and 1995-03-16. show_picks recomputed (backup
+  data/backups/losslessbob_preC32i_20260925_1003.db): rank-1 changed on 22 dates.
+Fixed: backend/dossier_fields.py (BUG-357): claim engine crashed on two-show days — VenueRun.event_dates
+  (per show) now feeds rotation_rank.
+Fixed: backend/dossier_fields.py: "(the pick does not)" / "(the pick is not)" alternates need a known
+  incomplete / typed non-soundboard pick; bobtalk anchors shortened cue titles by prefix and uncued intros
+  naming exactly one song; clipped (160-char) lineage ends with " …".
+Fixed: backend/dossier_anchors.py, templates/dossier.html: family bands and "N tape groups" count the rows
+  shown; mixed Audience/Soundboard families flagged; Olof page-navigation lines dropped from Notes; QC footer
+  marks withheld LBs the page doesn't list; "1 show" / "1 night" plurals.
+Changed: backend/olof_parser.py: medley credits split per part ("I Walk The Line / Blue Moon Of Kentucky",
+  "Johnny Cash / Bill Monroe") — live reparse pending (TODO-353).
+Changed: tests/golden/dossier: no-setlist → paren-titles, propagated-tapers → guest-medley, new
+  2006-04-30_propagated-tapers; fixture re-cut, --check 16/16; audit 0 structural, 8 known conflicts.
+Added: instructions/GOLDEN_DOSSIER_FIX_PLAN_2.md (plan + dispositions).
+
 [2026-09-25] — Dossier C33 corpus sweep + export re-check; stranded checksum/crawler/curation work committed
 Added: tools/dossier_sweep.py (+tests/test_dossier_sweep.py): builds every date's dossier through the gate
   (ambiguous dates fan out per venue/show, _rarity_map cached), writes data/logs/dossier_sweep_<date>.md/.json,
