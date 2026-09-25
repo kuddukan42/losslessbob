@@ -8822,7 +8822,12 @@ def create_app() -> Flask:
             if result.get("show_options"):
                 view["show_links"] = [dict(o, href=_dossier_pick_href(o))
                                       for o in result["show_options"]]
-            html = render_template("dossier.html", d=view)
+            # C33: the exact identity this export was built with (echoed back, not
+            # re-derived), so tools.dossier_verify_export can rebuild an identical
+            # dossier from the exported file alone and diff it against the live DB.
+            identity = {"date_iso": date_iso, "location": location, "show": show,
+                       "channel": channel}
+            html = render_template("dossier.html", d=view, identity=identity)
             from backend.dossier_qc import lint_data_lb, lint_l1
 
             for violation in lint_l1(html) + lint_data_lb(html):

@@ -896,6 +896,9 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 
 </div>
 <script type="application/json" id="lb-qc">{{ qc | tojson }}</script>
+{%- if identity is defined %}
+<script type="application/json" id="lb-dossier-id">{{ identity | tojson }}</script>
+{%- endif %}
 <script>
 (function(){
   var root=document.documentElement,btn=document.getElementById('themeToggle');
