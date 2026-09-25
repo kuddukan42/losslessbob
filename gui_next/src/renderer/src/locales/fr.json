@@ -1960,7 +1960,151 @@
           "differentFamily": "famille différente"
         },
         "openInLibrary": "Ouvrez LB-{{lb}} dans la bibliothèque",
-        "close": "Fermer le dossier"
+        "close": "Fermer le dossier",
+        "similarityUnknown": "similitude — rapport de vitesse incertain, corrélation non comparable",
+        "similarityKnown": "similitude · fusion par bandes de corr + embedding",
+        "conflictBanner": "<strong>Conflit.</strong> La page LB indique la même source ; TapeMatch n'a trouvé aucun lien acoustique. C'est à cause de cette paire que cette date se trouve dans la file d'attente.",
+        "subheads": {
+          "primaryEvidence": "Preuve principale",
+          "secondaryEvidence": "Preuves indirectes",
+          "lbPageSays": "La page LB indique",
+          "yourJudgment": "Votre avis"
+        },
+        "evidence": {
+          "residualCorrelation": "Corrélation résiduelle",
+          "windowedCoverage": "Couverture en mode fenêtré",
+          "windowedCoverageNote": "fraction de fenêtres de 60 s denses présentant une corrélation — entraîne un regroupement secondaire",
+          "hissCorr": "Correction du sifflement dans les segments silencieux",
+          "hissCorrNote": "Le sifflement de la bande persiste malgré l’application d’un égaliseur et d’un réducteur de bruit à la musique",
+          "fingerprintDice": "Dés d'empreintes digitales",
+          "fingerprintDiceNote": "À titre indicatif uniquement — jamais par groupes. Bande ombrée = plage de coïncidence de 0,15 à 0,50 pour deux enregistreurs présents au même concert."
+        },
+        "lbPageSays": {
+          "disagrees": "n'est pas d'accord",
+          "agrees": "d'accord · même source",
+          "noClaim": "aucune revendication",
+          "none": "Aucun lien n'est établi entre ces numéros de ligne de base sur l'une ou l'autre des pages."
+        },
+        "showMore": "Afficher plus",
+        "showLess": "Afficher moins"
+      },
+      "abPlayer": {
+        "title": "Écoute comparative (A/B)",
+        "notEligible": "non éligible",
+        "notEligibleBody": "Non alignable au niveau des échantillons — le décalage de vitesse entre ces deux éléments rend impossible la synchronisation d'une paire de clips.",
+        "position": "Poste(s)",
+        "duration": "Durée (s)",
+        "load": "Charger",
+        "loading": "Chargement…",
+        "autoHint": "Laissez le champ « Position » vide pour sélectionner automatiquement un moment aligné sur le volume le plus fort.",
+        "play": "▶ Lire",
+        "pause": "Pause",
+        "sourceLabel": "{{letter}} · LB-{{lb}}",
+        "errors": {
+          "notAlignable": "Ces deux sources ne peuvent pas être alignées au niveau des échantillons.",
+          "outOfRange": "Cette position se trouve au-delà de la fin de l'une des sources.",
+          "folderMissing": "Dossier source introuvable — le disque n'est peut-être pas monté.",
+          "clipBuildFailed": "Impossible de créer les extraits."
+        }
+      },
+      "judgment": {
+        "options": {
+          "sameSource": "Même source",
+          "different": "Différentes",
+          "uncertain": "Incertain",
+          "lbWrong": "LB incorrect"
+        },
+        "notesPlaceholder": "Remarques…",
+        "cancel": "Annuler",
+        "save": "Enregistrer",
+        "footnote": "Écrit <mono>human_judgment</mono> + <mono>human_notes</mono> dans <mono>observations.db · pairs</mono>.",
+        "saving": "Enregistrement en cours…",
+        "saved": "Enregistré {{at}} · {{label}}",
+        "clearedLabel": "effacé",
+        "retry": "Réessayer",
+        "errors": {
+          "locked": "TapeMatch est en cours de développement — conservé localement.",
+          "pairNotFound": "Ces deux éléments ne figurent pas dans la version actuelle — ils sont conservés localement.",
+          "saveFailed": "Impossible d'enregistrer — conservé localement."
+        }
+      },
+      "matrix": {
+        "ariaLabel": "Matrice de similarité des enregistrements",
+        "legend": {
+          "unrelated": "sans rapport 0–40",
+          "check": "vérifier 40–85",
+          "sameFamily": "même famille 85–100 · teintées par famille",
+          "notComparable": "n/c : non comparable",
+          "lbConflict": "Conflit de page LB"
+        },
+        "densityRecordings_one": "{{count}} enregistrement",
+        "densityRecordings_other": "Enregistrements {{count}}",
+        "densityFamilies_one": "Famille {{count}}",
+        "densityFamilies_other": "Familles {{count}}",
+        "densityPairs_one": "Paire {{count}}",
+        "densityPairs_other": "Paires {{count}}",
+        "densityNote": "{{recordings}} · {{families}} · {{pairs}} · valeurs dans l'info-bulle inférieure à 28 px",
+        "cell": {
+          "notComparable": "non comparable",
+          "percentSimilar": "{{pct}} % de similitude",
+          "sameFamily": "même famille",
+          "differentFamily": "famille différente",
+          "conflictSuffix": ", Conflit de page LB",
+          "titleBase": "LB-{{a}} × LB-{{b}}",
+          "titleNotComparable": " — non comparable",
+          "titleSimilarity": " — {{sim}}%",
+          "titleClaim": " · Page LB : {{text}}"
+        }
+      },
+      "speedLag": {
+        "title": "Vitesse et latence",
+        "hint": "Pourquoi la corrélation d'une paire se présente-t-elle ainsi ? · Cliquez sur deux points pour ouvrir leur paire",
+        "unmeasured": "vitesse non mesurée",
+        "insufficient": "vitesse inconnue (insuffisante)",
+        "refTick": "réf.",
+        "tooltip": {
+          "noPpm": "aucun ppm enregistré",
+          "ppm": "{{ppm}} ppm",
+          "ppmUnconfident": "{{ppm}} ppm (estimation incertaine)"
+        },
+        "legend": {
+          "reference": "◆ référence",
+          "aligned": "● alignées / décalage constant",
+          "lagSteps": "▤ étapes de décalage — ré-enregistrement ou raccordement",
+          "speedUnknown": "? vitesse inconnue → chemin d'empreinte digitale uniquement",
+          "axisNote": "ppm par rapport à la référence · échelle √"
+        },
+        "noMeasurements": "Aucune mesure de vitesse n'a été effectuée à cette date — rien n'a encore été analysé.",
+        "loadError": "Impossible de charger les mesures de vitesse de cette date."
+      },
+      "analysis": {
+        "title": "Conclusion de l'analyse",
+        "hint": "Extrait de analysis.md — la couche de révision humaine/IA",
+        "noneYet": "Pas encore de fichier « analysis.md » pour cette date — la couche de révision s'exécute après la phase de correspondance.",
+        "notOnDisk": "Absent du disque : <mono>{{list}}</mono> — connu de la base de données, aucun fichier audio trouvé lors de l'exploration.",
+        "algorithmNote": "Remarque sur l'algorithme",
+        "rawDocNote": "— le document à partir duquel ces fiches ont été extraites",
+        "openRef": "Ouvrir {{ref}}"
+      },
+      "sections": {
+        "matrixTitle": "Matrice de similarité",
+        "recordingTitle": "Enregistrement",
+        "matrixHint": "classement par famille · % correspond au mélange de corrélation et d'intégration par bandes · cliquez sur une cellule pour accéder au dossier",
+        "recordingHint": "rien à comparer — les vues par paires n'apparaissent qu'à partir de deux enregistrements",
+        "selectDate": "Sélectionnez une date dans la file d'attente de tri.",
+        "loadErrorHead": "Impossible de charger cette date",
+        "loadErrorBody": "Les artefacts de l'exécution n'ont pas été récupérés. Rien n'a été modifié : les évaluations que vous avez déjà enregistrées sont en sécurité dans le fichier observations.db.",
+        "retry": "Réessayer",
+        "noRecordingsHead": "Aucun enregistrement pour cette date",
+        "noRecordingsBody": "Le spectacle figure dans la bibliothèque, mais aucun enregistrement du public n’a été indexé ; TapeMatch n’a donc aucun élément de comparaison. Il réintégrera automatiquement la file d’attente dès qu’un enregistrement apparaîtra.",
+        "measuringPairs_one": "mesure de la paire {{count}}…",
+        "measuringPairs_other": "Mesure des paires {{count}}…",
+        "dossierAriaLabel": "Dossier « Pair »"
+      },
+      "errors": {
+        "locked": "TapeMatch est en cours d'écriture — veuillez réessayer dans quelques instants.",
+        "acceptNoRun": "Aucune exécution analysée pour cette date — rien à accepter.",
+        "acceptFailed": "Impossible à accepter — rien n'a été enregistré."
       }
     }
   },

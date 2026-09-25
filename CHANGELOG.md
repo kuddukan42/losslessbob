@@ -17,6 +17,9 @@ Added: ScreenChecksumDisputes + checksum_provenance.get_findings (TODO-299 GUI h
   db_error/audio_differs/retag/receipt_unknown/lbdir_only; dispute badges in Library + Lookup.
 Changed: ScreenTapeMatchCuration: auto_triage badges (TODO-295) + i18n pass (TODO-275, partial — dossier
   evidence labels still hardcoded); 13 missing en.json keys restored so it typechecks.
+Changed: ScreenTapeMatchCuration.tsx + locales/*.json (TODO-275 CLOSED): remaining ~194 strings (A/B player,
+  judgment form, dossier evidence bars/subheads, matrix, speed & lag, analysis panels, empty states) moved to
+  tapematch.curation.*; interleaved markup via <Trans>; DeepL de/fr/es/it/nl (43,732 chars across both runs).
 
 [2026-09-25] — Golden dossiers: adversarial review → C32a–h fixes, live rebuild, regenerated set
 Added: tools/dossier_audit.py (+tests): repeatable adversarial audit of an exported dossier set —
