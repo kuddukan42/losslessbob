@@ -33,8 +33,8 @@ import argparse
 import logging
 import re
 import sys
-import zipfile
 import xml.etree.ElementTree as ET
+import zipfile
 from pathlib import Path
 
 _project_root = Path(__file__).resolve().parent.parent
