@@ -1898,6 +1898,130 @@
       "folderMissing": "One of these LB folders isn't available on disk.",
       "locked": "Run in progress, try again.",
       "loadFailed": "Could not load clips, try again."
+    },
+    "curation": {
+      "topBar": {
+        "screenName": "TapeMatch",
+        "tagline": "Curation — review the algorithm's family calls, pair by pair",
+        "crawlStatus": "crawl {{status}} · {{runs}} runs · {{dates}} dates",
+        "crawlRunning": "running",
+        "crawlIdle": "idle",
+        "noCrawlLog": "no crawl log yet",
+        "startCrawl": "Start crawl",
+        "starting": "Starting…",
+        "stop": "Stop",
+        "stopping": "stopping…",
+        "alreadyRunning": "already running",
+        "crawlActionFailed": "couldn't {{action}} the crawl",
+        "judgedCount": "{{count}} judged"
+      },
+      "status": {
+        "conflict": "conflict",
+        "review": "review",
+        "clean": "clean",
+        "curated": "curated"
+      },
+      "filters": {
+        "needs": "Needs you",
+        "conflicts": "Conflicts",
+        "all": "All",
+        "done": "Done"
+      },
+      "railEmpty": {
+        "needs": {
+          "head": "Nothing needs you.",
+          "body": "Every flagged date on this page is resolved."
+        },
+        "conflict": {
+          "head": "No conflicts left.",
+          "body": "Every disagreement on this page is resolved."
+        },
+        "curated": {
+          "head": "Nothing accepted yet.",
+          "body": "Dates you accept with `Accept families` collect here."
+        },
+        "all": {
+          "head": "No dates yet.",
+          "body": "TapeMatch has not synced any analysed dates into the app DB."
+        }
+      },
+      "rail": {
+        "title": "TRIAGE QUEUE",
+        "needCount": "{{count}} need you",
+        "queryPlaceholder": "date, city, 1974, 70s, conflict…",
+        "clearQuery": "Clear query",
+        "yearBrushAll": "all · drag to scope",
+        "yearBrushTooltip": "{{year}} · {{count}} dates · {{need}} need you",
+        "resultCount": "of {{total}} dates",
+        "reset": "reset",
+        "sortOldest": "oldest ↑",
+        "sortNewest": "newest ↓",
+        "noMatchHead": "No dates match.",
+        "noMatchBody": "Try a year, a city, or clear the filters.",
+        "showAllDates": "Show all dates",
+        "kbd": {
+          "search": "search",
+          "move": "move",
+          "open": "open",
+          "clear": "clear"
+        }
+      },
+      "soloCard": {
+        "folder": "Folder",
+        "speed": "Speed",
+        "reference": "reference",
+        "explanation": "Sole recording, so it becomes its own family with no evidence needed. Accepting records the family without a human pair judgment."
+      },
+      "autoTriage": {
+        "badge": "auto-flag",
+        "tooltipWithReasons": "machine triage (low precision, not a verdict): {{reasons}}",
+        "tooltipNoReasons": "machine triage flagged this date for attention",
+        "rules": {
+          "r1Contradiction": "an info-file same-source claim contradicted by near-zero correlation",
+          "r3DurOutlier": "a source whose performance duration is well off the date's median",
+          "r5LabelSuspect": "tapematch marked a pair's LB labelling suspect",
+          "r7AllZeroMulti": "4+ sources and not one pair correlates (likely alignment failure)"
+        }
+      },
+      "dateHeader": {
+        "noSelection": "Select a date from the triage queue.",
+        "unavailable": "unavailable",
+        "noRecordings": "no recordings",
+        "loadError": "Couldn't load this date's analysis",
+        "knownDateEmpty": "Known date · nothing circulating in the library",
+        "calibrationStale": "calibration {{hash}} — shipped config is now {{current}}",
+        "calibrationCurrent": "calibration {{hash}} — current",
+        "calibrationUnknown": "calibration unknown",
+        "compareRuns": "Compare runs",
+        "compareRunsTooltip": "Compare two analysis runs of this date",
+        "openReport": "Open report.md",
+        "openReportTooltip": "The run's generated report.md, annotated with your judgments",
+        "judgeFirst": "Judge at least one pair first",
+        "acceptTooltip": "Records this date's families in the app DB · tapematch_date_curation",
+        "acceptFamilies": "Accept families",
+        "acceptFamiliesJudged": "Accept families · {{count}} judged",
+        "accepting": "Accepting…",
+        "accepted": "Accepted {{at}}"
+      },
+      "dossier": {
+        "selectPair": "Select a pair",
+        "selectPairBody": "Click any matrix cell to open the evidence dossier — every signal TapeMatch measured for that pair, against its threshold.",
+        "noContact": "n/c",
+        "corrNote": {
+          "notMeasured": "not measured — speed-unknown source",
+          "aboveThreshold": "≥ 0.45 cluster threshold — merges on primary evidence",
+          "secondaryPath": "below threshold — that's why the secondary path ran",
+          "belowThreshold": "below the 0.45 cluster threshold"
+        },
+        "verdict": {
+          "sameFamilySecondary": "same family · secondary link",
+          "sameFamily": "same family",
+          "notComparable": "not comparable",
+          "differentFamily": "different family"
+        },
+        "openInLibrary": "Open LB-{{lb}} in the Library",
+        "close": "Close dossier"
+      }
     }
   },
   "songs": {

@@ -9,7 +9,9 @@
 // /library?lb= deep-link (dossier LB headings), and the raw analysis.md
 // disclosure under §7.
 //
-// NOT internationalised — every string here is hardcoded English (TODO-275).
+// Internationalised (TODO-275): strings live under the tapematch.curation.*
+// locale namespace (gui_next/src/renderer/src/locales/en.json), translated to
+// de/fr/es/it/nl via /gui-next-i18n.
 //
 // Phase 1 scope: §1 top bar, §2 triage queue rail (incl. keybindings), §3
 // date header (incl. DESIGN_ANSWERS_B §B3 verdict clamp), §4 section
@@ -36,6 +38,8 @@
 // GET /api/tapematch/report. Run diff (§12) remains a placeholder.
 
 import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import type { TFunction } from 'i18next'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { Icon } from '../components/Icon'
@@ -79,6 +83,10 @@ interface FamilyRow {
   // or a family synced before the calibration_hash column existed.
   fam_calibration_hash?: string | null
   current_calibration_hash?: string | null
+  // TODO-295: machine triage from backend/tapematch_autoflag — kept distinct
+  // from and subordinate to fam_needs_review (see that module's docstring).
+  fam_auto_triage?: string | null
+  fam_auto_triage_reasons?: string | null
 }
 
 interface CrawlStatus {
@@ -172,30 +180,61 @@ const STATUS_TONE: Record<TriageStatus, 'bad' | 'warn' | 'ok' | 'mute'> = {
   curated: 'mute',
 }
 
-const STATUS_LABEL: Record<TriageStatus, string> = {
-  conflict: 'conflict',
-  review: 'review',
-  clean: 'clean',
-  curated: 'curated',
+// Values here are i18n keys (tapematch.curation.*), not display text —
+// resolve with t() at the render site, never rendered raw.
+const STATUS_LABEL_KEY: Record<TriageStatus, string> = {
+  conflict: 'tapematch.curation.status.conflict',
+  review: 'tapematch.curation.status.review',
+  clean: 'tapematch.curation.status.clean',
+  curated: 'tapematch.curation.status.curated',
+}
+
+// TODO-295 — mirrors backend/tapematch_autoflag.py's RULES dict (rule name ->
+// one-line human text). Duplicated here rather than round-tripped through the
+// API because it's a small, code-level constant, not per-family data; keep it
+// in sync if RULES changes. Values are i18n keys, resolved with t().
+const AUTO_TRIAGE_RULE_KEY: Record<string, string> = {
+  R1_contradiction: 'tapematch.curation.autoTriage.rules.r1Contradiction',
+  R3_dur_outlier: 'tapematch.curation.autoTriage.rules.r3DurOutlier',
+  R5_label_suspect: 'tapematch.curation.autoTriage.rules.r5LabelSuspect',
+  R7_all_zero_multi: 'tapematch.curation.autoTriage.rules.r7AllZeroMulti',
+}
+
+/** Parses `auto_triage_reasons` (a JSON array of rule names) into human text. */
+function safeParseTriageReasons(json: string | null, t: TFunction): string[] {
+  if (!json) return []
+  try {
+    const names = JSON.parse(json)
+    if (!Array.isArray(names)) return []
+    return names.map(n => (AUTO_TRIAGE_RULE_KEY[n] ? t(AUTO_TRIAGE_RULE_KEY[n] as any) : n))
+  } catch {
+    return []
+  }
 }
 
 type FilterKey = 'needs' | 'conflict' | 'all' | 'curated'
 
+// label is an i18n key, resolved with t() at the render site.
 const FILTERS: { key: FilterKey; label: string }[] = [
-  { key: 'needs', label: 'Needs you' },
-  { key: 'conflict', label: 'Conflicts' },
-  { key: 'all', label: 'All' },
-  { key: 'curated', label: 'Done' },
+  { key: 'needs', label: 'tapematch.curation.filters.needs' },
+  { key: 'conflict', label: 'tapematch.curation.filters.conflicts' },
+  { key: 'all', label: 'tapematch.curation.filters.all' },
+  { key: 'curated', label: 'tapematch.curation.filters.done' },
 ]
 
 // §10.3 — the rail's empty state states the outcome in the *filter's own
 // terms* rather than a bare "Nothing here.", because on three of the four
-// filters an empty list is good news, not a dead end.
-const EMPTY_FILTER_COPY: Record<FilterKey, [string, string]> = {
-  needs: ['Nothing needs you.', 'Every flagged date on this page is resolved.'],
-  conflict: ['No conflicts left.', 'Every disagreement on this page is resolved.'],
-  curated: ['Nothing accepted yet.', 'Dates you accept with `Accept families` collect here.'],
-  all: ['No dates yet.', 'TapeMatch has not synced any analysed dates into the app DB.'],
+// filters an empty list is good news, not a dead end. Values are i18n keys
+// [head, body], resolved with t() at the render site.
+const EMPTY_FILTER_COPY_KEYS: Record<FilterKey, [string, string]> = {
+  needs: ['tapematch.curation.railEmpty.needs.head', 'tapematch.curation.railEmpty.needs.body'],
+  conflict: [
+    'tapematch.curation.railEmpty.conflict.head', 'tapematch.curation.railEmpty.conflict.body',
+  ],
+  curated: [
+    'tapematch.curation.railEmpty.curated.head', 'tapematch.curation.railEmpty.curated.body',
+  ],
+  all: ['tapematch.curation.railEmpty.all.head', 'tapematch.curation.railEmpty.all.body'],
 }
 
 function matchesFilter(status: TriageStatus, filter: FilterKey): boolean {
@@ -383,10 +422,11 @@ function MatrixSkeleton({ recordings }: { recordings: MatrixRecording[] }) {
 function SoloCard({
   lb, color, source,
 }: { lb: number; color: string; source: SourceRow | null }) {
+  const { t } = useTranslation()
   const rows: [string, string][] = []
-  if (source?.folder_name) rows.push(['Folder', source.folder_name])
+  if (source?.folder_name) rows.push([t('tapematch.curation.soloCard.folder'), source.folder_name])
   if (source?.speed_kind) {
-    rows.push(['Speed', source.speed_ppm != null && source.speed_kind !== 'speed-unknown'
+    rows.push([t('tapematch.curation.soloCard.speed'), source.speed_ppm != null && source.speed_kind !== 'speed-unknown'
       ? `${source.speed_ppm > 0 ? '+' : ''}${source.speed_ppm.toLocaleString()} ppm · ${source.speed_kind}`
       : source.speed_kind])
   }
@@ -400,7 +440,7 @@ function SoloCard({
         <span style={{ font: '700 13px var(--lbb-mono)', color: 'var(--lbb-fg)' }}>
           LB-{shortId(lb)}
         </span>
-        <Pill tone="ok" soft>reference</Pill>
+        <Pill tone="ok" soft>{t('tapematch.curation.soloCard.reference')}</Pill>
       </div>
       {rows.length > 0 && (
         <div style={{
@@ -419,8 +459,7 @@ function SoloCard({
         borderTop: '1px solid var(--lbb-border)', paddingTop: 10, marginTop: 11,
         fontSize: 11, lineHeight: 1.6, color: 'var(--lbb-fg3)',
       }}>
-        Sole recording, so it becomes its own family with no evidence needed.
-        Accepting records the family without a human pair judgment.
+        {t('tapematch.curation.soloCard.explanation')}
       </div>
     </div>
   )
@@ -448,8 +487,11 @@ function TopBar({
   judgedCount: number
   date: string | null
 }) {
+  const { t } = useTranslation()
   const dotColor = crawl?.running ? 'var(--lbb-warn-bar)' : 'var(--lbb-ok-bar)'
-  const statusWord = crawl?.running ? 'running' : 'idle'
+  const statusWord = crawl?.running
+    ? t('tapematch.curation.topBar.crawlRunning')
+    : t('tapematch.curation.topBar.crawlIdle')
   // Crawl start/stop, carried over from the retired ScreenTapeMatch. The
   // design's §1 shows crawl state read-only, but this was the only place in
   // the app that could start or stop the library crawl — retiring the old
@@ -464,12 +506,16 @@ function TopBar({
     setCrawlMsg(null)
     try {
       const res = await fetch(`${BASE}/api/tapematch/crawl/${action}`, { method: 'POST' })
-      if (action === 'start' && res.status === 409) setCrawlMsg('already running')
-      else if (!res.ok) setCrawlMsg(`couldn't ${action} the crawl`)
-      else if (action === 'stop') setCrawlMsg('stopping…')
+      if (action === 'start' && res.status === 409) {
+        setCrawlMsg(t('tapematch.curation.topBar.alreadyRunning'))
+      } else if (!res.ok) {
+        setCrawlMsg(t('tapematch.curation.topBar.crawlActionFailed', { action }))
+      } else if (action === 'stop') {
+        setCrawlMsg(t('tapematch.curation.topBar.stopping'))
+      }
       queryClient.invalidateQueries({ queryKey: ['tapematch-crawl-status'] })
     } catch {
-      setCrawlMsg(`couldn't ${action} the crawl`)
+      setCrawlMsg(t('tapematch.curation.topBar.crawlActionFailed', { action }))
     } finally {
       setPending(null)
     }
@@ -481,12 +527,15 @@ function TopBar({
       flex: '0 0 auto',
     }}>
       <div style={{ fontSize: 12.5, color: 'var(--lbb-fg3)' }}>
-        LosslessBob <span style={{ color: 'var(--lbb-border2)' }}>/</span> Library{' '}
+        {t('appShell.brand')} <span style={{ color: 'var(--lbb-border2)' }}>/</span>{' '}
+        {t('appShell.nav.library')}{' '}
         <span style={{ color: 'var(--lbb-border2)' }}>/</span>{' '}
-        <span style={{ color: 'var(--lbb-fg)', fontWeight: 700 }}>TapeMatch</span>
+        <span style={{ color: 'var(--lbb-fg)', fontWeight: 700 }}>
+          {t('tapematch.curation.topBar.screenName')}
+        </span>
       </div>
       <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)' }}>
-        Curation — review the algorithm's family calls, pair by pair
+        {t('tapematch.curation.topBar.tagline')}
       </div>
       <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10 }}>
         {crawl && (
@@ -495,8 +544,11 @@ function TopBar({
             fontSize: 11, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)',
           }}>
             <span style={{ width: 7, height: 7, borderRadius: '50%', background: dotColor }} />
-            crawl {statusWord} · {crawl.runs_on_disk.toLocaleString()} runs ·{' '}
-            {crawl.distinct_dates.toLocaleString()} dates
+            {t('tapematch.curation.topBar.crawlStatus', {
+              status: statusWord,
+              runs: crawl.runs_on_disk.toLocaleString(),
+              dates: crawl.distinct_dates.toLocaleString(),
+            })}
           </div>
         )}
         {crawl && (
@@ -505,13 +557,19 @@ function TopBar({
               variant="ghost" size="sm"
               disabled={crawl.running || pending !== null}
               onClick={() => crawlAction('start')}
-              title={crawl.log_tail?.length ? crawl.log_tail.join('\n') : 'no crawl log yet'}
-            >{pending === 'start' ? 'Starting…' : 'Start crawl'}</Button>
+              title={crawl.log_tail?.length
+                ? crawl.log_tail.join('\n')
+                : t('tapematch.curation.topBar.noCrawlLog')}
+            >{pending === 'start'
+                ? t('tapematch.curation.topBar.starting')
+                : t('tapematch.curation.topBar.startCrawl')}</Button>
             <Button
               variant="ghost" size="sm"
               disabled={!crawl.running || pending !== null}
               onClick={() => crawlAction('stop')}
-            >{pending === 'stop' ? 'Stopping…' : 'Stop'}</Button>
+            >{pending === 'stop'
+                ? t('tapematch.curation.topBar.stopping')
+                : t('tapematch.curation.topBar.stop')}</Button>
             {crawlMsg && (
               <span style={{ fontSize: 10.5, color: 'var(--lbb-fg3)' }}>{crawlMsg}</span>
             )}
@@ -523,7 +581,7 @@ function TopBar({
             `Accept families · n judged` carries. */}
         {date && judgedCount > 0 && (
           <Pill tone="info" soft>
-            {judgedCount} judged
+            {t('tapematch.curation.topBar.judgedCount', { count: judgedCount })}
           </Pill>
         )}
       </div>
@@ -640,6 +698,7 @@ function TriageRail({
   cursorIndexRef: React.MutableRefObject<number>
   familyCountByDate: Map<string, number>
 }) {
+  const { t } = useTranslation()
   const [filter, setFilter] = useState<FilterKey>('needs')
   const [q, setQ] = useState('')
   const [range, setRange] = useState<[number, number] | null>(null)
@@ -906,8 +965,10 @@ function TriageRail({
           <span style={{
             fontSize: 11, fontWeight: 700, letterSpacing: '0.08em',
             textTransform: 'uppercase', color: 'var(--lbb-fg3)',
-          }}>TRIAGE QUEUE</span>
-          <span style={{ fontSize: 10.5, color: 'var(--lbb-warn-fg)' }}>{needsCount} need you</span>
+          }}>{t('tapematch.curation.rail.title')}</span>
+          <span style={{ fontSize: 10.5, color: 'var(--lbb-warn-fg)' }}>
+            {t('tapematch.curation.rail.needCount', { count: needsCount })}
+          </span>
         </div>
 
         {/* Query field (README §2) — placeholder doubles as the grammar's docs. */}
@@ -921,7 +982,7 @@ function TriageRail({
             type="text"
             value={q}
             onChange={e => setQ(e.target.value)}
-            placeholder="date, city, 1974, 70s, conflict…"
+            placeholder={t('tapematch.curation.rail.queryPlaceholder')}
             style={{
               width: '100%', background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
               borderRadius: 6, color: 'var(--lbb-fg)', font: '500 11.5px var(--lbb-mono)',
@@ -940,7 +1001,7 @@ function TriageRail({
             <button
               type="button"
               onClick={() => { setQ(''); searchRef.current?.focus() }}
-              aria-label="Clear query"
+              aria-label={t('tapematch.curation.rail.clearQuery')}
               style={{
                 position: 'absolute', right: 5, top: '50%', transform: 'translateY(-50%)',
                 background: 'transparent', border: 'none', padding: 2, cursor: 'pointer',
@@ -965,7 +1026,7 @@ function TriageRail({
                 borderRadius: 999, padding: '3px 10px', font: '600 11px inherit', cursor: 'pointer',
               }}
             >
-              {f.label}
+              {t(f.label as any)}
             </button>
           ))}
         </div>
@@ -992,7 +1053,7 @@ function TriageRail({
                     }}
                   >×</button>
                 </>
-              ) : <span>all · drag to scope</span>}
+              ) : <span>{t('tapematch.curation.rail.yearBrushAll')}</span>}
             </div>
             <div
               ref={brushRef}
@@ -1015,7 +1076,7 @@ function TriageRail({
                 return (
                   <div
                     key={yr}
-                    title={`${yr} · ${count} dates · ${need} need you`}
+                    title={t('tapematch.curation.rail.yearBrushTooltip', { year: yr, count, need })}
                     style={{
                       flex: '1 1 0', height: h, display: 'flex', flexDirection: 'column-reverse',
                       opacity: inRange ? 1 : 0.42,
@@ -1057,7 +1118,7 @@ function TriageRail({
       }}>
         <span>
           <span style={{ color: 'var(--lbb-fg2)', fontWeight: 700 }}>{rowsFinal.length.toLocaleString()}</span>
-          {' '}of {rows.length.toLocaleString()} dates
+          {' '}{t('tapematch.curation.rail.resultCount', { total: rows.length.toLocaleString() })}
         </span>
         <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           {anyFilterActive && (
@@ -1065,13 +1126,15 @@ function TriageRail({
               type="button"
               onClick={resetAll}
               style={{ background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', font: 'inherit', color: 'var(--lbb-accent-mid)' }}
-            >reset</button>
+            >{t('tapematch.curation.rail.reset')}</button>
           )}
           <button
             type="button"
             onClick={() => setAsc(v => !v)}
             style={{ background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', font: 'inherit', color: 'var(--lbb-fg3)' }}
-          >{asc ? 'oldest ↑' : 'newest ↓'}</button>
+          >{asc
+              ? t('tapematch.curation.rail.sortOldest')
+              : t('tapematch.curation.rail.sortNewest')}</button>
         </span>
       </div>
 
@@ -1095,10 +1158,14 @@ function TriageRail({
         {!loading && rowsFinal.length === 0 && (
           <div style={{ padding: '20px 14px', textAlign: 'center' }}>
             <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', fontWeight: 600 }}>
-              {q || range ? 'No dates match.' : EMPTY_FILTER_COPY[filter][0]}
+              {q || range
+                ? t('tapematch.curation.rail.noMatchHead')
+                : t(EMPTY_FILTER_COPY_KEYS[filter][0] as any)}
             </div>
             <div style={{ fontSize: 10.5, marginTop: 6, lineHeight: 1.5, color: 'var(--lbb-fg3)' }}>
-              {q || range ? 'Try a year, a city, or clear the filters.' : EMPTY_FILTER_COPY[filter][1]}
+              {q || range
+                ? t('tapematch.curation.rail.noMatchBody')
+                : t(EMPTY_FILTER_COPY_KEYS[filter][1] as any)}
             </div>
             {(filter !== 'all' || q || range) && (
               <button
@@ -1108,7 +1175,7 @@ function TriageRail({
                   marginTop: 9, background: 'transparent', border: 'none', padding: 0,
                   font: '600 11px inherit', color: 'var(--lbb-accent-mid)', cursor: 'pointer',
                 }}
-              >Show all dates</button>
+              >{t('tapematch.curation.rail.showAllDates')}</button>
             )}
           </div>
         )}
@@ -1189,7 +1256,10 @@ function TriageRail({
         fontSize: 10.5, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)',
         display: 'flex', alignItems: 'center', gap: 4, flexWrap: 'wrap',
       }}>
-        <Kbd>/</Kbd> search · <Kbd>j</Kbd> <Kbd>k</Kbd> move · <Kbd>enter</Kbd> open · <Kbd>esc</Kbd> clear
+        <Kbd>/</Kbd> {t('tapematch.curation.rail.kbd.search')} ·{' '}
+        <Kbd>j</Kbd> <Kbd>k</Kbd> {t('tapematch.curation.rail.kbd.move')} ·{' '}
+        <Kbd>enter</Kbd> {t('tapematch.curation.rail.kbd.open')} ·{' '}
+        <Kbd>esc</Kbd> {t('tapematch.curation.rail.kbd.clear')}
       </div>
     </div>
   )
@@ -1253,6 +1323,7 @@ function DateHeader({
   families: {
     famId: string; label: string; colorIndex: number; lbs: number[]
     calibrationHash: string | null; currentCalibrationHash: string | null
+    autoTriage: string | null; autoTriageReasons: string | null
   }[]
   judgedCount: number
   soloDate: boolean
@@ -1263,22 +1334,23 @@ function DateHeader({
   /** Wraps the `Open report.md` button so §11 can restore focus on close. */
   reportButtonRef: React.RefObject<HTMLSpanElement>
 }) {
+  const { t } = useTranslation()
   if (!row) {
     return (
       <div style={{
         padding: narrow ? '14px 16px 12px' : '16px 22px 14px',
         borderBottom: '1px solid var(--lbb-border)', color: 'var(--lbb-fg3)', fontSize: 12,
       }}>
-        Select a date from the triage queue.
+        {t('tapematch.curation.dateHeader.noSelection')}
       </div>
     )
   }
   const status = statusOf(row)
   const statusTone = dataState === 'error' ? 'bad' : dataState === 'empty' ? 'mute' : STATUS_TONE[status]
-  const statusLabel = dataState === 'error' ? 'unavailable'
-    : dataState === 'empty' ? 'no recordings' : STATUS_LABEL[status]
-  const verdictLine = dataState === 'error' ? "Couldn't load this date's analysis"
-    : dataState === 'empty' ? 'Known date · nothing circulating in the library'
+  const statusLabel = dataState === 'error' ? t('tapematch.curation.dateHeader.unavailable')
+    : dataState === 'empty' ? t('tapematch.curation.dateHeader.noRecordings') : t(STATUS_LABEL_KEY[status] as any)
+  const verdictLine = dataState === 'error' ? t('tapematch.curation.dateHeader.loadError')
+    : dataState === 'empty' ? t('tapematch.curation.dateHeader.knownDateEmpty')
       : verdictText
   return (
     <div style={{
@@ -1320,8 +1392,17 @@ function DateHeader({
               const calStale = !!(f.calibrationHash && f.currentCalibrationHash
                 && f.calibrationHash !== f.currentCalibrationHash)
               const calTitle = f.calibrationHash
-                ? `calibration ${f.calibrationHash}${calStale ? ` — shipped config is now ${f.currentCalibrationHash}` : ' — current'}`
-                : 'calibration unknown'
+                ? (calStale
+                  ? t('tapematch.curation.dateHeader.calibrationStale', {
+                    hash: f.calibrationHash, current: f.currentCalibrationHash,
+                  })
+                  : t('tapematch.curation.dateHeader.calibrationCurrent', { hash: f.calibrationHash }))
+                : t('tapematch.curation.dateHeader.calibrationUnknown')
+              // TODO-295 — machine triage, kept visually subordinate to and
+              // distinct from the date-level "Needs review" Pill above: only
+              // surfaced when it fired (attention), styled as a quiet
+              // dashed-border hint rather than a status pill.
+              const reasons = safeParseTriageReasons(f.autoTriageReasons, t)
               return (
                 <div key={f.famId} style={{
                   display: 'flex', alignItems: 'center', gap: 5,
@@ -1341,6 +1422,22 @@ function DateHeader({
                     background: calStale ? 'var(--lbb-warn-fg)' : 'var(--lbb-fg3)',
                     opacity: f.calibrationHash ? 1 : 0.35,
                   }} />
+                  {f.autoTriage === 'attention' && (
+                    <span
+                      title={reasons.length
+                        ? t('tapematch.curation.autoTriage.tooltipWithReasons', {
+                          reasons: reasons.join('; '),
+                        })
+                        : t('tapematch.curation.autoTriage.tooltipNoReasons')}
+                      style={{
+                        fontSize: 9, fontWeight: 600, color: 'var(--lbb-fg3)',
+                        border: '1px dashed var(--lbb-border)', borderRadius: 999,
+                        padding: '1px 5px',
+                      }}
+                    >
+                      {t('tapematch.curation.autoTriage.badge')}
+                    </span>
+                  )}
                 </div>
               )
             })}
@@ -1351,16 +1448,16 @@ function DateHeader({
             {/* §12 — reached from `Compare runs` in the date header. */}
             <Button
               variant="ghost" size="sm" onClick={onOpenDiff}
-              title="Compare two analysis runs of this date"
+              title={t('tapematch.curation.dateHeader.compareRunsTooltip')}
             >
-              Compare runs
+              {t('tapematch.curation.dateHeader.compareRuns')}
             </Button>
             <span ref={reportButtonRef}>
               <Button
                 variant="ghost" size="sm" onClick={onOpenReport}
-                title="The run's generated report.md, annotated with your judgments"
+                title={t('tapematch.curation.dateHeader.openReportTooltip')}
               >
-                Open report.md
+                {t('tapematch.curation.dateHeader.openReport')}
               </Button>
             </span>
             {/* §3: disabled until at least one pair judgment exists; §10.5
@@ -1373,11 +1470,13 @@ function DateHeader({
               onClick={onAccept}
               title={
                 judgedCount === 0 && !soloDate
-                  ? 'Judge at least one pair first'
-                  : "Records this date's families in the app DB · tapematch_date_curation"
+                  ? t('tapematch.curation.dateHeader.judgeFirst')
+                  : t('tapematch.curation.dateHeader.acceptTooltip')
               }
             >
-              {judgedCount > 0 ? `Accept families · ${judgedCount} judged` : 'Accept families'}
+              {judgedCount > 0
+                ? t('tapematch.curation.dateHeader.acceptFamiliesJudged', { count: judgedCount })
+                : t('tapematch.curation.dateHeader.acceptFamilies')}
             </Button>
           </div>
           {accept.kind !== 'idle' && (
@@ -1391,8 +1490,9 @@ function DateHeader({
                 background: accept.kind === 'failed' ? 'var(--lbb-bad-bar)'
                   : accept.kind === 'accepted' ? 'var(--lbb-ok-bar)' : 'var(--lbb-fg3)',
               }} />
-              {accept.kind === 'saving' && 'Accepting…'}
-              {accept.kind === 'accepted' && `Accepted ${accept.at}`}
+              {accept.kind === 'saving' && t('tapematch.curation.dateHeader.accepting')}
+              {accept.kind === 'accepted'
+                && t('tapematch.curation.dateHeader.accepted', { at: accept.at })}
               {accept.kind === 'failed' && accept.message}
             </div>
           )}
@@ -1417,6 +1517,7 @@ const WIN_THRESHOLD = 0.60 // bar 2 — secondary clustering gate
 const FP_BAND: [number, number] = [0.15, 0.50] // bar 4 — coincidence range
 
 function DossierEmpty() {
+  const { t } = useTranslation()
   return (
     <div style={{
       display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -1425,11 +1526,10 @@ function DossierEmpty() {
       <div style={{ textAlign: 'center', maxWidth: 260 }}>
         <div style={{ fontSize: 26, color: 'var(--lbb-fg3)' }}>&#8862;</div>
         <div style={{ fontSize: 13.5, fontWeight: 700, marginTop: 8, color: 'var(--lbb-fg)' }}>
-          Select a pair
+          {t('tapematch.curation.dossier.selectPair')}
         </div>
         <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', lineHeight: 1.5, marginTop: 5 }}>
-          Click any matrix cell to open the evidence dossier — every signal TapeMatch
-          measured for that pair, against its threshold.
+          {t('tapematch.curation.dossier.selectPairBody')}
         </div>
       </div>
     </div>
@@ -1448,13 +1548,14 @@ function EvidenceBar({
   demote?: boolean
   note: string
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const pct = value == null ? 0 : Math.min(100, value * 100)
   return (
     <div style={{ marginBottom: 11, opacity: demote ? 0.72 : 1 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
         <span style={{ fontSize: 11.5, fontWeight: 600, color: 'var(--lbb-fg2)' }}>{label}</span>
         <span style={{ font: '600 11.5px var(--lbb-mono)', color: 'var(--lbb-fg)' }}>
-          {value == null ? 'n/c' : value.toFixed(3)}
+          {value == null ? t('tapematch.curation.dossier.noContact') : value.toFixed(3)}
         </span>
       </div>
       <div style={{
@@ -1503,12 +1604,12 @@ function isSecondaryLink(pair: PairRow | null): boolean {
   return pair.corr == null || pair.corr < CORR_THRESHOLD
 }
 
-function corrNote(pair: PairRow | null): string {
+function corrNote(pair: PairRow | null, t: TFunction): string {
   const corr = pair?.corr ?? null
-  if (corr == null) return 'not measured — speed-unknown source'
-  if (corr >= CORR_THRESHOLD) return '≥ 0.45 cluster threshold — merges on primary evidence'
-  if (isSecondaryLink(pair)) return "below threshold — that's why the secondary path ran"
-  return 'below the 0.45 cluster threshold'
+  if (corr == null) return t('tapematch.curation.dossier.corrNote.notMeasured')
+  if (corr >= CORR_THRESHOLD) return t('tapematch.curation.dossier.corrNote.aboveThreshold')
+  if (isSecondaryLink(pair)) return t('tapematch.curation.dossier.corrNote.secondaryPath')
+  return t('tapematch.curation.dossier.corrNote.belowThreshold')
 }
 
 // ── A/B listening (carried forward from ScreenTapeMatch's AbPlayerPanel) ────
@@ -1914,6 +2015,7 @@ function Dossier({
   onJudgmentSaved: () => void
   onOpenLb: (lb: number) => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const { lbA, lbB } = selected
   const sim = pair?.similarity_pct ?? null
   const conflict = !!pair && pair.lb_says_same === true && pair.same_family === false
@@ -1921,11 +2023,11 @@ function Dossier({
   const verdict: { text: string; tone: 'ok' | 'warn' | 'mute' | 'info' } =
     pair?.same_family
       ? (secondary
-        ? { text: 'same family · secondary link', tone: 'warn' }
-        : { text: 'same family', tone: 'ok' })
+        ? { text: t('tapematch.curation.dossier.verdict.sameFamilySecondary'), tone: 'warn' }
+        : { text: t('tapematch.curation.dossier.verdict.sameFamily'), tone: 'ok' })
       : sim == null
-        ? { text: 'not comparable', tone: 'mute' }
-        : { text: 'different family', tone: 'info' }
+        ? { text: t('tapematch.curation.dossier.verdict.notComparable'), tone: 'mute' }
+        : { text: t('tapematch.curation.dossier.verdict.differentFamily'), tone: 'info' }
   const claim = pair?.lb_relation_text ?? null
   const hasClaim = !!claim && claim.trim() !== '' && claim.trim() !== '—'
 
@@ -1937,7 +2039,7 @@ function Dossier({
     <button
       type="button"
       onClick={() => onOpenLb(lb)}
-      title={`Open LB-${shortId(lb)} in the Library`}
+      title={t('tapematch.curation.dossier.openInLibrary', { lb: shortId(lb) })}
       style={{
         display: 'inline-flex', alignItems: 'center', gap: 6, padding: 0,
         background: 'none', border: 'none', cursor: 'pointer',
@@ -1965,7 +2067,8 @@ function Dossier({
         </div>
         {drawer && (
           <button
-            type="button" onClick={onClose} aria-label="Close dossier"
+            type="button" onClick={onClose}
+            aria-label={t('tapematch.curation.dossier.close')}
             style={{
               background: 'none', border: 'none', color: 'var(--lbb-fg3)',
               cursor: 'pointer', fontSize: 14, padding: 4,
@@ -2011,7 +2114,7 @@ function Dossier({
       <DossierSubhead>Primary evidence</DossierSubhead>
       <EvidenceBar
         label="Residual correlation" value={pair?.corr ?? null}
-        thresh={CORR_THRESHOLD} note={corrNote(pair)}
+        thresh={CORR_THRESHOLD} note={corrNote(pair, t)}
       />
       <DossierSubhead>Secondary evidence</DossierSubhead>
       <EvidenceBar
@@ -2837,6 +2940,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
     const byFam = new Map<string, {
       famId: string; label: string; lbs: number[]
       calibrationHash: string | null; currentCalibrationHash: string | null
+      autoTriage: string | null; autoTriageReasons: string | null
     }>()
     for (const f of allFamilies) {
       if (f.concert_date !== selectedDate) continue
@@ -2844,6 +2948,8 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
         famId: f.fam_id, label: f.fam_label ?? f.fam_id, lbs: [],
         calibrationHash: f.fam_calibration_hash ?? null,
         currentCalibrationHash: f.current_calibration_hash ?? null,
+        autoTriage: f.fam_auto_triage ?? null,
+        autoTriageReasons: f.fam_auto_triage_reasons ?? null,
       }
       entry.lbs.push(f.lb_number)
       byFam.set(f.fam_id, entry)
