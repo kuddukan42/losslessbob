@@ -49,3 +49,13 @@ def test_no_map_without_host_country():
     _set_venue_map(vb, {"map_focus": "Japan", "map_scale": 400}, 35.6, 139.8, "city_centre")
     assert vb.fields["venue.map"]["value"] == "city_centre"
     assert 'class="pin-ring"' in vb.ctx["map_svg"]
+
+
+def test_same_country_accepts_blank_and_uk_nations_rejects_mismatch():
+    """C6 fallback: a bare-city-keyed gazetteer row is usable unless countries clash."""
+    from backend.dossier_anchors import _same_country
+
+    assert _same_country("", "England")
+    assert _same_country("England", "United Kingdom")
+    assert _same_country("United States", "USA")
+    assert not _same_country("United States", "England")
