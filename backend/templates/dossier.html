@@ -595,9 +595,13 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 {%- set prim_rows = [] -%}
 {%- for b in primary_buckets %}
   {%- set b_rows = [] -%}
+  {#- Golden review 2: one tape family whose members LB types differently (Audience
+      vs Soundboard) is a contradiction -- the band flags it rather than hide it. -#}
+  {%- set fam_types = [] -%}
+  {%- for e in b.members %}{% if e.r.type is defined and e.r.type.value and e.r.type.value not in fam_types %}{% set _ = fam_types.append(e.r.type.value) %}{% endif %}{% endfor -%}
   {%- for e in b.members -%}
     {%- set rk = e.r.rank.value if e.r.rank is defined and e.r.rank.value is not none else 9999 -%}
-    {%- set _ = b_rows.append({'e': e, 'fam': b.fam, 'fam_n': b.members | length, 'rk': rk}) -%}
+    {%- set _ = b_rows.append({'e': e, 'fam': b.fam, 'fam_n': b.members | length, 'rk': rk, 'fam_types': fam_types}) -%}
   {%- endfor -%}
   {%- for row in (b_rows | sort(attribute='rk')) %}{% set _ = prim_rows.append(row) %}{% endfor -%}
 {%- endfor -%}
@@ -646,6 +650,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
             {%- set fam_size_f = x.fam.get('size') -%}
             {%- set fam_size_n = fam_size_f.value if fam_size_f and fam_size_f.value is number else x.fam_n -%}
             <span class="fam-sub" data-lb="family[].size">{{ lbf('family[].size', fam_size_f, text=(fam_size_n ~ ' source' ~ ('s' if fam_size_n != 1 else ''))) }}</span>
+            {%- if 'Soundboard' in x.fam_types and (x.fam_types | length) > 1 %}<span class="fam-lowconf" title="LB types this family's members differently ({{ x.fam_types | join(' / ') }}); either the tape match or a type label is wrong">mixed source types</span>{% endif -%}
             {%- if conf is not none %}
             {%- if conf < 0.5 %}<span class="fam-lowconf" data-lb="family[].confidence" title="low-confidence tape-family match">unverified match</span>
             {%- else %}<span class="fam-conf" data-lb="family[].confidence"><span class="bar"><i style="width:{{ (conf * 100) | round | int }}%"></i></span> {{ (conf * 100) | round | int }}%</span>{% endif -%}
@@ -800,8 +805,8 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
         {%- set city_total_f = fields.get('venue.city_total') -%}
         {%- if (run_nights_f and run_nights_f.value is not none) or (city_total_f and city_total_f.value is not none) %}
         <div class="coord">
-          {%- if run_nights_f and run_nights_f.value is not none %}{{ lbf('venue.run_nights', run_nights_f, text=(run_nights_f.value ~ ' night(s) this run')) }}{% endif -%}
-          {%- if city_total_f and city_total_f.value is not none %} &middot; {{ lbf('venue.city_total', city_total_f, text=(city_total_f.value ~ ' shows in this city')) }}{% endif -%}
+          {%- if run_nights_f and run_nights_f.value is not none %}{{ lbf('venue.run_nights', run_nights_f, text=(run_nights_f.value ~ (' night' if run_nights_f.value == 1 else ' nights') ~ ' this run')) }}{% endif -%}
+          {%- if city_total_f and city_total_f.value is not none %} &middot; {{ lbf('venue.city_total', city_total_f, text=(city_total_f.value ~ (' show' if city_total_f.value == 1 else ' shows') ~ ' in this city')) }}{% endif -%}
         </div>
         {%- endif %}
         {%- set city_hist_f = fields.get('city_history[]') -%}
@@ -881,7 +886,11 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   <ul class="withheld" data-lb="prov.withheld[]">
     {%- for gkey, g in groups.items() %}
     {%- set desc = qc.get('rule_descriptions', {}).get(g.rule) -%}
-    <li>{% if g.lb %}LB-{{ '%05d' % g.lb }} &middot; {% endif %}{{ g.n }} field{{ 's' if g.n != 1 else '' }} withheld &middot; {{ g.rule }}{% if desc %} ({{ desc }}){% endif %}</li>
+    {#- Golden review 2: a withheld LB the sources table doesn't list says so, so the
+        reader doesn't hunt for it. -#}
+    {%- set g_row = row_by_lb.get('LB-%05d' % g.lb) or row_by_lb.get(g.lb) if g.lb else none -%}
+    {%- set g_listed = g_row and not (g_row.group is defined and g_row.group.value == 'no_match') -%}
+    <li>{% if g.lb %}LB-{{ '%05d' % g.lb }} &middot; {% endif %}{{ g.n }} field{{ 's' if g.n != 1 else '' }} withheld &middot; {{ g.rule }}{% if desc %} ({{ desc }}){% endif %}{% if g.lb and not g_listed %} &middot; not listed above{% endif %}</li>
     {%- endfor %}
   </ul>
   {%- endif %}

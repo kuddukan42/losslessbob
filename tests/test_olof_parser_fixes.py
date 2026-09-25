@@ -689,8 +689,10 @@ _DSN20520 = (
 def test_double_cover_credit_title_parses_1999_06_11():
     songs = _songs_of(_DSN20520)
     assert [s.position for s in songs] == list(range(1, 17))
-    assert songs[14].song_title == "I Walk The Line ( John ny Cash) / Blue Moon Of Kentucky"
-    assert songs[14].credits == "Bill Monroe"
+    # Golden review 2: each medley part's credit leaves the title (the fixture keeps
+    # the page's split-word "John ny", which the credit carries verbatim).
+    assert songs[14].song_title == "I Walk The Line / Blue Moon Of Kentucky"
+    assert songs[14].credits == "John ny Cash / Bill Monroe"
 
 
 # DSN9950 / 1989-06-13: song 1 itself has 2 "(" — used to break the walk immediately (0 songs).
@@ -853,3 +855,16 @@ def test_parts_of_and_parenthetical_aside_resolve_all_positions_1975_12_04():
     assert by_pos[12].released_on.startswith("(part) ")
     assert not by_pos[5].released_on.split("; ")[-1].startswith("(part) ")
     assert "are included in the film" in by_pos[19].released_on
+
+
+def test_medley_credits_split_per_part():
+    """Golden review 2 (1999-06-11 #15): each medley part's credit leaves the title."""
+    from backend.olof_parser import _split_title_parts
+
+    assert _split_title_parts(
+        "I Walk The Line (Johnny Cash) / Blue Moon Of Kentucky (Bill Monroe)"
+    ) == ("I Walk The Line / Blue Moon Of Kentucky", "Johnny Cash / Bill Monroe", "")
+    # A slash inside a title, or a medley with only a trailing credit, is unchanged.
+    assert _split_title_parts("Love Minus Zero/No Limit") == ("Love Minus Zero/No Limit", "", "")
+    assert _split_title_parts("Rainy Day Women / Foo (Hank Snow)") == \
+        ("Rainy Day Women / Foo", "Hank Snow", "")

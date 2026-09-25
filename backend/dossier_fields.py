@@ -1277,7 +1277,8 @@ class VenueRun(TypedDict):
         position: This show's night within the run.
         size: Nights in the run.
         dates: Each night's date, in order (the view builds dossier URLs from them).
-        event_ids: Each night's event id, in order.
+        event_ids: Each show's event id, in order (a two-show day has two).
+        event_dates: Each show's date, parallel to ``event_ids``.
         claims_ok: Every night has parsed songs and no open R-O1.
     """
 
@@ -1286,6 +1287,7 @@ class VenueRun(TypedDict):
     size: int
     dates: list[str]
     event_ids: list[int]
+    event_dates: list[str]
     claims_ok: bool
 
 
@@ -1494,7 +1496,8 @@ def run_context(conn: sqlite3.Connection, event_id: int) -> RunContext:
             # leading article so it never reads "the The Spectrum".
             venue=re.sub(r"^the\s+", "", venue, flags=re.IGNORECASE),
             position=nights.index(ev["date_str"]) + 1, size=len(nights),
-            dates=nights, event_ids=ids, claims_ok=_claims_ok(conn, ids),
+            dates=nights, event_ids=ids, event_dates=[r["date_str"] for r in run],
+            claims_ok=_claims_ok(conn, ids),
         )
 
     out["city_history"] = _city_history(conn, concerts, ev)
@@ -1570,7 +1573,7 @@ def rotation_rank(
     from backend.qc.corroborate import rotation_check
 
     siblings: list[RotationSibling] = []
-    for eid, date in zip(venue_run["event_ids"], venue_run["dates"], strict=True):
+    for eid, date in zip(venue_run["event_ids"], venue_run["event_dates"], strict=True):
         rc = rotation_check(conn, eid)
         siblings.append(RotationSibling(
             event_id=eid, date=date, pct=rc["olof_pct"], new=rc["olof_new"],
@@ -2955,6 +2958,11 @@ _DAW_CODEC_RE = re.compile(
 )
 
 
+# ``db.parse_lineage`` caps ``entries.source_chain`` at 160 chars (then strips); a
+# chain this long was almost certainly cut.
+_SOURCE_CHAIN_CLIP = 155
+
+
 def lineage_short(source_chain: str | None) -> str | None:
     """``pick.lineage_short`` (C23, plan line 647): the chain before the first hop.
 
@@ -2976,7 +2984,12 @@ def lineage_short(source_chain: str | None) -> str | None:
         if _DAW_CODEC_RE.search(hop):
             prefix = ">".join(hops[:i]).strip().rstrip(",").strip()
             return prefix or None
-    return source_chain.strip()
+    chain = source_chain.strip()
+    if len(chain) >= _SOURCE_CHAIN_CLIP:
+        # Golden review 2: parse_lineage stores at most 160 chars, so a chain that
+        # long was clipped mid-hop -- say so instead of ending on "Macbook Pro >".
+        return chain.rstrip(" >,;-") + " …"
+    return chain
 
 
 class Runtime(TypedDict):
@@ -3763,6 +3776,20 @@ def compare_sources(
             and c["songs_present"] == c["songs_total"]
         )
 
+    def is_known_incomplete(lb: int) -> bool:
+        # Golden review 2: an unknown completeness (no parsed tracklist) is not
+        # "the pick does not have the complete setlist".
+        c = completeness_map.get(lb)
+        return bool(
+            c and c["basis"] == "tracklist" and c["songs_total"]
+            and c["songs_present"] < c["songs_total"]
+        )
+
+    def is_known_non_soundboard(lb: int) -> bool:
+        # An untyped pick (e.g. a TV-broadcast transfer) is not "not a soundboard".
+        t = (rows[lb]["source_type"] or "").strip()
+        return bool(t) and t != "Soundboard"
+
     diffs: list[RunnerUpDiff] = []
     if runner_up is not None:
         pv, rv = rating(pick), rating(runner_up)
@@ -3843,14 +3870,14 @@ def compare_sources(
                     axis="resolution", lb_number=best_lb, pick_value=p_res, alt_value=best_res,
                 ))
 
-    if not is_soundboard(pick):
+    if is_known_non_soundboard(pick):
         sbd = [lb for lb in visible if is_soundboard(lb)]
         if len(sbd) == 1 and sbd[0] != pick:
             alternates.append(SourceAlternate(
                 axis="soundboard", lb_number=sbd[0], pick_value=False, alt_value=True,
             ))
 
-    if not is_complete(pick):
+    if is_known_incomplete(pick):
         comp = [lb for lb in visible if is_complete(lb)]
         if len(comp) == 1 and comp[0] != pick:
             alternates.append(SourceAlternate(
@@ -3887,7 +3914,8 @@ class BobtalkAnchor(TypedDict):
     Keys:
         position: The matched song's ``olof_songs.position``.
         cue: The cue word that resolved it, lowercased (``'before'`` / ``'after'``
-            / ``'plays'`` / ``'during'``).
+            / ``'plays'`` / ``'during'``), or ``'mentions'`` for an uncued quote
+            that names exactly one song.
         title: The cue's title text as Olof wrote it, before matching.
         text: The full bobtalk quote line.
     """
@@ -3912,6 +3940,49 @@ class BobtalkAnchors(TypedDict):
     event_id: int
     anchored: list[BobtalkAnchor]
     context: list[str]
+
+
+def _bobtalk_fold(text: str) -> str:
+    """Lowercased, apostrophe-folded, punctuation-stripped words for prefix tests."""
+    text = text.replace("’", "'").replace("‘", "'").lower()
+    return " ".join(re.findall(r"[a-z0-9']+", text))
+
+
+def _bobtalk_prefix_position(
+    title: str, setlist: list[tuple[int, str, str]], taken: set[int],
+) -> int | None:
+    """The one free setlist position whose title starts with a 3+ word cue *title*."""
+    folded = _bobtalk_fold(title)
+    if len(folded.split()) < 3:
+        return None
+    hits = [pos for pos, song, _sub in setlist
+            if pos not in taken and _bobtalk_fold(song).startswith(folded + " ")]
+    return hits[0] if len(hits) == 1 else None
+
+
+def _bobtalk_mention_position(
+    text: str, setlist: list[tuple[int, str, str]], taken: set[int],
+) -> int | None:
+    """The position of the one song an uncued quote names, else ``None``.
+
+    Titles match case-sensitively as whole words (Olof capitalises titles in
+    bobtalk), so prose ("a hurricane") never matches "Hurricane". A quote naming
+    two songs, or a song played twice, stays in context -- the cue is ambiguous.
+    """
+    norm = text.replace("’", "'").replace("‘", "'")
+    named: dict[str, list[int]] = {}
+    for pos, song, _sub in setlist:
+        named.setdefault(song.replace("’", "'"), []).append(pos)
+    found = [
+        song for song in named
+        if re.search(r"(?<![\w'])" + re.escape(song) + r"(?![\w'])", norm)
+    ]
+    # Drop a title that only matched inside a longer named title.
+    found = [t for t in found if not any(t != o and t in o for o in found)]
+    if len(found) != 1 or len(named[found[0]]) != 1:
+        return None
+    pos = named[found[0]][0]
+    return None if pos in taken else pos
 
 
 def anchor_bobtalk(
@@ -3969,9 +4040,6 @@ def anchor_bobtalk(
         if found:
             cued[q.index] = found
 
-    if not cued:
-        return BobtalkAnchors(event_id=event_id, anchored=[], context=[q.text for q in quotes])
-
     cmap = canonical_map if canonical_map is not None else load_canonical_map(conn)
     setlist = _event_setlist(conn, event_id)
     matcher = _PositionMatcher(setlist, cmap)
@@ -3987,6 +4055,24 @@ def anchor_bobtalk(
         (qidx, cue, title, hits.get(f"{i}:{title}"))
         for i, (qidx, cue, title) in enumerate(ordered)
     ]
+    taken = {pos for *_, pos in resolved if pos is not None}
+    # Golden review 2: Olof shortens long titles in a cue ("(before It Takes A Lot
+    # To Laugh)") -- a 3+ word cue that prefixes exactly one free song claims it.
+    for i, (qidx, cue, title, pos) in enumerate(resolved):
+        if pos is None:
+            pos = _bobtalk_prefix_position(title, setlist, taken)
+            if pos is not None:
+                taken.add(pos)
+                resolved[i] = (qidx, cue, title, pos)
+    # An uncued intro that names exactly one song ("It's called Isis.") anchors to it.
+    for q in quotes:
+        if q.index in cued:
+            continue
+        pos = _bobtalk_mention_position(q.text, setlist, taken)
+        if pos is not None:
+            taken.add(pos)
+            title = next(song for p_, song, _sub in setlist if p_ == pos)
+            resolved.append((q.index, "mentions", title, pos))
 
     anchored: list[BobtalkAnchor] = []
     anchored_quotes: set[int] = set()

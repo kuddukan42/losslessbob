@@ -664,3 +664,29 @@ def test_quality_reads_largest_scored_scan_not_newest():
     assert set(quality) == {10, 11, 12}
     assert quality[10]["abs_score"] == 70.0
     shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_taper_reputation_bonus_skips_disputed_family_credit():
+    """Golden review 2: a credit the dossier shows as disputed (its recording family
+    carries 2+ distinct confirmed tapers, R-T6) must not earn the confirmed bonus."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    for lb, rating in ((930, "A+"), (931, "A"), (932, "A-")):
+        _seed_entry(conn, lb, f"1990-02-{lb - 929:02d}", rating=rating)
+        _seed_taper_attribution(conn, lb, "reputable_taper", confidence="confirmed")
+    _seed_entry(conn, 940, "1/1/93", rating="B")
+    _seed_entry(conn, 941, "1/1/93", rating="B")
+    _seed_entry(conn, 942, "1/1/93", rating="B")
+    _seed_taper_attribution(conn, 940, "reputable_taper", confidence="confirmed")
+    _seed_taper_attribution(conn, 941, "other_taper", confidence="confirmed")
+    _seed_taper_attribution(conn, 942, "reputable_taper", confidence="confirmed")
+    conn.executemany(
+        "INSERT INTO recording_families (lb_number, fam_id, concert_date) VALUES (?, ?, ?)",
+        [(940, "f1", "1993-01-01"), (941, "f1", "1993-01-01"), (942, "f2", "1993-01-01")])
+    conn.commit()
+
+    picks.recompute(db_path=db_path)
+
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1/1/93")}
+    assert "taper_reputation" not in _evidence_kinds(rows[940])
+    assert "taper_reputation" in _evidence_kinds(rows[942])

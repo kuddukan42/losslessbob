@@ -1,0 +1,9 @@
+{
+  "date": "1989-06-13",
+  "location": null,
+  "channel": "public",
+  "category": "paren-titles",
+  "note": "Song 1 carries two parentheticals; Olof's parser once parsed 0 songs here (C05 guard)",
+  "verified_by": null,
+  "expected": null
+}

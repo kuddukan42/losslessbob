@@ -182,3 +182,20 @@ class TestRotationRank:
         with conn:
             _run_of_three(conn)
         assert rotation_rank(conn, 10, run_context(conn, 10)["venue_run"]) is None
+
+
+def test_rotation_rank_on_a_two_show_day(conn):
+    """Golden review 2: a two-show day is one night but two events -- rotation_rank
+    must not zip per-night dates against per-show event ids (1974-01-06 crash)."""
+    from backend.dossier_fields import rotation_rank, run_context
+    with conn:
+        _concert(conn, 20, "1974-01-06", "S", "Philadelphia", "T74", ["A", "B"],
+                 rotation=(2, 100))
+        _concert(conn, 21, "1974-01-06", "S", "Philadelphia", "T74", ["A", "C"],
+                 rotation=(1, 50))
+        _concert(conn, 22, "1974-01-07", "S", "Philadelphia", "T74", ["C", "D"],
+                 rotation=(1, 50))
+    run = run_context(conn, 21)["venue_run"]
+    assert run["size"] == 2 and len(run["event_ids"]) == 3
+    rr = rotation_rank(conn, 21, run)
+    assert rr is not None and len(rr["siblings"]) == 3
