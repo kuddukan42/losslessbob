@@ -2,6 +2,22 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-347: Dossier: rethink stats.instrument_tally line
+Priority: Low
+Status: Done
+Added: 2026-09-16
+Closed: 2026-09-25
+Description: The setlist stats line 'harp × 17, bass × 12, guitar × 17, keyboard × 13, vocal × 17, drums × 12 · complete' (templates/dossier.html:443, stats.instrument_tally) tells the reader nothing useful. Decide what's worth showing instead: e.g. only Dylan's non-default instruments (piano on 6, solo acoustic 10-14), band-vs-solo segments, or drop it.
+instrument tally replaced by era-aware Dylan-only instrument/format notes (C32a 0c088313, e2d49e89).
+
+TODO-350: Run the BUG-337 live rebuild: re-parse Olof pages + recompute song_performances
+Priority: High
+Status: Done
+Added: 2026-09-17
+Closed: 2026-09-25
+Description: Code fix committed 77a77c63; verified on a DB copy only (never run live from a session). tj runs, with the backend stopped: .venv/bin/python3 -m backend.olof_parser && .venv/bin/python3 tools/compute_song_performances.py — then confirm 0 fold collisions and re-check Blowin' In The Wind / Ballad Of A Thin Man against TUIT (expected 1651/1329 vs 1576/1330). Delete .debug/bug337_parse_diff.md afterwards.
+Run live 2026-09-25 with tj's go-ahead after a backup: Olof reparse (with the C32b parser fixes) + compute_song_performances; 0 fold collisions; Blowin' 1655 / Thin Man 1330.
+
 TODO-348: seed_overlay cannot repair a wrong-LB tracker attribution
 Priority: Medium
 Status: Done

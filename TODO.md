@@ -1,20 +1,20 @@
-TODO-350: Run the BUG-337 live rebuild: re-parse Olof pages + recompute song_performances
-Priority: High
+TODO-352: Finish venue_gazetteer city+country rekey
+Priority: Low
 Status: Open
-Added: 2026-09-17
-Description: Code fix committed 77a77c63; verified on a DB copy only (never run live from a session). tj runs, with the backend stopped: .venv/bin/python3 -m backend.olof_parser && .venv/bin/python3 tools/compute_song_performances.py — then confirm 0 fold collisions and re-check Blowin' In The Wind / Ballad Of A Thin Man against TUIT (expected 1651/1329 vs 1576/1330). Delete .debug/bug337_parse_diff.md afterwards.
+Added: 2026-09-25
+Description: C32c added venue_gazetteer._norm_city(city, country) and migrate_city_norm_with_country(), but geocoder.py and dossier_qc.py still key on the bare city, so the migration was NOT run; the dossier lookup tries both keys with a country-contradiction guard. Move every caller to the country key, then run the migration once.
+
+TODO-351: Review lossy-lineage veto false positives
+Priority: Medium
+Status: Open
+Added: 2026-09-25
+Description: C32d vetoes a source whose lineage states a stream/kbps/mp3/WV/YouTube link (concert_ranker/text_features.py lossy_lineage_snippet). ~146 corpus hits; a sample showed ~10% still misread (comparisons to another copy, negation after the hit). Review the hit list and tighten guards or add curator overrides.
 
 TODO-349: show_picks fragment rule demotes a partial tracklist below an equal-length source with no tracklist
 Priority: Low
 Status: Open
 Added: 2026-09-17
 Description: TODO-344 applies dossier_fields.is_fragment verbatim: a tracklist-basis source under FRAGMENT_THRESHOLD is a fragment, a source with no tracklist and a runtime near the median is not. Two 4-minute sources on 1964-05-14 therefore swap rank-1 (LB-01254 1/3 songs -> LB-03015 no tracklist). Decide whether picks should demote a tracklist fragment only when a non-fragment with materially longer runtime exists. Review .debug/todo344_rank1_diff.md first.
-
-TODO-347: Dossier: rethink stats.instrument_tally line
-Priority: Low
-Status: Open
-Added: 2026-09-16
-Description: The setlist stats line 'harp × 17, bass × 12, guitar × 17, keyboard × 13, vocal × 17, drums × 12 · complete' (templates/dossier.html:443, stats.instrument_tally) tells the reader nothing useful. Decide what's worth showing instead: e.g. only Dylan's non-default instruments (piano on 6, solo acoustic 10-14), band-vs-solo segments, or drop it.
 
 TODO-346: Dossier: venue reference link (e.g. Wikipedia) on the venue card
 Priority: Low

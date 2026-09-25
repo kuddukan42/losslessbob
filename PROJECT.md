@@ -261,6 +261,8 @@ losslessbob/
 ├── tools/
 │   ├── ledger.py              # CLI: BUG/TODO ledger ops (next-id, bug-open/close, todo-open/close, --dry-run); used by /session-close
 │   ├── make_fixture_db.py    # CLI: builds a deterministic synthetic install (~101 entries) for CI/onboarding tests, no real data required (TODO-261); --golden instead cuts the show-dossier golden fixture (tests/golden/dossier/fixture.jsonl.gz) from live data for the spec dates, private-entry metadata scrubbed (TODO-342 C31)
+│   ├── dossier_audit.py      # CLI: adversarial audit of an exported dossier set — link sweep, setlist diff vs bobserve/bobdylan.com, structural lints, 390px overflow; exit 1 on structural findings (C32g)
+│   ├── import_boblinks_index.py # CLI: crawl boblinks.com tour guides → boblinks_pages (dry run default, --apply writes) (C32f)
 │   ├── dossier_golden.py     # CLI + helpers for the dossier golden set: load_fixture(), snapshot() (anchor value/confidence/source + rows + claims + map marker + gate outcome, timestamps stripped), --check (fixture vs live per spec, must be 15/15 before committing a re-cut), --show NAME (snapshot for tj's C32 verification) (TODO-342)
 │   ├── ci_smoke.py           # CLI: builds a fixture DB, boots the real backend against it, curls 4 boot-smoke routes — used by ci.yml's backend-smoke job (TODO-261)
 │   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
@@ -1092,6 +1094,16 @@ present) `taper_attributions`. Never exported in master data. Scoring model:
 | evidence_json | TEXT NOT NULL | Ordered list of `{kind, detail, points}` |
 | concert_date_iso | TEXT | `YYYY-MM-DD` parsed from `concert_date` (two-digit-year pivot 30); NULL when any component is `xx` (LISTENING §9) |
 | computed_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
+| event_id | INTEGER | PK part 3 (C32d) — `olof_events` show ranked; two-show days rank each show separately, an unassigned source ranks in both; NULL when the date has no Olof event. Older DBs are rebuilt once by an `init_db` migration |
+
+### `boblinks_pages` — Bob Links per-show page index (C32f)
+Filled by `tools/import_boblinks_index.py --apply` (crawls boblinks.com tour guides, verifies
+each page); `backend.dossier._build_xref` links a date's Bob Links page only when a row exists.
+| Column | Type | Notes |
+|--------|------|-------|
+| date_iso | TEXT | PK — `YYYY-MM-DD` |
+| url | TEXT NOT NULL | Verified per-show page (e.g. `https://boblinks.com/032910s.html`) |
+| found_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
 
 Indexes: `idx_show_picks_lb(lb_number)`, `idx_show_picks_date_iso(concert_date_iso)`.
 

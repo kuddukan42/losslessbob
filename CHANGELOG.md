@@ -1,3 +1,39 @@
+[2026-09-25] — Golden dossiers: adversarial review → C32a–h fixes, live rebuild, regenerated set
+Added: tools/dossier_audit.py (+tests): repeatable adversarial audit of an exported dossier set —
+  link sweep (parked/placeholder pages, LB/bobserve date match), internal links, setlist diff vs
+  bobserve + bobdylan.com, missing-setlist, structural lints, 390px overflow. Old export: 100
+  findings; regenerated export: 0 structural / 0 link, 8 known source conflicts.
+Fixed: backend/olof_parser.py, bobserve_parser.py, bobtalk.py, song_index.py (C32b): personnel
+  guard no longer drops double-paren titles (1999-06-11 14→16, 1989-06-13 0→16 songs);
+  Bootlegs/Reference(s) end bobtalk; '. N …' tails are their own clause; wider release keywords;
+  lineup ':' continuation lines and 'Bob Dylan solo (…)' are lineup clauses; bobserve subtitles
+  are not writer credits; ' before-apostrophe / 'tim es' folds.
+Fixed: backend/dossier_fields.py, dossier_anchors.py, dossier.py, dossier_claims.py,
+  venue_gazetteer.py (C32c): personnel keeps ranges/instruments and 'with <Band>'; recording notes
+  band per clause; open R-O1 → setlist 'partial'; canonical titles; releases named ('The Rolling
+  Thunder Revue: The 1975 Live Recordings'); venue name priority (General Motors Place), venue card
+  without a map; city history drops hotel/studio/rehearsal venues; runs count nights and never
+  read 'the The Spectrum'; instrument notes read Dylan's own credit only (TODO-347).
+Fixed: concert_ranker/{text_features,config,picks,cli}.py, backend/db.py (C32d): lossy-lineage
+  veto (stream/kbps/mp3/WV/YouTube, negation-guarded) — 1975-12-08 no longer picks a 320 kbps WV
+  capture; excluded sources never pick/alternate; per-show picks on two-show days (show_picks
+  gains event_id, PK rebuilt by idempotent migration); audio term vs corpus median; 10haaf list
+  is a catalogue (weight 2); runner-up lines name who leads.
+Fixed: backend/db.py, taper_attribution.py, qc/rules.py (C32e): negated same_as refs, no
+  propagation onto SBD/ALD/broadcast, family taper conflicts (new R-T6 warn), bound series codes,
+  'recorded by' credits; dossier pills show stated/disputed.
+Fixed: backend/templates/dossier.html, dossier_qc.py, app.py, tools/dossier_golden.py (C32f):
+  theme follows OS; no '0 min'/'— disc(s)'; contiguous family bands; bobtalk paragraphs; QC footer
+  one line per LB+rule; bjorner.com (parked) replaced by the bobserve Olof mirror; Bob Links only
+  for crawled pages (new boblinks_pages table, tools/import_boblinks_index.py); link_mode threaded;
+  zero-song setlist notice; phone badges.
+Changed: live DB (tj go-ahead; backup data/backups/losslessbob_preC32h_20260925_0637.db): Olof
+  reparse + song_performances (TODO-350; 0 fold collisions), forced parse_lineage, attribute_tapers
+  (confirmed 3,920→4,379, propagated 1,067→802, SBD/ALD propagated →0), compute_show_picks (rank-1
+  changed on 447/3,939 dates), qc run (R-O1 255→21, R-O4 −217, R-T3 139→7), Bob Links crawl (2,508).
+Changed: tests/golden/dossier/fixture.jsonl.gz re-cut (--check 15/15); golden set re-exported to
+  ~/Documents/projects/losslessbob_dossiers. Plan + resume notes: instructions/GOLDEN_DOSSIER_FIX_PLAN.md.
+
 [2026-09-21] — Updates card: pipeline freshness regrouped by who does the work
 Changed: gui_next/.../components/DataFreshnessCard.tsx: rewritten from the Claude Design redesign.
   Steps now sit in Ready to update (one "Update N steps" button runs the whole-pipeline chain in
