@@ -43,9 +43,9 @@ import logging
 import re
 import subprocess
 import sys
+from collections.abc import Iterable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable
 
 _log = logging.getLogger(__name__)
 
@@ -562,9 +562,9 @@ def check_setlist_diff(
             m = _CLIP_RE.search(text)
             clip = html.unescape(m.group(1)) if m else ""
             bs_songs = [
-                re.sub(r"^\d+\.\s*", "", l)
-                for l in clip.split("\n")
-                if re.match(r"^\d+\.\s", l)
+                re.sub(r"^\d+\.\s*", "", ln)
+                for ln in clip.split("\n")
+                if re.match(r"^\d+\.\s", ln)
             ]
             bs_folded = [fold_title(s) for s in bs_songs]
             if not folded:
