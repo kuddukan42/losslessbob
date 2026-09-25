@@ -61,6 +61,7 @@ const BASE = window.api.flaskBase
 
 interface CrawlerStatus {
   running: boolean; stage: string; current_url: string | null
+  last_url: string | null; last_result: string | null; last_seq: number
   fetched: number; not_modified: number; skipped: number
   failed: number; not_found: number; queue_size: number
   session_id: number | null; message: string; stop_requested: boolean
@@ -1542,14 +1543,14 @@ function ScreenScraperInner() {
 
   // Previous status refs for log diffing
   const prevRef = useRef<{
-    crawlerUrl: string | null; crawlerFetched: number
+    crawlerUrl: string | null; crawlerSeq: number
     scrapeLb: number | null; scrapeAction: string | null
     bootlegMsg: string; bdUrl: string | null; bdMsg: string
     sfPage: number; sfMsg: string
     geoLoc: string; geoStage: string
     presMsg: string; presStage: string; presStarted: string | null; presSeen: boolean
   }>({
-    crawlerUrl: null, crawlerFetched: 0,
+    crawlerUrl: null, crawlerSeq: -1,
     scrapeLb: null, scrapeAction: null,
     bootlegMsg: '', bdUrl: null, bdMsg: '',
     sfPage: 0, sfMsg: '',
@@ -1610,19 +1611,23 @@ function ScreenScraperInner() {
 
     if (crawler) {
       setCrawlerStatus(crawler)
-      if (crawler.running) {
-        if (crawler.current_url && crawler.current_url !== p.crawlerUrl) {
-          const action = crawler.stage === 'crawling' ? 'fetched' : crawler.stage
-          const shortUrl = (crawler.current_url as string).replace(LB_SITE_BASE, '')
-          pushLog('crawler', `${action.padEnd(8)} ${shortUrl}`)
-          p.crawlerUrl = crawler.current_url
-        }
-        if (crawler.failed > p.crawlerFetched && crawler.failed > 0) {
-          pushLog('crawler', `failed   ${crawler.current_url}`, 'bad')
-        }
-        p.crawlerFetched = crawler.failed
-      } else if (crawler.stage === 'done' && p.crawlerUrl !== null) {
-        pushLog('crawler', `Crawl complete — ${crawler.fetched} fetched, ${crawler.failed} failed`, 'ok')
+      // One line per finished URL, labelled with its real outcome. Polling can
+      // miss intermediate URLs; last_seq only guarantees the latest is logged.
+      // crawlerSeq starts at -1: adopt the backend's seq on the first poll so a
+      // crawl that finished before this screen mounted isn't re-logged.
+      if (p.crawlerSeq === -1) p.crawlerSeq = crawler.last_seq ?? 0
+      if (crawler.last_url && crawler.last_seq !== p.crawlerSeq) {
+        const shortUrl = (crawler.last_url as string).replace(LB_SITE_BASE, '')
+        const result = crawler.last_result ?? '?'
+        const tone = result === 'failed' ? 'bad' : undefined
+        pushLog('crawler', `${result.padEnd(8)} ${shortUrl}`, tone)
+        p.crawlerSeq = crawler.last_seq
+        p.crawlerUrl = crawler.last_url
+      }
+      if (!crawler.running && crawler.stage === 'done' && p.crawlerUrl !== null) {
+        pushLog('crawler', `Crawl complete — ${crawler.fetched} fetched, `
+          + `${crawler.not_modified} unchanged, ${crawler.not_found} not found, `
+          + `${crawler.failed} failed`, 'ok')
         p.crawlerUrl = null
       }
       if (crawlerSess && Array.isArray(crawlerSess) && crawlerSess.length > 0) {
