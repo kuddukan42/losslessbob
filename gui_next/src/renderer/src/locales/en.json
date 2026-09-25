@@ -50,6 +50,7 @@
       "dbeditor": "DB Editor",
       "scraper": "Scraper",
       "fingerprint": "Fingerprint",
+      "checksumdisputes": "Checksum Disputes",
       "settings": "Settings",
       "setup": "Setup",
       "mounts": "Mounts",
@@ -1339,6 +1340,73 @@
       "clipboardEmpty": "Clipboard is empty",
       "clipboardFailed": "Cannot read clipboard",
       "noValidFiles": "No checksum files found (.md5, .ffp, .st5, .sha1)"
+    }
+  },
+  "checksumDisputes": {
+    "title": "Checksum Disputes",
+    "subtitle": "Curator triage — 312 findings across 93 LBs, grouped by verdict (TODO-299)",
+    "empty": "No open disputes for this filter.",
+    "count_one": "{{count}} finding",
+    "count_other": "{{count}} findings",
+    "reference": {
+      "all": "Any reference",
+      "db": "DB",
+      "lbdir": "lbdir"
+    },
+    "verdictFilter": {
+      "all": "All ({{count}})"
+    },
+    "verdict": {
+      "db_error": "DB wrong",
+      "audio_differs": "Different audio",
+      "retag": "Retag only",
+      "receipt_unknown": "Unverifiable",
+      "lbdir_only": "lbdir only"
+    },
+    "confidence": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "status": {
+      "open": "Open",
+      "confirmed": "Confirmed",
+      "dismissed": "Dismissed"
+    },
+    "action": {
+      "confirm": "Confirm",
+      "dismiss": "Dismiss"
+    },
+    "table": {
+      "lb": "LB#",
+      "filename": "Filename",
+      "type": "Type",
+      "verdict": "Verdict",
+      "confidence": "Confidence",
+      "notes": "Notes"
+    },
+    "badges": {
+      "orphan": "orphan value",
+      "orphanTitle": "The uploader's value is in no checksums row at all — a user holding this exact file gets a bare NOT FOUND",
+      "suspect": "suspect source name",
+      "suspectTitle": "The source filename says its own contents are the discarded ones (bad/old/superseded)",
+      "collection": "from collection",
+      "collectionTitle": "Read from an uploader sidecar in a collection folder, not from the site mirror",
+      "xref": "xref evidence",
+      "xrefTitle": "The evidence comes from a manifest filed under another LB for the same fileset",
+      "displaced": "also filed elsewhere",
+      "displacedTitle": "The uploader's value exists for this LB, filed under another track: {{file}}"
+    },
+    "lookupAnnotation": {
+      "summary_one": "{{count}} NOT FOUND explained by a checksum dispute",
+      "summary_other": "{{count}} NOT FOUND explained by checksum disputes",
+      "pill": "Disputed",
+      "pillTitle": "The uploader's file matches a known-bad DB value for LB-{{lb}} (confidence: {{confidence}}, status: {{status}})"
+    },
+    "entryBadge": {
+      "label_one": "{{count}} open dispute",
+      "label_other": "{{count}} open disputes",
+      "title": "This LB has open checksum_disputes findings awaiting curator triage (TODO-299)"
     }
   },
   "library": {
