@@ -103,6 +103,28 @@ def test_normalize_blank_and_none():
     assert song_index.normalize_song_title(None) == ""
 
 
+# B8 (golden-dossier plan, phase B): normalize_song_title folds two confirmed
+# pre-reparse (TODO-350) BUG-337 defect classes directly, instead of only
+# flagging them via detect_fold_collisions.
+
+def test_normalize_drops_space_before_apostrophe():
+    # "Knockin ' On Heaven's Door" (DSN20520, 1999-06-11) vs the clean spelling.
+    assert song_index.normalize_song_title("Knockin ' On Heaven's Door") == \
+        song_index.normalize_song_title("Knockin' On Heaven's Door") == \
+        "knockin' on heaven's door"
+    # Doesn't touch a space that isn't immediately before an apostrophe.
+    assert song_index.normalize_song_title("Nobody ' Cept You") == "nobody' cept you"
+
+
+def test_normalize_merges_stale_bug337_tim_es_split():
+    # "The Tim es They Are A-Changin'" (DSN2260, pre-77a77c63 export) must
+    # group with the correct spelling, not strand its own song_canonical row.
+    assert song_index.normalize_song_title("The Tim es They Are A-Changin'") == \
+        song_index.normalize_song_title("The Times They Are A-Changin'")
+    # Narrow: an unrelated word ending in a short fragment isn't touched.
+    assert song_index.normalize_song_title("Mr.   Tambourine   Man!") == "mr tambourine man"
+
+
 # ── song_canonical seeding + curator-row preservation ─────────────────────────
 
 def test_seeding_picks_most_frequent_spelling_deterministically():
@@ -438,13 +460,20 @@ def test_detect_fold_collisions_ignores_duplicate_canonical_spelling():
 
 
 def test_run_reports_fold_collisions_and_strict_raises():
+    # B8 (golden-dossier plan, phase B) folds the space-before-apostrophe and
+    # "tim es"->"times" defect classes directly in normalize_song_title, so
+    # those two pairs no longer reach this guard at all (see
+    # test_normalize_song_title_merges_stale_bug337_spellings below). This
+    # still needs an *uncaught* spacing defect — a plain dropped space, not
+    # adjacent to an apostrophe and not the literal "tim es" case — to prove
+    # the guard still fires on the class B8 doesn't cover.
     db_path, tmp_dir = _make_db()
     conn = db.get_connection(db_path)
     _seed_event(conn, 1)
     _seed_event(conn, 2, date_str="2000-07-29")
     # Two titles that differ only in spacing -> two norm groups, one alnum key.
     _seed_song(conn, 1, 1, "Blowin' In The Wind")
-    _seed_song(conn, 2, 1, "Blowin ' In The Wind")
+    _seed_song(conn, 2, 1, "Blowin' InThe Wind")
     conn.commit()
 
     stats = song_index.run(db_path=db_path)
@@ -470,13 +499,16 @@ def test_run_on_clean_spine_reports_no_collisions():
 
 
 def test_seeding_prunes_stale_auto_alias_but_keeps_curator():
+    # Uses a dropped-space pair, not the space-before-apostrophe class B8
+    # (phase B) now folds directly in normalize_song_title — see the note on
+    # test_run_reports_fold_collisions_and_strict_raises.
     db_path, tmp_dir = _make_db()
     conn = db.get_connection(db_path)
     _seed_event(conn, 1)
-    _seed_song(conn, 1, 1, "Blowin ' In The Wind")
+    _seed_song(conn, 1, 1, "Blowin' InThe Wind")
     conn.commit()
     song_index.run(db_path=db_path)
-    stale_norm = song_index.normalize_song_title("Blowin ' In The Wind")
+    stale_norm = song_index.normalize_song_title("Blowin' InThe Wind")
     assert conn.execute(
         "SELECT 1 FROM song_canonical WHERE alias_norm=?", (stale_norm,)
     ).fetchone() is not None

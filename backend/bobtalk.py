@@ -95,8 +95,19 @@ which who will with would you your
 # upper-case, and matching case-insensitively would swallow ordinary speech —
 # "In 1963, ..." reads as <2+ letters><number> and would be discarded, which
 # silently dropped the strongest match on the 1978-12-16 PoC.
-_CATALOGUE_CODE_RE = re.compile(r"\b[A-Z]{2,}\s*\d+(?:[/-]\d+)?\b")
+# B7 (golden-dossier plan): a hyphen is as common a separator as a space in
+# these codes ("QR-21/22", "TSP-CD-107" — a second hyphenated letter group
+# before the digits), so both the letters->digits gap and an extra letter
+# group are allowed to include '-'.
+_CATALOGUE_CODE_RE = re.compile(
+    r"\b[A-Z]{2,}(?:[\s-]+[A-Z]{2,})*[\s-]*\d+(?:[/-]\d+)?\b"
+)
 _RELEASE_PREFIX_RE = re.compile(r"^\s*(bootleg|cd|disc|vol\.?)\b", re.IGNORECASE)
+# B7: defence in depth for rows parsed before the B2 olof_parser section-boundary
+# fix — a "Reference." citation line or a record-label mention ("... Records")
+# that leaked into an already-stored bobtalk block is still metadata, not speech.
+_REFERENCE_LINE_RE = re.compile(r"^\s*Reference")
+_RECORDS_WORD_RE = re.compile(r"\bRecords\b")
 
 
 @dataclass(frozen=True)
@@ -175,7 +186,8 @@ def is_metadata_line(line: str) -> bool:
     """
     if not line:
         return True
-    return bool(_CATALOGUE_CODE_RE.search(line) or _RELEASE_PREFIX_RE.match(line))
+    return bool(_CATALOGUE_CODE_RE.search(line) or _RELEASE_PREFIX_RE.match(line)
+                or _REFERENCE_LINE_RE.match(line) or _RECORDS_WORD_RE.search(line))
 
 
 def parse_bobtalk(block: str | None) -> list[Quote]:

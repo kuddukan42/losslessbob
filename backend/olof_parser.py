@@ -154,6 +154,50 @@ _RECORDING_RE = re.compile(
 )
 _SESSION_UPDATED_RE = re.compile(r"^Session info updated\b", re.IGNORECASE)
 _LINEUP_RE = re.compile(r"Bob Dylan\s*\(")
+# B1 (golden-dossier plan, phase B): shares the instrument vocabulary
+# dossier_fields._INSTRUMENT_RE uses for the same purpose downstream (kept as
+# a local copy — olof_parser must not import the field-rendering module).
+_INSTRUMENT_WORD_RE = re.compile(
+    r"\b(harmonica|harp|piano|organ|keyboards?|guitar|bass|drums?|violin|fiddle|"
+    r"banjo|mandolin|vocals?|percussion|slide|pedal steel|accordion)\b",
+    re.IGNORECASE,
+)
+# B1: a "Name (instrument words)" clause, standing alone or comma-joined with
+# others ("Doug Sahm (vocal & piano), Bob Dylan (guitar), George Rains
+# (drums)") — a personnel-credit trailer line reusing the 'N. text' markup a
+# song title uses, not an actual song. Deliberately does NOT require the whole
+# candidate text to be covered: it only needs to find 2+ such clauses.
+_PERSONNEL_CLAUSE_RE = re.compile(
+    r"[A-Z][\w.’'\-]*(?:\s+[A-Z][\w.’'\-]*){0,4}\s*\(([^()]*)\)"
+)
+
+
+def _is_personnel_line(text: str) -> bool:
+    """True when *text* reads as a multi-person credits roster, not a title.
+
+    B1: replaces the old ``title_text.count("(") > 1`` guard, which also
+    tripped on legitimate double-parenthetical titles — "I Walk The Line
+    ( John ny Cash) / Blue Moon Of Kentucky (Bill Monroe)" (1999-06-11) and
+    "Hey La La (Hey La La) (McBride)" (1989-06-13), neither of which has any
+    instrument word in either parenthetical. Requires 2+ "Name (...)" clauses
+    where every parenthetical names an instrument.
+
+    Args:
+        text: A song-position candidate title (the text after 'N.').
+
+    Returns:
+        Whether every "Name (...)" clause found names an instrument, and
+        there are at least two of them.
+    """
+    clauses = list(_PERSONNEL_CLAUSE_RE.finditer(text))
+    if len(clauses) < 2:
+        return False
+    # Not "every clause" — a real roster names instruments _INSTRUMENT_WORD_RE
+    # doesn't cover (dobro, sax, trumpet, ...), and requiring 100% coverage
+    # missed DSN2073's 9-person line (4/9 matched). 2+ hits is still nothing a
+    # song title's own credits/subtitle parens produce (see the "I Walk The
+    # Line"/"Hey La La" cases above, both 0 hits).
+    return sum(1 for c in clauses if _INSTRUMENT_WORD_RE.search(c.group(1))) >= 2
 _TAKE_NOTATION_RE = re.compile(r"\btake\s+\d+\s*:", re.IGNORECASE)
 # Setlist position markers appear in two layouts across export eras: combined
 # "1. Title" (single cell, e.g. DSN11050/1990) and split-cell "1." alone
@@ -205,6 +249,15 @@ _ENCORE_SEP_RE = re.compile(r"^[\-‑‒–—―]+$")
 _POSITION_LIST_LINE_RE = re.compile(
     r"^(\d+(?:\s*-\s*\d+)?(?:\s*,\s*\d+(?:\s*-\s*\d+)?)*)\s+(\S.*)$"
 )
+# B3 (golden-dossier plan, phase B): a period followed by a FRESH position
+# list marks a second, unrelated clause riding on the same physical line
+# ("11, 23, 25 Bob Dylan and Tom Petty (shared vocals). 17 Howie Epstein
+# (slide guitar), Tom Petty (bass).", 1986-02-24) — without this split, "17
+# Howie Epstein ..." was swallowed into positions 11/23/25's annotation text
+# instead of resolving onto position 17. Not applied to a release line's
+# remainder (see _apply_position_clause) — a release title can itself
+# contain "vol. 5 -" and similar false triggers.
+_CLAUSE_SPLIT_RE = re.compile(r"\.\s+(?=\d+[\s,–-])")
 # P1a: a guest/interlude header ("Bob Neuwirth:", "Tom Petty & The Heartbreakers:")
 # is a short line ending in ':' — see _is_guest_header.
 _GUEST_HEADER_MAX_CHARS = 60
@@ -212,23 +265,43 @@ _GUEST_HEADER_MAX_CHARS = 60
 # than _classify_special_line on purpose ("Official release" singular, "Unauthorized
 # releases", "Bootlegs") — the section fields themselves are unchanged.
 _SECTION_END_RE = re.compile(
-    r"^(?:bootlegs|notes?|(?:(?:official|unauthori[sz]ed)\s+)?releases?)[.:]?$", re.IGNORECASE
+    r"^(?:bootlegs?|references?|notes?|"
+    r"(?:(?:official|unauthori[sz]ed)\s+)?releases?)[.:]?$", re.IGNORECASE
 )
+# B2 (golden-dossier plan, phase B): "Bootlegs"/"References" as a standalone
+# label are caught by _SECTION_END_RE above via _classify_special_line's exact
+# `key ==` checks; this catches the inline form the corpus also uses — content
+# on the SAME line as the label ("Reference. Les Kokay: Bob Dylan/The Band
+# (a collector's guide to the 74 Tour). Private publication 2000, page 9.",
+# DSN2260) — so it still opens a boundary and doesn't leak into the open
+# BobTalk/Notes section (~224 events; previously the Reference/Bootlegs text
+# ran straight into `bobtalk`).
+_TRAILER_INLINE_RE = re.compile(r"^(bootlegs?|references?)[.:]?\s+(\S.*)$", re.IGNORECASE)
 # P1g: a single-position line inside that prose is still scanned when it reads as
 # release/recording trailer data ("17 released in mono ...", "1 stereo audience recording").
 _PROSE_KEEP_RE = re.compile(r"\b(released|available|recording)\b", re.IGNORECASE)
 # P1f: "released on/in/as", "available on/as/from" all mark a release line ("5 released in
-# remastered version on ...", "7 available as a download").
+# remastered version on ...", "7 available as a download"). B4 (golden-dossier plan, phase
+# B) widens this with "released both as" ("7 released both as audio on the bonus CD...",
+# 1975-12-04) and "included in" ("5, 19 and parts of 3, 12 are included in the film ...",
+# same event).
 _RELEASE_KEYWORD_RE = re.compile(
-    r"\b(?:released\s+(?:on|in|as)|available\s+(?:on|as|from))\b", re.IGNORECASE)
+    r"\b(?:released\s+(?:on|in|as|both\s+as)|available\s+(?:on|as|from)|included\s+in)\b",
+    re.IGNORECASE)
 # Only the plain "released on X" / "available on X" wording is cut down to the title X;
 # "partly" / "fragment(s)" mark every position on the line as a partial release.
 _RELEASE_TITLE_RE = re.compile(
     r"^(?:(partly|fragments?)\s+)?(?:released|available)\s+on\s+(.+)$", re.IGNORECASE)
 # P1f: one item of a release line's position list, "4", "6-8", ", and part of 22", "or 3"
-# ("4, 9, 16 and part of 22 released on ...", "1 or 2, 10 or 11, 12 released on ...").
+# ("4, 9, 16 and part of 22 released on ...", "1 or 2, 10 or 11, 12 released on ..."). B4
+# (golden-dossier plan, phase B) widens "part of" to also accept plural "parts of" ("5, 19
+# and parts of 3, 12 are included in the film ...", 1975-12-04) and lets a "( ... )" aside
+# after the number ride along without breaking the chain ("5, 6, 7 (first verse exluded),
+# 11, 19, 20 released in the movie ...", same event) — otherwise the item scan stopped dead
+# at the aside and positions 11/19/20 were lost off the end of the line.
 _RELEASE_ITEM_RE = re.compile(
-    r"\s*(,\s*(?:and|or)?|and|or)?\s*(part\s+of\s+)?(\d+)(?:\s*-\s*(\d+))?(?=[\s,]|$)",
+    r"\s*(,\s*(?:and|or)?|and|or)?\s*(parts?\s+of\s+)?(\d+)(?:\s*-\s*(\d+))?"
+    r"(?:\s*\([^()]*\))?(?=[\s,]|$)",
     re.IGNORECASE,
 )
 # Prefixes on a released_on token: the song is only partly on the release, or Olof names two
@@ -585,14 +658,21 @@ def _classify_special_line(line: str) -> str | None:
         return "bobtalk"
     if key == "official releases":
         return "releases"
-    if key == "references":
+    if key in ("reference", "references"):
         return "references"
+    if key in ("bootleg", "bootlegs"):
+        return "bootlegs"
     if _RECORDING_RE.search(line):
         return "recording"
     if _SESSION_UPDATED_RE.match(line):
         return "updated"
     if _TOP_LINE_RE.match(line.strip()):
         return "top"
+    # B2: the inline "Reference. <content>" / "Bootlegs. <content>" form —
+    # a label followed by content on the same physical line.
+    if m := _TRAILER_INLINE_RE.match(line.strip()):
+        label = m.group(1).lower()
+        return "bootlegs" if label.startswith("bootleg") else "references"
     return None
 
 
@@ -699,7 +779,13 @@ def _extract_sections(lines: list[str], rec: EventRecord,
     for idx, (pos, kind) in enumerate(specials):
         end = specials[idx + 1][0] if idx + 1 < len(specials) else len(lines)
         if kind in _SECTION_FIELD:
-            content = "\n".join(ln for ln in text_lines[pos + 1:end] if ln).strip()
+            body_lines = list(text_lines[pos + 1:end])
+            # B2: the inline "Reference. <content>" form carries its own first
+            # line of content on the label line itself, which pos+1 skips.
+            inline = _TRAILER_INLINE_RE.match(lines[pos].strip())
+            if inline:
+                body_lines = [inline.group(2)] + body_lines
+            content = "\n".join(ln for ln in body_lines if ln).strip()
             if content:
                 collected.setdefault(_SECTION_FIELD[kind], []).append(content)
         elif kind == "recording" and not rec.recording_info:
@@ -903,13 +989,21 @@ def _release_entries(spec: str, remainder: str) -> list[tuple[int, str]]:
     text_in = f"{spec} {remainder}"
     items: list[tuple[list[int], str, bool]] = []  # (positions, separator before, partial)
     pos = 0
+    # B4: "parts of" applies to every comma-continued number that follows it,
+    # not just the one right after it ("and parts of 3, 12" partials both 3
+    # and 12); a fresh "and" (not just a comma) closes that run.
+    partial_run = False
     while im := _RELEASE_ITEM_RE.match(text_in, pos):
         sep = (im.group(1) or "").replace(",", "").strip().lower()
         if items and not im.group(1):
             break  # two numbers with no separator: the second belongs to the release text
+        if sep == "and":
+            partial_run = False
+        if im.group(2):
+            partial_run = True
         lo = int(im.group(3))
         hi = int(im.group(4)) if im.group(4) else lo
-        items.append((list(range(lo, hi + 1)), sep, bool(im.group(2))))
+        items.append((list(range(lo, hi + 1)), sep, partial_run))
         pos = im.end()
     rest = text_in[pos:].strip()
     rm = _RELEASE_TITLE_RE.match(rest)
@@ -1004,11 +1098,14 @@ def _parse_song_lines(lines: list[str], start: int,
       exact 'N. text' markup songs use (e.g. DSN2073: '1. Doug Sahm (vocal
       & piano), Bob Dylan (guitar), George Rains (drums), ...' right after
       a 3-song list) rather than the space-separated position-list style
-      _POSITION_LIST_LINE_RE expects. A real song title has at most one
-      trailing '(credits)' group; 2+ '(' in the candidate title text marks
-      it as a personnel line instead, so the walk stops there (that line
-      is left for the whole-block _LINEUP_RE scan in _parse_event, same as
-      the space-separated case).
+      _POSITION_LIST_LINE_RE expects. 2+ "Name (instrument)" clauses in the
+      candidate title text (_is_personnel_line, B1) marks it as a personnel
+      line instead, so the walk stops there (that line is left for the
+      whole-block _LINEUP_RE scan in _parse_event, same as the
+      space-separated case) — a plain double-cover-credit title like "I Walk
+      The Line ( John ny Cash) / Blue Moon Of Kentucky (Bill Monroe)"
+      (1999-06-11) is not mistaken for one, since neither parenthetical
+      names an instrument.
     - Olof's own numbering occasionally repeats a position it already used
       (e.g. DSN618: the encore song is mislabeled '15.' again instead of
       '16.'). Since olof_songs' primary key is (event_id, position), a
@@ -1069,7 +1166,7 @@ def _parse_song_lines(lines: list[str], start: int,
             continue
         else:
             break
-        if title_text.count("(") > 1:
+        if _is_personnel_line(title_text):
             break  # personnel-credit trailer line, not a song (see above)
         i = next_i
         if position in seen_positions:
@@ -1099,6 +1196,47 @@ def _parse_song_lines(lines: list[str], start: int,
     return songs, i
 
 
+def _apply_position_clause(clause: str, by_position: dict[int, SongRecord],
+                            annotations: dict[int, list[str]],
+                            releases: dict[int, list[str]]) -> None:
+    """Resolve one '<position-list> <text>' clause onto *annotations*/*releases*.
+
+    B3 (golden-dossier plan, phase B): a clause's own tail can hold a second,
+    unrelated position-list clause riding the same physical line ("11, 23, 25
+    Bob Dylan and Tom Petty (shared vocals). 17 Howie Epstein (slide guitar),
+    Tom Petty (bass).", 1986-02-24) — split on a period followed by a fresh
+    position list (_CLAUSE_SPLIT_RE) and resolve each piece independently,
+    recursively, so "17 Howie Epstein ..." lands on position 17 instead of
+    being swallowed into positions 11/23/25's annotation text. Not applied to
+    a release line (_RELEASE_KEYWORD_RE match) — a release title's own prose
+    ("vol. 5 - Bob Dylan Live 1975 ...") can trip the same period+digit
+    pattern with no second clause intended.
+
+    Args:
+        clause: One '<position-list> <text>' candidate line/sub-line.
+        by_position: This event's SongRecords keyed by position.
+        annotations: Accumulator, position -> annotation text pieces.
+        releases: Accumulator, position -> released_on text pieces.
+    """
+    m = _POSITION_LIST_LINE_RE.match(clause)
+    if not m or _LINEUP_RE.search(clause) or HISTORY_DATE_RE.match(clause):
+        return
+    remainder = m.group(2).strip()
+    if _RELEASE_KEYWORD_RE.search(remainder):
+        for pos, text in _release_entries(m.group(1), remainder):
+            if pos in by_position:
+                releases.setdefault(pos, []).append(text)
+        return
+    pieces = _CLAUSE_SPLIT_RE.split(remainder)
+    positions = [p for p in _expand_position_list(m.group(1)) if p in by_position]
+    text = pieces[0].rstrip(".").strip()
+    if positions and text:
+        for pos in positions:
+            annotations.setdefault(pos, []).append(text)
+    for extra in pieces[1:]:
+        _apply_position_clause(extra, by_position, annotations, releases)
+
+
 def _resolve_annotations_and_releases(lines: list[str], consumed_end: int,
                                        songs: list[SongRecord]) -> None:
     """Apply trailer-line annotations/releases to *songs* in place.
@@ -1112,7 +1250,8 @@ def _resolve_annotations_and_releases(lines: list[str], consumed_end: int,
     see module docstring for why this doesn't also skip the superficially
     similar '<positions> Bob Dylan <instrument>.' annotation lines. A
     resolved position outside the event's actual song positions (stray
-    digits elsewhere in the trailer prose) is dropped.
+    digits elsewhere in the trailer prose) is dropped. A single physical
+    line can hold two unrelated clauses (B3, see _apply_position_clause).
 
     Args:
         lines: Clean paragraph text for the whole event block.
@@ -1138,18 +1277,7 @@ def _resolve_annotations_and_releases(lines: list[str], consumed_end: int,
         if in_prose and not (re.search(r"[-,]", m.group(1))
                              or _PROSE_KEEP_RE.search(m.group(2))):
             continue
-        remainder = m.group(2).strip()
-        if _RELEASE_KEYWORD_RE.search(remainder):
-            for pos, text in _release_entries(m.group(1), remainder):
-                if pos in by_position:
-                    releases.setdefault(pos, []).append(text)
-            continue
-        positions = [p for p in _expand_position_list(m.group(1)) if p in by_position]
-        text = remainder.rstrip(".").strip()
-        if not positions or not text:
-            continue
-        for pos in positions:
-            annotations.setdefault(pos, []).append(text)
+        _apply_position_clause(line, by_position, annotations, releases)
     for pos, song in by_position.items():
         if pos in annotations:
             song.annotations = "; ".join(annotations[pos])
@@ -1192,6 +1320,48 @@ def _parse_event_songs(lines: list[str], date_idx: int, session_title: str,
     return songs
 
 
+def _collect_lineup_text(lines: list[str]) -> str:
+    """Build the event's lineup field, extending a header that ends in ':'.
+
+    B5 (golden-dossier plan, phase B): a lineup line can introduce a guest
+    band with a colon and list its members on following lines that carry no
+    'Bob Dylan(' substring of their own ("Bob Dylan (vocal & guitar) with Tom
+    Petty & The Heartbreakers:" / "Tom Petty (guitar), Mike Campbell
+    (guitar), ..." / "and The Queens Of Rhythm: Debra Byrd, ...",
+    1986-02-24) — the plain ``_LINEUP_RE.search`` scan this replaces only
+    keeps the header line, dropping the band it introduces. Continuation
+    stops at the next special/position-list/song-marker line or at another
+    _LINEUP_RE line (a fresh, independent lineup entry).
+
+    Args:
+        lines: Clean paragraph text for the whole event block.
+
+    Returns:
+        '; '-joined lineup entries, each entry's own lines joined by a space.
+    """
+    parts: list[str] = []
+    i, n = 0, len(lines)
+    while i < n:
+        line = lines[i]
+        if not _LINEUP_RE.search(line):
+            i += 1
+            continue
+        group = [line]
+        j = i + 1
+        if line.rstrip().endswith(":"):
+            while j < n:
+                cont = lines[j]
+                if (_classify_special_line(cont) or _POSITION_LIST_LINE_RE.match(cont)
+                        or _BARE_POSITION_RE.match(cont) or _SONG_LINE_RE.match(cont)
+                        or _LINEUP_RE.search(cont)):
+                    break
+                group.append(cont)
+                j += 1
+        parts.append(" ".join(group))
+        i = j
+    return "; ".join(parts)
+
+
 # ---------------------------------------------------------------------------
 # Per-event assembly
 # ---------------------------------------------------------------------------
@@ -1215,7 +1385,7 @@ def _parse_event(lines: list[str], event_id: int, page_filename: str,
     m = _CONCERT_YEAR_RE.search(joined)
     if m:
         rec.concert_no_year = int(m.group(2))
-    rec.lineup = "; ".join(ln for ln in lines if _LINEUP_RE.search(ln))
+    rec.lineup = _collect_lineup_text(lines)
 
     cleaned = _clean_trailer_lines(lines, rec)
     _extract_sections(lines, rec, cleaned)

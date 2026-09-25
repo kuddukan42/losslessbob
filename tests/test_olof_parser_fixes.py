@@ -15,6 +15,7 @@ from backend.olof_parser import (
     SongRecord,
     _clean_para_text,
     _is_guest_header,
+    _is_personnel_line,
     _normalize_song_title,
     _parse_event,
     _split_title_credits,
@@ -641,3 +642,211 @@ def test_parsed_song_titles_are_normalized_end_to_end():
              "2.", "Things Hav,e Changed"]
     titles = [s.song_title for s in _songs_of(lines)]
     assert titles == ["'Til I Fell In Love With You", "Things Have Changed"]
+
+
+# --- Golden-dossier plan, Phase B (C32b): B1-B5 olof_parser fixes ------------------------
+# Fixtures below are the real event text (read-only from olof_pages/olof_events, one line
+# per cleaned paragraph), trimmed to what each fix touches.
+
+def test_personnel_line_detector_requires_two_instrument_clauses():
+    # B1: the false positives the old `count("(") > 1` guard tripped on.
+    assert not _is_personnel_line(
+        "I Walk The Line ( John ny Cash) / Blue Moon Of Kentucky (Bill Monroe)")
+    assert not _is_personnel_line("Hey La La (Hey La La) (McBride)")
+    # The genuine personnel-credit trailer line it must still catch (DSN2073 shape).
+    assert _is_personnel_line(
+        "Doug Sahm (vocal & piano), Bob Dylan (guitar), George Rains (drums)")
+
+
+# DSN20520 / 1999-06-11: song 15 is a double-cover-credit title with 2 "(" — used to break
+# the walk after song 14. B1 fixes 14 -> 16 songs.
+_DSN20520 = (
+    ["General Motors Arena", "Vancouver , British Columbia", "11 June 1999"]
+    + _numbered([
+        "Hallelujah, I'm Ready To Go (trad.)", "Mr. Tambourine Man", "Masters Of War",
+        "It's All Over Now, Baby Blue", "Tangled Up In Blue", "All Along The Watchtower",
+        "Tryin' To Get To Heaven", "Stuck Inside Of Mobile With The Memphis Blues Again",
+        "Not Dark Yet", "Highway 61 Revisited"])
+    + ["—"]
+    + _numbered([
+        "Love Sick", "Like A Rolling Stone", "It Ain't Me, Babe",
+        "The Sound Of Silence (Paul Simon)",
+        "I Walk The Line ( John ny Cash) / Blue Moon Of Kentucky (Bill Monroe)",
+        "Knockin ' On Heaven's Door"], 11)
+    + ["Concert # 1100 of The Never-Ending Tour.",
+       "Concert # 5 with the 12th Never-Ending Tour Band: Bob Dylan (vocal & guitar), "
+       "Charlie Sexton (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar "
+       "& electric slide guitar), Tony Garnier (bass), David Kemper (drums & percussion).",
+       "1–5, 13-16 acoustic with the band.",
+       "14-16 Paul Simon (vocal & acoustic guitar)",
+       "BobTalk", "Thank you.", "Notes", "Live debut of Hallelujah, I'm Ready To Go."]
+)
+
+
+def test_double_cover_credit_title_parses_1999_06_11():
+    songs = _songs_of(_DSN20520)
+    assert [s.position for s in songs] == list(range(1, 17))
+    assert songs[14].song_title == "I Walk The Line ( John ny Cash) / Blue Moon Of Kentucky"
+    assert songs[14].credits == "Bill Monroe"
+
+
+# DSN9950 / 1989-06-13: song 1 itself has 2 "(" — used to break the walk immediately (0 songs).
+_DSN9950 = (
+    ["Les Arènes", "Frejus , France", "13 June 1989"]
+    + ["1. Hey La La (Hey La La) (McBride)",
+       "2. Most Likely You Go Your Way (And I'll Go Mine)",
+       "3. You're A Big Girl Now", "4. All Along The Watchtower", "5. Just Like A Woman",
+       "6. I Don't Believe You (She Acts Like We Never Have Met)",
+       "7. Lakes Of Pontchartrain (trad.)", "8. Gates Of Eden",
+       "9. Knockin ' On Heaven's Door", "10. In The Garden", "11. Highway 61 Revisited",
+       "12. Like A Rolling Stone", "—", "13. Boots Of Spanish Leather",
+       "14. Peace In The Valley (Thomas A. Dorsey)",
+       "15. Man Gave Names To All The Animals", "16. Maggie's Farm"]
+    + ["Concert # 82 of The Never-Ending Tour.",
+       "Concert # 4 with the second Never-Ending Tour Band: Bob Dylan (vocal & guitar), "
+       "G. E. Smith (guitar), Tony Garnier (bass), Christopher Parker (drums).",
+       "7-8 and 13 Bob Dylan (vocal & guitar), G.E. Smith (guitar).",
+       "Notes", "Only known performance of Peace In The Valley."]
+)
+
+
+def test_double_cover_credit_title_parses_1989_06_13():
+    songs = _songs_of(_DSN9950)
+    assert [s.position for s in songs] == list(range(1, 17))
+    assert songs[0].song_title == "Hey La La (Hey La La)"
+    assert songs[0].credits == "McBride"
+
+
+# DSN7810 / 1986-02-24: bootlegs list + Official releases used to leak into bobtalk (B2);
+# "11, 23, 25 ... . 17 Howie Epstein ..." used to land entirely on 11/23/25 (B3); the lineup
+# header ending ':' used to drop its band-member lines (B5).
+_DSN7810_TRAILER = [
+    "Concert #13 of the 1986 True Confessions Far East Tour.",
+    "Bob Dylan (vocal & guitar) with Tom Petty & The Heartbreakers:",
+    "Tom Petty (guitar), Mike Campbell (guitar), Benmont Tench (keyboards), "
+    "Howie Epstein (bass), Stan Lynch (drums)",
+    "and The Queens Of Rhythm: Debra Byrd, Queen Esther Marrow, Madelyn Quebec, "
+    "Elisecia Wright (backing vocals).",
+    "8-10 Bob Dylan solo (vocal & guitar). 25 Bob Dylan (harmonica).",
+    "11, 23, 25 Bob Dylan and Tom Petty (shared vocals). "
+    "17 Howie Epstein (slide guitar), Tom Petty (bass).",
+    "BobTalk",
+    "Thank you! The Queens of Rhythm! (after Clean-Cut Kid)",
+    "Bootlegs",
+    "Duelling Banjos . Papillon 016.",
+    "True Confessions . Swingin ' Pig TSP-CD-107.",
+    "Official releases",
+    "4, 9, 12, 15, 16 and part of 22 released on the commercial video HARD TO HANDLE, "
+    "CBS/FOX 3502 , October 1986.",
+    "Stereo PA audience recording, 120 minutes.",
+]
+
+
+def _event_1986_02_24() -> tuple[EventRecord, list[SongRecord]]:
+    lines = (["Entertainment Centre", "Sydney, New South Wales, Australia",
+               "24 February 1986"]
+              + _numbered([f"Song {n}" for n in range(1, 26)])
+              + _DSN7810_TRAILER)
+    return _parse_event(lines, 7810, "p1", "")
+
+
+def test_bootlegs_and_releases_dont_leak_into_bobtalk_1986_02_24():
+    rec, _ = _event_1986_02_24()
+    assert rec.bobtalk == "Thank you! The Queens of Rhythm! (after Clean-Cut Kid)"
+    assert "Duelling Banjos" not in rec.bobtalk
+    assert "released on the commercial video" not in rec.bobtalk
+
+
+def test_second_clause_on_one_line_resolves_to_its_own_position_1986_02_24():
+    _, songs = _event_1986_02_24()
+    by_pos = {s.position: s for s in songs}
+    assert by_pos[17].annotations == "Howie Epstein (slide guitar), Tom Petty (bass)"
+    assert by_pos[11].annotations == "Bob Dylan and Tom Petty (shared vocals)"
+    assert by_pos[23].annotations == "Bob Dylan and Tom Petty (shared vocals)"
+    assert by_pos[25].annotations == "Bob Dylan and Tom Petty (shared vocals)"
+
+
+def test_lineup_header_ending_colon_includes_band_members_1986_02_24():
+    rec, _ = _event_1986_02_24()
+    assert "Tom Petty (guitar)" in rec.lineup
+    assert "Benmont Tench (keyboards)" in rec.lineup
+    assert "Queens Of Rhythm" in rec.lineup
+
+
+def test_catalogue_code_with_hyphens_is_metadata():
+    from backend.bobtalk import is_metadata_line
+    assert is_metadata_line("True Confessions . Swingin ' Pig TSP-CD-107.")
+    assert is_metadata_line("Duelling Banjos QR-21/22.")
+
+
+# DSN2260 / 1974-01-06 evening: "Reference. Les Kokay ..." rides the BobTalk section on the
+# same physical line as the label. B2 fixes it leaking into `bobtalk` (~224 events).
+_DSN2260_TRAILER = [
+    "Concert # 4 of the 1974 Tour of America with The Band.",
+    "1-2 Bob Dylan (vocal, guitar, harmonica).",
+    "BobTalk",
+    "Really nice to be in Philly. We're gonna leave you with this one. "
+    "(after Like A Rolling Stone).",
+    "Reference. Les Kokay : Bob Dylan/The Band (a collector's guide to the 74 Tour) . "
+    "Private publication 2000, page 9.",
+    "Notes",
+    "Songs without numbers are performed by The Band without Bob Dylan.",
+    "Session info updated 14 October 2012.",
+]
+
+
+def test_inline_reference_line_stops_bobtalk_2260():
+    lines = (["The Spectrum", "Philadelphia , Pennsylvania", "6 January 1974 – Evening"]
+             + _numbered(["Rainy Day Women # 12 & 35", "Lay Lady Lay"])
+             + _DSN2260_TRAILER)
+    rec, _ = _parse_event(lines, 2260, "p1", "")
+    assert "Kokay" not in rec.bobtalk
+    assert rec.bobtalk == ("Really nice to be in Philly. We're gonna leave you with this "
+                            "one. (after Like A Rolling Stone).")
+    assert "Kokay" in rec.references_raw
+
+
+# DSN3200 / 1975-12-04: "released both as" and "included in" widen _RELEASE_KEYWORD_RE;
+# "and parts of 3, 12" and the "(first verse exluded)" aside widen _RELEASE_ITEM_RE (B4).
+_DSN3200_TRAILER = [
+    "Rolling Thunder Revue concert # 29.",
+    "1-13, 17-23 Bob Dylan (vocal, guitar), Bob Neuwirth (guitar).",
+    "Official releases",
+    "5, 6, 7 (first verse exluded), 11, 19, 20 released in the movie RENALDO AND CLARA , "
+    "25 January 1978 (long version) and late 1978 (short version).",
+    "7 released both as audio on the bonus CD accompanying the first release of "
+    "The Bootleg Series, vol. 5 – Bob Dylan Live 1975: The Rolling Thunder Revue , "
+    "Columbia 510140 3/Col. 510140/3000 , 26 November 2002 .",
+    "5, 19 and parts of 3, 12 are included in the film Rolling Thunder Revue, "
+    "A Bob Dylan Story by Martin Scorsese . premiered on Netflix 12 June 2019 .",
+    "BobTalk",
+    "A young lady over here, Miss Scarlet.",
+]
+
+
+def _event_1975_12_04() -> tuple[EventRecord, list[SongRecord]]:
+    lines = (["Forum de Montréal", "Montreal , Quebec , Canada", "4 December 1975"]
+              + _numbered([f"Song {n}" for n in range(1, 24)])
+              + _DSN3200_TRAILER)
+    return _parse_event(lines, 3200, "p1", "")
+
+
+def test_release_both_as_and_included_in_are_recognized_1975_12_04():
+    _, songs = _event_1975_12_04()
+    by_pos = {s.position: s for s in songs}
+    assert "released both as audio on" in by_pos[7].released_on
+    assert by_pos[5].released_on.count("released in the movie RENALDO AND CLARA") == 1
+
+
+def test_parts_of_and_parenthetical_aside_resolve_all_positions_1975_12_04():
+    _, songs = _event_1975_12_04()
+    by_pos = {s.position: s for s in songs}
+    # "5, 6, 7 (first verse exluded), 11, 19, 20 released in the movie ..." used to lose
+    # 11/19/20 off the end of the line once the aside broke the item scan.
+    for pos in (5, 6, 7, 11, 19, 20):
+        assert "RENALDO AND CLARA" in by_pos[pos].released_on
+    # "5, 19 and parts of 3, 12 are included in the film ..." — only 3 and 12 are partial.
+    assert by_pos[3].released_on.startswith("(part) ")
+    assert by_pos[12].released_on.startswith("(part) ")
+    assert not by_pos[5].released_on.split("; ")[-1].startswith("(part) ")
+    assert "are included in the film" in by_pos[19].released_on
