@@ -213,10 +213,9 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   .rec{grid-template-columns:1fr;gap:1rem}
   h1{font-size:1.7rem}
   .show-meta{font-size:.78rem}
-  {#- F5: badges (premiere/gap/official) wrap below the song title on phone widths
-      instead of squeezing into the narrow right-hand .tags column. #}
-  .setlist td.tags{display:block;width:auto;text-align:left;white-space:normal;padding-top:0}
-  .setlist td.tags .badge-new,.setlist td.tags .badge-rare,.setlist td.tags .enc{margin-left:0;margin-right:.3em}
+  {#- F5: on phone widths badges wrap inside the narrow .tags column. #}
+  .setlist td.tags{white-space:normal;width:1%;text-align:right;vertical-align:top}
+  .setlist td.tags .badge-new,.setlist td.tags .badge-rare,.setlist td.tags .enc{display:inline-block;margin:0 0 .2em;white-space:nowrap}
 }
 @media print{
   html,html[data-theme="dark"],html[data-theme="light"]{--bg:#fff;--surface:#fff;--surface2:#eef3fa;--surface3:#dfe8f4;--ink:#13203a;--muted:#3f547a;--faint:#6f83a6;--rule:#c2d4ec;--rule2:#9bb9e0;--accent:#2b5fd0;--accent-hi:#1f4baa;--accent-soft:#e3ebf8;--on-accent:#fff;--pick:#8a5c00;--pick-hi:#6b4700;--pick-soft:#fbf3e2;--on-pick:#fff;--pos:#1f7a3e;--neg:#b03f30;--warn:#8a5c00;--info:#1f5b8f;--pin:#2b5fd0;--map-land:#e6eefb;--map-host:#bcd2ee;--map-line:#9bb9e0;--map-ocean:#cfdff2;--shadow:none}

@@ -520,7 +520,7 @@ def rotation_claim(event_id: int, rotation: Mapping | None,
     if not rotation or not venue_run or venue_run["size"] < 2 or not venue_run["claims_ok"]:
         return None
     siblings = rotation["siblings"]
-    if len(siblings) != venue_run["size"]:
+    if len(siblings) != len(venue_run["event_ids"]):
         return None
     candidates: dict[Hashable, Field | None] = {}
     for s in siblings:

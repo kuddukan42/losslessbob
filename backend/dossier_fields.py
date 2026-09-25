@@ -1486,9 +1486,15 @@ def run_context(conn: sqlite3.Connection, event_id: int) -> RunContext:
             hi += 1
         run = concerts[lo:hi + 1]
         ids = [r["event_id"] for r in run]
+        # A run is counted in nights, not shows: a two-show day is one night
+        # (1974-01-06 afternoon + evening + 01-07 = a 2-night Spectrum run).
+        nights = list(dict.fromkeys(r["date_str"] for r in run))
         out["venue_run"] = VenueRun(
-            venue=venue, position=idx - lo + 1, size=len(run),
-            dates=[r["date_str"] for r in run], event_ids=ids, claims_ok=_claims_ok(conn, ids),
+            # Rendered inside "the N-night <venue> run": drop the venue's own
+            # leading article so it never reads "the The Spectrum".
+            venue=re.sub(r"^the\s+", "", venue, flags=re.IGNORECASE),
+            position=nights.index(ev["date_str"]) + 1, size=len(nights),
+            dates=nights, event_ids=ids, claims_ok=_claims_ok(conn, ids),
         )
 
     out["city_history"] = _city_history(conn, concerts, ev)
@@ -2828,11 +2834,13 @@ def broadcast_set_labels(
     total = len(rows)
     groups: dict[str, list[int]] = defaultdict(list)
     for r in rows:
-        # Key on the broadcast clause only: "broadcast by X; is in circulation as a line
-        # recording" must band with its plain "broadcast by X" neighbours.
-        key = broadcast_clause(r["annotations"])
-        if key:
-            groups[key].append(r["position"])
+        # Key on each recording/broadcast clause on its own: "broadcast by X; stereo
+        # PA recording" must band "stereo PA recording" with its plain neighbours
+        # and "broadcast by X" with its own (1990-01-25), and a passing "is in
+        # circulation as a line recording" clause never joins a key.
+        for clause in _annotation_clauses(r["annotations"]):
+            if _RECORDING_CLAUSE_RE.search(clause):
+                groups[clause].append(r["position"])
 
     labels: list[SetLabel] = []
     session_notes: list[str] = []
