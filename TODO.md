@@ -1,9 +1,3 @@
-TODO-353: Live reparse: bobserve pages (subtitles as writers) + Olof medley credits
-Priority: Medium
-Status: Open
-Added: 2026-09-25
-Description: C32i parser fixes need a live run (tj only, backup first): 438 bobserve olof_songs rows carry the subtitle in credits (C32b B6 fix never re-run live); 22 Olof medley rows keep '(Johnny Cash)' in the title. After: song_performances rebuild, make_fixture_db --golden, dossier_golden --check/--html. See instructions/GOLDEN_DOSSIER_FIX_PLAN_2.md step 5.
-
 TODO-352: Finish venue_gazetteer city+country rekey
 Priority: Low
 Status: Open

@@ -12,7 +12,7 @@ finding below came from reading the 16 pages by hand. Evidence: `.debug/dossier_
 | 2 | Backup (`data/backups/losslessbob_preC32i_20260925_1003.db`), `show_picks` recompute (rank-1 changed on 22 dates), backend restart | done |
 | 3 | Golden case renames + new case, fixture re-cut, `--check` 16/16 | done |
 | 4 | Export + `dossier_audit.py` (8 known conflicts, 0 structural) + page re-read | done |
-| 5 | Live Olof + bobserve reparse (medley credits, bobserve subtitles) | **tj only** |
+| 5 | Live Olof + bobserve reparse (medley credits, bobserve subtitles) | done with tj's go-ahead (TODO-353) |
 
 ## Fixes
 
