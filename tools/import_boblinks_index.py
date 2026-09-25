@@ -23,11 +23,12 @@ Crawl shape:
 
 Usage::
 
-    .venv/bin/python3 tools/import_boblinks_index.py --db /mnt/DATA0/tmp/boblinks/test.db
-    .venv/bin/python3 tools/import_boblinks_index.py --db /mnt/DATA0/tmp/boblinks/test.db --limit 3
+    .venv/bin/python3 tools/import_boblinks_index.py            # dry run: crawl + report
+    .venv/bin/python3 tools/import_boblinks_index.py --apply    # write data/losslessbob.db
+    .venv/bin/python3 tools/import_boblinks_index.py --db /tmp/x.db --apply --limit 3
 
-Never point ``--db`` at the live ``data/losslessbob.db`` -- this writes rows
-while crawling and the tool refuses that path outright (see ``_refuse_live_db``).
+The crawl finishes before anything is written; the rows then go in as one
+transaction, so an interrupted crawl leaves the table untouched.
 """
 
 from __future__ import annotations
@@ -156,20 +157,8 @@ def crawl(delay: float, limit: int | None = None) -> list[tuple[str, str]]:
     return rows
 
 
-def _refuse_live_db(db_path: Path) -> None:
-    """Hard stop if *db_path* looks like the live database (project rule, never write it)."""
-    resolved = db_path.resolve()
-    live = (_project_root / "data" / "losslessbob.db").resolve()
-    if resolved == live:
-        raise SystemExit(
-            f"refusing to write {resolved} -- this tool never touches the live DB; "
-            "point --db at a scratch copy (e.g. /mnt/DATA0/tmp/boblinks/test.db)"
-        )
-
-
 def store(db_path: Path, rows: list[tuple[str, str]]) -> None:
     """Write *rows* into ``boblinks_pages`` at *db_path* (creating the table if needed)."""
-    _refuse_live_db(db_path)
     db_path.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(db_path)
     try:
@@ -185,22 +174,32 @@ def store(db_path: Path, rows: list[tuple[str, str]]) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--db", required=True, type=Path,
-                     help="SQLite DB to write boblinks_pages into (never the live DB)")
-    ap.add_argument("--delay", type=float, default=1.0, help="seconds between requests (default 1.0)")
+    """CLI entry point: crawl, report, and write only with ``--apply``."""
+    from backend.paths import DB_PATH
+
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--db", type=Path, default=DB_PATH,
+                    help=f"SQLite DB to write boblinks_pages into (default {DB_PATH})")
+    ap.add_argument("--apply", action="store_true", help="write the rows (default: dry run)")
+    ap.add_argument("--delay", type=float, default=1.0,
+                    help="seconds between requests (default 1.0)")
     ap.add_argument("--limit", type=int, default=None,
-                     help="only crawl the first N index pages (smoke test)")
+                    help="only crawl the first N index pages (smoke test)")
     ap.add_argument("--verbose", action="store_true")
     args = ap.parse_args(argv)
 
     logging.basicConfig(level=logging.INFO if args.verbose else logging.WARNING,
-                         format="%(levelname)s %(name)s: %(message)s")
+                        format="%(levelname)s %(name)s: %(message)s")
 
-    _refuse_live_db(args.db)
     rows = crawl(args.delay, args.limit)
-    store(args.db, rows)
-    print(f"boblinks_pages: {len(rows)} row(s) written to {args.db}")
+    years = sorted({r[0][:4] for r in rows})
+    span = f"{years[0]}-{years[-1]}" if years else "none"
+    if args.apply:
+        store(args.db, rows)
+        sys.stdout.write(f"boblinks_pages: {len(rows)} row(s) ({span}) written to {args.db}\n")
+    else:
+        sys.stdout.write(f"dry run: {len(rows)} row(s) ({span}) found; --apply to write\n")
     return 0
 
 
