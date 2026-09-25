@@ -196,6 +196,19 @@ class TestG3Provenance:
 
 
 class TestG4Quarantine:
+    def test_withhold_all_set_rows_with_dict_label(self):
+        # C33 sweep regression: a set row's label value is a dict -- unhashable as a row id.
+        from backend.dossier_qc import _Gate
+
+        label = {"text": "Encore", "positions": [14, 15]}
+        view = {"fields": {}, "rows": {"set": [{"label": {
+            "value": label, "tier": 1, "source": "broadcast_set_labels",
+            "confidence": "stated", "derived_from": []}}]}}
+        gate = _Gate(view, conn=None)
+        gate.withhold_all_rows("set", "label", "R-O4", id_field="label")
+        assert view["rows"]["set"][0]["label"]["confidence"] == "withheld"
+        assert [w["key"] for w in gate.withheld] == ["set[].label"]
+
     def test_quarantined_song_bobtalk_withheld_not_title(self):
         db_path, conn, tmp_dir = _make_db()
         try:

@@ -181,6 +181,10 @@ class _Gate:
         """:meth:`withhold_row` applied to every row of *prefix* (event-wide quarantine)."""
         for row in self.view["rows"].get(prefix, []):
             row_id = row[id_field]["value"] if id_field in row else None
+            # A set row's label value is a dict ({text, positions, ...}); the id
+            # lands in a set, so it must be hashable (C33 sweep: 1976-04-22 crashed G4).
+            if isinstance(row_id, (dict, list)):
+                row_id = json.dumps(row_id, sort_keys=True, default=str)
             self.withhold_row(prefix, row, sub, rule, row_id)
 
 
