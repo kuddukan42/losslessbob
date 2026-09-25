@@ -10,7 +10,11 @@ Fixed: backend/dossier_fields.py (BUG-361): venue run needs the same city (Provi
 Fixed: backend/olof_chronicle_parser.py (BUG-362): cross-month range and season headings (1,244 → 1,264 rows).
 Fixed: backend/dossier_anchors.py: furniture strip covers "Other Bob Dylan concert in <city>:" + its list and
   "Review(s) from BobLinks."; backend/templates/dossier.html: premiere names joined with "; ".
-Note: live rebuild (Olof/chronicle reparse, lineage --force, tapers, picks) awaits tj's OK — TODO-354.
+Fixed: backend/olof_parser.py (BUG-363): a medley wrapped onto the next line ("That'll Be The Day (…) /" +
+  "The Wanderer") kept only its first song; 19 events.
+Live (tj's OK; backups data/backups/losslessbob_preC32k_*): Olof + chronicle reparse, song_performances,
+  parse_lineage --force, attribute_tapers (propagated 784 → 727), show_picks (0 rank-1 changes), qc run;
+  golden --check 18/18. Silver set re-reviewed clean apart from BUG-363. Decisions A–I: TODO-354.
 
 [2026-09-25] — Golden dossiers: third adversarial review → C32j taper-propagation fixes
 Fixed: backend/taper_attribution.py, backend/db.py (BUG-358): a family holding a mix/matrix member is no

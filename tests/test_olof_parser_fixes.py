@@ -350,7 +350,7 @@ def test_release_lines_after_bobtalk_survive_the_section_guard():
 @pytest.mark.parametrize("header", ["CD bootlegs", "CD Bootlegs", "DVD bootleg",
                                      "LP bootlegs", "Vinyl bootleg"])
 def test_bobtalk_stops_at_a_bootleg_listing_header(header):
-    # Modelled on DSN01135 / 1965-09-03 (golden-dossier review): BobTalk previously
+    # Modelled on DSN01135 / 1965-09-03 (silver-dossier review): BobTalk previously
     # ran on into the bootleg-listing header and its titles.
     lines = ["Venue", "City, Sweden", "1 May 1990", "1.", "First", "2.", "Second",
              "BobTalk", "Thank you.", header,
@@ -360,6 +360,18 @@ def test_bobtalk_stops_at_a_bootleg_listing_header(header):
     assert rec.bobtalk == "Thank you."
     assert "Bell Bottom" not in rec.bobtalk
     assert songs[0].released_on == "X"
+
+
+def test_medley_wrapped_onto_next_line_keeps_both_songs():
+    # Modelled on 1999-07-20 (silver-dossier review): "That'll Be The Day (...) /" then
+    # "The Wanderer (E. Maresca)" on the next line; the second song was dropped.
+    lines = ["Venue", "City, USA", "20 July 1999", "1.", "First",
+             "2.", "That'll Be The Day (Jerry Allison, Buddy Holly & Norman Petty) /",
+             "The Wanderer (E. Maresca)", "3.", "Third"]
+    _rec, songs = _parse_event(lines, 1, "p1", "")
+    assert [s.position for s in songs] == [1, 2, 3]
+    assert "The Wanderer" in songs[1].song_title
+    assert not songs[1].song_title.rstrip().endswith("/")
 
 
 # --- C03: P1b date lines, P1c venue-history lists, P1d rotation stat ----------------------

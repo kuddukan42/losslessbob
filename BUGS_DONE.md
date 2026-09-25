@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-363: Olof medley wrapped onto the next line loses its second song
+Status: Fixed
+File(s): backend/olof_parser.py
+Reported: 2026-09-25
+Fixed: 2026-09-25
+Root cause: song-line loop took one line per title; a trailing '/' continuation was dropped
+Fix: join continuation lines while the title ends in '/'; live reparse done (0 titles end in '/')
+
 BUG-362: Chronicle glues cross-month range and season headings onto previous entry
 Status: Fixed
 File(s): backend/olof_chronicle_parser.py
