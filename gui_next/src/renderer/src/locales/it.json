@@ -1921,7 +1921,9 @@
           "r3DurOutlier": "una fonte la cui durata è ben al di fuori della mediana della data",
           "r5LabelSuspect": "tapematch ha contrassegnato l’etichettatura LB di una coppia come sospetta",
           "r7AllZeroMulti": "4+ fonti e nessuna coppia è correlata (probabile errore di allineamento)"
-        }
+        },
+        "clearBadge": "auto: nessun allarme",
+        "clearTooltip": "Triage automatico: nessuna regola attivata — un forte indizio che questo concerto sia a posto, non un verdetto"
       },
       "dateHeader": {
         "noSelection": "Selezionare una data dalla coda di triage.",

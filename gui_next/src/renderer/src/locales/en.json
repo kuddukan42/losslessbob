@@ -1976,6 +1976,8 @@
         "badge": "auto-flag",
         "tooltipWithReasons": "machine triage (low precision, not a verdict): {{reasons}}",
         "tooltipNoReasons": "machine triage flagged this date for attention",
+        "clearBadge": "auto-clear",
+        "clearTooltip": "machine triage: no rule fired — a strong hint the show is clean, not a verdict",
         "rules": {
           "r1Contradiction": "an info-file same-source claim contradicted by near-zero correlation",
           "r3DurOutlier": "a source whose performance duration is well off the date's median",

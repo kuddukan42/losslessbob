@@ -1921,7 +1921,9 @@
           "r3DurOutlier": "een bron waarvan de speelduur ver afwijkt van de mediaan van die datum",
           "r5LabelSuspect": "tapematch heeft de LB-labels van een paar als verdacht gemarkeerd",
           "r7AllZeroMulti": "4+ bronnen en geen enkel paar komt overeen (waarschijnlijk een uitlijningsfout)"
-        }
+        },
+        "clearBadge": "auto: geen signalen",
+        "clearTooltip": "Automatische triage: geen regel geactiveerd — een sterke aanwijzing dat dit concert in orde is, geen oordeel"
       },
       "dateHeader": {
         "noSelection": "Selecteer een datum uit de triage-wachtrij.",

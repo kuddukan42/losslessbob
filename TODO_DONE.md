@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-295: gui_next — surface auto_triage in the TapeMatch Curation screen
+Priority: Medium
+Status: Done
+Added: 2026-07-31
+Closed: 2026-09-25
+Description: Expose backend/tapematch_autoflag's machine triage in ScreenTapeMatchCuration: an 'attention'/'clear' indicator per date plus the fired rule names from auto_triage_reasons (JSON array; rule -> human text is in tapematch_autoflag.RULES). Needs GET /api/tapematch/families to return the two columns first — it currently selects review_flag/review_reason only (surfaced as fam_needs_review/fam_review_reason). Keep it visually distinct from and subordinate to the existing 'Needs review' Pill: review_flag means a human read the analysis.md prose, auto_triage is a ~0.19-precision prioritisation hint whose real value is the inverse (97.4% of 'clear' dates were human-judged clean). Do not merge the two into one badge. Deferred deliberately at ship time (TODO-294, 2026-07-31) so the field could be eyeballed in the DB first. i18n required (see TODO-275). Rule R6 staircase is also still deferred — it needs the real discontinuity logic from tools/tapematch/tapematch/cli.py surfaced into observations.db before it can be calibrated.
+Families API returns fam_auto_triage/_reasons (4697768b); date header shows a dashed 'auto-flag' hint with the fired rules' text on attention and a dotted 'auto-clear' hint on clear, both subordinate to the Needs review Pill; i18n'd in 6 locales. R6 staircase stays deferred (needs discontinuity logic in observations.db).
+
 TODO-275: gui_next — internationalise ScreenTapeMatchCuration (tapematch.* keys)
 Priority: Medium
 Status: Done

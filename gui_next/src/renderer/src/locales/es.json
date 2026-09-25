@@ -1921,7 +1921,9 @@
           "r3DurOutlier": "una fuente cuya duración de la interpretación se aleja considerablemente de la mediana de la fecha",
           "r5LabelSuspect": "tapematch ha marcado como sospechosa la etiqueta LB de un par",
           "r7AllZeroMulti": "Más de 4 fuentes y ni una sola pareja se corresponde (probablemente un error de alineación)"
-        }
+        },
+        "clearBadge": "auto: sin alertas",
+        "clearTooltip": "Clasificación automática: no se activó ninguna regla — un fuerte indicio de que este concierto está en orden, no un veredicto"
       },
       "dateHeader": {
         "noSelection": "Selecciona una fecha de la cola de clasificación.",

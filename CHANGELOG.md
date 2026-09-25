@@ -20,6 +20,9 @@ Changed: ScreenTapeMatchCuration: auto_triage badges (TODO-295) + i18n pass (TOD
 Changed: ScreenTapeMatchCuration.tsx + locales/*.json (TODO-275 CLOSED): remaining ~194 strings (A/B player,
   judgment form, dossier evidence bars/subheads, matrix, speed & lag, analysis panels, empty states) moved to
   tapematch.curation.*; interleaved markup via <Trans>; DeepL de/fr/es/it/nl (43,732 chars across both runs).
+Added: ScreenTapeMatchCuration (TODO-295 CLOSED): dotted 'auto-clear' hint beside the existing 'auto-flag' —
+  the spec's attention/clear pair; 'clear' is the useful direction (97.4% human-judged clean). Its locale
+  strings are hand-written: DeepL rendered "auto-clear" as "auto-erase" and re-translated unrelated keys.
 
 [2026-09-25] — Golden dossiers: adversarial review → C32a–h fixes, live rebuild, regenerated set
 Added: tools/dossier_audit.py (+tests): repeatable adversarial audit of an exported dossier set —

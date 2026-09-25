@@ -1921,7 +1921,9 @@
           "r3DurOutlier": "eine Quelle, deren Aufführungsdauer deutlich vom Medianwert des Datums abweicht",
           "r5LabelSuspect": "tapematch hat die LB-Kennzeichnung eines Paares als verdächtig markiert",
           "r7AllZeroMulti": "4+ Quellen, und kein einziges Paar stimmt überein (wahrscheinlich ein Ausrichtungsfehler)"
-        }
+        },
+        "clearBadge": "auto: unauffällig",
+        "clearTooltip": "Maschinelle Vorprüfung: keine Regel ausgelöst – ein deutlicher Hinweis, dass dieses Konzert unauffällig ist, aber kein Urteil"
       },
       "dateHeader": {
         "noSelection": "Wählen Sie ein Datum aus der Triage-Warteschlange aus.",

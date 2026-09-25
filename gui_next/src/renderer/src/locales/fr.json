@@ -1921,7 +1921,9 @@
           "r3DurOutlier": "une source dont la durée de la représentation est bien éloignée de la médiane de la date",
           "r5LabelSuspect": "tapematch a signalé l'étiquetage LB d'une paire comme suspect",
           "r7AllZeroMulti": "Plus de 4 sources et aucune paire ne correspond (probablement un problème d'alignement)"
-        }
+        },
+        "clearBadge": "auto : RAS",
+        "clearTooltip": "Tri automatique : aucune règle déclenchée — un indice fort que ce concert ne pose pas de problème, pas un verdict"
       },
       "dateHeader": {
         "noSelection": "Sélectionnez une date dans la file d'attente de tri.",
