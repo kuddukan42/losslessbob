@@ -222,6 +222,9 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("source[].rank", 1, "sources", "show_picks (C27)", "omit", local_analysis=True),
     _a("source[].group", 2, "sources", "S8.2 fragment/G2 classification (C27)", "value",
        "primary"),
+    _a("source[].excluded", 2, "sources", "C32 D2 lossy-lineage rule + scan veto", "omit",
+       local_analysis=True),
+    _a("source[].show_unassigned", 2, "sources", "C32 D3 show_source_split", "omit"),
     _a("family[].id", 1, "sources", "families", "omit"),
     _a("family[].label", 1, "sources", "families + S8.4 rules (C27)", "value", "no band"),
     _a("family[].size", 1, "sources", "families", "omit"),
@@ -458,15 +461,20 @@ def _classify_sources(
         visible_members: :func:`_visible_members`'s result.
 
     Returns:
-        ``{lb: {"group": "primary" | "fragment" | "no_match",
-        "completeness": Completeness | None, "runtime": float | None}}``.
-        ``"no_match"`` (G2 :func:`df.fits_show` failed) takes priority over
-        ``"fragment"`` (§8.2) when a source is both.
+        ``{lb: {"group": "primary" | "fragment" | "no_match" | "excluded",
+        "completeness": Completeness | None, "runtime": float | None,
+        "excluded": str | None}}``. ``"no_match"`` (G2 :func:`df.fits_show`
+        failed) takes priority over ``"excluded"`` (C32 D2: a vetoed or
+        lossy-lineage source, :func:`df.excluded_sources`), which takes priority
+        over ``"fragment"`` (§8.2).
     """
     out: dict[int, dict] = {}
     lbs = [lb for lb, _, _ in visible_members]
+    excluded = (_safe(df.excluded_sources, conn, lbs, default={}) or {}) if lbs else {}
     if event_id is None or not lbs:
-        return {lb: {"group": "primary", "completeness": None, "runtime": None} for lb in lbs}
+        return {lb: {"group": "excluded" if lb in excluded else "primary",
+                     "completeness": None, "runtime": None, "excluded": excluded.get(lb)}
+                for lb in lbs}
 
     comp_map = _safe(df.completeness, conn, event_id, lbs, default={}) or {}
     runtimes: dict[int, float | None] = {}
@@ -480,8 +488,10 @@ def _classify_sources(
         comp = comp_map.get(lb)
         fits = comp.get("fits_show", True) if comp else True
         fragment = df.is_fragment(comp, runtimes.get(lb), median_runtime)
-        group = "no_match" if not fits else "fragment" if fragment else "primary"
-        out[lb] = {"group": group, "completeness": comp, "runtime": runtimes.get(lb)}
+        group = ("no_match" if not fits else "excluded" if lb in excluded
+                 else "fragment" if fragment else "primary")
+        out[lb] = {"group": group, "completeness": comp, "runtime": runtimes.get(lb),
+                   "excluded": excluded.get(lb)}
     return out
 
 
@@ -623,8 +633,7 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode, visible_m
             vb.set_field("pick.medium", build_field(
                 medium["medium"], 3, "D-13 classify_medium", "stated"))
         if member.get("source_type"):
-            vb.set_field("pick.type", build_field(
-                member["source_type"], 1, "entries.source_type", "stated"))
+            vb.set_field("pick.type", _source_type_field(conn, lb, member, d1))
         if member.get("rating"):
             vb.set_field("pick.lb_rating", build_field(
                 member["rating"], 1, "entries.rating", "stated"))
@@ -677,10 +686,11 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode, visible_m
         if cmp_src and not cmp_src.get("collapsed"):
             if cmp_src.get("diffs"):
                 vb.set_field("verdict.vs_runner_up", build_field(
-                    cmp_src["diffs"], 2, "D-08 compare_sources", "stated"))
+                    _runner_up_display(cmp_src), 2, "D-08 compare_sources", "stated"))
             if cmp_src.get("alternates"):
                 vb.set_field("verdict.alternates[]", build_field(
-                    cmp_src["alternates"], 2, "D-08 compare_sources", "stated"))
+                    _alternates_display(cmp_src["alternates"]), 2, "D-08 compare_sources",
+                    "stated"))
 
     if pick is not None:
         lb, member = pick
@@ -692,6 +702,124 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode, visible_m
             if pick_data.get("score") is not None:
                 vb.set_field("ledger.total", build_field(
                     pick_data["score"], 1, "show_picks.pick_score", "stated"))
+
+
+def _fmt_num(value: object) -> str:
+    """A D-08 value for display: 100.0 -> ``100``, 81.25 -> ``81.2``, else ``str``."""
+    if isinstance(value, bool):
+        return "yes" if value else "no"
+    if isinstance(value, float):
+        return str(int(value)) if value.is_integer() else f"{value:.1f}"
+    return str(value)
+
+
+def _runner_up_display(cmp_src: dict) -> list[dict]:
+    """``verdict.vs_runner_up`` rows with who leads and display text (C32 D5).
+
+    Each D-08 diff is kept (``field``/``pick_value``/``runner_value``/``leader``
+    stay for the claim engine and QC) and gains ``runner_lb`` (``"LB-x"``),
+    ``subject`` (``"pick"`` / ``"runner-up LB-x"`` for the leading side, ``None``
+    for a directionless field) and ``lines`` -- the plain display text, one
+    labelled line per side for ``character``.
+
+    Args:
+        cmp_src: :func:`df.compare_sources`'s result.
+
+    Returns:
+        The enriched diff list.
+    """
+    runner = cmp_src.get("runner_up")
+    runner_lb = f"LB-{runner:05d}" if runner is not None else "runner-up"
+    runner_label = f"runner-up {runner_lb}"
+    verbs = {"scan": "scans higher", "runtime": "is longer",
+             "resolution": "has higher resolution"}
+    out: list[dict] = []
+    for diff in cmp_src.get("diffs", []):
+        f, pv, rv, leader = diff["field"], diff["pick_value"], diff["runner_value"], diff["leader"]
+        unit = " min" if f == "runtime" else ""
+        subject = ("pick" if leader == "pick" else runner_label if leader == "runner_up"
+                   else None)
+        if f == "character":
+            lines = [f"character (pick): {_fmt_num(pv)}",
+                     f"character ({runner_label}): {_fmt_num(rv)}"]
+        elif leader in ("pick", "runner_up") and f in verbs:
+            lead_v, other_v = (pv, rv) if leader == "pick" else (rv, pv)
+            who = "pick" if leader == "pick" else runner_lb
+            lines = [f"{who} {verbs[f]} ({_fmt_num(lead_v)} vs {_fmt_num(other_v)}{unit})"]
+        else:
+            lines = [f"{f}: pick {_fmt_num(pv)}{unit}, {runner_label} {_fmt_num(rv)}{unit}"]
+        out.append({**diff, "runner_lb": runner_lb, "subject": subject, "lines": lines})
+    return out
+
+
+def _alternates_display(alternates: list[dict]) -> list[dict]:
+    """``verdict.alternates[]`` rows with a per-axis display text (C32 D5).
+
+    The flat per-axis shape stays (the claim engine keys claims by
+    ``(lb_number, axis)``); the template groups rows by ``lb_number`` so each
+    LB prints once with all its axes.
+
+    Args:
+        alternates: :func:`df.compare_sources`'s ``alternates``.
+
+    Returns:
+        The alternates, each with ``text``.
+    """
+    out: list[dict] = []
+    for alt in alternates:
+        axis, pv, av = alt["axis"], alt["pick_value"], alt["alt_value"]
+        if axis == "scan":
+            text = f"scans higher ({_fmt_num(av)} vs {_fmt_num(pv)})"
+        elif axis == "runtime":
+            text = f"is longer ({_fmt_num(av)} vs {_fmt_num(pv)} min)"
+        elif axis == "resolution":
+            text = f"has higher resolution ({_fmt_num(av)} vs {_fmt_num(pv)})"
+        elif axis == "soundboard":
+            text = "is a soundboard (the pick is not)"
+        elif axis == "complete":
+            text = "has the complete setlist (the pick does not)"
+        else:
+            text = f"{axis}: {_fmt_num(av)} vs {_fmt_num(pv)}"
+        out.append({**alt, "text": text})
+    return out
+
+
+def _source_type_field(conn: sqlite3.Connection, lb: int, member: dict, d1: dict) -> Field:
+    """``entries.source_type`` as a Field, ``disputed`` when the text disagrees (C32 D6).
+
+    Disputed when the stored type is Audience but the description is a
+    ``BOOTLEG:`` entry and a member of the same tape family is a Soundboard, or
+    when :func:`backend.db.classify_source_type` reads a different (non-Mixed)
+    type from the lineage/description.
+
+    Args:
+        conn: Open SQLite connection.
+        lb: The source.
+        member: Its D1 member dict (``source_type``, ``source_chain``).
+        d1: The D1 payload (for the source's family bucket).
+
+    Returns:
+        The ``type`` Field.
+    """
+    from backend.db import classify_source_type
+
+    stated = member["source_type"]
+    row = conn.execute("SELECT description FROM entries WHERE lb_number = ?", (lb,)).fetchone()
+    desc = (row[0] if row else None) or ""
+    reasons: list[str] = []
+    guess = _safe(classify_source_type, desc, member.get("source_chain"))
+    if guess and guess not in (stated, "Mixed"):
+        reasons.append(f"lineage reads {guess}")
+    if stated == "Audience" and "BOOTLEG:" in desc:
+        bucket = next((b for b in d1.get("sources", []) if b.get("fam_id")
+                       and not str(b["fam_id"]).startswith("__singleton_")
+                       and any(m.get("lb") == member["lb"] for m in b["members"])), None)
+        if bucket and any(m.get("source_type") == "Soundboard" for m in bucket["members"]):
+            reasons.append("bootleg release in a soundboard tape family")
+    if reasons:
+        return build_field(stated, 1, "entries.source_type; " + "; ".join(reasons), "disputed",
+                           ["entries.source_type"])
+    return build_field(stated, 1, "entries.source_type", "stated")
 
 
 def visible_lbs_hint(d1: dict) -> list[int]:
@@ -1002,6 +1130,11 @@ def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
 
         cls = classes.get(lb, {"group": "primary"})
         row["group"] = build_field(cls["group"], 2, "S8.2 fragment/G2 classification", "stated")
+        if cls.get("excluded"):
+            row["excluded"] = build_field(cls["excluded"], 2, "C32 D2 exclusion", "stated")
+        if member.get("show_unassigned"):
+            row["show_unassigned"] = build_field(
+                "unassigned to a show", 2, "C32 D3 show_source_split", "stated")
 
         if event_id is not None:
             c = cls.get("completeness")
@@ -1012,7 +1145,7 @@ def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
                     "corroborated" if c.get("confidence") == "corroborated" else "stated")
 
         if member.get("source_type"):
-            row["type"] = build_field(member["source_type"], 1, "entries.source_type", "stated")
+            row["type"] = _source_type_field(conn, lb, member, d1)
         quality = member.get("quality") or {}
         if quality.get("grade"):
             row["scan_grade"] = build_field(

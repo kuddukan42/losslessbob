@@ -206,30 +206,36 @@ def _inject_dff(conn, metrics: dict) -> None:
 
 
 def _inject_text(conn, metrics: dict) -> None:
-    """Augment metrics dicts in-place with text features from entries.description.
+    """Augment metrics dicts in-place with text features from entries text.
 
     Text features are DB-derived (no audio rescan needed). Looks up the
     description for each LB in the entries table and merges the result of
-    extract_text_features() into the metrics dict. Safe to call even when the
-    entries table doesn't have a description column.
+    extract_text_features() into the metrics dict. The lossy-lineage flag
+    (C32 D1) also reads ``entries.source_chain``. Safe to call even when the
+    entries table lacks either column.
     """
     from concert_ranker.features import extract_text
+    from concert_ranker.text_features import LOSSY_LINEAGE_KEY, has_lossy_lineage
     lbs = list(metrics.keys())
     if not lbs:
         return
+    placeholders = ",".join("?" * len(lbs))
     try:
-        placeholders = ",".join("?" * len(lbs))
+        cols = {r[1] for r in conn.execute("PRAGMA table_info(entries)")}
+        chain_col = "source_chain" if "source_chain" in cols else "NULL"
         rows = conn.execute(
-            f"SELECT lb_number, description FROM entries "
+            f"SELECT lb_number, description, {chain_col} FROM entries "
             f"WHERE lb_number IN ({placeholders})",
             lbs,
         ).fetchall()
     except Exception:
         return
     for row in rows:
-        lb, description = row[0], row[1]
+        lb, description, chain = row[0], row[1], row[2]
         if lb in metrics:
-            metrics[lb]["metrics"].update(extract_text(description))
+            feats = extract_text(description)
+            feats[LOSSY_LINEAGE_KEY] = 1.0 if has_lossy_lineage(chain, description) else 0.0
+            metrics[lb]["metrics"].update(feats)
 
 
 def _filter_non_concerts(conn, metrics: dict) -> int:

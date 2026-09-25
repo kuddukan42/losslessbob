@@ -240,9 +240,17 @@ def ledger_detail_text(ev: Mapping) -> str:
 
     Returns:
         The fixed label for a comparative/exclusive *kind* (see
-        :data:`_LEDGER_KIND_LABELS`); every other kind's ``detail`` verbatim.
+        :data:`_LEDGER_KIND_LABELS`); the unrated baseline as "no LB rating
+        (baseline N)" and 10haaf's list as a catalogue listing (C32 D4, also for
+        evidence written before that recompute); every other kind's ``detail``
+        verbatim.
     """
-    return _LEDGER_KIND_LABELS.get(ev.get("kind"), ev.get("detail", ""))
+    kind = ev.get("kind")
+    if kind == "unrated" and isinstance(ev.get("points"), (int, float)):
+        return f"no LB rating (baseline {ev['points']:g})"
+    if kind == "curated_list" and ev.get("detail") == "10haaf's picks":
+        return "listed in 10haaf's catalogue"
+    return _LEDGER_KIND_LABELS.get(kind, ev.get("detail", ""))
 
 
 def sentence_claim_spans(value: Mapping, claims: list[Claim]) -> list[tuple[int, int]]:

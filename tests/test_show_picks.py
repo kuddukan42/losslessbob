@@ -212,27 +212,110 @@ def test_eac_match_penalty():
 
 # ── Term 5: audio quality blend ────────────────────────────────────────────────
 
-def test_audio_quality_blend_and_clamp():
+def test_audio_quality_absolute_vs_corpus_median_and_clamp():
+    """C32 D4a: 0.25 * (scan - corpus median scan), clamped +/-10."""
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
     _seed_entry(conn, 70, "1/1/82", rating="B")  # base ~ (9-1)/12*100 = 66.67
     _seed_quality(conn, 70, abs_score=90.0)
-
     _seed_entry(conn, 80, "1/1/83", rating="F")  # base 0
-    _seed_quality(conn, 80, abs_score=100.0)  # would blend to +25, clamp to +10
+    _seed_quality(conn, 80, abs_score=100.0)
+    _seed_entry(conn, 90, "1/1/84", rating="F")  # base 0
+    _seed_quality(conn, 90, abs_score=20.0)  # 0.25 * (20 - 90) = -17.5 -> clamp -10
 
     picks.recompute(db_path=db_path)
 
+    weight = picks.PICK_WEIGHTS["audio_quality_relative_weight"]
+    clamp = picks.PICK_WEIGHTS["audio_quality_clamp"]
+    corpus_median = 90.0  # median of 90, 100, 20
     row70 = _picks_for_date(conn, "1/1/82")[0]
     assert "audio_quality" in _evidence_kinds(row70)
-    weight = picks.PICK_WEIGHTS["audio_quality_relative_weight"]
     base70 = (9 - 1) / 12 * 100  # rating "B" -> RATING_RANK 9
-    expected_delta = weight * (90.0 - base70)
-    assert abs(row70["pick_score"] - (base70 + expected_delta)) < 0.5
+    assert abs(row70["pick_score"] - (base70 + weight * (90.0 - corpus_median))) < 0.01
 
     row80 = _picks_for_date(conn, "1/1/83")[0]
-    clamp = picks.PICK_WEIGHTS["audio_quality_clamp"]
-    assert abs(row80["pick_score"] - clamp) < 0.01  # base 0 + clamped +10
+    assert abs(row80["pick_score"] - weight * (100.0 - corpus_median)) < 0.01  # +2.5
+
+    row90 = _picks_for_date(conn, "1/1/84")[0]
+    assert abs(row90["pick_score"] + clamp) < 0.01  # base 0 + clamped -10
+
+
+def test_vetoed_source_gets_no_audio_term_and_never_ranks_first():
+    """C32 D4e/D2: no audio term for a vetoed source; it ranks below unvetoed ones."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 95, "2/2/82", rating="A+")
+    _seed_quality(conn, 95, vetoed=1, abs_score=99.0)
+    _seed_entry(conn, 96, "2/2/82", rating="D")
+    _seed_quality(conn, 96, abs_score=10.0)
+
+    picks.recompute(db_path=db_path)
+
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "2/2/82")}
+    assert "audio_quality" not in _evidence_kinds(rows[95])
+    assert "vetoed" in _evidence_kinds(rows[95])
+    assert rows[96]["pick_rank"] == 1
+
+
+def test_lossy_lineage_is_vetoed():
+    """C32 D1: a stream capture stated in the lineage is vetoed; "no mp3" is not."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 97, "3/3/82", rating="A",
+                description="SOURCE: Streaming Audio 320kbps > Soundforge > FLAC")
+    _seed_entry(conn, 98, "3/3/82", rating="B",
+                description="DAT master > WAV > FLAC. No buy, no sell, no mp3.")
+
+    picks.recompute(db_path=db_path)
+
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "3/3/82")}
+    ev97 = json.loads(rows[97]["evidence_json"])
+    assert any(e["kind"] == "vetoed" and "lineage" in e["detail"] for e in ev97)
+    assert "vetoed" not in _evidence_kinds(rows[98])
+    assert rows[98]["pick_rank"] == 1
+
+
+def test_unrated_baseline_label():
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 99, "4/4/82")
+
+    picks.recompute(db_path=db_path)
+
+    ev = json.loads(_picks_for_date(conn, "4/4/82")[0]["evidence_json"])
+    assert ev[0]["kind"] == "unrated" and ev[0]["detail"] == "no LB rating (baseline 40)"
+
+
+def test_two_show_day_is_ranked_per_show():
+    """C32 D3: Olof's LB lists split a two-show day; unassigned sources rank in both."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    conn.execute("INSERT INTO olof_pages (filename) VALUES ('p.htm')")
+    conn.execute(
+        "INSERT INTO olof_events (event_id, page_filename, date_str, date_raw, venue, notes)"
+        " VALUES (1, 'p.htm', '1974-01-06', '6 January 1974 – Afternoon', 'The Spectrum',"
+        " 'LB-numbers for this concert: LB-501 .')")
+    conn.execute(
+        "INSERT INTO olof_events (event_id, page_filename, date_str, date_raw, venue, notes)"
+        " VALUES (2, 'p.htm', '1974-01-06', '6 January 1974 – Evening', 'The Spectrum',"
+        " 'LB-numbers for this concert: LB-502 .')")
+    conn.commit()
+    _seed_entry(conn, 501, "1/6/74", rating="B")
+    _seed_entry(conn, 502, "1/6/74", rating="A")
+    _seed_entry(conn, 503, "1/6/74", rating="B+", description="late show, reel > DAT")
+    _seed_entry(conn, 504, "1/6/74", rating="C")
+
+    picks.recompute(db_path=db_path)
+
+    rows = conn.execute(
+        "SELECT lb_number, event_id, pick_rank FROM show_picks WHERE concert_date = '1/6/74'"
+    ).fetchall()
+    by_event: dict = {}
+    for r in rows:
+        by_event.setdefault(r["event_id"], {})[r["lb_number"]] = r["pick_rank"]
+    assert set(by_event[1]) == {501, 504}          # afternoon list + unassigned
+    assert set(by_event[2]) == {502, 503, 504}     # evening list + "late" + unassigned
+    assert by_event[1][501] == 1 and by_event[2][502] == 1
 
 
 # ── Term 6: taper reputation ────────────────────────────────────────────────────

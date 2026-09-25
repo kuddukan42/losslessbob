@@ -35,6 +35,7 @@ from statistics import median
 
 from backend.db import get_connection, get_write_queue, init_db
 from concert_ranker.calibrate import RATING_RANK
+from concert_ranker.text_features import has_lossy_lineage
 
 log = logging.getLogger(__name__)
 
@@ -100,9 +101,17 @@ PICK_WEIGHTS: dict = {
 
     # Term 2: +N per curated list that includes the LB, evidence names the
     # list. Per-list override; unlisted lists (e.g. a future TODO-182
-    # WTRF-thread list) fall back to the default weight.
-    "curated_list_weights": {"carbonbit": 8.0, "10haaf": 8.0},
+    # WTRF-thread list) fall back to the default weight. C32 D4c: carbonbit's
+    # FLglist names one pick (occasionally two) per date -- a genuine pick
+    # list, weight 8. 10haaf's import takes every LB his bootleg overview
+    # pages mention (7.5k of ~15.6k LBs), so it is a catalogue, not picks:
+    # weight 2 and labelled as a listing.
+    "curated_list_weights": {"carbonbit": 8.0, "10haaf": 2.0},
     "curated_list_default_weight": 8.0,
+    "curated_list_labels": {
+        "carbonbit": "carbonbit's picks",
+        "10haaf": "listed in 10haaf's catalogue",
+    },
 
     # Term 3: supersession claims (entry_lineage.better_than_lb), only when
     # both LBs are candidates on the same date.
@@ -122,11 +131,13 @@ PICK_WEIGHTS: dict = {
     # scoped to one recording_families family by concert_ranker itself).
     "family_best_transfer_bonus": 5.0,
     "family_inferior_transfer_penalty": -3.0,
-    "family_vetoed_penalty": -25.0,
+    "family_vetoed_penalty": -25.0,   # also the C32 D1 lossy-lineage veto
     "eac_match_penalty": -10.0,
 
-    # Term 5: audio quality adjustment, only when scanned (abs_score present).
-    # 0.25 * (abs_score - rating_base), clamped +/-10 — refines, never
+    # Term 5: audio quality adjustment, only when scanned (abs_score present)
+    # and not vetoed. C32 D4a: absolute against the corpus, not the LB's own
+    # rating base -- 0.25 * (abs_score - median abs_score of the scored scan),
+    # the median computed once per recompute; clamped +/-10 -- refines, never
     # overrules, the curator.
     "audio_quality_relative_weight": 0.25,
     "audio_quality_clamp": 10.0,
@@ -158,7 +169,8 @@ def _rating_base(rating: str | None) -> tuple[float, dict]:
     rank = _rating_rank(rating)
     if rank is None:
         base = PICK_WEIGHTS["rating_unrated_base"]
-        return base, _evidence("unrated", "no rating on file", points=round(base, 1))
+        return base, _evidence(
+            "unrated", f"no LB rating (baseline {base:g})", points=round(base, 1))
     base = (rank - _RATING_MIN_RANK) / (_RATING_MAX_RANK - _RATING_MIN_RANK) * 100
     return base, _evidence("rating", f"LB rating {rating}", points=round(base, 1))
 
@@ -172,10 +184,16 @@ def _table_exists(conn: sqlite3.Connection, name: str) -> bool:
 
 
 def _load_candidates(conn: sqlite3.Connection) -> dict[str, list[dict]]:
-    """Group real (status='ok', dated) entries into per-date candidate lists."""
+    """Group real (status='ok', dated) entries into per-date candidate lists.
+
+    Each candidate carries ``lossy_lineage`` (C32 D1): the negation-guarded
+    lossy-link rule over ``source_chain`` + ``description``.
+    """
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(entries)")}
+    chain = "source_chain" if "source_chain" in cols else "NULL AS source_chain"
     rows = conn.execute(
-        "SELECT lb_number, date_str, rating, description, timing FROM entries"
-        " WHERE status='ok' AND date_str IS NOT NULL AND date_str != ''"
+        f"SELECT lb_number, date_str, rating, description, timing, location, {chain}"
+        " FROM entries WHERE status='ok' AND date_str IS NOT NULL AND date_str != ''"
     ).fetchall()
     by_date: dict[str, list[dict]] = defaultdict(list)
     for r in rows:
@@ -184,6 +202,9 @@ def _load_candidates(conn: sqlite3.Connection) -> dict[str, list[dict]]:
             "rating": r["rating"],
             "description": r["description"] or "",
             "timing": r["timing"],
+            "location": r["location"],
+            "source_chain": r["source_chain"],
+            "lossy_lineage": has_lossy_lineage(r["source_chain"], r["description"]),
         })
     return dict(by_date)
 
@@ -359,6 +380,19 @@ def _load_latest_quality(conn: sqlite3.Connection) -> dict[int, dict]:
     return out
 
 
+def _corpus_median_scan(quality: dict[int, dict]) -> float | None:
+    """Median ``abs_score`` over the scored scan (C32 D4a), or None if unscanned.
+
+    Args:
+        quality: :func:`_load_latest_quality`'s result.
+
+    Returns:
+        The corpus median, computed once per recompute.
+    """
+    scores = [q["abs_score"] for q in quality.values() if q.get("abs_score") is not None]
+    return float(median(scores)) if scores else None
+
+
 def _load_taper_reputation(conn: sqlite3.Connection) -> tuple[dict[int, str], dict[str, float]]:
     """Return ({lb: taper} for confirmed attributions, {taper: median_rank}
     for confirmed tapers whose median attributed-entry rating clears the
@@ -398,8 +432,24 @@ def _score_date(
     quality: dict[int, dict],
     lb_taper: dict[int, str],
     reputable_tapers: dict[str, float],
+    scan_median: float | None = None,
 ) -> list[tuple[int, float, list[dict]]]:
-    """Score every candidate LB on one date. Returns unordered (lb, score, evidence)."""
+    """Score every candidate LB on one date (or one show of a split day).
+
+    Args:
+        candidates: The pool's candidate rows (:func:`_load_candidates`).
+        curated: ``{lb: [list_name, ...]}``.
+        lineage: ``{lb: {better_than_lb, derived_from_lb}}``.
+        quality: ``{lb: {rank_in_family, vetoed, abs_score}}``.
+        lb_taper: ``{lb: taper}`` for confirmed attributions.
+        reputable_tapers: ``{taper: median_rank}`` over the reputation threshold.
+        scan_median: Corpus median ``abs_score`` (C32 D4a); ``None`` disables
+            the audio term.
+
+    Returns:
+        Unordered ``(lb, score, evidence)`` tuples. A vetoed source (scan veto
+        or C32 D1 lossy lineage) carries a ``vetoed`` evidence row.
+    """
     lb_set = {c["lb_number"] for c in candidates}
     rating_by_lb = {c["lb_number"]: c["rating"] for c in candidates}
     # score/evidence held in mutable per-lb slots so the supersession /
@@ -419,8 +469,9 @@ def _score_date(
         for list_name in curated.get(lb, ()):
             weight = PICK_WEIGHTS["curated_list_weights"].get(
                 list_name, PICK_WEIGHTS["curated_list_default_weight"])
+            label = PICK_WEIGHTS["curated_list_labels"].get(list_name, f"{list_name}'s picks")
             score += weight
-            evidence.append(_evidence("curated_list", f"{list_name}'s picks", points=weight))
+            evidence.append(_evidence("curated_list", label, points=weight))
 
         if _EAC_MATCH_RE.search(c["description"]):
             pts = PICK_WEIGHTS["eac_match_penalty"]
@@ -428,12 +479,16 @@ def _score_date(
             evidence.append(_evidence("eac_match", "offers nothing new (EAC match)", points=pts))
 
         q = quality.get(lb)
+        vetoed = bool(c.get("lossy_lineage")) or bool(q and q["vetoed"])
+        if vetoed:
+            pts = PICK_WEIGHTS["family_vetoed_penalty"]
+            score += pts
+            detail = ("lossy source stated in lineage" if c.get("lossy_lineage")
+                      else "vetoed transfer (lossy-sourced etc.)")
+            evidence.append(_evidence("vetoed", detail, points=pts))
         if q:
-            if q["vetoed"]:
-                pts = PICK_WEIGHTS["family_vetoed_penalty"]
-                score += pts
-                evidence.append(_evidence(
-                    "vetoed", "vetoed transfer (lossy-sourced etc.)", points=pts))
+            if vetoed:
+                pass  # no family bonus/penalty and no audio term for a vetoed source
             elif q["rank_in_family"] == 1:
                 pts = PICK_WEIGHTS["family_best_transfer_bonus"]
                 score += pts
@@ -444,13 +499,15 @@ def _score_date(
                 score += pts
                 evidence.append(_evidence(
                     "inferior_transfer", "inferior transfer within its family", points=pts))
-            if q["abs_score"] is not None:
+            if not vetoed and q["abs_score"] is not None and scan_median is not None:
                 clamp = PICK_WEIGHTS["audio_quality_clamp"]
-                delta = PICK_WEIGHTS["audio_quality_relative_weight"] * (q["abs_score"] - base)
+                delta = PICK_WEIGHTS["audio_quality_relative_weight"] * (
+                    q["abs_score"] - scan_median)
                 delta = max(-clamp, min(clamp, delta))
                 score += delta
                 evidence.append(_evidence(
-                    "audio_quality", f"scanned quality {q['abs_score']:.0f}/100",
+                    "audio_quality",
+                    f"scanned quality {q['abs_score']:.0f}/100 (corpus median {scan_median:.0f})",
                     points=round(delta, 2)))
 
         taper = lb_taper.get(lb)
@@ -503,10 +560,18 @@ def _score_date(
     return rows
 
 
+def _is_vetoed(evidence: list[dict]) -> bool:
+    """True when a candidate's evidence carries a veto (scan or C32 D1 lineage)."""
+    return any(ev.get("kind") == "vetoed" for ev in evidence)
+
+
 def _rank_date(
     rows: list[tuple[int, float, list[dict]]], fragments: frozenset[int] = frozenset(),
 ) -> list[tuple[int, float, list[dict], int]]:
-    """Rank by fragment status (TODO-344/C27), then score desc, ties to lower LB.
+    """Rank by veto, then fragment status (TODO-344/C27), then score desc, ties to lower LB.
+
+    C32 D2: a vetoed source (lossy lineage or scan veto) never outranks an
+    unvetoed one, whatever its rating -- the dossier excludes it from the pick.
 
     A fragment (per :func:`_fragment_lbs`, the same D-01 signal the dossier's
     C27 verdict uses) never outranks a non-fragment candidate on the same
@@ -524,15 +589,55 @@ def _rank_date(
     Returns:
         ``(lb, score, evidence, pick_rank)`` tuples, ``pick_rank`` 1..N.
     """
-    ordered = sorted(rows, key=lambda r: (r[0] in fragments, -r[1], r[0]))
+    ordered = sorted(rows, key=lambda r: (_is_vetoed(r[2]), r[0] in fragments, -r[1], r[0]))
     return [(lb, score, ev, rank) for rank, (lb, score, ev) in enumerate(ordered, start=1)]
 
 
 # ── Orchestration ──────────────────────────────────────────────────────────────
 
-def _write_picks(all_rows: list[tuple[str, int, float, int, list[dict], str | None]],
-                 db_path: str | None) -> None:
+def _show_pools(
+    conn: sqlite3.Connection, date_iso: str, candidates: list[dict],
+) -> list[tuple[int | None, list[dict]]]:
+    """Split one date's candidates into per-show pools (C32 D3).
+
+    On a day with more than one show (:func:`backend.dossier_fields.split_show_events`)
+    each show is ranked separately over its own sources plus the unassigned
+    ones (which therefore get one ``show_picks`` row per show). Any other day
+    is one pool under its primary event.
+
+    Args:
+        conn: Open SQLite connection.
+        date_iso: ISO show date.
+        candidates: The date's candidates.
+
+    Returns:
+        ``[(event_id, pool), ...]``; ``event_id`` is ``None`` when the date
+        has no ``olof_events`` row.
+    """
+    from backend.dossier_fields import assign_show_sources, split_show_events
+
+    events = split_show_events(conn, date_iso)
+    if not events:
+        return [(_primary_event_id(conn, date_iso), candidates)]
+    assigned = assign_show_sources(events, candidates)
+    pools = []
+    for ev in events:
+        eid = ev["event_id"]
+        pool = [c for c in candidates if assigned.get(c["lb_number"]) in (eid, None)]
+        if pool:
+            pools.append((eid, pool))
+    return pools
+
+
+
+PickRow = tuple[str, int, float, int, list[dict], str | None, int | None]
+
+
+def _write_picks(all_rows: list[PickRow], db_path: str | None) -> None:
     """Wholesale-replace show_picks with the freshly computed rows.
+
+    Rows are ``(concert_date, lb, score, rank, evidence, date_iso, event_id)``;
+    on a split two-show day (C32 D3) an unassigned LB has one row per show.
 
     Refuses an empty replace: zero computed picks means the read side saw no
     candidate entries (empty/wrong DB), and committing DELETE + nothing is how
@@ -544,8 +649,8 @@ def _write_picks(all_rows: list[tuple[str, int, float, int, list[dict], str | No
         return
 
     payload = [
-        (date, lb, round(score, 2), rank, json.dumps(ev), date_iso)
-        for date, lb, score, rank, ev, date_iso in all_rows
+        (date, lb, round(score, 2), rank, json.dumps(ev), date_iso, event_id)
+        for date, lb, score, rank, ev, date_iso, event_id in all_rows
     ]
 
     def _do(conn: sqlite3.Connection) -> None:
@@ -553,8 +658,8 @@ def _write_picks(all_rows: list[tuple[str, int, float, int, list[dict], str | No
         conn.executemany(
             "INSERT INTO show_picks"
             " (concert_date, lb_number, pick_score, pick_rank, evidence_json,"
-            " concert_date_iso)"
-            " VALUES (?, ?, ?, ?, ?, ?)",
+            " concert_date_iso, event_id)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?)",
             payload,
         )
 
@@ -572,7 +677,7 @@ def _write_picks(all_rows: list[tuple[str, int, float, int, list[dict], str | No
         queue.execute(_do)
 
 
-def _summarize(all_rows: list[tuple[str, int, float, int, list[dict], str | None]]) -> dict:
+def _summarize(all_rows: list[PickRow]) -> dict:
     """Row/date counts + score distribution (spec §7 phase-2 report)."""
     scores = sorted(r[2] for r in all_rows)
     dates = {r[0] for r in all_rows}
@@ -614,23 +719,26 @@ def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
     curated = _load_curated_lists(conn)
     lineage = _load_lineage(conn)
     quality = _load_latest_quality(conn)
+    scan_median = _corpus_median_scan(quality)
     lb_taper, reputable_tapers = _load_taper_reputation(conn)
 
-    all_rows: list[tuple[str, int, float, int, list[dict], str | None]] = []
+    all_rows: list[PickRow] = []
     for date, candidates in by_date.items():
         date_iso = _parse_concert_date_iso(date)
         if date_iso is None:
             continue  # partial dates (xx/xx/61) are no show: no phantom rank-1 (BUG-346)
-        event_id = _primary_event_id(conn, date_iso)
-        fragments = frozenset(_fragment_lbs(conn, event_id, candidates))
-        scored = _score_date(candidates, curated, lineage, quality, lb_taper, reputable_tapers)
-        if fragments:
-            for lb, _score, ev in scored:
-                if lb in fragments:
-                    ev.append(_evidence(
-                        "fragment", "excerpt/fragment (D-01 completeness) — held out of top rank"))
-        for lb, score, ev, rank in _rank_date(scored, fragments):
-            all_rows.append((date, lb, score, rank, ev, date_iso))
+        for event_id, pool in _show_pools(conn, date_iso, candidates):
+            fragments = frozenset(_fragment_lbs(conn, event_id, pool))
+            scored = _score_date(pool, curated, lineage, quality, lb_taper, reputable_tapers,
+                                 scan_median)
+            if fragments:
+                for lb, _score, ev in scored:
+                    if lb in fragments:
+                        ev.append(_evidence(
+                            "fragment",
+                            "excerpt/fragment (D-01 completeness) — held out of top rank"))
+            for lb, score, ev, rank in _rank_date(scored, fragments):
+                all_rows.append((date, lb, score, rank, ev, date_iso, event_id))
 
     summary = _summarize(all_rows)
     if not dry_run:

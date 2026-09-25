@@ -257,3 +257,26 @@ def test_xref_losslessbob_card_follows_verdict_pick():
     assert out[0]["url"] == "u/LB-06180" and out[0]["link_label"] == "LB-06180 detail page"
     assert out[1] == xref[1]
     assert _xref_to_pick(xref, {}) is xref
+
+
+def test_runner_up_display_names_the_leader_and_formats_numbers():
+    """C32 D5: who leads, no "100.0", character as two labelled lines."""
+    from backend.dossier_anchors import _alternates_display, _runner_up_display
+
+    cmp_src = {"pick": 10440, "runner_up": 10167, "diffs": [
+        {"field": "runtime", "pick_value": 100.0, "runner_value": 253.0, "leader": "runner_up"},
+        {"field": "scan", "pick_value": 81.25, "runner_value": 80.9, "leader": "pick"},
+        {"field": "rating", "pick_value": "A", "runner_value": "A-", "leader": None},
+        {"field": "character", "pick_value": "thin", "runner_value": "airy", "leader": None},
+    ]}
+    rows = _runner_up_display(cmp_src)
+    assert rows[0]["subject"] == "runner-up LB-10167"
+    assert rows[0]["lines"] == ["LB-10167 is longer (253 vs 100 min)"]
+    assert rows[1]["lines"] == ["pick scans higher (81.2 vs 80.9)"]
+    assert rows[2]["lines"] == ["rating: pick A, runner-up LB-10167 A-"]
+    assert rows[3]["lines"] == ["character (pick): thin", "character (runner-up LB-10167): airy"]
+    assert all(r["runner_lb"] == "LB-10167" for r in rows)
+
+    alts = _alternates_display([
+        {"axis": "runtime", "lb_number": 12105, "pick_value": 100.0, "alt_value": 261.0}])
+    assert alts[0]["text"] == "is longer (261 vs 100 min)"

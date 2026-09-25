@@ -3276,6 +3276,275 @@ def _resolution_key(res: str | None) -> tuple[int, int] | None:
     return (int(m.group(1)), int(m.group(2))) if m else None
 
 
+# ---------------------------------------------------------------------------
+# C32 D2: excluded (vetoed) sources -- never the pick, runner-up or an alternate
+# ---------------------------------------------------------------------------
+
+#: Reason text for a source whose lineage/description states a lossy link (D1 rule).
+EXCLUDED_LOSSY_LINEAGE = "lossy source stated in lineage"
+#: Reason text for a source the latest audio scan vetoed (quality_recording_scores.vetoed).
+EXCLUDED_SCAN_VETO = "vetoed by the audio scan (lossy source suspected)"
+
+
+def excluded_sources(conn: sqlite3.Connection, lbs: Sequence[int]) -> dict[int, str]:
+    """Which of *lbs* are excluded from selection, with the reason (C32 D2).
+
+    A source is excluded when its ``entries.source_chain``/``description``
+    states a lossy link (:func:`concert_ranker.text_features.lossy_lineage_snippet`,
+    the same rule as the ranker's ``txt_lossy_lineage`` veto) or when the
+    library's scored scan (``repo.scored_scan_id``) vetoed it.
+
+    Args:
+        conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
+        lbs: Candidate LB numbers.
+
+    Returns:
+        ``{lb: reason}`` for the excluded ones only.
+    """
+    from concert_ranker.text_features import has_lossy_lineage
+
+    lbs = list(dict.fromkeys(lbs))
+    if not lbs:
+        return {}
+    out: dict[int, str] = {}
+    ph = ",".join("?" * len(lbs))
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(entries)")}
+    sel = ", ".join(c if c in cols else f"NULL AS {c}" for c in ("source_chain", "description"))
+    for r in conn.execute(
+        f"SELECT lb_number, {sel} FROM entries WHERE lb_number IN ({ph})", lbs,
+    ):
+        if has_lossy_lineage(r["source_chain"], r["description"]):
+            out[r["lb_number"]] = EXCLUDED_LOSSY_LINEAGE
+    q_cols = {r[1] for r in conn.execute("PRAGMA table_info(quality_recording_scores)")}
+    if "vetoed" in q_cols:
+        from concert_ranker.lb import repo as cr_repo
+
+        scan_id = cr_repo.scored_scan_id(conn)
+        if scan_id is not None:
+            for r in conn.execute(
+                f"SELECT lb_number FROM quality_recording_scores WHERE scan_id = ? AND vetoed = 1"
+                f" AND lb_number IN ({ph})", [scan_id, *lbs],
+            ):
+                out.setdefault(r["lb_number"], EXCLUDED_SCAN_VETO)
+    return out
+
+
+# ---------------------------------------------------------------------------
+# C32 D3: per-show source split on a day with more than one show
+# ---------------------------------------------------------------------------
+
+# Olof's "LB-numbers for this concert: LB-2637 , LB-3602 ." (also "LB-number for
+# this show:", "LB-number s for this gig:").
+_OLOF_LB_LIST_RE = re.compile(
+    r"LB-number\s*s?\s+for\s+this\s+\w+\s*:\s*([^\n]*)", re.IGNORECASE)
+_OLOF_LB_NUM_RE = re.compile(r"LB-?\s*(\d+)", re.IGNORECASE)
+# Lineage words naming the part of the day: side "a" (afternoon/early/1st) vs
+# side "b" (evening/late/2nd). The first hit across location, lineage and
+# description wins -- a later "same recording as evening" comparison loses to
+# the head's "aft low gen reel".
+_SHOW_SIDE_WORD_RE = re.compile(
+    r"\b(afternoon|matinee|early|aft|1st\s+show|first\s+show|"
+    r"evening|late|eve|night\s+show|2nd\s+show|second\s+show)\b",
+    re.IGNORECASE,
+)
+_SHOW_SIDE_A_WORDS = ("afternoon", "matinee", "early", "aft", "1st", "first")
+#: show_part_key -> day side.
+_SHOW_KEY_SIDE = {"afternoon": "a", "early": "a", "first": "a",
+                  "evening": "b", "late": "b", "second": "b"}
+
+#: Values of :func:`show_source_split`.
+SPLIT_SHOW, SPLIT_OTHER, SPLIT_UNASSIGNED = "show", "other", "unassigned"
+
+
+def olof_lb_list(notes: str | None) -> set[int]:
+    """LB numbers Olof names in an event's "LB-numbers for this concert:" note.
+
+    Args:
+        notes: ``olof_events.notes``.
+
+    Returns:
+        The LB numbers (empty when the note is absent).
+    """
+    out: set[int] = set()
+    for m in _OLOF_LB_LIST_RE.finditer(notes or ""):
+        out.update(int(n) for n in _OLOF_LB_NUM_RE.findall(m.group(1)))
+    return out
+
+
+def lineage_show_side(*texts: str | None) -> str | None:
+    """The part of the day (``"a"`` early / ``"b"`` late) a source's text names.
+
+    Args:
+        *texts: Ordered texts to scan (location, lineage, description).
+
+    Returns:
+        ``"a"``, ``"b"``, or ``None`` when no part-of-day word appears.
+    """
+    for text in texts:
+        m = _SHOW_SIDE_WORD_RE.search(text or "")
+        if m:
+            word = m.group(1).casefold().split()[0]
+            return "a" if word in _SHOW_SIDE_A_WORDS else "b"
+    return None
+
+
+class ShowEvent(TypedDict):
+    """One show of a split day (see :func:`split_show_events`).
+
+    Keys:
+        event_id: ``olof_events.event_id``.
+        side: ``"a"``/``"b"`` from the event's :func:`backend.dossier.show_part_key`,
+            or ``None`` (a different-venue show with an Olof LB list).
+        lbs: LB numbers Olof lists for this event.
+    """
+
+    event_id: int
+    side: str | None
+    lbs: set[int]
+
+
+def split_show_events(conn: sqlite3.Connection, date_iso: str) -> list[ShowEvent]:
+    """The shows of *date_iso* between which its sources are split (C32 D3).
+
+    A day splits when two or more of its ``olof_events`` either carry an Olof
+    LB list or are keyed shows of the day (``show_part_key``: afternoon/evening,
+    early/late, first/second on distinct sides).
+
+    Args:
+        conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
+        date_iso: ISO show date.
+
+    Returns:
+        The split events (two or more), or ``[]`` for a single-show day.
+    """
+    from backend.dossier import show_part_key
+
+    has_table = conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name='olof_events'").fetchone()
+    if not has_table:
+        return []
+    rows = conn.execute(
+        "SELECT event_id, date_raw, session_title, notes FROM olof_events WHERE date_str = ?"
+        " ORDER BY event_id", (date_iso,),
+    ).fetchall()
+    if len(rows) < 2:
+        return []
+    events: list[ShowEvent] = []
+    for r in rows:
+        key = show_part_key(r["date_raw"], r["session_title"])
+        events.append(ShowEvent(event_id=r["event_id"], side=_SHOW_KEY_SIDE.get(key or ""),
+                                lbs=olof_lb_list(r["notes"])))
+    sides = [e["side"] for e in events if e["side"]]
+    keyed = len(sides) >= 2 and len(set(sides)) == len(sides)
+    split = [e for e in events if e["lbs"] or (keyed and e["side"])]
+    return split if len(split) >= 2 else []
+
+
+def assign_show_sources(events: Sequence[ShowEvent],
+                        entries: Iterable) -> dict[int, int | None]:
+    """Assign each source to one of a split day's shows, or ``None`` (unassigned).
+
+    Olof's LB list for an event wins; otherwise the source's part-of-day
+    lineage word (:func:`lineage_show_side`) matched against the keyed events'
+    sides; otherwise unassigned.
+
+    Args:
+        events: :func:`split_show_events`'s result (non-empty).
+        entries: Rows/dicts with ``lb_number`` and optionally ``location``,
+            ``source_chain``, ``description``.
+
+    Returns:
+        ``{lb: event_id or None}``.
+    """
+    listed = {lb: e["event_id"] for e in events for lb in e["lbs"]}
+    by_side: dict[str, list[int]] = defaultdict(list)
+    for e in events:
+        if e["side"]:
+            by_side[e["side"]].append(e["event_id"])
+    out: dict[int, int | None] = {}
+    for row in entries:
+        get = row.get if isinstance(row, dict) else (
+            lambda k, _r=row: _r[k] if k in _r.keys() else None)
+        lb = get("lb_number")
+        if lb in listed:
+            out[lb] = listed[lb]
+            continue
+        side = lineage_show_side(get("location"), get("source_chain"), get("description"))
+        targets = by_side.get(side or "", [])
+        out[lb] = targets[0] if len(targets) == 1 else None
+    return out
+
+
+def show_source_split(conn: sqlite3.Connection, event, entries: Iterable) -> dict[int, str]:
+    """Which of a date's sources belong to *event*'s show (C32 D3).
+
+    Args:
+        conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
+        event: The dossier's ``olof_events`` row (needs ``event_id`` and
+            ``date_str``), or ``None``.
+        entries: The date's ``entries`` rows (``lb_number``, ``location``,
+            ``source_chain``, ``description``).
+
+    Returns:
+        ``{lb: "show" | "other" | "unassigned"}``. Every source is ``"show"``
+        on a single-show day or without an event; ``"other"`` sources belong to
+        a different show of the day and are left off this page; ``"unassigned"``
+        ones can't be placed and appear on both shows' pages.
+    """
+    entries = list(entries)
+    lbs = [(e["lb_number"]) for e in entries]
+    if event is None:
+        return {lb: SPLIT_SHOW for lb in lbs}
+    events = split_show_events(conn, event["date_str"])
+    if not events:
+        return {lb: SPLIT_SHOW for lb in lbs}
+    assigned = assign_show_sources(events, entries)
+    eid = event["event_id"]
+    return {
+        lb: SPLIT_UNASSIGNED if assigned.get(lb) is None
+        else SPLIT_SHOW if assigned[lb] == eid else SPLIT_OTHER
+        for lb in lbs
+    }
+
+
+def show_pick_rows(conn: sqlite3.Connection, date_iso: str,
+                   event_id: int | None) -> dict[int, sqlite3.Row]:
+    """This show's ``show_picks`` rows, one per LB (C32 D3).
+
+    On a split day ``show_picks`` holds one ranking per show (``event_id``);
+    rows of the requested show are returned. Otherwise (single-show day, a
+    pre-D3 table with no ``event_id``, or an event with no rows of its own)
+    every row of the date is returned, deduplicated to the best rank per LB.
+
+    Args:
+        conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
+        date_iso: ISO show date (``show_picks.concert_date_iso``).
+        event_id: The show's ``olof_events.event_id``, or ``None``.
+
+    Returns:
+        ``{lb: row}`` with ``lb_number``, ``pick_rank``, ``pick_score``,
+        ``evidence_json``.
+    """
+    has_table = conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name='show_picks'").fetchone()
+    if not has_table:
+        return {}
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(show_picks)")}
+    sel = ", ".join(c if c in cols else f"NULL AS {c}"
+                    for c in ("pick_score", "evidence_json", "event_id"))
+    rows = conn.execute(
+        f"SELECT lb_number, pick_rank, {sel} FROM show_picks"
+        " WHERE concert_date_iso = ? ORDER BY pick_rank", (date_iso,),
+    ).fetchall()
+    event_ids = {r["event_id"] for r in rows if r["event_id"] is not None}
+    if len(event_ids) >= 2 and event_id in event_ids:
+        rows = [r for r in rows if r["event_id"] == event_id]
+    out: dict[int, sqlite3.Row] = {}
+    for r in rows:
+        out.setdefault(r["lb_number"], r)
+    return out
+
+
 class RunnerUpDiff(TypedDict):
     """One ``verdict.vs_runner_up`` field comparison (D-08, plan line 573).
 
@@ -3380,11 +3649,14 @@ def compare_sources(
             f" WHERE lb_number IN ({placeholders})", visible,
         )
     }
+    # C32 D3: this show's own ranking on a two-show day. C32 D2: an excluded
+    # (vetoed / lossy-lineage) source is never the pick, runner-up or an alternate.
+    excluded = excluded_sources(conn, visible)
+    visible = [lb for lb in visible if lb not in excluded]
+    visible_set = set(visible)
     pick_ranks = {
-        r["lb_number"]: r["pick_rank"] for r in conn.execute(
-            f"SELECT lb_number, pick_rank FROM show_picks WHERE concert_date_iso = ?"
-            f" AND lb_number IN ({placeholders})", [date_iso, *visible],
-        )
+        lb: r["pick_rank"] for lb, r in show_pick_rows(conn, date_iso, event_id).items()
+        if lb in visible_set
     }
     ranked = sorted(
         (lb for lb in visible

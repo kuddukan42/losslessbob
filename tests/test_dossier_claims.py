@@ -388,3 +388,14 @@ class TestBuildViewWiring:
             assert "verdict.why" in view["fields"]["prov.local_fields[]"]["value"]
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_ledger_detail_text_c32_labels():
+    from backend.dossier_claims import ledger_detail_text
+
+    assert ledger_detail_text({"kind": "unrated", "detail": "no rating on file",
+                               "points": 40.0}) == "no LB rating (baseline 40)"
+    assert ledger_detail_text({"kind": "curated_list", "detail": "10haaf's picks",
+                               "points": 8.0}) == "listed in 10haaf's catalogue"
+    assert ledger_detail_text({"kind": "curated_list", "detail": "carbonbit's picks",
+                               "points": 8.0}) == "carbonbit's picks"

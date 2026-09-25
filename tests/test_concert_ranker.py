@@ -697,3 +697,48 @@ def test_sibilance_native_empty_probe_returns_nan():
     out = extract_hf_native(p)
     assert np.isnan(out["sibilance_ratio_db"])
     assert np.isnan(out["sibilance_crest"])
+
+
+# ── C32 D1: lossy lineage veto ─────────────────────────────────────────────────
+
+@pytest.mark.parametrize("text", [
+    ", Streaming Audio 320kbps, Soundforge PRO 10c (Capture as .wav)",   # LB-10440
+    "W.V. Streaming Audio > Total Recorder (PCM 44,100khz, 16bit>",       # LB-07977
+    "Wolfgang's Vault Streaming Audio > wav (48k/24bit)",
+    "SOURCE: MP4 Files from YouTube > Soundforge PRO 10c > FLAC",
+    "Download 320kbps mp3, Soundforge PRO 10c, Edit",
+    "the original tape only ever circulated as mp3.",
+])
+def test_lossy_lineage_hits(text):
+    from concert_ranker.text_features import has_lossy_lineage
+
+    assert has_lossy_lineage(text)
+
+
+@pytest.mark.parametrize("text", [
+    "No buy, no sell, no mp3. Please seed this as long as you can.",
+    "please do not encode to mp3",
+    "Don't encode to MP3 !",
+    "this one is full spectrum and not mp3",
+    "Does not have the characteristics of an MP3 source.",
+    "has lego parapets; most likely from mp3; a little harsh",
+    "iPhone SE > m4a (voice memos app / set up: lossless)",
+    "Sound: mp3 samples attached in the Comments",
+    "Edirol by Roland R-09 24 bit WAV/MP3 Recorder",
+    "in comparison this is less blairy than the 50th anniversary mp3",
+    "DAT master > CD > EAC > FLAC",
+])
+def test_lossy_lineage_guards(text):
+    from concert_ranker.text_features import has_lossy_lineage
+
+    assert not has_lossy_lineage(text)
+
+
+def test_lossy_lineage_is_a_veto_disqualifier():
+    from concert_ranker import scoring
+    from concert_ranker.text_features import LOSSY_LINEAGE_KEY, extract_text_features
+
+    feats = extract_text_features("SOURCE: Streaming Audio 320kbps > FLAC")
+    assert feats[LOSSY_LINEAGE_KEY] == 1.0
+    labels, vetoed = scoring.check_disqualifiers(feats)
+    assert vetoed and "lossy source stated in lineage" in labels
