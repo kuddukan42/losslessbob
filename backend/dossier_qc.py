@@ -367,6 +367,13 @@ _LB_RULE_SUBS: dict[str, tuple[str, ...]] = {
 }
 # R-S1 also files under entity_kind 'lb' (per-LB staleness) but is G6's job.
 _LB_RULES_OWNED_ELSEWHERE = frozenset({"R-S1"})
+# Display-only lb rules: warn severity, so the G4 quarantine query never returns
+# them and nothing is withheld. Listed so the rule -> anchor mapping is complete:
+# R-T6 (family taper conflict) surfaces on source[].taper as the ``disputed``
+# confidence dossier_fields.taper_render assigns.
+_LB_DISPLAY_RULE_SUBS: dict[str, tuple[str, ...]] = {
+    "R-T6": ("taper",),
+}
 
 # entry: R-E2 (tracklist doesn't fit the dated show) discredits everything this
 # source states about itself -- it may be the wrong recording entirely.
@@ -477,8 +484,8 @@ def _run_g4_sources(gate: _Gate, pick_lb: int | None) -> None:
         if row is None:
             continue
         for rule_id, fid, status in findings:
-            if rule_id in _LB_RULES_OWNED_ELSEWHERE:
-                continue  # G6's job (R-S1)
+            if rule_id in _LB_RULES_OWNED_ELSEWHERE or rule_id in _LB_DISPLAY_RULE_SUBS:
+                continue  # G6's job (R-S1) / display-only, never withheld (R-T6)
             gate.consulted_findings.append((fid, status))
             subs = _LB_RULE_SUBS.get(rule_id)
             if subs is None:

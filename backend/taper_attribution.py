@@ -291,6 +291,45 @@ def mention_has_taper_context(description: str, canonical_taper: str) -> bool:
     return False
 
 
+# "recorded by X" / "recording by X" / "a X recording" -- the bound forms of an
+# explicit credit (plan E5). Unlike "Taper:" and "taped ... by", these phrases
+# also appear around other people's work ("mixed by", "a different recording"),
+# so they confirm a taper only when the handle itself is the one they name.
+_BOUND_CREDIT_PREFIX = r'\brecord(?:ed|ing)\s+by\s+(?:the\s+)?'
+# "most likely a Schubert recording" is a guess, not a credit.
+_HEDGE_RE = re.compile(r'\b(?:likely|probably|possibly|maybe|perhaps|presumably)\s*$',
+                       re.IGNORECASE)
+
+
+def explicit_credit(description: str, canonical_taper: str) -> bool:
+    """Whether *description* explicitly credits *canonical_taper* as the taper.
+
+    A "Taper:" label or "taped ... by" anywhere in the first 600 chars counts
+    (the long-standing rule); "recorded by" / "recording by" / "a <handle>
+    recording" count only when bound to one of the taper's aliases, and the
+    last never after a hedge ("most likely a Schubert recording").
+
+    Args:
+        description: Entry description text.
+        canonical_taper: Canonical taper name (a value in _KNOWN_TAPER_ALIASES).
+
+    Returns:
+        True for an explicit credit.
+    """
+    window = (description or "")[:600]
+    for m in _EXPLICIT_TAPER_LABEL_RE.finditer(window):
+        if not m.group(0).lower().startswith("record"):
+            return True
+    for key in _ALIAS_KEYS_BY_CANONICAL.get(canonical_taper, ()):
+        alias = r'\b' + re.escape(key) + r'\b'
+        if re.search(_BOUND_CREDIT_PREFIX + alias, window, re.IGNORECASE):
+            return True
+        for m in re.finditer(r'\ban?\s+' + alias + r'\s+recording\b', window, re.IGNORECASE):
+            if not _HEDGE_RE.search(window[max(0, m.start() - 20):m.start()]):
+                return True
+    return False
+
+
 class _DSU:
     """Minimal union-find with path compression, used for the strong-edge graph."""
 
@@ -410,8 +449,9 @@ def _layer0_seed(rows: list[sqlite3.Row], universe: frozenset[str]) -> dict[int,
                               [_evidence("series_code", f"series code '{taper_norm}'")])
             continue
 
-        if _EXPLICIT_TAPER_LABEL_RE.search(description[:600]):
-            detail = f"explicit 'Taper:'/'taped by' credit (parsed as {row['taper_name']!r})"
+        if explicit_credit(description, taper_norm):
+            detail = (f"explicit 'Taper:'/'taped by'/'recorded by' credit"
+                      f" (parsed as {row['taper_name']!r})")
             attrs[lb] = _row(taper_norm, "confirmed", [_evidence("explicit", detail)])
             continue
 
@@ -506,12 +546,17 @@ def _apply_unresolved(attrs: dict[int, dict], unresolved: set[int]) -> None:
 
 # ── Layer 1 — same-source propagation ──────────────────────────────────────────
 
-def _mark_conflicts(attrs: dict[int, dict], members, candidates: list[tuple[int, str]]) -> None:
+def _mark_conflicts(attrs: dict[int, dict], members, candidates: list[tuple[int, str]],
+                    blocked: frozenset[int] | set[int] = frozenset(),
+                    scope: str = "component") -> None:
     """Mark every not-yet-attributed lb in *members* as conflict=1.
 
     *candidates* is a list of (source_lb, taper) pairs whose disagreement
     caused the conflict; all are recorded in evidence so a curator can
-    adjudicate without reading code (spec §7 acceptance criterion).
+    adjudicate without reading code (spec §7 acceptance criterion). Members in
+    *blocked* (sources that can't carry a taper, :func:`_load_propagation_blocked`)
+    get no placeholder row. *scope* names the grouping in the evidence detail
+    ('component', or 'weak family' for the display-only pass).
     """
     if not candidates:
         return
@@ -519,11 +564,11 @@ def _mark_conflicts(attrs: dict[int, dict], members, candidates: list[tuple[int,
     # taper_normalised needs *some* value even though the row is ambiguous.
     placeholder = sorted({t for _, t in candidates})[0]
     evidence = [
-        _evidence("conflict", f"component candidate taper '{t}' via LB-{lb}", via_lb=lb)
+        _evidence("conflict", f"{scope} candidate taper '{t}' via LB-{lb}", via_lb=lb)
         for lb, t in sorted(candidates)
     ]
     for lb in members:
-        if lb in attrs:
+        if lb in attrs or lb in blocked:
             continue
         attrs[lb] = {"taper": placeholder, "tier": "propagated", "conflict": 1,
                       "evidence": list(evidence), "confirmed_at": None}
@@ -535,8 +580,14 @@ def _propagate_strong(
     fam_weak: dict[str, bool],
     same_as_adj: dict[int, list[int]],
     derived_from_adj: dict[int, list[int]],
+    blocked: frozenset[int] | set[int] = frozenset(),
 ) -> None:
     """Layer 1 over strong edges: family cliques + same_as + derived_from.
+
+    Nothing is ever propagated onto an LB in *blocked* -- a soundboard, ALD,
+    broadcast or matrix source has no audience taper (plan E2). Such a node
+    also never relays a taper onward, since only newly-credited nodes join
+    the BFS frontier.
 
     Only strong families are edges: conf >= :data:`FAMILY_MIN_CONF` and not
     review-flagged. A weak family carries no taper at all — the old second
@@ -578,7 +629,7 @@ def _propagate_strong(
         confirmed_tapers = {t for _, t in confirmed}
 
         if len(confirmed_tapers) >= 2:
-            _mark_conflicts(attrs, members, confirmed)
+            _mark_conflicts(attrs, members, confirmed, blocked)
             continue
         if not confirmed_tapers:
             continue
@@ -607,14 +658,14 @@ def _propagate_strong(
                 for v in same_as_adj.get(u, ()):
                     if v in members and v not in visited:
                         visited.add(v)
-                        if v not in attrs:
+                        if v not in attrs and v not in blocked:
                             attrs[v] = _row(target, "propagated",
                                              [_evidence("same_as", f"same_as LB-{u}", via_lb=u)])
                             nxt.append(v)
                 for v in derived_from_adj.get(u, ()):
                     if v in members and v not in visited:
                         visited.add(v)
-                        if v not in attrs:
+                        if v not in attrs and v not in blocked:
                             ev = _evidence("derived_from", f"derived_from LB-{u}", via_lb=u)
                             attrs[v] = _row(target, "propagated", [ev])
                             nxt.append(v)
@@ -624,7 +675,7 @@ def _propagate_strong(
                         if v == u or v not in members or v in visited:
                             continue
                         visited.add(v)
-                        if v not in attrs:
+                        if v not in attrs and v not in blocked:
                             attrs[v] = _row(
                                 target, "propagated",
                                 [_evidence("family", f"same recording family as LB-{u}",
@@ -632,6 +683,71 @@ def _propagate_strong(
                             )
                             nxt.append(v)
             frontier = nxt
+
+
+def _mark_weak_family_conflicts(
+    attrs: dict[int, dict],
+    fam_members: dict[str, list[int]],
+    fam_weak: dict[str, bool],
+    blocked: frozenset[int] | set[int] = frozenset(),
+) -> None:
+    """Display-only conflict pass over weak families (plan E3).
+
+    A weak family never propagates a taper (R-T2), but one whose members carry
+    two or more distinct confirmed tapers is still a contradiction worth
+    showing: its unattributed members get a conflict=1 row naming every
+    candidate, exactly as a strong component's would. Credited members are
+    never touched.
+    """
+    for fam_id, members in fam_members.items():
+        if not fam_weak.get(fam_id, True) or len(members) < 2:
+            continue
+        confirmed = [(lb, attrs[lb]["taper"]) for lb in members
+                     if lb in attrs and attrs[lb]["tier"] == "confirmed"
+                     and not attrs[lb]["conflict"]]
+        if len({t for _, t in confirmed}) >= 2:
+            _mark_conflicts(attrs, members, confirmed, blocked, scope="weak family")
+
+
+# Sources that never receive a propagated taper (plan E2): a board, ALD, FM or
+# matrix recording has no audience taper to inherit.
+_NO_PROPAGATE_SOURCE_TYPES = frozenset({"Soundboard", "ALD", "FM/Pre-FM", "Mixed"})
+_MATRIX_RE = re.compile(r"\bmatrix\b", re.IGNORECASE)
+
+
+def _load_propagation_blocked(conn: sqlite3.Connection, candidates) -> frozenset[int]:
+    """LBs in *candidates* that must never receive a propagated taper.
+
+    Blocked when ``entries.source_type`` is Soundboard / ALD / FM/Pre-FM / Mixed
+    (matrix), when the description's first line calls it a matrix, or when
+    :func:`backend.dossier_fields.classify_medium` finds a broadcast.
+
+    Args:
+        conn: Database connection.
+        candidates: LBs that sit on some propagation edge (only these matter).
+
+    Returns:
+        The blocked LB numbers.
+    """
+    from backend.dossier_fields import classify_medium
+
+    wanted = set(candidates)
+    blocked: set[int] = set()
+    for lb, source_type, description in conn.execute(
+        "SELECT lb_number, source_type, description FROM entries"
+    ):
+        if lb not in wanted:
+            continue
+        first_line = (description or "").split("\n", 1)[0][:300]
+        if source_type in _NO_PROPAGATE_SOURCE_TYPES or _MATRIX_RE.search(first_line):
+            blocked.add(lb)
+            continue
+        try:
+            if classify_medium(conn, lb).get("broadcast"):
+                blocked.add(lb)
+        except sqlite3.OperationalError:  # minimal test schemas lack checksums
+            pass
+    return frozenset(blocked)
 
 
 # ── Orchestration ──────────────────────────────────────────────────────────────
@@ -710,7 +826,11 @@ def _compute_layers01(
     rejects, unresolved = _apply_confirmations(attrs, confirmations)
     _apply_rejects(attrs, rejects)
 
-    _propagate_strong(attrs, fam_members, fam_weak, same_as_adj, derived_from_adj)
+    on_edges = {lb for members in fam_members.values() for lb in members}
+    on_edges.update(same_as_adj, derived_from_adj)
+    blocked = _load_propagation_blocked(conn, on_edges)
+    _propagate_strong(attrs, fam_members, fam_weak, same_as_adj, derived_from_adj, blocked)
+    _mark_weak_family_conflicts(attrs, fam_members, fam_weak, blocked)
 
     return attrs, fam_members, same_as_adj, derived_from_adj, rejects, unresolved
 

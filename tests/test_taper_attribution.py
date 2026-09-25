@@ -118,7 +118,7 @@ def test_layer0_gear_name_not_seeded():
 def test_layer0_context_mention_propagated():
     db_path, _ = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 106, "Audience recording, recorded by spot on a Sony D5.",
+    _seed_entry(conn, 106, "Audience recording, master by spot on a Sony D5.",
                 taper_name="spot", taper_normalised="spot")
 
     taper_attribution.recompute(db_path=db_path)
@@ -475,7 +475,7 @@ def test_confirm_route_sets_confirmed_and_records_confirmation():
 def test_confirm_route_sources_taper_from_existing_attribution():
     db_path, tmp_dir = _make_db()
     conn = db.get_connection(db_path)
-    _seed_entry(conn, 1101, "Great show, recorded by spot on a Sony D5.",
+    _seed_entry(conn, 1101, "Great show, master by spot on a Sony D5.",
                 taper_name="spot", taper_normalised="spot")
     taper_attribution.recompute(db_path=db_path)  # seeds a 'propagated' row
     assert _get_attr(conn, 1101)["confidence"] == "propagated"
