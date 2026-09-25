@@ -33,7 +33,7 @@ from backend.paths import (
 BASE_URL = SITE_BASE_URL
 DETAIL_URL = BASE_URL + "/detail/LB-{n}.html"
 FILE_URL = BASE_URL + "/files/{filename}"
-BYNUMBER_URL = BASE_URL + "/bynumber/LBMbynumber.html"
+BYNUMBER_URL = BASE_URL + "/bynumber/LBM-bynumber.html"
 
 # Server returns HTTP 200 with this text when a page doesn't exist (soft 404).
 _SOFT_404_MARKER = "The requested URL was not found on this server."

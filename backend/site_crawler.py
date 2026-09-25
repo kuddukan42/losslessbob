@@ -50,7 +50,7 @@ SITE_HOME_URL = BASE_URL + "/LosslessBob.html"
 # Extra seeds queued on every crawl as a safety net in case the home page
 # restructures or doesn't link directly to the index pages.
 SEED_URLS = [
-    BASE_URL + "/bynumber/LBMbynumber.html",                                     # master LB index (~13 000 entries)
+    BASE_URL + "/bynumber/LBM-bynumber.html",                                    # master LB index (~13 000 entries)
     BASE_URL + "/detail/LB-bootleg-by-title.html",                               # bootleg title index
     BASE_URL + "/checksum_lookup/checksum_lookup_lb_zip_download.htm",           # flat-file download page
     BASE_URL + "/detail/LBM-year.html",                                          # entries by year index
@@ -78,6 +78,9 @@ _crawler_state: dict = {
     "running":       False,
     "stage":         "idle",     # idle | loading | crawling | done | stopped | error
     "current_url":   None,
+    "last_url":      None,       # most recently finished URL …
+    "last_result":   None,       # … and its outcome: fetched | 304 | 404 | skipped | failed
+    "last_seq":      0,          # bumps per finished URL so pollers can spot new results
     "queue_size":    0,
     "fetched":       0,
     "not_modified":  0,
@@ -105,6 +108,14 @@ def stop_crawler() -> None:
 def _set(**kwargs) -> None:
     with _crawler_lock:
         _crawler_state.update(kwargs)
+
+
+def _done(url: str, result: str) -> None:
+    """Record the outcome of one finished URL for the GUI's live log."""
+    with _crawler_lock:
+        _crawler_state["last_url"] = url
+        _crawler_state["last_result"] = result
+        _crawler_state["last_seq"] += 1
 
 
 def _stopped() -> bool:
@@ -354,7 +365,8 @@ def crawl(
 
     _set(running=True, stage="loading", fetched=0, not_modified=0,
          skipped=0, failed=0, not_found=0, stop_requested=False,
-         current_url=None, message="Loading inventory…")
+         current_url=None, last_url=None, last_result=None,
+         message="Loading inventory…")
 
     session_id = create_scrape_session(scope, start_url, db_path)
     _set(session_id=session_id)
@@ -462,6 +474,7 @@ def crawl(
                             "Failed to update entry_files.downloaded for %s", filename
                         )
                 _set(skipped=counts["skipped"])
+                _done(url, "skipped")
                 continue
 
         _set(current_url=url, queue_size=len(queue),
@@ -477,6 +490,7 @@ def crawl(
                              last_checked_at="CURRENT_TIMESTAMP",
                              session_id=session_id)
             _set(not_modified=counts["not_modified"])
+            _done(url, "304")
             continue
 
         if status == 404:
@@ -502,6 +516,7 @@ def crawl(
                         "Failed to mark entry_files row dead for %s", url
                     )
             _set(not_found=counts["not_found"])
+            _done(url, "404")
             continue
 
         if status == 0 or body is None:
@@ -509,6 +524,7 @@ def crawl(
             upsert_inventory(url, db_path, status="failed",
                              http_status=status, session_id=session_id)
             _set(failed=counts["failed"])
+            _done(url, "failed")
             continue
 
         # Save to disk
@@ -549,6 +565,7 @@ def crawl(
                     logger.exception("Failed to update entry_files.downloaded for %s", filename)
 
         _set(fetched=counts["fetched"])
+        _done(url, "fetched")
 
         # Discover new links from HTML pages
         if _ext(url) in (".html", ""):

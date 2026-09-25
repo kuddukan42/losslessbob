@@ -3459,6 +3459,12 @@ def init_db(db_path=None):
         _si_cols = [r[1] for r in conn.execute("PRAGMA table_info(site_inventory)").fetchall()]
         if "local_sha256" not in _si_cols:
             conn.execute("ALTER TABLE site_inventory ADD COLUMN local_sha256 TEXT")
+        # Cleanup: upsert_inventory once bound the literal string 'CURRENT_TIMESTAMP'
+        # into the crawl timestamps. The real times are unrecoverable — null them.
+        for _col in ("last_fetched_at", "last_checked_at"):
+            conn.execute(
+                f"UPDATE site_inventory SET {_col}=NULL WHERE {_col}='CURRENT_TIMESTAMP'"
+            )
         # Migration: wtrf_downloads.seed_folder — the folder (collection or
         # overlay) that was actually handed to qBittorrent, mirroring
         # tuit_downloads.seed_folder. Added when WTRF gained seed-from-links.
@@ -9175,7 +9181,9 @@ def upsert_inventory(url: str, db_path=None, **fields) -> None:
     """Insert or update a site_inventory row for *url*.
 
     Keyword args map directly to column names.  Only the supplied keys are
-    updated on conflict — unsupplied columns are left unchanged.
+    updated on conflict — unsupplied columns are left unchanged.  A value of
+    the string ``"CURRENT_TIMESTAMP"`` is emitted as the SQL expression, not
+    bound as text.
     """
     _url = url
     _fields = dict(fields)
@@ -9186,10 +9194,14 @@ def upsert_inventory(url: str, db_path=None, **fields) -> None:
             "INSERT OR IGNORE INTO site_inventory(url) VALUES(?)", (_url,)
         )
         if _fields:
-            set_clause = ", ".join(f"{k}=?" for k in _fields)
+            sql_now = {k for k, v in _fields.items() if v == "CURRENT_TIMESTAMP"}
+            set_clause = ", ".join(
+                f"{k}=CURRENT_TIMESTAMP" if k in sql_now else f"{k}=?" for k in _fields
+            )
+            params = [v for k, v in _fields.items() if k not in sql_now]
             conn.execute(
                 f"UPDATE site_inventory SET {set_clause} WHERE url=?",
-                list(_fields.values()) + [_url],
+                params + [_url],
             )
 
     get_write_queue().execute(_run)
