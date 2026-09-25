@@ -958,6 +958,43 @@ class TestCompareSources:
         cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
         assert cs["pick"] == 1 and cs["runner_up"] is None
 
+    def test_lossy_lineage_source_is_never_pick_runner_up_or_alternate(self, monkeypatch):
+        """C32 D2: LB-10440's stream capture is excluded even at pick_rank 1."""
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", "Soundboard", "253min", 1, 95.0),   # stream capture
+            (2, "A", None, "100min", 2, 81.0),
+            (3, "B", None, "90min", 3, 70.0),
+        ])
+        conn.execute("ALTER TABLE entries ADD COLUMN source_chain TEXT")
+        conn.execute("ALTER TABLE entries ADD COLUMN description TEXT")
+        conn.execute("UPDATE entries SET source_chain = 'Streaming Audio 320kbps > FLAC'"
+                     " WHERE lb_number = 1")
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2, 3])
+        assert cs["pick"] == 2 and cs["runner_up"] == 3
+        assert all(a["lb_number"] != 1 for a in cs["alternates"])
+
+
+class TestExcludedSources:
+    def test_lineage_rule_and_scan_veto(self):
+        conn = sqlite3.connect(":memory:")
+        conn.row_factory = sqlite3.Row
+        conn.executescript("""
+            CREATE TABLE entries (lb_number INTEGER PRIMARY KEY, source_chain TEXT,
+                description TEXT);
+            CREATE TABLE quality_recording_scores (lb_number INTEGER, scan_id INTEGER,
+                vetoed INTEGER);
+            INSERT INTO entries VALUES (1, 'W.V. Streaming Audio > Total Recorder', '');
+            INSERT INTO entries VALUES (2, 'DAT > WAV', 'no buy, no sell, no mp3');
+            INSERT INTO entries VALUES (3, 'cdr > eac', '');
+            INSERT INTO quality_recording_scores VALUES (3, 1, 1);
+            INSERT INTO quality_recording_scores VALUES (2, 1, 0);
+        """)
+        assert dossier_fields.excluded_sources(conn, [1, 2, 3]) == {
+            1: dossier_fields.EXCLUDED_LOSSY_LINEAGE, 3: dossier_fields.EXCLUDED_SCAN_VETO,
+        }
+
 
 # ---------------------------------------------------------------------------
 # D-10 anchor_bobtalk (C24)

@@ -131,6 +131,7 @@ POLARITY = {
     "txt_tv_band":             0,   # informational
     "txt_cassette":           -1,
     "txt_eac_match":          -1,
+    "txt_lossy_lineage":       0,   # hard veto input (DISQUALIFIERS), not fused
 }
 
 
@@ -164,6 +165,10 @@ class Disqualifier:
 # a QUALITY_MODEL predictor, so scores are unaffected.)
 DISQUALIFIERS = [
     Disqualifier("lossy_flag",       0.5,    "above", "lossy source suspected", veto=True),
+    # C32 D1: a negation-guarded stream/kbps/mp3/WV/YouTube link stated in the
+    # lineage (entries.source_chain) or description — see text_features.
+    Disqualifier("txt_lossy_lineage", 0.5,   "above", "lossy source stated in lineage",
+                 veto=True),
     # Disqualifier("dropout_count", 150, "above", "has dropouts/glitches", veto=False),
     #   ^ disabled — confounded with fidelity at scale (see note above).
     Disqualifier("hum_excess_db",    10.0,   "above", "audible mains hum",      veto=False),

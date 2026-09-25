@@ -1174,7 +1174,8 @@ CREATE TABLE IF NOT EXISTS show_picks (
     evidence_json    TEXT NOT NULL,        -- ordered list of {kind, detail, points}
     concert_date_iso TEXT,                 -- YYYY-MM-DD, NULL if unparseable/'xx' (LISTENING §9)
     computed_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (concert_date, lb_number)
+    event_id         INTEGER,              -- olof_events show ranked (C32 D3); NULL if none
+    PRIMARY KEY (concert_date, lb_number, event_id)
 );
 CREATE INDEX IF NOT EXISTS idx_show_picks_lb ON show_picks(lb_number);
 -- idx_show_picks_date_iso is created by the concert_date_iso migration below
@@ -3651,6 +3652,34 @@ def init_db(db_path=None):
         _sp_cols = [r[1] for r in conn.execute("PRAGMA table_info(show_picks)").fetchall()]
         if "concert_date_iso" not in _sp_cols:
             conn.execute("ALTER TABLE show_picks ADD COLUMN concert_date_iso TEXT")
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_show_picks_date_iso"
+                " ON show_picks(concert_date_iso)"
+            )
+
+        # Migration (C32 D3): per-show picks. show_picks gains event_id, and on a
+        # two-show day an unassigned LB is ranked in both shows, so the key widens
+        # to (concert_date, lb_number, event_id). SQLite can't alter a primary key:
+        # rebuild once, copying the existing rows (event_id NULL until recompute).
+        _sp_cols = [r[1] for r in conn.execute("PRAGMA table_info(show_picks)").fetchall()]
+        if _sp_cols and "event_id" not in _sp_cols:
+            conn.execute("ALTER TABLE show_picks RENAME TO show_picks_pre_c32")
+            conn.execute(
+                "CREATE TABLE show_picks ("
+                " concert_date TEXT NOT NULL, lb_number INTEGER NOT NULL,"
+                " pick_score REAL NOT NULL, pick_rank INTEGER NOT NULL,"
+                " evidence_json TEXT NOT NULL, concert_date_iso TEXT,"
+                " computed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, event_id INTEGER,"
+                " PRIMARY KEY (concert_date, lb_number, event_id))"
+            )
+            conn.execute(
+                "INSERT INTO show_picks (concert_date, lb_number, pick_score, pick_rank,"
+                " evidence_json, concert_date_iso, computed_at)"
+                " SELECT concert_date, lb_number, pick_score, pick_rank, evidence_json,"
+                " concert_date_iso, computed_at FROM show_picks_pre_c32"
+            )
+            conn.execute("DROP TABLE show_picks_pre_c32")
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_show_picks_lb ON show_picks(lb_number)")
             conn.execute(
                 "CREATE INDEX IF NOT EXISTS idx_show_picks_date_iso"
                 " ON show_picks(concert_date_iso)"

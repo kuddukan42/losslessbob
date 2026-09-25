@@ -343,7 +343,7 @@ def _entries_for_date(conn: sqlite3.Connection, date_iso: str) -> list[sqlite3.R
     """All ``entries`` rows whose ``date_str`` resolves to *date_iso*."""
     rows = conn.execute(
         "SELECT lb_number, date_str, location, rating, timing, source_chain, "
-        "source_type, lb_category, status, taper_name FROM entries "
+        "source_type, lb_category, status, taper_name, description FROM entries "
         "WHERE date_str IS NOT NULL AND date_str != ''"
     ).fetchall()
     return [r for r in rows if entry_date_to_iso(r["date_str"]) == date_iso]
@@ -812,16 +812,16 @@ def _load_lineage(conn: sqlite3.Connection, lb_numbers: list[int]) -> dict[int, 
     return out
 
 
-def _load_picks(conn: sqlite3.Connection, date_iso: str) -> dict[int, dict]:
-    if not _table_exists(conn, "show_picks"):
-        return {}
-    rows = conn.execute(
-        "SELECT lb_number, pick_rank, pick_score, evidence_json FROM show_picks "
-        "WHERE concert_date_iso = ?",
-        (date_iso,),
-    ).fetchall()
+def _load_picks(conn: sqlite3.Connection, date_iso: str,
+                event_id: int | None = None) -> dict[int, dict]:
+    """``show_picks`` rows for this show, ``{lb: {rank, score, evidence}}``.
+
+    On a two-show day (C32 D3) the ranking of *event_id*'s show is read.
+    """
+    from backend.dossier_fields import show_pick_rows
+
     out: dict[int, dict] = {}
-    for r in rows:
+    for r in show_pick_rows(conn, date_iso, event_id).values():
         out[r["lb_number"]] = {
             "rank": r["pick_rank"],
             "score": r["pick_score"],
@@ -859,19 +859,25 @@ def _load_quality(conn: sqlite3.Connection, lb_numbers: list[int]) -> dict[int, 
     return out
 
 
+_CURATED_LABEL_OVERRIDES = {"10haaf": "10haaf's catalogue"}
+
+
 def _load_curated(conn: sqlite3.Connection, lb_numbers: list[int]) -> dict[int, list[dict]]:
     if not lb_numbers or not _table_exists(conn, "curated_lists"):
         return {}
     placeholders = ",".join("?" * len(lb_numbers))
     rows = conn.execute(
-        f"SELECT cl.label AS list_label, ce.note AS note, ce.lb_number AS lb_number "
+        f"SELECT cl.name AS list_name, cl.label AS list_label, ce.note AS note, "
+        f"ce.lb_number AS lb_number "
         f"FROM curated_list_entries ce JOIN curated_lists cl ON cl.id = ce.list_id "
         f"WHERE ce.lb_number IN ({placeholders})",
         lb_numbers,
     ).fetchall()
     out: dict[int, list[dict]] = {}
     for r in rows:
-        entry = {"list_label": r["list_label"]}
+        # C32 D4c: 10haaf's list is every LB his pages mention -- a catalogue, not picks.
+        label = _CURATED_LABEL_OVERRIDES.get(r["list_name"], r["list_label"])
+        entry = {"list_label": label}
         if r["note"]:
             entry["note"] = r["note"]
         out.setdefault(r["lb_number"], []).append(entry)
@@ -891,8 +897,13 @@ def _load_alt_filesets(conn: sqlite3.Connection, lb_numbers: list[int]) -> dict[
 
 
 def _build_sources(conn: sqlite3.Connection, date_iso: str, entries: list[sqlite3.Row],
-                    channel: str) -> tuple[list[dict], bool]:
-    """Returns (sources grouped by family, local_analysis: bool)."""
+                    channel: str, event_id: int | None = None,
+                    unassigned: frozenset[int] = frozenset()) -> tuple[list[dict], bool]:
+    """Returns (sources grouped by family, local_analysis: bool).
+
+    *unassigned* (C32 D3) are sources of a two-show day that can't be placed in
+    either show; their members carry ``show_unassigned: True``.
+    """
     lb_numbers = [e["lb_number"] for e in entries]
     visible_lbs = [
         e["lb_number"] for e in entries
@@ -902,7 +913,7 @@ def _build_sources(conn: sqlite3.Connection, date_iso: str, entries: list[sqlite
     families = _load_families(conn, date_iso, lb_numbers)
     taper = _load_taper(conn, visible_lbs)
     lineage = _load_lineage(conn, visible_lbs)
-    picks = _load_picks(conn, date_iso)
+    picks = _load_picks(conn, date_iso, event_id)
     quality = _load_quality(conn, visible_lbs)
     curated = _load_curated(conn, visible_lbs)
     alt_filesets = _load_alt_filesets(conn, visible_lbs)
@@ -955,6 +966,8 @@ def _build_sources(conn: sqlite3.Connection, date_iso: str, entries: list[sqlite
                 local_analysis = True
             if lb in alt_filesets:
                 member["alt_filesets"] = alt_filesets[lb]
+            if lb in unassigned:
+                member["show_unassigned"] = True
         buckets[fam_id]["members"].append(member)
 
     sources = []
@@ -1274,6 +1287,14 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
         event = _primary_event(conn, date_iso, prefer_venue=location)
 
     entries = _entries_for_date(conn, date_iso)
+    # C32 D3: on a day with two shows, keep this show's sources plus the ones that
+    # can't be placed (flagged unassigned); the other show's sources leave the page.
+    from backend.dossier_fields import SPLIT_OTHER, SPLIT_UNASSIGNED, show_source_split
+
+    split = show_source_split(conn, event, entries)
+    entries = [e for e in entries if split.get(e["lb_number"]) != SPLIT_OTHER]
+    unassigned = frozenset(lb for lb, v in split.items() if v == SPLIT_UNASSIGNED)
+    event_id = event["event_id"] if event is not None else None
     visible_lbs = [
         e["lb_number"] for e in entries if channel == "full" or e["status"] != "private"
     ]
@@ -1296,11 +1317,12 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
     if setlist:
         dossier["setlist"] = setlist
 
-    sources, local_analysis = _build_sources(conn, date_iso, entries, channel)
+    sources, local_analysis = _build_sources(conn, date_iso, entries, channel, event_id,
+                                             unassigned)
     if sources:
         dossier["sources"] = sources
 
-    picks = _load_picks(conn, date_iso)
+    picks = _load_picks(conn, date_iso, event_id)
     rank1_lb = next((lb for lb, p in picks.items() if p["rank"] == 1), None)
     if rank1_lb is not None and rank1_lb in visible_lbs:
         dossier["recommendation"] = {"lb": f"LB-{rank1_lb:05d}", "evidence": picks[rank1_lb]["evidence"]}
@@ -1320,7 +1342,6 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
 
     from backend.dossier_anchors import build_view
 
-    event_id = event["event_id"] if event is not None else None
     try:
         dossier["view"] = build_view(
             dossier, conn, event_id=event_id, visible_lbs=visible_lbs, channel=channel,

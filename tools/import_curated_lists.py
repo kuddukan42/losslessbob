@@ -154,7 +154,7 @@ def import_10haaf(
         return 0
 
     list_id = db.get_or_create_curated_list(
-        "10haaf", label="10haaf's picks", source=", ".join(sources), db_path=db_path
+        "10haaf", label="10haaf's catalogue", source=", ".join(sources), db_path=db_path
     )
     entries = [(lb, "") for lb in sorted(lb_numbers)]
     db.add_curated_list_entries(list_id, entries, db_path=db_path)

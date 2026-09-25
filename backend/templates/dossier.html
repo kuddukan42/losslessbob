@@ -358,7 +358,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
       <div class="eyebrow">Recommended transfer</div>
       <div class="lb" data-lb="pick.lb_id">{% if url_f and url_f.value %}<a href="{{ url_f.value }}" target="_blank" rel="noopener">{{ pick_lb }}</a>{% else %}{{ pick_lb }}{% endif %}</div>
       {%- if grade_f and grade_f.value %}<div style="margin-top:.55rem" data-lb="pick.scan_grade">{{ grade_badge(grade_f.value) }}</div>{% endif %}
-      {%- if ledger_tot_f and ledger_tot_f.value is not none %}<div class="total" data-lb="ledger.total">Composite score {{ '%.1f' | format(ledger_tot_f.value) }}</div>{% endif %}
+      {%- if ledger_tot_f and ledger_tot_f.value is not none %}{% set tot_txt = '%.1f' | format(ledger_tot_f.value) %}<div class="total" data-lb="ledger.total" title="Relative ranking among this show's sources: the LB rating as a base plus the adjustments listed below. Not a percentage; there is no 100 cap.">Pick score {{ tot_txt[:-2] if tot_txt.endswith('.0') else tot_txt }}</div>{% endif %}
       {%- if url_f and url_f.value %}<a class="visit" data-lb="pick.url" href="{{ url_f.value }}" target="_blank" rel="noopener">View on LosslessBob &#8599;</a>{% endif %}
     </div>
     <div>
@@ -393,9 +393,16 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
       <div class="stats-line" data-lb="verdict.vs_runner_up">
         <span class="label">vs. runner-up</span>
         <ul class="diffs">
+          {#- C32 D5: each diff names the side that leads; a verified claim replaces the plain text. #}
           {%- for diff in vru_f.value %}
           {%- set ctexts = claim_texts_for(d.view, 'verdict.vs_runner_up', diff.field) -%}
-          <li>{{ diff.field }}: {{ (('yes' if diff.pick_value else 'no') if diff.pick_value is sameas true or diff.pick_value is sameas false else diff.pick_value) }} / {{ (('yes' if diff.runner_value else 'no') if diff.runner_value is sameas true or diff.runner_value is sameas false else diff.runner_value) }}{% for t in ctexts %} {{ claim(t) }}{% endfor %}</li>
+          {%- if ctexts and diff.subject %}
+          <li>{{ diff.subject }} &mdash;{% for t in ctexts %} {{ claim(t) }}{% endfor %}</li>
+          {%- else %}
+          {%- for line in (diff.lines or [diff.field ~ ': ' ~ diff.pick_value ~ ' / ' ~ diff.runner_value]) %}
+          <li>{{ line }}</li>
+          {%- endfor %}
+          {%- endif %}
           {%- endfor %}
         </ul>
       </div>
@@ -405,9 +412,15 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
       <div class="stats-line" data-lb="verdict.alternates[]">
         <span class="label">Alternates</span>
         <ul class="diffs">
-          {%- for alt in alt_f.value %}
+          {#- C32 D5: one line per alternate LB, all of its leading axes together. #}
+          {%- for grp in alt_f.value | groupby('lb_number') %}
+          {%- set parts = [] -%}
+          {%- for alt in grp.list -%}
           {%- set ctexts = claim_texts_for(d.view, 'verdict.alternates[]', alt.lb_number, alt.axis) -%}
-          <li>{{ 'LB-%05d' | format(alt.lb_number) }} &mdash; {{ alt.axis }}: {{ (('yes' if alt.pick_value else 'no') if alt.pick_value is sameas true or alt.pick_value is sameas false else alt.pick_value) }} / {{ (('yes' if alt.alt_value else 'no') if alt.alt_value is sameas true or alt.alt_value is sameas false else alt.alt_value) }}{% for t in ctexts %} {{ claim(t) }}{% endfor %}</li>
+          {%- if ctexts %}{% for t in ctexts %}{% set _ = parts.append(claim(t)) %}{% endfor %}
+          {%- else %}{% set _ = parts.append(alt.text if alt.text is defined else alt.axis) %}{% endif -%}
+          {%- endfor %}
+          <li>{{ 'LB-%05d' | format(grp.grouper) }} &mdash; {{ parts | join(' · ') }}</li>
           {%- endfor %}
         </ul>
       </div>
@@ -415,7 +428,10 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
       {%- if ledger_f and ledger_f.value %}
       <ul class="ledger" data-lb="ledger[]">
         {%- for ev in ledger_f.value %}
-        <li{% if loop.last %} class="tail"{% endif %}><span>{{ ledger_detail_text(ev) }}</span><span class="pts {{ 'pos' if ev.points is defined and ev.points >= 0 else 'neg' }}">{{ '%+.1f' | format(ev.points) if ev.points is defined else '' }}</span></li>
+        {#- C32 D4: the rating/unrated row is the base, not an adjustment -- no sign. #}
+        {%- set is_base = ev.kind in ('rating', 'unrated') -%}
+        {%- set ptxt = (('%.1f' if is_base else '%+.1f') | format(ev.points)) if ev.points is defined else '' -%}
+        <li{% if loop.last %} class="tail"{% endif %}><span>{{ ledger_detail_text(ev) }}</span><span class="pts {{ 'base' if is_base else 'pos' if ev.points is defined and ev.points >= 0 else 'neg' }}">{{ ptxt[:-2] if ptxt.endswith('.0') else ptxt }}</span></li>
         {%- endfor %}
       </ul>
       {%- endif %}
@@ -640,6 +656,25 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     </div>
     {%- endfor %}
   </details>
+  {%- endif %}
+  {#- C32 D2: vetoed / lossy-lineage sources -- never the pick, runner-up or an alternate. #}
+  {%- set excl_rows = source_rows | selectattr('group.value', 'equalto', 'excluded') | list -%}
+  {%- if excl_rows %}
+  <details class="side-groups excluded-group">
+    <summary>Excluded (lossy) &middot; {{ excl_rows | length }} source(s) not considered for the pick</summary>
+    {%- for r in excl_rows %}
+    <div class="grp">
+      <span class="lb" data-lb="source[].lb_id">{% if r.url is defined and r.url.value %}<a href="{{ r.url.value }}" target="_blank" rel="noopener">{{ r.lb_id.value }}</a>{% else %}{{ r.lb_id.value }}{% endif %}</span> &mdash;
+      {{ lbf('source[].excluded', r.excluded) if r.excluded is defined and r.excluded.value else 'excluded' }}
+      {%- if r.character is defined and r.character.value %}<div class="note">{{ lbf('source[].character', r.character) }}</div>{% endif %}
+    </div>
+    {%- endfor %}
+  </details>
+  {%- endif %}
+  {#- C32 D3: sources of a two-show day that name neither show; listed on both pages. #}
+  {%- set unassigned_rows = source_rows | selectattr('show_unassigned.value') | list -%}
+  {%- if unassigned_rows %}
+  <p class="stats-line" data-lb="source[].show_unassigned">Unassigned to a show (listed on both shows' pages): {{ unassigned_rows | map(attribute='lb_id.value') | join(', ') }}</p>
   {%- endif %}
 </section>
 {%- endif %}

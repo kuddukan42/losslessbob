@@ -434,7 +434,10 @@ def check_pick_lineage_stream(
     if status != 200:
         return []
     plain = html.unescape(re.sub(r"\s+", " ", _TAG_RE.sub(" ", text)))
-    hits = [kw for kw in ("stream", "kbps", "mp3") if kw in plain.lower()]
+    hits = [
+        kw for kw in ("stream", "kbps", "mp3")
+        if re.search(rf"\b\d*{kw}", plain, re.IGNORECASE)
+    ]
     if hits:
         return [
             Finding(
