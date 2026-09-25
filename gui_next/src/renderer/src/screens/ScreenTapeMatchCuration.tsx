@@ -1403,9 +1403,10 @@ function DateHeader({
                   : t('tapematch.curation.dateHeader.calibrationCurrent', { hash: f.calibrationHash }))
                 : t('tapematch.curation.dateHeader.calibrationUnknown')
               // TODO-295 — machine triage, kept visually subordinate to and
-              // distinct from the date-level "Needs review" Pill above: only
-              // surfaced when it fired (attention), styled as a quiet
-              // dashed-border hint rather than a status pill.
+              // distinct from the date-level "Needs review" Pill above:
+              // quiet dashed (attention) / dotted (clear) hints rather than status
+              // pills. 'clear' is the useful direction: 97.4% of clear dates were
+              // human-judged clean.
               const reasons = safeParseTriageReasons(f.autoTriageReasons, t)
               return (
                 <div key={f.famId} style={{
@@ -1440,6 +1441,18 @@ function DateHeader({
                       }}
                     >
                       {t('tapematch.curation.autoTriage.badge')}
+                    </span>
+                  )}
+                  {f.autoTriage === 'clear' && (
+                    <span
+                      title={t('tapematch.curation.autoTriage.clearTooltip')}
+                      style={{
+                        fontSize: 9, fontWeight: 500, color: 'var(--lbb-fg3)',
+                        border: '1px dotted var(--lbb-border)', borderRadius: 999,
+                        padding: '1px 5px', opacity: 0.8,
+                      }}
+                    >
+                      {t('tapematch.curation.autoTriage.clearBadge')}
                     </span>
                   )}
                 </div>
