@@ -56,7 +56,8 @@
       "fingerprint": "Vingerafdruk",
       "fileintegrity": "Bestandsintegriteit",
       "timeline": "Tijdlijn",
-      "scanner": "Schijfscanner"
+      "scanner": "Schijfscanner",
+      "checksumdisputes": "Geschillen over checksums"
     },
     "statusBar": {
       "db": "DB:",
@@ -1750,7 +1751,9 @@
       "toastExported": "Dossier geëxporteerd",
       "toastPdfFallback": "PDF niet beschikbaar buiten de app — in plaats daarvan HTML gedownload",
       "toastAmbiguous": "Op deze datum zijn er meerdere optredens — open het vanuit de bibliotheek om duidelijkheid te krijgen",
-      "toastFailed": "Het exporteren van het dossier is mislukt"
+      "toastFailed": "Het exporteren van het dossier is mislukt",
+      "show": "Weergeven",
+      "toastPickShow": "Er is meer dan één show op deze datum — kies er één en exporteer vervolgens opnieuw"
     },
     "bobtalk": {
       "label": "BobTalk in deze opname",
@@ -1835,6 +1838,130 @@
       "loadFailed": "Clips konden niet worden geladen, probeer het opnieuw.",
       "autoPlaceholder": "auto",
       "autoPickHint": "Laat leeg om automatisch een rustige zangpassage te selecteren"
+    },
+    "curation": {
+      "topBar": {
+        "screenName": "TapeMatch",
+        "tagline": "Curatie — de familie-oproepen van het algoritme per paar beoordelen",
+        "crawlStatus": "crawl {{status}} · {{runs}} runs · {{dates}} dates",
+        "crawlRunning": "actief",
+        "crawlIdle": "inactief",
+        "noCrawlLog": "nog geen crawl-logboek",
+        "startCrawl": "Start het crawlen",
+        "starting": "Beginnen…",
+        "stop": "Stop",
+        "stopping": "stoppen…",
+        "alreadyRunning": "al actief",
+        "crawlActionFailed": "kon {{action}} de crawl niet uitvoeren",
+        "judgedCount": "{{count}} beoordeeld"
+      },
+      "status": {
+        "conflict": "conflict",
+        "review": "beoordeling",
+        "clean": "schoon",
+        "curated": "samengesteld"
+      },
+      "filters": {
+        "needs": "We hebben jou nodig",
+        "conflicts": "Conflicten",
+        "all": "Alles",
+        "done": "Klaar"
+      },
+      "railEmpty": {
+        "needs": {
+          "head": "Niets heeft jou nodig.",
+          "body": "Alle gemarkeerde datums op deze pagina zijn opgelost."
+        },
+        "conflict": {
+          "head": "Er zijn geen conflicten meer.",
+          "body": "Alle meningsverschillen op deze pagina zijn opgelost."
+        },
+        "curated": {
+          "head": "Er is nog niets geaccepteerd.",
+          "body": "Data die je accepteert met `Accept families` worden hier verzameld."
+        },
+        "all": {
+          "head": "Nog geen data bekend.",
+          "body": "TapeMatch heeft nog geen geanalyseerde gegevens gesynchroniseerd met de app-database."
+        }
+      },
+      "rail": {
+        "title": "TRIAGE-WACHTRIJ",
+        "needCount": "{{count}} heeft jou nodig",
+        "queryPlaceholder": "datum, stad, 1974, jaren '70, conflict…",
+        "clearQuery": "Zoekopdracht wissen",
+        "yearBrushAll": "alles · sleep naar het selectiegebied",
+        "yearBrushTooltip": "{{year}} · {{count}} datums · {{need}} heb je nodig",
+        "resultCount": "van {{total}}-datums",
+        "reset": "reset",
+        "sortOldest": "oudste ↑",
+        "sortNewest": "nieuwste ↓",
+        "noMatchHead": "Er zijn geen overeenkomende datums.",
+        "noMatchBody": "Probeer een jaar of een stad, of wis de filters.",
+        "showAllDates": "Alle datums weergeven",
+        "kbd": {
+          "search": "zoeken",
+          "move": "verplaatsen",
+          "open": "open",
+          "clear": "leeg"
+        }
+      },
+      "soloCard": {
+        "folder": "Map",
+        "speed": "Snelheid",
+        "reference": "referentie",
+        "explanation": "Een enkele opname, waardoor deze een eigen familie vormt zonder dat bewijs nodig is. Het accepteren van records voegt de familie toe zonder dat er een menselijke beoordeling nodig is."
+      },
+      "autoTriage": {
+        "badge": "auto-flag",
+        "tooltipWithReasons": "automatische triage (lage nauwkeurigheid, geen definitief oordeel): {{reasons}}",
+        "tooltipNoReasons": "Machine Triage heeft deze datum gemarkeerd als aandachtspunt",
+        "rules": {
+          "r1Contradiction": "een claim in een infobestand dat de bron dezelfde is, wordt tegengesproken door een correlatie die bijna nul is",
+          "r3DurOutlier": "een bron waarvan de speelduur ver afwijkt van de mediaan van die datum",
+          "r5LabelSuspect": "tapematch heeft de LB-labels van een paar als verdacht gemarkeerd",
+          "r7AllZeroMulti": "4+ bronnen en geen enkel paar komt overeen (waarschijnlijk een uitlijningsfout)"
+        }
+      },
+      "dateHeader": {
+        "noSelection": "Selecteer een datum uit de triage-wachtrij.",
+        "unavailable": "niet beschikbaar",
+        "noRecordings": "geen opnames",
+        "loadError": "De analyse voor deze datum kon niet worden geladen",
+        "knownDateEmpty": "Bekende datum · niets beschikbaar in de bibliotheek",
+        "calibrationStale": "kalibratie {{hash}} — de meegeleverde configuratie is nu {{current}}",
+        "calibrationCurrent": "kalibratie {{hash}} — huidig",
+        "calibrationUnknown": "kalibratie onbekend",
+        "compareRuns": "Vergelijk uitvoeringen",
+        "compareRunsTooltip": "Vergelijk twee analyseresultaten van deze datum",
+        "openReport": "Open report.md",
+        "openReportTooltip": "Het door de run gegenereerde bestand report.md, voorzien van uw beoordelingen",
+        "judgeFirst": "Beoordeel eerst ten minste één paar",
+        "acceptTooltip": "Registreert de families van deze datum in de app-database · tapematch_date_curation",
+        "acceptFamilies": "Accept-families",
+        "acceptFamiliesJudged": "Families accepteren · {{count}} beoordeeld",
+        "accepting": "Wordt verwerkt…",
+        "accepted": "Geaccepteerd {{at}}"
+      },
+      "dossier": {
+        "selectPair": "Selecteer een paar",
+        "selectPairBody": "Klik op een willekeurige cel in de matrix om het bewijsdossier te openen — alle signalen die TapeMatch voor dat paar heeft gemeten, afgezet tegen de drempelwaarde.",
+        "noContact": "n.v.t.",
+        "corrNote": {
+          "notMeasured": "niet gemeten — snelheid onbekend",
+          "aboveThreshold": "Clusterdrempel ≥ 0,45 — samenvoegingen op basis van primair bewijs",
+          "secondaryPath": "onder de drempelwaarde — daarom werd het secundaire pad uitgevoerd",
+          "belowThreshold": "onder de drempelwaarde van 0,45 voor clusters"
+        },
+        "verdict": {
+          "sameFamilySecondary": "dezelfde familie · secundaire link",
+          "sameFamily": "dezelfde familie",
+          "notComparable": "niet vergelijkbaar",
+          "differentFamily": "verschillende familie"
+        },
+        "openInLibrary": "Open LB-{{lb}} in de bibliotheek",
+        "close": "Dossier sluiten"
+      }
     }
   },
   "onboarding": {
@@ -2477,5 +2604,72 @@
     "syntheticNote": "geïnstalleerd voordat de importgeschiedenis werd vastgelegd",
     "empty": "Er is nog geen catalogusoverzicht geïmporteerd.",
     "error": "De snapshotgeschiedenis kon niet worden geladen. Controleer of de backend actief is en laad vervolgens opnieuw."
+  },
+  "checksumDisputes": {
+    "title": "Geschillen over checksums",
+    "subtitle": "Triage door de curator — 312 bevindingen verspreid over 93 LB's, gegroepeerd op oordeel (TODO-299)",
+    "empty": "Er zijn geen openstaande geschillen voor dit filter.",
+    "count_one": "{{count}} bevinding",
+    "count_other": "Bevindingen {{count}}",
+    "reference": {
+      "all": "Eventuele referenties",
+      "db": "DB",
+      "lbdir": "lbdir"
+    },
+    "verdictFilter": {
+      "all": "Alles ({{count}})"
+    },
+    "verdict": {
+      "db_error": "Fout in de database",
+      "audio_differs": "Verschillende audioformaten",
+      "retag": "Alleen opnieuw taggen",
+      "receipt_unknown": "Niet verifieerbaar",
+      "lbdir_only": "alleen lbdir"
+    },
+    "confidence": {
+      "high": "Hoog",
+      "medium": "Medium",
+      "low": "Laag"
+    },
+    "status": {
+      "open": "Openen",
+      "confirmed": "Bevestigd",
+      "dismissed": "Afgewezen"
+    },
+    "action": {
+      "confirm": "Bevestigen",
+      "dismiss": "Sluiten"
+    },
+    "table": {
+      "lb": "LB#",
+      "filename": "Bestandsnaam",
+      "type": "Type",
+      "verdict": "Oordeel",
+      "confidence": "Zekerheid",
+      "notes": "Opmerkingen"
+    },
+    "badges": {
+      "orphan": "weeswaarde",
+      "orphanTitle": "De waarde van de uploader staat helemaal niet in de rij met checksums — een gebruiker die precies dit bestand heeft, krijgt de melding NOT FOUND",
+      "suspect": "verdachte bronnaam",
+      "suspectTitle": "De bestandsnaam geeft aan dat de inhoud ervan bestaat uit verwijderde bestanden (defecte, oude of verouderde bestanden).",
+      "collection": "uit de collectie",
+      "collectionTitle": "Lees uit een sidecar-bestand van de uploader in een verzamelmap, niet uit de mirror van de site",
+      "xref": "xref-bewijs",
+      "xrefTitle": "Het bewijs is afkomstig uit een manifest dat onder een andere LB voor dezelfde set bestanden is ingediend",
+      "displaced": "ook elders ingediend",
+      "displacedTitle": "De waarde van de uploader is aanwezig voor deze LB, opgeslagen onder een ander spoor: {{file}}"
+    },
+    "lookupAnnotation": {
+      "summary_one": "{{count}} NOT FOUND verklaard door een conflict met de checksum",
+      "summary_other": "{{count}} NIET GEVONDEN: verklaring door geschillen over checksums",
+      "pill": "Betwist",
+      "pillTitle": "Het bestand van de uploader komt overeen met een bekende foutieve DB-waarde voor LB-{{lb}} (betrouwbaarheid: {{confidence}}, status: {{status}})"
+    },
+    "entryBadge": {
+      "label_one": "{{count}} geschil open",
+      "label_other": "{{count}} openstaande geschillen",
+      "title": "Deze LB bevat openstaande bevindingen met betrekking tot checksum_disputes die wachten op beoordeling door de curator (TODO-299)"
+    }
   }
 }

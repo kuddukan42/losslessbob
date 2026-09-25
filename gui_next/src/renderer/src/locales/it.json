@@ -56,7 +56,8 @@
       "fingerprint": "Impronta digitale",
       "fileintegrity": "Integrità dei file",
       "timeline": "Cronologia",
-      "scanner": "Scanner del disco"
+      "scanner": "Scanner del disco",
+      "checksumdisputes": "Controversie relative ai checksum"
     },
     "statusBar": {
       "db": "DB:",
@@ -1750,7 +1751,9 @@
       "toastExported": "Dossier esportato",
       "toastPdfFallback": "PDF non disponibile al di fuori dell’app — scaricato invece in formato HTML",
       "toastAmbiguous": "Questa data presenta più di un evento: aprila dalla Libreria per chiarire quale sia quello corretto",
-      "toastFailed": "Esportazione del dossier non riuscita"
+      "toastFailed": "Esportazione del dossier non riuscita",
+      "show": "Mostra",
+      "toastPickShow": "Per questa data è presente più di un evento: scegline uno, quindi esporta nuovamente"
     },
     "bobtalk": {
       "label": "BobTalk in questa registrazione",
@@ -1835,6 +1838,130 @@
       "loadFailed": "Impossibile caricare i clip, riprova.",
       "autoPlaceholder": "auto",
       "autoPickHint": "Lasciare vuoto per selezionare automaticamente un passaggio vocale tranquillo"
+    },
+    "curation": {
+      "topBar": {
+        "screenName": "TapeMatch",
+        "tagline": "Cura dei contenuti — revisione delle chiamate della famiglia di algoritmi, coppia per coppia",
+        "crawlStatus": "crawl {{status}} · esecuzioni {{runs}} · date {{dates}}",
+        "crawlRunning": "in esecuzione",
+        "crawlIdle": "inattivo",
+        "noCrawlLog": "Non è ancora disponibile alcun log di scansione",
+        "startCrawl": "Avvia la scansione",
+        "starting": "Inizio…",
+        "stop": "Stop",
+        "stopping": "interruzione…",
+        "alreadyRunning": "già in esecuzione",
+        "crawlActionFailed": "Impossibile eseguire il crawl {{action}}",
+        "judgedCount": "{{count}} valutato"
+      },
+      "status": {
+        "conflict": "conflitto",
+        "review": "revisione",
+        "clean": "pulito",
+        "curated": "selezionate"
+      },
+      "filters": {
+        "needs": "Abbiamo bisogno di te",
+        "conflicts": "Conflitti",
+        "all": "Tutto",
+        "done": "Fatto"
+      },
+      "railEmpty": {
+        "needs": {
+          "head": "Nulla ha bisogno di te.",
+          "body": "Tutte le date contrassegnate in questa pagina sono state risolte."
+        },
+        "conflict": {
+          "head": "Non ci sono più conflitti.",
+          "body": "Tutte le controversie presenti in questa pagina sono state risolte."
+        },
+        "curated": {
+          "head": "Non è stato ancora accettato nulla.",
+          "body": "Le date che accetti con «Accetta famiglie» vengono raccolte qui."
+        },
+        "all": {
+          "head": "Non ci sono ancora date.",
+          "body": "TapeMatch non ha sincronizzato alcuna data analizzata nel database dell’app."
+        }
+      },
+      "rail": {
+        "title": "CODA DI TRIAGE",
+        "needCount": "{{count}} ha bisogno di te",
+        "queryPlaceholder": "data, città, 1974, anni '70, conflitto…",
+        "clearQuery": "Cancella query",
+        "yearBrushAll": "tutto · trascina per selezionare l’area",
+        "yearBrushTooltip": "{{year}} · {{count}} date · {{need}} hai bisogno di te",
+        "resultCount": "delle date {{total}}",
+        "reset": "ripristina",
+        "sortOldest": "più vecchio ↑",
+        "sortNewest": "più recenti ↓",
+        "noMatchHead": "Nessuna data corrispondente.",
+        "noMatchBody": "Prova a selezionare un anno, una città oppure cancella i filtri.",
+        "showAllDates": "Mostra tutte le date",
+        "kbd": {
+          "search": "ricerca",
+          "move": "sposta",
+          "open": "apri",
+          "clear": "cancella"
+        }
+      },
+      "soloCard": {
+        "folder": "Cartella",
+        "speed": "Velocità",
+        "reference": "riferimento",
+        "explanation": "Si tratta di una registrazione unica, quindi costituisce una famiglia a sé stante senza bisogno di ulteriori prove. L’accettazione registra la famiglia senza che sia necessario un giudizio da parte di una coppia di valutatori umani."
+      },
+      "autoTriage": {
+        "badge": "auto-flag",
+        "tooltipWithReasons": "valutazione automatica (bassa precisione, non è un verdetto): {{reasons}}",
+        "tooltipNoReasons": "Il sistema di triage automatico ha segnalato questa data come meritevole di attenzione",
+        "rules": {
+          "r1Contradiction": "un'affermazione relativa alla stessa fonte del file info contraddetta da una correlazione prossima allo zero",
+          "r3DurOutlier": "una fonte la cui durata è ben al di fuori della mediana della data",
+          "r5LabelSuspect": "tapematch ha contrassegnato l’etichettatura LB di una coppia come sospetta",
+          "r7AllZeroMulti": "4+ fonti e nessuna coppia è correlata (probabile errore di allineamento)"
+        }
+      },
+      "dateHeader": {
+        "noSelection": "Selezionare una data dalla coda di triage.",
+        "unavailable": "non disponibile",
+        "noRecordings": "nessuna registrazione",
+        "loadError": "Impossibile caricare l'analisi relativa a questa data",
+        "knownDateEmpty": "Data nota · nessun esemplare disponibile in biblioteca",
+        "calibrationStale": "calibrazione {{hash}} — la configurazione fornita è ora {{current}}",
+        "calibrationCurrent": "calibrazione {{hash}} — attuale",
+        "calibrationUnknown": "calibrazione sconosciuta",
+        "compareRuns": "Confronta le esecuzioni",
+        "compareRunsTooltip": "Confronta due analisi eseguite in questa data",
+        "openReport": "Apri report.md",
+        "openReportTooltip": "Il file report.md generato dall'esecuzione, corredato delle tue valutazioni",
+        "judgeFirst": "Valuta prima almeno una coppia",
+        "acceptTooltip": "Registra le famiglie di questa data nel database dell’app · tapematch_date_curation",
+        "acceptFamilies": "Accetta famiglie",
+        "acceptFamiliesJudged": "Famiglie accettate · {{count}} valutato",
+        "accepting": "In attesa...",
+        "accepted": "Accettato {{at}}"
+      },
+      "dossier": {
+        "selectPair": "Seleziona una coppia",
+        "selectPairBody": "Fare clic su una qualsiasi cella della matrice per aprire il dossier delle prove — ogni segnale misurato da TapeMatch per quella coppia, rispetto alla sua soglia.",
+        "noContact": "n/c",
+        "corrNote": {
+          "notMeasured": "non misurato — velocità: fonte sconosciuta",
+          "aboveThreshold": "Soglia di cluster ≥ 0,45 — unioni basate su prove primarie",
+          "secondaryPath": "al di sotto della soglia — ecco perché si è attivato il percorso secondario",
+          "belowThreshold": "al di sotto della soglia di cluster 0,45"
+        },
+        "verdict": {
+          "sameFamilySecondary": "stessa famiglia · link secondario",
+          "sameFamily": "stessa famiglia",
+          "notComparable": "non comparabile",
+          "differentFamily": "famiglia diversa"
+        },
+        "openInLibrary": "Apri LB-{{lb}} nella Libreria",
+        "close": "Chiudi il dossier"
+      }
     }
   },
   "onboarding": {
@@ -2477,5 +2604,72 @@
     "syntheticNote": "installato prima che venisse registrata la cronologia delle importazioni",
     "empty": "Non è stata ancora importata alcuna istantanea del catalogo.",
     "error": "Impossibile caricare la cronologia degli snapshot. Verificare che il backend sia in esecuzione, quindi ricaricare."
+  },
+  "checksumDisputes": {
+    "title": "Controversie relative ai checksum",
+    "subtitle": "Selezione dei curatori — 312 risultati in 93 librerie, raggruppati per verdetto (TODO-299)",
+    "empty": "Nessuna controversia in corso per questo filtro.",
+    "count_one": "Risultato {{count}}",
+    "count_other": "Risultati {{count}}",
+    "reference": {
+      "all": "Qualsiasi riferimento",
+      "db": "DB",
+      "lbdir": "lbdir"
+    },
+    "verdictFilter": {
+      "all": "Tutto ({{count}})"
+    },
+    "verdict": {
+      "db_error": "Errore nel database",
+      "audio_differs": "Diversi formati audio",
+      "retag": "Solo rietichettatura",
+      "receipt_unknown": "Non verificabile",
+      "lbdir_only": "solo lbdir"
+    },
+    "confidence": {
+      "high": "Alta",
+      "medium": "Medio",
+      "low": "Basso"
+    },
+    "status": {
+      "open": "Apri",
+      "confirmed": "Confermato",
+      "dismissed": "Rifiutato"
+    },
+    "action": {
+      "confirm": "Conferma",
+      "dismiss": "Chiudi"
+    },
+    "table": {
+      "lb": "LB#",
+      "filename": "Nome file",
+      "type": "Tipo",
+      "verdict": "Verdetto",
+      "confidence": "Fiducia",
+      "notes": "Note"
+    },
+    "badges": {
+      "orphan": "valore orfano",
+      "orphanTitle": "Il valore dell'uploader non compare in nessuna riga dei checksum: un utente in possesso di questo file specifico riceve semplicemente il messaggio NOT FOUND",
+      "suspect": "nome sorgente sospetto",
+      "suspectTitle": "Il nome del file sorgente indica che il suo contenuto è costituito da elementi scartati (difettosi/obsoleti/sostituiti)",
+      "collection": "dalla raccolta",
+      "collectionTitle": "Lettura da un file sidecar dell’uploader presente in una cartella della raccolta, non dal mirror del sito",
+      "xref": "prova xref",
+      "xrefTitle": "La prova proviene da un manifesto depositato nell’ambito di un altro LB relativo allo stesso insieme di file",
+      "displaced": "archiviato anche altrove",
+      "displacedTitle": "Il valore dell’uploader esiste per questo LB, archiviato sotto un’altra traccia: {{file}}"
+    },
+    "lookupAnnotation": {
+      "summary_one": "{{count}} NOT FOUND: spiegazione dovuta a una discrepanza nel checksum",
+      "summary_other": "{{count}} NON TROVATO: spiegazione relativa alle discrepanze nel checksum",
+      "pill": "Contestato",
+      "pillTitle": "Il file caricato corrisponde a un valore del database noto come errato per LB-{{lb}} (affidabilità: {{confidence}}, stato: {{status}})"
+    },
+    "entryBadge": {
+      "label_one": "{{count}} controversia aperta",
+      "label_other": "{{count}} controversie aperte",
+      "title": "Questo LB presenta risultati aperti relativi a checksum_disputes in attesa di valutazione da parte del curatore (TODO-299)"
+    }
   }
 }

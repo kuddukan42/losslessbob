@@ -56,7 +56,8 @@
       "fingerprint": "Empreinte digitale",
       "fileintegrity": "Intégrité des fichiers",
       "timeline": "Chronologie",
-      "scanner": "Analyseur de disque"
+      "scanner": "Analyseur de disque",
+      "checksumdisputes": "Litiges relatifs aux sommes de contrôle"
     },
     "statusBar": {
       "db": "DB :",
@@ -1750,7 +1751,9 @@
       "toastExported": "Dossier exporté",
       "toastPdfFallback": "PDF indisponible en dehors de l'application — téléchargement au format HTML à la place",
       "toastAmbiguous": "Cette date comporte plusieurs concerts — ouvrez-la depuis la Bibliothèque pour lever toute ambiguïté",
-      "toastFailed": "Échec de l'exportation du dossier"
+      "toastFailed": "Échec de l'exportation du dossier",
+      "show": "Afficher",
+      "toastPickShow": "Cette date comporte plusieurs concerts — choisissez-en un, puis réexportez"
     },
     "bobtalk": {
       "label": "BobTalk dans cet enregistrement",
@@ -1835,6 +1838,130 @@
       "loadFailed": "Impossible de charger les extraits, réessayez.",
       "autoPlaceholder": "auto",
       "autoPickHint": "Laissez ce champ vide pour sélectionner automatiquement un passage vocal calme"
+    },
+    "curation": {
+      "topBar": {
+        "screenName": "TapeMatch",
+        "tagline": "Curation — examiner les appels de la famille d’algorithmes, paire par paire",
+        "crawlStatus": "crawl {{status}} · {{runs}} exécutions · {{dates}} dates",
+        "crawlRunning": "en cours d'exécution",
+        "crawlIdle": "inactif",
+        "noCrawlLog": "Pas encore de journal d'exploration",
+        "startCrawl": "Lancer l'exploration",
+        "starting": "C'est parti…",
+        "stop": "Arrêter",
+        "stopping": "arrêt…",
+        "alreadyRunning": "déjà en cours d'exécution",
+        "crawlActionFailed": "Impossible d'effectuer le crawl {{action}}",
+        "judgedCount": "{{count}} évalué"
+      },
+      "status": {
+        "conflict": "conflit",
+        "review": "révision",
+        "clean": "propre",
+        "curated": "sélectionnées"
+      },
+      "filters": {
+        "needs": "On a besoin de toi",
+        "conflicts": "Conflits",
+        "all": "Tout",
+        "done": "Terminé"
+      },
+      "railEmpty": {
+        "needs": {
+          "head": "Rien n'a besoin de toi.",
+          "body": "Toutes les dates signalées sur cette page ont été résolues."
+        },
+        "conflict": {
+          "head": "Il n'y a plus de conflits.",
+          "body": "Tous les désaccords mentionnés sur cette page ont été résolus."
+        },
+        "curated": {
+          "head": "Aucune proposition n'a encore été acceptée.",
+          "body": "Les dates que vous acceptez avec « Accept families » sont regroupées ici."
+        },
+        "all": {
+          "head": "Pas encore de dates.",
+          "body": "TapeMatch n’a synchronisé aucune date analysée dans la base de données de l’application."
+        }
+      },
+      "rail": {
+        "title": "FILE D'ATTENTE DE TRIAGE",
+        "needCount": "{{count}} a besoin de vous",
+        "queryPlaceholder": "date, ville, 1974, années 70, conflit…",
+        "clearQuery": "Effacer la requête",
+        "yearBrushAll": "tout · glisser pour sélectionner",
+        "yearBrushTooltip": "{{year}} · {{count}} dates · {{need}} a besoin de vous",
+        "resultCount": "des dates {{total}}",
+        "reset": "réinitialiser",
+        "sortOldest": "les plus anciens ↑",
+        "sortNewest": "les plus récents ↓",
+        "noMatchHead": "Aucune date ne correspond.",
+        "noMatchBody": "Essayez d’une année, d’une ville, ou effacez les filtres.",
+        "showAllDates": "Afficher toutes les dates",
+        "kbd": {
+          "search": "recherche",
+          "move": "déplacer",
+          "open": "ouvrir",
+          "clear": "effacer"
+        }
+      },
+      "soloCard": {
+        "folder": "Dossier",
+        "speed": "Vitesse",
+        "reference": "référence",
+        "explanation": "Enregistrement unique, ce qui lui permet de constituer sa propre famille sans qu'aucune preuve ne soit nécessaire. L'acceptation enregistre la famille sans qu'un jugement humain ne soit nécessaire."
+      },
+      "autoTriage": {
+        "badge": "auto-flag",
+        "tooltipWithReasons": "triage automatique (faible précision, ne constitue pas un verdict) : {{reasons}}",
+        "tooltipNoReasons": "Le triage automatique a signalé cette date comme nécessitant une attention particulière",
+        "rules": {
+          "r1Contradiction": "une revendication de même source concernant un fichier d'information contredite par une corrélation quasi nulle",
+          "r3DurOutlier": "une source dont la durée de la représentation est bien éloignée de la médiane de la date",
+          "r5LabelSuspect": "tapematch a signalé l'étiquetage LB d'une paire comme suspect",
+          "r7AllZeroMulti": "Plus de 4 sources et aucune paire ne correspond (probablement un problème d'alignement)"
+        }
+      },
+      "dateHeader": {
+        "noSelection": "Sélectionnez une date dans la file d'attente de tri.",
+        "unavailable": "indisponible",
+        "noRecordings": "aucun enregistrement",
+        "loadError": "Impossible de charger l’analyse de cette date",
+        "knownDateEmpty": "Date connue · aucun exemplaire disponible à la bibliothèque",
+        "calibrationStale": "étalonnage {{hash}} — la configuration livrée est désormais {{current}}",
+        "calibrationCurrent": "étalonnage {{hash}} — en cours",
+        "calibrationUnknown": "étalonnage inconnu",
+        "compareRuns": "Comparer les exécutions",
+        "compareRunsTooltip": "Comparer deux analyses effectuées à cette date",
+        "openReport": "Ouvrir le fichier report.md",
+        "openReportTooltip": "Le fichier report.md généré par l'exécution, annoté avec vos évaluations",
+        "judgeFirst": "Évaluez d'abord au moins une paire",
+        "acceptTooltip": "Enregistre les familles de cette date dans la base de données de l'application · tapematch_date_curation",
+        "acceptFamilies": "Familles acceptées",
+        "acceptFamiliesJudged": "Familles acceptées · {{count}} évalué",
+        "accepting": "En cours d'acceptation…",
+        "accepted": "Accepté {{at}}"
+      },
+      "dossier": {
+        "selectPair": "Sélectionnez une paire",
+        "selectPairBody": "Cliquez sur n'importe quelle cellule de la matrice pour ouvrir le dossier de preuves — tous les signaux mesurés par TapeMatch pour cette paire, comparés à son seuil.",
+        "noContact": "n/c",
+        "corrNote": {
+          "notMeasured": "non mesuré — source dont la vitesse est inconnue",
+          "aboveThreshold": "Seuil de regroupement ≥ 0,45 — fusions basées sur des preuves primaires",
+          "secondaryPath": "en dessous du seuil — c’est pourquoi le chemin secondaire s’est déclenché",
+          "belowThreshold": "en dessous du seuil de cluster de 0,45"
+        },
+        "verdict": {
+          "sameFamilySecondary": "même famille · lien secondaire",
+          "sameFamily": "même famille",
+          "notComparable": "non comparable",
+          "differentFamily": "famille différente"
+        },
+        "openInLibrary": "Ouvrez LB-{{lb}} dans la bibliothèque",
+        "close": "Fermer le dossier"
+      }
     }
   },
   "onboarding": {
@@ -2477,5 +2604,72 @@
     "syntheticNote": "installé avant que l'historique des importations ne soit enregistré",
     "empty": "Aucun instantané de catalogue n’a encore été importé.",
     "error": "L'historique des instantanés n'a pas pu être chargé. Vérifiez que le serveur est en cours d'exécution, puis rechargez la page."
+  },
+  "checksumDisputes": {
+    "title": "Litiges relatifs aux sommes de contrôle",
+    "subtitle": "Triage des résultats de Curator — 312 résultats répartis sur 93 bibliothèques, regroupés par verdict (TODO-299)",
+    "empty": "Aucun litige en cours concernant ce filtre.",
+    "count_one": "{{count}} recherche",
+    "count_other": "Conclusions {{count}}",
+    "reference": {
+      "all": "Toute référence",
+      "db": "Base de données",
+      "lbdir": "lbdir"
+    },
+    "verdictFilter": {
+      "all": "Tout ({{count}})"
+    },
+    "verdict": {
+      "db_error": "Erreur de base de données",
+      "audio_differs": "Différents formats audio",
+      "retag": "Réétiqueter uniquement",
+      "receipt_unknown": "Non vérifiable",
+      "lbdir_only": "lbdir uniquement"
+    },
+    "confidence": {
+      "high": "Haut",
+      "medium": "Moyen",
+      "low": "Faible"
+    },
+    "status": {
+      "open": "Ouvrir",
+      "confirmed": "Confirmé",
+      "dismissed": "Rejeté"
+    },
+    "action": {
+      "confirm": "Confirmer",
+      "dismiss": "Fermer"
+    },
+    "table": {
+      "lb": "LB#",
+      "filename": "Nom de fichier",
+      "type": "Type",
+      "verdict": "Verdict",
+      "confidence": "Confiance",
+      "notes": "Remarques"
+    },
+    "badges": {
+      "orphan": "valeur orpheline",
+      "orphanTitle": "La valeur de l'outil de téléchargement se trouve dans la ligne « aucune somme de contrôle » : un utilisateur disposant exactement de ce fichier obtient simplement le message « NOT FOUND ».",
+      "suspect": "nom de la source suspecte",
+      "suspectTitle": "Le nom du fichier source indique que son contenu correspond aux éléments mis au rebut (défectueux, anciens ou remplacés).",
+      "collection": "de la collection",
+      "collectionTitle": "Lecture à partir d'un fichier « sidecar » de l'outil de téléchargement situé dans un dossier de collection, et non à partir du miroir du site",
+      "xref": "référence croisée",
+      "xrefTitle": "Ces éléments proviennent d'un manifeste déposé dans le cadre d'une autre procédure LB concernant le même ensemble de fichiers.",
+      "displaced": "également classé ailleurs",
+      "displacedTitle": "La valeur de l'outil de téléchargement existe pour ce LB, classée sous une autre piste : {{file}}"
+    },
+    "lookupAnnotation": {
+      "summary_one": "{{count}} NOT FOUND : explication liée à un conflit de somme de contrôle",
+      "summary_other": "{{count}} NOT FOUND : explication liée à des conflits de somme de contrôle",
+      "pill": "Contesté",
+      "pillTitle": "Le fichier envoyé par l'utilisateur correspond à une valeur de base de données connue pour être erronée pour LB-{{lb}} (confiance : {{confidence}}, statut : {{status}})"
+    },
+    "entryBadge": {
+      "label_one": "{{count}} litige en cours",
+      "label_other": "{{count}} litiges en cours",
+      "title": "Ce ticket LB contient des résultats de checksum_disputes en attente d'un tri par le curateur (TODO-299)"
+    }
   }
 }

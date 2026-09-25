@@ -56,7 +56,8 @@
       "fingerprint": "Huella digital",
       "fileintegrity": "Integridad de los archivos",
       "timeline": "Cronología",
-      "scanner": "Escáner de disco"
+      "scanner": "Escáner de disco",
+      "checksumdisputes": "Controversias sobre sumas de comprobación"
     },
     "statusBar": {
       "db": "BD:",
@@ -1750,7 +1751,9 @@
       "toastExported": "Exportación del dossier",
       "toastPdfFallback": "El PDF no está disponible fuera de la aplicación; en su lugar, se descarga el HTML.",
       "toastAmbiguous": "Esta fecha tiene más de un evento: ábrela desde la Biblioteca para aclarar la ambigüedad.",
-      "toastFailed": "Error al exportar el expediente"
+      "toastFailed": "Error al exportar el expediente",
+      "show": "Mostrar",
+      "toastPickShow": "Esta fecha tiene más de un espectáculo: elige uno y vuelve a exportar."
     },
     "bobtalk": {
       "label": "BobTalk en esta grabación",
@@ -1835,6 +1838,130 @@
       "loadFailed": "No se han podido cargar los clips. Inténtalo de nuevo.",
       "autoPlaceholder": "auto",
       "autoPickHint": "Déjalo en blanco para que se seleccione automáticamente un pasaje vocal tranquilo"
+    },
+    "curation": {
+      "topBar": {
+        "screenName": "TapeMatch",
+        "tagline": "Curación: revisar las llamadas de la familia del algoritmo, par por par",
+        "crawlStatus": "rastreo {{status}} · ejecuciones de {{runs}} · fechas de {{dates}}",
+        "crawlRunning": "en ejecución",
+        "crawlIdle": "inactivo",
+        "noCrawlLog": "Aún no hay ningún registro de rastreo.",
+        "startCrawl": "Iniciar rastreo",
+        "starting": "Comenzando…",
+        "stop": "Detener",
+        "stopping": "deteniéndose…",
+        "alreadyRunning": "ya en ejecución",
+        "crawlActionFailed": "No se pudo realizar el rastreo {{action}}",
+        "judgedCount": "{{count}} evaluado"
+      },
+      "status": {
+        "conflict": "conflicto",
+        "review": "revisión",
+        "clean": "limpio",
+        "curated": "seleccionadas"
+      },
+      "filters": {
+        "needs": "Te necesitamos",
+        "conflicts": "Conflictos",
+        "all": "Todo",
+        "done": "Hecho"
+      },
+      "railEmpty": {
+        "needs": {
+          "head": "Nada te necesita.",
+          "body": "Todas las fechas señaladas en esta página están resueltas."
+        },
+        "conflict": {
+          "head": "No quedan conflictos.",
+          "body": "Se han resuelto todas las discrepancias de esta página."
+        },
+        "curated": {
+          "head": "Aún no se ha aceptado ninguna propuesta.",
+          "body": "Las fechas que aceptes con «Aceptar familias» se recopilan aquí."
+        },
+        "all": {
+          "head": "Aún no hay fechas.",
+          "body": "TapeMatch no ha sincronizado ninguna de las fechas analizadas con la base de datos de la aplicación."
+        }
+      },
+      "rail": {
+        "title": "COLA DE TRIAJE",
+        "needCount": "{{count}} te necesita",
+        "queryPlaceholder": "fecha, ciudad, 1974, los 70, conflicto…",
+        "clearQuery": "Borrar consulta",
+        "yearBrushAll": "todo · arrastrar al ámbito",
+        "yearBrushTooltip": "{{year}} · {{count}} fechas · {{need}} te necesitamos",
+        "resultCount": "de las fechas de {{total}}",
+        "reset": "Restablecer",
+        "sortOldest": "más antiguo ↑",
+        "sortNewest": "más recientes ↓",
+        "noMatchHead": "No hay fechas que coincidan.",
+        "noMatchBody": "Prueba a seleccionar un año, una ciudad o desactiva los filtros.",
+        "showAllDates": "Mostrar todas las fechas",
+        "kbd": {
+          "search": "buscar",
+          "move": "mover",
+          "open": "abrir",
+          "clear": "borrar"
+        }
+      },
+      "soloCard": {
+        "folder": "Carpeta",
+        "speed": "Velocidad",
+        "reference": "referencia",
+        "explanation": "Se trata de una grabación única, por lo que se convierte en su propia familia sin necesidad de pruebas. Se acepta la grabación en la familia sin necesidad de una valoración humana por pares."
+      },
+      "autoTriage": {
+        "badge": "marcado automático",
+        "tooltipWithReasons": "clasificación automática (baja precisión, no es un veredicto): {{reasons}}",
+        "tooltipNoReasons": "El sistema de clasificación automática ha marcado esta fecha para que se le preste atención.",
+        "rules": {
+          "r1Contradiction": "Una afirmación sobre el mismo origen de un archivo de información contradicha por una correlación casi nula.",
+          "r3DurOutlier": "una fuente cuya duración de la interpretación se aleja considerablemente de la mediana de la fecha",
+          "r5LabelSuspect": "tapematch ha marcado como sospechosa la etiqueta LB de un par",
+          "r7AllZeroMulti": "Más de 4 fuentes y ni una sola pareja se corresponde (probablemente un error de alineación)"
+        }
+      },
+      "dateHeader": {
+        "noSelection": "Selecciona una fecha de la cola de clasificación.",
+        "unavailable": "no disponible",
+        "noRecordings": "No hay grabaciones",
+        "loadError": "No se ha podido cargar el análisis de esta fecha",
+        "knownDateEmpty": "Fecha conocida · no hay nada disponible en la biblioteca",
+        "calibrationStale": "Calibración {{hash}}: la configuración predeterminada es ahora {{current}}",
+        "calibrationCurrent": "calibración {{hash}} — actual",
+        "calibrationUnknown": "calibración desconocida",
+        "compareRuns": "Comparar ejecuciones",
+        "compareRunsTooltip": "Comparar dos ejecuciones de análisis de esta fecha",
+        "openReport": "Abrir report.md",
+        "openReportTooltip": "El archivo report.md generado por la ejecución, con tus comentarios anotados.",
+        "judgeFirst": "Evalúa primero al menos un par",
+        "acceptTooltip": "Registra las familias de esta fecha en la base de datos de la aplicación · tapematch_date_curation",
+        "acceptFamilies": "Aceptar familias",
+        "acceptFamiliesJudged": "Aceptar familias · {{count}} evaluado",
+        "accepting": "Aceptando…",
+        "accepted": "Aceptado {{at}}"
+      },
+      "dossier": {
+        "selectPair": "Selecciona un par",
+        "selectPairBody": "Haz clic en cualquier celda de la matriz para abrir el expediente de pruebas: todas las señales que TapeMatch ha medido para ese par, comparadas con su umbral.",
+        "noContact": "n/c",
+        "corrNote": {
+          "notMeasured": "sin medir — fuente de velocidad desconocida",
+          "aboveThreshold": "Umbral de clúster ≥ 0,45: fusiona basándose en la evidencia primaria",
+          "secondaryPath": "por debajo del umbral — por eso se ejecutó la ruta secundaria",
+          "belowThreshold": "por debajo del umbral de agrupamiento de 0,45"
+        },
+        "verdict": {
+          "sameFamilySecondary": "misma familia · enlace secundario",
+          "sameFamily": "misma familia",
+          "notComparable": "no comparable",
+          "differentFamily": "familia diferente"
+        },
+        "openInLibrary": "Abre LB-{{lb}} en la biblioteca",
+        "close": "Cerrar expediente"
+      }
     }
   },
   "onboarding": {
@@ -2477,5 +2604,72 @@
     "syntheticNote": "Se instaló antes de que se registrara el historial de importaciones",
     "empty": "Aún no se ha importado ninguna instantánea del catálogo.",
     "error": "No se ha podido cargar el historial de instantáneas. Comprueba que el servidor esté en funcionamiento y vuelve a cargarlo."
+  },
+  "checksumDisputes": {
+    "title": "Controversias sobre sumas de comprobación",
+    "subtitle": "Clasificación de Curator: 312 hallazgos repartidos en 93 LB, agrupados por veredicto (TODO-299)",
+    "empty": "No hay disputas pendientes para este filtro.",
+    "count_one": "{{count}} hallazgo",
+    "count_other": "Conclusiones de {{count}}",
+    "reference": {
+      "all": "Cualquier referencia",
+      "db": "B.D.",
+      "lbdir": "lbdir"
+    },
+    "verdictFilter": {
+      "all": "Todo ({{count}})"
+    },
+    "verdict": {
+      "db_error": "Error en la base de datos",
+      "audio_differs": "Diferentes formatos de audio",
+      "retag": "Solo reetiquetar",
+      "receipt_unknown": "No verificable",
+      "lbdir_only": "solo lbdir"
+    },
+    "confidence": {
+      "high": "Alta",
+      "medium": "Medio",
+      "low": "Bajo"
+    },
+    "status": {
+      "open": "Abrir",
+      "confirmed": "Confirmado",
+      "dismissed": "Rechazado"
+    },
+    "action": {
+      "confirm": "Confirmar",
+      "dismiss": "Cerrar"
+    },
+    "table": {
+      "lb": "LB#",
+      "filename": "Nombre de archivo",
+      "type": "Tipo",
+      "verdict": "Veredicto",
+      "confidence": "Confianza",
+      "notes": "Notas"
+    },
+    "badges": {
+      "orphan": "valor huérfano",
+      "orphanTitle": "El valor del cargador no aparece en ninguna fila de sumas de comprobación; un usuario que tenga este archivo concreto obtendrá un simple «NO ENCONTRADO».",
+      "suspect": "nombre de la fuente sospechosa",
+      "suspectTitle": "El nombre del archivo fuente indica que su contenido son los archivos descartados (defectuosos, antiguos o sustituidos).",
+      "collection": "de la colección",
+      "collectionTitle": "Leer desde un archivo «sidecar» del programa de subida en una carpeta de la colección, no desde el sitio espejo.",
+      "xref": "Referencia cruzada",
+      "xrefTitle": "Las pruebas proceden de un manifiesto presentado en el marco de otro LB para el mismo conjunto de archivos.",
+      "displaced": "también archivado en otra sección",
+      "displacedTitle": "El valor del cargador existe para este LB, archivado en otra pista: {{file}}"
+    },
+    "lookupAnnotation": {
+      "summary_one": "{{count}} NOT FOUND: explicación debida a un conflicto de suma de comprobación",
+      "summary_other": "{{count}} NOT FOUND: explicación debido a discrepancias en la suma de comprobación",
+      "pill": "En disputa",
+      "pillTitle": "El archivo subido coincide con un valor de la base de datos que se sabe que es erróneo para LB-{{lb}} (confianza: {{confidence}}, estado: {{status}})"
+    },
+    "entryBadge": {
+      "label_one": "{{count}} disputa abierta",
+      "label_other": "{{count}} disputas pendientes",
+      "title": "Este LB tiene incidencias abiertas relacionadas con checksum_disputes que esperan la clasificación por parte del curador (TODO-299)"
+    }
   }
 }
