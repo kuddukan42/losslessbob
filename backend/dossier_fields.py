@@ -2295,33 +2295,183 @@ def _instrument_tokens(text: str) -> set[str]:
     return {_INSTRUMENT_CANON[m.group(1).lower()] for m in _INSTRUMENT_RE.finditer(text)}
 
 
-def instrument_tally(lineup: str | None, song_count: int) -> Counter[str]:
-    """``stats.instrument_tally`` (C23, plan line 639): per-instrument song counts.
+# --- TODO-347: Dylan's default on-stage instrumentation, by era -----------
+#
+# The lineup's per-song/range override clauses (read by
+# :func:`_lineup_range_clauses`) exist to record *changes* from Dylan's usual
+# instrument for that stretch of the show, but plenty of them are routine --
+# a harmonica break most nights, another band member confirming they're
+# still on guitar -- and not worth a reader's attention (that was the raw
+# per-instrument tally's problem: "harp x 17, guitar x 17, ..." listed the
+# routine ones right alongside anything genuinely unusual).
+#
+# What's noteworthy is when Dylan's own instrument falls outside the small
+# set that's unremarkable for the show's era. The two eras and their default
+# sets below were read off the corpus itself: aggregate
+# ``_instrument_tokens()`` over every ``olof_events.lineup`` override clause,
+# grouped by year --
+#   .venv/bin/python3 -c "
+#   import sqlite3, collections
+#   from backend import dossier_fields as df
+#   conn = sqlite3.connect('data/losslessbob.db')
+#   rows = conn.execute(\"SELECT date_str, lineup FROM olof_events \"
+#       \"WHERE lineup != '' AND date_str != ''\").fetchall()
+#   by_year = collections.defaultdict(collections.Counter)
+#   for date_str, lineup in rows:
+#       for positions, text in df._lineup_range_clauses(lineup):
+#           for t in df._instrument_tokens(text):
+#               by_year[int(date_str[:4])][t] += 1
+#   for y in sorted(by_year): print(y, by_year[y].most_common(5))
+#   " (run 2026-09-22)
+# Every year through 2001 has guitar/harp/vocal as the dominant override
+# instruments -- piano/keyboard shows up too (e.g. the 1978-81 Gospel-era
+# sets), but only for specific songs, so it correctly stays a flagged
+# exception (matching this TODO's own "piano on 6" example). From 2002 the
+# mix flips: harp stays constant but keyboard overtakes guitar as the
+# dominant override instrument, tracking Dylan's well-documented full-time
+# move to piano/keyboard on stage -- so guitar becomes that era's exception
+# instead.
+ERA_KEYBOARD_START_YEAR = 2002
 
-    Counts, per instrument, how many songs its per-song/range override clause
-    covers -- one increment per covered song, not per mention (so a clause
-    naming "guitar" twice for the same song still counts once). Only reads
-    the override clauses (:func:`_lineup_range_clauses`); the base personnel
-    is never generalised onto uncovered songs (audit M13).
+# Unremarkable in every era: Dylan sings every show, and a harmonica break is
+# a near-nightly occurrence throughout his career.
+_ALWAYS_DEFAULT_INSTRUMENTS: frozenset[str] = frozenset({"vocal", "harp"})
+
+# Additional per-era default, layered on top of _ALWAYS_DEFAULT_INSTRUMENTS.
+ERA_PRE_KEYBOARD_DEFAULT: frozenset[str] = frozenset({"guitar"})
+ERA_KEYBOARD_DEFAULT: frozenset[str] = frozenset({"keyboard"})
+
+# Raw instrument word -> display label. Deliberately *not* the same mapping
+# as _INSTRUMENT_CANON: canon folds piano/organ/keyboard(s) into one bucket
+# for default-comparison purposes, but the display should keep the word the
+# lineup text actually used ("piano on 6", not "keyboard on 6").
+_INSTRUMENT_DISPLAY = {
+    "harmonica": "harmonica", "harp": "harp",
+    "piano": "piano", "organ": "organ", "keyboard": "keyboard", "keyboards": "keyboard",
+    "guitar": "guitar",
+    "bass": "bass",
+    "drum": "drums", "drums": "drums",
+    "violin": "violin", "fiddle": "fiddle",
+    "banjo": "banjo",
+    "mandolin": "mandolin",
+    "vocal": "vocal", "vocals": "vocal",
+    "pedal steel": "pedal steel",
+    "accordion": "accordion",
+}
+
+_SOLO_TEXT_RE = re.compile(r"\bsolo\b", re.IGNORECASE)
+_ACOUSTIC_RE = re.compile(r"\bacoustic\b", re.IGNORECASE)
+
+
+def _era_default_instruments(year: int | None) -> frozenset[str]:
+    """The canonical instrument names that are unremarkable for *year*.
+
+    Args:
+        year: The show's year, or ``None`` (falls back to the pre-2002
+            default set -- the more common era in the corpus).
+
+    Returns:
+        ``_ALWAYS_DEFAULT_INSTRUMENTS`` plus the era's own default
+        (:data:`ERA_PRE_KEYBOARD_DEFAULT` or :data:`ERA_KEYBOARD_DEFAULT`,
+        per :data:`ERA_KEYBOARD_START_YEAR`).
+    """
+    era = (
+        ERA_KEYBOARD_DEFAULT if year is not None and year >= ERA_KEYBOARD_START_YEAR
+        else ERA_PRE_KEYBOARD_DEFAULT
+    )
+    return _ALWAYS_DEFAULT_INSTRUMENTS | era
+
+
+def instrument_segments(
+    lineup: str | None, song_count: int, year: int | None,
+) -> list[dict]:
+    """``stats.instrument_notes`` (TODO-347): Dylan's non-default instrument/format spans.
+
+    Walks the same override clauses as :func:`song_instruments`, but keeps
+    only the ones that mark a real departure from what's unremarkable for
+    the show's era (:func:`_era_default_instruments`) -- an instrument
+    outside that set (e.g. piano before the 2002 keyboard-era pivot), or a
+    "solo"/"acoustic" format note (Dylan playing alone, or on solo acoustic
+    guitar, mid-show). Adjacent positions that resolve to the same label are
+    merged into one range, so a clause split across two lineup entries still
+    reads as a single "piano 10-14" span.
 
     Args:
         lineup: ``olof_events.lineup`` free text.
         song_count: The show's total song count, to clip out-of-range
             position tokens (a stray range past the last song is dropped).
+        year: The show's year, for era selection (see
+            :func:`_era_default_instruments`).
 
     Returns:
-        A :class:`collections.Counter` keyed by canonical instrument name.
+        A list of ``{"text": <label>, "positions": [<lo>, <hi>]}`` dicts, in
+        position order. Empty when nothing in the show departs from
+        default -- callers should omit the field entirely in that case.
     """
+    defaults = _era_default_instruments(year)
     resolved: dict[int, str] = {}
     for positions, text in _lineup_range_clauses(lineup):
         for p in positions:
             if 1 <= p <= song_count:
                 resolved[p] = text
-    tally: Counter[str] = Counter()
-    for text in resolved.values():
-        for instrument in _instrument_tokens(text):
-            tally[instrument] += 1
-    return tally
+
+    labels: dict[int, str] = {}
+    for pos, text in resolved.items():
+        canon_present = _instrument_tokens(text)
+        unusual = canon_present - defaults
+        if unusual:
+            seen: set[str] = set()
+            raw: list[str] = []
+            for m in _INSTRUMENT_RE.finditer(text):
+                word = m.group(1).lower()
+                if _INSTRUMENT_CANON[word] not in unusual:
+                    continue
+                disp = _INSTRUMENT_DISPLAY[word]
+                if disp not in seen:
+                    seen.add(disp)
+                    raw.append(disp)
+            if raw:
+                labels[pos] = " & ".join(raw)
+                continue
+        if _SOLO_TEXT_RE.search(text):
+            labels[pos] = "solo acoustic" if _ACOUSTIC_RE.search(text) else "solo"
+
+    segments: list[dict] = []
+    for pos in sorted(labels):
+        label = labels[pos]
+        if (
+            segments and segments[-1]["text"] == label
+            and segments[-1]["positions"][-1] == pos - 1
+        ):
+            segments[-1]["positions"][-1] = pos
+        else:
+            segments.append({"text": label, "positions": [pos, pos]})
+    return segments
+
+
+def render_instrument_segments(segments: list[dict]) -> str:
+    """Render :func:`instrument_segments` output as a display line.
+
+    ``[{"text": "piano", "positions": [6, 6]}, {"text": "solo acoustic",
+    "positions": [10, 14]}]`` renders as ``"piano on 6 · solo acoustic
+    10-14"`` (a single position reads "<label> on <n>"; a range reads
+    "<label> <lo>-<hi>", the "on" dropped since it reads awkwardly there).
+
+    Args:
+        segments: :func:`instrument_segments` output.
+
+    Returns:
+        The ``" · "``-joined display string, or ``""`` when *segments*
+        is empty.
+    """
+    bits = []
+    for seg in segments:
+        lo, hi = seg["positions"]
+        if lo == hi:
+            bits.append(f"{seg['text']} on {lo}")
+        else:
+            bits.append(f"{seg['text']} {lo}–{hi}")
+    return " · ".join(bits)
 
 
 class SongWriters(TypedDict):

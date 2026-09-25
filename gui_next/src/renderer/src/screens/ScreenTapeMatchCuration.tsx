@@ -74,6 +74,11 @@ interface FamilyRow {
   fam_id: string
   concert_date: string
   fam_label: string | null
+  // TODO-333(4): which tapematch calibration produced this family's verdict,
+  // and the shipped config's hash right now — both null on an older backend
+  // or a family synced before the calibration_hash column existed.
+  fam_calibration_hash?: string | null
+  current_calibration_hash?: string | null
 }
 
 interface CrawlStatus {
@@ -1245,7 +1250,10 @@ function DateHeader({
   row: DateRow | null
   narrow: boolean
   verdictText: string | null
-  families: { famId: string; label: string; colorIndex: number; lbs: number[] }[]
+  families: {
+    famId: string; label: string; colorIndex: number; lbs: number[]
+    calibrationHash: string | null; currentCalibrationHash: string | null
+  }[]
   judgedCount: number
   soloDate: boolean
   onAccept: () => void
@@ -1303,22 +1311,39 @@ function DateHeader({
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 9 }}>
         {families.length > 0 && (
           <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-            {families.map(f => (
-              <div key={f.famId} style={{
-                display: 'flex', alignItems: 'center', gap: 5,
-                background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
-                borderRadius: 999, padding: '2px 8px', fontSize: 10.5, fontWeight: 600,
-                color: 'var(--lbb-fg2)',
-              }}>
-                <span style={{
-                  width: 8, height: 8, borderRadius: 2, background: familyColorVar(f.colorIndex),
-                }} />
-                {f.label}
-                <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 9.5, fontWeight: 500, color: 'var(--lbb-fg3)' }}>
-                  {f.lbs.map(lb => String(lb).padStart(5, '0')).join(' ')}
-                </span>
-              </div>
-            ))}
+            {families.map(f => {
+              // TODO-333(4) — a family whose calibration_hash disagrees with
+              // the shipped config's hash right now was decided under an
+              // older calibration; null on either side means "unknown",
+              // never "stale" (an older backend, or a not-yet-backfilled
+              // run, is not evidence of drift).
+              const calStale = !!(f.calibrationHash && f.currentCalibrationHash
+                && f.calibrationHash !== f.currentCalibrationHash)
+              const calTitle = f.calibrationHash
+                ? `calibration ${f.calibrationHash}${calStale ? ` — shipped config is now ${f.currentCalibrationHash}` : ' — current'}`
+                : 'calibration unknown'
+              return (
+                <div key={f.famId} style={{
+                  display: 'flex', alignItems: 'center', gap: 5,
+                  background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+                  borderRadius: 999, padding: '2px 8px', fontSize: 10.5, fontWeight: 600,
+                  color: 'var(--lbb-fg2)',
+                }}>
+                  <span style={{
+                    width: 8, height: 8, borderRadius: 2, background: familyColorVar(f.colorIndex),
+                  }} />
+                  {f.label}
+                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 9.5, fontWeight: 500, color: 'var(--lbb-fg3)' }}>
+                    {f.lbs.map(lb => String(lb).padStart(5, '0')).join(' ')}
+                  </span>
+                  <span title={calTitle} style={{
+                    width: 6, height: 6, borderRadius: '50%', flex: '0 0 auto',
+                    background: calStale ? 'var(--lbb-warn-fg)' : 'var(--lbb-fg3)',
+                    opacity: f.calibrationHash ? 1 : 0.35,
+                  }} />
+                </div>
+              )
+            })}
           </div>
         )}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 5 }}>
@@ -2809,10 +2834,17 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
 
   const dateFamilies = useMemo(() => {
     if (!selectedDate) return []
-    const byFam = new Map<string, { famId: string; label: string; lbs: number[] }>()
+    const byFam = new Map<string, {
+      famId: string; label: string; lbs: number[]
+      calibrationHash: string | null; currentCalibrationHash: string | null
+    }>()
     for (const f of allFamilies) {
       if (f.concert_date !== selectedDate) continue
-      const entry = byFam.get(f.fam_id) ?? { famId: f.fam_id, label: f.fam_label ?? f.fam_id, lbs: [] }
+      const entry = byFam.get(f.fam_id) ?? {
+        famId: f.fam_id, label: f.fam_label ?? f.fam_id, lbs: [],
+        calibrationHash: f.fam_calibration_hash ?? null,
+        currentCalibrationHash: f.current_calibration_hash ?? null,
+      }
       entry.lbs.push(f.lb_number)
       byFam.set(f.fam_id, entry)
     }
