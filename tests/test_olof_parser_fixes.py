@@ -285,7 +285,10 @@ def test_guest_blocks_are_skipped_1975_12_08():
     assert all(s.song_title.startswith("Dylan song") for s in songs)
     assert [s.position for s in songs if s.is_encore] == list(range(8, 23))
     by_pos = {s.position: s for s in songs}
-    assert by_pos[14].annotations == "Bob Dylan solo (vocal, guitar & harmonica)"
+    # A "Bob Dylan solo (...)" credit is a lineup clause (C32), not a song note.
+    assert by_pos[14].annotations == ""
+    lineup = _parse_event(_RTR_1975, 1, "p1", "")[0].lineup
+    assert "14, 15 Bob Dylan solo (vocal, guitar & harmonica)" in lineup
     assert by_pos[5].released_on == "BOB DYLAN. The Rolling Thunder Revue"
     assert by_pos[2].released_on == "Wolfgang's Vault March 2006"
 

@@ -153,7 +153,7 @@ _RECORDING_RE = re.compile(
     re.IGNORECASE,
 )
 _SESSION_UPDATED_RE = re.compile(r"^Session info updated\b", re.IGNORECASE)
-_LINEUP_RE = re.compile(r"Bob Dylan\s*\(")
+_LINEUP_RE = re.compile(r"Bob Dylan(?:\s+solo)?\s*\(")
 # B1 (golden-dossier plan, phase B): shares the instrument vocabulary
 # dossier_fields._INSTRUMENT_RE uses for the same purpose downstream (kept as
 # a local copy — olof_parser must not import the field-rendering module).
