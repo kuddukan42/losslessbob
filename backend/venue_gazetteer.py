@@ -29,6 +29,7 @@ import json
 import logging
 import math
 import re
+import sqlite3
 import time
 import urllib.error
 import urllib.parse
@@ -89,8 +90,8 @@ def _norm_venue(venue: str | None) -> str:
     return _normalize(venue)
 
 
-def _norm_city(city: str | None) -> str:
-    """Normalize a city string into its gazetteer key.
+def _norm_city(city: str | None, country: str | None = None) -> str:
+    """Normalize a city (+ country) string into its gazetteer key.
 
     Takes only the first comma-segment before normalizing, so the same city
     keys identically regardless of an embedded state/country that varies by
@@ -98,10 +99,22 @@ def _norm_city(city: str | None) -> str:
     while olof/setlist.fm carry a bare ``"Birmingham"``). Without this the same
     venue fragments into a row per city-string variant, defeating the
     solve-each-venue-once goal.
+
+    C6: *country* is folded into the key (``"birmingham|united kingdom"`` vs
+    ``"birmingham|united states"``) so two identically-named cities in
+    different countries never collide -- Birmingham, UK is not Birmingham,
+    AL. Omitting *country* (or passing one for an already-plain-keyed city)
+    keeps the bare city key, so old callers that don't have a country handy
+    keep working; :func:`migrate_city_norm_with_country` rekeys existing
+    ``venue_geocoded`` rows once a country is on file for them.
     """
     if not city:
         return ""
-    return _normalize(city.split(",", 1)[0])
+    base = _normalize(city.split(",", 1)[0])
+    if not base or not country:
+        return base
+    country_norm = _normalize(country)
+    return f"{base}|{country_norm}" if country_norm else base
 
 
 _NUMERIC_VENUE_RE = re.compile(r"^[\d\s]+$")
@@ -155,6 +168,57 @@ def _cleanup_numeric_junk(conn) -> int:
         logger.info("venue_gazetteer cleanup: deleted %d numeric/empty-venue junk row(s)",
                      len(junk))
     return len(junk)
+
+
+def migrate_city_norm_with_country(conn: sqlite3.Connection) -> int:
+    """C6: rekey ``venue_geocoded.city_norm`` on city+country.
+
+    Before this, ``city_norm`` was city-only, so Birmingham, UK and
+    Birmingham, AL shared one key and a lookup for either city could return
+    the other's geocode. Idempotent and safe to run on any DB shape:
+    ``PRAGMA table_info`` checks the table/columns exist before touching
+    anything (never assume a clean DB), rows already keyed on city+country
+    recompute to the same key and are left alone, and a row that would
+    collide with an existing key is skipped rather than raising. This
+    function only mutates the connection it's given -- the caller decides
+    whether and when to commit; it is never run against the live DB from a
+    session (plan C6 note).
+
+    Args:
+        conn: Open SQLite connection with write access.
+
+    Returns:
+        The number of rows whose ``city_norm`` changed.
+    """
+    if not _table_exists(conn, "venue_geocoded"):
+        return 0
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(venue_geocoded)")}
+    if not {"city_norm", "city", "country", "venue_norm"} <= cols:
+        return 0
+
+    rows = conn.execute(
+        "SELECT rowid, venue_norm, city_norm, city, country FROM venue_geocoded"
+    ).fetchall()
+    changed = 0
+    for rowid, venue_norm, city_norm, city, country in rows:
+        new_key = _norm_city(city, country)
+        if not new_key or new_key == city_norm:
+            continue
+        try:
+            conn.execute(
+                "UPDATE venue_geocoded SET city_norm = ? WHERE rowid = ?",
+                (new_key, rowid),
+            )
+        except sqlite3.IntegrityError:
+            # Another row already holds (venue_norm, new_key) -- leave this
+            # one on its old key rather than losing either row.
+            logger.warning(
+                "venue_gazetteer city+country migration: key collision on "
+                "venue_norm=%r city_norm=%r, left unmigrated", venue_norm, new_key,
+            )
+            continue
+        changed += 1
+    return changed
 
 
 def _table_exists(conn, table_name: str) -> bool:
@@ -224,7 +288,7 @@ def seed_venues(db_path: str | None = None) -> dict:
         rows = conn.execute(sql).fetchall()
         per_source[table] = len(rows)
         for venue, city, region, country in rows:
-            key = (_norm_venue(venue), _norm_city(city))
+            key = (_norm_venue(venue), _norm_city(city, country))
             if _is_numeric_or_empty_venue(key[0]):
                 continue
             candidates.setdefault(
@@ -307,13 +371,21 @@ def _geocode_retry(query: str, viewbox: str | None = None, bounded: bool = False
     return {"lat": None, "lon": None, "source": "failed", "confidence": None}
 
 
-def _setlistfm_city_coord(conn, city_norm: str) -> tuple[float, float] | None:
+def _setlistfm_city_coord(
+    conn, city_norm: str, country: str | None = None,
+) -> tuple[float, float] | None:
     """Return a stored setlist.fm city coordinate for *city_norm*, if any.
 
     setlist.fm ships ``venue.city.coords`` which :mod:`backend.setlistfm` stores
     in ``setlistfm_shows.city_lat``/``city_lon`` (TODO-222). Those are NULL until
     a force re-scrape backfills them, so this is best-effort — the ladder falls
     back to a Nominatim city geocode when it returns ``None``.
+
+    Args:
+        conn: SQLite connection.
+        city_norm: The gazetteer city key to match (C6: city+country).
+        country: The row's country text, re-applied to each candidate city
+            string so the comparison uses the same key shape as *city_norm*.
     """
     if not _table_exists(conn, "setlistfm_shows"):
         return None
@@ -324,7 +396,7 @@ def _setlistfm_city_coord(conn, city_norm: str) -> tuple[float, float] | None:
         "SELECT city, city_lat, city_lon FROM setlistfm_shows "
         "WHERE city_lat IS NOT NULL AND city_lon IS NOT NULL"
     ):
-        if _norm_city(row[0]) == city_norm:
+        if _norm_city(row[0], country) == city_norm:
             return float(row[1]), float(row[2])
     return None
 
@@ -346,7 +418,7 @@ def _city_anchor(conn, row, cache: dict) -> tuple[tuple[float, float] | None, st
     if city_norm in cache:
         return cache[city_norm]
 
-    coord = _setlistfm_city_coord(conn, city_norm)
+    coord = _setlistfm_city_coord(conn, city_norm, row["country"])
     if coord is not None:
         cache[city_norm] = (coord, "setlistfm_city")
         return cache[city_norm]

@@ -244,8 +244,12 @@ class TestSongClaims:
         ]}
 
     def test_premiere_and_gap(self):
+        # C8: short badge text -- the tour name is no longer inlined (it
+        # overflowed the badge on phone widths); it stays available via the
+        # claim's "tour" slot for a tooltip.
         out = song_claims(self._hist())
-        assert claim_text(out[4][0]) == "new to the 2010 Tour of Japan"
+        assert claim_text(out[4][0]) == "tour premiere"
+        assert out[4][0]["slots"]["tour"]["value"] == "2010 Tour of Japan"
         assert claim_text(out[9][0]) == "first performance since 2002-05-01 (412 shows)"
 
     def test_failed_gate_no_premiere(self):

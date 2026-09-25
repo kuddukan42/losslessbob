@@ -458,7 +458,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   {%- if setlist_conf_f and setlist_conf_f.value %}{% set _ = stat_bits.append(lbf('show.setlist_confidence', setlist_conf_f)) %}{% endif -%}
   {%- if stat_bits %}<p class="stats-line">{{ stat_bits | join(' · ') | safe }}</p>{% endif %}
   {%- set official_f = fields.get('show.official_release') -%}
-  {%- if official_f and official_f.value %}<p class="stats-line">{{ lbf('show.official_release', official_f, text=('Official release: ' ~ official_f.value)) }}</p>{% endif %}
+  {%- if official_f and official_f.value %}<p class="stats-line">{{ lbf('show.official_release', official_f, text=('Officially released: ' ~ official_f.value)) }}</p>{% endif %}
   <table class="setlist">
     <thead><tr><th class="pos">#</th><th>Song</th><th class="tags"></th></tr></thead>
     <tbody>
@@ -597,7 +597,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
       <tr class="mrow{% if is_pick %} is-pick{% endif %}{% if b.fam %} in-fam{% endif %}">
         <td class="lead">
           <span class="lb" data-lb="source[].lb_id">{% if r.url is defined and r.url.value %}<a data-lb="source[].url" href="{{ r.url.value }}" target="_blank" rel="noopener">{{ r.lb_id.value }}</a>{% else %}{{ r.lb_id.value }}{% endif %}</span>
-          {%- if r.taper is defined and r.taper.value %}<div>{{ lbf('source[].taper', r.taper, text=r.taper.value.name ~ (' (' ~ r.taper.value.confidence ~ ')' if r.taper.value.confidence not in ('corroborated', 'stated') else ''), tag='span', cls='taper-pill ' ~ r.taper.value.confidence) }}</div>{% endif -%}
+          {%- if r.taper is defined and r.taper.value %}<div>{{ lbf('source[].taper', r.taper, text=r.taper.value.name ~ (' (' ~ r.taper.value.confidence ~ ')' if r.taper.value.confidence and r.taper.value.confidence != 'confirmed' else ''), tag='span', cls='taper-pill ' ~ (r.taper.value.confidence or '')) }}</div>{% endif -%}
           {%- set detail_bits = [] -%}
           {%- if r.character is defined and r.character.value %}{% set _ = detail_bits.append(lbf('source[].character', r.character)) %}{% endif -%}
           {%- if r.flags is defined and r.flags.value %}{% set _ = detail_bits.append(lbf('source[].flags[]', r.flags, text=(r.flags.value | join(', ')))) %}{% endif -%}
@@ -647,14 +647,22 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 {%- set chronicle_f = fields.get('context.chronicle') -%}
 {%- set bobtalk_f = fields.get('context.bobtalk') -%}
 {%- set notes_f = fields.get('context.session_notes') -%}
+{%- set band_label_f = fields.get('band.label') -%}
+{%- set band_members_f = fields.get('band.members[]') -%}
+{%- set band_text_f = fields.get('band.personnel_text') -%}
 {%- set venue_map_f = fields.get('venue.map') -%}
 {%- set venue_coords_f = fields.get('venue.coords') -%}
+{%- set venue_name_f = fields.get('venue.name') -%}
+{#- C6: the Venue card is name/city/run/city-history -- it renders whenever
+    there's a venue name, whether or not coordinates resolved. The map
+    graphic itself stays conditional on coords + map_focus (has_map). -#}
 {%- set has_map = venue_map_f and venue_map_f.confidence not in ('withheld', 'unavailable')
     and venue_map_f.value in ('venue', 'city_centre') and d.view.map_svg -%}
+{%- set has_venue = venue_name_f and venue_name_f.value -%}
 {%- set has_context = (chronicle_f and chronicle_f.value) or (bobtalk_f and bobtalk_f.confidence != 'unavailable')
-    or (notes_f and notes_f.value) -%}
-{%- if has_context or has_map %}
-<div{% if has_map and has_context %} class="split"{% endif %}>
+    or (notes_f and notes_f.value) or (band_members_f and band_members_f.value) -%}
+{%- if has_context or has_venue %}
+<div{% if has_venue and has_context %} class="split"{% endif %}>
   {%- if has_context %}
   <section class="context"{% if has_map %} style="margin-top:0"{% endif %}>
     <h2><span>Context</span><span class="line"></span>{% if src_x %}<span class="credit">source: <a href="{{ src_x.url }}" target="_blank" rel="noopener">{% if src_is_bobserve %}Bobserve{% else %}Olof Bj&ouml;rner, <em>Still on the Road</em>{% endif %}</a> &#8599;</span>{% endif %}</h2>
@@ -663,20 +671,18 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     {%- endif %}
     {%- if bobtalk_f %}<p class="bobtalk"><span class="label">Bobtalk</span>{{ lbf('context.bobtalk', bobtalk_f, verbatim=true) }}</p>{% endif -%}
     {%- if notes_f and notes_f.value %}<p><span class="label">Notes</span>{{ lbf('context.session_notes', notes_f, verbatim=true, text=(notes_f.value | join('. ') if notes_f.value is iterable and notes_f.value is not string else notes_f.value)) }}</p>{% endif %}
-    {%- set band_label_f = fields.get('band.label') -%}
-    {%- set band_members_f = fields.get('band.members[]') -%}
     {%- if band_members_f and band_members_f.value %}
-    <p><span class="label">{{ lbf('band.label', band_label_f, text=(band_label_f.value if band_label_f else 'Personnel')) }}</span><span data-lb="band.members[]">{{ band_members_f.value | map(attribute='name') | join(', ') }}</span></p>
+    <p><span class="label">{{ lbf('band.label', band_label_f, text=(band_label_f.value if band_label_f else 'Personnel')) }}</span><span data-lb="band.personnel_text">{{ (band_text_f.value if band_text_f and band_text_f.value else (band_members_f.value | map(attribute='name') | join(', '))) }}</span></p>
     {%- endif %}
   </section>
   {%- endif %}
-  {%- if has_map %}
-  {%- set pin_kind = 'solid' if venue_map_f.value == 'venue' else 'hollow' -%}
+  {%- if has_venue %}
+  {%- set pin_kind = 'solid' if (has_map and venue_map_f.value == 'venue') else 'hollow' -%}
   {%- set basis = venue_coords_f.value.basis if venue_coords_f and venue_coords_f.value else '' -%}
   <section style="margin-top:0">
-    <h2><span>Venue</span><span class="line"></span><span class="credit">coordinates: {% if basis == 'city_centre' %}<a href="{{ venue_coords_f.value.url or 'https://www.setlist.fm' }}" target="_blank" rel="noopener">setlist.fm</a> &#8599;{% else %}venue geocode{% endif %}</span></h2>
+    <h2><span>Venue</span><span class="line"></span>{% if has_map %}<span class="credit">coordinates: {% if basis == 'city_centre' %}<a href="{{ venue_coords_f.value.url or 'https://www.setlist.fm' }}" target="_blank" rel="noopener">setlist.fm</a> &#8599;{% else %}venue geocode{% endif %}</span>{% endif %}</h2>
     <div class="venue-card" data-map-pin="{{ pin_kind }}" data-venue-basis="{{ basis }}">
-      {{ d.view.map_svg | safe }}
+      {%- if has_map %}{{ d.view.map_svg | safe }}{% endif %}
       <div class="venue-meta">
         <div class="name">{{ lbf('venue.name') }}</div>
         {%- set vcity = fields.get('venue.city') -%}
