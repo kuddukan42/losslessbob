@@ -309,6 +309,12 @@ class TestT4:
         assert [s["text"] for s in why["segments"] if s["inferred"]] == ["hide", "master"]
         assert why["claims"] == ["best_scan"]
 
+    def test_verdict_why_qualifies_propagated_taper(self):
+        # Golden review 3 (2004-10-21): a propagated credit isn't "taped by lta" flat.
+        fields = {"pick.lb_rating": _f("B-"), "pick.taper.name": _f({"name": "lta"}),
+                  "pick.taper.confidence": _f("propagated")}
+        assert verdict_why(fields, {})["text"] == "LB rating B-; taped by lta (inferred)."
+
     def test_verdict_why_skips_unusable(self):
         fields = {"pick.lb_rating": _f("—", "unavailable"), "pick.scan_grade": _f(None)}
         assert verdict_why(fields, {}) is None

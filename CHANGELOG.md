@@ -1,3 +1,15 @@
+[2026-09-25] — Golden dossiers: third adversarial review → C32j taper-propagation fixes
+Fixed: backend/taper_attribution.py, backend/db.py (BUG-358): a family holding a mix/matrix member is no
+  longer a propagation edge ("jh mix of jh and m&a" had spread m&a onto the jh tape, 2006-04-30); "Alternate
+  to LB-a/LB-b" negates the chained list for same_as and derived_from (LB-14054, 1989-06-04); same_as/
+  derived_from edges across two dates are dropped (34 edges, 5 credits); an entry opening "<alias> Recording"
+  is an explicit credit unless it disowns it. Live (backups data/backups/losslessbob_preC32j_*):
+  parse_lineage --force, attribute_tapers (propagated 803 → 784), show_picks (4 rank-1 changes), qc run.
+Fixed: backend/dossier_claims.py: the pick why-line qualifies a propagated/disputed taper ("taped by lta
+  (inferred)").
+Changed: tests/golden/dossier: 2006-04-30 → mix-bridged-family; new 1989-06-04_alternate-recording and
+  2004-10-21_propagated-tapers; fixture re-cut, --check 18/18. Plan: instructions/GOLDEN_DOSSIER_FIX_PLAN_3.md.
+
 [2026-09-25] — Golden dossiers: second adversarial review → C32i fixes, picks recomputed, set regenerated
 Fixed: concert_ranker/picks.py (BUG-356): disputed taper credits (family with 2+ confirmed tapers) no longer
   earn the confirmed-taper bonus; it had decided 1987-10-11 and 1995-03-16. show_picks recomputed (backup

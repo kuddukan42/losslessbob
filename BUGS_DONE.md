@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-358: Taper propagation through a mix-bridged family, 'Alternate to' misparse and cross-date lineage edges
+Status: Fixed
+File(s): backend/taper_attribution.py,backend/db.py
+Reported: 2026-09-25
+Fixed: 2026-09-25
+Root cause: Layer 1 treated any strong family as one tape (a mix bridges two), read 'Alternate to LB-a/LB-b' as same_as/derived_from, and followed lineage edges across dates.
+Fix: Families with a mix/matrix member are not propagation edges ('mix' joins _MATRIX_RE); 'alternate to' negates a chained LB list for same_as and derived_from; cross-date same_as/derived_from edges dropped; '<alias> Recording' opening is an explicit credit unless disowned. Live: parse_lineage --force, attribute_tapers, show_picks, qc.
+
 BUG-357: Dossier claim engine crashes on two-show days (1974-01-06)
 Status: Fixed
 File(s): backend/dossier_fields.py:1573

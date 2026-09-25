@@ -148,3 +148,16 @@ def test_idempotency():
     for key in ("taper_name", "source_chain", "taper_normalised",
                 "parse_confidence", "source_text_hash"):
         assert first[key] == second[key], f"Mismatch on {key}: {first[key]!r} vs {second[key]!r}"
+
+
+def test_alternate_to_chain_is_neither_same_as_nor_derived_from():
+    """Golden review 3 (LB-14054): "Alternate to LB-a/LB-b, which appear to be derived
+    from same recording" says this entry is a *different* recording from all of them."""
+    from backend.db import extract_lb_references
+
+    refs = extract_lb_references(
+        'version "e", Alternate to LB-2470/LB-2478/LB-6445/LB-7214/LB-10916, which appear'
+        " to be derived from same recording., Not a good recording.")
+    assert refs["same_as_lb"] == [] and refs["derived_from_lb"] == []
+    refs = extract_lb_references("This is the same recording as LB-7214, a copy of LB-2478.")
+    assert refs["same_as_lb"] == [7214, 2478]

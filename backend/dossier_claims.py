@@ -825,7 +825,12 @@ def verdict_why(fields: Mapping[str, Field], claims: Mapping[str, Claim]) -> dic
         clauses.append(claim_segments(claims["scan"]))
     taper = fields.get("pick.taper.name")
     if usable(taper):
-        clauses.append(_clause("taped by {taper}", taper=taper))
+        # Golden review 3: a propagated or disputed credit is not "taped by X" flat.
+        conf_f = fields.get("pick.taper.confidence")
+        conf = conf_f.get("value") if isinstance(conf_f, dict) else None
+        qualifier = {"propagated": " (inferred)", "inferred": " (inferred)",
+                     "disputed": " (disputed)"}.get(conf or "", "")
+        clauses.append(_clause("taped by {taper}" + qualifier, taper=taper))
     gen = fields.get("pick.generation")
     if usable(gen):
         label = dict(gen)  # type: ignore[arg-type]
