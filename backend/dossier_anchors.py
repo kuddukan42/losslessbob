@@ -1083,16 +1083,39 @@ def _primary_display_ranks(
 # Golden review 2: lines of Olof's page that describe the page, not the show -- the
 # bare "Other Bob Dylan concerts in <city>." link header (its list is parsed into
 # venue history), and the note about unnumbered Band songs the setlist never lists.
+# Silver review: also the singular "Other Bob Dylan concert in <city>:" header, whose
+# "<D Month YYYY>" / "<venue>" line pairs follow it in the notes, and the
+# "Review(s) from BobLinks." link label.
 _NOTES_FURNITURE_RE = re.compile(
-    r"^\s*(?:Other Bob Dylan (?:concerts|shows) in [^\n]*?\.?"
-    r"|Songs without numbers are performed by [^\n]*?\.?)\s*$",
+    r"^\s*(?:Other Bob Dylan (?:concerts?|shows?) in [^\n]*?[.:]?"
+    r"|Songs without numbers are performed by [^\n]*?\.?"
+    r"|Reviews? from BobLinks\.?)\s*$",
     re.IGNORECASE | re.MULTILINE,
+)
+_FURNITURE_DATE_LINE_RE = re.compile(
+    r"^\s*\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|"
+    r"October|November|December)\s+\d{4}\s*$", re.IGNORECASE,
 )
 
 
 def _strip_page_furniture(notes: str) -> str:
-    """*notes* without Olof's page-navigation lines (see ``_NOTES_FURNITURE_RE``)."""
-    kept = [ln for ln in notes.splitlines() if not _NOTES_FURNITURE_RE.match(ln)]
+    """*notes* without Olof's page-navigation lines (see ``_NOTES_FURNITURE_RE``).
+
+    A header ending in ":" also drops the "<date>" / "<venue>" line pairs listed
+    under it.
+    """
+    kept: list[str] = []
+    lines = notes.splitlines()
+    i = 0
+    while i < len(lines):
+        ln = lines[i]
+        i += 1
+        if not _NOTES_FURNITURE_RE.match(ln):
+            kept.append(ln)
+            continue
+        if ln.rstrip().endswith(":"):
+            while i < len(lines) and _FURNITURE_DATE_LINE_RE.match(lines[i]):
+                i += 2  # the date line and the venue line under it
     return "\n".join(kept).strip()
 
 

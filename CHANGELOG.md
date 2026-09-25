@@ -1,3 +1,17 @@
+[2026-09-25] — Silver dossiers: 15-date adversarial review of whether the golden fixes generalise (C32k)
+Added: tests/silver/dossier/*.json: 15 review-only specs mirroring the golden spread; tools/dossier_golden.py
+  --specs DIR renders them. Audit 0 structural; review instructions/SILVER_DOSSIER_REVIEW.md (TODO-354).
+Fixed: backend/db.py (BUG-359): extract_lb_references binds same/different phrases to their own sentence —
+  "different recording than LB-a, LB-b" and comparison lists were same_as (123 wrong edges; LB-13981 relayed
+  pdub onto LB-01116); "Fixed LB-x" / "LosslessBob entry: LB-x" now count as same (+61).
+Fixed: backend/olof_parser.py (BUG-360): bobtalk stops at "CD bootlegs"-style headers (6 events).
+Fixed: backend/dossier_fields.py (BUG-361): venue run needs the same city (Providence + Springfield "Civic
+  Center" was a 2-night run; 11 false runs); bobtalk mention match ignores commas.
+Fixed: backend/olof_chronicle_parser.py (BUG-362): cross-month range and season headings (1,244 → 1,264 rows).
+Fixed: backend/dossier_anchors.py: furniture strip covers "Other Bob Dylan concert in <city>:" + its list and
+  "Review(s) from BobLinks."; backend/templates/dossier.html: premiere names joined with "; ".
+Note: live rebuild (Olof/chronicle reparse, lineage --force, tapers, picks) awaits tj's OK — TODO-354.
+
 [2026-09-25] — Golden dossiers: third adversarial review → C32j taper-propagation fixes
 Fixed: backend/taper_attribution.py, backend/db.py (BUG-358): a family holding a mix/matrix member is no
   longer a propagation edge ("jh mix of jh and m&a" had spread m&a onto the jh tape, 2006-04-30); "Alternate

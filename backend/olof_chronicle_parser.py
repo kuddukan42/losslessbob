@@ -69,12 +69,22 @@ Calendar date-heading detection (within the located calendar section):
                                            February', '3-4 March', '26 & 28
                                            October')
         - '(Early|Mid|Late) Month'       ('Early January' — 1985/1992)
+        - cross-month range 'D Month – D Month'
+                                         ('11 April – 17 May', '24 April - 6
+                                           May', '29 July – 4 August', '28
+                                           June - 1 July') — date_str is the
+                                           first day, same rule as a
+                                           same-month range.
+        - bare season, optional Early/Late
+                                         ('Summer', 'Early Autumn') —
+                                           Spring/Summer/Autumn/Fall/Winter;
+                                           always date_str=''.
     A full-paragraph match (not a substring search) keeps ordinary prose
     from false-positiving — no observed entry-body sentence happens to be
     *only* a date expression. date_str is resolved when at least one day
     number can be extracted (first day of a list/range, best-effort per
-    spec §7); a bare-month or unparseable heading still gets a row with
-    date_raw set and date_str=''.
+    spec §7); a bare-month, bare season, or unparseable heading still gets a
+    row with date_raw set and date_str=''.
 
 New-tapes title → date_str resolution:
     Unlike the calendar (day-only, year comes from the page), a new-tapes
@@ -248,6 +258,22 @@ _CHRON_DATE_HEAD_RE = re.compile(
     rf"(?:,?\s*(\d{{4}}))?$",
     re.IGNORECASE,
 )
+# Cross-month range heading, 'D Month – D Month[, YYYY]' ('11 April – 17 May',
+# '24 April - 6 May', '29 July – 4 August', '28 June - 1 July') — the plain
+# day-list shapes above only span one month, so a range crossing months needs
+# its own two-month capture. date_str resolves to the FIRST day (same rule as
+# a same-month range).
+_CHRON_RANGE_HEAD_RE = re.compile(
+    rf"^(\d{{1,2}})\s+({_MONTH_ALT})\s*(?:-|–)\s*"
+    rf"(\d{{1,2}})\s+({_MONTH_ALT})(?:,?\s*(\d{{4}}))?$",
+    re.IGNORECASE,
+)
+# Bare season heading, optional Early/Late ('Summer', 'Early Autumn') — always
+# date_str=''.
+_CHRON_SEASON_RE = re.compile(
+    r"^(?:(?:early|late)\s+)?(?:spring|summer|autumn|fall|winter)(?:,?\s*\d{4})?$",
+    re.IGNORECASE,
+)
 # 'D Month YYYY' occurrence, searched (not full-matched) inside new-tapes
 # titles and appendix show headers.
 _FULL_DATE_RE = re.compile(rf"(\d{{1,2}})\s+({_MONTH_ALT})\s+(\d{{4}})", re.IGNORECASE)
@@ -402,7 +428,16 @@ def _parse_date_heading(text: str, year: int) -> tuple[str, str] | None:
     See module docstring "Calendar date-heading detection" for the shapes
     matched. Returns None if *text* isn't a date-heading shape at all.
     """
-    m = _CHRON_DATE_HEAD_RE.match(text.strip())
+    stripped = text.strip()
+    if rm := _CHRON_RANGE_HEAD_RE.match(stripped):
+        day1, month1_name, _day2, _month2_name, year_str = rm.groups()
+        month1 = _MONTHS.get(month1_name.lower())
+        eff_year = int(year_str) if year_str else year
+        date_str = f"{eff_year:04d}-{month1:02d}-{int(day1):02d}" if month1 else ""
+        return date_str, stripped
+    if _CHRON_SEASON_RE.match(stripped):
+        return "", stripped
+    m = _CHRON_DATE_HEAD_RE.match(stripped)
     if not m:
         return None
     day_before, month_name, day_after, year_str = m.groups()

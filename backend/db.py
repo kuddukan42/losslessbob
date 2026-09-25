@@ -2135,6 +2135,18 @@ _DIFF_RE = re.compile(
     re.IGNORECASE,
 )
 _LB_REF_RE = re.compile(r'\bLB-0*(\d+)\b', re.IGNORECASE)
+# Sentence boundary for binding a same/different phrase to the LB refs it talks
+# about. LB descriptions join fields with ", ", so commas are NOT boundaries.
+_REF_SENTENCE_SPLIT_RE = re.compile(r';|\.\s|\n\s*\n')
+# A ref introduced as this set's own LB entry, an earlier version or the entry it
+# fixes names the same recording ("LosslessBob entry: LB-2710", "Fix of LB-7948",
+# "Previous version = LosslessBob LB-201"). Checked on the text right before the ref.
+_SAME_REF_LEAD_RE = re.compile(
+    r'(?:LosslessBob\s+entry(?:\s+for\s+lineage\s+above)?\s*[:=]?|'
+    r'\bfix(?:ed)?(?:\s+of)?|previous\s+version\s*=|previos\s+version\s*=|'
+    r'corrected\s+version\s+of)\s*(?:LosslessBob\s*-?\s*)?$',
+    re.IGNORECASE,
+)
 # "recorded by" / "recording by" are explicit credits too (plan E5), but only
 # when bound to the parsed handle -- taper_attribution._layer0_seed checks that
 # binding for these two forms (and for "a <handle> recording", which no static
@@ -3083,13 +3095,33 @@ def extract_lb_references(description: str) -> dict:
     LB-0301/LB-4356") is never a same_as claim, whatever the window around it
     says (plan E1: a nearby "close eac match" otherwise linked four unrelated
     1999-06-11 sources).
+
+    Silver review (2026-09-25) binds each same/different phrase to its sentence:
+    a "same recording" phrase whose sentence names LB refs vouches only for those
+    refs ("of the other 3 LB-1116 is most distant ...; LB-14078 is same recording
+    as this" links LB-14078, not LB-1116), and a "different recording than" phrase
+    earlier in a ref's sentence, with no "same" phrase in between, refuses it
+    ("different recording than LB-837, LB-972 (which are all the same recording)").
     """
     mentions: list[list] = []
     same_as: list[int] = []
     derived_from: list[int] = []
     better_than: list[int] = []
 
-    for m in _LB_REF_RE.finditer(description):
+    refs = list(_LB_REF_RE.finditer(description))
+    bounds = [0] + [b.end() for b in _REF_SENTENCE_SPLIT_RE.finditer(description)]
+
+    def _sentence(pos: int) -> tuple[int, int]:
+        lo = max(b for b in bounds if b <= pos)
+        nxt = _REF_SENTENCE_SPLIT_RE.search(description, pos)
+        return lo, (nxt.start() if nxt else len(description))
+
+    def _same_binds(same_m: re.Match, ref_start: int) -> bool:
+        lo, hi = _sentence(same_m.start())
+        in_sentence = [r.start() for r in refs if lo <= r.start() < hi]
+        return not in_sentence or ref_start in in_sentence
+
+    for m in refs:
         lb_num = int(m.group(1))
 
         ctx_start = max(0, m.start() - 200)
@@ -3103,8 +3135,15 @@ def extract_lb_references(description: str) -> dict:
 
         mentions.append([lb_num, snippet])
 
-        same_count = len(_SAME_RE.findall(ctx))
+        same_count = sum(1 for s in _SAME_RE.finditer(description, ctx_start, ctx_end)
+                         if _same_binds(s, m.start()))
         diff_count = len(_DIFF_RE.findall(ctx))
+        own_lo, _ = _sentence(m.start())
+        before = description[own_lo:m.start()]
+        last_diff = max((d.end() for d in _DIFF_RE.finditer(before)), default=-1)
+        diff_led = last_diff >= 0 and not _SAME_RE.search(before, last_diff)
+        if _SAME_REF_LEAD_RE.search(description[max(0, m.start() - 60):m.start()]):
+            same_count += 1
 
         # Negation guard: the clause leading up to this reference (back to the
         # nearest bracket / comma / sentence / line break, at most 120 chars;
@@ -3125,7 +3164,7 @@ def extract_lb_references(description: str) -> dict:
         ))
         negated = negated or alternate
 
-        if same_count > 0 and same_count >= diff_count and not negated:
+        if same_count > 0 and same_count >= diff_count and not negated and not diff_led:
             if lb_num not in same_as:
                 same_as.append(lb_num)
         if _DERIVED_RE.search(ctx) and not alternate and lb_num not in derived_from:

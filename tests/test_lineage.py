@@ -161,3 +161,40 @@ def test_alternate_to_chain_is_neither_same_as_nor_derived_from():
     assert refs["same_as_lb"] == [] and refs["derived_from_lb"] == []
     refs = extract_lb_references("This is the same recording as LB-7214, a copy of LB-2478.")
     assert refs["same_as_lb"] == [7214, 2478]
+
+
+def test_same_phrase_binds_to_the_refs_in_its_own_sentence():
+    """Silver review (LB-13981): a comparison listing LB-1116/LB-13219 is not a same_as
+    claim just because "LB-14078 is same recording" sits within 200 chars."""
+    from backend.db import extract_lb_references
+
+    refs = extract_lb_references(
+        "of the other 3 LB-1116 is most distant and echoey, LB-13219 is next distant and"
+        " boomy, and this sounded best; excellent sound [A]; LB-14078 is same recording as"
+        " this based on same clapping wavs at end of d1t2")
+    assert refs["same_as_lb"] == [14078]
+
+
+def test_different_recording_than_list_is_not_same_as():
+    """Silver review: "different recording than LB-a, LB-b (which are all the same
+    recording)" was stored as same_as for every ref in the list."""
+    from backend.db import extract_lb_references
+
+    refs = extract_lb_references(
+        "levels are low;  different recording than LB-837, LB-972, and LB-1920 (which are"
+        " all the same recording) based on different crowd; same recording as LB-5000")
+    assert refs["same_as_lb"] == [5000]
+    refs = extract_lb_references(
+        "This is the same recording as LB-0991 but is a recent transfer from my DAT clone")
+    assert refs["same_as_lb"] == [991]
+
+
+def test_fix_of_and_own_entry_refs_are_same_as():
+    """"Fixed LB-x" / "LosslessBob entry: LB-x" name this set's own recording."""
+    from backend.db import extract_lb_references
+
+    assert extract_lb_references("version \"a\"; Fixed LB-5048: only circulating")[
+        "same_as_lb"] == [5048]
+    assert extract_lb_references(
+        "Low gen tape > CDR > EAC > Flac [lk aud set], LosslessBob entry: LB-2710. very"
+        " similar to previous version")["same_as_lb"] == [2710]
