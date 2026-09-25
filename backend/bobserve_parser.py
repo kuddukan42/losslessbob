@@ -79,7 +79,7 @@ from backend.olof_parser import (
     _pct,
     _resolve_file_path,
     _split_city_region_country,
-    _split_title_credits,
+    _split_title_parts,
     _update_page_status,
     _upsert_events,
     _upsert_songs,
@@ -290,10 +290,14 @@ def _parse_songs(lines: list[str], event_id: int) -> list[SongRecord]:
                 songs[-1].song_title = _normalize_song_title(merged)
             continue
         position = int(line.split(".", 1)[0])
-        title, credits = _split_title_credits(m.group(1))
+        # B6 (Phase B, golden-dossier plan): _split_title_parts (not the plain
+        # credits-only split) so a known alternate title — "Most Likely You Go
+        # Your Way (And I'll Go Mine)", "Key West (Philosopher Pirate)" — lands
+        # in subtitle instead of being mistaken for a writer credit.
+        title, credits, subtitle = _split_title_parts(m.group(1))
         title = _normalize_song_title(title)
         songs.append(SongRecord(event_id=event_id, position=position,
-                                 song_title=title, credits=credits))
+                                 song_title=title, credits=credits, subtitle=subtitle))
     return songs
 
 

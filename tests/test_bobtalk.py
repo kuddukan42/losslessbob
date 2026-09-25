@@ -72,6 +72,24 @@ def test_parse_still_drops_uppercase_catalogue_codes():
     assert bobtalk.is_metadata_line("Disc 2 of the set") is True
 
 
+def test_catalogue_code_allows_a_hyphen_separator():
+    # B7 (golden-dossier plan, phase B): DSN7810 / 1986-02-24's Bootlegs section.
+    assert bobtalk.is_metadata_line("Duelling Banjos QR-21/22.") is True
+    assert bobtalk.is_metadata_line("True Confessions . Swingin ' Pig TSP-CD-107.") is True
+
+
+def test_reference_and_records_lines_are_metadata():
+    # B7: defence in depth for bobtalk blocks parsed before the B2 olof_parser
+    # section-boundary fix (DSN2260's "Reference. Les Kokay ..." line, and a
+    # record-label mention that leaked in the same way).
+    assert bobtalk.is_metadata_line(
+        "Reference. Les Kokay: Bob Dylan/The Band. Private publication 2000, page 9."
+    ) is True
+    assert bobtalk.is_metadata_line("Private publication, Columbia Records 2000.") is True
+    # Ordinary speech mentioning a year/number is still kept (no regression).
+    assert bobtalk.is_metadata_line("Thank you, ladies and gentlemen!") is False
+
+
 def test_parse_drops_quotes_with_too_few_content_tokens():
     # Long enough in characters, but almost all stopwords.
     assert bobtalk.parse_bobtalk("and the it is to be of that we in on at as so") == []

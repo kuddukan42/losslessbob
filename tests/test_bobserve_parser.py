@@ -168,3 +168,44 @@ def test_eventsperiod_index_rows_carry_venue_and_type():
     rows = _extract_year_index_rows(html)
     assert [(r["event_id"], r["venue"], r["event_type"]) for r in rows] == [
         (365, "Carnegie Hall", "Concert"), (4578, "Carnegie Hall", "Soundcheck")]
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 5. B6 (golden-dossier plan, phase B): known alternate titles land in subtitle,
+#    not credits — real setlists from bobserve_event_3030 (2022-03-21, Montgomery)
+#    and bobserve_event_3031 (2022-04-05, Birmingham).
+# ═══════════════════════════════════════════════════════════════════════════════
+
+_RRR_HEADER_3030 = ["March 21, 2022", "Montgomery, Alabama",
+                     "Montgomery Performing Arts Centre", "Concert"]
+_RRR_HEADER_3031 = ["April 5, 2022", "Birmingham, Alabama", "BJCC Concert Hall", "Concert"]
+_RRR_SONGS = [
+    "1. Watching The River Flow",
+    "2. Most Likely You Go Your Way (And I'll Go Mine)",
+    "3. I Contain Multitudes",
+    "11. Key West (Philosopher Pirate)",
+    "14. Melancholy Mood (Walter Schumann, Vick R. Knight Sr.)",
+]
+
+
+class TestKnownSubtitles:
+    def test_and_ill_go_mine_is_a_subtitle_not_a_credit_2022_03_21(self, tmp_path):
+        blocks = [_RRR_HEADER_3030, _RRR_SONGS]
+        path = _write_clipboard_page(tmp_path, blocks, "bobserve_event_3030.html")
+        _rec, songs, _status = parse_page(path, "bobserve_event_3030.html")
+        by_pos = {s.position: s for s in songs}
+        assert by_pos[2].song_title == "Most Likely You Go Your Way"
+        assert by_pos[2].subtitle == "And I'll Go Mine"
+        assert by_pos[2].credits == ""
+
+    def test_philosopher_pirate_is_a_subtitle_not_a_credit_2022_04_05(self, tmp_path):
+        blocks = [_RRR_HEADER_3031, _RRR_SONGS]
+        path = _write_clipboard_page(tmp_path, blocks, "bobserve_event_3031.html")
+        _rec, songs, _status = parse_page(path, "bobserve_event_3031.html")
+        by_pos = {s.position: s for s in songs}
+        assert by_pos[11].song_title == "Key West"
+        assert by_pos[11].subtitle == "Philosopher Pirate"
+        assert by_pos[11].credits == ""
+        # A real writer credit (not a known subtitle) still lands in credits.
+        assert by_pos[14].credits == "Walter Schumann, Vick R. Knight Sr."
+        assert by_pos[14].subtitle == ""

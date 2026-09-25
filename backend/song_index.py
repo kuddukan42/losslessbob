@@ -49,14 +49,31 @@ _APOSTROPHE_RE = re.compile("[" + _APOSTROPHE_VARIANTS + "]")
 # apostrophe becomes a single space; runs of whitespace collapse to one.
 _PUNCT_TO_SPACE_RE = re.compile(r"[^\w']+", re.UNICODE)
 _WHITESPACE_RE = re.compile(r"\s+")
+# B8 (golden-dossier plan, phase B): a space Olof's export sometimes puts
+# *before* an apostrophe ("Knockin ' On Heaven's Door", "Nobody ' Cept You")
+# is the same inline-tag word-break BUG-337 fixed at parse time (77a77c63) —
+# just landing next to a quote mark instead of mid-word. Dropped here too so
+# an olof_songs row parsed before that fix (TODO-350's pending live reparse)
+# still groups with the clean spelling instead of stranding its own
+# song_canonical entry.
+_SPACE_BEFORE_APOSTROPHE_RE = re.compile(r"\s+(?=')")
+# B8: confirmed pre-reparse instances of the same inline-tag split landing
+# *inside* a word rather than next to a quote mark — "The Tim es They Are
+# A-Changin'" (DSN2260 and others predating 77a77c63). A literal, narrow map
+# (like olof_parser._SOURCE_TITLE_TYPOS) rather than a generic heuristic:
+# folding on word length/shape would also merge unrelated short words
+# ("Mr Tambourine Man" must NOT become "Mrtambourineman" — see
+# tests/test_song_index.py::test_normalize_song_title_collapses_punctuation).
+_KNOWN_SPLIT_WORDS_RE = re.compile(r"\btim es\b")
 
 
 def normalize_song_title(text: str | None) -> str:
     """Normalise a song title into a stable grouping key.
 
     Pipeline: NFKD decompose + strip combining accent marks, casefold,
-    unify curly/straight apostrophe variants, replace remaining punctuation
-    with spaces, collapse whitespace.
+    unify curly/straight apostrophe variants, drop a space immediately
+    before an apostrophe, fold the confirmed stale inline-tag word splits
+    (B8), replace remaining punctuation with spaces, collapse whitespace.
 
     Args:
         text: Raw song title (e.g. from ``olof_songs.song_title`` or a
@@ -71,6 +88,8 @@ def normalize_song_title(text: str | None) -> str:
     no_accents = "".join(c for c in decomposed if not unicodedata.combining(c))
     folded = no_accents.casefold()
     unified = _APOSTROPHE_RE.sub("'", folded)
+    unified = _SPACE_BEFORE_APOSTROPHE_RE.sub("", unified)
+    unified = _KNOWN_SPLIT_WORDS_RE.sub("times", unified)
     spaced = _PUNCT_TO_SPACE_RE.sub(" ", unified)
     return _WHITESPACE_RE.sub(" ", spaced).strip()
 
