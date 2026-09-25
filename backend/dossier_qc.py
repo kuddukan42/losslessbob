@@ -1052,6 +1052,10 @@ def run_gate(dossier: dict, conn: sqlite3.Connection, *, channel: str,
         _run_g7_claims(gate, pick_lb)
         _run_g8_channel(gate, channel, dossier, pick_lb)
 
+        # Findings arrive in qc_findings row order, which differs between the live DB
+        # and a fixture cut; sort (stably, by LB) so the footer and snapshots agree.
+        gate.withheld.sort(key=lambda w: (w["lb"] is not None, w["lb"] or 0))
+
         view["fields"]["prov.withheld[]"] = (
             build_field(gate.withheld, 3, "gate output (C28)", "stated", ["qc_findings"])
             if gate.withheld else build_fallback_field(ANCHORS["prov.withheld[]"]))

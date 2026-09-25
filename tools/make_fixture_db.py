@@ -542,6 +542,9 @@ def cut_golden(src_db: Path, dates: set[str], dest: Path = GOLDEN_FIXTURE) -> di
         list(dates))
     urls = {r["bobdylan_url"] for r in tables["bobdylan_shows"]}
     tables["bobdylan_setlist"] = rows("bobdylan_setlist", *_in_clause("bobdylan_url", urls))
+    # Bob Links xref card (C32f): only crawled pages are linked.
+    if src.execute("SELECT 1 FROM sqlite_master WHERE name = 'boblinks_pages'").fetchone():
+        tables["boblinks_pages"] = rows("boblinks_pages", *_in_clause("date_iso", dates))
     tables["meta"] = rows("meta", "key = 'master_version'")
     tables["qc_findings"] = [
         f for f in rows("qc_findings")
