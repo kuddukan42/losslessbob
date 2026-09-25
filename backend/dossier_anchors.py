@@ -1288,6 +1288,31 @@ def _build_context(vb, d1, conn, event_id, date_iso) -> None:
     vb.set_field("prov.stamps", build_field(prov, 1, "d1.provenance", "stated"))
 
 
+_UK_NATIONS = frozenset({"united kingdom", "uk", "england", "scotland", "wales",
+                         "northern ireland", "great britain"})
+_US_NAMES = frozenset({"united states", "usa", "us", "united states of america"})
+
+
+def _same_country(row_country: str | None, show_country: str | None) -> bool:
+    """False only when both countries are known and name different countries.
+
+    Args:
+        row_country: ``venue_geocoded.country`` (often blank).
+        show_country: The show's country from the dossier header.
+
+    Returns:
+        Whether a gazetteer row may be used for this show.
+    """
+    a = (row_country or "").strip().lower()
+    b = (show_country or "").strip().lower()
+    if not a or not b or a == b:
+        return True
+    for group in (_UK_NATIONS, _US_NAMES):
+        if a in group and b in group:
+            return True
+    return False
+
+
 def _build_venue_geo(vb, conn, show) -> None:
     from backend.qc.store import quarantined
     from backend.venue_gazetteer import _norm_city, _norm_venue
@@ -1299,15 +1324,25 @@ def _build_venue_geo(vb, conn, show) -> None:
         # won display priority -- venue_geocoded may only have a row keyed
         # to a differently-worded name from another source.
         candidates = show.get("venue_candidates") or [venue]
-        cnorm = _norm_city(city or "", country)
+        # Rows are keyed city-only until migrate_city_norm_with_country runs, so try
+        # the city+country key first, then the bare city key -- accepting a bare-key
+        # row only when its own country doesn't contradict the show's.
+        city_keys = list(dict.fromkeys([_norm_city(city or "", country),
+                                        _norm_city(city or "")]))
+        row = cnorm = vnorm = None
         for cand in candidates:
             vnorm = _norm_venue(cand)
-            row = _safe(
-                lambda c, vnorm=vnorm, cnorm=cnorm: c.execute(
-                    "SELECT * FROM venue_geocoded WHERE venue_norm = ? AND city_norm = ?",
-                    (vnorm, cnorm),
-                ).fetchone(), conn,
-            )
+            for cnorm in city_keys:
+                row = _safe(
+                    lambda c, vnorm=vnorm, cnorm=cnorm: c.execute(
+                        "SELECT * FROM venue_geocoded WHERE venue_norm = ? AND city_norm = ?",
+                        (vnorm, cnorm),
+                    ).fetchone(), conn,
+                )
+                if row is not None and not _same_country(row["country"], country):
+                    row = None
+                if row is not None:
+                    break
             if row is None or row["lat"] is None or row["lon"] is None:
                 continue
             quarantined_ = quarantined(conn, "venue", f"{vnorm}:{cnorm}")
