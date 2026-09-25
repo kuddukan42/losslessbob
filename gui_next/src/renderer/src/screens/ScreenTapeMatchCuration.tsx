@@ -9,9 +9,12 @@
 // /library?lb= deep-link (dossier LB headings), and the raw analysis.md
 // disclosure under §7.
 //
-// Internationalised (TODO-275): strings live under the tapematch.curation.*
-// locale namespace (gui_next/src/renderer/src/locales/en.json), translated to
-// de/fr/es/it/nl via /gui-next-i18n.
+// Fully internationalised (TODO-275): every user-visible string lives under the
+// tapematch.curation.* locale namespace (gui_next/src/renderer/src/locales/en.json),
+// translated to de/fr/es/it/nl via /gui-next-i18n. Left untranslated by design: LB
+// numbers, code identifiers shown in mono (human_judgment, observations.db · pairs,
+// analysis.md as a filename), numeric formats, symbols-only legend glyphs (◆ ● ▤ ?),
+// and console/log text.
 //
 // Phase 1 scope: §1 top bar, §2 triage queue rail (incl. keybindings), §3
 // date header (incl. DESIGN_ANSWERS_B §B3 verdict clamp), §4 section
@@ -38,7 +41,7 @@
 // GET /api/tapematch/report. Run diff (§12) remains a placeholder.
 
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
@@ -358,6 +361,7 @@ function CurationState({
  * families query long before any pair measurement is).
  */
 function MatrixSkeleton({ recordings }: { recordings: MatrixRecording[] }) {
+  const { t } = useTranslation()
   const n = recordings.length
   const compact = n > COMPACT_THRESHOLD
   const pairs = (n * (n - 1)) / 2
@@ -408,7 +412,7 @@ function MatrixSkeleton({ recordings }: { recordings: MatrixRecording[] }) {
       <div style={{
         marginTop: 8, font: '500 10.5px var(--lbb-mono)', color: 'var(--lbb-fg3)',
       }}>
-        measuring {pairs} pair{pairs === 1 ? '' : 's'}…
+        {t('tapematch.curation.sections.measuringPairs', { count: pairs })}
       </div>
     </div>
   )
@@ -1639,6 +1643,7 @@ interface AbClipResult {
 function AbPlayer({
   lbA, lbB, eligible, date,
 }: { lbA: number; lbB: number; eligible: boolean; date: string }): React.JSX.Element {
+  const { t } = useTranslation()
   const [tSec, setTSec] = useState('')
   const [durSec, setDurSec] = useState('20')
   const [clips, setClips] = useState<AbClipResult | null>(null)
@@ -1673,11 +1678,11 @@ function AbPlayer({
       const body = await resp.json().catch(() => ({}))
       if (!resp.ok) {
         setError(
-          body?.error === 'not_eligible' ? 'These two sources are not sample-alignable.'
-            : body?.error === 't_out_of_range' ? 'That position is past the end of one of the sources.'
-            : body?.error === 'folder_missing' ? "Source folder not found — the disk may not be mounted."
-            : body?.error === 'locked' ? 'TapeMatch is writing right now — try again in a moment.'
-            : "Couldn't build the clips."
+          body?.error === 'not_eligible' ? t('tapematch.curation.abPlayer.errors.notAlignable')
+            : body?.error === 't_out_of_range' ? t('tapematch.curation.abPlayer.errors.outOfRange')
+            : body?.error === 'folder_missing' ? t('tapematch.curation.abPlayer.errors.folderMissing')
+            : body?.error === 'locked' ? t('tapematch.curation.errors.locked')
+            : t('tapematch.curation.abPlayer.errors.clipBuildFailed')
         )
         return
       }
@@ -1685,7 +1690,7 @@ function AbPlayer({
       if (typeof body?.t_sec === 'number') setTSec(String(Math.round(body.t_sec * 10) / 10))
       setActive('a')
     } catch {
-      setError("Couldn't build the clips.")
+      setError(t('tapematch.curation.abPlayer.errors.clipBuildFailed'))
     } finally {
       setLoading(false)
     }
@@ -1722,8 +1727,8 @@ function AbPlayer({
         <span style={{
           font: '700 11px var(--lbb-font)', letterSpacing: '0.04em',
           textTransform: 'uppercase', color: 'var(--lbb-fg3)',
-        }}>A/B listening</span>
-        {!eligible && <Pill tone="mute" soft>not eligible</Pill>}
+        }}>{t('tapematch.curation.abPlayer.title')}</span>
+        {!eligible && <Pill tone="mute" soft>{t('tapematch.curation.abPlayer.notEligible')}</Pill>}
       </div>
       {!eligible ? (
         // A9: one line saying *why*, inside the reserved box — "not eligible"
@@ -1731,32 +1736,31 @@ function AbPlayer({
         <div style={{
           fontSize: 11, color: 'var(--lbb-fg3)', lineHeight: 1.45, textWrap: 'pretty',
         }}>
-          Not sample-alignable — the speed offset between these two makes a synced
-          clip pair impossible.
+          {t('tapematch.curation.abPlayer.notEligibleBody')}
         </div>
       ) : (
         <>
           <div style={{ display: 'flex', alignItems: 'flex-end', gap: 9, flexWrap: 'wrap' }}>
             <label style={AB_FIELD_STYLE}>
-              Position (s)
+              {t('tapematch.curation.abPlayer.position')}
               <input
                 type="number" min={0} step={1} value={tSec} placeholder="auto"
                 onChange={e => setTSec(e.target.value)} style={AB_NUMBER_INPUT_STYLE}
               />
             </label>
             <label style={AB_FIELD_STYLE}>
-              Duration (s)
+              {t('tapematch.curation.abPlayer.duration')}
               <input
                 type="number" min={5} max={60} step={1} value={durSec}
                 onChange={e => setDurSec(e.target.value)} style={AB_NUMBER_INPUT_STYLE}
               />
             </label>
             <Button variant="secondary" size="sm" disabled={loading} onClick={handleLoad}>
-              {loading ? 'Loading…' : 'Load'}
+              {loading ? t('tapematch.curation.abPlayer.loading') : t('tapematch.curation.abPlayer.load')}
             </Button>
           </div>
           <div style={{ fontSize: 10, color: 'var(--lbb-fg3)' }}>
-            Leave position blank to auto-pick a loud aligned moment.
+            {t('tapematch.curation.abPlayer.autoHint')}
           </div>
           {error && (
             <div style={{ fontSize: 11, color: 'var(--lbb-bad-fg)', lineHeight: 1.45 }}>
@@ -1766,13 +1770,13 @@ function AbPlayer({
           {clips && (
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
               <Button variant="primary" size="sm" onClick={handlePlayPause}>
-                {playing ? 'Pause' : '▶ Play'}
+                {playing ? t('tapematch.curation.abPlayer.pause') : t('tapematch.curation.abPlayer.play')}
               </Button>
               <Chip size="sm" active={active === 'a'} onClick={() => setSource('a')}>
-                {`A · LB-${shortId(lbA)}`}
+                {t('tapematch.curation.abPlayer.sourceLabel', { letter: 'A', lb: shortId(lbA) })}
               </Chip>
               <Chip size="sm" active={active === 'b'} onClick={() => setSource('b')}>
-                {`B · LB-${shortId(lbB)}`}
+                {t('tapematch.curation.abPlayer.sourceLabel', { letter: 'B', lb: shortId(lbB) })}
               </Chip>
               <audio
                 ref={audioARef} src={`${BASE}${clips.clip_a}`} preload="auto"
@@ -1797,11 +1801,12 @@ function AbPlayer({
 // run holding observations.db) is a real state an optimistic button would
 // have to lie about. §10.7's save-status line is built as specified.
 
-const JUDGMENT_OPTIONS: { key: string; label: string; tone: 'ok' | 'info' | 'warn' | 'bad' }[] = [
-  { key: 'confirmed_same', label: 'Same source', tone: 'ok' },
-  { key: 'confirmed_different', label: 'Different', tone: 'info' },
-  { key: 'uncertain', label: 'Uncertain', tone: 'warn' },
-  { key: 'lb_wrong', label: 'LB wrong', tone: 'bad' },
+// label is an i18n key, resolved with t() at the render site.
+const JUDGMENT_OPTIONS: { key: string; labelKey: string; tone: 'ok' | 'info' | 'warn' | 'bad' }[] = [
+  { key: 'confirmed_same', labelKey: 'tapematch.curation.judgment.options.sameSource', tone: 'ok' },
+  { key: 'confirmed_different', labelKey: 'tapematch.curation.judgment.options.different', tone: 'info' },
+  { key: 'uncertain', labelKey: 'tapematch.curation.judgment.options.uncertain', tone: 'warn' },
+  { key: 'lb_wrong', labelKey: 'tapematch.curation.judgment.options.lbWrong', tone: 'bad' },
 ]
 
 type SaveState =
@@ -1817,6 +1822,7 @@ function JudgmentControl({
   date: string | null
   onSaved: () => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const [judgment, setJudgment] = useState<string | null>(pair?.human_judgment ?? null)
   const [notes, setNotes] = useState(pair?.human_notes ?? '')
   const [save, setSave] = useState<SaveState>({ kind: 'idle' })
@@ -1849,10 +1855,10 @@ function JudgmentControl({
         setSave({
           kind: 'failed',
           message: body?.error === 'locked'
-            ? "TapeMatch is writing right now — kept locally."
+            ? t('tapematch.curation.judgment.errors.locked')
             : body?.error === 'pair_not_found'
-              ? "That pair isn't in the current run — kept locally."
-              : "Couldn't save — kept locally.",
+              ? t('tapematch.curation.judgment.errors.pairNotFound')
+              : t('tapematch.curation.judgment.errors.saveFailed'),
         })
         return
       }
@@ -1860,11 +1866,11 @@ function JudgmentControl({
       setSave({
         kind: 'saved',
         at: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        label: chosen?.label ?? 'cleared',
+        label: chosen ? t(chosen.labelKey as any) : t('tapematch.curation.judgment.clearedLabel'),
       })
       onSaved()
     } catch {
-      setSave({ kind: 'failed', message: "Couldn't save — kept locally." })
+      setSave({ kind: 'failed', message: t('tapematch.curation.judgment.errors.saveFailed') })
     }
   }
 
@@ -1886,14 +1892,14 @@ function JudgmentControl({
                 border: `1px solid ${on ? `var(--lbb-${o.tone}-bar)` : 'var(--lbb-border2)'}`,
                 color: on ? `var(--lbb-${o.tone}-fg)` : 'var(--lbb-fg2)',
               }}
-            >{o.label}</button>
+            >{t(o.labelKey as any)}</button>
           )
         })}
       </div>
       <textarea
         value={notes}
         onChange={e => setNotes(e.target.value)}
-        placeholder="notes…"
+        placeholder={t('tapematch.curation.judgment.notesPlaceholder')}
         rows={3}
         style={{
           marginTop: 7, width: '100%', minHeight: 60, resize: 'vertical',
@@ -1909,19 +1915,20 @@ function JudgmentControl({
             setJudgment(pair?.human_judgment ?? null)
             setNotes(pair?.human_notes ?? '')
           }}
-        >Cancel</Button>
+        >{t('tapematch.curation.judgment.cancel')}</Button>
         <Button
           variant="primary" size="sm"
           disabled={!dirty || save.kind === 'saving' || !pair || !date}
           onClick={submit}
-        >Save</Button>
+        >{t('tapematch.curation.judgment.save')}</Button>
       </div>
       {/* §10.7 — the static explainer states the mechanism, the status line
           below it reports the attempt. */}
       <div style={{ fontSize: 10, color: 'var(--lbb-fg3)', marginTop: 8, lineHeight: 1.4 }}>
-        Writes <span style={{ fontFamily: 'var(--lbb-mono)' }}>human_judgment</span> +{' '}
-        <span style={{ fontFamily: 'var(--lbb-mono)' }}>human_notes</span> to{' '}
-        <span style={{ fontFamily: 'var(--lbb-mono)' }}>observations.db · pairs</span>.
+        <Trans
+          i18nKey="tapematch.curation.judgment.footnote"
+          components={{ mono: <span style={{ fontFamily: 'var(--lbb-mono)' }} /> }}
+        />
       </div>
       {save.kind !== 'idle' && (
         <div style={{
@@ -1935,8 +1942,8 @@ function JudgmentControl({
               : save.kind === 'saved' ? 'var(--lbb-ok-bar)' : 'var(--lbb-fg3)',
             opacity: save.kind === 'saving' ? 0.5 : 1,
           }} />
-          {save.kind === 'saving' && 'Saving…'}
-          {save.kind === 'saved' && `Saved ${save.at} · ${save.label}`}
+          {save.kind === 'saving' && t('tapematch.curation.judgment.saving')}
+          {save.kind === 'saved' && t('tapematch.curation.judgment.saved', { at: save.at, label: save.label })}
           {save.kind === 'failed' && (
             <>
               {save.message}
@@ -1948,7 +1955,7 @@ function JudgmentControl({
                   font: '600 10px var(--lbb-font)', color: 'var(--lbb-bad-fg)',
                   textDecoration: 'underline',
                 }}
-              >Retry</button>
+              >{t('tapematch.curation.judgment.retry')}</button>
             </>
           )}
         </div>
@@ -1965,6 +1972,7 @@ function JudgmentControl({
  * The one thing that is cleaned is HTML entities — nobody wrote `&amp;`.
  */
 function ClaimText({ text }: { text: string }): React.JSX.Element {
+  const { t } = useTranslation()
   const [expanded, setExpanded] = useState(false)
   const decoded = decodeEntities(text)
   const needsToggle = decoded.length > 240
@@ -1988,7 +1996,7 @@ function ClaimText({ text }: { text: string }): React.JSX.Element {
             marginTop: 4, background: 'transparent', border: 'none', padding: 0,
             cursor: 'pointer', color: 'var(--lbb-accent-mid)', font: '600 11px inherit',
           }}
-        >{expanded ? 'Show less' : 'Show more'}</button>
+        >{expanded ? t('tapematch.curation.dossier.showLess') : t('tapematch.curation.dossier.showMore')}</button>
       )}
     </div>
   )
@@ -2090,8 +2098,8 @@ function Dossier({
             display: 'block', fontSize: 9.5, color: 'var(--lbb-fg3)', marginTop: 3, maxWidth: 170,
           }}>
             {sim == null
-              ? 'similarity — speed ratio unconfident, correlation not comparable'
-              : 'similarity · banded blend of corr + embedding'}
+              ? t('tapematch.curation.dossier.similarityUnknown')
+              : t('tapematch.curation.dossier.similarityKnown')}
           </span>
         </div>
         <Pill tone={verdict.tone}>{verdict.text}</Pill>
@@ -2104,39 +2112,41 @@ function Dossier({
           border: '1px solid color-mix(in oklab, var(--lbb-bad-bar) 50%, transparent)',
           fontSize: 11.5, color: 'var(--lbb-bad-fg)', lineHeight: 1.45,
         }}>
-          <strong>Conflict.</strong> LB page says same source; TapeMatch found no
-          acoustic link. This pair is why this date is in the queue.
+          <Trans i18nKey="tapematch.curation.dossier.conflictBanner" components={{ strong: <strong /> }} />
         </div>
       )}
 
       <AbPlayer lbA={lbA} lbB={lbB} eligible={pair?.ab_eligible === true} date={date} />
 
-      <DossierSubhead>Primary evidence</DossierSubhead>
+      <DossierSubhead>{t('tapematch.curation.dossier.subheads.primaryEvidence')}</DossierSubhead>
       <EvidenceBar
-        label="Residual correlation" value={pair?.corr ?? null}
+        label={t('tapematch.curation.dossier.evidence.residualCorrelation')} value={pair?.corr ?? null}
         thresh={CORR_THRESHOLD} note={corrNote(pair, t)}
       />
-      <DossierSubhead>Secondary evidence</DossierSubhead>
+      <DossierSubhead>{t('tapematch.curation.dossier.subheads.secondaryEvidence')}</DossierSubhead>
       <EvidenceBar
-        label="Windowed coverage" value={pair?.windowed_frac ?? null} thresh={WIN_THRESHOLD}
-        note="fraction of dense 60 s windows correlating — drives secondary clustering"
+        label={t('tapematch.curation.dossier.evidence.windowedCoverage')}
+        value={pair?.windowed_frac ?? null} thresh={WIN_THRESHOLD}
+        note={t('tapematch.curation.dossier.evidence.windowedCoverageNote')}
       />
       <EvidenceBar
-        label="Quiet-segment hiss corr" value={pair?.hiss_median ?? null}
-        note="tape hiss survives EQ/NR applied to the music"
+        label={t('tapematch.curation.dossier.evidence.hissCorr')} value={pair?.hiss_median ?? null}
+        note={t('tapematch.curation.dossier.evidence.hissCorrNote')}
       />
       <EvidenceBar
-        label="Fingerprint dice" value={pair?.fp_score ?? null} band={FP_BAND} demote
-        note={'confirmatory only — never groups. Shaded band = 0.15–0.50 coincidence '
-          + 'range for two tapers at the same show.'}
+        label={t('tapematch.curation.dossier.evidence.fingerprintDice')}
+        value={pair?.fp_score ?? null} band={FP_BAND} demote
+        note={t('tapematch.curation.dossier.evidence.fingerprintDiceNote')}
       />
 
-      <DossierSubhead>LB page says</DossierSubhead>
+      <DossierSubhead>{t('tapematch.curation.dossier.subheads.lbPageSays')}</DossierSubhead>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 7, alignItems: 'flex-start' }}>
         {hasClaim ? (
           <>
             <Pill tone={conflict ? 'bad' : pair?.lb_says_same ? 'ok' : 'mute'} soft>
-              {conflict ? 'disagrees' : pair?.lb_says_same ? 'agrees · same source' : 'no claim'}
+              {conflict ? t('tapematch.curation.dossier.lbPageSays.disagrees')
+                : pair?.lb_says_same ? t('tapematch.curation.dossier.lbPageSays.agrees')
+                  : t('tapematch.curation.dossier.lbPageSays.noClaim')}
             </Pill>
             <ClaimText text={claim as string} />
           </>
@@ -2146,12 +2156,12 @@ function Dossier({
             borderLeft: '2px solid var(--lbb-border)', background: 'var(--lbb-surface2)',
             borderRadius: '0 6px 6px 0', textWrap: 'pretty',
           }}>
-            No relation claim between these LB numbers on either page.
+            {t('tapematch.curation.dossier.lbPageSays.none')}
           </div>
         )}
       </div>
 
-      <DossierSubhead>Your judgment</DossierSubhead>
+      <DossierSubhead>{t('tapematch.curation.dossier.subheads.yourJudgment')}</DossierSubhead>
       {/* keyed by the pair so switching cells remounts with that pair's stored
           judgment/notes instead of carrying over the previous draft */}
       <JudgmentControl
@@ -2199,6 +2209,7 @@ function cellVisual(
 }
 
 function MatrixLegend({ densityNote }: { densityNote: string | null }): React.JSX.Element {
+  const { t } = useTranslation()
   const swatch: React.CSSProperties = {
     display: 'inline-block', width: 13, height: 11, borderRadius: 3,
     border: '1px solid var(--lbb-border)', marginLeft: 8, verticalAlign: 'middle',
@@ -2211,22 +2222,22 @@ function MatrixLegend({ densityNote }: { densityNote: string | null }): React.JS
       <span style={{
         ...swatch, marginLeft: 0,
         background: 'color-mix(in oklab, var(--lbb-accent-mid) 12%, var(--lbb-surface))',
-      }} /> unrelated 0–40
+      }} /> {t('tapematch.curation.matrix.legend.unrelated')}
       <span style={{
         ...swatch,
         background: 'color-mix(in oklab, var(--lbb-accent-mid) 55%, var(--lbb-surface))',
-      }} /> check 40–85
-      <span style={{ ...swatch, background: familyColorVar(0) }} /> same family 85–100 · tinted by family
+      }} /> {t('tapematch.curation.matrix.legend.check')}
+      <span style={{ ...swatch, background: familyColorVar(0) }} /> {t('tapematch.curation.matrix.legend.sameFamily')}
       <span style={{
         ...swatch,
         background: 'repeating-linear-gradient(45deg, var(--lbb-surface2), '
           + 'var(--lbb-surface2) 3px, var(--lbb-surface) 3px, var(--lbb-surface) 6px)',
-      }} /> n/c not comparable
+      }} /> {t('tapematch.curation.matrix.legend.notComparable')}
       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, marginLeft: 8 }}>
         <span style={{
           width: 7, height: 7, borderRadius: '50%', background: 'var(--lbb-bad-bar)',
           border: '1px solid var(--lbb-bg)', display: 'inline-block',
-        }} /> LB-page conflict
+        }} /> {t('tapematch.curation.matrix.legend.lbConflict')}
       </span>
       {densityNote && (
         <span style={{
@@ -2246,6 +2257,7 @@ function Matrix({
   onSelect: (pair: SelectedPair | null) => void
   familyCount: number
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const n = recordings.length
   const compact = n > COMPACT_THRESHOLD
   const cellRefs = useRef<Map<string, HTMLButtonElement>>(new Map())
@@ -2278,7 +2290,7 @@ function Matrix({
     <div style={{ overflowX: compact ? 'auto' : 'visible', maxWidth: compact ? undefined : 760 }}>
       <div
         role="grid"
-        aria-label="Recording similarity matrix"
+        aria-label={t('tapematch.curation.matrix.ariaLabel')}
         style={{
           display: 'grid',
           gridTemplateColumns: compact
@@ -2356,11 +2368,20 @@ function Matrix({
                 && selected.lbA !== b.lb && selected.lbB !== b.lb
               const visual = cellVisual(sim, sameFamily, familyColorVar(a.colorIndex))
               const isFocus = focusPos[0] === i && focusPos[1] === j
-              const simLabel = sim == null ? 'not comparable' : `${sim} percent similar`
-              const famLabel = sameFamily ? 'same family' : 'different family'
-              let title = `LB-${shortId(a.lb)} × LB-${shortId(b.lb)}`
-                + (sim == null ? ' — not comparable' : ` — ${sim}%`)
-              if (conflict && p?.lb_relation_text) title += ` · LB page: ${p.lb_relation_text}`
+              const simLabel = sim == null
+                ? t('tapematch.curation.matrix.cell.notComparable')
+                : t('tapematch.curation.matrix.cell.percentSimilar', { pct: sim })
+              const famLabel = sameFamily
+                ? t('tapematch.curation.matrix.cell.sameFamily')
+                : t('tapematch.curation.matrix.cell.differentFamily')
+              let title = t('tapematch.curation.matrix.cell.titleBase', {
+                a: shortId(a.lb), b: shortId(b.lb),
+              }) + (sim == null
+                ? t('tapematch.curation.matrix.cell.titleNotComparable')
+                : t('tapematch.curation.matrix.cell.titleSimilarity', { sim }))
+              if (conflict && p?.lb_relation_text) {
+                title += t('tapematch.curation.matrix.cell.titleClaim', { text: p.lb_relation_text })
+              }
               return (
                 <button
                   key={`${a.lb}-${b.lb}`}
@@ -2372,7 +2393,7 @@ function Matrix({
                   role="gridcell"
                   tabIndex={isFocus ? 0 : -1}
                   aria-label={`LB-${shortId(a.lb)} by LB-${shortId(b.lb)}, ${simLabel}, ${famLabel}`
-                    + (conflict ? ', LB page conflict' : '')}
+                    + (conflict ? t('tapematch.curation.matrix.cell.conflictSuffix') : '')}
                   aria-selected={isSel}
                   title={title}
                   onFocus={() => setFocusPos([i, j])}
@@ -2396,7 +2417,11 @@ function Matrix({
                   }}
                 >
                   {sim == null
-                    ? <span style={{ fontSize: compact ? 9 : '0.85em' }}>n/c</span>
+                    ? (
+                      <span style={{ fontSize: compact ? 9 : '0.85em' }}>
+                        {t('tapematch.curation.dossier.noContact')}
+                      </span>
+                    )
                     : sim}
                   {conflict && (
                     <span style={{
@@ -2412,8 +2437,11 @@ function Matrix({
         ))}
       </div>
       <MatrixLegend densityNote={compact
-        ? `${n} recordings · ${familyCount} families · ${(n * (n - 1)) / 2} pairs`
-          + ' · values in tooltip below 28px'
+        ? t('tapematch.curation.matrix.densityNote', {
+          recordings: t('tapematch.curation.matrix.densityRecordings', { count: n }),
+          families: t('tapematch.curation.matrix.densityFamilies', { count: familyCount }),
+          pairs: t('tapematch.curation.matrix.densityPairs', { count: (n * (n - 1)) / 2 }),
+        })
         : null}
       />
     </div>
@@ -2461,9 +2489,9 @@ function speedGlyph(kind: string | null): string {
   return (kind && SPEED_GLYPH[kind]) || '?'
 }
 
-function speedKindLabel(kind: string | null): string {
-  if (kind === 'insufficient') return 'speed-unknown (insufficient)' // A4
-  return kind ?? 'speed unmeasured'
+function speedKindLabel(kind: string | null, t: TFunction): string {
+  if (kind === 'insufficient') return t('tapematch.curation.speedLag.insufficient') // A4
+  return kind ?? t('tapematch.curation.speedLag.unmeasured')
 }
 
 /** Signed square-root: keeps sign, compresses magnitude (README §6 `sym`). */
@@ -2483,13 +2511,16 @@ function formatPpm(ppm: number): string {
 // stored ppm is an estimate the pipeline itself doesn't trust — but it is what
 // exists on disk, and the design plots every recording on the axis. Say so in
 // the tooltip rather than silently positioning a dot by an untrusted number.
-function speedTooltip(src: SourceRow): string {
-  const parts = [`LB-${shortId(src.lb_number)}`, speedKindLabel(src.speed_kind)]
+function speedTooltip(src: SourceRow, t: TFunction): string {
+  const parts = [`LB-${shortId(src.lb_number)}`, speedKindLabel(src.speed_kind, t)]
   if (src.speed_ppm == null) {
-    parts.push('no ppm recorded')
+    parts.push(t('tapematch.curation.speedLag.tooltip.noPpm'))
   } else {
     const untrusted = src.speed_kind === 'speed-unknown' || src.speed_kind === 'insufficient'
-    parts.push(`${formatPpm(src.speed_ppm)} ppm${untrusted ? ' (unconfident estimate)' : ''}`)
+    const key = untrusted
+      ? 'tapematch.curation.speedLag.tooltip.ppmUnconfident'
+      : 'tapematch.curation.speedLag.tooltip.ppm'
+    parts.push(t(key, { ppm: formatPpm(src.speed_ppm) }))
   }
   return parts.join(' · ')
 }
@@ -2499,21 +2530,22 @@ const LANE_HEIGHT = 34
 const TICK_GUTTER = 22
 
 function SpeedLegend(): React.JSX.Element {
+  const { t } = useTranslation()
   const entry: React.CSSProperties = { display: 'inline-flex', alignItems: 'center', gap: 5 }
   return (
     <div style={{
       display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 8,
       fontSize: 10, color: 'var(--lbb-fg3)', maxWidth: 760,
     }}>
-      <span style={entry}>◆ reference</span>
-      <span style={entry}>● aligned / constant offset</span>
-      <span style={entry}>▤ lag steps — re-tracking or a splice</span>
+      <span style={entry}>{t('tapematch.curation.speedLag.legend.reference')}</span>
+      <span style={entry}>{t('tapematch.curation.speedLag.legend.aligned')}</span>
+      <span style={entry}>{t('tapematch.curation.speedLag.legend.lagSteps')}</span>
       <span style={{ ...entry, color: 'var(--lbb-warn-fg)' }}>
-        ? speed-unknown → fingerprint path only
+        {t('tapematch.curation.speedLag.legend.speedUnknown')}
       </span>
       <span style={{
         marginLeft: 'auto', fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)',
-      }}>ppm vs reference · √ scale</span>
+      }}>{t('tapematch.curation.speedLag.legend.axisNote')}</span>
     </div>
   )
 }
@@ -2527,6 +2559,7 @@ function SpeedStrip({
   pending: number | null
   onDotClick: (lb: number) => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const { x, ticks, lanes, maxLane } = useMemo(() => {
     const values = sources.map(s => symPpm(s.speed_ppm ?? 0))
     const lo = Math.min(...values, 0)
@@ -2569,11 +2602,11 @@ function SpeedStrip({
       background: 'var(--lbb-surface)', padding: '12px 14px 10px', maxWidth: 760,
     }}>
       <div style={{ position: 'relative', height: (maxLane + 1) * LANE_HEIGHT + TICK_GUTTER }}>
-        {ticks.map(t => (
+        {ticks.map(tick => (
           <div
-            key={`tick-${t}`}
+            key={`tick-${tick}`}
             style={{
-              position: 'absolute', top: 0, bottom: TICK_GUTTER - 6, left: `${x(t)}%`,
+              position: 'absolute', top: 0, bottom: TICK_GUTTER - 6, left: `${x(tick)}%`,
             }}
           >
             <div style={{
@@ -2584,7 +2617,7 @@ function SpeedStrip({
               position: 'absolute', bottom: -15, left: 0, transform: 'translateX(-50%)',
               font: '500 9.5px var(--lbb-mono)', color: 'var(--lbb-fg3)',
               whiteSpace: 'nowrap',
-            }}>{t === 0 ? 'ref' : formatPpm(t)}</div>
+            }}>{tick === 0 ? t('tapematch.curation.speedLag.refTick') : formatPpm(tick)}</div>
           </div>
         ))}
         {sources.map((s, i) => {
@@ -2595,9 +2628,9 @@ function SpeedStrip({
             <button
               key={s.lb_number}
               type="button"
-              title={speedTooltip(s)}
+              title={speedTooltip(s, t)}
               aria-pressed={inPair || isPending}
-              aria-label={speedTooltip(s)}
+              aria-label={speedTooltip(s, t)}
               onClick={() => onDotClick(s.lb_number)}
               style={{
                 position: 'absolute', left: `${x(s.speed_ppm)}%`, top: lanes[i] * LANE_HEIGHT + 4,
@@ -2680,6 +2713,7 @@ function VerdictCard({
   famColor: string | null
   onOpenRef: ((refs: number[]) => void) | null
 }): React.JSX.Element {
+  const { t } = useTranslation()
   // B1.2 — a heading with no subject is a statement about the run, not a
   // finding about a recording, so it takes A6's dashed treatment: no chip, no
   // tone bar, and only its key is tinted. It never competes with a card.
@@ -2736,7 +2770,7 @@ function VerdictCard({
             <button
               type="button"
               onClick={() => onOpenRef(card.refs)}
-              title={`Open ${card.ref}`}
+              title={t('tapematch.curation.analysis.openRef', { ref: card.ref })}
               style={{
                 background: 'none', border: 'none', padding: 0, cursor: 'pointer',
                 font: '700 11px var(--lbb-mono)', color: 'var(--lbb-fg)',
@@ -2771,6 +2805,7 @@ function VerdictCards({
   pairsByKey: Map<string, PairRow>
   onOpenPair: (lbA: number, lbB: number) => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   // A6 — a clean date keeps the section and states the absence in one line.
   // A card means "here is a finding to review"; dressing the absence of
   // findings as a card devalues the card after fifty clean dates.
@@ -2814,9 +2849,11 @@ function VerdictCards({
         <div style={{
           fontSize: 11, color: 'var(--lbb-fg3)', lineHeight: 1.5, paddingTop: 2,
         }}>
-          Not on disk:{' '}
-          <span style={{ fontFamily: 'var(--lbb-mono)' }}>{doc.notOnDisk.join(', ')}</span>
-          {' '}— known to the DB, no audio found by the crawl.
+          <Trans
+            i18nKey="tapematch.curation.analysis.notOnDisk"
+            values={{ list: doc.notOnDisk.join(', ') }}
+            components={{ mono: <span style={{ fontFamily: 'var(--lbb-mono)' }} /> }}
+          />
         </div>
       )}
       {doc.algoNote && (
@@ -2828,7 +2865,7 @@ function VerdictCards({
           <span style={{
             display: 'block', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.07em',
             textTransform: 'uppercase', marginBottom: 3,
-          }}>Algorithm note</span>
+          }}>{t('tapematch.curation.analysis.algorithmNote')}</span>
           {doc.algoNote}
         </div>
       )}
@@ -2845,6 +2882,7 @@ function VerdictCards({
  * actually say". Not §11: that overlay renders `report.md`, a different file.
  */
 function RawAnalysis({ md }: { md: string | null }): React.JSX.Element | null {
+  const { t } = useTranslation()
   const [open, setOpen] = useState(false)
   if (!md) return null
   return (
@@ -2861,7 +2899,7 @@ function RawAnalysis({ md }: { md: string | null }): React.JSX.Element | null {
       >
         <Icon name={open ? 'chevDown' : 'chevRight'} size={11} />
         <span style={{ fontFamily: 'var(--lbb-mono)' }}>analysis.md</span>
-        <span style={{ fontWeight: 500 }}>— the document these cards were read from</span>
+        <span style={{ fontWeight: 500 }}>{t('tapematch.curation.analysis.rawDocNote')}</span>
       </button>
       {open && (
         <pre style={{
@@ -2877,6 +2915,7 @@ function RawAnalysis({ md }: { md: string | null }): React.JSX.Element | null {
 }
 
 export function ScreenTapeMatchCuration(): React.JSX.Element {
+  const { t } = useTranslation()
   const [searchParams, setSearchParams] = useSearchParams()
   const navigate = useNavigate()
   const selectedDate = searchParams.get('date')
@@ -3159,10 +3198,10 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
         setAccept({
           kind: 'failed',
           message: body?.error === 'locked'
-            ? 'TapeMatch is writing right now — try again in a moment.'
+            ? t('tapematch.curation.errors.locked')
             : body?.error === 'no_run'
-              ? "No analysed run for this date — nothing to accept."
-              : "Couldn't accept — nothing was recorded.",
+              ? t('tapematch.curation.errors.acceptNoRun')
+              : t('tapematch.curation.errors.acceptFailed'),
         })
         return
       }
@@ -3174,7 +3213,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
       // status pill and the "Done" filter only move once that refetches.
       queryClient.invalidateQueries({ queryKey: ['tapematch-dates'] })
     } catch {
-      setAccept({ kind: 'failed', message: "Couldn't accept — nothing was recorded." })
+      setAccept({ kind: 'failed', message: t('tapematch.curation.errors.acceptFailed') })
     }
   }
 
@@ -3240,13 +3279,15 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
                 // §10.5 — on a solo date the section is a Recording, not a
                 // matrix, and the hint names the threshold so the state
                 // doesn't read as a bug.
-                title={recordings.length === 1 ? 'Recording' : 'Similarity matrix'}
+                title={recordings.length === 1
+                  ? t('tapematch.curation.sections.recordingTitle')
+                  : t('tapematch.curation.sections.matrixTitle')}
                 hint={recordings.length === 1
-                  ? 'nothing to compare — pair views only appear from two recordings up'
-                  : 'family-ordered · % is the banded corr+embedding blend · click a cell for the dossier'}
+                  ? t('tapematch.curation.sections.recordingHint')
+                  : t('tapematch.curation.sections.matrixHint')}
               >
                 {!selectedRow ? (
-                  <SectionPlaceholder label="Select a date from the triage queue." />
+                  <SectionPlaceholder label={t('tapematch.curation.sections.selectDate')} />
                 ) : pairsError ? (
                   // §10.2 — the real error, not "something went wrong": this
                   // audience is technical, and the reassurance about saved
@@ -3254,11 +3295,8 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
                   <CurationState
                     glyph="&#9888;"
                     tone="bad"
-                    head="Couldn't load this date"
-                    body={
-                      "The run's artifacts didn't come back. Nothing has been changed — "
-                      + 'judgments you already saved are safe in observations.db.'
-                    }
+                    head={t('tapematch.curation.sections.loadErrorHead')}
+                    body={t('tapematch.curation.sections.loadErrorBody')}
                     detail={
                       `GET /api/tapematch/pairs?date=${selectedDate}\n`
                       + `error   ${(pairsErrorObj as Error | null)?.message ?? 'request failed'}\n`
@@ -3267,7 +3305,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
                     }
                     actions={
                       <Button variant="primary" size="sm" onClick={() => { void refetchPairsQuery() }}>
-                        Retry
+                        {t('tapematch.curation.sections.retry')}
                       </Button>
                     }
                   />
@@ -3285,12 +3323,8 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
                   <CurationState
                     glyph="&#8709;"
                     tone="mute"
-                    head="No recordings for this date"
-                    body={
-                      'The show is in the library but no audience recordings have been '
-                      + 'indexed, so TapeMatch has nothing to compare. It will re-enter the '
-                      + 'queue automatically when a recording appears.'
-                    }
+                    head={t('tapematch.curation.sections.noRecordingsHead')}
+                    body={t('tapematch.curation.sections.noRecordingsBody')}
                   />
                 ) : recordings.length === 1 ? (
                   // §10.5 — one recording means zero pairs, so the date
@@ -3313,24 +3347,22 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
                 )}
               </CurationSection>
               <CurationSection
-                title="Speed & lag"
-                hint="why a pair's correlation looks the way it does · click two dots to open their pair"
+                title={t('tapematch.curation.speedLag.title')}
+                hint={t('tapematch.curation.speedLag.hint')}
               >
                 {!selectedRow ? (
-                  <SectionPlaceholder label="Select a date from the triage queue." />
+                  <SectionPlaceholder label={t('tapematch.curation.sections.selectDate')} />
                 ) : sourcesLoading ? (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 8, maxWidth: 760 }}>
                     <Skeleton h={54} />
                     <Skeleton w={280} h={9} />
                   </div>
                 ) : sourcesError ? (
-                  <SectionPlaceholder label="Couldn't load this date's speed measurements." />
+                  <SectionPlaceholder label={t('tapematch.curation.speedLag.loadError')} />
                 ) : speedSources.length === 0 ? (
                   // No analysed run for the date (or observations.db locked
                   // mid-run — the route degrades to an empty list either way).
-                  <SectionPlaceholder label={
-                    'No speed measurements for this date — nothing has been analysed yet.'
-                  } />
+                  <SectionPlaceholder label={t('tapematch.curation.speedLag.noMeasurements')} />
                 ) : (
                   <SpeedStrip
                     sources={speedSources}
@@ -3342,19 +3374,16 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
                 )}
               </CurationSection>
               <CurationSection
-                title="Analysis verdict"
-                hint="parsed from analysis.md — the human/AI review layer"
+                title={t('tapematch.curation.analysis.title')}
+                hint={t('tapematch.curation.analysis.hint')}
               >
                 {!selectedRow ? (
-                  <SectionPlaceholder label="Select a date from the triage queue." />
+                  <SectionPlaceholder label={t('tapematch.curation.sections.selectDate')} />
                 ) : !analysisDoc ? (
                   // The run exists but has no analysis.md yet (or the date has
                   // no run at all) — the route returns analysis_md null for
                   // both, and neither is an error worth alarming about.
-                  <SectionPlaceholder label={
-                    'No analysis.md for this date yet — the review layer runs after the '
-                    + 'match pass.'
-                  } />
+                  <SectionPlaceholder label={t('tapematch.curation.analysis.noneYet')} />
                 ) : (
                   <>
                     <VerdictCards
@@ -3395,7 +3424,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
           <div
             role="dialog"
             aria-modal="true"
-            aria-label="Pair dossier"
+            aria-label={t('tapematch.curation.sections.dossierAriaLabel')}
             className="lbbDrawer"
             ref={drawerRef}
             tabIndex={-1}

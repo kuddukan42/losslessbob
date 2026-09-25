@@ -1960,7 +1960,151 @@
           "differentFamily": "familia diferente"
         },
         "openInLibrary": "Abre LB-{{lb}} en la biblioteca",
-        "close": "Cerrar expediente"
+        "close": "Cerrar expediente",
+        "similarityUnknown": "similitud — relación de velocidad poco fiable, correlación no comparable",
+        "similarityKnown": "similitud · mezcla por bandas de corr + incrustación",
+        "conflictBanner": "<strong>Conflicto.</strong> La página de LB indica la misma fuente; TapeMatch no ha encontrado ninguna coincidencia acústica. Este par es el motivo por el que esta fecha se encuentra en la cola.",
+        "subheads": {
+          "primaryEvidence": "Pruebas principales",
+          "secondaryEvidence": "Pruebas secundarias",
+          "lbPageSays": "La página de LB dice:",
+          "yourJudgment": "Tu opinión"
+        },
+        "evidence": {
+          "residualCorrelation": "Correlación residual",
+          "windowedCoverage": "Cobertura en modo ventana",
+          "windowedCoverageNote": "La fracción de ventanas densas de 60 s que se correlacionan impulsa la agrupación secundaria.",
+          "hissCorr": "Corrección del silbido en segmentos silenciosos",
+          "hissCorrNote": "El ruido de la cinta persiste tras aplicar ecualización y reducción de ruido a la música",
+          "fingerprintDice": "Dados de huellas dactilares",
+          "fingerprintDiceNote": "Solo a título confirmatorio — nunca en grupos. Banda sombreada = rango de coincidencia de 0,15–0,50 para dos personas que grabaron el mismo concierto."
+        },
+        "lbPageSays": {
+          "disagrees": "no está de acuerdo",
+          "agrees": "de acuerdo · misma fuente",
+          "noClaim": "sin reivindicación",
+          "none": "No existe ninguna relación entre estos números de LB en ninguna de las dos páginas."
+        },
+        "showMore": "Mostrar más",
+        "showLess": "Mostrar menos"
+      },
+      "abPlayer": {
+        "title": "Escucha A/B",
+        "notEligible": "no cumple los requisitos",
+        "notEligibleBody": "No se pueden alinear por muestra: la diferencia de velocidad entre ambos hace imposible sincronizar un par de clips.",
+        "position": "Puesto(s)",
+        "duration": "Duración (s)",
+        "load": "Cargar",
+        "loading": "Cargando…",
+        "autoHint": "Deja la posición en blanco para que se seleccione automáticamente un momento alineado con el volumen más alto.",
+        "play": "▶ Reproducir",
+        "pause": "Pausa",
+        "sourceLabel": "{{letter}} · LB-{{lb}}",
+        "errors": {
+          "notAlignable": "Estas dos fuentes no se pueden alinear por muestras.",
+          "outOfRange": "Esa posición se encuentra más allá del final de una de las fuentes.",
+          "folderMissing": "No se ha encontrado la carpeta de origen; es posible que el disco no esté montado.",
+          "clipBuildFailed": "No se han podido crear los clips."
+        }
+      },
+      "judgment": {
+        "options": {
+          "sameSource": "Misma fuente",
+          "different": "Diferentes",
+          "uncertain": "Incerto",
+          "lbWrong": "LB incorrecto"
+        },
+        "notesPlaceholder": "Notas…",
+        "cancel": "Cancelar",
+        "save": "Guardar",
+        "footnote": "Escribe <mono>human_judgment</mono> + <mono>human_notes</mono> en <mono>observations.db · pairs</mono>.",
+        "saving": "Guardando…",
+        "saved": "Guardado {{at}} · {{label}}",
+        "clearedLabel": "borrado",
+        "retry": "Reintentar",
+        "errors": {
+          "locked": "TapeMatch se está desarrollando en estos momentos; se guarda localmente.",
+          "pairNotFound": "Ese par no está en la versión actual; se guarda localmente.",
+          "saveFailed": "No se ha podido guardar — se ha guardado localmente."
+        }
+      },
+      "matrix": {
+        "ariaLabel": "Matriz de similitud de grabaciones",
+        "legend": {
+          "unrelated": "sin relación 0–40",
+          "check": "marcar 40–85",
+          "sameFamily": "misma familia 85–100 · matizadas por familia",
+          "notComparable": "n/c: no comparable",
+          "lbConflict": "Conflicto de página LB"
+        },
+        "densityRecordings_one": "{{count}} grabación",
+        "densityRecordings_other": "Grabaciones {{count}}",
+        "densityFamilies_one": "Familia {{count}}",
+        "densityFamilies_other": "Familias {{count}}",
+        "densityPairs_one": "Par {{count}}",
+        "densityPairs_other": "Pares {{count}}",
+        "densityNote": "{{recordings}} · {{families}} · {{pairs}} · valores en la información sobre herramientas por debajo de 28 píxeles",
+        "cell": {
+          "notComparable": "no comparable",
+          "percentSimilar": "{{pct}} por ciento de similitud",
+          "sameFamily": "misma familia",
+          "differentFamily": "familia diferente",
+          "conflictSuffix": ", conflicto de página LB",
+          "titleBase": "LB-{{a}} × LB-{{b}}",
+          "titleNotComparable": " — no comparable",
+          "titleSimilarity": " — {{sim}}%",
+          "titleClaim": " · Página LB: {{text}}"
+        }
+      },
+      "speedLag": {
+        "title": "Velocidad y retrasos",
+        "hint": "por qué la correlación de un par tiene ese aspecto · haz clic en dos puntos para abrir su par",
+        "unmeasured": "velocidad no medida",
+        "insufficient": "velocidad desconocida (insuficiente)",
+        "refTick": "ref",
+        "tooltip": {
+          "noPpm": "No se ha registrado ningún ppm",
+          "ppm": "{{ppm}} ppm",
+          "ppmUnconfident": "{{ppm}} ppm (estimación poco fiable)"
+        },
+        "legend": {
+          "reference": "◆ referencia",
+          "aligned": "● alineadas / desplazamiento constante",
+          "lagSteps": "▤ Pasos de desfase: re-tracking o empalme",
+          "speedUnknown": "? velocidad desconocida → solo ruta de huella digital",
+          "axisNote": "ppm frente a referencia · √ escala"
+        },
+        "noMeasurements": "No hay mediciones de velocidad para esta fecha: aún no se ha analizado nada.",
+        "loadError": "No se han podido cargar las mediciones de velocidad de esta fecha."
+      },
+      "analysis": {
+        "title": "Veredicto del análisis",
+        "hint": "Extraído de analysis.md — la capa de revisión humana/IA",
+        "noneYet": "Aún no hay ningún archivo «analysis.md» para esta fecha; la capa de revisión se ejecuta tras la pasada de coincidencia.",
+        "notOnDisk": "No está en el disco: <mono>{{list}}</mono> — conocido por la base de datos, pero el rastreo no ha encontrado ningún archivo de audio.",
+        "algorithmNote": "Nota sobre el algoritmo",
+        "rawDocNote": "— el documento del que se han extraído estas fichas",
+        "openRef": "Abrir {{ref}}"
+      },
+      "sections": {
+        "matrixTitle": "Matriz de similitud",
+        "recordingTitle": "Grabación",
+        "matrixHint": "ordenadas por familia · % es la mezcla de corr+embedding en bandas · haz clic en una celda para ver el expediente",
+        "recordingHint": "No hay nada con lo que compararlo: las vistas por pares solo aparecen a partir de dos grabaciones.",
+        "selectDate": "Selecciona una fecha de la cola de clasificación.",
+        "loadErrorHead": "No se ha podido cargar esta fecha",
+        "loadErrorBody": "Los artefactos de la ejecución no se han recuperado. No se ha modificado nada: las valoraciones que ya habías guardado están a salvo en observations.db.",
+        "retry": "Reintentar",
+        "noRecordingsHead": "No hay grabaciones para esta fecha",
+        "noRecordingsBody": "El programa se encuentra en la biblioteca, pero no se ha indexado ninguna grabación del público, por lo que TapeMatch no tiene nada con qué comparar. Volverá a incorporarse a la cola automáticamente cuando aparezca una grabación.",
+        "measuringPairs_one": "midiendo el par {{count}}…",
+        "measuringPairs_other": "Midiendo pares {{count}}…",
+        "dossierAriaLabel": "Expediente de pareja"
+      },
+      "errors": {
+        "locked": "TapeMatch se está cargando ahora mismo; inténtalo de nuevo dentro de un momento.",
+        "acceptNoRun": "No hay ninguna ejecución analizada para esta fecha: no hay nada que aceptar.",
+        "acceptFailed": "No se pudo aceptar: no se grabó nada."
       }
     }
   },

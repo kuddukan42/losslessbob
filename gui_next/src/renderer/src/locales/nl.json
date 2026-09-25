@@ -1960,7 +1960,151 @@
           "differentFamily": "verschillende familie"
         },
         "openInLibrary": "Open LB-{{lb}} in de bibliotheek",
-        "close": "Dossier sluiten"
+        "close": "Dossier sluiten",
+        "similarityUnknown": "gelijkenis — snelheidsverhouding onzeker, correlatie niet vergelijkbaar",
+        "similarityKnown": "gelijkenis · gestreepte mix van corr + embedding",
+        "conflictBanner": "<strong>Conflict.</strong> Op de LB-pagina staat dezelfde bron vermeld; TapeMatch heeft geen akoestische overeenkomst gevonden. Vanwege dit paar staat deze datum in de wachtrij.",
+        "subheads": {
+          "primaryEvidence": "Primair bewijsmateriaal",
+          "secondaryEvidence": "Secundair bewijs",
+          "lbPageSays": "Op de LB-pagina staat",
+          "yourJudgment": "Uw oordeel"
+        },
+        "evidence": {
+          "residualCorrelation": "Residuale correlatie",
+          "windowedCoverage": "Weergave in venster",
+          "windowedCoverageNote": "een fractie van de 60-secondenvensters die met elkaar correleren — leidt tot secundaire clustering",
+          "hissCorr": "Ruiscorrectie in stille segmenten",
+          "hissCorrNote": "Het ruisgeluid van de band blijft hoorbaar na toepassing van EQ/NR op de muziek",
+          "fingerprintDice": "Vingerafdrukdobbelstenen",
+          "fingerprintDiceNote": "Alleen ter bevestiging — nooit groepen. Gearceerde strook = 0,15–0,50 samenvallingsbereik voor twee opnamers van hetzelfde concert."
+        },
+        "lbPageSays": {
+          "disagrees": "is het er niet mee eens",
+          "agrees": "is het daarmee eens · dezelfde bron",
+          "noClaim": "geen aanspraak",
+          "none": "Er is geen verband tussen deze LB-nummers op beide pagina's."
+        },
+        "showMore": "Meer weergeven",
+        "showLess": "Minder weergeven"
+      },
+      "abPlayer": {
+        "title": "A/B-luisteren",
+        "notEligible": "komt niet in aanmerking",
+        "notEligibleBody": "Kan niet per sample worden uitgelijnd — het snelheidsverschil tussen deze twee maakt een gesynchroniseerd clip-paar onmogelijk.",
+        "position": "Functie(s)",
+        "duration": "Duur (s)",
+        "load": "Laden",
+        "loading": "Bezig met laden…",
+        "autoHint": "Laat het veld ‘positie’ leeg om automatisch een moment te kiezen waarop het geluid het luidst is.",
+        "play": "▶ Afspelen",
+        "pause": "Pauzeren",
+        "sourceLabel": "{{letter}} · LB-{{lb}}",
+        "errors": {
+          "notAlignable": "Deze twee bronnen kunnen niet op sample-niveau worden uitgelijnd.",
+          "outOfRange": "Die positie ligt voorbij het einde van een van de bronbestanden.",
+          "folderMissing": "Bronmap niet gevonden — de schijf is mogelijk niet gekoppeld.",
+          "clipBuildFailed": "De clips konden niet worden gemaakt."
+        }
+      },
+      "judgment": {
+        "options": {
+          "sameSource": "Dezelfde bron",
+          "different": "Verschillende",
+          "uncertain": "Onzeker",
+          "lbWrong": "LB fout"
+        },
+        "notesPlaceholder": "opmerkingen…",
+        "cancel": "Annuleren",
+        "save": "Opslaan",
+        "footnote": "Schrijft <mono>human_judgment</mono> + <mono>human_notes</mono> naar <mono>observations.db · pairs</mono>.",
+        "saving": "Bezig met opslaan…",
+        "saved": "Opgeslagen {{at}} · {{label}}",
+        "clearedLabel": "gewist",
+        "retry": "Opnieuw proberen",
+        "errors": {
+          "locked": "TapeMatch wordt momenteel geschreven — lokaal opgeslagen.",
+          "pairNotFound": "Dat paar zit niet in de huidige versie — het wordt lokaal bewaard.",
+          "saveFailed": "Kon niet worden opgeslagen — lokaal bewaard."
+        }
+      },
+      "matrix": {
+        "ariaLabel": "Overeenkomstmatrix voor opnames",
+        "legend": {
+          "unrelated": "niet-gerelateerd 0–40",
+          "check": "check 40–85",
+          "sameFamily": "dezelfde familie 85–100 · getint per familie",
+          "notComparable": "n/c niet vergelijkbaar",
+          "lbConflict": "Conflict met LB-pagina"
+        },
+        "densityRecordings_one": "{{count}} opname",
+        "densityRecordings_other": "{{count}}-opnames",
+        "densityFamilies_one": "{{count}}-serie",
+        "densityFamilies_other": "{{count}}-families",
+        "densityPairs_one": "{{count}}-paar",
+        "densityPairs_other": "{{count}}-paren",
+        "densityNote": "{{recordings}} · {{families}} · {{pairs}} · waarden in tooltip kleiner dan 28px",
+        "cell": {
+          "notComparable": "niet vergelijkbaar",
+          "percentSimilar": "{{pct}} procent overeenkomst",
+          "sameFamily": "dezelfde familie",
+          "differentFamily": "verschillende familie",
+          "conflictSuffix": ", LB-pagina-conflict",
+          "titleBase": "LB-{{a}} × LB-{{b}}",
+          "titleNotComparable": " — niet vergelijkbaar",
+          "titleSimilarity": " — {{sim}}%",
+          "titleClaim": " · LB-pagina: {{text}}"
+        }
+      },
+      "speedLag": {
+        "title": "Snelheid en vertraging",
+        "hint": "waarom de correlatie tussen twee punten er zo uitziet · klik op twee punten om hun paar te openen",
+        "unmeasured": "snelheid niet gemeten",
+        "insufficient": "snelheid onbekend (onvoldoende)",
+        "refTick": "ref",
+        "tooltip": {
+          "noPpm": "geen ppm geregistreerd",
+          "ppm": "{{ppm}} ppm",
+          "ppmUnconfident": "{{ppm}} ppm (onzekere schatting)"
+        },
+        "legend": {
+          "reference": "◆ referentie",
+          "aligned": "● uitgelijnd / constante verschuiving",
+          "lagSteps": "▤ lag-stappen — heropname of een splice",
+          "speedUnknown": "? snelheid onbekend → alleen vingerafdrukpad",
+          "axisNote": "ppm versus referentie · √ schaal"
+        },
+        "noMeasurements": "Geen snelheidsmetingen voor deze datum — er is nog niets geanalyseerd.",
+        "loadError": "De snelheidsmetingen van deze datum konden niet worden geladen."
+      },
+      "analysis": {
+        "title": "Analyseoordeel",
+        "hint": "ontleend aan analysis.md — de beoordelingslaag door mensen en AI",
+        "noneYet": "Er is nog geen analysis.md voor deze datum — de review-laag wordt uitgevoerd na de match-pass.",
+        "notOnDisk": "Niet op schijf: <mono>{{list}}</mono> — bekend bij de database, maar er is geen audio gevonden tijdens het scannen.",
+        "algorithmNote": "Opmerking over het algoritme",
+        "rawDocNote": "— het document waaruit deze kaarten zijn afgeleid",
+        "openRef": "Open {{ref}}"
+      },
+      "sections": {
+        "matrixTitle": "Overeenkomstenmatrix",
+        "recordingTitle": "Opname",
+        "matrixHint": "op familie gesorteerd · % is de combinatie van banded corr en embedding · klik op een cel voor het dossier",
+        "recordingHint": "niet te vergelijken — paarweergaven verschijnen pas vanaf twee opnames",
+        "selectDate": "Selecteer een datum uit de triage-wachtrij.",
+        "loadErrorHead": "Deze datum kon niet worden geladen",
+        "loadErrorBody": "De artefacten van de run zijn niet teruggekomen. Er is niets gewijzigd — beoordelingen die je al hebt opgeslagen, staan veilig in observations.db.",
+        "retry": "Opnieuw proberen",
+        "noRecordingsHead": "Geen opnames voor deze datum",
+        "noRecordingsBody": "De voorstelling staat in de bibliotheek, maar er zijn nog geen opnames van het publiek geïndexeerd, dus TapeMatch heeft niets om mee te vergelijken. Het programma komt automatisch weer in de wachtrij terecht zodra er een opname verschijnt.",
+        "measuringPairs_one": "{{count}}-paar wordt gemeten…",
+        "measuringPairs_other": "{{count}}-paren worden gemeten…",
+        "dossierAriaLabel": "Dossier ‘Pair’"
+      },
+      "errors": {
+        "locked": "TapeMatch is momenteel bezig met schrijven — probeer het straks nog eens.",
+        "acceptNoRun": "Geen geanalyseerde run voor deze datum — niets om te accepteren.",
+        "acceptFailed": "Kon niet worden geaccepteerd — er was niets opgenomen."
       }
     }
   },

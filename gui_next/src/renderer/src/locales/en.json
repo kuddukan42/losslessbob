@@ -2020,7 +2020,151 @@
           "differentFamily": "different family"
         },
         "openInLibrary": "Open LB-{{lb}} in the Library",
-        "close": "Close dossier"
+        "close": "Close dossier",
+        "similarityUnknown": "similarity — speed ratio unconfident, correlation not comparable",
+        "similarityKnown": "similarity · banded blend of corr + embedding",
+        "conflictBanner": "<strong>Conflict.</strong> LB page says same source; TapeMatch found no acoustic link. This pair is why this date is in the queue.",
+        "subheads": {
+          "primaryEvidence": "Primary evidence",
+          "secondaryEvidence": "Secondary evidence",
+          "lbPageSays": "LB page says",
+          "yourJudgment": "Your judgment"
+        },
+        "evidence": {
+          "residualCorrelation": "Residual correlation",
+          "windowedCoverage": "Windowed coverage",
+          "windowedCoverageNote": "fraction of dense 60 s windows correlating — drives secondary clustering",
+          "hissCorr": "Quiet-segment hiss corr",
+          "hissCorrNote": "tape hiss survives EQ/NR applied to the music",
+          "fingerprintDice": "Fingerprint dice",
+          "fingerprintDiceNote": "confirmatory only — never groups. Shaded band = 0.15–0.50 coincidence range for two tapers at the same show."
+        },
+        "lbPageSays": {
+          "disagrees": "disagrees",
+          "agrees": "agrees · same source",
+          "noClaim": "no claim",
+          "none": "No relation claim between these LB numbers on either page."
+        },
+        "showMore": "Show more",
+        "showLess": "Show less"
+      },
+      "abPlayer": {
+        "title": "A/B listening",
+        "notEligible": "not eligible",
+        "notEligibleBody": "Not sample-alignable — the speed offset between these two makes a synced clip pair impossible.",
+        "position": "Position (s)",
+        "duration": "Duration (s)",
+        "load": "Load",
+        "loading": "Loading…",
+        "autoHint": "Leave position blank to auto-pick a loud aligned moment.",
+        "play": "▶ Play",
+        "pause": "Pause",
+        "sourceLabel": "{{letter}} · LB-{{lb}}",
+        "errors": {
+          "notAlignable": "These two sources are not sample-alignable.",
+          "outOfRange": "That position is past the end of one of the sources.",
+          "folderMissing": "Source folder not found — the disk may not be mounted.",
+          "clipBuildFailed": "Couldn't build the clips."
+        }
+      },
+      "judgment": {
+        "options": {
+          "sameSource": "Same source",
+          "different": "Different",
+          "uncertain": "Uncertain",
+          "lbWrong": "LB wrong"
+        },
+        "notesPlaceholder": "notes…",
+        "cancel": "Cancel",
+        "save": "Save",
+        "footnote": "Writes <mono>human_judgment</mono> + <mono>human_notes</mono> to <mono>observations.db · pairs</mono>.",
+        "saving": "Saving…",
+        "saved": "Saved {{at}} · {{label}}",
+        "clearedLabel": "cleared",
+        "retry": "Retry",
+        "errors": {
+          "locked": "TapeMatch is writing right now — kept locally.",
+          "pairNotFound": "That pair isn't in the current run — kept locally.",
+          "saveFailed": "Couldn't save — kept locally."
+        }
+      },
+      "matrix": {
+        "ariaLabel": "Recording similarity matrix",
+        "legend": {
+          "unrelated": "unrelated 0–40",
+          "check": "check 40–85",
+          "sameFamily": "same family 85–100 · tinted by family",
+          "notComparable": "n/c not comparable",
+          "lbConflict": "LB-page conflict"
+        },
+        "densityRecordings_one": "{{count}} recording",
+        "densityRecordings_other": "{{count}} recordings",
+        "densityFamilies_one": "{{count}} family",
+        "densityFamilies_other": "{{count}} families",
+        "densityPairs_one": "{{count}} pair",
+        "densityPairs_other": "{{count}} pairs",
+        "densityNote": "{{recordings}} · {{families}} · {{pairs}} · values in tooltip below 28px",
+        "cell": {
+          "notComparable": "not comparable",
+          "percentSimilar": "{{pct}} percent similar",
+          "sameFamily": "same family",
+          "differentFamily": "different family",
+          "conflictSuffix": ", LB page conflict",
+          "titleBase": "LB-{{a}} × LB-{{b}}",
+          "titleNotComparable": " — not comparable",
+          "titleSimilarity": " — {{sim}}%",
+          "titleClaim": " · LB page: {{text}}"
+        }
+      },
+      "speedLag": {
+        "title": "Speed & lag",
+        "hint": "why a pair's correlation looks the way it does · click two dots to open their pair",
+        "unmeasured": "speed unmeasured",
+        "insufficient": "speed-unknown (insufficient)",
+        "refTick": "ref",
+        "tooltip": {
+          "noPpm": "no ppm recorded",
+          "ppm": "{{ppm}} ppm",
+          "ppmUnconfident": "{{ppm}} ppm (unconfident estimate)"
+        },
+        "legend": {
+          "reference": "◆ reference",
+          "aligned": "● aligned / constant offset",
+          "lagSteps": "▤ lag steps — re-tracking or a splice",
+          "speedUnknown": "? speed-unknown → fingerprint path only",
+          "axisNote": "ppm vs reference · √ scale"
+        },
+        "noMeasurements": "No speed measurements for this date — nothing has been analysed yet.",
+        "loadError": "Couldn't load this date's speed measurements."
+      },
+      "analysis": {
+        "title": "Analysis verdict",
+        "hint": "parsed from analysis.md — the human/AI review layer",
+        "noneYet": "No analysis.md for this date yet — the review layer runs after the match pass.",
+        "notOnDisk": "Not on disk: <mono>{{list}}</mono> — known to the DB, no audio found by the crawl.",
+        "algorithmNote": "Algorithm note",
+        "rawDocNote": "— the document these cards were read from",
+        "openRef": "Open {{ref}}"
+      },
+      "sections": {
+        "matrixTitle": "Similarity matrix",
+        "recordingTitle": "Recording",
+        "matrixHint": "family-ordered · % is the banded corr+embedding blend · click a cell for the dossier",
+        "recordingHint": "nothing to compare — pair views only appear from two recordings up",
+        "selectDate": "Select a date from the triage queue.",
+        "loadErrorHead": "Couldn't load this date",
+        "loadErrorBody": "The run's artifacts didn't come back. Nothing has been changed — judgments you already saved are safe in observations.db.",
+        "retry": "Retry",
+        "noRecordingsHead": "No recordings for this date",
+        "noRecordingsBody": "The show is in the library but no audience recordings have been indexed, so TapeMatch has nothing to compare. It will re-enter the queue automatically when a recording appears.",
+        "measuringPairs_one": "measuring {{count}} pair…",
+        "measuringPairs_other": "measuring {{count}} pairs…",
+        "dossierAriaLabel": "Pair dossier"
+      },
+      "errors": {
+        "locked": "TapeMatch is writing right now — try again in a moment.",
+        "acceptNoRun": "No analysed run for this date — nothing to accept.",
+        "acceptFailed": "Couldn't accept — nothing was recorded."
       }
     }
   },

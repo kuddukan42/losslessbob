@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-275: gui_next — internationalise ScreenTapeMatchCuration (tapematch.* keys)
+Priority: Medium
+Status: Done
+Added: 2026-07-28
+Closed: 2026-09-25
+Description: The curation screen replaced ScreenTapeMatch at /tapematch on 2026-07-28 with all strings hardcoded English, so the TapeMatch screen is no longer translated in de/fr/es/it/nl. The retired screen's tapematch.* keys are still in locales/*.json and cover part of the surface (crawl strip, rail, judgment vocabulary, analysis section); the new surface (triage filters, matrix legend, evidence bars, speed-strip glyph legend, verdict cards, save/accept status lines) needs new keys. Extract to t() in the tapematch namespace, then run /gui-next-i18n to fill the five locales via DeepL. 2026-08-10: the rail-filter add-on (design_handoff_tapematch_rail_filter, folded into TriageRail) added more hardcoded strings on top — the query field's placeholder/grammar, year-brush readout ("all · drag to scope"), decade chip labels, result-bar reset/sort toggle, and the updated keyboard footer.
+ScreenTapeMatchCuration fully internationalised under tapematch.curation.* (~330 keys incl. 194 in the 2026-09-25 finish: A/B player, judgment, dossier evidence, matrix, speed & lag, analysis panels); DeepL de/fr/es/it/nl, Trans tags verified intact. Mono identifiers/filenames/LB numbers left English by design.
+
 TODO-347: Dossier: rethink stats.instrument_tally line
 Priority: Low
 Status: Done
