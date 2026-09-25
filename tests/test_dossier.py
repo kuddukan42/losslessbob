@@ -367,9 +367,14 @@ class TestXrefDeepLinks:
             assert xref["bobserve"]["url"] == "https://bobserve.com/setlist?event=4282"
             assert xref["bobserve"]["is_source"] is True
             # No fabricated mirror link — fall back to the chronicle index.
-            assert xref["olof"]["url"] == "http://www.bjorner.com/still.htm"
+            # F7: bjorner.com is parked; the fallback is now the bobserve mirror's
+            # own Olof index.
+            assert xref["olof"]["url"] == "https://www.bobserve.com/olof/"
             assert xref["olof"]["is_source"] is False
-            assert xref["boblinks"]["url"] == "https://boblinks.com/101623s.html"
+            # F7: boblinks no longer guesses a MMDDYYs.html URL (unreliable -- some
+            # real dates 404); it only links a date the boblinks_pages crawl found.
+            # This fixture has no boblinks_pages row, so the card falls back unavailable.
+            assert xref["boblinks"]["unavailable"] is True
         finally:
             import shutil
             shutil.rmtree(tmp_dir, ignore_errors=True)

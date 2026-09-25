@@ -155,6 +155,47 @@ def test_check_family_membership_clean_when_listed():
     assert check_family_membership("p.html", html_snip) == []
 
 
+# F3: family id/basis moved off hidden spans onto a `data-family` attribute on the
+# `<tr class="fam-head">` itself. These cover the new export form; the tests above
+# cover the old hidden-span form, which the audit still has to keep reading.
+_NONCONTIG_FAM_HTML_NEW = """
+<tr class="fam-head" data-family="1975-12-08#1-2"><td>
+<span data-lb="family[].label">Family A</span></td></tr>
+<tr class="mrow in-fam" data-family="1975-12-08#1-2"><td>LB-00001</td></tr>
+<tr class="fam-head" data-family="1975-12-08#3-4"><td>
+<span data-lb="family[].label">Family B</span></td></tr>
+<tr class="mrow in-fam" data-family="1975-12-08#3-4"><td>LB-00003</td></tr>
+<tr class="fam-head" data-family="1975-12-08#1-2"><td>
+<span data-lb="family[].label">Family A</span></td></tr>
+<tr class="mrow in-fam" data-family="1975-12-08#1-2"><td>LB-00002</td></tr>
+"""
+
+
+def test_check_family_contiguous_flags_split_family_new_form():
+    findings = check_family_contiguous("p.html", _NONCONTIG_FAM_HTML_NEW)
+    assert len(findings) == 1
+    assert findings[0].check == "family-noncontiguous"
+
+
+def test_check_family_membership_new_form_flags_mismatch():
+    html_snip = """
+    <tr class="fam-head" data-family="1975-12-08#1-2"><td></td></tr>
+    <tr class="mrow in-fam" data-family="1975-12-08#1-2"><td>LB-00099</td></tr>
+    """
+    findings = check_family_membership("p.html", html_snip)
+    assert len(findings) == 1
+    assert findings[0].check == "family-id-mismatch"
+
+
+def test_check_family_membership_other_band_not_checked():
+    html_snip = """
+    <tr class="fam-head fam-head-other" data-family="__other__"><td>
+    <span class="fam-name">Other sources</span></td></tr>
+    <tr class="mrow" data-family="__other__"><td>LB-00099</td></tr>
+    """
+    assert check_family_membership("p.html", html_snip) == []
+
+
 def test_check_two_show_cross_pick_flags_wrong_part():
     html_snip = (
         '<span data-lb="pick.lineage_short">Afternoon, low gen reel</span>'

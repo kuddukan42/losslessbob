@@ -344,7 +344,7 @@ def _xref_to_pick(xref: list[dict], fields: dict) -> list[dict]:
 def build_view(
     d1: dict,
     conn: sqlite3.Connection,
-    link_mode: str = "file",
+    link_mode: str = "none",
     *,
     event_id: int | None = None,
     visible_lbs: list[int] | None = None,
@@ -380,9 +380,12 @@ def build_view(
         d1: The dict returned by :func:`backend.dossier.build_dossier`
             (non-ambiguous shape).
         conn: Open SQLite connection (``row_factory = sqlite3.Row``).
-        link_mode: ``'file'`` (default) links sibling nights to
-            ``dossier-YYYY-MM-DD.html``; ``'inline'`` links to
-            ``/api/dossier/html?date=...&inline=1`` (plan Decisions line 38).
+        link_mode: ``'none'`` (default, F8) never links a sibling night --
+            the template renders it as a plain "not linked" span
+            (``tools.dossier_golden.export_html`` post-rewrites those it can
+            actually resolve to an exported stem); ``'inline'`` (the in-app
+            viewer) links to ``/api/dossier/html?date=...&inline=1``; ``'file'``
+            (legacy) links to ``dossier-YYYY-MM-DD.html`` directly.
         event_id: The primary ``olof_events.event_id`` :func:`build_dossier`
             resolved for this date, if any.
         visible_lbs: The channel-visible LB numbers (matches
@@ -599,11 +602,11 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode, visible_m
         entry_dates = _entries_iso_dates(conn)
         rows = []
         for d in venue_run["dates"]:
-            if d == date_iso or d not in entry_dates:
+            if d == date_iso or d not in entry_dates or link_mode == "none":
                 url = None
             elif link_mode == "inline":
                 url = f"/api/dossier/html?date={d}&inline=1"
-            else:
+            else:  # 'file' (legacy)
                 url = f"dossier-{d}.html"
             rows.append({"url": build_field(url, 3, "D-07 venue_run", "stated" if url else
                                              "unavailable") if url else

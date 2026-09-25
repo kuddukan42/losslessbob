@@ -255,9 +255,16 @@ def export_html(out_dir: Path) -> int:
 
     out_dir.mkdir(parents=True, exist_ok=True)
     client = create_app().test_client()
+    # F8: build every page with link_mode=none (no dossier-<date>.html stems the
+    # export doesn't control the layout for) and, once every spec's stem is known,
+    # rewrite each run-strip's .notlinked span to the exported stem when that date
+    # is itself one of the exported specs -- see the .notlinked rewrite pass below.
+    specs = list(golden_specs())
+    stem_by_date: dict[str, str] = {spec["date"]: path.stem for path, spec in specs}
     rows, failed = [], 0
-    for path, spec in golden_specs():
-        q = {"date": spec["date"], "channel": spec.get("channel") or "public", "inline": "1"}
+    for path, spec in specs:
+        q = {"date": spec["date"], "channel": spec.get("channel") or "public",
+             "inline": "1", "link_mode": "none"}
         if spec.get("location"):
             q["location"] = spec["location"]
         if spec.get("show"):
@@ -280,8 +287,21 @@ def export_html(out_dir: Path) -> int:
         for fname, page in pages:
             if page.status_code in (200, 300) and page.mimetype == "text/html":
                 body = re.sub(r'href="\?[^"]*?show=(\w+)[^"]*"',
-                              lambda m: f'href="{path.stem}--{m.group(1)}.html"',
+                              lambda m, stem=path.stem: f'href="{stem}--{m.group(1)}.html"',
                               page.get_data(as_text=True))
+                # F8: the run strip's .notlinked spans (link_mode=none) carry
+                # data-run-date -- rewrite the ones whose date is itself an exported
+                # spec into a real link to that stem; leave the rest as-is (they
+                # stay a plain "not linked" span, not a dead .cur).
+                body = re.sub(
+                    r'<span class="notlinked" data-run-date="(\d{4}-\d{2}-\d{2})">(.*?)</span>',
+                    lambda m: (
+                        f'<a class="notlinked" data-lb="run.dates[].url" '
+                        f'href="{stem_by_date[m.group(1)]}.html">{m.group(2)}</a>'
+                        if m.group(1) in stem_by_date else m.group(0)
+                    ),
+                    body,
+                )
                 (out_dir / fname).write_text(body, encoding="utf-8")
                 links.append(f'<a href="{escape(fname)}">{escape(Path(fname).stem)}</a>')
             else:
