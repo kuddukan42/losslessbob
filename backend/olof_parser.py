@@ -1184,6 +1184,13 @@ def _parse_song_lines(lines: list[str], start: int,
         if _is_personnel_line(title_text):
             break  # personnel-credit trailer line, not a song (see above)
         i = next_i
+        # Silver review: a medley (or a long credit) Olof wraps onto the next line
+        # ends in "/" -- "That'll Be The Day (…) /" + "The Wanderer (E. Maresca)",
+        # 1999 Paul Simon shows. Join the continuation or the second song is lost.
+        while (title_text.rstrip().endswith("/") and i < n and lines[i].strip()
+               and not re.match(r"^\s*\d+\.", lines[i])):
+            title_text = f"{title_text.rstrip()} {lines[i].strip()}"
+            i += 1
         if position in seen_positions:
             renumbered = max(seen_positions) + 1
             _log.warning(

@@ -46,8 +46,23 @@ counts) — same class as the golden set's known conflicts.
 | H | 2013-11-16 pick states "Taper: 3dogs" but 3dogs isn't a known handle, so no credit | alias-list candidate |
 | I | 1999-07-20 LB-13779 "DAT copy" classed master (named-recorder rule) | generation rule edge |
 
+## Re-review after the live rebuild
+
+Found on the second read (setlists of 1989–2000 were skimmed in pass 1):
+
+| # | Sev | Finding | Fix |
+|---|---|---|---|
+| 8 | Med | A medley Olof wraps onto the next line ("That'll Be The Day (…) /" ⏎ "The Wanderer (E. Maresca)") lost its second song and rendered the credit in the title (1999-07-20; 19 events) | `olof_parser` joins continuation lines while the title ends in "/" (BUG-363) |
+
+Everything else on the 21 pages re-read clean: 1965 Bobtalk is empty (bootleg titles gone), 1983
+chronicle ends at the Lone Star Café, LB-01116/LB-14078 carry no pdub credit, 1975-11-06 has no run
+claim. Audit: 0 structural, 8 known setlist diffs (the 1999 one is now medley-vs-split rendering).
+
 ## Status
 
-Code + tests done (this session). Live steps (#1, #2, #4) need tj's OK: backup → Olof + chronicle
-reparse → parse_lineage --force → attribute_tapers → compute_show_picks → qc run →
-`/backend-restart` → golden `--check` (fixture re-cut if changed) → silver re-export + re-read.
+Done 2026-09-25 with tj's OK. Backups `data/backups/losslessbob_preC32k_20260925_1434.db` (before
+everything) and `…_preC32k_medley_*.db` (before the medley reparse). Live: Olof + chronicle reparse
+(chronicle 1,244 → 1,264), compute_song_performances (72,994, unchanged), parse_lineage --force,
+attribute_tapers (5,263 → 5,206; propagated 784 → 727), show_picks (0 rank-1 changes), qc run,
+backend restart; golden `--check` 18/18 (no fixture re-cut needed). Decisions A–I remain with tj
+(TODO-354).
