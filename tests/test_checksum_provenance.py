@@ -52,6 +52,39 @@ def _write_md5(tmp_path, name, rows):
     return p
 
 
+def _insert_dispute(conn, **overrides):
+    """Insert one checksum_disputes row directly, for verdict-grouping tests
+    that don't need real attachment parsing."""
+    row = {
+        "lb_number": 900, "filename": "track01.flac", "chk_type": "m",
+        "reference_kind": "db", "reference_checksum": _hash(1),
+        "reference_file": None, "source_checksum": _hash(2),
+        "source_file": "LBF-00900-uploader.md5.txt", "source_kind": "uploader",
+        "source_scope": "self", "source_suspect": 0, "displaced_to": None,
+        "kind": "isolated_mismatch", "confidence": "high",
+        "rows_agree": 19, "rows_disagree": 1, "status": "open",
+    }
+    row.update(overrides)
+    prov.ensure_schema(conn)
+    conn.execute(
+        """
+        INSERT INTO checksum_disputes (
+            lb_number, filename, chk_type, reference_kind, reference_checksum,
+            reference_file, source_checksum, source_file, source_kind,
+            source_scope, source_suspect, displaced_to,
+            kind, confidence, rows_agree, rows_disagree, status
+        ) VALUES (
+            :lb_number, :filename, :chk_type, :reference_kind, :reference_checksum,
+            :reference_file, :source_checksum, :source_file, :source_kind,
+            :source_scope, :source_suspect, :displaced_to,
+            :kind, :confidence, :rows_agree, :rows_disagree, :status
+        )
+        """,
+        row,
+    )
+    conn.commit()
+
+
 # --------------------------------------------------------------------------- classify
 
 @pytest.mark.parametrize("name,expected", [
@@ -486,3 +519,96 @@ def test_lookup_rescue_ignores_dismissed_and_divergent(tmp_path):
     assert prov.lookup_disputed_checksums(conn, [_hash(3001)]) == {}  # set_divergence
     prov.set_dispute_status(conn, prov.get_disputes(conn)[0]["id"], "dismissed")
     assert prov.lookup_disputed_checksums(conn, [_hash(666)]) == {}
+
+
+# --------------------------------------------------------------------------- get_findings
+# TODO-299: pairing disputes into a curator-facing, verdict-classified finding.
+
+def test_get_findings_db_error_when_only_db_reference_disagrees(tmp_path):
+    """Uploader value has no lbdir row at all — only the DB reference disputed it."""
+    conn = _conn()
+    _insert_dispute(conn, lb_number=901, reference_kind="db")
+    findings = prov.get_findings(conn)
+    assert len(findings) == 1
+    assert findings[0]["verdict"] == "db_error"
+    assert findings[0]["ids"] == [1]
+    assert set(findings[0]["refs"]) == {"db"}
+
+
+def test_get_findings_lbdir_only_when_only_lbdir_reference_disagrees(tmp_path):
+    conn = _conn()
+    _insert_dispute(conn, lb_number=902, reference_kind="lbdir",
+                     reference_file="LBF-00902-lbdir-set.md5.txt")
+    findings = prov.get_findings(conn)
+    assert findings[0]["verdict"] == "lbdir_only"
+    assert set(findings[0]["refs"]) == {"lbdir"}
+
+
+def test_get_findings_merges_two_rows_of_the_same_finding(tmp_path):
+    """db and lbdir agree with each other (and disagree with the uploader) on an
+    MD5-only value with no FFP for the track: receipt_unknown, two ids."""
+    conn = _conn()
+    _insert_dispute(conn, lb_number=903, reference_kind="db", reference_checksum=_hash(1))
+    _insert_dispute(conn, lb_number=903, reference_kind="lbdir", reference_checksum=_hash(1),
+                     reference_file="LBF-00903-lbdir-set.md5.txt")
+    findings = prov.get_findings(conn)
+    assert len(findings) == 1
+    f = findings[0]
+    assert f["verdict"] == "receipt_unknown"
+    assert f["ids"] == [1, 2]
+    assert set(f["refs"]) == {"db", "lbdir"}
+
+
+def test_get_findings_audio_differs_for_ffp_rows(tmp_path):
+    """chk_type='f' (FFP) disagreement on both references is audio, not a container."""
+    conn = _conn()
+    _insert_dispute(conn, lb_number=904, chk_type="f", reference_kind="db",
+                     reference_checksum=_hash(1))
+    _insert_dispute(conn, lb_number=904, chk_type="f", reference_kind="lbdir",
+                     reference_checksum=_hash(1), reference_file="LBF-00904-lbdir-set.txt")
+    findings = prov.get_findings(conn)
+    assert findings[0]["verdict"] == "audio_differs"
+
+
+def test_get_findings_retag_when_the_track_also_has_an_undisputed_ffp(tmp_path):
+    """MD5-only disagreement, but the track's own FFP checksum is on record and not
+    disputed — same decoded audio, only the container moved."""
+    conn = _conn()
+    conn.execute(
+        "INSERT INTO checksums (checksum, filename, chk_type, lb_number) VALUES (?,?,?,?)",
+        (_hash(50), "track01.flac", "f", 905),
+    )
+    conn.commit()
+    _insert_dispute(conn, lb_number=905, chk_type="m", reference_kind="db",
+                     reference_checksum=_hash(1))
+    _insert_dispute(conn, lb_number=905, chk_type="m", reference_kind="lbdir",
+                     reference_checksum=_hash(1), reference_file="LBF-00905-lbdir-set.md5.txt")
+    findings = prov.get_findings(conn)
+    assert findings[0]["verdict"] == "retag"
+
+
+def test_get_findings_reference_filter_applies_after_pairing(tmp_path):
+    conn = _conn()
+    _insert_dispute(conn, lb_number=906, reference_kind="db")  # db-only finding
+    _insert_dispute(conn, lb_number=907, reference_kind="lbdir",
+                     reference_file="LBF-00907-lbdir-set.md5.txt")  # lbdir-only finding
+    assert {f["lb_number"] for f in prov.get_findings(conn, reference_kind="db")} == {906}
+    assert {f["lb_number"] for f in prov.get_findings(conn, reference_kind="lbdir")} == {907}
+    assert {f["lb_number"] for f in prov.get_findings(conn)} == {906, 907}
+
+
+def test_get_findings_ordered_by_verdict_bucket(tmp_path):
+    conn = _conn()
+    _insert_dispute(conn, lb_number=908, reference_kind="lbdir",
+                     reference_file="LBF-00908-lbdir-set.md5.txt")  # lbdir_only
+    _insert_dispute(conn, lb_number=909, reference_kind="db")  # db_error
+    findings = prov.get_findings(conn)
+    assert [f["verdict"] for f in findings] == ["db_error", "lbdir_only"]
+
+
+def test_get_findings_respects_status_filter(tmp_path):
+    conn = _conn()
+    _insert_dispute(conn, lb_number=910, reference_kind="db", status="confirmed")
+    assert prov.get_findings(conn) == []
+    assert len(prov.get_findings(conn, status="confirmed")) == 1
+    assert len(prov.get_findings(conn, status=None)) == 1

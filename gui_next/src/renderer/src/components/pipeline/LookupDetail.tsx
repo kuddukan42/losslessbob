@@ -197,7 +197,20 @@ export function LookupChecksumTable({ summaryRows, detailRows }: LookupChecksumT
                           ? <Icon name="check" size={11} style={{ color: 'var(--lbb-info-fg)' }} />
                           : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
                       </TD>
-                      <TD><Pill tone={rowTone.tone} soft>{t(rowTone.labelKey as any)}</Pill></TD>
+                      <TD>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+                          <Pill tone={rowTone.tone} soft>{t(rowTone.labelKey as any)}</Pill>
+                          {r.dispute && (
+                            <Pill tone="warn" soft title={t('checksumDisputes.lookupAnnotation.pillTitle', {
+                              lb: String(r.dispute.lb_number).padStart(5, '0'),
+                              confidence: r.dispute.confidence,
+                              status: r.dispute.status,
+                            })}>
+                              {t('checksumDisputes.lookupAnnotation.pill')}
+                            </Pill>
+                          )}
+                        </div>
+                      </TD>
                     </TR>
                   )
                 })}
@@ -225,15 +238,22 @@ export interface LookupDetailProps {
   detailRows: LookupDetailRow[]
   onPin?: (lb: number) => void
   pinBusyLb?: number | null
+  /** NOT FOUND rows explained by a checksum_disputes annotation (TODO-299). */
+  disputed?: number
 }
 
 /**
  * Combined summary + checksum tables + not-found hint, with no section headers —
  * used by the pipeline Lookup stage panel. See design doc 14 §2.2.
  */
-export function LookupDetail({ summaryRows, detailRows, onPin, pinBusyLb }: LookupDetailProps): React.JSX.Element {
+export function LookupDetail({ summaryRows, detailRows, onPin, pinBusyLb, disputed }: LookupDetailProps): React.JSX.Element {
+  const { t } = useTranslation()
   return (
     <>
+      {!!disputed && (
+        <Banner tone="warn" icon="alert" title={t('checksumDisputes.lookupAnnotation.summary', { count: disputed })}
+          style={{ marginBottom: 10 }} />
+      )}
       <LookupSummaryTable summaryRows={summaryRows} detail={detailRows} onPin={onPin} pinBusyLb={pinBusyLb} />
       {summaryRows.length > 0 && detailRows.length > 0 && <div style={{ height: 14 }} />}
       <LookupChecksumTable summaryRows={summaryRows} detailRows={detailRows} />

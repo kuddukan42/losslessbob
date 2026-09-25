@@ -41,6 +41,7 @@ import { ScreenTapeMatchCuration } from './screens/ScreenTapeMatchCuration'
 import { ScreenSongs } from './screens/ScreenSongs'
 import { ScreenTimeline } from './screens/ScreenTimeline'
 import { ScreenFingerprint } from './screens/ScreenFingerprint'
+import { ScreenChecksumDisputes } from './screens/ScreenChecksumDisputes'
 
 // ── React Query client — persisted to IndexedDB (BUG-271) ────────────────────
 // The bulk datasets (collection prefetch, library catalog/performances/badges)
@@ -411,6 +412,7 @@ export default function App(): React.JSX.Element {
           <Route path="/dbeditor"    element={<ScreenDbEditor />} />
           <Route path="/scraper"     element={<CuratorRoute element={<ScreenScraper />} />} />
           <Route path="/fingerprint" element={<CuratorRoute element={<ScreenFingerprint />} />} />
+          <Route path="/checksumdisputes" element={<CuratorRoute element={<ScreenChecksumDisputes />} />} />
           <Route path="/setup"       element={<ScreenSetup />} />
           <Route path="/mounts"      element={<ScreenMounts />} />
           <Route path="/fileintegrity" element={<ScreenFileIntegrity />} />

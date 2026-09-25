@@ -9,7 +9,7 @@ export type NavId =
   | 'home' | 'pipeline' | 'scanner' | 'quicklookup'
   | 'library' | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs' | 'tapematch' | 'songs' | 'timeline'
   | 'attachments' | 'spectrograms' | 'map'
-  | 'scraper' | 'fingerprint' | 'setup' | 'mounts' | 'fileintegrity' | 'themes' | 'dbeditor'
+  | 'scraper' | 'fingerprint' | 'checksumdisputes' | 'setup' | 'mounts' | 'fileintegrity' | 'themes' | 'dbeditor'
 
 export type NavGroupLabel = 'Ingest' | 'Library' | 'Assets' | 'Curator' | 'Settings'
 
@@ -86,6 +86,7 @@ export const NAV_GROUPS: NavGroup[] = [
     items: [
       { id: 'scraper',     label: 'Scraper',     icon: 'scraper' },
       { id: 'fingerprint', label: 'Fingerprint', icon: 'fingerprint' },
+      { id: 'checksumdisputes', label: 'Checksum Disputes', icon: 'alert' },
     ],
   },
   {

@@ -1189,6 +1189,23 @@ export function useOlofStatus() {
   })
 }
 
+// TODO-299: badge for open checksum_disputes findings on this LB — a signal
+// that a NOT FOUND elsewhere for its tracks may be a known-bad DB value, not
+// a bad user file. Grouped so a two-row finding (db + lbdir reference) counts
+// once. Curator-facing detail lives in the Checksum Disputes screen.
+interface DisputeCountResponse {
+  length: number
+}
+export function useOpenDisputeCount(lb: number | undefined) {
+  return useQuery<DisputeCountResponse[]>({
+    queryKey: ['checksum-disputes-count', lb],
+    queryFn: () => fetch(`${BASE}/api/checksum-disputes?lb=${lb}&status=open&grouped=1`)
+      .then(r => r.json()),
+    enabled: lb != null,
+    staleTime: 60_000,
+  })
+}
+
 function OlofSongRow({ s, i, showTakes }: { s: OlofSong; i: number; showTakes: boolean }) {
   const { t } = useTranslation()
   const note = [
@@ -1649,6 +1666,8 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
   // FABLE_OLOF_FILES §6 P5b: shared once-per-session status fetch — decides
   // whether the Olof tab appears at all (most installs have olof_events == 0).
   const { data: olofStatus } = useOlofStatus()
+  const { data: openDisputes } = useOpenDisputeCount(row?.lbNumber)
+  const openDisputeCount = openDisputes?.length ?? 0
 
   if (!open) return <CollapsedStub onToggle={toggle} />
 
@@ -1721,6 +1740,11 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
           {row.curated?.map(name => (
             <Pill key={name} tone="info" soft>{t('library.picks.curatedBadge', { curator: name })}</Pill>
           ))}
+          {openDisputeCount > 0 && (
+            <Pill tone="warn" soft dot title={t('checksumDisputes.entryBadge.title')}>
+              {t('checksumDisputes.entryBadge.label', { count: openDisputeCount })}
+            </Pill>
+          )}
         </div>
         <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-display)', fontWeight: 'var(--w-bold)', color: 'var(--lbb-accent-mid)', marginBottom: 2 }}>
           {row.lb}

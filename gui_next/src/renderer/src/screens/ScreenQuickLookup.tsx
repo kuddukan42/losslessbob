@@ -15,6 +15,18 @@ const BASE = window.api.flaskBase
 // (`matched_xref > 0`), never a status — there is no "XREF" member here.
 type RowStatus = 'matched' | 'incomplete' | 'notfound' | 'duplicate'
 
+// TODO-299: provenance-rescue annotation on a NOT FOUND row — the uploader's
+// own checksum file vouches for this value even though the DB's own
+// `checksums` table doesn't. See backend.checksum_provenance.
+interface LookupDispute {
+  lb_number:   number
+  db_checksum: string
+  source_file: string
+  confidence:  'high' | 'medium' | 'low'
+  status:      'open' | 'confirmed' | 'dismissed'
+  detail_url:  string
+}
+
 interface DetailRow {
   checksum: string
   filename: string
@@ -22,6 +34,7 @@ interface DetailRow {
   status: string
   type?: string
   xref?: number
+  dispute?: LookupDispute | null
 }
 
 const STATUS_TONE: Record<RowStatus, { tone: 'ok' | 'warn' | 'bad' | 'info' | 'mute'; label: string }> = {
@@ -51,6 +64,7 @@ export function ScreenQuickLookup(): React.JSX.Element {
   // Copy-level xref (D4): lb_number → winning fileset id, populated from summary.lb_summary
   // alongside the per-checksum rows. Only entries with matched_xref > 0 are kept.
   const [xrefByLb, setXrefByLb] = useState<Map<number, number>>(new Map())
+  const [disputedCount, setDisputedCount] = useState(0)
   const [busy, setBusy]       = useState(false)
   const [dragging, setDragging] = useState(false)
   const [toast, setToast]     = useState<string | null>(null)
@@ -71,13 +85,17 @@ export function ScreenQuickLookup(): React.JSX.Element {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: input }),
       })
-      const d = await r.json() as { detail: DetailRow[]; summary?: { lb_summary: LookupSummaryRow[] } }
+      const d = await r.json() as {
+        detail: DetailRow[]
+        summary?: { lb_summary: LookupSummaryRow[]; disputed?: number }
+      }
       setRows(d.detail ?? [])
       const xrefMap = new Map<number, number>()
       for (const s of d.summary?.lb_summary ?? []) {
         if (s.matched_xref > 0) xrefMap.set(s.lb_number, s.matched_xref)
       }
       setXrefByLb(xrefMap)
+      setDisputedCount(d.summary?.disputed ?? 0)
     } catch {
       showToast(t('quickLookup.toast.failed'))
     } finally {
@@ -141,7 +159,9 @@ export function ScreenQuickLookup(): React.JSX.Element {
     runLookup(combined)
   }, [runLookup, t])
 
-  const handleClear = useCallback(() => { setText(''); setRows([]); setXrefByLb(new Map()) }, [])
+  const handleClear = useCallback(() => {
+    setText(''); setRows([]); setXrefByLb(new Map()); setDisputedCount(0)
+  }, [])
 
   const matchedCount = rows.filter(r => toRowStatus(r.status) === 'matched').length
 
@@ -245,6 +265,17 @@ export function ScreenQuickLookup(): React.JSX.Element {
 
         {/* Right: results */}
         <section style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0, overflow: 'auto' }}>
+          {disputedCount > 0 && (
+            <div style={{
+              margin: '12px 16px 0', padding: '8px 12px', borderRadius: 6,
+              background: 'var(--lbb-warn-soft, var(--lbb-surface2))',
+              border: '1px solid var(--lbb-warn-fg)', color: 'var(--lbb-warn-fg)',
+              fontSize: 'var(--lbb-fs-11-5)', display: 'flex', alignItems: 'center', gap: 8,
+            }}>
+              <Icon name="alert" size={13} />
+              {t('checksumDisputes.lookupAnnotation.summary', { count: disputedCount })}
+            </div>
+          )}
           {rows.length === 0 ? (
             <div style={{
               flex: 1, display: 'flex', flexDirection: 'column',
@@ -301,6 +332,15 @@ export function ScreenQuickLookup(): React.JSX.Element {
                           {matchedXref !== undefined && (
                             <Pill tone={XREF_TONE.tone} soft title={t('quickLookup.xrefPill', { id: formatXrefTag(matchedXref) })}>
                               {formatXrefTag(matchedXref)}
+                            </Pill>
+                          )}
+                          {r.dispute && (
+                            <Pill tone="warn" soft title={t('checksumDisputes.lookupAnnotation.pillTitle', {
+                              lb: String(r.dispute.lb_number).padStart(5, '0'),
+                              confidence: r.dispute.confidence,
+                              status: r.dispute.status,
+                            })}>
+                              {t('checksumDisputes.lookupAnnotation.pill')}
                             </Pill>
                           )}
                         </div>

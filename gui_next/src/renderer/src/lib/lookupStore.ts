@@ -5,6 +5,21 @@
 // between the Pipeline stage content, the LookupDetail table component, and
 // Quick Lookup.
 
+/**
+ * Provenance rescue annotation on a NOT FOUND detail row (TODO-296/299): the
+ * uploader's own checksum file vouches for this value even though the DB's
+ * ``checksums`` table doesn't — a candidate ``db_error`` checksum dispute,
+ * not a bad user file. See `backend.checksum_provenance`.
+ */
+export interface LookupDispute {
+  lb_number:  number
+  db_checksum: string
+  source_file: string
+  confidence:  'high' | 'medium' | 'low'
+  status:      'open' | 'confirmed' | 'dismissed'
+  detail_url:  string
+}
+
 export interface LookupDetail {
   checksum:       string
   filename:       string
@@ -20,6 +35,7 @@ export interface LookupDetail {
   lbdir_verified: boolean
   is_alias_lb:    boolean
   canonical_lb:   number | null
+  dispute?:       LookupDispute | null
 }
 
 /** One `(lb, xref)` fileset group touched by the lookup input (FABLE_XREF_INCORPORATION.md D1). */
@@ -54,4 +70,6 @@ export interface LookupSummary {
   matched:          number
   given:            number
   lb_numbers_found: number[]
+  /** NOT FOUND rows explained by a checksum_disputes annotation (TODO-299). */
+  disputed?:        number
 }

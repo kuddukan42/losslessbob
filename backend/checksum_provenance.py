@@ -659,6 +659,142 @@ def get_disputes(
     return [dict(r) for r in conn.execute(sql, params)]
 
 
+# Verdict bucket a finding (a disputed value paired across its db/lbdir
+# references) supports — see tools/checksum_dispute_report.py module docstring
+# for the full explanation of each bucket. Kept in sync with that script's
+# copy by hand; this one is the GUI/API-facing entry point (get_findings).
+VERDICT_ORDER = ["db_error", "audio_differs", "retag", "receipt_unknown", "lbdir_only"]
+
+
+def _finding_key(row: dict) -> tuple:
+    """Identity of a single disputed value, shared across the two references."""
+    return (row["lb_number"], row["filename"].lower(), row["chk_type"],
+            row["source_checksum"])
+
+
+def group_findings(rows: list[dict]) -> list[dict]:
+    """Collapse per-reference dispute rows into one finding per disputed value.
+
+    A single bad track normally produces two rows — one against the ``db``
+    reference and one against ``lbdir``. Presenting them separately hides the
+    thing that identifies the culprit, which is whether both references
+    disagree or only one.
+
+    Args:
+        rows: Dispute rows (dicts), as returned by :func:`get_disputes`.
+
+    Returns:
+        One finding per (lb, filename, chk_type, source value), with a
+        provisional ``verdict`` (``receipt_fault`` is refined by
+        :func:`_split_receipt_verdicts`), a ``refs`` map of
+        reference_kind → that reference's row, and the union of ids/source
+        files that witnessed it.
+    """
+    grouped: dict[tuple, list[dict]] = defaultdict(list)
+    for row in rows:
+        grouped[_finding_key(row)].append(row)
+
+    out = []
+    for group in grouped.values():
+        refs = {r["reference_kind"]: r for r in group}
+        db_row, lbdir_row = refs.get("db"), refs.get("lbdir")
+        if db_row and lbdir_row:
+            # Both references hold the same value against the uploader: the
+            # fileset received is internally consistent and differs from the
+            # source.
+            verdict = ("receipt_fault"
+                       if db_row["reference_checksum"] == lbdir_row["reference_checksum"]
+                       else "db_error")
+        elif db_row:
+            verdict = "db_error"
+        else:
+            verdict = "lbdir_only"
+
+        lead = db_row or lbdir_row
+        confidences = {r["confidence"] for r in group}
+        out.append({
+            **lead,
+            "verdict": verdict,
+            "refs": refs,
+            "confidence": "high" if "high" in confidences else sorted(confidences)[0],
+            "source_files": sorted({r["source_file"] for r in group}),
+            "statuses": sorted({r["status"] for r in group}),
+            "ids": sorted(r["id"] for r in group),
+        })
+    return out
+
+
+def _split_receipt_verdicts(conn: sqlite3.Connection, findings: list[dict]) -> list[dict]:
+    """Split ``receipt_fault`` by whether the decoded audio actually changed.
+
+    MD5 hashes the whole file; FFP hashes the decoded audio stream. So an
+    MD5-only disagreement whose FFP agrees means the audio is bit-identical
+    and only the container moved — tags or padding rewritten — a different
+    finding from a file that arrived damaged.
+
+    Args:
+        conn: Open database connection (for the FFP-exists check).
+        findings: Output of :func:`group_findings`, modified in place.
+
+    Returns:
+        The same list, sorted by verdict, with every ``receipt_fault``
+        replaced by ``audio_differs``, ``retag`` or ``receipt_unknown``.
+    """
+    disputed = {(f["lb_number"], f["filename"].lower(), f["chk_type"]) for f in findings}
+    for f in findings:
+        if f["verdict"] != "receipt_fault":
+            continue
+        lb, fname = f["lb_number"], f["filename"].lower()
+        if f["chk_type"] in ("f", "s"):
+            f["verdict"] = "audio_differs"
+        elif (lb, fname, "f") in disputed:
+            f["verdict"] = "audio_differs"
+        else:
+            has_ffp = conn.execute(
+                "SELECT 1 FROM checksums WHERE lb_number=? AND chk_type='f' "
+                "AND LOWER(filename)=? LIMIT 1",
+                (lb, fname),
+            ).fetchone()
+            f["verdict"] = "retag" if has_ffp else "receipt_unknown"
+    findings.sort(key=lambda f: (VERDICT_ORDER.index(f["verdict"]), f["lb_number"],
+                                 f["filename"].lower()))
+    return findings
+
+
+def get_findings(
+    conn: sqlite3.Connection,
+    lb_number: int | None = None,
+    status: str | None = "open",
+    reference_kind: str | None = None,
+) -> list[dict]:
+    """Curator-facing view: disputes grouped into verdict-classified findings.
+
+    Unlike :func:`get_disputes` (raw per-reference rows), this pairs the
+    ``db`` and ``lbdir`` rows for the same disputed value and classifies the
+    result into one of :data:`VERDICT_ORDER` — the bucket that decides which
+    fix applies (see TODO-299 / tools/checksum_dispute_report.py).
+
+    Args:
+        conn: Open database connection.
+        lb_number: Restrict to one LB entry, or None for all.
+        status: Restrict to this status, or None for any.
+        reference_kind: Keep only findings that have a row against this
+            reference (``db`` or ``lbdir``), applied after pairing so a
+            two-row finding is not split by the filter.
+
+    Returns:
+        Findings ordered by verdict bucket, then LB number, then filename.
+    """
+    rows = get_disputes(
+        conn, lb_number=lb_number, status=status,
+        kind="isolated_mismatch", confidence=None, reference_kind=None,
+    )
+    findings = _split_receipt_verdicts(conn, group_findings(rows))
+    if reference_kind:
+        findings = [f for f in findings if reference_kind in f["refs"]]
+    return findings
+
+
 def set_dispute_status(
     conn: sqlite3.Connection, dispute_id: int, status: str, note: str | None = None
 ) -> bool:
