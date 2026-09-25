@@ -24,6 +24,7 @@ Key convention (plan lines 93-125):
 from __future__ import annotations
 
 import logging
+import re
 import sqlite3
 import statistics
 from dataclasses import dataclass
@@ -1079,6 +1080,31 @@ def _primary_display_ranks(
     return {lb: i for i, (_, lb) in enumerate(ranked, start=1)}
 
 
+# Golden review 2: lines of Olof's page that describe the page, not the show -- the
+# bare "Other Bob Dylan concerts in <city>." link header (its list is parsed into
+# venue history), and the note about unnumbered Band songs the setlist never lists.
+_NOTES_FURNITURE_RE = re.compile(
+    r"^\s*(?:Other Bob Dylan (?:concerts|shows) in [^\n]*?\.?"
+    r"|Songs without numbers are performed by [^\n]*?\.?)\s*$",
+    re.IGNORECASE | re.MULTILINE,
+)
+
+
+def _strip_page_furniture(notes: str) -> str:
+    """*notes* without Olof's page-navigation lines (see ``_NOTES_FURNITURE_RE``)."""
+    kept = [ln for ln in notes.splitlines() if not _NOTES_FURNITURE_RE.match(ln)]
+    return "\n".join(kept).strip()
+
+
+def _primary_member_count(bucket: dict, classes: dict) -> int:
+    """Public members of *bucket* the sources table lists as primary rows."""
+    return sum(
+        1 for m in bucket["members"]
+        if not m.get("private")
+        and classes.get(int(m["lb"][3:]), {}).get("group", "primary") == "primary"
+    )
+
+
 def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
                     classes) -> None:
     visible_members = _sort_within_families(visible_members, conn)
@@ -1105,9 +1131,13 @@ def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
         b.get("fam_id") and not b["fam_id"].startswith("__singleton_") for b in sources
         for m in b["members"] if not m.get("private")
     )
-    if all_visible_in_family and analysed_buckets:
+    # Golden review 2: count only the groups the sources table shows -- a bucket
+    # holding nothing but fragments/excluded sources isn't one of its tape groups.
+    shown_buckets = [b for b in analysed_buckets if _primary_member_count(b, classes)]
+    if all_visible_in_family and shown_buckets:
+        n = len(shown_buckets)
         vb.set_field("sources.tape_count", build_field(
-            f"{len(analysed_buckets)} tape groups", 1,
+            f"{n} tape group{'s' if n != 1 else ''}", 1,
             "recording_families (every visible source analysed)", "stated"))
 
     display_rank = _primary_display_ranks(visible_members, classes)
@@ -1211,7 +1241,9 @@ def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
         label = taper_label or bucket.get("fam_label") or f"Family {chr(ord('A') + idx)}"
         row["label"] = build_field(
             label, 1, "recording_families + S8.4 taper-label rule", "stated")
-        row["size"] = build_field(len(bucket["members"]), 1, "recording_families", "stated")
+        # Golden review 2: the band counts the rows it heads, not fragments/excluded.
+        row["size"] = build_field(_primary_member_count(bucket, classes), 1,
+                                  "recording_families (primary sources shown)", "stated")
         if "fam_conf" in bucket:
             row["confidence"] = build_field(bucket["fam_conf"], 1, "tapematch_family_meta.conf",
                                              "stated")
@@ -1240,7 +1272,9 @@ def _build_context(vb, d1, conn, event_id, date_iso) -> None:
 
     session_notes: list[str] = []
     if context.get("notes"):
-        session_notes.append(context["notes"])
+        notes = _strip_page_furniture(context["notes"])
+        if notes:
+            session_notes.append(notes)
     labels_notes = _safe(df.broadcast_set_labels, conn, event_id) if event_id is not None \
         else None
     if labels_notes and labels_notes[1]:

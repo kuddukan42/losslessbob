@@ -586,6 +586,13 @@ class TestLineageShort:
     def test_no_hop_returns_whole_chain(self):
         assert lineage_short("AUD DAT-2") == "AUD DAT-2"
 
+    def test_clipped_chain_ends_with_ellipsis(self):
+        # Golden review 2: parse_lineage stores 160 chars; a chain that long was cut.
+        chain = ("Audience > 2 x ECM33F > Sony D6 > Maxell XLII, Location: Lower Balcony"
+                 " Section 101 Row D Seat 11, Ticket Price: $17.00, Lineage: Audience Master"
+                 " > Macbook Pro >")
+        assert lineage_short(chain).endswith("Macbook Pro …")
+
     def test_blank_chain(self):
         assert lineage_short(None) is None
         assert lineage_short("") is None
@@ -922,7 +929,7 @@ class TestCompareSources:
         _stub_helpers(monkeypatch)
         conn = _compare_db()
         _compare_seed(conn, [
-            (1, "A", None, "60min", 1, None),
+            (1, "A", "Audience", "60min", 1, None),
             (2, "A", "Soundboard", "60min", 2, None),
         ])
         cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
@@ -939,6 +946,36 @@ class TestCompareSources:
         cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
         assert {"axis": "complete", "lb_number": 2, "pick_value": False,
                 "alt_value": True} in cs["alternates"]
+
+    def test_untyped_pick_gets_no_soundboard_alternate(self, monkeypatch):
+        # Golden review 2 (1965-06-01): an untyped pick (a TV-broadcast transfer)
+        # is not "not a soundboard".
+        _stub_helpers(monkeypatch)
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, None),
+            (2, "A", "Soundboard", "60min", 2, None),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
+        assert not any(a["axis"] == "soundboard" for a in cs["alternates"])
+
+    def test_unknown_pick_completeness_gets_no_complete_alternate(self, monkeypatch):
+        # Golden review 2 (1975-11-11): no parsed tracklist for the pick means
+        # its completeness is unknown -- never "the pick does not".
+        _stub_helpers(monkeypatch, complete={2: True})
+        monkeypatch.setattr(
+            dossier_fields, "completeness",
+            lambda conn, event_id, lbs, canonical_map=None: {
+                2: {"basis": "tracklist", "songs_total": 1, "songs_present": 1},
+            },
+        )
+        conn = _compare_db()
+        _compare_seed(conn, [
+            (1, "A", None, "60min", 1, None),
+            (2, "A", None, "60min", 2, None),
+        ])
+        cs = compare_sources(conn, event_id=1, date_iso="2020-01-01", visible_lbs=[1, 2])
+        assert not any(a["axis"] == "complete" for a in cs["alternates"])
 
     def test_unknown_generation_is_treated_as_null(self, monkeypatch):
         # classify_generation's "unknown" (basis None) never guesses -- it must
@@ -1032,6 +1069,34 @@ def _bobtalk_db(bobtalk_text, titles, event_id=1):
 
 
 class TestAnchorBobtalk:
+    def test_shortened_cue_title_prefix_resolves(self):
+        # Golden review 2 (1975-12-08): Olof shortens a long title in the cue.
+        line = "Hello Albert! Who won't be the next president! (before It Takes A Lot To Laugh)"
+        conn = _bobtalk_db(line, ["Tangled Up In Blue",
+                                  "It Takes A Lot To Laugh, It Takes A Train To Cry"])
+        bt = anchor_bobtalk(conn, 1)
+        assert [a["position"] for a in bt["anchored"]] == [2]
+
+    def test_uncued_quote_naming_one_song_anchors(self):
+        # Golden review 2 (1963-10-26): an intro with no cue that names its song.
+        line = "Here's a song I wrote, it's called Percy’s Song. I took the tune from Paul Clayton."
+        conn = _bobtalk_db(line, ["Seven Curses", "Percy's Song"])
+        bt = anchor_bobtalk(conn, 1)
+        assert [(a["position"], a["cue"]) for a in bt["anchored"]] == [(2, "mentions")]
+        assert bt["context"] == []
+
+    def test_uncued_quote_naming_two_songs_stays_in_context(self):
+        line = "That was Blowin’ In The Wind, an old song. This is an older song. Rock With Me Baby."
+        conn = _bobtalk_db(line, ["Blowin' In The Wind", "Rock With Me Baby"])
+        bt = anchor_bobtalk(conn, 1)
+        assert bt["anchored"] == [] and bt["context"] == [line]
+
+    def test_uncued_lowercase_prose_does_not_anchor(self):
+        line = "There was a hurricane down south and we nearly didn't make it tonight, folks."
+        conn = _bobtalk_db(line, ["Hurricane"])
+        bt = anchor_bobtalk(conn, 1)
+        assert bt["anchored"] == []
+
     def test_no_bobtalk_text_is_empty_both_ways(self):
         conn = _bobtalk_db("", [])
         bt = anchor_bobtalk(conn, 1)

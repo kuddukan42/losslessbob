@@ -894,6 +894,14 @@ def _split_title_parts(text: str) -> tuple[str, str, str]:
     Returns:
         (title, credits, subtitle); credits and subtitle are '' when absent.
     """
+    parts = text.split(" / ")
+    if len(parts) > 1 and any(_CREDITS_SUFFIX_RE.match(p) for p in parts[:-1]):
+        # Golden review 2: a medley credits each part ("I Walk The Line (Johnny Cash) /
+        # Blue Moon Of Kentucky (Bill Monroe)") -- split per part, rejoin with " / ".
+        split = [_split_title_parts(p) for p in parts]
+        return (" / ".join(t for t, _, _ in split),
+                " / ".join(c for _, c, _ in split if c),
+                " / ".join(sub for _, _, sub in split if sub))
     spliced = SPLICED_CREDIT_RE.match(text)
     if spliced and _CREDIT_MARKER_RE.search(spliced.group(2)):
         text = spliced.group(1) + spliced.group(3)

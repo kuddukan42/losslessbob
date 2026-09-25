@@ -393,6 +393,33 @@ def _corpus_median_scan(quality: dict[int, dict]) -> float | None:
     return float(median(scores)) if scores else None
 
 
+def _disputed_taper_lbs(conn: sqlite3.Connection) -> set[int]:
+    """LBs whose recording family credits 2+ distinct confirmed tapers (R-T6).
+
+    Mirrors ``backend.dossier_fields.family_taper_conflicts``: the dossier renders
+    these credits as ``disputed``, so the ranker must not score them as confirmed.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Returns:
+        LB numbers in a taper-conflicted family; empty without ``recording_families``.
+    """
+    if not _table_exists(conn, "recording_families"):
+        return set()
+    rows = conn.execute(
+        "SELECT rf.fam_id, rf.lb_number, ta.taper_normalised FROM recording_families rf"
+        " JOIN taper_attributions ta ON ta.lb_number = rf.lb_number"
+        " WHERE ta.confidence = 'confirmed' AND ta.conflict = 0"
+    ).fetchall()
+    tapers: dict[str, set[str]] = defaultdict(set)
+    members: dict[str, list[int]] = defaultdict(list)
+    for fam_id, lb, taper in rows:
+        tapers[fam_id].add(taper)
+        members[fam_id].append(lb)
+    return {lb for fam, ts in tapers.items() if len(ts) >= 2 for lb in members[fam]}
+
+
 def _load_taper_reputation(conn: sqlite3.Connection) -> tuple[dict[int, str], dict[str, float]]:
     """Return ({lb: taper} for confirmed attributions, {taper: median_rank}
     for confirmed tapers whose median attributed-entry rating clears the
@@ -405,12 +432,16 @@ def _load_taper_reputation(conn: sqlite3.Connection) -> tuple[dict[int, str], di
     rows = conn.execute(
         "SELECT ta.lb_number AS lb_number, ta.taper_normalised AS taper, e.rating AS rating"
         " FROM taper_attributions ta JOIN entries e ON e.lb_number = ta.lb_number"
-        " WHERE ta.confidence = 'confirmed'"
+        " WHERE ta.confidence = 'confirmed' AND ta.conflict = 0"
     ).fetchall()
+    disputed = _disputed_taper_lbs(conn)
     lb_taper: dict[int, str] = {}
     ranks_by_taper: dict[str, list[int]] = defaultdict(list)
     for r in rows:
-        lb_taper[r["lb_number"]] = r["taper"]
+        # A credit the dossier shows as disputed (R-T6) earns no bonus; it still
+        # counts toward the taper's reputation, which is corpus-wide.
+        if r["lb_number"] not in disputed:
+            lb_taper[r["lb_number"]] = r["taper"]
         rank = _rating_rank(r["rating"])
         if rank is not None:
             ranks_by_taper[r["taper"]].append(rank)
