@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{
+  var s=localStorage.getItem('lb-dossier-theme');
+  var t=s||((window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark');
+  document.documentElement.setAttribute('data-theme',t);
+}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 {%- set _f = d.view.fields if d.view else {} %}
 {%- set _title = (_f.get('show.venue').value if _f.get('show.venue') else none)
     or (_f.get('show.date.long').value if _f.get('show.date.long') else none) or 'Show' %}
@@ -50,6 +55,7 @@ h1{margin:.1rem 0 .45rem;font-size:2.3rem;font-weight:800;line-height:1.08;lette
 .run-strip{margin-top:.7rem;font-size:.72rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:center;gap:.4em .5em}
 .run-strip .cur{font-weight:700;color:var(--ink)}
 .run-strip a{border-bottom:1px dotted var(--rule2)}
+.run-strip .notlinked{color:var(--faint)}
 .show-pick{margin-top:.8rem;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.45em}
 .show-pick a,.show-pick .cur{font-size:.78rem;padding:.25em .85em;border-radius:999px;border:1px solid var(--rule2);color:var(--muted)}
 .show-pick a:hover{border-color:var(--accent);color:var(--accent-hi);text-decoration:none}
@@ -62,9 +68,11 @@ h2 .credit{font-weight:500;letter-spacing:.02em;text-transform:none;font-size:.7
 h2 .credit a{color:var(--muted);border-bottom:1px dotted var(--rule2)}
 h2 .credit a:hover{color:var(--accent-hi);text-decoration:none;border-bottom-color:var(--accent)}
 .split{display:grid;grid-template-columns:1fr 260px;gap:1.6rem;align-items:start}
-.context p{margin:0 0 .85rem;font-size:.98rem;font-family:var(--serif)}
+{#- F5: chronicle/notes/personnel read as body copy (sans, body size); bobtalk
+    quotes keep the serif-italic treatment, also at body size (was .98rem). -#}
+.context p{margin:0 0 .85rem;font-size:1rem;font-family:var(--sans)}
 .context .label{font-family:var(--sans);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);display:block;margin-bottom:.15rem}
-.context .bobtalk{border-left:3px solid var(--accent);padding:.15rem 0 .15rem 1rem;font-style:italic}
+.context p.bobtalk{border-left:3px solid var(--accent);padding:.15rem 0 .15rem 1rem;font-style:italic;font-family:var(--serif);font-size:1rem}
 .venue-card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
 .loc-map{--map-land:#273553;--map-host:#33477a;--map-line:#3d4f7c;--map-ocean:#101828;--pin:#5b8df2;width:100%;height:150px;display:block;background:var(--map-ocean)}
 html[data-theme="light"] .loc-map{--map-land:#e6eefb;--map-host:#bcd2ee;--map-line:#9bb9e0;--map-ocean:#cfdff2;--pin:#2b5fd0}
@@ -108,6 +116,7 @@ html[data-theme="light"] .venue-map .pin-dot{stroke:#fff}
 .ledger-tot{font-family:var(--mono);font-size:.72rem;color:var(--pick-hi);font-weight:700;margin-top:.4rem;text-align:right}
 table{width:100%;border-collapse:collapse}
 th.c,td.c{text-align:center}
+td.c.mono{white-space:nowrap}
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tbl-scroll .sources{min-width:640px}
 .grade{display:inline-flex;align-items:center;gap:.45em;border-radius:7px;padding:.2em .55em;border:1px solid transparent;white-space:nowrap}
@@ -204,9 +213,13 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   .rec{grid-template-columns:1fr;gap:1rem}
   h1{font-size:1.7rem}
   .show-meta{font-size:.78rem}
+  {#- F5: badges (premiere/gap/official) wrap below the song title on phone widths
+      instead of squeezing into the narrow right-hand .tags column. #}
+  .setlist td.tags{display:block;width:auto;text-align:left;white-space:normal;padding-top:0}
+  .setlist td.tags .badge-new,.setlist td.tags .badge-rare,.setlist td.tags .enc{margin-left:0;margin-right:.3em}
 }
 @media print{
-  html[data-theme="dark"]{--bg:#fff;--surface:#fff;--surface2:#eef3fa;--surface3:#dfe8f4;--ink:#13203a;--muted:#3f547a;--faint:#6f83a6;--rule:#c2d4ec;--rule2:#9bb9e0;--accent:#2b5fd0;--accent-hi:#1f4baa;--accent-soft:#e3ebf8;--on-accent:#fff;--pick:#8a5c00;--pick-hi:#6b4700;--pick-soft:#fbf3e2;--on-pick:#fff;--pos:#1f7a3e;--neg:#b03f30;--warn:#8a5c00;--info:#1f5b8f;--pin:#2b5fd0;--map-land:#e6eefb;--map-host:#bcd2ee;--map-line:#9bb9e0;--map-ocean:#cfdff2;--shadow:none}
+  html,html[data-theme="dark"],html[data-theme="light"]{--bg:#fff;--surface:#fff;--surface2:#eef3fa;--surface3:#dfe8f4;--ink:#13203a;--muted:#3f547a;--faint:#6f83a6;--rule:#c2d4ec;--rule2:#9bb9e0;--accent:#2b5fd0;--accent-hi:#1f4baa;--accent-soft:#e3ebf8;--on-accent:#fff;--pick:#8a5c00;--pick-hi:#6b4700;--pick-soft:#fbf3e2;--on-pick:#fff;--pos:#1f7a3e;--neg:#b03f30;--warn:#8a5c00;--info:#1f5b8f;--pin:#2b5fd0;--map-land:#e6eefb;--map-host:#bcd2ee;--map-line:#9bb9e0;--map-ocean:#cfdff2;--shadow:none}
   html,body{background:#fff}
   body{padding:0;font-size:11pt}
   .page{max-width:none}
@@ -280,6 +293,17 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   <span class="fam-reels" aria-hidden="true"><svg width="20" height="11" viewBox="0 0 20 11" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="4.5" cy="5.5" r="3.1"/><circle cx="15.5" cy="5.5" r="3.1"/><line x1="4.5" y1="1.6" x2="15.5" y2="1.6"/><circle cx="4.5" cy="5.5" r=".9" fill="currentColor" stroke="none"/><circle cx="15.5" cy="5.5" r=".9" fill="currentColor" stroke="none"/></svg></span>
 {%- endmacro -%}
 
+{#- F2: filesize display -- written as a pure-Jinja macro (round/int are core Jinja
+    filters) rather than the Flask-only `filesizeformat` filter, since dossier.html
+    also renders through a plain jinja2.Environment in tests/dossier_golden export. -#}
+{%- macro fmt_filesize(n) -%}
+  {%- if n is not number -%}{%- elif n >= 1073741824 -%}{{ (n / 1073741824) | round(2) }} GB
+  {%- elif n >= 1048576 -%}{{ (n / 1048576) | round(1) }} MB
+  {%- elif n >= 1024 -%}{{ (n / 1024) | round(0) | int }} KB
+  {%- else -%}{{ n }} bytes
+  {%- endif -%}
+{%- endmacro -%}
+
 {%- set pick_field = fields.get('pick.lb_id') -%}
 {%- set pick_lb = pick_field.value if pick_field and pick_field.confidence not in ('withheld', 'unavailable') else none -%}
 
@@ -335,10 +359,18 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     {%- for dt in (run_dates.value or []) -%}
       {%- set rrow = (rows.get('run.dates') or [])[loop.index0] if rows.get('run.dates') else none -%}
       {%- set rdate_url_f = rrow.url if rrow else none -%}
+      {#- F8: three states -- linked (an href), the run-strip's OWN date (.cur, "you
+          are here"), or a sibling date this render simply doesn't link (link_mode
+          'none', e.g. the golden export before its post-pass) -- kept visually and
+          semantically distinct: `.notlinked` carries `data-run-date` so
+          tools/dossier_golden.export_html can rewrite it to the exported stem when
+          that date is itself one of the exported specs. #}
       {%- if rdate_url_f and rdate_url_f.value -%}
       <a data-lb="run.dates[].url" href="{{ rdate_url_f.value }}">{{ lbf('run.dates[]', run_dates, text=dt) }}</a>
+      {%- elif dt == (d.show.date_iso if d.show is defined else none) -%}
+      <span class="cur" aria-current="page">{{ lbf('run.dates[]', run_dates, text=dt) }}</span>
       {%- else -%}
-      <span class="cur">{{ lbf('run.dates[]', run_dates, text=dt) }}</span>
+      <span class="notlinked" data-run-date="{{ dt }}">{{ lbf('run.dates[]', run_dates, text=dt) }}</span>
       {%- endif -%}
     {%- endfor -%}
   </div>
@@ -369,7 +401,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
       {%- set rating_f = fields.get('pick.lb_rating') -%}
       {%- if rating_f %}{% set _ = pick_bits.append('rating ' ~ lbf('pick.lb_rating', rating_f)) %}{% endif -%}
       {%- set runtime_f = fields.get('pick.runtime') -%}
-      {%- if runtime_f and runtime_f.value %}{% set _ = pick_bits.append(lbf('pick.runtime', runtime_f, text=(runtime_f.value | int ~ ' min'))) %}{% endif -%}
+      {%- if runtime_f and runtime_f.value is number %}{% set _ = pick_bits.append(lbf('pick.runtime', runtime_f, text=(runtime_f.value | int ~ ' min'))) %}{% endif -%}
       {%- set res_f = fields.get('pick.resolution') -%}
       {%- if res_f and res_f.value %}{% set _ = pick_bits.append(lbf('pick.resolution', res_f)) %}{% endif -%}
       {%- set gen_f = fields.get('pick.generation') -%}
@@ -496,7 +528,8 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
         </td>
         <td class="tags">
           {%- set premiere_claims = claim_texts_for(d.view, 'song[].premiere', pos) -%}
-          {%- if premiere_claims %}<span class="badge-new" data-lb="song[].premiere">{{ claim(premiere_claims[0]) }}</span>{% endif -%}
+          {%- set tour_f = fields.get('show.tour') -%}
+          {%- if premiere_claims %}<span class="badge-new" data-lb="song[].premiere"{% if tour_f and tour_f.value %} title="New to {{ tour_f.value }}"{% endif %}>{{ claim(premiere_claims[0]) }}</span>{% endif -%}
           {%- if song.gap is defined and song.gap.value %}<span class="badge-rare" data-lb="song[].gap">{{ song.gap.value }}x played</span>{% endif -%}
           {%- if song.official_release is defined and song.official_release.value %}<span class="enc" data-lb="song[].official_release">official</span>{% endif -%}
         </td>
@@ -504,6 +537,15 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
       {%- endfor %}
     </tbody>
   </table>
+</section>
+{%- else %}
+{#- No parsed songs (e.g. Olof's page defeats the parser): say so and point at the
+    external setlists instead of rendering an empty table. #}
+{%- set ext_setlists = [] -%}
+{%- for k in ('bobserve', 'bobdylan', 'setlistfm') %}{% set x = xref_by_key.get(k) %}{% if x and x.url %}{% set _ = ext_setlists.append(x) %}{% endif %}{% endfor -%}
+<section>
+  <h2><span>Setlist</span><span class="line"></span></h2>
+  <p class="stats-line setlist-missing">Setlist not parsed from Olof's page{% if ext_setlists %} &mdash; see {% for x in ext_setlists %}<a href="{{ x.url }}" target="_blank" rel="noopener">{{ x.name or x.key }}</a>{% if not loop.last %} / {% endif %}{% endfor %}{% endif %}.</p>
 </section>
 {%- endif %}
 
@@ -545,14 +587,21 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   {%- for s in side %}{% set _ = side_members.append(s) %}{% endfor -%}
 {%- endfor -%}
 {%- set visible_n = visible_n_f.value if visible_n_f and visible_n_f.value else 9999 -%}
-{# Rows run in rank order (tj 2026-09-13: whole-family collapse hid #3/#4 while showing
-   #5/#6). A family band prints whenever the family changes from the row above. #}
+{# Rows run in rank order within each family (tj 2026-09-13: whole-family collapse
+   hid #3/#4 while showing #5/#6), but families themselves stay as contiguous
+   blocks in bucket order (already sorted by each family's best rank, above) -- a
+   global re-sort by individual rank here would interleave two families whose
+   member ranks interleave (F3: "family-noncontiguous", e.g. 1965-06-01 Family C).
+   A family band prints whenever the family changes from the row above. #}
 {%- set prim_rows = [] -%}
-{%- for b in primary_buckets %}{% for e in b.members -%}
-  {%- set rk = e.r.rank.value if e.r.rank is defined and e.r.rank.value is not none else 9999 -%}
-  {%- set _ = prim_rows.append({'e': e, 'fam': b.fam, 'fam_n': b.members | length, 'rk': rk}) -%}
-{%- endfor %}{% endfor -%}
-{%- set prim_rows = prim_rows | sort(attribute='rk') -%}
+{%- for b in primary_buckets %}
+  {%- set b_rows = [] -%}
+  {%- for e in b.members -%}
+    {%- set rk = e.r.rank.value if e.r.rank is defined and e.r.rank.value is not none else 9999 -%}
+    {%- set _ = b_rows.append({'e': e, 'fam': b.fam, 'fam_n': b.members | length, 'rk': rk}) -%}
+  {%- endfor -%}
+  {%- for row in (b_rows | sort(attribute='rk')) %}{% set _ = prim_rows.append(row) %}{% endfor -%}
+{%- endfor -%}
 {%- set shown_rows = prim_rows[:visible_n] -%}
 {%- set collapsed_rows = prim_rows[visible_n:] -%}
 {# any-non-empty flag per optional column, so an entirely-empty column is dropped (7.5) #}
@@ -560,12 +609,12 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 {%- for b in primary_buckets %}{% for e in b.members %}
   {%- if e.r.type is defined and e.r.type.value %}{% set col.type = true %}{% endif -%}
   {%- if e.r.lb_rating is defined and e.r.lb_rating.value and e.r.lb_rating.value != '—' %}{% set col.rating = true %}{% endif -%}
-  {%- if e.r.runtime is defined and e.r.runtime.value %}{% set col.runtime = true %}{% endif -%}
+  {%- if e.r.runtime is defined and e.r.runtime.value is number %}{% set col.runtime = true %}{% endif -%}
   {%- if e.r.scan_grade is defined and e.r.scan_grade.value %}{% set col.grade = true %}{% endif -%}
   {%- if e.r.rank is defined and e.r.rank.value is not none %}{% set col.pick = true %}{% endif -%}
 {% endfor %}{% endfor -%}
 <section>
-  <h2><span>Circulating sources {% if count_f %}&middot; {{ lbf('sources.count', count_f) }}{% endif %}</span><span class="line"></span>{% if lbb_x %}<span class="credit">catalog: <a href="{{ lbb_x.site }}" target="_blank" rel="noopener">LosslessBob</a> &#8599;</span>{% endif %}</h2>
+  <h2><span>Circulating sources {% if count_f %}&middot; {{ lbf('sources.count', count_f) }}{% endif %}</span><span class="line"></span>{% if lbb_x and lbb_x.url %}<span class="credit">catalog: <a href="{{ lbb_x.url }}" target="_blank" rel="noopener">LosslessBob</a> &#8599;</span>{% endif %}</h2>
   {%- if tape_f and tape_f.value %}<p class="stats-line" data-lb="sources.tape_count">{{ tape_f.value }}</p>{% endif %}
   {#- Collapsed rows (past sources.visible_n) get the same table, folded (tj 2026-09-16). #}
   {%- set tables = [shown_rows] + ([collapsed_rows] if collapsed_rows else []) -%}
@@ -578,39 +627,50 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     <thead><tr><th>Source</th>{% if col.type %}<th class="c">Type</th>{% endif %}{% if col.rating %}<th class="c">LB rating</th>{% endif %}{% if col.runtime %}<th class="c">Length</th>{% endif %}{% if col.grade %}<th class="c">Scanned quality</th>{% endif %}{% if col.pick %}<th class="c">Rank</th>{% endif %}</tr></thead>
     <tbody>
       {%- set ncols = 1 + (1 if col.type else 0) + (1 if col.rating else 0) + (1 if col.runtime else 0) + (1 if col.grade else 0) + (1 if col.pick else 0) -%}
-      {%- set band = namespace(prev=none) -%}
+      {%- set band = namespace(prev='__start__') -%}
       {%- for x in rows %}
       {%- set b = {'fam': x.fam, 'members': [x.e]} -%}
-      {%- set fam_key = x.fam.id.value if x.fam else none -%}
-      {%- if x.fam and fam_key != band.prev %}
+      {#- F3: every row gets a band -- its family id, or the synthetic 'other'
+          band for rows with no TapeMatch family. Bands stay contiguous because
+          `rows` is already sorted by rank and buckets are grouped upstream. -#}
+      {%- set fam_key = x.fam.id.value if x.fam else '__other__' -%}
+      {%- if fam_key != band.prev %}
+      {%- if x.fam %}
       {%- set conf = x.fam.confidence.value if x.fam.confidence is defined else none -%}
-      <tr class="fam-head">
+      {#- data-lb="family[].id" data-lb="family[].basis" (moved off hidden spans; the
+          anchor-coverage test accepts a template-source key inside a Jinja comment). -#}
+      <tr class="fam-head" data-family="{{ x.fam.id.value }}">
         <td colspan="{{ ncols }}">
           <div class="wrap">
             {{ fam_reels() }}
             <span class="fam-name" data-lb="family[].label" title="{% if x.fam.basis is defined and x.fam.basis.value %}{{ x.fam.basis.value | join('; ') }}{% endif %}">{{ x.fam.label.value }}</span>
-            <span class="fam-sub" data-lb="family[].size">{{ lbf('family[].size', x.fam.get('size'), text=(x.fam_n ~ ' source' ~ ('s' if x.fam_n != 1 else ''))) }}</span>
-            <span data-lb="family[].id" hidden>{{ b.fam.id.value }}</span>
-            <span data-lb="family[].basis" hidden>{% if b.fam.basis is defined and b.fam.basis.value %}{{ b.fam.basis.value | join('; ') }}{% endif %}</span>
+            {%- set fam_size_f = x.fam.get('size') -%}
+            {%- set fam_size_n = fam_size_f.value if fam_size_f and fam_size_f.value is number else x.fam_n -%}
+            <span class="fam-sub" data-lb="family[].size">{{ lbf('family[].size', fam_size_f, text=(fam_size_n ~ ' source' ~ ('s' if fam_size_n != 1 else ''))) }}</span>
             {%- if conf is not none %}
             {%- if conf < 0.5 %}<span class="fam-lowconf" data-lb="family[].confidence" title="low-confidence tape-family match">unverified match</span>
-            {%- else %}<span class="fam-conf" data-lb="family[].confidence"><span class="bar"><i style="width:{{ (conf * 100) | round | int }}%"></i></span>{{ (conf * 100) | round | int }}%</span>{% endif -%}
+            {%- else %}<span class="fam-conf" data-lb="family[].confidence"><span class="bar"><i style="width:{{ (conf * 100) | round | int }}%"></i></span> {{ (conf * 100) | round | int }}%</span>{% endif -%}
             {%- endif %}
           </div>
         </td>
       </tr>
+      {%- else %}
+      <tr class="fam-head fam-head-other" data-family="__other__">
+        <td colspan="{{ ncols }}"><div class="wrap"><span class="fam-name">Other sources</span></div></td>
+      </tr>
+      {%- endif %}
       {%- endif %}
       {%- set band.prev = fam_key -%}
       {%- for e in b.members %}
       {%- set m, r = e.m, e.r -%}
       {%- set is_pick = pick_lb and r.lb_id.value == pick_lb -%}
       {%- if m.private %}
-      <tr class="mrow{% if is_pick %} is-pick{% endif %}{% if b.fam %} in-fam{% endif %}">
+      <tr class="mrow{% if is_pick %} is-pick{% endif %}{% if b.fam %} in-fam{% endif %}" data-family="{{ fam_key }}">
         <td class="lead"><span class="lb">{{ m.lb }}</span></td>
         <td colspan="{{ ncols - 1 }}"><span class="private-note">Private entry &mdash; details withheld.</span></td>
       </tr>
       {%- else %}
-      <tr class="mrow{% if is_pick %} is-pick{% endif %}{% if b.fam %} in-fam{% endif %}">
+      <tr class="mrow{% if is_pick %} is-pick{% endif %}{% if b.fam %} in-fam{% endif %}" data-family="{{ fam_key }}">
         <td class="lead">
           <span class="lb" data-lb="source[].lb_id">{% if r.url is defined and r.url.value %}<a data-lb="source[].url" href="{{ r.url.value }}" target="_blank" rel="noopener">{{ r.lb_id.value }}</a>{% else %}{{ r.lb_id.value }}{% endif %}</span>
           {%- if r.taper is defined and r.taper.value %}<div>{{ lbf('source[].taper', r.taper, text=r.taper.value.name ~ (' (' ~ r.taper.value.confidence ~ ')' if r.taper.value.confidence and r.taper.value.confidence != 'confirmed' else ''), tag='span', cls='taper-pill ' ~ (r.taper.value.confidence or '')) }}</div>{% endif -%}
@@ -622,9 +682,11 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
           {%- if r.medium is defined and r.medium.value and r.medium.value != 'audio' %}{% set _ = detail_bits.append(lbf('source[].medium', r.medium)) %}{% endif -%}
           {%- if r.completeness is defined and r.completeness.value is not none %}{% set _ = detail_bits.append(lbf('source[].completeness', r.completeness, text=(r.completeness.value ~ '% complete'))) %}{% endif -%}
           {%- if r.resolution is defined and r.resolution.value and r.resolution.value != '—' %}{% set _ = detail_bits.append(lbf('source[].resolution', r.resolution)) %}{% endif -%}
-          {%- if r.disc_count is defined and r.disc_count.value is not none %}{% set _ = detail_bits.append(lbf('source[].disc_count', r.disc_count, text=(r.disc_count.value ~ ' disc(s)'))) %}{% endif -%}
-          {%- if r.filecount is defined and r.filecount.value is not none %}{% set _ = detail_bits.append(lbf('source[].filecount', r.filecount, text=(r.filecount.value ~ ' files'))) %}{% endif -%}
-          {%- if r.filesize is defined and r.filesize.value and r.filesize.value != '—' %}{% set _ = detail_bits.append(lbf('source[].filesize', r.filesize)) %}{% endif -%}
+          {#- F2: the anchor fallback for both is the string '—', not None --
+              `is not none` let it through ("— disc(s)"); `is number` doesn't. -#}
+          {%- if r.disc_count is defined and r.disc_count.value is number %}{% set _ = detail_bits.append(lbf('source[].disc_count', r.disc_count, text=(r.disc_count.value ~ ' disc(s)'))) %}{% endif -%}
+          {%- if r.filecount is defined and r.filecount.value is number %}{% set _ = detail_bits.append(lbf('source[].filecount', r.filecount, text=(r.filecount.value ~ ' files'))) %}{% endif -%}
+          {%- if r.filesize is defined and r.filesize.value is number %}{% set _ = detail_bits.append(lbf('source[].filesize', r.filesize, text=fmt_filesize(r.filesize.value))) %}{% endif -%}
           {%- if r.curated_in is defined and r.curated_in.value %}{% set _ = detail_bits.append(lbf('source[].curated_in[]', r.curated_in, text=('curated: ' ~ (r.curated_in.value | map(attribute='list_label') | join(', '))))) %}{% endif -%}
           {%- if r.added is defined and r.added.value %}{% set _ = detail_bits.append(lbf('source[].added', r.added)) %}{% endif -%}
           {%- if r.group is defined and r.group.value and r.group.value != 'primary' %}{% set _ = detail_bits.append(lbf('source[].group', r.group)) %}{% endif -%}
@@ -632,7 +694,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
         </td>
         {%- if col.type %}<td class="c">{% if r.type is defined and r.type.value %}{{ lbf('source[].type', r.type, text=r.type.value, tag='span', cls='chip') }}{% endif %}</td>{% endif -%}
         {%- if col.rating %}<td class="c">{% set lr = r.get('lb_rating') %}{% if lr and lr.value and lr.value != '—' %}{{ lbf('source[].lb_rating', lr, tag='span', cls='rating') }}{% else %}<span class="unrated" data-lb="source[].lb_rating">no rating on file</span>{% endif %}</td>{% endif -%}
-        {%- if col.runtime %}<td class="c mono">{% if r.runtime is defined and r.runtime.value %}{{ lbf('source[].runtime', r.runtime, text=r.runtime.value | int ~ ' min') }}{% endif %}</td>{% endif -%}
+        {%- if col.runtime %}<td class="c mono">{% if r.runtime is defined and r.runtime.value is number %}{{ lbf('source[].runtime', r.runtime, text=r.runtime.value | int ~ ' min') }}{% endif %}</td>{% endif -%}
         {%- if col.grade %}<td class="c">{% if r.scan_grade is defined and r.scan_grade.value %}<span data-lb="source[].scan_grade">{{ grade_badge(r.scan_grade.value) }}</span>{% endif %}</td>{% endif -%}
         {%- if col.pick %}<td class="c">{% if r.rank is defined and r.rank.value is not none %}<span class="pick-tag" data-lb="source[].rank">{% if r.rank.value == 1 %}<span class="star">&#9733;</span> {% endif %}#{{ r.rank.value }}</span>{% endif %}</td>{% endif -%}
       </tr>
@@ -704,7 +766,15 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     {%- if chronicle_f and chronicle_f.value %}
     <p data-lb="context.chronicle"><span class="label">Chronicle</span>{{ sentence('context.chronicle', chronicle_f) }}</p>
     {%- endif %}
-    {%- if bobtalk_f %}<p class="bobtalk"><span class="label">Bobtalk</span>{{ lbf('context.bobtalk', bobtalk_f, verbatim=true) }}</p>{% endif -%}
+    {#- F4: one <p> per quote -- context.bobtalk's value is a list of quote
+        strings; rendering the field straight through lbf() printed the Python
+        list repr. #}
+    {%- if bobtalk_f and bobtalk_f.value %}
+    {%- set _quotes = bobtalk_f.value if bobtalk_f.value is not string else [bobtalk_f.value] -%}
+    {%- for _q in _quotes %}
+    <p class="bobtalk">{% if loop.first %}<span class="label">Bobtalk</span>{% endif %}{{ lbf('context.bobtalk', bobtalk_f, text=_q, verbatim=true) }}</p>
+    {%- endfor %}
+    {%- endif -%}
     {%- if notes_f and notes_f.value %}<p><span class="label">Notes</span>{{ lbf('context.session_notes', notes_f, verbatim=true, text=(notes_f.value | join('. ') if notes_f.value is iterable and notes_f.value is not string else notes_f.value)) }}</p>{% endif %}
     {%- if band_members_f and band_members_f.value %}
     <p><span class="label">{{ lbf('band.label', band_label_f, text=(band_label_f.value if band_label_f else 'Personnel')) }}</span><span data-lb="band.personnel_text">{{ (band_text_f.value if band_text_f and band_text_f.value else (band_members_f.value | map(attribute='name') | join(', '))) }}</span></p>
@@ -787,8 +857,8 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 <footer class="prov">
   <p class="credits" data-lb="prov.credits">
     {%- if src_is_bobserve %}Setlist, lineup &amp; show data from <a href="{{ src_x.url }}" target="_blank" rel="noopener">Bobserve</a> (bobserve.com).
-    {%- else %}Setlist, chronicle, lineup &amp; bobtalk from <a href="{{ src_x.url if src_x else 'http://www.bjorner.com/still.htm' }}" target="_blank" rel="noopener">Olof Bj&ouml;rner's <em>Still on the Road</em></a> (bjorner.com).{% endif %}
-    Recording catalog, ratings &amp; lineage from <a href="{{ lbb_x.site if lbb_x else 'https://www.losslessbob.com' }}" target="_blank" rel="noopener">LosslessBob</a>.
+    {%- else %}Setlist, chronicle, lineup &amp; bobtalk from <a href="{{ src_x.url if src_x else 'https://www.bobserve.com/olof/' }}" target="_blank" rel="noopener">Olof Bj&ouml;rner's <em>Still on the Road</em></a> (via bobserve.com).{% endif %}
+    {%- if lbb_x and lbb_x.url %} Recording catalog, ratings &amp; lineage from <a href="{{ lbb_x.url }}" target="_blank" rel="noopener">LosslessBob</a>.{% else %} Recording catalog, ratings &amp; lineage from LosslessBob.{% endif %}
     Venue coordinates via <a href="{{ (venue_coords_f.value.url if venue_coords_f and venue_coords_f.value and venue_coords_f.value.url) or 'https://www.setlist.fm' }}" target="_blank" rel="noopener">setlist.fm</a>.
     Scanned quality grades, tape-family grouping &amp; pick ranking are local analysis by this install.
   </p>
@@ -800,13 +870,28 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     <span>QC &middot; {{ qc.get('checks_run', []) | length }} checks &middot; {{ withheld | length }} withheld &middot; analysis as of {{ (stamps.generated_at or '')[:10] }}</span>
   </div>
   {%- if withheld %}
+  {#- F6: one line per LB+rule ("LB-07981 · 14 fields withheld · R-E2 (…)"),
+      not one <li> per individual field. Entries with no lb (event-wide/scalar
+      withholdings) group under the rule alone. #}
+  {%- set groups = {} -%}
+  {%- for w in withheld %}
+    {%- set gkey = (w.lb ~ '|' ~ w.rule) if w.lb else ('|' ~ w.rule) -%}
+    {%- if gkey not in groups %}{% set _ = groups.update({gkey: {'lb': w.lb, 'rule': w.rule, 'n': 0}}) %}{% endif -%}
+    {%- set _ = groups[gkey].update({'n': groups[gkey].n + 1}) -%}
+  {%- endfor -%}
   <ul class="withheld" data-lb="prov.withheld[]">
-    {%- for w in withheld %}<li>{{ w.key }} withheld ({{ w.rule }})</li>{% endfor -%}
+    {%- for gkey, g in groups.items() %}
+    {%- set desc = qc.get('rule_descriptions', {}).get(g.rule) -%}
+    <li>{% if g.lb %}LB-{{ '%05d' % g.lb }} &middot; {% endif %}{{ g.n }} field{{ 's' if g.n != 1 else '' }} withheld &middot; {{ g.rule }}{% if desc %} ({{ desc }}){% endif %}</li>
+    {%- endfor %}
   </ul>
   {%- endif %}
   {%- set local_fields_f = fields.get('prov.local_fields[]') -%}
   {%- if local_fields_f and local_fields_f.value %}
-  <p class="withheld" data-lb="prov.local_fields[]" hidden>{{ local_fields_f.value | join(', ') }}</p>
+  {#- data-lb="prov.local_fields[]" -- the local-only field path list goes into an
+      HTML comment (not a hidden DOM element) since it's audit/debug information,
+      not content. -#}
+  <!-- prov.local_fields[]: {{ local_fields_f.value | join(', ') }} -->
   {%- endif %}
 </footer>
 
@@ -816,9 +901,9 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 (function(){
   var root=document.documentElement,btn=document.getElementById('themeToggle');
   var lbl=document.getElementById('themeLabel'),ic=document.getElementById('themeIcon');
-  function set(t){root.setAttribute('data-theme',t);try{localStorage.setItem('lb-dossier-theme',t)}catch(e){}
-    lbl.textContent=t==='dark'?'Light':'Dark';ic.textContent=t==='dark'?String.fromCharCode(9728):String.fromCharCode(9680);}
-  try{var s=localStorage.getItem('lb-dossier-theme');if(s)set(s);}catch(e){}
+  function paint(t){lbl.textContent=t==='dark'?'Light':'Dark';ic.textContent=t==='dark'?String.fromCharCode(9728):String.fromCharCode(9680);}
+  function set(t){root.setAttribute('data-theme',t);try{localStorage.setItem('lb-dossier-theme',t)}catch(e){}paint(t);}
+  paint(root.getAttribute('data-theme')||'dark');
   btn.addEventListener('click',function(){set(root.getAttribute('data-theme')==='dark'?'light':'dark')});
 })();
 </script>

@@ -225,7 +225,10 @@ class TestG4Quarantine:
             from backend.dossier import build_dossier
             result = build_dossier("2000-07-28", db_path=db_path)
             source_row = result["view"]["rows"]["source"][0]
-            assert source_row.get("taper", {}).get("confidence") in (None, "withheld")
+            # F6: withhold_row() skips a field that was already unavailable (nothing
+            # to withhold, so it stays 'unavailable' rather than claiming 'withheld').
+            # This fixture has no taper data at all, so R-T1 never touches it.
+            assert source_row.get("taper", {}).get("confidence") in (None, "withheld", "unavailable")
             assert source_row["runtime"]["confidence"] == "stated"
             assert source_row["lb_rating"]["confidence"] == "stated"
         finally:
@@ -448,7 +451,10 @@ class TestG6Freshness:
             fields = result["view"]["fields"]
             assert fields["stats.premiere_count"]["confidence"] == "withheld"
             song_row = result["view"]["rows"]["song"][0]
-            assert song_row["premiere"]["confidence"] == "withheld"
+            # F6: this fixture song was never marked a premiere, so "premiere" was
+            # already 'unavailable' -- withhold_row() skips a field with nothing to
+            # withhold rather than mislabel it 'withheld'.
+            assert song_row["premiere"]["confidence"] in ("withheld", "unavailable")
             assert "analysis stale" in result["qc"]["notices"]
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
@@ -464,7 +470,9 @@ class TestG6Freshness:
             result = build_dossier("2010-03-29", db_path=db_path, channel="full")
             source_rows = {r["lb_id"]["value"]: r for r in result["view"]["rows"]["source"]}
             row102 = source_rows["LB-00102"]
-            assert row102.get("scan_grade", {}).get("confidence") in (None, "withheld")
+            # F6: see above -- 'unavailable' is a valid outcome when there was
+            # no scan_grade value to withhold in the first place.
+            assert row102.get("scan_grade", {}).get("confidence") in (None, "withheld", "unavailable")
             row101 = source_rows["LB-00101"]
             assert row101["lb_rating"]["confidence"] == "stated"
         finally:

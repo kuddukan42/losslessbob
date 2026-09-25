@@ -2029,14 +2029,29 @@ def setlist_confidence(
 
 _AUDIO_EXT_RE = re.compile(r"\.(flac|wav|shn|ape|wv|tak|m4a|mp3|ogg|aiff?)$", re.IGNORECASE)
 
+# F2: display kHz for a normalized "BIT/KHZ" token (parse_resolution_tokens truncates
+# the decimal -- "44.1kHz" -> "44" -- so map the known sample rates back for display).
+_KHZ_DISPLAY = {
+    "22": "22.05", "32": "32", "44": "44.1", "48": "48",
+    "88": "88.2", "96": "96", "176": "176.4", "192": "192",
+}
+
+
+def _format_res_token(token: str) -> str:
+    """A normalized ``"16/44"`` resolution token as ``"16-bit/44.1 kHz"`` (F2)."""
+    bit, _, khz = token.partition("/")
+    khz_disp = _KHZ_DISPLAY.get(khz, khz)
+    return f"{bit}-bit/{khz_disp} kHz"
+
 
 class FileMeta(TypedDict):
     """D-11: one source's file-level metadata, each field independently null-safe.
 
     Keys:
         lb_number: The source.
-        resolution: Rendered label -- ``"16/44 file"`` (a TUIT ``lb_verified`` file
-            record), ``"recorded 24/96"`` (lineage only, unverified), both joined
+        resolution: Rendered label -- ``"16-bit/44.1 kHz file"`` (a TUIT
+            ``lb_verified`` file record), ``"recorded 24-bit/96 kHz"`` (lineage
+            only, unverified), both joined
             with " · " when a file record and a differing lineage figure both
             exist (audit M1), or ``"—"`` when neither is known.
         file_res: TUIT's verified file record resolution, or ``None``.
@@ -2094,13 +2109,13 @@ def file_meta(conn: sqlite3.Connection, lb_number: int) -> FileMeta:
 
     parts: list[str] = []
     if file_res:
-        parts.append(f"{file_res} file")
+        parts.append(f"{_format_res_token(file_res)} file")
         if recorded_res and recorded_res != file_res:
-            parts.append(f"recorded {recorded_res}")
+            parts.append(f"recorded {_format_res_token(recorded_res)}")
     else:
         value = fmt["final_res"] or recorded_res
         if value:
-            parts.append(f"recorded {value}")
+            parts.append(f"recorded {_format_res_token(value)}")
     resolution = " · ".join(parts) if parts else "—"
 
     row = conn.execute("SELECT cdr FROM entries WHERE lb_number = ?", (lb_number,)).fetchone()
@@ -2808,9 +2823,14 @@ def broadcast_set_labels(
 
 # Grade/rank prefix ("Grade B+ (74/100). LB2327: ranked #2 of 2. ") in front of
 # the descriptive sentence -- both the grade clause and the ranked clause are
-# independently optional (a single-source LB has neither/one of them).
+# independently optional (a single-source LB has neither/one of them). The
+# ranked clause has two generations of wording in quality_recording_scores:
+# "ranked #N of M." and "recommended (#N of M)." -- the L1 lint carry-over
+# ("recommended (#1 of 4). Sounds ..." leaking into source_character/the
+# runner-up diff line) is this second form never having been matched here.
 _VERDICT_PREFIX_RE = re.compile(
-    r"^(?:Grade\s+\S+\s*\(\d+/100\)\.\s*)?LB\d+:\s*(?:ranked\s+#\d+\s+of\s+\d+\.\s*)?",
+    r"^(?:Grade\s+\S+\s*\(\d+/100\)\.\s*)?LB\d+:\s*"
+    r"(?:ranked\s+#\d+\s+of\s+\d+\.\s*|recommended\s*\(#\d+\s+of\s+\d+\)\.\s*)?",
 )
 _VERDICT_FLAGS_RE = re.compile(
     r"Flags:\s*(.*?)\.(?=\s*(?:Best in group|Weakest in group)|\s*$)", re.DOTALL,

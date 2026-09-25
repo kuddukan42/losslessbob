@@ -186,7 +186,8 @@ class TestFileMeta:
                     " VALUES (?, ?, 'f', 8485, 0)", (f"chk{i}", f"track{i:02d}.flac"),
                 )
         fm = file_meta(conn, 8485)
-        assert fm["resolution"] == "16/44 file · recorded 24/96"
+        # F2: resolution now renders full display units ("16-bit/44.1 kHz" etc).
+        assert fm["resolution"] == "16-bit/44.1 kHz file · recorded 24-bit/96 kHz"
         assert fm["file_res"] == "16/44"
         assert fm["recorded_res"] == "24/96"
         assert fm["filesize"] == 714814259
@@ -198,7 +199,8 @@ class TestFileMeta:
         with conn:
             _entry(conn, 1, "1/1/90", description="Lineage: DAT (16bit/48kHz) > CDR > EAC > FLAC")
         fm = file_meta(conn, 1)
-        assert fm["resolution"] == "recorded 16/48"
+        # F2: resolution now renders full display units ("16-bit/48 kHz").
+        assert fm["resolution"] == "recorded 16-bit/48 kHz"
         assert fm["file_res"] is None
 
     def test_null_resolution_renders_dash(self, conn):

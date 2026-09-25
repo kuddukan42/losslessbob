@@ -378,6 +378,18 @@ CREATE TABLE IF NOT EXISTS venue_geocoded (
 );
 CREATE INDEX IF NOT EXISTS idx_venue_geo_source ON venue_geocoded(source);
 
+-- F7: date -> Bob Links tour-guide page URL, crawled offline by
+-- tools/import_boblinks_index.py (boblinks.com's dates*.html / pre1995s.html guide
+-- pages, followed politely -- sequential, 1s delay). The dossier's _build_xref
+-- (backend.dossier._boblinks_url) only ever reads this table; a date with no row
+-- renders "no Bob Links page for this date" rather than guessing a URL pattern
+-- (probing showed the MMDDYYs.html guess 404s for some real dates).
+CREATE TABLE IF NOT EXISTS boblinks_pages (
+    date_iso  TEXT PRIMARY KEY,
+    url       TEXT NOT NULL,
+    found_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE VIRTUAL TABLE IF NOT EXISTS entries_fts USING fts5(
     description,
     setlist,

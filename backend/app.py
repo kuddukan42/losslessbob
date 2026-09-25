@@ -8786,8 +8786,17 @@ def create_app() -> Flask:
             location = request.args.get("location") or None
             show = request.args.get("show") or None
             channel = request.args.get("channel", "public")
+            # F8: the in-app viewer (timeline screen, embedded iframe) passes inline=1
+            # (Content-Disposition, unrelated to run-links) and, by default, also gets
+            # same-route ?date= sibling-run links since it's the only current inline=1
+            # caller. tools.dossier_golden.export_html sends inline=1 too (so the test
+            # client doesn't get an attachment back) but sets link_mode=none explicitly
+            # -- it has no filesystem for /api/dossier/html?date= links to resolve to,
+            # and does its own rewrite pass for the dates it actually exports.
+            inline = request.args.get("inline") in ("1", "true", "True")
+            link_mode = request.args.get("link_mode") or ("inline" if inline else "none")
             result = _dossier.build_dossier(date_iso, location=location, channel=channel,
-                                            show=show)
+                                            show=show, link_mode=link_mode)
             if result.get("ambiguous"):
                 if request.args.get("chooser") in ("1", "true", "True"):
                     picks = [dict(c, href=_dossier_pick_href(c),

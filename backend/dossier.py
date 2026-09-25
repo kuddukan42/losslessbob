@@ -984,8 +984,10 @@ def _build_sources(conn: sqlite3.Connection, date_iso: str, entries: list[sqlite
 
 # Olof's Files are scraped from the bobserve mirror (olof_fetcher.BASE_URL) —
 # deep links go there so they always resolve to the exact page we ingested.
+# F7: bjorner.com itself is parked ("Coming Soon" placeholder) -- link the
+# bobserve mirror's Olof index instead of the dead original site.
 _OLOF_MIRROR_BASE = "https://www.bobserve.com/olof/"
-_OLOF_HOME = "http://www.bjorner.com/still.htm"
+_OLOF_HOME = _OLOF_MIRROR_BASE
 _BOBLINKS_HOME = "https://boblinks.com"
 _BOBDYLAN_HOME = "https://www.bobdylan.com"
 _BOBSERVE_HOME = "https://bobserve.com"
@@ -1103,9 +1105,33 @@ def _bobdylan_show_url(conn: sqlite3.Connection, date_iso: str,
     return rows[0]["bobdylan_url"]
 
 
+def _boblinks_url(conn: sqlite3.Connection, date_iso: str) -> str | None:
+    """A date's Bob Links tour-guide page URL, from the crawled ``boblinks_pages``
+    table (:mod:`tools.import_boblinks_index`), or ``None`` when no page is known.
+
+    F7: the old code guessed the URL from a ``MMDDYYs.html`` pattern, but probing
+    showed that pattern is unreliable (some dates 404, some use a different slug).
+    Only a page this table's crawl actually found gets linked.
+
+    Args:
+        conn: Open connection.
+        date_iso: Concert date, ``'YYYY-MM-DD'``.
+
+    Returns:
+        The page URL, or ``None``.
+    """
+    if not _table_exists(conn, "boblinks_pages"):
+        return None
+    row = conn.execute(
+        "SELECT url FROM boblinks_pages WHERE date_iso = ?", (date_iso,),
+    ).fetchone()
+    return row["url"] if row else None
+
+
 def _build_xref(date_iso: str, event: sqlite3.Row | None,
                 lb_number: int | None, bobserve_index_id: str | None = None,
-                bobdylan_url: str | None = None) -> list[dict]:
+                bobdylan_url: str | None = None,
+                boblinks_url: str | None = None) -> list[dict]:
     """Cross-reference cards with working deep links for one date.
 
     Every card carries both ``site`` (the source's home page, used for
@@ -1136,13 +1162,17 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
         dt = None
     year = f"{dt.year}" if dt else None
 
+    # F7: SITE_BASE_URL is a parked placeholder domain, not the live LB site.
+    # The credit line links to the pick's detail page (always live) instead, and
+    # drops the link entirely -- rather than point at the placeholder -- when
+    # there's no LB number to deep-link (no visible source at all).
     lbb = {
         "key": "losslessbob",
         "name": "LosslessBob",
         "desc": "Lossless recording catalog — the LB-number source for "
                 "transfers, lineage & ratings.",
         "site": SITE_BASE_URL,
-        "url": SITE_BASE_URL,
+        "url": None,
         "link_label": "catalog home",
         "is_source": False,
     }
@@ -1168,6 +1198,9 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
         olof["link_label"] = f"{event['page_filename']} · DSN{event['event_id']:05d}"
         olof["is_source"] = True
 
+    # F7: only link a Bob Links page the crawl (tools.import_boblinks_index) actually
+    # found -- the old MMDDYYs.html guess 404s for some dates and hits a different
+    # slug for others.
     boblinks = {
         "key": "boblinks",
         "name": "Bob Links",
@@ -1179,12 +1212,12 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
         "is_source": False,
         "unavailable": False,
     }
-    if dt and dt.year >= _BOBLINKS_FIRST_YEAR:
-        boblinks["url"] = f"{_BOBLINKS_HOME}/{dt.strftime('%m%d%y')}s.html"
+    if boblinks_url:
+        boblinks["url"] = boblinks_url
         boblinks["link_label"] = f"setlist page · {date_iso}"
-    elif dt:
+    else:
         boblinks["unavailable"] = True
-        boblinks["link_label"] = f"no show pages before {_BOBLINKS_FIRST_YEAR}"
+        boblinks["link_label"] = "no Bob Links page for this date"
 
     bobserve = {
         "key": "bobserve",
@@ -1223,7 +1256,8 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
 
 
 def build_dossier(date_iso: str, location: str | None = None, channel: str = "public",
-                   db_path: str | None = None, show: str | None = None) -> dict:
+                   db_path: str | None = None, show: str | None = None,
+                   link_mode: str = "none") -> dict:
     """Assemble the show dossier for one date.
 
     Args:
@@ -1238,6 +1272,10 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
             :func:`show_part_key` (``'afternoon'``/``'evening'``,
             ``'early'``/``'late'``, ...). Required on such a day (TODO-345);
             ignored on a single-show day.
+        link_mode: Passed straight through to
+            :func:`backend.dossier_anchors.build_view` (F8) -- ``'none'``
+            (default), ``'inline'`` (the in-app viewer's ``?date=`` links) or
+            ``'file'`` (legacy static stems).
 
     Returns:
         The D1 JSON shape (plus an additive ``xref`` list of external
@@ -1332,7 +1370,8 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
     dossier["xref"] = _build_xref(date_iso, event, xref_lb,
                                   _bobserve_index_event_id(conn, date_iso, event, show_key),
                                   _bobdylan_show_url(conn, date_iso, event,
-                                                     two_show=show_key is not None))
+                                                     two_show=show_key is not None),
+                                  _boblinks_url(conn, date_iso))
 
     provenance: dict = {"generated_at": _now_iso(), "channel": channel, "local_analysis": local_analysis}
     mv = conn.execute("SELECT value FROM meta WHERE key = 'master_version'").fetchone()
@@ -1344,7 +1383,8 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
 
     try:
         dossier["view"] = build_view(
-            dossier, conn, event_id=event_id, visible_lbs=visible_lbs, channel=channel,
+            dossier, conn, link_mode, event_id=event_id, visible_lbs=visible_lbs,
+            channel=channel,
         )
     except Exception:  # noqa: BLE001 - view assembly must never break the D1 payload (spec S1)
         log.exception("build_view failed for %s; dossier ships without a view", date_iso)

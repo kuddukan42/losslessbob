@@ -302,16 +302,41 @@ def check_excluded_in_alternates(page: str, page_html: str) -> list[Finding]:
     return out
 
 
-_FAM_HEAD_RE = re.compile(
-    r'<tr class="fam-head">.*?data-lb="family\[\]\.label"[^>]*>([^<]*)</span>'
-    r'.*?data-lb="family\[\]\.id"[^>]*>([^<]*)</span>',
-    re.S,
+# F3: family id now lives in a `data-family="<id>"` attribute on the `<tr class="fam-head">`
+# itself, with `family[].id` kept as a Jinja comment (no runtime element) for anchor
+# coverage. The old hidden-span form (`<span data-lb="family[].id" hidden>…</span>`) is
+# still matched so this audit still works against an export made before F3.
+_FAM_HEAD_ROW_RE = re.compile(
+    r'<tr class="(fam-head[^"]*)"(?: data-family="([^"]*)")?[^>]*>(.*?)</tr>', re.S,
 )
+_FAM_LABEL_IN_ROW_RE = re.compile(r'data-lb="family\[\]\.label"[^>]*>([^<]*)</span>')
+_FAM_ID_SPAN_IN_ROW_RE = re.compile(r'data-lb="family\[\]\.id"[^>]*>([^<]*)</span>')
+
+
+def _find_fam_heads(page_html: str) -> list[tuple[str, str]]:
+    """``[(label, fam_id), ...]`` for every real family header, new or old export
+    form. Bounded to one ``<tr>...</tr>`` at a time so a label further down the
+    page (e.g. the next real family, after an unlabelled "Other sources" band)
+    never gets attached to the wrong header.
+    """
+    out = []
+    for _cls, data_family, body in _FAM_HEAD_ROW_RE.findall(page_html):
+        label_m = _FAM_LABEL_IN_ROW_RE.search(body)
+        if not label_m:
+            continue  # the "Other sources" band (F3): no family[].label at all
+        label = label_m.group(1)
+        if data_family:  # new form: id is the row's own data-family attribute
+            fam_id = data_family
+        else:  # old form: id is a hidden span inside the row
+            id_m = _FAM_ID_SPAN_IN_ROW_RE.search(body)
+            fam_id = id_m.group(1) if id_m else ""
+        out.append((label, fam_id))
+    return out
 
 
 def check_family_contiguous(page: str, page_html: str) -> list[Finding]:
     """Flag a family header (by id) that appears more than once, non-adjacently."""
-    heads = _FAM_HEAD_RE.findall(page_html)
+    heads = _find_fam_heads(page_html)
     seen: dict[str, int] = {}
     out = []
     for idx, (label, fam_id) in enumerate(heads):
@@ -329,14 +354,23 @@ def check_family_contiguous(page: str, page_html: str) -> list[Finding]:
 
 def check_family_membership(page: str, page_html: str) -> list[Finding]:
     """Flag a source row whose lb_id isn't listed in the family header above it."""
-    # Split the sources table body into row-fragments (fam-head or mrow), in order.
-    rows = re.findall(r"<tr class=\"(fam-head|mrow[^\"]*)\">(.*?)</tr>", page_html, re.S)
+    # Split the sources table body into row-fragments (fam-head[-other] or mrow), in
+    # order, along with the row's opening tag (for the new data-family attribute).
+    rows = re.findall(
+        r'<tr class="(fam-head[^"]*|mrow[^"]*)"([^>]*)>(.*?)</tr>', page_html, re.S
+    )
     current_id = ""
     out = []
-    for cls, body in rows:
-        if cls == "fam-head":
-            m = re.search(r'data-lb="family\[\]\.id"[^>]*>([^<]*)</span>', body)
-            current_id = m.group(1).strip() if m else ""
+    for cls, attrs, body in rows:
+        if cls.startswith("fam-head"):
+            m = re.search(r'data-family="([^"]*)"', attrs)
+            if m:
+                current_id = m.group(1).strip()
+            else:
+                m = re.search(r'data-lb="family\[\]\.id"[^>]*>([^<]*)</span>', body)
+                current_id = m.group(1).strip() if m else ""
+            if current_id in ("", "__other__"):
+                current_id = ""
             continue
         if "in-fam" not in cls or not current_id:
             continue
@@ -461,6 +495,11 @@ def check_external_link(
         return out
     if status == -1:
         out.append(Finding(page, "external-link", f"fetch failed: {url}"))
+        return out
+    if status == 202:
+        # setlist.fm answers automated clients with an empty 202 (bot challenge);
+        # the page exists, its content just can't be checked from here.
+        _log.info("HTTP 202 (bot challenge), content unchecked: %s", url)
         return out
     if status != 200:
         out.append(Finding(page, "external-link", f"HTTP {status}: {url}"))

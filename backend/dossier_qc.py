@@ -95,16 +95,37 @@ log = logging.getLogger(__name__)
 
 _LB_RE = re.compile(r"LB-(\d{5})")
 
+
+def _rule_descriptions(withheld: list[WithheldEntry]) -> dict[str, str]:
+    """``{rule_id: description}`` for every rule referenced in *withheld* (F6)."""
+    from backend.qc.rules import RULES
+
+    rule_ids = {w["rule"] for w in withheld}
+    out: dict[str, str] = {}
+    for rule_id in rule_ids:
+        rule = RULES.get(rule_id)
+        if rule is not None:
+            out[rule_id] = rule.description
+    return out
+
 # ---------------------------------------------------------------------------
 # Withholding
 # ---------------------------------------------------------------------------
 
 
 class WithheldEntry(TypedDict):
-    """One ``prov.withheld[]`` row."""
+    """One ``prov.withheld[]`` row.
+
+    Attributes:
+        key: The anchor key withheld (e.g. ``"source[].scan_grade"``).
+        rule: The QC rule id that withheld it (e.g. ``"R-E2"``).
+        lb: The source's LB number, when the withholding was source-scoped
+            (F6) -- ``None`` for an event-wide/scalar withholding.
+    """
 
     key: str
     rule: str
+    lb: int | None
 
 
 class _Gate:
@@ -131,7 +152,7 @@ class _Gate:
         f = build_fallback_field(anchor)
         f["confidence"] = "withheld"
         self.view["fields"][key] = f
-        self.withheld.append(WithheldEntry(key=key, rule=rule))
+        self.withheld.append(WithheldEntry(key=key, rule=rule, lb=None))
         self.withheld_instances.add((key, None))
 
     def withhold_row(self, prefix: str, row: dict, sub: str, rule: str,
@@ -140,10 +161,17 @@ class _Gate:
         anchor = ANCHORS.get(key)
         if anchor is None or sub not in row:
             return
+        # F6: a field already unavailable (never populated) has nothing to
+        # withhold -- skip it so the footer doesn't claim a fact was hidden
+        # when there was none to begin with.
+        existing = row.get(sub)
+        if isinstance(existing, dict) and existing.get("confidence") == "unavailable":
+            return
         f = build_fallback_field(anchor)
         f["confidence"] = "withheld"
         row[sub] = f
-        self.withheld.append(WithheldEntry(key=key, rule=rule))
+        lb = row_id if (prefix == "source" and isinstance(row_id, int)) else None
+        self.withheld.append(WithheldEntry(key=key, rule=rule, lb=lb))
         self.withheld_instances.add((key, row_id))
         if prefix == "source" and isinstance(row_id, int):
             self.withheld_source_subs.add((sub, row_id))
@@ -1038,6 +1066,10 @@ def run_gate(dossier: dict, conn: sqlite3.Connection, *, channel: str,
             "notices": gate.notices,
             "input_fingerprint": _input_fingerprint(
                 conn, event_id, gate.consulted_findings, pick_lb),
+            # F6: the footer groups withheld entries "LB-x · N fields withheld ·
+            # R-rule (description)" -- ship the rule text it needs rather than
+            # having the template re-derive it from backend.qc.rules.RULES.
+            "rule_descriptions": _rule_descriptions(gate.withheld),
         }
     except Exception:  # noqa: BLE001 -- the gate must never break dossier assembly (spec S:1)
         log.exception("dossier_qc: gate failed for %s", dossier.get("show", {}).get("date_iso"))

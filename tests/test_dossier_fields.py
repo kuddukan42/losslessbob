@@ -540,6 +540,21 @@ class TestSourceCharacter:
         assert sc["character"] == "clean, close / direct, and present vocals"
         assert sc["flags"] == ["has dropouts/glitches", "incomplete (missing material)"]
 
+    def test_strips_recommended_prefix_variant(self):
+        # F: quality_recording_scores has two generations of the ranked-clause
+        # wording -- "ranked #N of M." (covered above) and "recommended (#N of M).",
+        # which leaked LB's recommendation language straight onto the runner-up
+        # diff line ("recommended (#1 of 4). Sounds ...") until this was caught.
+        text = (
+            "Grade A- (86/100). LB8408: recommended (#1 of 4). Sounds bright / airy,"
+            " clean, close / direct, slightly muddy, and slightly recessed."
+        )
+        sc = source_character(_character_db(text, "mic > recorder"), 1)
+        assert sc["character"] == (
+            "bright / airy, clean, close / direct, slightly muddy, and slightly recessed"
+        )
+        assert "recommended" not in sc["character"]
+
     def test_no_flags_drops_relative_rank_sentences(self):
         # C29: "Best/Weakest in group" ranks against scan siblings, unverified by the
         # claim engine -- it must not reach the page (L1).
