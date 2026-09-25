@@ -195,7 +195,7 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("stats.premiere_count", 1, "setlist", "D-02 (P1d)", "omit"),
     _a("stats.rotation_rank", 3, "setlist", "D-04 claim", "omit", local_analysis=True),
     _a("stats.premiere_titles", 3, "setlist", "D-02 (gated)", "omit"),
-    _a("stats.instrument_tally", 2, "setlist", "counts only", "omit"),
+    _a("stats.instrument_notes", 2, "setlist", "non-default spans only", "omit"),
     _a("band.members[]", 2, "setlist", "lineup parser", "omit"),
     _a("band.label", 2, "setlist", "lineup parser", "value", "Personnel"),
     # -- Sources ----------------------------------------------------------------
@@ -844,10 +844,11 @@ def _build_setlist(vb, d1, conn, event_id, date_iso, lineup, setlist, visible_lb
                     "stated"))
 
         if lineup and setlist:
-            tally = _safe(df.instrument_tally, lineup, len(setlist))
-            if tally:
-                vb.set_field("stats.instrument_tally", build_field(
-                    dict(tally), 2, "instrument_tally parser", "stated"))
+            year = int(date_iso[:4]) if date_iso and date_iso[:4].isdigit() else None
+            segments = _safe(df.instrument_segments, lineup, len(setlist), year)
+            if segments:
+                vb.set_field("stats.instrument_notes", build_field(
+                    segments, 2, "instrument_segments parser", "stated"))
 
     if lineup:
         parsed = _safe(df.parse_band_lineup, lineup)

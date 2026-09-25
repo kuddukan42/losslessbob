@@ -15,13 +15,14 @@ from backend.dossier_fields import (
     completeness,
     family_basis,
     fits_show,
-    instrument_tally,
+    instrument_segments,
     is_non_song,
     lineage_short,
     match_track,
     parse_band_lineup,
     parse_entry_tracklist,
     parse_runtime,
+    render_instrument_segments,
     song_instruments,
     song_notes_without,
     song_writers,
@@ -360,21 +361,56 @@ class TestSongInstrumentsAndTally:
     def test_per_song_clause(self):
         assert song_instruments(self._LINEUP, 11) == "Bob Dylan (harmonica)"
 
-    def test_tally_counts_songs_not_mentions(self):
-        # Positions 7-9 each contribute one "guitar" tally (two names mention
-        # guitar in that clause, but it's one song); position 11 contributes
-        # one "harp" (canonical name for "harmonica").
-        tally = instrument_tally(self._LINEUP, song_count=14)
-        assert tally == {"vocal": 3, "guitar": 3, "harp": 1}
+    def test_segments_hidden_when_nothing_unusual(self):
+        # guitar/harp/vocal are all pre-2002 era defaults (TODO-347), so a
+        # lineup that only ever deviates to those instruments has nothing to
+        # flag -- the whole line is omitted, not shown with routine entries.
+        assert instrument_segments(self._LINEUP, song_count=14, year=1988) == []
 
-    def test_tally_never_generalises_base_lineup(self):
-        # The base clause's bass/drums never appear -- only override clauses count.
-        tally = instrument_tally(self._LINEUP, song_count=14)
-        assert "bass" not in tally and "drums" not in tally
-
-    def test_blank_lineup_no_instruments(self):
+    def test_blank_lineup_no_segments(self):
         assert song_instruments(None, 1) is None
-        assert instrument_tally(None, song_count=5) == {}
+        assert instrument_segments(None, song_count=5, year=1988) == []
+
+
+class TestInstrumentSegments:
+    # Position 6 switches to piano (unusual pre-2002); 10-14 is a solo acoustic
+    # stretch (a format note, not an instrument, but always worth flagging);
+    # 20-21 stays on the era-default guitar/harp so it's not flagged.
+    _LINEUP = (
+        "Bob Dylan (vocal & guitar), G. E. Smith (guitar), Kenny Aaronson (bass).;"
+        " 6 Bob Dylan (piano).; 10-14 Bob Dylan (solo, acoustic guitar).;"
+        " 20-21 Bob Dylan (vocal & harmonica)."
+    )
+
+    def test_piano_switch_flagged_pre_keyboard_era(self):
+        segs = instrument_segments(self._LINEUP, song_count=21, year=1978)
+        assert {"text": "piano", "positions": [6, 6]} in segs
+
+    def test_solo_acoustic_span_flagged(self):
+        segs = instrument_segments(self._LINEUP, song_count=21, year=1978)
+        assert {"text": "solo acoustic", "positions": [10, 14]} in segs
+
+    def test_era_default_guitar_harp_not_flagged(self):
+        segs = instrument_segments(self._LINEUP, song_count=21, year=1978)
+        assert all(s["positions"] != [20, 21] for s in segs)
+
+    def test_render_matches_todo_example_shape(self):
+        segs = instrument_segments(self._LINEUP, song_count=21, year=1978)
+        text = render_instrument_segments(segs)
+        assert text == "piano on 6 · solo acoustic 10–14"
+
+    def test_piano_not_flagged_in_keyboard_era(self):
+        # From 2002 keyboard is the era default, so the piano clause is no
+        # longer worth flagging; guitar becomes that era's exception instead,
+        # which is what position 10-14's "acoustic guitar" clause now surfaces
+        # as (an instrument match wins over the solo/acoustic text note).
+        segs = instrument_segments(self._LINEUP, song_count=21, year=2010)
+        assert all(s["text"] != "piano" for s in segs)
+        assert {"text": "guitar", "positions": [10, 14]} in segs
+
+    def test_no_year_falls_back_to_pre_keyboard_default(self):
+        segs = instrument_segments(self._LINEUP, song_count=21, year=None)
+        assert {"text": "piano", "positions": [6, 6]} in segs
 
 
 def _corrections_db():
