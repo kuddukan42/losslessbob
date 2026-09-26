@@ -17,6 +17,10 @@ Examples::
     # Seed the newest page for real.
     tools/wtrf_seed_board.py --pages 1
 
+    # Pick up a deep walk where it stopped: probe for the first page that is
+    # mostly unattempted, back up one page, and walk on from there.
+    tools/wtrf_seed_board.py --resume --limit 5000
+
     # Work backwards through the board until 40 topics have been attempted,
     # however many pages that takes. --limit governs, --pages is ignored.
     tools/wtrf_seed_board.py --start-page 12 --limit 40
@@ -29,14 +33,25 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
+import time
 from pathlib import Path
+
+import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from backend import db as database  # noqa: E402
+from backend.credentials import SERVICE_WTRF, get_credentials  # noqa: E402
+from backend.forum_poster import _get_session  # noqa: E402
 from backend.paths import DATA_DIR  # noqa: E402
 from backend.tracker_seed import SeedOptions  # noqa: E402
-from backend.wtrf_board import TOPICS_PER_PAGE, seed_board  # noqa: E402
+from backend.wtrf_board import (  # noqa: E402
+    TOPICS_PER_PAGE,
+    board_page_count,
+    board_page_url,
+    parse_board_page,
+    seed_board,
+)
 
 logger = logging.getLogger("wtrf_seed_board")
 
@@ -60,6 +75,11 @@ def _build_parser() -> argparse.ArgumentParser:
                    help=f"Board page to start on, 1 = newest (default: 1). "
                         f"Page N covers topics {TOPICS_PER_PAGE}(N-1)"
                         f"..{TOPICS_PER_PAGE}N.")
+    p.add_argument("--resume", action="store_true",
+                   help="Find the start page automatically: binary-search the "
+                        "board for the first page whose topics are mostly "
+                        "unattempted, then start one page before it. "
+                        "Overrides --start-page.")
     p.add_argument("--pages", type=int, default=None,
                    help=f"How many listing pages to walk this run "
                         f"(default: 1, i.e. {TOPICS_PER_PAGE} topics — or as "
@@ -140,6 +160,57 @@ def _seed_options(args: argparse.Namespace) -> SeedOptions:
     )
 
 
+def _find_resume_page(session: requests.Session, board_id: int,
+                      delay: float) -> int:
+    """Return the board page a deep walk should resume on.
+
+    The board lists topics by first-post date, newest first, and a walk marks
+    every topic it tries in ``wtrf_downloads`` — so attempted pages form a
+    prefix of the board. A binary search over listing pages finds the first
+    page where fewer than half the topics are attempted (a few scattered
+    older rows from search-based fetches don't fool it), and the walk starts
+    one page earlier; topics already attempted there are skipped for free.
+
+    Args:
+        session: Authenticated WTRF session.
+        board_id: SMF board number.
+        delay: Seconds to sleep between listing requests.
+
+    Returns:
+        A 1-based page number (1 when the board is unreadable or untouched).
+    """
+    count = board_page_count(session, board_id)
+    if not count:
+        logger.warning("resume: board page count unreadable — starting at page 1")
+        return 1
+    attempted = database.get_wtrf_attempted_topics()
+
+    def mostly_attempted(page: int) -> bool:
+        time.sleep(delay)
+        offset = (page - 1) * TOPICS_PER_PAGE
+        resp = session.get(board_page_url(board_id, offset), timeout=30)
+        topics = parse_board_page(resp.text, offset)
+        done = sum(t.url in attempted for t in topics)
+        logger.info("resume probe: page %d/%d — %d/%d attempted",
+                    page, count, done, len(topics))
+        return bool(topics) and done * 2 >= len(topics)
+
+    lo, hi = 1, count + 1          # invariant: pages < lo done, pages >= hi not
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if mostly_attempted(mid):
+            lo = mid + 1
+        else:
+            hi = mid
+    start = max(1, lo - 1)
+    if lo > count:
+        logger.info("resume: every page is mostly attempted — sweeping the "
+                    "last page for stragglers")
+    logger.info("resume: frontier at page %d of %d — starting on page %d",
+                lo, count, start)
+    return start
+
+
 def main() -> int:
     """Run the board walk.
 
@@ -155,6 +226,17 @@ def main() -> int:
 
     dest = Path(args.save_path)
     dest.mkdir(parents=True, exist_ok=True)
+
+    session = None
+    if args.resume:
+        username, password = get_credentials(SERVICE_WTRF)
+        session = _get_session(username, password) if username and password else None
+        if session is None:
+            logger.error("resume: WTRF login failed — check the stored credentials")
+            return 1
+        board_id = args.board_id or int(database.get_meta("wtrf_board_id") or 16)
+        args.start_page = _find_resume_page(session, board_id, args.delay)
+
     start_offset = max(0, args.start_page - 1) * TOPICS_PER_PAGE
 
     # --limit governs the run: walk as far back as it takes to fill it, rather
@@ -179,6 +261,7 @@ def main() -> int:
         dry_run=args.dry_run,
         rescan=args.rescan,
         include_missing=args.include_missing,
+        session=session,
     ):
         if event["event"] == "start":
             span = (f"pages {args.start_page}-{args.start_page + pages - 1}"

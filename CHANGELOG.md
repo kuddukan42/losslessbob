@@ -1,3 +1,8 @@
+[2026-09-26] — WTRF seed walk: --resume finds the frontier page itself
+Added: tools/wtrf_seed_board.py --resume: binary-searches the board (~9 listing requests) for the first page
+  whose topics are mostly unattempted in wtrf_downloads, starts one page earlier; overrides --start-page.
+Added: tools/wtrf_resume.sh: tools/wtrf.sh --resume, tee'd to data/logs/wtrf_seed_<ts>.log.
+
 [2026-09-25] — Silver dossiers: 15-date adversarial review of whether the golden fixes generalise (C32k)
 Added: tests/silver/dossier/*.json: 15 review-only specs mirroring the golden spread; tools/dossier_golden.py
   --specs DIR renders them. Audit 0 structural; review instructions/SILVER_DOSSIER_REVIEW.md (TODO-354).
