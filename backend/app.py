@@ -5801,6 +5801,24 @@ def create_app() -> Flask:
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
+    @app.route("/api/lb_master/<int:lb>/live", methods=["GET"])
+    def lb_master_live(lb: int) -> Response:
+        """Check live on the LB site whether this LB has a public detail page.
+
+        Read-only (no DB write). tools/lb_nc.py calls it before moving a folder
+        that is private or sits in the private folder, and refuses the move
+        unless ``exists`` is true.
+
+        Returns:
+            JSON {lb_number, url, exists: true|false|null, status}; null means
+            the site could not be reached.
+        """
+        try:
+            from backend.scraper import probe_detail_page
+            return jsonify(probe_detail_page(lb))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
     @app.route("/api/lb_master", methods=["GET"])
     def lb_master_list() -> Response:
         """Return paginated lb_master rows.

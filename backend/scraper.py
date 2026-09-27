@@ -106,6 +106,30 @@ def _fetch(url: str, retries: int = 3, delay: float = 1.5) -> tuple[requests.Res
     return None, 0
 
 
+def probe_detail_page(lb_number: int) -> dict:
+    """Check live whether an LB's detail page exists on the site (nothing is stored).
+
+    The site answers a missing page either with a 404 or with HTTP 200 and a
+    "not found" body (soft 404); both count as absent.
+
+    Args:
+        lb_number: LB number to check.
+
+    Returns:
+        ``{lb_number, url, exists, status}`` — exists is True/False, or None when the
+        site could not be reached (callers must not treat that as present).
+    """
+    url = DETAIL_URL.format(n=f"{lb_number:05d}")
+    resp, status = _fetch(url, retries=2)
+    if status == 404 or (resp is not None and _is_soft_404(resp.text)):
+        exists: bool | None = False
+    elif resp is None:
+        exists = None
+    else:
+        exists = True
+    return {"lb_number": lb_number, "url": url, "exists": exists, "status": status}
+
+
 def _extract_setlist_from_lbbcd(lb_number: int, db_path: str) -> str:
     """Return a numbered setlist string parsed from the local LBBCD HTML for lb_number.
 

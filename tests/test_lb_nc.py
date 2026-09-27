@@ -457,3 +457,41 @@ def test_route_suggestion_dialog_applies_route_changes(app, monkeypatch):
     app.tick()
     assert isinstance(app.dialog, lb_nc.PlanView)
     assert any(line.startswith("Suggested") for line in app.dialog.text)
+
+
+# ---- live LB-page gate on private-marked moves
+
+
+def test_private_marked():
+    assert lb_nc.private_marked("x (LB-00001)-NFT", Path("/a/x"), None)
+    assert lb_nc.private_marked("x (LB-00001)", Path("/a/PRIVATE LB/b/x"), None)
+    assert lb_nc.private_marked("x (LB-00001)", Path("/a/x"), {"lb_status": "private"})
+    assert not lb_nc.private_marked("x (LB-00001)", Path("/a/x"), {"lb_status": "public"})
+
+
+def test_move_refused_without_live_page_rest_of_queue_runs(app, tmp_path, monkeypatch):
+    monkeypatch.setattr(lb_nc, "PROBE_INTERVAL", 0)
+    app.api.no_page = {8002}
+    app.handle("f8")                                  # misfiled view: 1860 and 8002
+    app.handle("+")
+    app.handle("f7")
+    assert any("checked live" in line for line in app.dialog.blurb)
+    app.handle("y")
+    app.tick()
+    assert "refused" in app.dialog.title
+    assert (tmp_path / "DYLAN2" / "PRIVATE LB" / "Batch A" /
+            "1991-02-20 New York, NY (LB-08002)").is_dir()          # refused: untouched
+    assert (tmp_path / "DYLAN2" / "1987" / MISFILED).is_dir()        # the other still moved
+    live = [p for p, _ in app.api.calls if p.endswith("/live")]
+    assert live == ["/api/lb_master/8002/live"]                      # only the private one
+
+
+def test_move_allowed_with_live_page(app, tmp_path, monkeypatch):
+    monkeypatch.setattr(lb_nc, "PROBE_INTERVAL", 0)
+    app.set_root(app.left, tmp_path / "DYLAN2")
+    app.set_dir(app.left, tmp_path / "DYLAN2" / "PRIVATE LB" / "Batch A")
+    _pick(app.left, "1991-02-20 New York, NY (LB-08002)")
+    app.handle("f7")
+    app.handle("y")
+    app.tick()
+    assert (tmp_path / "DYLAN2" / "1991" / "1991-02-20 New York, NY (LB-08002)").is_dir()

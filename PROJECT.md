@@ -1876,6 +1876,7 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | GET | `/api/lb_master/stats` | Return `{public, private, missing, nonexistent, max_lb, overrides, needs_review, public_no_checksums}` counts. |
 | GET | `/api/lb_master` | Paginated lb_master rows. Query params: `status`, `override=1`, `review=1`, `limit` (max 2000), `offset`. |
 | GET | `/api/lb_master/<lb>` | Single lb_master row joined with entry metadata. |
+| GET | `/api/lb_master/<lb>/live` | Live check on the LB site (read-only, no DB write): `{lb_number, url, exists: true\|false\|null, status}` — a 404 or soft-404 page is `false`, unreachable is `null` (`scraper.probe_detail_page`). tools/lb_nc.py refuses to move a private-marked folder unless `exists` is true. |
 | POST | `/api/lb_master/reconcile` | Full rebuild of lb_master. Backs up DB first. Returns `{ok, stats}`. |
 | GET | `/api/lb_master/history/<lb>` | Transition history for an LB, newest first. Query param: `limit` (default 50). |
 | PUT | `/api/lb_master/<lb>/manual` | Set a manual override. Body: `{status, notes}`. |
