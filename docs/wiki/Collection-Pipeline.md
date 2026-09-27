@@ -47,7 +47,10 @@ misfiled row. F7 files to the route, F6 moves to the other pane's mount
 (`mount_id` override, `file_mode: "move"`, optional year re-route). All writes
 go through `/api/pipeline/file/*` — no filesystem code of its own. `c`
 generates checksums, `r` applies F4's proposed renames (`/api/folder/rename`).
-F6/F7 refuse a cross-drive batch that would leave < 2 GB free on the target.
+F6/F7 refuse a cross-drive batch that would leave < 2 GB free on the target. Also: gone-path
+check (x drop / l relink), `n` -NFT fix, `i` integrity scan, `=` duplicate
+resolver (loser set aside in `_duplicates/`), `e` extras, `b` whole-year
+rebalance planner, `z` undo from `data/lb_nc_undo.jsonl`.
 
 ## After filing
 

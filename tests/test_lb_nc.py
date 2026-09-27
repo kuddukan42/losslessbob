@@ -1,5 +1,6 @@
 """Tests for tools/lb_nc.py — the two-pane collection commander, driven over FakeApi."""
 
+import shutil
 import sys
 from pathlib import Path
 
@@ -12,6 +13,8 @@ import lb_nc  # noqa: E402
 MISFILED = "1987-10-17 London, England (LB-01860)"
 TORONTO = "1975-11-19 Toronto, Canada (LB-04410)"
 PRAGUE = "1995-03-01 Prague, Czech Republic (LB-05555)"
+TOKYO = "1978-06-15 Tokyo, Japan (LB-03003)"
+TEL_AVIV = "1987-09-05 Tel Aviv, Israel (LB-02311)"
 
 
 @pytest.fixture
@@ -33,6 +36,7 @@ def test_classify_every_status(app, tmp_path):
     assert _statuses(app.left) == {
         "1966-05-17 Manchester, England (LB-00123)": "canonical",
         TORONTO: "canonical",
+        TOKYO: "canonical",
         MISFILED: "misfiled",
         PRAGUE: "stray",
     }
@@ -212,7 +216,7 @@ def test_generate_checksums_skips_folders_that_have_them(app, tmp_path):
     app.handle("+")
     app.handle("c")
     labels = [j.detail for j in app.dialog.jobs]
-    assert all(TORONTO not in d for d in labels) and len(labels) == 3
+    assert all(TORONTO not in d for d in labels) and len(labels) == 4
     app.handle("y")
     app.tick()
     assert (tmp_path / "DYLAN1" / MISFILED / "_mychecksums.ffp").is_file()
@@ -271,6 +275,10 @@ def test_show_filter_cycles(app, tmp_path):
     assert names() == [MISFILED, PRAGUE]
     app.handle("f")                                   # public in private: none on DYLAN1
     assert names() == []
+    app.handle("f")                                   # -NFT mismatch
+    assert names() == [TOKYO]
+    app.handle("f")                                   # integrity issues: none loaded
+    assert names() == []
     app.handle("f")
     assert "notes.txt" in names()
 
@@ -281,3 +289,140 @@ def test_show_filter_public_in_misfiled_view(app):
     app.handle("f")
     assert [e.lb for e in app.left.visible()] == [8002]
 
+
+
+# ---- utilities: gone / relink / drop, NFT, integrity, duplicates, extras, undo, rebalance
+
+
+def test_gone_record_listed_dropped_and_undone(app, tmp_path):
+    shutil.rmtree(tmp_path / "DYLAN2" / "1987" / TEL_AVIV)
+    app.reload()
+    row = app.coll.by_lb[2311]
+    assert app.coll.row_status(row)[0] == "gone"
+    app.set_root(app.left, None, "gone")
+    assert [e.lb for e in app.left.entries] == [2311]
+    app.handle("x")
+    app.handle("y")
+    app.tick()
+    assert 2311 not in app.coll.by_lb
+    app.dialog = None
+    app.handle("z")
+    app.handle("enter")                               # newest: the drop
+    app.handle("y")
+    app.tick()
+    assert app.coll.by_lb[2311]["disk_path"].endswith(TEL_AVIV)
+
+
+def test_relink_to_surviving_copy(app, tmp_path):
+    shutil.rmtree(tmp_path / "DYLAN1" / TORONTO)
+    app.reload()
+    app.set_dir(app.right, tmp_path / "DYLAN2" / "1987")
+    app.active = app.right
+    copy = "1975-11-19 Toronto, Canada (LB-04410)-copy"
+    assert {e.name: e.status for e in app.right.entries}[copy] == "relink"
+    _pick(app.right, copy)
+    app.handle("l")
+    app.handle("y")
+    app.tick()
+    assert app.coll.by_lb[4410]["disk_path"].endswith(copy)
+
+
+def test_nft_fix_and_undo(app, tmp_path):
+    _pick(app.left, TOKYO)
+    app.handle("n")
+    assert [j.detail.split("⇒ ")[1] for j in app.dialog.jobs] == [TOKYO + "-NFT"]
+    app.handle("y")
+    app.tick()
+    assert (tmp_path / "DYLAN1" / (TOKYO + "-NFT")).is_dir()
+    app.dialog = None
+    app.handle("z")
+    app.handle("enter")
+    app.handle("y")
+    app.tick()
+    assert (tmp_path / "DYLAN1" / TOKYO).is_dir()
+    assert app.coll.by_lb[3003]["disk_path"].endswith(TOKYO)
+
+
+def test_integrity_flag_and_filter(app, tmp_path):
+    app.api.integrity = [{"lb_number": 123, "status": "content_issue",
+                          "disk_path": str(tmp_path / "DYLAN1" /
+                                           "1966-05-17 Manchester, England (LB-00123)")}]
+    app.reload()
+    app.left.show = "bad"
+    assert [e.lb for e in app.left.visible() if e.kind != "parent"] == [123]
+    assert "!" in lb_nc.plain(app.frame(120, 30)[3]) or any(
+        "!" in lb_nc.plain(line) for line in app.frame(120, 30))
+    app.handle("i")
+    assert isinstance(app.dialog, lb_nc.Confirm)
+    app.handle("y")
+    app.tick()
+    assert any(p == "/api/collection/integrity/scan" for p, _ in app.api.calls)
+
+
+def test_duplicate_resolver_sets_aside(app, tmp_path):
+    app.set_dir(app.right, tmp_path / "DYLAN2" / "1987")
+    app.active = app.right
+    copy = "1975-11-19 Toronto, Canada (LB-04410)-copy"
+    _pick(app.right, copy)
+    app.handle("=")
+    app.tick()                                        # compare finished → picker
+    assert isinstance(app.dialog, lb_nc.Picker)
+    assert any("lbdir pass" in line for line in app.dialog.lines)
+    app.handle("2")                                   # keep the collection copy
+    app.handle("y")
+    app.tick()
+    assert (tmp_path / "DYLAN2" / lb_nc.DUP_DIR / copy).is_dir()
+    assert app.coll.by_lb[4410]["disk_path"].endswith(TORONTO)
+
+
+def test_extras_moved(app, tmp_path):
+    app.set_dir(app.right, tmp_path / "DYLAN2" / "1987")
+    app.active = app.right
+    _pick(app.right, TEL_AVIV)
+    app.handle("e")
+    assert [j.label for j in app.dialog.jobs] == ["extras"]
+    app.handle("y")
+    app.tick()
+    assert (tmp_path / "DYLAN2" / "1987" / TEL_AVIV / "extras" / "cover.jpg").is_file()
+
+
+def test_undo_same_drive_move(app, tmp_path):
+    _pick(app.left, MISFILED)
+    app.handle("f7")
+    app.handle("y")
+    app.tick()
+    app.dialog = None
+    app.handle("z")
+    app.handle("enter")
+    app.handle("y")
+    app.tick()
+    assert (tmp_path / "DYLAN1" / MISFILED).is_dir()
+    assert app.coll.row_status(app.coll.by_lb[1860])[0] == "misfiled"
+
+
+def test_plan_rebalance_balances():
+    gb = 1024 ** 3
+    steps, chosen = lb_nc.plan_rebalance(
+        {1966: 100 * gb, 1975: 100 * gb, 1978: 100 * gb},
+        src=(50 * gb, 1000 * gb), dst=(900 * gb, 1000 * gb), from_high=True)
+    assert [y for y, *_ in steps] == [1978, 1975, 1966]
+    assert chosen == 3 or chosen == 2
+    _, chosen_none = lb_nc.plan_rebalance({1966: gb}, src=(500 * gb, 1000 * gb),
+                                          dst=(500 * gb, 1000 * gb), from_high=True)
+    assert chosen_none == 0
+
+
+def test_rebalance_applies_moves_and_reroutes(app, monkeypatch):
+    gb = 1024 ** 3
+    monkeypatch.setattr(lb_nc, "same_device", lambda a, b: False)
+    monkeypatch.setattr(app, "usage", lambda path, fresh=False:
+                        (1 * gb, 100 * gb) if "DYLAN1" in str(path) else (90 * gb, 100 * gb))
+    monkeypatch.setattr(app.sizes, "get_now", lambda path: 10 * gb)
+    app.handle("b")
+    app.tick()                                        # measure finished → plan
+    assert isinstance(app.dialog, lb_nc.PlanView)
+    app.handle("a")
+    assert isinstance(app.dialog, lb_nc.Confirm)
+    labels = [j.label for j in app.dialog.jobs]
+    assert any(label.startswith("move") for label in labels)
+    assert any(label.startswith("route") for label in labels)
