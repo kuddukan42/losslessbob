@@ -1,3 +1,14 @@
+[2026-09-27] — WTRF seed walk: a full overlay drive stops the walk; --resume retries it (BUG-364)
+Fixed: backend/tracker_seed.py: build_seed_overlay refuses an overlay whose drive lacks copy + refetch + fetch
+  bytes plus a 2 GB reserve, and refuses (removing the half-built folder) when a write hits ENOSPC; reason
+  starts "disk full", seed_torrent returns disk_full. Before, 123 overlays after DYLAN1 filled on 2026-09-27
+  04:23 were added to qBittorrent short, set to download onto the full drive.
+Changed: backend/seed_overlay.py: build_overlay stops at the first ENOSPC and returns disk_full.
+Changed: backend/wtrf_board.py: a disk_full seed is recorded with wtrf_downloads status "disk_full" and ends the
+  walk; new attempted_topics() drops disk_full rows so the next walk retries them.
+Changed: tools/wtrf_seed_board.py: the --resume frontier probe uses attempted_topics(), so it restarts at a
+  disk_full topic.
+
 [2026-09-26] — WTRF: tag incomplete torrents by what they are missing
 Added: tools/wtrf_tag_incomplete.py: tags wtrf torrents <100% in qBittorrent "missing music" (a missing piece
   touches audio, boundary pieces shared with an extra included) or "missing extras" (only text/art/checksums); exclusive, cleared on completion; dry-run,

@@ -25,6 +25,7 @@ root's name, the qBittorrent tag, and the fetch/partial tolerances.
 from __future__ import annotations
 
 import logging
+import shutil
 import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
@@ -51,6 +52,14 @@ _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 #: Where the site crawl already stored the ``LBF-*`` sidecars a tracker's
 #: torrent contains but the curated collection folder does not keep.
 SIDECAR_DIR = _PROJECT_ROOT / "data" / "site" / "files"
+
+#: Free space an overlay build must leave on its drive, on top of what it
+#: copies and what qBittorrent will download into it.
+OVERLAY_FREE_RESERVE_BYTES = 2_000_000_000
+
+#: Prefix of the reason an overlay is refused with when its drive is full — a
+#: condition that clears once space is freed, so callers may retry the torrent.
+DISK_FULL_REASON = "disk full"
 
 @dataclass
 class SeedOptions:
@@ -195,7 +204,8 @@ def build_seed_overlay(
             colliding with another entry whose torrent has the same root name.
         details: Optional dict filled in with ``overlay`` (the target dir),
             ``repaired`` (torrent-relative paths whose source was re-resolved
-            out of a failing piece) and ``bad_pieces``. A caller that finds
+            out of a failing piece), ``bad_pieces`` and ``disk_full`` (the
+            overlay drive has no room — the refusal is worth retrying). A caller that finds
             ``repaired`` non-empty and the torrent *already* in qBittorrent
             must trigger a recheck — see :func:`recheck_seed` — because the
             client hashed the overlay before those files changed.
@@ -218,10 +228,33 @@ def build_seed_overlay(
             f"over the {opts.max_fetch_mb} MB limit ({shortfall})"
         )
 
+    need = (plan.copy_bytes + plan.refetch_bytes + plan.fetch_bytes
+            + OVERLAY_FREE_RESERVE_BYTES)
+    free = _free_bytes(root)
+    if free is not None and free < need:
+        if details is not None:
+            details["disk_full"] = True
+        return None, (
+            f"{DISK_FULL_REASON}: {root} has {free / 1e9:.1f} GB free, the "
+            f"overlay needs {need / 1e9:.1f} GB with reserve"
+        )
+
+    existed = plan.target_dir.exists()
     before = snapshot_folder(source)
     built = build_overlay(plan, fetcher=http_fetch if opts.refetch_sidecars else None)
     for err in built["errors"]:
         logger.warning("  overlay: %s", err)
+    if built["disk_full"]:
+        if not existed:
+            # Half-built and never handed to qBittorrent: drop it so the retry
+            # starts clean. Removing overlay entries never touches the
+            # collection's inodes — hardlinks only lose one name.
+            shutil.rmtree(plan.target_dir, ignore_errors=True)
+        if details is not None:
+            details["disk_full"] = True
+        return None, (
+            f"{DISK_FULL_REASON}: {root} ran out of space building the overlay"
+        )
 
     touched = collection_is_untouched(source, before)
     if touched:
@@ -281,6 +314,24 @@ def build_seed_overlay(
         f"{built['copied']} copied, {built['refetched']} re-fetched); "
         f"collection untouched"
     )
+
+
+def _free_bytes(path: Path) -> int | None:
+    """Return the free bytes on the filesystem holding ``path``.
+
+    Args:
+        path: A directory that may not exist yet; its nearest existing
+            ancestor is measured instead.
+
+    Returns:
+        Free bytes, or None when no ancestor can be measured.
+    """
+    for candidate in (path, *path.parents):
+        try:
+            return shutil.disk_usage(candidate).free
+        except OSError:
+            continue
+    return None
 
 
 def find_seedable_folder(
@@ -527,8 +578,10 @@ def seed_torrent(
         qBittorrent, or ""), ``reason`` (str, why it was seedable or not),
         ``overlay`` (bool, whether ``folder`` is an assembled overlay),
         ``rechecked`` (bool, whether a repaired overlay was re-hashed by
-        qBittorrent) and ``error`` (str, a qBittorrent failure) — ``reason``
-        is always populated and is the line worth showing a user.
+        qBittorrent), ``error`` (str, a qBittorrent failure) and
+        ``disk_full`` (bool, refused only because the overlay drive is full —
+        worth retrying once space is freed) — ``reason`` is always populated
+        and is the line worth showing a user.
     """
     details: dict = {}
     folder, reason = find_seedable_folder(
@@ -536,14 +589,16 @@ def seed_torrent(
     )
     if not folder:
         return {"ok": False, "folder": "", "reason": reason, "overlay": False,
-                "rechecked": False, "error": ""}
+                "rechecked": False, "error": "",
+                "disk_full": bool(details.get("disk_full"))}
 
     is_overlay = Path(folder).parent.name == opts.overlay_dirname
     qbt = qbt_seed(torrent_path, folder, opts)
     if not qbt.get("ok"):
         return {"ok": False, "folder": folder, "reason": reason,
                 "overlay": is_overlay, "rechecked": False,
-                "error": qbt.get("error") or "qBittorrent refused"}
+                "error": qbt.get("error") or "qBittorrent refused",
+                "disk_full": False}
     rechecked = recheck_repaired_seed(folder, details, qbt)
     return {"ok": True, "folder": folder, "reason": reason, "overlay": is_overlay,
-            "rechecked": rechecked, "error": ""}
+            "rechecked": rechecked, "error": "", "disk_full": False}
