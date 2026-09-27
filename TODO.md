@@ -1,3 +1,9 @@
+TODO-355: File the 3,129 collection folders outside the Concerts/ mount roots
+Priority: Medium
+Status: Open
+Added: 2026-09-27
+Description: Live check 2026-09-27 (lb_nc Collection.load): 16,635 rows, 13,441 canonical, 3,172 misfiled, 22 blocked (no date). 3,129 misfiled rows have disk_path on /mnt/DYLAN1 (754) or /mnt/DYLAN2 (2,375) but outside the mount roots /mnt/DYLANx/Concerts (route_status no_mount); 15 wrong_mount, 28 on the right mount but wrong sub-folder. Work them in tools/lb-nc: F8 lists them, + tags all, F7 files each to Concerts/<year> (same-drive rename, instant). Check first whether the paths still exist (src_missing means a stale DB path, not a misfiled folder).
+
 TODO-354: Silver dossier review: tj decisions A–I
 Priority: High
 Status: Open

@@ -10030,6 +10030,11 @@ def create_app() -> Flask:
         ``xref`` (optional, default 0) is the copy-level fileset id the
         pipeline's lookup step resolved (row.file.xref) — persisted to
         my_collection.xref (FABLE_XREF_INCORPORATION.md D3).
+
+        ``file_mode`` (optional, "move" | "copy") overrides the
+        pipeline_file_mode setting for this one job — tools/lb_nc.py sends
+        "move" when shuffling a collection folder between mounts, which a
+        global "copy" setting must never turn into a duplicate.
         """
         try:
             from backend.filer import start_file_job
@@ -10048,7 +10053,13 @@ def create_app() -> Flask:
                     "error": "path and lb_number are required",
                     "error_code": "bad_input",
                 }), 400
-            file_mode = database.get_meta("pipeline_file_mode") or "move"
+            file_mode = data.get("file_mode") or database.get_meta("pipeline_file_mode") or "move"
+            if file_mode not in ("move", "copy"):
+                return jsonify({
+                    "ok": False,
+                    "error": "file_mode must be move or copy",
+                    "error_code": "bad_input",
+                }), 400
             result = start_file_job(
                 int(lb), path, file_mode=file_mode,
                 mount_id_override=int(mount_id) if mount_id is not None else None,

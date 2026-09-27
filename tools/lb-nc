@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# lb-nc — shortcut for tools/lb_nc.py, runnable from any directory.
+#
+#   tools/lb-nc                 # left/right = the first two collection mounts
+#   tools/lb-nc --read-only     # every write gated off
+#   tools/lb-nc --help          # all flags
+set -euo pipefail
+
+here="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
+exec "$here/../.venv/bin/python3" "$here/lb_nc.py" "$@"

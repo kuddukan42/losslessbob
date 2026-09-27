@@ -38,6 +38,15 @@ is actually copied, the copy is **SHA-256 tree-verified against the source**
 (`filer.hash_tree`) before the original is removed — a mismatch deletes the
 bad copy and leaves the source untouched (`hash_mismatch`).
 
+## Terminal commander (`tools/lb-nc`)
+
+Two-pane NC-style TUI over the mounts (adapted from music_hopper's hopper_nc).
+Marks each LB folder canonical / misfiled / stray / duplicate / blocked by
+comparing its parent with the year route's `root_path/sub_path`; F8 lists every
+misfiled row. F7 files to the route, F6 moves to the other pane's mount
+(`mount_id` override, `file_mode: "move"`, optional year re-route). All writes
+go through `/api/pipeline/file/*` — no filesystem code of its own.
+
 ## After filing
 
 - Renames audit to `rename_history`; sticky folder→LB links in

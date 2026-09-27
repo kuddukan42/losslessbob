@@ -1,3 +1,19 @@
+[2026-09-27] — lb-nc: Norton Commander-style two-pane TUI for moving collection folders between mounts and filing misfiled ones (TODO-355)
+Added: tools/lb_nc.py + tools/lb-nc: a two-pane terminal commander over the collection mounts, adapted from
+  music_hopper/hopper_nc.py (same keys, schemes, mouse and rendering; stdlib only). Each LB folder is marked
+  canonical / misfiled / stray / duplicate / blocked by comparing its parent with the year route's
+  root_path/sub_path. F7 files misfiled folders to their route (a stray already in place is only registered);
+  F6 moves the selection to the other pane's mount (mount_id override, file_mode "move", optional r to re-route
+  those years); F8 lists every misfiled row across mounts; F4 runs the pipeline check steps; d picks a drive.
+  All writes go through /api/pipeline/file/* and /api/collection — the tool has no filesystem write code.
+  Duplicates (the collection holds that LB at another path) are never filed.
+Changed: backend/app.py: POST /api/pipeline/file/start accepts an optional file_mode ("move"|"copy") that
+  overrides pipeline_file_mode for one job, so a mount-to-mount shuffle can't be turned into a copy; other
+  values are 400 bad_input.
+Added: tests/test_lb_nc.py (15, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3).
+Changed: PROJECT.md (route param, tools tree), docs/wiki/Collection-Pipeline.md (commander section).
+Opened: TODO-355 — the live collection has 3,129 rows on DYLAN1/2 outside the Concerts/ mount roots.
+
 [2026-09-27] — WTRF seed walk: a full overlay drive stops the walk; --resume retries it (BUG-364)
 Fixed: backend/tracker_seed.py: build_seed_overlay refuses an overlay whose drive lacks copy + refetch + fetch
   bytes plus a 2 GB reserve, and refuses (removing the half-built folder) when a write hits ENOSPC; reason
