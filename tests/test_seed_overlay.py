@@ -3,6 +3,7 @@
 The central promise is that the source collection folder is never written to,
 so several tests assert that explicitly rather than only checking the overlay.
 """
+import errno
 import hashlib
 import logging
 import os
@@ -66,6 +67,13 @@ FILES = {
     "LBF-00042-info.txt": b"info text\n" * 5,
     "LBF-00042-check.md5.txt": b"d41d8cd98f00b204e9800998ecf8427e *t01.flac\n",
 }
+
+
+@pytest.fixture(autouse=True)
+def _ample_disk(monkeypatch):
+    """Overlay builds here land on the small /tmp partition — don't let the
+    free-space reserve refuse them. The disk-full tests re-patch this."""
+    monkeypatch.setattr(tracker_seed, "_free_bytes", lambda _p: None)
 
 
 @pytest.fixture
@@ -1004,3 +1012,59 @@ class TestRecheckAfterRepair:
         assert outcome["ok"] is False
         assert "nothing to recheck" in outcome["error"]
         assert fake_qbt.rechecked == []
+
+
+# ── a full overlay drive refuses the seed instead of half-building it ────────
+
+def _disk_full(*_a, **_k):
+    raise OSError(errno.ENOSPC, "No space left on device")
+
+
+def test_build_overlay_stops_at_the_first_enospc(monkeypatch, rig):
+    info, collection, sidecars, root = rig
+    plan = plan_overlay(info, collection, root, [sidecars])
+    assert plan.count(COPY) == 2
+    monkeypatch.setattr("backend.seed_overlay.shutil.copy2", _disk_full)
+
+    built = build_overlay(plan)
+
+    assert built["disk_full"] and not built["ok"]
+    assert len(built["errors"]) == 1
+
+
+def _overlay_opts(root):
+    return tracker_seed.SeedOptions("wtrf", overlay=True, overlay_root=str(root),
+                                    refetch_sidecars=False)
+
+
+def test_seed_overlay_enospc_is_refused_and_cleaned_up(monkeypatch, rig):
+    info, collection, sidecars, root = rig
+    monkeypatch.setattr(tracker_seed, "SIDECAR_DIR", str(sidecars))
+    monkeypatch.setattr("backend.seed_overlay.shutil.copy2", _disk_full)
+    details: dict = {}
+
+    folder, reason = tracker_seed.build_seed_overlay(
+        info, str(collection), _overlay_opts(root), "short", None, 42, details)
+
+    assert folder is None
+    assert reason.startswith(tracker_seed.DISK_FULL_REASON)
+    assert details["disk_full"]
+    assert not (root / info.name).exists()
+    assert all(f.exists() for f in collection.iterdir())
+
+
+def test_seed_overlay_is_refused_before_building_when_space_is_short(
+    monkeypatch, rig
+):
+    info, collection, sidecars, root = rig
+    monkeypatch.setattr(tracker_seed, "SIDECAR_DIR", str(sidecars))
+    monkeypatch.setattr(tracker_seed, "_free_bytes", lambda _p: 1_000)
+    details: dict = {}
+
+    folder, reason = tracker_seed.build_seed_overlay(
+        info, str(collection), _overlay_opts(root), "short", None, 42, details)
+
+    assert folder is None
+    assert reason.startswith(tracker_seed.DISK_FULL_REASON)
+    assert details["disk_full"]
+    assert not root.exists()

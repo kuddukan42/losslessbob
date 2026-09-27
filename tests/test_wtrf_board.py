@@ -405,3 +405,38 @@ def test_dry_run_records_nothing_for_skipped_topics(monkeypatch, tmp_path):
 
     assert [e["status"] for e in events] == ["skipped", "skipped"]
     assert recorded == []
+
+
+# ── a full overlay drive stops the walk and leaves the topic retryable ──────
+
+def test_seed_board_stops_on_a_full_disk_and_records_it(one_topic, monkeypatch,
+                                                         tmp_path):
+    from backend.wtrf_board import STATUS_DISK_FULL
+    _stub_resolution(monkeypatch, {
+        "lb_number": 4154, "lb_candidates": [4154], "lb_source": "attachment",
+        "confidence": "definitive", "needs_content_check": False,
+        "torrent_url": "http://x/t.torrent", "title": "Cleveland", "error": "",
+    })
+    monkeypatch.setattr("backend.wtrf_board._owned_candidates", lambda c: list(c))
+    monkeypatch.setattr("backend.wtrf_board._prepare_from_link",
+                        lambda *a, **k: (a[3] and None) or (
+                            {"lb_number": 4154}, tmp_path / "t.torrent", None))
+    monkeypatch.setattr("backend.wtrf_board.seed_one", lambda *a, **k: {
+        "ok": False, "folder": "", "overlay": False, "error": "",
+        "reason": "disk full: /mnt/X/WTRF Seeds ran out of space",
+        "disk_full": True})
+
+    events = _run(tmp_path)
+    topic = next(e for e in events if e["event"] == "topic")
+
+    assert topic["status"] == STATUS_DISK_FULL
+    assert one_topic[-1][3] == STATUS_DISK_FULL
+    assert "walk stopped" in events[-1]["error"]
+
+
+def test_disk_full_topics_are_not_counted_as_attempted(monkeypatch):
+    from backend.wtrf_board import attempted_topics
+    monkeypatch.setattr("backend.wtrf_board.database.get_wtrf_attempted_topics",
+                        lambda: {"a": "qbt_added", "b": "disk_full", "c": "failed"})
+
+    assert attempted_topics() == {"a": "qbt_added", "c": "failed"}

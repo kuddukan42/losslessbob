@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-364: WTRF walk kept adding half-built overlays to qBittorrent after the overlay drive filled
+Status: Fixed
+File(s): backend/tracker_seed.py,backend/seed_overlay.py,backend/wtrf_board.py
+Reported: 2026-09-27
+Fixed: 2026-09-27
+Root cause: build_overlay treated ENOSPC like any per-file error and kept going; build_seed_overlay only checked verify completeness, and allow_partial_overlay accepted the short overlay; nothing checked free space first.
+Fix: Pre-flight free-space check (copy+refetch+fetch bytes + 2 GB reserve); build_overlay stops at the first ENOSPC and flags disk_full; the seed is refused (half-built new overlay removed) with a 'disk full' reason; the board walk records the topic as status disk_full and stops; attempted_topics() excludes disk_full so the walk and the --resume frontier probe retry it. Already-added short torrents from 2026-09-27 are left to wtrf_tag_incomplete + wtrf_repair_extras.
+
 BUG-363: Olof medley wrapped onto the next line loses its second song
 Status: Fixed
 File(s): backend/olof_parser.py

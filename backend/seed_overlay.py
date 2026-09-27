@@ -25,6 +25,7 @@ Nothing here ever opens a file inside the source collection folder for writing.
 """
 from __future__ import annotations
 
+import errno
 import hashlib
 import logging
 import os
@@ -896,11 +897,12 @@ def build_overlay(plan: OverlayPlan, dry_run: bool = False, fetcher=None) -> dic
 
     Returns:
         Dict with ``ok``, ``linked``, ``copied``, ``refetched``, ``skipped``,
-        ``errors`` (list of strings) and ``target_dir``.
+        ``errors`` (list of strings), ``disk_full`` (a write hit ENOSPC) and
+        ``target_dir``.
     """
     result = {
         "ok": True, "linked": 0, "copied": 0, "refetched": 0, "skipped": 0,
-        "errors": [], "target_dir": str(plan.target_dir),
+        "errors": [], "disk_full": False, "target_dir": str(plan.target_dir),
     }
     if dry_run:
         result["linked"] = plan.count(LINK)
@@ -948,6 +950,10 @@ def build_overlay(plan: OverlayPlan, dry_run: bool = False, fetcher=None) -> dic
         except OSError as exc:
             result["ok"] = False
             result["errors"].append(f"{entry.rel_path}: {exc}")
+            if exc.errno == errno.ENOSPC:
+                # Every later entry would fail the same way — stop writing.
+                result["disk_full"] = True
+                break
 
     return result
 

@@ -8,6 +8,8 @@ seeder again.
 
 Every topic seen is written to ``wtrf_downloads``, which doubles as the resume
 state: re-running walks the same pages but only stops on topics never tried.
+A full overlay drive stops the walk and marks that topic ``disk_full``, which
+does not count as tried — once space is freed, ``--resume`` starts there again.
 
 Examples::
 
@@ -47,6 +49,7 @@ from backend.paths import DATA_DIR  # noqa: E402
 from backend.tracker_seed import SeedOptions  # noqa: E402
 from backend.wtrf_board import (  # noqa: E402
     TOPICS_PER_PAGE,
+    attempted_topics,
     board_page_count,
     board_page_url,
     parse_board_page,
@@ -183,7 +186,7 @@ def _find_resume_page(session: requests.Session, board_id: int,
     if not count:
         logger.warning("resume: board page count unreadable — starting at page 1")
         return 1
-    attempted = database.get_wtrf_attempted_topics()
+    attempted = attempted_topics()
 
     def mostly_attempted(page: int) -> bool:
         time.sleep(delay)

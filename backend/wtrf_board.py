@@ -61,6 +61,11 @@ logger = logging.getLogger(__name__)
 #: counts non-sticky topics, so paging is exact.
 TOPICS_PER_PAGE = 20
 
+#: ``wtrf_downloads`` status of a topic whose overlay was refused only because
+#: its drive was full. It does not count as attempted, so the next run (and
+#: ``--resume``'s frontier probe) tries it again.
+STATUS_DISK_FULL = "disk_full"
+
 _TOPIC_ID_RE = re.compile(r"topic=(\d+)")
 
 
@@ -251,6 +256,19 @@ def _owned_candidates(candidates: list[int]) -> list[int]:
     return owned
 
 
+def attempted_topics() -> dict[str, str]:
+    """Return the topics a walk should skip, keyed by URL.
+
+    :func:`backend.db.get_wtrf_attempted_topics` minus those whose newest
+    attempt ended ``disk_full`` — a refusal that clears once space is freed.
+
+    Returns:
+        Mapping of topic_url to its newest seeding attempt's status.
+    """
+    return {url: status for url, status in database.get_wtrf_attempted_topics().items()
+            if status != STATUS_DISK_FULL}
+
+
 def seed_board(
     opts: SeedOptions,
     dest_dir: str | Path,
@@ -269,7 +287,9 @@ def seed_board(
     Yields one event dict per topic as it completes, so a caller can stream
     progress; a final ``{"event": "done", …}`` carries the tallies. Every
     decision is written to ``wtrf_downloads``, which is also the resume state:
-    a topic with an attempt on record is skipped on the next run.
+    a topic with an attempt on record is skipped on the next run. An overlay
+    drive running out of space ends the walk, and that topic is recorded
+    ``disk_full`` so the next run retries it.
 
     Args:
         opts: Seeding policy (overlay, tolerances, qBittorrent tag).
@@ -292,7 +312,8 @@ def seed_board(
     Yields:
         Event dicts. Per-topic events carry ``event="topic"``, ``topic_id``,
         ``url``, ``title``, ``lb_number``, ``status`` (one of
-        seen/skipped/resolved/qbt_added/not_seeded/failed), ``reason`` and
+        seen/skipped/resolved/qbt_added/not_seeded/disk_full/failed),
+        ``reason`` and
         ``error``.
     """
     dest = Path(dest_dir)
@@ -314,11 +335,11 @@ def seed_board(
                    "failed": 0}
             return
 
-    attempted_topics = {} if rescan else database.get_wtrf_attempted_topics()
+    known = {} if rescan else attempted_topics()
     counts = {"attempted": 0, "seeded": 0, "skipped": 0, "refused": 0,
               "failed": 0}
     yield {"event": "start", "board_id": board_id, "start_offset": start_offset,
-           "pages": pages, "known": len(attempted_topics)}
+           "pages": pages, "known": len(known)}
 
     for topic in iter_board_topics(session, board_id, start_offset, pages, delay):
         if limit is not None and counts["attempted"] >= limit:
@@ -327,10 +348,10 @@ def seed_board(
                  "title": topic.title, "offset": topic.offset, "lb_number": None,
                  "status": "failed", "reason": "", "error": "",
                  "confidence": "not_found", "folder": "", "overlay": False}
-        if topic.url in attempted_topics:
+        if topic.url in known:
             counts["skipped"] += 1
             event.update({"status": "seen",
-                          "reason": f"attempted before ({attempted_topics[topic.url]})"})
+                          "reason": f"attempted before ({known[topic.url]})"})
             yield event
             continue
 
@@ -407,6 +428,18 @@ def seed_board(
                     "status": "qbt_added",
                     "qbt_added_at": datetime.now(UTC).isoformat(),
                 })
+            elif result.get("disk_full"):
+                # Every later overlay would hit the same wall: record this one
+                # for retry and stop, rather than queue more half-built seeds.
+                counts["failed"] += 1
+                event.update({"status": STATUS_DISK_FULL, "error": result["reason"]})
+                _record(resolved, target, str(path), STATUS_DISK_FULL,
+                        result["reason"], "", via="board_walk")
+                yield event
+                yield {"event": "done", "error": (
+                    f"walk stopped — {result['reason']}; free space, then "
+                    f"--resume retries from this topic"), **counts}
+                return
             elif result["error"]:
                 counts["failed"] += 1
                 event.update({"status": "failed", "error": result["error"]})
