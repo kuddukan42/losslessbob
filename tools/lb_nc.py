@@ -49,6 +49,7 @@ if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from backend.folder_naming import (  # noqa: E402 — the repo's own NFT rules, one source
     apply_nft_suffix,
+    has_nft_suffix,
     nft_discrepancy,
     strip_nft_suffix,
 )
@@ -64,6 +65,7 @@ TICK = 0.25
 LOG_ROWS = 8
 POLL = 0.5
 SPACE_RESERVE = 2 * 1024 ** 3        # bytes a cross-drive move must leave free on the target
+PROBE_INTERVAL = 1.0                 # seconds between live LB-page checks (be polite to the site)
 PLAN_HEADROOM = (0.02, 0.01, 0.005, 0.0)   # route planner: free share per drive, first that fits
 SCHEME_NAMES = ("nc", "amber", "green", "mono")
 PIPELINE_STEPS = ["verify", "lookup", "lbdir", "rename", "file"]
@@ -683,6 +685,51 @@ class JobError(Exception):
     """A job failed; the message goes to the log pane and the failure dialog."""
 
 
+class JobRefused(JobError):
+    """A job declined to run (a safety gate said no); the queue carries on without it."""
+
+
+def private_marked(name: str, path: Path, row: dict | None) -> bool:
+    """True for a folder whose LB is private, whose name has -NFT, or that sits in PRIVATE_DIR."""
+    return (row or {}).get("lb_status") == "private" or has_nft_suffix(name) \
+        or Collection.in_private(path)
+
+
+class PageGate:
+    """Refuses a move unless the LB has a live page on the LB site right now.
+
+    Applied to every folder move of a private-marked folder (see private_marked): the
+    site is asked through the backend at move time, one LB at a time, at most one
+    request per PROBE_INTERVAL. No page, or no answer, means no move.
+    """
+
+    def __init__(self, api: Api) -> None:
+        self.api = api
+        self.last = 0.0
+        self.lock = threading.Lock()
+
+    def check(self, lb: int | None, emit: Emit) -> None:
+        """Return when LB-lb's page exists; raise JobRefused otherwise."""
+        if lb is None:
+            raise JobRefused("no LB number — can't check the LB site, refused")
+        with self.lock:
+            wait = PROBE_INTERVAL - (time.monotonic() - self.last)
+            if wait > 0:
+                time.sleep(wait)
+            try:
+                res = self.api.get(f"/api/lb_master/{lb}/live")
+            finally:
+                self.last = time.monotonic()
+        exists = res.get("exists") if isinstance(res, dict) else None
+        if exists is True:
+            emit(f"  LB-{lb:05d}: page live on the LB site", False)
+            return
+        if exists is False:
+            raise JobRefused(f"LB-{lb:05d} has no page on the LB site — move refused")
+        why = (res or {}).get("error") or f"status {(res or {}).get('status')}"
+        raise JobRefused(f"LB-{lb:05d}: LB site didn't answer ({why}) — move refused")
+
+
 class Journal:
     """Append-only undo log, one JSON record per line; an "undone" record retires one.
 
@@ -759,8 +806,12 @@ class Job:
 
 def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None,
              dest: str, journal: Journal | None = None,
-             from_mount_id: int | None = None) -> Job:
-    """File (or move) one folder via /api/pipeline/file/start, polling to completion."""
+             from_mount_id: int | None = None, gate: PageGate | None = None) -> Job:
+    """File (or move) one folder via /api/pipeline/file/start, polling to completion.
+
+    A private-marked folder is only moved after gate confirms its LB page is live.
+    """
+    guarded = gate is not None and private_marked(entry.name, entry.path, entry.row)
     cross = not same_device(entry.path, existing(dest))
     registered = bool(entry.row) and norm(entry.row.get("disk_path") or "") == norm(entry.path)
     body_item: dict[str, Any] = {"path": str(entry.path), "lb_number": entry.lb}
@@ -772,6 +823,8 @@ def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None
 
     def run(emit: Emit) -> None:
         emit(f"LB-{entry.lb:05d} {entry.name}", False)
+        if guarded:
+            gate.check(entry.lb, emit)
         started = api.post("/api/pipeline/file/start", body)
         if not started.get("ok"):
             raise JobError(f"{started.get('error_code') or 'error'}: {started.get('error')}")
@@ -798,7 +851,8 @@ def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None
             emit("  qBittorrent location synced", False)
 
     verb = "move" if file_mode == "move" else "file"
-    return Job(f"{verb} LB-{entry.lb:05d}", f"{entry.name}  {GLYPHS['dest']} {dest}", run)
+    mark = "  [LB page checked first]" if guarded else ""
+    return Job(f"{verb} LB-{entry.lb:05d}", f"{entry.name}  {GLYPHS['dest']} {dest}{mark}", run)
 
 
 def register_job(api: Api, entry: Entry, journal: Journal | None = None) -> Job:
@@ -937,9 +991,14 @@ def aside_target(path: Path, root: Path) -> Path:
     return dest
 
 
-def aside_job(api: Api, path: Path, dest: Path, journal: Journal | None = None) -> Job:
+def aside_job(api: Api, path: Path, dest: Path, journal: Journal | None = None,
+              gate: PageGate | None = None, row: dict | None = None) -> Job:
     """Set a losing duplicate aside on its own drive (a rename, never a delete)."""
+    guarded = gate is not None and private_marked(path.name, path, row)
+
     def run(emit: Emit) -> None:
+        if guarded:
+            gate.check(lb_of(path.name), emit)
         _move_path(api, str(path), str(dest))
         emit(f"set aside {path.name} {GLYPHS['dest']} {dest.parent}", False)
         if journal:
@@ -1010,11 +1069,16 @@ def measure_job(sizes: SizeCache, paths: list[Path], label: str = "measure") -> 
     return Job(label, f"measure {len(paths)} folders", run, gated=False)
 
 
-def undo_job(api: Api, rec: dict, journal: Journal) -> Job:
-    """Reverse one journal record."""
+def undo_job(api: Api, rec: dict, journal: Journal, gate: PageGate | None = None) -> Job:
+    """Reverse one journal record; moving a private-marked folder back is page-gated too."""
     kind = rec["kind"]
 
     def run(emit: Emit) -> None:
+        if gate is not None and kind in ("move", "aside"):
+            here = Path(rec["to"])
+            if private_marked(here.name, here, None) or \
+                    private_marked(Path(rec["from"]).name, Path(rec["from"]), None):
+                gate.check(rec.get("lb") or lb_of(here.name), emit)
         if kind in ("rename", "aside"):
             _move_path(api, rec["to"], rec["from"], rec.get("lb") if kind == "rename" else None)
             if kind == "rename" and rec.get("registered") and rec.get("lb") is not None:
@@ -1242,6 +1306,7 @@ class Runner:
         self.job: Job | None = None
         self.last: Job | None = None
         self.failure: tuple[str, list[str]] | None = None
+        self.refused: list[str] = []
         self.finished = False
         self.stop = threading.Event()
         self.lock = threading.Lock()
@@ -1270,6 +1335,7 @@ class Runner:
         if self.read_only and any(j.gated for j in jobs):
             raise PermissionError("read-only mode")
         self.failure = None
+        self.refused = []
         self.stop.clear()
         if self.threaded:
             self.thread = threading.Thread(target=self._work, args=(list(jobs),), daemon=True)
@@ -1288,6 +1354,11 @@ class Runner:
             log.info("run: %s", job.label)
             try:
                 job.run(self.emit)
+            except JobRefused as exc:
+                self.emit(f"REFUSED {job.label}: {exc}", False)
+                self.refused.append(f"{job.label}: {exc}")
+                done += 1
+                continue
             except (JobError, ApiError) as exc:
                 self.emit(f"FAILED {job.label}: {exc}", False)
                 self.failure = (job.label, [f"{job.label}: {exc}",
@@ -1623,6 +1694,9 @@ Glyphs: ✓ canonical  → misfiled (⇒ where it belongs)  ? stray, not in coll
 Flags:  n -NFT suffix wrong  ! integrity issue
 A private LB anywhere under "PRIVATE LB" counts as canonical (--private-dir renames it).
 
+Private LBs, -NFT folders and anything in the private folder are only moved after a
+live check that the LB's page exists on the LB site — no page (or no answer): refused,
+the rest of the queue carries on.
 Every write goes through the backend (port 5174) after a y/n gate, one folder at a
 time, stopping at the first failure. Duplicates are never filed — resolve them by hand.
 Pane headers show free space; the line under the panes shows every drive. F6/F7 add up
@@ -1639,6 +1713,7 @@ class App:
                  threaded: bool = True, size_cache: Path | None = SIZE_CACHE,
                  persist: bool = True, journal_path: Path | None = JOURNAL_PATH) -> None:
         self.api = api
+        self.page_gate = PageGate(api)
         self.journal = Journal(journal_path)
         self.checking_gone = False
         self.compare_result: list[dict] = []
@@ -2048,7 +2123,7 @@ class App:
             self.dialog = Message("File", [str(exc)])
             return
         jobs = [file_job(self.api, e, None, "move" if e.row else None, dest, self.journal,
-                         self.mount_id_of(e.path)) for e, dest in chosen]
+                         self.mount_id_of(e.path), self.page_gate) for e, dest in chosen]
         jobs += [register_job(self.api, e, self.journal) for e in register]
         space = self.space_gate("File", chosen) if chosen else []
         if space is None:
@@ -2057,6 +2132,10 @@ class App:
                  "Registered folders are moved; strays use the pipeline file mode and",
                  "are added to the collection. Cross-drive moves are SHA-256 verified",
                  "before the source goes. One at a time, stops at the first failure."]
+        guarded = sum(1 for e, _ in chosen if private_marked(e.name, e.path, e.row))
+        if guarded:
+            blurb += [f"{guarded} private / private-folder folder(s): each is checked live on the",
+                      "LB site first; no page (or no answer) → that move is refused."]
         if register:
             blurb += [f"{len(register)} stray(s) already in place are only registered — no",
                       "checksum pass; F4 Pipe them first if unsure."]
@@ -2102,7 +2181,7 @@ class App:
             self.dialog = Message("Move", [str(exc)])
             return
         moves = [file_job(self.api, e, mount["id"], "move", dest, self.journal,
-                          self.mount_id_of(e.path)) for e, dest in chosen]
+                          self.mount_id_of(e.path), self.page_gate) for e, dest in chosen]
         space = self.space_gate("Move", chosen) if chosen else []
         if space is None:
             return
@@ -2120,6 +2199,10 @@ class App:
         blurb = [f"{len(moves)} folder(s) ⇒ {mount['label']} ({mount['root_path']}),",
                  "under each year's route sub-folder. Hash-verified across drives;",
                  "the collection row and qBittorrent follow. Stops at the first failure."]
+        guarded = sum(1 for e, _ in chosen if private_marked(e.name, e.path, e.row))
+        if guarded:
+            blurb += [f"{guarded} private / private-folder folder(s): each is checked live on the",
+                      "LB site first; no page (or no answer) → that move is refused."]
         if stay:
             span = f"{stay[0]}–{stay[-1]}" if len(stay) > 1 else str(stay[0])
             blurb += [f"Years {span} route elsewhere: without r these folders show as",
@@ -2260,14 +2343,15 @@ class App:
             self.gate("Keep this copy", [
                 relink_job(self.api, entry.lb, str(other), str(entry.path), self.journal),
                 aside_job(self.api, other, aside_target(other, self.aside_root(other)),
-                          self.journal)],
+                          self.journal, self.page_gate, row)],
                 ["The record moves to this copy; the old collection copy is set aside",
                  f"in {DUP_DIR}/ on its own drive (nothing is deleted)."])
 
         def keep_collection() -> None:
             self.gate("Keep the collection copy", [
                 aside_job(self.api, entry.path,
-                          aside_target(entry.path, self.aside_root(entry.path)), self.journal)],
+                          aside_target(entry.path, self.aside_root(entry.path)), self.journal,
+                          self.page_gate, None)],
                 [f"This copy is set aside in {DUP_DIR}/ on its own drive (nothing is deleted)."])
         self.dialog = Picker(f"Duplicate LB-{entry.lb:05d}", [
             ("Keep THIS copy — repoint the record, set the collection copy aside", keep_this),
@@ -2318,7 +2402,8 @@ class App:
             return
 
         def pick(rec: dict) -> Callable[[], None]:
-            return lambda: self.gate("Undo", [undo_job(self.api, rec, self.journal)], [
+            return lambda: self.gate("Undo", [undo_job(self.api, rec, self.journal,
+                                                        self.page_gate)], [
                 "Undo newest first — reversing an older step out of order can fail."])
         self.dialog = Picker("Undo — newest first",
                              [(f"{r['ts']}  {describe(r)}", pick(r)) for r in records])
@@ -2681,10 +2766,16 @@ class App:
         if self.runner.finished:
             self.runner.finished = False
             last = self.runner.last
+            refused = self.runner.refused
             if self.runner.failure:
                 label, text = self.runner.failure
                 self.runner.failure = None
-                self.dialog = Message(f"{label}: failed", text)
+                self.dialog = Message(f"{label}: failed", text + (
+                    [f"{len(refused)} refused before that (no live LB page)"] if refused else []))
+            elif refused:
+                self.dialog = Message(f"done — {len(refused)} refused (no live LB page)",
+                                      refused[:12] + ([f"… and {len(refused) - 12} more"]
+                                                      if len(refused) > 12 else []))
             elif last and last.label == "rename":
                 self.pipeline_results.clear()          # keyed by the old paths
                 self.dialog = Message("done", list(self.runner.lines)[-10:] or ["ok"])
@@ -3185,6 +3276,7 @@ class FakeApi(Api):
         self.status: dict = {"running": False}
         self.calls: list[tuple[str, dict | None]] = []
         self.integrity: list[dict] = []
+        self.no_page: set[int] = set()
 
     def _route(self, year: int) -> dict | None:
         return next((r for r in self.routes_rows if r["year"] == year), None)
@@ -3228,6 +3320,9 @@ class FakeApi(Api):
             else:
                 row.update({k: v for k, v in body.items() if k in ("disk_path", "folder_name")})
             return {"ok": True}
+        if path.startswith("/api/lb_master/") and path.endswith("/live"):
+            lb = int(path.split("/")[3])
+            return {"lb_number": lb, "exists": lb not in self.no_page, "status": 200}
         if path == "/api/collection/integrity/status":
             return {"status": self.integrity}
         if path == "/api/collection/integrity/scan":

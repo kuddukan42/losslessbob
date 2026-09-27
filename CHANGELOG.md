@@ -37,10 +37,17 @@ Added: tools/lb_nc.py: w suggests year routes — sizes every routed folder (cac
   refile batches in an order that fits at each step; a applies the route changes (undoable).
   Live read-only run 2026-09-27: DYLAN1 7.3T 6 GB free, routed years hold 9.7T against 781 GB total
   slack (3.5%); suggestion DYLAN2 1958–1987, DYLAN1 1988–2023, DYLAN3 2024–2026, 1.4T to move.
+Added: backend/scraper.py probe_detail_page + GET /api/lb_master/<lb>/live: read-only live check that an LB's
+  detail page exists on the LB site (404 and soft-404 → false, unreachable → null).
+Added: tools/lb_nc.py: live LB-page gate — before moving a folder whose LB is private, whose name has -NFT,
+  or that sits in the private folder (F6, F7, rebalance, duplicate set-aside, undo of a move), lb-nc asks
+  the site (≤1 request/s); no page or no answer refuses that move, the rest of the queue carries on and the
+  refusals are listed at the end. Verified live: LB-02789 (public, in PRIVATE LB) exists; LB-00167 404.
 Changed: backend/app.py: POST /api/pipeline/file/start accepts an optional file_mode ("move"|"copy") that
   overrides pipeline_file_mode for one job, so a mount-to-mount shuffle can't be turned into a copy; other
   values are 400 bad_input.
-Added: tests/test_lb_nc.py (39, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3).
+Added: tests/test_lb_nc.py (42, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3),
+  tests/test_scraper_probe_page.py (4).
 Changed: PROJECT.md (route param, tools tree), docs/wiki/Collection-Pipeline.md (commander section).
 Opened: TODO-355 — refile 1,293 public LBs out of PRIVATE LB and 848 misfiled folders.
 
