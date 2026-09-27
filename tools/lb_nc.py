@@ -19,6 +19,7 @@ stdlib only, so any python3 runs it. The backend must be up on port 5174.
 from __future__ import annotations
 
 import argparse
+import itertools
 import json
 import locale
 import logging
@@ -63,6 +64,7 @@ TICK = 0.25
 LOG_ROWS = 8
 POLL = 0.5
 SPACE_RESERVE = 2 * 1024 ** 3        # bytes a cross-drive move must leave free on the target
+PLAN_HEADROOM = (0.02, 0.01, 0.005, 0.0)   # route planner: free share per drive, first that fits
 SCHEME_NAMES = ("nc", "amber", "green", "mono")
 PIPELINE_STEPS = ["verify", "lookup", "lbdir", "rename", "file"]
 CHECKSUM_SUFFIXES = (".ffp", ".md5", ".st5")
@@ -997,7 +999,7 @@ def compare_job(api: Api, paths: list[Path], sink: list[dict]) -> Job:
     return Job("compare", "compare " + " vs ".join(str(p) for p in paths), run, gated=False)
 
 
-def measure_job(sizes: SizeCache, paths: list[Path]) -> Job:
+def measure_job(sizes: SizeCache, paths: list[Path], label: str = "measure") -> Job:
     """Size every folder (cached by mtime) — the rebalance planner's input."""
     def run(emit: Emit) -> None:
         for i, path in enumerate(paths, 1):
@@ -1005,7 +1007,7 @@ def measure_job(sizes: SizeCache, paths: list[Path]) -> Job:
             if i % 10 == 0 or i == len(paths):
                 emit(f"  measured {i}/{len(paths)} folders", True)
         sizes.save()
-    return Job("measure", f"measure {len(paths)} folders", run, gated=False)
+    return Job(label, f"measure {len(paths)} folders", run, gated=False)
 
 
 def undo_job(api: Api, rec: dict, journal: Journal) -> Job:
@@ -1054,6 +1056,117 @@ def undo_job(api: Api, rec: dict, journal: Journal) -> Job:
         journal.add({"kind": "undone", "undoes": rec["id"]})
         emit(f"undone: {describe(rec)}", False)
     return Job("undo", f"undo {describe(rec)}", run)
+
+
+@dataclass
+class RoutePlan:
+    """A suggested year → mount layout (see suggest_routes)."""
+
+    order: tuple[str, ...]                 # mount labels, earliest years first
+    ranges: dict[str, list[int]]           # label -> its years, contiguous
+    moved: int                             # bytes that would change drive
+    fill: dict[str, float]                 # label -> used fraction afterwards
+
+
+def suggest_routes(where: dict[int, dict[str, int]], capacity: dict[str, int],
+                   totals: dict[str, int], fixed: dict[str, int]) -> RoutePlan | None:
+    """The contiguous year → mount layout that fits and moves the fewest bytes.
+
+    Every mount order is tried; for each, a DP picks the cut points. Ties on bytes moved
+    go to the layout whose fullest drive is least full.
+
+    Args:
+        where: year -> {mount label: bytes of that year's folders on that drive now}
+            (label "" for folders on no mount's drive — they always move).
+        capacity: label -> bytes that mount can take for routed years (total minus the
+            unrouted data on it, minus SPACE_RESERVE).
+        totals: label -> filesystem size, for the fill figures.
+        fixed: label -> bytes on the drive that no route governs.
+
+    Returns:
+        The best RoutePlan, or None when no contiguous layout fits.
+    """
+    years = sorted(where)
+    n = len(years)
+    size = [sum(where[y].values()) for y in years]
+    best: RoutePlan | None = None
+    best_key: tuple[int, float] | None = None
+    for order in itertools.permutations(capacity):
+        # dp[i][j] = (moved, peak fill, cuts) for years[:j] on order[:i]
+        inf = (float("inf"), float("inf"), ())
+        dp = [[inf] * (n + 1) for _ in range(len(order) + 1)]
+        dp[0][0] = (0, 0.0, ())
+        for i, label in enumerate(order, 1):
+            for j in range(n + 1):
+                seg = 0
+                stay = 0
+                for t in range(j, -1, -1):          # segment years[t:j] on this mount
+                    if t < j:
+                        seg += size[t]
+                        stay += where[years[t]].get(label, 0)
+                    if seg > capacity[label]:
+                        break
+                    prev = dp[i - 1][t]
+                    if prev[0] == float("inf"):
+                        continue
+                    fill = (fixed[label] + seg) / totals[label] if totals[label] else 1.0
+                    cand = (prev[0] + seg - stay, max(prev[1], fill), (*prev[2], t))
+                    if cand[:2] < dp[i][j][:2]:
+                        dp[i][j] = cand
+        moved, peak, cuts = dp[len(order)][n]
+        if moved == float("inf"):
+            continue
+        key = (int(moved) // (1024 ** 3), peak)       # GB-level ties go to the balance
+        if best_key is None or key < best_key:
+            bounds = [*cuts[1:], n]
+            ranges, fill, start = {}, {}, 0
+            for label, end in zip(order, bounds, strict=True):
+                ranges[label] = years[start:end]
+                fill[label] = (fixed[label] + sum(size[start:end])) / totals[label] \
+                    if totals[label] else 1.0
+                start = end
+            best, best_key = RoutePlan(order, ranges, int(moved), fill), key
+    return best
+
+
+def move_order(batches: dict[tuple[str, str], int], free: dict[str, int],
+               ) -> tuple[list[tuple[str, str, int]], dict[tuple[str, str], int]]:
+    """Order cross-drive batches so each step fits the target's free space at that point.
+
+    Moving off a drive frees space there, so a full drive empties first. Batches are
+    split when only part fits.
+
+    Returns:
+        (steps as (src, dst, bytes), whatever could not be scheduled).
+    """
+    left = {k: v for k, v in batches.items() if v > 0}
+    free = dict(free)
+    steps: list[tuple[str, str, int]] = []
+    while left:
+        progress = False
+        # biggest room first, so the fullest drives get relief early
+        for (src, dst), want in sorted(left.items(), key=lambda kv: -free.get(kv[0][1], 0)):
+            room = free.get(dst, 0) - SPACE_RESERVE
+            if room <= 0:
+                continue
+            chunk = min(want, room)
+            steps.append((src, dst, chunk))
+            free[dst] = free.get(dst, 0) - chunk
+            free[src] = free.get(src, 0) + chunk
+            left[(src, dst)] = want - chunk
+            if not left[(src, dst)]:
+                del left[(src, dst)]
+            progress = True
+            break
+        if not progress:
+            break
+    merged: list[tuple[str, str, int]] = []
+    for src, dst, chunk in steps:
+        if merged and merged[-1][:2] == (src, dst):
+            merged[-1] = (src, dst, merged[-1][2] + chunk)
+        else:
+            merged.append((src, dst, chunk))
+    return merged, left
 
 
 def plan_rebalance(year_bytes: dict[int, int], src: tuple[int, int], dst: tuple[int, int],
@@ -1495,6 +1608,8 @@ x / l       gone records (d → Gone): x drops the record, l relinks it to the
 i           integrity scan of this pane's drive; ! marks folders with issues
 b           rebalance: size this pane's drive, plan whole-year moves to the
             other pane's drive, a applies (moves + re-routes, space-checked)
+w           route suggestion: size every routed year, find the year → drive layout
+            that fits and moves the least, list the refile order; a applies routes
 z           undo: reverse any logged move, rename, relink, drop, route, extras
 
 d           drive picker for this pane    u / Ctrl-U  swap panes
@@ -1709,7 +1824,7 @@ class App:
             "d": self.drive_dialog, "c": self.checksum_dialog, "r": self.rename_dialog,
             "x": self.drop_dialog, "l": self.relink_dialog, "n": self.nft_dialog,
             "i": self.integrity_dialog, "=": self.compare_dialog, "e": self.extras_dialog,
-            "z": self.undo_dialog, "b": self.rebalance_dialog,
+            "z": self.undo_dialog, "b": self.rebalance_dialog, "w": self.routes_dialog,
             "ctrl-u": self.swap, "ctrl-o": self.toggle_log,
             "ctrl-s": self.size_current, "ctrl-r": self.reload, "f5": self.reload,
             "f1": self.help, "f2": self.info, "f3": self.view, "f4": self.pipeline_dialog,
@@ -2275,6 +2390,115 @@ class App:
             self.move_entries(entries, dst, reroute=True)
         self.dialog = PlanView("Rebalance", text, apply if chosen else None)
 
+    def routed_rows(self) -> list[dict]:
+        """Rows whose location a route governs: canonical, misfiled, public-in-private."""
+        if not self.coll:
+            return []
+        return [r for r in self.coll.rows if r.get("disk_path") and Collection.year_of(r)
+                and self.coll.row_status(r)[0] in ("canonical", "misfiled", "public")
+                and self.coll.row_status(r)[1] != PRIVATE_AREA]
+
+    def routes_dialog(self) -> None:
+        """w: size every routed folder, then suggest a year → drive layout that fits."""
+        if not self.coll or not self.coll.mounts:
+            self.dialog = Message("Routes", [self.coll_error or "no mounts loaded"])
+            return
+        rows = self.routed_rows()
+        self.run([measure_job(self.sizes, [Path(r["disk_path"]) for r in rows],
+                              "measure-routes")])
+
+    def routes_plan(self) -> None:
+        """After measure-routes: compute and show the suggested routing."""
+        coll = self.coll
+        if coll is None:
+            return
+        devs: dict[int, str] = {}
+        usage: dict[str, tuple[int, int]] = {}
+        for m in coll.mounts:
+            u = self.usage(m["root_path"], True)
+            if u is None:
+                self.dialog = Message("Routes", [f"{m['label']} is offline."])
+                return
+            usage[m["label"]] = u
+            try:
+                devs[os.stat(m["root_path"]).st_dev] = m["label"]
+            except OSError:
+                pass
+        where: dict[int, dict[str, int]] = {y: {} for y in coll.routes}
+        on_drive: dict[str, int] = dict.fromkeys(usage, 0)
+        for r in self.routed_rows():
+            path = Path(r["disk_path"])
+            try:
+                label = devs.get(os.stat(path).st_dev, "")
+            except OSError:
+                continue
+            size = self.sizes.get_now(path)
+            year = Collection.year_of(r) or 0
+            where.setdefault(year, {})
+            where[year][label] = where[year].get(label, 0) + size
+            if label:
+                on_drive[label] += size
+        totals = {k: u[1] for k, u in usage.items()}
+        fixed = {k: max(0, u[1] - u[0] - on_drive[k]) for k, u in usage.items()}
+        plan, keep = None, SPACE_RESERVE
+        for frac in PLAN_HEADROOM:          # the most free space per drive that still fits
+            keep_of = {k: max(SPACE_RESERVE, int(totals[k] * frac)) for k in usage}
+            capacity = {k: totals[k] - fixed[k] - keep_of[k] for k in usage}
+            plan = suggest_routes(where, capacity, totals, fixed)
+            if plan is not None:
+                keep = frac
+                break
+        lab = {m["id"]: m["label"] for m in coll.mounts}
+        text = ["Now:"]
+        for k, u in usage.items():
+            years = sorted(y for y, r in coll.routes.items() if lab.get(r["mount_id"]) == k)
+            span = f"{years[0]}–{years[-1]}" if years else "no years"
+            text.append(f"  {k:<8} {span:<11} routed data {human(on_drive[k]):>6}  "
+                        f"other {human(fixed[k]):>6}  free {human(u[0]):>6} of {human(u[1])}")
+        need = sum(sum(v.values()) for v in where.values())
+        slack = sum(totals[k] - fixed[k] for k in usage) - need
+        text.append(f"  routed years hold {human(need)}; slack across all drives "
+                    f"{human(max(slack, 0))} ({slack / sum(totals.values()):.1%})")
+        if plan is None:
+            text += ["", "No contiguous year layout fits — free space or add a drive first."]
+            self.dialog = PlanView("Suggested routes", text, None)
+            return
+        kept = f"{keep:.1%} of each drive" if keep else human(SPACE_RESERVE)
+        text += ["", f"Suggested (moves {human(plan.moved)} between drives, keeps ≥{kept} free):"]
+        changes: list[tuple[int, dict]] = []
+        for k in plan.order:
+            ys = plan.ranges[k]
+            span = f"{ys[0]}–{ys[-1]}" if ys else "no years"
+            size = sum(sum(where[y].values()) for y in ys)
+            text.append(f"  {k:<8} {span:<11} {human(size):>6}  fill after {plan.fill[k]:.0%}")
+            mount = next(m for m in coll.mounts if m["label"] == k)
+            changes += [(y, mount) for y in ys if lab.get((coll.routes.get(y) or {})
+                                                          .get("mount_id")) != k]
+        batches: dict[tuple[str, str], int] = {}
+        for y, per in where.items():
+            dst = next(k for k in plan.order if y in plan.ranges[k])
+            for src, size in per.items():
+                if src != dst:
+                    key = (src or "elsewhere", dst)
+                    batches[key] = batches.get(key, 0) + size
+        steps, stuck = move_order(batches, {k: u[0] for k, u in usage.items()})
+        text += ["", f"{len(changes)} year route(s) change. Then refile (F8, F7) in this order:"]
+        for i, (src, dst, size) in enumerate(steps, 1):
+            text.append(f"  {i}. {src} {self.g['dest']} {dst}  {human(size)}")
+        for (src, dst), size in stuck.items():
+            text.append(f"  !! {src} {self.g['dest']} {dst} {human(size)} doesn't fit yet")
+        if not changes:
+            text.append("  (routes already match — only the refile is needed)")
+
+        def apply() -> None:
+            self.gate("Apply suggested routes", [
+                route_job(self.api, y, m, (coll.routes.get(y) or {}).get("sub_path")
+                          or str(y), self.journal, coll.routes.get(y)) for y, m in changes],
+                ["Re-points the year routes only; nothing moves. Folders then show as",
+                 "misfiled — refile them with F7 in the order above (the space check",
+                 "refuses a batch that doesn't fit yet). z undoes route changes."])
+        self.dialog = PlanView("Suggested routes", text, apply if changes else None)
+
     def year_of(self, entry: Entry) -> int | None:
         """The show year of an entry, from its collection row or its folder name."""
         if entry.row:
@@ -2442,6 +2666,7 @@ class App:
             ("Integrity scan of this pane's drive (i)", self.integrity_dialog),
             ("Rebalance: plan whole-year moves to the other pane's drive (b)",
              self.rebalance_dialog),
+            ("Suggest year routes from year sizes and drive space (w)", self.routes_dialog),
             ("Undo (z)", self.undo_dialog),
             ("Last pipeline results", lambda: setattr(self, "dialog", Pager(
                 "Pipeline", self.results_pages()))),
@@ -2469,6 +2694,8 @@ class App:
                 self.compare_picker()
             elif last and last.label == "measure":
                 self.rebalance_plan()
+            elif last and last.label == "measure-routes":
+                self.routes_plan()
             else:
                 tail = list(self.runner.lines)[-10:]
                 self.dialog = Message("done", tail or ["ok"])

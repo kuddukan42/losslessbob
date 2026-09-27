@@ -31,10 +31,16 @@ Added: tools/lb_nc.py: seven collection utilities, all through existing backend 
   b sizes the pane's drive and plans whole-year moves to the other pane's drive, picking the cut that
     balances used %, keeping 2 GB free; a applies it as moves + re-routes through the F6 gate.
   f now also cycles to -NFT mismatches and integrity issues.
+Added: tools/lb_nc.py: w suggests year routes — sizes every routed folder (cached), maps each to the
+  drive it is on, and picks the contiguous year → drive layout that fits and moves the fewest bytes
+  (every mount order tried; keeps 2% free per drive, falling back to 1% / 0.5% / 2 GB), then lists the
+  refile batches in an order that fits at each step; a applies the route changes (undoable).
+  Live read-only run 2026-09-27: DYLAN1 7.3T 6 GB free, routed years hold 9.7T against 781 GB total
+  slack (3.5%); suggestion DYLAN2 1958–1987, DYLAN1 1988–2023, DYLAN3 2024–2026, 1.4T to move.
 Changed: backend/app.py: POST /api/pipeline/file/start accepts an optional file_mode ("move"|"copy") that
   overrides pipeline_file_mode for one job, so a mount-to-mount shuffle can't be turned into a copy; other
   values are 400 bad_input.
-Added: tests/test_lb_nc.py (36, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3).
+Added: tests/test_lb_nc.py (39, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3).
 Changed: PROJECT.md (route param, tools tree), docs/wiki/Collection-Pipeline.md (commander section).
 Opened: TODO-355 — refile 1,293 public LBs out of PRIVATE LB and 848 misfiled folders.
 

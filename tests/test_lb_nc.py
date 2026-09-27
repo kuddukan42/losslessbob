@@ -426,3 +426,34 @@ def test_rebalance_applies_moves_and_reroutes(app, monkeypatch):
     labels = [j.label for j in app.dialog.jobs]
     assert any(label.startswith("move") for label in labels)
     assert any(label.startswith("route") for label in labels)
+
+
+def test_suggest_routes_fits_and_moves_least():
+    gb = 1024 ** 3
+    where = {1960: {"A": 40 * gb}, 1970: {"A": 40 * gb}, 1980: {"B": 30 * gb},
+             1990: {"A": 30 * gb}}                  # 1990 sits on A but A can't hold all
+    cap = {"A": 90 * gb, "B": 100 * gb}
+    totals = {"A": 100 * gb, "B": 100 * gb}
+    plan = lb_nc.suggest_routes(where, cap, totals, {"A": 0, "B": 0})
+    assert plan is not None
+    assert plan.ranges["A"] == [1960, 1970] and plan.ranges["B"] == [1980, 1990]
+    assert plan.moved == 30 * gb
+    assert lb_nc.suggest_routes(where, {"A": 10 * gb, "B": 10 * gb}, totals,
+                                {"A": 0, "B": 0}) is None
+
+
+def test_move_order_frees_the_full_drive_first():
+    gb = 1024 ** 3
+    steps, stuck = lb_nc.move_order({("A", "B"): 50 * gb, ("B", "A"): 50 * gb},
+                                    {"A": 5 * gb, "B": 60 * gb})
+    assert steps[0][:2] == ("A", "B")                # A is full, so it empties first
+    assert sum(s[2] for s in steps) == 100 * gb and not stuck
+
+
+def test_route_suggestion_dialog_applies_route_changes(app, monkeypatch):
+    gb = 1024 ** 3
+    monkeypatch.setattr(app, "usage", lambda path, fresh=False: (90 * gb, 100 * gb))
+    app.handle("w")
+    app.tick()
+    assert isinstance(app.dialog, lb_nc.PlanView)
+    assert any(line.startswith("Suggested") for line in app.dialog.text)
