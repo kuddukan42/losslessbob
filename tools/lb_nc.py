@@ -49,6 +49,7 @@ if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from backend.folder_naming import (  # noqa: E402 — the repo's own NFT rules, one source
     apply_nft_suffix,
+    build_standard_name,
     has_nft_suffix,
     nft_discrepancy,
     strip_nft_suffix,
@@ -77,9 +78,9 @@ IN_PLACE = "at its routed location, not in collection"
 PRIVATE_DIR = "PRIVATE LB"          # a folder named this holds private LBs, outside the routes
 PRIVATE_AREA = "in the private area"
 OFF = ("misfiled", "public", "stray", "dup", "blocked", "gone", "relink")   # not in the right spot
-SHOW_MODES = ("all", "off", "public", "nft", "bad")
+SHOW_MODES = ("all", "off", "public", "nft", "name", "bad")
 SHOW_LABELS = {"off": "not right", "public": "public in private", "nft": "NFT mismatch",
-               "bad": "integrity issues"}
+               "name": "non-canonical names", "bad": "integrity issues"}
 DUP_DIR = "_duplicates"             # where the resolver sets a losing copy aside (same drive)
 
 log = logging.getLogger("lb_nc")
@@ -107,18 +108,22 @@ SCHEMES: dict[str, dict[str, str]] = {
     "nc": {"pane": "44;37", "text": "44;97", "frame": "44;96", "header": "46;30;1",
            "cursor": "46;30", "tag": "44;93;1", "cursor_tag": "46;93;1", "dim": "44;36",
            "key_num": "40;97", "key_label": "46;30", "dialog": "47;30",
-           "dialog_hi": "40;97", "danger": "41;97;1", "run": "40;93;1", "ghost": "44;96;4"},
+           "dialog_hi": "40;97", "danger": "41;97;1", "run": "40;93;1", "ghost": "44;96;4",
+           "odd": "44;95;1"},
     "amber": {"pane": "40;33", "text": "40;93", "frame": "40;33", "header": "40;93;1",
               "cursor": "43;30", "tag": "40;97;1", "cursor_tag": "43;97;1", "dim": "40;33",
               "key_num": "40;93", "key_label": "43;30", "dialog": "43;30",
-              "dialog_hi": "40;93", "danger": "41;97;1", "run": "40;97;1", "ghost": "40;93;4"},
+              "dialog_hi": "40;93", "danger": "41;97;1", "run": "40;97;1", "ghost": "40;93;4",
+              "odd": "40;91;1"},
     "green": {"pane": "40;32", "text": "40;92", "frame": "40;32", "header": "40;92;1",
               "cursor": "42;30", "tag": "40;97;1", "cursor_tag": "42;97;1", "dim": "40;32",
               "key_num": "40;92", "key_label": "42;30", "dialog": "42;30",
-              "dialog_hi": "40;92", "danger": "41;97;1", "run": "40;97;1", "ghost": "40;92;4"},
+              "dialog_hi": "40;92", "danger": "41;97;1", "run": "40;97;1", "ghost": "40;92;4",
+              "odd": "40;93;1"},
     "mono": {"pane": "0", "text": "0", "frame": "0", "header": "1", "cursor": "7",
              "tag": "1", "cursor_tag": "7;1", "dim": "0", "key_num": "1", "key_label": "7",
-             "dialog": "7", "dialog_hi": "0", "danger": "7;1", "run": "1", "ghost": "4"},
+             "dialog": "7", "dialog_hi": "0", "danger": "7;1", "run": "1", "ghost": "4",
+             "odd": "3"},
 }
 
 Line = list[tuple[str, str]]          # (role, text) segments
@@ -393,7 +398,10 @@ class Collection:
         """The show year the backend derived, or the leading year of date_str."""
         if row.get("route_year"):
             return int(row["route_year"])
-        m = YEAR_RE.match(row.get("date_str") or "")
+        # M/D/YY → YYYY-MM-DD, the backend's own parser
+        from backend.torrent_maker import _parse_date
+
+        m = YEAR_RE.match(_parse_date(row.get("date_str") or ""))
         return int(m.group(1)) if m else None
 
     @staticmethod
@@ -467,6 +475,7 @@ class Entry:
     lb: int | None = None
     nft: str = ""                  # "missing" (private, no -NFT) | "stale" (public, has -NFT)
     health: str = ""               # integrity status when it isn't "pass"
+    canon: str = ""                # the canonical folder name, when this one differs
 
     @property
     def key(self) -> str:
@@ -507,10 +516,26 @@ def annotate(entry: Entry, coll: Collection) -> None:
         return
     nft = nft_discrepancy(entry.name, row.get("lb_status"))
     entry.nft = nft if nft in ("missing", "stale") else ""
+    entry.canon = canonical_name(entry.name, row)
     health = coll.integrity.get(int(row["lb_number"]))
     if health and health.get("status") not in (None, "pass") \
             and norm(health.get("disk_path") or "") == norm(entry.path):
         entry.health = str(health["status"])
+
+
+def canonical_name(name: str, row: dict) -> str:
+    """The pipeline's canonical name for a collection folder, or "" when name already is it.
+
+    Built by backend.folder_naming.build_standard_name — the rename step's own rule.
+    Multi-LB folders and entries without both a date and a location aren't judged
+    (the pipeline needs extra sources for those).
+    """
+    location = (row.get("location") or "").strip()
+    if "+LB-" in name.upper() or not row.get("date_str") or not location:
+        return ""
+    want = build_standard_name(int(row["lb_number"]), row["date_str"], location,
+                               row.get("lb_status"), int(row.get("xref") or 0))
+    return "" if want == name or "/" in want else want
 
 
 VIEWS = {"misfiled": "MISFILED — all mounts", "gone": "GONE — collection paths not on disk"}
@@ -562,6 +587,8 @@ class Pane:
             rows = [e for e in rows if e.kind == "parent" or e.status == "public"]
         elif self.show == "nft":
             rows = [e for e in rows if e.kind == "parent" or e.nft]
+        elif self.show == "name":
+            rows = [e for e in rows if e.kind == "parent" or e.canon]
         elif self.show == "bad":
             rows = [e for e in rows if e.kind == "parent" or e.health]
         if not self.filter:
@@ -1674,7 +1701,7 @@ Tab         switch pane              Enter   open folder
 Backspace   up one level             Space/Ins tag · + all · - none · * invert
 /           filter the active pane   Esc     close / clear filter / clear tags
 f           show: all → not in the right spot → public LBs in the private folder
-            → -NFT mismatches → integrity issues (works in the virtual lists too)
+            → -NFT mismatches → non-canonical names → integrity issues
 
 1 Help      this screen
 2 Info      the folder's collection row, show date, route and expected location
@@ -1691,7 +1718,9 @@ f           show: all → not in the right spot → public LBs in the private fo
 0/q Quit
 
 c           generate checksums (folders with no .ffp/.md5/.st5)
-r           apply the renames the last F4 run proposed
+r           rename to the canonical name (the last F4 proposal, else the collection
+            row's date + location + LB tag); non-canonical names are highlighted
+h           highlighting of non-canonical names on / off
             usual order for a new folder: c → 4 Pipe → r → 7 File
 n           fix the -NFT suffix (private LBs have it, public ones don't)
 e           move files the lbdir doesn't list into <folder>/extras/
@@ -1714,7 +1743,7 @@ Glyphs: ✓ canonical  → misfiled (⇒ where it belongs)  ? stray, not in coll
         ↑ public LB still under the private folder (F7 files it to its year)
         ≠ duplicate — the collection holds this LB at another path  ⊘ blocked
         ✗ gone — the record's folder isn't on disk  ⇄ a copy of a gone record
-Flags:  n -NFT suffix wrong  ! integrity issue
+Flags:  n -NFT suffix wrong  ! integrity issue   highlighted name: not canonical
 A private LB anywhere under "PRIVATE LB" counts as canonical (--private-dir renames it).
 
 Private LBs, -NFT folders and anything in the private folder are only moved after a
@@ -1752,6 +1781,7 @@ class App:
         self.persist = persist
         self.dialog: Dialog | None = None
         self.show_log = False
+        self.highlight = True            # h: colour non-canonical folder names
         self.quit = False
         self.coll: Collection | None = None
         self.coll_error = ""
@@ -1921,6 +1951,7 @@ class App:
             "/": self.start_filter, "f": self.cycle_show, "esc": self.escape,
             "t": self.cycle_scheme,
             "d": self.drive_dialog, "c": self.checksum_dialog, "r": self.rename_dialog,
+            "h": self.toggle_highlight,
             "x": self.drop_dialog, "l": self.relink_dialog, "n": self.nft_dialog,
             "i": self.integrity_dialog, "=": self.compare_dialog, "e": self.extras_dialog,
             "z": self.undo_dialog, "b": self.rebalance_dialog, "w": self.routes_dialog,
@@ -2011,6 +2042,7 @@ class App:
                   "off": f"{shown} folder(s) not in the right spot",
                   "public": f"{shown} public LB(s) in {PRIVATE_DIR}",
                   "nft": f"{shown} folder(s) whose -NFT suffix is wrong",
+                  "name": f"{shown} folder(s) with a non-canonical name",
                   "bad": f"{shown} folder(s) with integrity issues"}[pane.show])
 
     def start_filter(self) -> None:
@@ -2029,6 +2061,11 @@ class App:
         self.scheme = SCHEME_NAMES[(SCHEME_NAMES.index(self.scheme) + 1) % len(SCHEME_NAMES)]
         if self.persist:
             save_scheme(self.scheme)
+
+    def toggle_highlight(self) -> None:
+        """h: colour non-canonical folder names, or stop."""
+        self.highlight = not self.highlight
+        self.say("non-canonical names " + ("highlighted" if self.highlight else "not highlighted"))
 
     def toggle_log(self) -> None:
         """o: show or hide the log pane."""
@@ -2264,7 +2301,9 @@ class App:
         for e in picked:
             result = self.pipeline_results.get(str(e.path))
             proposed = ((result or {}).get("rename") or {}).get("proposed")
-            if result is None:
+            if result is None and e.canon:
+                proposed = e.canon                     # the collection row's canonical name
+            if result is None and not proposed:
                 skipped.append(f"  skip {e.name}: no pipeline result — F4 it first")
             elif not proposed:
                 skipped.append(f"  skip {e.name}: name already correct")
@@ -2273,7 +2312,8 @@ class App:
             else:
                 jobs.append(rename_job(self.api, e, proposed, self.journal, self.page_gate))
         self.gate("Apply renames", jobs, [
-            "Renames each folder in place to the pipeline's proposed name. The rename",
+            "Renames each folder in place to the pipeline's proposed name, or for a",
+            "collection folder with no F4 result, the canonical name from its row. The rename",
             "is logged (rename_history), my_collection and qBittorrent follow.",
             *skipped])
 
@@ -2678,6 +2718,8 @@ class App:
                 text.append("not in my_collection — F7 files it and registers it")
             elif cur.note:
                 text.append(cur.note)
+        if cur.canon:
+            text.append(f"canonical name  {cur.canon}  (r renames)")
         if cur.nft:
             text.append("NFT: " + ("private LB, add -NFT" if cur.nft == "missing"
                                    else "public LB, drop -NFT") + "  (n fixes)")
@@ -2966,8 +3008,9 @@ class App:
             tagged = entry.key in pane.tags
             ghost = i == pane.cursor and not on
             role = ("cursor_tag" if tagged else "cursor") if on else \
-                "tag" if tagged else "ghost" if ghost else "text" if entry.kind == "dir" \
-                else "pane"
+                "tag" if tagged else "ghost" if ghost else "odd" if entry.canon \
+                and self.highlight \
+                else "text" if entry.kind == "dir" else "pane"
             mark = self.g["cursor"] if on else " "
             rows.append([(role, mark + self.row_text(pane, entry, width - 1))])
         return rows
@@ -3014,6 +3057,8 @@ class App:
             if cur.health:
                 first += f"  ·  integrity: {cur.health}"
             show = f"LB-{cur.lb:05d}  {row.get('date_str') or ''}  {row.get('location') or ''}"
+            if cur.canon and self.highlight:
+                show = f"name ≠ canonical {self.g['dest']} {cur.canon}  (r renames)"
             if cur.status in ("misfiled", "public"):
                 why = "went public — " if cur.status == "public" else ""
                 third = (f"{why}{self.g['dest']} {cur.note}  free: {self.free(cur.note)}"
@@ -3453,6 +3498,10 @@ def build_fixture(base: Path) -> FakeApi:
     folder(one, "1987-10-17 London, England (LB-01860)", 1860)             # misfiled
     folder(one, "1995-03-01 Prague, Czech Republic (LB-05555)", 5555, False)  # stray
     folder(one, "1978-06-15 Tokyo, Japan (LB-03003)", 3003, status="private")  # no -NFT
+    folder(one, "bd1966-05-26 LB-321 London", None)                          # legacy name
+    rows.append({"lb_number": 321, "folder_name": "bd1966-05-26 LB-321 London",
+                 "disk_path": str(one / "bd1966-05-26 LB-321 London"),
+                 "date_str": "5/26/66", "location": "London, England", "lb_status": "public"})
     folder(two / "1987", "1987-09-05 Tel Aviv, Israel (LB-02311)", 2311)
     (two / "1987" / "1987-09-05 Tel Aviv, Israel (LB-02311)" / "cover.jpg").write_bytes(b"x")
     folder(two / "1987", "1987-10-05 Verona, Italy (LB-07777)", 7777, False)   # stray
