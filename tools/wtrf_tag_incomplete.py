@@ -2,10 +2,11 @@
 """Tag incomplete WTRF torrents in qBittorrent by what they are missing.
 
 Polls qBittorrent for torrents carrying the ``wtrf`` tag whose progress is
-below 100%, reads each one's per-file progress, and tags it:
+below 100%, reads each one's piece states, and tags it:
 
-  ``missing music``   at least one audio file is short of 100%
-  ``missing extras``  every audio file is complete; only text, artwork,
+  ``missing music``   a missing piece covers any part of an audio file (a
+                      boundary piece shared with a missing extra included)
+  ``missing extras``  no missing piece touches audio; only text, artwork,
                       checksums or other extras are missing
 
 The two tags are exclusive — the wrong one is removed when a torrent moves
@@ -47,18 +48,25 @@ TAG_EXTRAS = "missing extras"
 _AUDIO = AUDIO_EXTS | {".mp3"}
 
 
-def classify(files: list[dict]) -> str:
-    """Return the tag an incomplete torrent's file list earns.
+def classify(files: list[dict], pieces: list[int]) -> str:
+    """Return the tag an incomplete torrent's file and piece state earns.
+
+    Any missing piece that covers audio counts as missing music — including
+    a boundary piece shared with an absent extra, since peers only serve
+    whole verified pieces and that audio cannot be seeded until it verifies.
 
     Args:
-        files: qBittorrent ``/torrents/files`` entries (``name``, ``progress``).
+        files: qBittorrent ``/torrents/files`` entries (``name``, ``piece_range``).
+        pieces: qBittorrent ``/torrents/pieceStates`` (2 = downloaded).
 
     Returns:
-        ``TAG_MUSIC`` if any audio file is incomplete, else ``TAG_EXTRAS``.
+        ``TAG_MUSIC`` if a missing piece touches an audio file, else ``TAG_EXTRAS``.
     """
     for f in files:
-        if f["progress"] < 1 and PurePosixPath(f["name"]).suffix.lower() in _AUDIO:
-            return TAG_MUSIC
+        if PurePosixPath(f["name"]).suffix.lower() in _AUDIO:
+            first, last = f["piece_range"]
+            if any(pieces[i] != 2 for i in range(first, last + 1)):
+                return TAG_MUSIC
     return TAG_EXTRAS
 
 
@@ -93,7 +101,9 @@ def main() -> int:
             continue
         files = s.get(base + "/api/v2/torrents/files",
                       params={"hash": t["hash"]}, timeout=30).json()
-        tag = classify(files)
+        pieces = s.get(base + "/api/v2/torrents/pieceStates",
+                       params={"hash": t["hash"]}, timeout=30).json()
+        tag = classify(files, pieces)
         other = TAG_EXTRAS if tag == TAG_MUSIC else TAG_MUSIC
         counts[tag] += 1
         if tag not in have:
