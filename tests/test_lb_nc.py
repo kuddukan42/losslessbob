@@ -327,14 +327,25 @@ def test_relink_to_surviving_copy(app, tmp_path):
     assert app.coll.by_lb[4410]["disk_path"].endswith(copy)
 
 
-def test_nft_fix_and_undo(app, tmp_path):
+def test_nft_fix_and_undo(app, tmp_path, monkeypatch):
+    monkeypatch.setattr(lb_nc, "PROBE_INTERVAL", 0)
+    app.api.no_page = {3003}                          # private: no page on the site
     _pick(app.left, TOKYO)
     app.handle("n")
-    assert [j.detail.split("⇒ ")[1] for j in app.dialog.jobs] == [TOKYO + "-NFT"]
+    assert [j.detail.split("⇒ ")[1].split("  [")[0] for j in app.dialog.jobs] \
+        == [TOKYO + "-NFT"]
     app.handle("y")
     app.tick()
     assert (tmp_path / "DYLAN1" / (TOKYO + "-NFT")).is_dir()
     app.dialog = None
+    app.handle("z")
+    app.handle("enter")
+    app.handle("y")
+    app.tick()                                        # undo would drop -NFT from a private LB
+    assert "refused" in app.dialog.title
+    assert (tmp_path / "DYLAN1" / (TOKYO + "-NFT")).is_dir()
+    app.dialog = None
+    app.api.no_page = set()                           # once it has a page, undo goes through
     app.handle("z")
     app.handle("enter")
     app.handle("y")
@@ -495,3 +506,23 @@ def test_move_allowed_with_live_page(app, tmp_path, monkeypatch):
     app.handle("y")
     app.tick()
     assert (tmp_path / "DYLAN2" / "1991" / "1991-02-20 New York, NY (LB-08002)").is_dir()
+
+
+def test_nft_add_refused_when_lb_has_a_live_page(app, tmp_path, monkeypatch):
+    monkeypatch.setattr(lb_nc, "PROBE_INTERVAL", 0)   # 3003 has a page → not private
+    _pick(app.left, TOKYO)
+    app.handle("n")
+    app.handle("y")
+    app.tick()
+    assert "refused" in app.dialog.title
+    assert (tmp_path / "DYLAN1" / TOKYO).is_dir()
+
+
+def test_plain_public_rename_is_not_checked(app, tmp_path):
+    old = tmp_path / "DYLAN1" / TORONTO
+    app.pipeline_results[str(old)] = {"rename": {"proposed": "1975-11-19 Toronto (LB-04410)"}}
+    _pick(app.left, TORONTO)
+    app.handle("r")
+    app.handle("y")
+    app.tick()
+    assert not any(p.endswith("/live") for p, _ in app.api.calls)

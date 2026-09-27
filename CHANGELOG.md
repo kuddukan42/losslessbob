@@ -43,10 +43,12 @@ Added: tools/lb_nc.py: live LB-page gate — before moving a folder whose LB is 
   or that sits in the private folder (F6, F7, rebalance, duplicate set-aside, undo of a move), lb-nc asks
   the site (≤1 request/s); no page or no answer refuses that move, the rest of the queue carries on and the
   refusals are listed at the end. Verified live: LB-02789 (public, in PRIVATE LB) exists; LB-00167 404.
+Added: tools/lb_nc.py: renames of private-marked folders (n, r, undo of a rename) are gated too — the new name
+  must match the live site: -NFT only when the LB has no page, no -NFT only when it has one; no answer refuses.
 Changed: backend/app.py: POST /api/pipeline/file/start accepts an optional file_mode ("move"|"copy") that
   overrides pipeline_file_mode for one job, so a mount-to-mount shuffle can't be turned into a copy; other
   values are 400 bad_input.
-Added: tests/test_lb_nc.py (42, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3),
+Added: tests/test_lb_nc.py (44, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3),
   tests/test_scraper_probe_page.py (4).
 Changed: PROJECT.md (route param, tools tree), docs/wiki/Collection-Pipeline.md (commander section).
 Opened: TODO-355 — refile 1,293 public LBs out of PRIVATE LB and 848 misfiled folders.

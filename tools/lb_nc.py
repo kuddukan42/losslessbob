@@ -708,8 +708,11 @@ class PageGate:
         self.last = 0.0
         self.lock = threading.Lock()
 
-    def check(self, lb: int | None, emit: Emit) -> None:
-        """Return when LB-lb's page exists; raise JobRefused otherwise."""
+    def check(self, lb: int | None, emit: Emit, want: bool = True) -> None:
+        """Return when LB-lb's page exists (want=True) or is absent (want=False).
+
+        Raise JobRefused otherwise, and always when the site doesn't answer.
+        """
         if lb is None:
             raise JobRefused("no LB number — can't check the LB site, refused")
         with self.lock:
@@ -721,13 +724,17 @@ class PageGate:
             finally:
                 self.last = time.monotonic()
         exists = res.get("exists") if isinstance(res, dict) else None
-        if exists is True:
-            emit(f"  LB-{lb:05d}: page live on the LB site", False)
+        if exists is want:
+            emit(f"  LB-{lb:05d}: " + ("page live on the LB site" if want
+                                       else "no page on the LB site (private)"), False)
             return
         if exists is False:
-            raise JobRefused(f"LB-{lb:05d} has no page on the LB site — move refused")
+            raise JobRefused(f"LB-{lb:05d} has no page on the LB site — refused")
+        if exists is True:
+            raise JobRefused(f"LB-{lb:05d} has a public page on the LB site, so it isn't "
+                             "private — refused")
         why = (res or {}).get("error") or f"status {(res or {}).get('status')}"
-        raise JobRefused(f"LB-{lb:05d}: LB site didn't answer ({why}) — move refused")
+        raise JobRefused(f"LB-{lb:05d}: LB site didn't answer ({why}) — refused")
 
 
 class Journal:
@@ -894,11 +901,21 @@ def generate_job(api: Api, entry: Entry) -> Job:
     return Job("checksums", f"{entry.name}  (generate checksums)", run)
 
 
-def rename_job(api: Api, entry: Entry, new_name: str, journal: Journal | None = None) -> Job:
-    """Rename one folder in place via /api/folder/rename (collection row + qBittorrent follow)."""
+def rename_job(api: Api, entry: Entry, new_name: str, journal: Journal | None = None,
+               gate: PageGate | None = None) -> Job:
+    """Rename one folder in place via /api/folder/rename (collection row + qBittorrent follow).
+
+    A private-marked rename (old or new name) first checks the LB site: the new name
+    must match reality — -NFT only when there's no page, no -NFT only when there is.
+    """
     registered = bool(entry.row) and norm(entry.row.get("disk_path") or "") == norm(entry.path)
+    guarded = gate is not None and (
+        private_marked(entry.name, entry.path, entry.row)
+        or private_marked(new_name, entry.path.parent / new_name, entry.row))
 
     def run(emit: Emit) -> None:
+        if guarded:
+            gate.check(entry.lb, emit, want=not has_nft_suffix(new_name))
         body: dict[str, Any] = {"folder": str(entry.path), "new_name": new_name}
         if entry.lb is not None:
             body["lb_number"] = entry.lb
@@ -911,7 +928,8 @@ def rename_job(api: Api, entry: Entry, new_name: str, journal: Journal | None = 
                          "to": str(entry.path.parent / new_name), "registered": registered})
         if res.get("qbt_error"):
             emit(f"  qBittorrent: {res['qbt_error']}", False)
-    return Job("rename", f"{entry.name}  {GLYPHS['dest']} {new_name}", run)
+    mark = "  [LB page checked first]" if guarded else ""
+    return Job("rename", f"{entry.name}  {GLYPHS['dest']} {new_name}{mark}", run)
 
 
 def route_job(api: Api, year: int, mount: dict, sub_path: str,
@@ -1074,6 +1092,11 @@ def undo_job(api: Api, rec: dict, journal: Journal, gate: PageGate | None = None
     kind = rec["kind"]
 
     def run(emit: Emit) -> None:
+        if gate is not None and kind == "rename":
+            back, here = Path(rec["from"]), Path(rec["to"])
+            if private_marked(back.name, back, None) or private_marked(here.name, here, None):
+                gate.check(rec.get("lb") or lb_of(back.name), emit,
+                           want=not has_nft_suffix(back.name))
         if gate is not None and kind in ("move", "aside"):
             here = Path(rec["to"])
             if private_marked(here.name, here, None) or \
@@ -1696,7 +1719,8 @@ A private LB anywhere under "PRIVATE LB" counts as canonical (--private-dir rena
 
 Private LBs, -NFT folders and anything in the private folder are only moved after a
 live check that the LB's page exists on the LB site — no page (or no answer): refused,
-the rest of the queue carries on.
+the rest of the queue carries on. Renames of such folders check that the new name
+matches the site: -NFT only with no page, no -NFT only with a page.
 Every write goes through the backend (port 5174) after a y/n gate, one folder at a
 time, stopping at the first failure. Duplicates are never filed — resolve them by hand.
 Pane headers show free space; the line under the panes shows every drive. F6/F7 add up
@@ -2247,7 +2271,7 @@ class App:
             elif (e.path.parent / proposed).exists():
                 skipped.append(f"  skip {e.name}: {proposed} already exists")
             else:
-                jobs.append(rename_job(self.api, e, proposed, self.journal))
+                jobs.append(rename_job(self.api, e, proposed, self.journal, self.page_gate))
         self.gate("Apply renames", jobs, [
             "Renames each folder in place to the pipeline's proposed name. The rename",
             "is logged (rename_history), my_collection and qBittorrent follow.",
@@ -2296,10 +2320,12 @@ class App:
             if (e.path.parent / new).exists():
                 skipped.append(f"  skip {e.name}: {new} already exists")
             else:
-                jobs.append(rename_job(self.api, e, new, self.journal))
+                jobs.append(rename_job(self.api, e, new, self.journal, self.page_gate))
         self.gate("Fix -NFT suffix", jobs, [
             "Private LBs get -NFT, public ones lose it. Renamed in place; the collection",
-            "row and qBittorrent follow. f → NFT mismatch lists every one here.", *skipped])
+            "row and qBittorrent follow. f → NFT mismatch lists every one here.",
+            "Each is checked live first: -NFT is only added when the LB has no page on",
+            "the LB site, only dropped when it has one; anything else is refused.", *skipped])
 
     def integrity_dialog(self) -> None:
         """i: run the integrity scan on this pane's mount (the whole collection off-mount)."""
