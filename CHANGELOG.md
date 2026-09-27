@@ -2,6 +2,10 @@
 Added: tools/wtrf_tag_incomplete.py: tags wtrf torrents <100% in qBittorrent "missing music" (a missing piece
   touches audio, boundary pieces shared with an extra included) or "missing extras" (only text/art/checksums); exclusive, cleared on completion; dry-run,
   --apply writes. Live run: 792 music, 51 extras.
+Added: tools/wtrf_repair_extras.py: re-plans each "missing extras" overlay and re-materialises only the
+  incomplete files a local source (collection, site files, re-fetch) can satisfy, then repair_overlay +
+  recheck; collection snapshot-checked. Live: 221 files written across 51 overlays, 56 have no local source;
+  1 torrent completed — the rest share pieces with those 56, so they stay short until the swarm has them.
 
 [2026-09-26] — WTRF seed walk: --resume finds the frontier page itself
 Added: tools/wtrf_seed_board.py --resume: binary-searches the board (~9 listing requests) for the first page
