@@ -173,3 +173,66 @@ def test_decode_keys():
     assert lb_nc.decode(b"\x1b[17~\x1b[18~\t ") == ["f6", "f7", "tab", " "]
     assert lb_nc.decode(b"\x1bOP") == ["f1"]
     assert lb_nc.decode(b"\x15") == ["ctrl-u"]
+
+
+def test_same_drive_move_needs_no_space(app):
+    _pick(app.left, MISFILED)
+    app.handle("f7")
+    assert any("same-drive" in line for line in app.dialog.blurb)
+
+
+def test_cross_drive_move_refused_when_it_wont_fit(app, monkeypatch):
+    monkeypatch.setattr(lb_nc, "same_device", lambda a, b: False)
+    monkeypatch.setattr(app, "usage", lambda path, fresh=False: (3 * 1024 ** 3, 10 ** 13))
+    monkeypatch.setattr(lb_nc, "SPACE_RESERVE", 3 * 1024 ** 3)   # 1K folder tips it over
+    _pick(app.left, MISFILED)
+    app.handle("f7")
+    assert isinstance(app.dialog, lb_nc.Message)
+    assert "not enough space" in app.dialog.title
+    assert any("WON'T FIT" in line for line in app.dialog.text)
+
+
+def test_cross_drive_move_shows_space_after(app, monkeypatch):
+    monkeypatch.setattr(lb_nc, "same_device", lambda a, b: False)
+    monkeypatch.setattr(app, "usage", lambda path, fresh=False: (500 * 1024 ** 3, 10 ** 13))
+    _pick(app.left, MISFILED)
+    app.handle("f7")
+    assert isinstance(app.dialog, lb_nc.Confirm)
+    assert any("DYLAN2: needs 1.0K of 500G free" in line for line in app.dialog.blurb)
+
+
+def test_drives_line_lists_every_mount(app):
+    screen = "\n".join(lb_nc.plain(line) for line in app.frame(120, 30))
+    assert "drives: DYLAN1" in screen and "DYLAN2" in screen
+
+
+def test_generate_checksums_skips_folders_that_have_them(app, tmp_path):
+    folder = tmp_path / "DYLAN1" / TORONTO
+    (folder / "x.md5").write_text("")
+    app.handle("+")
+    app.handle("c")
+    labels = [j.detail for j in app.dialog.jobs]
+    assert all(TORONTO not in d for d in labels) and len(labels) == 3
+    app.handle("y")
+    app.tick()
+    assert (tmp_path / "DYLAN1" / MISFILED / "_mychecksums.ffp").is_file()
+
+
+def test_rename_uses_pipeline_proposal(app, tmp_path):
+    old = tmp_path / "DYLAN1" / TORONTO
+    app.pipeline_results[str(old)] = {"rename": {"proposed": "1975-11-19 Toronto (LB-04410)"}}
+    _pick(app.left, TORONTO)
+    app.handle("r")
+    assert [j.label for j in app.dialog.jobs] == ["rename"]
+    app.handle("y")
+    app.tick()
+    assert (tmp_path / "DYLAN1" / "1975-11-19 Toronto (LB-04410)").is_dir()
+    assert app.coll.by_lb[4410]["folder_name"] == "1975-11-19 Toronto (LB-04410)"
+    assert app.pipeline_results == {}
+
+
+def test_rename_without_pipeline_result_is_skipped(app):
+    _pick(app.left, TORONTO)
+    app.handle("r")
+    assert isinstance(app.dialog, lb_nc.Message)
+    assert any("F4 it first" in line for line in app.dialog.text)

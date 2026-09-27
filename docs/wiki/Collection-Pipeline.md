@@ -45,7 +45,9 @@ Marks each LB folder canonical / misfiled / stray / duplicate / blocked by
 comparing its parent with the year route's `root_path/sub_path`; F8 lists every
 misfiled row. F7 files to the route, F6 moves to the other pane's mount
 (`mount_id` override, `file_mode: "move"`, optional year re-route). All writes
-go through `/api/pipeline/file/*` — no filesystem code of its own.
+go through `/api/pipeline/file/*` — no filesystem code of its own. `c`
+generates checksums, `r` applies F4's proposed renames (`/api/folder/rename`).
+F6/F7 refuse a cross-drive batch that would leave < 2 GB free on the target.
 
 ## After filing
 
