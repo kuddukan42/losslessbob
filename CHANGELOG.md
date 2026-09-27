@@ -1,3 +1,8 @@
+[2026-09-26] — WTRF: tag incomplete torrents by what they are missing
+Added: tools/wtrf_tag_incomplete.py: tags wtrf torrents <100% in qBittorrent "missing music" (an audio file
+  incomplete) or "missing extras" (only text/art/checksums); exclusive, cleared on completion; dry-run,
+  --apply writes. Live run: 791 music, 51 extras.
+
 [2026-09-26] — WTRF seed walk: --resume finds the frontier page itself
 Added: tools/wtrf_seed_board.py --resume: binary-searches the board (~9 listing requests) for the first page
   whose topics are mostly unattempted in wtrf_downloads, starts one page earlier; overrides --start-page.
