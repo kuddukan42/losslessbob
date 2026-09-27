@@ -61,16 +61,21 @@ VIEW_SUFFIXES = (".txt", ".md5", ".ffp", ".st5", ".sha256", ".nfo", ".log", ".cu
 LB_RE = re.compile(r"LB-(\d{1,6})", re.IGNORECASE)
 YEAR_RE = re.compile(r"^(\d{4})")
 IN_PLACE = "at its routed location, not in collection"
+PRIVATE_DIR = "PRIVATE LB"          # a folder named this holds private LBs, outside the routes
+PRIVATE_AREA = "in the private area"
+OFF = ("misfiled", "public", "stray", "dup", "blocked")    # every "not in the right spot" status
+SHOW_MODES = ("all", "off", "public")
 
 log = logging.getLogger("lb_nc")
 
 # -------------------------------------------------------------------- glyphs, palette
 
-GLYPHS = {"canonical": "✓", "misfiled": "→", "stray": "?", "dup": "≠", "blocked": "⊘",
+GLYPHS = {"canonical": "✓", "misfiled": "→", "public": "↑", "stray": "?", "dup": "≠", "blocked": "⊘",
           "dest": "⇒", "cursor": "▶", "ellipsis": "…", "running": "■"}
-ASCII_GLYPHS = {"canonical": "*", "misfiled": ">", "stray": "?", "dup": "=", "blocked": "x",
+ASCII_GLYPHS = {"canonical": "*", "misfiled": ">", "public": "^", "stray": "?", "dup": "=", "blocked": "x",
                 "dest": "=>", "cursor": ">", "ellipsis": "~", "running": "*"}
-STATUS_TEXT = {"canonical": "canonical", "misfiled": "MISFILED", "stray": "not in collection",
+STATUS_TEXT = {"canonical": "canonical", "misfiled": "MISFILED",
+               "public": "PUBLIC LB in the private folder", "stray": "not in collection",
                "dup": "DUPLICATE", "blocked": "blocked"}
 BOX = {"h": "─", "v": "│", "tl": "┌", "tr": "┐", "bl": "└", "br": "┘",
        "tt": "┬", "bt": "┴", "lt": "├", "rt": "┤"}
@@ -361,14 +366,28 @@ class Collection:
         m = YEAR_RE.match(row.get("date_str") or "")
         return int(m.group(1)) if m else None
 
+    @staticmethod
+    def in_private(path: str | Path) -> bool:
+        """True when the folder sits anywhere under a PRIVATE_DIR folder."""
+        return PRIVATE_DIR in Path(path).parent.parts
+
     def row_status(self, row: dict) -> tuple[str, str]:
-        """(status, note) for a collection row: canonical, misfiled or blocked."""
+        """(status, note) for a collection row: canonical, misfiled, public or blocked.
+
+        A private LB anywhere under PRIVATE_DIR is where it belongs. A public LB there
+        has gone public since it was filed: status "public", destination its year route.
+        Everything else must sit directly in its year route's folder.
+        """
         year = self.year_of(row)
+        if self.in_private(row["disk_path"]) and row.get("lb_status") != "public":
+            return "canonical", PRIVATE_AREA
         if not year:
             return "blocked", "no show date — can't route"
         expected = self.expected_parent(year)
         if expected is None:
             return "blocked", f"no route for {year}"
+        if self.in_private(row["disk_path"]):
+            return "public", expected
         if norm(Path(row["disk_path"]).parent) == expected:
             return "canonical", expected
         return "misfiled", expected
@@ -392,9 +411,9 @@ class Collection:
         return "stray", "not in collection", None
 
     def misfiled(self) -> list[dict]:
-        """Collection rows whose folder is not under its year's routed location."""
+        """Rows to refile: misfiled, or public LBs sitting in the private area."""
         return [r for r in self.rows
-                if r.get("disk_path") and self.row_status(r)[0] == "misfiled"]
+                if r.get("disk_path") and self.row_status(r)[0] in ("misfiled", "public")]
 
 
 @dataclass
@@ -467,6 +486,7 @@ class Pane:
         self.filter = ""
         self.editing = False
         self.tags: set[str] = set()
+        self.show = "all"                # all | off (not in the right spot) | public
 
     @property
     def virtual(self) -> bool:
@@ -474,11 +494,16 @@ class Pane:
         return self.root is None
 
     def visible(self) -> list[Entry]:
-        """Entries after the filter; `..` always stays."""
+        """Entries after the show mode and the text filter; `..` always stays."""
+        rows = self.entries
+        if self.show == "off":
+            rows = [e for e in rows if e.kind == "parent" or e.status in OFF]
+        elif self.show == "public":
+            rows = [e for e in rows if e.kind == "parent" or e.status == "public"]
         if not self.filter:
-            return self.entries
+            return rows
         needle = self.filter.lower()
-        return [e for e in self.entries if e.kind == "parent" or needle in e.name.lower()]
+        return [e for e in rows if e.kind == "parent" or needle in e.name.lower()]
 
     def current(self) -> Entry | None:
         """The entry under the cursor."""
@@ -1063,6 +1088,8 @@ Move        ↑ ↓ PgUp PgDn Home End   (phone: k j K J g G)
 Tab         switch pane              Enter   open folder
 Backspace   up one level             Space/Ins tag · + all · - none · * invert
 /           filter the active pane   Esc     close / clear filter / clear tags
+f           show: all → only folders not in the right spot → only public LBs
+            sitting in the private folder (works in the F8 list too)
 
 1 Help      this screen
 2 Info      the folder's collection row, show date, route and expected location
@@ -1087,7 +1114,9 @@ o / Ctrl-O  log pane                      s / Ctrl-S  size the cursor folder
 t           cycle colour scheme
 
 Glyphs: ✓ canonical  → misfiled (⇒ where it belongs)  ? stray, not in collection
+        ↑ public LB still under the private folder (F7 files it to its year)
         ≠ duplicate — the collection holds this LB at another path  ⊘ blocked
+A private LB anywhere under "PRIVATE LB" counts as canonical (--private-dir renames it).
 
 Every write goes through the backend (port 5174) after a y/n gate, one folder at a
 time, stopping at the first failure. Duplicates are never filed — resolve them by hand.
@@ -1249,7 +1278,7 @@ class App:
             "tab": self.switch, "backspace": self.go_up, "enter": self.enter,
             "ins": self.tag_one, "+": lambda: self.tag_all("all"),
             "-": lambda: self.tag_all("none"), "*": lambda: self.tag_all("invert"),
-            "/": self.start_filter, "esc": self.escape, "t": self.cycle_scheme,
+            "/": self.start_filter, "f": self.cycle_show, "esc": self.escape, "t": self.cycle_scheme,
             "d": self.drive_dialog, "c": self.checksum_dialog, "r": self.rename_dialog,
             "ctrl-u": self.swap, "ctrl-o": self.toggle_log,
             "ctrl-s": self.size_current, "ctrl-r": self.reload, "f5": self.reload,
@@ -1327,6 +1356,16 @@ class App:
         keys = {e.key for e in self.active.visible() if e.lb is not None}
         tags = self.active.tags
         self.active.tags = keys if how == "all" else set() if how == "none" else keys - tags
+
+    def cycle_show(self) -> None:
+        """f: show all → only folders not in the right spot → only public LBs in private."""
+        pane = self.active
+        pane.show = SHOW_MODES[(SHOW_MODES.index(pane.show) + 1) % len(SHOW_MODES)]
+        pane.cursor = pane.top = 0
+        shown = sum(1 for e in pane.visible() if e.kind != "parent")
+        self.say({"all": "showing everything",
+                  "off": f"{shown} folder(s) not in the right spot",
+                  "public": f"{shown} public LB(s) in {PRIVATE_DIR}"}[pane.show])
 
     def start_filter(self) -> None:
         """/: type a filter."""
@@ -1448,7 +1487,7 @@ class App:
         for e in picked:
             if e.status == "stray" and e.note == IN_PLACE:
                 register.append(e)
-            elif e.status in ("misfiled", "stray"):
+            elif e.status in ("misfiled", "public", "stray"):
                 todo.append(e)
             elif e.status == "canonical":
                 skipped.append(f"  skip {e.name}: already canonical")
@@ -1623,7 +1662,11 @@ class App:
             if row:
                 text.append(f"show  {row.get('date_str') or '?'}  {row.get('location') or ''}")
                 text.append(f"collection path  {row.get('disk_path')}")
-            if cur.status in ("canonical", "misfiled"):
+            if cur.note == PRIVATE_AREA:
+                text.append(f"private LB under {PRIVATE_DIR} — where it belongs")
+            elif cur.status in ("canonical", "misfiled", "public"):
+                if cur.status == "public":
+                    text.append(f"public now, but filed under {PRIVATE_DIR}")
                 year = self.year_of(cur)
                 mount = self.coll.mount_for(cur.note) if self.coll else None
                 text.append(f"routes to  {cur.note}"
@@ -1829,7 +1872,8 @@ class App:
         b = self.box
         if pane.virtual:
             title = "MISFILED — all mounts"
-            count = f"{len(pane.entries)} misfiled"
+            public = sum(1 for e in pane.entries if e.status == "public")
+            count = f"{len(pane.entries)} to refile" + (f" · {public} public" if public else "")
         else:
             mount = self.coll.mount_for(pane.cwd) if self.coll else None
             if mount:
@@ -1838,9 +1882,11 @@ class App:
             else:
                 title = str(pane.cwd)
             lbs = [e for e in pane.entries if e.lb is not None]
-            off = sum(1 for e in lbs if e.status in ("misfiled", "stray", "dup", "blocked"))
+            off = sum(1 for e in lbs if e.status in OFF)
             count = f"{len(lbs)} LB" + (f" · {off} off" if off else "")
             count += f" · {self.free(pane.cwd)} free"
+        if pane.show != "all":
+            count = f"[{'not right' if pane.show == 'off' else 'public in private'}] {count}"
         if pane.tags:
             sizes = [self.sizes.get(e.path) for e in pane.entries
                      if e.key in pane.tags and e.kind == "dir"]
@@ -1923,8 +1969,10 @@ class App:
             row = cur.row or {}
             first = f"{cur.name}  ·  {STATUS_TEXT.get(cur.status, '?')}"
             show = f"LB-{cur.lb:05d}  {row.get('date_str') or ''}  {row.get('location') or ''}"
-            if cur.status == "misfiled":
-                third = f"{self.g['dest']} {cur.note}  free: {self.free(cur.note)}  (F7 files)"
+            if cur.status in ("misfiled", "public"):
+                why = "went public — " if cur.status == "public" else ""
+                third = (f"{why}{self.g['dest']} {cur.note}  free: {self.free(cur.note)}"
+                         "  (F7 files)")
             elif cur.status == "dup":
                 third = f"collection copy: {cur.note}"
             elif cur.status == "stray":
@@ -1932,6 +1980,8 @@ class App:
                          else "not in collection — F7 files and registers it")
             elif cur.status == "blocked":
                 third = cur.note
+            elif cur.note == PRIVATE_AREA:
+                third = f"{self.g['canonical']} private LB, under {PRIVATE_DIR}"
             else:
                 third = f"{self.g['canonical']} at its routed location"
             rows = [first, show, third]
@@ -2293,13 +2343,14 @@ def build_fixture(base: Path) -> FakeApi:
     routes += [{"year": y, "mount_id": 2, "sub_path": str(y)} for y in range(1980, 2026)]
     rows: list[dict] = []
 
-    def folder(parent: Path, name: str, lb: int | None, registered: bool = True) -> None:
+    def folder(parent: Path, name: str, lb: int | None, registered: bool = True,
+               status: str = "public") -> None:
         (parent / name).mkdir(parents=True, exist_ok=True)
         (parent / name / "d1t01.flac").write_bytes(b"\0" * 1024)
         if lb is not None and registered:
             rows.append({"lb_number": lb, "folder_name": name,
                          "disk_path": str(parent / name), "date_str": name[:10],
-                         "location": name[11:].split(" (")[0]})
+                         "location": name[11:].split(" (")[0], "lb_status": status})
 
     folder(one, "1966-05-17 Manchester, England (LB-00123)", 123)
     folder(one, "1975-11-19 Toronto, Canada (LB-04410)", 4410)
@@ -2310,6 +2361,9 @@ def build_fixture(base: Path) -> FakeApi:
     folder(two / "1987", "1975-11-19 Toronto, Canada (LB-04410)-copy", None)
     (two / "1987" / "1975-11-19 Toronto (LB-04410) alt").mkdir()            # dup
     folder(two / "1998", "1998-06-24 Portsmouth, England (LB-09001)", 9001)
+    private = base / "DYLAN2" / "PRIVATE LB" / "Batch A"                  # outside Concerts/
+    folder(private, "1990-01-12 New Haven, CT (LB-08001)-NFT", 8001, status="private")
+    folder(private, "1991-02-20 New York, NY (LB-08002)", 8002)             # went public
     (one / "notes.txt").write_text("mount notes\n")
     return FakeApi(mounts, routes, rows)
 
@@ -2346,10 +2400,13 @@ def preview(cols: int, rows: int, ascii_only: bool, scheme: str) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     """Parse flags, then run the UI (or --preview)."""
+    global PRIVATE_DIR
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--left", type=Path, help="left pane start (default: first mount)")
     parser.add_argument("--right", type=Path, help="right pane start (default: second mount)")
     parser.add_argument("--api", default=API_URL, help=f"backend URL (default {API_URL})")
+    parser.add_argument("--private-dir", default=PRIVATE_DIR,
+                        help=f"folder name that holds private LBs (default {PRIVATE_DIR!r})")
     parser.add_argument("--read-only", action="store_true",
                         help="browse, info, view; every write gated off")
     parser.add_argument("--scheme", choices=SCHEME_NAMES)
@@ -2360,6 +2417,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--columns", type=int, help="forced width for --preview")
     parser.add_argument("--rows", type=int, help="forced height for --preview")
     args = parser.parse_args(argv)
+    PRIVATE_DIR = args.private_dir
 
     LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
     logging.basicConfig(filename=LOG_PATH, level=logging.INFO,

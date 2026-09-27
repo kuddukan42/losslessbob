@@ -1,8 +1,8 @@
-TODO-355: File the 3,129 collection folders outside the Concerts/ mount roots
+TODO-355: Refile 1,293 public LBs out of PRIVATE LB + 848 misfiled collection folders
 Priority: Medium
 Status: Open
 Added: 2026-09-27
-Description: Live check 2026-09-27 (lb_nc Collection.load): 16,635 rows, 13,441 canonical, 3,172 misfiled, 22 blocked (no date). 3,129 misfiled rows have disk_path on /mnt/DYLAN1 (754) or /mnt/DYLAN2 (2,375) but outside the mount roots /mnt/DYLANx/Concerts (route_status no_mount); 15 wrong_mount, 28 on the right mount but wrong sub-folder. Work them in tools/lb-nc: F8 lists them, + tags all, F7 files each to Concerts/<year> (same-drive rename, instant). Check first whether the paths still exist (src_missing means a stale DB path, not a misfiled folder).
+Description: Live check 2026-09-27 (lb_nc Collection.load, private-area rule: a private LB anywhere under a "PRIVATE LB" folder is canonical): 16,635 rows — 14,489 canonical, 1,293 public LBs still under /mnt/DYLAN2/PRIVATE LB (went public since filing), 848 misfiled, 5 blocked (no date). Most of the 848 sit on /mnt/DYLAN1 or /mnt/DYLAN2 outside the Concerts/ mount roots. Work them in tools/lb-nc: F8 lists both kinds, f cycles to public-only, + tags, F7 files each to Concerts/<year> (the space check says whether a batch crosses drives). Check first whether the paths still exist (src_missing means a stale DB path, not a misfiled folder).
 
 TODO-354: Silver dossier review: tj decisions A–I
 Priority: High

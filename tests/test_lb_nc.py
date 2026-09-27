@@ -63,7 +63,7 @@ def test_file_misfiled_moves_to_route(app, tmp_path):
     start = next(b for p, b in app.api.calls if p == "/api/pipeline/file/start")
     assert start["file_mode"] == "move"            # a registered folder never copies
     assert "mount_id" not in start["folders"][0]
-    assert app.coll.misfiled() == []
+    assert [r["lb_number"] for r in app.coll.misfiled()] == [8002]   # public-in-private
 
 
 def test_file_skips_canonical_and_dup(app, tmp_path):
@@ -103,7 +103,7 @@ def test_move_without_reroute_leaves_it_misfiled(app, tmp_path):
     app.dialog = None
     app.active = app.left
     app.handle("f8")
-    assert sorted(e.lb for e in app.left.entries) == [1860, 4410]
+    assert sorted(e.lb for e in app.left.entries) == [1860, 4410, 8002]
 
 
 def test_file_out_of_place_stray_registers_it(app, tmp_path):
@@ -236,3 +236,48 @@ def test_rename_without_pipeline_result_is_skipped(app):
     app.handle("r")
     assert isinstance(app.dialog, lb_nc.Message)
     assert any("F4 it first" in line for line in app.dialog.text)
+
+
+PRIVATE = ("PRIVATE LB", "Batch A")
+
+
+def test_private_lb_in_private_area_is_canonical(app):
+    status, note = app.coll.row_status(app.coll.by_lb[8001])
+    assert (status, note) == ("canonical", lb_nc.PRIVATE_AREA)
+
+
+def test_public_lb_in_private_area_is_flagged_and_listed(app, tmp_path):
+    status, note = app.coll.row_status(app.coll.by_lb[8002])
+    assert status == "public"
+    assert note == lb_nc.norm(tmp_path / "DYLAN2" / "1991")
+    assert 8002 in [int(r["lb_number"]) for r in app.coll.misfiled()]
+    assert 8001 not in [int(r["lb_number"]) for r in app.coll.misfiled()]
+
+
+def test_f7_files_public_lb_out_of_private(app, tmp_path):
+    app.set_root(app.left, tmp_path / "DYLAN2")
+    app.set_dir(app.left, tmp_path / "DYLAN2" / PRIVATE[0] / PRIVATE[1])
+    _pick(app.left, "1991-02-20 New York, NY (LB-08002)")
+    app.handle("f7")
+    app.handle("y")
+    app.tick()
+    assert (tmp_path / "DYLAN2" / "1991" / "1991-02-20 New York, NY (LB-08002)").is_dir()
+
+
+def test_show_filter_cycles(app, tmp_path):
+    names = lambda: [e.name for e in app.left.visible() if e.kind != "parent"]  # noqa: E731
+    assert "notes.txt" in names()
+    app.handle("f")                                   # off: not in the right spot
+    assert names() == [MISFILED, PRAGUE]
+    app.handle("f")                                   # public in private: none on DYLAN1
+    assert names() == []
+    app.handle("f")
+    assert "notes.txt" in names()
+
+
+def test_show_filter_public_in_misfiled_view(app):
+    app.handle("f8")
+    app.handle("f")
+    app.handle("f")
+    assert [e.lb for e in app.left.visible()] == [8002]
+
