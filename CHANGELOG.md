@@ -7,10 +7,17 @@ Added: tools/lb_nc.py + tools/lb-nc: a two-pane terminal commander over the coll
   those years); F8 lists every misfiled row across mounts; F4 runs the pipeline check steps; d picks a drive.
   All writes go through /api/pipeline/file/* and /api/collection — the tool has no filesystem write code.
   Duplicates (the collection holds that LB at another path) are never filed.
+Added: tools/lb_nc.py: free space — pane headers show free space and the tagged folders' total size;
+  a drives line under the panes shows every mount's free space and fill. F6/F7 add up the bytes each
+  cross-drive move needs per target (same-drive moves are renames and need none) and refuse a batch
+  that would leave under 2 GB free.
+Added: tools/lb_nc.py: c generates checksums (/api/verify/generate) for tagged folders with no
+  .ffp/.md5/.st5; r applies the last F4 run's proposed names (/api/folder/rename — rename_history,
+  my_collection and qBittorrent follow). Usual order for a new folder: c → F4 → r → F7.
 Changed: backend/app.py: POST /api/pipeline/file/start accepts an optional file_mode ("move"|"copy") that
   overrides pipeline_file_mode for one job, so a mount-to-mount shuffle can't be turned into a copy; other
   values are 400 bad_input.
-Added: tests/test_lb_nc.py (15, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3).
+Added: tests/test_lb_nc.py (22, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3).
 Changed: PROJECT.md (route param, tools tree), docs/wiki/Collection-Pipeline.md (commander section).
 Opened: TODO-355 — the live collection has 3,129 rows on DYLAN1/2 outside the Concerts/ mount roots.
 

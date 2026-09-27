@@ -53,8 +53,10 @@ MIN_ROWS = 10
 TICK = 0.25
 LOG_ROWS = 8
 POLL = 0.5
+SPACE_RESERVE = 2 * 1024 ** 3        # bytes a cross-drive move must leave free on the target
 SCHEME_NAMES = ("nc", "amber", "green", "mono")
 PIPELINE_STEPS = ["verify", "lookup", "lbdir", "rename", "file"]
+CHECKSUM_SUFFIXES = (".ffp", ".md5", ".st5")
 VIEW_SUFFIXES = (".txt", ".md5", ".ffp", ".st5", ".sha256", ".nfo", ".log", ".cue")
 LB_RE = re.compile(r"LB-(\d{1,6})", re.IGNORECASE)
 YEAR_RE = re.compile(r"^(\d{4})")
@@ -211,6 +213,22 @@ def human(size: int | None) -> str:
             return f"{value:.0f}{unit}" if value >= 10 or unit == "B" else f"{value:.1f}{unit}"
         value /= 1024
     return "?"
+
+
+def existing(path: str | Path) -> Path:
+    """The path, or its nearest ancestor that exists (a destination not made yet)."""
+    probe = Path(path)
+    while not probe.exists() and probe != probe.parent:
+        probe = probe.parent
+    return probe
+
+
+def same_device(a: Path, b: Path) -> bool:
+    """True when both paths are on one filesystem (a move is then a rename)."""
+    try:
+        return os.stat(a).st_dev == os.stat(b).st_dev
+    except OSError:
+        return False
 
 
 def tree_size(path: Path) -> int:
@@ -524,6 +542,22 @@ class SizeCache:
             return self.get(path)
         return None
 
+    def get_now(self, path: Path) -> int:
+        """The size, computed in this thread when not cached (for the space check)."""
+        size = self.get(path) if not self.threaded else None
+        if size is not None:
+            return size
+        with self.lock:
+            hit = self.data.get(str(path))
+        try:
+            if hit and hit[0] == path.stat().st_mtime:
+                return int(hit[1])
+        except OSError:
+            return 0
+        self._compute(path)
+        with self.lock:
+            return int(self.data.get(str(path), [0, 0])[1])
+
     def _compute(self, path: Path) -> None:
         try:
             mtime = path.stat().st_mtime
@@ -622,6 +656,46 @@ def register_job(api: Api, entry: Entry) -> Job:
         emit(f"registered LB-{entry.lb:05d} at {entry.path}"
              + ("" if res.get("added") else " (already present)"), False)
     return Job(f"register LB-{entry.lb:05d}", f"{entry.name}  (register in place)", run)
+
+
+def has_checksums(folder: Path) -> bool:
+    """True when any .ffp/.md5/.st5 sits anywhere under the folder."""
+    try:
+        return any(p.suffix.lower() in CHECKSUM_SUFFIXES and p.is_file()
+                   for p in folder.rglob("*"))
+    except OSError:
+        return False
+
+
+def generate_job(api: Api, entry: Entry) -> Job:
+    """Write _mychecksums.ffp/.md5 into one folder via /api/verify/generate."""
+    def run(emit: Emit) -> None:
+        emit(f"checksums {entry.name}", False)
+        res = api.post("/api/verify/generate", {"folders": [str(entry.path)]})
+        if "results" not in res:
+            raise JobError(f"generate: {res.get('error')}")
+        result = res["results"][0]
+        for err in result.get("errors") or []:
+            emit(f"  error: {err}", False)
+        if not result.get("generated"):
+            raise JobError(f"nothing generated for {entry.name}")
+        emit("  wrote " + ", ".join(Path(g).name for g in result["generated"]), False)
+    return Job("checksums", f"{entry.name}  (generate checksums)", run)
+
+
+def rename_job(api: Api, entry: Entry, new_name: str) -> Job:
+    """Rename one folder in place via /api/folder/rename (collection row + qBittorrent follow)."""
+    def run(emit: Emit) -> None:
+        body: dict[str, Any] = {"folder": str(entry.path), "new_name": new_name}
+        if entry.lb is not None:
+            body["lb_number"] = entry.lb
+        res = api.post("/api/folder/rename", body)
+        if not res.get("ok"):
+            raise JobError(f"rename {entry.name}: {res.get('error')}")
+        emit(f"renamed {entry.name} {GLYPHS['dest']} {new_name}", False)
+        if res.get("qbt_error"):
+            emit(f"  qBittorrent: {res['qbt_error']}", False)
+    return Job("rename", f"{entry.name}  {GLYPHS['dest']} {new_name}", run)
 
 
 def route_job(api: Api, year: int, mount: dict, sub_path: str) -> Job:
@@ -1000,8 +1074,13 @@ Backspace   up one level             Space/Ins tag · + all · - none · * inver
             collection row and qBittorrent follow); r also re-routes their years
 7 File      file tagged misfiled / stray folders to their year-routed location
 8 Misfd     toggle this pane to the virtual list of every misfiled folder
-9 Menu      drive picker, swap panes, stop queue, cancel pipeline, re-route years
+9 Menu      drive picker, swap panes, checksums, renames, stop queue, cancel
+            pipeline, re-route years
 0/q Quit
+
+c           generate checksums (folders with no .ffp/.md5/.st5)
+r           apply the renames the last F4 run proposed
+            usual order for a new folder: c → 4 Pipe → r → 7 File
 
 d           drive picker for this pane    u / Ctrl-U  swap panes
 o / Ctrl-O  log pane                      s / Ctrl-S  size the cursor folder
@@ -1011,7 +1090,9 @@ Glyphs: ✓ canonical  → misfiled (⇒ where it belongs)  ? stray, not in coll
         ≠ duplicate — the collection holds this LB at another path  ⊘ blocked
 
 Every write goes through the backend (port 5174) after a y/n gate, one folder at a
-time, stopping at the first failure. Duplicates are never filed — resolve them by hand."""
+time, stopping at the first failure. Duplicates are never filed — resolve them by hand.
+Pane headers show free space; the line under the panes shows every drive. F6/F7 add up
+cross-drive bytes per target and refuse a batch that would leave < 2G free."""
 
 
 # -------------------------------------------------------------------------------- app
@@ -1169,7 +1250,8 @@ class App:
             "ins": self.tag_one, "+": lambda: self.tag_all("all"),
             "-": lambda: self.tag_all("none"), "*": lambda: self.tag_all("invert"),
             "/": self.start_filter, "esc": self.escape, "t": self.cycle_scheme,
-            "d": self.drive_dialog, "ctrl-u": self.swap, "ctrl-o": self.toggle_log,
+            "d": self.drive_dialog, "c": self.checksum_dialog, "r": self.rename_dialog,
+            "ctrl-u": self.swap, "ctrl-o": self.toggle_log,
             "ctrl-s": self.size_current, "ctrl-r": self.reload, "f5": self.reload,
             "f1": self.help, "f2": self.info, "f3": self.view, "f4": self.pipeline_dialog,
             "f6": self.move_dialog, "f7": self.file_dialog, "f8": self.toggle_misfiled,
@@ -1382,6 +1464,9 @@ class App:
         jobs = [file_job(self.api, e, None, "move" if e.row else None, dest)
                 for e, dest in chosen]
         jobs += [register_job(self.api, e) for e in register]
+        space = self.space_gate("File", chosen) if chosen else []
+        if space is None:
+            return
         blurb = [f"{len(chosen)} folder(s) to their year-routed location.",
                  "Registered folders are moved; strays use the pipeline file mode and",
                  "are added to the collection. Cross-drive moves are SHA-256 verified",
@@ -1389,7 +1474,7 @@ class App:
         if register:
             blurb += [f"{len(register)} stray(s) already in place are only registered — no",
                       "checksum pass; F4 Pipe them first if unsure."]
-        blurb += [*skipped, *refused]
+        blurb += [*space, *skipped, *refused]
         self.gate("File to canonical", jobs, blurb)
 
     def move_dialog(self) -> None:
@@ -1422,6 +1507,9 @@ class App:
             self.dialog = Message("Move", [str(exc)])
             return
         moves = [file_job(self.api, e, mount["id"], "move", dest) for e, dest in chosen]
+        space = self.space_gate("Move", chosen) if chosen else []
+        if space is None:
+            return
         years = sorted({y for e, _ in chosen if (y := self.year_of(e)) is not None})
         stay = [y for y in years if (self.coll.routes.get(y) or {}).get("mount_id")
                 != mount["id"]]
@@ -1440,10 +1528,47 @@ class App:
             blurb += [f"Years {span} route elsewhere: without r these folders show as",
                       "misfiled afterwards. With r, the routes move too — other folders",
                       "of those years left behind then show as misfiled (F8)."]
-        blurb += skipped + refused
+        blurb += space + skipped + refused
         toggle = ("r", f"re-route {len(stay)} year(s) to {mount['label']} after the moves",
                   jobs) if stay and moves else None
         self.gate("Move to other mount", moves, blurb, toggle=toggle)
+
+    def checksum_dialog(self) -> None:
+        """c: generate checksums for selected folders that have none."""
+        picked = [e for e in self.active.selection() if e.kind == "dir"]
+        if not picked:
+            self.dialog = Message("Checksums", ["Select folders first (Space tags)."])
+            return
+        todo = [e for e in picked if not has_checksums(e.path)]
+        skipped = [f"  skip {e.name}: already has .ffp/.md5/.st5" for e in picked
+                   if e not in todo]
+        self.gate("Generate checksums", [generate_job(self.api, e) for e in todo], [
+            "Writes _mychecksums.ffp (FLAC fingerprints) and _mychecksums.md5 into each",
+            "folder; existing checksum files are never overwritten. Then F4 looks",
+            "the folder up by them.", *skipped])
+
+    def rename_dialog(self) -> None:
+        """r: apply the pipeline's proposed names to the selected folders."""
+        picked = [e for e in self.active.selection() if e.kind == "dir"]
+        if not picked:
+            self.dialog = Message("Rename", ["Select folders first (Space tags)."])
+            return
+        jobs, skipped = [], []
+        for e in picked:
+            result = self.pipeline_results.get(str(e.path))
+            proposed = ((result or {}).get("rename") or {}).get("proposed")
+            if result is None:
+                skipped.append(f"  skip {e.name}: no pipeline result — F4 it first")
+            elif not proposed:
+                skipped.append(f"  skip {e.name}: name already correct")
+            elif (e.path.parent / proposed).exists():
+                skipped.append(f"  skip {e.name}: {proposed} already exists")
+            else:
+                jobs.append(rename_job(self.api, e, proposed))
+        self.gate("Apply renames", jobs, [
+            "Renames each folder in place to the pipeline's proposed name. The rename",
+            "is logged (rename_history), my_collection and qBittorrent follow.",
+            *skipped])
 
     def year_of(self, entry: Entry) -> int | None:
         """The show year of an entry, from its collection row or its folder name."""
@@ -1584,6 +1709,8 @@ class App:
         self.dialog = Picker("Menu", [
             ("Drive picker for this pane (d)", self.drive_dialog),
             ("Swap panes (u)", self.swap),
+            ("Generate checksums for the selection (c)", self.checksum_dialog),
+            ("Apply the pipeline's proposed renames (r)", self.rename_dialog),
             ("Re-route the selection's years to the other pane's mount", self.reroute_dialog),
             ("Last pipeline results", lambda: setattr(self, "dialog", Pager(
                 "Pipeline", self.results_pages()))),
@@ -1602,11 +1729,15 @@ class App:
                 label, text = self.runner.failure
                 self.runner.failure = None
                 self.dialog = Message(f"{label}: failed", text)
+            elif last and last.label == "rename":
+                self.pipeline_results.clear()          # keyed by the old paths
+                self.dialog = Message("done", list(self.runner.lines)[-10:] or ["ok"])
             elif last and last.label == "pipeline":
                 self.dialog = Pager("Pipeline", self.results_pages())
             else:
                 tail = list(self.runner.lines)[-10:]
                 self.dialog = Message("done", tail or ["ok"])
+            self._free_cache.clear()
             self.reload()
         if self.sizes.changed:
             self.sizes.changed = False
@@ -1642,7 +1773,8 @@ class App:
         info_rows = 3 if cols >= 80 else 2
         key_rows = 1 if two else 2
         log_rows = LOG_ROWS + 1 if self.show_log else 0
-        body = rows - 1 - 1 - 1 - info_rows - 1 - key_rows - log_rows
+        drives = self.drives_line() if rows >= 16 else ""
+        body = rows - 1 - 1 - 1 - info_rows - 1 - key_rows - log_rows - bool(drives)
         if body < 3 and log_rows:
             body, log_rows = body + log_rows, 0
         if body < 1:
@@ -1682,6 +1814,9 @@ class App:
             title = f"{b['h']} log{' (running)' if self.runner.running else ''} "
             out.append([("frame", b["lt"] + title + b["h"] * max(0, cols - 2 - len(title))
                          + b["rt"])])
+        if drives:
+            out.append([("frame", b["v"]), ("dim", fit(drives, cols - 2, self.g["ellipsis"])),
+                        ("frame", b["v"])])
         for text in self.info_strip(info_rows):
             out.append([("frame", b["v"]), ("text", fit(text, cols - 2, self.g["ellipsis"])),
                         ("frame", b["v"])])
@@ -1707,7 +1842,10 @@ class App:
             count = f"{len(lbs)} LB" + (f" · {off} off" if off else "")
             count += f" · {self.free(pane.cwd)} free"
         if pane.tags:
-            count = f"{len(pane.tags)} tagged · {count}"
+            sizes = [self.sizes.get(e.path) for e in pane.entries
+                     if e.key in pane.tags and e.kind == "dir"]
+            total = None if any(z is None for z in sizes) else sum(z or 0 for z in sizes)
+            count = f"{len(pane.tags)} tagged {human(total)} · {count}"
         if pane.filter or pane.editing:
             count = f"{len(pane.visible()) - (not pane.virtual)}/{count}"
         if narrow:
@@ -1801,22 +1939,80 @@ class App:
             rows.insert(0, f"{self.g['running']} {self.flash[0]}")
         return (rows + ["", "", ""])[:count]
 
-    def free(self, path: str | Path | None) -> str:
-        """Free space on the filesystem holding path, re-read at most every 10 s."""
+    def usage(self, path: str | Path | None, fresh: bool = False) -> tuple[int, int] | None:
+        """(free, total) bytes on the filesystem holding path, re-read at most every 10 s."""
         if path is None:
-            return "?"
+            return None
         hit = self._free_cache.get(str(path))
-        if hit and time.monotonic() - hit[0] < 10:
+        if hit and not fresh and time.monotonic() - hit[0] < 10:
             return hit[1]
-        probe = Path(path)
-        while not probe.exists() and probe != probe.parent:
-            probe = probe.parent
         try:
-            text = human(shutil.disk_usage(probe).free)
+            du = shutil.disk_usage(existing(path))
+            value: tuple[int, int] | None = (du.free, du.total)
         except OSError:
-            text = "?"
-        self._free_cache[str(path)] = (time.monotonic(), text)
-        return text
+            value = None
+        self._free_cache[str(path)] = (time.monotonic(), value)
+        return value
+
+    def free(self, path: str | Path | None) -> str:
+        """Free space on the filesystem holding path, as 1.2T text."""
+        value = self.usage(path)
+        return human(value[0]) if value else "?"
+
+    def drives_line(self) -> str:
+        """Every mount's free space and fill, e.g. DYLAN1 1.2T free (78%)."""
+        parts = []
+        for m in (self.coll.mounts if self.coll else []):
+            value = self.usage(m["root_path"])
+            if value is None:
+                parts.append(f"{m['label']} offline")
+                continue
+            free, total = value
+            used = round((total - free) / total * 100) if total else 0
+            parts.append(f"{m['label']} {human(free)} free ({used}%)")
+        return "drives: " + "  ·  ".join(parts) if parts else ""
+
+    def space_check(self, pairs: list[tuple[Entry, str]]) -> tuple[list[str], bool]:
+        """What a batch of moves needs per target drive. Returns (lines, won't fit).
+
+        A move within one filesystem is a rename and needs nothing; a cross-drive move
+        needs the folder's full size on the target plus SPACE_RESERVE.
+        """
+        need: dict[str, int] = {}
+        where: dict[str, Path] = {}
+        for entry, dest in pairs:
+            target = existing(dest)
+            if same_device(entry.path, target):
+                continue
+            mount = self.coll.mount_for(dest) if self.coll else None
+            label = mount["label"] if mount else str(target)
+            need[label] = need.get(label, 0) + self.sizes.get_now(entry.path)
+            where[label] = target
+        if not need:
+            return ["  space: same-drive renames only — nothing to copy"], False
+        lines, over = [], False
+        for label, size in need.items():
+            value = self.usage(where[label], fresh=True)
+            if value is None:
+                lines.append(f"  {label}: needs {human(size)}, free space unreadable")
+                over = True
+                continue
+            after = value[0] - size
+            fits = after >= SPACE_RESERVE
+            over = over or not fits
+            lines.append(f"  {label}: needs {human(size)} of {human(value[0])} free"
+                         f" {self.g['dest']} {human(max(after, 0))} after"
+                         + ("" if fits else f"  — WON'T FIT ({human(SPACE_RESERVE)} reserve)"))
+        return lines, over
+
+    def space_gate(self, title: str, pairs: list[tuple[Entry, str]]) -> list[str] | None:
+        """Space lines for the confirm blurb, or None after refusing a batch that won't fit."""
+        lines, over = self.space_check(pairs)
+        if over:
+            self.dialog = Message(f"{title}: not enough space", [
+                *lines, "", "Untag some folders or free space on the target first."])
+            return None
+        return lines
 
     def keybar(self, cols: int, y: int) -> list[Line]:
         """The F-key bar; every slot is clickable."""
@@ -2064,6 +2260,21 @@ class FakeApi(Api):
                               "disk_path": body["disk_path"],
                               "date_str": body["folder_name"][:10]})
             return {"ok": True, "added": True}
+        if path == "/api/verify/generate":
+            out = []
+            for f in body["folders"]:
+                target = Path(f) / "_mychecksums.ffp"
+                target.write_text("d1t01.flac:0\n")
+                out.append({"folder": f, "generated": [str(target)], "errors": []})
+            return {"results": out}
+        if path == "/api/folder/rename":
+            src = Path(body["folder"])
+            dst = src.parent / body["new_name"]
+            os.rename(src, dst)
+            for r in self.rows:
+                if r["disk_path"] == str(src):
+                    r["disk_path"], r["folder_name"] = str(dst), dst.name
+            return {"ok": True, "new_path": str(dst)}
         if path == "/api/collection/routes/bulk":
             for year in range(body["year_from"], body["year_to"] + 1):
                 self.routes_rows = [r for r in self.routes_rows if r["year"] != year]
