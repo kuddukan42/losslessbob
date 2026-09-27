@@ -6,6 +6,10 @@ Added: tools/wtrf_repair_extras.py: re-plans each "missing extras" overlay and r
   incomplete files a local source (collection, site files, re-fetch) can satisfy, then repair_overlay +
   recheck; collection snapshot-checked. Live: 221 files written across 51 overlays, 56 have no local source;
   1 torrent completed — the rest share pieces with those 56, so they stay short until the swarm has them.
+Added: tools/wtrf_repair_extras.py --complete-only: touch only overlays whose every missing file has a
+  local source; summary shows MB to write; start before recheck (a start sent mid-check was dropped). Live on
+  "missing music": 100 repaired, 13 reached 100% — most of the rest have same-size but differing .flac/.shn
+  (retagged in place in the collection), which only the swarm can supply.
 
 [2026-09-26] — WTRF seed walk: --resume finds the frontier page itself
 Added: tools/wtrf_seed_board.py --resume: binary-searches the board (~9 listing requests) for the first page
