@@ -15,6 +15,7 @@ TORONTO = "1975-11-19 Toronto, Canada (LB-04410)"
 PRAGUE = "1995-03-01 Prague, Czech Republic (LB-05555)"
 TOKYO = "1978-06-15 Tokyo, Japan (LB-03003)"
 TEL_AVIV = "1987-09-05 Tel Aviv, Israel (LB-02311)"
+LEGACY = "bd1966-05-26 LB-321 London"
 
 
 @pytest.fixture
@@ -37,6 +38,7 @@ def test_classify_every_status(app, tmp_path):
         "1966-05-17 Manchester, England (LB-00123)": "canonical",
         TORONTO: "canonical",
         TOKYO: "canonical",
+        LEGACY: "canonical",
         MISFILED: "misfiled",
         PRAGUE: "stray",
     }
@@ -216,7 +218,7 @@ def test_generate_checksums_skips_folders_that_have_them(app, tmp_path):
     app.handle("+")
     app.handle("c")
     labels = [j.detail for j in app.dialog.jobs]
-    assert all(TORONTO not in d for d in labels) and len(labels) == 4
+    assert all(TORONTO not in d for d in labels) and len(labels) == 5
     app.handle("y")
     app.tick()
     assert (tmp_path / "DYLAN1" / MISFILED / "_mychecksums.ffp").is_file()
@@ -277,6 +279,8 @@ def test_show_filter_cycles(app, tmp_path):
     assert names() == []
     app.handle("f")                                   # -NFT mismatch
     assert names() == [TOKYO]
+    app.handle("f")                                   # non-canonical names
+    assert names() == [TOKYO, LEGACY]                 # Tokyo lacks its -NFT too
     app.handle("f")                                   # integrity issues: none loaded
     assert names() == []
     app.handle("f")
@@ -526,3 +530,29 @@ def test_plain_public_rename_is_not_checked(app, tmp_path):
     app.handle("y")
     app.tick()
     assert not any(p.endswith("/live") for p, _ in app.api.calls)
+
+
+def test_noncanonical_name_highlighted_and_renamed(app, tmp_path):
+    entry = next(e for e in app.left.entries if e.name == LEGACY)
+    assert entry.canon == "1966-05-26 London, England (LB-00321)"
+    _pick(app.left, "1966-05-17 Manchester, England (LB-00123)")      # cursor elsewhere
+    row = next(line for line in app.frame(120, 30) if LEGACY in lb_nc.plain(line))
+    assert any(role == "odd" for role, _ in row)
+    app.handle("h")                                   # highlight off
+    row = next(line for line in app.frame(120, 30) if LEGACY in lb_nc.plain(line))
+    assert not any(role == "odd" for role, _ in row)
+    app.handle("h")
+    _pick(app.left, LEGACY)
+    app.handle("r")                                   # no F4 result: uses the row's name
+    assert app.dialog.jobs[0].detail.endswith(entry.canon)
+    app.handle("y")
+    app.tick()
+    assert (tmp_path / "DYLAN1" / entry.canon).is_dir()
+
+
+def test_canonical_name_skips_what_it_cannot_judge():
+    row = {"lb_number": 5, "date_str": "5/26/66", "location": "", "lb_status": "public"}
+    assert lb_nc.canonical_name("anything (LB-00005)", row) == ""
+    row["location"] = "Paris"
+    assert lb_nc.canonical_name("x (LB-00005+LB-00006)", row) == ""
+    assert lb_nc.canonical_name("1966-05-26 Paris (LB-00005)", row) == ""

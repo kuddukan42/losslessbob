@@ -45,10 +45,16 @@ Added: tools/lb_nc.py: live LB-page gate — before moving a folder whose LB is 
   refusals are listed at the end. Verified live: LB-02789 (public, in PRIVATE LB) exists; LB-00167 404.
 Added: tools/lb_nc.py: renames of private-marked folders (n, r, undo of a rename) are gated too — the new name
   must match the live site: -NFT only when the LB has no page, no -NFT only when it has one; no answer refuses.
+Added: tools/lb_nc.py: non-canonical folder names are highlighted (h toggles) — the expected name comes from
+  backend.folder_naming.build_standard_name, the pipeline rename step's rule (multi-LB and no-location
+  entries not judged); the info strip shows it, r renames to it when there's no F4 result, f filters to
+  them. Live: 3,454 of 16,635 collection names are non-canonical (legacy "bd1987-…", "London 15-11-2003-…").
+Fixed: tools/lb_nc.py: Collection.year_of parses the DB's M/D/YY date_str (backend _parse_date) when the
+  backend gave no route_year — such rows were misreported as blocked.
 Changed: backend/app.py: POST /api/pipeline/file/start accepts an optional file_mode ("move"|"copy") that
   overrides pipeline_file_mode for one job, so a mount-to-mount shuffle can't be turned into a copy; other
   values are 400 bad_input.
-Added: tests/test_lb_nc.py (44, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3),
+Added: tests/test_lb_nc.py (46, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3),
   tests/test_scraper_probe_page.py (4).
 Changed: PROJECT.md (route param, tools tree), docs/wiki/Collection-Pipeline.md (commander section).
 Opened: TODO-355 — refile 1,293 public LBs out of PRIVATE LB and 848 misfiled folders.
