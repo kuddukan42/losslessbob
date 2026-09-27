@@ -14,12 +14,16 @@ Added: tools/lb_nc.py: free space — pane headers show free space and the tagge
 Added: tools/lb_nc.py: c generates checksums (/api/verify/generate) for tagged folders with no
   .ffp/.md5/.st5; r applies the last F4 run's proposed names (/api/folder/rename — rename_history,
   my_collection and qBittorrent follow). Usual order for a new folder: c → F4 → r → F7.
+Added: tools/lb_nc.py: private-area rule — a private LB anywhere under a "PRIVATE LB" folder (--private-dir)
+  is canonical; a public LB there gets status "public" (↑, went public since filing) and F7 files it to its
+  year route. f cycles each pane: all → only folders not in the right spot → only public-in-private (works
+  in the F8 list too). Live: 1,293 public LBs in PRIVATE LB; misfiled drops from 3,172 to 848.
 Changed: backend/app.py: POST /api/pipeline/file/start accepts an optional file_mode ("move"|"copy") that
   overrides pipeline_file_mode for one job, so a mount-to-mount shuffle can't be turned into a copy; other
   values are 400 bad_input.
-Added: tests/test_lb_nc.py (22, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3).
+Added: tests/test_lb_nc.py (27, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3).
 Changed: PROJECT.md (route param, tools tree), docs/wiki/Collection-Pipeline.md (commander section).
-Opened: TODO-355 — the live collection has 3,129 rows on DYLAN1/2 outside the Concerts/ mount roots.
+Opened: TODO-355 — refile 1,293 public LBs out of PRIVATE LB and 848 misfiled folders.
 
 [2026-09-27] — WTRF seed walk: a full overlay drive stops the walk; --resume retries it (BUG-364)
 Fixed: backend/tracker_seed.py: build_seed_overlay refuses an overlay whose drive lacks copy + refetch + fetch
