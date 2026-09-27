@@ -19,6 +19,8 @@ Usage::
 
     .venv/bin/python3 tools/wtrf_repair_extras.py            # preview
     .venv/bin/python3 tools/wtrf_repair_extras.py --apply    # repair + recheck
+    .venv/bin/python3 tools/wtrf_repair_extras.py --tag "missing music" \
+        --complete-only --apply    # only torrents that can reach 100% locally
 
 Must be run from the project root directory.
 """
@@ -79,7 +81,7 @@ def lb_for_seed_folder(folder: str) -> int | None:
     return row[0] if row else None
 
 
-def repair_one(s, base: str, t: dict, apply: bool) -> str:
+def repair_one(s, base: str, t: dict, apply: bool, complete_only: bool = False) -> str:
     """Plan (and with ``apply``, perform) the repair of one torrent's overlay.
 
     Args:
@@ -87,6 +89,8 @@ def repair_one(s, base: str, t: dict, apply: bool) -> str:
         base: qBittorrent WebUI base URL.
         t: The torrent's ``/torrents/info`` entry.
         apply: Write files and recheck; otherwise only report.
+        complete_only: Touch the overlay only when every missing file has a
+            local source, so the torrent can reach 100%.
 
     Returns:
         A one-line outcome for the log.
@@ -121,8 +125,12 @@ def repair_one(s, base: str, t: dict, apply: bool) -> str:
     missing = {f["name"] for f in files if f["progress"] < 1}
     fixable = [e for e in plan.entries if e.rel_path in missing and e.action != FETCH]
     left = len(missing) - len(fixable)
+    mb = sum(e.size for e in fixable) / 1e6
     summary = (f"LB-{lb:05d} missing {len(missing)}: local source for {len(fixable)}"
+               f" [{mb:.1f} MB]"
                f" ({', '.join(sorted({e.reason for e in fixable})) or '-'}), swarm {left}")
+    if complete_only and left:
+        return f"{summary} | skip: not completable locally"
     if not apply or not fixable:
         return summary
 
@@ -150,6 +158,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--apply", action="store_true", help="write files + recheck")
     ap.add_argument("--tag", default="missing extras", help="qBittorrent tag to repair")
+    ap.add_argument("--complete-only", action="store_true",
+                    help="only torrents whose every missing file has a local source")
     args = ap.parse_args()
 
     base = _base_url(database.get_meta("qbt_host") or "localhost",
@@ -166,7 +176,7 @@ def main() -> int:
     logger.info("%d torrent(s) tagged %r", len(torrents), args.tag)
     for t in torrents:
         try:
-            logger.info("%s — %s", repair_one(s, base, t, args.apply), t["name"][:60])
+            logger.info("%s — %s", repair_one(s, base, t, args.apply, args.complete_only), t["name"][:60])
         except Exception as exc:  # one bad torrent must not stop the batch
             logger.warning("error on %s: %s", t["name"][:60], exc)
     if not args.apply:
