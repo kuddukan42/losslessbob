@@ -44,7 +44,16 @@ from pathlib import Path
 from typing import Any
 
 REPO = Path(__file__).resolve().parent.parent
+if str(REPO) not in sys.path:
+    sys.path.insert(0, str(REPO))
+from backend.folder_naming import (  # noqa: E402 — the repo's own NFT rules, one source
+    apply_nft_suffix,
+    nft_discrepancy,
+    strip_nft_suffix,
+)
+
 LOG_PATH = REPO / "data" / "logs" / "lb_nc.log"
+JOURNAL_PATH = REPO / "data" / "lb_nc_undo.jsonl"
 SIZE_CACHE = Path.home() / ".cache" / "lb_nc" / "sizes.json"
 CONFIG_PATH = Path.home() / ".config" / "systools" / "config"
 API_URL = "http://127.0.0.1:5174"
@@ -63,20 +72,27 @@ YEAR_RE = re.compile(r"^(\d{4})")
 IN_PLACE = "at its routed location, not in collection"
 PRIVATE_DIR = "PRIVATE LB"          # a folder named this holds private LBs, outside the routes
 PRIVATE_AREA = "in the private area"
-OFF = ("misfiled", "public", "stray", "dup", "blocked")    # every "not in the right spot" status
-SHOW_MODES = ("all", "off", "public")
+OFF = ("misfiled", "public", "stray", "dup", "blocked", "gone", "relink")   # not in the right spot
+SHOW_MODES = ("all", "off", "public", "nft", "bad")
+SHOW_LABELS = {"off": "not right", "public": "public in private", "nft": "NFT mismatch",
+               "bad": "integrity issues"}
+DUP_DIR = "_duplicates"             # where the resolver sets a losing copy aside (same drive)
 
 log = logging.getLogger("lb_nc")
 
 # -------------------------------------------------------------------- glyphs, palette
 
-GLYPHS = {"canonical": "✓", "misfiled": "→", "public": "↑", "stray": "?", "dup": "≠", "blocked": "⊘",
+GLYPHS = {"canonical": "✓", "misfiled": "→", "public": "↑", "gone": "✗", "relink": "⇄",
+          "stray": "?", "dup": "≠", "blocked": "⊘",
           "dest": "⇒", "cursor": "▶", "ellipsis": "…", "running": "■"}
-ASCII_GLYPHS = {"canonical": "*", "misfiled": ">", "public": "^", "stray": "?", "dup": "=", "blocked": "x",
+ASCII_GLYPHS = {"canonical": "*", "misfiled": ">", "public": "^", "gone": "X", "relink": "~",
+                "stray": "?", "dup": "=", "blocked": "x",
                 "dest": "=>", "cursor": ">", "ellipsis": "~", "running": "*"}
 STATUS_TEXT = {"canonical": "canonical", "misfiled": "MISFILED",
-               "public": "PUBLIC LB in the private folder", "stray": "not in collection",
-               "dup": "DUPLICATE", "blocked": "blocked"}
+               "public": "PUBLIC LB in the private folder",
+               "gone": "GONE — the collection path is not on disk",
+               "relink": "collection copy is gone — l relinks the record here",
+               "stray": "not in collection", "dup": "DUPLICATE", "blocked": "blocked"}
 BOX = {"h": "─", "v": "│", "tl": "┌", "tr": "┐", "bl": "└", "br": "┘",
        "tt": "┬", "bt": "┴", "lt": "├", "rt": "┤"}
 ASCII_BOX = {"h": "-", "v": "|", "tl": "+", "tr": "+", "bl": "+", "br": "+",
@@ -287,6 +303,14 @@ class Api:
         """POST a JSON body to an endpoint."""
         return self._call("POST", path, body)
 
+    def patch(self, path: str, body: dict) -> Any:
+        """PATCH a JSON body to an endpoint."""
+        return self._call("PATCH", path, body)
+
+    def delete(self, path: str) -> Any:
+        """DELETE an endpoint."""
+        return self._call("DELETE", path)
+
 
 # ------------------------------------------------------------------------------ model
 
@@ -310,6 +334,8 @@ class Collection:
     rows: list[dict]
     by_path: dict[str, dict] = field(default_factory=dict)
     by_lb: dict[int, dict] = field(default_factory=dict)
+    gone: set[str] = field(default_factory=set)            # normed disk_paths not on disk
+    integrity: dict[int, dict] = field(default_factory=dict)   # lb -> integrity status row
 
     @classmethod
     def build(cls, mounts: list[dict], routes: list[dict], rows: list[dict]) -> Collection:
@@ -378,6 +404,8 @@ class Collection:
         has gone public since it was filed: status "public", destination its year route.
         Everything else must sit directly in its year route's folder.
         """
+        if norm(row["disk_path"]) in self.gone:
+            return "gone", ""
         year = self.year_of(row)
         if self.in_private(row["disk_path"]) and row.get("lb_status") != "public":
             return "canonical", PRIVATE_AREA
@@ -403,12 +431,18 @@ class Collection:
             return "", "", None
         other = self.by_lb.get(lb)
         if other:
+            if norm(other.get("disk_path") or "") in self.gone:
+                return "relink", other.get("disk_path") or "", other
             return "dup", other.get("disk_path") or "", other
         m = YEAR_RE.match(path.name)
         expected = self.expected_parent(int(m.group(1))) if m else None
         if expected is not None and norm(path.parent) == expected:
             return "stray", IN_PLACE, None
         return "stray", "not in collection", None
+
+    def stale(self) -> list[dict]:
+        """Rows whose disk_path is no longer on disk (after the gone check ran)."""
+        return [r for r in self.rows if r.get("disk_path") and norm(r["disk_path"]) in self.gone]
 
     def misfiled(self) -> list[dict]:
         """Rows to refile: misfiled, or public LBs sitting in the private area."""
@@ -427,6 +461,8 @@ class Entry:
     note: str = ""                 # expected parent, the other copy, or a reason
     row: dict | None = None
     lb: int | None = None
+    nft: str = ""                  # "missing" (private, no -NFT) | "stale" (public, has -NFT)
+    health: str = ""               # integrity status when it isn't "pass"
 
     @property
     def key(self) -> str:
@@ -455,19 +491,38 @@ def list_dir(root: Path, cwd: Path, coll: Collection | None) -> list[Entry]:
             entry.lb = lb_of(path.name)
             if coll is not None:
                 entry.status, entry.note, entry.row = coll.classify(path)
+                annotate(entry, coll)
         rows.append(entry)
     return rows
 
 
-def list_misfiled(coll: Collection | None) -> list[Entry]:
-    """The virtual pane: every misfiled collection folder, wherever it is."""
+def annotate(entry: Entry, coll: Collection) -> None:
+    """NFT and integrity flags for a folder that is the collection's copy of its LB."""
+    row = entry.row
+    if not row or norm(row.get("disk_path") or "") != norm(entry.path):
+        return
+    nft = nft_discrepancy(entry.name, row.get("lb_status"))
+    entry.nft = nft if nft in ("missing", "stale") else ""
+    health = coll.integrity.get(int(row["lb_number"]))
+    if health and health.get("status") not in (None, "pass") \
+            and norm(health.get("disk_path") or "") == norm(entry.path):
+        entry.health = str(health["status"])
+
+
+VIEWS = {"misfiled": "MISFILED — all mounts", "gone": "GONE — collection paths not on disk"}
+
+
+def list_view(coll: Collection | None, view: str) -> list[Entry]:
+    """A virtual pane: every misfiled (or gone) collection folder, wherever it is."""
     if coll is None:
         return []
     out = []
-    for row in coll.misfiled():
+    for row in (coll.stale() if view == "gone" else coll.misfiled()):
         path = Path(row["disk_path"])
         status, note = coll.row_status(row)
-        out.append(Entry(path.name, path, "dir", status, note, row, int(row["lb_number"])))
+        entry = Entry(path.name, path, "dir", status, note, row, int(row["lb_number"]))
+        annotate(entry, coll)
+        out.append(entry)
     out.sort(key=lambda e: e.name.lower())
     return out
 
@@ -486,7 +541,8 @@ class Pane:
         self.filter = ""
         self.editing = False
         self.tags: set[str] = set()
-        self.show = "all"                # all | off (not in the right spot) | public
+        self.show = "all"                # a SHOW_MODES value
+        self.view = "misfiled"           # which virtual list, when root is None
 
     @property
     def virtual(self) -> bool:
@@ -500,6 +556,10 @@ class Pane:
             rows = [e for e in rows if e.kind == "parent" or e.status in OFF]
         elif self.show == "public":
             rows = [e for e in rows if e.kind == "parent" or e.status == "public"]
+        elif self.show == "nft":
+            rows = [e for e in rows if e.kind == "parent" or e.nft]
+        elif self.show == "bad":
+            rows = [e for e in rows if e.kind == "parent" or e.health]
         if not self.filter:
             return rows
         needle = self.filter.lower()
@@ -621,6 +681,67 @@ class JobError(Exception):
     """A job failed; the message goes to the log pane and the failure dialog."""
 
 
+class Journal:
+    """Append-only undo log, one JSON record per line; an "undone" record retires one.
+
+    With path None it lives in memory (tests, --preview).
+    """
+
+    def __init__(self, path: Path | None) -> None:
+        self.path = path
+        self.lock = threading.Lock()
+        self.mem: list[dict] = []
+
+    def add(self, record: dict) -> None:
+        """Append a record, stamped with an id and the local time."""
+        record = {"id": str(time.time_ns()), "ts": time.strftime("%Y-%m-%d %H:%M:%S"),
+                  **record}
+        with self.lock:
+            if self.path is None:
+                self.mem.append(record)
+                return
+            try:
+                self.path.parent.mkdir(parents=True, exist_ok=True)
+                with open(self.path, "a", encoding="utf-8") as fh:
+                    fh.write(json.dumps(record) + "\n")
+            except OSError as exc:
+                log.warning("undo journal not written: %s", exc)
+
+    def undoable(self, limit: int = 40) -> list[dict]:
+        """Records not yet undone, newest first."""
+        with self.lock:
+            if self.path is None:
+                records = list(self.mem)
+            else:
+                try:
+                    records = [json.loads(line) for line in
+                               self.path.read_text(encoding="utf-8").splitlines() if line.strip()]
+                except (OSError, ValueError):
+                    records = []
+        done = {r.get("undoes") for r in records if r.get("kind") == "undone"}
+        return [r for r in reversed(records)
+                if r.get("kind") != "undone" and r["id"] not in done][:limit]
+
+
+def describe(rec: dict) -> str:
+    """One line for an undo record."""
+    kind = rec.get("kind", "?")
+    if kind in ("move", "rename", "aside"):
+        to = Path(rec["to"])
+        return f"{kind} {Path(rec['from']).name} {GLYPHS['dest']} " + \
+            (str(to.parent) if kind == "move" else to.name if kind == "rename" else str(to))
+    if kind == "relink":
+        return f"relink LB-{rec['lb']:05d} {GLYPHS['dest']} {rec['new_path']}"
+    if kind == "drop":
+        return f"drop record LB-{rec['row']['lb_number']:05d}"
+    if kind == "register":
+        return f"register LB-{rec['lb']:05d}"
+    if kind == "route":
+        return f"route {rec['year']} (was mount {rec.get('old_mount_id')})"
+    if kind == "extras":
+        return f"extras {len(rec['files'])} file(s) in {Path(rec['folder']).name}"
+    return kind
+
 Emit = Callable[[str, bool], None]    # (text, replace_last_progress_line)
 
 
@@ -635,8 +756,11 @@ class Job:
 
 
 def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None,
-             dest: str) -> Job:
+             dest: str, journal: Journal | None = None,
+             from_mount_id: int | None = None) -> Job:
     """File (or move) one folder via /api/pipeline/file/start, polling to completion."""
+    cross = not same_device(entry.path, existing(dest))
+    registered = bool(entry.row) and norm(entry.row.get("disk_path") or "") == norm(entry.path)
     body_item: dict[str, Any] = {"path": str(entry.path), "lb_number": entry.lb}
     if mount_id is not None:
         body_item["mount_id"] = mount_id
@@ -662,6 +786,10 @@ def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None
         if not result.get("ok"):
             raise JobError(f"{result.get('error_code') or 'error'}: {result.get('error')}")
         emit(f"  {result.get('file_mode', 'move')}d ⇒ {result.get('dest')}", True)
+        if journal and result.get("file_mode", "move") == "move":
+            journal.add({"kind": "move", "lb": entry.lb, "from": str(entry.path),
+                         "to": result.get("dest"), "cross": cross,
+                         "from_mount_id": from_mount_id, "registered": registered})
         if result.get("qbt_error"):
             emit(f"  qBittorrent: {result['qbt_error']}", False)
         elif result.get("qbt_synced"):
@@ -671,7 +799,7 @@ def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None
     return Job(f"{verb} LB-{entry.lb:05d}", f"{entry.name}  {GLYPHS['dest']} {dest}", run)
 
 
-def register_job(api: Api, entry: Entry) -> Job:
+def register_job(api: Api, entry: Entry, journal: Journal | None = None) -> Job:
     """Add a stray that already sits at its routed location to my_collection."""
     def run(emit: Emit) -> None:
         res = api.post("/api/collection", {"lb_number": entry.lb, "folder_name": entry.name,
@@ -680,6 +808,8 @@ def register_job(api: Api, entry: Entry) -> Job:
             raise JobError(f"register LB-{entry.lb:05d}: {res.get('error')}")
         emit(f"registered LB-{entry.lb:05d} at {entry.path}"
              + ("" if res.get("added") else " (already present)"), False)
+        if journal and res.get("added"):
+            journal.add({"kind": "register", "lb": entry.lb})
     return Job(f"register LB-{entry.lb:05d}", f"{entry.name}  (register in place)", run)
 
 
@@ -708,8 +838,10 @@ def generate_job(api: Api, entry: Entry) -> Job:
     return Job("checksums", f"{entry.name}  (generate checksums)", run)
 
 
-def rename_job(api: Api, entry: Entry, new_name: str) -> Job:
+def rename_job(api: Api, entry: Entry, new_name: str, journal: Journal | None = None) -> Job:
     """Rename one folder in place via /api/folder/rename (collection row + qBittorrent follow)."""
+    registered = bool(entry.row) and norm(entry.row.get("disk_path") or "") == norm(entry.path)
+
     def run(emit: Emit) -> None:
         body: dict[str, Any] = {"folder": str(entry.path), "new_name": new_name}
         if entry.lb is not None:
@@ -718,12 +850,16 @@ def rename_job(api: Api, entry: Entry, new_name: str) -> Job:
         if not res.get("ok"):
             raise JobError(f"rename {entry.name}: {res.get('error')}")
         emit(f"renamed {entry.name} {GLYPHS['dest']} {new_name}", False)
+        if journal:
+            journal.add({"kind": "rename", "lb": entry.lb, "from": str(entry.path),
+                         "to": str(entry.path.parent / new_name), "registered": registered})
         if res.get("qbt_error"):
             emit(f"  qBittorrent: {res['qbt_error']}", False)
     return Job("rename", f"{entry.name}  {GLYPHS['dest']} {new_name}", run)
 
 
-def route_job(api: Api, year: int, mount: dict, sub_path: str) -> Job:
+def route_job(api: Api, year: int, mount: dict, sub_path: str,
+              journal: Journal | None = None, old: dict | None = None) -> Job:
     """Re-point one year's route at a mount, keeping its sub_path."""
     def run(emit: Emit) -> None:
         res = api.post("/api/collection/routes/bulk", {
@@ -731,7 +867,226 @@ def route_job(api: Api, year: int, mount: dict, sub_path: str) -> Job:
         if not res.get("ok"):
             raise JobError(f"route {year}: {res.get('error')}")
         emit(f"route {year} ⇒ {mount['label']}" + (f" /{sub_path}" if sub_path else ""), False)
+        if journal:
+            journal.add({"kind": "route", "year": year,
+                         "old_mount_id": (old or {}).get("mount_id"),
+                         "old_sub_path": (old or {}).get("sub_path") or "",
+                         "new_mount_id": mount["id"]})
     return Job(f"route {year}", f"route {year} ⇒ {mount['label']}", run)
+
+
+def _ok(res: Any, what: str) -> None:
+    """Raise JobError unless a route answered {ok: true}."""
+    if not isinstance(res, dict) or not res.get("ok"):
+        err = res.get("error") if isinstance(res, dict) else res
+        raise JobError(f"{what}: {err}")
+
+
+def _move_path(api: Api, src: str, dst: str, lb: int | None = None) -> None:
+    """Move a path on one drive via /api/rename/apply (logged to rename_history)."""
+    item: dict[str, Any] = {"old_path": src, "new_path": dst}
+    if lb is not None:
+        item["lb_number"] = lb
+    res = api.post("/api/rename/apply", {"renames": [item]})
+    if not isinstance(res, dict) or res.get("applied") != 1:
+        errors = (res or {}).get("errors") or [str((res or {}).get("error"))]
+        raise JobError(f"{Path(src).name}: {'; '.join(map(str, errors))}")
+
+
+def _repoint(api: Api, lb: int, path: str) -> None:
+    """Point a collection record at a folder path."""
+    _ok(api.patch(f"/api/collection/{lb}", {"disk_path": path,
+                                             "folder_name": Path(path).name}),
+        f"repoint LB-{lb:05d}")
+
+
+def relink_job(api: Api, lb: int, old_path: str, new_path: str,
+               journal: Journal | None = None) -> Job:
+    """Point a record whose folder is gone at a surviving copy."""
+    def run(emit: Emit) -> None:
+        _repoint(api, lb, new_path)
+        emit(f"relinked LB-{lb:05d} {GLYPHS['dest']} {new_path}", False)
+        if journal:
+            journal.add({"kind": "relink", "lb": lb, "old_path": old_path,
+                         "new_path": new_path})
+    return Job("relink", f"LB-{lb:05d}  {GLYPHS['dest']} {new_path}", run)
+
+
+def drop_job(api: Api, row: dict, journal: Journal | None = None) -> Job:
+    """Delete a collection record whose folder is gone (nothing on disk is touched)."""
+    lb = int(row["lb_number"])
+
+    def run(emit: Emit) -> None:
+        _ok(api.delete(f"/api/collection/{lb}"), f"drop LB-{lb:05d}")
+        emit(f"dropped record LB-{lb:05d} ({row.get('disk_path')})", False)
+        if journal:
+            journal.add({"kind": "drop", "row": {k: row.get(k) for k in (
+                "lb_number", "folder_name", "disk_path", "notes", "xref")}})
+    return Job("drop", f"LB-{lb:05d}  {row.get('disk_path')}", run)
+
+
+def aside_target(path: Path, root: Path) -> Path:
+    """A free name for path under root/_duplicates/."""
+    base = root / DUP_DIR / path.name
+    dest, n = base, 2
+    while dest.exists():
+        dest = base.with_name(f"{path.name} ({n})")
+        n += 1
+    return dest
+
+
+def aside_job(api: Api, path: Path, dest: Path, journal: Journal | None = None) -> Job:
+    """Set a losing duplicate aside on its own drive (a rename, never a delete)."""
+    def run(emit: Emit) -> None:
+        _move_path(api, str(path), str(dest))
+        emit(f"set aside {path.name} {GLYPHS['dest']} {dest.parent}", False)
+        if journal:
+            journal.add({"kind": "aside", "from": str(path), "to": str(dest)})
+    return Job("aside", f"{path}  {GLYPHS['dest']} {dest.parent}/", run)
+
+
+def extras_job(api: Api, folder: Path, files: list[str], journal: Journal | None = None) -> Job:
+    """Move files the lbdir doesn't list into <folder>/extras/."""
+    def run(emit: Emit) -> None:
+        res = api.post("/api/lbdir/move_extras", {"folder": str(folder), "files": files})
+        if "moved" not in res:
+            raise JobError(f"extras {folder.name}: {res.get('error')}")
+        emit(f"{folder.name}: {res['moved']} file(s) {GLYPHS['dest']} extras/", False)
+        for err in res.get("errors") or []:
+            emit(f"  {err.get('file')}: {err.get('error')}", False)
+        moved = [f for f in files if (folder / "extras" / f).exists()]
+        if journal and moved:
+            journal.add({"kind": "extras", "folder": str(folder), "files": moved})
+        if res.get("errors"):
+            raise JobError(f"{len(res['errors'])} file(s) not moved in {folder.name}")
+    return Job("extras", f"{folder.name}: {len(files)} extra file(s) {GLYPHS['dest']} extras/",
+               run)
+
+
+def integrity_job(api: Api, mount: dict | None) -> Job:
+    """Run the backend integrity scan over one mount (or everything) and wait for it."""
+    body = {"mount_id": mount["id"]} if mount else {}
+    label = mount["label"] if mount else "whole collection"
+
+    def run(emit: Emit) -> None:
+        res = api.post("/api/collection/integrity/scan", body)
+        _ok(res, "integrity scan")
+        status: dict = {}
+        while True:
+            time.sleep(POLL)
+            status = api.get("/api/collection/integrity/scan/status")
+            emit(f"  integrity {label}: {status.get('folders_done', 0)}/"
+                 f"{status.get('folders_total', 0)}", True)
+            if not status.get("running"):
+                break
+        emit(f"integrity scan of {label} finished", False)
+    return Job("integrity", f"integrity scan: {label}", run, gated=False)
+
+
+def compare_job(api: Api, paths: list[Path], sink: list[dict]) -> Job:
+    """Check each copy against its lbdir and measure it, for the duplicate resolver."""
+    def run(emit: Emit) -> None:
+        emit("comparing " + " vs ".join(p.name for p in paths), False)
+        res = api.post("/api/lbdir/check", {"folders": [str(p) for p in paths]})
+        if "results" not in res:
+            raise JobError(f"lbdir check: {res.get('error')}")
+        sink.clear()
+        for path, result in zip(paths, res["results"], strict=True):
+            files = sum(1 for f in path.rglob("*") if f.is_file()) if path.is_dir() else 0
+            sink.append({**result, "path": str(path), "size": tree_size(path), "files": files})
+    return Job("compare", "compare " + " vs ".join(str(p) for p in paths), run, gated=False)
+
+
+def measure_job(sizes: SizeCache, paths: list[Path]) -> Job:
+    """Size every folder (cached by mtime) — the rebalance planner's input."""
+    def run(emit: Emit) -> None:
+        for i, path in enumerate(paths, 1):
+            sizes.get_now(path)
+            if i % 10 == 0 or i == len(paths):
+                emit(f"  measured {i}/{len(paths)} folders", True)
+        sizes.save()
+    return Job("measure", f"measure {len(paths)} folders", run, gated=False)
+
+
+def undo_job(api: Api, rec: dict, journal: Journal) -> Job:
+    """Reverse one journal record."""
+    kind = rec["kind"]
+
+    def run(emit: Emit) -> None:
+        if kind in ("rename", "aside"):
+            _move_path(api, rec["to"], rec["from"], rec.get("lb") if kind == "rename" else None)
+            if kind == "rename" and rec.get("registered") and rec.get("lb") is not None:
+                _repoint(api, rec["lb"], rec["from"])
+        elif kind == "move" and not rec.get("cross"):
+            _move_path(api, rec["to"], rec["from"], rec["lb"])
+            _repoint(api, rec["lb"], rec["from"])
+        elif kind == "move":
+            mount_id = rec.get("from_mount_id")
+            res = api.post("/api/pipeline/file/preview", {"folders": [
+                {"path": rec["to"], "lb_number": rec["lb"], "mount_id": mount_id}]}) \
+                if mount_id is not None else {}
+            dest = ((res.get("results") or [{}])[0]).get("dest")
+            if not dest or norm(dest) != norm(rec["from"]):
+                raise JobError(f"a cross-drive move only undoes back to a route folder; "
+                               f"{rec['from']} isn't one — move it back by hand")
+            entry = Entry(Path(rec["to"]).name, Path(rec["to"]), "dir", lb=rec["lb"])
+            file_job(api, entry, mount_id, "move", dest).run(emit)
+        elif kind == "register":
+            _ok(api.delete(f"/api/collection/{rec['lb']}"), "unregister")
+        elif kind == "relink":
+            _repoint(api, rec["lb"], rec["old_path"])
+        elif kind == "drop":
+            _ok(api.post("/api/collection", rec["row"]), "re-add record")
+        elif kind == "route":
+            if rec.get("old_mount_id") is None:
+                _ok(api.delete(f"/api/collection/routes/{rec['year']}"), "remove route")
+            else:
+                _ok(api.post("/api/collection/routes/bulk", {
+                    "year_from": rec["year"], "year_to": rec["year"],
+                    "mount_id": rec["old_mount_id"], "sub_path": rec.get("old_sub_path", "")}),
+                    "restore route")
+        elif kind == "extras":
+            folder = Path(rec["folder"])
+            for rel in rec["files"]:
+                _move_path(api, str(folder / "extras" / rel), str(folder / rel))
+        else:
+            raise JobError(f"don't know how to undo {kind}")
+        journal.add({"kind": "undone", "undoes": rec["id"]})
+        emit(f"undone: {describe(rec)}", False)
+    return Job("undo", f"undo {describe(rec)}", run)
+
+
+def plan_rebalance(year_bytes: dict[int, int], src: tuple[int, int], dst: tuple[int, int],
+                   from_high: bool) -> tuple[list[tuple[int, int, float, float]], int]:
+    """Whole-year moves from src to dst, cumulative, and the step that balances best.
+
+    Args:
+        year_bytes: bytes per routed year on the source mount.
+        src: (free, total) of the source filesystem.
+        dst: (free, total) of the target filesystem.
+        from_high: take the latest years first (else the earliest).
+
+    Returns:
+        ([(year, cumulative bytes, src used % after, dst used % after), ...], chosen) where
+        chosen is how many leading steps to take (0 = move nothing). Steps stop before the
+        target would drop under SPACE_RESERVE free.
+    """
+    (sf, st), (df, dt) = src, dst
+
+    def gap(moved: int) -> float:
+        return abs((st - sf - moved) / st - (dt - df + moved) / dt)
+    steps: list[tuple[int, int, float, float]] = []
+    cum = 0
+    for year in sorted(year_bytes, reverse=from_high):
+        cum += year_bytes[year]
+        if df - cum < SPACE_RESERVE:
+            break
+        steps.append((year, cum, (st - sf - cum) / st * 100, (dt - df + cum) / dt * 100))
+    best, chosen = gap(0), 0
+    for i, (_y, moved, _a, _b) in enumerate(steps, 1):
+        if gap(moved) < best:
+            best, chosen = gap(moved), i
+    return steps, chosen
 
 
 def pipeline_job(api: Api, paths: list[Path], sink: dict[str, dict]) -> Job:
@@ -993,13 +1348,17 @@ class Confirm(Dialog):
 class Picker(Dialog):
     """A list to choose from with arrows/j/k and Enter, or by number."""
 
-    def __init__(self, title: str, items: list[tuple[str, Callable[[], None]]]) -> None:
+    def __init__(self, title: str, items: list[tuple[str, Callable[[], None]]],
+                 lines: list[str] | None = None) -> None:
         self.title, self.items, self.cursor, self.top = title, items, 0, 0
+        self.lines = lines or []
 
     def body(self, width: int) -> list[Line]:
         height = 14
         self.top = max(0, min(self.cursor, max(self.top, self.cursor - height + 1)))
-        rows: list[Line] = []
+        rows: list[Line] = [[("dialog", fit(t, width))] for t in self.lines]
+        if self.lines:
+            rows.append([("dialog", "")])
         for i, (label, _) in enumerate(self.items[self.top:self.top + height], self.top):
             role = "cursor" if i == self.cursor else "dialog"
             rows.append([(role, fit(f" {i + 1:>2} {label}", width))])
@@ -1020,6 +1379,25 @@ class Picker(Dialog):
         elif key.isdigit() and 0 < int(key) <= min(9, len(self.items)):
             app.dialog = None
             self.items[int(key) - 1][1]()
+
+
+class PlanView(Message):
+    """A text report; a applies it (through the usual gate), Esc closes."""
+
+    def __init__(self, title: str, text: list[str], apply: Callable[[], None] | None) -> None:
+        super().__init__(title, text)
+        self.apply = apply
+
+    def body(self, width: int) -> list[Line]:
+        tail = ["", "  [ a ] apply      [ Esc ] close" if self.apply else "  [ Esc ] close"]
+        return [[("dialog", fit(t, width))] for t in [*self.text, *tail]]
+
+    def handle(self, app: App, key: str) -> None:
+        if key in ("a", "A") and self.apply:
+            app.dialog = None
+            self.apply()
+        elif key in ("esc", "enter", "q", "n"):
+            app.dialog = None
 
 
 class Prompt(Dialog):
@@ -1088,8 +1466,8 @@ Move        ↑ ↓ PgUp PgDn Home End   (phone: k j K J g G)
 Tab         switch pane              Enter   open folder
 Backspace   up one level             Space/Ins tag · + all · - none · * invert
 /           filter the active pane   Esc     close / clear filter / clear tags
-f           show: all → only folders not in the right spot → only public LBs
-            sitting in the private folder (works in the F8 list too)
+f           show: all → not in the right spot → public LBs in the private folder
+            → -NFT mismatches → integrity issues (works in the virtual lists too)
 
 1 Help      this screen
 2 Info      the folder's collection row, show date, route and expected location
@@ -1108,6 +1486,16 @@ f           show: all → only folders not in the right spot → only public LBs
 c           generate checksums (folders with no .ffp/.md5/.st5)
 r           apply the renames the last F4 run proposed
             usual order for a new folder: c → 4 Pipe → r → 7 File
+n           fix the -NFT suffix (private LBs have it, public ones don't)
+e           move files the lbdir doesn't list into <folder>/extras/
+=           duplicate resolver: compare a ≠ copy with the collection's, keep one,
+            set the other aside in _duplicates/ on its own drive
+x / l       gone records (d → Gone): x drops the record, l relinks it to the
+            folder under the other pane's cursor (a ⇄ folder relinks in place)
+i           integrity scan of this pane's drive; ! marks folders with issues
+b           rebalance: size this pane's drive, plan whole-year moves to the
+            other pane's drive, a applies (moves + re-routes, space-checked)
+z           undo: reverse any logged move, rename, relink, drop, route, extras
 
 d           drive picker for this pane    u / Ctrl-U  swap panes
 o / Ctrl-O  log pane                      s / Ctrl-S  size the cursor folder
@@ -1116,6 +1504,8 @@ t           cycle colour scheme
 Glyphs: ✓ canonical  → misfiled (⇒ where it belongs)  ? stray, not in collection
         ↑ public LB still under the private folder (F7 files it to its year)
         ≠ duplicate — the collection holds this LB at another path  ⊘ blocked
+        ✗ gone — the record's folder isn't on disk  ⇄ a copy of a gone record
+Flags:  n -NFT suffix wrong  ! integrity issue
 A private LB anywhere under "PRIVATE LB" counts as canonical (--private-dir renames it).
 
 Every write goes through the backend (port 5174) after a y/n gate, one folder at a
@@ -1132,8 +1522,13 @@ class App:
     def __init__(self, api: Api, left: Path | None = None, right: Path | None = None,
                  read_only: bool = False, scheme: str = "nc", ascii_only: bool = False,
                  threaded: bool = True, size_cache: Path | None = SIZE_CACHE,
-                 persist: bool = True) -> None:
+                 persist: bool = True, journal_path: Path | None = JOURNAL_PATH) -> None:
         self.api = api
+        self.journal = Journal(journal_path)
+        self.checking_gone = False
+        self.compare_result: list[dict] = []
+        self.compare_ctx: tuple[Entry, dict] | None = None
+        self.plan_ctx: tuple[dict, dict, list[dict]] | None = None
         self.read_only = read_only
         self.scheme = scheme if scheme in SCHEMES else "nc"
         self.ascii = ascii_only
@@ -1164,6 +1559,7 @@ class App:
         self.right = Pane(start_right, self.label_for(start_right))
         self.active = self.left
         self.relist()
+        self.check_gone()
 
     # ---- data
 
@@ -1174,7 +1570,15 @@ class App:
         except ApiError as exc:
             coll, error = None, str(exc)
             log.warning("collection load failed: %s", exc)
+        if coll is not None:
+            try:
+                res = self.api.get("/api/collection/integrity/status")
+                coll.integrity = {int(r["lb_number"]): r for r in res.get("status") or []}
+            except (ApiError, AttributeError, KeyError, TypeError, ValueError) as exc:
+                log.warning("integrity status not loaded: %s", exc)
         with self.lock:
+            if coll is not None and self.coll is not None:
+                coll.gone = self.coll.gone          # until check_gone re-runs
             if coll is not None or self.coll is None:
                 self.coll = coll
             self.coll_error = error
@@ -1192,15 +1596,36 @@ class App:
                 self._load()
                 with self.lock:
                     self.relist()
+                self.check_gone()
             threading.Thread(target=work, daemon=True).start()
         else:
             self._load()
             self.relist()
+            self.check_gone()
+
+    def check_gone(self) -> None:
+        """Stat every collection path (in a thread when threaded); gone ones get ✗."""
+        coll = self.coll
+        if coll is None or self.checking_gone:
+            return
+        self.checking_gone = True
+
+        def work() -> None:
+            gone = {norm(r["disk_path"]) for r in coll.rows
+                    if r.get("disk_path") and not os.path.isdir(r["disk_path"])}
+            with self.lock:
+                coll.gone = gone
+                self.checking_gone = False
+                self.relist()
+        if self.threaded:
+            threading.Thread(target=work, daemon=True).start()
+        else:
+            work()
 
     def label_for(self, path: Path | None) -> str:
         """The mount label a path sits on, or its basename."""
         if path is None:
-            return "misfiled"
+            return "virtual"
         mount = self.coll.mount_for(path) if self.coll else None
         return mount["label"] if mount else (path.name or str(path))
 
@@ -1209,7 +1634,7 @@ class App:
         for pane in (self.left, self.right):
             keep = pane.current().key if pane.current() else ""
             if pane.virtual:
-                pane.entries = list_misfiled(self.coll)
+                pane.entries = list_view(self.coll, pane.view)
             else:
                 pane.entries = list_dir(pane.root, pane.cwd, self.coll)
             keys = [e.key for e in pane.visible()]
@@ -1233,8 +1658,8 @@ class App:
         pane.filter = ""
         pane.cursor = pane.top = 0
 
-    def set_root(self, pane: Pane, root: Path | None) -> None:
-        """Re-root a pane at a mount, a directory, or (None) the misfiled view."""
+    def set_root(self, pane: Pane, root: Path | None, view: str = "misfiled") -> None:
+        """Re-root a pane at a mount, a directory, or (None) a virtual view."""
         if root is not None and not root.is_dir():
             self.dialog = Message("Drive", [f"Not reachable: {root}"])
             return
@@ -1244,7 +1669,8 @@ class App:
         pane.label = self.label_for(root)
         pane.tags.clear()
         pane.filter, pane.cursor, pane.top = "", 0, 0
-        pane.entries = list_misfiled(self.coll) if root is None else \
+        pane.view = view
+        pane.entries = list_view(self.coll, view) if root is None else \
             list_dir(root, root, self.coll)
 
     def handle(self, key: str) -> None:
@@ -1278,8 +1704,12 @@ class App:
             "tab": self.switch, "backspace": self.go_up, "enter": self.enter,
             "ins": self.tag_one, "+": lambda: self.tag_all("all"),
             "-": lambda: self.tag_all("none"), "*": lambda: self.tag_all("invert"),
-            "/": self.start_filter, "f": self.cycle_show, "esc": self.escape, "t": self.cycle_scheme,
+            "/": self.start_filter, "f": self.cycle_show, "esc": self.escape,
+            "t": self.cycle_scheme,
             "d": self.drive_dialog, "c": self.checksum_dialog, "r": self.rename_dialog,
+            "x": self.drop_dialog, "l": self.relink_dialog, "n": self.nft_dialog,
+            "i": self.integrity_dialog, "=": self.compare_dialog, "e": self.extras_dialog,
+            "z": self.undo_dialog, "b": self.rebalance_dialog,
             "ctrl-u": self.swap, "ctrl-o": self.toggle_log,
             "ctrl-s": self.size_current, "ctrl-r": self.reload, "f5": self.reload,
             "f1": self.help, "f2": self.info, "f3": self.view, "f4": self.pipeline_dialog,
@@ -1365,7 +1795,9 @@ class App:
         shown = sum(1 for e in pane.visible() if e.kind != "parent")
         self.say({"all": "showing everything",
                   "off": f"{shown} folder(s) not in the right spot",
-                  "public": f"{shown} public LB(s) in {PRIVATE_DIR}"}[pane.show])
+                  "public": f"{shown} public LB(s) in {PRIVATE_DIR}",
+                  "nft": f"{shown} folder(s) whose -NFT suffix is wrong",
+                  "bad": f"{shown} folder(s) with integrity issues"}[pane.show])
 
     def start_filter(self) -> None:
         """/: type a filter."""
@@ -1407,7 +1839,7 @@ class App:
             if self.coll is None:
                 self.dialog = Message("Misfiled", [self.coll_error or "no collection loaded"])
                 return
-            self.set_root(pane, None)
+            self.set_root(pane, None, "misfiled")
 
     def request_quit(self) -> None:
         """F10: quit, warning when a queue is still running."""
@@ -1500,9 +1932,9 @@ class App:
         except ApiError as exc:
             self.dialog = Message("File", [str(exc)])
             return
-        jobs = [file_job(self.api, e, None, "move" if e.row else None, dest)
-                for e, dest in chosen]
-        jobs += [register_job(self.api, e) for e in register]
+        jobs = [file_job(self.api, e, None, "move" if e.row else None, dest, self.journal,
+                         self.mount_id_of(e.path)) for e, dest in chosen]
+        jobs += [register_job(self.api, e, self.journal) for e in register]
         space = self.space_gate("File", chosen) if chosen else []
         if space is None:
             return
@@ -1529,13 +1961,22 @@ class App:
         if not picked:
             self.dialog = Message("Move", ["Select LB folders first (Space tags, + all)."])
             return
+        self.move_entries(picked, mount)
+
+    def mount_id_of(self, path: Path) -> int | None:
+        """The id of the mount a path sits on."""
+        mount = self.coll.mount_for(path) if self.coll else None
+        return mount["id"] if mount else None
+
+    def move_entries(self, picked: list[Entry], mount: dict, reroute: bool = False) -> None:
+        """Preview, space-check and gate moving entries onto a mount (F6 and rebalance)."""
         todo, skipped = [], []
         for e in picked:
             here = self.coll.mount_for(e.path)
             if e.status == "dup":
                 skipped.append(f"  skip {e.name}: collection has LB-{e.lb:05d} at {e.note}")
-            elif e.status == "blocked":
-                skipped.append(f"  skip {e.name}: {e.note}")
+            elif e.status in ("blocked", "gone"):
+                skipped.append(f"  skip {e.name}: {e.note or 'folder is gone'}")
             elif here and here["id"] == mount["id"] and e.status == "canonical":
                 skipped.append(f"  skip {e.name}: already on {mount['label']}")
             else:
@@ -1545,7 +1986,8 @@ class App:
         except ApiError as exc:
             self.dialog = Message("Move", [str(exc)])
             return
-        moves = [file_job(self.api, e, mount["id"], "move", dest) for e, dest in chosen]
+        moves = [file_job(self.api, e, mount["id"], "move", dest, self.journal,
+                          self.mount_id_of(e.path)) for e, dest in chosen]
         space = self.space_gate("Move", chosen) if chosen else []
         if space is None:
             return
@@ -1557,7 +1999,8 @@ class App:
             if not reroute:
                 return moves
             return moves + [route_job(self.api, y, mount,
-                                      (self.coll.routes.get(y) or {}).get("sub_path") or "")
+                                      (self.coll.routes.get(y) or {}).get("sub_path") or "",
+                                      self.journal, self.coll.routes.get(y))
                             for y in stay]
         blurb = [f"{len(moves)} folder(s) ⇒ {mount['label']} ({mount['root_path']}),",
                  "under each year's route sub-folder. Hash-verified across drives;",
@@ -1571,6 +2014,9 @@ class App:
         toggle = ("r", f"re-route {len(stay)} year(s) to {mount['label']} after the moves",
                   jobs) if stay and moves else None
         self.gate("Move to other mount", moves, blurb, toggle=toggle)
+        if reroute and toggle and isinstance(self.dialog, Confirm):
+            self.dialog.state = True
+            self.dialog.jobs = jobs(True)
 
     def checksum_dialog(self) -> None:
         """c: generate checksums for selected folders that have none."""
@@ -1603,11 +2049,231 @@ class App:
             elif (e.path.parent / proposed).exists():
                 skipped.append(f"  skip {e.name}: {proposed} already exists")
             else:
-                jobs.append(rename_job(self.api, e, proposed))
+                jobs.append(rename_job(self.api, e, proposed, self.journal))
         self.gate("Apply renames", jobs, [
             "Renames each folder in place to the pipeline's proposed name. The rename",
             "is logged (rename_history), my_collection and qBittorrent follow.",
             *skipped])
+
+    def drop_dialog(self) -> None:
+        """x: delete the records of selected gone folders (nothing on disk is touched)."""
+        picked = [e for e in self.active.selection() if e.status == "gone" and e.row]
+        if not picked:
+            self.dialog = Message("Drop record", [
+                "Select gone (✗) folders — d → Gone lists every one."])
+            return
+        self.gate("Drop records", [drop_job(self.api, e.row, self.journal) for e in picked], [
+            "Removes each my_collection record whose folder is no longer on disk.",
+            "Nothing on disk changes. z (undo) re-adds a record."])
+
+    def relink_dialog(self) -> None:
+        """l: point gone records at a surviving copy."""
+        jobs, skipped = [], []
+        cand = self.other().current()
+        for e in [e for e in self.active.selection() if e.kind == "dir"]:
+            if e.status == "relink" and e.row:
+                jobs.append(relink_job(self.api, e.lb, e.row["disk_path"], str(e.path),
+                                       self.journal))
+            elif e.status == "gone" and e.row:
+                if cand and cand.kind == "dir" and cand.lb == e.lb and cand.path.is_dir():
+                    jobs.append(relink_job(self.api, e.lb, e.row["disk_path"], str(cand.path),
+                                           self.journal))
+                else:
+                    skipped.append(f"  skip {e.name}: put the other pane's cursor on a folder "
+                                   f"with LB-{e.lb:05d}")
+            else:
+                skipped.append(f"  skip {e.name}: its record isn't gone")
+        self.gate("Relink records", jobs, [
+            "Points each record at the surviving copy (my_collection only; the folder",
+            "stays where it is — F7 files it afterwards if it's misfiled).", *skipped])
+
+    def nft_dialog(self) -> None:
+        """n: add or drop the -NFT suffix to match lb_status."""
+        jobs, skipped = [], []
+        for e in [e for e in self.active.selection() if e.kind == "dir"]:
+            if not e.nft or not e.row:
+                skipped.append(f"  skip {e.name}: suffix already right")
+                continue
+            new = apply_nft_suffix(strip_nft_suffix(e.name), e.row.get("lb_status"))
+            if (e.path.parent / new).exists():
+                skipped.append(f"  skip {e.name}: {new} already exists")
+            else:
+                jobs.append(rename_job(self.api, e, new, self.journal))
+        self.gate("Fix -NFT suffix", jobs, [
+            "Private LBs get -NFT, public ones lose it. Renamed in place; the collection",
+            "row and qBittorrent follow. f → NFT mismatch lists every one here.", *skipped])
+
+    def integrity_dialog(self) -> None:
+        """i: run the integrity scan on this pane's mount (the whole collection off-mount)."""
+        pane = self.active
+        mount = self.coll.mount_for(pane.cwd) if self.coll and not pane.virtual else None
+        self.gate("Integrity scan", [integrity_job(self.api, mount)], [
+            "Re-checks every collection folder on "
+            + (mount["label"] if mount else "every mount") + " against its lbdir (reads",
+            "all audio — slow). Results mark folders ! and f → integrity issues lists them."])
+
+    def compare_dialog(self) -> None:
+        """=: compare a duplicate (≠) with the collection's copy, then pick a keeper."""
+        cur = self.active.current()
+        if not cur or cur.status not in ("dup", "relink") or not cur.row:
+            self.dialog = Message("Duplicate", ["Put the cursor on a ≠ duplicate folder."])
+            return
+        if cur.status == "relink":
+            self.dialog = Message("Duplicate", ["The collection copy is gone —",
+                                                "l relinks the record to this folder."])
+            return
+        self.compare_ctx = (cur, cur.row)
+        self.run([compare_job(self.api, [cur.path, Path(cur.row["disk_path"])],
+                              self.compare_result)])
+
+    def compare_picker(self) -> None:
+        """After compare_job: show both copies and offer the two ways to resolve."""
+        if not self.compare_ctx or len(self.compare_result) != 2:
+            return
+        entry, row = self.compare_ctx
+        lines = []
+        for label, r in zip(("THIS copy      ", "COLLECTION copy"), self.compare_result,
+                            strict=True):
+            lines.append(f"{label} {r['path']}")
+            lines.append(f"    lbdir {r.get('status', '?')}: {r.get('pass', 0)}/"
+                         f"{r.get('total', 0)} pass, {r.get('mismatch', 0)} mismatch, "
+                         f"{r.get('missing', 0)} missing, {r.get('extra', 0)} extra"
+                         f"  ·  {r['files']} files {human(r['size'])}")
+        other = Path(row["disk_path"])
+
+        def keep_this() -> None:
+            self.gate("Keep this copy", [
+                relink_job(self.api, entry.lb, str(other), str(entry.path), self.journal),
+                aside_job(self.api, other, aside_target(other, self.aside_root(other)),
+                          self.journal)],
+                ["The record moves to this copy; the old collection copy is set aside",
+                 f"in {DUP_DIR}/ on its own drive (nothing is deleted)."])
+
+        def keep_collection() -> None:
+            self.gate("Keep the collection copy", [
+                aside_job(self.api, entry.path,
+                          aside_target(entry.path, self.aside_root(entry.path)), self.journal)],
+                [f"This copy is set aside in {DUP_DIR}/ on its own drive (nothing is deleted)."])
+        self.dialog = Picker(f"Duplicate LB-{entry.lb:05d}", [
+            ("Keep THIS copy — repoint the record, set the collection copy aside", keep_this),
+            ("Keep the COLLECTION copy — set this one aside", keep_collection),
+            ("Cancel", lambda: None)], lines)
+
+    def aside_root(self, path: Path) -> Path:
+        """Where _duplicates/ goes for a folder: its mount root, else its parent."""
+        mount = self.coll.mount_for(path) if self.coll else None
+        return Path(mount["root_path"]) if mount else path.parent
+
+    def extras_dialog(self) -> None:
+        """e: move files the lbdir doesn't list into extras/."""
+        picked = [e for e in self.active.selection() if e.kind == "dir"]
+        if not picked:
+            self.dialog = Message("Extras", ["Select folders first (Space tags)."])
+            return
+        try:
+            res = self.api.post("/api/lbdir/find_extra",
+                                {"folders": [str(e.path) for e in picked]})
+        except ApiError as exc:
+            self.dialog = Message("Extras", [str(exc)])
+            return
+        if "results" not in res:
+            self.dialog = Message("Extras", [str(res.get("error"))])
+            return
+        jobs, lines = [], []
+        for e, r in zip(picked, res["results"], strict=True):
+            extra = [f for f in r.get("extra") or [] if not f.startswith("extras/")]
+            if r.get("error"):
+                lines.append(f"  skip {e.name}: {r['error']}")
+            elif not extra:
+                lines.append(f"  skip {e.name}: nothing extra")
+            else:
+                jobs.append(extras_job(self.api, e.path, extra, self.journal))
+                lines += [f"    {e.name}/{f}" for f in extra[:4]]
+                if len(extra) > 4:
+                    lines.append(f"    … and {len(extra) - 4} more")
+        self.gate("Move extras", jobs, [
+            "Files the lbdir doesn't list move to <folder>/extras/ (qBittorrent follows).",
+            *lines])
+
+    def undo_dialog(self) -> None:
+        """z: pick a journal record to reverse, newest first."""
+        records = self.journal.undoable()
+        if not records:
+            self.dialog = Message("Undo", ["Nothing to undo."])
+            return
+
+        def pick(rec: dict) -> Callable[[], None]:
+            return lambda: self.gate("Undo", [undo_job(self.api, rec, self.journal)], [
+                "Undo newest first — reversing an older step out of order can fail."])
+        self.dialog = Picker("Undo — newest first",
+                             [(f"{r['ts']}  {describe(r)}", pick(r)) for r in records])
+
+    def rebalance_dialog(self) -> None:
+        """b: measure this pane's mount, then plan whole-year moves to the other pane's."""
+        src = self.coll.mount_for(self.active.cwd) \
+            if self.coll and not self.active.virtual else None
+        dst = self.coll.mount_for(self.other().cwd) \
+            if self.coll and not self.other().virtual else None
+        if not src or not dst or src["id"] == dst["id"]:
+            self.dialog = Message("Rebalance", [
+                "This pane shows the drive to empty, the other pane the drive to fill",
+                "(two different mounts; d picks a drive)."])
+            return
+        if same_device(Path(src["root_path"]), Path(dst["root_path"])):
+            self.dialog = Message("Rebalance", ["Both mounts are on one filesystem."])
+            return
+        rows = [r for r in self.coll.rows if r.get("disk_path")
+                and (self.coll.mount_for(r["disk_path"]) or {}).get("id") == src["id"]
+                and self.coll.row_status(r)[0] == "canonical"
+                and not self.coll.in_private(r["disk_path"])
+                and (self.coll.routes.get(Collection.year_of(r) or 0) or {}).get("mount_id")
+                == src["id"]]
+        if not rows:
+            self.dialog = Message("Rebalance", [f"No routed folders on {src['label']}."])
+            return
+        self.plan_ctx = (src, dst, rows)
+        self.run([measure_job(self.sizes, [Path(r["disk_path"]) for r in rows])])
+
+    def rebalance_plan(self) -> None:
+        """After measure_job: show the whole-year plan; a applies it."""
+        if not self.plan_ctx:
+            return
+        src, dst, rows = self.plan_ctx
+        su, du = self.usage(src["root_path"], True), self.usage(dst["root_path"], True)
+        if not su or not du:
+            self.dialog = Message("Rebalance", ["Free space unreadable on one of the drives."])
+            return
+        by_year: dict[int, list[dict]] = {}
+        for r in rows:
+            by_year.setdefault(Collection.year_of(r) or 0, []).append(r)
+        year_bytes = {y: sum(self.sizes.get_now(Path(r["disk_path"])) for r in rs)
+                      for y, rs in by_year.items()}
+        dst_years = [y for y, r in self.coll.routes.items() if r["mount_id"] == dst["id"]]
+        from_high = not dst_years or min(dst_years) > max(by_year) or \
+            not max(dst_years) < min(by_year)
+        steps, chosen = plan_rebalance(year_bytes, su, du, from_high)
+        text = [f"{src['label']} {human(su[0])} free of {human(su[1])}  →  "
+                f"{dst['label']} {human(du[0])} free of {human(du[1])}", "",
+                "  year  folders     moved   " + f"{src['label']:>8} {dst['label']:>8}  (used %)"]
+        for i, (year, moved, a, b) in enumerate(steps, 1):
+            mark = " ◀ plan" if i == chosen else ""
+            text.append(f"  {year}  {len(by_year[year]):>7} {human(moved):>9}   "
+                        f"{a:>7.0f}% {b:>7.0f}%{mark}")
+        if not steps:
+            text.append(f"  nothing fits on {dst['label']} with the 2G reserve")
+        years = [y for y, *_ in steps[:chosen]]
+        if not chosen:
+            text += ["", "Already as balanced as whole years allow."]
+        else:
+            text += ["", f"Plan: move {len(years)} year(s) {min(years)}–{max(years)} and "
+                     f"re-route them to {dst['label']}."]
+
+        def apply() -> None:
+            entries = [Entry(Path(r["disk_path"]).name, Path(r["disk_path"]), "dir",
+                             "canonical", "", r, int(r["lb_number"]))
+                       for y in years for r in by_year[y]]
+            self.move_entries(entries, dst, reroute=True)
+        self.dialog = PlanView("Rebalance", text, apply if chosen else None)
 
     def year_of(self, entry: Entry) -> int | None:
         """The show year of an entry, from its collection row or its folder name."""
@@ -1677,6 +2343,15 @@ class App:
                 text.append("not in my_collection — F7 files it and registers it")
             elif cur.note:
                 text.append(cur.note)
+        if cur.nft:
+            text.append("NFT: " + ("private LB, add -NFT" if cur.nft == "missing"
+                                   else "public LB, drop -NFT") + "  (n fixes)")
+        health = self.coll.integrity.get(cur.lb) if self.coll and cur.lb else None
+        if health:
+            text.append(f"integrity: {health.get('status')}  ({health.get('content_issues', 0)}"
+                        f" content, {health.get('tag_issues', 0)} tag, "
+                        f"{health.get('missing_count', 0)} missing of "
+                        f"{health.get('total_files', 0)}; {health.get('checked_at')})")
         result = self.pipeline_results.get(str(cur.path))
         if result:
             text.append(f"last pipeline: severity {result.get('severity', '?')}")
@@ -1715,7 +2390,10 @@ class App:
             state = "" if m.get("online", True) else "  OFFLINE"
             label = f"{m['label']:<10} {m['root_path']}  free {m.get('free', '?')}{state}"
             items.append((label, lambda r=Path(m["root_path"]): self.set_root(pane, r)))
-        items.append(("Misfiled folders (all mounts)", lambda: self.set_root(pane, None)))
+        items.append(("Misfiled folders (all mounts)",
+                      lambda: self.set_root(pane, None, "misfiled")))
+        items.append(("Gone — collection paths no longer on disk",
+                      lambda: self.set_root(pane, None, "gone")))
         items.append(("Directory…", lambda: setattr(self, "dialog", Prompt(
             "Directory", "Path to browse:", str(pane.cwd or Path.cwd()),
             lambda t: self.set_root(pane, Path(os.path.expanduser(t.strip())))))))
@@ -1730,7 +2408,8 @@ class App:
             return
         years = sorted({y for e in self.lb_selection() if (y := self.year_of(e))})
         jobs = [route_job(self.api, y, mount,
-                          (self.coll.routes.get(y) or {}).get("sub_path") or "")
+                          (self.coll.routes.get(y) or {}).get("sub_path") or "",
+                          self.journal, self.coll.routes.get(y))
                 for y in years if (self.coll.routes.get(y) or {}).get("mount_id") != mount["id"]]
         self.gate("Re-route years", jobs, [
             f"Future filing of these years goes to {mount['label']}. Nothing moves now;",
@@ -1755,6 +2434,15 @@ class App:
             ("Generate checksums for the selection (c)", self.checksum_dialog),
             ("Apply the pipeline's proposed renames (r)", self.rename_dialog),
             ("Re-route the selection's years to the other pane's mount", self.reroute_dialog),
+            ("Fix the -NFT suffix of the selection (n)", self.nft_dialog),
+            ("Move extra files into extras/ (e)", self.extras_dialog),
+            ("Resolve the duplicate under the cursor (=)", self.compare_dialog),
+            ("Relink gone records to a surviving copy (l)", self.relink_dialog),
+            ("Drop the records of gone folders (x)", self.drop_dialog),
+            ("Integrity scan of this pane's drive (i)", self.integrity_dialog),
+            ("Rebalance: plan whole-year moves to the other pane's drive (b)",
+             self.rebalance_dialog),
+            ("Undo (z)", self.undo_dialog),
             ("Last pipeline results", lambda: setattr(self, "dialog", Pager(
                 "Pipeline", self.results_pages()))),
             ("Stop the queue after the current folder", stop),
@@ -1777,6 +2465,10 @@ class App:
                 self.dialog = Message("done", list(self.runner.lines)[-10:] or ["ok"])
             elif last and last.label == "pipeline":
                 self.dialog = Pager("Pipeline", self.results_pages())
+            elif last and last.label == "compare":
+                self.compare_picker()
+            elif last and last.label == "measure":
+                self.rebalance_plan()
             else:
                 tail = list(self.runner.lines)[-10:]
                 self.dialog = Message("done", tail or ["ok"])
@@ -1870,8 +2562,11 @@ class App:
     def pane_header(self, pane: Pane, width: int, narrow: bool = False) -> Line:
         """The pane title (label: path) and its counts."""
         b = self.box
-        if pane.virtual:
-            title = "MISFILED — all mounts"
+        if pane.virtual and pane.view == "gone":
+            title = VIEWS["gone"]
+            count = "checking…" if self.checking_gone else f"{len(pane.entries)} gone"
+        elif pane.virtual:
+            title = VIEWS["misfiled"]
             public = sum(1 for e in pane.entries if e.status == "public")
             count = f"{len(pane.entries)} to refile" + (f" · {public} public" if public else "")
         else:
@@ -1886,7 +2581,7 @@ class App:
             count = f"{len(lbs)} LB" + (f" · {off} off" if off else "")
             count += f" · {self.free(pane.cwd)} free"
         if pane.show != "all":
-            count = f"[{'not right' if pane.show == 'off' else 'public in private'}] {count}"
+            count = f"[{SHOW_LABELS[pane.show]}] {count}"
         if pane.tags:
             sizes = [self.sizes.get(e.path) for e in pane.entries
                      if e.key in pane.tags and e.kind == "dir"]
@@ -1943,8 +2638,10 @@ class App:
         if entry.lb is None:
             return fit(entry.name, width - 6, e) + fit("<DIR>", 6, e, right=True)
         glyph = self.g.get(entry.status, " ")
-        size = self.sizes.get(entry.path)
-        tail = f" {glyph} {fit(human(size), 5, e, right=True)}"
+        flag = "!" if entry.health else "n" if entry.nft else " "
+        size = None if entry.status == "gone" else self.sizes.get(entry.path)
+        shown = "" if entry.status == "gone" else human(size)
+        tail = f" {glyph}{flag}{fit(shown, 5, e, right=True)}"
         if pane.virtual and self.coll:
             here = self.coll.mount_for(entry.path)
             there = self.coll.mount_for(entry.note)
@@ -1968,13 +2665,21 @@ class App:
         else:
             row = cur.row or {}
             first = f"{cur.name}  ·  {STATUS_TEXT.get(cur.status, '?')}"
+            if cur.nft:
+                first += "  ·  NFT: " + ("add -NFT" if cur.nft == "missing" else "drop -NFT")
+            if cur.health:
+                first += f"  ·  integrity: {cur.health}"
             show = f"LB-{cur.lb:05d}  {row.get('date_str') or ''}  {row.get('location') or ''}"
             if cur.status in ("misfiled", "public"):
                 why = "went public — " if cur.status == "public" else ""
                 third = (f"{why}{self.g['dest']} {cur.note}  free: {self.free(cur.note)}"
                          "  (F7 files)")
             elif cur.status == "dup":
-                third = f"collection copy: {cur.note}"
+                third = f"collection copy: {cur.note}  (= compares and resolves)"
+            elif cur.status == "relink":
+                third = f"collection path gone: {cur.note}  (l relinks here)"
+            elif cur.status == "gone":
+                third = "folder not on disk — x drops the record, l relinks it to a copy"
             elif cur.status == "stray":
                 third = ("in place, not registered — F7 registers it" if cur.note == IN_PLACE
                          else "not in collection — F7 files and registers it")
@@ -2252,6 +2957,7 @@ class FakeApi(Api):
         self.mounts, self.routes_rows, self.rows = mounts, routes, rows
         self.status: dict = {"running": False}
         self.calls: list[tuple[str, dict | None]] = []
+        self.integrity: list[dict] = []
 
     def _route(self, year: int) -> dict | None:
         return next((r for r in self.routes_rows if r["year"] == year), None)
@@ -2284,6 +2990,48 @@ class FakeApi(Api):
             return {"routes": out}
         if path == "/api/collection" and method == "GET":
             return [dict(r) for r in self.rows]
+        if path.startswith("/api/collection/") and path.split("/")[-1].isdigit() \
+                and method in ("PATCH", "DELETE"):
+            lb = int(path.split("/")[-1])
+            row = next((r for r in self.rows if r["lb_number"] == lb), None)
+            if row is None:
+                return {"error": "no row"}
+            if method == "DELETE":
+                self.rows.remove(row)
+            else:
+                row.update({k: v for k, v in body.items() if k in ("disk_path", "folder_name")})
+            return {"ok": True}
+        if path == "/api/collection/integrity/status":
+            return {"status": self.integrity}
+        if path == "/api/collection/integrity/scan":
+            return {"ok": True}
+        if path == "/api/collection/integrity/scan/status":
+            return {"running": False, "folders_done": 1, "folders_total": 1}
+        if path == "/api/lbdir/find_extra":
+            return {"results": [{"folder": f, "extra": sorted(
+                str(x.relative_to(f)) for x in Path(f).rglob("*.jpg")
+                if "extras" not in x.relative_to(f).parts)} for f in body["folders"]]}
+        if path == "/api/lbdir/move_extras":
+            folder = Path(body["folder"])
+            for rel in body["files"]:
+                (folder / "extras" / rel).parent.mkdir(parents=True, exist_ok=True)
+                os.rename(folder / rel, folder / "extras" / rel)
+            return {"moved": len(body["files"]), "errors": []}
+        if path == "/api/lbdir/check":
+            return {"results": [{"folder": f, "status": "pass", "total": 1, "pass": 1,
+                                 "mismatch": 0, "missing": 0, "extra": 0}
+                                for f in body["folders"]]}
+        if path == "/api/rename/apply":
+            applied = 0
+            for item in body["renames"]:
+                Path(item["new_path"]).parent.mkdir(parents=True, exist_ok=True)
+                os.rename(item["old_path"], item["new_path"])
+                applied += 1
+            return {"applied": applied, "errors": []}
+        if path.startswith("/api/collection/routes/") and method == "DELETE":
+            year = int(path.split("/")[-1])
+            self.routes_rows = [r for r in self.routes_rows if r["year"] != year]
+            return {"ok": True}
         if path == "/api/pipeline/file/preview":
             return {"results": [self._resolve(i) for i in body["folders"]]}
         if path == "/api/pipeline/file/start":
@@ -2356,7 +3104,9 @@ def build_fixture(base: Path) -> FakeApi:
     folder(one, "1975-11-19 Toronto, Canada (LB-04410)", 4410)
     folder(one, "1987-10-17 London, England (LB-01860)", 1860)             # misfiled
     folder(one, "1995-03-01 Prague, Czech Republic (LB-05555)", 5555, False)  # stray
+    folder(one, "1978-06-15 Tokyo, Japan (LB-03003)", 3003, status="private")  # no -NFT
     folder(two / "1987", "1987-09-05 Tel Aviv, Israel (LB-02311)", 2311)
+    (two / "1987" / "1987-09-05 Tel Aviv, Israel (LB-02311)" / "cover.jpg").write_bytes(b"x")
     folder(two / "1987", "1987-10-05 Verona, Italy (LB-07777)", 7777, False)   # stray
     folder(two / "1987", "1975-11-19 Toronto, Canada (LB-04410)-copy", None)
     (two / "1987" / "1975-11-19 Toronto (LB-04410) alt").mkdir()            # dup

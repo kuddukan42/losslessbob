@@ -18,10 +18,23 @@ Added: tools/lb_nc.py: private-area rule — a private LB anywhere under a "PRIV
   is canonical; a public LB there gets status "public" (↑, went public since filing) and F7 files it to its
   year route. f cycles each pane: all → only folders not in the right spot → only public-in-private (works
   in the F8 list too). Live: 1,293 public LBs in PRIVATE LB; misfiled drops from 3,172 to 848.
+Added: tools/lb_nc.py: seven collection utilities, all through existing backend routes —
+  gone paths: a background stat marks records whose folder is missing (✗, d → Gone lists them); x drops
+    the record, l relinks it to a surviving copy (a ⇄ folder is such a copy, found by LB number);
+  n fixes the -NFT suffix to match lb_status (backend.folder_naming rules); flag n in the row;
+  i runs the integrity scan on the pane's drive; ! flags folders whose integrity status isn't pass;
+  = compares a ≠ duplicate with the collection copy (lbdir check, files, size), then keeps one and sets
+    the other aside in _duplicates/ on its own drive — nothing is deleted;
+  e moves files the lbdir doesn't list into <folder>/extras/;
+  z undoes any logged move, rename, relink, drop, register, route change or extras move
+    (data/lb_nc_undo.jsonl; a cross-drive move only undoes back to a route folder);
+  b sizes the pane's drive and plans whole-year moves to the other pane's drive, picking the cut that
+    balances used %, keeping 2 GB free; a applies it as moves + re-routes through the F6 gate.
+  f now also cycles to -NFT mismatches and integrity issues.
 Changed: backend/app.py: POST /api/pipeline/file/start accepts an optional file_mode ("move"|"copy") that
   overrides pipeline_file_mode for one job, so a mount-to-mount shuffle can't be turned into a copy; other
   values are 400 bad_input.
-Added: tests/test_lb_nc.py (27, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3).
+Added: tests/test_lb_nc.py (36, over an in-memory FakeApi + temp tree), tests/test_pipeline_file_mode.py (3).
 Changed: PROJECT.md (route param, tools tree), docs/wiki/Collection-Pipeline.md (commander section).
 Opened: TODO-355 — refile 1,293 public LBs out of PRIVATE LB and 848 misfiled folders.
 
