@@ -8,6 +8,10 @@ Changed: backend/wtrf_board.py: a disk_full seed is recorded with wtrf_downloads
   walk; new attempted_topics() drops disk_full rows so the next walk retries them.
 Changed: tools/wtrf_seed_board.py: the --resume frontier probe uses attempted_topics(), so it restarts at a
   disk_full topic.
+Added: tools/wtrf_requeue_disk_full.py <walk log> [--apply]: for overlays the log shows hitting ENOSPC and
+  still <100% in qBittorrent — removes the torrent (files kept), deletes the overlay folder (WTRF Seeds only),
+  writes a disk_full row so the walk retries the topic; DB backed up first; prints the --start-page to re-walk.
+  Dry run on the 2026-09-26 log: 117 torrents (all DYLAN1), from board page 483.
 
 [2026-09-26] — WTRF: tag incomplete torrents by what they are missing
 Added: tools/wtrf_tag_incomplete.py: tags wtrf torrents <100% in qBittorrent "missing music" (a missing piece
