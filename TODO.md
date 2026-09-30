@@ -10,12 +10,6 @@ Status: Open
 Added: 2026-09-25
 Description: instructions/SILVER_DOSSIER_REVIEW.md. Live rebuild done 2026-09-25 with tj's OK. Open: tj rules on A–I (silver-over-master picks, multi-rig families, hedged series codes, private-sourced propagation, runtime alternates, two-show sources, range notes, 3dogs alias, DAT copy).
 
-TODO-352: Finish venue_gazetteer city+country rekey
-Priority: Low
-Status: In progress — code shipped 2026-09-30 (bde763d4); only the live migration remains: back up the DB, then `.venv/bin/python3 tools/migrate_gazetteer_city_country.py --apply` (copy run: 1,924 rekeyed, 0 collisions, 333 qc_findings moved), then drop the bare-key fallbacks marked REMOVABLE
-Added: 2026-09-25
-Description: C32c added venue_gazetteer._norm_city(city, country) and migrate_city_norm_with_country(), but geocoder.py and dossier_qc.py still key on the bare city, so the migration was NOT run; the dossier lookup tries both keys with a country-contradiction guard. Move every caller to the country key, then run the migration once.
-
 TODO-349: show_picks fragment rule demotes a partial tracklist below an equal-length source with no tracklist
 Priority: Low
 Status: Open
