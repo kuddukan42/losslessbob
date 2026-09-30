@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-352: Finish venue_gazetteer city+country rekey
+Priority: Low
+Status: Done
+Added: 2026-09-25
+Closed: 2026-09-30
+Description: C32c added venue_gazetteer._norm_city(city, country) and migrate_city_norm_with_country(), but geocoder.py and dossier_qc.py still key on the bare city, so the migration was NOT run; the dossier lookup tries both keys with a country-contradiction guard. Move every caller to the country key, then run the migration once.
+2026-09-30: callers moved to the city+country key (bde763d4); live migration applied after backup data/backups/losslessbob_preTODO352_20260930_1318.db: 1,924 rekeyed, 0 collisions, 333 qc_findings moved, re-run no-op, quick_check ok. Bare-key fallback in dossier_anchors kept: 2,147 country-less rows stay bare-keyed.
+
 TODO-351: Review lossy-lineage veto false positives
 Priority: Medium
 Status: Done

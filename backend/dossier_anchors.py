@@ -1384,7 +1384,8 @@ def _build_venue_geo(vb, conn, show) -> None:
         # TODO-352: rows are keyed city-only until migrate_city_norm_with_country runs, so try
         # the city+country key first, then the bare city key -- accepting a bare-key
         # row only when its own country doesn't contradict the show's.
-        # REMOVABLE after the live migration: drop the bare-key fallback (and _same_country guard).
+        # Keep the bare-key fallback after the TODO-352 migration (run 2026-09-30): rows with
+        # no country (2,147 then) stay keyed on the bare city.
         city_keys = list(dict.fromkeys([_norm_city(city or "", country),
                                         _norm_city(city or "")]))
         row = cnorm = vnorm = None
