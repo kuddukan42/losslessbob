@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-331: tapematch: a 'staircase/splice' lag curve merges sources into one family even when correlation is near-zero and the secondary check finds no evidence
+Status: Fixed
+File(s): tools/tapematch/tapematch/verdict.py:128,tools/tapematch/tapematch/align.py:192
+Reported: 2026-08-22
+Fixed: 2026-09-30
+Root cause: Staircase-relaxed fingerprint bar let a fp_score 0.417 pair at primary corr 0.030 link, corroborated only by noise-floor hiss (see 2026-09-02 diagnosis).
+Fix: match.fingerprint_primary_floor 0.05 enabled 2026-09-30 (TODO-325): fp/triplet legs now need primary corr >= 0.05. 2008-07-08's live family is re-decided when that date is replayed/re-run (TODO-333 queue).
+
 BUG-364: WTRF walk kept adding half-built overlays to qBittorrent after the overlay drive filled
 Status: Fixed
 File(s): backend/tracker_seed.py,backend/seed_overlay.py,backend/wtrf_board.py

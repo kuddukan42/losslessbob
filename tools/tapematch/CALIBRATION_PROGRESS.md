@@ -1413,3 +1413,27 @@ two false merges this key exists for — at −50 tp / −7 fp, where 0.10 costs
 positives, and both floors preserve 1980-12-04, 1995-09-27's core pair and
 (at 0.10) 1993-10-03; 1993-10-03 survives at 0.05 too, since its corr is
 0.115. If recall matters more than the last 4 fp, 0.05 is the better buy.
+
+---
+
+## 2026-09-30 TODO-325 floor pick — `match.fingerprint_primary_floor: 0.05` ENABLED
+
+tj signed off on enabling; the 0.05-vs-0.10 choice was settled by a cached replay (no audio).
+Replay drift vs the 09-02 sweep: +1 fp at every floor (floor 0 = 704 tp / 19 fp), most likely
+the 3164/3164 self-pair from a run added since; deltas identical.
+
+**Frozen set, 0.05 → 0.10:** −41 tp (fingerprint 27, fingerprint_staircase 7, chained 7;
+corr 0.003-0.163; densest 1996-11-04 with 9) for −4 fp (1994-07-10 2984/10896 and 5357/10896,
+1998-05-23 4648/12940, 1996-07-10 6278/6283 — none previously named in 319/325/336/BUG-331).
+Every lost tp is a real family split (the harness verdict is the union-find component).
+
+**TODO-336 false-merge queue (41 direct-leg pairs):** still linking at 0 / 0.05 / 0.10 =
+41 / 20 / 13 (windowed 6 and rule_d 1 untouched by design). Family splits of queue pairs:
+18 at 0.05 (16 pair_scoped), 26 at 0.10 (20 pair_scoped); 0.10 adds 1994-07-10, 1997-04-13,
+1997-10-05, 2007-04-08, 2009-04-11.
+
+**Decision: 0.05.** 0.10 buys 4 labelled fp + ≤8 unverified queue splits for 41 labelled tp —
+≥3:1 against even counting every queue split as a true false merge; recall is already 44.8%.
+Calibration hash now f786bebf58c8. `calibration_eras.py`: 2,455 stale dates are replayable
+(verdict-only differences), **260 change verdict** under the new config; 607 need real re-runs.
+Existing recording_families are unchanged until those dates are re-decided (TODO-333).
