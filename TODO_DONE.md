@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-351: Review lossy-lineage veto false positives
+Priority: Medium
+Status: Done
+Added: 2026-09-25
+Closed: 2026-09-30
+Description: C32d vetoes a source whose lineage states a stream/kbps/mp3/WV/YouTube link (concert_ranker/text_features.py lossy_lineage_snippet). ~146 corpus hits; a sample showed ~10% still misread (comparisons to another copy, negation after the hit). Review the hit list and tighten guards or add curator overrides.
+2026-09-30: guards added in concert_ranker/text_features.py; corpus hits 146 -> 114, all 32 removed were classified FPs, none added (commit 25cc2cb1). Residual FPs not fixable by rule, curator-override candidates if the veto ever bites them: LB-12220, LB-14763, LB-14776, LB-81, LB-5982 (2nd mention), LB-16565 (2nd mention); LB-6145 ambiguous.
+
 TODO-353: Live reparse: bobserve pages (subtitles as writers) + Olof medley credits
 Priority: Medium
 Status: Done
