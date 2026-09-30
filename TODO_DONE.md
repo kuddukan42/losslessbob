@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-345: Dossier: same-venue two-show days (1974 Afternoon/Evening) need a show selector
+Priority: Medium
+Status: Done
+Added: 2026-09-16
+Closed: 2026-09-30
+Description: 19 dates (1974-01-06 Spectrum etc.) now parse as two concerts at one venue. build_dossier disambiguates by venue only, so it silently picks one show's setlist. Needs an afternoon/evening key from date_raw, and the golden 1978-09-17_two-show-day spec should be replaced by a real one (tj).
+Shipped 2026-09-22 (ce7daa2b): build_dossier(show=) keys same-venue two-show days by date_raw suffix / strict session_title (31 dates), HTTP 300 chooser, per-show golden export; golden spec moved to 1974-01-06 (2ac36096). Only tj's expected/verified_by on tests/golden/dossier/1974-01-06_two-show-day.json remains - part of the golden review, not this task. Ledger closed 2026-09-30.
+
 TODO-352: Finish venue_gazetteer city+country rekey
 Priority: Low
 Status: Done

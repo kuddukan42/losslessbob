@@ -7,6 +7,9 @@ Changed: gui_next ScreenChecksumDisputes.tsx + locales: 'unverified' bucket (Dee
 Changed: data/losslessbob.db: TODO-352 migration applied after backup
   data/backups/losslessbob_preTODO352_20260930_1318.db — 1,924 venue_geocoded rows rekeyed on city+country,
   333 qc_findings moved; bare-key fallback kept for the 2,147 country-less rows.
+Changed: data/losslessbob.db: TODO-299 — the 3 surviving db_error findings dismissed as false positives (LB-604
+  basename collision across discs; LB-12707 two filesets sharing values under UNIQUE(checksum, lb_number)).
+  checksums table unchanged; backup data/backups/losslessbob_preTODO299_20260930_1328.db.
 Added: tools/tapematch/SPEED_RERUN_QUEUE.md: TODO-324 steps 1-2 — [DISTINCT SOURCE] lines resting on an
   untrusted speed ratio, bucketed by whether the written verdict depended on them (heuristic, ~70-75%).
 
