@@ -2771,7 +2771,8 @@
       "retag": "Solo reetiquetar",
       "receipt_unknown": "No verificable",
       "lbdir_only": "solo lbdir",
-      "unverified": "Sin desempate"
+      "unverified": "Sin desempate",
+      "displaced": "Otro nombre de pista"
     },
     "confidence": {
       "high": "Alta",

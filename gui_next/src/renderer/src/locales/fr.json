@@ -2771,7 +2771,8 @@
       "retag": "Réétiqueter uniquement",
       "receipt_unknown": "Non vérifiable",
       "lbdir_only": "lbdir uniquement",
-      "unverified": "Pas de critère de départage"
+      "unverified": "Pas de critère de départage",
+      "displaced": "Autre nom de piste"
     },
     "confidence": {
       "high": "Haut",

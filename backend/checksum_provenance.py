@@ -664,7 +664,7 @@ def get_disputes(
 # for the full explanation of each bucket. Kept in sync with that script's
 # copy by hand; this one is the GUI/API-facing entry point (get_findings).
 VERDICT_ORDER = ["db_error", "audio_differs", "retag", "receipt_unknown", "unverified",
-                 "lbdir_only"]
+                 "displaced", "lbdir_only"]
 
 
 def _finding_key(row: dict) -> tuple:
@@ -707,7 +707,13 @@ def group_findings(rows: list[dict], lbdir_ref: Reference | None = None) -> list
     for group in grouped.values():
         refs = {r["reference_kind"]: r for r in group}
         db_row, lbdir_row = refs.get("db"), refs.get("lbdir")
-        if db_row and lbdir_ref is not None:
+        if db_row and db_row.get("displaced_to"):
+            # The DB already holds the uploader's value for this LB, filed under
+            # another track name (a disc-prefix collision, or two filesets
+            # sharing values under UNIQUE(checksum, lb_number)). A lookup matches
+            # on value, so it succeeds; only the filename label differs.
+            verdict = "displaced"
+        elif db_row and lbdir_ref is not None:
             known = lbdir_ref.by_file.get(
                 (db_row["lb_number"], _basename(db_row["filename"]), db_row["chk_type"]))
             if not known:

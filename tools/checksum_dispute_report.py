@@ -29,6 +29,10 @@ they have different culprits and different fixes:
     The DB and uploader disagree and the ``lbdir`` has no value for the track, so
     nothing breaks the tie.
 
+``displaced``
+    The DB already holds the uploader's value for this LB under another track
+    name, so a lookup succeeds; only the filename label differs.
+
 ``lbdir_only``
     Only the ``lbdir`` disagrees with the uploader; the DB either matches the
     uploader or never ingested the track.
@@ -68,6 +72,7 @@ _VERDICT_LABEL = {
     "retag": "Jeff's copy is the same audio, retagged",
     "receipt_unknown": "Jeff's copy differs, audio unverifiable",
     "unverified": "DB and uploader disagree, lbdir cannot say who is right",
+    "displaced": "Value in the DB under another track name",
     "lbdir_only": "lbdir disagrees, DB does not",
 }
 _VERDICT_BLURB = {
@@ -90,6 +95,9 @@ _VERDICT_BLURB = {
     "unverified": "The DB and the uploader disagree, and Jeff's lbdir has no value for "
                   "this track, so there is no tiebreaker. Either the DB mis-recorded "
                   "it or Jeff received a different file — not decidable from checksums.",
+    "displaced": "The DB already holds the uploader's value for this LB, filed under "
+                 "another track name (a disc-prefix collision, or two filesets sharing "
+                 "values). Lookups match on value, so they succeed; no DB fix applies.",
     "lbdir_only": "Only the lbdir manifest disagrees with the uploader. The DB either "
                   "already matches the uploader or never ingested this track.",
 }
@@ -316,6 +324,7 @@ def render(findings: list[dict], divergence_count: int = 0) -> str:
   .stat.retag {{ border-left-color:var(--retag); }}
   .stat.receipt_unknown {{ border-left-color:var(--unk); }}
   .stat.unverified {{ border-left-color:var(--unk); }}
+  .stat.displaced {{ border-left-color:var(--lbdir); }}
   .stat.lbdir_only {{ border-left-color:var(--lbdir); }}
   .stat .n {{ font-size:2rem; font-weight:700; line-height:1; }}
   .stat .k {{ font-weight:600; margin:.25rem 0 .4rem; }}
@@ -346,6 +355,7 @@ def render(findings: list[dict], divergence_count: int = 0) -> str:
   .chip.retag {{ color:var(--retag); }}
   .chip.receipt_unknown {{ color:var(--unk); }}
   .chip.unverified {{ color:var(--unk); }}
+  .chip.displaced {{ color:var(--lbdir); }}
   .chip.lbdir_only {{ color:var(--lbdir); }}
   .chip.orphan {{ color:var(--orphan); }}
   .tablewrap {{ overflow-x:auto; }}
@@ -413,6 +423,7 @@ generated {generated}</p>
   <button data-filter="retag">Retag only ({counts['retag']})</button>
   <button data-filter="receipt_unknown">Unverifiable ({counts['receipt_unknown']})</button>
   <button data-filter="unverified">No tiebreaker ({counts['unverified']})</button>
+  <button data-filter="displaced">Other track name ({counts['displaced']})</button>
   <button data-filter="lbdir_only">lbdir only ({counts['lbdir_only']})</button>
   <button data-filter="orphan">Orphan values ({n_orphan})</button>
   <input type="search" placeholder="filter by track or source filename…">
