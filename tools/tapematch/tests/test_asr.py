@@ -429,3 +429,41 @@ def test_as_row_is_json_ready():
     row = utt(12.3456, "harmonica in the key of G").as_row()
     assert row["t_start"] == 12.346
     assert set(row) == {"t_start", "t_end", "text", "avg_logprob", "no_speech_prob"}
+
+
+# ── witness grouping (TODO-293 c) ──────────────────────────────────────────────
+
+_SENT = ["harmonica in the key", "of G tonight Boston", "everybody sing along now",
+         "this song hurricane"]
+
+
+def test_fragments_of_one_sentence_are_one_witness():
+    a = [utt(10.0 + i * 1.5, t) for i, t in enumerate(_SENT)]
+    b = [utt(13.0 + i * 1.5, t) for i, t in enumerate(_SENT)]
+    score, detail = asr.banter_score(a, b, CFG)
+    assert detail["n_matched"] == 4
+    assert detail["n_witnesses"] == 1
+    assert score == 0.0
+
+
+def test_separated_sentences_are_separate_witnesses():
+    a = [utt(10.0, _SENT[0]), utt(11.5, _SENT[1]),
+         utt(200.0, _SENT[2]), utt(201.5, _SENT[3])]
+    b = [utt(13.0, _SENT[0]), utt(14.5, _SENT[1]),
+         utt(203.0, _SENT[2]), utt(204.5, _SENT[3])]
+    score, detail = asr.banter_score(a, b, CFG)
+    assert detail["n_matched"] == 4
+    assert detail["n_witnesses"] == 2
+    assert score is not None and score > 0.0
+
+
+def test_merge_requires_adjacency_on_both_sides():
+    # Adjacent on A, but B's fragments are 100 s apart: two witnesses.
+    a = [utt(10.0, _SENT[0]), utt(11.5, _SENT[1])]
+    b = [utt(13.0, _SENT[0]), utt(113.0, _SENT[1])]
+    cfg = {**CFG, "offset_tolerance_sec": 200.0}
+    _score, detail = asr.banter_score(a, b, cfg)
+    assert detail["n_witnesses"] == 2
+    # Adjacent on B, but A's fragments are 100 s apart: two witnesses.
+    _score, detail = asr.banter_score(b, a, cfg)
+    assert detail["n_witnesses"] == 2

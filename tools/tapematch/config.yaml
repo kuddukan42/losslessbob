@@ -525,6 +525,9 @@ asr:
   min_similarity: 0.5           # Dice on content tokens for a candidate match
   offset_tolerance_sec: 5.0     # matched utterances must share one time offset
   min_corroborating: 2          # spec §3: single-utterance matches are noise
+  # Matches whose A and B utterances are both within this many seconds of the
+  # previous match's end are fragments of one sentence: one witness, not many.
+  witness_merge_gap_sec: 2.0
   # TODO-293 step 2, decided 2026-08-07 (CALIBRATION_PROGRESS.md '§3 banter/ASR
   # signal'). 'witnesses' = sum(sim)/score_denominator_cap — a saturating count
   # of corroborating witnesses. 'rate' = the original sum(sim)/min(n_a,n_b,cap).

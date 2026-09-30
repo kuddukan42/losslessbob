@@ -202,6 +202,7 @@ DECISION_KEYS: dict[str, Any] = {
     "asr.min_similarity": 0.5,
     "asr.offset_tolerance_sec": 5.0,
     "asr.min_corroborating": 2,
+    "asr.witness_merge_gap_sec": 2.0,
     "asr.score_mode": "witnesses",
     "asr.score_denominator_cap": 4,
 }
