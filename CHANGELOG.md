@@ -13,6 +13,9 @@ Changed: data/losslessbob.db: TODO-352 migration applied after backup
 Changed: data/losslessbob.db: TODO-299 — the 3 surviving db_error findings dismissed as false positives (LB-604
   basename collision across discs; LB-12707 two filesets sharing values under UNIQUE(checksum, lb_number)).
   checksums table unchanged; backup data/backups/losslessbob_preTODO299_20260930_1328.db.
+Changed: tools/tapematch/config.yaml: match.fingerprint_primary_floor 0.05 ENABLED (TODO-325, tj sign-off;
+  closes BUG-331 for new runs). 0.10 rejected after a cached replay (-41 tp for -4 fp). CALIBRATION_ERAS.md
+  regenerated: 260 replayable dates change verdict under the new calibration f786bebf58c8.
 Added: tools/tapematch/SPEED_RERUN_QUEUE.md: TODO-324 steps 1-2 — [DISTINCT SOURCE] lines resting on an
   untrusted speed ratio, bucketed by whether the written verdict depended on them (heuristic, ~70-75%).
 
