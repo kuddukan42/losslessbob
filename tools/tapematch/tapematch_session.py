@@ -288,6 +288,10 @@ def open_obs_db() -> sqlite3.Connection:
     run_cols = {r[1] for r in conn.execute("PRAGMA table_info(runs)").fetchall()}
     if "calibration_hash" not in run_cols:
         conn.execute("ALTER TABLE runs ADD COLUMN calibration_hash TEXT")
+    # TODO-333 follow-up: replay_writeback.py marks the runs it writes (threshold-
+    # only re-decisions of a stored run, no audio) with their source run_id.
+    if "replayed_from" not in run_cols:
+        conn.execute("ALTER TABLE runs ADD COLUMN replayed_from TEXT")
     conn.commit()
     return conn
 
