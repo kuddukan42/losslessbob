@@ -1466,7 +1466,7 @@
     "summary": {
       "ofMaster": "di {{count}} nel database master",
       "owned": "di proprietà",
-      "toGo": "{{count}} to go",
+      "toGo": "{{count}} da portare con sé",
       "shows_one": "{{count}} mostra",
       "shows_other": "{{count}} mostra",
       "recordings_one": "{{count}} registrazione",
@@ -2770,7 +2770,8 @@
       "audio_differs": "Diversi formati audio",
       "retag": "Solo rietichettatura",
       "receipt_unknown": "Non verificabile",
-      "lbdir_only": "solo lbdir"
+      "lbdir_only": "solo lbdir",
+      "unverified": "Nessun criterio di spareggio"
     },
     "confidence": {
       "high": "Alta",

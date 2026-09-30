@@ -1843,7 +1843,7 @@
       "topBar": {
         "screenName": "TapeMatch",
         "tagline": "Curatie — de familie-oproepen van het algoritme per paar beoordelen",
-        "crawlStatus": "crawl {{status}} · {{runs}} runs · {{dates}} dates",
+        "crawlStatus": "crawl {{status}} · {{runs}}-runs · {{dates}}-datums",
         "crawlRunning": "actief",
         "crawlIdle": "inactief",
         "noCrawlLog": "nog geen crawl-logboek",
@@ -2770,7 +2770,8 @@
       "audio_differs": "Verschillende audioformaten",
       "retag": "Alleen opnieuw taggen",
       "receipt_unknown": "Niet verifieerbaar",
-      "lbdir_only": "alleen lbdir"
+      "lbdir_only": "alleen lbdir",
+      "unverified": "Geen beslissende factor"
     },
     "confidence": {
       "high": "Hoog",

@@ -6,9 +6,10 @@ verdict each row supports.  Telling the verdicts apart is the point of the repor
 they have different culprits and different fixes:
 
 ``db_error``
-    The uploader and the LB's own ``lbdir`` manifest agree, and only the
-    ``checksums`` table differs.  Jeff received the file the uploader published
-    and the DB mis-recorded it.  Fixing the DB row is the whole repair.
+    The LB's own ``lbdir`` manifest holds the uploader's value (or holds some value
+    other than the DB's), so the ``checksums`` row contradicts its own provenance.
+    Jeff received the file the uploader published and the DB mis-recorded it.
+    Fixing the DB row is the whole repair.
 
 ``audio_differs``
     The DB and the ``lbdir`` agree with each other and both differ from the
@@ -23,6 +24,10 @@ they have different culprits and different fixes:
 
 ``receipt_unknown``
     MD5-only, with no FFP for the track to decide retag vs damage.
+
+``unverified``
+    The DB and uploader disagree and the ``lbdir`` has no value for the track, so
+    nothing breaks the tie.
 
 ``lbdir_only``
     Only the ``lbdir`` disagrees with the uploader; the DB either matches the
@@ -47,6 +52,7 @@ _project_root = Path(__file__).resolve().parent.parent
 if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
+from backend import checksum_provenance as prov  # noqa: E402
 from backend import db as database  # noqa: E402
 from backend.paths import detail_url  # noqa: E402
 
@@ -61,11 +67,12 @@ _VERDICT_LABEL = {
     "audio_differs": "Jeff's copy is different audio",
     "retag": "Jeff's copy is the same audio, retagged",
     "receipt_unknown": "Jeff's copy differs, audio unverifiable",
+    "unverified": "DB and uploader disagree, lbdir cannot say who is right",
     "lbdir_only": "lbdir disagrees, DB does not",
 }
 _VERDICT_BLURB = {
-    "db_error": "The uploader's file and Jeff's own lbdir manifest agree; only the "
-                "checksums table differs. The fileset is fine — the database row is "
+    "db_error": "Jeff's own lbdir manifest holds the uploader's value (or at least not "
+                "the DB's), so the checksums table contradicts its own provenance. The fileset is fine — the database row is "
                 "a transcription error, and a user with the correct audio is being "
                 "told NOT FOUND.",
     "audio_differs": "The database and Jeff's lbdir agree with each other and both "
@@ -80,10 +87,13 @@ _VERDICT_BLURB = {
     "receipt_unknown": "The MD5 differs and there is no FFP for the track to say whether "
                        "the audio itself changed. Could be a retag, could be damage — "
                        "not decidable from checksums alone.",
+    "unverified": "The DB and the uploader disagree, and Jeff's lbdir has no value for "
+                  "this track, so there is no tiebreaker. Either the DB mis-recorded "
+                  "it or Jeff received a different file — not decidable from checksums.",
     "lbdir_only": "Only the lbdir manifest disagrees with the uploader. The DB either "
                   "already matches the uploader or never ingested this track.",
 }
-_VERDICT_ORDER = ["db_error", "audio_differs", "retag", "receipt_unknown", "lbdir_only"]
+_VERDICT_ORDER = prov.VERDICT_ORDER
 
 
 def load_rows(conn: sqlite3.Connection, include_divergence: bool = False) -> list[dict]:
@@ -116,100 +126,22 @@ def load_rows(conn: sqlite3.Connection, include_divergence: bool = False) -> lis
     return [dict(r) for r in conn.execute(sql)]
 
 
-def _group_key(row: dict) -> tuple:
-    """Identity of a single disputed value, shared across the two references."""
-    return (row["lb_number"], row["filename"].lower(), row["chk_type"],
-            row["source_checksum"])
+def build_findings(conn: sqlite3.Connection, rows: list[dict]) -> list[dict]:
+    """Group dispute rows into verdict-classified findings.
 
-
-def merge_by_track(rows: list[dict]) -> list[dict]:
-    """Collapse the per-reference rows into one finding per disputed value.
-
-    A single bad track normally produces two rows — one against the ``db``
-    reference and one against ``lbdir``. Presenting them separately hides the
-    thing that identifies the culprit, which is whether both references disagree
-    or only one.
-
-    Args:
-        rows: Output of :func:`load_rows`.
-
-    Returns:
-        One finding per (lb, filename, chk_type, source value), with a provisional
-        ``verdict`` (``receipt_fault`` is refined by :func:`split_receipt_verdicts`),
-        a ``refs`` map of reference_kind → that reference's row, and the union of
-        the source files that witnessed it.
-    """
-    grouped: dict[tuple, list[dict]] = defaultdict(list)
-    for row in rows:
-        grouped[_group_key(row)].append(row)
-
-    out = []
-    for group in grouped.values():
-        refs = {r["reference_kind"]: r for r in group}
-        db_row, lbdir_row = refs.get("db"), refs.get("lbdir")
-        if db_row and lbdir_row:
-            # Both references hold the same value against the uploader: the fileset
-            # Jeff received is internally consistent and differs from the source.
-            verdict = ("receipt_fault"
-                       if db_row["reference_checksum"] == lbdir_row["reference_checksum"]
-                       else "db_error")
-        elif db_row:
-            verdict = "db_error"
-        else:
-            verdict = "lbdir_only"
-
-        lead = db_row or lbdir_row
-        confidences = {r["confidence"] for r in group}
-        out.append({
-            **lead,
-            "verdict": verdict,
-            "refs": refs,
-            "confidence": "high" if "high" in confidences else sorted(confidences)[0],
-            "source_files": sorted({r["source_file"] for r in group}),
-            "statuses": sorted({r["status"] for r in group}),
-            "ids": sorted(r["id"] for r in group),
-        })
-    return out
-
-
-def split_receipt_verdicts(conn: sqlite3.Connection, findings: list[dict]) -> list[dict]:
-    """Split ``receipt_fault`` by whether the decoded audio actually changed.
-
-    MD5 hashes the whole file; FFP hashes the decoded audio stream. So an MD5-only
-    disagreement whose FFP agrees means the audio is bit-identical and only the
-    container moved — tags or padding rewritten — which is a very different finding
-    from a file that arrived damaged, and was the shape of the LB-15933 report that
-    started this work.
+    Delegates to the backend so the report and the GUI cannot drift: the lbdir
+    reference is consulted directly (see ``checksum_provenance.group_findings``).
 
     Args:
         conn: Open database connection (for the FFP-exists check).
-        findings: Output of :func:`merge_by_track`, modified in place.
+        rows: Output of :func:`load_rows`.
 
     Returns:
-        The same list, sorted by verdict, with every ``receipt_fault`` replaced by
-        ``audio_differs``, ``retag`` or ``receipt_unknown``.
+        Findings sorted by verdict bucket, then LB number, then filename.
     """
-    disputed = {(f["lb_number"], f["filename"].lower(), f["chk_type"]) for f in findings}
-    for f in findings:
-        if f["verdict"] != "receipt_fault":
-            continue
-        lb, fname = f["lb_number"], f["filename"].lower()
-        if f["chk_type"] in ("f", "s"):
-            # FFP/ST5 disagree: the decoded audio itself differs.
-            f["verdict"] = "audio_differs"
-        elif (lb, fname, "f") in disputed:
-            # The track's FFP is disputed too — the audio moved, not just the tags.
-            f["verdict"] = "audio_differs"
-        else:
-            has_ffp = conn.execute(
-                "SELECT 1 FROM checksums WHERE lb_number=? AND chk_type='f' "
-                "AND LOWER(filename)=? LIMIT 1",
-                (lb, fname),
-            ).fetchone()
-            f["verdict"] = "retag" if has_ffp else "receipt_unknown"
-    findings.sort(key=lambda f: (_VERDICT_ORDER.index(f["verdict"]), f["lb_number"],
-                                 f["filename"].lower()))
-    return findings
+    lbdir_ref = prov.load_lbdir_reference(
+        lb_numbers=sorted({r["lb_number"] for r in rows}))
+    return prov._split_receipt_verdicts(conn, prov.group_findings(rows, lbdir_ref))
 
 
 def _entry_line(finding: dict) -> str:
@@ -322,7 +254,7 @@ def render(findings: list[dict], divergence_count: int = 0) -> str:
     """Build the full standalone HTML document.
 
     Args:
-        findings: Output of :func:`merge_by_track`.
+        findings: Output of :func:`build_findings`.
         divergence_count: Number of whole-set divergences excluded, shown as
             context so the report does not look like the whole picture.
 
@@ -383,6 +315,7 @@ def render(findings: list[dict], divergence_count: int = 0) -> str:
   .stat.audio_differs {{ border-left-color:var(--audio); }}
   .stat.retag {{ border-left-color:var(--retag); }}
   .stat.receipt_unknown {{ border-left-color:var(--unk); }}
+  .stat.unverified {{ border-left-color:var(--unk); }}
   .stat.lbdir_only {{ border-left-color:var(--lbdir); }}
   .stat .n {{ font-size:2rem; font-weight:700; line-height:1; }}
   .stat .k {{ font-weight:600; margin:.25rem 0 .4rem; }}
@@ -412,6 +345,7 @@ def render(findings: list[dict], divergence_count: int = 0) -> str:
   .chip.audio_differs {{ color:var(--audio); }}
   .chip.retag {{ color:var(--retag); }}
   .chip.receipt_unknown {{ color:var(--unk); }}
+  .chip.unverified {{ color:var(--unk); }}
   .chip.lbdir_only {{ color:var(--lbdir); }}
   .chip.orphan {{ color:var(--orphan); }}
   .tablewrap {{ overflow-x:auto; }}
@@ -478,6 +412,7 @@ generated {generated}</p>
   <button data-filter="audio_differs">Different audio ({counts['audio_differs']})</button>
   <button data-filter="retag">Retag only ({counts['retag']})</button>
   <button data-filter="receipt_unknown">Unverifiable ({counts['receipt_unknown']})</button>
+  <button data-filter="unverified">No tiebreaker ({counts['unverified']})</button>
   <button data-filter="lbdir_only">lbdir only ({counts['lbdir_only']})</button>
   <button data-filter="orphan">Orphan values ({n_orphan})</button>
   <input type="search" placeholder="filter by track or source filename…">
@@ -546,7 +481,7 @@ def main() -> None:
     divergence_count = conn.execute(
         "SELECT COUNT(*) FROM checksum_disputes WHERE kind = 'set_divergence'"
     ).fetchone()[0]
-    findings = split_receipt_verdicts(conn, merge_by_track(rows))
+    findings = build_findings(conn, rows)
 
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)

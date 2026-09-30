@@ -49,11 +49,20 @@ def _dispute(**kw):
     return base
 
 
+def _lbdir(monkeypatch, *entries):
+    """Make load_lbdir_reference return a fake holding (lb, file, type, checksum)."""
+    ref = prov.Reference("lbdir")
+    for lb, fname, chk_type, checksum in entries:
+        ref.add(lb, fname, chk_type, checksum)
+    monkeypatch.setattr(prov, "load_lbdir_reference", lambda *a, **k: ref)
+
+
 def _findings(conn):
-    return report.split_receipt_verdicts(conn, report.merge_by_track(report.load_rows(conn)))
+    return report.build_findings(conn, report.load_rows(conn))
 
 
-def test_db_only_disagreement_is_a_db_error():
+def test_db_only_disagreement_is_a_db_error(monkeypatch):
+    _lbdir(monkeypatch, (900, "track01.flac", "m", "b" * 32))
     conn = _conn()
     prov.record_disputes(conn, [_dispute()])
     found = _findings(conn)
@@ -61,8 +70,9 @@ def test_db_only_disagreement_is_a_db_error():
     assert found[0]["verdict"] == "db_error"
 
 
-def test_both_references_holding_the_same_value_is_a_receipt_finding():
+def test_both_references_holding_the_same_value_is_a_receipt_finding(monkeypatch):
     """DB and lbdir agreeing against the uploader means Jeff's copy is the outlier."""
+    _lbdir(monkeypatch, (900, "track01.flac", "m", "a" * 32))
     conn = _conn()
     prov.record_disputes(conn, [
         _dispute(reference_kind="db"),
@@ -74,8 +84,9 @@ def test_both_references_holding_the_same_value_is_a_receipt_finding():
     assert set(found[0]["refs"]) == {"db", "lbdir"}
 
 
-def test_references_disagreeing_with_each_other_is_still_a_db_error():
+def test_references_disagreeing_with_each_other_is_still_a_db_error(monkeypatch):
     """If the DB does not even match the lbdir, the DB is the thing that is wrong."""
+    _lbdir(monkeypatch, (900, "track01.flac", "m", "c" * 32))
     conn = _conn()
     prov.record_disputes(conn, [
         _dispute(reference_kind="db", reference_checksum="a" * 32),
@@ -85,8 +96,9 @@ def test_references_disagreeing_with_each_other_is_still_a_db_error():
     assert _findings(conn)[0]["verdict"] == "db_error"
 
 
-def test_md5_only_disagreement_with_an_agreeing_ffp_is_a_retag():
+def test_md5_only_disagreement_with_an_agreeing_ffp_is_a_retag(monkeypatch):
     """FFP hashes the decoded audio; MD5 hashes the container. Only MD5 moved."""
+    _lbdir(monkeypatch, (900, "track01.flac", "m", "a" * 32))
     conn = _conn()
     conn.execute(
         "INSERT INTO checksums (checksum, filename, chk_type, lb_number) VALUES (?,?,?,?)",
@@ -100,7 +112,8 @@ def test_md5_only_disagreement_with_an_agreeing_ffp_is_a_retag():
     assert _findings(conn)[0]["verdict"] == "retag"
 
 
-def test_a_disputed_ffp_means_the_audio_itself_differs():
+def test_a_disputed_ffp_means_the_audio_itself_differs(monkeypatch):
+    _lbdir(monkeypatch, (900, "track01.flac", "f", "a" * 32))
     conn = _conn()
     prov.record_disputes(conn, [
         _dispute(reference_kind="db", chk_type="f"),
@@ -110,8 +123,10 @@ def test_a_disputed_ffp_means_the_audio_itself_differs():
     assert _findings(conn)[0]["verdict"] == "audio_differs"
 
 
-def test_md5_dispute_is_audio_differs_when_the_ffp_is_disputed_too():
+def test_md5_dispute_is_audio_differs_when_the_ffp_is_disputed_too(monkeypatch):
     """A retag cannot explain it when the audio hash moved as well."""
+    _lbdir(monkeypatch, (900, "track01.flac", "m", "a" * 32),
+           (900, "track01.flac", "f", "a" * 32))
     conn = _conn()
     conn.execute(
         "INSERT INTO checksums (checksum, filename, chk_type, lb_number) VALUES (?,?,?,?)",
@@ -130,7 +145,8 @@ def test_md5_dispute_is_audio_differs_when_the_ffp_is_disputed_too():
     assert {f["verdict"] for f in _findings(conn)} == {"audio_differs"}
 
 
-def test_md5_only_with_no_ffp_anywhere_is_undecidable():
+def test_md5_only_with_no_ffp_anywhere_is_undecidable(monkeypatch):
+    _lbdir(monkeypatch, (900, "track01.flac", "m", "a" * 32))
     conn = _conn()
     prov.record_disputes(conn, [
         _dispute(reference_kind="db"),
@@ -186,3 +202,10 @@ def test_render_produces_a_self_contained_document():
 def test_every_verdict_has_a_label_and_a_blurb(verdict):
     assert report._VERDICT_LABEL[verdict]
     assert report._VERDICT_BLURB[verdict]
+
+
+def test_no_lbdir_value_for_the_track_is_unverified(monkeypatch):
+    _lbdir(monkeypatch)
+    conn = _conn()
+    prov.record_disputes(conn, [_dispute()])
+    assert _findings(conn)[0]["verdict"] == "unverified"

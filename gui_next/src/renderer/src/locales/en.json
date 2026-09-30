@@ -1361,6 +1361,7 @@
       "audio_differs": "Different audio",
       "retag": "Retag only",
       "receipt_unknown": "Unverifiable",
+      "unverified": "No tiebreaker",
       "lbdir_only": "lbdir only"
     },
     "confidence": {
