@@ -650,3 +650,16 @@ def test_group_findings_without_a_reference_keeps_the_legacy_behaviour():
            "source_file": "f", "status": "open", "id": 1}
     assert prov.group_findings([row])[0]["verdict"] == "db_error"
     assert "unverified" in prov.VERDICT_ORDER
+
+
+def test_get_findings_displaced_value_is_not_a_db_error(tmp_path, monkeypatch):
+    """The DB already holds the uploader's value under another track name (disc-prefix
+    collision, or two filesets sharing values): lookups match on value, so it is a
+    label artifact even when the lbdir would otherwise call it db_error."""
+    _fake_lbdir(monkeypatch, (930, "track01.flac", "m", _hash(2)))  # lbdir = uploader
+    conn = _conn()
+    _insert_dispute(conn, lb_number=930, reference_kind="db", displaced_to="track02.flac")
+    _insert_dispute(conn, lb_number=931, reference_kind="db", displaced_to="d2\\track01.flac")
+    by_lb = {f["lb_number"]: f["verdict"] for f in prov.get_findings(conn)}
+    assert by_lb == {930: "displaced", 931: "displaced"}
+    assert prov.VERDICT_ORDER.index("displaced") < prov.VERDICT_ORDER.index("lbdir_only")

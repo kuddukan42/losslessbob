@@ -1362,6 +1362,7 @@
       "retag": "Retag only",
       "receipt_unknown": "Unverifiable",
       "unverified": "No tiebreaker",
+      "displaced": "Other track name",
       "lbdir_only": "lbdir only"
     },
     "confidence": {

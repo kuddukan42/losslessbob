@@ -2771,7 +2771,8 @@
       "retag": "Alleen opnieuw taggen",
       "receipt_unknown": "Niet verifieerbaar",
       "lbdir_only": "alleen lbdir",
-      "unverified": "Geen beslissende factor"
+      "unverified": "Geen beslissende factor",
+      "displaced": "Andere tracknaam"
     },
     "confidence": {
       "high": "Hoog",

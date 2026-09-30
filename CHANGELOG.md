@@ -3,6 +3,9 @@ Fixed: backend/checksum_provenance.py: group_findings called every finding witho
   db_error. Rows now pair on the basename (DB filenames keep a directory prefix) and the verdict reads the
   lbdir manifest directly; new verdict 'unverified' when the lbdir has no value for the track. Live open
   findings: db_error 191 -> 3, 312 -> 254 findings. tools/checksum_dispute_report.py reuses the backend logic.
+Fixed: backend/checksum_provenance.py: new verdict 'displaced', checked first — the DB already holds the
+  uploader's value for that LB under another track name, so lookups succeed (18 live findings, incl. the 3
+  former db_error). Report script, GUI and locales gain the bucket.
 Changed: gui_next ScreenChecksumDisputes.tsx + locales: 'unverified' bucket (DeepL also filled older gaps).
 Changed: data/losslessbob.db: TODO-352 migration applied after backup
   data/backups/losslessbob_preTODO352_20260930_1318.db — 1,924 venue_geocoded rows rekeyed on city+country,

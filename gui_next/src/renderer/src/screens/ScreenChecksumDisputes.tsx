@@ -18,7 +18,7 @@ const BASE = window.api.flaskBase
 
 // ── Types (mirror backend.checksum_provenance.get_findings) ─────────────────
 
-type Verdict = 'db_error' | 'audio_differs' | 'retag' | 'receipt_unknown' | 'unverified' | 'lbdir_only'
+type Verdict = 'db_error' | 'audio_differs' | 'retag' | 'receipt_unknown' | 'unverified' | 'displaced' | 'lbdir_only'
 type VerdictFilter = Verdict | 'all'
 type ReferenceFilter = 'db' | 'lbdir' | 'all'
 type DisputeStatus = 'open' | 'confirmed' | 'dismissed'
@@ -47,7 +47,7 @@ interface Finding {
   refs: { db?: DisputeRef; lbdir?: DisputeRef }
 }
 
-const VERDICT_ORDER: Verdict[] = ['db_error', 'audio_differs', 'retag', 'receipt_unknown', 'unverified', 'lbdir_only']
+const VERDICT_ORDER: Verdict[] = ['db_error', 'audio_differs', 'retag', 'receipt_unknown', 'unverified', 'displaced', 'lbdir_only']
 
 function verdictTone(v: Verdict): 'bad' | 'warn' | 'info' | 'mute' {
   if (v === 'db_error') return 'bad'
