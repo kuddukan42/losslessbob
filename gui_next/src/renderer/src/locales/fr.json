@@ -2770,7 +2770,8 @@
       "audio_differs": "Différents formats audio",
       "retag": "Réétiqueter uniquement",
       "receipt_unknown": "Non vérifiable",
-      "lbdir_only": "lbdir uniquement"
+      "lbdir_only": "lbdir uniquement",
+      "unverified": "Pas de critère de départage"
     },
     "confidence": {
       "high": "Haut",

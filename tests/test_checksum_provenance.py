@@ -522,10 +522,19 @@ def test_lookup_rescue_ignores_dismissed_and_divergent(tmp_path):
 
 
 # --------------------------------------------------------------------------- get_findings
+
+def _fake_lbdir(monkeypatch, *entries):
+    """Make load_lbdir_reference return a fake holding (lb, file, type, checksum)."""
+    ref = prov.Reference("lbdir")
+    for lb, fname, chk_type, checksum in entries:
+        ref.add(lb, fname, chk_type, checksum)
+    monkeypatch.setattr(prov, "load_lbdir_reference", lambda *a, **k: ref)
+
 # TODO-299: pairing disputes into a curator-facing, verdict-classified finding.
 
-def test_get_findings_db_error_when_only_db_reference_disagrees(tmp_path):
-    """Uploader value has no lbdir row at all — only the DB reference disputed it."""
+def test_get_findings_db_error_when_only_db_reference_disagrees(tmp_path, monkeypatch):
+    """lbdir holds the uploader's value, so only the DB is wrong."""
+    _fake_lbdir(monkeypatch, (901, "track01.flac", "m", _hash(2)))
     conn = _conn()
     _insert_dispute(conn, lb_number=901, reference_kind="db")
     findings = prov.get_findings(conn)
@@ -544,9 +553,10 @@ def test_get_findings_lbdir_only_when_only_lbdir_reference_disagrees(tmp_path):
     assert set(findings[0]["refs"]) == {"lbdir"}
 
 
-def test_get_findings_merges_two_rows_of_the_same_finding(tmp_path):
+def test_get_findings_merges_two_rows_of_the_same_finding(tmp_path, monkeypatch):
     """db and lbdir agree with each other (and disagree with the uploader) on an
     MD5-only value with no FFP for the track: receipt_unknown, two ids."""
+    _fake_lbdir(monkeypatch, (903, "track01.flac", "m", _hash(1)))
     conn = _conn()
     _insert_dispute(conn, lb_number=903, reference_kind="db", reference_checksum=_hash(1))
     _insert_dispute(conn, lb_number=903, reference_kind="lbdir", reference_checksum=_hash(1),
@@ -559,8 +569,9 @@ def test_get_findings_merges_two_rows_of_the_same_finding(tmp_path):
     assert set(f["refs"]) == {"db", "lbdir"}
 
 
-def test_get_findings_audio_differs_for_ffp_rows(tmp_path):
+def test_get_findings_audio_differs_for_ffp_rows(tmp_path, monkeypatch):
     """chk_type='f' (FFP) disagreement on both references is audio, not a container."""
+    _fake_lbdir(monkeypatch, (904, "track01.flac", "f", _hash(1)))
     conn = _conn()
     _insert_dispute(conn, lb_number=904, chk_type="f", reference_kind="db",
                      reference_checksum=_hash(1))
@@ -570,9 +581,10 @@ def test_get_findings_audio_differs_for_ffp_rows(tmp_path):
     assert findings[0]["verdict"] == "audio_differs"
 
 
-def test_get_findings_retag_when_the_track_also_has_an_undisputed_ffp(tmp_path):
+def test_get_findings_retag_when_the_track_also_has_an_undisputed_ffp(tmp_path, monkeypatch):
     """MD5-only disagreement, but the track's own FFP checksum is on record and not
     disputed — same decoded audio, only the container moved."""
+    _fake_lbdir(monkeypatch, (905, "track01.flac", "m", _hash(1)))
     conn = _conn()
     conn.execute(
         "INSERT INTO checksums (checksum, filename, chk_type, lb_number) VALUES (?,?,?,?)",
@@ -597,7 +609,8 @@ def test_get_findings_reference_filter_applies_after_pairing(tmp_path):
     assert {f["lb_number"] for f in prov.get_findings(conn)} == {906, 907}
 
 
-def test_get_findings_ordered_by_verdict_bucket(tmp_path):
+def test_get_findings_ordered_by_verdict_bucket(tmp_path, monkeypatch):
+    _fake_lbdir(monkeypatch, (909, "track01.flac", "m", _hash(2)))
     conn = _conn()
     _insert_dispute(conn, lb_number=908, reference_kind="lbdir",
                      reference_file="LBF-00908-lbdir-set.md5.txt")  # lbdir_only
@@ -612,3 +625,28 @@ def test_get_findings_respects_status_filter(tmp_path):
     assert prov.get_findings(conn) == []
     assert len(prov.get_findings(conn, status="confirmed")) == 1
     assert len(prov.get_findings(conn, status=None)) == 1
+
+
+def test_get_findings_classifies_db_rows_by_what_the_lbdir_holds(tmp_path, monkeypatch):
+    """Four outcomes for a DB!=uploader finding, judged against the lbdir directly
+    (an absent lbdir dispute row is not evidence the lbdir agrees with the uploader)."""
+    _fake_lbdir(
+        monkeypatch,
+        (920, "track01.flac", "m", _hash(2)),                      # uploader value
+        (921, "track01.flac", "m", _hash(1)),                      # DB value
+        (922, "track01.flac", "m", _hash(7)),                      # some third value
+    )                                                              # 923: nothing
+    conn = _conn()
+    for lb in (920, 921, 922, 923):
+        _insert_dispute(conn, lb_number=lb, reference_kind="db")
+    by_lb = {f["lb_number"]: f["verdict"] for f in prov.get_findings(conn)}
+    assert by_lb == {920: "db_error", 921: "receipt_unknown", 922: "db_error",
+                     923: "unverified"}
+
+
+def test_group_findings_without_a_reference_keeps_the_legacy_behaviour():
+    row = {"lb_number": 1, "filename": "a.flac", "chk_type": "m", "reference_kind": "db",
+           "reference_checksum": "x", "source_checksum": "y", "confidence": "high",
+           "source_file": "f", "status": "open", "id": 1}
+    assert prov.group_findings([row])[0]["verdict"] == "db_error"
+    assert "unverified" in prov.VERDICT_ORDER

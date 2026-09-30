@@ -663,16 +663,19 @@ def get_disputes(
 # references) supports — see tools/checksum_dispute_report.py module docstring
 # for the full explanation of each bucket. Kept in sync with that script's
 # copy by hand; this one is the GUI/API-facing entry point (get_findings).
-VERDICT_ORDER = ["db_error", "audio_differs", "retag", "receipt_unknown", "lbdir_only"]
+VERDICT_ORDER = ["db_error", "audio_differs", "retag", "receipt_unknown", "unverified",
+                 "lbdir_only"]
 
 
 def _finding_key(row: dict) -> tuple:
     """Identity of a single disputed value, shared across the two references."""
-    return (row["lb_number"], row["filename"].lower(), row["chk_type"],
+    # Basename, not the full name: the DB keeps a "disk 2\\track.flac" prefix that
+    # the lbdir reference (basename-only) never has, so the full name never pairs.
+    return (row["lb_number"], _basename(row["filename"]), row["chk_type"],
             row["source_checksum"])
 
 
-def group_findings(rows: list[dict]) -> list[dict]:
+def group_findings(rows: list[dict], lbdir_ref: Reference | None = None) -> list[dict]:
     """Collapse per-reference dispute rows into one finding per disputed value.
 
     A single bad track normally produces two rows — one against the ``db``
@@ -682,6 +685,12 @@ def group_findings(rows: list[dict]) -> list[dict]:
 
     Args:
         rows: Dispute rows (dicts), as returned by :func:`get_disputes`.
+        lbdir_ref: The lbdir :class:`Reference`. When given, a finding with a
+            ``db`` row is judged by what the lbdir actually holds for that
+            track (uploader value -> ``db_error``; DB value -> ``receipt_fault``;
+            other values only -> ``db_error``; nothing -> ``unverified``), not
+            by whether an lbdir dispute row exists. When None, falls back to
+            the row-presence heuristic (legacy behaviour).
 
     Returns:
         One finding per (lb, filename, chk_type, source value), with a
@@ -698,10 +707,20 @@ def group_findings(rows: list[dict]) -> list[dict]:
     for group in grouped.values():
         refs = {r["reference_kind"]: r for r in group}
         db_row, lbdir_row = refs.get("db"), refs.get("lbdir")
-        if db_row and lbdir_row:
-            # Both references hold the same value against the uploader: the
-            # fileset received is internally consistent and differs from the
-            # source.
+        if db_row and lbdir_ref is not None:
+            known = lbdir_ref.by_file.get(
+                (db_row["lb_number"], _basename(db_row["filename"]), db_row["chk_type"]))
+            if not known:
+                verdict = "unverified"
+            elif db_row["source_checksum"] in known:
+                verdict = "db_error"
+            elif db_row["reference_checksum"] in known:
+                verdict = "receipt_fault"
+            else:
+                verdict = "db_error"
+        elif db_row and lbdir_row:
+            # Legacy fallback: both references hold the same value against the
+            # uploader.
             verdict = ("receipt_fault"
                        if db_row["reference_checksum"] == lbdir_row["reference_checksum"]
                        else "db_error")
@@ -789,7 +808,8 @@ def get_findings(
         conn, lb_number=lb_number, status=status,
         kind="isolated_mismatch", confidence=None, reference_kind=None,
     )
-    findings = _split_receipt_verdicts(conn, group_findings(rows))
+    lbdir_ref = load_lbdir_reference(lb_numbers=sorted({r["lb_number"] for r in rows}))
+    findings = _split_receipt_verdicts(conn, group_findings(rows, lbdir_ref))
     if reference_kind:
         findings = [f for f in findings if reference_kind in f["refs"]]
     return findings
