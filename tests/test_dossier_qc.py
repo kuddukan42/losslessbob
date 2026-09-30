@@ -696,3 +696,37 @@ class TestRoute422:
                     db.DB_PATH = orig_db_db
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+class TestG4VenueCountryKey:
+    """TODO-352: venue quarantine lookup tries the city+country key, then bare."""
+
+    def _run(self, key):
+        from types import SimpleNamespace
+
+        from backend import dossier_qc
+
+        seen = {}
+
+        def fake_batch(conn, kind, keys):
+            seen["keys"] = keys
+            return {key: [("R-G1", 7, "open")]} if key in keys else {}
+
+        gate = SimpleNamespace(conn=None, view={"fields": {}}, consulted_findings=[],
+                               withhold_field=lambda *a, **k: None)
+        orig = dossier_qc._quarantine_details_batch
+        dossier_qc._quarantine_details_batch = fake_batch
+        try:
+            dossier_qc._run_g4_venue(gate, "NEC", "Birmingham", "United Kingdom")
+        finally:
+            dossier_qc._quarantine_details_batch = orig
+        return seen["keys"], gate.consulted_findings
+
+    def test_country_key_hit(self):
+        keys, consulted = self._run("nec:birmingham|united kingdom")
+        assert keys[0] == "nec:birmingham|united kingdom" and "nec:birmingham" in keys
+        assert consulted == [(7, "open")]
+
+    def test_bare_key_fallback_hit(self):
+        _keys, consulted = self._run("nec:birmingham")
+        assert consulted == [(7, "open")]

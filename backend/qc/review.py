@@ -61,10 +61,14 @@ def _venue_dates_index(conn: sqlite3.Connection, cache: dict | None) -> dict:
     from backend.venue_gazetteer import _norm_city, _norm_venue
 
     index: dict[tuple[str, str], set[str]] = {}
-    for venue, city, date_str in conn.execute(
-        "SELECT venue, city, date_str FROM olof_events WHERE date_str != ''"
+    for venue, city, country, date_str in conn.execute(
+        "SELECT venue, city, country, date_str FROM olof_events WHERE date_str != ''"
     ):
-        index.setdefault((_norm_venue(venue), _norm_city(city)), set()).add(date_str)
+        vnorm = _norm_venue(venue)
+        # Gazetteer keys are city+country (TODO-352); index the bare-city key too
+        # for rows not yet migrated -- drop it once the live DB is migrated.
+        for cnorm in {_norm_city(city, country), _norm_city(city)}:
+            index.setdefault((vnorm, cnorm), set()).add(date_str)
     if cache is not None:
         cache["venue"] = index
     return index

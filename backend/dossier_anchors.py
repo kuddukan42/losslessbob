@@ -1381,9 +1381,10 @@ def _build_venue_geo(vb, conn, show) -> None:
         # won display priority -- venue_geocoded may only have a row keyed
         # to a differently-worded name from another source.
         candidates = show.get("venue_candidates") or [venue]
-        # Rows are keyed city-only until migrate_city_norm_with_country runs, so try
+        # TODO-352: rows are keyed city-only until migrate_city_norm_with_country runs, so try
         # the city+country key first, then the bare city key -- accepting a bare-key
         # row only when its own country doesn't contradict the show's.
+        # REMOVABLE after the live migration: drop the bare-key fallback (and _same_country guard).
         city_keys = list(dict.fromkeys([_norm_city(city or "", country),
                                         _norm_city(city or "")]))
         row = cnorm = vnorm = None

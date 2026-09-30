@@ -455,25 +455,68 @@ def test_migrate_city_norm_is_idempotent(tmp_path, monkeypatch):
     assert second == 0  # already keyed on city+country -- nothing left to change
 
 
-def test_migrate_city_norm_skips_key_collision(tmp_path, monkeypatch):
+def test_migrate_collision_merges_and_keeps_resolved_pin(tmp_path, monkeypatch):
+    """TODO-352: a bare-key row colliding with an already country-keyed row is
+    merged (better row wins), not stranded; re-running is a no-op."""
     _db, c = _make_db(tmp_path, monkeypatch)
-    # Two rows that would both migrate to the same (venue_norm, city_norm) key.
+    c.executemany(
+        """INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, country,
+               lat, lon, source, manual_override) VALUES (?,?,?,?,?,?,?,?,?)""",
+        [
+            # old bare row holds the resolved pin; new-key row is a seeded placeholder
+            ("nec", "birmingham", "NEC", "Birmingham", "United Kingdom",
+             52.45, -1.72, "nominatim", 0),
+            ("nec", "birmingham|united kingdom", "NEC", "Birmingham",
+             "United Kingdom", None, None, "seeded", 0),
+            # old bare row is a placeholder; new-key row is a manual pin -> manual stays
+            ("hall", "paris", "Hall", "Paris", "France", None, None, "seeded", 0),
+            ("hall", "paris|france", "Hall", "Paris", "France", 48.8, 2.3, "manual", 1),
+        ],
+    )
+    c.execute(
+        "CREATE TABLE qc_findings (id INTEGER PRIMARY KEY, rule_id TEXT, "
+        "entity_kind TEXT, entity_key TEXT, UNIQUE(rule_id, entity_kind, entity_key))"
+    )
+    c.execute("INSERT INTO qc_findings (rule_id, entity_kind, entity_key) "
+              "VALUES ('R-G1','venue','nec:birmingham')")
+    c.commit()
+
+    stats = vg.migrate_city_norm_with_country_stats(c)
+    c.commit()
+    assert stats["collisions"] == 2
+    assert stats["merged_deleted"] == 2
+    assert stats["rekeyed"] == 1
+    assert stats["qc_rekeyed"] == 1
+
+    rows = {(r["venue_norm"], r["city_norm"]): r for r in c.execute("SELECT * FROM venue_geocoded")}
+    assert set(rows) == {("nec", "birmingham|united kingdom"), ("hall", "paris|france")}
+    assert rows[("nec", "birmingham|united kingdom")]["lat"] == 52.45
+    assert rows[("hall", "paris|france")]["manual_override"] == 1
+    assert c.execute("SELECT entity_key FROM qc_findings").fetchone()[0] == \
+        "nec:birmingham|united kingdom"
+
+    again = vg.migrate_city_norm_with_country_stats(c)
+    assert again == {"rekeyed": 0, "collisions": 0, "merged_deleted": 0, "qc_rekeyed": 0}
+
+
+def test_migrate_two_bare_rows_same_new_key(tmp_path, monkeypatch):
+    """Two rows whose countries differ only by spelling variant normalise to the
+    same new key: exactly one row survives."""
+    _db, c = _make_db(tmp_path, monkeypatch)
     c.executemany(
         """INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, country, source)
            VALUES (?,?,?,?,?,?)""",
         [
             ("nec", "birmingham", "NEC", "Birmingham", "United Kingdom", "seeded"),
-            ("nec", "birmingham uk", "NEC", "Birmingham", "United Kingdom", "resolved"),
+            ("nec", "birmingham uk", "NEC", "Birmingham", "United  Kingdom", "seeded"),
         ],
     )
     c.commit()
-    # Force both rows to want the same new key.
-    monkeypatch.setattr(vg, "_norm_city", lambda city, country=None: "birmingham|united kingdom")
-    changed = vg.migrate_city_norm_with_country(c)
+    stats = vg.migrate_city_norm_with_country_stats(c)
     c.commit()
-    assert changed == 1  # one migrated, the collider left on its old key
-    rows = [r["city_norm"] for r in c.execute("SELECT city_norm FROM venue_geocoded")]
-    assert "birmingham uk" in rows or rows.count("birmingham|united kingdom") == 1
+    assert stats["rekeyed"] == 1 and stats["collisions"] == 1
+    assert [r[0] for r in c.execute("SELECT city_norm FROM venue_geocoded")] == \
+        ["birmingham|united kingdom"]
 
 
 def test_migrate_missing_columns_is_a_noop(tmp_path, monkeypatch):
