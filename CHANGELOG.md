@@ -16,6 +16,9 @@ Changed: data/losslessbob.db: TODO-299 — the 3 surviving db_error findings dis
 Changed: tools/tapematch/config.yaml: match.fingerprint_primary_floor 0.05 ENABLED (TODO-325, tj sign-off;
   closes BUG-331 for new runs). 0.10 rejected after a cached replay (-41 tp for -4 fp). CALIBRATION_ERAS.md
   regenerated: 260 replayable dates change verdict under the new calibration f786bebf58c8.
+Added: tools/tapematch/replay_writeback.py: writes threshold-only re-decisions back as replay runs
+  (<run_id>-r<hash>, new runs.replayed_from column) behind a fidelity gate; dry run by default. Copy run: 250
+  dates, 781 pair verdicts, 53 fidelity skips; 2008-07-08 splits. Not yet applied to the live DBs.
 Added: tools/tapematch/SPEED_RERUN_QUEUE.md: TODO-324 steps 1-2 — [DISTINCT SOURCE] lines resting on an
   untrusted speed ratio, bucketed by whether the written verdict depended on them (heuristic, ~70-75%).
 
