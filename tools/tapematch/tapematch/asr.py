@@ -432,6 +432,39 @@ def utterance_similarity(a: Utterance, b: Utterance) -> float:
     return 2.0 * shared / (len(a.tokens) + len(b.tokens))
 
 
+def _witness_group_sims(matches: list[tuple[float, float, int, int]],
+                        utts_a: list[Utterance], utts_b: list[Utterance],
+                        gap: float) -> list[float]:
+    """Collapse matches that are fragments of one sentence into witnesses.
+
+    Matches are ordered by A-side ``t_start``. A match joins the previous
+    group when its A utterance starts within *gap* seconds of the previous
+    match's A ``t_end`` AND its B utterance starts within *gap* seconds of the
+    previous match's B ``t_end`` (adjacency is required on both sides).
+
+    Args:
+        matches: ``(offset, sim, idx_a, idx_b)`` one-to-one matches.
+        utts_a: Side A utterances.
+        utts_b: Side B utterances.
+        gap: Maximum silence, in seconds, between fragments of one sentence.
+
+    Returns:
+        One similarity per witness group (the group's maximum).
+    """
+    sims: list[float] = []
+    prev: tuple[Utterance, Utterance] | None = None
+    for _off, sim, ia, ib in sorted(matches, key=lambda m: utts_a[m[2]].t_start):
+        ua, ub = utts_a[ia], utts_b[ib]
+        if (prev is not None and ua.t_start - prev[0].t_end <= gap
+                and ub.t_start - prev[1].t_end <= gap
+                and ub.t_start >= prev[1].t_start):
+            sims[-1] = max(sims[-1], sim)
+        else:
+            sims.append(sim)
+        prev = (ua, ub)
+    return sims
+
+
 def banter_score(utts_a: list[Utterance], utts_b: list[Utterance], cfg: dict,
                  ratio: float = 1.0) -> tuple[float | None, dict]:
     """Score two sources' banter transcripts for same-performance evidence.
@@ -487,9 +520,10 @@ def banter_score(utts_a: list[Utterance], utts_b: list[Utterance], cfg: dict,
     min_corrob = int(cfg.get("min_corroborating", 2))
     denom_cap = int(cfg.get("score_denominator_cap", 4))
     mode = str(cfg.get("score_mode", "witnesses"))
+    merge_gap = float(cfg.get("witness_merge_gap_sec", 2.0))
 
     detail: dict = {"n_a": len(utts_a), "n_b": len(utts_b),
-                    "n_matched": 0, "offset_sec": None,
+                    "n_matched": 0, "n_witnesses": 0, "offset_sec": None,
                     "score_witnesses": None, "score_rate": None}
     if len(utts_a) < min_utts or len(utts_b) < min_utts:
         return None, detail
@@ -529,13 +563,18 @@ def banter_score(utts_a: list[Utterance], utts_b: list[Utterance], cfg: dict,
     detail["n_matched"] = len(matches)
     if matches:
         detail["offset_sec"] = round(float(np.median([m[0] for m in matches])), 3)
-    if len(matches) < min_corrob:
+    # Consecutive fragments of ONE spoken sentence are not independent
+    # witnesses: collapse adjacent matches (on both sides) into one group that
+    # contributes its best similarity once.
+    group_sims = _witness_group_sims(matches, utts_a, utts_b, merge_gap)
+    detail["n_witnesses"] = len(group_sims)
+    if len(group_sims) < min_corrob:
         # Single-utterance agreement is noise (spec §3): report no evidence
         # rather than a small positive score.
         detail["score_witnesses"] = detail["score_rate"] = 0.0
         return 0.0, detail
 
-    sim_sum = sum(m[1] for m in matches)
+    sim_sum = sum(group_sims)
     # Both scalars are always computed, because the expensive step is the
     # transcription, not the arithmetic: one ASR pass hands the TODO-293
     # calibration study both distributions over the identical match set.
