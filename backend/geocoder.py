@@ -305,7 +305,7 @@ def _get_performance_location_string(
 
 
 def _get_bobdylan_shows_location_string(
-    location_text: str, conn
+    location_text: str, conn, country_out: list | None = None
 ) -> tuple[str, str | None, str | None] | None:
     """Return structured geocoding strings from bobdylan_shows for this location.
 
@@ -320,6 +320,8 @@ def _get_bobdylan_shows_location_string(
     Args:
         location_text: Raw location string from ``entries.location``.
         conn: SQLite connection (read-only usage).
+        country_out: Optional list; bobdylan_shows has no country column, so
+            ``""`` is appended on a hit (the seeded row keeps the bare key).
 
     Returns:
         ``(full, city_only, venue_only)`` tuple, e.g. ``("The Purple Onion, St. Paul,
@@ -339,13 +341,15 @@ def _get_bobdylan_shows_location_string(
         if parts:
             full = ", ".join(parts)
             city_only = loc or None
+            if country_out is not None:
+                country_out.append("")
             return full, city_only, (venue or None)
 
     return None
 
 
 def _get_olof_events_location_string(
-    location_text: str, conn
+    location_text: str, conn, country_out: list | None = None
 ) -> tuple[str, str | None, str | None] | None:
     """Return structured geocoding strings from olof_events for this location.
 
@@ -363,6 +367,9 @@ def _get_olof_events_location_string(
     Args:
         location_text: Raw location string from ``entries.location``.
         conn: SQLite connection (read-only usage).
+        country_out: Optional list; on a hit the source row's bare ``country``
+            column is appended (``""`` if blank) so callers can build the
+            city+country gazetteer key without re-parsing *city_only*.
 
     Returns:
         ``(full, city_only, venue_only)`` tuple, e.g. ``("Massey Hall, Toronto, ON,
@@ -391,13 +398,15 @@ def _get_olof_events_location_string(
         if full_parts:
             full = ", ".join(full_parts)
             city_only = ", ".join(city_parts) if city_parts else None
+            if country_out is not None:
+                country_out.append((event["country"] or "").strip())
             return full, city_only, (venue or None)
 
     return None
 
 
 def _get_setlistfm_location_string(
-    location_text: str, conn
+    location_text: str, conn, country_out: list | None = None
 ) -> tuple[str, str | None, str | None] | None:
     """Return structured geocoding strings from setlistfm_shows for this location.
 
@@ -411,6 +420,8 @@ def _get_setlistfm_location_string(
     Args:
         location_text: Raw location string from ``entries.location``.
         conn: SQLite connection (read-only usage).
+        country_out: Optional list; on a hit the row's ``country`` is appended
+            (``""`` if blank) -- see :func:`_get_olof_events_location_string`.
 
     Returns:
         ``(full, city_only, venue_only)`` tuple, e.g. ``("Thalia Mara Hall, Jackson,
@@ -433,6 +444,8 @@ def _get_setlistfm_location_string(
         if full_parts:
             full = ", ".join(full_parts)
             city_only = ", ".join(city_parts) if city_parts else None
+            if country_out is not None:
+                country_out.append((show["country"] or "").strip())
             return full, city_only, (venue_name or None)
 
     return None
@@ -639,17 +652,55 @@ def _venue_lookup_for_location(
         _get_setlistfm_location_string,
         _get_bobdylan_shows_location_string,
     ):
-        hit = lookup_fn(location_text, conn)
+        country_out: list[str] = []
+        hit = lookup_fn(location_text, conn, country_out)
         if hit is None:
             continue
         _full, city_only, venue_only = hit
+        country = country_out[0] if country_out else ""
         venue_norm = _norm_venue(venue_only)
         if not venue_norm:
             continue
         city_display = (city_only or "").split(",", 1)[0].strip()
-        return venue_norm, _norm_city(city_only), (venue_only or "").strip(), city_display
+        return venue_norm, _norm_city(city_only, country), (venue_only or "").strip(), city_display
 
     return None
+
+
+def _gazetteer_pin_row(conn, venue_norm: str, city_norm: str):
+    """Fetch a resolved ``venue_geocoded`` pin for a city+country key.
+
+    Looks up the city+country key first. TODO-352 transitional fallback
+    (delete once ``migrate_city_norm_with_country`` has run on the live DB): a
+    row still keyed on the bare city is accepted only when its own country is
+    blank or matches the key's country suffix.
+
+    Args:
+        conn: SQLite connection (read-only usage).
+        venue_norm: Normalized venue key.
+        city_norm: City key from :func:`backend.venue_gazetteer._norm_city`.
+
+    Returns:
+        The matching ``sqlite3.Row`` (venue, city, country, lat, lon, source,
+        confidence) or ``None``.
+    """
+    from backend.venue_gazetteer import _normalize
+
+    sql = """SELECT venue, city, country, lat, lon, source, confidence
+                 FROM venue_geocoded
+                 WHERE venue_norm = ? AND city_norm = ?
+                       AND lat IS NOT NULL
+                       AND source NOT IN ('seeded', 'failed')"""
+    row = conn.execute(sql, (venue_norm, city_norm)).fetchone()
+    if row is not None or "|" not in city_norm:
+        return row
+    bare, _, country_norm = city_norm.partition("|")
+    row = conn.execute(sql, (venue_norm, bare)).fetchone()
+    if row is not None:
+        row_country = _normalize(row["country"])
+        if row_country and row_country != country_norm:
+            return None
+    return row
 
 
 def _venue_key_for_location(location_text: str, conn) -> tuple[str, str] | None:
@@ -1084,14 +1135,7 @@ def run_batch(
             # some other show at the same venue — no Nominatim call spent.
             venue_key = _venue_key_for_location(location_text, conn)
             if venue_key is not None:
-                gaz_row = conn.execute(
-                    """SELECT venue, city, lat, lon, source, confidence
-                           FROM venue_geocoded
-                           WHERE venue_norm = ? AND city_norm = ?
-                                 AND lat IS NOT NULL
-                                 AND source NOT IN ('seeded', 'failed')""",
-                    venue_key,
-                ).fetchone()
+                gaz_row = _gazetteer_pin_row(conn, *venue_key)
                 if gaz_row is not None:
                     is_city_pin = gaz_row["confidence"] == "city"
                     gaz_confidence = (

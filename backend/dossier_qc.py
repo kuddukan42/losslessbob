@@ -450,25 +450,36 @@ def _run_g4_olof_event(gate: _Gate, event_id: int | None) -> None:
             gate.withhold_all_rows("set", sub, rule_id, id_field="label")
 
 
-def _run_g4_venue(gate: _Gate, show_venue: str | None, show_city: str | None) -> None:
+def _run_g4_venue(gate: _Gate, show_venue: str | None, show_city: str | None,
+                  show_country: str | None = None) -> None:
     from backend.venue_gazetteer import _norm_city, _norm_venue
 
     if not show_venue:
         return
-    vkey = f"{_norm_venue(show_venue)}:{_norm_city(show_city or '')}"
-    hits = _quarantine_details_batch(gate.conn, "venue", [vkey])
-    for rule_id, fid, status in hits.get(vkey, []):
-        gate.consulted_findings.append((fid, status))
-        scalars = _VENUE_RULE_SCALARS.get(rule_id)
-        if scalars is None:
-            log.warning("dossier_qc: G4 -- unrecognised error rule %r for venue", rule_id)
-            continue
-        if rule_id == "R-G1" and _coords_basis(gate.view) != "venue":
-            # The anchor already fell back to setlist.fm's city centre (hollow ring);
-            # the discredited geocode isn't on the page, so nothing to withhold.
-            continue
-        for key in scalars:
-            gate.withhold_field(key, rule_id)
+    # Quarantine keys are "venue_norm:city_norm" copied from venue_geocoded rows, so
+    # they follow the gazetteer's city+country key (TODO-352). TODO-352: drop the
+    # bare-city key once migrate_city_norm_with_country has run on the live DB.
+    vnorm = _norm_venue(show_venue)
+    vkeys = list(dict.fromkeys([f"{vnorm}:{_norm_city(show_city or '', show_country)}",
+                                f"{vnorm}:{_norm_city(show_city or '')}"]))
+    hits = _quarantine_details_batch(gate.conn, "venue", vkeys)
+    for vkey in vkeys:
+        for rule_id, fid, status in hits.get(vkey, []):
+            _apply_g4_venue_hit(gate, rule_id, fid, status)
+
+
+def _apply_g4_venue_hit(gate: _Gate, rule_id: str, fid, status) -> None:
+    gate.consulted_findings.append((fid, status))
+    scalars = _VENUE_RULE_SCALARS.get(rule_id)
+    if scalars is None:
+        log.warning("dossier_qc: G4 -- unrecognised error rule %r for venue", rule_id)
+        return
+    if rule_id == "R-G1" and _coords_basis(gate.view) != "venue":
+        # The anchor already fell back to setlist.fm's city centre (hollow ring);
+        # the discredited geocode isn't on the page, so nothing to withhold.
+        return
+    for key in scalars:
+        gate.withhold_field(key, rule_id)
 
 
 def _coords_basis(view: dict) -> str | None:
@@ -549,9 +560,10 @@ def _run_g4_sources(gate: _Gate, pick_lb: int | None) -> None:
 
 
 def _run_g4_quarantine(gate: _Gate, event_id: int | None, show_venue: str | None,
-                        show_city: str | None, pick_lb: int | None) -> None:
+                        show_city: str | None, pick_lb: int | None,
+                        show_country: str | None = None) -> None:
     _run_g4_olof_event(gate, event_id)
-    _run_g4_venue(gate, show_venue, show_city)
+    _run_g4_venue(gate, show_venue, show_city, show_country)
     _run_g4_olof_song(gate, event_id)
     _run_g4_sources(gate, pick_lb)
 
@@ -1050,7 +1062,8 @@ def run_gate(dossier: dict, conn: sqlite3.Connection, *, channel: str,
         _run_g1_identity(gate, date_iso, event_id)
         _run_g2_assert(gate)
         _run_g3_provenance(gate)
-        _run_g4_quarantine(gate, event_id, show.get("venue"), show.get("city"), pick_lb)
+        _run_g4_quarantine(gate, event_id, show.get("venue"), show.get("city"), pick_lb,
+                           show.get("country"))
         _run_g5_invariants(gate, dossier, pick_lb)
         _run_g6_freshness(gate, pick_lb)
         _run_g7_claims(gate, pick_lb)

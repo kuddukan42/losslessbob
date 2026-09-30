@@ -170,19 +170,122 @@ def _cleanup_numeric_junk(conn) -> int:
     return len(junk)
 
 
-def migrate_city_norm_with_country(conn: sqlite3.Connection) -> int:
-    """C6: rekey ``venue_geocoded.city_norm`` on city+country.
+def _gaz_row_rank(row) -> tuple[int, int]:
+    """Rank a ``venue_geocoded`` row for collision merging (higher wins).
+
+    Manual fixes beat everything; then a row with a real resolved pin beats a
+    seeded / failed placeholder.
+
+    Args:
+        row: Row with ``manual_override``, ``lat``, ``lon`` and ``source``.
+
+    Returns:
+        ``(is_manual, has_pin)`` tuple, comparable across rows.
+    """
+    has_pin = (
+        row["lat"] is not None and row["lon"] is not None
+        and row["source"] not in ("seeded", "failed")
+    )
+    return (1 if row["manual_override"] else 0, 1 if has_pin else 0)
+
+
+def migrate_city_norm_with_country_stats(conn: sqlite3.Connection) -> dict:
+    """C6/TODO-352: rekey ``venue_geocoded.city_norm`` on city+country.
 
     Before this, ``city_norm`` was city-only, so Birmingham, UK and
     Birmingham, AL shared one key and a lookup for either city could return
     the other's geocode. Idempotent and safe to run on any DB shape:
     ``PRAGMA table_info`` checks the table/columns exist before touching
-    anything (never assume a clean DB), rows already keyed on city+country
-    recompute to the same key and are left alone, and a row that would
-    collide with an existing key is skipped rather than raising. This
-    function only mutates the connection it's given -- the caller decides
-    whether and when to commit; it is never run against the live DB from a
-    session (plan C6 note).
+    anything (never assume a clean DB) and rows already keyed on
+    city+country recompute to the same key and are left alone.
+
+    Key collisions (another row already holds ``(venue_norm, new_key)``, e.g.
+    a country-aware re-seed ran before the migration) are merged, not
+    skipped: the better row survives (manual override first, then a resolved
+    pin over a seeded/failed placeholder, ties keep the row already on the
+    new key) and the other is deleted, so a re-run is a no-op. For every row
+    that survives a rekey, ``qc_findings`` venue entity keys
+    (``venue_norm:city_norm``) are moved to the new key so curator decisions
+    follow the row (``UPDATE OR IGNORE``: an existing finding on the new key
+    wins).
+
+    Only mutates the connection it's given -- the caller decides whether and
+    when to commit; it is never run against the live DB from a session.
+
+    Args:
+        conn: Open SQLite connection with write access.
+
+    Returns:
+        Dict with ``rekeyed`` (rows whose ``city_norm`` changed, incl. merge
+        winners), ``collisions`` (rows that hit an existing key),
+        ``merged_deleted`` (losing rows deleted in a merge) and
+        ``qc_rekeyed`` (``qc_findings`` rows moved).
+    """
+    stats = {"rekeyed": 0, "collisions": 0, "merged_deleted": 0, "qc_rekeyed": 0}
+    if not _table_exists(conn, "venue_geocoded"):
+        return stats
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(venue_geocoded)")}
+    if not {"city_norm", "city", "country", "venue_norm"} <= cols:
+        return stats
+    has_ranking = {"manual_override", "lat", "lon", "source"} <= cols
+    has_qc = _table_exists(conn, "qc_findings")
+
+    prev_factory = conn.row_factory
+    conn.row_factory = sqlite3.Row
+    try:
+        rows = conn.execute("SELECT rowid AS rid, * FROM venue_geocoded").fetchall()
+        for row in rows:
+            new_key = _norm_city(row["city"], row["country"])
+            old_key = row["city_norm"]
+            if not new_key or new_key == old_key:
+                continue
+            venue_norm = row["venue_norm"]
+            other = conn.execute(
+                "SELECT rowid AS rid, * FROM venue_geocoded"
+                " WHERE venue_norm = ? AND city_norm = ?",
+                (venue_norm, new_key),
+            ).fetchone()
+            if other is not None:
+                stats["collisions"] += 1
+                if has_ranking and _gaz_row_rank(row) > _gaz_row_rank(other):
+                    conn.execute("DELETE FROM venue_geocoded WHERE rowid = ?",
+                                 (other["rid"],))
+                    stats["merged_deleted"] += 1
+                else:
+                    conn.execute("DELETE FROM venue_geocoded WHERE rowid = ?",
+                                 (row["rid"],))
+                    stats["merged_deleted"] += 1
+                    if has_qc:
+                        # Carry the loser's curator decisions onto the survivor's
+                        # key; an existing finding there wins (OR IGNORE).
+                        cur = conn.execute(
+                            "UPDATE OR IGNORE qc_findings SET entity_key = ?"
+                            " WHERE entity_kind = 'venue' AND entity_key = ?",
+                            (f"{venue_norm}:{new_key}", f"{venue_norm}:{old_key}"),
+                        )
+                        stats["qc_rekeyed"] += cur.rowcount
+                    logger.info(
+                        "venue_gazetteer city+country migration: merged %r/%r into %r",
+                        venue_norm, old_key, new_key,
+                    )
+                    continue
+            conn.execute("UPDATE venue_geocoded SET city_norm = ? WHERE rowid = ?",
+                         (new_key, row["rid"]))
+            stats["rekeyed"] += 1
+            if has_qc:
+                cur = conn.execute(
+                    "UPDATE OR IGNORE qc_findings SET entity_key = ?"
+                    " WHERE entity_kind = 'venue' AND entity_key = ?",
+                    (f"{venue_norm}:{new_key}", f"{venue_norm}:{old_key}"),
+                )
+                stats["qc_rekeyed"] += cur.rowcount
+    finally:
+        conn.row_factory = prev_factory
+    return stats
+
+
+def migrate_city_norm_with_country(conn: sqlite3.Connection) -> int:
+    """Rekey ``venue_geocoded.city_norm`` on city+country (see the stats form).
 
     Args:
         conn: Open SQLite connection with write access.
@@ -190,35 +293,7 @@ def migrate_city_norm_with_country(conn: sqlite3.Connection) -> int:
     Returns:
         The number of rows whose ``city_norm`` changed.
     """
-    if not _table_exists(conn, "venue_geocoded"):
-        return 0
-    cols = {r[1] for r in conn.execute("PRAGMA table_info(venue_geocoded)")}
-    if not {"city_norm", "city", "country", "venue_norm"} <= cols:
-        return 0
-
-    rows = conn.execute(
-        "SELECT rowid, venue_norm, city_norm, city, country FROM venue_geocoded"
-    ).fetchall()
-    changed = 0
-    for rowid, venue_norm, city_norm, city, country in rows:
-        new_key = _norm_city(city, country)
-        if not new_key or new_key == city_norm:
-            continue
-        try:
-            conn.execute(
-                "UPDATE venue_geocoded SET city_norm = ? WHERE rowid = ?",
-                (new_key, rowid),
-            )
-        except sqlite3.IntegrityError:
-            # Another row already holds (venue_norm, new_key) -- leave this
-            # one on its old key rather than losing either row.
-            logger.warning(
-                "venue_gazetteer city+country migration: key collision on "
-                "venue_norm=%r city_norm=%r, left unmigrated", venue_norm, new_key,
-            )
-            continue
-        changed += 1
-    return changed
+    return migrate_city_norm_with_country_stats(conn)["rekeyed"]
 
 
 def _table_exists(conn, table_name: str) -> bool:

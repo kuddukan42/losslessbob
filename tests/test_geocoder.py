@@ -604,7 +604,8 @@ class TestVenueKeyForLocation:
             from backend.geocoder import _venue_key_for_location
             from backend.venue_gazetteer import _norm_city, _norm_venue
             key = _venue_key_for_location("Raw Location", conn)
-            assert key == (_norm_venue("Massey Hall"), _norm_city("Toronto"))
+            assert key == (_norm_venue("Massey Hall"), _norm_city("Toronto", "Canada"))
+            assert key[1] == "toronto|canada"
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -623,7 +624,7 @@ class TestVenueKeyForLocation:
             from backend.geocoder import _venue_key_for_location
             from backend.venue_gazetteer import _norm_city, _norm_venue
             key = _venue_key_for_location("Raw Location", conn)
-            assert key == (_norm_venue("Thalia Mara Hall"), _norm_city("Jackson"))
+            assert key == (_norm_venue("Thalia Mara Hall"), _norm_city("Jackson", "United States"))
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -1489,6 +1490,32 @@ class TestRunBatch:
 # ═══════════════════════════════════════════════════════════════════════════════
 # 9b. run_batch() venue-gazetteer inheritance (TODO-223 bite 3)
 # ═══════════════════════════════════════════════════════════════════════════════
+
+class TestGazetteerPinRow:
+    """TODO-352: city+country lookup with a transitional bare-key fallback."""
+
+    def _ins(self, conn, city_norm, country):
+        conn.execute(
+            """INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, country,
+                   lat, lon, source, confidence, manual_override)
+               VALUES ('nec', ?, 'NEC', 'Birmingham', ?, 52.4, -1.7, 'nominatim', 'high', 0)""",
+            (city_norm, country),
+        )
+
+    def test_country_key_hits_and_bare_row_falls_back(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _gazetteer_pin_row
+            self._ins(conn, "birmingham", "United Kingdom")  # not yet migrated
+            assert _gazetteer_pin_row(conn, "nec", "birmingham|united kingdom") is not None
+            # contradicting country on the bare row is refused
+            assert _gazetteer_pin_row(conn, "nec", "birmingham|united states") is None
+            conn.execute("DELETE FROM venue_geocoded")
+            self._ins(conn, "birmingham|united kingdom", "United Kingdom")  # migrated
+            assert _gazetteer_pin_row(conn, "nec", "birmingham|united kingdom") is not None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
 
 class TestRunBatchGazetteerInheritance:
     def test_inherits_resolved_gazetteer_pin_without_network(self):
