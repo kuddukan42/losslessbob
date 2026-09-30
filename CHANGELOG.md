@@ -1,3 +1,15 @@
+[2026-09-30] — Checksum-dispute verdict fix (TODO-299), TODO-352 live migration, TODO-324 re-run queue
+Fixed: backend/checksum_provenance.py: group_findings called every finding without a paired lbdir dispute row
+  db_error. Rows now pair on the basename (DB filenames keep a directory prefix) and the verdict reads the
+  lbdir manifest directly; new verdict 'unverified' when the lbdir has no value for the track. Live open
+  findings: db_error 191 -> 3, 312 -> 254 findings. tools/checksum_dispute_report.py reuses the backend logic.
+Changed: gui_next ScreenChecksumDisputes.tsx + locales: 'unverified' bucket (DeepL also filled older gaps).
+Changed: data/losslessbob.db: TODO-352 migration applied after backup
+  data/backups/losslessbob_preTODO352_20260930_1318.db — 1,924 venue_geocoded rows rekeyed on city+country,
+  333 qc_findings moved; bare-key fallback kept for the 2,147 country-less rows.
+Added: tools/tapematch/SPEED_RERUN_QUEUE.md: TODO-324 steps 1-2 — [DISTINCT SOURCE] lines resting on an
+  untrusted speed ratio, bucketed by whether the written verdict depended on them (heuristic, ~70-75%).
+
 [2026-09-30] — Backlog bites: ASR witness dedup (TODO-293c), lossy-lineage veto guards (TODO-351), gazetteer city+country callers (TODO-352)
 Fixed: tools/tapematch/tapematch/asr.py: banter_score counted consecutive fragments of one sentence as
   independent witnesses; adjacent matches (within asr.witness_merge_gap_sec, default 2.0, on BOTH sides) now
