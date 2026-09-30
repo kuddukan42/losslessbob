@@ -708,6 +708,11 @@ def test_sibilance_native_empty_probe_returns_nan():
     "SOURCE: MP4 Files from YouTube > Soundforge PRO 10c > FLAC",
     "Download 320kbps mp3, Soundforge PRO 10c, Edit",
     "the original tape only ever circulated as mp3.",
+    "have just been informed that files are mp3 sourced.",
+    "Apowersoft Audio Recorder (PC Sound level 77> mp3 > cdr . EAC > wav",
+    "JTT NOTE: M4a Download from YouTube > Soundforge PRO 10c",
+    "I had it transferred from a 128kbps stream capture",
+    "drop/cut between cdrs YouTube Capture (mp4), Soundforge PRO 10c, FLAC",
 ])
 def test_lossy_lineage_hits(text):
     from concert_ranker.text_features import has_lossy_lineage
@@ -727,6 +732,34 @@ def test_lossy_lineage_hits(text):
     "Edirol by Roland R-09 24 bit WAV/MP3 Recorder",
     "in comparison this is less blairy than the 50th anniversary mp3",
     "DAT master > CD > EAC > FLAC",
+    # TODO-351 guards
+    "please, do not trade this recording in .mp3 or other lossy formats.",
+    "sounds and looks like low quality mp3 with nothing above 14k",
+    "has an unnatural mechanical harsh mp3 sound; did not listen to all",
+    "has a very unnatural mp3 like sound",
+    "the spectral band looks mp3 processed like with notches",
+    "and IMHO partial mp3 sourced.",
+    "i had a friend looking for an mp3 copy of the two versions",
+    "Found this recently. I had MP3 versions already but this is FLAC.",
+    "I own the flac of Cedar 1 and the mp3 of Cedar 2, but this is not it",
+    "I have posted an .mp3 with brief excerpts from each date",
+    "Check out the mp3 below.",
+    "45 sample mp3 downloaded from the site",
+    "(same recording but was banned for being mp3 sourced with nothing above 16k)",
+    "a torrent is same recording and adds the missing song from mp3 but has cuts",
+    "seems same as previous torrent except that has an mp3 generation",
+    "the lowgen remasters and sourced from mp3 have a fuller clearer sound",
+    "Converted to 320 Mp3's and Flacs through Audacity",
+    "Cut into 320kbps Mp3 format and a high level Flac",
+    "drops between tracks indicating probable additional unreported mp3 step",
+    "remembered to change the settings from \"mp3\" to \"wav\" and recorded",
+    "loaded with MP3-sourced tracks. None of the tracks here are like that.",
+    "He contacted me via YouTube and encouraged me to post this",
+    "I've listened to them on YouTube (but they compress all audio).",
+    "please check this out:, https://www.youtube.com/watch?v=ROTRErxJ6Gw",
+    "(See: https://www.youtube.com/@SomeChannel.)",
+    "similar to what occurs on very low quality mp3s",
+    "characteristics listed above for the 8/06 mp3 torrent",
 ])
 def test_lossy_lineage_guards(text):
     from concert_ranker.text_features import has_lossy_lineage
