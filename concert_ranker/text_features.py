@@ -130,7 +130,7 @@ _LOSSY_LINEAGE_RE = re.compile(
 # "less blairy than … the 50th anniversary mp3" (another copy).
 _LOSSY_NEGATION_BEFORE_RE = re.compile(
     r"(?:\b(?:no|not|never|non|without|nor|free\s+of|instead\s+of|rather\s+than|"
-    r"avoid(?:ed|ing)?|probably|likely|possibly|maybe|may\s+be|might|seems?|"
+    r"avoid(?:ed|ing)?|probabl[ey]|likely|possibly|maybe|may\s+be|might|seems?|"
     r"may\s+have|might\s+have|could(?:\s+have)?|as\s+if|as\s+though|perhaps|"
     r"suspect\w*|appears?|sounds?\s+like|"
     r"suggest\w*|indicat\w*|typically|reserve|either|than|compar\w*)\b"
@@ -139,22 +139,47 @@ _LOSSY_NEGATION_BEFORE_RE = re.compile(
 )
 # Advice about the listener's own copies: "encode to mp3", "convert it to mp3".
 _LOSSY_ENCODE_TO_RE = re.compile(
-    r"\b(?:encod|convert|transcod)\w*\s+(?:\w+\s+){0,2}(?:to|as|into)\s+"
-    r"(?:an?\s+)?[\"']?$",
+    r"\b(?:encod|convert|transcod|cut|export|sav|render)\w*\s+(?:\w+\s+){0,2}"
+    r"(?:to|as|into)\s+(?:an?\s+)?(?:\d{2,3}\s*(?:kbps\s+)?)?[\"']?$",
     re.IGNORECASE,
 )
 # "mp3-free", "mp3 samples attached", "MP3 version made with …", and a recorder
 # named for its formats ("WAV/MP3 Recorder", "sansa mp3 player (recording option> wav").
 _LOSSY_NEGATION_AFTER_RE = re.compile(
     r"^\s*-?\s*(?:free|samples?|clips?|versions?\s+made|players?|recorders?|trained|"
-    r"channel)\b",
+    r"channel|torrent|posting|like|sounds?|sounding|processed|artifacts?|below|above|attached|"
+    r"with\s+(?:brief\s+)?(?:excerpts|clips|samples))\b"
+    r"|^[\"']?\s*to\s+[\"']?(?:wav|flac|pcm)\b",  # setting change: "mp3" to "wav"
     re.IGNORECASE)
+# Not a lineage statement: a subjective listening impression ("sounds and looks like
+# low quality mp3", "IMHO partial mp3 sourced"), an aside about the curator's own or a
+# wanted copy ("I had MP3 versions already", "looking for an mp3 copy"), an extra
+# offered alongside ("posted an .mp3", "sample mp3", "check out the mp3"), a link or
+# contact aside (YouTube), or another copy ("same recording but banned for being mp3
+# sourced", "except that has an mp3 generation").
+_LOSSY_ASIDE_BEFORE_RE = re.compile(
+    r"(?:\b(?:(?:sounds?|sounding|looks?|looking)\s+(?:and\s+\w+\s+)?like|"
+    r"similar\s+to|imho|imo|i\s+think|i\s+believe|"
+    r"contact\w*|messag\w*|listened|heard|except(?:\s+that)?)\b[^.;!]{0,40}"
+    r"|\blike\s+(?:\w+\s+){0,3}"
+    r"|\b(?:posted|attach\w*|upload\w*|check\s+out|samples?|excerpts?|looking\s+for|"
+    r"wanted|seeking)\s+(?:an?\s+|the\s+)?"
+    r"|\bI\s+(?:already\s+|also\s+)?(?:had|own|owned)\s+(?!(?:it|this|them|to)\b)[^.;!]{0,40}"
+    r"|\bcheck\s+(?:this|it|them)\s+out\W{0,6}(?:https?://)?(?:www\.)?"
+    r"|\bsame\s+recording\b[^.;!]{0,60}"
+    r"|\b(?:previous|earlier|prior|first\s+released)\b[^.;!]{0,40})$",
+    re.IGNORECASE)
+# YouTube channel/user URL: a pointer to the uploader, not a capture source.
+_LOSSY_CHANNEL_AFTER_RE = re.compile(r"^\.com/(?:c/|@|channel/|user/)", re.IGNORECASE)
+# "... mp3. None of the tracks here ..." — the sentence after negates it.
+_LOSSY_NONE_OF_AFTER_RE = re.compile(r"^[^.;!]{0,30}[.;!]\s*none\s+of\b", re.IGNORECASE)
 # "WAV/MP3 Recorder"; "Where presented in MP3, …" (a convenience copy offered alongside).
 _LOSSY_DEVICE_BEFORE_RE = re.compile(r"\bwav\s*/\s*$|\bpresented\s+in\s+$", re.IGNORECASE)
 # The hit names another copy being compared against ("wgv 192kbps is a little
 # less full"), not this transfer's chain.
 _LOSSY_COMPARISON_AFTER_RE = re.compile(
-    r"^[^.;!]{0,20}\b(?:is|was|sounds?)\s+(?:a\s+(?:little|bit)\s+|much\s+|slightly\s+)?"
+    r"^[^.;!]{0,20}\b(?:is|was|sounds?|have|has)\s+(?:a\s+(?:little|bit)?\s*|much\s+|"
+    r"slightly\s+)?"
     r"(?:less|more|better|worse|thinner|fuller|brighter|duller)\b",
     re.IGNORECASE,
 )
@@ -177,10 +202,17 @@ def lossy_lineage_snippet(*texts: str | None) -> str | None:
             continue
         for m in _LOSSY_LINEAGE_RE.finditer(text):
             before = text[max(0, m.start() - 40):m.start()]
+            before = re.sub(r"(?:^|\s)\.$", " ", before)  # ".mp3" extension dot
+            wide = re.sub(r"(?:^|\s)\.$", " ", text[max(0, m.start() - 80):m.start()])
+            if _LOSSY_ASIDE_BEFORE_RE.search(wide):
+                continue
             if (_LOSSY_NEGATION_BEFORE_RE.search(before) or _LOSSY_ENCODE_TO_RE.search(before)
                     or _LOSSY_DEVICE_BEFORE_RE.search(before)):
                 continue
-            if _LOSSY_NEGATION_AFTER_RE.match(text[m.end():m.end() + 16]):
+            if _LOSSY_NEGATION_AFTER_RE.match(text[m.end():m.end() + 30]):
+                continue
+            if (_LOSSY_CHANNEL_AFTER_RE.match(text[m.end():m.end() + 12])
+                    or _LOSSY_NONE_OF_AFTER_RE.match(text[m.end():m.end() + 60])):
                 continue
             if _LOSSY_COMPARISON_AFTER_RE.match(text[m.end():m.end() + 60]):
                 continue
