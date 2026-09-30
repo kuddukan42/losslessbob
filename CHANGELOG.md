@@ -1,3 +1,18 @@
+[2026-09-30] — Backlog bites: ASR witness dedup (TODO-293c), lossy-lineage veto guards (TODO-351), gazetteer city+country callers (TODO-352)
+Fixed: tools/tapematch/tapematch/asr.py: banter_score counted consecutive fragments of one sentence as
+  independent witnesses; adjacent matches (within asr.witness_merge_gap_sec, default 2.0, on BOTH sides) now
+  form one witness group scored by its max sim. detail gains n_witnesses. Key added to config.yaml and
+  calibration.DECISION_KEYS (asr is a gated block, so stored hashes are unchanged; asr stays disabled).
+Fixed: concert_ranker/text_features.py: lossy_lineage_snippet false positives — listening impressions, the
+  curator's own/wanted copy, extras offered alongside, another copy, derived outputs, YouTube contact/channel
+  asides, next-sentence "None of". Corpus hits 146 -> 114, every removed hit a classified FP, none added.
+Changed: backend/geocoder.py, backend/dossier_qc.py, backend/qc/review.py: gazetteer lookups build the
+  city+country key (_norm_city(city, country)); bare-key fallbacks kept until the live migration, marked
+  REMOVABLE. backend/venue_gazetteer.py: migrate_city_norm_with_country now merges key collisions (manual >
+  resolved pin) instead of stranding rows and moves venue qc_findings keys; new _stats variant.
+Added: tools/migrate_gazetteer_city_country.py: dry-run-by-default runner for the rekey (--apply to commit).
+  Not yet run live.
+
 [2026-09-27] — lb-nc: Norton Commander-style two-pane TUI for moving collection folders between mounts and filing misfiled ones (TODO-355)
 Added: tools/lb_nc.py + tools/lb-nc: a two-pane terminal commander over the collection mounts, adapted from
   music_hopper/hopper_nc.py (same keys, schemes, mouse and rendering; stdlib only). Each LB folder is marked
