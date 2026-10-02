@@ -57,6 +57,7 @@ from backend.folder_naming import (  # noqa: E402 — the repo's own NFT rules, 
 
 LOG_PATH = REPO / "data" / "logs" / "lb_nc.log"
 JOURNAL_PATH = REPO / "data" / "lb_nc_undo.jsonl"
+QUEUE_PATH = REPO / "data" / "lb_nc_queue.json"     # the live queue, resumed after a restart
 SIZE_CACHE = Path.home() / ".cache" / "lb_nc" / "sizes.json"
 CONFIG_PATH = Path.home() / ".config" / "systools" / "config"
 API_URL = "http://127.0.0.1:5174"
@@ -845,14 +846,18 @@ class Job:
     dest: str | None = None        # where a move lands, for the space check of later batches
     cross: bool = False            # the move copies across drives
     meter: list[int] = field(default_factory=lambda: [0, 0])   # [bytes done, bytes total]
+    spec: dict | None = None       # how to rebuild it after a restart; None: never saved
 
 
 def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None,
              dest: str, journal: Journal | None = None,
-             from_mount_id: int | None = None, gate: PageGate | None = None) -> Job:
+             from_mount_id: int | None = None, gate: PageGate | None = None,
+             adopt: bool = False) -> Job:
     """File (or move) one folder via /api/pipeline/file/start, polling to completion.
 
     A private-marked folder is only moved after gate confirms its LB page is live.
+    With adopt the backend is already moving this folder (a queue resumed after a
+    restart): nothing is started, the job only follows it to the end and journals it.
     """
     guarded = gate is not None and private_marked(entry.name, entry.path, entry.row)
     cross = not same_device(entry.path, existing(dest))
@@ -867,12 +872,14 @@ def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None
     meter = [0, 0]
 
     def run(emit: Emit) -> None:
-        emit(f"LB-{entry.lb:05d} {entry.name}", False)
-        if guarded:
-            gate.check(entry.lb, emit)
-        started = api.post("/api/pipeline/file/start", body)
-        if not started.get("ok"):
-            raise JobError(f"{started.get('error_code') or 'error'}: {started.get('error')}")
+        emit(f"LB-{entry.lb:05d} {entry.name}" + (" (already running)" if adopt else ""), False)
+        if not adopt:
+            if guarded:
+                gate.check(entry.lb, emit)
+            started = api.post("/api/pipeline/file/start", body)
+            if not started.get("ok"):
+                raise JobError(
+                    f"{started.get('error_code') or 'error'}: {started.get('error')}")
         status: dict = {}
         while True:
             time.sleep(POLL)
@@ -899,7 +906,11 @@ def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None
     verb = "move" if file_mode == "move" else "file"
     mark = "  [LB page checked first]" if guarded else ""
     return Job(f"{verb} LB-{entry.lb:05d}", f"{entry.name}  {GLYPHS['dest']} {dest}{mark}", run,
-               path=norm(entry.path), dest=dest, cross=cross, meter=meter)
+               path=norm(entry.path), dest=dest, cross=cross, meter=meter,
+               spec={"kind": "file", "path": str(entry.path), "lb": entry.lb,
+                     "mount_id": mount_id, "file_mode": file_mode, "dest": dest,
+                     "from_mount_id": from_mount_id, "cross": cross,
+                     "registered": registered})
 
 
 def register_job(api: Api, entry: Entry, journal: Journal | None = None) -> Job:
@@ -913,7 +924,8 @@ def register_job(api: Api, entry: Entry, journal: Journal | None = None) -> Job:
              + ("" if res.get("added") else " (already present)"), False)
         if journal and res.get("added"):
             journal.add({"kind": "register", "lb": entry.lb})
-    return Job(f"register LB-{entry.lb:05d}", f"{entry.name}  (register in place)", run)
+    return Job(f"register LB-{entry.lb:05d}", f"{entry.name}  (register in place)", run,
+               spec={"kind": "register", "path": str(entry.path), "lb": entry.lb})
 
 
 def has_checksums(folder: Path) -> bool:
@@ -939,7 +951,7 @@ def generate_job(api: Api, entry: Entry) -> Job:
             raise JobError(f"nothing generated for {entry.name}")
         emit("  wrote " + ", ".join(Path(g).name for g in result["generated"]), False)
     return Job("checksums", f"{entry.name}  (generate checksums)", run,
-               path=norm(entry.path))
+               path=norm(entry.path), spec={"kind": "checksums", "path": str(entry.path)})
 
 
 def rename_job(api: Api, entry: Entry, new_name: str, journal: Journal | None = None,
@@ -971,7 +983,9 @@ def rename_job(api: Api, entry: Entry, new_name: str, journal: Journal | None = 
             emit(f"  qBittorrent: {res['qbt_error']}", False)
     mark = "  [LB page checked first]" if guarded else ""
     return Job("rename", f"{entry.name}  {GLYPHS['dest']} {new_name}{mark}", run,
-               path=norm(entry.path))
+               path=norm(entry.path),
+               spec={"kind": "rename", "path": str(entry.path), "lb": entry.lb,
+                     "new_name": new_name})
 
 
 def route_job(api: Api, year: int, mount: dict, sub_path: str,
@@ -988,7 +1002,9 @@ def route_job(api: Api, year: int, mount: dict, sub_path: str,
                          "old_mount_id": (old or {}).get("mount_id"),
                          "old_sub_path": (old or {}).get("sub_path") or "",
                          "new_mount_id": mount["id"]})
-    return Job(f"route {year}", f"route {year} ⇒ {mount['label']}", run)
+    return Job(f"route {year}", f"route {year} ⇒ {mount['label']}", run,
+               spec={"kind": "route", "year": year, "mount_id": mount["id"],
+                     "sub_path": sub_path})
 
 
 def _ok(res: Any, what: str) -> None:
@@ -1356,6 +1372,61 @@ def pipeline_job(api: Api, paths: list[Path], sink: dict[str, dict]) -> Job:
                run)
 
 
+class QueueStore:
+    """The live queue on disk, so a restart picks it up. With path None nothing is saved.
+
+    The file holds the batches as job specs (Job.spec) plus the pid that wrote it; it is
+    rewritten on every queue change and removed when the queue empties.
+    """
+
+    def __init__(self, path: Path | None) -> None:
+        self.path = path
+        self.lock = threading.Lock()
+
+    def save(self, batches: list[list[dict]]) -> None:
+        """Replace the file with these batches; no batches removes it."""
+        if self.path is None:
+            return
+        with self.lock:
+            try:
+                if not batches:
+                    self.path.unlink(missing_ok=True)
+                    return
+                self.path.parent.mkdir(parents=True, exist_ok=True)
+                tmp = self.path.with_name(self.path.name + ".tmp")
+                tmp.write_text(json.dumps({
+                    "pid": os.getpid(), "saved": time.strftime("%Y-%m-%d %H:%M:%S"),
+                    "batches": batches}, indent=1), encoding="utf-8")
+                os.replace(tmp, self.path)
+            except OSError as exc:
+                log.warning("queue not saved: %s", exc)
+
+    def load(self) -> dict | None:
+        """The saved queue, or None when there is none (or it can't be read)."""
+        if self.path is None:
+            return None
+        try:
+            data = json.loads(self.path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return None
+        batches = data.get("batches") if isinstance(data, dict) else None
+        if not isinstance(batches, list) or not any(batches):
+            return None
+        return data
+
+    @staticmethod
+    def owner_alive(data: dict) -> bool:
+        """True when another running lb-nc wrote the file — its queue, not ours to resume."""
+        pid = data.get("pid")
+        if not isinstance(pid, int) or pid == os.getpid():
+            return False
+        try:
+            cmdline = Path(f"/proc/{pid}/cmdline").read_bytes()
+        except OSError:
+            return False
+        return b"lb_nc" in cmdline or b"lb-nc" in cmdline
+
+
 class Runner:
     """Runs jobs one at a time in a thread, batch after batch.
 
@@ -1382,6 +1453,7 @@ class Runner:
         self.finished = False
         self.stop = threading.Event()
         self.lock = threading.Lock()
+        self.on_change: Callable[[], None] | None = None   # the queue changed: save it
         self._active = False
         self._progress = False
 
@@ -1408,14 +1480,18 @@ class Runner:
         if self.read_only and any(j.gated for j in jobs):
             raise PermissionError("read-only mode")
         with self.lock:
-            if self._active:
+            appended = self._active
+            if appended:
                 self.pending.append(list(jobs))
                 self.total += len(jobs)
-                return True
-            self._active = True
-            self.current = deque(jobs)
-            self.done, self.total = 0, len(jobs)
-            self.stop.clear()
+            else:
+                self._active = True
+                self.current = deque(jobs)
+                self.done, self.total = 0, len(jobs)
+                self.stop.clear()
+        self._changed()
+        if appended:
+            return True
         if self.threaded:
             self.thread = threading.Thread(target=self._work, daemon=True)
             self.thread.start()
@@ -1428,6 +1504,25 @@ class Runner:
         with self.lock:
             return ([self.job] if self.job else []) + list(self.current) \
                 + [j for batch in self.pending for j in batch]
+
+    def snapshot(self) -> list[list[dict]]:
+        """The queue as saveable batches of job specs; the running job is marked."""
+        with self.lock:
+            first = ([self.job] if self.job else []) + list(self.current)
+            out = []
+            for batch in (first, *self.pending):
+                specs = [dict(j.spec, running=True) if j is self.job else dict(j.spec)
+                         for j in batch if j.spec]
+                if specs:
+                    out.append(specs)
+            return out
+
+    def _changed(self) -> None:
+        if self.on_change:
+            try:
+                self.on_change()
+            except Exception:                    # saving must never stop the queue
+                log.exception("queue save failed")
 
     def progress(self) -> tuple[Job | None, int, int]:
         """(running job, jobs finished, jobs submitted) for the progress bar."""
@@ -1452,6 +1547,7 @@ class Runner:
                 self._active = False
         if dropped:
             self.emit(f"stopped — {dropped} job(s) not run", False)
+        self._changed()
         return job
 
     def _fail(self, job: Job, text: str) -> None:
@@ -1471,6 +1567,7 @@ class Runner:
                 self.failure[1].extend(lines)
             else:
                 self.failure = (job.label, lines)
+        self._changed()
 
     def _work(self) -> None:
         while (job := self._next()) is not None:
@@ -1825,6 +1922,8 @@ While a queue runs, more moves, files and renames can be confirmed: each batch i
 behind the running one (a folder already queued is skipped), and a failure only drops
 the rest of its own batch. The bar above the keys shows the current folder's bytes and
 the queue. F4, the duplicate resolver and the planners wait for the queue to end.
+The queue is saved in data/lb_nc_queue.json: after a quit or a crash the next start
+offers to resume it (moves, files, registers, renames, checksums and routes).
 Pane headers show free space; the line under the panes shows every drive. F6/F7 add up
 cross-drive bytes per target, moves already queued included, and refuse a batch that
 would leave < 2G free."""
@@ -1838,7 +1937,8 @@ class App:
     def __init__(self, api: Api, left: Path | None = None, right: Path | None = None,
                  read_only: bool = False, scheme: str = "nc", ascii_only: bool = False,
                  threaded: bool = True, size_cache: Path | None = SIZE_CACHE,
-                 persist: bool = True, journal_path: Path | None = JOURNAL_PATH) -> None:
+                 persist: bool = True, journal_path: Path | None = JOURNAL_PATH,
+                 queue_path: Path | None = None) -> None:
         self.api = api
         self.page_gate = PageGate(api)
         self.journal = Journal(journal_path)
@@ -1862,6 +1962,9 @@ class App:
         self.loading = False
         self.sizes = SizeCache(size_cache, threaded)
         self.runner = Runner(read_only, threaded)
+        self.queue = QueueStore(None if read_only else queue_path)
+        self.saved: dict | None = None       # a queue left by the last session, undecided
+        self.runner.on_change = self.save_queue
         self.pipeline_results: dict[str, dict] = {}
         self.hits: list[tuple[int, int, int, str]] = []     # (row, x0, x1, key)
         self.pane_rows: dict[str, tuple[int, int, int, int]] = {}
@@ -1879,6 +1982,12 @@ class App:
         self.active = self.left
         self.relist()
         self.check_gone()
+        self.saved = self.queue.load()
+        if self.saved and QueueStore.owner_alive(self.saved):
+            self.saved, self.queue = None, QueueStore(None)
+            self.say("another lb-nc is running a queue — this session's queue is not saved")
+        elif self.saved:
+            self.resume_dialog()
 
     # ---- data
 
@@ -2173,7 +2282,8 @@ class App:
             self.quit = True
             return
         self.dialog = Picker("A job is still running", [
-            ("Quit anyway — the backend finishes the current folder; the rest are dropped",
+            ("Quit anyway — the backend finishes the current folder; the rest "
+             + ("resume next start" if self.queue.path else "are dropped"),
              lambda: setattr(self, "quit", True)),
             ("Stay", lambda: None)])
 
@@ -2187,6 +2297,139 @@ class App:
         """Show a short status in the info strip for a few seconds."""
         self.flash = (text, time.monotonic())
         self.dirty = True
+
+    # ---- the saved queue
+
+    def save_queue(self) -> None:
+        """Write the live queue to disk (the runner calls this on every change)."""
+        if self.saved is None:                 # an undecided saved queue is never overwritten
+            self.queue.save(self.runner.snapshot())
+
+    def entry_at(self, path: Path) -> Entry:
+        """A pane entry for one folder, classified as the listing would."""
+        entry = Entry(path.name, path, "dir")
+        entry.lb = lb_of(path.name)
+        if self.coll is not None:
+            entry.status, entry.note, entry.row = self.coll.classify(path)
+            annotate(entry, self.coll)
+        return entry
+
+    def job_from(self, spec: dict, status: dict) -> Job | str:
+        """Rebuild one saved job against today's disk, or say why it can't resume."""
+        kind = spec.get("kind")
+        if kind == "route":
+            year = spec["year"]
+            mount = self.coll.mount_by_id(spec["mount_id"])
+            old = self.coll.routes.get(year)
+            if mount is None:
+                return f"route {year}: its mount is gone"
+            if old and old.get("mount_id") == mount["id"]:
+                return f"route {year}: already on {mount['label']}"
+            return route_job(self.api, year, mount, spec.get("sub_path") or "",
+                             self.journal, old)
+        path = Path(spec["path"])
+        here = norm(status.get("path") or "") == norm(path)
+        if kind == "file" and spec.get("running") and here and status.get("running"):
+            entry = self.entry_at(path)
+            entry.lb = entry.lb if entry.lb is not None else spec.get("lb")
+            return file_job(self.api, entry, spec.get("mount_id"), spec.get("file_mode"),
+                            spec["dest"], self.journal, spec.get("from_mount_id"),
+                            self.page_gate, adopt=True)
+        if not path.is_dir():
+            result = status.get("result") or {}
+            if kind == "file" and spec.get("running") and here and result.get("ok"):
+                if result.get("file_mode", "move") == "move":
+                    self.journal.add({
+                        "kind": "move", "lb": spec.get("lb"), "from": str(path),
+                        "to": result.get("dest"), "cross": bool(spec.get("cross")),
+                        "from_mount_id": spec.get("from_mount_id"),
+                        "registered": bool(spec.get("registered"))})
+                return f"{path.name}: finished while lb-nc was closed"
+            return f"{path.name}: folder is no longer there"
+        entry = self.entry_at(path)
+        if entry.lb is None:
+            entry.lb = spec.get("lb")
+        if kind == "file":
+            return file_job(self.api, entry, spec.get("mount_id"), spec.get("file_mode"),
+                            spec["dest"], self.journal, spec.get("from_mount_id"),
+                            self.page_gate)
+        if kind == "rename":
+            if (path.parent / spec["new_name"]).exists():
+                return f"{path.name}: {spec['new_name']} already exists"
+            return rename_job(self.api, entry, spec["new_name"], self.journal, self.page_gate)
+        if kind == "register":
+            return register_job(self.api, entry, self.journal)
+        if kind == "checksums":
+            if has_checksums(path):
+                return f"{path.name}: already has checksums"
+            return generate_job(self.api, entry)
+        return f"unknown saved job {kind!r}"
+
+    def rebuild(self, saved: dict) -> tuple[list[list[Job]], list[str]]:
+        """The saved batches as runnable jobs, and a line for each one that can't resume."""
+        try:
+            status = self.api.get("/api/pipeline/file/status") or {}
+        except ApiError:
+            status = {}
+        batches, notes = [], []
+        for batch in saved.get("batches") or []:
+            jobs = []
+            for spec in batch:
+                try:
+                    made = self.job_from(spec, status)
+                except (KeyError, TypeError, ValueError) as exc:
+                    made = f"unreadable saved job: {exc!r}"
+                if isinstance(made, Job):
+                    jobs.append(made)
+                else:
+                    notes.append("  skip " + made)
+            if jobs:
+                batches.append(jobs)
+        return batches, notes
+
+    def resume_dialog(self) -> None:
+        """Offer the queue the last session left on disk: resume, show, or discard."""
+        saved = self.saved
+        if saved is None:
+            self.dialog = Message("Saved queue", ["No saved queue."])
+            return
+        if self.coll is None:
+            self.dialog = Message("Saved queue", [
+                self.coll_error or "no collection loaded",
+                "The saved queue is kept; F9 Menu offers it again."])
+            return
+        if self.runner.running:
+            self.dialog = Message("Saved queue", ["A queue is running — wait for it."])
+            return
+        batches, notes = self.rebuild(saved)
+        jobs = [j for batch in batches for j in batch]
+
+        def resume() -> None:
+            self.saved = None
+            self.show_log = True
+            self.say(f"resuming {len(jobs)} saved job(s)…")
+            for batch in batches:
+                self.runner.submit(batch)
+            self.save_queue()
+
+        def discard() -> None:
+            self.saved = None
+            self.queue.save([])
+            self.say("saved queue discarded")
+
+        if not jobs:
+            discard()
+            self.dialog = Message("Saved queue", ["Nothing left to resume.", *notes[:12]])
+            return
+        detail = [j.detail for j in jobs] + notes
+        self.dialog = Picker(f"Saved queue — {saved.get('saved', '?')}", [
+            (f"Resume {len(jobs)} job(s)", resume),
+            ("Show them", lambda: setattr(self, "dialog", Pager(
+                "Saved queue", [("jobs", detail)]))),
+            ("Discard the saved queue", discard),
+        ], [f"The last session left {len(jobs)} job(s) queued."
+            + (f" {len(notes)} can't resume." if notes else ""),
+            "Esc decides later (F9 Menu); nothing new can be queued until then."])
 
     def busy(self, jobs: list[Job]) -> bool:
         """True (with a dialog) when jobs can't be queued behind the running queue."""
@@ -2210,6 +2453,9 @@ class App:
         if self.read_only and any(j.gated for j in jobs):
             self.dialog = Message("Read-only", ["read-only mode"])
             return
+        if self.saved and any(j.gated for j in jobs):
+            self.resume_dialog()               # a new queue would overwrite the saved one
+            return
         jobs, cut = self.unqueued(jobs)
         if not jobs:
             self.dialog = Message("Queue", ["Every selected folder is already in the queue."])
@@ -2228,6 +2474,9 @@ class App:
             self.dialog = Message(title, ["read-only mode"])
             return
         if self.busy(jobs):
+            return
+        if self.saved and any(j.gated for j in jobs):
+            self.resume_dialog()               # decide the saved queue before a new one
             return
         fresh, cut = self.unqueued(jobs)
         if cut:
@@ -2925,6 +3174,7 @@ class App:
              self.rebalance_dialog),
             ("Suggest year routes from year sizes and drive space (w)", self.routes_dialog),
             ("Undo (z)", self.undo_dialog),
+            ("Saved queue from the last session: resume or discard", self.resume_dialog),
             ("Last pipeline results", lambda: setattr(self, "dialog", Pager(
                 "Pipeline", self.results_pages()))),
             ("Stop the queue after the current folder", stop),
@@ -3753,7 +4003,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         term.write("\x1b[1;1H\x1b[0mlb_nc: reading the collection and mounts…")
         app = App(Api(args.api), args.left, args.right, read_only=args.read_only,
-                  scheme=scheme, ascii_only=ascii_only)
+                  scheme=scheme, ascii_only=ascii_only, queue_path=QUEUE_PATH)
         main_loop(app, term)
     except KeyboardInterrupt:
         pass
@@ -3764,8 +4014,10 @@ def main(argv: list[str] | None = None) -> int:
     if app is None:
         return 130
     if app.runner.running and app.runner.job:
+        rest = ("the queue behind it is saved and resumes at the next start"
+                if app.queue.path else "queued jobs behind it were dropped")
         sys.stdout.write(f"{app.runner.job.label} is still running in the backend; "
-                         f"queued jobs behind it were dropped. Log: {LOG_PATH}\n")
+                         f"{rest}. Log: {LOG_PATH}\n")
     return 0
 
 

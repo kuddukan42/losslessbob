@@ -1,3 +1,21 @@
+[2026-10-01] — lb-nc: the queue is saved to disk and resumes after a restart
+Added: tools/lb_nc.py: QueueStore writes the live queue to data/lb_nc_queue.json (atomic replace) on
+  every queue change and removes it when the queue empties. Jobs carry a rebuild recipe (Job.spec):
+  move/file, register, rename (incl. -NFT fix), checksums and route are saved; drop, relink, set-aside,
+  extras, undo and scans are not. At the next start a picker offers Resume / Show / Discard (also under
+  F9 Menu); nothing new can be queued until it is decided, so the saved queue is never overwritten.
+  Each saved job is re-checked against the disk: a folder that is gone, a rename target that now
+  exists or a route already applied is skipped with a reason. A move the backend is still running is
+  adopted (followed to the end, not restarted); one that finished while lb-nc was closed is written
+  to the undo journal instead of being re-run — both close the "no undo record after quitting
+  mid-move" gap. F9 Stop still discards the queue. A second lb-nc started while another one owns the
+  file leaves it alone and does not save its own queue. --read-only never reads or writes it.
+Fixed: tests/test_lb_nc.py: the fixtures built App with the default journal path, so every test run
+  appended undo records for pytest tmp folders to the real data/lb_nc_undo.jsonl. They now pass
+  journal_path=None. Existing junk records in that file were left in place.
+Added: tests/test_lb_nc.py: 7 tests — save/remove, resume after restart, undecided queue blocks new
+  queueing, gone folders dropped, live owner respected, adopt a running move, journal a finished one.
+
 [2026-10-01] — lb-nc: queue batches behind a running job, DOS-style progress bar
 Changed: tools/lb_nc.py: Runner no longer refuses a second submit ("Busy — wait for it"). A batch
   confirmed while a queue runs (F6 move, F7 file, r rename, checksums, -NFT fix, …) is appended behind it;
