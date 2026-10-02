@@ -690,3 +690,105 @@ def test_taper_reputation_bonus_skips_disputed_family_credit():
     rows = {r["lb_number"]: r for r in _picks_for_date(conn, "1/1/93")}
     assert "taper_reputation" not in _evidence_kinds(rows[940])
     assert "taper_reputation" in _evidence_kinds(rows[942])
+
+
+# ── Silver review A/B (tj, 2026-10-01) ─────────────────────────────────────────
+
+def _set_chain(conn, lb, chain):
+    conn.execute("UPDATE entries SET source_chain = ? WHERE lb_number = ?", (chain, lb))
+    conn.commit()
+
+
+def test_master_outranks_silver_and_low_gen_whatever_the_bonuses():
+    """1989-06-04: a silver EAC copy beat the LTD master 80 to 79 on carbonbit's +8."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 950, "6/4/89", rating="A")
+    _seed_entry(conn, 951, "6/4/89", rating="B+")
+    _seed_entry(conn, 952, "6/4/89", rating="A")
+    _seed_entry(conn, 953, "6/4/89", rating="A-")
+    _set_chain(conn, 950, "BOOTLEG: Some Title; silver cd > eac > flac")
+    _set_chain(conn, 951, "Schoeps MK4 > Sony D10 master > DAT > flac")
+    _set_chain(conn, 952, "1st gen cassette > DAT > flac")
+    _set_chain(conn, 953, "trade cdr > eac > flac")
+    _seed_curated_list(conn, "carbonbit", [950])
+
+    picks.recompute(db_path=db_path)
+
+    rows = _picks_for_date(conn, "6/4/89")
+    by_lb = {r["lb_number"]: r for r in rows}
+    assert by_lb[950]["pick_score"] > by_lb[951]["pick_score"]   # the score still stands
+    # Master first; the unknown-generation source keeps its score order; the
+    # silver and low-gen copies follow, ranked by score between themselves.
+    assert [r["lb_number"] for r in rows] == [953, 951, 950, 952]
+    assert "generation_tier" in _evidence_kinds(by_lb[950])
+    assert "generation_tier" in _evidence_kinds(by_lb[952])
+    assert "generation_tier" not in _evidence_kinds(by_lb[953])
+
+
+def test_no_master_no_tier():
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 960, "6/5/89", rating="A")
+    _seed_entry(conn, 961, "6/5/89", rating="B")
+    _set_chain(conn, 960, "BOOTLEG: Some Title; silver cd > eac > flac")
+    _set_chain(conn, 961, "trade cdr > eac > flac")
+
+    picks.recompute(db_path=db_path)
+
+    rows = _picks_for_date(conn, "6/5/89")
+    assert rows[0]["lb_number"] == 960
+    assert "generation_tier" not in _evidence_kinds(rows[0])
+
+
+def test_vetoed_master_does_not_hold_a_silver_down():
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 965, "6/6/89", rating="A")
+    _seed_entry(conn, 966, "6/6/89", rating="A")
+    _set_chain(conn, 965, "silver cd > eac > flac")
+    _set_chain(conn, 966, "master cassette > mp3 > flac")
+
+    picks.recompute(db_path=db_path)
+
+    rows = _picks_for_date(conn, "6/6/89")
+    assert rows[0]["lb_number"] == 965
+    assert "generation_tier" not in _evidence_kinds(rows[0])
+
+
+def test_family_terms_skipped_when_members_state_different_rigs():
+    """2002-04-28: one family held a schubert Neumann tape and a zimmy21 AKG tape."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    for lb in (970, 971, 972, 973):
+        _seed_entry(conn, lb, "4/28/02", rating="B")
+    _set_chain(conn, 970, "Neumann KM140 > Sony D8 > flac")
+    _set_chain(conn, 971, "AKG 391 > Sony D100 > flac")
+    _set_chain(conn, 972, "Schoeps MK4 > DAT > flac")
+    _set_chain(conn, 973, "Schoeps > DAT > cdr > flac")
+    conn.executemany(
+        "INSERT INTO recording_families (lb_number, fam_id, concert_date) VALUES (?, ?, ?)",
+        [(970, "mixed", "2002-04-28"), (971, "mixed", "2002-04-28"),
+         (972, "one_rig", "2002-04-28"), (973, "one_rig", "2002-04-28")])
+    conn.commit()
+    for lb, rank in ((970, 1), (971, 2), (972, 1), (973, 2)):
+        _seed_quality(conn, lb, rank_in_family=rank)
+
+    picks.recompute(db_path=db_path)
+
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "4/28/02")}
+    for lb in (970, 971):
+        kinds = _evidence_kinds(rows[lb])
+        assert "family_rig_conflict" in kinds
+        assert not kinds & {"best_transfer", "inferior_transfer"}
+    assert rows[970]["pick_score"] == rows[971]["pick_score"]
+    assert "best_transfer" in _evidence_kinds(rows[972])
+    assert "inferior_transfer" in _evidence_kinds(rows[973])
+
+
+def test_stated_mic_folds_spellings_and_ignores_generic_words():
+    assert picks._stated_mic("Core Sound Binaural Mics > Sony PCM-M10") == "coresound"
+    assert picks._stated_mic("CA-14 cards > Church preamp") == "church"
+    assert picks._stated_mic("OKM II > Sony MZ-RH1") == "okm"
+    assert picks._stated_mic("mics > DAT > flac") is None
+    assert picks._stated_mic(None) is None

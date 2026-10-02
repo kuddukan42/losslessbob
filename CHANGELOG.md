@@ -1,3 +1,31 @@
+[2026-10-02] — Silver dossier review: tj's rulings A–I implemented (TODO-354)
+Changed: concert_ranker/picks.py: (A) on a show with an eligible master (stated or inferred, not vetoed,
+  not a fragment) every silver / low_gen copy ranks after the other sources whatever its score
+  (_below_master_lbs, evidence kind generation_tier); unknown / vinyl / broadcast keep score order.
+  (B) a recording family naming 2+ mic brands or 2+ confirmed tapers gets no best/inferior-transfer
+  term (_rig_conflict_lbs, evidence kind family_rig_conflict). TapeMatch itself is unchanged.
+Changed: backend/taper_attribution.py: (C) a series code the entry writes with "?" ("net taper D ?",
+  "legendary taper F (?)", 61 entries) seeds as propagated, kind series_code_hedged — no +3, no
+  propagation anchor. (D) Layer 1 floods public entries first; a credit only a private entry reaches
+  carries via_private in its evidence.
+Changed: backend/dossier_fields.py: taper_render hides a via_private credit on the public channel and
+  flags a hedged one (printed "net taper d ?"); (I) "DAT copy" / "cassette copy" demote a stated master
+  to low_gen, and an inferred master when the copy is the capture hop itself; (F) a source Olof lists
+  under both shows goes to the first one (was: the last); (G) broadcast_set_labels no longer emits a
+  marker per song for a scattered recording note.
+Added: backend/dossier_fields.py: range_notes (G: "Songs 3, 6, 12 are incomplete", "Songs 3–10, 13–17:
+  mono audience recording, 60 minutes" — once above the setlist), both_show_lbs (F),
+  holds_other_material / stated_other_material (E: a longer-runtime alternate reads "also holds other
+  material" when it holds both shows, runs 3+ song tracks past the setlist, or says bonus tracks /
+  fillers / a second date), Completeness.surplus.
+Added: backend/dossier_anchors.py, backend/templates/dossier.html, backend/dossier.py: anchors
+  setlist.range_notes[] and sources.also_on[] ("Also on LB-x (both shows; listed on the other show's
+  page)"); D1 payload key also_on; taper field value gains display.
+Added: backend/db.py: "3dogs" in _KNOWN_TAPER_ALIASES (H).
+Changed: instructions/SILVER_DOSSIER_REVIEW.md: rulings table + dry-run numbers.
+Note: code only — the live DB is not rebuilt yet (parse_lineage --force, attribute_tapers,
+  compute_show_picks, golden fixture re-cut). Dry run on a copy: 248 of 3,968 rank-1 picks change.
+
 [2026-10-01] — lb-nc: the right pane previews where the left cursor's folder would land
 Added: tools/lb_nc.py: App.sync_preview — while the left pane is active, the right pane opens the
   directory F6 would move the cursor folder into (the right pane's mount root + the show year's route

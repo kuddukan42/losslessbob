@@ -33,7 +33,7 @@ from collections import Counter, defaultdict
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import TypedDict
+from typing import NotRequired, TypedDict
 
 from backend.db import normalize_title_for_match, parse_entry_setlist_titles, titles_match
 from backend.song_index import normalize_song_title
@@ -474,6 +474,9 @@ class Completeness(TypedDict):
         missing: Setlist positions the source lacks, in order.
         partial: Positions present only in part (incomplete / cut / fade).
         extra: The source's song tracks that match no setlist song.
+        surplus: How many of the source's song tracks land on no setlist position
+            -- ``extra`` plus repeats of songs the setlist has once (bonus tracks,
+            a second show); ``0`` unless ``basis`` is ``'tracklist'``.
         runtime: ``entries.timing`` as stored, or ``None``.
         confidence: ``'corroborated'`` (TUIT's tracklist for the LB gives the
             same present-count), ``'inferred'`` (it gives a different one),
@@ -500,6 +503,7 @@ class Completeness(TypedDict):
     missing: list[MissingSong]
     partial: list[int]
     extra: list[str]
+    surplus: int
     runtime: str | None
     confidence: str | None
     tuit_present: int | None
@@ -612,7 +616,8 @@ def completeness(
         if not tracks:
             out[lb] = Completeness(
                 lb_number=lb, basis="runtime" if runtime else None, songs_present=None,
-                songs_total=None, missing=[], partial=[], extra=[], runtime=runtime,
+                songs_total=None, missing=[], partial=[], extra=[], surplus=0,
+                runtime=runtime,
                 confidence=None, tuit_present=None, fits_show=True, show_bar=False,
                 glued=False,
             )
@@ -654,7 +659,8 @@ def completeness(
         out[lb] = Completeness(
             lb_number=lb, basis="tracklist", songs_present=len(hit_positions),
             songs_total=len(setlist), missing=missing, partial=partial, extra=unmatched,
-            runtime=runtime, confidence=confidence, tuit_present=tuit_present,
+            surplus=len(songs) - len(hits), runtime=runtime, confidence=confidence,
+            tuit_present=tuit_present,
             fits_show=fit,
             show_bar=bool(setlist) and fit and confidence != "inferred",
             glued=glued,
@@ -1635,6 +1641,13 @@ _MASTER_RE = re.compile(r"\bmaster(?:tape|dat|copy|cassette|reel)?\b", re.IGNORE
 # Glued the same way "MasterTape" is ("DATClone", "CDclone"), so the clone hop is still seen —
 # without this, widening _MASTER_RE alone would promote "MasterTape > DAT > DATClone" to master.
 _CLONE_RE = re.compile(r"\b(?:dat|cdr?|tape)?clone\b", re.IGNORECASE)
+# "DAT copy > WAV", "master cassette / cassette copy 1 > Cassette copy 2": a copy is a hop
+# like a clone (tj, 2026-10-01, silver review I, on LB-13779). After a stated master it
+# demotes wherever it sits; an INFERRED master is demoted only when the copy is the very hop
+# the rule would have read as the capture device ("DAT copy" matching the recorder pattern)
+# -- a later clone/copy leaves an inferred master alone, per tj's 09-11 row verdicts.
+# "MasterCopy" stays a master compound.
+_COPY_RE = re.compile(r"\b(?:dat|cdr?|tape|cassette|reel)[\s-]*cop(?:y|ies)\b", re.IGNORECASE)
 # An explicit gap in the chain ("DAT > ??? > Data DVD (FLAC Files"): the hops on either side
 # say nothing about what the file descends from, so nothing is inferred (LB-06991, which tj
 # reviewed and approved as unknown).
@@ -1695,8 +1708,9 @@ def classify_generation(conn: sqlite3.Connection, lb_number: int) -> Generation:
     Never guessed from rating or grade. Rules: ``BOOTLEG:`` / a silver disc / a
     ``bootleg_titles`` row → silver; vinyl/LP → vinyl; TV/FM/radio/broadcast →
     broadcast; explicit 1st/low gen or clone of master → low_gen; the word "master"
-    → master (stated), or low_gen when a clone follows it; a mic → recorder chain
-    with a confirmed, unquarantined taper → master (inferred); otherwise unknown.
+    → master (stated), or low_gen when a clone follows it or the chain names a
+    media copy ("DAT copy"); a mic → recorder chain → master (inferred), or low_gen
+    when it names a media copy; otherwise unknown.
     tj's D-05 sign-off (2026-09-11) dropped the plan's label-or-catalogue condition
     on silver discs and added the clone-after-master case.
 
@@ -1744,6 +1758,9 @@ def classify_generation(conn: sqlite3.Connection, lb_number: int) -> Generation:
             clone = _CLONE_RE.search(chain, m.end()) if generation == "master" else None
             if clone:
                 return hit("low_gen", "stated", f"{m.group(0)} … {clone.group(0)}")
+            copy = _COPY_RE.search(chain) if generation == "master" else None
+            if copy:
+                return hit("low_gen", "stated", f"{m.group(0)} … {copy.group(0)}")
             return hit(generation, "stated", m.group(0))
     hops = [h.strip() for h in chain.split(">") if h.strip()]
     if len(hops) >= 2:
@@ -1755,6 +1772,9 @@ def classify_generation(conn: sqlite3.Connection, lb_number: int) -> Generation:
             (m for h in hops[:-1] for m in (_MIC_RE.search(h) or _RECORDER_RE.search(h),) if m),
             None,
         )
+        copy = _COPY_RE.search(capture.string) if capture else None
+        if copy:
+            return hit("low_gen", "stated", copy.group(0))
         if capture:
             return hit("master", "inferred", f"{capture.group(0)} > … > {hops[-1][:24]}")
     elif not _UNKNOWN_HOP_RE.search(chain):
@@ -2788,6 +2808,91 @@ _RECORDING_CLAUSE_RE = re.compile(
 )
 
 
+# Olof's range sentences keep their verb when split per song: "3, 6, 12 are incomplete."
+# lands on each song as "are incomplete".
+_COPULA_CLAUSE_RE = re.compile(r"^(?:is|are|was|were)\b", re.IGNORECASE)
+
+
+class RangeNote(TypedDict):
+    """One Olof note covering several songs, rendered once (silver review G).
+
+    Keys:
+        text: Olof's clause, verbatim.
+        positions: The song positions it covers, ascending.
+        display: The page line: ``"Songs 3, 6, 12 are incomplete"`` for a clause
+            that carries its own verb, ``"Songs 3–10, 13–17: <clause>"`` otherwise.
+    """
+
+    text: str
+    positions: list[int]
+    display: str
+
+
+def _position_ranges(positions: Sequence[int]) -> str:
+    """``[3, 4, 5, 8]`` -> ``"3–5, 8"`` (*positions* ascending)."""
+    runs: list[list[int]] = []
+    for p in positions:
+        if runs and p == runs[-1][1] + 1:
+            runs[-1][1] = p
+        else:
+            runs.append([p, p])
+    return ", ".join(str(a) if a == b else f"{a}–{b}" for a, b in runs)
+
+
+def _annotation_groups(conn: sqlite3.Connection, event_id: int) -> tuple[int, dict[str, list[int]]]:
+    """``(song count, {clause: [positions]})`` over an event's ``olof_songs.annotations``."""
+    rows = conn.execute(
+        "SELECT position, annotations FROM olof_songs WHERE event_id = ? ORDER BY position",
+        (event_id,),
+    ).fetchall()
+    groups: dict[str, list[int]] = defaultdict(list)
+    for r in rows:
+        for clause in dict.fromkeys(_annotation_clauses(r["annotations"])):
+            groups[clause].append(r["position"])
+    return len(rows), groups
+
+
+def _is_contiguous(positions: Sequence[int]) -> bool:
+    return list(positions) == list(range(positions[0], positions[-1] + 1))
+
+
+def range_notes(conn: sqlite3.Connection, event_id: int) -> list[RangeNote]:
+    """Olof notes about a stretch of songs, one line each (silver review G).
+
+    tj's ruling (2026-10-01): a note Olof wrote once over several songs is
+    rendered once over that stretch in his words, not repeated on every song
+    (1975-11-06 evening: "mono audience recording, 60 minutes" on 14 songs).
+    Two shapes qualify, each on two or more songs: a clause carrying its own
+    verb ("are incomplete", "were new to collectors when ..."), and a
+    recording/broadcast clause on a non-contiguous set of songs -- a contiguous
+    one is a band and a whole-show one a session note
+    (:func:`broadcast_set_labels`). Performer credits ("Scarlet Rivera
+    (violin)") stay per song.
+
+    Args:
+        conn: Open SQLite connection.
+        event_id: ``olof_events.event_id``.
+
+    Returns:
+        The range notes, in order of first position.
+    """
+    total, groups = _annotation_groups(conn, event_id)
+    out: list[RangeNote] = []
+    for text, positions in groups.items():
+        if len(positions) < 2:
+            continue
+        ranges = _position_ranges(positions)
+        if _RECORDING_CLAUSE_RE.search(text):
+            if len(positions) != total and not _is_contiguous(positions):
+                out.append(RangeNote(text=text, positions=positions,
+                                     display=f"Songs {ranges}: {text}"))
+        elif _COPULA_CLAUSE_RE.match(text):
+            out.append(RangeNote(text=text, positions=positions,
+                                 display=f"Songs {ranges} {text}"))
+    out.sort(key=lambda n: n["positions"][0])
+    return out
+
+
 def broadcast_clause(annotations: str | None) -> str:
     """The recording/broadcast part of an ``olof_songs.annotations`` string.
 
@@ -2827,9 +2932,9 @@ def broadcast_set_labels(
     broadcast/video/audience note text: a note covering every song in the
     show is a whole-show recording note and goes to ``context.session_notes``
     instead of a set label (once, not once per song); a note covering a
-    contiguous run of positions becomes one ``"band"`` label; a note on
-    non-contiguous positions (or a single song) becomes one ``"marker"``
-    label per position.
+    contiguous run of positions becomes one ``"band"`` label; a note on a
+    single song becomes a ``"marker"`` label. A note on a scattered set of
+    songs is left to :func:`range_notes`.
 
     Args:
         conn: Open SQLite connection.
@@ -2838,34 +2943,24 @@ def broadcast_set_labels(
     Returns:
         ``(labels, session_notes)``.
     """
-    rows = conn.execute(
-        "SELECT position, annotations FROM olof_songs WHERE event_id = ? ORDER BY position",
-        (event_id,),
-    ).fetchall()
-    total = len(rows)
-    groups: dict[str, list[int]] = defaultdict(list)
-    for r in rows:
-        # Key on each recording/broadcast clause on its own: "broadcast by X; stereo
-        # PA recording" must band "stereo PA recording" with its plain neighbours
-        # and "broadcast by X" with its own (1990-01-25), and a passing "is in
-        # circulation as a line recording" clause never joins a key.
-        for clause in _annotation_clauses(r["annotations"]):
-            if _RECORDING_CLAUSE_RE.search(clause):
-                groups[clause].append(r["position"])
+    # Key on each recording/broadcast clause on its own: "broadcast by X; stereo
+    # PA recording" must band "stereo PA recording" with its plain neighbours
+    # and "broadcast by X" with its own (1990-01-25), and a passing "is in
+    # circulation as a line recording" clause never joins a key.
+    total, groups = _annotation_groups(conn, event_id)
 
     labels: list[SetLabel] = []
     session_notes: list[str] = []
     for text, positions in groups.items():
-        positions = sorted(positions)
+        if not _RECORDING_CLAUSE_RE.search(text):
+            continue
         if total and len(positions) == total:
             session_notes.append(text)
-            continue
-        contiguous = positions == list(range(positions[0], positions[-1] + 1))
-        if contiguous and len(positions) > 1:
+        elif len(positions) == 1:
+            labels.append(SetLabel(kind="marker", text=text, positions=positions))
+        elif _is_contiguous(positions):
             labels.append(SetLabel(kind="band", text=text, positions=positions))
-        else:
-            for p in positions:
-                labels.append(SetLabel(kind="marker", text=text, positions=[p]))
+        # else: a scattered set of songs -- one line in range_notes(), not a marker each.
     return labels, session_notes
 
 
@@ -3250,6 +3345,8 @@ class TaperRender(TypedDict):
             credit, else ``None``.
         notice: A disputed notice -- vs TUIT (R-T4) or vs the family's other
             confirmed tapers (R-T6) -- when applicable, else ``None``.
+        hedged: ``True`` when the entry writes the series code with a "?"
+            (silver review C); the page prints the name followed by "?".
     """
 
     lb_number: int
@@ -3257,10 +3354,30 @@ class TaperRender(TypedDict):
     confidence: str | None
     marker: str | None
     notice: str | None
+    hedged: bool
+
+
+def taper_evidence_flags(evidence_json: str | None) -> tuple[bool, bool]:
+    """``(hedged, via_private)`` read off a ``taper_attributions.evidence_json``.
+
+    Args:
+        evidence_json: The stored evidence list, or ``None``.
+
+    Returns:
+        Whether the credit is a "?"-hedged series code (silver review C), and
+        whether it was propagated only through a private entry (review D).
+    """
+    try:
+        records = json.loads(evidence_json or "[]")
+    except ValueError:
+        return False, False
+    records = [r for r in records if isinstance(r, dict)]
+    return (any(r.get("kind") == "series_code_hedged" for r in records),
+            any(r.get("via_private") for r in records))
 
 
 def taper_render(conn: sqlite3.Connection, lb_number: int,
-                 reload_aliases: bool = True) -> TaperRender:
+                 reload_aliases: bool = True, public: bool = False) -> TaperRender:
     """``taper`` render rule (C23, plan line 652-655): QC-gated taper display.
 
     Renders only when no open R-T1/R-T2/R-T3 error blocks the credit; a
@@ -3274,10 +3391,14 @@ def taper_render(conn: sqlite3.Connection, lb_number: int,
         lb_number: ``entries.lb_number``.
         reload_aliases: Passed to :func:`corroborate.taper_check`; the dossier
             view passes False (the backend loads aliases at startup).
+        public: The public channel -- a credit propagated only through a private
+            entry renders nothing (tj, 2026-10-01, silver review D).
 
     Returns:
         A :class:`TaperRender`.
     """
+    nothing = TaperRender(lb_number=lb_number, name=None, confidence=None, marker=None,
+                          notice=None, hedged=False)
     try:
         blocked = conn.execute(
             "SELECT 1 FROM qc_findings WHERE entity_kind = 'lb' AND entity_key = ?"
@@ -3288,26 +3409,28 @@ def taper_render(conn: sqlite3.Connection, lb_number: int,
     except sqlite3.OperationalError:  # no qc_findings table yet
         blocked = None
     if blocked:
-        return TaperRender(lb_number=lb_number, name=None, confidence=None, marker=None,
-                            notice=None)
+        return nothing
 
     row = conn.execute(
-        "SELECT taper_normalised, confidence, conflict FROM taper_attributions"
+        "SELECT taper_normalised, confidence, conflict, evidence_json FROM taper_attributions"
         " WHERE lb_number = ?",
         (lb_number,),
     ).fetchone()
     if row is not None and row["conflict"]:
-        return TaperRender(lb_number=lb_number, name=None, confidence=None, marker=None,
-                            notice=None)
+        return nothing
     if row is None:
         try:
             stated = _stated_taper(conn, lb_number)
         except sqlite3.OperationalError:  # no entry_lineage table yet
             stated = None
         return TaperRender(lb_number=lb_number, name=stated,
-                            confidence="stated" if stated else None, marker=None, notice=None)
+                            confidence="stated" if stated else None, marker=None, notice=None,
+                            hedged=False)
 
     name, confidence = row["taper_normalised"], row["confidence"]
+    hedged, via_private = taper_evidence_flags(row["evidence_json"])
+    if public and via_private and confidence != "confirmed":
+        return nothing
     marker = "inferred" if confidence in ("propagated", "inferred") else None
 
     try:
@@ -3318,7 +3441,7 @@ def taper_render(conn: sqlite3.Connection, lb_number: int,
         others = sorted(t for t in family_conflict if t != name)
         return TaperRender(
             lb_number=lb_number, name=name, confidence="disputed", marker=marker,
-            notice=f"disputed: same family also credits {' / '.join(others)}")
+            notice=f"disputed: same family also credits {' / '.join(others)}", hedged=hedged)
 
     notice: str | None = None
     try:
@@ -3331,7 +3454,7 @@ def taper_render(conn: sqlite3.Connection, lb_number: int,
         pass
 
     return TaperRender(lb_number=lb_number, name=name, confidence=confidence, marker=marker,
-                        notice=notice)
+                        notice=notice, hedged=hedged)
 
 
 # ---------------------------------------------------------------------------
@@ -3434,6 +3557,42 @@ _SHOW_KEY_SIDE = {"afternoon": "a", "early": "a", "first": "a",
 SPLIT_SHOW, SPLIT_OTHER, SPLIT_UNASSIGNED = "show", "other", "unassigned"
 
 
+# A source's own header naming both shows of the day ("afternoon and evening shows").
+_BOTH_SHOWS_RE = re.compile(
+    r"\bboth\s+shows\b"
+    r"|\b(?:afternoon|matinee|early|1st|first)\s*(?:and|&|\+|/)\s*"
+    r"(?:evening|late|2nd|second)\s+shows?\b",
+    re.IGNORECASE,
+)
+
+
+def both_show_lbs(events: Sequence[ShowEvent], entries: Iterable) -> set[int]:
+    """Sources of a split day that hold both of its shows (silver review F).
+
+    A source counts when Olof lists it under two or more of the day's shows, or
+    when its own header says so -- ``location`` or the first line of the
+    description ("afternoon and evening shows"). A later "both shows" in a
+    comparison note about some other torrent doesn't count.
+
+    Args:
+        events: :func:`split_show_events`'s result.
+        entries: Rows/dicts with ``lb_number`` and optionally ``location``,
+            ``description``.
+
+    Returns:
+        The LB numbers.
+    """
+    listed = Counter(lb for e in events for lb in e["lbs"])
+    out = {lb for lb, n in listed.items() if n >= 2}
+    for row in entries:
+        get = row.get if isinstance(row, dict) else (
+            lambda k, _r=row: _r[k] if k in _r.keys() else None)
+        header = f"{get('location') or ''}\n{(get('description') or '').split(chr(10))[0]}"
+        if _BOTH_SHOWS_RE.search(header):
+            out.add(get("lb_number"))
+    return out
+
+
 def olof_lb_list(notes: str | None) -> set[int]:
     """LB numbers Olof names in an event's "LB-numbers for this concert:" note.
 
@@ -3524,7 +3683,9 @@ def assign_show_sources(events: Sequence[ShowEvent],
 
     Olof's LB list for an event wins; otherwise the source's part-of-day
     lineage word (:func:`lineage_show_side`) matched against the keyed events'
-    sides; otherwise unassigned.
+    sides; otherwise unassigned. A source Olof lists under both shows goes to
+    the first one -- its primary show; the other show's page cross-references
+    it (:func:`both_show_lbs`, tj 2026-10-01, silver review F).
 
     Args:
         events: :func:`split_show_events`'s result (non-empty).
@@ -3534,7 +3695,10 @@ def assign_show_sources(events: Sequence[ShowEvent],
     Returns:
         ``{lb: event_id or None}``.
     """
-    listed = {lb: e["event_id"] for e in events for lb in e["lbs"]}
+    listed: dict[int, int] = {}
+    for e in events:
+        for lb in e["lbs"]:
+            listed.setdefault(lb, e["event_id"])
     by_side: dict[str, list[int]] = defaultdict(list)
     for e in events:
         if e["side"]:
@@ -3651,12 +3815,15 @@ class SourceAlternate(TypedDict):
         lb_number: The alternate source.
         pick_value: The pick's value on this axis.
         alt_value: The alternate's (leading) value.
+        note: ``"also holds other material"`` on a runtime alternate whose
+            length isn't all this show (silver review E); absent otherwise.
     """
 
     axis: str
     lb_number: int
     pick_value: object
     alt_value: object
+    note: NotRequired[str]
 
 
 class CompareSources(TypedDict):
@@ -3681,6 +3848,90 @@ class CompareSources(TypedDict):
     diffs: list[RunnerUpDiff]
     alternates: list[SourceAlternate]
     collapsed: bool
+
+
+#: The runtime-alternate note (silver review E).
+OTHER_MATERIAL_NOTE = "also holds other material"
+# Source song tracks that land on no setlist position, at or above which the tracklist
+# "runs past this setlist". Three, not one: a lone unmatched title is usually a spelling
+# Olof and the entry disagree on, not extra material.
+OTHER_MATERIAL_MIN_SURPLUS = 3
+
+
+# The entry's own words for material beyond the show: "bonus tracks", "plus Fillers".
+# "without the filler" / "minus the filler" describe what is NOT there.
+_EXTRA_MATERIAL_RE = re.compile(
+    r"\b(?:bonus\s+(?:tracks?|songs?|dis[ck]s?|material)|fillers?)\b", re.IGNORECASE)
+_EXTRA_MATERIAL_NEGATION_RE = re.compile(r"\b(?:no|not|without|minus)\b[^.;,]*$", re.IGNORECASE)
+# "(a bittorrent from 04/09 ...)" / "(a close eac match ...)": notes about another fileset.
+_OTHER_FILESET_PAREN_RE = re.compile(
+    r"\([^()]*\b(?:\w*torrent\w*|eac\s+match)\b[^()]*\)", re.IGNORECASE)
+_ISO_DATE_RE = re.compile(r"\b(?:19|20)\d\d-\d\d-\d\d\b")
+# How much of the first description line counts as the entry's title/header.
+_HEADER_CHARS = 120
+
+
+def stated_other_material(description: str | None, date_iso: str) -> bool:
+    """Whether an entry's own text says it holds more than the *date_iso* show.
+
+    Two statements count: "bonus tracks" / "fillers" in the entry's own
+    description (comparison notes about other torrents are stripped first),
+    and a header naming this show's date next to another one ("2000-03-10
+    Anaheim, & 2000-03-16 Santa Cruz").
+
+    Args:
+        description: ``entries.description``.
+        date_iso: The show's date.
+
+    Returns:
+        True when the text states other material.
+    """
+    text = description or ""
+    own = _OTHER_FILESET_PAREN_RE.sub(" ", text)[:600]
+    for m in _EXTRA_MATERIAL_RE.finditer(own):
+        if not _EXTRA_MATERIAL_NEGATION_RE.search(own[max(0, m.start() - 30):m.start()]):
+            return True
+    dates = set(_ISO_DATE_RE.findall(text.split("\n")[0][:_HEADER_CHARS]))
+    return date_iso in dates and len(dates) >= 2
+
+
+def holds_other_material(
+    conn: sqlite3.Connection, date_iso: str, lb_number: int, comp: Completeness | None,
+) -> bool:
+    """Whether a source's runtime covers more than this show (silver review E).
+
+    tj's ruling (2026-10-01): the runtime stays a plain fact, and a "longer"
+    alternate gets a note when its length isn't all this show -- the source
+    holds both shows of a two-show day (:func:`both_show_lbs`), its tracklist
+    runs past the setlist by :data:`OTHER_MATERIAL_MIN_SURPLUS` or more song
+    tracks, or its own text says so (:func:`stated_other_material`). A glued
+    tracklist proves nothing either way.
+
+    Args:
+        conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
+        date_iso: The show's date.
+        lb_number: The source.
+        comp: Its :func:`completeness` result against this show, or ``None``.
+
+    Returns:
+        True when the note applies.
+    """
+    if comp and comp.get("basis") == "tracklist" and not comp.get("glued") \
+            and (comp.get("surplus") or 0) >= OTHER_MATERIAL_MIN_SURPLUS:
+        return True
+    try:
+        row = conn.execute(
+            "SELECT lb_number, location, description FROM entries WHERE lb_number = ?",
+            (lb_number,),
+        ).fetchone()
+    except sqlite3.OperationalError:  # a cut-down entries table
+        return False
+    if row is None:
+        return False
+    if stated_other_material(row["description"], date_iso):
+        return True
+    events = split_show_events(conn, date_iso)
+    return bool(events) and lb_number in both_show_lbs(events, [row])
 
 
 def compare_sources(
@@ -3857,9 +4108,12 @@ def compare_sources(
             if v is not None and (best_val is None or v > best_val):
                 best_lb, best_val = lb, v
         if best_lb is not None and best_val - p_runtime >= _RUNTIME_DIFF_MIN:
-            alternates.append(SourceAlternate(
+            alt = SourceAlternate(
                 axis="runtime", lb_number=best_lb, pick_value=p_runtime, alt_value=best_val,
-            ))
+            )
+            if holds_other_material(conn, date_iso, best_lb, completeness_map.get(best_lb)):
+                alt["note"] = OTHER_MATERIAL_NOTE
+            alternates.append(alt)
 
     if not resolution_disputed(pick):
         p_res = resolution(pick)

@@ -1,3 +1,9 @@
+TODO-356: TapeMatch: weigh stated rigs when a family's members name different mics or tapers
+Priority: Medium
+Status: Open
+Added: 2026-10-02
+Description: tj's note on silver-review decision B (2026-10-01): 'if there are different stated rigs this needs to be considered by tapematch ranking????'. Today only the pick score reacts (concert_ranker/picks._rig_conflict_lbs drops the best/inferior-transfer terms for a family naming 2+ mic brands or 2+ confirmed tapers; 466 show_picks rows in the 2026-10-02 dry run). TapeMatch itself still merges and ranks such members as one tape (2013-11-16 Family A = Core Sound / OKM II / SP-CMC-10 / Schoeps; 2002-04-28 = schubert Neumann + zimmy21 AKG). Decide whether a stated-rig disagreement should (a) flag the family for review / feed auto_triage, (b) block the merge, or (c) scope rank_in_family to same-rig members. Related: TODO-234 family-split leads, R-T6.
+
 TODO-355: Refile 1,293 public LBs out of PRIVATE LB + 848 misfiled collection folders
 Priority: Medium
 Status: Open

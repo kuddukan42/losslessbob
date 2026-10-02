@@ -91,6 +91,64 @@ def test_layer0_series_code_confirmed():
     assert any(e["kind"] == "series_code" for e in evidence)
 
 
+def test_layer0_hedged_series_code_is_propagated_not_confirmed():
+    """Silver review C: "net taper D ?" keeps the credit but is not a confirmed one."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    db.reload_taper_aliases(db_path)
+    for lb, text in ((102, 'version "d", net taper D ?, cut between songs'),
+                     (103, "legendary taper F (?), Sennheiser > DAT"),
+                     (104, "net taper D, Schoeps > DAT")):
+        code = "ltf" if lb == 103 else "net taper d"
+        _seed_entry(conn, lb, text, taper_name=code, taper_normalised=code)
+
+    taper_attribution.recompute(db_path=db_path)
+
+    for lb in (102, 103):
+        row = _get_attr(conn, lb)
+        assert row["confidence"] == "propagated"
+        assert [e["kind"] for e in json.loads(row["evidence_json"])] == ["series_code_hedged"]
+    assert _get_attr(conn, 104)["confidence"] == "confirmed"
+
+
+def test_hedged_series_code_is_no_propagation_anchor():
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    db.reload_taper_aliases(db_path)
+    _seed_entry(conn, 105, "net taper A ?, ?? -> cdr", taper_name="net taper a",
+                taper_normalised="net taper a")
+    _seed_entry(conn, 106, "Exact same recording as LB-105.", same_as=[105])
+
+    taper_attribution.recompute(db_path=db_path)
+
+    assert _get_attr(conn, 106) is None
+
+
+def test_credit_through_a_private_entry_is_marked_via_private():
+    """Silver review D: 1989-10-20 LB-01777 got "lte" only through private LB-6539."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 310, "LTE, DAT > FLAC", taper_name="lte", taper_normalised="lte")
+    conn.execute("UPDATE entries SET status = 'private' WHERE lb_number = 310")
+    _seed_entry(conn, 311, "Same recording as LB-310.", same_as=[310])
+    _seed_entry(conn, 312, "Same recording as LB-311.", same_as=[311])
+    # A second component where a public route exists alongside the private one.
+    _seed_entry(conn, 320, "LTB, DAT > FLAC", taper_name="ltb", taper_normalised="ltb")
+    _seed_entry(conn, 321, "LTB, private copy", taper_name="ltb", taper_normalised="ltb")
+    conn.execute("UPDATE entries SET status = 'private' WHERE lb_number = 321")
+    _seed_entry(conn, 322, "Same recording as LB-321 and LB-320.", same_as=[321, 320])
+    conn.commit()
+
+    taper_attribution.recompute(db_path=db_path)
+
+    def via_private(lb):
+        return any(e.get("via_private") for e in json.loads(_get_attr(conn, lb)["evidence_json"]))
+
+    assert _get_attr(conn, 311)["taper_normalised"] == "lte" and via_private(311)
+    assert via_private(312)                      # relayed onward from a private-sourced credit
+    assert _get_attr(conn, 322)["taper_normalised"] == "ltb" and not via_private(322)
+
+
 def test_layer0_bare_mention_not_seeded():
     """A handle with no taper-context phrase is not taper evidence (BUG-344)."""
     db_path, _ = _make_db()

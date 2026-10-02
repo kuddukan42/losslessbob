@@ -420,6 +420,108 @@ def _disputed_taper_lbs(conn: sqlite3.Connection) -> set[int]:
     return {lb for fam, ts in tapers.items() if len(ts) >= 2 for lb in members[fam]}
 
 
+# First-mic brand spellings that are one maker (Church Audio "CA-14", Countryman "COS-11").
+_MIC_BRAND_ALIASES = {"ca": "church", "cos": "countryman", "coresounds": "coresound",
+                      "sonicstudios": "sonicstudio"}
+_GENERIC_MIC_WORDS = frozenset({"mic", "mics", "microphone", "microphones"})
+
+
+def _stated_mic(source_chain: str | None) -> str | None:
+    """The first microphone brand a lineage names, folded to one key per maker.
+
+    Args:
+        source_chain: ``entries.source_chain``.
+
+    Returns:
+        A brand key (``"schoeps"``, ``"akg"``, ``"okm"``), or ``None`` when the
+        lineage names no brand (a bare "mics" says nothing about the rig).
+    """
+    from backend.dossier_fields import _MIC_RE
+
+    for m in _MIC_RE.finditer(source_chain or ""):
+        key = re.sub(r"[^a-z]", "", m.group(0).lower())
+        if not key or key in _GENERIC_MIC_WORDS:
+            continue
+        key = "okm" if key.startswith("okm") else key
+        return _MIC_BRAND_ALIASES.get(key, key)
+    return None
+
+
+def _rig_conflict_lbs(conn: sqlite3.Connection) -> set[int]:
+    """LBs whose recording family states more than one rig (silver review B).
+
+    A family whose members name different microphones or different confirmed
+    tapers holds more than one recording (2013-11-16 "Family A": Core Sound,
+    OKM II, SP-CMC-10 and Schoeps), so "best/inferior transfer within its
+    family" would compare different tapes. tj's ruling (2026-10-01): the picks
+    skip those two terms for such a family; TapeMatch itself is unchanged.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Returns:
+        LB numbers in a family with 2+ stated mic brands or 2+ confirmed tapers;
+        empty without ``recording_families``.
+    """
+    if not _table_exists(conn, "recording_families"):
+        return set()
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(entries)")}
+    if "source_chain" not in cols:
+        return _disputed_taper_lbs(conn)
+    mics: dict[str, set[str]] = defaultdict(set)
+    members: dict[str, list[int]] = defaultdict(list)
+    for fam_id, lb, chain in conn.execute(
+        "SELECT rf.fam_id, rf.lb_number, e.source_chain FROM recording_families rf"
+        " JOIN entries e ON e.lb_number = rf.lb_number"
+    ):
+        members[fam_id].append(lb)
+        mic = _stated_mic(chain)
+        if mic:
+            mics[fam_id].add(mic)
+    out = {lb for fam, brands in mics.items() if len(brands) >= 2 for lb in members[fam]}
+    if _table_exists(conn, "taper_attributions"):
+        out |= _disputed_taper_lbs(conn)
+    return out
+
+
+#: Generation classes a master always outranks (silver review A).
+_BELOW_MASTER_GENERATIONS = frozenset({"silver", "low_gen"})
+
+
+def _below_master_lbs(
+    conn: sqlite3.Connection, rows: list[tuple[int, float, list[dict]]],
+    fragments: frozenset[int],
+) -> set[int]:
+    """Silver / low-gen candidates to hold below this show's master(s) (silver review A).
+
+    tj's ruling (2026-10-01): a stated or inferred master always outranks a
+    silver or low-gen copy; curated-list and other bonuses only order sources
+    inside the same tier. 1989-06-04's silver EAC copy beat the LTD master 80
+    to 79 on carbonbit's +8. Nothing is inferred about the other classes --
+    unknown, vinyl and broadcast sources keep their score order -- and the
+    hold applies only when an eligible master (not vetoed, not a fragment) is
+    among the candidates.
+
+    Args:
+        conn: Open SQLite connection.
+        rows: One show's ``(lb, score, evidence)`` tuples.
+        fragments: The show's fragment LBs.
+
+    Returns:
+        The LB numbers to rank below the masters.
+    """
+    from backend.dossier_fields import classify_generation
+
+    generation = {lb: classify_generation(conn, lb)["generation"] for lb, _s, _ev in rows}
+    has_master = any(
+        generation[lb] == "master" and lb not in fragments and not _is_vetoed(ev)
+        for lb, _s, ev in rows
+    )
+    if not has_master:
+        return set()
+    return {lb for lb in generation if generation[lb] in _BELOW_MASTER_GENERATIONS}
+
+
 def _load_taper_reputation(conn: sqlite3.Connection) -> tuple[dict[int, str], dict[str, float]]:
     """Return ({lb: taper} for confirmed attributions, {taper: median_rank}
     for confirmed tapers whose median attributed-entry rating clears the
@@ -464,6 +566,7 @@ def _score_date(
     lb_taper: dict[int, str],
     reputable_tapers: dict[str, float],
     scan_median: float | None = None,
+    rig_conflict: frozenset[int] | set[int] = frozenset(),
 ) -> list[tuple[int, float, list[dict]]]:
     """Score every candidate LB on one date (or one show of a split day).
 
@@ -476,6 +579,8 @@ def _score_date(
         reputable_tapers: ``{taper: median_rank}`` over the reputation threshold.
         scan_median: Corpus median ``abs_score`` (C32 D4a); ``None`` disables
             the audio term.
+        rig_conflict: LBs whose family states more than one rig
+            (:func:`_rig_conflict_lbs`); they get no family transfer term.
 
     Returns:
         Unordered ``(lb, score, evidence)`` tuples. A vetoed source (scan veto
@@ -520,6 +625,11 @@ def _score_date(
         if q:
             if vetoed:
                 pass  # no family bonus/penalty and no audio term for a vetoed source
+            elif lb in rig_conflict:
+                if q["rank_in_family"] is not None:
+                    evidence.append(_evidence(
+                        "family_rig_conflict",
+                        "family members state different rigs — no within-family comparison"))
             elif q["rank_in_family"] == 1:
                 pts = PICK_WEIGHTS["family_best_transfer_bonus"]
                 score += pts
@@ -598,8 +708,13 @@ def _is_vetoed(evidence: list[dict]) -> bool:
 
 def _rank_date(
     rows: list[tuple[int, float, list[dict]]], fragments: frozenset[int] = frozenset(),
+    below_master: frozenset[int] | set[int] = frozenset(),
 ) -> list[tuple[int, float, list[dict], int]]:
-    """Rank by veto, then fragment status (TODO-344/C27), then score desc, ties to lower LB.
+    """Rank by veto, fragment status (TODO-344/C27), generation tier, then score desc.
+
+    Ties go to the lower LB. *below_master* (:func:`_below_master_lbs`, silver
+    review A) are the silver / low-gen copies of a show that has a master: they
+    rank after every other unvetoed non-fragment source, whatever their score.
 
     C32 D2: a vetoed source (lossy lineage or scan veto) never outranks an
     unvetoed one, whatever its rating -- the dossier excludes it from the pick.
@@ -616,11 +731,13 @@ def _rank_date(
     Args:
         rows: Unordered ``(lb, score, evidence)`` tuples for one date.
         fragments: ``lb_number``s on this date classified as fragments.
+        below_master: ``lb_number``s held below the show's master(s).
 
     Returns:
         ``(lb, score, evidence, pick_rank)`` tuples, ``pick_rank`` 1..N.
     """
-    ordered = sorted(rows, key=lambda r: (_is_vetoed(r[2]), r[0] in fragments, -r[1], r[0]))
+    ordered = sorted(rows, key=lambda r: (
+        _is_vetoed(r[2]), r[0] in fragments, r[0] in below_master, -r[1], r[0]))
     return [(lb, score, ev, rank) for rank, (lb, score, ev) in enumerate(ordered, start=1)]
 
 
@@ -752,6 +869,7 @@ def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
     quality = _load_latest_quality(conn)
     scan_median = _corpus_median_scan(quality)
     lb_taper, reputable_tapers = _load_taper_reputation(conn)
+    rig_conflict = _rig_conflict_lbs(conn)
 
     all_rows: list[PickRow] = []
     for date, candidates in by_date.items():
@@ -761,14 +879,20 @@ def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
         for event_id, pool in _show_pools(conn, date_iso, candidates):
             fragments = frozenset(_fragment_lbs(conn, event_id, pool))
             scored = _score_date(pool, curated, lineage, quality, lb_taper, reputable_tapers,
-                                 scan_median)
+                                 scan_median, rig_conflict)
             if fragments:
                 for lb, _score, ev in scored:
                     if lb in fragments:
                         ev.append(_evidence(
                             "fragment",
                             "excerpt/fragment (D-01 completeness) — held out of top rank"))
-            for lb, score, ev, rank in _rank_date(scored, fragments):
+            below_master = _below_master_lbs(conn, scored, fragments)
+            for lb, _score, ev in scored:
+                if lb in below_master:
+                    ev.append(_evidence(
+                        "generation_tier",
+                        "silver / low-gen copy — ranked below this show's master source(s)"))
+            for lb, score, ev, rank in _rank_date(scored, fragments, below_master):
                 all_rows.append((date, lb, score, rank, ev, date_iso, event_id))
 
     summary = _summarize(all_rows)

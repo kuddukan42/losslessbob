@@ -772,20 +772,34 @@ def _load_families(conn: sqlite3.Connection, date_iso: str, lb_numbers: list[int
     return out
 
 
-def _load_taper(conn: sqlite3.Connection, lb_numbers: list[int]) -> dict[int, dict]:
+def _load_taper(conn: sqlite3.Connection, lb_numbers: list[int],
+                public: bool = False) -> dict[int, dict]:
+    """``{lb: {name, tier[, hedged]}}`` for unconflicted attributions.
+
+    On the public channel (*public*) a credit propagated only through a private
+    entry is left out (silver review D); a "?"-hedged series code carries
+    ``hedged: True`` (review C).
+    """
     if not lb_numbers or not _table_exists(conn, "taper_attributions"):
         return {}
+    from backend.dossier_fields import taper_evidence_flags
+
     placeholders = ",".join("?" * len(lb_numbers))
     rows = conn.execute(
-        f"SELECT lb_number, taper_normalised, confidence, conflict FROM taper_attributions "
-        f"WHERE lb_number IN ({placeholders})",
+        f"SELECT lb_number, taper_normalised, confidence, conflict, evidence_json"
+        f" FROM taper_attributions WHERE lb_number IN ({placeholders})",
         lb_numbers,
     ).fetchall()
     out: dict[int, dict] = {}
     for r in rows:
         if r["conflict"]:
             continue
+        hedged, via_private = taper_evidence_flags(r["evidence_json"])
+        if public and via_private and r["confidence"] != "confirmed":
+            continue
         out[r["lb_number"]] = {"name": r["taper_normalised"], "tier": r["confidence"]}
+        if hedged:
+            out[r["lb_number"]]["hedged"] = True
     return out
 
 
@@ -911,7 +925,7 @@ def _build_sources(conn: sqlite3.Connection, date_iso: str, entries: list[sqlite
     ]
 
     families = _load_families(conn, date_iso, lb_numbers)
-    taper = _load_taper(conn, visible_lbs)
+    taper = _load_taper(conn, visible_lbs, public=channel != "full")
     lineage = _load_lineage(conn, visible_lbs)
     picks = _load_picks(conn, date_iso, event_id)
     quality = _load_quality(conn, visible_lbs)
@@ -1255,6 +1269,35 @@ def _build_xref(date_iso: str, event: sqlite3.Row | None,
     return [lbb, olof, boblinks, bobserve, bobdylan]
 
 
+def _also_on_other_show(conn: sqlite3.Connection, date_iso: str, entries: list[sqlite3.Row],
+                        split: dict[int, str], channel: str) -> list[dict]:
+    """Both-show sources that live on the day's other show page (silver review F).
+
+    tj's ruling (2026-10-01): a source holding both shows ranks on its primary
+    show only; the other show's page cross-references it.
+
+    Args:
+        conn: Open SQLite connection.
+        date_iso: ISO show date.
+        entries: The date's ``entries`` rows, before the split filter.
+        split: :func:`backend.dossier_fields.show_source_split`'s result.
+        channel: ``'public'`` hides private entries.
+
+    Returns:
+        ``[{"lb": "LB-01610", "url": ...}, ...]`` in LB order; empty on a
+        single-show day.
+    """
+    from backend.dossier_fields import SPLIT_OTHER, both_show_lbs, split_show_events
+
+    others = [e for e in entries if split.get(e["lb_number"]) == SPLIT_OTHER
+              and (channel == "full" or e["status"] != "private")]
+    if not others:
+        return []
+    both = both_show_lbs(split_show_events(conn, date_iso), others)
+    return [{"lb": f"LB-{e['lb_number']:05d}", "url": detail_url(e["lb_number"])}
+            for e in sorted(others, key=lambda e: e["lb_number"]) if e["lb_number"] in both]
+
+
 def build_dossier(date_iso: str, location: str | None = None, channel: str = "public",
                    db_path: str | None = None, show: str | None = None,
                    link_mode: str = "none") -> dict:
@@ -1330,6 +1373,7 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
     from backend.dossier_fields import SPLIT_OTHER, SPLIT_UNASSIGNED, show_source_split
 
     split = show_source_split(conn, event, entries)
+    also_on = _also_on_other_show(conn, date_iso, entries, split, channel)
     entries = [e for e in entries if split.get(e["lb_number"]) != SPLIT_OTHER]
     unassigned = frozenset(lb for lb, v in split.items() if v == SPLIT_UNASSIGNED)
     event_id = event["event_id"] if event is not None else None
@@ -1359,6 +1403,8 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
                                              unassigned)
     if sources:
         dossier["sources"] = sources
+    if also_on:
+        dossier["also_on"] = also_on
 
     picks = _load_picks(conn, date_iso, event_id)
     rank1_lb = next((lb for lb, p in picks.items() if p["rank"] == 1), None)
@@ -1523,7 +1569,8 @@ def render_bbcode(view: dict) -> str:
                 if m.get("rating"):
                     bits.append(f"rating {m['rating']}")
                 if m.get("taper"):
-                    bits.append(f"taper: {m['taper']['name']}")
+                    bits.append(f"taper: {m['taper']['name']}"
+                                f"{' ?' if m['taper'].get('hedged') else ''}")
                 if m.get("pick"):
                     bits.append(f"pick #{m['pick']['rank']}")
                 if m.get("quality"):

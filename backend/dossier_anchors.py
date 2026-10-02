@@ -186,6 +186,8 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("song[].position", 1, "setlist", "olof_songs", "required"),
     _a("song[].title", 1, "setlist", "olof_songs title + subtitle", "required"),
     _a("song[].notes", 1, "setlist", "olof_songs annotations", "omit"),
+    _a("setlist.range_notes[]", 1, "setlist", "olof_songs annotations over a song range",
+       "omit"),
     _a("song[].writers", 2, "setlist", "parser", "omit"),
     _a("song[].instruments[]", 2, "setlist", "parser", "omit"),
     _a("song[].premiere", 3, "setlist", "D-02 (three-part gate)", "omit"),
@@ -226,6 +228,8 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("source[].excluded", 2, "sources", "C32 D2 lossy-lineage rule + scan veto", "omit",
        local_analysis=True),
     _a("source[].show_unassigned", 2, "sources", "C32 D3 show_source_split", "omit"),
+    _a("sources.also_on[]", 2, "sources", "both-show sources listed on the other show's page",
+       "omit"),
     _a("family[].id", 1, "sources", "families", "omit"),
     _a("family[].label", 1, "sources", "families + S8.4 rules (C27)", "value", "no band"),
     _a("family[].size", 1, "sources", "families", "omit"),
@@ -416,6 +420,7 @@ def build_view(
     visible_members = _visible_members(sources)
     classes = _classify_sources(conn, event_id, visible_members) if event_id is not None else {}
     vb.ctx["source_classes"] = classes
+    vb.ctx["public"] = channel != "full"
 
     # -- Header -----------------------------------------------------------
     _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode, visible_members, classes)
@@ -627,7 +632,7 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode, visible_m
         vb.set_field("pick.lb_id", build_field(member["lb"], 1, "verdict pick", "stated"))
         if member.get("url"):
             vb.set_field("pick.url", build_field(member["url"], 1, "detail_url", "stated"))
-        tr = _taper_field(conn, lb)
+        tr = _taper_field(conn, lb, vb.ctx.get("public", False))
         if tr is not None:
             vb.set_field("pick.taper.name", tr)
             vb.set_field("pick.taper.confidence", build_field(
@@ -784,6 +789,8 @@ def _alternates_display(alternates: list[dict]) -> list[dict]:
             text = "has the complete setlist (the pick does not)"
         else:
             text = f"{axis}: {_fmt_num(av)} vs {_fmt_num(pv)}"
+        if alt.get("note"):
+            text = f"{text}; {alt['note']}"
         out.append({**alt, "text": text})
     return out
 
@@ -834,20 +841,25 @@ def visible_lbs_hint(d1: dict) -> list[int]:
     ]
 
 
-def _taper_field(conn: sqlite3.Connection, lb: int) -> Field | None:
+def _taper_field(conn: sqlite3.Connection, lb: int, public: bool = False) -> Field | None:
     """The QC-gated taper credit for *lb* as a Field, or None when nothing may render.
 
-    Value is ``{name, confidence, marker, notice}`` from :func:`df.taper_render`. Aliases
-    are not reloaded per source: the backend loads them at startup, and a standalone
-    caller must call ``db.reload_taper_aliases()`` once before building dossiers.
+    Value is ``{name, confidence, marker, notice, display}`` from :func:`df.taper_render`;
+    ``display`` is the name as the page prints it -- followed by "?" for a hedged series
+    code (silver review C). On the public channel (*public*) a credit propagated only
+    through a private entry renders nothing (review D). Aliases are not reloaded per
+    source: the backend loads them at startup, and a standalone caller must call
+    ``db.reload_taper_aliases()`` once before building dossiers.
     """
-    tr = _safe(df.taper_render, conn, lb, False)
+    tr = _safe(df.taper_render, conn, lb, False, public)
     if not tr or not tr["name"]:
         return None
     confidence: Confidence = (
         "disputed" if tr["notice"] else "inferred" if tr["marker"] else "stated")
+    value = {k: tr[k] for k in ("name", "confidence", "marker", "notice")}
+    value["display"] = f"{tr['name']} ?" if tr.get("hedged") else tr["name"]
     return build_field(
-        {k: tr[k] for k in ("name", "confidence", "marker", "notice")}, 1, "taper_render",
+        value, 1, "taper_render",
         confidence, ["taper_attributions", "qc_findings", "tuit_recordings"])
 
 
@@ -897,6 +909,15 @@ def _build_setlist(vb, d1, conn, event_id, date_iso, lineup, setlist, visible_lb
                     shown_by_pos.setdefault(p, set()).add(lbl["text"])
             for s in setlist:
                 shown_by_pos.setdefault(s["position"], set()).update(session_notes)
+        # Silver review G: a note Olof wrote over a stretch of songs prints once.
+        ranged = _safe(df.range_notes, conn, event_id)
+        if ranged:
+            vb.set_field("setlist.range_notes[]", build_field(
+                [n["display"] for n in ranged], 1, "olof_songs.annotations (range_notes)",
+                "stated"))
+            for n in ranged:
+                for p in n["positions"]:
+                    shown_by_pos.setdefault(p, set()).add(n["text"])
 
         song_hist = _safe(df.song_history, conn, event_id)
         vb.ctx["song_hist"] = song_hist
@@ -1163,6 +1184,12 @@ def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
             f"{n} tape group{'s' if n != 1 else ''}", 1,
             "recording_families (every visible source analysed)", "stated"))
 
+    # Silver review F: sources holding both shows rank on their primary show's page;
+    # this page only points at them.
+    if d1.get("also_on"):
+        vb.set_field("sources.also_on[]", build_field(
+            d1["also_on"], 2, "C32 D3 show_source_split + both_show_lbs", "stated"))
+
     display_rank = _primary_display_ranks(visible_members, classes)
 
     for lb, member, _bucket in visible_members:
@@ -1170,7 +1197,7 @@ def _build_sources(vb, d1, conn, event_id, date_iso, sources, visible_members,
         row["lb_id"] = build_field(member["lb"], 1, "entries.lb_number", "stated")
         if member.get("url"):
             row["url"] = build_field(member["url"], 1, "detail_url", "stated")
-        tr = _taper_field(conn, lb)
+        tr = _taper_field(conn, lb, vb.ctx.get("public", False))
         if tr is not None:
             row["taper"] = tr
 

@@ -340,6 +340,34 @@ def explicit_credit(description: str, canonical_taper: str) -> bool:
     return False
 
 
+# "net taper D ?", "legendary taper C (?)", "legendary taper G?": the entry's own
+# text doubts the code.
+_SERIES_HEDGE_SUFFIX_RE = re.compile(r'\s*\(?\s*\?')
+
+
+def series_code_hedged(description: str, canonical_taper: str) -> bool:
+    """Whether *description* writes *canonical_taper*'s series code with a question mark.
+
+    61 of the corpus's 1,783 series-code credits read "net taper A ?" or
+    "legendary taper F (?)". tj's ruling (2026-10-01, silver review C): such a
+    credit is shown with its "?" but is not a confirmed one.
+
+    Args:
+        description: Entry description text.
+        canonical_taper: Canonical series code (``ltc``, ``net taper d``).
+
+    Returns:
+        True when any spelling of the code in the first 600 chars is followed by "?".
+    """
+    window = (description or "")[:600]
+    for key in _ALIAS_KEYS_BY_CANONICAL.get(canonical_taper, ()):
+        pattern = r'\b' + r'\s*'.join(re.escape(part) for part in key.split()) + r'\b'
+        for m in re.finditer(pattern, window, re.IGNORECASE):
+            if _SERIES_HEDGE_SUFFIX_RE.match(window, m.end()):
+                return True
+    return False
+
+
 class _DSU:
     """Minimal union-find with path compression, used for the strong-edge graph."""
 
@@ -435,7 +463,9 @@ def _build_adjacency(rows: list[sqlite3.Row]) -> tuple[dict[int, list[int]], dic
 def _layer0_seed(rows: list[sqlite3.Row], universe: frozenset[str]) -> dict[int, dict]:
     """Seed attributions from entry_lineage.taper_normalised (spec §4.0).
 
-    - Series code (lta-ltz, nta-ntz) → confirmed, kind='series_code'.
+    - Series code (lta-ltz, nta-ntz) → confirmed, kind='series_code' — or
+      propagated, kind='series_code_hedged', when the entry writes it with a
+      "?" (:func:`series_code_hedged`).
     - Explicit "Taper:" label or a "taped by <name>" credit in the
       description → confirmed, kind='explicit' — both are an unambiguous,
       named credit, not a guess.
@@ -455,8 +485,13 @@ def _layer0_seed(rows: list[sqlite3.Row], universe: frozenset[str]) -> dict[int,
         description = row["description"] or ""
 
         if _SERIES_CODE_RE.match(taper_norm):
-            attrs[lb] = _row(taper_norm, "confirmed",
-                              [_evidence("series_code", f"series code '{taper_norm}'")])
+            if series_code_hedged(description, taper_norm):
+                detail = f"series code '{taper_norm}' written with a '?' in the entry"
+                attrs[lb] = _row(taper_norm, "propagated",
+                                  [_evidence("series_code_hedged", detail)])
+            else:
+                attrs[lb] = _row(taper_norm, "confirmed",
+                                  [_evidence("series_code", f"series code '{taper_norm}'")])
             continue
 
         if explicit_credit(description, taper_norm):
@@ -592,8 +627,15 @@ def _propagate_strong(
     derived_from_adj: dict[int, list[int]],
     blocked: frozenset[int] | set[int] = frozenset(),
     mixes: frozenset[int] | set[int] = frozenset(),
+    private: frozenset[int] | set[int] = frozenset(),
 ) -> None:
     """Layer 1 over strong edges: family cliques + same_as + derived_from.
+
+    A credit that reaches an LB only through a *private* entry carries
+    ``via_private`` in its evidence (tj, 2026-10-01, silver review D): the fill
+    runs first over public entries alone, then over everything, and whatever only
+    the second pass reaches from a private (or already private-sourced) node is
+    marked. The public dossier hides those credits.
 
     Golden review 3: a family holding a mix/matrix member (*mixes*) is not an
     edge -- the mix can join two different tapes into it.
@@ -665,40 +707,40 @@ def _propagate_strong(
             if row and row["tier"] != "confirmed" and row["taper"] != target:
                 del attrs[lb]
 
-        # Single uncontested taper for this component: BFS flood-fill.
-        frontier = [lb for lb in members if lb in attrs]
-        visited = set(frontier)
-        while frontier:
-            nxt: list[int] = []
-            for u in frontier:
-                for v in same_as_adj.get(u, ()):
-                    if v in members and v not in visited:
-                        visited.add(v)
-                        if v not in attrs and v not in blocked:
-                            attrs[v] = _row(target, "propagated",
-                                             [_evidence("same_as", f"same_as LB-{u}", via_lb=u)])
-                            nxt.append(v)
-                for v in derived_from_adj.get(u, ()):
-                    if v in members and v not in visited:
-                        visited.add(v)
-                        if v not in attrs and v not in blocked:
-                            ev = _evidence("derived_from", f"derived_from LB-{u}", via_lb=u)
-                            attrs[v] = _row(target, "propagated", [ev])
-                            nxt.append(v)
-                fam = lb_fam_strong.get(u)
-                if fam:
-                    for v in fam_members[fam]:
-                        if v == u or v not in members or v in visited:
+        # Single uncontested taper for this component: BFS flood-fill, public
+        # entries first so a public route to a credit always wins over a private one.
+        tainted: set[int] = set()
+        for public_only in (True, False):
+            frontier = [lb for lb in members
+                        if lb in attrs and not (public_only and lb in private)]
+            visited = set(frontier)
+            while frontier:
+                nxt: list[int] = []
+                for u in frontier:
+                    via_private = (u in private or u in tainted) or None
+                    fam = lb_fam_strong.get(u)
+                    edges = (
+                        [(v, "same_as", f"same_as LB-{u}", None)
+                         for v in same_as_adj.get(u, ())]
+                        + [(v, "derived_from", f"derived_from LB-{u}", None)
+                           for v in derived_from_adj.get(u, ())]
+                        + [(v, "family", f"same recording family as LB-{u}", fam)
+                           for v in (fam_members[fam] if fam else ()) if v != u]
+                    )
+                    for v, kind, detail, fam_id in edges:
+                        if v not in members or v in visited:
+                            continue
+                        if public_only and v in private:
                             continue
                         visited.add(v)
-                        if v not in attrs and v not in blocked:
-                            attrs[v] = _row(
-                                target, "propagated",
-                                [_evidence("family", f"same recording family as LB-{u}",
-                                           via_lb=u, fam_id=fam)],
-                            )
-                            nxt.append(v)
-            frontier = nxt
+                        if v in attrs or v in blocked:
+                            continue
+                        attrs[v] = _row(target, "propagated", [_evidence(
+                            kind, detail, via_lb=u, fam_id=fam_id, via_private=via_private)])
+                        if via_private:
+                            tainted.add(v)
+                        nxt.append(v)
+                frontier = nxt
 
 
 def _mark_weak_family_conflicts(
@@ -910,8 +952,10 @@ def _compute_layers01(
     on_edges.update(same_as_adj, derived_from_adj)
     blocked = _load_propagation_blocked(conn, on_edges)
     mixes = _load_mix_sources(conn, on_edges)
+    private = frozenset(
+        r[0] for r in conn.execute("SELECT lb_number FROM entries WHERE status = 'private'"))
     _propagate_strong(attrs, fam_members, fam_weak, same_as_adj, derived_from_adj, blocked,
-                      mixes)
+                      mixes, private)
     _mark_weak_family_conflicts(attrs, fam_members, fam_weak, blocked)
 
     return attrs, fam_members, same_as_adj, derived_from_adj, rejects, unresolved

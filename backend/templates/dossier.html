@@ -413,7 +413,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
       {%- set taper_name_f = fields.get('pick.taper.name') -%}
       {%- set taper_conf_f = fields.get('pick.taper.confidence') -%}
       {%- if taper_name_f and taper_name_f.value %}
-      <p class="stats-line">Taper: {{ lbf('pick.taper.name', taper_name_f, text=(taper_name_f.value.name if taper_name_f.value is mapping else taper_name_f.value)) }}{% if taper_conf_f and taper_conf_f.value %}<span data-lb="pick.taper.confidence" hidden>{{ taper_conf_f.value }}</span>{% endif %}</p>
+      <p class="stats-line">Taper: {{ lbf('pick.taper.name', taper_name_f, text=((taper_name_f.value.display or taper_name_f.value.name) if taper_name_f.value is mapping else taper_name_f.value)) }}{% if taper_conf_f and taper_conf_f.value %}<span data-lb="pick.taper.confidence" hidden>{{ taper_conf_f.value }}</span>{% endif %}</p>
       {%- endif %}
       {%- set lin_f = fields.get('pick.lineage_short') -%}
       {%- if lin_f and lin_f.value %}<p class="stats-line mono">{{ lbf('pick.lineage_short', lin_f, verbatim=true) }}</p>{% endif %}
@@ -451,6 +451,8 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
           {%- if ctexts %}{% for t in ctexts %}{% set _ = parts.append(claim(t)) %}{% endfor %}
           {%- else %}{% set _ = parts.append(alt.text if alt.text is defined else alt.axis) %}{% endif -%}
           {%- endfor %}
+          {#- Silver review E: a longer source whose length isn't all this show. #}
+          {%- for alt in grp.list %}{% if alt.note %}{% set _ = parts.append(alt.note) %}{% endif %}{% endfor -%}
           <li>{{ 'LB-%05d' | format(grp.grouper) }} &mdash; {{ parts | join(' · ') }}</li>
           {%- endfor %}
         </ul>
@@ -506,6 +508,13 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   {%- if stat_bits %}<p class="stats-line">{{ stat_bits | join(' · ') | safe }}</p>{% endif %}
   {%- set official_f = fields.get('show.official_release') -%}
   {%- if official_f and official_f.value %}{% set _ov = official_f.value %}<p class="stats-line">{{ lbf('show.official_release', official_f, text=(('Official release: ' ~ _ov) if _ov in ('partial', 'full', 'none') else ('Officially released: ' ~ _ov))) }}</p>{% endif %}
+  {#- Silver review G: a note Olof wrote over a stretch of songs, once, in his words. #}
+  {%- set range_notes_f = fields.get('setlist.range_notes[]') -%}
+  {%- if range_notes_f and range_notes_f.value %}
+  {%- for note in range_notes_f.value %}
+  <p class="stats-line" data-lb="setlist.range_notes[]" data-verbatim>{{ note }}</p>
+  {%- endfor %}
+  {%- endif %}
   <table class="setlist">
     <thead><tr><th class="pos">#</th><th>Song</th><th class="tags"></th></tr></thead>
     <tbody>
@@ -677,7 +686,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
       <tr class="mrow{% if is_pick %} is-pick{% endif %}{% if b.fam %} in-fam{% endif %}" data-family="{{ fam_key }}">
         <td class="lead">
           <span class="lb" data-lb="source[].lb_id">{% if r.url is defined and r.url.value %}<a data-lb="source[].url" href="{{ r.url.value }}" target="_blank" rel="noopener">{{ r.lb_id.value }}</a>{% else %}{{ r.lb_id.value }}{% endif %}</span>
-          {%- if r.taper is defined and r.taper.value %}<div>{{ lbf('source[].taper', r.taper, text=r.taper.value.name ~ (' (' ~ r.taper.value.confidence ~ ')' if r.taper.value.confidence and r.taper.value.confidence != 'confirmed' else ''), tag='span', cls='taper-pill ' ~ (r.taper.value.confidence or '')) }}</div>{% endif -%}
+          {%- if r.taper is defined and r.taper.value %}<div>{{ lbf('source[].taper', r.taper, text=(r.taper.value.display or r.taper.value.name) ~ (' (' ~ r.taper.value.confidence ~ ')' if r.taper.value.confidence and r.taper.value.confidence != 'confirmed' else ''), tag='span', cls='taper-pill ' ~ (r.taper.value.confidence or '')) }}</div>{% endif -%}
           {%- set detail_bits = [] -%}
           {%- if r.character is defined and r.character.value %}{% set _ = detail_bits.append(lbf('source[].character', r.character)) %}{% endif -%}
           {%- if r.flags is defined and r.flags.value %}{% set _ = detail_bits.append(lbf('source[].flags[]', r.flags, text=(r.flags.value | join(', ')))) %}{% endif -%}
@@ -718,7 +727,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     <div class="grp">
       <span class="lb">{% if e.r.url is defined and e.r.url.value %}<a href="{{ e.r.url.value }}" target="_blank" rel="noopener">{{ e.r.lb_id.value }}</a>{% else %}{{ e.r.lb_id.value }}{% endif %}</span> &mdash;
       fragment / partial recording
-      <div class="note">{% if e.r.taper is defined and e.r.taper.value %}taper: {{ e.r.taper.value.name }}{% endif %}</div>
+      <div class="note">{% if e.r.taper is defined and e.r.taper.value %}taper: {{ e.r.taper.value.display or e.r.taper.value.name }}{% endif %}</div>
     </div>
     {%- endfor %}
   </details>
@@ -741,6 +750,11 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
   {%- set unassigned_rows = source_rows | selectattr('show_unassigned.value') | list -%}
   {%- if unassigned_rows %}
   <p class="stats-line" data-lb="source[].show_unassigned">Unassigned to a show (listed on both shows' pages): {{ unassigned_rows | map(attribute='lb_id.value') | join(', ') }}</p>
+  {%- endif %}
+  {#- Silver review F: a both-show source ranks on its primary show; this page points at it. #}
+  {%- set also_on_f = fields.get('sources.also_on[]') -%}
+  {%- if also_on_f and also_on_f.value %}
+  <p class="stats-line" data-lb="sources.also_on[]">Also on {% for a in also_on_f.value %}{% if a.url %}<a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.lb }}</a>{% else %}{{ a.lb }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %} (both shows; listed on the other show's page)</p>
   {%- endif %}
 </section>
 {%- endif %}
