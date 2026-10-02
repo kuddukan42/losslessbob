@@ -63,6 +63,8 @@ CONFIG_PATH = Path.home() / ".config" / "systools" / "config"
 API_URL = "http://127.0.0.1:5174"
 MIN_COLUMNS = 30
 MIN_ROWS = 10
+COMPACT_COLUMNS = 50                 # narrower than this (and COMPACT_ROWS tall): phone layout
+COMPACT_ROWS = 20
 TICK = 0.25
 LOG_ROWS = 8
 POLL = 0.5
@@ -75,6 +77,8 @@ CHECKSUM_SUFFIXES = (".ffp", ".md5", ".st5")
 VIEW_SUFFIXES = (".txt", ".md5", ".ffp", ".st5", ".sha256", ".nfo", ".log", ".cue")
 LB_RE = re.compile(r"LB-(\d{1,6})", re.IGNORECASE)
 YEAR_RE = re.compile(r"^(\d{4})")
+DATE_RE = re.compile(r"^(\d{4})-(\d{2})-(\d{2})\s*")
+LB_TOKEN_RE = re.compile(r"\s*[\(\[]?LB-\d{1,6}(?:-NFT)?[\)\]]?", re.IGNORECASE)
 IN_PLACE = "at its routed location, not in collection"
 PRIVATE_DIR = "PRIVATE LB"          # a folder named this holds private LBs, outside the routes
 PRIVATE_AREA = "in the private area"
@@ -213,6 +217,31 @@ def wrap(text: str, width: int) -> list[str]:
     if cur.strip():
         rows.append(cur)
     return [fit(r, width) for r in rows]
+
+
+def reflow(lines: list[str]) -> list[str]:
+    """Join the lines of each paragraph; indented and blank lines stay on their own."""
+    out: list[str] = []
+    for text in lines:
+        if out and text and out[-1] and not (text[0] == " " or out[-1][0] == " "):
+            out[-1] += " " + text
+        else:
+            out.append(text)
+    return out
+
+
+def two_rows(text: str, width: int, ellipsis: str = "…") -> list[str]:
+    """`text` word-wrapped onto exactly two rows; what doesn't fit ends in an ellipsis."""
+    rows = wrap(text, width)
+    if len(rows) > 2:
+        rest = printable(text).strip()[len(rows[0].strip()):].strip()
+        rows = [rows[0], fit(rest, width, ellipsis)]
+    return (rows + [fit("", width)])[:2]
+
+
+def bare_name(name: str) -> str:
+    """A folder name without its leading date and LB token: what tells two LBs apart."""
+    return LB_TOKEN_RE.sub("", DATE_RE.sub("", name)).strip(" -_,")
 
 
 def line_width(line: Line) -> int:
@@ -1762,7 +1791,10 @@ class Confirm(Dialog):
         if len(self.jobs) > 10:
             rows.append([("dialog", f"  … and {len(self.jobs) - 10} more")])
         rows.append([("dialog", "")])
-        rows.extend([("dialog", row)] for t in self.blurb for row in wrap(t, width))
+        blurb = self.blurb
+        if any(text_width(t) > width for t in blurb):   # too narrow for its line breaks
+            blurb = reflow(blurb)
+        rows.extend([("dialog", row)] for t in blurb for row in wrap(t, width))
         if self.toggle:
             mark = "x" if self.state else " "
             rows.extend([("dialog", row)] for row in wrap(
@@ -2002,7 +2034,8 @@ class App:
         self.persist = persist
         self.dialog: Dialog | None = None
         self.show_log = False
-        self.highlight = True            # h: colour non-canonical folder names
+        self.compact = False             # the phone layout was drawn at the last frame
+        self.highlight = True           # h: colour non-canonical folder names
         self.follow = True               # p: the right pane previews the left cursor's destination
         self.quit = False
         self.coll: Collection | None = None
@@ -2396,7 +2429,12 @@ class App:
         self.say("non-canonical names " + ("highlighted" if self.highlight else "not highlighted"))
 
     def toggle_log(self) -> None:
-        """o: show or hide the log pane."""
+        """o: show or hide the log pane; the phone layout opens the whole log instead."""
+        if self.compact:
+            with self.runner.lock:
+                lines = list(self.runner.lines)
+            self.dialog = Pager("Log", [("queue", lines or ["(nothing logged yet)"])])
+            return
         self.show_log = not self.show_log
 
     def size_current(self) -> None:
@@ -3395,6 +3433,9 @@ class App:
         return lines
 
     def _layout(self, cols: int, rows: int) -> list[Line]:
+        self.compact = cols < COMPACT_COLUMNS and rows >= COMPACT_ROWS
+        if self.compact:
+            return self._layout_compact(cols, rows)
         b = self.box
         two = cols >= 60
         info_rows = 3 if cols >= 80 else 2
@@ -3455,36 +3496,170 @@ class App:
         out.extend(self.keybar(cols, len(out)))
         return [pad_line(line, cols, "pane") for line in out[:rows]]
 
-    def pane_header(self, pane: Pane, width: int, narrow: bool = False) -> Line:
-        """The pane title (label: path) and its counts."""
+    def _layout_compact(self, cols: int, rows: int) -> list[Line]:
+        """The phone layout: one pane of LB-first rows over a card for the cursor folder."""
+        b, e = self.box, self.g["ellipsis"]
+        w = cols - 2
+        pane = self.active
+        body = rows - 13
+        self.pane_height = body
+        out = self.compact_header(pane, cols)
+        out.append([("frame", b["tl"] + b["h"] * w + b["tr"])])
+        self.pane_rows = {"left" if pane is self.left else "right": (len(out), body, 1, w)}
+        for row in self.pane_body(pane, w, body):
+            out.append([("frame", b["v"])] + row + [("frame", b["v"])])
+        title, state, card = self.card(w)
+        out.append(self.divider(w, title, state))
+        for row in card:
+            out.append([("frame", b["v"])] + pad_line(row, w, "text") + [("frame", b["v"])])
+        job, done, total = self.runner.progress()
+        if job is not None:
+            cur, size = job.meter
+            pct = f" {min(1.0, cur / size):.0%}" if size > 0 else ""
+            queued = total - done - 1
+            out.append(self.divider(w, f"{self.g['running']} {job.label}{pct}",
+                                    f"+{queued}" if queued > 0 else ""))
+        else:
+            out.append(self.divider(w, "log (running)" if self.runner.running else "log", ""))
+        if self.flash[0] and time.monotonic() - self.flash[1] < 6:
+            event = f"{self.g['running']} {self.flash[0]}"
+        else:
+            with self.runner.lock:
+                event = self.runner.lines[-1].strip() if self.runner.lines else ""
+        out.append([("frame", b["v"]), ("text", fit(" " + event, w, e)), ("frame", b["v"])])
+        out.append([("frame", b["bl"] + b["h"] * w + b["br"])])
+        out.extend(self.keybar(cols, len(out)))
+        return [pad_line(line, cols, "pane") for line in out[:rows]]
+
+    def divider(self, width: int, title: str, tail: str) -> Line:
+        """├─ title ──── tail ─┤ with `width` cells between the corners; both parts optional."""
         b = self.box
+        end = f" {tail} {b['h']}" if tail else ""
+        room = width - text_width(end) - 3
+        head = (f"{b['h']} {fit(title, min(text_width(title), room), self.g['ellipsis'])} "
+                if title and room > 0 else "")
+        fill = b["h"] * max(0, width - text_width(head) - text_width(end))
+        return [("frame", b["lt"] + head + fill + end + b["rt"])]
+
+    def compact_header(self, pane: Pane, cols: int) -> list[Line]:
+        """Two rows for the phone layout: path and free space, then the counts."""
+        e = self.g["ellipsis"]
+        title, count, free = self.pane_title(pane)
+        letter = " [L] " if pane is self.left else " [R] "
+        right = f"{free} free " if free else ""
+        room = cols - text_width(right) - 1 - len(letter)
+        path = fit_left(title + " ", max(1, min(text_width(title) + 1, room)), e)
+        top = [("header", letter + path)]
+        top.append(("frame", fit(right, cols - line_width(top), e, right=True)))
+        lead: Line = []
+        if pane.tags:
+            lead = [("tag", self.tagged_text(pane))]
+        elif self.highlight and any(en.canon for en in pane.entries):
+            lead = [("odd", f"{sum(1 for en in pane.entries if en.canon)} to rename")]
+        count = self.pane_counts(pane, count)
+        if pane.filter or pane.editing:
+            count = f"{len(pane.visible()) - (not pane.virtual)}/{count}"
+        if self.loading:
+            count = "loading… " + count
+        line = [("frame", " "), *lead, ("frame", (" · " if lead else "") + count)]
+        return [top, pad_line(line, cols, "frame")]
+
+    def card(self, width: int) -> tuple[str, str, list[Line]]:
+        """The cursor folder for the phone layout: (divider title, state, four rows)."""
+        e, dest = self.g["ellipsis"], self.g["dest"]
+        cur = self.active.current()
+        inner = width - 1
+        if self.coll is None or cur is None or cur.kind == "parent" or cur.lb is None:
+            text = [r for t in self.info_rows() if t for r in wrap(t, inner)]
+            return "", "", [[("text", " " + t)] for t in (text + [""] * 4)[:4]]
+        title = f"LB-{cur.lb:05d}"
+        files = cur.status in ("misfiled", "public")
+        mount = self.coll.mount_for(cur.note) if files else None
+        if cur.canon and self.highlight:
+            new = two_rows(cur.canon, inner - 2, e)
+            hint = f"  F7 files {dest} {mount['label']}" if mount else "  then y confirms"
+            return title, "rename?", [
+                [("frame", " " + fit(cur.name, inner, e))],
+                [("text", f" {dest} {new[0]}")],
+                [("text", f"   {new[1]}")],
+                [("text", " "), ("danger", "[ r ] rename"), ("frame", fit(hint, inner - 12, e))]]
+        rows: list[Line] = [[("text", " " + t)] for t in two_rows(cur.name, inner, e)]
+        if files:
+            where = cur.note
+            if mount:
+                rel = os.path.relpath(cur.note, mount["root_path"])
+                where = f"{mount['label']}:/" + ("" if rel == "." else rel)
+            rows.append([("text", f" {dest} " + fit_left(where, inner - 2, e))])
+            rows.append([self.fits(cur, mount["label"] if mount else "target", inner)])
+        else:
+            row = cur.row or {}
+            notes = ["" if cur.status == "gone" else human(self.sizes.get(cur.path)),
+                     ("NFT: add -NFT" if cur.nft == "missing" else "drop -NFT") if cur.nft else "",
+                     f"integrity: {cur.health}" if cur.health else "",
+                     row.get("date_str") or "", row.get("location") or ""]
+            rows.append([("text", " " + fit(self.where_line(cur), inner, e))])
+            rows.append([("frame", " " + fit(" · ".join(n for n in notes if n), inner, e))])
+        return title, STATUS_TEXT.get(cur.status, "?").lower(), rows
+
+    def fits(self, cur: Entry, label: str, width: int) -> tuple[str, str]:
+        """Whether the cursor folder fits where it would be filed, as one card segment."""
+        size, usage = self.sizes.get(cur.path), self.usage(cur.note)
+        if usage is None:
+            text, ok = f"{human(size)} · {label} free space unreadable", True
+        else:
+            free = f"{human(usage[0])} free"
+            if size is None:
+                text, ok = f"{human(size)} · {label} {free}", True
+            elif same_device(cur.path, existing(cur.note)):
+                text, ok = f"{human(size)} · same drive, {free}", True
+            else:
+                ok = usage[0] - size >= SPACE_RESERVE
+                text = f"{human(size)} {'fits' if ok else 'does not fit'} · {label} {free}"
+        return ("frame" if ok else "odd", " " + fit(text, width, self.g["ellipsis"]))
+
+    def pane_title(self, pane: Pane) -> tuple[str, str, str]:
+        """(title, counts, free space) for a pane; free is "" for a virtual view."""
         if pane.virtual and pane.view == "gone":
-            title = VIEWS["gone"]
             count = "checking…" if self.checking_gone else f"{len(pane.entries)} gone"
-        elif pane.virtual:
-            title = VIEWS["misfiled"]
+            return VIEWS["gone"], count, ""
+        if pane.virtual:
             public = sum(1 for e in pane.entries if e.status == "public")
             count = f"{len(pane.entries)} to refile" + (f" · {public} public" if public else "")
+            return VIEWS["misfiled"], count, ""
+        mount = self.coll.mount_for(pane.cwd) if self.coll else None
+        if mount:
+            rel = os.path.relpath(pane.cwd, mount["root_path"])
+            title = f"{mount['label']}:/" + ("" if rel == "." else rel)
         else:
-            mount = self.coll.mount_for(pane.cwd) if self.coll else None
-            if mount:
-                rel = os.path.relpath(pane.cwd, mount["root_path"])
-                title = f"{mount['label']}:/" + ("" if rel == "." else rel)
-            else:
-                title = str(pane.cwd)
-            lbs = [e for e in pane.entries if e.lb is not None]
-            off = sum(1 for e in lbs if e.status in OFF)
-            count = f"{len(lbs)} LB" + (f" · {off} off" if off else "")
-            count += f" · {self.free(pane.cwd)} free"
+            title = str(pane.cwd)
+        lbs = [e for e in pane.entries if e.lb is not None]
+        off = sum(1 for e in lbs if e.status in OFF)
+        return title, f"{len(lbs)} LB" + (f" · {off} off" if off else ""), self.free(pane.cwd)
+
+    def tagged_text(self, pane: Pane) -> str:
+        """4 tagged 2.5G — the tag count and what the tagged folders weigh."""
+        sizes = [self.sizes.get(e.path) for e in pane.entries
+                 if e.key in pane.tags and e.kind == "dir"]
+        total = None if any(z is None for z in sizes) else sum(z or 0 for z in sizes)
+        return f"{len(pane.tags)} tagged {human(total)}"
+
+    def pane_counts(self, pane: Pane, count: str) -> str:
+        """The counts with the show filter, preview and name-filter notes around them."""
         if pane.show != "all":
             count = f"[{SHOW_LABELS[pane.show]}] {count}"
         if any(e.kind == "ghost" for e in pane.entries):
             count = f"preview {self.g['dest']} · {count}"
+        return count
+
+    def pane_header(self, pane: Pane, width: int, narrow: bool = False) -> Line:
+        """The pane title (label: path) and its counts."""
+        b = self.box
+        title, count, free = self.pane_title(pane)
+        if free:
+            count += f" · {free} free"
+        count = self.pane_counts(pane, count)
         if pane.tags:
-            sizes = [self.sizes.get(e.path) for e in pane.entries
-                     if e.key in pane.tags and e.kind == "dir"]
-            total = None if any(z is None for z in sizes) else sum(z or 0 for z in sizes)
-            count = f"{len(pane.tags)} tagged {human(total)} · {count}"
+            count = f"{self.tagged_text(pane)} · {count}"
         if pane.filter or pane.editing:
             count = f"{len(pane.visible()) - (not pane.virtual)}/{count}"
         if narrow:
@@ -3543,6 +3718,9 @@ class App:
         flag = "!" if entry.health else "n" if entry.nft else " "
         size = None if entry.status == "gone" else self.sizes.get(entry.path)
         shown = "" if entry.status == "gone" else human(size)
+        if self.compact and not pane.virtual:
+            return self.compact_row(pane, entry, width,
+                                    f" {glyph}{flag}{fit(shown, 4, e, right=True)}")
         tail = f" {glyph}{flag}{fit(shown, 5, e, right=True)}"
         if pane.virtual and self.coll:
             here = self.coll.mount_for(entry.path)
@@ -3553,8 +3731,46 @@ class App:
             tail = f" {glyph}"
         return fit(entry.name, width - text_width(tail), e) + tail
 
+    def compact_row(self, pane: Pane, entry: Entry, width: int, tail: str) -> str:
+        """An LB-first row for the phone layout: day, LB number, the rest of the name."""
+        e = self.g["ellipsis"]
+        in_year = bool(pane.cwd and re.fullmatch(r"\d{4}", pane.cwd.name))
+        m = DATE_RE.match(entry.name)
+        date = "" if not m else f"{m.group(2)}-{m.group(3)}" if in_year else m.group(0).strip()
+        lead = f"{fit(date, 5 if in_year else 10, e)} {entry.lb:05d} "
+        room = width - text_width(lead) - text_width(tail)
+        return lead + fit(bare_name(entry.name), room, e) + tail
+
     def info_strip(self, count: int) -> list[str]:
         """Three lines about the cursor entry, or the backend state."""
+        rows = self.info_rows()
+        if self.flash[0] and time.monotonic() - self.flash[1] < 6:
+            rows.insert(0, f"{self.g['running']} {self.flash[0]}")
+        return (rows + ["", "", ""])[:count]
+
+    def where_line(self, cur: Entry) -> str:
+        """Where an LB folder stands against its routed location, and the key that fixes it."""
+        if cur.status in ("misfiled", "public"):
+            why = "went public — " if cur.status == "public" else ""
+            return (f"{why}{self.g['dest']} {cur.note}  free: {self.free(cur.note)}"
+                    "  (F7 files)")
+        if cur.status == "dup":
+            return f"collection copy: {cur.note}  (= compares and resolves)"
+        if cur.status == "relink":
+            return f"collection path gone: {cur.note}  (l relinks here)"
+        if cur.status == "gone":
+            return "folder not on disk — x drops the record, l relinks it to a copy"
+        if cur.status == "stray":
+            return ("in place, not registered — F7 registers it" if cur.note == IN_PLACE
+                    else "not in collection — F7 files and registers it")
+        if cur.status == "blocked":
+            return cur.note
+        if cur.note == PRIVATE_AREA:
+            return f"{self.g['canonical']} private LB, under {PRIVATE_DIR}"
+        return f"{self.g['canonical']} at its routed location"
+
+    def info_rows(self) -> list[str]:
+        """The cursor entry (or the backend state) as up to three lines."""
         cur = self.active.current()
         rows: list[str]
         if self.coll is None:
@@ -3574,29 +3790,8 @@ class App:
             show = f"LB-{cur.lb:05d}  {row.get('date_str') or ''}  {row.get('location') or ''}"
             if cur.canon and self.highlight:
                 show = f"name ≠ canonical {self.g['dest']} {cur.canon}  (r renames)"
-            if cur.status in ("misfiled", "public"):
-                why = "went public — " if cur.status == "public" else ""
-                third = (f"{why}{self.g['dest']} {cur.note}  free: {self.free(cur.note)}"
-                         "  (F7 files)")
-            elif cur.status == "dup":
-                third = f"collection copy: {cur.note}  (= compares and resolves)"
-            elif cur.status == "relink":
-                third = f"collection path gone: {cur.note}  (l relinks here)"
-            elif cur.status == "gone":
-                third = "folder not on disk — x drops the record, l relinks it to a copy"
-            elif cur.status == "stray":
-                third = ("in place, not registered — F7 registers it" if cur.note == IN_PLACE
-                         else "not in collection — F7 files and registers it")
-            elif cur.status == "blocked":
-                third = cur.note
-            elif cur.note == PRIVATE_AREA:
-                third = f"{self.g['canonical']} private LB, under {PRIVATE_DIR}"
-            else:
-                third = f"{self.g['canonical']} at its routed location"
-            rows = [first, show, third]
-        if self.flash[0] and time.monotonic() - self.flash[1] < 6:
-            rows.insert(0, f"{self.g['running']} {self.flash[0]}")
-        return (rows + ["", "", ""])[:count]
+            rows = [first, show, self.where_line(cur)]
+        return rows
 
     def usage(self, path: str | Path | None, fresh: bool = False) -> tuple[int, int] | None:
         """(free, total) bytes on the filesystem holding path, re-read at most every 10 s."""
@@ -3749,7 +3944,7 @@ class App:
                 n = r * 5 + i
                 num = str((n + 1) % 10)
                 self.hits.append((y + r, i * slot, (i + 1) * slot, keys[n]))
-                line += [("key_num", num), ("key_label", fit(short[n], slot - 1))]
+                line += [("key_num", num), ("key_label", fit(full[n], slot - 1))]
             out.append(pad_line(line, cols, "key_num"))
         return out
 
