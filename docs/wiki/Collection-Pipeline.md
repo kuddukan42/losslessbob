@@ -58,7 +58,8 @@ folder already queued is skipped, a failure drops only its own batch) and a
 block-character bar above the key bar shows the folder's bytes and the queue.
 The queue is saved to `data/lb_nc_queue.json` (`QueueStore`, `Job.spec`) and
 offered for resume at the next start; a move still running in the backend is
-adopted, not restarted.
+adopted, not restarted. While the left pane is active the right pane previews
+the F6 destination of the cursor folder as a ghost row (`sync_preview`, `p` toggles).
 
 ## After filing
 
