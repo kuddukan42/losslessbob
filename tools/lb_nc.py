@@ -81,6 +81,9 @@ OFF = ("misfiled", "public", "stray", "dup", "blocked", "gone", "relink")   # no
 SHOW_MODES = ("all", "off", "public", "nft", "name", "bad")
 SHOW_LABELS = {"off": "not right", "public": "public in private", "nft": "NFT mismatch",
                "name": "non-canonical names", "bad": "integrity issues"}
+RELOAD_EVERY = 5.0                  # seconds between pane refreshes while a queue runs
+# jobs whose result opens a dialog when the queue ends — never queued behind a running one
+FOLLOW_UP = ("pipeline", "compare", "measure", "measure-routes")
 DUP_DIR = "_duplicates"             # where the resolver sets a losing copy aside (same drive)
 
 log = logging.getLogger("lb_nc")
@@ -89,10 +92,12 @@ log = logging.getLogger("lb_nc")
 
 GLYPHS = {"canonical": "✓", "misfiled": "→", "public": "↑", "gone": "✗", "relink": "⇄",
           "stray": "?", "dup": "≠", "blocked": "⊘",
-          "dest": "⇒", "cursor": "▶", "ellipsis": "…", "running": "■"}
+          "dest": "⇒", "cursor": "▶", "ellipsis": "…", "running": "■",
+          "bar_on": "█", "bar_off": "░"}
 ASCII_GLYPHS = {"canonical": "*", "misfiled": ">", "public": "^", "gone": "X", "relink": "~",
                 "stray": "?", "dup": "=", "blocked": "x",
-                "dest": "=>", "cursor": ">", "ellipsis": "~", "running": "*"}
+                "dest": "=>", "cursor": ">", "ellipsis": "~", "running": "*",
+                "bar_on": "#", "bar_off": "."}
 STATUS_TEXT = {"canonical": "canonical", "misfiled": "MISFILED",
                "public": "PUBLIC LB in the private folder",
                "gone": "GONE — the collection path is not on disk",
@@ -836,6 +841,10 @@ class Job:
     detail: str
     run: Callable[[Emit], None]
     gated: bool = True
+    path: str | None = None        # the folder it acts on; a queued job claims it
+    dest: str | None = None        # where a move lands, for the space check of later batches
+    cross: bool = False            # the move copies across drives
+    meter: list[int] = field(default_factory=lambda: [0, 0])   # [bytes done, bytes total]
 
 
 def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None,
@@ -855,6 +864,8 @@ def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None
     if file_mode:
         body["file_mode"] = file_mode
 
+    meter = [0, 0]
+
     def run(emit: Emit) -> None:
         emit(f"LB-{entry.lb:05d} {entry.name}", False)
         if guarded:
@@ -869,6 +880,7 @@ def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None
             emit(f"  {status.get('stage', '?')} {status.get('files_done', 0)}/"
                  f"{status.get('files_total', 0)} files  "
                  f"{human(status.get('bytes_done'))}/{human(status.get('bytes_total'))}", True)
+            meter[:] = [status.get("bytes_done") or 0, status.get("bytes_total") or 0]
             if not status.get("running"):
                 break
         result = status.get("result") or {}
@@ -886,7 +898,8 @@ def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None
 
     verb = "move" if file_mode == "move" else "file"
     mark = "  [LB page checked first]" if guarded else ""
-    return Job(f"{verb} LB-{entry.lb:05d}", f"{entry.name}  {GLYPHS['dest']} {dest}{mark}", run)
+    return Job(f"{verb} LB-{entry.lb:05d}", f"{entry.name}  {GLYPHS['dest']} {dest}{mark}", run,
+               path=norm(entry.path), dest=dest, cross=cross, meter=meter)
 
 
 def register_job(api: Api, entry: Entry, journal: Journal | None = None) -> Job:
@@ -925,7 +938,8 @@ def generate_job(api: Api, entry: Entry) -> Job:
         if not result.get("generated"):
             raise JobError(f"nothing generated for {entry.name}")
         emit("  wrote " + ", ".join(Path(g).name for g in result["generated"]), False)
-    return Job("checksums", f"{entry.name}  (generate checksums)", run)
+    return Job("checksums", f"{entry.name}  (generate checksums)", run,
+               path=norm(entry.path))
 
 
 def rename_job(api: Api, entry: Entry, new_name: str, journal: Journal | None = None,
@@ -956,7 +970,8 @@ def rename_job(api: Api, entry: Entry, new_name: str, journal: Journal | None = 
         if res.get("qbt_error"):
             emit(f"  qBittorrent: {res['qbt_error']}", False)
     mark = "  [LB page checked first]" if guarded else ""
-    return Job("rename", f"{entry.name}  {GLYPHS['dest']} {new_name}{mark}", run)
+    return Job("rename", f"{entry.name}  {GLYPHS['dest']} {new_name}{mark}", run,
+               path=norm(entry.path))
 
 
 def route_job(api: Api, year: int, mount: dict, sub_path: str,
@@ -1342,10 +1357,12 @@ def pipeline_job(api: Api, paths: list[Path], sink: dict[str, dict]) -> Job:
 
 
 class Runner:
-    """Runs jobs one at a time in a thread; stops at the first failure.
+    """Runs jobs one at a time in a thread, batch after batch.
 
-    A filing job belongs to the backend once started, so quitting the UI never cuts a
-    move in half — only the jobs still queued behind it are dropped.
+    A batch is what one confirm dialog submitted. A failure drops the rest of its own
+    batch; batches submitted behind it while it ran still run. A filing job belongs to the
+    backend once started, so quitting the UI never cuts a move in half — only the jobs
+    still queued behind it are dropped.
     """
 
     def __init__(self, read_only: bool, threaded: bool = True) -> None:
@@ -1355,17 +1372,23 @@ class Runner:
         self.thread: threading.Thread | None = None
         self.job: Job | None = None
         self.last: Job | None = None
+        self.current: deque[Job] = deque()         # the rest of the batch being worked
+        self.pending: deque[list[Job]] = deque()   # batches submitted behind it
+        self.done = 0                              # jobs finished since the queue started
+        self.total = 0                             # jobs submitted since the queue started
+        self.ran: set[str] = set()                 # labels run since tick last looked
         self.failure: tuple[str, list[str]] | None = None
         self.refused: list[str] = []
         self.finished = False
         self.stop = threading.Event()
         self.lock = threading.Lock()
+        self._active = False
         self._progress = False
 
     @property
     def running(self) -> bool:
         """True while a queue is being worked."""
-        return self.thread is not None and self.thread.is_alive()
+        return self._active
 
     def emit(self, text: str, progress: bool) -> None:
         """Append a log line; a progress line replaces the previous progress line."""
@@ -1379,48 +1402,94 @@ class Runner:
             log.info("%s", text)
 
     def submit(self, jobs: list[Job]) -> bool:
-        """Start a queue. False when busy or empty."""
-        if self.running or not jobs:
+        """Start a queue, or add a batch behind the one being worked. False when empty."""
+        if not jobs:
             return False
         if self.read_only and any(j.gated for j in jobs):
             raise PermissionError("read-only mode")
-        self.failure = None
-        self.refused = []
-        self.stop.clear()
+        with self.lock:
+            if self._active:
+                self.pending.append(list(jobs))
+                self.total += len(jobs)
+                return True
+            self._active = True
+            self.current = deque(jobs)
+            self.done, self.total = 0, len(jobs)
+            self.stop.clear()
         if self.threaded:
-            self.thread = threading.Thread(target=self._work, args=(list(jobs),), daemon=True)
+            self.thread = threading.Thread(target=self._work, daemon=True)
             self.thread.start()
         else:
-            self._work(list(jobs))
+            self._work()
         return True
 
-    def _work(self, jobs: list[Job]) -> None:
-        done = 0
-        for job in jobs:
+    def outstanding(self) -> list[Job]:
+        """The running job and every job still queued behind it."""
+        with self.lock:
+            return ([self.job] if self.job else []) + list(self.current) \
+                + [j for batch in self.pending for j in batch]
+
+    def progress(self) -> tuple[Job | None, int, int]:
+        """(running job, jobs finished, jobs submitted) for the progress bar."""
+        with self.lock:
+            return self.job, self.done, self.total
+
+    def _next(self) -> Job | None:
+        """Take the next job, or close the queue when nothing is left."""
+        with self.lock:
+            dropped = 0
             if self.stop.is_set():
-                self.emit(f"stopped — {len(jobs) - done} job(s) not run", False)
-                break
+                dropped = len(self.current) + sum(len(b) for b in self.pending)
+                self.current.clear()
+                self.pending.clear()
+                self.total -= dropped
+            elif not self.current and self.pending:
+                self.current = deque(self.pending.popleft())
+            job = self.current.popleft() if self.current else None
             self.job = job
+            if job is None:
+                self.finished = True
+                self._active = False
+        if dropped:
+            self.emit(f"stopped — {dropped} job(s) not run", False)
+        return job
+
+    def _fail(self, job: Job, text: str) -> None:
+        """Record a failure and drop the rest of that job's batch; later batches still run."""
+        with self.lock:
+            skipped = len(self.current)
+            self.current.clear()
+            self.total -= skipped
+            waiting = sum(len(b) for b in self.pending)
+        lines = [text]
+        if skipped:
+            lines.append(f"{skipped} queued job(s) of that batch not run")
+        if waiting:
+            lines.append(f"{waiting} job(s) queued behind it still run")
+        with self.lock:
+            if self.failure:
+                self.failure[1].extend(lines)
+            else:
+                self.failure = (job.label, lines)
+
+    def _work(self) -> None:
+        while (job := self._next()) is not None:
             log.info("run: %s", job.label)
             try:
                 job.run(self.emit)
             except JobRefused as exc:
                 self.emit(f"REFUSED {job.label}: {exc}", False)
                 self.refused.append(f"{job.label}: {exc}")
-                done += 1
-                continue
             except (JobError, ApiError) as exc:
                 self.emit(f"FAILED {job.label}: {exc}", False)
-                self.failure = (job.label, [f"{job.label}: {exc}",
-                                            f"{len(jobs) - done - 1} queued job(s) not run"])
-                break
+                self._fail(job, f"{job.label}: {exc}")
             except Exception as exc:             # a bug must not kill the UI
                 log.exception("job crashed: %s", job.label)
-                self.failure = (job.label, [f"{job.label}: {exc!r}"])
-                break
-            done += 1
-        self.last, self.job = self.job, None
-        self.finished = True
+                self._fail(job, f"{job.label}: {exc!r}")
+            with self.lock:
+                self.last = job
+                self.done += 1
+                self.ran.add(job.label)
 
 
 # ------------------------------------------------------------------------------- keys
@@ -1752,8 +1821,13 @@ the rest of the queue carries on. Renames of such folders check that the new nam
 matches the site: -NFT only with no page, no -NFT only with a page.
 Every write goes through the backend (port 5174) after a y/n gate, one folder at a
 time, stopping at the first failure. Duplicates are never filed — resolve them by hand.
+While a queue runs, more moves, files and renames can be confirmed: each batch is added
+behind the running one (a folder already queued is skipped), and a failure only drops
+the rest of its own batch. The bar above the keys shows the current folder's bytes and
+the queue. F4, the duplicate resolver and the planners wait for the queue to end.
 Pane headers show free space; the line under the panes shows every drive. F6/F7 add up
-cross-drive bytes per target and refuse a batch that would leave < 2G free."""
+cross-drive bytes per target, moves already queued included, and refuse a batch that
+would leave < 2G free."""
 
 
 # -------------------------------------------------------------------------------- app
@@ -1794,6 +1868,7 @@ class App:
         self.lock = threading.Lock()
         self.dirty = True
         self._free_cache: dict[str, tuple[float, str]] = {}
+        self._reloaded: tuple[int, float] = (0, 0.0)   # (runner.done, when) of the last refresh
         self.flash = ("", 0.0)
         self._load()
         mounts = [Path(m["root_path"]) for m in (self.coll.mounts if self.coll else [])]
@@ -2113,28 +2188,57 @@ class App:
         self.flash = (text, time.monotonic())
         self.dirty = True
 
+    def busy(self, jobs: list[Job]) -> bool:
+        """True (with a dialog) when jobs can't be queued behind the running queue."""
+        if self.runner.running and any(j.label in FOLLOW_UP for j in jobs):
+            self.dialog = Message("Busy", ["A queue is running. This one shows its result",
+                                           "when it ends, so it can't be queued — wait for it."])
+            return True
+        return False
+
+    def unqueued(self, jobs: list[Job]) -> tuple[list[Job], int]:
+        """Jobs whose folder no running or queued job already claims, and how many were cut."""
+        claimed = {j.path for j in self.runner.outstanding() if j.path}
+        fresh = [j for j in jobs if not (j.path and j.path in claimed)]
+        return fresh, len(jobs) - len(fresh)
+
     def run(self, jobs: list[Job]) -> None:
-        """Start jobs. The single path to the runner; read-only refuses gated jobs here too."""
-        if self.runner.running:
-            self.dialog = Message("Busy", ["A job is already running — wait for it."])
+        """Start jobs, or queue them behind the running ones. The single path to the runner;
+        read-only refuses gated jobs here too."""
+        if self.busy(jobs):
             return
         if self.read_only and any(j.gated for j in jobs):
             self.dialog = Message("Read-only", ["read-only mode"])
             return
+        jobs, cut = self.unqueued(jobs)
+        if not jobs:
+            self.dialog = Message("Queue", ["Every selected folder is already in the queue."])
+            return
         self.show_log = True
-        self.say(f"running {jobs[0].label}…")
+        if self.runner.running:
+            self.say(f"queued {len(jobs)} job(s) behind the running ones"
+                     + (f" ({cut} already queued, skipped)" if cut else ""))
+        else:
+            self.say(f"running {jobs[0].label}…")
         self.runner.submit(jobs)
 
     def gate(self, title: str, jobs: list[Job], blurb: list[str], **kw: Any) -> None:
-        """Open the confirm dialog, or refuse in read-only mode or while busy."""
+        """Open the confirm dialog, or refuse in read-only mode."""
         if self.read_only:
             self.dialog = Message(title, ["read-only mode"])
-        elif self.runner.running:
-            self.dialog = Message("Busy", ["A job is already running — wait for it."])
-        elif not jobs:
+            return
+        if self.busy(jobs):
+            return
+        fresh, cut = self.unqueued(jobs)
+        if cut:
+            blurb = [*blurb, f"  skip {cut} folder(s): already in the queue"]
+        if self.runner.running and fresh:
+            waiting = len(self.runner.outstanding())
+            blurb = [*blurb, f"A queue is running: these are added behind its {waiting} job(s)."]
+        if not fresh:
             self.dialog = Message(title, blurb or ["Nothing to do."])
         else:
-            self.dialog = Confirm(title, jobs, blurb, **kw)
+            self.dialog = Confirm(title, fresh, blurb, **kw)
 
     def lb_selection(self) -> list[Entry]:
         """Selected LB folders in the active pane."""
@@ -2831,29 +2935,35 @@ class App:
         """Pick up job completion, sizes and flash expiry."""
         if self.runner.running:
             self.dirty = True
+            if self.runner.done != self._reloaded[0] \
+                    and time.monotonic() - self._reloaded[1] >= RELOAD_EVERY:
+                self._reloaded = (self.runner.done, time.monotonic())
+                self._free_cache.clear()
+                self.reload()              # the panes follow the queue as folders land
         if self.runner.finished:
             self.runner.finished = False
-            last = self.runner.last
-            refused = self.runner.refused
-            if self.runner.failure:
-                label, text = self.runner.failure
-                self.runner.failure = None
+            self._reloaded = (0, 0.0)
+            with self.runner.lock:
+                ran, self.runner.ran = self.runner.ran, set()
+                refused, self.runner.refused = self.runner.refused, []
+                failure, self.runner.failure = self.runner.failure, None
+            if "rename" in ran:
+                self.pipeline_results.clear()          # keyed by the old paths
+            if failure:
+                label, text = failure
                 self.dialog = Message(f"{label}: failed", text + (
                     [f"{len(refused)} refused before that (no live LB page)"] if refused else []))
             elif refused:
                 self.dialog = Message(f"done — {len(refused)} refused (no live LB page)",
                                       refused[:12] + ([f"… and {len(refused) - 12} more"]
                                                       if len(refused) > 12 else []))
-            elif last and last.label == "rename":
-                self.pipeline_results.clear()          # keyed by the old paths
-                self.dialog = Message("done", list(self.runner.lines)[-10:] or ["ok"])
-            elif last and last.label == "pipeline":
+            elif "pipeline" in ran and "rename" not in ran:
                 self.dialog = Pager("Pipeline", self.results_pages())
-            elif last and last.label == "compare":
+            elif "compare" in ran:
                 self.compare_picker()
-            elif last and last.label == "measure":
+            elif "measure" in ran:
                 self.rebalance_plan()
-            elif last and last.label == "measure-routes":
+            elif "measure-routes" in ran:
                 self.routes_plan()
             else:
                 tail = list(self.runner.lines)[-10:]
@@ -2895,7 +3005,8 @@ class App:
         key_rows = 1 if two else 2
         log_rows = LOG_ROWS + 1 if self.show_log else 0
         drives = self.drives_line() if rows >= 16 else ""
-        body = rows - 1 - 1 - 1 - info_rows - 1 - key_rows - log_rows - bool(drives)
+        bar = self.runner.running
+        body = rows - 1 - 1 - 1 - info_rows - 1 - key_rows - log_rows - bool(drives) - bar
         if body < 3 and log_rows:
             body, log_rows = body + log_rows, 0
         if body < 1:
@@ -2942,6 +3053,8 @@ class App:
             out.append([("frame", b["v"]), ("text", fit(text, cols - 2, self.g["ellipsis"])),
                         ("frame", b["v"])])
         out.append([("frame", b["bl"] + b["h"] * (cols - 2) + b["br"])])
+        if bar:
+            out.append(self.progress_bar(cols))
         out.extend(self.keybar(cols, len(out)))
         return [pad_line(line, cols, "pane") for line in out[:rows]]
 
@@ -3134,6 +3247,12 @@ class App:
             where[label] = target
         if not need:
             return ["  space: same-drive renames only — nothing to copy"], False
+        ahead: dict[str, int] = {}             # cross-drive moves already queued, per target
+        for job in self.runner.outstanding():
+            if job.cross and job.dest and job.path:
+                mount = self.coll.mount_for(job.dest) if self.coll else None
+                label = mount["label"] if mount else str(existing(job.dest))
+                ahead[label] = ahead.get(label, 0) + self.sizes.get_now(Path(job.path))
         lines, over = [], False
         for label, size in need.items():
             value = self.usage(where[label], fresh=True)
@@ -3141,11 +3260,13 @@ class App:
                 lines.append(f"  {label}: needs {human(size)}, free space unreadable")
                 over = True
                 continue
-            after = value[0] - size
+            queued = ahead.get(label, 0)
+            after = value[0] - size - queued
             fits = after >= SPACE_RESERVE
             over = over or not fits
             lines.append(f"  {label}: needs {human(size)} of {human(value[0])} free"
-                         f" {self.g['dest']} {human(max(after, 0))} after"
+                         + (f" ({human(queued)} queued ahead)" if queued else "")
+                         + f" {self.g['dest']} {human(max(after, 0))} after"
                          + ("" if fits else f"  — WON'T FIT ({human(SPACE_RESERVE)} reserve)"))
         return lines, over
 
@@ -3158,6 +3279,43 @@ class App:
             return None
         return lines
 
+    def progress_bar(self, cols: int) -> Line:
+        """The meter above the key bar: this folder's bytes, then the queue.
+
+        move LB-14236 ████████░░░░░░░  42% 360M/817M  queue 3/12 ██░░░░░░  21%
+        A job with no byte count (a rename, a route) shows the queue bar alone; a narrow
+        terminal drops the queue bar, then the bars, before it drops the numbers.
+        """
+        job, done, total = self.runner.progress()
+        if job is None:
+            return pad_line([], cols, "key_num")
+        cur, size = job.meter
+        frac = min(1.0, cur / size) if size > 0 else 0.0
+        qfrac = min(1.0, (done + frac) / total) if total > 0 else 0.0
+        head = f" {job.label} "
+        nums = f" {frac:4.0%} {human(cur)}/{human(size)} " if size > 0 else ""
+        qhead = f" queue {min(done + 1, total)}/{total} "
+        qnums = f" {qfrac:4.0%} "
+        on, off = self.g["bar_on"], self.g["bar_off"]
+
+        def meter(part: float, width: int) -> Line:
+            fill = min(width, round(part * width))
+            return [("run", on * fill), ("key_num", off * (width - fill))]
+
+        room = cols - sum(text_width(t) for t in (head, nums, qhead, qnums))
+        line: Line = [("key_label", head)]
+        if size > 0 and total > 1 and room >= 16:           # folder bar, then queue bar
+            wide = room * 3 // 5
+            line += meter(frac, wide) + [("key_num", nums), ("key_label", qhead)] \
+                + meter(qfrac, room - wide) + [("key_num", qnums)]
+        elif size > 0:                                      # folder bar, queue as numbers
+            tail = qhead if total > 1 else ""
+            room = cols - sum(text_width(t) for t in (head, nums, tail))
+            line += meter(frac, max(0, room)) + [("key_num", nums), ("key_label", tail)]
+        else:                                               # no byte count: queue bar alone
+            line += [("key_label", qhead)] + meter(qfrac, max(0, room)) + [("key_num", qnums)]
+        return pad_line(line, cols, "key_num")
+
     def keybar(self, cols: int, y: int) -> list[Line]:
         """The F-key bar; every slot is clickable."""
         full = ("Help", "Info", "View", "Pipe", "Scan", "Move", "File", "Misfd", "Menu",
@@ -3165,8 +3323,9 @@ class App:
         short = ("Hlp", "Inf", "Viw", "Pip", "Scn", "Mov", "Fil", "Mis", "Mnu", "Qt")
         keys = [f"f{n}" for n in range(1, 11)]
         if cols >= 60:
-            status = (f" {self.g['running']} running… " if self.runner.running
-                      else f" LB · {time.strftime('%H:%M')} ")
+            _job, done, total = self.runner.progress()
+            status = (f" {self.g['running']} running {min(done + 1, total)}/{total} "
+                      if self.runner.running else f" LB · {time.strftime('%H:%M')} ")
             labels = full if cols >= 80 else short
             nums = [str(n) for n in range(1, 10)] + (["10"] if cols >= 80 else ["0"])
             slot = max(4, (cols - text_width(status)) // 10)

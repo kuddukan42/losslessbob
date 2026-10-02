@@ -1,3 +1,20 @@
+[2026-10-01] — lb-nc: queue batches behind a running job, DOS-style progress bar
+Changed: tools/lb_nc.py: Runner no longer refuses a second submit ("Busy — wait for it"). A batch
+  confirmed while a queue runs (F6 move, F7 file, r rename, checksums, -NFT fix, …) is appended behind it;
+  the confirm dialog says how many jobs it lands behind. A folder a running or queued job already claims
+  is skipped (Job.path). A failure now drops only the rest of its own batch — batches queued behind it
+  still run, and every failure is listed in the end dialog. Stop (F9) still drops everything queued. The
+  cross-drive space check counts moves already queued for the same target ("queued ahead"). Jobs whose
+  result opens a dialog at the end (F4 pipeline, duplicate compare, rebalance/route measuring) are still
+  refused while a queue runs. The panes refresh as the queue progresses (at most every 5 s), not only
+  when it ends.
+Added: tools/lb_nc.py: App.progress_bar — one row above the key bar while a queue runs: the current
+  folder's bytes as a █░ bar with percent and size, then the queue position as a second bar (#. in
+  ASCII mode); a job with no byte count shows the queue bar alone. Key-bar status reads "running 3/12".
+Added: tests/test_lb_nc.py: 10 tests — append move + rename, duplicate claim, result jobs refused,
+  per-batch failure, stop, queued-ahead space, bar at 110/70/45 columns, no bar when idle.
+Changed: docs/wiki/Collection-Pipeline.md: lb-nc section.
+
 [2026-10-01] — Filing copy hardened: staged, fsynced, verified, then renamed into place
 Changed: backend/filer.py: every real copy (file_mode=copy, or a cross-device move — the path lb-nc's
   cross-mount moves take) now goes through _copy_verified. The copy is written to a hidden

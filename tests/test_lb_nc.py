@@ -2,6 +2,7 @@
 
 import shutil
 import sys
+import threading
 from pathlib import Path
 
 import pytest
@@ -556,3 +557,118 @@ def test_canonical_name_skips_what_it_cannot_judge():
     row["location"] = "Paris"
     assert lb_nc.canonical_name("x (LB-00005+LB-00006)", row) == ""
     assert lb_nc.canonical_name("1966-05-26 Paris (LB-00005)", row) == ""
+
+
+# ---- queueing behind a running job, and the progress bar
+
+@pytest.fixture
+def held(app):
+    """A threaded runner holding one blocking job, so the UI queues behind it."""
+    app.runner = lb_nc.Runner(False, threaded=True)
+    go = threading.Event()
+    hold = lb_nc.Job("hold", "hold", lambda emit: go.wait(5), gated=False)
+    app.run([hold])
+
+    def release() -> None:
+        go.set()
+        app.runner.thread.join(5)
+        app.dialog = None
+        app.tick()
+    yield release
+    go.set()
+
+
+def test_move_and_rename_queue_behind_a_running_job(app, held, tmp_path):
+    _pick(app.left, MISFILED)
+    app.handle("f7")
+    assert any("added behind" in line for line in app.dialog.blurb)
+    app.handle("y")
+    assert "queued 1 job(s)" in app.flash[0]
+    old = tmp_path / "DYLAN1" / TORONTO
+    app.pipeline_results[str(old)] = {"rename": {"proposed": "1975-11-19 Toronto (LB-04410)"}}
+    _pick(app.left, TORONTO)
+    app.handle("r")
+    app.handle("y")
+    assert [j.label for j in app.runner.outstanding()] == ["hold", "move LB-01860", "rename"]
+    assert (tmp_path / "DYLAN1" / MISFILED).is_dir()         # nothing ran yet
+    held()
+    assert (tmp_path / "DYLAN2" / "1987" / MISFILED).is_dir()
+    assert (tmp_path / "DYLAN1" / "1975-11-19 Toronto (LB-04410)").is_dir()
+    assert app.pipeline_results == {} and not app.runner.running
+
+
+def test_folder_already_queued_is_not_queued_twice(app, held):
+    _pick(app.left, MISFILED)
+    app.handle("f7")
+    app.handle("y")
+    app.handle("f7")
+    assert isinstance(app.dialog, lb_nc.Message)
+    assert any("already in the queue" in line for line in app.dialog.text)
+    assert len(app.runner.outstanding()) == 2
+
+
+def test_result_jobs_wait_for_the_queue(app, held):
+    app.run([lb_nc.Job("measure", "measure", lambda emit: None, gated=False)])
+    assert app.dialog.title == "Busy"
+    assert len(app.runner.outstanding()) == 1
+
+
+def test_failure_drops_only_its_own_batch():
+    ran: list[str] = []
+
+    def boom(emit):
+        raise lb_nc.JobError("nope")
+    runner = lb_nc.Runner(False, threaded=True)
+    go = threading.Event()
+    runner.submit([lb_nc.Job("hold", "", lambda emit: go.wait(5))])
+    runner.submit([lb_nc.Job("bad", "", boom), lb_nc.Job("lost", "", lambda e: ran.append("lost"))])
+    runner.submit([lb_nc.Job("kept", "", lambda e: ran.append("kept"))])
+    assert runner.progress()[2] == 4
+    go.set()
+    runner.thread.join(5)
+    assert ran == ["kept"]
+    assert runner.failure[0] == "bad"
+    assert "1 queued job(s) of that batch not run" in runner.failure[1]
+    assert runner.finished and runner.progress() == (None, 3, 3)
+
+
+def test_stop_drops_everything_queued():
+    ran: list[str] = []
+    runner = lb_nc.Runner(False, threaded=True)
+    go = threading.Event()
+    runner.submit([lb_nc.Job("hold", "", lambda emit: go.wait(5))])
+    runner.submit([lb_nc.Job("later", "", lambda e: ran.append("later"))])
+    runner.stop.set()
+    go.set()
+    runner.thread.join(5)
+    assert ran == [] and any("1 job(s) not run" in line for line in runner.lines)
+
+
+def test_space_check_counts_moves_queued_ahead(app, held, monkeypatch):
+    monkeypatch.setattr(lb_nc, "same_device", lambda a, b: False)
+    monkeypatch.setattr(app, "usage", lambda path, fresh=False: (500 * 1024 ** 3, 10 ** 13))
+    _pick(app.left, MISFILED)
+    app.handle("f7")
+    app.handle("y")
+    _pick(app.left, TORONTO)
+    app.handle("f6")
+    assert any("(1.0K queued ahead)" in line for line in app.dialog.blurb)
+
+
+@pytest.mark.parametrize("cols", [110, 70, 45])
+def test_progress_bar_row(app, held, cols):
+    job = lb_nc.Job("move LB-01860", "", lambda emit: None, meter=[50, 100])
+    app.runner.submit([job])
+    with app.runner.lock:                              # as if the move were the one running
+        app.runner.job, app.runner.current = job, lb_nc.deque()
+    lines = app.frame(cols, 30)
+    assert len(lines) == 30 and all(lb_nc.line_width(ln) == cols for ln in lines)
+    bar = lb_nc.plain(app.progress_bar(cols))
+    assert "move LB-01860" in bar and "50%" in bar and "queue 1/2" in bar
+    assert bar.count("█") >= 2 and "░" in bar
+    assert any(lb_nc.plain(ln) == bar for ln in lines)
+
+
+def test_no_progress_bar_when_idle(app):
+    assert not any("█" in lb_nc.plain(ln) or "queue" in lb_nc.plain(ln)
+                   for ln in app.frame(110, 30))
