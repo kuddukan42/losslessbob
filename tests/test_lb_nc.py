@@ -845,3 +845,19 @@ def test_preview_skips_folders_f6_would_not_move(app, tmp_path):
     app.set_root(app.right, tmp_path / "DYLAN1")                # same drive, canonical folder
     _left_on(app, TORONTO)
     assert _ghosts(app.right) == [] and app.right.cwd == tmp_path / "DYLAN1"
+
+
+def test_preview_row_is_scrolled_to_mid_pane_among_its_neighbours(app, tmp_path):
+    year = tmp_path / "DYLAN2" / "1987"
+    for day in range(1, 29):
+        (year / f"1987-10-{day:02d} Somewhere (LB-0{9000 + day})").mkdir()
+        (year / f"1987-11-{day:02d} Somewhere (LB-0{9100 + day})").mkdir()
+    app.reload()
+    app.frame(120, 30)                                          # the pane height is known
+    _left_on(app, MISFILED)                                     # 1987-10-17 London
+    lines = [lb_nc.plain(line) for line in app.frame(120, 30)]
+    row = next(i for i, text in enumerate(lines) if f"⇒ {MISFILED}" in text)
+    assert "1987-10-16 Somewhere" in lines[row - 1]             # sorted among its neighbours
+    assert "1987-10-17 Somewhere" in lines[row + 1]
+    _y, height, _x, _w = app.pane_rows["right"]
+    assert height // 3 <= row - 2 <= 2 * height // 3            # mid-pane, not at an edge

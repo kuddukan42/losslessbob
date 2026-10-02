@@ -7,7 +7,9 @@ Added: tools/lb_nc.py: App.sync_preview — while the left pane is active, the r
   duplicates, blocked/gone rows, or a canonical folder already on that drive. A right pane holding tags
   is never moved; Tab or a click into the right pane drops the ghost row; the preview stays put behind
   a dialog. p toggles it (default on). `l` relink ignores a ghost row as its candidate.
-Added: tests/test_lb_nc.py: 6 preview tests.
+Changed: tools/lb_nc.py: the previewed row is scrolled to mid-pane, so it shows between the folders
+  it will land among instead of sitting at the pane's bottom edge.
+Added: tests/test_lb_nc.py: 7 preview tests.
 Added: tools/_strip_undo_junk.py: throwaway, dry-run by default — removes the pytest records from
   data/lb_nc_undo.jsonl with a backup in data/backups/. Not run from the session (blocked); tj runs it.
 
