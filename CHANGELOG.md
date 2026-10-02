@@ -23,8 +23,11 @@ Added: backend/dossier_anchors.py, backend/templates/dossier.html, backend/dossi
   page)"); D1 payload key also_on; taper field value gains display.
 Added: backend/db.py: "3dogs" in _KNOWN_TAPER_ALIASES (H).
 Changed: instructions/SILVER_DOSSIER_REVIEW.md: rulings table + dry-run numbers.
-Note: code only — the live DB is not rebuilt yet (parse_lineage --force, attribute_tapers,
-  compute_show_picks, golden fixture re-cut). Dry run on a copy: 248 of 3,968 rank-1 picks change.
+Changed: tests/golden/dossier/fixture.jsonl.gz: re-cut after the live rebuild (tj's OK, backup
+  data/backups/losslessbob_preTODO354_20261002_1227.db): parse_lineage --force, attribute_tapers
+  (5,206 → 5,193; 61 confirmed → propagated, +3dogs, 170 via_private), compute_show_picks (253 rank-1
+  picks changed, 208 of the dry run's 248 from the generation tier), qc run, backend restart; golden
+  --check 18/18, audit 0 structural findings on both exports. TODO-354 closed; TODO-356 opened.
 
 [2026-10-01] — lb-nc: the right pane previews where the left cursor's folder would land
 Added: tools/lb_nc.py: App.sync_preview — while the left pane is active, the right pane opens the

@@ -87,3 +87,8 @@ everything) and `…_preC32k_medley_*.db` (before the medley reparse). Live: Olo
 attribute_tapers (5,263 → 5,206; propagated 784 → 727), show_picks (0 rank-1 changes), qc run,
 backend restart; golden `--check` 18/18 (no fixture re-cut needed). Decisions A–I remain with tj
 (TODO-354).
+
+A–I ruled by tj 2026-10-01, implemented and rebuilt live 2026-10-02 (backup
+`data/backups/losslessbob_preTODO354_20261002_1227.db`): attributions 5,206 → 5,193, 253 rank-1
+picks changed, golden fixture re-cut, `--check` 18/18, audit 0 structural on the golden and silver
+exports. TODO-354 closed; the TapeMatch side of B is TODO-356.
