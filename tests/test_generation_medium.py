@@ -67,6 +67,14 @@ class TestClassifyGeneration:
         ("MasterDAT > CDR", ("master", "stated")),
         ("mastercopy > flac", ("master", "stated")),
         ("MasterTape > DAT > DATClone > CD-R", ("low_gen", "stated")),
+        # Silver review I (tj, 2026-10-01): a media copy is a hop, like a clone.
+        ('version "d" 48k, DAT copy > WAV > Sound Forge > FLAC', ("low_gen", "stated")),
+        ("DSBD master>DAT COPY>CASSETTE COPY>CDDA>EAC", ("low_gen", "stated")),
+        ("analog DAT copy of DAT master tape > DDS-1", ("low_gen", "stated")),
+        # ...but a copy further down an INFERRED master's chain leaves it alone,
+        # the same asymmetry his 09-11 row verdicts gave the clone.
+        ("Schoeps MK4 > Sony D8 > CDR copy > EAC", ("master", "inferred")),
+        ("CDR copy of the bootleg > EAC > FLAC", ("unknown", None)),
         # Not generations: a post-transfer credit, a song title, a bootleg's name.
         ("Mastered by LTA > flac", ("unknown", None)),
         ("remastering by the taper > flac", ("unknown", None)),

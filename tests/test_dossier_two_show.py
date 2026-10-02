@@ -195,3 +195,79 @@ def test_each_show_page_lists_only_its_sources(fixture_db):
 
     assert "LB-02637" in lbs(aft) and "LB-02637" not in lbs(eve)
     assert "LB-02638" in lbs(eve) and "LB-02638" not in lbs(aft)
+
+
+# ── Silver review E/F (tj, 2026-10-01) ─────────────────────────────────────────
+
+def test_both_show_source_goes_to_the_first_show_and_is_flagged():
+    from backend.dossier_fields import ShowEvent, assign_show_sources, both_show_lbs
+
+    events = [ShowEvent(event_id=2440, side="a", lbs={1610, 5}),
+              ShowEvent(event_id=2450, side="b", lbs={1610, 6})]
+    entries = [
+        {"lb_number": 1610, "location": "Hofheinz Pavilion", "description": ""},
+        {"lb_number": 5, "location": "", "description": ""},
+        {"lb_number": 7, "location": "", "description": "afternoon and evening shows\nmore"},
+        {"lb_number": 8, "location": "",
+         "description": "evening\n(a torrent from 07/15 had both shows)"},
+    ]
+    assert both_show_lbs(events, entries) == {1610, 7}
+    assigned = assign_show_sources(events, entries)
+    assert assigned[1610] == 2440 and assigned[7] == 2440 and assigned[8] == 2450
+
+
+def test_other_show_page_cross_references_a_both_show_source(fixture_db):
+    """1974-01-06: a source Olof lists under both shows ranks on the afternoon page;
+    the evening page points at it instead of listing it."""
+    import backend.db as _db
+
+    conn = _db.get_connection(fixture_db)
+    old = conn.execute("SELECT notes FROM olof_events WHERE event_id = 2260").fetchone()[0]
+    conn.execute("UPDATE olof_events SET notes = ? WHERE event_id = 2260",
+                 ((old or "") + "\nLB-numbers for this concert: LB-2638 , LB-2637 .",))
+    conn.commit()
+    try:
+        aft = build_dossier(DATE, location="The Spectrum", show="afternoon", db_path=fixture_db)
+        eve = build_dossier(DATE, location="The Spectrum", show="evening", db_path=fixture_db)
+    finally:
+        conn.execute("UPDATE olof_events SET notes = ? WHERE event_id = 2260", (old,))
+        conn.commit()
+
+    def lbs(d):
+        return {m["lb"] for b in d.get("sources", []) for m in b["members"]}
+
+    assert "LB-02637" in lbs(aft) and "also_on" not in aft
+    assert "LB-02637" not in lbs(eve)
+    assert [a["lb"] for a in eve["also_on"]] == ["LB-02637"]
+    assert eve["view"]["fields"]["sources.also_on[]"]["value"][0]["lb"] == "LB-02637"
+
+
+def test_holds_other_material_by_tracklist_surplus():
+    from backend.dossier_fields import OTHER_MATERIAL_MIN_SURPLUS, holds_other_material
+
+    conn = sqlite3.connect(":memory:")
+    conn.row_factory = sqlite3.Row
+    base = {"basis": "tracklist", "glued": False}
+    assert holds_other_material(conn, "2000-03-10", 1,
+                                {**base, "surplus": OTHER_MATERIAL_MIN_SURPLUS})
+    assert not holds_other_material(conn, "2000-03-10", 1, {**base, "surplus": 1})
+    assert not holds_other_material(conn, "2000-03-10", 1,
+                                    {**base, "glued": True, "surplus": 9})
+    assert not holds_other_material(conn, "2000-03-10", 1, None)
+
+
+@pytest.mark.parametrize("description, stated", [
+    # LB-08757: one bootleg, two dates.
+    ("BOOTLEG: highlands 2000; (Bootleg), 2000-03-10 Anaheim, & 2000-03-16 Santa Cruz", True),
+    # LB-04380 / LB-09432: the entry's own words.
+    ('version "a", (Late Show), features a nice selection of bonus tracks', True),
+    ("BOOTLEG: what are you trying to say; Soundboard Recording, plus Fillers ***", True),
+    ("2000-03-10 Anaheim, Lineage: master > dat", False),
+    ("same digital flaws and without unknown filler d4t4", False),
+    ("aud\n\n(a bittorrent from 04/09 added bonus tracks from another night)", False),
+    (None, False),
+])
+def test_stated_other_material(description, stated):
+    from backend.dossier_fields import stated_other_material
+
+    assert stated_other_material(description, "2000-03-10") is stated

@@ -2190,6 +2190,8 @@ _BUILTIN_TAPER_ALIASES: dict[str, str] = {
     "cta": "cta",
     "tyrus": "tyrus",
     "zimmy21": "zimmy21",
+    # Self-stated "Taper: 3dogs" on 21 entries, one rig throughout (tj, 2026-10-01).
+    "3dogs": "3dogs",
     "fine wine": "fine wine",
     "finewine": "fine wine",
     "hv": "hv",

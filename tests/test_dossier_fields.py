@@ -22,6 +22,7 @@ from backend.dossier_fields import (
     parse_band_lineup,
     parse_entry_tracklist,
     parse_runtime,
+    range_notes,
     render_instrument_segments,
     song_instruments,
     song_notes_without,
@@ -478,16 +479,50 @@ class TestBroadcastSetLabels:
         assert labels == [{"kind": "band", "text": "broadcast by BBC TV-1", "positions": [3, 4, 5]}]
         assert notes == []
 
-    def test_noncontiguous_becomes_markers(self):
+    def test_noncontiguous_is_one_range_note_not_markers(self):
+        # Silver review G: a note over a scattered set of songs prints once.
         conn = _broadcast_labels_db([
             "broadcast by WMAI", "", "broadcast by WMAI", "",
         ])
         labels, notes = broadcast_set_labels(conn, 1)
-        assert labels == [
-            {"kind": "marker", "text": "broadcast by WMAI", "positions": [1]},
-            {"kind": "marker", "text": "broadcast by WMAI", "positions": [3]},
+        assert labels == [] and notes == []
+        assert range_notes(conn, 1) == [{
+            "text": "broadcast by WMAI", "positions": [1, 3],
+            "display": "Songs 1, 3: broadcast by WMAI",
+        }]
+
+    def test_single_song_note_stays_a_marker(self):
+        conn = _broadcast_labels_db(["", "broadcast by WMAI", ""])
+        labels, _ = broadcast_set_labels(conn, 1)
+        assert labels == [{"kind": "marker", "text": "broadcast by WMAI", "positions": [2]}]
+        assert range_notes(conn, 1) == []
+
+    def test_range_notes_1975_11_06_evening(self):
+        # "mono audience recording, 60 minutes" sat on 14 songs, "are incomplete" on 3.
+        mono = "mono audience recording, 60 minutes"
+        rows = ["probably Bob Neuwirth (shared vocal)", ""]
+        for pos in range(3, 18):
+            parts = ["Scarlet Rivera (violin)"]
+            if pos in (3, 6, 12):
+                parts.append("are incomplete")
+            if pos not in (11, 12):
+                parts.append(mono)
+            rows.append("; ".join(parts) if pos != 11 else "")
+        conn = _broadcast_labels_db(rows)
+        assert broadcast_set_labels(conn, 1) == ([], [])
+        assert [n["display"] for n in range_notes(conn, 1)] == [
+            "Songs 3, 6, 12 are incomplete",
+            f"Songs 3–10, 13–17: {mono}",
         ]
-        assert notes == []
+        # The performer credit stays on the song; the range clauses leave it.
+        shown = {n["text"] for n in range_notes(conn, 1)}
+        assert song_notes_without(rows[2], shown) == "Scarlet Rivera (violin)"
+
+    def test_contiguous_and_whole_show_notes_are_not_range_notes(self):
+        band = _broadcast_labels_db(["", "radio broadcast", "radio broadcast", ""])
+        assert range_notes(band, 1) == []
+        whole = _broadcast_labels_db(["radio broadcast"] * 3)
+        assert range_notes(whole, 1) == []
 
     def test_whole_show_note_is_session_note(self):
         conn = _broadcast_labels_db(["radio broadcast", "radio broadcast", "radio broadcast"])
@@ -677,19 +712,20 @@ class TestFamilyBasis:
                                                         "notes": []}
 
 
-def _taper_db(attribution=None, blocked_rules=(), conflict=0):
+def _taper_db(attribution=None, blocked_rules=(), conflict=0, evidence=None):
     conn = sqlite3.connect(":memory:")
     conn.row_factory = sqlite3.Row
     conn.executescript("""
         CREATE TABLE taper_attributions (lb_number INTEGER PRIMARY KEY, taper_normalised TEXT,
-            confidence TEXT, conflict INTEGER);
+            confidence TEXT, conflict INTEGER, evidence_json TEXT);
         CREATE TABLE qc_findings (rule_id TEXT, entity_kind TEXT, entity_key TEXT,
             status TEXT);
     """)
     if attribution is not None:
         name, confidence = attribution
         conn.execute(
-            "INSERT INTO taper_attributions VALUES (1, ?, ?, ?)", (name, confidence, conflict),
+            "INSERT INTO taper_attributions VALUES (1, ?, ?, ?, ?)",
+            (name, confidence, conflict, json.dumps(evidence or [])),
         )
     for rule in blocked_rules:
         conn.execute(
@@ -708,6 +744,26 @@ class TestTaperRender:
         conn = _taper_db(attribution=("cb", "propagated"))
         tr = taper_render(conn, 1)
         assert tr["name"] == "cb" and tr["marker"] == "inferred"
+
+    def test_hedged_series_code_is_flagged(self):
+        # Silver review C: "net taper D ?" renders with its "?", never as confirmed.
+        conn = _taper_db(attribution=("net taper d", "propagated"),
+                         evidence=[{"kind": "series_code_hedged", "detail": "x"}])
+        tr = taper_render(conn, 1)
+        assert tr["name"] == "net taper d" and tr["hedged"] and tr["marker"] == "inferred"
+
+    def test_private_sourced_credit_is_hidden_on_the_public_channel_only(self):
+        # Silver review D: LB-01777's "lte" came only through private LB-6539.
+        conn = _taper_db(attribution=("lte", "propagated"), evidence=[
+            {"kind": "same_as", "detail": "same_as LB-6539", "via_lb": 6539,
+             "via_private": True}])
+        assert taper_render(conn, 1, public=True)["name"] is None
+        assert taper_render(conn, 1, public=False)["name"] == "lte"
+
+    def test_public_sourced_credit_stays_on_the_public_channel(self):
+        conn = _taper_db(attribution=("lte", "propagated"), evidence=[
+            {"kind": "same_as", "detail": "same_as LB-5", "via_lb": 5}])
+        assert taper_render(conn, 1, public=True)["name"] == "lte"
 
     def test_missing_renders_nothing_never_unknown(self):
         conn = _taper_db(attribution=None)

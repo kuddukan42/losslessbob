@@ -46,6 +46,27 @@ counts) — same class as the golden set's known conflicts.
 | H | 2013-11-16 pick states "Taper: 3dogs" but 3dogs isn't a known handle, so no credit | alias-list candidate |
 | I | 1999-07-20 LB-13779 "DAT copy" classed master (named-recorder rule) | generation rule edge |
 
+## tj's rulings on A–I (2026-10-01)
+
+Read from the review page's `decisions` collection (artifact 5gViNXCmQaL7TJBKhxvey4).
+
+| # | Ruling | Implemented as |
+|---|---|---|
+| A | Generation tier first | `picks._below_master_lbs`: on a show with an eligible master (stated or inferred, not vetoed, not a fragment) every silver / low_gen copy ranks after the other sources, whatever its score. Unknown, vinyl and broadcast keep score order — nothing is inferred about them, so an unknown can still outscore a master |
+| B | Drop the family terms when stated rigs conflict | `picks._rig_conflict_lbs`: a family naming 2+ mic brands or 2+ confirmed tapers gets no best/inferior-transfer term. TapeMatch unchanged; tj's note ("this needs to be considered by tapematch ranking????") filed as a TapeMatch TODO |
+| C | Demote to propagated | `taper_attribution.series_code_hedged`: 61 codes written with "?" seed as propagated (`series_code_hedged`), earn no +3, anchor no propagation, and print as "net taper d ?" |
+| D | Hide on the public channel | propagation runs public-entries-first; a credit only a private entry reaches carries `via_private` and renders nothing on the public channel (153 public LBs) |
+| E | Keep the runtime, add a note | a "longer" alternate reads "…; also holds other material" when it holds both shows, its tracklist runs 3+ songs past the setlist, or its own text says bonus tracks / fillers / a second date |
+| F | One page, cross-reference on the other | a both-show source goes to the first show Olof lists it under; the other show's page prints "Also on LB-x (both shows; listed on the other show's page)" |
+| G | One note for the range, verbatim | `dossier_fields.range_notes`: "Songs 3, 6, 12 are incomplete", "Songs 3–10, 13–17: mono audience recording, 60 minutes" — once above the setlist, off the song rows |
+| H | Add 3dogs | `_KNOWN_TAPER_ALIASES`; 8 confirmed credits |
+| I | "copy" demotes like "clone" | `_COPY_RE`: after a stated master anywhere in the chain; on an inferred master only when the copy is the capture hop itself ("DAT copy > WAV"). 11 LBs master → low_gen; LB-10099 / LB-12805 unchanged |
+
+Dry run on a copy of the live DB (`.debug/silver354.db`): attributions 5,206 → 5,193
+(+6 3dogs, −19 that had propagated from a hedged code, 61 confirmed → propagated);
+rank-1 changes 248 of 3,968 shows, 208 of them the generation tier
+(`.debug/silver354_rank1_diff.json`). 1989-06-04 now picks the LTD master LB-07214.
+
 ## Re-review after the live rebuild
 
 Found on the second read (setlists of 1989–2000 were skimmed in pass 1):
