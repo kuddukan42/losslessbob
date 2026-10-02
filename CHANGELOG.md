@@ -1,3 +1,19 @@
+[2026-10-01] — Filing copy hardened: staged, fsynced, verified, then renamed into place
+Changed: backend/filer.py: every real copy (file_mode=copy, or a cross-device move — the path lb-nc's
+  cross-mount moves take) now goes through _copy_verified. The copy is written to a hidden
+  .<name>.partial sibling of the destination, every file and directory is fsynced (file pages are then
+  dropped from the page cache so the hash reads back from the device), the tree is SHA-256 verified
+  against the source, and only then renamed to its final name; the source is removed after that. Before,
+  the copy landed straight under the final name and the source was deleted with the copy possibly still
+  only in the page cache, so a crash could leave a half folder that looked filed. A stale staging folder
+  from a crashed job is removed on the next attempt. A real fsync error (EIO, ENOSPC) fails the job with
+  the source untouched; filesystems that cannot fsync (EINVAL/ENOTSUP/…) are not blocked. Same-device
+  moves stay an atomic os.rename, now followed by a best-effort fsync of both parent directories.
+Added: tests/test_filer_copy.py: 10 tests — staging hidden until rename, flush + verify, mismatch and
+  flush-failure cleanup, stale staging replaced, NAME_MAX fallback, start_file_job copy / cross-device
+  move / cross-device mismatch wiring.
+Changed: PROJECT.md, docs/wiki/Collection-Pipeline.md: filing-copy description updated.
+
 [2026-09-30] — Checksum-dispute verdict fix (TODO-299), TODO-352 live migration, TODO-324 re-run queue
 Fixed: backend/checksum_provenance.py: group_findings called every finding without a paired lbdir dispute row
   db_error. Rows now pair on the basename (DB filenames keep a directory prefix) and the verdict reads the

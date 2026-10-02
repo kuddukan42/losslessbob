@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import concurrent.futures
+import errno
 import hashlib
 import logging
 import os
@@ -462,6 +463,102 @@ def _source_tree_digest(folder: Path) -> str:
         return hash_tree(folder)
 
 
+# ── Durable staged copy ───────────────────────────────────────────────────────
+# A copy never lands under its final name: it is written to a hidden sibling
+# (.<name>.partial), flushed to stable storage, hash-verified, and only then
+# renamed into place. A crash mid-copy therefore leaves a dot-folder that no
+# scanner mistakes for a filed LB, and the source is never removed while the
+# copy still lives only in the page cache.
+
+STAGING_SUFFIX = ".partial"
+_NAME_MAX = 255
+# fsync errnos that mean "this filesystem/handle cannot fsync", not "the write failed".
+_FSYNC_UNSUPPORTED = frozenset(
+    {errno.EINVAL, errno.ENOTSUP, errno.EBADF, errno.EACCES, errno.EPERM}
+)
+
+
+def _staging_path(dest: Path) -> Path:
+    """Hidden sibling of dest that a copy is staged in until it is verified."""
+    name = f".{dest.name}{STAGING_SUFFIX}"
+    if len(os.fsencode(name)) > _NAME_MAX:
+        digest = hashlib.sha1(os.fsencode(dest.name)).hexdigest()
+        name = f".{digest}{STAGING_SUFFIX}"
+    return dest.with_name(name)
+
+
+def _fsync_path(path: str | Path, *, required: bool) -> None:
+    """Flush one file or directory to stable storage.
+
+    Args:
+        path: File or directory to flush.
+        required: True for file contents — a real I/O error (EIO, ENOSPC, …)
+            propagates, and the flushed pages are dropped from the page cache
+            so the hash verification that follows reads the bytes back from
+            the device. False for directories, which not every platform or
+            filesystem can fsync: any failure is ignored.
+    """
+    try:
+        fd = os.open(path, os.O_RDONLY)
+    except OSError:
+        if required:
+            raise
+        return
+    try:
+        os.fsync(fd)
+        if required and hasattr(os, "posix_fadvise"):
+            try:
+                os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)
+            except OSError:
+                pass
+    except OSError as exc:
+        if required and exc.errno not in _FSYNC_UNSUPPORTED:
+            raise
+        logger.debug("_fsync_path: fsync unavailable for %s: %s", path, exc)
+    finally:
+        os.close(fd)
+
+
+def _fsync_tree(root: Path) -> None:
+    """Flush every file under root, then every directory bottom-up, then root."""
+    for dirpath, _dirnames, filenames in os.walk(root, topdown=False):
+        for name in filenames:
+            _fsync_path(os.path.join(dirpath, name), required=True)
+        _fsync_path(dirpath, required=False)
+
+
+def _copy_verified(folder: Path, dest: Path) -> None:
+    """Copy folder to dest via a staged, fsynced, hash-verified copy.
+
+    On return dest is a durable, byte-identical copy of folder. On any failure
+    the staging folder is removed, dest does not exist and folder is untouched.
+
+    Args:
+        folder: Source folder.
+        dest: Final destination; must not exist.
+
+    Raises:
+        _HashVerificationError: The staged copy's hash differs from the source.
+        OSError: The copy, the flush or the final rename failed.
+    """
+    staging = _staging_path(dest)
+    if staging.exists():
+        logger.warning("_copy_verified: removing stale staging folder %s", staging)
+        shutil.rmtree(str(staging))
+    try:
+        shutil.copytree(str(folder), str(staging), copy_function=_progress_copy_file)
+        with _FILE_JOB_LOCK:
+            _FILE_JOB["stage"] = "verifying"
+        _fsync_tree(staging)
+        if hash_tree(staging) != _source_tree_digest(folder):
+            raise _HashVerificationError(staging)
+        os.rename(str(staging), str(dest))
+    except BaseException:
+        shutil.rmtree(str(staging), ignore_errors=True)
+        raise
+    _fsync_path(dest.parent, required=False)
+
+
 def _sync_qbt_location(lb_number: int, old_folder: Path, new_folder: Path, db_path=None) -> tuple[bool, str | None]:
     """Best-effort qBittorrent save-path sync after a successful filing move.
 
@@ -563,9 +660,10 @@ def start_file_job(
     {ok, filed_to, dest, file_mode, error, error_code}.
 
     Whenever data is actually copied (file_mode="copy", or a cross-device
-    "move" that falls back to copy+delete), the copy is hash-verified against
-    the source with hash_tree() before the source is removed (move) or the
-    job is reported done (copy). A same-device "move" uses os.rename(), which
+    "move" that falls back to copy+delete), the copy is staged in a hidden
+    .<name>.partial sibling, fsynced, hash-verified against the source with
+    hash_tree() and renamed into place (see _copy_verified) before the source
+    is removed (move) or the job is reported done (copy). A same-device "move" uses os.rename(), which
     is atomic and rewrites no file content, so it is not hash-verified.
 
     Args:
@@ -662,25 +760,19 @@ def start_file_job(
 
         try:
             if file_mode == "copy":
-                shutil.copytree(str(folder), str(dest), copy_function=_progress_copy_file)
-                with _FILE_JOB_LOCK:
-                    _FILE_JOB["stage"] = "verifying"
-                if hash_tree(dest) != _source_tree_digest(folder):
-                    raise _HashVerificationError(dest)
+                _copy_verified(folder, dest)
             else:
                 try:
                     os.rename(str(folder), str(dest))
                     with _FILE_JOB_LOCK:
                         _FILE_JOB["files_done"] = files_total
                         _FILE_JOB["bytes_done"] = bytes_total
+                    _fsync_path(dest_parent, required=False)
+                    _fsync_path(folder.parent, required=False)
                 except OSError:
-                    # Cross-device move: copy with progress, verify the copy's
-                    # hash against the source, then remove the source.
-                    shutil.copytree(str(folder), str(dest), copy_function=_progress_copy_file)
-                    with _FILE_JOB_LOCK:
-                        _FILE_JOB["stage"] = "verifying"
-                    if hash_tree(dest) != _source_tree_digest(folder):
-                        raise _HashVerificationError(dest) from None
+                    # Cross-device move: staged copy with progress, flushed and
+                    # hash-verified against the source, then remove the source.
+                    _copy_verified(folder, dest)
                     with _FILE_JOB_LOCK:
                         _FILE_JOB["stage"] = "removing"
                     # A cross-device move deletes the source. Any TUIT seed
@@ -697,15 +789,11 @@ def start_file_job(
                             "the original at %s failed: %s",
                             lb_number, dest, folder, exc,
                         )
-        except _HashVerificationError as exc:
-            try:
-                shutil.rmtree(str(exc.dest))
-            except Exception:
-                pass
+        except _HashVerificationError:
             _finish({
                 "ok": False, "filed_to": "", "dest": "", "file_mode": file_mode,
                 "error": (
-                    f"Integrity check failed: {file_mode}d copy at {exc.dest} does not "
+                    f"Integrity check failed: {file_mode}d copy for {dest} does not "
                     "match the source folder's hash. The copy was removed; the "
                     "original is untouched."
                 ),

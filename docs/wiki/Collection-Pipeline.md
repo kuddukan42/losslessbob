@@ -34,9 +34,11 @@ Year-based routing: `collection_mounts` (with live online/disk-usage checks) +
 `collection_routes` (year → mount + sub_path; bulk upsert, per-year preview
 dry-run). Filing guards: `stale_verify` (folder changed since last pipeline
 check), `no_date`, `no_route`, `mount_offline`, `dest_exists`. Whenever data
-is actually copied, the copy is **SHA-256 tree-verified against the source**
-(`filer.hash_tree`) before the original is removed — a mismatch deletes the
-bad copy and leaves the source untouched (`hash_mismatch`).
+is actually copied (`filer._copy_verified`), it is staged in a hidden
+`.<name>.partial` sibling, fsynced, **SHA-256 tree-verified against the source**
+(`filer.hash_tree`) and only then renamed into place, before the original is
+removed — a mismatch or failed flush deletes the staging folder and leaves the
+source untouched (`hash_mismatch` / `fs_error`).
 
 ## Terminal commander (`tools/lb-nc`)
 
