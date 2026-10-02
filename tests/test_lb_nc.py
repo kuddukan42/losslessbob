@@ -785,8 +785,8 @@ def _ghosts(pane: lb_nc.Pane) -> list[str]:
 
 def _left_on(app, name: str) -> None:
     _pick(app.left, name)
-    app.handle("down")
-    app.handle("up")
+    app.handle("h")                               # any key: the preview follows the cursor
+    app.handle("h")
 
 
 def test_right_pane_previews_the_left_cursor_destination(app, tmp_path):
@@ -861,3 +861,21 @@ def test_preview_row_is_scrolled_to_mid_pane_among_its_neighbours(app, tmp_path)
     assert "1987-10-17 Somewhere" in lines[row + 1]
     _y, height, _x, _w = app.pane_rows["right"]
     assert height // 3 <= row - 2 <= 2 * height // 3            # mid-pane, not at an edge
+
+
+def test_preview_follows_the_route_to_another_drive(app, tmp_path):
+    app.set_root(app.right, tmp_path / "DYLAN1")               # the right pane is elsewhere
+    _left_on(app, MISFILED)                                     # 1987 routes to DYLAN2/1987
+    assert app.right.root == tmp_path / "DYLAN2"
+    assert app.right.cwd == tmp_path / "DYLAN2" / "1987" and _ghosts(app.right) == [MISFILED]
+
+
+def test_preview_shows_a_year_folder_not_made_yet(app, tmp_path):
+    name = "1991-02-20 New York, NY (LB-08002)"                 # public LB in the private folder
+    app.set_root(app.left, tmp_path / "DYLAN2")
+    app.set_dir(app.left, tmp_path / "DYLAN2" / "PRIVATE LB" / "Batch A")
+    _left_on(app, name)
+    assert app.right.cwd == tmp_path / "DYLAN2"                # 1991/ does not exist yet
+    assert _ghosts(app.right) == [f"1991/{name}"]
+    names = [e.name for e in app.right.visible()]
+    assert names.index("1987") < names.index(f"1991/{name}") < names.index("1998")
