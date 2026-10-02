@@ -775,3 +775,73 @@ def test_move_that_finished_while_closed_is_journaled_not_rerun(app, tmp_path):
               "result": {"ok": True, "dest": "/x", "file_mode": "move"}}
     assert "finished while lb-nc was closed" in app.job_from(spec, status)
     assert app.journal.mem[-1]["from"] == str(path)
+
+
+# ---- destination preview in the right pane
+
+def _ghosts(pane: lb_nc.Pane) -> list[str]:
+    return [e.name for e in pane.entries if e.kind == "ghost"]
+
+
+def _left_on(app, name: str) -> None:
+    _pick(app.left, name)
+    app.handle("down")
+    app.handle("up")
+
+
+def test_right_pane_previews_the_left_cursor_destination(app, tmp_path):
+    _left_on(app, MISFILED)
+    assert app.right.cwd == tmp_path / "DYLAN2" / "1987"       # the 1987 route's sub-folder
+    assert _ghosts(app.right) == [MISFILED]
+    assert app.right.current().kind == "ghost"
+    screen = "\n".join(lb_nc.plain(line) for line in app.frame(120, 24))
+    assert f"⇒ {MISFILED}" in screen and "preview" in screen
+    _left_on(app, TORONTO)                                      # 1975 has no sub-folder
+    assert app.right.cwd == tmp_path / "DYLAN2" and _ghosts(app.right) == [TORONTO]
+    assert not (tmp_path / "DYLAN2" / TORONTO).exists()         # nothing written
+
+
+def test_preview_lands_where_f6_moves_it(app, tmp_path):
+    _left_on(app, TORONTO)
+    ghost = app.right.current().path
+    app.handle("f6")
+    app.handle("y")
+    app.tick()
+    assert ghost.is_dir() and _ghosts(app.right) == []
+
+
+def test_preview_clears_when_the_right_pane_takes_over(app):
+    _left_on(app, MISFILED)
+    app.handle("tab")
+    assert _ghosts(app.right) == [] and app.right.current().kind != "ghost"
+    app.handle("+")
+    assert all(e.kind != "ghost" for e in app.right.selection())
+
+
+def test_preview_off_and_tagged_right_pane_stay_put(app, tmp_path):
+    app.handle("p")
+    _left_on(app, MISFILED)
+    assert app.right.cwd == tmp_path / "DYLAN2" and _ghosts(app.right) == []
+    app.handle("p")                                             # back on: follows at once
+    assert app.right.cwd == tmp_path / "DYLAN2" / "1987"
+    app.handle("tab")
+    app.handle("+")                                             # tags on the right pane
+    app.handle("tab")
+    _left_on(app, TORONTO)
+    assert app.right.cwd == tmp_path / "DYLAN2" / "1987" and _ghosts(app.right) == []
+
+
+def test_preview_points_at_a_folder_already_there(app, tmp_path):
+    (tmp_path / "DYLAN2" / TORONTO).mkdir()
+    app.reload()
+    _left_on(app, TORONTO)
+    assert _ghosts(app.right) == [] and app.right.current().name == TORONTO
+
+
+def test_preview_skips_folders_f6_would_not_move(app, tmp_path):
+    _left_on(app, MISFILED)
+    app.handle("home")                                          # the ".." row
+    assert _ghosts(app.right) == []
+    app.set_root(app.right, tmp_path / "DYLAN1")                # same drive, canonical folder
+    _left_on(app, TORONTO)
+    assert _ghosts(app.right) == [] and app.right.cwd == tmp_path / "DYLAN1"

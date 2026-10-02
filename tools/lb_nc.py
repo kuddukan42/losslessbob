@@ -474,7 +474,7 @@ class Entry:
 
     name: str
     path: Path
-    kind: str                      # parent | dir | file
+    kind: str                      # parent | dir | file | ghost (a previewed destination)
     status: str = ""               # a GLYPHS status key, LB folders only
     note: str = ""                 # expected parent, the other copy, or a reason
     row: dict | None = None
@@ -587,20 +587,21 @@ class Pane:
     def visible(self) -> list[Entry]:
         """Entries after the show mode and the text filter; `..` always stays."""
         rows = self.entries
+        fixed = ("parent", "ghost")
         if self.show == "off":
-            rows = [e for e in rows if e.kind == "parent" or e.status in OFF]
+            rows = [e for e in rows if e.kind in fixed or e.status in OFF]
         elif self.show == "public":
-            rows = [e for e in rows if e.kind == "parent" or e.status == "public"]
+            rows = [e for e in rows if e.kind in fixed or e.status == "public"]
         elif self.show == "nft":
-            rows = [e for e in rows if e.kind == "parent" or e.nft]
+            rows = [e for e in rows if e.kind in fixed or e.nft]
         elif self.show == "name":
-            rows = [e for e in rows if e.kind == "parent" or e.canon]
+            rows = [e for e in rows if e.kind in fixed or e.canon]
         elif self.show == "bad":
-            rows = [e for e in rows if e.kind == "parent" or e.health]
+            rows = [e for e in rows if e.kind in fixed or e.health]
         if not self.filter:
             return rows
         needle = self.filter.lower()
-        return [e for e in rows if e.kind == "parent" or needle in e.name.lower()]
+        return [e for e in rows if e.kind in fixed or needle in e.name.lower()]
 
     def current(self) -> Entry | None:
         """The entry under the cursor."""
@@ -1887,6 +1888,10 @@ c           generate checksums (folders with no .ffp/.md5/.st5)
 r           rename to the canonical name (the last F4 proposal, else the collection
             row's date + location + LB tag); non-canonical names are highlighted
 h           highlighting of non-canonical names on / off
+p           destination preview on / off: while the left pane is active the right
+            pane opens where 6 Move would put the cursor folder (on the right
+            pane's drive) and shows it there as an underlined ⇒ row; a right
+            pane holding tags stays put
             usual order for a new folder: c → 4 Pipe → r → 7 File
 n           fix the -NFT suffix (private LBs have it, public ones don't)
 e           move files the lbdir doesn't list into <folder>/extras/
@@ -1956,6 +1961,7 @@ class App:
         self.dialog: Dialog | None = None
         self.show_log = False
         self.highlight = True            # h: colour non-canonical folder names
+        self.follow = True               # p: the right pane previews the left cursor's destination
         self.quit = False
         self.coll: Collection | None = None
         self.coll_error = ""
@@ -2069,6 +2075,7 @@ class App:
             pane.tags &= {e.key for e in pane.entries}
             pane.cursor = keys.index(keep) if keep in keys else min(pane.cursor, len(keys) - 1)
             pane.move(0)
+        self.sync_preview()
         self.dirty = True
 
     # ---- navigation
@@ -2102,7 +2109,11 @@ class App:
             list_dir(root, root, self.coll)
 
     def handle(self, key: str) -> None:
-        """Dispatch one decoded key."""
+        """Dispatch one decoded key, then let the right pane follow the left cursor."""
+        self._handle(key)
+        self.sync_preview()
+
+    def _handle(self, key: str) -> None:
         self.dirty = True
         if key.startswith("mouse:"):
             self.mouse(key)
@@ -2135,7 +2146,7 @@ class App:
             "/": self.start_filter, "f": self.cycle_show, "esc": self.escape,
             "t": self.cycle_scheme,
             "d": self.drive_dialog, "c": self.checksum_dialog, "r": self.rename_dialog,
-            "h": self.toggle_highlight,
+            "h": self.toggle_highlight, "p": self.toggle_follow,
             "x": self.drop_dialog, "l": self.relink_dialog, "n": self.nft_dialog,
             "i": self.integrity_dialog, "=": self.compare_dialog, "e": self.extras_dialog,
             "z": self.undo_dialog, "b": self.rebalance_dialog, "w": self.routes_dialog,
@@ -2167,9 +2178,86 @@ class App:
         for name, (y0, height, x0, width) in self.pane_rows.items():
             if y0 <= row < y0 + height and x0 <= col < x0 + width:
                 pane = self.left if name == "left" else self.right
+                rows = pane.visible()
+                hit = rows[pane.top + row - y0] if pane.top + row - y0 < len(rows) else None
+                self.clear_ghost(pane)             # a previewed row is not there to click
+                rows = pane.visible()
                 self.active = pane
-                pane.cursor = pane.top + row - y0
+                pane.cursor = rows.index(hit) if hit in rows else pane.top + row - y0
                 pane.move(0)
+
+    # ---- destination preview
+
+    def toggle_follow(self) -> None:
+        """p: the right pane follows the left cursor's destination, on / off."""
+        self.follow = not self.follow
+        self.say("destination preview " + ("on" if self.follow else "off"))
+
+    @staticmethod
+    def clear_ghost(pane: Pane) -> bool:
+        """Drop a previewed row from a pane. True when there was one."""
+        if not any(e.kind == "ghost" for e in pane.entries):
+            return False
+        pane.entries = [e for e in pane.entries if e.kind != "ghost"]
+        pane.move(0)
+        return True
+
+    def preview_target(self, entry: Entry, mount: dict) -> Path | None:
+        """The directory F6 would move entry into on mount; None when it wouldn't move it.
+
+        The same rule as the backend's filing with a mount override: the mount's root
+        joined with the sub_path of the show year's route.
+        """
+        if entry.kind != "dir" or entry.lb is None or entry.status in ("dup", "blocked", "gone"):
+            return None
+        here = self.coll.mount_for(entry.path)
+        if here and here["id"] == mount["id"] and entry.status == "canonical":
+            return None
+        year = self.year_of(entry)
+        route = self.coll.routes.get(year) if year is not None else None
+        if not route:
+            return None
+        sub = route.get("sub_path") or ""
+        return Path(mount["root_path"]) / sub if sub else Path(mount["root_path"])
+
+    def sync_preview(self) -> None:
+        """Show, in the right pane, where the folder under the left cursor would land.
+
+        The right pane opens the destination directory on its own mount and shows the
+        folder there as an underlined ⇒ row (or puts its cursor on the folder already
+        there). Only the left pane drives it, only while it is the active pane, and a
+        right pane holding tags is never moved. Nothing is written.
+        """
+        pane = self.right
+        if self.dialog:                               # keep the preview behind a dialog
+            return
+        self.clear_ghost(pane)
+        if not self.follow or self.active is not self.left or self.coll is None \
+                or pane.virtual or pane.tags or pane.editing:
+            return
+        cur = self.left.current()
+        mount = self.coll.mount_for(pane.cwd)
+        parent = self.preview_target(cur, mount) if cur and mount else None
+        if parent is None:
+            return
+        target = existing(parent)
+        if norm(pane.cwd) != norm(target):
+            self.set_dir(pane, target)
+            if norm(pane.cwd) != norm(target):       # outside the pane's root
+                return
+        if target != parent:                          # the year folder isn't made yet
+            return
+        rows = pane.visible()
+        names = [e.name for e in rows]
+        if cur.name in names:
+            pane.cursor = names.index(cur.name)       # already there: a clash F6 would refuse
+            return
+        ghost = Entry(cur.name, parent / cur.name, "ghost")
+        at = next((i for i, e in enumerate(pane.entries)
+                   if e.kind != "parent" and e.name.lower() > cur.name.lower()),
+                  len(pane.entries))
+        pane.entries.insert(at, ghost)
+        pane.cursor = pane.visible().index(ghost)
 
     def switch(self) -> None:
         """Tab: the other pane becomes active."""
@@ -2685,6 +2773,8 @@ class App:
         """l: point gone records at a surviving copy."""
         jobs, skipped = [], []
         cand = self.other().current()
+        if cand and cand.kind == "ghost":
+            cand = None
         for e in [e for e in self.active.selection() if e.kind == "dir"]:
             if e.status == "relink" and e.row:
                 jobs.append(relink_job(self.api, e.lb, e.row["disk_path"], str(e.path),
@@ -3331,6 +3421,8 @@ class App:
             count += f" · {self.free(pane.cwd)} free"
         if pane.show != "all":
             count = f"[{SHOW_LABELS[pane.show]}] {count}"
+        if any(e.kind == "ghost" for e in pane.entries):
+            count = f"preview {self.g['dest']} · {count}"
         if pane.tags:
             sizes = [self.sizes.get(e.path) for e in pane.entries
                      if e.key in pane.tags and e.kind == "dir"]
@@ -3371,7 +3463,8 @@ class App:
             tagged = entry.key in pane.tags
             ghost = i == pane.cursor and not on
             role = ("cursor_tag" if tagged else "cursor") if on else \
-                "tag" if tagged else "ghost" if ghost else "odd" if entry.canon \
+                "tag" if tagged else "ghost" if ghost or entry.kind == "ghost" \
+                else "odd" if entry.canon \
                 and self.highlight \
                 else "text" if entry.kind == "dir" else "pane"
             mark = self.g["cursor"] if on else " "
@@ -3383,6 +3476,8 @@ class App:
         e = self.g["ellipsis"]
         if entry.kind == "parent":
             return fit("..", width, e)
+        if entry.kind == "ghost":
+            return fit(f"{self.g['dest']} {entry.name}", width, e)
         if entry.kind == "file":
             return fit(entry.name, width, e)
         if entry.lb is None:

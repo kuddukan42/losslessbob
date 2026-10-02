@@ -1,3 +1,16 @@
+[2026-10-01] — lb-nc: the right pane previews where the left cursor's folder would land
+Added: tools/lb_nc.py: App.sync_preview — while the left pane is active, the right pane opens the
+  directory F6 would move the cursor folder into (the right pane's mount root + the show year's route
+  sub_path, the backend's mount-override rule computed locally, no API call) and shows the folder there
+  as an underlined "⇒ name" row (Entry kind "ghost"); the pane header reads "preview ⇒". A folder
+  already at the destination gets the cursor instead. Nothing is written. No preview for "..", files,
+  duplicates, blocked/gone rows, or a canonical folder already on that drive. A right pane holding tags
+  is never moved; Tab or a click into the right pane drops the ghost row; the preview stays put behind
+  a dialog. p toggles it (default on). `l` relink ignores a ghost row as its candidate.
+Added: tests/test_lb_nc.py: 6 preview tests.
+Added: tools/_strip_undo_junk.py: throwaway, dry-run by default — removes the pytest records from
+  data/lb_nc_undo.jsonl with a backup in data/backups/. Not run from the session (blocked); tj runs it.
+
 [2026-10-01] — lb-nc: the queue is saved to disk and resumes after a restart
 Added: tools/lb_nc.py: QueueStore writes the live queue to data/lb_nc_queue.json (atomic replace) on
   every queue change and removes it when the queue empties. Jobs carry a rebuild recipe (Job.spec):
