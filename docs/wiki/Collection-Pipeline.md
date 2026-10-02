@@ -56,6 +56,9 @@ rebalance planner, `z` undo from `data/lb_nc_undo.jsonl`. While a queue runs,
 further move/file/rename batches are appended behind it (`Runner.pending`; a
 folder already queued is skipped, a failure drops only its own batch) and a
 block-character bar above the key bar shows the folder's bytes and the queue.
+The queue is saved to `data/lb_nc_queue.json` (`QueueStore`, `Job.spec`) and
+offered for resume at the next start; a move still running in the backend is
+adopted, not restarted.
 
 ## After filing
 

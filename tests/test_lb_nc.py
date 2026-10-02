@@ -23,7 +23,7 @@ LEGACY = "bd1966-05-26 LB-321 London"
 def app(tmp_path, monkeypatch):
     monkeypatch.setattr(lb_nc, "POLL", 0)
     api = lb_nc.build_fixture(tmp_path)
-    return lb_nc.App(api, threaded=False, size_cache=None, persist=False)
+    return lb_nc.App(api, threaded=False, size_cache=None, persist=False, journal_path=None)
 
 
 def _pick(pane: lb_nc.Pane, name: str) -> None:
@@ -146,7 +146,7 @@ def test_move_refuses_virtual_target(app):
 
 def test_read_only_gates_writes(tmp_path, monkeypatch):
     api = lb_nc.build_fixture(tmp_path)
-    app = lb_nc.App(api, read_only=True, threaded=False, size_cache=None, persist=False)
+    app = lb_nc.App(api, read_only=True, threaded=False, size_cache=None, persist=False, journal_path=None)
     _pick(app.left, MISFILED)
     app.handle("f7")
     assert isinstance(app.dialog, lb_nc.Message)
@@ -161,7 +161,7 @@ def test_backend_down_still_browses(tmp_path):
             raise lb_nc.ApiError("backend unreachable")
 
     app = lb_nc.App(Down(), left=tmp_path, right=tmp_path, threaded=False,
-                    size_cache=None, persist=False)
+                    size_cache=None, persist=False, journal_path=None)
     assert [e.name for e in app.left.entries] == ["..", "x (LB-00001)"]
     screen = "\n".join(lb_nc.plain(line) for line in app.frame(100, 24))
     assert "backend unreachable" in screen
@@ -565,6 +565,7 @@ def test_canonical_name_skips_what_it_cannot_judge():
 def held(app):
     """A threaded runner holding one blocking job, so the UI queues behind it."""
     app.runner = lb_nc.Runner(False, threaded=True)
+    app.runner.on_change = app.save_queue
     go = threading.Event()
     hold = lb_nc.Job("hold", "hold", lambda emit: go.wait(5), gated=False)
     app.run([hold])
@@ -672,3 +673,105 @@ def test_progress_bar_row(app, held, cols):
 def test_no_progress_bar_when_idle(app):
     assert not any("█" in lb_nc.plain(ln) or "queue" in lb_nc.plain(ln)
                    for ln in app.frame(110, 30))
+
+
+# ---- the queue on disk
+
+def _app(api, queue_path) -> lb_nc.App:
+    return lb_nc.App(api, threaded=False, size_cache=None, persist=False, journal_path=None,
+                     queue_path=queue_path)
+
+
+@pytest.fixture
+def saved(app, held, tmp_path):
+    """A queue file left behind: a move and a rename queued, the session then lost."""
+    app.queue = lb_nc.QueueStore(tmp_path / "queue.json")
+    _pick(app.left, MISFILED)
+    app.handle("f7")
+    app.handle("y")
+    app.pipeline_results[str(tmp_path / "DYLAN1" / TORONTO)] = {
+        "rename": {"proposed": "1975-11-19 Toronto (LB-04410)"}}
+    _pick(app.left, TORONTO)
+    app.handle("r")
+    app.handle("y")
+    text = app.queue.path.read_text()
+    app.queue = lb_nc.QueueStore(None)            # the old session writes no more
+    app.runner.stop.set()
+    held()
+    path = tmp_path / "queue.json"
+    path.write_text(text)
+    return path
+
+
+def test_queue_is_saved_as_it_changes_and_removed_when_done(app, held, tmp_path):
+    app.queue = lb_nc.QueueStore(tmp_path / "queue.json")
+    _pick(app.left, MISFILED)
+    app.handle("f7")
+    app.handle("y")
+    data = lb_nc.json.loads(app.queue.path.read_text())
+    assert [[s["kind"] for s in b] for b in data["batches"]] == [["file"]]
+    assert data["batches"][0][0]["path"] == str(tmp_path / "DYLAN1" / MISFILED)
+    held()
+    assert not app.queue.path.exists()
+
+
+def test_saved_queue_resumes_after_a_restart(app, saved, tmp_path):
+    again = _app(app.api, saved)
+    assert isinstance(again.dialog, lb_nc.Picker) and "Resume 2 job(s)" in again.dialog.items[0][0]
+    again.handle("enter")
+    again.tick()
+    assert (tmp_path / "DYLAN2" / "1987" / MISFILED).is_dir()
+    assert (tmp_path / "DYLAN1" / "1975-11-19 Toronto (LB-04410)").is_dir()
+    assert not saved.exists()
+
+
+def test_saved_queue_blocks_new_queueing_until_decided(app, saved):
+    again = _app(app.api, saved)
+    before = saved.read_text()
+    again.handle("esc")
+    _pick(again.left, PRAGUE)
+    again.handle("f7")
+    assert isinstance(again.dialog, lb_nc.Picker)         # the saved queue, not a confirm
+    assert saved.read_text() == before
+    again.handle("3")                                     # discard
+    assert not saved.exists() and again.saved is None
+    again.handle("f7")
+    assert isinstance(again.dialog, lb_nc.Confirm)
+
+
+def test_saved_jobs_whose_folder_is_gone_are_dropped(app, saved, tmp_path):
+    shutil.rmtree(tmp_path / "DYLAN1" / MISFILED)
+    shutil.rmtree(tmp_path / "DYLAN1" / TORONTO)
+    again = _app(app.api, saved)
+    assert isinstance(again.dialog, lb_nc.Message)
+    assert any("no longer there" in line for line in again.dialog.text)
+    assert not saved.exists()
+
+
+def test_another_live_lb_nc_keeps_its_queue(app, saved, monkeypatch):
+    monkeypatch.setattr(lb_nc.QueueStore, "owner_alive", staticmethod(lambda data: True))
+    again = _app(app.api, saved)
+    assert again.saved is None and again.queue.path is None and again.dialog is None
+    assert saved.exists()
+
+
+def test_resume_adopts_a_move_the_backend_is_still_running(app, tmp_path):
+    path = tmp_path / "DYLAN1" / MISFILED
+    spec = {"kind": "file", "path": str(path), "lb": 1860, "mount_id": None,
+            "file_mode": "move", "dest": str(tmp_path / "DYLAN2" / "1987" / MISFILED),
+            "running": True}
+    job = app.job_from(spec, {"running": True, "path": str(path)})
+    app.api.status = {"running": False, "result": {"ok": True, "dest": spec["dest"],
+                                                   "file_mode": "move"}}
+    job.run(lambda text, progress: None)
+    assert not any(p == "/api/pipeline/file/start" for p, _ in app.api.calls)
+    assert app.journal.mem[-1]["to"] == spec["dest"]
+
+
+def test_move_that_finished_while_closed_is_journaled_not_rerun(app, tmp_path):
+    path = tmp_path / "DYLAN1" / "gone (LB-01860)"
+    spec = {"kind": "file", "path": str(path), "lb": 1860, "dest": "/x", "running": True}
+    status = {"running": False, "path": str(path),
+              "result": {"ok": True, "dest": "/x", "file_mode": "move"}}
+    assert "finished while lb-nc was closed" in app.job_from(spec, status)
+    assert app.journal.mem[-1]["from"] == str(path)

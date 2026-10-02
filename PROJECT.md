@@ -282,7 +282,7 @@ losslessbob/
 │   ├── batch_verify.py       # CLI: batch-verify checksums across many folders at once
 │   ├── batch_lbdir_copy.py   # CLI: batch-copy lbdir*.txt into many folders at once
 │   ├── scan_collection_folders.py # CLI: scan disk for candidate collection folders not yet in my_collection
-│   ├── lb_nc.py / lb-nc      # TUI: Norton Commander-style two panes over the collection mounts; files misfiled/stray LB folders and moves folders between mounts via /api/pipeline/file/*
+│   ├── lb_nc.py / lb-nc      # TUI: Norton Commander-style two panes over the collection mounts; files misfiled/stray LB folders and moves folders between mounts via /api/pipeline/file/*; live queue saved to data/lb_nc_queue.json and resumed at the next start
 │   ├── import_private_metadata.py # CLI: TODO-245 private-LB metadata import (data/private docs + collection folder txts; fill-blank-only)
 │   ├── parse_dff_reports.py  # CLI: parse DigiFlawFinder reports attached to entries
 │   ├── checksum_dispute_report.py # CLI: render checksum_disputes as a standalone HTML report (.debug/checksum_disputes.html); pairs the db+lbdir references per track to derive db_error / audio_differs / retag / receipt_unknown / lbdir_only (TODO-300, 302)
