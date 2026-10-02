@@ -1,3 +1,17 @@
+[2026-10-02] — lb-nc phone layout: LB-first rows and a cursor card (Claude Design handoff 1c + 2b)
+Added: tools/lb_nc.py: below 50 columns (and at least 20 rows) `_layout_compact` replaces the narrow
+  single-pane layout. Two header rows (path + free space, then tagged / to-rename / LB / off counts);
+  rows read `MM-DD NNNNN name glyph size` inside a year folder (full date elsewhere) so same-day LBs
+  differ; a four-row card for the cursor folder (wrapped name, destination as LABEL:/path, whether it
+  fits); the running job and `+N` queued sit in the divider, one last-event row replaces the 8-row
+  log, and `o` opens the whole log in the pager. A folder whose name is not canonical gets the
+  rename card (old name, ⇒ canonical, `[ r ] rename`) — `r` still goes through the confirm gate.
+Changed: tools/lb_nc.py: two-row key bar uses the full labels; a confirm blurb narrower than its own
+  line breaks is reflowed by paragraph; `pane_title` / `where_line` / `info_rows` split out of
+  `pane_header` / `info_strip` (wide layout output unchanged). 50–59 columns keep the old layout.
+Added: tests/test_lb_nc.py: five phone-layout tests; progress-bar row test moved from 45 to 55 cols.
+Docs: instructions/complete/LBNC_PHONE_LAYOUT_HANDOFF.md (spec as retrieved), instructions/README.md.
+
 [2026-10-02] — lb-nc dialogs wrap at phone width instead of clipping
 Fixed: tools/lb_nc.py: on a ~36-column terminal the confirm gate cut each job line and blurb line
   off at an ellipsis and clipped "[ n ] cancel", so the rename target could not be read before

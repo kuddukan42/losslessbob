@@ -656,7 +656,7 @@ def test_space_check_counts_moves_queued_ahead(app, held, monkeypatch):
     assert any("(1.0K queued ahead)" in line for line in app.dialog.blurb)
 
 
-@pytest.mark.parametrize("cols", [110, 70, 45])
+@pytest.mark.parametrize("cols", [110, 70, 55])
 def test_progress_bar_row(app, held, cols):
     job = lb_nc.Job("move LB-01860", "", lambda emit: None, meter=[50, 100])
     app.runner.submit([job])
@@ -904,3 +904,64 @@ def test_confirm_dialog_wraps_and_keeps_buttons_on_a_phone(app):
     assert all(lb_nc.text_width(t) == 34 for t in text)
     assert not any("…" in t for t in text)
     assert "[ y ] run" in text[-2] and "[ n ] cancel" in text[-2]
+
+
+# ---- the phone layout
+
+def _screen(app, cols=35, rows=33):
+    lines = app.frame(cols, rows)
+    assert len(lines) == rows and all(lb_nc.line_width(ln) == cols for ln in lines)
+    return [lb_nc.plain(ln) for ln in lines]
+
+
+def test_compact_rows_lead_with_day_and_lb_number(app, tmp_path):
+    app.set_dir(app.right, tmp_path / "DYLAN2" / "1987")
+    app.handle("tab")
+    screen = _screen(app)
+    assert screen[0].startswith(" [R] DYLAN2:/1987 ") and screen[0].rstrip().endswith("free")
+    assert "LB" in screen[1]
+    assert any("09-05 02311 Tel Aviv" in ln for ln in screen)      # year dropped in /1987
+    assert screen[-2].startswith("1Help  2Info") and screen[-1].startswith("6Move  7File")
+    assert lb_nc.bare_name("2017-04-02 Stockholm_spot LB-12571") == "Stockholm_spot"
+    assert lb_nc.bare_name("1987-10-17 London, England (LB-01860-NFT)") == "London, England"
+
+
+def test_compact_card_shows_the_destination(app):
+    _pick(app.left, MISFILED)
+    screen = _screen(app)
+    assert any("1987-10-17 01860 London" in ln for ln in screen)   # not a year folder: full date
+    divider = next(ln for ln in screen if "LB-01860" in ln and ln.startswith("├"))
+    assert "misfiled" in divider
+    card = screen[screen.index(divider) + 1:screen.index(divider) + 5]
+    assert "1987-10-17 London, England" in card[0] and "(LB-01860)" in card[1]
+    assert "DYLAN2:/1987" in card[2] and "free" in card[3]
+    assert not any("drives:" in ln for ln in screen)
+
+
+def test_compact_rename_card_keeps_the_gate(app):
+    odd = next(e for e in app.left.entries if e.canon)
+    _pick(app.left, odd.name)
+    screen = _screen(app)
+    assert any("rename?" in ln for ln in screen) and any("[ r ] rename" in ln for ln in screen)
+    assert "to rename" in screen[1]
+    app.handle("r")
+    assert isinstance(app.dialog, lb_nc.Confirm)                    # nothing renamed without y
+    assert (app.left.cwd / odd.name).is_dir()
+
+
+def test_compact_job_lives_in_the_divider(app, held):
+    job = lb_nc.Job("move LB-01860", "", lambda emit: None, meter=[50, 100])
+    app.runner.submit([job])
+    with app.runner.lock:
+        app.runner.job, app.runner.current = job, lb_nc.deque()
+    screen = _screen(app, 45, 30)
+    assert any("move LB-01860 50%" in ln and ln.startswith("├") for ln in screen)
+    assert not any("█" in ln for ln in screen)                      # no separate progress row
+    app.handle("o")
+    assert isinstance(app.dialog, lb_nc.Pager)
+
+
+def test_short_terminal_keeps_the_old_narrow_layout(app):
+    lines = app.frame(35, 16)
+    assert len(lines) == 16 and all(lb_nc.line_width(ln) == 35 for ln in lines)
+    assert not app.compact
