@@ -1,3 +1,11 @@
+[2026-10-02] — lb-nc dialogs wrap at phone width instead of clipping
+Fixed: tools/lb_nc.py: on a ~36-column terminal the confirm gate cut each job line and blurb line
+  off at an ellipsis and clipped "[ n ] cancel", so the rename target could not be read before
+  pressing y. New `wrap()` word-wraps (cell-aware, hanging indent, hard-breaks long names);
+  Message, Confirm and Picker header lines use it. The y/n row tightens below 37 cells, and
+  `Dialog.foot` keeps it on screen when a wrapped body overflows the terminal height.
+Added: tests/test_lb_nc.py: wrap at phone width; confirm dialog at 36x20 keeps both buttons.
+
 [2026-10-02] — Silver dossier review: tj's rulings A–I implemented (TODO-354)
 Changed: concert_ranker/picks.py: (A) on a show with an eligible master (stated or inferred, not vetoed,
   not a fragment) every silver / low_gen copy ranks after the other sources whatever its score

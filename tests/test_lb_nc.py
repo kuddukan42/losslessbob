@@ -879,3 +879,28 @@ def test_preview_shows_a_year_folder_not_made_yet(app, tmp_path):
     assert _ghosts(app.right) == [f"1991/{name}"]
     names = [e.name for e in app.right.visible()]
     assert names.index("1987") < names.index(f"1991/{name}") < names.index("1998")
+
+
+def test_wrap_keeps_every_word_at_phone_width():
+    text = "  skip 2017-04-02 Stockholm_spot: name already correct, nothing to rename"
+    rows = lb_nc.wrap(text, 32)
+    assert len(rows) > 1
+    assert all(lb_nc.text_width(r) == 32 and "…" not in r for r in rows)
+    assert all(r.startswith("  ") for r in rows)
+    assert " ".join("".join(rows).split()) == " ".join(text.split())
+    assert lb_nc.wrap("  [ a ] apply      [ Esc ] close", 40)[0].startswith(
+        "  [ a ] apply      [ Esc ]")                  # a row that fits is left alone
+    assert "".join(r.strip() for r in lb_nc.wrap("x" * 70, 32)) == "x" * 70
+
+
+def test_confirm_dialog_wraps_and_keeps_buttons_on_a_phone(app):
+    _pick(app.left, MISFILED)
+    app.handle("f7")
+    dialog = app.dialog
+    assert isinstance(dialog, lb_nc.Confirm)
+    dialog.blurb = ["Renames each folder in place to the pipeline's proposed name, or for a"] * 12
+    lines = dialog.render(app, 36, 20)
+    text = ["".join(t for _, t in line) for line in lines]
+    assert all(lb_nc.text_width(t) == 34 for t in text)
+    assert not any("…" in t for t in text)
+    assert "[ y ] run" in text[-2] and "[ n ] cancel" in text[-2]

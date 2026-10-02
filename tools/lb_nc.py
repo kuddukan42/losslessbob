@@ -183,6 +183,38 @@ def fit_left(text: str, width: int, ellipsis: str = "…") -> str:
     return fit(ellipsis + tail, width, ellipsis)
 
 
+def wrap(text: str, width: int) -> list[str]:
+    """Word-wrap to rows of exactly `width` cells; continuation rows keep the indent."""
+    text = printable(text)
+    if width <= 0 or text_width(text) <= width:
+        return [fit(text, width)]
+    indent = text[:len(text) - len(text.lstrip(" "))]
+    if len(indent) > width // 2:
+        indent = ""
+    rows, cur = [], indent
+    for word in text.split():
+        sep = " " if cur.strip() else ""
+        if text_width(cur + sep + word) <= width:
+            cur += sep + word
+            continue
+        if cur.strip():
+            rows.append(cur)
+            cur = indent
+        while text_width(cur + word) > width:      # longer than a row: break it
+            head = ""
+            for ch in word:
+                if text_width(cur + head + ch) > width:
+                    break
+                head += ch
+            head = head or word[0]
+            rows.append(cur + head)
+            word, cur = word[len(head):], indent
+        cur += word
+    if cur.strip():
+        rows.append(cur)
+    return [fit(r, width) for r in rows]
+
+
 def line_width(line: Line) -> int:
     """Cells a segment list takes."""
     return sum(text_width(t) for _, t in line)
@@ -1669,6 +1701,7 @@ class Dialog:
 
     title = ""
     fullscreen = False
+    foot = 0                # trailing body rows that survive when the box overflows
 
     def body(self, width: int) -> list[Line]:
         """The box contents, `width` cells wide."""
@@ -1683,7 +1716,10 @@ class Dialog:
         top = [("dialog", b["tl"] + title + b["h"] * max(0, inner - text_width(title))
                 + b["tr"])]
         lines = [pad_line(top, width, "dialog")]
-        for row in self.body(inner)[:max(1, rows - 4)]:
+        body, room = self.body(inner), max(1, rows - 4)
+        if len(body) > room and 0 < self.foot < room:
+            body = body[:room - self.foot] + body[-self.foot:]
+        for row in body[:room]:
             lines.append([("dialog", b["v"])] + pad_line(row, inner, "dialog")
                          + [("dialog", b["v"])])
         lines.append([("dialog", b["bl"] + b["h"] * inner + b["br"])])
@@ -1702,7 +1738,8 @@ class Message(Dialog):
         self.title, self.text = title, text
 
     def body(self, width: int) -> list[Line]:
-        return [[("dialog", fit(t, width))] for t in [*self.text, "", "  any key closes"]]
+        return [[("dialog", row)] for t in [*self.text, "", "  any key closes"]
+                for row in wrap(t, width)]
 
     def handle(self, app: App, key: str) -> None:
         app.dialog = None
@@ -1716,21 +1753,24 @@ class Confirm(Dialog):
         self.title, self.jobs, self.blurb, self.toggle = title, jobs, blurb, toggle
         self.state = False
 
+    foot = 2                # the y/n row must stay on screen
+
     def body(self, width: int) -> list[Line]:
         rows: list[Line] = []
         for job in self.jobs[:10]:
-            rows.append([("dialog_hi", fit(job.detail, width))])
+            rows.extend([("dialog_hi", row)] for row in wrap(job.detail, width))
         if len(self.jobs) > 10:
             rows.append([("dialog", f"  … and {len(self.jobs) - 10} more")])
         rows.append([("dialog", "")])
-        rows.extend([("dialog", fit(t, width))] for t in self.blurb)
+        rows.extend([("dialog", row)] for t in self.blurb for row in wrap(t, width))
         if self.toggle:
             mark = "x" if self.state else " "
-            rows.append([("dialog", fit(f"  [{mark}] {self.toggle[1]}  "
-                                        f"({self.toggle[0]} toggles)", width))])
+            rows.extend([("dialog", row)] for row in wrap(
+                f"  [{mark}] {self.toggle[1]}  ({self.toggle[0]} toggles)", width))
         rows.append([("dialog", "")])
-        rows.append([("dialog", "          "), ("danger", "[ y ] run"),
-                     ("dialog", "      [ n ] cancel")])
+        lead, gap = ("          ", "      ") if width >= 37 else ("  ", "  ")
+        rows.append([("dialog", lead), ("danger", "[ y ] run"),
+                     ("dialog", gap + "[ n ] cancel")])
         return rows
 
     def handle(self, app: App, key: str) -> None:
@@ -1757,7 +1797,7 @@ class Picker(Dialog):
     def body(self, width: int) -> list[Line]:
         height = 14
         self.top = max(0, min(self.cursor, max(self.top, self.cursor - height + 1)))
-        rows: list[Line] = [[("dialog", fit(t, width))] for t in self.lines]
+        rows: list[Line] = [[("dialog", row)] for t in self.lines for row in wrap(t, width)]
         if self.lines:
             rows.append([("dialog", "")])
         for i, (label, _) in enumerate(self.items[self.top:self.top + height], self.top):
