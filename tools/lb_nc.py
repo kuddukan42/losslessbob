@@ -2251,13 +2251,16 @@ class App:
         names = [e.name for e in rows]
         if cur.name in names:
             pane.cursor = names.index(cur.name)       # already there: a clash F6 would refuse
-            return
-        ghost = Entry(cur.name, parent / cur.name, "ghost")
-        at = next((i for i, e in enumerate(pane.entries)
-                   if e.kind != "parent" and e.name.lower() > cur.name.lower()),
-                  len(pane.entries))
-        pane.entries.insert(at, ghost)
-        pane.cursor = pane.visible().index(ghost)
+        else:
+            ghost = Entry(cur.name, parent / cur.name, "ghost")
+            at = next((i for i, e in enumerate(pane.entries)
+                       if e.kind != "parent" and e.name.lower() > cur.name.lower()),
+                      len(pane.entries))
+            pane.entries.insert(at, ghost)
+            pane.cursor = pane.visible().index(ghost)
+        # scroll so the row sits mid-pane, between the folders it will land among
+        height = next((h for _y, h, _x, _w in self.pane_rows.values()), 0)
+        pane.top = max(0, pane.cursor - height // 2)
 
     def switch(self) -> None:
         """Tab: the other pane becomes active."""
