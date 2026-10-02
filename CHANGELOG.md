@@ -9,7 +9,15 @@ Added: tools/lb_nc.py: App.sync_preview — while the left pane is active, the r
   a dialog. p toggles it (default on). `l` relink ignores a ghost row as its candidate.
 Changed: tools/lb_nc.py: the previewed row is scrolled to mid-pane, so it shows between the folders
   it will land among instead of sitting at the pane's bottom edge.
-Added: tests/test_lb_nc.py: 7 preview tests.
+Fixed: tools/lb_nc.py: the preview used F6's rule for every folder, so an out-of-place folder whose
+  route is on another drive (or whose year folder does not exist yet) got no preview row and the
+  destination only showed in the info strip. preview_target now sends a misfiled / public / stray
+  folder to its year's route (F7's destination), re-rooting the right pane on that drive; a folder in
+  place still previews F6's target on the right pane's drive. A year folder not made yet shows as
+  "⇒ 1991/name" in the nearest existing folder. The pane height used for centring is now kept in
+  App.pane_height — frame() cleared pane_rows before taking the lock, so a preview recomputed by the
+  reload thread while a queue ran saw height 0.
+Added: tests/test_lb_nc.py: 9 preview tests.
 Added: tools/_strip_undo_junk.py: throwaway, dry-run by default — removes the pytest records from
   data/lb_nc_undo.jsonl with a backup in data/backups/. Not run from the session (blocked); tj runs it.
 

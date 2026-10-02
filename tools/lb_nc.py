@@ -1889,8 +1889,10 @@ r           rename to the canonical name (the last F4 proposal, else the collect
             row's date + location + LB tag); non-canonical names are highlighted
 h           highlighting of non-canonical names on / off
 p           destination preview on / off: while the left pane is active the right
-            pane opens where 6 Move would put the cursor folder (on the right
-            pane's drive) and shows it there as an underlined ⇒ row; a right
+            pane opens where the cursor folder would land and shows it there,
+            mid-pane, as an underlined ⇒ row. An out-of-place folder goes where
+            7 File puts it (its year's route, on whatever drive); one already in
+            place goes where 6 Move puts it on the right pane's drive. A right
             pane holding tags stays put
             usual order for a new folder: c → 4 Pipe → r → 7 File
 n           fix the -NFT suffix (private LBs have it, public ones don't)
@@ -1974,6 +1976,7 @@ class App:
         self.pipeline_results: dict[str, dict] = {}
         self.hits: list[tuple[int, int, int, str]] = []     # (row, x0, x1, key)
         self.pane_rows: dict[str, tuple[int, int, int, int]] = {}
+        self.pane_height = 0             # rows in a pane body at the last layout
         self.lock = threading.Lock()
         self.dirty = True
         self._free_cache: dict[str, tuple[float, str]] = {}
@@ -2202,20 +2205,26 @@ class App:
         pane.move(0)
         return True
 
-    def preview_target(self, entry: Entry, mount: dict) -> Path | None:
-        """The directory F6 would move entry into on mount; None when it wouldn't move it.
+    def preview_target(self, entry: Entry, mount: dict | None) -> Path | None:
+        """The directory the cursor folder would land in, or None when it has nowhere to go.
 
-        The same rule as the backend's filing with a mount override: the mount's root
-        joined with the sub_path of the show year's route.
+        A folder that is out of place (misfiled, a public LB in the private folder, a
+        stray) goes where F7 files it: its show year's route, whatever drive that is.
+        A folder already in place goes where F6 would move it: the right pane's mount
+        joined with the route's sub_path — the backend's mount-override rule.
         """
         if entry.kind != "dir" or entry.lb is None or entry.status in ("dup", "blocked", "gone"):
-            return None
-        here = self.coll.mount_for(entry.path)
-        if here and here["id"] == mount["id"] and entry.status == "canonical":
             return None
         year = self.year_of(entry)
         route = self.coll.routes.get(year) if year is not None else None
         if not route:
+            return None
+        if entry.status in ("misfiled", "public", "stray"):
+            expected = self.coll.expected_parent(year)
+            if expected and norm(entry.path.parent) != expected:
+                return Path(expected)
+        here = self.coll.mount_for(entry.path)
+        if mount is None or (here and here["id"] == mount["id"]):
             return None
         sub = route.get("sub_path") or ""
         return Path(mount["root_path"]) / sub if sub else Path(mount["root_path"])
@@ -2223,10 +2232,12 @@ class App:
     def sync_preview(self) -> None:
         """Show, in the right pane, where the folder under the left cursor would land.
 
-        The right pane opens the destination directory on its own mount and shows the
-        folder there as an underlined ⇒ row (or puts its cursor on the folder already
-        there). Only the left pane drives it, only while it is the active pane, and a
-        right pane holding tags is never moved. Nothing is written.
+        The right pane opens the destination directory (changing drive when the route
+        says so), scrolls the spot to mid-pane and shows the folder there as an
+        underlined ⇒ row, or puts its cursor on the folder already there. A year folder
+        not made yet is shown as "⇒ 1991/name" in the nearest folder that exists. Only
+        the left pane drives it, only while it is the active pane, and a right pane
+        holding tags is never moved. Nothing is written.
         """
         pane = self.right
         if self.dialog:                               # keep the preview behind a dialog
@@ -2236,31 +2247,33 @@ class App:
                 or pane.virtual or pane.tags or pane.editing:
             return
         cur = self.left.current()
-        mount = self.coll.mount_for(pane.cwd)
-        parent = self.preview_target(cur, mount) if cur and mount else None
+        parent = self.preview_target(cur, self.coll.mount_for(pane.cwd)) if cur else None
         if parent is None:
             return
         target = existing(parent)
         if norm(pane.cwd) != norm(target):
+            if not str(target).startswith(str(pane.root)):       # the route is on another drive
+                mount = self.coll.mount_for(target)
+                if mount is None or not Path(mount["root_path"]).is_dir():
+                    return
+                self.set_root(pane, Path(mount["root_path"]))
             self.set_dir(pane, target)
-            if norm(pane.cwd) != norm(target):       # outside the pane's root
+            if norm(pane.cwd) != norm(target):
                 return
-        if target != parent:                          # the year folder isn't made yet
-            return
-        rows = pane.visible()
-        names = [e.name for e in rows]
-        if cur.name in names:
-            pane.cursor = names.index(cur.name)       # already there: a clash F6 would refuse
+        # a destination folder not made yet shows as its missing path under what exists
+        name = cur.name if target == parent else str(parent.relative_to(target) / cur.name)
+        names = [e.name for e in pane.visible()]
+        if name in names:
+            pane.cursor = names.index(name)           # already there: a clash F6/F7 refuse
         else:
-            ghost = Entry(cur.name, parent / cur.name, "ghost")
+            ghost = Entry(name, parent / cur.name, "ghost")
             at = next((i for i, e in enumerate(pane.entries)
-                       if e.kind != "parent" and e.name.lower() > cur.name.lower()),
+                       if e.kind != "parent" and e.name.lower() > name.lower()),
                       len(pane.entries))
             pane.entries.insert(at, ghost)
             pane.cursor = pane.visible().index(ghost)
         # scroll so the row sits mid-pane, between the folders it will land among
-        height = next((h for _y, h, _x, _w in self.pane_rows.values()), 0)
-        pane.top = max(0, pane.cursor - height // 2)
+        pane.top = max(0, pane.cursor - self.pane_height // 2)
 
     def switch(self) -> None:
         """Tab: the other pane becomes active."""
@@ -3354,6 +3367,7 @@ class App:
             body, log_rows = body + log_rows, 0
         if body < 1:
             info_rows, body = 1, body + info_rows - 1
+        self.pane_height = body
         out: list[Line] = []
         if two:
             lw = (cols - 3) // 2
