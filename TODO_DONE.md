@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-354: Silver dossier review: tj decisions A–I
+Priority: High
+Status: Done
+Added: 2026-09-25
+Closed: 2026-10-02
+Description: instructions/SILVER_DOSSIER_REVIEW.md. Live rebuild done 2026-09-25 with tj's OK. Open: tj rules on A–I (silver-over-master picks, multi-rig families, hedged series codes, private-sourced propagation, runtime alternates, two-show sources, range notes, 3dogs alias, DAT copy).
+tj ruled A–I on the review page 2026-10-01 (tier, mute, demote, hide, flag, xref, range, add, lowgen); all nine implemented in 51535a27 and the live DB rebuilt 2026-10-02 (backup data/backups/losslessbob_preTODO354_20261002_1227.db): attributions 5,206 → 5,193, 253 rank-1 picks changed, golden fixture re-cut, --check 18/18. TapeMatch side of B continues as TODO-356.
+
 TODO-325: tapematch — require primary-correlation corroboration before a secondary/fingerprint link can merge a family
 Priority: Medium
 Status: Done
