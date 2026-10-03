@@ -45,6 +45,12 @@ ALL_ZERO_MIN_SOURCES = 4
 VERDICT_CLEAR = "clear"
 VERDICT_ATTENTION = "attention"
 
+# TODO-356: added at sync time by backend.tapematch_sync, not by date_signals --
+# it reads the app DB's lineages and taper credits, which observations.db
+# doesn't hold, so it's kept out of RULES and the calibration report.
+RIG_RULE = "R8_stated_rig"
+RIG_RULE_MEANING = "a multi-member family whose members state different mics or tapers"
+
 # Rule name -> one-line meaning, for --report and for anyone reading the JSON
 # reasons column later.
 RULES: "dict[str, str]" = {

@@ -584,6 +584,41 @@ def rule_f1(conn: sqlite3.Connection) -> Iterable[Finding]:
         )
 
 
+def rule_f2(conn: sqlite3.Connection) -> Iterable[Finding]:
+    """R-F2: a recording family's members state 2+ different microphone brands (TODO-356).
+
+    One tape has one rig, so either TapeMatch merged two recordings or a lineage
+    is wrong. Review-only: nothing is split, withheld or re-ranked (the picks
+    already skip the in-family transfer terms for these families). The taper
+    side of the same contradiction is R-T6.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Yields:
+        One warn Finding per conflicting family.
+    """
+    if not _table_exists_local(conn, "recording_families"):
+        return
+    from backend.dossier_fields import family_rig_conflicts
+
+    conf = {}
+    if _table_exists_local(conn, "tapematch_family_meta"):
+        conf = {r[0]: r[1] for r in conn.execute("SELECT fam_id, conf FROM tapematch_family_meta")}
+    for fam_id, brands in sorted(family_rig_conflicts(conn).items()):
+        summary = "; ".join(
+            f"{b} ({', '.join(f'LB-{lb}' for lb in lbs)})" for b, lbs in sorted(brands.items()))
+        c = conf.get(fam_id)
+        yield Finding(
+            entity_kind="family",
+            entity_key=fam_id,
+            severity="warn",
+            detail=f"family {fam_id}: members state different mics -- {summary}"
+                   + (f" (TapeMatch conf {c:.2f})" if c is not None else ""),
+            evidence={"mics": {b: v for b, v in sorted(brands.items())}, "conf": c},
+        )
+
+
 def _attributions_with_text(conn: sqlite3.Connection) -> list[sqlite3.Row]:
     """Return every taper_attributions row with its entry's description and date_str."""
     if not _table_exists_local(conn, "taper_attributions"):
@@ -1189,5 +1224,11 @@ RULES: dict[str, RuleDef] = {
         description="Recording family carries 2+ distinct confirmed tapers",
         severity="warn",
         func=rule_t6,
+    ),
+    "R-F2": RuleDef(
+        rule_id="R-F2",
+        description="Recording family's members state 2+ different microphone brands",
+        severity="warn",
+        func=rule_f2,
     ),
 }

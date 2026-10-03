@@ -34,6 +34,7 @@ from pathlib import Path
 from statistics import median
 
 from backend.db import get_connection, get_write_queue, init_db
+from backend.dossier_fields import stated_mic as _stated_mic  # noqa: F401 -- tests
 from concert_ranker.calibrate import RATING_RANK
 from concert_ranker.text_features import has_lossy_lineage
 
@@ -420,33 +421,6 @@ def _disputed_taper_lbs(conn: sqlite3.Connection) -> set[int]:
     return {lb for fam, ts in tapers.items() if len(ts) >= 2 for lb in members[fam]}
 
 
-# First-mic brand spellings that are one maker (Church Audio "CA-14", Countryman "COS-11").
-_MIC_BRAND_ALIASES = {"ca": "church", "cos": "countryman", "coresounds": "coresound",
-                      "sonicstudios": "sonicstudio"}
-_GENERIC_MIC_WORDS = frozenset({"mic", "mics", "microphone", "microphones"})
-
-
-def _stated_mic(source_chain: str | None) -> str | None:
-    """The first microphone brand a lineage names, folded to one key per maker.
-
-    Args:
-        source_chain: ``entries.source_chain``.
-
-    Returns:
-        A brand key (``"schoeps"``, ``"akg"``, ``"okm"``), or ``None`` when the
-        lineage names no brand (a bare "mics" says nothing about the rig).
-    """
-    from backend.dossier_fields import _MIC_RE
-
-    for m in _MIC_RE.finditer(source_chain or ""):
-        key = re.sub(r"[^a-z]", "", m.group(0).lower())
-        if not key or key in _GENERIC_MIC_WORDS:
-            continue
-        key = "okm" if key.startswith("okm") else key
-        return _MIC_BRAND_ALIASES.get(key, key)
-    return None
-
-
 def _rig_conflict_lbs(conn: sqlite3.Connection) -> set[int]:
     """LBs whose recording family states more than one rig (silver review B).
 
@@ -454,7 +428,8 @@ def _rig_conflict_lbs(conn: sqlite3.Connection) -> set[int]:
     tapers holds more than one recording (2013-11-16 "Family A": Core Sound,
     OKM II, SP-CMC-10 and Schoeps), so "best/inferior transfer within its
     family" would compare different tapes. tj's ruling (2026-10-01): the picks
-    skip those two terms for such a family; TapeMatch itself is unchanged.
+    skip those two terms for such a family. TapeMatch keeps the merge and flags it
+    for review instead (TODO-356: QC rule R-F2, auto_triage ``R8_stated_rig``).
 
     Args:
         conn: Open SQLite connection.
@@ -463,22 +438,14 @@ def _rig_conflict_lbs(conn: sqlite3.Connection) -> set[int]:
         LB numbers in a family with 2+ stated mic brands or 2+ confirmed tapers;
         empty without ``recording_families``.
     """
+    from backend.dossier_fields import family_rig_conflicts
+
     if not _table_exists(conn, "recording_families"):
         return set()
-    cols = {r[1] for r in conn.execute("PRAGMA table_info(entries)")}
-    if "source_chain" not in cols:
-        return _disputed_taper_lbs(conn)
-    mics: dict[str, set[str]] = defaultdict(set)
-    members: dict[str, list[int]] = defaultdict(list)
-    for fam_id, lb, chain in conn.execute(
-        "SELECT rf.fam_id, rf.lb_number, e.source_chain FROM recording_families rf"
-        " JOIN entries e ON e.lb_number = rf.lb_number"
-    ):
-        members[fam_id].append(lb)
-        mic = _stated_mic(chain)
-        if mic:
-            mics[fam_id].add(mic)
-    out = {lb for fam, brands in mics.items() if len(brands) >= 2 for lb in members[fam]}
+    out: set[int] = set()
+    for fam_id in family_rig_conflicts(conn):
+        out.update(r[0] for r in conn.execute(
+            "SELECT lb_number FROM recording_families WHERE fam_id = ?", (fam_id,)))
     if _table_exists(conn, "taper_attributions"):
         out |= _disputed_taper_lbs(conn)
     return out

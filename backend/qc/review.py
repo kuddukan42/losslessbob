@@ -198,7 +198,7 @@ def _entry_context(conn: sqlite3.Connection, lb_number: int) -> dict:
 
 
 def _family_context(conn: sqlite3.Connection, fam_id: str) -> dict:
-    """Context for R-F1: the family's meta row plus its member LBs."""
+    """Context for R-F1/R-F2: the family's meta row, member LBs and their stated rigs."""
     meta = conn.execute(
         "SELECT * FROM tapematch_family_meta WHERE fam_id = ?", (fam_id,)
     ).fetchone()
@@ -206,9 +206,19 @@ def _family_context(conn: sqlite3.Connection, fam_id: str) -> dict:
         "SELECT lb_number FROM recording_families WHERE fam_id = ? ORDER BY lb_number",
         (fam_id,),
     ).fetchall()
+    from backend.dossier_fields import stated_mic
+
+    lbs = [r["lb_number"] for r in members]
+    marks = ",".join("?" * len(lbs))
+    chains = {r[0]: r[1] for r in conn.execute(
+        f"SELECT lb_number, source_chain FROM entries WHERE lb_number IN ({marks})",  # noqa: S608
+        lbs)} if lbs else {}
     return {
         "family_meta": dict(meta) if meta else None,
-        "members": [r["lb_number"] for r in members],
+        "members": lbs,
+        # TODO-356: each member's stated lineage and the mic brand read from it (R-F2).
+        "member_rigs": [{"lb": lb, "mic": stated_mic(chains.get(lb)),
+                         "source_chain": chains.get(lb)} for lb in lbs],
     }
 
 
@@ -238,7 +248,7 @@ def _build_context(
             return _geocode_context(conn, entity_key)
         if rule_id in ("R-E1", "R-E2"):
             return _entry_context(conn, int(entity_key))
-        if rule_id == "R-F1":
+        if rule_id in ("R-F1", "R-F2"):
             return _family_context(conn, entity_key)
         if rule_id in ("R-S1", "R-R1"):
             return dict(evidence)
