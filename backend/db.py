@@ -2343,9 +2343,12 @@ _BUILTIN_TAPER_ALIASES: dict[str, str] = {
     "unwanted man music": "unwanted man music",
     "unwanted man": "unwanted man music",
     "uww": "unwanted man music",
-    "travelin man records": "travelin man records",
-    "travelin man": "travelin man records",
-    "tmr": "travelin man records",
+    # Travelin' Man Records is Legendary Taper F's own handle: entries read "Taper F
+    # (Travelin' Man Records)", and crediting it separately made every LTF family that
+    # also holds a TMR-credited copy a false R-T6 taper conflict (TODO-357).
+    "travelin man records": "ltf",
+    "travelin man": "ltf",
+    "tmr": "ltf",
     "stevemtl": "stevemtl",
     "bourbon": "bobby bourbon",
     "bobby bourbon": "bobby bourbon",

@@ -1,3 +1,12 @@
+[2026-10-03] — Taper aliases: Travelin' Man Records is LTF (TODO-357)
+Fixed: backend/db.py: 'travelin man records' / 'travelin man' / 'tmr' now normalise to `ltf`
+  instead of being a taper of their own. Entries read "Taper F (Travelin' Man Records)", so a
+  separate credit turned 10 LTF families into false R-T6 taper conflicts and showed the credit as
+  disputed in the dossier. TODO-357's premise (that it is a bootleg label) was wrong. 'cta' (also
+  stated as "CTA = Travelin' Man Records") is left as its own series credit: it conflicts with
+  nothing.
+Added: tests/test_taper_guards.py: regression test (one taper, no R-T6).
+
 [2026-10-03] — TapeMatch: stated-rig conflicts flag a family for review (TODO-356, closed)
 Added: backend/qc/rules.py: R-F2 (warn, entity `family`) fires when a family's members state 2+
   microphone brands. backend/qc/review.py adds member_rigs (each member's source_chain + the brand
