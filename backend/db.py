@@ -378,6 +378,29 @@ CREATE TABLE IF NOT EXISTS venue_geocoded (
 );
 CREATE INDEX IF NOT EXISTS idx_venue_geo_source ON venue_geocoded(source);
 
+-- TODO-346: venue -> enwiki article cache. Filled offline by
+-- tools/venue_wiki_lookup.py (Wikidata lookup by venue name + city, paced,
+-- polite User-Agent) or by a curator override row; the dossier render path
+-- (backend.dossier_fields.venue_wiki_link) only ever reads this table --
+-- it never hits the network. A cached row with wiki_url NULL and
+-- source='override' is an explicit "no link" override (a confident match
+-- was checked for and isn't there), which is why wiki_url has no NOT NULL:
+-- absence of a row means "not looked up yet", not "no link".
+CREATE TABLE IF NOT EXISTS venue_wiki_links (
+    venue_norm   TEXT NOT NULL,
+    city_norm    TEXT NOT NULL,
+    venue        TEXT,
+    city         TEXT,
+    wiki_title   TEXT,
+    wiki_url     TEXT,
+    source       TEXT NOT NULL,
+    confidence   TEXT,
+    note         TEXT,
+    looked_up_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (venue_norm, city_norm)
+);
+CREATE INDEX IF NOT EXISTS idx_venue_wiki_source ON venue_wiki_links(source);
+
 -- F7: date -> Bob Links tour-guide page URL, crawled offline by
 -- tools/import_boblinks_index.py (boblinks.com's dates*.html / pre1995s.html guide
 -- pages, followed politely -- sequential, 1s delay). The dossier's _build_xref
