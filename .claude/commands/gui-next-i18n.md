@@ -47,16 +47,17 @@ Report the per-language counts. If all are zero, skip to Step 3 (verify).
 ## Step 2 — Translate with DeepL
 
 `DEEPL_API_KEY` is stored in `.claude/settings.local.json` and should be available automatically.
-Verify it is set:
+Check it is set without printing any of it:
 
 ```bash
-echo "${DEEPL_API_KEY:0:8}..."
+[ -n "$DEEPL_API_KEY" ] && echo set || echo unset
 ```
 
-If not set, ask the user for their key. Then run:
+If unset, stop and ask the user to add it to `.claude/settings.local.json` — never
+have them paste the key into chat. Then run:
 
 ```bash
-DEEPL_API_KEY=<key> .venv/bin/python3 scripts/deepl_translate_gui_next.py
+.venv/bin/python3 scripts/deepl_translate_gui_next.py
 ```
 
 The script:
