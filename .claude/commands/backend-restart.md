@@ -18,27 +18,22 @@ up code changes.
 
 ## Steps
 
-1. Syntax-check any files changed this session first — don't relaunch into a
-   crash loop:
-   ```bash
-   .venv/bin/python3 -m py_compile backend/<changed_file>.py
-   ```
-2. Find the running backend:
+1. Find the running backend:
    ```bash
    pgrep -af "run_backend.py|LosslessBobBackend"
    ```
-   If nothing is found, skip to step 4 (just start it).
-3. Kill it gracefully (SIGTERM, then SIGKILL only if still alive after ~3 s):
+   If nothing is found, skip to step 3 (just start it).
+2. Kill it gracefully (SIGTERM, then SIGKILL only if still alive after ~3 s):
    ```bash
    pkill -f run_backend.py; sleep 3; pkill -9 -f run_backend.py 2>/dev/null
    ```
    If the backend was spawned by a running Electron GUI that's fine — the GUI
    talks to port 5174 and will use the replacement process transparently.
-4. Relaunch in the background from repo root:
+3. Relaunch in the background from repo root:
    ```bash
    nohup .venv/bin/python3 run_backend.py > data/logs/backend_stdout.log 2>&1 &
    ```
-5. Verify the new process (poll up to ~10 s for startup):
+4. Verify the new process (poll up to ~10 s for startup):
    ```bash
    curl -s http://127.0.0.1:5174/api/system/uptime
    curl -s http://127.0.0.1:5174/api/status | head -c 200

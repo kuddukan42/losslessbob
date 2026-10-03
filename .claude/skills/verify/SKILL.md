@@ -1,6 +1,6 @@
 ---
 name: verify
-description: Visual verification of the gui_next GUI — screenshot all major screens, review for defects, PASS/FAIL verdict. Default Tier A (`--renderer-only`, Chromium vs the Vite server); `--electron` drives the real Electron app. Sanctioned for use on Claude's own initiative (2026-07-22).
+description: Visual verification of the gui_next GUI — screenshot all major screens, review for defects, PASS/FAIL verdict. Default Tier A (`--renderer-only`, Chromium vs the Vite server); `--electron` drives the real Electron app. Run it on your own initiative for visual changes.
 ---
 
 # Visual Verification
@@ -8,15 +8,12 @@ description: Visual verification of the gui_next GUI — screenshot all major sc
 Capture every major gui_next screen, review each screenshot, and give a
 PASS/FAIL verdict.
 
-The screenshot engine is sanctioned for use on Claude's own initiative
-(fixed & cleared by tj 2026-07-22 — it was previously restricted to explicit
-user invocation). Run it whenever a gui_next change affects layout or visuals;
+Run it on your own initiative whenever a gui_next change affects layout or visuals;
 `/gui-check` remains the required non-visual baseline.
 
 ## One driver, two tiers
 
-`tools/electron_driver.mjs` is the single screenshot engine (the separate
-`browser_driver.mjs` was merged into it 2026-07-22):
+`tools/electron_driver.mjs` is the single screenshot engine:
 
 | | Tier A (default, `--renderer-only`) | Tier B (`--electron`) |
 |---|---|---|
@@ -61,9 +58,9 @@ Design/history for Electron mode: `instructions/complete/FABLE_VISUAL_VERIFICATI
    reported by the driver.
 4. Verdict in chat: one line per screen (`screen | PASS/FAIL | issue`), then an
    overall PASS/FAIL. Say which tier ran.
-5. Any new defect found → add an Open `BUG-<NNN>` entry to `BUGS.md` in the
-   standard format (next free number; check `BUGS_DONE.md` too so numbers don't
-   collide).
+5. Any new defect found → open a bug with
+   `.venv/bin/python3 tools/ledger.py bug-open "title" --files file:line --desc "..."`
+   (it allocates the number; don't hand-edit `BUGS.md`).
 
 ## Notes
 

@@ -5,10 +5,8 @@ argument-hint: [batch size, default 5]
 
 Process the next batch of missing tapematch `analysis.md` write-ups.
 
-Subagents **are** usable for the writing step — the old claim that they hit a hard
-`Write`-tool block on `.md` files was wrong (the only `PreToolUse` hook in
-`.claude/settings.json` is a path guard for writes outside the project root). Use them
-to run the batch on a cheaper model than the orchestrating session. The real constraint
+Subagents can do the writing step; use them to run the batch on a cheaper model than
+the orchestrating session. The constraint
 is `next_batch.py`: it is stateless and only ever reports dirs lacking `analysis.md`, so
 concurrent agents each calling it get handed the **same** dirs. To fan out, the parent
 session must do steps 1–2 once, partition the dirs into disjoint per-agent lists, and

@@ -45,19 +45,16 @@ Before every Write, check the path starts with `/home/tjenkins/Documents/lossles
 
 ---
 
-## Response Brevity — hard rule
+## Response length
 
-Chat output is TOO VERBOSE by default. Cut it hard. Asked for repeatedly
-(2026-07-27, 2026-07-29, 2026-07-31).
-
-- **Budget: ≤4 lines of prose per response**, or one tight `Area | Change` table.
-  Over budget = rule violated. Longer only if the user asks for detail or the
-  answer genuinely needs it (a spec, a plan, an explanation that was requested).
+tj reads results, not process — long replies cost them time. Keep chat replies
+short: a few lines of prose, or one `Area | Change` table. Go longer when they ask
+for detail or the answer needs it (a spec, a plan, a requested explanation).
 - Lead with the answer/result. No preamble, no sign-off, no "Let me…",
   "I'll now…", "Here's what I found:", no closing offer of next steps.
-- Report only: decisions, blockers, final results. No narration of intermediate
-  steps, no restating context the user already gave, no recap of what a tool
-  just did when the result speaks for itself.
+- Final replies carry decisions, blockers, and results. During long work, a
+  one-line note on what you're doing is fine; don't restate context the user
+  gave or recap what a tool's result already shows.
 - No explaining reasoning unless asked or unless it changes what the user does.
 - No bullet lists under ~3 items — just say it in a sentence.
 - Don't pad with caveats, disclaimers, or praise ("Great question", "You're
@@ -78,8 +75,7 @@ Chat output is TOO VERBOSE by default. Cut it hard. Asked for repeatedly
 - Backend changes: restart before verifying (`/backend-restart`) — stale processes
   cause false "fix didn't work" confusion.
 - gui_next changes: `/gui-check` (typecheck + production build) is always
-  required. The screenshot engine is **sanctioned** (fixed & cleared by tj
-  2026-07-22): when a change affects layout or visuals, also verify it with
+  required. When a change affects layout or visuals, also verify it with
   `/verify` — Tier A screenshots the renderer; `/verify --electron` drives the
   real Electron app on Xvfb (resize, display scale, real `window.api`). Claude
   may run it on its own initiative; pick the cheapest tier that answers the
@@ -137,5 +133,5 @@ automatically when working there; don't duplicate them here.
 ```
 <type>(<scope>): <description>
 types: feat | fix | refactor | docs | chore | test
-scopes: backend | gui | db | scraper | importer | scheduler | docs
+scopes: backend | gui | db | scraper | importer | scheduler | docs | tapematch | bookkeeping
 ```

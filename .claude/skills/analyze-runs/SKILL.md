@@ -9,10 +9,7 @@ Aggregate the per-run `analysis.md` files under `data/tapematch/runs/` into one
 summary so cross-run patterns (repeat false positives, threshold drift, runs
 flagged for review) become visible.
 
-> Superseded note: this skill previously spawned one `claude -p` subagent per
-> run to *write* analyses. That approach was abandoned — subagents hit a hard
-> `Write`-tool block on `.md` files. Writing analyses now happens in-session
-> via `/tapematch-batch`. This skill only reads and summarizes.
+Writing analyses is `/tapematch-batch`'s job; this skill only reads and summarizes.
 
 ## Steps
 
