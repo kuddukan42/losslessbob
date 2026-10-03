@@ -1,3 +1,16 @@
+[2026-10-03] — Dossier venue card: Wikipedia link (TODO-346, code complete; cache not yet filled)
+Added: tools/venue_wiki_lookup.py: fills venue_wiki_links from Wikidata. Each venue_geocoded venue
+  gets one SPARQL entity search and keeps items that have an English Wikipedia article, graded by name
+  (label/alias, leading "the" ignored) and by distance from the gazetteer pin: high = within 2 km of a
+  venue-level pin, medium = within 25 km, low = cached but never rendered. Dry run by default;
+  --apply writes in one transaction; --set-override / --no-link set curator rows, which lookups
+  never overwrite.
+Added: backend/dossier_fields.py: venue_wiki_link() reads the cache only. An override wins over
+  every other spelling of the venue, and only https://*.wikipedia.org/wiki/ URLs render.
+Added: backend/dossier_anchors.py + templates/dossier.html: a `venue.wiki` anchor and a
+  "Wikipedia ↗" line on the venue card.
+Added: tests/test_venue_wiki.py (20 tests); PROJECT.md: venue_wiki_links schema + tool.
+
 [2026-10-03] — Prompt audit of the Claude Code instruction files (commit c6d8ac41)
 Changed: .claude/commands/find-bugs.md: scratch scripts go to tools/_*, bugs go through ledger.py,
   migrations use the PRAGMA table_info check; dropped the PyQt QThread rule and the manual py_compile step.

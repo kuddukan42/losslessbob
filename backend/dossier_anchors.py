@@ -250,6 +250,7 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("venue.city", 1, "context", "show fields", "omit"),
     _a("venue.coords", 1, "context", "venue_geocoded / setlist.fm city centre", "omit"),
     _a("venue.map", 1, "context", "compact _render_locator_svg", "value", "no map"),
+    _a("venue.wiki", 1, "context", "venue_wiki_links (TODO-346)", "omit"),
     _a("venue.district", 3, "context", "D-06 (null stub)", "omit"),
     _a("venue.run_nights", 3, "context", "D-07", "omit"),
     _a("venue.city_total", 3, "context", "D-07", "omit"),
@@ -1347,6 +1348,7 @@ def _build_context(vb, d1, conn, event_id, date_iso) -> None:
         vb.set_field("venue.city", build_field(show["city"], 1, "d1.show.city", "stated"))
 
     _build_venue_geo(vb, conn, show)
+    _build_venue_wiki(vb, conn, show)
 
     if event_id is not None:
         run_ctx = _safe(df.run_context, conn, event_id)
@@ -1446,6 +1448,27 @@ def _build_venue_geo(vb, conn, show) -> None:
              "label": "city centre (setlist.fm)", "url": show.get("setlistfm_url")},
             1, "setlist.fm city centroid", "stated"))
         _set_venue_map(vb, show, show["lat"], show["lng"], "city_centre")
+
+
+def _build_venue_wiki(vb, conn, show) -> None:
+    """TODO-346: set ``venue.wiki`` from the offline ``venue_wiki_links`` cache.
+
+    No row, an explicit no-link override, or a below-medium Wikidata match all
+    leave the anchor unset -- its ``omit`` fallback renders nothing.
+    """
+    from backend.dossier_fields import venue_wiki_link
+
+    venue = show.get("venue")
+    if not venue:
+        return
+    link = _safe(venue_wiki_link, conn, show.get("venue_candidates") or [venue],
+                 show.get("city"), show.get("country"))
+    if link is None:
+        return
+    label = "curator override" if link["source"] == "override" else (
+        f"Wikidata match ({link['confidence']})")
+    vb.set_field("venue.wiki", build_field(
+        {"title": link["title"], "url": link["url"]}, 1, f"venue_wiki_links ({label})", "stated"))
 
 
 def _set_venue_map(vb, show: dict, lat: float, lng: float, marker: str) -> None:

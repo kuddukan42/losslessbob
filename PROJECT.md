@@ -263,6 +263,7 @@ losslessbob/
 │   ├── make_fixture_db.py    # CLI: builds a deterministic synthetic install (~101 entries) for CI/onboarding tests, no real data required (TODO-261); --golden instead cuts the show-dossier golden fixture (tests/golden/dossier/fixture.jsonl.gz) from live data for the spec dates, private-entry metadata scrubbed (TODO-342 C31)
 │   ├── dossier_audit.py      # CLI: adversarial audit of an exported dossier set — link sweep, setlist diff vs bobserve/bobdylan.com, structural lints, 390px overflow; exit 1 on structural findings (C32g)
 │   ├── import_boblinks_index.py # CLI: crawl boblinks.com tour guides → boblinks_pages (dry run default, --apply writes) (C32f)
+│   ├── venue_wiki_lookup.py  # CLI: Wikidata → venue_wiki_links (dry run default, --apply writes; --set-override/--no-link) (TODO-346)
 │   ├── dossier_golden.py     # CLI + helpers for the dossier golden set: load_fixture(), snapshot() (anchor value/confidence/source + rows + claims + map marker + gate outcome, timestamps stripped), --check (fixture vs live per spec, must be 15/15 before committing a re-cut), --show NAME (snapshot for tj's C32 verification) (TODO-342)
 │   ├── dossier_sweep.py      # CLI: nightly corpus sweep — builds every date's dossier through the gate, writes data/logs/dossier_sweep_<date>.md/.json, --notify (notify-send) when refused/withheld/gate/build errors rise night over night; cron via data/dossier_sweep_cron.sh 03:15 (C33)
 │   ├── dossier_verify_export.py # CLI: re-check an exported dossier HTML — rebuilds from its #lb-dossier-id identity and diffs the #lb-qc fingerprint/refusal/withheld set; exit 0 OK / 1 drift / 2 error (C33)
@@ -1541,6 +1542,22 @@ Index: `idx_venue_geo_source ON venue_geocoded(source)`. Seeded by
 `olof_events`/`setlistfm_shows`/`bobdylan_shows`; resolved by `resolve_venues()`
 (bounded Nominatim → Wikidata P625 → city-anchor fallback). Bite 3 (geocoder
 `run_batch` inheritance + `place_manual` propagation) is pending.
+
+### `venue_wiki_links` — Venue → Wikipedia article cache (TODO-346)
+Keyed exactly like `venue_geocoded`. Filled offline by `tools/venue_wiki_lookup.py`
+(Wikidata entity search, enwiki sitelink, graded by name + distance from the gazetteer
+pin) or a curator override; read-only at render time by
+`backend/dossier_fields.py:venue_wiki_link()` → the `venue.wiki` anchor (venue card).
+| Column | Type | Notes |
+|--------|------|-------|
+| venue_norm / city_norm | TEXT | PK — same keys as `venue_geocoded` |
+| venue / city | TEXT | Display names at lookup time |
+| wiki_title / wiki_url | TEXT | Article; `wiki_url` NULL = looked up, nothing found (`wikidata`) or explicit "no link" (`override`) |
+| source | TEXT NOT NULL | `'wikidata'` / `'override'` (lookups never overwrite overrides) |
+| confidence | TEXT | `'high'` (name + ≤2 km of a venue-level pin) / `'medium'` (name + ≤25 km) / `'low'` (cached, never rendered) / NULL |
+| note / looked_up_at | TEXT / TIMESTAMP | QID + distance or why rejected; last write time |
+
+Index: `idx_venue_wiki_source ON venue_wiki_links(source)`. No row = not looked up yet.
 
 ### `meta` — Key-value configuration store
 Persists settings between runs. Key examples:

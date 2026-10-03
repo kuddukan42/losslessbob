@@ -810,6 +810,9 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
         <div class="name">{{ lbf('venue.name') }}</div>
         {%- set vcity = fields.get('venue.city') -%}
         {%- if vcity and vcity.value %}<div>{{ lbf('venue.city', vcity) }}</div>{% endif -%}
+        {#- TODO-346: article link from the offline venue_wiki_links cache. -#}
+        {%- set wiki_f = fields.get('venue.wiki') -%}
+        {%- if wiki_f and wiki_f.value %}<div class="coord"><a href="{{ wiki_f.value.url }}" target="_blank" rel="noopener" data-lb="venue.wiki" title="{{ wiki_f.value.title }}">Wikipedia</a> &#8599;</div>{% endif -%}
         {%- if venue_coords_f and venue_coords_f.value %}
         <div class="coord">{{ '%.4f' | format(venue_coords_f.value.lat) }}, {{ '%.4f' | format(venue_coords_f.value.lng) }}{% if basis == 'city_centre' %} &middot; {{ venue_coords_f.value.label }}{% endif %}</div>
         {%- endif %}

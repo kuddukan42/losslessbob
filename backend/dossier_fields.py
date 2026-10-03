@@ -4349,3 +4349,83 @@ def anchor_bobtalk(
 
     context = [q.text for q in quotes if q.index not in anchored_quotes]
     return BobtalkAnchors(event_id=event_id, anchored=anchored, context=context)
+
+
+# ---------------------------------------------------------------------------
+# TODO-346: venue -> Wikipedia article (read-only; filled by tools/venue_wiki_lookup.py)
+# ---------------------------------------------------------------------------
+
+# Only these links render: a cached row could hold any string, and the dossier is
+# a self-contained attachment that gets posted elsewhere.
+WIKI_URL_RE = re.compile(r"^https://[a-z\-]{2,12}\.wikipedia\.org/wiki/[^\s\"'<>]+$")
+# Wikidata matches below this confidence stay in the cache but never render.
+_WIKI_RENDER_CONFIDENCE = ("high", "medium")
+
+
+class VenueWikiLink(TypedDict):
+    """One renderable venue article link."""
+
+    title: str
+    url: str
+    source: str
+    confidence: str | None
+
+
+def venue_wiki_link(
+    conn: sqlite3.Connection,
+    venue_candidates: Sequence[str],
+    city: str | None,
+    country: str | None = None,
+) -> VenueWikiLink | None:
+    """Return the cached Wikipedia article for a show's venue, if one may render.
+
+    Keys exactly like ``venue_geocoded`` (``_norm_venue`` x ``_norm_city`` with
+    and without country), trying every source's spelling of the venue. The
+    first row found decides: a curator ``override`` row wins outright, and an
+    override with no URL means "no link" -- the lookup stops there rather than
+    falling through to another spelling. A ``wikidata`` row renders only at
+    high/medium confidence. Never touches the network.
+
+    Args:
+        conn: Open connection with ``row_factory = sqlite3.Row``.
+        venue_candidates: Every source's name for the venue, display name first.
+        city: The show's city.
+        country: The show's country, if known.
+
+    Returns:
+        The link, or ``None`` when nothing may render (no table, no row,
+        an explicit no-link override, low confidence, or a malformed URL).
+    """
+    from backend.venue_gazetteer import _norm_city, _norm_venue
+
+    if conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name='venue_wiki_links'"
+    ).fetchone() is None:
+        return None
+    city_keys = list(dict.fromkeys(k for k in (_norm_city(city or "", country),
+                                               _norm_city(city or "")) if k))
+    venue_keys = list(dict.fromkeys(k for k in (_norm_venue(v) for v in venue_candidates) if k))
+    rows = []
+    for vnorm in venue_keys:
+        for cnorm in city_keys:
+            row = conn.execute(
+                "SELECT wiki_title, wiki_url, source, confidence FROM venue_wiki_links "
+                "WHERE venue_norm = ? AND city_norm = ?", (vnorm, cnorm),
+            ).fetchone()
+            if row is not None:
+                rows.append(row)
+    # An override for any spelling outranks a Wikidata match for another.
+    rows.sort(key=lambda r: r["source"] != "override")
+    for row in rows:
+        url = row["wiki_url"]
+        if row["source"] == "override":
+            if not url:
+                return None
+        elif row["confidence"] not in _WIKI_RENDER_CONFIDENCE or not url:
+            continue
+        if not WIKI_URL_RE.match(url):
+            _log.warning("venue_wiki_link: refusing malformed url %r", url)
+            continue
+        return VenueWikiLink(title=row["wiki_title"] or url.rsplit("/", 1)[-1].replace("_", " "),
+                             url=url, source=row["source"], confidence=row["confidence"])
+    return None
