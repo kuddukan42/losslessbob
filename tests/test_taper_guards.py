@@ -130,6 +130,22 @@ def test_e3_single_taper_family_is_not_disputed():
     assert list(rules.RULES["R-T6"].func(conn)) == []
 
 
+def test_travelin_man_records_is_ltf_not_a_second_taper():
+    """TODO-357: "Taper F (Travelin' Man Records)" -- one taper, so no R-T6 conflict."""
+    assert db._normalise_taper("Travelin' Man Records") == "ltf"
+    db_path = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 2424, "Taper F (Travelin' Man Records)", "ltf")
+    _seed_entry(conn, 7867, 'version "b"; Taper: Travelin\' Man Records, Location: 15-20\' ROC',
+                db._normalise_taper("Travelin' Man Records"))
+    _seed_family(conn, "F-LTF", [2424, 7867], conf=0.93)
+
+    taper_attribution.recompute(db_path=db_path)
+
+    assert {_attr(conn, lb)["taper_normalised"] for lb in (2424, 7867)} == {"ltf"}
+    assert list(rules.RULES["R-T6"].func(conn)) == []
+
+
 # ── E4: series codes must be bound ─────────────────────────────────────────────
 
 def test_e4_comparison_series_code_is_not_a_credit():
