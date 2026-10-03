@@ -1,3 +1,16 @@
+[2026-10-03] — Prompt audit of the Claude Code instruction files (commit c6d8ac41)
+Changed: .claude/commands/find-bugs.md: scratch scripts go to tools/_*, bugs go through ledger.py,
+  migrations use the PRAGMA table_info check; dropped the PyQt QThread rule and the manual py_compile step.
+Changed: .claude/skills/verify/SKILL.md: new bugs are opened with `ledger.py bug-open`; dated history removed.
+Changed: .claude/skills/analyze-runs/SKILL.md, .claude/commands/tapematch-batch.md: removed the outdated
+  "subagents can't write .md" claim.
+Changed: .claude/commands/session-close.md: removed the deleted /i18n-update command.
+Changed: .claude/commands/gui-check.md, .claude/CLAUDE.md: dropped dated "sanctioned 2026-07-22"
+  notes; the response-length rule now gives its reason; commit scopes gain tapematch | bookkeeping.
+Changed: .claude/commands/gui-next-i18n.md: the DeepL key check prints only set/unset, and the key
+  is never asked for in chat.
+Changed: .claude/commands/backend-restart.md: removed the py_compile step (the PostToolUse hook covers it).
+
 [2026-10-02] — lb-nc phone layout: LB-first rows and a cursor card (Claude Design handoff 1c + 2b)
 Added: tools/lb_nc.py: below 50 columns (and at least 20 rows) `_layout_compact` replaces the narrow
   single-pane layout. Two header rows (path + free space, then tagged / to-rename / LB / off counts);
