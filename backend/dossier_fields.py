@@ -3258,6 +3258,114 @@ def family_taper_conflicts(conn: sqlite3.Connection) -> dict[str, dict[str, list
     return {f: dict(t) for f, t in by_fam.items() if len(t) >= 2}
 
 
+# First-mic brand spellings that are one maker (Church Audio "CA-14", Countryman "COS-11").
+_MIC_BRAND_ALIASES = {"ca": "church", "cos": "countryman", "coresounds": "coresound",
+                      "sonicstudios": "sonicstudio"}
+_GENERIC_MIC_WORDS = frozenset({"mic", "mics", "microphone", "microphones"})
+
+
+def stated_mic(source_chain: str | None) -> str | None:
+    """The first microphone brand a lineage names, folded to one key per maker.
+
+    Args:
+        source_chain: ``entries.source_chain``.
+
+    Returns:
+        A brand key (``"schoeps"``, ``"akg"``, ``"okm"``), or ``None`` when the
+        lineage names no brand (a bare "mics" says nothing about the rig).
+    """
+    for m in _MIC_RE.finditer(source_chain or ""):
+        key = re.sub(r"[^a-z]", "", m.group(0).lower())
+        if not key or key in _GENERIC_MIC_WORDS:
+            continue
+        key = "okm" if key.startswith("okm") else key
+        return _MIC_BRAND_ALIASES.get(key, key)
+    return None
+
+
+def stated_rigs(conn: sqlite3.Connection, lb_numbers: Iterable[int]) -> dict[str, list[int]]:
+    """``{mic brand: [lb, ...]}`` over *lb_numbers*' stated lineages (unstated LBs omitted).
+
+    Args:
+        conn: Open SQLite connection.
+        lb_numbers: The LBs to read (typically one family's members).
+
+    Returns:
+        Brand -> sorted LBs; empty when ``entries`` has no ``source_chain``.
+    """
+    lbs = sorted(set(lb_numbers))
+    if not lbs or "source_chain" not in {r[1] for r in conn.execute("PRAGMA table_info(entries)")}:
+        return {}
+    rigs: dict[str, list[int]] = defaultdict(list)
+    marks = ",".join("?" * len(lbs))
+    for lb, chain in conn.execute(
+        f"SELECT lb_number, source_chain FROM entries WHERE lb_number IN ({marks})"  # noqa: S608
+        " ORDER BY lb_number", lbs,
+    ):
+        brand = stated_mic(chain)
+        if brand:
+            rigs[brand].append(lb)
+    return dict(rigs)
+
+
+def family_rig_conflicts(conn: sqlite3.Connection) -> dict[str, dict[str, list[int]]]:
+    """TODO-356 / R-F2: recording families whose members state 2+ microphone brands.
+
+    Two brands in one family means either TapeMatch merged two recordings or a
+    lineage is wrong; which one needs a reader. The taper side of the same
+    question is :func:`family_taper_conflicts` (R-T6).
+
+    Args:
+        conn: Open SQLite connection.
+
+    Returns:
+        ``{fam_id: {brand: [lb, ...]}}`` for conflicting families only.
+    """
+    if "source_chain" not in {r[1] for r in conn.execute("PRAGMA table_info(entries)")}:
+        return {}
+    by_fam: dict[str, dict[str, list[int]]] = defaultdict(lambda: defaultdict(list))
+    for fam_id, lb, chain in conn.execute(
+        "SELECT rf.fam_id, rf.lb_number, e.source_chain FROM recording_families rf"
+        " JOIN entries e ON e.lb_number = rf.lb_number ORDER BY rf.fam_id, rf.lb_number"
+    ):
+        brand = stated_mic(chain)
+        if brand:
+            by_fam[fam_id][brand].append(lb)
+    return {f: dict(b) for f, b in by_fam.items() if len(b) >= 2}
+
+
+def members_rig_conflict(conn: sqlite3.Connection, lb_numbers: Iterable[int]) -> list[str]:
+    """Why one family's members can't all be the same rig, or ``[]`` (auto_triage R8).
+
+    Args:
+        conn: Open SQLite connection.
+        lb_numbers: One family's members.
+
+    Returns:
+        Human-readable reasons: ``"mics: neumann, schoeps"`` and/or
+        ``"tapers: ltf, spot"`` (2+ confirmed, non-conflict credits).
+    """
+    lbs = sorted(set(lb_numbers))
+    if len(lbs) < 2:
+        return []
+    out: list[str] = []
+    rigs = stated_rigs(conn, lbs)
+    if len(rigs) >= 2:
+        out.append("mics: " + ", ".join(sorted(rigs)))
+    has_attr = conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name='taper_attributions'"
+    ).fetchone()
+    if has_attr:
+        marks = ",".join("?" * len(lbs))
+        tapers = sorted({r[0] for r in conn.execute(
+            "SELECT DISTINCT taper_normalised FROM taper_attributions"  # noqa: S608
+            f" WHERE lb_number IN ({marks}) AND confidence = 'confirmed' AND conflict = 0", lbs,
+        )})
+        if len(tapers) >= 2:
+            out.append("tapers: " + ", ".join(tapers))
+    return out
+
+
 def _family_conflict_for_lb(conn: sqlite3.Connection, lb_number: int) -> dict[str, list[int]]:
     """``{taper: [lb, ...]}`` for *lb_number*'s family when it's in conflict, else ``{}``."""
     fam = conn.execute(

@@ -7,6 +7,7 @@ Library screen's recording lens can read ``fam`` / ``fam_label`` / ``fam_conf``
 instructions/design_handoff_unified_library/07-tapematch-backend-integration.md
 for the full design.
 """
+import json
 import logging
 import re
 import sqlite3
@@ -14,8 +15,14 @@ import time
 from pathlib import Path
 
 from backend.db import get_connection, init_db
+from backend.dossier_fields import members_rig_conflict
 from backend.paths import TAPEMATCH_RUNS_DIR, TOOLS_DIR
-from backend.tapematch_autoflag import VERDICT_CLEAR, compute_triage
+from backend.tapematch_autoflag import (
+    RIG_RULE,
+    VERDICT_ATTENTION,
+    VERDICT_CLEAR,
+    compute_triage,
+)
 
 log = logging.getLogger(__name__)
 
@@ -432,6 +439,12 @@ def _sync_one_date(
     # likewise independent of it: a date can be auto-'attention' while a human
     # has already read it and judged it fine.
     auto_triage, auto_reasons = triage_by_date.get(concert_date, (VERDICT_CLEAR, "[]"))
+    # TODO-356: a family whose members state different rigs gets a reader, not a split.
+    rig_notes = [n for _tm, lbs in families.items() for n in members_rig_conflict(conn, lbs)]
+    if rig_notes:
+        log.info("tapematch sync: %s stated-rig conflict (%s)", concert_date, "; ".join(rig_notes))
+        auto_triage = VERDICT_ATTENTION
+        auto_reasons = json.dumps(sorted(set(json.loads(auto_reasons)) | {RIG_RULE}))
 
     fresh_fam_ids: set[str] = set()
     fresh_lb_numbers: set[int] = set()

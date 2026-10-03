@@ -1,3 +1,17 @@
+[2026-10-03] — TapeMatch: stated-rig conflicts flag a family for review (TODO-356, closed)
+Added: backend/qc/rules.py: R-F2 (warn, entity `family`) fires when a family's members state 2+
+  microphone brands. backend/qc/review.py adds member_rigs (each member's source_chain + the brand
+  read from it) to the family context, and backend/qc_review.html renders R-F2 like R-F1.
+Added: backend/tapematch_sync.py + tapematch_autoflag.RIG_RULE: at sync, a multi-member family with
+  2+ mic brands or 2+ confirmed tapers sets auto_triage 'attention' + `R8_stated_rig`, so the date sorts
+  first in /tapematch-batch. It is kept out of the calibration RULES (it reads the app DB, not
+  observations.db).
+Changed: backend/dossier_fields.py now owns stated_mic / stated_rigs / family_rig_conflicts /
+  members_rig_conflict; concert_ranker/picks.py's _rig_conflict_lbs uses them, with picks behaviour
+  unchanged.
+Added: tests/test_rig_conflicts.py (7). Nothing is split or re-ranked: tj chose "flag for review".
+Opened: TODO-357 ('travelin man records' label confirmed as a taper on 17 LBs, noise behind R-T6).
+
 [2026-10-03] — Dossier venue card: Wikipedia link (TODO-346, code complete; cache not yet filled)
 Added: tools/venue_wiki_lookup.py: fills venue_wiki_links from Wikidata. Each venue_geocoded venue
   gets one SPARQL entity search and keeps items that have an English Wikipedia article, graded by name

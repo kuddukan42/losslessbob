@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-356: TapeMatch: weigh stated rigs when a family's members name different mics or tapers
+Priority: Medium
+Status: Done
+Added: 2026-10-02
+Closed: 2026-10-03
+Description: tj's note on silver-review decision B (2026-10-01): 'if there are different stated rigs this needs to be considered by tapematch ranking????'. Today only the pick score reacts (concert_ranker/picks._rig_conflict_lbs drops the best/inferior-transfer terms for a family naming 2+ mic brands or 2+ confirmed tapers; 466 show_picks rows in the 2026-10-02 dry run). TapeMatch itself still merges and ranks such members as one tape (2013-11-16 Family A = Core Sound / OKM II / SP-CMC-10 / Schoeps; 2002-04-28 = schubert Neumann + zimmy21 AKG). Decide whether a stated-rig disagreement should (a) flag the family for review / feed auto_triage, (b) block the merge, or (c) scope rank_in_family to same-rig members. Related: TODO-234 family-split leads, R-T6.
+tj chose (a) on 2026-10-03: flag for review, never split or re-rank. A family whose members state 2+ mic brands raises QC rule R-F2 (family-level warn, context panel lists each member's lineage and the brand read from it). At sync, any multi-member family with 2+ mic brands or 2+ confirmed tapers adds auto_triage R8_stated_rig, so the date sorts to the front of /tapematch-batch. Measured beforehand: 169 of 1,933 multi-member families conflict (60 on mics, 125 on tapers); 136 of them are already weak (conf < 0.5), and in the strong ones the conflicts look like attribution noise (label-as-taper TODO opened). Shared helpers in backend/dossier_fields (stated_mic, stated_rigs, family_rig_conflicts, members_rig_conflict); concert_ranker/picks uses them.
+
 TODO-354: Silver dossier review: tj decisions A–I
 Priority: High
 Status: Done

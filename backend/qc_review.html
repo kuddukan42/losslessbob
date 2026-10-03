@@ -871,7 +871,7 @@
           <div class="body"><pre class="evidence">${esc(JSON.stringify(e, null, 2))}</pre></div>
         </div>`;
     }
-    if (f.rule_id === 'R-F1') {
+    if (f.rule_id === 'R-F1' || f.rule_id === 'R-F2') {
       return `
         <div class="panel"><h3>Family</h3>
           <div class="body"><pre class="evidence">${esc(JSON.stringify(ctx, null, 2))}</pre></div>
