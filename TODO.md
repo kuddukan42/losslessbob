@@ -1,9 +1,3 @@
-TODO-357: Taper attribution: 'travelin man records' (a bootleg label) is a confirmed taper on 17 LBs
-Priority: Medium
-Status: Open
-Added: 2026-10-03
-Description: Found during TODO-356 (2026-10-03): among the 26 TapeMatch families at conf >= 0.7 whose members disagree on stated rig or taper, 7 of the top 15 conflicts are LTF series LBs (2424/7867, 2432/7873, ...) against a 'travelin man records' credit. That is a label, not a taper, so R-T6 reports false conflicts and the credit shows as disputed in the dossier. Add it to the label/non-taper guard (the _KNOWN_TAPER_ALIASES / placeholder handling in backend/taper_attribution.py, TODO-213 territory), recompute, and check whether other '* records' labels are confirmed anywhere.
-
 TODO-355: Refile 1,293 public LBs out of PRIVATE LB + 848 misfiled collection folders
 Priority: Medium
 Status: Open

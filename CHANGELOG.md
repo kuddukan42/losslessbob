@@ -6,6 +6,9 @@ Fixed: backend/db.py: 'travelin man records' / 'travelin man' / 'tmr' now normal
   stated as "CTA = Travelin' Man Records") is left as its own series credit: it conflicts with
   nothing.
 Added: tests/test_taper_guards.py: regression test (one taper, no R-T6).
+Changed: live DB (after a backup): the 24 TMR lineage rows were force re-parsed and attributions
+  recomputed (17 confirmed credits are now ltf), then QC re-ran: R-T6 300 -> 280 open (20 fixed).
+  TODO-357 closed.
 
 [2026-10-03] — TapeMatch: stated-rig conflicts flag a family for review (TODO-356, closed)
 Added: backend/qc/rules.py: R-F2 (warn, entity `family`) fires when a family's members state 2+

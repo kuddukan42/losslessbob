@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-357: Taper attribution: 'travelin man records' (a bootleg label) is a confirmed taper on 17 LBs
+Priority: Medium
+Status: Done
+Added: 2026-10-03
+Closed: 2026-10-03
+Description: Found during TODO-356 (2026-10-03): among the 26 TapeMatch families at conf >= 0.7 whose members disagree on stated rig or taper, 7 of the top 15 conflicts are LTF series LBs (2424/7867, 2432/7873, ...) against a 'travelin man records' credit. That is a label, not a taper, so R-T6 reports false conflicts and the credit shows as disputed in the dossier. Add it to the label/non-taper guard (the _KNOWN_TAPER_ALIASES / placeholder handling in backend/taper_attribution.py, TODO-213 territory), recompute, and check whether other '* records' labels are confirmed anywhere.
+Premise corrected: Travelin' Man Records is LTF's own handle ('Taper F (Travelin' Man Records)'), not a bootleg label. Its aliases now normalise to ltf (84e0d4e7). Live data 2026-10-03, after a backup: the 24 TMR lineage rows were force re-parsed (20 now read ltf; LB-1312, a mastering credit, and LB-1763/8622, bare unbound mentions, dropped their non-confirmed credit), attributions were recomputed (all 17 former TMR confirmed credits are now ltf confirmed), and QC re-ran: R-T6 fixed=20 (10 families), 300 -> 280 open.
+
 TODO-356: TapeMatch: weigh stated rigs when a family's members name different mics or tapers
 Priority: Medium
 Status: Done
