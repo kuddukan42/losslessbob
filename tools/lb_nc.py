@@ -605,6 +605,20 @@ def canonical_name(name: str, row: dict) -> str:
     return "" if want == name or "/" in want else want
 
 
+def drive_roots(mounts: list[dict]) -> list[Path]:
+    """The drive each mount lives on (its root's parent), so folders outside it can be reached.
+
+    A mount root like /mnt/DYLAN1/Concerts gives /mnt/DYLAN1. Parents shared by several
+    mounts appear once; a mount sitting at a top-level path (parent "/") gives none.
+    """
+    out: list[Path] = []
+    for m in mounts:
+        parent = Path(m["root_path"]).parent
+        if parent != Path(parent.anchor) and parent not in out and parent.is_dir():
+            out.append(parent)
+    return out
+
+
 VIEWS = {"misfiled": "MISFILED — all mounts", "gone": "GONE — collection paths not on disk"}
 
 
@@ -3297,13 +3311,16 @@ class App:
         self.dialog = Pager("View", pages)
 
     def drive_dialog(self) -> None:
-        """d: point the active pane at a mount, the misfiled view, or any directory."""
+        """d: point the active pane at a mount, its whole drive, the misfiled view, or any dir."""
         pane = self.active
         items: list[tuple[str, Callable[[], None]]] = []
         for m in (self.coll.mounts if self.coll else []):
             state = "" if m.get("online", True) else "  OFFLINE"
             label = f"{m['label']:<10} {m['root_path']}  free {m.get('free', '?')}{state}"
             items.append((label, lambda r=Path(m["root_path"]): self.set_root(pane, r)))
+        for drive in drive_roots(self.coll.mounts if self.coll else []):
+            items.append((f"{drive.name:<10} {drive}  whole drive, outside the mount",
+                          lambda r=drive: self.set_root(pane, r)))
         items.append(("Misfiled folders (all mounts)",
                       lambda: self.set_root(pane, None, "misfiled")))
         items.append(("Gone — collection paths no longer on disk",

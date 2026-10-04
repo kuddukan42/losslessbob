@@ -965,3 +965,27 @@ def test_short_terminal_keeps_the_old_narrow_layout(app):
     lines = app.frame(35, 16)
     assert len(lines) == 16 and all(lb_nc.line_width(ln) == 35 for ln in lines)
     assert not app.compact
+
+
+def test_drive_picker_reaches_folders_outside_the_mount(app, tmp_path):
+    oslo = "1995-04-01 Oslo, Norway (LB-06666)"
+    (tmp_path / "Unsorted" / oslo).mkdir(parents=True)
+    assert lb_nc.drive_roots(app.coll.mounts) == [tmp_path]      # shared parent listed once
+    app.handle("d")
+    labels = [label for label, _ in app.dialog.items]
+    pick = next(i for i, label in enumerate(labels) if "whole drive" in label)
+    app.dialog.items[pick][1]()
+    app.dialog = None
+    assert app.left.root == tmp_path
+    app.set_dir(app.left, tmp_path / "Unsorted")
+    _pick(app.left, oslo)
+    assert app.left.current().status == "stray"
+    app.handle("f7")
+    app.handle("y")
+    app.tick()
+    assert (tmp_path / "DYLAN2" / "1995" / oslo).is_dir()
+    assert app.coll.row_status(app.coll.by_lb[6666])[0] == "canonical"
+
+
+def test_drive_roots_skips_top_level_mounts(tmp_path):
+    assert lb_nc.drive_roots([{"root_path": "/"}, {"root_path": "/srv"}]) == []
