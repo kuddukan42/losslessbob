@@ -1,3 +1,10 @@
+[2026-10-04] — lb-nc: browse folders outside the Concerts/ mounts (TODO-355)
+Added: tools/lb_nc.py: the `d` drive picker also lists each mount's drive root (`drive_roots`,
+  e.g. /mnt/DYLAN1 for /mnt/DYLAN1/Concerts). Panes never browse above their root and the picker
+  only offered mount roots, so library folders elsewhere on the DYLAN drives were unreachable;
+  they can now be browsed, tagged and filed with F7/F6. tests/test_lb_nc.py: 2 tests.
+Changed: docs/wiki/Collection-Pipeline.md: notes the drive picker.
+
 [2026-10-03] — Taper aliases: Travelin' Man Records is LTF (TODO-357)
 Fixed: backend/db.py: 'travelin man records' / 'travelin man' / 'tmr' now normalise to `ltf`
   instead of being a taper of their own. Entries read "Taper F (Travelin' Man Records)", so a
