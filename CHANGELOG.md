@@ -1,3 +1,11 @@
+[2026-10-09] — WTRF board walk: stop once caught up with earlier runs
+Added: backend/wtrf_board.py, tools/wtrf_seed_board.py: `--stop-after-seen N` ends the walk after
+  N consecutive already-attempted topics, so a newest-first run stops where the last one began
+  instead of paging back through the whole board. A lone bumped old topic does not stop it.
+  tests/test_wtrf_board.py: 1 test.
+Changed: tools/wtrf.sh: defaults to catch-up mode (`--stop-after-seen 20`, one page of known
+  topics); `--full` restores the old whole-board walk. --pages/--limit/--resume/--rescan drop it.
+
 [2026-10-04] — lb-nc: browse folders outside the Concerts/ mounts (TODO-355)
 Added: tools/lb_nc.py: the `d` drive picker also lists each mount's drive root (`drive_roots`,
   e.g. /mnt/DYLAN1 for /mnt/DYLAN1/Concerts). Panes never browse above their root and the picker

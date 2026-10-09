@@ -276,6 +276,7 @@ def seed_board(
     start_offset: int = 0,
     pages: int | None = 1,
     limit: int | None = None,
+    stop_after_seen: int | None = None,
     delay: float = DEFAULT_DELAY,
     dry_run: bool = False,
     rescan: bool = False,
@@ -301,6 +302,9 @@ def seed_board(
             back through the board until ``limit`` is filled or the board ends.
         limit: Stop after this many topics have been *attempted* (skips of
             already-seen topics do not count).
+        stop_after_seen: Stop once this many consecutive topics were already
+            attempted — the walk has caught up with the previous run. A
+            single bumped old topic does not end it; the run must be unbroken.
         delay: Seconds between HTTP requests.
         dry_run: Resolve and report, but download nothing and seed nothing.
         rescan: Re-attempt topics that already have a ``wtrf_downloads`` row.
@@ -341,20 +345,25 @@ def seed_board(
     yield {"event": "start", "board_id": board_id, "start_offset": start_offset,
            "pages": pages, "known": len(known)}
 
+    seen_run = 0
     for topic in iter_board_topics(session, board_id, start_offset, pages, delay):
         if limit is not None and counts["attempted"] >= limit:
+            break
+        if stop_after_seen is not None and seen_run >= stop_after_seen:
             break
         event = {"event": "topic", "topic_id": topic.topic_id, "url": topic.url,
                  "title": topic.title, "offset": topic.offset, "lb_number": None,
                  "status": "failed", "reason": "", "error": "",
                  "confidence": "not_found", "folder": "", "overlay": False}
         if topic.url in known:
+            seen_run += 1
             counts["skipped"] += 1
             event.update({"status": "seen",
                           "reason": f"attempted before ({known[topic.url]})"})
             yield event
             continue
 
+        seen_run = 0
         counts["attempted"] += 1
         target = SeedTarget(url=topic.url, lb_number=None, raw=topic.url)
         try:
