@@ -440,3 +440,33 @@ def test_disk_full_topics_are_not_counted_as_attempted(monkeypatch):
                         lambda: {"a": "qbt_added", "b": "disk_full", "c": "failed"})
 
     assert attempted_topics() == {"a": "qbt_added", "c": "failed"}
+
+
+def test_seed_board_stop_after_seen_ends_on_an_unbroken_run(monkeypatch, tmp_path):
+    """A bumped known topic resets nothing; only N known in a row stop the walk."""
+    monkeypatch.setattr("backend.wtrf_board.time.sleep", lambda _s: None)
+    monkeypatch.setattr("backend.wtrf_board.database.get_meta", lambda _k: "16")
+    known = {f"{FORUM_BASE}/index.php?topic={n}.0": "qbt_added"
+             for n in (899, 897, 896, 895, 893)}
+    monkeypatch.setattr("backend.wtrf_board.database.get_wtrf_attempted_topics",
+                        lambda: known)
+    monkeypatch.setattr("backend.wtrf_board._record", lambda *a, **k: 1)
+    monkeypatch.setattr(
+        "backend.wtrf_board.iter_board_topics",
+        lambda *a, **k: iter([
+            BoardTopic(n, f"{FORUM_BASE}/index.php?topic={n}.0", f"t{n}", 0)
+            for n in range(900, 890, -1)
+        ]),
+    )
+    _stub_resolution(monkeypatch, {
+        "lb_number": None, "lb_candidates": [], "lb_source": "",
+        "confidence": "not_found", "needs_content_check": False,
+        "torrent_url": None, "title": "", "error": "no LB number",
+    })
+
+    events = _run(tmp_path, pages=None, stop_after_seen=3)
+    ids = [e["topic_id"] for e in events if e["event"] == "topic"]
+
+    # 899 alone does not stop it; 897-895 is the run of three that does.
+    assert ids == [900, 899, 898, 897, 896, 895]
+    assert events[-1]["attempted"] == 2

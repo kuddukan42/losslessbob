@@ -27,6 +27,10 @@ Examples::
     # however many pages that takes. --limit governs, --pages is ignored.
     tools/wtrf_seed_board.py --start-page 12 --limit 40
 
+    # Catch up on new posts: walk from the newest page until a whole page's
+    # worth of topics in a row were already attempted.
+    tools/wtrf_seed_board.py --limit 5000 --stop-after-seen 20
+
     # Ten pages, however many topics they hold.
     tools/wtrf_seed_board.py --start-page 12 --pages 10
 """
@@ -92,6 +96,10 @@ def _build_parser() -> argparse.ArgumentParser:
                         "Topics skipped as already-seen do not count. Given "
                         "without --pages, the walk keeps going back through "
                         "the board until the limit is filled.")
+    p.add_argument("--stop-after-seen", type=int, default=None, metavar="N",
+                   help="Stop once N topics in a row were already attempted — "
+                        "the walk has caught up with earlier runs. "
+                        f"{TOPICS_PER_PAGE} = one full page of known topics.")
     p.add_argument("--delay", type=float, default=2.0,
                    help="Seconds between HTTP requests (default: 2.0). "
                         "Be polite.")
@@ -260,6 +268,7 @@ def main() -> int:
         start_offset=start_offset,
         pages=pages,
         limit=args.limit,
+        stop_after_seen=args.stop_after_seen,
         delay=args.delay,
         dry_run=args.dry_run,
         rescan=args.rescan,
