@@ -1,3 +1,8 @@
+[2026-10-09] — lb-nc: LB-less folders pinned in the DB show their LB
+Fixed: tools/lb_nc.py: a folder whose name carries no LB number (e.g. private LB-11408) read as
+  "no LB number" though my_collection pins that exact path; annotate() now takes the LB from
+  the pinned row, and the aside gate falls back to it. tests/test_lb_nc.py: 1 test.
+
 [2026-10-09] — WTRF board walk: stop once caught up with earlier runs
 Added: backend/wtrf_board.py, tools/wtrf_seed_board.py: `--stop-after-seen N` ends the walk after
   N consecutive already-attempted topics, so a newest-first run stops where the last one began
