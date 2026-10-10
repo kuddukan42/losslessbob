@@ -275,6 +275,17 @@ def test_public_lb_in_private_area_is_flagged_and_listed(app, tmp_path):
     assert 8001 not in [int(r["lb_number"]) for r in app.coll.misfiled()]
 
 
+def test_public_lb_in_private_area_row_is_coloured(app, tmp_path):
+    app.set_root(app.left, tmp_path / "DYLAN2")
+    app.set_dir(app.left, tmp_path / "DYLAN2" / PRIVATE[0] / PRIVATE[1])
+    public = "1991-02-20 New York, NY (LB-08002)"
+    _pick(app.left, "..")                                       # cursor off the row
+    rows = {lb_nc.plain(line).strip(): line for line in app.frame(120, 30)}
+    row = next(line for text, line in rows.items() if public in text)
+    assert any(role == "public" for role, _ in row)
+    assert all("public" in scheme for scheme in lb_nc.SCHEMES.values())
+
+
 def test_f7_files_public_lb_out_of_private(app, tmp_path):
     app.set_root(app.left, tmp_path / "DYLAN2")
     app.set_dir(app.left, tmp_path / "DYLAN2" / PRIVATE[0] / PRIVATE[1])
