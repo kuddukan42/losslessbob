@@ -119,21 +119,21 @@ SCHEMES: dict[str, dict[str, str]] = {
            "cursor": "46;30", "tag": "44;93;1", "cursor_tag": "46;93;1", "dim": "44;36",
            "key_num": "40;97", "key_label": "46;30", "dialog": "47;30",
            "dialog_hi": "40;97", "danger": "41;97;1", "run": "40;93;1", "ghost": "44;96;4",
-           "odd": "44;95;1"},
+           "odd": "44;95;1", "public": "44;92;1"},
     "amber": {"pane": "40;33", "text": "40;93", "frame": "40;33", "header": "40;93;1",
               "cursor": "43;30", "tag": "40;97;1", "cursor_tag": "43;97;1", "dim": "40;33",
               "key_num": "40;93", "key_label": "43;30", "dialog": "43;30",
               "dialog_hi": "40;93", "danger": "41;97;1", "run": "40;97;1", "ghost": "40;93;4",
-              "odd": "40;91;1"},
+              "odd": "40;91;1", "public": "40;96;1"},
     "green": {"pane": "40;32", "text": "40;92", "frame": "40;32", "header": "40;92;1",
               "cursor": "42;30", "tag": "40;97;1", "cursor_tag": "42;97;1", "dim": "40;32",
               "key_num": "40;92", "key_label": "42;30", "dialog": "42;30",
               "dialog_hi": "40;92", "danger": "41;97;1", "run": "40;97;1", "ghost": "40;92;4",
-              "odd": "40;93;1"},
+              "odd": "40;93;1", "public": "40;96;1"},
     "mono": {"pane": "0", "text": "0", "frame": "0", "header": "1", "cursor": "7",
              "tag": "1", "cursor_tag": "7;1", "dim": "0", "key_num": "1", "key_label": "7",
              "dialog": "7", "dialog_hi": "0", "danger": "7;1", "run": "1", "ghost": "4",
-             "odd": "3"},
+             "odd": "3", "public": "1;3"},
 }
 
 Line = list[tuple[str, str]]          # (role, text) segments
@@ -2001,7 +2001,7 @@ o / Ctrl-O  log pane                      s / Ctrl-S  size the cursor folder
 t           cycle colour scheme
 
 Glyphs: ✓ canonical  → misfiled (⇒ where it belongs)  ? stray, not in collection
-        ↑ public LB still under the private folder (F7 files it to its year)
+        ↑ public LB still under the private folder, own name colour (F7 files it)
         ≠ duplicate — the collection holds this LB at another path  ⊘ blocked
         ✗ gone — the record's folder isn't on disk  ⇄ a copy of a gone record
 Flags:  n -NFT suffix wrong  ! integrity issue   highlighted name: not canonical
@@ -3715,6 +3715,7 @@ class App:
             ghost = i == pane.cursor and not on
             role = ("cursor_tag" if tagged else "cursor") if on else \
                 "tag" if tagged else "ghost" if ghost or entry.kind == "ghost" \
+                else "public" if entry.status == "public" \
                 else "odd" if entry.canon \
                 and self.highlight \
                 else "text" if entry.kind == "dir" else "pane"
