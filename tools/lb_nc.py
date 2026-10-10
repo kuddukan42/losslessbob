@@ -581,7 +581,9 @@ def annotate(entry: Entry, coll: Collection) -> None:
     row = entry.row
     if not row or norm(row.get("disk_path") or "") != norm(entry.path):
         return
-    nft = nft_discrepancy(entry.name, row.get("lb_status"))
+    if entry.lb is None:                   # pinned in the DB, no LB in the folder name
+        entry.lb = int(row["lb_number"])
+    nft =nft_discrepancy(entry.name, row.get("lb_status"))
     entry.nft = nft if nft in ("missing", "stale") else ""
     entry.canon = canonical_name(entry.name, row)
     health = coll.integrity.get(int(row["lb_number"]))
@@ -1150,7 +1152,7 @@ def aside_job(api: Api, path: Path, dest: Path, journal: Journal | None = None,
 
     def run(emit: Emit) -> None:
         if guarded:
-            gate.check(lb_of(path.name), emit)
+            gate.check(lb_of(path.name) or (row or {}).get("lb_number"), emit)
         _move_path(api, str(path), str(dest))
         emit(f"set aside {path.name} {GLYPHS['dest']} {dest.parent}", False)
         if journal:

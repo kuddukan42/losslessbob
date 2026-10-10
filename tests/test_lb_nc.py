@@ -253,6 +253,20 @@ def test_private_lb_in_private_area_is_canonical(app):
     assert (status, note) == ("canonical", lb_nc.PRIVATE_AREA)
 
 
+def test_lb_less_folder_pinned_in_db_takes_the_rows_lb(app, tmp_path):
+    folder = tmp_path / "DYLAN1" / "PRIVATE LB" / "1990-01-12 Some Club"
+    folder.mkdir(parents=True)
+    row = {"lb_number": 11408, "folder_name": folder.name, "disk_path": str(folder),
+           "lb_status": "private"}
+    app.coll.rows.append(row)
+    app.coll.by_path[lb_nc.norm(folder)] = row
+    app.coll.by_lb[11408] = row
+    entry = app.entry_at(folder)
+    assert entry.lb == 11408
+    assert entry.row is row
+    assert entry.status == "canonical"
+
+
 def test_public_lb_in_private_area_is_flagged_and_listed(app, tmp_path):
     status, note = app.coll.row_status(app.coll.by_lb[8002])
     assert status == "public"
