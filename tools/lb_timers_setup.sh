@@ -10,6 +10,7 @@
 # The secrets are edited in $XDG_RUNTIME_DIR (tmpfs, 0700) and shredded after
 # encryption. Seeded from data/credentials.env when that file exists. Jobs log
 # to the user journal: journalctl --user -u lb-wtrf -u lb-tuit
+# Full instructions + reference: tools/SCHEDULED_JOBS.md
 set -euo pipefail
 
 REPO="$(cd "$(dirname "$0")/.." && pwd)"

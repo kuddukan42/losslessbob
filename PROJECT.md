@@ -290,6 +290,8 @@ losslessbob/
 │   ├── parse_lineage.py      # CLI wrapper: backend.taper_attribution / entry_lineage batch parse (see backend/db.py extract_lb_references)
 │   ├── wtrf_fetch_missing.py # CLI: batch WTRF torrent fetch for missing items (wraps /api/wtrf/fetch_torrent logic)
 │   ├── tuit.sh               # wrapper: tuit_sync.py --pages 2 --fetch-torrents --seed --overlay
+│   ├── lb_timers_setup.sh    # installs lb-wtrf/lb-tuit systemd user timers + encrypted credential (see tools/SCHEDULED_JOBS.md)
+│   ├── SCHEDULED_JOBS.md     # how wtrf.sh/tuit.sh run unattended: timers, systemd-creds, setup, ops
 │   ├── wtrf.sh               # wrapper: wtrf_seed_board.py --delay 10; --limit 5000 unless --pages/--limit given (walks to the board's last page)
 │   ├── wtrf_seed_board.py    # CLI: crawl the WTRF board and seed what is held (--start-page/--pages walk back in time, --limit, --rescan, --include-missing, --dry-run)
 │   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314); --sync-tours / --sync-venues fill tuit_shows + tuit_venues; --sync-songs fills tuit_songs + tuit_song_performances
