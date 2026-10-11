@@ -1,3 +1,10 @@
+[2026-10-11] — WTRF/TUIT jobs: systemd user timers with an encrypted credential
+Added: tools/lb_timers_setup.sh: installs lb-wtrf / lb-tuit user timers (12:46, 01:30) whose
+  logins load from a systemd-creds --user credential (TPM2 + host key) via LB_CREDENTIALS_FILE.
+  Replaces the wtrf.sh crontab line, which failed every run: cron has no D-Bus, so the keyring
+  was unreachable and data/credentials.env held no WTRF login. Dry run by default; --apply
+  edits secrets on tmpfs and shreds them; --test dry-runs both jobs through the credential.
+
 [2026-10-09] — lb-nc: LB-less pinned folders show their LB; public-in-private rows coloured
 Fixed: tools/lb_nc.py: a folder whose name carries no LB number (e.g. private LB-11408) read as
   "no LB number" though my_collection pins that exact path; annotate() now takes the LB from
