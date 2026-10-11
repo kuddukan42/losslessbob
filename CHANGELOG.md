@@ -4,6 +4,7 @@ Added: tools/lb_timers_setup.sh: installs lb-wtrf / lb-tuit user timers (12:46, 
   Replaces the wtrf.sh crontab line, which failed every run: cron has no D-Bus, so the keyring
   was unreachable and data/credentials.env held no WTRF login. Dry run by default; --apply
   edits secrets on tmpfs and shreds them; --test dry-runs both jobs through the credential.
+  tools/SCHEDULED_JOBS.md: setup, operation and security reference for the timers.
 
 [2026-10-09] — lb-nc: LB-less pinned folders show their LB; public-in-private rows coloured
 Fixed: tools/lb_nc.py: a folder whose name carries no LB number (e.g. private LB-11408) read as
