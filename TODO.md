@@ -4,12 +4,6 @@ Status: Open
 Added: 2026-09-27
 Description: Live check 2026-09-27 (lb_nc Collection.load, private-area rule: a private LB anywhere under a "PRIVATE LB" folder is canonical): 16,635 rows — 14,489 canonical, 1,293 public LBs still under /mnt/DYLAN2/PRIVATE LB (went public since filing), 848 misfiled, 5 blocked (no date). Most of the 848 sit on /mnt/DYLAN1 or /mnt/DYLAN2 outside the Concerts/ mount roots. Work them in tools/lb-nc: F8 lists both kinds, f cycles to public-only, + tags, F7 files each to Concerts/<year> (the space check says whether a batch crosses drives). Check first whether the paths still exist (src_missing means a stale DB path, not a misfiled folder). 2026-09-27 read-only live run: only 7 records are gone; the 1,292 public-in-private all have public LB pages (lb_status tracks has_webpage) — 418 have a recorded private→public flip, 873 predate the May status history. BLOCKER: DYLAN1 has 6 GB free and the current routes need ~670 GB more on it (DYLAN3 needs 309 GB, has 176 GB). Run lb-nc w first: it suggests DYLAN2 1958–1987 / DYLAN1 1988–2023 / DYLAN3 2024–2026 (10 routes change, 1.4T moved, ≥2% free each) with a refile order that fits. Total slack is only 781 GB (3.5%) — a new drive is due.
 
-TODO-349: show_picks fragment rule demotes a partial tracklist below an equal-length source with no tracklist
-Priority: Low
-Status: Open
-Added: 2026-09-17
-Description: TODO-344 applies dossier_fields.is_fragment verbatim: a tracklist-basis source under FRAGMENT_THRESHOLD is a fragment, a source with no tracklist and a runtime near the median is not. Two 4-minute sources on 1964-05-14 therefore swap rank-1 (LB-01254 1/3 songs -> LB-03015 no tracklist). Decide whether picks should demote a tracklist fragment only when a non-fragment with materially longer runtime exists. Review .debug/todo344_rank1_diff.md first.
-
 TODO-346: Dossier: venue reference link (e.g. Wikipedia) on the venue card
 Priority: Low
 Status: Open
