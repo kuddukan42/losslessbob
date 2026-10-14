@@ -405,8 +405,8 @@ GOLDEN_FIXTURE = GOLDEN_DIR / "fixture.jsonl.gz"
 _GOLDEN_FULL_TABLES = (
     "olof_pages", "olof_songs", "olof_chronicle", "song_performances", "song_canonical",
     "setlistfm_shows", "setlistfm_setlist", "dylan_performances", "venue_geocoded",
-    "release_classifications", "curated_lists", "user_taper_aliases", "user_taper_flags",
-    "corrections",
+    "venue_wiki_links", "release_classifications", "curated_lists", "user_taper_aliases",
+    "user_taper_flags", "corrections",
 )
 # Cut to the golden dates' LB numbers. lb_master is not read by the dossier, but a
 # non-empty table stops init_db's background migrate_lb_master backfill, which
