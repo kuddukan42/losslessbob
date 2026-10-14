@@ -2596,13 +2596,9 @@ export function ScreenPipeline(): React.JSX.Element {
     e.preventDefault()
     setDragOver(false)
     const paths: string[] = []
-    for (let i = 0; i < e.dataTransfer.items.length; i++) {
-      const item = e.dataTransfer.items[i]
-      if (item.kind === 'file') {
-        const file = item.getAsFile()
-        const ef = file as (File & { path?: string }) | null
-        if (ef?.path) paths.push(ef.path)
-      }
+    for (const file of Array.from(e.dataTransfer.files)) {
+      const p = window.api?.pathForFile(file)
+      if (p) paths.push(p)
     }
     if (paths.length) addFolders(paths)
   }, [addFolders])

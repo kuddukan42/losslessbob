@@ -10,6 +10,7 @@ interface Window {
     platform:        NodeJS.Platform
     pickFolders:     () => Promise<string[]>
     pickDir:         () => Promise<string | null>
+    pathForFile:     (file: File) => string
     pickFile:        (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }) => Promise<string | null>
     openPath:        (path: string) => Promise<string>
     writeClipboard:  (text: string) => Promise<boolean>
