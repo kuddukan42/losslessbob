@@ -40,6 +40,19 @@ def test_process_env_overrides_the_file(creds, tmp_path, monkeypatch):
     assert creds.get_credentials(creds.SERVICE_TUIT) == ("fromenv", "envpw")
 
 
+def test_env_file_is_read_as_utf8(creds, tmp_path):
+    (tmp_path / "credentials.env").write_bytes(
+        "LB_TUIT_USER=bob\nLB_TUIT_PASSWORD=café\n".encode()
+    )
+    assert creds.get_credentials(creds.SERVICE_TUIT) == ("bob", "café")
+
+
+def test_cp1252_env_file_decodes_instead_of_raising(creds, tmp_path):
+    """A legacy-editor \\x92 apostrophe used to raise UnicodeDecodeError (BUG-369)."""
+    (tmp_path / "credentials.env").write_bytes(b"LB_TUIT_USER=bob\nLB_TUIT_PASSWORD=it\x92s\n")
+    assert creds.get_credentials(creds.SERVICE_TUIT) == ("bob", "it’s")
+
+
 def test_missing_file_is_not_an_error(creds):
     assert creds.get_credentials(creds.SERVICE_TUIT) == ("", "")
     assert not creds.credentials_stored(creds.SERVICE_TUIT)

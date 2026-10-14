@@ -2141,11 +2141,11 @@ Backed by `backend/preservation.py` — one job at a time, process-wide. See "Pr
 ### Entry Metadata Scraper
 | Method | Route | Description |
 |--------|-------|-------------|
-| POST | `/api/scrape/start` | Start bulk scrape. Body: `{start_lb?, end_lb?, force?, download_files?, delay_ms?, use_local_pages?}` — omitted options fall back to saved settings. Skips private LBs unless never scraped (no entries row). |
+| POST | `/api/scrape/start` | Start bulk scrape. Body: `{start_lb?, end_lb?, force?, download_files?, delay_ms?, use_local_pages?}` — omitted options fall back to saved settings. Skips private LBs unless never scraped (no entries row). 409 if a scrape is already running. |
 | GET | `/api/scrape/status` | Poll progress: `{running, current_lb, done, total, errors, skipped, last_action, last_source}` |
 | POST | `/api/scrape/stop` | Request stop |
-| POST | `/api/scrape/private_rescrape` | Force re-scrape all Private LBs (from lb_master) to detect newly-published pages. Returns `{ok, total}` |
-| POST | `/api/scrape/download_pages` | Fetch and cache `data/site/detail/LB-XXXXX.html` for a range of LBs without parsing metadata or writing to the DB. Body: `{start_lb?, end_lb?, force?}`. Returns `{ok, total}`. |
+| POST | `/api/scrape/private_rescrape` | Force re-scrape all Private LBs (from lb_master) to detect newly-published pages. Returns `{ok, total}`; 409 if a scrape is already running. |
+| POST | `/api/scrape/download_pages` | Fetch and cache `data/site/detail/LB-XXXXX.html` for a range of LBs without parsing metadata or writing to the DB. Body: `{start_lb?, end_lb?, force?}`. Returns `{ok, total}`; 409 if a scrape is already running. |
 
 ### Bootleg-CD Catalog
 | Method | Route | Description |

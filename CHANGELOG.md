@@ -1,3 +1,17 @@
+[2026-10-14] — /find-bugs pass: ledger orphaned paragraphs, scrape-start race, two small fixes (BUG-366..369)
+Fixed: tools/ledger.py: closing the last open entry left its blank-line-separated paragraphs in
+  the open file (BUG-331's diagnosis was stranded in BUGS.md); suffix is now only trailing blank
+  / `---` lines. BUGS.md cleared. tests/test_ledger_split.py. (BUG-366)
+Fixed: backend/app.py: scrape/download-pages worker start is locked and returns bool —
+  concurrent requests could run two scrape_range()s; /api/scrape/start, /private_rescrape and
+  /download_pages now return 409 when busy (DataFreshnessCard already expected it); flat-file
+  apply reports the real scrape_started; import auto-scrape logs when it is skipped.
+  tests/test_scrape_worker.py. (BUG-367)
+Fixed: gui_next ScreenSpectrograms.tsx: a failed status poll no longer leaves the screen stuck in
+  Generating; gives up after 5 misses in a row. (BUG-368)
+Fixed: backend/credentials.py: env/secret files decode UTF-8 explicitly with a cp1252 fallback; a
+  \x92 byte used to raise UnicodeDecodeError and break credential lookup. (BUG-369)
+
 [2026-10-14] — LB update flow: Apply now scrapes new LBs; Reconcile can't strand them (BUG-365)
 Fixed: backend/db.py: reconcile (single + batch/full) no longer demotes a never-scraped LB (no
   entries row) from public to private — Reconcile before Scrape stranded LB-16731..16738.

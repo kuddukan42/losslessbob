@@ -81,17 +81,27 @@ export function ScreenSpectrograms(): React.JSX.Element {
 
   const startPoll = useCallback(() => {
     stopPoll()
+    let failures = 0
     pollRef.current = setInterval(async () => {
       try {
         const r = await fetch(`${BASE}/api/spectrogram/status`)
         const d = await r.json() as GenerateStatus
+        failures = 0
         setGenStatus(d)
         if (d.status !== 'running') {
           stopPoll()
           setGenerating(false)
           if (d.status === 'done') showToast(`Done — ${d.done} generated, ${d.errors} errors`, d.errors > 0 ? 'info' : 'ok')
         }
-      } catch { stopPoll() }
+      } catch {
+        // A blip (backend restart) shouldn't end the batch view; only give up —
+        // and re-enable Generate — after several misses in a row.
+        if (++failures >= 5) {
+          stopPoll()
+          setGenerating(false)
+          showToast('Lost contact with the backend — status unknown', 'bad')
+        }
+      }
     }, 800)
   }, [stopPoll, showToast])
 

@@ -113,8 +113,9 @@ def _atomic_write(path: Path, text: str) -> None:
 def _split_file(text: str, id_prefix: str) -> tuple[str, list[str], str]:
     """Split a ledger file into a fixed prefix, entry blocks, and a suffix.
 
-    Blocks never contain blank lines internally; entries are separated by a
-    single blank line. ``prefix`` is everything before the first entry (a
+    Entries are separated by a single blank line; a block may contain blank
+    lines internally (a later diagnosis paragraph), since a block runs up to
+    the next entry header. ``prefix`` is everything before the first entry (a
     leading blank line and/or header comments) and ``suffix`` is everything
     after the last entry (a trailing newline and/or a ``---`` footer). The file
     is reconstructed exactly as ``prefix + "\\n\\n".join(blocks) + suffix``.
@@ -142,15 +143,12 @@ def _split_file(text: str, id_prefix: str) -> tuple[str, list[str], str]:
             # "block\n\n"; strip the separating blank line.
             blocks.append(seg.rstrip("\n"))
         else:
-            # Last block owns the file suffix.
-            sep = seg.find("\n\n")
-            if sep != -1:
-                blocks.append(seg[:sep])
-                suffix = seg[sep:]
-            else:
-                body = seg.rstrip("\n")
-                blocks.append(body)
-                suffix = seg[len(body) :]
+            # Last block owns the file suffix: only a trailing run of blank and
+            # ``---`` footer lines. A blank-line-separated body paragraph stays
+            # in the block, so closing the last entry carries it along.
+            body = re.sub(r"(?:\n|\n---[ \t]*)+\Z", "", seg)
+            blocks.append(body)
+            suffix = seg[len(body) :]
     return prefix, blocks, suffix
 
 

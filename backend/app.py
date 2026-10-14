@@ -76,6 +76,7 @@ _backup_lock = threading.Lock()
 _reconcile_lock = threading.Lock()  # prevents concurrent lb_master reconcile runs
 
 _scrape_thread = None
+_scrape_thread_lock = threading.Lock()  # one scrape/download-pages worker at a time
 
 _update_state = {
     "status": "idle",
@@ -1329,7 +1330,14 @@ def create_app() -> Flask:
                     if auto_scrape:
                         new_lbs = result.get("new_lb_numbers", [])
                         delay = int(database.get_meta("scrape_delay_ms") or 1500)
-                        _start_scrape_thread(new_lbs, delay_ms=delay)
+                        if new_lbs and not _start_scrape_thread(new_lbs, delay_ms=delay):
+                            # Not lost: they stay in the scrape_entries backlog and
+                            # "Scrape All Missing" (plan_range) picks them up.
+                            _log.warning(
+                                "db import: auto-scrape of %d new LB(s) skipped — a scrape "
+                                "is already running; run Scrape All Missing afterwards",
+                                len(new_lbs),
+                            )
 
             importer.start_import_async(path, on_complete=on_complete)
             return jsonify({"ok": True, "running": True})
@@ -1473,14 +1481,13 @@ def create_app() -> Flask:
             result = ff.apply_flat_file_release(release_id)
             new_lbs = result.get("new_lb_numbers") or []
             result["scrape_started"] = False
-            if new_lbs and not scraper.get_scrape_status().get("running"):
-                _start_scrape_thread(
+            if new_lbs:
+                result["scrape_started"] = _start_scrape_thread(
                     new_lbs,
                     force=True,
                     delay_ms=int(database.get_meta("scrape_delay_ms") or 1500),
                     download=database.get_meta("scrape_attachments") != "0",
                 )
-                result["scrape_started"] = True
             return jsonify(result)
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
@@ -2825,7 +2832,11 @@ def create_app() -> Flask:
 
             lb_numbers = scraper.plan_range(start_lb, end_lb)
 
-            _start_scrape_thread(lb_numbers, force=force, delay_ms=delay, download=download, use_local_pages=use_local_pages)
+            if not _start_scrape_thread(
+                lb_numbers, force=force, delay_ms=delay,
+                download=download, use_local_pages=use_local_pages,
+            ):
+                return jsonify({"ok": False, "error": "A scrape is already running"}), 409
             return jsonify({"ok": True, "total": len(lb_numbers)})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -2882,7 +2893,8 @@ def create_app() -> Flask:
                 return jsonify({"error": "end_lb must be >= start_lb"}), 400
 
             lb_numbers = list(range(start_lb, end_lb + 1))
-            _start_download_pages_thread(lb_numbers, force=force, delay_ms=delay)
+            if not _start_download_pages_thread(lb_numbers, force=force, delay_ms=delay):
+                return jsonify({"ok": False, "error": "A scrape is already running"}), 409
             return jsonify({"ok": True, "total": len(lb_numbers)})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -2907,10 +2919,11 @@ def create_app() -> Flask:
             delay = int(database.get_meta("scrape_delay_ms") or 1500)
             download = database.get_meta("scrape_attachments") != "0"
             use_local_pages = database.get_meta("use_local_pages") == "1"
-            _start_scrape_thread(
+            if not _start_scrape_thread(
                 lb_numbers, force=True, delay_ms=delay,
                 download=download, use_local_pages=use_local_pages,
-            )
+            ):
+                return jsonify({"ok": False, "error": "A scrape is already running"}), 409
             return jsonify({"ok": True, "total": len(lb_numbers)})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -13198,10 +13211,10 @@ def _start_scrape_thread(
     delay_ms: int = 1500,
     download: bool = True,
     use_local_pages: bool = False,
-) -> None:
+) -> bool:
     """Start a background thread to scrape the given LB numbers, if none is running.
 
-    No-op if a scrape thread is already alive. The thread calls
+    Does nothing if a scrape thread is already alive. The thread calls
     scraper.scrape_range() with the supplied options.
 
     Args:
@@ -13210,11 +13223,10 @@ def _start_scrape_thread(
         delay_ms: Milliseconds to sleep between requests.
         download: Download attachment files when True.
         use_local_pages: Read from data/site/detail/ cache instead of the network.
-    """
-    global _scrape_thread
-    if _scrape_thread and _scrape_thread.is_alive():
-        return
 
+    Returns:
+        True if a thread was started; False if one was already running.
+    """
     def run():
         scraper.scrape_range(
             lb_numbers,
@@ -13224,20 +13236,36 @@ def _start_scrape_thread(
             delay_ms=delay_ms,
         )
 
-    _scrape_thread = threading.Thread(target=run, daemon=True)
-    _scrape_thread.start()
+    return _start_scrape_worker(run)
 
 
-def _start_download_pages_thread(lb_numbers, force=False, delay_ms=1500):
-    global _scrape_thread
-    if _scrape_thread and _scrape_thread.is_alive():
-        return
-
+def _start_download_pages_thread(lb_numbers, force=False, delay_ms=1500) -> bool:
+    """Start a background page-download thread; False if a scrape is already running."""
     def run():
         scraper.download_pages_range(lb_numbers, force=force, delay_ms=delay_ms)
 
-    _scrape_thread = threading.Thread(target=run, daemon=True)
-    _scrape_thread.start()
+    return _start_scrape_worker(run)
+
+
+def _start_scrape_worker(run) -> bool:
+    """Start ``run`` as the single scrape worker thread unless one is alive.
+
+    The check and the start share one lock so two requests cannot both start a
+    scrape_range() — they share the module-level scraper._scrape_state.
+
+    Args:
+        run: Zero-arg thread body.
+
+    Returns:
+        True if the thread was started; False if a worker was already alive.
+    """
+    global _scrape_thread
+    with _scrape_thread_lock:
+        if _scrape_thread and _scrape_thread.is_alive():
+            return False
+        _scrape_thread = threading.Thread(target=run, daemon=True)
+        _scrape_thread.start()
+        return True
 
 
 # ── Collection HTML export column picker (TODO-083) ─────────────────────────

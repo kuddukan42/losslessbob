@@ -2,6 +2,38 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-369: Credentials: env/secret files read with the locale default encoding; a cp1252 byte raised UnicodeDecodeError past the OSError handlers
+Status: Fixed
+File(s): backend/credentials.py:86,backend/credentials.py:127
+Reported: 2026-10-14
+Fixed: 2026-10-14
+Root cause: Path.read_text() with no encoding (cp1252 on Windows); UnicodeDecodeError is not an OSError so it escaped _load_env_file/_read_docker_secret and broke every credential lookup.
+Fix: _read_secret_text decodes UTF-8 explicitly and falls back to cp1252 with a warning. tests/test_credentials_env.py.
+
+BUG-368: Spectrograms: one failed status poll left the screen stuck in Generating with the Generate buttons disabled
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx:94
+Reported: 2026-10-14
+Fixed: 2026-10-14
+Root cause: The poll's catch stopped polling but never reset the generating flag.
+Fix: Transient poll errors are tolerated; after 5 misses in a row polling stops, generating resets and a toast says status is unknown.
+
+BUG-367: Scrape start: two concurrent requests could run two scrapes, and a busy start was reported as started (import auto-scrape dropped new LBs silently)
+Status: Fixed
+File(s): backend/app.py:13215,backend/app.py:1332,backend/app.py:2828
+Reported: 2026-10-14
+Fixed: 2026-10-14
+Root cause: Unlocked check-then-set in _start_scrape_thread/_start_download_pages_thread, with no return value for callers to act on; scrape_range itself has no entry guard.
+Fix: Shared _start_scrape_worker holds _scrape_thread_lock across check+start and returns bool; the three routes return 409 when busy, flat-file apply reports the real scrape_started, import auto-scrape logs a warning (LBs stay in the scrape_entries backlog). tests/test_scrape_worker.py.
+
+BUG-366: ledger: closing the last open entry left its blank-line-separated paragraphs behind in the open file
+Status: Fixed
+File(s): tools/ledger.py:146
+Reported: 2026-10-14
+Fixed: 2026-10-14
+Root cause: _split_file ended the last block at its first blank line (meant to peel off a '---' footer), so later body paragraphs were treated as file suffix and _cut_entry left them in place.
+Fix: The suffix is now only the trailing run of blank and '---' lines; tests/test_ledger_split.py. BUGS.md cleared of the orphan (it was already in BUGS_DONE).
+
 BUG-365: Flat-file release LBs never scraped when Reconcile runs before Scrape
 Status: Fixed
 File(s): backend/db.py,backend/scraper.py,backend/refresh.py,backend/app.py
