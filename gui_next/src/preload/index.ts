@@ -1,4 +1,4 @@
-import { contextBridge, ipcRenderer } from 'electron'
+import { contextBridge, ipcRenderer, webUtils } from 'electron'
 
 const FLASK_PORT = 5174
 
@@ -8,6 +8,8 @@ contextBridge.exposeInMainWorld('api', {
   platform:        process.platform,
   pickFolders:     (): Promise<string[]>      => ipcRenderer.invoke('dialog:pickFolders'),
   pickDir:         (): Promise<string | null> => ipcRenderer.invoke('dialog:pickDir'),
+  // File.path was removed in Electron 32 — drag-and-drop needs this to get a real path.
+  pathForFile:     (file: File): string => webUtils.getPathForFile(file),
   pickFile:        (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }): Promise<string | null> => ipcRenderer.invoke('dialog:pickFile', opts),
   openPath:        (path: string): Promise<string> => ipcRenderer.invoke('shell:openPath', path),
   writeClipboard:  (text: string): Promise<boolean> => ipcRenderer.invoke('clipboard:write', text),
