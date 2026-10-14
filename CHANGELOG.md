@@ -1,7 +1,7 @@
 [2026-10-14] — lb-nc: R tags every folder r would rename
 Added: tools/lb_nc.py: R tags each shown folder in the active pane with a rename r would
   apply (F4 proposal or the row's canonical name, target free); rename_target() now shared
-  by r and R. tests/test_lb_nc.py covers it.
+  by r and R; also in the F9 menu. tests/test_lb_nc.py covers it.
 
 [2026-10-11] — WTRF/TUIT jobs: systemd user timers with an encrypted credential
 Added: tools/lb_timers_setup.sh: installs lb-wtrf / lb-tuit user timers (12:46, 01:30) whose
