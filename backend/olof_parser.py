@@ -114,6 +114,7 @@ import copy
 import hashlib
 import logging
 import re
+import sqlite3
 import sys
 import time
 from dataclasses import asdict, dataclass
@@ -138,8 +139,12 @@ _MONTHS = {
 }
 
 _PARA_TAGS = ["p", "h1", "h2", "h3", "h4", "h5", "h6"]
+# Any whitespace run, NBSP included (Word pads cells with \xa0).
+_NBSP_WS_RE = re.compile(r"[\s\xa0]+")
 
-_DSN_ANCHOR_RE = re.compile(r"^DSN(\d+)$", re.IGNORECASE)
+# "DSB" is Olof's typo for "DSN" on every anchor of the 1991 Second Fastbreak Tour page
+# (DSN11825); matching only DSN dropped that whole tour (26 events, BUG-371).
+_DSN_ANCHOR_RE = re.compile(r"^DS[NB](\d+)$", re.IGNORECASE)
 _WINGDINGS_STYLE_RE = re.compile(r"font-family:\s*Wingdings", re.IGNORECASE)
 # An optional "– Afternoon" / "— Evening" suffix marks a two-show day (1974); date_raw keeps it.
 _DATE_LINE_RE = re.compile(r"^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})(?:\s*[-–—]\s*[A-Za-z][A-Za-z ]*)?$")
@@ -523,18 +528,125 @@ def _locate_events(soup: BeautifulSoup) -> tuple[list, list[tuple[int, int]]]:
     para_elements = soup.find_all(_PARA_TAGS)
     index_by_id = {id(el): i for i, el in enumerate(para_elements)}
     anchors: list[tuple[int, int]] = []
+    orphans: list[int] = []
     for a in soup.find_all("a", attrs={"name": True}):
         m = _DSN_ANCHOR_RE.match(a["name"].strip())
         if not m:
             continue
         container = a.find_parent(_PARA_TAGS)
         if container is None or id(container) not in index_by_id:
-            _log.warning("olof_parser: DSN%s anchor has no paragraph container, skipped",
-                         m.group(1))
+            orphans.append(int(m.group(1)))
             continue
         anchors.append((index_by_id[id(container)], int(m.group(1))))
+    anchors = _relocate_index_anchors(para_elements, anchors, orphans)
     anchors.sort(key=lambda t: t[0])
     return para_elements, anchors
+
+
+def _date_line_follows(para_elements: list, i: int, window: int = 6) -> bool:
+    """True when a full date line ("19 October 2019") opens within *window*
+    non-empty paragraphs after *i*.
+
+    That is the shape of an event header. An index row ("Lincoln, Nebraska /
+    Pinnacle Bank Arena / 20 / Kansas City") never has one, which is how a
+    misplaced anchor is told from a real header that just lacks a number line.
+    """
+    seen = 0
+    for el in para_elements[i + 1:]:
+        text = _NBSP_WS_RE.sub(" ", el.get_text(" ")).strip()
+        if not text:
+            continue
+        if _DATE_LINE_RE.match(text):
+            return True
+        seen += 1
+        if seen >= window:
+            return False
+    return False
+
+
+def _relocate_index_anchors(para_elements: list, anchors: list[tuple[int, int]],
+                            orphans: list[int] | None = None) -> list[tuple[int, int]]:
+    """Move an event anchor Word misplaced onto the event's own header.
+
+    BUG-372: Olof's pages usually open each event with a bare-number paragraph
+    ("40150") carrying the ``DSN40150`` bookmark. On some pages Word left the
+    bookmark elsewhere -- in the tour-index row ("Lincoln, Nebraska / Pinnacle
+    Bank Arena"), on the event's first song line, on a neighbouring event's
+    number paragraph, or outside any paragraph -- and the event came out with
+    no date or venue while its real header was swallowed into the event before.
+
+    An anchor counts as misplaced when its paragraph does not start with its
+    own number and either names another bare number or is not followed by a
+    full date line. It moves to its header: the one paragraph that is exactly
+    its number and is followed by a date line. Without a unique header it stays
+    where it was (the pre-BUG-372 behaviour).
+
+    Args:
+        para_elements: Every paragraph/heading tag in document order.
+        anchors: ``(para_index, event_id)`` pairs from :func:`_locate_events`.
+        orphans: Event ids whose anchor sits in no paragraph at all; placed on
+            their header when one is found, else skipped with a warning.
+
+    Returns:
+        The anchors, with misplaced ones pointing at their event header and at
+        most one anchor per paragraph.
+    """
+    texts = [_NBSP_WS_RE.sub(" ", el.get_text(" ")).strip() for el in para_elements]
+    # Number lines are sometimes split by a stray space ("4 0610", "202 45").
+    squeezed = [_NBSP_WS_RE.sub("", t) for t in texts]
+    bare_number: dict[int, list[int]] = {}
+    for i, text in enumerate(squeezed):
+        if text.isdigit():
+            bare_number.setdefault(int(text), []).append(i)
+
+    def header_for(eid: int) -> int | None:
+        cands = [j for j in bare_number.get(eid, []) if _date_line_follows(para_elements, j)]
+        return cands[0] if len(cands) == 1 else None
+
+    def misplaced(i: int, eid: int) -> bool:
+        if squeezed[i].startswith(str(eid)):
+            return False
+        return squeezed[i].isdigit() or not _date_line_follows(para_elements, i)
+
+    kept = {i for i, eid in anchors if not misplaced(i, eid)}
+    out: list[tuple[int, int]] = []
+    for i, eid in anchors:
+        j = header_for(eid) if misplaced(i, eid) else None
+        if j is not None and j not in kept:
+            _log.info("olof_parser: DSN%d anchor moved from paragraph %d to header %d",
+                      eid, i, j)
+            kept.add(j)
+            i = j
+        out.append((i, eid))
+    for eid in orphans or []:
+        j = header_for(eid)
+        if j is not None and j not in kept:
+            _log.info("olof_parser: DSN%d containerless anchor placed on header %d", eid, j)
+            kept.add(j)
+            out.append((j, eid))
+        else:
+            _log.warning("olof_parser: DSN%d anchor has no paragraph container, skipped", eid)
+
+    # Two anchors on one paragraph would leave an empty block: keep the one the
+    # paragraph names (Olof's number line is authoritative -- the other is a
+    # stray or typo bookmark such as DSN440610), else the last, as before.
+    by_para: dict[int, list[int]] = {}
+    for i, eid in out:
+        by_para.setdefault(i, []).append(eid)
+    result = []
+    for i, eids in by_para.items():
+        named = [e for e in eids if squeezed[i].startswith(str(e))]
+        if not named and not squeezed[i]:
+            # Bookmarks on an empty paragraph just above the number line.
+            nxt = next((t for t in squeezed[i + 1:] if t), "")
+            named = [e for e in eids if nxt.startswith(str(e))]
+        keep = named[0] if len(named) == 1 else eids[-1]
+        for e in eids:
+            if e != keep:
+                _log.warning("olof_parser: DSN%d shares paragraph %d with DSN%d, skipped",
+                             e, i, keep)
+        result.append((i, keep))
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -1565,6 +1677,41 @@ def _pct(numerator: int, denominator: int) -> float:
 # Orchestration
 # ---------------------------------------------------------------------------
 
+def _drop_dateless_shadows(conn: sqlite3.Connection, events: list, songs: list,
+                           filename: str) -> tuple[list, list]:
+    """Drop a dateless event whose id another page already holds with a date.
+
+    BUG-372: a stray bookmark (DSN40120 on the 2021 tour page) parses to an
+    empty event that, upserted later, blanked the real 2019-10-11 Irvine show
+    from the 2019 page. The dated record wins whatever order pages parse in.
+
+    Args:
+        conn: Open connection.
+        events: This page's parsed events.
+        songs: This page's parsed songs.
+        filename: This page's filename.
+
+    Returns:
+        ``(events, songs)`` without the shadowing records.
+    """
+    dateless = [e.event_id for e in events if not e.date_str]
+    if not dateless:
+        return events, songs
+    marks = ",".join("?" * len(dateless))
+    held = {r[0] for r in conn.execute(
+        f"SELECT event_id FROM olof_events WHERE event_id IN ({marks})"
+        " AND COALESCE(date_str, '') <> '' AND page_filename <> ?",
+        (*dateless, filename),
+    )}
+    if not held:
+        return events, songs
+    for eid in sorted(held):
+        _log.warning("olof_parser: %s DSN%d is dateless here but dated on another page, "
+                     "kept the dated one", filename, eid)
+    return ([e for e in events if e.event_id not in held],
+            [s for s in songs if s.event_id not in held])
+
+
 def run_parse(file: str | None = None, db_path: str | None = None,
               pages_dir: Path | None = None) -> dict:
     """Parse local DSN pages into olof_events, upsert, and report coverage.
@@ -1634,6 +1781,7 @@ def run_parse(file: str | None = None, db_path: str | None = None,
             status = "partial"
             pages_partial += 1
 
+        events, songs = _drop_dateless_shadows(conn, events, songs, filename)
         _upsert_events(conn, events)
         _upsert_songs(conn, events, songs)
         _update_page_status(conn, filename, parsed_at, status, len(events))

@@ -1,3 +1,18 @@
+[2026-10-14] — Olof parser: two lost-event bugs (BUG-371, BUG-372); TODO-338/339/333 progress
+Fixed: backend/olof_parser.py: anchors spelled DSB<n> (Olof's typo on the 1991 Second Fastbreak
+  Tour page) are accepted — the whole Jan–Mar 1991 tour was missing (BUG-371). Misplaced Word
+  bookmarks (index rows, song lines, a neighbour's number line, no paragraph) are moved to their
+  bare-number header; a shared-paragraph pair keeps the number its line names ("4 0610" -> 40610,
+  not typo 440610); a dateless stray can no longer overwrite the same id dated on another page
+  (DSN40120 on the 2021 page blanked 2019-10-11) (BUG-372).
+Changed: live olof_events/olof_songs (DB backed up first; reparse gated by olof_reparse_diff):
+  +40 concerts, +676 songs, no dated event lost its date; 7 superseded ids deleted,
+  bobtalk_locations re-pointed; song spine + show_picks recomputed.
+Changed: TODO.md: TODO-338 (1) triaged (56 -> 19 TUIT-only dates, remainder classified);
+  TODO-339 (3) source-type conflicts adjudicated; TODO-333 replay_writeback --apply run
+  (250 dates, 781 verdicts).
+Added: tests/test_olof_parser_fixes.py (+8).
+
 [2026-10-14] — Golden dossier fixture re-cut for C32 review (TODO-342)
 Changed: tools/make_fixture_db.py: --golden copies venue_wiki_links whole (the TODO-346 venue
   card link was always "unavailable" in the fixture). tests/golden/dossier/fixture.jsonl.gz re-cut:

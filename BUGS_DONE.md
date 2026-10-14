@@ -2,6 +2,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-372: olof_parser: misplaced Word bookmarks blank or swallow events (2019 Lincoln/Lowell, 2011 Ahoy/House of Blues, 1993 Dublin...)
+Status: Fixed
+File(s): backend/olof_parser.py
+Reported: 2026-10-14
+Fixed: 2026-10-14
+Root cause: _locate_events trusted each DSN bookmark's paragraph as the event start. Word misplaced ~16 bookmarks (index rows, song lines, neighbour number lines, containerless), so those events parsed with no date/venue and their bodies were swallowed; two same-paragraph bookmarks kept the later one, including Olof's typo ids (DSN440600/10/20 vs 40600/10/20) and mis-numbered ones (33450 for 33500).
+Fix: backend/olof_parser.py: _relocate_index_anchors moves a misplaced anchor (paragraph doesn't start with its number and either names another number or isn't followed by a date line) to its unique bare-number header followed by a date line; containerless anchors placed the same way; a shared paragraph keeps the anchor its number line names (space-squeezed: '4 0610'). Live (DB backed up): full reparse through olof_reparse_diff — +40 concerts, +676 songs, no dated event lost its date; 7 superseded rows deleted (bobtalk_locations re-pointed); song spine + show_picks recomputed. tests/test_olof_parser_fixes.py +6.
+
+BUG-371: olof_parser drops the whole 1991 Second Fastbreak Tour — page anchors are DSB<n>, not DSN<n>
+Status: Fixed
+File(s): backend/olof_parser.py:144
+Reported: 2026-10-14
+Fixed: 2026-10-14
+Root cause: _DSN_ANCHOR_RE required the literal prefix DSN; Olof's DSN11825 page names every anchor DSB<n>, so the page parsed 'ok' with 0 events and the tour was absent from olof_events, olof_songs and song_performances.
+Fix: backend/olof_parser.py: anchor regex accepts DS[NB] (DSB occurs on that page only). Live: page reparsed through olof_reparse_diff (26 events added, 404 songs, no other event touched), song spine rebuilt (73,398 performances). tests/test_olof_parser_fixes.py: test_dsb_typo_anchors_are_located.
+
 BUG-370: venue_geocoded pins venues in the wrong state/city (State Theater Portland ME pinned in Oregon)
 Status: Fixed
 File(s): backend/venue_gazetteer.py

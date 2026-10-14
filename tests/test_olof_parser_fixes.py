@@ -16,6 +16,7 @@ from backend.olof_parser import (
     _clean_para_text,
     _is_guest_header,
     _is_personnel_line,
+    _locate_events,
     _normalize_song_title,
     _parse_event,
     _split_title_credits,
@@ -895,3 +896,85 @@ def test_medley_credits_split_per_part():
     assert _split_title_parts("Love Minus Zero/No Limit") == ("Love Minus Zero/No Limit", "", "")
     assert _split_title_parts("Rainy Day Women / Foo (Hank Snow)") == \
         ("Rainy Day Women / Foo", "Hank Snow", "")
+
+
+def test_dsb_typo_anchors_are_located():
+    # BUG-371: the 1991 Second Fastbreak Tour page names every anchor DSB<n>.
+    soup = BeautifulSoup(
+        '<p><a name="DSN100">x</a></p><p><a name="DSB11830">y</a></p>'
+        '<p><a name="Toppen">z</a></p><p><a name="DSX5">w</a></p>', "lxml")
+    _paras, anchors = _locate_events(soup)
+    assert [eid for _i, eid in anchors] == [100, 11830]
+
+
+def test_index_row_anchor_moves_to_bare_number_header():
+    # BUG-372: Word left DSN40160's bookmark in the tour-index row; the event's
+    # own header is the bare paragraph "40160" with no anchor.
+    soup = BeautifulSoup(
+        '<p><a name="DSN40160"></a>Lincoln, Nebraska</p><p>Pinnacle Bank Arena</p>'
+        + "".join(f"<p>{d}</p><p>City {d}</p><p>Venue {d}</p>" for d in (20, 22, 23))
+        + '<p><a name="DSN40150"></a>40150</p><p>17 October 2019</p>'
+        '<p>40160</p><p>19 October 2019</p>'
+        '<p><a name="DSN40170"></a>40170</p><p>20 October 2019</p>', "lxml")
+    _paras, anchors = _locate_events(soup)
+    assert anchors == [(11, 40150), (13, 40160), (15, 40170)]
+
+
+def test_real_header_without_number_line_keeps_its_anchor():
+    # 26600's header has no number line; a venue-history list later carries a
+    # bare "26600" followed by another show's date. The anchor must stay.
+    soup = BeautifulSoup(
+        '<p><a name="DSN26600"></a>UC Santa Barbara</p><p>21 October 2004</p>'
+        '<p>26600</p><p>7 September 2008</p>', "lxml")
+    _paras, anchors = _locate_events(soup)
+    assert anchors == [(0, 26600)]
+
+
+def test_anchor_left_alone_without_a_unique_header():
+    soup = BeautifulSoup(
+        '<p><a name="DSN5"></a>Index row</p><p>5</p><p>5</p>', "lxml")
+    _paras, anchors = _locate_events(soup)
+    assert anchors == [(0, 5)]
+
+
+def test_containerless_anchor_placed_on_its_header():
+    soup = BeautifulSoup(
+        '<div><a name="DSN40280"></a></div><p><a name="DSN40270"></a>40270</p>'
+        '<p>4 November 2019</p><p>40280</p><p>5 November 2019</p>', "lxml")
+    _paras, anchors = _locate_events(soup)
+    assert anchors == [(0, 40270), (2, 40280)]
+
+
+def test_shared_paragraph_keeps_the_number_it_names():
+    # Olof's number line "4 0610" (stray space) carries DSN440610 (typo) and DSN40610.
+    soup = BeautifulSoup(
+        '<p><a name="DSN440610"></a><a name="DSN40610"></a>4 0610</p>'
+        '<p>3 November 2021</p>', "lxml")
+    _paras, anchors = _locate_events(soup)
+    assert anchors == [(0, 40610)]
+
+
+def test_shared_empty_paragraph_keeps_the_next_number_line():
+    soup = BeautifulSoup(
+        '<p><a name="DSN40600"></a><a name="DSN440600"></a></p><p>40600</p>'
+        '<p>Riverside Theatre</p><p>2 November 2021</p>', "lxml")
+    _paras, anchors = _locate_events(soup)
+    assert anchors == [(0, 40600)]
+
+
+def test_dateless_event_does_not_shadow_a_dated_one(db_path):
+    # BUG-372: a stray DSN40120 bookmark on the 2021 page blanked 2019-10-11.
+    from types import SimpleNamespace as NS
+
+    from backend.olof_parser import _drop_dateless_shadows
+
+    conn = sqlite3.connect(db_path)
+    conn.execute("INSERT INTO olof_events (event_id, source, page_filename, date_str)"
+                 " VALUES (40120, 'dsn', '2019.htm', '2019-10-11')")
+    events = [NS(event_id=40120, date_str=""), NS(event_id=40600, date_str="")]
+    songs = [NS(event_id=40120), NS(event_id=40600)]
+    ev, sg = _drop_dateless_shadows(conn, events, songs, "2021.htm")
+    assert [e.event_id for e in ev] == [40600] and [s.event_id for s in sg] == [40600]
+    # Re-parsing the page that owns it is not filtered.
+    ev, _ = _drop_dateless_shadows(conn, events, songs, "2019.htm")
+    assert len(ev) == 2
