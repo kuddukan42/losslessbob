@@ -1,3 +1,9 @@
+[2026-10-14] — Golden dossier fixture re-cut for C32 review (TODO-342)
+Changed: tools/make_fixture_db.py: --golden copies venue_wiki_links whole (the TODO-346 venue
+  card link was always "unavailable" in the fixture). tests/golden/dossier/fixture.jsonl.gz re-cut:
+  was 9/18 vs live (wiki links + newer TUIT D-11 file metadata), now 18/18; golden HTML
+  re-exported to ~/Documents/projects/losslessbob_dossiers (9 of 20 pages carry a Wikipedia link).
+
 [2026-10-14] — Gazetteer: same-name cities in different states shared one anchor (BUG-370)
 Fixed: backend/venue_gazetteer.py: the city anchor was cached and setlist.fm-matched on city_norm
   alone, so Portland ME took Portland OR's anchor (likewise Columbus, Springfield, Richmond, Oxford
