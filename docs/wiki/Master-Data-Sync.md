@@ -25,7 +25,7 @@ export/import as JSON (import is curator-only, history-logged).
 
 | Channel | What ships | How |
 |---|---|---|
-| Flat-file releases | `checksums` updates from the download page | discover → download → diff → apply (auto-backup, changelog per row, lb_master reconcile); prompting deferrable |
+| Flat-file releases | `checksums` updates from the download page | discover → download → diff → apply (auto-backup, changelog per row, lb_master reconcile, auto-scrape of new LBs); prompting deferrable — order of operations: [Release-Update](Release-Update.md) |
 | Master snapshots | All `MASTER_TABLES` + `MASTER_META_KEYS` | `export_master_db`: VACUUM INTO → drop USER tables → stamp versions → verify → SHA256 + manifest. **Channels**: `public` (default — private-entry metadata blanked, TODO-253) vs `full` (friends only). GitHub release upload **refuses any non-public manifest** |
 | Site-data packages | `data/site/` mirror (core / files parts) | zip + manifest → `sitedata-*` GitHub releases; install verifies SHA256 *before* extraction |
 | Xref ingest (TODO-252) | Mirror `LBF-*-xref-*` filesets → `checksums` | **Reviewed import path**: scan → stage → curator approve/reject; approvals never automatic |
