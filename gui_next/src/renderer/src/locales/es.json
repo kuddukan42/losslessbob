@@ -868,12 +868,12 @@
       "checksums": "Sumas de control",
       "lbEntries": "Entradas LB",
       "lastImport": "Última importación",
-      "importDb": "Importar archivo BD...",
       "importing": "Importar...",
       "checkUpdate": "Comprobar la actualización",
       "checking": "Comprobando…",
       "openDataFolder": "Abrir carpeta de datos",
-      "resetDb": "Reiniciar BD..."
+      "resetDb": "Reiniciar BD...",
+      "importDb": "Importar archivo manualmente…"
     },
     "masterData": {
       "title": "Datos maestros",
@@ -988,7 +988,9 @@
       "applyConfirmTitle": "¿Aplicar la actualización?",
       "applyConfirmBody": "¿Aplicar {{filename}} a tu base de datos?\n\n+{{added}} añadido, ~{{changed}} modificado, -{{removed}} eliminado.\n\nPrimero se realiza automáticamente una copia de seguridad.",
       "applyDone": "Actualización aplicada: se ha añadido +{{added}}, se ha modificado ~{{changed}} y se ha eliminado -{{removed}}.",
-      "desc": "Pequeñas actualizaciones incrementales que mantienen tu base de datos al día entre sincronizaciones principales. No forman parte de la configuración inicial; compruébalas mensualmente."
+      "desc": "Pequeñas actualizaciones incrementales que mantienen tu base de datos al día entre sincronizaciones principales. No forman parte de la configuración inicial; compruébalas mensualmente.",
+      "scrapeStarted": "Extracción de las nuevas páginas LB de {{count}} en segundo plano: actualizaciones de estado cuando finaliza.",
+      "scrapeBusy": "{{count}} nuevos LB no rastreados: se está ejecutando otro rastreo. Ejecuta «Rastrear todo» una vez que haya finalizado."
     },
     "toast": {
       "dataFolderUnavailable": "Ruta de carpeta de datos no disponible",

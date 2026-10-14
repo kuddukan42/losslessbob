@@ -1841,7 +1841,7 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | GET | `/api/flat_file/discover` | Live check for a new flat-file release on the download page. Returns `{available, current_release, last_applied_release, error}`. Inserts a `detected` row in `flat_file_releases` when a new release is found. |
 | POST | `/api/flat_file/download/<id>` | Download the zip for a detected release. Long-running. Returns `{path, release_id}`. |
 | GET | `/api/flat_file/diff/<id>` | Return `{rows_added, rows_changed, rows_removed, new_lb_min, new_lb_max}` without applying. Release must be in `downloaded` status. |
-| POST | `/api/flat_file/apply/<id>` | Apply a downloaded release. Auto-backs up DB first. Updates checksums, writes changelog, reconciles lb_master. Returns diff counts. |
+| POST | `/api/flat_file/apply/<id>` | Apply a downloaded release. Auto-backs up DB first. Updates checksums, writes changelog, reconciles lb_master, then scrapes the release's never-scraped LBs in the background. Returns diff counts + `new_lb_numbers`, `scrape_started`. |
 | POST | `/api/flat_file/defer/<id>` | Defer prompting. Body: `{days: int}` or `{until_next: true}`. |
 | GET | `/api/flat_file/releases` | List all `flat_file_releases` rows, newest first. |
 | GET | `/api/flat_file/changelog/<id>` | Paginated `flat_file_changelog` for a release. Query params: `limit` (default 100), `offset` (default 0). |
@@ -2141,7 +2141,7 @@ Backed by `backend/preservation.py` — one job at a time, process-wide. See "Pr
 ### Entry Metadata Scraper
 | Method | Route | Description |
 |--------|-------|-------------|
-| POST | `/api/scrape/start` | Start bulk scrape. Body: `{lb_numbers, force, download_files, delay_ms}` |
+| POST | `/api/scrape/start` | Start bulk scrape. Body: `{start_lb?, end_lb?, force?, download_files?, delay_ms?, use_local_pages?}` — omitted options fall back to saved settings. Skips private LBs unless never scraped (no entries row). |
 | GET | `/api/scrape/status` | Poll progress: `{running, current_lb, done, total, errors, skipped, last_action, last_source}` |
 | POST | `/api/scrape/stop` | Request stop |
 | POST | `/api/scrape/private_rescrape` | Force re-scrape all Private LBs (from lb_master) to detect newly-published pages. Returns `{ok, total}` |

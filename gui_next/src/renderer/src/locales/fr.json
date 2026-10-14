@@ -868,12 +868,12 @@
       "checksums": "Sommes de contrôle",
       "lbEntries": "Entrées LB",
       "lastImport": "Dernière importation",
-      "importDb": "Importer un fichier DB...",
       "importing": "Importation...",
       "checkUpdate": "Vérifier la mise à jour",
       "checking": "Vérification…",
       "openDataFolder": "Ouvrir le dossier de données",
-      "resetDb": "Réinitialiser la DB..."
+      "resetDb": "Réinitialiser la DB...",
+      "importDb": "Importer un fichier manuellement…"
     },
     "masterData": {
       "title": "Données de base",
@@ -988,7 +988,9 @@
       "applyConfirmTitle": "Appliquer la mise à jour ?",
       "applyConfirmBody": "Appliquer {{filename}} à votre base de données ?\n\n+{{added}} ajouté, ~{{changed}} modifié, -{{removed}} supprimé.\n\nUne sauvegarde est d'abord effectuée automatiquement.",
       "applyDone": "Mise à jour appliquée : +{{added}} ajouté, ~{{changed}} modifié, -{{removed}} supprimé.",
-      "desc": "Petites mises à jour incrémentielles qui maintiennent votre base de données à jour entre les synchronisations principales. Ne font pas partie de la configuration initiale — revenez vérifier chaque mois."
+      "desc": "Petites mises à jour incrémentielles qui maintiennent votre base de données à jour entre les synchronisations principales. Ne font pas partie de la configuration initiale — revenez vérifier chaque mois.",
+      "scrapeStarted": "Extraction en arrière-plan des nouvelles pages LB de {{count}} — mises à jour d'état à la fin de l'opération.",
+      "scrapeBusy": "{{count}} nouveaux LB non traités : un autre traitement est en cours. Lancez « Scrape All » une fois celui-ci terminé."
     },
     "toast": {
       "dataFolderUnavailable": "Le chemin du dossier de données n'est pas disponible",

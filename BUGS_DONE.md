@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-365: Flat-file release LBs never scraped when Reconcile runs before Scrape
+Status: Fixed
+File(s): backend/db.py,backend/scraper.py,backend/refresh.py,backend/app.py
+Reported: 2026-10-14
+Fixed: 2026-10-14
+Root cause: Reconcile treated never-scraped LBs as private and the scrape planner skips private; flat-file Apply had no scrape step; scrape_entries backlog SQL tested a column that defaults to now
+Fix: Apply scrapes its never-scraped LBs; reconcile keeps them public until scraped; plan_range includes private LBs with no entries row; backlog counts checksum LBs with no entries row; Scraper controls honoured. 8 LBs scraped live, now public
+
 BUG-331: tapematch: a 'staircase/splice' lag curve merges sources into one family even when correlation is near-zero and the secondary check finds no evidence
 Status: Fixed
 File(s): tools/tapematch/tapematch/verdict.py:128,tools/tapematch/tapematch/align.py:192

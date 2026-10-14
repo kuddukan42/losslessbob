@@ -170,10 +170,19 @@ STEPS: tuple[RefreshStep, ...] = (
         label="scrape_entries",
         trigger="T1",
         kind="incremental",
-        backlog_sql="SELECT COUNT(*) FROM entries WHERE scraped_at IS NULL",
+        # LBs with checksums that have never been scraped (no entries row of any
+        # status). entries.scraped_at defaults to CURRENT_TIMESTAMP, so the old
+        # `scraped_at IS NULL` predicate was always 0 -- and an LB a flat-file
+        # release just added has no entries row to be NULL in.
+        backlog_sql=(
+            "SELECT COUNT(DISTINCT c.lb_number) FROM checksums c "
+            "WHERE c.lb_number > 0 "
+            "AND NOT EXISTS (SELECT 1 FROM entries e WHERE e.lb_number = c.lb_number) "
+            "AND NOT EXISTS (SELECT 1 FROM lb_missing x WHERE x.lb_number = c.lb_number)"
+        ),
         last_run_sql="SELECT MAX(scraped_at) FROM entries",
         version_key=None,
-        upstream=("db_import",),
+        upstream=("flat_file_apply", "db_import"),
         how_to_run="POST /api/scrape/start",
         cost="very_slow",
         human_gate=False,

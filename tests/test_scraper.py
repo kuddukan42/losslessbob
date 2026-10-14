@@ -394,7 +394,8 @@ class TestPlanRange:
     def test_excludes_private_and_fills_gaps(self):
         db_path, conn, tmp_dir = _make_db()
         try:
-            # Checksums exist for 1, 3, 5 (LB 2 and 4 are gaps). LB 5 is private.
+            # Checksums exist for 1, 3, 5 (LB 2 and 4 are gaps). LB 5 is private
+            # and has been scraped (its entries row says so).
             conn.executemany(
                 "INSERT INTO checksums(checksum, filename, chk_type, lb_number) VALUES (?,?,?,?)",
                 [("aaa", "f1", "md5", 1), ("bbb", "f2", "md5", 3), ("ccc", "f3", "md5", 5)],
@@ -402,6 +403,7 @@ class TestPlanRange:
             conn.execute(
                 "INSERT INTO lb_master(lb_number, lb_status) VALUES (5, 'private')"
             )
+            conn.execute("INSERT INTO entries(lb_number, status) VALUES (5, 'private')")
             conn.commit()
 
             from backend.scraper import plan_range
@@ -417,6 +419,29 @@ class TestPlanRange:
             ).fetchone()
             assert row is not None
             assert row["status"] == "missing"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_includes_never_scraped_private(self):
+        """A 'private' LB with no entries row was never fetched -- plan it.
+
+        Reconcile run before the first scrape used to flip a new flat-file LB to
+        'private', after which every scrape skipped it.
+        """
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.executemany(
+                "INSERT INTO checksums(checksum, filename, chk_type, lb_number) VALUES (?,?,?,?)",
+                [("aaa", "f1", "md5", 1), ("bbb", "f2", "md5", 2)],
+            )
+            conn.executemany(
+                "INSERT INTO lb_master(lb_number, lb_status) VALUES (?, 'private')", [(1,), (2,)]
+            )
+            conn.execute("INSERT INTO entries(lb_number, status) VALUES (1, 'private')")
+            conn.commit()
+
+            from backend.scraper import plan_range
+            assert plan_range(1, 2, db_path=db_path) == [2]
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 

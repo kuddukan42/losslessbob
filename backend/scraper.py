@@ -489,7 +489,8 @@ def plan_range(
     Selects distinct ``checksums.lb_number`` rows in ``[start_lb, end_lb]``
     (or ``start_lb..`` when *end_lb* is omitted), excluding any LB whose
     ``lb_master.lb_status`` is ``'private'`` — private LBs are handled
-    exclusively by the private-rescrape path. It then fills every sequential
+    exclusively by the private-rescrape path, except a private LB with no
+    ``entries`` row, which has never been scraped and is included. It then fills every sequential
     gap in the range so no LB number is left out of the database: the upper
     bound for gap-filling is *end_lb* if given, otherwise the highest known
     checksum LB number ("Scrape All Missing" path). Gap numbers are stubbed
@@ -515,7 +516,10 @@ def plan_range(
             "SELECT DISTINCT c.lb_number FROM checksums c "
             "LEFT JOIN lb_master m ON m.lb_number = c.lb_number "
             "WHERE c.lb_number >= ? "
-            "AND (m.lb_status IS NULL OR m.lb_status != 'private')"
+            "AND (m.lb_status IS NULL OR m.lb_status != 'private' "
+            # A 'private' LB with no entries row was never scraped -- its status
+            # is a guess from checksums alone, so it still needs its first fetch.
+            "OR NOT EXISTS (SELECT 1 FROM entries e WHERE e.lb_number = c.lb_number))"
         )
         params: list = [start_lb]
         if end_lb:

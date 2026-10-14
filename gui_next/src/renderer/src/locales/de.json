@@ -868,12 +868,12 @@
       "checksums": "Prüfsummen",
       "lbEntries": "LB-Einträge",
       "lastImport": "Letzte Einfuhr",
-      "importDb": "DB-Datei importieren...",
       "importing": "Importieren...",
       "checkUpdate": "Auf Aktualisierung prüfen",
       "checking": "Prüfen…",
       "openDataFolder": "Datenordner öffnen",
-      "resetDb": "DB zurücksetzen..."
+      "resetDb": "DB zurücksetzen...",
+      "importDb": "Datei manuell importieren…"
     },
     "masterData": {
       "title": "Stammdaten",
@@ -988,7 +988,9 @@
       "applyConfirmTitle": "Aktualisierung anwenden?",
       "applyConfirmBody": "{{filename}} auf Ihre Datenbank anwenden?\n\n+{{added}} hinzugefügt, ~{{changed}} geändert, -{{removed}} entfernt.\n\nZunächst wird automatisch eine Sicherungskopie erstellt.",
       "applyDone": "Aktualisierung durchgeführt: +{{added}} hinzugefügt, ~{{changed}} geändert, -{{removed}} entfernt.",
-      "desc": "Kleine inkrementelle Updates, die Ihre Datenbank zwischen den Hauptsynchronisierungen auf dem neuesten Stand halten. Nicht Teil der Ersteinrichtung – schauen Sie monatlich wieder vorbei."
+      "desc": "Kleine inkrementelle Updates, die Ihre Datenbank zwischen den Hauptsynchronisierungen auf dem neuesten Stand halten. Nicht Teil der Ersteinrichtung – schauen Sie monatlich wieder vorbei.",
+      "scrapeStarted": "Im Hintergrund werden neue LB-Seiten von {{count}} abgerufen – Statusaktualisierungen bei Abschluss des Vorgangs.",
+      "scrapeBusy": "{{count}} Neue LBs wurden nicht erfasst: Ein weiterer Erfassungsvorgang läuft gerade. Führen Sie „Alle erfassen“ aus, sobald dieser abgeschlossen ist."
     },
     "toast": {
       "dataFolderUnavailable": "Datenordnerpfad nicht verfügbar",

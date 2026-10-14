@@ -868,12 +868,12 @@
       "checksums": "Checksum",
       "lbEntries": "Voci LB",
       "lastImport": "Ultima importazione",
-      "importDb": "Importazione file DB...",
       "importing": "Importazione...",
       "checkUpdate": "Verifica dell'aggiornamento",
       "checking": "Controllo…",
       "openDataFolder": "Aprire la cartella dei dati",
-      "resetDb": "Azzeramento DB..."
+      "resetDb": "Azzeramento DB...",
+      "importDb": "Importa il file manualmente…"
     },
     "masterData": {
       "title": "Dati anagrafici",
@@ -988,7 +988,9 @@
       "applyConfirmTitle": "Applicare l'aggiornamento?",
       "applyConfirmBody": "Applicare {{filename}} al proprio database?\n\n+{{added}} aggiunto, ~{{changed}} modificato, -{{removed}} rimosso.\n\nViene prima eseguito automaticamente un backup.",
       "applyDone": "Aggiornamento applicato: +{{added}} aggiunto, ~{{changed}} modificato, -{{removed}} rimosso.",
-      "desc": "Piccole versioni incrementali che mantengono aggiornato il database tra una sincronizzazione principale e l’altra. Non fanno parte della configurazione iniziale — ricontrolla ogni mese."
+      "desc": "Piccole versioni incrementali che mantengono aggiornato il database tra una sincronizzazione principale e l’altra. Non fanno parte della configurazione iniziale — ricontrolla ogni mese.",
+      "scrapeStarted": "Acquisizione in background delle nuove pagine LB di {{count}} — aggiornamenti di stato al termine dell'operazione.",
+      "scrapeBusy": "{{count}} nuovi LB non acquisiti: è in corso un'altra acquisizione. Eseguire \"Acquisisci tutto\" al termine dell'operazione."
     },
     "toast": {
       "dataFolderUnavailable": "Percorso della cartella dati non disponibile",
@@ -1913,7 +1915,7 @@
         "explanation": "Si tratta di una registrazione unica, quindi costituisce una famiglia a sé stante senza bisogno di ulteriori prove. L’accettazione registra la famiglia senza che sia necessario un giudizio da parte di una coppia di valutatori umani."
       },
       "autoTriage": {
-        "badge": "auto-flag",
+        "badge": "contrassegno automatico",
         "tooltipWithReasons": "valutazione automatica (bassa precisione, non è un verdetto): {{reasons}}",
         "tooltipNoReasons": "Il sistema di triage automatico ha segnalato questa data come meritevole di attenzione",
         "rules": {

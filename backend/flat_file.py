@@ -425,7 +425,8 @@ def apply_flat_file_release(release_id: int, db_path=None) -> dict:
 
     Returns:
         dict with keys: rows_added, rows_changed, rows_removed,
-        new_lb_min, new_lb_max.
+        new_lb_min, new_lb_max, new_lb_numbers (added LBs with no entries row
+        yet, i.e. never scraped).
 
     Raises:
         ValueError: If release not found or not in the expected state.
@@ -497,6 +498,20 @@ def apply_flat_file_release(release_id: int, db_path=None) -> dict:
             _log_rem.append((release_id, cur["lb_number"], "remove", cur["checksum"],
                              cur["filename"], cur.get("chk_type", ""), cur.get("xref", 0)))
             touched_lbs.add(cur["lb_number"])
+
+    # LBs this release adds that have never been scraped (no entries row at all).
+    # The apply route scrapes these straight away so a new release needs no
+    # follow-up Scrape step.
+    added_lbs = sorted({t[1] for t in _chk_add})
+    scraped_lbs: set[int] = set()
+    if added_lbs:
+        ph = ",".join("?" * len(added_lbs))
+        scraped_lbs = {
+            r[0] for r in conn.execute(
+                f"SELECT lb_number FROM entries WHERE lb_number IN ({ph})", added_lbs
+            )
+        }
+    new_lb_numbers = [lb for lb in added_lbs if lb not in scraped_lbs]
 
     rows_added = len(_chk_add)
     rows_changed = len(_chk_upd)
@@ -584,6 +599,7 @@ def apply_flat_file_release(release_id: int, db_path=None) -> dict:
         "rows_removed": rows_removed,
         "new_lb_min": new_lb_min,
         "new_lb_max": new_lb_max,
+        "new_lb_numbers": new_lb_numbers,
     }
 
 

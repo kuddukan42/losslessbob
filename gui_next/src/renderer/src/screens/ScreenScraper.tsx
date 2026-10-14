@@ -436,13 +436,26 @@ function EntryTab({ status, logs, onClearLog, onLog }: {
 }) {
   const [force, setForce] = useState(false)
   const [dlFiles, setDlFiles] = useState(false)
-  const [localPages, setLocalPages] = useState(true)
-  const [delay, setDelay] = useState('500')
+  const [localPages, setLocalPages] = useState(false)
+  const [delay, setDelay] = useState('1500')
   const [startLb, setStartLb] = useState('')
   const [endLb, setEndLb] = useState('')
   const [singleLb, setSingleLb] = useState('')
   const [singleBusy, setSingleBusy] = useState(false)
   const running = status?.running ?? false
+
+  // Seed the controls from the saved scrape settings -- the backend honours
+  // what this screen sends, so hardcoded defaults would override them.
+  useEffect(() => {
+    fetch(`${BASE}/api/db/settings`)
+      .then(r => r.json())
+      .then((s: { scrape_attachments?: string | null; scrape_delay_ms?: string | null; use_local_pages?: string | null }) => {
+        setDlFiles(s.scrape_attachments !== '0')
+        setLocalPages(s.use_local_pages === '1')
+        if (s.scrape_delay_ms) setDelay(s.scrape_delay_ms)
+      })
+      .catch(() => {})
+  }, [])
 
   const post = async (path: string, body: object) => {
     await fetch(`${BASE}${path}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
@@ -468,7 +481,7 @@ function EntryTab({ status, logs, onClearLog, onLog }: {
         <CtrlLabel>Actions</CtrlLabel>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
           <Button variant="primary" size="sm" icon="play" disabled={running}
-            onClick={() => post('/api/scrape/start', { force, download_files: dlFiles, delay_ms: parseInt(delay) })}>
+            onClick={() => post('/api/scrape/start', { force, download_files: dlFiles, use_local_pages: localPages, delay_ms: parseInt(delay) })}>
             Scrape All Missing
           </Button>
           <Button variant="secondary" size="sm" disabled={running}
@@ -488,7 +501,7 @@ function EntryTab({ status, logs, onClearLog, onLog }: {
           <Input placeholder="End LB" value={endLb} onChange={e => setEndLb(e.target.value)} size="sm" width={90} />
         </div>
         <Button variant="secondary" size="sm" style={{ marginTop: 6 }} disabled={running || !startLb || !endLb}
-          onClick={() => post('/api/scrape/start', { start_lb: parseInt(startLb), end_lb: parseInt(endLb), force, download_files: dlFiles, delay_ms: parseInt(delay) })}>
+          onClick={() => post('/api/scrape/start', { start_lb: parseInt(startLb), end_lb: parseInt(endLb), force, download_files: dlFiles, use_local_pages: localPages, delay_ms: parseInt(delay) })}>
           Scrape Range
         </Button>
 
