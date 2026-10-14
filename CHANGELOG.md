@@ -1,3 +1,12 @@
+[2026-10-14] — Private re-scrape, TapeMatch replay synced, golden re-cut (TODO-339/333/335/338)
+Changed: live lb_master (DB backed up first): /api/scrape/private_rescrape over all 1,108 private
+  LBs — 88 flipped to public (stale since the 2026-05-13 private import), 1,020 remain.
+Changed: live recording_families: tapematch_sync after the replay apply — 9,127 -> 9,443 families.
+Changed: tests/golden/dossier/fixture.jsonl.gz re-cut (18/18 vs live after the Olof reparse, the
+  replay and the re-scrape); golden HTML re-exported.
+Changed: TODO.md: TODO-339 (5) resolved (10 private LBs on TUIT, all one uploader); TODO-338
+  olof-only side classified; TODO-335 (2) measured (blocked on an integrity scan).
+
 [2026-10-14] — Olof parser: two lost-event bugs (BUG-371, BUG-372); TODO-338/339/333 progress
 Fixed: backend/olof_parser.py: anchors spelled DSB<n> (Olof's typo on the 1991 Second Fastbreak
   Tour page) are accepted — the whole Jan–Mar 1991 tour was missing (BUG-371). Misplaced Word
