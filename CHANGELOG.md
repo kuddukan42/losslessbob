@@ -1,3 +1,11 @@
+[2026-10-14] — TODO-346 closed (venue Wikipedia cache topped up); TODO-339 date residue adjudicated
+Changed: live venue_wiki_links (DB backed up first): 21 new venues looked up (3 high, 3 medium);
+  curator overrides for State Theatre/Portland -> State Theatre (Portland, Maine) and Coca Cola Roxy
+  Theatre -> Coca-Cola Roxy (Wikidata had matched Cinema 21 / Buckhead Theatre off bad pins).
+Changed: TODO.md: TODO-339 parts (1)-(2) adjudicated — no LB date changes warranted (the 28
+  'refinements' are compilations TUIT files under one date; LB-13920/LB-12610 are TUIT
+  misattributions). TODO_DONE.md: TODO-346 closed. BUGS.md: BUG-370 opened (gazetteer wrong-state pins).
+
 [2026-10-14] — Bookkeeping: close TODO-349 (shipped 2026-09-22 in 62f3c397, never closed)
 Changed: TODO.md / TODO_DONE.md: TODO-349 closed; live show_picks verified (1964-05-14 rank-1 is
   LB-01254 again).
