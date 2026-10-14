@@ -1,3 +1,7 @@
+[2026-10-14] — Pipeline drag-and-drop from Nemo fixed (BUG-373)
+Fixed: gui_next/src/preload/index.ts, ScreenPipeline.tsx, env.d.ts: dropped folders never reached
+  the queue — File.path is gone since Electron 32; now resolved via webUtils.getPathForFile.
+
 [2026-10-14] — Private re-scrape, TapeMatch replay synced, golden re-cut (TODO-339/333/335/338)
 Changed: live lb_master (DB backed up first): /api/scrape/private_rescrape over all 1,108 private
   LBs — 88 flipped to public (stale since the 2026-05-13 private import), 1,020 remain.

@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-373: Pipeline drag-and-drop from file manager adds nothing to the queue
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:2595
+Reported: 2026-10-14
+Fixed: 2026-10-14
+Root cause: Drop handler read File.path, which Electron removed in v32 (app is on 42) — every drop yielded zero paths
+Fix: Preload exposes webUtils.getPathForFile as window.api.pathForFile; onDrop uses it
+
 BUG-372: olof_parser: misplaced Word bookmarks blank or swallow events (2019 Lincoln/Lowell, 2011 Ahoy/House of Blues, 1993 Dublin...)
 Status: Fixed
 File(s): backend/olof_parser.py
