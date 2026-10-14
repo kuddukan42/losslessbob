@@ -576,6 +576,16 @@ def test_noncanonical_name_highlighted_and_renamed(app, tmp_path):
     assert (tmp_path / "DYLAN1" / entry.canon).is_dir()
 
 
+def test_tag_renamable_tags_only_what_r_would_rename(app, tmp_path):
+    app.pipeline_results[str(tmp_path / "DYLAN1" / TORONTO)] = {
+        "rename": {"proposed": "1975-11-19 Toronto (LB-04410)"}}
+    app.handle("R")
+    tagged = {e.name for e in app.left.entries if e.key in app.left.tags}
+    assert tagged == {TORONTO, LEGACY, TOKYO}             # Tokyo lacks its -NFT
+    app.handle("r")
+    assert len(app.dialog.jobs) == 3
+
+
 def test_canonical_name_skips_what_it_cannot_judge():
     row = {"lb_number": 5, "date_str": "5/26/66", "location": "", "lb_status": "public"}
     assert lb_nc.canonical_name("anything (LB-00005)", row) == ""
