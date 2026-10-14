@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-346: Dossier: venue reference link (e.g. Wikipedia) on the venue card
+Priority: Low
+Status: Done
+Added: 2026-09-16
+Closed: 2026-10-14
+Description: Investigate adding a venue reference link, possibly Wikipedia (e.g. https://en.wikipedia.org/wiki/Spectrum_(arena) for The Spectrum, Philadelphia). Needs a venue->article mapping source (Wikidata lookup by venue name + city, curated overrides) and a rule for venues with no article.
+Code shipped 2026-10-03 (b6a8f884); cache was filled same day (4,035 rows, 1,380 renderable). 2026-10-14: 21 new venues looked up and applied; medium-band spot check found 2 wrong links (State Theatre Portland ME -> Cinema 21, Coca Cola Roxy -> Buckhead Theatre), both fixed with curator overrides. Root cause is bad gazetteer pins (both Portland State Theatres and Coca Cola Roxy pinned wrong) — gazetteer issue, not the matcher.
+
 TODO-349: show_picks fragment rule demotes a partial tracklist below an equal-length source with no tracklist
 Priority: Low
 Status: Done
