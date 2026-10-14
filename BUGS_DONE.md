@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-370: venue_geocoded pins venues in the wrong state/city (State Theater Portland ME pinned in Oregon)
+Status: Fixed
+File(s): backend/venue_gazetteer.py
+Reported: 2026-10-14
+Fixed: 2026-10-14
+Root cause: venue_gazetteer's city anchor was cached and setlist.fm-matched on city_norm alone (no state), so same-name US cities shared one anchor — 27 cities / 188 rows (Portland ME pinned in Oregon, Oxford MS in England, Richmond VA in Kentucky).
+Fix: backend/venue_gazetteer.py: _region_code() + region-aware _setlistfm_city_coord/_city_anchor cache; reset_region_conflicts() re-seeded the 188 rows and resolve re-pinned them (64 moved >50 km, all now in their stated state). Kleinhans Music Hall manually pinned (its region data says New Jersey). Wiki links for the 188 venues re-looked up. tests/test_venue_gazetteer.py +12 tests.
+
 BUG-369: Credentials: env/secret files read with the locale default encoding; a cp1252 byte raised UnicodeDecodeError past the OSError handlers
 Status: Fixed
 File(s): backend/credentials.py:86,backend/credentials.py:127

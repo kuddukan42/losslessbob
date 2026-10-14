@@ -1542,7 +1542,11 @@ date at it inherits the pin; keyed by normalized `(venue_norm, city_norm)`.
 Index: `idx_venue_geo_source ON venue_geocoded(source)`. Seeded by
 `backend/venue_gazetteer.py:seed_venues()` from concert venues in
 `olof_events`/`setlistfm_shows`/`bobdylan_shows`; resolved by `resolve_venues()`
-(bounded Nominatim → Wikidata P625 → city-anchor fallback). Bite 3 (geocoder
+(bounded Nominatim → Wikidata P625 → city-anchor fallback). The city anchor is
+region-aware (BUG-370): `city_norm` carries no state, so the anchor cache and the
+setlist.fm city match also key on the US state / Canadian province code
+(`_region_code`). `python -m backend.venue_gazetteer reset-region-conflicts [--apply]`
+re-seeds rows in same-name, multi-state city groups for a fresh `resolve`. Bite 3 (geocoder
 `run_batch` inheritance + `place_manual` propagation) is pending.
 
 ### `venue_wiki_links` — Venue → Wikipedia article cache (TODO-346)

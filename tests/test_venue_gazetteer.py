@@ -253,7 +253,7 @@ def _row(**kw):
 class TestCityAnchor:
     def test_prefers_setlistfm_coord(self, monkeypatch):
         monkeypatch.setattr(
-            vg, "_setlistfm_city_coord", lambda conn, cn, country=None: (51.5, -0.1),
+            vg, "_setlistfm_city_coord", lambda conn, cn, country=None, region=None: (51.5, -0.1),
         )
         called = []
         monkeypatch.setattr(vg, "_geocode_retry", lambda *a, **k: called.append(1) or {})
@@ -264,7 +264,7 @@ class TestCityAnchor:
 
     def test_falls_back_to_city_geocode_and_caches(self, monkeypatch):
         monkeypatch.setattr(
-            vg, "_setlistfm_city_coord", lambda conn, cn, country=None: None,
+            vg, "_setlistfm_city_coord", lambda conn, cn, country=None, region=None: None,
         )
         calls = []
 
@@ -278,12 +278,95 @@ class TestCityAnchor:
         coord, src = vg._city_anchor(None, row, cache)
         assert (coord, src) == ((41.0, -73.0), "city_geocode")
         # Second venue in the same city hits the cache — no second geocode.
-        vg._city_anchor(None, _row(city="Oakland", city_norm="oakland"), cache)
+        vg._city_anchor(None, _row(city="Oakland", region="CA", city_norm="oakland"), cache)
         assert calls == ["Oakland, California"]
+
+    def test_same_city_other_state_is_not_cached_together(self, monkeypatch):
+        # BUG-370: Portland, ME must not reuse Portland, OR's anchor.
+        monkeypatch.setattr(
+            vg, "_setlistfm_city_coord", lambda conn, cn, country=None, region=None: None,
+        )
+        calls = []
+
+        def fake_geo(query, viewbox=None, bounded=False):
+            calls.append(query)
+            lat = 43.66 if "Maine" in query else 45.52
+            return {"lat": lat, "lon": -70.0, "source": "nominatim", "confidence": "high"}
+
+        monkeypatch.setattr(vg, "_geocode_retry", fake_geo)
+        cache = {}
+        ore, _ = vg._city_anchor(None, _row(city="Portland", region="Oregon",
+                                            city_norm="portland"), cache)
+        me, _ = vg._city_anchor(None, _row(city="Portland", region="Maine",
+                                           city_norm="portland"), cache)
+        assert ore[0] == 45.52 and me[0] == 43.66
+        assert calls == ["Portland, Oregon", "Portland, Maine"]
+
+
+class TestRegionCode:
+    @pytest.mark.parametrize("text,code", [
+        ("Maine", "ME"), ("ME", "ME"), ("me", "ME"), ("D. C.", "DC"),
+        ("District Of Columbia", "DC"), ("Québec", "QC"), ("Ontario", "ON"),
+    ])
+    def test_known(self, text, code):
+        assert vg._region_code(text) == code
+
+    @pytest.mark.parametrize("text", ["", None, "The Netherlands", "West Australia"])
+    def test_unknown(self, text):
+        assert vg._region_code(text) is None
+
+
+def test_setlistfm_city_coord_respects_state(tmp_path):
+    c = sqlite3.connect(str(tmp_path / "s.db"))
+    c.execute("CREATE TABLE setlistfm_shows (city TEXT, city_state TEXT, country TEXT,"
+              " city_lat REAL, city_lon REAL)")
+    c.executemany("INSERT INTO setlistfm_shows VALUES (?,?,?,?,?)", [
+        ("Portland", "OR", "United States", 45.52, -122.68),
+        ("Portland", "ME", "United States", 43.66, -70.26),
+    ])
+    assert vg._setlistfm_city_coord(c, "portland", None, "Maine") == (43.66, -70.26)
+    assert vg._setlistfm_city_coord(c, "portland", None, "Oregon") == (45.52, -122.68)
+    assert vg._setlistfm_city_coord(c, "portland", None, "Vermont") is None
+    # No/unrecognised region: old first-match behaviour.
+    assert vg._setlistfm_city_coord(c, "portland") == (45.52, -122.68)
+    assert vg._setlistfm_city_coord(c, "portland", None, "Holland") == (45.52, -122.68)
+
+
+def test_reset_region_conflicts(tmp_path, monkeypatch):
+    _db, c = _make_db(tmp_path, monkeypatch)
+    c.executemany(
+        """INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, region, lat, lon,
+               source, confidence, manual_override) VALUES (?,?,?,?,?,?,?,?,?,?)""",
+        [
+            ("state theater", "portland", "State Theater", "Portland", "Maine",
+             45.4, -122.6, "bounded_venue", "low", 0),
+            ("rose garden", "portland", "Rose Garden", "Portland", "OR",
+             45.5, -122.6, "bounded_venue", "high", 0),
+            ("fixed hall", "portland", "Fixed Hall", "Portland", "Maine",
+             43.6, -70.2, "manual", "high", 1),
+            ("civic", "oakland", "Civic", "Oakland", "California",
+             37.8, -122.2, "bounded_venue", "high", 0),
+            ("arena", "oakland", "Arena", "Oakland", "CA",
+             37.7, -122.2, "bounded_venue", "high", 0),
+        ],
+    )
+    c.commit()
+    dry = vg.reset_region_conflicts()
+    assert dry == {"rows": 2, "cities": ["portland"], "applied": False}
+    assert c.execute("SELECT COUNT(*) FROM venue_geocoded WHERE source='seeded'"
+                     ).fetchone()[0] == 0
+
+    vg.reset_region_conflicts(apply=True)
+    rows = {r["venue_norm"]: r for r in c.execute("SELECT * FROM venue_geocoded")}
+    assert rows["state theater"]["source"] == "seeded"
+    assert rows["state theater"]["lat"] is None
+    assert rows["rose garden"]["source"] == "seeded"
+    assert rows["fixed hall"]["source"] == "manual"  # manual untouched
+    assert rows["civic"]["source"] == "bounded_venue"  # CA == California: no conflict
 
     def test_empty_city_cannot_anchor(self, monkeypatch):
         monkeypatch.setattr(
-            vg, "_setlistfm_city_coord", lambda conn, cn, country=None: None,
+            vg, "_setlistfm_city_coord", lambda conn, cn, country=None, region=None: None,
         )
         monkeypatch.setattr(vg, "_geocode_retry", lambda *a, **k: pytest.fail("no geocode"))
         coord, src = vg._city_anchor(None, _row(city="", city_norm=""), {})

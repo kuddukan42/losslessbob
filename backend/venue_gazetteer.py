@@ -117,6 +117,46 @@ def _norm_city(city: str | None, country: str | None = None) -> str:
     return f"{base}|{country_norm}" if country_norm else base
 
 
+# BUG-370: US states + DC and Canadian provinces, name -> postal code. The city
+# key carries no region, so "portland" is both Portland, ME and Portland, OR;
+# region is what tells them apart. olof_events spells regions out ("Maine"),
+# setlist.fm's city_state is the code ("ME"), and both land in venue_geocoded.
+_REGION_CODES: dict[str, str] = {
+    "alabama": "AL", "alaska": "AK", "arizona": "AZ", "arkansas": "AR", "california": "CA",
+    "colorado": "CO", "connecticut": "CT", "delaware": "DE", "district of columbia": "DC",
+    "d c": "DC", "washington dc": "DC", "washington d c": "DC", "florida": "FL",
+    "georgia": "GA", "hawaii": "HI", "idaho": "ID", "illinois": "IL", "indiana": "IN",
+    "iowa": "IA", "kansas": "KS", "kentucky": "KY", "louisiana": "LA", "maine": "ME",
+    "maryland": "MD", "massachusetts": "MA", "michigan": "MI", "minnesota": "MN",
+    "mississippi": "MS", "missouri": "MO", "montana": "MT", "nebraska": "NE", "nevada": "NV",
+    "new hampshire": "NH", "new jersey": "NJ", "new mexico": "NM", "new york": "NY",
+    "north carolina": "NC", "north dakota": "ND", "ohio": "OH", "oklahoma": "OK",
+    "oregon": "OR", "pennsylvania": "PA", "rhode island": "RI", "south carolina": "SC",
+    "south dakota": "SD", "tennessee": "TN", "texas": "TX", "utah": "UT", "vermont": "VT",
+    "virginia": "VA", "washington": "WA", "west virginia": "WV", "wisconsin": "WI",
+    "wyoming": "WY",
+    "alberta": "AB", "british columbia": "BC", "manitoba": "MB", "new brunswick": "NB",
+    "newfoundland and labrador": "NL", "nova scotia": "NS", "ontario": "ON",
+    "prince edward island": "PE", "quebec": "QC", "québec": "QC", "saskatchewan": "SK",
+}
+_KNOWN_CODES = frozenset(_REGION_CODES.values())
+
+
+def _region_code(region: str | None) -> str | None:
+    """Return the postal code for a US state / Canadian province, else ``None``.
+
+    Accepts the spelled-out name in any case/punctuation ("Maine", "D. C.") or
+    the code itself ("ME"). Anything else (a non-North-American region, a typo)
+    is ``None`` -- callers treat that as "region can't disambiguate".
+    """
+    key = _normalize(region)
+    if not key:
+        return None
+    if key.upper() in _KNOWN_CODES:
+        return key.upper()
+    return _REGION_CODES.get(key)
+
+
 _NUMERIC_VENUE_RE = re.compile(r"^[\d\s]+$")
 
 
@@ -447,7 +487,7 @@ def _geocode_retry(query: str, viewbox: str | None = None, bounded: bool = False
 
 
 def _setlistfm_city_coord(
-    conn, city_norm: str, country: str | None = None,
+    conn, city_norm: str, country: str | None = None, region: str | None = None,
 ) -> tuple[float, float] | None:
     """Return a stored setlist.fm city coordinate for *city_norm*, if any.
 
@@ -456,23 +496,37 @@ def _setlistfm_city_coord(
     a force re-scrape backfills them, so this is best-effort — the ladder falls
     back to a Nominatim city geocode when it returns ``None``.
 
+    BUG-370: when *region* is a US state / Canadian province, a candidate must
+    carry the same ``city_state`` -- otherwise Portland, ME took Portland, OR's
+    coordinate (first match wins) and every Maine venue was searched for in Oregon.
+
     Args:
         conn: SQLite connection.
         city_norm: The gazetteer city key to match (C6: city+country).
         country: The row's country text, re-applied to each candidate city
             string so the comparison uses the same key shape as *city_norm*.
+        region: The row's region text; constrains the match when it maps to a
+            North American state/province code.
     """
     if not _table_exists(conn, "setlistfm_shows"):
         return None
     cols = {r[1] for r in conn.execute("PRAGMA table_info(setlistfm_shows)")}
     if "city_lat" not in cols:
         return None
+    want = _region_code(region)
+    has_state = "city_state" in cols
+    if want and not has_state:
+        return None
+    state_col = "city_state" if has_state else "''"
     for row in conn.execute(
-        "SELECT city, city_lat, city_lon FROM setlistfm_shows "
+        f"SELECT city, city_lat, city_lon, {state_col} FROM setlistfm_shows "
         "WHERE city_lat IS NOT NULL AND city_lon IS NOT NULL"
     ):
-        if _norm_city(row[0], country) == city_norm:
-            return float(row[1]), float(row[2])
+        if _norm_city(row[0], country) != city_norm:
+            continue
+        if want and _region_code(row[3]) != want:
+            continue
+        return float(row[1]), float(row[2])
     return None
 
 
@@ -482,7 +536,8 @@ def _city_anchor(conn, row, cache: dict) -> tuple[tuple[float, float] | None, st
     Anchors the bounded venue search and the city fallback. Prefers a stored
     setlist.fm city coordinate; when absent, geocodes the city text once via
     Nominatim. Cached by ``city_norm`` so each city costs at most one Nominatim
-    call across all its venues.
+    call across all its venues. The cache key includes the region (BUG-370):
+    Portland, ME and Portland, OR share ``city_norm`` but not an anchor.
 
     Returns:
         ``((lat, lon), anchor_source)`` where ``anchor_source`` is
@@ -490,27 +545,28 @@ def _city_anchor(conn, row, cache: dict) -> tuple[tuple[float, float] | None, st
         cannot be anchored (empty city, or the city geocode failed).
     """
     city_norm = row["city_norm"]
-    if city_norm in cache:
-        return cache[city_norm]
+    key = (city_norm, _region_code(row["region"]) or _normalize(row["region"]))
+    if key in cache:
+        return cache[key]
 
-    coord = _setlistfm_city_coord(conn, city_norm, row["country"])
+    coord = _setlistfm_city_coord(conn, city_norm, row["country"], row["region"])
     if coord is not None:
-        cache[city_norm] = (coord, "setlistfm_city")
-        return cache[city_norm]
+        cache[key] = (coord, "setlistfm_city")
+        return cache[key]
 
     city_query = ", ".join(
         p for p in (row["city"], row["region"], row["country"]) if (p or "").strip()
     ).strip()
     if not city_query:
-        cache[city_norm] = (None, "")
-        return cache[city_norm]
+        cache[key] = (None, "")
+        return cache[key]
 
     res = _geocode_retry(city_query)
     if res.get("lat") is not None:
-        cache[city_norm] = ((float(res["lat"]), float(res["lon"])), "city_geocode")
+        cache[key] = ((float(res["lat"]), float(res["lon"])), "city_geocode")
     else:
-        cache[city_norm] = (None, "")
-    return cache[city_norm]
+        cache[key] = (None, "")
+    return cache[key]
 
 
 def _wikidata_venue_coord(venue: str, anchor: tuple[float, float]) -> tuple[float, float] | None:
@@ -594,6 +650,66 @@ def resolve_one(conn, row, cache: dict) -> dict:
             "confidence": "city", "note": f"city-level pin ({anchor_source})"}
 
 
+def region_conflict_rows(conn: sqlite3.Connection) -> list[sqlite3.Row]:
+    """Rows whose pin may have come from a same-named city in another state (BUG-370).
+
+    Before BUG-370 the city anchor was cached and setlist.fm-matched on
+    ``city_norm`` alone, so within a ``city_norm`` that spans two or more
+    North American regions, every row after the first could be anchored in the
+    wrong state. Returns the non-manual, non-seeded rows with a recognised
+    region in every such group.
+
+    Args:
+        conn: Connection with ``row_factory = sqlite3.Row``.
+
+    Returns:
+        ``venue_geocoded`` rows to re-resolve, ordered by city then venue.
+    """
+    by_city: dict[str, list[sqlite3.Row]] = {}
+    for row in conn.execute(
+        "SELECT * FROM venue_geocoded WHERE manual_override = 0 AND source <> 'seeded'"
+        " AND TRIM(COALESCE(region, '')) <> '' ORDER BY city_norm, venue_norm"
+    ):
+        if _region_code(row["region"]):
+            by_city.setdefault(row["city_norm"], []).append(row)
+    out: list[sqlite3.Row] = []
+    for rows in by_city.values():
+        if len({_region_code(r["region"]) for r in rows}) > 1:
+            out.extend(rows)
+    return out
+
+
+def reset_region_conflicts(db_path: str | None = None, apply: bool = False) -> dict:
+    """Send :func:`region_conflict_rows` back to ``seeded`` for a fresh resolve.
+
+    The pin is cleared with the source, so until :func:`resolve_venues` runs
+    the dossier falls back to its city-centre locator instead of showing a
+    possibly wrong-state pin. Manual rows are never touched.
+
+    Args:
+        db_path: Optional DB path override.
+        apply: Write the reset; ``False`` (default) only reports.
+
+    Returns:
+        ``{"rows": n, "cities": [...], "applied": bool}``.
+    """
+    init_db(db_path)
+    conn = get_connection(db_path)
+    rows = region_conflict_rows(conn)
+    if apply and rows:
+        with conn:
+            conn.executemany(
+                "UPDATE venue_geocoded SET source='seeded', lat=NULL, lon=NULL,"
+                " confidence=NULL, note='BUG-370 reset: region-blind anchor'"
+                " WHERE venue_norm=? AND city_norm=? AND manual_override=0",
+                [(r["venue_norm"], r["city_norm"]) for r in rows],
+            )
+    cities = sorted({r["city_norm"] for r in rows})
+    logger.info("BUG-370 region-conflict reset: %d row(s) in %d cities (applied=%s)",
+                len(rows), len(cities), apply)
+    return {"rows": len(rows), "cities": cities, "applied": apply}
+
+
 def resolve_venues(db_path: str | None = None, limit: int | None = None,
                    retry_failed: bool = False) -> dict:
     """Run the resolution ladder over unresolved venues, updating ``venue_geocoded``.
@@ -661,5 +777,7 @@ if __name__ == "__main__":  # pragma: no cover
     if len(sys.argv) > 1 and sys.argv[1] == "resolve":
         lim = int(sys.argv[2]) if len(sys.argv) > 2 else None
         print(resolve_venues(limit=lim))
+    elif len(sys.argv) > 1 and sys.argv[1] == "reset-region-conflicts":
+        print(reset_region_conflicts(apply="--apply" in sys.argv))
     else:
         print(seed_venues())

@@ -1,3 +1,14 @@
+[2026-10-14] — Gazetteer: same-name cities in different states shared one anchor (BUG-370)
+Fixed: backend/venue_gazetteer.py: the city anchor was cached and setlist.fm-matched on city_norm
+  alone, so Portland ME took Portland OR's anchor (likewise Columbus, Springfield, Richmond, Oxford
+  MS -> England...). New _region_code() (US state / CA province -> postal code) keys the anchor
+  cache and constrains the setlist.fm city_state match. New region_conflict_rows() /
+  reset_region_conflicts() (`python -m backend.venue_gazetteer reset-region-conflicts [--apply]`).
+Changed: live venue_geocoded (DB backed up first): 188 rows in 27 cities reset + re-resolved; 64
+  moved >50 km, all now in their stated state. Kleinhans Music Hall manually pinned (region data
+  says New Jersey). venue_wiki_links re-looked up for those 188 venues.
+Added: tests/test_venue_gazetteer.py (+12). PROJECT.md: venue_geocoded region-aware anchor note.
+
 [2026-10-14] — TODO-346 closed (venue Wikipedia cache topped up); TODO-339 date residue adjudicated
 Changed: live venue_wiki_links (DB backed up first): 21 new venues looked up (3 high, 3 medium);
   curator overrides for State Theatre/Portland -> State Theatre (Portland, Maine) and Coca Cola Roxy
