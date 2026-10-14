@@ -1975,6 +1975,7 @@ f           show: all → not in the right spot → public LBs in the private fo
 c           generate checksums (folders with no .ffp/.md5/.st5)
 r           rename to the canonical name (the last F4 proposal, else the collection
             row's date + location + LB tag); non-canonical names are highlighted
+R           tag every shown folder r would rename (then r renames them all)
 h           highlighting of non-canonical names on / off
 p           destination preview on / off: while the left pane is active the right
             pane opens where the cursor folder would land and shows it there,
@@ -2238,6 +2239,7 @@ class App:
             "/": self.start_filter, "f": self.cycle_show, "esc": self.escape,
             "t": self.cycle_scheme,
             "d": self.drive_dialog, "c": self.checksum_dialog, "r": self.rename_dialog,
+            "R": self.tag_renamable,
             "h": self.toggle_highlight, "p": self.toggle_follow,
             "x": self.drop_dialog, "l": self.relink_dialog, "n": self.nft_dialog,
             "i": self.integrity_dialog, "=": self.compare_dialog, "e": self.extras_dialog,
@@ -2842,6 +2844,34 @@ class App:
             "folder; existing checksum files are never overwritten. Then F4 looks",
             "the folder up by them.", *skipped])
 
+    def rename_target(self, e: Entry) -> tuple[str, str]:
+        """The name r would give `e`, and why it is skipped instead ("" when it isn't).
+
+        Args:
+            e: A folder entry.
+
+        Returns:
+            (proposed name, skip reason) — exactly one of the two is non-empty.
+        """
+        result = self.pipeline_results.get(str(e.path))
+        proposed = ((result or {}).get("rename") or {}).get("proposed") or ""
+        if result is None and e.canon:
+            proposed = e.canon                         # the collection row's canonical name
+        if result is None and not proposed:
+            return "", "no pipeline result — F4 it first"
+        if not proposed:
+            return "", "name already correct"
+        if (e.path.parent / proposed).exists():
+            return "", f"{proposed} already exists"
+        return proposed, ""
+
+    def tag_renamable(self) -> None:
+        """R: tag every shown folder r would rename (replaces the current tags)."""
+        pane = self.active
+        pane.tags = {e.key for e in pane.visible()
+                     if e.kind == "dir" and not self.rename_target(e)[1]}
+        self.say(f"{len(pane.tags)} folder(s) to rename tagged")
+
     def rename_dialog(self) -> None:
         """r: apply the pipeline's proposed names to the selected folders."""
         picked = [e for e in self.active.selection() if e.kind == "dir"]
@@ -2850,16 +2880,9 @@ class App:
             return
         jobs, skipped = [], []
         for e in picked:
-            result = self.pipeline_results.get(str(e.path))
-            proposed = ((result or {}).get("rename") or {}).get("proposed")
-            if result is None and e.canon:
-                proposed = e.canon                     # the collection row's canonical name
-            if result is None and not proposed:
-                skipped.append(f"  skip {e.name}: no pipeline result — F4 it first")
-            elif not proposed:
-                skipped.append(f"  skip {e.name}: name already correct")
-            elif (e.path.parent / proposed).exists():
-                skipped.append(f"  skip {e.name}: {proposed} already exists")
+            proposed, why = self.rename_target(e)
+            if why:
+                skipped.append(f"  skip {e.name}: {why}")
             else:
                 jobs.append(rename_job(self.api, e, proposed, self.journal, self.page_gate))
         self.gate("Apply renames", jobs, [
