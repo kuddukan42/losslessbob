@@ -62,6 +62,30 @@ _ENV_FILE_DEFAULT = Path(__file__).resolve().parent.parent / "data" / "credentia
 _env_file_cache: dict[str, str] | None = None
 
 
+def _read_secret_text(path: Path) -> str:
+    """Read a credentials file as UTF-8, falling back to cp1252.
+
+    An explicit encoding keeps Windows from decoding as cp1252 by default, and a
+    file saved by a legacy editor (e.g. a ``\x92`` apostrophe) still loads rather
+    than raising UnicodeDecodeError past callers that only expect OSError.
+
+    Args:
+        path: File to read.
+
+    Returns:
+        The decoded text.
+
+    Raises:
+        OSError: The file cannot be read.
+    """
+    data = path.read_bytes()
+    try:
+        return data.decode("utf-8")
+    except UnicodeDecodeError:
+        logger.warning("%s is not UTF-8 — decoding as cp1252", path)
+        return data.decode("cp1252", errors="replace")
+
+
 def _env_file_path() -> Path:
     """Return the credentials env-file path, honouring LB_CREDENTIALS_FILE."""
     override = os.environ.get("LB_CREDENTIALS_FILE", "").strip()
@@ -83,7 +107,7 @@ def _load_env_file() -> dict[str, str]:
     values: dict[str, str] = {}
     path = _env_file_path()
     try:
-        raw = path.read_text()
+        raw = _read_secret_text(path)
     except OSError:
         _env_file_cache = values
         return values
@@ -124,7 +148,7 @@ def _get_from_env(service: str) -> tuple[str, str]:
 def _read_docker_secret(name: str) -> str:
     """Return the contents of /run/secrets/<name>, or '' if absent."""
     try:
-        return (_SECRETS_DIR / name).read_text().strip()
+        return _read_secret_text(_SECRETS_DIR / name).strip()
     except OSError:
         return ""
 
