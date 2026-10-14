@@ -3388,6 +3388,7 @@ class App:
             ("Drive picker for this pane (d)", self.drive_dialog),
             ("Swap panes (u)", self.swap),
             ("Generate checksums for the selection (c)", self.checksum_dialog),
+            ("Tag every folder eligible for a rename (R)", self.tag_renamable),
             ("Apply the pipeline's proposed renames (r)", self.rename_dialog),
             ("Re-route the selection's years to the other pane's mount", self.reroute_dialog),
             ("Fix the -NFT suffix of the selection (n)", self.nft_dialog),
