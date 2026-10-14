@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-349: show_picks fragment rule demotes a partial tracklist below an equal-length source with no tracklist
+Priority: Low
+Status: Done
+Added: 2026-09-17
+Closed: 2026-10-14
+Description: TODO-344 applies dossier_fields.is_fragment verbatim: a tracklist-basis source under FRAGMENT_THRESHOLD is a fragment, a source with no tracklist and a runtime near the median is not. Two 4-minute sources on 1964-05-14 therefore swap rank-1 (LB-01254 1/3 songs -> LB-03015 no tracklist). Decide whether picks should demote a tracklist fragment only when a non-fragment with materially longer runtime exists. Review .debug/todo344_rank1_diff.md first.
+Done 2026-09-22 in 62f3c397 (never closed): concert_ranker.picks._fragment_lbs reprieves a tracklist-basis fragment unless a non-fragment candidate runs >= TRACKLIST_FRAGMENT_DEMOTION_RATIO (1.5x) its runtime; runtime-basis fragments unchanged. 63/3,939 rank-1 changes (.debug/todo349_rank1_diff.md). Verified 2026-10-14: tests/test_show_picks.py green, live show_picks has LB-01254 rank-1 for 1964-05-14 again.
+
 TODO-357: Taper attribution: 'travelin man records' (a bootleg label) is a confirmed taper on 17 LBs
 Priority: Medium
 Status: Done

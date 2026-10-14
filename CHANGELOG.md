@@ -1,3 +1,7 @@
+[2026-10-14] — Bookkeeping: close TODO-349 (shipped 2026-09-22 in 62f3c397, never closed)
+Changed: TODO.md / TODO_DONE.md: TODO-349 closed; live show_picks verified (1964-05-14 rank-1 is
+  LB-01254 again).
+
 [2026-10-14] — /find-bugs pass: ledger orphaned paragraphs, scrape-start race, two small fixes (BUG-366..369)
 Fixed: tools/ledger.py: closing the last open entry left its blank-line-separated paragraphs in
   the open file (BUG-331's diagnosis was stranded in BUGS.md); suffix is now only trailing blank
