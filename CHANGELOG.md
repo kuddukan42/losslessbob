@@ -9,6 +9,8 @@ Changed: backend/flat_file.py + app.py: apply returns new_lb_numbers and the rou
   use_local_pages from the Scraper screen. ScreenScraper seeds those controls from settings;
   ScreenSetup toasts the scrape; "Import DB file…" relabelled "Import file manually…" (6 locales).
   Live: 8 LBs scraped, now public. tests/test_flat_file_apply.py + plan_range/reconcile tests.
+Added: docs/wiki/Release-Update.md: the release order of operations (Apply → auto-scrape →
+  derived recompute), checks, gotchas; linked from Home + Master-Data-Sync.
 
 [2026-10-14] — lb-nc: R tags every folder r would rename
 Added: tools/lb_nc.py: R tags each shown folder in the active pane with a rename r would

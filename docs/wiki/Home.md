@@ -21,6 +21,7 @@ authoritative source**, this wiki is the readable overview layer on top.
 | [Show-Dossier](Show-Dossier.md) | Dossier assembly, HTML/BBcode exports, channels, ambiguity handling | seeded | 2026-07-22 |
 | [Master-Data-Sync](Master-Data-Sync.md) | lb_master integrity, export channels, flat-file/GitHub distribution, onboarding | seeded | 2026-07-22 |
 | [Collection-Pipeline](Collection-Pipeline.md) | Pipeline steps, hash/state caches, filing + routing, integrity monitor | seeded | 2026-07-22 |
+| [Release-Update](Release-Update.md) | New flat-file release: Apply → auto-scrape → derived recompute; why Reconcile-first broke | seeded | 2026-10-14 |
 | [Pipeline-Refresh](Pipeline-Refresh.md) | Data-freshness planner, chained execution, human review queues | seeded | 2026-08-16 |
 | [Integrations](Integrations.md) | Torrents, qBittorrent, WTRF forum, archive.org, trading, Cloudflare sharing | seeded | 2026-07-22 |
 
