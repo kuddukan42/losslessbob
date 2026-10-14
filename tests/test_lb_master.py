@@ -217,6 +217,42 @@ class TestReconcileLbStatus:
         assert (None, "private") in statuses or ("private", "public") in statuses
 
 
+class TestUnscrapedStaysPublic:
+    """Reconcile must not demote a never-scraped LB (no entries row) to private."""
+
+    def _seed_new_flat_lb(self, conn, db_path, lb: int) -> None:
+        import backend.db as db
+        # A non-empty lb_master makes init_db's background migrate_lb_master a
+        # no-op, so it can't race the seed below and bulk-insert lb as 'private'.
+        conn.execute("INSERT INTO lb_master(lb_number, lb_status) VALUES (1, 'missing')")
+        conn.commit()
+        _seed_checksums(conn, [lb])
+        assert db.reconcile_lb_status(lb, trigger="flat_file_apply", db_path=db_path) == "public"
+
+    def test_single_reconcile_keeps_public(self):
+        import backend.db as db
+        db_path, conn = _make_db()
+        self._seed_new_flat_lb(conn, db_path, 90001)
+        assert db.reconcile_lb_status(90001, db_path=db_path) == "public"
+
+    def test_full_reconcile_keeps_public(self):
+        import backend.db as db
+        db_path, conn = _make_db()
+        self._seed_new_flat_lb(conn, db_path, 90001)
+        db.reconcile_all_lb_master(db_path)
+        row = conn.execute("SELECT lb_status FROM lb_master WHERE lb_number=90001").fetchone()
+        assert row["lb_status"] == "public"
+
+    def test_scraped_private_still_demotes(self):
+        """Once the scrape has written a non-ok entries row, private is real."""
+        import backend.db as db
+        db_path, conn = _make_db()
+        self._seed_new_flat_lb(conn, db_path, 90001)
+        _seed_entries(conn, [(90001, "missing")])
+        db.batch_reconcile_lb_status([90001], db_path=db_path)
+        assert db.reconcile_lb_status(90001, db_path=db_path) == "private"
+
+
 class TestGetLbMasterStats:
     def test_stats_structure(self):
         import backend.db as db

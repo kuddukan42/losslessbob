@@ -861,7 +861,7 @@
       "checksums": "Checksums",
       "lbEntries": "LB entries",
       "lastImport": "Last import",
-      "importDb": "Import DB file…",
+      "importDb": "Import file manually…",
       "importing": "Importing…",
       "checkUpdate": "Check for update",
       "checking": "Checking…",
@@ -981,7 +981,9 @@
       "applying": "Applying…",
       "applyConfirmTitle": "Apply Update?",
       "applyConfirmBody": "Apply {{filename}} to your database?\n\n+{{added}} added, ~{{changed}} changed, -{{removed}} removed.\n\nA backup is taken automatically first.",
-      "applyDone": "Update applied: +{{added}} added, ~{{changed}} changed, -{{removed}} removed."
+      "applyDone": "Update applied: +{{added}} added, ~{{changed}} changed, -{{removed}} removed.",
+      "scrapeStarted": "Scraping {{count}} new LB pages in the background — status updates when it finishes.",
+      "scrapeBusy": "{{count}} new LBs not scraped: another scrape is running. Run Scrape All once it finishes."
     },
     "toast": {
       "dataFolderUnavailable": "Data folder path not available",

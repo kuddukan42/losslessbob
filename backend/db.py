@@ -7534,6 +7534,28 @@ def _compute_lb_status(has_web: bool, has_chk: bool, has_att: bool) -> tuple[str
     return status, needs_review
 
 
+def _keep_unscraped_public(auto_status: str, old_status: str | None, unscraped: bool) -> str:
+    """Stop reconcile demoting a never-scraped LB from 'public' to 'private'.
+
+    'private' means "checksums but no webpage". An LB with no ``entries`` row has
+    not been checked against the site yet, so its missing webpage is unknown, not
+    absent -- flat-file apply marks such LBs 'public' and the first scrape settles
+    them. Without this, Reconcile run before Scrape flipped new LBs to 'private'
+    and the scrape planner then skipped them.
+
+    Args:
+        auto_status: Status computed from live data.
+        old_status: Current lb_master status, or None for a new row.
+        unscraped: True when the LB has no ``entries`` row of any status.
+
+    Returns:
+        The status to store.
+    """
+    if unscraped and auto_status == "private" and old_status == "public":
+        return "public"
+    return auto_status
+
+
 def migrate_lb_master(db_path=None, wait: bool = True) -> int:
     """Backfill lb_master for integers 1..MAX(lb_number) from existing data.
 
@@ -7628,6 +7650,7 @@ def reconcile_lb_status(lb_number: int, trigger: str = "reconcile", db_path=None
     _lb, _trigger = lb_number, trigger
 
     def _run(conn) -> str:
+        unscraped = False
         if conn.execute(
             "SELECT 1 FROM lb_missing WHERE lb_number=?", (_lb,)
         ).fetchone():
@@ -7644,6 +7667,9 @@ def reconcile_lb_status(lb_number: int, trigger: str = "reconcile", db_path=None
                 "SELECT 1 FROM entry_files WHERE lb_number=?", (_lb,)
             ).fetchone())
             auto_status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
+            unscraped = not conn.execute(
+                "SELECT 1 FROM entries WHERE lb_number=?", (_lb,)
+            ).fetchone()
 
         existing = conn.execute(
             "SELECT lb_status, manual_override FROM lb_master WHERE lb_number=?",
@@ -7686,7 +7712,7 @@ def reconcile_lb_status(lb_number: int, trigger: str = "reconcile", db_path=None
             )
             return old_status
 
-        final_status = auto_status
+        final_status = _keep_unscraped_public(auto_status, old_status, unscraped)
         pnc = int(final_status == "public" and not has_chk)
         if final_status != old_status:
             conn.execute(
@@ -7755,6 +7781,10 @@ def batch_reconcile_lb_status(lb_numbers: list[int], trigger: str = "reconcile",
             f"SELECT lb_number, lb_status, manual_override FROM lb_master WHERE lb_number IN ({ph})",
             _lbs,
         )}
+        entry_set = {r[0] for r in conn.execute(
+            f"SELECT lb_number FROM entries WHERE lb_number IN ({ph})",
+            _lbs,
+        )}
 
         insert_rows: list[tuple] = []
         history_rows: list[tuple] = []
@@ -7790,7 +7820,12 @@ def batch_reconcile_lb_status(lb_numbers: list[int], trigger: str = "reconcile",
             if manual:
                 pnc_manual = int(old_status == "public" and hc == 0)
                 upd_override.append((hw, hc, ha, needs_review, pnc_manual, lb))
-            elif auto_status != old_status:
+                continue
+            auto_status = _keep_unscraped_public(
+                auto_status, old_status, lb not in missing_set and lb not in entry_set
+            )
+            pnc = int(auto_status == "public" and hc == 0)
+            if auto_status != old_status:
                 upd_changed.append((auto_status, old_status, hw, hc, ha, needs_review, pnc, lb))
                 history_rows.append((lb, old_status, auto_status, _trigger))
             else:

@@ -868,12 +868,12 @@
       "checksums": "Controlesommen",
       "lbEntries": "LB vermeldingen",
       "lastImport": "Laatste import",
-      "importDb": "DB-bestand importeren...",
       "importing": "Importeren...",
       "checkUpdate": "Controleren op update",
       "checking": "Controleren…",
       "openDataFolder": "Gegevensmap openen",
-      "resetDb": "DB resetten..."
+      "resetDb": "DB resetten...",
+      "importDb": "Bestand handmatig importeren…"
     },
     "masterData": {
       "title": "Stamgegevens",
@@ -988,7 +988,9 @@
       "applyConfirmTitle": "Update toepassen?",
       "applyConfirmBody": "{{filename}} toepassen op uw database?\n\n+{{added}} toegevoegd, ~{{changed}} gewijzigd, -{{removed}} verwijderd.\n\nEr wordt eerst automatisch een back-up gemaakt.",
       "applyDone": "Update toegepast: +{{added}} toegevoegd, ~{{changed}} gewijzigd, -{{removed}} verwijderd.",
-      "desc": "Kleine incrementele releases die uw database up-to-date houden tussen de hoofdsynchronisaties door. Maakt geen deel uit van de eerste installatie — kom maandelijks even terug."
+      "desc": "Kleine incrementele releases die uw database up-to-date houden tussen de hoofdsynchronisaties door. Maakt geen deel uit van de eerste installatie — kom maandelijks even terug.",
+      "scrapeStarted": "Op de achtergrond nieuwe LB-pagina's van {{count}} scrapen — statusupdates wanneer dit is voltooid.",
+      "scrapeBusy": "{{count}} nieuwe LB's niet gescraped: er loopt nog een scrape. Voer 'Scrape All' uit zodra deze is voltooid."
     },
     "toast": {
       "dataFolderUnavailable": "Pad gegevensmap niet beschikbaar",

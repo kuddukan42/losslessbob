@@ -1462,10 +1462,25 @@ def create_app() -> Flask:
 
     @app.route("/api/flat_file/apply/<int:release_id>", methods=["POST"])
     def flat_file_apply(release_id):
-        """Apply a downloaded flat-file release to the main database."""
+        """Apply a downloaded flat-file release, then scrape its never-scraped LBs.
+
+        The scrape runs in the background and batch-reconciles lb_master when it
+        finishes, so a release needs no separate Scrape or Reconcile step.
+        ``scrape_started`` is False when another scrape already holds the worker.
+        """
         from . import flat_file as ff
         try:
             result = ff.apply_flat_file_release(release_id)
+            new_lbs = result.get("new_lb_numbers") or []
+            result["scrape_started"] = False
+            if new_lbs and not scraper.get_scrape_status().get("running"):
+                _start_scrape_thread(
+                    new_lbs,
+                    force=True,
+                    delay_ms=int(database.get_meta("scrape_delay_ms") or 1500),
+                    download=database.get_meta("scrape_attachments") != "0",
+                )
+                result["scrape_started"] = True
             return jsonify(result)
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
@@ -2796,9 +2811,17 @@ def create_app() -> Flask:
             start_lb = data.get("start_lb", 1)
             end_lb = data.get("end_lb", None)
             force = data.get("force", False)
-            delay = int(database.get_meta("scrape_delay_ms") or 1500)
-            download = database.get_meta("scrape_attachments") != "0"
-            use_local_pages = database.get_meta("use_local_pages") == "1"
+            # The Scraper screen sends its own delay / download choices; the saved
+            # settings are only the fallback for callers that don't.
+            delay = int(data.get("delay_ms") or database.get_meta("scrape_delay_ms") or 1500)
+            if "download_files" in data:
+                download = bool(data["download_files"])
+            else:
+                download = database.get_meta("scrape_attachments") != "0"
+            if "use_local_pages" in data:
+                use_local_pages = bool(data["use_local_pages"])
+            else:
+                use_local_pages = database.get_meta("use_local_pages") == "1"
 
             lb_numbers = scraper.plan_range(start_lb, end_lb)
 

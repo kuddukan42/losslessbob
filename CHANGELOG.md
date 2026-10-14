@@ -1,3 +1,15 @@
+[2026-10-14] — LB update flow: Apply now scrapes new LBs; Reconcile can't strand them (BUG-365)
+Fixed: backend/db.py: reconcile (single + batch/full) no longer demotes a never-scraped LB (no
+  entries row) from public to private — Reconcile before Scrape stranded LB-16731..16738.
+Fixed: backend/scraper.py: plan_range includes private LBs with no entries row.
+Fixed: backend/refresh.py: scrape_entries backlog counts checksum LBs with no entries row (old
+  scraped_at IS NULL predicate was always 0); upstream now includes flat_file_apply.
+Changed: backend/flat_file.py + app.py: apply returns new_lb_numbers and the route scrapes them in
+  the background (reconciles on finish); /api/scrape/start honours delay_ms / download_files /
+  use_local_pages from the Scraper screen. ScreenScraper seeds those controls from settings;
+  ScreenSetup toasts the scrape; "Import DB file…" relabelled "Import file manually…" (6 locales).
+  Live: 8 LBs scraped, now public. tests/test_flat_file_apply.py + plan_range/reconcile tests.
+
 [2026-10-14] — lb-nc: R tags every folder r would rename
 Added: tools/lb_nc.py: R tags each shown folder in the active pane with a rename r would
   apply (F4 proposal or the row's canonical name, target free); rename_target() now shared

@@ -709,11 +709,23 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
     setFlatBusyId(id)
     fetch(`${BASE}/api/flat_file/apply/${id}`, { method: 'POST' })
       .then((r) => r.json())
-      .then((d: { error?: string; rows_added?: number; rows_changed?: number; rows_removed?: number }) => {
+      .then((d: {
+        error?: string; rows_added?: number; rows_changed?: number; rows_removed?: number
+        new_lb_numbers?: number[]; scrape_started?: boolean
+      }) => {
         if (d.error) { showToast(t('setup.toast.error', { error: d.error }), 'bad'); return }
         showToast(t('setup.flatFile.applyDone', {
           added: d.rows_added ?? 0, changed: d.rows_changed ?? 0, removed: d.rows_removed ?? 0,
         }), 'ok')
+        const newLbs = d.new_lb_numbers?.length ?? 0
+        if (newLbs > 0) {
+          showToast(
+            d.scrape_started
+              ? t('setup.flatFile.scrapeStarted', { count: newLbs })
+              : t('setup.flatFile.scrapeBusy', { count: newLbs }),
+            d.scrape_started ? 'info' : 'bad',
+          )
+        }
         loadFlatReleases()
         loadDbStats()
       })
