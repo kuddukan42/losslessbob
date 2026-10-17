@@ -1,3 +1,11 @@
+[2026-10-17] — Repo hygiene: 1.6 GB embed cache and run logs untracked (TODO-358)
+Removed from git (kept on disk, now ignored): tools/tapematch/embed_cache_12x/ (2,465 .npz),
+  tools/tapematch/logs/, tools/tapematch/calib_logs/*.log|*.out, tools/adhoc_quality/*.pdf|*.log.
+Removed: archive/attic/observations.db + .bak, duplicate 'Pipeline Workspace (standalone)(1).html',
+  tools/_strip_undo_junk.py, tools/tapematch/_survey_fix_siblings.py.
+Changed: tools/tapematch/_tierc_probe.py -> archive/tools-throwaway/ (report paths updated);
+  .gitignore embed_cache*/ glob replaces the two explicit cache dirs.
+
 [2026-10-17] — Comprehensive code review; findings split into TODO-358–369
 Added: instructions/CODE_REVIEW_2026-10-17.md — obsolete/orphaned/simplifiable code across backend,
   tools, gui_next and repo hygiene (ruff, vulture, AST import graph, route-usage scan, tsc

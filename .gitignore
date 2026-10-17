@@ -61,12 +61,15 @@ tools/tapematch/rerun_queue.txt
 tools/tapematch/tmp/
 
 # tapematch Tier B embedding artifacts (derived; regenerate via build_embed_eval_set/nmfp_embed)
-tools/tapematch/embed_cache/
-tools/tapematch/embed_cache_tierc/
+tools/tapematch/embed_cache*/
 tools/tapematch/.venv-nmfp/
 tools/tapematch/.venv-emb/
 tools/tapematch/vendor/
-tools/tapematch/calib_logs/nmfp_extract.log
+tools/tapematch/calib_logs/*.log
+tools/tapematch/calib_logs/*.out
+tools/tapematch/logs/
+tools/adhoc_quality/*.pdf
+tools/adhoc_quality/*.log
 tools/tapematch/embedding/ckpt/
 tools/tapematch/embedding/audio_cache/
 tools/tapematch/embedding/**/__pycache__/

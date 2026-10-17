@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-358: Code review H1-H6: untrack the 1.6 GB embed cache, logs and junk files
+Priority: High
+Status: Done
+Added: 2026-10-17
+Closed: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §1. (1) git rm -r --cached tools/tapematch/embed_cache_12x (2,465 .npz, 1.6 GB, tracked since 936e0a64 2026-07-06) and widen .gitignore:64-65 to tools/tapematch/embed_cache*/. (2) Untrack and ignore tools/tapematch/logs/ and tools/tapematch/calib_logs/ (the calib_logs/*.sh scripts are triaged in TODO-360), tools/adhoc_quality/adhoc_report.pdf + adhoc_tapematch.log. (3) Delete archive/attic/observations.db + observations.db.bak-20260612_124147. (4) Delete the 2 duplicate copies of 'Pipeline Workspace (standalone).html' (keep instructions/complete/pipeline_new/ one; the (1) copy and design_handoff_losslessbob/_source/ copy are cmp-identical). (5) Delete throwaways tools/_strip_undo_junk.py, tools/tapematch/_survey_fix_siblings.py, tools/tapematch/_tierc_probe.py. (6) Move root TUIT-Uploader-Setup.exe and gluetun-wg-diag.log out of the tree. KEEP tools/flac.exe, libFLAC.dll, shntool.exe (Windows build loads them). Does not shrink clone size — history rewrite is a separate TODO.
+2026-10-17: untracked tools/tapematch/embed_cache_12x (2,465 files), tools/tapematch/logs/, calib_logs/*.log|*.out (kept .sh/.txt, triaged in TODO-360), adhoc_quality pdf+log — all still on disk, now ignored (.gitignore: embed_cache*/ glob + log patterns). Deleted archive/attic/observations.db(+.bak), the '(standalone)(1).html' duplicate (kept the pipeline_new and _source copies: each design bundle is self-contained and _source/ is referenced by its handoff docs), tools/_strip_undo_junk.py, tools/tapematch/_survey_fix_siblings.py. Moved _tierc_probe.py to archive/tools-throwaway/ (TIER_C_CALIBRATION_PROBE_REPORT.md cites it; paths updated). Root TUIT-Uploader-Setup.exe + gluetun-wg-diag.log were never tracked — left for tj to move. Clone size unchanged until TODO-359.
+
 TODO-346: Dossier: venue reference link (e.g. Wikipedia) on the venue card
 Priority: Low
 Status: Done

@@ -42,7 +42,7 @@ the trimmed performance window, 1 s windows / 0.5 s hop, speed-corrected nominal
 `embed_eval.py`'s exact pair-scoring convention (median over A-windows of cosine-max to B, either
 aligned ±2 s nominal-time neighbourhood or global cosine-max), pointed directly at these 17 sources
 instead of the frozen `embed_eval_set.json`. Trim/speed metadata came from each date's own
-`tapematch_session.py` run (this session, current code). Script: `tools/tapematch/_tierc_probe.py`,
+`tapematch_session.py` run (this session, current code). Script: `archive/tools-throwaway/_tierc_probe.py`,
 run under the isolated `tools/tapematch/.venv-emb` torch environment.
 
 ## Results
@@ -97,10 +97,10 @@ was a read-only probe against the already-dormant checkpoint.
 
 ```
 .venv/bin/python3 tools/tapematch/_mine_calibration_candidates.py   # candidate mining (optional)
-tools/tapematch/.venv-emb/bin/python tools/tapematch/_tierc_probe.py
+tools/tapematch/.venv-emb/bin/python archive/tools-throwaway/_tierc_probe.py
 ```
 
 Throwaway scripts kept for reuse: `tools/tapematch/_mine_calibration_candidates.py`,
-`tools/tapematch/_tierc_probe.py`. Raw run output: `data/tapematch/_tierc_probe_output.txt`,
+`archive/tools-throwaway/_tierc_probe.py`. Raw run output: `data/tapematch/_tierc_probe_output.txt`,
 `data/tapematch/_run_*.stdout` (per-date tapematch session logs for the 4 newly-run calibration
 dates).

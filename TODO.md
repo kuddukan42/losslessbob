@@ -64,12 +64,6 @@ Status: Open
 Added: 2026-10-17
 Description: From instructions/CODE_REVIEW_2026-10-17.md §1 H1. After the untrack TODO lands, the 1.68 GiB pack still holds the cache. Shrinking it needs git filter-repo + force-push to the PUBLIC repo kuddukan42/losslessbob (rewrites every SHA since 2026-07-06, breaks existing clones/CI refs). tj decision: purge, or accept the size. Also purge archive/attic/*.db and tools/tapematch/logs/ in the same pass if doing it.
 
-TODO-358: Code review H1-H6: untrack the 1.6 GB embed cache, logs and junk files
-Priority: High
-Status: Open
-Added: 2026-10-17
-Description: From instructions/CODE_REVIEW_2026-10-17.md §1. (1) git rm -r --cached tools/tapematch/embed_cache_12x (2,465 .npz, 1.6 GB, tracked since 936e0a64 2026-07-06) and widen .gitignore:64-65 to tools/tapematch/embed_cache*/. (2) Untrack and ignore tools/tapematch/logs/ and tools/tapematch/calib_logs/ (the calib_logs/*.sh scripts are triaged in TODO-360), tools/adhoc_quality/adhoc_report.pdf + adhoc_tapematch.log. (3) Delete archive/attic/observations.db + observations.db.bak-20260612_124147. (4) Delete the 2 duplicate copies of 'Pipeline Workspace (standalone).html' (keep instructions/complete/pipeline_new/ one; the (1) copy and design_handoff_losslessbob/_source/ copy are cmp-identical). (5) Delete throwaways tools/_strip_undo_junk.py, tools/tapematch/_survey_fix_siblings.py, tools/tapematch/_tierc_probe.py. (6) Move root TUIT-Uploader-Setup.exe and gluetun-wg-diag.log out of the tree. KEEP tools/flac.exe, libFLAC.dll, shntool.exe (Windows build loads them). Does not shrink clone size — history rewrite is a separate TODO.
-
 TODO-355: Refile 1,293 public LBs out of PRIVATE LB + 848 misfiled collection folders
 Priority: Medium
 Status: Open

@@ -21,9 +21,7 @@ Review and delete when convenient; pull anything back out if it's still wanted.
 
 | File | Why here |
 |------|----------|
-| `observations.db` | 0-byte stray at repo root — the real one lives at `tools/tapematch/observations.db` |
 | `losslessbob.db` | 0-byte stray at repo root — real DB is `data/losslessbob.db` |
-| `observations.db.bak-20260612_124147` | month-old tapematch DB backup (moved from `tools/tapematch/`) |
 | `losslessbob.tar.gz` | May 8 source archive, predates most of the repo's history since |
 | `screenshot_log.txt` / `screenshot-lookup.png` | June 9 / May 29 debug leftovers |
 | `notes.todo` | pre-TODO.md planning notes (May 23); every open item is done or superseded (db-integrity plan → lb_master system, xref items → TODO-246, translations → gui-next-i18n) |
