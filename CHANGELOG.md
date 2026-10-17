@@ -1,3 +1,10 @@
+[2026-10-17] — Shipped specs and design handoffs moved to archive/specs/
+Changed: instructions/complete/ -> archive/specs/ (all retired specs + 9 design-handoff folders),
+  plus PIPELINE_REFRESH_INVENTORY/PHASE1-3.md and SHOW_DOSSIER_AUDIT.md (shipped/folded);
+  instructions/ now holds only live work. Path references rewritten repo-wide (CHANGELOG history
+  left as written); instructions/README.md + archive/README.md + session_brief.sh updated.
+Removed: untracked root TUIT-Uploader-Setup.exe and gluetun-wg-diag.log (TODO-358 leftovers).
+
 [2026-10-17] — Repo hygiene: 1.6 GB embed cache and run logs untracked (TODO-358)
 Removed from git (kept on disk, now ignored): tools/tapematch/embed_cache_12x/ (2,465 .npz),
   tools/tapematch/logs/, tools/tapematch/calib_logs/*.log|*.out, tools/adhoc_quality/*.pdf|*.log.

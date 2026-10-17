@@ -35,7 +35,7 @@ instructions/ show the expected shape). None of these overlap the six existing s
 
 **5. Show dossier / liner notes export.** ⭐ **HIGH PRIORITY** (2026-07-13, per user). One command renders everything the app knows about a date into a beautiful printable page: setlist with rarities flagged, all circulating sources with family tree and pick ranking, taper credit, quality verdict with artifact snippets, historical context from the scraped data. Export as PDF/HTML for archive folders, trades, or forum posts — every dossier shared on WTRF is quiet advertising for the project.
 
-> ✅ **SHIPPED** (2026-07-17, TODO-257) — spec `complete/FABLE_SHOW_DOSSIER.md`; B1/B2/B3/B5
+> ✅ **SHIPPED** (2026-07-17, TODO-257) — spec `archive/specs/FABLE_SHOW_DOSSIER.md`; B1/B2/B3/B5
 > all landed same session. `backend/dossier.py` (build/filter/render_bbcode),
 > `GET /api/dossier` + `/api/dossier/html` + `/api/dossier/bbcode`, self-contained print-first
 > HTML template, Library row action + DetailPanel export modal (channel/sections/format),
@@ -58,14 +58,14 @@ FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3.)
 
 **1. Command palette (Ctrl+K).** One fuzzy-search box that does everything: type an LB number, a date, a venue, a screen name, or an action ("recompute picks", "check master updates") and jump straight there. For an app whose users think in LB numbers and dates, this collapses most navigation to two keystrokes. It's also the cheapest way to make every future feature reachable without new menu real estate — each spec just registers palette actions.
 
-> ✅ **SHIPPED** (2026-07-21, TODO-263) — spec `complete/FABLE_COMMAND_PALETTE.md`; B1–B5
+> ✅ **SHIPPED** (2026-07-21, TODO-263) — spec `archive/specs/FABLE_COMMAND_PALETTE.md`; B1–B5
 > all landed. `lib/navigation.ts` shared screen registry (sidebar + palette), `lib/commandRegistry.ts`
 > extension contract, `lib/fuzzyMatch.ts` scorer, `components/CommandPalette.tsx` (Ctrl+K,
 > LB/date/venue jumps, `checkUpdate` action). SSE-backed actions deferred to the activity center per D4.
 
 **2. Timeline as a first-class navigator.** The archive is fundamentally temporal, but browsing is list-shaped. A zoomable horizontal timeline strip (decades → tours → individual nights), with density/color encoding what you hold and how good it is — dark gap for no circulating tape, warm color for high grades. Click to zoom, land in the Library pre-filtered. It doubles as the natural home for the gap list and tonight-in-history features, and it's the first screen that would make a visitor say "whoa."
 
-> ✅ **SHIPPED** (2026-07-24, TODO-268) — spec `complete/FABLE_TIMELINE.md`; B1–B5 all landed
+> ✅ **SHIPPED** (2026-07-24, TODO-268) — spec `archive/specs/FABLE_TIMELINE.md`; B1–B5 all landed
 > same session. `backend/timeline.py` (get_summary/get_decade_detail/get_tour_detail,
 > live-computed like gap_analysis, no derived table), `GET /api/timeline/summary` +
 > `/decade/<int>` + `/tour?name=&decade=`, `ScreenTimeline.tsx` (zoomable
@@ -84,7 +84,7 @@ FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3.)
 
 **4. Unified activity center.** The app runs many long jobs — scrapes, scans, master installs, tapematch syncs, future recompute chains — each with its own per-screen SSE progress today. One persistent tray (bottom corner) listing running/queued/finished jobs with progress, elapsed time, and a click-through to the owning screen. Kill the "did that scan finish?" screen-hopping, and every future spec's SSE endpoint plugs into it for free.
 
-> ✅ **SHIPPED** (2026-07-21, TODO-262) — spec `complete/FABLE_ACTIVITY_CENTER.md`; B1–B4 all landed (backend/activity.py aggregator + SSE tee registry, busy re-base, status-bar tray).
+> ✅ **SHIPPED** (2026-07-21, TODO-262) — spec `archive/specs/FABLE_ACTIVITY_CENTER.md`; B1–B4 all landed (backend/activity.py aggregator + SSE tee registry, busy re-base, status-bar tray).
 
 **5. Saved smart views.** Let the user save any Library filter+sort combination as a named view pinned to the sidebar with a live count badge — "Unrated 1978 AUDs (34)", "Superseded copies I still hold (112)". The specs keep adding filter dimensions (picks, tapers, grades, gaps); saved views are how a real person composes them into recurring workflows instead of rebuilding filters every session. Counts that tick down as you work double as a progress tracker.
 
@@ -109,7 +109,7 @@ screen today; 2 is the showpiece.
 
 **2. CI on GitHub Actions, backed by a checked-in fixture dataset.** The repo is public but nothing verifies it between sessions. Two pieces that reinforce each other: a tiny golden fixture DB (~100 entries, synthetic checksums, a few families) checked into the repo, and an Actions workflow running `py_compile`, backend unit tests against the fixture, and the `/gui-check` pair (tsc + vite build) on every push. Payoffs beyond safety: Claude sessions can trust CI instead of re-running builds locally, cloud agents (ultrareview, remote workers) can actually exercise the backend without your 2.4 GB of data, and the fixture doubles as the onboarding spec's "new person test" environment.
 
-> ✅ **SHIPPED** (2026-07-21, TODO-261) — spec `complete/FABLE_CI_FIXTURE.md`; B1–B6
+> ✅ **SHIPPED** (2026-07-21, TODO-261) — spec `archive/specs/FABLE_CI_FIXTURE.md`; B1–B6
 > all landed. `tools/make_fixture_db.py` (deterministic ~101-entry synthetic install),
 > `tools/ci_smoke.py`, `.github/workflows/ci.yml` (backend-tests/backend-smoke/gui-check
 > on every push+PR, all green), README Actions badge. Found and fixed 3 pre-existing bugs

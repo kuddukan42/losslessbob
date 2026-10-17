@@ -1,6 +1,6 @@
 """Read-only pipeline freshness planner (GET /api/refresh/status).
 
-Phase 1 of the pipeline-refresh spec (`instructions/PIPELINE_REFRESH_PHASE1.md`).
+Phase 1 of the pipeline-refresh spec (`archive/specs/PIPELINE_REFRESH_PHASE1.md`).
 This module answers *"what is not up to date, and how do I run it?"* by reading
 the staleness signals that already live in the schema -- `computed_at`,
 `parsed_at`, `imported_at`, `fetched_at`, `geocoded_at` columns written today by

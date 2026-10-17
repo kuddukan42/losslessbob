@@ -1,6 +1,6 @@
 // TapeMatch Curation screen — Phases 1–6.
 //
-// Built per instructions/complete/design_handoff_tapematch_curation/{README,
+// Built per archive/specs/design_handoff_tapematch_curation/{README,
 // WORK_PACKAGE,DESIGN_ANSWERS_B}.md. D1 is complete as of 2026-07-28: this
 // screen reached parity at Phase 6 and replaced the read-only
 // ScreenTapeMatch.tsx (deleted) at /tapematch, taking over its nav entry;

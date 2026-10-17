@@ -1,6 +1,6 @@
 # Visual Verification
 
-> Sources: `tools/electron_driver.mjs` · `tools/driver_core.mjs` · `tools/electron_display.mjs` · `tools/electron_preflight.mjs` · `tools/electron_driver.config.json` · `tools/debug_screens.json` · `.claude/skills/verify/SKILL.md` · `instructions/complete/FABLE_VISUAL_VERIFICATION.md` · Status: fresh 2026-07-22
+> Sources: `tools/electron_driver.mjs` · `tools/driver_core.mjs` · `tools/electron_display.mjs` · `tools/electron_preflight.mjs` · `tools/electron_driver.config.json` · `tools/debug_screens.json` · `.claude/skills/verify/SKILL.md` · `archive/specs/FABLE_VISUAL_VERIFICATION.md` · Status: fresh 2026-07-22
 
 The screenshot engine that lets an agent see the gui_next GUI. Since
 2026-07-22 it is **one driver, two modes** (`tools/browser_driver.mjs` was
@@ -51,5 +51,5 @@ node tools/electron_driver.mjs session tools/debug_screens.json                 
   rounding — not a bug).
 - Screenshots show collection data — keep them local, never publish.
 
-Full design history and findings: `instructions/complete/FABLE_VISUAL_VERIFICATION.md`.
+Full design history and findings: `archive/specs/FABLE_VISUAL_VERIFICATION.md`.
 Related: [GUI](GUI.md) · [Dev-Workflow](Dev-Workflow.md).

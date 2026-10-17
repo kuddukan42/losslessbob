@@ -57,6 +57,6 @@ Real captures in `docs/screenshots/` (also used by the website + README):
 ## Legacy PyQt6 GUI — removed
 
 The 14-tab PyQt6 GUI (`gui/`) was removed 2026-07-16
-(spec: `instructions/complete/LEGACY_GUI_REMOVAL_SPEC.md`). Its Leaflet map
+(spec: `archive/specs/LEGACY_GUI_REMOVAL_SPEC.md`). Its Leaflet map
 page survives at `backend/resources/map.html`, served at `GET /map` and
 embedded by ScreenMap's iframe. Historical tab docs: git history.

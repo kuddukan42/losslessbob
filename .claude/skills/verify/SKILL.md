@@ -30,7 +30,7 @@ window chrome, resize/layout at real sizes, display scale, native
 `window.api`/preload flows, or main-process state. Both modes share the same
 session format (`tools/debug_screens.json`), so the screen tour is identical.
 
-Design/history for Electron mode: `instructions/complete/FABLE_VISUAL_VERIFICATION.md`.
+Design/history for Electron mode: `archive/specs/FABLE_VISUAL_VERIFICATION.md`.
 
 ## Steps
 

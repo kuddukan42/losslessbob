@@ -2,7 +2,7 @@
 
 Spec: `instructions/Show Dossier Redesign.pdf` (Rev A, 2026-09-09).
 Mock: `instructions/Show Dossier 2010-03-29 (standalone).html`.
-Audit: `instructions/SHOW_DOSSIER_AUDIT.md`. It holds the rationale; every finding is folded
+Audit: `archive/specs/SHOW_DOSSIER_AUDIT.md`. It holds the rationale; every finding is folded
 into the phases below, and IDs such as *audit M1* point back to its evidence.
 Baseline: `backend/dossier.py` + `backend/templates/dossier.html` @ master `2026-08-20_003101`.
 
@@ -38,7 +38,7 @@ shows the field's fallback and lists it as withheld. It never guesses.
 | Gap badge | Fires when **≥100 Dylan concerts** have passed since the song's previous performance. |
 | Label | "AI grade" becomes **"Scanned quality"** in every dossier output (HTML, BBcode, footer). GUI Library labels are out of scope. |
 | Map | **Kept, compact, and inside the venue card.** This overrides the spec's removal. It pins the venue only when the venue coordinates are verified; otherwise it shows a hollow city-centre marker labelled "city centre (setlist.fm)". It is never a venue pin drawn from city coordinates. See `venue.map`. |
-| Audit adopted | Everything in `SHOW_DOSSIER_AUDIT.md` §3–§9 is binding and folded in below. |
+| Audit adopted | Everything in `archive/specs/SHOW_DOSSIER_AUDIT.md` §3–§9 is binding and folded in below. |
 
 ## Trust model (replaces the spec's `confidence` values)
 

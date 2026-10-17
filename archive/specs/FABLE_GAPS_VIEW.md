@@ -27,7 +27,7 @@ later), no family trees (§6 gets a tab placeholder only).
   compound labels like `concert - outlaw music festival` — match with
   `event_type = 'concert' OR event_type LIKE 'concert - %'`), `tour_name`,
   recording kind/mins fields, notes/bobtalk. Authoritative column list:
-  `instructions/complete/FABLE_OLOF_FILES.md` §4 — read it before writing queries.
+  `archive/specs/FABLE_OLOF_FILES.md` §4 — read it before writing queries.
   Index `idx_olof_events_date` exists.
 - Verified first cut (2026-07-15): **4,131 ISO-dated concerts**; entries resolve to
   3,919 exact dates + 112 partial `xx` date-strings; **347 concert dates have no LB

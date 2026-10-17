@@ -1,4 +1,4 @@
-"""Rule-based auto-triage for TapeMatch dates (instructions/complete/TAPEMATCH_AUTOFLAG_SPEC.md).
+"""Rule-based auto-triage for TapeMatch dates (archive/specs/TAPEMATCH_AUTOFLAG_SPEC.md).
 
 Only ~43% of dates with a completed TapeMatch run have an ``analysis.md``, and
 ``tapematch_sync._read_review_flag`` reads the human "needs review" verdict out

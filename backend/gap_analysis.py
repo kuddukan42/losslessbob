@@ -1,5 +1,5 @@
 """Concert-date coverage classification (originally TODO-256's Gaps view;
-instructions/complete/FABLE_GAPS_VIEW.md). Every known Dylan concert date
+archive/specs/FABLE_GAPS_VIEW.md). Every known Dylan concert date
 (``olof_events``) classified by whether a recording circulates (an
 ``entries`` row resolves to that date). Read-only end to end: no derived
 table, no writes, no recompute-chain hook. Computed live per request —

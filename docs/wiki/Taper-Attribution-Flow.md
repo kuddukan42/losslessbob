@@ -1,6 +1,6 @@
 # Taper Attribution Flow
 
-> Sources: `instructions/complete/FABLE_TAPER_ATTRIBUTION.md` (design spec) ·
+> Sources: `archive/specs/FABLE_TAPER_ATTRIBUTION.md` (design spec) ·
 > `backend/taper_attribution.py` · `backend/taper_fingerprints.py` ·
 > `backend/db.py` (`_KNOWN_TAPER_ALIASES`, `_NOT_TAPER`, `_TAPER_UNIVERSE`) ·
 > Status: fresh 2026-07-22

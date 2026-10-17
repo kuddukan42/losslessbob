@@ -15,6 +15,7 @@ machine-local); `attic/` and `tools-throwaway/` are tracked.
 | `debug/` | 318 `.debug/` artifacts dated before 2026-08-01 (screenshots, driver sessions, coverage, scratch JSON) | `.debug/` is disposable by convention. `.debug/` itself and its `electron/`/`screenshots/` subdirs remain in place — `/verify` writes to those exact paths. |
 | `attic/` | The pre-existing ad-hoc `attic/` directory, moved verbatim | Folded in so there is one archive rather than two. Its own `README.md` still describes the contents. |
 | `tools-throwaway/` | `_qbt_sysctl.conf`, `_qbt_tune.sh`, `_route_audit.py`, `_route_dryrun.py` | `tools/_<name>` is the repo's throwaway-script convention (`.claude/CLAUDE.md`). The qBittorrent tuning pair was untracked; the route scripts shipped their work in 62cbb8f2 (TODO-317). |
+| `specs/` | Every shipped spec, plan and design handoff (HTML prototypes, JSX, screenshots) — formerly `instructions/complete/`, plus the pipeline-refresh inventory + phases 1–3 and `SHOW_DOSSIER_AUDIT.md` | Moved 2026-10-17 so `instructions/` holds only live work. Retire a spec by `git mv`-ing it here (see `instructions/README.md`). |
 
 ## Deliberately left alone
 
@@ -22,6 +23,5 @@ machine-local); `attic/` and `tools-throwaway/` are tracked.
   outright on tj's call (see the CHANGELOG). The `data/lossless_bob.db` /
   `data/losslessbob.db` pair still looks stale, but it is yours to judge.
 - `__pycache__/`, `.pytest_cache/`, `.ruff_cache/` — regenerable caches, not archive material.
-- `instructions/complete/` — already serves as the spec archive.
 - Everything under `tools/` that is not `_`-prefixed: reference counts alone
   could not prove any of it dead, so none of it was moved.

@@ -130,10 +130,10 @@ These are the only things keeping `gui/` load-bearing today:
 grep -rn "PyQt6\|pyqt\|QWebEngine\|qtbot\|from gui\.\|from gui import\|import gui\b\|gui/" \
   --include="*.py" --include="*.md" --include="*.txt" --include="*.toml" \
   --include="*.sh" --include="*.spec" . \
-  | grep -v "gui_next\|\.venv\|node_modules\|__pycache__\|\.claude/worktrees\|CHANGELOG\|TODO_DONE\|BUGS_DONE\|instructions/complete\|LEGACY_GUI_REMOVAL"
+  | grep -v "gui_next\|\.venv\|node_modules\|__pycache__\|\.claude/worktrees\|CHANGELOG\|TODO_DONE\|BUGS_DONE\|archive/specs\|LEGACY_GUI_REMOVAL"
 ```
 
-Historical files (CHANGELOG*, *_DONE, instructions/complete/) keep their references —
+Historical files (CHANGELOG*, *_DONE, archive/specs/) keep their references —
 they are records, not live docs.
 
 ---
@@ -155,4 +155,4 @@ they are records, not live docs.
 - [x] Phase 2 — deletion committed (674249bb); also caught tools/losslessbob.iss + build_windows.bat (BUG-106's real target)
 - [x] Phase 3 — deps/packaging committed (88676070); .dockerignore included
 - [x] Phase 4 — docs/ledger committed (BUG-106 + BUG-249 closed)
-- [x] Phase 5 — final sweep green → spec moved to `instructions/complete/`
+- [x] Phase 5 — final sweep green → spec moved to `archive/specs/`

@@ -3,7 +3,7 @@
 > Sources: `concert_ranker/` (incl. `LB_KNOWLEDGE.md`) · `backend/ranker_jobs.py` ·
 > `PROJECT.md` §quality tables (~line 684), §show_picks (~line 762),
 > §Derived-Data Recompute (~line 1321) ·
-> `instructions/PIPELINE_REFRESH_PHASE2.md` · Status: fresh 2026-08-13
+> `archive/specs/PIPELINE_REFRESH_PHASE2.md` · Status: fresh 2026-08-13
 
 Ranks recordings of the same concert by audio quality so the user can pick the
 best circulating source per show. Merged into `main` (the old `concert-ranker`

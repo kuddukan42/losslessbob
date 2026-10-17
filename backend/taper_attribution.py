@@ -1,7 +1,7 @@
 """Taper attribution engine — Phase 1: schema seeding via Layer 0 (direct
 extraction) and Layer 1 (same-source propagation).
 
-See ``instructions/complete/FABLE_TAPER_ATTRIBUTION.md`` for the design and
+See ``archive/specs/FABLE_TAPER_ATTRIBUTION.md`` for the design and
 ``instructions/SPEC_INTEGRATION_NOTES.md`` findings F2/F3/F5/F6, which amend
 and override the spec where noted:
 

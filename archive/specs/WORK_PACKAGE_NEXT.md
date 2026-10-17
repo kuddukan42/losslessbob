@@ -15,7 +15,7 @@ below.
 
 ## Next window — LISTENING
 
-Spec: `instructions/complete/FABLE_LISTENING_INSIGHT_IDEAS.md` (retired to
+Spec: `archive/specs/FABLE_LISTENING_INSIGHT_IDEAS.md` (retired to
 complete/ 07-11; §1 pairs sync + §9 tonight card shipped 07-10 — §2/§3 below are
 the live remainder).
 

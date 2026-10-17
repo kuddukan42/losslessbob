@@ -24,7 +24,7 @@ Per instructions/SPEC_INTEGRATION_NOTES.md finding F5, this CLI always
 refreshes entry_lineage first via tools/parse_lineage.py's run() — it is
 hash-guarded incremental, so repeat runs are cheap — before recomputing
 attributions, so Layer 1 propagation never runs on stale lineage data. See
-instructions/complete/FABLE_TAPER_ATTRIBUTION.md for the design and
+archive/specs/FABLE_TAPER_ATTRIBUTION.md for the design and
 backend/taper_attribution.py for the recompute logic.
 """
 from __future__ import annotations

@@ -1,7 +1,7 @@
 # WORK_PACKAGE_2026-07-14 — queue for the week of 7/14
 
 Drafted by Fable 5 at the 07-13 window edge (5% usage left). Successor to
-`complete/WORK_PACKAGE_NEXT.md` (its LISTENING window landed 100%: TODO-215,
+`archive/specs/WORK_PACKAGE_NEXT.md` (its LISTENING window landed 100%: TODO-215,
 TODO-230, TODO-231 all closed). Strike rows as they land.
 
 ---
@@ -12,7 +12,7 @@ TODO-230, TODO-231 all closed). Strike rows as they land.
   fingerprint review queue (`backend/setlist_fingerprint.py`, ScreenFingerprint,
   tests), TODO-158 batch forum posting, TODO-157 torrent auto-create, TODO-159
   LBDIR verify gate, TODO-280 header fix, TODO-291 docs close, plus the
-  instructions/ reorg (unified-library + library → `complete/`, SHARING_FEATURE
+  instructions/ reorg (unified-library + library → `archive/specs/`, SHARING_FEATURE
   → `future/`), instructions/README.md index fix, and BUG-248 closure.
   **First action of next session: review + commit this** (likely 2–3 commits by
   scope), then `/backend-restart` so :5174 serves the fingerprint routes.
@@ -163,7 +163,7 @@ Resume plan: (1) sonnet subagent implements 1–8 verbatim; (2) Fable reviews di
 
 ## Session 6 (2026-07-15) — TODO-214 BUILT + CALIBRATED; shipping gated OFF
 ### DECIDED (tj, 2026-07-15): option 1 — leave disabled, revisit later.
-TODO-214 closed (won't-ship), spec moved to instructions/complete/. The
+TODO-214 closed (won't-ship), spec moved to archive/specs/. The
 mechanism, tests, and `--calibrate-fingerprints` harness stay in the tree;
 flipping `taper_fingerprints.LAYER2_ENABLED` (after a rare-token gate or a
 suggestion-queue rescope, options 2/3 below) is the revisit path.

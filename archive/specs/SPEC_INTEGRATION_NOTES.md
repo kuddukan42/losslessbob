@@ -1,7 +1,7 @@
 # Spec Pack Integration Notes
 
 > **✅ CLOSED — the whole pack shipped; this is a historical cross-review, NOT a
-> live plan.** All four specs are implemented and live in `instructions/complete/`:
+> live plan.** All four specs are implemented and live in `archive/specs/`:
 > UNIFIED_RANKING (closed 2026-07-09), TAPER_ATTRIBUTION (2026-07-15, Layer-2 gated
 > off), ONBOARDING_SYNC (2026-07-10), LISTENING_INSIGHT_IDEAS. The F1 chained
 > `/api/derived/recompute` endpoint and the §2 ordering below were executed as

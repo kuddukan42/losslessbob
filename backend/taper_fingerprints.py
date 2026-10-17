@@ -1,6 +1,6 @@
 """Taper attribution engine — Layer 2: vocabulary fingerprints (TODO-214).
 
-See ``instructions/complete/FABLE_TAPER_ATTRIBUTION.md`` §4.3/§4.4 for the design.
+See ``archive/specs/FABLE_TAPER_ATTRIBUTION.md`` §4.3/§4.4 for the design.
 Layer 2 is lower precision than Layer 1 propagation (``backend.taper_attribution``)
 and is gated behind it: for every taper with enough already-attributed source
 entries (confirmed + propagated), this module builds a weighted log-odds

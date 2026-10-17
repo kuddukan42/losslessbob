@@ -83,7 +83,7 @@ that PROJECT.md fails to mention and must exit 0 before finishing.
   (`/gui-next-i18n`). Flag it if not yet done.
 - Dependency changed → `requirements.txt` (pinned exact version) + PROJECT.md.
 - If this session finished a spec/plan in `instructions/` (or its remainder
-  moved to a TODO), `git mv` it to `instructions/complete/` and update
+  moved to a TODO), `git mv` it to `archive/specs/` and update
   `instructions/README.md`.
 
 ## Step 7 — Consistency check

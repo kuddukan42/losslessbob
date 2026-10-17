@@ -45,7 +45,7 @@ GUI (CLI-only per D-4 default).
 - Olof/bobserve mirrors: pages verbatim in `data/olof/pages/` and
   `data/olof/bobserve_pages/`, per-page sha256 in `olof_pages.sha256`.
 - `friend_collections` names the distribution audience; `flat_file_releases` +
-  `instructions/complete/CC_TRADING_PLAN.md` are the existing release-mechanics
+  `archive/specs/CC_TRADING_PLAN.md` are the existing release-mechanics
   patterns — read for shape, don't couple to them.
 - SQLite rules: `PRAGMA table_info` column-existence check before `ALTER TABLE`;
   never assume clean DB. Python is `.venv/bin/python3`.

@@ -751,7 +751,7 @@ CREATE INDEX IF NOT EXISTS idx_curated_entries_lb ON curated_list_entries(lb_num
 CREATE INDEX IF NOT EXISTS idx_curated_entries_list ON curated_list_entries(list_id);
 
 -- taper_confirmations (MASTER — curator decisions on taper attribution, sticky
--- across recompute). See instructions/complete/FABLE_TAPER_ATTRIBUTION.md + finding F2 in
+-- across recompute). See archive/specs/FABLE_TAPER_ATTRIBUTION.md + finding F2 in
 -- instructions/SPEC_INTEGRATION_NOTES.md: this table (not a `confirmed_at` flag
 -- on the derived, USER-tier `taper_attributions` table) is the curated-knowledge
 -- surface exported in master data, so an import can never clobber another
@@ -4840,7 +4840,7 @@ def get_performances(db_path=None) -> list[dict]:
     already used for TapeMatch family data (merged client-side instead, since
     it's a different consumer — see the class docstring's TapeMatch note).
 
-    Per `instructions/complete/FABLE_TAPER_ATTRIBUTION.md` §5 (TAPER phase 2), each
+    Per `archive/specs/FABLE_TAPER_ATTRIBUTION.md` §5 (TAPER phase 2), each
     recording also carries flat, optional `taperConfirmed` (canonical taper
     name, only when `taper_attributions.confidence='confirmed'`),
     `taperPropagated` (canonical taper name for conflict-free

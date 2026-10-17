@@ -9,7 +9,7 @@
  *   tools/electron_preflight.mjs already selected (Xvfb, recorded in
  *   tools/electron_driver.config.json `.selected`). Real window, real
  *   `window.api` preload bridge. PNGs → .debug/electron/.
- *   See instructions/complete/FABLE_VISUAL_VERIFICATION.md §3, §6.
+ *   See archive/specs/FABLE_VISUAL_VERIFICATION.md §3, §6.
  *
  *   --renderer-only — headless Playwright Chromium against the Vite server
  *   (no Electron, no Xvfb; `window.api` stubbed). Seconds instead of an
