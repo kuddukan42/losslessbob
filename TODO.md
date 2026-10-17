@@ -1,3 +1,75 @@
+TODO-369: Code review S1-S2: split app.py into Blueprints and db.py into a package
+Priority: Low
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §5 S1/S2. app.py is 13,742 lines with all 388 routes and 22 thread spawns, no Blueprints; db.py is 10,754 lines. Split app.py by domain (routes/collection, tapematch, dossier, scrape, ...) one Blueprint per commit, zero behaviour change; split db.py into backend/db/ by table family re-exporting from __init__ so callers don't change. Do AFTER the §2, §3a and §4 removal TODOs have shrunk both files.
+
+TODO-368: Code review §6c-6d: GUI shared lib/api.ts + lib/format.ts, splash TODO
+Priority: Low
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §6c/6d. const BASE = window.api.flaskBase is copied in 32 files — add lib/api.ts (BASE + typed getJson/postJson) and collapse the hand-rolled fetch().then(r=>r.json()) blocks. Formatters duplicated: fmtBytes/fmtSize x4 (OnboardingWizard:91, ScreenFileIntegrity:81, ScreenScraper:161, ScreenScanner:44), fmtLb x4 (AppShell:459, ScreenFingerprint:60, ScreenHome:63, ScreenSongs:56), fmtNum x3 (AppShell:463, ScreenHome:67, ScreenSetup:1419) -> lib/format.ts. One helper per commit. App.tsx:367 'TODO: re-enable splash screen' — delete the splash component/state or re-enable; no bare TODOs. /gui-check + /verify.
+
+TODO-367: Code review S4-S6: small backend simplifications
+Priority: Low
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §5. S4: _ProgressFile is duplicated at app.py:6499 and app.py:11642 and open()s without a context manager — lift to one module-level class with close()/__exit__. S5: _parse_date exists 4 times (bobserve_parser.py:153, bootleg_scraper.py:58, setlistfm.py:95, torrent_maker.py:112) — share where formats match (torrent_maker/setlistfm). S6: delete the unused 'crowd' cuts in concert_ranker/config.py _SBD_CUTS (~326). Optional, only when touching them: drop the 'db_path: Unused' params on write-queue functions (db.py:6926, 6945, 6978, 6999, 10003, 10135).
+
+TODO-366: Code review S3: move the 9 inline job-progress dicts onto JobState (double-start race)
+Priority: Medium
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §5 S3. job_progress.py:1-14 documents the check-then-set race in the inline _progress['running'] pattern (two rapid POSTs both start). Still inline: app.py _spectro_state (401), bobdylan_scraper.py:41, bootleg_scraper.py:33, geocoder.py:107, importer.py:25, preservation.py:52, scraper.py:47, setlistfm.py:37, site_crawler.py:77. Migrate one module per commit; keep the snapshot shape activity._PROGRESS_FIELDS reads. /backend-restart + tests per module.
+
+TODO-365: Code review §4: triage the ~50 Flask routes with no caller, one feature group at a time
+Priority: Medium
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §4 (table with app.py line numbers). Groups with no GUI/tool/test caller: xref_ingest (4 routes), lb_missing (3), lb_problems (4 + get_lb_problem_count), flat_file defer/changelog, collection missing/search/duplicates/delete_bulk/audit/routes-preview/integrity-scan-history, entries year/reclassify/by_lb_list, misc lookups (scan_folders, xref_lb_numbers, performances, lineage, lb_master history, geocode/locations, setlistfm/show, olof event/chronicle), bootlegs lb_numbers/by_lb, preservation reports/report, lbdir delete_extra/verified_status, wtrf fetch_torrent/crawl_missing, /api/torrents, /api/forum_posts, checksums reconcile_audio/apply, bobserve fetch status/stop, tapematch/sync, tapers/curation/text, /taper-curation page. Test-only job triggers (olof fetch/parse, bobserve fetch/parse, ranker/rerank, qc/decisions, tapematch dup_encodes + crawl start/stop, ab_clip file, curated_lists, dossier/bbcode): check whether the Data Freshness card replaced them. Per group: delete routes + db helpers + tests, or wire into the GUI. Tool-only routes (/api/status, db/missing_lb_numbers, lbdir/find_extra, rename/apply): keep, document as tool APIs. Needs tj per group.
+
+TODO-364: Code review §3b: keep-or-delete the backend functions only tests call
+Priority: Low
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §3b. Called only by their own tests: db.py get_wishlist_lb_numbers, get_tuit_uploads, get_tuit_recordings, get_tuit_songs, get_tuit_song_performances, get_tuit_shows, get_tuit_venues, get_file_hash, prune_pipeline_cache; qc/store.quarantined_batch; tuit_scraper.torrent_root_name; wtrf_seed.parse_topic_links; seed_overlay.verify_overlay; concert_ranker/lb mine_entries, get_scan, classify_entries. For each: supported API (keep) or dead (delete fn + test). prune_pipeline_cache specifically: nothing ever prunes the pipeline cache in production — schedule it or drop it. Needs tj sign-off on the list.
+
+TODO-363: Code review §3a: delete the 15 backend functions with zero references
+Priority: Low
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §3a (table has file:line for each). db.py: get_lb_statuses_batch, should_mark_nft, get_aliases_for_canonical, get_lb_problem_count (tie to the lb_problems route decision), get_curated_list_entries; dossier_anchors.visible_lbs_hint; dossier_fields.broadcast_clause; scheduler.register_import_callback + _import_callbacks/_notify (never fire) + stop_file_watcher; sharing.stream_file; sox_utils.decode_to_wav; torrent_maker.make_torrent_batch; tuit_scraper.fetch_recent. EXCLUDE tuit_upload.upload_and_seed until TODO-343 settles. updater.restart_application goes with the §2 TODO.
+
+TODO-362: Code review §2: remove the legacy app-updater/data-download stack and PyQt remnants
+Priority: Medium
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §2. Delete backend/updater.py (no importers), routes /api/app/version, /api/update/{check,status,apply} (app.py:2664-2750), /api/data/download(+/status) (app.py:2753-2778), globals _update_state/_data_dl_state (app.py:81,90), _restart_callback/set_restart_callback (app.py:339-349, 9602) and its wiring in run_backend.py, the updater/data-download activity rows (activity.py:305). Also remove legacy GET /api/activity/busy (app.py:1205-1220) + activity.busy_snapshot() (activity.py:671) + its tests in tests/test_activity_sse.py:177-197, and simplify the precedence comments (activity.py:181,230). PyQt remnants: AboutDialog.tsx:28-29 PyQt6 rows; pyproject.toml ruff exclude 'gui'; rewrite the E501 'after TODO-281' comment (TODO-281 is closed). Confirm no tools/CI caller of /api/app/version first. /backend-restart + /gui-check.
+
+TODO-361: Code review lint pass: GUI unused locals, dead exports, tools unused imports, ruff B905
+Priority: Medium
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §5 (tools list, S7) + §6a/6b. GUI: fix the 25 tsc --noUnusedLocals errors (table in §6a; check ScreenPipeline isRunning/stopRun for a lost Stop button and ScreenScraper geocoderStats for a wasted fetch), delete dead exports PIPELINE_STAGES (pipeline/PipelineIcon.tsx), FONTS + CARD_STYLES (lib/tokens.ts), then add noUnusedLocals: true to gui_next/tsconfig.web.json so /gui-check enforces it. Python: ruff check --isolated --select F401,F841 --fix tools (skip vendor/; nmfp_embed.py:135 tensorflow may be a deliberate side-effect import). Enable B905 (zip strict) in pyproject.toml and fix the 24 hits; optional one ruff --fix commit for SIM105/SIM102/RET504. ERA001 hits are all benign — leave them.
+
+TODO-360: Code review H7: archive or document the one-off tools nothing references
+Priority: Low
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §1 H7. No live reference (outside CHANGELOG/DONE): tools/tapematch/mem_monitor.py, calib_logs/{rerun_9611,run_catval,run_confsweep}.sh, tools/adhoc_quality/build_adhoc_pdf.py, tools/tapematch/todo324_scan.py, bug326_diff.py, bug326_scan.py, tools/refetch_html_attachments.py, tools/wtrf/wtrf_board_archive.py, tools/tuit_overlay_repair.sh, tools/wtrf_repair_extras.py, tools/wtrf_requeue_disk_full.py, tools/migrate_gazetteer_city_country.py. Move finished one-shots to archive/tools-throwaway/; for the ones still useful, list them in a tools README (or tools/SCHEDULED_JOBS.md) so they stop being orphans.
+
+TODO-359: Code review H1b: decide whether to purge embed_cache_12x from git history
+Priority: Low
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §1 H1. After the untrack TODO lands, the 1.68 GiB pack still holds the cache. Shrinking it needs git filter-repo + force-push to the PUBLIC repo kuddukan42/losslessbob (rewrites every SHA since 2026-07-06, breaks existing clones/CI refs). tj decision: purge, or accept the size. Also purge archive/attic/*.db and tools/tapematch/logs/ in the same pass if doing it.
+
+TODO-358: Code review H1-H6: untrack the 1.6 GB embed cache, logs and junk files
+Priority: High
+Status: Open
+Added: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §1. (1) git rm -r --cached tools/tapematch/embed_cache_12x (2,465 .npz, 1.6 GB, tracked since 936e0a64 2026-07-06) and widen .gitignore:64-65 to tools/tapematch/embed_cache*/. (2) Untrack and ignore tools/tapematch/logs/ and tools/tapematch/calib_logs/ (the calib_logs/*.sh scripts are triaged in TODO-360), tools/adhoc_quality/adhoc_report.pdf + adhoc_tapematch.log. (3) Delete archive/attic/observations.db + observations.db.bak-20260612_124147. (4) Delete the 2 duplicate copies of 'Pipeline Workspace (standalone).html' (keep instructions/complete/pipeline_new/ one; the (1) copy and design_handoff_losslessbob/_source/ copy are cmp-identical). (5) Delete throwaways tools/_strip_undo_junk.py, tools/tapematch/_survey_fix_siblings.py, tools/tapematch/_tierc_probe.py. (6) Move root TUIT-Uploader-Setup.exe and gluetun-wg-diag.log out of the tree. KEEP tools/flac.exe, libFLAC.dll, shntool.exe (Windows build loads them). Does not shrink clone size — history rewrite is a separate TODO.
+
 TODO-355: Refile 1,293 public LBs out of PRIVATE LB + 848 misfiled collection folders
 Priority: Medium
 Status: Open

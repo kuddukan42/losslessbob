@@ -1,3 +1,9 @@
+[2026-10-17] — Comprehensive code review; findings split into TODO-358–369
+Added: instructions/CODE_REVIEW_2026-10-17.md — obsolete/orphaned/simplifiable code across backend,
+  tools, gui_next and repo hygiene (ruff, vulture, AST import graph, route-usage scan, tsc
+  --noUnusedLocals). Headline: 1.6 GB tools/tapematch/embed_cache_12x is tracked in git.
+Added: TODO.md: TODO-358–369, one per committable piece; TODO map in the review doc.
+
 [2026-10-14] — Pipeline drag-and-drop from Nemo fixed (BUG-373)
 Fixed: gui_next/src/preload/index.ts, ScreenPipeline.tsx, env.d.ts: dropped folders never reached
   the queue — File.path is gone since Electron 32; now resolved via webUtils.getPathForFile.

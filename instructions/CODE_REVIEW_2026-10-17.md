@@ -256,6 +256,23 @@ by CTranslate2. **No dependency is obsolete.** The root `package.json` (only `pl
 
 ---
 
+## TODO map
+
+| TODO | Piece | Sections | Priority | Needs tj |
+|---|---|---|---|---|
+| TODO-358 | Untrack the embed cache, logs and junk; delete throwaways | §1 H1–H6 | High | — |
+| TODO-359 | Purge embed_cache_12x from git history (force-push) | §1 H1 | Low | yes |
+| TODO-360 | Archive or document the orphan one-off tools | §1 H7 | Low | — |
+| TODO-361 | Lint pass (GUI unused locals and exports, tools F401, B905) | §5 S7, §6a–6b | Medium | — |
+| TODO-362 | Remove the updater/data-download stack, `/api/activity/busy`, PyQt remnants | §2 | Medium | — |
+| TODO-363 | Delete zero-reference backend functions | §3a | Low | — |
+| TODO-364 | Keep or delete the functions only tests call | §3b | Low | yes |
+| TODO-365 | Triage the routes with no caller, by feature group | §4 | Medium | yes |
+| TODO-366 | Move inline job-state dicts onto `JobState` | §5 S3 | Medium | — |
+| TODO-367 | Small backend simplifications | §5 S4–S6, §3c | Low | — |
+| TODO-368 | GUI `lib/api.ts` + `lib/format.ts`, splash TODO | §6c–6d | Low | — |
+| TODO-369 | Split `app.py` into Blueprints, `db.py` into a package | §5 S1–S2 | Low | — |
+
 ## Suggested order
 
 1. **H1–H6** repo hygiene: one `chore` commit, apart from the history-rewrite decision.
