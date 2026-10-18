@@ -926,9 +926,9 @@
       "rowHighlight": "Colori di evidenziazione delle righe"
     },
     "languages": {
-      "en": "Inglese",
+      "en": "English",
       "de": "Deutsch",
-      "fr": "Francese",
+      "fr": "Français",
       "es": "Español",
       "it": "Italiano",
       "nl": "Nederlands"
@@ -1262,7 +1262,8 @@
       "recomputeHint": "Rivaluta ogni voce in base all'elenco attuale dei taper (lineaggio → attribuzione → brani selezionati → indice dei brani). Funziona solo sulle tabelle derivate locali.",
       "recomputing": "Ricalcolo in corso…",
       "recomputeDone": "Ricalcolo completato.",
-      "recomputeError": "Errore di ricalcolo: {{msg}}"
+      "recomputeError": "Errore di ricalcolo: {{msg}}",
+      "openWorkbench": "Apri l'ambiente di lavoro di curatela ↗"
     },
     "edit": {
       "multilineHint": "Campo multilinea — Il tasto Invio aggiunge una nuova riga, Ctrl+Invio (Cmd+Invio) conferma, Esc annulla."

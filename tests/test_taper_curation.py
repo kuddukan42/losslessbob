@@ -154,7 +154,7 @@ class TestIsolatedTexts:
 
 
 class TestRollupAndText:
-    """taper_rollup() and text_hits()."""
+    """taper_rollup()."""
 
     def test_rollup_counts_both_sides(self, curation):
         tc, db_path = curation
@@ -175,12 +175,3 @@ class TestRollupAndText:
         finally:
             db.clear_taper_flag("spot", db_path=db_path)
             tc.refresh_user_flags(db_path)
-
-    def test_text_hits_returns_snippets(self, curation):
-        tc, db_path = curation
-        hits = tc.text_hits(1, "spot", db_path=db_path)
-        assert hits and "spot" in hits[0]
-
-    def test_text_hits_on_missing_entry_is_empty(self, curation):
-        tc, db_path = curation
-        assert tc.text_hits(999, "spot", db_path=db_path) == []

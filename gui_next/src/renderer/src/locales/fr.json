@@ -926,12 +926,12 @@
       "rowHighlight": "Couleurs de mise en surbrillance des lignes"
     },
     "languages": {
-      "en": "Anglais",
-      "de": "Deutsch (anglais)",
-      "fr": "Français (en anglais)",
-      "es": "Espagnol",
+      "en": "English",
+      "de": "Deutsch",
+      "fr": "Français",
+      "es": "Español",
       "it": "Italiano",
-      "nl": "Pays-Bas"
+      "nl": "Nederlands"
     },
     "purges": {
       "title": "Purges de données",
@@ -1262,7 +1262,8 @@
       "recomputeHint": "Réévalue chaque entrée par rapport à la liste actuelle des enregistreurs (filière → attribution → sélections → index des morceaux). Fonctionne uniquement sur vos tables dérivées locales.",
       "recomputing": "Recalcul en cours…",
       "recomputeDone": "Recalcul terminé.",
-      "recomputeError": "Échec du recalcul : {{msg}}"
+      "recomputeError": "Échec du recalcul : {{msg}}",
+      "openWorkbench": "Ouvrir l'atelier de curation ↗"
     },
     "edit": {
       "multilineHint": "Champ multiligne — La touche Entrée ajoute un saut de ligne, Ctrl+Entrée (Cmd+Entrée) valide la saisie, Esc annule."

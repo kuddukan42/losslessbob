@@ -926,12 +926,12 @@
       "rowHighlight": "Farben für die Hervorhebung von Zeilen"
     },
     "languages": {
-      "en": "Englisch",
+      "en": "English",
       "de": "Deutsch",
-      "fr": "Französisch",
-      "es": "Spanisch",
-      "it": "Italienisch",
-      "nl": "Niederländisch"
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "nl": "Nederlands"
     },
     "purges": {
       "title": "Datenbereinigungen",
@@ -1262,7 +1262,8 @@
       "recomputeHint": "Jeden Eintrag anhand der aktuellen Taper-Liste neu bewerten (Herkunft → Zuordnung → Auswahl → Songindex). Läuft ausschließlich auf Ihren lokal abgeleiteten Tabellen.",
       "recomputing": "Wird neu berechnet…",
       "recomputeDone": "Neuberechnung abgeschlossen.",
-      "recomputeError": "Neuberechnung fehlgeschlagen: {{msg}}"
+      "recomputeError": "Neuberechnung fehlgeschlagen: {{msg}}",
+      "openWorkbench": "Kuratierungs-Workbench öffnen ↗"
     },
     "edit": {
       "multilineHint": "Mehrzeiliges Feld – Mit der Eingabetaste wird eine neue Zeile eingefügt, mit Strg+Eingabetaste (Cmd+Eingabetaste) wird bestätigt, mit Esc wird abgebrochen."

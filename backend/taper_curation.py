@@ -862,31 +862,3 @@ def taper_rollup(db_path: str | None = None) -> list[dict]:
             slot(canon)["tuit"] += 1
 
     return sorted(out.values(), key=lambda r: (-r["undecided"], -r["attributed"]))
-
-
-_SNIPPET_RADIUS = 90
-
-
-def text_hits(lb: int, needle: str, db_path: str | None = None) -> list[str]:
-    """Return description snippets around each occurrence of *needle*.
-
-    Args:
-        lb: LB number.
-        needle: Text to locate (case-insensitive).
-        db_path: Optional database path override.
-
-    Returns:
-        Up to five ``…snippet…`` strings.
-    """
-    conn = get_connection(db_path)
-    row = conn.execute(
-        "SELECT description FROM entries WHERE lb_number = ?", (lb,)
-    ).fetchone()
-    text = (row["description"] if row else "") or ""
-    out: list[str] = []
-    for m in re.finditer(re.escape(needle), text, re.IGNORECASE):
-        start = max(0, m.start() - _SNIPPET_RADIUS)
-        out.append(text[start:m.end() + _SNIPPET_RADIUS].replace("\n", " ").strip())
-        if len(out) >= 5:
-            break
-    return out

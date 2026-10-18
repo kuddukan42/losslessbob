@@ -1231,6 +1231,7 @@
       "originUser": "user",
       "empty": "No taper aliases match.",
       "filterPlaceholder": "Filter aliases…",
+      "openWorkbench": "Open curation workbench ↗",
       "count": "{{merged}} aliases · {{user}} user-added",
       "readOnly": " (read-only — curator required)",
       "aliasPlaceholder": "handle / alias",

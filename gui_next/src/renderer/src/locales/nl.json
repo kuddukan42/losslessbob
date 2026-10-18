@@ -926,8 +926,8 @@
       "rowHighlight": "Kleuren voor het markeren van rijen"
     },
     "languages": {
-      "en": "Engels",
-      "de": "Duits",
+      "en": "English",
+      "de": "Deutsch",
       "fr": "Français",
       "es": "Español",
       "it": "Italiano",
@@ -1262,7 +1262,8 @@
       "recomputeHint": "Beoordeel elk item opnieuw aan de hand van de huidige taperlijst (afstamming → bronvermelding → selecties → nummerindex). Werkt uitsluitend op uw lokale afgeleide tabellen.",
       "recomputing": "Opnieuw aan het berekenen…",
       "recomputeDone": "Herberekening voltooid.",
-      "recomputeError": "Herberekening mislukt: {{msg}}"
+      "recomputeError": "Herberekening mislukt: {{msg}}",
+      "openWorkbench": "Open curatie-werkbank ↗"
     },
     "edit": {
       "multilineHint": "Veld met meerdere regels — Enter voegt een nieuwe regel toe, Ctrl+Enter (Cmd+Enter) bevestigt, Esc annuleert."

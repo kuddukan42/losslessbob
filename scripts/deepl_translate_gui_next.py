@@ -82,6 +82,9 @@ SKIP_KEYS: set[str] = {
     "appShell.statusBar.bootlegs", # same
     "library.facets.bestRatingPerShow", # DeepL reads "show" as TV/radio broadcast, not concert;
                                          # manually translated using "concert" instead
+    # Language-picker labels name each language in itself ("Italiano"), in every locale.
+    "setup.languages.en", "setup.languages.de", "setup.languages.fr",
+    "setup.languages.es", "setup.languages.it", "setup.languages.nl",
 }
 
 

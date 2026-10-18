@@ -509,6 +509,16 @@ function TaperPanel({
 
   return (
     <div>
+      {/* The full workbench (TODO-327) is a backend page; target=_blank opens it in the
+          system browser via the main process's window-open handler. */}
+      <a
+        href={`${BASE}/taper-curation`}
+        target="_blank"
+        rel="noreferrer"
+        style={{ display: 'inline-block', marginBottom: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-accent-mid)' }}
+      >
+        {t('dbeditor.tapers.openWorkbench')}
+      </a>
       <input
         type="text"
         value={filter}
