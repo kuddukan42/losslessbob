@@ -5,7 +5,7 @@
 // process (window.api.printDossierPdf — a hidden BrowserWindow prints the
 // backend's own HTML render) and falls back to an HTML download when that
 // bridge isn't available (dev/browser context, spec D4).
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '../primitives'
 import { useSettingsStore, type DossierChannel, type DossierFormat } from '../../store'

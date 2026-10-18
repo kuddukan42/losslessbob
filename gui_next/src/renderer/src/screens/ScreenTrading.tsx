@@ -285,9 +285,9 @@ export function ScreenTrading() {
                   <form key={f.id} onSubmit={async e => {
                     e.preventDefault()
                     if (!renameVal.trim()) return
-                    const entries_r = await fetch(`${BASE}/api/trading/compare/${f.id}`)
-                    // Re-import with new name — fetch existing entries first
-                    const comp: CompareResult = entries_r.ok ? await entries_r.json() : { they_have_you_dont: [], you_have_they_dont: [], both_have_count: 0, friend_name: '' }
+                    // Fetch result is unused (rename is not implemented server-side) — kept
+                    // pending a decision; see TODO-361 closing note.
+                    await fetch(`${BASE}/api/trading/compare/${f.id}`)
                     // Get raw entries from friend_collection_entries via compare diff isn't perfect;
                     // simplest: delete + re-import is not possible without raw entries.
                     // Use a rename via upsert trick: just update name client-side via POST with empty entries won't work.

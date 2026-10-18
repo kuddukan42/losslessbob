@@ -125,12 +125,6 @@ function ratingTone(r: string): 'ok' | 'info' | 'warn' | 'mute' {
   return 'warn'
 }
 
-function coverageTone(c: string): 'ok' | 'warn' | 'mute' {
-  if (c === 'Covered') return 'ok'
-  if (c === 'Gap') return 'mute'
-  return 'warn'
-}
-
 // Shared aside styles with --sep-detail-* token cascade (matches prototype perf-parts.jsx)
 function panelAsideStyle(width: number): React.CSSProperties {
   return {

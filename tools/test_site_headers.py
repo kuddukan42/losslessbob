@@ -8,7 +8,6 @@ Reports whether the server supports ETag, Last-Modified, HEAD requests,
 and conditional GET (304 Not Modified) — all of which determine how
 efficiently we can detect page changes without re-downloading full bodies.
 """
-import sys
 import time
 import requests
 

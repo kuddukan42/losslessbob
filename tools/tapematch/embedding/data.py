@@ -25,7 +25,6 @@ from __future__ import annotations
 import argparse
 import json
 import logging
-import os
 import sqlite3
 import subprocess
 from concurrent.futures import ProcessPoolExecutor, as_completed

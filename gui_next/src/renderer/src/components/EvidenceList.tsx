@@ -11,7 +11,6 @@
 // (e.g. "LB rating A− · +85", "carbonbit's picks · +8",
 // "claimed superseded by LB-1234 · −6").
 
-import React from 'react'
 
 export interface EvidenceRecord {
   kind: string

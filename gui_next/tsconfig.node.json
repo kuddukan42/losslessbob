@@ -8,6 +8,7 @@
     "moduleResolution": "bundler",
     "types": ["node"],
     "strict": true,
+    "noUnusedLocals": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },

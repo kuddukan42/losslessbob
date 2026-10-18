@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Icon } from '../components/Icon'
-import { Button, Chip, IconButton, Input, Pill } from '../components'
+import { Button, IconButton, Input, Pill } from '../components'
 import { FolderQueueRail } from '../components/FolderQueueRail'
 import { useSpectrogramStore, SpectroTrack } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'

@@ -4,7 +4,7 @@ import { Icon } from '../Icon'
 import { Button, Pill, Banner, TableShell, TH, TR, TD } from '../index'
 import { LookupSummaryRow, LookupDetail as LookupDetailRow } from '../../lib/lookupStore'
 import { lbDetailUrl } from '../../lib/lbUrl'
-import { LookupState, STATE_TONE, apiStatusToState, XREF_TONE, formatXrefTag } from './lookupState'
+import { STATE_TONE, apiStatusToState, XREF_TONE, formatXrefTag } from './lookupState'
 
 export function categoryPill(cat: string | null | undefined): React.JSX.Element | null {
   if (!cat || cat === 'unknown') return null

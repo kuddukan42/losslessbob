@@ -46,12 +46,6 @@ Status: Open
 Added: 2026-10-17
 Description: From instructions/CODE_REVIEW_2026-10-17.md §2. Delete backend/updater.py (no importers), routes /api/app/version, /api/update/{check,status,apply} (app.py:2664-2750), /api/data/download(+/status) (app.py:2753-2778), globals _update_state/_data_dl_state (app.py:81,90), _restart_callback/set_restart_callback (app.py:339-349, 9602) and its wiring in run_backend.py, the updater/data-download activity rows (activity.py:305). Also remove legacy GET /api/activity/busy (app.py:1205-1220) + activity.busy_snapshot() (activity.py:671) + its tests in tests/test_activity_sse.py:177-197, and simplify the precedence comments (activity.py:181,230). PyQt remnants: AboutDialog.tsx:28-29 PyQt6 rows; pyproject.toml ruff exclude 'gui'; rewrite the E501 'after TODO-281' comment (TODO-281 is closed). Confirm no tools/CI caller of /api/app/version first. /backend-restart + /gui-check.
 
-TODO-361: Code review lint pass: GUI unused locals, dead exports, tools unused imports, ruff B905
-Priority: Medium
-Status: Open
-Added: 2026-10-17
-Description: From instructions/CODE_REVIEW_2026-10-17.md §5 (tools list, S7) + §6a/6b. GUI: fix the 25 tsc --noUnusedLocals errors (table in §6a; check ScreenPipeline isRunning/stopRun for a lost Stop button and ScreenScraper geocoderStats for a wasted fetch), delete dead exports PIPELINE_STAGES (pipeline/PipelineIcon.tsx), FONTS + CARD_STYLES (lib/tokens.ts), then add noUnusedLocals: true to gui_next/tsconfig.web.json so /gui-check enforces it. Python: ruff check --isolated --select F401,F841 --fix tools (skip vendor/; nmfp_embed.py:135 tensorflow may be a deliberate side-effect import). Enable B905 (zip strict) in pyproject.toml and fix the 24 hits; optional one ruff --fix commit for SIM105/SIM102/RET504. ERA001 hits are all benign — leave them.
-
 TODO-360: Code review H7: archive or document the one-off tools nothing references
 Priority: Low
 Status: Open

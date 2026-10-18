@@ -4,7 +4,7 @@
 // on a mount and re-reads it later to catch silent corruption that never
 // touches mtime. Backend: backend/file_integrity.py + /api/file-integrity/*.
 
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Button, Pill, Card, Banner, SectionHead } from '../components'
 import { Icon } from '../components/Icon'
 

@@ -11,7 +11,7 @@ Clustering is decided automatically. Lineage DIRECTION is reported as evidence
 from __future__ import annotations
 import math
 import numpy as np
-from scipy.signal import stft, correlate
+from scipy.signal import correlate
 from .audio import to_mono, resample_ratio
 from .align import local_lag, local_lag_centered
 

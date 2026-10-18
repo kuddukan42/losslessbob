@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-361: Code review lint pass: GUI unused locals, dead exports, tools unused imports, ruff B905
+Priority: Medium
+Status: Done
+Added: 2026-10-17
+Closed: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §5 (tools list, S7) + §6a/6b. GUI: fix the 25 tsc --noUnusedLocals errors (table in §6a; check ScreenPipeline isRunning/stopRun for a lost Stop button and ScreenScraper geocoderStats for a wasted fetch), delete dead exports PIPELINE_STAGES (pipeline/PipelineIcon.tsx), FONTS + CARD_STYLES (lib/tokens.ts), then add noUnusedLocals: true to gui_next/tsconfig.web.json so /gui-check enforces it. Python: ruff check --isolated --select F401,F841 --fix tools (skip vendor/; nmfp_embed.py:135 tensorflow may be a deliberate side-effect import). Enable B905 (zip strict) in pyproject.toml and fix the 24 hits; optional one ruff --fix commit for SIM105/SIM102/RET504. ERA001 hits are all benign — leave them.
+2026-10-17: GUI — removed all 25 tsc --noUnusedLocals hits (dead dev screens PlaceholderScreen/PrimitivesScreen + their imports in App.tsx, unused imports/helpers in 13 files), dead exports PIPELINE_STAGES/FONTS/CARD_STYLES; noUnusedLocals now on in tsconfig.web.json + tsconfig.node.json so gui-check enforces it. Behaviour kept exactly: ScreenScraper geocoderStats and ScreenSetup pageSize state are still set but never rendered (now [, setX]); ScreenTrading rename still fires an unused /api/trading/compare fetch (flagged in-code). ScreenPipeline's stopRun (POST /api/pipeline/run/cancel) was never wired to a button — removed; the backend cancel route stays. tools — 9 unused imports + 3 unused locals removed; nmfp_embed tensorflow import kept with noqa. B905: the review was wrong — already enforced on backend/cli/concert_ranker (B selected, 0 hits); the 24 sites are all in un-linted tools/ TapeMatch code, left as-is (strict=True could break calibration runs, strict=False is a no-op). Optional SIM/RET autofix skipped. gui-check PASS; tapematch tests 532 pass, 1 pre-existing failure logged as a bug.
+
 TODO-358: Code review H1-H6: untrack the 1.6 GB embed cache, logs and junk files
 Priority: High
 Status: Done

@@ -13,7 +13,6 @@ read the lag-vs-position curve:
 from __future__ import annotations
 import numpy as np
 from scipy.signal import stft, correlate
-from .audio import to_mono
 
 
 def onset_strength(mono, sr, hop_sec=0.02):

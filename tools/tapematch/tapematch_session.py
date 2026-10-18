@@ -880,7 +880,6 @@ def insert_sources(conn: sqlite3.Connection, run_id: str, date_iso: str,
     name_to_lb: dict[str, int] = {p.name: n for n, p in found_folders.items()}
     for folder_name, s in results["sources"].items():
         lb_num = _lb_num_from_folder(folder_name, name_to_lb)
-        src_path = found_folders.get(lb_num, root_dir / folder_name)
         dom_ext = _dominant_ext(root_dir / folder_name)
         hdr = extract_lb_header(lb_num) if lb_num else {}
         commentary = extract_lb_commentary(lb_num) if lb_num else ""

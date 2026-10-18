@@ -15,13 +15,13 @@ import { RecordingDetailPanel, PerformanceDetailPanel } from '../components/libr
 import type { RowHistory } from '../components/library/DetailPanel'
 import { useResizableColumns, useResizableWidth } from '../lib/useResizableColumns'
 import {
-  type LibStatus, type RatingGrade, type Scope, type SortKey, type SortDir,
+  type LibStatus, type RatingGrade, type Scope, type SortKey,
   type HealthFlag, type RecordingRow,
-  VALID_RATINGS, RATING_RANK, extractYear, decadeOf, HEALTH_CHECK,
+  VALID_RATINGS, RATING_RANK, decadeOf, HEALTH_CHECK,
   buildRecordingRows, filterRecordingRows,
 } from '../lib/libraryRows'
 import {
-  useLibraryFilterStore, snapshotRecordingFilters, hasRecordingFilters,
+  useLibraryFilterStore, snapshotRecordingFilters,
 } from '../lib/libraryFilterStore'
 import { useSavedViewsStore } from '../lib/savedViewsStore'
 import { useLibraryActions } from '../lib/useLibraryActions'
@@ -647,8 +647,6 @@ export function ScreenLibrary(): React.JSX.Element {
   const handleBulkRelocate = () => actionHandlers.onRelocate(getCheckedRows().map(toRecAction))
   const handleBulkRemove = () => actionHandlers.onRemove(getCheckedRows().map(toRecAction))
 
-  const hasActiveFilters = activeDecade.size > 0 || activeStatus.size > 0 || activeRating.size > 0
-    || activeSource.size > 0 || activeHealth.size > 0 || scope !== 'all'
   const recActiveCount = activeDecade.size + activeStatus.size + activeRating.size + activeSource.size + activeHealth.size + (scope !== 'all' ? 1 : 0)
 
   const clearAll = () => {
@@ -1430,7 +1428,6 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   const query    = useLibraryFilterStore(s => s.perfQuery)
   const setQuery = useLibraryFilterStore(s => s.setPerfQuery)
   const groupByYear       = useLibraryFilterStore(s => s.perfGroupByYear)
-  const setGroupByYear    = useLibraryFilterStore(s => s.setPerfGroupByYear)
   const collapsedYears    = useLibraryFilterStore(s => s.perfCollapsedYears)
   const setCollapsedYears = useLibraryFilterStore(s => s.setPerfCollapsedYears)
   const expandedShows     = useLibraryFilterStore(s => s.perfExpandedShows)

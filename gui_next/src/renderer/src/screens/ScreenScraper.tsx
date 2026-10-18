@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
-import { Button, Chip, Pill, Card, SectionHead, Toolbar, Input, Banner } from '../components'
+import { Button, Chip, Pill, SectionHead, Toolbar, Input, Banner } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { Icon } from '../components/Icon'
 import { useScraperLogStore } from '../lib/scraperLogStore'
@@ -148,14 +148,6 @@ interface LogLine { ts: string; text: string; tone?: 'ok' | 'bad' | 'warn' | 'mu
 function fmtTs(ts: string | null): string {
   if (!ts) return '—'
   return ts.replace('T', ' ').slice(0, 16)
-}
-
-function statusTone(s: string): 'ok' | 'bad' | 'warn' | 'mute' | 'info' {
-  if (s === 'running') return 'info'
-  if (s === 'done' || s === 'idle' && false) return 'ok'
-  if (s === 'error') return 'bad'
-  if (s === 'stopped') return 'warn'
-  return 'mute'
 }
 
 function fmtBytes(n: number): string {
@@ -1512,17 +1504,6 @@ function WtrfTab({ logs, onClearLog, onLog }: {
   )
 }
 
-const TABS: { id: TabId; label: string }[] = [
-  { id: 'crawler',   label: 'LB Crawler' },
-  { id: 'entry',     label: 'Entry Metadata' },
-  { id: 'bootlegs',  label: 'Bootleg Catalog' },
-  { id: 'bobdylan',  label: 'Dylan.com' },
-  { id: 'setlistfm', label: 'Setlist.fm' },
-  { id: 'geocoder',  label: 'Geocoder' },
-  { id: 'preservation', label: 'Preservation' },
-  { id: 'wtrf',      label: 'WTRF Seeding' },
-]
-
 function ScreenScraperInner() {
   const { t } = useTranslation()
   const [activeTab, setActiveTab] = useState<TabId>('crawler')
@@ -1542,7 +1523,7 @@ function ScreenScraperInner() {
   const [bootlegStats,   setBootlegStats]   = useState<{ total: number; last: string } | null>(null)
   const [bobdylanStats,  setBobdylanStats]  = useState<{ total: number; scraped: number; last: string } | null>(null)
   const [setlistFmStats, setSetlistFmStats] = useState<{ shows: number; tracks: number } | null>(null)
-  const [geocoderStats,  setGeocoderStats]  = useState<{ done: number; total: number } | null>(null)
+  const [,               setGeocoderStats]  = useState<{ done: number; total: number } | null>(null)
   const [geoStats,       setGeoStats]       = useState<GeoStats | null>(null)
   const [invStats,       setInvStats]       = useState<{ total: number } | null>(null)
   const [entryDbStats,   setEntryDbStats]   = useState<{ ok: number } | null>(null)

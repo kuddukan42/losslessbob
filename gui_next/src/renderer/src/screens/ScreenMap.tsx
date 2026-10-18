@@ -29,14 +29,6 @@ const SELECTED_LBS = [
   { lb: 'LB-7716', d: '2002-10-15', v: 'Berkeley Comm. Theatre',      owned: false, status: 'current' },
 ]
 
-const DECADES = [
-  { c: '#3b6a99',               l: '1960s' },
-  { c: '#2a8b6f',               l: '1970s' },
-  { c: 'var(--lbb-accent-mid)', l: '1980s' },
-  { c: '#c25a48',               l: '1990s' },
-  { c: '#b58a3a',               l: '2000s+' },
-]
-
 const DECADE_CHIPS: Array<[string, number, number]> = [
   ['60s', 1960, 1969], ['70s', 1970, 1979], ['80s', 1980, 1989],
   ['90s', 1990, 1999], ['00s', 2000, 2009], ['10s+', 2010, 2030],

@@ -5,7 +5,7 @@ import { useVirtualizer } from '@tanstack/react-virtual'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 import { Icon } from '../components/Icon'
-import { Button, IconButton, Input, Pill, Banner, Chip, Toast } from '../components'
+import { Button, IconButton, Input, Pill, Banner, Toast } from '../components'
 import type { ToastTone } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
@@ -1786,7 +1786,6 @@ export function ScreenPipeline(): React.JSX.Element {
     done:    rows.filter(r => !r.running && r.bucket === 'done').length,
   }
 
-  const isRunning       = rows.some(r => r.running)
   const selectedRows    = rows.filter(r => r.selected)
   const selectedReady   = selectedRows.filter(r => r.bucket === 'ready')
   const fileableRows    = rows.filter(r => !r.running && r.steps.file.status === 'warn' && !!r.steps.file.dest && !r.shelved && !(r.steps.rename.status === 'warn' && !!r.steps.rename.proposed))
@@ -1959,13 +1958,6 @@ export function ScreenPipeline(): React.JSX.Element {
     jobQueueRef.current.push({ ids, steps })
     void drainJobQueue()
   }, [drainJobQueue])
-
-  const stopRun = useCallback(() => {
-    stopRef.current = true
-    jobQueueRef.current = []
-    void fetch(`${BASE}/api/pipeline/run/cancel`, { method: 'POST' }).catch(() => {})
-    setRows(prev => prev.map(r => r.running ? { ...r, running: false } : r))
-  }, [])
 
   // ── Auto-run: drain pending queue after state settles ────────────────────────
   useEffect(() => {

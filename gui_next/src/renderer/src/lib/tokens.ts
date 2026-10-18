@@ -29,10 +29,8 @@ export interface ThemeOptions {
 
 export const ACCENTS: Accent[] = ['indigo', 'plum', 'rust', 'forest', 'teal', 'amber', 'gray', 'crimson'];
 export const DENSITIES: Density[] = ['compact', 'default', 'comfortable'];
-export const FONTS: Font[] = ['inter', 'ibm-plex', 'source'];
 export const FONT_SIZES: FontSize[] = [12, 13, 14];
 export const PALETTE_OPTIONS: Palette[] = ['slate', 'blue', 'purple', 'green', 'graphite'];
-export const CARD_STYLES: CardStyle[] = ['framed', 'flat'];
 
 const FONT_STACKS: Record<Font, string> = {
   'inter':    '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',

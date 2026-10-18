@@ -132,7 +132,7 @@ def main() -> int:
     # ── build model + mel front-end from the checkpoint's own config ────────────
     sys.path.insert(0, str(VENDOR))
     os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
-    import tensorflow as tf
+    import tensorflow as tf  # noqa: F401 — load TF before the vendored nmfp imports
     from nmfp.utils import load_config
     from nmfp.model.utils import get_fingerprinter, get_checkpoint_index_and_restore_model
     from nmfp.audio_processing.melspectrogram import Melspec_layer

@@ -34,7 +34,6 @@ from backend.db import (  # noqa: E402
     extract_taper_and_source,
     get_connection,
     get_lineage,
-    get_write_queue,
     upsert_entry_lineage,
 )
 

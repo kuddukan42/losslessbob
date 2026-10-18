@@ -1061,7 +1061,6 @@ _D27_NAMED_CASES = (
 def run_d27(db_path: Path) -> int:
     """S8 selection accept cases (C27): the 5 named LBs, then a 300-show seeded sample."""
     import random
-    from collections import Counter
 
     from backend.dossier_anchors import _classify_sources
     from backend.dossier_fields import compare_sources

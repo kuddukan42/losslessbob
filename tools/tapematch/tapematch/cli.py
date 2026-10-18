@@ -13,7 +13,7 @@ from pathlib import Path
 import numpy as np
 import yaml
 from . import asr, ingest, trim, align, match, verdict
-from .audio import to_mono, resample_ratio
+from .audio import resample_ratio
 from .ingest import fmt_hms
 
 # NUMBA_CACHE_DIR must be set before the first librosa call (match.pitch_ratio_pyin
@@ -867,7 +867,6 @@ def main(argv=None):
     # When hf_band_hz is not configured, cluster_threshold should not be set — full-band
     # fingerprint different-source same-show pairs reach 0.15–0.50, below the safe 0.60
     # display threshold but above any clustering threshold that would be useful.
-    fp_thr = cfg.get("fingerprint", {}).get("match_threshold", 0.0) if fp_hashes else 0.0
     fp_cluster_thr = cfg.get("fingerprint", {}).get("cluster_threshold", 0.0) if fp_hashes else 0.0
 
     # BUG-278: nmfp embedding scores, computed HERE -- before clustering -- so

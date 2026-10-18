@@ -21,7 +21,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from tapematch import align, ingest, match, trim  # noqa: E402
+from tapematch import ingest, match, trim  # noqa: E402
 
 ROOT = Path("/mnt/DYLAN1/Concerts/2001")
 SOURCES = {

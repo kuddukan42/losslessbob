@@ -2,7 +2,6 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../Icon'
 import { Pill } from '../primitives'
-import type { IconName } from '../Icon'
 import { PipelineIcon } from './PipelineIcon'
 import type { PipelineStage, PipelineStatus } from './PipelineIcon'
 

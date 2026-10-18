@@ -1,3 +1,11 @@
+[2026-10-17] — Lint pass: dead GUI code removed, noUnusedLocals enforced (TODO-361)
+Removed: gui_next App.tsx dead dev screens (PlaceholderScreen, PrimitivesScreen, ~180 lines) and
+  unused imports/helpers in 13 renderer files; dead exports PIPELINE_STAGES, FONTS, CARD_STYLES;
+  ScreenPipeline stopRun (never wired to a button).
+Changed: gui_next tsconfig.web.json + tsconfig.node.json: noUnusedLocals on (gui-check enforces).
+Removed: 9 unused imports + 3 unused locals across tools/ (TapeMatch, ledger_dedup, parse_lineage).
+Added: BUGS.md: BUG-374 (pre-existing tapematch commentary-audit test failure).
+
 [2026-10-17] — Shipped specs and design handoffs moved to archive/specs/
 Changed: instructions/complete/ -> archive/specs/ (all retired specs + 9 design-handoff folders),
   plus PIPELINE_REFRESH_INVENTORY/PHASE1-3.md and SHOW_DOSSIER_AUDIT.md (shipped/folded);

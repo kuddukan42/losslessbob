@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSettingsStore } from '../store'
-import { Button, Pill, Icon, Banner } from '../components'
+import { Button, Pill, Icon } from '../components'
 
 const BASE = window.api.flaskBase
 
@@ -551,7 +551,7 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
   const [flatBusyId, setFlatBusyId] = useState<number | null>(null)
   const [toast, setToast] = useState<{ msg: string; tone: 'ok' | 'bad' | 'info' } | null>(null)
   const [confirm, setConfirm] = useState<{ title: string; body: string; onConfirm: () => void } | null>(null)
-  const [pageSize, setPageSize] = useState('100')
+  const [, setPageSize] = useState('100')
   const [autoScrape, setAutoScrape] = useState(true)
   const [busy, setBusy] = useState<string | null>(null)
   const [qbtTone, setQbtTone] = useState<'ok' | 'warn' | 'mute'>('mute')

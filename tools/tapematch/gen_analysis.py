@@ -501,7 +501,6 @@ def build_analysis(run_dir: Path, r: dict, results: dict) -> str:
     verdict = _verdict(r, obs)
 
     n_src = r["coverage_disk"]
-    n_fam = r["n_families"] or len(r["clusters"])
 
     lines.append(f"## Verdict: {n_src} recordings — {verdict}")
     lines.append("")

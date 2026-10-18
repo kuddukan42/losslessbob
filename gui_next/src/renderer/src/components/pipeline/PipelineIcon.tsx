@@ -139,10 +139,3 @@ export interface PipelineStageDesc {
   label: string
 }
 
-export const PIPELINE_STAGES: PipelineStageDesc[] = [
-  { key: 'verify', label: 'Verify' },
-  { key: 'lookup', label: 'Lookup' },
-  { key: 'rename', label: 'Rename' },
-  { key: 'lbdir', label: 'LBDIR' },
-  { key: 'collect', label: 'Collect' },
-]

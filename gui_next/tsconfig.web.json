@@ -9,6 +9,7 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "strict": true,
+    "noUnusedLocals": true,
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "skipLibCheck": true,
