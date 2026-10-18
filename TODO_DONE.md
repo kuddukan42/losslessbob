@@ -2,6 +2,22 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-368: Code review §6c-6d: GUI shared lib/api.ts + lib/format.ts, splash TODO
+Priority: Low
+Status: Done
+Added: 2026-10-17
+Closed: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §6c/6d. const BASE = window.api.flaskBase is copied in 32 files — add lib/api.ts (BASE + typed getJson/postJson) and collapse the hand-rolled fetch().then(r=>r.json()) blocks. Formatters duplicated: fmtBytes/fmtSize x4 (OnboardingWizard:91, ScreenFileIntegrity:81, ScreenScraper:161, ScreenScanner:44), fmtLb x4 (AppShell:459, ScreenFingerprint:60, ScreenHome:63, ScreenSongs:56), fmtNum x3 (AppShell:463, ScreenHome:67, ScreenSetup:1419) -> lib/format.ts. One helper per commit. App.tsx:367 'TODO: re-enable splash screen' — delete the splash component/state or re-enable; no bare TODOs. /gui-check + /verify.
+lib/api.ts (BASE/getJson/postJson) across 40 files; lib/format.ts fmtBytes/fmtNum, fmtLb -> lbLabel; SplashOverlay deleted. /gui-check + /verify Tier A PASS.
+
+TODO-367: Code review S4-S6: small backend simplifications
+Priority: Low
+Status: Done
+Added: 2026-10-17
+Closed: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §5. S4: _ProgressFile is duplicated at app.py:6499 and app.py:11642 and open()s without a context manager — lift to one module-level class with close()/__exit__. S5: _parse_date exists 4 times (bobserve_parser.py:153, bootleg_scraper.py:58, setlistfm.py:95, torrent_maker.py:112) — share where formats match (torrent_maker/setlistfm). S6: delete the unused 'crowd' cuts in concert_ranker/config.py _SBD_CUTS (~326). Optional, only when touching them: drop the 'db_path: Unused' params on write-queue functions (db.py:6926, 6945, 6978, 6999, 10003, 10135).
+S4 done (module-level _ProgressFile + _github_upload_asset, test added); S6 done (crowd cuts removed, rank hash bumped once); S5 no-op — the four _parse_date parse different formats; optional db_path cleanup not done.
+
 TODO-366: Code review S3: move the 9 inline job-progress dicts onto JobState (double-start race)
 Priority: Medium
 Status: Done

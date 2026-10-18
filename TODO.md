@@ -4,18 +4,6 @@ Status: Open
 Added: 2026-10-17
 Description: From instructions/CODE_REVIEW_2026-10-17.md §5 S1/S2. app.py is 13,742 lines with all 388 routes and 22 thread spawns, no Blueprints; db.py is 10,754 lines. Split app.py by domain (routes/collection, tapematch, dossier, scrape, ...) one Blueprint per commit, zero behaviour change; split db.py into backend/db/ by table family re-exporting from __init__ so callers don't change. Do AFTER the §2, §3a and §4 removal TODOs have shrunk both files.
 
-TODO-368: Code review §6c-6d: GUI shared lib/api.ts + lib/format.ts, splash TODO
-Priority: Low
-Status: Open
-Added: 2026-10-17
-Description: From instructions/CODE_REVIEW_2026-10-17.md §6c/6d. const BASE = window.api.flaskBase is copied in 32 files — add lib/api.ts (BASE + typed getJson/postJson) and collapse the hand-rolled fetch().then(r=>r.json()) blocks. Formatters duplicated: fmtBytes/fmtSize x4 (OnboardingWizard:91, ScreenFileIntegrity:81, ScreenScraper:161, ScreenScanner:44), fmtLb x4 (AppShell:459, ScreenFingerprint:60, ScreenHome:63, ScreenSongs:56), fmtNum x3 (AppShell:463, ScreenHome:67, ScreenSetup:1419) -> lib/format.ts. One helper per commit. App.tsx:367 'TODO: re-enable splash screen' — delete the splash component/state or re-enable; no bare TODOs. /gui-check + /verify.
-
-TODO-367: Code review S4-S6: small backend simplifications
-Priority: Low
-Status: Open
-Added: 2026-10-17
-Description: From instructions/CODE_REVIEW_2026-10-17.md §5. S4: _ProgressFile is duplicated at app.py:6499 and app.py:11642 and open()s without a context manager — lift to one module-level class with close()/__exit__. S5: _parse_date exists 4 times (bobserve_parser.py:153, bootleg_scraper.py:58, setlistfm.py:95, torrent_maker.py:112) — share where formats match (torrent_maker/setlistfm). S6: delete the unused 'crowd' cuts in concert_ranker/config.py _SBD_CUTS (~326). Optional, only when touching them: drop the 'db_path: Unused' params on write-queue functions (db.py:6926, 6945, 6978, 6999, 10003, 10135).
-
 TODO-365: Code review §4: triage the ~50 Flask routes with no caller, one feature group at a time
 Priority: Medium
 Status: Open

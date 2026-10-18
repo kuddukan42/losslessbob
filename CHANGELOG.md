@@ -1,3 +1,17 @@
+[2026-10-17] — Code-review cleanups: GitHub upload helper, GUI api/format libs, splash removed (TODO-367, TODO-368)
+Changed: backend/app.py: the two nested _ProgressFile/_upload_asset copies (master + site-data
+  publish) are now one module-level _ProgressFile (context manager) + _github_upload_asset.
+Changed: concert_ranker/config.py: dropped the unused "crowd" cuts from _SBD_CUTS. Bumps the
+  rank-config hash once, so Data Freshness flags "Re-rank audio quality" (output unchanged).
+Changed: gui_next lib/api.ts (BASE, getJson, postJson) replaces 40 files' local
+  `const BASE = window.api.flaskBase` and 81 fetch().then(r => r.json()) chains (same no-throw
+  semantics). lib/format.ts holds fmtBytes/fmtNum; the four fmtLb copies now use lbLabel.
+  Scanner/FileIntegrity/Onboarding sizes now use the Scraper byte format (e.g. "3.4 MB").
+Changed: deleted the never-shown SplashOverlay, its bare TODO in App.tsx, its keyframes and
+  the driver's splash waits.
+Added: tests/test_github_upload_asset.py.
+Note: S5 (_parse_date x4) skipped — the four parse different formats; nothing to share.
+
 [2026-10-17] — Background workers can no longer be started twice (TODO-366)
 Fixed: bootleg scrape, site crawler, geocoder, bobdylan (update/scrape/discover), setlist.fm and
   flat-file import: start routes checked a status dict and then spawned a thread that set
