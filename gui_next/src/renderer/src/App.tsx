@@ -4,7 +4,7 @@ import { QueryClient } from '@tanstack/react-query'
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client'
 import type { PersistedClient, Persister } from '@tanstack/react-query-persist-client'
 import { get as idbGet, set as idbSet, del as idbDel } from 'idb-keyval'
-import { AppShell, SplashOverlay, AboutDialog } from './components'
+import { AppShell, AboutDialog } from './components'
 import { useSettingsStore } from './store'
 import { useFolderQueueStore } from './lib/folderQueueStore'
 import i18n from './i18n'
@@ -177,7 +177,6 @@ export default function App(): React.JSX.Element {
   const language = useSettingsStore((s) => s.language)
   useEffect(() => { i18n.changeLanguage(language) }, [language])
 
-  const [splashDone, setSplashDone] = useState(true) // TODO: re-enable splash screen
   const [showAbout, setShowAbout] = useState(false)
 
   return (
@@ -197,7 +196,6 @@ export default function App(): React.JSX.Element {
     <HashRouter>
       <RouteRestorer />
       <PipelineInbox />
-      {!splashDone && <SplashOverlay onDone={() => setSplashDone(true)} />}
       {showAbout && <AboutDialog onClose={() => setShowAbout(false)} />}
       <AppShell onAbout={() => setShowAbout(true)}>
         <KeepAlivePipeline />

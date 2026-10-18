@@ -214,12 +214,6 @@ async function runRendererSession(actions, opts) {
   await page.goto(baseUrl)
   await page.waitForLoadState('domcontentloaded')
 
-  log('Waiting for splash to clear...')
-  try {
-    await page.waitForSelector('[data-testid="splash-overlay"]', { state: 'detached', timeout: 10000 })
-  } catch (err) {
-    log(`splash overlay did not clear: ${err.message} — continuing anyway`)
-  }
 
   // renderer-only capability set: resize maps to a Playwright viewport
   // resize (no real OS window here). No `mainEval` — there is no Electron
@@ -302,12 +296,6 @@ async function runSession(actions, opts) {
 
     await page.waitForTimeout(800) // let renderer settle/paint
 
-    log('waiting for splash to clear...')
-    try {
-      await page.waitForSelector('[data-testid="splash-overlay"]', { state: 'detached', timeout: 10000 })
-    } catch (err) {
-      log(`splash overlay did not clear: ${err.message} — continuing anyway`)
-    }
 
     // Tier B capabilities for driver_core's shared action runner (§6):
     // real window resize and main-process eval, both only possible because

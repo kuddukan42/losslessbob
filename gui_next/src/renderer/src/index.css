@@ -122,12 +122,6 @@ table tbody tr:hover td {
   100% { transform: translateX(350%); }
 }
 
-/* Splash progress bar — indeterminate sliding fill */
-@keyframes lbbIndet {
-  0%   { transform: translateX(-110%); }
-  100% { transform: translateX(290%); }
-}
-
 /* Coverage / award screen (design_handoff_lb_coverage_award §5).
    All three are motion-only and are suppressed wholesale under
    prefers-reduced-motion by the guard at the bottom of this block. */
