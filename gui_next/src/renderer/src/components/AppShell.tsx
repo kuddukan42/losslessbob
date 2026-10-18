@@ -9,6 +9,8 @@ import { useNavVisibilityStore } from '../lib/navVisibilityStore'
 import { CommandPalette } from './CommandPalette'
 import { SavedViews } from './SavedViews'
 import { BASE } from '../lib/api'
+import { lbLabel } from '../lib/lbUrl'
+import { fmtNum } from '../lib/format'
 
 // ── Nav structure ────────────────────────────────────────────────────────────
 // NAV_GROUPS + its types now live in ../lib/navigation.ts so the command palette
@@ -457,14 +459,6 @@ interface FooterStats {
   collection_size?: { bytes: number | null; human: string | null; computing: boolean }
 }
 
-function fmtNum(n: number): string {
-  return n.toLocaleString()
-}
-
-function fmtLb(n: number): string {
-  return `LB-${String(n).padStart(5, '0')}`
-}
-
 function fmtLastImport(iso: string | null): string {
   if (!iso) return '—'
   const d = new Date(iso)
@@ -717,7 +711,7 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
         fontFamily: 'var(--lbb-mono)',
       }}
     >
-      {item(t('appShell.statusBar.db'), stats ? fmtLb(stats.latest_lb) : '…', 'ok')}
+      {item(t('appShell.statusBar.db'), stats ? lbLabel(stats.latest_lb) : '…', 'ok')}
       {sep}
       {item(t('appShell.statusBar.checksums'), stats ? fmtNum(stats.checksum_count) : '…')}
       {sep}

@@ -8,6 +8,7 @@ import { useScraperLogStore } from '../lib/scraperLogStore'
 import { LB_SITE_BASE } from '../lib/lbUrl'
 import { copyText } from '../lib/clipboard'
 import { BASE, getJson } from '../lib/api'
+import { fmtBytes } from '../lib/format'
 
 // ── Error Boundary ─────────────────────────────────────────────────────────────
 
@@ -147,15 +148,6 @@ interface LogLine { ts: string; text: string; tone?: 'ok' | 'bad' | 'warn' | 'mu
 function fmtTs(ts: string | null): string {
   if (!ts) return '—'
   return ts.replace('T', ' ').slice(0, 16)
-}
-
-function fmtBytes(n: number): string {
-  if (!n) return '0 B'
-  const units = ['B', 'KB', 'MB', 'GB', 'TB']
-  let v = n
-  let i = 0
-  while (v >= 1024 && i < units.length - 1) { v /= 1024; i++ }
-  return `${v >= 10 || i === 0 ? Math.round(v) : v.toFixed(1)} ${units[i]}`
 }
 
 function dotColor(running: boolean, status: string): string {

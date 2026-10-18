@@ -8,6 +8,8 @@ import { useCallback, useEffect, useState } from 'react'
 import { Button, Pill, Card, Banner, SectionHead } from '../components'
 import { Icon } from '../components/Icon'
 import { BASE } from '../lib/api'
+import { lbLabel } from '../lib/lbUrl'
+import { fmtBytes } from '../lib/format'
 
 // ── Types (mirror backend/file_integrity.py + db.py shapes) ──────────────────
 
@@ -76,13 +78,6 @@ interface ScanRun {
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
-
-function fmtBytes(n: number): string {
-  if (!n) return '0 B'
-  const u = ['B', 'KB', 'MB', 'GB', 'TB']
-  const i = Math.min(u.length - 1, Math.floor(Math.log(n) / Math.log(1024)))
-  return `${(n / 1024 ** i).toFixed(i ? 1 : 0)} ${u[i]}`
-}
 
 function fmtDuration(sec?: number): string {
   if (!sec || sec < 1) return '—'
@@ -246,7 +241,7 @@ function ProblemsTable({ rows, mounts, onRebaseline, busy }: {
               whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
             }} title={r.rel_path}>{r.rel_path}</div>
             <div style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
-              {labelFor(r.mount_id)} · {r.lb_number ? `LB-${String(r.lb_number).padStart(5, '0')}` : 'unlinked'} · {fmtBytes(r.size)}
+              {labelFor(r.mount_id)} · {r.lb_number ? lbLabel(r.lb_number) : 'unlinked'} · {fmtBytes(r.size)}
               {r.last_verified ? ` · last ok ${r.last_verified.slice(0, 10)}` : ''}
             </div>
           </div>

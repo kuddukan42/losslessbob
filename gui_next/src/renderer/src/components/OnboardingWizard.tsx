@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next'
 import { Button } from './primitives'
 import { Icon } from './Icon'
 import { BASE, getJson } from '../lib/api'
+import { fmtBytes } from '../lib/format'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -85,12 +86,6 @@ async function readSSE<T>(resp: Response, onEvent: (ev: T) => void): Promise<voi
       } catch { /* ignore malformed frame */ }
     }
   }
-}
-
-function fmtBytes(n: number | undefined): string {
-  if (!n) return '—'
-  const mb = n / (1 << 20)
-  return mb >= 1024 ? `${(mb / 1024).toFixed(1)} GB` : `${mb.toFixed(0)} MB`
 }
 
 function fmtDate(iso: string | undefined): string {
@@ -222,7 +217,7 @@ function Step1Master({
           <span style={{ color: 'var(--lbb-fg3)' }}>{t('onboarding.step1.published')}</span>
           <span style={{ fontFamily: 'var(--lbb-mono)' }}>{fmtDate(check.remote_published_at)}</span>
           <span style={{ color: 'var(--lbb-fg3)' }}>{t('onboarding.step1.size')}</span>
-          <span style={{ fontFamily: 'var(--lbb-mono)' }}>{fmtBytes(check.asset_size)}</span>
+          <span style={{ fontFamily: 'var(--lbb-mono)' }}>{check.asset_size ? fmtBytes(check.asset_size) : '—'}</span>
         </div>
       )}
 
@@ -341,7 +336,7 @@ function Step2Sitedata({ onInstalled }: { onInstalled: (parts: string[]) => void
               <strong style={{ color: 'var(--lbb-fg)' }}>{t('onboarding.step2.files')}</strong>
               {' — '}
               <span style={{ color: 'var(--lbb-fg3)' }}>
-                {t('onboarding.step2.filesDesc', { size: fmtBytes(filesSize) })}
+                {t('onboarding.step2.filesDesc', { size: filesSize ? fmtBytes(filesSize) : '—' })}
               </span>
             </span>
           </label>

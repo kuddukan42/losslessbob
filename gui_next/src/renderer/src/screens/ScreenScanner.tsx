@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { Button, Banner, Icon, Input, Pill, IconButton, TableShell, TH, TR, TD } from '../components'
 import { BASE, getJson } from '../lib/api'
+import { fmtBytes } from '../lib/format'
 
 // ── Types (mirror backend/disk_scanner.py) ───────────────────────────────────
 
@@ -38,12 +39,6 @@ interface AddResult {
 interface ScannerSettings {
   scanner_roots: string | null
   scanner_excludes: string | null
-}
-
-function fmtSize(bytes: number): string {
-  if (bytes >= 1024 ** 3) return `${(bytes / 1024 ** 3).toFixed(1)} GB`
-  if (bytes >= 1024 ** 2) return `${(bytes / 1024 ** 2).toFixed(0)} MB`
-  return `${Math.max(1, Math.round(bytes / 1024))} KB`
 }
 
 /**
@@ -189,7 +184,7 @@ function ResultsTable({ rows, selected, onToggle, onToggleAll }: {
                 </div>
               </TD>
               <TD align="right" mono>{row.file_count}</TD>
-              <TD align="right" mono dim>{fmtSize(row.size_bytes)}</TD>
+              <TD align="right" mono dim>{fmtBytes(row.size_bytes)}</TD>
               <TD dim>{row.extensions.join(' ')}</TD>
               <TD align="right" mono>{row.lb_number ?? '—'}</TD>
               <TD>

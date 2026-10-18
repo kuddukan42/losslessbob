@@ -7,6 +7,8 @@ import { TableShell, TH, TR, TD } from '../components'
 import { OnboardingWizard, type OnboardingStatus } from '../components/OnboardingWizard'
 import { DataFreshnessCard } from '../components/DataFreshnessCard'
 import { BASE } from '../lib/api'
+import { lbLabel } from '../lib/lbUrl'
+import { fmtNum } from '../lib/format'
 
 // sessionStorage flag — "Skip for now" (or Finish) dismisses the auto-popup
 // for the rest of this launch; the Home checklist card remains the resume path.
@@ -57,14 +59,6 @@ function Toast({ msg, tone, onDone }: { msg: string; tone: ToastTone; onDone: ()
       pointerEvents: 'none',
     }}>{msg}</div>
   )
-}
-
-function fmtNum(n: number): string {
-  return n.toLocaleString()
-}
-
-function fmtLb(n: number): string {
-  return `LB-${String(n).padStart(5, '0')}`
 }
 
 function fmtTonightDate(iso: string): string {
@@ -500,7 +494,7 @@ export function ScreenHome(): React.JSX.Element {
                     <Pill tone={ratingTone(tonightPick.rating)} soft>{tonightPick.rating}</Pill>
                   )}
                   <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginLeft: 'auto' }}>
-                    {fmtLb(tonightPick.lb_number)}
+                    {lbLabel(tonightPick.lb_number)}
                   </span>
                 </div>
                 <div style={{

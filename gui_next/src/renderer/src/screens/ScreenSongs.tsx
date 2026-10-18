@@ -14,6 +14,7 @@ import { Pill, Chip, Input, Button } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { useSettingsStore } from '../store'
 import { BASE } from '../lib/api'
+import { lbLabel } from '../lib/lbUrl'
 
 // ── Types (mirror backend/song_index.py route shapes) ────────────────────────
 
@@ -51,10 +52,6 @@ interface PerformancesResponse {
 }
 
 type SortMode = 'date' | 'best'
-
-function fmtLb(n: number): string {
-  return `LB-${String(n).padStart(5, '0')}`
-}
 
 // Concert Ranker's A+..F letter scale (concert_ranker/calibrate.py RATING_RANK),
 // best to worst. Used only to order the "best first" performance sort below —
@@ -118,7 +115,7 @@ function LbLinkButton({ lb, onOpen }: { lb: number; onOpen: (lb: number) => void
       onMouseEnter={e => { e.currentTarget.style.color = 'var(--lbb-accent-mid)' }}
       onMouseLeave={e => { e.currentTarget.style.color = 'inherit' }}
     >
-      {fmtLb(lb)}
+      {lbLabel(lb)}
     </button>
   )
 }

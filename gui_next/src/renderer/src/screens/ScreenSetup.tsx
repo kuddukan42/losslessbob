@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useSettingsStore } from '../store'
 import { Button, Pill, Icon } from '../components'
 import { BASE, postJson } from '../lib/api'
+import { fmtNum } from '../lib/format'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -1413,9 +1414,6 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
   }, [showToast, t])
 
   // ── Render ───────────────────────────────────────────────────────────────────
-
-  const fmtNum = (n: number | null | undefined) =>
-    n != null ? n.toLocaleString() : '—'
 
   const displayPageSize = settings.search_page_size === '0' ? 'All' : (settings.search_page_size ?? '100')
 

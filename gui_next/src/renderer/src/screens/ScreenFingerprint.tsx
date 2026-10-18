@@ -16,6 +16,7 @@ import { Pill, Chip, Button } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { useSettingsStore } from '../store'
 import { BASE, getJson } from '../lib/api'
+import { lbLabel } from '../lib/lbUrl'
 
 // ── Types (mirror backend/setlist_fingerprint.py row shapes) ─────────────────
 
@@ -55,10 +56,6 @@ interface ScanStats {
 }
 
 type StatusFilter = 'pending' | 'dismissed' | 'all'
-
-function fmtLb(n: number): string {
-  return `LB-${String(n).padStart(5, '0')}`
-}
 
 function scoreTone(score: number): 'ok' | 'warn' | 'mute' {
   if (score >= 0.6) return 'ok'
@@ -111,7 +108,7 @@ function SuggestionRow({
               padding: 0, cursor: 'pointer',
             }}
           >
-            {fmtLb(s.lb_number)}
+            {lbLabel(s.lb_number)}
           </button>
           {s.rank > 1 && (
             <span style={{ marginLeft: 6, fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>
