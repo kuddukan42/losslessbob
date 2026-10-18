@@ -15,8 +15,8 @@ import { useTranslation } from 'react-i18next'
 import { useSettingsStore } from '../store'
 import { getCommands, type PaletteCommand } from '../lib/commandRegistry'
 import { fuzzyScore } from '../lib/fuzzyMatch'
+import { getJson } from '../lib/api'
 
-const BASE = window.api.flaskBase
 const LB_PATTERN = /^(?:lb[-\s]?)?0*(\d{1,5})$/i
 const ENTRY_LIMIT = 8
 const SEARCH_DEBOUNCE_MS = 200
@@ -102,8 +102,7 @@ export function CommandPalette(): React.ReactElement | null {
     }
     const reqId = ++searchReqRef.current
     const handle = setTimeout(() => {
-      fetch(`${BASE}/api/search?q=${encodeURIComponent(q)}&field=all`)
-        .then((r) => r.json())
+      getJson(`/api/search?q=${encodeURIComponent(q)}&field=all`)
         .then((data: any[]) => {
           if (reqId !== searchReqRef.current) return // stale
           if (!Array.isArray(data)) {

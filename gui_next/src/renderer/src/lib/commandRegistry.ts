@@ -22,6 +22,7 @@
 
 import type { NavigateFunction } from 'react-router-dom'
 import { NAV_GROUPS, navPathForId } from './navigation'
+import { BASE } from './api'
 
 /** Context handed to a command's run(). */
 export interface CommandRunContext {
@@ -93,7 +94,7 @@ const checkUpdateCommand: PaletteCommand = {
   section: 'actions',
   run: async ({ t }) => {
     try {
-      const res = await fetch(`${window.api.flaskBase}/api/flat_file/discover`)
+      const res = await fetch(`${BASE}/api/flat_file/discover`)
       const data = await res.json()
       if (data.error || data.available === null) {
         return t('palette.update.error', { error: data.error ?? 'unknown' })

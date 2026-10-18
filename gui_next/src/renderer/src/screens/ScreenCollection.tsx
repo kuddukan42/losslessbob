@@ -17,8 +17,7 @@ import { useLibraryActions } from '../lib/useLibraryActions'
 import { useLibraryHistoryMap, useAttachCountMap } from '../lib/libraryPanelData'
 import { useLibraryRows } from '../lib/libraryRows'
 import { useResizableWidth } from '../lib/useResizableColumns'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson } from '../lib/api'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -440,8 +439,7 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    fetch(`${BASE}/api/collection/${lbNumber}/meta`)
-      .then(r => r.json())
+    getJson(`/api/collection/${lbNumber}/meta`)
       .then(d => {
         setRating(d.personal_rating ?? null)
         setTags(d.tags ?? '')
@@ -746,8 +744,7 @@ function ScanPreviewModal({ entries, skipped, onClose, onAdded }: {
   const [busy, setBusy]             = useState(false)
 
   useEffect(() => {
-    fetch(`${BASE}/api/collection/lb_numbers`)
-      .then(r => r.json())
+    getJson(`/api/collection/lb_numbers`)
       .then((data: number[]) => { setOwnedSet(new Set(data)); setOwnedLoaded(true) })
       .catch(() => setOwnedLoaded(true))
   }, [])
@@ -1465,8 +1462,7 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
 
   const fetchTorrentRecords = useCallback(() => {
     setTorrentBusy(true)
-    fetch(`${BASE}/api/torrent/${row.lbNumberInt}`)
-      .then(r => r.json())
+    getJson(`/api/torrent/${row.lbNumberInt}`)
       .then((data: any) => {
         if (Array.isArray(data)) {
           const records = data.map((t: any) => ({
@@ -1516,8 +1512,7 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
   const fetchForumRecords = useCallback(() => {
     setForumBusy(true)
     setForumError(false)
-    fetch(`${BASE}/api/entry/${row.lbNumberInt}/forum_posts`)
-      .then(r => r.json())
+    getJson(`/api/entry/${row.lbNumberInt}/forum_posts`)
       .then((data: any) => {
         if (Array.isArray(data)) {
           setForumRecords(data.map((p: any) => ({
@@ -1631,8 +1626,7 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
   }
 
   const fetchPersonalMeta = useCallback(() => {
-    fetch(`${BASE}/api/collection/${row.lbNumberInt}/meta`)
-      .then(r => r.json())
+    getJson(`/api/collection/${row.lbNumberInt}/meta`)
       .then(d => setPersonalMeta({ personal_rating: d.personal_rating ?? null, listen_count: d.listen_count ?? 0, last_listened: d.last_listened ?? null }))
       .catch(() => {})
   }, [row.lbNumberInt])
@@ -1645,8 +1639,7 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
   useEffect(() => {
     if (!row.diskPath) return
     setAudioInfo(null)
-    fetch(`${BASE}/api/collection/${row.lbNumberInt}/audioinfo`)
-      .then(r => r.json())
+    getJson(`/api/collection/${row.lbNumberInt}/audioinfo`)
       .then((d: AudioInfo) => setAudioInfo(d))
       .catch(() => {})
   }, [row.lbNumberInt, row.diskPath])
@@ -2286,7 +2279,7 @@ export function ScreenCollection(): React.JSX.Element {
 
   const { data: prefetch } = useQuery({
     queryKey: ['collection-prefetch'],
-    queryFn: () => fetch(`${BASE}/api/collection/prefetch`).then(r => r.json()),
+    queryFn: () => getJson(`/api/collection/prefetch`),
     staleTime: Infinity,
   })
 

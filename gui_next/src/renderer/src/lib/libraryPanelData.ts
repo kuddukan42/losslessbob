@@ -8,8 +8,7 @@
 import { useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import type { RowHistory } from '../components/library/DetailPanel'
-
-const BASE = window.api.flaskBase
+import { getJson } from './api'
 
 /**
  * Seed/share history per LB number, grouped from the collection prefetch.
@@ -20,7 +19,7 @@ const BASE = window.api.flaskBase
 export function useLibraryHistoryMap(): Map<number, RowHistory> {
   const { data: prefetch } = useQuery({
     queryKey: ['collection-prefetch'],
-    queryFn: () => fetch(`${BASE}/api/collection/prefetch`).then(r => r.json()),
+    queryFn: () => getJson(`/api/collection/prefetch`),
     staleTime: Infinity,
   })
 
@@ -54,7 +53,7 @@ export function useLibraryHistoryMap(): Map<number, RowHistory> {
 export function useAttachCountMap(): Map<number, number> {
   const { data: attachData } = useQuery({
     queryKey: ['library-attachments-cached'],
-    queryFn: () => fetch(`${BASE}/api/attachments/cached`).then(r => r.json()),
+    queryFn: () => getJson(`/api/attachments/cached`),
     staleTime: 60_000,
   })
 

@@ -4,6 +4,7 @@
 // the animation the bar goes indeterminate until the backend responds.
 
 import React, { useEffect, useRef, useState } from 'react'
+import { BASE } from '../lib/api'
 
 // Warm-white helper: matches dark-splash fg #f1ecdf at varying alpha.
 const w = (a: number) => `rgba(241,236,223,${a})`
@@ -73,7 +74,7 @@ export function SplashOverlay({ onDone }: SplashOverlayProps): React.JSX.Element
     let cancelled = false
     const poll = setInterval(async () => {
       try {
-        const r = await fetch(`${window.api.flaskBase}/api/db/stats`, {
+        const r = await fetch(`${BASE}/api/db/stats`, {
           signal: AbortSignal.timeout(400),
         })
         if (r.ok && !cancelled) {
@@ -83,7 +84,7 @@ export function SplashOverlay({ onDone }: SplashOverlayProps): React.JSX.Element
       } catch { /* not yet ready */ }
     }, 400)
     // Initial attempt immediately
-    fetch(`${window.api.flaskBase}/api/db/stats`, { signal: AbortSignal.timeout(400) })
+    fetch(`${BASE}/api/db/stats`, { signal: AbortSignal.timeout(400) })
       .then(r => { if (r.ok && !cancelled) { setBackendReady(true); clearInterval(poll) } })
       .catch(() => {})
     const timeout = setTimeout(() => {

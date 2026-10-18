@@ -4,8 +4,7 @@ import { Icon } from '../components/Icon'
 import { Button, Chip, IconButton, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import { lbDetailUrl } from '../lib/lbUrl'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson } from '../lib/api'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -716,8 +715,7 @@ export function ScreenSearch(): React.JSX.Element {
   // ── Fetch owned LB numbers ────────────────────────────────────────────────
 
   const refreshOwned = useCallback(() => {
-    fetch(`${BASE}/api/collection/lb_numbers`)
-      .then(r => r.json())
+    getJson(`/api/collection/lb_numbers`)
       .then((nums: number[]) => { if (Array.isArray(nums)) setOwnedLbs(new Set(nums)) })
       .catch(() => {})
   }, [])
@@ -727,8 +725,7 @@ export function ScreenSearch(): React.JSX.Element {
   // ── Fetch entry-level xref map (once, cached) ─────────────────────────────
 
   useEffect(() => {
-    fetch(`${BASE}/api/checksums/xref_map`)
-      .then(r => r.json())
+    getJson(`/api/checksums/xref_map`)
       .then((data: Record<string, number[]>) => {
         if (data && typeof data === 'object' && !Array.isArray(data)) setXrefMap(data)
       })
@@ -738,8 +735,7 @@ export function ScreenSearch(): React.JSX.Element {
   // ── Fetch year range bounds ───────────────────────────────────────────────
 
   useEffect(() => {
-    fetch(`${BASE}/api/search/years`)
-      .then(r => r.json())
+    getJson(`/api/search/years`)
       .then((years: number[]) => {
         if (!Array.isArray(years) || years.length === 0) return
         const lo = Math.min(...years)
@@ -794,8 +790,7 @@ export function ScreenSearch(): React.JSX.Element {
   useEffect(() => {
     if (selectedLb === null) { setEntryDetail(null); return }
     setEntryLoading(true)
-    fetch(`${BASE}/api/entry/${selectedLb}`)
-      .then(r => r.json())
+    getJson(`/api/entry/${selectedLb}`)
       .then((data: EntryDetail) => setEntryDetail(data))
       .catch(() => setEntryDetail(null))
       .finally(() => setEntryLoading(false))

@@ -2,8 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSettingsStore } from '../store'
 import { Button, Pill, Icon } from '../components'
-
-const BASE = window.api.flaskBase
+import { BASE, postJson } from '../lib/api'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -707,8 +706,7 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
   const handleApplyRelease = useCallback((id: number) => {
     setConfirm(null)
     setFlatBusyId(id)
-    fetch(`${BASE}/api/flat_file/apply/${id}`, { method: 'POST' })
-      .then((r) => r.json())
+    postJson(`/api/flat_file/apply/${id}`)
       .then((d: {
         error?: string; rows_added?: number; rows_changed?: number; rows_removed?: number
         new_lb_numbers?: number[]; scrape_started?: boolean

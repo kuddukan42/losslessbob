@@ -26,6 +26,7 @@ import {
 import { useSavedViewsStore } from '../lib/savedViewsStore'
 import { useLibraryActions } from '../lib/useLibraryActions'
 import { useLibraryHistoryMap, useAttachCountMap } from '../lib/libraryPanelData'
+import { getJson } from '../lib/api'
 
 // ── TODO-150 step (4): Recording lens / no-families fallback ──────────────────
 // Flat, LB#-keyed table over the full catalog. Per the design contract
@@ -38,8 +39,6 @@ import { useLibraryHistoryMap, useAttachCountMap } from '../lib/libraryPanelData
 // is wired in here — right-click context menu on both lenses, plus a
 // checkbox bulk-select bar on the recording lens with batched relocate/
 // remove. The detail-panel ActionBar/MoreMenu surface is step 8.
-
-const BASE = window.api.flaskBase
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 // RecordingRow + its filter primitives (LibStatus/RatingGrade/Scope/SortKey/
@@ -455,7 +454,7 @@ export function ScreenLibrary(): React.JSX.Element {
 
   const { data: catalog, isLoading: catalogLoading } = useQuery({
     queryKey: ['library-catalog'],
-    queryFn: () => fetch(`${BASE}/api/search`).then(r => r.json()),
+    queryFn: () => getJson(`/api/search`),
     staleTime: Infinity,
   })
 
@@ -463,7 +462,7 @@ export function ScreenLibrary(): React.JSX.Element {
   // react-query cache instead of double-fetching when both screens are mounted.
   const { data: prefetch } = useQuery({
     queryKey: ['collection-prefetch'],
-    queryFn: () => fetch(`${BASE}/api/collection/prefetch`).then(r => r.json()),
+    queryFn: () => getJson(`/api/collection/prefetch`),
     staleTime: Infinity,
   })
 
@@ -474,7 +473,7 @@ export function ScreenLibrary(): React.JSX.Element {
   // same fields inline from /api/library/performances.
   const { data: badgeData } = useQuery({
     queryKey: ['library-badges'],
-    queryFn: () => fetch(`${BASE}/api/library/badges`).then(r => r.json()),
+    queryFn: () => getJson(`/api/library/badges`),
     staleTime: Infinity,
   })
 
@@ -1320,7 +1319,7 @@ function BobTalkSearch({ hasDate, onNavigate }: {
 
   const { data, isFetching } = useQuery({
     queryKey: ['olof-bobtalk-search', debouncedQ],
-    queryFn: () => fetch(`${BASE}/api/olof/bobtalk_search?q=${encodeURIComponent(debouncedQ)}&limit=25`).then(r => r.json()),
+    queryFn: () => getJson(`/api/olof/bobtalk_search?q=${encodeURIComponent(debouncedQ)}&limit=25`),
     enabled: debouncedQ.length >= 2,
     staleTime: 60_000,
   })
@@ -1464,14 +1463,14 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
 
   const { data: perfData, isLoading: perfLoading } = useQuery({
     queryKey: ['library-performances'],
-    queryFn: () => fetch(`${BASE}/api/library/performances`).then(r => r.json()),
+    queryFn: () => getJson(`/api/library/performances`),
     staleTime: Infinity,
   })
   // Same query key the performance adapter will keep reusing once family
   // confirmation UI exists — shares the cache rather than re-fetching.
   const { data: famData } = useQuery({
     queryKey: ['tapematch-families'],
-    queryFn: () => fetch(`${BASE}/api/tapematch/families`).then(r => r.json()),
+    queryFn: () => getJson(`/api/tapematch/families`),
     staleTime: Infinity,
   })
 

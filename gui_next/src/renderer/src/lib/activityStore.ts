@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { BASE } from './api'
 
 // Shared activity-tray store (TODO-262 / FABLE_ACTIVITY_CENTER.md §A3, B3).
 // Polls `GET /api/activity/jobs` — the same normalized shape backend/activity.py
@@ -73,7 +74,7 @@ let activePollers = 0
 
 async function pollOnce(): Promise<void> {
   try {
-    const r = await fetch(`${window.api.flaskBase}/api/activity/jobs`)
+    const r = await fetch(`${BASE}/api/activity/jobs`)
     if (!r.ok) return
     const data: ActivityJobsResponse = await r.json()
     useActivityStore.getState()._applySnapshot(data)

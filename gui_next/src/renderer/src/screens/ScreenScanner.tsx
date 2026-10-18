@@ -2,8 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { Button, Banner, Icon, Input, Pill, IconButton, TableShell, TH, TR, TD } from '../components'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson } from '../lib/api'
 
 // ── Types (mirror backend/disk_scanner.py) ───────────────────────────────────
 
@@ -226,7 +225,7 @@ export function ScreenScanner(): React.JSX.Element {
 
   const { data: settings } = useQuery<ScannerSettings>({
     queryKey: ['db-settings'],
-    queryFn: () => fetch(`${BASE}/api/db/settings`).then(r => r.json()),
+    queryFn: () => getJson(`/api/db/settings`),
     staleTime: 300_000,
   })
 
@@ -252,7 +251,7 @@ export function ScreenScanner(): React.JSX.Element {
 
   const { data: status } = useQuery<ScanStatus>({
     queryKey: ['scanner-status'],
-    queryFn: () => fetch(`${BASE}/api/scanner/scan/status`).then(r => r.json()),
+    queryFn: () => getJson(`/api/scanner/scan/status`),
     refetchInterval: q => (q.state.data?.running ? 700 : false),
   })
   const running = status?.running ?? false

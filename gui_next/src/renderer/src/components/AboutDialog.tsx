@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { Icon } from './Icon'
 import { NAV_GROUPS } from '../lib/navigation'
 import { useNavVisibilityStore } from '../lib/navVisibilityStore'
+import { getJson } from '../lib/api'
 
 // ── Static content ────────────────────────────────────────────────────────────
 
@@ -133,8 +134,7 @@ function useBackendUptime(): string | null {
       setDisplay(formatUptime(elapsed))
     }
 
-    fetch(`${window.api.flaskBase}/api/system/uptime`)
-      .then(r => r.json())
+    getJson(`/api/system/uptime`)
       .then((data: { uptime_seconds?: number }) => {
         if (typeof data.uptime_seconds !== 'number') return
         base = data.uptime_seconds
@@ -161,8 +161,7 @@ function useCoverageSummary(): CoverageSummary | null {
 
   useEffect(() => {
     let live = true
-    fetch(`${window.api.flaskBase}/api/lb/coverage`)
-      .then(r => r.json())
+    getJson(`/api/lb/coverage`)
       .then((data: {
         coverage?: { coverage_pct?: number; complete?: boolean }
         snapshot?: { label?: string }

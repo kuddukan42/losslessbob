@@ -13,8 +13,7 @@ import { Icon } from '../components/Icon'
 import { Pill, Chip, Input, Button } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { useSettingsStore } from '../store'
-
-const BASE = window.api.flaskBase
+import { BASE } from '../lib/api'
 
 // ── Types (mirror backend/song_index.py route shapes) ────────────────────────
 

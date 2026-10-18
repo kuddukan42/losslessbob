@@ -11,8 +11,7 @@
 
 import { useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
-
-const BASE = window.api.flaskBase
+import { getJson } from './api'
 
 // ── Types (single source of truth; ScreenLibrary imports these) ──────────────
 export type LibStatus  = 'Public' | 'Private' | 'Missing'
@@ -186,19 +185,19 @@ export function buildRecordingRows(
 export function useLibraryRows(enabled = true): RecordingRow[] {
   const { data: catalog } = useQuery({
     queryKey: ['library-catalog'],
-    queryFn: () => fetch(`${BASE}/api/search`).then(r => r.json()),
+    queryFn: () => getJson(`/api/search`),
     staleTime: Infinity,
     enabled,
   })
   const { data: prefetch } = useQuery({
     queryKey: ['collection-prefetch'],
-    queryFn: () => fetch(`${BASE}/api/collection/prefetch`).then(r => r.json()),
+    queryFn: () => getJson(`/api/collection/prefetch`),
     staleTime: Infinity,
     enabled,
   })
   const { data: badgeData } = useQuery({
     queryKey: ['library-badges'],
-    queryFn: () => fetch(`${BASE}/api/library/badges`).then(r => r.json()),
+    queryFn: () => getJson(`/api/library/badges`),
     staleTime: Infinity,
     enabled,
   })

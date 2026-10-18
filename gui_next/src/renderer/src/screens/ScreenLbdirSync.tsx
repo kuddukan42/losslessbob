@@ -16,8 +16,7 @@ import { useNavigate } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { Icon } from '../components/Icon'
 import { Banner, Button, Pill, TableShell, TH, TR, TD } from '../components'
-
-const BASE = window.api.flaskBase
+import { BASE } from '../lib/api'
 
 interface Snapshot {
   id:                  number | null

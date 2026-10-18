@@ -16,8 +16,7 @@ import { useQuery, keepPreviousData } from '@tanstack/react-query'
 import { Icon } from '../components/Icon'
 import { Button, Chip, Input, Pill, TableShell, TH, TR, TD } from '../components'
 import type { StatusTone } from '../components'
-
-const BASE = window.api.flaskBase
+import { BASE } from '../lib/api'
 
 const FILTERS = ['all', 'held', 'missing', 'unmatched', 'review'] as const
 type LedgerFilter = (typeof FILTERS)[number]

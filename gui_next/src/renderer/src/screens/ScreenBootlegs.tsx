@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { Button, Chip, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
-
-const BASE = window.api.flaskBase
+import { getJson, postJson } from '../lib/api'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -99,14 +98,13 @@ export function ScreenBootlegs(): React.JSX.Element {
   // Load all bootleg rows on mount; fetch a second page if total > 1000
   useEffect(() => {
     setLoading(true)
-    fetch(`${BASE}/api/bootlegs?limit=1000&offset=0`)
-      .then(r => r.json())
+    getJson(`/api/bootlegs?limit=1000&offset=0`)
       .then(async (data: { rows: any[]; total: number }) => {
         const first      = data.rows ?? []
         const serverTotal = data.total ?? first.length
         setTotal(serverTotal)
         if (serverTotal > 1000) {
-          const d2 = await fetch(`${BASE}/api/bootlegs?limit=1000&offset=1000`).then(r => r.json())
+          const d2 = await getJson(`/api/bootlegs?limit=1000&offset=1000`)
           setRows([...first, ...(d2.rows ?? [])].map(mapRow))
         } else {
           setRows(first.map(mapRow))
@@ -213,12 +211,7 @@ export function ScreenBootlegs(): React.JSX.Element {
             size="sm"
             icon="refresh"
             onClick={() =>
-              fetch(`${BASE}/api/bootlegs/scrape`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ force: false }),
-              })
-                .then(r => r.json())
+              postJson(`/api/bootlegs/scrape`, { force: false })
                 .then((d: { ok?: boolean; running?: boolean; error?: string }) =>
                   showToast(d.ok ? 'Scrape started' : (d.error ?? 'Scrape failed'), d.ok ? 'info' : 'bad')
                 )

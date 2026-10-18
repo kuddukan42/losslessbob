@@ -7,8 +7,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Button, Pill, Card, Banner, SectionHead } from '../components'
 import { Icon } from '../components/Icon'
-
-const BASE = window.api.flaskBase
+import { BASE } from '../lib/api'
 
 // ── Types (mirror backend/file_integrity.py + db.py shapes) ──────────────────
 

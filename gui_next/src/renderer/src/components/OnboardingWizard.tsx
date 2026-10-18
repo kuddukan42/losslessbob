@@ -10,8 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Button } from './primitives'
 import { Icon } from './Icon'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson } from '../lib/api'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -269,8 +268,7 @@ function Step2Sitedata({ onInstalled }: { onInstalled: (parts: string[]) => void
 
   useEffect(() => {
     setChecking(true)
-    fetch(`${BASE}/api/sitedata/github_check`)
-      .then((r) => r.json())
+    getJson(`/api/sitedata/github_check`)
       .then((d: SitedataCheckResp) => setCheck(d))
       .catch((e: Error) => setError(e.message))
       .finally(() => setChecking(false))

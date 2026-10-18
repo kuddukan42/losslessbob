@@ -6,8 +6,7 @@ import { Button, Card, Stat, Pill, IconButton } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { OnboardingWizard, type OnboardingStatus } from '../components/OnboardingWizard'
 import { DataFreshnessCard } from '../components/DataFreshnessCard'
-
-const BASE = window.api.flaskBase
+import { BASE } from '../lib/api'
 
 // sessionStorage flag — "Skip for now" (or Finish) dismisses the auto-popup
 // for the rest of this launch; the Home checklist card remains the resume path.

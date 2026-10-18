@@ -20,8 +20,7 @@ import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 import { Card, Pill, Button, ConfirmDialog } from './primitives'
 import { copyText } from '../lib/clipboard'
-
-const BASE = window.api.flaskBase
+import { BASE } from '../lib/api'
 
 // ── Types (mirror backend/refresh.py + refresh_exec.annotate_buckets) ───────
 

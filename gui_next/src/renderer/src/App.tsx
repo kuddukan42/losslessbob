@@ -35,6 +35,7 @@ import { ScreenSongs } from './screens/ScreenSongs'
 import { ScreenTimeline } from './screens/ScreenTimeline'
 import { ScreenFingerprint } from './screens/ScreenFingerprint'
 import { ScreenChecksumDisputes } from './screens/ScreenChecksumDisputes'
+import { getJson } from './lib/api'
 
 // ── React Query client — persisted to IndexedDB (BUG-271) ────────────────────
 // The bulk datasets (collection prefetch, library catalog/performances/badges)
@@ -82,7 +83,7 @@ function warmBulkQueries(): void {
   for (const [key, path] of BULK_QUERIES) {
     queryClient.prefetchQuery({
       queryKey: [key],
-      queryFn: () => fetch(`${window.api.flaskBase}${path}`).then(r => r.json()),
+      queryFn: () => getJson(path),
       staleTime: Infinity,
     })
   }

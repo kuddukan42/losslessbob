@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button, Pill, Icon, Banner, Input, IconButton } from '../components'
-
-const BASE = window.api.flaskBase
+import { BASE } from '../lib/api'
 
 // ── Collection Routing types ──────────────────────────────────────────────────
 

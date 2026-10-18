@@ -2,8 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useQueryClient } from '@tanstack/react-query'
 import { Button, Pill } from '../components'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson, postJson } from '../lib/api'
 
 // Columns edited as a multi-line textarea instead of a single-line input, so
 // pasting a setlist or source chain from an external source keeps its newlines.
@@ -1041,8 +1040,7 @@ export function ScreenDbEditor() {
   }, [])
 
   function loadTables(db = activeDb) {
-    fetch(`${BASE}/api/dbedit/tables?db=${db}`)
-      .then((r) => r.json())
+    getJson(`/api/dbedit/tables?db=${db}`)
       .then((data: TableMeta[]) => {
         if (!Array.isArray(data)) return
         const meta: Record<string, TableMeta> = {}
@@ -1094,8 +1092,7 @@ export function ScreenDbEditor() {
   // ── Schema ────────────────────────────────────────────────────────────────
 
   function loadSchema(name: string) {
-    fetch(`${BASE}/api/dbedit/table/${encodeURIComponent(name)}/schema?db=${activeDb}`)
-      .then((r) => r.json())
+    getJson(`/api/dbedit/table/${encodeURIComponent(name)}/schema?db=${activeDb}`)
       .then((data: ColumnDef[]) => {
         if (Array.isArray(data)) setSchema(data)
       })
@@ -1277,12 +1274,7 @@ export function ScreenDbEditor() {
     if (!window.confirm(msg)) return
 
     const ids = [...selected].map((r) => rowids[r])
-    fetch(`${BASE}/api/dbedit/table/${encodeURIComponent(currentTable)}/rows?db=${activeDb}`, {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ rowids: ids }),
-    })
-      .then((r) => r.json())
+    postJson(`/api/dbedit/table/${encodeURIComponent(currentTable)}/rows?db=${activeDb}`, { rowids: ids }, 'DELETE')
       .then((data) => {
         if (data.error) {
           showToast(`Error: ${data.error}`, 'bad')
@@ -1314,8 +1306,7 @@ export function ScreenDbEditor() {
   // ── DB Integrity ──────────────────────────────────────────────────────────
 
   function loadIntegrityStats() {
-    fetch(`${BASE}/api/lb_master/stats`)
-      .then((r) => r.json())
+    getJson(`/api/lb_master/stats`)
       .then((data: IntegrityStats) => {
         if (data && typeof data.public === 'number') setIntegrityStats(data)
       })
@@ -1325,8 +1316,7 @@ export function ScreenDbEditor() {
   function reconcileAll() {
     if (!window.confirm(t('dbeditor.integrity.reconcileConfirm'))) return
     setStatus(t('dbeditor.integrity.reconciling'))
-    fetch(`${BASE}/api/lb_master/reconcile`, { method: 'POST' })
-      .then((r) => r.json())
+    postJson(`/api/lb_master/reconcile`)
       .then((data) => {
         if (data.ok) {
           if (data.stats) setIntegrityStats(data.stats)
@@ -1351,12 +1341,7 @@ export function ScreenDbEditor() {
   }
 
   function addOverride(lb: number, ovStatus: string, notes: string) {
-    fetch(`${BASE}/api/lb_master/${lb}/manual`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status: ovStatus, notes }),
-    })
-      .then((r) => r.json())
+    postJson(`/api/lb_master/${lb}/manual`, { status: ovStatus, notes }, 'PUT')
       .then((data) => {
         if (data?.error) throw new Error(data.error)
         showToast(
@@ -1372,8 +1357,7 @@ export function ScreenDbEditor() {
     if (!window.confirm(t('dbeditor.integrity.removeOverrideConfirm', {
       lb: String(lb).padStart(5, '0')
     }))) return
-    fetch(`${BASE}/api/lb_master/${lb}/manual`, { method: 'DELETE' })
-      .then((r) => r.json())
+    postJson(`/api/lb_master/${lb}/manual`, undefined, 'DELETE')
       .then((data) => {
         showToast(
           t('dbeditor.integrity.overrideCleared', {
@@ -1388,7 +1372,7 @@ export function ScreenDbEditor() {
 
   async function exportOverrides() {
     try {
-      const data = await fetch(`${BASE}/api/lb_master/overrides/export`).then((r) => r.json())
+      const data = await getJson(`/api/lb_master/overrides/export`)
       const json = JSON.stringify(data, null, 2)
       const ok = await window.api.saveFile(json, 'lb_overrides.json')
       if (ok) showToast(t('dbeditor.integrity.exportedOverrides', { count: data.length }), 'ok')
@@ -1412,12 +1396,7 @@ export function ScreenDbEditor() {
       return
     }
     if (!window.confirm(t('dbeditor.integrity.importConfirm', { count: payload.length }))) return
-    fetch(`${BASE}/api/lb_master/overrides/import`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    })
-      .then((r) => r.json())
+    postJson(`/api/lb_master/overrides/import`, payload)
       .then((data) => {
         showToast(
           t('dbeditor.integrity.importDone', {
@@ -1431,12 +1410,7 @@ export function ScreenDbEditor() {
   }
 
   function backupDb() {
-    fetch(`${BASE}/api/db/backup`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ reason: 'manual' }),
-    })
-      .then((r) => r.json())
+    postJson(`/api/db/backup`, { reason: 'manual' })
       .then((data) => {
         if (data.ok) {
           const mb = ((data.size_bytes ?? 0) / 1_048_576).toFixed(1)
@@ -1451,8 +1425,7 @@ export function ScreenDbEditor() {
   // ── Curator check ─────────────────────────────────────────────────────────
 
   function checkCurator() {
-    fetch(`${BASE}/api/curator`)
-      .then((r) => r.json())
+    getJson(`/api/curator`)
       .then((d) => setIsCurator(!!d.is_curator))
       .catch(() => setIsCurator(false))
   }
@@ -1460,8 +1433,7 @@ export function ScreenDbEditor() {
   // ── Aliases ───────────────────────────────────────────────────────────────
 
   function loadAliases() {
-    fetch(`${BASE}/api/lb_alias`)
-      .then((r) => r.json())
+    getJson(`/api/lb_alias`)
       .then((data: LbAlias[]) => {
         if (Array.isArray(data)) {
           setAliases(data)
@@ -1477,12 +1449,7 @@ export function ScreenDbEditor() {
   function addAlias(payload: {
     alias_lb: number; canonical_lb: number; relationship: string; note: string
   }) {
-    fetch(`${BASE}/api/lb_alias`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    })
-      .then((r) => r.json())
+    postJson(`/api/lb_alias`, payload)
       .then((data) => {
         if (data.error) {
           setAliasStatus(`Error: ${data.error}`)
@@ -1506,8 +1473,7 @@ export function ScreenDbEditor() {
     if (!window.confirm(t('dbeditor.aliases.deleteConfirm', {
       lb: String(aliasLb).padStart(5, '0')
     }))) return
-    fetch(`${BASE}/api/lb_alias/${aliasLb}`, { method: 'DELETE' })
-      .then((r) => r.json())
+    postJson(`/api/lb_alias/${aliasLb}`, undefined, 'DELETE')
       .then((data) => {
         if (data.ok) {
           setAliasStatus(t('dbeditor.aliases.removed', { lb: String(aliasLb).padStart(5, '0') }))
@@ -1523,8 +1489,7 @@ export function ScreenDbEditor() {
   // ── Known-taper aliases ─────────────────────────────────────────────────────
 
   function loadTaperAliases() {
-    fetch(`${BASE}/api/tapers/aliases`)
-      .then((r) => r.json())
+    getJson(`/api/tapers/aliases`)
       .then((data: TaperAliasList) => {
         if (data && Array.isArray(data.entries)) {
           setTaperData(data)
@@ -1541,12 +1506,7 @@ export function ScreenDbEditor() {
 
   function addTaperAlias(alias: string, canonical: string) {
     if (!alias || !canonical) return
-    fetch(`${BASE}/api/tapers/aliases`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ alias, canonical }),
-    })
-      .then((r) => r.json())
+    postJson(`/api/tapers/aliases`, { alias, canonical })
       .then((data) => {
         if (data.error) {
           setTaperStatus(`Error: ${data.message || data.error}`)
@@ -1560,8 +1520,7 @@ export function ScreenDbEditor() {
 
   function removeTaperAlias(alias: string) {
     if (!window.confirm(t('dbeditor.tapers.removeConfirm', { alias }))) return
-    fetch(`${BASE}/api/tapers/aliases/${encodeURIComponent(alias)}`, { method: 'DELETE' })
-      .then((r) => r.json())
+    postJson(`/api/tapers/aliases/${encodeURIComponent(alias)}`, undefined, 'DELETE')
       .then((data) => {
         if (data.error) {
           setTaperStatus(`Error: ${data.message || data.error}`)

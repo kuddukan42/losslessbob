@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Chip, Input, Pill } from '../components'
 import { copyText } from '../lib/clipboard'
+import { BASE } from '../lib/api'
 
 const PINS = [
   { x: 22, y: 28, c: '#3b6a99',                  n: 3,   l: 'Hibbing, MN',              era: '1957'    },
@@ -53,7 +54,7 @@ const SECTION_LABEL: React.CSSProperties = {
   letterSpacing: 0.08, textTransform: 'uppercase',
 }
 
-const MAP_URL = `${window.api.flaskBase}/map`
+const MAP_URL = `${BASE}/map`
 
 export function ScreenMap(): React.JSX.Element {
   const { t } = useTranslation()

@@ -23,8 +23,7 @@ import {
   type Bucket, type StepData, type FolderRow,
 } from '../components/pipeline/PipelineParts'
 import { copyText } from '../lib/clipboard'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson, postJson } from '../lib/api'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -1061,8 +1060,8 @@ function RenameStageContent({ step, row, onRun, onRename }: {
     if (disambig) return
     setDisambig({ loading: true, pinnedLb: null, canonical: candidates })
     Promise.all([
-      fetch(`${BASE}/api/folder_link?path=${encodeURIComponent(row.folderPath)}`).then(r => r.json()),
-      fetch(`${BASE}/api/lb_alias/resolve?lbs=${candidates.join(',')}`).then(r => r.json()),
+      getJson(`/api/folder_link?path=${encodeURIComponent(row.folderPath)}`),
+      getJson(`/api/lb_alias/resolve?lbs=${candidates.join(',')}`),
     ]).then(([linkData, aliasData]: [any, any]) => {
       const pinnedLb: number | null = typeof linkData.lb_number === 'number' ? linkData.lb_number : null
       const canonical: number[] = Array.isArray(aliasData.canonical) && aliasData.canonical.length
@@ -1371,12 +1370,7 @@ function CollectReadyDetail({ step, row, onRun, onFile }: {
       return
     }
     let cancelled = false
-    fetch(`${BASE}/api/pipeline/file/preview`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ folders: [{ path: row.folderPath, lb_number: lb, mount_id: selectedMount }] }),
-    })
-      .then(r => r.json())
+    postJson(`/api/pipeline/file/preview`, { folders: [{ path: row.folderPath, lb_number: lb, mount_id: selectedMount }] })
       .then((data: { results?: Array<{ ok: boolean; dest?: string; mount_label?: string }> }) => {
         if (cancelled) return
         const result = data.results?.[0]
@@ -1910,11 +1904,7 @@ export function ScreenPipeline(): React.JSX.Element {
         if (!paths.length) continue
 
         const stepSet = new Set(batch.steps)
-        const start = await fetch(`${BASE}/api/pipeline/run/start`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ folders: paths, steps: batch.steps }),
-        }).then(r => r.json()).catch(() => ({ ok: false }))
+        const start = await postJson(`/api/pipeline/run/start`, { folders: paths, steps: batch.steps }).catch(() => ({ ok: false }))
 
         if (!start?.ok) {
           // busy / error — release this batch's running flags and move on.
@@ -1927,8 +1917,7 @@ export function ScreenPipeline(): React.JSX.Element {
         for (;;) {
           await new Promise(res => setTimeout(res, PIPELINE_POLL_MS))
           if (stopRef.current) break
-          const st = await fetch(`${BASE}/api/pipeline/run/status`)
-            .then(r => r.json()).catch(() => null) as
+          const st = await getJson(`/api/pipeline/run/status`).catch(() => null) as
               { running?: boolean; results?: Record<string, Record<string, unknown>> } | null
           if (!st) continue
           for (const [path, sr] of Object.entries(st.results ?? {})) {

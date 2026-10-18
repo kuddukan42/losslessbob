@@ -18,8 +18,7 @@ import { EvidenceList } from '../EvidenceList'
 import type { EvidenceRecord } from '../EvidenceList'
 import { lbDetailUrl } from '../../lib/lbUrl'
 import { useSettingsStore } from '../../store'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson, postJson } from '../../lib/api'
 
 export interface HistoryEvent { d: string; f: string; tag: string }
 export interface RowHistory { torrents: HistoryEvent[]; forum: HistoryEvent[] }
@@ -625,10 +624,7 @@ function AssetStripZone({ row, attachCount, onAttach, onSpectro, onMap, hideLabe
   const { t } = useTranslation()
   const { data: specData, isLoading: specLoading } = useQuery({
     queryKey: ['library-spectro-check', row.path],
-    queryFn: () => fetch(`${BASE}/api/spectrogram/list`, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ folders: [row.path] }),
-    }).then(r => r.json()),
+    queryFn: () => postJson(`/api/spectrogram/list`, { folders: [row.path] }),
     enabled: row.owned && !!row.path,
     staleTime: 30_000,
   })
@@ -646,7 +642,7 @@ function AssetStripZone({ row, attachCount, onAttach, onSpectro, onMap, hideLabe
   // inline instead of just the count.
   const { data: attachData } = useQuery({
     queryKey: ['library-attachments-cached'],
-    queryFn: () => fetch(`${BASE}/api/attachments/cached`).then(r => r.json()),
+    queryFn: () => getJson(`/api/attachments/cached`),
     staleTime: 60_000,
   })
   const files: AttachmentFile[] = attachData?.entries?.find(
@@ -655,7 +651,7 @@ function AssetStripZone({ row, attachCount, onAttach, onSpectro, onMap, hideLabe
 
   const { data: dbSettings } = useQuery({
     queryKey: ['db-settings-data-dir'],
-    queryFn: () => fetch(`${BASE}/api/db/settings`).then(r => r.json()),
+    queryFn: () => getJson(`/api/db/settings`),
     staleTime: Infinity,
   })
   const dataDir: string | undefined = dbSettings?.data_dir
@@ -1031,7 +1027,7 @@ function TaperZone({ row, hideLabel }: { row: DetailRow; hideLabel?: boolean }) 
   const queryKey = ['library-taper-for', row.lbNumber]
   const { data, isLoading } = useQuery<TaperAttributionResponse>({
     queryKey,
-    queryFn: () => fetch(`${BASE}/api/tapers/attributions/${row.lbNumber}`).then(r => r.json()),
+    queryFn: () => getJson(`/api/tapers/attributions/${row.lbNumber}`),
     staleTime: 60_000,
   })
   const [busy, setBusy] = useState(false)
@@ -1178,7 +1174,7 @@ export const OLOF_DATE_RE = /^\d{4}-\d{2}-\d{2}$/
 export function useOlofStatus() {
   return useQuery<OlofStatus>({
     queryKey: ['olof-status'],
-    queryFn: () => fetch(`${BASE}/api/olof/status`).then(r => r.json()),
+    queryFn: () => getJson(`/api/olof/status`),
     staleTime: Infinity,
   })
 }
@@ -1193,8 +1189,7 @@ interface DisputeCountResponse {
 export function useOpenDisputeCount(lb: number | undefined) {
   return useQuery<DisputeCountResponse[]>({
     queryKey: ['checksum-disputes-count', lb],
-    queryFn: () => fetch(`${BASE}/api/checksum-disputes?lb=${lb}&status=open&grouped=1`)
-      .then(r => r.json()),
+    queryFn: () => getJson(`/api/checksum-disputes?lb=${lb}&status=open&grouped=1`),
     enabled: lb != null,
     staleTime: 60_000,
   })
@@ -1405,7 +1400,7 @@ function BobtalkZone({ lbNumber }: { lbNumber: number }) {
   const { t } = useTranslation()
   const { data } = useQuery<{ lb: number; locations: BobtalkLocation[] }>({
     queryKey: ['bobtalk-locations', lbNumber],
-    queryFn: () => fetch(`${BASE}/api/bobtalk/${lbNumber}`).then(r => r.json()),
+    queryFn: () => getJson(`/api/bobtalk/${lbNumber}`),
     staleTime: 300_000,
     enabled: lbNumber != null,
   })
@@ -1467,11 +1462,7 @@ function OlofCompareNote({ date, lbNumber }: { date: string; lbNumber: number })
   const { t } = useTranslation()
   const { data, isLoading } = useQuery<OlofCompareResponse>({
     queryKey: ['olof-compare', date, lbNumber],
-    queryFn: () => fetch(`${BASE}/api/olof/compare`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ date_str: date, lb_number: lbNumber }),
-    }).then(r => r.json()),
+    queryFn: () => postJson(`/api/olof/compare`, { date_str: date, lb_number: lbNumber }),
     staleTime: 60_000,
   })
 
@@ -1502,7 +1493,7 @@ function OlofZone({ date, lbNumber, hideLabel }: { date: string; lbNumber?: numb
   const { t } = useTranslation()
   const { data, isLoading } = useQuery<OlofDateResponse>({
     queryKey: ['olof-date', date],
-    queryFn: () => fetch(`${BASE}/api/olof/date/${encodeURIComponent(date)}`).then(r => r.json()),
+    queryFn: () => getJson(`/api/olof/date/${encodeURIComponent(date)}`),
     staleTime: 300_000,
     enabled: !!date,
   })
@@ -1552,7 +1543,7 @@ function OlofShowZone({ date }: { date: string }) {
   const { t } = useTranslation()
   const { data, isLoading } = useQuery<ShowOlofResponse>({
     queryKey: ['show-olof', date],
-    queryFn: () => fetch(`${BASE}/api/shows/${encodeURIComponent(date)}/olof`).then(r => r.json()),
+    queryFn: () => getJson(`/api/shows/${encodeURIComponent(date)}/olof`),
     staleTime: 60_000,
     enabled: !!date,
   })

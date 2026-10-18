@@ -4,8 +4,7 @@ import { Button, IconButton, Input, Pill } from '../components'
 import { FolderQueueRail } from '../components/FolderQueueRail'
 import { useSpectrogramStore, SpectroTrack } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson } from '../lib/api'
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -62,8 +61,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
 
   // Load tool status on mount; drain any folders queued from other screens
   useEffect(() => {
-    fetch(`${BASE}/api/spectrogram/check`)
-      .then(r => r.json())
+    getJson(`/api/spectrogram/check`)
       .then((d: ToolStatus) => setTools(d))
       .catch(() => {})
     const pending = takePending()

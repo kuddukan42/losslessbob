@@ -22,8 +22,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { Icon } from '../components/Icon'
 import { Button } from '../components/primitives'
-
-const BASE = window.api.flaskBase
+import { BASE } from '../lib/api'
 
 // ── Types (GET /api/lb/coverage) ─────────────────────────────────────────────
 

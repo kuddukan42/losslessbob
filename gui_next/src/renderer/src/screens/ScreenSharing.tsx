@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Icon } from '../components/Icon'
 import { copyText } from '../lib/clipboard'
-
-const BASE = window.api.flaskBase
+import { BASE } from '../lib/api'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 

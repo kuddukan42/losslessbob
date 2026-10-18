@@ -6,8 +6,7 @@ import { Button, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { formatXrefTag, XREF_TONE } from '../components/pipeline/lookupState'
 import type { LookupSummaryRow } from '../lib/lookupStore'
-
-const BASE = window.api.flaskBase
+import { BASE } from '../lib/api'
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 

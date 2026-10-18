@@ -8,6 +8,7 @@ import { NAV_GROUPS, NAV_GROUP_KEYS, NAV_QUEUE_BADGES, navPathForId } from '../l
 import { useNavVisibilityStore } from '../lib/navVisibilityStore'
 import { CommandPalette } from './CommandPalette'
 import { SavedViews } from './SavedViews'
+import { BASE } from '../lib/api'
 
 // ── Nav structure ────────────────────────────────────────────────────────────
 // NAV_GROUPS + its types now live in ../lib/navigation.ts so the command palette
@@ -58,13 +59,13 @@ function Sidebar({
   }, [langOpen])
 
   useEffect(() => {
-    fetch(`${window.api.flaskBase}/api/home/stats`)
+    fetch(`${BASE}/api/home/stats`)
       .then(r => r.ok ? r.json() : Promise.reject())
       .then((d: { collection_count?: number }) => {
         if (typeof d.collection_count === 'number') setCollectionCount(d.collection_count)
       })
       .catch(() => {})
-    fetch(`${window.api.flaskBase}/api/credentials/wtrf`)
+    fetch(`${BASE}/api/credentials/wtrf`)
       .then(r => r.ok ? r.json() : Promise.reject())
       .then((d: { username?: string }) => setWtrfUsername(d.username ?? ''))
       .catch(() => {})
@@ -72,7 +73,7 @@ function Sidebar({
 
   useEffect(() => {
     function pollQueues(): void {
-      fetch(`${window.api.flaskBase}/api/refresh/queues`)
+      fetch(`${BASE}/api/refresh/queues`)
         .then(r => r.ok ? r.json() : Promise.reject())
         .then((d: { queues?: Array<{ queue_id: string; kind: string; count: number | null }> }) => {
           const next: Record<string, number> = {}
@@ -613,14 +614,14 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
   const clearError = useActivityStore((s) => s.clearError)
 
   useEffect(() => {
-    fetch(`${window.api.flaskBase}/api/home/stats`)
+    fetch(`${BASE}/api/home/stats`)
       .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then(setStats)
       .catch(() => { /* stats stay null, footer shows placeholders */ })
   }, [])
 
   useEffect(() => {
-    fetch(`${window.api.flaskBase}/api/master/github_check`)
+    fetch(`${BASE}/api/master/github_check`)
       .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then((d: { available?: boolean }) => {
         if (typeof d.available === 'boolean') setMasterSync({ available: d.available })
@@ -652,7 +653,7 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
   function stopJob(route: string) {
     // No optimistic state change (D-2/A3 default) — the next poll reflects
     // the real outcome.
-    fetch(`${window.api.flaskBase}${route}`, { method: 'POST' }).catch(() => {})
+    fetch(`${BASE}${route}`, { method: 'POST' }).catch(() => {})
   }
 
   function openJobScreen(screen: string) {

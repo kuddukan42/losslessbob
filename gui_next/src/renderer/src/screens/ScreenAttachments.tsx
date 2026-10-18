@@ -3,8 +3,7 @@ import { Icon } from '../components/Icon'
 import { Button, Chip, Input, Pill } from '../components'
 import { useAttachmentsStore, LbStatus } from '../lib/attachmentsStore'
 import { copyText } from '../lib/clipboard'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson } from '../lib/api'
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -79,8 +78,7 @@ export function ScreenAttachments(): React.JSX.Element {
 
   // Load data_dir on mount for open-folder IPC
   useEffect(() => {
-    fetch(`${BASE}/api/db/settings`)
-      .then(r => r.json())
+    getJson(`/api/db/settings`)
       .then((d: Record<string, string>) => { if (d.data_dir) setDataDir(d.data_dir) })
       .catch(() => {})
   }, [])
@@ -121,8 +119,7 @@ export function ScreenAttachments(): React.JSX.Element {
     if (activeLb === null) return
     setActiveFile(null)
     setFileContent(null)
-    fetch(`${BASE}/api/entry/${activeLb}/files`)
-      .then(r => r.json())
+    getJson(`/api/entry/${activeLb}/files`)
       .then((files: EntryFile[]) => {
         setEntryFiles(files ?? [])
         if (files?.length) setActiveFile(files[0])

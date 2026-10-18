@@ -7,6 +7,7 @@ import { Icon } from '../components/Icon'
 import { useScraperLogStore } from '../lib/scraperLogStore'
 import { LB_SITE_BASE } from '../lib/lbUrl'
 import { copyText } from '../lib/clipboard'
+import { BASE, getJson } from '../lib/api'
 
 // ── Error Boundary ─────────────────────────────────────────────────────────────
 
@@ -54,8 +55,6 @@ class ScraperErrorBoundary extends React.Component<{ children: React.ReactNode }
     return this.props.children
   }
 }
-
-const BASE = window.api.flaskBase
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -439,8 +438,7 @@ function EntryTab({ status, logs, onClearLog, onLog }: {
   // Seed the controls from the saved scrape settings -- the backend honours
   // what this screen sends, so hardcoded defaults would override them.
   useEffect(() => {
-    fetch(`${BASE}/api/db/settings`)
-      .then(r => r.json())
+    getJson(`/api/db/settings`)
       .then((s: { scrape_attachments?: string | null; scrape_delay_ms?: string | null; use_local_pages?: string | null }) => {
         setDlFiles(s.scrape_attachments !== '0')
         setLocalPages(s.use_local_pages === '1')

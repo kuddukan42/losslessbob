@@ -55,8 +55,7 @@ import {
 import { ReportSheet } from '../components/tapematch/ReportSheet'
 import { RunDiffSheet } from '../components/tapematch/RunDiffSheet'
 import type { RunMeta, RunSnapshot } from '../lib/runDiff'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson } from '../lib/api'
 
 // ── Types (mirror backend/app.py tapematch_* route shapes — see
 //    ScreenTapeMatch.tsx, which reads the same endpoints) ───────────────────
@@ -2942,14 +2941,14 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
     data: datesData, isPending: datesPending, isError: datesError,
   } = useQuery({
     queryKey: ['tapematch-dates'],
-    queryFn: () => fetch(`${BASE}/api/tapematch/dates`).then(r => r.json()),
+    queryFn: () => getJson(`/api/tapematch/dates`),
     staleTime: 30_000,
   })
   const allDates: DateRow[] = datesData?.dates ?? []
 
   const { data: crawlData } = useQuery({
     queryKey: ['tapematch-crawl-status'],
-    queryFn: () => fetch(`${BASE}/api/tapematch/crawl/status`).then(r => r.json()),
+    queryFn: () => getJson(`/api/tapematch/crawl/status`),
     refetchInterval: 30_000,
     staleTime: 20_000,
   })
@@ -2959,7 +2958,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
 
   const { data: analysisData } = useQuery({
     queryKey: ['tapematch-curation-analysis', selectedDate],
-    queryFn: () => fetch(`${BASE}/api/tapematch/analysis?date=${encodeURIComponent(selectedDate as string)}`).then(r => r.json()),
+    queryFn: () => getJson(`/api/tapematch/analysis?date=${encodeURIComponent(selectedDate as string)}`),
     enabled: !!selectedDate,
     staleTime: 30_000,
   })
@@ -2972,7 +2971,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
 
   const { data: familiesData, isPending: familiesLoading } = useQuery({
     queryKey: ['tapematch-families-all'],
-    queryFn: () => fetch(`${BASE}/api/tapematch/families`).then(r => r.json()),
+    queryFn: () => getJson(`/api/tapematch/families`),
     staleTime: 60_000,
   })
   const allFamilies: FamilyRow[] = familiesData ?? []
@@ -3024,8 +3023,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
     error: pairsErrorObj, failureCount: pairsFailureCount, refetch: refetchPairsQuery,
   } = useQuery({
     queryKey: ['tapematch-curation-pairs', selectedDate],
-    queryFn: () => fetch(`${BASE}/api/tapematch/pairs?date=${encodeURIComponent(selectedDate as string)}`)
-      .then(r => r.json()),
+    queryFn: () => getJson(`/api/tapematch/pairs?date=${encodeURIComponent(selectedDate as string)}`),
     enabled: !!selectedDate,
     staleTime: 15_000,
   })
@@ -3044,8 +3042,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
     data: sourcesData, isPending: sourcesLoading, isError: sourcesError,
   } = useQuery({
     queryKey: ['tapematch-curation-sources', selectedDate],
-    queryFn: () => fetch(`${BASE}/api/tapematch/sources?date=${encodeURIComponent(selectedDate as string)}`)
-      .then(r => r.json()),
+    queryFn: () => getJson(`/api/tapematch/sources?date=${encodeURIComponent(selectedDate as string)}`),
     enabled: !!selectedDate,
     staleTime: 15_000,
   })
@@ -3097,8 +3094,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
     data: reportData, isPending: reportLoading, isError: reportError,
   } = useQuery({
     queryKey: ['tapematch-report', selectedDate],
-    queryFn: () => fetch(`${BASE}/api/tapematch/report?date=${encodeURIComponent(selectedDate as string)}`)
-      .then(r => r.json()),
+    queryFn: () => getJson(`/api/tapematch/report?date=${encodeURIComponent(selectedDate as string)}`),
     enabled: reportOpen && !!selectedDate,
     staleTime: 60_000,
   })
@@ -3125,8 +3121,7 @@ export function ScreenTapeMatchCuration(): React.JSX.Element {
 
   const { data: runsData } = useQuery({
     queryKey: ['tapematch-runs', selectedDate],
-    queryFn: () => fetch(`${BASE}/api/tapematch/runs?date=${encodeURIComponent(selectedDate as string)}`)
-      .then(r => r.json()),
+    queryFn: () => getJson(`/api/tapematch/runs?date=${encodeURIComponent(selectedDate as string)}`),
     enabled: diffOpen && !!selectedDate,
     staleTime: 60_000,
   })

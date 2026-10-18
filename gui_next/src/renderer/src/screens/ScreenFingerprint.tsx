@@ -15,8 +15,7 @@ import { Icon } from '../components/Icon'
 import { Pill, Chip, Button } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { useSettingsStore } from '../store'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson } from '../lib/api'
 
 // ── Types (mirror backend/setlist_fingerprint.py row shapes) ─────────────────
 
@@ -209,7 +208,7 @@ export function ScreenFingerprint(): React.JSX.Element {
 
   const { data, isLoading } = useQuery({
     queryKey: ['fingerprint-suggestions', statusFilter],
-    queryFn: () => fetch(`${BASE}/api/fingerprint/suggestions?status=${statusFilter}`).then(r => r.json()),
+    queryFn: () => getJson(`/api/fingerprint/suggestions?status=${statusFilter}`),
     staleTime: 15_000,
   })
   const suggestions: Suggestion[] = data?.suggestions ?? []

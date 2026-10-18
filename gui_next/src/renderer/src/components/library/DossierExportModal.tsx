@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '../primitives'
 import { useSettingsStore, type DossierChannel, type DossierFormat } from '../../store'
+import { BASE } from '../../lib/api'
 
 function blobDownload(blob: Blob, filename: string): void {
   const url = URL.createObjectURL(blob)
@@ -87,7 +88,7 @@ export function DossierExportModal({
         // `Content-Disposition: attachment`, so the hidden print window
         // downloads the HTML instead of navigating to it and printToPDF
         // never runs (the export silently produced an .html file).
-        const url = `${window.api.flaskBase}/api/dossier/html?${params.toString()}&inline=1`
+        const url = `${BASE}/api/dossier/html?${params.toString()}&inline=1`
         const ok = await window.api.printDossierPdf(url, filename)
         if (ok) { showToast(t('library.dossier.toastExported'), 'ok'); onClose() }
         setBusy(false)

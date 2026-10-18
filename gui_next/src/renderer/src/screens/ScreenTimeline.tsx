@@ -14,8 +14,7 @@ import { Icon } from '../components/Icon'
 import { IconButton, Toast } from '../components/primitives'
 import type { ToastTone } from '../components/primitives'
 import { DossierExportModal } from '../components/library/DossierExportModal'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson } from '../lib/api'
 
 // ── Types (mirror backend/timeline.py route shapes exactly) ──────────────────
 
@@ -464,14 +463,14 @@ export function ScreenTimeline(): React.JSX.Element {
 
   const { data: summary, isLoading } = useQuery<SummaryResponse>({
     queryKey: ['timeline-summary'],
-    queryFn: () => fetch(`${BASE}/api/timeline/summary`).then(r => r.json()),
+    queryFn: () => getJson(`/api/timeline/summary`),
     staleTime: 60_000,
   })
 
   const decade = view.level !== 'decades' ? view.decade : null
   const { data: decadeDetail, isLoading: decadeLoading } = useQuery<DecadeDetailResponse>({
     queryKey: ['timeline-decade', decade],
-    queryFn: () => fetch(`${BASE}/api/timeline/decade/${decade}`).then(r => r.json()),
+    queryFn: () => getJson(`/api/timeline/decade/${decade}`),
     enabled: decade !== null,
     staleTime: 60_000,
   })

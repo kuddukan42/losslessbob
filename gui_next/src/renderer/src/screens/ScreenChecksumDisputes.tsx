@@ -13,8 +13,7 @@ import { Pill, Chip, Button } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { useSettingsStore } from '../store'
 import { lbLabel, lbDetailUrl } from '../lib/lbUrl'
-
-const BASE = window.api.flaskBase
+import { BASE, getJson } from '../lib/api'
 
 // ── Types (mirror backend.checksum_provenance.get_findings) ─────────────────
 
@@ -161,7 +160,7 @@ export function ScreenChecksumDisputes(): React.JSX.Element {
     queryFn: () => {
       const params = new URLSearchParams({ grouped: '1', status: 'open' })
       if (referenceFilter !== 'all') params.set('reference', referenceFilter)
-      return fetch(`${BASE}/api/checksum-disputes?${params}`).then(r => r.json())
+      return getJson(`/api/checksum-disputes?${params}`)
     },
     staleTime: 15_000,
   })

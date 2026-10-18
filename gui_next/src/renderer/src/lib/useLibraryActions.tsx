@@ -21,8 +21,7 @@ import { useSpectrogramStore } from './spectrogramStore'
 import { useFolderQueueStore } from './folderQueueStore'
 import { lbDetailUrl } from './lbUrl'
 import { copyText } from './clipboard'
-
-const BASE = window.api.flaskBase
+import { BASE } from './api'
 
 /** One SSE frame from POST /api/entry/<lb>/seed_wtrf (no topic_url case). */
 interface WtrfSeedProgressEvent {
