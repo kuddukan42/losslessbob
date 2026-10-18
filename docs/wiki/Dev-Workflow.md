@@ -1,7 +1,7 @@
 # Dev Workflow
 
 > Sources: `.claude/CLAUDE.md` · `.claude/commands/` · `.claude/skills/` ·
-> `.claude/hooks/` · Status: fresh 2026-07-22
+> `.claude/hooks/` · Status: fresh 2026-10-18
 
 ## Session lifecycle
 
@@ -32,15 +32,16 @@ push; a green run can stand in for re-running the full local suite for
 
 `session_brief.sh` (briefing) · `py_compile_check.sh` (syntax on .py edits) ·
 `changelog_check.sh` + `session_end_check.sh` (bookkeeping nags) ·
-`i18n_reminder.sh` (locale nag) · `path_guard.py` (blocks file access outside
-the project) · plus an async wrangler deploy of `docs/schema.html` to
+`i18n_reminder.sh` (locale nag) · an inline PreToolUse guard in `settings.json` (blocks Read/Write/Edit outside
+the project; `hooks/path_guard.py` is not wired in `settings.json`) · plus an async wrangler deploy of `docs/schema.html` to
 Cloudflare Pages.
 
 ## Key commands & skills
 
 `/backend-restart` · `/gui-check` · `/verify` · `/session-open` ·
 `/session-close` · `/tapematch-batch` · `/analyze-runs` · `/find-bugs` ·
-`/gui-next-i18n` · `/wiki-update` (this wiki).
+`/gui-next-i18n` · `/wiki-update` (this wiki). `/verify` and `/analyze-runs`
+are skills (`.claude/skills/`); the rest are commands (`.claude/commands/`).
 
 ## Working conventions
 
@@ -48,6 +49,11 @@ Cloudflare Pages.
   `grep -n` for the section/ID, then Read with offset/limit.
 - Python is `.venv/bin/python3` — bare `python`/`python3` not on PATH.
 - Commits: `<type>(<scope>): <description>` — types feat|fix|refactor|docs|chore|test,
-  scopes backend|gui|db|scraper|importer|scheduler|docs.
+  scopes backend|gui|db|scraper|importer|scheduler|docs|tapematch|bookkeeping.
+- Temp files: never the harness scratchpad (hook aborts the turn) — use `.debug/`
+  or `tools/_<name>.<ext>`. Bulk audio never in `/tmp` (2.7 GB): backend uses
+  `backend.tmp_utils.audio_tmp_dir()`; ad-hoc decodes go to `/mnt/DATA0/tmp/<name>/`,
+  deleted same session.
+- Replies stay short (CLAUDE.md Response length): answer first, no preamble.
 - Debugging first question: "is the running process the latest code?"
 - Bug/task tracking: BUGS.md / TODO.md with BUG-NNN / TODO-NNN IDs.

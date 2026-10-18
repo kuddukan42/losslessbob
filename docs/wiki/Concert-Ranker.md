@@ -3,13 +3,13 @@
 > Sources: `concert_ranker/` (incl. `LB_KNOWLEDGE.md`) · `backend/ranker_jobs.py` ·
 > `PROJECT.md` §quality tables (~line 684), §show_picks (~line 762),
 > §Derived-Data Recompute (~line 1321) ·
-> `archive/specs/PIPELINE_REFRESH_PHASE2.md` · Status: fresh 2026-08-13
+> `archive/specs/PIPELINE_REFRESH_PHASE2.md` · `backend/dossier_fields.py` · Status: fresh 2026-10-18
 
 Ranks recordings of the same concert by audio quality so the user can pick the
 best circulating source per show. Merged into `main` (the old `concert-ranker`
 branch is gone). Package: `concert_ranker/` — `scan.py`, `features.py`,
 `scoring.py`, `quality_score.py`, `families.py`, `picks.py`, `calibrate.py`,
-`cli.py`; domain knowledge in `LB_KNOWLEDGE.md`.
+`calibration.py`, `runner.py`, `text_features.py`, `cli.py`, `lb/repo.py`; domain knowledge in `LB_KNOWLEDGE.md`.
 
 ## Data model (USER tables)
 
@@ -29,9 +29,15 @@ branch is gone). Package: `concert_ranker/` — `scan.py`, `features.py`,
 `tools/compute_show_picks.py` (scoring in `concert_ranker/picks.py`) from
 `entries.rating`, `curated_lists`, `entry_lineage`, `quality_recording_scores`,
 and `taper_attributions`. `pick_rank = 1` = recommended for the date; every
-score carries ordered `evidence_json`. Model: `instructions/FABLE_UNIFIED_RANKING.md`
-§3/§4. Runs as step 3 of the `/api/derived/recompute` SSE chain
-(lineage → tapers → picks → song index).
+score carries ordered `evidence_json`. Model: `archive/specs/FABLE_UNIFIED_RANKING.md`
+§3/§4 (spec archived). Runs as step 3 of the `/api/derived/recompute` SSE chain
+(lineage → tapers → picks → song index); also re-run after family syncs.
+Hand-weighted points in `PICK_WEIGHTS`. Vetoes: scan veto, C32 D1 lossy-lineage
+(`has_lossy_lineage`, TODO-351 guards), stated-rig conflict (`_rig_conflict_lbs`,
+helpers now in `backend/dossier_fields.py`), disputed taper. Fragments (tracklist
+shorter than a materially longer source, TODO-349) are demoted; grades come from the
+scored scan and an eligible master holds rank. Never re-measures a folder that
+already has metrics (TODO-311).
 
 ## Backend wrapping (TODO-306 Phase 2)
 

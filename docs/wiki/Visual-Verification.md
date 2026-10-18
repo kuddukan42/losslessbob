@@ -1,6 +1,6 @@
 # Visual Verification
 
-> Sources: `tools/electron_driver.mjs` · `tools/driver_core.mjs` · `tools/electron_display.mjs` · `tools/electron_preflight.mjs` · `tools/electron_driver.config.json` · `tools/debug_screens.json` · `.claude/skills/verify/SKILL.md` · `archive/specs/FABLE_VISUAL_VERIFICATION.md` · Status: fresh 2026-07-22
+> Sources: `tools/electron_driver.mjs` · `tools/driver_core.mjs` · `tools/electron_display.mjs` · `tools/electron_preflight.mjs` · `tools/electron_driver.config.json` · `tools/debug_screens.json` · `.claude/skills/verify/SKILL.md` · `archive/specs/FABLE_VISUAL_VERIFICATION.md` · Status: fresh 2026-10-18
 
 The screenshot engine that lets an agent see the gui_next GUI. Since
 2026-07-22 it is **one driver, two modes** (`tools/browser_driver.mjs` was
@@ -30,7 +30,7 @@ node tools/electron_driver.mjs session tools/debug_screens.json                 
   `ok: false` but never abort the sequence. `wait-for` takes a `state`
   option; the tour uses `state: "detached"` on `text=Loading` so heavy
   screens are captured settled, not mid-spinner.
-- **`debug_screens.json`** — the 20-screen tour, mode-agnostic; must track
+- **`debug_screens.json`** — the 20-screenshot tour (19 distinct routes + Disk Scanner; no QuickLookup/coverage/ledger routes), mode-agnostic; must track
   `gui_next/src/renderer/src/lib/navigation.ts` when screens change
   (BUG-268 was this file going stale).
 - **`electron_preflight.mjs` + `electron_driver.config.json`** — the display

@@ -1,7 +1,7 @@
 # Architecture
 
-> Sources: `PROJECT.md` §Tech Stack, §File Structure · `.claude/CLAUDE.md` ·
-> Status: fresh 2026-07-22
+> Sources: `PROJECT.md` §Tech Stack, §File Structure · `.claude/CLAUDE.md` · `backend/app.py` · `backend/queues.py` ·
+> Status: fresh 2026-10-18
 
 ## Big picture
 
@@ -15,7 +15,7 @@ and curator publishing (master data, dossiers, forum posts).
 ┌─────────────────────┐     HTTP :5174      ┌──────────────────────┐
 │ gui_next             │◄───────────────────►│ Flask backend         │
 │ Electron + React     │                     │ backend/app.py        │
-│ 20 screens           │                     │ SQLite (single DB)    │
+│ 27 screen files      │                     │ SQLite (single DB)    │
 └─────────────────────┘                     │ backend/db.py         │
                                             └──────────┬───────────┘
         tools/tapematch/  ──── family sync ────────────┘
@@ -24,32 +24,42 @@ and curator publishing (master data, dossiers, forum posts).
 
 ## Components
 
-- **`backend/`** — Flask API on hardcoded port **5174**. ~40 modules; core:
-  `app.py` (all routes), `db.py` (schema + queries), `checksum_utils.py`,
-  `importer.py`, `scraper.py`, `site_crawler.py`, `scheduler.py`. Feature
-  clusters: setlist corpora (`olof_*`, `bobserve_*`, `setlistfm.py`,
-  `bobdylan_scraper.py`), derived data (`taper_attribution.py`, `song_index.py`,
-  `setlist_fingerprint.py`, `gap_analysis.py`, `dossier.py`), collection ops
+- **`backend/`** — Flask API on hardcoded port **5174**. ~70 modules plus `backend/qc/`
+  (QC rule engine); core: `app.py` (all routes, ~360 `/api` routes), `db.py`
+  (schema + queries), `checksum_utils.py`, `importer.py`, `scraper.py`,
+  `site_crawler.py`, `scheduler.py`. Feature clusters: setlist corpora (`olof_*`,
+  `bobserve_*`, `setlistfm.py`, `bobdylan_scraper.py`, `bobtalk*.py`), derived data
+  (`taper_attribution.py`, `taper_curation.py`, `song_index.py`,
+  `setlist_fingerprint.py`, `gap_analysis.py`, `dossier*.py`), pipeline refresh
+  (`refresh.py`, `refresh_exec.py`, `queues.py`, `job_progress.py`), collection ops
   (`filer.py`, `integrity_monitor.py`, `qbittorrent.py`, `sharing.py`,
-  `forum_poster.py`). See [Backend-API](Backend-API.md).
+  `forum_poster.py`), private-tracker/WTRF (`tuit_*`, `wtrf_*`).
+  See [Backend-API](Backend-API.md).
 - **`gui_next/`** — Electron + React + TypeScript, the sole GUI (legacy PyQt6
-  removed 2026-07-16). i18n via locale JSON (en/de/fr/es/it/nl). Verify with
+  removed 2026-07-16); screens in `renderer/src/screens/`, registered via
+  `lib/navigation.ts`. i18n via locale JSON (en/de/fr/es/it/nl). Verify with
   `/gui-check` (typecheck + build) + `/verify` screenshots for visual changes
   (see [Visual-Verification](Visual-Verification.md)).
 - **`tools/`** — CLIs & drivers: derived-data recompute steps (`parse_lineage`,
   `attribute_tapers`, `compute_show_picks`, `compute_song_performances`),
-  `ledger.py` (BUGS/TODO bookkeeping), `electron_driver.mjs` (screenshot engine).
+  `ledger.py` (BUGS/TODO bookkeeping), `electron_driver.mjs` (screenshot engine),
+  `dossier_*.py` (golden/audit), `tuit_sync.py`, `ci_smoke.py`.
 - **`tools/tapematch/`** — standalone audio-matching pipeline ([TapeMatch](TapeMatch.md));
   run artifacts in `data/tapematch/runs/`.
 - **`concert_ranker/`** — quality-scan / ranking package ([Concert-Ranker](Concert-Ranker.md)).
 - **`docs/`** — CLI docs, `schema.html` (auto-deploys to losslessbob-schema.pages.dev),
   data-ownership notes, this wiki. **`instructions/`** — FABLE_* spec pack (read
   `SPEC_INTEGRATION_NOTES.md` before implementing any spec).
-- **CI** — `.github/workflows/ci.yml`: backend suite + gui-check on every push.
+- **CI** — `.github/workflows/ci.yml`: backend suite + gui-check on every push;
+  `release.yml` for releases.
+- Background workers (scrapers, olof/bobserve fetchers, importer, geocoder, site crawler, ranker) take a single-flight
+  start claim (see `job_progress.py`) so they cannot run twice (TODO-366).
 
 ## Environment invariants
 
 - Python: `.venv/bin/python3` only (bare `python` not on PATH). Python 3.11+.
 - Backend port 5174 is hardcoded everywhere — changing it is an atomic, logged change.
 - Single SQLite DB; migrations are idempotent `ALTER TABLE` in try/except.
+- Dead-code triage 2026-10 (TODO-363/364/365/367/368): PyQt-era routes and
+  zero-reference functions deleted; kept routes are listed in the CHANGELOG 2026-10-18 entry.
 - `requirements.txt` pins exact versions. Logs consolidated under `data/logs/`.

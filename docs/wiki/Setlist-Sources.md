@@ -1,57 +1,50 @@
 # Setlist Sources
 
-> Sources: `PROJECT.md` §olof tables (~line 912), §bobdylan/setlistfm tables (~570–632),
-> §Olof routes (~1371), §show-detail route (~1383) · `backend/olof_*.py` · `backend/bobserve_*.py` ·
-> Status: seeded 2026-07-22
+> Sources: `PROJECT.md` §olof tables (~line 1400–1560), §Olof routes (grep `/api/olof`) ·
+> `backend/olof_*.py` · `backend/bobserve_*.py` · `backend/bobdylan_scraper.py` ·
+> `backend/setlistfm.py` · `backend/song_index.py` · `backend/setlist_fingerprint.py` ·
+> `backend/gap_analysis.py` · `backend/qc/corroborate.py` · Status: fresh 2026-10-18
 
-The app cross-references three external setlist corpora against `entries`.
-All parsed data is **local-only** (not in MASTER export — P5 decision pending).
+The app cross-references external setlist corpora against `entries`. Parsed `olof_*`
+data is **local-only** (not in MASTER export).
 
-## The three corpora
+## The corpora
 
 | Corpus | Modules | Tables | Notes |
 |---|---|---|---|
 | Olof Björner (Still On The Road) | `olof_fetcher.py` → `olof_parser.py` | `olof_pages` → `olof_events` + `olof_songs` | DSN pages mirrored to `data/olof/pages/`; event_id = DSN number |
-| bobserve.com (2022+) | `bobserve_fetcher.py` → `bobserve_parser.py` | same tables, `source='bobserve'`, ids 9M+ | The real 2022+ setlist source — Yearly Chronicle PDFs carry no setlists (TODO-228 pivot) |
+| bobserve.com (2022+) | `bobserve_fetcher.py` → `bobserve_parser.py` | same tables, `source='bobserve'`, ids 9M+ | real 2022+ setlist source (TODO-228 pivot); `--index-only` also fills an index used for pre-2022 deep links |
 | bobdylan.com + setlist.fm | `bobdylan_scraper.py`, `setlistfm.py` | `bobdylan_shows/_setlist`, `setlistfm_shows/_setlist` (MASTER) | setlist.fm via API key, joined by `date_str` |
 
-Yearly Chronicles are still parsed for **calendar/diary + new-tapes** data
-(`olof_chronicle_parser.py` → `olof_chronicle`, `olof_new_tapes`); their
-2022+ setlist appendix path is superseded and was never populated.
+Yearly Chronicles are parsed only for calendar/diary + new-tapes data
+(`olof_chronicle_parser.py` → `olof_chronicle`, `olof_new_tapes`); no setlists.
 
 ## Derived layers
 
-- **Song spine** — `song_performances` + `song_canonical` rebuilt from
-  `olof_songs JOIN olof_events` (`backend/song_index.py`); feeds dossier
-  rarity flags (`only`/`first`/`last`/`rare`).
+- **Song spine** — `song_performances` + `song_canonical` rebuilt from `olof_songs JOIN
+  olof_events` (`song_index.py`); feeds dossier rarity flags.
 - **Setlist fingerprinting** (TODO-225) — `setlist_fingerprint.py` scores
-  `entries.setlist` free text against `olof_songs`, keeps top matches in
-  `setlist_fingerprint_suggestions` (curator review queue).
-- **Coverage classification** (TODO-256, absorbed into the Library) —
-  `gap_analysis.py` classifies every `olof_events` concert date
-  covered/partial/gap/future against `entries`, computed live (no derived
-  table). Feeds the Library performance lens's `uncirculated`/`upcoming`
-  recording-less rows and their DetailPanel Olof tab
-  (`GET /api/shows/<iso>/olof`); the standalone Gaps screen this used to
-  power was retired.
+  `entries.setlist` text against `olof_songs` into `setlist_fingerprint_suggestions`.
+- **Cross-source corroboration** (TODO-342) — `backend/qc/corroborate.py`
+  (`setlist_quorum`, `venue_check`) compares Olof/setlist.fm/bobdylan.com; feeds QC rule
+  R-O4 and the dossier identity gate G1.
+- **Coverage classification** — `gap_analysis.py` classifies each `olof_events` concert
+  date covered/partial/gap/future against `entries`, live. The Gaps screen and `/api/gaps/*`
+  were deleted (TODO-270); it now feeds the Library's `uncirculated`/`upcoming` rows and
+  `GET /api/shows/<iso>/olof` (DetailPanel Olof tab).
 
 ## Consumers
 
-- `/api/olof/*` routes (date, event, chronicle, status, bobtalk_search,
-  compare) — see PROJECT.md ~line 1371. GUI gates all Olof UI on
-  `/api/olof/status` `events > 0`.
-- Library DetailPanel **Olof tab** (both lenses) incl. per-copy setlist
-  comparison via `POST /api/olof/compare`.
-- [Show Dossier](Show-Dossier.md) — show identity/ambiguity comes from
-  `olof_events.venue` (never `entries.location`, which is noisy free text).
-- Geocoder priority chain uses all corpora for coordinates
-  (`location_geocoded.source`).
+- `/api/olof/*` (fetch, parse, chronicle_parse, date, event, chronicle, status,
+  bobtalk_search, compare) — GUI gates Olof UI on `/api/olof/status` `events > 0`.
+- Library DetailPanel Olof tab incl. per-copy comparison via `POST /api/olof/compare`.
+- [Show Dossier](Show-Dossier.md) — identity/ambiguity from `olof_events.venue` (never
+  `entries.location`); setlist, completeness and claims all read Olof.
+- Geocoder priority chain (`location_geocoded.source`).
 
 ## Gotchas
 
-- Title matching goes through `db.normalize_title_for_match` — cp1252
-  apostrophe fold, case/punct collapse, leading-"The" strip.
-- Event ids occupy three disjoint ranges (DSN / `year*1000+seq` / 9M+
-  bobserve) — no collisions by construction.
-- bobserve `olof_songs` rows are title+credits only (parsed from the page's
-  `data-clipboard-text` blob); DSN rows carry full annotations/takes.
+- Titles match via `db.normalize_title_for_match` (cp1252 apostrophe fold, punct
+  collapse, leading-"The" strip).
+- Event ids occupy disjoint ranges (DSN / `year*1000+seq` / 9M+ bobserve).
+- bobserve `olof_songs` rows are title+credits only; DSN rows carry annotations/takes.

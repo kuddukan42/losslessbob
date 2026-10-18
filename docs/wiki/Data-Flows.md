@@ -1,8 +1,8 @@
 # Data Flows
 
-> Sources: `PROJECT.md` §Key Data Flows (~line 1978), §Checksum Format Reference
-> (~line 2022), §Backend routes (~1171) · `docs/data_ownership.md` ·
-> `docs/lb_missing_vs_missing_status.md` · Status: fresh 2026-07-22
+> Sources: `PROJECT.md` §Key Data Flows, §Checksum Format Reference,
+> §Flat File Update Pipeline, §Master Data (publish / subscribe) · `docs/data_ownership.md` ·
+> `docs/lb_missing_vs_missing_status.md` · Status: fresh 2026-10-18
 
 ## Main flows
 
@@ -19,14 +19,17 @@
    their MASTER tables.
 4. **Derived-data recompute** — `/api/derived/recompute` SSE chain in canonical
    order: `parse_lineage` → `attribute_tapers` → `compute_show_picks` →
-   `song_index`. Rewrites only USER-tier derived tables; manual trigger
+   `song_index` (steps logged via `record_step_run`). Rewrites only USER-tier derived tables; manual trigger
    (onboarding "Done" + curator button).
-5. **Master data publish/subscribe** — curator publishes MASTER tables as
-   flat-file releases (`flat_file_releases`); subscribers apply with per-row
-   diffs in `flat_file_changelog`. Export channels: `public` (private metadata
-   stripped; the only channel uploadable to the public GitHub repo) vs `full`
-   (friends only). Site-mirror xref ingest is a separate *reviewed* import path
-   (staging → review → apply, TODO-252 — approvals never automatic).
+5. **Master data publish/subscribe** — two separate channels. (a) Site
+   flat-file releases (`flat_file_releases`, per-row diffs in
+   `flat_file_changelog`) update `checksums`, then reconcile `lb_master` and
+   scrape the release's new LBs ([Release-Update](Release-Update.md)).
+   (b) Curator publishes MASTER-table snapshots (`/api/master/export` →
+   GitHub release; subscribers `github_check`/`github_install`). Channels:
+   `public` (private metadata stripped; the only one uploadable) vs `full`
+   (friends only). Site-mirror xref ingest is a separate *reviewed* import
+   path (staging → review → apply, TODO-252 — approvals never automatic).
 6. **Collection filing** — folder → LB identification → rename
    (`rename_history`) → routing by year via `collection_mounts`/
    `collection_routes` → integrity monitoring (`collection_integrity_*`,
@@ -37,9 +40,12 @@
 8. **Concert Ranker** — audio scan stores RAW metrics once → rerank derives
    scores/verdicts → `show_picks` unified ranking → Library badges, Picks tab,
    [Show-Dossier](Show-Dossier.md) recommendation.
-9. **Read surfaces** — [gaps view](Setlist-Sources.md) classifies coverage
-   live from `olof_events` vs `entries`; dossier assembles everything known
-   about one date, with HTML/BBcode exports.
+9. **Read surfaces** — Show Detail (`gap_analysis.py`, `/api/shows/<iso>/olof`;
+   the standalone Gaps screen is gone) classifies coverage live from
+   `olof_events` vs `entries`; `/api/dossier` (+ `/html`, `/bbcode`) assembles
+   everything known about one date ([Show-Dossier](Show-Dossier.md)).
+10. **Seeding/upload out** — folder → torrent → qBittorrent / WTRF / TUIT via
+    verified overlays that never write to the collection ([Integrations](Integrations.md)).
 
 ## Checksum format notes
 

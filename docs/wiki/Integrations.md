@@ -1,149 +1,85 @@
 # Integrations
 
-> Sources: `PROJECT.md` §Torrent/qBittorrent/Credentials/Forum/WTRF/Archive.org/
-> Trading/Sharing routes (~lines 1556–1631) · `backend/forum_poster.py` ·
-> `backend/sharing.py` · `backend/qbittorrent.py` · `backend/archive_org.py` ·
-> `backend/wtrf_scraper.py` ·
-> Status: seeded 2026-07-22
+> Sources: `PROJECT.md` §Torrent Generation, §qBittorrent Integration,
+> §Credentials Storage, §Forum Posting, §WTRF Torrent Search, §Archive.org
+> Upload, §Trading / Friend Collections, §File Sharing, and the `tuit_*` table
+> sections · `backend/forum_poster.py` · `backend/sharing.py` ·
+> `backend/qbittorrent.py` · `backend/archive_org.py` · `backend/wtrf_scraper.py` ·
+> `backend/wtrf_seed.py` · `backend/wtrf_board.py` · `backend/tuit_scraper.py` ·
+> `backend/tuit_upload.py` · `backend/tracker_seed.py` · `backend/seed_overlay.py` ·
+> `backend/torrent_verify.py` · `tools/tuit_sync.py` · Status: fresh 2026-10-18
 
-Outbound surfaces: getting recordings *out* of the collection — torrents,
-forum posts, uploads, shares, trades. All credentials live in the **OS
-keyring** (WTRF, qBittorrent, IA S3); the API never returns a stored password.
+Getting recordings *out* of the collection: torrents, forum posts, tracker
+seeding/uploads, shares, trades. Credentials live in the **OS keyring**
+(`backend/credentials.py`: qBittorrent, WTRF, IA S3, TUIT, TUIT RSS passkey);
+the API never returns a stored password.
 
 ## Torrents & qBittorrent
 
-`/api/torrent/create` generates a `.torrent` per LB (tracker lists managed via
-`/api/trackers`); records in `torrents` with live `source_folder_exists` /
-`torrent_file_exists` checks. qBittorrent WebUI integration: test / add
-(by torrent_id or bulk lb_numbers, with category/tags) / remove (content files
-never deleted) / presence-check that syncs the DB flag.
+`/api/torrent/create` builds a `.torrent` per LB (`torrent_maker.py`; trackers
+via `/api/trackers`) into `torrents`. `/api/qbt/{test,add}` plus
+`/api/torrent/<id>/qbt_{remove,check}` (removal never deletes content files;
+check syncs the DB flag).
 
 ## WTRF forum
 
-- **Posting**: `/api/entry/<lb>/preview_forum` builds subject + BBcode body;
-  `post_forum` is gated by an LBDIR integrity check on the entry's collection
-  folder (400 on fail/incomplete — the forum-guard). If no torrent exists one
-  is auto-generated and added to qBittorrent first (qbt failure non-fatal).
-  Posts log to `forum_posts`.
-- **Fetching**: WTRF torrent search downloads matching torrents for missing
-  LB items (`wtrf_downloads`); `crawl_missing` batch-crawls via SSE.
+- **Post**: `/api/entry/<lb>/{preview_forum,lbdir_status,post_forum}`; posting
+  is gated by an LBDIR integrity check of the filed folder (the forum-guard).
+  No torrent yet → one is generated and added to qBittorrent first. Log in
+  `forum_posts`.
+- **Fetch**: `/api/wtrf/{fetch_torrent,crawl_missing}` → `wtrf_downloads`.
+- **Seed**: `/api/wtrf/seed_links` (paste of topic links or bare LB numbers,
+  SSE) and `/api/entry/<lb>/seed_wtrf` (`wtrf_seed.py`); `tools/wtrf_seed_board.py`
+  walks the whole board (`wtrf_board.py`, `--resume`; a full overlay drive stops
+  the walk). Non-public entries are refused before any forum round-trip.
+
+## Seeding without touching the collection
+
+`tracker_seed.py` (TUIT and WTRF share it) seeds an LB's `.torrent` through
+three gates: `db.is_seedable_to_tracker()` (lb_status `public`), a linked
+folder whose name matches the torrent root, and `torrent_verify.py` hashing it
+to 100% read-only — qBittorrent is never handed a partial folder. Fallback
+(partial overlay is the default): `seed_overlay.py` builds
+`<mount>/<Tracker> Seeds/<name>` with audio **hardlinked** from the collection,
+sidecars copied or re-fetched, piece-hash repair; files sharing a piece with
+unresolved data are copied, never linked. Deleting or cross-volume-moving a
+collection folder (`filer.py`) leaves the overlay as sole holder —
+`seed_overlay.warn_if_seeded()` warns; `tuit_sync.py --check-overlays` audits.
 
 ## TUIT private tracker
 
-`tangledupintorrents.org` — a ~21-member private Bob Dylan tracker, 1,635
-recordings. Laravel; login is a CSRF `_token` POST, there is no JSON API.
-`backend/tuit_scraper.py` parses `/browse` rows and `/recordings/<id>` detail
-pages into `tuit_recordings` (every rendered field, list-shaped ones as JSON).
-Every fetched detail page is also archived verbatim to
-`data/downloads/tuit/html/rec-<id>.html` (`--html-dir`, `--no-save-html`)
-so a parser gap can be re-read without hitting the tracker again.
-`tools/tuit_sync.py` drives it: `--fetch-torrents` saves the personalised
-`.torrent`, `--seed` resolves the LB number to a folder via
-`db.get_folders_for_lb()` (my_collection first, folder_lb_link second) and adds
-it to qBittorrent. **Three gates before qBittorrent hears anything**:
-`db.is_seedable_to_tracker()` (lb_status must be 'public'), the torrent root
-name must match the folder name, and `backend/torrent_verify.py` must hash the
-folder to 100% locally and read-only. An incomplete folder is dropped, never
-forced — qBittorrent handed a 99% torrent downloads the rest *into* the
-collection folder, which is exactly what must not happen.
-`--overlay` turns gate 3 from a refusal into a fallback. TUIT torrents include
-the `LBF-*` sidecars the collection folder does not keep, so a folder typically
-verifies at ~99.7%. `backend/seed_overlay.py` assembles a third location
-(`<mount>/TUIT Seeds/<name>`, outside the `…/Concerts` scanner roots): audio
-**hardlinked** from the collection (same inode, no extra disk), sidecars copied
-from `data/site/files`, and — with `--refetch-sidecars` — re-downloaded from
-losslessbob.com when the crawl's saved HTML was link-rewritten to the wrong
-size. Any collection file sharing a piece with unresolved data is copied rather
-than linked, so a client write can never reach a collection inode. LB-00707
-assembles to a verified 100% for 2.3 MB of extra disk on a 1.06 GB recording.
-
-**Overlays and collection moves**: hardlinks follow the inode, so renaming or
-moving a collection folder *within* its drive leaves the overlay healthy — no
-repair needed. A delete, or a cross-volume move (`filer.py` falls back to
-copy + `rmtree`), drops the link count to 1 and the overlay silently becomes
-the only holder of those bytes, so the space is never reclaimed. `filer.py`
-warns via `seed_overlay.warn_if_seeded()` before that `rmtree`, and
-`tools/tuit_sync.py --check-overlays` audits every recorded seed folder — it
-reports both an *orphaned* overlay (collection gone, overlay holds the only
-copy) and a *gone* one (overlay directory deleted, so qBittorrent parks the
-torrent in `missingFiles` and stops seeding), and exits 1 on either.
-
-**Name collisions**: a torrent's root name is not unique on the tracker —
-`track`, `FLAC` and `1` are each claimed by several unrelated recordings — so
-two things used to overwrite each other silently. `download_torrent` now keeps
-the tracker's Content-Disposition filename only while the bytes match, and
-falls back to `<name> [tuit-<rec_id>].torrent` on a real collision; likewise
-`seed_overlay.unique_overlay_name()` suffixes the overlay directory with
-`(LB-NNNNN)` when another LB entry already owns that path. Both reuse the
-existing name whenever the target is free, unrecorded, or already this entry's,
-so no overlay is ever renamed out from under qBittorrent.
-
-**Live history** (`--sync-tours`, `--sync-venues`): `/tour/<name>` is the
-tracker's concert spine — every show Dylan played, with a `/recordings/<id>`
-link when a tape circulates and a `/shows/<id>` link when none does. It lands in
-`tuit_shows` (4,036 rows, 46 tours, keyed by date+venue). Row years come from the
-`.tl-year` divider, never from month wrap-around — `Country/Nashville` and
-`Infidels/Empire` skip whole years. The `/venue` register lands in `tuit_venues`,
-but its pagination sorts on show count with no tiebreak, so a full sweep repeats
-some rows and never shows others (2,744 fetched → 1,931 distinct, 685 missed);
-`db.backfill_tuit_venues_from_shows()` recovers the rest from `tuit_shows` and
-marks them `source='shows'`. TUIT's 1,507 "no tape" shows mean *not on this
-tracker*, not *no tape exists* — LB holds recordings for 1,269 of them.
-See [Setlist-Sources](Setlist-Sources.md); reconciliation is TODO-338.
-
-**Songbook** (`--sync-songs`, ~850 requests): `/songs` → `tuit_songs`,
-`/song/<title>` → `tuit_song_performances`. Page the index with `sort=alpha`,
-not the default `sort=plays` — the latter has no tiebreak and drifts the same
-way `/venue` does. A song page's `<details>` decade sections are collapsed, not
-lazily loaded, so one fetch yields the full history. The corpus is the same
-Olof-derived spine as `song_performances`, so it is a **cross-check**, not a new
-source — it is what exposed BUG-337. What it adds is per-performance:
-`n_sources` (how many tapes circulate for that night) and `note`
-(`Bob on electric keyboard`), neither of which the Olof parse carries.
-
-**Discovery via RSS** (`--rss`): `/rss/<passkey>` is a rolling window of the
-newest 50 uploads, needs **no login**, and its `<guid>` (`tuit-rec-<id>`) names
-the recording id outright — so a sync fetches detail pages only for ids it has
-not seen, instead of paging `/browse`. Each `<enclosure>` is a passkey-bearing
-`.torrent` URL with an exact byte length. The passkey is a bearer secret in its
-own right: keyring service `SERVICE_TUIT_RSS`, set with `--set-rss-key`
-(prompts, no echo, verified against the live feed), and `redact_passkey()`
-scrubs it from anything logged. After a gap long enough for 50 uploads to
-accumulate, fall back to `--pages`.
-
-`data/tuit/cron_rss.sh` runs that sync hourly at :17 (gitignored, flocked,
-logs to `data/tuit/cron_logs/`). It preflights qBittorrent with
-`qbittorrent.test_connection()` and, when the client is down, drops the
-`--fetch-torrents/--seed/--overlay` flags rather than failing — metadata
-scraping needs only the tracker. Silent on a no-op run so cron mails only real
-work or a real failure.
-
-Attempts land in `tuit_downloads`. Credentials: `SERVICE_TUIT`, set or rotated
-with `tools/tuit_sync.py --set-credentials` (prompts, no echo).
-**Pacing**: 3s between requests, small batches — this is a tiny private site.
+`tangledupintorrents.org` — Laravel, CSRF login, no JSON API; **3s/request**.
+`tuit_scraper.py` fills `tuit_recordings` (HTML archived under
+`data/downloads/tuit/html/`), `tuit_shows`/`tuit_venues` (venue paging drifts;
+`db.backfill_tuit_venues_from_shows()` fills gaps) and `tuit_songs`/
+`tuit_song_performances` (a cross-check of the Olof spine; page with
+`sort=alpha`). "No tape" means not on this tracker — see
+[Setlist-Sources](Setlist-Sources.md). `tools/tuit_sync.py` drives it:
+`--fetch-torrents --seed --overlay`, `--sync-tours/-venues/-songs`, `--rss`
+(passkey in keyring `SERVICE_TUIT_RSS`, `--set-rss-key`), `--retry-unseeded`;
+hourly `data/tuit/cron_rss.sh` (gitignored). `tuit_upload.py` composes the
+`/upload` form (`prepare_upload` is a dry run; only `post_upload` posts, behind
+seedable/duplicate/verify gates) and seeds via `tracker_seed`; log in
+`tuit_uploads`.
 
 ## Archive.org
 
-Async single-LB uploads via IA S3 credentials: start → poll status (per-file
-+ byte progress) → stop-after-current-file. History in `archive_org_uploads`.
+`/api/archive_org/{credentials,test,upload,status,stop,uploads}` — async
+single-LB upload with IA S3 keys; per-file + byte progress; history in
+`archive_org_uploads`.
 
-## Trading / friend collections
+## Trading & file sharing
 
-Export own collection as a `.lbcollection` JSON blob; import friends' blobs
-into `friend_collections`/`friend_collection_entries`; `/api/trading/compare`
-diffs holdings both ways. Friend data is USER-tier and never exported in
-master data.
-
-## File sharing (Cloudflare Tunnel)
-
-Token-based shares of collection folders: self-contained HTML listing,
-per-file streaming with Range/206 support, whole-share ZIP streaming. Revoking
-the last share stops the tunnel. Status surface: ScreenSharing.
+- **Trading**: `/api/trading/{export,friends,compare/<id>}` — `.lbcollection`
+  blobs into `friend_collections`/`friend_collection_entries` (USER tier, never
+  in master data).
+- **Sharing** (Cloudflare Tunnel, `sharing.py`): `/api/share/*` — token shares,
+  HTML listing, Range/206 file streaming, ZIP streaming; revoking the last
+  share stops the tunnel. UI: ScreenSharing.
 
 ## Related
 
-- Master/site-data GitHub releases are curator publishing, not sharing — see
-  [Master-Data-Sync](Master-Data-Sync.md).
-- Dossier BBcode digests for forum posts: [Show-Dossier](Show-Dossier.md).
-- Private-entry metadata never leaves via any of these surfaces
-  ([Database](Database.md) channels).
+Master/site-data GitHub releases are curator publishing, not sharing:
+[Master-Data-Sync](Master-Data-Sync.md). Dossier BBcode digests:
+[Show-Dossier](Show-Dossier.md). Private-entry metadata never leaves via any of
+these ([Database](Database.md)).

@@ -4,7 +4,7 @@
 > `/api/scrape/*`, `/api/derived/recompute`) · `backend/scraper.py:plan_range` ·
 > `backend/db.py` (`reconcile_lb_status`, `batch_reconcile_lb_status`,
 > `_keep_unscraped_public`) · `backend/refresh.py` (`scrape_entries`) · BUG-365 ·
-> Status: seeded 2026-10-14
+> Status: fresh 2026-10-18
 
 The order of operations when the site publishes a new
 `Checksum_Lookup_flat_file_LastLB_<N>.zip`. Since 2026-10-14 (BUG-365) Apply does
