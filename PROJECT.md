@@ -1802,7 +1802,6 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/lookup` | Parse text input and match checksums. Body: `{text}`. Returns `{summary, detail}` arrays; each `summary.lb_summary` entry carries `matched_xref` + `xref_groups` (copy-level fileset resolution, docs/XREF_SEMANTICS.md). |
-| POST | `/api/lookup/scan_folders` | Recursively scan folders for `.ffp`/`.md5`/`.st5`/`.sha1` sidecar files. Body: `{folders:[...]}`. Returns `{content, files}` combined text ready for `/api/lookup`. |
 
 ### Database Management
 | Method | Route | Description |
@@ -1918,7 +1917,6 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 ### Dylan Performances
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/api/performances` | Query `dylan_performances`. Params: `date` (YYYY-MM-DD), `lb` (int — resolved via entries.date_str), `category`, `limit` (default 200), `offset`. Returns list of `{event_id, date_str, category, city, state, country, venue}`. |
 
 ### Bob Dylan Setlist Scraper (`backend/bobdylan_scraper.py`, `bobdylan_shows`/`bobdylan_setlist`)
 | Method | Route | Description |
@@ -2106,7 +2104,6 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/api/search?q=&field=` | `field`: `all`, `location`, `date`, `description`. Returns all matching entries (no limit). As of 2026-07-09 (BUG-245) each entry also carries `taper_known` (bool) — whether `taper_name` canonicalises into `db._TAPER_UNIVERSE`, the same curated set `taper_attribution.py` uses; the gui_next Library grid's taper pill gates on it so unvalidated free-text guesses (rule-12 parser artifacts) never render as if they were attribution-engine output. |
-| GET | `/api/checksums/xref_lb_numbers` | Return sorted list of lb_numbers that have at least one xref checksum (xref > 0). |
 | GET | `/api/checksums/xref_map` | Return `{lb_number: [xref_values]}` for all LBs with xref checksums. |
 | POST | `/api/checksums/reconcile_audio` | Validate proposed audio file renames. Body: `{proposals:[{checksum, input_filename, db_filename, folder}]}`. Returns each proposal annotated with `status: ok\|from_missing\|to_exists`. Non-audio extensions skipped. |
 | POST | `/api/checksums/apply_reconcile_audio` | Apply audio file renames on disk. Body: `{renames:[{from, to}]}`. Returns `{applied, errors}`. |
@@ -2147,7 +2144,6 @@ Backed by `backend/preservation.py` — one job at a time, process-wide. See "Pr
 |--------|-------|-------------|
 | POST | `/api/bootlegs/scrape` | Start a catalog scrape. Body: `{force: bool}`. Returns `{ok, running}`. |
 | GET | `/api/bootlegs/scrape/status` | Poll scrape progress: `{running, stage, rows_total, rows_added, rows_changed, rows_removed, message, error}`. |
-| GET | `/api/bootlegs/lb_numbers` | Sorted list of lb_numbers that have at least one bootleg title. Used for 🎵 badge in Search tab. |
 | GET | `/api/bootlegs` | Paginated filtered list. Query params: `q`, `year_min`, `year_max`, `cd_min`, `cd_max`, `lb_status`, `owned` (true/false), `has_lbbcd` (true/false), `sort_col`, `sort_dir`, `limit` (max 1000), `offset`. Returns `{rows, total}`. |
 | GET | `/api/bootlegs/by_lb/<lb>` | All bootleg titles for one LB. |
 | GET | `/api/bootlegs/scrapes` | Recent scrape history. Query param: `limit` (default 20). |
@@ -2269,7 +2265,6 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | POST | `/api/torrent/create` | Generate a .torrent for one LB entry. Body: `{lb_number, source_folder, tracker_list?}`. Returns `{ok, torrent_path, infohash, torrent_id, name, excluded_files}`. |
 | GET | `/api/torrent/<lb>` | List all torrent records for an LB entry. Each row includes `source_folder_exists` and `torrent_file_exists` booleans. |
 | PATCH | `/api/torrent/<id>` | Update a torrents row (e.g. source_folder after relocation). |
-| GET | `/api/torrents` | List all torrent records across every LB entry, newest first. Each row includes `source_folder_exists`, `torrent_file_exists`, `date_str`, `location`. |
 | GET | `/api/trackers` | Return tracker list. Query params: `list_name`, `force_refresh`. |
 | DELETE | `/api/torrent/<id>/file` | Delete the `.torrent` file from disk and clear `torrent_path` in the DB. |
 
@@ -2299,7 +2294,6 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | POST | `/api/entry/<lb>/post_forum` | Post a topic to the WTRF forum. Body: `{username?, password?, torrent_id?, subject?, body?}`. Optional `subject`/`body` override the auto-generated values (used when the user edits the preview). Gated by an LBDIR integrity check (`checksum_utils.verify_folder` on the entry's `my_collection.disk_path`, if any) — 400 if status is `fail`/`incomplete`. If no torrent exists, one is auto-generated from the collection folder and added to qBittorrent before posting (qBittorrent failure is non-fatal). Returns `{ok, topic_url, torrent_auto_created?, qbt_auto_add?}`. |
 | GET | `/api/entry/<lb>/forum_posts` | List all logged forum posts for an LB entry, newest first. |
 | DELETE | `/api/forum_post/<id>` | Delete a forum post log record by id. |
-| GET | `/api/forum_posts` | List all logged forum posts across every LB entry, newest first. Includes `date_str` and `location` from entries. |
 
 ### WTRF Torrent Search (`wtrf_downloads`)
 | Method | Route | Description |
@@ -2401,9 +2395,7 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | POST | `/api/lbdir/reconcile` | Preview-only: scan disk files recursively, compute MD5, match against missing lbdir entries. Returns `{results: [{folder, proposals:[{disk_rel,lbdir_rel,md5,expected_md5,matched_by}], unmatched_lbdir, unmatched_disk, warnings, site_proposals}]}`. Does NOT move any files. Both `proposals` and `site_proposals` carry `matched_by`: `'md5'` (exact content match) or `'name'` (filename matches after stripping `LBF-{N:05d}-`, but `md5` != `expected_md5` — the copy is a different revision, BUG-252). Unreconcilable entries (self-referencing `lbdir-*.txt` manifests, regenerated DigiFlawFinder reports) are excluded from missing sets and proposals entirely. `site_proposals` lb_number resolves via `my_collection` -> folder name -> optional `lb_number_hint` body param. |
 | POST | `/api/lbdir/apply_reconcile` | Apply selected rename proposals from `/api/lbdir/reconcile`. Body: `{folder, renames:[{from,to}]}`. Uses `shutil.move`; creates subdirectories as needed; never deletes. If folder is qBittorrent-tracked, best-effort syncs the new file paths via `renameFile` + recheck (BUG-229) so applied renames don't break seeding. Returns `{applied, errors}`. |
 | POST | `/api/lbdir/find_extra` | List files in each folder not referenced in the lbdir MD5 section (lbdir file itself excluded). Returns `{results: [{folder, extra:['rel/path',...], lbdir_rel}]}`. |
-| POST | `/api/lbdir/delete_extra` | Permanently delete selected extra files. Body: `{folder, files:['rel/path',...]}`. After deletion, prunes empty subdirectories bottom-up. Returns `{deleted, removed_dirs, errors}`. |
 | POST | `/api/lbdir/move_extras` | Move extra files (not in lbdir) to `<folder>/extras/`, preserving relative path structure. Body: `{folder, files:['rel/path',...]}`. Prunes empty subdirs after move. If folder is qBittorrent-tracked, best-effort syncs the new file paths via `renameFile` + recheck (BUG-229) so the move doesn't break seeding. Returns `{moved, errors}`. |
-| POST | `/api/lbdir/verified_status` | Return `lbdir_verified_at` timestamp for each folder path. Body: `{folders:[path,...]}`. Returns `{[path]: timestamp\|null}` — null when folder is not in `my_collection` or has never been lbdir-verified. |
 
 ### Misc Utilities
 | Method | Route | Description |

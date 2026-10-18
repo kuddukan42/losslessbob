@@ -1116,35 +1116,6 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
-    @app.route("/api/lookup/scan_folders", methods=["POST"])
-    def lookup_scan_folders() -> Response:
-        """Recursively scan folders for checksum sidecar files and return combined text.
-
-        Body: {folders: ["/abs/path", ...]}
-        Returns:
-            JSON {content: str, files: [str, ...]}
-        """
-        _CHECKSUM_EXTS = {".ffp", ".md5", ".st5", ".sha1"}
-        try:
-            data = request.get_json(force=True) or {}
-            folders = data.get("folders", [])
-            all_content: list[str] = []
-            files_found: list[str] = []
-            for folder in folders:
-                p = Path(folder)
-                if not p.is_dir():
-                    continue
-                for f in sorted(p.rglob("*")):
-                    if f.is_file() and f.suffix.lower() in _CHECKSUM_EXTS:
-                        try:
-                            all_content.append(f.read_text(errors="replace"))
-                            files_found.append(str(f))
-                        except OSError:
-                            pass
-            return jsonify({"content": "\n".join(all_content), "files": files_found})
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-
     # ── Database Management ──────────────────────────────────────────────────
 
     @app.route("/api/status", methods=["GET"])
@@ -1848,18 +1819,6 @@ def create_app() -> Flask:
         """
         try:
             return jsonify(database.get_distinct_years())
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-
-    @app.route("/api/checksums/xref_lb_numbers", methods=["GET"])
-    def xref_lb_numbers() -> Response:
-        """Return LB numbers that have at least one xref checksum record.
-
-        Returns:
-            JSON list of integer LB numbers.
-        """
-        try:
-            return jsonify(database.get_xref_lb_numbers())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -2802,18 +2761,6 @@ def create_app() -> Flask:
         """Poll the bootleg scrape progress state."""
         return jsonify(bootleg_scraper.get_scrape_status())
 
-    @app.route("/api/bootlegs/lb_numbers", methods=["GET"])
-    def bootlegs_lb_numbers():
-        """Return sorted list of lb_numbers that have at least one bootleg title.
-
-        Used by the Search and Collection tabs to populate the 🎵 badge set
-        without an expensive per-row lookup.
-        """
-        try:
-            return jsonify(database.get_bootleg_lb_numbers())
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-
     @app.route("/api/bootlegs", methods=["GET"])
     def bootlegs_list():
         """Paginated, filtered bootleg title list.
@@ -3462,59 +3409,6 @@ def create_app() -> Flask:
                 result["folder"] = str(folder)
                 results.append(result)
             return jsonify({"results": results})
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-
-    @app.route("/api/lbdir/delete_extra", methods=["POST"])
-    def lbdir_delete_extra() -> Response:
-        """Permanently delete specified extra files and any resulting empty subdirectories."""
-        try:
-            data = request.get_json() or {}
-            folder = Path(data.get("folder", ""))
-            files = data.get("files", [])  # list of relative paths
-            deleted, errors = [], []
-            for rel in files:
-                target = folder / rel
-                try:
-                    target.unlink()
-                    deleted.append(rel)
-                except Exception as e:
-                    errors.append({"file": rel, "error": str(e)})
-            # Prune subdirectories that are now empty (bottom-up, never touch folder root)
-            removed_dirs = []
-            for dirpath, _dirnames, _filenames in os.walk(str(folder), topdown=False):
-                d = Path(dirpath)
-                if d == folder:
-                    continue
-                try:
-                    if not any(d.iterdir()):
-                        d.rmdir()
-                        removed_dirs.append(d.relative_to(folder).as_posix())
-                except Exception:
-                    pass
-            return jsonify({"deleted": len(deleted), "removed_dirs": removed_dirs, "errors": errors})
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-
-    @app.route("/api/lbdir/verified_status", methods=["POST"])
-    def lbdir_verified_status() -> Response:
-        """Return lbdir_verified_at timestamp for each requested folder path."""
-        try:
-            data = request.get_json() or {}
-            folder_list = data.get("folders", [])
-            if not folder_list:
-                return jsonify({})
-            placeholders = ",".join("?" * len(folder_list))
-            with database.get_connection() as conn:
-                rows = conn.execute(
-                    f"SELECT disk_path, lbdir_verified_at FROM my_collection"
-                    f" WHERE disk_path IN ({placeholders})",
-                    folder_list,
-                ).fetchall()
-            result: dict = {f: None for f in folder_list}
-            for row in rows:
-                result[row["disk_path"]] = row["lbdir_verified_at"]
-            return jsonify(result)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -4704,14 +4598,6 @@ def create_app() -> Flask:
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
 
-    @app.route("/api/forum_posts", methods=["GET"])
-    def all_forum_posts() -> Response:
-        """Return all logged forum posts across every LB entry, newest first."""
-        try:
-            return jsonify(database.get_all_forum_posts())
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
     # ── WTRF torrent fetcher ──────────────────────────────────────────────────
 
     _wtrf_crawl_running = False
@@ -5195,24 +5081,6 @@ def create_app() -> Flask:
             mimetype="text/event-stream",
             headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
         )
-
-    @app.route("/api/torrents", methods=["GET"])
-    def all_torrents() -> Response:
-        """Return all torrent records across every LB entry, newest first."""
-        try:
-            rows = database.get_all_torrents()
-            for row in rows:
-                row["source_folder_exists"] = (
-                    bool(row.get("source_folder"))
-                    and Path(row["source_folder"]).is_dir()
-                )
-                row["torrent_file_exists"] = (
-                    bool(row.get("torrent_path"))
-                    and Path(row["torrent_path"]).exists()
-                )
-            return jsonify(rows)
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
 
     # ── lb_master integrity API ────────────────────────────────────────────────
 
@@ -5856,64 +5724,6 @@ def create_app() -> Flask:
             return jsonify({"error": str(exc)}), 500
 
     # ── Dylan Performances API ─────────────────────────────────────────────────
-
-    @app.route("/api/performances", methods=["GET"])
-    def performances_list() -> Response:
-        """Return dylan_performances rows with optional filters.
-
-        Query params:
-            date (str): ISO date (YYYY-MM-DD) — returns rows matching that date.
-            lb (int): LB number — looks up the entry's date then matches performances.
-            category (str): Filter by category (HOME, MCONCERT, RADIO, etc.).
-            limit (int): Maximum rows to return (default 200, max 2000).
-            offset (int): Pagination offset (default 0).
-
-        Returns:
-            JSON list of performance dicts. When ?lb= is used and no match is
-            found returns an empty list (not 404), since not every concert is in
-            the performances dataset.
-        """
-        try:
-            conn = database.get_connection()
-            date_q = request.args.get("date", "").strip()
-            lb_q = request.args.get("lb", "").strip()
-            cat_q = request.args.get("category", "").strip()
-            limit = min(int(request.args.get("limit", 200)), 2000)
-            offset = int(request.args.get("offset", 0))
-
-            if lb_q:
-                # Resolve LB → entry date → ISO date → performances lookup
-                lb_num = int(lb_q)
-                entry = conn.execute(
-                    "SELECT date_str FROM entries WHERE lb_number=?", (lb_num,)
-                ).fetchone()
-                if not entry or not entry["date_str"]:
-                    return jsonify([])
-                from backend.geocoder import _entry_date_to_iso as _to_iso
-                iso_date = _to_iso(entry["date_str"])
-                if not iso_date:
-                    return jsonify([])
-                date_q = iso_date
-
-            clauses: list[str] = []
-            params: list = []
-            if date_q:
-                clauses.append("date_str = ?")
-                params.append(date_q)
-            if cat_q:
-                clauses.append("category = ?")
-                params.append(cat_q)
-
-            where = ("WHERE " + " AND ".join(clauses)) if clauses else ""
-            rows = conn.execute(
-                f"SELECT event_id, date_str, category, city, state, country, venue "
-                f"FROM dylan_performances {where} "
-                f"ORDER BY date_str, event_id LIMIT ? OFFSET ?",
-                params + [limit, offset],
-            ).fetchall()
-            return jsonify([dict(r) for r in rows])
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
 
     # ── lb_problems API ────────────────────────────────────────────────────────
 

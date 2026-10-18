@@ -8969,15 +8969,6 @@ def get_lb_aliases(canonical_lb: int | None = None, db_path=None) -> list[dict]:
 _BOOTLEG_SOURCE_URL = SITE_BASE_URL + "/detail/LB-bootleg-by-title.html"
 
 
-def get_bootleg_lb_numbers(db_path=None) -> list[int]:
-    """Return sorted list of lb_numbers that have at least one bootleg title."""
-    with get_connection(db_path) as conn:
-        rows = conn.execute(
-            "SELECT DISTINCT lb_number FROM bootleg_titles ORDER BY lb_number"
-        ).fetchall()
-    return [r[0] for r in rows]
-
-
 def get_bootlegs_for_lb(lb_number: int, db_path=None) -> list[dict]:
     """Return all bootleg_titles rows for one LB, ordered by date_iso NULLS LAST."""
     with get_connection(db_path) as conn:

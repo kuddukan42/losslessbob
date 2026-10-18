@@ -1,11 +1,17 @@
-[2026-10-18] — Route triage: 4 PyQt-era routes removed (TODO-365, in progress)
+[2026-10-18] — Route triage: 12 superseded routes removed (TODO-365, in progress)
 Changed: backend/app.py, backend/db.py: deleted /api/collection/search (search_collection),
   /api/collection/delete_bulk (delete_collection_entries), /api/entries/year/<year>
   (get_entries_by_year), /api/entries/by_lb_list (get_entries_by_lb_list) — all written for the
   removed PyQt GUI; gui_next filters the prefetched collection client-side and deletes per row.
   tests/test_db_writes.py: TestDeleteCollectionEntries removed. PROJECT.md route rows dropped.
+Changed: backend/app.py: deleted /api/torrents, /api/forum_posts, /api/checksums/xref_lb_numbers
+  (duplicates of /api/collection/prefetch keys), /api/lookup/scan_folders and /api/lbdir/verified_status
+  (the Advanced screens removed 2026-07-16), /api/lbdir/delete_extra (unguarded permanent delete,
+  superseded by move_extras), /api/performances and /api/bootlegs/lb_numbers (PyQt-era).
+  backend/db.py: get_bootleg_lb_numbers removed (its only caller).
 Kept (tj): xref_ingest, lb_missing, lb_problems, flat_file defer/changelog, collection
-  missing/duplicates/audit/routes-preview/integrity-scan-history, entries/reclassify.
+  missing/duplicates/audit/routes-preview/integrity-scan-history, entries/reclassify,
+  bootlegs/by_lb, lineage, lb_master/history, geocode/locations, setlistfm/show, olof event/chronicle, preservation reports, wtrf fetch/crawl.
 
 [2026-10-18] — Test-only backend functions: 9 deleted, 5 kept, pipeline-cache prune scheduled (TODO-364)
 Changed: backend/db.py, backend/qc/store.py, backend/tuit_scraper.py, backend/wtrf_seed.py,
