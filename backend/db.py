@@ -4594,32 +4594,6 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
     return results
 
 
-def get_entries_by_lb_list(lb_numbers: list[int], db_path=None) -> list[dict]:
-    """Return search-compatible entry dicts for a specific list of LB numbers.
-
-    Args:
-        lb_numbers: List of integer LB numbers to fetch.
-        db_path: Optional path to the database file.
-
-    Returns:
-        List of entry dicts with the same keys as :func:`search_entries`.
-    """
-    if not lb_numbers:
-        return []
-    conn = get_connection(db_path)
-    placeholders = ",".join("?" * len(lb_numbers))
-    rows = conn.execute(
-        f"SELECT e.lb_number, e.date_str, e.location, e.rating,"
-        f" e.description, e.status, lm.lb_status, lm.public_no_checksums,"
-        f" e.taper_name, e.source_chain, e.lb_category, e.source_type"
-        f" FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
-        f" WHERE e.lb_number IN ({placeholders})"
-        f" ORDER BY e.lb_number",
-        [int(n) for n in lb_numbers],
-    ).fetchall()
-    return [dict(r) for r in rows]
-
-
 def _year_from_date_str(date_str: str) -> int:
     """Extract a year from entries.date_str (M/D/YY, possibly 'xx' for M/D).
 
@@ -5287,15 +5261,6 @@ def get_entry(lb_number, db_path=None):
     }
 
 
-def get_entries_by_year(year, db_path=None):
-    with get_connection(db_path) as conn:
-        rows = conn.execute(
-            "SELECT lb_number, date_str, location, rating FROM entries WHERE date_str LIKE ? ORDER BY lb_number",
-            (f"%/{str(year)[-2:]}",)
-        ).fetchall()
-    return [dict(r) for r in rows]
-
-
 def get_distinct_years(db_path=None):
     with get_connection(db_path) as conn:
         rows = conn.execute(
@@ -5609,20 +5574,6 @@ def get_missing_from_collection(db_path=None):
               )
             ORDER BY e.lb_number
         """).fetchall()
-    return [dict(r) for r in rows]
-
-
-def search_collection(query, db_path=None):
-    like = f"%{query}%"
-    with get_connection(db_path) as conn:
-        rows = conn.execute("""
-            SELECT c.id, c.lb_number, c.folder_name, c.disk_path, c.confirmed_at, c.notes,
-                   e.date_str, e.location
-            FROM my_collection c
-            LEFT JOIN entries e ON c.lb_number = e.lb_number
-            WHERE c.folder_name LIKE ? OR c.disk_path LIKE ? OR CAST(c.lb_number AS TEXT) LIKE ?
-            ORDER BY c.lb_number
-        """, (like, like, like)).fetchall()
     return [dict(r) for r in rows]
 
 
@@ -7430,25 +7381,6 @@ def add_rename_history(lb_number: int | None, old_path: str, new_path: str,
             (_lb, _op, _np, _src, _nt, _ts)
         )
     )
-
-
-def delete_collection_entries(lb_numbers: list, db_path=None) -> int:
-    """Remove specific LB entries from my_collection plus their associated meta/events.
-
-    Returns the number of rows deleted from my_collection.
-    """
-    if not lb_numbers:
-        return 0
-    ph = ",".join("?" * len(lb_numbers))
-    _lbs = lb_numbers
-
-    def _run(c):
-        c.execute(f"DELETE FROM collection_meta WHERE lb_number IN ({ph})", _lbs)
-        c.execute(f"DELETE FROM integrity_events WHERE lb_number IN ({ph})", _lbs)
-        cur = c.execute(f"DELETE FROM my_collection WHERE lb_number IN ({ph})", _lbs)
-        return cur.rowcount
-
-    return get_write_queue().execute(_run)
 
 
 # ── lb_master integrity system ─────────────────────────────────────────────────

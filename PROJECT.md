@@ -2088,7 +2088,6 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 ### Entry Listing & Reclassification
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/api/entries/year/<year>` | All entries for a given year string. |
 | POST | `/api/entries/reclassify` | Re-classify all entries' `lb_category` using `bobdylan_shows` + `dylan_performances` + keywords. |
 
 ### Entry Detail
@@ -2163,7 +2162,6 @@ Backed by `backend/preservation.py` — one job at a time, process-wide. See "Pr
 | DELETE | `/api/collection/<lb>` | Remove an LB entry from the user's collection. |
 | POST | `/api/collection/reassign` | Move a filed folder to a different LB (TODO-259). Body `{old_lb, new_lb}` → `db.reassign_collection()`; repoints the `my_collection` row and migrates its `collection_meta`. Validation failures (target absent/already-owned/same-LB) → 400. Surfaced from the Collection screen's right-click "Reassign LB…". |
 | GET | `/api/collection/missing` | Collection entries whose `disk_path` no longer exists on disk. |
-| GET | `/api/collection/search` | Search the user's collection by keyword. |
 | GET | `/api/collection/lb_numbers` | All LB numbers currently in the user's collection. |
 | GET | `/api/collection/duplicates` | Collection entries that share the same LB number (duplicates). |
 | GET | `/api/collection/<lb>/meta` | Personal metadata (`collection_meta`) for a collection entry. |
@@ -2183,7 +2181,6 @@ Backed by `backend/preservation.py` — one job at a time, process-wide. See "Pr
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/collection/purge` | Purge a data scope. Body: `{scope}`. Scopes: `collection`, `wishlist`, `personal_meta`, `integrity_events`, `entry_changes`. |
-| POST | `/api/collection/delete_bulk` | Remove specific entries from My Collection. Body: `{lb_numbers:[...]}`. Returns `{ok, deleted}`. |
 | GET | `/api/collection/audit` | Cross-check my_collection against checksums table. Returns `{total, missing_checksums, entries:[{lb_number, folder_name, disk_path, date_str, location, lb_status}]}` for entries with no checksum rows. |
 | GET | `/api/collection/export/html` | Download My Collection as a self-contained HTML table. Optional `?cols=` (comma-separated, ordered) picks which columns to render/export — `lb` always included; see `_EXPORT_COLUMN_DEFS` in `app.py` for the full set (base six plus `disk_path`/`confirmed_at`/`source_type`/`lb_category`/`rating`). Falls back to the base six if omitted/invalid. Optional `?lb_numbers=1,2,3` restricts the export to a subset (the GUI passes its currently filtered/searched rows). Returns `collection.html` attachment. |
 | GET | `/api/collection/export/html/missing` | Download the "Not in collection" LB list (`database.get_missing_from_collection()`) via the same interactive HTML report, with a column set for never-owned entries (`_EXPORT_MISSING_COLUMN_DEFS`: lb/status/date/location/rating/description). Optional `?lb_numbers=1,2,3` restricts the export. Returns `missing_lbs.html` attachment. |
@@ -2351,7 +2348,6 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | GET | `/map` | Serve `backend/resources/map.html` — Leaflet map page (OpenStreetMap tiles, OSM attribution); embedded by gui_next's ScreenMap iframe. |
 | GET | `/leaflet/<filename>` | Serve bundled Leaflet JS/CSS from `backend/resources/leaflet/`. |
 | GET | `/api/map/data` | Marker data with optional query filters (`year`, `owned`, `lb_status`). Returns `[{lb_number, lat, lon, date_str, location, display_name, owned, city_level}]`. |
-| GET | `/api/entries/by_lb_list` | Fetch search-compatible entry dicts for `?lbs=1,2,3` (comma-separated LB numbers, max 500). Used by Map → List in Search. |
 
 ### Geocoding
 | Method | Route | Description |

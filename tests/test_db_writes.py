@@ -280,67 +280,6 @@ class TestDeleteFromCollection:
             shutil.rmtree(tmp, ignore_errors=True)
 
 
-class TestDeleteCollectionEntries:
-    def test_bulk_delete(self):
-        import backend.db as db
-        db_path, conn, tmp = _make_db()
-        try:
-            for lb in (30, 31, 32):
-                _seed_entry(conn, lb)
-                _seed_collection(conn, lb)
-            deleted = db.delete_collection_entries([30, 31], db_path=db_path)
-            assert deleted == 2
-            remaining = conn.execute(
-                "SELECT lb_number FROM my_collection"
-            ).fetchall()
-            assert [r[0] for r in remaining] == [32]
-        finally:
-            shutil.rmtree(tmp, ignore_errors=True)
-
-    def test_empty_list_returns_zero(self):
-        import backend.db as db
-        db_path, conn, tmp = _make_db()
-        try:
-            result = db.delete_collection_entries([], db_path=db_path)
-            assert result == 0
-        finally:
-            shutil.rmtree(tmp, ignore_errors=True)
-
-    def test_cascades_to_collection_meta(self):
-        import backend.db as db
-        db_path, conn, tmp = _make_db()
-        try:
-            _seed_entry(conn, 40)
-            _seed_collection(conn, 40)
-            db.set_collection_meta(40, {"personal_rating": 5}, db_path=db_path)
-            db.delete_collection_entries([40], db_path=db_path)
-            count = conn.execute(
-                "SELECT COUNT(*) FROM collection_meta WHERE lb_number=40"
-            ).fetchone()[0]
-            assert count == 0
-        finally:
-            shutil.rmtree(tmp, ignore_errors=True)
-
-    def test_cascades_to_integrity_events(self):
-        import backend.db as db
-        db_path, conn, tmp = _make_db()
-        try:
-            _seed_entry(conn, 41)
-            _seed_collection(conn, 41)
-            conn.execute(
-                "INSERT INTO integrity_events(lb_number, event_type, detail)"
-                " VALUES(41, 'deleted', 'test')"
-            )
-            conn.commit()
-            db.delete_collection_entries([41], db_path=db_path)
-            count = conn.execute(
-                "SELECT COUNT(*) FROM integrity_events WHERE lb_number=41"
-            ).fetchone()[0]
-            assert count == 0
-        finally:
-            shutil.rmtree(tmp, ignore_errors=True)
-
-
 # ---------------------------------------------------------------------------
 # collection_meta writes
 # ---------------------------------------------------------------------------

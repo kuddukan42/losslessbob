@@ -1877,22 +1877,6 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
-    @app.route("/api/entries/year/<year>", methods=["GET"])
-    def entries_by_year(year: str) -> Response:
-        """Return all entries for a given year string.
-
-        Args:
-            year: The year to filter by (e.g. "1979").
-
-        Returns:
-            JSON list of entry dicts for that year.
-        """
-        try:
-            results = database.get_entries_by_year(year)
-            return jsonify(results)
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-
     @app.route("/api/entries/reclassify", methods=["POST"])
     def entries_reclassify() -> Response:
         """Re-classify all entries lb_category using bobdylan_shows + dylan_performances + keywords.
@@ -2048,20 +2032,6 @@ def create_app() -> Flask:
                 results.sort(key=_MISS_SORT_COLS[sort_col],
                              reverse=(sort_dir == "DESC"))
             return jsonify(results)
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-
-    @app.route("/api/collection/search", methods=["GET"])
-    def collection_search() -> Response:
-        """Search the user's collection by keyword.
-
-        Query params: q (text).
-        Returns:
-            JSON list of matching collection row dicts.
-        """
-        try:
-            q = request.args.get("q", "")
-            return jsonify(database.search_collection(q))
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -2444,25 +2414,6 @@ def create_app() -> Flask:
             })
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/collection/delete_bulk", methods=["POST"])
-    def collection_delete_bulk() -> Response:
-        """Delete multiple collection entries by LB number in one request.
-
-        Body: {lb_numbers: [int, ...]}
-        Returns:
-            JSON {ok, deleted} count, or 400 if lb_numbers is empty.
-        """
-        try:
-            lb_numbers = (request.get_json() or {}).get("lb_numbers", [])
-            if not lb_numbers:
-                return jsonify({"error": "lb_numbers required"}), 400
-            deleted = database.delete_collection_entries(
-                [int(lb) for lb in lb_numbers]
-            )
-            return jsonify({"ok": True, "deleted": deleted})
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
 
     @app.route("/api/collection/audit", methods=["GET"])
     def collection_audit() -> Response:
@@ -9089,29 +9040,6 @@ def create_app() -> Flask:
         """Serve bundled Leaflet JS/CSS assets from backend/resources/leaflet/."""
         leaflet_dir = (Path(__file__).parent / "resources" / "leaflet").resolve()
         return send_from_directory(str(leaflet_dir), filename)
-
-    @app.route("/api/entries/by_lb_list")
-    def api_entries_by_lb_list():
-        """Return search-compatible entry dicts for a comma-separated list of LB numbers.
-
-        Query params:
-            lbs (str): comma-separated integer LB numbers (e.g. "1234,5678,91011").
-
-        Returns:
-            JSON list of entry dicts matching the requested LB numbers.
-        """
-        raw = request.args.get("lbs", "")
-        try:
-            lb_numbers = [int(x.strip()) for x in raw.split(",") if x.strip()]
-        except ValueError:
-            return jsonify({"error": "invalid lbs parameter — must be comma-separated integers"}), 400
-        lb_numbers = lb_numbers[:500]
-        try:
-            results = database.get_entries_by_lb_list(lb_numbers)
-        except Exception:
-            _log.exception("api_entries_by_lb_list failed")
-            return jsonify({"error": "internal_error"}), 500
-        return jsonify(results)
 
     @app.route("/api/map/data")
     def api_map_data():

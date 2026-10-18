@@ -1,3 +1,12 @@
+[2026-10-18] — Route triage: 4 PyQt-era routes removed (TODO-365, in progress)
+Changed: backend/app.py, backend/db.py: deleted /api/collection/search (search_collection),
+  /api/collection/delete_bulk (delete_collection_entries), /api/entries/year/<year>
+  (get_entries_by_year), /api/entries/by_lb_list (get_entries_by_lb_list) — all written for the
+  removed PyQt GUI; gui_next filters the prefetched collection client-side and deletes per row.
+  tests/test_db_writes.py: TestDeleteCollectionEntries removed. PROJECT.md route rows dropped.
+Kept (tj): xref_ingest, lb_missing, lb_problems, flat_file defer/changelog, collection
+  missing/duplicates/audit/routes-preview/integrity-scan-history, entries/reclassify.
+
 [2026-10-18] — Test-only backend functions: 9 deleted, 5 kept, pipeline-cache prune scheduled (TODO-364)
 Changed: backend/db.py, backend/qc/store.py, backend/tuit_scraper.py, backend/wtrf_seed.py,
   backend/seed_overlay.py, concert_ranker/lb/{commentary,repo,source_type}.py: deleted functions only
