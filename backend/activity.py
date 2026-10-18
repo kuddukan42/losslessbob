@@ -4,9 +4,7 @@ The activity center *observes* jobs — it never owns them (spec's "one rule").
 Every worker below keeps its own start/stop/status routes exactly as they
 were; this module only reads their in-memory status dicts and normalizes
 them into one shape (spec §2 A1). ``GET /api/activity/jobs`` reads
-:func:`snapshot`; the legacy ``GET /api/activity/busy`` (AppShell's only
-consumer, byte-compatible response shape) is re-based on the same table via
-:func:`busy_snapshot` so the two views can never drift. Request-scoped SSE
+:func:`snapshot`. Request-scoped SSE
 streams (spec §1b/§A2, no status route of their own) get presence via the
 :func:`track` tee registry instead of a ``JOB_ADAPTERS`` row — see item 2
 below.
@@ -120,21 +118,11 @@ def _get_archive_org_status() -> dict:
     return _archive_org.get_status()
 
 
-# These five live in backend.app (module-level state, no dedicated module of
+# These live in backend.app (module-level state, no dedicated module of
 # their own). Imported lazily inside the wrapper — by the time a Flask route
-# calls snapshot()/busy_snapshot(), backend.app has already finished loading,
+# calls snapshot(), backend.app has already finished loading,
 # so this is not a circular import, just a deferred one (same pattern the
 # old activity_busy() used for backend.geocoder).
-def _get_update_status() -> dict:
-    from backend import app as _app
-    return _app.get_update_status()
-
-
-def _get_data_download_status() -> dict:
-    from backend import app as _app
-    return _app.get_data_dl_status()
-
-
 def _get_spectrogram_status() -> dict:
     from backend import app as _app
     return _app.get_spectrogram_status()
@@ -178,11 +166,8 @@ def _get_refresh_chain_status() -> dict:
 
 
 # ── The adapter table ────────────────────────────────────────────────────────
-# Order matters: it is the precedence order for the legacy busy_snapshot()
-# "first running worker wins" response, preserved byte-for-byte from the old
-# activity_busy() for the first 11 rows. The four gap workers (spec §1a
-# "Missing from activity/busy today") are appended after — closing those
-# blind spots is spec's D-3 default.
+# Row order is the order running jobs are listed in snapshot(). The gap
+# workers (spec §1a) follow the original activity_busy() rows.
 JOB_ADAPTERS: list[JobAdapter] = [
     JobAdapter("importing", _get_import_status, None, "/setup"),
     JobAdapter("scraping", _get_scrape_status, "/api/scrape/stop", "/scraper"),
@@ -200,8 +185,6 @@ JOB_ADAPTERS: list[JobAdapter] = [
     JobAdapter(
         "setlistfm_syncing", _get_setlistfm_status, "/api/setlistfm/stop", "/scraper",
     ),
-    JobAdapter("updating_app", _get_update_status, None, "/setup"),
-    JobAdapter("downloading_data", _get_data_download_status, None, "/setup"),
     # --- gap workers (spec §1a "Missing from activity/busy today") ---------
     JobAdapter(
         "spectrogram_generating", _get_spectrogram_status,
@@ -227,11 +210,9 @@ JOB_ADAPTERS: list[JobAdapter] = [
     ),
     JobAdapter("ranker_scanning", _get_ranker_scan_status, "/api/ranker/scan/stop", "/"),
     # --- TODO-306 Phase 3: chained execution in dependency order ------------
-    # Appended last: order is precedence for the legacy busy_snapshot()
-    # "first running worker wins" response, and appending preserves the
-    # existing rows' behaviour unchanged. The chained worker's own adapter
-    # row above stays where it is -- both can report running at once while a
-    # chain runs a `job`-mode step, which is correct (two true facts).
+    # The chained worker's own adapter row above stays where it is -- both can
+    # report running at once while a chain runs a `job`-mode step, which is
+    # correct (two true facts).
     JobAdapter("refresh_chain", _get_refresh_chain_status, "/api/refresh/chain/stop", "/"),
 ]
 
@@ -292,39 +273,13 @@ def _extract_progress(kind: str, raw: dict) -> dict | None:
 
 # ── Running / terminal-state classification ─────────────────────────────────
 
-def _default_is_running(raw: dict) -> bool:
+def _is_running(raw: dict) -> bool:
     """Generic running check for the two shape families in spec §1a.
 
     ``{"running": bool}`` workers and ``{"status": "idle|running|..."}``
-    workers — the split the legacy ``activity_busy()`` already handled.
+    workers.
     """
     return bool(raw.get("running")) or raw.get("status") == "running"
-
-
-def _not_idle_is_running(raw: dict) -> bool:
-    """Legacy semantics for the app-updater / data-download workers.
-
-    The original ``activity_busy()`` treated *any* non-idle status
-    (downloading/extracting/done/error, not just "running") as busy for
-    these two. Preserved byte-for-byte here — repo rule requires exact
-    semantic parity, not just the same two-family split. In practice both
-    workers only ever reach "done"/"error" right before the app restarts
-    itself (self-update / data-package apply), so this never causes a
-    stuck-busy dot in normal use.
-    """
-    return raw.get("status", "idle") != "idle"
-
-
-_IS_RUNNING_OVERRIDES: dict[str, Callable[[dict], bool]] = {
-    "updating_app": _not_idle_is_running,
-    "downloading_data": _not_idle_is_running,
-}
-
-
-def _is_running(kind: str, raw: dict) -> bool:
-    """Return whether *kind*'s raw status dict represents a running job."""
-    check = _IS_RUNNING_OVERRIDES.get(kind, _default_is_running)
-    return check(raw)
 
 
 _ERROR_STATUS_VALUES = frozenset({"error", "failed"})
@@ -604,8 +559,7 @@ def _file_integrity_jobs() -> tuple[list[dict], list[dict]]:
 def snapshot() -> dict:
     """Poll every adapter once and return the normalized §2 A1 shape.
 
-    Synchronous in-memory reads only, same as the legacy ``activity_busy()``
-    — no server-side polling loop. A worker whose ``status_getter`` raises is
+    Synchronous in-memory reads only — no server-side polling loop. A worker whose ``status_getter`` raises is
     logged and skipped; it never turns into a 500 for the rest of the jobs.
     A running->idle transition for any adapter is recorded into the
     finished-job history ring buffer.
@@ -636,7 +590,7 @@ def snapshot() -> dict:
                 )
                 continue
 
-            running = _is_running(adapter.kind, raw)
+            running = _is_running(raw)
             was_running = _last_running.get(adapter.kind, False)
 
             if running:
@@ -666,18 +620,3 @@ def snapshot() -> dict:
         history_jobs = list(_history)
 
     return {"busy": busy, "jobs": tracked_jobs + running_jobs + history_jobs}
-
-
-def busy_snapshot() -> dict:
-    """Legacy ``{busy, activity}`` shape, re-based on :func:`snapshot`.
-
-    ``activity`` is the ``kind`` of the first running job in adapter-table
-    order (same precedence the old ``activity_busy()`` used), or ``None``.
-    Response shape is byte-compatible with the pre-TODO-262 endpoint —
-    AppShell's ``StatusBar`` is its only consumer.
-    """
-    result = snapshot()
-    if not result["busy"]:
-        return {"busy": False, "activity": None}
-    first_running = next((j for j in result["jobs"] if j["state"] == "running"), None)
-    return {"busy": True, "activity": first_running["kind"] if first_running else None}

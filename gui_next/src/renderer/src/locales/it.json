@@ -79,8 +79,6 @@
         "bobdylan_scraping": "Scraping di bobdylan.com…",
         "setlistfm_syncing": "Sincronizzazione setlist.fm…",
         "geocoding": "Geocodifica…",
-        "updating_app": "Aggiornamento dell'app…",
-        "downloading_data": "Download dei dati…",
         "spectrogram_generating": "Generazione di spettrogrammi…",
         "tapematch_crawling": "In esecuzione di TapeMatch…",
         "pipeline_running": "Esecuzione della pipeline…",

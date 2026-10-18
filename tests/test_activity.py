@@ -90,14 +90,9 @@ def test_progress_omits_missing_fields(monkeypatch):
     assert job["progress"]["total"] == 0
 
 
-def test_busy_parity_with_old_semantics(monkeypatch):
-    """busy_snapshot() finds the same first-running worker the legacy
-    activity_busy() would have, using the same precedence order, including
-    a gap worker the old endpoint never saw.
-    """
+def test_snapshot_reports_the_one_running_worker(monkeypatch):
+    """snapshot() is busy and lists exactly the running worker (integrity scan)."""
     _reset_activity_state()
-    # Everything idle except integrity scan (4th in the original 11-worker
-    # precedence order) -> old activity_busy() would report "scanning".
     monkeypatch.setattr(importer, "get_import_status", lambda: {"running": False})
     monkeypatch.setattr(scraper, "get_scrape_status", lambda: {"running": False})
     monkeypatch.setattr(bootleg_scraper, "get_scrape_status", lambda: {"running": False})
@@ -113,8 +108,10 @@ def test_busy_parity_with_old_semantics(monkeypatch):
     monkeypatch.setattr(setlistfm, "get_status", lambda: {"status": "idle"})
     monkeypatch.setattr(archive_org, "get_status", lambda: {"running": False, "status": "idle"})
 
-    result = activity.busy_snapshot()
-    assert result == {"busy": True, "activity": "scanning"}
+    result = activity.snapshot()
+    assert result["busy"] is True
+    running = [j["kind"] for j in result["jobs"] if j["state"] == "running"]
+    assert running == ["scanning"]
 
 
 def test_busy_includes_gap_worker(monkeypatch):
@@ -135,8 +132,6 @@ def test_busy_includes_gap_worker(monkeypatch):
         monkeypatch.setattr(mod, fn, (lambda v: (lambda: v))(val))
 
     from backend import app as app_module
-    monkeypatch.setattr(app_module, "get_update_status", lambda: {"status": "idle"})
-    monkeypatch.setattr(app_module, "get_data_dl_status", lambda: {"status": "idle"})
     monkeypatch.setattr(
         app_module, "get_spectrogram_status",
         lambda: {"status": "running", "current": "foo.flac", "done": 1, "total": 5,
@@ -154,8 +149,10 @@ def test_busy_includes_gap_worker(monkeypatch):
                   "started_at": None, "cancelled": False},
     )
 
-    result = activity.busy_snapshot()
-    assert result == {"busy": True, "activity": "spectrogram_generating"}
+    result = activity.snapshot()
+    assert result["busy"] is True
+    running = [j["kind"] for j in result["jobs"] if j["state"] == "running"]
+    assert running == ["spectrogram_generating"]
 
 
 def test_running_to_finished_edge_lands_in_history(monkeypatch):
@@ -212,16 +209,16 @@ def test_raising_status_getter_is_skipped_not_500(monkeypatch):
     assert result["busy"] is True
 
 
-def test_job_adapters_cover_original_11_plus_gap_workers():
-    """JOB_ADAPTERS preserves the original 11-worker precedence order and
+def test_job_adapters_cover_original_workers_plus_gap_workers():
+    """JOB_ADAPTERS keeps the original worker order (the app-updater and
+    data-download rows were removed with that feature, TODO-362) and
     includes all four spec §1a gap workers."""
     kinds = [a.kind for a in activity.JOB_ADAPTERS]
-    original_11 = [
+    original = [
         "importing", "scraping", "scraping_bootlegs", "scanning", "filing",
         "crawling", "geocoding", "bobdylan_scraping", "setlistfm_syncing",
-        "updating_app", "downloading_data",
     ]
-    assert kinds[:11] == original_11
+    assert kinds[:len(original)] == original
     for gap_kind in (
         "spectrogram_generating", "tapematch_crawling",
         "pipeline_running", "archive_uploading",
@@ -233,4 +230,4 @@ def test_job_adapters_cover_original_11_plus_gap_workers():
         "olof_fetching", "bobserve_fetching", "ranker_scanning", "refresh_chain",
     ):
         assert pipeline_kind in kinds
-    assert len(kinds) == 19
+    assert len(kinds) == 17

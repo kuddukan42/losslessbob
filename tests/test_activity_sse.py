@@ -50,8 +50,6 @@ def _mock_all_adapters_idle(monkeypatch):
         monkeypatch.setattr(mod, fn, (lambda v: (lambda: v))(val))
 
     from backend import app as app_module
-    monkeypatch.setattr(app_module, "get_update_status", lambda: {"status": "idle"})
-    monkeypatch.setattr(app_module, "get_data_dl_status", lambda: {"status": "idle"})
     monkeypatch.setattr(
         app_module, "get_spectrogram_status",
         lambda: {"status": "idle", "current": None, "done": 0, "total": 0,
@@ -173,10 +171,10 @@ def test_multiple_concurrent_tracked_jobs_are_independent():
     assert "derived_recompute" not in none_running
 
 
-def test_busy_snapshot_sees_live_tracked_job(monkeypatch):
-    """busy_snapshot() (D-3 contract) reports busy=True and names the
-    tracked job's kind while an SSE route is live, with every polled
-    adapter idle."""
+def test_snapshot_busy_sees_live_tracked_job(monkeypatch):
+    """snapshot() (D-3 contract) reports busy=True and lists the tracked
+    job as running while an SSE route is live, with every polled adapter
+    idle."""
     _reset_activity_state()
     _mock_all_adapters_idle(monkeypatch)
 
@@ -188,11 +186,11 @@ def test_busy_snapshot_sees_live_tracked_job(monkeypatch):
     gen = _fake_sse_route()
     next(gen)
 
-    result = activity.busy_snapshot()
-    assert result == {"busy": True, "activity": "wtrf_crawl"}
+    result = activity.snapshot()
+    assert result["busy"] is True
+    assert [j["kind"] for j in result["jobs"] if j["state"] == "running"] == ["wtrf_crawl"]
 
     with pytest.raises(StopIteration):
         next(gen)
 
-    result = activity.busy_snapshot()
-    assert result == {"busy": False, "activity": None}
+    assert activity.snapshot()["busy"] is False

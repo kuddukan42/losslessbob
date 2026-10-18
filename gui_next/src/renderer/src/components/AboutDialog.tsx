@@ -25,8 +25,6 @@ interface StackGroup { group: string; rows: StackRow[] }
 const STACK: StackGroup[] = [
   { group: 'Interface', rows: [
     { name: 'GUI (primary)',    value: 'Electron + React + TypeScript', version: 'electron-vite', primary: true },
-    { name: 'GUI (legacy)',     value: 'PyQt6',                         version: '6.7.1 · frozen' },
-    { name: 'Attachments view', value: 'PyQt6-WebEngine',               version: '6.7.0' },
   ]},
   { group: 'Backend', rows: [
     { name: 'REST backend',  value: 'Flask + Flask-CORS', version: '3.0.3 / 4.0.1' },

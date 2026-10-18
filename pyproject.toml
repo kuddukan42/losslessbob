@@ -3,7 +3,6 @@ line-length = 100
 target-version = "py311"
 exclude = [
     ".venv",
-    "gui",        # frozen legacy GUI — no new features, not linted
     "tools",      # standalone scripts, not part of the importable package
     "archive",    # retired code, kept verbatim — linting it would rewrite history
 ]
@@ -20,9 +19,9 @@ select = [
     "LOG",  # flake8-logging (logger hygiene)
 ]
 ignore = [
-    # E501 (line-too-long) is documented in BEST_PRACTICES.md as a hard rule
-    # but is temporarily suppressed here because app.py and db.py carry ~75
-    # pre-existing violations.  Re-enable after the TODO-281 code pass.
+    # E501 (line-too-long): 100 chars is a hard rule (BEST_PRACTICES.md, CLAUDE.md)
+    # but not enforced here — 284 pre-existing violations as of 2026-10-17
+    # (tests/test_geocoder.py 78, app.py 61, db.py 30). Keep new lines under 100.
     "E501",
 ]
 

@@ -46,7 +46,7 @@ Electron app does not use.
 | `GET /api/app/version`, `/api/update/check`, `/api/update/status`, `POST /api/update/apply` | `backend/app.py:2664-2750` |
 | `POST /api/data/download`, `GET /api/data/download/status` | `backend/app.py:2753-2778` |
 | `_update_state`, `_data_dl_state` globals | `backend/app.py:81, 90` |
-| `_restart_callback` / `set_restart_callback` (wired only by `run_backend.py`) | `backend/app.py:339-349, 9602` |
+| ~~`_restart_callback` / `set_restart_callback`~~ **Corrected (TODO-362): not part of the updater.** It drives the live `POST /api/admin/restart` that the admin page uses, so it stays. | `backend/app.py:339-349` |
 | Activity "legacy semantics for the app-updater / data-download workers" | `backend/activity.py:305` |
 | `github_repo` meta setting, read only by these routes | `app.py:2690, 2740` |
 

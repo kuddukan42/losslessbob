@@ -80,8 +80,6 @@
         "bobdylan_scraping": "Scraping bobdylan.com…",
         "setlistfm_syncing": "Syncing setlist.fm…",
         "geocoding": "Geocoding…",
-        "updating_app": "Updating app…",
-        "downloading_data": "Downloading data…",
         "spectrogram_generating": "Generating spectrograms…",
         "tapematch_crawling": "Crawling TapeMatch…",
         "pipeline_running": "Running pipeline…",

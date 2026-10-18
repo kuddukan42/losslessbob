@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-362: Code review §2: remove the legacy app-updater/data-download stack and PyQt remnants
+Priority: Medium
+Status: Done
+Added: 2026-10-17
+Closed: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §2. Delete backend/updater.py (no importers), routes /api/app/version, /api/update/{check,status,apply} (app.py:2664-2750), /api/data/download(+/status) (app.py:2753-2778), globals _update_state/_data_dl_state (app.py:81,90), _restart_callback/set_restart_callback (app.py:339-349, 9602) and its wiring in run_backend.py, the updater/data-download activity rows (activity.py:305). Also remove legacy GET /api/activity/busy (app.py:1205-1220) + activity.busy_snapshot() (activity.py:671) + its tests in tests/test_activity_sse.py:177-197, and simplify the precedence comments (activity.py:181,230). PyQt remnants: AboutDialog.tsx:28-29 PyQt6 rows; pyproject.toml ruff exclude 'gui'; rewrite the E501 'after TODO-281' comment (TODO-281 is closed). Confirm no tools/CI caller of /api/app/version first. /backend-restart + /gui-check.
+2026-10-17: removed updater.py, the 6 updater/data-download routes + 2 workers + state, /api/activity/busy + activity.busy_snapshot(), the 2 adapter rows + _not_idle_is_running override (activity._is_running simplified), locale keys in 6 languages, AboutDialog PyQt6 rows, pyproject 'gui' exclude; E501 comment rewritten with the real count (284). Review correction: _restart_callback/set_restart_callback is NOT updater code — it backs the live /api/admin/restart, kept. Tests repointed from busy_snapshot() to snapshot() (coverage kept). Verified: backend restarted (uptime 3s, removed routes 404, /api/activity/jobs OK), backend suite 3154 passed, gui-check PASS.
+
 TODO-361: Code review lint pass: GUI unused locals, dead exports, tools unused imports, ruff B905
 Priority: Medium
 Status: Done

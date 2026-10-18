@@ -1,3 +1,13 @@
+[2026-10-17] — Legacy app-updater, data-download and /api/activity/busy removed (TODO-362)
+Removed: backend/updater.py; app.py routes /api/app/version, /api/update/{check,status,apply},
+  /api/data/download(+/status), /api/activity/busy, their state/lock globals, status accessors and
+  _do_update/_do_data_download workers; github_repo/data_zip_url from the db_settings key list.
+Removed: backend/activity.py updating_app/downloading_data adapter rows + their not-idle override
+  and busy_snapshot(); tests repointed at snapshot(). Locale keys updating_app/downloading_data
+  (6 languages); AboutDialog PyQt6 rows. Kept: _restart_callback (powers /api/admin/restart).
+Changed: pyproject.toml: dropped the stale "gui" exclude; E501 comment states the real debt (284).
+Changed: PROJECT.md: removed the 7 route rows and the updater.py tree entry.
+
 [2026-10-17] — Lint pass: dead GUI code removed, noUnusedLocals enforced (TODO-361)
 Removed: gui_next App.tsx dead dev screens (PlaceholderScreen, PrimitivesScreen, ~180 lines) and
   unused imports/helpers in 13 renderer files; dead exports PIPELINE_STAGES, FONTS, CARD_STYLES;

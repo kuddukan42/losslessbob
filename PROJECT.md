@@ -71,7 +71,7 @@ losslessbob/
 ├── PROJECT.md                # This file
 ├── backend/
 │   ├── app.py                # Flask REST API — all routes
-│   ├── activity.py           # TODO-262: unified activity aggregator — JOB_ADAPTERS table + snapshot() (/api/activity/jobs), busy_snapshot() (busy dot re-base), SSE tee registry track()
+│   ├── activity.py           # TODO-262: unified activity aggregator — JOB_ADAPTERS table + snapshot() (/api/activity/jobs), SSE tee registry track()
 │   ├── platform_utils.py     # Cross-platform process helpers (open_in_vlc)
 │   ├── resources/
 │   │   ├── map.html          # Leaflet map page served at GET /map; fetches /api/map/data
@@ -89,7 +89,6 @@ losslessbob/
 │   ├── db_queue.py           # DB-09: DatabaseWriteQueue — single writer thread, serialises all writes
 │   ├── paths.py              # Central path resolver: normal / PyInstaller-frozen / portable-ZIP builds; SITE_* dirs. `LOSSLESSBOB_APP_ROOT` env var overrides APP_ROOT in the unfrozen branch (CI/cloud-agent/fixture use, TODO-261) — unset behavior unchanged
 │   ├── version.py            # App VERSION string, read from the VERSION file at APP_ROOT
-│   ├── updater.py            # restart_application(): relaunch the app after an in-place update
 │   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
 │   ├── checksum_provenance.py # Cross-checks checksums vs the uploader files in data/site/files/ (TODO-296)
 │   ├── credentials.py        # OS keyring credential storage (SERVICE_QBT, SERVICE_WTRF, SERVICE_IA, SERVICE_TUIT); falls back to env vars / data/credentials.env for headless callers (cron)
@@ -1809,10 +1808,8 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/api/status` | Combined DB + bootleg stats in one round-trip (halves GUI status-bar poller overhead). |
-| GET | `/api/app/version` | Current app version and runtime info. |
 | GET | `/api/db/stats` | Row counts, latest LB number, last import date |
 | GET | `/api/home/stats` | `{collection_count, wishlist_count, missing_count, bootleg_count, checksum_count, latest_lb, last_import, collection_size}` — single-query counts for the Home dashboard and AppShell footer. `collection_size` is `{bytes, human, folders, computed_at, computing}` — total on-disk bytes across all `my_collection` folders, cached in `meta` (`collection_size_bytes`/`_folders`/`_computed_at`) and refreshed via a background thread (`backend/filer.py: get_collection_size_stats()`) when older than 24h rather than walked per request. |
-| GET | `/api/activity/busy` | `{busy, activity}` — re-based on `backend/activity.py`'s `JOB_ADAPTERS` table (TODO-262) so it shares one source of truth with `/api/activity/jobs`. Response shape unchanged; `activity` is the `kind` of the first running worker in table order (also `crawling`, `geocoding`, `bobdylan_scraping`, `setlistfm_syncing`, plus the previously-invisible `spectrogram_generating`/`tapematch_crawling`/`pipeline_running`/`archive_uploading` gap workers), or `null` when idle. Used by the AppShell footer busy indicator. |
 | GET | `/api/activity/jobs` | `{busy, jobs:[{id, kind, state, progress?:{current?,total?,pct?,label?}, started_at?, finished_at?, cancel_route?, screen}]}` (TODO-262). Normalized snapshot of every polled worker (15 adapters) plus live SSE-tracked request-scoped jobs (`master/sitedata` publish+install, `derived/recompute`, `wtrf/crawl_missing`, registered via `activity.track()`); `state` ∈ `running`/`done`/`error`/`cancelled`; 50-entry in-memory finished-job history. Drives the AppShell status-bar activity tray. |
 | GET | `/api/activity/log` | Unified activity log merging DB imports, renames, and forum posts. Query param: `limit` (default 20; 0 = unlimited). Returns `[{when, action, target, result, type}]`. |
 | GET | `/api/system/uptime` | `{uptime_seconds}` since the Flask process started (About screen uptime clock) |
@@ -1827,11 +1824,6 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 ### App Update & Data Download
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/api/update/check` | Query the GitHub releases API for a newer app version. |
-| GET | `/api/update/status` | Current update download/apply progress. |
-| POST | `/api/update/apply` | Start a background download + apply of the update. |
-| POST | `/api/data/download` | Start a background download+extract of the configured `data_zip_url`. |
-| GET | `/api/data/download/status` | Current data ZIP download/extract progress. |
 
 ### Integrity Events (Watchdog)
 | Method | Route | Description |
