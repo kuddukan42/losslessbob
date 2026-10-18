@@ -329,11 +329,11 @@ DECADE_BANDS = {decade: _build_decade_bands(cuts) for decade, cuts in _DECADE_CU
 # crowd level is meaningful absolutely. Within-class *ranking* is already handled
 # by MAD-z over same-show siblings. Fit from the 165 SBD in scan_id 6 (class-
 # global; SBD-per-decade deferred — too sparse, esp. 2010s n=7). FM (n=27) reuses
-# the SBD set. The "crowd" cuts below are retained for reference but unused.
+# the SBD set. No "crowd" cuts: _build_decade_bands keeps crowd on the global band.
 # ─────────────────────────────────────────────────────────────────────────────
 _SBD_CUTS = {
     "mud": [15.63, 19.35, 24.3], "harsh": [2.2, 4.36, 9.39],
-    "hiss": [-12.36, -6.39, -2.68, -0.16], "crowd": [4.78, 7.05, 9.36],
+    "hiss": [-12.36, -6.39, -2.68, -0.16],
     "bass": [10.22, 22.78], "air": [-40.66, -18.81], "width": [0.02, 0.59],
     "presence": [-6.89, -5.67, -3.47], "directness": [0.13, 0.15],
 }
