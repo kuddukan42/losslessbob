@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-359: Code review H1b: decide whether to purge embed_cache_12x from git history
+Priority: Low
+Status: Done
+Added: 2026-10-17
+Closed: 2026-10-18
+Description: From instructions/CODE_REVIEW_2026-10-17.md §1 H1. After the untrack TODO lands, the 1.68 GiB pack still holds the cache. Shrinking it needs git filter-repo + force-push to the PUBLIC repo kuddukan42/losslessbob (rewrites every SHA since 2026-07-06, breaks existing clones/CI refs). tj decision: purge, or accept the size. Also purge archive/attic/*.db and tools/tapematch/logs/ in the same pass if doing it.
+Purged tools/tapematch/embed_cache_12x/ from all history with git filter-repo and force-pushed every branch and tag (pack 1.74 GiB → 193 MiB). archive/attic/*.db and tapematch logs were ~1 MB combined, so they were left alone. Pre-purge backup: .debug/pre_purge_2026-10-18.bundle. Commit SHAs before 2026-10-18 in CHANGELOG no longer resolve.
+
 TODO-365: Code review §4: triage the ~50 Flask routes with no caller, one feature group at a time
 Priority: Medium
 Status: Done

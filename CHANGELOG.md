@@ -1,3 +1,7 @@
+[2026-10-18] — Git history purged of the 1.6 GB embed_cache_12x experiment cache (TODO-359)
+Changed: git history: `git filter-repo --path tools/tapematch/embed_cache_12x --invert-paths`, force-pushed all branches + tags v1.5.0–v1.5.2; pack 1.74 GiB → 193 MiB. Every commit SHA changed; SHAs cited in older entries no longer resolve. Existing clones must re-clone.
+Changed: local tools/tapematch/embed_cache_12x/ left on disk (gitignored, unused since the TODO-202 12× probe was rejected 2026-07-05). Backup of the old history: .debug/pre_purge_2026-10-18.bundle.
+
 [2026-10-18] — Route triage done: 15 superseded routes removed, taper workbench linked (TODO-365)
 Changed: backend/app.py, backend/db.py: deleted /api/collection/search (search_collection),
   /api/collection/delete_bulk (delete_collection_entries), /api/entries/year/<year>
