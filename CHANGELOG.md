@@ -1,3 +1,13 @@
+[2026-10-17] — 13 zero-reference backend functions deleted (TODO-363)
+Removed: db.py get_lb_statuses_batch, should_mark_nft, get_aliases_for_canonical,
+  get_lb_problem_count, get_curated_list_entries; dossier_anchors.visible_lbs_hint;
+  dossier_fields.broadcast_clause; scheduler.register_import_callback + stop_file_watcher;
+  sox_utils.decode_to_wav; torrent_maker.make_torrent_batch; tuit_scraper.fetch_recent.
+Changed: scheduler._notify logs file-watcher import events instead of calling callbacks that
+  nothing ever registered (the messages were silently dropped).
+Kept: sharing.stream_file (named in the parked instructions/future/SHARING_FEATURE.md),
+  tuit_upload.upload_and_seed (pending TODO-343).
+
 [2026-10-17] — Legacy app-updater, data-download and /api/activity/busy removed (TODO-362)
 Removed: backend/updater.py; app.py routes /api/app/version, /api/update/{check,status,apply},
   /api/data/download(+/status), /api/activity/busy, their state/lock globals, status accessors and

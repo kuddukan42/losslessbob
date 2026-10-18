@@ -834,14 +834,6 @@ def _source_type_field(conn: sqlite3.Connection, lb: int, member: dict, d1: dict
     return build_field(stated, 1, "entries.source_type", "stated")
 
 
-def visible_lbs_hint(d1: dict) -> list[int]:
-    """Best-effort visible LB list straight from a D1 payload's ``sources``."""
-    return [
-        int(m["lb"][3:]) for bucket in d1.get("sources", []) for m in bucket["members"]
-        if not m.get("private")
-    ]
-
-
 def _taper_field(conn: sqlite3.Connection, lb: int, public: bool = False) -> Field | None:
     """The QC-gated taper credit for *lb* as a Field, or None when nothing may render.
 

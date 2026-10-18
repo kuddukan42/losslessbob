@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-363: Code review §3a: delete the 15 backend functions with zero references
+Priority: Low
+Status: Done
+Added: 2026-10-17
+Closed: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §3a (table has file:line for each). db.py: get_lb_statuses_batch, should_mark_nft, get_aliases_for_canonical, get_lb_problem_count (tie to the lb_problems route decision), get_curated_list_entries; dossier_anchors.visible_lbs_hint; dossier_fields.broadcast_clause; scheduler.register_import_callback + _import_callbacks/_notify (never fire) + stop_file_watcher; sharing.stream_file; sox_utils.decode_to_wav; torrent_maker.make_torrent_batch; tuit_scraper.fetch_recent. EXCLUDE tuit_upload.upload_and_seed until TODO-343 settles. updater.restart_application goes with the §2 TODO.
+2026-10-17: deleted 13 functions (206 lines) across db.py, dossier_anchors, dossier_fields, scheduler, sox_utils, torrent_maker, tuit_scraper — re-verified zero refs (code, tools, tests, docs, name strings) first. scheduler._notify now logs instead of iterating an always-empty callback list. Kept stream_file (parked SHARING_FEATURE spec) and upload_and_seed (TODO-343). Post-delete vulture: no newly orphaned helpers (fetch_browse_page flagged but used by tools/tuit_sync.py). Backend restarted, suite 3154 passed, tool --help smoke OK.
+
 TODO-362: Code review §2: remove the legacy app-updater/data-download stack and PyQt remnants
 Priority: Medium
 Status: Done

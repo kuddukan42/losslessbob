@@ -315,32 +315,6 @@ def fetch_browse_page(
     return parse_browse(resp.text), browse_total(resp.text), resp.text
 
 
-def fetch_recent(
-    session: requests.Session, limit: int = 5, delay: float = DEFAULT_DELAY
-) -> list[BrowseRow]:
-    """Return the ``limit`` most recently added recordings.
-
-    Only as many listing pages as needed are fetched (50 rows per page).
-
-    Args:
-        session: Authenticated session.
-        limit: Maximum number of rows to return.
-        delay: Seconds between requests.
-
-    Returns:
-        Newest-first list of BrowseRow, at most ``limit`` long.
-    """
-    collected: list[BrowseRow] = []
-    page = 1
-    while len(collected) < limit:
-        rows, _total, _html = fetch_browse_page(session, page=page, delay=delay)
-        if not rows:
-            break
-        collected.extend(rows)
-        page += 1
-    return collected[:limit]
-
-
 # ──────────────────────────────────────────────────────────────────────────────
 # /recordings/<id>
 # ──────────────────────────────────────────────────────────────────────────────

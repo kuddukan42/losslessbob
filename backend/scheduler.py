@@ -18,20 +18,12 @@ from backend.importer import run_import
 from backend.paths import DATA_DIR
 
 logger = logging.getLogger(__name__)
-_import_callbacks = []
 _observer = None
 
 
-def register_import_callback(cb):
-    _import_callbacks.append(cb)
-
-
-def _notify(msg):
-    for cb in _import_callbacks:
-        try:
-            cb(msg)
-        except Exception:
-            pass
+def _notify(msg: str) -> None:
+    """Log a file-watcher import event (no UI consumer is registered)."""
+    logger.info("file watcher: %s", msg)
 
 
 class FileEventHandler(FileSystemEventHandler):
@@ -107,14 +99,6 @@ def start_file_watcher(db_path=None):
     _observer.schedule(handler, str(DATA_DIR), recursive=False)
     _observer.daemon = True
     _observer.start()
-
-
-def stop_file_watcher():
-    global _observer
-    if _observer:
-        _observer.stop()
-        _observer.join()
-        _observer = None
 
 
 # ── Collection folder integrity poller ────────────────────────────────────────

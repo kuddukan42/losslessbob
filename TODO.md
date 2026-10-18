@@ -34,12 +34,6 @@ Status: Open
 Added: 2026-10-17
 Description: From instructions/CODE_REVIEW_2026-10-17.md §3b. Called only by their own tests: db.py get_wishlist_lb_numbers, get_tuit_uploads, get_tuit_recordings, get_tuit_songs, get_tuit_song_performances, get_tuit_shows, get_tuit_venues, get_file_hash, prune_pipeline_cache; qc/store.quarantined_batch; tuit_scraper.torrent_root_name; wtrf_seed.parse_topic_links; seed_overlay.verify_overlay; concert_ranker/lb mine_entries, get_scan, classify_entries. For each: supported API (keep) or dead (delete fn + test). prune_pipeline_cache specifically: nothing ever prunes the pipeline cache in production — schedule it or drop it. Needs tj sign-off on the list.
 
-TODO-363: Code review §3a: delete the 15 backend functions with zero references
-Priority: Low
-Status: Open
-Added: 2026-10-17
-Description: From instructions/CODE_REVIEW_2026-10-17.md §3a (table has file:line for each). db.py: get_lb_statuses_batch, should_mark_nft, get_aliases_for_canonical, get_lb_problem_count (tie to the lb_problems route decision), get_curated_list_entries; dossier_anchors.visible_lbs_hint; dossier_fields.broadcast_clause; scheduler.register_import_callback + _import_callbacks/_notify (never fire) + stop_file_watcher; sharing.stream_file; sox_utils.decode_to_wav; torrent_maker.make_torrent_batch; tuit_scraper.fetch_recent. EXCLUDE tuit_upload.upload_and_seed until TODO-343 settles. updater.restart_application goes with the §2 TODO.
-
 TODO-360: Code review H7: archive or document the one-off tools nothing references
 Priority: Low
 Status: Open

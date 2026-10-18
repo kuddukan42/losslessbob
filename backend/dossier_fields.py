@@ -2893,21 +2893,6 @@ def range_notes(conn: sqlite3.Connection, event_id: int) -> list[RangeNote]:
     return out
 
 
-def broadcast_clause(annotations: str | None) -> str:
-    """The recording/broadcast part of an ``olof_songs.annotations`` string.
-
-    Args:
-        annotations: Olof's ``;``-joined per-song notes.
-
-    Returns:
-        The ``;``-joined clauses mentioning a recording/broadcast/video/
-        audience word, or ``""``.
-    """
-    return "; ".join(
-        c for c in _annotation_clauses(annotations) if _RECORDING_CLAUSE_RE.search(c)
-    )
-
-
 def song_notes_without(annotations: str | None, shown: set[str]) -> str:
     """Drop annotation clauses already rendered elsewhere (a set label / session note).
 

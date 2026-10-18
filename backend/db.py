@@ -8090,34 +8090,6 @@ def get_lb_status(lb_number: int, db_path=None) -> str | None:
     return row["lb_status"] if row else None
 
 
-def get_lb_statuses_batch(lb_numbers: "list[int]", db_path=None) -> "dict[int, str]":
-    """Return {lb_number: lb_status} for every lb_number present in lb_master.
-
-    Missing entries are absent from the result dict.  Intended for bulk
-    UI colouring (e.g. the Attachments tree page render) to avoid N individual
-    queries.
-    """
-    if not lb_numbers:
-        return {}
-    conn = get_connection(db_path)
-    rows = conn.execute(
-        "SELECT lb_number, lb_status FROM lb_master WHERE lb_number IN ({})".format(
-            ",".join("?" * len(lb_numbers))
-        ),
-        lb_numbers,
-    ).fetchall()
-    return {r["lb_number"]: r["lb_status"] for r in rows}
-
-
-def should_mark_nft(lb_number: int, db_path=None) -> bool:
-    """Return True if folders for lb_number should carry the -NFT suffix.
-
-    An LB is marked NFT when lb_status is 'private' — it has checksums
-    but no published webpage, indicating the webmaster has not released it.
-    """
-    return get_lb_status(lb_number, db_path) == "private"
-
-
 def is_postable_to_forum(lb_number: int, db_path=None) -> tuple[bool, str | None]:
     """Return (allowed, reason) for forum posting.
 
@@ -9092,19 +9064,6 @@ def get_lb_aliases(canonical_lb: int | None = None, db_path=None) -> list[dict]:
     return [dict(r) for r in rows]
 
 
-def get_aliases_for_canonical(canonical_lb: int, db_path=None) -> list[int]:
-    """Return sorted list of alias LB numbers that map to the given canonical.
-
-    Args:
-        canonical_lb: The canonical LB number.
-        db_path: Optional path to the SQLite database file.
-
-    Returns:
-        Sorted list of alias_lb integers pointing to canonical_lb.
-    """
-    return sorted(r["alias_lb"] for r in get_lb_aliases(canonical_lb, db_path))
-
-
 # ── Bootleg-CD Catalog ────────────────────────────────────────────────────────
 
 _BOOTLEG_SOURCE_URL = SITE_BASE_URL + "/detail/LB-bootleg-by-title.html"
@@ -9510,22 +9469,6 @@ def delete_lb_problem(problem_id: int, db_path=None) -> None:
     )
 
 
-def get_lb_problem_count(lb_number: int, db_path=None) -> int:
-    """Return the number of open problem notes for an LB number.
-
-    Args:
-        lb_number: The LB number to count problems for.
-        db_path: Optional database path override.
-
-    Returns:
-        Integer count of rows in lb_problems for this lb_number.
-    """
-    conn = get_connection(db_path)
-    return conn.execute(
-        "SELECT COUNT(*) FROM lb_problems WHERE lb_number=?", (lb_number,)
-    ).fetchone()[0]
-
-
 def get_or_create_curated_list(
     name: str, label: str = "", source: str = "", db_path=None
 ) -> int:
@@ -9629,39 +9572,6 @@ def add_curated_list_entries(
 
     get_write_queue().execute(_run)
     return len(entries)
-
-
-def get_curated_list_entries(
-    list_name: str | None = None, lb_number: int | None = None, db_path=None
-) -> list[dict]:
-    """Return curated_list_entries rows, optionally filtered.
-
-    Args:
-        list_name: When provided, only return entries for this list's name.
-        lb_number: When provided, only return entries for this LB number.
-        db_path: Optional database path override.
-
-    Returns:
-        List of dicts with keys: lb_number, note, added_at, list_name, list_label.
-    """
-    conn = get_connection(db_path)
-    clauses = []
-    params: list = []
-    if list_name is not None:
-        clauses.append("cl.name = ?")
-        params.append(list_name)
-    if lb_number is not None:
-        clauses.append("ce.lb_number = ?")
-        params.append(lb_number)
-    where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
-    rows = conn.execute(
-        "SELECT ce.lb_number, ce.note, ce.added_at, cl.name AS list_name,"
-        " cl.label AS list_label"
-        " FROM curated_list_entries ce JOIN curated_lists cl ON cl.id = ce.list_id"
-        f" {where} ORDER BY cl.name, ce.lb_number",
-        params,
-    ).fetchall()
-    return [dict(r) for r in rows]
 
 
 # ── Show picks lookup (FABLE_UNIFIED_RANKING §6 — GET /api/picks/for/<lb>) ────
