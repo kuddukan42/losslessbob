@@ -16,12 +16,6 @@ Status: Open
 Added: 2026-10-17
 Description: From instructions/CODE_REVIEW_2026-10-17.md §3b. Called only by their own tests: db.py get_wishlist_lb_numbers, get_tuit_uploads, get_tuit_recordings, get_tuit_songs, get_tuit_song_performances, get_tuit_shows, get_tuit_venues, get_file_hash, prune_pipeline_cache; qc/store.quarantined_batch; tuit_scraper.torrent_root_name; wtrf_seed.parse_topic_links; seed_overlay.verify_overlay; concert_ranker/lb mine_entries, get_scan, classify_entries. For each: supported API (keep) or dead (delete fn + test). prune_pipeline_cache specifically: nothing ever prunes the pipeline cache in production — schedule it or drop it. Needs tj sign-off on the list.
 
-TODO-360: Code review H7: archive or document the one-off tools nothing references
-Priority: Low
-Status: Open
-Added: 2026-10-17
-Description: From instructions/CODE_REVIEW_2026-10-17.md §1 H7. No live reference (outside CHANGELOG/DONE): tools/tapematch/mem_monitor.py, calib_logs/{rerun_9611,run_catval,run_confsweep}.sh, tools/adhoc_quality/build_adhoc_pdf.py, tools/tapematch/todo324_scan.py, bug326_diff.py, bug326_scan.py, tools/refetch_html_attachments.py, tools/wtrf/wtrf_board_archive.py, tools/tuit_overlay_repair.sh, tools/wtrf_repair_extras.py, tools/wtrf_requeue_disk_full.py, tools/migrate_gazetteer_city_country.py. Move finished one-shots to archive/tools-throwaway/; for the ones still useful, list them in a tools README (or tools/SCHEDULED_JOBS.md) so they stop being orphans.
-
 TODO-359: Code review H1b: decide whether to purge embed_cache_12x from git history
 Priority: Low
 Status: Open

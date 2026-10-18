@@ -1,3 +1,13 @@
+[2026-10-18] — Orphan one-off tools: finished ones archived, live ones documented (TODO-360)
+Changed: archive/tools-throwaway/: moved in the one-shots whose task closed: build_adhoc_pdf.py,
+  refetch_html_attachments.py (TODO-329), tuit_overlay_repair.sh (TODO-337),
+  migrate_gazetteer_city_country.py (TODO-352), tapematch/bug326_{scan,diff}.py +
+  bug326_rerun_queue.txt (TODO-323), tapematch_calib_logs/{rerun_9611,run_catval,run_confsweep}.sh.
+  archive/README.md records each file's origin.
+Added: tools/README.md: lists the standalone tools that nothing references but are still in use:
+  wtrf/wtrf_board_archive.py, wtrf_repair_extras.py, wtrf_requeue_disk_full.py,
+  tapematch/todo324_scan.py (TODO-324 still open), tapematch/mem_monitor.py.
+
 [2026-10-17] — Code-review cleanups: GitHub upload helper, GUI api/format libs, splash removed (TODO-367, TODO-368)
 Changed: backend/app.py: the two nested _ProgressFile/_upload_asset copies (master + site-data
   publish) are now one module-level _ProgressFile (context manager) + _github_upload_asset.

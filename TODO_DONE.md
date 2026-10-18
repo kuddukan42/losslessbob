@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-360: Code review H7: archive or document the one-off tools nothing references
+Priority: Low
+Status: Done
+Added: 2026-10-17
+Closed: 2026-10-18
+Description: From instructions/CODE_REVIEW_2026-10-17.md §1 H7. No live reference (outside CHANGELOG/DONE): tools/tapematch/mem_monitor.py, calib_logs/{rerun_9611,run_catval,run_confsweep}.sh, tools/adhoc_quality/build_adhoc_pdf.py, tools/tapematch/todo324_scan.py, bug326_diff.py, bug326_scan.py, tools/refetch_html_attachments.py, tools/wtrf/wtrf_board_archive.py, tools/tuit_overlay_repair.sh, tools/wtrf_repair_extras.py, tools/wtrf_requeue_disk_full.py, tools/migrate_gazetteer_city_country.py. Move finished one-shots to archive/tools-throwaway/; for the ones still useful, list them in a tools README (or tools/SCHEDULED_JOBS.md) so they stop being orphans.
+Archived 9 finished one-shots (+ bug326 queue) to archive/tools-throwaway/ with their origins in archive/README.md; kept and documented 5 still-live tools in the new tools/README.md (todo324_scan stays until TODO-324 closes).
+
 TODO-368: Code review §6c-6d: GUI shared lib/api.ts + lib/format.ts, splash TODO
 Priority: Low
 Status: Done
