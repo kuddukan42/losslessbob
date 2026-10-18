@@ -104,7 +104,7 @@ losslessbob/
 │   ├── bootleg_scraper.py    # Bootleg-CD catalog (LBBCD index) scraper
 │   ├── bobdylan_scraper.py   # bobdylan.com official setlist scraper (bobdylan_shows/bobdylan_setlist)
 │   ├── setlistfm.py          # setlist.fm API integration (setlistfm_shows/setlistfm_setlist)
-│   ├── job_progress.py       # TODO-306 P2: JobState/JobStopped — shared thread-safe progress+stop+atomic-claim primitive for background pipeline jobs
+│   ├── job_progress.py       # TODO-306 P2: JobState/JobStopped — shared thread-safe progress+stop+atomic-claim primitive for background pipeline jobs; SingleFlight (TODO-366) — one-run-at-a-time claim for workers with their own status shape
 │   ├── config_version.py     # TODO-306 P2: config-only version signals — hashes _KNOWN_TAPER_ALIASES + concert_ranker/config.py constants into meta, closing the Phase 1 §1c gap
 │   ├── olof_fetcher.py       # Olof Björner (bobserve.com) page mirror → data/olof/pages/ (TODO-162 P1); TODO-306 P2: JobState-backed run_fetch/run_fetch_claimed, POST /api/olof/fetch
 │   ├── olof_parser.py        # DSN event+song parser: olof_pages → olof_events + olof_songs (TODO-162 P2–P3)

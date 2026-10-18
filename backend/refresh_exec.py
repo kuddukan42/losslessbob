@@ -208,18 +208,10 @@ def _stop_ranker_scan() -> None:
 
 def _start_geocode(**kwargs) -> bool:
     from backend import geocoder
-    with geocoder._lock:
-        if geocoder._progress.get("running"):
-            return False
-    threading.Thread(
-        target=geocoder.run_batch,
-        kwargs={
-            "limit": kwargs.get("limit"),
-            "retry_failed": bool(kwargs.get("retry_failed", False)),
-        },
-        daemon=True, name="geocode-batch",
-    ).start()
-    return True
+    return geocoder.start_batch_async(
+        limit=kwargs.get("limit"),
+        retry_failed=bool(kwargs.get("retry_failed", False)),
+    )
 
 
 def _status_geocode() -> dict:

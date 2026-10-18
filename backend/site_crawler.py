@@ -35,7 +35,10 @@ from backend.db import (
 )
 from backend.db_queue import get_write_queue
 from backend.html_utils import rewrite_links
+from backend.job_progress import SingleFlight
 from backend.paths import SITE_BASE_URL, SITE_DIR
+
+_flight = SingleFlight("site-crawl")  # TODO-366: one run at a time
 
 logger = logging.getLogger(__name__)
 
@@ -338,7 +341,7 @@ def _save(url: str, content: bytes) -> tuple[Path, str]:
 
 # ── Main crawl loop ───────────────────────────────────────────────────────────
 
-def crawl(
+def _crawl(
     start_url: str = SITE_HOME_URL,
     scope: str = "full",
     force: bool = False,
@@ -597,3 +600,37 @@ def crawl(
                  f"{counts['failed']} failed.")
 
     return {"status": final_status, **counts}
+
+
+def crawl(
+    start_url: str = SITE_HOME_URL,
+    scope: str = "full",
+    force: bool = False,
+    delay_ms: int = 1500,
+    daily_cap: int = 99999,
+    db_path=None,
+) -> dict:
+    """Run :func:`_crawl` unless a crawl is already in progress.
+
+    Returns:
+        Final counts, or ``{"status": "busy"}`` when another crawl holds the claim.
+    """
+    if not _flight.try_claim():
+        return {"status": "busy"}
+    try:
+        return _crawl(start_url=start_url, scope=scope, force=force,
+                      delay_ms=delay_ms, daily_cap=daily_cap, db_path=db_path)
+    finally:
+        _flight.release()
+
+
+def start_crawl_async(**kwargs) -> bool:
+    """Start :func:`_crawl` in a daemon thread if idle.
+
+    Args:
+        kwargs: Keyword arguments for :func:`crawl`.
+
+    Returns:
+        True if started, False if a crawl is already in progress.
+    """
+    return _flight.start_thread(_crawl, **kwargs)

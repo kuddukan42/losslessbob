@@ -26,6 +26,9 @@ import requests
 
 from backend.db import DB_PATH, get_meta, set_meta
 from backend.db_queue import get_write_queue, init_write_queue
+from backend.job_progress import SingleFlight
+
+_flight = SingleFlight("setlistfm-update")  # TODO-366: one run at a time
 
 _log = logging.getLogger(__name__)
 
@@ -64,6 +67,9 @@ def stop() -> None:
 
 
 def is_running() -> bool:
+    """True while a run holds the claim or the status dict reads ``running``."""
+    if _flight.active:
+        return True
     with _state_lock:
         return _state["status"] == "running"
 
@@ -209,7 +215,7 @@ def _parse_setlist(sl: dict) -> tuple[dict, list[dict]]:
 # Worker
 # ---------------------------------------------------------------------------
 
-def run_update(
+def _run_update(
     db_path: str | None = None,
     api_key: str | None = None,
     force: bool = False,
@@ -415,3 +421,34 @@ def run_update(
         _log.exception("setlistfm: run_update failed")
         _set(status="error", message=str(exc))
         return 0
+
+
+def run_update(
+    db_path: str | None = None,
+    api_key: str | None = None,
+    force: bool = False,
+) -> int:
+    """Run :func:`_run_update` unless a setlist.fm sync is in progress.
+
+    Returns:
+        Shows stored, or 0 when another sync holds the claim.
+    """
+    if not _flight.try_claim():
+        return 0
+    try:
+        return _run_update(db_path=db_path, api_key=api_key, force=force)
+    finally:
+        _flight.release()
+
+
+def start_update_async(
+    db_path: str | None = None,
+    api_key: str | None = None,
+    force: bool = False,
+) -> bool:
+    """Start :func:`_run_update` in a daemon thread if idle.
+
+    Returns:
+        True if started, False if a sync is already in progress.
+    """
+    return _flight.start_thread(_run_update, db_path=db_path, api_key=api_key, force=force)

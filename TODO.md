@@ -16,12 +16,6 @@ Status: Open
 Added: 2026-10-17
 Description: From instructions/CODE_REVIEW_2026-10-17.md §5. S4: _ProgressFile is duplicated at app.py:6499 and app.py:11642 and open()s without a context manager — lift to one module-level class with close()/__exit__. S5: _parse_date exists 4 times (bobserve_parser.py:153, bootleg_scraper.py:58, setlistfm.py:95, torrent_maker.py:112) — share where formats match (torrent_maker/setlistfm). S6: delete the unused 'crowd' cuts in concert_ranker/config.py _SBD_CUTS (~326). Optional, only when touching them: drop the 'db_path: Unused' params on write-queue functions (db.py:6926, 6945, 6978, 6999, 10003, 10135).
 
-TODO-366: Code review S3: move the 9 inline job-progress dicts onto JobState (double-start race)
-Priority: Medium
-Status: Open
-Added: 2026-10-17
-Description: From instructions/CODE_REVIEW_2026-10-17.md §5 S3. job_progress.py:1-14 documents the check-then-set race in the inline _progress['running'] pattern (two rapid POSTs both start). Still inline: app.py _spectro_state (401), bobdylan_scraper.py:41, bootleg_scraper.py:33, geocoder.py:107, importer.py:25, preservation.py:52, scraper.py:47, setlistfm.py:37, site_crawler.py:77. Migrate one module per commit; keep the snapshot shape activity._PROGRESS_FIELDS reads. /backend-restart + tests per module.
-
 TODO-365: Code review §4: triage the ~50 Flask routes with no caller, one feature group at a time
 Priority: Medium
 Status: Open

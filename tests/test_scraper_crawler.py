@@ -727,11 +727,9 @@ class TestCrawlerRoutes:
         assert isinstance(resp.get_json(), dict)
 
     def test_start_while_already_running_returns_409(self, client):
-        # Inject running=True into the module-level state, then try to start
+        # Hold the worker's single-flight claim (TODO-366), then try to start
         from backend import site_crawler
-        with site_crawler._crawler_lock:
-            orig = site_crawler._crawler_state["running"]
-            site_crawler._crawler_state["running"] = True
+        assert site_crawler._flight.try_claim()
         try:
             resp = client.post(
                 "/api/crawler/start",
@@ -741,5 +739,4 @@ class TestCrawlerRoutes:
             assert resp.status_code == 409
             assert resp.get_json().get("ok") is False
         finally:
-            with site_crawler._crawler_lock:
-                site_crawler._crawler_state["running"] = orig
+            site_crawler._flight.release()

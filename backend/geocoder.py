@@ -71,6 +71,10 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+from backend.job_progress import SingleFlight
+
+_flight = SingleFlight("geocode-batch")  # TODO-366: one run at a time
+
 logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
@@ -970,7 +974,7 @@ def _save_geocode_result(write_queue, location_text: str, result: dict) -> None:
     )
 
 
-def run_batch(
+def _run_batch(
     limit: int | None = None,
     retry_failed: bool = False,
     dry_run: bool = False,
@@ -1344,6 +1348,33 @@ def run_batch(
         "Batch geocode complete: %d/%d processed, %d errors, %d skipped, dry_run=%s",
         _progress["done"], total, _progress["errors"], _progress["skipped"], dry_run,
     )
+
+
+def run_batch(
+    limit: int | None = None,
+    retry_failed: bool = False,
+    dry_run: bool = False,
+    db_path=None,
+) -> None:
+    """Run :func:`_run_batch` unless a geocode batch is already in progress."""
+    if not _flight.try_claim():
+        return
+    try:
+        _run_batch(limit=limit, retry_failed=retry_failed, dry_run=dry_run, db_path=db_path)
+    finally:
+        _flight.release()
+
+
+def start_batch_async(limit: int | None = None, retry_failed: bool = False) -> bool:
+    """Start :func:`_run_batch` in a daemon thread if idle.
+
+    Shared by ``POST /api/geocode/run`` and the refresh chain, which used to
+    check ``_progress["running"]`` and start the thread in two steps.
+
+    Returns:
+        True if started, False if a batch is already in progress.
+    """
+    return _flight.start_thread(_run_batch, limit=limit, retry_failed=retry_failed)
 
 
 def get_progress() -> dict:

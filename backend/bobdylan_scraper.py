@@ -21,6 +21,9 @@ from bs4 import BeautifulSoup
 
 from backend.db import DB_PATH, get_connection
 from backend.db_queue import get_write_queue, init_write_queue
+from backend.job_progress import SingleFlight
+
+_flight = SingleFlight("bobdylan-scrape")  # TODO-366: one run at a time
 
 _log = logging.getLogger(__name__)
 
@@ -69,6 +72,9 @@ def stop() -> None:
 
 
 def is_running() -> bool:
+    """True while a run holds the claim or the status dict reads ``running``."""
+    if _flight.active:
+        return True
     with _state_lock:
         return _state["status"] == "running"
 
@@ -296,7 +302,7 @@ def run_discover(db_path: str | None = None) -> int:
         return 0
 
 
-def run_scrape(db_path: str | None = None, force: bool = False) -> int:
+def _run_scrape(db_path: str | None = None, force: bool = False) -> int:
     """Scrape individual show pages and populate venue/location/setlist data.
 
     By default skips shows where scraped_at IS NOT NULL.  With force=True,
@@ -393,7 +399,30 @@ def run_scrape(db_path: str | None = None, force: bool = False) -> int:
         return 0
 
 
-def run_update(db_path: str | None = None, force: bool = False) -> None:
+def run_scrape(db_path: str | None = None, force: bool = False) -> int:
+    """Run :func:`_run_scrape` unless a bobdylan.com run is in progress.
+
+    Returns:
+        Shows scraped, or 0 when another run holds the claim.
+    """
+    if not _flight.try_claim():
+        return 0
+    try:
+        return _run_scrape(db_path=db_path, force=force)
+    finally:
+        _flight.release()
+
+
+def start_scrape_async(db_path: str | None = None, force: bool = False) -> bool:
+    """Start :func:`_run_scrape` in a daemon thread if idle.
+
+    Returns:
+        True if started, False if a run is already in progress.
+    """
+    return _flight.start_thread(_run_scrape, db_path=db_path, force=force)
+
+
+def _run_update(db_path: str | None = None, force: bool = False) -> None:
     """Discover show URLs then scrape unscraped pages.  Idempotent.
 
     Running this repeatedly is safe:
@@ -409,5 +438,36 @@ def run_update(db_path: str | None = None, force: bool = False) -> None:
     if _is_stop_requested():
         _log.info("bobdylan_scraper: stop requested after discover phase")
         return
-    run_scrape(db_path=db_path, force=force)
+    _run_scrape(db_path=db_path, force=force)
     _log.info("bobdylan_scraper: run_update complete")
+
+
+def run_update(db_path: str | None = None, force: bool = False) -> None:
+    """Run :func:`_run_update` (discover then scrape) unless a run is in progress.
+
+    One claim covers both phases, so a second start cannot slip in between
+    them while the status dict briefly reads ``done``.
+    """
+    if not _flight.try_claim():
+        return
+    try:
+        _run_update(db_path=db_path, force=force)
+    finally:
+        _flight.release()
+
+
+def start_discover_async(db_path: str | None = None) -> bool:
+    """Start :func:`run_discover` in a daemon thread if idle (TODO-366).
+
+    Returns:
+        True if started, False if a bobdylan.com run is already in progress.
+    """
+    return _flight.start_thread(run_discover, db_path=db_path)
+
+def start_update_async(db_path: str | None = None, force: bool = False) -> bool:
+    """Start :func:`_run_update` in a daemon thread if idle.
+
+    Returns:
+        True if started, False if a run is already in progress.
+    """
+    return _flight.start_thread(_run_update, db_path=db_path, force=force)

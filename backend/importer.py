@@ -17,7 +17,10 @@ from backend.db import (
     set_meta,
 )
 from backend.db_queue import get_write_queue
+from backend.job_progress import SingleFlight
 from backend.paths import DATA_DIR
+
+_flight = SingleFlight("flat-file-import")  # TODO-366: one run at a time
 
 _log = logging.getLogger(__name__)
 
@@ -92,7 +95,7 @@ def _import_flat_file(flat_path, temp_db_path):
     return inserted
 
 
-def run_import(source_path, progress_callback=None, db_path=None):
+def _run_import(source_path, progress_callback=None, db_path=None):
     """
     Import a flat file into the main database.
     Returns dict with new_lb_count, total_lb_count, new_lb_numbers.
@@ -243,18 +246,33 @@ def run_import(source_path, progress_callback=None, db_path=None):
     }
 
 
-def start_import_async(source_path, db_path=None, on_complete=None) -> None:
+def run_import(source_path, progress_callback=None, db_path=None):
+    """Run :func:`_run_import` unless an import is already in progress.
+
+    Raises:
+        RuntimeError: if another import holds the claim.
     """
-    Launch run_import() in a daemon thread. Returns immediately.
+    if not _flight.try_claim():
+        raise RuntimeError("import already running")
+    try:
+        return _run_import(source_path, progress_callback=progress_callback, db_path=db_path)
+    finally:
+        _flight.release()
+
+
+def start_import_async(source_path, db_path=None, on_complete=None) -> bool:
+    """
+    Launch an import in a daemon thread if none is running. Returns immediately.
     on_complete(result_dict) is called from the import thread when done.
+    Returns False (nothing started) if an import is already in progress.
     """
     def _run():
         try:
-            result = run_import(source_path, db_path=db_path)
+            result = _run_import(source_path, db_path=db_path)
         except Exception as e:
             result = {"error": str(e)}
             _set_state(running=False, stage="error", error=str(e), message=str(e))
         if on_complete:
             on_complete(result)
 
-    threading.Thread(target=_run, daemon=True).start()
+    return _flight.start_thread(_run)

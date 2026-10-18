@@ -1247,9 +1247,6 @@ def create_app() -> Flask:
             JSON {ok, running} or 404 if file not found.
         """
         try:
-            if importer.get_import_status().get("running"):
-                return jsonify({"ok": False, "error": "Import already running"}), 409
-
             data = request.get_json()
             file_path = data.get("file_path", "")
             path = Path(file_path)
@@ -1274,7 +1271,8 @@ def create_app() -> Flask:
                                 len(new_lbs),
                             )
 
-            importer.start_import_async(path, on_complete=on_complete)
+            if not importer.start_import_async(path, on_complete=on_complete):
+                return jsonify({"ok": False, "error": "Import already running"}), 409
             return jsonify({"ok": True, "running": True})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -2764,13 +2762,8 @@ def create_app() -> Flask:
         try:
             data = request.get_json() or {}
             force = bool(data.get("force", False))
-            if bootleg_scraper.get_scrape_status().get("running"):
+            if not bootleg_scraper.start_scrape_async(force=force):
                 return jsonify({"ok": False, "error": "Scrape already running"}), 409
-            threading.Thread(
-                target=bootleg_scraper.scrape_bootlegs,
-                kwargs={"force": force},
-                daemon=True,
-            ).start()
             return jsonify({"ok": True, "running": True})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -2857,7 +2850,6 @@ def create_app() -> Flask:
 
     # ── Site Crawler ─────────────────────────────────────────────────────────
 
-    _crawler_thread: list[threading.Thread] = []  # single-element list for mutability in closure
 
     @app.route("/api/crawler/start", methods=["POST"])
     def crawler_start():
@@ -2873,21 +2865,15 @@ def create_app() -> Flask:
             JSON: {ok: true}  or  {ok: false, error: "already running"}
         """
         try:
-            if site_crawler.get_crawler_status().get("running"):
-                return jsonify({"ok": False, "error": "Crawler already running"}), 409
             data = request.get_json() or {}
             scope     = data.get("scope", "incremental")
             force     = bool(data.get("force", False))
             delay_ms  = int(data.get("delay_ms", 1500))
             daily_cap = int(data.get("daily_cap", 99999))
-            t = threading.Thread(
-                target=site_crawler.crawl,
-                kwargs={"scope": scope, "force": force,
-                        "delay_ms": delay_ms, "daily_cap": daily_cap},
-                daemon=True,
-            )
-            t.start()
-            _crawler_thread[:] = [t]
+            if not site_crawler.start_crawl_async(
+                scope=scope, force=force, delay_ms=delay_ms, daily_cap=daily_cap,
+            ):
+                return jsonify({"ok": False, "error": "Crawler already running"}), 409
             return jsonify({"ok": True})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -9142,20 +9128,12 @@ def create_app() -> Flask:
         except ImportError:
             return jsonify({"error": "geocoder module not available"}), 503
 
-        with _geocoder._lock:
-            if _geocoder._progress.get("running"):
-                return jsonify({"error": "already running"}), 409
-
         body = request.get_json(silent=True) or {}
         retry_failed = bool(body.get("retry_failed", False))
         limit = body.get("limit")
 
-        t = threading.Thread(
-            target=_geocoder.run_batch,
-            kwargs={"limit": limit, "retry_failed": retry_failed},
-            daemon=True,
-        )
-        t.start()
+        if not _geocoder.start_batch_async(limit=limit, retry_failed=retry_failed):
+            return jsonify({"error": "already running"}), 409
         return jsonify({"status": "started"})
 
     @app.route("/api/geocode/stop", methods=["POST"])
@@ -11899,13 +11877,8 @@ def create_app() -> Flask:
         try:
             data = request.get_json() or {}
             force = bool(data.get("force", False))
-            if bobdylan_scraper.is_running():
+            if not bobdylan_scraper.start_update_async(force=force):
                 return jsonify({"ok": False, "error": "Already running"}), 409
-            threading.Thread(
-                target=bobdylan_scraper.run_update,
-                kwargs={"force": force},
-                daemon=True,
-            ).start()
             return jsonify({"ok": True, "running": True})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -11918,12 +11891,8 @@ def create_app() -> Flask:
             JSON: {ok: true, running: true}
         """
         try:
-            if bobdylan_scraper.is_running():
+            if not bobdylan_scraper.start_discover_async():
                 return jsonify({"ok": False, "error": "Already running"}), 409
-            threading.Thread(
-                target=bobdylan_scraper.run_discover,
-                daemon=True,
-            ).start()
             return jsonify({"ok": True, "running": True})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -11940,13 +11909,8 @@ def create_app() -> Flask:
         try:
             data = request.get_json() or {}
             force = bool(data.get("force", False))
-            if bobdylan_scraper.is_running():
+            if not bobdylan_scraper.start_scrape_async(force=force):
                 return jsonify({"ok": False, "error": "Already running"}), 409
-            threading.Thread(
-                target=bobdylan_scraper.run_scrape,
-                kwargs={"force": force},
-                daemon=True,
-            ).start()
             return jsonify({"ok": True, "running": True})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -12062,13 +12026,8 @@ def create_app() -> Flask:
             data = request.get_json() or {}
             force = bool(data.get("force", False))
             api_key = (data.get("api_key") or "").strip() or None
-            if setlistfm_mod.is_running():
+            if not setlistfm_mod.start_update_async(force=force, api_key=api_key):
                 return jsonify({"ok": False, "error": "Already running"}), 409
-            threading.Thread(
-                target=setlistfm_mod.run_update,
-                kwargs={"force": force, "api_key": api_key},
-                daemon=True,
-            ).start()
             return jsonify({"ok": True, "running": True})
         except Exception as e:
             return jsonify({"error": str(e)}), 500

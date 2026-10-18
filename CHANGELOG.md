@@ -1,3 +1,15 @@
+[2026-10-17] — Background workers can no longer be started twice (TODO-366)
+Fixed: bootleg scrape, site crawler, geocoder, bobdylan (update/scrape/discover), setlist.fm and
+  flat-file import: start routes checked a status dict and then spawned a thread that set
+  `running` later, so two quick POSTs (or a route + the refresh chain / file watcher) could both
+  start. Each module now claims a backend.job_progress.SingleFlight before the thread exists; the
+  public worker functions claim too, and the claim is released in `finally`.
+Added: job_progress.SingleFlight; start_*_async() starters in the six modules; routes and
+  refresh_exec._start_geocode use them (False -> the existing 409). Status dict shapes unchanged.
+Changed: bobdylan/setlistfm is_running() also reports the claim (covers bobdylan's discover->
+  scrape gap); importer.start_import_async returns bool; removed write-only _crawler_thread.
+Added: tests/test_single_flight.py (13 tests incl. a 16-thread race and a double POST).
+
 [2026-10-17] — 13 zero-reference backend functions deleted (TODO-363)
 Removed: db.py get_lb_statuses_batch, should_mark_nft, get_aliases_for_canonical,
   get_lb_problem_count, get_curated_list_entries; dossier_anchors.visible_lbs_hint;

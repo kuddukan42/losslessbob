@@ -147,3 +147,77 @@ class JobState:
         """Return a shallow copy of the current progress dict."""
         with self._lock:
             return dict(self._progress)
+
+
+class SingleFlight:
+    """Atomic one-at-a-time guard for a background worker (TODO-366).
+
+    For workers whose status dict has its own shape (``status``/``stage``
+    enums, ``rows_*`` counters) that the GUI reads verbatim, so they cannot
+    adopt :class:`JobState`'s dict. The claim lives in a separate flag, never
+    in the status dict, so it holds across multi-phase runs whose status
+    passes through ``done`` mid-way, and it is released in ``finally`` so a
+    crashed worker never wedges the next start.
+
+    Use :meth:`start_thread` from routes (claim first, then spawn — the
+    route learns about a conflict synchronously and can 409), and
+    :meth:`try_claim`/:meth:`release` around a synchronous run.
+    """
+
+    def __init__(self, name: str) -> None:
+        """Create an idle guard.
+
+        Args:
+            name: Worker name, used for the thread name and log messages.
+        """
+        self._name = name
+        self._lock = threading.Lock()
+        self._active = False
+
+    @property
+    def active(self) -> bool:
+        """Whether a claimed run is in progress."""
+        with self._lock:
+            return self._active
+
+    def try_claim(self) -> bool:
+        """Claim the worker if idle.
+
+        Returns:
+            True if claimed (caller must :meth:`release`), False if busy.
+        """
+        with self._lock:
+            if self._active:
+                logger.warning("%s: already running, start refused", self._name)
+                return False
+            self._active = True
+            return True
+
+    def release(self) -> None:
+        """Release a claim taken by :meth:`try_claim`."""
+        with self._lock:
+            self._active = False
+
+    def start_thread(self, target, **kwargs) -> bool:
+        """Claim, then run ``target(**kwargs)`` in a daemon thread.
+
+        Args:
+            target: Worker body. It must not claim this guard itself.
+            kwargs: Keyword arguments for ``target``.
+
+        Returns:
+            True if the thread was started, False if the worker was busy.
+        """
+        if not self.try_claim():
+            return False
+
+        def _run() -> None:
+            try:
+                target(**kwargs)
+            except Exception:
+                logger.exception("%s: worker raised", self._name)
+            finally:
+                self.release()
+
+        threading.Thread(target=_run, daemon=True, name=self._name).start()
+        return True

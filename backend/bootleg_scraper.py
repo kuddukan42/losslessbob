@@ -20,6 +20,9 @@ from backend.db import (
     backup_database,
     get_connection,
 )
+from backend.job_progress import SingleFlight
+
+_flight = SingleFlight("bootleg-scrape")  # TODO-366: one run at a time
 
 logger = logging.getLogger(__name__)
 
@@ -247,7 +250,7 @@ def _apply_diff(
 
 # ── Public entry point ────────────────────────────────────────────────────────
 
-def scrape_bootlegs(force: bool = False, db_path=None) -> dict:
+def _scrape_bootlegs(force: bool = False, db_path=None) -> dict:
     """Fetch and diff-apply the LosslessBob Bootleg-CD catalog index.
 
     Args:
@@ -379,6 +382,30 @@ def scrape_bootlegs(force: bool = False, db_path=None) -> dict:
         "rows_changed": rows_changed,
         "rows_removed": rows_removed,
     }
+
+
+def scrape_bootlegs(force: bool = False, db_path=None) -> dict:
+    """Run :func:`_scrape_bootlegs` unless a scrape is already in progress.
+
+    Returns:
+        The scrape result dict, or ``status='failed'`` with
+        ``error='already running'`` when another scrape holds the claim.
+    """
+    if not _flight.try_claim():
+        return {"status": "failed", "error": "already running"}
+    try:
+        return _scrape_bootlegs(force=force, db_path=db_path)
+    finally:
+        _flight.release()
+
+
+def start_scrape_async(force: bool = False, db_path=None) -> bool:
+    """Start :func:`_scrape_bootlegs` in a daemon thread if idle.
+
+    Returns:
+        True if started, False if a scrape is already in progress.
+    """
+    return _flight.start_thread(_scrape_bootlegs, force=force, db_path=db_path)
 
 
 def _record_scrape(db_path, url, etag, last_modified, body_sha,

@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-366: Code review S3: move the 9 inline job-progress dicts onto JobState (double-start race)
+Priority: Medium
+Status: Done
+Added: 2026-10-17
+Closed: 2026-10-17
+Description: From instructions/CODE_REVIEW_2026-10-17.md §5 S3. job_progress.py:1-14 documents the check-then-set race in the inline _progress['running'] pattern (two rapid POSTs both start). Still inline: app.py _spectro_state (401), bobdylan_scraper.py:41, bootleg_scraper.py:33, geocoder.py:107, importer.py:25, preservation.py:52, scraper.py:47, setlistfm.py:37, site_crawler.py:77. Migrate one module per commit; keep the snapshot shape activity._PROGRESS_FIELDS reads. /backend-restart + tests per module.
+2026-10-17: audit found the race in 6 workers, not 9 — scraper (_start_scrape_worker), preservation and spectrogram already claimed atomically. Did NOT move onto JobState: its try_begin resets the dict to its own field set, which would change status shapes the GUI reads (bobdylan/setlistfm use status/phase enums, bootleg/importer rows_*). Added job_progress.SingleFlight (claim flag separate from the status dict, released in finally) and wired bootleg_scraper, site_crawler, geocoder, bobdylan_scraper (incl. discover and the discover->scrape gap), setlistfm, importer; routes + refresh_exec._start_geocode now claim before spawning. Side benefit: a status dict stuck at running after a crash no longer blocks the next start. tests/test_single_flight.py 13 tests; full suite 3167 passed x4 (one earlier unidentified flake, not reproduced in 15 loops of the new file + 4 full runs after hardening). Backend restarted, all six status routes 200.
+
 TODO-363: Code review §3a: delete the 15 backend functions with zero references
 Priority: Low
 Status: Done
