@@ -30,7 +30,6 @@ from backend.tuit_scraper import (
     rss_url,
     save_recording_html,
     songs_page_count,
-    torrent_root_name,
     tour_name_from_url,
     venue_page_count,
 )
@@ -349,33 +348,6 @@ class TestJsonFields:
         assert len(json.loads(fields["setlist_json"])) == 2
         assert len(json.loads(fields["files_json"])) == 2
         assert len(json.loads(fields["siblings_json"])) == 2
-
-
-class TestTorrentRootName:
-    def _write(self, tmp_path, name: bytes) -> str:
-        # A minimal but well-formed torrent: read_torrent needs the whole
-        # info dict, not just the name.
-        body = (b"d4:infod6:lengthi1e4:name" + str(len(name)).encode() + b":"
-                + name + b"12:piece lengthi1e6:pieces20:" + b"\0" * 20 + b"ee")
-        path = tmp_path / "t.torrent"
-        path.write_bytes(body)
-        return str(path)
-
-    def test_reads_root_folder_name(self, tmp_path):
-        path = self._write(tmp_path, b"1978-11-01 Madison (LB-00707)")
-        assert torrent_root_name(path) == "1978-11-01 Madison (LB-00707)"
-
-    def test_handles_utf8_names(self, tmp_path):
-        path = self._write(tmp_path, "1978 Señor (LB-1)".encode())
-        assert torrent_root_name(path) == "1978 Señor (LB-1)"
-
-    def test_missing_file_returns_none(self, tmp_path):
-        assert torrent_root_name(tmp_path / "nope.torrent") is None
-
-    def test_non_torrent_returns_none(self, tmp_path):
-        path = tmp_path / "x.torrent"
-        path.write_bytes(b"not a torrent")
-        assert torrent_root_name(path) is None
 
 
 class TestSaveRecordingHtml:

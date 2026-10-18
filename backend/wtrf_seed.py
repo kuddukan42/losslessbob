@@ -151,23 +151,6 @@ class SeedTarget:
         return bool(self.url)
 
 
-def _lb_numbers_in(text: str) -> list[int]:
-    """Every distinct LB number tagged in a blob of text, in order of appearance.
-
-    Args:
-        text: Post body, title or attachment filename.
-
-    Returns:
-        Distinct LB numbers, first occurrence first.
-    """
-    found: list[int] = []
-    for match in _LB_TAG_RE.finditer(text or ""):
-        n = int(match.group(1))
-        if n and n not in found:
-            found.append(n)
-    return found
-
-
 def _host(url: str) -> str:
     """Hostname of a URL, lowercased and stripped of a leading ``www.``.
 
@@ -339,42 +322,6 @@ def _canonical_topic_url(url: str) -> str:
     if parts.query:
         tail += "?" + parts.query
     return FORUM_BASE + tail
-
-
-def parse_topic_links(text: str) -> list[LinkSpec]:
-    """Turn a pasted blob into the topic links to walk, in order.
-
-    Each line may hold a bare URL, or an ``LB-00123 <url>`` pairing when the
-    curator already knows which entry the post is for. Lines without a WTRF
-    topic URL are dropped; the same topic appearing twice (as a ``#msg`` anchor
-    and as a page-2 link, say) is walked once.
-
-    Args:
-        text: Pasted text, one link per line or whitespace-separated.
-
-    Returns:
-        Deduplicated LinkSpecs in the order they were pasted.
-    """
-    specs: list[LinkSpec] = []
-    seen: set[str] = set()
-    for line in (text or "").splitlines():
-        urls = [u for u in _URL_RE.findall(line) if is_wtrf_topic_url(u)]
-        if not urls:
-            continue
-        # An LB tag on the line pins the entry, but only if it isn't merely
-        # part of the URL itself.
-        pinned = _lb_numbers_in(_URL_RE.sub(" ", line))
-        for url in urls:
-            norm = _canonical_topic_url(_absolutise(url))
-            if norm in seen:
-                continue
-            seen.add(norm)
-            specs.append(LinkSpec(
-                url=norm,
-                lb_number=pinned[0] if len(pinned) == 1 else None,
-                raw=line.strip(),
-            ))
-    return specs
 
 
 def parse_seed_targets(text: str) -> list[SeedTarget]:

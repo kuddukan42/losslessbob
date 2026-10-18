@@ -10,12 +10,6 @@ Status: Open
 Added: 2026-10-17
 Description: From instructions/CODE_REVIEW_2026-10-17.md §4 (table with app.py line numbers). Groups with no GUI/tool/test caller: xref_ingest (4 routes), lb_missing (3), lb_problems (4 + get_lb_problem_count), flat_file defer/changelog, collection missing/search/duplicates/delete_bulk/audit/routes-preview/integrity-scan-history, entries year/reclassify/by_lb_list, misc lookups (scan_folders, xref_lb_numbers, performances, lineage, lb_master history, geocode/locations, setlistfm/show, olof event/chronicle), bootlegs lb_numbers/by_lb, preservation reports/report, lbdir delete_extra/verified_status, wtrf fetch_torrent/crawl_missing, /api/torrents, /api/forum_posts, checksums reconcile_audio/apply, bobserve fetch status/stop, tapematch/sync, tapers/curation/text, /taper-curation page. Test-only job triggers (olof fetch/parse, bobserve fetch/parse, ranker/rerank, qc/decisions, tapematch dup_encodes + crawl start/stop, ab_clip file, curated_lists, dossier/bbcode): check whether the Data Freshness card replaced them. Per group: delete routes + db helpers + tests, or wire into the GUI. Tool-only routes (/api/status, db/missing_lb_numbers, lbdir/find_extra, rename/apply): keep, document as tool APIs. Needs tj per group.
 
-TODO-364: Code review §3b: keep-or-delete the backend functions only tests call
-Priority: Low
-Status: Open
-Added: 2026-10-17
-Description: From instructions/CODE_REVIEW_2026-10-17.md §3b. Called only by their own tests: db.py get_wishlist_lb_numbers, get_tuit_uploads, get_tuit_recordings, get_tuit_songs, get_tuit_song_performances, get_tuit_shows, get_tuit_venues, get_file_hash, prune_pipeline_cache; qc/store.quarantined_batch; tuit_scraper.torrent_root_name; wtrf_seed.parse_topic_links; seed_overlay.verify_overlay; concert_ranker/lb mine_entries, get_scan, classify_entries. For each: supported API (keep) or dead (delete fn + test). prune_pipeline_cache specifically: nothing ever prunes the pipeline cache in production — schedule it or drop it. Needs tj sign-off on the list.
-
 TODO-359: Code review H1b: decide whether to purge embed_cache_12x from git history
 Priority: Low
 Status: Open

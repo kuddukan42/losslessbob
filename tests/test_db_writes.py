@@ -475,7 +475,7 @@ class TestWishlist:
             _seed_entry(conn, 70)
             result = db.add_to_wishlist(70, priority=4, db_path=db_path)
             assert result == 1
-            lbs = db.get_wishlist_lb_numbers(db_path)
+            lbs = [r["lb_number"] for r in db.get_wishlist(db_path)]
             assert 70 in lbs
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
@@ -502,7 +502,7 @@ class TestWishlist:
             _seed_entry(conn, 72)
             db.add_to_wishlist(72, db_path=db_path)
             db.remove_from_wishlist(72, db_path=db_path)
-            assert 72 not in db.get_wishlist_lb_numbers(db_path)
+            assert 72 not in [r["lb_number"] for r in db.get_wishlist(db_path)]
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
 

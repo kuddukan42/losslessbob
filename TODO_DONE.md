@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-364: Code review §3b: keep-or-delete the backend functions only tests call
+Priority: Low
+Status: Done
+Added: 2026-10-17
+Closed: 2026-10-18
+Description: From instructions/CODE_REVIEW_2026-10-17.md §3b. Called only by their own tests: db.py get_wishlist_lb_numbers, get_tuit_uploads, get_tuit_recordings, get_tuit_songs, get_tuit_song_performances, get_tuit_shows, get_tuit_venues, get_file_hash, prune_pipeline_cache; qc/store.quarantined_batch; tuit_scraper.torrent_root_name; wtrf_seed.parse_topic_links; seed_overlay.verify_overlay; concert_ranker/lb mine_entries, get_scan, classify_entries. For each: supported API (keep) or dead (delete fn + test). prune_pipeline_cache specifically: nothing ever prunes the pipeline cache in production — schedule it or drop it. Needs tj sign-off on the list.
+tj signed off 2026-10-18: deleted 9 (wishlist_lb_numbers, get_tuit_recordings, quarantined_batch, torrent_root_name, parse_topic_links+_lb_numbers_in, verify_overlay, mine_entries, get_scan, classify_entries); kept TUIT getters + get_file_hash as read APIs; prune_pipeline_cache scheduled daily with an unmounted-drive guard and no age cap.
+
 TODO-360: Code review H7: archive or document the one-off tools nothing references
 Priority: Low
 Status: Done

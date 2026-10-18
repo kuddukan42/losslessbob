@@ -210,15 +210,6 @@ def reusable_scan_id(conn: sqlite3.Connection, extraction_key: str) -> int | Non
     return int(row["scan_id"]) if row else None
 
 
-def get_scan(conn: sqlite3.Connection, scan_id: int) -> dict | None:
-    """Return the scan row as a dict, or None."""
-    row = conn.execute(
-        "SELECT scan_id, started_at, config_json, notes FROM quality_scans WHERE scan_id=?",
-        (scan_id,),
-    ).fetchone()
-    return dict(row) if row else None
-
-
 def latest_scan_id(conn: sqlite3.Connection) -> int | None:
     """Return the highest ``scan_id``, or None if no scans exist."""
     row = conn.execute("SELECT MAX(scan_id) AS m FROM quality_scans").fetchone()

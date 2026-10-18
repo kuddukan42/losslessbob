@@ -5736,12 +5736,6 @@ def update_wishlist(lb_number: int, fields: dict, db_path=None) -> None:
     get_write_queue().execute(lambda c: c.execute(_sql, _params))
 
 
-def get_wishlist_lb_numbers(db_path=None) -> list:
-    """Return a flat list of lb_numbers currently on the wishlist."""
-    with get_connection(db_path) as conn:
-        return [r[0] for r in conn.execute("SELECT lb_number FROM my_wishlist").fetchall()]
-
-
 def get_xref_lb_numbers(db_path=None) -> list:
     """Return distinct lb_numbers that have at least one xref checksum (xref > 0)."""
     with get_connection(db_path) as conn:
@@ -6637,32 +6631,6 @@ def get_tuit_recording(rec_id: int, db_path=None) -> dict | None:
             "SELECT * FROM tuit_recordings WHERE rec_id=?", (rec_id,)
         ).fetchone()
     return dict(row) if row else None
-
-
-def get_tuit_recordings(
-    lb_number: int | None = None, limit: int | None = None, db_path=None
-) -> list[dict]:
-    """Return tuit_recordings rows, newest-added first.
-
-    Args:
-        lb_number: If given, return only rows for this LB number.
-        limit: Optional maximum row count.
-        db_path: Optional DB path override.
-
-    Returns:
-        List of row dicts.
-    """
-    sql = "SELECT * FROM tuit_recordings"
-    params: list = []
-    if lb_number is not None:
-        sql += " WHERE lb_number=?"
-        params.append(lb_number)
-    sql += " ORDER BY added_at DESC, rec_id DESC"
-    if limit:
-        sql += " LIMIT ?"
-        params.append(limit)
-    with get_connection(db_path) as conn:
-        return [dict(r) for r in conn.execute(sql, params).fetchall()]
 
 
 def add_tuit_download(
@@ -10129,28 +10097,28 @@ def derive_tree_digest(folder_path: str, db_path=None) -> str:
     return tree_digest.hexdigest()
 
 
-def prune_pipeline_cache(max_age_days: int = 180, db_path=None) -> dict:
-    """Drop pipeline cache rows for missing folders and rows older than the cap.
+def prune_pipeline_cache(db_path=None) -> dict:
+    """Drop pipeline cache rows for folders that no longer exist.
 
-    Phase-1 decision on design §10 open question 1: prune on demand (missing
-    folder sweep + age cap, default 180 days). Not wired into startup yet —
-    the tables stay empty until Phase 3/4 write to them; wiring is decided
-    when consultation lands.
+    Run daily by ``scheduler.start_pipeline_cache_pruner``. A folder counts as
+    gone only when its parent directory is still there: an unmounted drive
+    makes every folder on it look missing, and pruning then would throw away
+    hashes that are still valid. There is no age cap — a cached hash is checked
+    against (size, mtime) on every read, so an old row is never a wrong one.
 
     Args:
-        max_age_days: Delete rows whose hashed_at/updated_at is older.
         db_path: Optional DB path for the folder-list read.
 
     Returns:
         {"file_hash_deleted": int, "folder_state_deleted": int}
     """
-    conn = get_connection(db_path)
-    folders = {r[0] for r in conn.execute(
-        "SELECT DISTINCT folder_path FROM pipeline_file_hash "
-        "UNION SELECT folder_path FROM pipeline_folder_state"
-    ).fetchall()}
-    gone = [f for f in folders if not Path(f).is_dir()]
-    age = f"-{int(max_age_days)} days"
+    with get_connection(db_path) as conn:
+        folders = {r[0] for r in conn.execute(
+            "SELECT DISTINCT folder_path FROM pipeline_file_hash "
+            "UNION SELECT folder_path FROM pipeline_folder_state"
+        ).fetchall()}
+    gone = [f for f in folders
+            if not Path(f).is_dir() and Path(f).parent.is_dir()]
 
     def _run(c):
         n_hash = n_state = 0
@@ -10161,12 +10129,6 @@ def prune_pipeline_cache(max_age_days: int = 180, db_path=None) -> dict:
             n_state += c.execute(
                 "DELETE FROM pipeline_folder_state WHERE folder_path=?", (f,)
             ).rowcount
-        n_hash += c.execute(
-            "DELETE FROM pipeline_file_hash WHERE hashed_at < datetime('now', ?)", (age,)
-        ).rowcount
-        n_state += c.execute(
-            "DELETE FROM pipeline_folder_state WHERE updated_at < datetime('now', ?)", (age,)
-        ).rowcount
         return {"file_hash_deleted": n_hash, "folder_state_deleted": n_state}
 
     return get_write_queue().execute(_run)

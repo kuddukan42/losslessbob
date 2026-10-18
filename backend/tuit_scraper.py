@@ -36,7 +36,6 @@ import requests
 from bs4 import BeautifulSoup
 
 from backend.credentials import SERVICE_TUIT, SERVICE_TUIT_RSS, get_credentials
-from backend.torrent_verify import BencodeError, read_torrent
 from backend.wtrf_scraper import _filename_from_content_disposition as _cd_filename
 
 logger = logging.getLogger(__name__)
@@ -718,21 +717,6 @@ def download_torrent(
     path.write_bytes(body)
     logger.info("TUIT: saved %s (%d bytes)", path, len(body))
     return {"ok": True, "torrent_path": str(path)}
-
-
-def torrent_root_name(torrent_path: str | Path) -> str | None:
-    """Return the root folder name declared inside a .torrent file.
-
-    Args:
-        torrent_path: Path to a .torrent file.
-
-    Returns:
-        The ``info.name`` value, or None when it cannot be read.
-    """
-    try:
-        return read_torrent(torrent_path).name
-    except (BencodeError, OSError):
-        return None
 
 
 def recording_to_json_fields(rec: Recording) -> dict:

@@ -13,6 +13,8 @@ from backend.db import (
     get_file_scan_history,
     get_integrity_scan_history,
     get_meta,
+    prune_pipeline_cache,
+    set_meta,
 )
 from backend.importer import run_import
 from backend.paths import DATA_DIR
@@ -329,3 +331,64 @@ def stop_file_verify_scheduler():
         _file_verify_thread.join(timeout=5)
     _file_verify_stop = None
     _file_verify_thread = None
+
+
+# ── Pipeline cache prune (TODO-364) ──────────────────────────────────────────
+# pipeline_file_hash / pipeline_folder_state gain a row per hashed file, and a
+# folder that is renamed or removed leaves its rows behind. Sweep them daily.
+
+_cache_prune_stop: threading.Event | None = None
+_cache_prune_thread: threading.Thread | None = None
+
+_CACHE_PRUNE_CHECK_INTERVAL = 3600  # seconds; re-check the schedule hourly
+_CACHE_PRUNE_INTERVAL_HOURS = 24.0
+
+
+def _cache_prune_worker(stop_event: threading.Event, db_path=None) -> None:
+    """Run :func:`prune_pipeline_cache` once per day.
+
+    The last run time lives in the ``pipeline_cache_pruned_at`` meta key, so a
+    backend restart does not reset the clock.
+
+    Args:
+        stop_event: Set to end the worker.
+        db_path: Optional DB override.
+    """
+    while not stop_event.wait(_CACHE_PRUNE_CHECK_INTERVAL):
+        try:
+            last = get_meta("pipeline_cache_pruned_at", db_path)
+            if last:
+                last_at = datetime.fromisoformat(last)
+                if datetime.now(UTC) - last_at < timedelta(hours=_CACHE_PRUNE_INTERVAL_HOURS):
+                    continue
+            result = prune_pipeline_cache(db_path=db_path)
+            set_meta("pipeline_cache_pruned_at", datetime.now(UTC).isoformat(), db_path)
+            logger.info("pipeline_cache: pruned %s", result)
+        except Exception:
+            logger.exception("pipeline_cache: prune failed")
+
+
+def start_pipeline_cache_pruner(db_path=None):
+    """Start the background thread that prunes the pipeline cache daily."""
+    global _cache_prune_stop, _cache_prune_thread
+    stop_pipeline_cache_pruner()
+    _cache_prune_stop = threading.Event()
+    _cache_prune_thread = threading.Thread(
+        target=_cache_prune_worker,
+        args=(_cache_prune_stop,),
+        kwargs={"db_path": db_path},
+        daemon=True,
+        name="pipeline-cache-pruner",
+    )
+    _cache_prune_thread.start()
+
+
+def stop_pipeline_cache_pruner():
+    """Stop the pipeline cache prune thread."""
+    global _cache_prune_stop, _cache_prune_thread
+    if _cache_prune_stop:
+        _cache_prune_stop.set()
+    if _cache_prune_thread:
+        _cache_prune_thread.join(timeout=5)
+    _cache_prune_stop = None
+    _cache_prune_thread = None

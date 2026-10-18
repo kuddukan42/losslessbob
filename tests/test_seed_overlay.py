@@ -28,9 +28,8 @@ from backend.seed_overlay import (
     resolvable_files,
     snapshot_folder,
     unique_overlay_name,
-    verify_overlay,
 )
-from backend.torrent_verify import read_torrent
+from backend.torrent_verify import read_torrent, verify_folder
 
 PIECE_LEN = 512
 
@@ -225,7 +224,7 @@ class TestBuildOverlay:
         assert result["linked"] == 2
         assert result["copied"] == 2
         assert result["errors"] == []
-        assert verify_overlay(info, plan).complete is True
+        assert verify_folder(info, plan.target_dir).complete is True
 
     def test_audio_is_hardlinked_not_duplicated(self, rig):
         info, collection, sidecars, root = rig
@@ -265,7 +264,7 @@ class TestBuildOverlay:
         result = build_overlay(plan)
         assert result["skipped"] == 1
         assert not (plan.target_dir / "LBF-00042-info.txt").exists()
-        assert verify_overlay(info, plan).complete is False
+        assert verify_folder(info, plan.target_dir).complete is False
 
     def test_dry_run_creates_nothing(self, rig):
         info, collection, sidecars, root = rig
@@ -280,7 +279,7 @@ class TestBuildOverlay:
         build_overlay(plan)
         second = build_overlay(plan)
         assert second["ok"] is True
-        assert verify_overlay(info, plan).complete is True
+        assert verify_folder(info, plan.target_dir).complete is True
 
     def test_refetch_uses_the_fetcher_and_completes(self, rig):
         info, collection, sidecars, root = rig
@@ -297,7 +296,7 @@ class TestBuildOverlay:
 
         result = build_overlay(plan, fetcher=fake_fetch)
         assert result["refetched"] == 1
-        assert verify_overlay(info, plan).complete is True
+        assert verify_folder(info, plan.target_dir).complete is True
 
     def test_refetch_of_the_wrong_size_is_discarded(self, rig):
         info, collection, sidecars, root = rig
@@ -349,7 +348,7 @@ class TestSourceFolderNamingIsIrrelevant:
         build_overlay(plan)
         # The overlay directory itself must carry the torrent's root name.
         assert plan.target_dir.name == info.name
-        assert verify_overlay(info, plan).complete is True
+        assert verify_folder(info, plan.target_dir).complete is True
 
     def test_audio_is_still_hardlinked_from_the_renamed_folder(self, rig):
         info, collection, sidecars, root = rig
@@ -383,7 +382,7 @@ class TestOverlayStatus:
         status = overlay_status(plan.target_dir)
         assert status.orphaned is False
         assert status.shared_bytes == 1300 + 1100
-        assert verify_overlay(info, plan).complete is True
+        assert verify_folder(info, plan.target_dir).complete is True
 
     def test_collection_delete_orphans_the_overlay(self, rig):
         info, collection, sidecars, root = rig
@@ -397,7 +396,7 @@ class TestOverlayStatus:
         assert status.shared_bytes == 0
         assert status.pinned_bytes >= 1300 + 1100
         # The data survives — that is exactly why the space is not reclaimed.
-        assert verify_overlay(info, plan).complete is True
+        assert verify_folder(info, plan.target_dir).complete is True
 
     def test_cross_volume_move_orphans_the_overlay(self, rig, tmp_path):
         # A cross-device move is copy + rmtree, which is a delete as far as the
@@ -526,7 +525,7 @@ class TestNestedTorrents:
         plan = plan_overlay(info, rome, root, [], None, link_dirs=[str(london)])
         before_rome, before_london = snapshot_folder(rome), snapshot_folder(london)
         build_overlay(plan)
-        assert verify_overlay(info, plan).complete
+        assert verify_folder(info, plan.target_dir).complete
         assert collection_is_untouched(rome, before_rome) == []
         assert collection_is_untouched(london, before_london) == []
 
@@ -789,7 +788,7 @@ class TestSizeAmbiguity:
 
         assert entry.source == str(right), "the wrong same-size copy was kept"
         build_overlay(plan)
-        assert verify_overlay(info, plan).complete is True
+        assert verify_folder(info, plan.target_dir).complete is True
 
     def test_the_ambiguity_is_recorded_on_the_plan(self, ambiguous_rig):
         info, collection, sidecars, root, sibling, wrong, right = ambiguous_rig
@@ -839,14 +838,14 @@ class TestRepairOverlay:
         self, ambiguous_rig
     ):
         info, plan, entry, right = self._wrongly_built(ambiguous_rig)
-        assert verify_overlay(info, plan).complete is False
+        assert verify_folder(info, plan.target_dir).complete is False
 
         repair = repair_overlay(info, plan)
         assert repair["bad_pieces"] == 1
         assert repair["repaired"] == [entry.rel_path]
         assert repair["ok"] is True
         assert entry.source == str(right)
-        assert verify_overlay(info, plan).complete is True
+        assert verify_folder(info, plan.target_dir).complete is True
 
     def test_a_complete_overlay_is_left_alone(self, rig):
         info, collection, sidecars, root = rig

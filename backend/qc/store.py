@@ -241,32 +241,3 @@ def quarantined(conn: sqlite3.Connection, entity_kind: str, entity_key: str) -> 
         (entity_kind, entity_key),
     ).fetchall()
     return [r[0] for r in rows]
-
-
-def quarantined_batch(
-    conn: sqlite3.Connection, entity_kind: str, entity_keys: list[str]
-) -> dict[str, list[str]]:
-    """Batch form of :func:`quarantined` over many keys of the same kind.
-
-    Args:
-        conn: Open SQLite connection.
-        entity_kind: Entity kind shared by all keys.
-        entity_keys: Entity keys to look up.
-
-    Returns:
-        Map of entity_key -> rule IDs currently quarantining it. Keys with no
-        open/confirmed error findings are omitted.
-    """
-    if not entity_keys or not _table_exists(conn, "qc_findings"):
-        return {}
-    result: dict[str, list[str]] = {}
-    placeholders = ",".join("?" for _ in entity_keys)
-    rows = conn.execute(
-        f"SELECT entity_key, rule_id FROM qc_findings WHERE entity_kind=?"
-        f" AND entity_key IN ({placeholders})"
-        " AND severity='error' AND status IN ('open','confirmed')",
-        (entity_kind, *entity_keys),
-    ).fetchall()
-    for entity_key, rule_id in rows:
-        result.setdefault(entity_key, []).append(rule_id)
-    return result

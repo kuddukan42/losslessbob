@@ -82,10 +82,11 @@ class TestUpsertTuitRecording:
         db, path = dbmod
         db.upsert_tuit_recording(_row(seeders=1), path)
         db.upsert_tuit_recording(_row(seeders=9, quality="Excellent"), path)
-        rows = db.get_tuit_recordings(db_path=path)
-        assert len(rows) == 1
-        assert rows[0]["seeders"] == 9
-        assert rows[0]["quality"] == "Excellent"
+        with db.get_connection(path) as conn:
+            assert conn.execute("SELECT COUNT(*) FROM tuit_recordings").fetchone()[0] == 1
+        got = db.get_tuit_recording(1837, path)
+        assert got["seeders"] == 9
+        assert got["quality"] == "Excellent"
 
     def test_first_seen_at_survives_a_refresh(self, dbmod):
         db, path = dbmod
@@ -114,28 +115,6 @@ class TestUpsertTuitRecording:
     def test_get_missing_recording_returns_none(self, dbmod):
         db, path = dbmod
         assert db.get_tuit_recording(999999, path) is None
-
-
-class TestGetTuitRecordings:
-    def test_filter_by_lb_and_limit(self, dbmod):
-        db, path = dbmod
-        db.upsert_tuit_recording(_row(1, lb_number=100, added_at="2026-01-01"), path)
-        db.upsert_tuit_recording(_row(2, lb_number=200, added_at="2026-02-01"), path)
-        db.upsert_tuit_recording(_row(3, lb_number=200, added_at="2026-03-01"), path)
-        assert len(db.get_tuit_recordings(db_path=path)) == 3
-        assert len(db.get_tuit_recordings(lb_number=200, db_path=path)) == 2
-        assert len(db.get_tuit_recordings(limit=1, db_path=path)) == 1
-
-    def test_ordered_newest_added_first(self, dbmod):
-        db, path = dbmod
-        db.upsert_tuit_recording(_row(1, added_at="2026-01-01"), path)
-        db.upsert_tuit_recording(_row(2, added_at="2026-03-01"), path)
-        db.upsert_tuit_recording(_row(3, added_at="2026-02-01"), path)
-        assert [r["rec_id"] for r in db.get_tuit_recordings(db_path=path)] == [2, 3, 1]
-
-    def test_empty_table(self, dbmod):
-        db, path = dbmod
-        assert db.get_tuit_recordings(db_path=path) == []
 
 
 class TestTuitDownloads:

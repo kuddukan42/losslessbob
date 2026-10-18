@@ -222,29 +222,27 @@ class TestPruneAndExportSafety:
         assert "pipeline_file_hash" in db.USER_TABLES
         assert "pipeline_folder_state" in db.USER_TABLES
 
-    def test_prune_missing_folder_and_age(self):
+    def test_prune_missing_folder_only(self):
         db_path, conn, tmp = _make_db()
         try:
             import backend.db as db
             root = _make_folder(tmp)  # exists
-            db.upsert_file_hash(root, "t01.flac", 1, 1.0, sha256="aa", db_path=db_path)
-            db.put_folder_state(root, "fp", {"verify": {}}, db_path=db_path)
-            db.upsert_file_hash("/gone/folder", "x.flac", 1, 1.0, sha256="bb", db_path=db_path)
-            db.put_folder_state("/gone/folder", "fp", {"verify": {}}, db_path=db_path)
+            gone = os.path.join(tmp, "renamed_away")  # parent exists, folder doesn't
+            unmounted = "/no_such_mount/folder"  # parent missing: drive not mounted
+            for folder in (root, gone, unmounted):
+                db.upsert_file_hash(folder, "t01.flac", 1, 1.0, sha256="aa", db_path=db_path)
+                db.put_folder_state(folder, "fp", {"verify": {}}, db_path=db_path)
+            # Old rows are not pruned for their age alone.
+            conn.execute("UPDATE pipeline_file_hash SET hashed_at=datetime('now','-400 days')")
+            conn.execute("UPDATE pipeline_folder_state SET updated_at=datetime('now','-400 days')")
+            conn.commit()
 
             res = db.prune_pipeline_cache(db_path=db_path)
             assert res == {"file_hash_deleted": 1, "folder_state_deleted": 1}
             assert db.get_file_hash(root, "t01.flac", db_path=db_path) is not None
-            assert db.get_file_hash("/gone/folder", "x.flac", db_path=db_path) is None
-
-            # Age cap: backdate the surviving rows, then prune with a 0-day cap
-            # would delete everything — use an explicit old timestamp instead.
-            conn.execute("UPDATE pipeline_file_hash SET hashed_at=datetime('now','-400 days')")
-            conn.execute("UPDATE pipeline_folder_state SET updated_at=datetime('now','-400 days')")
-            conn.commit()
-            res = db.prune_pipeline_cache(max_age_days=365, db_path=db_path)
-            assert res == {"file_hash_deleted": 1, "folder_state_deleted": 1}
-            assert db.get_folder_state(root, db_path=db_path) is None
+            assert db.get_file_hash(gone, "t01.flac", db_path=db_path) is None
+            assert db.get_file_hash(unmounted, "t01.flac", db_path=db_path) is not None
+            assert db.get_folder_state(root, db_path=db_path) is not None
         finally:
             conn.close()
             shutil.rmtree(tmp, ignore_errors=True)

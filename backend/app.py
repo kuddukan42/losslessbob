@@ -1084,6 +1084,7 @@ def create_app() -> Flask:
     scheduler.start_collection_watcher()
     scheduler.start_integrity_scan_scheduler()
     scheduler.start_file_verify_scheduler()
+    scheduler.start_pipeline_cache_pruner()
     _slog.t("Flask: routes registering")
 
     # ── Checksum Lookup ──────────────────────────────────────────────────────

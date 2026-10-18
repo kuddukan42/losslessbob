@@ -628,15 +628,11 @@ class TestQuarantine:
             )
         assert store.quarantined(conn, "olof_event", "8") == []
 
-    def test_batch_and_missing_tables_are_safe(self, qc):
-        _db, store, _rules, conn, _path = qc
-        assert store.quarantined_batch(conn, "olof_event", []) == {}
-        assert store.quarantined_batch(conn, "olof_event", ["1", "2"]) == {}
-
+    def test_missing_table_is_safe(self, qc):
+        _db, store, _rules, _conn, _path = qc
         import sqlite3
         bare = sqlite3.connect(":memory:")  # no qc_findings, no row_factory
         assert store.quarantined(bare, "olof_event", "1") == []
-        assert store.quarantined_batch(bare, "olof_event", ["1"]) == {}
 
 
 def _tuit(conn, rec_id, lb, taper):

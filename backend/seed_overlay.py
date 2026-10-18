@@ -36,7 +36,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import BinaryIO
 
-from backend.torrent_verify import TorrentInfo, VerifyResult, verify_folder
+from backend.torrent_verify import TorrentInfo, verify_folder
 
 logger = logging.getLogger(__name__)
 
@@ -956,19 +956,6 @@ def build_overlay(plan: OverlayPlan, dry_run: bool = False, fetcher=None) -> dic
                 break
 
     return result
-
-
-def verify_overlay(info: TorrentInfo, plan: OverlayPlan) -> VerifyResult:
-    """Hash the built overlay against the torrent.
-
-    Args:
-        info: Parsed torrent metadata.
-        plan: The plan whose ``target_dir`` was built.
-
-    Returns:
-        A VerifyResult for the overlay directory.
-    """
-    return verify_folder(info, plan.target_dir)
 
 
 def _overlay_sources(info: TorrentInfo, target_dir: Path) -> dict[int, Path]:

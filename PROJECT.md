@@ -111,7 +111,7 @@ losslessbob/
 │   ├── olof_chronicle_parser.py  # Yearly Chronicles parser: calendar + new-tapes (2022+ appendix superseded, see below) (TODO-162 P4)
 │   ├── bobserve_fetcher.py   # bobserve.com setlist page mirror (2022+, supersedes chronicle appendix) → data/olof/bobserve_pages/ (TODO-228); TODO-306 P2: JobState-backed run_fetch/run_fetch_claimed, POST /api/bobserve/fetch; --index-only / run_index() → bobserve_event_index (all years, index pages only)
 │   ├── bobserve_parser.py    # bobserve setlist parser: olof_pages(corpus=bobserve) → olof_events + olof_songs, source='bobserve' (TODO-228)
-│   ├── qc/                   # Show Dossier QC engine (TODO-342 Phase 2): rules.py (pure (conn)->Iterable[Finding] functions in RULES; R-O1/R-O2/R-O3/R-O4/R-T1/R-T2/R-T3/R-T4/R-G1/R-E1/R-E2/R-F1/R-F2/R-S1/R-R1 shipped, also holds MONTH_YEAR_RE/ROTATION_FRAGMENT_RE for tools/ reuse), corroborate.py (Phase 3a/audit Q1-a: setlist_quorum()/corroborate_all() cross-source setlist corroboration feeding R-O4 — see its own PROJECT.md entry), decisions.py (write model for /qc-review: decide/bulk_decide/add_correction/classify_release — D-03 C19's classify_release() upserts release_classifications and immediately closes any matching open R-R1 finding), store.py (run_rule/run_all reconcile against qc_findings per the decision vocabulary; quarantined()/quarantined_batch()), __main__.py (`python -m backend.qc run`)
+│   ├── qc/                   # Show Dossier QC engine (TODO-342 Phase 2): rules.py (pure (conn)->Iterable[Finding] functions in RULES; R-O1/R-O2/R-O3/R-O4/R-T1/R-T2/R-T3/R-T4/R-G1/R-E1/R-E2/R-F1/R-F2/R-S1/R-R1 shipped, also holds MONTH_YEAR_RE/ROTATION_FRAGMENT_RE for tools/ reuse), corroborate.py (Phase 3a/audit Q1-a: setlist_quorum()/corroborate_all() cross-source setlist corroboration feeding R-O4 — see its own PROJECT.md entry), decisions.py (write model for /qc-review: decide/bulk_decide/add_correction/classify_release — D-03 C19's classify_release() upserts release_classifications and immediately closes any matching open R-R1 finding), store.py (run_rule/run_all reconcile against qc_findings per the decision vocabulary; quarantined()), __main__.py (`python -m backend.qc run`)
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-284: lbdir-based collection integrity scan engine
 │   ├── file_integrity.py     # TODO-267: per-file xxh3+sha256 bit-rot inventory (index/verify/rolling)
@@ -1501,7 +1501,7 @@ finding; live corpus 2026-09-11: 659 open); `store.py`:
 vocabulary (new key → `open`; `open`/`confirmed` refresh in place; a sticky
 `false_positive`/`corrected` with an unchanged evidence hash is left alone, a changed hash
 reopens it; `fixed` that fires again reopens; `open`/`confirmed` that stops firing becomes
-`fixed`), plus `quarantined()`/`quarantined_batch()` — error-severity, open/confirmed rule IDs
+`fixed`), plus `quarantined()` — error-severity, open/confirmed rule IDs
 for an entity, returning empty when the tables don't exist yet so dossier rendering degrades
 gracefully on a fresh install). CLI: `.venv/bin/python3 -m backend.qc run [--rule ID]
 [--db PATH]`, one line per rule (id, severity, open/new/fixed/reopened). Tests:
@@ -2612,6 +2612,11 @@ Watchdog observer monitors the `data/` directory for `.txt` file changes.
 3. Compare to `import_hash` in meta
 4. If different: call `run_import()` in background thread
 5. If `auto_scrape` meta is `'1'`: scrape any newly imported LB numbers
+
+**Pipeline cache prune** (`start_pipeline_cache_pruner`): hourly check, runs
+`db.prune_pipeline_cache()` once per 24 h (last run in meta `pipeline_cache_pruned_at`).
+Drops `pipeline_file_hash` / `pipeline_folder_state` rows for folders that are gone while
+their parent still exists — an unmounted drive's folders are never pruned. No age cap.
 
 ---
 

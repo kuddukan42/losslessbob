@@ -1,3 +1,20 @@
+[2026-10-18] — Test-only backend functions: 9 deleted, 5 kept, pipeline-cache prune scheduled (TODO-364)
+Changed: backend/db.py, backend/qc/store.py, backend/tuit_scraper.py, backend/wtrf_seed.py,
+  backend/seed_overlay.py, concert_ranker/lb/{commentary,repo,source_type}.py: deleted functions only
+  their own tests called — get_wishlist_lb_numbers, get_tuit_recordings, quarantined_batch,
+  torrent_root_name, parse_topic_links (+ _lb_numbers_in; superseded by parse_seed_targets on
+  2026-08-30), verify_overlay, mine_entries, get_scan, classify_entries. Tests ported to the
+  surviving APIs (get_wishlist, get_tuit_recording, parse_seed_targets, lb_numbers_in_line,
+  verify_folder, commentary_for + mined_labels) where they covered live code.
+Changed: backend/db.py: prune_pipeline_cache drops the 180-day age cap (a cached hash is checked
+  against size+mtime on every read, so age never makes it wrong) and prunes a missing folder only
+  when its parent directory exists, so an unmounted drive never loses its cache.
+Added: backend/scheduler.py: start_pipeline_cache_pruner — daily prune (meta
+  pipeline_cache_pruned_at), started from create_app. Nothing pruned the cache before
+  (113,705 file-hash rows over 4,159 folders).
+Kept as supported read APIs: get_tuit_uploads, get_tuit_shows/venues/songs/song_performances,
+  get_file_hash.
+
 [2026-10-18] — Orphan one-off tools: finished ones archived, live ones documented (TODO-360)
 Changed: archive/tools-throwaway/: moved in the one-shots whose task closed: build_adhoc_pdf.py,
   refetch_html_attachments.py (TODO-329), tuit_overlay_repair.sh (TODO-337),

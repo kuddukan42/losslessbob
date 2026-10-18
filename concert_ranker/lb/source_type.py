@@ -12,8 +12,6 @@ and folds their finer-grained output down to the four classes the scoring config
 """
 from __future__ import annotations
 
-import sqlite3
-
 # backend's display labels → our four conditioning classes.
 # 'Mixed' (matrix) and 'ALD' are deliberately left UNKNOWN: a matrix is part SBD
 # part AUD and belongs on neither pure curve, so it must not contaminate either
@@ -60,31 +58,3 @@ def derive_source_class(description: str | None, source_chain: str | None,
 
     label = classify_source_type(description, source_chain)
     return _LABEL_TO_CLASS.get(label or "", "UNKNOWN")
-
-
-def classify_entries(conn: sqlite3.Connection,
-                     lb_numbers=None) -> dict[int, str]:
-    """Derive source class for many entries from the DB.
-
-    Prefers the curator ``entries.source_type`` column, falling back to free-text
-    lineage mining where it is NULL.
-
-    Args:
-        conn: Open connection to ``losslessbob.db``.
-        lb_numbers: Optional iterable to restrict to; None classifies all entries.
-
-    Returns:
-        ``{lb_number: source_class}``.
-    """
-    sql = "SELECT lb_number, description, source_chain, source_type FROM entries"
-    params: list = []
-    lbs = list(lb_numbers) if lb_numbers is not None else None
-    if lbs:
-        sql += " WHERE lb_number IN ({})".format(",".join("?" * len(lbs)))
-        params.extend(lbs)
-    out: dict[int, str] = {}
-    for row in conn.execute(sql, params):
-        out[int(row["lb_number"])] = derive_source_class(
-            row["description"], row["source_chain"], row["source_type"]
-        )
-    return out

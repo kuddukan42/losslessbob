@@ -46,7 +46,7 @@ def conn(tmp_path):
 # ── repo ─────────────────────────────────────────────────────────────────────
 def test_scan_metrics_roundtrip(conn):
     sid = repo.create_scan(conn, config={"a": 1}, notes="t")
-    assert repo.get_scan(conn, sid)["notes"] == "t"
+    assert repo.latest_scan_id(conn) == sid
     mj = repo.build_metric_json({"crowd_snr_db": 10.0, "mud_ratio_db": 3.0},
                                 completeness=1.0, duration_sec=600.0)
     repo.persist_recording(conn, sid, 1, "SBD", mj, duration_sec=600.0)
@@ -116,11 +116,6 @@ def test_persist_is_idempotent(conn):
 
 
 # ── source_type ──────────────────────────────────────────────────────────────
-def test_source_class_derivation(conn):
-    classes = source_type.classify_entries(conn)
-    assert classes == {1: "SBD", 2: "AUD", 3: "FM"}
-
-
 def test_matrix_is_unknown():
     # A pure matrix (no SBD/AUD keyword) maps to UNKNOWN — it belongs on neither
     # pure curve, so it must not contaminate SBD or AUD calibration.
@@ -139,10 +134,10 @@ def test_curator_source_type_wins_over_freetext():
 
 # ── commentary ───────────────────────────────────────────────────────────────
 def test_commentary_mining(conn):
-    mined = commentary.mine_entries(conn)
-    assert "buried in crowd" in mined[2]["labels"]
-    assert "present vocals" in mined[1]["labels"]
-    assert mined[3]["labels"] == ["bright / airy"]
+    text = commentary.commentary_for(conn)
+    assert "buried in crowd" in commentary.mined_labels(text[2])
+    assert "present vocals" in commentary.mined_labels(text[1])
+    assert commentary.mined_labels(text[3]) == ["bright / airy"]
 
 
 def test_word_boundary_matching():

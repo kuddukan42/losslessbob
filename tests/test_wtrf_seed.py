@@ -14,11 +14,10 @@ from backend.wtrf_seed import (
     LinkSpec,
     _absolutise,
     _canonical_topic_url,
-    _lb_numbers_in,
     expand_lb_shorthand,
     is_wtrf_topic_url,
+    lb_numbers_in_line,
     parse_seed_targets,
-    parse_topic_links,
     pick_by_content,
     resolve_link,
 )
@@ -37,7 +36,7 @@ TOPIC = f"{FORUM_BASE}/index.php?topic=1234.0"
     ("LB-00707 vs LB-00808 vs LB-00707", [707, 808]),
 ])
 def test_lb_numbers_in(text, expected):
-    assert _lb_numbers_in(text) == expected
+    assert lb_numbers_in_line(text) == expected
 
 
 # ── Link recognition and canonicalisation ────────────────────────────────────
@@ -91,19 +90,19 @@ def test_canonical_collapses_scheme_www_anchor_and_offset():
 def test_every_paste_shape_reaches_the_same_topic(line):
     """A scheme-less copy is the common case, not the exception — dropping it
     reported "no WTRF topic links found" on a perfectly good link."""
-    specs = parse_topic_links(line)
+    specs = parse_seed_targets(line)
     assert len(specs) == 1
     assert specs[0].url == f"{FORUM_BASE}/index.php?topic=29688.0"
 
 
 def test_a_scheme_less_link_can_still_be_pinned():
-    specs = parse_topic_links(
+    specs = parse_seed_targets(
         "LB-00707 www.watchingtheriverflow.org/index.php?topic=42.0")
     assert specs[0].lb_number == 707
 
 
 def test_mixed_paste_shapes_dedupe_to_one_topic():
-    specs = parse_topic_links(
+    specs = parse_seed_targets(
         "www.watchingtheriverflow.org/index.php?topic=1234.msg99#msg99\n"
         "https://watchingtheriverflow.org/index.php?topic=1234.15\n"
         "index.php?topic=1234.0\n"
@@ -118,29 +117,29 @@ def test_parse_dedupes_and_preserves_order():
         "http://watchingtheriverflow.org/index.php?topic=999.0\n"
         "http://www.watchingtheriverflow.org/index.php?topic=1234.15\n"
     )
-    specs = parse_topic_links(text)
+    specs = parse_seed_targets(text)
     assert [s.url for s in specs] == [TOPIC, f"{FORUM_BASE}/index.php?topic=999.0"]
 
 
 def test_parse_pins_an_lb_written_before_the_link():
-    specs = parse_topic_links(f"LB-00707 {TOPIC}")
+    specs = parse_seed_targets(f"LB-00707 {TOPIC}")
     assert specs[0].lb_number == 707
 
 
 def test_parse_refuses_to_pin_when_the_line_names_several_lbs():
     """Two numbers on one line is not a pin — the post decides instead."""
-    specs = parse_topic_links(f"LB-707 or maybe LB-808 {TOPIC}")
+    specs = parse_seed_targets(f"LB-707 or maybe LB-808 {TOPIC}")
     assert specs[0].lb_number is None
 
 
 def test_parse_ignores_digits_inside_the_url_itself():
-    specs = parse_topic_links(f"{FORUM_BASE}/index.php?topic=707.0")
+    specs = parse_seed_targets(f"{FORUM_BASE}/index.php?topic=707.0")
     assert specs[0].lb_number is None
 
 
 def test_parse_of_empty_text_is_empty():
-    assert parse_topic_links("") == []
-    assert parse_topic_links("just some notes, no links") == []
+    assert parse_seed_targets("") == []
+    assert parse_seed_targets("just some notes, no links") == []
 
 
 # ── resolve_link ─────────────────────────────────────────────────────────────
@@ -423,11 +422,6 @@ def catalogue(monkeypatch):
              11612: "1/31/74", 12653: "6/27/78", 12654: "6/27/78"}
     monkeypatch.setattr("backend.wtrf_seed._entry_date", dates.get)
     return dates
-
-
-def test_a_roundup_paste_yields_no_links_at_all(catalogue):
-    """The premise: there is no URL in this paste to walk."""
-    assert parse_topic_links(ROUNDUP) == []
 
 
 def test_a_roundup_paste_still_yields_every_lb(catalogue):

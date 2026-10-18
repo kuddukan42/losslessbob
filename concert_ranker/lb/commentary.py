@@ -57,16 +57,3 @@ def commentary_for(conn: sqlite3.Connection, lb_numbers=None) -> dict[int, str]:
         sql += " WHERE lb_number IN ({})".format(",".join("?" * len(lbs)))
         params.extend(lbs)
     return {int(r["lb_number"]): (r["description"] or "") for r in conn.execute(sql, params)}
-
-
-def mine_entries(conn: sqlite3.Connection, lb_numbers=None) -> dict[int, dict]:
-    """Mine commentary + asserted labels per entry.
-
-    Returns ``{lb_number: {"commentary": text, "labels": [label, ...]}}`` —
-    ``labels`` being the human-asserted categories for quick agreement checks
-    against the algorithm's bands.
-    """
-    out: dict[int, dict] = {}
-    for lb, text in commentary_for(conn, lb_numbers).items():
-        out[lb] = {"commentary": text, "labels": mined_labels(text)}
-    return out
