@@ -1,3 +1,11 @@
+BUG-377: test_commentary_audit cross-clause test fails on base
+Status: Open
+File(s): tools/tapematch/tests/test_commentary_audit.py
+Reported: 2026-10-19
+Description: test_cross_clause_same_keyword_does_not_leak_to_unrelated_lb fails on ccb1ec3cc too (pre-existing, found 2026-10-19 while validating TODO-319); tests tapematch_session.py commentary attribution.
+Root cause: Unknown
+Fix: —
+
 BUG-375: Undefined CSS token var(--lbb-accent) renders uncoloured
 Status: Open
 File(s): gui_next/src/renderer/src/screens/ScreenFileIntegrity.tsx:135,gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:565,gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:656

@@ -24,19 +24,19 @@ Description: Rebuild the show dossier per instructions/Show Dossier Redesign.pdf
 
 TODO-339: TUIT corroborates entries almost perfectly — mine the 28 circa-date refinements, 69 source-type conflicts and 582 unattributed tapers
 Priority: Medium
-Status: Open
+Status: Open — 2026-10-19 part (4): 576 TUIT-only taper candidates exposed via GET /api/tapers/curation/tuit_candidates + 'TUIT candidates' workbench tab (additive, accept via existing confirm route). Parts (3) curator edits and (6) venues (-> TODO-338) remain
 Added: 2026-09-07
 Description: Measured 2026-09-07 over tuit_recordings (4,809 rows, 4,792 claiming an LB number) against entries. The headline is agreement, not conflict: every LB number TUIT claims exists in entries (0 unknown), and on the 4,764 pairs where both sides carry a usable date, 4,761 agree. That makes TUIT a genuine independent check on entries rather than another noisy corpus, and the small residue is all actionable. (1) THREE DATE CONFLICTS, adjudicated against olof_events: LB-13944 (TUIT 1978-06-01 vs LB 6/3/78 — both dates are real Universal Amphitheater shows, so one of the two is misfiled), LB-13920 (TUIT 1993-09-19 Walnut Creek/Raleigh vs LB 10/9/93 Shoreline/Mountain View — different show entirely, so TUIT's lb_number claim is wrong, not the date) and LB-12610 (TUIT 2015-10-30 Southampton vs LB 4/17/17 Amsterdam — same shape). Two of the three look like bad TUIT attribution rather than bad LB data; confirm and, where TUIT is wrong, the tracker's lb_number is what needs correcting before any seeding decision trusts it. (2) 28 CIRCA-DATE REFINEMENTS: entries carries 'xx' dates (5/xx/94, xx/xx/61) where TUIT has an exact one — e.g. LB-00558 5/xx/94 → 1994-05-22 (The Great Music Experience), LB-06629 2/xx/61 → 1961-11-04 (Carnegie Chapter Hall), LB-00010 7/xx/87 → 1987-07-19 (Autzen Stadium). These are the cheapest date wins available and each is checkable against olof_events in one query. A few of the 28 are LB year typos rather than mere imprecision (LB-10879 5/xx/61 vs TUIT 2013-06-30; LB-02311 xx/xx/64 vs 1998-01-24; LB-04820 xx/xx/60 vs 1975-09-10), which is a separate and larger correction. (3) 69 SOURCE-TYPE CONFLICTS: 4,212 pairs agree AUD/Audience and 110 agree SBD/Soundboard, but 29 are TUIT SBD vs LB Audience, 22 TUIT AUD vs LB Soundboard and 18 TUIT FM vs LB Audience. A source-type disagreement on a specific recording is exactly the kind of thing the lineage text can settle, and it matters for the ranker. A further 284 pairs have a TUIT AUD label where entries.source_type is blank. (4) TAPERS: 1,529 agree, 629 LB-only, 601 differ and 582 are TUIT-only — i.e. TUIT names a taper on 582 recordings where entries has none, which feeds TODO-213's curation directly. Of the 601 differences only 184 (30%) are substring variants of one another ('robert71' vs 'robert71 16', 'Mike Millard' vs 'millard 1gen jems'); the rest are real disagreements including several where LB records a LABEL not a taper ('Crystal Cat', 'bootleg'), which is the known _KNOWN_TAPER_ALIASES problem. (5) 74 recordings on the tracker claim LB numbers whose lb_status is 'private' and one claims a 'missing' one — worth checking, since a private LB circulating publicly on TUIT is either a status error on our side or a leak. (6) VENUES: on the 2,524 circulating shows where entries has a location for the same date, the TUIT venue string appears inside entries.location 1,556 times; the other 968 are dates where entries.location is city-only ('omaha ne', 'rochester minnesota') and tuit_shows supplies the venue name we simply do not have. That is the concrete case for using tuit_venues as a normaliser — see TODO-338. UPDATE 2026-10-14 — parts (1) and (2) ADJUDICATED, no LB date changes warranted: (1) LB-13920 and LB-12610 setlists match their LB date 13/13 and 21/21 (vs 5/13, 14/21 for TUIT's), so TUIT's lb_number is wrong on both (a tracker-side fix, not ours); LB-13944 is a 97-song multi-night Universal Amphitheatre set that fits both 6/1 and 6/3/78 — leave it. (2) The 28 'refinements' are almost all compilations ('various', 'Vol. III', 'MASTERS', 'collection', 'UK Tour 1966') that TUIT files under one representative date, so TUIT's date would be wrong for the LB as a whole; the 'year typos' are the same thing (or TUIT misattribution, e.g. LB-06850 Gaslight 10/xx/62 vs Enmax 2008). Only LB-02852 (Carnegie Chapter Hall → 1961-11-04) and arguably LB-00558 (Nara → 1994-05-22) are true single-show refinements. Note also that an entry date_str written to `corrections` is not consumed anywhere today (only olof_song credits are), so recording these needs a consumer first. Parts (3)–(6) remain open. UPDATE 2026-10-14 — part (5) RESOLVED: the 74 had become 61 TUIT recordings claiming private LBs; 59 match the entry date, so TUIT's attribution is right. 51 of them now have public LB pages — our status was stale (private_import of 2026-05-13, never re-checked). A full /api/scrape/private_rescrape (1,108 LBs) flipped 88 LBs private -> public, 50 of them TUIT ones. 11 remain private, ALL uploaded to TUIT by one user, 'tabby': LB-05551, 06025, 08562, 09128, 09222, 09429, 10358, 13944, 14036, 14174, plus LB-02408 (your manual override to private on 2026-08-11, though its LB page is public). Those 10 are private LBs circulating publicly on TUIT. UPDATE 2026-10-14 — part (3) ADJUDICATED (92 conflicts now; entries.source_type is curator-only, so nothing was changed): most are commercial-bootleg CD rips where neither side's lineage carries any evidence. The text DOES settle about 20, all needing a curator edit on our side: (a) LB 'Soundboard' that is really an audience tape recorded AT the soundboard ('mic stand at soundboard area', 'behind soundboard', 'right center sbd'): LB-00448, 00692, 00733, 03678, 10433, 10753 → Audience; LB-07200, LB-01608 → Mixed (SBD/AUD matrix). The same positional trap catalog-wide (Soundboard + 'at/behind/near sbd' + a mic chain) flags 22 LBs: 448, 692, 733, 1123, 1835, 3678, 5039, 5040, 5300, 5345, 5405, 7854, 8187, 8914, 9565, 9764, 10305, 10433, 12251, 12318, 13336, 15572. (b) LB 'Audience' on radio/TV broadcasts → FM/Pre-FM: LB-02558, 10706 (WBAI Broadside), 05970, 07847 (WRVR), 09875 (VH1), 11087 (WBAI), 07909 (WNEW) — TUIT's SBD on the last two is wrong too. (c) TUIT wrong, LB right (mic chains): LB-07160, 16253, 02860, 09648, 09649. 'tv band' mentions are a tape artifact, not broadcast evidence.
 
 TODO-338: Cross TUIT's show spine against olof_events — 94 TUIT shows have no olof concert, 216 olof concerts have no TUIT row
 Priority: Medium
-Status: Open
+Status: Open — 2026-10-19 parts (3) tuit_venues in geocoder chain and (4) tuitCirculating in Library performance lens SHIPPED; (2) venue join key decision remains
 Added: 2026-09-07
 Description: tuit_shows (4,036 rows, 46 tours, 1961-2026) and tuit_venues (2,452 venues) landed 2026-09-07 from /tour and /venue. The two corpora now disagree in three measurable ways and nothing reconciles them. (1) DATES: 94 TUIT show rows have no matching olof_events concert row and 216 olof concerts have no TUIT row at all — the olof-only side is mostly pre-1970 and circa-dated entries, but the 94 need reading one by one, because a TUIT show with a circulating tape and no olof event is either an olof gap or a TUIT date error. (2) TOURS: zero name overlap by construction — TUIT names 46 coarse tours (Never Ending Tour 1993, Infidels/Empire, Gospel Tour) while olof names 204 fine-grained legs (1994 US Fall Tour, 1986 True Confessions, part two: US). They are complementary, not conflicting, and a date belongs to exactly one of each, so tuit_shows.tour is usable as the era axis the app has never had while olof_events.tour_name stays the leg axis. Nothing yet joins them. (3) VENUES: 1,526 venue names match after case/punctuation folding, 926 are TUIT-only and 848 olof-only. Spot-checking the 1,314 shared dates where the two disagree, TUIT is usually the MORE specific string (its 'Lisner Auditorium, George Washington University' vs olof's 'Lisner Auditorium', 'Porch 1 of Newport Casino, Freebody Park' vs 'Porch 1 of Newport Casino'), i.e. a superset rather than a contradiction — which makes tuit_venues a candidate normaliser for entries.location free text and a geocoder input, since it carries a clean venue/city/country split with a year span. Work: (1) triage the 94 and the 216 into real gaps vs date/format artifacts; (2) decide the join key for venue identity and whether the dossier's show-identity grouping (currently olof_events.venue) should prefer the longer TUIT string; (3) feed tuit_venues city/country into the geocoder priority chain; (4) expose tuit_shows.circulating in the Library performance lens — TUIT calls 1,507 shows uncirculated while LB holds recordings for 1,269 of those dates, so the flag is a tracker-availability signal, not a scarcity one, and must be labelled as such. Do NOT present TUIT 'gap' as 'no tape exists'. UPDATE 2026-10-14 — part (1) TRIAGED: the 94 had become 56 TUIT shows with no olof concert, and almost all were OLOF PARSER GAPS, not TUIT errors. Fixed BUG-371 (the whole Jan–Mar 1991 tour: anchors spelled DSB<n>) and BUG-372 (misplaced Word bookmarks: Lincoln/Lowell/Irvine 2019, Augsburg/Mainz 2019, Hearnes 2001, Dublin 1993, Ahoy and House of Blues 2011, Beacon 2019-12-03, the 1993-11-16 Supper Club early show and more): +40 concerts, +676 songs. 19 remain: 1960s circa/home-tape dates TUIT pins to a day (1961-02-01 Gleason, 1961-09-01 Gaslight, 1961-10-01 Folklore Center, 1963-01-15 Dobell's, 1963-04-18, 1965-12-04 Berkeley, 1966-05-12 Birmingham); olof files as non-concert (1976-05-10, 1986-02-17/18 Perth); TV/awards (1997-05-21, 2012-01-12); real shows Olof's pages lack or that still don't parse — 2014-11-25 DAR Constitution Hall (DSN36360, header has no number line), 2019-11-12 UMBC (DSN40330, no bookmark at all), 1981-11-16 Atlanta, 1988-08-18 Portland, 1996-04-18 Providence, 2004-10-18 Davis. The olof-only side (now 203 olof concert dates with no TUIT row) is mostly NOT shows: 110 have no setlist.fm or bobdylan.com date either — studios, TV/radio, rehearsal rooms, private homes, guest spots that Olof types as 'concert' (Levy's Studio 1965, PBS-TV 1971, Studio Instrumental Rentals 1975). 33 more are setlist.fm-only, the same shape (WFMT, CBC TV, BBC). About 60 are confirmed by both sources or by bobdylan.com, i.e. real shows TUIT's calendar lacks: e.g. 1971-08-01 Madison Square Garden (Bangladesh), 1974-01-10 Maple Leaf Gardens, 1976-01-25 Houston Astrodome, 1978-09-27 Nassau, 1986-07-17 MSG, 1987-10-14 Wembley. Part (1) is done; (2)–(4) remain.
 
 TODO-336: Triage the 114 pairs where LB says different but tapematch says same — the untested polarity
 Priority: Medium
-Status: Open — 2026-09-30: with the 0.05 floor, 21 of the 41 direct-leg queue pairs stop linking and 18 queue pairs split out of their family once replayed (TODO-333); still open: listen to the 14 high-corr pairs, hand the 59 chained pairs to TODO-319
+Status: Open — 2026-10-19 census re-run after 0.05 floor: 114 -> 78 pairs (15 lb_error_candidate, 20 weak_link, 43 chained); of the 41 direct-leg pairs 20 still link (staircase 10, windowed 6, fingerprint 2, rule_d 2), 16 cleared, 5 now chained. family_guard (TODO-319) resolves 7 of 12 measurable chained pairs. Still open: listen to the 14/15 high-corr pairs; a gate for windowed/rule_d/staircase direct legs
 Added: 2026-09-03
 Description: CONTRADICTED_CENSUS.md censused one polarity only — lb_says_same=1 with a different_family verdict (1,822 pairs, the recall problem). The opposite polarity has never been triaged: over latest_pairs on 2026-09-03 there are 114 pairs across 76 dates where lb_says_same=0 but the latest run merged them. These matter more per pair than the recall misses, because a false merge silently collapses two distinct tapes into one family in the app DB, whereas a miss only leaves them separate. The population splits cleanly by evidence type and should be worked as two separate queues, not one: 14 pairs sit at corr >= 0.75, where the primary correlation is decisive and the interesting question is whether the LB pages are wrong (a genuine undiscovered duplicate, worth a catalogue correction) — these are the high-value finds and there are few enough to listen to. The other 100 all sit below the 0.45 cluster threshold and therefore merged on a secondary, fingerprint or rule_d link, which puts them squarely in the failure class TODO-325 and TODO-319 are already chasing; expect most to resolve as false merges rather than as LB errors, and re-check them after whichever corroboration floor ships from TODO-325 rather than adjudicating them by hand first. Top dates by count: 1997-10-05 (6), 1999-03-02 (5), 2007-04-08 (4), 2009-04-11 (4), then 1990-06-01, 1995-05-26, 1997-10-03, 1997-12-11, 1999-07-10, 1999-10-26 at 3 each — note 2007-04-08 and 1990-06-01 are already named in TODO-319 and TODO-325 respectively, which supports the split above. Work: extend census_contradicted.py (or a sibling) to emit this polarity with the same bucket/marker treatment, run the 14 high-corr pairs past the LB commentary and a listen, and hold the 100 low-corr ones as a validation set for the TODO-325 floor — a floor that clears them without costing frozen-set true positives is a floor worth shipping. CENSUS BUILT 2026-09-03: tools/tapematch/census_false_merge.py, the mirror of census_contradicted.py. Artifacts: tools/tapematch/FALSE_MERGE_CENSUS.md (tracked) and data/tapematch/false_merge_queue.json (gitignored, per-queue pair lists with every signal, for re-running after a floor lands). Metadata only, no audio. Two corrections to the filing above, both from attributing the actual merge MECHANISM rather than reading a corr cut: (1) the '100 low-corr pairs' are not one queue. Replaying the shipped config.yaml through verdict.link_mechanism (new; pair_links now delegates to it, so the boolean and the named leg cannot drift — tests/test_link_mechanism.py) shows only 41 of them link on a direct leg — fingerprint_staircase 21, fingerprint 13, windowed 6, rule_d 1 — while 59 have NO direct leg fire at all and reached one family transitively through a third source. A TODO-325 floor can only act on the 41; the 59 are TODO-319's chain-clustering problem and no pairwise floor will touch them. (2) 30 of the 114 are not curator denials of this pair. lb_says_same=0 is set by extract_lb_relationship (tapematch_session.py:577) whenever backend.db._DIFF_RE matches anywhere in a ±250-char window around a mention of the other side's LB number, with no check that the denial is ABOUT the pair; in 30 rows the phrase is immediately followed by a THIRD LB number ('different recording than LB-3160' on a page that also mentions the pair's other side). Those rows are proximity artifacts and must not be counted against the matcher — the census carries a denial_scope field per row (84 pair_scoped / 30 third_party). The 14 primary-corr pairs confirm as filed (corr 0.82–0.99, all merged on primary) and none of the 14 is lineage-linked in entry_lineage, so LB genuinely does not record the relation; several are 1974 LB-2xxx/LB-9xxx pairs, which looks like a remaster/reissue family the catalogue never cross-referenced. REMAINING: listen to the 14 and decide catalogue corrections; re-run the census after a TODO-325 floor ships and check it clears the 41; hand the 59 to TODO-319.
 
@@ -65,12 +65,6 @@ Status: Open
 Added: 2026-09-03
 Description: TUIT (tangledupintorrents.org) metadata is structured where ours is free text, and 4,004 of 4,017 scraped tuit_recordings rows map to an LB entry (13 unmapped; covers 24% of 16,703 entries). A 2026-09-03 comparison of the two sets found: DATES — 3,974/3,977 full dates agree (99.9%); 3 real conflicts to adjudicate (LB-12610 4/17/17 vs 2015-10-30, LB-13920 10/9/93 vs 1993-09-19, LB-13944 6/3/78 vs 1978-06-01); TUIT also resolves 18 of our 27 'xx' partial dates. VENUE — TUIT has a structured venue for 100% of rows while our entries.location is free text that contains the venue name in only 1,238/4,004; this is the largest single gain and pairs with the existing olof_events.venue rule (use venue, not location strings, for show identity). LINEAGE — TUIT 3,268 vs our source_chain 2,258; 1,023 rows have lineage only on TUIT. SETLIST — TUIT 3,786 vs ours 3,302; 652 TUIT-only. SOURCE TYPE — 3,628/3,724 agree (97%), 280 rows TUIT fills where we have none, 96 conflicts that are mostly AUD<->SBD flips plus TUIT classes our vocabulary lacks (Matrix, Radio). TAPER — already covered by the taper curation workflow (backend/taper_curation.py, TODO-213/312); note only that our taper_name is polluted with non-taper words ('bootleg', 'master', 'digital master') where TUIT holds a real handle ('Crystal Cat', 'RL'), which depresses the apparent 1,537/1,861 (83%) agreement and is worth a cleanup pass. Work: decide per field whether TUIT is authoritative, additive-only, or advisory; add provenance so an imported value is attributable and reversible (entries.metadata_source already exists); build a reconciliation surface that lists conflicts for human adjudication rather than overwriting silently; and reuse the taper curation console pattern instead of inventing a second review UI. Do NOT bulk-overwrite entries from TUIT without that review step.
 
-TODO-330: Bulk tracker seeding has no announce pacing — a large add floods TUIT and drops existing seeds
-Priority: Medium
-Status: Open
-Added: 2026-08-31
-Description: Observed 2026-08-31 during the partial-overlay reseed: adding 584 torrents to qBittorrent inside an hour, on top of 1,833 already tagged 'tuit', pushed the tracker's announce endpoint into timeouts. A 200-torrent random sample showed 65 (33%) at tracker status 4 'timed out' and 10 more at status 1. Torrents that fail to announce are dropped from the tracker's peer list, so the site's seeding count FALLS while the local client still believes it is seeding — that is what the user noticed. Mitigation applied live: qBittorrent max_concurrent_http_announces lowered 20 -> 5 via the WebUI API (a runtime setting, not in the repo). TUIT is a ~21-member private tracker and tools/tuit_sync.py already paces its SCRAPE requests at 3s deliberately, but nothing paces the announce storm that a bulk seed triggers. Options to weigh: have the seeding path add torrents paused and release them on a timer; cap how many adds one run may perform; or document a required max_concurrent_http_announces for bulk runs and assert it before starting. Also worth surfacing tracker status in the seeding UI so a silent announce failure is visible. Re-sample announce health before deciding — the cap at 5 may prove sufficient on its own.
-
 TODO-324: Re-check the 1,869 written analysis.md verdicts whose [DISTINCT SOURCE] line rested on an untrusted speed ratio
 Priority: High
 Status: In progress — steps 1-2 done 2026-09-30: tools/tapematch/SPEED_RERUN_QUEUE.md (latest run per date: 2,011 affected sources / 1,196 dates with analysis.md; heuristic buckets a=535 no change, b=1,292 re-run (842 dates; ~90-95% precise; 442 are 'contra' — info file claims same recording), c=184 unclear). Heuristic ~70-75% overall, treat b+c as the re-run superset, contra dates first. Step 3 re-runs read audio from the DYLAN drives — needs tj's go
@@ -85,7 +79,7 @@ Description: Three concrete per-LB defects surfaced while writing analyses; each
 
 TODO-319: tapematch — investigate chain-clustering over-merges surfaced by the 2026-08-21 batch
 Priority: Medium
-Status: Open
+Status: In progress — 2026-10-19: family_guard built (verdict.form_families, config.yaml family_guard enabled:false, hash unchanged while off). Replay: strong_legs [primary,windowed,hiss,fingerprint,rule_d] @ density 0.5 splits 14 dates (+18 families), 0 frozen TP lost, 2 FP cleared; resolves 2011-10-21, 2007-04-08, 2004-03-05, 2002-04-28. Most named dates are staircase-fingerprint pairwise merges (TODO-325 class), not chains. DECISION tj: enable + replay_writeback.py --apply. Report tools/tapematch/CHAIN_OVERMERGE_REPORT.md
 Added: 2026-08-21
 Description: Recurring pattern across the 2026-08-21 50-run batch: a recording gets chained into a family with no confirmed pairwise correlation to any member, against the taper commentary. Instances flagged: 2010-03-23 Tokyo (all 6 recordings merged into one family, zero confirmed pairwise evidence, contradicted by every taper account), 2010-03-24 (LB-15001 plus three others chained in unsupported), 2004-03-05 (LB-01632), 2009-10-10 (LB-08098), 1997-12-10 (over-merged single family against taper accounts), 2007-04-04 (Family 1 contradicts LB-06130's own 'distinct from all four' commentary), 2024-04-06 (LB-16228 merged into the nightlymoth family unsupported). Question to answer: is single-linkage/transitive clustering promoting weak or one-sided links into full family membership, and should family formation require a minimum confirmed-pair density rather than connectivity alone? Note the overlap with TODO-318 — some of these may be genuine same-source pairs that the disabled polarity rescue would have scored correctly, so run that validation first and re-check which of these survive as real over-merges. Per-date analysis.md files carry the specifics. Corroborated 2026-08-21 (fifth batch), same shape on further dates: 2007-04-08 is the new worst case (all 7 recordings collapsed into one family against four explicit taper contradictions), plus 2003-10-17 (Family 1, 7-way DISAGREES), 1997-12-08, 1997-12-18, 2009-07-05, 2012-07-03, 2011-06-26 (LB-12255), 2003-04-19 and 2004-11-13 (near-noise merges contradicted by taper A/B comparisons). The pattern is now seen across five batches and is not date-specific. Corroborated again 2026-09-02 (26-run tail batch, every dir triaged `clear`/0 rules): 14 of 26 came back needs-review, 56% against a 32% all-time base rate (996/3100), and the excess is almost entirely this mechanism. Worst case 2010-03-28 Tokyo — all 8 recordings in one family at mean intra-corr 0.058, only 3 pairs carrying secondary hiss evidence and 28 pairs listed `chain-unverified`, against distinct rigs (ECM-MS907>R-09 vs COS-11>R-1) and noise floors spanning -72 to -89 dB. Same shape on 2004-03-01, 2004-06-08, 2008-06-11 (1 family for 6 recordings, ~5 real), 2002-04-28 (1 for 9, ~4 real), 2011-10-21 (1 for 9, against LB-09691's explicit 'different recording' note), 2010-03-29, 2000-09-20, 2002-10-11 and 2001-10-12. Note the skew: this tail batch is all large dates (6-11 entries), and more sources means more chances for one weak link to chain a whole date together — so a fix should be validated against high-entry-count dates specifically, not just the batch average.
 
@@ -106,12 +100,6 @@ Priority: Low
 Status: Open
 Added: 2026-08-19
 Description: The tracker also exposes /forum, /wiki, /requests, /collages, /songs, /tour, /venue and /stats, none of which backend/tuit_scraper.py touches. Worth deciding which carry lineage or taper intelligence worth mirroring before writing more parsers.
-
-TODO-315: TUIT — crawl the full 1,635-recording catalogue and diff it against lb_master
-Priority: Medium
-Status: Open
-Added: 2026-08-19
-Description: tools/tuit_sync.py --pages currently syncs only what is asked for; the remaining ~33 listing pages have never been crawled. Once mirrored, tuit_recordings.lb_number + info_hash + files_json can be diffed against lb_master/my_collection to find (a) shows TUIT has that the collection lacks, (b) checksum/lineage disagreements feeding TODO-299. Pace it like the wtrf crawl — small nightly batches at the 3s delay, not a single sweep.
 
 TODO-303: Locate Olof's bobtalk quotes in our audio and add a play button
 Priority: Medium
@@ -161,7 +149,7 @@ Description: BUG-120 forensics (2026-07-22) found two non-FLAC corrupt files sha
 
 TODO-234: TapeMatch family over-merge review — 22 series-vs-series taper conflicts
 Priority: Medium
-Status: Open
+Status: Open — 2026-10-19 review tools/tapematch/SERIES_CONFLICT_REVIEW.md: now 21 rows / 11 cases. SPLIT 1995-12-09 (6083), 1998-06-12 (6465), 1997-04-05 (curator same_as disagrees); KEEP+relabel 1993-02-07, 1995-10-02, 2000-05-25, 1995-03-16 (low conf); NOT-MERGE (curator same_as edges, not tapematch) 1988-07-17, 1990-10-11, 1995-03-14, 1998-06-03. Awaiting tj decision; nothing split
 Added: 2026-07-13
 Description: After the TODO-213 taper-attribution curation pass (non-taper credits excluded, robert removed, mention-downgrade rule) the taper_attributions conflict queue dropped to 53, of which 22 are SERIES-vs-SERIES: two *legitimate* taper series (e.g. ltc/ltg, net taper a/net taper i, lta/ntj) attributed to members of one recording_families family, both with strong (series_code/explicit) evidence. These are NOT an attribution bug and NOT a wordlist fix — they indicate the fingerprint/clustering pulled two genuinely different sources into one family (a false-merge). Recurs around prolific series: net taper a (10 merges), ltb (6), ltc/ltg (5). Approach: for each of the 22, pull the family's members + tapematch evidence (observations.db corr / duration / explicit signals for the pair), decide split vs keep; if split, the family_meta review_flag or a family-split path in tapematch is the lever, then re-run taper_attribution.recompute(). Belongs to the tapematch calibration/family subsystem, not backend/db.py taper curation. Query for the 22: SELECT lb_number, evidence_json FROM taper_attributions WHERE conflict=1 — filter to rows whose candidate tokens are all lt[a-z]/net taper [a-z]. Related: [TODO-213].
 
@@ -223,133 +211,6 @@ the 3 machine-provable negative flips went into regression_set_v2.json). Reviewi
 would re-base the honest recall denominator (~52% at current tp if all confirmed). Use
 calibration_audit.html for browsing; census output lists the pairs + evidence snippets.
 
-TODO-194: WTRF scraper — improve match quality for remaining needs_review/ambiguous cases
-Priority: Medium
-Status: Open
-Added: 2026-06-30
-Description: After BUG-225 (LB-tag mismatch disqualification) and BUG-226 (10s search-delay
-  floor) fixed the worst false-positive/false-negative classes, a validated 25-item batch run
-  still leaves 9/25 entries genuinely unresolved (not counting clean not_found / date-parse
-  failures). Audit results from that run, for use as concrete test cases when refining scoring:
-
-  Ambiguous — real positive-score ties, not just the score=5 floor:
-  - LB-16596: top two posts (topic=60197, topic=60199) tied at score=733, both with
-    filename_matches=72 equipment_matches=1. This is a hard case — likely two near-identical
-    posts for the same show/taper (e.g. original + re-up, or two encodes), so filename overlap
-    alone can't break the tie. Needs an additional differentiator: post date, attachment file
-    size/count vs checksums table row count, or post age (prefer earliest/most-replied topic).
-  - LB-16644: topic=59943 / topic=59965 tied at score=5 (no real signal either side) — genuine
-    toss-up, no data to disambiguate from.
-
-  needs_review — single surviving candidate, weak signal:
-  - LB-16633, LB-16632: RESOLVED by BUG-227, not a needs_review case — the lone candidate
-    (topic=54221) isn't an unmatched pre-app post, it's explicitly labeled "LB-8" in the post
-    body with an attached torrent named "LB-00008.torrent" (user-confirmed by inspecting the
-    page directly). It documents LB-8, an unrelated entry, not either Del Mar 16000-series
-    duplicate. The original score=5/has_torrent-only read was correct about the weak signal but
-    missed the tag because the Round 0 regex required 3-5 digits (missed unpadded "LB-8") and
-    never scanned attachment filenames at all. Both gaps fixed in backend/wtrf_scraper.py; this
-    candidate now hard-disqualifies instead of surfacing as needs_review. The placeholder
-    taper_name ("same source recording") idea below may still be worth doing for other entries,
-    just not load-bearing for this pair anymore.
-  - LB-16614: score=33, equipment_matches=1 + taper_match=mkws — single equipment token plus a
-    taper hit still isn't enough to clear the 'medium' bar under _classify_confidence's
-    `(eq>=2 and tap) or (fname>=1 and eq>=2)` rule. Worth checking whether 1 equipment token +
-    taper match should count as medium.
-  - LB-16613, LB-16612: score=21, equipment_matches=2 only (no taper, no filename) — sits right
-    at the medium threshold's eq>=2 condition but fails because that branch also requires
-    `tap` or `fname>=1`. Worth revisiting whether eq>=2 alone, with no contradicting signal,
-    should be enough.
-  - LB-16586, LB-16622: score=5, has_torrent only, no other signal — likely genuine not_found;
-    the search is matching on date alone with no content confirmation.
-
-  DONE (2026-06-30): Two more disqualification/scoring gaps fixed in backend/wtrf_scraper.py:
-  - Download-date window: entries.description's "bittorrent download MM/YY" note (this
-    curator's own acquisition date) is now parsed and any candidate post made more than 6
-    months before it is hard-disqualified — a post can't be the source of a download that
-    predates it. Live-verified: LB-16627's stale 2024-10-14 candidate now filtered while its
-    genuine FFP match still downloads; LB-16633/16632's lone candidate disqualified on date too
-    (independent of the BUG-227 LB-tag fix above). LB-16586, LB-16622, LB-16613, LB-16612 (the
-    has_torrent-only / weak-equipment cases below) should be re-tested against this — some may
-    now resolve to a clean not_found (correctly) rather than lingering as needs_review.
-  - MD5/SHA1 checksum round added alongside FFP (chk_type 'm'/'s', same 100pt/definitive tier)
-    — older SHN-era posts often list raw hashes instead of FFP fingerprints, which were
-    previously invisible to scoring entirely.
-
-  Ideas still open, roughly in order of expected payoff:
-  1. Tie-breaker for positive-score ambiguous matches (post date / attachment size or count /
-     reply count) — currently any tie at any score, even a strong one like 733, is treated
-     identically to a zero-signal tie. (Post date is now extracted per-candidate for the
-     download-window check above — reuse it here instead of refetching.)
-  2. Exclude placeholder taper_name values ("same source recording" and similar) from the
-     taper-match round so they don't mask genuinely unmatchable entries as "weak signal"
-     when they're actually "no signal available."
-  3. Revisit _classify_confidence's medium-tier boundary — eq>=2 alone and (fname>=1 OR
-     eq=1)+taper currently don't clear it; check against more real examples before loosening.
-  4. Board-page crawl mode (already listed under TODO-193) as a fallback for entries that are
-     consistently not_found via search2.
-  Relates to: [[TODO-193]] (WTRF torrent fetcher — GUI surface and review flow).
-
-TODO-193: WTRF torrent fetcher — GUI surface and review flow
-Priority: Medium
-Status: Open
-Added: 2026-06-29
-Description: backend/wtrf_scraper.py + tools/wtrf_fetch_missing.py implement the
-  search/download/qbt pipeline for missing items (see CHANGELOG 2026-06-29d).
-  LIVE TESTING (2026-06-30): user ran it against the real WTRF instance — search2
-  + scoring confirmed working in most cases. Two real-world failure modes observed:
-  'ambiguous' (two posts score identically, no way to auto-pick), and cases where
-  the best match wasn't actually the most relevant post. Both already land in
-  wtrf_downloads as status='skipped' with confidence 'ambiguous'/'needs_review' for
-  manual review — the manual-review action below is what's needed to actually act
-  on them; not yet scoped further than that.
-  CLI list/range input added 2026-06-30: --lbs flag accepts comma-separated LB
-  numbers and/or ranges (e.g. '16640-16650,16700'), mutually exclusive with --lb.
-  CLI now also prints the matched topic_url for skipped (needs_review/ambiguous/
-  not_found) rows, including both tied URLs on an ambiguous match, so the user can
-  manually open and check candidates without a DB query — a stopgap ahead of the
-  full GUI review action below.
-  REFINEMENT (2026-06-30): root-caused both observed failure modes from a 25-item
-  dry run. (1) BUG-225: candidate scoring never checked whether a post body's own
-  "LB-NNNNN" tag (embedded by forum_poster.py's metadata header) named a DIFFERENT
-  entry, so posts documenting other shows competed on weak date/has_torrent signals
-  and won 'ambiguous'/'needs_review' ties — fixed by hard-disqualifying tag
-  mismatches in find_torrent_for_lb. (2) BUG-226: search2 queries were spaced only
-  delay*1.5 (3.0s at the default --delay 2.0) apart, below WTRF's ~5s search
-  flood-control window — likely caused some 'not_found' results to be silently
-  throttled empty pages rather than genuine no-match. Fixed by flooring
-  search_delay at 10.0s (_SEARCH_DELAY constant). wtrf_downloads rows written
-  before this fix should be treated as unreliable, especially 'not_found' rows.
-  PAUSED-ADD (2026-06-30): `--paused` CLI flag (backend/qbittorrent.py
-  `add_torrent_for_download(paused=...)`) lets `--add-to-qbt` queue matches in
-  qBittorrent without starting the download — used for a full batch run against the
-  220 missing LB entries above LB-16000 (113 paused-added, 22 downloaded-only, 85
-  unmatched; skipped list with candidate links exported to wtrf_skipped_review.md
-  for manual review). This covers the "don't auto-download unreviewed matches"
-  half of the manual-review action below; the GUI surface to actually review/
-  confirm/reject from the app is still open.
-  Remaining work:
-  - GUI screen or panel to drive the crawl (start/stop, progress, results table)
-    that surfaces wtrf_downloads rows with confidence + signals for review.
-  - Manual review action for 'needs_review' / 'ambiguous' rows: show the matched
-    topic URL so the user can open it and manually confirm/reject before adding
-    to qBittorrent (or resuming a paused-added torrent).
-  - Board-page crawl mode as an alternative to search2 when SMF search is
-    throttled or returns unexpected results (walk board=16.0, board=16.20, …).
-  Relates to: [[TODO-135]] (scrape WTRF for existing posts), [[TODO-194]] (match quality
-    refinement — audit data from the 2026-06-30 batch runs).
-
-TODO-178: Minimized left sidebar — new icon-only nav representation
-Priority: Low
-Status: Open
-Added: 2026-06-22
-Description: No collapsed/minimized sidebar mode currently exists in
-  gui_next/src/renderer/src/components/AppShell.tsx (Sidebar component, ~lines 120-561) —
-  nav items always render icon + label. Implementing "new icons for when left bar is
-  minimized" depends on first adding a minimize/collapse toggle for the sidebar, then
-  rendering a icon-only nav state (just the Icon, no label, narrower width) using new icon
-  assets suited to that compact form.
-
 TODO-177: Implement the new app icon
 Priority: Low
 Status: Open
@@ -358,34 +219,6 @@ Description: Replace the app icon with a new design. No icon asset exists yet in
   (gui_next/resources/ only has installer.nsh; no .ico/.icns/.png app icon found) and no new
   asset has been provided yet — needs the actual icon file before implementation, then wire
   it into the Electron build config (gui_next build resources) and installer.
-
-TODO-172: DB Editor — make it more like a real SQL management tool (SSMS-style)
-Priority: Low
-Status: Open
-Added: 2026-06-22
-Description: Note: column-header click-to-sort already exists (ScreenDbEditor.tsx:1492-1509,
-  with ▲/▼ indicator) — not a gap. Broader ask is to make gui_next/src/renderer/src/screens/
-  ScreenDbEditor.tsx feel more like SQL Server Management Studio generally. Candidate
-  features to scope out: resizable/reorderable columns, a schema tree sidebar (tables/views
-  grouped, expandable to show columns+types), multi-tab query windows (multiple
-  SqlQueryPanel instances open at once, ScreenDbEditor.tsx:566), copyable cell/row selection
-  in the results grid, query history/favorites, pinned/frozen first column, and per-column
-  type-aware cell formatting (dates, booleans, NULL styling) in the rows view.
-
-TODO-160: Revamp curator mode — consolidate options and hide existence from normal users
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: Curator mode currently exposes itself to every user: AppShell.tsx:400-424 always
-  renders a visible "curatorHint" block + "Enable curator mode" link in the sidebar when
-  curatorMode is off, so any user can discover and turn it on. The "Curator" nav group
-  (AppShell.tsx:78, gated at :226 via `group.gatedGroup && !curatorMode`) and the
-  curatorMode/setCuratorMode flag (store.ts:5-17) otherwise work as a simple client-side
-  toggle with no real access control. Needs a revamp: (1) consolidate whatever curator-only
-  options exist into one coherent settings surface instead of scattering gated items, and
-  (2) replace the always-visible hint/link with a hidden trigger (e.g. a secret key
-  combo, hidden settings entry, or build-time flag) so normal users have no visible
-  indication curator mode exists at all.
 
 TODO-136: Post editor form for existing WTRF posts
 Priority: Low
@@ -399,50 +232,9 @@ should surface this as an "Edit post…" action on the forum post history entry 
 entry — pre-populate subject/body from a scrape of the existing topic, allow editing in a
 textarea, then submit. Depends on TODO-135 for posts not originally made through this app.
 
-TODO-135: Scrape WTRF board for existing LB posts
-Priority: Medium
-Status: Open
-Added: 2026-06-10
-Description: Scrape the WTRF SMF board(s) to discover which LB entries already have a forum
-topic, regardless of whether they were posted through this app. Parse board index pages
-(sorted by date) and individual topic subjects to extract the LB number. Store results in
-the existing `forum_posts` table (or a parallel `scraped_posts` table) so the GUI can show
-"already posted" status on the Rename/post panel without relying solely on the local log.
-Should be runnable on-demand (e.g. "Sync from WTRF" button) and optionally on startup.
-Credentials already managed by credentials.py; HTTP session logic already in forum_poster.py.
-
-TODO-251: Trading — multi-friend batch compare
-Priority: Low
-Status: Open
-Added: 2026-05-30
-Renumbered: from TODO-106 on 2026-07-15 (TODO-248 — id collided with the unrelated done
-  TODO-106 "Audio fingerprint matching" in TODO_DONE.md)
-Description: Extend the Trading screen to compare your collection against multiple friends at
-  once — show a matrix view (friends × shows) so you can find the best candidate to trade
-  any given recording with. Also: add a GET /api/trading/friends/<id>/entries route so the
-  GUI can retrieve raw friend entries without going through the compare diff endpoint.
-
 ---
 
 ---
-
-TODO-085: Map tab — sequential date-linked travel view across the globe
-Priority: Low
-Status: Open
-Added: 2026-05-21
-Description: Add a new sub-view (or toggle) on the Map tab that renders concert locations
-  as a chronological travel trail — polylines (or an animated path) connecting each
-  geocoded entry to the next in date order, visualising movement across the globe over
-  the years. Current map just plots pins with no temporal linkage.
-  Design considerations:
-    • Sort geocoded entries by date_str ascending; skip entries with no lat/lon.
-    • Draw a Leaflet polyline (or GeoJSON LineString) through the ordered coordinates.
-    • Optionally colour-code segments by decade so different eras are visually distinct.
-    • Consider a play/scrub slider to animate the route year-by-year.
-    • Hook into the existing MapTab _open_filtered_map() or add a separate "Travel view"
-      button that generates a different HTML payload from the /api/map endpoint.
-    • Cluster of same-venue returns (same lat/lon) should be shown as a loop or ignored
-      to keep the line readable.
 
 ---
 

@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-376: Trading export/compare 500: selected date_str/location/lb_status from my_collection
+Status: Fixed
+File(s): backend/app.py
+Reported: 2026-10-19
+Fixed: 2026-10-19
+Root cause: Queries predate the move of date/location/status to entries; my_collection never carried them.
+Fix: LEFT JOIN entries for date_str/location/status (commit 4a291a034); regression test in tests/test_trading_batch.py.
+
 BUG-373: Pipeline drag-and-drop from file manager adds nothing to the queue
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:2595

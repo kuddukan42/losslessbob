@@ -1,3 +1,20 @@
+[2026-10-19] — Parallel backlog sweep: 10 TODOs closed, TODO-319 family guard (off), TUIT/WTRF/trading/GUI features
+Added: gui_next AppShell/ScreenSetup/store: curator mode hidden behind Ctrl+Shift+Alt+C (or 7 clicks on the Master version label), Curator card in Setup; collapsible icon-only sidebar, forced at <=900px (TODO-160, TODO-178)
+Added: backend/resources/map.html + ScreenMap: travel-trail view — date-ordered polyline coloured by decade, year range, gap break (TODO-085)
+Added: ScreenDbEditor: SSMS-style SQL panel — schema tree, query tabs, history, typed cells, copy, resizable/frozen columns (TODO-172)
+Added: backend/app.py + TradingMatrix.tsx: GET /api/trading/friends/<id>/entries, POST /api/trading/batch-compare, friends x shows matrix (TODO-251)
+Fixed: backend/app.py: trading export/compare 500'd selecting columns my_collection lacks; now join entries (BUG-376)
+Added: backend/geocoder.py: tuit_venues city/country in the structured-source chain; db.get_performances: tuitCirculating shown as tracker availability in the Library lens (TODO-338 parts 3-4)
+Added: backend/taper_curation.py: tuit_candidates() + GET /api/tapers/curation/tuit_candidates + workbench 'TUIT candidates' tab — 576 TUIT-only tapers, additive (TODO-339 part 4)
+Added: backend/qbt_seeding.py: bulk /api/qbt/add adds paused and releases in paced batches, announce preflight (409), POST /api/qbt/tracker_status + GUI tracker panel (TODO-330)
+Added: tools/tuit_sync.py --crawl (resumable, paced) + tools/tuit_lb_diff.py -> docs/tuit_lb_diff.md (TODO-315)
+Added: backend/wtrf_discovery.py: scraped_topics tables, archive import + paced board sync via write queue, POST /api/wtrf/sync_posts, 'Found on WTRF' rows + Sync button in the entry Forum tab (TODO-135)
+Added: backend/wtrf_scraper.py: tie-breaker on post date/attachments, placeholder tapers excluded; backend/wtrf_review.py + ScreenWtrfReview (/wtrfreview) confirm/reject; rejected topics never re-offered (TODO-194, TODO-193)
+Added: tools/tapematch verdict.form_families family_guard (config enabled:false, calibration hash unchanged) + CHAIN_OVERMERGE_REPORT.md: density 0.5 splits 14 dates, 0 frozen TP lost, 2 FP cleared — enable is tj's call (TODO-319)
+Changed: tools/tapematch FALSE_MERGE_CENSUS.md re-run after the 0.05 floor (114 -> 78 pairs) and new SERIES_CONFLICT_REVIEW.md (TODO-336, TODO-234)
+Changed: gui_next locales: DeepL for all new strings
+Changed: BUG-377 opened: tapematch test_commentary_audit cross-clause test fails on the base commit too (pre-existing)
+
 [2026-10-18] — Git history purged of the 1.6 GB embed_cache_12x experiment cache (TODO-359)
 Changed: git history: `git filter-repo --path tools/tapematch/embed_cache_12x --invert-paths`, force-pushed all branches + tags v1.5.0–v1.5.2; pack 1.74 GiB → 193 MiB. Every commit SHA changed; SHAs cited in older entries no longer resolve. Existing clones must re-clone.
 Changed: local tools/tapematch/embed_cache_12x/ left on disk (gitignored, unused since the TODO-202 12× probe was rejected 2026-07-05). Backup of the old history: .debug/pre_purge_2026-10-18.bundle.

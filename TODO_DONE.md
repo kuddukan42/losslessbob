@@ -2,6 +2,234 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-315: TUIT — crawl the full 1,635-recording catalogue and diff it against lb_master
+Priority: Medium
+Status: Done
+Added: 2026-08-19
+Closed: 2026-10-19
+Description: tools/tuit_sync.py --pages currently syncs only what is asked for; the remaining ~33 listing pages have never been crawled. Once mirrored, tuit_recordings.lb_number + info_hash + files_json can be diffed against lb_master/my_collection to find (a) shows TUIT has that the collection lacks, (b) checksum/lineage disagreements feeding TODO-299. Pace it like the wtrf crawl — small nightly batches at the 3s delay, not a single sweep.
+tools/tuit_sync.py --crawl (resumable cursor, paced) and tools/tuit_lb_diff.py -> docs/tuit_lb_diff.md: 2 TUIT LBs not in collection, 1,166 filename disagreements (TUIT has no hashes). Cron line suggested, not installed.
+
+TODO-330: Bulk tracker seeding has no announce pacing — a large add floods TUIT and drops existing seeds
+Priority: Medium
+Status: Done
+Added: 2026-08-31
+Closed: 2026-10-19
+Description: Observed 2026-08-31 during the partial-overlay reseed: adding 584 torrents to qBittorrent inside an hour, on top of 1,833 already tagged 'tuit', pushed the tracker's announce endpoint into timeouts. A 200-torrent random sample showed 65 (33%) at tracker status 4 'timed out' and 10 more at status 1. Torrents that fail to announce are dropped from the tracker's peer list, so the site's seeding count FALLS while the local client still believes it is seeding — that is what the user noticed. Mitigation applied live: qBittorrent max_concurrent_http_announces lowered 20 -> 5 via the WebUI API (a runtime setting, not in the repo). TUIT is a ~21-member private tracker and tools/tuit_sync.py already paces its SCRAPE requests at 3s deliberately, but nothing paces the announce storm that a bulk seed triggers. Options to weigh: have the seeding path add torrents paused and release them on a timer; cap how many adds one run may perform; or document a required max_concurrent_http_announces for bulk runs and assert it before starting. Also worth surfacing tracker status in the seeding UI so a silent announce failure is visible. Re-sample announce health before deciding — the cap at 5 may prove sufficient on its own.
+backend/qbt_seeding.py: bulk /api/qbt/add adds paused, releases in batches (5 per 60s, cap 50/run), preflight refuses when max_concurrent_http_announces > 20; POST /api/qbt/tracker_status + GUI tracker panel.
+
+TODO-194: WTRF scraper — improve match quality for remaining needs_review/ambiguous cases
+Priority: Medium
+Status: Done
+Added: 2026-06-30
+Closed: 2026-10-19
+Description: After BUG-225 (LB-tag mismatch disqualification) and BUG-226 (10s search-delay
+  floor) fixed the worst false-positive/false-negative classes, a validated 25-item batch run
+  still leaves 9/25 entries genuinely unresolved (not counting clean not_found / date-parse
+  failures). Audit results from that run, for use as concrete test cases when refining scoring:
+
+  Ambiguous — real positive-score ties, not just the score=5 floor:
+  - LB-16596: top two posts (topic=60197, topic=60199) tied at score=733, both with
+    filename_matches=72 equipment_matches=1. This is a hard case — likely two near-identical
+    posts for the same show/taper (e.g. original + re-up, or two encodes), so filename overlap
+    alone can't break the tie. Needs an additional differentiator: post date, attachment file
+    size/count vs checksums table row count, or post age (prefer earliest/most-replied topic).
+  - LB-16644: topic=59943 / topic=59965 tied at score=5 (no real signal either side) — genuine
+    toss-up, no data to disambiguate from.
+
+  needs_review — single surviving candidate, weak signal:
+  - LB-16633, LB-16632: RESOLVED by BUG-227, not a needs_review case — the lone candidate
+    (topic=54221) isn't an unmatched pre-app post, it's explicitly labeled "LB-8" in the post
+    body with an attached torrent named "LB-00008.torrent" (user-confirmed by inspecting the
+    page directly). It documents LB-8, an unrelated entry, not either Del Mar 16000-series
+    duplicate. The original score=5/has_torrent-only read was correct about the weak signal but
+    missed the tag because the Round 0 regex required 3-5 digits (missed unpadded "LB-8") and
+    never scanned attachment filenames at all. Both gaps fixed in backend/wtrf_scraper.py; this
+    candidate now hard-disqualifies instead of surfacing as needs_review. The placeholder
+    taper_name ("same source recording") idea below may still be worth doing for other entries,
+    just not load-bearing for this pair anymore.
+  - LB-16614: score=33, equipment_matches=1 + taper_match=mkws — single equipment token plus a
+    taper hit still isn't enough to clear the 'medium' bar under _classify_confidence's
+    `(eq>=2 and tap) or (fname>=1 and eq>=2)` rule. Worth checking whether 1 equipment token +
+    taper match should count as medium.
+  - LB-16613, LB-16612: score=21, equipment_matches=2 only (no taper, no filename) — sits right
+    at the medium threshold's eq>=2 condition but fails because that branch also requires
+    `tap` or `fname>=1`. Worth revisiting whether eq>=2 alone, with no contradicting signal,
+    should be enough.
+  - LB-16586, LB-16622: score=5, has_torrent only, no other signal — likely genuine not_found;
+    the search is matching on date alone with no content confirmation.
+
+  DONE (2026-06-30): Two more disqualification/scoring gaps fixed in backend/wtrf_scraper.py:
+  - Download-date window: entries.description's "bittorrent download MM/YY" note (this
+    curator's own acquisition date) is now parsed and any candidate post made more than 6
+    months before it is hard-disqualified — a post can't be the source of a download that
+    predates it. Live-verified: LB-16627's stale 2024-10-14 candidate now filtered while its
+    genuine FFP match still downloads; LB-16633/16632's lone candidate disqualified on date too
+    (independent of the BUG-227 LB-tag fix above). LB-16586, LB-16622, LB-16613, LB-16612 (the
+    has_torrent-only / weak-equipment cases below) should be re-tested against this — some may
+    now resolve to a clean not_found (correctly) rather than lingering as needs_review.
+  - MD5/SHA1 checksum round added alongside FFP (chk_type 'm'/'s', same 100pt/definitive tier)
+    — older SHN-era posts often list raw hashes instead of FFP fingerprints, which were
+    previously invisible to scoring entirely.
+
+  Ideas still open, roughly in order of expected payoff:
+  1. Tie-breaker for positive-score ambiguous matches (post date / attachment size or count /
+     reply count) — currently any tie at any score, even a strong one like 733, is treated
+     identically to a zero-signal tie. (Post date is now extracted per-candidate for the
+     download-window check above — reuse it here instead of refetching.)
+  2. Exclude placeholder taper_name values ("same source recording" and similar) from the
+     taper-match round so they don't mask genuinely unmatchable entries as "weak signal"
+     when they're actually "no signal available."
+  3. Revisit _classify_confidence's medium-tier boundary — eq>=2 alone and (fname>=1 OR
+     eq=1)+taper currently don't clear it; check against more real examples before loosening.
+  4. Board-page crawl mode (already listed under TODO-193) as a fallback for entries that are
+     consistently not_found via search2.
+  Relates to: [[TODO-193]] (WTRF torrent fetcher — GUI surface and review flow).
+Tie-breaker (post date, attachment count/size) for signal-bearing ties; placeholder taper names excluded. Medium-tier boundary reviewed against 122 live rows and left unchanged.
+
+TODO-193: WTRF torrent fetcher — GUI surface and review flow
+Priority: Medium
+Status: Done
+Added: 2026-06-29
+Closed: 2026-10-19
+Description: backend/wtrf_scraper.py + tools/wtrf_fetch_missing.py implement the
+  search/download/qbt pipeline for missing items (see CHANGELOG 2026-06-29d).
+  LIVE TESTING (2026-06-30): user ran it against the real WTRF instance — search2
+  + scoring confirmed working in most cases. Two real-world failure modes observed:
+  'ambiguous' (two posts score identically, no way to auto-pick), and cases where
+  the best match wasn't actually the most relevant post. Both already land in
+  wtrf_downloads as status='skipped' with confidence 'ambiguous'/'needs_review' for
+  manual review — the manual-review action below is what's needed to actually act
+  on them; not yet scoped further than that.
+  CLI list/range input added 2026-06-30: --lbs flag accepts comma-separated LB
+  numbers and/or ranges (e.g. '16640-16650,16700'), mutually exclusive with --lb.
+  CLI now also prints the matched topic_url for skipped (needs_review/ambiguous/
+  not_found) rows, including both tied URLs on an ambiguous match, so the user can
+  manually open and check candidates without a DB query — a stopgap ahead of the
+  full GUI review action below.
+  REFINEMENT (2026-06-30): root-caused both observed failure modes from a 25-item
+  dry run. (1) BUG-225: candidate scoring never checked whether a post body's own
+  "LB-NNNNN" tag (embedded by forum_poster.py's metadata header) named a DIFFERENT
+  entry, so posts documenting other shows competed on weak date/has_torrent signals
+  and won 'ambiguous'/'needs_review' ties — fixed by hard-disqualifying tag
+  mismatches in find_torrent_for_lb. (2) BUG-226: search2 queries were spaced only
+  delay*1.5 (3.0s at the default --delay 2.0) apart, below WTRF's ~5s search
+  flood-control window — likely caused some 'not_found' results to be silently
+  throttled empty pages rather than genuine no-match. Fixed by flooring
+  search_delay at 10.0s (_SEARCH_DELAY constant). wtrf_downloads rows written
+  before this fix should be treated as unreliable, especially 'not_found' rows.
+  PAUSED-ADD (2026-06-30): `--paused` CLI flag (backend/qbittorrent.py
+  `add_torrent_for_download(paused=...)`) lets `--add-to-qbt` queue matches in
+  qBittorrent without starting the download — used for a full batch run against the
+  220 missing LB entries above LB-16000 (113 paused-added, 22 downloaded-only, 85
+  unmatched; skipped list with candidate links exported to wtrf_skipped_review.md
+  for manual review). This covers the "don't auto-download unreviewed matches"
+  half of the manual-review action below; the GUI surface to actually review/
+  confirm/reject from the app is still open.
+  Remaining work:
+  - GUI screen or panel to drive the crawl (start/stop, progress, results table)
+    that surfaces wtrf_downloads rows with confidence + signals for review.
+  - Manual review action for 'needs_review' / 'ambiguous' rows: show the matched
+    topic URL so the user can open it and manually confirm/reject before adding
+    to qBittorrent (or resuming a paused-added torrent).
+  - Board-page crawl mode as an alternative to search2 when SMF search is
+    throttled or returns unexpected results (walk board=16.0, board=16.20, …).
+  Relates to: [[TODO-135]] (scrape WTRF for existing posts), [[TODO-194]] (match quality
+    refinement — audit data from the 2026-06-30 batch runs).
+WTRF review screen (/wtrfreview, curator): GET /api/wtrf/review, confirm (resume/add in qBt) / reject; rejected topics never re-offered. Board-page crawl mode not built.
+
+TODO-135: Scrape WTRF board for existing LB posts
+Priority: Medium
+Status: Done
+Added: 2026-06-10
+Closed: 2026-10-19
+Description: Scrape the WTRF SMF board(s) to discover which LB entries already have a forum
+topic, regardless of whether they were posted through this app. Parse board index pages
+(sorted by date) and individual topic subjects to extract the LB number. Store results in
+the existing `forum_posts` table (or a parallel `scraped_posts` table) so the GUI can show
+"already posted" status on the Rename/post panel without relying solely on the local log.
+Should be runnable on-demand (e.g. "Sync from WTRF" button) and optionally on startup.
+Credentials already managed by credentials.py; HTTP session logic already in forum_poster.py.
+backend/wtrf_discovery.py: scraped_topics/scraped_topic_lbs tables, archive import + paced board sync via write queue, POST /api/wtrf/sync_posts; entry Forum tab shows 'Found on WTRF' rows and Sync/Import buttons. No startup sync.
+
+TODO-251: Trading — multi-friend batch compare
+Priority: Low
+Status: Done
+Added: 2026-05-30
+Renumbered: from TODO-106 on 2026-07-15 (TODO-248 — id collided with the unrelated done
+  TODO-106 "Audio fingerprint matching" in TODO_DONE.md)
+Closed: 2026-10-19
+Description: Extend the Trading screen to compare your collection against multiple friends at
+  once — show a matrix view (friends × shows) so you can find the best candidate to trade
+  any given recording with. Also: add a GET /api/trading/friends/<id>/entries route so the
+  GUI can retrieve raw friend entries without going through the compare diff endpoint.
+GET /api/trading/friends/<id>/entries + POST /api/trading/batch-compare; Trading 'Batch matrix' tab (friends x shows, best partner per show).
+
+TODO-172: DB Editor — make it more like a real SQL management tool (SSMS-style)
+Priority: Low
+Status: Done
+Added: 2026-06-22
+Closed: 2026-10-19
+Description: Note: column-header click-to-sort already exists (ScreenDbEditor.tsx:1492-1509,
+  with ▲/▼ indicator) — not a gap. Broader ask is to make gui_next/src/renderer/src/screens/
+  ScreenDbEditor.tsx feel more like SQL Server Management Studio generally. Candidate
+  features to scope out: resizable/reorderable columns, a schema tree sidebar (tables/views
+  grouped, expandable to show columns+types), multi-tab query windows (multiple
+  SqlQueryPanel instances open at once, ScreenDbEditor.tsx:566), copyable cell/row selection
+  in the results grid, query history/favorites, pinned/frozen first column, and per-column
+  type-aware cell formatting (dates, booleans, NULL styling) in the rows view.
+DB Editor SQL panel: schema tree, multi-tab queries, localStorage history, type-aware cells, cell/row copy, resizable columns, frozen first column.
+
+TODO-085: Map tab — sequential date-linked travel view across the globe
+Priority: Low
+Status: Done
+Added: 2026-05-21
+Closed: 2026-10-19
+Description: Add a new sub-view (or toggle) on the Map tab that renders concert locations
+  as a chronological travel trail — polylines (or an animated path) connecting each
+  geocoded entry to the next in date order, visualising movement across the globe over
+  the years. Current map just plots pins with no temporal linkage.
+  Design considerations:
+    • Sort geocoded entries by date_str ascending; skip entries with no lat/lon.
+    • Draw a Leaflet polyline (or GeoJSON LineString) through the ordered coordinates.
+    • Optionally colour-code segments by decade so different eras are visually distinct.
+    • Consider a play/scrub slider to animate the route year-by-year.
+    • Hook into the existing MapTab _open_filtered_map() or add a separate "Travel view"
+      button that generates a different HTML payload from the /api/map endpoint.
+    • Cluster of same-venue returns (same lat/lon) should be shown as a loop or ignored
+      to keep the line readable.
+Map travel-trail toggle: per-date points from geocoded pins, date-ordered polyline coloured by decade with legend, year range, gap-break days (default 60).
+
+TODO-178: Minimized left sidebar — new icon-only nav representation
+Priority: Low
+Status: Done
+Added: 2026-06-22
+Closed: 2026-10-19
+Description: No collapsed/minimized sidebar mode currently exists in
+  gui_next/src/renderer/src/components/AppShell.tsx (Sidebar component, ~lines 120-561) —
+  nav items always render icon + label. Implementing "new icons for when left bar is
+  minimized" depends on first adding a minimize/collapse toggle for the sidebar, then
+  rendering a icon-only nav state (just the Icon, no label, narrower width) using new icon
+  assets suited to that compact form.
+Sidebar collapse toggle (persisted sidebarCollapsed); collapsed = 56px icon-only nav with tooltips; forced icon-only at <=900px. Reuses existing icons.
+
+TODO-160: Revamp curator mode — consolidate options and hide existence from normal users
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-10-19
+Description: Curator mode currently exposes itself to every user: AppShell.tsx:400-424 always
+  renders a visible "curatorHint" block + "Enable curator mode" link in the sidebar when
+  curatorMode is off, so any user can discover and turn it on. The "Curator" nav group
+  (AppShell.tsx:78, gated at :226 via `group.gatedGroup && !curatorMode`) and the
+  curatorMode/setCuratorMode flag (store.ts:5-17) otherwise work as a simple client-side
+  toggle with no real access control. Needs a revamp: (1) consolidate whatever curator-only
+  options exist into one coherent settings surface instead of scattering gated items, and
+  (2) replace the always-visible hint/link with a hidden trigger (e.g. a secret key
+  combo, hidden settings entry, or build-time flag) so normal users have no visible
+  indication curator mode exists at all.
+Curator hint removed; Ctrl+Shift+Alt+C toggles curator mode (plus 7 clicks on the Master version label in Setup); curator options consolidated into a Curator card in Setup.
+
 TODO-359: Code review H1b: decide whether to purge embed_cache_12x from git history
 Priority: Low
 Status: Done
