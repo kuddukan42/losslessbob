@@ -24,6 +24,7 @@ Usage::
     python tools/tuit_sync.py --rec 1837               # one recording by id
     python tools/tuit_sync.py --fetch-torrents         # also save .torrent files
     python tools/tuit_sync.py --fetch-torrents --seed  # …and seed from collection
+    python tools/tuit_sync.py --crawl --max-pages 5    # resumable nightly catalogue crawl
     python tools/tuit_sync.py --dry-run                # show the queue, no writes
     python tools/tuit_sync.py --set-credentials        # store/rotate the password
 
@@ -39,7 +40,9 @@ from __future__ import annotations
 
 import argparse
 import getpass
+import json
 import logging
+import os
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
@@ -69,6 +72,7 @@ logger = logging.getLogger("tuit_sync")
 
 DEFAULT_TORRENT_DIR = _project_root / "data" / "downloads" / "tuit"
 DEFAULT_HTML_DIR = _project_root / "data" / "downloads" / "tuit" / "html"
+DEFAULT_CRAWL_STATE = _project_root / "data" / "tuit_crawl_state.json"
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -135,6 +139,20 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument("--start-page", type=int, default=1,
                    help="With --listing-only: first listing page to read "
                         "(default 1), to resume a refresh.")
+    p.add_argument("--crawl", action="store_true",
+                   help="Resumable paced catalogue crawl: walk /browse from the "
+                        "persisted cursor for --max-pages pages, store a detail "
+                        "page for each recording not yet in tuit_recordings, "
+                        "then save the cursor. Safe to run nightly from cron; "
+                        "wraps to page 1 after the last page.")
+    p.add_argument("--max-pages", type=int, default=5,
+                   help="With --crawl: listing pages per run (default 5).")
+    p.add_argument("--max-details", type=int, default=100,
+                   help="With --crawl: detail fetches per run (default 100); "
+                        "the cursor stays on a page that was cut short.")
+    p.add_argument("--crawl-state", default=str(DEFAULT_CRAWL_STATE),
+                   help="With --crawl: cursor file (default data/"
+                        "tuit_crawl_state.json).")
     p.add_argument("--rescan", action="store_true",
                    help="Include recordings that already have a tuit_downloads "
                         "attempt (default: --pages/--limit skip them so re-runs "
@@ -506,6 +524,111 @@ def _refresh_from_listing(session, args) -> int:
     return 0
 
 
+def load_crawl_state(path: str | Path) -> dict:
+    """Read the crawl cursor file.
+
+    Args:
+        path: Cursor JSON path.
+
+    Returns:
+        Dict with at least ``next_page`` (>= 1); defaults when missing/corrupt.
+    """
+    try:
+        data = json.loads(Path(path).read_text(encoding="utf-8"))
+        data["next_page"] = max(1, int(data.get("next_page", 1)))
+        return data
+    except (OSError, ValueError, TypeError, AttributeError):
+        return {"next_page": 1}
+
+
+def save_crawl_state(path: str | Path, state: dict) -> None:
+    """Atomically persist the crawl cursor (temp file + rename).
+
+    Args:
+        path: Cursor JSON path.
+        state: State dict to write.
+    """
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(json.dumps(state, indent=2, sort_keys=True), encoding="utf-8")
+    os.replace(tmp, path)
+
+
+def _needs_detail(rec_id: int) -> bool:
+    """True when ``rec_id`` has no stored detail page (absent or listing-only stub)."""
+    existing = database.get_tuit_recording(rec_id)
+    return existing is None or not existing.get("files_json")
+
+
+def _crawl(session, args) -> int:
+    """Run one bounded slice of the resumable catalogue crawl.
+
+    Reads the cursor, walks up to ``--max-pages`` listing pages, fetches detail
+    for recordings missing from ``tuit_recordings`` (up to ``--max-details``),
+    and persists the next page. A failed listing fetch leaves the cursor on the
+    failing page; an empty page past the end wraps the cursor to 1.
+
+    Args:
+        session: Authenticated TUIT session.
+        args: Parsed CLI arguments.
+
+    Returns:
+        Process exit code (1 on a listing fetch failure).
+    """
+    state = load_crawl_state(args.crawl_state)
+    page = state["next_page"]
+    pages_done = fetched = known = 0
+    counts: dict[str, int] = {}
+    rc = 0
+    wrapped = False
+    while pages_done < max(1, args.max_pages):
+        rows, total, _html = tuit_scraper.fetch_browse_page(
+            session, page=page, delay=args.delay
+        )
+        if not rows and total is None:
+            logger.warning("  page %d: listing fetch failed - cursor held", page)
+            rc = 1
+            break
+        if total:
+            state["catalogue_total"] = total
+        if not rows:
+            logger.info("  page %d empty - end of catalogue, wrapping to 1", page)
+            page, wrapped = 1, True
+            state["last_complete_at"] = datetime.now(UTC).isoformat()
+            break
+        cut_short = False
+        for row in rows:
+            if not row.rec_id:
+                continue
+            if not _needs_detail(row.rec_id):
+                known += 1
+                continue
+            if fetched >= args.max_details:
+                cut_short = True
+                break
+            fetched += 1
+            if args.dry_run:
+                continue
+            status = _sync_one(session, row.rec_id, row, args)
+            counts[status] = counts.get(status, 0) + 1
+        if cut_short:
+            logger.info("  page %d cut short at --max-details=%d", page, args.max_details)
+            break
+        pages_done += 1
+        page += 1
+    state["next_page"] = page
+    state["last_run_at"] = datetime.now(UTC).isoformat()
+    if not args.dry_run:
+        save_crawl_state(args.crawl_state, state)
+    total_txt = f", catalogue={state['catalogue_total']:,}" if state.get("catalogue_total") else ""
+    counts_txt = "  " + " ".join(f"{k}={v}" for k, v in sorted(counts.items())) if counts else ""
+    print(f"crawl: {pages_done} page(s), {fetched} detail fetch(es), {known} already stored, "
+          f"next_page={page}" + (" (wrapped)" if wrapped else "") + total_txt + counts_txt
+          + (" [dry run]" if args.dry_run else ""))
+    return rc
+
+
 def _sync_one(session, rec_id: int, row, args) -> str:
     """Fetch, store and optionally seed a single recording.
 
@@ -749,6 +872,9 @@ def main() -> int:
 
     if args.sync_tours or args.sync_venues or args.sync_songs:
         return _sync_history(session, args)
+
+    if args.crawl:
+        return _crawl(session, args)
 
     if args.listing_only:
         if not args.pages:
