@@ -4787,6 +4787,50 @@ def create_app() -> Flask:
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
+    # ── WTRF fetch review (TODO-193) — keep these three routes together ───────
+    @app.route("/api/wtrf/review", methods=["GET"])
+    def wtrf_review_list() -> Response:
+        """Latest wtrf_downloads row per LB with parsed signals + candidates.
+
+        Query params: filter (review|added|not_found|rejected|all), limit, offset.
+        """
+        from backend import wtrf_review
+        try:
+            return jsonify(wtrf_review.list_review_rows(
+                request.args.get("filter", "review"),
+                int(request.args.get("limit", 200)),
+                int(request.args.get("offset", 0)),
+            ))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/wtrf/review/<int:download_id>/confirm", methods=["POST"])
+    def wtrf_review_confirm(download_id: int) -> Response:
+        """Confirm a row: resume its paused torrent, or fetch + add to qBittorrent.
+
+        Body JSON (optional): topic_url (the picked candidate), save_path.
+        """
+        from backend import wtrf_review
+        try:
+            data = request.get_json(silent=True) or {}
+            res = wtrf_review.confirm_row(
+                download_id, topic_url=data.get("topic_url"),
+                save_path=data.get("save_path"),
+            )
+            return jsonify(res), (200 if res.get("ok") else 400)
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/wtrf/review/<int:download_id>/reject", methods=["POST"])
+    def wtrf_review_reject(download_id: int) -> Response:
+        """Mark a wtrf_downloads row rejected (kept as history)."""
+        from backend import wtrf_review
+        try:
+            res = wtrf_review.reject_row(download_id)
+            return jsonify(res), (200 if res.get("ok") else 404)
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
     @app.route("/api/wtrf/crawl_missing", methods=["POST"])
     def wtrf_crawl_missing() -> Response:
         """Start a background batch crawl of missing items (SSE stream).

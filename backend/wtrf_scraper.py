@@ -236,6 +236,28 @@ def _parse_post_date(keyinfo_text: str) -> date | None:
         return None
 
 
+_SIZE_RE = re.compile(r"\(\s*([\d.,]+)\s*(B|KB|MB|GB)\b", re.IGNORECASE)
+_SIZE_MULT = {"B": 1, "KB": 1024, "MB": 1024 ** 2, "GB": 1024 ** 3}
+
+
+def _parse_attachment_bytes(text: str) -> int:
+    """Sum the "(12.3 KB)" size notes SMF prints beside attachment links.
+
+    Args:
+        text: Text of a post's attachments div.
+
+    Returns:
+        Total size in bytes, 0 if no parseable size was present.
+    """
+    total = 0
+    for num, unit in _SIZE_RE.findall(text):
+        try:
+            total += int(float(num.replace(",", "")) * _SIZE_MULT[unit.upper()])
+        except ValueError:
+            continue
+    return total
+
+
 # ── Signal extraction ──────────────────────────────────────────────────────────
 
 def _equipment_tokens(source_chain: str, description: str) -> list[str]:
@@ -262,6 +284,29 @@ def _equipment_tokens(source_chain: str, description: str) -> list[str]:
 
 
 # ── Candidate scoring ──────────────────────────────────────────────────────────
+
+# entries.taper_name values that mean "no taper known", not a name to search for
+# (TODO-194 idea 2). Matched after lower-casing and stripping punctuation.
+_PLACEHOLDER_TAPERS = frozenset({
+    "same source recording", "same source", "same recording", "same as above",
+    "unknown", "unknown taper", "unknown source", "n/a", "na", "none", "various",
+    "anonymous", "unnamed", "tbd", "?",
+})
+
+
+def _is_placeholder_taper(name: str | None) -> bool:
+    """Return True if a taper_name is a placeholder rather than a real handle.
+
+    Args:
+        name: entries.taper_name value (may be None/empty).
+
+    Returns:
+        True for empty values and known "no taper" phrases such as
+        "same source recording".
+    """
+    norm = re.sub(r"[^\w/? ]+", "", (name or "").strip().lower()).strip()
+    return not norm or norm in _PLACEHOLDER_TAPERS or norm.startswith("same source")
+
 
 def _score_candidate(
     post_body: str,
@@ -341,11 +386,51 @@ def _score_candidate(
 
     # Round 4 — Taper name (20 pts, only when >= 3 chars to avoid short false positives)
     taper = (entry.get("taper_name") or "").strip().lower()
-    if taper and len(taper) >= 3 and taper in body_lower:
+    if (taper and len(taper) >= 3 and not _is_placeholder_taper(taper)
+            and taper in body_lower):
         score += 20
         signals["taper_match"] = entry.get("taper_name")
 
     return score, signals
+
+
+def _tiebreak_key(meta: dict) -> tuple:
+    """Sort key preferring the earliest post, then more/larger attachments.
+
+    Posts with no parseable date sort after dated ones.
+    """
+    d = meta.get("post_date")
+    return (
+        d is None, d or date.max,
+        -(meta.get("attachment_count") or 0), -(meta.get("attachment_bytes") or 0),
+    )
+
+
+def _break_tie(tied: list[tuple[int, dict, str, str | None]],
+               meta: dict[str, dict]) -> int | None:
+    """Pick a winner among equal-score candidates, or None if still a toss-up.
+
+    Only used when the tied score carries real signal (anything beyond the
+    has_torrent floor): such ties are typically a re-up/re-encode of the same
+    recording, where the earliest post is the original (TODO-194 idea 1).
+    Candidates tie again only if post date, attachment count and size are all
+    identical (or all unknown) — those stay ambiguous.
+
+    Args:
+        tied: Candidates sharing the top score.
+        meta: topic_url -> {post_date, attachment_count, attachment_bytes}.
+
+    Returns:
+        Index into ``tied`` of the winner, or None.
+    """
+    real = {k for k in tied[0][1] if k != "has_torrent"}
+    if not real:
+        return None
+    keys = [_tiebreak_key(meta.get(t[2], {})) for t in tied]
+    order = sorted(range(len(tied)), key=lambda i: keys[i])
+    if keys[order[0]] == keys[order[1]]:
+        return None
+    return order[0]
 
 
 def _classify_confidence(score: int, signals: dict) -> str:
@@ -459,12 +544,16 @@ def _fetch_topic(
         attachment_text (str) — visible link text of every attachment in the
         first post (e.g. attachment filenames), which can carry its own
         "LB-NNNNN" tag distinct from the body text — and post_date (date|None),
-        the first post's creation date parsed from its keyinfo timestamp.
+        the first post's creation date parsed from its keyinfo timestamp —
+        plus attachment_count (int) and attachment_bytes (int, best-effort
+        parse of SMF's "(12.3 KB)" size notes; 0 when absent), used as
+        tie-breakers.
     """
     time.sleep(delay)
     result: dict = {
         "body_text": "", "torrent_url": None, "topic_title": "",
         "attachment_text": "", "post_date": None,
+        "attachment_count": 0, "attachment_bytes": 0,
     }
     try:
         resp = session.get(topic_url, timeout=20, headers={"Referer": FORUM_BASE})
@@ -519,6 +608,10 @@ def _fetch_topic(
             attach_texts.append(text)
             if ".torrent" in text.lower() and not result["torrent_url"]:
                 result["torrent_url"] = _resolve_url(a["href"])
+    result["attachment_count"] = len(attach_texts)
+    result["attachment_bytes"] = _parse_attachment_bytes(
+        " ".join(d.get_text(" ") for d in attach_divs)
+    )
 
     result["attachment_text"] = " ".join(attach_texts)
     return result
@@ -774,6 +867,7 @@ def find_torrent_for_lb(
     # ── Score each candidate ───────────────────────────────────────────────────
     # Elements: (score, signals, topic_url, torrent_url)
     scored: list[tuple[int, dict, str, str | None]] = []
+    topic_meta: dict[str, dict] = {}
     disqualified_tag = 0
     disqualified_old = 0
     disqualified_foreign = 0
@@ -834,6 +928,11 @@ def find_torrent_for_lb(
             sc += 5
             sigs["has_torrent"] = True
         scored.append((sc, sigs, topic_url, post["torrent_url"]))
+        topic_meta[topic_url] = {
+            "post_date": post["post_date"],
+            "attachment_count": post.get("attachment_count", 0),
+            "attachment_bytes": post.get("attachment_bytes", 0),
+        }
         logger.debug(
             "wtrf_scraper: LB-%05d topic %s score=%d sigs=%s",
             lb_number, topic_url, sc, sigs,
@@ -861,10 +960,31 @@ def find_torrent_for_lb(
         return _fail("not_found", "Candidates found but none had accessible content")
 
     scored.sort(key=lambda x: x[0], reverse=True)
+
+    # Tie at the top: try to break it on post date / attachment count+size
+    # (earliest wins); a zero-signal or still-identical tie stays ambiguous.
+    top_score = scored[0][0]
+    tied = [c for c in scored if c[0] == top_score]
+    tie_broken = False
+    if len(tied) >= 2 and top_score > 0:
+        winner = _break_tie(tied, topic_meta)
+        if winner is not None:
+            tie_broken = True
+            others = [c[2] for i, c in enumerate(tied) if i != winner]
+            tied[winner][1]["tiebreak"] = "earliest_post"
+            tied[winner][1]["tied_with"] = others
+            logger.info(
+                "wtrf_scraper: LB-%05d tie at score=%d broken in favour of %s (over %s)",
+                lb_number, top_score, tied[winner][2], others,
+            )
+            scored.remove(tied[winner])
+            scored.insert(0, tied[winner])
     best_score, best_sigs, best_url, best_torrent_url = scored[0]
 
-    # Tie → ambiguous (two posts equally match — need manual review)
-    if len(scored) >= 2 and scored[0][0] == scored[1][0] and scored[0][0] > 0:
+    # Still tied → ambiguous (two posts equally match — need manual review)
+    if (not tie_broken and len(scored) >= 2 and scored[0][0] == scored[1][0]
+            and scored[0][0] > 0):
+        best_sigs["tied_candidates"] = [c[2] for c in scored if c[0] == top_score]
         logger.warning(
             "wtrf_scraper: LB-%05d ambiguous — top two posts tied at score=%d",
             lb_number, best_score,
@@ -915,3 +1035,40 @@ def find_torrent_for_lb(
         "signals": best_sigs,
         "error": None,
     }
+
+
+def download_torrent_from_topic(
+    lb_number: int,
+    topic_url: str,
+    dest_dir: str | Path,
+    delay: float = _DEFAULT_DELAY,
+) -> dict:
+    """Download the .torrent attached to a curator-confirmed WTRF topic.
+
+    Used by the review flow (TODO-193) when the matcher declined to
+    auto-download and the curator has since confirmed a candidate topic.
+
+    Args:
+        lb_number: LB entry (used for the fallback filename).
+        topic_url: Topic URL the curator confirmed.
+        dest_dir: Directory to write the .torrent into.
+        delay: Seconds to sleep before each HTTP request.
+
+    Returns:
+        Dict with ok (bool), torrent_path (str|None), error (str|None).
+    """
+    username, password = get_credentials(SERVICE_WTRF)
+    if not username or not password:
+        return {"ok": False, "torrent_path": None, "error": "WTRF credentials not configured"}
+    session = _get_session(username, password)
+    if session is None:
+        return {"ok": False, "torrent_path": None,
+                "error": "WTRF login failed — check credentials"}
+    post = _fetch_topic(session, _normalise_topic_url(topic_url), delay)
+    if not post["torrent_url"]:
+        return {"ok": False, "torrent_path": None,
+                "error": "Topic has no .torrent attachment"}
+    path = _download_torrent(session, post["torrent_url"], Path(dest_dir), lb_number, delay)
+    if not path:
+        return {"ok": False, "torrent_path": None, "error": "Torrent file download failed"}
+    return {"ok": True, "torrent_path": str(path), "error": None}

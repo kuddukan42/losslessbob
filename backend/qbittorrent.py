@@ -1060,3 +1060,70 @@ def check_torrent_presence(
         return {"ok": False, "present": False, "error": f"Cannot connect to {base}"}
     except Exception as exc:
         return {"ok": False, "present": False, "error": str(exc)}
+
+
+def torrent_file_infohash(torrent_path: str | Path) -> str | None:
+    """Return the hex infohash of a .torrent file, or None if unreadable.
+
+    Args:
+        torrent_path: Path to the .torrent file.
+
+    Returns:
+        40-char lowercase hex infohash, or None.
+    """
+    try:
+        from torf import Torrent
+        return str(Torrent.read(str(torrent_path)).infohash).lower()
+    except Exception as exc:
+        logger.warning("Cannot read infohash from %s: %s", torrent_path, exc)
+        return None
+
+
+def resume_torrent(
+    infohash: str,
+    host: str,
+    port: int,
+    username: str = "",
+    password: str = "",
+    api_key: str = "",
+) -> dict:
+    """Resume (start) a paused torrent in qBittorrent by infohash.
+
+    Tries POST /api/v2/torrents/start (qBittorrent 5+) and falls back to
+    /torrents/resume (4.x) on a 404. Starting an already-running torrent is
+    a harmless no-op.
+
+    Args:
+        infohash: Hex infohash of the torrent.
+        host: qBittorrent WebUI host.
+        port: WebUI port.
+        username: WebUI username (ignored when api_key is set).
+        password: WebUI password (ignored when api_key is set).
+        api_key: API key (qBittorrent 5+). Takes priority over username/password.
+
+    Returns:
+        Dict with keys: ok (bool), error (str if ok=False).
+    """
+    if not infohash:
+        return {"ok": False, "error": "No infohash — cannot identify torrent in qBittorrent"}
+
+    base = _base_url(host, port)
+    session = _make_session(base, api_key)
+    try:
+        if not api_key:
+            err = _login(session, base, username, password)
+            if err:
+                return err
+        data = {"hashes": infohash.lower()}
+        r = session.post(base + "/api/v2/torrents/start", data=data, timeout=15)
+        if r.status_code == 404:
+            r = session.post(base + "/api/v2/torrents/resume", data=data, timeout=15)
+        if not api_key:
+            session.post(base + _LOGOUT_PATH, timeout=5)
+        if r.status_code == 200:
+            return {"ok": True}
+        return {"ok": False, "error": f"qBittorrent responded HTTP {r.status_code}"}
+    except requests.exceptions.ConnectionError:
+        return {"ok": False, "error": f"Cannot connect to {base}"}
+    except Exception as exc:
+        return {"ok": False, "error": str(exc)}
