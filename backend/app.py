@@ -6561,6 +6561,24 @@ def create_app() -> Flask:
             _log.exception("taper_curation_rows failed")
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
+    @app.route("/api/tapers/curation/tuit_candidates", methods=["GET"])
+    def taper_curation_tuit_candidates() -> Response:
+        """Recordings where TUIT names a taper and entries names none (TODO-339).
+
+        Read-only candidate evidence with TUIT provenance. Query params:
+        include_decided (1/true), limit, offset.
+        """
+        try:
+            inc = (request.args.get("include_decided") or "").lower() in ("1", "true")
+            return jsonify(_taper_curation.tuit_candidates(
+                include_decided=inc,
+                limit=request.args.get("limit", type=int, default=1000),
+                offset=request.args.get("offset", type=int, default=0),
+            ))
+        except Exception as exc:
+            _log.exception("taper_curation_tuit_candidates failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     @app.route("/api/tapers/curation/isolated", methods=["GET"])
     def taper_curation_isolated() -> Response:
         """Texts that never became a taper credit, grouped by canonical.

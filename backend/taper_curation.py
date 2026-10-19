@@ -641,6 +641,88 @@ def list_rows(
     }
 
 
+def tuit_candidates(
+    include_decided: bool = False,
+    limit: int = 1000,
+    offset: int = 0,
+    db_path: str | None = None,
+) -> dict:
+    """List recordings where TUIT names a taper and ``entries`` names none.
+
+    Candidate evidence for the curation queue (TODO-339 part 4): additive and
+    read-only. Nothing is written to ``entries`` or ``taper_attributions``; a
+    curator accepts a candidate through the normal attribution routes.
+
+    A row qualifies when ``entries.taper_name`` has no credible taper and the
+    newest TUIT recording for that LB carries a taper field that resolves to at
+    least one credible canonical (placeholders and not-a-taper handles dropped).
+
+    Args:
+        include_decided: Keep rows that already have a curator decision.
+        limit: Page size, clamped to [1, :data:`MAX_LIMIT` * 4].
+        offset: Page offset.
+        db_path: Optional database path override.
+
+    Returns:
+        ``{"rows": [...], "total": int, "limit": int, "offset": int}`` where each
+        row has ``lb_number``, ``date_str``, ``location``, ``candidates`` (canonical
+        names, whole TUIT value first), ``provenance`` (``source='tuit'`` plus the
+        raw taper text, ``rec_id`` and ``uploader``), ``known`` (candidate is in
+        the taper vocabulary), ``attribution`` (the engine's taper for the LB, if
+        any) and ``decision`` (curator action, if any).
+    """
+    refresh_user_flags(db_path)
+    conn = get_connection(db_path)
+    sql = (
+        "SELECT e.lb_number, e.date_str, e.location, e.taper_name,"
+        " a.taper_normalised AS attr_taper, a.confidence AS attr_confidence,"
+        " f.action AS decision, t.rec_id, t.taper AS tuit_taper, t.uploader"
+        " FROM entries e"
+        " JOIN tuit_recordings t ON t.rec_id = ("
+        "   SELECT x.rec_id FROM tuit_recordings x WHERE x.lb_number = e.lb_number"
+        "   ORDER BY x.last_seen_at DESC, x.rec_id DESC LIMIT 1)"
+        " LEFT JOIN taper_attributions a ON a.lb_number = e.lb_number"
+        " LEFT JOIN taper_confirmations f ON f.lb_number = e.lb_number"
+        " WHERE " + _REAL_TUIT_TAPER +
+        ("" if include_decided else " AND f.action IS NULL") +
+        " ORDER BY e.lb_number"
+    )
+    universe = _db._TAPER_UNIVERSE
+    out: list[dict] = []
+    for r in conn.execute(sql):
+        if credible(r["taper_name"]):
+            continue
+        parts = [p for p in tuit_taper_parts(r["tuit_taper"]) if credible(p)]
+        if not parts:
+            continue
+        out.append({
+            "lb_number": r["lb_number"],
+            "date_str": r["date_str"],
+            "location": r["location"],
+            "candidates": parts,
+            "known": parts[0] in universe,
+            "provenance": {
+                "source": "tuit",
+                "taper_text": (r["tuit_taper"] or "").strip(),
+                "rec_id": r["rec_id"],
+                "uploader": r["uploader"],
+            },
+            "attribution": (
+                {"taper": r["attr_taper"], "confidence": r["attr_confidence"]}
+                if r["attr_taper"] else None
+            ),
+            "decision": r["decision"],
+        })
+    limit = max(1, min(int(limit), MAX_LIMIT * 4))
+    offset = max(0, int(offset))
+    return {
+        "rows": out[offset:offset + limit],
+        "total": len(out),
+        "limit": limit,
+        "offset": offset,
+    }
+
+
 def counts(db_path: str | None = None) -> dict:
     """Corpus-wide totals for the workbench header chips.
 
@@ -675,6 +757,7 @@ def counts(db_path: str | None = None) -> dict:
         "tuit_with_taper": one(
             "SELECT COUNT(DISTINCT lb_number) FROM tuit_recordings t"
             " WHERE t.lb_number IS NOT NULL AND " + _REAL_TUIT_TAPER),
+        "tuit_candidates": tuit_candidates(limit=1, db_path=db_path)["total"],
         "in_family": one("SELECT COUNT(DISTINCT lb_number) FROM recording_families"),
         "unknown_text": unknown,
         "vocabulary": len(universe),
