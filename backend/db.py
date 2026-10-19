@@ -6535,6 +6535,33 @@ def get_wtrf_pending_lb_numbers(db_path=None) -> list[int]:
     return [r[0] for r in rows]
 
 
+def get_wtrf_rejected_topics(lb_number: int, db_path=None) -> set[str]:
+    """Return topic URLs a curator rejected for one LB (row topic + tied candidates).
+
+    Args:
+        lb_number: The LB number.
+        db_path: Optional DB path override.
+
+    Returns:
+        Set of topic URLs the crawler must not offer again for this LB.
+    """
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT topic_url, signals_json FROM wtrf_downloads "
+            "WHERE lb_number = ? AND status = 'rejected'",
+            (lb_number,),
+        ).fetchall()
+    out: set[str] = set()
+    for topic_url, signals_json in rows:
+        if topic_url:
+            out.add(topic_url)
+        try:
+            out.update(json.loads(signals_json or "{}").get("tied_candidates") or [])
+        except (ValueError, AttributeError):
+            pass
+    return out
+
+
 def get_wtrf_attempted_topics(db_path=None) -> dict[str, str]:
     """Return the latest attempt status for every WTRF topic already tried.
 

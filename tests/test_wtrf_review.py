@@ -108,3 +108,16 @@ class TestConfirm:
         rid = _add(db, 16596, "skipped", "ambiguous", "http://w/?topic=1.0")
         r = c.post(f"/api/wtrf/review/{rid}/confirm", json={"topic_url": "http://evil/"})
         assert r.status_code == 400
+
+
+class TestRejectedTopicsNotReoffered:
+    def test_rejected_row_topics_returned(self, client):
+        _, db, _ = client
+        rid = _add(db, 16596, "skipped", "ambiguous", "http://w/?topic=60197.0",
+                   {"tied_candidates": ["http://w/?topic=60197.0", "http://w/?topic=60199.0"]})
+        _add(db, 16596, "skipped", "needs_review", "http://w/?topic=70000.0")
+        assert db.get_wtrf_rejected_topics(16596) == set()
+        db.update_wtrf_download(rid, {"status": "rejected"})
+        assert db.get_wtrf_rejected_topics(16596) == {
+            "http://w/?topic=60197.0", "http://w/?topic=60199.0"}
+        assert db.get_wtrf_rejected_topics(16614) == set()

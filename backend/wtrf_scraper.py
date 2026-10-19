@@ -860,6 +860,12 @@ def find_torrent_for_lb(
             "No matching posts found on WTRF for this entry's date",
         )
 
+    # A curator-rejected match is never offered again for this LB (TODO-193).
+    rejected = database.get_wtrf_rejected_topics(lb_number, db_path=db_path)
+    candidates = [c for c in candidates if c[0] not in rejected]
+    if not candidates:
+        return _fail("not_found", "Only curator-rejected posts match this entry")
+
     logger.info(
         "wtrf_scraper: LB-%05d — %d candidate topic(s) to score", lb_number, len(candidates)
     )
