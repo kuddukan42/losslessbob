@@ -1444,6 +1444,24 @@
       "title": "This LB has open checksum_disputes findings awaiting curator triage (TODO-299)"
     }
   },
+  "qbtBulk": {
+    "failed": "qBittorrent request failed",
+    "pacedRelease": "Paused; releasing {{pending}} in batches of {{batch}} every {{interval}}s.",
+    "skipped": "{{count}} skipped (per-run add cap).",
+    "showStatus": "qBittorrent tracker status ({{count}})",
+    "title": "qBittorrent tracker status",
+    "close": "Close",
+    "state": {
+      "pending": "waiting",
+      "working": "working",
+      "not_working": "NOT WORKING",
+      "not_contacted": "not contacted yet",
+      "updating": "updating",
+      "disabled": "disabled",
+      "no_trackers": "no trackers",
+      "unknown": "unknown"
+    }
+  },
   "library": {
     "lens": {
       "byPerformance": "By performance",

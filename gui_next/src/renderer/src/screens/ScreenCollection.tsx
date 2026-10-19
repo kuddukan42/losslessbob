@@ -10,6 +10,7 @@ import { useSpectrogramStore } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { lbDetailUrl } from '../lib/lbUrl'
 import { copyText } from '../lib/clipboard'
+import { qbtAddSummary } from '../lib/qbtBulk'
 import { RecordingDetailPanel } from '../components/library/DetailPanel'
 import type { DetailRow, PanelTab } from '../components/library/DetailPanel'
 import { buildRecordingActions } from '../components/library/actions'
@@ -2761,10 +2762,8 @@ export function ScreenCollection(): React.JSX.Element {
       })
       const data = await resp.json()
       setTorrentProgress({ done: lbs.length, total: lbs.length, label: 'Sending to qBittorrent' })
-      showToast(
-        `Added ${data.added ?? 0}/${data.total ?? lbs.length} to qBittorrent`,
-        data.ok ? 'ok' : 'bad'
-      )
+      const s = qbtAddSummary(data, lbs.length, t)
+      showToast(s.msg, s.tone)
     } catch {
       showToast('qBittorrent request failed', 'bad')
     } finally {
@@ -3067,12 +3066,10 @@ export function ScreenCollection(): React.JSX.Element {
         body: JSON.stringify({ lb_numbers: lbs }),
       })
       const data = await resp.json()
-      showToast(
-        `Added ${data.added ?? 0}/${data.total ?? lbs.length} to qBittorrent`,
-        data.ok ? 'ok' : 'bad'
-      )
+      const s = qbtAddSummary(data, lbs.length, t)
+      showToast(s.msg, s.tone)
     } catch { showToast('qBittorrent request failed', 'bad') }
-  }, [getCtxRows, showToast])
+  }, [getCtxRows, showToast, t])
 
   const runForumBatch = useCallback(async (targets: CollectionRow[]) => {
     let ok = 0; let fail = 0

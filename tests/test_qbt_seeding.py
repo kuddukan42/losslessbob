@@ -84,3 +84,73 @@ def test_add_paused_cap_and_refusal(monkeypatch):
     calls.clear()
     res = qs.add_paused([1], "h", 1, max_announces=20)
     assert not res["ok"] and not calls
+
+
+# ── Flask endpoint wiring ────────────────────────────────────────────────────
+
+import tempfile  # noqa: E402
+import time  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+import pytest  # noqa: E402
+
+from backend import credentials, db  # noqa: E402
+
+
+@pytest.fixture
+def client(monkeypatch):
+    from backend import scheduler
+    from tests.test_library_picks_api import _AppClient
+    for name in ("start_file_watcher", "start_collection_watcher",
+                 "start_integrity_scan_scheduler", "start_file_verify_scheduler"):
+        monkeypatch.setattr(scheduler, name, lambda *a, **k: None)
+    tmp = Path(tempfile.mkdtemp(prefix="qbt_ep_"))
+    monkeypatch.setattr(db, "get_meta", lambda k, db_path=None: {"qbt_host": "h"}.get(k))
+    monkeypatch.setattr(db, "get_torrents_for_lb", lambda lb, **k: [{"id": int(lb) * 10}])
+    monkeypatch.setattr(credentials, "get_credentials", lambda svc: ("", "key"))
+    with _AppClient(tmp / "t.db") as c:
+        yield c
+
+
+def test_endpoint_bulk_paced(client, monkeypatch):
+    released = []
+    monkeypatch.setattr(qs, "preflight", lambda *a, **k: {"ok": True, "warning": "w"})
+    monkeypatch.setattr(qs.qbt, "add_torrent_from_db",
+                        lambda tid, *a, **k: {"ok": True, "infohash": f"ih{tid}"})
+    monkeypatch.setattr(qs, "release_paced", lambda *a, **k: released.append(a[0]))
+    r = client.post("/api/qbt/add", json={"lb_numbers": [1, 2, 3], "max_adds": 2}).get_json()
+    assert r["paced"] and r["added"] == 2 and r["skipped"] == [30]
+    assert r["warning"] == "w" and r["release"]["pending"] == 2
+    for _ in range(50):
+        if released:
+            break
+        time.sleep(0.02)
+    assert released == [["ih10", "ih20"]]
+
+
+def test_endpoint_bulk_preflight_409(client, monkeypatch):
+    monkeypatch.setattr(qs, "preflight", lambda *a, **k: {"ok": False, "error": "too many"})
+    resp = client.post("/api/qbt/add", json={"lb_numbers": [1, 2]})
+    assert resp.status_code == 409 and resp.get_json()["error"] == "too many"
+
+
+def test_endpoint_single_unchanged(client, monkeypatch):
+    seen = {}
+
+    def fake(tid, *a, **k):
+        seen["paused"] = k.get("paused")
+        return {"ok": True}
+
+    monkeypatch.setattr(qs.qbt, "add_torrent_from_db", fake)
+    monkeypatch.setattr(qs, "preflight", lambda *a, **k: pytest.fail("no preflight"))
+    r = client.post("/api/qbt/add", json={"lb_numbers": [5]}).get_json()
+    assert r["added"] == 1 and "paced" not in r and seen["paused"] is None
+    r = client.post("/api/qbt/add", json={"torrent_id": 7}).get_json()
+    assert r["added"] == 1
+
+
+def test_endpoint_tracker_status(client, monkeypatch):
+    monkeypatch.setattr(qs, "tracker_status",
+                        lambda hashes, *a, **k: {h: {"state": "working"} for h in hashes})
+    r = client.post("/api/qbt/tracker_status", json={"hashes": ["AB"]}).get_json()
+    assert r["status"] == {"ab": {"state": "working"}}

@@ -22,6 +22,7 @@ import { useFolderQueueStore } from './folderQueueStore'
 import { lbDetailUrl } from './lbUrl'
 import { copyText } from './clipboard'
 import { BASE } from './api'
+import { qbtAddSummary, QbtTrackerPanel } from './qbtBulk'
 
 /** One SSE frame from POST /api/entry/<lb>/seed_wtrf (no topic_url case). */
 interface WtrfSeedProgressEvent {
@@ -140,7 +141,8 @@ export function useLibraryActions(): LibraryActions {
           body: JSON.stringify({ lb_numbers: lbs }),
         })
         const data = await resp.json()
-        showToast(t('library.toast.qbtAdded', { added: data.added ?? 0, total: data.total ?? lbs.length }), data.ok ? 'ok' : 'bad')
+        const s = qbtAddSummary(data, lbs.length, t)
+        showToast(s.msg, s.tone)
       } catch { showToast(t('library.toast.qbtFailed'), 'bad') }
     },
     onTorrent: async (rows) => {
@@ -393,6 +395,7 @@ export function useLibraryActions(): LibraryActions {
   const overlays = (
     <>
       {ctxMenu && <ActionMenu state={ctxMenu} onClose={closeCtxMenu} />}
+      <QbtTrackerPanel />
       {toast && (
         <Toast msg={toast.msg} tone={toast.tone} detail={toast.detail}
                sticky={toast.sticky} onDone={() => setToast(null)} />
