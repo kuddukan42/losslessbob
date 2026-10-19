@@ -4069,6 +4069,42 @@ def create_app() -> Flask:
                     api_key=api_key,
                 )
                 results.append(r)
+            elif data.get("lb_numbers") and len(data["lb_numbers"]) > 1:
+                # Bulk: add paused, release in paced background batches (TODO-330).
+                from backend import qbt_seeding as qs
+
+                def _cfg(key: str, default: float) -> float:
+                    return float(data.get(key) or database.get_meta("qbt_" + key) or default)
+
+                ids = []
+                for lb in data["lb_numbers"]:
+                    rows = database.get_torrents_for_lb(int(lb))
+                    if rows:
+                        ids.append(rows[0]["id"])
+                res = qs.add_paused(
+                    ids, host, port, username, password, category, tags, api_key=api_key,
+                    max_adds=int(_cfg("max_adds", qs.DEFAULT_MAX_ADDS)),
+                    max_announces=int(_cfg("max_announces", qs.DEFAULT_MAX_ANNOUNCES)),
+                )
+                if not res["ok"]:
+                    return jsonify({"ok": False, "error": res["error"]}), 409
+                hashes = [r["infohash"] for r in res["results"] if r.get("ok") and r.get("infohash")]
+                batch = int(_cfg("batch_size", qs.DEFAULT_BATCH_SIZE))
+                interval = _cfg("interval_s", qs.DEFAULT_INTERVAL_S)
+                import threading
+                threading.Thread(
+                    target=qs.release_paced,
+                    args=(hashes, host, port, username, password, api_key, batch, interval),
+                    daemon=True,
+                ).start()
+                ok_count = sum(1 for r in res["results"] if r.get("ok"))
+                return jsonify({
+                    "ok": True, "added": ok_count, "total": len(res["results"]),
+                    "results": res["results"], "skipped": res["skipped"],
+                    "warning": res.get("warning"), "paced": True,
+                    "release": {"batch_size": batch, "interval_s": interval,
+                                "pending": len(hashes)},
+                })
             elif data.get("lb_numbers"):
                 for lb in data["lb_numbers"]:
                     rows = database.get_torrents_for_lb(int(lb))
@@ -4083,6 +4119,23 @@ def create_app() -> Flask:
 
             ok_count = sum(1 for r in results if r.get("ok"))
             return jsonify({"ok": True, "added": ok_count, "total": len(results), "results": results})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/qbt/tracker_status", methods=["POST"])
+    def qbt_tracker_status() -> Response:
+        """Per-torrent tracker status. Body: {hashes: [...], host?, port?}."""
+        try:
+            from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY, get_credentials
+            from backend.qbt_seeding import tracker_status
+            data = request.get_json() or {}
+            host = data.get("host") or database.get_meta("qbt_host") or "localhost"
+            port = int(data.get("port") or database.get_meta("qbt_port") or 8080)
+            _, api_key = get_credentials(SERVICE_QBT_KEY)
+            username, password = ("", "") if api_key else get_credentials(SERVICE_QBT)
+            hashes = [str(h).lower() for h in data.get("hashes") or []]
+            return jsonify({"ok": True, "status": tracker_status(
+                hashes, host, port, username, password, api_key or "")})
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
 

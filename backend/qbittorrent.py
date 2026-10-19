@@ -108,6 +108,7 @@ def add_torrent_for_seeding(
     category: str = "",
     tags: str = "",
     api_key: str = "",
+    paused: bool = False,
 ) -> dict:
     """Add a .torrent file to qBittorrent and start seeding immediately.
 
@@ -124,6 +125,8 @@ def add_torrent_for_seeding(
         category: Optional category string.
         tags: Optional comma-separated tags string.
         api_key: API key (qBittorrent 5+). Takes priority over username/password.
+        paused: Add stopped (sends both "paused" and "stopped" form keys); the
+            caller releases it later (see backend.qbt_seeding).
 
     Returns:
         Dict with keys: ok (bool), error (str if ok=False).
@@ -151,6 +154,9 @@ def add_torrent_for_seeding(
             form["category"] = category
         if tags:
             form["tags"] = tags
+        if paused:
+            form["paused"] = "true"
+            form["stopped"] = "true"
 
         with torrent.open("rb") as fh:
             files = {"torrents": (torrent.name, fh, "application/x-bittorrent")}
@@ -288,6 +294,7 @@ def add_torrent_from_db(
     tags: str = "",
     api_key: str = "",
     db_path=None,
+    paused: bool = False,
 ) -> dict:
     """Look up a torrents table record by id and add it to qBittorrent.
 
@@ -303,9 +310,10 @@ def add_torrent_from_db(
         tags: Optional tags.
         api_key: API key (qBittorrent 5+). Takes priority over username/password.
         db_path: DB path override for testing.
+        paused: Add the torrent stopped (paced bulk seeding).
 
     Returns:
-        Dict with keys: ok (bool), error (str if ok=False).
+        Dict with keys: ok (bool), error (str if ok=False), infohash (str).
     """
     conn = db.get_connection(db_path)
     row = conn.execute(
@@ -324,7 +332,9 @@ def add_torrent_from_db(
         category=category,
         tags=tags,
         api_key=api_key,
+        paused=paused,
     )
+    result["infohash"] = (row["infohash"] or "").lower()
 
     if result["ok"]:
         from datetime import UTC, datetime
