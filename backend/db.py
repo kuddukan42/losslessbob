@@ -3372,6 +3372,8 @@ def init_db(db_path=None):
         # still gets the table.
         from backend import checksum_provenance
         checksum_provenance.ensure_schema(conn)
+        from backend import wtrf_discovery
+        wtrf_discovery.ensure_schema(conn)
         cols = [r[1] for r in conn.execute("PRAGMA table_info(entries)").fetchall()]
         if "status" not in cols:
             conn.execute("ALTER TABLE entries ADD COLUMN status TEXT DEFAULT 'ok'")
@@ -6389,7 +6391,24 @@ def get_forum_posts_for_lb(lb_number: int, db_path=None) -> list:
             "SELECT * FROM forum_posts WHERE lb_number=? ORDER BY posted_at DESC",
             (lb_number,),
         ).fetchall()
-    return [dict(r) for r in rows]
+        out = [dict(r, source="local") for r in rows]
+        # TODO-135: topics discovered on the WTRF board, not posted via this app.
+        # Skip any already covered by a local log row (same topic id in the URL).
+        from backend import wtrf_discovery
+        local_ids = {
+            int(m.group(1)) for r in out
+            if (m := wtrf_discovery._TOPIC_ID_RE.search(r.get("topic_url") or ""))
+        }
+        for s in wtrf_discovery.lookup_for_lb(conn, lb_number):
+            if s["topic_id"] in local_ids:
+                continue
+            out.append({
+                "id": -s["topic_id"], "lb_number": lb_number, "subject": s["subject"],
+                "topic_url": s["topic_url"], "board_id": s["board_id"],
+                "posted_at": s["posted_at"] or "", "source": "wtrf_scrape",
+                "poster": s["poster"], "matched_in": s["matched_in"],
+            })
+    return out
 
 
 def delete_forum_post(post_id: int, db_path=None) -> None:
