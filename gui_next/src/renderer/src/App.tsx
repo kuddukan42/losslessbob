@@ -20,6 +20,7 @@ import { ScreenBootlegs } from './screens/ScreenBootlegs'
 import { ScreenThemes } from './screens/ScreenThemes'
 import { ScreenCoverage } from './screens/ScreenCoverage'
 import { ScreenLbdirLedger } from './screens/ScreenLbdirLedger'
+import { ScreenWtrfReview } from './screens/ScreenWtrfReview'
 import { ScreenLbdirSync } from './screens/ScreenLbdirSync'
 import { ScreenMap } from './screens/ScreenMap'
 import { ScreenAttachments } from './screens/ScreenAttachments'
@@ -224,6 +225,7 @@ export default function App(): React.JSX.Element {
           <Route path="/scraper"     element={<CuratorRoute element={<ScreenScraper />} />} />
           <Route path="/fingerprint" element={<CuratorRoute element={<ScreenFingerprint />} />} />
           <Route path="/checksumdisputes" element={<CuratorRoute element={<ScreenChecksumDisputes />} />} />
+          <Route path="/wtrfreview" element={<CuratorRoute element={<ScreenWtrfReview />} />} />
           <Route path="/setup"       element={<ScreenSetup />} />
           <Route path="/mounts"      element={<ScreenMounts />} />
           <Route path="/fileintegrity" element={<ScreenFileIntegrity />} />

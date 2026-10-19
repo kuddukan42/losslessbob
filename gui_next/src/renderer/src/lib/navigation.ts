@@ -9,7 +9,7 @@ export type NavId =
   | 'home' | 'pipeline' | 'scanner' | 'quicklookup'
   | 'library' | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs' | 'tapematch' | 'songs' | 'timeline'
   | 'attachments' | 'spectrograms' | 'map'
-  | 'scraper' | 'fingerprint' | 'checksumdisputes' | 'setup' | 'mounts' | 'fileintegrity' | 'themes' | 'dbeditor'
+  | 'scraper' | 'fingerprint' | 'checksumdisputes' | 'wtrfreview' | 'setup' | 'mounts' | 'fileintegrity' | 'themes' | 'dbeditor'
 
 export type NavGroupLabel = 'Ingest' | 'Library' | 'Assets' | 'Curator' | 'Settings'
 
@@ -87,6 +87,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { id: 'scraper',     label: 'Scraper',     icon: 'scraper' },
       { id: 'fingerprint', label: 'Fingerprint', icon: 'fingerprint' },
       { id: 'checksumdisputes', label: 'Checksum Disputes', icon: 'alert' },
+      { id: 'wtrfreview', label: 'WTRF Review', icon: 'scraper' },
     ],
   },
   {
