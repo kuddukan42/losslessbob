@@ -159,6 +159,7 @@
     <div class="tabs">
       <button class="tab active" data-tab="work">Workbench</button>
       <button class="tab" data-tab="isolated">Isolated text</button>
+      <button class="tab" data-tab="tuitcand">TUIT candidates</button>
       <button class="tab" data-tab="tapers">Tapers</button>
     </div>
   </header>
@@ -256,6 +257,16 @@
         <select id="page-size"><option>25</option><option selected>50</option><option>100</option><option>200</option></select>
       </label>
     </div>
+  </div>
+
+  <!-- ── TUIT candidates (TODO-339 part 4) ──────────────────────────────────── -->
+  <div id="tab-tuitcand" style="display:none;flex:1;overflow:auto;padding:14px 16px 40px">
+    <div class="dim" id="tc-summary" style="margin-bottom:8px"></div>
+    <table>
+      <thead><tr><th>LB</th><th>Date / place</th><th>Candidate</th>
+        <th>TUIT provenance</th><th>Engine</th><th></th></tr></thead>
+      <tbody id="tc-rows"></tbody>
+    </table>
   </div>
 
   <!-- ── Isolated text ─────────────────────────────────────────────────────── -->
@@ -782,6 +793,47 @@
     }
   }
 
+  // ── TUIT candidates tab (TODO-339 part 4) ──────────────────────────────────
+
+  async function loadTuitCandidates() {
+    const body = document.getElementById('tc-rows');
+    body.innerHTML = '<tr><td colspan="6" class="dim" style="padding:14px">Loading…</td></tr>';
+    let res;
+    try { res = await api('GET', '/api/tapers/curation/tuit_candidates?limit=2000'); }
+    catch (e) { toast(e.message, 'error'); return; }
+    document.getElementById('tc-summary').textContent =
+      res.total.toLocaleString() + ' undecided recordings where TUIT names a taper and the ' +
+      'LB entry names none. Accepting records a normal curator confirmation; entries are never edited.';
+    body.innerHTML = res.rows.map(r => {
+      const pv = r.provenance || {};
+      return '<tr>' +
+        '<td class="nowrap"><a href="#" data-jump="' + r.lb_number + '">' + lbLabel(r.lb_number) + '</a></td>' +
+        '<td class="dim">' + esc((r.date_str || '') + ' ' + (r.location || '')) + '</td>' +
+        '<td class="mono"><b>' + esc(r.candidates[0]) + '</b> ' +
+          (r.known ? '' : tag('not in vocabulary', 'warn')) + '</td>' +
+        '<td class="dim">' + tag('TUIT', 'muted') + ' "' + esc(pv.taper_text || '') + '"' +
+          ' · rec ' + esc(String(pv.rec_id)) + ' · ' + esc(pv.uploader || 'no uploader') + '</td>' +
+        '<td class="dim">' + (r.attribution ? esc(r.attribution.taper + ' (' + r.attribution.confidence + ')') : '—') + '</td>' +
+        '<td class="actions"><button data-write data-accept="' + r.lb_number + '" data-taper="' +
+          esc(r.candidates[0]) + '" data-known="' + (r.known ? '1' : '') + '">Accept</button></td>' +
+      '</tr>';
+    }).join('') || '<tr><td colspan="6" class="empty">No candidates.</td></tr>';
+    body.querySelectorAll('[data-jump]').forEach(a => a.addEventListener('click', ev => {
+      ev.preventDefault();
+      document.getElementById('q').value = a.dataset.jump;
+      filters.q = a.dataset.jump;
+      page = 0;
+      switchTab('work');
+      loadRows();
+    }));
+    body.querySelectorAll('[data-accept]').forEach(b => b.addEventListener('click', async () => {
+      await decide(Number(b.dataset.accept), 'confirm', b.dataset.taper,
+                   b.dataset.known ? null : 'unknown_text');
+      loadTuitCandidates();
+    }));
+    applyGate(body);
+  }
+
   // ── isolated text tab ──────────────────────────────────────────────────────
 
   async function loadIsolated(refresh) {
@@ -912,6 +964,8 @@
     document.getElementById('tab-work').style.display = name === 'work' ? 'flex' : 'none';
     document.getElementById('tab-isolated').style.display = name === 'isolated' ? 'block' : 'none';
     document.getElementById('tab-tapers').style.display = name === 'tapers' ? 'block' : 'none';
+    document.getElementById('tab-tuitcand').style.display = name === 'tuitcand' ? 'block' : 'none';
+    if (name === 'tuitcand') loadTuitCandidates();
     if (name === 'isolated' && !document.getElementById('iso-rows').children.length) loadIsolated();
     if (name === 'tapers' && !document.getElementById('tapers-rows').children.length) loadTapers();
   }
