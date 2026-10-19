@@ -1659,3 +1659,53 @@ class TestGetProgress:
         progress = get_progress()
         for key in ("running", "done", "total", "current", "errors", "stage", "succeeded"):
             assert key in progress
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# TODO-338(3): _get_tuit_venues_location_string()
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestGetTuitVenuesLocationString:
+    def _seed(self, conn):
+        conn.execute(
+            "INSERT INTO entries (lb_number, date_str, location, status) "
+            "VALUES (1, '3/21/26', 'omaha ne', 'ok')"
+        )
+        conn.execute(
+            "INSERT INTO tuit_shows (date_str, venue, location) VALUES "
+            "('2026-03-21', 'Orpheum Theater', 'Omaha, Nebraska, United States')"
+        )
+        # Same venue name in other cities: the city prefix must pick the right one.
+        for city, country, n in (("Memphis, Tennessee", "United States", 99),
+                                 ("Omaha, Nebraska", "United States", 5)):
+            conn.execute(
+                "INSERT INTO tuit_venues (venue, city, country, n_shows) VALUES (?,?,?,?)",
+                ("Orpheum Theater", city, country, n),
+            )
+        conn.commit()
+
+    def test_matches_by_date_and_disambiguates_city(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_tuit_venues_location_string
+            self._seed(conn)
+            out: list = []
+            assert _get_tuit_venues_location_string("omaha ne", conn, out) == (
+                "Orpheum Theater, Omaha, Nebraska, United States",
+                "Omaha, Nebraska, United States", "Orpheum Theater",
+            )
+            assert out == ["United States"]
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_no_match_and_in_priority_chain(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _STRUCTURED_SOURCES, _get_tuit_venues_location_string
+            self._seed(conn)
+            assert _get_tuit_venues_location_string("unknown place", conn) is None
+            names = [n for n, _ in _STRUCTURED_SOURCES]
+            assert names.index("tuit_venues") > names.index("setlistfm_shows")
+            assert names.index("tuit_venues") < names.index("performances")
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)

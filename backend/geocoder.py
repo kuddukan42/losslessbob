@@ -455,6 +455,58 @@ def _get_setlistfm_location_string(
     return None
 
 
+def _get_tuit_venues_location_string(
+    location_text: str, conn, country_out: list | None = None
+) -> tuple[str, str | None, str | None] | None:
+    """Return structured geocoding strings from TUIT's show spine + venue register.
+
+    Matches by date: each ISO date of the entries at this location is looked up
+    in ``tuit_shows``, whose venue name is joined to ``tuit_venues`` for a clean
+    city/country split. Venue names repeat across cities, so the register row
+    must also have its city as a prefix of the show's own ``location`` text
+    (busiest register row wins a tie). Feature-detects both tables.
+
+    Args:
+        location_text: Raw location string from ``entries.location``.
+        conn: SQLite connection (read-only usage).
+        country_out: Optional list; on a hit the register row's ``country`` is
+            appended (``""`` if blank).
+
+    Returns:
+        ``(full, city_only, venue_only)`` such as ``("Orpheum Theater, Omaha,
+        Nebraska, United States", "Omaha, Nebraska, United States",
+        "Orpheum Theater")``; ``None`` when no TUIT show/venue matches.
+    """
+    if not (_table_exists(conn, "tuit_shows") and _table_exists(conn, "tuit_venues")):
+        return None
+
+    for iso in _entries_iso_dates(location_text, conn):
+        row = conn.execute(
+            """SELECT s.venue AS venue, v.city AS city, v.country AS country
+               FROM tuit_shows s JOIN tuit_venues v
+                 ON v.venue = s.venue
+                AND COALESCE(v.city, '') != ''
+                AND s.location LIKE v.city || '%'
+               WHERE s.date_str = ?
+               ORDER BY COALESCE(v.n_shows, 0) DESC, v.id LIMIT 1""",
+            (iso,),
+        ).fetchone()
+        if row is None:
+            continue
+        venue = (row["venue"] or "").strip()
+        city_parts = [p.strip() for p in (row["city"], row["country"]) if p and p.strip()]
+        full_parts = ([venue] if venue else []) + city_parts
+        if full_parts:
+            if country_out is not None:
+                country_out.append((row["country"] or "").strip())
+            return (
+                ", ".join(full_parts),
+                ", ".join(city_parts) if city_parts else None,
+                venue or None,
+            )
+    return None
+
+
 def _get_setlistfm_city_coords(location_text: str, conn) -> dict | None:
     """Return setlist.fm's own city-level coordinate for this location, if stored.
 
@@ -529,7 +581,7 @@ def _city_viewbox(lat: float, lon: float, km: float = 30.0) -> str:
 # raw entries.location text. The key becomes location_geocoded.source on a hit.
 # bobdylan_shows is the most standardized (curated "City, ST" location strings),
 # olof_events is next (clean separate venue/city/region/country fields, TODO-224),
-# setlistfm_shows is the backup, and dylan_performances is the last resort.
+# setlistfm_shows is the backup, tuit_venues (TODO-338) follows it, and dylan_performances is the last resort.
 # Each lookup function returns (full_query, city_only_query | None, venue_only | None)
 # on a hit, or None on a miss — see TODO-220 cascading fallback and the TODO-222
 # bounded venue search / setlistfm_city fallback in run_batch().
@@ -537,6 +589,7 @@ _STRUCTURED_SOURCES = (
     ("bobdylan_shows", _get_bobdylan_shows_location_string),
     ("olof_events", _get_olof_events_location_string),
     ("setlistfm_shows", _get_setlistfm_location_string),
+    ("tuit_venues", _get_tuit_venues_location_string),
     ("performances", _get_performance_location_string),
 )
 
