@@ -105,7 +105,11 @@
         "recent": "Aktuell"
       }
     },
-    "noWtrfAccount": "Kein WTRF-Konto"
+    "noWtrfAccount": "Kein WTRF-Konto",
+    "sidebar": {
+      "collapse": "Seitenleiste ausblenden",
+      "expand": "Seitenleiste erweitern"
+    }
   },
   "home": {
     "welcome": "Willkommen zurück, Rolling",
@@ -710,7 +714,13 @@
       "xrefCopy": "Xref-Dateisatz · xref-{{id}}",
       "altFilesetsNote": "Für diesen Eintrag dokumentierte alternative Dateisätze",
       "discs": "Discs",
-      "tabCollection": "Sammlung"
+      "tabCollection": "Sammlung",
+      "foundOnWtrf": "Gefunden auf WTRF",
+      "wtrfSyncArchive": "WTRF-Archiv importieren",
+      "wtrfSyncBoard": "Synchronisierung von WTRF",
+      "wtrfSyncing": "Wird synchronisiert…",
+      "wtrfSyncDone": "Synchronisierte {{topics}}-Themen, {{links}}-LB-Links.",
+      "wtrfSyncFailed": "WTRF-Synchronisierung fehlgeschlagen."
     },
     "confirmDelete": {
       "torrentTitle": ".torrent-Datei löschen",
@@ -853,6 +863,15 @@
       "colorByDecade": "Farbe nach Jahrzehnt",
       "heatmapOverlay": "Heatmap-Overlay",
       "showVenueLabels": "Ortskennzeichnungen anzeigen"
+    },
+    "trail": {
+      "title": "Reiseroute",
+      "show": "Reiseroute anzeigen",
+      "years": "Jahre",
+      "from": "Aus",
+      "to": "Zu",
+      "gapDays": "Zeilenumbruch nach einer Pause von (Tagen)",
+      "hint": "Ein Punkt pro Sendetermin, in chronologischer Reihenfolge angeordnet und nach Jahrzehnten farblich gekennzeichnet. Klicken Sie auf einen Punkt, um Details anzuzeigen."
     }
   },
   "setup": {
@@ -885,7 +904,9 @@
       "installUpdate": "Aus Datei installieren...",
       "githubUpdateBody": "Auf GitHub ist ein neuer Master-Snapshot verfügbar ({{tag}}).\n\nJetzt herunterladen und anwenden? Ihre Sammlung, Wunschliste und persönlichen Einstellungen bleiben erhalten.",
       "publishSitedata": "Website-Daten veröffentlichen…",
-      "publishingSitedata": "Wird veröffentlicht…"
+      "publishingSitedata": "Wird veröffentlicht…",
+      "curatorSection": "Curator",
+      "curatorShortcutHint": "Tastenkombination: Strg+Umschalt+Alt+C schaltet den Kurator-Modus von überall aus ein oder aus."
     },
     "integrations": {
       "title": "Integrationen",
@@ -1236,7 +1257,20 @@
       "affected": "{{count}} Zeile(n) betroffen.",
       "noResults": "Abfrage hat keine Zeilen zurückgegeben.",
       "truncated": "(auf 500 Zeilen begrenzt)",
-      "error": "Fehler: {{msg}}"
+      "error": "Fehler: {{msg}}",
+      "schemaFilter": "Tabellen filtern…",
+      "tableHint": "Zum Erweitern anklicken, zum AUSWÄHLEN doppelklicken",
+      "columnHint": "Zum Einfügen des Spaltennamens hier klicken",
+      "schemaError": "Spalten konnten nicht geladen werden",
+      "toggleSchema": "Schema-Baum ein-/ausblenden",
+      "tabTitle": "Abfrage {{n}}",
+      "closeTab": "Registerkarte schließen",
+      "newTab": "Neue Registerkarte „Abfrage“",
+      "history": "Verlauf",
+      "historyEmpty": "Noch keine Fragen.",
+      "historyClear": "Verlauf löschen",
+      "copyCell": "Zelle kopieren",
+      "copyRow": "Zeile kopieren"
     },
     "tapers": {
       "title": "Bekannte Taper",
@@ -1762,6 +1796,11 @@
       "clipFailed": "Clip nicht verfügbar",
       "pause": "Pause",
       "stop": "Stopp"
+    },
+    "tuit": {
+      "on": "Auf dem TUIT-Tracker",
+      "off": "Nicht im TUIT-Tracker",
+      "tooltip": "Ob der TUIT-Tracker einen Torrent für diese Sendung auflistet. Gilt nur für die Verfügbarkeit auf dem Tracker: Das bedeutet nicht, dass keine Tonbandaufnahme existiert."
     }
   },
   "tapematch": {
@@ -2820,5 +2859,50 @@
       "label_other": "{{count}} offene Streitfälle",
       "title": "Dieser LB enthält offene „checksum_disputes“-Befunde, die auf die Überprüfung durch einen Kurator warten (TODO-299)"
     }
+  },
+  "qbtBulk": {
+    "failed": "qBittorrent-Anfrage fehlgeschlagen",
+    "pacedRelease": "Zurückgestellt; Veröffentlichung von {{pending}} in Chargen von {{batch}} alle {{interval}}s.",
+    "skipped": "{{count}} übersprungen (Begrenzung der Anzahl pro Durchlauf).",
+    "showStatus": "qBittorrent-Tracker-Status ({{count}})",
+    "title": "qBittorrent-Tracker-Status",
+    "close": "Schließen",
+    "state": {
+      "pending": "Warten",
+      "working": "in Arbeit",
+      "not_working": "FUNKTIONIERT NICHT",
+      "not_contacted": "noch nicht kontaktiert",
+      "updating": "Aktualisierung",
+      "disabled": "deaktiviert",
+      "no_trackers": "keine Tracker",
+      "unknown": "unbekannt"
+    }
+  },
+  "tradingMatrix": {
+    "tabSingle": "Ein einzelner Freund",
+    "tabMatrix": "Stapelmatrix",
+    "pickFriends": "Freunde zum Vergleichen auswählen",
+    "selectAll": "Alle",
+    "selectNone": "Keine",
+    "run": "Ausgewählte vergleichen",
+    "needFriends": "Wählen Sie mindestens einen Freund aus.",
+    "empty": "Wähle Freunde aus und klicke auf „Ausgewählte vergleichen“, um für jede Sendung den besten Tauschpartner zu finden.",
+    "noRows": "Für diese Auswahl gibt es keine tauschbaren Shows.",
+    "modeAll": "Alle",
+    "modeWant": "Die haben sie, dir fehlen sie",
+    "modeOffer": "Sie haben es, ihnen fehlt es",
+    "search": "Nach LB-Nummer, Datum oder Veranstaltungsort filtern",
+    "colShow": "Anzeigen",
+    "colBest": "Bester Partner",
+    "has": "Gibt es das?",
+    "lacks": "Fehlt",
+    "want": "Möchten Sie",
+    "offer": "Angebot",
+    "summary": "{{name}}: {{want}} zum Empfangen, {{offer}} zum Senden",
+    "page": "{{from}}–{{to}} von {{total}}",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "error": "Der Stapelvergleich ist fehlgeschlagen.",
+    "bestHint": "Der beste Partner = der Freund mit dem größten Potenzial für gegenseitigen Austausch."
   }
 }

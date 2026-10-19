@@ -105,7 +105,11 @@
         "recent": "Recent"
       }
     },
-    "noWtrfAccount": "Geen WTRF-account"
+    "noWtrfAccount": "Geen WTRF-account",
+    "sidebar": {
+      "collapse": "Zijbalk samenvouwen",
+      "expand": "Zijbalk uitvouwen"
+    }
   },
   "home": {
     "welcome": "Welkom terug, Rolling",
@@ -710,7 +714,13 @@
       "xrefCopy": "Xref-bestandsset · xref-{{id}}",
       "altFilesetsNote": "Alt-bestandsets gedocumenteerd voor dit item",
       "discs": "Schijven",
-      "tabCollection": "Collectie"
+      "tabCollection": "Collectie",
+      "foundOnWtrf": "Gevonden op WTRF",
+      "wtrfSyncArchive": "WTRF-archief importeren",
+      "wtrfSyncBoard": "Synchroniseren vanuit WTRF",
+      "wtrfSyncing": "Bezig met synchroniseren…",
+      "wtrfSyncDone": "Gesynchroniseerde {{topics}}-onderwerpen, {{links}} LB-koppelingen.",
+      "wtrfSyncFailed": "WTRF-synchronisatie mislukt."
     },
     "confirmDelete": {
       "torrentTitle": ".torrent-bestand verwijderen",
@@ -853,6 +863,15 @@
       "colorByDecade": "Kleur per decennium",
       "heatmapOverlay": "Hittekaart overlay",
       "showVenueLabels": "Locatielabels tonen"
+    },
+    "trail": {
+      "title": "Reisroute",
+      "show": "Reisroute weergeven",
+      "years": "Jaren",
+      "from": "Van",
+      "to": "Naar",
+      "gapDays": "Regeleinde na een pauze van (dagen)",
+      "hint": "Eén punt per uitvoeringsdatum, gerangschikt op datum en gekleurd per decennium. Klik op een punt voor meer informatie."
     }
   },
   "setup": {
@@ -885,7 +904,9 @@
       "installUpdate": "Installeren vanuit bestand...",
       "githubUpdateBody": "Er is een nieuwe master-snapshot beschikbaar op GitHub ({{tag}}).\n\nNu downloaden en toepassen? Je collectie, verlanglijst en persoonlijke instellingen blijven behouden.",
       "publishSitedata": "Sitegegevens publiceren…",
-      "publishingSitedata": "Bezig met publiceren…"
+      "publishingSitedata": "Bezig met publiceren…",
+      "curatorSection": "Curator",
+      "curatorShortcutHint": "Sneltoets: Ctrl+Shift+Alt+C schakelt de curatormodus over, waar je ook bent."
     },
     "integrations": {
       "title": "Integraties",
@@ -1236,7 +1257,20 @@
       "affected": "{{count}} rij(en) beïnvloed.",
       "noResults": "De query leverde geen rijen op.",
       "truncated": "(beperkt tot 500 rijen)",
-      "error": "Fout: {{msg}}"
+      "error": "Fout: {{msg}}",
+      "schemaFilter": "Tabellen filteren…",
+      "tableHint": "Klik om uit te vouwen, dubbelklik om te SELECTEREN",
+      "columnHint": "Klik om de kolomnaam in te voegen",
+      "schemaError": "Kolommen konden niet worden geladen",
+      "toggleSchema": "Schemastructuur weergeven/verbergen",
+      "tabTitle": "Zoekopdracht {{n}}",
+      "closeTab": "Tabblad sluiten",
+      "newTab": "Nieuw tabblad ‘Zoeken’",
+      "history": "Geschiedenis",
+      "historyEmpty": "Nog geen vragen.",
+      "historyClear": "Geschiedenis wissen",
+      "copyCell": "Cel kopiëren",
+      "copyRow": "Rij kopiëren"
     },
     "tapers": {
       "title": "Bekende opnamemakers",
@@ -1762,6 +1796,11 @@
       "clipFailed": "clip niet beschikbaar",
       "pause": "Pauze",
       "stop": "Stoppen"
+    },
+    "tuit": {
+      "on": "Op de TUIT-tracker",
+      "off": "Niet op de TUIT-tracker",
+      "tooltip": "Of de TUIT-tracker een torrent voor deze show vermeldt. Alleen beschikbaarheid op de tracker: dit betekent niet dat er geen opname bestaat."
     }
   },
   "tapematch": {
@@ -2820,5 +2859,50 @@
       "label_other": "{{count}} openstaande geschillen",
       "title": "Deze LB bevat openstaande bevindingen met betrekking tot checksum_disputes die wachten op beoordeling door de curator (TODO-299)"
     }
+  },
+  "qbtBulk": {
+    "failed": "qBittorrent-verzoek mislukt",
+    "pacedRelease": "Opgeschort; {{pending}} wordt in batches van {{batch}} elke {{interval}}s uitgebracht.",
+    "skipped": "{{count}} overgeslagen (limiet voor toevoegingen per uitvoering).",
+    "showStatus": "qBittorrent-trackerstatus ({{count}})",
+    "title": "Status van de qBittorrent-tracker",
+    "close": "Sluiten",
+    "state": {
+      "pending": "in afwachting",
+      "working": "in ontwikkeling",
+      "not_working": "WERKT NIET",
+      "not_contacted": "nog geen contact opgenomen",
+      "updating": "bijwerken",
+      "disabled": "uitgeschakeld",
+      "no_trackers": "geen trackers",
+      "unknown": "onbekend"
+    }
+  },
+  "tradingMatrix": {
+    "tabSingle": "Eén vriend",
+    "tabMatrix": "Batchmatrix",
+    "pickFriends": "Kies vrienden om te vergelijken",
+    "selectAll": "Alles",
+    "selectNone": "Geen",
+    "run": "Vergelijk geselecteerde",
+    "needFriends": "Selecteer ten minste één vriend.",
+    "empty": "Kies vrienden en klik op ‘Geselecteerde vergelijken’ om voor elk optreden de beste ruilpartner te zien.",
+    "noRows": "Er zijn geen verhandelbare shows voor deze selectie.",
+    "modeAll": "Alles",
+    "modeWant": "Zij hebben het, jij mist het",
+    "modeOffer": "Jij hebt het, zij missen het",
+    "search": "Filteren op LB#, datum of locatie",
+    "colShow": "Weergeven",
+    "colBest": "De beste partner",
+    "has": "Is dat zo?",
+    "lacks": "Ontbreekt",
+    "want": "Wil je",
+    "offer": "Aanbieding",
+    "summary": "{{name}}: {{want}} om te ontvangen, {{offer}} om te verstrekken",
+    "page": "{{from}}–{{to}} van {{total}}",
+    "prev": "Vorige",
+    "next": "Volgende",
+    "error": "Het batchvergelijking is mislukt.",
+    "bestHint": "De beste partner = de vriend met het grootste potentieel voor wederzijdse uitwisseling."
   }
 }
