@@ -1083,6 +1083,15 @@ def main(argv=None):
     groups = match.cluster(names, M, m_thr,
                            link_fn=lambda i, j: verdict.pair_links(
                                _pair_metrics(i, j), cfg, lineage=lineage_pairs))
+    if verdict.family_guard_cfg(cfg) is not None:
+        # TODO-319: weak legs may not chain families; same rule the offline
+        # replay applies via verdict.cluster_verdicts -> verdict.form_families.
+        mechs = {(i, j): verdict.link_mechanism(_pair_metrics(i, j), cfg,
+                                                lineage=lineage_pairs)
+                 for i in range(len(names)) for j in range(i + 1, len(names))}
+        fams = verdict.form_families(
+            range(len(names)), {k: m for k, m in mechs.items() if m is not None}, cfg)
+        groups = [[names[i] for i in sorted(f)] for f in sorted(fams, key=min)]
     for gi, g in enumerate(groups, 1):
         intra_pairs = [(a, b) for a in g for b in g if a < b]
         intra_corrs = [M[names.index(a), names.index(b)] for a, b in intra_pairs]

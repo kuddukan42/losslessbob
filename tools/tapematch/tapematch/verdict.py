@@ -542,54 +542,142 @@ def link_mechanism(pair: Mapping, cfg: Mapping,
     return None
 
 
-def cluster_verdicts(pairs: list[Mapping], cfg: Mapping,
-                     lineage: Iterable[tuple[int, int]] | None = None,
-                     ) -> dict[tuple, str]:
-    """Union-find over a date's pairs; return per-pair family verdict.
+def family_guard_cfg(cfg: Mapping) -> Mapping | None:
+    """Return the ``family_guard`` block when the guard is enabled, else None.
 
-    ``pairs`` is every observed pair for one concert date. Returns a mapping
-    ``{(lb_a, lb_b): SAME_FAMILY | DIFFERENT_FAMILY}`` where a pair is
-    SAME_FAMILY iff its two members land in the same connected component after
-    linking every pair for which :func:`pair_links` is true. This makes the
-    verdict transitive — identical to the session's family clustering — rather
-    than a per-row decision.
-
-    Keys are normalized ``(min, max)`` of the pair's ``lb_a``/``lb_b``.
+    TODO-319. Absent block or ``enabled`` falsey (the committed default) means
+    plain single-linkage family formation — byte-identical to pre-TODO-319.
     """
-    # Collect node ids.
-    nodes: dict[int, int] = {}
+    block = cfg.get("family_guard", {}) or {}
+    return block if block.get("enabled") else None
 
-    def node(x: int) -> int:
-        if x not in nodes:
-            nodes[x] = len(nodes)
-        return nodes[x]
 
-    parent: list[int] = []
+def form_families(nodes: Iterable, edges: Mapping[tuple, str | None],
+                  cfg: Mapping) -> list[set]:
+    """Group ``nodes`` into recording families from their linked pairs.
 
-    def find(x: int) -> int:
+    Guard off: connected components of every linked pair (single linkage) —
+    the historical behaviour, where one weak edge anywhere fuses two whole
+    families and an unlinked pair inherits a family through any chain.
+
+    Guard on (``family_guard.enabled``, TODO-319): two-tier formation.
+
+    1. Edges whose mechanism is in ``family_guard.strong_legs`` (default
+       ``["primary"]`` — residual corr over ``match.cluster_threshold``, the
+       one leg calibrated as decisive on its own) union freely, as before.
+    2. Every other linked edge is a *weak* leg. Weak legs never chain on
+       their own: two families merge only when the weak edges BETWEEN them
+       cover at least ``family_guard.min_link_density`` of the
+       ``|A| x |B|`` cross pairs. Merges are taken best-density first
+       (ties: more edges, then lowest member) and densities are recomputed
+       after each merge, so it is average linkage over the binary link graph.
+
+    With ``min_link_density`` at or below ``1 / (|A| x |B|)`` the guard
+    reduces to single linkage, so the knob spans the full range between
+    "connectivity alone" and "every cross pair must link directly".
+
+    Args:
+        nodes: Node ids (LB numbers, or session source names).
+        edges: ``{(a, b): mechanism}`` for each pair that links, mechanism as
+            returned by :func:`link_mechanism` (None is treated as weak).
+        cfg: Loaded tapematch config.
+
+    Returns:
+        List of member sets, one per family, covering every node once.
+    """
+    nodes = list(dict.fromkeys(nodes))
+    parent = {n: n for n in nodes}
+
+    def find(x):
         while parent[x] != x:
             parent[x] = parent[parent[x]]
             x = parent[x]
         return x
 
-    def union(a: int, b: int) -> None:
-        parent[find(a)] = find(b)
+    guard = family_guard_cfg(cfg)
+    strong = set(guard.get("strong_legs", ["primary"]) or []) if guard else None
+    weak: set[frozenset] = set()
+    for (a, b), mech in edges.items():
+        if a == b or a not in parent or b not in parent:
+            continue
+        if guard is None or mech in strong:
+            parent[find(a)] = find(b)
+        else:
+            weak.add(frozenset((a, b)))
 
-    # Register all nodes first so parent[] is sized correctly.
+    if guard is not None and weak:
+        min_density = float(guard.get("min_link_density") or 0.0)
+        members: dict = {}
+        for n in nodes:
+            members.setdefault(find(n), set()).add(n)
+        first = {n: i for i, n in enumerate(sorted(nodes, key=lambda n: (str(type(n)), n)))}
+        while True:
+            cross: dict[frozenset, int] = {}
+            for e in weak:
+                ra, rb = (find(x) for x in e)
+                if ra != rb:
+                    k = frozenset((ra, rb))
+                    cross[k] = cross.get(k, 0) + 1
+            best: tuple | None = None
+            best_pair: tuple | None = None
+            for k, n_edges in cross.items():
+                ra, rb = k
+                density = n_edges / (len(members[ra]) * len(members[rb]))
+                if density + 1e-12 < min_density:
+                    continue
+                low = sorted(min(first[m] for m in members[r]) for r in (ra, rb))
+                rank = (density, n_edges, -low[0], -low[1])
+                if best is None or rank > best:
+                    best, best_pair = rank, (ra, rb)
+            if best_pair is None:
+                break
+            ra, rb = best_pair
+            parent[ra] = rb
+            members[rb] |= members.pop(ra)
+
+    groups: dict = {}
+    for n in nodes:
+        groups.setdefault(find(n), set()).add(n)
+    return list(groups.values())
+
+
+def cluster_verdicts(pairs: list[Mapping], cfg: Mapping,
+                     lineage: Iterable[tuple[int, int]] | None = None,
+                     ) -> dict[tuple, str]:
+    """Family formation over a date's pairs; return per-pair family verdict.
+
+    ``pairs`` is every observed pair for one concert date. Returns a mapping
+    ``{(lb_a, lb_b): SAME_FAMILY | DIFFERENT_FAMILY}`` where a pair is
+    SAME_FAMILY iff its two members land in the same family after
+    :func:`form_families` over every pair for which :func:`pair_links` is true.
+    With ``family_guard`` off (the committed default) that is the connected
+    component — the verdict is transitive, identical to the session's family
+    clustering — rather than a per-row decision.
+
+    Keys are normalized ``(min, max)`` of the pair's ``lb_a``/``lb_b``.
+    """
+    guard_on = family_guard_cfg(cfg) is not None
+    nodes: dict[int, None] = {}
+    edges: dict[tuple, str | None] = {}
     for p in pairs:
         a, b = p.get("lb_a"), p.get("lb_b")
         if a is None or b is None:
             continue
-        node(a)
-        node(b)
-    parent = list(range(len(nodes)))
+        nodes[a] = None
+        nodes[b] = None
+        if guard_on:
+            mech = link_mechanism(p, cfg, lineage)
+            linked = mech is not None
+        else:
+            # pair_links looked up by bare name: emb_fullset_eval.py swaps it.
+            mech, linked = None, pair_links(p, cfg, lineage)
+        if linked and a != b:
+            edges[(min(a, b), max(a, b))] = mech
 
-    for p in pairs:
-        a, b = p.get("lb_a"), p.get("lb_b")
-        if a is None or b is None:
-            continue
-        if pair_links(p, cfg, lineage):
-            union(node(a), node(b))
+    family_of: dict[int, int] = {}
+    for i, fam in enumerate(form_families(nodes, edges, cfg)):
+        for n in fam:
+            family_of[n] = i
 
     out: dict[tuple, str] = {}
     for p in pairs:
@@ -597,8 +685,7 @@ def cluster_verdicts(pairs: list[Mapping], cfg: Mapping,
         if a is None or b is None:
             continue
         key = (min(a, b), max(a, b))
-        same = find(node(a)) == find(node(b))
-        out[key] = SAME_FAMILY if same else DIFFERENT_FAMILY
+        out[key] = SAME_FAMILY if family_of[a] == family_of[b] else DIFFERENT_FAMILY
     return out
 
 

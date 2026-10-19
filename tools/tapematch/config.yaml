@@ -397,6 +397,20 @@ addon_links:
     # any extraction failure leaves emb NULL (Rule D abstains -- safe).
     live_embed: true
 
+family_guard:
+  # TODO-319: family formation guard against transitive (single-linkage) chains.
+  # Off: every linked pair unions (connected components) -- historical behaviour.
+  # On: legs in strong_legs union freely; any other leg (today in practice the
+  # staircase-relaxed fingerprint, fingerprint_staircase) may only merge two
+  # families when such edges cover >= min_link_density of the |A|x|B| cross
+  # pairs (average linkage over the link graph; verdict.py:form_families).
+  # Replay 2026-10-19 (chain_overmerge_replay.py, CHAIN_OVERMERGE_REPORT.md):
+  # 14 dates split, 0 frozen TPs lost, 2 frozen FPs cleared. Default OFF
+  # pending tj sign-off; applying it to stored runs is a verdict-only replay.
+  enabled: false
+  strong_legs: [primary, windowed, hiss, fingerprint, rule_d]
+  min_link_density: 0.5
+
 secondary_match:
   # Dense-grid windowed coverage: fraction of 60s windows where two sources agree
   # after a local lag search.  Catches heavily-edited remasters whose edits cluster

@@ -183,6 +183,11 @@ DECISION_KEYS: dict[str, Any] = {
     "addon_links.rule_d.enabled": False,
     "addon_links.rule_d.t_emb": None,
     "addon_links.rule_d.live_embed": False,
+    # -- family formation (TODO-319) -----------------------------------------
+    # Acts on the link graph, not on any metric, so it is verdict-only (below).
+    "family_guard.enabled": False,
+    "family_guard.strong_legs": ["primary"],
+    "family_guard.min_link_density": None,
     # -- ASR / banter (section 3, dark) --------------------------------------
     "asr.enabled": False,
     "asr.model": "base",
@@ -222,7 +227,15 @@ GATED_BLOCKS: dict[str, str] = {
     "addon_links.rule_c": "enabled",
     "addon_links.rule_d": "enabled",
     "asr": "enabled",
+    "family_guard": "enabled",
 }
+
+# Gated blocks introduced after calibration hashes were first stamped onto runs.
+# While their gate is off they contribute NOTHING to the view — not even the off
+# switch — so adding the block does not re-hash every historical run ("absent
+# means default" applied to a whole block). Once enabled they hash like any
+# other gated block.
+LATE_GATED_BLOCKS: frozenset[str] = frozenset({"family_guard"})
 
 # Keys present in config.yaml that deliberately carry no calibration identity:
 # they select hardware, paths or model artefacts, not decisions. Listed so the
@@ -274,6 +287,9 @@ VERDICT_ONLY_KEYS: frozenset[str] = frozenset({
     "addon_links.rule_c.t_stat",
     "addon_links.rule_d.enabled",
     "addon_links.rule_d.t_emb",
+    "family_guard.enabled",
+    "family_guard.strong_legs",
+    "family_guard.min_link_density",
 })
 
 
@@ -309,7 +325,8 @@ def calibration_view(cfg: Mapping[str, Any]) -> dict[str, Any]:
     view: dict[str, Any] = {}
     for path, default in DECISION_KEYS.items():
         block = next((b for b in off if path.startswith(b + ".")), None)
-        if block is not None and path != f"{block}.{GATED_BLOCKS[block]}":
+        if block is not None and (block in LATE_GATED_BLOCKS
+                                  or path != f"{block}.{GATED_BLOCKS[block]}"):
             continue
         present, value = _get(cfg, path)
         view[path] = value if present else default
