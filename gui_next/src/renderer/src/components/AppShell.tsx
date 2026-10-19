@@ -25,6 +25,10 @@ const LANG_OPTIONS: { code: string; label: string }[] = [
   { code: 'nl', label: 'Nederlands' },
 ]
 
+const NARROW_PX = 900
+const SIDEBAR_W = 224
+const SIDEBAR_W_COLLAPSED = 56
+
 // ── Sidebar ──────────────────────────────────────────────────────────────────
 
 function Sidebar({
@@ -39,7 +43,20 @@ function Sidebar({
   onAbout?: () => void
 }) {
   const { t } = useTranslation()
-  const setCuratorMode = useSettingsStore((s) => s.setCuratorMode)
+  const storedCollapsed = useSettingsStore((s) => s.sidebarCollapsed)
+  const setSidebarCollapsed = useSettingsStore((s) => s.setSidebarCollapsed)
+  // Below NARROW_PX the sidebar is forced icon-only regardless of the stored
+  // preference, so the content area keeps usable width in small windows.
+  const [narrow, setNarrow] = useState(
+    () => window.matchMedia(`(max-width: ${NARROW_PX}px)`).matches
+  )
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${NARROW_PX}px)`)
+    const on = (e: MediaQueryListEvent): void => setNarrow(e.matches)
+    mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [])
+  const collapsed = storedCollapsed || narrow
   const language = useSettingsStore((s) => s.language)
   const setLanguage = useSettingsStore((s) => s.setLanguage)
   const [collectionCount, setCollectionCount] = useState<number | undefined>(undefined)
@@ -97,8 +114,10 @@ function Sidebar({
   return (
     <aside
       style={{
-        width: 224,
-        flex: '0 0 224px',
+        width: collapsed ? SIDEBAR_W_COLLAPSED : SIDEBAR_W,
+        flex: `0 0 ${collapsed ? SIDEBAR_W_COLLAPSED : SIDEBAR_W}px`,
+        overflowX: 'hidden',
+        transition: 'width 0.15s, flex-basis 0.15s',
         background: 'var(--lbb-surface)',
         borderRight: '1px solid var(--lbb-border)',
         display: 'flex',
@@ -109,8 +128,10 @@ function Sidebar({
       {/* Brand */}
       <div
         style={{
-          padding: '16px 18px 14px',
+          padding: collapsed ? '16px 0 14px' : '16px 18px 14px',
           display: 'flex',
+          flexDirection: collapsed ? 'column' : 'row',
+          justifyContent: collapsed ? 'center' : undefined,
           alignItems: 'center',
           gap: 10,
           borderBottom: '1px solid var(--lbb-border)',
@@ -135,7 +156,8 @@ function Sidebar({
         >
           LB
         </div>
-        <div>
+        {!collapsed && (
+        <div style={{ flex: 1, minWidth: 0 }}>
           <div
             style={{
               fontSize: 'var(--lbb-fs-14)',
@@ -157,17 +179,39 @@ function Sidebar({
             {t('appShell.version', { version: __APP_VERSION__ })}
           </div>
         </div>
+        )}
+        <button
+          type="button"
+          data-testid="sidebar-toggle"
+          title={collapsed ? t('appShell.sidebar.expand') : t('appShell.sidebar.collapse')}
+          aria-label={collapsed ? t('appShell.sidebar.expand') : t('appShell.sidebar.collapse')}
+          aria-pressed={collapsed}
+          disabled={narrow}
+          onClick={() => setSidebarCollapsed(!storedCollapsed)}
+          style={{
+            width: 24, height: 24, borderRadius: 5, background: 'transparent',
+            border: '1px solid transparent', color: 'var(--lbb-fg3)',
+            cursor: narrow ? 'default' : 'pointer', display: 'inline-flex',
+            alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+            opacity: narrow ? 0.4 : 1,
+          }}
+        >
+          <Icon name={collapsed ? 'chevRight' : 'chevLeft'} size={14} />
+        </button>
       </div>
 
       {/* Nav */}
-      <div style={{ flex: 1, overflowY: 'auto', padding: '10px 8px 16px' }}>
+      <div style={{ flex: 1, overflowY: 'auto', padding: collapsed ? '10px 6px 16px' : '10px 8px 16px' }}>
         {NAV_GROUPS.map((group, gi) => {
           if (group.gatedGroup && !curatorMode) return null
           const visibleItems = group.items.filter((item) => !hiddenNav.includes(item.id))
           if (!visibleItems.length) return null
           return (
             <div key={gi} style={{ marginTop: gi === 0 ? 0 : 14 }}>
-              {group.label && (
+              {group.label && collapsed && gi !== 0 && (
+                <div style={{ height: 1, background: 'var(--lbb-border)', margin: '4px 8px 8px' }} />
+              )}
+              {group.label && !collapsed && (
                 <div
                   style={{
                     fontSize: 'var(--lbb-fs-10)',
@@ -211,12 +255,15 @@ function Sidebar({
                     type="button"
                     data-testid={`nav-${item.id}`}
                     onClick={() => onNav(item.id)}
+                    title={collapsed ? t(`appShell.nav.${item.id}`) : undefined}
+                    aria-label={collapsed ? t(`appShell.nav.${item.id}`) : undefined}
                     style={{
                       width: '100%',
                       display: 'flex',
                       alignItems: 'center',
+                      justifyContent: collapsed ? 'center' : undefined,
                       gap: 10,
-                      padding: '7px 10px',
+                      padding: collapsed ? '8px 0' : '7px 10px',
                       marginBottom: 1,
                       border: '1px solid transparent',
                       borderRadius: 6,
@@ -245,8 +292,8 @@ function Sidebar({
                     }}
                   >
                     <Icon name={item.icon} size={15} />
-                    <span style={{ flex: 1 }}>{t(`appShell.nav.${item.id}`)}</span>
-                    {item.featured && !isActive && (
+                    {!collapsed && <span style={{ flex: 1 }}>{t(`appShell.nav.${item.id}`)}</span>}
+                    {!collapsed && item.featured && !isActive && (
                       <span
                         style={{
                           fontSize: 'var(--lbb-fs-8-5)',
@@ -261,7 +308,7 @@ function Sidebar({
                         NEW
                       </span>
                     )}
-                    {dynamicCount !== undefined && (
+                    {!collapsed && dynamicCount !== undefined && (
                       <span
                         style={{
                           fontSize: 'var(--lbb-fs-10-5)',
@@ -281,47 +328,20 @@ function Sidebar({
               {/* Saved smart views belong to the Library lens, so they pin
                   directly under that group — appended after all groups they
                   land below the fold of the scrollable nav (UI5). */}
-              {group.label === 'Library' && <SavedViews onNav={onNav} />}
+              {group.label === 'Library' && !collapsed && <SavedViews onNav={onNav} />}
             </div>
           )
         })}
-
-        {!curatorMode && (
-          <div
-            style={{
-              margin: '16px 6px 0',
-              padding: '10px 12px',
-              background: 'var(--lbb-surface2)',
-              borderRadius: 8,
-              border: '1px dashed var(--lbb-border2)',
-              fontSize: 'var(--lbb-fs-11)',
-              color: 'var(--lbb-fg3)',
-              lineHeight: 1.4,
-            }}
-          >
-            {t('appShell.curatorHint')}
-            <div style={{ marginTop: 6 }}>
-              <span
-                style={{
-                  color: 'var(--lbb-accent-mid)',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                }}
-                onClick={() => setCuratorMode(true)}
-              >
-                {t('appShell.curatorEnable')}
-              </span>
-            </div>
-          </div>
-        )}
       </div>
 
       {/* User chip */}
       <div
         style={{
-          padding: '10px 12px',
+          padding: collapsed ? '10px 0' : '10px 12px',
           borderTop: '1px solid var(--lbb-border)',
           display: 'flex',
+          flexDirection: collapsed ? 'column' : 'row',
+          justifyContent: collapsed ? 'center' : undefined,
           alignItems: 'center',
           gap: 10,
         }}
@@ -343,6 +363,7 @@ function Sidebar({
         >
           {wtrfUsername ? wtrfUsername.slice(0, 2).toUpperCase() : '—'}
         </div>
+        {!collapsed && (
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, lineHeight: 1.1 }}>
             {wtrfUsername || t('appShell.noWtrfAccount')}
@@ -351,8 +372,10 @@ function Sidebar({
             Local · 4 mounts
           </div>
         </div>
+        )}
 
-        {/* Language picker */}
+        {/* Language picker (hidden when collapsed; also in Settings) */}
+        {!collapsed && (
         <div ref={langRef} style={{ position: 'relative' }}>
           <button
             type="button"
@@ -424,6 +447,7 @@ function Sidebar({
             </div>
           )}
         </div>
+        )}
 
         <button
           type="button"
@@ -887,6 +911,19 @@ export function AppShell({
   const navigate = useNavigate()
   const location = useLocation()
   const curatorMode = useSettingsStore((s) => s.curatorMode)
+  const setCuratorMode = useSettingsStore((s) => s.setCuratorMode)
+
+  // Hidden curator trigger: Ctrl+Shift+Alt+C toggles curator mode (TODO-160).
+  useEffect(() => {
+    function onKey(e: KeyboardEvent): void {
+      if (e.ctrlKey && e.shiftKey && e.altKey && e.code === 'KeyC') {
+        e.preventDefault()
+        setCuratorMode(!useSettingsStore.getState().curatorMode)
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [setCuratorMode])
 
   const active =
     location.pathname === '/' ? 'home' : location.pathname.slice(1)

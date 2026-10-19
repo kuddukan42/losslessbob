@@ -7,6 +7,8 @@ export type DossierFormat = 'html' | 'pdf'
 interface SettingsStore {
   curatorMode: boolean
   setCuratorMode: (v: boolean) => void
+  sidebarCollapsed: boolean
+  setSidebarCollapsed: (v: boolean) => void
   language: string
   setLanguage: (lang: string) => void
   rowHighlight: boolean
@@ -30,6 +32,8 @@ export const useSettingsStore = create<SettingsStore>()(
     (set) => ({
       curatorMode: false,
       setCuratorMode: (v) => set({ curatorMode: v }),
+      sidebarCollapsed: false,
+      setSidebarCollapsed: (v) => set({ sidebarCollapsed: v }),
       language: 'en',
       setLanguage: (lang) => set({ language: lang }),
       rowHighlight: true,

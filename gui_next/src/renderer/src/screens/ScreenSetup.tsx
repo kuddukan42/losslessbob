@@ -248,12 +248,12 @@ function PurgeDangerZone({
 
 // ── MetaGrid ──────────────────────────────────────────────────────────────────
 
-function MetaGrid({ rows }: { rows: [string, React.ReactNode][] }) {
+function MetaGrid({ rows, onLabelClick }: { rows: [string, React.ReactNode][]; onLabelClick?: () => void }) {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: '6px 16px', fontSize: 'var(--lbb-fs-12-5)' }}>
       {rows.map(([label, value]) => (
         <React.Fragment key={label}>
-          <span style={{ color: 'var(--lbb-fg3)' }}>{label}</span>
+          <span style={{ color: 'var(--lbb-fg3)' }} onClick={label === rows[0][0] ? onLabelClick : undefined}>{label}</span>
           <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 600, color: 'var(--lbb-fg)' }}>{value}</span>
         </React.Fragment>
       ))}
@@ -261,31 +261,66 @@ function MetaGrid({ rows }: { rows: [string, React.ReactNode][] }) {
   )
 }
 
-// ── CuratorToggle ─────────────────────────────────────────────────────────────
+// ── MasterDataPanel / CuratorSection ──────────────────────────────────────────
+// Master Data holds what every user needs (version, check/install). All
+// curator-only controls live in one CuratorSection card, which is hidden until
+// curator mode is on or revealed by clicking the "Master version" label 7 times
+// (TODO-160). Ctrl+Shift+Alt+C toggles curator mode from anywhere.
 
-function CuratorToggle({
+const CURATOR_REVEAL_CLICKS = 7
+
+function MasterDataPanel({
   masterStatus,
   busy,
-  onPublish,
-  onPublishSitedata,
   onCheckGithub,
   onInstall,
+  onSecretClick,
 }: {
   masterStatus: MasterStatus | null
   busy: string | null
-  onPublish: () => void
-  onPublishSitedata: () => void
   onCheckGithub: () => void
   onInstall: () => void
+  onSecretClick: () => void
 }) {
   const { t } = useTranslation()
-  const curatorMode = useSettingsStore((s) => s.curatorMode)
-  const setCuratorMode = useSettingsStore((s) => s.setCuratorMode)
-
   const version = masterStatus?.master_version ?? '—'
   const publishedAt = masterStatus?.master_published_at
     ? masterStatus.master_published_at.slice(0, 10)
     : '—'
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <MetaGrid rows={[
+        [t('setup.masterData.masterVersion'), version],
+        [t('setup.masterData.lastPublished'), publishedAt],
+      ]} onLabelClick={onSecretClick} />
+
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+        <Button variant="secondary" icon="download" disabled={busy === 'checkGithub' || busy === 'githubInstall'} onClick={onCheckGithub}>
+          {busy === 'checkGithub' || busy === 'githubInstall'
+            ? t('setup.masterData.checkingUpdate')
+            : t('setup.masterData.checkUpdate')}
+        </Button>
+        <Button variant="ghost" icon="download" onClick={onInstall}>
+          {t('setup.masterData.installUpdate')}
+        </Button>
+      </div>
+    </div>
+  )
+}
+
+function CuratorSection({
+  busy,
+  onPublish,
+  onPublishSitedata,
+}: {
+  busy: string | null
+  onPublish: () => void
+  onPublishSitedata: () => void
+}) {
+  const { t } = useTranslation()
+  const curatorMode = useSettingsStore((s) => s.curatorMode)
+  const setCuratorMode = useSettingsStore((s) => s.setCuratorMode)
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -332,22 +367,9 @@ function CuratorToggle({
         </button>
       </div>
 
-      <MetaGrid rows={[
-        [t('setup.masterData.masterVersion'), version],
-        [t('setup.masterData.lastPublished'), publishedAt],
-      ]} />
-
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
         <Button variant="secondary" icon="upload" disabled={!curatorMode} onClick={onPublish}>
           {t('setup.masterData.publishUpdate')}
-        </Button>
-        <Button variant="secondary" icon="download" disabled={busy === 'checkGithub' || busy === 'githubInstall'} onClick={onCheckGithub}>
-          {busy === 'checkGithub' || busy === 'githubInstall'
-            ? t('setup.masterData.checkingUpdate')
-            : t('setup.masterData.checkUpdate')}
-        </Button>
-        <Button variant="ghost" icon="download" onClick={onInstall}>
-          {t('setup.masterData.installUpdate')}
         </Button>
       </div>
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -361,6 +383,9 @@ function CuratorToggle({
             ? t('setup.masterData.publishingSitedata')
             : t('setup.masterData.publishSitedata')}
         </Button>
+      </div>
+      <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>
+        {t('setup.masterData.curatorShortcutHint')}
       </div>
     </div>
   )
@@ -539,6 +564,19 @@ function HelpersStrip({
 export function ScreenSetup() {
   const { t } = useTranslation()
   const { language, setLanguage } = useSettingsStore()
+  const curatorMode = useSettingsStore((s) => s.curatorMode)
+  const [curatorRevealed, setCuratorRevealed] = useState(false)
+  const secretClicks = useRef(0)
+  const secretTimer = useRef<number | undefined>(undefined)
+  function handleSecretClick(): void {
+    secretClicks.current += 1
+    window.clearTimeout(secretTimer.current)
+    secretTimer.current = window.setTimeout(() => { secretClicks.current = 0 }, 2000)
+    if (secretClicks.current >= CURATOR_REVEAL_CLICKS) {
+      secretClicks.current = 0
+      setCuratorRevealed(true)
+    }
+  }
 const [dbStats, setDbStats] = useState<DbStats | null>(null)
   const [helpers, setHelpers] = useState<HelperStatus | null>(null)
   const [settings, setSettings] = useState<AppSettings>({
@@ -1500,15 +1538,25 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
 
           {/* ── Master Data ── */}
           <SetupCard title={t('setup.masterData.title')}>
-            <CuratorToggle
+            <MasterDataPanel
               masterStatus={masterStatus}
               busy={busy}
-              onPublish={handlePublishMaster}
-              onPublishSitedata={handlePublishSitedata}
               onCheckGithub={handleCheckGithubMaster}
               onInstall={handleInstallMaster}
+              onSecretClick={handleSecretClick}
             />
           </SetupCard>
+
+          {/* ── Curator (hidden until enabled / revealed) ── */}
+          {(curatorMode || curatorRevealed) && (
+            <SetupCard title={t('setup.masterData.curatorSection')}>
+              <CuratorSection
+                busy={busy}
+                onPublish={handlePublishMaster}
+                onPublishSitedata={handlePublishSitedata}
+              />
+            </SetupCard>
+          )}
 
           {/* ── Integrations ── */}
           <SetupCard title={t('setup.integrations.title')} style={{ gridColumn: 'span 2' }}>

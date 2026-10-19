@@ -26,8 +26,10 @@
   "appShell": {
     "brand": "LosslessBob",
     "version": "Checksum Lookup · v{{version}}",
-    "curatorHint": "Maintaining the master DB?",
-    "curatorEnable": "Enable Curator mode →",
+    "sidebar": {
+      "collapse": "Collapse sidebar",
+      "expand": "Expand sidebar"
+    },
     "nav": {
       "home": "Home",
       "ingest": "Ingest",
@@ -870,6 +872,8 @@
       "title": "Master Data",
       "curatorMode": "Curator Mode",
       "curatorDesc": "Enable direct DB editing, scraping, and master data publishing.",
+      "curatorSection": "Curator",
+      "curatorShortcutHint": "Shortcut: Ctrl+Shift+Alt+C toggles curator mode from anywhere.",
       "masterVersion": "Master version",
       "lastPublished": "Last published",
       "publishUpdate": "Publish master update…",

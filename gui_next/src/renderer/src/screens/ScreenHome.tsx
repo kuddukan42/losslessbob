@@ -92,7 +92,6 @@ const JUMP_TILES = [
 ]
 
 const TIPS = [
-  { icon: 'user', text: <>Maintaining master data? Enable <strong>Curator mode</strong> in Settings to reveal DB&nbsp;Editor and Scraper.</> },
   { icon: 'star', text: <>Star a filter combo in <strong>Search</strong> to make it a one-click saved view.</> },
 ]
 
