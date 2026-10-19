@@ -11978,7 +11978,9 @@ def create_app() -> Flask:
         try:
             conn = database.get_connection()
             rows = conn.execute(
-                "SELECT lb_number, date_str, location, lb_status FROM my_collection ORDER BY lb_number"
+                "SELECT mc.lb_number, e.date_str, e.location, e.status "
+                "FROM my_collection mc LEFT JOIN entries e ON e.lb_number = mc.lb_number "
+                "ORDER BY mc.lb_number"
             ).fetchall()
             import datetime as _dt
             return jsonify({
@@ -12109,8 +12111,9 @@ def create_app() -> Flask:
                 result = []
                 for lb in sorted(lb_numbers):
                     r = conn.execute(
-                        "SELECT mc.lb_number, mc.date_str, mc.location, mc.lb_status "
-                        "FROM my_collection mc WHERE mc.lb_number = ? "
+                        "SELECT mc.lb_number, e.date_str, e.location, e.status "
+                        "FROM my_collection mc LEFT JOIN entries e ON e.lb_number = mc.lb_number "
+                        "WHERE mc.lb_number = ? "
                         "UNION SELECT fce.lb_number, fce.date_str, fce.location, fce.lb_status "
                         "FROM friend_collection_entries fce WHERE fce.friend_id = ? AND fce.lb_number = ?",
                         (lb, friend_id, lb),

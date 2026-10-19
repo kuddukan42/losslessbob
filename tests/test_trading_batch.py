@@ -80,3 +80,17 @@ def test_batch_validation(client):
                        json={"friend_ids": [999]}).status_code == 404
     assert client.post("/api/trading/batch-compare",
                        json={"friend_ids": [1], "mode": "x"}).status_code == 400
+
+
+def test_export_and_compare_use_entries_columns(client):
+    """export/compare used to select date_str etc. from my_collection (no such columns)."""
+    d = client.get("/api/trading/export")
+    assert d.status_code == 200
+    ents = d.get_json()["entries"]
+    assert [e["lb_number"] for e in ents] == [1, 2, 3]
+    assert ents[0]["date_str"] == "1970-01-01" and ents[0]["lb_status"] == "ok"
+    c = client.get(f"/api/trading/compare/{client.ids['A']}")
+    assert c.status_code == 200
+    j = c.get_json()
+    assert [e["lb_number"] for e in j["you_have_they_dont"]] == [1, 2]
+    assert j["you_have_they_dont"][0]["date_str"] == "1970-01-01"
