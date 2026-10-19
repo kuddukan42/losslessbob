@@ -4596,21 +4596,24 @@ def create_app() -> Flask:
         JSON body: ``mode`` = ``archive`` (offline import of data/wtrf_board.db) or
         ``board`` (paced live crawl; optional ``full``, ``max_pages``).
         """
-        import sqlite3 as _sqlite3
-
         from backend import wtrf_discovery as _wd
         from backend.paths import DATA_DIR as _DATA_DIR
         body = request.get_json(silent=True) or {}
         mode = body.get("mode", "board")
-        conn = None
+
+        def _write(fn):
+            return database.get_write_queue().execute(fn)
+
+        def _read(fn):
+            return fn(database.get_connection())
+
         try:
-            conn = _sqlite3.connect(str(database.DB_PATH), timeout=30)
-            conn.row_factory = _sqlite3.Row
             if mode == "archive":
                 archive = _DATA_DIR / "wtrf_board.db"
                 if not archive.exists():
                     return jsonify({"ok": False, "error": "no board archive DB"}), 404
-                return jsonify({"ok": True, **_wd.import_from_archive(conn, archive)})
+                return jsonify({"ok": True, **_write(
+                    lambda c: _wd.import_from_archive(c, archive))})
             if mode != "board":
                 return jsonify({"ok": False, "error": "bad mode"}), 400
             from backend.credentials import SERVICE_WTRF, get_credentials
@@ -4622,16 +4625,13 @@ def create_app() -> Flask:
             if session is None:
                 return jsonify({"ok": False, "error": "WTRF login failed"}), 502
             stats = _wd.sync_from_board(
-                session, conn, int(database.get_meta("wtrf_board_id") or 16),
+                session, _read, _write, int(database.get_meta("wtrf_board_id") or 16),
                 full=bool(body.get("full")),
                 max_pages=max(1, min(int(body.get("max_pages", 10)), 50)),
             )
             return jsonify({"ok": True, **stats})
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
-        finally:
-            if conn is not None:
-                conn.close()
 
     @app.route("/api/forum_post/<int:post_id>", methods=["DELETE"])
     def forum_post_delete(post_id: int) -> Response:

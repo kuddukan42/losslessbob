@@ -19,6 +19,7 @@ import time
 from collections.abc import Callable, Iterable
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Any
 
 from bs4 import BeautifulSoup
 
@@ -228,7 +229,8 @@ def parse_topic_attachments(html: str) -> list[str]:
 
 def sync_from_board(
     session,
-    conn: sqlite3.Connection,
+    read: Callable[[Callable[[sqlite3.Connection], Any]], Any],
+    write: Callable[[Callable[[sqlite3.Connection], Any]], Any],
     board_id: int,
     *,
     full: bool = False,
@@ -248,7 +250,8 @@ def sync_from_board(
 
     Args:
         session: Authenticated ``requests.Session``.
-        conn: Main DB connection.
+        read: Runs ``fn(conn)`` on a short-lived read connection.
+        write: Runs ``fn(conn)`` through the write queue.
         board_id: SMF board number.
         full: Ignore the known-page early stop.
         max_pages: Index-page cap per run.
@@ -280,18 +283,21 @@ def sync_from_board(
         if not has_rows:
             stats["stopped"] = "end_of_board"
             break
-        known = {r[0] for r in conn.execute(
+        ids = [r["topic_id"] for r in recs]
+        known = read(lambda c: {r[0] for r in c.execute(
             f"SELECT topic_id FROM scraped_topics WHERE topic_id IN "
-            f"({','.join('?' * len(recs))})", [r["topic_id"] for r in recs])}
-        for rec in recs:
-            is_new = rec["topic_id"] not in known
-            n = store_topic(conn, source=SOURCE_LIVE, **rec)
+            f"({','.join('?' * len(ids))})", ids)})
+
+        def _persist(c: sqlite3.Connection, recs=recs) -> list[int]:
+            return [store_topic(c, source=SOURCE_LIVE, **r) for r in recs]
+
+        counts = write(_persist)
+        for rec, n in zip(recs, counts):
             stats["topics"] += 1
-            stats["new_topics"] += is_new
+            stats["new_topics"] += rec["topic_id"] not in known
             stats["lb_links"] += n
             if n == 0:
                 pending.append(rec)
-        conn.commit()
         if not full and len(known) == len(recs):
             stats["stopped"] = "caught_up"
             break
@@ -301,9 +307,9 @@ def sync_from_board(
     for rec in pending:
         if fetched >= topic_fetch_limit:
             break
-        row = conn.execute(
+        row = read(lambda c, t=rec["topic_id"]: c.execute(
             "SELECT attachments_checked FROM scraped_topics WHERE topic_id=?",
-            (rec["topic_id"],)).fetchone()
+            (t,)).fetchone())
         if row and row[0]:
             continue
         if fetched:
@@ -312,10 +318,9 @@ def sync_from_board(
         fetched += 1
         if resp.status_code != 200:
             continue
-        stats["lb_links"] += store_topic(
-            conn, source=SOURCE_LIVE, attachments=parse_topic_attachments(resp.text),
-            **rec)
-        conn.commit()
+        atts = parse_topic_attachments(resp.text)
+        stats["lb_links"] += write(lambda c, r=rec, a=atts: store_topic(
+            c, source=SOURCE_LIVE, attachments=a, **r))
     stats["topic_fetches"] = fetched
     return stats
 

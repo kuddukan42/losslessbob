@@ -69,6 +69,10 @@ def test_import_archive(conn, tmp_path):
     assert got[0]["matched_in"] == "attachment" and got[0]["source"] == wd.SOURCE_ARCHIVE
 
 
+def _rw(c):
+    return (lambda fn: fn(c)), (lambda fn: fn(c))
+
+
 class FakeSession:
     def __init__(self, pages: dict[str, str]):
         self.pages, self.calls = pages, []
@@ -89,14 +93,14 @@ def test_sync_live_paced_and_incremental(conn):
     }
     sleeps: list[float] = []
     s = FakeSession(pages)
-    st = wd.sync_from_board(s, conn, 16, sleep=sleeps.append, page_delay=3, topic_delay=4)
+    st = wd.sync_from_board(s, *_rw(conn), 16, sleep=sleeps.append, page_delay=3, topic_delay=4)
     assert st["new_topics"] == 3 and st["stopped"] == "end_of_board"
     assert st["topic_fetches"] == 1
     assert [x["topic_id"] for x in wd.lookup_for_lb(conn, 222)] == [11]
     assert 3 in sleeps
     # second run: page 0 fully known -> stops, no topic refetch
     s2 = FakeSession(pages)
-    st2 = wd.sync_from_board(s2, conn, 16, sleep=lambda _x: None)
+    st2 = wd.sync_from_board(s2, *_rw(conn), 16, sleep=lambda _x: None)
     assert st2["stopped"] == "caught_up" and st2["pages"] == 1 and st2["topic_fetches"] == 0
 
 
@@ -106,7 +110,7 @@ def test_sync_session_expired(conn):
             return SimpleNamespace(url="x?action=login", text="", status_code=200)
 
     with pytest.raises(RuntimeError):
-        wd.sync_from_board(S(), conn, 16, sleep=lambda _x: None)
+        wd.sync_from_board(S(), *_rw(conn), 16, sleep=lambda _x: None)
 
 
 def test_forum_posts_for_lb_merges_scraped(tmp_path):

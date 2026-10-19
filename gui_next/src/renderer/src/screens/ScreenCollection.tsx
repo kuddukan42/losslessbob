@@ -121,6 +121,7 @@ interface DetailForumRecord {
   subject: string
   topic_url: string
   posted_at: string
+  source?: string
 }
 
 interface CollectionRow {
@@ -1520,6 +1521,7 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
             subject: p.subject ?? '',
             topic_url: p.topic_url ?? '',
             posted_at: (p.posted_at ?? '').slice(0, 10),
+            source: p.source ?? 'local',
           })))
         } else {
           setForumError(true)
@@ -1571,6 +1573,29 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
       )
       if (data.ok) { fetchTorrentRecords(); onRefetch() }
     } catch { onToast(t('collection.toast.torrentCreationFailed'), 'bad') }
+  }
+
+  const [wtrfSyncBusy, setWtrfSyncBusy] = useState(false)
+  const [wtrfSyncResult, setWtrfSyncResult] = useState('')
+  const handleWtrfSync = async (mode: 'archive' | 'board') => {
+    setWtrfSyncBusy(true)
+    setWtrfSyncResult('')
+    try {
+      const resp = await fetch(`${BASE}/api/wtrf/sync_posts`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mode }),
+      })
+      const d = await resp.json()
+      if (d.ok) {
+        setWtrfSyncResult(t('collection.detail.wtrfSyncDone', {
+          topics: d.topics ?? 0, links: d.lb_links ?? 0,
+        }))
+        fetchForumRecords()
+      } else {
+        setWtrfSyncResult(d.error || t('collection.detail.wtrfSyncFailed'))
+      }
+    } catch { setWtrfSyncResult(t('collection.detail.wtrfSyncFailed')) }
+    setWtrfSyncBusy(false)
   }
 
   const handleForumOpen = (rec: DetailForumRecord) => {
@@ -1842,6 +1867,19 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
 
           {/* Forum tab — actionable */}
           {historyTab === 'forum' && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 5, flexWrap: 'wrap', paddingBottom: 6 }}>
+              <Button variant="ghost" size="sm" disabled={wtrfSyncBusy} onClick={() => handleWtrfSync('archive')}>
+                {t('collection.detail.wtrfSyncArchive')}
+              </Button>
+              <Button variant="ghost" size="sm" disabled={wtrfSyncBusy} onClick={() => handleWtrfSync('board')}>
+                {wtrfSyncBusy ? t('collection.detail.wtrfSyncing') : t('collection.detail.wtrfSyncBoard')}
+              </Button>
+              {wtrfSyncResult && (
+                <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>{wtrfSyncResult}</span>
+              )}
+            </div>
+          )}
+          {historyTab === 'forum' && (
             forumBusy ? (
               <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.loadingForum')}</div>
             ) : forumError ? (
@@ -1866,8 +1904,8 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
                       }}>
                         {rec.subject || '—'}
                       </span>
-                      <Pill tone={rec.topic_url ? 'info' : 'mute'} soft>
-                        {rec.topic_url ? 'Posted' : 'Local'}
+                      <Pill tone={rec.source === 'wtrf_scrape' ? 'ok' : rec.topic_url ? 'info' : 'mute'} soft>
+                        {rec.source === 'wtrf_scrape' ? t('collection.detail.foundOnWtrf') : rec.topic_url ? 'Posted' : 'Local'}
                       </Pill>
                     </div>
                     <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
@@ -1878,9 +1916,11 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
                       >
                         {t('collection.detail.openInBrowser')}
                       </Button>
-                      <Button variant="danger" size="sm" onClick={() => setForumDeleteConfirm(rec.id)}>
-                        {t('common.remove')}
-                      </Button>
+                      {rec.source !== 'wtrf_scrape' && (
+                        <Button variant="danger" size="sm" onClick={() => setForumDeleteConfirm(rec.id)}>
+                          {t('common.remove')}
+                        </Button>
+                      )}
                     </div>
                   </div>
                 ))}

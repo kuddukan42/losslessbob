@@ -735,6 +735,12 @@
       "loadingForum": "Loading…",
       "noTorrents": "No torrent records.",
       "noForumHistory": "No forum history.",
+      "foundOnWtrf": "Found on WTRF",
+      "wtrfSyncArchive": "Import WTRF archive",
+      "wtrfSyncBoard": "Sync from WTRF",
+      "wtrfSyncing": "Syncing…",
+      "wtrfSyncDone": "Synced {{topics}} topics, {{links}} LB links.",
+      "wtrfSyncFailed": "WTRF sync failed.",
       "forumLoadError": "Failed to load forum history."
     },
     "filters": {
