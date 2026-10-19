@@ -57,7 +57,8 @@
       "fileintegrity": "Bestandsintegriteit",
       "timeline": "Tijdlijn",
       "scanner": "Schijfscanner",
-      "checksumdisputes": "Geschillen over checksums"
+      "checksumdisputes": "Geschillen over checksums",
+      "wtrfreview": "WTRF-beoordeling"
     },
     "statusBar": {
       "db": "DB:",
@@ -2904,5 +2905,36 @@
     "next": "Volgende",
     "error": "Het batchvergelijking is mislukt.",
     "bestHint": "De beste partner = de vriend met het grootste potentieel voor wederzijdse uitwisseling."
+  },
+  "wtrfReview": {
+    "title": "Beoordeling van WTRF-ophaling",
+    "subtitle": "overeenkomsten die de fetcher niet automatisch zou accepteren, en wat er al in de wachtrij staat",
+    "filter": {
+      "review": "Ter beoordeling",
+      "added": "Toegevoegd",
+      "not_found": "Niet gevonden",
+      "rejected": "Afgewezen",
+      "all": "Alles"
+    },
+    "colLb": "LB",
+    "colConfidence": "Zekerheid",
+    "colSignals": "Signalen",
+    "colTopics": "Onderwerp(en)",
+    "colStatus": "Status",
+    "colActions": "Beoordeling",
+    "tied": "gelijkspel",
+    "tiebreak": "gelijkspel: vroegste bericht",
+    "openTopic": "Onderwerp openen",
+    "confirmAdd": "Bevestigen en toevoegen",
+    "confirmResume": "Bevestigen en doorgaan",
+    "reject": "Afwijzen",
+    "working": "Bezig…",
+    "resumed": "Torrent hervat in qBittorrent.",
+    "added": "Torrent gedownload en toegevoegd aan qBittorrent.",
+    "actionFailed": "Actie mislukt",
+    "retry": "Opnieuw proberen",
+    "empty": "Er zijn geen rijen in deze weergave.",
+    "error": "De beoordelingslijst kon niet worden geladen. Controleer of de backend actief is en laad de pagina vervolgens opnieuw.",
+    "total": "{{count}} rijen"
   }
 }

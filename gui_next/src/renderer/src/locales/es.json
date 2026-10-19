@@ -57,7 +57,8 @@
       "fileintegrity": "Integridad de los archivos",
       "timeline": "Cronología",
       "scanner": "Escáner de disco",
-      "checksumdisputes": "Controversias sobre sumas de comprobación"
+      "checksumdisputes": "Controversias sobre sumas de comprobación",
+      "wtrfreview": "Reseña de WTRF"
     },
     "statusBar": {
       "db": "BD:",
@@ -2904,5 +2905,36 @@
     "next": "Siguiente",
     "error": "La comparación por lotes ha fallado.",
     "bestHint": "El mejor socio es aquel amigo con mayor potencial de intercambio recíproco."
+  },
+  "wtrfReview": {
+    "title": "Revisión de la obtención de datos de WTRF",
+    "subtitle": "coincide con lo que el buscador no aceptaría automáticamente y con lo que ya tiene en cola",
+    "filter": {
+      "review": "Para revisar",
+      "added": "Añadido",
+      "not_found": "No encontrado",
+      "rejected": "Rechazado",
+      "all": "Todo"
+    },
+    "colLb": "LB",
+    "colConfidence": "Confianza",
+    "colSignals": "Señales",
+    "colTopics": "Temas",
+    "colStatus": "Estado",
+    "colActions": "Revisión",
+    "tied": "candidato empatado",
+    "tiebreak": "empate: la publicación más antigua",
+    "openTopic": "Tema abierto",
+    "confirmAdd": "Confirmar y añadir",
+    "confirmResume": "Confirmar y reanudar",
+    "reject": "Rechazar",
+    "working": "En proceso…",
+    "resumed": "Reanudación de una descarga de torrent en qBittorrent.",
+    "added": "Se ha descargado el torrent y se ha añadido a qBittorrent.",
+    "actionFailed": "Acción fallida",
+    "retry": "Reintentar",
+    "empty": "No hay filas en esta vista.",
+    "error": "No se ha podido cargar la lista de revisión. Comprueba que el servidor esté en funcionamiento y vuelve a cargar la página.",
+    "total": "{{count}} filas"
   }
 }

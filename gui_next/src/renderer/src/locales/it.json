@@ -57,7 +57,8 @@
       "fileintegrity": "Integrità dei file",
       "timeline": "Cronologia",
       "scanner": "Scanner del disco",
-      "checksumdisputes": "Controversie relative ai checksum"
+      "checksumdisputes": "Controversie relative ai checksum",
+      "wtrfreview": "Recensione di WTRF"
     },
     "statusBar": {
       "db": "DB:",
@@ -2904,5 +2905,36 @@
     "next": "Avanti",
     "error": "Confronto in batch non riuscito.",
     "bestHint": "Il miglior partner = l’amico con il maggior potenziale di scambio reciproco."
+  },
+  "wtrfReview": {
+    "title": "Revisione del recupero WTRF",
+    "subtitle": "corrispondenze che il fetcher non accetterebbe automaticamente e ciò che è già stato messo in coda",
+    "filter": {
+      "review": "Da rivedere",
+      "added": "Aggiunto",
+      "not_found": "Non trovato",
+      "rejected": "Rifiutato",
+      "all": "Tutto"
+    },
+    "colLb": "LB",
+    "colConfidence": "Fiducia",
+    "colSignals": "Segnali",
+    "colTopics": "Argomenti",
+    "colStatus": "Stato",
+    "colActions": "Recensione",
+    "tied": "candidato a pari merito",
+    "tiebreak": "in caso di parità: il post più recente",
+    "openTopic": "Apri argomento",
+    "confirmAdd": "Conferma e aggiungi",
+    "confirmResume": "Conferma e riprendi",
+    "reject": "Rifiuta",
+    "working": "In fase di elaborazione…",
+    "resumed": "Ripresa del download torrent in qBittorrent.",
+    "added": "Torrent scaricato e aggiunto a qBittorrent.",
+    "actionFailed": "Azione non riuscita",
+    "retry": "Riprova",
+    "empty": "Nessuna riga in questa vista.",
+    "error": "Impossibile caricare l'elenco delle revisioni. Verificare che il backend sia in esecuzione, quindi ricaricare.",
+    "total": "Righe {{count}}"
   }
 }

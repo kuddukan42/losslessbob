@@ -57,7 +57,8 @@
       "fileintegrity": "Intégrité des fichiers",
       "timeline": "Chronologie",
       "scanner": "Analyseur de disque",
-      "checksumdisputes": "Litiges relatifs aux sommes de contrôle"
+      "checksumdisputes": "Litiges relatifs aux sommes de contrôle",
+      "wtrfreview": "Critique de WTRF"
     },
     "statusBar": {
       "db": "DB :",
@@ -2904,5 +2905,36 @@
     "next": "Suivant",
     "error": "Échec de la comparaison par lots.",
     "bestHint": "Le meilleur partenaire = l'ami avec lequel on a le plus de possibilités d'échanges réciproques."
+  },
+  "wtrfReview": {
+    "title": "Révision de la récupération WTRF",
+    "subtitle": "correspond aux éléments que le moteur de recherche n'accepterait pas automatiquement, et à ceux qu'il a déjà mis en file d'attente",
+    "filter": {
+      "review": "À vérifier",
+      "added": "Ajouté",
+      "not_found": "Introuvable",
+      "rejected": "Rejeté",
+      "all": "Tout"
+    },
+    "colLb": "LB",
+    "colConfidence": "Confiance",
+    "colSignals": "Signaux",
+    "colTopics": "Thème(s)",
+    "colStatus": "Statut",
+    "colActions": "Révision",
+    "tied": "candidat ex æquo",
+    "tiebreak": "en cas d’égalité : message le plus ancien",
+    "openTopic": "Sujet ouvert",
+    "confirmAdd": "Confirmer et ajouter",
+    "confirmResume": "Confirmer et reprendre",
+    "reject": "Refusé",
+    "working": "En cours…",
+    "resumed": "Reprise d'un téléchargement torrent dans qBittorrent.",
+    "added": "Torrent récupéré et ajouté à qBittorrent.",
+    "actionFailed": "Échec de l'action",
+    "retry": "Réessayer",
+    "empty": "Cette vue ne contient aucune ligne.",
+    "error": "La liste de révision n'a pas pu être chargée. Vérifiez que le serveur est en cours d'exécution, puis rechargez la page.",
+    "total": "Lignes {{count}}"
   }
 }
