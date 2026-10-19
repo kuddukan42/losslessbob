@@ -1272,7 +1272,20 @@
       "affected": "{{count}} row(s) affected.",
       "noResults": "Query returned no rows.",
       "truncated": "(capped at 500 rows)",
-      "error": "Error: {{msg}}"
+      "error": "Error: {{msg}}",
+      "schemaFilter": "Filter tables…",
+      "tableHint": "Click to expand, double-click to SELECT",
+      "columnHint": "Click to insert column name",
+      "schemaError": "Could not load columns",
+      "toggleSchema": "Toggle schema tree",
+      "tabTitle": "Query {{n}}",
+      "closeTab": "Close tab",
+      "newTab": "New query tab",
+      "history": "History",
+      "historyEmpty": "No queries yet.",
+      "historyClear": "Clear history",
+      "copyCell": "Copy cell",
+      "copyRow": "Copy row"
     }
   },
   "archiveOrg": {

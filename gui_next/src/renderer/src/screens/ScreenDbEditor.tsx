@@ -826,30 +826,259 @@ interface SqlResult {
   error?: string
 }
 
-function SqlQueryPanel({ db }: { db: 'losslessbob' | 'batchverify' | 'tapematch' }) {
+type DbName = 'losslessbob' | 'batchverify' | 'tapematch'
+
+interface QueryTab {
+  id: number
+  sql: string
+  running: boolean
+  result: SqlResult | null
+  colWidths: Record<number, number>
+}
+
+interface HistoryEntry {
+  sql: string
+  db: string
+  ts: number
+}
+
+const HISTORY_KEY = 'lbb.dbeditor.queryHistory'
+const HISTORY_MAX = 50
+const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}([ T]\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:?\d{2})?)?$/
+
+function loadHistory(): HistoryEntry[] {
+  try {
+    const raw = localStorage.getItem(HISTORY_KEY)
+    const parsed: unknown = raw ? JSON.parse(raw) : []
+    return Array.isArray(parsed) ? (parsed as HistoryEntry[]).slice(0, HISTORY_MAX) : []
+  } catch {
+    return []
+  }
+}
+
+function saveHistory(h: HistoryEntry[]): void {
+  try {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(h.slice(0, HISTORY_MAX)))
+  } catch {
+    /* storage unavailable — history is a convenience only */
+  }
+}
+
+function cellText(cell: unknown): string {
+  if (cell === null || cell === undefined) return 'NULL'
+  return String(cell)
+}
+
+/** Render a result cell with type-aware styling (NULL, boolean, number, date). */
+function FormattedCell({ cell }: { cell: unknown }) {
+  if (cell === null || cell === undefined) {
+    return <em style={{ color: 'var(--lbb-fg3)', opacity: 0.7 }}>NULL</em>
+  }
+  if (typeof cell === 'boolean') {
+    return (
+      <span style={{ color: cell ? 'var(--lbb-ok-fg)' : 'var(--lbb-bad-fg)', fontWeight: 600 }}>
+        {cell ? 'true' : 'false'}
+      </span>
+    )
+  }
+  if (typeof cell === 'number') {
+    return <span>{String(cell)}</span>
+  }
+  const s = String(cell)
+  if (ISO_DATE_RE.test(s)) {
+    return <span style={{ color: 'var(--lbb-fg2, var(--lbb-fg))', fontStyle: 'italic' }}>{s}</span>
+  }
+  return <>{s}</>
+}
+
+function SchemaTree({
+  db, tables, onInsertTable, onInsertColumn,
+}: {
+  db: DbName
+  tables: string[]
+  onInsertTable: (name: string) => void
+  onInsertColumn: (name: string) => void
+}) {
   const { t } = useTranslation()
-  const [sql, setSql]           = useState('')
-  const [running, setRunning]   = useState(false)
-  const [result, setResult]     = useState<SqlResult | null>(null)
+  const [open, setOpen] = useState<Set<string>>(new Set())
+  const [cols, setCols] = useState<Record<string, ColumnDef[] | 'loading' | 'error'>>({})
+  const [filter, setFilter] = useState('')
+
+  useEffect(() => { setOpen(new Set()); setCols({}) }, [db])
+
+  async function toggle(name: string) {
+    const next = new Set(open)
+    if (next.has(name)) { next.delete(name); setOpen(next); return }
+    next.add(name)
+    setOpen(next)
+    if (cols[name]) return
+    setCols((c) => ({ ...c, [name]: 'loading' }))
+    try {
+      const resp = await fetch(`${BASE}/api/dbedit/table/${encodeURIComponent(name)}/schema?db=${db}`)
+      const data = await resp.json()
+      setCols((c) => ({ ...c, [name]: Array.isArray(data) ? data : 'error' }))
+    } catch {
+      setCols((c) => ({ ...c, [name]: 'error' }))
+    }
+  }
+
+  const f = filter.trim().toLowerCase()
+  const shown = f ? tables.filter((n) => n.toLowerCase().includes(f)) : tables
+
+  return (
+    <div style={{
+      width: 190, flexShrink: 0, display: 'flex', flexDirection: 'column',
+      borderRight: '1px solid var(--lbb-border)', minHeight: 0,
+    }}>
+      <input
+        value={filter}
+        onChange={(e) => setFilter(e.target.value)}
+        placeholder={t('dbeditor.query.schemaFilter')}
+        style={{
+          margin: 6, padding: '3px 6px', borderRadius: 5, fontSize: 'var(--lbb-fs-11-5)',
+          background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+          color: 'var(--lbb-fg)', fontFamily: 'inherit',
+        }}
+      />
+      <div style={{ flex: 1, overflow: 'auto', fontSize: 'var(--lbb-fs-11-5)', fontFamily: 'var(--lbb-mono)' }}>
+        {shown.map((name) => {
+          const isOpen = open.has(name)
+          const c = cols[name]
+          return (
+            <div key={name}>
+              <div
+                onClick={() => void toggle(name)}
+                onDoubleClick={() => onInsertTable(name)}
+                title={t('dbeditor.query.tableHint')}
+                style={{ padding: '2px 8px', cursor: 'pointer', whiteSpace: 'nowrap', color: 'var(--lbb-fg)' }}
+              >
+                <span style={{ color: 'var(--lbb-fg3)', marginRight: 4 }}>{isOpen ? '▾' : '▸'}</span>
+                {name}
+              </div>
+              {isOpen && c === 'loading' && (
+                <div style={{ padding: '1px 8px 1px 22px', color: 'var(--lbb-fg3)' }}>…</div>
+              )}
+              {isOpen && c === 'error' && (
+                <div style={{ padding: '1px 8px 1px 22px', color: 'var(--lbb-bad-fg)' }}>
+                  {t('dbeditor.query.schemaError')}
+                </div>
+              )}
+              {isOpen && Array.isArray(c) && c.map((col) => (
+                <div
+                  key={col.name}
+                  onClick={() => onInsertColumn(col.name)}
+                  title={t('dbeditor.query.columnHint')}
+                  style={{
+                    padding: '1px 8px 1px 22px', cursor: 'pointer', whiteSpace: 'nowrap',
+                    color: 'var(--lbb-fg2, var(--lbb-fg))',
+                  }}
+                >
+                  {col.pk ? '* ' : ''}{col.name}
+                  <span style={{ color: 'var(--lbb-fg3)', marginLeft: 6 }}>{col.type || '-'}</span>
+                </div>
+              ))}
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+function SqlQueryPanel({ db, tables }: { db: DbName; tables: string[] }) {
+  const { t } = useTranslation()
+  const nextId = useRef(2)
+  const [tabs, setTabs] = useState<QueryTab[]>([
+    { id: 1, sql: '', running: false, result: null, colWidths: {} },
+  ])
+  const [activeId, setActiveId] = useState(1)
+  const [history, setHistory] = useState<HistoryEntry[]>(() => loadHistory())
+  const [showHistory, setShowHistory] = useState(false)
+  const [showSchema, setShowSchema] = useState(true)
+  const [sel, setSel] = useState<{ r: number; c: number | null } | null>(null)
+
+  const tab = tabs.find((x) => x.id === activeId) ?? tabs[0]
+
+  function patchTab(id: number, patch: Partial<QueryTab>) {
+    setTabs((ts) => ts.map((x) => (x.id === id ? { ...x, ...patch } : x)))
+  }
+
+  function addTab(sql = '') {
+    const id = nextId.current++
+    setTabs((ts) => [...ts, { id, sql, running: false, result: null, colWidths: {} }])
+    setActiveId(id)
+    setSel(null)
+  }
+
+  function closeTab(id: number) {
+    if (tabs.length === 1) { patchTab(id, { sql: '', result: null, colWidths: {} }); return }
+    const idx = tabs.findIndex((x) => x.id === id)
+    const rest = tabs.filter((x) => x.id !== id)
+    setTabs(rest)
+    if (id === activeId) setActiveId(rest[Math.min(idx, rest.length - 1)].id)
+    setSel(null)
+  }
+
+  function pushHistory(sql: string) {
+    setHistory((h) => {
+      const next = [{ sql, db, ts: Date.now() }, ...h.filter((e) => !(e.sql === sql && e.db === db))]
+        .slice(0, HISTORY_MAX)
+      saveHistory(next)
+      return next
+    })
+  }
 
   async function runQuery() {
-    if (!sql.trim()) return
-    setRunning(true)
-    setResult(null)
+    const id = tab.id
+    const sql = tab.sql.trim()
+    if (!sql) return
+    patchTab(id, { running: true, result: null, colWidths: {} })
+    setSel(null)
+    pushHistory(sql)
     try {
       const resp = await fetch(`${BASE}/api/dbedit/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sql: sql.trim(), limit: 500, db }),
+        body: JSON.stringify({ sql, limit: 500, db }),
       })
       const data: SqlResult = await resp.json()
-      setResult(data)
+      patchTab(id, { result: data, running: false })
     } catch (e) {
-      setResult({ columns: [], rows: [], error: String(e) })
-    } finally {
-      setRunning(false)
+      patchTab(id, { result: { columns: [], rows: [], error: String(e) }, running: false })
     }
   }
+
+  function copyText(text: string) {
+    try { void navigator.clipboard.writeText(text) } catch { /* clipboard unavailable */ }
+  }
+
+  function copySelection() {
+    const res = tab.result
+    if (!sel || !res) return
+    const row = res.rows[sel.r] as unknown[] | undefined
+    if (!row) return
+    if (sel.c === null) copyText(row.map(cellText).join('\t'))
+    else copyText(cellText(row[sel.c]))
+  }
+
+  function startResize(e: React.MouseEvent, ci: number, startW: number) {
+    e.preventDefault()
+    e.stopPropagation()
+    const startX = e.clientX
+    const id = tab.id
+    const onMove = (ev: MouseEvent) => {
+      const w = Math.max(40, startW + ev.clientX - startX)
+      setTabs((ts) => ts.map((x) => (x.id === id ? { ...x, colWidths: { ...x.colWidths, [ci]: w } } : x)))
+    }
+    const onUp = () => {
+      window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('mouseup', onUp)
+    }
+    window.addEventListener('mousemove', onMove)
+    window.addEventListener('mouseup', onUp)
+  }
+
+  const result = tab.result
 
   function statusLine(): string {
     if (!result) return ''
@@ -860,104 +1089,236 @@ function SqlQueryPanel({ db }: { db: 'losslessbob' | 'batchverify' | 'tapematch'
     return result.truncated ? base + ' ' + t('dbeditor.query.truncated') : base
   }
 
+  const btn: React.CSSProperties = {
+    padding: '4px 12px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
+    background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+    color: 'var(--lbb-fg)', cursor: 'pointer', fontFamily: 'inherit',
+  }
   const statusColor = result?.error ? 'var(--lbb-bad-fg)' : 'var(--lbb-ok-fg)'
+  const stickyBg = 'var(--lbb-surface)'
 
   return (
     <div style={{
-      display: 'flex', flexDirection: 'column', height: '100%',
-      borderTop: '1px solid var(--lbb-border)',
+      display: 'flex', height: '100%', borderTop: '1px solid var(--lbb-border)',
     }}>
-      {/* Input row */}
-      <div style={{ display: 'flex', gap: 6, padding: '6px 12px', flexShrink: 0, alignItems: 'flex-end' }}>
-        <textarea
-          value={sql}
-          onChange={(e) => setSql(e.target.value)}
-          onKeyDown={(e) => {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); runQuery() }
-          }}
-          placeholder={t('dbeditor.query.placeholder')}
-          rows={3}
-          spellCheck={false}
-          style={{
-            flex: 1, padding: '5px 8px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
-            background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
-            color: 'var(--lbb-fg)', fontFamily: 'var(--lbb-mono)', resize: 'none',
-          }}
+      {showSchema && (
+        <SchemaTree
+          db={db}
+          tables={tables}
+          onInsertTable={(name) => patchTab(tab.id, { sql: `SELECT * FROM [${name}] LIMIT 100` })}
+          onInsertColumn={(name) => patchTab(tab.id, {
+            sql: tab.sql + (tab.sql && !/\s$/.test(tab.sql) ? ' ' : '') + name,
+          })}
         />
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-          <button
-            type="button"
-            onClick={runQuery}
-            disabled={running || !sql.trim()}
-            style={{
-              padding: '5px 14px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
-              background: 'var(--lbb-accent-mid)', border: 'none',
-              color: 'var(--lbb-accent-onMid)',
-              cursor: (running || !sql.trim()) ? 'not-allowed' : 'pointer',
-              fontFamily: 'inherit', fontWeight: 600,
-            }}
-          >
-            {running ? '…' : t('dbeditor.query.run')}
+      )}
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+        {/* Tab strip */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 2, padding: '4px 12px 0', flexShrink: 0 }}>
+          <button type="button" style={{ ...btn, padding: '2px 8px' }}
+            onClick={() => setShowSchema((v) => !v)} title={t('dbeditor.query.toggleSchema')}>
+            {showSchema ? '◧' : '◨'}
           </button>
-          <button
-            type="button"
-            onClick={() => { setSql(''); setResult(null) }}
+          {tabs.map((x, i) => (
+            <div key={x.id} onClick={() => { setActiveId(x.id); setSel(null) }}
+              style={{
+                display: 'flex', alignItems: 'center', gap: 6, padding: '3px 8px', cursor: 'pointer',
+                fontSize: 'var(--lbb-fs-11-5)', borderRadius: '6px 6px 0 0',
+                border: '1px solid var(--lbb-border)', borderBottom: 'none',
+                background: x.id === activeId ? 'var(--lbb-surface2)' : 'transparent',
+                color: x.id === activeId ? 'var(--lbb-fg)' : 'var(--lbb-fg3)',
+              }}>
+              {t('dbeditor.query.tabTitle', { n: i + 1 })}
+              <span onClick={(e) => { e.stopPropagation(); closeTab(x.id) }}
+                title={t('dbeditor.query.closeTab')} style={{ opacity: 0.7 }}>×</span>
+            </div>
+          ))}
+          <button type="button" style={{ ...btn, padding: '2px 8px' }} onClick={() => addTab()}
+            title={t('dbeditor.query.newTab')}>+</button>
+          <div style={{ flex: 1 }} />
+          <button type="button" style={btn} onClick={() => setShowHistory((v) => !v)}>
+            {t('dbeditor.query.history')} ({history.length})
+          </button>
+        </div>
+
+        {showHistory && (
+          <div style={{
+            maxHeight: 120, overflow: 'auto', margin: '0 12px', border: '1px solid var(--lbb-border)',
+            borderRadius: 6, background: 'var(--lbb-surface)', flexShrink: 0,
+            fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)',
+          }}>
+            {history.length === 0 && (
+              <div style={{ padding: 6, color: 'var(--lbb-fg3)' }}>{t('dbeditor.query.historyEmpty')}</div>
+            )}
+            {history.map((h, i) => (
+              <div key={i}
+                onClick={() => { patchTab(tab.id, { sql: h.sql }); setShowHistory(false) }}
+                onDoubleClick={() => { addTab(h.sql); setShowHistory(false) }}
+                title={`${h.db} · ${new Date(h.ts).toLocaleString()}`}
+                style={{
+                  padding: '2px 8px', cursor: 'pointer', whiteSpace: 'nowrap',
+                  overflow: 'hidden', textOverflow: 'ellipsis', color: 'var(--lbb-fg)',
+                }}>
+                {h.sql.replace(/\s+/g, ' ')}
+              </div>
+            ))}
+            {history.length > 0 && (
+              <div onClick={() => { setHistory([]); saveHistory([]) }}
+                style={{ padding: '2px 8px', cursor: 'pointer', color: 'var(--lbb-bad-fg)' }}>
+                {t('dbeditor.query.historyClear')}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Input row */}
+        <div style={{ display: 'flex', gap: 6, padding: '6px 12px', flexShrink: 0, alignItems: 'flex-end' }}>
+          <textarea
+            value={tab.sql}
+            onChange={(e) => patchTab(tab.id, { sql: e.target.value })}
+            onKeyDown={(e) => {
+              if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); void runQuery() }
+            }}
+            placeholder={t('dbeditor.query.placeholder')}
+            rows={3}
+            spellCheck={false}
             style={{
-              padding: '5px 14px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
+              flex: 1, padding: '5px 8px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
-              color: 'var(--lbb-fg)', cursor: 'pointer', fontFamily: 'inherit',
+              color: 'var(--lbb-fg)', fontFamily: 'var(--lbb-mono)', resize: 'none',
             }}
+          />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <button
+              type="button"
+              onClick={() => void runQuery()}
+              disabled={tab.running || !tab.sql.trim()}
+              style={{
+                ...btn, background: 'var(--lbb-accent-mid)', border: 'none',
+                color: 'var(--lbb-accent-onMid)', fontWeight: 600,
+                cursor: (tab.running || !tab.sql.trim()) ? 'not-allowed' : 'pointer',
+              }}
+            >
+              {tab.running ? '…' : t('dbeditor.query.run')}
+            </button>
+            <button type="button" style={btn}
+              onClick={() => { patchTab(tab.id, { sql: '', result: null, colWidths: {} }); setSel(null) }}>
+              {t('dbeditor.query.clear')}
+            </button>
+          </div>
+        </div>
+
+        {/* Status */}
+        {result && (
+          <div style={{
+            padding: '2px 12px 4px', fontSize: 'var(--lbb-fs-11-5)', flexShrink: 0,
+            color: statusColor, fontFamily: 'var(--lbb-mono)', display: 'flex', gap: 10,
+          }}>
+            <span>{statusLine()}</span>
+            {sel && (
+              <button type="button" onClick={copySelection}
+                style={{ ...btn, padding: '0 8px', fontSize: 'var(--lbb-fs-11)' }}>
+                {sel.c === null ? t('dbeditor.query.copyRow') : t('dbeditor.query.copyCell')}
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* Results table */}
+        {result && result.columns.length > 0 && (
+          <div
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'c' && sel) {
+                e.preventDefault()
+                copySelection()
+              }
+            }}
+            style={{ flex: 1, overflow: 'auto', minHeight: 0, outline: 'none' }}
           >
-            {t('dbeditor.query.clear')}
-          </button>
-        </div>
-      </div>
-
-      {/* Status */}
-      {result && (
-        <div style={{
-          padding: '2px 12px 4px', fontSize: 'var(--lbb-fs-11-5)', flexShrink: 0,
-          color: statusColor, fontFamily: 'var(--lbb-mono)',
-        }}>
-          {statusLine()}
-        </div>
-      )}
-
-      {/* Results table */}
-      {result && result.columns.length > 0 && (
-        <div style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--lbb-fs-11-5)', fontFamily: 'var(--lbb-mono)' }}>
-            <thead>
-              <tr>
-                {result.columns.map((col, i) => (
-                  <th key={i} style={{
-                    padding: '4px 8px', textAlign: 'left', fontWeight: 700, fontSize: 'var(--lbb-fs-11)',
-                    color: 'var(--lbb-fg3)', borderBottom: '2px solid var(--lbb-border)',
-                    background: 'var(--lbb-surface)', position: 'sticky', top: 0, whiteSpace: 'nowrap',
-                  }}>
-                    {col}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {result.rows.map((row, ri) => (
-                <tr key={ri} style={{ background: ri % 2 === 0 ? 'transparent' : 'var(--lbb-surface2)' }}>
-                  {(row as unknown[]).map((cell, ci) => (
-                    <td key={ci} style={{
-                      padding: '3px 8px', borderBottom: '1px solid var(--lbb-border)',
-                      color: 'var(--lbb-fg)', maxWidth: 300,
-                      overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                    }}>
-                      {cell === null ? <em style={{ color: 'var(--lbb-fg3)' }}>NULL</em> : String(cell)}
-                    </td>
-                  ))}
+            <table style={{
+              borderCollapse: 'collapse', tableLayout: 'fixed',
+              fontSize: 'var(--lbb-fs-11-5)', fontFamily: 'var(--lbb-mono)',
+            }}>
+              <thead>
+                <tr>
+                  <th style={{
+                    width: 36, minWidth: 36, position: 'sticky', top: 0, left: 0, zIndex: 3,
+                    background: stickyBg, borderBottom: '2px solid var(--lbb-border)',
+                  }} />
+                  {result.columns.map((col, i) => {
+                    const w = tab.colWidths[i] ?? 160
+                    return (
+                      <th key={i} style={{
+                        width: w, minWidth: w, maxWidth: w, padding: '4px 8px', textAlign: 'left',
+                        fontWeight: 700, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)',
+                        borderBottom: '2px solid var(--lbb-border)', background: stickyBg,
+                        position: 'sticky', top: 0, whiteSpace: 'nowrap', overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        ...(i === 0
+                          ? { left: 36, zIndex: 3, borderRight: '2px solid var(--lbb-border)' }
+                          : { zIndex: 2 }),
+                      }}>
+                        {col}
+                        <span
+                          onMouseDown={(e) => startResize(e, i, w)}
+                          style={{
+                            position: 'absolute', top: 0, right: 0, bottom: 0, width: 5,
+                            cursor: 'col-resize',
+                          }}
+                        />
+                      </th>
+                    )
+                  })}
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+              </thead>
+              <tbody>
+                {result.rows.map((row, ri) => {
+                  const rowSel = sel?.r === ri && sel.c === null
+                  return (
+                    <tr key={ri} style={{ background: ri % 2 === 0 ? 'transparent' : 'var(--lbb-surface2)' }}>
+                      <td
+                        onClick={() => setSel({ r: ri, c: null })}
+                        title={t('dbeditor.query.copyRow')}
+                        style={{
+                          position: 'sticky', left: 0, zIndex: 1, cursor: 'pointer', textAlign: 'right',
+                          padding: '3px 6px', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)',
+                          background: rowSel ? 'var(--lbb-accent-mid)' : stickyBg,
+                          borderBottom: '1px solid var(--lbb-border)',
+                        }}
+                      >
+                        {ri + 1}
+                      </td>
+                      {(row as unknown[]).map((cell, ci) => {
+                        const w = tab.colWidths[ci] ?? 160
+                        const cellSel = rowSel || (sel?.r === ri && sel.c === ci)
+                        return (
+                          <td key={ci}
+                            onClick={() => setSel({ r: ri, c: ci })}
+                            title={cellText(cell).length > 40 ? cellText(cell) : undefined}
+                            style={{
+                              width: w, minWidth: w, maxWidth: w, padding: '3px 8px',
+                              borderBottom: '1px solid var(--lbb-border)', color: 'var(--lbb-fg)',
+                              overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                              textAlign: typeof cell === 'number' ? 'right' : 'left',
+                              outline: cellSel ? '1px solid var(--lbb-accent-mid)' : 'none',
+                              outlineOffset: -1,
+                              ...(ci === 0 ? {
+                                position: 'sticky', left: 36, zIndex: 1, background: stickyBg,
+                                borderRight: '2px solid var(--lbb-border)',
+                              } : {}),
+                            }}>
+                            <FormattedCell cell={cell} />
+                          </td>
+                        )
+                      })}
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
@@ -2055,8 +2416,8 @@ export function ScreenDbEditor() {
 
         {/* SQL Query panel */}
         {currentTable && sqlPanelOpen && (
-          <div style={{ height: 280, flexShrink: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-            <SqlQueryPanel db={activeDb} />
+          <div style={{ height: 340, flexShrink: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+            <SqlQueryPanel db={activeDb} tables={tableList} />
           </div>
         )}
       </div>
