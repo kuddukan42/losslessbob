@@ -116,6 +116,7 @@ def _db():
         (15, 5, "h", "d", "v", "s", "f", _files("song one.flac")),                    # match
     ]
     c.executemany("INSERT INTO tuit_recordings VALUES (?,?,?,?,?,?,?,?)", rec)
+    c.commit()
     return c
 
 
