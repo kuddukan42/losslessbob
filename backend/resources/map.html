@@ -33,6 +33,7 @@
         }
 
         #app {
+            position: relative;
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -243,6 +244,14 @@
     </div>
 
     <!-- Stats bar -->
+    <div id="trailLegend" style="display:none;position:absolute;right:10px;bottom:40px;z-index:1000;background:rgba(16,24,36,.9);color:#dde;padding:8px 10px;border-radius:6px;font-size:12px;">
+        <div style="font-weight:700;margin-bottom:4px;">Travel trail</div>
+        <div><span style="display:inline-block;width:18px;height:3px;background:#3b6a99;vertical-align:middle;margin-right:6px;"></span>1960s and earlier</div>
+        <div><span style="display:inline-block;width:18px;height:3px;background:#2a8b6f;vertical-align:middle;margin-right:6px;"></span>1970s</div>
+        <div><span style="display:inline-block;width:18px;height:3px;background:#e0a030;vertical-align:middle;margin-right:6px;"></span>1980s</div>
+        <div><span style="display:inline-block;width:18px;height:3px;background:#c25a48;vertical-align:middle;margin-right:6px;"></span>1990s</div>
+        <div><span style="display:inline-block;width:18px;height:3px;background:#b58adf;vertical-align:middle;margin-right:6px;"></span>2000s+</div>
+    </div>
     <div id="statsBar">Loading&hellip;</div>
 
 </div>
@@ -322,10 +331,33 @@
                 _buildLayers(_allMarkerData);
                 updateStats(stats, _allMarkerData.length);
                 if (viewportFilterOn) applyViewportFilter();
+                if (trailOn) drawTrail();
             })
             .catch(function(err) {
                 document.getElementById('statsBar').textContent = 'Error loading data: ' + err.message;
             });
+    }
+
+    function _popupHtml(m, color, isOwned) {
+        let popupHtml =
+            '<div class="lb-popup">' +
+            '<b>LB ' + escapeHtml(String(m.lb_number || '')) + '</b><br>' +
+            escapeHtml(m.date_str || '') + '<br>' +
+            escapeHtml(m.location || '') + '<br>';
+        if (m.display_name && m.display_name !== m.location) {
+            popupHtml += '<em>' + escapeHtml(m.display_name) + '</em><br>';
+        }
+        if (m.city_level) {
+            popupHtml += '<span style="color:#999; font-size:11px;">' +
+                '&#9678; city-level location (venue not yet pinned)</span><br>';
+        }
+        popupHtml +=
+            '<span class="popup-status" style="color:' + color + '">' +
+            escapeHtml(m.lb_status || 'unknown') + '</span>';
+        if (isOwned) {
+            popupHtml += ' &nbsp;<span style="color:#FFD600; font-size:15px;">★ owned</span>';
+        }
+        return popupHtml + '</div>';
     }
 
     // ---------------------------------------------------------------------------
@@ -405,31 +437,7 @@
             });
             const circle = L.marker([lat, lon], { icon: icon });
 
-            // Popup HTML
-            let popupHtml =
-                '<div class="lb-popup">' +
-                '<b>LB ' + escapeHtml(String(m.lb_number || '')) + '</b><br>' +
-                escapeHtml(m.date_str || '') + '<br>' +
-                escapeHtml(m.location || '') + '<br>';
-
-            if (m.display_name && m.display_name !== m.location) {
-                popupHtml += '<em>' + escapeHtml(m.display_name) + '</em><br>';
-            }
-
-            if (m.city_level) {
-                popupHtml += '<span style="color:#999; font-size:11px;">' +
-                    '&#9678; city-level location (venue not yet pinned)</span><br>';
-            }
-
-            popupHtml +=
-                '<span class="popup-status" style="color:' + color + '">' +
-                escapeHtml(m.lb_status || 'unknown') + '</span>';
-
-            if (isOwned) {
-                popupHtml += ' &nbsp;<span style="color:#FFD600; font-size:15px;">★ owned</span>';
-            }
-
-            popupHtml += '</div>';
+            const popupHtml = _popupHtml(m, color, isOwned);
 
             circle.bindPopup(popupHtml);
             group.addLayer(circle);
@@ -445,7 +453,9 @@
             gradient: { 0.3: '#4CAF50', 0.6: '#FF9800', 1.0: '#f03' },
         });
 
-        if (heatmapMode) {
+        if (trailOn) {
+            // trail view owns the map; loadMarkers redraws it
+        } else if (heatmapMode) {
             map.addLayer(heatLayer);
         } else {
             map.addLayer(clusterLayer);
@@ -552,6 +562,98 @@
     }
 
     // ---------------------------------------------------------------------------
+    // Travel trail: one vertex per show date, polyline in date order, coloured by
+    // decade, broken across gaps longer than gapDays.  Uses the same marker data
+    // (entries + location_geocoded) as the pins; a vertex click opens the pin popup.
+    // ---------------------------------------------------------------------------
+    let trailLayer = null;
+    let trailOn = false;
+    let trailOpts = { yearMin: null, yearMax: null, gapDays: 60 };
+    const TRAIL_DECADES = [
+        { from: 0,    c: '#3b6a99' },
+        { from: 1970, c: '#2a8b6f' },
+        { from: 1980, c: '#e0a030' },
+        { from: 1990, c: '#c25a48' },
+        { from: 2000, c: '#b58adf' },
+    ];
+
+    function parseShowDate(s) {
+        // Entries use M/D/YY (or M/D/YYYY); two-digit years 00-30 -> 20xx else 19xx.
+        const m = /^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/.exec((s || '').trim());
+        if (!m) return null;
+        let y = parseInt(m[3], 10);
+        if (m[3].length <= 2) y += (y <= 30 ? 2000 : 1900);
+        const mo = parseInt(m[1], 10), d = parseInt(m[2], 10);
+        if (mo < 1 || mo > 12 || d < 1 || d > 31) return null;
+        return { y: y, t: Date.UTC(y, mo - 1, d) };
+    }
+
+    function trailColor(year) {
+        let c = TRAIL_DECADES[0].c;
+        TRAIL_DECADES.forEach(function(dc) { if (year >= dc.from) c = dc.c; });
+        return c;
+    }
+
+    function buildTrailPoints(markers, opts) {
+        const byDate = new Map();
+        markers.forEach(function(m) {
+            if (m.lat == null || m.lon == null) return;
+            const pd = parseShowDate(m.date_str);
+            if (!pd) return;
+            if (opts.yearMin && pd.y < opts.yearMin) return;
+            if (opts.yearMax && pd.y > opts.yearMax) return;
+            const prev = byDate.get(pd.t);
+            // dedupe recordings of one date; prefer a venue-level pin over city-level
+            if (!prev || (prev.m.city_level && !m.city_level)) byDate.set(pd.t, { m: m, pd: pd });
+        });
+        return Array.from(byDate.values()).sort(function(a, b) { return a.pd.t - b.pd.t; });
+    }
+
+    function drawTrail() {
+        if (trailLayer) { map.removeLayer(trailLayer); trailLayer = null; }
+        if (!trailOn) return;
+        const pts = buildTrailPoints(_allMarkerData, trailOpts);
+        const group = L.layerGroup();
+        const gapMs = Math.max(1, trailOpts.gapDays || 60) * 86400000;
+        for (let i = 0; i < pts.length; i++) {
+            const p = pts[i], m = p.m;
+            if (i > 0 && p.pd.t - pts[i - 1].pd.t <= gapMs) {
+                const q = pts[i - 1];
+                L.polyline([[q.m.lat, q.m.lon], [m.lat, m.lon]],
+                    { color: trailColor(p.pd.y), weight: 2.5, opacity: 0.85 }).addTo(group);
+            }
+            const v = L.circleMarker([m.lat, m.lon], {
+                radius: 5, color: '#111', weight: 1,
+                fillColor: trailColor(p.pd.y), fillOpacity: 1,
+            });
+            v.bindPopup(_popupHtml(m, STATUS_COLORS[m.lb_status] || DEFAULT_COLOR, Boolean(m.owned)));
+            v.addTo(group);
+        }
+        trailLayer = group;
+        map.addLayer(group);
+        document.getElementById('statsBar').textContent =
+            pts.length + ' show dates in trail (line breaks after ' + trailOpts.gapDays + '-day gaps)';
+        document.getElementById('trailLegend').style.display = 'block';
+    }
+
+    function setTrail(on, opts) {
+        trailOn = Boolean(on);
+        trailOpts = Object.assign(trailOpts, opts || {});
+        const legend = document.getElementById('trailLegend');
+        if (trailOn) {
+            if (clusterLayer) map.removeLayer(clusterLayer);
+            if (heatLayer)    map.removeLayer(heatLayer);
+            drawTrail();
+        } else {
+            if (trailLayer) { map.removeLayer(trailLayer); trailLayer = null; }
+            legend.style.display = 'none';
+            if (heatmapMode) { if (heatLayer) map.addLayer(heatLayer); }
+            else if (clusterLayer) map.addLayer(clusterLayer);
+            updateStats({}, _allMarkerData.length);
+        }
+    }
+
+    // ---------------------------------------------------------------------------
     // Utility
     // ---------------------------------------------------------------------------
 
@@ -575,6 +677,15 @@
     //   year_min, year_max, q, cluster, heatmap } }
     // ---------------------------------------------------------------------------
     window.addEventListener('message', function(evt) {
+        if (evt.data && evt.data.type === 'trail') {
+            const o = evt.data;
+            setTrail(o.on, {
+                yearMin: o.yearMin ? parseInt(o.yearMin, 10) : null,
+                yearMax: o.yearMax ? parseInt(o.yearMax, 10) : null,
+                gapDays: o.gapDays ? parseInt(o.gapDays, 10) : 60,
+            });
+            return;
+        }
         if (!evt.data || evt.data.type !== 'applyFilters') return;
         const f = evt.data.filters || {};
         loadMarkers({

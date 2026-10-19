@@ -842,6 +842,15 @@
     "shows": "{{count}} shows",
     "openInSearch": "Open list in Search",
     "entriesHere": "Entries at this location",
+    "trail": {
+      "title": "Travel trail",
+      "show": "Show travel trail",
+      "years": "Years",
+      "from": "From",
+      "to": "To",
+      "gapDays": "Break line after gap (days)",
+      "hint": "One point per show date, joined in date order and coloured by decade. Click a point for details."
+    },
     "mapInfoHint": "Double-click any entry to open it on losslessbob.com. Use Open in Search to bring this list into the main search view.",
     "displayOpts": {
       "clusterMarkers": "Cluster markers",

@@ -65,7 +65,17 @@ export function ScreenMap(): React.JSX.Element {
   const [search,  setSearch]  = useState('')
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
+  const [trailOn,  setTrailOn]  = useState(false)
+  const [trailMin, setTrailMin] = useState('')
+  const [trailMax, setTrailMax] = useState('')
+  const [trailGap, setTrailGap] = useState(60)
+
   const selectedPinData = PINS[2]
+
+  function postTrail(on: boolean, min: string, max: string, gap: number) {
+    iframeRef.current?.contentWindow?.postMessage(
+      { type: 'trail', on, yearMin: min, yearMax: max, gapDays: gap }, '*')
+  }
 
   function handleApplyFilters() {
     const filters: Record<string, string | boolean> = {}
@@ -215,6 +225,43 @@ export function ScreenMap(): React.JSX.Element {
                 </label>
               ))}
             </div>
+          </section>
+
+          {/* Travel trail */}
+          <section>
+            <div style={{ ...SECTION_LABEL, marginBottom: 8 }}>{t('map.trail.title')}</div>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
+              <input type="checkbox" checked={trailOn} onChange={(e) => {
+                setTrailOn(e.target.checked)
+                postTrail(e.target.checked, trailMin, trailMax, trailGap)
+              }} />
+              {t('map.trail.show')}
+            </label>
+            {trailOn && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 8,
+                fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span>{t('map.trail.years')}</span>
+                  <Input size="sm" placeholder={t('map.trail.from')} value={trailMin} style={{ width: 64 }}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      setTrailMin(e.target.value); postTrail(true, e.target.value, trailMax, trailGap)
+                    }} />
+                  <Input size="sm" placeholder={t('map.trail.to')} value={trailMax} style={{ width: 64 }}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      setTrailMax(e.target.value); postTrail(true, trailMin, e.target.value, trailGap)
+                    }} />
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span>{t('map.trail.gapDays')}</span>
+                  <Input size="sm" value={String(trailGap)} style={{ width: 64 }}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      const g = Math.max(1, parseInt(e.target.value, 10) || 1)
+                      setTrailGap(g); postTrail(true, trailMin, trailMax, g)
+                    }} />
+                </div>
+                <div style={{ color: 'var(--lbb-fg3)' }}>{t('map.trail.hint')}</div>
+              </div>
+            )}
           </section>
 
           <div style={{ flex: 1 }} />
