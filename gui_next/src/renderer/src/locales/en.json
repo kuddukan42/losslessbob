@@ -2839,5 +2839,32 @@
     "syntheticNote": "installed before import history was recorded",
     "empty": "No catalogue snapshot has been imported yet.",
     "error": "The snapshot history couldn't be loaded. Check that the backend is running, then reload."
+  },
+  "tradingMatrix": {
+    "tabSingle": "Single friend",
+    "tabMatrix": "Batch matrix",
+    "pickFriends": "Pick friends to compare",
+    "selectAll": "All",
+    "selectNone": "None",
+    "run": "Compare selected",
+    "needFriends": "Select at least one friend.",
+    "empty": "Pick friends and click Compare selected to see the best trade partner for each show.",
+    "noRows": "No tradeable shows for this selection.",
+    "modeAll": "All",
+    "modeWant": "They have, you lack",
+    "modeOffer": "You have, they lack",
+    "search": "Filter by LB#, date or venue",
+    "colShow": "Show",
+    "colBest": "Best partner",
+    "has": "Has it",
+    "lacks": "Lacks it",
+    "want": "Want",
+    "offer": "Offer",
+    "summary": "{{name}}: {{want}} to get, {{offer}} to give",
+    "page": "{{from}}–{{to}} of {{total}}",
+    "prev": "Previous",
+    "next": "Next",
+    "error": "Batch compare failed.",
+    "bestHint": "Best partner = the friend with the most two-way trade potential."
   }
 }

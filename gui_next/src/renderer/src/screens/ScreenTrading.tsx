@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { BASE } from '../lib/api'
+import { TradingMatrix } from './TradingMatrix'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -111,6 +113,8 @@ function EntryTable({ entries, emptyLabel }: { entries: TradeEntry[]; emptyLabel
 // ── Main screen ───────────────────────────────────────────────────────────────
 
 export function ScreenTrading() {
+  const { t } = useTranslation()
+  const [view, setView] = useState<'single' | 'matrix'>('single')
   const [friends, setFriends] = useState<Friend[]>([])
   const [selectedId, setSelectedId] = useState<number | null>(null)
   const [compare, setCompare] = useState<CompareResult | null>(null)
@@ -261,8 +265,22 @@ export function ScreenTrading() {
           </span>
         </div>
 
+        <div style={{ display: 'flex', gap: 6 }}>
+          {(['single', 'matrix'] as const).map(v => (
+            <button
+              key={v}
+              style={{ ...btnStyle(), fontWeight: view === v ? 700 : 500, opacity: view === v ? 1 : 0.7 }}
+              onClick={() => setView(v)}
+            >
+              {t(v === 'single' ? 'tradingMatrix.tabSingle' : 'tradingMatrix.tabMatrix')}
+            </button>
+          ))}
+        </div>
+
+        {view === 'matrix' && <TradingMatrix friends={friends} />}
+
         {/* Main split layout */}
-        <div style={{ flex: 1, display: 'flex', gap: 16, minHeight: 0 }}>
+        <div style={{ flex: 1, display: view === 'single' ? 'flex' : 'none', gap: 16, minHeight: 0 }}>
           {/* Left: Friends list */}
           <div style={{
             width: 220, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 8,
