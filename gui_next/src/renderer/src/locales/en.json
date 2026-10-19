@@ -1697,6 +1697,11 @@
       "recordingFamilies": "Recording families · {{count}}",
       "groupedByTapeMatch": "grouped by TapeMatch"
     },
+    "tuit": {
+      "on": "On TUIT tracker",
+      "off": "Not on TUIT tracker",
+      "tooltip": "Whether the TUIT tracker lists a torrent for this show. Tracker availability only: it does not mean no tape exists."
+    },
     "coverage": {
       "ownedFull": "Owned {{owned}}/{{total}}",
       "owned": "Owned",

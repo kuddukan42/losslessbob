@@ -4839,6 +4839,8 @@ def get_performances(db_path=None) -> list[dict]:
         always present; `dow`, `tour`, `tracks`, `setlist`, `title` omitted
         (not null-faked) when no source data exists for that show; `confirmed`
         omitted (true by default) except `False` on degraded unknown-only rows.
+        `tuitCirculating` (bool) is present when TUIT's show spine has the date:
+        tracker availability only, never "no tape exists" (TODO-338 part 4).
         Each recording additionally omits `pickRank`/`absGrade`/`curated`/
         `taperConfirmed`/`taperReview` when that signal doesn't exist yet for
         its LB number (pre-recompute, never scanned, in no curated list, or
@@ -4907,6 +4909,7 @@ def get_performances(db_path=None) -> list[dict]:
         "SELECT lb_number, title FROM bootleg_titles WHERE title != ''"
     ).fetchall():
         titles.setdefault(r["lb_number"], r["title"])
+    tuit_circ = _load_tuit_circulating(conn)
 
     # Group key: ISO date when the date is fully parseable (Bob Dylan never
     # plays two venues on the same calendar day), else raw "date_str::location"
@@ -5010,6 +5013,8 @@ def get_performances(db_path=None) -> list[dict]:
                        if rec["lbNumber"] in titles), None)
         if title:
             perf["title"] = title
+        if iso and iso in tuit_circ:
+            perf["tuitCirculating"] = tuit_circ[iso]
         performances.append(perf)
 
     from backend import gap_analysis
@@ -5035,9 +5040,36 @@ def get_performances(db_path=None) -> list[dict]:
         }
         if u["tour"]:
             perf["tour"] = u["tour"]
+        if date_iso in tuit_circ:
+            perf["tuitCirculating"] = tuit_circ[date_iso]
         performances.append(perf)
 
     return performances
+
+
+def _load_tuit_circulating(conn: sqlite3.Connection) -> dict[str, bool]:
+    """Map ISO date -> whether TUIT's tracker lists a circulating recording.
+
+    ``tuit_shows.circulating = 0`` means the TUIT tracker has no torrent for
+    the show, NOT that no tape exists (LB holds recordings for ~1,269 dates
+    TUIT calls uncirculated), so callers must label it tracker availability.
+    A date with several TUIT rows is True if any row circulates. Dates TUIT
+    has no row for are absent; a missing table (older DB) yields ``{}``.
+
+    Args:
+        conn: Open SQLite connection.
+
+    Returns:
+        ``{iso_date: bool}`` for every date present in ``tuit_shows``.
+    """
+    try:
+        rows = conn.execute(
+            "SELECT date_str, MAX(COALESCE(circulating, 0)) AS c "
+            "FROM tuit_shows GROUP BY date_str"
+        ).fetchall()
+    except sqlite3.OperationalError:
+        return {}
+    return {r["date_str"]: bool(r["c"]) for r in rows}
 
 
 _PERF_CATEGORY_MAP: dict[str, str] = {

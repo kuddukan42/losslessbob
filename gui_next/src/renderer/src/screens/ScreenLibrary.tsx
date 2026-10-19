@@ -1154,6 +1154,9 @@ interface PerformanceRow {
   // not-yet-happened date (`'upcoming'`). Absent on ordinary entry-derived
   // rows (see `get_performances` docstring).
   coverage?: 'uncirculated' | 'upcoming'
+  // TUIT tracker availability (TODO-338): true = a torrent is listed, false =
+  // none listed. Absent when TUIT has no row for the date. NOT "no tape exists".
+  tuitCirculating?: boolean
   recordings: RecordingRow[]
 }
 
@@ -1534,6 +1537,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
         confirmed: p.confirmed,
         tracks: p.tracks, setlist: p.setlist, title: p.title,
         coverage: p.coverage,
+        tuitCirculating: p.tuitCirculating,
         recordings,
       }
     })
@@ -2129,6 +2133,14 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                               <Pill tone={coverageTone(ru.coverage)} soft dot={ru.coverage === 'Covered'}>
                                 {coverageLabel(ru.coverage, ru.ownedCount, ru.total, t)}
                               </Pill>
+                              {p.tuitCirculating !== undefined && (
+                                <span
+                                  title={t('library.tuit.tooltip')}
+                                  style={{ display: 'block', marginTop: 2, fontSize: 'var(--lbb-fs-9-5)', color: 'var(--lbb-fg3)', whiteSpace: 'nowrap' }}
+                                >
+                                  {p.tuitCirculating ? t('library.tuit.on') : t('library.tuit.off')}
+                                </span>
+                              )}
                             </TD>
                             <TD />
                           </TR>
