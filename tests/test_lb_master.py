@@ -450,7 +450,7 @@ class TestForumIntegrityGate:
 
     @staticmethod
     def _patch_lbdir(monkeypatch, *, missing=0, mismatch=0):
-        import backend.app as app_mod
+        import backend.routes.wtrf as wtrf_mod
 
         def _fake(lb_number, force=False):
             return {"status": "ok", "split": {
@@ -459,7 +459,7 @@ class TestForumIntegrityGate:
                 "text": {"total": 2, "pass": 2, "missing": 0, "mismatch": 0, "extra": 2},
             }}
 
-        monkeypatch.setattr(app_mod, "_lbdir_status_for_lb", _fake)
+        monkeypatch.setattr(wtrf_mod, "_lbdir_status_for_lb", _fake)
 
     def test_clean_manifest_passes_gate(self, gated_client, monkeypatch):
         # Stale sidecars in the folder must not matter — only the manifest does.
