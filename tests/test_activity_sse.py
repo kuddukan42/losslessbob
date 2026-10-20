@@ -50,8 +50,9 @@ def _mock_all_adapters_idle(monkeypatch):
         monkeypatch.setattr(mod, fn, (lambda v: (lambda: v))(val))
 
     from backend import app as app_module
+    from backend import spectro_worker
     monkeypatch.setattr(
-        app_module, "get_spectrogram_status",
+        spectro_worker, "get_spectrogram_status",
         lambda: {"status": "idle", "current": None, "done": 0, "total": 0,
                   "errors": 0, "skipped": 0, "stop_requested": False},
     )

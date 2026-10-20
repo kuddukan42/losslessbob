@@ -118,16 +118,16 @@ def _get_archive_org_status() -> dict:
     return _archive_org.get_status()
 
 
+def _get_spectrogram_status() -> dict:
+    from backend import spectro_worker
+    return spectro_worker.get_spectrogram_status()
+
+
 # These live in backend.app (module-level state, no dedicated module of
 # their own). Imported lazily inside the wrapper — by the time a Flask route
 # calls snapshot(), backend.app has already finished loading,
 # so this is not a circular import, just a deferred one (same pattern the
 # old activity_busy() used for backend.geocoder).
-def _get_spectrogram_status() -> dict:
-    from backend import app as _app
-    return _app.get_spectrogram_status()
-
-
 def _get_tapematch_crawl_status() -> dict:
     from backend import app as _app
     return _app.get_tapematch_crawl_status()

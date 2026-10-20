@@ -132,8 +132,9 @@ def test_busy_includes_gap_worker(monkeypatch):
         monkeypatch.setattr(mod, fn, (lambda v: (lambda: v))(val))
 
     from backend import app as app_module
+    from backend import spectro_worker
     monkeypatch.setattr(
-        app_module, "get_spectrogram_status",
+        spectro_worker, "get_spectrogram_status",
         lambda: {"status": "running", "current": "foo.flac", "done": 1, "total": 5,
                   "errors": 0, "skipped": 0, "stop_requested": False},
     )
