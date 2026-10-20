@@ -2,6 +2,38 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-382: Status bar wraps to two lines below ~900px; WTRF review topic links unstyled; DB Editor shows rowid column as duplicate PK name
+Status: Fixed
+File(s): gui_next/src/renderer/src/components/AppShell.tsx:740
+Reported: 2026-10-20
+Fixed: 2026-10-20
+Root cause: footer flex items wrapped; topic anchors had browser default style; SELECT rowid,* names rowid after an INTEGER PK
+Fix: 58388c38b: footer nowrap+overflow hidden; accent-coloured short topic labels; header col 0 labelled rowid, sort arrow skips it
+
+BUG-381: Recording detail tab strip hides Quality/Collection tabs off-screen
+Status: Fixed
+File(s): gui_next/src/renderer/src/components/library/DetailPanel.tsx:1578
+Reported: 2026-10-20
+Fixed: 2026-10-20
+Root cause: TabStrip used overflowX:auto, 7 tabs exceed the 379px default panel width
+Fix: 89375657b: flexWrap wrap
+
+BUG-380: qBt tracker-status panel unreadable: undefined --surface/--bad tokens
+Status: Fixed
+File(s): gui_next/src/renderer/src/lib/qbtBulk.tsx:66
+Reported: 2026-10-20
+Fixed: 2026-10-20
+Root cause: panel styled with non-existent --surface/--bad tokens and raw buttons
+Fix: bf2cab974: --lbb-* tokens, shared Button, launcher moved above status bar
+
+BUG-379: Tier A verify driver leaks a real Electron window (and vite) every run
+Status: Fixed
+File(s): tools/electron_driver.mjs:183
+Reported: 2026-10-20
+Fixed: 2026-10-20
+Root cause: electron-vite dev always launches Electron (even --rendererOnly) and the app ignores SIGTERM; driver only signalled npm
+Fix: a7839ce1e: Tier A starts Vite in-process via createServer (no Electron); preview runs in its own process group and is SIGKILLed; LB_DRIVER_FLASK_PORT + bypassCSP for a side backend
+
 BUG-378: GET /api/library/performances takes ~6s after backend start; /verify Library tour times out on Loading
 Status: Fixed
 File(s): backend/db.py:3822,backend/app.py:1076

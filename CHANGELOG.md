@@ -1,4 +1,4 @@
-[2026-10-20] — Night run: BUG-377 closed, sidebar brand fit, Library load 6s -> 0.3s, TUIT reconciliation report, rarity census, WTRF post editor, TUIT/olof spine
+[2026-10-20] — Night run: BUG-377 closed, sidebar brand fit, Library load 6s -> 0.3s, TUIT reconciliation report, rarity census, WTRF post editor, TUIT/olof spine, GUI verify sweep
 Fixed: tools/tapematch/tests/test_commentary_audit.py: cross-clause test expected None for "alternate recording to LB-0680"; _DIFF_RE reads it as different since da990507f, so expect 0 + neutral-wording variant pins the leak guard (BUG-377, dup BUG-374)
 Fixed: gui_next AppShell: brand subtitle wrapped to two lines beside the collapse toggle; now one line, label ellipsizes with tooltip, version never truncates (TODO-160 follow-up)
 Fixed: backend/db.py: checksum bloom built lazily by lookup_checksums(), once per path — init_db() (called twice by create_app) no longer starts a ~13s GIL-bound rebuild each time; GET /api/library/performances 6.0-6.4s -> 0.30s after startup, response byte-identical; tests/test_library_performances_perf.py pins the route JSON (BUG-378)
@@ -11,6 +11,11 @@ Added: backend/wtrf_post_editor.py + GET /api/forum_post/edit_form, POST /api/fo
 Added: gui_next ForumEditModal: 'Edit post…' on the entry Forum tab and All forum posts — loads the live subject/body, edit, dry-run diff review, confirmed save (TODO-136)
 Fixed: gui_next ScreenCollection: scan-preview, All forum posts and All torrents tables rendered an extra edge cell (TR already adds one), shifting every body cell one column right
 Added: tools/tuit_olof_spine.py -> docs/TUIT_OLOF_SPINE.md: read-only TUIT show spine vs olof_events — classifies the 17 TUIT-only rows and 199 olof-only concert dates (no date typos; 6 olof gaps, ~58 TUIT calendar gaps, 95 non-shows) and scores 5 venue join keys against 3,986 shared-date pairs (exact 69.5%, geo25 94.1%, geo25+crosswalk 95.0%) (TODO-338)
+Fixed: tools/electron_driver.mjs: Tier A ran `electron-vite dev`, which always launches Electron (the app ignores SIGTERM) — every run leaked vite + a window + its backend; now Vite runs in-process, no Electron (BUG-379)
+Added: tools/electron_driver.mjs: LB_DRIVER_FLASK_PORT points the Tier A window.api shim at a side backend (CSP bypassed) when 5174 belongs to someone else
+Fixed: gui_next qbtBulk: tracker-status panel rendered a dark box with unreadable text (undefined --surface/--bad); app tokens + Button, launcher clears the status bar (BUG-380)
+Fixed: gui_next DetailPanel: tab strip wraps — Quality and My Collection's Collection tab (WTRF sync/import, Edit post) were scrolled off-screen at default width (BUG-381)
+Fixed: gui_next status bar no longer wraps below ~900px; WTRF review topic links styled + shortened (59866.msg93937); DB Editor labels column 0 'rowid' instead of a duplicate PK name (BUG-382)
 
 [2026-10-19] — Parallel backlog sweep: 10 TODOs closed, TODO-319 family guard (off), TUIT/WTRF/trading/GUI features
 Added: gui_next AppShell/ScreenSetup/store: curator mode hidden behind Ctrl+Shift+Alt+C (or 7 clicks on the Master version label), Curator card in Setup; collapsible icon-only sidebar, forced at <=900px (TODO-160, TODO-178)

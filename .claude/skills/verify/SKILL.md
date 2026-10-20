@@ -64,6 +64,10 @@ Design/history for Electron mode: `archive/specs/FABLE_VISUAL_VERIFICATION.md`.
 
 ## Notes
 
+- 5174 held by another process (e.g. tj's dev app)? Run a side backend on a DB copy
+  (`run_backend.py --port 5184` with `LOSSLESSBOB_APP_ROOT` → a `.debug/` copy) and set
+  `LB_DRIVER_FLASK_PORT=5184` — Tier A's shim then talks to it. Stub `backend.scheduler.start_*`
+  first: the watchers/verify schedulers poll the collection drives.
 - Single screen: `node tools/electron_driver.mjs --renderer-only navigate <route> <file.png>`
   (drop `--renderer-only` for the real app).
 - Tier A stubs `window.api`, so file-picker flows can't be exercised there —
