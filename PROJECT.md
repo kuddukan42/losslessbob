@@ -297,6 +297,7 @@ losslessbob/
 │   ├── wtrf.sh               # wrapper: wtrf_seed_board.py --delay 10; --limit 5000 unless --pages/--limit given (walks to the board's last page)
 │   ├── wtrf_seed_board.py    # CLI: crawl the WTRF board and seed what is held (--start-page/--pages walk back in time, --limit, --rescan, --include-missing, --dry-run)
 │   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314); --sync-tours / --sync-venues fill tuit_shows + tuit_venues; --sync-songs fills tuit_songs + tuit_song_performances
+│   ├── tuit_reconcile.py     # CLI: read-only TUIT vs entries report -> docs/tuit_reconcile.md (TODO-332/339); --fill stages additive values in corrections (decided_by='tuit_reconcile'), dry run unless --apply (backup + audit JSONL); --revert
 │   ├── tuit_upload.py        # CLI: post one recording to TUIT and seed it. Dry run by default (composes and prints every form field plus the gaps); --apply is the only flag that sends. --no-torrent for a fast preview, --set FIELD=VALUE to override, --allow-duplicate, --no-seed, --paused (TODO-343)
 │   ├── fit_aud_quality_model.py # CLI: fit the AUD quality regression model used by concert_ranker
 │   ├── refit_aud_model.py    # CLI: refit/recalibrate the AUD quality model against new labels
