@@ -50,6 +50,11 @@ export interface RecordingRow {
   famBy?: 'lb' | 'ai' | 'ai+lb'
   famNeedsReview?: boolean
   famReviewReason?: string | null
+  // TODO-335 source-tape rarity, from /api/tapematch/rarity (performance lens
+  // only): copies = members of the TapeMatch family; unanalysed = entries on
+  // the same date tapematch never ingested, so a copy may exist unmeasured.
+  tmCopies?: number
+  tmUnanalysed?: number
   // FABLE_UNIFIED_RANKING phase 3 (F4 Library payload pattern) — merged in
   // from /api/library/performances, same as the TapeMatch fields above:
   // never set by the recording lens's /api/search-sourced adapter.

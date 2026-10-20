@@ -1524,7 +1524,10 @@
     "tooltip": {
       "inferred": "Abgeleitet aus dem Aufnahmedatum und -ort – nicht mit einem bekannten Konzerttermin von Dylan abgeglichen",
       "tapematchGroup": "TapeMatch – Gruppe akustischer Übereinstimmungen",
-      "tapematchReview": "Zur manuellen Überprüfung markiert – eine Behauptung bezüglich derselben Quelle für diese Sendung wird durch die Korrelationsdaten von TapeMatch widerlegt"
+      "tapematchReview": "Zur manuellen Überprüfung markiert – eine Behauptung bezüglich derselben Quelle für diese Sendung wird durch die Korrelationsdaten von TapeMatch widerlegt",
+      "onlyCopy": "Einziges bekanntes Exemplar – TapeMatch hat keine weitere Aufnahme dieser Sendung von derselben Quellkassette gefunden",
+      "onlyCopyUnanalysed_one": "Unter den analysierten Aufnahmen gibt es keine zweite Kopie dieses Quellbands – aber {{count}} Aufnahme dieses Datums wurde nie analysiert, es könnte also eine geben",
+      "onlyCopyUnanalysed_other": "Unter den analysierten Aufnahmen befindet sich keine zweite Kopie dieses Quellbands – allerdings wurden Aufnahmen mit der Kennung {{count}} von diesem Datum nie analysiert, sodass möglicherweise eine solche Kopie existiert"
     },
     "ctx": {
       "postForum": "Im Forum posten",
@@ -1642,7 +1645,8 @@
       "best": "Am besten",
       "uploads_one": "{{count}} Upload",
       "uploads_other": "{{count}}-Uploads",
-      "ownCount": "Eigene {{owned}}/{{total}}"
+      "ownCount": "Eigene {{owned}}/{{total}}",
+      "onlyCopy": "Einzige Kopie"
     },
     "setlist": {
       "loading": "Setlist wird geladen…",
@@ -1769,7 +1773,8 @@
       "taperFreeText": "Taper – nicht verifiziert, aus der Freitextbeschreibung des Eintrags extrahiert",
       "needsReview": "TapeMatch hat diese Gruppierung markiert – fahre mit der Maus über das Symbol, um den genauen Grund anzuzeigen",
       "familyBest": "Bestbewertete Version innerhalb der TapeMatch-Produktfamilie",
-      "curated": "Erscheint auf der Liste der Kuratorenempfehlungen"
+      "curated": "Erscheint auf der Liste der Kuratorenempfehlungen",
+      "onlyCopy": "Einziges bekanntes Exemplar dieser Quellkassette (grau: andere Aufnahmen dieses Datums wurden nicht analysiert)"
     },
     "dossier": {
       "title": "Exportieren Sie die Präsentation",

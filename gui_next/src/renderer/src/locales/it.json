@@ -1524,7 +1524,10 @@
     "tooltip": {
       "inferred": "Dati dedotti dalla data e dal luogo della registrazione stessa — non corrispondenti a una data nota di un concerto di Dylan",
       "tapematchGroup": "Gruppo di corrispondenze acustiche TapeMatch",
-      "tapematchReview": "Segnalato per revisione manuale — una rivendicazione di stessa origine per questo programma è contraddetta dai dati di correlazione di TapeMatch"
+      "tapematchReview": "Segnalato per revisione manuale — una rivendicazione di stessa origine per questo programma è contraddetta dai dati di correlazione di TapeMatch",
+      "onlyCopy": "Unica copia conosciuta — TapeMatch non ha trovato altre registrazioni di questo spettacolo provenienti dallo stesso nastro originale",
+      "onlyCopyUnanalysed_one": "Nessuna seconda copia di questo nastro sorgente tra le registrazioni analizzate — ma {{count}} registrazione di questa data non è mai stata analizzata, quindi potrebbe esisterne una",
+      "onlyCopyUnanalysed_other": "Non è stata rilevata alcuna seconda copia di questo nastro sorgente tra le registrazioni analizzate — tuttavia, le registrazioni {{count}} di questa data non sono mai state analizzate, quindi potrebbe essercene una"
     },
     "ctx": {
       "postForum": "Pubblica sul forum",
@@ -1642,7 +1645,8 @@
       "best": "Il migliore",
       "uploads_one": "{{count}} upload",
       "uploads_other": "{{count}} caricamenti",
-      "ownCount": "Proprietà {{owned}}/{{total}}"
+      "ownCount": "Proprietà {{owned}}/{{total}}",
+      "onlyCopy": "Copia unica"
     },
     "setlist": {
       "loading": "Caricamento della scaletta in corso…",
@@ -1769,7 +1773,8 @@
       "taperFreeText": "Taper — non verificato, estratto dalla descrizione in testo libero della voce",
       "needsReview": "TapeMatch ha segnalato questo raggruppamento: passa il mouse sul badge per visualizzare il motivo specifico",
       "familyBest": "La versione più apprezzata della famiglia TapeMatch",
-      "curated": "Presente nell'elenco delle scelte del curatore"
+      "curated": "Presente nell'elenco delle scelte del curatore",
+      "onlyCopy": "Unica copia nota di questo nastro sorgente (in grigio: le altre registrazioni della stessa data non sono state analizzate)"
     },
     "dossier": {
       "title": "Esporta il dossier della presentazione",

@@ -1602,7 +1602,10 @@
     "tooltip": {
       "inferred": "Inferred from the recording’s own date/location — not matched to a known Dylan show date",
       "tapematchGroup": "TapeMatch acoustic match group",
-      "tapematchReview": "Flagged for manual review — a same-source claim for this show is contradicted by TapeMatch's correlation data"
+      "tapematchReview": "Flagged for manual review — a same-source claim for this show is contradicted by TapeMatch's correlation data",
+      "onlyCopy": "Only known copy — TapeMatch found no other recording of this show from the same source tape",
+      "onlyCopyUnanalysed_one": "No second copy of this source tape among the analysed recordings — but {{count}} recording of this date was never analysed, so one may exist",
+      "onlyCopyUnanalysed_other": "No second copy of this source tape among the analysed recordings — but {{count}} recordings of this date were never analysed, so one may exist"
     },
     "ctx": {
       "postForum": "Post to forum",
@@ -1743,6 +1746,7 @@
       "wishlist": "Wishlist",
       "notOwned": "Not owned",
       "best": "Best",
+      "onlyCopy": "Only copy",
       "uploads_one": "{{count}} upload",
       "uploads_other": "{{count}} uploads",
       "ownCount": "Own {{owned}}/{{total}}"
@@ -1810,6 +1814,7 @@
       "taperFreeText": "Taper — unverified, parsed from the entry's free-text description",
       "needsReview": "TapeMatch flagged this family's grouping — hover the badge for the specific reason",
       "familyBest": "Best-rated copy within its TapeMatch family",
+      "onlyCopy": "Only known copy of this source tape (grey: other recordings of the date are unanalysed)",
       "curated": "Appears on this curator's picks list"
     },
     "picks": {

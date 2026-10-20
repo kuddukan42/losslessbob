@@ -1524,7 +1524,10 @@
     "tooltip": {
       "inferred": "Datos deducidos a partir de la fecha y la ubicación de la propia grabación; no coinciden con ninguna fecha conocida de un concierto de Dylan.",
       "tapematchGroup": "Grupo de coincidencias acústicas de TapeMatch",
-      "tapematchReview": "Marcado para revisión manual: una afirmación de que se trata de la misma fuente para este programa se contradice con los datos de correlación de TapeMatch."
+      "tapematchReview": "Marcado para revisión manual: una afirmación de que se trata de la misma fuente para este programa se contradice con los datos de correlación de TapeMatch.",
+      "onlyCopy": "Única copia conocida: TapeMatch no ha encontrado ninguna otra grabación de este programa procedente de la misma cinta original.",
+      "onlyCopyUnanalysed_one": "No hay una segunda copia de esta cinta original entre las grabaciones analizadas, pero {{count}} grabación de esta fecha nunca se analizó, así que podría existir una",
+      "onlyCopyUnanalysed_other": "No se ha encontrado ninguna segunda copia de esta cinta original entre las grabaciones analizadas, pero las grabaciones {{count}} de esta fecha nunca se analizaron, por lo que podría existir alguna."
     },
     "ctx": {
       "postForum": "Publicar en el foro",
@@ -1642,7 +1645,8 @@
       "best": "Lo mejor",
       "uploads_one": "{{count}} subir",
       "uploads_other": "{{count}} subidas",
-      "ownCount": "Propia {{owned}}/{{total}}"
+      "ownCount": "Propia {{owned}}/{{total}}",
+      "onlyCopy": "Copia única"
     },
     "setlist": {
       "loading": "Cargando la lista de canciones…",
@@ -1769,7 +1773,8 @@
       "taperFreeText": "Taper — sin verificar, extraído de la descripción de texto libre de la entrada",
       "needsReview": "TapeMatch ha marcado esta agrupación; pasa el cursor por encima de la insignia para ver el motivo concreto.",
       "familyBest": "La versión mejor valorada de la familia TapeMatch",
-      "curated": "Aparece en la lista de selecciones de este curador"
+      "curated": "Aparece en la lista de selecciones de este curador",
+      "onlyCopy": "Única copia conocida de esta cinta original (en gris: el resto de grabaciones de esa fecha no se han analizado)"
     },
     "dossier": {
       "title": "Exportar dossier de la exposición",
