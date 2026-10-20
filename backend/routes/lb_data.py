@@ -19,6 +19,7 @@ from flask import (
 
 from backend import db as database
 from backend.github_upload import _github_upload_asset
+from backend.paths import DATA_DIR
 
 _log = logging.getLogger(__name__)
 
@@ -704,5 +705,203 @@ def derived_recompute() -> Response:
     return Response(
         stream_with_context(_stream()),
         mimetype="text/event-stream",
+        headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+    )
+
+
+# ── Master data install from GitHub (subscribe side) ──────────────────────────
+
+def _find_master_release(_req):
+    """Search recent GitHub releases for the latest one containing a .db master asset.
+
+    Returns (release, db_asset, manifest_asset) or raises RuntimeError with a
+    human-readable message when nothing usable is found.
+    """
+    _REPO = "kuddukan42/losslessbob"
+    page = 1
+    while page <= 5:
+        resp = _req.get(
+            f"https://api.github.com/repos/{_REPO}/releases",
+            headers={"Accept": "application/vnd.github+json"},
+            params={"per_page": 20, "page": page},
+            timeout=15,
+        )
+        if resp.status_code == 404 or (page == 1 and resp.json() == []):
+            raise RuntimeError("No releases found on GitHub yet.")
+        resp.raise_for_status()
+        releases = resp.json()
+        if not releases:
+            break
+        for release in releases:
+            assets = release.get("assets", [])
+            db_asset = next(
+                (a for a in assets
+                 if a["name"].endswith(".db") and not a["name"].endswith(".manifest.json.db")),
+                None,
+            )
+            if not db_asset:
+                continue
+            manifest_name = db_asset["name"] + ".manifest.json"
+            manifest_asset = next((a for a in assets if a["name"] == manifest_name), None)
+            if not manifest_asset:
+                continue
+            return release, db_asset, manifest_asset
+        page += 1
+    raise RuntimeError("No release with a master .db asset found on GitHub.")
+
+
+@bp.route("/api/master/github_check", methods=["GET"])
+def master_github_check() -> Response:
+    """Check GitHub Releases for a master snapshot newer than the local one.
+
+    Returns:
+        JSON dict with ``available`` (bool) plus ``tag``, ``remote_version``,
+        ``remote_published_at``, ``local_version``, ``local_published_at``,
+        ``asset_name``, ``asset_size``, ``release_url`` when a release is found.
+        If no usable release exists, ``available`` is ``false`` with a
+        human-readable ``message``.
+    """
+    import requests as _req
+
+    try:
+        try:
+            release, db_asset, manifest_asset = _find_master_release(_req)
+        except RuntimeError as exc:
+            return jsonify({"available": False, "message": str(exc)})
+
+        tag = release.get("tag_name", "?")
+        mresp = _req.get(manifest_asset["browser_download_url"], timeout=30)
+        mresp.raise_for_status()
+        manifest = mresp.json()
+        remote_version = manifest.get("master_version", "")
+        remote_published_at = manifest.get("master_published_at", "")
+
+        conn = database.get_connection()
+        rows = conn.execute(
+            "SELECT key, value FROM meta WHERE key IN ('master_version', 'master_published_at')"
+        ).fetchall()
+        local = {r["key"]: r["value"] for r in rows}
+
+        return jsonify({
+            "available": bool(remote_version) and remote_version != local.get("master_version", ""),
+            "tag": tag,
+            "remote_version": remote_version,
+            "remote_published_at": remote_published_at,
+            "local_version": local.get("master_version", ""),
+            "local_published_at": local.get("master_published_at", ""),
+            "asset_name": db_asset["name"],
+            "asset_size": db_asset.get("size", 0),
+            "release_url": release.get("html_url", ""),
+        })
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 500
+
+
+@bp.route("/api/master/github_install", methods=["POST"])
+def master_github_install() -> Response:
+    """Download and apply the latest master snapshot from GitHub Releases.
+
+    Streams progress via ``text/event-stream``, mirroring
+    ``/api/master/github_release``'s event shape:
+      data: {"type": "progress", "label": "...", "pct": N_or_null}
+      data: {"type": "done", "summary": {...}}
+      data: {"type": "error", "error": "...", "message": "..."}
+    """
+    import hashlib
+    import json as _json
+    import queue
+
+    import requests as _req
+
+    ev_q: queue.Queue = queue.Queue()
+
+    def _work() -> None:
+        try:
+            ev_q.put({"type": "progress", "label": "Checking GitHub for latest release…", "pct": None})
+            try:
+                release, db_asset, manifest_asset = _find_master_release(_req)
+            except RuntimeError as exc:
+                ev_q.put({"type": "error", "error": "no_releases", "message": str(exc)})
+                return
+
+            tag = release.get("tag_name", "?")
+
+            ev_q.put({"type": "progress", "label": f"Downloading manifest for {tag}…", "pct": None})
+            mresp = _req.get(manifest_asset["browser_download_url"], timeout=30)
+            mresp.raise_for_status()
+            manifest = mresp.json()
+
+            dest_dir = DATA_DIR / "imports"
+            dest_dir.mkdir(parents=True, exist_ok=True)
+            db_dest = dest_dir / db_asset["name"]
+            manifest_dest = dest_dir / manifest_asset["name"]
+
+            total_bytes = db_asset.get("size", 0)
+            total_mb = total_bytes / (1 << 20)
+            ev_q.put({"type": "progress",
+                      "label": f"Downloading {db_asset['name']} ({total_mb:.0f} MB)…", "pct": 0})
+            dresp = _req.get(db_asset["browser_download_url"], stream=True, timeout=600)
+            dresp.raise_for_status()
+
+            downloaded = 0
+            with open(db_dest, "wb") as fh:
+                for chunk in dresp.iter_content(chunk_size=1 << 18):
+                    if chunk:
+                        fh.write(chunk)
+                        downloaded += len(chunk)
+                        if total_bytes:
+                            pct = downloaded * 100 // total_bytes
+                            dl_mb = downloaded / (1 << 20)
+                            ev_q.put({
+                                "type": "progress",
+                                "label": f"Downloading… {pct}%  ({dl_mb:.1f} / {total_mb:.0f} MB)",
+                                "pct": pct,
+                            })
+
+            ev_q.put({"type": "progress", "label": "Verifying checksum…", "pct": None})
+            sha = hashlib.sha256()
+            with open(db_dest, "rb") as fh:
+                for chunk in iter(lambda: fh.read(1 << 20), b""):
+                    sha.update(chunk)
+            expected_sha = manifest.get("sha256", "")
+            if sha.hexdigest() != expected_sha:
+                db_dest.unlink(missing_ok=True)
+                ev_q.put({"type": "error", "error": "sha256_mismatch",
+                          "message": "SHA256 mismatch — download may be corrupt. Please try again."})
+                return
+
+            with open(manifest_dest, "w", encoding="utf-8") as fh:
+                _json.dump(manifest, fh, indent=2)
+
+            ev_q.put({"type": "progress", "label": "Applying update to local database…", "pct": None})
+            summary = database.import_master_db(str(db_dest), source="github")
+            ev_q.put({"type": "done", "summary": summary})
+
+        except Exception as exc:
+            ev_q.put({"type": "error", "error": type(exc).__name__, "message": str(exc)})
+
+    threading.Thread(target=_work, daemon=True).start()
+
+    def _stream():
+        from backend import activity as _activity
+
+        with _activity.track("master_install", screen="/setup") as _job:
+            while True:
+                try:
+                    ev = ev_q.get(timeout=680)
+                except queue.Empty:
+                    ev = {
+                        "type": "error", "error": "timeout",
+                        "message": "Update timed out after 680 s.",
+                    }
+                if ev.get("type") == "progress":
+                    _job.update({"pct": ev.get("pct"), "label": ev.get("label")})
+                yield f"data: {_json.dumps(ev)}\n\n"
+                if ev.get("type") in ("done", "error"):
+                    break
+
+    return Response(
+        stream_with_context(_stream()),
+        content_type="text/event-stream",
         headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
     )
