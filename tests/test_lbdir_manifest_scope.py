@@ -1,6 +1,6 @@
 """Tests for BUG-315 — the folder's lbdir manifest is scoped to its LB.
 
-`_find_lbdir_in_folder` is module-level in `backend.app`, so these drive the
+`_find_lbdir_in_folder` lives in `backend.folder_lb`, so these drive the
 real selector used by the pipeline LBDIR stage and the /api/lbdir/* endpoints.
 After an "Override LB#" the folder still holds the manifest copied in for the
 previously-matched LB; the selector must ignore it so callers retrieve the
@@ -9,7 +9,7 @@ right one instead of verifying against the wrong archive entry.
 
 from pathlib import Path
 
-from backend.app import _find_lbdir_in_folder, _lbdir_file_lb
+from backend.folder_lb import _find_lbdir_in_folder, _lbdir_file_lb
 
 
 def _touch(folder: Path, name: str) -> Path:
@@ -65,7 +65,7 @@ def test_canonical_manifest_accepted_for_alias_lb(tmp_path, monkeypatch):
     """Alias LBs legitimately carry their canonical's manifest."""
     f = _touch(tmp_path, "LBF-01234-lbdir.txt")
     monkeypatch.setattr(
-        "backend.app.database.resolve_aliases", lambda lbs: [1234],
+        "backend.folder_lb.database.resolve_aliases", lambda lbs: [1234],
     )
     assert _find_lbdir_in_folder(tmp_path, 9999) == f
 
