@@ -39,7 +39,7 @@ Gotchas (each bit once):
 Shared state so far: `backend/routes/_state.py` (`process_start_time`);
 `backend/scrape_worker.py` (scrape thread guard + `_start_scrape_thread` /
 `_start_download_pages_thread` / `_start_scrape_worker`; app.py re-imports the first two,
-refresh_exec calls `backend.app._start_scrape_thread`; test_scrape_worker.py repointed).
+refresh_exec imports it from scrape_worker directly since domain 6; test_scrape_worker.py repointed).
 
 Endpoint names gain the blueprint prefix (`dbedit.dbedit_tables`); nothing in the repo
 uses `url_for` / `request.endpoint` / `view_functions`, so that is not a behaviour change.
