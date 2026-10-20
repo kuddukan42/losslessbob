@@ -85,7 +85,7 @@ recreate from this description if missing. Run them from WT root.
 | 17 | ranking | Curated lists, show picks, song index, show detail, timeline | eafe71a65 |
 | 18 | dossier | Show dossier | f2b260e18 |
 | 19 | aliases | lb_alias, folder_lb_link | ea642e292 |
-| 20 | map | Map feature routes | |
+| 20 | map | Map feature routes | 1866e0e5e |
 | 21 | admin | Admin page | |
 | 22 | mounts | Collection mounts/routes, integrity monitor, disk scanner, file integrity | |
 | 23 | pipeline | Pipeline | |
@@ -114,3 +114,5 @@ called from another submodule won't see a patch on the package attribute).
   upload helper → backend/github_upload.py. app.py 6,750 lines. Then 15–18; the dossier
   section's master GitHub check/install tail went to lb_data.py, not dossier.py.
   Then 19; stopped by tj. app.py 4,126 lines. Next is 20 map.
+- Run 5 (2026-10-20, interactive): domain 20 map (resource paths → .parent.parent). app.py
+  3,900 lines. Next is 21 admin.
