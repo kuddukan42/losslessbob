@@ -834,6 +834,26 @@
       "reassigned": "Riassegnazione da {{from}} a {{to}}.",
       "renamed": "Rinominato in {{name}}.",
       "failed": "Impossibile completare l'operazione — consultare il log del backend."
+    },
+    "forumEdit": {
+      "editPost": "Modifica il post…",
+      "modalTitle": "Modifica il post WTRF",
+      "reviewTitle": "Modifica della revisione",
+      "loading": "Caricamento del post corrente da WTRF…",
+      "loadFailed": "Impossibile caricare il post per la modifica",
+      "review": "Rivedi le modifiche",
+      "reviewFailed": "Impossibile preparare la modifica",
+      "back": "Indietro",
+      "noChanges": "Non è cambiato nulla: l’oggetto e il corpo del messaggio corrispondono al post pubblicato.",
+      "liveWarning": "Confermando si riscrive il post pubblicato su WTRF. Da qui non è possibile annullare l'operazione.",
+      "currentSubject": "Argomento attuale",
+      "newSubject": "Nuovo argomento",
+      "currentBody": "Corpo del testo",
+      "newBody": "Nuovo corpo",
+      "confirm": "Conferma modifica",
+      "saving": "Salvataggio in corso…",
+      "saveFailed": "Le modifiche non sono state salvate",
+      "saved": "Post WTRF aggiornato"
     }
   },
   "map": {

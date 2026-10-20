@@ -687,6 +687,26 @@
         }
       }
     },
+    "forumEdit": {
+      "editPost": "Edit post…",
+      "modalTitle": "Edit WTRF post",
+      "reviewTitle": "Review edit",
+      "loading": "Loading the current post from WTRF…",
+      "loadFailed": "Could not load the post for editing",
+      "review": "Review changes",
+      "reviewFailed": "Could not prepare the edit",
+      "back": "Back",
+      "noChanges": "Nothing changed — the subject and body match the live post.",
+      "liveWarning": "Confirming rewrites the live post on WTRF. This cannot be undone from here.",
+      "currentSubject": "Current subject",
+      "newSubject": "New subject",
+      "currentBody": "Current body",
+      "newBody": "New body",
+      "confirm": "Confirm edit",
+      "saving": "Saving…",
+      "saveFailed": "Edit was not saved",
+      "saved": "WTRF post updated"
+    },
     "forumList": {
       "button": "Post from list…",
       "modalTitle": "Post to forum from list",

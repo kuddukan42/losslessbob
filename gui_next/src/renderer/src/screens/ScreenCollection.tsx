@@ -12,6 +12,7 @@ import { lbDetailUrl } from '../lib/lbUrl'
 import { copyText } from '../lib/clipboard'
 import { qbtAddSummary } from '../lib/qbtBulk'
 import { RecordingDetailPanel } from '../components/library/DetailPanel'
+import { ForumEditModal } from '../components/ForumEditModal'
 import type { DetailRow, PanelTab } from '../components/library/DetailPanel'
 import { buildRecordingActions } from '../components/library/actions'
 import { useLibraryActions } from '../lib/useLibraryActions'
@@ -824,7 +825,6 @@ function ScanPreviewModal({ entries, skipped, onClose, onAdded }: {
                 const state   = rowState[e.lb_number] ?? 'idle'
                 return (
                   <TR key={e.lb_number}>
-                    <TD />
                     <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{lbStr(e.lb_number)}</TD>
                     <TD mono>{e.folder_name}</TD>
                     <TD mono dim style={{ fontSize: 'var(--lbb-fs-10)' }}>{e.path}</TD>
@@ -1460,6 +1460,7 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
   const [forumBusy, setForumBusy] = useState(true)
   const [forumError, setForumError] = useState(false)
   const [forumDeleteConfirm, setForumDeleteConfirm] = useState<number | null>(null)
+  const [forumEditUrl, setForumEditUrl] = useState<string | null>(null)
   const [audioInfo, setAudioInfo] = useState<AudioInfo | null>(null)
 
   const fetchTorrentRecords = useCallback(() => {
@@ -1917,6 +1918,11 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
                       >
                         {t('collection.detail.openInBrowser')}
                       </Button>
+                      {rec.topic_url && (
+                        <Button variant="ghost" size="sm" onClick={() => setForumEditUrl(rec.topic_url)}>
+                          {t('collection.forumEdit.editPost')}
+                        </Button>
+                      )}
                       {rec.source !== 'wtrf_scrape' && (
                         <Button variant="danger" size="sm" onClick={() => setForumDeleteConfirm(rec.id)}>
                           {t('common.remove')}
@@ -1974,22 +1980,32 @@ function CollectionTab({ row, historyTab, onHistoryTab, onRegenTorrent, onPostFo
         onCancel={() => setForumDeleteConfirm(null)}
       />
     )}
+
+    {forumEditUrl !== null && (
+      <ForumEditModal
+        topicUrl={forumEditUrl}
+        onClose={() => setForumEditUrl(null)}
+        onSaved={() => { onToast(t('collection.forumEdit.saved'), 'ok'); fetchForumRecords(); onRefetch() }}
+      />
+    )}
     </>
   )
 }
 
 // ── GlobalForumPanel ─────────────────────────────────────────────────────────
 
-function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb }: {
+function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb, onEdited }: {
   posts: GlobalForumPost[]
   search: string
   onSearch: (s: string) => void
   onOpen: (url: string) => void
   onDelete: (postId: number) => void
   onGoToLb: (lb: number, lbStr: string) => void
+  onEdited: () => void
 }) {
   const { t } = useTranslation()
   const [deleteConfirm, setDeleteConfirm] = useState<GlobalForumPost | null>(null)
+  const [editUrl, setEditUrl] = useState<string | null>(null)
 
   const filtered = posts.filter(p => {
     if (!search) return true
@@ -2029,7 +2045,7 @@ function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb 
             <col style={{ width: 110 }} />
             <col style={{ width: 220 }} />
             <col />
-            <col style={{ width: 240 }} />
+            <col style={{ width: 320 }} />
           </colgroup>
           <thead>
             <tr>
@@ -2044,19 +2060,25 @@ function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb 
           <tbody>
             {filtered.map(p => (
               <TR key={p.id}>
-                <TD />
                 <TD mono dim>{p.posted_at || '—'}</TD>
                 <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{p.lbStr}</TD>
                 <TD dim>{[p.date_str, p.location].filter(Boolean).join(' · ') || '—'}</TD>
                 <TD>{p.subject || '—'}</TD>
                 <TD>
-                  <div style={{ display: 'flex', gap: 4 }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
                     <Button
                       variant="ghost" size="sm"
                       disabled={!p.topic_url}
                       onClick={() => onOpen(p.topic_url)}
                     >
                       {t('collection.globalForum.openInBrowser')}
+                    </Button>
+                    <Button
+                      variant="ghost" size="sm"
+                      disabled={!p.topic_url}
+                      onClick={() => setEditUrl(p.topic_url)}
+                    >
+                      {t('collection.forumEdit.editPost')}
                     </Button>
                     <Button variant="danger" size="sm" onClick={() => setDeleteConfirm(p)}>
                       {t('common.remove')}
@@ -2086,6 +2108,9 @@ function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb 
           onConfirm={() => { onDelete(deleteConfirm.id); setDeleteConfirm(null) }}
           onCancel={() => setDeleteConfirm(null)}
         />
+      )}
+      {editUrl !== null && (
+        <ForumEditModal topicUrl={editUrl} onClose={() => setEditUrl(null)} onSaved={onEdited} />
       )}
     </div>
   )
@@ -2182,7 +2207,6 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
           <tbody>
             {filtered.map(r => (
               <TR key={r.id}>
-                <TD />
                 <TD mono dim>{r.created_at || '—'}</TD>
                 <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{r.lbStr}</TD>
                 <TD dim>{[r.date_str, r.location].filter(Boolean).join(' · ') || '—'}</TD>
@@ -3521,6 +3545,7 @@ export function ScreenCollection(): React.JSX.Element {
                 if (data.ok) refetch()
               } catch { showToast(t('collection.toast.deleteFailed'), 'bad') }
             }}
+            onEdited={() => { showToast(t('collection.forumEdit.saved'), 'ok'); refetch() }}
             onGoToLb={(lb, lbStr) => {
               setFilter('all')
               setSearch(lbStr)

@@ -834,6 +834,26 @@
       "reassigned": "Umbenannt von {{from}} → {{to}}.",
       "renamed": "Umbenannt in {{name}}.",
       "failed": "Konnte nicht abgeschlossen werden – siehe Backend-Protokoll."
+    },
+    "forumEdit": {
+      "editPost": "Beitrag bearbeiten…",
+      "modalTitle": "WTRF-Beitrag bearbeiten",
+      "reviewTitle": "Bearbeitung überprüfen",
+      "loading": "Der aktuelle Beitrag wird von WTRF geladen…",
+      "loadFailed": "Der Beitrag konnte nicht zur Bearbeitung geladen werden",
+      "review": "Änderungen überprüfen",
+      "reviewFailed": "Die Bearbeitung konnte nicht vorbereitet werden",
+      "back": "Zurück",
+      "noChanges": "Es hat sich nichts geändert – Betreff und Text entsprechen dem Live-Beitrag.",
+      "liveWarning": "Mit „Bestätigen“ wird der Live-Beitrag auf WTRF neu geschrieben. Dieser Vorgang kann von hier aus nicht rückgängig gemacht werden.",
+      "currentSubject": "Aktuelles Thema",
+      "newSubject": "Neues Thema",
+      "currentBody": "Aktueller Text",
+      "newBody": "Neuer Textblock",
+      "confirm": "Bearbeitung bestätigen",
+      "saving": "Wird gespeichert…",
+      "saveFailed": "Die Änderungen wurden nicht gespeichert",
+      "saved": "WTRF-Beitrag aktualisiert"
     }
   },
   "map": {

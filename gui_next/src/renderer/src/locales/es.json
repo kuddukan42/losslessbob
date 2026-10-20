@@ -834,6 +834,26 @@
       "reassigned": "Reasignado de {{from}} a {{to}}.",
       "renamed": "Renombrado como {{name}}.",
       "failed": "No se ha podido completar; consulta el registro del backend."
+    },
+    "forumEdit": {
+      "editPost": "Editar entrada…",
+      "modalTitle": "Editar publicación en WTRF",
+      "reviewTitle": "Revisar y editar",
+      "loading": "Cargando la entrada actual de WTRF…",
+      "loadFailed": "No se ha podido cargar la entrada para editarla",
+      "review": "Revisar cambios",
+      "reviewFailed": "No se ha podido preparar la edición",
+      "back": "Atrás",
+      "noChanges": "No ha cambiado nada: el asunto y el cuerpo coinciden con la publicación original.",
+      "liveWarning": "Confirmar reescribe la publicación en directo en WTRF. Esta acción no se puede deshacer desde aquí.",
+      "currentSubject": "Tema actual",
+      "newSubject": "Nuevo tema",
+      "currentBody": "Cuerpo del texto",
+      "newBody": "Nuevo cuerpo",
+      "confirm": "Confirmar edición",
+      "saving": "Guardando…",
+      "saveFailed": "No se ha guardado la edición",
+      "saved": "Entrada de WTRF actualizada"
     }
   },
   "map": {

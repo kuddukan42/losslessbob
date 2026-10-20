@@ -834,6 +834,26 @@
       "reassigned": "Réaffectation de {{from}} → {{to}}.",
       "renamed": "Renommé {{name}}.",
       "failed": "Impossible de terminer — voir le journal du backend."
+    },
+    "forumEdit": {
+      "editPost": "Modifier la publication…",
+      "modalTitle": "Modifier la publication WTRF",
+      "reviewTitle": "Réviser et modifier",
+      "loading": "Chargement de l'article en cours depuis WTRF…",
+      "loadFailed": "Impossible de charger l'article pour le modifier",
+      "review": "Vérifier les modifications",
+      "reviewFailed": "Impossible de préparer la modification",
+      "back": "Retour",
+      "noChanges": "Rien n'a changé — l'objet et le corps du message correspondent à la publication en ligne.",
+      "liveWarning": "Confirmer la réécriture de la publication en direct sur WTRF. Cette action ne peut pas être annulée à partir d'ici.",
+      "currentSubject": "Sujet actuel",
+      "newSubject": "Nouveau sujet",
+      "currentBody": "Corps du texte",
+      "newBody": "Nouveau corps",
+      "confirm": "Valider la modification",
+      "saving": "Enregistrement en cours…",
+      "saveFailed": "Les modifications n'ont pas été enregistrées",
+      "saved": "Mise à jour de l'article WTRF"
     }
   },
   "map": {

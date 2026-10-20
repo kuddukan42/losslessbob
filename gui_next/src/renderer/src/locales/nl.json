@@ -834,6 +834,26 @@
       "reassigned": "Hernoemd van {{from}} naar {{to}}.",
       "renamed": "Hernoemd naar {{name}}.",
       "failed": "Kon niet worden voltooid — zie het backend-logboek."
+    },
+    "forumEdit": {
+      "editPost": "Bericht bewerken…",
+      "modalTitle": "WTRF-bericht bewerken",
+      "reviewTitle": "Bewerking beoordelen",
+      "loading": "Het huidige bericht wordt geladen vanuit WTRF…",
+      "loadFailed": "Het bericht kon niet worden geladen om te bewerken",
+      "review": "Wijzigingen bekijken",
+      "reviewFailed": "Het bewerken kon niet worden voorbereid",
+      "back": "Terug",
+      "noChanges": "Er is niets veranderd — het onderwerp en de tekst komen overeen met het live-bericht.",
+      "liveWarning": "Bevestigen leidt tot het herschrijven van het livebericht op WTRF. Dit kan vanaf hier niet ongedaan worden gemaakt.",
+      "currentSubject": "Huidig onderwerp",
+      "newSubject": "Nieuw onderwerp",
+      "currentBody": "Huidige hoofdtekst",
+      "newBody": "Nieuwe hoofdtekst",
+      "confirm": "Bewerking bevestigen",
+      "saving": "Bezig met opslaan…",
+      "saveFailed": "De bewerking is niet opgeslagen",
+      "saved": "WTRF-bericht bijgewerkt"
     }
   },
   "map": {
