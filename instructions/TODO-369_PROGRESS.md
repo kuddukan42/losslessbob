@@ -55,7 +55,7 @@ recreate from this description if missing. Run them from WT root.
 | 2 | core | Checksum Lookup, Database Management (`_process_start_time`) | 9114cc7bc |
 | 3 | flat_file | Flat file update pipeline, Site-mirror xref ingest | 10ba106c3 |
 | 4 | entries | Entry Detail & Attachments, Search | 5bfa2d7f2 |
-| 5 | collection | My Collection, FEAT-03/04/05/13, FEAT-09 integrity events | |
+| 5 | collection | My Collection, FEAT-03/04/05/13, FEAT-09 integrity events | 67cee89d3 |
 | 6 | scrape | Scraper Control (thread helpers already in backend/scrape_worker.py) | |
 | 7 | bootlegs | Bootleg-CD Catalog | |
 | 8 | crawler | Site Crawler, Preservation stack | |
