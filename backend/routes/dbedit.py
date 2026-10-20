@@ -109,6 +109,7 @@ def dbedit_tables() -> Response:
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
 @bp.route("/api/dbedit/table/<name>/schema", methods=["GET"])
 def dbedit_schema(name: str) -> Response:
     """Return PRAGMA table_info columns for a named table.
@@ -127,6 +128,7 @@ def dbedit_schema(name: str) -> Response:
         return jsonify([dict(c) for c in cols])
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 @bp.route("/api/dbedit/table/<name>/rows", methods=["GET"])
 def dbedit_rows(name: str) -> Response:
@@ -195,6 +197,7 @@ def dbedit_rows(name: str) -> Response:
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
 @bp.route("/api/dbedit/table/<name>/row", methods=["PATCH"])
 def dbedit_update_row(name: str) -> Response:
     """Update a single row in a named table by rowid.
@@ -231,6 +234,7 @@ def dbedit_update_row(name: str) -> Response:
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
 @bp.route("/api/dbedit/table/<name>/rows", methods=["DELETE"])
 def dbedit_delete_rows(name: str) -> Response:
     """Delete one or more rows from a named table by rowid list.
@@ -259,6 +263,7 @@ def dbedit_delete_rows(name: str) -> Response:
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
 @bp.route("/api/dbedit/table/<name>/export", methods=["GET"])
 def dbedit_export(name: str) -> Response:
     """Export all rows of a named table as a CSV file download.
@@ -286,6 +291,7 @@ def dbedit_export(name: str) -> Response:
         )
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 @bp.route("/api/dbedit/query", methods=["POST"])
 def dbedit_query() -> Response:

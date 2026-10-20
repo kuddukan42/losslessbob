@@ -15,9 +15,18 @@ Spec: instructions/CODE_REVIEW_2026-10-17.md §5 S1/S2. Repeatable night package
 3. `ruff check --fix` on the new module only (F401/I); never blind-F401 app.py — check
    that a dropped app.py import isn't read as `backend.app.<name>` by tests/tools.
    `app.` inside moved code → `current_app`.
-4. `.debug/todo369/_dump_routes.py .debug/routes_after.txt` and diff against
+4. `.debug/todo369/_blank2.py backend/routes/<MOD>.py` (2 blank lines between top-level
+   defs after the dedent), then `.debug/todo369/_ast_check.py <pre-commit-rev> <MOD>` — every
+   moved function's AST must equal the original (docstrings/decorators aside); the only
+   allowed differences are the intentional edits listed in the commit message.
+   `.debug/todo369/_smoke.py <MOD>` GETs every argument-less GET rule of the Blueprint.
+5. `.debug/todo369/_dump_routes.py .debug/routes_after.txt` and diff against
    `.debug/routes_before.txt` (378 rules+methods, dumped once before the split) — must be
    identical. Then the domain's targeted tests + tests/test_refresh.py.
+
+Shared state so far: `backend/routes/_state.py` (`process_start_time`).
+Open cross-module calls to resolve when their domain moves: `core.db_import` lazily imports
+`_start_scrape_thread` from backend.app (→ domain 6).
 
 Endpoint names gain the blueprint prefix (`dbedit.dbedit_tables`); nothing in the repo
 uses `url_for` / `request.endpoint` / `view_functions`, so that is not a behaviour change.
@@ -29,7 +38,7 @@ recreate from this description if missing. Run them from WT root.
 
 | # | Blueprint module | app.py sections | Commit |
 |---|---|---|---|
-| 1 | dbedit | FEAT-14 DB Editor | |
+| 1 | dbedit | FEAT-14 DB Editor | d0cb7546d |
 | 2 | core | Checksum Lookup, Database Management (`_process_start_time`) | |
 | 3 | flat_file | Flat file update pipeline, Site-mirror xref ingest | |
 | 4 | entries | Entry Detail & Attachments, Search | |
