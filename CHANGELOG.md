@@ -1,10 +1,12 @@
-[2026-10-20] — Night run: BUG-377 closed, sidebar brand fit, Library load 6s -> 0.3s, TUIT reconciliation report
+[2026-10-20] — Night run: BUG-377 closed, sidebar brand fit, Library load 6s -> 0.3s, TUIT reconciliation report, rarity census
 Fixed: tools/tapematch/tests/test_commentary_audit.py: cross-clause test expected None for "alternate recording to LB-0680"; _DIFF_RE reads it as different since da990507f, so expect 0 + neutral-wording variant pins the leak guard (BUG-377, dup BUG-374)
 Fixed: gui_next AppShell: brand subtitle wrapped to two lines beside the collapse toggle; now one line, label ellipsizes with tooltip, version never truncates (TODO-160 follow-up)
 Fixed: backend/db.py: checksum bloom built lazily by lookup_checksums(), once per path — init_db() (called twice by create_app) no longer starts a ~13s GIL-bound rebuild each time; GET /api/library/performances 6.0-6.4s -> 0.30s after startup, response byte-identical; tests/test_library_performances_perf.py pins the route JSON (BUG-378)
 Changed: gui_next ScreenLibrary: rollupOf() memoized per performance row (WeakMap) — was recomputed ~6x per show per filter change (BUG-378)
 Fixed: tests/test_wtrf_tiebreak.py: mock get_wtrf_rejected_topics; it read whatever DB_PATH an earlier test left, failing in full-suite order
 Added: tools/tuit_reconcile.py -> docs/tuit_reconcile.md: read-only TUIT vs entries report (date/circa/source-type/venue/lineage/setlist), every circa row, date conflict and source-type conflict classified with an action; --fill stages 6,496 additive values in corrections (decided_by='tuit_reconcile', date-agreeing LBs, empty fields only), dry-run default, --apply backs up + audit-logs, --revert (TODO-332, TODO-339 parts 1-2)
+Added: tools/tapematch/rarity_census.py -> docs/RARITY_CENSUS.md: copies per source tape (obs latest run + synced families), by decade/year/Olof tour, single-copy LBs split by TODO-334 gap-list reason (TODO-335)
+Added: backend/rarity.py + GET /api/tapematch/rarity: per-LB copies / only_known_copy / unanalysed_on_date; Library family rows show an 'Only copy' pill (grey when the date has unanalysed recordings) (TODO-335)
 
 [2026-10-19] — Parallel backlog sweep: 10 TODOs closed, TODO-319 family guard (off), TUIT/WTRF/trading/GUI features
 Added: gui_next AppShell/ScreenSetup/store: curator mode hidden behind Ctrl+Shift+Alt+C (or 7 clicks on the Master version label), Curator card in Setup; collapsible icon-only sidebar, forced at <=900px (TODO-160, TODO-178)

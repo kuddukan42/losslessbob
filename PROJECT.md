@@ -159,6 +159,7 @@ losslessbob/
 │   ├── sharing.py            # File-sharing: ephemeral token-based share state, streaming, Cloudflare Tunnel
 │   ├── tapematch_autoflag.py # Rule-based clear/attention triage per date, from observations.db
 │   ├── tapematch_sync.py     # Syncs TapeMatch family clustering from tools/tapematch/observations.db
+│   ├── rarity.py             # TODO-335: per-LB source-tape copy count + only-known-copy flag over recording_families (GET /api/tapematch/rarity)
 │   ├── geocoder.py           # Nominatim geocoder: geocode_one, place_manual, run_batch, get_progress
 │   └── venue_gazetteer.py    # TODO-223: venue_geocoded seed + resolution ladder (bounded Nominatim → Wikidata P625 → city anchor)
 ├── concert_ranker/           # Audio quality scoring + ranking (TODO-183). Run: python -m concert_ranker.cli
@@ -258,6 +259,8 @@ losslessbob/
 │   ├── test_bobtalk_decodes.py # backend/bobtalk_decodes.py: cache key isolation + failed-decode guards (BUG-314)
 │   ├── test_tapematch_routes.py # LISTENING §1 read routes in backend/app.py
 │   ├── test_tapematch_sync.py # backend/tapematch_sync.py
+│   ├── test_rarity.py        # backend/rarity.py + GET /api/tapematch/rarity (TODO-335)
+│   ├── test_rarity_census.py # tools/tapematch/rarity_census.py (TODO-335)
 │   └── test_batch_verify.py  # tools/batch_verify.py helper functions
 ├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only; bundled inside Electron AppImage
 ├── tools/
@@ -1966,6 +1969,7 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | POST | `/api/tapematch/crawl/start` | Launches the detached library crawl via `crawl_start.sh` (script is the single-instance authority). Optional body `{min_entries?, allow_missing?}` → script flags. 200 `{ok, message}`; 409 `already_running` when the script's pgrep guard refuses; 400 bad body. |
 | POST | `/api/tapematch/crawl/stop` | Stops the crawl via `crawl_stop.sh` (SIGINT, no-op if idle — always 200 `{ok, message}`). |
 | GET | `/api/tapematch/dup_encodes` | Likely-duplicate-encode curation leads (TODO-210b): same-date pairs with byte-identical `metric_json` within one scan_id. `{candidates: [{date, lb_a, lb_b, scan_id, same_family, reason}]}`. Read-only, never auto-merges; no GUI yet (TODO-215). |
+| GET | `/api/tapematch/rarity` | Source-tape rarity per analysed LB (TODO-335): flat list `[{lb_number, fam_id, concert_date, copies, only_known_copy, unanalysed_on_date}]` from `recording_families` via `backend/rarity.py`. `unanalysed_on_date` = non-compilation entries on the date with no family (a copy may exist unmeasured). Read-only; feeds the Library 'Only copy' badge. Census report: `tools/tapematch/rarity_census.py` -> `docs/RARITY_CENSUS.md`. |
 | POST | `/api/ab_clip` | Aligned A/B listening (LISTENING §2, TODO-231/232/233). Body `{date, lb_a, lb_b, t_sec?, dur_sec?}` (`dur_sec` clamped 5-60, default 20; `t_sec` OPTIONAL — omit it and the backend auto-picks a quiet-vocal start point per the LB curator method via `ab_clips.auto_pick_t_sec`/`pick_start_frame` over a `concert_ranker` TrackCache, returning the chosen value in `t_sec`, TODO-232). Eligible pairs: both sources' `speed_kind ∈ {reference, aligned, constant-speed-offset}` in observations.db `sources` (latest common run) from a run on/after the 2026-07-06 confidence gate (`is_run_eligible`, TODO-233). Maps `t_sec` to each source's local offset via `trim_head + t*factor` (factor from `speed_ppm`); a constant-speed-offset source is resampled to reference speed (`asetrate`/`aresample`) and both clips are RMS level-matched to -20 dBFS (TODO-232). Extracts WAV clips (16-bit/44.1k/stereo, may span track boundaries) from `my_collection.disk_path` via `backend/ab_clips.py`, caches in `data/ab_clips/` (LRU-pruned to 40). Returns `{date, lb_a, lb_b, t_sec, dur_sec, clip_a, clip_b}` (`/api/ab_clip/<name>` URLs). 400 `bad_request`/`t_out_of_range`, 404 `pair_not_found`/`folder_missing`, 409 `not_eligible`/`locked`. |
 | GET | `/api/ab_clip/<name>` | Serves one cached A/B WAV clip from `data/ab_clips/`. 404 `clip_not_found` if pruned/absent. |
 | GET | `/api/bobtalk/<int:lb>` | Located Olof bobtalk quotes for one recording (TODO-303). Joins `bobtalk_locations` back to `olof_events.bobtalk` at read time, so each quote's text comes from Olof's block and is never stored twice. Low-confidence matches are EXCLUDED unless `?all=1` — an unresolved match must degrade to "no play button", not to one that jumps to the wrong moment. Returns `{lb, event_id, quotes: [{quote_index, text, t_start, dice, runner_up, confident, model}]}`; an empty list is normal for a recording that has not been through the locate pass. |
