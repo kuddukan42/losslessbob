@@ -51,13 +51,14 @@ def _mock_all_adapters_idle(monkeypatch):
 
     from backend import app as app_module
     from backend import spectro_worker
+    from backend.routes import tapematch as tapematch_routes
     monkeypatch.setattr(
         spectro_worker, "get_spectrogram_status",
         lambda: {"status": "idle", "current": None, "done": 0, "total": 0,
                   "errors": 0, "skipped": 0, "stop_requested": False},
     )
     monkeypatch.setattr(
-        app_module, "get_tapematch_crawl_status",
+        tapematch_routes, "get_tapematch_crawl_status",
         lambda: {"running": False, "pid": None, "runs_on_disk": 0,
                   "distinct_dates": 0, "log_tail": []},
     )

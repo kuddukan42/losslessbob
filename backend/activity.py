@@ -123,14 +123,14 @@ def _get_spectrogram_status() -> dict:
     return spectro_worker.get_spectrogram_status()
 
 
-# These live in backend.app (module-level state, no dedicated module of
-# their own). Imported lazily inside the wrapper — by the time a Flask route
-# calls snapshot(), backend.app has already finished loading,
-# so this is not a circular import, just a deferred one (same pattern the
-# old activity_busy() used for backend.geocoder).
+# Pipeline run status lives in backend.app, crawl status in backend.routes.tapematch
+# (module-level state, no dedicated module of their own). Imported lazily inside
+# the wrapper — by the time a Flask route calls snapshot(), backend.app has
+# already finished loading, so this is not a circular import, just a deferred
+# one (same pattern the old activity_busy() used for backend.geocoder).
 def _get_tapematch_crawl_status() -> dict:
-    from backend import app as _app
-    return _app.get_tapematch_crawl_status()
+    from backend.routes import tapematch as _tapematch
+    return _tapematch.get_tapematch_crawl_status()
 
 
 def _get_pipeline_run_status() -> dict:
