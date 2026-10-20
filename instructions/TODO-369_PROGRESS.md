@@ -41,7 +41,9 @@ Gotchas (each bit once):
   `_lbdir_status_for_lb` (test_lb_master.py), `SITE_DIR`/`SITE_FILES_DIR`/`DATA_DIR`
   (test_sitedata_packaging.py), `database.resolve_aliases` (test_lbdir_manifest_scope.py),
   `_github_upload_asset`, `compute_pipeline_severity`, `_find_lbdir_in_folder`,
-  `_lbdir_file_lb` imported from backend.app. Repoint the test when the owner moves.
+  `_lbdir_file_lb` imported from backend.app, `importlib` (test_pipeline_jobs.py, now
+  lb_data). Repoint the test when the owner moves. Module imports that ruff calls unused
+  in app.py after a cut may still be test patch targets — grep `app_module.` first.
 
 Shared state so far: `backend/routes/_state.py` (`process_start_time`);
 `backend/folder_lb.py` (folder→LB / manifest lookup helpers, domain 9);
@@ -49,7 +51,9 @@ Shared state so far: `backend/routes/_state.py` (`process_start_time`);
 `backend/lbdir_status.py` (`_lbdir_status_for_lb` + verdict helpers, domain 12);
 `backend/scrape_worker.py` (scrape thread guard + `_start_scrape_thread` /
 `_start_download_pages_thread` / `_start_scrape_worker`; app.py re-imports the first two,
-refresh_exec imports it from scrape_worker directly since domain 6; test_scrape_worker.py repointed).
+refresh_exec imports it from scrape_worker directly since domain 6; test_scrape_worker.py repointed);
+`backend/github_upload.py` (`_ProgressFile` + `_github_upload_asset`, domain 14; app.py's data
+package export re-imports it).
 
 Endpoint names gain the blueprint prefix (`dbedit.dbedit_tables`); nothing in the repo
 uses `url_for` / `request.endpoint` / `view_functions`, so that is not a behaviour change.
@@ -74,7 +78,7 @@ recreate from this description if missing. Run them from WT root.
 | 11 | torrents | Torrent Generation, qBittorrent || a5b97f7c0 |
 | 12 | wtrf | Forum Posting, WTRF fetcher, WTRF fetch review || 3e3d182d7 |
 | 13 | lb_master | lb_master integrity, Pipeline refresh Phase 2/3 | 505de347b |
-| 14 | lb_data | lb_missing, lb_problems, lineage, curator mode, master publish/subscribe | |
+| 14 | lb_data | lb_missing, lb_problems, lineage, curator mode, master publish/subscribe | f2dcfee95 |
 | 15 | tapers | Taper attribution/curation/QC review/vocab/aliases | |
 | 16 | tapematch | tapematch, tapers, ab_clip, bobtalk, library (6859–8074 block) | |
 | 17 | ranking | Curated lists, show picks, song index, show detail, timeline | |
@@ -105,3 +109,5 @@ called from another submodule won't see a patch on the package attribute).
 - Run 3 (2026-10-20, interactive): domain 13 (`_reconcile_lock` moved into lb_master.py).
   One-off failure of test_lb_master.py::TestUnscrapedStaysPublic::test_single_reconcile_keeps_public
   under `pytest -x`; passed alone and in the full run. Next is 14 lb_data.
+- Run 4 (2026-10-20, interactive): domain 14. Backup rate-limit state moved into lb_data.py;
+  upload helper → backend/github_upload.py. app.py 6,750 lines. Next is 15 tapers.
