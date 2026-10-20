@@ -323,7 +323,7 @@ def test_derived_recompute_writes_run_records_and_stamps_version(monkeypatch):
     """The four /api/derived/recompute steps must record a refresh_step_runs
     row per step using the exact registry step_ids, and stamp the
     attribute_tapers version hash on success."""
-    import backend.app as app_module
+    import backend.routes.lb_data as lb_data_module
 
     db_path, _tmp = _make_db()
 
@@ -346,7 +346,7 @@ def test_derived_recompute_writes_run_records_and_stamps_version(monkeypatch):
             return _FakeModule(fake_modules[name])
         raise ImportError(name)
 
-    monkeypatch.setattr(app_module.importlib, "import_module", _fake_import_module)
+    monkeypatch.setattr(lb_data_module.importlib, "import_module", _fake_import_module)
 
     with _AppClient(db_path) as client:
         resp = client.post("/api/derived/recompute")
