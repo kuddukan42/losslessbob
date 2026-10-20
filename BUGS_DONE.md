@@ -2,6 +2,22 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-374: tapematch test_cross_clause_same_keyword fails: 'alternate recording to' now reads as 0, test expects None
+Status: Fixed
+File(s): tools/tapematch/tests/test_commentary_audit.py:34,tools/tapematch/tapematch_session.py
+Reported: 2026-10-17
+Fixed: 2026-10-19
+Root cause: Duplicate of BUG-377. Test premise stale: da990507f (golden review 3) added "alternate (recording) to" to the shared backend.db._DIFF_RE, so the LB-0680 clause legitimately parses as different (0); the test still expected None. Cross-clause leak guard was never broken.
+Fix: Test now expects 0 for the alternate-to wording and adds a neutral-wording variant asserting None, pinning the leak guard independently. No parser change.
+
+BUG-377: test_commentary_audit cross-clause test fails on base
+Status: Fixed
+File(s): tools/tapematch/tests/test_commentary_audit.py
+Reported: 2026-10-19
+Fixed: 2026-10-19
+Root cause: Test premise stale: da990507f (golden review 3) added "alternate (recording) to" to the shared backend.db._DIFF_RE, so the LB-0680 clause legitimately parses as different (0); the test still expected None. Cross-clause leak guard was never broken.
+Fix: Test now expects 0 for the alternate-to wording and adds a neutral-wording variant asserting None, pinning the leak guard independently. No parser change.
+
 BUG-376: Trading export/compare 500: selected date_str/location/lb_status from my_collection
 Status: Fixed
 File(s): backend/app.py

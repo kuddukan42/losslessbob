@@ -1,3 +1,7 @@
+[2026-10-20] — Night run: BUG-377 closed, sidebar brand fit
+Fixed: tools/tapematch/tests/test_commentary_audit.py: cross-clause test expected None for "alternate recording to LB-0680"; _DIFF_RE reads it as different since da990507f, so expect 0 + neutral-wording variant pins the leak guard (BUG-377, dup BUG-374)
+Fixed: gui_next AppShell: brand subtitle wrapped to two lines beside the collapse toggle; now one line, label ellipsizes with tooltip, version never truncates (TODO-160 follow-up)
+
 [2026-10-19] — Parallel backlog sweep: 10 TODOs closed, TODO-319 family guard (off), TUIT/WTRF/trading/GUI features
 Added: gui_next AppShell/ScreenSetup/store: curator mode hidden behind Ctrl+Shift+Alt+C (or 7 clicks on the Master version label), Curator card in Setup; collapsible icon-only sidebar, forced at <=900px (TODO-160, TODO-178)
 Added: backend/resources/map.html + ScreenMap: travel-trail view — date-ordered polyline coloured by decade, year range, gap break (TODO-085)
