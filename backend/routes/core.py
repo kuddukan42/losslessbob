@@ -12,12 +12,8 @@ from flask import (
 )
 
 from backend import db as database
-from backend import (
-    importer,
-)
-from backend.paths import (
-    DATA_DIR,
-)
+from backend import importer
+from backend.paths import DATA_DIR
 from backend.routes import _state as _route_state
 from backend.scrape_worker import _start_scrape_thread
 
