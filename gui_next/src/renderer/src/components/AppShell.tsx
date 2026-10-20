@@ -57,6 +57,13 @@ function Sidebar({
     return () => mq.removeEventListener('change', on)
   }, [])
   const collapsed = storedCollapsed || narrow
+  // Every locale's appShell.version ends in "v{{version}}"; split it off so the
+  // brand subtitle can ellipsize the label without ever hiding the version.
+  const versionFull = t('appShell.version', { version: __APP_VERSION__ })
+  const versionTag = `v${__APP_VERSION__}`
+  const versionLabel = versionFull.endsWith(versionTag)
+    ? versionFull.slice(0, -versionTag.length)
+    : versionFull
   const language = useSettingsStore((s) => s.language)
   const setLanguage = useSettingsStore((s) => s.setLanguage)
   const [collectionCount, setCollectionCount] = useState<number | undefined>(undefined)
@@ -128,12 +135,12 @@ function Sidebar({
       {/* Brand */}
       <div
         style={{
-          padding: collapsed ? '16px 0 14px' : '16px 18px 14px',
+          padding: collapsed ? '16px 0 14px' : '16px 8px 14px 14px',
           display: 'flex',
           flexDirection: collapsed ? 'column' : 'row',
           justifyContent: collapsed ? 'center' : undefined,
           alignItems: 'center',
-          gap: 10,
+          gap: collapsed ? 10 : 6,
           borderBottom: '1px solid var(--lbb-border)',
         }}
       >
@@ -168,15 +175,25 @@ function Sidebar({
           >
             {t('appShell.brand')}
           </div>
+          {/* One line beside the collapse toggle: the label ellipsizes, the
+              trailing "v<version>" never does; full text in the tooltip. */}
           <div
+            title={versionFull}
             style={{
+              display: 'flex',
               fontSize: 'var(--lbb-fs-10-5)',
               color: 'var(--lbb-fg3)',
               marginTop: 2,
               letterSpacing: 0.04,
+              whiteSpace: 'nowrap',
             }}
           >
-            {t('appShell.version', { version: __APP_VERSION__ })}
+            <span
+              style={{ minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'pre' }}
+            >
+              {versionLabel}
+            </span>
+            {versionLabel !== versionFull && <span style={{ flexShrink: 0 }}>{versionTag}</span>}
           </div>
         </div>
         )}
@@ -189,7 +206,7 @@ function Sidebar({
           disabled={narrow}
           onClick={() => setSidebarCollapsed(!storedCollapsed)}
           style={{
-            width: 24, height: 24, borderRadius: 5, background: 'transparent',
+            width: collapsed ? 24 : 20, height: 24, borderRadius: 5, background: 'transparent',
             border: '1px solid transparent', color: 'var(--lbb-fg3)',
             cursor: narrow ? 'default' : 'pointer', display: 'inline-flex',
             alignItems: 'center', justifyContent: 'center', flexShrink: 0,
