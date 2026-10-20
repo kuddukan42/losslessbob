@@ -1221,7 +1221,18 @@ function familiesOf(recordings: RecordingRow[]): FamilyGroup[] {
   return out
 }
 
+// rollupOf() runs per show in the facet, filter, KPI and row-render passes
+// (~6x per show per filter change over ~4k shows). PerformanceRows are rebuilt,
+// never mutated, when their inputs change, so caching by object identity is safe.
+const rollupCache = new WeakMap<PerformanceRow, ReturnType<typeof computeRollup>>()
+
 function rollupOf(p: PerformanceRow) {
+  let ru = rollupCache.get(p)
+  if (!ru) { ru = computeRollup(p); rollupCache.set(p, ru) }
+  return ru
+}
+
+function computeRollup(p: PerformanceRow) {
   const recordings = p.recordings
   const owned = recordings.filter(r => r.owned)
   const best = bestOf(recordings)
