@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-378: GET /api/library/performances takes ~6s after backend start; /verify Library tour times out on Loading
+Status: Fixed
+File(s): backend/db.py:3822,backend/app.py:1076
+Reported: 2026-10-19
+Fixed: 2026-10-19
+Root cause: Every init_db() call spawned a background bloom rebuild (~13s of GIL-bound hashing over 708k checksums); create_app() calls init_db() twice (directly + via reload_taper_aliases), so request threads convoyed behind two rebuilds for ~27s after startup.
+Fix: Bloom built lazily by lookup_checksums() via _start_bloom_rebuild(), deduped per path; route 6.0-6.4s -> 0.30s on a live-DB copy, response byte-identical; Library rollupOf memoized client-side.
+
 BUG-374: tapematch test_cross_clause_same_keyword fails: 'alternate recording to' now reads as 0, test expects None
 Status: Fixed
 File(s): tools/tapematch/tests/test_commentary_audit.py:34,tools/tapematch/tapematch_session.py
