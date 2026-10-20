@@ -1,4 +1,4 @@
-"""TODO-370: GET /api/library/performances response pin + lazy bloom build.
+"""BUG-378: GET /api/library/performances response pin + lazy bloom build.
 
 The route itself was never slow (~0.3s on the live DB); it measured ~6s because
 every init_db() call spawned a background bloom rebuild that holds the GIL for
@@ -10,6 +10,8 @@ deduplicated rebuild that replaced the eager one.
 from __future__ import annotations
 
 import shutil
+import threading
+import time
 
 from tests.test_library_picks_api import _AppClient, _seed_curated_list
 from tests.test_performances_tuit_circulating import _tuit
@@ -123,3 +125,64 @@ def test_route_response_is_pinned():
         assert resp.get_json() == EXPECTED
     finally:
         shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def _wait_for_bloom(db_path, timeout=10.0):
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        with db._bloom_lock:
+            if db._bloom is not None and db._bloom_db_path == str(db_path):
+                return True
+        time.sleep(0.02)
+    return False
+
+
+def test_init_db_does_not_build_bloom():
+    db_path, tmp_dir = _make_db()
+    try:
+        with db._bloom_lock:
+            assert db._bloom_db_path != str(db_path)
+            assert str(db_path) not in db._bloom_rebuilding
+    finally:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_lookup_builds_bloom_lazily_and_finds_checksums():
+    db_path, tmp_dir = _make_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_entry(conn, 7, "6/1/00")
+        chk = "ab12" * 8
+        conn.execute(
+            "INSERT INTO checksums (checksum, filename, chk_type, lb_number)"
+            " VALUES (?, 'a.flac', 'md5', 7)",
+            (chk,),
+        )
+        conn.commit()
+        entries = [(chk, "a.flac", "md5"), ("cd34" * 8, "b.flac", "md5")]
+        first = db.lookup_checksums(entries, db_path=db_path)  # SQLite path, starts build
+        assert _wait_for_bloom(db_path)
+        second = db.lookup_checksums(entries, db_path=db_path)  # bloom path
+        assert first == second
+        assert first[0]["matched"] == 1
+    finally:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_concurrent_rebuild_requests_start_one_thread(monkeypatch):
+    gate = threading.Event()
+    calls: list[str] = []
+
+    def _slow_rebuild(db_path=None):
+        calls.append(str(db_path))
+        gate.wait(5)
+
+    monkeypatch.setattr(db, "_rebuild_bloom_bg", _slow_rebuild)
+    for _ in range(5):
+        db._start_bloom_rebuild("/nonexistent/dedupe.db")
+    gate.set()
+    deadline = time.monotonic() + 5
+    while "/nonexistent/dedupe.db" in db._bloom_rebuilding and time.monotonic() < deadline:
+        time.sleep(0.01)
+    assert calls == ["/nonexistent/dedupe.db"]
+    assert "/nonexistent/dedupe.db" not in db._bloom_rebuilding

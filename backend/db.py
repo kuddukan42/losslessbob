@@ -33,6 +33,7 @@ _bloom: _SBF | None = None
 _bloom_db_path: str | None = None  # path the filter was built from (BUG-187)
 _bloom_count: int | None = None  # checksums row count the filter was built from (BUG-261)
 _bloom_lock = threading.Lock()
+_bloom_rebuilding: set[str] = set()  # db paths with a rebuild in flight
 
 
 # --- Master vs. user data ownership model -------------------------------------
@@ -3353,6 +3354,35 @@ def _rebuild_bloom_bg(db_path=None) -> None:
         pass  # Non-fatal; lookups fall through to SQLite until filter is ready
 
 
+def _start_bloom_rebuild(db_path=None) -> None:
+    """Rebuild the bloom for *db_path* in a background thread, at most one at a time.
+
+    Building the filter is ~13s of pure-Python hashing on a 700k-row checksums
+    table and holds the GIL throughout; every concurrent request thread that
+    steps a SQLite cursor convoys behind it (GET /api/library/performances went
+    from 0.3s to 6s at startup). So the build is lazy — lookup_checksums()
+    starts it on first need — and deduplicated per path.
+
+    Args:
+        db_path: Database path, or None for the default DB_PATH.
+    """
+    path = str(db_path or DB_PATH)
+    with _bloom_lock:
+        if path in _bloom_rebuilding:
+            return
+        _bloom_rebuilding.add(path)
+
+    def _run() -> None:
+        try:
+            _rebuild_bloom_bg(db_path)
+        finally:
+            with _bloom_lock:
+                _bloom_rebuilding.discard(path)
+            close_connection(db_path)  # fire-and-forget thread (BUG-263)
+
+    threading.Thread(target=_run, name="bloom-rebuild", daemon=True).start()
+
+
 def checksum_in_bloom(chk: str) -> bool:
     """Returns False only if chk is DEFINITELY not in DB. True means possible match."""
     with _bloom_lock:
@@ -3815,12 +3845,10 @@ def init_db(db_path=None):
         finally:
             close_connection(db_path)
 
-    # Build bloom filter in background so startup is not blocked.
-    # checksum_in_bloom() returns True while _bloom is None, so all lookups
-    # fall through to SQLite until the filter is ready.
-    threading.Thread(
-        target=lambda: _run_bg(lambda: _rebuild_bloom_bg(db_path)), daemon=True
-    ).start()
+    # The bloom filter is NOT built here: lookup_checksums() builds it lazily
+    # via _start_bloom_rebuild() (a startup build per init_db() call starved
+    # every request of the GIL for ~30s). Lookups fall through to SQLite until
+    # the filter is ready.
 
     # One-time backfill: populate lb_master if table is empty and checksums exist.
     # wait=False (BUG-262): nothing waits on this thread's result, so don't
@@ -4107,11 +4135,13 @@ def lookup_checksums(parsed_entries, db_path=None):
     with _bloom_lock:
         _active_bloom = _bloom if _bloom_db_path == active_path else None
         _active_bloom_count = _bloom_count
-    if _active_bloom is not None:
+    if _active_bloom is None:
+        _start_bloom_rebuild(db_path)  # lazy first build (or after an import reset)
+    else:
         live_count = conn.execute("SELECT COUNT(*) FROM checksums").fetchone()[0]
         if live_count != _active_bloom_count:
             _active_bloom = None
-            threading.Thread(target=_rebuild_bloom_bg, args=(db_path,), daemon=True).start()
+            _start_bloom_rebuild(db_path)
     if _active_bloom is not None:
         candidates = [e for e in parsed_entries if e[0] in _active_bloom]
         definite_misses = [e for e in parsed_entries if e[0] not in _active_bloom]
