@@ -750,6 +750,9 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
         background: 'var(--lbb-surface)',
         fontSize: 'var(--lbb-fs-11)',
         fontFamily: 'var(--lbb-mono)',
+        // Narrow windows clip the tail instead of wrapping items onto a 2nd line.
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
       }}
     >
       {item(t('appShell.statusBar.db'), stats ? lbLabel(stats.latest_lb) : '…', 'ok')}
