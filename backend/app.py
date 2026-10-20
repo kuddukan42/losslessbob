@@ -64,6 +64,7 @@ from backend.qc import decisions as _qc_decisions
 from backend.qc import jobs as _qc_jobs
 from backend.qc import review as _qc_review
 from backend.routes import _state as _route_state
+from backend.scrape_worker import _start_download_pages_thread, _start_scrape_thread
 from concert_ranker.config import resolve_band_set
 from concert_ranker.scoring import band_metric
 
@@ -74,9 +75,6 @@ _last_backup_at: float = 0.0
 _backup_lock = threading.Lock()
 
 _reconcile_lock = threading.Lock()  # prevents concurrent lb_master reconcile runs
-
-_scrape_thread = None
-_scrape_thread_lock = threading.Lock()  # one scrape/download-pages worker at a time
 
 # ── Async pipeline job (TODO-205 Phase 2 / P2) ─────────────────────────────────
 _PIPELINE_JOB_LOCK = threading.Lock()
@@ -1041,144 +1039,8 @@ def create_app() -> Flask:
     from backend.routes.core import bp as _core_bp
     app.register_blueprint(_core_bp)
 
-    # ── Flat file update pipeline ─────────────────────────────────────────────
-
-    @app.route("/api/flat_file/discover", methods=["GET"])
-    def flat_file_discover() -> Response:
-        """Live check for a new flat-file release on the LosslessBob download page."""
-        from . import flat_file as ff
-        try:
-            result = ff.discover_flat_file_release()
-            return jsonify(result)
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/flat_file/download/<int:release_id>", methods=["POST"])
-    def flat_file_download(release_id):
-        """Download the zip for a detected release (may be long-running)."""
-        from . import flat_file as ff
-        try:
-            path = ff.download_flat_file_release(release_id)
-            return jsonify({"path": str(path), "release_id": release_id})
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/flat_file/diff/<int:release_id>", methods=["GET"])
-    def flat_file_diff(release_id):
-        """Return diff counts (rows_added/changed/removed) without applying."""
-        from . import flat_file as ff
-        try:
-            return jsonify(ff.diff_flat_file_release(release_id))
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/flat_file/apply/<int:release_id>", methods=["POST"])
-    def flat_file_apply(release_id):
-        """Apply a downloaded flat-file release, then scrape its never-scraped LBs.
-
-        The scrape runs in the background and batch-reconciles lb_master when it
-        finishes, so a release needs no separate Scrape or Reconcile step.
-        ``scrape_started`` is False when another scrape already holds the worker.
-        """
-        from . import flat_file as ff
-        try:
-            result = ff.apply_flat_file_release(release_id)
-            new_lbs = result.get("new_lb_numbers") or []
-            result["scrape_started"] = False
-            if new_lbs:
-                result["scrape_started"] = _start_scrape_thread(
-                    new_lbs,
-                    force=True,
-                    delay_ms=int(database.get_meta("scrape_delay_ms") or 1500),
-                    download=database.get_meta("scrape_attachments") != "0",
-                )
-            return jsonify(result)
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/flat_file/defer/<int:release_id>", methods=["POST"])
-    def flat_file_defer(release_id):
-        """Defer prompting for a release. Body: {days: int} or {until_next: true}."""
-        from . import flat_file as ff
-        body = request.get_json(force=True) or {}
-        try:
-            ff.defer_flat_file_release(
-                release_id,
-                days=body.get("days"),
-                until_next=body.get("until_next", False),
-            )
-            return jsonify({"ok": True})
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 400
-
-    @app.route("/api/flat_file/releases", methods=["GET"])
-    def flat_file_releases():
-        """List all flat file release history rows, newest first."""
-        from . import flat_file as ff
-        try:
-            return jsonify(ff.get_releases())
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/flat_file/changelog/<int:release_id>", methods=["GET"])
-    def flat_file_changelog(release_id):
-        """Paginated changelog for a release. Query params: limit, offset."""
-        from . import flat_file as ff
-        limit = int(request.args.get("limit", 100))
-        offset = int(request.args.get("offset", 0))
-        try:
-            return jsonify(ff.get_release_changelog(release_id, limit, offset))
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    # ── Site-mirror xref ingest (TODO-252 / B8) ───────────────────────────────
-
-    @app.route("/api/xref_ingest/scan", methods=["POST"])
-    def xref_ingest_scan() -> Response:
-        """Scan the site mirror for new xref checksum filesets and stage them."""
-        from . import xref_ingest as xi
-        try:
-            return jsonify(xi.scan_mirror())
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/xref_ingest/filesets", methods=["GET"])
-    def xref_ingest_filesets() -> Response:
-        """List staged/approved/rejected filesets. Query param: status (optional)."""
-        from . import xref_ingest as xi
-        status = request.args.get("status")
-        try:
-            return jsonify(xi.get_filesets(status=status))
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/xref_ingest/approve", methods=["POST"])
-    def xref_ingest_approve() -> Response:
-        """Approve staged filesets. Body: {ids: [int, ...]}."""
-        from . import xref_ingest as xi
-        body = request.get_json(force=True) or {}
-        try:
-            ids = [int(i) for i in body.get("ids", [])]
-        except (TypeError, ValueError):
-            return jsonify({"error": "ids must be a list of integers"}), 400
-        try:
-            return jsonify(xi.approve_filesets(ids))
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/xref_ingest/reject", methods=["POST"])
-    def xref_ingest_reject() -> Response:
-        """Reject staged filesets. Body: {ids: [int, ...]}."""
-        from . import xref_ingest as xi
-        body = request.get_json(force=True) or {}
-        try:
-            ids = [int(i) for i in body.get("ids", [])]
-        except (TypeError, ValueError):
-            return jsonify({"error": "ids must be a list of integers"}), 400
-        try:
-            return jsonify(xi.reject_filesets(ids))
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
+    from backend.routes.flat_file import bp as _flat_file_bp
+    app.register_blueprint(_flat_file_bp)
 
     # ── Entry Detail & Attachments ───────────────────────────────────────────
 
@@ -12232,69 +12094,6 @@ def _do_spectro_batch(folders: list[str], opts: dict) -> None:
 
     _set(status="done", current="", done=done,
          errors=len(errors), skipped=skipped)
-
-
-def _start_scrape_thread(
-    lb_numbers: list[int],
-    force: bool = False,
-    delay_ms: int = 1500,
-    download: bool = True,
-    use_local_pages: bool = False,
-) -> bool:
-    """Start a background thread to scrape the given LB numbers, if none is running.
-
-    Does nothing if a scrape thread is already alive. The thread calls
-    scraper.scrape_range() with the supplied options.
-
-    Args:
-        lb_numbers: Ordered list of LB numbers to scrape.
-        force: Re-scrape even if an entry already has data.
-        delay_ms: Milliseconds to sleep between requests.
-        download: Download attachment files when True.
-        use_local_pages: Read from data/site/detail/ cache instead of the network.
-
-    Returns:
-        True if a thread was started; False if one was already running.
-    """
-    def run():
-        scraper.scrape_range(
-            lb_numbers,
-            force=force,
-            download_files=download,
-            use_local_pages=use_local_pages,
-            delay_ms=delay_ms,
-        )
-
-    return _start_scrape_worker(run)
-
-
-def _start_download_pages_thread(lb_numbers, force=False, delay_ms=1500) -> bool:
-    """Start a background page-download thread; False if a scrape is already running."""
-    def run():
-        scraper.download_pages_range(lb_numbers, force=force, delay_ms=delay_ms)
-
-    return _start_scrape_worker(run)
-
-
-def _start_scrape_worker(run) -> bool:
-    """Start ``run`` as the single scrape worker thread unless one is alive.
-
-    The check and the start share one lock so two requests cannot both start a
-    scrape_range() — they share the module-level scraper._scrape_state.
-
-    Args:
-        run: Zero-arg thread body.
-
-    Returns:
-        True if the thread was started; False if a worker was already alive.
-    """
-    global _scrape_thread
-    with _scrape_thread_lock:
-        if _scrape_thread and _scrape_thread.is_alive():
-            return False
-        _scrape_thread = threading.Thread(target=run, daemon=True)
-        _scrape_thread.start()
-        return True
 
 
 # ── Collection HTML export column picker (TODO-083) ─────────────────────────

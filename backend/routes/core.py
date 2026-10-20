@@ -19,6 +19,7 @@ from backend.paths import (
     DATA_DIR,
 )
 from backend.routes import _state as _route_state
+from backend.scrape_worker import _start_scrape_thread
 
 _log = logging.getLogger(__name__)
 
@@ -249,9 +250,6 @@ def db_import() -> Response:
             return jsonify({"error": f"File not found: {file_path}"}), 404
 
         def on_complete(result):
-            # Lazy: the scrape worker + its lock still live in backend.app (TODO-369).
-            from backend.app import _start_scrape_thread
-
             if result.get("scrape_queued"):
                 # Treat None (never set / DB reset) as enabled — matches UI default.
                 # Only "0" disables auto-scrape.

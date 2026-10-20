@@ -24,9 +24,22 @@ Spec: instructions/CODE_REVIEW_2026-10-17.md §5 S1/S2. Repeatable night package
    `.debug/routes_before.txt` (378 rules+methods, dumped once before the split) — must be
    identical. Then the domain's targeted tests + tests/test_refresh.py.
 
-Shared state so far: `backend/routes/_state.py` (`process_start_time`).
-Open cross-module calls to resolve when their domain moves: `core.db_import` lazily imports
-`_start_scrape_thread` from backend.app (→ domain 6).
+Gotchas (each bit once):
+- Relative imports in moved code (`from . import flat_file`) resolve to `backend.routes` —
+  the extractor now rewrites them to `from backend import …`. Only `_smoke.py` catches this.
+- `Path(__file__).parent` in admin/map/taper-page routes (app.py ~8285–8548) must become
+  `.parent.parent` once moved.
+- Tests that monkeypatch `backend.app.<name>`: `get_spectrogram_status`,
+  `get_tapematch_crawl_status`, `get_pipeline_run_status` (test_activity*.py),
+  `_lbdir_status_for_lb` (test_lb_master.py), `SITE_DIR`/`SITE_FILES_DIR`/`DATA_DIR`
+  (test_sitedata_packaging.py), `database.resolve_aliases` (test_lbdir_manifest_scope.py),
+  `_github_upload_asset`, `compute_pipeline_severity`, `_find_lbdir_in_folder`,
+  `_lbdir_file_lb` imported from backend.app. Repoint the test when the owner moves.
+
+Shared state so far: `backend/routes/_state.py` (`process_start_time`);
+`backend/scrape_worker.py` (scrape thread guard + `_start_scrape_thread` /
+`_start_download_pages_thread` / `_start_scrape_worker`; app.py re-imports the first two,
+refresh_exec calls `backend.app._start_scrape_thread`; test_scrape_worker.py repointed).
 
 Endpoint names gain the blueprint prefix (`dbedit.dbedit_tables`); nothing in the repo
 uses `url_for` / `request.endpoint` / `view_functions`, so that is not a behaviour change.
@@ -39,11 +52,11 @@ recreate from this description if missing. Run them from WT root.
 | # | Blueprint module | app.py sections | Commit |
 |---|---|---|---|
 | 1 | dbedit | FEAT-14 DB Editor | d0cb7546d |
-| 2 | core | Checksum Lookup, Database Management (`_process_start_time`) | |
+| 2 | core | Checksum Lookup, Database Management (`_process_start_time`) | 9114cc7bc |
 | 3 | flat_file | Flat file update pipeline, Site-mirror xref ingest | |
 | 4 | entries | Entry Detail & Attachments, Search | |
 | 5 | collection | My Collection, FEAT-03/04/05/13, FEAT-09 integrity events | |
-| 6 | scrape | Scraper Control (+ bottom-of-file scrape thread helpers; tests patch `app._scrape_thread`) | |
+| 6 | scrape | Scraper Control (thread helpers already in backend/scrape_worker.py) | |
 | 7 | bootlegs | Bootleg-CD Catalog | |
 | 8 | crawler | Site Crawler, Preservation stack | |
 | 9 | lbdir | Verify, LBDir | |

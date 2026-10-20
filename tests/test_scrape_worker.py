@@ -2,7 +2,7 @@
 
 import threading
 
-from backend import app as app_mod
+from backend import scrape_worker as app_mod
 
 
 def test_second_start_reports_busy_and_does_not_run(monkeypatch) -> None:
