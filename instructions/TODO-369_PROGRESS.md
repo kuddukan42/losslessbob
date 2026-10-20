@@ -84,7 +84,7 @@ recreate from this description if missing. Run them from WT root.
 | 16 | tapematch | tapematch, tapers, ab_clip, bobtalk, library (6859–8074 block) | 519e745fa |
 | 17 | ranking | Curated lists, show picks, song index, show detail, timeline | eafe71a65 |
 | 18 | dossier | Show dossier | f2b260e18 |
-| 19 | aliases | lb_alias, folder_lb_link | |
+| 19 | aliases | lb_alias, folder_lb_link | ea642e292 |
 | 20 | map | Map feature routes | |
 | 21 | admin | Admin page | |
 | 22 | mounts | Collection mounts/routes, integrity monitor, disk scanner, file integrity | |
@@ -113,4 +113,4 @@ called from another submodule won't see a patch on the package attribute).
 - Run 4 (2026-10-20, interactive): domain 14. Backup rate-limit state moved into lb_data.py;
   upload helper → backend/github_upload.py. app.py 6,750 lines. Then 15–18; the dossier
   section's master GitHub check/install tail went to lb_data.py, not dossier.py.
-  app.py 4,235 lines. Next is 19 aliases.
+  Then 19; stopped by tj. app.py 4,126 lines. Next is 20 map.
