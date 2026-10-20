@@ -1,4 +1,4 @@
-[2026-10-20] — Night run: BUG-377 closed, sidebar brand fit, Library load 6s -> 0.3s, TUIT reconciliation report, rarity census, WTRF post editor
+[2026-10-20] — Night run: BUG-377 closed, sidebar brand fit, Library load 6s -> 0.3s, TUIT reconciliation report, rarity census, WTRF post editor, TUIT/olof spine
 Fixed: tools/tapematch/tests/test_commentary_audit.py: cross-clause test expected None for "alternate recording to LB-0680"; _DIFF_RE reads it as different since da990507f, so expect 0 + neutral-wording variant pins the leak guard (BUG-377, dup BUG-374)
 Fixed: gui_next AppShell: brand subtitle wrapped to two lines beside the collapse toggle; now one line, label ellipsizes with tooltip, version never truncates (TODO-160 follow-up)
 Fixed: backend/db.py: checksum bloom built lazily by lookup_checksums(), once per path — init_db() (called twice by create_app) no longer starts a ~13s GIL-bound rebuild each time; GET /api/library/performances 6.0-6.4s -> 0.30s after startup, response byte-identical; tests/test_library_performances_perf.py pins the route JSON (BUG-378)
@@ -10,6 +10,7 @@ Added: backend/rarity.py + GET /api/tapematch/rarity: per-LB copies / only_known
 Added: backend/wtrf_post_editor.py + GET /api/forum_post/edit_form, POST /api/forum_post/edit: edit a WTRF topic's opening post through SMF's edit form (msg id, session/seqnum tokens, post2); dry-run unless confirm=true; tests mock every exchange with SMF fixtures — never run live (TODO-136)
 Added: gui_next ForumEditModal: 'Edit post…' on the entry Forum tab and All forum posts — loads the live subject/body, edit, dry-run diff review, confirmed save (TODO-136)
 Fixed: gui_next ScreenCollection: scan-preview, All forum posts and All torrents tables rendered an extra edge cell (TR already adds one), shifting every body cell one column right
+Added: tools/tuit_olof_spine.py -> docs/TUIT_OLOF_SPINE.md: read-only TUIT show spine vs olof_events — classifies the 17 TUIT-only rows and 199 olof-only concert dates (no date typos; 6 olof gaps, ~58 TUIT calendar gaps, 95 non-shows) and scores 5 venue join keys against 3,986 shared-date pairs (exact 69.5%, geo25 94.1%, geo25+crosswalk 95.0%) (TODO-338)
 
 [2026-10-19] — Parallel backlog sweep: 10 TODOs closed, TODO-319 family guard (off), TUIT/WTRF/trading/GUI features
 Added: gui_next AppShell/ScreenSetup/store: curator mode hidden behind Ctrl+Shift+Alt+C (or 7 clicks on the Master version label), Curator card in Setup; collapsible icon-only sidebar, forced at <=900px (TODO-160, TODO-178)

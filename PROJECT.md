@@ -143,6 +143,7 @@ losslessbob/
 │   ├── country_flags.py      # Olof country/region name → flag emoji; forum subject-line prefix
 │   ├── wtrf_scraper.py       # Searches the WTRF SMF forum for torrent posts matching missing items
 │   ├── tuit_scraper.py       # TUIT private tracker (tangledupintorrents.org): login, /browse + /recordings parsers, torrent fetch (TODO-314)
+│   ├── tuit_olof_spine.py    # CLI: read-only TUIT show spine vs olof_events -> docs/TUIT_OLOF_SPINE.md: date-residue classes + venue join-key scores (TODO-338)
 │   ├── tuit_upload.py        # Outbound TUIT: composes every /upload form field from entries + olof_events + a folder probe (the site autofills nothing but show_id), gates on lb_status + a tuit_recordings duplicate check, POSTs, then seeds via tracker_seed (TODO-343)
 │   ├── torrent_verify.py     # Bencode reader + read-only piece-hash check of a folder against a .torrent; gates seeding so incomplete folders are never written to (TODO-314)
 │   ├── seed_overlay.py       # Assembles a seedable folder outside the collection: audio hardlinked, LBF sidecars copied from data/site/files or re-fetched from the LB site (TODO-314). Sources recursively by longest path-suffix + exact size, so nested box-set torrents (<root>/<show>/cd-1/…) resolve and colliding basenames don't cross discs; `link_dirs` hardlinks from several collection folders for a torrent spanning >1 LB entry
@@ -261,6 +262,7 @@ losslessbob/
 │   ├── test_tapematch_routes.py # LISTENING §1 read routes in backend/app.py
 │   ├── test_tapematch_sync.py # backend/tapematch_sync.py
 │   ├── test_rarity.py        # backend/rarity.py + GET /api/tapematch/rarity (TODO-335)
+│   ├── test_tuit_olof_spine.py # tools/tuit_olof_spine.py (TODO-338)
 │   ├── test_rarity_census.py # tools/tapematch/rarity_census.py (TODO-335)
 │   └── test_batch_verify.py  # tools/batch_verify.py helper functions
 ├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only; bundled inside Electron AppImage
