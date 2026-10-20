@@ -7230,6 +7230,23 @@ def create_app() -> Flask:
             out.append(d)
         return jsonify(out)
 
+    @app.route("/api/tapematch/rarity", methods=["GET"])
+    def tapematch_rarity() -> Response:
+        """Per-LB source-tape copy count + "only known copy" flag (TODO-335).
+
+        Read-only, over the synced ``recording_families``; see
+        ``backend.rarity`` for the over-merge and unanalysed-sibling caveats
+        each row carries (``unanalysed_on_date``). Same flat-list shape as
+        /api/tapematch/families — merge client-side by ``lb_number``.
+        """
+        from backend import rarity as _rarity
+
+        try:
+            return jsonify(_rarity.lb_rarity(database.get_connection()))
+        except Exception as exc:
+            _log.exception("tapematch_rarity failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     @app.route("/api/tapematch/dup_encodes", methods=["GET"])
     def tapematch_dup_encodes() -> Response:
         """Likely-duplicate-encode candidates (TODO-210b).
