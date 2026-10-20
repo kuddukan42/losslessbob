@@ -52,7 +52,8 @@ Shared state so far: `backend/routes/_state.py` (`process_start_time`);
 `backend/scrape_worker.py` (scrape thread guard + `_start_scrape_thread` /
 `_start_download_pages_thread` / `_start_scrape_worker`; app.py re-imports the first two,
 refresh_exec imports it from scrape_worker directly since domain 6; test_scrape_worker.py repointed);
-`backend/github_upload.py` (`_ProgressFile` + `_github_upload_asset`, domain 14; app.py's data
+tapematch.py owns `get_tapematch_crawl_status` + the observations.db column constants
+(domain 16; activity.py and tests read it there); `backend/github_upload.py` (`_ProgressFile` + `_github_upload_asset`, domain 14; app.py's data
 package export re-imports it).
 
 Endpoint names gain the blueprint prefix (`dbedit.dbedit_tables`); nothing in the repo
@@ -79,10 +80,10 @@ recreate from this description if missing. Run them from WT root.
 | 12 | wtrf | Forum Posting, WTRF fetcher, WTRF fetch review || 3e3d182d7 |
 | 13 | lb_master | lb_master integrity, Pipeline refresh Phase 2/3 | 505de347b |
 | 14 | lb_data | lb_missing, lb_problems, lineage, curator mode, master publish/subscribe | f2dcfee95 |
-| 15 | tapers | Taper attribution/curation/QC review/vocab/aliases | |
-| 16 | tapematch | tapematch, tapers, ab_clip, bobtalk, library (6859–8074 block) | |
-| 17 | ranking | Curated lists, show picks, song index, show detail, timeline | |
-| 18 | dossier | Show dossier | |
+| 15 | tapers | Taper attribution/curation/QC review/vocab/aliases | 5b831fe62 |
+| 16 | tapematch | tapematch, tapers, ab_clip, bobtalk, library (6859–8074 block) | 519e745fa |
+| 17 | ranking | Curated lists, show picks, song index, show detail, timeline | eafe71a65 |
+| 18 | dossier | Show dossier | f2b260e18 |
 | 19 | aliases | lb_alias, folder_lb_link | |
 | 20 | map | Map feature routes | |
 | 21 | admin | Admin page | |
@@ -110,4 +111,6 @@ called from another submodule won't see a patch on the package attribute).
   One-off failure of test_lb_master.py::TestUnscrapedStaysPublic::test_single_reconcile_keeps_public
   under `pytest -x`; passed alone and in the full run. Next is 14 lb_data.
 - Run 4 (2026-10-20, interactive): domain 14. Backup rate-limit state moved into lb_data.py;
-  upload helper → backend/github_upload.py. app.py 6,750 lines. Next is 15 tapers.
+  upload helper → backend/github_upload.py. app.py 6,750 lines. Then 15–18; the dossier
+  section's master GitHub check/install tail went to lb_data.py, not dossier.py.
+  app.py 4,235 lines. Next is 19 aliases.
