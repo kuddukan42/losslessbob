@@ -6441,6 +6441,37 @@ def get_forum_posts_for_lb(lb_number: int, db_path=None) -> list:
     return out
 
 
+def update_forum_post_subject(topic_url: str, subject: str) -> int:
+    """Rewrite the logged subject of every local post for a topic (TODO-136).
+
+    Rows match on the ``topic=<id>`` in their stored URL, so a ``.msgNNNN``
+    or ``#msg`` variant of the same topic is updated too.
+
+    Args:
+        topic_url: Any link into the edited topic.
+        subject: The subject now live on the forum.
+
+    Returns:
+        Number of rows updated (0 when the topic was never posted from here).
+    """
+    m = re.search(r"topic=(\d+)", topic_url or "")
+    if not m:
+        return 0
+    _tid, _s = m.group(1), subject
+
+    def _run(c):
+        rows = c.execute(
+            "SELECT id, topic_url FROM forum_posts WHERE topic_url LIKE ?",
+            (f"%topic={_tid}%",),
+        ).fetchall()
+        ids = [r[0] for r in rows
+               if (mm := re.search(r"topic=(\d+)", r[1] or "")) and mm.group(1) == _tid]
+        c.executemany("UPDATE forum_posts SET subject=? WHERE id=?", [(_s, i) for i in ids])
+        return len(ids)
+
+    return get_write_queue().execute(_run)
+
+
 def delete_forum_post(post_id: int, db_path=None) -> None:
     """Delete a forum post record by id."""
     _id = post_id

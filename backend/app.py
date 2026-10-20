@@ -4695,6 +4695,76 @@ def create_app() -> Flask:
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
 
+    def _wtrf_edit_session(topic_url: str):
+        """Validate a topic URL and log in for the post editor (TODO-136).
+
+        Returns:
+            ``(session, None)`` or ``(None, (json_response, status))``.
+        """
+        from backend import forum_poster
+        from backend.credentials import SERVICE_WTRF, get_credentials
+        from backend.wtrf_seed import is_wtrf_topic_url
+        if not topic_url or not is_wtrf_topic_url(topic_url):
+            return None, (jsonify({"ok": False, "error": "Not a WTRF topic URL"}), 400)
+        user, pw = get_credentials(SERVICE_WTRF)
+        if not user or not pw:
+            return None, (jsonify({"ok": False, "error": "WTRF credentials not set"}), 400)
+        session = forum_poster._get_session(user, pw)
+        if session is None:
+            return None, (jsonify({"ok": False, "error": "WTRF login failed"}), 502)
+        return session, None
+
+    @app.route("/api/forum_post/edit_form", methods=["GET"])
+    def forum_post_edit_form() -> Response:
+        """Current subject/BBCode body of a WTRF topic's opening post (TODO-136).
+
+        Query: ``topic_url``. Read-only — logs in and fetches SMF's edit form.
+        Returns ``{ok, topic_id, msg_id, subject, body}``; the form's session
+        tokens stay server-side.
+        """
+        from backend.wtrf_post_editor import fetch_post_for_edit
+        try:
+            topic_url = request.args.get("topic_url", "").strip()
+            session, err = _wtrf_edit_session(topic_url)
+            if err:
+                return err
+            got = fetch_post_for_edit(session, topic_url)
+            if not got["ok"]:
+                return jsonify(got), 502
+            return jsonify({k: got[k] for k in ("ok", "topic_id", "msg_id", "subject", "body")})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/forum_post/edit", methods=["POST"])
+    def forum_post_edit() -> Response:
+        """Edit the opening post of a WTRF topic (TODO-136).
+
+        JSON body: ``topic_url``, ``subject``, ``body``, ``confirm``. Dry-run
+        (fetch + diff, nothing POSTed to the forum) unless ``confirm`` is the
+        JSON literal ``true``. A confirmed save also rewrites the subject of any
+        local ``forum_posts`` row for that topic.
+        """
+        from backend.wtrf_post_editor import edit_post
+        try:
+            data = request.get_json(silent=True) or {}
+            topic_url = (data.get("topic_url") or "").strip()
+            session, err = _wtrf_edit_session(topic_url)
+            if err:
+                return err
+            result = edit_post(
+                session, topic_url,
+                subject=data.get("subject") or "", body=data.get("body") or "",
+                dry_run=data.get("confirm") is not True,
+            )
+            if not result["ok"]:
+                return jsonify(result), 502
+            if result.get("saved") and "subject" in result["changed"]:
+                database.update_forum_post_subject(
+                    result["topic_url"], result["proposed"]["subject"])
+            return jsonify(result)
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
     # ── WTRF torrent fetcher ──────────────────────────────────────────────────
 
     _wtrf_crawl_running = False
