@@ -25,6 +25,13 @@ Spec: instructions/CODE_REVIEW_2026-10-17.md §5 S1/S2. Repeatable night package
    identical. Then the domain's targeted tests + tests/test_refresh.py.
 
 Gotchas (each bit once):
+- `nonlocal` create_app closure flags (e.g. `_wtrf_crawl_running`) → module-level + `global`;
+  ruff misses it, only `_smoke.py` (SyntaxError on import) catches it.
+- `.debug/todo369/_domain.sh START END MOD "doc"` runs steps 1,3,4,5 in one go; END must stop
+  before the next `register_blueprint` pair.
+- tests/test_refresh.py::test_route_how_to_run_resolves_in_url_map fails when run right after the
+  bootleg/crawler tests (db-writer start timeout). Pre-existing, ordering-only; passes alone and in
+  the full suite.
 - Relative imports in moved code (`from . import flat_file`) resolve to `backend.routes` —
   the extractor now rewrites them to `from backend import …`. Only `_smoke.py` catches this.
 - `Path(__file__).parent` in admin/map/taper-page routes (app.py ~8285–8548) must become
@@ -37,6 +44,9 @@ Gotchas (each bit once):
   `_lbdir_file_lb` imported from backend.app. Repoint the test when the owner moves.
 
 Shared state so far: `backend/routes/_state.py` (`process_start_time`);
+`backend/folder_lb.py` (folder→LB / manifest lookup helpers, domain 9);
+`backend/spectro_worker.py` (spectrogram state + batch, domain 10; activity.py reads it);
+`backend/lbdir_status.py` (`_lbdir_status_for_lb` + verdict helpers, domain 12);
 `backend/scrape_worker.py` (scrape thread guard + `_start_scrape_thread` /
 `_start_download_pages_thread` / `_start_scrape_worker`; app.py re-imports the first two,
 refresh_exec imports it from scrape_worker directly since domain 6; test_scrape_worker.py repointed).
@@ -56,13 +66,13 @@ recreate from this description if missing. Run them from WT root.
 | 3 | flat_file | Flat file update pipeline, Site-mirror xref ingest | 10ba106c3 |
 | 4 | entries | Entry Detail & Attachments, Search | 5bfa2d7f2 |
 | 5 | collection | My Collection, FEAT-03/04/05/13, FEAT-09 integrity events | 67cee89d3 |
-| 6 | scrape | Scraper Control (thread helpers already in backend/scrape_worker.py) | |
-| 7 | bootlegs | Bootleg-CD Catalog | |
-| 8 | crawler | Site Crawler, Preservation stack | |
-| 9 | lbdir | Verify, LBDir | |
-| 10 | spectrogram | Platform helpers, Spectrogram, rename apply | |
-| 11 | torrents | Torrent Generation, qBittorrent | |
-| 12 | wtrf | Forum Posting, WTRF fetcher, WTRF fetch review | |
+| 6 | scrape | Scraper Control (thread helpers already in backend/scrape_worker.py) || 5f9f208d1 |
+| 7 | bootlegs | Bootleg-CD Catalog || 57358ac33 |
+| 8 | crawler | Site Crawler, Preservation stack || 743251c41 |
+| 9 | lbdir | Verify, LBDir || 1ae1664ad |
+| 10 | spectrogram | Platform helpers, Spectrogram, rename apply || 51db8315d |
+| 11 | torrents | Torrent Generation, qBittorrent || a5b97f7c0 |
+| 12 | wtrf | Forum Posting, WTRF fetcher, WTRF fetch review || 3e3d182d7 |
 | 13 | lb_master | lb_master integrity, Pipeline refresh Phase 2/3 | |
 | 14 | lb_data | lb_missing, lb_problems, lineage, curator mode, master publish/subscribe | |
 | 15 | tapers | Taper attribution/curation/QC review/vocab/aliases | |
@@ -91,3 +101,4 @@ called from another submodule won't see a patch on the package attribute).
 ## Run log
 
 - Run 1 (2026-10-20):
+- Run 2 (2026-10-20, interactive): domains 6–12. Stopped by tj after 12; next is 13 lb_master.
