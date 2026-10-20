@@ -148,6 +148,7 @@ losslessbob/
 │   ├── seed_overlay.py       # Assembles a seedable folder outside the collection: audio hardlinked, LBF sidecars copied from data/site/files or re-fetched from the LB site (TODO-314). Sources recursively by longest path-suffix + exact size, so nested box-set torrents (<root>/<show>/cd-1/…) resolve and colliding basenames don't cross discs; `link_dirs` hardlinks from several collection folders for a torrent spanning >1 LB entry
 │   ├── tracker_seed.py       # Tracker-agnostic seeding pipeline (gates → overlay → qBittorrent), parameterised per tracker: <mount>/<TRACKER> Seeds + qbt tag. Shared by TUIT and WTRF
 │   ├── wtrf_board.py         # Walks the WTRF board newest-first (SMF pagination, stickies dropped) and seeds every post the collection already holds; resumes off wtrf_downloads.topic_url, drops posts whose LB is not held before downloading anything
+│   ├── wtrf_post_editor.py   # TODO-136: edits a topic's opening post via SMF's edit flow — topic page → msg id → action=post;msg=N form (subject/BBCode + session/seqnum tokens) → POST action=post2; dry-run returns a diff only
 │   ├── wtrf_discovery.py     # TODO-135: finds existing WTRF topics per LB (subject/attachment LB parse) from the board archive or a paced board crawl → scraped_topics/scraped_topic_lbs via the write queue
 │   ├── wtrf_review.py        # TODO-193: curator review of wtrf_downloads rows — list/filter, confirm (resume or add in qBt), reject
 │   ├── qbt_seeding.py        # TODO-330: paced bulk seeding — announce preflight, add paused, batched release thread, per-torrent tracker status
@@ -2305,6 +2306,8 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | POST | `/api/entry/<lb>/post_forum` | Post a topic to the WTRF forum. Body: `{username?, password?, torrent_id?, subject?, body?}`. Optional `subject`/`body` override the auto-generated values (used when the user edits the preview). Gated by an LBDIR integrity check (`checksum_utils.verify_folder` on the entry's `my_collection.disk_path`, if any) — 400 if status is `fail`/`incomplete`. If no torrent exists, one is auto-generated from the collection folder and added to qBittorrent before posting (qBittorrent failure is non-fatal). Returns `{ok, topic_url, torrent_auto_created?, qbt_auto_add?}`. |
 | GET | `/api/entry/<lb>/forum_posts` | List all logged forum posts for an LB entry, newest first. |
 | DELETE | `/api/forum_post/<id>` | Delete a forum post log record by id. |
+| GET | `/api/forum_post/edit_form` | Current subject/BBCode body of a WTRF topic's opening post, from SMF's edit form (TODO-136). Query `topic_url`. Read-only; tokens stay server-side. Returns `{ok, topic_id, msg_id, subject, body}`. |
+| POST | `/api/forum_post/edit` | Edit a WTRF topic's opening post (TODO-136). Body `{topic_url, subject, body, confirm}`. **Dry-run unless `confirm` is JSON `true`** — returns `{ok, dry_run, saved, changed, current, proposed}`; a confirmed save also rewrites local `forum_posts.subject` for that topic. |
 
 ### WTRF Torrent Search (`wtrf_downloads`)
 | Method | Route | Description |

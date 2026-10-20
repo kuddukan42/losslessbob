@@ -222,7 +222,7 @@ Description: Replace the app icon with a new design. No icon asset exists yet in
 
 TODO-136: Post editor form for existing WTRF posts
 Priority: Low
-Status: Open
+Status: Code complete 2026-10-20 (backend d9084c0c4 + GUI 019a923ab), mock-tested only — close after tj's first live edit succeeds
 Added: 2026-06-10
 Description: Add a UI form to edit the subject and body of a WTRF forum topic that was
 previously posted through the app (or discovered via TODO-135 scraper). The backend
