@@ -73,7 +73,7 @@ recreate from this description if missing. Run them from WT root.
 | 10 | spectrogram | Platform helpers, Spectrogram, rename apply || 51db8315d |
 | 11 | torrents | Torrent Generation, qBittorrent || a5b97f7c0 |
 | 12 | wtrf | Forum Posting, WTRF fetcher, WTRF fetch review || 3e3d182d7 |
-| 13 | lb_master | lb_master integrity, Pipeline refresh Phase 2/3 | |
+| 13 | lb_master | lb_master integrity, Pipeline refresh Phase 2/3 | 505de347b |
 | 14 | lb_data | lb_missing, lb_problems, lineage, curator mode, master publish/subscribe | |
 | 15 | tapers | Taper attribution/curation/QC review/vocab/aliases | |
 | 16 | tapematch | tapematch, tapers, ab_clip, bobtalk, library (6859–8074 block) | |
@@ -102,3 +102,6 @@ called from another submodule won't see a patch on the package attribute).
 
 - Run 1 (2026-10-20):
 - Run 2 (2026-10-20, interactive): domains 6–12. Stopped by tj after 12; next is 13 lb_master.
+- Run 3 (2026-10-20, interactive): domain 13 (`_reconcile_lock` moved into lb_master.py).
+  One-off failure of test_lb_master.py::TestUnscrapedStaysPublic::test_single_reconcile_keeps_public
+  under `pytest -x`; passed alone and in the full run. Next is 14 lb_data.
