@@ -5,7 +5,8 @@ Split from backend.db (TODO-369 S2).
 
 import sqlite3
 
-from backend.db import classify_source_type, get_connection, is_known_taper
+from backend.db import get_connection
+from backend.db.taper import classify_source_type, is_known_taper
 
 
 def search_entries(query, field="all", year=None, limit=None, db_path=None):
