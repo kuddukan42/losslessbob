@@ -33,6 +33,8 @@ known-first-party = ["backend"]
 "tests/*" = ["F841", "B"]
 # conftest fixtures are injected by pytest, not called directly
 "conftest.py" = ["F401"]
+# backend.db re-exports its submodules from the bottom of __init__ (TODO-369 S2)
+"backend/db/__init__.py" = ["F401", "E402"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
