@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-370: Performance review: app startup, view loading, updates
+Priority: Medium
+Status: Done
+Added: 2026-10-21
+Closed: 2026-10-21
+Description: 2026-10-21 review of app load, view load and update speed. Ten items: (1) checksum pre-filter build at boot, (2) description repeated in /api/collection/prefetch, (3) IndexedDB query-cache rewrite on every fetch, (4) window created only after backend boot, (5) one 3.47 MB bundle with all screens + locales, (6) library actions refetch the 23 MB catalog, (7) fonts, (8) Library text filter per keystroke, (9) pollers while hidden, (10) dormant startup timing log. Plus found during the work: init_db() ran twice at boot.
+Done 2026-10-21 (commits 3ce5eb709, 2f2e3e3d0, 91adfc144). BEFORE -> AFTER, measured on the live DB. COLD START (Electron spawning its own backend, 3 runs each): window appears 1.26 s -> 0.57 s; Home shows data ~1.6 s -> 1.18 s; Collection rows visible 1.77 s -> 1.25 s. BACKEND BOOT: checksum pre-filter build 5.5 s -> 0.46 s (pybloom ScalableBloomFilter -> sorted numpy hash array, ~7 MB), and it ran twice at boot (init_db via reload_taper_aliases) -> once; backend serving at ~0.4 s, pre-filter ready ~6 s -> ~1.0 s after start. ENDPOINTS IN THE BOOT WINDOW (were starved by the GIL-bound filter build): /api/collection/prefetch 9.3 s first / 4.0 s second -> 2.3 s first / 0.53 s; /api/search 2.3 s -> 0.37 s; /api/library/performances 2.1 s -> 0.32 s. Warm prefetch 0.73 s -> 0.53 s. PAYLOAD: /api/collection/prefetch 36 MB -> 10 MB raw, 10 MB -> 1.2 MB gzipped (description dropped, joined client-side from the catalog). RENDERER: startup JS bundle 3.47 MB -> 1.07 MB (26 lazy screens, on-demand locales); IndexedDB snapshot rewritten on every cache event (verified: rewritten during 7 screen switches) -> only when a persisted bulk query changes (verified: not rewritten); wishlist toggle refetched 23 MB catalog + 36 MB prefetch -> one small /api/wishlist call; relocate/remove no longer refetch the catalog. Item 7 (fonts) needed no change: fontsource unicode-range subsets load only when used. Startup timings are logged again to data/logs/startup.log.
+
 TODO-315: TUIT — crawl the full 1,635-recording catalogue and diff it against lb_master
 Priority: Medium
 Status: Done

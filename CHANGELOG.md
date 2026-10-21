@@ -11,6 +11,7 @@ Changed: gui_next ScreenLibrary: text filters read useDeferredValue(query) so ty
 Changed: gui_next activityStore + AppShell: activity and queue-badge pollers pause while the window is hidden, poll once on return
 Fixed: backend/db.py: create_app's reload_taper_aliases() re-ran the whole init_db() (migrations + startup threads, a second checksum pre-filter build); taper-alias helpers now use _ensure_init_db (once per path per process)
 Added: run_backend.py + backend/db.py: data/logs/startup.log is written again (dormant since the PyQt GUI's removal) — imports, create_app phases, serving, pre-filter built. Backend now serves at ~0.4 s, pre-filter ready at ~1.0 s
+Added: TODO-370 (opened + closed) records the before/after timings
 Added: BUG-378 order-dependent test_wtrf_tiebreak failures in full-suite runs (pre-existing)
 
 [2026-10-19] — Parallel backlog sweep: 10 TODOs closed, TODO-319 family guard (off), TUIT/WTRF/trading/GUI features
