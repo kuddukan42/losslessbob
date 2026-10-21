@@ -3395,6 +3395,26 @@ def checksum_in_bloom(chk: str) -> bool:
 # DB paths init_db() has run for in this process (see _ensure_init_db).
 _init_db_done: set[str] = set()
 
+# init_db()'s fire-and-forget background threads, kept so the test suite can
+# join them before swapping the write-queue singleton (see join_init_bg_threads).
+_init_bg_threads: list[threading.Thread] = []
+
+
+def join_init_bg_threads(timeout: float = 10.0) -> None:
+    """Wait for init_db()'s background threads to finish, then forget them.
+
+    The write queue is a process singleton. A straggler thread from one
+    init_db(path_a) that calls get_write_queue() after the queue has been
+    rebound to path_b writes path_a's rows into path_b, and one that opens
+    path_a after its temp dir is deleted fails with "unable to open database
+    file". conftest.py calls this before tearing down each test's queue.
+
+    Args:
+        timeout: Seconds to wait per thread.
+    """
+    while _init_bg_threads:
+        _init_bg_threads.pop().join(timeout)
+
 
 def _ensure_init_db(db_path=None) -> None:
     """Run init_db() unless it already ran for this path in this process.
@@ -3859,35 +3879,35 @@ def init_db(db_path=None):
         """
         try:
             fn()
+        except sqlite3.OperationalError:
+            # A caller that deleted its DB (a test's temp dir) before this
+            # one-shot task ran: nothing left to backfill.
+            if Path(db_path or DB_PATH).parent.exists():
+                raise
+            logger.debug("init_db bg task: %s gone, skipped", db_path)
         finally:
             close_connection(db_path)
+
+    def _start_bg(fn) -> None:
+        t = threading.Thread(target=lambda: _run_bg(fn), daemon=True)
+        _init_bg_threads.append(t)
+        t.start()
 
     # Build bloom filter in background so startup is not blocked.
     # checksum_in_bloom() returns True while _bloom is None, so all lookups
     # fall through to SQLite until the filter is ready.
-    threading.Thread(
-        target=lambda: _run_bg(lambda: _rebuild_bloom_bg(db_path)), daemon=True
-    ).start()
+    _start_bg(lambda: _rebuild_bloom_bg(db_path))
 
     # One-time backfill: populate lb_master if table is empty and checksums exist.
     # wait=False (BUG-262): nothing waits on this thread's result, so don't
     # block it against a write queue a fast-moving caller may be tearing down.
-    threading.Thread(
-        target=lambda: _run_bg(lambda: migrate_lb_master(db_path, wait=False)),
-        daemon=True,
-    ).start()
+    _start_bg(lambda: migrate_lb_master(db_path, wait=False))
 
     # One-time backfill: create a synthetic applied_legacy row for pre-feature imports.
-    threading.Thread(
-        target=lambda: _run_bg(lambda: _bootstrap_flat_file_legacy(db_path)),
-        daemon=True,
-    ).start()
+    _start_bg(lambda: _bootstrap_flat_file_legacy(db_path))
 
     # One-time import: load Dylan performance data from ODS if not yet imported.
-    threading.Thread(
-        target=lambda: _run_bg(lambda: import_dylan_performances(db_path)),
-        daemon=True,
-    ).start()
+    _start_bg(lambda: import_dylan_performances(db_path))
 
     _init_db_done.add(str(db_path or DB_PATH))
 

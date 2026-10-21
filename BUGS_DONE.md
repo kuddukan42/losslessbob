@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-379: CI flaky: init_db background threads bleed into the next test's DB
+Status: Fixed
+File(s): backend/db.py,conftest.py,tests/test_lb_master.py:227
+Reported: 2026-10-21
+Fixed: 2026-10-21
+Root cause: init_db() starts fire-and-forget threads (migrate_lb_master, Dylan import, ...). conftest swaps the write-queue singleton per test, so a straggler from test N submitted its rows through test N+1's queue into test N+1's DB, or opened a deleted temp DB (unable to open database file / disk I/O error).
+Fix: db.py tracks the threads in _init_bg_threads; conftest calls join_init_bg_threads() before each queue teardown; _run_bg drops OperationalError when the DB's dir is gone. Stray thread errors in a full run 38 -> 1; suite 3223 passed.
+
 BUG-375: Undefined CSS token var(--lbb-accent) renders uncoloured
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenFileIntegrity.tsx:135,gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:565,gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:656

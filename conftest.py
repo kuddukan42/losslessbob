@@ -47,6 +47,10 @@ def reset_write_queue():
     import backend.db as _db
     import backend.db_queue as _dq
 
+    # Let a previous test's init_db() background threads drain into its own
+    # queue first, or they write into this test's DB once the queue is rebound.
+    _db.join_init_bg_threads()
+
     # Tear down any leftover queue from a previous test
     if _dq._write_queue is not None:
         try:
@@ -59,6 +63,8 @@ def reset_write_queue():
     _db._local.connections = {}
 
     yield
+
+    _db.join_init_bg_threads()
 
     # Tear down the queue created by this test
     if _dq._write_queue is not None:

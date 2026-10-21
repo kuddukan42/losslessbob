@@ -1,4 +1,5 @@
-[2026-10-21] — Open-bug sweep: BUG-374/375/377/378 closed
+[2026-10-21] — Open-bug sweep: BUG-374/375/377/378 closed; CI flake BUG-379 fixed
+Fixed: backend/db.py, conftest.py: BUG-379 — init_db() background threads are tracked and joined (join_init_bg_threads) before conftest swaps the write-queue singleton, so a straggler can no longer write into the next test's DB; _run_bg skips OperationalError once its DB dir is gone
 Fixed: tests/test_wtrf_tiebreak.py: BUG-378 — TestFindTorrentTie now mocks get_wtrf_rejected_topics; it queried the real DB (a deleted tmp DB in full-suite order)
 Fixed: tools/tapematch/tests/test_commentary_audit.py: BUG-374/377 — cross-clause test expects 0, matching the deliberate "alternate to" = different rule (da990507f); leak guard kept
 Fixed: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx, ScreenFileIntegrity.tsx: BUG-375 — undefined var(--lbb-accent) -> var(--lbb-accent-mid)
