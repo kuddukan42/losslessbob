@@ -102,9 +102,49 @@ create_app(); route map identical to routes_before.txt; full suite 3,273 passed.
 
 ## S2 — db.py → backend/db/ package
 
-Not started. Plan: package with `__init__` re-exporting every public + test-patched name;
-mind `monkeypatch.setattr(database, ...)` targets (a function moved to a submodule and
-called from another submodule won't see a patch on the package attribute).
+Step 0 (f917353f2): `git mv backend/db.py backend/db/__init__.py`. Then families are peeled
+bottom-up, one commit each, with `.debug/todo369/_peel.sh START END MOD "doc" [tests]`
+(wraps `_peel_db.py` + ruff + `_ast_db.py HEAD MOD` + import check + targeted tests;
+`_end.sh` prints the last line before the first re-export block; `_commit.sh MOD "what"`).
+Each submodule imports what it needs `from backend.db import …` (core names) or from a sibling;
+`__init__` re-exports every top-level name of each submodule from its bottom (ruff F401/E402
+ignored for `backend/db/__init__.py` in pyproject).
+
+Rules the peel tool enforces / warns on:
+- a name rebound via `global` (`_TAPER_UNIVERSE`, `_KNOWN_TAPER_KEYS_SORTED`, `_KNOWN_TAPER_RE`,
+  `_bloom*`) must move with every reader; external `db._TAPER_UNIVERSE` readers then need a
+  module `__getattr__` forwarder in `__init__` (re-export would go stale);
+- `DB_PATH` readers stay in `__init__` (tests reassign `db.DB_PATH` on the package);
+- `import_master_db` rebinds `_bloom` → master export/import stays in `__init__` with bloom;
+- `backup_database` / `get_meta` stay in `__init__` (test-patched, called by many families);
+- no import-time use of a peeled name in the rest of `__init__`.
+
+Known order-only failures (also on the pre-peel HEAD): test_lb_master.py::TestImporterIntegration
+and test_refresh.py::test_route_how_to_run_resolves_in_url_map when run in a targeted combo;
+both pass alone and in the full suite.
+
+| # | Submodule | Contents | Commit |
+|---|---|---|---|
+| 1 | olof | Olof surfacing, title normalization / setlist compare | 44901ecfb |
+| 2 | pipeline_cache | pipeline hash/state cache | 59fea83cf |
+| 3 | mounts | collection mounts + routes | f7deec907 |
+| 4 | archive_uploads | archive.org upload history | dcfdaa140 |
+| 5 | curated | curated lists + show picks | d6c047753 |
+| 6 | lb_problems | lb_problems | e8c86e2da |
+| 7 | site_inventory | scrape sessions + site_inventory | b7174b1f6 |
+| 8 | bootlegs | bootleg-CD catalog | c0e599c5a |
+| 9 | aliases | lb_alias + folder_lb_link | 28ccccc64 |
+| 10 | lb_master | status/reconcile/overrides, lb_missing, curator | 85b82181f |
+| 11 | tuit | TUIT mirror | bbd65db30 |
+| 12 | posting | torrents, forum posts, WTRF downloads, rename history | f308704b1 |
+| 13 | integrity | collection integrity monitor + file inventory | 16f4ffe1f |
+| 14 | collection | My Collection, wishlist, dupes, FEAT-03/13 | d650deebf |
+
+Left in `__init__` (6,236 lines after 14): schema/table lists (39–1675), taper parsing /
+aliases / vocabulary / lineage / setlist extraction (1676–3293), core (connection, bloom,
+init_db, meta), checksum lookup, search + performances payload, backup, master export/import.
+Next: performances/search (`search_entries` … `get_distinct_years`), then taper (rebound
+globals!), then schema.
 
 ## Run log
 
