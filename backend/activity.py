@@ -134,8 +134,8 @@ def _get_tapematch_crawl_status() -> dict:
 
 
 def _get_pipeline_run_status() -> dict:
-    from backend import app as _app
-    return _app.get_pipeline_run_status()
+    from backend.routes import pipeline as _pipeline
+    return _pipeline.get_pipeline_run_status()
 
 
 # TODO-306 Phase 2's three JobState-backed workers. Imported lazily (not at

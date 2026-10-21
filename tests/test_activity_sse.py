@@ -49,8 +49,8 @@ def _mock_all_adapters_idle(monkeypatch):
     ]:
         monkeypatch.setattr(mod, fn, (lambda v: (lambda: v))(val))
 
-    from backend import app as app_module
     from backend import spectro_worker
+    from backend.routes import pipeline as pipeline_routes
     from backend.routes import tapematch as tapematch_routes
     monkeypatch.setattr(
         spectro_worker, "get_spectrogram_status",
@@ -63,7 +63,7 @@ def _mock_all_adapters_idle(monkeypatch):
                   "distinct_dates": 0, "log_tail": []},
     )
     monkeypatch.setattr(
-        app_module, "get_pipeline_run_status",
+        pipeline_routes, "get_pipeline_run_status",
         lambda: {"running": False, "folders_total": 0, "folders_done": 0,
                   "in_progress": [], "results": {}, "errors": [], "steps": [],
                   "started_at": None, "cancelled": False},
