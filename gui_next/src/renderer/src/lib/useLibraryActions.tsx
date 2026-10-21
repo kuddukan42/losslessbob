@@ -21,7 +21,7 @@ import { useSpectrogramStore } from './spectrogramStore'
 import { useFolderQueueStore } from './folderQueueStore'
 import { lbDetailUrl } from './lbUrl'
 import { copyText } from './clipboard'
-import { BASE } from './api'
+import { BASE, getJson } from './api'
 import { qbtAddSummary, QbtTrackerPanel } from './qbtBulk'
 
 /** One SSE frame from POST /api/entry/<lb>/seed_wtrf (no topic_url case). */
@@ -106,10 +106,21 @@ export function useLibraryActions(): LibraryActions {
   const [dossierShowId, setDossierShowId] = useState<string | null>(null)
   const showToast = useCallback(
     (msg: string, tone: ToastTone, opts?: ToastOpts) => setToast({ msg, tone, ...opts }), [])
+  // These actions only change my_collection / my_wishlist, which live in the
+  // prefetch — the /api/search catalog (~23 MB) carries no collection state, so
+  // it is left alone.
   const refreshCollection = useCallback(() => {
-    queryClient.invalidateQueries({ queryKey: ['library-catalog'] })
     queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
   }, [queryClient])
+  // A wishlist change only touches prefetch.wishlist: patch that slice from the
+  // small /api/wishlist list instead of refetching the whole prefetch.
+  const refreshWishlist = useCallback(async () => {
+    try {
+      const wishlist = await getJson('/api/wishlist')
+      if (!Array.isArray(wishlist)) throw new Error('wishlist fetch failed')
+      queryClient.setQueryData(['collection-prefetch'], (p: any) => (p ? { ...p, wishlist } : p))
+    } catch { refreshCollection() }
+  }, [queryClient, refreshCollection])
 
   const actionHandlers = useMemo<ActionHandlers>(() => ({
     onOpen: (row) => {
@@ -370,7 +381,7 @@ export function useLibraryActions(): LibraryActions {
           })
           showToast(t('library.toast.wishlistAdded', { lb: row.lb }), 'ok')
         }
-        refreshCollection()
+        void refreshWishlist()
       } catch { showToast(t('library.toast.wishlistFailed'), 'bad') }
     },
     onWishlistAddMany: async (rows) => {
@@ -386,9 +397,9 @@ export function useLibraryActions(): LibraryActions {
         } catch { /* continue */ }
       }
       showToast(t('library.toast.wishlistAddedCount', { count: ok }), ok > 0 ? 'ok' : 'bad')
-      if (ok > 0) refreshCollection()
+      if (ok > 0) void refreshWishlist()
     },
-  }), [t, showToast, refreshCollection, navigate, setActiveAttachLb, addPendingSpectro, addToFolderQueue])
+  }), [t, showToast, refreshCollection, refreshWishlist, navigate, setActiveAttachLb, addPendingSpectro, addToFolderQueue])
 
   const { menu: ctxMenu, openMenu: openCtxMenu, closeMenu: closeCtxMenu } = useActionMenu()
 

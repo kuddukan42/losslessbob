@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 import { useQuery } from '@tanstack/react-query'
@@ -406,6 +406,9 @@ export function ScreenLibrary(): React.JSX.Element {
   const scope    = useLibraryFilterStore(s => s.recScope)
   const setScope = useLibraryFilterStore(s => s.setRecScope)
   const query    = useLibraryFilterStore(s => s.recQuery)
+  // The input binds `query`; the filter reads the deferred copy so typing stays
+  // responsive while the table re-filters behind it.
+  const deferredQuery = useDeferredValue(query)
   const setQuery = useLibraryFilterStore(s => s.setRecQuery)
   const groupByYear       = useLibraryFilterStore(s => s.recGroupByYear)
   const setGroupByYear    = useLibraryFilterStore(s => s.setRecGroupByYear)
@@ -552,11 +555,11 @@ export function ScreenLibrary(): React.JSX.Element {
   // selections pass straight through — no per-render conversion on this hot path.
   const filteredRows = useMemo(
     () => filterRecordingRows(rows, {
-      scope, query,
+      scope, query: deferredQuery,
       decade: activeDecade, status: activeStatus, rating: activeRating,
       source: activeSource, health: activeHealth,
     }),
-    [rows, scope, query, activeDecade, activeStatus, activeRating, activeSource, activeHealth],
+    [rows, scope, deferredQuery, activeDecade, activeStatus, activeRating, activeSource, activeHealth],
   )
 
   // ── Sorting ──────────────────────────────────────────────────────────────
@@ -1428,6 +1431,9 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   // (module scope) instead of useState, so they survive this screen unmounting
   // on navigation and remounting when the user comes back.
   const query    = useLibraryFilterStore(s => s.perfQuery)
+  // The input binds `query`; the filter reads the deferred copy so typing stays
+  // responsive while the table re-filters behind it.
+  const deferredQuery = useDeferredValue(query)
   const setQuery = useLibraryFilterStore(s => s.setPerfQuery)
   const groupByYear       = useLibraryFilterStore(s => s.perfGroupByYear)
   const collapsedYears    = useLibraryFilterStore(s => s.perfCollapsedYears)
@@ -1588,7 +1594,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   }, [performances])
 
   const filteredPerfs = useMemo(() => {
-    const q = query.trim().toLowerCase()
+    const q = deferredQuery.trim().toLowerCase()
     return performances.filter(p => {
       const ru = rollupOf(p)
       if (q) {
@@ -1618,7 +1624,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
       if (perfView === 'taperReview') return p.recordings.some(r => r.taperReview)
       return true
     })
-  }, [performances, query, activeDecade, activeYear, activeCoverage, activeSource, activeRating, perfView])
+  }, [performances, deferredQuery, activeDecade, activeYear, activeCoverage, activeSource, activeRating, perfView])
 
   const sortedPerfs = useMemo(
     () => [...filteredPerfs].sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id)),

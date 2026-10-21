@@ -1,10 +1,16 @@
-[2026-10-21] — Perf review items 1-4: fast checksum pre-filter, slimmer collection prefetch, fewer IDB writes, earlier window
+[2026-10-21] — Perf review: fast checksum pre-filter, slimmer prefetch, fewer IDB writes, earlier window, code-split screens/locales, lighter refreshes
 Changed: backend/db.py: pybloom_live ScalableBloomFilter replaced by _ChecksumFilter (sorted numpy array of str hashes) — rebuild 5.5 s -> 0.46 s of GIL-bound CPU at every boot/import, ~7 MB; misses still definite. Boot-window /api/collection/prefetch 9.3 s -> 2.3 s
 Changed: backend/app.py: /api/collection/prefetch drops entries.description from collection + duplicates rows (a repeat of /api/search) — 36 MB -> 10 MB raw, 10 MB -> 1.2 MB gzipped
 Changed: gui_next ScreenCollection: joins description from the library-catalog query by lb_number
 Changed: requirements.txt + PROJECT.md: pybloom-live removed
 Changed: gui_next App.tsx: query-cache persister skips the IndexedDB write when the persisted bulk queries' hash+dataUpdatedAt are unchanged (was a full ~35 MB structured clone on every fetch on any screen); the IDB read starts at module load
 Changed: gui_next main/index.ts + main.tsx: window is created while Flask boots (renderer awaits backend:ready IPC before mounting) — window ~650 ms sooner on cold start; window opens in the saved theme background (theme:windowBg IPC, userData/window-bg.txt) instead of a fixed light colour
+Changed: gui_next App.tsx + i18n.ts + main.tsx: 26 screens are lazy chunks (Home + Pipeline stay eager) preloaded 5 s after warm-up; non-en locales load on demand (the saved one before first mount) — startup bundle 3.47 MB -> 1.07 MB; cold start Collection rows 1.77 s -> 1.25 s
+Changed: gui_next lib/useLibraryActions.tsx: collection actions no longer refetch the /api/search catalog (it has no collection state); wishlist toggles patch prefetch.wishlist from /api/wishlist instead of refetching the prefetch
+Changed: gui_next ScreenLibrary: text filters read useDeferredValue(query) so typing stays responsive over 16.7k rows
+Changed: gui_next activityStore + AppShell: activity and queue-badge pollers pause while the window is hidden, poll once on return
+Fixed: backend/db.py: create_app's reload_taper_aliases() re-ran the whole init_db() (migrations + startup threads, a second checksum pre-filter build); taper-alias helpers now use _ensure_init_db (once per path per process)
+Added: run_backend.py + backend/db.py: data/logs/startup.log is written again (dormant since the PyQt GUI's removal) — imports, create_app phases, serving, pre-filter built. Backend now serves at ~0.4 s, pre-filter ready at ~1.0 s
 Added: BUG-378 order-dependent test_wtrf_tiebreak failures in full-suite runs (pre-existing)
 
 [2026-10-19] — Parallel backlog sweep: 10 TODOs closed, TODO-319 family guard (off), TUIT/WTRF/trading/GUI features

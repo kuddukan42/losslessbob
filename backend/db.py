@@ -9,6 +9,7 @@ from pathlib import Path
 
 import numpy as np
 
+import backend.startup_log as _startup_log
 from backend.checksum_utils import _APOSTROPHE_TRANS  # reused for title normalization
 from backend.db_queue import get_write_queue, init_write_queue  # DB-09
 from backend.paths import (
@@ -2611,7 +2612,7 @@ def reload_taper_aliases(db_path: str | None = None) -> dict:
     Returns:
         Counts dict: ``{"builtin", "user_add", "user_remove", "merged"}``.
     """
-    init_db(db_path)
+    _ensure_init_db(db_path)
     conn = get_connection(db_path)
     rows = conn.execute(
         "SELECT alias_norm, canonical, action FROM user_taper_aliases WHERE approved = 1"
@@ -2742,7 +2743,7 @@ def add_taper_alias(alias: str, canonical: str, note: str | None = None,
     if not alias_norm or not canonical_norm:
         raise ValueError("alias and canonical must be non-empty")
 
-    init_db(db_path)
+    _ensure_init_db(db_path)
 
     def _do(conn: sqlite3.Connection) -> None:
         conn.execute(
@@ -3378,6 +3379,7 @@ def rebuild_bloom(db_path=None):
 def _rebuild_bloom_bg(db_path=None) -> None:
     try:
         rebuild_bloom(db_path)
+        _startup_log.t("checksum pre-filter built")
     except Exception:
         pass  # Non-fatal; lookups fall through to SQLite until filter is ready
 
@@ -3388,6 +3390,22 @@ def checksum_in_bloom(chk: str) -> bool:
         if _bloom is None:
             return True
         return chk in _bloom
+
+
+# DB paths init_db() has run for in this process (see _ensure_init_db).
+_init_db_done: set[str] = set()
+
+
+def _ensure_init_db(db_path=None) -> None:
+    """Run init_db() unless it already ran for this path in this process.
+
+    For helpers that only need the schema to exist. A full init_db() also
+    re-runs every migration and restarts the startup threads (checksum
+    pre-filter build, backfills), which doubled boot work when create_app()'s
+    reload_taper_aliases() call repeated it.
+    """
+    if str(db_path or DB_PATH) not in _init_db_done:
+        init_db(db_path)
 
 
 def init_db(db_path=None):
@@ -3870,6 +3888,8 @@ def init_db(db_path=None):
         target=lambda: _run_bg(lambda: import_dylan_performances(db_path)),
         daemon=True,
     ).start()
+
+    _init_db_done.add(str(db_path or DB_PATH))
 
 
 def _bootstrap_flat_file_legacy(db_path=None) -> None:

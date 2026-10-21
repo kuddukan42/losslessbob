@@ -20,8 +20,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+# Imported before the heavy backend.app import: its clock starts at import, so
+# data/logs/startup.log measures the whole boot.
+import backend.startup_log as startup_log
 from backend.app import create_app, set_restart_callback
-from backend.paths import ensure_data_dirs
+from backend.paths import LOGS_DIR, ensure_data_dirs
 
 _srv = None
 _restart_flag = False
@@ -51,6 +54,8 @@ def main() -> None:
     port = args.port
 
     ensure_data_dirs()
+    startup_log.init(LOGS_DIR / "startup.log")
+    startup_log.t("run_backend: imports done")
 
     logging.basicConfig(
         level=logging.WARNING,
@@ -70,6 +75,7 @@ def main() -> None:
 
         _srv = make_server("0.0.0.0", port, app, threaded=True)
         print(f"LosslessBob backend ready on :{port}", flush=True)
+        startup_log.t(f"serving on :{port}")
         _srv.serve_forever()
         _srv.server_close()
 

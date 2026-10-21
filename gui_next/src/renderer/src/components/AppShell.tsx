@@ -92,6 +92,7 @@ function Sidebar({
 
   useEffect(() => {
     function pollQueues(): void {
+      if (document.hidden) return // badges refresh on the next tick after return
       fetch(`${BASE}/api/refresh/queues`)
         .then(r => r.ok ? r.json() : Promise.reject())
         .then((d: { queues?: Array<{ queue_id: string; kind: string; count: number | null }> }) => {

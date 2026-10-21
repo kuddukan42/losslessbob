@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, lazy, useEffect, useState } from 'react'
 import { HashRouter, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { QueryClient } from '@tanstack/react-query'
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client'
@@ -7,36 +7,55 @@ import { get as idbGet, set as idbSet, del as idbDel } from 'idb-keyval'
 import { AppShell, AboutDialog } from './components'
 import { useSettingsStore } from './store'
 import { useFolderQueueStore } from './lib/folderQueueStore'
-import i18n from './i18n'
+import i18n, { ensureLanguage } from './i18n'
 import { ScreenHome } from './screens/ScreenHome'
 import { ScreenPipeline } from './screens/ScreenPipeline'
-import { ScreenScanner } from './screens/ScreenScanner'
-import { ScreenSetup } from './screens/ScreenSetup'
-import { ScreenMounts } from './screens/ScreenMounts'
-import { ScreenFileIntegrity } from './screens/ScreenFileIntegrity'
-import { ScreenCollection } from './screens/ScreenCollection'
-import { ScreenSearch } from './screens/ScreenSearch'
-import { ScreenBootlegs } from './screens/ScreenBootlegs'
-import { ScreenThemes } from './screens/ScreenThemes'
-import { ScreenCoverage } from './screens/ScreenCoverage'
-import { ScreenLbdirLedger } from './screens/ScreenLbdirLedger'
-import { ScreenWtrfReview } from './screens/ScreenWtrfReview'
-import { ScreenLbdirSync } from './screens/ScreenLbdirSync'
-import { ScreenMap } from './screens/ScreenMap'
-import { ScreenAttachments } from './screens/ScreenAttachments'
-import { ScreenSpectrograms } from './screens/ScreenSpectrograms'
-import { ScreenDbEditor } from './screens/ScreenDbEditor'
-import { ScreenScraper } from './screens/ScreenScraper'
-import { ScreenTrading } from './screens/ScreenTrading'
-import { ScreenSharing } from './screens/ScreenSharing'
-import { ScreenQuickLookup } from './screens/ScreenQuickLookup'
-import { ScreenLibrary } from './screens/ScreenLibrary'
-import { ScreenTapeMatchCuration } from './screens/ScreenTapeMatchCuration'
-import { ScreenSongs } from './screens/ScreenSongs'
-import { ScreenTimeline } from './screens/ScreenTimeline'
-import { ScreenFingerprint } from './screens/ScreenFingerprint'
-import { ScreenChecksumDisputes } from './screens/ScreenChecksumDisputes'
 import { getJson } from './lib/api'
+
+// Every screen but Home and the kept-alive Pipeline is its own chunk, so the
+// startup bundle no longer parses all ~28 screens. preloadScreens() fetches the
+// chunks once the app is idle, so a first visit doesn't wait on the network/parse.
+const SCREEN_LOADERS: (() => Promise<unknown>)[] = []
+function screen<K extends string>(
+  load: () => Promise<Record<K, React.ComponentType>>, name: K,
+): React.LazyExoticComponent<React.ComponentType> {
+  SCREEN_LOADERS.push(load)
+  return lazy(() => load().then((m) => ({ default: m[name] })))
+}
+function preloadScreens(): void {
+  for (const load of SCREEN_LOADERS) void load().catch(() => {})
+}
+
+const ScreenScanner = screen(() => import('./screens/ScreenScanner'), 'ScreenScanner')
+const ScreenSetup = screen(() => import('./screens/ScreenSetup'), 'ScreenSetup')
+const ScreenMounts = screen(() => import('./screens/ScreenMounts'), 'ScreenMounts')
+const ScreenFileIntegrity = screen(
+  () => import('./screens/ScreenFileIntegrity'), 'ScreenFileIntegrity')
+const ScreenCollection = screen(() => import('./screens/ScreenCollection'), 'ScreenCollection')
+const ScreenSearch = screen(() => import('./screens/ScreenSearch'), 'ScreenSearch')
+const ScreenBootlegs = screen(() => import('./screens/ScreenBootlegs'), 'ScreenBootlegs')
+const ScreenThemes = screen(() => import('./screens/ScreenThemes'), 'ScreenThemes')
+const ScreenCoverage = screen(() => import('./screens/ScreenCoverage'), 'ScreenCoverage')
+const ScreenLbdirLedger = screen(() => import('./screens/ScreenLbdirLedger'), 'ScreenLbdirLedger')
+const ScreenWtrfReview = screen(() => import('./screens/ScreenWtrfReview'), 'ScreenWtrfReview')
+const ScreenLbdirSync = screen(() => import('./screens/ScreenLbdirSync'), 'ScreenLbdirSync')
+const ScreenMap = screen(() => import('./screens/ScreenMap'), 'ScreenMap')
+const ScreenAttachments = screen(() => import('./screens/ScreenAttachments'), 'ScreenAttachments')
+const ScreenSpectrograms = screen(
+  () => import('./screens/ScreenSpectrograms'), 'ScreenSpectrograms')
+const ScreenDbEditor = screen(() => import('./screens/ScreenDbEditor'), 'ScreenDbEditor')
+const ScreenScraper = screen(() => import('./screens/ScreenScraper'), 'ScreenScraper')
+const ScreenTrading = screen(() => import('./screens/ScreenTrading'), 'ScreenTrading')
+const ScreenSharing = screen(() => import('./screens/ScreenSharing'), 'ScreenSharing')
+const ScreenQuickLookup = screen(() => import('./screens/ScreenQuickLookup'), 'ScreenQuickLookup')
+const ScreenLibrary = screen(() => import('./screens/ScreenLibrary'), 'ScreenLibrary')
+const ScreenTapeMatchCuration = screen(
+  () => import('./screens/ScreenTapeMatchCuration'), 'ScreenTapeMatchCuration')
+const ScreenSongs = screen(() => import('./screens/ScreenSongs'), 'ScreenSongs')
+const ScreenTimeline = screen(() => import('./screens/ScreenTimeline'), 'ScreenTimeline')
+const ScreenFingerprint = screen(() => import('./screens/ScreenFingerprint'), 'ScreenFingerprint')
+const ScreenChecksumDisputes = screen(
+  () => import('./screens/ScreenChecksumDisputes'), 'ScreenChecksumDisputes')
 
 // ── React Query client — persisted to IndexedDB (BUG-271) ────────────────────
 // The bulk datasets (collection prefetch, library catalog/performances/badges)
@@ -127,6 +146,7 @@ function warmBulkQueries(): void {
       }
     }
   }, 3000)
+  setTimeout(preloadScreens, 5000)
 }
 
 // ── Last-route restore — reopen the app on the screen it was closed on ───────
@@ -207,7 +227,9 @@ function KeepAlivePipeline() {
 
 export default function App(): React.JSX.Element {
   const language = useSettingsStore((s) => s.language)
-  useEffect(() => { i18n.changeLanguage(language) }, [language])
+  useEffect(() => {
+    void ensureLanguage(language).then(() => i18n.changeLanguage(language))
+  }, [language])
 
   const [showAbout, setShowAbout] = useState(false)
 
@@ -231,6 +253,7 @@ export default function App(): React.JSX.Element {
       {showAbout && <AboutDialog onClose={() => setShowAbout(false)} />}
       <AppShell onAbout={() => setShowAbout(true)}>
         <KeepAlivePipeline />
+        <Suspense fallback={null}>
         <Routes>
           <Route path="/"            element={<ScreenHome />} />
           <Route path="/quicklookup" element={<ScreenQuickLookup />} />
@@ -272,6 +295,7 @@ export default function App(): React.JSX.Element {
           <Route path="/lbdir/ledger" element={<ScreenLbdirLedger />} />
           <Route path="/lbdir/sync"   element={<ScreenLbdirSync />} />
         </Routes>
+        </Suspense>
       </AppShell>
     </HashRouter>
     </PersistQueryClientProvider>

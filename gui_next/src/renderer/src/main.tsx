@@ -23,7 +23,8 @@ import '@fontsource/jetbrains-mono/600.css'
 
 import './index.css'
 import { applyTheme, loadTheme } from './lib/tokens'
-import './i18n'
+import { ensureLanguage } from './i18n'
+import { useSettingsStore } from './store'
 
 // Platform class on <html> for OS-specific rendering tweaks (see index.css).
 document.documentElement.classList.add(`platform-${window.api.platform}`)
@@ -34,8 +35,13 @@ applyTheme(loadTheme())
 // The window opens while Flask is still booting (main process); mount once it
 // answers so the screens' first fetches don't fail. Bundle parse, theme and the
 // IndexedDB cache read (App.tsx) have already overlapped the backend's startup.
+// The saved language's locale chunk loads in the same wait, so a non-English UI
+// doesn't paint in English first.
 const backendReady = window.api?.backendReady?.() ?? Promise.resolve(true)
-void backendReady.catch(() => false).then(() => {
+void Promise.all([
+  backendReady.catch(() => false),
+  ensureLanguage(useSettingsStore.getState().language).catch(() => {}),
+]).then(() => {
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
       <App />

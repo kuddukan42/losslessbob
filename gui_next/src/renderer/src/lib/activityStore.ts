@@ -83,13 +83,23 @@ async function pollOnce(): Promise<void> {
   }
 }
 
+// Paused while the window is hidden (minimised / another workspace); the
+// visibilitychange listener below polls once and resumes on return.
 function scheduleNext(): void {
-  if (activePollers <= 0) return
+  pollTimer = null
+  if (activePollers <= 0 || document.hidden) return
   const delay = useActivityStore.getState().runningCount > 0 ? BUSY_POLL_MS : IDLE_POLL_MS
   pollTimer = setTimeout(() => {
     pollOnce().then(scheduleNext)
   }, delay)
 }
+
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden && activePollers > 0 && pollTimer === null) {
+    // Via a timer so pollTimer is non-null for the whole chain (no double start).
+    pollTimer = setTimeout(() => { pollOnce().then(scheduleNext) }, 0)
+  }
+})
 
 /**
  * Start the shared activity poller. Idempotent across concurrent mount
@@ -102,7 +112,7 @@ function scheduleNext(): void {
 export function startActivityPolling(): () => void {
   activePollers += 1
   if (activePollers === 1) {
-    pollOnce().then(scheduleNext)
+    pollTimer = setTimeout(() => { pollOnce().then(scheduleNext) }, 0)
   }
   return () => {
     activePollers = Math.max(0, activePollers - 1)
