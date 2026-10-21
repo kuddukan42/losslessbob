@@ -88,14 +88,17 @@ recreate from this description if missing. Run them from WT root.
 | 20 | map | Map feature routes | 1866e0e5e |
 | 21 | admin | Admin page | ff56324ca |
 | 22 | mounts | Collection mounts/routes, integrity monitor, disk scanner, file integrity | 19797de74 |
-| 23 | pipeline | Pipeline | |
-| 24 | export | Data Package Export | |
-| 25 | olof | Olof Björner | |
-| 26 | trading | Collection Trading | |
-| 27 | sharing | File Sharing | |
-| 28 | archive_org | Archive.org Upload | |
+| 23 | pipeline | Pipeline (+ app.py's module-level pipeline job / LBDir prefetch state) | 5904196a5 |
+| 24 | export | Data Package Export, site-data release, onboarding status | ee3918245 |
+| 25 | setlists | bobdylan.com, setlist.fm, Olof Björner, setlist fingerprint | 11da938e7 |
+| 26 | trading | Collection Trading | f3258dcec |
+| 27 | sharing | File Sharing (`load_persisted_shares()` stays in create_app) | 016322872 |
+| 28 | archive_org | Archive.org Upload | 771a106f8 |
 
 Grouping is a plan, not a contract — split or merge when a section's shared state says so.
+
+**S1 COMPLETE** (run 6): app.py 13,742 → 230 lines, 28 Blueprints, no routes left in
+create_app(); route map identical to routes_before.txt; full suite 3,273 passed.
 
 ## S2 — db.py → backend/db/ package
 
@@ -117,3 +120,4 @@ called from another submodule won't see a patch on the package attribute).
 - Run 5 (2026-10-20, interactive): domain 20 map (resource paths → .parent.parent). app.py
   3,900 lines. Then 21 admin (restart callback → admin.py, re-exported). app.py 3780 lines.
   Then 22 mounts (pipeline/file/* routes left for 23). app.py 3377 lines. Next is 23 pipeline.
+- Run 6 (2026-10-20, interactive): domains 23–28. Pipeline module state (job dict/lock,
