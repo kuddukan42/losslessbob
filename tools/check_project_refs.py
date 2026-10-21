@@ -4,8 +4,9 @@
 Extracts four kinds of "ground truth" straight from the source tree and checks
 that each item is mentioned *somewhere* in ``PROJECT.md``:
 
-    * Flask route paths   — ``@app.route(...)`` decorators in ``backend/app.py``
-    * SQLite table names  — ``CREATE TABLE [IF NOT EXISTS] ...`` in ``backend/*.py``
+    * Flask route paths   — ``@app.route`` / ``@bp.route`` decorators in ``backend/app.py``
+                            and the ``backend/routes/`` Blueprints
+    * SQLite table names  — ``CREATE TABLE [IF NOT EXISTS] ...`` in ``backend/**/*.py``
     * gui_next screens    — component files in ``gui_next/src/renderer/src/screens/``
     * Backend modules     — ``*.py`` files directly under ``backend/``
 
@@ -32,6 +33,7 @@ logger = logging.getLogger("check_project_refs")
 REPO_ROOT = Path(__file__).resolve().parent.parent
 PROJECT_MD = REPO_ROOT / "PROJECT.md"
 APP_PY = REPO_ROOT / "backend" / "app.py"
+ROUTES_DIR = REPO_ROOT / "backend" / "routes"
 BACKEND_DIR = REPO_ROOT / "backend"
 SCREENS_DIR = REPO_ROOT / "gui_next" / "src" / "renderer" / "src" / "screens"
 
@@ -39,20 +41,21 @@ SCREENS_DIR = REPO_ROOT / "gui_next" / "src" / "renderer" / "src" / "screens"
 # not a feature module) — excluded from the check.
 _MODULE_EXCLUDES = {"__init__.py"}
 
-_ROUTE_RE = re.compile(r'@app\.route\(\s*"([^"]+)"(?:\s*,\s*methods=\[([^\]]*)\])?')
+_ROUTE_RE = re.compile(r'@(?:app|bp)\.route\(\s*"([^"]+)"(?:\s*,\s*methods=\[([^\]]*)\])?')
 _TABLE_RE = re.compile(r"CREATE TABLE(?:\s+IF NOT EXISTS)?\s+([A-Za-z_][A-Za-z0-9_]*)")
 # PROJECT.md route mentions, e.g. `/api/foo/<lb>` or `/api/foo?q=`
 _DOC_ROUTE_RE = re.compile(r"`(/[a-zA-Z0-9_/<>:.\-?=&]+)`")
 
 
 def extract_routes() -> list[tuple[str, str]]:
-    """Extract (method, path) pairs from every ``@app.route`` decorator.
+    """Extract (method, path) pairs from every ``@app.route`` / ``@bp.route`` decorator.
 
     Returns:
         List of (HTTP method, raw Flask route path) tuples, one per method
         the route accepts (a route with two methods yields two entries).
     """
-    src = APP_PY.read_text(encoding="utf-8")
+    files = [APP_PY, *sorted(ROUTES_DIR.glob("*.py"))]
+    src = "\n".join(f.read_text(encoding="utf-8") for f in files)
     pairs: list[tuple[str, str]] = []
     for path, methods in _ROUTE_RE.findall(src):
         if methods:
@@ -67,7 +70,7 @@ def extract_routes() -> list[tuple[str, str]]:
 def extract_tables() -> list[str]:
     """Extract SQLite table names from every ``CREATE TABLE`` statement.
 
-    Scans all ``backend/*.py`` files (schema DDL lives in ``db.py`` but this
+    Scans all ``backend/**/*.py`` files (schema DDL lives in ``db/schema.py`` but this
     stays generic in case a future module defines its own tables). Tables
     ending in ``_new`` are excluded — the repo's migration convention is
     ``CREATE TABLE x_new (...) ... ALTER TABLE x_new RENAME TO x;``, so the
@@ -78,7 +81,7 @@ def extract_tables() -> list[str]:
         Sorted list of unique table names, virtual tables included.
     """
     tables: set[str] = set()
-    for py_file in BACKEND_DIR.glob("*.py"):
+    for py_file in BACKEND_DIR.rglob("*.py"):
         text = py_file.read_text(encoding="utf-8", errors="replace")
         tables.update(_TABLE_RE.findall(text))
     return sorted(name for name in tables if not name.endswith("_new"))
