@@ -1,9 +1,3 @@
-TODO-369: Code review S1-S2: split app.py into Blueprints and db.py into a package
-Priority: Low
-Status: Open
-Added: 2026-10-17
-Description: From instructions/CODE_REVIEW_2026-10-17.md §5 S1/S2. app.py is 13,742 lines with all 388 routes and 22 thread spawns, no Blueprints; db.py is 10,754 lines. Split app.py by domain (routes/collection, tapematch, dossier, scrape, ...) one Blueprint per commit, zero behaviour change; split db.py into backend/db/ by table family re-exporting from __init__ so callers don't change. Do AFTER the §2, §3a and §4 removal TODOs have shrunk both files.
-
 TODO-355: Refile 1,293 public LBs out of PRIVATE LB + 848 misfiled collection folders
 Priority: Medium
 Status: Open

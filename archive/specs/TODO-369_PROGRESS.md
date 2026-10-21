@@ -140,11 +140,22 @@ both pass alone and in the full suite.
 | 13 | integrity | collection integrity monitor + file inventory | 16f4ffe1f |
 | 14 | collection | My Collection, wishlist, dupes, FEAT-03/13 | d650deebf |
 
-Left in `__init__` (6,236 lines after 14): schema/table lists (39–1675), taper parsing /
-aliases / vocabulary / lineage / setlist extraction (1676–3293), core (connection, bloom,
-init_db, meta), checksum lookup, search + performances payload, backup, master export/import.
-Next: performances/search (`search_entries` … `get_distinct_years`), then taper (rebound
-globals!), then schema.
+| 15 | library | search, entry lookups, library performances payload | 61ff4a894 |
+| 16 | taper | taper extraction, aliases, vocabulary, lineage, run records, setlist extraction | 9b6297d24 |
+| 17 | schema | SCHEMA_SQL + master/user ownership model | 0b2fa1495 |
+| 18 | map_data | get_map_data | 5c1038ac4 |
+| 19 | dylan_performances | dylan_performances import + date lookup | 1d46102f2 |
+
+**S2 COMPLETE** (run 7): `backend/db/__init__.py` 10,688 → 2,096 lines (~1,800 code +
+~300 re-export lines), 19 submodules. What stays in `__init__` is the coupled core: connection
+pool, bloom filter (`import_master_db` rebinds `_bloom`; `lookup_checksums` reads it), init_db +
+migrations, meta, stats, checksum parsing/lookup, entry changes, backup, master export/import.
+Route map identical; full suite 3,273 passed. `tools/check_project_refs.py` now scans
+`backend/routes/` and `backend/**` (it had seen 0 routes since S1).
+
+Taper rebound globals: not re-exported; `backend.db.__getattr__` forwards them (PEP 562).
+The bottom re-export block is isort-sorted by ruff, so siblings import each other directly,
+never through `backend.db`.
 
 ## Run log
 
@@ -161,3 +172,4 @@ globals!), then schema.
   3,900 lines. Then 21 admin (restart callback → admin.py, re-exported). app.py 3780 lines.
   Then 22 mounts (pipeline/file/* routes left for 23). app.py 3377 lines. Next is 23 pipeline.
 - Run 6 (2026-10-20, interactive): domains 23–28. Pipeline module state (job dict/lock,
+- Run 7 (2026-10-20, interactive): S2 step 0 + domains 1–19; S2 complete.

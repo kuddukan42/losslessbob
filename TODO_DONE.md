@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-369: Code review S1-S2: split app.py into Blueprints and db.py into a package
+Priority: Low
+Status: Done
+Added: 2026-10-17
+Closed: 2026-10-20
+Description: From instructions/CODE_REVIEW_2026-10-17.md §5 S1/S2. app.py is 13,742 lines with all 388 routes and 22 thread spawns, no Blueprints; db.py is 10,754 lines. Split app.py by domain (routes/collection, tapematch, dossier, scrape, ...) one Blueprint per commit, zero behaviour change; split db.py into backend/db/ by table family re-exporting from __init__ so callers don't change. Do AFTER the §2, §3a and §4 removal TODOs have shrunk both files.
+S1: app.py 13,742 → 230 lines, 28 Blueprints in backend/routes/ (route map identical). S2: backend/db.py 10,688 lines → backend/db/ package, 19 submodules re-exported from __init__ (2,096 lines: connection/bloom/init_db/lookup/master-io core). Full suite 3,273 passed. Tracker: archive/specs/TODO-369_PROGRESS.md.
+
 TODO-315: TUIT — crawl the full 1,635-recording catalogue and diff it against lb_master
 Priority: Medium
 Status: Done

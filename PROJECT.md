@@ -70,7 +70,13 @@ losslessbob/
 │   └── release.yml            # Tag-triggered release build (Windows/Linux/Docker) — unchanged by TODO-261
 ├── PROJECT.md                # This file
 ├── backend/
-│   ├── app.py                # Flask REST API — all routes
+│   ├── app.py                # Flask app factory: create_app() registers the routes/ Blueprints (TODO-369 S1)
+│   ├── routes/               # 30 Flask Blueprints, one per domain (dbedit, core, entries, collection, lbdir, wtrf, lb_master, tapematch, dossier, pipeline, …); _state.py holds process_start_time (TODO-369 S1)
+│   ├── folder_lb.py          # Folder → LB / lbdir-manifest lookup helpers shared by the LBDir routes (TODO-369)
+│   ├── github_upload.py      # GitHub release-asset upload with progress events (master publish + data package export, TODO-369)
+│   ├── lbdir_status.py       # LBDIR verify verdict helpers + cached per-LB status (forum gate, pipeline rows; TODO-369)
+│   ├── scrape_worker.py      # Single scrape / download-pages worker thread guard (TODO-369)
+│   ├── spectro_worker.py     # Spectrogram batch worker state + thread body (TODO-369)
 │   ├── activity.py           # TODO-262: unified activity aggregator — JOB_ADAPTERS table + snapshot() (/api/activity/jobs), SSE tee registry track()
 │   ├── platform_utils.py     # Cross-platform process helpers (open_in_vlc)
 │   ├── resources/
@@ -85,7 +91,19 @@ losslessbob/
 │   ├── taper_review.html     # Taper curation console (served at /taper-review) — Queue/Entries/Tapers tabs, bulk decisions, decision history, alias admin (TODO-312)
 │   ├── taper_curation.html   # Taper curation workbench (served at /taper-curation) — all sources per entry side by side, isolated-text and per-taper tabs (TODO-327)
 │   ├── qc_review.html        # QC review console (served at /qc-review, experimental) — Findings workbench + Queue tab (one-card, keyboard-driven, curator-gated writes) over qc_findings (TODO-342 C12)
-│   ├── db.py                 # SQLite layer, checksum parsing, search
+│   ├── db/                   # SQLite layer package (TODO-369 S2); `import backend.db` re-exports every submodule name
+│   │   ├── __init__.py       # Core: connection pool, bloom filter, init_db + migrations, meta, checksum parse/lookup, backup, master export/import
+│   │   ├── schema.py         # SCHEMA_SQL + MASTER/USER table ownership model
+│   │   ├── taper.py          # Taper/source extraction, taper aliases + vocabulary, lineage refs, run records (rebound globals forwarded by __init__.__getattr__)
+│   │   ├── library.py        # Search, entry lookups, library performances payload + categories
+│   │   ├── collection.py     # My Collection, wishlist, duplicates, personal metadata, integrity events
+│   │   ├── integrity.py      # Collection integrity monitor + file-level integrity inventory
+│   │   ├── posting.py        # Torrents, forum posts, WTRF downloads, rename history
+│   │   ├── tuit.py           # TUIT tracker mirror tables
+│   │   ├── lb_master.py      # lb_master status/reconcile/overrides, lb_missing, curator flag
+│   │   ├── aliases.py        # lb_alias + folder_lb_link
+│   │   ├── bootlegs.py / site_inventory.py / lb_problems.py / curated.py / archive_uploads.py / mounts.py
+│   │   └── pipeline_cache.py / olof.py / map_data.py / dylan_performances.py
 │   ├── db_queue.py           # DB-09: DatabaseWriteQueue — single writer thread, serialises all writes
 │   ├── paths.py              # Central path resolver: normal / PyInstaller-frozen / portable-ZIP builds; SITE_* dirs. `LOSSLESSBOB_APP_ROOT` env var overrides APP_ROOT in the unfrozen branch (CI/cloud-agent/fixture use, TODO-261) — unset behavior unchanged
 │   ├── version.py            # App VERSION string, read from the VERSION file at APP_ROOT
@@ -2433,7 +2451,7 @@ page), so every client can assume JSON on error regardless of which route it cal
 
 ---
 
-## Backend: Database Layer (`backend/db.py`)
+## Backend: Database Layer (`backend/db/` package)
 
 ### Checksum parsing (`parse_checksum_text`)
 Regex-based parser supporting three formats:
