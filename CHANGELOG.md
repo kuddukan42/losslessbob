@@ -1,8 +1,10 @@
-[2026-10-21] — Perf review items 1-2: fast checksum pre-filter, slimmer collection prefetch
+[2026-10-21] — Perf review items 1-4: fast checksum pre-filter, slimmer collection prefetch, fewer IDB writes, earlier window
 Changed: backend/db.py: pybloom_live ScalableBloomFilter replaced by _ChecksumFilter (sorted numpy array of str hashes) — rebuild 5.5 s -> 0.46 s of GIL-bound CPU at every boot/import, ~7 MB; misses still definite. Boot-window /api/collection/prefetch 9.3 s -> 2.3 s
 Changed: backend/app.py: /api/collection/prefetch drops entries.description from collection + duplicates rows (a repeat of /api/search) — 36 MB -> 10 MB raw, 10 MB -> 1.2 MB gzipped
 Changed: gui_next ScreenCollection: joins description from the library-catalog query by lb_number
 Changed: requirements.txt + PROJECT.md: pybloom-live removed
+Changed: gui_next App.tsx: query-cache persister skips the IndexedDB write when the persisted bulk queries' hash+dataUpdatedAt are unchanged (was a full ~35 MB structured clone on every fetch on any screen); the IDB read starts at module load
+Changed: gui_next main/index.ts + main.tsx: window is created while Flask boots (renderer awaits backend:ready IPC before mounting) — window ~650 ms sooner on cold start; window opens in the saved theme background (theme:windowBg IPC, userData/window-bg.txt) instead of a fixed light colour
 Added: BUG-378 order-dependent test_wtrf_tiebreak failures in full-suite runs (pre-existing)
 
 [2026-10-19] — Parallel backlog sweep: 10 TODOs closed, TODO-319 family guard (off), TUIT/WTRF/trading/GUI features

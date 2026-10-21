@@ -31,8 +31,14 @@ document.documentElement.classList.add(`platform-${window.api.platform}`)
 // Apply persisted (or default) theme before React mounts to avoid FOUC.
 applyTheme(loadTheme())
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+// The window opens while Flask is still booting (main process); mount once it
+// answers so the screens' first fetches don't fail. Bundle parse, theme and the
+// IndexedDB cache read (App.tsx) have already overlapped the backend's startup.
+const backendReady = window.api?.backendReady?.() ?? Promise.resolve(true)
+void backendReady.catch(() => false).then(() => {
+  ReactDOM.createRoot(document.getElementById('root')!).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  )
+})

@@ -55,10 +55,41 @@ const queryClient = new QueryClient({
 // idb-keyval persister — stores the dehydrated client via structured clone
 // (no JSON.stringify of a ~60 MB string on the main thread).
 const IDB_CACHE_KEY = 'lbb-query-cache'
+
+// Started at module load — before React mounts, which waits on the backend
+// (main.tsx) — so the IndexedDB read overlaps Flask's startup.
+let pendingRestore: Promise<PersistedClient | undefined> | null =
+  idbGet<PersistedClient>(IDB_CACHE_KEY).catch(() => undefined)
+
+// The provider persists on every cache event (any fetch on any screen), and each
+// write structured-clones the whole bulk snapshot on the main thread. Only the
+// PERSISTED_KEYS queries are dehydrated, so their hash+dataUpdatedAt identify the
+// snapshot: skip the write when it matches what IndexedDB already holds.
+let lastPersistedSig: string | null = null
+function snapshotSig(client: PersistedClient): string {
+  return client.clientState.queries
+    .map((q) => `${q.queryHash}:${q.state.dataUpdatedAt}`)
+    .join('|')
+}
+
 const idbPersister: Persister = {
-  persistClient: (client: PersistedClient) => idbSet(IDB_CACHE_KEY, client),
-  restoreClient: () => idbGet<PersistedClient>(IDB_CACHE_KEY),
-  removeClient: () => idbDel(IDB_CACHE_KEY),
+  persistClient: async (client: PersistedClient) => {
+    const sig = snapshotSig(client)
+    if (sig === lastPersistedSig) return
+    lastPersistedSig = sig
+    await idbSet(IDB_CACHE_KEY, client)
+  },
+  restoreClient: async () => {
+    const restore = pendingRestore ?? idbGet<PersistedClient>(IDB_CACHE_KEY)
+    pendingRestore = null
+    const client = await restore
+    if (client) lastPersistedSig = snapshotSig(client)
+    return client
+  },
+  removeClient: async () => {
+    lastPersistedSig = null
+    await idbDel(IDB_CACHE_KEY)
+  },
 }
 
 // Only the bulk datasets are worth the disk round-trip; everything else

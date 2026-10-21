@@ -8,6 +8,8 @@ interface Window {
     flaskPort:       number
     flaskBase:       string
     platform:        NodeJS.Platform
+    backendReady:    () => Promise<boolean>
+    setWindowBg:     (color: string) => void
     pickFolders:     () => Promise<string[]>
     pickDir:         () => Promise<string | null>
     pathForFile:     (file: File) => string

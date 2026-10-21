@@ -6,6 +6,8 @@ contextBridge.exposeInMainWorld('api', {
   flaskPort:       FLASK_PORT,
   flaskBase:       `http://127.0.0.1:${FLASK_PORT}`,
   platform:        process.platform,
+  backendReady:    (): Promise<boolean> => ipcRenderer.invoke('backend:ready'),
+  setWindowBg:     (color: string): void => ipcRenderer.send('theme:windowBg', color),
   pickFolders:     (): Promise<string[]>      => ipcRenderer.invoke('dialog:pickFolders'),
   pickDir:         (): Promise<string | null> => ipcRenderer.invoke('dialog:pickDir'),
   // File.path was removed in Electron 32 — drag-and-drop needs this to get a real path.

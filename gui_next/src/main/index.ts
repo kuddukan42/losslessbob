@@ -3,7 +3,7 @@ import { join } from 'path'
 import { tmpdir, homedir } from 'os'
 import { spawn, ChildProcess, execSync } from 'child_process'
 import { createConnection } from 'net'
-import { watch } from 'fs'
+import { watch, readFileSync } from 'fs'
 import { writeFile, readFile, unlink, mkdir, readdir } from 'fs/promises'
 
 const FLASK_PORT = 5174
@@ -23,6 +23,26 @@ const PIPELINE_INBOX = join(LB_STATE_DIR, 'pipeline-inbox')
 const GUI_PID_FILE   = join(LB_STATE_DIR, 'gui.pid')
 
 let mainWindow: BrowserWindow | null = null
+
+// Resolves once Flask answers on FLASK_PORT (false if it never did). The window is
+// created alongside the backend boot rather than after it, so bundle parse and the
+// IndexedDB cache restore overlap Flask startup; the renderer awaits this before
+// mounting React (see renderer main.tsx).
+let backendReady: Promise<boolean> = Promise.resolve(false)
+
+// The theme's background colour, written by the renderer on every applyTheme, so
+// the window opens in the user's theme instead of flashing the light default.
+const DEFAULT_WINDOW_BG = '#faf8f3'
+const HEX_COLOR = /^#[0-9a-f]{6}$/i
+const windowBgFile = (): string => join(app.getPath('userData'), 'window-bg.txt')
+
+function savedWindowBg(): string {
+  try {
+    const v = readFileSync(windowBgFile(), 'utf8').trim()
+    if (HEX_COLOR.test(v)) return v
+  } catch { /* first run — no saved colour */ }
+  return DEFAULT_WINDOW_BG
+}
 let rendererReady = false
 let pendingFolders: string[] = []
 
@@ -216,7 +236,7 @@ function createWindow(): void {
     minHeight: 768,
     show: false,
     title: 'LosslessBob',
-    backgroundColor: '#faf8f3',
+    backgroundColor: savedWindowBg(),
     icon: iconPath,
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
@@ -272,6 +292,14 @@ ipcMain.handle('clipboard:write', (_event, text: string) => {
 
 // Called once by the renderer on mount: marks it ready for pushed batches and
 // returns anything that arrived before it could listen.
+ipcMain.handle('backend:ready', () => backendReady)
+
+ipcMain.on('theme:windowBg', (_e, color: string) => {
+  if (typeof color === 'string' && HEX_COLOR.test(color)) {
+    writeFile(windowBgFile(), color, 'utf8').catch(() => {})
+  }
+})
+
 ipcMain.handle('pipeline:consumePending', () => {
   rendererReady = true
   const paths = pendingFolders
@@ -349,9 +377,9 @@ ipcMain.handle('dialog:pickAndReadFiles', async (_event, opts?: { title?: string
 })
 
 app.whenReady().then(async () => {
-  await ensureBackend()
-  await waitForPort(FLASK_PORT)
+  backendReady = ensureBackend().then(() => waitForPort(FLASK_PORT)).catch(() => false)
   createWindow()
+  await backendReady
   await mkdir(LB_STATE_DIR, { recursive: true }).catch(() => {})
   // The sender script checks this PID to decide whether to launch the app.
   await writeFile(GUI_PID_FILE, String(process.pid), 'utf8').catch(() => {})

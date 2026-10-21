@@ -308,6 +308,19 @@ export function applyTheme({ mode, accent, density, font, fontSize, customTokens
   if (highContrast && resolved === 'dark') root.setAttribute('data-high-contrast', 'true');
   else root.removeAttribute('data-high-contrast');
   root.style.colorScheme = resolved;
+  reportWindowBg();
+}
+
+// Hand the resolved page background to the main process, which opens the next
+// launch's window in it (no light flash before the theme applies). Read back
+// from computed style so any CSS colour form the tokens use comes out as rgb().
+function reportWindowBg(): void {
+  if (!window.api?.setWindowBg) return; // renderer-only dev/screenshot mode
+  const rgb = getComputedStyle(document.body ?? document.documentElement).backgroundColor;
+  const m = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/);
+  if (!m || (m[4] !== undefined && Number(m[4]) === 0)) return;
+  const hex = '#' + [m[1], m[2], m[3]].map((n) => Number(n).toString(16).padStart(2, '0')).join('');
+  window.api.setWindowBg(hex);
 }
 
 export function loadTheme(): ThemeOptions {
