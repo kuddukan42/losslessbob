@@ -5,8 +5,8 @@ argument-hint: [batch size, default 5]
 
 Process the next batch of missing tapematch `analysis.md` write-ups.
 
-Subagents can do the writing step; use them to run the batch on a cheaper model than
-the orchestrating session. The constraint
+Subagents can do the writing step; spawn them with `model: "sonnet"` so the batch runs
+on a cheaper model than the orchestrating session. The constraint
 is `next_batch.py`: it is stateless and only ever reports dirs lacking `analysis.md`, so
 concurrent agents each calling it get handed the **same** dirs. To fan out, the parent
 session must do steps 1–2 once, partition the dirs into disjoint per-agent lists, and
