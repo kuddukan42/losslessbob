@@ -1,3 +1,11 @@
+BUG-378: test_wtrf_tiebreak TestFindTorrentTie fails only in full-suite runs (order-dependent)
+Status: Open
+File(s): tests/test_wtrf_tiebreak.py
+Reported: 2026-10-21
+Description: test_tie_resolved_to_earliest and test_unresolvable_tie_records_candidates fail in a full serial pytest run on 876689938 and after; pass when the file runs alone. Likely state leaking from an earlier test (module global / shared DB / monkeypatch). Found 2026-10-21 during perf review.
+Root cause: Unknown
+Fix: —
+
 BUG-377: test_commentary_audit cross-clause test fails on base
 Status: Open
 File(s): tools/tapematch/tests/test_commentary_audit.py

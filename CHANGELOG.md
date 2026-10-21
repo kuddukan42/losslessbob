@@ -1,3 +1,10 @@
+[2026-10-21] — Perf review items 1-2: fast checksum pre-filter, slimmer collection prefetch
+Changed: backend/db.py: pybloom_live ScalableBloomFilter replaced by _ChecksumFilter (sorted numpy array of str hashes) — rebuild 5.5 s -> 0.46 s of GIL-bound CPU at every boot/import, ~7 MB; misses still definite. Boot-window /api/collection/prefetch 9.3 s -> 2.3 s
+Changed: backend/app.py: /api/collection/prefetch drops entries.description from collection + duplicates rows (a repeat of /api/search) — 36 MB -> 10 MB raw, 10 MB -> 1.2 MB gzipped
+Changed: gui_next ScreenCollection: joins description from the library-catalog query by lb_number
+Changed: requirements.txt + PROJECT.md: pybloom-live removed
+Added: BUG-378 order-dependent test_wtrf_tiebreak failures in full-suite runs (pre-existing)
+
 [2026-10-19] — Parallel backlog sweep: 10 TODOs closed, TODO-319 family guard (off), TUIT/WTRF/trading/GUI features
 Added: gui_next AppShell/ScreenSetup/store: curator mode hidden behind Ctrl+Shift+Alt+C (or 7 clicks on the Master version label), Curator card in Setup; collapsible icon-only sidebar, forced at <=900px (TODO-160, TODO-178)
 Added: backend/resources/map.html + ScreenMap: travel-trail view — date-ordered polyline coloured by decade, year range, gap break (TODO-085)
