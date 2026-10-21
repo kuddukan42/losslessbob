@@ -562,7 +562,7 @@ function TaperPanel({
                   <span style={{
                     fontSize: 'var(--lbb-fs-9)', fontWeight: 700, letterSpacing: 0.04,
                     textTransform: 'uppercase',
-                    color: e.origin === 'user' ? 'var(--lbb-accent)' : 'var(--lbb-fg3)',
+                    color: e.origin === 'user' ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)',
                   }}>
                     {e.origin === 'user' ? t('dbeditor.tapers.originUser') : t('dbeditor.tapers.originBuiltin')}
                   </span>
@@ -653,7 +653,7 @@ function TaperPanel({
                   recomputeSteps[s] === 'done' ? 'var(--lbb-ok-bar)'
                     : recomputeSteps[s] === 'error' ? 'var(--lbb-bad-fg)'
                       : recomputeSteps[s] === 'skipped' ? 'var(--lbb-fg3)'
-                        : 'var(--lbb-accent)',
+                        : 'var(--lbb-accent-mid)',
               }} />
               <span style={{ color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>{s}</span>
             </div>

@@ -2,6 +2,38 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-375: Undefined CSS token var(--lbb-accent) renders uncoloured
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenFileIntegrity.tsx:135,gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:565,gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:656
+Reported: 2026-10-18
+Fixed: 2026-10-21
+Root cause: tokens.ts only sets --lbb-accent-{mid,soft,bg,line}; three styles referenced bare --lbb-accent.
+Fix: Switched the 3 usages to var(--lbb-accent-mid).
+
+BUG-377: test_commentary_audit cross-clause test fails on base
+Status: Fixed
+File(s): tools/tapematch/tests/test_commentary_audit.py
+Reported: 2026-10-19
+Fixed: 2026-10-21
+Root cause: Duplicate of BUG-374 (same test, same cause).
+Fix: Fixed with BUG-374.
+
+BUG-374: tapematch test_cross_clause_same_keyword fails: 'alternate recording to' now reads as 0, test expects None
+Status: Fixed
+File(s): tools/tapematch/tests/test_commentary_audit.py:34,tools/tapematch/tapematch_session.py
+Reported: 2026-10-17
+Fixed: 2026-10-21
+Root cause: Intentional parser change, not a regression: golden review 3 (da990507f) added 'alternat(e|ive) (recording )?to' to _DIFF_RE, so 'alternate recording to LB-0680' now correctly reads as different (0).
+Fix: Test now asserts same == 0 (still guards that the LB-3914 'close eac match' clause does not leak in as same=1); docstring updated. tapematch tests 544 pass.
+
+BUG-378: test_wtrf_tiebreak TestFindTorrentTie fails only in full-suite runs (order-dependent)
+Status: Fixed
+File(s): tests/test_wtrf_tiebreak.py
+Reported: 2026-10-21
+Fixed: 2026-10-21
+Root cause: TestFindTorrentTie left db.get_wtrf_rejected_topics unmocked, so find_torrent_for_lb queried the real DB_PATH: the live DB alone, a deleted tmp DB once an earlier test had redirected it (OperationalError: unable to open database file).
+Fix: Monkeypatch get_wtrf_rejected_topics in TestFindTorrentTie._run; the test no longer touches any DB. Full suite 3223 passed.
+
 BUG-376: Trading export/compare 500: selected date_str/location/lb_status from my_collection
 Status: Fixed
 File(s): backend/app.py

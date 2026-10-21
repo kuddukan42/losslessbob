@@ -132,7 +132,7 @@ function ScanProgressBar({ p }: { p: ScanProgress }) {
         <div style={{
           height: '100%',
           width: pct !== null ? `${pct}%` : '40%',
-          background: 'var(--lbb-accent)',
+          background: 'var(--lbb-accent-mid)',
           borderRadius: 3,
           transition: 'width .4s ease',
           // Indeterminate shimmer when total is unknown (a full tree walk).

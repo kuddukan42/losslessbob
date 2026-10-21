@@ -1,3 +1,8 @@
+[2026-10-21] — Open-bug sweep: BUG-374/375/377/378 closed
+Fixed: tests/test_wtrf_tiebreak.py: BUG-378 — TestFindTorrentTie now mocks get_wtrf_rejected_topics; it queried the real DB (a deleted tmp DB in full-suite order)
+Fixed: tools/tapematch/tests/test_commentary_audit.py: BUG-374/377 — cross-clause test expects 0, matching the deliberate "alternate to" = different rule (da990507f); leak guard kept
+Fixed: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx, ScreenFileIntegrity.tsx: BUG-375 — undefined var(--lbb-accent) -> var(--lbb-accent-mid)
+
 [2026-10-21] — Perf review: fast checksum pre-filter, slimmer prefetch, fewer IDB writes, earlier window, code-split screens/locales, lighter refreshes
 Changed: backend/db.py: pybloom_live ScalableBloomFilter replaced by _ChecksumFilter (sorted numpy array of str hashes) — rebuild 5.5 s -> 0.46 s of GIL-bound CPU at every boot/import, ~7 MB; misses still definite. Boot-window /api/collection/prefetch 9.3 s -> 2.3 s
 Changed: backend/app.py: /api/collection/prefetch drops entries.description from collection + duplicates rows (a repeat of /api/search) — 36 MB -> 10 MB raw, 10 MB -> 1.2 MB gzipped

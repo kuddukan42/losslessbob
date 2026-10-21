@@ -34,9 +34,9 @@ import tapematch_session as sess  # noqa: E402
 def test_cross_clause_same_keyword_does_not_leak_to_unrelated_lb() -> None:
     """1984-06-04 false positive: LB-03917 text, checked against LB-0680.
 
-    The clause naming LB-0680 says "alternate recording to" (no same/
-    different keyword match at all); the "close eac match" a few clauses
-    later is about LB-3914, not LB-0680, and must not bleed in.
+    The clause naming LB-0680 says "alternate recording to", which _DIFF_RE
+    reads as different (golden review 3, da990507f); the "close eac match" a
+    few clauses later is about LB-3914, not LB-0680, and must not bleed in.
     """
     text = (
         'version "a"; alternate recording to LB-0680 & LB-1785, from 1st gen '
@@ -45,7 +45,7 @@ def test_cross_clause_same_keyword_does_not_leak_to_unrelated_lb() -> None:
         "very good sound"
     )
     same, _ = sess._relationship_from_text(text, 680)
-    assert same is None
+    assert same == 0
 
 
 def test_cross_clause_diff_keyword_does_not_leak_to_unrelated_lb() -> None:

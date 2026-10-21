@@ -113,6 +113,7 @@ class TestFindTorrentTie:
         monkeypatch.setattr(db, "get_entry",
                             lambda lb, db_path=None: {"entry": entry, "checksums": checks})
         monkeypatch.setattr(db, "lookup_checksum_owners", lambda h, db_path=None: {})
+        monkeypatch.setattr(db, "get_wtrf_rejected_topics", lambda lb, db_path=None: set())
         monkeypatch.setattr(ws, "get_credentials", lambda svc: ("u", "p"))
         monkeypatch.setattr(ws, "_get_session", lambda u, p: object())
         monkeypatch.setattr(ws, "_search_board",
