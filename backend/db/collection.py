@@ -3,7 +3,8 @@
 Split from backend.db (TODO-369 S2).
 """
 
-from backend.db import _year_from_date_str, get_connection
+from backend.db import get_connection
+from backend.db.library import _year_from_date_str
 from backend.db.pipeline_cache import _norm_folder
 from backend.db_queue import get_write_queue
 
