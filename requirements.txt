@@ -1,5 +1,4 @@
 # Core
-pybloom-live==4.0.0
 flask==3.0.3
 flask-cors==4.0.1
 requests==2.32.3
@@ -12,8 +11,7 @@ keyring==25.7.0
 watchdog==4.0.1
 
 # Fast non-cryptographic hashing (file-level integrity / bit-rot scans, TODO-267).
-# Was previously present only as a transitive dep of pybloom_live — pinned
-# directly now that backend/file_integrity.py imports it.
+# Imported directly by backend/file_integrity.py.
 xxhash==3.7.0
 
 waitress==3.0.0

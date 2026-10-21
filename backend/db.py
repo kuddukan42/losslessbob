@@ -4,9 +4,10 @@ import re
 import sqlite3
 import threading
 import time
+from collections.abc import Iterable
 from pathlib import Path
 
-from pybloom_live import ScalableBloomFilter as _SBF
+import numpy as np
 
 from backend.checksum_utils import _APOSTROPHE_TRANS  # reused for title normalization
 from backend.db_queue import get_write_queue, init_write_queue  # DB-09
@@ -28,8 +29,10 @@ _local = threading.local()
 # transaction-level, and must run on the same connection as the DML).
 _write_lock = threading.RLock()
 
-# --- Bloom filter for fast NOT-FOUND short-circuit (DB-07) ---
-_bloom: _SBF | None = None
+# --- Checksum pre-filter for fast NOT-FOUND short-circuit (DB-07) ---
+# Still named "bloom" for its callers; it is now a sorted hash array (see
+# _ChecksumFilter) — the pybloom_live filter cost ~5.5 s of GIL-bound CPU per build.
+_bloom: "_ChecksumFilter | None" = None
 _bloom_db_path: str | None = None  # path the filter was built from (BUG-187)
 _bloom_count: int | None = None  # checksums row count the filter was built from (BUG-261)
 _bloom_lock = threading.Lock()
@@ -3331,15 +3334,41 @@ def close_connection(db_path) -> None:
         del cache[path]
 
 
+class _ChecksumFilter:
+    """Membership pre-filter over checksum strings (DB-07).
+
+    Holds the sorted, de-duplicated 64-bit ``hash()`` of every checksum in a
+    numpy array (~8 bytes per row; a ``set`` of the strings is ~10x that).
+    ``hash()`` is only stable within one process, which is all this in-memory
+    filter needs. A hash collision can only produce a false positive, and those
+    fall through to SQLite, so a miss is always a definite NOT FOUND.
+
+    Args:
+        checksums: Every checksum string to include.
+    """
+
+    def __init__(self, checksums: Iterable[str]) -> None:
+        self._hashes = np.unique(np.fromiter((hash(c) for c in checksums), dtype=np.int64))
+
+    def __contains__(self, chk: object) -> bool:
+        h = hash(chk)
+        i = int(np.searchsorted(self._hashes, h))
+        return i < len(self._hashes) and int(self._hashes[i]) == h
+
+
 def rebuild_bloom(db_path=None):
-    """Load all checksums into an in-process bloom filter. Call after import/init."""
+    """Load all checksums into the in-process pre-filter. Call after import/init."""
     global _bloom, _bloom_db_path, _bloom_count
-    bf = _SBF(mode=_SBF.LARGE_SET_GROWTH, error_rate=0.01)
     conn = get_connection(db_path)
     count = 0
-    for row in conn.execute("SELECT checksum FROM checksums"):
-        bf.add(row[0])
-        count += 1
+
+    def _rows() -> Iterable[str]:
+        nonlocal count
+        for row in conn.execute("SELECT checksum FROM checksums"):
+            count += 1
+            yield row[0]
+
+    bf = _ChecksumFilter(_rows())
     with _bloom_lock:
         _bloom = bf
         _bloom_db_path = str(db_path or DB_PATH)

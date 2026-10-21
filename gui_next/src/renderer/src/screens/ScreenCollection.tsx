@@ -2324,6 +2324,21 @@ export function ScreenCollection(): React.JSX.Element {
     staleTime: Infinity,
   })
 
+  // The prefetch omits `description` (it would repeat ~26 MB of the catalog);
+  // join it from the same catalog query the Library screen uses.
+  const { data: catalog } = useQuery({
+    queryKey: ['library-catalog'],
+    queryFn: () => getJson(`/api/search`),
+    staleTime: Infinity,
+  })
+  const descByLb = useMemo(() => {
+    const m = new Map<number, string>()
+    if (Array.isArray(catalog)) {
+      for (const e of catalog as any[]) m.set(e.lb_number, e.description ?? '')
+    }
+    return m
+  }, [catalog])
+
   useEffect(() => {
     if (!prefetch) return
 
@@ -2416,7 +2431,7 @@ export function ScreenCollection(): React.JSX.Element {
         diskPath:    c.disk_path ?? '',
         notes:       c.notes ?? '',
         confirmed:   c.confirmed_at ?? '',
-        title:       c.description ?? '',
+        title:       descByLb.get(lb) ?? '',
         discs:       parseInt(c.cdr ?? '0') || 0,
         size:        '',
         rating:           c.rating ?? '',
@@ -2447,8 +2462,13 @@ export function ScreenCollection(): React.JSX.Element {
 
     setRows(merged)
     setMissingLbRows(Array.isArray(prefetch.missing) ? prefetch.missing : [])
-    setDuplicateGroups(Array.isArray(prefetch.duplicates) ? prefetch.duplicates : [])
-  }, [prefetch])
+    const withDesc = (o: any) => ({ ...o, description: descByLb.get(o.lb_number) ?? '' })
+    setDuplicateGroups(Array.isArray(prefetch.duplicates)
+      ? (prefetch.duplicates as DuplicateGroup[]).map(g => ({
+          ...g, owned: g.owned.map(withDesc), unowned: g.unowned.map(withDesc),
+        }))
+      : [])
+  }, [prefetch, descByLb])
 
   // ── Close year dropdown on outside click ───────────────────────────────────
 

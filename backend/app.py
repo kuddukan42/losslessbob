@@ -2264,11 +2264,21 @@ def create_app() -> Flask:
                     bool(row.get("torrent_path"))
                     and Path(row["torrent_path"]).exists()
                 )
+            # `description` is ~1 KB per row and ~26 MB of this payload, all of
+            # it a repeat of /api/search — the GUI joins it from that catalog
+            # by lb_number instead.
+            collection = database.get_collection()
+            for row in collection:
+                row.pop("description", None)
+            duplicates = database.get_collection_duplicates()
+            for group in duplicates:
+                for row in (*group.get("owned", []), *group.get("unowned", [])):
+                    row.pop("description", None)
             return jsonify({
-                "collection":     database.get_collection(),
+                "collection":     collection,
                 "missing":        database.get_missing_from_collection(),
                 "wishlist":       database.get_wishlist(),
-                "duplicates":     database.get_collection_duplicates(),
+                "duplicates":     duplicates,
                 "forum_posts":    database.get_all_forum_posts(),
                 "torrents":       torrents,
                 "xref_lb_numbers": database.get_xref_lb_numbers(),

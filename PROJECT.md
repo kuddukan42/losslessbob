@@ -24,7 +24,7 @@ GUI (Next) Conventions · Notable Implementation Details · Change Log
 | REST backend | Flask + Flask-CORS | 3.0.3 / 4.0.1 |
 | WSGI server (optional) | Waitress | 3.0.0 |
 | Database | SQLite3 | (stdlib) |
-| Bloom filter | pybloom-live | 4.0.0 |
+| Checksum pre-filter | numpy (sorted hash array, `db._ChecksumFilter`) | 2.4.6 |
 | Fast hashing | xxhash | 3.7.0 |
 | Web scraping | BeautifulSoup4 + lxml | 4.12.3 / 6.1.0 |
 | HTTP client | Requests | 2.32.3 |
