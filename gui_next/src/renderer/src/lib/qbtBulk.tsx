@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next'
 import { create } from 'zustand'
 
 import { BASE } from './api'
+import { Button } from '../components'
 
 interface QbtBulkState {
   hashes: string[]
@@ -90,33 +91,44 @@ export function QbtTrackerPanel(): React.ReactElement | null {
   if (!hashes.length) return null
   if (!open) {
     return (
-      <button onClick={() => setOpen(true)} style={{ position: 'fixed', right: 16, bottom: 16, zIndex: 50 }}>
-        {t('qbtBulk.showStatus', { count: hashes.length })}
-      </button>
+      <div style={{ position: 'fixed', right: 16, bottom: 40, zIndex: 50 }}>
+        <Button size="sm" icon="info" onClick={() => setOpen(true)}>
+          {t('qbtBulk.showStatus', { count: hashes.length })}
+        </Button>
+      </div>
     )
   }
   return (
     <div role="dialog" style={{ position: 'fixed', inset: 0, zIndex: 60, background: 'rgba(0,0,0,0.5)',
       display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ background: 'var(--surface, #1e2530)', padding: 16, borderRadius: 8,
+      <div style={{ background: 'var(--lbb-surface)', color: 'var(--lbb-fg)',
+        border: '1px solid var(--lbb-border)', borderRadius: 10, padding: 20,
+        boxShadow: '0 8px 32px rgba(0,0,0,0.25)', fontSize: 'var(--lbb-fs-12)',
         width: 'min(720px, 92vw)', maxHeight: '80vh', overflow: 'auto' }}>
-        <h3>{t('qbtBulk.title')}</h3>
-        {err && <div style={{ color: 'var(--bad, #e5484d)' }}>{err}</div>}
+        <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 600, marginBottom: 10 }}>
+          {t('qbtBulk.title')}
+        </div>
+        {err && <div style={{ color: 'var(--lbb-bad-fg)' }}>{err}</div>}
         {hashes.map((h) => {
           const row = status[h]
           const bad = row?.state === 'not_working'
           return (
             <div key={h} data-state={row?.state ?? 'pending'}
-              style={{ padding: '4px 0', color: bad ? 'var(--bad, #e5484d)' : undefined,
+              style={{ padding: '4px 0', color: bad ? 'var(--lbb-bad-fg)' : undefined,
                 fontWeight: bad ? 600 : undefined }}>
-              <code>{h.slice(0, 10)}</code>{' '}
+              <code style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)' }}>
+                {h.slice(0, 10)}
+              </code>{' '}
               {stateLabel(t, row?.state ?? 'pending')}
-              {row?.trackers?.map((tr, i) => tr.msg ? <div key={i}>{tr.msg}</div> : null)}
-              {row?.error && <div>{row.error}</div>}
+              {row?.trackers?.map((tr, i) => tr.msg
+                ? <div key={i} style={{ paddingLeft: 12, fontWeight: 400 }}>{tr.msg}</div> : null)}
+              {row?.error && <div style={{ paddingLeft: 12, fontWeight: 400 }}>{row.error}</div>}
             </div>
           )
         })}
-        <button onClick={() => setOpen(false)}>{t('qbtBulk.close')}</button>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 12 }}>
+          <Button size="sm" onClick={() => setOpen(false)}>{t('qbtBulk.close')}</Button>
+        </div>
       </div>
     </div>
   )

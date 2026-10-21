@@ -51,6 +51,13 @@ function confTone(c: string | null): 'ok' | 'info' | 'warn' | 'bad' | 'mute' {
 }
 
 /** Compact "key=value" signal summary, minus keys shown elsewhere. */
+/** Short, locale-neutral link text for a WTRF topic URL ("59866.msg93937"), else the URL path. */
+function topicLabel(url: string): string {
+  const m = /topic=(\d+)(?:\.msg(\d+))?/.exec(url)
+  if (!m) return url.replace(/^https?:\/\/[^/]+\//, '')
+  return m[2] ? `${m[1]}.msg${m[2]}` : m[1]
+}
+
 function signalSummary(s: Record<string, unknown>): string {
   const hide = new Set(['has_torrent', 'tied_candidates', 'tied_with', 'tiebreak',
     'review', 'reviewed_at'])
@@ -162,8 +169,9 @@ export function ScreenWtrfReview(): React.JSX.Element {
                       <div key={u} style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
                         <a href={u} target="_blank" rel="noreferrer"
                           title={t('wtrfReview.openTopic')}
-                          style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>
-                          {u.replace(/^https?:\/\/[^/]+\//, '')}
+                          style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11,
+                            color: 'var(--lbb-accent-mid)', textDecoration: 'none' }}>
+                          {topicLabel(u)}
                         </a>
                         {r.candidates.length > 1 && (
                           <>

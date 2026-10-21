@@ -1,8 +1,8 @@
-"""Tests for backend.app._github_upload_asset / _ProgressFile (TODO-367 S4)."""
+"""Tests for backend.github_upload._github_upload_asset / _ProgressFile (TODO-367 S4)."""
 
 import queue
 
-from backend.app import _github_upload_asset
+from backend.github_upload import _github_upload_asset
 
 
 class _FakeResp:

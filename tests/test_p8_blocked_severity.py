@@ -1,7 +1,7 @@
 """
 Tests for TODO-205 Phase 6 (P8) — "blocked" collect severity split.
 
-The severity logic lives in `backend.app.compute_pipeline_severity`, a
+The severity logic lives in `backend.routes.pipeline.compute_pipeline_severity`, a
 module-level pure function extracted from `_pipeline_process_folder` (TODO-211)
 precisely so this test drives the **real** code rather than a mirror — no drift
 is possible. `_pipeline_process_folder` itself is a closure inside
@@ -9,7 +9,7 @@ is possible. `_pipeline_process_folder` itself is a closure inside
 unit-driven, but the extracted function has no such dependencies.
 """
 
-from backend.app import compute_pipeline_severity
+from backend.routes.pipeline import compute_pipeline_severity
 
 
 def _severity(verify, lookup, lbdir, rename, file_status, file_error_code, lb_number):

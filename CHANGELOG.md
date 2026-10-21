@@ -1,6 +1,7 @@
-[2026-10-21] — Open-bug sweep: BUG-374/375/377/378 closed; CI flake BUG-379 fixed
-Fixed: backend/db.py, conftest.py: BUG-379 — init_db() background threads are tracked and joined (join_init_bg_threads) before conftest swaps the write-queue singleton, so a straggler can no longer write into the next test's DB; _run_bg skips OperationalError once its DB dir is gone
-Fixed: tests/test_wtrf_tiebreak.py: BUG-378 — TestFindTorrentTie now mocks get_wtrf_rejected_topics; it queried the real DB (a deleted tmp DB in full-suite order)
+[2026-10-21] — Open-bug sweep: BUG-374/375/377/384 closed; CI flake BUG-385 fixed; night/2026-10-20 merged
+Changed: merge of night/2026-10-20: this branch's BUG-378/379 renumbered BUG-384/385 (night had used both ids); perf changes ported into the split modules — _ChecksumFilter + _ensure_init_db + join_init_bg_threads into backend/db/__init__.py, prefetch description drop into backend/routes/collection.py; night's lazy pre-filter build kept, now on the numpy filter
+Fixed: backend/db/__init__.py, conftest.py: BUG-385 — init_db() background threads are tracked and joined (join_init_bg_threads) before conftest swaps the write-queue singleton, so a straggler can no longer write into the next test's DB; _run_bg skips OperationalError once its DB dir is gone
+Fixed: tests/test_wtrf_tiebreak.py: BUG-384 — TestFindTorrentTie now mocks get_wtrf_rejected_topics; it queried the real DB (a deleted tmp DB in full-suite order)
 Fixed: tools/tapematch/tests/test_commentary_audit.py: BUG-374/377 — cross-clause test expects 0, matching the deliberate "alternate to" = different rule (da990507f); leak guard kept
 Fixed: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx, ScreenFileIntegrity.tsx: BUG-375 — undefined var(--lbb-accent) -> var(--lbb-accent-mid)
 
@@ -18,7 +19,29 @@ Changed: gui_next activityStore + AppShell: activity and queue-badge pollers pau
 Fixed: backend/db.py: create_app's reload_taper_aliases() re-ran the whole init_db() (migrations + startup threads, a second checksum pre-filter build); taper-alias helpers now use _ensure_init_db (once per path per process)
 Added: run_backend.py + backend/db.py: data/logs/startup.log is written again (dormant since the PyQt GUI's removal) — imports, create_app phases, serving, pre-filter built. Backend now serves at ~0.4 s, pre-filter ready at ~1.0 s
 Added: TODO-370 (opened + closed) records the before/after timings
-Added: BUG-378 order-dependent test_wtrf_tiebreak failures in full-suite runs (pre-existing)
+Added: BUG-384 order-dependent test_wtrf_tiebreak failures in full-suite runs (pre-existing)
+
+[2026-10-20] — Night run: BUG-377 closed, sidebar brand fit, Library load 6s -> 0.3s, TUIT reconciliation report, rarity census, WTRF post editor, TUIT/olof spine, GUI verify sweep
+Changed: backend/app.py -> backend/routes/: create_app() split into 28 Flask Blueprints, one per domain, one commit each; app.py 13,742 -> 230 lines, route map identical (378 rules), endpoint names gain the blueprint prefix (nothing uses url_for/view_functions); shared state moved to folder_lb.py / github_upload.py / lbdir_status.py / scrape_worker.py / spectro_worker.py (TODO-369 S1)
+Changed: backend/db.py -> backend/db/ package: 19 table-family submodules (schema, taper, library, collection, integrity, posting, tuit, lb_master, aliases, ...), every name re-exported from __init__ so callers are unchanged; functions moved AST-identical; __init__ keeps the coupled core (connection pool, bloom, init_db, checksum lookup, master import/export), 10,688 -> 2,096 lines; taper globals rebound by reload_taper_aliases() are forwarded by a module __getattr__ (TODO-369 S2)
+Fixed: tools/check_project_refs.py: scanned routes only in app.py (0 found after S1) and tables only in backend/*.py; now reads backend/routes/ and backend/** (TODO-369)
+Fixed: tools/tapematch/tests/test_commentary_audit.py: cross-clause test expected None for "alternate recording to LB-0680"; _DIFF_RE reads it as different since da990507f, so expect 0 + neutral-wording variant pins the leak guard (BUG-377, dup BUG-374)
+Fixed: gui_next AppShell: brand subtitle wrapped to two lines beside the collapse toggle; now one line, label ellipsizes with tooltip, version never truncates (TODO-160 follow-up)
+Fixed: backend/db.py: checksum bloom built lazily by lookup_checksums(), once per path — init_db() (called twice by create_app) no longer starts a ~13s GIL-bound rebuild each time; GET /api/library/performances 6.0-6.4s -> 0.30s after startup, response byte-identical; tests/test_library_performances_perf.py pins the route JSON (BUG-378)
+Changed: gui_next ScreenLibrary: rollupOf() memoized per performance row (WeakMap) — was recomputed ~6x per show per filter change (BUG-378)
+Fixed: tests/test_wtrf_tiebreak.py: mock get_wtrf_rejected_topics; it read whatever DB_PATH an earlier test left, failing in full-suite order
+Added: tools/tuit_reconcile.py -> docs/tuit_reconcile.md: read-only TUIT vs entries report (date/circa/source-type/venue/lineage/setlist), every circa row, date conflict and source-type conflict classified with an action; --fill stages 6,496 additive values in corrections (decided_by='tuit_reconcile', date-agreeing LBs, empty fields only), dry-run default, --apply backs up + audit-logs, --revert (TODO-332, TODO-339 parts 1-2)
+Added: tools/tapematch/rarity_census.py -> docs/RARITY_CENSUS.md: copies per source tape (obs latest run + synced families), by decade/year/Olof tour, single-copy LBs split by TODO-334 gap-list reason (TODO-335)
+Added: backend/rarity.py + GET /api/tapematch/rarity: per-LB copies / only_known_copy / unanalysed_on_date; Library family rows show an 'Only copy' pill (grey when the date has unanalysed recordings) (TODO-335)
+Added: backend/wtrf_post_editor.py + GET /api/forum_post/edit_form, POST /api/forum_post/edit: edit a WTRF topic's opening post through SMF's edit form (msg id, session/seqnum tokens, post2); dry-run unless confirm=true; tests mock every exchange with SMF fixtures — never run live (TODO-136)
+Added: gui_next ForumEditModal: 'Edit post…' on the entry Forum tab and All forum posts — loads the live subject/body, edit, dry-run diff review, confirmed save (TODO-136)
+Fixed: gui_next ScreenCollection: scan-preview, All forum posts and All torrents tables rendered an extra edge cell (TR already adds one), shifting every body cell one column right
+Added: tools/tuit_olof_spine.py -> docs/TUIT_OLOF_SPINE.md: read-only TUIT show spine vs olof_events — classifies the 17 TUIT-only rows and 199 olof-only concert dates (no date typos; 6 olof gaps, ~58 TUIT calendar gaps, 95 non-shows) and scores 5 venue join keys against 3,986 shared-date pairs (exact 69.5%, geo25 94.1%, geo25+crosswalk 95.0%) (TODO-338)
+Fixed: tools/electron_driver.mjs: Tier A ran `electron-vite dev`, which always launches Electron (the app ignores SIGTERM) — every run leaked vite + a window + its backend; now Vite runs in-process, no Electron (BUG-379)
+Added: tools/electron_driver.mjs: LB_DRIVER_FLASK_PORT points the Tier A window.api shim at a side backend (CSP bypassed) when 5174 belongs to someone else
+Fixed: gui_next qbtBulk: tracker-status panel rendered a dark box with unreadable text (undefined --surface/--bad); app tokens + Button, launcher clears the status bar (BUG-380)
+Fixed: gui_next DetailPanel: tab strip wraps — Quality and My Collection's Collection tab (WTRF sync/import, Edit post) were scrolled off-screen at default width (BUG-381)
+Fixed: gui_next status bar no longer wraps below ~900px; WTRF review topic links styled + shortened (59866.msg93937); DB Editor labels column 0 'rowid' instead of a duplicate PK name (BUG-382)
 
 [2026-10-19] — Parallel backlog sweep: 10 TODOs closed, TODO-319 family guard (off), TUIT/WTRF/trading/GUI features
 Added: gui_next AppShell/ScreenSetup/store: curator mode hidden behind Ctrl+Shift+Alt+C (or 7 clicks on the Master version label), Curator card in Setup; collapsible icon-only sidebar, forced at <=900px (TODO-160, TODO-178)

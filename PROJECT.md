@@ -70,7 +70,13 @@ losslessbob/
 │   └── release.yml            # Tag-triggered release build (Windows/Linux/Docker) — unchanged by TODO-261
 ├── PROJECT.md                # This file
 ├── backend/
-│   ├── app.py                # Flask REST API — all routes
+│   ├── app.py                # Flask app factory: create_app() registers the routes/ Blueprints (TODO-369 S1)
+│   ├── routes/               # 30 Flask Blueprints, one per domain (dbedit, core, entries, collection, lbdir, wtrf, lb_master, tapematch, dossier, pipeline, …); _state.py holds process_start_time (TODO-369 S1)
+│   ├── folder_lb.py          # Folder → LB / lbdir-manifest lookup helpers shared by the LBDir routes (TODO-369)
+│   ├── github_upload.py      # GitHub release-asset upload with progress events (master publish + data package export, TODO-369)
+│   ├── lbdir_status.py       # LBDIR verify verdict helpers + cached per-LB status (forum gate, pipeline rows; TODO-369)
+│   ├── scrape_worker.py      # Single scrape / download-pages worker thread guard (TODO-369)
+│   ├── spectro_worker.py     # Spectrogram batch worker state + thread body (TODO-369)
 │   ├── activity.py           # TODO-262: unified activity aggregator — JOB_ADAPTERS table + snapshot() (/api/activity/jobs), SSE tee registry track()
 │   ├── platform_utils.py     # Cross-platform process helpers (open_in_vlc)
 │   ├── resources/
@@ -85,7 +91,19 @@ losslessbob/
 │   ├── taper_review.html     # Taper curation console (served at /taper-review) — Queue/Entries/Tapers tabs, bulk decisions, decision history, alias admin (TODO-312)
 │   ├── taper_curation.html   # Taper curation workbench (served at /taper-curation) — all sources per entry side by side, isolated-text and per-taper tabs (TODO-327)
 │   ├── qc_review.html        # QC review console (served at /qc-review, experimental) — Findings workbench + Queue tab (one-card, keyboard-driven, curator-gated writes) over qc_findings (TODO-342 C12)
-│   ├── db.py                 # SQLite layer, checksum parsing, search
+│   ├── db/                   # SQLite layer package (TODO-369 S2); `import backend.db` re-exports every submodule name
+│   │   ├── __init__.py       # Core: connection pool, bloom filter, init_db + migrations, meta, checksum parse/lookup, backup, master export/import
+│   │   ├── schema.py         # SCHEMA_SQL + MASTER/USER table ownership model
+│   │   ├── taper.py          # Taper/source extraction, taper aliases + vocabulary, lineage refs, run records (rebound globals forwarded by __init__.__getattr__)
+│   │   ├── library.py        # Search, entry lookups, library performances payload + categories
+│   │   ├── collection.py     # My Collection, wishlist, duplicates, personal metadata, integrity events
+│   │   ├── integrity.py      # Collection integrity monitor + file-level integrity inventory
+│   │   ├── posting.py        # Torrents, forum posts, WTRF downloads, rename history
+│   │   ├── tuit.py           # TUIT tracker mirror tables
+│   │   ├── lb_master.py      # lb_master status/reconcile/overrides, lb_missing, curator flag
+│   │   ├── aliases.py        # lb_alias + folder_lb_link
+│   │   ├── bootlegs.py / site_inventory.py / lb_problems.py / curated.py / archive_uploads.py / mounts.py
+│   │   └── pipeline_cache.py / olof.py / map_data.py / dylan_performances.py
 │   ├── db_queue.py           # DB-09: DatabaseWriteQueue — single writer thread, serialises all writes
 │   ├── paths.py              # Central path resolver: normal / PyInstaller-frozen / portable-ZIP builds; SITE_* dirs. `LOSSLESSBOB_APP_ROOT` env var overrides APP_ROOT in the unfrozen branch (CI/cloud-agent/fixture use, TODO-261) — unset behavior unchanged
 │   ├── version.py            # App VERSION string, read from the VERSION file at APP_ROOT
@@ -143,11 +161,13 @@ losslessbob/
 │   ├── country_flags.py      # Olof country/region name → flag emoji; forum subject-line prefix
 │   ├── wtrf_scraper.py       # Searches the WTRF SMF forum for torrent posts matching missing items
 │   ├── tuit_scraper.py       # TUIT private tracker (tangledupintorrents.org): login, /browse + /recordings parsers, torrent fetch (TODO-314)
+│   ├── tuit_olof_spine.py    # CLI: read-only TUIT show spine vs olof_events -> docs/TUIT_OLOF_SPINE.md: date-residue classes + venue join-key scores (TODO-338)
 │   ├── tuit_upload.py        # Outbound TUIT: composes every /upload form field from entries + olof_events + a folder probe (the site autofills nothing but show_id), gates on lb_status + a tuit_recordings duplicate check, POSTs, then seeds via tracker_seed (TODO-343)
 │   ├── torrent_verify.py     # Bencode reader + read-only piece-hash check of a folder against a .torrent; gates seeding so incomplete folders are never written to (TODO-314)
 │   ├── seed_overlay.py       # Assembles a seedable folder outside the collection: audio hardlinked, LBF sidecars copied from data/site/files or re-fetched from the LB site (TODO-314). Sources recursively by longest path-suffix + exact size, so nested box-set torrents (<root>/<show>/cd-1/…) resolve and colliding basenames don't cross discs; `link_dirs` hardlinks from several collection folders for a torrent spanning >1 LB entry
 │   ├── tracker_seed.py       # Tracker-agnostic seeding pipeline (gates → overlay → qBittorrent), parameterised per tracker: <mount>/<TRACKER> Seeds + qbt tag. Shared by TUIT and WTRF
 │   ├── wtrf_board.py         # Walks the WTRF board newest-first (SMF pagination, stickies dropped) and seeds every post the collection already holds; resumes off wtrf_downloads.topic_url, drops posts whose LB is not held before downloading anything
+│   ├── wtrf_post_editor.py   # TODO-136: edits a topic's opening post via SMF's edit flow — topic page → msg id → action=post;msg=N form (subject/BBCode + session/seqnum tokens) → POST action=post2; dry-run returns a diff only
 │   ├── wtrf_discovery.py     # TODO-135: finds existing WTRF topics per LB (subject/attachment LB parse) from the board archive or a paced board crawl → scraped_topics/scraped_topic_lbs via the write queue
 │   ├── wtrf_review.py        # TODO-193: curator review of wtrf_downloads rows — list/filter, confirm (resume or add in qBt), reject
 │   ├── qbt_seeding.py        # TODO-330: paced bulk seeding — announce preflight, add paused, batched release thread, per-torrent tracker status
@@ -159,6 +179,7 @@ losslessbob/
 │   ├── sharing.py            # File-sharing: ephemeral token-based share state, streaming, Cloudflare Tunnel
 │   ├── tapematch_autoflag.py # Rule-based clear/attention triage per date, from observations.db
 │   ├── tapematch_sync.py     # Syncs TapeMatch family clustering from tools/tapematch/observations.db
+│   ├── rarity.py             # TODO-335: per-LB source-tape copy count + only-known-copy flag over recording_families (GET /api/tapematch/rarity)
 │   ├── geocoder.py           # Nominatim geocoder: geocode_one, place_manual, run_batch, get_progress
 │   └── venue_gazetteer.py    # TODO-223: venue_geocoded seed + resolution ladder (bounded Nominatim → Wikidata P625 → city anchor)
 ├── concert_ranker/           # Audio quality scoring + ranking (TODO-183). Run: python -m concert_ranker.cli
@@ -258,6 +279,9 @@ losslessbob/
 │   ├── test_bobtalk_decodes.py # backend/bobtalk_decodes.py: cache key isolation + failed-decode guards (BUG-314)
 │   ├── test_tapematch_routes.py # LISTENING §1 read routes in backend/app.py
 │   ├── test_tapematch_sync.py # backend/tapematch_sync.py
+│   ├── test_rarity.py        # backend/rarity.py + GET /api/tapematch/rarity (TODO-335)
+│   ├── test_tuit_olof_spine.py # tools/tuit_olof_spine.py (TODO-338)
+│   ├── test_rarity_census.py # tools/tapematch/rarity_census.py (TODO-335)
 │   └── test_batch_verify.py  # tools/batch_verify.py helper functions
 ├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only; bundled inside Electron AppImage
 ├── tools/
@@ -297,6 +321,7 @@ losslessbob/
 │   ├── wtrf.sh               # wrapper: wtrf_seed_board.py --delay 10; --limit 5000 unless --pages/--limit given (walks to the board's last page)
 │   ├── wtrf_seed_board.py    # CLI: crawl the WTRF board and seed what is held (--start-page/--pages walk back in time, --limit, --rescan, --include-missing, --dry-run)
 │   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314); --sync-tours / --sync-venues fill tuit_shows + tuit_venues; --sync-songs fills tuit_songs + tuit_song_performances
+│   ├── tuit_reconcile.py     # CLI: read-only TUIT vs entries report -> docs/tuit_reconcile.md (TODO-332/339); --fill stages additive values in corrections (decided_by='tuit_reconcile'), dry run unless --apply (backup + audit JSONL); --revert
 │   ├── tuit_upload.py        # CLI: post one recording to TUIT and seed it. Dry run by default (composes and prints every form field plus the gaps); --apply is the only flag that sends. --no-torrent for a fast preview, --set FIELD=VALUE to override, --allow-duplicate, --no-seed, --paused (TODO-343)
 │   ├── fit_aud_quality_model.py # CLI: fit the AUD quality regression model used by concert_ranker
 │   ├── refit_aud_model.py    # CLI: refit/recalibrate the AUD quality model against new labels
@@ -1965,6 +1990,7 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 | POST | `/api/tapematch/crawl/start` | Launches the detached library crawl via `crawl_start.sh` (script is the single-instance authority). Optional body `{min_entries?, allow_missing?}` → script flags. 200 `{ok, message}`; 409 `already_running` when the script's pgrep guard refuses; 400 bad body. |
 | POST | `/api/tapematch/crawl/stop` | Stops the crawl via `crawl_stop.sh` (SIGINT, no-op if idle — always 200 `{ok, message}`). |
 | GET | `/api/tapematch/dup_encodes` | Likely-duplicate-encode curation leads (TODO-210b): same-date pairs with byte-identical `metric_json` within one scan_id. `{candidates: [{date, lb_a, lb_b, scan_id, same_family, reason}]}`. Read-only, never auto-merges; no GUI yet (TODO-215). |
+| GET | `/api/tapematch/rarity` | Source-tape rarity per analysed LB (TODO-335): flat list `[{lb_number, fam_id, concert_date, copies, only_known_copy, unanalysed_on_date}]` from `recording_families` via `backend/rarity.py`. `unanalysed_on_date` = non-compilation entries on the date with no family (a copy may exist unmeasured). Read-only; feeds the Library 'Only copy' badge. Census report: `tools/tapematch/rarity_census.py` -> `docs/RARITY_CENSUS.md`. |
 | POST | `/api/ab_clip` | Aligned A/B listening (LISTENING §2, TODO-231/232/233). Body `{date, lb_a, lb_b, t_sec?, dur_sec?}` (`dur_sec` clamped 5-60, default 20; `t_sec` OPTIONAL — omit it and the backend auto-picks a quiet-vocal start point per the LB curator method via `ab_clips.auto_pick_t_sec`/`pick_start_frame` over a `concert_ranker` TrackCache, returning the chosen value in `t_sec`, TODO-232). Eligible pairs: both sources' `speed_kind ∈ {reference, aligned, constant-speed-offset}` in observations.db `sources` (latest common run) from a run on/after the 2026-07-06 confidence gate (`is_run_eligible`, TODO-233). Maps `t_sec` to each source's local offset via `trim_head + t*factor` (factor from `speed_ppm`); a constant-speed-offset source is resampled to reference speed (`asetrate`/`aresample`) and both clips are RMS level-matched to -20 dBFS (TODO-232). Extracts WAV clips (16-bit/44.1k/stereo, may span track boundaries) from `my_collection.disk_path` via `backend/ab_clips.py`, caches in `data/ab_clips/` (LRU-pruned to 40). Returns `{date, lb_a, lb_b, t_sec, dur_sec, clip_a, clip_b}` (`/api/ab_clip/<name>` URLs). 400 `bad_request`/`t_out_of_range`, 404 `pair_not_found`/`folder_missing`, 409 `not_eligible`/`locked`. |
 | GET | `/api/ab_clip/<name>` | Serves one cached A/B WAV clip from `data/ab_clips/`. 404 `clip_not_found` if pruned/absent. |
 | GET | `/api/bobtalk/<int:lb>` | Located Olof bobtalk quotes for one recording (TODO-303). Joins `bobtalk_locations` back to `olof_events.bobtalk` at read time, so each quote's text comes from Olof's block and is never stored twice. Low-confidence matches are EXCLUDED unless `?all=1` — an unresolved match must degrade to "no play button", not to one that jumps to the wrong moment. Returns `{lb, event_id, quotes: [{quote_index, text, t_start, dice, runner_up, confident, model}]}`; an empty list is normal for a recording that has not been through the locate pass. |
@@ -2300,6 +2326,8 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | POST | `/api/entry/<lb>/post_forum` | Post a topic to the WTRF forum. Body: `{username?, password?, torrent_id?, subject?, body?}`. Optional `subject`/`body` override the auto-generated values (used when the user edits the preview). Gated by an LBDIR integrity check (`checksum_utils.verify_folder` on the entry's `my_collection.disk_path`, if any) — 400 if status is `fail`/`incomplete`. If no torrent exists, one is auto-generated from the collection folder and added to qBittorrent before posting (qBittorrent failure is non-fatal). Returns `{ok, topic_url, torrent_auto_created?, qbt_auto_add?}`. |
 | GET | `/api/entry/<lb>/forum_posts` | List all logged forum posts for an LB entry, newest first. |
 | DELETE | `/api/forum_post/<id>` | Delete a forum post log record by id. |
+| GET | `/api/forum_post/edit_form` | Current subject/BBCode body of a WTRF topic's opening post, from SMF's edit form (TODO-136). Query `topic_url`. Read-only; tokens stay server-side. Returns `{ok, topic_id, msg_id, subject, body}`. |
+| POST | `/api/forum_post/edit` | Edit a WTRF topic's opening post (TODO-136). Body `{topic_url, subject, body, confirm}`. **Dry-run unless `confirm` is JSON `true`** — returns `{ok, dry_run, saved, changed, current, proposed}`; a confirmed save also rewrites local `forum_posts.subject` for that topic. |
 
 ### WTRF Torrent Search (`wtrf_downloads`)
 | Method | Route | Description |
@@ -2423,7 +2451,7 @@ page), so every client can assume JSON on error regardless of which route it cal
 
 ---
 
-## Backend: Database Layer (`backend/db.py`)
+## Backend: Database Layer (`backend/db/` package)
 
 ### Checksum parsing (`parse_checksum_text`)
 Regex-based parser supporting three formats:

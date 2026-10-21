@@ -2217,8 +2217,10 @@ export function ScreenDbEditor() {
                         userSelect: 'none',
                       }}
                     >
-                      {col}
-                      {sortCol === col && (
+                      {/* Column 0 is the rowid; SQLite names it after an INTEGER PRIMARY
+                          KEY when there is one, which read as a duplicate column. */}
+                      {ci === 0 ? 'rowid' : col}
+                      {ci > 0 && sortCol === col && (
                         <span style={{ marginLeft: 4, fontSize: 'var(--lbb-fs-9)' }}>
                           {sortDir === 'asc' ? '▲' : '▼'}
                         </span>

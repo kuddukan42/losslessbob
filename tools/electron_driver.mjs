@@ -50,7 +50,7 @@
  *   --no-build       Skip 'npm run build' in gui_next/ (assumes out/ is current)
  *   --keep           Keep the app/browser (and Xvfb) open after actions complete
  *   --preview        renderer-only: 'npm run preview' (port 4173, needs build)
- *                    instead of 'npm run dev' (port 5173, serves source)
+ *                    instead of the in-process Vite dev server (port 5173, serves source)
  *   --no-server      renderer-only: assume a Vite server is already running
  *
  * Session action types: screenshot, navigate, click, fill, type, clear,
@@ -104,10 +104,13 @@ const PREVIEW_PORT = 4173
 
 // renderer-only mode: stub for window.api (the Electron preload bridge) —
 // see gui_next/src/renderer/src/env.d.ts for the real shape.
+// LB_DRIVER_FLASK_PORT points the stubbed renderer at a side backend (e.g. one
+// on a DB copy) when 5174 is someone else's; Electron mode ignores it.
+const SHIM_PORT = parseInt(process.env.LB_DRIVER_FLASK_PORT ?? '', 10) || 5174
 const API_SHIM = `
   window.api = {
-    flaskPort: 5174,
-    flaskBase: 'http://127.0.0.1:5174',
+    flaskPort: ${SHIM_PORT},
+    flaskBase: 'http://127.0.0.1:${SHIM_PORT}',
     pickFolders: async () => [],
     pickDir: async () => null,
     pickFile: async () => null,
@@ -180,13 +183,44 @@ async function waitForServer(url, maxMs = 15000, intervalMs = 200) {
   return false
 }
 
-function startViteServer(preview) {
-  const script = preview ? 'preview' : 'dev'
-  log(`Starting 'npm run ${script}'...`)
-  const proc = spawn('npm', ['run', script], { cwd: GUI_DIR, stdio: 'pipe' })
-  proc.stdout?.on('data', (d) => process.stderr.write(`[${script}] ${d}`))
-  proc.stderr?.on('data', (d) => process.stderr.write(`[${script}] ${d}`))
-  return proc
+// Dev mode runs the renderer's Vite server in-process (the electron.vite.config
+// renderer section, reproduced here): `npm run dev` is `electron-vite dev`, which
+// always launches a real Electron window, even with --rendererOnly, and that
+// window ignores SIGTERM, so every Tier A run used to leave one behind.
+// --preview still shells out to `electron-vite preview`, which also launches
+// Electron; it runs in its own process group so stopViteServer can SIGKILL it all.
+async function startViteServer(preview) {
+  if (!preview) {
+    log('Starting the renderer Vite dev server (no Electron)...')
+    const { createServer } = await import(join(GUI_DIR, 'node_modules/vite/dist/node/index.js'))
+    const { default: react } = await import(
+      join(GUI_DIR, 'node_modules/@vitejs/plugin-react/dist/index.js'))
+    const pkg = JSON.parse(readFileSync(join(GUI_DIR, 'package.json'), 'utf8'))
+    const server = await createServer({
+      configFile: false,
+      root: join(GUI_DIR, 'src/renderer'),
+      resolve: { alias: { '@renderer': join(GUI_DIR, 'src/renderer/src') } },
+      define: { __APP_VERSION__: JSON.stringify(pkg.version) },
+      plugins: [react()],
+      server: { port: DEV_PORT, strictPort: true },
+      logLevel: 'warn',
+    })
+    await server.listen()
+    return { stop: () => server.close() }
+  }
+  log(`Starting 'npm run preview'...`)
+  const proc = spawn('npm', ['run', 'preview'], { cwd: GUI_DIR, stdio: 'pipe', detached: true })
+  proc.stdout?.on('data', (d) => process.stderr.write(`[preview] ${d}`))
+  proc.stderr?.on('data', (d) => process.stderr.write(`[preview] ${d}`))
+  return {
+    stop: async () => {
+      try { process.kill(-proc.pid, 'SIGKILL') } catch { /* group already gone */ }
+    },
+  }
+}
+
+async function stopViteServer(server) {
+  if (server) await server.stop()
 }
 
 async function runRendererSession(actions, opts) {
@@ -195,18 +229,33 @@ async function runRendererSession(actions, opts) {
   const baseUrl = `http://localhost:${port}`
 
   let serverProc = null
-  if (!noServer) serverProc = startViteServer(preview)
+  if (!noServer) {
+    serverProc = await startViteServer(preview)
+    // The detached preview group misses the terminal's Ctrl+C (e.g. under --keep).
+    process.once('SIGINT', () => { void stopViteServer(serverProc).then(() => process.exit(130)) })
+  }
 
   log(`Waiting for server at ${baseUrl}...`)
   const ready = await waitForServer(baseUrl)
   if (!ready) {
-    serverProc?.kill('SIGTERM')
+    await stopViteServer(serverProc)
     throw new Error(`Server did not respond at ${baseUrl} within timeout.`)
   }
 
+  try {
+    return await driveRenderer(baseUrl, actions, keepOpen)
+  } finally {
+    await stopViteServer(serverProc)
+  }
+}
+
+async function driveRenderer(baseUrl, actions, keepOpen) {
   log('Launching headless Chromium...')
   const browser = await chromium.launch({ headless: true })
-  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } })
+  // index.html's CSP pins connect-src to :5174, so a side-backend port needs CSP bypassed.
+  const context = await browser.newContext({
+    viewport: { width: 1440, height: 900 }, bypassCSP: SHIM_PORT !== 5174,
+  })
   await context.addInitScript({ content: API_SHIM })
   const page = await context.newPage()
 
@@ -232,7 +281,6 @@ async function runRendererSession(actions, opts) {
   }
 
   await browser.close()
-  if (serverProc) serverProc.kill('SIGTERM')
   return results
 }
 
@@ -395,7 +443,7 @@ async function main() {
       '  --renderer-only  Fast path: headless Chromium vs the Vite server (no Electron/Xvfb)',
       '  --no-build       Skip npm run build (assumes gui_next/out is current)',
       '  --keep           Leave the app/browser (and Xvfb) open after actions',
-      '  --preview        renderer-only: npm run preview (4173) instead of npm run dev (5173)',
+      '  --preview        renderer-only: npm run preview (4173) instead of the Vite dev server (5173)',
       '  --no-server      renderer-only: assume a Vite server is already running',
     ].join('\n') + '\n')
     process.exit(1)

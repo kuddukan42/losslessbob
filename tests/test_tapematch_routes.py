@@ -9,9 +9,9 @@ import sqlite3
 import subprocess
 import tempfile
 
-import backend.app as app_module
 import backend.db as db
 import backend.paths as _paths
+import backend.routes.tapematch as tapematch_routes
 import backend.tapematch_sync as tapematch_sync
 
 
@@ -916,7 +916,7 @@ def test_crawl_status_route_not_running_no_runs_no_log(monkeypatch):
             return subprocess.CompletedProcess(args, returncode=1, stdout="", stderr="")
 
         monkeypatch.setattr(subprocess, "run", _fake_run)
-        monkeypatch.setattr(app_module, "TAPEMATCH_RUNS_DIR", _paths.Path(runs_dir))
+        monkeypatch.setattr(tapematch_routes, "TAPEMATCH_RUNS_DIR", _paths.Path(runs_dir))
 
         with _AppClient(db_path) as client:
             resp = client.get("/api/tapematch/crawl/status")
@@ -945,7 +945,7 @@ def test_crawl_status_route_running_with_runs_and_log_tail(monkeypatch):
             return subprocess.CompletedProcess(args, returncode=0, stdout="4242\n", stderr="")
 
         monkeypatch.setattr(subprocess, "run", _fake_run)
-        monkeypatch.setattr(app_module, "TAPEMATCH_RUNS_DIR", _paths.Path(runs_dir))
+        monkeypatch.setattr(tapematch_routes, "TAPEMATCH_RUNS_DIR", _paths.Path(runs_dir))
 
         with _AppClient(db_path) as client:
             resp = client.get("/api/tapematch/crawl/status")
@@ -1001,7 +1001,7 @@ def test_judgment_route_sets_and_clears_judgment(monkeypatch):
     db_path, tmp_dir = _make_db()
     try:
         obs_path = _make_pairs_db(tmp_dir, "20260101_000000", "1991-01-01", 10, 20)
-        monkeypatch.setattr(app_module, "TAPEMATCH_DB_PATH", obs_path)
+        monkeypatch.setattr(tapematch_routes, "TAPEMATCH_DB_PATH", obs_path)
 
         with _AppClient(db_path) as client:
             resp = client.post(
@@ -1053,7 +1053,7 @@ def test_judgment_route_bad_judgment_is_400(monkeypatch):
     db_path, tmp_dir = _make_db()
     try:
         obs_path = _make_pairs_db(tmp_dir, "20260101_000000", "1991-01-01", 10, 20)
-        monkeypatch.setattr(app_module, "TAPEMATCH_DB_PATH", obs_path)
+        monkeypatch.setattr(tapematch_routes, "TAPEMATCH_DB_PATH", obs_path)
 
         with _AppClient(db_path) as client:
             resp = client.post(
@@ -1089,7 +1089,7 @@ def test_judgment_route_pair_not_found_is_404(monkeypatch):
     db_path, tmp_dir = _make_db()
     try:
         obs_path = _make_pairs_db(tmp_dir, "20260101_000000", "1991-01-01", 10, 20)
-        monkeypatch.setattr(app_module, "TAPEMATCH_DB_PATH", obs_path)
+        monkeypatch.setattr(tapematch_routes, "TAPEMATCH_DB_PATH", obs_path)
 
         with _AppClient(db_path) as client:
             resp = client.post(

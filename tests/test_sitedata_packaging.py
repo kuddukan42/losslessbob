@@ -58,7 +58,7 @@ def _make_site_tree() -> Path:
 
 
 def _app_client(data_dir: Path, db_path: str):
-    """Build a Flask test client with app.py's path/DB constants redirected.
+    """Build a Flask test client with the export routes' path/DB constants redirected.
 
     Args:
         data_dir: temp dir standing in for DATA_DIR (must contain site/).
@@ -70,26 +70,27 @@ def _app_client(data_dir: Path, db_path: str):
     import backend.app as app_module
     import backend.db as db
     import backend.paths as _paths
+    import backend.routes.export as export_module
 
     orig = {
-        "app_DATA_DIR": app_module.DATA_DIR,
-        "app_SITE_DIR": app_module.SITE_DIR,
-        "app_SITE_FILES_DIR": app_module.SITE_FILES_DIR,
+        "app_DATA_DIR": export_module.DATA_DIR,
+        "app_SITE_DIR": export_module.SITE_DIR,
+        "app_SITE_FILES_DIR": export_module.SITE_FILES_DIR,
         "paths_DB_PATH": _paths.DB_PATH,
         "db_DB_PATH": db.DB_PATH,
     }
 
     site_dir = data_dir / "site"
-    app_module.DATA_DIR = data_dir
-    app_module.SITE_DIR = site_dir
-    app_module.SITE_FILES_DIR = site_dir / "files"
+    export_module.DATA_DIR = data_dir
+    export_module.SITE_DIR = site_dir
+    export_module.SITE_FILES_DIR = site_dir / "files"
     _paths.DB_PATH = db_path
     db.DB_PATH = db_path
 
     def _restore() -> None:
-        app_module.DATA_DIR = orig["app_DATA_DIR"]
-        app_module.SITE_DIR = orig["app_SITE_DIR"]
-        app_module.SITE_FILES_DIR = orig["app_SITE_FILES_DIR"]
+        export_module.DATA_DIR = orig["app_DATA_DIR"]
+        export_module.SITE_DIR = orig["app_SITE_DIR"]
+        export_module.SITE_FILES_DIR = orig["app_SITE_FILES_DIR"]
         _paths.DB_PATH = orig["paths_DB_PATH"]
         db.DB_PATH = orig["db_DB_PATH"]
 

@@ -834,6 +834,26 @@
       "reassigned": "Hernoemd van {{from}} naar {{to}}.",
       "renamed": "Hernoemd naar {{name}}.",
       "failed": "Kon niet worden voltooid — zie het backend-logboek."
+    },
+    "forumEdit": {
+      "editPost": "Bericht bewerken…",
+      "modalTitle": "WTRF-bericht bewerken",
+      "reviewTitle": "Bewerking beoordelen",
+      "loading": "Het huidige bericht wordt geladen vanuit WTRF…",
+      "loadFailed": "Het bericht kon niet worden geladen om te bewerken",
+      "review": "Wijzigingen bekijken",
+      "reviewFailed": "Het bewerken kon niet worden voorbereid",
+      "back": "Terug",
+      "noChanges": "Er is niets veranderd — het onderwerp en de tekst komen overeen met het live-bericht.",
+      "liveWarning": "Bevestigen leidt tot het herschrijven van het livebericht op WTRF. Dit kan vanaf hier niet ongedaan worden gemaakt.",
+      "currentSubject": "Huidig onderwerp",
+      "newSubject": "Nieuw onderwerp",
+      "currentBody": "Huidige hoofdtekst",
+      "newBody": "Nieuwe hoofdtekst",
+      "confirm": "Bewerking bevestigen",
+      "saving": "Bezig met opslaan…",
+      "saveFailed": "De bewerking is niet opgeslagen",
+      "saved": "WTRF-bericht bijgewerkt"
     }
   },
   "map": {
@@ -1506,7 +1526,7 @@
       "shows_one": "{{count}} weergeven",
       "shows_other": "{{count}} toont",
       "recordings_one": "{{count}} opname",
-      "recordings_other": "{{count}}-opnames",
+      "recordings_other": "{{count}} opnames",
       "familyCount_one": "{{count}}-serie",
       "familyCount_other": "{{count}}-families",
       "gaps_one": "{{count}} gap",
@@ -1524,7 +1544,10 @@
     "tooltip": {
       "inferred": "Afgeleid uit de datum en locatie van de opname zelf — niet gekoppeld aan een bekende concertdatum van Dylan",
       "tapematchGroup": "TapeMatch-groep voor akoestische overeenkomsten",
-      "tapematchReview": "Gemarkeerd voor handmatige controle — een claim dat deze uitzending uit dezelfde bron afkomstig is, wordt tegengesproken door de correlatiegegevens van TapeMatch"
+      "tapematchReview": "Gemarkeerd voor handmatige controle — een claim dat deze uitzending uit dezelfde bron afkomstig is, wordt tegengesproken door de correlatiegegevens van TapeMatch",
+      "onlyCopy": "Enige bekende kopie — TapeMatch heeft geen andere opname van deze show gevonden van dezelfde bronband",
+      "onlyCopyUnanalysed_one": "Geen tweede exemplaar van deze brontape onder de geanalyseerde opnames — maar {{count}} opname van deze datum is nooit geanalyseerd, dus er kan er een bestaan",
+      "onlyCopyUnanalysed_other": "Er is geen tweede exemplaar van deze brontape gevonden onder de geanalyseerde opnames — maar {{count}} opnames van deze datum zijn nooit geanalyseerd, dus er zou er wel een kunnen bestaan"
     },
     "ctx": {
       "postForum": "Plaats op het forum",
@@ -1642,7 +1665,8 @@
       "best": "Beste",
       "uploads_one": "{{count}} uploaden",
       "uploads_other": "{{count}} uploads",
-      "ownCount": "Eigen {{owned}}/{{total}}"
+      "ownCount": "Eigen {{owned}}/{{total}}",
+      "onlyCopy": "Enige kopie"
     },
     "setlist": {
       "loading": "Setlist wordt geladen…",
@@ -1769,7 +1793,8 @@
       "taperFreeText": "Taper — niet geverifieerd, ontleend aan de vrije tekstbeschrijving van het item",
       "needsReview": "TapeMatch heeft deze groep gemarkeerd — beweeg de muis over het pictogram voor de specifieke reden",
       "familyBest": "Best beoordeelde versie binnen de TapeMatch-familie",
-      "curated": "Verschijnt op de lijst met aanbevelingen van deze curator"
+      "curated": "Verschijnt op de lijst met aanbevelingen van deze curator",
+      "onlyCopy": "Enige bekende kopie van deze bronband (grijs: andere opnames van die datum zijn niet geanalyseerd)"
     },
     "dossier": {
       "title": "Exporteer presentatiedossier",
@@ -2081,7 +2106,7 @@
           "lbConflict": "Conflict met LB-pagina"
         },
         "densityRecordings_one": "{{count}} opname",
-        "densityRecordings_other": "{{count}}-opnames",
+        "densityRecordings_other": "{{count}} opnames",
         "densityFamilies_one": "{{count}}-serie",
         "densityFamilies_other": "{{count}}-families",
         "densityPairs_one": "{{count}}-paar",
@@ -2653,7 +2678,7 @@
         "scrape_entries_one": "{{count}} LB-vermelding nog niet verzameld",
         "scrape_entries_other": "{{count}} LB-vermeldingen zijn nog niet verzameld",
         "ranker_scan_one": "{{count}} opname nooit gescand",
-        "ranker_scan_other": "{{count}}-opnames zijn nooit gescand"
+        "ranker_scan_other": "{{count}} opnames zijn nooit gescand"
       }
     },
     "needs": {

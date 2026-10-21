@@ -244,6 +244,10 @@ function LegendMenu() {
         text={t('library.legend.needsReview')}
       />
       <LegendRow
+        sample={<Pill tone="warn">{t('library.family.onlyCopy')}</Pill>}
+        text={t('library.legend.onlyCopy')}
+      />
+      <LegendRow
         sample={<Pill tone="info" soft>{t('library.family.best')}</Pill>}
         text={t('library.legend.familyBest')}
       />
@@ -1178,6 +1182,9 @@ interface FamilyGroup {
   canonical: RecordingRow | null
   needsReview: boolean
   reviewReason: string | null
+  // TODO-335: TapeMatch heard no second copy of this source tape.
+  onlyCopy: boolean
+  unanalysedOnDate: number
 }
 
 type Coverage = 'Covered' | 'Upgrade' | 'Gap' | 'Uncirculated' | 'Upcoming'
@@ -1215,6 +1222,8 @@ function familiesOf(recordings: RecordingRow[]): FamilyGroup[] {
       canonical,
       needsReview: !!members[0]?.famNeedsReview,
       reviewReason: members[0]?.famReviewReason ?? null,
+      onlyCopy: members[0]?.tmCopies === 1,
+      unanalysedOnDate: members[0]?.tmUnanalysed ?? 0,
     })
   }
   out.sort((a, b) =>
@@ -1224,7 +1233,18 @@ function familiesOf(recordings: RecordingRow[]): FamilyGroup[] {
   return out
 }
 
+// rollupOf() runs per show in the facet, filter, KPI and row-render passes
+// (~6x per show per filter change over ~4k shows). PerformanceRows are rebuilt,
+// never mutated, when their inputs change, so caching by object identity is safe.
+const rollupCache = new WeakMap<PerformanceRow, ReturnType<typeof computeRollup>>()
+
 function rollupOf(p: PerformanceRow) {
+  let ru = rollupCache.get(p)
+  if (!ru) { ru = computeRollup(p); rollupCache.set(p, ru) }
+  return ru
+}
+
+function computeRollup(p: PerformanceRow) {
   const recordings = p.recordings
   const owned = recordings.filter(r => r.owned)
   const best = bestOf(recordings)
@@ -1483,6 +1503,12 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
     staleTime: Infinity,
   })
 
+  const { data: rarityData } = useQuery({
+    queryKey: ['tapematch-rarity'],
+    queryFn: () => getJson(`/api/tapematch/rarity`),
+    staleTime: Infinity,
+  })
+
   const rowsByLb = useMemo(() => {
     const m = new Map<number, RecordingRow>()
     for (const r of rows) m.set(r.lbNumber, r)
@@ -1497,6 +1523,12 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
     if (Array.isArray(famData)) for (const f of famData as any[]) m.set(f.lb_number, f)
     return m
   }, [famData])
+
+  const rarityMap = useMemo(() => {
+    const m = new Map<number, { copies: number; unanalysed_on_date: number }>()
+    if (Array.isArray(rarityData)) for (const r of rarityData as any[]) m.set(r.lb_number, r)
+    return m
+  }, [rarityData])
 
   const performances = useMemo<PerformanceRow[]>(() => {
     if (!Array.isArray(perfData)) return []
@@ -1518,6 +1550,8 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
             row.famConf = fam.fam_conf; row.famBy = fam.fam_by as RecordingRow['famBy']
             row.famNeedsReview = !!fam.fam_needs_review; row.famReviewReason = fam.fam_review_reason ?? null
           }
+          const rar = rarityMap.get(stub.lbNumber)
+          if (rar) { row.tmCopies = rar.copies; row.tmUnanalysed = rar.unanalysed_on_date }
           // pickRank/absGrade/curated/taperConfirmed/taperReview only exist on
           // the performance payload's stub (show_picks/quality/curated_lists/
           // taper_attributions never joined into /api/search) — merge
@@ -1547,7 +1581,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
         recordings,
       }
     })
-  }, [perfData, rowsByLb, famMap])
+  }, [perfData, rowsByLb, famMap, rarityMap])
 
   // pickRank/absGrade/curated only live on the merged `performances` rows
   // (built above from the extended /api/library/performances payload), not
@@ -2203,6 +2237,14 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                   <span title={fam.reviewReason || t('library.tooltip.tapematchReview')}>
                                     <Pill tone="warn" soft>{t('library.panel.needsReview')}</Pill>
                                   </span>
+                                )}
+                                {fam.onlyCopy && (
+                                  <Pill
+                                    tone={fam.unanalysedOnDate ? 'mute' : 'warn'}
+                                    title={fam.unanalysedOnDate
+                                      ? t('library.tooltip.onlyCopyUnanalysed', { count: fam.unanalysedOnDate })
+                                      : t('library.tooltip.onlyCopy')}
+                                  >{t('library.family.onlyCopy')}</Pill>
                                 )}
                                 {single && (
                                   <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', fontWeight: 'var(--w-semi)', color: fam.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', whiteSpace: 'nowrap', flex: '0 0 auto' }}>

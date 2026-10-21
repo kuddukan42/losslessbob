@@ -2,13 +2,23 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
-BUG-379: CI flaky: init_db background threads bleed into the next test's DB
+BUG-385: CI flaky: init_db background threads bleed into the next test's DB
+Formerly: BUG-379 (duplicate id on feat/dossier-redesign, renumbered at merge 2026-10-21)
 Status: Fixed
-File(s): backend/db.py,conftest.py,tests/test_lb_master.py:227
+File(s): backend/db/__init__.py,conftest.py,tests/test_lb_master.py:227
 Reported: 2026-10-21
 Fixed: 2026-10-21
 Root cause: init_db() starts fire-and-forget threads (migrate_lb_master, Dylan import, ...). conftest swaps the write-queue singleton per test, so a straggler from test N submitted its rows through test N+1's queue into test N+1's DB, or opened a deleted temp DB (unable to open database file / disk I/O error).
 Fix: db.py tracks the threads in _init_bg_threads; conftest calls join_init_bg_threads() before each queue teardown; _run_bg drops OperationalError when the DB's dir is gone. Stray thread errors in a full run 38 -> 1; suite 3223 passed.
+
+BUG-384: test_wtrf_tiebreak TestFindTorrentTie fails only in full-suite runs (order-dependent)
+Formerly: BUG-378 (duplicate id on feat/dossier-redesign, renumbered at merge 2026-10-21)
+Status: Fixed
+File(s): tests/test_wtrf_tiebreak.py
+Reported: 2026-10-21
+Fixed: 2026-10-21
+Root cause: TestFindTorrentTie left db.get_wtrf_rejected_topics unmocked, so find_torrent_for_lb queried the real DB_PATH: the live DB alone, a deleted tmp DB once an earlier test had redirected it (OperationalError: unable to open database file).
+Fix: Monkeypatch get_wtrf_rejected_topics in TestFindTorrentTie._run; the test no longer touches any DB. Full suite 3223 passed.
 
 BUG-375: Undefined CSS token var(--lbb-accent) renders uncoloured
 Status: Fixed
@@ -18,29 +28,61 @@ Fixed: 2026-10-21
 Root cause: tokens.ts only sets --lbb-accent-{mid,soft,bg,line}; three styles referenced bare --lbb-accent.
 Fix: Switched the 3 usages to var(--lbb-accent-mid).
 
-BUG-377: test_commentary_audit cross-clause test fails on base
+BUG-382: Status bar wraps to two lines below ~900px; WTRF review topic links unstyled; DB Editor shows rowid column as duplicate PK name
 Status: Fixed
-File(s): tools/tapematch/tests/test_commentary_audit.py
+File(s): gui_next/src/renderer/src/components/AppShell.tsx:740
+Reported: 2026-10-20
+Fixed: 2026-10-20
+Root cause: footer flex items wrapped; topic anchors had browser default style; SELECT rowid,* names rowid after an INTEGER PK
+Fix: 58388c38b: footer nowrap+overflow hidden; accent-coloured short topic labels; header col 0 labelled rowid, sort arrow skips it
+
+BUG-381: Recording detail tab strip hides Quality/Collection tabs off-screen
+Status: Fixed
+File(s): gui_next/src/renderer/src/components/library/DetailPanel.tsx:1578
+Reported: 2026-10-20
+Fixed: 2026-10-20
+Root cause: TabStrip used overflowX:auto, 7 tabs exceed the 379px default panel width
+Fix: 89375657b: flexWrap wrap
+
+BUG-380: qBt tracker-status panel unreadable: undefined --surface/--bad tokens
+Status: Fixed
+File(s): gui_next/src/renderer/src/lib/qbtBulk.tsx:66
+Reported: 2026-10-20
+Fixed: 2026-10-20
+Root cause: panel styled with non-existent --surface/--bad tokens and raw buttons
+Fix: bf2cab974: --lbb-* tokens, shared Button, launcher moved above status bar
+
+BUG-379: Tier A verify driver leaks a real Electron window (and vite) every run
+Status: Fixed
+File(s): tools/electron_driver.mjs:183
+Reported: 2026-10-20
+Fixed: 2026-10-20
+Root cause: electron-vite dev always launches Electron (even --rendererOnly) and the app ignores SIGTERM; driver only signalled npm
+Fix: a7839ce1e: Tier A starts Vite in-process via createServer (no Electron); preview runs in its own process group and is SIGKILLed; LB_DRIVER_FLASK_PORT + bypassCSP for a side backend
+
+BUG-378: GET /api/library/performances takes ~6s after backend start; /verify Library tour times out on Loading
+Status: Fixed
+File(s): backend/db.py:3822,backend/app.py:1076
 Reported: 2026-10-19
-Fixed: 2026-10-21
-Root cause: Duplicate of BUG-374 (same test, same cause).
-Fix: Fixed with BUG-374.
+Fixed: 2026-10-19
+Root cause: Every init_db() call spawned a background bloom rebuild (~13s of GIL-bound hashing over 708k checksums); create_app() calls init_db() twice (directly + via reload_taper_aliases), so request threads convoyed behind two rebuilds for ~27s after startup.
+Fix: Bloom built lazily by lookup_checksums() via _start_bloom_rebuild(), deduped per path; route 6.0-6.4s -> 0.30s on a live-DB copy, response byte-identical; Library rollupOf memoized client-side.
 
 BUG-374: tapematch test_cross_clause_same_keyword fails: 'alternate recording to' now reads as 0, test expects None
 Status: Fixed
 File(s): tools/tapematch/tests/test_commentary_audit.py:34,tools/tapematch/tapematch_session.py
 Reported: 2026-10-17
-Fixed: 2026-10-21
-Root cause: Intentional parser change, not a regression: golden review 3 (da990507f) added 'alternat(e|ive) (recording )?to' to _DIFF_RE, so 'alternate recording to LB-0680' now correctly reads as different (0).
-Fix: Test now asserts same == 0 (still guards that the LB-3914 'close eac match' clause does not leak in as same=1); docstring updated. tapematch tests 544 pass.
+Fixed: 2026-10-19
+Root cause: Duplicate of BUG-377. Test premise stale: da990507f (golden review 3) added "alternate (recording) to" to the shared backend.db._DIFF_RE, so the LB-0680 clause legitimately parses as different (0); the test still expected None. Cross-clause leak guard was never broken.
+Fix: Test now expects 0 for the alternate-to wording and adds a neutral-wording variant asserting None, pinning the leak guard independently. No parser change.
 
-BUG-378: test_wtrf_tiebreak TestFindTorrentTie fails only in full-suite runs (order-dependent)
+BUG-377: test_commentary_audit cross-clause test fails on base
 Status: Fixed
-File(s): tests/test_wtrf_tiebreak.py
-Reported: 2026-10-21
-Fixed: 2026-10-21
-Root cause: TestFindTorrentTie left db.get_wtrf_rejected_topics unmocked, so find_torrent_for_lb queried the real DB_PATH: the live DB alone, a deleted tmp DB once an earlier test had redirected it (OperationalError: unable to open database file).
-Fix: Monkeypatch get_wtrf_rejected_topics in TestFindTorrentTie._run; the test no longer touches any DB. Full suite 3223 passed.
+File(s): tools/tapematch/tests/test_commentary_audit.py
+Reported: 2026-10-19
+Fixed: 2026-10-19
+Root cause: Test premise stale: da990507f (golden review 3) added "alternate (recording) to" to the shared backend.db._DIFF_RE, so the LB-0680 clause legitimately parses as different (0); the test still expected None. Cross-clause leak guard was never broken.
+Fix: Test now expects 0 for the alternate-to wording and adds a neutral-wording variant asserting None, pinning the leak guard independently. No parser change.
 
 BUG-376: Trading export/compare 500: selected date_str/location/lb_status from my_collection
 Status: Fixed

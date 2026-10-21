@@ -834,6 +834,26 @@
       "reassigned": "Réaffectation de {{from}} → {{to}}.",
       "renamed": "Renommé {{name}}.",
       "failed": "Impossible de terminer — voir le journal du backend."
+    },
+    "forumEdit": {
+      "editPost": "Modifier la publication…",
+      "modalTitle": "Modifier la publication WTRF",
+      "reviewTitle": "Réviser et modifier",
+      "loading": "Chargement de l'article en cours depuis WTRF…",
+      "loadFailed": "Impossible de charger l'article pour le modifier",
+      "review": "Vérifier les modifications",
+      "reviewFailed": "Impossible de préparer la modification",
+      "back": "Retour",
+      "noChanges": "Rien n'a changé — l'objet et le corps du message correspondent à la publication en ligne.",
+      "liveWarning": "Confirmer la réécriture de la publication en direct sur WTRF. Cette action ne peut pas être annulée à partir d'ici.",
+      "currentSubject": "Sujet actuel",
+      "newSubject": "Nouveau sujet",
+      "currentBody": "Corps du texte",
+      "newBody": "Nouveau corps",
+      "confirm": "Valider la modification",
+      "saving": "Enregistrement en cours…",
+      "saveFailed": "Les modifications n'ont pas été enregistrées",
+      "saved": "Mise à jour de l'article WTRF"
     }
   },
   "map": {
@@ -1524,7 +1544,10 @@
     "tooltip": {
       "inferred": "Déduites de la date et du lieu de l'enregistrement lui-même — non associées à une date de concert connue de Dylan",
       "tapematchGroup": "Groupe de correspondances acoustiques TapeMatch",
-      "tapematchReview": "Signalé pour vérification manuelle — une revendication de source identique pour cette émission est contredite par les données de corrélation de TapeMatch"
+      "tapematchReview": "Signalé pour vérification manuelle — une revendication de source identique pour cette émission est contredite par les données de corrélation de TapeMatch",
+      "onlyCopy": "Seul exemplaire connu — TapeMatch n’a trouvé aucun autre enregistrement de cette émission provenant de la même bande source.",
+      "onlyCopyUnanalysed_one": "Aucune deuxième copie de cette bande source parmi les enregistrements analysés — mais {{count}} enregistrement de cette date n'a jamais été analysé, il pourrait donc en exister une",
+      "onlyCopyUnanalysed_other": "Aucune deuxième copie de cette bande source n'a été trouvée parmi les enregistrements analysés — mais les enregistrements {{count}} de cette date n'ont jamais été analysés, il est donc possible qu'il en existe une."
     },
     "ctx": {
       "postForum": "Publier sur le forum",
@@ -1642,7 +1665,8 @@
       "best": "Meilleur",
       "uploads_one": "{{count}} upload",
       "uploads_other": "{{count}} téléchargements",
-      "ownCount": "Propre {{owned}}/{{total}}"
+      "ownCount": "Propre {{owned}}/{{total}}",
+      "onlyCopy": "Copie unique"
     },
     "setlist": {
       "loading": "Chargement de la setlist…",
@@ -1769,7 +1793,8 @@
       "taperFreeText": "Taper — non vérifié, extrait de la description en texte libre de l'entrée",
       "needsReview": "TapeMatch a signalé ce regroupement — survolez le badge pour connaître la raison précise",
       "familyBest": "Version la mieux notée de la gamme TapeMatch",
-      "curated": "Figurant dans la liste des coups de cœur de ce curateur"
+      "curated": "Figurant dans la liste des coups de cœur de ce curateur",
+      "onlyCopy": "Seul exemplaire connu de cette bande source (en gris : les autres enregistrements de cette date n’ont pas été analysés)"
     },
     "dossier": {
       "title": "Exporter le dossier de présentation",

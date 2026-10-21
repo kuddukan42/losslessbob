@@ -1578,9 +1578,10 @@ export interface PanelTab { id: string; label: string; count?: number }
 function TabStrip({ tabs, active, onChange }: { tabs: PanelTab[]; active: string; onChange: (id: string) => void }) {
   return (
     <div style={{
-      display: 'flex', gap: 2, padding: '6px 10px 0',
+      // Wrap rather than scroll: at the default panel width a scrolling strip
+      // hid the last tabs (Quality, My Collection's "Collection") off-screen.
+      display: 'flex', flexWrap: 'wrap', gap: 2, padding: '6px 10px 0',
       borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
-      overflowX: 'auto', overflowY: 'hidden',
     }}>
       {tabs.map(tab => {
         const on = tab.id === active

@@ -227,25 +227,21 @@ def _stop_geocode() -> None:
 def _start_scrape_entries(**kwargs) -> bool:
     """Start a chained scrape exactly as POST /api/scrape/start would.
 
-    Goes through ``backend.app._start_scrape_thread`` rather than spawning a
-    thread onto ``scraper.scrape_range`` directly, for two reasons: it is the
+    Goes through ``backend.scrape_worker._start_scrape_thread`` rather than
+    spawning a thread onto ``scraper.scrape_range`` directly, for two reasons: it is the
     owner of the module-level ``_scrape_thread`` guard that stops a second
     scrape from starting, and it is where the user's ``scrape_delay_ms`` /
     ``scrape_attachments`` / ``use_local_pages`` settings are applied. A
     chained scrape that ignored the configured politeness delay would hit the
     site harder than the same scrape started from the GUI.
-
-    ``backend.app`` is imported inside the function (the deferred-import
-    pattern ``activity.py`` documents): by the time a chain runs, app has
-    finished loading, so this is deferred rather than circular.
     """
-    from backend import app as _app
     from backend import db as _db
     from backend import scraper
+    from backend.scrape_worker import _start_scrape_thread
     if scraper.get_scrape_status().get("running"):
         return False
     lb_numbers = scraper.plan_range(kwargs.get("start_lb", 1), kwargs.get("end_lb"))
-    _app._start_scrape_thread(
+    _start_scrape_thread(
         lb_numbers,
         force=bool(kwargs.get("force", False)),
         delay_ms=int(_db.get_meta("scrape_delay_ms") or 1500),

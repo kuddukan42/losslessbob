@@ -1,0 +1,175 @@
+# TODO-369 progress — app.py → Blueprints (S1), db.py → package (S2)
+
+Spec: instructions/CODE_REVIEW_2026-10-17.md §5 S1/S2. Repeatable night package
+`08-blueprint-split`; each run resumes here.
+
+## Method (per domain, one commit each)
+
+1. `.debug/todo369/_extract_bp.py START END MOD "doc"` — cuts the `create_app()` line range into
+   `backend/routes/<MOD>.py` (dedent, `@app.route` → `@bp.route`, app.py's import block as
+   header) and leaves `from backend.routes.<MOD> import bp; app.register_blueprint(...)` at
+   the cut point, so registration order is preserved.
+2. Module-level helpers used only by that domain: `.debug/todo369/_move_top.py START END MOD`.
+   Helpers/state shared with app.py or other domains go to a small shared module
+   (never duplicated). Names tests monkeypatch on `backend.app` stay reachable there.
+3. `ruff check --fix` on the new module only (F401/I); never blind-F401 app.py — check
+   that a dropped app.py import isn't read as `backend.app.<name>` by tests/tools.
+   `app.` inside moved code → `current_app`.
+4. `.debug/todo369/_blank2.py backend/routes/<MOD>.py` (2 blank lines between top-level
+   defs after the dedent), then `.debug/todo369/_ast_check.py <pre-commit-rev> <MOD>` — every
+   moved function's AST must equal the original (docstrings/decorators aside); the only
+   allowed differences are the intentional edits listed in the commit message.
+   `.debug/todo369/_smoke.py <MOD>` GETs every argument-less GET rule of the Blueprint.
+5. `.debug/todo369/_dump_routes.py .debug/routes_after.txt` and diff against
+   `.debug/routes_before.txt` (378 rules+methods, dumped once before the split) — must be
+   identical. Then the domain's targeted tests + tests/test_refresh.py.
+
+Gotchas (each bit once):
+- `nonlocal` create_app closure flags (e.g. `_wtrf_crawl_running`) → module-level + `global`;
+  ruff misses it, only `_smoke.py` (SyntaxError on import) catches it.
+- `.debug/todo369/_domain.sh START END MOD "doc"` runs steps 1,3,4,5 in one go; END must stop
+  before the next `register_blueprint` pair.
+- tests/test_refresh.py::test_route_how_to_run_resolves_in_url_map fails when run right after the
+  bootleg/crawler tests (db-writer start timeout). Pre-existing, ordering-only; passes alone and in
+  the full suite.
+- Relative imports in moved code (`from . import flat_file`) resolve to `backend.routes` —
+  the extractor now rewrites them to `from backend import …`. Only `_smoke.py` catches this.
+- `Path(__file__).parent` in admin/map/taper-page routes (app.py ~8285–8548) must become
+  `.parent.parent` once moved.
+- Tests that monkeypatch `backend.app.<name>`: `get_spectrogram_status`,
+  `get_tapematch_crawl_status`, `get_pipeline_run_status` (test_activity*.py),
+  `_lbdir_status_for_lb` (test_lb_master.py), `SITE_DIR`/`SITE_FILES_DIR`/`DATA_DIR`
+  (test_sitedata_packaging.py), `database.resolve_aliases` (test_lbdir_manifest_scope.py),
+  `_github_upload_asset`, `compute_pipeline_severity`, `_find_lbdir_in_folder`,
+  `_lbdir_file_lb` imported from backend.app, `importlib` (test_pipeline_jobs.py, now
+  lb_data). Repoint the test when the owner moves. Module imports that ruff calls unused
+  in app.py after a cut may still be test patch targets — grep `app_module.` first.
+
+Shared state so far: `backend/routes/_state.py` (`process_start_time`);
+`backend/folder_lb.py` (folder→LB / manifest lookup helpers, domain 9);
+`backend/spectro_worker.py` (spectrogram state + batch, domain 10; activity.py reads it);
+`backend/lbdir_status.py` (`_lbdir_status_for_lb` + verdict helpers, domain 12);
+`backend/scrape_worker.py` (scrape thread guard + `_start_scrape_thread` /
+`_start_download_pages_thread` / `_start_scrape_worker`; app.py re-imports the first two,
+refresh_exec imports it from scrape_worker directly since domain 6; test_scrape_worker.py repointed);
+tapematch.py owns `get_tapematch_crawl_status` + the observations.db column constants
+(domain 16; activity.py and tests read it there); `backend/github_upload.py` (`_ProgressFile` + `_github_upload_asset`, domain 14; app.py's data
+package export re-imports it).
+
+Endpoint names gain the blueprint prefix (`dbedit.dbedit_tables`); nothing in the repo
+uses `url_for` / `request.endpoint` / `view_functions`, so that is not a behaviour change.
+
+The three throwaway tools live in WT/.debug/todo369/ (gitignored, persists between runs);
+recreate from this description if missing. Run them from WT root.
+
+## S1 domains (app.py `create_app()` section markers)
+
+| # | Blueprint module | app.py sections | Commit |
+|---|---|---|---|
+| 1 | dbedit | FEAT-14 DB Editor | d0cb7546d |
+| 2 | core | Checksum Lookup, Database Management (`_process_start_time`) | 9114cc7bc |
+| 3 | flat_file | Flat file update pipeline, Site-mirror xref ingest | 10ba106c3 |
+| 4 | entries | Entry Detail & Attachments, Search | 5bfa2d7f2 |
+| 5 | collection | My Collection, FEAT-03/04/05/13, FEAT-09 integrity events | 67cee89d3 |
+| 6 | scrape | Scraper Control (thread helpers already in backend/scrape_worker.py) || 5f9f208d1 |
+| 7 | bootlegs | Bootleg-CD Catalog || 57358ac33 |
+| 8 | crawler | Site Crawler, Preservation stack || 743251c41 |
+| 9 | lbdir | Verify, LBDir || 1ae1664ad |
+| 10 | spectrogram | Platform helpers, Spectrogram, rename apply || 51db8315d |
+| 11 | torrents | Torrent Generation, qBittorrent || a5b97f7c0 |
+| 12 | wtrf | Forum Posting, WTRF fetcher, WTRF fetch review || 3e3d182d7 |
+| 13 | lb_master | lb_master integrity, Pipeline refresh Phase 2/3 | 505de347b |
+| 14 | lb_data | lb_missing, lb_problems, lineage, curator mode, master publish/subscribe | f2dcfee95 |
+| 15 | tapers | Taper attribution/curation/QC review/vocab/aliases | 5b831fe62 |
+| 16 | tapematch | tapematch, tapers, ab_clip, bobtalk, library (6859–8074 block) | 519e745fa |
+| 17 | ranking | Curated lists, show picks, song index, show detail, timeline | eafe71a65 |
+| 18 | dossier | Show dossier | f2b260e18 |
+| 19 | aliases | lb_alias, folder_lb_link | ea642e292 |
+| 20 | map | Map feature routes | 1866e0e5e |
+| 21 | admin | Admin page | ff56324ca |
+| 22 | mounts | Collection mounts/routes, integrity monitor, disk scanner, file integrity | 19797de74 |
+| 23 | pipeline | Pipeline (+ app.py's module-level pipeline job / LBDir prefetch state) | 5904196a5 |
+| 24 | export | Data Package Export, site-data release, onboarding status | ee3918245 |
+| 25 | setlists | bobdylan.com, setlist.fm, Olof Björner, setlist fingerprint | 11da938e7 |
+| 26 | trading | Collection Trading | f3258dcec |
+| 27 | sharing | File Sharing (`load_persisted_shares()` stays in create_app) | 016322872 |
+| 28 | archive_org | Archive.org Upload | 771a106f8 |
+
+Grouping is a plan, not a contract — split or merge when a section's shared state says so.
+
+**S1 COMPLETE** (run 6): app.py 13,742 → 230 lines, 28 Blueprints, no routes left in
+create_app(); route map identical to routes_before.txt; full suite 3,273 passed.
+
+## S2 — db.py → backend/db/ package
+
+Step 0 (f917353f2): `git mv backend/db.py backend/db/__init__.py`. Then families are peeled
+bottom-up, one commit each, with `.debug/todo369/_peel.sh START END MOD "doc" [tests]`
+(wraps `_peel_db.py` + ruff + `_ast_db.py HEAD MOD` + import check + targeted tests;
+`_end.sh` prints the last line before the first re-export block; `_commit.sh MOD "what"`).
+Each submodule imports what it needs `from backend.db import …` (core names) or from a sibling;
+`__init__` re-exports every top-level name of each submodule from its bottom (ruff F401/E402
+ignored for `backend/db/__init__.py` in pyproject).
+
+Rules the peel tool enforces / warns on:
+- a name rebound via `global` (`_TAPER_UNIVERSE`, `_KNOWN_TAPER_KEYS_SORTED`, `_KNOWN_TAPER_RE`,
+  `_bloom*`) must move with every reader; external `db._TAPER_UNIVERSE` readers then need a
+  module `__getattr__` forwarder in `__init__` (re-export would go stale);
+- `DB_PATH` readers stay in `__init__` (tests reassign `db.DB_PATH` on the package);
+- `import_master_db` rebinds `_bloom` → master export/import stays in `__init__` with bloom;
+- `backup_database` / `get_meta` stay in `__init__` (test-patched, called by many families);
+- no import-time use of a peeled name in the rest of `__init__`.
+
+Known order-only failures (also on the pre-peel HEAD): test_lb_master.py::TestImporterIntegration
+and test_refresh.py::test_route_how_to_run_resolves_in_url_map when run in a targeted combo;
+both pass alone and in the full suite.
+
+| # | Submodule | Contents | Commit |
+|---|---|---|---|
+| 1 | olof | Olof surfacing, title normalization / setlist compare | 44901ecfb |
+| 2 | pipeline_cache | pipeline hash/state cache | 59fea83cf |
+| 3 | mounts | collection mounts + routes | f7deec907 |
+| 4 | archive_uploads | archive.org upload history | dcfdaa140 |
+| 5 | curated | curated lists + show picks | d6c047753 |
+| 6 | lb_problems | lb_problems | e8c86e2da |
+| 7 | site_inventory | scrape sessions + site_inventory | b7174b1f6 |
+| 8 | bootlegs | bootleg-CD catalog | c0e599c5a |
+| 9 | aliases | lb_alias + folder_lb_link | 28ccccc64 |
+| 10 | lb_master | status/reconcile/overrides, lb_missing, curator | 85b82181f |
+| 11 | tuit | TUIT mirror | bbd65db30 |
+| 12 | posting | torrents, forum posts, WTRF downloads, rename history | f308704b1 |
+| 13 | integrity | collection integrity monitor + file inventory | 16f4ffe1f |
+| 14 | collection | My Collection, wishlist, dupes, FEAT-03/13 | d650deebf |
+
+| 15 | library | search, entry lookups, library performances payload | 61ff4a894 |
+| 16 | taper | taper extraction, aliases, vocabulary, lineage, run records, setlist extraction | 9b6297d24 |
+| 17 | schema | SCHEMA_SQL + master/user ownership model | 0b2fa1495 |
+| 18 | map_data | get_map_data | 5c1038ac4 |
+| 19 | dylan_performances | dylan_performances import + date lookup | 1d46102f2 |
+
+**S2 COMPLETE** (run 7): `backend/db/__init__.py` 10,688 → 2,096 lines (~1,800 code +
+~300 re-export lines), 19 submodules. What stays in `__init__` is the coupled core: connection
+pool, bloom filter (`import_master_db` rebinds `_bloom`; `lookup_checksums` reads it), init_db +
+migrations, meta, stats, checksum parsing/lookup, entry changes, backup, master export/import.
+Route map identical; full suite 3,273 passed. `tools/check_project_refs.py` now scans
+`backend/routes/` and `backend/**` (it had seen 0 routes since S1).
+
+Taper rebound globals: not re-exported; `backend.db.__getattr__` forwards them (PEP 562).
+The bottom re-export block is isort-sorted by ruff, so siblings import each other directly,
+never through `backend.db`.
+
+## Run log
+
+- Run 1 (2026-10-20):
+- Run 2 (2026-10-20, interactive): domains 6–12. Stopped by tj after 12; next is 13 lb_master.
+- Run 3 (2026-10-20, interactive): domain 13 (`_reconcile_lock` moved into lb_master.py).
+  One-off failure of test_lb_master.py::TestUnscrapedStaysPublic::test_single_reconcile_keeps_public
+  under `pytest -x`; passed alone and in the full run. Next is 14 lb_data.
+- Run 4 (2026-10-20, interactive): domain 14. Backup rate-limit state moved into lb_data.py;
+  upload helper → backend/github_upload.py. app.py 6,750 lines. Then 15–18; the dossier
+  section's master GitHub check/install tail went to lb_data.py, not dossier.py.
+  Then 19; stopped by tj. app.py 4,126 lines. Next is 20 map.
+- Run 5 (2026-10-20, interactive): domain 20 map (resource paths → .parent.parent). app.py
+  3,900 lines. Then 21 admin (restart callback → admin.py, re-exported). app.py 3780 lines.
+  Then 22 mounts (pipeline/file/* routes left for 23). app.py 3377 lines. Next is 23 pipeline.
+- Run 6 (2026-10-20, interactive): domains 23–28. Pipeline module state (job dict/lock,
+- Run 7 (2026-10-20, interactive): S2 step 0 + domains 1–19; S2 complete.

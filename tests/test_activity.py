@@ -131,19 +131,21 @@ def test_busy_includes_gap_worker(monkeypatch):
     ]:
         monkeypatch.setattr(mod, fn, (lambda v: (lambda: v))(val))
 
-    from backend import app as app_module
+    from backend import spectro_worker
+    from backend.routes import pipeline as pipeline_routes
+    from backend.routes import tapematch as tapematch_routes
     monkeypatch.setattr(
-        app_module, "get_spectrogram_status",
+        spectro_worker, "get_spectrogram_status",
         lambda: {"status": "running", "current": "foo.flac", "done": 1, "total": 5,
                   "errors": 0, "skipped": 0, "stop_requested": False},
     )
     monkeypatch.setattr(
-        app_module, "get_tapematch_crawl_status",
+        tapematch_routes, "get_tapematch_crawl_status",
         lambda: {"running": False, "pid": None, "runs_on_disk": 0,
                   "distinct_dates": 0, "log_tail": []},
     )
     monkeypatch.setattr(
-        app_module, "get_pipeline_run_status",
+        pipeline_routes, "get_pipeline_run_status",
         lambda: {"running": False, "folders_total": 0, "folders_done": 0,
                   "in_progress": [], "results": {}, "errors": [], "steps": [],
                   "started_at": None, "cancelled": False},
