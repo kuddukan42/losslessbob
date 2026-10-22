@@ -2299,12 +2299,17 @@ class BandLineup(TypedDict):
             instruments kept, "with <Band>" tail and trailing punctuation
             stripped) -- rendered as the Personnel line verbatim rather than
             just the member names (C1).
+        personnel_overrides: Every later lineup clause verbatim ("6 Bob Dylan
+            (piano)", "10-14 Bob Dylan (vocal, guitar, harmonica)"), trailing
+            period stripped, in lineup order -- C32 review: the Personnel line
+            showed only the base clause and dropped Olof's per-song notes.
     """
 
     band_index: int | None
     band_label: str | None
     members: list[BandMember]
     personnel_text: str | None
+    personnel_overrides: list[str]
 
 
 def _base_clause(lineup: str) -> str:
@@ -2404,8 +2409,16 @@ def parse_band_lineup(lineup: str | None) -> BandLineup:
         personnel_text = f"{range_prefix} {personnel_text}"
     personnel_text = personnel_text.strip() or None
 
+    # The first ";" segment is already personnel_text (run-on sentences and all).
+    overrides = [
+        text
+        for segment in lineup.split(";")[1:]
+        for clause in _LINEUP_SENTENCE_SPLIT_RE.split(segment)
+        if (text := clause.strip().rstrip(".").strip())
+    ]
+
     return BandLineup(band_index=band_index, band_label=band_label, members=members,
-                       personnel_text=personnel_text)
+                       personnel_text=personnel_text, personnel_overrides=overrides)
 
 
 def _expand_ranges(token: str) -> set[int]:
@@ -4289,12 +4302,16 @@ class BobtalkAnchors(TypedDict):
         anchored: One :class:`BobtalkAnchor` per resolved cue, in bobtalk-block
             order.
         context: Quote lines with no cue, or an unresolved cue title, in
-            bobtalk-block order (``context.bobtalk``).
+            bobtalk-block order.
+        quotes: Every quote line, anchored or not, in bobtalk-block order
+            (``context.bobtalk`` -- C32 review: the Context box holds the whole
+            block, so it never reads "none" while the setlist carries a quote).
     """
 
     event_id: int
     anchored: list[BobtalkAnchor]
     context: list[str]
+    quotes: list[str]
 
 
 def _bobtalk_fold(text: str) -> str:
@@ -4361,8 +4378,8 @@ def anchor_bobtalk(
     both to nothing before comparing) and its last tier is
     :func:`backend.db.titles_match`, matching the plan's two-step D-10
     resolution order without re-deriving it. Every quote without a cue, or
-    whose cue title resolves to no song, stays in ``context``
-    (``context.bobtalk``) -- in original bobtalk-block order.
+    whose cue title resolves to no song, stays in ``context``; ``quotes`` keeps
+    every line (``context.bobtalk``) -- both in original bobtalk-block order.
 
     Args:
         conn: Open SQLite connection with ``row_factory = sqlite3.Row``.
@@ -4383,7 +4400,7 @@ def anchor_bobtalk(
     ).fetchone()
     quotes = parse_bobtalk(row[0] if row else None)
     if not quotes:
-        return BobtalkAnchors(event_id=event_id, anchored=[], context=[])
+        return BobtalkAnchors(event_id=event_id, anchored=[], context=[], quotes=[])
 
     # A quote line can carry more than one bracketed cue ("[plays guitar]
     # (after "Masters of War")"), so every quote maps to a *list* of cues,
@@ -4441,7 +4458,8 @@ def anchor_bobtalk(
             anchored_quotes.add(qidx)
 
     context = [q.text for q in quotes if q.index not in anchored_quotes]
-    return BobtalkAnchors(event_id=event_id, anchored=anchored, context=context)
+    return BobtalkAnchors(event_id=event_id, anchored=anchored, context=context,
+                          quotes=[q.text for q in quotes])
 
 
 # ---------------------------------------------------------------------------

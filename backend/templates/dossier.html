@@ -173,6 +173,9 @@ td.c.mono{white-space:nowrap}
 .setlist .pos{font-family:var(--mono);font-size:.8rem;color:var(--faint);text-align:center;width:2.6em;white-space:nowrap}
 .setlist .song{font-weight:600}
 .setlist .sub{display:block;font-size:.74rem;font-weight:400;color:var(--muted);margin-top:.1rem}
+{#- C32 review: the display rule above beat the `hidden` attribute, so the per-song bobtalk
+    span leaked into the setlist; the quotes render once, in the Context box. -#}
+.setlist .sub[hidden]{display:none}
 .setlist .tags{text-align:right;white-space:nowrap;width:1%}
 .badge-rare{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--accent-hi);border:1px solid var(--accent);border-radius:4px;padding:.1em .45em;white-space:nowrap;margin-left:.3em}
 .badge-new{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--pick-hi);border:1px solid color-mix(in oklab,var(--pick) 55%,transparent);border-radius:4px;padding:.1em .45em;margin-left:.3em}
@@ -765,6 +768,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 {%- set band_label_f = fields.get('band.label') -%}
 {%- set band_members_f = fields.get('band.members[]') -%}
 {%- set band_text_f = fields.get('band.personnel_text') -%}
+{%- set band_more_f = fields.get('band.personnel_overrides[]') -%}
 {%- set venue_map_f = fields.get('venue.map') -%}
 {%- set venue_coords_f = fields.get('venue.coords') -%}
 {%- set venue_name_f = fields.get('venue.name') -%}
@@ -795,7 +799,8 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     {%- endif -%}
     {%- if notes_f and notes_f.value %}<p><span class="label">Notes</span>{{ lbf('context.session_notes', notes_f, verbatim=true, text=(notes_f.value | join('. ') if notes_f.value is iterable and notes_f.value is not string else notes_f.value)) }}</p>{% endif %}
     {%- if band_members_f and band_members_f.value %}
-    <p><span class="label">{{ lbf('band.label', band_label_f, text=(band_label_f.value if band_label_f else 'Personnel')) }}</span><span data-lb="band.personnel_text">{{ (band_text_f.value if band_text_f and band_text_f.value else (band_members_f.value | map(attribute='name') | join(', '))) }}</span></p>
+    <p><span class="label">{{ lbf('band.label', band_label_f, text=(band_label_f.value if band_label_f else 'Personnel')) }}</span><span data-lb="band.personnel_text">{{ (band_text_f.value if band_text_f and band_text_f.value else (band_members_f.value | map(attribute='name') | join(', '))) }}</span>
+    {%- if band_more_f and band_more_f.value %}{% for _c in band_more_f.value %}<br><span data-lb="band.personnel_overrides[]" data-verbatim>{{ _c }}</span>{% endfor %}{% endif %}</p>
     {%- endif %}
   </section>
   {%- endif %}

@@ -202,6 +202,7 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("band.members[]", 2, "setlist", "lineup parser", "omit"),
     _a("band.label", 2, "setlist", "lineup parser", "value", "Personnel"),
     _a("band.personnel_text", 2, "setlist", "lineup parser", "omit"),
+    _a("band.personnel_overrides[]", 2, "setlist", "lineup parser", "omit"),
     # -- Sources ----------------------------------------------------------------
     _a("sources.count", 1, "sources", "visible sources", "required"),
     _a("sources.tape_count", 1, "sources", "tapematch families", "omit"),
@@ -243,7 +244,7 @@ _ANCHOR_ROWS: list[Anchor] = [
     # -- Context, related and provenance ----------------------------------------
     _a("context.chronicle", 4, "context", "slot template (run/tour claims + Olof chronicle)",
        "value"),
-    _a("context.bobtalk", 1, "context", "bobtalk minus anchored lines", "value",
+    _a("context.bobtalk", 1, "context", "whole bobtalk block", "value",
        "No bobtalk recorded"),
     _a("context.session_notes", 1, "context", "post-fix notes + recording notes", "omit"),
     _a("venue.name", 1, "context", "show fields", "omit"),
@@ -1012,6 +1013,9 @@ def _build_setlist(vb, d1, conn, event_id, date_iso, lineup, setlist, visible_lb
             if parsed.get("personnel_text"):
                 vb.set_field("band.personnel_text", build_field(
                     parsed["personnel_text"], 2, "parse_band_lineup", "stated"))
+            if parsed.get("personnel_overrides"):
+                vb.set_field("band.personnel_overrides[]", build_field(
+                    parsed["personnel_overrides"], 2, "parse_band_lineup", "stated"))
 
 
 # ---------------------------------------------------------------------------
@@ -1309,9 +1313,9 @@ def _build_context(vb, d1, conn, event_id, date_iso) -> None:
             "stated"))
 
     bobtalk_ctx = _safe(df.anchor_bobtalk, conn, event_id) if event_id is not None else None
-    if bobtalk_ctx and bobtalk_ctx.get("context"):
+    if bobtalk_ctx and bobtalk_ctx.get("quotes"):
         vb.set_field("context.bobtalk", build_field(
-            bobtalk_ctx["context"], 1, "D-10 anchor_bobtalk (unanchored)", "stated"))
+            bobtalk_ctx["quotes"], 1, "D-10 anchor_bobtalk (whole block)", "stated"))
 
     session_notes: list[str] = []
     if context.get("notes"):

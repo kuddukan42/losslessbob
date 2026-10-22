@@ -343,9 +343,19 @@ class TestBandLineup:
         assert band["band_index"] is None
         assert band["band_label"] == "with Tom Petty & The Heartbreakers"
 
+    def test_per_song_clauses_kept_as_overrides(self):
+        # C32 review (1974-01-06): the Personnel line dropped Olof's per-song notes.
+        lineup = ("1-5, 7-9 Bob Dylan (vocal, guitar), Rick Danko (bass).; 6 Bob Dylan (piano).; "
+                  "10-14 Bob Dylan (vocal, guitar, harmonica).")
+        parsed = parse_band_lineup(lineup)
+        assert parsed["personnel_text"] == "1-5, 7-9 Bob Dylan (vocal, guitar), Rick Danko (bass)"
+        assert parsed["personnel_overrides"] == [
+            "6 Bob Dylan (piano)", "10-14 Bob Dylan (vocal, guitar, harmonica)"]
+
     def test_blank_lineup(self):
         assert parse_band_lineup(None) == {
             "band_index": None, "band_label": None, "members": [], "personnel_text": None,
+            "personnel_overrides": [],
         }
 
 
@@ -1141,6 +1151,17 @@ class TestAnchorBobtalk:
         assert [(a["position"], a["cue"]) for a in bt["anchored"]] == [(2, "mentions")]
         assert bt["context"] == []
 
+    def test_quotes_keep_anchored_and_unanchored_lines_in_block_order(self):
+        # C32 review: the Context box read "No bobtalk recorded" while every quote
+        # was anchored to a song -- context.bobtalk now reads ``quotes``.
+        cued = "Thank you, we're gonna do one more for you now. (after Hurricane)"
+        loose = "All right now, here's an old one we haven't played in years."
+        conn = _bobtalk_db(f"{cued}\n{loose}", ["Hurricane", "Isis"])
+        bt = anchor_bobtalk(conn, 1)
+        assert [a["position"] for a in bt["anchored"]] == [1]
+        assert bt["context"] == [loose]
+        assert bt["quotes"] == [cued, loose]
+
     def test_uncued_quote_naming_two_songs_stays_in_context(self):
         line = "That was Blowin’ In The Wind, an old song. This is an older song. Rock With Me Baby."
         conn = _bobtalk_db(line, ["Blowin' In The Wind", "Rock With Me Baby"])
@@ -1156,7 +1177,7 @@ class TestAnchorBobtalk:
     def test_no_bobtalk_text_is_empty_both_ways(self):
         conn = _bobtalk_db("", [])
         bt = anchor_bobtalk(conn, 1)
-        assert bt == {"event_id": 1, "anchored": [], "context": []}
+        assert bt == {"event_id": 1, "anchored": [], "context": [], "quotes": []}
 
     def test_simple_cue_resolves(self):
         line = (
@@ -1224,4 +1245,4 @@ class TestAnchorBobtalk:
         # leak into context either.
         conn = _bobtalk_db("Bootlegs\nDuelling Banjos . Papillon 016.", [])
         bt = anchor_bobtalk(conn, 1)
-        assert bt == {"event_id": 1, "anchored": [], "context": []}
+        assert bt == {"event_id": 1, "anchored": [], "context": [], "quotes": []}
