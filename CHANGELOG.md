@@ -1,3 +1,10 @@
+[2026-10-22] — C32 golden review round 1: 8 approved, 8 fixed (bobtalk Context box, per-song lineup notes, MSG wiki link)
+Fixed: backend/dossier_fields.py, backend/dossier_anchors.py: context.bobtalk now holds the whole bobtalk block (anchor_bobtalk gains `quotes`); it held only quotes not anchored to a song, so 6 golden pages read "No bobtalk recorded" while the setlist carried quotes and 1986-06-22 showed 1 of 5
+Fixed: backend/templates/dossier.html: the per-song bobtalk span leaked into the setlist — `.setlist .sub{display:block}` beat the `hidden` attribute; added `.setlist .sub[hidden]{display:none}`
+Added: backend/dossier_fields.py, backend/dossier_anchors.py, backend/templates/dossier.html: parse_band_lineup `personnel_overrides` + anchor band.personnel_overrides[] — Olof's later lineup clauses ("6 Bob Dylan (piano)") render under the Personnel line (1974-01-06)
+Changed: live DB venue_wiki_links: curator override rows for Madison Square Garden (New York City / New York|United States) — Wikidata tied 5 same-name Gardens so the match was "low" and never rendered; backup data/backups/losslessbob_preC32msg_*.db
+Changed: tests/golden/dossier/fixture.jsonl.gz: re-cut, --check 18/18; static export + sign-off page (v3) regenerated
+
 [2026-10-21] — Open-bug sweep: BUG-374/375/377/383/384 closed; CI flake BUG-385 fixed; night/2026-10-20 merged
 Changed: merge of night/2026-10-20: this branch's BUG-378/379 renumbered BUG-384/385 (night had used both ids); perf changes ported into the split modules — _ChecksumFilter + _ensure_init_db + join_init_bg_threads into backend/db/__init__.py, prefetch description drop into backend/routes/collection.py; night's lazy pre-filter build kept, now on the numpy filter
 Fixed: backend/db/__init__.py, conftest.py: BUG-385 — init_db() background threads are tracked and joined (join_init_bg_threads) before conftest swaps the write-queue singleton, so a straggler can no longer write into the next test's DB; _run_bg skips OperationalError once its DB dir is gone
