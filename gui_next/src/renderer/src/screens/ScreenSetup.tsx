@@ -115,7 +115,7 @@ function SetupCard({
   return (
     <div style={{
       background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
-      borderRadius: 10, padding: 18, ...style,
+      borderRadius: 10, padding: 18, minWidth: 0, ...style,
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
         <span style={{
@@ -440,11 +440,17 @@ function IntegCard({
       </div>
 
       {!editing && (
-        <div style={{ display: 'grid', gridTemplateColumns: '100px 1fr', gap: '4px 8px', fontSize: 'var(--lbb-fs-11-5)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '100px minmax(0, 1fr)', gap: '4px 8px', fontSize: 'var(--lbb-fs-11-5)' }}>
           {rows.map(([label, value]) => (
             <React.Fragment key={label}>
               <span style={{ color: 'var(--lbb-fg3)' }}>{label}</span>
-              <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)' }}>{value}</span>
+              <span
+                title={value}
+                style={{
+                  fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)',
+                  overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                }}
+              >{value}</span>
             </React.Fragment>
           ))}
         </div>
@@ -1498,7 +1504,11 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
           {t('setup.subtitle')}
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 24 }}>
+        {/* Reflows to one column below ~900px (BUG-383); wide cards span the full row. */}
+        <div style={{
+          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
+          gap: 16, marginTop: 24,
+        }}>
 
           {/* ── Database ── */}
           <SetupCard
@@ -1559,8 +1569,11 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
           )}
 
           {/* ── Integrations ── */}
-          <SetupCard title={t('setup.integrations.title')} style={{ gridColumn: 'span 2' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 12 }}>
+          <SetupCard title={t('setup.integrations.title')} style={{ gridColumn: '1 / -1' }}>
+            <div style={{
+              display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
+              gap: 12,
+            }}>
               <IntegCard
                 title={t('setup.integrations.qbt')}
                 tone={qbtTone}
@@ -1859,7 +1872,7 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
           </SetupCard>
 
           {/* ── Flat file history ── */}
-          <SetupCard title={t('setup.flatFile.title')} style={{ gridColumn: 'span 2' }}>
+          <SetupCard title={t('setup.flatFile.title')} style={{ gridColumn: '1 / -1' }}>
             <p style={{
               margin: '-4px 0 12px', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', lineHeight: 1.5,
             }}>

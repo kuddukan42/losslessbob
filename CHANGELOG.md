@@ -1,6 +1,7 @@
-[2026-10-21] — Open-bug sweep: BUG-374/375/377/384 closed; CI flake BUG-385 fixed; night/2026-10-20 merged
+[2026-10-21] — Open-bug sweep: BUG-374/375/377/383/384 closed; CI flake BUG-385 fixed; night/2026-10-20 merged
 Changed: merge of night/2026-10-20: this branch's BUG-378/379 renumbered BUG-384/385 (night had used both ids); perf changes ported into the split modules — _ChecksumFilter + _ensure_init_db + join_init_bg_threads into backend/db/__init__.py, prefetch description drop into backend/routes/collection.py; night's lazy pre-filter build kept, now on the numpy filter
 Fixed: backend/db/__init__.py, conftest.py: BUG-385 — init_db() background threads are tracked and joined (join_init_bg_threads) before conftest swaps the write-queue singleton, so a straggler can no longer write into the next test's DB; _run_bg skips OperationalError once its DB dir is gone
+Fixed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: BUG-383 — Setup card grid reflows (auto-fit minmax 420px, wide cards span 1 / -1; Integrations auto-fit 200px) instead of clipping below ~900px; IntegCard values ellipsize with a title tooltip
 Fixed: tests/test_wtrf_tiebreak.py: BUG-384 — TestFindTorrentTie now mocks get_wtrf_rejected_topics; it queried the real DB (a deleted tmp DB in full-suite order)
 Fixed: tools/tapematch/tests/test_commentary_audit.py: BUG-374/377 — cross-clause test expects 0, matching the deliberate "alternate to" = different rule (da990507f); leak guard kept
 Fixed: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx, ScreenFileIntegrity.tsx: BUG-375 — undefined var(--lbb-accent) -> var(--lbb-accent-mid)

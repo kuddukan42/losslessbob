@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-383: Setup screen cards overflow the viewport below ~900px
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenSetup.tsx
+Reported: 2026-10-20
+Fixed: 2026-10-21
+Root cause: Setup card grid was a fixed 1fr 1fr (and Integrations 4x 1fr) with min-content-sized cards, so columns could not shrink or wrap; IntegCard mono values (Admin URL) had no overflow handling
+Fix: Outer grid repeat(auto-fit, minmax(min(100%,420px),1fr)) with wide cards spanning 1 / -1; Integrations grid auto-fit minmax 200px; SetupCard minWidth 0; IntegCard values ellipsize with title tooltip
+
 BUG-385: CI flaky: init_db background threads bleed into the next test's DB
 Formerly: BUG-379 (duplicate id on feat/dossier-redesign, renumbered at merge 2026-10-21)
 Status: Fixed
