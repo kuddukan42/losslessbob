@@ -1101,6 +1101,47 @@ class TestMakeResumeSafe:
         assert calls["prio"] == []
 
 
+class TestQbtSeedLocksBeforeStart:
+    """The cron paths (wtrf.sh, tuit.sh) all add through qbt_seed (BUG-387)."""
+
+    def _rig(self, monkeypatch, guard_ok=True, already=False):
+        calls: list = []
+        monkeypatch.setattr(tracker_seed, "_qbt_connection", lambda: {})
+        monkeypatch.setattr(tracker_seed.database, "get_meta", lambda k: "")
+
+        def _add(**kw):
+            calls.append(("add", kw["paused"]))
+            return {"ok": True, **({"already_present": True} if already else {})}
+        monkeypatch.setattr(tracker_seed.qbittorrent, "add_torrent_for_seeding", _add)
+        monkeypatch.setattr(tracker_seed.qbittorrent, "torrent_file_infohash",
+                            lambda p: "ab" * 20)
+        monkeypatch.setattr(tracker_seed, "make_resume_safe", lambda h: calls.append(
+            ("guard", h)) or {"ok": guard_ok, "error": "" if guard_ok else "in place"})
+        monkeypatch.setattr(tracker_seed.qbittorrent, "resume_torrent",
+                            lambda h, **kw: calls.append(("start", h)) or {"ok": True})
+        return calls
+
+    def test_added_stopped_then_locked_then_started(self, monkeypatch):
+        calls = self._rig(monkeypatch)
+        res = tracker_seed.qbt_seed("t.torrent", "/x/TUIT Seeds/S",
+                                    tracker_seed.SeedOptions(tracker="TUIT"))
+        assert res["ok"] is True
+        assert calls == [("add", True), ("guard", "ab" * 20), ("start", "ab" * 20)]
+
+    def test_a_refused_guard_leaves_it_stopped(self, monkeypatch):
+        calls = self._rig(monkeypatch, guard_ok=False)
+        res = tracker_seed.qbt_seed("t.torrent", "/x/TUIT Seeds/S",
+                                    tracker_seed.SeedOptions(tracker="TUIT"))
+        assert res["ok"] is False and "left stopped" in res["error"]
+        assert ("start", "ab" * 20) not in calls
+
+    def test_an_already_present_torrent_is_locked_but_not_started(self, monkeypatch):
+        calls = self._rig(monkeypatch, already=True)
+        tracker_seed.qbt_seed("t.torrent", "/x/TUIT Seeds/S",
+                              tracker_seed.SeedOptions(tracker="TUIT"))
+        assert [c[0] for c in calls] == ["add", "guard"]
+
+
 class TestChooseSourceFolder:
     def test_content_beats_the_trackers_naming(self, rig):
         """The tracker's LB attribution was wrong twice on 2026-09-06, so the
