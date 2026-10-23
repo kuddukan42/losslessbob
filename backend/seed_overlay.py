@@ -1175,20 +1175,27 @@ def isolate_unfinished_links(
     piece_states: list[int],
     dry_run: bool = False,
 ) -> dict:
-    """Break every hardlink a BitTorrent client could still write through.
+    """Plan (and apply) the hardlink lock for one torrent in a live client.
 
-    The live-client form of :func:`isolate_bad_pieces`: instead of hashing
-    the overlay, trust the client's own piece map. Any file with more than one
-    link that overlaps a piece the client does not hold (state != 2) will be
-    written when that piece downloads, and the write lands in every name of
-    the inode — the collection's included (BUG-386). Each such file gets a
-    private copy. A file with a single link is the overlay's own and is left
-    alone.
+    The live-client form of :func:`isolate_bad_pieces`, trusting the client's
+    own piece map. A piece the client wants is written whole when it arrives,
+    and the write lands in every name of each inode it covers — the
+    collection's included (BUG-386/387). So:
+
+    * every file it already holds in full is listed in ``freeze``, for the
+      caller to set to "do not download": a piece no wanted file touches is
+      never fetched, even after a recheck finds it bad;
+    * every file with more than one link that shares a piece with a file still
+      being downloaded gets a private copy, since those pieces stay wanted.
+
+    A file with a single link is the overlay's own and is never copied. A file
+    already set to "do not download" is neither wanted nor re-frozen.
 
     Args:
         save_path: The torrent's save path; file names are relative to it.
-        files: ``[{"name": str, "piece_range": [first, last]}]`` from
-            ``/api/v2/torrents/files``.
+        files: ``[{"name": str, "piece_range": [first, last], "priority": int,
+            "index": int}]`` from ``/api/v2/torrents/files``; ``priority``
+            defaults to 1 and ``index`` to the list position.
         piece_states: From ``/api/v2/torrents/pieceStates``.
         dry_run: Report without copying anything.
 
@@ -1196,16 +1203,26 @@ def isolate_unfinished_links(
         Dict with ``isolated`` (names copied, or that would be), ``bytes``
         (their total size), ``interior`` (names whose own inner pieces are
         missing, i.e. the linked bytes differ from the torrent's), ``missing``
-        (names absent on disk) and ``errors``. A name in ``errors`` is still
-        hardlinked.
+        (names absent on disk), ``unfinished`` (wanted names still short),
+        ``freeze`` (file indices to set to priority 0) and ``errors``. A name
+        in ``errors`` is still hardlinked.
     """
     out: dict = {"isolated": [], "bytes": 0, "interior": [], "missing": [],
-                 "errors": []}
+                 "unfinished": [], "freeze": [], "errors": []}
     root = Path(save_path)
-    for f in files:
+    wanted: set[int] = set()
+    for i, f in enumerate(files):
         first, last = f["piece_range"]
         span = range(first, last + 1)
         if all(piece_states[p] == 2 for p in span):
+            if f.get("priority", 1) != 0:
+                out["freeze"].append(f.get("index", i))
+        elif f.get("priority", 1) != 0:
+            out["unfinished"].append(f["name"])
+            wanted.update(span)
+    for f in files:
+        first, last = f["piece_range"]
+        if not wanted.intersection(range(first, last + 1)):
             continue
         dest = root / f["name"]
         try:

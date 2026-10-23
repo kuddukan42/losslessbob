@@ -1102,11 +1102,12 @@ def get_torrent_layout(
 
     Returns:
         Dict with ok (bool), present (bool), save_path (str), files (list of
-        {name, piece_range}), piece_states (list of int), amount_left (int)
-        and error (str if ok=False).
+        {name, piece_range, priority, index}), piece_states (list of int),
+        amount_left (int — counts wanted files only), state (str) and error
+        (str if ok=False).
     """
     out: dict = {"ok": False, "present": False, "save_path": "", "files": [],
-                 "piece_states": [], "amount_left": 0, "error": ""}
+                 "piece_states": [], "amount_left": 0, "state": "", "error": ""}
     if not infohash:
         out["error"] = "No infohash — cannot identify torrent in qBittorrent"
         return out
@@ -1141,8 +1142,11 @@ def get_torrent_layout(
         out.update({
             "ok": True, "present": True, "save_path": rows[0]["save_path"],
             "amount_left": int(rows[0].get("amount_left") or 0),
-            "files": [{"name": f["name"], "piece_range": f["piece_range"]}
-                      for f in files.json()],
+            "state": rows[0].get("state", ""),
+            "files": [{"name": f["name"], "piece_range": f["piece_range"],
+                       "priority": int(f.get("priority", 1)),
+                       "index": int(f.get("index", i))}
+                      for i, f in enumerate(files.json())],
             "piece_states": pieces.json(),
         })
         return out
@@ -1152,6 +1156,58 @@ def get_torrent_layout(
     except Exception as exc:
         out["error"] = str(exc)
         return out
+
+
+def set_file_priority(
+    infohash: str,
+    file_ids: list[int],
+    priority: int,
+    host: str,
+    port: int,
+    username: str = "",
+    password: str = "",
+    api_key: str = "",
+) -> dict:
+    """Set the download priority of some of a torrent's files.
+
+    Calls POST /api/v2/torrents/filePrio. Priority 0 is "do not download":
+    libtorrent then never requests a piece that no wanted file touches, which
+    is what keeps an overlay's hardlinks read-only (BUG-387).
+
+    Args:
+        infohash: Hex infohash of the torrent.
+        file_ids: File indices, as ``/api/v2/torrents/files`` numbers them.
+        priority: 0 (skip), 1 (normal), 6 (high) or 7 (maximal).
+        host: qBittorrent WebUI host.
+        port: WebUI port.
+        username: WebUI username (ignored when api_key is set).
+        password: WebUI password (ignored when api_key is set).
+        api_key: API key (qBittorrent 5+). Takes priority over username/password.
+
+    Returns:
+        Dict with ok (bool) and error (str if ok=False).
+    """
+    if not file_ids:
+        return {"ok": True}
+    base = _base_url(host, port)
+    session = _make_session(base, api_key)
+    try:
+        if not api_key:
+            err = _login(session, base, username, password)
+            if err:
+                return err
+        r = session.post(base + "/api/v2/torrents/filePrio", timeout=60, data={
+            "hash": infohash.lower(), "id": "|".join(str(i) for i in file_ids),
+            "priority": priority})
+        if not api_key:
+            session.post(base + _LOGOUT_PATH, timeout=5)
+        if r.status_code != 200:
+            return {"ok": False, "error": f"qBittorrent responded HTTP {r.status_code}"}
+        return {"ok": True}
+    except requests.exceptions.ConnectionError:
+        return {"ok": False, "error": f"Cannot connect to {base}"}
+    except Exception as exc:
+        return {"ok": False, "error": str(exc)}
 
 
 def resume_torrent(

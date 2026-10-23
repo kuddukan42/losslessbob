@@ -28,9 +28,11 @@ class FakeSession:
         return r
 
 
-def _patch(monkeypatch, sess):
+def _patch(monkeypatch, sess, guard_ok=lambda h: True):
     monkeypatch.setattr(qs.qbt, "_make_session", lambda base, key="": sess)
     monkeypatch.setattr(qs.qbt, "_login", lambda *a, **k: None)
+    monkeypatch.setattr(qs, "make_resume_safe",
+                        lambda h: {"ok": guard_ok(h), "error": "in place"})
 
 
 def test_preflight_ok_and_refuse(monkeypatch):
@@ -51,6 +53,15 @@ def test_release_paced_batches_and_sleeps(monkeypatch):
     assert resumes == ["h0|h1|h2", "h3|h4|h5", "h6"]
     assert sleeps == [45, 45]
     assert len(res["released"]) == 7 and res["tracker"]["h0"]["state"] == "working"
+
+
+def test_release_holds_back_a_torrent_the_guard_refuses(monkeypatch):
+    sess = FakeSession()
+    _patch(monkeypatch, sess, guard_ok=lambda h: h != "h1")
+    res = qs.release_paced(["h0", "h1", "h2"], "h", 1, batch_size=3, sleep=lambda s: None)
+    resumes = [d["hashes"] for u, d in sess.posts if u.endswith("/resume")]
+    assert resumes == ["h0|h2"]
+    assert res["failed"] == ["h1"]
 
 
 def test_release_falls_back_to_start_on_404(monkeypatch):

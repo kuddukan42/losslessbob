@@ -45,12 +45,18 @@ sidecars copied or re-fetched, piece-hash repair; files sharing a piece with
 unresolved data are copied, never linked. Deleting or cross-volume-moving a
 collection folder (`filer.py`) leaves the overlay as sole holder —
 `seed_overlay.warn_if_seeded()` warns; `tuit_sync.py --check-overlays` audits.
-**Invariant (BUG-386/387):** no hardlink may sit in a piece the client lacks or
-that hashes wrong — the client rewrites the whole piece through the link into
-the master. `isolate_bad_pieces` enforces it at build;
-`tracker_seed.make_resume_safe()` before any resume/restart (refuses an
-incomplete in-place seed); `tools/overlay_isolate.py` (dry-run, `--apply`)
-re-audits every torrent in qBittorrent.
+**Invariant (BUG-386/387):** no hardlink may sit in a piece the client wants —
+the client rewrites the whole piece through the link into the master.
+`tracker_seed.make_resume_safe()` *locks* a torrent: every fully-held file goes
+to priority 0 ("do not download"), which persists through rechecks, restarts
+and a manual Force recheck + Start (a rotted piece is never re-fetched); links
+sharing a piece with a still-wanted file are copied out; an unfinished in-place
+seed is refused. Per-file priority alone is not enough — libtorrent writes an
+existing priority-0 file directly when a wanted neighbour pulls in a shared
+piece. Every add (`qbt_seed`: added stopped → recheck → lock → start), bulk
+release, WTRF confirm and `wtrf_repair_extras` runs it; `isolate_bad_pieces`
+still guards the build; `tools/overlay_isolate.py` (dry-run, `--apply`) locks
+every torrent already in qBittorrent.
 
 ## TUIT private tracker
 

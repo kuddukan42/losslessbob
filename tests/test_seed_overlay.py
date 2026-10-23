@@ -964,13 +964,16 @@ class TestIsolateUnfinishedLinks:
                  {"name": "Show/own.txt", "piece_range": [4, 4]}]
         return collection, overlay, files
 
-    def test_only_links_in_unheld_pieces_are_copied(self, tmp_path):
+    def test_links_sharing_a_piece_with_an_unfinished_file_are_copied(self, tmp_path):
         collection, overlay, files = self._seed(tmp_path)
         out = isolate_unfinished_links(tmp_path / "TUIT Seeds", files, [2, 2, 2, 0, 2])
-        assert out["isolated"] == ["Show/b.flac"]
+        # b.flac is short, so pieces 2-4 stay wanted: a.flac shares piece 2.
+        assert out["isolated"] == ["Show/a.flac", "Show/b.flac"]
         assert out["interior"] == ["Show/b.flac"]
+        assert out["unfinished"] == ["Show/b.flac"]
+        assert out["freeze"] == [0, 2]
         assert (overlay / "b.flac").stat().st_nlink == 1
-        assert (overlay / "a.flac").stat().st_ino == (collection / "a.flac").stat().st_ino
+        assert (overlay / "a.flac").stat().st_nlink == 1
         # A client write to the copy no longer reaches the collection.
         (overlay / "b.flac").write_bytes(b"Z" * 100)
         assert (collection / "b.flac").read_bytes() == b"B" * 100
@@ -990,30 +993,95 @@ class TestIsolateUnfinishedLinks:
         assert (overlay / "a.flac").stat().st_nlink == 2
         assert (overlay / "b.flac").stat().st_nlink == 2
 
-    def test_a_complete_torrent_is_left_alone(self, tmp_path):
+    def test_a_complete_torrent_keeps_its_links_and_freezes_every_file(self, tmp_path):
         _c, overlay, files = self._seed(tmp_path)
         out = isolate_unfinished_links(tmp_path / "TUIT Seeds", files, [2] * 5)
         assert out["isolated"] == []
+        assert out["freeze"] == [0, 1, 2]
         assert (overlay / "a.flac").stat().st_nlink == 2
+
+    def test_a_link_beside_an_unfinished_neighbour_in_a_held_piece_is_copied(self, tmp_path):
+        """A recheck can fail a held piece later; a wanted neighbour would then
+        pull it in whole, through the link (BUG-387 link0 case)."""
+        _c, overlay, files = self._seed(tmp_path)
+        files[2]["piece_range"] = [4, 5]
+        out = isolate_unfinished_links(tmp_path / "TUIT Seeds", files, [2, 2, 2, 2, 2, 0])
+        assert out["isolated"] == ["Show/b.flac"]
+        assert out["freeze"] == [0, 1]
+
+    def test_a_file_already_skipped_is_neither_wanted_nor_refrozen(self, tmp_path):
+        _c, overlay, files = self._seed(tmp_path)
+        files[1]["priority"] = 0
+        out = isolate_unfinished_links(tmp_path / "TUIT Seeds", files, [2, 2, 2, 0, 2])
+        assert out["unfinished"] == [] and out["isolated"] == []
+        assert out["freeze"] == [0, 2]
 
 
 class TestMakeResumeSafe:
     def _layout(self, monkeypatch, **layout):
         base = {"ok": True, "present": True, "save_path": "", "files": [],
-                "piece_states": [], "amount_left": 1, "error": ""}
+                "piece_states": [], "amount_left": 1, "state": "stoppedDL", "error": ""}
         base.update(layout)
+        calls: dict = {"prio": [], "recheck": 0}
         monkeypatch.setattr(tracker_seed, "_qbt_connection", lambda: {})
         monkeypatch.setattr(tracker_seed.qbittorrent, "get_torrent_layout",
                             lambda ih, **kw: base)
+        monkeypatch.setattr(tracker_seed.qbittorrent, "set_file_priority",
+                            lambda ih, ids, p, **kw: calls["prio"].append((ids, p))
+                            or {"ok": True})
+
+        def _recheck(ih, **kw):
+            calls["recheck"] += 1
+            base["piece_states"] = [2] * len(base["piece_states"])
+            return {"ok": True}
+        monkeypatch.setattr(tracker_seed.qbittorrent, "recheck_torrent", _recheck)
+        monkeypatch.setattr(tracker_seed, "wait_checked", lambda ih, **kw: base)
+        return calls
 
     def test_an_incomplete_in_place_seed_is_refused(self, monkeypatch):
-        self._layout(monkeypatch, save_path="/mnt/DYLAN2/Concerts/1974")
+        calls = self._layout(monkeypatch, save_path="/mnt/DYLAN2/Concerts/1974",
+                             files=[{"name": "S/a.flac", "piece_range": [0, 1]}],
+                             piece_states=[2, 0])
         out = tracker_seed.make_resume_safe("ab" * 20)
         assert out["ok"] is False and out["in_place"] is True
+        assert calls["prio"] == []
 
-    def test_a_complete_torrent_is_safe(self, monkeypatch):
-        self._layout(monkeypatch, save_path="/mnt/DYLAN2/Concerts/1974", amount_left=0)
-        assert tracker_seed.make_resume_safe("ab" * 20)["ok"] is True
+    def test_a_complete_in_place_seed_is_frozen(self, monkeypatch):
+        calls = self._layout(monkeypatch, save_path="/mnt/DYLAN2/Concerts/1974",
+                             files=[{"name": "S/a.flac", "piece_range": [0, 1]}],
+                             piece_states=[2, 2], amount_left=0)
+        out = tracker_seed.make_resume_safe("ab" * 20)
+        assert out["ok"] is True and out["frozen"] == 1
+        assert calls["prio"] == [([0], 0)]
+
+    def test_a_dry_run_sets_no_priority(self, monkeypatch):
+        calls = self._layout(monkeypatch, save_path="/mnt/DYLAN2/Concerts/1974",
+                             files=[{"name": "S/a.flac", "piece_range": [0, 0]}],
+                             piece_states=[2])
+        assert tracker_seed.make_resume_safe("ab" * 20, dry_run=True)["frozen"] == 1
+        assert calls["prio"] == []
+
+    def test_a_never_checked_torrent_is_rechecked_first(self, monkeypatch, tmp_path):
+        collection = tmp_path / "c"
+        overlay = tmp_path / "WTRF Seeds" / "Show"
+        collection.mkdir()
+        overlay.mkdir(parents=True)
+        (collection / "a.flac").write_bytes(b"A" * 10)
+        os.link(collection / "a.flac", overlay / "a.flac")
+        calls = self._layout(monkeypatch, save_path=str(tmp_path / "WTRF Seeds"),
+                             files=[{"name": "Show/a.flac", "piece_range": [0, 0]}],
+                             piece_states=[0])
+        out = tracker_seed.make_resume_safe("ab" * 20)
+        assert calls["recheck"] == 1
+        assert out["ok"] is True and out["isolated"] == [] and out["frozen"] == 1
+        assert (overlay / "a.flac").stat().st_nlink == 2
+
+    def test_a_never_checked_torrent_is_refused_without_recheck(self, monkeypatch):
+        self._layout(monkeypatch, save_path="/x/WTRF Seeds",
+                     files=[{"name": "Show/a.flac", "piece_range": [0, 0]}],
+                     piece_states=[0])
+        out = tracker_seed.make_resume_safe("ab" * 20, recheck=False)
+        assert out["ok"] is False and out["error"].startswith("never checked")
 
     def test_an_overlay_has_its_links_broken(self, monkeypatch, tmp_path):
         collection = tmp_path / "c"
@@ -1022,12 +1090,15 @@ class TestMakeResumeSafe:
         overlay.mkdir(parents=True)
         (collection / "a.flac").write_bytes(b"A" * 10)
         os.link(collection / "a.flac", overlay / "a.flac")
-        self._layout(monkeypatch, save_path=str(tmp_path / "WTRF Seeds"),
-                     files=[{"name": "Show/a.flac", "piece_range": [0, 0]}],
-                     piece_states=[0])
+        (overlay / "b.txt").write_bytes(b"b")
+        calls = self._layout(monkeypatch, save_path=str(tmp_path / "WTRF Seeds"),
+                             files=[{"name": "Show/a.flac", "piece_range": [0, 1]},
+                                    {"name": "Show/b.txt", "piece_range": [1, 1]}],
+                             piece_states=[2, 0])
         out = tracker_seed.make_resume_safe("ab" * 20)
         assert out["ok"] is True and out["isolated"] == ["Show/a.flac"]
         assert (overlay / "a.flac").stat().st_nlink == 1
+        assert calls["prio"] == []
 
 
 class TestChooseSourceFolder:

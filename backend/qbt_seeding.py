@@ -13,6 +13,7 @@ from collections.abc import Callable
 import requests
 
 from backend import qbittorrent as qbt
+from backend.tracker_seed import make_resume_safe
 
 logger = logging.getLogger(__name__)
 
@@ -156,7 +157,16 @@ def release_paced(
     for i in range(0, len(infohashes), batch_size):
         if i:
             sleep(interval_s)
-        batch = infohashes[i:i + batch_size]
+        batch = []
+        for h in infohashes[i:i + batch_size]:
+            guard = make_resume_safe(h)     # lock before start (BUG-387)
+            if guard["ok"]:
+                batch.append(h)
+            else:
+                logger.error("qbt release: %s left stopped: %s", h[:12], guard["error"])
+                failed.append(h)
+        if not batch:
+            continue
         try:
             ok = _resume(session, base, batch)
         except Exception:

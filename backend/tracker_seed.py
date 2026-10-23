@@ -27,6 +27,8 @@ from __future__ import annotations
 import logging
 import shutil
 import sqlite3
+import time
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -560,47 +562,102 @@ def is_overlay_root(save_path: str | Path) -> bool:
     return Path(save_path).name.endswith(" Seeds")
 
 
-def make_resume_safe(infohash: str, dry_run: bool = False) -> dict:
-    """Make sure starting a torrent cannot write into the collection.
-
-    Call before resuming (or otherwise letting download) any torrent. A
-    complete torrent is safe as-is. An incomplete overlay has every hardlink
-    inside a piece it still lacks replaced by a private copy (BUG-386). An
-    incomplete torrent seeding *in place* from a collection folder is refused
-    outright: it would download straight into the collection, and there is no
-    link to break.
+def wait_checked(infohash: str, timeout: float = 600.0,
+                 sleep: Callable[[float], None] = time.sleep) -> dict | None:
+    """Poll until qBittorrent has finished checking a torrent.
 
     Args:
         infohash: Hex infohash of the torrent.
-        dry_run: Report what would be copied without copying.
+        timeout: Seconds to wait before giving up.
+        sleep: Injected for tests.
+
+    Returns:
+        The torrent's layout (see :func:`backend.qbittorrent.get_torrent_layout`)
+        once it is no longer checking, or None on a query failure or timeout.
+    """
+    conn = _qbt_connection()
+    deadline = time.monotonic() + timeout
+    sleep(2)
+    while time.monotonic() < deadline:
+        layout = qbittorrent.get_torrent_layout(infohash, **conn)
+        if not layout["ok"]:
+            return None
+        if not layout["state"].startswith(("checking", "metaDL", "allocating")):
+            return layout
+        sleep(3)
+    return None
+
+
+def make_resume_safe(infohash: str, dry_run: bool = False, recheck: bool = True) -> dict:
+    """Lock a torrent so the client can never write into the collection.
+
+    Call before resuming (or otherwise letting download) any torrent, and on
+    every torrent already in the client. Every file the client holds in full
+    is set to "do not download"; the priority survives rechecks and restarts,
+    so a piece that later fails its hash is simply not fetched again — even
+    through a manual Force recheck + Start (BUG-387). An overlay still
+    downloading has every hardlink sharing a piece with an unfinished file
+    replaced by a private copy (BUG-386). An unfinished torrent seeding *in
+    place* from a collection folder is refused outright: it would download
+    straight into the collection, and there is no link to break.
+
+    A torrent holding no piece at all has never been checked (qBittorrent
+    hashes a torrent added stopped only when it starts), so its piece map
+    would condemn every link: it is rechecked first, while stopped.
+
+    Args:
+        infohash: Hex infohash of the torrent.
+        dry_run: Report what would change without changing it.
+        recheck: Recheck a never-checked torrent; when False it is refused.
 
     Returns:
         Dict with ``ok`` (safe to start), ``isolated`` (names copied out),
-        ``bytes``, ``interior``, ``in_place`` (refused: incomplete in-place
+        ``bytes``, ``interior``, ``frozen`` (files set, or that would be set,
+        to "do not download"), ``in_place`` (refused: unfinished in-place
         seed) and ``error``.
     """
-    out: dict = {"ok": False, "isolated": [], "bytes": 0, "interior": [],
+    out: dict = {"ok": False, "isolated": [], "bytes": 0, "interior": [], "frozen": 0,
                  "in_place": False, "error": ""}
-    layout = qbittorrent.get_torrent_layout(infohash, **_qbt_connection())
+    conn = _qbt_connection()
+    layout = qbittorrent.get_torrent_layout(infohash, **conn)
     if not layout["ok"]:
         out["error"] = layout["error"] or "could not query qBittorrent"
         return out
-    if not layout["present"] or layout["amount_left"] == 0:
+    if not layout["present"]:
         out["ok"] = True
         return out
-    if not is_overlay_root(layout["save_path"]):
+    states = layout["piece_states"]
+    if states and 2 not in states:
+        if not recheck or dry_run:
+            out["error"] = "never checked — recheck it before it is started"
+            return out
+        qbittorrent.recheck_torrent(infohash, **conn)
+        layout = wait_checked(infohash)
+        if layout is None:
+            out["error"] = "recheck did not finish — left as is"
+            return out
+        states = layout["piece_states"]
+    in_place = not is_overlay_root(layout["save_path"])
+    # In place, every file *is* the collection: nothing may be copied over it.
+    res = isolate_unfinished_links(layout["save_path"], layout["files"], states,
+                                   dry_run=dry_run or in_place)
+    if in_place and res["unfinished"]:
         out["in_place"] = True
         out["error"] = (
             f"refused — incomplete torrent seeds in place from "
             f"{layout['save_path']}; starting it would download into the collection"
         )
         return out
-    res = isolate_unfinished_links(
-        layout["save_path"], layout["files"], layout["piece_states"], dry_run=dry_run)
     out.update({k: res[k] for k in ("isolated", "bytes", "interior")})
+    out["frozen"] = len(res["freeze"])
     if res["errors"]:
         out["error"] = "could not break hardlink(s): " + "; ".join(res["errors"][:3])
         return out
+    if res["freeze"] and not dry_run:
+        prio = qbittorrent.set_file_priority(infohash, res["freeze"], 0, **conn)
+        if not prio["ok"]:
+            out["error"] = "could not lock files: " + (prio.get("error") or "")
+            return out
     if res["isolated"] and not dry_run:
         logger.info("  resume guard: copied %d hardlinked file(s) (%.1f MB) out of "
                     "%s", len(res["isolated"]), res["bytes"] / 1e6, infohash[:12])
@@ -629,10 +686,27 @@ def qbt_seed(torrent_path: str, source_folder: str, opts: SeedOptions) -> dict:
         source_folder=source_folder,
         category=category,
         tags=tags,
+        paused=True,
         **_qbt_connection(),
     )
-    if result.get("ok") and opts.paused:
-        logger.info("  (added; pause it in the qBittorrent UI if needed)")
+    if not result.get("ok"):
+        return result
+    # Added stopped, then locked, then started: the client never gets to
+    # download a piece through a hardlink first (BUG-387).
+    infohash = qbittorrent.torrent_file_infohash(torrent_path) or ""
+    guard = make_resume_safe(infohash)
+    if not guard["ok"]:
+        logger.error("  added but left stopped: %s", guard["error"])
+        return {"ok": False, "error": f"added but left stopped: {guard['error']}"}
+    if result.get("already_present"):
+        return result
+    if opts.paused:
+        logger.info("  (added stopped — start it in the qBittorrent UI)")
+        return result
+    started = qbittorrent.resume_torrent(infohash, **_qbt_connection())
+    if not started.get("ok"):
+        return {"ok": False, "error": "added but could not start: "
+                + (started.get("error") or "")}
     return result
 
 

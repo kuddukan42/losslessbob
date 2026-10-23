@@ -1,3 +1,12 @@
+[2026-10-23] — BUG-387: every torrent locked at "do not download" for held files — no recheck or manual Start can write through an overlay hardlink again; damage list re-verified against the site's lbdir md5s
+Fixed: backend/seed_overlay.py, backend/tracker_seed.py: make_resume_safe() now locks — fully-held files go to priority 0 (persists through rechecks/restarts, so a rotted piece is never re-fetched), links sharing a piece with any still-wanted file are copied out (per-file priority alone fails: libtorrent writes an existing priority-0 file when a wanted neighbour pulls the shared piece), a never-checked torrent is rechecked while stopped first; completeness comes from pieceStates, not amount_left
+Fixed: backend/tracker_seed.py: qbt_seed added torrents running — now added stopped → recheck → lock → start (opts.paused now honoured)
+Fixed: backend/qbt_seeding.py: bulk paced release resumed unguarded — each torrent is locked first, refused ones stay stopped
+Added: backend/qbittorrent.py: set_file_priority(); get_torrent_layout() returns state + per-file priority/index
+Changed: tools/overlay_isolate.py: walks every torrent (not just incomplete) and locks it; --recheck for never-checked ones. Verified live first on scratch data with a local seeder: control rewrote the master; locked + rotted master + Force recheck + Start downloaded 0 bytes
+Changed: docs/wiki/Integrations.md: lock invariant
+Changed: data/logs/bug387_restore_checklist.md + _by_year.tsv rebuilt from site md5 verification: 182 restore, 27 restore (unreferenced), 4 optional, 30 clean
+
 [2026-10-22] — BUG-387: audit of every qBittorrent torrent — overlay hardlinks already let qBittorrent overwrite 1,147 collection masters; exposure closed, restore pending
 Fixed: backend/seed_overlay.py, backend/tracker_seed.py, backend/qbittorrent.py: isolate_unfinished_links() + make_resume_safe() (via new get_torrent_layout) copy out every hardlink inside a piece the client lacks before a torrent may start; an incomplete in-place seed is refused
 Fixed: backend/wtrf_review.py: WTRF review "confirm" resumed qbt_added torrents unguarded — now runs make_resume_safe first and refuses on failure
