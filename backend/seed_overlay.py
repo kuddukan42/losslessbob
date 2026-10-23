@@ -1137,18 +1137,94 @@ def isolate_bad_pieces(info: TorrentInfo, plan: OverlayPlan) -> dict:
     for entry, rng in zip(plan.entries, ranges, strict=True):
         if entry.action != LINK or not any(p in failing for p in range(*_span(rng))):
             continue
-        dest = _overlay_dest(plan.target_dir, entry.rel_path)
-        tmp = dest.with_name(dest.name + ".lb-isolate")
         try:
-            shutil.copy2(dest, tmp)
-            os.replace(tmp, dest)
+            _break_link(_overlay_dest(plan.target_dir, entry.rel_path))
         except OSError as exc:
-            tmp.unlink(missing_ok=True)
             out["errors"].append(f"{entry.rel_path}: {exc}")
             continue
         entry.action = COPY
         entry.reason = "collection (copied — shares a piece that hashes wrong)"
         out["isolated"].append(entry.rel_path)
+    return out
+
+
+def _break_link(dest: Path) -> None:
+    """Replace a hardlinked file by a private copy of itself.
+
+    The copy is written beside the file and renamed over it, so the other
+    names of the inode — the collection's file — are only ever read.
+
+    Args:
+        dest: The overlay's name for the file.
+
+    Raises:
+        OSError: When the copy or rename fails; the original link is left.
+    """
+    tmp = dest.with_name(dest.name + ".lb-isolate")
+    try:
+        shutil.copy2(dest, tmp)
+        os.replace(tmp, dest)
+    except OSError:
+        tmp.unlink(missing_ok=True)
+        raise
+
+
+def isolate_unfinished_links(
+    save_path: str | Path,
+    files: list[dict],
+    piece_states: list[int],
+    dry_run: bool = False,
+) -> dict:
+    """Break every hardlink a BitTorrent client could still write through.
+
+    The live-client form of :func:`isolate_bad_pieces`: instead of hashing
+    the overlay, trust the client's own piece map. Any file with more than one
+    link that overlaps a piece the client does not hold (state != 2) will be
+    written when that piece downloads, and the write lands in every name of
+    the inode — the collection's included (BUG-386). Each such file gets a
+    private copy. A file with a single link is the overlay's own and is left
+    alone.
+
+    Args:
+        save_path: The torrent's save path; file names are relative to it.
+        files: ``[{"name": str, "piece_range": [first, last]}]`` from
+            ``/api/v2/torrents/files``.
+        piece_states: From ``/api/v2/torrents/pieceStates``.
+        dry_run: Report without copying anything.
+
+    Returns:
+        Dict with ``isolated`` (names copied, or that would be), ``bytes``
+        (their total size), ``interior`` (names whose own inner pieces are
+        missing, i.e. the linked bytes differ from the torrent's), ``missing``
+        (names absent on disk) and ``errors``. A name in ``errors`` is still
+        hardlinked.
+    """
+    out: dict = {"isolated": [], "bytes": 0, "interior": [], "missing": [],
+                 "errors": []}
+    root = Path(save_path)
+    for f in files:
+        first, last = f["piece_range"]
+        span = range(first, last + 1)
+        if all(piece_states[p] == 2 for p in span):
+            continue
+        dest = root / f["name"]
+        try:
+            st = dest.stat()
+        except OSError:
+            out["missing"].append(f["name"])
+            continue
+        if st.st_nlink < 2:
+            continue
+        if any(piece_states[p] != 2 for p in range(first + 1, last)):
+            out["interior"].append(f["name"])
+        if not dry_run:
+            try:
+                _break_link(dest)
+            except OSError as exc:
+                out["errors"].append(f"{f['name']}: {exc}")
+                continue
+        out["isolated"].append(f["name"])
+        out["bytes"] += st.st_size
     return out
 
 

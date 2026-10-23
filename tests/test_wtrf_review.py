@@ -77,9 +77,28 @@ class TestConfirm:
         monkeypatch.setattr(q, "torrent_file_infohash", lambda p: "ab" * 20)
         monkeypatch.setattr(q, "resume_torrent",
                             lambda ih, **kw: seen.update(ih=ih) or {"ok": True})
+        monkeypatch.setattr("backend.tracker_seed.make_resume_safe",
+                            lambda ih: {"ok": True, "error": ""})
         r = c.post(f"/api/wtrf/review/{rid}/confirm")
         assert r.get_json() == {"ok": True, "action": "resumed"}
         assert seen["ih"] == "ab" * 20
+
+    def test_resume_is_refused_when_the_guard_fails(self, client, monkeypatch):
+        """BUG-386: a resume that could write into the collection never starts."""
+        c, db, tmp = client
+        import backend.qbittorrent as q
+        t = tmp / "a.torrent"
+        t.write_bytes(b"x")
+        rid = _add(db, 16633, "qbt_added", "medium", tp=str(t))
+        started = []
+        monkeypatch.setattr(q, "torrent_file_infohash", lambda p: "ab" * 20)
+        monkeypatch.setattr(q, "resume_torrent",
+                            lambda ih, **kw: started.append(ih) or {"ok": True})
+        monkeypatch.setattr("backend.tracker_seed.make_resume_safe",
+                            lambda ih: {"ok": False, "error": "refused — in place"})
+        r = c.post(f"/api/wtrf/review/{rid}/confirm")
+        assert r.get_json()["ok"] is False
+        assert started == []
 
     def test_skipped_row_fetches_chosen_candidate_and_adds(self, client, monkeypatch):
         c, db, tmp = client

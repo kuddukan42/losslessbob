@@ -157,6 +157,7 @@ def confirm_row(
     """
     from backend import qbittorrent as qbt
     from backend.paths import DATA_DIR
+    from backend.tracker_seed import make_resume_safe
     from backend.wtrf_scraper import download_torrent_from_topic
 
     row = get_row(download_id, db_path)
@@ -170,6 +171,9 @@ def confirm_row(
     # Paused-added (or already-added) torrent: just start it.
     if row["status"] == "qbt_added" and row.get("torrent_path"):
         ih = qbt.torrent_file_infohash(row["torrent_path"])
+        guard = make_resume_safe(ih or "")
+        if not guard["ok"]:
+            return {"ok": False, "error": guard["error"] or "Resume guard failed"}
         res = qbt.resume_torrent(ih or "", **conn)
         if not res.get("ok"):
             return {"ok": False, "error": res.get("error") or "Resume failed"}

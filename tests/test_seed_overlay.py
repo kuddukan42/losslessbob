@@ -23,6 +23,7 @@ from backend.seed_overlay import (
     choose_source_folder,
     collection_is_untouched,
     isolate_bad_pieces,
+    isolate_unfinished_links,
     overlay_status,
     plan_overlay,
     repair_overlay,
@@ -944,6 +945,89 @@ class TestIsolateBadPieces:
         assert collection_is_untouched(collection, before) == []
         assert (collection / "t02.flac").read_bytes() == FILES["t02.flac"]
         assert wrong.read_bytes() == b"W" * len(FILES[_AMBIGUOUS])
+
+
+class TestIsolateUnfinishedLinks:
+    """The live-client guard: trust qBittorrent's piece map (BUG-386 audit)."""
+
+    def _seed(self, tmp_path):
+        collection = tmp_path / "collection"
+        overlay = tmp_path / "TUIT Seeds" / "Show"
+        collection.mkdir()
+        overlay.mkdir(parents=True)
+        for name, data in (("a.flac", b"A" * 100), ("b.flac", b"B" * 100)):
+            (collection / name).write_bytes(data)
+            os.link(collection / name, overlay / name)
+        (overlay / "own.txt").write_bytes(b"x")
+        files = [{"name": "Show/a.flac", "piece_range": [0, 2]},
+                 {"name": "Show/b.flac", "piece_range": [2, 4]},
+                 {"name": "Show/own.txt", "piece_range": [4, 4]}]
+        return collection, overlay, files
+
+    def test_only_links_in_unheld_pieces_are_copied(self, tmp_path):
+        collection, overlay, files = self._seed(tmp_path)
+        out = isolate_unfinished_links(tmp_path / "TUIT Seeds", files, [2, 2, 2, 0, 2])
+        assert out["isolated"] == ["Show/b.flac"]
+        assert out["interior"] == ["Show/b.flac"]
+        assert (overlay / "b.flac").stat().st_nlink == 1
+        assert (overlay / "a.flac").stat().st_ino == (collection / "a.flac").stat().st_ino
+        # A client write to the copy no longer reaches the collection.
+        (overlay / "b.flac").write_bytes(b"Z" * 100)
+        assert (collection / "b.flac").read_bytes() == b"B" * 100
+
+    def test_a_boundary_piece_is_not_interior(self, tmp_path):
+        _c, _o, files = self._seed(tmp_path)
+        out = isolate_unfinished_links(tmp_path / "TUIT Seeds", files, [2, 2, 0, 2, 2],
+                                       dry_run=True)
+        assert out["isolated"] == ["Show/a.flac", "Show/b.flac"]
+        assert out["interior"] == []
+
+    def test_dry_run_touches_nothing(self, tmp_path):
+        collection, overlay, files = self._seed(tmp_path)
+        out = isolate_unfinished_links(tmp_path / "TUIT Seeds", files, [0] * 5,
+                                       dry_run=True)
+        assert out["bytes"] == 200
+        assert (overlay / "a.flac").stat().st_nlink == 2
+        assert (overlay / "b.flac").stat().st_nlink == 2
+
+    def test_a_complete_torrent_is_left_alone(self, tmp_path):
+        _c, overlay, files = self._seed(tmp_path)
+        out = isolate_unfinished_links(tmp_path / "TUIT Seeds", files, [2] * 5)
+        assert out["isolated"] == []
+        assert (overlay / "a.flac").stat().st_nlink == 2
+
+
+class TestMakeResumeSafe:
+    def _layout(self, monkeypatch, **layout):
+        base = {"ok": True, "present": True, "save_path": "", "files": [],
+                "piece_states": [], "amount_left": 1, "error": ""}
+        base.update(layout)
+        monkeypatch.setattr(tracker_seed, "_qbt_connection", lambda: {})
+        monkeypatch.setattr(tracker_seed.qbittorrent, "get_torrent_layout",
+                            lambda ih, **kw: base)
+
+    def test_an_incomplete_in_place_seed_is_refused(self, monkeypatch):
+        self._layout(monkeypatch, save_path="/mnt/DYLAN2/Concerts/1974")
+        out = tracker_seed.make_resume_safe("ab" * 20)
+        assert out["ok"] is False and out["in_place"] is True
+
+    def test_a_complete_torrent_is_safe(self, monkeypatch):
+        self._layout(monkeypatch, save_path="/mnt/DYLAN2/Concerts/1974", amount_left=0)
+        assert tracker_seed.make_resume_safe("ab" * 20)["ok"] is True
+
+    def test_an_overlay_has_its_links_broken(self, monkeypatch, tmp_path):
+        collection = tmp_path / "c"
+        overlay = tmp_path / "WTRF Seeds" / "Show"
+        collection.mkdir()
+        overlay.mkdir(parents=True)
+        (collection / "a.flac").write_bytes(b"A" * 10)
+        os.link(collection / "a.flac", overlay / "a.flac")
+        self._layout(monkeypatch, save_path=str(tmp_path / "WTRF Seeds"),
+                     files=[{"name": "Show/a.flac", "piece_range": [0, 0]}],
+                     piece_states=[0])
+        out = tracker_seed.make_resume_safe("ab" * 20)
+        assert out["ok"] is True and out["isolated"] == ["Show/a.flac"]
+        assert (overlay / "a.flac").stat().st_nlink == 1
 
 
 class TestChooseSourceFolder:

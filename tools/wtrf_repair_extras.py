@@ -12,8 +12,10 @@ tries every same-size local candidate. Files no local source has are left to
 the swarm.
 
 Writes land only in the overlay; the collection folder is snapshotted and
-checked unchanged. With ``--apply`` each touched torrent is stopped first,
-then rechecked and restarted. Dry-run by default.
+checked unchanged. With ``--apply`` each touched torrent is stopped first and
+rechecked while stopped; once the check finishes, every hardlink inside a piece
+it still lacks is copied out (:func:`backend.tracker_seed.make_resume_safe`,
+BUG-386) before it is restarted. Dry-run by default.
 
 Usage::
 
@@ -28,6 +30,7 @@ import argparse
 import logging
 import sqlite3
 import sys
+import time
 from pathlib import Path
 
 _project_root = Path(__file__).resolve().parent.parent
@@ -49,7 +52,11 @@ from backend.seed_overlay import (  # noqa: E402
     snapshot_folder,
 )
 from backend.torrent_verify import read_torrent  # noqa: E402
-from backend.tracker_seed import SIDECAR_DIR, same_date_folders  # noqa: E402
+from backend.tracker_seed import (  # noqa: E402
+    SIDECAR_DIR,
+    make_resume_safe,
+    same_date_folders,
+)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -145,12 +152,42 @@ def repair_one(s, base: str, t: dict, apply: bool, complete_only: bool = False) 
         raise SystemExit(2)
     for err in built["errors"] + repair["errors"]:
         logger.warning("  %s", err)
-    # Start before the recheck: a stopped torrent stays stopped after checking,
-    # and a start sent mid-check is dropped.
-    s.post(base + "/api/v2/torrents/start", data={"hashes": t["hash"]}, timeout=30)
+    # Recheck while stopped and wait it out: a start sent mid-check is dropped,
+    # and only the finished piece map says which hardlinks the client could
+    # still write through (BUG-386).
     s.post(base + "/api/v2/torrents/recheck", data={"hashes": t["hash"]}, timeout=30)
+    if not _wait_checked(s, base, t["hash"]):
+        return f"{summary} | recheck did not finish — left stopped"
+    guard = make_resume_safe(t["hash"])
+    if not guard["ok"]:
+        return f"{summary} | left stopped: {guard['error']}"
+    s.post(base + "/api/v2/torrents/start", data={"hashes": t["hash"]}, timeout=30)
     return (f"{summary} | wrote {built['linked'] + built['copied'] + built['refetched']}"
-            f", repaired {len(repair['repaired'])}, rechecking")
+            f", repaired {len(repair['repaired'])}, isolated {len(guard['isolated'])}"
+            f", started")
+
+
+def _wait_checked(s, base: str, infohash: str, timeout: float = 600.0) -> bool:
+    """Poll until qBittorrent has finished checking a torrent.
+
+    Args:
+        s: Logged-in qBittorrent session.
+        base: WebUI base URL.
+        infohash: Torrent to watch.
+        timeout: Seconds to wait before giving up.
+
+    Returns:
+        True once the torrent is no longer in a checking state.
+    """
+    deadline = time.monotonic() + timeout
+    time.sleep(2)
+    while time.monotonic() < deadline:
+        rows = s.get(base + "/api/v2/torrents/info",
+                     params={"hashes": infohash}, timeout=30).json()
+        if not rows or not rows[0]["state"].startswith("checking"):
+            return True
+        time.sleep(3)
+    return False
 
 
 def main() -> int:

@@ -1079,6 +1079,81 @@ def torrent_file_infohash(torrent_path: str | Path) -> str | None:
         return None
 
 
+def get_torrent_layout(
+    infohash: str,
+    host: str,
+    port: int,
+    username: str = "",
+    password: str = "",
+    api_key: str = "",
+) -> dict:
+    """Fetch where a torrent lives and which of its pieces the client holds.
+
+    Uses GET /api/v2/torrents/info, /torrents/files and /torrents/pieceStates.
+    Piece states are 0 (not downloaded), 1 (downloading) and 2 (have).
+
+    Args:
+        infohash: Hex infohash of the torrent.
+        host: qBittorrent WebUI host.
+        port: WebUI port.
+        username: WebUI username (ignored when api_key is set).
+        password: WebUI password (ignored when api_key is set).
+        api_key: API key (qBittorrent 5+). Takes priority over username/password.
+
+    Returns:
+        Dict with ok (bool), present (bool), save_path (str), files (list of
+        {name, piece_range}), piece_states (list of int), amount_left (int)
+        and error (str if ok=False).
+    """
+    out: dict = {"ok": False, "present": False, "save_path": "", "files": [],
+                 "piece_states": [], "amount_left": 0, "error": ""}
+    if not infohash:
+        out["error"] = "No infohash — cannot identify torrent in qBittorrent"
+        return out
+
+    base = _base_url(host, port)
+    session = _make_session(base, api_key)
+    try:
+        if not api_key:
+            err = _login(session, base, username, password)
+            if err:
+                return {**out, **err}
+        h = infohash.lower()
+        info = session.get(base + "/api/v2/torrents/info",
+                           params={"hashes": h}, timeout=15)
+        if info.status_code != 200:
+            out["error"] = f"qBittorrent responded HTTP {info.status_code}"
+            return out
+        rows = info.json()
+        if not rows:
+            out["ok"] = True
+            return out
+        files = session.get(base + "/api/v2/torrents/files",
+                            params={"hash": h}, timeout=30)
+        pieces = session.get(base + "/api/v2/torrents/pieceStates",
+                             params={"hash": h}, timeout=30)
+        if not api_key:
+            session.post(base + _LOGOUT_PATH, timeout=5)
+        if files.status_code != 200 or pieces.status_code != 200:
+            out["error"] = (f"qBittorrent responded HTTP {files.status_code}/"
+                            f"{pieces.status_code}")
+            return out
+        out.update({
+            "ok": True, "present": True, "save_path": rows[0]["save_path"],
+            "amount_left": int(rows[0].get("amount_left") or 0),
+            "files": [{"name": f["name"], "piece_range": f["piece_range"]}
+                      for f in files.json()],
+            "piece_states": pieces.json(),
+        })
+        return out
+    except requests.exceptions.ConnectionError:
+        out["error"] = f"Cannot connect to {base}"
+        return out
+    except Exception as exc:
+        out["error"] = str(exc)
+        return out
+
+
 def resume_torrent(
     infohash: str,
     host: str,

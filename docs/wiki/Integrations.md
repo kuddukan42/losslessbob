@@ -45,6 +45,12 @@ sidecars copied or re-fetched, piece-hash repair; files sharing a piece with
 unresolved data are copied, never linked. Deleting or cross-volume-moving a
 collection folder (`filer.py`) leaves the overlay as sole holder —
 `seed_overlay.warn_if_seeded()` warns; `tuit_sync.py --check-overlays` audits.
+**Invariant (BUG-386/387):** no hardlink may sit in a piece the client lacks or
+that hashes wrong — the client rewrites the whole piece through the link into
+the master. `isolate_bad_pieces` enforces it at build;
+`tracker_seed.make_resume_safe()` before any resume/restart (refuses an
+incomplete in-place seed); `tools/overlay_isolate.py` (dry-run, `--apply`)
+re-audits every torrent in qBittorrent.
 
 ## TUIT private tracker
 

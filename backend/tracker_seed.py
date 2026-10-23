@@ -39,6 +39,7 @@ from backend.seed_overlay import (
     collection_is_untouched,
     http_fetch,
     isolate_bad_pieces,
+    isolate_unfinished_links,
     plan_overlay,
     repair_overlay,
     snapshot_folder,
@@ -545,6 +546,66 @@ def recheck_repaired_seed(
         outcome["error"],
     )
     return False
+
+
+def is_overlay_root(save_path: str | Path) -> bool:
+    """Whether a qBittorrent save path is an overlay root (``<X> Seeds``).
+
+    Args:
+        save_path: The torrent's save path.
+
+    Returns:
+        True for ``.../TUIT Seeds``, ``.../WTRF Seeds`` and the like.
+    """
+    return Path(save_path).name.endswith(" Seeds")
+
+
+def make_resume_safe(infohash: str, dry_run: bool = False) -> dict:
+    """Make sure starting a torrent cannot write into the collection.
+
+    Call before resuming (or otherwise letting download) any torrent. A
+    complete torrent is safe as-is. An incomplete overlay has every hardlink
+    inside a piece it still lacks replaced by a private copy (BUG-386). An
+    incomplete torrent seeding *in place* from a collection folder is refused
+    outright: it would download straight into the collection, and there is no
+    link to break.
+
+    Args:
+        infohash: Hex infohash of the torrent.
+        dry_run: Report what would be copied without copying.
+
+    Returns:
+        Dict with ``ok`` (safe to start), ``isolated`` (names copied out),
+        ``bytes``, ``interior``, ``in_place`` (refused: incomplete in-place
+        seed) and ``error``.
+    """
+    out: dict = {"ok": False, "isolated": [], "bytes": 0, "interior": [],
+                 "in_place": False, "error": ""}
+    layout = qbittorrent.get_torrent_layout(infohash, **_qbt_connection())
+    if not layout["ok"]:
+        out["error"] = layout["error"] or "could not query qBittorrent"
+        return out
+    if not layout["present"] or layout["amount_left"] == 0:
+        out["ok"] = True
+        return out
+    if not is_overlay_root(layout["save_path"]):
+        out["in_place"] = True
+        out["error"] = (
+            f"refused — incomplete torrent seeds in place from "
+            f"{layout['save_path']}; starting it would download into the collection"
+        )
+        return out
+    res = isolate_unfinished_links(
+        layout["save_path"], layout["files"], layout["piece_states"], dry_run=dry_run)
+    out.update({k: res[k] for k in ("isolated", "bytes", "interior")})
+    if res["errors"]:
+        out["error"] = "could not break hardlink(s): " + "; ".join(res["errors"][:3])
+        return out
+    if res["isolated"] and not dry_run:
+        logger.info("  resume guard: copied %d hardlinked file(s) (%.1f MB) out of "
+                    "%s", len(res["isolated"]), res["bytes"] / 1e6, infohash[:12])
+    out["ok"] = True
+    return out
 
 
 def qbt_seed(torrent_path: str, source_folder: str, opts: SeedOptions) -> dict:

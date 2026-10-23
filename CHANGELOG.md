@@ -1,3 +1,11 @@
+[2026-10-22] — BUG-387: audit of every qBittorrent torrent — overlay hardlinks already let qBittorrent overwrite 1,147 collection masters; exposure closed, restore pending
+Fixed: backend/seed_overlay.py, backend/tracker_seed.py, backend/qbittorrent.py: isolate_unfinished_links() + make_resume_safe() (via new get_torrent_layout) copy out every hardlink inside a piece the client lacks before a torrent may start; an incomplete in-place seed is refused
+Fixed: backend/wtrf_review.py: WTRF review "confirm" resumed qbt_added torrents unguarded — now runs make_resume_safe first and refuses on failure
+Fixed: tools/wtrf_repair_extras.py: started the torrent before rechecking, so anything still missing downloaded through fresh links — now rechecks while stopped, waits, guards, then starts
+Added: tools/overlay_isolate.py: fleet-wide guard over all incomplete torrents (dry-run, --apply); applied 2026-10-22 — 1,039 links / 23.7 GB copied out of 224 overlays, re-audit 0
+Changed: docs/wiki/Integrations.md: overlay hardlink invariant
+Changed: live collection: NOT restored — data/logs/bug387_damaged_masters.tsv lists 100 audio-corrupt + 1,047 LB-md5-changed + 841 unverifiable masters (BUG-387 open)
+
 [2026-10-22] — BUG-386: overlay seeds no longer leave hardlinks inside a piece that hashes wrong; LB-7044 WTRF overlay rebuilt
 Fixed: backend/seed_overlay.py, backend/tracker_seed.py: new isolate_bad_pieces() copies out every hardlink overlapping a piece still wrong after repair_overlay; build_seed_overlay runs it before handing off and refuses if a link can't be broken — qBittorrent wrote LB-7044's piece 584 through links into 12 master files (BUG-386)
 Added: tests/test_seed_overlay.py: TestIsolateBadPieces (unit + build_seed_overlay end-to-end; fails without the fix)
