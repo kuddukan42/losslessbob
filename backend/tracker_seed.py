@@ -38,6 +38,7 @@ from backend.seed_overlay import (
     choose_source_folder,
     collection_is_untouched,
     http_fetch,
+    isolate_bad_pieces,
     plan_overlay,
     repair_overlay,
     snapshot_folder,
@@ -298,6 +299,22 @@ def build_seed_overlay(
                 f"ABORTED — repairing the overlay altered the collection: "
                 f"{', '.join(touched[:3])}"
             )
+
+        # A piece that still hashes wrong will be downloaded and written whole —
+        # never let that write reach a hardlinked collection file.
+        if not result.complete:
+            isolated = isolate_bad_pieces(info, plan)
+            if isolated["isolated"]:
+                logger.info(
+                    "  overlay isolate: copied %d hardlinked file(s) out of "
+                    "%d wrong piece(s)", len(isolated["isolated"]),
+                    len(isolated["bad_pieces"]),
+                )
+            if isolated["errors"]:
+                return None, (
+                    f"overlay refused — could not unlink collection files from "
+                    f"a wrong piece: {'; '.join(isolated['errors'][:3])}"
+                )
 
     if not result.complete:
         if not opts.allow_partial_overlay:

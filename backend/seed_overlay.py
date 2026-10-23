@@ -1106,6 +1106,52 @@ def repair_overlay(info: TorrentInfo, plan: OverlayPlan) -> dict:
     return out
 
 
+def isolate_bad_pieces(info: TorrentInfo, plan: OverlayPlan) -> dict:
+    """Break every hardlink that shares a piece the overlay still hashes wrong.
+
+    :func:`plan_overlay` copies collection files that share a piece with
+    *missing* data, but a piece can be complete and still wrong — a size-matched
+    sidecar that is not the torrent's bytes, with no right copy anywhere for
+    :func:`repair_overlay` to swap in. The client will download that piece and
+    write all of it, including the bytes that land in a hardlinked neighbour,
+    straight into the collection's inode (LB-7044, 2026-10-22). Each such link
+    is replaced by a private copy — written beside it, then renamed over it, so
+    the collection's file is only ever read.
+
+    Args:
+        info: Parsed torrent metadata.
+        plan: The built (and, if needed, repaired) plan.
+
+    Returns:
+        Dict with ``isolated`` (torrent-relative paths whose link was
+        replaced by a copy), ``bad_pieces`` (the failing piece indices) and
+        ``errors``. A file named in ``errors`` is still hardlinked.
+    """
+    out: dict = {"isolated": [], "bad_pieces": [], "errors": []}
+    failing = set(bad_pieces(info, plan.target_dir))
+    out["bad_pieces"] = sorted(failing)
+    if not failing:
+        return out
+
+    ranges = info.file_piece_ranges()
+    for entry, rng in zip(plan.entries, ranges, strict=True):
+        if entry.action != LINK or not any(p in failing for p in range(*_span(rng))):
+            continue
+        dest = _overlay_dest(plan.target_dir, entry.rel_path)
+        tmp = dest.with_name(dest.name + ".lb-isolate")
+        try:
+            shutil.copy2(dest, tmp)
+            os.replace(tmp, dest)
+        except OSError as exc:
+            tmp.unlink(missing_ok=True)
+            out["errors"].append(f"{entry.rel_path}: {exc}")
+            continue
+        entry.action = COPY
+        entry.reason = "collection (copied — shares a piece that hashes wrong)"
+        out["isolated"].append(entry.rel_path)
+    return out
+
+
 def _span(rng: tuple[int, int]) -> tuple[int, int]:
     """Turn an inclusive piece range into a half-open one for ``range()``.
 

@@ -22,6 +22,7 @@ from backend.seed_overlay import (
     build_overlay,
     choose_source_folder,
     collection_is_untouched,
+    isolate_bad_pieces,
     overlay_status,
     plan_overlay,
     repair_overlay,
@@ -879,6 +880,70 @@ class TestRepairOverlay:
         info, plan, entry, right = self._wrongly_built(ambiguous_rig)
         repair_overlay(info, plan)
         assert collection_is_untouched(collection, before) == []
+
+
+class TestIsolateBadPieces:
+    """A wrong piece with no right copy anywhere (LB-7044, 2026-10-22): the
+    client downloads it whole, so no hardlink may sit inside it."""
+
+    def _unrepairable(self, ambiguous_rig):
+        info, collection, sidecars, root, sibling, wrong, right = ambiguous_rig
+        right.unlink()                 # no local source has the right bytes
+        plan = plan_overlay(info, collection, root, [sidecars],
+                            link_dirs=[str(sibling)])
+        build_overlay(plan)
+        assert repair_overlay(info, plan)["repaired"] == []
+        return info, collection, plan
+
+    def test_a_link_sharing_a_wrong_piece_becomes_a_copy(self, ambiguous_rig):
+        info, collection, plan = self._unrepairable(ambiguous_rig)
+        t02 = plan.target_dir / "t02.flac"
+        assert t02.stat().st_ino == (collection / "t02.flac").stat().st_ino
+
+        out = isolate_bad_pieces(info, plan)
+        assert out["bad_pieces"] == [4]
+        # The wrong sidecar is itself a collection link the client will rewrite.
+        assert out["isolated"] == [f"{ROOT}/t02.flac", f"{ROOT}/{_AMBIGUOUS}"]
+        assert t02.stat().st_ino != (collection / "t02.flac").stat().st_ino
+        assert t02.read_bytes() == FILES["t02.flac"]
+        entry = next(e for e in plan.entries if e.rel_path.endswith("t02.flac"))
+        assert entry.action == COPY
+
+    def test_links_outside_the_wrong_piece_are_kept(self, ambiguous_rig):
+        info, collection, plan = self._unrepairable(ambiguous_rig)
+        isolate_bad_pieces(info, plan)
+        assert (plan.target_dir / "t01.flac").stat().st_ino == \
+            (collection / "t01.flac").stat().st_ino
+
+    def test_a_clean_overlay_is_left_alone(self, rig):
+        info, collection, sidecars, root = rig
+        plan = plan_overlay(info, collection, root, [sidecars])
+        build_overlay(plan)
+        assert isolate_bad_pieces(info, plan) == {
+            "isolated": [], "bad_pieces": [], "errors": []}
+
+    def test_the_seed_path_isolates_before_handing_off(
+        self, ambiguous_rig, monkeypatch
+    ):
+        info, collection, sidecars, root, sibling, wrong, right = ambiguous_rig
+        right.unlink()
+        monkeypatch.setattr(tracker_seed, "SIDECAR_DIR", sidecars)
+        before = snapshot_folder(collection)
+        opts = tracker_seed.SeedOptions(tracker="tuit", overlay=True,
+                                        overlay_root=str(root))
+        folder, reason = tracker_seed.build_seed_overlay(
+            info, str(collection), opts, "short", link_dirs=[str(sibling)])
+        assert folder, reason
+        assert "99" in reason or "%" in reason
+        # Simulate the client completing piece 4 by writing into the overlay.
+        for name, offset in (("t02.flac", len(FILES["t02.flac"]) - 1),
+                             (_AMBIGUOUS, 0)):
+            with open(Path(folder) / name, "r+b") as fh:
+                fh.seek(offset)
+                fh.write(b"\x00")
+        assert collection_is_untouched(collection, before) == []
+        assert (collection / "t02.flac").read_bytes() == FILES["t02.flac"]
+        assert wrong.read_bytes() == b"W" * len(FILES[_AMBIGUOUS])
 
 
 class TestChooseSourceFolder:

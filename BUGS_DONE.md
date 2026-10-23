@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-386: Overlay hands qBittorrent hardlinks inside a piece that hashes wrong — client writes reach the collection
+Status: Fixed
+File(s): backend/tracker_seed.py:300,backend/seed_overlay.py:1109
+Reported: 2026-10-22
+Fixed: 2026-10-22
+Root cause: plan_overlay's copy-instead-of-link rule (pass 3) keys on unresolved/missing pieces only; build_seed_overlay never re-checked links against pieces that still hashed wrong after repair_overlay.
+Fix: New seed_overlay.isolate_bad_pieces() replaces every hardlink overlapping a still-wrong piece with a private copy (copy beside, os.replace over); build_seed_overlay runs it whenever the overlay is short after repair and refuses the seed if a link can't be broken. Tests in tests/test_seed_overlay.py::TestIsolateBadPieces.
+
 BUG-383: Setup screen cards overflow the viewport below ~900px
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenSetup.tsx

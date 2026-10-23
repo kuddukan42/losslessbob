@@ -1,3 +1,8 @@
+[2026-10-22] — BUG-386: overlay seeds no longer leave hardlinks inside a piece that hashes wrong; LB-7044 WTRF overlay rebuilt
+Fixed: backend/seed_overlay.py, backend/tracker_seed.py: new isolate_bad_pieces() copies out every hardlink overlapping a piece still wrong after repair_overlay; build_seed_overlay runs it before handing off and refuses if a link can't be broken — qBittorrent wrote LB-7044's piece 584 through links into 12 master files (BUG-386)
+Added: tests/test_seed_overlay.py: TestIsolateBadPieces (unit + build_seed_overlay end-to-end; fails without the fix)
+Changed: live qBittorrent + /mnt/DYLAN1/WTRF Seeds: LB-7044 overlay rebuilt from the (LB-07044) master folder (33 linked, 3 copied) and re-added; now 100% and seeding
+
 [2026-10-22] — C32 golden review round 1: 8 approved, 8 fixed (bobtalk Context box, per-song lineup notes, MSG wiki link)
 Fixed: backend/dossier_fields.py, backend/dossier_anchors.py: context.bobtalk now holds the whole bobtalk block (anchor_bobtalk gains `quotes`); it held only quotes not anchored to a song, so 6 golden pages read "No bobtalk recorded" while the setlist carried quotes and 1986-06-22 showed 1 of 5
 Fixed: backend/templates/dossier.html: the per-song bobtalk span leaked into the setlist — `.setlist .sub{display:block}` beat the `hidden` attribute; added `.setlist .sub[hidden]{display:none}`
