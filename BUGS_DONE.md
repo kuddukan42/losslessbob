@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-387: qBittorrent overwrote 1,147 collection masters through overlay hardlinks (100 with corrupt audio) — restore needed
+Status: Fixed
+File(s): tools/wtrf_repair_extras.py:148,backend/wtrf_review.py:173,backend/seed_overlay.py:831
+Reported: 2026-10-22
+Fixed: 2026-10-24
+Root cause: Overlays hardlinked collection masters on a size match, and qBittorrent writes whole pieces: any wanted piece containing a linked file (tracker bytes differing, or a missing extra sharing a boundary piece) was rewritten through the link into the master; wtrf_repair_extras start-before-recheck and WTRF-review resume were the live triggers
+Fix: make_resume_safe locks every fully-held file at priority 0 and copies out links sharing a piece with any wanted file; qbt_seed adds stopped → recheck → lock → start; bulk release and overlay_isolate.py --apply lock fleet-wide (85f42f242, 80fbc3aae). All 181 folders with changed music restored from Backblaze by tj and re-verified 2026-10-24 against site lbdir md5s, LB md5s, FLAC audio md5 and the folders' own md5s: 0 damaged music left
+
 BUG-386: Overlay hands qBittorrent hardlinks inside a piece that hashes wrong — client writes reach the collection
 Status: Fixed
 File(s): backend/tracker_seed.py:300,backend/seed_overlay.py:1109

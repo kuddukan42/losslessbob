@@ -1,3 +1,7 @@
+[2026-10-24] — BUG-387 closed: all 181 folders with overwritten music restored and re-verified
+Changed: live collection: tj restored 181 folders from Backblaze; each re-verified file-by-file against the site's lbdir md5s, LB md5s (checksums), FLAC STREAMINFO audio md5 and the folder's own .md5 files — 0 damaged music left (LB-08812 Track No07.flac missed on the first pass, re-copied and re-verified). Remaining site mismatches (LB-00369/00502/01059 SHNs, some text sidecars) pre-date the damage
+Changed: BUGS.md → BUGS_DONE.md: BUG-387
+
 [2026-10-23] — BUG-387: every torrent locked at "do not download" for held files — no recheck or manual Start can write through an overlay hardlink again; damage list re-verified against the site's lbdir md5s
 Fixed: backend/seed_overlay.py, backend/tracker_seed.py: make_resume_safe() now locks — fully-held files go to priority 0 (persists through rechecks/restarts, so a rotted piece is never re-fetched), links sharing a piece with any still-wanted file are copied out (per-file priority alone fails: libtorrent writes an existing priority-0 file when a wanted neighbour pulls the shared piece), a never-checked torrent is rechecked while stopped first; completeness comes from pieceStates, not amount_left
 Fixed: backend/tracker_seed.py: qbt_seed added torrents running — now added stopped → recheck → lock → start (opts.paused now honoured)
