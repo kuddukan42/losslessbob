@@ -258,8 +258,8 @@ TRACKLIST_FRAGMENT_DEMOTION_RATIO = 1.5
 
 def _fragment_lbs(
     conn: sqlite3.Connection, event_id: int | None, candidates: list[dict],
-) -> set[int]:
-    """TODO-344/§8.2 (C27): which of this date's candidates are fragments.
+) -> tuple[set[int], set[int]]:
+    """TODO-344/§8.2 (C27): which of this date's candidates are fragments or no-match.
 
     Reuses ``backend.dossier_fields.completeness``/``is_fragment`` — the same
     D-01 completeness signal the dossier's C27 verdict applies to keep
@@ -268,6 +268,12 @@ def _fragment_lbs(
 
     TODO-349 narrows this for tracklist-basis fragments only: see
     :data:`TRACKLIST_FRAGMENT_DEMOTION_RATIO`.
+
+    TODO-372: the same completeness pass also yields the G2 no-match set
+    (``fits_show`` false — the tracklist doesn't belong to this show), the
+    dossier's "Doesn't match this show" group. No-match takes priority over
+    fragment, as in the dossier, and a no-match source never counts as the
+    "materially longer" alternative that keeps a fragment demoted.
 
     Args:
         conn: Open SQLite connection.
@@ -278,7 +284,7 @@ def _fragment_lbs(
             ``timing``), as produced by :func:`_load_candidates`.
 
     Returns:
-        The set of ``lb_number`` values that count as fragments.
+        ``(fragments, no_match)`` -- disjoint sets of ``lb_number`` values.
     """
     from backend.dossier_fields import completeness as _completeness
     from backend.dossier_fields import is_fragment, parse_runtime
@@ -293,12 +299,14 @@ def _fragment_lbs(
             runtimes[c["lb_number"]] = rt["total_minutes"]
     median_runtime = median(runtimes.values()) if runtimes else None
 
+    no_match = {lb for lb, comp in comp_map.items() if not comp.get("fits_show", True)}
     fragments = {
         lb for lb in lbs
-        if is_fragment(comp_map.get(lb), runtimes.get(lb), median_runtime)
+        if lb not in no_match
+        and is_fragment(comp_map.get(lb), runtimes.get(lb), median_runtime)
     }
     if not fragments:
-        return fragments
+        return fragments, no_match
 
     reprieved: set[int] = set()
     for lb in fragments:
@@ -314,14 +322,15 @@ def _fragment_lbs(
             continue  # can't confirm a "materially longer" alternative; stay demoted
         threshold = TRACKLIST_FRAGMENT_DEMOTION_RATIO * own_runtime
         has_longer_non_fragment = any(
-            other_lb not in fragments and runtimes.get(other_lb, 0) >= threshold
+            other_lb not in fragments and other_lb not in no_match
+            and runtimes.get(other_lb, 0) >= threshold
             for other_lb in lbs
             if other_lb != lb
         )
         if not has_longer_non_fragment:
             reprieved.add(lb)
 
-    return fragments - reprieved
+    return fragments - reprieved, no_match
 
 
 def _load_curated_lists(conn: sqlite3.Connection) -> dict[int, list[str]]:
@@ -676,8 +685,9 @@ def _is_vetoed(evidence: list[dict]) -> bool:
 def _rank_date(
     rows: list[tuple[int, float, list[dict]]], fragments: frozenset[int] = frozenset(),
     below_master: frozenset[int] | set[int] = frozenset(),
+    no_match: frozenset[int] | set[int] = frozenset(),
 ) -> list[tuple[int, float, list[dict], int]]:
-    """Rank by veto, fragment status (TODO-344/C27), generation tier, then score desc.
+    """Rank by G2 fit, veto, fragment status (TODO-344/C27), generation tier, then score.
 
     Ties go to the lower LB. *below_master* (:func:`_below_master_lbs`, silver
     review A) are the silver / low-gen copies of a show that has a master: they
@@ -695,16 +705,22 @@ def _rank_date(
     it's only guaranteed that rank 1 is never a fragment when a non-fragment
     candidate exists for the date.
 
+    TODO-372: a G2 no-match source (its tracklist isn't this show's) ranks
+    after everything else -- the dossier's "Doesn't match this show" group,
+    which outranks even its vetoed "excluded" group in priority.
+
     Args:
         rows: Unordered ``(lb, score, evidence)`` tuples for one date.
         fragments: ``lb_number``s on this date classified as fragments.
         below_master: ``lb_number``s held below the show's master(s).
+        no_match: ``lb_number``s whose tracklist fails G2 for this show.
 
     Returns:
         ``(lb, score, evidence, pick_rank)`` tuples, ``pick_rank`` 1..N.
     """
     ordered = sorted(rows, key=lambda r: (
-        _is_vetoed(r[2]), r[0] in fragments, r[0] in below_master, -r[1], r[0]))
+        r[0] in no_match, _is_vetoed(r[2]), r[0] in fragments, r[0] in below_master,
+        -r[1], r[0]))
     return [(lb, score, ev, rank) for rank, (lb, score, ev) in enumerate(ordered, start=1)]
 
 
@@ -844,22 +860,26 @@ def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
         if date_iso is None:
             continue  # partial dates (xx/xx/61) are no show: no phantom rank-1 (BUG-346)
         for event_id, pool in _show_pools(conn, date_iso, candidates):
-            fragments = frozenset(_fragment_lbs(conn, event_id, pool))
+            frag_set, no_match_set = _fragment_lbs(conn, event_id, pool)
+            fragments, no_match = frozenset(frag_set), frozenset(no_match_set)
             scored = _score_date(pool, curated, lineage, quality, lb_taper, reputable_tapers,
                                  scan_median, rig_conflict)
-            if fragments:
-                for lb, _score, ev in scored:
-                    if lb in fragments:
-                        ev.append(_evidence(
-                            "fragment",
-                            "excerpt/fragment (D-01 completeness) — held out of top rank"))
-            below_master = _below_master_lbs(conn, scored, fragments)
+            for lb, _score, ev in scored:
+                if lb in fragments:
+                    ev.append(_evidence(
+                        "fragment",
+                        "excerpt/fragment (D-01 completeness) — held out of top rank"))
+                elif lb in no_match:
+                    ev.append(_evidence(
+                        "no_match",
+                        "tracklist doesn't match this show (G2) — ranked last"))
+            below_master = _below_master_lbs(conn, scored, fragments | no_match)
             for lb, _score, ev in scored:
                 if lb in below_master:
                     ev.append(_evidence(
                         "generation_tier",
                         "silver / low-gen copy — ranked below this show's master source(s)"))
-            for lb, score, ev, rank in _rank_date(scored, fragments, below_master):
+            for lb, score, ev, rank in _rank_date(scored, fragments, below_master, no_match):
                 all_rows.append((date, lb, score, rank, ev, date_iso, event_id))
 
     summary = _summarize(all_rows)

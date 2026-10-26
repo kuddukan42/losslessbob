@@ -320,7 +320,8 @@ class TrackMatch(TypedDict):
     Keys:
         candidate: The setlist title that matched.
         tier: 'exact', 'base' (without subtitle/parenthetical), 'alias'
-            (``song_canonical``) or 'contains' (:func:`backend.db.titles_match`).
+            (``song_canonical``), 'contains' (:func:`backend.db.titles_match`) or
+            'prefixed' (an ``"Artist - Song"`` title whose remainder matched).
     """
 
     candidate: str
@@ -335,8 +336,11 @@ def match_track(
     """Match one track title against a setlist, trying the D-01 tiers in order.
 
     Tiers: exact normalized title; the title without its subtitle/parenthetical
-    (either side); the ``song_canonical`` alias spelling; then conservative
-    containment via :func:`backend.db.titles_match`.
+    (either side); the ``song_canonical`` alias spelling; conservative
+    containment via :func:`backend.db.titles_match`; then, last, the text after
+    the first ``" - "`` through the exact/base/alias tiers only -- multi-artist
+    tracklists write ``"Joan Baez & Bob Dylan - With God On Our Side"``, which
+    the base tier reduces to the artist (LB-08621, TODO-372).
 
     Args:
         title: Track title, ideally already cleaned by :func:`clean_track_title`.
@@ -381,6 +385,12 @@ def match_track(
         if (titles_match(full, index.full[i]) or titles_match(base, index.base[i])
                 or titles_match(base, index.full[i])):
             return TrackMatch(candidate=index.titles[i], tier="contains")
+
+    _prefix, sep, rest = title.partition(" - ")
+    if sep and rest.strip():
+        m = match_track(rest, index, cmap)
+        if m is not None and m["tier"] in ("exact", "base", "alias"):
+            return TrackMatch(candidate=m["candidate"], tier="prefixed")
     return None
 
 

@@ -584,6 +584,32 @@ def test_write_targets_db_path_not_queue_binding():
     assert in_q == 0  # and NOT in the queue's DB
 
 
+# ── TODO-372: G2 no-match sources rank last ─────────────────────────────────────
+
+def test_no_match_source_ranks_last_despite_score():
+    """A source whose tracklist isn't this show's (G2 ``fits_show`` false) ranks
+    after every other source -- the dossier's "Doesn't match this show" group --
+    even with the best rating. Mirrors 2014-11-23: a full-set LB pooled with
+    the day's short second event."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_event(conn, 7, "1964-06-01")
+    _seed_songs(conn, 7, ["Song A", "Song B", "Song C"])
+    _seed_entry(conn, 3100, "6/1/64", rating="A+")
+    _seed_entry(conn, 3101, "6/1/64", rating="C")
+    _seed_setlist_text(conn, 3100, "1. Other X\n2. Other Y\n3. Other Z\n4. Other W")
+    _seed_setlist_text(conn, 3101, "1. Song A\n2. Song B\n3. Song C")
+
+    picks.recompute(db_path=db_path)
+
+    rows = {r["lb_number"]: r for r in _picks_for_date(conn, "6/1/64")}
+    assert rows[3100]["pick_score"] > rows[3101]["pick_score"]
+    assert rows[3101]["pick_rank"] == 1
+    assert "no_match" in _evidence_kinds(rows[3100])
+    assert "fragment" not in _evidence_kinds(rows[3100])
+    assert "no_match" not in _evidence_kinds(rows[3101])
+
+
 # ── POST /api/derived/recompute (F1 chained endpoint) ──────────────────────────
 
 def test_derived_recompute_endpoint_event_sequence():

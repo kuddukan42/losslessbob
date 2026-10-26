@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-372: Feed D-01 per-source completeness into concert_ranker/picks.py
+Priority: Medium
+Status: Done
+Added: 2026-10-25
+Closed: 2026-10-26
+Description: Follow-up from TODO-342. The dossier's verdict pick already skips fragment / G2-failing sources (dossier_fields.completeness + fits_show, C27), but show_picks (concert_ranker/picks.py) still ranks them, so Library/other consumers can rank-1 a fragment. Plan § 'Verdict pick' (~line 705) names this follow-up. Measure rank-1 changes on a .debug DB copy first (compute_show_picks with db_path) before any live write.
+show_picks now ranks G2 no-match sources (fits_show false) last, ahead of veto/fragment keys, with a no_match evidence row; no-match sources don't count as a master or as the longer alternative that keeps a fragment demoted. Measured on a .debug copy: 11 of 3,969 rank-1 picks change, all split-day/guest-set pools where the old #1 is the other event's recording (.debug/todo372_rank1_diff.md). Takes effect on the next show_picks recompute.
+
 TODO-371: Show Dossier: G1 fallback for the 64 dates with no Olof event — reduced dossier from setlist.fm/bobdylan.com identity (plan row C28a)
 Priority: Medium
 Status: Done

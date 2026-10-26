@@ -161,6 +161,13 @@ class TestMatchTrack:
         m = match_track("It's Alright Ma (I'm Only Bleeding)", ["It's Alright, Ma"])
         assert m == {"candidate": "It's Alright, Ma", "tier": "base"}
 
+    def test_artist_prefix(self):
+        """TODO-372: multi-artist tracklists (LB-08621) prefix the performer."""
+        setlist = ["With God On Our Side", "Blowin' In The Wind"]
+        m = match_track("Joan Baez & Bob Dylan - With God On Our Side", setlist)
+        assert m == {"candidate": "With God On Our Side", "tier": "prefixed"}
+        assert match_track("Gil Scott Heron - Alien", setlist) is None
+
     def test_alias(self):
         cmap = {"girl of the north country": "Girl From The North Country"}
         m = match_track("Girl Of The North Country", ["Girl From The North Country"], cmap)

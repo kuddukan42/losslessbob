@@ -4,12 +4,6 @@ Status: Open
 Added: 2026-10-25
 Description: Follow-up from TODO-342. D-06 (plan ~line 555) and D-12 (~line 636) ship as null stubs (venue.district omits; source[].added / show.newest_source_date suppress). D-12 is blocked until the LB site exposes a date-added (audit F9: lb_master.first_seen_at is install-relative).
 
-TODO-372: Feed D-01 per-source completeness into concert_ranker/picks.py
-Priority: Medium
-Status: Open
-Added: 2026-10-25
-Description: Follow-up from TODO-342. The dossier's verdict pick already skips fragment / G2-failing sources (dossier_fields.completeness + fits_show, C27), but show_picks (concert_ranker/picks.py) still ranks them, so Library/other consumers can rank-1 a fragment. Plan § 'Verdict pick' (~line 705) names this follow-up. Measure rank-1 changes on a .debug DB copy first (compute_show_picks with db_path) before any live write.
-
 TODO-355: Refile 1,293 public LBs out of PRIVATE LB + 848 misfiled collection folders
 Priority: Medium
 Status: Open

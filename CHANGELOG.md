@@ -1,3 +1,9 @@
+[2026-10-26] — show_picks demotes G2 no-match sources like the dossier (TODO-372); D-01 matcher reads "Artist - Song" titles (BUG-390)
+Changed: concert_ranker/picks.py: _fragment_lbs also returns the G2 no-match set from the same completeness pass; _rank_date sorts no-match first-key (ranked last), evidence kind "no_match"; no-match sources aren't masters for the silver hold nor the longer alternative in the TODO-349 reprieve. .debug copy: 11/3,969 rank-1 changes, all split-day/guest-set pools (.debug/todo372_rank1_diff.md)
+Fixed: backend/dossier_fields.py: match_track last-resort "prefixed" tier — remainder after first " - " via exact/base/alias; LB-08621 Peace Sunday 0/3 -> matched
+Changed: tests/golden/dossier/2004-10-21_propagated-tapers.json: LB-14971 completeness 88 -> 94 ("Introduction - Drifter's Escape" now matches) — re-pinned under BUG-390
+Added: tests/test_show_picks.py, tests/test_dossier_fields.py: no-match ranking, artist-prefix match
+
 [2026-10-25] — tj's review: 1996-04-18 is in Olof (DSN17030) — parser now reads US-style date lines
 Fixed: backend/olof_parser.py: _match_date_line accepts 'April 18, 1996' as well as '18 April 1996'; DSN17030 had parsed undated with 0 songs, so 1996-04-18 fell to the reduced dossier. Corpus diff: exactly 1 event changes. Live: page reparsed (snapshot .debug/olof_before_dsn17030.db), song_index 73,848, picks rank-1 unchanged, qc run. 1996-04-18 now builds from Olof (NET #762)
 Added: tests/test_olof_parser_fixes.py: US-style date line

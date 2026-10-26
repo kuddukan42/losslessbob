@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-390: D-01 match_track misses 'Artist - Song' titles — multi-artist tracklists score 0 present, fail G2
+Status: Fixed
+File(s): backend/dossier_fields.py:330
+Reported: 2026-10-26
+Fixed: 2026-10-26
+Root cause: No match tier tried the text after a performer prefix; _base keeps the left side of ' - '.
+Fix: match_track: last-resort 'prefixed' tier retries the remainder after the first ' - ' through exact/base/alias only (no containment). Golden 2004-10-21 LB-14971 completeness re-pinned 88->94.
+
 BUG-389: Olof parser drops events whose DSN bookmark has no number-line header or no bookmark at all (13 events); backstage sessions typed as concerts
 Status: Fixed
 File(s): backend/olof_parser.py:571
