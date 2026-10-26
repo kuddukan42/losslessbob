@@ -4,6 +4,5041 @@
   "channel": "public",
   "category": "rolling-thunder-guest-set",
   "note": "Rolling Thunder date with guest sets",
-  "verified_by": null,
-  "expected": null
+  "verified_by": "tj (C32 sign-off, 2026-10-24)",
+  "expected": {
+    "fields": {
+      "band.label": {
+        "value": "Personnel",
+        "confidence": "unavailable",
+        "source": null
+      },
+      "band.members[]": {
+        "value": [
+          {
+            "name": "Bob Dylan",
+            "instruments": "vocal, guitar"
+          },
+          {
+            "name": "Bob Neuwirth",
+            "instruments": "guitar"
+          },
+          {
+            "name": "T-bone J. Henry Burnett",
+            "instruments": "guitar"
+          },
+          {
+            "name": "Roger McGuinn",
+            "instruments": "guitar"
+          },
+          {
+            "name": "Steven Soles",
+            "instruments": "guitar"
+          },
+          {
+            "name": "Mick Ronson",
+            "instruments": "guitar"
+          },
+          {
+            "name": "David Mansfield",
+            "instruments": "steel guitar, violin, mandolin ,dobro"
+          },
+          {
+            "name": "Rob Stoner",
+            "instruments": "bass"
+          },
+          {
+            "name": "Howie Wyeth",
+            "instruments": "piano, drums"
+          },
+          {
+            "name": "Luther Rix",
+            "instruments": "drums, percussion"
+          },
+          {
+            "name": "Ronee Blakeley",
+            "instruments": "vocal"
+          }
+        ],
+        "confidence": "stated",
+        "source": "parse_band_lineup"
+      },
+      "band.personnel_overrides[]": {
+        "value": [
+          "2, 11, 12, 15 Bob Dylan (harmonica)",
+          "11 Bob Dylan solo (vocal, guitar & harmonica)"
+        ],
+        "confidence": "stated",
+        "source": "parse_band_lineup"
+      },
+      "band.personnel_text": {
+        "value": "1-10, 12-18 Bob Dylan (vocal, guitar), Bob Neuwirth (guitar), T-bone J. Henry Burnett (guitar), Roger McGuinn (guitar), Steven Soles (guitar), Mick Ronson (guitar), David Mansfield (steel guitar, violin, mandolin ,dobro), Rob Stoner (bass), Howie Wyeth (piano, drums), Luther Rix (drums, percussion), Ronee Blakeley (vocal)",
+        "confidence": "stated",
+        "source": "parse_band_lineup"
+      },
+      "city_history[]": {
+        "value": [
+          {
+            "year": "1975",
+            "venue": "Palace Theater",
+            "count": 1,
+            "current": true
+          },
+          {
+            "year": "2018",
+            "venue": "Palace Theater",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "2023",
+            "venue": "Palace Theater",
+            "count": 1,
+            "current": false
+          }
+        ],
+        "confidence": "stated",
+        "source": "D-07 city_history"
+      },
+      "context.bobtalk": {
+        "value": [
+          "Here’s a new song, you probably haven’t heard this one. We’re gonna dedicate this one to Sam Peckinpah. (before Romance In Durango).",
+          "Thank you, that was written by Johnny Ace …. This is for Richard Manuel. (before I Shall Be Released).",
+          "OK, alright, this is about a man who just, ah, got transferred today, from one prison to another. (before Hurricane).",
+          "Here’s an underground song. (before One More Cup Of Coffee).",
+          "We wanna do this for Larry, our favorite reporter, who’s out there somewhere, he tells it like it is. (before Sara)."
+        ],
+        "confidence": "stated",
+        "source": "D-10 anchor_bobtalk (whole block)"
+      },
+      "context.chronicle": {
+        "value": {
+          "segments": [
+            {
+              "text": "Show ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "14",
+              "slot": "position",
+              "inferred": false
+            },
+            {
+              "text": " of ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "37",
+              "slot": "size",
+              "inferred": false
+            },
+            {
+              "text": " on the ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "1975 Rolling Thunder Revue",
+              "slot": "tour",
+              "inferred": false
+            },
+            {
+              "text": ".",
+              "slot": null,
+              "inferred": false
+            }
+          ],
+          "text": "Show 14 of 37 on the 1975 Rolling Thunder Revue.",
+          "claims": [
+            "tour_position"
+          ]
+        },
+        "confidence": "stated",
+        "source": "slot template (run/tour claims + Olof chronicle)"
+      },
+      "context.session_notes": {
+        "value": [
+          "3-18 available on Wolfgang's Vault, 2010.\n3-18 mono PA recording.\nMono sudience recording, 170 minutes, covering the entire show."
+        ],
+        "confidence": "stated",
+        "source": "olof_events.notes + broadcast_set_labels"
+      },
+      "ledger.total": {
+        "value": 95.97,
+        "confidence": "stated",
+        "source": "show_picks.pick_score"
+      },
+      "ledger[]": {
+        "value": [
+          {
+            "kind": "rating",
+            "detail": "LB rating A",
+            "points": 91.7
+          },
+          {
+            "kind": "curated_list",
+            "detail": "listed in 10haaf's catalogue",
+            "points": 2.0
+          },
+          {
+            "kind": "best_transfer",
+            "detail": "best transfer in its family",
+            "points": 5.0
+          },
+          {
+            "kind": "audio_quality",
+            "detail": "scanned quality 68/100 (corpus median 79)",
+            "points": -2.7
+          }
+        ],
+        "confidence": "stated",
+        "source": "show_picks.evidence_json"
+      },
+      "pick.completeness": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.curated_in[]": {
+        "value": [
+          {
+            "list_label": "10haaf's catalogue"
+          }
+        ],
+        "confidence": "stated",
+        "source": "curated_lists"
+      },
+      "pick.generation": {
+        "value": "master",
+        "confidence": "stated",
+        "source": "D-05 classify_generation"
+      },
+      "pick.lb_id": {
+        "value": "LB-13217",
+        "confidence": "stated",
+        "source": "verdict pick"
+      },
+      "pick.lb_rating": {
+        "value": "A",
+        "confidence": "stated",
+        "source": "entries.rating"
+      },
+      "pick.lineage_short": {
+        "value": "My master cassettes>Direct to Microtrack using my Nak deck",
+        "confidence": "stated",
+        "source": "lineage_short parser"
+      },
+      "pick.medium": {
+        "value": "audio",
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.resolution": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.runtime": {
+        "value": 165.0,
+        "confidence": "stated",
+        "source": "parse_runtime"
+      },
+      "pick.scan_grade": {
+        "value": "B",
+        "confidence": "stated",
+        "source": "per-LB latest scored scan"
+      },
+      "pick.taper.confidence": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.taper.name": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.type": {
+        "value": "Audience",
+        "confidence": "stated",
+        "source": "entries.source_type"
+      },
+      "pick.url": {
+        "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-13217.html",
+        "confidence": "stated",
+        "source": "detail_url"
+      },
+      "prov.credits": {
+        "value": [
+          "Olof's Files · Still on the Road"
+        ],
+        "confidence": "stated",
+        "source": "xref footer"
+      },
+      "prov.local_fields[]": {
+        "value": [
+          "city_history[]",
+          "context.chronicle",
+          "family[].basis",
+          "pick.generation",
+          "run.dates[]",
+          "run.label",
+          "run.position",
+          "show.official_release",
+          "show.setlist_confidence",
+          "song[].official_release",
+          "source[].completeness",
+          "source[].disc_count",
+          "source[].filecount",
+          "source[].filesize",
+          "source[].generation",
+          "venue.city_total",
+          "venue.run_nights",
+          "verdict.why"
+        ],
+        "confidence": "stated",
+        "source": "registry scan"
+      },
+      "prov.stamps": {
+        "value": {
+          "channel": "public",
+          "local_analysis": true,
+          "master_version": "2026-08-20_003101"
+        },
+        "confidence": "stated",
+        "source": "d1.provenance"
+      },
+      "prov.withheld[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "run.dates[]": {
+        "value": [
+          "1975-11-11"
+        ],
+        "confidence": "stated",
+        "source": "D-07 venue_run"
+      },
+      "run.label": {
+        "value": "Palace Theater",
+        "confidence": "stated",
+        "source": "D-07 venue_run"
+      },
+      "run.position": {
+        "value": 1,
+        "confidence": "stated",
+        "source": "D-07 venue_run"
+      },
+      "setlist.count": {
+        "value": 18,
+        "confidence": "stated",
+        "source": "olof_songs"
+      },
+      "setlist.range_notes[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.band_index": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.city": {
+        "value": "Waterbury",
+        "confidence": "stated",
+        "source": "d1.show.city"
+      },
+      "show.country": {
+        "value": "United States",
+        "confidence": "stated",
+        "source": "d1.show.country"
+      },
+      "show.date.dow": {
+        "value": "Tue",
+        "confidence": "stated",
+        "source": "d1.show.dow"
+      },
+      "show.date.long": {
+        "value": "Nov 11, 1975",
+        "confidence": "stated",
+        "source": "d1.show.date_disp"
+      },
+      "show.net_number": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.newest_source_date": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.official_release": {
+        "value": "partial",
+        "confidence": "stated",
+        "source": "D-03 official_release"
+      },
+      "show.setlist_confidence": {
+        "value": "complete",
+        "confidence": "corroborated",
+        "source": "D-09 setlist_confidence"
+      },
+      "show.tour": {
+        "value": "Rolling Thunder Revue",
+        "confidence": "stated",
+        "source": "d1.show.tour"
+      },
+      "show.venue": {
+        "value": "Palace Theater",
+        "confidence": "stated",
+        "source": "d1.show.venue"
+      },
+      "show.year_index": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "sources.also_on[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "sources.count": {
+        "value": 13,
+        "confidence": "stated",
+        "source": "d1.sources visible members"
+      },
+      "sources.tape_count": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "sources.visible_n": {
+        "value": 8,
+        "confidence": "stated",
+        "source": "S8.3 collapse"
+      },
+      "stats.instrument_notes": {
+        "value": [
+          {
+            "text": "solo",
+            "positions": [
+              11,
+              11
+            ]
+          }
+        ],
+        "confidence": "stated",
+        "source": "instrument_segments parser"
+      },
+      "stats.premiere_count": {
+        "value": 0,
+        "confidence": "stated",
+        "source": "D-02 song_history"
+      },
+      "stats.premiere_titles": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "stats.rotation": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "stats.rotation_rank": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "venue.city": {
+        "value": "Waterbury",
+        "confidence": "stated",
+        "source": "d1.show.city"
+      },
+      "venue.city_total": {
+        "value": 3,
+        "confidence": "stated",
+        "source": "D-07 city_history"
+      },
+      "venue.coords": {
+        "value": {
+          "lat": 41.5581525,
+          "lng": -73.0514966,
+          "basis": "city_centre",
+          "label": "city centre (setlist.fm)",
+          "url": "https://www.setlist.fm/setlist/bob-dylan/1975/palace-theater-waterbury-ct-3d79507.html"
+        },
+        "confidence": "stated",
+        "source": "setlist.fm city centroid"
+      },
+      "venue.district": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "venue.map": {
+        "value": "city_centre",
+        "confidence": "stated",
+        "source": "compact locator (hollow ring)"
+      },
+      "venue.name": {
+        "value": "Palace Theater",
+        "confidence": "stated",
+        "source": "d1.show.venue"
+      },
+      "venue.run_nights": {
+        "value": 1,
+        "confidence": "stated",
+        "source": "D-07 venue_run"
+      },
+      "venue.wiki": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "verdict.alternates[]": {
+        "value": [
+          {
+            "axis": "scan",
+            "lb_number": 445,
+            "pick_value": 67.8,
+            "alt_value": 72.6,
+            "text": "scans higher (72.6 vs 67.8)"
+          }
+        ],
+        "confidence": "stated",
+        "source": "D-08 compare_sources"
+      },
+      "verdict.vs_runner_up": {
+        "value": [
+          {
+            "field": "rating",
+            "pick_value": "A",
+            "runner_value": "B+",
+            "leader": null,
+            "runner_lb": "LB-00445",
+            "subject": null,
+            "lines": [
+              "rating: pick A, runner-up LB-00445 B+"
+            ]
+          },
+          {
+            "field": "scan",
+            "pick_value": 67.8,
+            "runner_value": 72.6,
+            "leader": "runner_up",
+            "runner_lb": "LB-00445",
+            "subject": "runner-up LB-00445",
+            "lines": [
+              "LB-00445 scans higher (72.6 vs 67.8)"
+            ]
+          },
+          {
+            "field": "runtime",
+            "pick_value": 165.0,
+            "runner_value": 163.0,
+            "leader": "pick",
+            "runner_lb": "LB-00445",
+            "subject": "pick",
+            "lines": [
+              "pick is longer (165 vs 163 min)"
+            ]
+          },
+          {
+            "field": "character",
+            "pick_value": "bright / airy, some crowd, and present vocals",
+            "runner_value": "some crowd, some hiss, and present vocals",
+            "leader": null,
+            "runner_lb": "LB-00445",
+            "subject": null,
+            "lines": [
+              "character (pick): bright / airy, some crowd, and present vocals",
+              "character (runner-up LB-00445): some crowd, some hiss, and present vocals"
+            ]
+          }
+        ],
+        "confidence": "stated",
+        "source": "D-08 compare_sources"
+      },
+      "verdict.why": {
+        "value": {
+          "segments": [
+            {
+              "text": "LB rating ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "A",
+              "slot": "rating",
+              "inferred": false
+            },
+            {
+              "text": "; ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "scanned quality ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "B",
+              "slot": "grade",
+              "inferred": false
+            },
+            {
+              "text": "; ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "master",
+              "slot": "generation",
+              "inferred": false
+            },
+            {
+              "text": " source",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "; ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "in ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "10haaf's catalogue",
+              "slot": "lists",
+              "inferred": false
+            },
+            {
+              "text": ".",
+              "slot": null,
+              "inferred": false
+            }
+          ],
+          "text": "LB rating A; scanned quality B; master source; in 10haaf's catalogue.",
+          "claims": []
+        },
+        "confidence": "stated",
+        "source": "claim-engine slot template (verdict_why)"
+      },
+      "xrefs[]": {
+        "value": [
+          {
+            "key": "losslessbob",
+            "name": "LosslessBob",
+            "desc": "Lossless recording catalog — the LB-number source for transfers, lineage & ratings.",
+            "site": "http://www.losslessbob.wonderingwhattochoose.com",
+            "url": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-13217.html",
+            "link_label": "LB-13217 detail page",
+            "is_source": false
+          },
+          {
+            "key": "olof",
+            "name": "Olof's Files · Still on the Road",
+            "desc": "Olof Björner's chronicle — dates, personnel, bobtalk and song-by-song session notes.",
+            "site": "https://www.bobserve.com/olof/",
+            "url": "https://www.bobserve.com/olof/DSN02910%201975%20Rolling%20Thunder%20Revue.htm#DSN03020",
+            "link_label": "DSN02910 1975 Rolling Thunder Revue.htm · DSN03020",
+            "is_source": true
+          },
+          {
+            "key": "boblinks",
+            "name": "Bob Links",
+            "desc": "Fan-contributed setlists, concert reviews and venue notes by date.",
+            "site": "https://boblinks.com",
+            "url": "https://boblinks.com",
+            "link_label": "no Bob Links page for this date",
+            "is_source": false,
+            "unavailable": true
+          },
+          {
+            "key": "bobserve",
+            "name": "Bobserve",
+            "desc": "Setlist observations and performance statistics across the touring history.",
+            "site": "https://bobserve.com",
+            "url": "https://bobserve.com/setlist?event=883",
+            "link_label": "setlist · 1975-11-11",
+            "is_source": false
+          },
+          {
+            "key": "bobdylan",
+            "name": "BobDylan.com",
+            "desc": "The official site's tour archive — setlist for the show as published by Dylan's office.",
+            "site": "https://www.bobdylan.com",
+            "url": "https://www.bobdylan.com/date/1975-11-11-palace-theater/",
+            "link_label": "setlist page · 1975-11-11",
+            "is_source": false,
+            "unavailable": false
+          }
+        ],
+        "confidence": "stated",
+        "source": "_build_xref"
+      }
+    },
+    "rows": {
+      "run.dates": [
+        {
+          "url": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        }
+      ],
+      "set": [
+        {
+          "label": {
+            "value": {
+              "kind": "band",
+              "text": "mono PA recording",
+              "positions": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
+            },
+            "tier": 1,
+            "source": "broadcast_set_labels",
+            "confidence": "stated",
+            "derived_from": [
+              "broadcast_set_labels"
+            ]
+          }
+        }
+      ],
+      "song": [
+        {
+          "position": {
+            "value": 1,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "When I Paint My Masterpiece",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Bob Neuwirth (shared vocal)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 2,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "It Ain't Me, Babe",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "harp"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 3,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "A Hard Rain's A-Gonna Fall",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Scarlet Rivera (violin)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 4,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Romance In Durango",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Scarlet Rivera (violin)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "writers": {
+            "value": "Bob Dylan–Jacques Levy/Bob Dylan",
+            "tier": 2,
+            "source": "song_writers parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_writers parser"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "bobtalk": {
+            "value": [
+              "Here’s a new song, you probably haven’t heard this one. We’re gonna dedicate this one to Sam Peckinpah. (before Romance In Durango)."
+            ],
+            "tier": 2,
+            "source": "D-10 anchor_bobtalk",
+            "confidence": "stated",
+            "derived_from": [
+              "D-10 anchor_bobtalk"
+            ]
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 5,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Isis",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Scarlet Rivera (violin)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "writers": {
+            "value": "Bob Dylan–Jacques Levy/Bob Dylan",
+            "tier": 2,
+            "source": "song_writers parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_writers parser"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 6,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Blowin' In The Wind",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Joan Baez (vocal, guitar)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 7,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "The Water Is Wide",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Joan Baez (vocal, guitar)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "writers": {
+            "value": "trad.",
+            "tier": 2,
+            "source": "song_writers parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_writers parser"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 8,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "I Dreamed I Saw St. Augustine",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Joan Baez (vocal, guitar)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 9,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Never Let Me Go",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Joan Baez (vocal, guitar)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "writers": {
+            "value": "Joseph C. Scott",
+            "tier": 2,
+            "source": "song_writers parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_writers parser"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 10,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "I Shall Be Released",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Joan Baez (vocal, guitar)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "bobtalk": {
+            "value": [
+              "Thank you, that was written by Johnny Ace …. This is for Richard Manuel. (before I Shall Be Released)."
+            ],
+            "tier": 2,
+            "source": "D-10 anchor_bobtalk",
+            "confidence": "stated",
+            "derived_from": [
+              "D-10 anchor_bobtalk"
+            ]
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 11,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Simple Twist Of Fate",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "guitar",
+              "harp",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 12,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Oh, Sister",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Scarlet Rivera (violin)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "writers": {
+            "value": "Bob Dylan–Jacques Levy/Bob Dylan",
+            "tier": 2,
+            "source": "song_writers parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_writers parser"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "harp"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 13,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Hurricane",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Scarlet Rivera (violin)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "writers": {
+            "value": "Bob Dylan–Jacques Levy/Bob Dylan",
+            "tier": 2,
+            "source": "song_writers parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_writers parser"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "bobtalk": {
+            "value": [
+              "OK, alright, this is about a man who just, ah, got transferred today, from one prison to another. (before Hurricane)."
+            ],
+            "tier": 2,
+            "source": "D-10 anchor_bobtalk",
+            "confidence": "stated",
+            "derived_from": [
+              "D-10 anchor_bobtalk"
+            ]
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 14,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "One More Cup Of Coffee",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Scarlet Rivera (violin)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "bobtalk": {
+            "value": [
+              "Here’s an underground song. (before One More Cup Of Coffee)."
+            ],
+            "tier": 2,
+            "source": "D-10 anchor_bobtalk",
+            "confidence": "stated",
+            "derived_from": [
+              "D-10 anchor_bobtalk"
+            ]
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 15,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Sara",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Scarlet Rivera (violin)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "harp"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "bobtalk": {
+            "value": [
+              "We wanna do this for Larry, our favorite reporter, who’s out there somewhere, he tells it like it is. (before Sara)."
+            ],
+            "tier": 2,
+            "source": "D-10 anchor_bobtalk",
+            "confidence": "stated",
+            "derived_from": [
+              "D-10 anchor_bobtalk"
+            ]
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 16,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Just Like A Woman",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Scarlet Rivera (violin)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 17,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Knockin' On Heaven's Door",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Scarlet Rivera (violin); Roger McGuinn (shared vocal)",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 18,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "This Land Is Your Land",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "Scarlet Rivera (violin); shared vocal by Bob Dylan and the entire ensemble for the evening",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "writers": {
+            "value": "Woody Guthrie",
+            "tier": 2,
+            "source": "song_writers parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_writers parser"
+            ]
+          },
+          "instruments[]": {
+            "value": [
+              "bass",
+              "drums",
+              "guitar",
+              "keyboard",
+              "mandolin",
+              "violin",
+              "vocal"
+            ],
+            "tier": 2,
+            "source": "song_instruments parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_instruments parser"
+            ]
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        }
+      ],
+      "source": [
+        {
+          "lb_id": {
+            "value": "LB-12103",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-12103.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "group": {
+            "value": "excluded",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "excluded": {
+            "value": "lossy source stated in lineage",
+            "tier": 2,
+            "source": "C32 D2 exclusion",
+            "confidence": "stated",
+            "derived_from": [
+              "C32 D2 exclusion"
+            ]
+          },
+          "completeness": {
+            "value": 89,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Soundboard",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "lb_rating": {
+            "value": "A",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 159.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "disc_count": {
+            "value": 3,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 38,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "EXCLUDED — lossy source suspected, audible mains hum",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "lineage": {
+            "value": "320kbps",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "flags[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "rank": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-13414",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-13414.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "group": {
+            "value": "excluded",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "excluded": {
+            "value": "vetoed by the audio scan (lossy source suspected)",
+            "tier": 2,
+            "source": "C32 D2 exclusion",
+            "confidence": "stated",
+            "derived_from": [
+              "C32 D2 exclusion"
+            ]
+          },
+          "completeness": {
+            "value": 89,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Soundboard",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "lb_rating": {
+            "value": "A",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 159.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "disc_count": {
+            "value": 2,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 39,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "EXCLUDED — lossy source suspected, audible mains hum",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "rank": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-06717",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-06717.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "silver",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 89,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "B+",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 16,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "some crowd and present vocals",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "audible mains hum"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "lineage": {
+            "value": "BOOTLEG:Satisfied Man; cd > ultraplex",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "rank": {
+            "value": 8,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "runtime": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-08144",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08144.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "silver",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "B+",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 74.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 478465228,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 16,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "some crowd and present vocals",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "audible mains hum",
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 9,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "completeness": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-00332",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-00332.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 94,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "C+",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "runtime": {
+            "value": 85.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "disc_count": {
+            "value": 2,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 27,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "dull / closed, thin / bass-light, some crowd, a little forward, and present vocals",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "curated_in[]": {
+            "value": [
+              {
+                "list_label": "carbonbit's picks",
+                "note": "11-Nov-75 CONCERT Palace Theater, Waterbury, CT, USA"
+              }
+            ],
+            "tier": 1,
+            "source": "curated_lists",
+            "confidence": "stated",
+            "derived_from": [
+              "curated_lists"
+            ]
+          },
+          "rank": {
+            "value": 4,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lb_rating": {
+            "value": "—",
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-00445",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-00445.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "type": {
+            "value": "Soundboard",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "B+",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 163.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 1116691496,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 3,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 74,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "some crowd, some hiss, and present vocals",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "audible mains hum",
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 2,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "completeness": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-05611",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-05611.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "group": {
+            "value": "fragment",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 17,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lb_rating": {
+            "value": "—",
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "runtime": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "rank": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "disc_count": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filecount": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-06718",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-06718.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "silver",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 72,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "B+",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 13,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "some crowd and present vocals",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "audible mains hum",
+              "incomplete (missing material)"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "lineage": {
+            "value": "BOOTLEG:Tell it Like It Is; cd > ultraplex",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "rank": {
+            "value": 7,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "runtime": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-08168",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08168.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 94,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Soundboard",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "B",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "lb_rating": {
+            "value": "B-",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 160.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "disc_count": {
+            "value": 3,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 66,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "some crowd, some hiss, slightly recessed, and effectively mono",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "audible mains hum",
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 3,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-09674",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-09674.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "group": {
+            "value": "excluded",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "excluded": {
+            "value": "vetoed by the audio scan (lossy source suspected)",
+            "tier": 2,
+            "source": "C32 D2 exclusion",
+            "confidence": "stated",
+            "derived_from": [
+              "C32 D2 exclusion"
+            ]
+          },
+          "completeness": {
+            "value": 89,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Soundboard",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "lb_rating": {
+            "value": "A",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 75.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 498818088,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 16,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "EXCLUDED — lossy source suspected",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "lineage": {
+            "value": "W.V.",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "curated_in[]": {
+            "value": [
+              {
+                "list_label": "carbonbit's picks",
+                "note": "11-Nov-75 CONCERT Palace Theater, Waterbury, CT, USA"
+              }
+            ],
+            "tier": 1,
+            "source": "curated_lists",
+            "confidence": "stated",
+            "derived_from": [
+              "curated_lists"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "flags[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "rank": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-13217",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-13217.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "master",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "B",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "lb_rating": {
+            "value": "A",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 165.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "disc_count": {
+            "value": 3,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 37,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "bright / airy, some crowd, and present vocals",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "audible mains hum"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "lineage": {
+            "value": "My master cassettes>Direct to Microtrack using my Nak deck",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "curated_in[]": {
+            "value": [
+              {
+                "list_label": "10haaf's catalogue"
+              }
+            ],
+            "tier": 1,
+            "source": "curated_lists",
+            "confidence": "stated",
+            "derived_from": [
+              "curated_lists"
+            ]
+          },
+          "rank": {
+            "value": 1,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "completeness": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-11405",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-11405.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "low_gen",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 100,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "B",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "lb_rating": {
+            "value": "A-",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 87.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "disc_count": {
+            "value": 2,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 18,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "thin / bass-light, clean, very quiet, present vocals, and effectively mono",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "audible mains hum"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "lineage": {
+            "value": "SM, master -> reel -> DAT - clone -> m-audio delta audiophile 2496",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "rank": {
+            "value": 5,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-11458",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-11458.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "low_gen",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 89,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "B",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "lb_rating": {
+            "value": "A-",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 76.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 16,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "some crowd, a little forward, very forward vocals, and effectively mono",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "audible mains hum"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "lineage": {
+            "value": "pa low gen reel flscf, PA-tape, low gen reel -> DAT - clone -> m-audio delta audiophile 2496",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "rank": {
+            "value": 6,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        }
+      ],
+      "family": [
+        {
+          "id": {
+            "value": "1975-11-11#12103-13414",
+            "tier": 1,
+            "source": "recording_families",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families"
+            ]
+          },
+          "label": {
+            "value": "Family A",
+            "tier": 1,
+            "source": "recording_families + S8.4 taper-label rule",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families + S8.4 taper-label rule"
+            ]
+          },
+          "size": {
+            "value": 0,
+            "tier": 1,
+            "source": "recording_families (primary sources shown)",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families (primary sources shown)"
+            ]
+          },
+          "confidence": {
+            "value": 0.059977308567613366,
+            "tier": 1,
+            "source": "tapematch_family_meta.conf",
+            "confidence": "stated",
+            "derived_from": [
+              "tapematch_family_meta.conf"
+            ]
+          },
+          "basis": {
+            "value": [
+              "waveform correlation mean 0.06",
+              "quality score match"
+            ],
+            "tier": 3,
+            "source": "family_basis",
+            "confidence": "stated",
+            "derived_from": [
+              "family_basis"
+            ]
+          }
+        },
+        {
+          "id": {
+            "value": "1975-11-11#6717-8144",
+            "tier": 1,
+            "source": "recording_families",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families"
+            ]
+          },
+          "label": {
+            "value": "Family B",
+            "tier": 1,
+            "source": "recording_families + S8.4 taper-label rule",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families + S8.4 taper-label rule"
+            ]
+          },
+          "size": {
+            "value": 2,
+            "tier": 1,
+            "source": "recording_families (primary sources shown)",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families (primary sources shown)"
+            ]
+          },
+          "confidence": {
+            "value": 0.9311956763267517,
+            "tier": 1,
+            "source": "tapematch_family_meta.conf",
+            "confidence": "stated",
+            "derived_from": [
+              "tapematch_family_meta.conf"
+            ]
+          },
+          "basis": {
+            "value": [
+              "waveform correlation mean 0.93"
+            ],
+            "tier": 3,
+            "source": "family_basis",
+            "confidence": "stated",
+            "derived_from": [
+              "family_basis"
+            ]
+          }
+        }
+      ]
+    },
+    "claims": [
+      {
+        "anchor": "context.chronicle",
+        "row": null,
+        "claim": {
+          "kind": "position",
+          "text_key": "tour_position",
+          "slots": {
+            "tour": {
+              "value": "1975 Rolling Thunder Revue",
+              "tier": 3,
+              "source": "D-07 run_context.tour",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events.tour_name"
+              ]
+            },
+            "position": {
+              "value": 14,
+              "tier": 3,
+              "source": "D-07 run_context.tour",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events"
+              ]
+            },
+            "size": {
+              "value": 37,
+              "tier": 3,
+              "source": "D-07 run_context.tour",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events"
+              ]
+            }
+          },
+          "scope": "tour",
+          "verified_by": "D-07 run_context.tour",
+          "ties": 0,
+          "derived_from": [
+            "olof_events.tour_name",
+            "olof_events",
+            "claim:D-07 run_context.tour"
+          ],
+          "local_analysis": false
+        }
+      },
+      {
+        "anchor": "verdict.vs_runner_up",
+        "row": "scan",
+        "claim": {
+          "kind": "comparison",
+          "text_key": "higher_scan_than",
+          "slots": {
+            "other": {
+              "value": "LB-13217",
+              "tier": 3,
+              "source": "D-08 scan",
+              "confidence": "stated",
+              "derived_from": [
+                "quality_recording_scores"
+              ]
+            },
+            "subject_value": {
+              "value": 72.6,
+              "tier": 1,
+              "source": "per-LB latest scored scan",
+              "confidence": "stated",
+              "derived_from": [
+                "quality_recording_scores"
+              ]
+            },
+            "other_value": {
+              "value": 67.8,
+              "tier": 1,
+              "source": "per-LB latest scored scan",
+              "confidence": "stated",
+              "derived_from": [
+                "quality_recording_scores"
+              ]
+            }
+          },
+          "scope": "visible_sources",
+          "verified_by": "D-08 scan",
+          "ties": 0,
+          "derived_from": [
+            "quality_recording_scores",
+            "claim:D-08 scan"
+          ],
+          "local_analysis": true
+        }
+      },
+      {
+        "anchor": "verdict.vs_runner_up",
+        "row": "runtime",
+        "claim": {
+          "kind": "comparison",
+          "text_key": "longer_runtime_than",
+          "slots": {
+            "other": {
+              "value": "LB-00445",
+              "tier": 3,
+              "source": "D-08 runtime",
+              "confidence": "stated",
+              "derived_from": [
+                "parse_runtime"
+              ]
+            },
+            "subject_value": {
+              "value": 165.0,
+              "tier": 2,
+              "source": "parse_runtime",
+              "confidence": "stated",
+              "derived_from": [
+                "parse_runtime"
+              ]
+            },
+            "other_value": {
+              "value": 163.0,
+              "tier": 2,
+              "source": "parse_runtime",
+              "confidence": "stated",
+              "derived_from": [
+                "parse_runtime"
+              ]
+            }
+          },
+          "scope": "visible_sources",
+          "verified_by": "D-08 runtime",
+          "ties": 0,
+          "derived_from": [
+            "parse_runtime",
+            "claim:D-08 runtime"
+          ],
+          "local_analysis": false
+        }
+      },
+      {
+        "anchor": "verdict.alternates[]",
+        "row": 445,
+        "claim": {
+          "kind": "comparison",
+          "text_key": "higher_scan_than",
+          "slots": {
+            "other": {
+              "value": "LB-13217",
+              "tier": 3,
+              "source": "D-08 scan",
+              "confidence": "stated",
+              "derived_from": [
+                "quality_recording_scores"
+              ]
+            },
+            "subject_value": {
+              "value": 72.6,
+              "tier": 1,
+              "source": "per-LB latest scored scan",
+              "confidence": "stated",
+              "derived_from": [
+                "quality_recording_scores"
+              ]
+            },
+            "other_value": {
+              "value": 67.8,
+              "tier": 1,
+              "source": "per-LB latest scored scan",
+              "confidence": "stated",
+              "derived_from": [
+                "quality_recording_scores"
+              ]
+            }
+          },
+          "scope": "visible_sources",
+          "verified_by": "D-08 scan",
+          "ties": 0,
+          "derived_from": [
+            "quality_recording_scores",
+            "claim:D-08 scan"
+          ],
+          "local_analysis": true
+        }
+      },
+      {
+        "anchor": "verdict.alternates[]",
+        "row": 445,
+        "claim": {
+          "kind": "superlative",
+          "text_key": "best_scan",
+          "slots": {
+            "subject": {
+              "value": 72.6,
+              "tier": 1,
+              "source": "per-LB latest scored scan",
+              "confidence": "stated",
+              "derived_from": [
+                "quality_recording_scores"
+              ]
+            },
+            "n": {
+              "value": 9,
+              "tier": 3,
+              "source": "D-08 scan",
+              "confidence": "stated",
+              "derived_from": [
+                "claim:D-08 scan"
+              ]
+            }
+          },
+          "scope": "visible_sources",
+          "verified_by": "D-08 scan",
+          "ties": 0,
+          "derived_from": [
+            "quality_recording_scores",
+            "claim:D-08 scan"
+          ],
+          "local_analysis": true
+        }
+      }
+    ],
+    "map_marker": "city_centre",
+    "qc": {
+      "passed": true,
+      "refused": false,
+      "withheld": [],
+      "reasons": [],
+      "notices": []
+    }
+  }
 }

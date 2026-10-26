@@ -1,3 +1,7 @@
+[2026-10-25] — C32 golden sign-off done: tj approved all 18 golden dossiers; expected snapshots pinned
+Changed: tests/golden/dossier/*.json: all 18 specs carry `expected` (built from the committed fixture) + verified_by tj — test_dossier_golden now fails on any dossier diff; tj's round-2 notes were the round-1 notes carried over, all already fixed in 24de4044f (re-checked in the render)
+Changed: instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: C32 done; next C34
+
 [2026-10-24] — BUG-387 closed: all 181 folders with overwritten music restored and re-verified
 Changed: live collection: tj restored 181 folders from Backblaze; each re-verified file-by-file against the site's lbdir md5s, LB md5s (checksums), FLAC STREAMINFO audio md5 and the folder's own .md5 files — 0 damaged music left (LB-08812 Track No07.flac missed on the first pass, re-copied and re-verified). Remaining site mismatches (LB-00369/00502/01059 SHNs, some text sidecars) pre-date the damage
 Changed: BUGS.md → BUGS_DONE.md: BUG-387

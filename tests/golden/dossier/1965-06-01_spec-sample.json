@@ -4,6 +4,5062 @@
   "channel": "public",
   "category": "spec-sample",
   "note": "Spec Rev A sample",
-  "verified_by": null,
-  "expected": null
+  "verified_by": "tj (C32 sign-off, 2026-10-24)",
+  "expected": {
+    "fields": {
+      "band.label": {
+        "value": "Solo",
+        "confidence": "stated",
+        "source": "parse_band_lineup"
+      },
+      "band.members[]": {
+        "value": [
+          {
+            "name": "Bob Dylan",
+            "instruments": "guitar, harmonica & vocal"
+          }
+        ],
+        "confidence": "stated",
+        "source": "parse_band_lineup"
+      },
+      "band.personnel_overrides[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "band.personnel_text": {
+        "value": "Bob Dylan (guitar, harmonica & vocal)",
+        "confidence": "stated",
+        "source": "parse_band_lineup"
+      },
+      "city_history[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "context.bobtalk": {
+        "value": "No bobtalk recorded",
+        "confidence": "unavailable",
+        "source": null
+      },
+      "context.chronicle": {
+        "value": {
+          "segments": [
+            {
+              "text": "Recording of two BBC shows.",
+              "slot": "chronicle",
+              "inferred": false
+            }
+          ],
+          "text": "Recording of two BBC shows.",
+          "claims": []
+        },
+        "confidence": "stated",
+        "source": "slot template (run/tour claims + Olof chronicle)"
+      },
+      "context.session_notes": {
+        "value": [
+          "1-6 broadcast by BBC TV-1, 19 June 1965.\n7-12 broadcast by BBC TV-1, 26 June 1965.\n4 is in circulation as a line recording.\nMono TV broadcast, 65 minutes.\nMono PA recording, 65 minutes."
+        ],
+        "confidence": "stated",
+        "source": "olof_events.notes + broadcast_set_labels"
+      },
+      "ledger.total": {
+        "value": 77.0,
+        "confidence": "stated",
+        "source": "show_picks.pick_score"
+      },
+      "ledger[]": {
+        "value": [
+          {
+            "kind": "rating",
+            "detail": "LB rating B+",
+            "points": 75.0
+          },
+          {
+            "kind": "curated_list",
+            "detail": "listed in 10haaf's catalogue",
+            "points": 2.0
+          }
+        ],
+        "confidence": "stated",
+        "source": "show_picks.evidence_json"
+      },
+      "pick.completeness": {
+        "value": 92,
+        "confidence": "stated",
+        "source": "D-01 completeness"
+      },
+      "pick.curated_in[]": {
+        "value": [
+          {
+            "list_label": "10haaf's catalogue"
+          }
+        ],
+        "confidence": "stated",
+        "source": "curated_lists"
+      },
+      "pick.generation": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.lb_id": {
+        "value": "LB-12057",
+        "confidence": "stated",
+        "source": "verdict pick"
+      },
+      "pick.lb_rating": {
+        "value": "B+",
+        "confidence": "stated",
+        "source": "entries.rating"
+      },
+      "pick.lineage_short": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.medium": {
+        "value": "audio_from_video",
+        "confidence": "stated",
+        "source": "D-13 classify_medium"
+      },
+      "pick.resolution": {
+        "value": "16-bit/44.1 kHz file",
+        "confidence": "stated",
+        "source": "D-11 file_meta"
+      },
+      "pick.runtime": {
+        "value": 66.0,
+        "confidence": "stated",
+        "source": "parse_runtime"
+      },
+      "pick.scan_grade": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.taper.confidence": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.taper.name": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.type": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.url": {
+        "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-12057.html",
+        "confidence": "stated",
+        "source": "detail_url"
+      },
+      "prov.credits": {
+        "value": [
+          "Olof's Files · Still on the Road"
+        ],
+        "confidence": "stated",
+        "source": "xref footer"
+      },
+      "prov.local_fields[]": {
+        "value": [
+          "context.chronicle",
+          "family[].basis",
+          "pick.completeness",
+          "pick.medium",
+          "show.official_release",
+          "show.setlist_confidence",
+          "song[].official_release",
+          "source[].completeness",
+          "source[].disc_count",
+          "source[].filecount",
+          "source[].filesize",
+          "source[].generation",
+          "source[].medium",
+          "stats.premiere_titles",
+          "verdict.why"
+        ],
+        "confidence": "stated",
+        "source": "registry scan"
+      },
+      "prov.stamps": {
+        "value": {
+          "channel": "public",
+          "local_analysis": true,
+          "master_version": "2026-08-20_003101"
+        },
+        "confidence": "stated",
+        "source": "d1.provenance"
+      },
+      "prov.withheld[]": {
+        "value": [
+          {
+            "key": "source[].generation",
+            "rule": "R-E2",
+            "lb": 6654
+          },
+          {
+            "key": "source[].medium",
+            "rule": "R-E2",
+            "lb": 6654
+          },
+          {
+            "key": "source[].completeness",
+            "rule": "R-E2",
+            "lb": 6654
+          },
+          {
+            "key": "source[].resolution",
+            "rule": "R-E2",
+            "lb": 6654
+          },
+          {
+            "key": "source[].lineage",
+            "rule": "R-E2",
+            "lb": 6654
+          }
+        ],
+        "confidence": "stated",
+        "source": "gate output (C28)"
+      },
+      "run.dates[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "run.label": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "run.position": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "setlist.count": {
+        "value": 12,
+        "confidence": "stated",
+        "source": "olof_songs"
+      },
+      "setlist.range_notes[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.band_index": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.city": {
+        "value": "London",
+        "confidence": "stated",
+        "source": "d1.show.city"
+      },
+      "show.country": {
+        "value": "United Kingdom",
+        "confidence": "stated",
+        "source": "d1.show.country"
+      },
+      "show.date.dow": {
+        "value": "Tue",
+        "confidence": "stated",
+        "source": "d1.show.dow"
+      },
+      "show.date.long": {
+        "value": "Jun 1, 1965",
+        "confidence": "stated",
+        "source": "d1.show.date_disp"
+      },
+      "show.net_number": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.newest_source_date": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.official_release": {
+        "value": "50th Anniversary Collections",
+        "confidence": "stated",
+        "source": "D-03 official_release"
+      },
+      "show.setlist_confidence": {
+        "value": "complete",
+        "confidence": "corroborated",
+        "source": "D-09 setlist_confidence"
+      },
+      "show.tour": {
+        "value": "1965 Recording sessions & concerts",
+        "confidence": "stated",
+        "source": "d1.show.tour"
+      },
+      "show.venue": {
+        "value": "BBC Studios",
+        "confidence": "stated",
+        "source": "d1.show.venue"
+      },
+      "show.year_index": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "sources.also_on[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "sources.count": {
+        "value": 17,
+        "confidence": "stated",
+        "source": "d1.sources visible members"
+      },
+      "sources.tape_count": {
+        "value": "10 tape groups",
+        "confidence": "stated",
+        "source": "recording_families (every visible source analysed)"
+      },
+      "sources.visible_n": {
+        "value": 7,
+        "confidence": "stated",
+        "source": "S8.3 collapse"
+      },
+      "stats.instrument_notes": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "stats.premiere_count": {
+        "value": 3,
+        "confidence": "stated",
+        "source": "D-02 song_history"
+      },
+      "stats.premiere_titles": {
+        "value": 3,
+        "confidence": "stated",
+        "source": "D-02 song_history (ungated count)"
+      },
+      "stats.rotation": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "stats.rotation_rank": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "venue.city": {
+        "value": "London",
+        "confidence": "stated",
+        "source": "d1.show.city"
+      },
+      "venue.city_total": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "venue.coords": {
+        "value": {
+          "lat": 51.5084152563931,
+          "lng": -0.125532746315002,
+          "basis": "city_centre",
+          "label": "city centre (setlist.fm)",
+          "url": "https://www.setlist.fm/setlist/bob-dylan/1965/bbc-studios-london-england-4bf33f72.html"
+        },
+        "confidence": "stated",
+        "source": "setlist.fm city centroid"
+      },
+      "venue.district": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "venue.map": {
+        "value": "city_centre",
+        "confidence": "stated",
+        "source": "compact locator (hollow ring)"
+      },
+      "venue.name": {
+        "value": "BBC Studios",
+        "confidence": "stated",
+        "source": "d1.show.venue"
+      },
+      "venue.run_nights": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "venue.wiki": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "verdict.alternates[]": {
+        "value": [
+          {
+            "axis": "runtime",
+            "lb_number": 3236,
+            "pick_value": 66.0,
+            "alt_value": 70.0,
+            "text": "is longer (70 vs 66 min)"
+          }
+        ],
+        "confidence": "stated",
+        "source": "D-08 compare_sources"
+      },
+      "verdict.vs_runner_up": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "verdict.why": {
+        "value": {
+          "segments": [
+            {
+              "text": "LB rating ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "B+",
+              "slot": "rating",
+              "inferred": false
+            },
+            {
+              "text": "; ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "in ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "10haaf's catalogue",
+              "slot": "lists",
+              "inferred": false
+            },
+            {
+              "text": ".",
+              "slot": null,
+              "inferred": false
+            }
+          ],
+          "text": "LB rating B+; in 10haaf's catalogue.",
+          "claims": []
+        },
+        "confidence": "stated",
+        "source": "claim-engine slot template (verdict_why)"
+      },
+      "xrefs[]": {
+        "value": [
+          {
+            "key": "losslessbob",
+            "name": "LosslessBob",
+            "desc": "Lossless recording catalog — the LB-number source for transfers, lineage & ratings.",
+            "site": "http://www.losslessbob.wonderingwhattochoose.com",
+            "url": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-12057.html",
+            "link_label": "LB-12057 detail page",
+            "is_source": false
+          },
+          {
+            "key": "olof",
+            "name": "Olof's Files · Still on the Road",
+            "desc": "Olof Björner's chronicle — dates, personnel, bobtalk and song-by-song session notes.",
+            "site": "https://www.bobserve.com/olof/",
+            "url": "https://www.bobserve.com/olof/DSN00785%20%2865%29.htm#DSN01020",
+            "link_label": "DSN00785 (65).htm · DSN01020",
+            "is_source": true
+          },
+          {
+            "key": "boblinks",
+            "name": "Bob Links",
+            "desc": "Fan-contributed setlists, concert reviews and venue notes by date.",
+            "site": "https://boblinks.com",
+            "url": "https://boblinks.com",
+            "link_label": "no Bob Links page for this date",
+            "is_source": false,
+            "unavailable": true
+          },
+          {
+            "key": "bobserve",
+            "name": "Bobserve",
+            "desc": "Setlist observations and performance statistics across the touring history.",
+            "site": "https://bobserve.com",
+            "url": "https://bobserve.com/setlist?event=688",
+            "link_label": "setlist · 1965-06-01",
+            "is_source": false
+          },
+          {
+            "key": "bobdylan",
+            "name": "BobDylan.com",
+            "desc": "The official site's tour archive — setlist for the show as published by Dylan's office.",
+            "site": "https://www.bobdylan.com",
+            "url": "https://www.bobdylan.com",
+            "link_label": "no page for this date",
+            "is_source": false,
+            "unavailable": true
+          }
+        ],
+        "confidence": "stated",
+        "source": "_build_xref"
+      }
+    },
+    "rows": {
+      "set": [
+        {
+          "label": {
+            "value": {
+              "kind": "band",
+              "text": "broadcast by BBC TV-1, 19 June 1965",
+              "positions": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ]
+            },
+            "tier": 1,
+            "source": "broadcast_set_labels",
+            "confidence": "stated",
+            "derived_from": [
+              "broadcast_set_labels"
+            ]
+          }
+        },
+        {
+          "label": {
+            "value": {
+              "kind": "band",
+              "text": "broadcast by BBC TV-1, 26 June 1965",
+              "positions": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            },
+            "tier": 1,
+            "source": "broadcast_set_labels",
+            "confidence": "stated",
+            "derived_from": [
+              "broadcast_set_labels"
+            ]
+          }
+        }
+      ],
+      "song": [
+        {
+          "position": {
+            "value": 1,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Ballad Of Hollis Brown",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 2,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Mr. Tambourine Man",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 3,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Gates Of Eden",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 4,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "If You Gotta Go, Go Now",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": "is in circulation as a line recording",
+            "tier": 1,
+            "source": "olof_songs.annotations",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.annotations"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 5,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "The Lonesome Death Of Hattie Carroll",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 6,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "It Ain't Me, Babe",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 7,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Love Minus Zero/No Limit",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 8,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "One Too Many Mornings",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 9,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Boots Of Spanish Leather",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 10,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "It's Alright, Ma",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 11,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "She Belongs To Me",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 12,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "It's All Over Now, Baby Blue",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "official_release": {
+            "value": true,
+            "tier": 3,
+            "source": "D-03 official_release",
+            "confidence": "stated",
+            "derived_from": [
+              "D-03 official_release"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        }
+      ],
+      "source": [
+        {
+          "lb_id": {
+            "value": "LB-07561",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-07561.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "silver",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 66.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 265541386,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 12,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "lineage": {
+            "value": "silver disc",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "rank": {
+            "value": 8,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "completeness": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "flags[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-09560",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-09560.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "silver",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 92,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Soundboard",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 66.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 264817868,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 24,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "lineage": {
+            "value": "Silver CD > Ashampoo",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "curated_in[]": {
+            "value": [
+              {
+                "list_label": "10haaf's catalogue"
+              }
+            ],
+            "tier": 1,
+            "source": "curated_lists",
+            "confidence": "stated",
+            "derived_from": [
+              "curated_lists"
+            ]
+          },
+          "rank": {
+            "value": 11,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "flags[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-05817",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-05817.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 100,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 67.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 299452334,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 12,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 6,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-03227",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-03227.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 100,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 66.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 347445657,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 24,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "curated_in[]": {
+            "value": [
+              {
+                "list_label": "10haaf's catalogue"
+              }
+            ],
+            "tier": 1,
+            "source": "curated_lists",
+            "confidence": "stated",
+            "derived_from": [
+              "curated_lists"
+            ]
+          },
+          "rank": {
+            "value": 10,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-00853",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-00853.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "silver",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 100,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 67.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 357585387,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 24,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 2,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-02546",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-02546.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 67.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 363530813,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 24,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 3,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "completeness": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-12057",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-12057.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 92,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 66.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 299871764,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 12,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "curated_in[]": {
+            "value": [
+              {
+                "list_label": "10haaf's catalogue"
+              }
+            ],
+            "tier": 1,
+            "source": "curated_lists",
+            "confidence": "stated",
+            "derived_from": [
+              "curated_lists"
+            ]
+          },
+          "rank": {
+            "value": 1,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-03241",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-03241.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 100,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 66.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 435064668,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 26,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 4,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-03236",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-03236.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 92,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "lb_rating": {
+            "value": "B",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 70.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 390353387,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 26,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 12,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-03895",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-03895.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 92,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 60.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 142396620,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 11,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 5,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-06485",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-06485.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 100,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 65.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 12,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 7,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-06654",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-06654.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "withheld",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "withheld",
+            "derived_from": []
+          },
+          "group": {
+            "value": "no_match",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "withheld",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "withheld",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": 731853619,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 2,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 25,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "withheld",
+            "derived_from": []
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lb_rating": {
+            "value": "—",
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "runtime": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "flags[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "rank": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-08855",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-08855.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 67,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 50.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 211560693,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 20,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 9,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-09493",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-09493.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "vinyl",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 100,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "lb_rating": {
+            "value": "B-",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 67.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 249424773,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 12,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "lineage": {
+            "value": "Near Mint Vinyl LPs > Technics SL1200 MK 11 / Ortophon PRO S",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "rank": {
+            "value": 14,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "flags[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-10364",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-10364.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "fragment",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 8,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 3.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 15749611,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "filecount": {
+            "value": 1,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "lineage": {
+            "value": "Open Reel Tape > Tandberg 3600XD",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "flags[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "rank": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "disc_count": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-11310",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-11310.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "silver",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "lb_rating": {
+            "value": "B",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 67.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "disc_count": {
+            "value": 1,
+            "tier": 3,
+            "source": "entries.cdr",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.cdr"
+            ]
+          },
+          "filecount": {
+            "value": 12,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "lineage": {
+            "value": "CDR Trade",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "rank": {
+            "value": 13,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "completeness": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "flags[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-12222",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-12222.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "fragment",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 8,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Soundboard",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "lb_rating": {
+            "value": "B+",
+            "tier": 1,
+            "source": "entries.rating",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.rating"
+            ]
+          },
+          "runtime": {
+            "value": 3.0,
+            "tier": 2,
+            "source": "parse_runtime",
+            "confidence": "stated",
+            "derived_from": [
+              "parse_runtime"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 11198791,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "filecount": {
+            "value": 1,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "flags[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "rank": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "disc_count": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-14937",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-14937.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "medium": {
+            "value": "audio_from_video",
+            "tier": 3,
+            "source": "D-13 classify_medium",
+            "confidence": "stated",
+            "derived_from": [
+              "D-13 classify_medium"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "filecount": {
+            "value": 121,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "rank": {
+            "value": 15,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "completeness": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "type": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "scan_grade": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lb_rating": {
+            "value": "—",
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "runtime": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "character": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "disc_count": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        }
+      ],
+      "family": [
+        {
+          "id": {
+            "value": "1965-06-01#3227-5817-7561-9560",
+            "tier": 1,
+            "source": "recording_families",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families"
+            ]
+          },
+          "label": {
+            "value": "Family A",
+            "tier": 1,
+            "source": "recording_families + S8.4 taper-label rule",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families + S8.4 taper-label rule"
+            ]
+          },
+          "size": {
+            "value": 4,
+            "tier": 1,
+            "source": "recording_families (primary sources shown)",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families (primary sources shown)"
+            ]
+          },
+          "confidence": {
+            "value": 0.2543242116148273,
+            "tier": 1,
+            "source": "tapematch_family_meta.conf",
+            "confidence": "stated",
+            "derived_from": [
+              "tapematch_family_meta.conf"
+            ]
+          },
+          "basis": {
+            "value": [
+              "waveform correlation mean 0.25",
+              "LB page states same source",
+              "quality score match"
+            ],
+            "tier": 3,
+            "source": "family_basis",
+            "confidence": "stated",
+            "derived_from": [
+              "family_basis"
+            ]
+          }
+        },
+        {
+          "id": {
+            "value": "1965-06-01#853-2546",
+            "tier": 1,
+            "source": "recording_families",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families"
+            ]
+          },
+          "label": {
+            "value": "Family B",
+            "tier": 1,
+            "source": "recording_families + S8.4 taper-label rule",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families + S8.4 taper-label rule"
+            ]
+          },
+          "size": {
+            "value": 2,
+            "tier": 1,
+            "source": "recording_families (primary sources shown)",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families (primary sources shown)"
+            ]
+          },
+          "confidence": {
+            "value": 0.6455900549888611,
+            "tier": 1,
+            "source": "tapematch_family_meta.conf",
+            "confidence": "stated",
+            "derived_from": [
+              "tapematch_family_meta.conf"
+            ]
+          },
+          "basis": {
+            "value": [
+              "waveform correlation mean 0.65",
+              "quality score match"
+            ],
+            "tier": 3,
+            "source": "family_basis",
+            "confidence": "stated",
+            "derived_from": [
+              "family_basis"
+            ]
+          }
+        },
+        {
+          "id": {
+            "value": "1965-06-01#3241-12057",
+            "tier": 1,
+            "source": "recording_families",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families"
+            ]
+          },
+          "label": {
+            "value": "Family C",
+            "tier": 1,
+            "source": "recording_families + S8.4 taper-label rule",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families + S8.4 taper-label rule"
+            ]
+          },
+          "size": {
+            "value": 2,
+            "tier": 1,
+            "source": "recording_families (primary sources shown)",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families (primary sources shown)"
+            ]
+          },
+          "confidence": {
+            "value": 0.7086796462535858,
+            "tier": 1,
+            "source": "tapematch_family_meta.conf",
+            "confidence": "stated",
+            "derived_from": [
+              "tapematch_family_meta.conf"
+            ]
+          },
+          "basis": {
+            "value": [
+              "waveform correlation mean 0.71"
+            ],
+            "tier": 3,
+            "source": "family_basis",
+            "confidence": "stated",
+            "derived_from": [
+              "family_basis"
+            ]
+          }
+        }
+      ],
+      "run.dates": []
+    },
+    "claims": [
+      {
+        "anchor": "verdict.alternates[]",
+        "row": 3236,
+        "claim": {
+          "kind": "comparison",
+          "text_key": "longer_runtime_than",
+          "slots": {
+            "other": {
+              "value": "LB-12057",
+              "tier": 3,
+              "source": "D-08 runtime",
+              "confidence": "stated",
+              "derived_from": [
+                "parse_runtime"
+              ]
+            },
+            "subject_value": {
+              "value": 70.0,
+              "tier": 2,
+              "source": "parse_runtime",
+              "confidence": "stated",
+              "derived_from": [
+                "parse_runtime"
+              ]
+            },
+            "other_value": {
+              "value": 66.0,
+              "tier": 2,
+              "source": "parse_runtime",
+              "confidence": "stated",
+              "derived_from": [
+                "parse_runtime"
+              ]
+            }
+          },
+          "scope": "visible_sources",
+          "verified_by": "D-08 runtime",
+          "ties": 0,
+          "derived_from": [
+            "parse_runtime",
+            "claim:D-08 runtime"
+          ],
+          "local_analysis": false
+        }
+      }
+    ],
+    "map_marker": "city_centre",
+    "qc": {
+      "passed": true,
+      "refused": false,
+      "withheld": [
+        {
+          "key": "source[].generation",
+          "rule": "R-E2",
+          "lb": 6654
+        },
+        {
+          "key": "source[].medium",
+          "rule": "R-E2",
+          "lb": 6654
+        },
+        {
+          "key": "source[].completeness",
+          "rule": "R-E2",
+          "lb": 6654
+        },
+        {
+          "key": "source[].resolution",
+          "rule": "R-E2",
+          "lb": 6654
+        },
+        {
+          "key": "source[].lineage",
+          "rule": "R-E2",
+          "lb": 6654
+        }
+      ],
+      "reasons": [],
+      "notices": []
+    }
+  }
 }

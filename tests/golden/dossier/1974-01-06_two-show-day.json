@@ -4,6 +4,23 @@
   "channel": "public",
   "category": "two-show-day",
   "note": "Afternoon and evening concerts at one venue (DSN02250/DSN02260); TODO-345 selector",
-  "verified_by": null,
-  "expected": null
+  "verified_by": "tj (C32 sign-off, 2026-10-24)",
+  "expected": {
+    "ambiguous": true,
+    "candidates": [
+      {
+        "date_iso": "1974-01-06",
+        "location": "The Spectrum",
+        "show": "afternoon",
+        "label": "Afternoon"
+      },
+      {
+        "date_iso": "1974-01-06",
+        "location": "The Spectrum",
+        "show": "evening",
+        "label": "Evening"
+      }
+    ],
+    "reason": "show"
+  }
 }

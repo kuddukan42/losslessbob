@@ -4,6 +4,3454 @@
   "channel": "public",
   "category": "bobserve-2022plus",
   "note": "2022+ show sourced from bobserve.com",
-  "verified_by": null,
-  "expected": null
+  "verified_by": "tj (C32 sign-off, 2026-10-24)",
+  "expected": {
+    "fields": {
+      "band.label": {
+        "value": "Personnel",
+        "confidence": "unavailable",
+        "source": null
+      },
+      "band.members[]": {
+        "value": [
+          {
+            "name": "Bob Britt",
+            "instruments": ""
+          },
+          {
+            "name": "Donnie Herron",
+            "instruments": ""
+          },
+          {
+            "name": "Doug Lancio",
+            "instruments": ""
+          },
+          {
+            "name": "Jerry Pentecost",
+            "instruments": ""
+          },
+          {
+            "name": "Jimmie Vaughan",
+            "instruments": ""
+          },
+          {
+            "name": "Tony Garnier",
+            "instruments": ""
+          }
+        ],
+        "confidence": "stated",
+        "source": "parse_band_lineup"
+      },
+      "band.personnel_overrides[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "band.personnel_text": {
+        "value": "Bob Britt, Donnie Herron, Doug Lancio, Jerry Pentecost, Jimmie Vaughan, Tony Garnier",
+        "confidence": "stated",
+        "source": "parse_band_lineup"
+      },
+      "city_history[]": {
+        "value": [
+          {
+            "year": "1965",
+            "venue": "Municipal Auditorium",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "1976",
+            "venue": "Municipal Auditorium",
+            "count": 2,
+            "current": false
+          },
+          {
+            "year": "1978",
+            "venue": "Special Events Center",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "1986",
+            "venue": "The Frank Erwin Center",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "1990",
+            "venue": "Palmer Auditorium",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "1991",
+            "venue": "City Coliseum",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "1995",
+            "venue": "Austin Music Hall",
+            "count": 2,
+            "current": false
+          },
+          {
+            "year": "1996",
+            "venue": "Austin Music Hall",
+            "count": 2,
+            "current": false
+          },
+          {
+            "year": "1999",
+            "venue": "The Frank Erwin Center",
+            "count": 2,
+            "current": false
+          },
+          {
+            "year": "2002",
+            "venue": "The Frank Erwin Center",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "2007",
+            "venue": "Stubb's Waller Creek Outdoor Amphitheater",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "2015",
+            "venue": "Bass Concert Hall",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "2022",
+            "venue": "Bass Concert Hall, University of Texas",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "2024",
+            "venue": "ACL Live at the Moody Theater",
+            "count": 2,
+            "current": true
+          },
+          {
+            "year": "2025",
+            "venue": "Germania Insurance Amphitheater",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "2026",
+            "venue": "Moody Amphitheater, Waterloo Park",
+            "count": 1,
+            "current": false
+          }
+        ],
+        "confidence": "stated",
+        "source": "D-07 city_history"
+      },
+      "context.bobtalk": {
+        "value": "No bobtalk recorded",
+        "confidence": "unavailable",
+        "source": null
+      },
+      "context.chronicle": {
+        "value": {
+          "segments": [
+            {
+              "text": "Closing night of the ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "2",
+              "slot": "size",
+              "inferred": false
+            },
+            {
+              "text": "-night ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "ACL Live at the Moody Theater",
+              "slot": "venue",
+              "inferred": false
+            },
+            {
+              "text": " run",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "; ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "show ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "181",
+              "slot": "position",
+              "inferred": false
+            },
+            {
+              "text": " of ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "282",
+              "slot": "size",
+              "inferred": false
+            },
+            {
+              "text": " on the ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "Rough and Rowdy Ways World Wide Tour",
+              "slot": "tour",
+              "inferred": false
+            },
+            {
+              "text": ".",
+              "slot": null,
+              "inferred": false
+            }
+          ],
+          "text": "Closing night of the 2-night ACL Live at the Moody Theater run; show 181 of 282 on the Rough and Rowdy Ways World Wide Tour.",
+          "claims": [
+            "run_closing",
+            "tour_position"
+          ]
+        },
+        "confidence": "stated",
+        "source": "slot template (run/tour claims + Olof chronicle)"
+      },
+      "context.session_notes": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "ledger.total": {
+        "value": 49.6,
+        "confidence": "stated",
+        "source": "show_picks.pick_score"
+      },
+      "ledger[]": {
+        "value": [
+          {
+            "kind": "unrated",
+            "detail": "no LB rating (baseline 40)",
+            "points": 40.0
+          },
+          {
+            "kind": "curated_list",
+            "detail": "listed in 10haaf's catalogue",
+            "points": 2.0
+          },
+          {
+            "kind": "curated_list",
+            "detail": "carbonbit's picks",
+            "points": 8.0
+          },
+          {
+            "kind": "inferior_transfer",
+            "detail": "inferior transfer within its family",
+            "points": -3.0
+          },
+          {
+            "kind": "audio_quality",
+            "detail": "scanned quality 89/100 (corpus median 79)",
+            "points": 2.6
+          }
+        ],
+        "confidence": "stated",
+        "source": "show_picks.evidence_json"
+      },
+      "pick.completeness": {
+        "value": 100,
+        "confidence": "stated",
+        "source": "D-01 completeness"
+      },
+      "pick.curated_in[]": {
+        "value": [
+          {
+            "list_label": "carbonbit's picks",
+            "note": "04/06/24 Austin, TX - ACL Live at the Moody Theater"
+          },
+          {
+            "list_label": "10haaf's catalogue"
+          }
+        ],
+        "confidence": "stated",
+        "source": "curated_lists"
+      },
+      "pick.generation": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.lb_id": {
+        "value": "LB-16027",
+        "confidence": "stated",
+        "source": "verdict pick"
+      },
+      "pick.lb_rating": {
+        "value": "—",
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.lineage_short": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.medium": {
+        "value": "audio",
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.resolution": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.runtime": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "pick.scan_grade": {
+        "value": "A",
+        "confidence": "stated",
+        "source": "per-LB latest scored scan"
+      },
+      "pick.taper.confidence": {
+        "value": "confirmed",
+        "confidence": "stated",
+        "source": "taper_render"
+      },
+      "pick.taper.name": {
+        "value": {
+          "name": "nightly moth",
+          "confidence": "confirmed",
+          "marker": null,
+          "notice": null,
+          "display": "nightly moth"
+        },
+        "confidence": "stated",
+        "source": "taper_render"
+      },
+      "pick.type": {
+        "value": "Audience",
+        "confidence": "stated",
+        "source": "entries.source_type"
+      },
+      "pick.url": {
+        "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-16027.html",
+        "confidence": "stated",
+        "source": "detail_url"
+      },
+      "prov.credits": {
+        "value": [
+          "Bobserve"
+        ],
+        "confidence": "stated",
+        "source": "xref footer"
+      },
+      "prov.local_fields[]": {
+        "value": [
+          "city_history[]",
+          "context.chronicle",
+          "family[].basis",
+          "pick.completeness",
+          "run.dates[]",
+          "run.label",
+          "run.position",
+          "show.setlist_confidence",
+          "source[].completeness",
+          "source[].filecount",
+          "source[].filesize",
+          "source[].generation",
+          "venue.city_total",
+          "venue.run_nights",
+          "verdict.why"
+        ],
+        "confidence": "stated",
+        "source": "registry scan"
+      },
+      "prov.stamps": {
+        "value": {
+          "channel": "public",
+          "local_analysis": true,
+          "master_version": "2026-08-20_003101"
+        },
+        "confidence": "stated",
+        "source": "d1.provenance"
+      },
+      "prov.withheld[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "run.dates[]": {
+        "value": [
+          "2024-04-05",
+          "2024-04-06"
+        ],
+        "confidence": "stated",
+        "source": "D-07 venue_run"
+      },
+      "run.label": {
+        "value": "ACL Live at the Moody Theater",
+        "confidence": "stated",
+        "source": "D-07 venue_run"
+      },
+      "run.position": {
+        "value": 2,
+        "confidence": "stated",
+        "source": "D-07 venue_run"
+      },
+      "setlist.count": {
+        "value": 18,
+        "confidence": "stated",
+        "source": "olof_songs"
+      },
+      "setlist.range_notes[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.band_index": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.city": {
+        "value": "Austin",
+        "confidence": "stated",
+        "source": "d1.show.city"
+      },
+      "show.country": {
+        "value": "United States",
+        "confidence": "stated",
+        "source": "d1.show.country"
+      },
+      "show.date.dow": {
+        "value": "Sat",
+        "confidence": "stated",
+        "source": "d1.show.dow"
+      },
+      "show.date.long": {
+        "value": "Apr 6, 2024",
+        "confidence": "stated",
+        "source": "d1.show.date_disp"
+      },
+      "show.net_number": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.newest_source_date": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.official_release": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "show.setlist_confidence": {
+        "value": "complete",
+        "confidence": "corroborated",
+        "source": "D-09 setlist_confidence"
+      },
+      "show.tour": {
+        "value": "Rough and Rowdy Ways",
+        "confidence": "stated",
+        "source": "d1.show.tour"
+      },
+      "show.venue": {
+        "value": "ACL Live at The Moody Theater",
+        "confidence": "stated",
+        "source": "d1.show.venue"
+      },
+      "show.year_index": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "sources.also_on[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "sources.count": {
+        "value": 6,
+        "confidence": "stated",
+        "source": "d1.sources visible members"
+      },
+      "sources.tape_count": {
+        "value": "4 tape groups",
+        "confidence": "stated",
+        "source": "recording_families (every visible source analysed)"
+      },
+      "sources.visible_n": {
+        "value": 4,
+        "confidence": "stated",
+        "source": "S8.3 collapse"
+      },
+      "stats.instrument_notes": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "stats.premiere_count": {
+        "value": 0,
+        "confidence": "stated",
+        "source": "D-02 song_history"
+      },
+      "stats.premiere_titles": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "stats.rotation": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "stats.rotation_rank": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "venue.city": {
+        "value": "Austin",
+        "confidence": "stated",
+        "source": "d1.show.city"
+      },
+      "venue.city_total": {
+        "value": 21,
+        "confidence": "stated",
+        "source": "D-07 city_history"
+      },
+      "venue.coords": {
+        "value": {
+          "lat": 30.267153,
+          "lng": -97.7430608,
+          "basis": "city_centre",
+          "label": "city centre (setlist.fm)",
+          "url": "https://www.setlist.fm/setlist/bob-dylan/2024/acl-live-at-the-moody-theater-austin-tx-53abb71d.html"
+        },
+        "confidence": "stated",
+        "source": "setlist.fm city centroid"
+      },
+      "venue.district": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "venue.map": {
+        "value": "city_centre",
+        "confidence": "stated",
+        "source": "compact locator (hollow ring)"
+      },
+      "venue.name": {
+        "value": "ACL Live at The Moody Theater",
+        "confidence": "stated",
+        "source": "d1.show.venue"
+      },
+      "venue.run_nights": {
+        "value": 2,
+        "confidence": "stated",
+        "source": "D-07 venue_run"
+      },
+      "venue.wiki": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "verdict.alternates[]": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
+      "verdict.vs_runner_up": {
+        "value": [
+          {
+            "field": "scan",
+            "pick_value": 89.0,
+            "runner_value": 87.3,
+            "leader": "pick",
+            "runner_lb": "LB-16029",
+            "subject": "pick",
+            "lines": [
+              "pick scans higher (89 vs 87.3)"
+            ]
+          },
+          {
+            "field": "character",
+            "pick_value": "clean and slightly recessed",
+            "runner_value": "clean, very quiet, slightly muddy, and distant / recessed vocals",
+            "leader": null,
+            "runner_lb": "LB-16029",
+            "subject": null,
+            "lines": [
+              "character (pick): clean and slightly recessed",
+              "character (runner-up LB-16029): clean, very quiet, slightly muddy, and distant / recessed vocals"
+            ]
+          }
+        ],
+        "confidence": "stated",
+        "source": "D-08 compare_sources"
+      },
+      "verdict.why": {
+        "value": {
+          "segments": [
+            {
+              "text": "scanned quality ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "A",
+              "slot": "grade",
+              "inferred": false
+            },
+            {
+              "text": ", ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "best scanned quality of the ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "6",
+              "slot": "n",
+              "inferred": false
+            },
+            {
+              "text": " sources",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "; ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "taped by ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "nightly moth",
+              "slot": "taper",
+              "inferred": false
+            },
+            {
+              "text": "; ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "in ",
+              "slot": null,
+              "inferred": false
+            },
+            {
+              "text": "carbonbit's picks, 10haaf's catalogue",
+              "slot": "lists",
+              "inferred": false
+            },
+            {
+              "text": ".",
+              "slot": null,
+              "inferred": false
+            }
+          ],
+          "text": "scanned quality A, best scanned quality of the 6 sources; taped by nightly moth; in carbonbit's picks, 10haaf's catalogue.",
+          "claims": [
+            "best_scan"
+          ]
+        },
+        "confidence": "stated",
+        "source": "claim-engine slot template (verdict_why)"
+      },
+      "xrefs[]": {
+        "value": [
+          {
+            "key": "losslessbob",
+            "name": "LosslessBob",
+            "desc": "Lossless recording catalog — the LB-number source for transfers, lineage & ratings.",
+            "site": "http://www.losslessbob.wonderingwhattochoose.com",
+            "url": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-16027.html",
+            "link_label": "LB-16027 detail page",
+            "is_source": false
+          },
+          {
+            "key": "olof",
+            "name": "Olof's Files · Still on the Road",
+            "desc": "Olof Björner's chronicle — dates, personnel, bobtalk and song-by-song session notes.",
+            "site": "https://www.bobserve.com/olof/",
+            "url": "https://www.bobserve.com/olof/",
+            "link_label": "chronicle index",
+            "is_source": false
+          },
+          {
+            "key": "boblinks",
+            "name": "Bob Links",
+            "desc": "Fan-contributed setlists, concert reviews and venue notes by date.",
+            "site": "https://boblinks.com",
+            "url": "https://boblinks.com/040624s.html",
+            "link_label": "setlist page · 2024-04-06",
+            "is_source": false,
+            "unavailable": false
+          },
+          {
+            "key": "bobserve",
+            "name": "Bobserve",
+            "desc": "Setlist observations and performance statistics across the touring history.",
+            "site": "https://bobserve.com",
+            "url": "https://bobserve.com/setlist?event=4452",
+            "link_label": "setlist · 2024-04-06",
+            "is_source": true
+          },
+          {
+            "key": "bobdylan",
+            "name": "BobDylan.com",
+            "desc": "The official site's tour archive — setlist for the show as published by Dylan's office.",
+            "site": "https://www.bobdylan.com",
+            "url": "https://www.bobdylan.com/date/2024-04-06-acl-live-at-the-moody-theater-austin-texas/",
+            "link_label": "setlist page · 2024-04-06",
+            "is_source": false,
+            "unavailable": false
+          }
+        ],
+        "confidence": "stated",
+        "source": "_build_xref"
+      }
+    },
+    "rows": {
+      "run.dates": [
+        {
+          "url": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "url": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        }
+      ],
+      "song": [
+        {
+          "position": {
+            "value": 1,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Watching The River Flow",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 2,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Most Likely You Go Your Way",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 3,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "I Contain Multitudes",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 4,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "False Prophet",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 5,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "When I Paint My Masterpiece",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 6,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Black Rider",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 7,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "I'll Be Your Baby Tonight",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 8,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "My Own Version Of You",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 9,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Crossing The Rubicon",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 10,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "To Be Alone With You",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 11,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Key West",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 12,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Gotta Serve Somebody",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 13,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Walking By Myself",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "writers": {
+            "value": "Jimmy Rogers",
+            "tier": 2,
+            "source": "song_writers parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_writers parser"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 14,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "I've Made Up My Mind To Give Myself To You",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 15,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Big River",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "writers": {
+            "value": "Johnny Cash",
+            "tier": 2,
+            "source": "song_writers parser",
+            "confidence": "stated",
+            "derived_from": [
+              "song_writers parser"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 16,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Mother Of Muses",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 17,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Goodbye Jimmy Reed",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "position": {
+            "value": 18,
+            "tier": 1,
+            "source": "olof_songs.position",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.position"
+            ]
+          },
+          "title": {
+            "value": "Every Grain Of Sand",
+            "tier": 1,
+            "source": "olof_songs.song_title",
+            "confidence": "stated",
+            "derived_from": [
+              "olof_songs.song_title"
+            ]
+          },
+          "notes": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "writers": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "instruments[]": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "premiere": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "gap": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "bobtalk": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "official_release": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        }
+      ],
+      "source": [
+        {
+          "lb_id": {
+            "value": "LB-16228",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-16228.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "silver",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "stated",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 89,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "A-",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "resolution": {
+            "value": "16-bit/44.1 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 843474534,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "filecount": {
+            "value": 26,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "clean and present vocals",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "audible mains hum"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "lineage": {
+            "value": "CD Set (Crystal Cat 1164/ 1165) CDs",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "rank": {
+            "value": 6,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lb_rating": {
+            "value": "—",
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "runtime": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "curated_in[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "disc_count": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-16027",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-16027.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "taper": {
+            "value": {
+              "name": "nightly moth",
+              "confidence": "confirmed",
+              "marker": null,
+              "notice": null,
+              "display": "nightly moth"
+            },
+            "tier": 1,
+            "source": "taper_render",
+            "confidence": "stated",
+            "derived_from": [
+              "taper_attributions",
+              "qc_findings",
+              "tuit_recordings"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 100,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "A",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "filecount": {
+            "value": 19,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "clean and slightly recessed",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "incomplete (missing material)",
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "curated_in[]": {
+            "value": [
+              {
+                "list_label": "carbonbit's picks",
+                "note": "04/06/24 Austin, TX - ACL Live at the Moody Theater"
+              },
+              {
+                "list_label": "10haaf's catalogue"
+              }
+            ],
+            "tier": 1,
+            "source": "curated_lists",
+            "confidence": "stated",
+            "derived_from": [
+              "curated_lists"
+            ]
+          },
+          "rank": {
+            "value": 1,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lb_rating": {
+            "value": "—",
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "runtime": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "disc_count": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-16028",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-16028.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "taper": {
+            "value": {
+              "name": "nightly moth",
+              "confidence": "confirmed",
+              "marker": null,
+              "notice": null,
+              "display": "nightly moth"
+            },
+            "tier": 1,
+            "source": "taper_render",
+            "confidence": "stated",
+            "derived_from": [
+              "taper_attributions",
+              "qc_findings",
+              "tuit_recordings"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 100,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "B+",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "filecount": {
+            "value": 19,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "clean, slightly muddy, and slightly recessed",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "incomplete (missing material)",
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "curated_in[]": {
+            "value": [
+              {
+                "list_label": "10haaf's catalogue"
+              }
+            ],
+            "tier": 1,
+            "source": "curated_lists",
+            "confidence": "stated",
+            "derived_from": [
+              "curated_lists"
+            ]
+          },
+          "rank": {
+            "value": 5,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lb_rating": {
+            "value": "—",
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "runtime": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "disc_count": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-16026",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-16026.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "taper": {
+            "value": {
+              "name": "badpainter",
+              "confidence": "stated",
+              "marker": null,
+              "notice": null,
+              "display": "badpainter"
+            },
+            "tier": 1,
+            "source": "taper_render",
+            "confidence": "stated",
+            "derived_from": [
+              "taper_attributions",
+              "qc_findings",
+              "tuit_recordings"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 94,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "A-",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "resolution": {
+            "value": "24-bit/48 kHz file",
+            "tier": 2,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "filesize": {
+            "value": 1224065679,
+            "tier": 3,
+            "source": "D-11 file_meta (TUIT)",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta (TUIT)"
+            ]
+          },
+          "filecount": {
+            "value": 19,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "clean, slightly muddy, and slightly recessed",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "curated_in[]": {
+            "value": [
+              {
+                "list_label": "10haaf's catalogue"
+              }
+            ],
+            "tier": 1,
+            "source": "curated_lists",
+            "confidence": "stated",
+            "derived_from": [
+              "curated_lists"
+            ]
+          },
+          "rank": {
+            "value": 4,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lb_rating": {
+            "value": "—",
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "runtime": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "disc_count": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-16029",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-16029.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "taper": {
+            "value": {
+              "name": "sway",
+              "confidence": "confirmed",
+              "marker": null,
+              "notice": null,
+              "display": "sway"
+            },
+            "tier": 1,
+            "source": "taper_render",
+            "confidence": "stated",
+            "derived_from": [
+              "taper_attributions",
+              "qc_findings",
+              "tuit_recordings"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 100,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "A-",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "filecount": {
+            "value": 18,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "clean, very quiet, slightly muddy, and distant / recessed vocals",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "flags[]": {
+            "value": [
+              "no lineage on file"
+            ],
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "curated_in[]": {
+            "value": [
+              {
+                "list_label": "10haaf's catalogue"
+              }
+            ],
+            "tier": 1,
+            "source": "curated_lists",
+            "confidence": "stated",
+            "derived_from": [
+              "curated_lists"
+            ]
+          },
+          "rank": {
+            "value": 2,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "generation": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lb_rating": {
+            "value": "—",
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "runtime": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lineage": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "disc_count": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        },
+        {
+          "lb_id": {
+            "value": "LB-16030",
+            "tier": 1,
+            "source": "entries.lb_number",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.lb_number"
+            ]
+          },
+          "url": {
+            "value": "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-16030.html",
+            "tier": 1,
+            "source": "detail_url",
+            "confidence": "stated",
+            "derived_from": [
+              "detail_url"
+            ]
+          },
+          "generation": {
+            "value": "master",
+            "tier": 3,
+            "source": "D-05 classify_generation",
+            "confidence": "inferred",
+            "derived_from": [
+              "D-05 classify_generation"
+            ]
+          },
+          "group": {
+            "value": "primary",
+            "tier": 2,
+            "source": "S8.2 fragment/G2 classification",
+            "confidence": "stated",
+            "derived_from": [
+              "S8.2 fragment/G2 classification"
+            ]
+          },
+          "completeness": {
+            "value": 100,
+            "tier": 3,
+            "source": "D-01 completeness",
+            "confidence": "stated",
+            "derived_from": [
+              "D-01 completeness"
+            ]
+          },
+          "type": {
+            "value": "Audience",
+            "tier": 1,
+            "source": "entries.source_type",
+            "confidence": "stated",
+            "derived_from": [
+              "entries.source_type"
+            ]
+          },
+          "scan_grade": {
+            "value": "A-",
+            "tier": 1,
+            "source": "per-LB latest scored scan",
+            "confidence": "stated",
+            "derived_from": [
+              "per-LB latest scored scan"
+            ]
+          },
+          "filecount": {
+            "value": 18,
+            "tier": 3,
+            "source": "D-11 file_meta",
+            "confidence": "stated",
+            "derived_from": [
+              "D-11 file_meta"
+            ]
+          },
+          "character": {
+            "value": "clean, very quiet, and slightly recessed",
+            "tier": 1,
+            "source": "source_character parser",
+            "confidence": "stated",
+            "derived_from": [
+              "source_character parser"
+            ]
+          },
+          "lineage": {
+            "value": "Recorded by: soomlos, schoeps mk4v's > nbob actives > naiant pfa > sound devices mixpre-3",
+            "tier": 1,
+            "source": "lineage_short parser",
+            "confidence": "stated",
+            "derived_from": [
+              "lineage_short parser"
+            ]
+          },
+          "curated_in[]": {
+            "value": [
+              {
+                "list_label": "10haaf's catalogue"
+              }
+            ],
+            "tier": 1,
+            "source": "curated_lists",
+            "confidence": "stated",
+            "derived_from": [
+              "curated_lists"
+            ]
+          },
+          "rank": {
+            "value": 3,
+            "tier": 1,
+            "source": "show_picks.pick_rank, renumbered among primary sources",
+            "confidence": "stated",
+            "derived_from": [
+              "show_picks.pick_rank"
+            ]
+          },
+          "added": {
+            "value": null,
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "taper": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "medium": {
+            "value": "audio",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "lb_rating": {
+            "value": "—",
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "runtime": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "resolution": {
+            "value": "—",
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "flags[]": {
+            "value": null,
+            "tier": 1,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "excluded": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "show_unassigned": {
+            "value": null,
+            "tier": 2,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "filesize": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          },
+          "disc_count": {
+            "value": "—",
+            "tier": 3,
+            "source": null,
+            "confidence": "unavailable",
+            "derived_from": []
+          }
+        }
+      ],
+      "family": [
+        {
+          "id": {
+            "value": "2024-04-06#16027-16028-16228",
+            "tier": 1,
+            "source": "recording_families",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families"
+            ]
+          },
+          "label": {
+            "value": "Family A",
+            "tier": 1,
+            "source": "recording_families + S8.4 taper-label rule",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families + S8.4 taper-label rule"
+            ]
+          },
+          "size": {
+            "value": 3,
+            "tier": 1,
+            "source": "recording_families (primary sources shown)",
+            "confidence": "stated",
+            "derived_from": [
+              "recording_families (primary sources shown)"
+            ]
+          },
+          "confidence": {
+            "value": 0.29649293174346286,
+            "tier": 1,
+            "source": "tapematch_family_meta.conf",
+            "confidence": "stated",
+            "derived_from": [
+              "tapematch_family_meta.conf"
+            ]
+          },
+          "basis": {
+            "value": [
+              "waveform correlation mean 0.30"
+            ],
+            "tier": 3,
+            "source": "family_basis",
+            "confidence": "stated",
+            "derived_from": [
+              "family_basis"
+            ]
+          }
+        }
+      ],
+      "set": []
+    },
+    "claims": [
+      {
+        "anchor": "context.chronicle",
+        "row": null,
+        "claim": {
+          "kind": "position",
+          "text_key": "run_closing",
+          "slots": {
+            "venue": {
+              "value": "ACL Live at the Moody Theater",
+              "tier": 3,
+              "source": "D-07 run_context.venue_run",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events.venue"
+              ]
+            },
+            "position": {
+              "value": 2,
+              "tier": 3,
+              "source": "D-07 run_context.venue_run",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events"
+              ]
+            },
+            "size": {
+              "value": 2,
+              "tier": 3,
+              "source": "D-07 run_context.venue_run",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events"
+              ]
+            }
+          },
+          "scope": "venue_run",
+          "verified_by": "D-07 run_context.venue_run",
+          "ties": 0,
+          "derived_from": [
+            "olof_events.venue",
+            "olof_events",
+            "claim:D-07 run_context.venue_run"
+          ],
+          "local_analysis": false
+        }
+      },
+      {
+        "anchor": "context.chronicle",
+        "row": null,
+        "claim": {
+          "kind": "position",
+          "text_key": "tour_position",
+          "slots": {
+            "tour": {
+              "value": "Rough and Rowdy Ways World Wide Tour",
+              "tier": 3,
+              "source": "D-07 run_context.tour",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events.tour_name"
+              ]
+            },
+            "position": {
+              "value": 181,
+              "tier": 3,
+              "source": "D-07 run_context.tour",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events"
+              ]
+            },
+            "size": {
+              "value": 282,
+              "tier": 3,
+              "source": "D-07 run_context.tour",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events"
+              ]
+            }
+          },
+          "scope": "tour",
+          "verified_by": "D-07 run_context.tour",
+          "ties": 0,
+          "derived_from": [
+            "olof_events.tour_name",
+            "olof_events",
+            "claim:D-07 run_context.tour"
+          ],
+          "local_analysis": false
+        }
+      },
+      {
+        "anchor": "verdict.why",
+        "row": null,
+        "claim": {
+          "kind": "superlative",
+          "text_key": "best_scan",
+          "slots": {
+            "subject": {
+              "value": 89.0,
+              "tier": 1,
+              "source": "per-LB latest scored scan",
+              "confidence": "stated",
+              "derived_from": [
+                "quality_recording_scores"
+              ]
+            },
+            "n": {
+              "value": 6,
+              "tier": 3,
+              "source": "D-08 scan",
+              "confidence": "stated",
+              "derived_from": [
+                "claim:D-08 scan"
+              ]
+            }
+          },
+          "scope": "visible_sources",
+          "verified_by": "D-08 scan",
+          "ties": 0,
+          "derived_from": [
+            "quality_recording_scores",
+            "claim:D-08 scan"
+          ],
+          "local_analysis": true
+        }
+      },
+      {
+        "anchor": "verdict.vs_runner_up",
+        "row": "scan",
+        "claim": {
+          "kind": "comparison",
+          "text_key": "higher_scan_than",
+          "slots": {
+            "other": {
+              "value": "LB-16029",
+              "tier": 3,
+              "source": "D-08 scan",
+              "confidence": "stated",
+              "derived_from": [
+                "quality_recording_scores"
+              ]
+            },
+            "subject_value": {
+              "value": 89.0,
+              "tier": 1,
+              "source": "per-LB latest scored scan",
+              "confidence": "stated",
+              "derived_from": [
+                "quality_recording_scores"
+              ]
+            },
+            "other_value": {
+              "value": 87.3,
+              "tier": 1,
+              "source": "per-LB latest scored scan",
+              "confidence": "stated",
+              "derived_from": [
+                "quality_recording_scores"
+              ]
+            }
+          },
+          "scope": "visible_sources",
+          "verified_by": "D-08 scan",
+          "ties": 0,
+          "derived_from": [
+            "quality_recording_scores",
+            "claim:D-08 scan"
+          ],
+          "local_analysis": true
+        }
+      }
+    ],
+    "map_marker": "city_centre",
+    "qc": {
+      "passed": true,
+      "refused": false,
+      "withheld": [],
+      "reasons": [],
+      "notices": []
+    }
+  }
 }
