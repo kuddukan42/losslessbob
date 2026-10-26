@@ -44,20 +44,44 @@ from __future__ import annotations
 
 import argparse
 import logging
-import math
 import os
 import random
 import re
 import sqlite3
-import unicodedata
+import sys
 from collections import Counter, defaultdict
 from datetime import date, datetime
-from difflib import SequenceMatcher
 from pathlib import Path
+
+_project_root = Path(__file__).resolve().parent.parent
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
+
+# Normalisers + loaders live in backend.venue_xref (shared with the venue_xref build).
+from backend.venue_xref import (  # noqa: E402,F401
+    _CITY_ALIAS,
+    _FOLD,
+    _NONWORD_RE,
+    _SESSION_RE,
+    _STOP,
+    FUZZY_RATIO,
+    _ascii_fold,
+    _has,
+    date_pairs,
+    fuzzy_name,
+    haversine_km,
+    load_city_coords,
+    load_olof,
+    load_tuit,
+    near_same,
+    norm_city,
+    norm_tokens,
+    norm_venue,
+    relation,
+)
 
 logger = logging.getLogger("tuit_olof_spine")
 
-_project_root = Path(__file__).resolve().parent.parent
 _app_root = Path(os.environ.get("LOSSLESSBOB_APP_ROOT", _project_root))
 DEFAULT_DB = _app_root / "data" / "losslessbob.db"
 DEFAULT_OUT = _project_root / "docs" / "TUIT_OLOF_SPINE.md"
@@ -66,7 +90,6 @@ GEN_START = "<!-- GENERATED:tuit_olof_spine START -->"
 GEN_END = "<!-- GENERATED:tuit_olof_spine END -->"
 
 NEAR_DAYS = 10
-FUZZY_RATIO = 0.85
 GEO_KM = (10.0, 25.0, 50.0)
 HYBRID_BASE = "geo25"
 _SAMPLES = 15
@@ -87,15 +110,6 @@ KNOWN_NOTES = {
     "2004-10-18": "real show olof's pages lack or don't parse",
 }
 
-_SESSION_RE = re.compile(r"\s*[·•]\s*(early|late|evening|afternoon|matinee|night|"
-                         r"\d+(st|nd|rd|th)? show|show \d+)\s*$", re.I)
-_NONWORD_RE = re.compile(r"[^\w]+")
-_STOP = {"the", "of", "and", "at", "de", "la", "le", "der", "die", "das"}
-_FOLD = {"theatre": "theater", "centre": "center", "st": "saint", "ctr": "center",
-         "amphitheatre": "amphitheater", "mt": "mount", "univ": "university"}
-_CITY_ALIAS = {"new york city": "new york", "nyc": "new york", "washington dc": "washington",
-               "washington d c": "washington", "st paul": "saint paul",
-               "st louis": "saint louis", "ft lauderdale": "fort lauderdale"}
 _NON_SHOW_RE = re.compile(
     r"\b(studio|studios|tv|television|radio(?! city)|wfmt|wbai|cbc|bbc|nbc|cbs|abc|pbs|"
     r"rehearsal|home|apartment|house of|hotel room|recording|session|office|"
@@ -109,137 +123,30 @@ _CIRCA_RE = re.compile(r"circa|\?|early|late|mid|spring|summer|autumn|fall|winte
 # Normalisation
 # ---------------------------------------------------------------------------
 
-def _ascii_fold(s: str) -> str:
-    return "".join(c for c in unicodedata.normalize("NFKD", s) if not unicodedata.combining(c))
 
 
-def norm_tokens(text: str | None) -> list[str]:
-    """Return the folded, stop-word-free token list of a venue or city string.
-
-    Args:
-        text: Raw venue/city text.
-
-    Returns:
-        Tokens: accent-folded, casefolded, ``&`` -> ``and``, punctuation split,
-        theatre/centre/st spellings folded, stop words dropped.
-    """
-    if not text:
-        return []
-    s = _ascii_fold(text).casefold().replace("&", " and ").replace("'", "")
-    toks = [_FOLD.get(t, t) for t in _NONWORD_RE.sub(" ", s).split()]
-    return [t for t in toks if t not in _STOP]
 
 
-def norm_venue(venue: str | None) -> str:
-    """Normalise a venue string (session suffix such as ' · Early' stripped)."""
-    return " ".join(norm_tokens(_SESSION_RE.sub("", venue or "")))
 
 
-def norm_city(city: str | None) -> str:
-    """Normalise a city to its first comma segment, with a few alias folds."""
-    base = " ".join(norm_tokens((city or "").split(",", 1)[0]))
-    return _CITY_ALIAS.get(base, base)
 
 
-def fuzzy_name(a: str, b: str) -> bool:
-    """True when two normalised venue names plausibly denote one venue.
-
-    Token containment either way (``lisner auditorium`` within ``lisner
-    auditorium george washington university``), or a difflib ratio of at least
-    :data:`FUZZY_RATIO` on the joined strings (``jacobshalle``/``jakobshalle``).
-    Containment also tries the concatenated form, so ``salzburgarena`` meets
-    ``salzburg arena``.
-    """
-    if not a or not b:
-        return False
-    if a == b:
-        return True
-    ta, tb = set(a.split()), set(b.split())
-    if ta <= tb or tb <= ta:
-        return True
-    ca, cb = a.replace(" ", ""), b.replace(" ", "")
-    if len(ca) >= 6 and len(cb) >= 6 and (ca in cb or cb in ca):
-        return True
-    return SequenceMatcher(None, ca, cb).ratio() >= FUZZY_RATIO
 
 
-def near_same(a: str, b: str) -> bool:
-    """Strict spelling-variant test (ratio >= 0.9) used to judge evidence, not to link."""
-    if not a or not b:
-        return False
-    return a == b or SequenceMatcher(None, a.replace(" ", ""), b.replace(" ", "")).ratio() >= 0.9
 
 
-def relation(tuit_norm: str, olof_norm: str) -> str:
-    """Classify which side carries the longer (superset) venue string."""
-    if tuit_norm == olof_norm:
-        return "equal"
-    ta, tb = set(tuit_norm.split()), set(olof_norm.split())
-    if tb < ta:
-        return "tuit_longer"
-    if ta < tb:
-        return "olof_longer"
-    return "different"
 
 
-def haversine_km(a: tuple[float, float], b: tuple[float, float]) -> float:
-    """Great-circle distance in km between two (lat, lon) points."""
-    lat1, lon1, lat2, lon2 = map(math.radians, (*a, *b))
-    h = (math.sin((lat2 - lat1) / 2) ** 2
-         + math.cos(lat1) * math.cos(lat2) * math.sin((lon2 - lon1) / 2) ** 2)
-    return 2 * 6371.0 * math.asin(math.sqrt(min(1.0, h)))
 
 
 # ---------------------------------------------------------------------------
 # Loading
 # ---------------------------------------------------------------------------
 
-def _has(conn: sqlite3.Connection, table: str) -> bool:
-    return conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",
-                        (table,)).fetchone() is not None
 
 
-def load_tuit(conn: sqlite3.Connection) -> list[dict]:
-    """Load ``tuit_shows`` rows with a resolved register venue id and city.
-
-    The register join mirrors ``geocoder._get_tuit_venues_location_string``:
-    same venue name, register city a prefix of the show's location; busiest
-    register row wins. Unresolved rows keep ``reg_id=None`` and take the first
-    comma segment of ``location`` as city.
-    """
-    reg: dict[str, list[dict]] = defaultdict(list)
-    if _has(conn, "tuit_venues"):
-        for r in conn.execute("SELECT id, venue, city, country, n_shows FROM tuit_venues"):
-            reg[r[1]].append({"id": r[0], "city": r[2] or "", "country": r[3] or "",
-                              "n": r[4] or 0})
-    out = []
-    for r in conn.execute("SELECT id, date_str, venue, COALESCE(location,''), "
-                          "COALESCE(tour,''), circulating FROM tuit_shows ORDER BY date_str, id"):
-        sid, d, venue, loc, tour, circ = r
-        cands = [v for v in reg.get(venue, []) if v["city"] and loc.startswith(v["city"])]
-        cands.sort(key=lambda v: (-v["n"], v["id"]))
-        hit = cands[0] if cands else None
-        city = hit["city"] if hit else loc.split(",", 1)[0]
-        vn, cn = norm_venue(venue), norm_city(city)
-        out.append({"id": sid, "date": d, "venue": venue, "location": loc, "tour": tour,
-                    "circulating": circ, "reg_id": hit["id"] if hit else None,
-                    "city": city, "vn": vn, "cn": cn,
-                    "key": ("reg", hit["id"]) if hit else ("loc", vn, cn)})
-    return out
 
 
-def load_olof(conn: sqlite3.Connection) -> list[dict]:
-    """Load every dated ``olof_events`` row (all event types)."""
-    out = []
-    for r in conn.execute("SELECT event_id, event_type, date_str, date_raw, venue, city, "
-                          "region, country, source FROM olof_events WHERE date_str != '' "
-                          "ORDER BY date_str, event_id"):
-        eid, et, d, raw, venue, city, region, country, src = r
-        vn, cn = norm_venue(venue), norm_city(city)
-        out.append({"event_id": eid, "type": et, "date": d, "date_raw": raw, "venue": venue,
-                    "city": city, "region": region, "country": country, "source": src,
-                    "vn": vn, "cn": cn, "key": (vn, cn)})
-    return out
 
 
 def load_other_dates(conn: sqlite3.Connection) -> tuple[set[str], set[str]]:
@@ -251,32 +158,6 @@ def load_other_dates(conn: sqlite3.Connection) -> tuple[set[str], set[str]]:
     return sfm, bd
 
 
-def load_city_coords(conn: sqlite3.Connection) -> dict[str, tuple[float, float]]:
-    """Build a city-norm -> (lat, lon) centroid table.
-
-    Sources: setlist.fm ``city_lat``/``city_lon`` (preferred: one city-level
-    point) then the median of resolved ``venue_geocoded`` pins per bare city.
-    Keyed by bare city only, so same-named cities in different countries can
-    collide — acceptable for a prototype because the name rule still applies.
-    """
-    pts: dict[str, list[tuple[float, float]]] = defaultdict(list)
-    out: dict[str, tuple[float, float]] = {}
-    if _has(conn, "setlistfm_shows"):
-        cols = {r[1] for r in conn.execute("PRAGMA table_info(setlistfm_shows)")}
-        if "city_lat" in cols:
-            for city, lat, lon in conn.execute(
-                    "SELECT city, city_lat, city_lon FROM setlistfm_shows "
-                    "WHERE city_lat IS NOT NULL"):
-                out.setdefault(norm_city(city), (lat, lon))
-    if _has(conn, "venue_geocoded"):
-        for city, lat, lon in conn.execute(
-                "SELECT city, lat, lon FROM venue_geocoded WHERE lat IS NOT NULL"):
-            pts[norm_city(city)].append((lat, lon))
-    for c, ps in pts.items():
-        if c not in out:
-            lats, lons = sorted(p[0] for p in ps), sorted(p[1] for p in ps)
-            out[c] = (lats[len(lats) // 2], lons[len(lons) // 2])
-    return out
 
 
 # ---------------------------------------------------------------------------
@@ -393,25 +274,6 @@ def classify_olof_only(tuit: list[dict], olof: list[dict], sfm: set[str], bd: se
 # Part 2 — venue join keys
 # ---------------------------------------------------------------------------
 
-def date_pairs(tuit: list[dict], olof: list[dict]) -> list[dict]:
-    """Shared dates where each corpus names exactly one venue entity.
-
-    Returns:
-        One dict per date: ``date``, the TUIT row (first of its date) and the
-        olof concert row.
-    """
-    tb: dict[str, list[dict]] = defaultdict(list)
-    for t in tuit:
-        tb[t["date"]].append(t)
-    ob: dict[str, list[dict]] = defaultdict(list)
-    for e in olof:
-        if e["type"] == "concert":
-            ob[e["date"]].append(e)
-    out = []
-    for d in sorted(set(tb) & set(ob)):
-        if len({t["key"] for t in tb[d]}) == 1 and len({e["key"] for e in ob[d]}) == 1:
-            out.append({"date": d, "t": tb[d][0], "o": ob[d][0]})
-    return out
 
 
 def _key_preds(coords: dict[str, tuple[float, float]]) -> dict[str, object]:

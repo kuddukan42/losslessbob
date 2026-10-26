@@ -1,3 +1,10 @@
+[2026-10-25] — TODO-338 closed: TUIT↔Olof venue_xref built; dossier shows TUIT's longer venue string as a secondary line
+Added: backend/venue_xref.py + venue_xref table (USER-tier, derived): pairwise links — 2,610 by shared date (all 3,986 shared dates) + 8 by a unique geo25 name match, no transitive merge; CLI python -m backend.venue_xref --apply; tools/tuit_sync.py rebuilds it after --sync-tours/--sync-venues. Live build after backup data/backups/losslessbob_preVenueXref_*.db
+Added: backend/dossier_anchors.py, backend/templates/dossier.html: anchor show.venue_detail (local_analysis) — TUIT's venue string under Olof's header, only where it strictly extends it
+Changed: tools/tuit_olof_spine.py: normalisers/loaders moved to backend/venue_xref.py (report output byte-identical)
+Changed: tools/make_fixture_db.py: golden cut carries tuit_shows; tests/golden/dossier/*.json re-pinned for the new field (only 1987-10-11 shows a value — noted in its verified_by for tj)
+Added: tests/test_venue_xref.py (5); PROJECT.md venue_xref schema + file tree; wiki Setlist-Sources
+
 [2026-10-25] — Backlog batch 1: tj's eight decisions recorded; TODO-177/316/373 closed
 Changed: TODO.md → TODO_DONE.md: TODO-177 (superseded by TODO-196's icon), TODO-373 (/qc-review parked), TODO-316 (TUIT surfaces scouted: nothing worth a parser)
 Changed: TODO.md: decisions recorded on TODO-136 (tj live-tests), 334 (admit private sources after TODO-319), 338 (build venue_xref, Olof primary), 371 (build G1 fallback), 234 (splits/relabels now, listen first on 2)

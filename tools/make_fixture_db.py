@@ -535,6 +535,8 @@ def cut_golden(src_db: Path, dates: set[str], dest: Path = GOLDEN_FIXTURE) -> di
     tables["tuit_recordings"] = rows(
         "tuit_recordings", f"{lb_where} OR {date_where}", lb_params + date_params)
     tables["tuit_song_performances"] = rows("tuit_song_performances", date_where, date_params)
+    # TODO-338: the header's secondary venue line reads TUIT's show row for the date.
+    tables["tuit_shows"] = rows("tuit_shows", date_where, date_params)
     tables["bobdylan_shows"] = rows("bobdylan_shows", date_where, date_params)
     # Two-show days are indexed "YYYY-MM-DD Early"/"Late", so match on the date prefix.
     tables["bobserve_event_index"] = rows(

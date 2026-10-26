@@ -4,7 +4,7 @@
   "channel": "public",
   "category": "compilation-polluted",
   "note": "Entries flagged R-E2 (mis-dated or compilation)",
-  "verified_by": "tj (C32 sign-off, 2026-10-24)",
+  "verified_by": "tj (C32 sign-off, 2026-10-24); re-pinned 2026-10-25 for TODO-338 — adds TUIT's secondary venue line 'International Arena, National Exhibition Center' (awaiting tj's look)",
   "expected": {
     "fields": {
       "band.label": {
@@ -457,6 +457,11 @@
         "value": "International Arena",
         "confidence": "stated",
         "source": "d1.show.venue"
+      },
+      "show.venue_detail": {
+        "value": "International Arena, National Exhibition Center",
+        "confidence": "stated",
+        "source": "venue_xref.tuit_longer_venue (TUIT)"
       },
       "show.year_index": {
         "value": 31,

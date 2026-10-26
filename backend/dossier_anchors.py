@@ -144,6 +144,9 @@ _ANCHOR_ROWS: list[Anchor] = [
     _a("show.date.long", 1, "header", "date_iso long", "required"),
     _a("show.date.dow", 1, "header", "date_iso %A", "required"),
     _a("show.venue", 1, "header", "_build_show cascade", "value", "Venue unknown"),
+    # TODO-338: TUIT's longer venue string, only where it strictly extends Olof's.
+    _a("show.venue_detail", 1, "header", "venue_xref.tuit_longer_venue", "omit",
+       local_analysis=True),
     _a("show.city", 1, "header", "city", "omit"),
     _a("show.country", 1, "header", "country", "omit"),
     _a("show.tour", 1, "header", "D-07 tour object (Olof leg)", "omit"),
@@ -578,6 +581,12 @@ def _build_header(vb, d1, conn, event_id, date_iso, lineup, link_mode, visible_m
         vb.set_field("show.date.dow", build_field(show["dow"], 1, "d1.show.dow", "stated"))
     if show.get("venue"):
         vb.set_field("show.venue", build_field(show["venue"], 1, "d1.show.venue", "stated"))
+        if date_iso:
+            from backend.venue_xref import tuit_longer_venue
+            detail = _safe(tuit_longer_venue, conn, date_iso, show["venue"])
+            if detail:
+                vb.set_field("show.venue_detail", build_field(
+                    detail, 1, "venue_xref.tuit_longer_venue (TUIT)", "stated"))
     if show.get("city"):
         vb.set_field("show.city", build_field(show["city"], 1, "d1.show.city", "stated"))
     if show.get("country"):

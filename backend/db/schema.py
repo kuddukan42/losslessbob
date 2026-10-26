@@ -80,6 +80,7 @@ USER_TABLES = (
     "taper_decision_log",
     "refresh_step_runs",
     "refresh_chain_runs",
+    "venue_xref",
 )
 
 # Guard against f-string injection if a table name is ever mis-typed (#10)
@@ -1509,6 +1510,28 @@ CREATE TABLE IF NOT EXISTS tuit_venues (
     UNIQUE(venue, city, country)
 );
 CREATE INDEX IF NOT EXISTS idx_tuit_venues_name ON tuit_venues(venue);
+
+-- TUIT <-> Olof venue cross-reference (TODO-338, LOCAL, derived). Pairwise links,
+-- never a transitive closure: method 'date' = the two corpora name these venues on
+-- the same date(s) (n_dates), 'name' = the geo25 fuzzy-name rule with exactly one
+-- Olof candidate. Rebuilt by `python -m backend.venue_xref --apply`.
+CREATE TABLE IF NOT EXISTS venue_xref (
+    tuit_venue    TEXT NOT NULL,
+    tuit_city     TEXT,
+    tuit_venue_id INTEGER,              -- tuit_venues.id when the show resolved to the register
+    tuit_vn       TEXT NOT NULL,        -- normalised keys (backend.venue_xref.norm_*)
+    tuit_cn       TEXT,
+    olof_venue    TEXT NOT NULL,
+    olof_city     TEXT,
+    olof_vn       TEXT NOT NULL,
+    olof_cn       TEXT,
+    method        TEXT NOT NULL,        -- 'date' | 'name'
+    n_dates       INTEGER NOT NULL DEFAULT 0,
+    relation      TEXT,                 -- equal | tuit_longer | olof_longer | different
+    built_at      TEXT NOT NULL,
+    UNIQUE(tuit_vn, tuit_cn, olof_vn, olof_cn)
+);
+CREATE INDEX IF NOT EXISTS idx_venue_xref_olof ON venue_xref(olof_vn, olof_cn);
 
 -- TUIT's songbook (LOCAL), scraped from /songs. The index's own performance
 -- count is kept alongside the rows actually listed on the song page: the two

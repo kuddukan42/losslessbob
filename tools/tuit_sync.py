@@ -410,6 +410,13 @@ def _sync_history(session, args) -> int:
                   f"({len(venues)} scraped, the register's unstable pagination "
                   f"repeats rows), {recovered} more recovered from tuit_shows")
 
+    if (args.sync_tours or args.sync_venues) and not args.dry_run:
+        # TODO-338: venue_xref is derived from tuit_shows/tuit_venues — rebuild it.
+        from backend import venue_xref
+        stats = venue_xref.refresh(database.get_connection())
+        print(f"venue_xref: {stats['written']} links ({stats['date_links']} by date, "
+              f"{stats['name_links']} by name)")
+
     if args.sync_songs:
         songs = tuit_scraper.fetch_songs(session, delay=args.delay)
         if not songs:

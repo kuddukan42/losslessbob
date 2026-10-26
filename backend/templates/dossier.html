@@ -49,6 +49,7 @@ a:hover{color:var(--accent-hi);text-decoration:underline}
 .masthead .mark{width:22px;height:22px;border-radius:6px;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;color:var(--on-accent);font-family:var(--mono);font-weight:800;font-size:.7rem}
 h1{margin:.1rem 0 .45rem;font-size:2.3rem;font-weight:800;line-height:1.08;letter-spacing:-.02em}
 .show-meta{font-size:.84rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:center;gap:.35em .65em;align-items:center}
+.show-meta.venue-detail{margin-top:.15rem;font-size:.76rem;color:var(--faint)}
 .show-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--faint);display:inline-block}
 .netnum{font-family:var(--mono);font-weight:600;color:var(--accent-hi)}
 .mast-rules{margin-top:1rem;height:5px;border-top:2px solid var(--accent);border-bottom:1px solid var(--rule2)}
@@ -341,6 +342,10 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     {%- set band_idx_f = fields.get('show.band_index') -%}
     {%- if band_idx_f and band_idx_f.value is not none %}<span data-lb="show.band_index" hidden>{{ band_idx_f.value }}</span>{% endif -%}
   </div>
+  {%- set venue_detail_f = fields.get('show.venue_detail') -%}
+  {%- if venue_detail_f and venue_detail_f.value %}
+  <div class="show-meta venue-detail">{{ lbf('show.venue_detail', venue_detail_f, verbatim=true) }}</div>
+  {%- endif %}
   {%- if d.show_links %}
   {#- TODO-345: a same-venue two-show day -- say which show this is, link the other. #}
   <nav class="show-pick" aria-label="Shows on this date">

@@ -448,6 +448,11 @@
         "confidence": "stated",
         "source": "d1.show.venue"
       },
+      "show.venue_detail": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
       "show.year_index": {
         "value": 54,
         "confidence": "stated",

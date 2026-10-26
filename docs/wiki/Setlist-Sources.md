@@ -4,7 +4,7 @@
 > `backend/olof_*.py` · `backend/bobserve_*.py` · `backend/bobdylan_scraper.py` ·
 > `backend/setlistfm.py` · `backend/song_index.py` · `backend/setlist_fingerprint.py` ·
 > `backend/gap_analysis.py` · `backend/qc/corroborate.py` · `tools/olof_reparse_diff.py` ·
-> `tools/tuit_olof_spine.py` · Status: fresh 2026-10-25
+> `tools/tuit_olof_spine.py` · `backend/venue_xref.py` · Status: fresh 2026-10-25
 
 The app cross-references external setlist corpora against `entries`. Parsed `olof_*`
 data is **local-only** (not in MASTER export).
@@ -30,6 +30,9 @@ Yearly Chronicles are parsed only for calendar/diary + new-tapes data
   (`setlist_quorum`, `venue_check`) compares Olof/setlist.fm/bobdylan.com; feeds QC rule
   R-O4 and the dossier identity gate G1. `tools/tuit_olof_spine.py` (TODO-338) crosses
   TUIT's show spine against `olof_events` (read-only report).
+- **Venue cross-reference** (TODO-338) — `venue_xref.py` links TUIT venues to Olof venues
+  pairwise (shared date, then a unique geo25 name match; never transitive); Olof stays the
+  dossier header, TUIT's longer string is a secondary line (`show.venue_detail`).
 - **Coverage classification** — `gap_analysis.py` classifies each `olof_events` concert
   date covered/partial/gap/future against `entries`, live. The Gaps screen and `/api/gaps/*`
   were deleted (TODO-270); it now feeds the Library's `uncirculated`/`upcoming` rows and

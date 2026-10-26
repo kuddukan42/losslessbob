@@ -181,7 +181,8 @@ losslessbob/
 │   ├── tapematch_sync.py     # Syncs TapeMatch family clustering from tools/tapematch/observations.db
 │   ├── rarity.py             # TODO-335: per-LB source-tape copy count + only-known-copy flag over recording_families (GET /api/tapematch/rarity)
 │   ├── geocoder.py           # Nominatim geocoder: geocode_one, place_manual, run_batch, get_progress
-│   └── venue_gazetteer.py    # TODO-223: venue_geocoded seed + resolution ladder (bounded Nominatim → Wikidata P625 → city anchor)
+│   ├── venue_gazetteer.py    # TODO-223: venue_geocoded seed + resolution ladder (bounded Nominatim → Wikidata P625 → city anchor)
+│   └── venue_xref.py         # TODO-338: TUIT↔Olof venue cross-reference (pairwise: shared date, then unique geo25 name match; no transitive merge) + tuit_longer_venue() for the dossier's secondary venue line; shared normalisers/loaders for tools/tuit_olof_spine.py. CLI: python -m backend.venue_xref [--apply]
 ├── concert_ranker/           # Audio quality scoring + ranking (TODO-183). Run: python -m concert_ranker.cli
 │   ├── config.py             # All thresholds/weights/bands (# CALIBRATE markers), externalized
 │   ├── features.py           # DSP feature extractors: clarity/crowd/tonal/distortion/spatial/hf_native
@@ -281,6 +282,7 @@ losslessbob/
 │   ├── test_tapematch_sync.py # backend/tapematch_sync.py
 │   ├── test_rarity.py        # backend/rarity.py + GET /api/tapematch/rarity (TODO-335)
 │   ├── test_tuit_olof_spine.py # tools/tuit_olof_spine.py (TODO-338)
+│   ├── test_venue_xref.py    # backend/venue_xref.py: date/name links, no transitive merge, tuit_longer_venue (TODO-338)
 │   ├── test_rarity_census.py # tools/tapematch/rarity_census.py (TODO-335)
 │   └── test_batch_verify.py  # tools/batch_verify.py helper functions
 ├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only; bundled inside Electron AppImage
@@ -647,6 +649,24 @@ no tiebreak, so a sweep repeats rows and drops others (2,744 fetched → 1,931 d
 
 Indexes: `idx_tuit_venues_name(venue)`. UNIQUE(venue, city, country).
 
+
+### `venue_xref` — TUIT ↔ Olof venue cross-reference (USER-tier, derived, TODO-338)
+Rebuilt whole by `backend/venue_xref.py:refresh()` — `python -m backend.venue_xref --apply`, and
+automatically after `tools/tuit_sync.py --sync-tours/--sync-venues`. Pairwise links only, never a
+transitive closure (one bad link would chain Carnegie Chapter Hall into Carnegie Hall).
+| Column | Type | Notes |
+|--------|------|-------|
+| tuit_venue / tuit_city | TEXT | TUIT's display strings (session suffix stripped) |
+| tuit_venue_id | INTEGER | `tuit_venues.id` when the show resolved to the register |
+| tuit_vn / tuit_cn / olof_vn / olof_cn | TEXT | normalised keys (`venue_xref.norm_venue` / `norm_city`); UNIQUE(tuit_vn, tuit_cn, olof_vn, olof_cn) |
+| olof_venue / olof_city | TEXT | Olof's display strings |
+| method | TEXT | `date` (named on the same date(s)) or `name` (geo25 fuzzy name, exactly one Olof candidate) |
+| n_dates | INTEGER | shared dates behind a `date` link (0 for `name`) |
+| relation | TEXT | `equal` / `tuit_longer` / `olof_longer` / `different` |
+| built_at | TEXT | ISO UTC |
+
+The dossier keeps `olof_events.venue` as its header; `venue_xref.tuit_longer_venue()` adds
+TUIT's string as anchor `show.venue_detail` (local_analysis) only when it strictly extends Olof's.
 ### `tuit_songs` — TUIT songbook (LOCAL table)
 Written by `tools/tuit_sync.py --sync-songs` from `/songs` (paged `sort=alpha`, since the
 default `sort=plays` has no tiebreak). Same Olof-derived corpus as `song_performances`, so
