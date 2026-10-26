@@ -4,7 +4,7 @@
   "channel": "public",
   "category": "solo-1960s",
   "note": "Solo acoustic 1960s date",
-  "verified_by": "tj (C32 sign-off, 2026-10-24); re-pinned 2026-10-25 for TODO-371's Olof parser fix — New York city total 134 → 135 (a recovered 1963 Olof event) (awaiting tj's look)",
+  "verified_by": "tj (C32 sign-off, 2026-10-24); re-pinned 2026-10-25 for TODO-371's Olof parser fix — New York city total 134 → 135 (a recovered 1963 Olof event) (approved by tj 2026-10-25)",
   "expected": {
     "fields": {
       "band.label": {

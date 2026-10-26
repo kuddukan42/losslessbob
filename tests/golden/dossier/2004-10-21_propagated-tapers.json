@@ -4,7 +4,7 @@
   "channel": "public",
   "category": "propagated-tapers",
   "note": "LTA series-code anchor (LB-06998) propagated through a strong family to its remasters",
-  "verified_by": "tj (C32 sign-off, 2026-10-24); re-pinned 2026-10-25 for TODO-371's Olof parser fix — tour position 6 of 28 → 7 of 29 (2004-10-18 Pavilion at ARC recovered) (awaiting tj's look)",
+  "verified_by": "tj (C32 sign-off, 2026-10-24); re-pinned 2026-10-25 for TODO-371's Olof parser fix — tour position 6 of 28 → 7 of 29 (2004-10-18 Pavilion at ARC recovered) (approved by tj 2026-10-25)",
   "expected": {
     "fields": {
       "band.label": {

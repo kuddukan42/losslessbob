@@ -4,7 +4,7 @@
   "channel": "public",
   "category": "compilation-polluted",
   "note": "Entries flagged R-E2 (mis-dated or compilation)",
-  "verified_by": "tj (C32 sign-off, 2026-10-24); re-pinned 2026-10-25 for TODO-338 — adds TUIT's secondary venue line 'International Arena, National Exhibition Center' (awaiting tj's look)",
+  "verified_by": "tj (C32 sign-off, 2026-10-24); re-pinned 2026-10-25 for TODO-338 — adds TUIT's secondary venue line 'International Arena, National Exhibition Center' (approved by tj 2026-10-25)",
   "expected": {
     "fields": {
       "band.label": {
