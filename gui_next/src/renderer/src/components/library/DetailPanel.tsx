@@ -499,6 +499,60 @@ function ChecksumsZone({ lbNumber }: { lbNumber: number }) {
   )
 }
 
+// ── CorrectionsZone — values the catalogue lacks, filled from TUIT or set by a
+// curator (TODO-332). They live in the corrections table, never in entries, so
+// each one carries its provenance. Same query key as ChecksumsZone: one fetch. ──
+
+interface EntryCorrection {
+  field: CorrectionField; corrected: string | null; reason: string | null
+  decided_by: string | null; decided_at: string | null
+}
+
+const CORRECTION_FIELDS = ['venue', 'source_type', 'source_chain', 'setlist'] as const
+type CorrectionField = typeof CORRECTION_FIELDS[number]
+
+function CorrectionsZone({ lbNumber }: { lbNumber: number }) {
+  const { t } = useTranslation()
+  const { data } = useQuery({
+    queryKey: ['library-entry-checksums', lbNumber],
+    queryFn: () => fetch(`${BASE}/api/entry/${lbNumber}`).then(r => (r.status === 404 ? null : r.json())),
+    staleTime: 300_000,
+  })
+  const rows: EntryCorrection[] = (Array.isArray(data?.corrections) ? data.corrections : [])
+    .filter((c: EntryCorrection) => c.corrected && (CORRECTION_FIELDS as readonly string[]).includes(c.field as string))
+  if (rows.length === 0) return null
+
+  return (
+    <div style={{ marginTop: 14 }}>
+      <ZoneLabel>{t('library.panel.correctionsLabel')}</ZoneLabel>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {rows.map(c => (
+          <div key={c.field} title={c.reason ?? undefined}>
+            <div style={{
+              display: 'flex', gap: 6, alignItems: 'baseline',
+              fontSize: 'var(--t-micro)', color: 'var(--lbb-fg3)',
+              letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 'var(--w-bold)',
+            }}>
+              <span>{t(`library.panel.correctionField.${c.field}`)}</span>
+              <span style={{ fontWeight: 'normal', textTransform: 'none', letterSpacing: 0 }}>
+                {c.decided_by === 'tuit_reconcile'
+                  ? t('library.panel.correctionFromTuit')
+                  : t('library.panel.correctionFromCurator')}
+              </span>
+            </div>
+            <div style={{
+              fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)', whiteSpace: 'pre-wrap',
+              maxHeight: c.field === 'setlist' ? 160 : undefined, overflowY: 'auto',
+            }}>
+              {c.corrected}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 // ── ActionBar — one primary + Reveal inline; everything else lives in the
 // "More" overflow, which renders the identical grouped list as the right-click
 // menu (same `openMenu` the context menu already uses). ───────────────────────
@@ -1795,6 +1849,7 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
 
             {/* D5: checksums grouped by fileset — catalog data, shown for
                 owned and unowned rows alike. */}
+            <CorrectionsZone lbNumber={row.lbNumber} />
             <ChecksumsZone lbNumber={row.lbNumber} />
           </>
         )}

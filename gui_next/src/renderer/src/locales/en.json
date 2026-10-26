@@ -1720,6 +1720,15 @@
       "rating": "Rating",
       "catalogNote": "Catalog metadata shown from the master DB.",
       "checksumsLabel": "Checksums",
+      "correctionsLabel": "Filled in",
+      "correctionFromTuit": "from TUIT",
+      "correctionFromCurator": "curator edit",
+      "correctionField": {
+        "venue": "Venue",
+        "source_type": "Source type",
+        "source_chain": "Lineage",
+        "setlist": "Setlist"
+      },
       "checksumsCanonical_one": "Canonical ({{count}} file)",
       "checksumsCanonical_other": "Canonical ({{count}} files)",
       "checksumsXrefGroup_one": "xref-{{id}} ({{count}} file)",

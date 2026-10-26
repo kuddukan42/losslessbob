@@ -1645,7 +1645,16 @@
       "checksumsCanonical_one": "Canonical ({{count}}-bestand)",
       "checksumsCanonical_other": "Canonical ({{count}}-bestanden)",
       "checksumsXrefGroup_one": "xref-{{id}} ({{count}}-bestand)",
-      "checksumsXrefGroup_other": "xref-{{id}} ({{count}}-bestanden)"
+      "checksumsXrefGroup_other": "xref-{{id}} ({{count}}-bestanden)",
+      "correctionsLabel": "Ingevuld",
+      "correctionFromTuit": "uit TUIT",
+      "correctionFromCurator": "curator bewerken",
+      "correctionField": {
+        "venue": "Locatie",
+        "source_type": "Brontype",
+        "source_chain": "Lineage",
+        "setlist": "Setlist"
+      }
     },
     "coverage": {
       "ownedFull": "Eigen {{owned}}/{{total}}",

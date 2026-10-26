@@ -799,13 +799,41 @@ def get_entry(lb_number, db_path=None):
         entry = conn.execute("SELECT * FROM entries WHERE lb_number=?", (lb_number,)).fetchone()
         checksums = conn.execute("SELECT * FROM checksums WHERE lb_number=?", (lb_number,)).fetchall()
         files = conn.execute("SELECT * FROM entry_files WHERE lb_number=?", (lb_number,)).fetchall()
+        corrections = _entry_corrections(conn, lb_number) if entry else []
     if not entry:
         return None
     return {
         "entry": dict(entry),
         "checksums": [dict(r) for r in checksums],
         "files": [dict(r) for r in files],
+        "corrections": corrections,
     }
+
+
+def _entry_corrections(conn: sqlite3.Connection, lb_number: int) -> list[dict]:
+    """Latest ``corrections`` row per field for one entry (TODO-332 reader).
+
+    TUIT fills (``decided_by='tuit_reconcile'``) and curator edits both live
+    there; the Library detail panel renders them with their provenance.
+
+    Args:
+        conn: Database connection.
+        lb_number: The entry.
+
+    Returns:
+        ``[{field, original, corrected, reason, decided_by, decided_at}]``,
+        one per field, newest decision wins; empty when the table is absent.
+    """
+    try:
+        rows = conn.execute(
+            "SELECT field, original, corrected, reason, decided_by, decided_at FROM corrections"
+            " WHERE entity_kind = 'entry' AND entity_key = ? ORDER BY decided_at, id",
+            (str(lb_number),),
+        ).fetchall()
+    except sqlite3.OperationalError:  # no corrections table yet
+        return []
+    latest = {r["field"]: dict(r) for r in rows}
+    return [latest[f] for f in sorted(latest)]
 
 
 def get_distinct_years(db_path=None):

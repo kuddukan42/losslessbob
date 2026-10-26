@@ -1645,7 +1645,16 @@
       "checksumsCanonical_one": "Canonical ({{count}}-Datei)",
       "checksumsCanonical_other": "Canonical ({{count}}-Dateien)",
       "checksumsXrefGroup_one": "xref-{{id}} ({{count}}-Datei)",
-      "checksumsXrefGroup_other": "xref-{{id}} ({{count}}-Dateien)"
+      "checksumsXrefGroup_other": "xref-{{id}} ({{count}}-Dateien)",
+      "correctionsLabel": "Ausgefüllt",
+      "correctionFromTuit": "aus TUIT",
+      "correctionFromCurator": "Kurator bearbeiten",
+      "correctionField": {
+        "venue": "Veranstaltungsort",
+        "source_type": "Quellentyp",
+        "source_chain": "Entstehungsgeschichte",
+        "setlist": "Setlist"
+      }
     },
     "coverage": {
       "ownedFull": "Zugeordnet zu {{owned}}/{{total}}",

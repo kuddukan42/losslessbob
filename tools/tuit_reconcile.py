@@ -58,6 +58,7 @@ DEFAULT_AUDIT = _project_root / "data" / "logs" / "tuit_reconcile_audit.jsonl"
 
 DECIDED_BY = "tuit_reconcile"
 FILL_FIELDS = ("source_type", "source_chain", "setlist", "venue")
+_LB_SELF_REF_RE = re.compile(r"LB-?\s*\d+", re.IGNORECASE)
 _SHOWN = 40  # sample rows per bulk class in the markdown (full set goes to --json)
 
 # TUIT pill -> entries.source_type vocabulary. TV is a broadcast like FM.
@@ -467,7 +468,8 @@ def compute(conn: sqlite3.Connection) -> dict:
         lcls = {(True, True): "both", (True, False): "tuit_only",
                 (False, True): "lb_only", (False, False): "neither"}[(has_t_lin, has_e_lin)]
         stats[f"lineage_{lcls}"] += 1
-        if lcls == "tuit_only":
+        # A bare "LB-4" is TUIT echoing the LB number, not lineage (2026-10-26: 993 of 2,335).
+        if lcls == "tuit_only" and not _LB_SELF_REF_RE.fullmatch(p["t_lineage"].strip()):
             lineage_fills.append({**base, "tuit_lineage": p["t_lineage"].strip()})
         has_e_set = bool((p["e_setlist"] or "").strip())
         tcls = {(True, True): "both", (True, False): "tuit_only",

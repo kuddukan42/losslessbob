@@ -1645,7 +1645,16 @@
       "checksumsCanonical_one": "Canonical (fichier {{count}})",
       "checksumsCanonical_other": "Canonical (fichiers {{count}})",
       "checksumsXrefGroup_one": "xref-{{id}} (fichier {{count}})",
-      "checksumsXrefGroup_other": "xref-{{id}} (fichiers {{count}})"
+      "checksumsXrefGroup_other": "xref-{{id}} (fichiers {{count}})",
+      "correctionsLabel": "Rempli",
+      "correctionFromTuit": "Source : TUIT",
+      "correctionFromCurator": "curator edit",
+      "correctionField": {
+        "venue": "Lieu",
+        "source_type": "Type de source",
+        "source_chain": "Lineage",
+        "setlist": "Setlist"
+      }
     },
     "coverage": {
       "ownedFull": "Propriétaire : {{owned}}/{{total}}",
