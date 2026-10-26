@@ -2,6 +2,22 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-374: Show Dossier T3 anchors still null: D-06 venue enrichment (venue.district), D-12 catalog freshness
+Priority: Low
+Status: Done
+Added: 2026-10-25
+Closed: 2026-10-26
+Description: Follow-up from TODO-342. D-06 (plan ~line 555) and D-12 (~line 636) ship as null stubs (venue.district omits; source[].added / show.newest_source_date suppress). D-12 is blocked until the LB site exposes a date-added (audit F9: lb_master.first_seen_at is install-relative).
+2026-10-26 (tj): won't-do for now. No data source for venue district or LB date-added; reopen if the LB site exposes dates or a venue source appears.
+
+TODO-319: tapematch — investigate chain-clustering over-merges surfaced by the 2026-08-21 batch
+Priority: Medium
+Status: Done
+Added: 2026-08-21
+Closed: 2026-10-26
+Description: Recurring pattern across the 2026-08-21 50-run batch: a recording gets chained into a family with no confirmed pairwise correlation to any member, against the taper commentary. Instances flagged: 2010-03-23 Tokyo (all 6 recordings merged into one family, zero confirmed pairwise evidence, contradicted by every taper account), 2010-03-24 (LB-15001 plus three others chained in unsupported), 2004-03-05 (LB-01632), 2009-10-10 (LB-08098), 1997-12-10 (over-merged single family against taper accounts), 2007-04-04 (Family 1 contradicts LB-06130's own 'distinct from all four' commentary), 2024-04-06 (LB-16228 merged into the nightlymoth family unsupported). Question to answer: is single-linkage/transitive clustering promoting weak or one-sided links into full family membership, and should family formation require a minimum confirmed-pair density rather than connectivity alone? Note the overlap with TODO-318 — some of these may be genuine same-source pairs that the disabled polarity rescue would have scored correctly, so run that validation first and re-check which of these survive as real over-merges. Per-date analysis.md files carry the specifics. Corroborated 2026-08-21 (fifth batch), same shape on further dates: 2007-04-08 is the new worst case (all 7 recordings collapsed into one family against four explicit taper contradictions), plus 2003-10-17 (Family 1, 7-way DISAGREES), 1997-12-08, 1997-12-18, 2009-07-05, 2012-07-03, 2011-06-26 (LB-12255), 2003-04-19 and 2004-11-13 (near-noise merges contradicted by taper A/B comparisons). The pattern is now seen across five batches and is not date-specific. Corroborated again 2026-09-02 (26-run tail batch, every dir triaged `clear`/0 rules): 14 of 26 came back needs-review, 56% against a 32% all-time base rate (996/3100), and the excess is almost entirely this mechanism. Worst case 2010-03-28 Tokyo — all 8 recordings in one family at mean intra-corr 0.058, only 3 pairs carrying secondary hiss evidence and 28 pairs listed `chain-unverified`, against distinct rigs (ECM-MS907>R-09 vs COS-11>R-1) and noise floors spanning -72 to -89 dB. Same shape on 2004-03-01, 2004-06-08, 2008-06-11 (1 family for 6 recordings, ~5 real), 2002-04-28 (1 for 9, ~4 real), 2011-10-21 (1 for 9, against LB-09691's explicit 'different recording' note), 2010-03-29, 2000-09-20, 2002-10-11 and 2001-10-12. Note the skew: this tail batch is all large dates (6-11 entries), and more sources means more chances for one weak link to chain a whole date together — so a fix should be validated against high-entry-count dates specifically, not just the batch average.
+2026-10-26 (tj): family_guard enabled in config.yaml; replay_writeback --apply wrote 14 dates (86 pair verdicts, families 35 -> 53), synced to the app DB. 53 fidelity_mismatch + 608 signal-key dates only pick it up on an audio re-run (TODO-324/333 queue). Unblocks TODO-334.
+
 TODO-372: Feed D-01 per-source completeness into concert_ranker/picks.py
 Priority: Medium
 Status: Done

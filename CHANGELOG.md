@@ -1,3 +1,14 @@
+[2026-10-26] — Backlog Unlock verdicts: family_guard on (TODO-319), curator splits authoritative (TODO-234), TUIT fills + reader (TODO-332), 15 source-type edits (TODO-339)
+Changed: tools/tapematch/config.yaml: family_guard enabled; replay_writeback --apply wrote 14 dates (86 pair verdicts, families 35 -> 53); app DB synced; CALIBRATION_ERAS.md regenerated (current hash d8c433ea3149)
+Added: backend/tapematch_sync.py: _human_cannot_links/_split_cannot_links — a confirmed_different pair judgment (latest across all runs of the date) splits that family at sync, only ever splits. Applied: 1995-12-09 LB-6083 out, 1998-06-12 LB-4436+6465 out of the 5800/6462 family
+Added: backend/db/schema.py, backend/taper_attribution.py: lineage_edge_rejects table; vetoed same_as/derived_from edges dropped before propagation. Applied 14518-14519. Also: LB-1343 ltb rejected, 3842/5915/6390 unresolved (taper_confirmations)
+Fixed: backend/scraper.py: forced rescrape (INSERT OR REPLACE) NULLed curator entries.source_type — now carried across the rewrite (BUG-391)
+Changed: entries.source_type: TODO-339's 15 lineage-settled edits (6 Soundboard->Audience, 2 ->Mixed, 7 Audience->FM/Pre-FM), each with a corrections row decided_by='tj'
+Added: backend/db/library.py, DetailPanel.tsx, locales: GET /api/entry/<lb> returns corrections; Library detail 'Filled in' zone shows TUIT/curator values with provenance (TODO-332)
+Changed: tools/tuit_reconcile.py: skips bare 'LB-N' TUIT lineage (TUIT echoing the LB number); --fill --apply run: 5,506 fills staged in corrections after removing 993 such rows
+Added: tools/dylan2_health.sh: read-only SMART + fsck + md5/flac -t report for TODO-264, for tj to run with sudo
+Changed: TODO.md: 319 + 374 closed; statuses record tj's 2026-10-26 calls (318/335/204/293/303/336 go, waiting on drives; 324 held; 320/355 tj's)
+
 [2026-10-26] — show_picks demotes G2 no-match sources like the dossier (TODO-372); D-01 matcher reads "Artist - Song" titles (BUG-390)
 Changed: concert_ranker/picks.py: _fragment_lbs also returns the G2 no-match set from the same completeness pass; _rank_date sorts no-match first-key (ranked last), evidence kind "no_match"; no-match sources aren't masters for the silver hold nor the longer alternative in the TODO-349 reprieve. .debug copy: 11/3,969 rank-1 changes, all split-day/guest-set pools (.debug/todo372_rank1_diff.md)
 Fixed: backend/dossier_fields.py: match_track last-resort "prefixed" tier — remainder after first " - " via exact/base/alias; LB-08621 Peace Sunday 0/3 -> matched

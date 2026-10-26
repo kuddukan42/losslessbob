@@ -1332,6 +1332,11 @@ confirm/reject curator API lands in TAPER phase 2.
 | action | TEXT NOT NULL | `'confirm'` / `'reject'` / `'unresolved'` (convention only, no CHECK) |
 | decided_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
 
+### `lineage_edge_rejects` — Curator vetoes of lineage edges (TODO-234 E)
+`(lb_a, lb_b) PK` (stored lb_a < lb_b), `note`, `decided_at`. `entry_lineage` is re-parsed from LB
+text, so a wrong same_as/derived_from edge can't be deleted there; `taper_attribution._drop_rejected_edges`
+removes these pairs from both adjacencies on every recompute. Local-only (not in the master export).
+
 ### `taper_decision_log` — Taper decision audit trail (USER table, TODO-312)
 Append-only history behind the `/taper-review` curation console. The decisions themselves live in
 the MASTER-tier `taper_confirmations` above; this is the local record of how they got there, so it
@@ -2144,7 +2149,7 @@ clock reads `verify` runs only, so a manual index scan cannot defer it.
 ### Entry Detail
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/api/entry/<lb>` | Full entry record + checksums + files |
+| GET | `/api/entry/<lb>` | Full entry record + checksums + files + `corrections` (latest `corrections` row per field: TUIT fills and curator edits, rendered by the Library detail panel's 'Filled in' zone — TODO-332) |
 | GET | `/api/entry/<lb>/files` | List attachment files for entry |
 | GET | `/api/entry/<lb>/changes` | Field-level scrape diff history. Query param: `limit` (default 50). Returns `[{field, old_value, new_value, changed_at}]`. |
 | GET | `/api/quality/<lb>` | Latest Concert Ranker score for one recording from `quality_recording_scores` (`final_score`/`rank_in_family`/`vetoed`/`verdict_text`/`abs_score`/`abs_grade`), plus a `metrics` sub-dict (stereo/mono + width, `clip_fraction`, `crowd_snr_db`, bass/mud/harsh tonal ratios, source-type flags) banded from `quality_recording_metrics.metric_json` via `concert_ranker.scoring.band_metric()`; 204 if never scanned. |
