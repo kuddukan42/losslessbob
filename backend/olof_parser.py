@@ -148,6 +148,19 @@ _DSN_ANCHOR_RE = re.compile(r"^DS[NB](\d+)$", re.IGNORECASE)
 _WINGDINGS_STYLE_RE = re.compile(r"font-family:\s*Wingdings", re.IGNORECASE)
 # An optional "– Afternoon" / "— Evening" suffix marks a two-show day (1974); date_raw keeps it.
 _DATE_LINE_RE = re.compile(r"^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})(?:\s*[-–—]\s*[A-Za-z][A-Za-z ]*)?$")
+# A handful of session pages write the date US-style ("April 18, 1996", DSN17030).
+_US_DATE_LINE_RE = re.compile(r"^([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})$")
+
+
+def _match_date_line(text: str) -> tuple[str, str, str] | None:
+    """``(day, month_name, year)`` when *text* is a full date line in either form."""
+    m = _DATE_LINE_RE.match(text)
+    if m:
+        return m.group(1), m.group(2), m.group(3)
+    m = _US_DATE_LINE_RE.match(text)
+    if m and m.group(1).lower() in _MONTHS:
+        return m.group(2), m.group(1), m.group(3)
+    return None
 _CONCERT_NET_RE = re.compile(
     r"Concert\s*#\s*(\d+)\s+of\s+The\s+Never-Ending\s+Tour", re.IGNORECASE
 )
@@ -560,7 +573,7 @@ def _date_line_follows(para_elements: list, i: int, window: int = 6) -> bool:
         text = _NBSP_WS_RE.sub(" ", el.get_text(" ")).strip()
         if not text:
             continue
-        if _DATE_LINE_RE.match(text):
+        if _match_date_line(text):
             return True
         seen += 1
         if seen >= window:
@@ -745,10 +758,10 @@ def _parse_header(lines: list[str], event_id: int) -> tuple[dict, int]:
               "date_str": "", "date_raw": ""}
     date_idx = -1
     for i, line in enumerate(lines[:8]):
-        m = _DATE_LINE_RE.match(line)
+        m = _match_date_line(line)
         if not m:
             continue
-        day, month_name, year = m.groups()
+        day, month_name, year = m
         month = _MONTHS.get(month_name.lower())
         if month:
             fields["date_raw"] = line

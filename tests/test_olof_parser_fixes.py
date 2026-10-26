@@ -980,6 +980,19 @@ def test_bare_number_outside_the_anchor_range_is_not_adopted():
     assert [eid for _i, eid in anchors] == [100, 110]
 
 
+def test_us_style_date_line_parses():
+    # tj's review 2026-10-25: DSN17030 writes "April 18, 1996"; the event came out undated.
+    from backend.olof_parser import _match_date_line, _parse_header
+
+    assert _match_date_line("April 18, 1996") == ("18", "April", "1996")
+    assert _match_date_line("18 April 1996") == ("18", "April", "1996")
+    assert _match_date_line("Spring 18, 1996") is None
+    fields, idx = _parse_header(
+        ["17030", "The Strand", "Providence, Rhode Island", "April 18, 1996", "1. Drifter's Escape"],
+        17030)
+    assert (fields["date_str"], fields["venue"], idx) == ("1996-04-18", "The Strand", 3)
+
+
 def test_backstage_session_is_not_a_concert():
     # TODO-371: "Backstage before concert." (1965-05-09 DSN985) is a filmed
     # off-stage performance, not a second concert on the date.

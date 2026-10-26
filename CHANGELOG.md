@@ -1,3 +1,7 @@
+[2026-10-25] — tj's review: 1996-04-18 is in Olof (DSN17030) — parser now reads US-style date lines
+Fixed: backend/olof_parser.py: _match_date_line accepts 'April 18, 1996' as well as '18 April 1996'; DSN17030 had parsed undated with 0 songs, so 1996-04-18 fell to the reduced dossier. Corpus diff: exactly 1 event changes. Live: page reparsed (snapshot .debug/olof_before_dsn17030.db), song_index 73,848, picks rank-1 unchanged, qc run. 1996-04-18 now builds from Olof (NET #762)
+Added: tests/test_olof_parser_fixes.py: US-style date line
+
 [2026-10-25] — TODO-371 closed: dossiers for shows Olof doesn't list (reduced dossier / chooser / clearer refusals); BUG-389 Olof parser recovers 13 dropped events
 Fixed: backend/olof_parser.py: a containerless DSN bookmark with no number-line header lands on the next header with a date line (2014-11-25 DSN36360); a number line with no bookmark becomes an anchor (2019-11-12 DSN40330); 'Backstage…' sessions classify as other, not concert (BUG-389). Corpus diff: 13 events added, 3 retyped, 0 removed. Live: 10 pages reparsed (snapshot .debug/olof_before_todo371.db), song_index 73,834, show_picks rank-1 unchanged, qc run
 Added: backend/dossier.py: _external_identity / _external_setlist / _is_dated_concert — when Olof lists nothing, identity + setlist from setlist.fm (else bobdylan.com) with every Olof field on its fallback; disagreeing external rows return the HTTP 300 chooser
