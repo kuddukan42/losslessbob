@@ -118,21 +118,28 @@ def test_self_pair_is_ignored():
     assert v[(1, 1)] == V.SAME_FAMILY and v[(1, 2)] == V.SAME_FAMILY
 
 
-def test_shipped_config_guard_is_off():
+def test_shipped_config_guard_is_on():
+    # tj enabled it 2026-10-26 (TODO-319); replay_writeback applied it to stored runs.
     cfg = yaml.safe_load(CONFIG_PATH.read_text())
-    assert V.family_guard_cfg(cfg) is None
+    assert V.family_guard_cfg(cfg) is not None
+
+
+def _guard_off(cfg: dict) -> dict:
+    off = copy.deepcopy(cfg)
+    off["family_guard"]["enabled"] = False
+    return off
 
 
 def test_disabled_guard_does_not_change_calibration_hash():
-    cfg = yaml.safe_load(CONFIG_PATH.read_text())
-    stripped = copy.deepcopy(cfg)
+    off = _guard_off(yaml.safe_load(CONFIG_PATH.read_text()))
+    stripped = copy.deepcopy(off)
     stripped.pop("family_guard")
-    assert calibration_hash(cfg) == calibration_hash(stripped)
-    assert not any(k.startswith("family_guard") for k in calibration_view(cfg))
+    assert calibration_hash(off) == calibration_hash(stripped)
+    assert not any(k.startswith("family_guard") for k in calibration_view(off))
 
 
 def test_enabled_guard_changes_hash_and_is_replayable():
-    cfg = yaml.safe_load(CONFIG_PATH.read_text())
+    cfg = _guard_off(yaml.safe_load(CONFIG_PATH.read_text()))
     on = copy.deepcopy(cfg)
     on["family_guard"]["enabled"] = True
     assert calibration_hash(on) != calibration_hash(cfg)

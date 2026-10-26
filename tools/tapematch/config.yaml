@@ -405,9 +405,9 @@ family_guard:
   # families when such edges cover >= min_link_density of the |A|x|B| cross
   # pairs (average linkage over the link graph; verdict.py:form_families).
   # Replay 2026-10-19 (chain_overmerge_replay.py, CHAIN_OVERMERGE_REPORT.md):
-  # 14 dates split, 0 frozen TPs lost, 2 frozen FPs cleared. Default OFF
-  # pending tj sign-off; applying it to stored runs is a verdict-only replay.
-  enabled: false
+  # 14 dates split, 0 frozen TPs lost, 2 frozen FPs cleared. ENABLED 2026-10-26 (tj),
+  # applied to stored runs by replay_writeback.py --apply (14 dates, families 35 -> 53).
+  enabled: true
   strong_legs: [primary, windowed, hiss, fingerprint, rule_d]
   min_link_density: 0.5
 
