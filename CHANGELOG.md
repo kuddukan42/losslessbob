@@ -1,3 +1,6 @@
+[2026-10-25] — 2010-03-29 golden re-pin approved by tj — all 18 golden dossiers now tj-verified
+Changed: tests/golden/dossier/2010-03-29_spec-sample.json: verified_by records tj's approval of the C34 re-pin (restored rotation superlative)
+
 [2026-10-25] — C35: Show Dossier redesign closed (TODO-342); wiki refreshed, Data-Quality page added; follow-ups TODO-371..374
 Changed: docs/wiki/Show-Dossier.md, Setlist-Sources.md, Taper-Attribution-Flow.md refreshed; docs/wiki/Data-Quality.md new (QC rules, /qc-review, gate G1–G8, verification tooling) + Home row
 Changed: TODO.md → TODO_DONE.md: TODO-342

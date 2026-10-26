@@ -4,7 +4,7 @@
   "channel": "public",
   "category": "spec-sample",
   "note": "Spec Rev A sample (reference mock)",
-  "verified_by": "tj (C32 sign-off, 2026-10-24); re-pinned C34 2026-10-25 to add the D-04 rotation superlative restored by the BUG-347 splice-regex fix — awaiting tj's look",
+  "verified_by": "tj (C32 sign-off, 2026-10-24; re-pinned C34 with the restored rotation superlative, approved 2026-10-25)",
   "expected": {
     "fields": {
       "band.label": {
