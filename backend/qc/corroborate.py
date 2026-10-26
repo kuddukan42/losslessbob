@@ -4,7 +4,7 @@ Compares Olof's parsed setlist for a date against three sources independent of
 Olof and of each other: ``setlistfm_setlist``, ``bobdylan_setlist`` and
 ``tuit_song_performances``. Titles are aligned song by song with the C13
 matcher (:mod:`backend.dossier_fields`), not by raw count, per the trust model
-in ``instructions/SHOW_DOSSIER_REDESIGN_PLAN.md`` (lines 43-58) and Phase 3
+in ``archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md`` (lines 43-58) and Phase 3
 row (a) (lines 406-421).
 
 :func:`setlist_quorum` is the single-date entry point (used by the dossier and

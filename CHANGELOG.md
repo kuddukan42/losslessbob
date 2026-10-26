@@ -1,3 +1,10 @@
+[2026-10-25] — C35: Show Dossier redesign closed (TODO-342); wiki refreshed, Data-Quality page added; follow-ups TODO-371..374
+Changed: docs/wiki/Show-Dossier.md, Setlist-Sources.md, Taper-Attribution-Flow.md refreshed; docs/wiki/Data-Quality.md new (QC rules, /qc-review, gate G1–G8, verification tooling) + Home row
+Changed: TODO.md → TODO_DONE.md: TODO-342
+Added: TODO.md: TODO-371 (G1 fallback, plan C28a, needs tj sign-off), TODO-372 (D-01 completeness into picks.py), TODO-373 (/qc-review v2 or move to gui_next), TODO-374 (D-06/D-12 null anchors)
+Changed: archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md: C35 done except the merge to main, which is tj's
+Changed: instructions/ → archive/specs/: SHOW_DOSSIER_REDESIGN_PLAN.md, GOLDEN_DOSSIER_FIX_PLAN{,_2,_3}.md, SILVER_DOSSIER_REVIEW.md, the Rev A PDF + standalone mock (plan finished); path references updated in code docstrings, PROJECT.md, TODO files, wiki
+
 [2026-10-25] — C34 full verification PASS: pytest 3301, acceptance --all 12/12, sweep 0 errors; BUG-388 (BUG-347 splice regressed) fixed
 Fixed: backend/olof_parser.py: SPLICED_CREDIT_RE allows no space after the stray credit ('St (…)one') — a later reparse had re-spliced 2010-03-21 Like A Rolling Stone and 2010-11-09 Forgetful Heart, so 2010-03-29 lost its 'biggest rotation of the run' superlative (BUG-388). Live: backup data/backups/losslessbob_preC34_20261025_2009.db, 2 pages reparsed (gate changed 2, B347 2, UNEXPLAINED 0), song_index 73,717, qc run
 Added: tools/dossier_acceptance.py --all (every mode, one summary, exit 0 only if all pass)

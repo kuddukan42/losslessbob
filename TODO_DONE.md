@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-342: Show Dossier redesign (spec Rev A) — execution plan C00–C35
+Priority: High
+Status: Done
+Added: 2026-09-10
+Closed: 2026-10-25
+Description: Rebuild the show dossier per archive/specs/Show Dossier Redesign.pdf (Rev A, 2026-09-09) under the execution plan archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md and the binding pre-build audit archive/specs/SHOW_DOSSIER_AUDIT.md. Work proceeds one commit per row of the plan's 'Chunks & progress' table (C00–C35) on branch feat/dossier-redesign; commit subjects end [dossier Cnn]. Order: Olof parser fixes + reparse diff gate, database QC + quarantine + upstream fixes, QC review console, cross-source corroboration, D-01…D-13 derivations, view model + claim engine + per-dossier QC gate, template rewrite, golden set + sweep, bookkeeping. Guiding rule: when the pipeline cannot verify a value, the page shows the field's fallback and lists it as withheld — it never guesses.
+C00–C35 done on feat/dossier-redesign. Golden set (18) signed off by tj 2026-10-24 and pinned; C34 full verification 2026-10-25 (pytest 3301, acceptance --all 12/12, sweep 4,051 targets / 64 G1 refusals / 0 errors, Tier A + Electron PDF PASS). Wiki: Show-Dossier, Setlist-Sources, Taper-Attribution-Flow refreshed, Data-Quality added. Follow-ups TODO-371 (G1 fallback, C28a), 372 (D-01 into picks.py), 373 (/qc-review v2 or gui_next), 374 (D-06/D-12). Merge to main is tj's.
+
 TODO-370: Performance review: app startup, view loading, updates
 Priority: Medium
 Status: Done
@@ -372,7 +380,7 @@ Priority: High
 Status: Done
 Added: 2026-09-25
 Closed: 2026-10-02
-Description: instructions/SILVER_DOSSIER_REVIEW.md. Live rebuild done 2026-09-25 with tj's OK. Open: tj rules on A–I (silver-over-master picks, multi-rig families, hedged series codes, private-sourced propagation, runtime alternates, two-show sources, range notes, 3dogs alias, DAT copy).
+Description: archive/specs/SILVER_DOSSIER_REVIEW.md. Live rebuild done 2026-09-25 with tj's OK. Open: tj rules on A–I (silver-over-master picks, multi-rig families, hedged series codes, private-sourced propagation, runtime alternates, two-show sources, range notes, 3dogs alias, DAT copy).
 tj ruled A–I on the review page 2026-10-01 (tier, mute, demote, hide, flag, xref, range, add, lowgen); all nine implemented in 51535a27 and the live DB rebuilt 2026-10-02 (backup data/backups/losslessbob_preTODO354_20261002_1227.db): attributions 5,206 → 5,193, 253 rank-1 picks changed, golden fixture re-cut, --check 18/18. TapeMatch side of B continues as TODO-356.
 
 TODO-325: tapematch — require primary-correlation corroboration before a secondary/fingerprint link can merge a family
@@ -414,7 +422,7 @@ Priority: Medium
 Status: Done
 Added: 2026-09-25
 Closed: 2026-09-25
-Description: C32i parser fixes need a live run (tj only, backup first): 438 bobserve olof_songs rows carry the subtitle in credits (C32b B6 fix never re-run live); 22 Olof medley rows keep '(Johnny Cash)' in the title. After: song_performances rebuild, make_fixture_db --golden, dossier_golden --check/--html. See instructions/GOLDEN_DOSSIER_FIX_PLAN_2.md step 5.
+Description: C32i parser fixes need a live run (tj only, backup first): 438 bobserve olof_songs rows carry the subtitle in credits (C32b B6 fix never re-run live); 22 Olof medley rows keep '(Johnny Cash)' in the title. After: song_performances rebuild, make_fixture_db --golden, dossier_golden --check/--html. See archive/specs/GOLDEN_DOSSIER_FIX_PLAN_2.md step 5.
 Run live 2026-09-25 with tj's go-ahead after a backup (data/backups/losslessbob_preC32i_reparse_20260925_1024.db; Olof-table snapshot .debug/olof_before_c32i.db): Olof + bobserve reparse, compute_song_performances (72,994 rows / 1,367 songs, unchanged), qc run. 0 subtitle-as-writer rows (was 438), 0 medley titles with embedded credits (was 22). Fixture re-cut, --check 16/16, audit 8 known conflicts. olof_reparse_diff diff was blocked by the permission classifier and not run.
 
 TODO-295: gui_next — surface auto_triage in the TapeMatch Curation screen

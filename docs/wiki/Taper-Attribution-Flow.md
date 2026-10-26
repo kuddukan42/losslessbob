@@ -4,7 +4,7 @@
 > `backend/taper_attribution.py` · `backend/taper_fingerprints.py` · `backend/taper_curation.py` ·
 > `backend/taper_review.html` · `backend/taper_curation.html` ·
 > `backend/db.py` (`_KNOWN_TAPER_ALIASES`, `_NOT_TAPER`, `_TAPER_UNIVERSE`) ·
-> Status: fresh 2026-10-18
+> Status: fresh 2026-10-25
 
 Turns raw entry text into a per-LB taper credit with an auditable confidence tier.
 Entry point `taper_attribution.recompute()` (CLI: `tools/attribute_tapers.py`).
@@ -31,6 +31,9 @@ era/format vocabulary). `recompute()` skips it while the flag is off.
   cliques + `same_as_lb` + `derived_from_lb`, then BFS flood of the one confirmed taper
   to unattributed members (evidence `kind` family/same_as/derived_from, plus `via_lb`).
   A weak pass over review-flagged family edges only fills gaps; it never beats strong.
+- **Propagation never crosses** (dossier golden reviews, BUG-358): a family holding a
+  mix/matrix member; Soundboard/ALD/FM/Mixed or broadcast LBs (`_load_propagation_blocked`);
+  same_as/derived_from edges between different dates (`_drop_cross_date_edges`).
 - Curator `reject` / `unresolved` suppressions are re-applied last, so re-derivation
   cannot resurrect them.
 
@@ -69,6 +72,9 @@ regex scan cached), `/curation/tapers`. Placeholders (`unknown`, `n/a`) in TUIT 
 count as no tag; barred names never create "sources disagree" rows. Writes reuse the
 curator-gated routes, so decisions are logged identically. A vocabulary merge carries
 `taper_confirmations` across; derived rows wait for a recompute (`attributions_pending`).
+The workbench's **TUIT candidates** tab (TODO-339, `taper_curation.tuit_candidates()`,
+`GET /api/tapers/curation/tuit_candidates`) lists LBs where TUIT names a credible taper and
+`entries` names none — read-only evidence; accepting goes through the normal routes.
 
 ## Related
 

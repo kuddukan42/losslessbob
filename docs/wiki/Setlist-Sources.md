@@ -3,7 +3,8 @@
 > Sources: `PROJECT.md` §olof tables (~line 1400–1560), §Olof routes (grep `/api/olof`) ·
 > `backend/olof_*.py` · `backend/bobserve_*.py` · `backend/bobdylan_scraper.py` ·
 > `backend/setlistfm.py` · `backend/song_index.py` · `backend/setlist_fingerprint.py` ·
-> `backend/gap_analysis.py` · `backend/qc/corroborate.py` · Status: fresh 2026-10-18
+> `backend/gap_analysis.py` · `backend/qc/corroborate.py` · `tools/olof_reparse_diff.py` ·
+> `tools/tuit_olof_spine.py` · Status: fresh 2026-10-25
 
 The app cross-references external setlist corpora against `entries`. Parsed `olof_*`
 data is **local-only** (not in MASTER export).
@@ -27,7 +28,8 @@ Yearly Chronicles are parsed only for calendar/diary + new-tapes data
   `entries.setlist` text against `olof_songs` into `setlist_fingerprint_suggestions`.
 - **Cross-source corroboration** (TODO-342) — `backend/qc/corroborate.py`
   (`setlist_quorum`, `venue_check`) compares Olof/setlist.fm/bobdylan.com; feeds QC rule
-  R-O4 and the dossier identity gate G1.
+  R-O4 and the dossier identity gate G1. `tools/tuit_olof_spine.py` (TODO-338) crosses
+  TUIT's show spine against `olof_events` (read-only report).
 - **Coverage classification** — `gap_analysis.py` classifies each `olof_events` concert
   date covered/partial/gap/future against `entries`, live. The Gaps screen and `/api/gaps/*`
   were deleted (TODO-270); it now feeds the Library's `uncirculated`/`upcoming` rows and
@@ -48,3 +50,8 @@ Yearly Chronicles are parsed only for calendar/diary + new-tapes data
   collapse, leading-"The" strip).
 - Event ids occupy disjoint ranges (DSN / `year*1000+seq` / 9M+ bobserve).
 - bobserve `olof_songs` rows are title+credits only; DSN rows carry annotations/takes.
+- Reparse through the diff gate: `tools/olof_reparse_diff.py --snapshot X snapshot`, then
+  `python -m backend.olof_parser --file <page>`, then `diff` (UNEXPLAINED must be 0), then
+  `song_index.run()`. Never overwrite `.debug/olof_before.db` (the C14 baseline).
+- Olof's pages splice the next song's credit mid-word ("Like A Rolling St (…)one");
+  `SPLICED_CREDIT_RE` repairs it with or without spaces (BUG-347, regressed as BUG-388).

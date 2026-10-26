@@ -16,9 +16,10 @@ authoritative source**, this wiki is the readable overview layer on top.
 | [Data-Flows](Data-Flows.md) | Key end-to-end flows, checksum format, publish/subscribe | fresh | 2026-10-18 |
 | [Dev-Workflow](Dev-Workflow.md) | Sessions, bookkeeping, skills/commands, verification rules | fresh | 2026-10-18 |
 | [Visual-Verification](Visual-Verification.md) | Screenshot engine: electron_driver two modes, tour file, /verify workflow | fresh | 2026-10-18 |
-| [Taper-Attribution-Flow](Taper-Attribution-Flow.md) | Taper attribution pipeline: Layer 0/1/2, conflict queue, filtering | fresh | 2026-10-18 |
-| [Setlist-Sources](Setlist-Sources.md) | Olof/bobserve/setlist.fm corpora, song spine, fingerprinting, coverage in Library rows | fresh | 2026-10-18 |
-| [Show-Dossier](Show-Dossier.md) | Dossier assembly, HTML/BBcode exports, channels, ambiguity handling | fresh | 2026-10-18 |
+| [Taper-Attribution-Flow](Taper-Attribution-Flow.md) | Taper attribution pipeline: Layer 0/1/2, conflict queue, filtering | fresh | 2026-10-25 |
+| [Setlist-Sources](Setlist-Sources.md) | Olof/bobserve/setlist.fm corpora, song spine, fingerprinting, coverage in Library rows | fresh | 2026-10-25 |
+| [Show-Dossier](Show-Dossier.md) | Dossier assembly, HTML/BBcode exports, channels, ambiguity handling, golden set | fresh | 2026-10-25 |
+| [Data-Quality](Data-Quality.md) | QC rules engine, /qc-review console, dossier gate G1–G8, sweep/acceptance/golden tooling | seeded | 2026-10-25 |
 | [Master-Data-Sync](Master-Data-Sync.md) | lb_master integrity, export channels, flat-file/GitHub distribution, onboarding | fresh | 2026-10-18 |
 | [Collection-Pipeline](Collection-Pipeline.md) | Pipeline steps, hash/state caches, filing + routing, integrity monitor | fresh | 2026-10-18 |
 | [Release-Update](Release-Update.md) | New flat-file release: Apply → auto-scrape → derived recompute; why Reconcile-first broke | fresh | 2026-10-18 |

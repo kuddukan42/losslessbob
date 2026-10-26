@@ -2,7 +2,7 @@
 """Snapshot the Olof tables before a reparse, then diff and explain every change.
 
 Reparse diff gate for the show-dossier redesign (TODO-342, audit P9,
-instructions/SHOW_DOSSIER_REDESIGN_PLAN.md Phase 1). The plan changes
+archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md Phase 1). The plan changes
 backend/olof_parser.py in seven named ways, P1a–P1g. A full reparse rewrites
 every DSN event, so this tool proves the rewrite did only those things:
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Live acceptance checks for the show-dossier redesign (TODO-342).
 
-Prints one PASS/FAIL line per criterion in instructions/SHOW_DOSSIER_REDESIGN_PLAN.md
+Prints one PASS/FAIL line per criterion in archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md
 for the mode asked. Modes arrive chunk by chunk; today there are two:
 
     --parser        Phase 1: Olof parser corpus counts, then the checks — the two

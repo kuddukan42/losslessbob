@@ -2,7 +2,7 @@
 
 Runs registered rules against a connection, reconciling their output against
 ``qc_findings`` per the status state machine in
-``instructions/SHOW_DOSSIER_REDESIGN_PLAN.md`` "Decision vocabulary", and
+``archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md`` "Decision vocabulary", and
 answers the quarantine question dossier rendering needs: is this entity
 covered by an open/confirmed error finding?
 """

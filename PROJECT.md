@@ -1466,7 +1466,7 @@ show, real setlists incl. cover-song credits) is the actual 2022+ source, mirror
 master/sitedata export tier is a P5 decision.
 
 ### `qc_findings` / `qc_decision_log` / `qc_runs` / `release_classifications` / `corrections` — Show Dossier QC (TODO-342 Phase 2, USER-tier, local-only)
-Spec: `instructions/SHOW_DOSSIER_REDESIGN_PLAN.md` "Phase 2" (schema/rules) and "Decision
+Spec: `archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md` "Phase 2" (schema/rules) and "Decision
 vocabulary" (status state machine). All five in `USER_TABLES`, never exported. `qc_findings`
 holds one row per `(rule_id, entity_kind, entity_key)` (UNIQUE) — severity `error|warn|info`,
 `detail`, `evidence_json`/`evidence_hash` (sha256 of canonical JSON, used to detect whether a

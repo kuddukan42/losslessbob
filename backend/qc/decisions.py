@@ -6,7 +6,7 @@ Routes in ``backend/app.py`` gate every entry point here on
 ``database.is_curator()`` before calling in — this module trusts its callers
 and does not re-check the flag itself.
 
-Decision vocabulary (see ``instructions/SHOW_DOSSIER_REDESIGN_PLAN.md``
+Decision vocabulary (see ``archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md``
 "Decision vocabulary"): a curator may move a finding to ``confirmed`` or
 ``false_positive`` from ``open``, ``confirmed`` or ``false_positive`` itself
 (re-deciding is allowed); ``fixed`` and ``corrected`` are not curator

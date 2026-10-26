@@ -1,15 +1,15 @@
 # Show Dossier
 
-> Sources: `PROJECT.md` §Show Dossier routes (~line 1982) · `backend/dossier.py` ·
+> Sources: `PROJECT.md` §Show Dossier routes (~line 2015) · `backend/dossier.py` ·
 > `backend/dossier_anchors.py` · `backend/dossier_claims.py` · `backend/dossier_fields.py` ·
 > `backend/dossier_qc.py` · `backend/templates/dossier.html` · `backend/qc/` ·
-> `instructions/SHOW_DOSSIER_REDESIGN_PLAN.md` · `archive/specs/FABLE_SHOW_DOSSIER.md` ·
-> Status: fresh 2026-10-18
+> `archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md` · `archive/specs/FABLE_SHOW_DOSSIER.md` ·
+> `tests/golden/dossier/` · Status: fresh 2026-10-25
 
 Answers "which copy of this show should I get, and why" for one date. Original build
 TODO-257/260 (2026-07-17); redesign TODO-342 (phases 1–8, rulings A–I closed under
-TODO-354) is implemented on `feat/dossier-redesign` — golden-set sign-off (C32) is still
-pending. Not yet merged to main.
+TODO-354) is implemented and verified on `feat/dossier-redesign`: golden set signed off by tj
+(C32, 2026-10-24), full verification passed (C34, 2026-10-25). Merge to main is tj's call.
 
 ## Pipeline
 
@@ -42,7 +42,10 @@ HTML and BBcode return HTTP 422 `{refused, reasons}` when the QC gate refuses.
 
 Recommended copy (pick) · Setlist (with per-source completeness) · Circulating sources
 (grouped by TapeMatch family, taper credit; conflicted attributions skipped) · Context ·
-Venue (map) · Cross-reference. Rarity flags `only`/`first`/`last`/`rare`.
+Venue (map + Wikipedia link) · Cross-reference. Rarity flags `only`/`first`/`last`/`rare`.
+Context shows the **whole** bobtalk block (`context.bobtalk`); song-anchored quotes also sit
+hidden under their setlist row. Olof's per-song lineup clauses ("6 Bob Dylan (piano)") render
+under Personnel (`band.personnel_overrides[]`).
 
 ## Invariants
 
@@ -54,6 +57,12 @@ Venue (map) · Cross-reference. Rarity flags `only`/`first`/`last`/`rare`.
 ## GUI and tooling
 
 Library `DossierExportModal.tsx` (export) and `ScreenTimeline.tsx` (inline iframe viewer,
-`inline=1&chooser=1`). CLIs: `tools/dossier_golden.py` (golden/silver fixtures; `--html`
-export), `dossier_sweep.py` (corpus sweep), `dossier_audit.py`, `dossier_acceptance.py`,
-`dossier_verify_export.py`. Tests: `tests/test_dossier*.py`. See [Taper-Attribution-Flow](Taper-Attribution-Flow.md).
+`inline=1&chooser=1`). CLIs: `tools/dossier_golden.py` (`--check` fixture vs live, `--show`,
+`--html` export; silver set via `--specs tests/silver/dossier`), `dossier_sweep.py` (nightly
+03:15 via `data/dossier_sweep_cron.sh`), `dossier_audit.py`, `dossier_acceptance.py --all`,
+`dossier_verify_export.py`.
+
+**Golden set:** 18 specs in `tests/golden/dossier/`, each with a pinned `expected` snapshot and
+`verified_by`; they run against the committed live-data fixture (`fixture.jsonl.gz`, cut by
+`tools/make_fixture_db.py --golden`, private entries scrubbed). Any diff fails CI — re-cut the
+fixture, `--check`, and note why in the commit. Tests: `tests/test_dossier*.py`. See [Taper-Attribution-Flow](Taper-Attribution-Flow.md).

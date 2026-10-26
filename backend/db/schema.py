@@ -1551,7 +1551,7 @@ CREATE INDEX IF NOT EXISTS idx_tuit_sperf_show ON tuit_song_performances(show_id
 -- curator-supplied corrections/classifications. All five tables are USER-tier
 -- (see USER_TABLES above) — they hold locally-computed findings and this
 -- install's curator decisions, never exported in master data. See
--- instructions/SHOW_DOSSIER_REDESIGN_PLAN.md "Phase 2" for the rule engine and
+-- archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md "Phase 2" for the rule engine and
 -- "Decision vocabulary" for the status state machine that backend/qc/store.py
 -- implements against qc_findings.status.
 CREATE TABLE IF NOT EXISTS qc_findings (

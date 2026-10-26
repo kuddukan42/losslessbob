@@ -1,3 +1,27 @@
+TODO-374: Show Dossier T3 anchors still null: D-06 venue enrichment (venue.district), D-12 catalog freshness
+Priority: Low
+Status: Open
+Added: 2026-10-25
+Description: Follow-up from TODO-342. D-06 (plan ~line 555) and D-12 (~line 636) ship as null stubs (venue.district omits; source[].added / show.newest_source_date suppress). D-12 is blocked until the LB site exposes a date-added (audit F9: lb_master.first_seen_at is install-relative).
+
+TODO-373: /qc-review console: decide v2 tabs vs moving it into gui_next
+Priority: Low
+Status: Open
+Added: 2026-10-25
+Description: Follow-up from TODO-342 Phase 2b. /qc-review (backend/qc_review.html) ships v1 (Findings workbench + Queue tab) as a Flask-served experimental page. tj's call after using v1: either add the plan's v2 tabs there, or port the console into gui_next. See docs/wiki/Data-Quality.md.
+
+TODO-372: Feed D-01 per-source completeness into concert_ranker/picks.py
+Priority: Medium
+Status: Open
+Added: 2026-10-25
+Description: Follow-up from TODO-342. The dossier's verdict pick already skips fragment / G2-failing sources (dossier_fields.completeness + fits_show, C27), but show_picks (concert_ranker/picks.py) still ranks them, so Library/other consumers can rank-1 a fragment. Plan § 'Verdict pick' (~line 705) names this follow-up. Measure rank-1 changes on a .debug DB copy first (compute_show_picks with db_path) before any live write.
+
+TODO-371: Show Dossier: G1 fallback for the 64 dates with no Olof event — reduced dossier from setlist.fm/bobdylan.com identity (plan row C28a)
+Priority: Medium
+Status: Open
+Added: 2026-10-25
+Description: Follow-up from TODO-342. The 2026-10-25 sweep refuses 64 dates on G1 (was 115 at C28). Plan § 'G1 fallback' (archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md ~line 834) specifies a 4-step rule and a reduced dossier. Step 0: measure the split with a throwaway tools/_c28a_split.py; build only if step 1 rescues a meaningful share of the concert dates. Needs tj sign-off on the reduced dossier and the step-3 placeholder rule before any build.
+
 TODO-355: Refile 1,293 public LBs out of PRIVATE LB + 848 misfiled collection folders
 Priority: Medium
 Status: Open
@@ -9,12 +33,6 @@ Priority: High
 Status: Open
 Added: 2026-09-11
 Description: backend/tuit_upload.py + tools/tuit_upload.py are built and unit-tested, but nothing has been POSTed to the tracker yet. Laravel's validator is invisible from outside: every field on /upload is optional in the HTML and only torrent_file is marked required, so which values it actually rejects is unknown until a submit. VALIDATION ORDER: (1) upload one recording BY HAND through the browser and keep the resulting /recordings/<id> page, so there is a known-good result to diff against; (2) run 'tools/tuit_upload.py <lb> --no-torrent' on the same LB and compare the composed fields to what was typed by hand — the mappings most likely to be wrong are QUALITY_MAP (LB's A+..D- collapsed onto TUIT's five slugs, chosen from the tracker's own distribution, not from tj's practice) and SOURCE_TYPE_MAP's FM/Pre-FM->radio and Mixed->matrix; (3) a full dry run with the torrent built, checking the .torrent announces ONLY to TUIT and carries source=TUIT; (4) one --apply on a recording that is not already on the tracker. OPEN QUESTIONS the first real submit answers: whether equipment and recording_position are worth filling (no entries column maps to them, currently never sent), whether tags has a controlled vocabulary, whether allow_partial is needed for split sets we generate ourselves (torrents built from our own folder are complete by construction), and whether the server rejects a payload where show_id and the new_show_* fields are both absent.
-
-TODO-342: Show Dossier redesign (spec Rev A) — execution plan C00–C35
-Priority: High
-Status: Open
-Added: 2026-09-10
-Description: Rebuild the show dossier per instructions/Show Dossier Redesign.pdf (Rev A, 2026-09-09) under the execution plan instructions/SHOW_DOSSIER_REDESIGN_PLAN.md and the binding pre-build audit archive/specs/SHOW_DOSSIER_AUDIT.md. Work proceeds one commit per row of the plan's 'Chunks & progress' table (C00–C35) on branch feat/dossier-redesign; commit subjects end [dossier Cnn]. Order: Olof parser fixes + reparse diff gate, database QC + quarantine + upstream fixes, QC review console, cross-source corroboration, D-01…D-13 derivations, view model + claim engine + per-dossier QC gate, template rewrite, golden set + sweep, bookkeeping. Guiding rule: when the pipeline cannot verify a value, the page shows the field's fallback and lists it as withheld — it never guesses.
 
 TODO-339: TUIT corroborates entries almost perfectly — mine the 28 circa-date refinements, 69 source-type conflicts and 582 unattributed tapers
 Priority: Medium

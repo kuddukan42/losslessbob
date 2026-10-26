@@ -1,6 +1,6 @@
 """Dossier field requirements (TODO-342 Phase 4) — starting with the D-01 track matcher.
 
-``instructions/SHOW_DOSSIER_REDESIGN_PLAN.md`` "D-01 Per-source completeness" needs a
+``archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md`` "D-01 Per-source completeness" needs a
 per-track reading of ``entries.setlist`` (free text, split by
 :func:`backend.db.parse_entry_setlist_titles`) and a matcher against Olof's setlist.
 This module holds those pieces and :func:`completeness` itself (C17).
