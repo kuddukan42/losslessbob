@@ -199,7 +199,7 @@ One row = one commit, through `/session-close` and pushed. **Resume at the first
 | C31 | 8 | `tools/make_fixture_db.py` + golden-set harness, run in CI | C30 | sonnet | harness runs green on placeholder files. Done: 15 specs, `--check` 15/15 fixture == live, 16 tests pass | done |
 | C32 | 8 | Golden values for the 15 shows | C31 | orch. | **Sign-off: tj hand-verifies every file** | done — tj approved all 18 on the sign-off page 2026-10-24; `expected` pinned from the fixture, verified_by tj |
 | C33 | 8 | `tools/dossier_sweep.py` + nightly cron + push on rise; `tools/dossier_verify_export.py` | C28 | sonnet | sweep report written; export drift detected on a doctored file | done — 4,050 targets: 98 refused (G1), 955 withheld, 0 gate/build errors; cron 03:15 |
-| C34 | 8 | Full verification in the Phase 8 order of checks, incl. `/verify --electron` PDF | C32, C33 | orch. | `--all` PASS; sweep totals in CHANGELOG | todo |
+| C34 | 8 | Full verification in the Phase 8 order of checks, incl. `/verify --electron` PDF | C32, C33 | orch. | `--all` PASS; sweep totals in CHANGELOG | done 2026-10-25 — pytest 3301, `--all` 12/12 after BUG-388 + 3 stale accept cases; sweep 4,051 targets, 64 refused (all G1), 939 withheld, 0 errors; Tier A light/dark + Electron PDF PASS |
 | C35 | 9 | `/wiki-update` pages + new Data-Quality page; close the redesign TODO + remaining BUGs; open follow-up TODOs; merge to `main` (tj) | C34 | orch. | ledger consistent; merged | todo |
 
 \* C13 is Phase 4 work pulled forward; see *Order* above.

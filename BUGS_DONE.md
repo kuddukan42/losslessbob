@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-388: BUG-347 splice regressed: two Olof titles spliced again after a later reparse, D-04 superlative lost
+Status: Fixed
+File(s): backend/olof_parser.py:998
+Reported: 2026-10-25
+Fixed: 2026-10-25
+Root cause: SPLICED_CREDIT_RE required whitespace after the stray ')'; a later full reparse yields the page text as '…Bob Dylan)one' with no space, so the repair stopped matching.
+Fix: backend/olof_parser.py: SPLICED_CREDIT_RE allows optional whitespace around the splice; no-space cases added to tests/test_olof_parser_fixes.py. Corpus scan: exactly the same 2 rows match. Both pages reparsed (diff gate changed 2, B347 2, UNEXPLAINED 0), song_index rebuilt (73,717); --d07 5/5, golden fixture re-cut and 2010-03-29 re-pinned.
+
 BUG-387: qBittorrent overwrote 1,147 collection masters through overlay hardlinks (100 with corrupt audio) — restore needed
 Status: Fixed
 File(s): tools/wtrf_repair_extras.py:148,backend/wtrf_review.py:173,backend/seed_overlay.py:831

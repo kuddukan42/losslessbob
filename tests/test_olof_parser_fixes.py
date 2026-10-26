@@ -172,6 +172,8 @@ def test_credits_resplit_into_subtitle_is_p1e():
 @pytest.mark.parametrize("line,title", [
     ("Like A Rolling St (Bob Dylan-Robert Hunter/Bob Dylan) one", "Like A Rolling Stone"),
     ("Forgetful Hear (Bob Dylan-Robert Hunter/Bob Dylan) t", "Forgetful Heart"),
+    ("Like A Rolling St (Bob Dylan-Robert Hunter/Bob Dylan)one", "Like A Rolling Stone"),
+    ("Forgetful Hear (Bob Dylan-Robert Hunter/Bob Dylan)t", "Forgetful Heart"),
 ])
 def test_spliced_credit_is_dropped_and_word_rejoined(line, title):
     """BUG-347: the next song's credit landed mid-word on Olof's page."""

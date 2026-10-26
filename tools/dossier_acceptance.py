@@ -738,7 +738,7 @@ def run_d09(db_path: Path) -> int:
              "1986-02-24 -> "
              f"{sc['status'] if sc else None}, {sc['songs_listed'] if sc else '?'} songs,"
              f" {sc['verdict'] if sc else '?'} (expected complete, 25, corroborated)"),
-            (fm["resolution"] == "16/44 file · recorded 24/96",
+            (fm["resolution"] == "16-bit/44.1 kHz file · recorded 24-bit/96 kHz",  # C32f F2
              f"LB-08485 file_meta resolution = {fm['resolution']!r}"),
         ]
         _log.info("")
@@ -837,18 +837,24 @@ def run_d23(db_path: Path) -> int:
         labels, notes = broadcast_set_labels(live, event_1965) if event_1965 else ([], [])
         bands = [lbl for lbl in labels if lbl["kind"] == "band"]
         markers = [lbl for lbl in labels if lbl["kind"] == "marker"]
+        # Since the C32h reparse both BBC TV-1 halves read cleanly, so each is a band
+        # (the tj-approved golden 1965-06-01 page renders exactly this).
         checks.append((
-            any(lbl["positions"] == [7, 8, 9, 10, 11, 12] for lbl in bands) and markers
-            and not notes,
-            "1965-06-01 BBC TV-1 26 June contiguous 7-12 bands, other broadcast notes stay"
-            f" per-song markers (got {len(bands)} bands, {len(markers)} markers,"
-            f" {len(notes)} session notes)",
+            sorted(lbl["positions"] for lbl in bands)
+            == [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12]] and not markers and not notes,
+            "1965-06-01 BBC TV-1 19 June 1-6 and 26 June 7-12 contiguous bands"
+            f" (got {len(bands)} bands, {len(markers)} markers, {len(notes)} session notes)",
         ))
 
-        blocked = taper_render(live, 3762)  # open R-T3 error
+        # Any currently open R-T3 error: the original LB-3762 was fixed by an explicit credit.
+        rt3 = live.execute(
+            "SELECT entity_key FROM qc_findings WHERE rule_id = 'R-T3' AND status = 'open'"
+            " ORDER BY entity_key LIMIT 1"
+        ).fetchone()
+        blocked = taper_render(live, int(rt3[0])) if rt3 else None
         checks.append((
-            blocked["name"] is None,
-            f"LB-3762 (open R-T3 error) renders no taper (got {blocked!r})",
+            blocked is not None and blocked["name"] is None,
+            f"LB-{rt3[0] if rt3 else '?'} (open R-T3 error) renders no taper (got {blocked!r})",
         ))
         disputed = taper_render(live, 10041)  # open R-T4 warn, disputed vs TUIT
         checks.append((
@@ -1204,6 +1210,8 @@ def main(argv: list[str] | None = None) -> int:
     mode.add_argument("--d27", action="store_true",
                       help="S8 selection accept cases: 5 named-LB fragment/glued-guard"
                            " cases + a 300-show seeded sample (C27).")
+    mode.add_argument("--all", action="store_true",
+                      help="Every mode above in order; exit 0 only if all pass (C34).")
     parser.add_argument("--db", type=Path, default=DB_PATH, help="Live DB (default: data/).")
     parser.add_argument("--before", type=Path, default=None,
                         help="--parser: olof_reparse_diff snapshot to print beside the live"
@@ -1212,6 +1220,25 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--residuals", action="store_true",
                         help="--parser only: list every zero-song and truncated concert.")
     args = parser.parse_args(argv)
+    if args.all:
+        runs = [
+            ("--parser", lambda: run_parser(args.db, args.before, args.residuals)),
+            ("--corroborate", lambda: run_corroborate(args.db, args.before)),
+            ("--premieres", lambda: run_premieres(args.db)),
+            ("--d01", lambda: run_d01(args.db)), ("--d02", lambda: run_d02(args.db)),
+            ("--d03", lambda: run_d03(args.db)), ("--d07", lambda: run_d07(args.db)),
+            ("--d05", lambda: run_d05(args.db)), ("--d09", lambda: run_d09(args.db)),
+            ("--d23", lambda: run_d23(args.db)), ("--d24", lambda: run_d24(args.db)),
+            ("--d27", lambda: run_d27(args.db)),
+        ]
+        results = []
+        for flag, run in runs:
+            _log.info("=== %s ===", flag)
+            results.append((flag, run()))
+        _log.info("=== summary ===")
+        for flag, code in results:
+            _log.info("%s %s", "PASS" if code == 0 else "FAIL", flag)
+        return 1 if any(code for _, code in results) else 0
     if args.corroborate:
         return run_corroborate(args.db, args.before)
     if args.premieres:

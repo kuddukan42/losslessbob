@@ -994,7 +994,8 @@ _KNOWN_SUBTITLES = frozenset({
 # BUG-347: Olof's page drops the next song's writer credit into the middle of a word
 # ("Like A Rolling St (Bob Dylan-Robert Hunter/Bob Dylan) one"). The word is re-joined and
 # the stray credit dropped — it belongs to the following song, which carries its own.
-SPLICED_CREDIT_RE = re.compile(r"^(.*[A-Za-z])\s+\(([^()]+)\)\s+([a-z]{1,4})\s*$")
+# The page text may or may not keep a space around the splice ("St (…) one" / "St (…)one").
+SPLICED_CREDIT_RE = re.compile(r"^(.*[A-Za-z])\s*\(([^()]+)\)\s*([a-z]{1,4})\s*$")
 
 
 def _split_title_parts(text: str) -> tuple[str, str, str]:

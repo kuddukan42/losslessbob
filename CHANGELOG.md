@@ -1,3 +1,11 @@
+[2026-10-25] — C34 full verification PASS: pytest 3301, acceptance --all 12/12, sweep 0 errors; BUG-388 (BUG-347 splice regressed) fixed
+Fixed: backend/olof_parser.py: SPLICED_CREDIT_RE allows no space after the stray credit ('St (…)one') — a later reparse had re-spliced 2010-03-21 Like A Rolling Stone and 2010-11-09 Forgetful Heart, so 2010-03-29 lost its 'biggest rotation of the run' superlative (BUG-388). Live: backup data/backups/losslessbob_preC34_20261025_2009.db, 2 pages reparsed (gate changed 2, B347 2, UNEXPLAINED 0), song_index 73,717, qc run
+Added: tools/dossier_acceptance.py --all (every mode, one summary, exit 0 only if all pass)
+Changed: tools/dossier_acceptance.py: 3 accept cases updated to current live truth — D-11 resolution wording (C32f F2), 1965-06-01 now two clean BBC bands (C32h reparse), R-T3 case picks any open finding (LB-3762 fixed by an explicit credit)
+Changed: tests/golden/dossier/fixture.jsonl.gz re-cut; 2010-03-29 spec re-pinned (+ rotation superlative claim) — verified_by notes it awaits tj's look
+Changed: sweep 2026-10-25: 4,051 targets, 64 refused (all G1), 939 withheld fields on 169 shows, 96 disputed setlists, 0 stale, 0 gate/build errors
+Changed: /verify Tier A (dossier iframe 2010-03-29 + 1965-06-01, light + dark) PASS; /verify --electron PDF export (2010-03-29, 5 pages) PASS
+
 [2026-10-25] — C32 golden sign-off done: tj approved all 18 golden dossiers; expected snapshots pinned
 Changed: tests/golden/dossier/*.json: all 18 specs carry `expected` (built from the committed fixture) + verified_by tj — test_dossier_golden now fails on any dossier diff; tj's round-2 notes were the round-1 notes carried over, all already fixed in 24de4044f (re-checked in the render)
 Changed: instructions/SHOW_DOSSIER_REDESIGN_PLAN.md: C32 done; next C34

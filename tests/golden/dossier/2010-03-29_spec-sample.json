@@ -4,7 +4,7 @@
   "channel": "public",
   "category": "spec-sample",
   "note": "Spec Rev A sample (reference mock)",
-  "verified_by": "tj (C32 sign-off, 2026-10-24)",
+  "verified_by": "tj (C32 sign-off, 2026-10-24); re-pinned C34 2026-10-25 to add the D-04 rotation superlative restored by the BUG-347 splice-regex fix — awaiting tj's look",
   "expected": {
     "fields": {
       "band.label": {
@@ -3957,6 +3957,53 @@
       "family": []
     },
     "claims": [
+      {
+        "anchor": "stats.rotation_rank",
+        "row": null,
+        "claim": {
+          "kind": "superlative",
+          "text_key": "biggest_rotation",
+          "slots": {
+            "subject": {
+              "value": 72,
+              "tier": 1,
+              "source": "olof_events.rotation_pct",
+              "confidence": "corroborated",
+              "derived_from": [
+                "olof_events.rotation_pct",
+                "corroborate.rotation_check"
+              ]
+            },
+            "n": {
+              "value": 7,
+              "tier": 3,
+              "source": "D-04 rotation_rank",
+              "confidence": "stated",
+              "derived_from": [
+                "claim:D-04 rotation_rank"
+              ]
+            },
+            "scope": {
+              "value": "of the 7-night Zepp Tokyo run",
+              "tier": 3,
+              "source": "D-04 rotation_rank",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events"
+              ]
+            }
+          },
+          "scope": "venue_run",
+          "verified_by": "D-04 rotation_rank",
+          "ties": 0,
+          "derived_from": [
+            "olof_events.rotation_pct",
+            "corroborate.rotation_check",
+            "claim:D-04 rotation_rank"
+          ],
+          "local_analysis": false
+        }
+      },
       {
         "anchor": "context.chronicle",
         "row": null,
