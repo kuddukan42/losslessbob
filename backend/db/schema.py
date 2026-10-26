@@ -755,6 +755,18 @@ CREATE TABLE IF NOT EXISTS taper_decision_log (
 );
 CREATE INDEX IF NOT EXISTS idx_taper_declog_lb ON taper_decision_log(lb_number, id DESC);
 
+-- lineage_edge_rejects: curator vetoes of an entry_lineage same_as/derived_from
+-- edge for taper propagation (TODO-234 E). entry_lineage is re-parsed from LB
+-- text, so deleting the row would not stick; taper_attribution drops these
+-- edges on every recompute instead. Stored ordered (lb_a < lb_b).
+CREATE TABLE IF NOT EXISTS lineage_edge_rejects (
+    lb_a              INTEGER NOT NULL,
+    lb_b              INTEGER NOT NULL,
+    note              TEXT,
+    decided_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (lb_a, lb_b)
+);
+
 -- bobdylan.com official setlist data
 -- bobdylan_shows: one row per concert page on bobdylan.com/date/
 --   date_str is YYYY-MM-DD; join to entries/dylan_performances on date_str

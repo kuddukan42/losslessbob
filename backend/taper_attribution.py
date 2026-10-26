@@ -842,6 +842,42 @@ def _drop_cross_date_edges(
     return keep(same_as_adj), keep(derived_from_adj)
 
 
+def _drop_rejected_edges(
+    conn: sqlite3.Connection,
+    same_as_adj: dict[int, list[int]],
+    derived_from_adj: dict[int, list[int]],
+) -> tuple[dict[int, list[int]], dict[int, list[int]]]:
+    """Drop lineage edges a curator vetoed in ``lineage_edge_rejects`` (TODO-234 E).
+
+    E.g. LB-14519 says only its last 4 tracks are LB-14518's recording: a patch,
+    not the same tape, so neither taper credit may flow across that edge.
+
+    Args:
+        conn: Database connection.
+        same_as_adj: Undirected same_as adjacency.
+        derived_from_adj: Undirected derived_from adjacency.
+
+    Returns:
+        Both adjacencies with the vetoed edges removed.
+    """
+    try:
+        vetoed = {frozenset(r) for r in conn.execute("SELECT lb_a, lb_b FROM lineage_edge_rejects")}
+    except sqlite3.OperationalError:  # minimal test schemas lack the table
+        return same_as_adj, derived_from_adj
+    if not vetoed:
+        return same_as_adj, derived_from_adj
+
+    def keep(adj: dict[int, list[int]]) -> dict[int, list[int]]:
+        out: dict[int, list[int]] = {}
+        for lb, others in adj.items():
+            kept = [o for o in others if frozenset((lb, o)) not in vetoed]
+            if kept:
+                out[lb] = kept
+        return out
+
+    return keep(same_as_adj), keep(derived_from_adj)
+
+
 def _load_mix_sources(conn: sqlite3.Connection, candidates) -> frozenset[int]:
     """LBs in *candidates* that mix two or more sources (a matrix).
 
@@ -943,6 +979,7 @@ def _compute_layers01(
     same_as_adj, derived_from_adj = _build_adjacency(lineage_rows)
     same_as_adj, derived_from_adj = _drop_cross_date_edges(
         conn, same_as_adj, derived_from_adj)
+    same_as_adj, derived_from_adj = _drop_rejected_edges(conn, same_as_adj, derived_from_adj)
 
     attrs = _layer0_seed(lineage_rows, _db._TAPER_UNIVERSE)
     rejects, unresolved = _apply_confirmations(attrs, confirmations)

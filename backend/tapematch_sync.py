@@ -364,6 +364,104 @@ def _has_quality_match(
     return False
 
 
+def _human_cannot_links(
+    obs_conn: sqlite3.Connection, concert_date: str,
+) -> "set[frozenset[int]]":
+    """Return the LB pairs a curator judged ``confirmed_different`` on this date.
+
+    Judgments live on per-run ``pairs`` rows, so every run of the date is read
+    and the latest judged run wins per pair: a judgment made against an older
+    run survives a re-run, and a later ``confirmed_same`` (or any other value)
+    on the same pair retracts it.
+
+    Args:
+        obs_conn: Open observations.db connection.
+        concert_date: ``YYYY-MM-DD``.
+
+    Returns:
+        Unordered ``{lb_a, lb_b}`` pairs that must not share a family.
+    """
+    pair_cols = {r[1] for r in obs_conn.execute("PRAGMA table_info(pairs)").fetchall()}
+    if "human_judgment" not in pair_cols:
+        return set()
+    latest: dict[frozenset[int], str] = {}
+    for row in obs_conn.execute(
+        "SELECT lb_a, lb_b, human_judgment FROM pairs "
+        "WHERE concert_date = ? AND human_judgment IS NOT NULL "
+        "AND lb_a IS NOT NULL AND lb_b IS NOT NULL ORDER BY run_id",
+        (concert_date,),
+    ):
+        latest[frozenset((row["lb_a"], row["lb_b"]))] = row["human_judgment"]
+    return {pair for pair, j in latest.items() if j == "confirmed_different" and len(pair) == 2}
+
+
+def _split_cannot_links(
+    obs_conn: sqlite3.Connection,
+    run_id: str,
+    members_by_family: "dict[int, list[int]]",
+    cannot: "set[frozenset[int]]",
+) -> "dict[int, list[int]]":
+    """Re-cluster only the families that hold a curator cannot-link pair.
+
+    Within such a family the run's ``same_family`` edges are re-unioned
+    strongest-corr first, skipping any union that would put a cannot-link pair
+    in one component. Families without a violation, and every edge leaving a
+    family, are untouched, so this can only split, never merge.
+
+    Args:
+        obs_conn: Open observations.db connection.
+        run_id: The date's chosen run.
+        members_by_family: ``{tapematch family_id: [lb, ...]}`` from the run.
+        cannot: Output of :func:`_human_cannot_links`.
+
+    Returns:
+        A new membership map; split-off pieces get fresh ids above the run's max.
+    """
+    out = {fam: list(lbs) for fam, lbs in members_by_family.items()}
+    next_id = max(out, default=0) + 1
+    for fam, lbs in members_by_family.items():
+        members = set(lbs)
+        if not any(pair <= members for pair in cannot):
+            continue
+        parent = {lb: lb for lb in members}
+
+        def find(x: int, parent: dict[int, int] = parent) -> int:
+            while parent[x] != x:
+                parent[x] = parent[parent[x]]
+                x = parent[x]
+            return x
+
+        edges = obs_conn.execute(
+            "SELECT lb_a, lb_b, corr FROM pairs WHERE run_id = ? "
+            "AND tapematch_verdict = 'same_family'",
+            (run_id,),
+        ).fetchall()
+        edges = sorted(
+            (e for e in edges if e["lb_a"] in members and e["lb_b"] in members),
+            key=lambda e: -(e["corr"] or 0.0),
+        )
+        for e in edges:
+            ra, rb = find(e["lb_a"]), find(e["lb_b"])
+            if ra == rb:
+                continue
+            comp_a = {lb for lb in members if find(lb) == ra}
+            comp_b = {lb for lb in members if find(lb) == rb}
+            if any(frozenset((a, b)) in cannot for a in comp_a for b in comp_b):
+                continue
+            parent[rb] = ra
+        pieces: dict[int, list[int]] = {}
+        for lb in sorted(members):
+            pieces.setdefault(find(lb), []).append(lb)
+        ordered = sorted(pieces.values(), key=lambda p: (-len(p), p[0]))
+        out[fam] = ordered[0]
+        for piece in ordered[1:]:
+            out[next_id] = piece
+            next_id += 1
+        log.info("tapematch sync: run %s family %s split by curator judgment -> %s",
+                 run_id, fam, ordered)
+    return out
+
+
 def _sync_one_date(
     obs_conn: sqlite3.Connection,
     conn: sqlite3.Connection,
@@ -396,6 +494,11 @@ def _sync_one_date(
     for row in sources:
         members_by_family.setdefault(row["family_id"], []).append(row["lb_number"])
 
+    # TODO-234(A): a curator's confirmed_different overrides the run's clustering.
+    cannot = _human_cannot_links(obs_conn, concert_date)
+    if cannot:
+        members_by_family = _split_cannot_links(obs_conn, run_id, members_by_family, cannot)
+
     families = {
         fam_id: sorted(set(lbs))
         for fam_id, lbs in members_by_family.items()
@@ -411,15 +514,19 @@ def _sync_one_date(
     }
 
     pair_rows = obs_conn.execute(
-        "SELECT family_id_a, corr, lb_says_same FROM pairs "
-        "WHERE run_id = ? AND tapematch_verdict = 'same_family' "
-        "AND family_id_a = family_id_b",
+        "SELECT lb_a, lb_b, corr, lb_says_same FROM pairs "
+        "WHERE run_id = ? AND tapematch_verdict = 'same_family'",
         (run_id,),
     ).fetchall()
+    # Keyed through the (possibly split) membership, not the run's family_id
+    # columns, so a curator split gets its own corr/lb-says-same evidence.
+    family_of_lb = {lb: fam for fam, lbs in members_by_family.items() for lb in lbs}
     corrs_by_family: dict[int, list[float]] = {}
     lb_says_same_by_family: dict[int, bool] = {}
     for row in pair_rows:
-        fam = row["family_id_a"]
+        fam = family_of_lb.get(row["lb_a"])
+        if fam is None or fam != family_of_lb.get(row["lb_b"]):
+            continue
         if row["corr"] is not None:
             corrs_by_family.setdefault(fam, []).append(row["corr"])
         if row["lb_says_same"] == 1:

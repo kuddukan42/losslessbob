@@ -5,6 +5,7 @@ the Phase 2 curator confirm/reject HTTP API.
 import json
 import os
 import shutil
+import sqlite3
 import tempfile
 
 import backend.db as db
@@ -1067,3 +1068,20 @@ def test_same_as_across_dates_does_not_propagate():
 
     assert _get_attr(conn, 321)["taper_normalised"] == "spot"
     assert _get_attr(conn, 322) is None
+
+
+def test_drop_rejected_edges_removes_vetoed_pair_both_directions():
+    """TODO-234 E: a curator-vetoed lineage edge never carries a taper."""
+    conn = sqlite3.connect(":memory:")
+    conn.execute("CREATE TABLE lineage_edge_rejects (lb_a INTEGER, lb_b INTEGER)")
+    conn.execute("INSERT INTO lineage_edge_rejects VALUES (14518, 14519)")
+    same_as = {14518: [10677, 14519], 14519: [14518], 10677: [14518]}
+    out_same, out_derived = taper_attribution._drop_rejected_edges(conn, same_as, {})
+    assert out_same == {14518: [10677], 10677: [14518]}
+    assert out_derived == {}
+
+
+def test_drop_rejected_edges_without_table_is_noop():
+    conn = sqlite3.connect(":memory:")
+    adj = {1: [2], 2: [1]}
+    assert taper_attribution._drop_rejected_edges(conn, adj, {}) == (adj, {})

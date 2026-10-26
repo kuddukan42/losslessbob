@@ -16,6 +16,7 @@ import pytest
 
 import backend.db as db
 import backend.paths as _paths
+import backend.tapematch_sync as tapematch_sync
 from backend.tapematch_sync import (
     _has_quality_match,
     _load_latest_abs_scores,
@@ -734,3 +735,47 @@ def test_refresh_derived_after_sync_stops_after_failed_tapers(tmp_path, monkeypa
     out = tapematch_sync.refresh_derived_after_sync(db_path=db_path)
 
     assert out == {"attribute_tapers": "error"}
+
+
+# ── TODO-234(A): curator confirmed_different splits a family ────────────────
+
+def _judgment_obs_conn():
+    conn = sqlite3.connect(":memory:")
+    conn.row_factory = sqlite3.Row
+    conn.execute(
+        "CREATE TABLE pairs (run_id TEXT, concert_date TEXT, lb_a INTEGER, lb_b INTEGER, "
+        "corr REAL, tapematch_verdict TEXT, human_judgment TEXT)"
+    )
+    return conn
+
+
+def test_human_cannot_links_latest_run_wins():
+    conn = _judgment_obs_conn()
+    conn.executemany(
+        "INSERT INTO pairs VALUES (?, '1998-06-12', ?, ?, 0.1, 'same_family', ?)",
+        [("r1", 6465, 5800, "confirmed_different"),
+         ("r1", 4436, 5800, "confirmed_different"),
+         ("r2", 5800, 4436, "confirmed_same")],
+    )
+    assert tapematch_sync._human_cannot_links(conn, "1998-06-12") == {frozenset((6465, 5800))}
+
+
+def test_human_cannot_links_absent_column_is_empty():
+    conn = sqlite3.connect(":memory:")
+    conn.execute("CREATE TABLE pairs (run_id TEXT, concert_date TEXT, lb_a INTEGER, lb_b INTEGER)")
+    assert tapematch_sync._human_cannot_links(conn, "1998-06-12") == set()
+
+
+def test_split_cannot_links_cuts_chain_and_leaves_other_families():
+    conn = _judgment_obs_conn()
+    # 5800-6462 strong; 6465 chains in only through 4436.
+    conn.executemany(
+        "INSERT INTO pairs VALUES ('r', '1998-06-12', ?, ?, ?, 'same_family', NULL)",
+        [(5800, 6462, 0.9), (4436, 5800, 0.3), (4436, 6465, 0.1), (1, 2, 0.8)],
+    )
+    members = {1: [5800, 6462, 4436, 6465], 2: [1, 2]}
+    cannot = {frozenset((6465, 5800)), frozenset((6465, 6462)),
+              frozenset((4436, 5800)), frozenset((4436, 6462))}
+    out = tapematch_sync._split_cannot_links(conn, "r", members, cannot)
+    assert sorted(sorted(v) for v in out.values()) == [[1, 2], [4436, 6465], [5800, 6462]]
+    assert out[2] == [1, 2]
