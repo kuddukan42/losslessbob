@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-316: TUIT — decide whether to scrape the forum/wiki/requests surfaces
+Priority: Low
+Status: Done
+Added: 2026-08-19
+Closed: 2026-10-25
+Description: The tracker also exposes /forum, /wiki, /requests, /collages, /songs, /tour, /venue and /stats, none of which backend/tuit_scraper.py touches. Worth deciding which carry lineage or taper intelligence worth mirroring before writing more parsers.
+Scouted 2026-10-25 per tj's 'scout first' call (12 read-only requests, 3 s apart). Nothing worth a parser: /forum 4 threads / 13 posts; /wiki 7 site-help pages (formats, glossary, LB numbers, ratio) with no lineage or taper data; /requests 6 open + 1 filled show requests (a possible future trading signal, too small to mirror); /collages empty; /songs (832 songs, 67,728 performances) is already mirrored as tuit_song_performances (66,679 — gap = shows since the 09-07 crawl, a re-sync not a parser); /stats site aggregates only.
+
 TODO-373: /qc-review console: decide v2 tabs vs moving it into gui_next
 Priority: Low
 Status: Done

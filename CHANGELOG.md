@@ -1,3 +1,7 @@
+[2026-10-25] — Backlog batch 1: tj's eight decisions recorded; TODO-177/316/373 closed
+Changed: TODO.md → TODO_DONE.md: TODO-177 (superseded by TODO-196's icon), TODO-373 (/qc-review parked), TODO-316 (TUIT surfaces scouted: nothing worth a parser)
+Changed: TODO.md: decisions recorded on TODO-136 (tj live-tests), 334 (admit private sources after TODO-319), 338 (build venue_xref, Olof primary), 371 (build G1 fallback), 234 (splits/relabels now, listen first on 2)
+
 [2026-10-25] — 2010-03-29 golden re-pin approved by tj — all 18 golden dossiers now tj-verified
 Changed: tests/golden/dossier/2010-03-29_spec-sample.json: verified_by records tj's approval of the C34 re-pin (restored rotation superlative)
 
