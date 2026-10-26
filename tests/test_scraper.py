@@ -224,6 +224,24 @@ class TestScrapeEntryLocalPages:
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
+    def test_rescrape_keeps_curator_source_type(self, monkeypatch):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            detail_dir, files_dir = _patch_site_dirs(monkeypatch, tmp_dir)
+            (detail_dir / "LB-00100.html").write_text(DETAIL_PAGE_HTML, encoding="utf-8")
+
+            from backend.scraper import scrape_entry
+            scrape_entry(100, use_local_pages=True, download_files=False, db_path=db_path)
+            conn.execute("UPDATE entries SET source_type='Audience' WHERE lb_number=100")
+            conn.commit()
+            scrape_entry(100, use_local_pages=True, download_files=False, force=True,
+                         db_path=db_path)
+
+            row = conn.execute("SELECT source_type FROM entries WHERE lb_number=100").fetchone()
+            assert row["source_type"] == "Audience"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
     def test_records_attachment_links(self, monkeypatch):
         db_path, conn, tmp_dir = _make_db()
         try:

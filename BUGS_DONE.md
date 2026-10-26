@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-391: Forced rescrape NULLs curator entries.source_type
+Status: Fixed
+File(s): backend/scraper.py:436
+Reported: 2026-10-26
+Fixed: 2026-10-26
+Root cause: INSERT OR REPLACE deletes and re-inserts the row; source_type is not in the scraped column list, so it reset to NULL.
+Fix: _save_entry reads source_type before the rewrite and restores it; regression test test_rescrape_keeps_curator_source_type.
+
 BUG-390: D-01 match_track misses 'Artist - Song' titles — multi-artist tracklists score 0 present, fail G2
 Status: Fixed
 File(s): backend/dossier_fields.py:330

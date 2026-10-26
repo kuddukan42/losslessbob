@@ -432,6 +432,11 @@ def scrape_entry(
         _entry_row["lb_category"] = classify_one_entry(
             _entry_row["date_str"], _entry_row["description"], _entry_row["location"], c
         )
+        # source_type is curator-only and not on the LB page; INSERT OR REPLACE
+        # would NULL it, so carry it across the rewrite.
+        _prev = c.execute(
+            "SELECT source_type FROM entries WHERE lb_number = ?", (_entry_row["lb_number"],)
+        ).fetchone()
         c.execute(
             """INSERT OR REPLACE INTO entries(lb_number, date_str, location, cdr, rating, timing,
                description, setlist, taper_name, source_chain, lb_category)
@@ -439,6 +444,11 @@ def scrape_entry(
                       :description,:setlist,:taper_name,:source_chain,:lb_category)""",
             _entry_row,
         )
+        if _prev and _prev[0]:
+            c.execute(
+                "UPDATE entries SET source_type = ? WHERE lb_number = ?",
+                (_prev[0], _entry_row["lb_number"]),
+            )
         for filename, clean, file_url in _file_links:
             c.execute(
                 "INSERT OR IGNORE INTO entry_files(lb_number, filename, clean_name, file_url) VALUES(?,?,?,?)",
