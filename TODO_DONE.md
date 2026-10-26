@@ -2,6 +2,25 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-373: /qc-review console: decide v2 tabs vs moving it into gui_next
+Priority: Low
+Status: Done
+Added: 2026-10-25
+Closed: 2026-10-25
+Description: Follow-up from TODO-342 Phase 2b. /qc-review (backend/qc_review.html) ships v1 (Findings workbench + Queue tab) as a Flask-served experimental page. tj's call after using v1: either add the plan's v2 tabs there, or port the console into gui_next. See docs/wiki/Data-Quality.md.
+Parked by tj 2026-10-25 (batch-1 decision page): /qc-review had 0 human decisions; reopen once a queue session shows what's missing (v2 tabs vs gui_next).
+
+TODO-177: Implement the new app icon
+Priority: Low
+Status: Done
+Added: 2026-06-22
+Closed: 2026-10-25
+Description: Replace the app icon with a new design. No icon asset exists yet in the repo
+  (gui_next/resources/ only has installer.nsh; no .ico/.icns/.png app icon found) and no new
+  asset has been provided yet — needs the actual icon file before implementation, then wire
+  it into the Electron build config (gui_next build resources) and installer.
+Superseded: TODO-196 shipped the custom LB icon (gui_next/resources/icon.png) 2026-07-01. tj confirmed close 2026-10-25 (batch-1 decision page).
+
 TODO-342: Show Dossier redesign (spec Rev A) — execution plan C00–C35
 Priority: High
 Status: Done
