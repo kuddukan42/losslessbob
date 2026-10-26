@@ -529,6 +529,7 @@ def _locate_events(soup: BeautifulSoup) -> tuple[list, list[tuple[int, int]]]:
     index_by_id = {id(el): i for i, el in enumerate(para_elements)}
     anchors: list[tuple[int, int]] = []
     orphans: list[int] = []
+    orphan_next: dict[int, int] = {}
     for a in soup.find_all("a", attrs={"name": True}):
         m = _DSN_ANCHOR_RE.match(a["name"].strip())
         if not m:
@@ -536,9 +537,12 @@ def _locate_events(soup: BeautifulSoup) -> tuple[list, list[tuple[int, int]]]:
         container = a.find_parent(_PARA_TAGS)
         if container is None or id(container) not in index_by_id:
             orphans.append(int(m.group(1)))
+            nxt = a.find_next(_PARA_TAGS)
+            if nxt is not None and id(nxt) in index_by_id:
+                orphan_next[int(m.group(1))] = index_by_id[id(nxt)]
             continue
         anchors.append((index_by_id[id(container)], int(m.group(1))))
-    anchors = _relocate_index_anchors(para_elements, anchors, orphans)
+    anchors = _relocate_index_anchors(para_elements, anchors, orphans, orphan_next)
     anchors.sort(key=lambda t: t[0])
     return para_elements, anchors
 
@@ -565,7 +569,9 @@ def _date_line_follows(para_elements: list, i: int, window: int = 6) -> bool:
 
 
 def _relocate_index_anchors(para_elements: list, anchors: list[tuple[int, int]],
-                            orphans: list[int] | None = None) -> list[tuple[int, int]]:
+                            orphans: list[int] | None = None,
+                            orphan_next: dict[int, int] | None = None,
+                            ) -> list[tuple[int, int]]:
     """Move an event anchor Word misplaced onto the event's own header.
 
     BUG-372: Olof's pages usually open each event with a bare-number paragraph
@@ -586,6 +592,10 @@ def _relocate_index_anchors(para_elements: list, anchors: list[tuple[int, int]],
         anchors: ``(para_index, event_id)`` pairs from :func:`_locate_events`.
         orphans: Event ids whose anchor sits in no paragraph at all; placed on
             their header when one is found, else skipped with a warning.
+        orphan_next: For each orphan, the index of the first paragraph after its
+            anchor. An event with no number line (DSN36360: the bookmark sits in
+            a table cell right before "DAR Constitution Hall" / city / date) is
+            placed on the first non-empty paragraph there when a date line follows.
 
     Returns:
         The anchors, with misplaced ones pointing at their event header and at
@@ -620,12 +630,33 @@ def _relocate_index_anchors(para_elements: list, anchors: list[tuple[int, int]],
         out.append((i, eid))
     for eid in orphans or []:
         j = header_for(eid)
+        if j is None and orphan_next and eid in orphan_next:
+            k = next((n for n in range(orphan_next[eid], len(texts)) if texts[n]), None)
+            if k is not None and _date_line_follows(para_elements, k):
+                j = k
         if j is not None and j not in kept:
             _log.info("olof_parser: DSN%d containerless anchor placed on header %d", eid, j)
             kept.add(j)
             out.append((j, eid))
         else:
             _log.warning("olof_parser: DSN%d anchor has no paragraph container, skipped", eid)
+
+    # An event Word never bookmarked (DSN40330: "40330" / UMBC Event Center / ... /
+    # "12 November 2019", no DSN40330 anchor anywhere) still has its number line.
+    # Adopt a bare-number paragraph inside the page's anchor range when a date
+    # line follows it and no anchor of that id exists.
+    known = {eid for _, eid in out} | set(orphans or [])
+    if known:
+        lo, hi = min(known), max(known)
+        for num in list(bare_number):
+            if num in known or not lo < num < hi:
+                continue
+            j = header_for(num)
+            if j is not None and j not in kept:
+                _log.info("olof_parser: DSN%d has no bookmark, placed on its number line %d",
+                          num, j)
+                kept.add(j)
+                out.append((j, num))
 
     # Two anchors on one paragraph would leave an empty block: keep the one the
     # paragraph names (Olof's number line is authoritative -- the other is a
@@ -937,6 +968,10 @@ def _classify_event_type(rec: EventRecord, lines: list[str]) -> str:
         return "broadcast"
     if _INTERVIEW_RE.search(title):
         return "interview"
+    if title.startswith("backstage"):
+        # "Backstage before concert." (1965 UK, 1966 tours): a filmed off-stage
+        # performance, not a second concert on the date.
+        return "other"
     if rec.concert_no_net is not None:
         return "concert"
     if rec.venue and any(_SETLIST_LINE_RE.match(ln) for ln in lines):

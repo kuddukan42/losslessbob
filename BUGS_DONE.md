@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-389: Olof parser drops events whose DSN bookmark has no number-line header or no bookmark at all (13 events); backstage sessions typed as concerts
+Status: Fixed
+File(s): backend/olof_parser.py:571
+Reported: 2026-10-25
+Fixed: 2026-10-25
+Root cause: _relocate_index_anchors could only place a containerless anchor on a bare-number header line, so an event with no number line was skipped; an event with a number line but no bookmark was never seen. _classify_event_type typed any venue + numbered setlist as concert, including 'Backstage before concert.'.
+Fix: backend/olof_parser.py: containerless anchors fall back to the first non-empty paragraph after them when a date line follows; bare-number paragraphs inside the page's anchor range with a following date line and no bookmark become anchors; 'Backstage…' sessions classify as other. Corpus diff old vs new: 13 events added, 3 retyped, 0 removed; their 13 predecessors drop the swallowed text. 10 pages reparsed live (snapshot .debug/olof_before_todo371.db), song_index 73,834, show_picks rank-1 unchanged. tests/test_olof_parser_fixes.py +4.
+
 BUG-388: BUG-347 splice regressed: two Olof titles spliced again after a later reparse, D-04 superlative lost
 Status: Fixed
 File(s): backend/olof_parser.py:998

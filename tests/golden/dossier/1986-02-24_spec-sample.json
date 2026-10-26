@@ -482,6 +482,11 @@
         "confidence": "stated",
         "source": "d1.show.date_disp"
       },
+      "show.identity_source": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
       "show.net_number": {
         "value": null,
         "confidence": "unavailable",

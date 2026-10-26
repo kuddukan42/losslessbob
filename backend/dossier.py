@@ -468,6 +468,82 @@ def _primary_event(conn: sqlite3.Connection, date_iso: str,
     ).fetchone()
 
 
+def _external_identity(conn: sqlite3.Connection, date_iso: str) -> dict:
+    """External show rows for a date Olof doesn't list (TODO-371, plan § "G1 fallback").
+
+    Args:
+        conn: Open connection.
+        date_iso: Show date ``YYYY-MM-DD``.
+
+    Returns:
+        ``{"rows": [...], "agree": bool}`` -- setlist.fm rows first, then
+        bobdylan.com, each ``{"source", "venue", "city", "key"}``; ``agree`` is
+        True when every row matches the first on venue or city
+        (:func:`backend.qc.corroborate.places_agree_loose`).
+    """
+    from backend.qc.corroborate import places_agree_loose
+
+    rows: list[dict] = []
+    if _table_exists(conn, "setlistfm_shows"):
+        rows += [{"source": "setlist.fm", "venue": r["venue_name"], "city": r["city"] or "",
+                  "key": r["setlistfm_id"]}
+                 for r in conn.execute(
+                     "SELECT setlistfm_id, venue_name, city FROM setlistfm_shows "
+                     "WHERE date_str = ? AND venue_name NOT IN ('', '?') ORDER BY setlistfm_id",
+                     (date_iso,))]
+    if _table_exists(conn, "bobdylan_shows"):
+        rows += [{"source": "bobdylan.com", "venue": r["venue"],
+                  "city": (r["location"] or "").split(",")[0].strip(), "key": r["bobdylan_url"]}
+                 for r in conn.execute(
+                     "SELECT bobdylan_url, venue, location FROM bobdylan_shows "
+                     "WHERE date_str = ? AND venue != '' ORDER BY bobdylan_url", (date_iso,))]
+    agree = bool(rows) and all(
+        places_agree_loose(rows[0]["venue"], r["venue"])
+        or places_agree_loose(rows[0]["city"], r["city"]) for r in rows[1:])
+    return {"rows": rows, "agree": agree}
+
+
+def _external_setlist(conn: sqlite3.Connection, rows: list[dict]) -> tuple[list[dict], str | None]:
+    """The tracklist of the first external row that has one (setlist.fm before bobdylan.com).
+
+    setlist.fm keeps running order and encores; TUIT has no order, so it is never used.
+
+    Returns:
+        ``(setlist, source)`` in the D1 setlist shape, or ``([], None)``.
+    """
+    for r in rows:
+        if r["source"] == "setlist.fm" and _table_exists(conn, "setlistfm_setlist"):
+            songs = conn.execute(
+                "SELECT track_name, is_encore FROM setlistfm_setlist WHERE setlistfm_id = ? "
+                "AND COALESCE(is_tape, 0) = 0 ORDER BY set_index, position", (r["key"],)).fetchall()
+            out = [{"position": i, "title": s["track_name"], "is_encore": bool(s["is_encore"])}
+                   for i, s in enumerate(songs, 1) if s["track_name"]]
+        elif r["source"] == "bobdylan.com" and _table_exists(conn, "bobdylan_setlist"):
+            songs = conn.execute(
+                "SELECT track_name FROM bobdylan_setlist WHERE bobdylan_url = ? ORDER BY position",
+                (r["key"],)).fetchall()
+            out = [{"position": i, "title": s["track_name"], "is_encore": False}
+                   for i, s in enumerate(songs, 1) if s["track_name"]]
+        else:
+            continue
+        if out:
+            return out, r["source"]
+    return [], None
+
+
+def _is_dated_concert(conn: sqlite3.Connection, date_iso: str, entries: list) -> bool:
+    """False for a year placeholder (``-01-01``) or a date with no concert recordings."""
+    if date_iso.endswith("-01-01"):
+        return False
+    lbs = [e["lb_number"] for e in entries]
+    if not lbs:
+        return False
+    marks = ",".join("?" * len(lbs))
+    return conn.execute(
+        f"SELECT 1 FROM entries WHERE lb_number IN ({marks}) AND lb_category = 'concert' LIMIT 1",
+        lbs).fetchone() is not None
+
+
 def _build_show(conn: sqlite3.Connection, date_iso: str, location: str | None,
                  event: sqlite3.Row | None, visible_lbs: list[int]) -> dict:
     show: dict = {"date_iso": date_iso}
@@ -1341,6 +1417,23 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
             "candidates": [{"date_iso": date_iso, "location": v} for v in venues],
         }
 
+    # TODO-371 G1 fallback: Olof has nothing on this date -- take the show's identity
+    # from setlist.fm / bobdylan.com when they name it (step 1), offer a chooser when
+    # they disagree (step 2); steps 3/4 are G1's refusal reasons (dossier_qc).
+    external: list[dict] = []
+    if not venues:
+        ext = _external_identity(conn, date_iso)
+        external = ext["rows"]
+        if external and not ext["agree"]:
+            names = list(dict.fromkeys(r["venue"] for r in external))
+            if location not in names:
+                return {
+                    "ambiguous": True,
+                    "date_iso": date_iso,
+                    "candidates": [{"date_iso": date_iso, "location": v} for v in names],
+                }
+            external = [r for r in external if r["venue"] == location]
+
     olof_venue = location if location in venues else (venues[0] if len(venues) == 1 else None)
     two_shows, unkeyable = _two_show_events(conn, date_iso, olof_venue)
     show_key: str | None = None
@@ -1382,6 +1475,17 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
     ]
 
     dossier: dict = {"show": _build_show(conn, date_iso, location, event, visible_lbs)}
+    if event is None and not venues:
+        if external:
+            first = external[0]
+            if location:  # a chooser pick: that row's names, not _build_show's first row
+                dossier["show"]["venue"] = first["venue"]
+                if first["city"]:
+                    dossier["show"]["city"] = first["city"]
+            dossier["identity"] = {"basis": "external", "source": first["source"]}
+        else:
+            dossier["identity"] = {"basis": "none",
+                                   "dated_concert": _is_dated_concert(conn, date_iso, entries)}
     if show_key is not None:
         dossier["show"]["show_part"] = show_key
         dossier["show"]["show_label"] = SHOW_PART_LABELS[show_key]
@@ -1396,6 +1500,10 @@ def build_dossier(date_iso: str, location: str | None = None, channel: str = "pu
         dossier["context"] = context
 
     setlist = _build_setlist(conn, date_iso, event)
+    if not setlist and external and event is None:
+        setlist, setlist_source = _external_setlist(conn, external)
+        if setlist_source:
+            dossier["identity"]["setlist_source"] = setlist_source
     if setlist:
         dossier["setlist"] = setlist
 

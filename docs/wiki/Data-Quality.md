@@ -39,7 +39,9 @@ All five QC tables are USER-tier, local-only, never exported ([Database](Databas
 
 ## Dossier gate (`dossier_qc.py`)
 
-`run_gate()` runs G1–G8 on every dossier: G1 identity (no Olof event → refuse, HTTP 422),
+`run_gate()` runs G1–G8 on every dossier: G1 identity (no Olof event → reduced dossier from
+setlist.fm/bobdylan.com identity, a chooser when they disagree, else refuse with HTTP 422 —
+TODO-371),
 G2 source-show fit, G3 provenance, G4 quarantine (`store.quarantined()` — open/confirmed
 errors on the source row), G5 invariants, G6 freshness (R-S1), G7 claims (drops any claim over a
 withheld scope), G8 public-channel leak backstop. The result is embedded in the page

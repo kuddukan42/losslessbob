@@ -4,7 +4,7 @@
   "channel": "public",
   "category": "spec-sample",
   "note": "Spec Rev A sample (Rolling Thunder, official release)",
-  "verified_by": "tj (C32 sign-off, 2026-10-24)",
+  "verified_by": "tj (C32 sign-off, 2026-10-24); re-pinned 2026-10-25 for TODO-371's Olof parser fix — New York city total 134 → 135 (a recovered 1963 Olof event) (awaiting tj's look)",
   "expected": {
     "fields": {
       "band.label": {
@@ -140,6 +140,12 @@
           {
             "year": "1963",
             "venue": "Forest Hills Tennis Stadium",
+            "count": 1,
+            "current": false
+          },
+          {
+            "year": "1963",
+            "venue": "The Home Of Eve and Mac MacKenzie",
             "count": 1,
             "current": false
           },
@@ -839,6 +845,11 @@
         "confidence": "stated",
         "source": "d1.show.date_disp"
       },
+      "show.identity_source": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
       "show.net_number": {
         "value": null,
         "confidence": "unavailable",
@@ -938,7 +949,7 @@
         "source": "d1.show.city"
       },
       "venue.city_total": {
-        "value": 134,
+        "value": 135,
         "confidence": "stated",
         "source": "D-07 city_history"
       },

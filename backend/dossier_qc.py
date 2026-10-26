@@ -251,11 +251,23 @@ def _eligible_primary_lbs(view: dict) -> set[int]:
 # ---------------------------------------------------------------------------
 
 
-def _run_g1_identity(gate: _Gate, date_iso: str, event_id: int | None) -> None:
+def _run_g1_identity(gate: _Gate, date_iso: str, event_id: int | None,
+                     identity: dict | None = None) -> None:
     from backend.qc.corroborate import places_agree_loose, venue_check
 
     if event_id is None:
-        gate.reasons.append("G1: no Olof event resolved for this date")
+        # TODO-371 G1 fallback (plan § "G1 fallback"): Olof lists nothing on the date.
+        basis = (identity or {}).get("basis")
+        if basis == "external":
+            gate.notices.append(
+                f"Not in Olof's chronicle; show identity from {identity['source']}")
+        elif basis == "none" and not identity.get("dated_concert"):
+            gate.reasons.append(
+                "G1: not a dated concert (year placeholder or no concert recordings)")
+        elif basis == "none":
+            gate.reasons.append("G1: no Olof event and no external show row for this date")
+        else:
+            gate.reasons.append("G1: no Olof event resolved for this date")
         return
 
     try:
@@ -1059,7 +1071,7 @@ def run_gate(dossier: dict, conn: sqlite3.Connection, *, channel: str,
         date_iso = show.get("date_iso", "")
         pick_lb = _lb_of(view["fields"].get("pick.lb_id"))
 
-        _run_g1_identity(gate, date_iso, event_id)
+        _run_g1_identity(gate, date_iso, event_id, dossier.get("identity"))
         _run_g2_assert(gate)
         _run_g3_provenance(gate)
         _run_g4_quarantine(gate, event_id, show.get("venue"), show.get("city"), pick_lb,

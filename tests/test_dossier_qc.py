@@ -134,16 +134,89 @@ class TestG1Identity:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
     def test_no_olof_event_refuses(self):
+        # TODO-371 step 4: a concert recording, nothing in Olof or the external sources.
         db_path, conn, tmp_dir = _make_db()
         try:
             _insert_entry(conn, 101, "7/28/00")
+            conn.execute("UPDATE entries SET lb_category = 'concert' WHERE lb_number = 101")
             conn.commit()
 
             from backend.dossier import build_dossier
             result = build_dossier("2000-07-28", db_path=db_path)
             qc = result["qc"]
             assert qc["refused"] is True
-            assert any("no Olof event" in r for r in qc["reasons"])
+            assert qc["reasons"] == [
+                "G1: no Olof event and no external show row for this date"]
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_placeholder_date_is_not_a_dated_concert(self):
+        # TODO-371 step 3: a year placeholder (or no concert recordings) refuses as such.
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            _insert_entry(conn, 101, "1/1/65")
+            conn.execute("UPDATE entries SET lb_category = 'concert' WHERE lb_number = 101")
+            _insert_entry(conn, 102, "7/28/00")
+            conn.execute("UPDATE entries SET lb_category = 'compilation' WHERE lb_number = 102")
+            conn.commit()
+
+            from backend.dossier import build_dossier
+            for date_iso in ("1965-01-01", "2000-07-28"):
+                qc = build_dossier(date_iso, db_path=db_path)["qc"]
+                assert qc["refused"] is True
+                assert qc["reasons"] == [
+                    "G1: not a dated concert (year placeholder or no concert recordings)"]
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_external_identity_builds_a_reduced_dossier(self):
+        # TODO-371 step 1: Olof lacks the show; setlist.fm names it and has the setlist.
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            _insert_entry(conn, 101, "4/18/96")
+            _insert_setlistfm(conn, "sfm1", "1996-04-18", "Strand Theatre", "Providence")
+            conn.execute("INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)"
+                         " VALUES ('u1', '1996-04-18', 'The Strand', 'Providence, RI')")
+            for pos, title in enumerate(("Drifter's Escape", "Watching The River Flow"), 1):
+                conn.execute(
+                    "INSERT INTO setlistfm_setlist (setlistfm_id, set_index, position,"
+                    " set_position, track_name, is_encore) VALUES ('sfm1', 0, ?, ?, ?, 0)",
+                    (pos, pos, title))
+            conn.commit()
+
+            from backend.dossier import build_dossier
+            d = build_dossier("1996-04-18", db_path=db_path)
+            assert d["qc"]["refused"] is False
+            assert "Not in Olof's chronicle; show identity from setlist.fm" in d["qc"]["notices"]
+            fields = d["view"]["fields"]
+            assert fields["show.identity_source"]["value"] == "setlist.fm"
+            assert fields["show.venue"]["value"] == "Strand Theatre"
+            assert fields["setlist.count"]["source"] == "setlist.fm"
+            titles = [r["title"]["value"] for r in d["view"]["rows"]["song"]]
+            assert titles == ["Drifter's Escape", "Watching The River Flow"]
+            # Olof-only facts stay on their fallbacks: nothing is guessed.
+            assert fields["show.net_number"]["value"] is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_disagreeing_external_rows_offer_a_chooser(self):
+        # TODO-371 step 2: two external rows that agree on neither venue nor city.
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            _insert_entry(conn, 101, "1/13/62")
+            _insert_setlistfm(conn, "a", "1962-01-13", "WBAI FM", "New York")
+            _insert_setlistfm(conn, "b", "1962-01-13", "San Remo Coffee House", "Boston")
+            conn.commit()
+
+            from backend.dossier import build_dossier
+            d = build_dossier("1962-01-13", db_path=db_path)
+            assert d["ambiguous"] is True
+            assert [c["location"] for c in d["candidates"]] == [
+                "WBAI FM", "San Remo Coffee House"]
+            picked = build_dossier("1962-01-13", location="San Remo Coffee House",
+                                   db_path=db_path)
+            assert picked["qc"]["refused"] is False
+            assert picked["view"]["fields"]["show.venue"]["value"] == "San Remo Coffee House"
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 

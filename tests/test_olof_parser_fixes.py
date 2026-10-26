@@ -947,6 +947,49 @@ def test_containerless_anchor_placed_on_its_header():
     assert anchors == [(0, 40270), (2, 40280)]
 
 
+def test_containerless_anchor_without_number_line_takes_the_next_header():
+    # TODO-371: DSN36360's bookmark sits in a table cell right before its header,
+    # which has no "36360" number line (DAR Constitution Hall, 2014-11-25).
+    soup = BeautifulSoup(
+        '<p><a name="DSN36350"></a>36350</p><p>23 November 2014</p>'
+        '<table><tr><td><a name="DSN36360"></a></td></tr></table>'
+        '<p>DAR Constitution Hall</p><p>Washington, District Of Columbia</p>'
+        '<p>25 November 2014</p>'
+        '<p><a name="DSN36370"></a>36370</p><p>26 November 2014</p>', "lxml")
+    _paras, anchors = _locate_events(soup)
+    assert anchors == [(0, 36350), (2, 36360), (5, 36370)]
+
+
+def test_unbookmarked_number_line_becomes_an_anchor():
+    # TODO-371: DSN40330 (UMBC, 2019-11-12) has its number line but no bookmark.
+    soup = BeautifulSoup(
+        '<p><a name="DSN40320"></a>40320</p><p>10 November 2019</p>'
+        '<p>40330</p><p>UMBC Event Center</p><p>12 November 2019</p>'
+        '<p><a name="DSN40340"></a>40340</p><p>13 November 2019</p>', "lxml")
+    _paras, anchors = _locate_events(soup)
+    assert anchors == [(0, 40320), (2, 40330), (5, 40340)]
+
+
+def test_bare_number_outside_the_anchor_range_is_not_adopted():
+    # A venue-history list number past the page's last event stays text.
+    soup = BeautifulSoup(
+        '<p><a name="DSN100"></a>100</p><p>1 May 1965</p>'
+        '<p><a name="DSN110"></a>110</p><p>2 May 1965</p>'
+        '<p>990</p><p>7 September 2008</p>', "lxml")
+    _paras, anchors = _locate_events(soup)
+    assert [eid for _i, eid in anchors] == [100, 110]
+
+
+def test_backstage_session_is_not_a_concert():
+    # TODO-371: "Backstage before concert." (1965-05-09 DSN985) is a filmed
+    # off-stage performance, not a second concert on the date.
+    from backend.olof_parser import EventRecord, _classify_event_type
+
+    rec = EventRecord(event_id=985, page_filename="x.htm", tour_name="", raw_text="")
+    rec.venue, rec.session_title = "Royal Albert Hall", "Backstage before concert."
+    assert _classify_event_type(rec, ["985", "Royal Albert Hall", "1.", "Slow Down"]) == "other"
+
+
 def test_shared_paragraph_keeps_the_number_it_names():
     # Olof's number line "4 0610" (stray space) carries DSN440610 (typo) and DSN40610.
     soup = BeautifulSoup(

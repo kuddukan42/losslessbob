@@ -4,7 +4,7 @@
   "channel": "public",
   "category": "propagated-tapers",
   "note": "LTA series-code anchor (LB-06998) propagated through a strong family to its remasters",
-  "verified_by": "tj (C32 sign-off, 2026-10-24)",
+  "verified_by": "tj (C32 sign-off, 2026-10-24); re-pinned 2026-10-25 for TODO-371's Olof parser fix — tour position 6 of 28 → 7 of 29 (2004-10-18 Pavilion at ARC recovered) (awaiting tj's look)",
   "expected": {
     "fields": {
       "band.label": {
@@ -82,7 +82,7 @@
               "inferred": false
             },
             {
-              "text": "6",
+              "text": "7",
               "slot": "position",
               "inferred": false
             },
@@ -92,7 +92,7 @@
               "inferred": false
             },
             {
-              "text": "28",
+              "text": "29",
               "slot": "size",
               "inferred": false
             },
@@ -112,7 +112,7 @@
               "inferred": false
             }
           ],
-          "text": "Show 6 of 28 on the 2004 US Fall College Tour.",
+          "text": "Show 7 of 29 on the 2004 US Fall College Tour.",
           "claims": [
             "tour_position"
           ]
@@ -246,6 +246,7 @@
           "run.label",
           "run.position",
           "show.setlist_confidence",
+          "song[].premiere",
           "source[].completeness",
           "source[].disc_count",
           "source[].filecount",
@@ -325,6 +326,11 @@
         "confidence": "stated",
         "source": "d1.show.date_disp"
       },
+      "show.identity_source": {
+        "value": null,
+        "confidence": "unavailable",
+        "source": null
+      },
       "show.net_number": {
         "value": 1677,
         "confidence": "stated",
@@ -391,14 +397,17 @@
         "source": null
       },
       "stats.premiere_count": {
-        "value": 3,
+        "value": 2,
         "confidence": "stated",
         "source": "D-02 song_history"
       },
       "stats.premiere_titles": {
-        "value": 3,
+        "value": [
+          "I'll Remember You",
+          "A Hard Rain's A-Gonna Fall"
+        ],
         "confidence": "stated",
-        "source": "D-02 song_history (ungated count)"
+        "source": "D-02 song_history (gated)"
       },
       "stats.rotation": {
         "value": 62,
@@ -751,6 +760,15 @@
               "olof_songs.annotations"
             ]
           },
+          "premiere": {
+            "value": true,
+            "tier": 3,
+            "source": "D-02 song_history",
+            "confidence": "stated",
+            "derived_from": [
+              "D-02 song_history"
+            ]
+          },
           "writers": {
             "value": null,
             "tier": 2,
@@ -761,13 +779,6 @@
           "instruments[]": {
             "value": null,
             "tier": 2,
-            "source": null,
-            "confidence": "unavailable",
-            "derived_from": []
-          },
-          "premiere": {
-            "value": null,
-            "tier": 3,
             "source": null,
             "confidence": "unavailable",
             "derived_from": []
@@ -1538,6 +1549,15 @@
               "olof_songs.annotations"
             ]
           },
+          "premiere": {
+            "value": true,
+            "tier": 3,
+            "source": "D-02 song_history",
+            "confidence": "stated",
+            "derived_from": [
+              "D-02 song_history"
+            ]
+          },
           "writers": {
             "value": null,
             "tier": 2,
@@ -1548,13 +1568,6 @@
           "instruments[]": {
             "value": null,
             "tier": 2,
-            "source": null,
-            "confidence": "unavailable",
-            "derived_from": []
-          },
-          "premiere": {
-            "value": null,
-            "tier": 3,
             "source": null,
             "confidence": "unavailable",
             "derived_from": []
@@ -2684,7 +2697,7 @@
               ]
             },
             "position": {
-              "value": 6,
+              "value": 7,
               "tier": 3,
               "source": "D-07 run_context.tour",
               "confidence": "stated",
@@ -2693,7 +2706,7 @@
               ]
             },
             "size": {
-              "value": 28,
+              "value": 29,
               "tier": 3,
               "source": "D-07 run_context.tour",
               "confidence": "stated",
@@ -2709,6 +2722,62 @@
             "olof_events.tour_name",
             "olof_events",
             "claim:D-07 run_context.tour"
+          ],
+          "local_analysis": false
+        }
+      },
+      {
+        "anchor": "song[].premiere",
+        "row": 2,
+        "claim": {
+          "kind": "premiere",
+          "text_key": "tour_premiere",
+          "slots": {
+            "tour": {
+              "value": "2004 US Fall College Tour",
+              "tier": 3,
+              "source": "D-02 song_history",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events.tour_name"
+              ]
+            }
+          },
+          "scope": "tour",
+          "verified_by": "D-02 song_history",
+          "ties": 0,
+          "derived_from": [
+            "song_performances",
+            "setlistfm",
+            "claim:D-02 song_history"
+          ],
+          "local_analysis": false
+        }
+      },
+      {
+        "anchor": "song[].premiere",
+        "row": 13,
+        "claim": {
+          "kind": "premiere",
+          "text_key": "tour_premiere",
+          "slots": {
+            "tour": {
+              "value": "2004 US Fall College Tour",
+              "tier": 3,
+              "source": "D-02 song_history",
+              "confidence": "stated",
+              "derived_from": [
+                "olof_events.tour_name"
+              ]
+            }
+          },
+          "scope": "tour",
+          "verified_by": "D-02 song_history",
+          "ties": 0,
+          "derived_from": [
+            "song_performances",
+            "setlistfm",
+            "claim:D-02 song_history"
           ],
           "local_analysis": false
         }

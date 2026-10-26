@@ -279,10 +279,12 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     {%- for grp in claim_groups(key, field, d.view) -%}
       {%- set txt = grp.segments | map(attribute='text') | join('') -%}
       {%- if grp.claim -%}{{ claim(txt) }}
+      {%- elif grp.segments | selectattr('slot', 'equalto', 'chronicle') | list -%}<span data-verbatim>{{ txt }}</span>
       {%- else -%}{{ txt }}{%- endif -%}
     {%- endfor -%}
   {%- elif field and field.value is string -%}
-    {{ field.value }}
+    {#- No claim slots (e.g. a TODO-371 reduced dossier): the value is quoted source text. -#}
+    <span data-verbatim>{{ field.value }}</span>
   {%- endif -%}
 {%- endmacro -%}
 
@@ -342,6 +344,10 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
     {%- set band_idx_f = fields.get('show.band_index') -%}
     {%- if band_idx_f and band_idx_f.value is not none %}<span data-lb="show.band_index" hidden>{{ band_idx_f.value }}</span>{% endif -%}
   </div>
+  {%- set ident_f = fields.get('show.identity_source') -%}
+  {%- if ident_f and ident_f.value %}
+  <div class="show-meta venue-detail">Not in Olof&rsquo;s chronicle &middot; show identity from {{ lbf('show.identity_source', ident_f) }}</div>
+  {%- endif %}
   {%- set venue_detail_f = fields.get('show.venue_detail') -%}
   {%- if venue_detail_f and venue_detail_f.value %}
   <div class="show-meta venue-detail">{{ lbf('show.venue_detail', venue_detail_f, verbatim=true) }}</div>
@@ -495,7 +501,7 @@ footer.prov{margin-top:2.4rem;padding-top:.9rem;border-top:1px solid var(--rule)
 {%- set setlist_count_f = fields.get('setlist.count') -%}
 {%- set setlist_conf_f = fields.get('show.setlist_confidence') -%}
 <section>
-  <h2><span>Setlist{% if setlist_count_f and setlist_count_f.value %} &middot; {{ lbf('setlist.count', setlist_count_f, text=(setlist_count_f.value ~ ' songs')) }}{% elif song_rows %} &middot; {{ song_rows | length }} songs{% endif %}</span><span class="line"></span>{% if src_x %}<span class="credit">source: <a href="{{ src_x.url }}" target="_blank" rel="noopener">{% if src_is_bobserve %}Bobserve{% else %}Olof Bj&ouml;rner, <em>Still on the Road</em>{% endif %}</a> &#8599;</span>{% endif %}</h2>
+  <h2><span>Setlist{% if setlist_count_f and setlist_count_f.value %} &middot; {{ lbf('setlist.count', setlist_count_f, text=(setlist_count_f.value ~ ' songs')) }}{% elif song_rows %} &middot; {{ song_rows | length }} songs{% endif %}</span><span class="line"></span>{% if setlist_count_f and setlist_count_f.source in ('setlist.fm', 'bobdylan.com') %}<span class="credit">source: {{ setlist_count_f.source }}</span>{% elif src_x %}<span class="credit">source: <a href="{{ src_x.url }}" target="_blank" rel="noopener">{% if src_is_bobserve %}Bobserve{% else %}Olof Bj&ouml;rner, <em>Still on the Road</em>{% endif %}</a> &#8599;</span>{% endif %}</h2>
   {%- set rotation_f = fields.get('stats.rotation') -%}
   {%- set rotation_rank_f = fields.get('stats.rotation_rank') -%}
   {%- if rotation_f and rotation_f.value is not none %}

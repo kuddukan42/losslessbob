@@ -1,3 +1,12 @@
+[2026-10-25] — TODO-371 closed: dossiers for shows Olof doesn't list (reduced dossier / chooser / clearer refusals); BUG-389 Olof parser recovers 13 dropped events
+Fixed: backend/olof_parser.py: a containerless DSN bookmark with no number-line header lands on the next header with a date line (2014-11-25 DSN36360); a number line with no bookmark becomes an anchor (2019-11-12 DSN40330); 'Backstage…' sessions classify as other, not concert (BUG-389). Corpus diff: 13 events added, 3 retyped, 0 removed. Live: 10 pages reparsed (snapshot .debug/olof_before_todo371.db), song_index 73,834, show_picks rank-1 unchanged, qc run
+Added: backend/dossier.py: _external_identity / _external_setlist / _is_dated_concert — when Olof lists nothing, identity + setlist from setlist.fm (else bobdylan.com) with every Olof field on its fallback; disagreeing external rows return the HTTP 300 chooser
+Changed: backend/dossier_qc.py: G1 passes an external identity with a notice; refusals now say 'not a dated concert' or 'no Olof event and no external show row'
+Added: backend/dossier_anchors.py, backend/templates/dossier.html: anchor show.identity_source + header note; setlist credit names the external source; Olof chronicle text renders data-verbatim (L1 lint no longer flags Olof's own 'first')
+Changed: sweep 2026-10-25: 4,053 targets, refused 64 → 50, withheld 939, 0 gate/build errors
+Changed: tests/golden/dossier: re-pinned for the new anchor; 1963-10-26 + 1975-12-08 (New York 135 shows) and 2004-10-21 (tour show 7 of 29) changed — on tj's review page (artifact 6TZFoUiv55andHATBk2L5i, collection review_1025)
+Added: tests: G1 fallback ×4 (test_dossier_qc.py), parser anchors/backstage ×4 (test_olof_parser_fixes.py)
+
 [2026-10-25] — TODO-338 closed: TUIT↔Olof venue_xref built; dossier shows TUIT's longer venue string as a secondary line
 Added: backend/venue_xref.py + venue_xref table (USER-tier, derived): pairwise links — 2,610 by shared date (all 3,986 shared dates) + 8 by a unique geo25 name match, no transitive merge; CLI python -m backend.venue_xref --apply; tools/tuit_sync.py rebuilds it after --sync-tours/--sync-venues. Live build after backup data/backups/losslessbob_preVenueXref_*.db
 Added: backend/dossier_anchors.py, backend/templates/dossier.html: anchor show.venue_detail (local_analysis) — TUIT's venue string under Olof's header, only where it strictly extends it

@@ -2,6 +2,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-371: Show Dossier: G1 fallback for the 64 dates with no Olof event — reduced dossier from setlist.fm/bobdylan.com identity (plan row C28a)
+Priority: Medium
+Status: Done
+Added: 2026-10-25
+Closed: 2026-10-25
+Description: Follow-up from TODO-342. The 2026-10-25 sweep refuses 64 dates on G1 (was 115 at C28). Plan § 'G1 fallback' (archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md ~line 834) specifies a 4-step rule and a reduced dossier. Step 0: measure the split with a throwaway tools/_c28a_split.py; build only if step 1 rescues a meaningful share of the concert dates. Needs tj sign-off on the reduced dossier and the step-3 placeholder rule before any build.
+Built 2026-10-25 per tj (all four steps). First BUG-389: the Olof parser was dropping 13 events (no number line / no bookmark) — recovering them rescued 2001-07-23, 2004-10-18, 2014-11-25, 2019-11-12. Then the fallback: no Olof event + external rows that agree → reduced dossier (identity + setlist from setlist.fm, else bobdylan.com; Olof fields on fallbacks; show.identity_source + G1 notice); disagreeing rows → HTTP 300 chooser (1962-01-13); else refuse 'not a dated concert' (year placeholder / no concert recordings) or 'no Olof event and no external show row'. Sweep 2026-10-25: 4,053 targets, refused 64 → 50 (45 not a dated concert, 1 no external row, 4 pre-existing G1 venue disagreements on 3 dates), 0 errors. Golden re-pinned: 1963-10-26, 1975-12-08 (NYC 135), 2004-10-21 (tour 7 of 29) — on tj's review page.
+
 TODO-338: Cross TUIT's show spine against olof_events — 94 TUIT shows have no olof concert, 216 olof concerts have no TUIT row
 Priority: Medium
 Status: Done

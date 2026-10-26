@@ -10,12 +10,6 @@ Status: Open
 Added: 2026-10-25
 Description: Follow-up from TODO-342. The dossier's verdict pick already skips fragment / G2-failing sources (dossier_fields.completeness + fits_show, C27), but show_picks (concert_ranker/picks.py) still ranks them, so Library/other consumers can rank-1 a fragment. Plan § 'Verdict pick' (~line 705) names this follow-up. Measure rank-1 changes on a .debug DB copy first (compute_show_picks with db_path) before any live write.
 
-TODO-371: Show Dossier: G1 fallback for the 64 dates with no Olof event — reduced dossier from setlist.fm/bobdylan.com identity (plan row C28a)
-Priority: Medium
-Status: In progress — tj approved all four steps 2026-10-25 (batch-1 decision page). Measured split: 15 reduced dossier / 1 chooser / 46 'not a dated concert' / 1 plain refuse (63 dates). PREVIOUSLY: Open
-Added: 2026-10-25
-Description: Follow-up from TODO-342. The 2026-10-25 sweep refuses 64 dates on G1 (was 115 at C28). Plan § 'G1 fallback' (archive/specs/SHOW_DOSSIER_REDESIGN_PLAN.md ~line 834) specifies a 4-step rule and a reduced dossier. Step 0: measure the split with a throwaway tools/_c28a_split.py; build only if step 1 rescues a meaningful share of the concert dates. Needs tj sign-off on the reduced dossier and the step-3 placeholder rule before any build.
-
 TODO-355: Refile 1,293 public LBs out of PRIVATE LB + 848 misfiled collection folders
 Priority: Medium
 Status: Open
