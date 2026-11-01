@@ -246,8 +246,8 @@ def get_wtrf_rejected_topics(lb_number: int, db_path=None) -> set[str]:
     return out
 
 
-def get_wtrf_attempted_topics(db_path=None) -> dict[str, str]:
-    """Return the latest attempt status for every WTRF topic already tried.
+def get_wtrf_attempted_topics(db_path=None) -> dict[str, dict]:
+    """Return the latest seeding attempt for every WTRF topic already tried.
 
     The board walk (``backend.wtrf_board``) uses this to resume: a topic that
     has been resolved once — seeded, refused or found to hold no torrent — is
@@ -262,12 +262,13 @@ def get_wtrf_attempted_topics(db_path=None) -> dict[str, str]:
         db_path: Optional DB path override.
 
     Returns:
-        Mapping of topic_url to the newest seeding attempt's status.
+        Mapping of topic_url to the newest seeding attempt, as a dict with
+        ``status``, ``lb_number`` (0 when none was resolved) and ``error``.
     """
     with get_connection(db_path) as conn:
         rows = conn.execute(
             """
-            SELECT topic_url, status
+            SELECT topic_url, status, lb_number, error
               FROM wtrf_downloads
              WHERE topic_url IS NOT NULL AND topic_url != ''
                AND (seed_folder IS NOT NULL
@@ -276,7 +277,7 @@ def get_wtrf_attempted_topics(db_path=None) -> dict[str, str]:
              ORDER BY attempted_at ASC
             """
         ).fetchall()
-    return {r[0]: r[1] for r in rows}
+    return {r[0]: {"status": r[1], "lb_number": r[2], "error": r[3] or ""} for r in rows}
 
 
 def get_folders_for_lb(lb_number: int, db_path=None) -> list[str]:

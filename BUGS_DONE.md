@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-392: WTRF walk treats temporary failures as permanently attempted and prints LB-????? on every seen line
+Status: Fixed
+File(s): backend/wtrf_board.py:259,backend/db/posting.py:249
+Reported: 2026-11-01
+Fixed: 2026-11-01
+Root cause: attempted_topics treated every recorded outcome except disk_full as final, and the seen branch skipped before setting lb_number.
+Fix: get_wtrf_attempted_topics returns status, LB and error; failed, unreadable and now-held topics are retried; seen lines show the recorded LB and outcome.
+
 BUG-391: Forced rescrape NULLs curator entries.source_type
 Status: Fixed
 File(s): backend/scraper.py:436

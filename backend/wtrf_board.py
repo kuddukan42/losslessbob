@@ -47,6 +47,7 @@ from backend.forum_poster import FORUM_BASE, _board_url_sorted, _get_session
 from backend.tracker_seed import SeedOptions
 from backend.wtrf_seed import (
     DEFAULT_DELAY,
+    TOPIC_UNREADABLE,
     LinkSpec,
     SeedTarget,
     _prepare_from_link,
@@ -65,6 +66,9 @@ TOPICS_PER_PAGE = 20
 #: its drive was full. It does not count as attempted, so the next run (and
 #: ``--resume``'s frontier probe) tries it again.
 STATUS_DISK_FULL = "disk_full"
+
+#: Reason text of a topic dropped because its LB was not held at the time.
+_NOT_HELD = "is not in the collection"
 
 _TOPIC_ID_RE = re.compile(r"topic=(\d+)")
 
@@ -256,17 +260,35 @@ def _owned_candidates(candidates: list[int]) -> list[int]:
     return owned
 
 
-def attempted_topics() -> dict[str, str]:
+def _worth_retrying(attempt: dict) -> bool:
+    """Return True if an earlier attempt's outcome may no longer hold.
+
+    Args:
+        attempt: One value of :func:`backend.db.get_wtrf_attempted_topics`.
+
+    Returns:
+        True for a full drive, a failure, an unreadable topic, or a recording
+        that was not held then but has a collection folder now.
+    """
+    if attempt["status"] in (STATUS_DISK_FULL, "failed"):
+        return True
+    error = attempt["error"]
+    if TOPIC_UNREADABLE in error:
+        return True
+    return _NOT_HELD in error and bool(database.get_folders_for_lb(attempt["lb_number"]))
+
+
+def attempted_topics() -> dict[str, dict]:
     """Return the topics a walk should skip, keyed by URL.
 
     :func:`backend.db.get_wtrf_attempted_topics` minus those whose newest
-    attempt ended ``disk_full`` — a refusal that clears once space is freed.
+    attempt could turn out differently now (see :func:`_worth_retrying`).
 
     Returns:
-        Mapping of topic_url to its newest seeding attempt's status.
+        Mapping of topic_url to its newest seeding attempt.
     """
-    return {url: status for url, status in database.get_wtrf_attempted_topics().items()
-            if status != STATUS_DISK_FULL}
+    return {url: attempt for url, attempt in database.get_wtrf_attempted_topics().items()
+            if not _worth_retrying(attempt)}
 
 
 def seed_board(
@@ -358,8 +380,10 @@ def seed_board(
         if topic.url in known:
             seen_run += 1
             counts["skipped"] += 1
-            event.update({"status": "seen",
-                          "reason": f"attempted before ({known[topic.url]})"})
+            attempt = known[topic.url]
+            outcome = ": ".join(filter(None, (attempt["status"], attempt["error"])))
+            event.update({"status": "seen", "lb_number": attempt["lb_number"] or None,
+                          "reason": f"attempted before ({outcome})"})
             yield event
             continue
 
@@ -386,7 +410,7 @@ def seed_board(
                 if not owned:
                     counts["skipped"] += 1
                     event.update({"status": "skipped", "reason": (
-                        f"LB-{info['lb_number']:05d} is not in the collection — "
+                        f"LB-{info['lb_number']:05d} {_NOT_HELD} — "
                         f"nothing local to seed from")})
                     if not dry_run:
                         _record(info, target, None, "not_seeded", event["reason"],

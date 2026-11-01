@@ -64,6 +64,10 @@ from backend.wtrf_scraper import (
 
 logger = logging.getLogger(__name__)
 
+#: ``resolve_link`` error for a topic that could not be read at all. Nothing was
+#: learned about the post, so the board walk tries it again next time.
+TOPIC_UNREADABLE = "topic unreadable — session expired or the link is dead"
+
 #: Default seconds between HTTP requests. WTRF is a small hobbyist forum;
 #: this is page fetching, not searching, so the search flood-control floor
 #: does not apply.
@@ -406,7 +410,7 @@ def resolve_link(session: requests.Session, spec: LinkSpec,
     out["torrent_url"] = post["torrent_url"]
 
     if not post["body_text"] and not post["torrent_url"]:
-        out["error"] = "topic unreadable — session expired or the link is dead"
+        out["error"] = TOPIC_UNREADABLE
         return out
 
     if spec.lb_number is not None:

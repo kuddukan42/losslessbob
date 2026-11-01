@@ -1,3 +1,8 @@
+[2026-11-01] — WTRF board walk: seen lines show the real LB and outcome; temporary failures retried (BUG-392)
+Fixed: backend/wtrf_board.py, backend/db/posting.py: seen topics printed LB-????? because the walk skips them before any lookup — they now show the recorded LB and outcome. get_wtrf_attempted_topics returns status, lb_number and error per topic
+Fixed: backend/wtrf_board.py, backend/wtrf_seed.py: failed, unreadable and not-held-then-but-held-now topics are no longer skipped as attempted; 96 topics qualify today (88 now held, 5 unreadable, 3 failed)
+Added: TODO-375: 1,662 no-LB posts, 1,160 with a held same-date LB, await a decision on date + content matching
+
 [2026-10-26] — Backlog Unlock verdicts: family_guard on (TODO-319), curator splits authoritative (TODO-234), TUIT fills + reader (TODO-332), 15 source-type edits (TODO-339)
 Changed: tools/tapematch/config.yaml: family_guard enabled; replay_writeback --apply wrote 14 dates (86 pair verdicts, families 35 -> 53); app DB synced; CALIBRATION_ERAS.md regenerated (current hash d8c433ea3149)
 Added: backend/tapematch_sync.py: _human_cannot_links/_split_cannot_links — a confirmed_different pair judgment (latest across all runs of the date) splits that family at sync, only ever splits. Applied: 1995-12-09 LB-6083 out, 1998-06-12 LB-4436+6465 out of the 5800/6462 family

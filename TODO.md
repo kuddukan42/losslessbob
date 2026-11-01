@@ -1,3 +1,9 @@
+TODO-375: WTRF: resolve 1,662 no-LB posts by title date + content check
+Priority: Medium
+Status: Open
+Added: 2026-11-01
+Description: 1,662 seen topics were dropped with no LB number; 1,160 have a title date with a held same-date LB (DB count, not content-checked). Would need one torrent download per post. Needs tj's call.
+
 TODO-355: Refile 1,293 public LBs out of PRIVATE LB + 848 misfiled collection folders
 Priority: Medium
 Status: Open — 2026-10-26 (tj): tj is refiling manually

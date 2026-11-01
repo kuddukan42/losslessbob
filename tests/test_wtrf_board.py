@@ -16,6 +16,11 @@ from backend.wtrf_board import (
 )
 
 
+def _attempt(status: str, lb_number: int = 0, error: str = "") -> dict:
+    """Return one ``get_wtrf_attempted_topics`` value."""
+    return {"status": status, "lb_number": lb_number, "error": error}
+
+
 def _row(topic_id: int, title: str, sticky: bool = False) -> str:
     """Return one board listing row, stickied or not."""
     bg = "stickybg" if sticky else "windowbg"
@@ -253,7 +258,7 @@ def test_seed_board_drops_candidates_the_collection_lacks(one_topic, monkeypatch
 def test_seed_board_skips_topics_already_attempted(one_topic, monkeypatch, tmp_path):
     url = f"{FORUM_BASE}/index.php?topic=61701.0"
     monkeypatch.setattr("backend.wtrf_board.database.get_wtrf_attempted_topics",
-                        lambda: {url: "qbt_added"})
+                        lambda: {url: _attempt("qbt_added", 1234)})
 
     def _boom(*_a, **_k):
         raise AssertionError("a seen topic must not be fetched")
@@ -266,13 +271,14 @@ def test_seed_board_skips_topics_already_attempted(one_topic, monkeypatch, tmp_p
 
     assert topic["status"] == "seen"
     assert "qbt_added" in topic["reason"]
+    assert topic["lb_number"] == 1234
     assert done["attempted"] == 0 and done["skipped"] == 1
 
 
 def test_seed_board_rescan_ignores_the_attempt_log(one_topic, monkeypatch, tmp_path):
     url = f"{FORUM_BASE}/index.php?topic=61701.0"
     monkeypatch.setattr("backend.wtrf_board.database.get_wtrf_attempted_topics",
-                        lambda: {url: "qbt_added"})
+                        lambda: {url: _attempt("qbt_added", 1234)})
     _stub_resolution(monkeypatch, {
         "lb_number": 4154, "lb_candidates": [4154], "lb_source": "attachment",
         "confidence": "definitive", "needs_content_check": False,
@@ -434,19 +440,34 @@ def test_seed_board_stops_on_a_full_disk_and_records_it(one_topic, monkeypatch,
     assert "walk stopped" in events[-1]["error"]
 
 
-def test_disk_full_topics_are_not_counted_as_attempted(monkeypatch):
-    from backend.wtrf_board import attempted_topics
+def test_only_lasting_outcomes_count_as_attempted(monkeypatch):
+    from backend.wtrf_board import _NOT_HELD, attempted_topics
+    from backend.wtrf_seed import TOPIC_UNREADABLE
+    lasting = {
+        "seeded": _attempt("qbt_added", 1),
+        "refused": _attempt("not_seeded", 2, "overlay would leave 90 MB"),
+        "no_lb": _attempt("skipped", 0, "no LB number in the post"),
+        "still_missing": _attempt("not_seeded", 3, f"LB-00003 {_NOT_HELD}"),
+    }
+    retried = {
+        "full": _attempt("disk_full", 4),
+        "failed": _attempt("failed", 5, "Cannot connect"),
+        "unreadable": _attempt("skipped", 0, TOPIC_UNREADABLE),
+        "held_now": _attempt("not_seeded", 6, f"LB-00006 {_NOT_HELD}"),
+    }
     monkeypatch.setattr("backend.wtrf_board.database.get_wtrf_attempted_topics",
-                        lambda: {"a": "qbt_added", "b": "disk_full", "c": "failed"})
+                        lambda: {**lasting, **retried})
+    monkeypatch.setattr("backend.wtrf_board.database.get_folders_for_lb",
+                        lambda lb: ["/some/folder"] if lb == 6 else [])
 
-    assert attempted_topics() == {"a": "qbt_added", "c": "failed"}
+    assert attempted_topics() == lasting
 
 
 def test_seed_board_stop_after_seen_ends_on_an_unbroken_run(monkeypatch, tmp_path):
     """A bumped known topic resets nothing; only N known in a row stop the walk."""
     monkeypatch.setattr("backend.wtrf_board.time.sleep", lambda _s: None)
     monkeypatch.setattr("backend.wtrf_board.database.get_meta", lambda _k: "16")
-    known = {f"{FORUM_BASE}/index.php?topic={n}.0": "qbt_added"
+    known = {f"{FORUM_BASE}/index.php?topic={n}.0": _attempt("qbt_added")
              for n in (899, 897, 896, 895, 893)}
     monkeypatch.setattr("backend.wtrf_board.database.get_wtrf_attempted_topics",
                         lambda: known)
