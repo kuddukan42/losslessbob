@@ -1024,3 +1024,22 @@ def test_drive_picker_reaches_folders_outside_the_mount(app, tmp_path):
 
 def test_drive_roots_skips_top_level_mounts(tmp_path):
     assert lb_nc.drive_roots([{"root_path": "/"}, {"root_path": "/srv"}]) == []
+
+
+def test_resolve_sgr_fixes_colours_independent_of_terminal_palette():
+    assert lb_nc.resolve_sgr("44;97;1", "rgb") == "48;2;0;0;170;38;2;255;255;255;1"
+    assert lb_nc.resolve_sgr("44;97;1", "256") == "48;5;19;38;5;231;1"
+    assert lb_nc.resolve_sgr("44;97;1", "ansi") == "44;97;1"
+    assert lb_nc.resolve_sgr("7;1", "rgb") == "7;1"                 # mono untouched
+    for name in lb_nc.SCHEME_NAMES:
+        for params in lb_nc.resolve_scheme(name, "rgb").values():
+            assert not any(lb_nc._ansi_index(int(p)) for p in params.split(";")
+                           if p.isdigit() and p not in ("0", "1", "2", "5"))
+
+
+def test_detect_depth(monkeypatch):
+    monkeypatch.setenv("COLORTERM", "truecolor")
+    assert lb_nc.detect_depth(8) == "rgb"
+    monkeypatch.delenv("COLORTERM")
+    assert lb_nc.detect_depth(256) == "256"
+    assert lb_nc.detect_depth(16) == "ansi"

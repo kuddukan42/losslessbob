@@ -1,3 +1,7 @@
+[2026-11-13] — lb-nc colours no longer depend on the terminal's palette
+Changed: tools/lb_nc.py: schemes resolve to fixed VGA colours — 24-bit when COLORTERM advertises it, else nearest xterm-256 — so Alacritty and Ptyxis render identically; new --colour {auto,rgb,256,ansi} (ansi = old terminal-palette behaviour)
+Added: tests/test_lb_nc.py: resolve_sgr / detect_depth tests
+
 [2026-11-01] — WTRF board walk: seen lines show the real LB and outcome; temporary failures retried (BUG-392)
 Fixed: backend/wtrf_board.py, backend/db/posting.py: seen topics printed LB-????? because the walk skips them before any lookup — they now show the recorded LB and outcome. get_wtrf_attempted_topics returns status, lb_number and error per topic
 Fixed: backend/wtrf_board.py, backend/wtrf_seed.py: failed, unreadable and not-held-then-but-held-now topics are no longer skipped as attempted; 96 topics qualify today (88 now held, 5 unreadable, 3 failed)

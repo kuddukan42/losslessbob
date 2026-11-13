@@ -113,7 +113,9 @@ BOX = {"h": "─", "v": "│", "tl": "┌", "tr": "┐", "bl": "└", "br": "┘
 ASCII_BOX = {"h": "-", "v": "|", "tl": "+", "tr": "+", "bl": "+", "br": "+",
              "tt": "+", "bt": "+", "lt": "+", "rt": "+"}
 
-# role -> SGR parameters. nc is 16-colour only, for authenticity.
+# role -> SGR parameters, written in the 16 ANSI colours. paint() resolves them through
+# VGA_RGB to explicit colours (see COLOUR_DEPTHS), so the look does not depend on the
+# terminal's own palette.
 SCHEMES: dict[str, dict[str, str]] = {
     "nc": {"pane": "44;37", "text": "44;97", "frame": "44;96", "header": "46;30;1",
            "cursor": "46;30", "tag": "44;93;1", "cursor_tag": "46;93;1", "dim": "44;36",
@@ -135,6 +137,67 @@ SCHEMES: dict[str, dict[str, str]] = {
              "dialog": "7", "dialog_hi": "0", "danger": "7;1", "run": "1", "ghost": "4",
              "odd": "3", "public": "1;3"},
 }
+
+# The 16 ANSI colours as the IBM VGA text mode drew them — the palette NC was designed on.
+# Index 0-7 normal, 8-15 bright.
+VGA_RGB: tuple[tuple[int, int, int], ...] = (
+    (0x00, 0x00, 0x00), (0xAA, 0x00, 0x00), (0x00, 0xAA, 0x00), (0xAA, 0x55, 0x00),
+    (0x00, 0x00, 0xAA), (0xAA, 0x00, 0xAA), (0x00, 0xAA, 0xAA), (0xAA, 0xAA, 0xAA),
+    (0x55, 0x55, 0x55), (0xFF, 0x55, 0x55), (0x55, 0xFF, 0x55), (0xFF, 0xFF, 0x55),
+    (0x55, 0x55, 0xFF), (0xFF, 0x55, 0xFF), (0x55, 0xFF, 0xFF), (0xFF, 0xFF, 0xFF),
+)
+# rgb: 24-bit SGR. 256: nearest xterm-256 entry (indexes 16-255 are fixed in practice).
+# ansi: the terminal's own 16-colour palette, as before.
+COLOUR_DEPTHS = ("auto", "rgb", "256", "ansi")
+_CUBE = (0, 95, 135, 175, 215, 255)
+
+
+def _xterm256(rgb: tuple[int, int, int]) -> int:
+    """Nearest xterm-256 index (colour cube or grey ramp) to an RGB triple."""
+    cands = [(16 + 36 * r + 6 * g + b, (_CUBE[r], _CUBE[g], _CUBE[b]))
+             for r in range(6) for g in range(6) for b in range(6)]
+    cands += [(232 + i, (8 + 10 * i,) * 3) for i in range(24)]
+    return min(cands, key=lambda c: sum((a - b) ** 2 for a, b in zip(c[1], rgb)))[0]
+
+
+def _ansi_index(code: int) -> tuple[bool, int] | None:
+    """(is_background, 0-15 colour index) for a 16-colour SGR code, else None."""
+    for base, bg, bright in ((30, False, 0), (40, True, 0), (90, False, 8), (100, True, 8)):
+        if base <= code <= base + 7:
+            return bg, code - base + bright
+    return None
+
+
+def resolve_sgr(params: str, depth: str) -> str:
+    """Rewrite the 16-colour codes in an SGR parameter string for a colour depth."""
+    if depth == "ansi":
+        return params
+    out = []
+    for part in params.split(";"):
+        hit = _ansi_index(int(part)) if part.isdigit() else None
+        if hit is None:
+            out.append(part)
+            continue
+        bg, idx = hit
+        lead = "48" if bg else "38"
+        if depth == "rgb":
+            out.append(f"{lead};2;" + ";".join(str(v) for v in VGA_RGB[idx]))
+        else:
+            out.append(f"{lead};5;{_xterm256(VGA_RGB[idx])}")
+    return ";".join(out)
+
+
+def resolve_scheme(name: str, depth: str) -> dict[str, str]:
+    """A scheme with its colours resolved for `depth` (rgb / 256 / ansi)."""
+    return {role: resolve_sgr(params, depth) for role, params in SCHEMES[name].items()}
+
+
+def detect_depth(tput_colors: int) -> str:
+    """Best colour depth the terminal advertises: COLORTERM, then terminfo."""
+    if os.environ.get("COLORTERM", "").lower() in ("truecolor", "24bit"):
+        return "rgb"
+    return "256" if tput_colors >= 256 else "ansi"
+
 
 Line = list[tuple[str, str]]          # (role, text) segments
 
@@ -4028,11 +4091,12 @@ def save_scheme(name: str) -> None:
 class Term:
     """Terminal capabilities plus raw mode, alt screen and mouse, always restored."""
 
-    def __init__(self, mouse: bool = True) -> None:
+    def __init__(self, mouse: bool = True, depth: str = "auto") -> None:
         self.fd = sys.stdin.fileno()
         self.mouse = mouse
         self.saved: list | None = None
         self.colors = self._colors()
+        self.depth = detect_depth(self.colors) if depth == "auto" else depth
 
     @staticmethod
     def _colors() -> int:
@@ -4112,6 +4176,7 @@ def main_loop(app: App, term: Term) -> None:
     keys = Keys(term.fd)
     screen = Screen()
     resized = [True]
+    schemes: dict[tuple[str, str], dict[str, str]] = {}
     signal.signal(signal.SIGWINCH, lambda *_: resized.__setitem__(0, True))
     while not app.quit:
         force = False
@@ -4120,7 +4185,10 @@ def main_loop(app: App, term: Term) -> None:
             term.write("\x1b[0m\x1b[2J")
         cols, rows = term.size()
         if app.dirty or force or app.loading or app.runner.running:
-            scheme = SCHEMES["mono" if term.colors < 16 else app.scheme]
+            name = "mono" if term.colors < 16 and term.depth == "ansi" else app.scheme
+            if (name, term.depth) not in schemes:
+                schemes[(name, term.depth)] = resolve_scheme(name, term.depth)
+            scheme = schemes[(name, term.depth)]
             painted = [paint(line, scheme) for line in app.frame(cols, rows)]
             term.write(screen.draw(painted, force))
             app.dirty = False
@@ -4315,7 +4383,7 @@ def build_fixture(base: Path) -> FakeApi:
     return FakeApi(mounts, routes, rows)
 
 
-def preview(cols: int, rows: int, ascii_only: bool, scheme: str) -> int:
+def preview(cols: int, rows: int, ascii_only: bool, scheme: str, depth: str = "ansi") -> int:
     """Paint each screen once against the synthetic tree, then exit."""
     with tempfile.TemporaryDirectory(prefix="lb_nc-") as tmp:
         api = build_fixture(Path(tmp))
@@ -4333,7 +4401,7 @@ def preview(cols: int, rows: int, ascii_only: bool, scheme: str) -> int:
             ("misfiled", lambda: (setattr(app, "dialog", None), app.handle("f8"))),
             ("help", lambda: app.handle("f1")),
         ]
-        sch = SCHEMES[scheme]
+        sch = resolve_scheme(scheme, depth)
         out = sys.stdout
         for title, step in screens:
             step()
@@ -4357,6 +4425,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--read-only", action="store_true",
                         help="browse, info, view; every write gated off")
     parser.add_argument("--scheme", choices=SCHEME_NAMES)
+    parser.add_argument("--colour", choices=COLOUR_DEPTHS, default="auto",
+                        help="rgb/256: fixed VGA colours, same in every terminal; ansi: the "
+                             "terminal's own palette (default auto: best it advertises)")
     parser.add_argument("--ascii", action="store_true", help="ASCII glyphs and borders")
     parser.add_argument("--no-mouse", action="store_true")
     parser.add_argument("--preview", action="store_true",
@@ -4375,7 +4446,8 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.preview:
         cols, rows = shutil.get_terminal_size((100, 30))
-        return preview(args.columns or cols, args.rows or rows, ascii_only, scheme)
+        depth = "ansi" if args.colour == "auto" else args.colour
+        return preview(args.columns or cols, args.rows or rows, ascii_only, scheme, depth)
 
     if not sys.stdin.isatty() or not sys.stdout.isatty():
         sys.stderr.write("lb_nc needs a terminal (try --preview)\n")
@@ -4387,7 +4459,7 @@ def main(argv: list[str] | None = None) -> int:
 
     log.info("start api=%s left=%s right=%s read_only=%s",
              args.api, args.left, args.right, args.read_only)
-    term = Term(mouse=not args.no_mouse)
+    term = Term(mouse=not args.no_mouse, depth=args.colour)
     signal.signal(signal.SIGTERM, lambda *_: sys.exit(143))
     term.enter()
     app = None
