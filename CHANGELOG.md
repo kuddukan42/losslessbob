@@ -1,3 +1,8 @@
+[2026-11-15] — lb-nc: F8 inside a subfolder lists only the misfiled folders under it
+Changed: tools/lb_nc.py: F8 below a mount root scopes the misfiled view to that subtree (Pane.scope, list_view scope=, under()); at a mount root or off-mount it still lists every mount; title reads "MISFILED — under MOUNT:/path"; new App.place() shared with the pane title; F1 help updated
+Added: tests/test_lb_nc.py: subtree-scope and under() tests
+Changed: docs/wiki/Collection-Pipeline.md: F8 wording
+
 [2026-11-15] — lb-nc: one failed rename no longer kills the whole batch
 Fixed: tools/lb_nc.py: Runner._fail dropped every remaining job of the failed one's batch, so one bad rename (LB-10369) stopped the rest of an r / n batch (BUG-393). New Job.alone flag — an alone job fails by itself and its batch carries on; rename_job sets it
 Added: tests/test_lb_nc.py: alone-failure and rename_job.alone tests

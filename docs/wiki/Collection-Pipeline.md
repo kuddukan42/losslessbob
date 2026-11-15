@@ -38,7 +38,8 @@ into place before the source is removed; failure leaves the source untouched
 
 Two-pane NC-style TUI (`tools/lb_nc.py`) over the collection mounts. Marks each LB
 folder canonical / misfiled / stray / duplicate / blocked against the year route; F7
-files to the route, F6 moves to the other pane's mount, F8 lists misfiled rows. It has
+files to the route, F6 moves to the other pane's mount, F8 lists misfiled rows (only
+those under the pane's folder when it is below a mount root). It has
 no filesystem code of its own for filing — writes go through `/api/pipeline/file/*`
 (rename via `/api/folder/rename`). Refuses a cross-drive batch leaving < 2 GB free.
 The move queue persists in `data/lb_nc_queue.json` (resumed at next start; a move still

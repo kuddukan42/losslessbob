@@ -727,12 +727,27 @@ def drive_roots(mounts: list[dict]) -> list[Path]:
 VIEWS = {"misfiled": "MISFILED — all mounts", "gone": "GONE — collection paths not on disk"}
 
 
-def list_view(coll: Collection | None, view: str) -> list[Entry]:
-    """A virtual pane: every misfiled (or gone) collection folder, wherever it is."""
+def under(path: str | Path, scope: str | Path) -> bool:
+    """True when path is scope itself or anywhere below it."""
+    path, scope = norm(path), norm(scope).rstrip("/")
+    return path == scope or path.startswith(scope + "/")
+
+
+def list_view(coll: Collection | None, view: str,
+              scope: Path | None = None) -> list[Entry]:
+    """A virtual pane: every misfiled (or gone) collection folder, wherever it is.
+
+    Args:
+        coll: The loaded collection; None gives an empty list.
+        view: "misfiled" or "gone".
+        scope: When set, only folders at or below this directory.
+    """
     if coll is None:
         return []
     out = []
     for row in (coll.stale() if view == "gone" else coll.misfiled()):
+        if scope is not None and not under(row["disk_path"], scope):
+            continue
         path = Path(row["disk_path"])
         status, note = coll.row_status(row)
         entry = Entry(path.name, path, "dir", status, note, row, int(row["lb_number"]))
@@ -758,6 +773,7 @@ class Pane:
         self.tags: set[str] = set()
         self.show = "all"                # a SHOW_MODES value
         self.view = "misfiled"           # which virtual list, when root is None
+        self.scope: Path | None = None   # the virtual list covers only this subtree
 
     @property
     def virtual(self) -> bool:
@@ -2079,7 +2095,8 @@ f           show: all → not in the right spot → not linked (no collection re
 6 Move      move tagged LB folders to the OTHER pane's mount (hash-verified, the
             collection row and qBittorrent follow); r also re-routes their years
 7 File      file tagged misfiled / stray folders to their year-routed location
-8 Misfd     toggle this pane to the virtual list of every misfiled folder
+8 Misfd     toggle this pane to the virtual list of misfiled folders: only those
+            under this folder when inside a mount, every one at a mount root
 9 Menu      drive picker, swap panes, checksums, renames, stop queue, cancel
             pipeline, re-route years
 0/q Quit
@@ -2276,7 +2293,7 @@ class App:
         for pane in (self.left, self.right):
             keep = pane.current().key if pane.current() else ""
             if pane.virtual:
-                pane.entries = list_view(self.coll, pane.view)
+                pane.entries = list_view(self.coll, pane.view, pane.scope)
             else:
                 pane.entries = list_dir(pane.root, pane.cwd, self.coll)
             keys = [e.key for e in pane.visible()]
@@ -2301,8 +2318,12 @@ class App:
         pane.filter = ""
         pane.cursor = pane.top = 0
 
-    def set_root(self, pane: Pane, root: Path | None, view: str = "misfiled") -> None:
-        """Re-root a pane at a mount, a directory, or (None) a virtual view."""
+    def set_root(self, pane: Pane, root: Path | None, view: str = "misfiled",
+                 scope: Path | None = None) -> None:
+        """Re-root a pane at a mount, a directory, or (None) a virtual view.
+
+        scope limits a virtual view to one subtree; None lists every mount.
+        """
         if root is not None and not root.is_dir():
             self.dialog = Message("Drive", [f"Not reachable: {root}"])
             return
@@ -2313,7 +2334,8 @@ class App:
         pane.tags.clear()
         pane.filter, pane.cursor, pane.top = "", 0, 0
         pane.view = view
-        pane.entries = list_view(self.coll, view) if root is None else \
+        pane.scope = scope if root is None else None
+        pane.entries = list_view(self.coll, view, pane.scope) if root is None else \
             list_dir(root, root, self.coll)
 
     def handle(self, key: str) -> None:
@@ -2587,7 +2609,11 @@ class App:
             self.say(f"sizing {cur.name}…")
 
     def toggle_misfiled(self) -> None:
-        """F8: flip the active pane to the misfiled view and back."""
+        """F8: flip the active pane to the misfiled view and back.
+
+        Inside a subfolder of a mount the view lists only the misfiled folders under it;
+        at a mount root (or off-mount) it lists every mount.
+        """
         pane = self.active
         if pane.virtual:
             root, cwd, _label = pane.prev or (Path.cwd(), Path.cwd(), "")
@@ -2598,7 +2624,9 @@ class App:
             if self.coll is None:
                 self.dialog = Message("Misfiled", [self.coll_error or "no collection loaded"])
                 return
-            self.set_root(pane, None, "misfiled")
+            mount = self.coll.mount_for(pane.cwd) if pane.cwd else None
+            deep = mount and norm(pane.cwd) != norm(mount["root_path"])
+            self.set_root(pane, None, "misfiled", pane.cwd if deep else None)
 
     def request_quit(self) -> None:
         """F10: quit, warning when a queue is still running."""
@@ -3786,6 +3814,14 @@ class App:
                 text = f"{human(size)} {'fits' if ok else 'does not fit'} · {label} {free}"
         return ("frame" if ok else "odd", " " + fit(text, width, self.g["ellipsis"]))
 
+    def place(self, path: Path) -> str:
+        """A path as MOUNT:/relative when it sits on a mount, else as is."""
+        mount = self.coll.mount_for(path) if self.coll else None
+        if not mount:
+            return str(path)
+        rel = os.path.relpath(path, mount["root_path"])
+        return f"{mount['label']}:/" + ("" if rel == "." else rel)
+
     def pane_title(self, pane: Pane) -> tuple[str, str, str]:
         """(title, counts, free space) for a pane; free is "" for a virtual view."""
         if pane.virtual and pane.view == "gone":
@@ -3794,13 +3830,10 @@ class App:
         if pane.virtual:
             public = sum(1 for e in pane.entries if e.status == "public")
             count = f"{len(pane.entries)} to refile" + (f" · {public} public" if public else "")
-            return VIEWS["misfiled"], count, ""
-        mount = self.coll.mount_for(pane.cwd) if self.coll else None
-        if mount:
-            rel = os.path.relpath(pane.cwd, mount["root_path"])
-            title = f"{mount['label']}:/" + ("" if rel == "." else rel)
-        else:
-            title = str(pane.cwd)
+            title = VIEWS["misfiled"] if pane.scope is None else \
+                f"MISFILED — under {self.place(pane.scope)}"
+            return title, count, ""
+        title = self.place(pane.cwd)
         lbs = [e for e in pane.entries if e.lb is not None]
         off = sum(1 for e in lbs if e.status in OFF)
         return title, f"{len(lbs)} LB" + (f" · {off} off" if off else ""), self.free(pane.cwd)

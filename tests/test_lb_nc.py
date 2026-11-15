@@ -378,6 +378,27 @@ def test_f6_skips_private_lb_in_private_path(papp, tmp_path):
     assert any("private LBs stay in" in line for line in papp.dialog.text)
 
 
+def test_f8_lists_only_the_misfiled_under_cwd(app, tmp_path):
+    app.set_root(app.left, tmp_path / "DYLAN2")
+    app.set_dir(app.left, tmp_path / "DYLAN2" / "PRIVATE LB")
+    app.handle("f8")                                  # 1860 on DYLAN1 is left out
+    assert [e.lb for e in app.left.entries] == [8002]
+    assert "under" in app.pane_title(app.left)[0]
+    app.relist()
+    assert [e.lb for e in app.left.entries] == [8002]
+    app.handle("f8")                                  # back to the folder
+    assert app.left.cwd == tmp_path / "DYLAN2" / "PRIVATE LB"
+    app.set_dir(app.left, tmp_path / "DYLAN2")         # at a mount root: every mount
+    app.handle("f8")
+    assert app.left.scope is None and len(app.left.entries) > 1
+
+
+def test_under_is_a_path_prefix_not_a_string_prefix():
+    assert lb_nc.under("/a/1987/x", "/a/1987")
+    assert lb_nc.under("/a/1987", "/a/1987/")
+    assert not lb_nc.under("/a/19870/x", "/a/1987")
+
+
 def test_show_filter_public_in_misfiled_view(app):
     app.handle("f8")
     app.left.show = "public"
