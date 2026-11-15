@@ -752,6 +752,26 @@ def test_failure_drops_only_its_own_batch():
     assert runner.finished and runner.progress() == (None, 3, 3)
 
 
+def test_alone_failure_keeps_its_batch_running():
+    ran: list[str] = []
+
+    def boom(emit):
+        raise lb_nc.JobError("nope")
+    runner = lb_nc.Runner(False, threaded=False)
+    runner.submit([lb_nc.Job("a", "", lambda e: ran.append("a"), alone=True),
+                   lb_nc.Job("bad", "", boom, alone=True),
+                   lb_nc.Job("c", "", lambda e: ran.append("c"), alone=True)])
+    assert ran == ["a", "c"]
+    assert runner.failure[0] == "bad"
+    assert "1 job(s) queued behind it still run" in runner.failure[1]
+    assert runner.progress() == (None, 3, 3)
+
+
+def test_rename_jobs_fail_alone(tmp_path):
+    entry = lb_nc.Entry(name="x", path=tmp_path / "x", kind="dir")
+    assert lb_nc.rename_job(lb_nc.Api(), entry, "y").alone
+
+
 def test_stop_drops_everything_queued():
     ran: list[str] = []
     runner = lb_nc.Runner(False, threaded=True)

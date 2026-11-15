@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-393: lb-nc: one failed rename drops the rest of the rename batch
+Status: Fixed
+File(s): tools/lb_nc.py:1737
+Reported: 2026-11-15
+Fixed: 2026-11-15
+Root cause: Runner._fail always dropped the failed job's batch — right for chained jobs, wrong for r / n where every rename is its own unit.
+Fix: Job.alone flag: an alone job fails by itself and its batch carries on; rename_job sets it. Tests added.
+
 BUG-392: WTRF walk treats temporary failures as permanently attempted and prints LB-????? on every seen line
 Status: Fixed
 File(s): backend/wtrf_board.py:259,backend/db/posting.py:249

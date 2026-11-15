@@ -1030,6 +1030,7 @@ class Job:
     cross: bool = False            # the move copies across drives
     meter: list[int] = field(default_factory=lambda: [0, 0])   # [bytes done, bytes total]
     spec: dict | None = None       # how to rebuild it after a restart; None: never saved
+    alone: bool = False            # independent of its batch: a failure doesn't drop the rest
 
 
 def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None,
@@ -1167,7 +1168,7 @@ def rename_job(api: Api, entry: Entry, new_name: str, journal: Journal | None = 
             emit(f"  qBittorrent: {res['qbt_error']}", False)
     mark = "  [LB page checked first]" if guarded else ""
     return Job("rename", f"{entry.name}  {GLYPHS['dest']} {new_name}{mark}", run,
-               path=norm(entry.path),
+               path=norm(entry.path), alone=True,
                spec={"kind": "rename", "path": str(entry.path), "lb": entry.lb,
                      "new_name": new_name})
 
@@ -1735,12 +1736,16 @@ class Runner:
         return job
 
     def _fail(self, job: Job, text: str) -> None:
-        """Record a failure and drop the rest of that job's batch; later batches still run."""
+        """Record a failure and drop the rest of that job's batch; later batches still run.
+
+        An `alone` job (e.g. one rename of many) fails by itself; its batch carries on.
+        """
         with self.lock:
-            skipped = len(self.current)
-            self.current.clear()
-            self.total -= skipped
-            waiting = sum(len(b) for b in self.pending)
+            skipped = 0 if job.alone else len(self.current)
+            if skipped:
+                self.current.clear()
+                self.total -= skipped
+            waiting = len(self.current) + sum(len(b) for b in self.pending)
         lines = [text]
         if skipped:
             lines.append(f"{skipped} queued job(s) of that batch not run")

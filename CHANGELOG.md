@@ -1,3 +1,7 @@
+[2026-11-15] — lb-nc: one failed rename no longer kills the whole batch
+Fixed: tools/lb_nc.py: Runner._fail dropped every remaining job of the failed one's batch, so one bad rename (LB-10369) stopped the rest of an r / n batch (BUG-393). New Job.alone flag — an alone job fails by itself and its batch carries on; rename_job sets it
+Added: tests/test_lb_nc.py: alone-failure and rename_job.alone tests
+
 [2026-11-15] — Private LBs file flat into one private folder (private_collection_path)
 Added: backend/filer.py: meta private_collection_path — when set, a private LB (lb_master status) resolves to <folder>/<name> instead of its year route (no mount override); result carries private: true. backend/routes/core.py: settings whitelist; backend/routes/mounts.py: GET /api/collection/routes returns private_path
 Added: tools/lb_nc.py: with private_path set, a private LB outside that folder is misfiled (F7 files it there, live-checked that it has no page), inside it is canonical, F6 skips it; FakeApi serves private_path
