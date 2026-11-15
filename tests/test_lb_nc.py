@@ -393,6 +393,13 @@ def test_f8_lists_only_the_misfiled_under_cwd(app, tmp_path):
     assert app.left.scope is None and len(app.left.entries) > 1
 
 
+def test_f8_scopes_an_off_mount_folder_too(app, tmp_path):
+    (tmp_path / "elsewhere").mkdir()
+    app.set_root(app.left, tmp_path / "elsewhere")
+    app.handle("f8")
+    assert app.left.scope == tmp_path / "elsewhere" and app.left.entries == []
+
+
 def test_under_is_a_path_prefix_not_a_string_prefix():
     assert lb_nc.under("/a/1987/x", "/a/1987")
     assert lb_nc.under("/a/1987", "/a/1987/")

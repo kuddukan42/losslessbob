@@ -1,5 +1,5 @@
 [2026-11-15] — lb-nc: F8 inside a subfolder lists only the misfiled folders under it
-Changed: tools/lb_nc.py: F8 below a mount root scopes the misfiled view to that subtree (Pane.scope, list_view scope=, under()); at a mount root or off-mount it still lists every mount; title reads "MISFILED — under MOUNT:/path"; new App.place() shared with the pane title; F1 help updated
+Changed: tools/lb_nc.py: F8 below a mount root scopes the misfiled view to that subtree (Pane.scope, list_view scope=, under()); only at an exact mount root does it still list every mount (off-mount folders, e.g. PRIVATE LB beside Concerts, scope too); title reads "MISFILED — under MOUNT:/path"; new App.place() shared with the pane title; F1 help updated
 Added: tests/test_lb_nc.py: subtree-scope and under() tests
 Changed: docs/wiki/Collection-Pipeline.md: F8 wording
 
