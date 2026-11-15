@@ -17,6 +17,13 @@ from backend import db as database
 logger = logging.getLogger(__name__)
 
 MOUNT_CHECK_TIMEOUT = 2.0  # seconds; prevents Flask thread hang on dead UNC paths
+# meta key: one flat folder every private LB files into, instead of its year route
+PRIVATE_PATH_KEY = "private_collection_path"
+
+
+def private_collection_path(db_path=None) -> str:
+    """The configured private-LB folder (meta ``private_collection_path``), or "" if unset."""
+    return (database.get_meta(PRIVATE_PATH_KEY, db_path=db_path) or "").strip().rstrip("/")
 
 
 # ── Path normalisation ─────────────────────────────────────────────────────────
@@ -153,10 +160,14 @@ def resolve_destination_for_lb(
             (e.g. year subfolder) the route would otherwise use.
         db_path: Optional SQLite path override.
 
+    A private LB (lb_master status) files flat into the private_collection_path
+    folder when that setting is set and no mount override is given — no year
+    route is needed then.
+
     Returns a dict with keys:
         ok (bool), year (int|None), mount_id (int|None), mount_label (str),
         mount_root (str), sub_path (str), dest_parent (str), dest (str),
-        error (str|None), error_code (str|None)
+        private (bool), error (str|None), error_code (str|None)
 
     error_code is one of: no_date | no_route | mount_offline | dest_exists | db_error
     """
@@ -174,6 +185,10 @@ def resolve_destination_for_lb(
     date_str = (entry_data.get("entry") or {}).get("date_str") or ""
 
     year = year_from_date_str(date_str)
+    private_root = private_collection_path(db_path)
+    if private_root and mount_id_override is None \
+            and database.get_lb_status(lb_number, db_path) == "private":
+        return _private_destination(Path(private_root), folder_name, year, db_path)
     if year is None:
         return _err(
             "no_date",
@@ -240,6 +255,41 @@ def resolve_destination_for_lb(
         "sub_path": sub_path,
         "dest_parent": str(dest_parent),
         "dest": str(dest),
+        "private": False,
+        "error": None,
+        "error_code": None,
+    }
+
+
+def _private_destination(root: Path, folder_name: str, year: int | None, db_path=None) -> dict:
+    """Destination inside the flat private-LB folder; mount = the one on the same drive."""
+    if not _path_reachable(str(root)):
+        return _err("mount_offline", f"Private folder is not accessible at {root}")
+    dest = root / folder_name
+    if dest.exists():
+        return _err("dest_exists", f"Destination already exists: {dest}")
+    mount_id, label = None, root.name
+    try:
+        with database.get_connection(db_path) as conn:
+            mounts = conn.execute("SELECT id, label, root_path FROM collection_mounts").fetchall()
+        drive = root.parent
+        for m in mounts:
+            mroot = Path(m["root_path"])
+            if mroot == root or root.is_relative_to(mroot) or mroot.parent == drive:
+                mount_id, label = m["id"], m["label"]
+                break
+    except Exception as exc:  # the mount is informational only
+        logger.warning("private destination: mount lookup failed: %s", exc)
+    return {
+        "ok": True,
+        "year": year,
+        "mount_id": mount_id,
+        "mount_label": label,
+        "mount_root": str(root),
+        "sub_path": "",
+        "dest_parent": str(root),
+        "dest": str(dest),
+        "private": True,
         "error": None,
         "error_code": None,
     }

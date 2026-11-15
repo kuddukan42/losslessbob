@@ -82,6 +82,7 @@ LB_TOKEN_RE = re.compile(r"\s*[\(\[]?LB-\d{1,6}(?:-NFT)?[\)\]]?", re.IGNORECASE)
 IN_PLACE = "at its routed location, not in collection"
 PRIVATE_DIR = "PRIVATE LB"          # a folder named this holds private LBs, outside the routes
 PRIVATE_AREA = "in the private area"
+PRIVATE_PATH = ""                    # backend private_collection_path, normed; "" = unset
 OFF = ("misfiled", "public", "stray", "dup", "blocked", "gone", "relink")   # not in the right spot
 SHOW_MODES = ("all", "off", "unlinked", "public", "nft", "name", "bad")
 SHOW_LABELS = {"off": "not right", "unlinked": "not linked",
@@ -478,8 +479,15 @@ class Collection:
     integrity: dict[int, dict] = field(default_factory=dict)   # lb -> integrity status row
 
     @classmethod
-    def build(cls, mounts: list[dict], routes: list[dict], rows: list[dict]) -> Collection:
-        """Index backend payloads by path and LB number."""
+    def build(cls, mounts: list[dict], routes: list[dict], rows: list[dict],
+              private_path: str = "") -> Collection:
+        """Index backend payloads by path and LB number.
+
+        private_path (the backend's private_collection_path) sets the module-wide
+        PRIVATE_PATH: when non-empty, every private LB belongs directly in it.
+        """
+        global PRIVATE_PATH
+        PRIVATE_PATH = norm(private_path) if private_path else ""
         coll = cls(mounts, {int(r["year"]): r for r in routes}, rows)
         for row in rows:
             if row.get("disk_path"):
@@ -499,7 +507,8 @@ class Collection:
                                    else payload))
         if not isinstance(rows, list):
             raise ApiError(str(rows.get("error") if isinstance(rows, dict) else rows))
-        return cls.build(mounts["mounts"], routes["routes"], rows)
+        return cls.build(mounts["mounts"], routes["routes"], rows,
+                         routes.get("private_path") or "")
 
     def mount_for(self, path: str | Path) -> dict | None:
         """The mount whose root is the longest prefix of path."""
@@ -537,20 +546,30 @@ class Collection:
 
     @staticmethod
     def in_private(path: str | Path) -> bool:
-        """True when the folder sits anywhere under a PRIVATE_DIR folder."""
+        """True when the folder sits anywhere under PRIVATE_PATH or a PRIVATE_DIR folder."""
+        parent = norm(Path(path).parent)
+        if PRIVATE_PATH and (parent == PRIVATE_PATH or parent.startswith(PRIVATE_PATH + "/")):
+            return True
         return PRIVATE_DIR in Path(path).parent.parts
 
     def row_status(self, row: dict) -> tuple[str, str]:
         """(status, note) for a collection row: canonical, misfiled, public or blocked.
 
-        A private LB anywhere under PRIVATE_DIR is where it belongs. A public LB there
-        has gone public since it was filed: status "public", destination its year route.
-        Everything else must sit directly in its year route's folder.
+        With PRIVATE_PATH set, a private LB belongs directly in that folder (anywhere
+        else it is misfiled, destination PRIVATE_PATH). Without it, a private LB
+        anywhere under PRIVATE_DIR is where it belongs. A non-private LB in the private
+        area has gone public since it was filed: status "public", destination its
+        year route. Everything else must sit directly in its year route's folder.
         """
         if norm(row["disk_path"]) in self.gone:
             return "gone", ""
         year = self.year_of(row)
-        if self.in_private(row["disk_path"]) and row.get("lb_status") != "public":
+        if PRIVATE_PATH and row.get("lb_status") == "private":
+            if norm(Path(row["disk_path"]).parent) == PRIVATE_PATH:
+                return "canonical", PRIVATE_AREA
+            return "misfiled", PRIVATE_PATH
+        if not PRIVATE_PATH and self.in_private(row["disk_path"]) \
+                and row.get("lb_status") != "public":
             return "canonical", PRIVATE_AREA
         if not year:
             return "blocked", "no show date — can't route"
@@ -653,6 +672,8 @@ def unlinked(entry: Entry) -> bool:
     if entry.kind != "dir":
         return False
     if entry.row and norm(entry.row.get("disk_path") or "") == norm(entry.path):
+        return False
+    if PRIVATE_PATH and norm(entry.path) == PRIVATE_PATH:
         return False
     return not (CONTAINER_RE.match(entry.name)
                 or entry.name in (PRIVATE_DIR, DUP_DIR, "extras"))
@@ -1022,6 +1043,7 @@ def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None
     restart): nothing is started, the job only follows it to the end and journals it.
     """
     guarded = gate is not None and private_marked(entry.name, entry.path, entry.row)
+    into_private = bool(PRIVATE_PATH) and norm(Path(dest).parent) == PRIVATE_PATH
     cross = not same_device(entry.path, existing(dest))
     registered = bool(entry.row) and norm(entry.row.get("disk_path") or "") == norm(entry.path)
     body_item: dict[str, Any] = {"path": str(entry.path), "lb_number": entry.lb}
@@ -1036,8 +1058,8 @@ def file_job(api: Api, entry: Entry, mount_id: int | None, file_mode: str | None
     def run(emit: Emit) -> None:
         emit(f"LB-{entry.lb:05d} {entry.name}" + (" (already running)" if adopt else ""), False)
         if not adopt:
-            if guarded:
-                gate.check(entry.lb, emit)
+            if guarded:                   # into the private folder: must still be private
+                gate.check(entry.lb, emit, want=not into_private)
             started = api.post("/api/pipeline/file/start", body)
             if not started.get("ok"):
                 raise JobError(
@@ -1318,10 +1340,10 @@ def undo_job(api: Api, rec: dict, journal: Journal, gate: PageGate | None = None
                 gate.check(rec.get("lb") or lb_of(back.name), emit,
                            want=not has_nft_suffix(back.name))
         if gate is not None and kind in ("move", "aside"):
-            here = Path(rec["to"])
-            if private_marked(here.name, here, None) or \
-                    private_marked(Path(rec["from"]).name, Path(rec["from"]), None):
-                gate.check(rec.get("lb") or lb_of(here.name), emit)
+            here, back = Path(rec["to"]), Path(rec["from"])
+            if private_marked(here.name, here, None) or private_marked(back.name, back, None):
+                into_private = bool(PRIVATE_PATH) and norm(back.parent) == PRIVATE_PATH
+                gate.check(rec.get("lb") or lb_of(here.name), emit, want=not into_private)
         if kind in ("rename", "aside"):
             _move_path(api, rec["to"], rec["from"], rec.get("lb") if kind == "rename" else None)
             if kind == "rename" and rec.get("registered") and rec.get("lb") is not None:
@@ -2391,6 +2413,10 @@ class App:
         """
         if entry.kind != "dir" or entry.lb is None or entry.status in ("dup", "blocked", "gone"):
             return None
+        if PRIVATE_PATH and entry.status == "misfiled" and entry.note == PRIVATE_PATH:
+            return Path(PRIVATE_PATH)                 # a private LB: flat, no year route
+        if PRIVATE_PATH and entry.status == "canonical" and entry.note == PRIVATE_AREA:
+            return None                               # private LBs don't follow F6 mounts
         year = self.year_of(entry)
         route = self.coll.routes.get(year) if year is not None else None
         if not route:

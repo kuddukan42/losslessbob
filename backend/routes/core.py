@@ -303,7 +303,8 @@ def db_settings() -> Response:
                     "force_scrape", "search_page_size",
                     "qbt_host", "qbt_port", "qbt_category", "qbt_tags",
                     "tracker_list", "wtrf_board_id", "ui_language",
-                    "pipeline_file_mode", "integrity_scan_interval_hours",
+                    "pipeline_file_mode", "private_collection_path",
+                    "integrity_scan_interval_hours",
                     "file_verify_enabled", "file_verify_interval_hours",
                     "file_verify_budget_seconds", "file_verify_files_per_mount",
                     "scanner_roots", "scanner_excludes"]

@@ -83,9 +83,15 @@ def collection_mounts_delete(mount_id: int) -> Response:
 
 @bp.route("/api/collection/routes", methods=["GET"])
 def collection_routes_list() -> Response:
-    """List all year routes joined with mount label and root_path."""
+    """List all year routes joined with mount label and root_path.
+
+    ``private_path`` is the flat folder private LBs file into instead of a route
+    ("" when unset — see backend.filer.private_collection_path).
+    """
     try:
-        return jsonify({"routes": database.get_collection_routes()})
+        from backend.filer import private_collection_path
+        return jsonify({"routes": database.get_collection_routes(),
+                        "private_path": private_collection_path()})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
