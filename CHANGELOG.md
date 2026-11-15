@@ -1,3 +1,8 @@
+[2026-11-15] — Review page for private LBs missing date/location (canonical-naming blockers)
+Added: tools/private_meta_review.py: `build` writes a standalone data/exports/private_meta_review.html — every private my_collection LB with a blank entries.date_str/location (129 today, 112 with an olof_events match), Olof city/region/country suggestions, editable fields, live canonical-name preview, confirm/skip kept in localStorage, Export → private_meta_decisions.json; `apply` writes confirmed rows onto entries (dry-run default; --apply backs up to data/backups + quick_check, skips rows changed since build, logs to data/logs/)
+Added: tests/test_private_meta_review.py: location format + dry-run/apply/stale-skip tests
+Changed: PROJECT.md: file tree lists tools/private_meta_review.py
+
 [2026-11-15] — lb-nc: F8 inside a subfolder lists only the misfiled folders under it
 Changed: tools/lb_nc.py: F8 below a mount root scopes the misfiled view to that subtree (Pane.scope, list_view scope=, under()); only at an exact mount root does it still list every mount (off-mount folders, e.g. PRIVATE LB beside Concerts, scope too); title reads "MISFILED — under MOUNT:/path"; new App.place() shared with the pane title; F1 help updated
 Added: tests/test_lb_nc.py: subtree-scope and under() tests
