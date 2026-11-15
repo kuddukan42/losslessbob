@@ -2038,10 +2038,10 @@ HELP = """lb_nc — two panes over the collection mounts
 Move        ↑ ↓ PgUp PgDn Home End   (phone: k j K J g G)
 Tab         switch pane              Enter   open folder
 Backspace   up one level             Space/Ins tag · + all · - none · * invert
-/           filter the active pane   Esc     close / clear filter / clear tags
+/           filter the active pane   Esc     close / clear filter / show all / clear tags
 f           show: all → not in the right spot → not linked (no collection record
             points at it) → public LBs in the private folder → -NFT mismatches
-            → non-canonical names → integrity issues
+            → non-canonical names → integrity issues; Esc jumps back to all
 
 1 Help      this screen
 2 Info      the folder's collection row, show date, route and expected location
@@ -2515,9 +2515,13 @@ class App:
         self.active.editing = True
 
     def escape(self) -> None:
-        """Esc: clear the filter, else the tags."""
+        """Esc: clear the filter, else the f show mode (back to all), else the tags."""
         if self.active.filter:
             self.active.filter, self.active.cursor = "", 0
+        elif self.active.show != "all":
+            self.active.show = "all"
+            self.active.cursor = self.active.top = 0
+            self.say("showing everything")
         else:
             self.active.tags.clear()
 

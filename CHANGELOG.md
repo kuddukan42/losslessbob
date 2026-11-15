@@ -1,6 +1,7 @@
 [2026-11-14] — lb-nc: f cycles to a "not linked" view
 Added: tools/lb_nc.py: show mode "unlinked" (after "not right" in the f cycle) — folders no my_collection record points at: stray / dup / relink LB folders and folders with no LB tag; year folders, PRIVATE LB, _duplicates and extras are left out
-Changed: tests/test_lb_nc.py: test_show_unlinked; cycle tests updated for the new step
+Changed: tools/lb_nc.py: Esc clears the filter, then the f show mode (back to all), then the tags
+Changed: tests/test_lb_nc.py: test_show_unlinked (incl. Esc reset); cycle tests updated for the new step
 
 [2026-11-13] — lb-nc colours no longer depend on the terminal's palette
 Changed: tools/lb_nc.py: schemes resolve to fixed VGA colours — 24-bit when COLORTERM advertises it, else nearest xterm-256 — so Alacritty and Ptyxis render identically; new --colour {auto,rgb,256,ansi} (ansi = old terminal-palette behaviour)

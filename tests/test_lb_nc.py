@@ -415,6 +415,10 @@ def test_show_unlinked(app, tmp_path):
     ]
     app.set_dir(app.right, tmp_path / "DYLAN2")
     assert "1987" not in [e.name for e in app.right.visible()]
+    app.active = app.right
+    app.handle("esc")                                 # Esc: back to all
+    assert app.right.show == "all"
+    assert "1987" in [e.name for e in app.right.visible()]
 
 
 def test_duplicate_resolver_sets_aside(app, tmp_path):
