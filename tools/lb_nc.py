@@ -159,7 +159,7 @@ def _xterm256(rgb: tuple[int, int, int]) -> int:
     cands = [(16 + 36 * r + 6 * g + b, (_CUBE[r], _CUBE[g], _CUBE[b]))
              for r in range(6) for g in range(6) for b in range(6)]
     cands += [(232 + i, (8 + 10 * i,) * 3) for i in range(24)]
-    return min(cands, key=lambda c: sum((a - b) ** 2 for a, b in zip(c[1], rgb)))[0]
+    return min(cands, key=lambda c: sum((a - b) ** 2 for a, b in zip(c[1], rgb, strict=True)))[0]
 
 
 def _ansi_index(code: int) -> tuple[bool, int] | None:
@@ -2114,6 +2114,9 @@ Glyphs: ✓ canonical  → misfiled (⇒ where it belongs)  ? stray, not in coll
         ✗ gone — the record's folder isn't on disk  ⇄ a copy of a gone record
 Flags:  n -NFT suffix wrong  ! integrity issue   highlighted name: not canonical
 A private LB anywhere under "PRIVATE LB" counts as canonical (--private-dir renames it).
+With the backend's private_collection_path set, a private LB belongs directly in that
+one folder instead: elsewhere it is misfiled, F7 files it there flat (no year route,
+checked live first that it has no page), and F6 leaves it where it is.
 
 Private LBs, -NFT folders and anything in the private folder are only moved after a
 live check that the LB's page exists on the LB site — no page (or no answer): refused,
@@ -2901,6 +2904,8 @@ class App:
                 skipped.append(f"  skip {e.name}: collection has LB-{e.lb:05d} at {e.note}")
             elif e.status in ("blocked", "gone"):
                 skipped.append(f"  skip {e.name}: {e.note or 'folder is gone'}")
+            elif PRIVATE_PATH and e.status == "canonical" and e.note == PRIVATE_AREA:
+                skipped.append(f"  skip {e.name}: private LBs stay in {PRIVATE_PATH}")
             elif here and here["id"] == mount["id"] and e.status == "canonical":
                 skipped.append(f"  skip {e.name}: already on {mount['label']}")
             else:
@@ -4269,12 +4274,19 @@ class FakeApi(Api):
         self.calls: list[tuple[str, dict | None]] = []
         self.integrity: list[dict] = []
         self.no_page: set[int] = set()
+        self.private_path = ""                # the backend's private_collection_path
 
     def _route(self, year: int) -> dict | None:
         return next((r for r in self.routes_rows if r["year"] == year), None)
 
     def _resolve(self, item: dict) -> dict:
         row = next((r for r in self.rows if r["lb_number"] == item["lb_number"]), None)
+        if self.private_path and "mount_id" not in item and row \
+                and row.get("lb_status") == "private":
+            dest = Path(self.private_path) / Path(item["path"]).name
+            if dest.exists():
+                return {"ok": False, "error_code": "dest_exists", "error": f"exists: {dest}"}
+            return {"ok": True, "dest": str(dest), "mount_label": "private", "private": True}
         year = Collection.year_of(row) if row else None
         if year is None:
             m = YEAR_RE.match(Path(item["path"]).name)
@@ -4298,7 +4310,7 @@ class FakeApi(Api):
             for r in self.routes_rows:
                 m = next(x for x in self.mounts if x["id"] == r["mount_id"])
                 out.append(dict(r, mount_label=m["label"], root_path=m["root_path"]))
-            return {"routes": out}
+            return {"routes": out, "private_path": self.private_path}
         if path == "/api/collection" and method == "GET":
             return [dict(r) for r in self.rows]
         if path.startswith("/api/collection/") and path.split("/")[-1].isdigit() \

@@ -1,3 +1,9 @@
+[2026-11-15] — Private LBs file flat into one private folder (private_collection_path)
+Added: backend/filer.py: meta private_collection_path — when set, a private LB (lb_master status) resolves to <folder>/<name> instead of its year route (no mount override); result carries private: true. backend/routes/core.py: settings whitelist; backend/routes/mounts.py: GET /api/collection/routes returns private_path
+Added: tools/lb_nc.py: with private_path set, a private LB outside that folder is misfiled (F7 files it there, live-checked that it has no page), inside it is canonical, F6 skips it; FakeApi serves private_path
+Added: tests/test_filer_private.py, tests/test_lb_nc.py: private-path routing tests
+Changed: tools/lb_nc.py: zip strict=True (ruff B905)
+
 [2026-11-14] — lb-nc: f cycles to a "not linked" view
 Added: tools/lb_nc.py: show mode "unlinked" (after "not right" in the f cycle) — folders no my_collection record points at: stray / dup / relink LB folders and folders with no LB tag; year folders, PRIVATE LB, _duplicates and extras are left out
 Changed: tools/lb_nc.py: Esc clears the filter, then the f show mode (back to all), then the tags

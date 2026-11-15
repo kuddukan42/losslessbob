@@ -1780,6 +1780,11 @@ Maps each concert year to a destination mount + optional sub-path. Used by `file
 
 Index: `idx_routes_mount ON collection_routes(mount_id)`.
 `meta` key `pipeline_file_mode` (`'move'` or `'copy'`) controls whether `filer.py` moves or copies folders.
+`meta` key `private_collection_path` (absolute folder, `""` = unset; set via `POST /api/db/settings`):
+when set, an LB whose `lb_master.lb_status` is `private` files flat into that folder instead of its
+year route (no `mount_id` override only; `resolve_destination_for_lb` returns `private: true`).
+`GET /api/collection/routes` returns it as `private_path`; `tools/lb_nc.py` then treats a private LB
+anywhere else as misfiled.
 
 ### `collection_integrity_status` — TODO-284: latest per-LB integrity scan result
 | Column | Type | Notes |

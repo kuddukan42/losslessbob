@@ -315,6 +315,69 @@ def test_show_filter_cycles(app, tmp_path):
     assert "notes.txt" in names()
 
 
+@pytest.fixture
+def papp(tmp_path, monkeypatch):
+    """The app with the backend's private_collection_path set to DYLAN2/LB-Private."""
+    monkeypatch.setattr(lb_nc, "POLL", 0)
+    monkeypatch.setattr(lb_nc, "PROBE_INTERVAL", 0)
+    api = lb_nc.build_fixture(tmp_path)
+    (tmp_path / "DYLAN2" / "LB-Private").mkdir()
+    api.private_path = str(tmp_path / "DYLAN2" / "LB-Private")
+    yield lb_nc.App(api, threaded=False, size_cache=None, persist=False, journal_path=None)
+    monkeypatch.setattr(lb_nc, "PRIVATE_PATH", "")
+
+
+def test_private_path_makes_private_lbs_elsewhere_misfiled(papp, tmp_path):
+    flat = lb_nc.norm(tmp_path / "DYLAN2" / "LB-Private")
+    assert lb_nc.PRIVATE_PATH == flat
+    assert papp.coll.row_status(papp.coll.by_lb[8001]) == ("misfiled", flat)   # nested batch
+    assert papp.coll.row_status(papp.coll.by_lb[3003]) == ("misfiled", flat)   # on DYLAN1
+    assert papp.coll.row_status(papp.coll.by_lb[8002])[0] == "public"          # still goes out
+
+
+def test_private_path_folder_directly_inside_is_canonical(papp, tmp_path):
+    folder = tmp_path / "DYLAN2" / "LB-Private" / "1990-01-12 Some Club (LB-11408)-NFT"
+    folder.mkdir()
+    row = {"lb_number": 11408, "folder_name": folder.name, "disk_path": str(folder),
+           "lb_status": "private"}
+    assert papp.coll.row_status(row) == ("canonical", lb_nc.PRIVATE_AREA)
+    assert lb_nc.Collection.in_private(folder)
+    assert not lb_nc.unlinked(papp.entry_at(folder.parent))
+
+
+def test_f7_files_private_lb_flat_into_private_path(papp, tmp_path):
+    papp.api.no_page = {3003}                         # private: no page on the site
+    _pick(papp.left, TOKYO)
+    papp.handle("f7")
+    assert isinstance(papp.dialog, lb_nc.Confirm)
+    papp.handle("y")
+    papp.tick()
+    assert (tmp_path / "DYLAN2" / "LB-Private" / TOKYO).is_dir()
+    assert not (tmp_path / "DYLAN1" / TOKYO).exists()
+    assert "/api/lb_master/3003/live" in [p for p, _ in papp.api.calls]
+
+
+def test_f7_into_private_path_refused_when_page_is_live(papp, tmp_path):
+    _pick(papp.left, TOKYO)                           # 3003 has a page → not private
+    papp.handle("f7")
+    papp.handle("y")
+    papp.tick()
+    assert "refused" in papp.dialog.title
+    assert (tmp_path / "DYLAN1" / TOKYO).is_dir()
+
+
+def test_f6_skips_private_lb_in_private_path(papp, tmp_path):
+    folder = tmp_path / "DYLAN2" / "LB-Private" / TOKYO
+    shutil.move(str(tmp_path / "DYLAN1" / TOKYO), folder)
+    papp.coll.by_lb[3003]["disk_path"] = str(folder)
+    papp.coll.by_path[lb_nc.norm(folder)] = papp.coll.by_lb[3003]
+    entry = papp.entry_at(folder)
+    assert entry.status == "canonical"
+    assert papp.preview_target(entry, papp.coll.mounts[0]) is None
+    papp.move_entries([entry], papp.coll.mounts[0])
+    assert any("private LBs stay in" in line for line in papp.dialog.text)
+
+
 def test_show_filter_public_in_misfiled_view(app):
     app.handle("f8")
     app.left.show = "public"
