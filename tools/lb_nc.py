@@ -13,7 +13,8 @@ location sync all stay in backend/filer.py; this file never moves or deletes any
     tools/lb-nc --preview --columns 100  # paint the screens once over a synthetic tree
 
 Adapted from music_hopper/hopper_nc.py (same keys, schemes and rendering). Plain ANSI,
-stdlib only, so any python3 runs it. The backend must be up on port 5174.
+stdlib only, so any python3 runs it. The backend answers on port 5174; a local one that
+isn't answering is started at launch (--no-start skips that) or from F9 → Start the backend.
 """
 
 from __future__ import annotations
@@ -37,6 +38,7 @@ import time
 import tty
 import unicodedata
 import urllib.error
+import urllib.parse
 import urllib.request
 from collections import deque
 from collections.abc import Callable
@@ -451,6 +453,102 @@ class Api:
     def delete(self, path: str) -> Any:
         """DELETE an endpoint."""
         return self._call("DELETE", path)
+
+    def alive(self, timeout: float = 2.0) -> bool:
+        """True when the backend answers /api/system/uptime."""
+        try:
+            with urllib.request.urlopen(self.base + "/api/system/uptime", timeout=timeout):
+                return True
+        except (urllib.error.URLError, OSError, ValueError):
+            return False
+
+    @property
+    def local(self) -> bool:
+        """True when the backend URL points at this machine (so lb-nc may start it)."""
+        host = urllib.parse.urlsplit(self.base).hostname or ""
+        return host in ("127.0.0.1", "localhost", "::1")
+
+
+BACKEND_SCRIPT = REPO / "run_backend.py"
+BACKEND_LOG = REPO / "data" / "logs" / "backend_stdout.log"
+BACKEND_WAIT = 30.0                  # seconds to wait for a started backend to answer
+
+
+def backend_pids() -> list[int]:
+    """PIDs of run_backend.py processes on this machine (pgrep; [] if pgrep is missing)."""
+    try:
+        out = subprocess.run(["pgrep", "-f", str(BACKEND_SCRIPT.name)], capture_output=True,
+                             text=True, timeout=5).stdout
+    except (OSError, subprocess.SubprocessError):
+        return []
+    return [int(p) for p in out.split() if p.isdigit() and int(p) != os.getpid()]
+
+
+def start_backend(api: Api, wait: float = BACKEND_WAIT,
+                  status: Callable[[str], None] | None = None) -> str:
+    """Bring the local backend up: wait on a booting one, else restart a hung one or launch it.
+
+    The backend is started detached (its own session, stdout to BACKEND_LOG), so it
+    outlives lb-nc exactly as the /backend-restart launch does.
+
+    Args:
+        api: The client whose base URL must answer once the backend is up.
+        wait: Seconds to wait for /api/system/uptime after launching.
+        status: Called with a short progress line at each step.
+
+    Returns:
+        "" when the backend answers, else why it does not.
+    """
+    say = status or (lambda _text: None)
+    if api.alive():
+        return ""
+    if not api.local:
+        return f"{api.base} is not this machine — start that backend there"
+    pids = backend_pids()
+    if pids:                               # booting (give it a moment) or hung (restart it)
+        say("backend process found, waiting for it to answer…")
+        if _wait_alive(api, min(wait, 10.0)):
+            return ""
+        say("backend not answering — restarting it…")
+        for sig, pause in ((signal.SIGTERM, 3.0), (signal.SIGKILL, 1.0)):
+            for pid in pids:
+                try:
+                    os.kill(pid, sig)
+                except OSError:
+                    pass
+            time.sleep(pause)
+            if not backend_pids():
+                break
+    python = REPO / ".venv" / "bin" / "python3"
+    if not python.exists():
+        python = Path(sys.executable)
+    say("starting the backend…")
+    BACKEND_LOG.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with open(BACKEND_LOG, "ab") as out:
+            proc = subprocess.Popen([str(python), str(BACKEND_SCRIPT)], cwd=REPO,
+                                    stdin=subprocess.DEVNULL, stdout=out,
+                                    stderr=subprocess.STDOUT, start_new_session=True)
+    except OSError as exc:
+        return f"could not launch the backend ({exc})"
+    log.info("started backend pid=%s", proc.pid)
+    deadline = time.monotonic() + wait
+    while time.monotonic() < deadline:
+        if api.alive(timeout=1.0):
+            return ""
+        if proc.poll() is not None:
+            return f"backend exited (code {proc.returncode}) — see {BACKEND_LOG}"
+        time.sleep(0.5)
+    return f"backend started but not answering after {wait:.0f} s — see {BACKEND_LOG}"
+
+
+def _wait_alive(api: Api, wait: float) -> bool:
+    deadline = time.monotonic() + wait
+    while time.monotonic() < deadline:
+        if api.alive(timeout=1.0):
+            return True
+        time.sleep(0.5)
+    return False
 
 
 # ------------------------------------------------------------------------------ model
@@ -2190,6 +2288,7 @@ class App:
         self.coll: Collection | None = None
         self.coll_error = ""
         self.loading = False
+        self.starting = False            # F9 → Start the backend is in flight
         self.sizes = SizeCache(size_cache, threaded)
         self.runner = Runner(read_only, threaded)
         self.queue = QueueStore(None if read_only else queue_path)
@@ -3538,7 +3637,11 @@ class App:
             except ApiError as exc:
                 self.dialog = Message("Cancel", [str(exc)])
 
-        self.dialog = Picker("Menu", [
+        items: list[tuple[str, Callable[[], None]]] = []
+        if self.coll is None:
+            items.append(("Start the backend (restarts a hung one), then reload",
+                          self.start_backend))
+        self.dialog = Picker("Menu", items + [
             ("Drive picker for this pane (d)", self.drive_dialog),
             ("Swap panes (u)", self.swap),
             ("Generate checksums for the selection (c)", self.checksum_dialog),
@@ -3561,6 +3664,30 @@ class App:
             ("Stop the queue after the current folder", stop),
             ("Cancel the running pipeline", cancel_pipeline),
         ])
+
+    def start_backend(self) -> None:
+        """F9 → Start the backend: launch (or restart) it in a thread, then reload."""
+        if self.starting:
+            self.say("the backend is already being started")
+            return
+        self.starting = True
+
+        def work() -> None:
+            error = start_backend(self.api, status=self.say)
+            self.starting = False
+            if error:
+                with self.lock:
+                    self.coll_error = error
+                    self.dialog = Message("Backend", [error])
+                    self.dirty = True
+                return
+            self.say("backend up — reloading")
+            self.reload()
+
+        if self.threaded:
+            threading.Thread(target=work, daemon=True).start()
+        else:
+            work()
 
     def tick(self) -> None:
         """Pick up job completion, sizes and flash expiry."""
@@ -3978,7 +4105,7 @@ class App:
         rows: list[str]
         if self.coll is None:
             rows = [f"backend: {self.coll_error or 'not loaded'}",
-                    "start it (/backend-restart or the app), then F5"]
+                    "F9 → Start the backend, or start it yourself and F5"]
         elif cur is None or cur.kind == "parent":
             rows = [str(self.active.cwd or "misfiled view"), ""]
         elif cur.lb is None:
@@ -4527,6 +4654,8 @@ def main(argv: list[str] | None = None) -> int:
                         help=f"folder name that holds private LBs (default {PRIVATE_DIR!r})")
     parser.add_argument("--read-only", action="store_true",
                         help="browse, info, view; every write gated off")
+    parser.add_argument("--no-start", action="store_true",
+                        help="don't start a local backend that isn't answering")
     parser.add_argument("--scheme", choices=SCHEME_NAMES)
     parser.add_argument("--colour", choices=COLOUR_DEPTHS, default="auto",
                         help="rgb/256: fixed VGA colours, same in every terminal; ansi: the "
@@ -4567,8 +4696,15 @@ def main(argv: list[str] | None = None) -> int:
     term.enter()
     app = None
     try:
-        term.write("\x1b[1;1H\x1b[0mlb_nc: reading the collection and mounts…")
-        app = App(Api(args.api), args.left, args.right, read_only=args.read_only,
+        api = Api(args.api)
+        if not args.no_start and api.local and not api.alive():
+            def status(text: str) -> None:
+                term.write(f"\x1b[1;1H\x1b[0m\x1b[2Klb_nc: {text}")
+            error = start_backend(api, status=status)
+            if error:
+                log.warning("backend auto-start failed: %s", error)
+        term.write("\x1b[1;1H\x1b[0m\x1b[2Klb_nc: reading the collection and mounts…")
+        app = App(api, args.left, args.right, read_only=args.read_only,
                   scheme=scheme, ascii_only=ascii_only, queue_path=QUEUE_PATH)
         main_loop(app, term)
     except KeyboardInterrupt:

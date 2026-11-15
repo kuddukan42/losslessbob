@@ -167,6 +167,52 @@ def test_backend_down_still_browses(tmp_path):
     assert "backend unreachable" in screen
 
 
+def test_backend_down_menu_starts_it(tmp_path, monkeypatch):
+    class Down(lb_nc.Api):
+        up = False
+
+        def _call(self, method, path, body=None):
+            if not self.up:
+                raise lb_nc.ApiError("backend unreachable")
+            if path == "/api/collection":
+                return []
+            return {"mounts": [], "routes": [], "status": []}
+
+    api = Down()
+    app = lb_nc.App(api, left=tmp_path, right=tmp_path, threaded=False,
+                    size_cache=None, persist=False, journal_path=None)
+    assert app.coll is None
+
+    def fake_start(a, wait=0, status=None):
+        a.up = True
+        return ""
+    monkeypatch.setattr(lb_nc, "start_backend", fake_start)
+    app.menu_dialog()
+    label, action = app.dialog.items[0]
+    assert label.startswith("Start the backend")
+    action()
+    assert api.up and not app.starting
+    assert app.coll is not None
+
+
+def test_backend_up_menu_has_no_start(app):
+    app.menu_dialog()
+    assert not any(label.startswith("Start the backend") for label, _ in app.dialog.items)
+
+
+def test_start_backend_refuses_remote(monkeypatch):
+    api = lb_nc.Api("http://10.0.0.9:5174")
+    monkeypatch.setattr(api, "alive", lambda timeout=2.0: False)
+    assert "not this machine" in lb_nc.start_backend(api, wait=0)
+
+
+def test_start_backend_noop_when_alive(monkeypatch):
+    api = lb_nc.Api()
+    monkeypatch.setattr(api, "alive", lambda timeout=2.0: True)
+    monkeypatch.setattr(lb_nc.subprocess, "Popen", lambda *a, **k: pytest.fail("launched"))
+    assert lb_nc.start_backend(api) == ""
+
+
 @pytest.mark.parametrize("cols", [110, 70, 45])
 def test_frame_is_exact_width(app, cols):
     for line in app.frame(cols, 24):
