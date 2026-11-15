@@ -301,6 +301,8 @@ def test_show_filter_cycles(app, tmp_path):
     assert "notes.txt" in names()
     app.handle("f")                                   # off: not in the right spot
     assert names() == [MISFILED, PRAGUE]
+    app.handle("f")                                   # not linked: the stray only
+    assert names() == [PRAGUE]
     app.handle("f")                                   # public in private: none on DYLAN1
     assert names() == []
     app.handle("f")                                   # -NFT mismatch
@@ -315,8 +317,7 @@ def test_show_filter_cycles(app, tmp_path):
 
 def test_show_filter_public_in_misfiled_view(app):
     app.handle("f8")
-    app.handle("f")
-    app.handle("f")
+    app.left.show = "public"
     assert [e.lb for e in app.left.visible()] == [8002]
 
 
@@ -398,6 +399,22 @@ def test_integrity_flag_and_filter(app, tmp_path):
     app.handle("y")
     app.tick()
     assert any(p == "/api/collection/integrity/scan" for p, _ in app.api.calls)
+
+
+def test_show_unlinked(app, tmp_path):
+    year = tmp_path / "DYLAN2" / "1987"
+    (year / "Some show no tag").mkdir()
+    (year / lb_nc.DUP_DIR).mkdir()
+    app.set_dir(app.right, year)
+    app.right.show = "unlinked"
+    assert sorted(e.name for e in app.right.visible() if e.kind != "parent") == [
+        "1975-11-19 Toronto (LB-04410) alt",
+        "1975-11-19 Toronto, Canada (LB-04410)-copy",
+        "1987-10-05 Verona, Italy (LB-07777)",
+        "Some show no tag",
+    ]
+    app.set_dir(app.right, tmp_path / "DYLAN2")
+    assert "1987" not in [e.name for e in app.right.visible()]
 
 
 def test_duplicate_resolver_sets_aside(app, tmp_path):

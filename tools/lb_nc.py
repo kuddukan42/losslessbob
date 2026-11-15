@@ -83,8 +83,9 @@ IN_PLACE = "at its routed location, not in collection"
 PRIVATE_DIR = "PRIVATE LB"          # a folder named this holds private LBs, outside the routes
 PRIVATE_AREA = "in the private area"
 OFF = ("misfiled", "public", "stray", "dup", "blocked", "gone", "relink")   # not in the right spot
-SHOW_MODES = ("all", "off", "public", "nft", "name", "bad")
-SHOW_LABELS = {"off": "not right", "public": "public in private", "nft": "NFT mismatch",
+SHOW_MODES = ("all", "off", "unlinked", "public", "nft", "name", "bad")
+SHOW_LABELS = {"off": "not right", "unlinked": "not linked",
+               "public": "public in private", "nft": "NFT mismatch",
                "name": "non-canonical names", "bad": "integrity issues"}
 RELOAD_EVERY = 5.0                  # seconds between pane refreshes while a queue runs
 # jobs whose result opens a dialog when the queue ends — never queued behind a running one
@@ -639,6 +640,24 @@ def list_dir(root: Path, cwd: Path, coll: Collection | None) -> list[Entry]:
     return rows
 
 
+CONTAINER_RE = re.compile(r"^\d{4}$")    # a year folder holds LB folders, isn't one
+
+
+def unlinked(entry: Entry) -> bool:
+    """True for a folder no collection record points at (f → "not linked").
+
+    Covers LB folders that aren't the collection's copy (stray, dup, relink) and
+    folders with no LB number at all — bar the containers lb-nc itself makes or
+    routes into (year folders, the private folder, _duplicates, extras).
+    """
+    if entry.kind != "dir":
+        return False
+    if entry.row and norm(entry.row.get("disk_path") or "") == norm(entry.path):
+        return False
+    return not (CONTAINER_RE.match(entry.name)
+                or entry.name in (PRIVATE_DIR, DUP_DIR, "extras"))
+
+
 def annotate(entry: Entry, coll: Collection) -> None:
     """NFT and integrity flags for a folder that is the collection's copy of its LB."""
     row = entry.row
@@ -730,6 +749,8 @@ class Pane:
         fixed = ("parent", "ghost")
         if self.show == "off":
             rows = [e for e in rows if e.kind in fixed or e.status in OFF]
+        elif self.show == "unlinked":
+            rows = [e for e in rows if e.kind in fixed or unlinked(e)]
         elif self.show == "public":
             rows = [e for e in rows if e.kind in fixed or e.status == "public"]
         elif self.show == "nft":
@@ -2018,8 +2039,9 @@ Move        ↑ ↓ PgUp PgDn Home End   (phone: k j K J g G)
 Tab         switch pane              Enter   open folder
 Backspace   up one level             Space/Ins tag · + all · - none · * invert
 /           filter the active pane   Esc     close / clear filter / clear tags
-f           show: all → not in the right spot → public LBs in the private folder
-            → -NFT mismatches → non-canonical names → integrity issues
+f           show: all → not in the right spot → not linked (no collection record
+            points at it) → public LBs in the private folder → -NFT mismatches
+            → non-canonical names → integrity issues
 
 1 Help      this screen
 2 Info      the folder's collection row, show date, route and expected location
@@ -2482,6 +2504,7 @@ class App:
         shown = sum(1 for e in pane.visible() if e.kind != "parent")
         self.say({"all": "showing everything",
                   "off": f"{shown} folder(s) not in the right spot",
+                  "unlinked": f"{shown} folder(s) no collection record points at",
                   "public": f"{shown} public LB(s) in {PRIVATE_DIR}",
                   "nft": f"{shown} folder(s) whose -NFT suffix is wrong",
                   "name": f"{shown} folder(s) with a non-canonical name",
