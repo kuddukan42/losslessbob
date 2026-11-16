@@ -351,6 +351,8 @@ def test_show_filter_cycles(app, tmp_path):
     assert names() == [PRAGUE]
     app.handle("f")                                   # public in private: none on DYLAN1
     assert names() == []
+    app.handle("f")                                   # private LBs, by lb_status
+    assert names() == [TOKYO]
     app.handle("f")                                   # -NFT mismatch
     assert names() == [TOKYO]
     app.handle("f")                                   # non-canonical names
@@ -379,6 +381,12 @@ def test_private_path_makes_private_lbs_elsewhere_misfiled(papp, tmp_path):
     assert papp.coll.row_status(papp.coll.by_lb[8001]) == ("misfiled", flat)   # nested batch
     assert papp.coll.row_status(papp.coll.by_lb[3003]) == ("misfiled", flat)   # on DYLAN1
     assert papp.coll.row_status(papp.coll.by_lb[8002])[0] == "public"          # still goes out
+
+
+def test_show_private_in_misfiled_view(papp):
+    papp.handle("f8")
+    papp.left.show = "private"
+    assert sorted(e.lb for e in papp.left.visible() if e.lb) == [3003, 8001]
 
 
 def test_private_path_folder_directly_inside_is_canonical(papp, tmp_path):

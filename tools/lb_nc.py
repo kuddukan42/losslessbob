@@ -86,9 +86,10 @@ PRIVATE_DIR = "PRIVATE LB"          # a folder named this holds private LBs, out
 PRIVATE_AREA = "in the private area"
 PRIVATE_PATH = ""                    # backend private_collection_path, normed; "" = unset
 OFF = ("misfiled", "public", "stray", "dup", "blocked", "gone", "relink")   # not in the right spot
-SHOW_MODES = ("all", "off", "unlinked", "public", "nft", "name", "bad")
+SHOW_MODES = ("all", "off", "unlinked", "public", "private", "nft", "name", "bad")
 SHOW_LABELS = {"off": "not right", "unlinked": "not linked",
-               "public": "public in private", "nft": "NFT mismatch",
+               "public": "public in private", "private": "private LBs",
+               "nft": "NFT mismatch",
                "name": "non-canonical names", "bad": "integrity issues"}
 RELOAD_EVERY = 5.0                  # seconds between pane refreshes while a queue runs
 # jobs whose result opens a dialog when the queue ends — never queued behind a running one
@@ -888,6 +889,9 @@ class Pane:
             rows = [e for e in rows if e.kind in fixed or unlinked(e)]
         elif self.show == "public":
             rows = [e for e in rows if e.kind in fixed or e.status == "public"]
+        elif self.show == "private":
+            rows = [e for e in rows
+                    if e.kind in fixed or (e.row or {}).get("lb_status") == "private"]
         elif self.show == "nft":
             rows = [e for e in rows if e.kind in fixed or e.nft]
         elif self.show == "name":
@@ -2181,7 +2185,8 @@ Tab         switch pane              Enter   open folder
 Backspace   up one level             Space/Ins tag · + all · - none · * invert
 /           filter the active pane   Esc     close / clear filter / show all / clear tags
 f           show: all → not in the right spot → not linked (no collection record
-            points at it) → public LBs in the private folder → -NFT mismatches
+            points at it) → public LBs in the private folder → private LBs
+            (by lb_status) → -NFT mismatches
             → non-canonical names → integrity issues; Esc jumps back to all
 
 1 Help      this screen
@@ -2661,6 +2666,7 @@ class App:
                   "off": f"{shown} folder(s) not in the right spot",
                   "unlinked": f"{shown} folder(s) no collection record points at",
                   "public": f"{shown} public LB(s) in {PRIVATE_DIR}",
+                  "private": f"{shown} private LB(s)",
                   "nft": f"{shown} folder(s) whose -NFT suffix is wrong",
                   "name": f"{shown} folder(s) with a non-canonical name",
                   "bad": f"{shown} folder(s) with integrity issues"}[pane.show])

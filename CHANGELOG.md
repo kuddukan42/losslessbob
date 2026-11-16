@@ -1,3 +1,7 @@
+[2026-11-15] — lb-nc f cycle gains a private-LBs show mode
+Added: tools/lb_nc.py: `private` show mode after `public` — only private LBs (by lb_status), works in the F8 misfiled view
+Added: tests/test_lb_nc.py: private step in the cycle test; private filter in the misfiled view
+
 [2026-11-15] — lb-nc starts the backend when it isn't answering
 Added: tools/lb_nc.py: at launch a local backend that doesn't answer /api/system/uptime is started (or a hung run_backend.py restarted: SIGTERM, then SIGKILL) detached, stdout to data/logs/backend_stdout.log, waited on up to 30 s; --no-start skips it. F9 Menu gains "Start the backend" (shown only while no collection is loaded), run in a thread then reload; info strip points at it. A non-local --api is never started
 Added: tests/test_lb_nc.py: menu start, no item when up, remote refusal, no-op when alive
