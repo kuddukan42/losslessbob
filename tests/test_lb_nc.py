@@ -109,7 +109,7 @@ def test_move_without_reroute_leaves_it_misfiled(app, tmp_path):
     assert app.coll.row_status(app.coll.by_lb[4410])[0] == "misfiled"
     app.dialog = None
     app.active = app.left
-    app.handle("f8")
+    app.set_root(app.left, None, "misfiled")  # every mount
     assert sorted(e.lb for e in app.left.entries) == [1860, 4410, 8002]
 
 
@@ -384,7 +384,7 @@ def test_private_path_makes_private_lbs_elsewhere_misfiled(papp, tmp_path):
 
 
 def test_show_private_in_misfiled_view(papp):
-    papp.handle("f8")
+    papp.set_root(papp.left, None, "misfiled")  # every mount
     papp.left.show = "private"
     assert sorted(e.lb for e in papp.left.visible() if e.lb) == [3003, 8001]
 
@@ -442,9 +442,10 @@ def test_f8_lists_only_the_misfiled_under_cwd(app, tmp_path):
     assert [e.lb for e in app.left.entries] == [8002]
     app.handle("f8")                                  # back to the folder
     assert app.left.cwd == tmp_path / "DYLAN2" / "PRIVATE LB"
-    app.set_dir(app.left, tmp_path / "DYLAN2")         # at a mount root: every mount
+    app.set_dir(app.left, tmp_path / "DYLAN2")         # at a mount root: that mount only
     app.handle("f8")
-    assert app.left.scope is None and len(app.left.entries) > 1
+    assert app.left.scope == tmp_path / "DYLAN2"
+    assert [e.lb for e in app.left.entries] == [8002]
 
 
 def test_f8_scopes_an_off_mount_folder_too(app, tmp_path):
@@ -461,7 +462,7 @@ def test_under_is_a_path_prefix_not_a_string_prefix():
 
 
 def test_show_filter_public_in_misfiled_view(app):
-    app.handle("f8")
+    app.set_root(app.left, None, "misfiled")  # every mount
     app.left.show = "public"
     assert [e.lb for e in app.left.visible()] == [8002]
 
@@ -679,7 +680,7 @@ def test_private_marked():
 def test_move_refused_without_live_page_rest_of_queue_runs(app, tmp_path, monkeypatch):
     monkeypatch.setattr(lb_nc, "PROBE_INTERVAL", 0)
     app.api.no_page = {8002}
-    app.handle("f8")                                  # misfiled view: 1860 and 8002
+    app.set_root(app.left, None, "misfiled")  # misfiled view: 1860 and 8002
     app.handle("+")
     app.handle("f7")
     assert any("checked live" in line for line in app.dialog.blurb)

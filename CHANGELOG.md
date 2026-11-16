@@ -1,3 +1,7 @@
+[2026-11-15] — lb-nc F8 at a mount root lists only that mount
+Fixed: tools/lb_nc.py: F8 always scopes the misfiled view to the pane's folder — at a mount root it listed every mount; all mounts stays on the F9/d picker's "Misfiled folders (all mounts)"
+Changed: tests/test_lb_nc.py: mount-root F8 asserts the one-mount scope; all-mounts tests open that view directly
+
 [2026-11-15] — lb-nc f cycle gains a private-LBs show mode
 Added: tools/lb_nc.py: `private` show mode after `public` — only private LBs (by lb_status), works in the F8 misfiled view
 Added: tests/test_lb_nc.py: private step in the cycle test; private filter in the misfiled view

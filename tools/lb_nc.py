@@ -2199,7 +2199,7 @@ f           show: all → not in the right spot → not linked (no collection re
             collection row and qBittorrent follow); r also re-routes their years
 7 File      file tagged misfiled / stray folders to their year-routed location
 8 Misfd     toggle this pane to the virtual list of misfiled folders: only those
-            under this folder, or every one when at a mount root
+            under this folder (a mount root: that mount; all mounts: F9 picker)
 9 Menu      drive picker, swap panes, checksums, renames, stop queue, cancel
             pipeline, re-route years
 0/q Quit
@@ -2716,8 +2716,8 @@ class App:
     def toggle_misfiled(self) -> None:
         """F8: flip the active pane to the misfiled view and back.
 
-        The view lists only the misfiled folders under the pane's folder; at a mount root
-        it lists every mount.
+        The view lists only the misfiled folders under the pane's folder — at a mount
+        root, that mount. Every mount at once is the drive picker's misfiled entry.
         """
         pane = self.active
         if pane.virtual:
@@ -2729,9 +2729,7 @@ class App:
             if self.coll is None:
                 self.dialog = Message("Misfiled", [self.coll_error or "no collection loaded"])
                 return
-            roots = {norm(m["root_path"]) for m in self.coll.mounts}
-            deep = pane.cwd is not None and norm(pane.cwd) not in roots
-            self.set_root(pane, None, "misfiled", pane.cwd if deep else None)
+            self.set_root(pane, None, "misfiled", pane.cwd)
 
     def request_quit(self) -> None:
         """F10: quit, warning when a queue is still running."""
