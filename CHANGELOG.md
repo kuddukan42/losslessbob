@@ -1,3 +1,7 @@
+[2026-11-19] — lb-nc lets a hand-set private LB into the private folder
+Fixed: tools/lb_nc.py: moving an LB into LB-Private needs its LB-site page to be gone, so an LB marked private by hand with its page still up (16599, "accidental posting") was refused every time; PageGate now allows it when lb_master has a manual override to private
+Changed: tests/test_lb_nc.py: F7 into the private path is allowed for a manually-private LB
+
 [2026-11-15] — lb-nc F8 at a mount root lists only that mount
 Fixed: tools/lb_nc.py: F8 always scopes the misfiled view to the pane's folder — at a mount root it listed every mount; all mounts stays on the F9/d picker's "Misfiled folders (all mounts)"
 Changed: tests/test_lb_nc.py: mount-root F8 asserts the one-mount scope; all-mounts tests open that view directly

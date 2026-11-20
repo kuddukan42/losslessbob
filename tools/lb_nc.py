@@ -1064,11 +1064,25 @@ class PageGate:
             return
         if exists is False:
             raise JobRefused(f"LB-{lb:05d} has no page on the LB site — refused")
+        if exists is True and self.manual_private(lb):
+            emit(f"  LB-{lb:05d}: page live on the LB site, but you set it private by "
+                 "hand — allowed", False)
+            return
         if exists is True:
             raise JobRefused(f"LB-{lb:05d} has a public page on the LB site, so it isn't "
                              "private — refused")
         why = (res or {}).get("error") or f"status {(res or {}).get('status')}"
         raise JobRefused(f"LB-{lb:05d}: LB site didn't answer ({why}) — refused")
+
+
+    def manual_private(self, lb: int) -> bool:
+        """True when lb_master carries a manual override to private (e.g. accidental posting)."""
+        try:
+            res = self.api.get(f"/api/lb_master/{lb}")
+        except Exception:       # noqa: BLE001 — no answer means no override
+            return False
+        return isinstance(res, dict) and bool(res.get("manual_override")) \
+            and res.get("manual_status") == "private"
 
 
 class Journal:
@@ -4443,6 +4457,7 @@ class FakeApi(Api):
         self.calls: list[tuple[str, dict | None]] = []
         self.integrity: list[dict] = []
         self.no_page: set[int] = set()
+        self.manual_private: set[int] = set()   # lb_master manual override → private
         self.private_path = ""                # the backend's private_collection_path
 
     def _route(self, year: int) -> dict | None:
@@ -4496,6 +4511,11 @@ class FakeApi(Api):
         if path.startswith("/api/lb_master/") and path.endswith("/live"):
             lb = int(path.split("/")[3])
             return {"lb_number": lb, "exists": lb not in self.no_page, "status": 200}
+        if path.startswith("/api/lb_master/") and path.split("/")[3].isdigit():
+            lb = int(path.split("/")[3])
+            manual = lb in self.manual_private
+            return {"lb_number": lb, "manual_override": int(manual),
+                    "manual_status": "private" if manual else None}
         if path == "/api/collection/integrity/status":
             return {"status": self.integrity}
         if path == "/api/collection/integrity/scan":

@@ -411,6 +411,16 @@ def test_f7_files_private_lb_flat_into_private_path(papp, tmp_path):
     assert "/api/lb_master/3003/live" in [p for p, _ in papp.api.calls]
 
 
+def test_f7_into_private_path_allowed_when_manually_private(papp, tmp_path):
+    papp.api.manual_private = {3003}                  # page live, but set private by hand
+    _pick(papp.left, TOKYO)
+    papp.handle("f7")
+    papp.handle("y")
+    papp.tick()
+    assert (tmp_path / "DYLAN2" / "LB-Private" / TOKYO).is_dir()
+    assert "/api/lb_master/3003" in [p for p, _ in papp.api.calls]
+
+
 def test_f7_into_private_path_refused_when_page_is_live(papp, tmp_path):
     _pick(papp.left, TOKYO)                           # 3003 has a page → not private
     papp.handle("f7")
