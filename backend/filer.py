@@ -831,6 +831,11 @@ def start_file_job(
                     # bookkeeping must never block filing.
                     from backend.seed_overlay import warn_if_seeded
                     warn_if_seeded(lb_number, "moved across volumes", db_path)
+                    # Record which overlay files share an inode with the source
+                    # (stat only) so tools/overlay_rehome.py can rebuild the
+                    # overlay on the new drive (TODO-376). Never raises.
+                    from backend.overlay_rehome import record_pending
+                    record_pending(lb_number, folder, dest, db_path)
                     try:
                         shutil.rmtree(str(folder))
                     except OSError as exc:

@@ -1319,6 +1319,26 @@ CREATE TABLE IF NOT EXISTS wtrf_downloads (
     attempted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     qbt_added_at TIMESTAMP
 );
+-- Seed overlays re-homed after a cross-drive move (TODO-376). The filer writes
+-- a 'pending' row with the pre-delete manifest {overlay rel: collection rel}
+-- (files that shared an inode with the source folder); tools/overlay_rehome.py
+-- moves it to 'built' / 'done' / 'done_leftover' / 'failed'.
+CREATE TABLE IF NOT EXISTS overlay_moves (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number     INTEGER NOT NULL,
+    tracker       TEXT NOT NULL,
+    old_overlay   TEXT NOT NULL,
+    new_overlay   TEXT,
+    src_folder    TEXT,
+    dest_folder   TEXT,
+    manifest_json TEXT,
+    state         TEXT NOT NULL DEFAULT 'pending',
+    error         TEXT,
+    created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_overlay_moves_old ON overlay_moves(old_overlay);
+
 CREATE INDEX IF NOT EXISTS idx_wtrf_downloads_lb
     ON wtrf_downloads(lb_number, attempted_at DESC);
 CREATE INDEX IF NOT EXISTS idx_wtrf_downloads_status

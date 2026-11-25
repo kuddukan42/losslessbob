@@ -1343,26 +1343,34 @@ def overlay_status(overlay_dir: str | Path) -> OverlayStatus:
 def find_overlays_for_lb(lb_number: int, db_path=None) -> list[Path]:
     """Return recorded overlay/seed folders for an LB number.
 
-    Reads ``tuit_downloads.seed_folder``, so it only knows about seeds this
-    tool created.
+    Reads ``seed_folder`` from both ``tuit_downloads`` and ``wtrf_downloads``,
+    so it only knows about seeds these tools created.
 
     Args:
         lb_number: LB number to look up.
         db_path: Optional DB path override.
 
     Returns:
-        Distinct seed folder paths, newest attempt first.
+        Distinct seed folder paths, TUIT first, each newest attempt first.
     """
     from backend import db  # imported here to keep module import cheap
 
+    out: list[Path] = []
     with db.get_connection(db_path) as conn:
-        rows = conn.execute(
-            "SELECT DISTINCT seed_folder FROM tuit_downloads "
-            " WHERE lb_number=? AND seed_folder IS NOT NULL AND seed_folder <> ''"
-            " ORDER BY attempted_at DESC",
-            (lb_number,),
-        ).fetchall()
-    return [Path(r[0]) for r in rows]
+        for table in ("tuit_downloads", "wtrf_downloads"):
+            try:
+                rows = conn.execute(
+                    f"SELECT seed_folder FROM {table} "  # noqa: S608 — fixed literals
+                    " WHERE lb_number=? AND seed_folder IS NOT NULL AND seed_folder <> ''"
+                    " ORDER BY attempted_at DESC",
+                    (lb_number,),
+                ).fetchall()
+            except sqlite3.Error:      # table absent on an older DB
+                continue
+            for (folder,) in rows:
+                if Path(folder) not in out:
+                    out.append(Path(folder))
+    return out
 
 
 def lbs_for_seed_folder(folder: str | Path, db_path=None) -> set[int]:
@@ -1468,7 +1476,7 @@ def warn_if_seeded(lb_number: int, action: str, db_path=None) -> list[str]:
             "LB-%05d is being %s but is seeded from %s (%s). After a delete or "
             "cross-volume move that overlay holds the only copy of those bytes, "
             "so the space is not reclaimed — run "
-            "'tools/tuit_sync.py --check-overlays' afterwards.",
+            "'tools/overlay_rehome.py' afterwards to move it to the new drive.",
             lb_number, action, overlay, status.summary(),
         )
     return warned

@@ -311,14 +311,19 @@ def _check_overlays() -> int:
     Returns:
         A process exit code — 1 when any overlay is gone or orphaned.
     """
-    # get_tuit_downloads() is newest-first, so the first row per LB is the seed
-    # currently in force; earlier attempts have been superseded.
-    latest: dict[int, str] = {}
-    for row in database.get_tuit_downloads():
-        folder = row.get("seed_folder")
-        lb_number = row.get("lb_number")
-        if folder and lb_number is not None and lb_number not in latest:
-            latest[lb_number] = folder
+    # Newest row first, so the first row per (tracker, LB) is the seed
+    # currently in force; earlier attempts have been superseded. Both TUIT and
+    # WTRF seeds are covered (TODO-376).
+    latest: dict[tuple[str, int], str] = {}
+    with database.get_connection() as conn:
+        for tracker, table in (("tuit", "tuit_downloads"), ("wtrf", "wtrf_downloads")):
+            rows = conn.execute(
+                f"SELECT lb_number, seed_folder FROM {table} "  # noqa: S608 — fixed literals
+                "WHERE seed_folder IS NOT NULL AND seed_folder <> '' "
+                "AND lb_number IS NOT NULL ORDER BY attempted_at DESC, id DESC"
+            ).fetchall()
+            for lb_number, folder in rows:
+                latest.setdefault((tracker, int(lb_number)), folder)
 
     if not latest:
         print("No seed overlays recorded.")
@@ -332,9 +337,9 @@ def _check_overlays() -> int:
     orphans = 0
     gone = 0
     pinned_total = 0
-    for lb_number, folder in sorted(latest.items()):
+    for (tracker, lb_number), folder in sorted(latest.items(), key=lambda kv: kv[0][::-1]):
         status = overlay_status(folder)
-        label = f"LB-{lb_number:05d}"
+        label = f"LB-{lb_number:05d} {tracker.upper()}"
         kind = (
             "direct" if any(folder.startswith(r) for r in collection_roots)
             else "overlay"
@@ -360,8 +365,9 @@ def _check_overlays() -> int:
         print(
             f"\n{orphans} overlay(s) now hold the only copy of their audio "
             f"({pinned_total / 1e9:.2f} GB). Their collection folder was deleted "
-            f"or moved to another drive. Deleting an overlay reclaims that space "
-            f"— but check you still have the recording elsewhere first."
+            f"or moved to another drive. tools/overlay_rehome.py rebuilds them on "
+            f"the collection folder's new drive and frees the old copy (dry run "
+            f"by default)."
         )
     if gone or orphans:
         return 1

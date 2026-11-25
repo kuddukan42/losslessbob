@@ -1,3 +1,12 @@
+[2026-11-25] — Seed overlays can follow their LB to a new drive (TODO-376)
+Added: backend/overlay_rehome.py: finds TUIT/WTRF overlays whose LB now lives on another drive and rebuilds them there — audio hardlinked to the moved collection, overlay-only files copied and read back, 100% piece verify, qBittorrent remove (deleteFiles=false) and re-add stopped, then the old overlay unlinked file by file; a path guard refuses any write or delete that is, contains, or sits inside a collection folder or mount root, and a collection change latches meta overlay_rehome_disabled
+Added: tools/overlay_rehome.py: CLI, dry run by default listing every link/copy/delete; --apply one overlay at a time, stops at the first error
+Added: backend/db/schema.py: overlay_moves table
+Changed: backend/filer.py: a cross-drive move records which overlay files shared an inode with the source (stat only) before deleting it
+Fixed: backend/seed_overlay.py: find_overlays_for_lb read only tuit_downloads, so moving a WTRF-seeded LB logged no warning; it reads both tables now
+Fixed: tools/tuit_sync.py: --check-overlays listed TUIT seeds only; it covers WTRF too
+Added: tests/test_overlay_rehome.py: 26 tests
+
 [2026-11-19] — lb-nc lets a hand-set private LB into the private folder
 Fixed: tools/lb_nc.py: moving an LB into LB-Private needs its LB-site page to be gone, so an LB marked private by hand with its page still up (16599, "accidental posting") was refused every time; PageGate now allows it when lb_master has a manual override to private
 Changed: tests/test_lb_nc.py: F7 into the private path is allowed for a manually-private LB
