@@ -290,6 +290,16 @@ class TestRehome:
         assert not rig["new"].exists()
         assert rig["qbt"].save_path == str(rig["overlay"].parent)
 
+    def test_incomplete_torrent_is_skipped_not_failed(self, rig, monkeypatch):
+        qbt = rig["qbt"]
+        monkeypatch.setattr(qbittorrent, "get_torrent_layout",
+                            lambda h, **k: {**qbt.layout(h), "piece_states": [2, 0, 2]})
+        old = _tree_digest(rig["overlay"])
+        res = rh.rehome(_plan(rig), rh.load_protected())
+        assert res.get("skipped") and not res["ok"]
+        assert _tree_digest(rig["overlay"]) == old
+        assert not rig["new"].exists() and qbt.calls == []
+
     def test_existing_destination_is_refused(self, rig):
         rig["new"].mkdir(parents=True)
         res = rh.rehome(_plan(rig), rh.load_protected())

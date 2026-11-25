@@ -1,3 +1,14 @@
+[2026-11-25] — Retire dead WTRF seeds and repost them from the collection (TODO-376)
+Added: backend/wtrf_repost.py, tools/wtrf_retire.py: incomplete WTRF torrents older than 30 days (1,092 found: 905 definitive LB match, 144 confirmed by ≥90% matching bytes, 43 suspect → review) are removed from qBittorrent (files kept), their overlays unlinked through overlay_rehome's guard, wtrf_downloads marked 'retired' so the walk never re-seeds them, and a wtrf_reposts row queued
+Added: tools/wtrf_repost.py: manual queue — post --next N/--lb/--topic builds a torrent from the collection folder, verifies it 100%, seeds it in place, replies into the original topic and prints the reply URL; only LBs public on the LB site are posted
+Added: backend/forum_poster.py: post_reply() — reply with a .torrent attached; WTRF redirects a successful post to the board, so the reply is found on the topic page (find_own_reply) and a reply that cannot be found is 'unverified', never auto-retried
+Changed: backend/torrent_maker.py: make_torrent(name=…) — the repost torrent is named after the collection folder so qBittorrent seeds it in place
+Changed: tools/wtrf_seed_board.py: partial overlays are refused by default; --allow-partial-overlay opts in for fresh posts
+Changed: backend/overlay_rehome.py, tools/overlay_rehome.py: a torrent qBittorrent reports incomplete is skipped instead of failing the batch
+Added: backend/db/schema.py: wtrf_reposts table
+Added: tests/test_wtrf_repost.py (18), tests/test_overlay_rehome.py (+1)
+Live: 2 retired + reposted as the test — LB-00024 topic=54302.msg110001, LB-00116 topic=54864.msg110002; both seeding 100% in place
+
 [2026-11-25] — Seed overlays can follow their LB to a new drive (TODO-376)
 Added: backend/overlay_rehome.py: finds TUIT/WTRF overlays whose LB now lives on another drive and rebuilds them there — audio hardlinked to the moved collection, overlay-only files copied and read back, 100% piece verify, qBittorrent remove (deleteFiles=false) and re-add stopped, then the old overlay unlinked file by file; a path guard refuses any write or delete that is, contains, or sits inside a collection folder or mount root, and a collection change latches meta overlay_rehome_disabled
 Added: tools/overlay_rehome.py: CLI, dry run by default listing every link/copy/delete; --apply one overlay at a time, stops at the first error

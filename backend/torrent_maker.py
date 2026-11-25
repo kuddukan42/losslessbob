@@ -162,6 +162,7 @@ def make_torrent(
     db_path=None,
     trackers: list[str] | None = None,
     source_tag: str = "",
+    name: str | None = None,
 ) -> dict:
     """Generate a .torrent file for one LB entry folder.
 
@@ -183,6 +184,9 @@ def make_torrent(
         source_tag: Value for the torrent's ``source`` field. Private trackers
             use it to make otherwise identical torrents hash differently; empty
             leaves the field unset.
+        name: Torrent root name. Default ``YYYY-MM-DD Location (LB-XXXXX)``; pass
+            the folder's own name to seed it in place, since a client looks
+            for ``<save path>/<name>``.
 
     Returns:
         Dict with keys: torrent_path, infohash, torrent_id, excluded_files, name.
@@ -199,7 +203,7 @@ def make_torrent(
 
     TORRENTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    name = _torrent_name(lb_number, db_path=db_path)
+    name = name or _torrent_name(lb_number, db_path=db_path)
     if trackers is None:
         trackers = fetch_trackers(tracker_list, force_refresh=force_refresh_trackers)
         trackers = _ensure_tcp_trackers(trackers)

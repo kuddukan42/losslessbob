@@ -138,11 +138,17 @@ def _build_parser() -> argparse.ArgumentParser:
     seeding.add_argument("--max-fetch-mb", type=float, default=25.0,
                          help="Refuse an overlay that would still leave more "
                               "than this many MB for the swarm (default: 25).")
+    seeding.add_argument("--allow-partial-overlay",
+                         dest="allow_partial_overlay", action="store_true",
+                         help="Accept an overlay that still hashes short; the "
+                              "remainder downloads into the overlay, never the "
+                              "collection. Off by default: the walk reaches old "
+                              "topics whose swarms never finish them (TODO-376 — "
+                              "1,096 such seeds were retired). Use it only for "
+                              "fresh posts.")
     seeding.add_argument("--no-allow-partial-overlay",
                          dest="allow_partial_overlay", action="store_false",
-                         help="Refuse an overlay that still hashes short "
-                              "(default: accept it — the remainder downloads "
-                              "into the overlay, never the collection).")
+                         help=argparse.SUPPRESS)  # the default now; kept for old scripts
     seeding.add_argument("--paused", action="store_true",
                          help="Add each torrent to qBittorrent stopped.")
     return p

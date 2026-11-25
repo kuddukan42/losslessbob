@@ -708,6 +708,14 @@ def rehome(plan: RehomePlan, protected: Protected, db_path=None) -> dict:
                 return fail(f"qBittorrent seeds it from {layout['save_path']}, "
                             "not the overlay")
         was_stopped = str(layout.get("state", "")).startswith(("stopped", "paused"))
+        states = layout.get("piece_states") or []
+        if present and not (states and all(s == 2 for s in states)):
+            # An unfinished seed would fail the 100% verify anyway; leave it
+            # alone without stopping a batch over it.
+            msg = "torrent incomplete in qBittorrent — left as is"
+            _set_state(rec, "skipped", "", msg)
+            out.update(error=msg, skipped=True)
+            return out
 
         free = tracker_seed._free_bytes(seeds_root if seeds_root.exists() else
                                         seeds_root.parent)

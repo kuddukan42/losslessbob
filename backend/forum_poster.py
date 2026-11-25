@@ -1,4 +1,4 @@
-"""Post new topics to the Watching the River Flow SMF 2.x forum.
+"""Post new topics and topic replies to the Watching the River Flow SMF 2.x forum.
 
 Single-entry operation only (not batch).  A .torrent file for the entry must
 exist before posting is enabled.  Login uses an HTTP session via requests +
@@ -742,4 +742,156 @@ def post_lb_topic(
 
     except Exception as exc:
         logger.error("post_lb_topic error for LB-%05d: %s", lb_number, exc)
+        return {"ok": False, "error": str(exc)}
+
+
+# ---------------------------------------------------------------------------
+# Reply to an existing topic (TODO-376 follow-up: WTRF reposts)
+# ---------------------------------------------------------------------------
+
+def _topic_id(topic_url: str) -> int | None:
+    """Return the SMF topic number in a topic URL, or None."""
+    import re
+    m = re.search(r"topic=(\d+)", topic_url or "")
+    return int(m.group(1)) if m else None
+
+
+def reply_url(topic_id: int) -> str:
+    """Return the SMF compose URL for a reply to ``topic_id``."""
+    return f"{FORUM_BASE}/index.php?action=post;topic={topic_id}.0"
+
+
+def _redirect_to_post(location: str, topic_id: int) -> str | None:
+    """Return the posted message's URL from a post2 redirect, or None."""
+    if f"topic={topic_id}" in location:
+        return location
+    return None
+
+
+def find_own_reply(session: requests.Session, topic_id: int, body: str) -> str | None:
+    """Find the newest message in a topic whose text starts like ``body``.
+
+    WTRF answers a successful post with a redirect to the board, not to the
+    message, so the reply is located on the topic's last page instead.
+
+    Args:
+        session: Logged-in session.
+        topic_id: SMF topic number.
+        body: The text that was posted.
+
+    Returns:
+        ``…index.php?topic=<id>.msg<m>#msg<m>`` or None when not found.
+    """
+    import re
+    probe = " ".join(body.split())[:60]
+    resp = session.get(f"{FORUM_BASE}/index.php?topic={topic_id}.msg999999999",
+                       timeout=20)
+    soup = BeautifulSoup(resp.text, "lxml")
+    found = None
+    for div in soup.find_all("div", id=re.compile(r"^msg_\d+$")):
+        if probe in " ".join(div.get_text(" ", strip=True).split()):
+            found = int(div["id"].split("_")[1])
+    if found is None:
+        return None
+    return f"{FORUM_BASE}/index.php?topic={topic_id}.msg{found}#msg{found}"
+
+
+def post_reply(
+    topic_url: str,
+    torrent_path: str | Path,
+    body: str,
+    username: str,
+    password: str,
+) -> dict:
+    """Post a reply into an existing topic with a .torrent attached.
+
+    Mirrors :func:`post_lb_topic`'s SMF handling: the reply form's own hidden
+    fields and action URL are scraped first, the subject is the form's
+    pre-filled ``Re: …`` line, and a preview/lock page is resubmitted once.
+
+    Args:
+        topic_url: URL of the topic to reply in (must carry ``topic=<id>``).
+        torrent_path: The .torrent to attach.
+        body: BBCode message text.
+        username: WTRF forum username.
+        password: WTRF forum password.
+
+    Returns:
+        Dict with ``ok`` and either ``post_url`` (link to the new message) or
+        ``error``.
+    """
+    torrent = Path(torrent_path)
+    if not torrent.exists():
+        return {"ok": False, "error": f"Torrent file not found: {torrent}"}
+    topic_id = _topic_id(topic_url)
+    if topic_id is None:
+        return {"ok": False, "error": f"No topic id in {topic_url}"}
+
+    session = _get_session(username, password)
+    if session is None:
+        return {"ok": False, "error": "Login failed — check username and password."}
+
+    compose = reply_url(topic_id)
+    try:
+        page = session.get(compose, timeout=15, headers={"Referer": FORUM_BASE})
+        soup = BeautifulSoup(page.text, "lxml")
+        form = _find_post_form(soup)
+        if form is None:
+            err = _extract_smf_error(soup) or f"no reply form at {compose}"
+            return {"ok": False, "error": err}
+        action = _resolve_url(form.get("action", ""))
+        hidden = {inp.get("name"): inp.get("value", "")
+                  for inp in form.find_all("input", {"type": "hidden"}) if inp.get("name")}
+        subj_el = form.find("input", {"name": "subject"})
+        subject = (subj_el.get("value") if subj_el else "") or "Re: repost"
+        if not hidden.get("seqnum") or not action:
+            return {"ok": False, "error": f"reply form incomplete (action={action!r})"}
+
+        message = body.replace("\r\n", "\n").replace("\n", "\r\n")
+        payload = {**hidden, "subject": subject, "message": message, "post": "Post",
+                   "ns": "0", "additional_options": "1"}
+        headers = {"Referer": compose, "Origin": FORUM_BASE}
+        with torrent.open("rb") as fh:
+            resp = session.post(action, data=payload,
+                                files={"attachment[]": (torrent.name, fh,
+                                                        "application/x-bittorrent")},
+                                headers=headers, timeout=60, allow_redirects=False)
+
+        for attempt in (1, 2):
+            if resp.status_code in (301, 302, 303, 307, 308):
+                location = _resolve_url(resp.headers.get("Location", ""))
+                post_url = _redirect_to_post(location, topic_id)
+                if post_url:
+                    return {"ok": True, "post_url": post_url}
+                if "board=" in location:
+                    # WTRF's normal answer to a successful post.
+                    post_url = find_own_reply(session, topic_id, body)
+                    if post_url:
+                        return {"ok": True, "post_url": post_url}
+                    return {"ok": False, "unverified": True,
+                            "error": f"redirected to {location} but the reply was not found "
+                                     f"in the topic — check it by hand before retrying"}
+                return {"ok": False, "error": f"unexpected redirect to {location}"}
+            soup = BeautifulSoup(resp.text, "lxml")
+            lock_el = soup.find(id="lock_warning")
+            title = (soup.find("title") or soup).get_text(strip=True)
+            held = title.lower().startswith("preview") or (
+                lock_el is not None and not _is_element_hidden(lock_el))
+            if attempt == 2 or not held:
+                err = _extract_smf_error(soup)
+                return {"ok": False, "error": err or
+                        f"reply not accepted (HTTP {resp.status_code}, page {title[:80]!r})"}
+            form = _find_post_form(soup)
+            retry_action = _resolve_url(form.get("action", "")) if form else action
+            retry = {inp.get("name"): inp.get("value", "")
+                     for inp in (form or soup).find_all("input", {"type": "hidden"})
+                     if inp.get("name")}
+            resp = session.post(retry_action or action,
+                                data={**retry, "subject": subject, "message": message,
+                                      "post": "Post", "ns": "0", "additional_options": "1"},
+                                headers={"Referer": resp.url or action, "Origin": FORUM_BASE},
+                                timeout=60, allow_redirects=False)
+        return {"ok": False, "error": "reply not accepted"}
+    except Exception as exc:
+        logger.error("post_reply error for %s: %s", topic_url, exc)
         return {"ok": False, "error": str(exc)}

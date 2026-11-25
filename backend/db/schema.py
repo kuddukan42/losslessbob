@@ -1339,6 +1339,32 @@ CREATE TABLE IF NOT EXISTS overlay_moves (
 );
 CREATE INDEX IF NOT EXISTS idx_overlay_moves_old ON overlay_moves(old_overlay);
 
+-- WTRF seeds retired because the swarm will never complete them, and the
+-- replacement torrent (built from the collection folder) replied into the
+-- original topic. Written by tools/wtrf_retire.py and tools/wtrf_repost.py.
+-- match: 'definitive' (uploader named the LB) / 'content' (>=90% of bytes
+-- matched ours) / 'suspect'. status: 'queued' / 'review' / 'held_private' /
+-- 'posted' / 'failed' / 'skipped'.
+CREATE TABLE IF NOT EXISTS wtrf_reposts (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    topic_url     TEXT NOT NULL UNIQUE,
+    lb_number     INTEGER NOT NULL,
+    old_infohash  TEXT,
+    old_name      TEXT,
+    old_folder    TEXT,
+    progress      REAL,
+    shortfall     TEXT,
+    match         TEXT,
+    status        TEXT NOT NULL DEFAULT 'queued',
+    torrent_path  TEXT,
+    new_infohash  TEXT,
+    post_url      TEXT,
+    error         TEXT,
+    retired_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    posted_at     TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_wtrf_reposts_status ON wtrf_reposts(status, lb_number);
+
 CREATE INDEX IF NOT EXISTS idx_wtrf_downloads_lb
     ON wtrf_downloads(lb_number, attempted_at DESC);
 CREATE INDEX IF NOT EXISTS idx_wtrf_downloads_status

@@ -166,6 +166,7 @@ losslessbob/
 │   ├── torrent_verify.py     # Bencode reader + read-only piece-hash check of a folder against a .torrent; gates seeding so incomplete folders are never written to (TODO-314)
 │   ├── seed_overlay.py       # Assembles a seedable folder outside the collection: audio hardlinked, LBF sidecars copied from data/site/files or re-fetched from the LB site (TODO-314). Sources recursively by longest path-suffix + exact size, so nested box-set torrents (<root>/<show>/cd-1/…) resolve and colliding basenames don't cross discs; `link_dirs` hardlinks from several collection folders for a torrent spanning >1 LB entry
 │   ├── overlay_rehome.py     # Re-homes TUIT/WTRF seed overlays left on the old drive by a cross-drive move: rebuilds on the new drive (audio hardlinked to the moved collection, overlay-only files copied), 100% piece verify, qBittorrent remove (deleteFiles=false) + re-add stopped, then unlinks the old overlay file by file. Collection-safety guard on every write/delete, before/after snapshot latches meta overlay_rehome_disabled (TODO-376)
+│   ├── wtrf_repost.py        # Retires old incomplete WTRF seeds (qBittorrent remove deleteFiles=false, overlay unlinked through overlay_rehome's guard, wtrf_downloads status 'retired') and reposts them: torrent built from the collection folder (named after it), seeded in place at 100%, replied into the original topic via forum_poster.post_reply (TODO-376)
 │   ├── tracker_seed.py       # Tracker-agnostic seeding pipeline (gates → overlay → qBittorrent), parameterised per tracker: <mount>/<TRACKER> Seeds + qbt tag. Shared by TUIT and WTRF
 │   ├── wtrf_board.py         # Walks the WTRF board newest-first (SMF pagination, stickies dropped) and seeds every post the collection already holds; resumes off wtrf_downloads.topic_url, drops posts whose LB is not held before downloading anything
 │   ├── wtrf_post_editor.py   # TODO-136: edits a topic's opening post via SMF's edit flow — topic page → msg id → action=post;msg=N form (subject/BBCode + session/seqnum tokens) → POST action=post2; dry-run returns a diff only
@@ -238,6 +239,7 @@ losslessbob/
 │   ├── test_torrent_verify.py # backend/torrent_verify.py: bencode decode, torrent parse, folder piece verification, read-only guarantees (TODO-314)
 │   ├── test_seed_overlay.py  # backend/seed_overlay.py: link/copy/refetch planning, piece-boundary safety rule, collection-untouched assertions (TODO-314)
 │   ├── test_overlay_rehome.py # backend/overlay_rehome.py: path guard (collection root/inside/parent/symlink/traversal), link/copy planning, filer manifest, success, failed verify and qBittorrent rollback leave the collection byte-identical, disabled latch (TODO-376)
+│   ├── test_wtrf_repost.py   # backend/wtrf_repost.py + forum_poster.post_reply: retiree selection (age/tag/progress), match kinds, retire keeps the collection byte-identical, in-place seeds never deleted, private LBs held, reply URL found after WTRF's board redirect (TODO-376)
 │   ├── test_wtrf_board.py    # backend/wtrf_board.py: board listing parse, page walk, the ownership gate and resume/rescan
 │   ├── test_wtrf_seed.py     # backend/wtrf_seed.py: link parsing/canonicalisation, LB-resolution priority, ambiguity refusal, per-tracker overlay roots
 │   ├── test_tuit_db.py       # backend/db.py: tuit_recordings/tuit_downloads accessors + get_folders_for_lb (TODO-314)
@@ -327,6 +329,8 @@ losslessbob/
 │   ├── wtrf_seed_board.py    # CLI: crawl the WTRF board and seed what is held (--start-page/--pages walk back in time, --limit, --rescan, --include-missing, --dry-run)
 │   ├── tuit_sync.py          # CLI: sync TUIT recordings into tuit_recordings; --fetch-torrents / --seed adds to qBittorrent pointed at the existing collection (TODO-314); --sync-tours / --sync-venues fill tuit_shows + tuit_venues; --sync-songs fills tuit_songs + tuit_song_performances
 │   ├── overlay_rehome.py     # CLI: move seed overlays to the drive their LB now lives on. Dry run by default (every link/copy/delete with full paths); --apply one overlay at a time, stops at the first error; --lb N, --brief, --limit. Log: data/logs/overlay_rehome.log (TODO-376)
+│   ├── wtrf_retire.py        # CLI: retire incomplete WTRF torrents older than --min-age-days (30); dry run lists them + writes data/logs/wtrf_retire_<ts>.csv; --apply [--limit N] (TODO-376)
+│   ├── wtrf_repost.py        # CLI: work the wtrf_reposts queue by hand — list [--status], approve/skip LB|URL, post --next N|--lb N|--topic URL [--apply] prints each reply's URL (TODO-376)
 │   ├── tuit_reconcile.py     # CLI: read-only TUIT vs entries report -> docs/tuit_reconcile.md (TODO-332/339); --fill stages additive values in corrections (decided_by='tuit_reconcile'), dry run unless --apply (backup + audit JSONL); --revert
 │   ├── tuit_upload.py        # CLI: post one recording to TUIT and seed it. Dry run by default (composes and prints every form field plus the gaps); --apply is the only flag that sends. --no-torrent for a fast preview, --set FIELD=VALUE to override, --allow-duplicate, --no-seed, --paused (TODO-343)
 │   ├── fit_aud_quality_model.py # CLI: fit the AUD quality regression model used by concert_ranker
@@ -604,6 +608,23 @@ moves across drives) and `backend/overlay_rehome.py` / `tools/overlay_rehome.py`
 | created_at / updated_at | TIMESTAMP | |
 
 Index: `idx_overlay_moves_old(old_overlay)`.
+
+### `wtrf_reposts` — retired WTRF seeds and their reposts (USER table, TODO-376)
+Written by `tools/wtrf_retire.py` (one row per retired topic) and `tools/wtrf_repost.py`.
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| topic_url | TEXT NOT NULL UNIQUE | Original WTRF topic |
+| lb_number | INTEGER NOT NULL | LB the topic was matched to |
+| old_infohash / old_name / old_folder | TEXT | The retired torrent and its overlay |
+| progress | REAL | How far it got (0–1) |
+| shortfall | TEXT | Why it was short |
+| match | TEXT | `'definitive'`, `'content'` (≥90% of bytes matched ours) or `'suspect'` |
+| status | TEXT NOT NULL | `'queued'`, `'review'`, `'held_private'`, `'posted'`, `'unverified'`, `'failed'`, `'skipped'` |
+| torrent_path / new_infohash | TEXT | Replacement torrent |
+| post_url | TEXT | The reply on WTRF |
+| error | TEXT | |
+| retired_at / posted_at | TIMESTAMP | |
 
 ### `tuit_uploads` — TUIT upload attempts (USER table)
 The outbound counterpart of `tuit_downloads`, written by `backend/tuit_upload.py` via

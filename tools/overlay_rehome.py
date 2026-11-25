@@ -106,6 +106,9 @@ def main() -> int:
         except rh.RehomeError as exc:
             print(f"STOPPED — {exc}")
             return 2
+        if res.get("skipped"):
+            print(f"  skipped: {res['error']}")
+            continue
         if not res["ok"]:
             print(f"FAILED — {res['error']}\nStopping at the first error.")
             return 1
