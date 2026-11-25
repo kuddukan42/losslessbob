@@ -5,7 +5,8 @@ Added: backend/db/schema.py: overlay_moves table
 Changed: backend/filer.py: a cross-drive move records which overlay files shared an inode with the source (stat only) before deleting it
 Fixed: backend/seed_overlay.py: find_overlays_for_lb read only tuit_downloads, so moving a WTRF-seeded LB logged no warning; it reads both tables now
 Fixed: tools/tuit_sync.py: --check-overlays listed TUIT seeds only; it covers WTRF too
-Added: tests/test_overlay_rehome.py: 26 tests
+Changed: backend/overlay_rehome.py: a TUIT and a WTRF overlay of the same LB that hardlink each other are re-homed as a group (dry run: 1,477 of 1,482 skips were such pairs); a shared file is unlinked only when every one of its links is in that LB's old overlays, re-counted just before the delete; when both share one infohash, qBittorrent is moved once
+Added: tests/test_overlay_rehome.py: 30 tests
 
 [2026-11-19] — lb-nc lets a hand-set private LB into the private folder
 Fixed: tools/lb_nc.py: moving an LB into LB-Private needs its LB-site page to be gone, so an LB marked private by hand with its page still up (16599, "accidental posting") was refused every time; PageGate now allows it when lb_master has a manual override to private

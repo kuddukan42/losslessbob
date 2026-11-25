@@ -314,6 +314,55 @@ class TestRehome:
         assert not res["ok"] and "collection path" in res["error"]
 
 
+class TestPairedOverlays:
+    """A TUIT and a WTRF overlay of the same LB hardlink each other."""
+
+    @pytest.fixture
+    def pair(self, rig):
+        wtrf = rig["overlay"].parent.parent / "WTRF Seeds" / ROOT
+        wtrf.mkdir(parents=True)
+        for name in FILES:
+            os.link(rig["overlay"] / name, wtrf / name)
+        conn = rig["db"].get_connection()
+        conn.execute("INSERT INTO wtrf_downloads(lb_number, torrent_path, seed_folder, status)"
+                     " VALUES(?,?,?, 'qbt_added')",
+                     (LB, str(rig["tmp"] / "t.torrent"), str(wtrf)))
+        conn.commit()
+        return wtrf
+
+    def test_both_are_planned_as_one_group(self, rig, pair):
+        plans = rh.find_candidates([LB])
+        assert len(plans) == 2 and not any(p.skip for p in plans)
+        assert all(set(p.group) == {rig["overlay"], pair} for p in plans)
+
+    def test_both_rehome_and_both_old_overlays_go(self, rig, pair):
+        before = _tree_digest(rig["collection"])
+        # One infohash for both: qBittorrent holds a single torrent, moved by
+        # whichever overlay goes first; the second leaves it alone.
+        protected = rh.load_protected()
+        for plan in rh.find_candidates([LB]):
+            res = rh.rehome(plan, protected)
+            assert res["ok"], res["error"]
+            assert res["leftover"] == []
+        assert not rig["overlay"].exists() and not pair.exists()
+        assert _tree_digest(rig["collection"]) == before
+        for name in AUDIO:
+            ino = (rig["collection"] / name).stat().st_ino
+            assert (rig["new"] / name).stat().st_ino == ino
+            assert (rig["new"].parent.parent / "WTRF Seeds" / ROOT / name).stat().st_ino == ino
+        assert [c[0] for c in rig["qbt"].calls] == ["remove", "seed"]
+
+    def test_a_link_outside_the_pair_skips_both(self, rig, pair, tmp_path):
+        os.link(pair / "t01.flac", tmp_path / "A" / "stray.flac")
+        plans = rh.find_candidates([LB])
+        assert len(plans) == 2 and all("besides this LB" in p.skip for p in plans)
+
+    def test_group_inodes_counts_fresh(self, rig, pair, tmp_path):
+        assert len(rh.group_inodes([rig["overlay"], pair])) == len(FILES)
+        os.link(pair / "t01.flac", tmp_path / "A" / "stray.flac")
+        assert len(rh.group_inodes([rig["overlay"], pair])) == len(FILES) - 1
+
+
 class TestRemoveTree:
     def test_refuses_a_file_still_sharing_its_inode(self, tmp_path):
         coll = tmp_path / "Concerts" / "Show"

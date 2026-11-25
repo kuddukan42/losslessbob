@@ -83,6 +83,10 @@ class RehomePlan:
     copies: dict[str, int] = field(default_factory=dict)   # overlay rel -> size
     sizes: dict[str, int] = field(default_factory=dict)    # every overlay rel -> size
     skip: str = ""
+    #: overlay rel -> (st_dev, st_ino, st_nlink) for files with more than one link
+    shared: dict[str, tuple[int, int, int]] = field(default_factory=dict)
+    #: old overlay dirs of the same LB on the same drive (this one included)
+    group: list[Path] = field(default_factory=list)
 
     @property
     def copy_bytes(self) -> int:
@@ -415,11 +419,11 @@ def plan_rehome(rec: SeedRecord, db_path=None) -> RehomePlan:
     except RehomeError as exc:
         plan.skip = str(exc)
         return plan
-    shared = [rel for rel, st in files.items() if st.st_nlink > 1]
-    if shared:
-        plan.skip = (f"{len(shared)} overlay file(s) still hardlinked to something "
-                     f"on the old drive (e.g. {shared[0]})")
-        return plan
+    # Files with other links are judged per LB by find_candidates: a TUIT and a
+    # WTRF overlay of the same torrent hardlink each other, which is fine; a
+    # link to anything else (a collection copy still on the old drive) is not.
+    plan.shared = {rel: (st.st_dev, st.st_ino, st.st_nlink)
+                   for rel, st in files.items() if st.st_nlink > 1}
     if not rec.torrent_path or not Path(rec.torrent_path).is_file():
         plan.skip = f"torrent file missing: {rec.torrent_path or '(none recorded)'}"
         return plan
@@ -466,7 +470,67 @@ def find_candidates(lb_numbers: Iterable[int] | None = None,
         if plan.skip in ("overlay is gone", "same drive — nothing to do"):
             continue
         plans.append(plan)
+    _resolve_groups(plans)
     return plans
+
+
+def group_inodes(dirs: Iterable[Path]) -> set[tuple[int, int]]:
+    """Inodes whose every link is inside ``dirs``, counted fresh from disk.
+
+    Args:
+        dirs: Old overlay directories of one LB on one drive.
+
+    Returns:
+        ``(st_dev, st_ino)`` of each file whose link count equals the number of
+        names it has inside ``dirs`` — no collection folder or anything else
+        can share it.
+    """
+    seen: dict[tuple[int, int], list[int]] = {}
+    for d in dirs:
+        if not d.is_dir():
+            continue
+        for st in _walk_files(d).values():
+            key = (st.st_dev, st.st_ino)
+            entry = seen.setdefault(key, [0, st.st_nlink])
+            entry[0] += 1
+    return {key for key, (count, nlink) in seen.items() if count == nlink}
+
+
+def _resolve_groups(plans: list[RehomePlan]) -> None:
+    """Accept shared files only when all their links are the LB's own overlays.
+
+    Groups the plans by LB and old drive. A file whose other names all sit in
+    sibling overlays of the same group is safe to re-home and later unlink;
+    a link to anything outside the group skips every plan in it.
+    """
+    groups: dict[tuple[int, int], list[RehomePlan]] = {}
+    for plan in plans:
+        if plan.skip:
+            continue
+        dev = os.stat(plan.record.overlay).st_dev
+        groups.setdefault((plan.record.lb_number, dev), []).append(plan)
+    for members in groups.values():
+        dirs = [m.record.overlay for m in members]
+        if not any(m.shared for m in members):
+            continue
+        try:
+            inside = group_inodes(dirs)
+        except (OSError, RehomeError) as exc:
+            inside, reason = set(), f"cannot inspect: {exc}"
+        else:
+            reason = ""
+        outside = [(m, rel) for m in members for rel, (dev, ino, _n) in m.shared.items()
+                   if (dev, ino) not in inside]
+        if outside or reason:
+            m0, rel0 = outside[0] if outside else (members[0], "")
+            reason = reason or (
+                f"{len(outside)} overlay file(s) still hardlinked to something on the "
+                f"old drive besides this LB's overlays (e.g. {m0.record.overlay / rel0})")
+            for m in members:
+                m.skip = reason
+            continue
+        for m in members:
+            m.group = dirs
 
 
 # ── Building, verifying, deleting ────────────────────────────────────────────
@@ -488,7 +552,8 @@ def _copy_file(src: Path, dst: Path) -> None:
         raise RehomeError(f"copy of {src} read back different")
 
 
-def _remove_tree(root: Path, protected: Protected, allow_shared: bool) -> list[str]:
+def _remove_tree(root: Path, protected: Protected, allow_shared: bool,
+                 allowed_inodes: set[tuple[int, int]] | None = None) -> list[str]:
     """Unlink files one by one, then remove the empty directories. Never rmtree.
 
     Args:
@@ -497,6 +562,8 @@ def _remove_tree(root: Path, protected: Protected, allow_shared: bool) -> list[s
         allow_shared: Accept files with a link count above one. True only for a
             build directory this module made (its links point into the
             collection; dropping one name never touches the collection's data).
+        allowed_inodes: ``(st_dev, st_ino)`` pairs from :func:`group_inodes` —
+            files every one of whose links is in this LB's old overlays.
 
     Returns:
         Paths that were refused and left in place (empty on success).
@@ -515,7 +582,8 @@ def _remove_tree(root: Path, protected: Protected, allow_shared: bool) -> list[s
                 inside = parent == real_root or parent.startswith(real_root + os.sep)
                 if os.path.islink(full) or not os.path.isfile(full) or not inside:
                     raise GuardError(f"refused {full}: not a regular file inside {root}")
-                if st.st_nlink > 1 and not allow_shared:
+                if (st.st_nlink > 1 and not allow_shared
+                        and (st.st_dev, st.st_ino) not in (allowed_inodes or set())):
                     raise GuardError(f"refused {full}: still has {st.st_nlink} links")
                 os.unlink(full)
             except (GuardError, OSError) as exc:
@@ -625,9 +693,20 @@ def rehome(plan: RehomePlan, protected: Protected, db_path=None) -> dict:
         if not layout.get("ok"):
             return fail(f"qBittorrent: {layout.get('error') or 'query failed'}")
         present = bool(layout.get("present"))
-        if present and _norm(os.path.realpath(layout["save_path"])) != _norm(
-                os.path.realpath(rec.overlay.parent)):
-            return fail(f"qBittorrent seeds it from {layout['save_path']}, not the overlay")
+        if present:
+            here = _norm(os.path.realpath(layout["save_path"]))
+            # A TUIT and a WTRF overlay of the same LB can share one infohash,
+            # so qBittorrent holds a single torrent: when it seeds from a
+            # sibling overlay (old or already re-homed), leave it alone.
+            siblings = {_norm(os.path.realpath(g.parent)) for g in plan.group
+                        if g != rec.overlay}
+            siblings |= {_norm(plan.new_overlay.parent.parent / g.parent.name)
+                         for g in plan.group if g != rec.overlay}
+            if here in siblings:
+                present = False
+            elif here != _norm(os.path.realpath(rec.overlay.parent)):
+                return fail(f"qBittorrent seeds it from {layout['save_path']}, "
+                            "not the overlay")
         was_stopped = str(layout.get("state", "")).startswith(("stopped", "paused"))
 
         free = tracker_seed._free_bytes(seeds_root if seeds_root.exists() else
@@ -689,7 +768,11 @@ def rehome(plan: RehomePlan, protected: Protected, db_path=None) -> dict:
                 f"UPDATE {t} SET seed_folder=? WHERE seed_folder=?",  # noqa: S608
                 (str(plan.new_overlay), old)))
 
-        out["leftover"] = _remove_tree(rec.overlay, protected, allow_shared=False)
+        # A sibling overlay of the same LB may still hold some of these inodes;
+        # re-count right now and accept only links that stay inside that group.
+        allowed = group_inodes(plan.group) if plan.group else set()
+        out["leftover"] = _remove_tree(rec.overlay, protected, allow_shared=False,
+                                       allowed_inodes=allowed)
         out["freed"] = plan.freed_bytes if not out["leftover"] else 0
         check_collection()
         _set_state(rec, "done" if not out["leftover"] else "done_leftover",
