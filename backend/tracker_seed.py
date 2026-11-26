@@ -562,6 +562,9 @@ def is_overlay_root(save_path: str | Path) -> bool:
     return Path(save_path).name.endswith(" Seeds")
 
 
+CHECK_START_GRACE_S = 30.0  # max wait for a requested recheck to begin
+
+
 def wait_checked(infohash: str, timeout: float = 600.0,
                  sleep: Callable[[float], None] = time.sleep) -> dict | None:
     """Poll until qBittorrent has finished checking a torrent.
@@ -576,13 +579,19 @@ def wait_checked(infohash: str, timeout: float = 600.0,
         once it is no longer checking, or None on a query failure or timeout.
     """
     conn = _qbt_connection()
-    deadline = time.monotonic() + timeout
+    start = time.monotonic()
+    deadline = start + timeout
+    seen_checking = False
     sleep(2)
     while time.monotonic() < deadline:
         layout = qbittorrent.get_torrent_layout(infohash, **conn)
         if not layout["ok"]:
             return None
-        if not layout["state"].startswith(("checking", "metaDL", "allocating")):
+        if layout["state"].startswith(("checking", "metaDL", "allocating")):
+            seen_checking = True
+        elif seen_checking or time.monotonic() - start >= CHECK_START_GRACE_S:
+            # A stopped torrent can keep its old state for a while before the
+            # check starts; judging it then reads pre-check pieces (2026-11-25).
             return layout
         sleep(3)
     return None

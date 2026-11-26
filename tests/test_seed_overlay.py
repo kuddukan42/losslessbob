@@ -1328,3 +1328,28 @@ def test_seed_overlay_is_refused_before_building_when_space_is_short(
     assert reason.startswith(tracker_seed.DISK_FULL_REASON)
     assert details["disk_full"]
     assert not root.exists()
+
+
+class TestWaitChecked:
+    """wait_checked must not report a torrent whose recheck has not started yet."""
+
+    def _run(self, monkeypatch, states):
+        from backend import qbittorrent, tracker_seed
+        clock = {"t": 0.0}
+        seq = iter(states)
+        monkeypatch.setattr(tracker_seed, "_qbt_connection", lambda: {})
+        monkeypatch.setattr(tracker_seed.time, "monotonic", lambda: clock["t"])
+        monkeypatch.setattr(qbittorrent, "get_torrent_layout",
+                            lambda h, **k: {"ok": True, "state": next(seq)})
+
+        def sleep(s):
+            clock["t"] += s
+        return tracker_seed.wait_checked("ab" * 20, sleep=sleep)
+
+    def test_waits_for_the_check_to_start(self, monkeypatch):
+        got = self._run(monkeypatch, ["stoppedDL", "stoppedDL", "checkingDL", "stoppedUP"])
+        assert got["state"] == "stoppedUP"
+
+    def test_gives_up_waiting_for_start_after_grace(self, monkeypatch):
+        got = self._run(monkeypatch, ["stoppedUP"] * 20)
+        assert got["state"] == "stoppedUP"

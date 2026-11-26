@@ -34,7 +34,7 @@ _project_root = Path(__file__).resolve().parent.parent
 if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
-from backend import qbittorrent  # noqa: E402
+from backend import qbittorrent, tracker_seed  # noqa: E402
 from backend.tracker_seed import _qbt_connection, make_resume_safe  # noqa: E402
 
 logging.basicConfig(
@@ -63,10 +63,19 @@ def main() -> int:
     ap.add_argument("--apply", action="store_true", help="set priorities, copy files out")
     ap.add_argument("--recheck", action="store_true",
                     help="recheck (while stopped) and lock never-checked torrents")
+    ap.add_argument("--hash", action="append", default=None,
+                    help="only torrents whose infohash starts with this (repeatable)")
     args = ap.parse_args()
+    # One keyring read per run: per-torrent reads are ~37k D-Bus calls on a full
+    # library, and one stuck call hung the 2026-11-25 run indefinitely.
+    conn = _qbt_connection()
+    tracker_seed._qbt_connection = lambda: conn
     verb = "" if args.apply else "would "
 
     torrents = _all_torrents()
+    if args.hash:
+        want = tuple(h.lower() for h in args.hash)
+        torrents = [t for t in torrents if t["hash"].lower().startswith(want)]
     logger.info("%d torrent(s) in qBittorrent", len(torrents))
     frozen = locked = files = total = 0
     in_place: list[str] = []
