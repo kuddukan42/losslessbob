@@ -2,6 +2,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-394: wtrf_retire deleted overlay folders still used by a second live torrent (23 folders)
+Status: Fixed
+File(s): backend/wtrf_repost.py
+Reported: 2026-11-25
+Fixed: 2026-11-25
+Root cause: Two WTRF topics can post the same torrent name, so two infohashes seeded from one overlay folder; retire() deleted it for the incomplete one and marked the live twin's row retired by seed_folder alone.
+Fix: shared_with() checks every qBittorrent torrent before deleting; the row update is scoped to the topic; a folder recorded by several topics queues as review. Data repair 2026-11-25: of 23 twins, 4 rebuilt in place at 100% (LB-11201/11746/7736/11029), 19 dropped (15 short only lost overlay-only text files, LB-01018 JTT-fix audio not in the collection, 3 incomplete) and queued for repost. Collection untouched (snapshots + LB-02637 md5 33/33).
+
 BUG-393: lb-nc: one failed rename drops the rest of the rename batch
 Status: Fixed
 File(s): tools/lb_nc.py:1737
