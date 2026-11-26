@@ -75,6 +75,31 @@ def qbt_torrents() -> list[dict]:
     return s.get(base + "/api/v2/torrents/info", timeout=60).json()
 
 
+def shared_with(folder: Path, infohash: str, torrents: list[dict]) -> list[str]:
+    """Other torrents whose files live in, above or below ``folder``.
+
+    Two WTRF topics can post the same torrent name, so two infohashes can seed
+    out of one overlay folder. Deleting it for one breaks the other.
+
+    Args:
+        folder: The overlay folder about to be deleted.
+        infohash: The torrent being retired (ignored in the result).
+        torrents: ``/api/v2/torrents/info`` rows.
+
+    Returns:
+        Infohashes (first 10 chars) of the other torrents using it.
+    """
+    f = str(folder).rstrip("/")
+    out = []
+    for t in torrents:
+        if t.get("hash", "").lower() == infohash.lower():
+            continue
+        p = str(t.get("content_path") or "").rstrip("/")
+        if p and (p == f or p.startswith(f + "/") or f.startswith(p + "/")):
+            out.append(t["hash"][:10])
+    return out
+
+
 def qbt_files(infohash: str) -> list[dict]:
     """One torrent's files with per-file progress and priority."""
     s, base = _session()
@@ -98,6 +123,7 @@ class Retiree:
     lb_number: int
     confidence: str
     match: str
+    ambiguous: bool = False  # more than one topic recorded this seed folder
 
 
 def classify(files: list[dict], content_exists: bool) -> str:
@@ -161,8 +187,10 @@ def find_retirees(min_age_days: float = MIN_AGE_DAYS, db_path=None) -> list[Reti
             "WHERE seed_folder IS NOT NULL AND seed_folder <> '' "
             "ORDER BY attempted_at DESC, id DESC").fetchall()
     by_folder: dict[str, tuple] = {}
+    n_topics: dict[str, int] = {}
     for lb, url, conf, folder in rows:
         by_folder.setdefault(_norm(folder), (lb, url, conf or ""))
+        n_topics[_norm(folder)] = n_topics.get(_norm(folder), 0) + 1
 
     cutoff = time.time() - min_age_days * 86400
     out: list[Retiree] = []
@@ -177,11 +205,14 @@ def find_retirees(min_age_days: float = MIN_AGE_DAYS, db_path=None) -> list[Reti
         if rec is None or not rec[1]:
             continue
         shortfall = classify(qbt_files(t["hash"]), os.path.isdir(content))
+        ambiguous = n_topics[_norm(content)] > 1
         out.append(Retiree(
+            ambiguous=ambiguous,
             infohash=t["hash"], name=t["name"], content=content,
             progress=float(t["progress"]), added_on=int(t.get("added_on") or 0),
             shortfall=shortfall, topic_url=rec[1], lb_number=int(rec[0]),
-            confidence=rec[2], match=match_kind(rec[2], float(t["progress"]), shortfall)))
+            confidence=rec[2],
+            match="suspect" if ambiguous else match_kind(rec[2], float(t["progress"]), shortfall)))
     out.sort(key=lambda r: (r.lb_number, r.topic_url))
     return out
 
@@ -204,13 +235,20 @@ def retire(r: Retiree, protected: Protected) -> dict:
         Dict with ``ok``, ``leftover`` (overlay paths refused) and ``error``.
     """
     out = {"ok": False, "leftover": [], "error": ""}
+    content = Path(r.content)
+    try:
+        sharers = shared_with(content, r.infohash, qbt_torrents())
+    except Exception as exc:  # noqa: BLE001 — unknown sharing means do not delete
+        out["error"] = f"could not list qBittorrent torrents: {exc}"
+        return out
     removed = qbittorrent.remove_torrent(r.infohash, **tracker_seed._qbt_connection())
     if not removed.get("ok"):
         out["error"] = f"qBittorrent remove failed: {removed.get('error')}"
         return out
 
-    content = Path(r.content)
-    if content.is_dir() and is_overlay_dir(content):
+    if sharers:
+        out["leftover"] = [f"{content}: kept, also used by torrent(s) {', '.join(sharers)}"]
+    elif content.is_dir() and is_overlay_dir(content):
         try:
             guard_path(content, protected)
             out["leftover"] = _remove_tree(content, protected, allow_shared=True)
@@ -226,8 +264,9 @@ def retire(r: Retiree, protected: Protected) -> dict:
             " old_folder, progress, shortfall, match, status) VALUES(?,?,?,?,?,?,?,?,?)",
             (r.topic_url, r.lb_number, r.infohash, r.name, r.content, r.progress,
              r.shortfall, r.match, status))
-        c.execute("UPDATE wtrf_downloads SET status='retired', error=? WHERE seed_folder=?",
-                  (reason, r.content))
+        if not r.ambiguous:  # several topics share the folder: can't tell whose row
+            c.execute("UPDATE wtrf_downloads SET status='retired', error=? "
+                      "WHERE seed_folder=? AND topic_url=?", (reason, r.content, r.topic_url))
     _write(run)
     out["ok"] = True
     return out

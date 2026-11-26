@@ -1,3 +1,6 @@
+[2026-11-25] — Retire no longer deletes a folder another torrent seeds from (BUG-394)
+Fixed: backend/wtrf_repost.py: two WTRF topics can post the same torrent name, so two infohashes share one overlay folder; retire() deleted it for the incomplete one and marked the live twin's row retired. Now shared_with() checks every qBittorrent torrent first and keeps the folder, the row update is scoped to the topic, and a folder recorded by several topics queues its repost as 'review' without touching either row. The 1,090-torrent run hit 23 such folders; collection untouched (LB-02637 md5 33/33 OK)
+
 [2026-11-25] — Retire dead WTRF seeds and repost them from the collection (TODO-376)
 Added: backend/wtrf_repost.py, tools/wtrf_retire.py: incomplete WTRF torrents older than 30 days (1,092 found: 905 definitive LB match, 144 confirmed by ≥90% matching bytes, 43 suspect → review) are removed from qBittorrent (files kept), their overlays unlinked through overlay_rehome's guard, wtrf_downloads marked 'retired' so the walk never re-seeds them, and a wtrf_reposts row queued
 Added: tools/wtrf_repost.py: manual queue — post --next N/--lb/--topic builds a torrent from the collection folder, verifies it 100%, seeds it in place, replies into the original topic and prints the reply URL; only LBs public on the LB site are posted

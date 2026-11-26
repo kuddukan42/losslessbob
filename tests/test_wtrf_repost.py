@@ -128,6 +128,26 @@ class TestRetire:
         assert wr.retire(r, load_protected())["ok"]
         assert _digest(rig["coll"]) == before
 
+    def test_folder_shared_with_live_torrent_is_kept(self, rig):
+        """Two topics, same torrent name: the complete twin keeps its files and row."""
+        ov = rig["overlay"]
+        rig["torrents"].append({"hash": "bb" * 20, "name": ov.name, "save_path": str(ov.parent),
+                                "content_path": str(ov), "progress": 1.0, "added_on": OLD,
+                                "tags": "wtrf", "state": "stalledUP"})
+        conn = rig["db"].get_connection()
+        conn.execute("INSERT INTO wtrf_downloads(lb_number, topic_url, confidence, status, "
+                     "seed_folder) VALUES(?,?,?,?,?)", (LB, TOPIC + "x", "definitive",
+                                                        "qbt_added", str(ov)))
+        conn.commit()
+        before = _digest(ov)
+        [r] = wr.find_retirees()
+        res = wr.retire(r, load_protected())
+        assert res["ok"] and "bbbbbbbbbb" in res["leftover"][0]
+        assert _digest(ov) == before
+        statuses = dict(conn.execute("SELECT topic_url, status FROM wtrf_downloads"))
+        assert statuses == {TOPIC: "qbt_added", TOPIC + "x": "qbt_added"}  # can't tell whose
+        assert conn.execute("SELECT status FROM wtrf_reposts").fetchone()[0] == "review"
+
     def test_qbittorrent_failure_changes_nothing(self, rig, monkeypatch):
         monkeypatch.setattr(qbittorrent, "remove_torrent", lambda h, **k: {"ok": False,
                                                                            "error": "x"})
