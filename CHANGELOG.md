@@ -1,3 +1,6 @@
+[2026-11-26] — Five stuck partial TUIT seeds dropped
+Fixed: data repair — the last 5 stopped partial TUIT torrents (LB-11574, 16474, 16591, 8426, 7142; 75–99% held, 0 seeds; added Aug–Sep, stopped since before the BUG-387 lock and never restarted) removed from qBittorrent (files kept), their lone overlays unlinked through overlay_rehome's guard, tuit_downloads rows marked 'retired' (not in the retry statuses, so cron never re-seeds them). Backup data/backups/losslessbob_preTuitDrop5_20261126_205558.db; collection md5s of all 5 LBs OK; 0 stopped partials left in the client
+
 [2026-11-25] — Recheck waits for the check to start; overlay_isolate can target torrents
 Fixed: backend/tracker_seed.py: wait_checked() returned after 2 s if the torrent was not yet 'checking', so a stopped torrent whose recheck had not begun was judged on its pre-check pieces — make_resume_safe then copied 1.3 GB out of two overlays that turned out complete, and the BUG-394 rebuild read stale piece states. It now waits until a checking state is seen (30 s grace)
 Changed: tools/overlay_isolate.py: --hash PREFIX (repeatable) limits the run to named torrents instead of walking all 12k; credentials are read from the keyring once per run, not three D-Bus calls per torrent (one stuck call hung a full run)
