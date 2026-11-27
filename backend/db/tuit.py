@@ -47,7 +47,13 @@ def upsert_tuit_recording(row: dict, db_path=None) -> int:
 
     cols = list(data)
     placeholders = ", ".join("?" for _ in cols)
-    updates = ", ".join(f"{c}=excluded.{c}" for c in cols if c != "rec_id")
+    # The 2026-11-25 detail page no longer shows the "Lossless Bob match" pill
+    # for the recording being viewed, so a rescan cannot clear the flag: keep a
+    # verdict once the site has given it.
+    updates = ", ".join(
+        "lb_verified=MAX(COALESCE(tuit_recordings.lb_verified, 0), excluded.lb_verified)"
+        if c == "lb_verified" else f"{c}=excluded.{c}"
+        for c in cols if c != "rec_id")
     values = [data[c] for c in cols]
 
     def _run(c):
@@ -281,7 +287,7 @@ TUIT_VENUE_COLUMNS = (
 
 def _upsert_tuit_row(
     table: str, columns: tuple, key: tuple, flags: tuple, rows: list[dict],
-    required: tuple = (),
+    required: tuple = (), sticky: tuple = (),
 ) -> int:
     """Upsert scraped TUIT rows into ``table``, keyed by ``key``.
 
@@ -294,6 +300,8 @@ def _upsert_tuit_row(
         required: Columns that must be non-empty for a row to be written;
             defaults to every key column. A key column may legitimately be
             blank (a venue with no recorded city), so the two differ.
+        sticky: Flag columns an update may set but never clear — for markers
+            the site stopped rendering, so a re-scrape reads them as 0.
 
     Returns:
         Number of rows written.
@@ -310,7 +318,11 @@ def _upsert_tuit_row(
                 if flag in data:
                     data[flag] = int(bool(data[flag]))
             cols = list(data)
-            updates = [f"{c}=excluded.{c}" for c in cols if c not in key]
+            updates = [
+                f"{c}=MAX(COALESCE({table}.{c}, 0), excluded.{c})" if c in sticky
+                else f"{c}=excluded.{c}"
+                for c in cols if c not in key
+            ]
             updates.append("last_seen_at=CURRENT_TIMESTAMP")
             conn.execute(
                 f"INSERT INTO {table} ({', '.join(cols)}) "
@@ -418,6 +430,8 @@ def upsert_tuit_song_performances(rows: list[dict], db_path=None) -> int:
         "tuit_song_performances", TUIT_SONG_PERF_COLUMNS,
         ("song", "date_str", "venue_text", "show_id"), ("is_encore",),
         normalised, required=("song", "date_str"),
+        # The 2026-11-25 song pages no longer mark encores.
+        sticky=("is_encore",),
     )
 
 

@@ -35,125 +35,132 @@ from backend.tuit_scraper import (
 )
 
 BROWSE_HTML = """
-<div class="listing">
-  <p>1,635 recordings</p>
-  <article class="source-row">
-    <span class="src-pill aud">AUD</span>
-    <span class="row-title">
-      <a class="row-title-link" href="https://tangledupintorrents.org/recordings/1837">
-        <b>
-          <span class="row-date num">1978-10-07</span>
-          <span class="row-venue">Civic Center, Providence, Rhode Island, United States</span>
-          <span class="free-tag">Free</span>
-        </b>
-        <span class="row-sub">LB-11637 &middot; 1st gen reel &gt; DAT - clone &gt; tlh</span>
+<nav><a href="/browse"><span class="lbl">Browse</span><span class="n m">5,638</span></a></nav>
+<aside>1960s 256 recordings</aside>
+<div class="bx-show">
+  <div class="bx-row">
+    <span class="bx-tile" data-dec="1970">&rsquo;78</span>
+    <span class="bx-dt" title="Added 7 h ago (20 Aug 2026, 00:46) by tabby">1978-10-07</span>
+    <span class="bx-nm" title="Civic Center, Providence, Rhode Island, United States">
+      <a class="bx-link" href="https://tangledupintorrents.org/recordings/1837">
+        <b>Civic Center</b>
+        <span class="pl"><span class="mdt">1978-10-07 &middot;</span>
+          Providence, United States</span>
       </a>
     </span>
-    <span class="row-meta-strip">
-      <span class="format-cell">FLAC 16/44</span>
-      <span class="quality-cell" data-q="very-good">Very good</span>
-      <span class="metric seed num ">3<span class="sr-only"> seeders</span></span>
-      <span class="metric leech num is-zero ">0<span class="sr-only"> leechers</span></span>
-      <span class="metric snatch num ">12<span class="sr-only"> snatched</span></span>
-      <span class="taper-cell"><span class="taper-name">mjk5510</span></span>
-      <span class="uploader-cell">
-        <a class="uploader-link" href="https://tangledupintorrents.org/profile/tabby">tabby</a>
+    <span class="bx-tp" title="Taper: mjk5510">mjk5510</span>
+    <span class="bx-sg">22 songs</span>
+    <span class="bx-src"><span class="bx-tag aud">AUD</span></span>
+    <span class="bx-lb">LB-11637</span>
+    <span class="bx-sz">1 GB</span>
+    <span class="bx-peers" title="3 seeding &middot; 0 leeching &middot; 12 snatched">
+      <span class="bx-mtr lo"><i class="on"></i><i></i></span>
+      <span class="bx-mn lo">3<span class="sr-only"> seeders</span></span>
+    </span>
+    <a class="bx-dl" aria-label="Download .torrent, Civic Center 1978-10-07"
+       href="https://tangledupintorrents.org/show/1837/download"></a>
+  </div>
+  <div class="bx-subs">
+    <div class="bx-row is-sub">
+      <span class="bx-tile" data-dec="1970">&rsquo;78</span>
+      <span class="bx-dt" title="Added 2026-08-19 (19 Aug 2026, 02:50) by tabby"></span>
+      <span class="bx-nm" title="Civic Center, Providence, United States">
+        <a class="bx-link" href="https://tangledupintorrents.org/recordings/900">1st gen reel</a>
       </span>
-      <span class="added-cell">
-        <time class="added-date" datetime="2026-08-20T00:46:10+00:00">just now</time>
-      </span>
-    </span>
-  </article>
-  <article class="source-row">
-    <span class="src-pill sbd">SBD</span>
-    <span class="row-title">
-      <a class="row-title-link" href="/recordings/900">
-        <b><span class="row-date num">1966-05-17</span>
-           <span class="row-venue">Free Trade Hall, Manchester</span></b>
-        <span class="row-sub">unknown lineage</span>
-      </a>
-    </span>
-    <span class="row-meta-strip">
-      <span class="format-cell">SHN 16/44</span>
-      <span class="metric seed num is-zero ">0<span class="sr-only"> seeders</span></span>
-      <span class="taper-cell"><span class="uploader-dash">&mdash;</span></span>
-    </span>
-  </article>
+      <span class="bx-tp" title="Taper: "></span>
+      <span class="bx-src"><span class="bx-tag sbd">SBD</span></span>
+      <span class="bx-lb none">none</span>
+      <span class="bx-peers" title="0 seeding &middot; 0 leeching &middot; 0 snatched"></span>
+      <a class="bx-dl" aria-label="Download .torrent, Civic Center 1978-10-07"
+         href="https://tangledupintorrents.org/show/900/download"></a>
+    </div>
+  </div>
 </div>
 """
 
 RECORDING_HTML = """
-<div class="wrap" data-id="1837">
-  <div class="hero-copy">
-    <div class="eyebrow">7 Oct 1978 &middot; Street Legal Tour &middot; Audience</div>
-    <h1>Providence, Civic Center</h1>
-    <p class="subtitle">Source 1 of 2 circulating for this show. Considered the definitive tape.</p>
-    <span class="src-pill aud">AUD</span>
-    <span class="quality-cell" data-q="very-good">Very good</span>
-    <span class="pill pill-free">Freeleech</span>
-    <span class="pill pill-verified">LB verified</span>
-    <a href="https://tangledupintorrents.org/show/1837/download">Download .torrent</a>
-  </div>
-  <div class="spec"><span>Size</span>1,006.42 MB</div>
-  <div class="spec"><span>Files</span>37</div>
-  <div class="spec"><span>Sources</span>2</div>
-  <div class="spec"><span>Uploaded</span>2026</div>
-  <div class="swarm">
-    <div class="swarm-stat seed"><b class="num">1</b><span>Seeders</span></div>
-    <div class="swarm-stat leech"><b class="num">0</b><span>Leechers</span></div>
-    <div class="swarm-stat snatch"><b class="num">4</b><span>Snatched</span></div>
-  </div>
-  <div class="info-grid">
-    <div class="kv"><span>Date</span><b>1978-10-07</b></div>
-    <div class="kv"><span>Venue</span><b>Civic Center</b></div>
-    <div class="kv"><span>Location</span><b>Providence, Rhode Island, United States</b></div>
-    <div class="kv"><span>Tour</span><b>Street Legal Tour</b></div>
-    <div class="kv"><span>Source</span><b>Audience</b></div>
-    <div class="kv"><span>Format</span><b>FLAC 16/44</b></div>
-    <div class="kv"><span>LB number</span><b>11637</b></div>
-    <div class="kv"><span>Info hash</span>
-      <b title="1b00b58b849e69e4b4d9601c257dbd406276f47e">1b00b58b849e&hellip;</b></div>
-  </div>
-  <div class="uploader"><div><b>tabby</b><span>uploaded 1 minute ago</span></div></div>
-  <div class="lineage-chain">
-    <span class="lineage-node">1st gen reel</span><span class="lineage-arrow">&rsaquo;</span>
-    <span class="lineage-node">DAT - clone</span><span class="lineage-arrow">&rsaquo;</span>
-    <span class="lineage-node">tlh</span>
-  </div>
-  <details><summary class="details-summary">From the info file</summary>
-    <p class="description mono-input">Bob Dylan
-Civic Center
-7 October 1978</p></details>
-  <div class="setlist">
-    <div class="set-item"><span class="track">1</span>
-      <a class="song" href="/song/My+Back+Pages">My Back Pages</a></div>
-    <div class="set-item"><span class="track">2</span>
-      <a class="song" href="/song/Tangled+Up+In+Blue">Tangled Up In Blue</a></div>
-  </div>
-  <div class="file-row"><b>bd1978-10-07d1t01.flac</b><span class="right">38.70 MB</span></div>
-  <div class="file-row"><b>bd1978-10-07.ffp.txt</b><span class="right">1.59 KB</span></div>
-  <div class="compare">
-    <div class="compare-row current">
-      <span class="src-pill aud">AUD</span>
-      <div class="compare-title"><b>11637 &middot; AUD</b>
-        <span class="compare-def">You're viewing this &middot; definitive tape</span></div>
-      <span class="compare-seed num">1 S</span>
-      <span class="compare-snatch num">0 D</span>
-      <span class="compare-size num">1,006.42 MB</span>
+<nav class="rc-crumbs">
+  <a class="rc-crumb" href="/browse">Browse</a>
+  <a class="rc-crumb sub" href="https://tangledupintorrents.org/shows/4247">Show page</a>
+  <a class="rc-crumb sub" href="https://tangledupintorrents.org/browse?q=Street+Legal+Tour"
+    >Street Legal Tour</a>
+</nav>
+<section class="rc-hero nocov" data-dec="1970">
+  <div class="rc-hero-main">
+    <div class="rc-date">7 Oct 1978</div>
+    <h1>Civic Center, Providence, United States</h1>
+    <div class="rc-stats">
+      <span><span class="bx-tag aud">AUD</span> Audience</span>
+      <span class="m">LB-11637</span>
+      <span>FLAC 16/44</span>
+      <span class="m">1 GB</span>
+      <span class="m"><span class="rc-dot"></span>1 seeding <i>&middot; 0 leeching</i></span>
+      <span class="m">4 downloads</span>
     </div>
-    <a class="compare-row" href="https://tangledupintorrents.org/recordings/1838">
-      <span class="src-pill aud">AUD</span>
-      <div class="compare-title"><b>11638 &middot; AUD</b></div>
-      <span class="compare-seed num">2 S</span>
-      <span class="compare-snatch num">5 D</span>
-      <span class="compare-size num">785.74 MB</span>
-    </a>
+    <div class="rc-pills">
+      <span class="rc-pill" data-q="very-good">Very good</span>
+      <span class="rc-pill good">Freeleech</span>
+    </div>
+    <div class="rc-act">
+      <a class="rl-btn pri" href="https://tangledupintorrents.org/show/1837/download"
+        >Download .torrent</a>
+    </div>
   </div>
-  <img src="https://tangledupintorrents.org/storage/spectrograms/1837.png">
-  <audio src="https://tangledupintorrents.org/storage/samples/1837.mp3"></audio>
+</section>
+<div class="rc-player" data-audio="https://tangledupintorrents.org/storage/samples/1837.mp3"></div>
+<img class="rc-sgram" src="https://tangledupintorrents.org/storage/spectrograms/1837.png?v=17">
+<section class="rl-box rc-setlist">
+  <div class="rc-tr sl"><span class="n">1</span>
+    <a href="https://tangledupintorrents.org/song/My%20Back%20Pages">My Back Pages</a></div>
+  <div class="rc-tr sl"><span class="n">2</span>
+    <a href="https://tangledupintorrents.org/song/Tangled%20Up%20In%20Blue"
+      >Tangled Up In Blue</a></div>
+</section>
+<div class="rc-up"><span class="rl-av">T</span>
+  <div><b><a class="rl-member" href="https://tangledupintorrents.org/profile/tabby">tabby</a></b>
+  <small>uploaded 1 minute ago</small></div>
+  <form><input type="hidden" name="recording_id" value="1837"></form>
 </div>
+<section class="rl-box rc-list" id="same-night">
+  <div class="rc-row cur" aria-current="true">
+    <span class="rc-nm"><b>mjk5510</b>
+      <span>You're viewing this &middot; Very good &middot; FLAC 16/44</span></span>
+    <span class="bx-src"><span class="bx-tag aud">AUD</span></span>
+    <span class="bx-lb">LB-11637</span>
+    <span class="bx-sz">1 GB</span>
+    <span class="bx-peers"><span class="bx-mn lo">1</span></span>
+    <span class="bx-sz" title="0 completed downloads">0</span>
+  </div>
+  <div class="rc-row">
+    <span class="rc-nm"><b>
+      <a class="rc-link" href="https://tangledupintorrents.org/recordings/1838">net taper</a>
+      <span class="rc-pill good" title="file listing matches">Lossless Bob match</span></b>
+      <span>Excellent &middot; FLAC 16/44</span></span>
+    <span class="bx-src"><span class="bx-tag aud">AUD</span></span>
+    <span class="bx-lb">LB-11638</span>
+    <span class="bx-sz">786 MB</span>
+    <span class="bx-peers"><span class="bx-mn ok">2</span></span>
+    <span class="bx-sz" title="5 completed downloads">5</span>
+  </div>
+</section>
+<div class="rc-pane" id="rcPane-info"><pre class="rc-nfo">Bob Dylan
+Civic Center
+7 October 1978</pre></div>
+<div class="rc-pane" id="rcPane-chain"><section class="rl-box rc-chain">
+  <ol class="rc-steps"><li><span>1st gen reel</span></li><li><span>DAT - clone</span></li>
+    <li><span>tlh</span></li></ol>
+  <dl class="rc-facts"><div><dt>Taper</dt><dd>mjk5510</dd></div>
+    <div><dt>Equipment</dt><dd>reel</dd></div></dl>
+</section></div>
+<div class="rc-pane" id="rcPane-files">
+  <div class="rc-tr f2"><span class="nm">bd1978-10-07d1t01.flac</span>
+    <span class="m r">38.70 MB</span></div>
+  <div class="rc-tr f2"><span class="nm">bd1978-10-07.ffp.txt</span>
+    <span class="m r">1.59 KB</span></div>
+</div>
+<p class="rc-hash">Bob Dylan Providence 1978<br>
+  info hash 1B00B58B849E69E4B4D9601C257DBD406276F47E</p>
 """
-
 
 class TestHelpers:
     @pytest.mark.parametrize("label,expected", [
@@ -182,7 +189,8 @@ class TestParseBrowse:
     def test_row_count_and_total(self):
         rows = parse_browse(BROWSE_HTML)
         assert len(rows) == 2
-        assert browse_total(BROWSE_HTML) == 1635
+        # The nav count, not a decade sidebar's "256 recordings".
+        assert browse_total(BROWSE_HTML) == 5638
 
     def test_full_row_fields(self):
         row = parse_browse(BROWSE_HTML)[0]
@@ -191,31 +199,23 @@ class TestParseBrowse:
         assert row.date_str == "1978-10-07"
         assert row.venue_location.startswith("Civic Center, Providence")
         assert row.lb_number == 11637
-        assert row.lineage == "1st gen reel > DAT - clone > tlh"
-        assert row.format == "FLAC 16/44"
-        assert row.quality == "Very good"
-        assert row.quality_slug == "very-good"
-        assert row.freeleech is True
+        assert row.lineage == ""              # a show's top row names the venue
         assert (row.seeders, row.leechers, row.snatched) == (3, 0, 12)
         assert row.taper == "mjk5510"
         assert row.uploader == "tabby"
-        assert row.added_at == "2026-08-20T00:46:10+00:00"
-        assert row.added_label == "just now"
+        assert row.uploader_url.endswith("/profile/tabby")
+        assert row.added_at == "2026-08-20T00:46:00+00:00"
+        assert row.added_label == "7 h ago"
 
-    def test_swarm_counts_exclude_screenreader_label(self):
-        # "3<span class='sr-only'> seeders</span>" must not parse as 3 + digits
-        assert parse_browse(BROWSE_HTML)[0].seeders == 3
-
-    def test_sparse_row_degrades_to_defaults(self):
+    def test_sub_row_takes_its_date_from_the_download_label(self):
         row = parse_browse(BROWSE_HTML)[1]
         assert row.rec_id == 900
+        assert row.date_str == "1978-10-07"
         assert row.source_type == "SBD"
-        assert row.lb_number is None          # no "LB-nnn ·" prefix
-        assert row.lineage == "unknown lineage"
-        assert row.taper == ""                # em-dash placeholder, not a name
-        assert row.freeleech is False
-        assert row.quality == ""
-        assert row.uploader == ""
+        assert row.lb_number is None          # "none"
+        assert row.lineage == "1st gen reel"
+        assert row.taper == ""
+        assert (row.seeders, row.leechers, row.snatched) == (0, 0, 0)
 
     def test_empty_html_yields_no_rows(self):
         assert parse_browse("<html><body></body></html>") == []
@@ -237,34 +237,37 @@ class TestParseRecording:
     def test_reads_id_from_page_when_not_supplied(self):
         assert parse_recording(RECORDING_HTML).rec_id == 1837
 
-    def test_info_grid(self, rec):
+    def test_hero(self, rec):
         assert rec.date_str == "1978-10-07"
         assert rec.venue == "Civic Center"
-        assert rec.location == "Providence, Rhode Island, United States"
+        assert rec.location == "Providence, United States"
         assert rec.tour == "Street Legal Tour"
         assert rec.source_label == "Audience"
         assert rec.source_type == "AUD"
         assert rec.format == "FLAC 16/44"
+        assert rec.title == "Civic Center, Providence, United States"
+        assert rec.eyebrow == "7 Oct 1978 · Street Legal Tour · Audience"
 
-    def test_info_hash_uses_untruncated_title_attribute(self, rec):
+    def test_info_hash_is_read_from_the_hash_line(self, rec):
         assert rec.info_hash == "1b00b58b849e69e4b4d9601c257dbd406276f47e"
-        assert "…" not in rec.info_hash
 
-    def test_hero_copy(self, rec):
-        assert rec.title == "Providence, Civic Center"
-        assert rec.eyebrow.startswith("7 Oct 1978")
-        assert rec.headline.startswith("Source 1 of 2 circulating")
-
-    def test_specs_and_swarm(self, rec):
-        assert rec.size_label == "1,006.42 MB"
-        assert rec.size_bytes == 1055307857
-        assert rec.n_files == 37
+    def test_size_comes_from_the_file_list_not_the_rounded_hero(self, rec):
+        assert rec.size_label == "1 GB"
+        assert rec.size_bytes == parse_size("38.70 MB") + 1628
+        assert rec.n_files == 2
         assert rec.n_sources == 2
+        assert rec.headline == "2 recordings of this show"
         assert (rec.seeders, rec.leechers, rec.snatched) == (1, 0, 4)
 
     def test_flags(self, rec):
         assert rec.freeleech is True
-        assert rec.lb_verified is True
+        assert rec.lb_verified is False       # the hero no longer carries it
+        assert rec.quality == "Very good" and rec.quality_slug == "very-good"
+
+    def test_taper_and_uploader(self, rec):
+        assert rec.taper == "mjk5510"
+        assert rec.uploader == "tabby"
+        assert rec.uploaded_label == "1 minute ago"
 
     def test_lineage(self, rec):
         assert rec.lineage_nodes == ["1st gen reel", "DAT - clone", "tlh"]
@@ -274,7 +277,7 @@ class TestParseRecording:
         assert rec.info_text.startswith("Bob Dylan")
         assert "7 October 1978" in rec.info_text
 
-    def test_setlist(self, rec):
+    def test_setlist_urls_keep_the_old_relative_form(self, rec):
         assert len(rec.setlist) == 2
         assert rec.setlist[0] == {
             "track": "1", "song": "My Back Pages", "song_url": "/song/My+Back+Pages",
@@ -292,9 +295,11 @@ class TestParseRecording:
         assert current["url"] == ""
         assert other["is_current"] is False
         assert other["rec_id"] == 1838
+        assert other["lb_number"] == 11638
+        assert other["lb_match"] is True
         assert other["seeders"] == 2
         assert other["snatched"] == 5
-        assert other["size_label"] == "785.74 MB"
+        assert other["size_label"] == "786 MB"
 
     def test_media_urls(self, rec):
         assert rec.spectrogram_url.endswith("/storage/spectrograms/1837.png")
@@ -309,8 +314,7 @@ class TestParseRecording:
 
 class TestMergeRow:
     def test_row_taper_wins_over_blank_detail(self):
-        rec = parse_recording(RECORDING_HTML, rec_id=1837)
-        assert rec.taper == ""
+        rec = Recording(rec_id=1837)
         row = parse_browse(BROWSE_HTML)[0]
         merge_row_into_recording(rec, row)
         assert rec.taper == "mjk5510"
@@ -409,48 +413,46 @@ TOUR_INDEX_HTML = """
 
 TOUR_PAGE_HTML = """
 <h1>Country/Nashville</h1>
-<div class="tl">
-  <div class="tl-year">1969</div>
-  <a href="https://tangledupintorrents.org/recordings/1584" class="tl-row">
-    <div class="tl-date">Aug 31</div>
-    <div class="tl-main"><b>Woodside Bay</b><small>Isle Of Wight, England</small></div>
-    <div class="tl-meta">
-      <span class="text-green" title="In your collection">&#10003;</span>
-      <span class="mini-src sbd">SBD</span>
-      <span class="mini-src aud">AUD</span>
-      <span class="num text-green mono-sm" title="4 seeding">&#9650; 4</span>
-    </div>
+<section class="rl-box sh-box">
+  <div class="rl-sec"><h2>1969</h2><span class="m">1 show</span></div>
+  <a class="rc-tr sh-g sh-g5" data-has="1"
+     href="https://tangledupintorrents.org/recordings/1584">
+    <span class="m">1969-08-31</span>
+    <span class="sh-nm"><b>Woodside Bay</b><span>Isle Of Wight, England</span></span>
+    <span class="sh-tags"><span class="sh-own" title="In your collection"></span>
+      <span class="bx-tag sbd">SBD</span><span class="bx-tag aud">AUD</span></span>
+    <span class="sh-sd" title="4 seeding">4 seeding</span>
+    <span class="sh-n has">2 recordings</span>
   </a>
-  <div class="tl-year">1974</div>
-  <a href="https://tangledupintorrents.org/shows/4273" class="tl-row">
-    <div class="tl-date">Jan 3</div>
-    <div class="tl-main"><b>Chicago Stadium</b><small>Chicago, Illinois</small></div>
-    <div class="tl-meta"><span class="tl-missing">Request &rarr;</span></div>
+</section>
+<section class="rl-box sh-box">
+  <div class="rl-sec"><h2>1974</h2><span class="m">1 show</span></div>
+  <a class="rc-tr sh-g sh-g5" data-has="0" href="https://tangledupintorrents.org/shows/4273">
+    <span class="m">1974-01-03</span>
+    <span class="sh-nm"><b>Chicago Stadium</b><span>Chicago, Illinois</span></span>
+    <span class="sh-tags"></span><span class="sh-sd"></span>
+    <span class="sh-n">no recording</span>
   </a>
-</div>
+</section>
 """
 
 VENUE_PAGE_HTML = """
-<span class="result-count"><b>2,744</b> venues &middot; page 1 of 46</span>
-<table class="tbl">
-  <thead><tr><th>Venue</th><th>City</th><th>Country</th><th>Years</th>
-    <th class="r">Shows</th></tr></thead>
-  <tbody>
-    <tr>
-      <td><a href="https://tangledupintorrents.org/venue/Beacon%20Theatre">
-        Beacon Theatre</a></td>
-      <td>New York, New York</td><td>United States</td>
-      <td class="num">1989 &ndash; 2023</td><td class="r">46</td>
-    </tr>
-    <tr>
-      <td><a href="https://tangledupintorrents.org/venue/Spektrum">Spektrum</a></td>
-      <td>Oslo</td><td>Norway</td>
-      <td class="num">1995</td><td class="r">13</td>
-    </tr>
-  </tbody>
-</table>
+<div class="rc-th sh-vn"><span>Venue</span><span>Country</span><span>Years</span>
+  <span class="r">Shows</span></div>
+<div class="rc-tr sh-vn">
+  <span class="sh-nm"><a href="https://tangledupintorrents.org/venue/Beacon%20Theatre"
+    ><b>Beacon Theatre</b></a><span>New York, New York</span></span>
+  <span class="sh-c">United States</span>
+  <span class="m">1989&ndash;2023</span><span class="m r">46</span>
+</div>
+<div class="rc-tr sh-vn">
+  <span class="sh-nm"><a href="https://tangledupintorrents.org/venue/Spektrum"
+    ><b>Spektrum</b></a><span>Oslo</span></span>
+  <span class="sh-c">Norway</span>
+  <span class="m">1995</span><span class="m r">13</span>
+</div>
+<div class="sh-pager"><span class="sh-pager-info">Page 1 of 46</span></div>
 """
-
 
 class TestParseTourIndex:
     """/tour lists one link per named tour; names come from the URL."""
@@ -468,9 +470,9 @@ class TestParseTourIndex:
 
 
 class TestParseTourPage:
-    """Rows carry only 'Mon D' — the year comes from the .tl-year divider."""
+    """Rows carry a full ISO date; data-has says whether a tape circulates."""
 
-    def test_year_comes_from_the_divider_not_month_wrap(self):
+    def test_dates_are_read_from_each_row(self):
         rows = parse_tour_page(TOUR_PAGE_HTML)
         assert [r.date_str for r in rows] == ["1969-08-31", "1974-01-03"]
 
@@ -499,7 +501,7 @@ class TestParseTourPage:
 
 
 class TestParseVenuePage:
-    """The /venue register is a plain paginated table."""
+    """The /venue register is a paginated list of .rc-tr rows."""
 
     def test_rows_are_parsed_with_their_year_span(self):
         rows = parse_venue_page(VENUE_PAGE_HTML)
@@ -523,65 +525,67 @@ class TestParseVenuePage:
 
 
 SONGS_INDEX_HTML = """
-<span class="result-count">top <b>50</b> &middot; 1 of 17 pages</span>
-<table class="tbl">
-  <thead><tr><th>#</th><th>Song</th><th></th><th class="r">Performances</th>
-    <th>First</th><th>Last</th></tr></thead>
-  <tbody>
-    <tr>
-      <td class="rank"><span class="medal-gold">&#9733;</span></td>
-      <td><a href="https://tangledupintorrents.org/song/All%20Along%20The%20Watchtower"
-        >All Along The Watchtower</a></td>
-      <td><div class="comp-bar"><i style="width:100%"></i></div></td>
-      <td class="r">2,285<span>&times;</span></td>
-      <td class="num">1974</td><td class="num">2026</td>
-    </tr>
-    <tr>
-      <td class="rank">4</td>
-      <td><a href="https://tangledupintorrents.org/song/Tangled%20Up%20In%20Blue"
-        >Tangled Up In Blue</a></td>
-      <td><div class="comp-bar"><i style="width:71%"></i></div></td>
-      <td class="r">1,620<span>&times;</span></td>
-      <td class="num">1975</td><td class="num">2018</td>
-    </tr>
-  </tbody>
-</table>
+<p>50 a page &middot; page 1 of 17</p>
+<div class="rc-tr sg-g">
+  <span class="m sg-rank">1</span>
+  <span class="nm"><a href="https://tangledupintorrents.org/song/All%20Along%20The%20Watchtower"
+    >All Along The Watchtower</a></span>
+  <span class="sg-bar"><i style="--p:1"></i><span class="m">2,285</span></span>
+  <span class="m r">1974</span><span class="m r">2026</span>
+</div>
+<div class="rc-tr sg-g">
+  <span class="m sg-rank">4</span>
+  <span class="nm"><a href="https://tangledupintorrents.org/song/Tangled%20Up%20In%20Blue"
+    >Tangled Up In Blue</a></span>
+  <span class="sg-bar"><i style="--p:0.7"></i><span class="m">1,620</span></span>
+  <span class="m r">1975</span><span class="m r">2018</span>
+</div>
 """
 
 SONG_PAGE_HTML = """
-<section class="song-hero"><h1>All Along The Watchtower</h1></section>
-<details class="decade" open>
-  <summary class="decade-hd"><span class="dec">2020s</span>
-    <span class="dcount">111 shows</span></summary>
-  <div class="perf-row">
-    <span class="perf-date">Jun 23, 2026</span>
-    <a class="venue" href="https://tangledupintorrents.org/shows/5025"
-      >Arizona Financial Theatre &mdash; Phoenix, United States</a>
-    <span class="perf-src"><span class="tag">1 src</span></span>
+<h1>All Along The Watchtower</h1>
+<details class="sg-dec" open>
+  <summary><b>2020s</b><span><span class="m">111</span> shows</span></summary>
+  <div class="sg-pf">
+    <span class="bx-dt">2026-06-23</span>
+    <span class="bx-nm">
+      <a class="bx-link" href="https://tangledupintorrents.org/shows/5025">
+        <b>Arizona Financial Theatre</b>
+        <span class="pl"><span class="mdt">2026-06-23 &middot;</span> Phoenix, United States</span>
+      </a>
+      <span class="sg-pf-note">Bob on guitar and electric keyboard</span>
+    </span>
+    <span class="bx-src"><span class="bx-tag aud">AUD</span></span>
   </div>
-  <div class="perf-note">Bob on guitar and electric keyboard</div>
-  <div class="perf-row">
-    <span class="perf-date">Jun 18, 2026</span>
-    <a class="venue" href="https://tangledupintorrents.org/shows/5030"
-      >Yaamava' Theater &mdash; Highland, United States</a>
-    <span class="perf-src"></span>
+  <div class="sg-pf is-bare">
+    <span class="bx-dt">2026-06-18</span>
+    <span class="bx-nm">
+      <a class="bx-link" href="https://tangledupintorrents.org/shows/5030">
+        <b>Yaamava' Theater</b>
+        <span class="pl"><span class="mdt">2026-06-18 &middot;</span> Highland, United States</span>
+      </a>
+    </span>
+    <span class="bx-src"><span class="sg-none">no recording</span></span>
   </div>
 </details>
-<details class="decade">
-  <summary class="decade-hd"><span class="dec">2010s</span></summary>
-  <div class="perf-row">
-    <span class="perf-date">Aug 13, 2011</span>
-    <a class="venue" href="https://tangledupintorrents.org/shows/2197"
-      >Nikon at Jones Beach Theater &mdash; Wantagh, United States</a>
-    <span class="perf-src"><span class="tag">Encore</span>
-      <span class="tag">3 src</span></span>
+<details class="sg-dec">
+  <summary><b>2010s</b></summary>
+  <div class="sg-pf">
+    <span class="bx-dt">2011-08-13</span>
+    <span class="bx-nm">
+      <a class="bx-link" href="https://tangledupintorrents.org/shows/2197">
+        <b>Nikon at Jones Beach Theater</b>
+        <span class="pl"><span class="mdt">2011-08-13 &middot;</span> Wantagh, United States</span>
+      </a>
+    </span>
+    <span class="bx-src"><span class="bx-tag sbd">SBD</span>
+      <span class="sg-more" title="3 recordings of this show">+2</span></span>
   </div>
 </details>
 """
 
-
 class TestParseSongsIndex:
-    """The /songs songbook is a paginated table like /venue."""
+    """The /songs songbook is a paginated list like /venue."""
 
     def test_rows_carry_counts_and_year_span(self):
         rows = parse_songs_index(SONGS_INDEX_HTML)
@@ -612,11 +616,14 @@ class TestParseSongPage:
         assert rows[0].note == "Bob on guitar and electric keyboard"
         assert rows[1].note == ""
 
-    def test_source_count_and_encore_tags(self):
+    def test_source_count_comes_from_the_more_chip(self):
         rows = parse_song_page(SONG_PAGE_HTML)
-        assert (rows[0].n_sources, rows[0].is_encore) == (1, False)
-        assert (rows[1].n_sources, rows[1].is_encore) == (None, False)
-        assert (rows[2].n_sources, rows[2].is_encore) == (3, True)
+        assert [r.n_sources for r in rows] == [1, None, 3]
+        assert not any(r.is_encore for r in rows)   # no longer rendered
+
+    def test_venue_text_keeps_the_old_dash_form(self):
+        assert parse_song_page(SONG_PAGE_HTML)[0].venue_text == (
+            "Arizona Financial Theatre — Phoenix, United States")
 
     def test_show_id_comes_from_the_venue_link(self):
         assert parse_song_page(SONG_PAGE_HTML)[0].show_id == 5025
@@ -721,7 +728,11 @@ class TestArchivedPages:
     """
 
     def _sample(self, n: int = 60) -> list[Path]:
-        files = sorted(_ARCHIVE.glob("rec-*.html"))
+        # Pages archived before the 2026-11-25 redesign are another layout.
+        files = [f for f in sorted(_ARCHIVE.glob("rec-*.html"))
+                 if 'class="rc-hero' in f.read_text(encoding="utf-8", errors="replace")]
+        if not files:
+            pytest.skip("no archived pages in the current layout yet")
         return files[:: max(1, len(files) // n)][:n]
 
     def test_core_fields_are_populated(self):

@@ -78,6 +78,20 @@ class TestUpsertTuitRecording:
         assert got["freeleech"] == 1
         assert got["lb_verified"] == 0
 
+    def test_a_rescan_never_clears_lb_verified(self, dbmod):
+        """The 2026-11-25 page no longer shows the flag for the viewed recording."""
+        db, path = dbmod
+        db.upsert_tuit_recording(_row(lb_verified=True), path)
+        db.upsert_tuit_recording(_row(lb_verified=False, seeders=7), path)
+        got = db.get_tuit_recording(1837, path)
+        assert (got["lb_verified"], got["seeders"]) == (1, 7)
+
+    def test_a_rescan_can_set_lb_verified(self, dbmod):
+        db, path = dbmod
+        db.upsert_tuit_recording(_row(lb_verified=False), path)
+        db.upsert_tuit_recording(_row(lb_verified=True), path)
+        assert db.get_tuit_recording(1837, path)["lb_verified"] == 1
+
     def test_upsert_is_idempotent_and_updates_in_place(self, dbmod):
         db, path = dbmod
         db.upsert_tuit_recording(_row(seeders=1), path)
@@ -430,6 +444,16 @@ class TestTuitSongs:
         ]
         assert db.upsert_tuit_song_performances(rows) == 2
         assert len(db.get_tuit_song_performances(song="AAtW", db_path=path)) == 2
+
+    def test_a_resync_never_clears_is_encore(self, dbmod):
+        """Song pages stopped marking encores; earlier markers must survive."""
+        db, path = dbmod
+        row = {"song": "AAtW", "date_str": "2011-08-13", "venue_text": "Jones Beach",
+               "show_id": 2197, "n_sources": 1}
+        db.upsert_tuit_song_performances([{**row, "is_encore": True}])
+        db.upsert_tuit_song_performances([{**row, "is_encore": False, "n_sources": 3}])
+        got = db.get_tuit_song_performances(song="AAtW", db_path=path)[0]
+        assert (got["is_encore"], got["n_sources"]) == (1, 3)
 
     def test_same_venue_text_twice_is_split_by_show_id(self, dbmod):
         """1974-02-11 renders one venue string for two shows — only the id differs."""

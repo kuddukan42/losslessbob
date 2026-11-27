@@ -214,75 +214,93 @@ class BrowseRow:
         return dict(self.__dict__)
 
 
+_SWARM_RE = re.compile(r"(\d[\d,]*)\s+seeding\D+(\d[\d,]*)\s+leeching"
+                       r"(?:\D+(\d[\d,]*)\s+(?:snatched|downloads?))?")
+_ADDED_RE = re.compile(r"\((\d{1,2}) (\w{3}) (\d{4}), (\d{1,2}):(\d{2})\)\s*by\s+(\S+)")
+
+
+def _lb_from(text: str) -> int | None:
+    """Return the N of an 'LB-N' label, or None ('none', 'No LB number yet')."""
+    m = re.search(r"LB-(\d+)", text or "")
+    return int(m.group(1)) if m else None
+
+
+def _swarm(title: str) -> tuple[int | None, int | None, int | None]:
+    """Parse '2 seeding · 0 leeching · 2 snatched' into (seeders, leechers, snatched)."""
+    m = _SWARM_RE.search(title or "")
+    if not m:
+        return None, None, None
+    return tuple(_int_or_none(g) if g else None for g in m.groups())  # type: ignore[return-value]
+
+
+def _added(title: str) -> tuple[str, str, str]:
+    """Parse the browse date cell's title into (added_at ISO UTC, label, uploader).
+
+    The title reads 'Added 7 h ago (26 Nov 2026, 19:37) by tabby'; the site
+    renders the bracketed time in UTC (it matched the old ``datetime`` attribute).
+    """
+    m = _ADDED_RE.search(title or "")
+    if not m or m.group(2) not in _MONTHS:
+        return "", "", ""
+    day, mon, year, hh, mm, who = m.groups()
+    iso = (f"{int(year):04d}-{_MONTHS[mon]:02d}-{int(day):02d}"
+           f"T{int(hh):02d}:{mm}:00+00:00")
+    label = re.sub(r"^Added\s+", "", title.split("(")[0]).strip()
+    return iso, label, who
+
+
 def parse_browse(html: str) -> list[BrowseRow]:
     """Parse a /browse listing page into rows.
+
+    The listing (redesigned 2026-11-25) groups recordings by show: a ``.bx-row``
+    per show's newest recording, followed by ``.bx-row.is-sub`` rows for its
+    other recordings. Sub rows leave the date cell blank and name the recording
+    by its equipment, so their date comes from the download link's label.
 
     Args:
         html: Raw HTML of a listing page.
 
     Returns:
-        One BrowseRow per ``article.source-row``, in page order.
+        One BrowseRow per ``.bx-row``, in page order.
     """
     soup = BeautifulSoup(html, "html.parser")
     rows: list[BrowseRow] = []
 
-    for art in soup.select("article.source-row"):
+    for el in soup.select(".bx-row"):
         row = BrowseRow()
-        row.source_type = _text(art.select_one(".src-pill")).upper()
-
-        link = art.select_one("a.row-title-link")
+        link = el.select_one("a.bx-link")
         if link and link.get("href"):
             row.detail_url = link["href"]
             row.rec_id = recording_id_from_url(row.detail_url)
-
-        row.date_str = _text(art.select_one(".row-date"))
-        row.venue_location = _text(art.select_one(".row-venue"))
-        row.freeleech = art.select_one(".free-tag") is not None
-
-        sub = _text(art.select_one(".row-sub"))
-        m = re.match(r"LB-(\d+)\s*·\s*(.*)$", sub)
-        if m:
-            row.lb_number = int(m.group(1))
-            row.lineage = m.group(2).strip()
-        else:
-            row.lineage = sub
-
-        row.format = _text(art.select_one(".format-cell"))
-        qual = art.select_one(".quality-cell")
-        row.quality = _text(qual)
-        row.quality_slug = (qual.get("data-q") or "") if qual else ""
-
-        for kind, attr in (("seed", "seeders"), ("leech", "leechers"),
-                           ("snatch", "snatched")):
-            cell = art.select_one(f".metric.{kind}")
-            if cell:
-                # The visible number is the cell's own text minus the sr-only label.
-                sr = cell.select_one(".sr-only")
-                if sr:
-                    sr.extract()
-                setattr(row, attr, _int_or_none(_text(cell)))
-
-        taper = art.select_one(".taper-cell .taper-name")
-        row.taper = _text(taper)
-
-        up = art.select_one(".uploader-cell a.uploader-link")
-        if up:
-            row.uploader = _text(up)
-            row.uploader_url = up.get("href", "")
-
-        added = art.select_one("time.added-date")
-        if added:
-            row.added_at = added.get("datetime", "")
-            row.added_label = _text(added)
-
+        row.source_type = _text(el.select_one(".bx-src .bx-tag")).upper()
+        dt = el.select_one(".bx-dt")
+        row.date_str = _text(dt)
+        if not row.date_str:
+            dl = el.select_one("a.bx-dl")
+            m = re.search(r"(\d{4}-\d{2}-\d{2})\s*$", (dl.get("aria-label") or "") if dl else "")
+            row.date_str = m.group(1) if m else ""
+        name = el.select_one(".bx-nm")
+        row.venue_location = (name.get("title") or "").strip() if name else ""
+        if "is-sub" in (el.get("class") or []):
+            row.lineage = _text(link)
+        row.lb_number = _lb_from(_text(el.select_one(".bx-lb")))
+        row.taper = _text(el.select_one(".bx-tp"))
+        peers = el.select_one(".bx-peers")
+        row.seeders, row.leechers, row.snatched = _swarm(
+            (peers.get("title") or "") if peers else "")
+        row.added_at, row.added_label, row.uploader = _added(
+            (dt.get("title") or "") if dt else "")
+        if row.uploader:
+            row.uploader_url = f"{BASE_URL}/profile/{row.uploader}"
         rows.append(row)
 
     return rows
 
 
 def browse_total(html: str) -> int | None:
-    """Return the '1,635 recordings' total advertised on a listing page."""
-    m = re.search(r"([\d,]+)\s+recordings", html or "")
+    """Return the catalogue size: the count beside the nav's 'Browse' link."""
+    m = re.search(r'class="lbl">\s*Browse\s*</span>\s*<span class="n[^"]*">\s*([\d,]+)',
+                  html or "")
     return _int_or_none(m.group(1)) if m else None
 
 
@@ -365,41 +383,63 @@ class Recording:
         return dict(self.__dict__)
 
 
-def _info_grid(soup: BeautifulSoup) -> dict[str, tuple[str, str]]:
-    """Return {label: (text, title_attr)} for every .kv pair on the page."""
-    out: dict[str, tuple[str, str]] = {}
-    for kv in soup.select(".kv"):
-        label = _text(kv.find("span"))
-        value_node = kv.find("b")
-        if label:
-            out[label.lower()] = (
-                _text(value_node),
-                (value_node.get("title") or "") if value_node else "",
-            )
-    return out
+_FORMAT_RE = re.compile(r"^(FLAC|SHN|WAV|ALAC|APE|DSD|MP3|AAC|OGG)\b", re.I)
 
 
-def _spec_values(soup: BeautifulSoup) -> dict[str, str]:
-    """Return {label: value} for the Size/Files/Sources/Uploaded spec strip."""
+def _day_to_iso(label: str) -> str:
+    """Convert '2 Nov 1992' to '1992-11-02'; return '' when it does not parse."""
+    m = re.match(r"(\d{1,2})\s+(\w{3})\w*\s+(\d{4})$", (label or "").strip())
+    if not m or m.group(2)[:3].title() not in _MONTHS:
+        return ""
+    return f"{int(m.group(3)):04d}-{_MONTHS[m.group(2)[:3].title()]:02d}-{int(m.group(1)):02d}"
+
+
+def _facts(soup: BeautifulSoup) -> dict[str, str]:
+    """Return {dt label (lower): dd text} for the page's first ``dl.rc-facts``."""
+    dl = soup.select_one("dl.rc-facts")
     out: dict[str, str] = {}
-    for spec in soup.select(".spec"):
-        label = _text(spec.find("span"))
-        value = _text(spec).removeprefix(label).strip()
+    for div in dl.find_all("div", recursive=False) if dl else []:
+        label = _text(div.find("dt")).lower()
         if label:
-            out[label.lower()] = value
+            out[label] = _text(div.find("dd"))
     return out
 
 
-def _outside_compare(soup: BeautifulSoup, selector: str):
-    """Return the first ``selector`` match that is not inside a sibling card."""
-    for node in soup.select(selector):
-        if node.find_parent(class_="compare-row") is None:
-            return node
-    return None
+def _sibling(row) -> dict:
+    """Return one 'Recordings of this show' row as a sibling dict."""
+    link = row.select_one("a.rc-link")
+    href = (link.get("href") or "") if link else ""
+    name = row.select_one(".rc-nm")
+    bold = name.find("b") if name else None
+    note = bold.find_next_sibling("span") if bold else None
+    sizes = row.select(".bx-sz")
+    done = next((s for s in sizes if "completed" in (s.get("title") or "")), None)
+    size = next((s for s in sizes if s is not done), None)
+    return {
+        "title": _text(bold),
+        "note": _text(note),
+        "source_type": _text(row.select_one(".bx-src .bx-tag")).upper(),
+        "url": href,
+        "rec_id": recording_id_from_url(href),
+        "is_current": "cur" in (row.get("class") or []),
+        "lb_number": _lb_from(_text(row.select_one(".bx-lb"))),
+        "size_label": _text(size),
+        "seeders": _int_or_none(_text(row.select_one(".bx-mn"))),
+        "snatched": _int_or_none(_text(done)),
+        "lb_match": any("lossless bob match" in _text(p).lower()
+                        for p in row.select(".rc-pill")),
+    }
 
 
 def parse_recording(html: str, rec_id: int | None = None) -> Recording:
-    """Parse a /recordings/<id> detail page.
+    """Parse a /recordings/<id> detail page (layout of 2026-11-25).
+
+    The hero holds date, the 'Venue, City, Country' heading and a stats strip
+    (source, LB, format, size, swarm); lineage, facts, info file, setlist, files
+    and the show's other recordings sit in ``rc-*`` sections below. The page no
+    longer splits venue from location, so the heading is split at its first
+    comma — :func:`merge_row_into_recording` keeps that split, and the browse
+    row only fills blanks.
 
     Args:
         html: Raw HTML of the detail page.
@@ -412,101 +452,103 @@ def parse_recording(html: str, rec_id: int | None = None) -> Recording:
     rec = Recording(rec_id=rec_id)
 
     if rec.rec_id is None:
-        node = soup.select_one("[data-id]")
+        node = soup.select_one("input[name=recording_id]")
         if node:
-            rec.rec_id = _int_or_none(node.get("data-id", ""))
+            rec.rec_id = _int_or_none(node.get("value", ""))
     if rec.rec_id is not None:
         rec.detail_url = f"{BASE_URL}/recordings/{rec.rec_id}"
 
-    kv = _info_grid(soup)
-    rec.date_str = kv.get("date", ("", ""))[0]
-    rec.venue = kv.get("venue", ("", ""))[0]
-    rec.location = kv.get("location", ("", ""))[0]
-    rec.tour = kv.get("tour", ("", ""))[0]
-    rec.source_label = kv.get("source", ("", ""))[0]
-    rec.format = kv.get("format", ("", ""))[0]
-    rec.lb_number = _int_or_none(kv.get("lb number", ("", ""))[0])
-    hash_text, hash_title = kv.get("info hash", ("", ""))
-    # The grid truncates the hash; the untruncated value lives in title=.
-    rec.info_hash = hash_title or hash_text.replace("…", "")
+    hero = soup.select_one(".rc-hero")
+    if hero:
+        day = _text(hero.select_one(".rc-date"))
+        rec.date_str = _day_to_iso(day)
+        rec.title = _text(hero.find("h1"))
+        venue, _, location = rec.title.partition(", ")
+        rec.venue, rec.location = venue.strip(), location.strip()
+        for span in hero.select(".rc-stats > span"):
+            text = _text(span)
+            tag = span.select_one(".bx-tag")
+            if tag:
+                rec.source_type = _text(tag).upper()
+                rec.source_label = text.removeprefix(_text(tag)).strip()
+            elif "seeding" in text:
+                rec.seeders, rec.leechers, _ = _swarm(text)
+            elif re.fullmatch(r"[\d,]+ downloads?", text):
+                rec.snatched = _int_or_none(text)
+            elif "LB" in text:
+                rec.lb_number = _lb_from(text)
+            elif _FORMAT_RE.match(text):
+                rec.format = text
+            elif parse_size(text) is not None:
+                rec.size_label = text
+        for pill in hero.select(".rc-pill"):
+            if pill.get("data-q"):
+                rec.quality = _text(pill)
+                rec.quality_slug = pill.get("data-q", "")
+            elif _text(pill).lower() == "freeleech":
+                rec.freeleech = True
+            elif "lossless bob" in _text(pill).lower():
+                rec.lb_verified = True
 
-    # The sibling cards further down render the same pill classes, so take the
-    # first one that is not inside a .compare-row rather than the first on the
-    # page.
-    rec.source_type = _text(_outside_compare(soup, ".src-pill")).upper()
-    qual = _outside_compare(soup, "[data-q]")
-    if qual:
-        rec.quality = _text(qual)
-        rec.quality_slug = qual.get("data-q", "")
+    crumb = soup.find("a", class_="rc-crumb", href=re.compile(r"/browse\?q="))
+    rec.tour = _text(crumb)
+    rec.eyebrow = " · ".join(x for x in (_text(hero.select_one(".rc-date")) if hero else "",
+                                        rec.tour, rec.source_label) if x)
 
-    specs = _spec_values(soup)
-    rec.size_label = specs.get("size", "")
-    rec.size_bytes = parse_size(rec.size_label)
-    rec.n_files = _int_or_none(specs.get("files", ""))
-    rec.n_sources = _int_or_none(specs.get("sources", ""))
-    rec.uploaded_label = specs.get("uploaded", "")
+    m = re.search(r"info hash\s+([0-9a-f]{40})", _text(soup.select_one(".rc-hash")), re.I)
+    rec.info_hash = m.group(1).lower() if m else ""
 
-    for cls, attr in (("seed", "seeders"), ("leech", "leechers"),
-                      ("snatch", "snatched")):
-        cell = soup.select_one(f".swarm-stat.{cls}") or soup.select_one(f".metric.{cls}")
-        if cell:
-            sr = cell.select_one(".sr-only")
-            if sr:
-                sr.extract()
-            setattr(rec, attr, _int_or_none(_text(cell)))
+    rec.taper = _facts(soup).get("taper", "")
+    up = soup.select_one(".rc-up a.rl-member")
+    rec.uploader = _text(up)
+    rec.uploaded_label = _text(soup.select_one(".rc-up small")).removeprefix("uploaded ").strip()
 
-    # Read the hero pills, not the page text: a substring test was true on
-    # every page, so the columns carried no signal.
-    rec.freeleech = soup.select_one(".pill-free, .free-tag") is not None
-    rec.lb_verified = soup.select_one(".pill-verified") is not None
-
-    uploader = soup.select_one(".uploader b")
-    rec.uploader = _text(uploader)
-    taper = soup.select_one(".taper-name")
-    rec.taper = _text(taper)
-
-    rec.lineage_nodes = [_text(n) for n in soup.select(".lineage-node")]
+    rec.lineage_nodes = [_text(li) for li in soup.select(".rc-steps > li")]
     rec.lineage = " > ".join(rec.lineage_nodes)
 
-    info = soup.select_one("p.description")
-    if info:
-        rec.info_text = info.get_text("\n", strip=False).strip()
+    nfo = soup.select_one("pre.rc-nfo")
+    if nfo:
+        rec.info_text = nfo.get_text().strip()
 
-    for item in soup.select(".set-item"):
-        song = item.select_one(".song")
+    for item in soup.select(".rc-setlist .rc-tr.sl"):
+        song = item.find("a", href=True)
         rec.setlist.append({
-            "track": _text(item.select_one(".track")),
+            "track": _text(item.select_one(".n")),
             "song": _text(song),
-            "song_url": (song.get("href") or "") if song else "",
+            # Stored relative and '+'-encoded, as the old layout rendered it.
+            "song_url": ((song.get("href") or "").removeprefix(BASE_URL).replace("%20", "+")
+                         if song else ""),
         })
 
-    for frow in soup.select(".file-row"):
-        size_label = _text(frow.select_one(".right"))
-        name_node = frow.find("b")
+    for frow in soup.select("#rcPane-files .rc-tr"):
+        size_label = _text(frow.select_one(".m"))
         rec.files.append({
-            "name": _text(name_node),
+            "name": _text(frow.select_one(".nm")),
             "size_label": size_label,
             "size_bytes": parse_size(size_label),
         })
+    if rec.files:
+        rec.n_files = len(rec.files)
+        # The hero rounds ('580 MB'); the file list sums to the real size.
+        sizes = [f["size_bytes"] for f in rec.files]
+        if all(s is not None for s in sizes):
+            rec.size_bytes = sum(sizes)
+    if rec.size_bytes is None:
+        rec.size_bytes = parse_size(rec.size_label)
 
-    for card in soup.select(".compare-row"):
-        href = card.get("href", "") if card.name == "a" else ""
-        title = card.select_one(".compare-title")
-        rec.siblings.append({
-            "title": _text(title.find("b")) if title else "",
-            "note": _text(card.select_one(".compare-def")),
-            "source_type": _text(card.select_one(".src-pill")).upper(),
-            "url": href,
-            "rec_id": recording_id_from_url(href),
-            "is_current": "current" in (card.get("class") or []),
-            "size_label": _text(card.select_one(".compare-size")),
-            "seeders": _int_or_none(_text(card.select_one(".compare-seed"))),
-            "snatched": _int_or_none(_text(card.select_one(".compare-snatch"))),
-        })
+    rec.siblings = [_sibling(r) for r in soup.select(".rc-list .rc-row")]
+    if rec.siblings:
+        rec.n_sources = len(rec.siblings)
+        others = len(rec.siblings) - 1
+        rec.headline = (f"{len(rec.siblings)} recordings of this show" if others
+                        else "The only source for this show")
+    current = next((s for s in rec.siblings if s["is_current"]), None)
+    if current and current["lb_number"] and not rec.lb_number:
+        rec.lb_number = current["lb_number"]
 
-    for url in re.findall(r'(?:src|href)="([^"]+)"', html):
+    for url in re.findall(r'(?:src|href|data-audio)="([^"]+)"', html):
         if "/storage/spectrograms/" in url and not rec.spectrogram_url:
-            rec.spectrogram_url = url
+            rec.spectrogram_url = url.split("?")[0]  # drop the ?v= cache-buster
         elif "/storage/samples/" in url and not rec.preview_url:
             rec.preview_url = url
 
@@ -516,10 +558,6 @@ def parse_recording(html: str, rec_id: int | None = None) -> Recording:
         m = re.search(r"/show/(\d+)/download", rec.torrent_url)
         if m:
             rec.show_id = int(m.group(1))
-
-    rec.headline = _text(soup.select_one(".hero-copy p.subtitle"))
-    rec.title = _text(soup.select_one(".hero-copy h1"))
-    rec.eyebrow = _text(soup.select_one(".hero-copy .eyebrow"))
 
     return rec
 
@@ -798,12 +836,11 @@ def tour_name_from_url(url: str) -> str:
 
 
 def parse_tour_page(html: str, tour: str = "") -> list[TourShow]:
-    """Parse one ``/tour/<name>`` page into show rows.
+    """Parse one ``/tour/<name>`` page into show rows (layout of 2026-11-25).
 
-    The row's ``.tl-date`` carries only 'Mon D'; the year comes from the
-    ``.tl-year`` divider that precedes it in document order. Deriving the year
-    from month wrap-around instead is wrong — tours such as ``Country/Nashville``
-    (1969–1974) and ``Infidels/Empire`` (1984–1987) skip whole years.
+    Each show is an ``a.rc-tr.sh-g`` row carrying a full ISO date; ``data-has``
+    says whether a recording circulates, and the href points at
+    ``/recordings/<id>`` (a tape) or ``/shows/<id>`` (a gap).
 
     Args:
         html: Raw HTML of a tour page.
@@ -815,39 +852,30 @@ def parse_tour_page(html: str, tour: str = "") -> list[TourShow]:
     """
     soup = BeautifulSoup(html or "", "html.parser")
     if not tour:
-        heading = soup.find("h1")
-        tour = _text(heading)
+        tour = _text(soup.find("h1"))
 
     shows: list[TourShow] = []
-    year = 0
-    for node in soup.select(".tl-year, a.tl-row"):
-        classes = node.get("class") or []
-        if "tl-year" in classes:
-            year = _int_or_none(_text(node)) or year
+    for node in soup.select("a.rc-tr.sh-g"):
+        date = _text(node.select_one(".m"))
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
             continue
-
-        m = re.match(r"([A-Z][a-z]{2})\s+(\d{1,2})", _text(node.select_one(".tl-date")))
-        if not m or not year:
-            continue
-        month = _MONTHS.get(m.group(1))
-        if not month:
-            continue
-
-        main = node.select_one(".tl-main")
-        meta = node.select_one(".tl-meta")
+        name = node.select_one(".sh-nm")
+        bold = name.find("b") if name else None
+        place = bold.find_next_sibling("span") if bold else None
+        tags = node.select_one(".sh-tags")
         href = node.get("href", "")
-        seed = meta.select_one(".num") if meta else None
         row = TourShow(
             tour=tour,
-            date_str=f"{year:04d}-{month:02d}-{int(m.group(2)):02d}",
-            venue=_text(main.find("b")) if main else "",
-            location=_text(main.find("small")) if main else "",
+            date_str=date,
+            venue=_text(bold),
+            location=_text(place),
             row_url=href,
-            circulating=not (meta and meta.select_one(".tl-missing")),
-            in_collection=bool(meta and meta.select_one('[title="In your collection"]')),
-            has_sbd=bool(meta and meta.select_one(".mini-src.sbd")),
-            has_aud=bool(meta and meta.select_one(".mini-src.aud")),
-            seeders=_int_or_none(re.sub(r"\D", "", _text(seed))) if seed else None,
+            circulating=node.get("data-has") == "1",
+            in_collection=bool(tags and tags.select_one(".sh-own")),
+            has_sbd=bool(tags and tags.select_one(".bx-tag.sbd")),
+            has_aud=bool(tags and tags.select_one(".bx-tag.aud")),
+            seeders=_int_or_none(_text(node.select_one(".sh-sd")))
+            if node.select_one(".sh-sd") and _text(node.select_one(".sh-sd")) else None,
         )
         if "/recordings/" in href:
             row.rec_id = recording_id_from_url(href)
@@ -910,12 +938,12 @@ class TuitVenue:
 
 def venue_page_count(html: str) -> int:
     """Return the 'page 1 of 46' page total, or 1 when absent."""
-    m = re.search(r"page\s+\d+\s+of\s+([\d,]+)", html or "")
+    m = re.search(r"page\s+\d+\s+of\s+([\d,]+)", html or "", re.I)
     return _int_or_none(m.group(1)) or 1 if m else 1
 
 
 def parse_venue_page(html: str) -> list[TuitVenue]:
-    """Parse one ``/venue`` listing page into venue rows.
+    """Parse one ``/venue`` listing page into venue rows (layout of 2026-11-25).
 
     Args:
         html: Raw HTML of a venue listing page.
@@ -924,26 +952,24 @@ def parse_venue_page(html: str) -> list[TuitVenue]:
         List of :class:`TuitVenue` in page order.
     """
     soup = BeautifulSoup(html or "", "html.parser")
-    table = soup.select_one("table.tbl")
     rows: list[TuitVenue] = []
-    if table is None:
-        return rows
-
-    for tr in table.select("tbody tr"):
-        cells = tr.find_all("td")
-        if len(cells) < 5:
+    for tr in soup.select(".rc-tr.sh-vn"):
+        name = tr.select_one(".sh-nm")
+        link = name.find("a", href=True) if name else None
+        if link is None:
             continue
-        link = cells[0].find("a", href=True)
-        years = re.findall(r"\d{4}", _text(cells[3]))
+        city = link.find_next_sibling("span")
+        cells = tr.select(".m")
+        years = re.findall(r"\d{4}", _text(cells[0])) if cells else []
         rows.append(
             TuitVenue(
-                venue=_text(cells[0]),
-                city=_text(cells[1]),
-                country=_text(cells[2]),
+                venue=_text(link),
+                city=_text(city),
+                country=_text(tr.select_one(".sh-c")),
                 year_first=_int_or_none(years[0]) if years else None,
                 year_last=_int_or_none(years[-1]) if years else None,
-                n_shows=_int_or_none(_text(cells[4])),
-                venue_url=link["href"] if link else "",
+                n_shows=_int_or_none(_text(cells[-1])) if len(cells) > 1 else None,
+                venue_url=link["href"],
             )
         )
     return rows
@@ -1015,7 +1041,7 @@ class TuitSongPerformance:
 
 
 def parse_songs_index(html: str) -> list[TuitSong]:
-    """Parse one ``/songs`` listing page into songbook rows.
+    """Parse one ``/songs`` listing page into songbook rows (layout of 2026-11-25).
 
     Args:
         html: Raw HTML of a songs listing page.
@@ -1024,24 +1050,20 @@ def parse_songs_index(html: str) -> list[TuitSong]:
         List of :class:`TuitSong` in page order.
     """
     soup = BeautifulSoup(html or "", "html.parser")
-    table = soup.select_one("table.tbl")
     rows: list[TuitSong] = []
-    if table is None:
-        return rows
-
-    for tr in table.select("tbody tr"):
-        cells = tr.find_all("td")
-        link = tr.find("a", href=True)
-        if len(cells) < 6 or link is None or "/song/" not in link["href"]:
+    for tr in soup.select(".rc-tr.sg-g"):
+        link = tr.select_one(".nm a[href]")
+        if link is None or "/song/" not in link["href"]:
             continue
         title = _text(link)
+        years = tr.select(".m.r")
         rows.append(
             TuitSong(
                 song=title,
                 song_url=song_url_for(title),
-                n_performances=_int_or_none(re.sub(r"\D", "", _text(cells[3]))),
-                year_first=_int_or_none(_text(cells[4])),
-                year_last=_int_or_none(_text(cells[5])),
+                n_performances=_int_or_none(_text(tr.select_one(".sg-bar .m"))),
+                year_first=_int_or_none(_text(years[0])) if years else None,
+                year_last=_int_or_none(_text(years[-1])) if len(years) > 1 else None,
             )
         )
     return rows
@@ -1069,18 +1091,21 @@ def song_url_for(title: str) -> str:
 
 
 def songs_page_count(html: str) -> int:
-    """Return the '1 of 17 pages' page total, or 1 when absent."""
-    m = re.search(r"\d+\s+of\s+([\d,]+)\s+pages", html or "")
+    """Return the 'page 1 of 17' page total, or 1 when absent."""
+    m = (re.search(r"page\s+\d+\s+of\s+([\d,]+)", html or "", re.I)
+         or re.search(r"\d+\s+of\s+([\d,]+)\s+pages", html or ""))
     return _int_or_none(m.group(1)) or 1 if m else 1
 
 
 def parse_song_page(html: str, song: str = "") -> list[TuitSongPerformance]:
-    """Parse one ``/song/<title>`` page into performance rows.
+    """Parse one ``/song/<title>`` page into performance rows (layout of 2026-11-25).
 
-    Every decade section is present in the HTML — the ``<details>`` elements are
-    collapsed, not lazily loaded — so one fetch yields the song's full history.
-    A ``.perf-note`` follows the row it annotates as a sibling, so the nodes are
-    walked in document order rather than selected separately.
+    Every decade's ``<details>`` is present in the HTML, so one fetch yields
+    the song's full history. Each ``.sg-pf`` row links the show; ``is-bare``
+    rows have no recording, and a ``.sg-more`` chip ('+1') counts the show's
+    other recordings. The layout no longer marks encores, so ``is_encore`` is
+    always False here (the DB keeps earlier markers — see
+    ``upsert_tuit_song_performances``).
 
     Args:
         html: Raw HTML of a song page.
@@ -1091,33 +1116,34 @@ def parse_song_page(html: str, song: str = "") -> list[TuitSongPerformance]:
     """
     soup = BeautifulSoup(html or "", "html.parser")
     if not song:
-        song = _text(soup.select_one(".song-hero h1") or soup.find("h1"))
+        song = _text(soup.find("h1"))
 
     rows: list[TuitSongPerformance] = []
-    for node in soup.select(".perf-row, .perf-note"):
-        classes = node.get("class") or []
-        if "perf-note" in classes:
-            if rows:
-                rows[-1].note = _text(node)
+    for node in soup.select(".sg-pf"):
+        date_iso = _text(node.select_one(".bx-dt"))
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date_iso):
             continue
-
-        date_iso = _parse_long_date(_text(node.select_one(".perf-date")))
-        if not date_iso:
-            continue
-        venue = node.select_one("a.venue")
-        tags = [_text(t) for t in node.select(".perf-src .tag")]
-        src = next((t for t in tags if re.match(r"\d+\s+src", t)), "")
+        link = node.select_one("a.bx-link")
+        bold = link.find("b") if link else None
+        place = link.select_one(".pl") if link else None
+        if place and place.select_one(".mdt"):
+            place.select_one(".mdt").extract()
+        venue_text = " — ".join(x for x in (_text(bold), _text(place)) if x)
+        href = (link.get("href") or "") if link else ""
+        n_sources = None
+        if "is-bare" not in (node.get("class") or []):
+            more = node.select_one(".sg-more")
+            m = re.search(r"(\d+)\s+recordings?", (more.get("title") or "") if more else "")
+            n_sources = int(m.group(1)) if m else 1
         rows.append(
             TuitSongPerformance(
                 song=song,
                 date_str=date_iso,
-                venue_text=_text(venue),
-                show_id=(
-                    _int_or_none(venue["href"].rstrip("/").rsplit("/", 1)[-1])
-                    if venue and "/shows/" in venue.get("href", "") else None
-                ),
-                n_sources=_int_or_none(re.sub(r"\D", "", src)) if src else None,
-                is_encore=any(t.lower() == "encore" for t in tags),
+                venue_text=venue_text,
+                show_id=(_int_or_none(href.rstrip("/").rsplit("/", 1)[-1])
+                         if "/shows/" in href else None),
+                n_sources=n_sources,
+                note=_text(node.select_one(".sg-pf-note")),
             )
         )
     return rows
